@@ -1,0 +1,25 @@
+{
+  "id": 11188,
+  "subject": "Simsonn plus x pedals throttle / clutch calibration issues",
+  "description_text": "Hello, I just recently ordered the simsonn plus x pedals and they arrived\r\ntoday, they were working perfectly fine then i updated the firmware and\r\nfollowed instructions during the update in the simsonn manager, and the\r\nthrottle and clutch pedals both only read halfway (throttle reads to 43\r\npercent) and clutch reads to about 50 percent when fully depressed. I have\r\ntried grounding wires, restarting and reinstalling multiple different\r\nversions of the software, and even the usb controller configuration menus\r\nthrough windows to no avail, I am hoping its just a software issue and not\r\nhardware.\r\n\r\nThanks for your help.\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2026-01-18T07:46:04Z",
+  "updated_at": "2026-01-19T05:49:22Z",
+  "requester_id": 158009353317,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017378617,
+      "body_text": "Hi UROUTT T,  Please click the Offset button first, then follow the steps in the pop-up window to zero the raw (white) pedal signal to 0%. After that, recalibrate the pedals: press each of the three pedals fully during the calibration process, then click Save. If the blue progress bar moves smoothly from 0% to 100% during the pedal test, the calibration is successful and you can proceed to bind the pedals in the game. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-19T05:49:22Z",
+      "updated_at": "2026-01-19T05:49:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

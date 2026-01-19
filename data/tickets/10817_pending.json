@@ -1,0 +1,65 @@
+{
+  "id": 10817,
+  "subject": "Livraison",
+  "description_text": "Bonjour\r\n\r\nJ'ai passé commande directement sur vôtre site au lieu de passer par un\r\nprestataire tiers le 6 janvier, avec la livraison express a 26,95€ pour une\r\nlivraison entre 3 et 7 jours, le délai me semble long au vu de la somme\r\npayée.\r\n\r\nCombien de temps avant de recevoir mon colis.\r\n\r\nCordialement\r\n\r\nPatrick Gardelle\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-13T19:16:21Z",
+  "updated_at": "2026-01-19T02:53:04Z",
+  "requester_id": 158009032284,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017076000,
+      "body_text": "Hi patrick gardelle,       Hello, we sincerely apologize for the delay. Your pedals are expected to arrive around the 16th. Regarding the other package, due to demand far exceeding our projections, the item has been out of stock for nearly two weeks. We will arrange shipment within the next two days and sincerely apologize for this delay.     https://t.17track.net/en#nums=SF6047227115676,SF6047227115694",
+      "user_id": 158001343601,
+      "created_at": "2026-01-14T06:56:02Z",
+      "updated_at": "2026-01-14T06:56:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017259236,
+      "body_text": "Bonjour\r\n\r\nVôtre service livraison est une vraie catastrophe, nous sommes le 16\r\njanvier, dix jours après ma commande en express au prix fort, l'une des\r\ncommande se promène en Europe et l'autre toujours pas expédiée malgré vos\r\ndires.\r\nJ'ai peur et j'espère ne pas avoir besoin du service support pour le\r\nmatériel si je le reçois un jour, commandé directement chez le fabricant\r\nn'était peut-être pas une si bonne idée.\r\n\r\nCordialement\r\n\r\nPatrick Gardelle\r\n\r\nLe mer. 14 janv. 2026, 07:56, service@simsonn.com ",
+      "user_id": 158009032284,
+      "created_at": "2026-01-16T11:41:52Z",
+      "updated_at": "2026-01-16T11:41:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017324020,
+      "body_text": "Hi patrick gardelle,  We are very sorry for the trouble caused to you. We checked and found that your pedal arrived on the 16th. Have you received it? The other package has also been shipped.  You can track your shipping information via the following link:  https://t.17track.net/en#nums=SF6047227115694     If your order is delayed and you have paid for expedited shipping, we will issue a refund through the platform. You need not worry.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T10:51:02Z",
+      "updated_at": "2026-01-17T10:51:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017326817,
+      "body_text": "Bonjour\r\nMerci de vôtre réponse, oui je pense qu'un geste commercial serait le bien\r\nvenu étant donné les 11 jours pour livrer le pedalier qui est arrivé hier\r\nalors que le suivi l'annonçait encore en Belgique.\r\nEt l'autre colis n'arrivera probablement pas avant une dizaine de jours\r\nsoit presque 20 jours après la commande avec une livraison express.\r\n\r\nCordialement\r\n\r\nPatrick Gardelle\r\n\r\nLe sam. 17 janv. 2026, 11:51, service@simsonn.com ",
+      "user_id": 158009032284,
+      "created_at": "2026-01-17T12:12:34Z",
+      "updated_at": "2026-01-17T12:12:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017373181,
+      "body_text": "Hi patrick gardelle,  ​Okay, I can totally understand you.Thank you for your inquiry. Should you have any questions, please feel free to contact us anytime. We will respond as soon as possible.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-19T02:53:03Z",
+      "updated_at": "2026-01-19T02:53:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

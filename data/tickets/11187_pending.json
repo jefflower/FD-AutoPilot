@@ -1,0 +1,25 @@
+{
+  "id": 11187,
+  "subject": "Follow-up on Order #SSN5962",
+  "description_text": "I am writing to follow up on my order *#SSN5962*. The order was paid for\r\nmore than a week ago, and I also paid extra for faster shipping. However,\r\nthe order status still shows as not dispatched.\r\n\r\nCould you please clarify the reason for the delay and advise when the order\r\nwill be shipped?\r\n\r\nThank you for your assistance.\r\n\r\nKind regards,\r\nDaniill\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2026-01-18T07:29:22Z",
+  "updated_at": "2026-01-19T03:30:53Z",
+  "requester_id": 158009353250,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017373837,
+      "body_text": "Hi Daniil Pilipenko,  We apologize for the delay. Two shipments destined for our German warehouse have been affected by heavy snowfall in Europe, causing road blockages and delivery delays. We will expedite delivery or explore alternative logistics channels to ship your order from China as soon as possible. Compensation will be provided based on the delay after your order is completed. We apologize for the inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-19T03:30:53Z",
+      "updated_at": "2026-01-19T03:30:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

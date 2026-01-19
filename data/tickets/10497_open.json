@@ -1,0 +1,75 @@
+{
+  "id": 10497,
+  "subject": "Return Order SSN4916",
+  "description_text": "Hello I am trying to return my pedals. Unfortunately they do not fit on my\r\nrig. My order is SSN4916.\r\n\r\nBest,\r\n\r\nAlec Turung\r\n\r\n",
+  "status": 2,
+  "priority": 1,
+  "created_at": "2026-01-10T14:10:39Z",
+  "updated_at": "2026-01-19T04:59:37Z",
+  "requester_id": 158008317126,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016773778,
+      "body_text": "Hi Alec Turung,  Please take a photo so we can confirm which bracket it is. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T05:01:20Z",
+      "updated_at": "2026-01-11T05:01:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016925575,
+      "body_text": "On Sat, Jan 10, 2026, 11:01 PM support@simsonn.com ",
+      "user_id": 158008317126,
+      "created_at": "2026-01-13T02:48:12Z",
+      "updated_at": "2026-01-13T02:48:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016935345,
+      "body_text": "Hi Alec Turung,  Would it be possible to secure it by drilling mounting holes? We’ve had customers using the ARTX bracket before, and they reinforced it by drilling holes as well. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-13T06:06:47Z",
+      "updated_at": "2026-01-13T06:06:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016983404,
+      "body_text": "Both of the frames are metal I would have to drill through the metal I\r\ndon't have a drill for that.\r\n\r\nOn Tue, Jan 13, 2026, 12:06 AM support@simsonn.com ",
+      "user_id": 158008317126,
+      "created_at": "2026-01-13T13:18:25Z",
+      "updated_at": "2026-01-13T13:18:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017312913,
+      "body_text": "Hi Alec Turung,     You can add two 2020 aluminum profiles to your current bracket/setup—this will usually make the installation and mounting easier and more secure. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-17T05:08:12Z",
+      "updated_at": "2026-01-17T05:08:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017377827,
+      "body_text": "That is not the issue it  is just too large for my setup. I would really\r\nlike to return it. Can. I please move forward with the return.\r\n\r\nBest,\r\n\r\nAlec Turung\r\n\r\nOn Fri, Jan 16, 2026, 11:08 PM support@simsonn.com ",
+      "user_id": 158008317126,
+      "created_at": "2026-01-19T04:59:36Z",
+      "updated_at": "2026-01-19T04:59:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

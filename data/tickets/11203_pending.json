@@ -1,0 +1,25 @@
+{
+  "id": 11203,
+  "subject": "Plus X Pedals issue",
+  "description_text": "Hi everybody at Simsonn,\r\n\r\nI purchased some Plus X pedals about four months ago and have on the whole\r\nreally enjoyed them with no real problems.\r\n\r\nHowever, during this weekend's iRacing Daytona 24, my throttle stuck which\r\neffectively ended our race. I went back out later and it did exactly the\r\nsame thing an hour into my second stint. I got up this morning, and once\r\nagain had the same issue two laps in.\r\n\r\nIt wasn't only that, I've had the same constant issue of the pedals just\r\ncutting out completely. This means I have to unplug them from the control\r\npoint, at which point they work but I've had to do this about 5 times which\r\nI can't continue doing.\r\n\r\nAll my software is up to date and there is no damage to either the pedals,\r\ncontrol box or cables so I'm at a loss on what to do.\r\n\r\nCan you please support?\r\n\r\nThanks,\r\nDan\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2026-01-18T12:48:38Z",
+  "updated_at": "2026-01-19T05:41:11Z",
+  "requester_id": 158003534701,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017378465,
+      "body_text": "Hi Dan Jones,  First, please download SIMSONN Manager v2.1.3 from our official website and update the firmware to CPU1: 2.0.6 / CPU2: 2.0.4. Second, please connect the USB cable directly to a rear motherboard USB 3.0 (blue) port on your PC, and do not use any USB hubs. Additionally, we recommend using a wire to connect the PC case (chassis), the control box, and a metal screw on the pedals together to create a common ground. This can significantly reduce interference and resolve the issue. You can also refer to the post below for guidance. If the issue still persists after trying the steps above, the throttle sensor may be faulty. Please provide your order number, contact name, phone number, and shipping address, and we will send you a replacement throttle sensor.      If this occurs, it indicates that your PC’s grounding may be unreliable, possibly because a three-prong plug was not used in a grounded wall outlet. You can refer to the post below and connect the three metal screws on the PC case, control box, and pedals, which should resolve the disconnection issue.  https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2026-01-19T05:40:53Z",
+      "updated_at": "2026-01-19T05:40:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

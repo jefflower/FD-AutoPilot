@@ -1,0 +1,25 @@
+{
+  "id": 11215,
+  "subject": "Instructions of telemetry mode",
+  "description_text": "Hello dear Simsonn team,\r\n\r\nI've been using the Pro X Ultra pedals for a while and just noticed there\r\nis an telemetry mode in the pedal light settings. I have set up the\r\nsettings but the lighting does not respond in the games. Do you have\r\ninstructions of how to enable telemetrics so the lighting works with the\r\ntelemetrics mode?\r\n\r\nI have tried with beamng and automobilista 2\r\n\r\nKind regards,\r\nKenneth\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-18T19:07:35Z",
+  "updated_at": "2026-01-19T05:31:54Z",
+  "requester_id": 158009357285,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017378279,
+      "body_text": "Hi K H,  Automobilista 2 does support lighting telemetry. Could you please send me a screenshot of the “Lighting Telemetry” settings page in SIMSONN Manager (including the game selection, toggle status)? I’ll check whether everything is configured correctly. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-19T05:31:54Z",
+      "updated_at": "2026-01-19T05:31:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

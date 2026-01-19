@@ -5,7 +5,7 @@
   "status": 3,
   "priority": 1,
   "created_at": "2026-01-16T14:29:04Z",
-  "updated_at": "2026-01-17T07:41:37Z",
+  "updated_at": "2026-01-19T05:46:08Z",
   "requester_id": 158009300525,
   "responder_id": 158007774607,
   "cc_emails": [],
@@ -29,6 +29,27 @@
       "incoming": true,
       "private": false,
       "source": 0
+    },
+    {
+      "id": 158017349803,
+      "body_text": "J'ai suivi vos recommandations, j'ai commandé le P2H2 et l'embrayage séparément mais la baseplate est devenue trop chère, car les 3 pédales séparées sont plus chères que l'ensemble avec la baseplate noire.\r\n\r\n\r\n________________________________\r\n",
+      "user_id": 158009300525,
+      "created_at": "2026-01-18T08:42:12Z",
+      "updated_at": "2026-01-18T08:42:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017378560,
+      "body_text": "Hi Aureltouch orl,  Après avoir passé votre commande, veuillez nous communiquer le numéro de commande afin que nous puissions vous rembourser la différence de prix. Il semblerait qu'en raison de problèmes fiscaux, Amazon France n'autorise pas l'achat de produits dont le prix dépasse 150 euros.",
+      "user_id": 158007774607,
+      "created_at": "2026-01-19T05:46:02Z",
+      "updated_at": "2026-01-19T05:46:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
     }
-  ]
+  ],
+  "available_langs": []
 }

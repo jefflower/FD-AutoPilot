@@ -1,0 +1,25 @@
+{
+  "id": 11218,
+  "subject": "Order #SSN5908",
+  "description_text": "Good evening, I recently placed this order, paying for the fastest and\r\nmost express shipping you offered, but the package still hasn't\r\narrived. Why? Thank you and best regards.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-18T21:41:29Z",
+  "updated_at": "2026-01-19T01:47:19Z",
+  "requester_id": 158009358585,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017372067,
+      "body_text": "Hi Christian Cardellini,  ​​​It is found that your package is in normal transit. The time limit for expedited delivery is 3-7 working days. Please wait patiently. Thank you for your inquiry. Should you have any questions, please feel free to contact us anytime. We will respond as soon as possible.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-19T01:47:19Z",
+      "updated_at": "2026-01-19T01:47:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

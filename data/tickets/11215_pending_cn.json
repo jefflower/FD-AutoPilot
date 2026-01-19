@@ -1,0 +1,25 @@
+{
+  "id": 11215,
+  "subject": "遥测模式说明",
+  "description_text": "尊敬的 Simsonn 团队：\n\n我使用 Pro X Ultra 脚踏板已有一段时间，最近注意到脚踏板灯光设置中有一个遥测模式。我已经设置了相关选项，但灯光在游戏中没有反应。请问您是否有关于如何启用遥测功能以使灯光与遥测模式同步的说明？\n\n我已在 BeamNG 和 Automobilista 2 中尝试过。\n\n此致，\nKenneth",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-18T19:07:35Z",
+  "updated_at": "2026-01-19T05:31:54Z",
+  "requester_id": 158009357285,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017378279,
+      "body_text": "您好 K H，Automobilista 2 确实支持灯光遥测。请您能否发送一张 SIMSONN Manager 中“灯光遥测”设置页面的截图（包括游戏选择、开关状态）？我将检查所有配置是否正确。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-19T05:31:54Z",
+      "updated_at": "2026-01-19T05:31:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

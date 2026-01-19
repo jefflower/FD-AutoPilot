@@ -1,0 +1,25 @@
+{
+  "id": 11213,
+  "subject": "Order",
+  "description_text": "Hello, my order has been marked as “confirmed” for one week now. Nothing\r\nhas changed during this time. Are there any known issues, or is something\r\nnot in order?\r\n\r\n\r\nKind regards\r\n\r\nNils\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2026-01-18T18:04:42Z",
+  "updated_at": "2026-01-19T03:05:53Z",
+  "requester_id": 158009356688,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017373409,
+      "body_text": "Hi nils hansen,  We apologize for the delay. Two shipments destined for our German warehouse have been affected by heavy snowfall in Europe, causing road blockages and delivery delays. We will expedite delivery or explore alternative logistics channels to ship your order from China as soon as possible. Compensation will be provided based on the delay after your order is completed. We apologize for the inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-19T03:05:53Z",
+      "updated_at": "2026-01-19T03:05:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

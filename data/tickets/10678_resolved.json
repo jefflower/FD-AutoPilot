@@ -1,0 +1,35 @@
+{
+  "id": 10678,
+  "subject": "Checking Order Status",
+  "description_text": "Hello, I wanted to reach out and check the order status of my Plus X Pedals\r\nand 2 Pack of VAM Pros. I ordered them through Amazon with an estimated\r\ndelivery window of January 15th - 20th but according to my tacking the\r\norder's information has been received by SF-Express but it hasn't been\r\nshipped yet. So I just wanted to check if that delivery windows was\r\naccurate or if I should expect something different.\r\n\r\nMy tracking number is:\r\nSF6047221878010\r\n\r\nThank you for you help.\r\n\r\n",
+  "status": 4,
+  "priority": 3,
+  "created_at": "2026-01-12T14:39:00Z",
+  "updated_at": "2026-01-19T05:44:06Z",
+  "requester_id": 158009033917,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017364716,
+      "body_text": "Hello, today I received just the VAM Pros that I ordered but I haven't received the Plus X pedals. Since they seemingly came in a different package. But I don't have a second tracking number. I was wondering where I would find that or if there was an issue. Thank you",
+      "user_id": 158009033917,
+      "created_at": "2026-01-18T17:57:10Z",
+      "updated_at": "2026-01-18T17:57:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158017378522,
+      "body_text": "Hi Noah Cabral,  Here is your tracking number for the pedals: 887920054401,   (ships from US warehouse, the shipping carrier is FedEx, you can track it via https://www.fedex.com/fedextrack ), Our US warehouse will arrange for the shipping carrier to pick up the goods on Monday morning.  The tracking information will be updated after the pickup.",
+      "user_id": 158007774607,
+      "created_at": "2026-01-19T05:43:51Z",
+      "updated_at": "2026-01-19T05:43:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

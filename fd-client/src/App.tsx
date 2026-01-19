@@ -62,6 +62,7 @@ function App() {
   const logsEndRef = useRef<HTMLDivElement>(null);
   const abortBatchRef = useRef(false);
   const [isAborting, setIsAborting] = useState(false);
+  const [generatingAiReplyFor, setGeneratingAiReplyFor] = useState<number | null>(null);
 
   useEffect(() => {
     logsEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -443,6 +444,57 @@ function App() {
     }
 
     return <>{parts}</>;
+  };
+
+  // Handle AI Reply - collect context from ticket description and all previous conversations
+  const handleAiReply = async (conversationId: number) => {
+    if (!selectedTicket) return;
+
+    setGeneratingAiReplyFor(conversationId);
+
+    try {
+      // Collect all context up to and including the current conversation
+      const context: { role: 'customer' | 'agent' | 'description'; content: string }[] = [];
+
+      // Add ticket description as initial context
+      if (selectedTicket.description_text) {
+        context.push({
+          role: 'description',
+          content: selectedTicket.description_text
+        });
+      }
+
+      // Add all conversations up to and including the target conversation
+      if (selectedTicket.conversations) {
+        for (const conv of selectedTicket.conversations) {
+          context.push({
+            role: conv.incoming ? 'customer' : 'agent',
+            content: conv.body_text
+          });
+          if (conv.id === conversationId) break;
+        }
+      }
+
+      console.log('[AI Reply] Context collected:', context);
+      console.log('[AI Reply] Ticket ID:', selectedTicket.id);
+      console.log('[AI Reply] Conversation ID:', conversationId);
+
+      // TODO: Implement AI API call here
+      // For now, just log the context and show a placeholder message
+      setLogs(prev => [...prev, `🤖 AI Reply requested for ticket #${selectedTicket.id}, conversation #${conversationId}`]);
+      setLogs(prev => [...prev, `📝 Context includes ${context.length} messages`]);
+
+      // Simulate a delay for UI feedback
+      await new Promise(resolve => setTimeout(resolve, 500));
+
+      alert('AI回复功能已准备就绪！\n\n上下文已收集，包含:\n- 工单描述\n- ' + (context.length - 1) + ' 条对话\n\nAI对接功能将在后续开发中实现。');
+
+    } catch (error) {
+      console.error('[AI Reply] Error:', error);
+      alert('AI回复生成失败: ' + error);
+    } finally {
+      setGeneratingAiReplyFor(null);
+    }
   };
 
   // Optimize filtering with useMemo
@@ -918,16 +970,76 @@ function App() {
                         </div>
                       </div>
                     )}
-                    <div className="bg-white/5 rounded-lg p-3 mb-4">
+                    <div className="bg-white/5 rounded-lg p-3 mb-4 relative group">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="text-xs px-2 py-0.5 rounded-full bg-blue-600 text-blue-200">工单描述</span>
+                        <span className="text-xs text-slate-500">{selectedTicket.created_at.substring(0, 16)}</span>
+                        {/* AI Reply Button for ticket description */}
+                        <button
+                          onClick={() => handleAiReply(0)} // Use 0 as a special ID for description
+                          disabled={generatingAiReplyFor !== null}
+                          className={`ml-auto px-2 py-1 text-xs rounded-lg transition-all flex items-center gap-1.5 ${generatingAiReplyFor === 0
+                              ? 'bg-purple-500/30 text-purple-300 cursor-wait'
+                              : 'bg-purple-500/20 text-purple-300 hover:bg-purple-500/40 hover:text-purple-200'
+                            } ${generatingAiReplyFor !== null && generatingAiReplyFor !== 0 ? 'opacity-50 cursor-not-allowed' : ''}`}
+                          title="使用AI生成回复"
+                        >
+                          {generatingAiReplyFor === 0 ? (
+                            <>
+                              <svg className="animate-spin h-3.5 w-3.5" viewBox="0 0 24 24">
+                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                              </svg>
+                              生成中...
+                            </>
+                          ) : (
+                            <>
+                              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                              </svg>
+                              AI回复
+                            </>
+                          )}
+                        </button>
+                      </div>
                       <p className="text-slate-200 text-sm whitespace-pre-wrap">
                         {renderTextWithLinks(selectedTicket.description_text) || 'No description'}
                       </p>
                     </div>
                     {selectedTicket.conversations?.map((conv) => (
-                      <div key={conv.id} className={`p-3 rounded-lg mb-2 ${conv.incoming ? 'bg-slate-700/50 mr-6' : 'bg-indigo-500/20 ml-6'}`}>
+                      <div key={conv.id} className={`p-3 rounded-lg mb-2 relative group ${conv.incoming ? 'bg-slate-700/50 mr-6' : 'bg-indigo-500/20 ml-6'}`}>
                         <div className="flex items-center gap-2 mb-1">
                           <span className={`text-xs px-2 py-0.5 rounded-full ${conv.incoming ? 'bg-slate-600 text-slate-300' : 'bg-indigo-500/30 text-indigo-300'}`}>{conv.incoming ? 'Customer' : 'Agent'}</span>
                           <span className="text-xs text-slate-500">{conv.created_at.substring(0, 16)}</span>
+                          {/* AI Reply Button - only show for customer messages */}
+                          {conv.incoming && (
+                            <button
+                              onClick={() => handleAiReply(conv.id)}
+                              disabled={generatingAiReplyFor !== null}
+                              className={`ml-auto px-2 py-1 text-xs rounded-lg transition-all flex items-center gap-1.5 ${generatingAiReplyFor === conv.id
+                                  ? 'bg-purple-500/30 text-purple-300 cursor-wait'
+                                  : 'bg-purple-500/20 text-purple-300 hover:bg-purple-500/40 hover:text-purple-200'
+                                } ${generatingAiReplyFor !== null && generatingAiReplyFor !== conv.id ? 'opacity-50 cursor-not-allowed' : ''}`}
+                              title="使用AI生成回复"
+                            >
+                              {generatingAiReplyFor === conv.id ? (
+                                <>
+                                  <svg className="animate-spin h-3.5 w-3.5" viewBox="0 0 24 24">
+                                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                                  </svg>
+                                  生成中...
+                                </>
+                              ) : (
+                                <>
+                                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                  </svg>
+                                  AI回复
+                                </>
+                              )}
+                            </button>
+                          )}
                         </div>
                         <p className="text-slate-200 text-sm whitespace-pre-wrap">{renderTextWithLinks(conv.body_text)}</p>
                       </div>

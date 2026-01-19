@@ -5,7 +5,7 @@
   "status": 2,
   "priority": 4,
   "created_at": "2026-01-09T22:05:56Z",
-  "updated_at": "2026-01-17T09:27:40Z",
+  "updated_at": "2026-01-17T14:27:55Z",
   "requester_id": 158009009172,
   "responder_id": 158000445778,
   "cc_emails": [],
@@ -99,6 +99,17 @@
       "incoming": true,
       "private": false,
       "source": 2
+    },
+    {
+      "id": 158017334774,
+      "body_text": "After several hours, I managed to find the correct driver and the right configuration to get the shifter recognised. However, 7th gear and reverse are inverted.",
+      "user_id": 158009009172,
+      "created_at": "2026-01-17T14:27:55Z",
+      "updated_at": "2026-01-17T14:27:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
     }
-  ]
+  ],
+  "available_langs": []
 }

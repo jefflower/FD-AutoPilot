@@ -1,0 +1,25 @@
+{
+  "id": 11201,
+  "subject": "I want to know the shipping status of the items I purchased.",
+  "description_text": "I purchased pedals on AliExpress. When will they be shipped?\r\n\r\nThank you in advance.\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-18T12:35:52Z",
+  "updated_at": "2026-01-19T03:26:38Z",
+  "requester_id": 158009354262,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017373749,
+      "body_text": "Hi ryu. 8686@i. softbank. jp,  ​Regarding your pedal,We apologize for the delay. Two shipments destined for our German warehouse have been affected by heavy snowfall in Europe, causing road blockages and delivery delays. We will expedite delivery or explore alternative logistics channels to ship your order from China as soon as possible. Compensation will be provided based on the delay after your order is completed. We apologize for the inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-19T03:26:38Z",
+      "updated_at": "2026-01-19T03:26:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

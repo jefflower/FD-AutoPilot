@@ -1,0 +1,55 @@
+{
+  "id": 10579,
+  "subject": "my order",
+  "description_text": "Hi i ordered from you guys for the first time on Dec. 26 2025 order #ssn5329 i thought it was being shipped as a whole unit but i got just the base plate two days later than expected and even the tracking number took a week to update once it left California. And now the pedals themselves have just landed in New York. I don't understand why they were shipped separately or why i wasn't informed they would be coming separately at least. Especially since the pedals are coming from China that's a much longer delivery time than expected and there's still no expected delivery date. Then i ordered another item on Dec. 30 2025 #ssn5524 and somehow that didn't even get shipped till a week later and i get the holidays and everything so I'm really not tripping about this item but i tried to track it but it says it either hasn't been picked up yet or was shipped three months ago. \r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-11T17:42:48Z",
+  "updated_at": "2026-01-19T02:14:33Z",
+  "requester_id": 158009023879,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017164029,
+      "body_text": "Hi Emory Nelson,     We apologize for the delay. The items in your order #ssn5329 are expected to arrive within the next couple of days. Below is your tracking link:  https://t.17track.net/en#nums=SF6047202972073     The items in order #ssn5524 have been out of stock for nearly two weeks due to demand far exceeding expectations. We have arranged for shipment yesterday and sincerely apologize for the delay. Below is your tracking link:  https://t.17track.net/en#nums=SF6047224472266",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T06:11:46Z",
+      "updated_at": "2026-01-15T06:11:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017278481,
+      "body_text": "Who is delivering the package the tracking number doesn't tell me who is delivering it. It says there was failed delivery yesterday but I called ups and they said they don't have it \r\n\r\nYahoo Mail: Search, Organize, Conquer \r\n \r\n  ",
+      "user_id": 158009023879,
+      "created_at": "2026-01-16T16:55:18Z",
+      "updated_at": "2026-01-16T16:55:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017289073,
+      "body_text": "I just got another package and its only the vibration motors I still don't have the pedals themselves but I only have 1 tracking number for the whole set \r\n\r\nYahoo Mail: Search, Organize, Conquer \r\n \r\n  ",
+      "user_id": 158009023879,
+      "created_at": "2026-01-16T19:25:39Z",
+      "updated_at": "2026-01-16T19:25:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017372500,
+      "body_text": "Hi Emory Nelson,  I checked and found that all the items in your order #ssn5329 are shown as delivered. May I ask which product you haven't received?  The tracking link for this order is as follows: ​https://t.17track.net/en#nums=887437515123,SF6047202972073  Another order, ssn5524, was shipped on the 14th and is currently in transit normally.  The tracking link for this order is as follows:  https://t.17track.net/en#nums=SF6047224472266",
+      "user_id": 158001343601,
+      "created_at": "2026-01-19T02:14:32Z",
+      "updated_at": "2026-01-19T02:14:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

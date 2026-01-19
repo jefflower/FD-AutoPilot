@@ -1,0 +1,25 @@
+{
+  "id": 11219,
+  "subject": "Order not shipped",
+  "description_text": "Hello,\r\n\r\nI recently purchased a handbrake and a set of pedals from simsonn, i\r\nreceived the handbrake within 15 days. The pedals are as i can see on your\r\nsite, still not shipped.\r\nIts been 25 days from when the order was confirmed and with eco shipping it\r\nshould have already been deliverd.\r\n\r\nWhen are my pedals going to be shipped?\r\n\r\nIts order #SSN5360\r\n\r\nThanks,\r\n\r\nJob Westmijse\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-18T21:53:28Z",
+  "updated_at": "2026-01-19T01:42:38Z",
+  "requester_id": 158009358672,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017371985,
+      "body_text": "Hi Job Westmijse,  ​Regarding your pedal:  ​We apologize for the delay. Two shipments destined for our German warehouse have been affected by heavy snowfall in Europe, causing road blockages and delivery delays. We will expedite delivery or explore alternative logistics channels to ship your order from China as soon as possible. Compensation will be provided based on the delay after your order is completed. We apologize for the inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-19T01:42:38Z",
+      "updated_at": "2026-01-19T01:42:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

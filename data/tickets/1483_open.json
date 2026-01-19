@@ -1,0 +1,215 @@
+{
+  "id": 1483,
+  "subject": "Haptics issues",
+  "description_text": "Hello,\r\n\r\nMid game my haptics seem to lose telemetry and go into a constant vibration\r\nso far it has done this with ac and acc games the pedals are plugged in via\r\nusb and the haptics are plugged into a power bar. Is it a firmware issue? I\r\ndon’t know how to configure the haptics in sim hub unless you know how so I\r\ndon’t have to have the calibration software running in the background. The\r\nhaptics are quality but the reliability is questionable I can’t be having\r\nthese problems mid race and this has just started happening. Please get\r\nback to me as soon as possible. I’m using the haptic pro only on brake and\r\nthrottle and there is activity with both pedals doing these vibration\r\nstints.\r\n\r\n",
+  "status": 2,
+  "priority": 1,
+  "created_at": "2025-07-12T15:19:14Z",
+  "updated_at": "2026-01-18T01:11:50Z",
+  "requester_id": 158001214629,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004725404,
+      "body_text": "Hi Daveyg G,  Just download version 9.9.3 of SIMHUB, then go to the Device section and add the SIMSONN device.           If you're using a Fanatec or Moza wheelbase, it's recommended to ensure that the base is properly grounded through your PC and connected to a valid household ground to eliminate electromagnetic interference. Additionally, connect the control box to any screw on the pedal using a green grounding wire. Please make sure the contact point is bare metal—painted surfaces may prevent proper conductivity.   https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting     https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-07-13T01:11:09Z",
+      "updated_at": "2025-07-13T01:11:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004774180,
+      "body_text": "The new box comes with a grounding wire? Or do I some how use the old one?\r\n\r\nOn Sat, Jul 12, 2025 at 9:11 PM service@simsonn.com ",
+      "user_id": 158001214629,
+      "created_at": "2025-07-14T01:42:47Z",
+      "updated_at": "2025-07-14T01:42:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004774964,
+      "body_text": "Hi Daveyg G,    Please take a photo of your control box so we can check it.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-14T03:44:00Z",
+      "updated_at": "2025-07-14T03:44:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004836640,
+      "body_text": "The control box is the new one. For the haptics I don’t see any grounding\r\nwire. Also I tried running haptics recently however I should maybe\r\nrecalibrate but it was giving me a lagged throttle and brake and wasn’t\r\nworking when haptics enabled I had the latest version of sim hub and found\r\nthe motor on the site the vram pro and set that up. This happened in leman\r\nultimate and then I took them off and it worked fine with the game without\r\nhaptics. So I don’t think the pedals need to be calibrated because it was\r\nfine while playing. I disconnected the power to the haptics and brought\r\neverything back to normal.\r\n\r\nOn Sun, Jul 13, 2025 at 11:44 PM service@simsonn.com ",
+      "user_id": 158001214629,
+      "created_at": "2025-07-14T22:31:27Z",
+      "updated_at": "2025-07-14T22:31:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004937571,
+      "body_text": "Hi Daveyg G,     You just need to use a wire to connect any metal screw on the control box to any metal screw on the pedal. You can also refer to the link I provided for guidance. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T04:50:04Z",
+      "updated_at": "2025-07-16T04:50:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004944527,
+      "body_text": "The wire from the old box can detach from the box?\r\n\r\nOn Wed, Jul 16, 2025 at 12:50 AM service@simsonn.com ",
+      "user_id": 158001214629,
+      "created_at": "2025-07-16T10:19:51Z",
+      "updated_at": "2025-07-16T10:19:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004949012,
+      "body_text": "Hi Daveyg G,     yes",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T11:03:59Z",
+      "updated_at": "2025-07-16T11:03:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004973588,
+      "body_text": "I’ll give it a try thank you.\r\n\r\nOn Wed, Jul 16, 2025 at 7:04 AM service@simsonn.com ",
+      "user_id": 158001214629,
+      "created_at": "2025-07-16T16:34:12Z",
+      "updated_at": "2025-07-16T16:34:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005133513,
+      "body_text": "Hi Daveyg G,  Anti-interference Solutions: 1. Ensure your PC is properly grounded through a functional household ground line Some wall outlets only have two wires and lack a ground wire. This not only poses a safety risk but also prevents devices like Fanatec from discharging electromagnetic interference (EMI) effectively. 2. Use a wire to connect the metal housing of your wheel stand or base to the metal case of your PC This creates a shielding path that significantly improves the overall EMI resistance. 3. Connect a green shielded wire from the metal casing of the pedal control box to any metal screw on the pedal This ensures a solid electrical connection between the control box and the pedal to reduce signal drift and noise. 4. Use a USB isolator If interference persists, consider using a USB isolator to further block EMI transmission paths. ⚠ Note: Make sure all connection points are on bare metal surfaces. Painted or oxidized areas can result in poor grounding, reducing the effectiveness of the shielding.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-17T08:28:57Z",
+      "updated_at": "2025-07-17T08:28:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005134356,
+      "body_text": "Thanks for the information. I’ll let you know the results I installed the\r\nwire to the new box like I specified I will let you know the results soon.\r\nThank you.\r\n\r\nOn Thu, Jul 17, 2025 at 4:29 AM service@simsonn.com ",
+      "user_id": 158001214629,
+      "created_at": "2025-07-17T10:17:18Z",
+      "updated_at": "2025-07-17T10:17:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005312195,
+      "body_text": "Hi [Simpson Support Team],\r\n\r\n\r\nI’m reaching out regarding an issue I’ve been experiencing with the pedal\r\nhaptics setup on my system—specifically related to throttle behavior when\r\nhaptics are enabled.\r\n\r\n\r\n⚠️ Issue Summary:\r\n\r\n\r\n   -\r\n\r\n   When pedal haptics are enabled, my throttle does not reach 100% in games\r\n   such as Le Mans Ultimate and Assetto Corsa Competizione.\r\n   -\r\n\r\n   This happens even after I recalibrate the pedals with haptics turned on.\r\n   The signal remains limited and does not reach full throttle.\r\n   -\r\n\r\n   When I disable the haptics power, the throttle immediately returns to\r\n   normal operation, reaching 100% as expected.\r\n\r\n\r\n? Software Details:\r\n\r\n\r\n   -\r\n\r\n   I’m running SimHub for seat haptics.\r\n   -\r\n\r\n   Pedal haptics are detected and activated in SimHub as well.\r\n   -\r\n\r\n   I also tested using Simpson’s native onboard software independently—same\r\n   result in both cases.\r\n   -\r\n\r\n   I’ve confirmed this issue only affects the throttle pedal—the brake and\r\n   clutch appear unaffected.\r\n\r\n\r\n? My Hypothesis:\r\n\r\n\r\nIt seems the vibration motor in the throttle pedal may be interfering with\r\nthe load cell signal or its interpretation during use. Possibly:\r\n\r\n\r\n   -\r\n\r\n   Electrical noise or feedback affecting signal output\r\n   -\r\n\r\n   Sensor movement or minor mechanical disruption when haptics are engaged\r\n   -\r\n\r\n   Power draw/load interference affecting internal readings\r\n\r\n\r\n⚙️ System Overview:\r\n\r\n\r\n   -\r\n\r\n   Load cell pedal set (all pedals)\r\n   -\r\n\r\n   SimHub & Simpson software used independently\r\n   -\r\n\r\n   Issue only occurs when haptics are powered\r\n   -\r\n\r\n   Games tested: Le Mans Ultimate, ACC (Assetto Corsa Competizione)\r\n\r\n------------------------------\r\n\r\nI’d really appreciate your help diagnosing this. I’d prefer not to send the\r\nunit back if this can be resolved through a software/firmware patch,\r\ngrounding suggestion, or other solution on my end.\r\n\r\n\r\nLet me know what further details or logs you need.\r\n\r\n\r\nThanks for your time and support,\r\n\r\nDavid\r\n\r\n\r\n",
+      "user_id": 158001214629,
+      "created_at": "2025-07-22T10:26:35Z",
+      "updated_at": "2025-07-22T10:26:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005313047,
+      "body_text": "I already grounded the control box to the pedals like you said to do.\r\n\r\n",
+      "user_id": 158001214629,
+      "created_at": "2025-07-22T10:29:43Z",
+      "updated_at": "2025-07-22T10:29:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005355665,
+      "body_text": "Hi Daveyg G,     Please take a photo of your entire haptic seat setup, and also include pictures of the power plugs for both your computer and the motion seat. This will help us further assess the situation.  We suspect that the issue may be caused by electromagnetic interference from the motion seat motors, which could be affecting the pedals and VAM Pro vibration motors. Under normal circumstances, the pedals and VAM Pro motors are very stable and rarely fail on their own.  It’s possible that your rig and computer are not properly grounded, which is a critical issue. If the system cannot effectively discharge interference or leakage through a household ground connection, it can lead to device instability—especially when motion seat motors or wheelbases are involved. It also poses potential safety hazards, such as induced voltages between 110V and 220V when touching the equipment, or frequent static shocks in winter.  If your computer or motion seat uses a two-prong plug, it almost certainly means the devices are not grounded. Even if you're using a three-prong outlet, if the wall socket's ground wire is not properly connected, it still does not provide true grounding.  We recommend:    Checking whether your PC and motion seat are using three-prong grounded plugs;    Verifying that your wall outlet is actually grounded (you can use a ground tester);    Avoiding USB hubs and connecting your device directly to the USB 3.0 ports on the back of your PC;    Optionally grounding your rig or seat by connecting it with a wire to the exposed metal part of your PC case.    Proper grounding will not only improve system stability but also ensure electrical safety. Feel free to share more photos, and we’ll assist you further.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-23T04:23:24Z",
+      "updated_at": "2025-07-23T04:23:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005479563,
+      "body_text": "On Wed, Jul 23, 2025 at 12:23 AM service@simsonn.com ",
+      "user_id": 158001214629,
+      "created_at": "2025-07-23T16:29:09Z",
+      "updated_at": "2025-07-23T16:29:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005487605,
+      "body_text": "Hi Daveyg G,  From your photo, I noticed several issues: First, all high-voltage power cables are placed directly above and below the brake pressure sensor, which can interfere with the weak voltage signal of the brake circuit, affecting the overall electromagnetic environment of the control box and motors. Second, your power outlet and power strip are two-prong types with no grounding. This means that all your devices are operating without a safe grounding environment, making interference with the VAM Pro vibration motor inevitable. In addition, if there is a short circuit or cable damage, there is a risk of accidental electric shock. Even Fanatec recommends that wall sockets and power strips have reliable grounding. At the very least, your computer should be properly grounded, and other devices can discharge interference through their USB connection to the PC. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-24T02:54:41Z",
+      "updated_at": "2025-07-24T02:54:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005490673,
+      "body_text": "I only have one outlet there what do you recommend?\r\n\r\nOn Wed, Jul 23, 2025 at 10:54 PM service@simsonn.com ",
+      "user_id": 158001214629,
+      "created_at": "2025-07-24T11:01:32Z",
+      "updated_at": "2025-07-24T11:01:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005490786,
+      "body_text": "The power bars both have 3 prong connections to the outlets. I’ll rewire\r\neverything when I get home.\r\n\r\n",
+      "user_id": 158001214629,
+      "created_at": "2025-07-24T11:16:55Z",
+      "updated_at": "2025-07-24T11:16:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005490795,
+      "body_text": "Thank you for the feedback. Just to clarify, both of my power strips are\r\nsurge protected and grounded 3-prong types, not two-prong as mentioned. The\r\nPC is grounded as well.\r\n\r\n\r\nI will take the advice about isolating the brake pressure sensor from\r\nhigh-voltage power lines and tidy up the cabling to minimize any potential\r\nEMI.\r\n\r\n\r\nThat said, the grounding issue you cited does not apply to my current\r\nsetup. If the issue persists after repositioning cables, I’d like to know\r\nwhat the next steps would be for further troubleshooting or support.\r\n\r\n\r\n\r\n",
+      "user_id": 158001214629,
+      "created_at": "2025-07-24T11:18:11Z",
+      "updated_at": "2025-07-24T11:18:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005551057,
+      "body_text": "Hi Daveyg G,  Most of the issues reported by customers are caused by electromagnetic interference from the wheelbase and unreliable grounding in the household. Once the PC, wheelbase, and power strip are all connected using three‑prong plugs with proper grounding, all these problems will be resolved at once. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-26T04:17:47Z",
+      "updated_at": "2025-07-26T04:17:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017337143,
+      "body_text": "Hello,\r\n\r\nDo you have the specs for the mounting hardware for the vram pro haptics.\r\nFor the vinyl washers also please. I lost some because they fell off the\r\naccelerator pedal and I can’t find all of the hardware. I’m likely going to\r\norder my own. Thanks.\r\n\r\nOn Sat, Jul 26, 2025 at 12:17 AM service@simsonn.com ",
+      "user_id": 158001214629,
+      "created_at": "2026-01-17T16:54:56Z",
+      "updated_at": "2026-01-17T16:54:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

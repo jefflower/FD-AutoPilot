@@ -1,0 +1,55 @@
+{
+  "id": 9348,
+  "subject": "Express shipping refund request – Order #SSN4791 (not delivered within 3–7 days)",
+  "description_text": "Hello Simsonn Support,\r\n\r\nI paid for Express shipping (stated delivery time 3–7 days), but my order\r\nfrom 13 December (Order #SSN4791) still hasn’t been delivered. Today is 28\r\nDecember, so it clearly missed both the advertised timeframe and Christmas.\r\n\r\nPlease refund the Express shipping charge.\r\nAlso, please tell me the current status and expected delivery date.\r\n\r\nThank you,\r\nDavid\r\n\r\n",
+  "status": 2,
+  "priority": 4,
+  "created_at": "2025-12-28T09:22:15Z",
+  "updated_at": "2026-01-18T02:27:00Z",
+  "requester_id": 158008799800,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015303143,
+      "body_text": "Hi David Leyser,    We apologize for the delay. Your package is expected to arrive within the next couple of days. We will refund your additional shipping charges. We're sorry for the inconvenience!  https://t.17track.net/en#nums=JSELI1541381405YQ         Happy New Year!",
+      "user_id": 158001343601,
+      "created_at": "2025-12-31T09:05:32Z",
+      "updated_at": "2025-12-31T09:05:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017272517,
+      "body_text": "Hello,\r\n\r\nI have not received a refund/credit note yet. Also, from the upgrade kit I\r\nonly received the colored rubber parts and the hard plastic spacers. All\r\nthe springs and the dampers shown in the pictures are missing.\r\n\r\n\r\nThanks\r\n\r\nDavid\r\n\r\nservice@simsonn.com ",
+      "user_id": 158008799800,
+      "created_at": "2026-01-16T15:28:06Z",
+      "updated_at": "2026-01-16T15:28:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017311186,
+      "body_text": "Hi David Leyser,    We apologize for the inconvenience, but we have already refunded your extra shipping charges.  Additionally, the shock absorbers should have been pre-installed on your pedals—please verify this.  Please let us know which spring was not shipped, and we will arrange for a replacement to be sent to you.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T03:16:43Z",
+      "updated_at": "2026-01-17T03:16:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017345676,
+      "body_text": "Hi\r\n\r\nIt’s difficult for me to tell whether anything has already been installed.\r\nOn the brake pedal everything is still in the standard setup, and the\r\ncolored replacement rubber blocks were included. However, the dampers,\r\nwhich should be different versions, were not included\r\n\r\nThe small spring at the end is installed, but if there is supposed to be a\r\nsecond spring with a different stiffness, that one is also missing\r\n\r\nFor the throttle pedal, nothing was included at all,  only the standard\r\nspring is installed.\r\nRegards David\r\n\r\nservice@simsonn.com ",
+      "user_id": 158008799800,
+      "created_at": "2026-01-18T01:46:19Z",
+      "updated_at": "2026-01-18T01:46:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

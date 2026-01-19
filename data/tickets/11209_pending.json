@@ -1,0 +1,25 @@
+{
+  "id": 11209,
+  "subject": "Order stuck at \"confirmed\"",
+  "description_text": "Hello,\r\n\r\nI don't want to be that annoying customer, but I have a question regarding\r\nmy order (#SSN5896), which I placed on January 8th.\r\n\r\nThe order status is still showing as “confirmed.” I noticed on your website\r\nthat the processing time is listed as 1–2 days, so I wanted to check\r\nwhether this delay is expected or if there might be an issue with the order\r\nstatus.\r\n\r\nThank you very much for your time, I look forward to your response.\r\n\r\nKind regards,\r\nStijn Haitsma\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-18T14:37:08Z",
+  "updated_at": "2026-01-19T03:07:49Z",
+  "requester_id": 158009354882,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017373449,
+      "body_text": "Hi Stijn Haitsma,  We apologize for the delay. Two shipments destined for our German warehouse have been affected by heavy snowfall in Europe, causing road blockages and delivery delays. We will expedite delivery or explore alternative logistics channels to ship your order from China as soon as possible. Compensation will be provided based on the delay after your order is completed. We apologize for the inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-19T03:07:49Z",
+      "updated_at": "2026-01-19T03:07:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

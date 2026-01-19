@@ -3,11 +3,11 @@
   "subject": "Delay Order",
   "description_text": "Hi i have ordered the Simsonn Plus X Racing Simulation Pedal and i have no news about them\r\nOrder number #SSN5401\r\n\r\n",
   "status": 3,
-  "priority": 1,
+  "priority": 4,
   "created_at": "2026-01-14T12:08:28Z",
-  "updated_at": "2026-01-17T09:39:52Z",
+  "updated_at": "2026-01-19T03:32:24Z",
   "requester_id": 158009064570,
-  "responder_id": null,
+  "responder_id": 158001343601,
   "cc_emails": [],
   "conversations": [
     {
@@ -19,6 +19,17 @@
       "incoming": false,
       "private": false,
       "source": 0
+    },
+    {
+      "id": 158017373864,
+      "body_text": "Hi Stavros Sarikas,    We are preparing to ship your order and noticed that the address line 2 lacks a number after “Apartment.” Please confirm your address:  Stavros Sarikas  Vizvizi 19-21  Apartment  681 32 Alexandroupoli  Greece  +30 698 912 3770",
+      "user_id": 158001343601,
+      "created_at": "2026-01-19T03:32:24Z",
+      "updated_at": "2026-01-19T03:32:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
     }
-  ]
+  ],
+  "available_langs": []
 }

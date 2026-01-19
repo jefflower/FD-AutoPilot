@@ -1,0 +1,125 @@
+{
+  "id": 9307,
+  "subject": "Ordre # SSN5216",
+  "description_text": "Hello,  Due to an error, I wish to cancel my order #SSN5216 placed on December 24, 2025, on the simsonn.com website. As I am in France, I realized too late that customs fees would be incurred. It has been more than 24 hours since my initial request without any response from you. Please proceed with the cancellation of my order.  Sincerely,  Mr. Xavier Labrosse",
+  "status": 2,
+  "priority": 4,
+  "created_at": "2025-12-27T17:16:18Z",
+  "updated_at": "2026-01-17T15:10:37Z",
+  "requester_id": 158008328400,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015146527,
+      "body_text": "Hi Labrosse Xavier,  We can ship from Germany, and there will be no customs duties within the EU. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T02:08:17Z",
+      "updated_at": "2025-12-28T02:08:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015157170,
+      "body_text": "Bonjour      ok super  merci   il faut prevoir faudra combien de temps pour l'expedition ?   Xavier",
+      "user_id": 158008328400,
+      "created_at": "2025-12-28T10:05:36Z",
+      "updated_at": "2025-12-28T10:05:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015303297,
+      "body_text": "Hi Labrosse Xavier,    I apologize for not getting back to you sooner. Your package has been shipped via UPS. If any customs duties are required, we will reimburse you for them—no need to worry.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-31T09:15:16Z",
+      "updated_at": "2025-12-31T09:15:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015313454,
+      "body_text": "Bonjour      Je suis un peu surpris  je viens de recevoir le colis UPS a l instant  avec 36,14 Euros de frais  dedouanement  le colis arrive directement de chine et non de l Allemagne , je compte sur vous pour le remboursement de ces frais comme vous me l'avez proposé  Xavier",
+      "user_id": 158008328400,
+      "created_at": "2025-12-31T14:18:58Z",
+      "updated_at": "2025-12-31T14:18:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015621991,
+      "body_text": "Hi Labrosse Xavier,    Please send the UPS invoice, and we will have our finance department reimburse you.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-04T10:43:04Z",
+      "updated_at": "2026-01-04T10:43:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015659132,
+      "body_text": "Bonjour pour rappel je vous ai demandé de prendre a charge les frais de douane apres m avoir assuré que vous mes rembourserez sans soucis j attend votre retour merci   Xavier",
+      "user_id": 158008328400,
+      "created_at": "2026-01-04T15:53:55Z",
+      "updated_at": "2026-01-04T15:53:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015663166,
+      "body_text": "désolé j avais pas vu votre reponse   , justement  n'ai pas eu de facture de la pars d ups     j'ai reglé 36,14 Ers  au livreur UPS qui ma dit que j'avais du recevoir un mail pour regler les frais avant livraison ce qui n a pas ete le cas  je n'ai pas recu de facture comme je n'ai pas eu de mail d ups concernant les frais de douane avant livraison   c est indiqué pourtant dans le suivi que vous m avez envoyé ,   je vais essayer de me la procurer la facture , c est pas normal que je n'ai recu aucun mail d UPS pour le suivi de ce colis ainsi que les frais de douane engagé ",
+      "user_id": 158008328400,
+      "created_at": "2026-01-04T16:12:59Z",
+      "updated_at": "2026-01-04T16:12:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015720834,
+      "body_text": "Hi Labrosse Xavier,    Okay, we have reimbursed you for the 20 euro portion of the customs duty through a refund.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-05T10:53:23Z",
+      "updated_at": "2026-01-05T10:53:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015755146,
+      "body_text": "Bonjour     j ai contacté  la hotline  UPS par téléphone  je recevrai la facture par courier  dans 10 jours ,  comme je vous l ai deja indiqué la facture de douane que j ai payé au livreur est de 36,14ers   ,alors  pourquoi 20ers ???      d apres l operateur vous n avez pas joint mon email  a l expedition c est pour cela que je n'ai eu ni suivi du colis ni la facuration des frais de douane par mail  que j'aurai pu regler avant reception qui m aurai couté moins cher   j aimerai que votre service client me rembourse les 16,14ers manquant , vous m'avez assuré ne pas payé des frais de douane et je me retrouve dans une situation compliqué à echanger avec    merci de votre comprehention ",
+      "user_id": 158008328400,
+      "created_at": "2026-01-05T16:53:02Z",
+      "updated_at": "2026-01-05T16:53:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158017177761,
+      "body_text": "Hi Labrosse Xavier,     We apologize for the inconvenience caused. The email address you provided is: xavier.labrosse83@orange.fr  Additionally, customers are generally responsible for paying customs duties, as we do not collect them. The 20 euros is our compensation to you. Thank you for your understanding.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T10:38:20Z",
+      "updated_at": "2026-01-15T10:38:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017334921,
+      "body_text": "Bonjour        c est ca votre reponse?????   ci joint pour rappel du sujet de ma demande    vous m'avez assurer rembourser INTEGRALEMENT  les frais de douane  engagés     , c est quoi cette facon de faire???   je devrai recevoir la facture d UPS concernant les frais de douane je vous la transmettrai dés que possible , j ai recu 20ers il manque 16,14ers  merci      Mr Labrosse Xavier",
+      "user_id": 158008328400,
+      "created_at": "2026-01-17T14:38:35Z",
+      "updated_at": "2026-01-17T14:38:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    }
+  ],
+  "available_langs": []
+}

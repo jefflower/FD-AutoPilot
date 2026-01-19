@@ -1,0 +1,25 @@
+{
+  "id": 11203,
+  "subject": "Plus X 踏板问题",
+  "description_text": "大家好，Simsonn 的各位，\n\n大约四个月前我购买了一些 Plus X 踏板，总的来说，我非常喜欢它们，没有遇到什么真正的问题。\n\n然而，在刚刚过去的这个周末的 iRacing Daytona 24 小时耐力赛中，我的油门踏板卡住了，这实际上结束了我们的比赛。后来我再次尝试，在我的第二个赛段进行了一个小时后，它又出现了同样的问题。今天早上我起床后，在跑了两圈后再次遇到了同样的问题。\n\n不仅如此，我还一直遇到踏板完全失灵的问题。这意味着我必须将它们从控制点拔下，然后它们才能工作，但我已经这样做了大约 5 次，我不能再这样下去了。\n\n我的所有软件都是最新的，踏板、控制盒或电缆都没有损坏，所以我不知道该怎么办。\n\n请问能提供支持吗？\n\n谢谢，\nDan",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2026-01-18T12:48:38Z",
+  "updated_at": "2026-01-19T05:41:11Z",
+  "requester_id": 158003534701,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017378465,
+      "body_text": "您好，Dan Jones，\n\n首先，请从我们的官方网站下载 SIMSONN Manager v2.1.3，并将固件更新至 CPU1: 2.0.6 / CPU2: 2.0.4。其次，请将 USB 数据线直接连接到您电脑主板背面的 USB 3.0（蓝色）端口，不要使用任何 USB 集线器。此外，我们建议使用导线将电脑机箱、控制盒和踏板上的金属螺丝连接在一起，以形成一个公共接地。这可以显著减少干扰并解决问题。您也可以参考下面的帖子获取指导。\n\n如果尝试上述步骤后问题仍然存在，则油门传感器可能存在故障。请提供您的订单号、联系人姓名、电话号码和收货地址，我们将为您寄送一个替换的油门传感器。\n\n如果出现这种情况，则表明您的电脑接地可能不可靠，这可能是因为没有在接地的墙壁插座中使用三相插头。您可以参考下面的帖子，将电脑机箱、控制盒和踏板上的三个金属螺丝连接起来，这应该可以解决断开连接的问题。\n\nhttps://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting\nhttps://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2026-01-19T05:40:53Z",
+      "updated_at": "2026-01-19T05:40:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

@@ -1,0 +1,155 @@
+{
+  "id": 8719,
+  "subject": "Broken spring piece in throttle",
+  "description_text": "Hello, I've had my pedals for about 5 months now, I've used them on and off\r\nfor about 4 of those months after initially dealing with a control box that\r\ndidn't work correctly until opening it up and seeing two loose wires.\r\n\r\nNow my throttle sensor, the spring on the very front of the throttle pedal,\r\nhas broken in half because it's made of some type of ABS plastic. This is\r\nunacceptable for a product to break in 5 months that is supposedly all\r\nsteel construction based on your own product description. How exactly is\r\nthis even fixable? Note, I have not messed with my pedals, I threw them on\r\nmy rig, I don't adjust them in any way except to add/remove the damper.\r\nThere is no way in the software to get rid of the spring part of the\r\nthrottle, meaning the first 1/2 of my pedal movement registers *nothing*.\r\nBasically bricking my pedals.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-19T21:14:47Z",
+  "updated_at": "2026-01-19T02:25:20Z",
+  "requester_id": 158002190644,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014810801,
+      "body_text": "Hi BadDadGames,  Hello, this part is made of plastic to prevent interference issues and to avoid the base and bracket affecting the metal sensor; that’s why nylon was intentionally used instead of metal. We have upgraded this component. Previously, the blue limit adjustment at its minimum position could block the movement of the pressure plate, causing it to break. Under normal circumstances, the spring exerts only 1kg of force, which is insufficient to damage the plastic part. Please provide your order number, contact person, phone number, and shipping address, and we will send you the upgraded plastic replacement part to prevent this issue from occurring again. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-20T13:17:24Z",
+      "updated_at": "2025-12-20T13:17:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014810898,
+      "body_text": "It was ordered via Amazon my address is 49 central street athol ma 01331,\r\nis the part coming from China ? What kind of time  span can I expect? I’m\r\nsupposed to be competing in the iracing nxt series next two weeks. Here is\r\nmy order #my name is Ian street, it broke because of the blue limiter.\r\n\r\n\r\nOn Sat, Dec 20, 2025 at 8:17 AM service@simsonn.com ",
+      "user_id": 158002190644,
+      "created_at": "2025-12-20T13:23:13Z",
+      "updated_at": "2025-12-20T13:23:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014879878,
+      "body_text": "和亚马逊，已安排补寄",
+      "user_id": 158007774607,
+      "created_at": "2025-12-22T12:34:29Z",
+      "updated_at": "2025-12-22T12:34:29Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158015054383,
+      "body_text": "Hi are you going to let me know what’s going on with this all I be getting\r\nthe upgraded part? How long will it take? Etc\r\n\r\n",
+      "user_id": 158002190644,
+      "created_at": "2025-12-24T23:00:30Z",
+      "updated_at": "2025-12-24T23:00:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015130595,
+      "body_text": "Hi BadDadGames,  I am sorry for it, it seems that our wareshouse staff forgot it, We will arrange for the shipment next Monday.",
+      "user_id": 158007774607,
+      "created_at": "2025-12-27T09:12:04Z",
+      "updated_at": "2025-12-27T09:12:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015134335,
+      "body_text": "OK once again is this coming from China? What kind of lead time is there in\r\nthis replacement a week two weeks a month? This is basic stuff that CS is\r\nsupposed to provide before the customer asks instead of me now having to\r\nask for the third time, I manage a large sim racing discord and have helped\r\na lot of people buy Simsonn products with no real issues until now however\r\nthere should be no reason for me to have to ask how long it will take to\r\nfix a product that’s defective and that you had to update the part on , for\r\nme to have to ask for the  3rd time it really feels like you’re ignoring\r\nthis question on purpose. This is completely disappointing. I’m not sure\r\nwhat to say to people in the discord and on Reddit now because I’m known as\r\nthe “Simsonn guy” that always recommends your products.\r\n\r\nOn Sat, Dec 27, 2025 at 4:12 AM service@simsonn.com ",
+      "user_id": 158002190644,
+      "created_at": "2025-12-27T13:53:59Z",
+      "updated_at": "2025-12-27T13:53:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015183535,
+      "body_text": "Hi BadDadGames,  Due to the large number of orders during the peak season, we were unable to process your issue promptly. We will arrange shipment today.",
+      "user_id": 158007774607,
+      "created_at": "2025-12-29T08:34:08Z",
+      "updated_at": "2025-12-29T08:34:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015183547,
+      "body_text": "Hi BadDadGames,  Yes, the part is from China",
+      "user_id": 158007774607,
+      "created_at": "2025-12-29T08:34:46Z",
+      "updated_at": "2025-12-29T08:34:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017291968,
+      "body_text": "Okay...so has it been shipped yet? Is there any estimate on the time of\r\narrival, or a tracking number or anything?\r\n\r\nOn Mon, Dec 29, 2025 at 3:35 AM service@simsonn.com ",
+      "user_id": 158002190644,
+      "created_at": "2026-01-16T20:11:33Z",
+      "updated_at": "2026-01-16T20:11:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017291984,
+      "body_text": "Note it's been 18 days since your last message where you didn't\r\nrespond about how long it would take or a shipping estimate.\r\n\r\n",
+      "user_id": 158002190644,
+      "created_at": "2026-01-16T20:11:55Z",
+      "updated_at": "2026-01-16T20:11:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017318424,
+      "body_text": "Hi BadDadGames,  Hi, I am sorry for it, Your package has already been packed in our warehouse. However, due to the logistics company not picking up the package and the weekend holidays, we won't be able to provide you with a tracking number until next week. We guarantee that your package will be shipped by next Tuesday.",
+      "user_id": 158007774607,
+      "created_at": "2026-01-17T07:18:38Z",
+      "updated_at": "2026-01-17T07:18:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017318885,
+      "body_text": "Hey man,\r\n\r\n On Dec 29th you said you'd be arranging shipping ASAP. It is now Jan 17th.\r\nEven if you ship it *today*, CNY will likely cause it to be delayed until\r\nat least late february, probably nearly March. It's a single part that\r\nweighs less than what, 5 ounces? Also, I have worked for and with many\r\ncompanies in Shenzhen, creality, elegoo, DJI, bambu labs....I know the\r\nchinese holidays because my coworkers, there is no holidays from Jan\r\n2-17th, you have had 28 days since Dec 19th to ship this single part.\r\nChristmas isn't huge in China, but like my coworkers you were probably out\r\nthe 23-29th, and then again from the 31-2nd. You have said twice you'd ship\r\nthe part ASAP. The part is still sitting in China, hasn't moved, likely\r\nhasn't been packaged or a packing slip even created. This is not acceptable\r\nresolution, and since I purchased from Amazon, I will be CCing Amazon this,\r\nso that hopefully I can issue a chargeback and get my money back and buy\r\nsimagic pedals. I'll also be warning everyone I told on the simracing\r\nsubreddit, simbros, davecam, jhalin, boosted media,oc media, sim racing\r\ncorner's discords and let them know my experience trying to get SImsonn to\r\nfix a faulty part that they know is faulty because they are replacing it on\r\nnewer versions, but are unwilling to ship the part for nearly 30 days. And\r\nnow with CNY prep starting on Monday, this part will likely not be arriving\r\nuntil late Feb early March...all while the part sat there, the past two\r\nweeks while ya'll were working, that's unacceptable and I'm nearly certain\r\nit goes against Amazon's guidelines for product support, especially\r\nconsidering now you've lied about shipping it twice, lied about why it\r\ncan't be shipped(Holidays the past two weeks haven't existed, so I don't\r\nknow what your talking about) etc. This has been a horrible experience and\r\nI'll be reaching out to OC Media Sim Racing Studio and DJ YeeJ since I am\r\nin their discords to see if they can get with your affiliate for them and\r\nsee if they have any advice as to what I can do to fix my literally\r\nunusable pedals that Simsonn seems to be okay with buyers of their pedals\r\nnot having usable pedals for 2-3 months at a time.\r\n\r\nIan.\r\n\r\nOn Sat, Jan 17, 2026 at 2:18 AM service@simsonn.com ",
+      "user_id": 158002190644,
+      "created_at": "2026-01-17T07:59:29Z",
+      "updated_at": "2026-01-17T07:59:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017326580,
+      "body_text": "Absolutely I’ll take a new set, I’ll report back to Alex that my issue is\r\nfixed, the new set will work with VAM pros? Because I’m going to buy the\r\nvam pros eventually one day I’m on a fixed income because I’m disabled from\r\nmy work as a firefighter where my arm was burned very badly, I didn’t mean\r\nto be a jerk I’m just really frustrated with everything and being able to\r\nrace helps me a lot. But if the new set will work with vam pros so that\r\nwhen I can save up the $150 here in a few months I’ll be able to slap those\r\non and be all set for pedals. I’m telling y’all I love your product I just\r\ndon’t like the whole thing of waiting with no word for 30+ days. I\r\nrecommend your product to everyone and have had like 6 people buy your\r\npedals due to me telling them to, I won’t stop recommending them they’re\r\ngreat just too expensive for me to replace and so far I’ve saved about 40%\r\nto get the vam pros so didn’t wanna waste that on buying another pedal if\r\nthat other piece was coming\r\n\r\nOn Sat, Jan 17, 2026 at 6:37 AM General and sales enquiries <\r\nservice@simsonn.com> wrote:\r\n\r\n> I apologize for everything that happened. Can we ship a new set of pedals\r\n> from our US warehouse or issue a full refund for you.\r\n>\r\n> ------------------------------\r\n> service@simsonn.com\r\n>\r\n>\r\n> *",
+      "user_id": 158002190644,
+      "created_at": "2026-01-17T11:49:38Z",
+      "updated_at": "2026-01-17T11:49:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017372674,
+      "body_text": "Hi BadDadGames,  Yes, it is work with vam pros. We have arranged the shipment from our US warehouse. Here is your tracking number: 888005191179, the shipping carrier is FedEx, you can track it via https://www.fedex.com/fedextrack. The warehouse will arrange for the shipping carrier to pick up the goods on Monday morning.  The tracking information will be updated after the pickup.   ",
+      "user_id": 158007774607,
+      "created_at": "2026-01-19T02:25:14Z",
+      "updated_at": "2026-01-19T02:25:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

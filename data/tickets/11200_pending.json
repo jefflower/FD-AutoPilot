@@ -1,0 +1,25 @@
+{
+  "id": 11200,
+  "subject": "Pedal Control box",
+  "description_text": "Hey good morning,\r\n It looks like hub box needs to be replaced because it seems the brake port has shorted out. It is sparking when I plug it in the plug a few times. I also tried plugging the brake plug into the throttle port and it came on. So I believe it’s the hub box that will need to be replaced. \r\n\r\nIt also might be the reason the haptics don’t work either because every time I plug it in, it makes the pedals malfunction and turn off and on repeatedly. \r\n\r\nAgain thanks for your help. \r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2026-01-18T12:32:37Z",
+  "updated_at": "2026-01-19T05:44:14Z",
+  "requester_id": 158005401329,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017378529,
+      "body_text": "Hi Bobby Holton,  Sure — we will send you a new hub/control box. Please provide your order number, contact name, phone number, and full shipping address. Also, please open the hub box, remove the PCB, and send us clear high-resolution photos of both sides of the board. I will review them to check for any possible short circuits, poor solder joints, or connector issues. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-19T05:44:05Z",
+      "updated_at": "2026-01-19T05:44:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}
