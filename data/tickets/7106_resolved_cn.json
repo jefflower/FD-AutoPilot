@@ -1,0 +1,35 @@
+{
+  "id": 7106,
+  "subject": "控制器盒损坏。",
+  "description_text": "你好，我不小心弄坏了连接所有3个踏板的小控制器盒。我想从你们这里购买一个新的。附上照片。",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-11-30T20:23:59Z",
+  "updated_at": "2025-12-01T06:04:38Z",
+  "requester_id": 158007451189,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013155878,
+      "body_text": "你好 Kyle Nemechek，你可以通过此链接购买 PlusX 控制单元。它与你的旧踏板兼容，并且支持最新的 SIMSONN Manager 2.1.2 软件，包括力反馈显示和振动功能。 https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor?variant=51351053533498",
+      "user_id": 158000445778,
+      "created_at": "2025-12-01T03:14:16Z",
+      "updated_at": "2025-12-01T03:14:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013155914,
+      "body_text": "谢谢！2025年11月30日星期日晚上7:14，来自 service@simsonn.com 的邮件。",
+      "user_id": 158007451189,
+      "created_at": "2025-12-01T03:15:55Z",
+      "updated_at": "2025-12-01T03:15:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

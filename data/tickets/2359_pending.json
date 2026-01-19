@@ -1,0 +1,84 @@
+{
+  "id": 2359,
+  "subject": "Return and Refund - Order SSN2154",
+  "description_text": "Hello,\r\n\r\nI just received my Plus X pedals and noticed the throttle was not working\r\nproperly. After examining the load cell spring and its support more\r\nclosely, it was found that they were broken. I've attached images of this\r\nissue.\r\n\r\nI'd like to initiate a return and request a full refund for the entire\r\norder. I do not wish to get a replacement.\r\n\r\nPlease let me know if you need any additional information from me.\r\n\r\nThank you,\r\nCorey Supel\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-08-06T05:06:38Z",
+  "updated_at": "2025-08-12T05:57:20Z",
+  "requester_id": 158002674065,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006353577,
+      "body_text": "Hi Corey Supel,    We apologize for the inconvenience caused. Your pedal was probably assembled by one of our temporary workers, who installed the wrong gasket, causing it to touch the limiter. We will refund you $50 as compensation and reship a new accelerator pedal. We sincerely apologize!",
+      "user_id": 158001343601,
+      "created_at": "2025-08-06T10:19:57Z",
+      "updated_at": "2025-08-06T10:19:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006363278,
+      "body_text": "Hi,\r\n\r\nI am requesting a full refund and I’d like to return the entire order of\r\nboth pedals and baseplate. I do not want a replacement pedal - I wish to\r\nreturn.\r\n\r\nThank you,\r\nCorey Supel\r\n\r\nOn Wed, Aug 6, 2025 at 6:20 AM service@simsonn.com ",
+      "user_id": 158002674065,
+      "created_at": "2025-08-06T11:56:50Z",
+      "updated_at": "2025-08-06T11:56:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006400729,
+      "body_text": "Hi Corey Supel,  We can replace the entire throttle assembly free of charge. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-06T13:50:01Z",
+      "updated_at": "2025-08-06T13:50:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006432994,
+      "body_text": "Hi,\r\n\r\nOkay, please proceed with the shipment and $50 refund as soon as possible.\r\nThank you\r\n\r\nCorey Supel\r\n\r\nOn Wed, Aug 6, 2025 at 9:50 AM service@simsonn.com ",
+      "user_id": 158002674065,
+      "created_at": "2025-08-06T17:22:15Z",
+      "updated_at": "2025-08-06T17:22:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006471180,
+      "body_text": "Hi Corey Supel,    Thank you for your understanding. We have refunded your payment and arranged for a replacement. We apologize for any inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-07T09:40:49Z",
+      "updated_at": "2025-08-07T09:40:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006722466,
+      "body_text": "Hi,\r\n\r\nDo you have tracking information on this replacement yet?\r\n\r\nCorey\r\n\r\nOn Thu, Aug 7, 2025 at 5:41 AM service@simsonn.com ",
+      "user_id": 158002674065,
+      "created_at": "2025-08-11T23:47:08Z",
+      "updated_at": "2025-08-11T23:47:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006727444,
+      "body_text": "Hi Corey Supel, ​  Here is your shipping tracking link:  https://t.17track.net/en#nums=SF6045844311212",
+      "user_id": 158001343601,
+      "created_at": "2025-08-12T05:57:19Z",
+      "updated_at": "2025-08-12T05:57:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

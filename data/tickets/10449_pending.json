@@ -1,0 +1,104 @@
+{
+  "id": 10449,
+  "subject": "Pedal plate",
+  "description_text": "I recently ordered a set of the plus X pedals and I noticed that they didn’t come with a pedal plate. Was it forgotten in shipping or does it not come with one?\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-09T22:37:36Z",
+  "updated_at": "2026-01-11T03:48:15Z",
+  "requester_id": 158009009684,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016657032,
+      "body_text": "Hi Edan Cohen,  Please provide your order number, and I’ll check whether the order includes the baseplate or if it was shipped separately due to temporary stock shortages. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-10T03:45:17Z",
+      "updated_at": "2026-01-10T03:45:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016659452,
+      "body_text": "SSN5599\r\n\r\n\r\nOn Fri, Jan 9, 2026 at 10:45 PM service@simsonn.com ",
+      "user_id": 158009009684,
+      "created_at": "2026-01-10T04:11:00Z",
+      "updated_at": "2026-01-10T04:11:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016766436,
+      "body_text": "Hi Edan Cohen,  I’ve checked your order SSN5599, and it does not include a baseplate. The specification clearly states “without Baseplate”. If you need one, you can purchase the baseplate separately. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T02:54:05Z",
+      "updated_at": "2026-01-11T02:54:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016766747,
+      "body_text": "I saw that it is $50 more to add the baseplate to the pedal set but $80\r\nseparately? Is there any way you can discount the base plate to the same\r\nprice as if I was to add it to the pedals?\r\n\r\nOn Sat, Jan 10, 2026 at 9:54 PM service@simsonn.com ",
+      "user_id": 158009009684,
+      "created_at": "2026-01-11T02:58:09Z",
+      "updated_at": "2026-01-11T02:58:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016767639,
+      "body_text": "Hi Edan Cohen,       The shipping cost calculation is different for split shipments, and since each package is quite heavy, the shipping cost is correspondingly higher. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T03:13:30Z",
+      "updated_at": "2026-01-11T03:13:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016767692,
+      "body_text": "The shipping isn’t free either way I paid for shipping on the order\r\n\r\nOn Sat, Jan 10, 2026 at 10:13 PM service@simsonn.com ",
+      "user_id": 158009009684,
+      "created_at": "2026-01-11T03:14:45Z",
+      "updated_at": "2026-01-11T03:14:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016769341,
+      "body_text": "Hi Edan Cohen,    Our operations team has confirmed that the shipping cost is set correctly. The base shipping fee for one shipment with two items is different from that for a single item per shipment. Shipping items separately results in a higher cost, in accordance with the logistics carrier’s pricing rules.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T03:43:57Z",
+      "updated_at": "2026-01-11T03:43:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016769410,
+      "body_text": "Is there any discount at all that can be applied?\r\n\r\nOn Sat, Jan 10, 2026 at 10:44 PM service@simsonn.com ",
+      "user_id": 158009009684,
+      "created_at": "2026-01-11T03:45:23Z",
+      "updated_at": "2026-01-11T03:45:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016769589,
+      "body_text": "Hi Edan Cohen,  Our baseplate has a very limited profit margin, and the shipping cost is quite high, so unfortunately we’re not able to offer a discount. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T03:48:13Z",
+      "updated_at": "2026-01-11T03:48:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

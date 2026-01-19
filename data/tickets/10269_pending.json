@@ -1,0 +1,24 @@
+{
+  "id": 10269,
+  "subject": "Simsonn pedals F1 2025",
+  "description_text": "Hi team,\r\n\r\nI'm having trouble getting F1 2025 to recognise my brake pedal inputs.\r\n\r\nIt can see that I'm pressing the brake but it does not brake or show any\r\nbrake pedal in calibration. The accelerator works perfectly.\r\n\r\nDo you have any tips to help me with this?\r\n\r\nI've used your software and simhub software.\r\n\r\nI'm eager to get this working and show my friends how good your pedals are.\r\n\r\nKind regards,\r\nBill.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-08T05:04:09Z",
+  "updated_at": "2026-01-08T05:53:13Z",
+  "requester_id": 158008979013,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016280567,
+      "body_text": "Hi Bill E,  You can adjust the offset in the software, which will shift all pedals’ white signals close to 0%, and then recalibrate the pedals. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-08T05:53:13Z",
+      "updated_at": "2026-01-08T05:53:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

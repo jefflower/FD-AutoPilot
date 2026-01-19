@@ -1,0 +1,74 @@
+{
+  "id": 2145,
+  "subject": "Simsonn Order Confirmation #SSN2172",
+  "description_text": "Hello, our German warehouse is out of stock, and we expect the goods to arrive in early August. We can ship from China or wait for the overseas warehouse to receive the goods and then ship them to you. Which option would you prefer?",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-31T08:39:54Z",
+  "updated_at": "2025-07-31T10:19:07Z",
+  "requester_id": 158002467781,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005882542,
+      "body_text": "Hello, \r\nI would perfere whatever the faster option might be. So feel free to ship from China if this is the fastest option and no tarrifs apply for me. \r\nThank you for reaching out and for your efforts!\r\n\r\nBest, Severin\r\n\r\n> ",
+      "user_id": 158002467781,
+      "created_at": "2025-07-31T09:42:53Z",
+      "updated_at": "2025-07-31T09:42:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005882548,
+      "body_text": "Hi Severinlechner,    Shipping from China will be faster, but there is a chance that customs duties will be charged.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-31T09:44:27Z",
+      "updated_at": "2025-07-31T09:44:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005883522,
+      "body_text": "Okay, would you be willing to cover eventuall costs?\r\notherwise, in which time frame would the pedals arive when shipped from the warehouse?\r\n\r\n> ",
+      "user_id": 158002467781,
+      "created_at": "2025-07-31T09:49:11Z",
+      "updated_at": "2025-07-31T09:49:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005884794,
+      "body_text": "Hi Severinlechner,     We usually share part of the costs, and the German warehouse is expected to arrive on the 5th.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-31T09:53:54Z",
+      "updated_at": "2025-07-31T09:53:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005887084,
+      "body_text": "Ah okay great! thank you for the information. \r\nIt is fine if you ship it on the 5th or the 6th from Germany. \r\nThanks for the transparency - looking forward to your product!\r\n\r\n\r\n> ",
+      "user_id": 158002467781,
+      "created_at": "2025-07-31T10:17:55Z",
+      "updated_at": "2025-07-31T10:17:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005887091,
+      "body_text": "Hi Severinlechner,    Okay, thank you for your understanding.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-31T10:19:06Z",
+      "updated_at": "2025-07-31T10:19:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

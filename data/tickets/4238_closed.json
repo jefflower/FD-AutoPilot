@@ -1,0 +1,24 @@
+{
+  "id": 4238,
+  "subject": "Order #SSN2666",
+  "description_text": "Goodmorning,\r\n\r\nIs it possible to re-send Order #SSN2666\r\nto the following address?\r\n\r\nErik van Empelen\r\nCelebesstraat 52\r\n5014 BS Tilburg\r\n\r\nThis order did not delivered because of missing shipping adress details.\r\n\r\nThank you so much.\r\n\r\nKind regards,\r\n\r\nErik van Empelen\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-09-29T09:25:23Z",
+  "updated_at": "2025-10-07T09:21:49Z",
+  "requester_id": 158005152642,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010007110,
+      "body_text": "此工单已关闭并合并至工单 4522。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-07T09:21:49Z",
+      "updated_at": "2025-10-07T09:21:49Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

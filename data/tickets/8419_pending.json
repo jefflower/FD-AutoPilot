@@ -1,0 +1,84 @@
+{
+  "id": 8419,
+  "subject": "Fwd: Regarding shipping",
+  "description_text": "---------- Forwarded message ---------\r\nFrom: Reinis <reinisemilsa@gmail.com>\r\nDate: Mon, Dec 15, 2025, 12:25\r\nSubject: Re: Regarding shipping\r\nTo: <support@simsonn.com>\r\n\r\n\r\nHi there,\r\n\r\nI’m just following up on my previous email regarding the pedal order, as I\r\nhaven’t heard back yet. It’s been a few days and I wanted to check in.\r\n\r\nCould you please let me know when I can expect the pedals to ship?\r\n\r\nThanks\r\n\r\nOn Wed, 10 Dec 2025 at 17:40, Reinis <reinisemilsa@gmail.com> wrote:\r\n\r\n> Hello, I was wondering when i can expect the pedals to be shipped? And\r\n> does the 8-12 day shipping time include the time it takes to ship?\r\n>\r\n> Thanks.\r\n>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-16T13:09:46Z",
+  "updated_at": "2025-12-24T10:05:37Z",
+  "requester_id": 158007743003,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014504714,
+      "body_text": "Hi there,\r\n\r\nI’m just following up on my previous email regarding the pedal order, as I\r\nhaven’t heard back yet. It’s been a few days and I wanted to check in.\r\n\r\nCould you please let me know when I can expect the pedals to ship?\r\n\r\nThanks\r\n\r\n",
+      "user_id": 158007743003,
+      "created_at": "2025-12-15T10:26:05Z",
+      "updated_at": "2025-12-15T10:26:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014610119,
+      "body_text": "ID 为 7900 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T02:16:54Z",
+      "updated_at": "2025-12-17T02:16:54Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014610120,
+      "body_text": "合并来自工单7900  \n      主题: Regarding shipping  \n      描述:  Hello, I was wondering when i can expect the pedals to be shipped? And does the 8-12 day shipping time include the time it takes to ship?   Thanks.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T02:16:54Z",
+      "updated_at": "2025-12-17T02:16:54Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014614728,
+      "body_text": "Hi Reinis,    We sincerely apologize for any inconvenience caused. Our German warehouse is currently out of stock, but we expect to restock today. We will ship your order via DHL and refund the additional shipping fees you paid.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-17T06:28:33Z",
+      "updated_at": "2025-12-17T06:28:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014713581,
+      "body_text": "Can you guys give me a date when you expect to ship it, and a date when I\r\ncan expect it to arrive?\r\n\r\nCheers,\r\nReinis\r\n\r\nOn Wed, 17 Dec 2025 at 08:28, service@simsonn.com ",
+      "user_id": 158007743003,
+      "created_at": "2025-12-18T18:37:52Z",
+      "updated_at": "2025-12-18T18:37:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014930508,
+      "body_text": "Hello?\r\n\r\n",
+      "user_id": 158007743003,
+      "created_at": "2025-12-22T18:49:19Z",
+      "updated_at": "2025-12-22T18:49:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015029927,
+      "body_text": "Hi Reinis,    We apologize for the delayed response. Your order was scheduled for shipment from our German warehouse, but due to shipping delays, the goods arrived later than expected. They arrived yesterday, and we have now shipped your order and updated your shipping notification.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-24T10:05:37Z",
+      "updated_at": "2025-12-24T10:05:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

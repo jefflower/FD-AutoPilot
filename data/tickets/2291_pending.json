@@ -1,0 +1,64 @@
+{
+  "id": 2291,
+  "subject": "Pedals not working correctly",
+  "description_text": "Hello,\r\n\r\nI just got the VAM modules and the new controller box. Now my Pedals\r\nare recognized in the software and i can calibrate them.\r\n\r\nUnfortunately they don't work in any game.\r\n\r\n In the attached picture you can see that the software is reacting to\r\nthe pedal input (i pressed the clutch for around 50%)\r\n\r\nThe pedals do not get recognized by any game however. Is there any fix?\r\n\r\nI have updated the firmware of the pedals as well as the Simsonn\r\nManager to the latest version.\r\n\r\nCheers\r\nRicardo Edelmann\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-08-04T20:56:59Z",
+  "updated_at": "2025-08-09T15:52:07Z",
+  "requester_id": 158002607093,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006264020,
+      "body_text": "Hi Ricardo Edelmann,  If the calibration was successful, the game should be able to recognize the device directly. Did you download your game from Steam? You can also test with Assetto Corsa (AC) and Assetto Corsa Competizione (ACC). If it still doesn’t work, please use the VKB tool to check and take a screenshot of the SIMSONN device and its test interface, then send it to me so I can check where the issue is. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-05T12:42:32Z",
+      "updated_at": "2025-08-05T12:42:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006353479,
+      "body_text": "Hello, After i unplugged, replugged and restartet my computer i can't get the pedals to work in the Software anymore. All axis but the rX axis are fully pressed at all times.      Nothing on the configuration changed. i tried different usb ports without any changes.",
+      "user_id": 158002607093,
+      "created_at": "2025-08-06T10:08:04Z",
+      "updated_at": "2025-08-06T10:08:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158006402561,
+      "body_text": "Hi Ricardo Edelmann,   Please go to the “Update” page in the settings and select “Manual Firmware Update”, then navigate to Pedals → Firmware → Pedals → plusX.sfu to perform the update. After updating, check the rx axis using VKB. Under normal conditions, the rx axis should not display any output data from the control box; only x, y, and z axes should be active. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-06T14:04:01Z",
+      "updated_at": "2025-08-06T14:04:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006441994,
+      "body_text": "Yeah that has worked. Pedals are responding correctly again but now the\r\nvibration motors (VAM) are not working anymore.\r\n [image: image.png]\r\nThey are shown as connected but the vibration button does nothing and they\r\ndo nothing Ingame. :)\r\n\r\n\r\n\r\nOn Wed, 6 Aug 2025 at 16:04, support@simsonn.com ",
+      "user_id": 158002607093,
+      "created_at": "2025-08-06T22:40:42Z",
+      "updated_at": "2025-08-06T22:40:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006604631,
+      "body_text": "Hi Ricardo Edelmann,     It’s possible the update wasn’t successful — CPU2 should display as 2.0.0. Try unplugging and reconnecting the USB; it should then display correctly and function normally. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-09T15:52:06Z",
+      "updated_at": "2025-08-09T15:52:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

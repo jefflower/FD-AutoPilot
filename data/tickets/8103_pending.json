@@ -1,0 +1,74 @@
+{
+  "id": 8103,
+  "subject": "Order #SSN3742",
+  "description_text": "Hello,\r\nI have bought a shifter - SIMSONN PC USB 6+R H Simulator Gear Shifter from\r\nyour shop and received it on 2025-12-06. Today I was playing a rally sim\r\nand somehow it got stuck. It seems that the shifter mechanism jumped out of\r\nthe gated area and damaged the internals of it. Now the PC does not\r\nrecognize it anymore and it does not come up in the device list. When going\r\nthrough gears, it starts to flash button LEDs rapidly. I included a video\r\nof it acting up.\r\n\r\nPedals are great and work perfectly.\r\n\r\nI would like to ask for a refund if possible and would like to send it back\r\nto you.\r\n\r\nMany thanks\r\nM. R.\r\n\r\n",
+  "status": 3,
+  "priority": 2,
+  "created_at": "2025-12-12T19:34:30Z",
+  "updated_at": "2025-12-18T11:25:27Z",
+  "requester_id": 158007788292,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014471572,
+      "body_text": "Hi Breevm Deity,   Please first remove the handle, then unscrew the six M4 screws on the bottom and take photos for us to review. We will identify the cause of the issue and, depending on the situation, arrange a refund or send you a replacement. This will also help us identify and improve the problem. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-14T02:27:21Z",
+      "updated_at": "2025-12-14T02:27:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014487522,
+      "body_text": "Hello,\r\nI am sending photos of the damage that the shaft done to the PCB.\r\n\r\nM.R.\r\n\r\n2025-12-14, sk 04:27, service@simsonn.com ",
+      "user_id": 158007788292,
+      "created_at": "2025-12-14T17:23:49Z",
+      "updated_at": "2025-12-14T17:23:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014621900,
+      "body_text": "Hello,\r\nIs there any more information on the refund?\r\n\r\n2025-12-14, sk 19:23, Breevm Deity <mcrexltu323@gmail.com> rašė:\r\n\r\n> Hello,\r\n> I am sending photos of the damage that the shaft done to the PCB.\r\n>\r\n> M.R.\r\n>\r\n> 2025-12-14, sk 04:27, service@simsonn.com ",
+      "user_id": 158007788292,
+      "created_at": "2025-12-17T10:29:17Z",
+      "updated_at": "2025-12-17T10:29:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014621901,
+      "body_text": "Hi Breevm Deity,  We can send you a replacement motherboard for the 6-speed shifter so you can swap it. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T10:29:23Z",
+      "updated_at": "2025-12-17T10:29:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014622463,
+      "body_text": "That would be great! I will be waiting for it, and will inform you after\r\nthe replacement if everything went OK.\r\n\r\n2025-12-17, tr 12:29, service@simsonn.com ",
+      "user_id": 158007788292,
+      "created_at": "2025-12-17T10:48:57Z",
+      "updated_at": "2025-12-17T10:48:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014686054,
+      "body_text": "Hi Breevm Deity,    Here is your tracking link.   https://t.17track.net/en#nums=YT2535200708052986",
+      "user_id": 158001343601,
+      "created_at": "2025-12-18T11:25:24Z",
+      "updated_at": "2025-12-18T11:25:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

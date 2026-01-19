@@ -1,0 +1,35 @@
+{
+  "id": 831,
+  "subject": "RGB",
+  "description_text": "你好，我刚收到 Simsonn Pro X 踏板、油门和刹车，请问需要额外连接才能使用RGB功能吗？我还需要做什么才能实现？谢谢你。发自安卓设备",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-06-25T17:25:19Z",
+  "updated_at": "2025-06-26T23:50:44Z",
+  "requester_id": 158001783938,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003845690,
+      "body_text": "你好 Joel Bandera，踏板插入电源后即可开始工作，默认灯光效果为“流动光”。您可以下载2.0.8版本的管理软件，并按照用户手册自定义灯光效果。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-26T09:36:09Z",
+      "updated_at": "2025-06-26T09:36:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003933119,
+      "body_text": "谢谢你，我收到了..感谢您的及时回复.... 发自安卓设备",
+      "user_id": 158001783938,
+      "created_at": "2025-06-26T18:50:29Z",
+      "updated_at": "2025-06-26T18:50:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

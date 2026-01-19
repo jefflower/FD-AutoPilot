@@ -1,0 +1,35 @@
+{
+  "id": 9479,
+  "subject": "零件缺失",
+  "description_text": "您好，我最近在亚马逊订购了 simsonn Plus X Black P2-H2-Plate，但收到时没有底板。联系亚马逊客服后，我得到了一个毫无帮助的回复，对方告诉我，因为他们那边图片上没有看到底板，所以无法帮助我（尽管底板确实存在）。随附的是我的订单、我收到的所有物品、客服回复以及一个遇到类似问题的人。请帮忙，谢谢。",
+  "status": 4,
+  "priority": 3,
+  "created_at": "2025-12-29T17:08:43Z",
+  "updated_at": "2026-01-04T06:27:09Z",
+  "requester_id": 158008810785,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015306646,
+      "body_text": "Hi Lukas Safko, 1ZJ201H40306155833 对于给您带来的不便，我们深表歉意。我们已从美国仓库为您重新发货，这是您的追踪号：1ZJ201H40306155833，承运商是 UPS，您可以通过 https://www.ups.com/track 进行追踪。我们刚刚检查了您的订单；亚马逊的图片系统可能存在问题。您的订单页面上的图片显示 P2-H2 没有底板。",
+      "user_id": 158007774607,
+      "created_at": "2025-12-31T10:15:12Z",
+      "updated_at": "2025-12-31T10:15:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015312578,
+      "body_text": "好的，谢谢您的帮助。2025年12月31日星期三上午5:15，来自 service@simsonn.com 的邮件。",
+      "user_id": 158008810785,
+      "created_at": "2025-12-31T13:42:15Z",
+      "updated_at": "2025-12-31T13:42:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

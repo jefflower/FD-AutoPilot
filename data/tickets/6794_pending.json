@@ -1,0 +1,94 @@
+{
+  "id": 6794,
+  "subject": "Inquiry About Purchasing a Short Travel Spring",
+  "description_text": "Hello,\r\n\r\nI’ve recently looked at your upgrade kits and noticed the short travel\r\nspring included in them.\r\nI would like to know if it is possible to purchase the short travel spring\r\non its own, without buying the full upgrade kit.\r\n\r\nThank you in advance for your help.\r\n\r\nKind regards,\r\nMallory Bouchard\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-26T14:09:46Z",
+  "updated_at": "2025-11-27T10:47:37Z",
+  "requester_id": 158007340263,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012995152,
+      "body_text": "Hi Mallory Bouchard,    You can purchase an elastomer and note that you need to replace the short spring.  https://www.simsonn.com/products/elastomer",
+      "user_id": 158001343601,
+      "created_at": "2025-11-27T07:05:41Z",
+      "updated_at": "2025-11-27T07:05:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012998086,
+      "body_text": "Hello,  Thank you for your reply. However, I would specifically like to purchase only the short travel spring, not a full upgrade   kit elastomer.  Is it possible to order it separately?  Thank you in advance for your help.  Kind regards,",
+      "user_id": 158007340263,
+      "created_at": "2025-11-27T07:46:04Z",
+      "updated_at": "2025-11-27T07:46:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158012998262,
+      "body_text": "Hi Mallory Bouchard,    We do not sell springs separately. Its price is similar to this elastomer. You may purchase one at your convenience and note “replacement” in the order comments. We will ship the product you require.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-27T07:52:59Z",
+      "updated_at": "2025-11-27T07:52:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012998426,
+      "body_text": "So, if I understand correctly, I purchase elastomers from you and note in the comments ‘short spring replacement,’ and instead of sending me the elastomers, you send me a short travel spring?      I have included a photo of the spring short to ensure that we are referring to the same spring.",
+      "user_id": 158007340263,
+      "created_at": "2025-11-27T08:03:23Z",
+      "updated_at": "2025-11-27T08:03:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158012998871,
+      "body_text": "",
+      "user_id": 158001343601,
+      "created_at": "2025-11-27T08:18:24Z",
+      "updated_at": "2025-11-27T08:18:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012998954,
+      "body_text": "Also, if I order through your AliExpress store, would that cause any issues? For me, the shipping is free on AliExpress, which is more convenient.",
+      "user_id": 158007340263,
+      "created_at": "2025-11-27T08:21:44Z",
+      "updated_at": "2025-11-27T08:21:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158012999096,
+      "body_text": "Hi Mallory Bouchard,    You need to contact the store manager.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-27T08:27:21Z",
+      "updated_at": "2025-11-27T08:27:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012999321,
+      "body_text": "I wanted to let you know that I have left a message for the store manager to confirm the arrangement. If their answer is not positive, I will come back to you so that we can proceed with the order directly through your website.  Thank you again for your help.",
+      "user_id": 158007340263,
+      "created_at": "2025-11-27T08:37:06Z",
+      "updated_at": "2025-11-27T08:37:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    }
+  ]
+}

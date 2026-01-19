@@ -1,0 +1,34 @@
+{
+  "id": 11067,
+  "subject": "Vam (Pro) Haptic Feedback support with third party prodcuts",
+  "description_text": "Hey,\r\nI wanted to aks if the Product \"Simsonn VAM Pro Linear Motor\" with the\r\n\"Simsonn Plus X Pedal Control Box\" is compatible with the Moza R5 Wheelbase\r\nand SR-P Lite Pedals. So if i Want to use your products can they run\r\nindependently, without having any Simsonn Pedals? Do I have to connect the\r\nMoza Pedals with the control Unit or do the motors and the control unit\r\nwork with the correct feedback without connecting pedals to the control\r\nunit?\r\n\r\nSincerely,\r\n\r\nM.K\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-16T10:28:41Z",
+  "updated_at": "2026-01-17T07:05:35Z",
+  "requester_id": 158009288335,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017259716,
+      "body_text": "Hi Mikolaj Kadluczka,    Yes, they are compatible. All you need is a new Plus X control box.  But mounting brackets may not be compatible.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T11:56:39Z",
+      "updated_at": "2026-01-16T11:56:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017262672,
+      "body_text": "If I understand it correctly, I need the motors a power Supply and ONE\r\nControl Unit? The Moza Pedal connection stays in the wheelbase and I only\r\nconnect the VAM Motors to the Control Unit and plug it into the PC? How\r\ndoes the feedback work, do the motors get the feedback from the game or\r\ndirectly from the connected pedals?  If I want to buy the VAM Pro Motors,\r\ndo they work with the Plus X Control Unit or only with the Pro X Ultra\r\nControl Unit.\r\nWhich Software do I use to calibrate the Motors, Simsonn Software or would\r\nbe Simhub better for Standalone Use (Without any other Simsonn\r\nPeripherals)? Do they need Game support or does it work regardless of the\r\nGame?\r\nThe mounting is my smallest concern, today you can easily 3D-print such\r\nthing.\r\nMy last question regards the differences between the VAM Motors and the VAM\r\nPro? What is the difference between these two motors?\r\n\r\n",
+      "user_id": 158009288335,
+      "created_at": "2026-01-16T12:39:49Z",
+      "updated_at": "2026-01-16T12:39:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

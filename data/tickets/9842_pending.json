@@ -1,0 +1,24 @@
+{
+  "id": 9842,
+  "subject": "Order # SSN5213",
+  "description_text": "Good afternoon,\r\n\r\nI am reaching out to inquire about my order number SSN5213.   I placed the\r\norder on December 23rd.  Do you have any details on when the item may be\r\narriving?   It is a shifter for my grandson.   I do not have any tracking\r\ninformation as of yet.  Has it been shipped yet?  If not, do you have any\r\ndetails regarding my order?\r\n\r\nLooking forward to hearing from you soon.  Thank you for your time and\r\nattention in this matter.\r\n\r\nHave a wonderful weekend!\r\n\r\nDorinda Thompson, LMSW\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-02T23:32:58Z",
+  "updated_at": "2026-01-04T01:14:12Z",
+  "requester_id": 158008880817,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015545169,
+      "body_text": "Hi Dorinda Thompson,  Your order has already been shipped. You can track the shipment using the tracking number. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-04T01:14:12Z",
+      "updated_at": "2026-01-04T01:14:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

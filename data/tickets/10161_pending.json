@@ -1,0 +1,44 @@
+{
+  "id": 10161,
+  "subject": "Plus X Throttle",
+  "description_text": "Hello,\r\nI have several Simsonn pedal sets. After updating the firmware, My Plus-X throttle pedal will not return to full stop. On the simsonn manager, it just \"hums\" when I calibrate them, it shows that it's at 2%.  I then move to iRacing and when I calibrate through the UI, it also shows as partially engaged.\r\nI'm attaching the purchase info below. I absolutely love all of my Simsonn equipment & have referred many people to purchase from you. Looking forward to your reply and maybe seeing someone from your company, at the 1st Sim Expo in the United States in May of this year in Charlotte NC. I will be displaying my rigs and will be equipped with 3 sets of Simsonn pedals & peripherals.\r\nThank you,\r\nGary\r\n\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-07T02:39:50Z",
+  "updated_at": "2026-01-08T02:01:41Z",
+  "requester_id": 158008962274,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016059916,
+      "body_text": "Hi Gary Lederman,    If you have adjusted the mechanical structure of the throttle pedal, please click the Offset button in the software and follow the on-screen steps to reset the initial pressure signal (make sure the white bar returns to 0%), then recalibrate the pedal.  If the issue persists, please record a video and share it with us via Google Drive, making sure the link access is set to viewable, so we can further review and assist you.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T05:01:31Z",
+      "updated_at": "2026-01-07T05:01:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016193362,
+      "body_text": "Worked Perfectly. Thanks very much. If you can, is there a chance that the  SQ  Sequential Shifter will be available?\r\n\r\n________________________________\r\n",
+      "user_id": 158008962274,
+      "created_at": "2026-01-07T19:24:02Z",
+      "updated_at": "2026-01-07T19:24:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016249166,
+      "body_text": "Hi Gary Lederman,  It will take approximately 1–3 weeks. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-08T02:01:41Z",
+      "updated_at": "2026-01-08T02:01:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

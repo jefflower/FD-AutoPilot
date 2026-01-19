@@ -1,0 +1,114 @@
+{
+  "id": 1352,
+  "subject": "pedals not being dected",
+  "description_text": "i bought your sim pro plus pedals a while ago and had them working fine but\r\nwhen i tried to upgrade to the new software they felt weird so i'm\r\ntrying to go back to the simpedalsconfigv4 software the one i had be using\r\nand now when i launch the application it doesn't detect my pedals and says\r\ndevice discounted... yes they are plugged in\r\n\r\n",
+  "status": 4,
+  "priority": 3,
+  "created_at": "2025-07-08T22:04:14Z",
+  "updated_at": "2025-07-09T22:17:29Z",
+  "requester_id": 158001960213,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004483625,
+      "body_text": "Hi Trevor Groh,    What issue did you experience after upgrading to the new software? Could you please describe it in more detail?  If you want to switch back to the V4 version, you’ll need to downgrade the firmware to plus.1.7.1.sfu using the new software first. After that, SimPedalsConfigV4 will work properly.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-08T22:08:28Z",
+      "updated_at": "2025-07-08T22:08:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004484278,
+      "body_text": "when i launch the v4 software in the bottom right it says device disscontected if i need to downgrade the firmware can you provide a link to the sfu file and also how would i do so",
+      "user_id": 158001960213,
+      "created_at": "2025-07-08T23:46:13Z",
+      "updated_at": "2025-07-08T23:46:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158004484493,
+      "body_text": "Hi Trevor Groh,    The original upgrade directory already includes the necessary files for downgrading.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-09T00:28:51Z",
+      "updated_at": "2025-07-09T00:28:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004484590,
+      "body_text": "i understnad i have found the file but how do i install because the simmson manager and simmson v4 software both have the pedals listed as disconnected even though its plugged in... how do i install the new firmware",
+      "user_id": 158001960213,
+      "created_at": "2025-07-09T00:53:35Z",
+      "updated_at": "2025-07-09T00:53:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158004484650,
+      "body_text": "Hi Trevor Groh,     I can assist you remotely via Todesk. No registration is needed — just provide your ID and temporary password.     https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-07-09T01:04:40Z",
+      "updated_at": "2025-07-09T01:04:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004484810,
+      "body_text": "i dont feel comfortable with that just tell me the steps i have computer knowledge",
+      "user_id": 158001960213,
+      "created_at": "2025-07-09T01:28:38Z",
+      "updated_at": "2025-07-09T01:28:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158004486092,
+      "body_text": "Hi Trevor Groh,  For the Pro Plus, you can update directly by going to the update interface → Manual Firmware Update → navigate to the \"pedals-firmware\" folder → then the \"pedals\" folder → and select the \"plus-1.7.1.sfu\" file. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-09T05:47:52Z",
+      "updated_at": "2025-07-09T05:47:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004493473,
+      "body_text": "ok i understand but its greyed out because neither software detects the pedals as being plugged in so it wont let me update the pedals manually ",
+      "user_id": 158001960213,
+      "created_at": "2025-07-09T15:59:48Z",
+      "updated_at": "2025-07-09T15:59:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158004493481,
+      "body_text": "is there like a hard reset button directly on the pedals?",
+      "user_id": 158001960213,
+      "created_at": "2025-07-09T16:00:12Z",
+      "updated_at": "2025-07-09T16:00:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158004493582,
+      "body_text": "never mind i messed with some things and fixed it... thanks for your help",
+      "user_id": 158001960213,
+      "created_at": "2025-07-09T16:04:56Z",
+      "updated_at": "2025-07-09T16:04:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    }
+  ]
+}

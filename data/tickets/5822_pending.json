@@ -1,0 +1,24 @@
+{
+  "id": 5822,
+  "subject": "Shipping",
+  "description_text": "Dear,\r\n\r\nI am from Brazil and I want to consult if you are currently shipping to my country. I also would like to ask if it would be possible to write the customs invoice with a lower declared value to assist with eventual taxes?\r\n\r\nBest regards,\r\nPedro Sacca\r\nMestre em Engenharia Mecânica - UNICAMP\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-08T15:50:15Z",
+  "updated_at": "2025-11-08T16:29:07Z",
+  "requester_id": 158006826715,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011974883,
+      "body_text": "Hi Pedro Sacca,    Yes, we can ship to Brazil and declare it as low value for you, approximately $49. If you prefer a different declared value, please let us know.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-08T16:29:07Z",
+      "updated_at": "2025-11-08T16:29:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

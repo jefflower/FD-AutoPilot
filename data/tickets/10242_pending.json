@@ -1,0 +1,24 @@
+{
+  "id": 10242,
+  "subject": "Shipping ordernumber SSN5753",
+  "description_text": "Dear Miss/mr,\r\n\r\nI placed an order this Sunday, it still hasn’t been shipped. When will it be shipped? On the site it says between 1-2 days. This also because I paid for express shipping. Ordernumber: SSN5753\r\n\r\nKIND REGARDS,\r\n\r\nARD VAN VOORDEN \r\nVerstuurd vanaf mijn iPhone\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-07T20:15:20Z",
+  "updated_at": "2026-01-09T11:50:30Z",
+  "requester_id": 158008973483,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016532019,
+      "body_text": "Hi Ard van Voorden,    We apologize for the delay. The shipment is expected to arrive at our German warehouse on the 12th, at which time we will be able to ship your order.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-09T11:50:30Z",
+      "updated_at": "2026-01-09T11:50:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

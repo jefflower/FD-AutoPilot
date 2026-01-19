@@ -1,0 +1,24 @@
+{
+  "id": 9291,
+  "subject": "Order #SSN5380 Change of shipping address",
+  "description_text": "Hi I have made an error in my shipping address for this order, it had\r\ndefaulted to my old address, could I please have this updated to my new\r\naddress (409A 12 Nancarrow Avenue , Ryde 2112 NSW Australia) which is my\r\nnew default address\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-27T11:58:12Z",
+  "updated_at": "2025-12-31T09:33:03Z",
+  "requester_id": 158008791855,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015303602,
+      "body_text": "Hi Armah Okai,    We apologize for the delayed response. Your order has already been shipped, and we are attempting to intercept it.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-31T09:33:03Z",
+      "updated_at": "2025-12-31T09:33:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

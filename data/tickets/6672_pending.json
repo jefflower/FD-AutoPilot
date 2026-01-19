@@ -1,0 +1,24 @@
+{
+  "id": 6672,
+  "subject": "Pro X Ultra Pedals problems",
+  "description_text": "Hi\r\n\r\nI have just received your Pro X Ultra pedals.\r\n\r\nWhen i open up the Simsonn software, the Simsonn Flasher is showing my main controller in upgrade mode, i have pressed the upgrade switch and it has done nothing.\r\n\r\nPlease can you help\r\n\r\nThank you\r\n\r\nEdward Knight\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-24T18:09:44Z",
+  "updated_at": "2025-11-25T01:42:13Z",
+  "requester_id": 158007301886,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012855884,
+      "body_text": "Hi edd knight,     You can release the upgrade button on the main controller and then reconnect the USB. The device should then boot into normal mode.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-25T01:42:13Z",
+      "updated_at": "2025-11-25T01:42:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

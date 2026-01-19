@@ -1,0 +1,54 @@
+{
+  "id": 8278,
+  "subject": "bonjour depuis la dernière mise à jour mon pédalier n'est plus reconnu",
+  "description_text": "",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-15T09:40:28Z",
+  "updated_at": "2025-12-17T07:55:25Z",
+  "requester_id": 158007813392,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014505075,
+      "body_text": "Hi Nek 47,    Please provide your order number.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-15T10:39:06Z",
+      "updated_at": "2025-12-15T10:39:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014505182,
+      "body_text": "I command with Amazon on july 2025\r\nEnvoyé de mon iPhone\r\n\r\n> Le 15 déc. 2025 à 11:39, support@simsonn.com a écrit :\r\n> \r\n> Please provide your order number.\r\n",
+      "user_id": 158007813392,
+      "created_at": "2025-12-15T10:43:23Z",
+      "updated_at": "2025-12-15T10:43:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014506138,
+      "body_text": "404-6049605-1100309 Voici le numéro de ma commande Amazon\r\n\r\nEnvoyé de mon iPhone\r\n\r\nLe 15 déc. 2025 à 11:39, support@simsonn.com a écrit :\r\n\r\n﻿\r\nHi Nek 47,\r\n\r\nPlease provide your order number.\r\n\r\n\r\n\r\n",
+      "user_id": 158007813392,
+      "created_at": "2025-12-15T11:16:09Z",
+      "updated_at": "2025-12-15T11:16:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014617221,
+      "body_text": "Hi Nek 47,     Please launch the latest version of SIMSONN Manager 2.1.2.  On the Plus X control box, press and hold the “Upgrade” button. While holding the button, unplug the USB cable from the computer and plug it back in. The software should then detect the device entering “SIMSONN Flasher mode”.  Next, in the software, go to: Settings → Update → Manual Firmware Update.  In the file selection window, choose: pedals-firmware → pedals-plusx.sfu.  Click “Start Update” and wait until the firmware is fully written. Do not disconnect the USB cable or close the software during the update process.  Additionally, please connect the USB cable directly to a rear USB 3.0 (blue) port on the PC. Do not use a USB hub or a USB 2.0 port.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T07:55:25Z",
+      "updated_at": "2025-12-17T07:55:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

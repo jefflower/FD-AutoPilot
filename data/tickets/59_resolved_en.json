@@ -1,0 +1,35 @@
+{
+  "id": 59,
+  "subject": "Re: Re: Pedal plate missing",
+  "description_text": "Hello, i still haven't received the pedal plate or any tracking information on the delivery, could you make sure it is on the way?",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-06-03T23:44:19Z",
+  "updated_at": "2025-06-09T02:47:30Z",
+  "requester_id": 158000954971,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002656387,
+      "body_text": "Hello, i would like to know if the problem has been checked and if the product has been shipped, i did receive and email but i still have no tracking code or any confirmation.\n\nThank you",
+      "user_id": 158000954971,
+      "created_at": "2025-06-07T06:47:12Z",
+      "updated_at": "2025-06-07T06:47:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002841175,
+      "body_text": "Hi Filipe Cunha,     Here is the SF International tracking number. The package was shipped on June 7th.  SF3172442478434",
+      "user_id": 158000445778,
+      "created_at": "2025-06-09T02:47:30Z",
+      "updated_at": "2025-06-09T02:47:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

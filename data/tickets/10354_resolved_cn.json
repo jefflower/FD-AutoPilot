@@ -1,0 +1,55 @@
+{
+  "id": 10354,
+  "subject": "关于 Plus X 踏板",
+  "description_text": "你好，我为你们预订了踏板，但震动辅助模块没有电源...你们能帮我想想办法吗？",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-08T22:49:42Z",
+  "updated_at": "2026-01-09T03:31:05Z",
+  "requester_id": 158008959473,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016452132,
+      "body_text": "你好 pedro simoes，如果你没有购买振动反馈马达，单独使用踏板时不需要额外的 24V 电源。只需将 USB 数据线连接到 USB 3.0 端口即可正常工作。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-09T01:09:55Z",
+      "updated_at": "2026-01-09T01:09:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016453508,
+      "body_text": "感谢您的回复。我确实购买了带振动反馈马达的踏板，网站上说如果捆绑购买踏板和振动反馈，则无需单独购买电源，它会随附在内。",
+      "user_id": 158008959473,
+      "created_at": "2026-01-09T01:22:41Z",
+      "updated_at": "2026-01-09T01:22:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016460187,
+      "body_text": "你好 pedro simoes，我看到你只购买了一个 VAM Pro，其中不包含电源。该产品需要带电源的套件才能正常运行。你目前有两个选择：从我们这里单独购买一个电源，或者在当地购买一个 24V / 3A、接口为 2.5 毫米的直流电源，也可以使用。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-09T02:23:38Z",
+      "updated_at": "2026-01-09T02:23:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016461977,
+      "body_text": "哦，好吧，那是我搞错了……嗯，谢谢你的时间，我很感激。",
+      "user_id": 158008959473,
+      "created_at": "2026-01-09T02:39:18Z",
+      "updated_at": "2026-01-09T02:39:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

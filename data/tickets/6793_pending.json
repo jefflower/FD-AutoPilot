@@ -1,0 +1,84 @@
+{
+  "id": 6793,
+  "subject": "Hello",
+  "description_text": "﻿\r\nSent from my iPhone\r\nI have been waiting almost a week now for my order. I haven’t even got a confirmation email, I took a screenshot of my order number. When i go to look up my order number it says it doesn’t exist. I also have a bank statement from where the money was transferred out. Please contact me so we can resolve this issue.\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-26T14:02:47Z",
+  "updated_at": "2025-11-26T23:10:14Z",
+  "requester_id": 158007340127,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012983346,
+      "body_text": "ID 为 6787, 6789, 6790, 6791 and 6792 的工单已被合并至该工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T23:08:08Z",
+      "updated_at": "2025-11-26T23:08:08Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158012983347,
+      "body_text": "合并来自工单6787  \n      主题: Hello  \n      描述:  Sent from my iPhone I have been waiting almost a week now for my order. I haven’t even got a confirmation email, I took a screenshot of my order number. When i go to look up my order number it says it doesn’t exist. I also have a bank statement from where the money was transferred out. Please contact me so we can resolve this issue.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T23:08:08Z",
+      "updated_at": "2025-11-26T23:08:08Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158012983349,
+      "body_text": "合并来自工单6789  \n      主题: Hello  \n      描述:  Sent from my iPhone I have been waiting almost a week now for my order. I haven’t even got a confirmation email, I took a screenshot of my order number. When i go to look up my order number it says it doesn’t exist. I also have a bank statement from where the money was transferred out. Please contact me so we can resolve this issue.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T23:08:08Z",
+      "updated_at": "2025-11-26T23:08:08Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158012983351,
+      "body_text": "合并来自工单6790  \n      主题: Hello  \n      描述:  Sent from my iPhone I have been waiting almost a week now for my order. I haven’t even got a confirmation email, I took a screenshot of my order number. When i go to look up my order number it says it doesn’t exist. I also have a bank statement from where the money was transferred out. Please contact me so we can resolve this issue.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T23:08:09Z",
+      "updated_at": "2025-11-26T23:08:09Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158012983353,
+      "body_text": "合并来自工单6791  \n      主题: Hello  \n      描述:  Sent from my iPhone I have been waiting almost a week now for my order. I haven’t even got a confirmation email, I took a screenshot of my order number. When i go to look up my order number it says it doesn’t exist. I also have a bank statement from where the money was transferred out. Please contact me so we can resolve this issue.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T23:08:09Z",
+      "updated_at": "2025-11-26T23:08:09Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158012983355,
+      "body_text": "合并来自工单6792  \n      主题: Hello  \n      描述:  Sent from my iPhone I have been waiting almost a week now for my order. I haven’t even got a confirmation email, I took a screenshot of my order number. When i go to look up my order number it says it doesn’t exist. I also have a bank statement from where the money was transferred out. Please contact me so we can resolve this issue.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T23:08:10Z",
+      "updated_at": "2025-11-26T23:08:10Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158012983406,
+      "body_text": "Hi Connor Fox,    Hello, there’s no need to worry. As long as the order was placed successfully, we will ship it according to the details. You may also provide the order date and amount, and I can help you look up the corresponding SSN order number.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T23:10:14Z",
+      "updated_at": "2025-11-26T23:10:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

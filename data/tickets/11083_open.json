@@ -1,0 +1,34 @@
+{
+  "id": 11083,
+  "subject": "Re: simsonn pro x ultra",
+  "description_text": "hi could you please respond to my emails please as i need help\r\n\r\nOn Tue, Jan 13, 2026 at 1:50 PM gary poole <garypooles06@gmail.com> wrote:\r\n\r\n> hi i have received my pedals but i have a problem with the rgb lights not\r\n> turning of when i power of my pc the rgb lights stay on i have made sure\r\n> that the bios settings are correct and that the erp is off and fast boot in\r\n> bios and windows 10 is set  Uncheck the box for Turn on fast start.\r\n>\r\n> after that it recomends\r\n>\r\n> If these steps do not work, the issue may be with the control box itself.\r\n> In this case, you should contact Simsonn Customer Support\r\n> <https://www.simsonn.com/tools/faq> for further assistance or potential\r\n> hardware replacement.\r\n>\r\n> could you help me please kind regards gary poole\r\n>\r\n>\r\n> Order #SSN5674\r\n>\r\n\r\n",
+  "status": 2,
+  "priority": 4,
+  "created_at": "2026-01-16T13:31:40Z",
+  "updated_at": "2026-01-17T07:11:40Z",
+  "requester_id": 158009299808,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017265078,
+      "body_text": "if i unplug the power cable it goes of when my pc switches of but if the ac\r\npower cable is plugged in it stays on till i unplug it hope that helps.\r\n\r\n",
+      "user_id": 158009299808,
+      "created_at": "2026-01-16T13:33:23Z",
+      "updated_at": "2026-01-16T13:33:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017265369,
+      "body_text": "sorry i should say if the usb is pluged in and ac power cable the lights ho out but with the mains power pluged in it just stays on untill i unplug it from the socket ",
+      "user_id": 158009299808,
+      "created_at": "2026-01-16T13:37:34Z",
+      "updated_at": "2026-01-16T13:37:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    }
+  ]
+}

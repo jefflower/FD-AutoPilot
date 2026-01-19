@@ -1,0 +1,44 @@
+{
+  "id": 10518,
+  "subject": "Order SSN4226 - VAM Pro Faulty",
+  "description_text": "Hello!\r\n\r\nI have just unboxed my VAM Pro Linear Motor delivered on 18 DEC 2025. I\r\nhave only now been able to test them due to an issue with the Plus X pedals.\r\n\r\nOne of the VAM Pro Linear Motors is faulty and does not produce meaningful\r\nvibrations. I have used several different softwares, updated drivers,\r\nchanged power supply, changed cable ports, etc. But this issue is something\r\nfaulty with the linear motor itself.\r\n\r\n*I suspect this is a one-off quality issue. Is it possible to arrange a\r\nshipment of one new linear motor?*\r\n\r\nAttached is a short video showing the performance difference:\r\n\r\nhttps://drive.google.com/file/d/19WPXwYB0kSa0lo0L8K9rCZb4SqQttUGJ/view?usp=sharing\r\n\r\n[image: image.png]\r\n\r\nBest,\r\nTyler\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-10T17:55:06Z",
+  "updated_at": "2026-01-15T01:53:57Z",
+  "requester_id": 158007671098,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016761313,
+      "body_text": "Hi Tyler Young,     You can slightly loosen the four screws on the cover on the “S” side of the VAM Pro, then remove the motor and inspect it. Please check whether the washer inside has shifted. You can reposition it properly, or take a photo and send it to me for confirmation. After that, reinstall the motor — in many cases, this will restore normal operation.  If the issue is still not resolved after this, we will send you a replacement VAM Pro.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T01:07:58Z",
+      "updated_at": "2026-01-11T01:07:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017142236,
+      "body_text": "Thank you for your reply.  I removed the side with the S and did not notice any part that had shifted out of place. I reassembled and rested again with no Improvement to the device. I the. Removed the front cover with the wire and coil. Nothing there seemed to be wrong either. When I reinstalled the front cover the device began to work as expected!\r\n\r\nIt is not clear what was wrong, but taking it apart and putting it back together does seem to have worked.\r\n\r\n Can you provide any more details as to what could have gone wrong and if it likely to occur again?\r\n\r\nI am happy that it works correctly now!\r\n\r\n~Tyler \r\n\r\n> ",
+      "user_id": 158007671098,
+      "created_at": "2026-01-14T20:59:07Z",
+      "updated_at": "2026-01-14T20:59:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017154793,
+      "body_text": "Hi Tyler Young,  It’s possible that a washer/spacer was not installed correctly during production, which caused the mechanism to not move properly. If the issue happens again, we will continue to support you and help resolve it. Please don’t worry. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-15T01:53:56Z",
+      "updated_at": "2026-01-15T01:53:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

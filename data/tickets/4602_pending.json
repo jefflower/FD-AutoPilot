@@ -1,0 +1,24 @@
+{
+  "id": 4602,
+  "subject": "Order #SSN2789",
+  "description_text": "Hello!\r\n\r\nOn September 30th I've ordered the Simsonn Pro X Ultra Pedals and on \r\nyour shipping info site it says that it usually takes 9-15 days to ship. \r\nIt's now been 8 days and I haven't even received a shipping confirmation \r\nmail yet. Is this expected?\r\n\r\nThank you for your time!\r\n\r\nMax\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-08T13:05:09Z",
+  "updated_at": "2025-10-09T09:19:55Z",
+  "requester_id": 158005506943,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010135237,
+      "body_text": "Hi thwoawya,    We apologize for the delayed response; we've just returned from our 8-day holiday. Your order has been shipped, and here is your tracking link:  https://www.dhl.de/en/privatkunden/pakete-empfangen/verfolgen.html?piececode=CE326626373DE&cid=c_dhl_2502061_2353",
+      "user_id": 158001343601,
+      "created_at": "2025-10-09T09:19:55Z",
+      "updated_at": "2025-10-09T09:19:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

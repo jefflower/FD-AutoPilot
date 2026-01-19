@@ -1,0 +1,65 @@
+{
+  "id": 8316,
+  "subject": "Product has not been delivered",
+  "description_text": "Hi\n\nI ordered a product on the 26th of november and have still not received it.\nWhen looking at the tracking provided it shows the product as being in\ntransit ( screenshot provided). It has shown this message since the 7th\nof December. I have contacted the shipping company but have yet to receive\nan email back\n[image: image.png]",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-15T17:17:17Z",
+  "updated_at": "2025-12-25T03:58:24Z",
+  "requester_id": 158007326161,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014689180,
+      "body_text": "Hi\n\nI am still yet to receive a reply on this matter",
+      "user_id": 158007326161,
+      "created_at": "2025-12-18T12:45:53Z",
+      "updated_at": "2025-12-18T12:45:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014749456,
+      "body_text": "Hi Connor Craven,    I apologize for the delayed response. I noticed your package has been held for quite some time. Please contact Royal Mail to update the delivery address: IM4420001405  https://www.royalmail.com/track-your-item#/tracking-results/IW270734817GB",
+      "user_id": 158001343601,
+      "created_at": "2025-12-19T09:18:46Z",
+      "updated_at": "2025-12-19T09:18:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014749621,
+      "body_text": "Thank you for the update",
+      "user_id": 158007326161,
+      "created_at": "2025-12-19T09:24:41Z",
+      "updated_at": "2025-12-19T09:24:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014981280,
+      "body_text": "Hi\n\nUnfortunately it looks like the royal mail have possibly lost the package.\nI have already exhausted all options on my end on trying to speak to\nsomeone about finding the package but have been unsuccessful in doing so",
+      "user_id": 158007326161,
+      "created_at": "2025-12-23T14:49:55Z",
+      "updated_at": "2025-12-23T14:49:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015033152,
+      "body_text": "Hi\n\nThe pedals have arrived. Thank you for all of your help",
+      "user_id": 158007326161,
+      "created_at": "2025-12-24T12:55:20Z",
+      "updated_at": "2025-12-24T12:55:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

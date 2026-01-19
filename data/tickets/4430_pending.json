@@ -1,0 +1,54 @@
+{
+  "id": 4430,
+  "subject": "Faulty sensor on acceleration pedal",
+  "description_text": "Hello,\r\n\r\nI would like to inquire about my plus X pedals that I just received, the\r\nacceleration pedal has an issue with the sensor and it's twitching between\r\n0% and 1% which is causing problems with the calibration.\r\n\r\nI have attached a video below so you can see what I mean.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-04T12:35:57Z",
+  "updated_at": "2025-10-07T11:24:07Z",
+  "requester_id": 158005391492,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009941854,
+      "body_text": "Hi Faustas Urmonas,  You can use the Offset function to adjust the initial white signal and set a 5% dead zone. The blue signal after calibration is the one actually used in the game, and minor variations (within 1%) won’t affect gameplay. Additionally, you can connect the green grounding wire between the control box and any metal screw on the pedal. Please note that paint on the surface may reduce grounding effectiveness. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T16:45:42Z",
+      "updated_at": "2025-10-05T16:45:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009993569,
+      "body_text": "Hey, thanks for the reply\r\n\r\nI have already set a dead zone for the pedals I was just worried that it\r\nwas a problem with the sensor and could get worse.\r\n\r\nIn addition, I would like to ask what kind of CAN bus you would recommend\r\nto use for the pedals and simsonn shifter?, I have tried to use them both\r\non Snowrunner and they don't work without one, I found a Simagic USB CANbus\r\nbut I assume that would not work with the simsonn products.\r\n\r\n\r\n\r\nOn Sun, Oct 5, 2025, 5:45 PM service@simsonn.com ",
+      "user_id": 158005391492,
+      "created_at": "2025-10-07T00:07:20Z",
+      "updated_at": "2025-10-07T00:07:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009994106,
+      "body_text": "Hi Faustas Urmonas,    Slight data fluctuations during the operation of a high-precision sensor are completely normal and do not indicate any malfunction. If actual damage occurs in the future, we will provide replacement parts free of charge. The sensor is currently functioning normally.  Additionally, the CAN interface is reserved for our internal base simulator and does not support connection to other external devices.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-07T00:38:41Z",
+      "updated_at": "2025-10-07T00:38:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010012555,
+      "body_text": "Alright, thank you for the information.\r\n\r\nOn Tue, Oct 7, 2025, 1:38 AM service@simsonn.com ",
+      "user_id": 158005391492,
+      "created_at": "2025-10-07T11:21:09Z",
+      "updated_at": "2025-10-07T11:21:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "id": 7376,
+  "subject": "Order not confirmed",
+  "description_text": "Hello, I recently purchased a shifter from you guys for my boyfriend. I understand it’s on pre-sale so I won’t be receiving a “shipping” email until the 15th. That’s fine! My issue is, I never received a payment confirmation email, but the money was withdrawn from my account. So could I get a “payment” confirmation email please! To this same email! \r\nSent from my iPhone\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-04T02:11:22Z",
+  "updated_at": "2025-12-23T10:50:47Z",
+  "requester_id": 158007525302,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013365522,
+      "body_text": "Hi Michelle Nava,     Hello, please provide your order date and the order amount, and I will help you check the status. Normally, as long as the payment is successful, we will arrange shipment in order, so please don’t worry.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T02:13:46Z",
+      "updated_at": "2025-12-04T02:13:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013365698,
+      "body_text": "Hi Michelle Nava,    The order confirmation has been sent to the email address you provided. Do you need to change your email address? luvfries00@gmail.com",
+      "user_id": 158001343601,
+      "created_at": "2025-12-04T02:18:04Z",
+      "updated_at": "2025-12-04T02:18:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013404894,
+      "body_text": "awesome yes that’s the email! Pardon me I just saw the message. \r\nThis was the purchase and name\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158007525302,
+      "created_at": "2025-12-04T17:02:06Z",
+      "updated_at": "2025-12-04T17:02:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014603907,
+      "body_text": "hello, still no receipt or notification on it being shipped or whatever!\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158007525302,
+      "created_at": "2025-12-16T22:29:09Z",
+      "updated_at": "2025-12-16T22:29:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014879998,
+      "body_text": "Hi Michelle Nava,    We apologize for the delay. All items will be shipped out this week.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-22T12:37:59Z",
+      "updated_at": "2025-12-22T12:37:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014890403,
+      "body_text": "is it possible to get my tracking or order confirmation? I tried putting it through shop but I don’t see the information there. Or will I receive something when it’s shipped out? \r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158007525302,
+      "created_at": "2025-12-22T15:09:49Z",
+      "updated_at": "2025-12-22T15:09:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014968910,
+      "body_text": "Hi Michelle Nava,    Okay, we've updated your order confirmation and shipping notification.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-23T10:50:46Z",
+      "updated_at": "2025-12-23T10:50:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

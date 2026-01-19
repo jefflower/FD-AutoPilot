@@ -1,0 +1,44 @@
+{
+  "id": 1131,
+  "subject": "Replacement cord for the GT2 wheel hub",
+  "description_text": "Hello, I recently bought a GT2 Wheel hub earlier this year and ive had an\r\nissue with my cord as the solder came undone for two of the wires during\r\nnormal use. This has made my hub unusable and ive had trouble sourcing a\r\nreplacement cable. Is there anyway I can buy a replacement from you as you\r\ndont seem to sell it on your store front.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-07-03T00:19:31Z",
+  "updated_at": "2025-07-09T10:25:10Z",
+  "requester_id": 158001878564,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004445218,
+      "body_text": "Hi，Michael Weber，    Please provide your order number, pedal model, and a photo of the broken spring. We will arrange a free replacement for you.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-04T13:49:48Z",
+      "updated_at": "2025-07-04T13:49:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004446106,
+      "body_text": "Hello sorry their seems to be a misunderstanding. This is for a replacement\r\ncable for the GT2 wheel hub not for pedals.\r\n\r\nOn Fri, Jul 4, 2025, 9:50 AM service@simsonn.com ",
+      "user_id": 158001878564,
+      "created_at": "2025-07-04T16:59:24Z",
+      "updated_at": "2025-07-04T16:59:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447093,
+      "body_text": "Hi michael weber,  We sincerely apologize for the mistake. Please provide your order number, phone number, and shipping address, and we will arrange a replacement for you as soon as possible. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-05T00:17:41Z",
+      "updated_at": "2025-07-05T00:17:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

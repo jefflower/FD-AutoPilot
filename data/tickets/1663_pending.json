@@ -1,0 +1,44 @@
+{
+  "id": 1663,
+  "subject": "pédalier simsonn problème",
+  "description_text": "Bonjour, je viens vers vous car j'ai acheter un pédalier chez amazon de\r\nvotre marque simsonn,\r\nle pédalier et super sauf que j'ai régulièrement des déconnexion au niveau\r\ndu control box, donc j'ai regarde d'où sa provenais et des que je frôle la\r\nprise  USB 2.0 au niveau du control box sa se déconnecte immédiatement.\r\nComment peut on résoudre ce problème? faut il changer le contrôle box ou le\r\ncâble 2.0 USB?\r\nCordialement dans l'attente de votre réponse Mr Empereur.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-18T07:59:09Z",
+  "updated_at": "2025-07-20T00:10:45Z",
+  "requester_id": 158002206192,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005146556,
+      "body_text": "merci pour votre réactivité je vais essayer et reviens vers vous.\r\n\r\nLe ven. 18 juil. 2025 à 10:17, General and sales enquiries <\r\nservice@simsonn.com> a écrit :\r\n\r\n> Cela peut être dû à une alimentation insuffisante du port USB. Veuillez\r\n> essayer de le connecter à un port USB 3.0 ou d'utiliser un concentrateur\r\n> USB avec une alimentation indépendante. Si le problème n'est toujours pas\r\n> résolu, vous pouvez installer l'outil de bureau à distance Todesk et je\r\n> peux vous aider à résoudre le problème à distance.\r\n>\r\n> ------------------------------\r\n> service@simsonn.com\r\n>\r\n>\r\n> *发件人：* Xav 80 <san80390@gmail.com>\r\n> *发送时间：* 2025-07-18 15:58\r\n> *收件人：* service ",
+      "user_id": 158002206192,
+      "created_at": "2025-07-18T08:58:23Z",
+      "updated_at": "2025-07-18T08:58:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005162296,
+      "body_text": "Hi Xav 80,  Did you touch the USB cable on the control box side or the one connected to the PC? We recommend plugging the USB cable into a USB 3.0 (blue) port on the back of your PC, or using a powered USB hub. Additionally, it's best to secure the cable with a zip tie to prevent any disconnection caused by movement. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-19T06:40:14Z",
+      "updated_at": "2025-07-19T06:40:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005196748,
+      "body_text": "bonjour alors oui j'ai changer de port usb coté tour pc et nettoyé la fiche\r\ncoté control box pédalier et pour l'instant aucune déconnexion je vais\r\nremettre comme vous me dite un serre câble  sur le control box coté\r\npédalier\r\nmais pour l'instant tout va bien.\r\ncordialement.\r\n\r\nLe sam. 19 juil. 2025 à 08:40, service@simsonn.com ",
+      "user_id": 158002206192,
+      "created_at": "2025-07-19T15:19:57Z",
+      "updated_at": "2025-07-19T15:19:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

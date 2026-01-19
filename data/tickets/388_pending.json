@@ -1,0 +1,36 @@
+{
+  "id": 388,
+  "subject": "Simsonn Manager 2.0.7 Bugs",
+  "description_text": "Hi there,\r\n\r\nJust purchased a set of your Simsonn Pro Plus X pedals. They're amazing!\r\nThat being said the latest version of Simsonn Manager 2.0.7 needs some bug\r\nfixing.\r\n\r\nWindows 11, latest 24H2 build 26100.4351.\r\n\r\nThe bugs I've found and can continually replicate with your 2.0.7 software\r\nare:\r\n1. The software does not auto launch on Windows startup, despite being\r\nchecked in the settings:\r\n[image: image.png]\r\n\r\n2. Everytime you load the software it does not remember the profile\r\nassigned to a game and just says \"Not Selected\" even if you select one and\r\nexit the software, it won't remember it and be set to \"Not Selected\" again\r\nnext time.\r\n[image: image.png]\r\n\r\n3. If I choose a different curve graph for my clutch and click save to a\r\nprofile, it won't remember that graph next time you load the software and\r\nprofile, and just goes back to a linear graph. Here's the graph I can't get\r\nto save and stick to the saved profile:\r\n[image: image.png]\r\n\r\n\r\nThanks so much for your help and fixing all these bugs in your latest\r\nsoftware! Please let me know once you've addressed all these issues so I\r\ncan test them out.\r\nTravis\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-06-12T18:35:22Z",
+  "updated_at": "2025-06-14T03:50:14Z",
+  "requester_id": 158001463601,
+  "responder_id": 158000445778,
+  "cc_emails": [
+    "simsonnsupport@gmail.com"
+  ],
+  "conversations": [
+    {
+      "id": 158003003418,
+      "body_text": "Hi Travis,  Thank you very much for your feedback. We will immediately arrange for our engineers to fix the issue and provide you with version 2.0.8 as soon as possible. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-13T04:05:29Z",
+      "updated_at": "2025-06-13T04:05:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003042111,
+      "body_text": "Hi Travis,  Hello, we’ve released version 2.0.8. You can download it from our official website and give it a try. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-14T03:50:14Z",
+      "updated_at": "2025-06-14T03:50:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

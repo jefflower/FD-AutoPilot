@@ -1,0 +1,74 @@
+{
+  "id": 4645,
+  "subject": "Remove Product Review",
+  "description_text": "I would like my product review for your Plus X pedals removed.  I was offered a discount if I added a picture to the review and never received the discount. This is now the second time your company has not followed through on an offer with me. I won’t continue positively advertising your products, while you keep scamming me. \r\n\r\nDaniel Wells\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-09T11:28:52Z",
+  "updated_at": "2025-10-11T09:37:19Z",
+  "requester_id": 158005520318,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010143974,
+      "body_text": "Our review discounts are automatically assigned with no deception involved. You can use someone else's 10% discount.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-09T11:35:52Z",
+      "updated_at": "2025-10-09T11:35:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010145037,
+      "body_text": "Your review discount was not automatically assigned to me. Please remove\r\nthe review.\r\n\r\nDaniel Wells - Operations Manager\r\nSimply Physio\r\n111 Fox Rd STE 101\r\nKnoxville, TN, 37922\r\n(p) 865-351-0615\r\n(f) 865-622-9566\r\nwww.simplypt.com\r\n\r\n\r\nOn Thu, Oct 9, 2025 at 7:36 AM service@simsonn.com ",
+      "user_id": 158005520318,
+      "created_at": "2025-10-09T11:37:51Z",
+      "updated_at": "2025-10-09T11:37:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010146666,
+      "body_text": "​  That's impossible.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-09T11:42:16Z",
+      "updated_at": "2025-10-09T11:42:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010146690,
+      "body_text": "Why will you not remove the review? This case is not closed.\r\n\r\nDaniel Wells - Operations Manager\r\nSimply Physio\r\n111 Fox Rd STE 101\r\nKnoxville, TN, 37922\r\n(p) 865-351-0615\r\n(f) 865-622-9566\r\nwww.simplypt.com\r\n\r\n\r\nOn Thu, Oct 9, 2025 at 7:40 AM service@simsonn.com ",
+      "user_id": 158005520318,
+      "created_at": "2025-10-09T11:42:23Z",
+      "updated_at": "2025-10-09T11:42:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010146926,
+      "body_text": "The negative review I provided was removed already. You can remove the\r\npositive review.\r\n\r\nDaniel Wells - Operations Manager\r\nSimply Physio\r\n111 Fox Rd STE 101\r\nKnoxville, TN, 37922\r\n(p) 865-351-0615\r\n(f) 865-622-9566\r\nwww.simplypt.com\r\n\r\n\r\nOn Thu, Oct 9, 2025 at 7:42 AM service@simsonn.com ",
+      "user_id": 158005520318,
+      "created_at": "2025-10-09T11:43:58Z",
+      "updated_at": "2025-10-09T11:43:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010262610,
+      "body_text": "Hi Daniel,    We have sent you a £20 gift card, which has no minimum spend requirement and can be used in conjunction with other discounts. We hope you understand our discount policy and apologise for any confusion or inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-11T09:37:18Z",
+      "updated_at": "2025-10-11T09:37:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

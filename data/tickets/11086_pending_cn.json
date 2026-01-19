@@ -1,0 +1,35 @@
+{
+  "id": 11086,
+  "subject": "法国",
+  "description_text": "您好，\n\n我试图在亚马逊上订购您的 PLUS X P3-H3 踏板组，但他们似乎阻止了订单。\n我只能通过亚马逊购买，因为我需要使用礼品券。",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-16T14:29:04Z",
+  "updated_at": "2026-01-17T07:41:37Z",
+  "requester_id": 158009300525,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017318670,
+      "body_text": "您好 Aureltouch orl，您可以先尝试购买 P2-H2，然后再单独购买离合器。",
+      "user_id": 158007774607,
+      "created_at": "2026-01-17T07:38:27Z",
+      "updated_at": "2026-01-17T07:38:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017318697,
+      "body_text": "我在亚马逊上找不到离合器。",
+      "user_id": 158009300525,
+      "created_at": "2026-01-17T07:40:49Z",
+      "updated_at": "2026-01-17T07:40:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

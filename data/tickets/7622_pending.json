@@ -1,0 +1,24 @@
+{
+  "id": 7622,
+  "subject": "Order #SSN3803",
+  "description_text": "Hi there is a way I can check the shipping progress or estimated delivery\r\ndate?\r\n\r\nThanks and regards,\r\n\r\nOmri.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-07T14:27:35Z",
+  "updated_at": "2025-12-08T11:38:41Z",
+  "requester_id": 158007686032,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014121246,
+      "body_text": "Hi Omry Levy,     We apologize for the delay. We recently inquired with logistics providers on your behalf, but all quotes were prohibitively expensive, with the lowest option costing approximately $166 USD. To break even, we would need you to cover an additional shipping fee of about $40 USD. Alternatively, we can hold your shipment until mid-December when shipping rates are expected to decrease. We sincerely apologize for any inconvenience this may cause.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-08T11:38:41Z",
+      "updated_at": "2025-12-08T11:38:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

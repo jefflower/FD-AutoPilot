@@ -1,0 +1,25 @@
+{
+  "id": 8875,
+  "subject": "发货信息",
+  "description_text": "早上好，\n我写这封邮件是关于一个订单的。\n\n订单下单于2025年12月8日。\n\n我什么时候能收到货？\n\n订单号：SSN4547\n\n谢谢",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-22T11:40:01Z",
+  "updated_at": "2025-12-22T13:06:51Z",
+  "requester_id": 158008304339,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014881318,
+      "body_text": "你好 Okta Okta，             您好，所有商品将于本周陆续发出，请您耐心等待。由此给您带来的不便，敬请谅解。",
+      "user_id": 158007774669,
+      "created_at": "2025-12-22T13:06:29Z",
+      "updated_at": "2025-12-22T13:06:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

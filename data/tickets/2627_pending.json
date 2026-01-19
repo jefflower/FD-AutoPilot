@@ -1,0 +1,54 @@
+{
+  "id": 2627,
+  "subject": "1 VAM Motor stopped working",
+  "description_text": "Hi Team,\r\nI've recently purchased VAM Haptic Reactor Motors from Shopee PH and 1 motor just stopped working.\r\nI tried troubleshooting by swapping ports but still not functioning, the rest of 2 motors are working even when transferred on different ports. \r\nCan you ship me 1 Replacement motor please? As I don't want to go through returns as shipping takes a while.\r\nThanks.\r\nKind Regards,John\r\n\r\nYahoo Mail: Search, Organize, Conquer\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-08-13T10:17:13Z",
+  "updated_at": "2025-08-25T04:44:12Z",
+  "requester_id": 158003019336,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006889848,
+      "body_text": "Hi Johned Balandra,  Please provide me with the store link, and then share a test video via Google Drive. I will arrange for a replacement VAM to be sent to you. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-15T02:43:58Z",
+      "updated_at": "2025-08-15T02:43:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007095882,
+      "body_text": "Hi Team,\r\n\r\nThank you for your response. Here's the link where I purchased: https://ph.shp.ee/8yuSczX\r\nHere's the google drive video link:\r\nhttps://drive.google.com/file/d/1VKcTIDHnYObC2KRaGi5FANkBDw2Wn-pV/view?usp=drivesdk \r\n\r\nTroubleshooting I tried:\r\nSwapped ports to the controller\r\nUnplugged, replugged everything including USB, Power, and Motors\r\n\r\nIt's just that 1 motor that doesn't work. \r\nThank you for your prompt response. \r\nPlease let me know if you need further info. \r\nThank you. \r\nKind Regards, John\r\n\r\nYahoo Mail: Search, Organize, Conquer \r\n \r\n  ",
+      "user_id": 158003019336,
+      "created_at": "2025-08-18T16:29:59Z",
+      "updated_at": "2025-08-18T16:29:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007112418,
+      "body_text": "Hi Johned Balandra,     Could you please contact the store where you purchased the product? Since you bought it through a distributor, they are responsible for handling after-sales service and sending you a replacement. We will send the replacement to the distributor, and they will forward it to you. You might want to try contacting them. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-19T04:40:53Z",
+      "updated_at": "2025-08-19T04:40:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007324058,
+      "body_text": "Hello, \r\nJust touching base on my previous email. \r\nThank you. \r\nKind Regards,John\r\n\r\nYahoo Mail: Search, Organize, Conquer \r\n \r\n  ",
+      "user_id": 158003019336,
+      "created_at": "2025-08-22T03:05:20Z",
+      "updated_at": "2025-08-22T03:05:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

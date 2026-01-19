@@ -1,0 +1,54 @@
+{
+  "id": 1772,
+  "subject": "Missing Shifter Mount in My SimRacing Order",
+  "description_text": "Hello,\r\n\r\nI placed an order for a SimRacing shifter and added a desk mount as an optional item. The total cost for both was $100, plus $10 for shipping, so I paid $110 in total.\r\n\r\nHowever, when the package arrived, the desk mount was missing — I only received the shifter.\r\n\r\nCould you please let me know how we can resolve this issue?\r\n\r\nIf the solution is to send me the missing desk mount, I believe the shipping should be free, since I already paid for it.\r\nIf free shipping is not possible, then I would kindly ask for a $10 refund for the missing item.\r\n\r\nLooking forward to your response.\r\n\r\nOrder Number: #SSN1953\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-22T08:01:18Z",
+  "updated_at": "2025-07-23T10:25:07Z",
+  "requester_id": 158002276059,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005298635,
+      "body_text": "Hi dalet,  I'm sorry for the trouble. I have refunded you. Please check.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-22T08:44:03Z",
+      "updated_at": "2025-07-22T08:44:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005301257,
+      "body_text": "everything has not yet come, I will wait as soon as the money is on my balance I will write to you",
+      "user_id": 158002276059,
+      "created_at": "2025-07-22T08:58:02Z",
+      "updated_at": "2025-07-22T08:58:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158005301359,
+      "body_text": "everything has not yet come, I will wait as soon as the money is on my balance I will write to you\r\n________________________________\r\nВід: support@simsonn.com ",
+      "user_id": 158002276059,
+      "created_at": "2025-07-22T09:20:03Z",
+      "updated_at": "2025-07-22T09:20:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005402750,
+      "body_text": "The money has been credited to the card thank you\r\n\r\nвт, 22 лип. 2025 р., 12:19 користувач dalet <yymikus@gmail.com> пише:\r\n\r\n> everything has not yet come, I will wait as soon as the money is on my\r\n> balance I will write to you\r\n> ------------------------------\r\n> *Від:* support@simsonn.com ",
+      "user_id": 158002276059,
+      "created_at": "2025-07-23T08:58:52Z",
+      "updated_at": "2025-07-23T08:58:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

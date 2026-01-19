@@ -1,0 +1,44 @@
+{
+  "id": 983,
+  "subject": "order #SSN1765",
+  "description_text": "Hi !!! I am wondering where my order is. I have paid extra money for fast\r\nshipping ,5-15 day if I remember correctly and for what I see with my\r\ntracking number the package hasn't been picked up yet.\r\n\r\nCan I have clarification on that please?\r\n Thank\r\n\r\n",
+  "status": 3,
+  "priority": 2,
+  "created_at": "2025-06-29T21:46:22Z",
+  "updated_at": "2025-07-12T11:02:29Z",
+  "requester_id": 158001838882,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004305981,
+      "body_text": "Hi Martin Guinard,  Sorry, the first batch of VAM Pro stock was consumed, the second batch will be delivered tomorrow, we will ship it to you as soon as possible and refund you the extra shipping cost as compensation, we apologize for the delay!",
+      "user_id": 158001343601,
+      "created_at": "2025-06-30T10:55:15Z",
+      "updated_at": "2025-06-30T10:55:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004615678,
+      "body_text": "Hi!! i just receive my order. Thank you for that but unfortunately i can\r\nmake them work in iracing. i can feel the vibration true simpson manager\r\nwhen i click on test but that it. In game nothing. I have the option\r\nvibrate pedals and wheel in game too. Can you help me ?\r\n\r\nThank\r\n\r\nLe lun. 30 juin 2025, à 06 h 55, service@simsonn.com ",
+      "user_id": 158001838882,
+      "created_at": "2025-07-11T23:26:41Z",
+      "updated_at": "2025-07-11T23:26:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004657636,
+      "body_text": "Hi Martin Guinard,     Which game are you using?     We’re about to release SIMSONN Manager version 2.0.9, which will include native support for the following games.  In addition, the official SimHub 9.9.3 version has been released and now offers full support for SIMSONN ProX, ProX Ultra, and PlusX pedals.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-12T11:02:28Z",
+      "updated_at": "2025-07-12T11:02:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

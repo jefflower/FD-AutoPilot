@@ -1,0 +1,24 @@
+{
+  "id": 8806,
+  "subject": "Delivery and support issue",
+  "description_text": "Greetings,\n\nI recently ordered a set of Pro X Ultra pedals with express shipping.\nThe order was placed on 12th of December and I haven't received the package or a tracking number yet. Looking at the delivery time of 3-7 days, which terminated 19.12., I wonder if there is any info you can give me on the status of the order.\n\nOrder Nr.: #SSN4742\n\nAdditionally, I can't seem to access the support/ticket area and haven't received a replay in over 96 hours. The freshdesk support page only gives me this message: You are not authorised to access this portal. Kindly contact your helpdesk administrator.\nI can not access the tickets on the freshdesk support page at all and kindly request an answer via mail.\n\nRegards, Jonas Roth\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-21T12:43:27Z",
+  "updated_at": "2025-12-22T12:27:05Z",
+  "requester_id": 158007848065,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014879526,
+      "body_text": "Hi Jonas Roth,  Your order was originally scheduled for shipment from our German warehouse, but due to transportation delays, the goods arrived later than expected. They have now arrived at the warehouse, and we are processing them for storage and arranging DHL express shipping. We will update you with the tracking number tomorrow. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-22T12:27:05Z",
+      "updated_at": "2025-12-22T12:27:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

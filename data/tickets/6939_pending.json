@@ -1,0 +1,44 @@
+{
+  "id": 6939,
+  "subject": "Simsonn Plus X - Does it include tax?",
+  "description_text": "\r\nHi, Im purchasing the Simsonn Plus X \r\n\r\nDo they already include tax on the price? Would it be possible to get an invoice on the product with a different description? Something like PC components? \r\n\r\nKind regards \r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-11-28T10:18:20Z",
+  "updated_at": "2025-11-28T13:44:30Z",
+  "requester_id": 158007390312,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013054815,
+      "body_text": "Hi Oliver Okland,    May I ask which country you are placing your order from? We have warehouses in Germany and the United States, so no additional customs duties are required.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-28T11:02:49Z",
+      "updated_at": "2025-11-28T11:02:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013055097,
+      "body_text": "Good afternoon \r\n\r\nIt is to Spain so I think that there are no custom duties. However my question is if the price already includes tax? Is the price already with the 21% VAT that Spain has? \r\n\r\nWould it be possible to create a custom invoice with the description - “PC components” \r\n\r\nKind regards \r\n\r\n> ",
+      "user_id": 158007390312,
+      "created_at": "2025-11-28T11:11:09Z",
+      "updated_at": "2025-11-28T11:11:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013059497,
+      "body_text": "Hi Oliver Okland,    Our prices are exclusive of tax. If you require tax-inclusive pricing, we can arrange that for you.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-28T13:44:10Z",
+      "updated_at": "2025-11-28T13:44:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

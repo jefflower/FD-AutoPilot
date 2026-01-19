@@ -1,0 +1,44 @@
+{
+  "id": 5797,
+  "subject": "Problem Order #SSN2743",
+  "description_text": "Hello,I'm writing you because I have a problem with the VAM motor of the order #SSN2743. Unfortunatly this month I didn't have to much time to test the pedals, but I notice that the accelerator pedal did not work anymore. I tried to switch the connector with both the brake and the clutch but while the other motors works connected with the control box in the accelerator output, the accelerator VAM motor does not shows any sign in any output. I also updated the SIMSONN manager and the firmware but nothing change. It's quite frustrating that a device that I used no more of 5-6 times is already broken. Can you help me?\r\nBest regards.Daniele Guernelli\r\n",
+  "status": 3,
+  "priority": 2,
+  "created_at": "2025-11-07T20:19:01Z",
+  "updated_at": "2025-11-12T09:34:36Z",
+  "requester_id": 158006790682,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011984757,
+      "body_text": "Hi Guerne Dan,  Please provide your order number, along with your contact name, phone number, and address, and we will send you a replacement VAM. Make sure your SIMSONN Manager is version 2.1.2. When using VAM, try to avoid continuous telemetry (such as RPM), as this issue does not occur with VAM Pro. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-09T04:07:00Z",
+      "updated_at": "2025-11-09T04:07:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012032536,
+      "body_text": " Hello,thank you for your kind response. The order was:\r\nOrder #SSN2743\r\nPhone number: +39 3335288031\r\n\r\n| \r\nCustomer information\r\n  |\r\n\r\n \r\n|  \r\n|  \r\nShipping address\r\n \r\nDaniele Guernelli\r\nVia Giuseppe Cremonini Bianchi 5\r\n26100 Cremona CR\r\nItaly\r\n |\r\n\r\n |\r\n\r\nBest regardsDaniele Guernelli    Il domenica 9 novembre 2025 alle ore 05:07:10 CET, service@simsonn.com ",
+      "user_id": 158006790682,
+      "created_at": "2025-11-10T08:36:02Z",
+      "updated_at": "2025-11-10T08:36:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012164839,
+      "body_text": "Hi Guerne Dan,    Okay, we've already sent you two replacement Vam Haptics.  https://t.17track.net/en#nums=YT2531600706911170",
+      "user_id": 158001343601,
+      "created_at": "2025-11-12T09:34:35Z",
+      "updated_at": "2025-11-12T09:34:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

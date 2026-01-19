@@ -1,0 +1,35 @@
+{
+  "id": 10211,
+  "subject": "Information about the new HS Pro Shifter",
+  "description_text": "Hello,\nI'm Angelo, writing from Italy. I'm interested in the new HS PRO Shifter, but I would like to know more about switching from H mode to Sequential mode, as this isn't explained on the product's webpage.\nWhat is required to switch between H mode and sequential mode? Are tools like screwdrivers or other equipment necessary? Is it mandatory to replace the H-pattern top plate with the sequential top plate? Is there an electronic switch to select different communication channels between the shifter and the game for H mode and Sequential mode?\nIs there a user guide available for this shifter to better understand how it works?\nI currently also have Plus X pedals on my rig; will it be possible to manage both the pedals and the shifter using the same management software?\nMany thanks in advance,\nKind Regards,\nAngelo G.",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-07T11:45:27Z",
+  "updated_at": "2026-01-08T01:25:14Z",
+  "requester_id": 158008965374,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016143822,
+      "body_text": "Hi Angelo Guglielmi, The device supports three switchable modes. We provide matching panel accessories for 6R, 7R, and Sequential modes, with 7R set as the default mode. After replacing the panel accessory, simply select the corresponding mode in the software, and the device will work correctly without any additional setup.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T14:03:30Z",
+      "updated_at": "2026-01-07T14:03:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016196584,
+      "body_text": "Thanks for the quick answer. Unfortunately, it's not what I'm looking for... I don't want to change the plate every time, sorry. Kind regards, Angelo.",
+      "user_id": 158008965374,
+      "created_at": "2026-01-07T19:45:49Z",
+      "updated_at": "2026-01-07T19:45:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

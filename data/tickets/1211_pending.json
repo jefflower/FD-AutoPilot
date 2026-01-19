@@ -1,0 +1,64 @@
+{
+  "id": 1211,
+  "subject": "Carbon fiber heel plate",
+  "description_text": "Hello, I'm interested in buying the simsonn carbon fiber heel plate, but I\r\ndon't know if it fits my rig, can it be mounted without the baseplate? If\r\nso, can you send me some dimensions of the heel plate, and the distances\r\nbetween the holes?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-04T10:20:33Z",
+  "updated_at": "2025-07-07T11:11:35Z",
+  "requester_id": 158001868611,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004445028,
+      "body_text": "Hello, what equipment are you using.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-04T13:07:03Z",
+      "updated_at": "2025-07-04T13:07:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445042,
+      "body_text": "Hello, I have a Playseat Formula Instinct, and my Simsonn Pro X pedals are\r\nattached directly to the Playseat pedal plate, without a baseplate.\r\n\r\n\r\nOn Fri, 4 Jul 2025 at 16:07, service@simsonn.com ",
+      "user_id": 158001868611,
+      "created_at": "2025-07-04T13:10:14Z",
+      "updated_at": "2025-07-04T13:10:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445735,
+      "body_text": "Hello, what equipment are you using.     My details are on the office computer and I will send you the details next Monday.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-04T15:46:10Z",
+      "updated_at": "2025-07-04T15:46:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445810,
+      "body_text": "Ok, thanks.\r\n\r\nOn Fri, 4 Jul 2025 at 18:46, service@simsonn.com ",
+      "user_id": 158001868611,
+      "created_at": "2025-07-04T15:56:02Z",
+      "updated_at": "2025-07-04T15:56:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004455387,
+      "body_text": "Hi David Munteanu,      330mm",
+      "user_id": 158001343601,
+      "created_at": "2025-07-07T11:11:34Z",
+      "updated_at": "2025-07-07T11:11:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

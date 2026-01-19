@@ -1,0 +1,74 @@
+{
+  "id": 4552,
+  "subject": "",
+  "description_text": "Hi, Would like to know if there is any update on my order as I have had no\r\nupdate.\r\n\r\nOrder #SSN2804\r\n\r\nRegards\r\n Reece\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-10-07T14:35:44Z",
+  "updated_at": "2025-10-09T11:07:31Z",
+  "requester_id": 158005488371,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010141136,
+      "body_text": "ID 为 4639 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-09T09:38:22Z",
+      "updated_at": "2025-10-09T09:38:22Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158010141137,
+      "body_text": "合并来自工单4639  \n      主题: No communication  \n      描述:  I would like to know of any update on my order   \n Order No:SSN2804 \n   \n This is the second ticket I have raised and have had no communication what so ever, We are now 9 days in and I have had nothing in respect to the condition of my order which is not acceptable. \n   \n Please can you get back to me with the condition of my order, I do not wish to get PayPal involved. \n   \n Regards \n Reece ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-09T09:38:22Z",
+      "updated_at": "2025-10-09T09:38:22Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158010141167,
+      "body_text": "Hi Reece Reed,  Hello, I’m currently checking your case with our operations team. Because of the National Day holiday from October 1st to October 8th, we were unable to reply to your email in time. I’ll get back to you as soon as I receive their response. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-09T09:41:09Z",
+      "updated_at": "2025-10-09T09:41:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010141209,
+      "body_text": "Hi Reece Reed,        We apologize for the delayed response; we've just returned from our 8-day holiday. Your order has been shipped, and here is your tracking link:  https://t.17track.net/en#nums=SF6045959529308",
+      "user_id": 158001343601,
+      "created_at": "2025-10-09T09:43:13Z",
+      "updated_at": "2025-10-09T09:43:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010142633,
+      "body_text": "I appreciate you have been on holiday and we are all entitled to one, But I\r\ndo believe this should have been communicated on your website.\r\nYou say my order has been shipped, But it's not, You have just created a\r\nlabel, We are 9 days in and it's not even on a van, For a company trying to\r\nget a foothold in the Sim Racing market there is nothing worse than a 'Bad\r\nfirst impression'.\r\n\r\nHay Ho, It is what it is.\r\n\r\nRegards\r\nReece\r\n\r\nOn Thu, 9 Oct 2025 at 10:43, service@simsonn.com ",
+      "user_id": 158005488371,
+      "created_at": "2025-10-09T11:03:34Z",
+      "updated_at": "2025-10-09T11:03:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010142718,
+      "body_text": "Hi Reece Reed,    We just completed the shipment today, and the logistics provider's information hasn't been updated yet. It should be updated within a few hours. We apologize for any inconvenience this may cause.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-09T11:07:30Z",
+      "updated_at": "2025-10-09T11:07:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

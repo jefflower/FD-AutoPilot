@@ -1,0 +1,44 @@
+{
+  "id": 2297,
+  "subject": "Shipping",
+  "description_text": "Do you ship to India?\r\nIf yes then what courier service is used and how much is shipping charges?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-05T04:02:29Z",
+  "updated_at": "2025-08-05T06:23:12Z",
+  "requester_id": 158002609973,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006239685,
+      "body_text": "Hi Ramandeep Singh Sandhu,     We ship to India, but shipping costs are relatively high. You can select a shipping option on the checkout page. We typically use FedEx or DHL for shipping.   https://www.simsonn.com/products/simsonn-pro-plus-x-pedals",
+      "user_id": 158001343601,
+      "created_at": "2025-08-05T04:06:45Z",
+      "updated_at": "2025-08-05T04:06:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006240083,
+      "body_text": "Shipping will be free for order above $400?\r\nAnd can you create a lower value invoice?\r\n\r\nOn Tue, 5 Aug, 2025, 9:36 am service@simsonn.com, ",
+      "user_id": 158002609973,
+      "created_at": "2025-08-05T04:55:48Z",
+      "updated_at": "2025-08-05T04:55:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006240784,
+      "body_text": "Hi Ramandeep Singh Sandhu,    Yes, we can provide invoices for smaller amounts. If you have specific requirements, please let us know.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-05T06:23:11Z",
+      "updated_at": "2025-08-05T06:23:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

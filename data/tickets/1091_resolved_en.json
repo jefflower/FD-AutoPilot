@@ -1,0 +1,55 @@
+{
+  "id": 1091,
+  "subject": "Arttur Photo",
+  "description_text": "artturpauloo @gmail.com",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-07-02T04:01:06Z",
+  "updated_at": "2025-07-02T04:48:02Z",
+  "requester_id": 158001661531,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004363132,
+      "body_text": "Hi Arttur Paulo,    It looks like the configuration file for version 1.7.0 was incorrectly modified. I’ll send you a recovery .cfg file.  Please follow these steps:    Click “Load config from file” and select the .cfg file I sent you.    Then click “Write config to device” to upload the settings to your device.    Important: Always click “Read config from device” before making any changes. Otherwise, the software may overwrite the correct settings in your device with the default configuration from your PC.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T04:06:28Z",
+      "updated_at": "2025-07-02T04:06:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004363146,
+      "body_text": "It worked. How do I calibrate the pedals?",
+      "user_id": 158001661531,
+      "created_at": "2025-07-02T04:17:06Z",
+      "updated_at": "2025-07-02T04:17:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004363157,
+      "body_text": "Hi Arttur Paulo,    In the Freejoy axis interface, click the “Calibrate” button next to the X, Y, and Z axes. Then press each pedal three times. After that, click “Stop Calibration” and then click “Write config to device” to save the settings to your device.  You can also adjust the Min Value and Max Value to set the dead zones, or configure them directly in the game.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T04:20:55Z",
+      "updated_at": "2025-07-02T04:20:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004363178,
+      "body_text": "Everything worked out. Thank you very much!!!",
+      "user_id": 158001661531,
+      "created_at": "2025-07-02T04:31:51Z",
+      "updated_at": "2025-07-02T04:31:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

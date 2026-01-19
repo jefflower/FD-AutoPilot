@@ -1,0 +1,54 @@
+{
+  "id": 7068,
+  "subject": "Return ORDER #SSN2688",
+  "description_text": "Hello I want to return these Simsonn Plus X Racing Pedals. I\r\nhave encountered a lot of issues with it on the software side that I'd\r\nrather take my money and spend a little more on better pedals. I heard\r\nnothing but good things about your pedals but I feel misled by the reviews.\r\nI enjoyed my time using them but I just had an issue while trying to mess\r\nwith the value on your Simsonn app that is not Windows Approved. Now none\r\nof the sim racing apps recognize the pedals and also for some reason the\r\nSimsonn app is a buggy mess lagging to input value of the pedals. Another\r\nthing the pedals load cell breaks have interference issues with my Fanatec\r\nDD base.\r\n\r\n-ORDER #SSN2688\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-11-30T05:20:48Z",
+  "updated_at": "2025-12-01T05:09:27Z",
+  "requester_id": 158007438992,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013150807,
+      "body_text": "Now the pedals are not being recognized by the simsonn app even though it is connected and being picked up by the windows and some games but not putting any form of input.",
+      "user_id": 158007438992,
+      "created_at": "2025-11-30T21:22:26Z",
+      "updated_at": "2025-11-30T21:22:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158013156260,
+      "body_text": "Hi Teo Medina,  First, I noticed that your pedals have disconnected in SIMSONN Manager 2.1.2. You can manually update the firmware to restore the connection. Regarding the stuttering issue you mentioned, it is usually caused by interference from Fanatec CLS DD and the computer power not using a three-prong plug, resulting in poor grounding which affects the PlusX pedals.  The solution is simple: connect the computer case, the brake pedal’s metal screws, and the ground screw of the control box together using any thin wire. This will quickly resolve the issue. Here’s a reference link; the wire doesn’t need to be very thick.     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding      Launch the latest version of SIMSONN Manager 2.1.2. On the “Plus X” control unit, press and hold the “Upgrade” button. While holding the button, unplug the USB cable from the PC and then plug it back in. The software should detect the device entering “SIMSONN Flasher update mode”. In the software go to: Settings → Update → Manual Firmware Update. In the file selector choose: pedals‑firmware → pedals‑plusx.sfu. Click “Start Update” and wait until the firmware is completely written. During this process do not disconnect the USB or close the application. Once the update is finished (you’ll get a success prompt or the unit will reboot), unplug and re‑plug the USB then test the pedal device to confirm everything works correctly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-01T03:41:43Z",
+      "updated_at": "2025-12-01T03:41:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013156586,
+      "body_text": "To be honest it was the box that was included that needed to be plugged in\r\nagain but now I am having issues with the rumbles not\r\nfunctioning correctly. I noticed the box included has a really loose barrel\r\nconnection. Is that common?\r\n\r\nOn Sun, Nov 30, 2025 at 7:41 PM service@simsonn.com ",
+      "user_id": 158007438992,
+      "created_at": "2025-12-01T04:00:25Z",
+      "updated_at": "2025-12-01T04:00:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013157591,
+      "body_text": "Hi Teo Medina,  You can secure it with a cable tie, which will fix the issue of the loose 24V DC plug. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-01T05:09:26Z",
+      "updated_at": "2025-12-01T05:09:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

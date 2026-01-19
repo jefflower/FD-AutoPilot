@@ -1,0 +1,44 @@
+{
+  "id": 1379,
+  "subject": "VAM Pro power supply socket type",
+  "description_text": "Hello,\r\n\r\nI want to buy a set of two Power motors (VAM Pro Linear Motor) and a\r\ncontroller box. Looking at the images it looks like power supply is US\r\nstandard socket. I live in Europe and would need European socket type (type\r\nc).\r\n\r\nI did not find a way to choose a socket type when adding items to the cart\r\non your website.\r\n\r\nThank you,\r\nJasmin\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-09T15:07:33Z",
+  "updated_at": "2025-07-12T04:39:53Z",
+  "requester_id": 158001977346,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004500170,
+      "body_text": "你好，Jasmin Begic，  默认情况下，我们会根据目的地国家/地区提供相应的插头类型——我们目前支持英国和欧盟标准。 如果您有特定偏好，请在订单中留言，我们将根据您的要求进行调整。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-10T03:33:56Z",
+      "updated_at": "2025-07-10T03:33:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004502492,
+      "body_text": "Thank you for your email,\r\n\r\nI have another question, which control box should I buy for VAM Pro Linear\r\nMotors, is it \"plus x control box\" or \"pro x ultra pedal control box\" ?\r\n\r\nThank you,\r\nJasmin\r\n\r\nOn Thu, Jul 10, 2025 at 5:34 AM service@simsonn.com ",
+      "user_id": 158001977346,
+      "created_at": "2025-07-10T12:05:46Z",
+      "updated_at": "2025-07-10T12:05:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004632226,
+      "body_text": "你好，Jasmin Begic，  我们建议选择 ProX Ultra 控制箱以获得最佳兼容性和性能。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-12T04:39:51Z",
+      "updated_at": "2025-07-12T04:39:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 6058,
+  "subject": "Re: Order #SSN3422 confirmed",
+  "description_text": "Hello,\r\n\r\nI made the payment to the link but accidentally did it on a different email\r\naddress, this is the order number from that email, Order #SSN3442.\r\nIs this okay?\r\n\r\nThank you,\r\nWilfred\r\n\r\nOn Thu, Nov 13, 2025 at 2:50 AM SIMSONN <service@simsonn.com> wrote:\r\n\r\n> SIMSONN <https://www.simsonn.com>\r\n>\r\n> Hello, I noticed you purchased 2 Haptics but did not include the power\r\n> supply. These require a power supply to function. You can click this link\r\n> to pay for the power supply and add a note.\r\n> https://www.simsonn.com/products/difference-2\r\n>\r\n> If you have any questions, reply to this email or contact us at\r\n> service@simsonn.com\r\n>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-13T19:27:04Z",
+  "updated_at": "2025-11-14T02:47:40Z",
+  "requester_id": 158007008565,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012295755,
+      "body_text": "Hi Wilfred Basaca,    No problem, we saw your note and have added the power supply to your order.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-14T02:47:40Z",
+      "updated_at": "2025-11-14T02:47:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "id": 7449,
+  "subject": "Important Message",
+  "description_text": "Hi. Did you receive the email I sent to you a few day's ago regarding possibly buying 5 sets ?\r\n\r\nWhat is the best deal you can offer me for 5 of your 2 pedal sets in Silver and what is the delivery time to the UK ?\r\n\r\nMany thanks.\r\nRick.\r\n\r\nSent from Outlook for Android<https://aka.ms/AAb9ysg>\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-04T23:29:44Z",
+  "updated_at": "2025-12-19T02:25:28Z",
+  "requester_id": 158007653188,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013427949,
+      "body_text": "Hi Rick,  Thank you for following up — and sorry, we didn't receive your message.  For your order of 5 silver 2-pedal sets, the best offer we can provide is:  ✔ 15% off + free shipping + no taxes  Use your exclusive discount code: Ricky15  You can place the order directly on our website.  https://www.simsonn.com/products/simsonn-plus-x-pedals?variant=50297651003706  If you need any help with the checkout or have other questions, feel free to let us know!  Best regards, The Simsonn Team",
+      "user_id": 158001343601,
+      "created_at": "2025-12-05T01:49:41Z",
+      "updated_at": "2025-12-05T01:49:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013552124,
+      "body_text": "Hi Guy's. Thank you for the reply and the generous offer ?\r\n\r\nI am in the UK so what would the delivery time look like for me please ?\r\n\r\nSent from Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158007653188,
+      "created_at": "2025-12-05T16:12:23Z",
+      "updated_at": "2025-12-05T16:12:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013555190,
+      "body_text": "Hi Ricky Slater,      Express shipping takes approximately 4-7 days, standard shipping 7-10 days, and economy shipping 9-12 days.  Bulk purchase logistics typically take approximately 7-12 days.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-05T16:25:56Z",
+      "updated_at": "2025-12-05T16:25:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014704406,
+      "body_text": "Hi Guy's. I have purchased 1x set for testing and if I get on with them then I will buy 4 more sets.\r\n\r\nI do have a question though.\r\n\r\nI bought the one set as per the attached picture but I have not received any emails or confirmation whatsoever ?\r\n\r\nIs this normal or should I have received an update ?\r\n\r\nAre you able to offer an update please ?\r\n\r\nSent from Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158007653188,
+      "created_at": "2025-12-18T16:24:09Z",
+      "updated_at": "2025-12-18T16:24:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014734962,
+      "body_text": "Hi Ricky Slater,    We apologize for the inconvenience. Due to recent shipping delays, your package has been dispatched and is expected to arrive on the 23rd.  https://www.ups.com/track?loc=en_US&requester=ST&trackNums=1ZJ455510402117810/trackdetails",
+      "user_id": 158001343601,
+      "created_at": "2025-12-19T02:25:27Z",
+      "updated_at": "2025-12-19T02:25:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": 9338,
+  "subject": "Enquiry",
+  "description_text": "Good evening,\r\n\r\nI was wondering if there was an option to buy a UK plug version for the\r\npower supply on the VAM pro haptic\r\n\r\nThanks\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-28T04:45:30Z",
+  "updated_at": "2026-01-15T09:53:29Z",
+  "requester_id": 158008798803,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015148118,
+      "body_text": "Hi Aidan Hughes,    We have four types of plugs, including the UK plug. By default, we will ship the appropriate plug based on the destination country of your shipping address.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T04:58:31Z",
+      "updated_at": "2025-12-28T04:58:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015148126,
+      "body_text": "Thank you\r\n\r\n\r\n",
+      "user_id": 158008798803,
+      "created_at": "2025-12-28T04:59:29Z",
+      "updated_at": "2025-12-28T04:59:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017174598,
+      "body_text": "Hi Aidan Hughes,  You're welcome. Thank you for purchasing our product. Should you have any questions in the future, please feel free to contact us. We will address them promptly.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T09:53:29Z",
+      "updated_at": "2026-01-15T09:53:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

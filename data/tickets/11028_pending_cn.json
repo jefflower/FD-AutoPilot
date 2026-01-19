@@ -1,0 +1,45 @@
+{
+  "id": 11028,
+  "subject": "退货",
+  "description_text": "订单号：SSN5863\n\n我今天收到了产品。安装后立即对产品感到失望。阻力感觉非常粗糙，找不到更好的词来形容，我甚至不得不修改我的铝型材模拟设备才能让它们安装上。\n\n我将原样退回所有物品。如果您能寄给我一个退货标签，我将不胜感激。",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-16T03:35:17Z",
+  "updated_at": "2026-01-17T07:25:17Z",
+  "requester_id": 158009170811,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017311715,
+      "body_text": "您好，Jordan Jones，如果红色阻尼器让刹车感觉太硬，您可以拆下黑色刹车弹簧内部的10毫米行程限制器/垫片。这将增加刹车行程，让踏板感觉更容易控制。此外，在正常使用中，您无需每次都将刹车踩到底。只需在SIMSONN Manager中重新校准踏板，并按照校准过程，以舒适、合理的力量踩下踏板。校准后，您应该能够以正常的踏板压力实现有效制动。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-17T03:54:33Z",
+      "updated_at": "2026-01-17T03:54:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017315056,
+      "body_text": "我已经把它们重新装回箱子里了。它们甚至不适合我的模拟设备。我不得不修改我的模拟设备，即使那样也仍然不合适。我更倾向于退货，这样我就能继续使用我原来的东西了。",
+      "user_id": 158009170811,
+      "created_at": "2026-01-17T05:54:01Z",
+      "updated_at": "2026-01-17T05:54:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017318497,
+      "body_text": "您好，Jordan Jones，您可以试试这种白色弹性体。https://www.instagram.com/p/DO-08hIjI-0/ https://www.simsonn.com/products/elastomer?variant=50362386710842",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T07:25:17Z",
+      "updated_at": "2026-01-17T07:25:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

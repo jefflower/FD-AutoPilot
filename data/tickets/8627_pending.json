@@ -1,0 +1,24 @@
+{
+  "id": 8627,
+  "subject": "Urgent need of help",
+  "description_text": "Hello I recently bought the Plus X Racing sim pedals and have been using\r\nthem a good amount. Unfortunately it seems like they have given up, without\r\nme knowing or doing anything. Over night the pedals have failed to get\r\nrecongnised by windows and its own software.\r\n\r\nI have tested out plugging things in and out, however to no help, and\r\nground the pedals in a different location.\r\n\r\nWould really like to know if this is a software issue, mistake by me that\r\nis fixable or a issue that should have me send them back.\r\n\r\nWith Kind Regards\r\n\r\n+46 0709210413\r\nAlexander Last\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-12-18T17:38:56Z",
+  "updated_at": "2025-12-20T13:27:52Z",
+  "requester_id": 158006965864,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014810965,
+      "body_text": "Hi Alexander Last,  Launch the latest version of SIMSONN Manager 2.1.2. On the “Plus X” control unit, press and hold the “Upgrade” button. While holding the button, unplug the USB cable from the PC and then plug it back in. The software should detect the device entering “SIMSONN Flasher update mode”. In the software go to: Settings → Update → Manual Firmware Update. In the file selector choose: pedals‑firmware → pedals‑plusx.sfu. Click “Start Update” and wait until the firmware is completely written. During this process do not disconnect the USB or close the application. Once the update is finished (you’ll get a success prompt or the unit will reboot), unplug and re‑plug the USB then test the pedal device to confirm everything works correctly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-20T13:27:52Z",
+      "updated_at": "2025-12-20T13:27:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "id": 1489,
+  "subject": "Issues with Vam PRO and Pedals",
+  "description_text": "Hi,\r\n\r\nSo after quite a long wait I got the VAM Pros (+ new Control Box) to pair\r\nwith my Plus Pedals.\r\nInstalled everything and calibrated.\r\n\r\nI use Simhub to get the Telemetry to connect iRacing to the Vam Pro's\r\nHowever as soon as I am ingame (iRacing) and hit the throttle for example\r\nand the vam pro's start rattling, the throttle gets cut off. Same when\r\nhitting and the brakes with ABS. When turning off the vam pros in simhub,\r\nthe throttle and brakes work fine (however obviously the VAM Pros don't).\r\n\r\nI did not manage to use Simsonn Simmanager Pro to work with iRacing...\r\n\r\nPlease help me :)\r\n\r\nGreetings\r\nDaniel\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-07-12T18:54:56Z",
+  "updated_at": "2025-07-17T15:13:38Z",
+  "requester_id": 158002100467,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004724725,
+      "body_text": "你好，Daniel Kappler，  请问您的订单号是多少？您使用的是哪款控制盒？ VAM Pro 电机在发货前经过严格测试，正常使用不会损坏。 我们会检查您控制板的版本，以确定是否需要固件更新——尤其是 ProX 控制盒，它通常需要固件更新。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-13T00:58:43Z",
+      "updated_at": "2025-07-13T00:58:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004741274,
+      "body_text": "Hi,\r\n\r\nThank you for coming back to me. This is the order number:\r\n\r\nOrder #SSN1819\r\n\r\nI have not updated the firmware yet. I am using the 2.0.8 version of the\r\nSIM manager software.\r\n\r\nGreetings\r\nDaniel\r\n\r\nservice@simsonn.com ",
+      "user_id": 158002100467,
+      "created_at": "2025-07-13T06:13:22Z",
+      "updated_at": "2025-07-13T06:13:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004843398,
+      "body_text": "Have you had a chance to look into this? If this problem can't be fixed I\r\nwill need to return the motors.\r\n\r\nGreetings\r\nDaniel\r\n\r\nAm So., 13. Juli 2025 um 08:12 Uhr schrieb Daniel Kappler <\r\ndakappler@gmail.com>:\r\n\r\n> Hi,\r\n>\r\n> Thank you for coming back to me. This is the order number:\r\n>\r\n> Order #SSN1819\r\n>\r\n> I have not updated the firmware yet. I am using the 2.0.8 version of the\r\n> SIM manager software.\r\n>\r\n> Greetings\r\n> Daniel\r\n>\r\n> service@simsonn.com ",
+      "user_id": 158002100467,
+      "created_at": "2025-07-15T06:34:14Z",
+      "updated_at": "2025-07-15T06:34:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004935547,
+      "body_text": "Hi Daniel Kappler,  In the “Settings – Update” section, click “Manual Firmware Update,” then navigate to the pedals-firmware folder → pedals folder → and select the prox.sfu file to update. After the update, please test the device again. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T04:41:30Z",
+      "updated_at": "2025-07-16T04:41:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005137294,
+      "body_text": "Thx. I did this but it did not help. What helped was using a ground wire\r\n(which I had provide and solder myself) and connect the box and pedals...\r\nSo problem seems to be fixed\r\n\r\nservice@simsonn.com ",
+      "user_id": 158002100467,
+      "created_at": "2025-07-17T14:47:24Z",
+      "updated_at": "2025-07-17T14:47:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 7882,
+  "subject": "Order SSN4544",
+  "description_text": "Dear Simsonn Team,\r\n\r\nI hope this message finds you well. I am writing to inquire about the\r\nstatus of my order #SSN4544. Could you please let me know when I can expect\r\nthe package to arrive? Additionally, I would like to know if there is a\r\nchance it could be delivered before the holidays.\r\n\r\nThank you very much for your assistance. I look forward to your reply.\r\n\r\nBest regards,\r\nKamil Adamowski\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-12-10T11:05:36Z",
+  "updated_at": "2025-12-17T01:47:32Z",
+  "requester_id": 158007739815,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014609476,
+      "body_text": "此工单已关闭并合并到工单 8431 中",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T01:47:32Z",
+      "updated_at": "2025-12-17T01:47:32Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

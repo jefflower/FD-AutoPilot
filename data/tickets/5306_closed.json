@@ -1,0 +1,34 @@
+{
+  "id": 5306,
+  "subject": "Amazon storefront",
+  "description_text": "Hi can you confirm that this is your official Amazon storefront?\r\n\r\nhttps://www.amazon.co.uk/sp?ie=UTF8&seller=A35PQ3K4ZOENQN\r\n\r\nThank you\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-10-27T00:54:29Z",
+  "updated_at": "2025-12-18T09:50:53Z",
+  "requester_id": 158006143531,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011127992,
+      "body_text": "此工单已关闭并合并至工单 5307。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-27T00:56:36Z",
+      "updated_at": "2025-10-27T00:56:36Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158011128424,
+      "body_text": "Hi im priv,     Please access our front desk page via the link below.     https://www.amazon.co.uk/s?marketplaceID=A1F83G8C2ARO7P&me=A35PQ3K4ZOENQN&ref=glow_cls&refresh=1  ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-27T01:23:34Z",
+      "updated_at": "2025-10-27T01:23:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

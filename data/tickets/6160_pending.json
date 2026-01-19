@@ -1,0 +1,64 @@
+{
+  "id": 6160,
+  "subject": "ORDER #SSN3496 cancellation",
+  "description_text": "Hello there, I would like to cancel my order. My order number is #SSN3496\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-15T00:08:47Z",
+  "updated_at": "2025-11-21T11:15:49Z",
+  "requester_id": 158007082486,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012376053,
+      "body_text": "Hi Jack Nims,    Okay, we'll cancel your order for you. May I ask why you'd like to cancel? This is important for us to know. If you'd like to modify your order instead, we can make the changes directly for you.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-15T11:46:16Z",
+      "updated_at": "2025-11-15T11:46:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012385592,
+      "body_text": "I did not mean to complete the order, I accidentally initiated the purchase.\r\n\r\nOn Sat, Nov 15, 2025 at 3:46 AM service@simsonn.com ",
+      "user_id": 158007082486,
+      "created_at": "2025-11-15T16:36:05Z",
+      "updated_at": "2025-11-15T16:36:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012464829,
+      "body_text": "Please confirm order was cancelled and refund was initiated\r\n\r\n",
+      "user_id": 158007082486,
+      "created_at": "2025-11-17T15:33:26Z",
+      "updated_at": "2025-11-17T15:33:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012504351,
+      "body_text": "Hi Jack Nims,    We apologise for the delay in processing your request. We shall attend to your refund as soon as possible.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-18T07:36:30Z",
+      "updated_at": "2025-11-18T07:36:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012648954,
+      "body_text": "It’s almost been a week now and I inquired about the order cancellation and\r\nrefund within 12 hours of the order. Please issue the refund.\r\n\r\nOn Mon, Nov 17, 2025 at 11:36 PM service@simsonn.com ",
+      "user_id": 158007082486,
+      "created_at": "2025-11-20T16:48:29Z",
+      "updated_at": "2025-11-20T16:48:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

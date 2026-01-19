@@ -1,0 +1,85 @@
+{
+  "id": 9521,
+  "subject": "我的订单尚未收到",
+  "description_text": "",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-30T04:36:50Z",
+  "updated_at": "2026-01-08T09:54:03Z",
+  "requester_id": 158008816977,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015235507,
+      "body_text": "我也没有收到任何关于我的订单的信息，也无法收到任何追踪信息。",
+      "user_id": 158008816977,
+      "created_at": "2025-12-30T04:43:58Z",
+      "updated_at": "2025-12-30T04:43:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015291262,
+      "body_text": "您好，Jasmine Sorrell，请提供订单日期、联系人姓名、国家和订单金额，我将帮助您查找订单号。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T02:51:40Z",
+      "updated_at": "2025-12-31T02:51:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015302464,
+      "body_text": "我是在12月20日订购的，订单应该在我的名下，也就是Jasmine Sorrell。国家是英国，收货地址应该是34 lovetofts drive Ip15jz。2025年12月31日星期三02:51，service@simsonn.com",
+      "user_id": 158008816977,
+      "created_at": "2025-12-31T08:20:54Z",
+      "updated_at": "2025-12-31T08:20:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015302973,
+      "body_text": "订单金额是120英镑，我想。2025年12月31日星期三08:20，jasmine sorrell <jasminesorrell4@gmail.com> 写道：> 我是在12月20日订购的，订单应该在我的名下，也就是Jasmine Sorrell。国家是英国，收货地址应该是34 lovetofts drive Ip15jz。> 2025年12月31日星期三02:51，service@simsonn.com",
+      "user_id": 158008816977,
+      "created_at": "2025-12-31T08:53:46Z",
+      "updated_at": "2025-12-31T08:53:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015390341,
+      "body_text": "我什么时候能收到我的订单的消息？我开始担心我收不到它了，如果丢失了为我伴侣准备的圣诞礼物，那将是一大笔钱。",
+      "user_id": 158008816977,
+      "created_at": "2026-01-02T12:02:04Z",
+      "updated_at": "2026-01-02T12:02:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158016252241,
+      "body_text": "您好，Jasmine Sorrell，我看到您的订单已被标记为已送达。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-08T02:16:46Z",
+      "updated_at": "2026-01-08T02:16:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016309457,
+      "body_text": "是的，我收到了。2026年1月8日星期四02:16，service@simsonn.com",
+      "user_id": 158008816977,
+      "created_at": "2026-01-08T09:02:34Z",
+      "updated_at": "2026-01-08T09:02:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

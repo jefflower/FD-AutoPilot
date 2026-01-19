@@ -1,0 +1,64 @@
+{
+  "id": 10667,
+  "subject": "SSN5753 shipment update",
+  "description_text": "Dear Ms/Mr\r\n\r\nI already emailed you about the shipping time. It should be arrived by now, but still haven’t heard anything. What’s the status? I paid 30 euros more for express delivery, that seems like a waste of money now. I would like to get it tomorrow or Wednesday. Or get my extra paid money back. How long will it take?\r\n\r\nKind regards,\r\n\r\nArd van Voorden \r\nVerstuurd vanaf mijn iPhone\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-12T13:49:47Z",
+  "updated_at": "2026-01-15T02:27:31Z",
+  "requester_id": 158008973483,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016926149,
+      "body_text": "Hi Ard van Voorden,    We apologize for the delay. Two shipments have been impacted by heavy snowfall in Europe, with road blockages causing delivery delays to our warehouse. We will expedite delivery to the warehouse as soon as possible or explore alternative logistics channels to ship your goods from China.    We will compensate you based on the delay after your order is completed. We apologize for the inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-13T03:02:55Z",
+      "updated_at": "2026-01-13T03:02:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017036320,
+      "body_text": "Hey,     When can I expect my order to arrive? ",
+      "user_id": 158008973483,
+      "created_at": "2026-01-13T21:32:42Z",
+      "updated_at": "2026-01-13T21:32:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158017080836,
+      "body_text": "Hi Ard van Voorden,    The goods are expected to arrive at the warehouse on the 19th and will be delivered to you on the 25th.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-14T08:03:33Z",
+      "updated_at": "2026-01-14T08:03:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017138703,
+      "body_text": "Okay, that’s quite annoying for me. Especially when it could take 9 days maximum. I really needed it for this weekend, but nothing you guys can do I think? What will be the compensation out of curiousity?",
+      "user_id": 158008973483,
+      "created_at": "2026-01-14T20:10:40Z",
+      "updated_at": "2026-01-14T20:10:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158017156942,
+      "body_text": "Hi Ard van Voorden,    Alright, we'll arrange an urgent shipment via UPS Express for you. Should any taxes or fees apply, we'll reimburse you for a portion of them.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T02:27:31Z",
+      "updated_at": "2026-01-15T02:27:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

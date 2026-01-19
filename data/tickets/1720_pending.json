@@ -1,0 +1,54 @@
+{
+  "id": 1720,
+  "subject": "remboursement frais envoi",
+  "description_text": "bonjour voicis mon mail paypal\r\nmichelon.brice@gmail.com\r\ncoordialement\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-20T19:22:10Z",
+  "updated_at": "2025-08-14T02:27:42Z",
+  "requester_id": 158002243898,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005253515,
+      "body_text": "Hi Brice Michelon,      Please provide your order number.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-21T07:10:43Z",
+      "updated_at": "2025-07-21T07:10:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005286172,
+      "body_text": "   - N° de commande 407-9584836-7605911\r\n\r\n\r\nLe lun. 21 juil. 2025 à 09:10, support@simsonn.com ",
+      "user_id": 158002243898,
+      "created_at": "2025-07-21T19:44:14Z",
+      "updated_at": "2025-07-21T19:44:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005911871,
+      "body_text": "Bonjour je vous ai envoyer le numéro de commande\r\n\r\nLe lun. 21 juil. 2025, 21:43, Brice Michelon <michelon.brice@gmail.com> a\r\nécrit :\r\n\r\n>\r\n>    - N° de commande 407-9584836-7605911\r\n>\r\n>\r\n> Le lun. 21 juil. 2025 à 09:10, support@simsonn.com ",
+      "user_id": 158002243898,
+      "created_at": "2025-07-31T17:31:34Z",
+      "updated_at": "2025-07-31T17:31:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006738048,
+      "body_text": "hi you are received my documents\r\n\r\nLe jeu. 31 juil. 2025 à 19:31, Brice Michelon <michelon.brice@gmail.com> a\r\nécrit :\r\n\r\n> Bonjour je vous ai envoyer le numéro de commande\r\n>\r\n> Le lun. 21 juil. 2025, 21:43, Brice Michelon <michelon.brice@gmail.com> a\r\n> écrit :\r\n>\r\n>>\r\n>>    - N° de commande 407-9584836-7605911\r\n>>\r\n>>\r\n>> Le lun. 21 juil. 2025 à 09:10, support@simsonn.com ",
+      "user_id": 158002243898,
+      "created_at": "2025-08-12T09:54:24Z",
+      "updated_at": "2025-08-12T09:54:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

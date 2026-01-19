@@ -1,0 +1,54 @@
+{
+  "id": 2535,
+  "subject": "Vam Pro issue",
+  "description_text": "Hello,\r\n\r\nI recently purchased the vam pro reactors (order #SSN2009) and am having issues in simhub. I get interference when the haptics activate on the pedals. If the throttle haptic activates, the brake pedal gets interference, and the brake pedal activates to about 25%. I can't use any haptics on the throttle as it makes driving impossible with 25%brake applied through interference.\r\n\r\nWhen the brake reactor activates the throttle pedal goes to 75% even if pressed to 100%. This happens if the pit limiter is activated.\r\n\r\nI can make the issue stop by increasing the volume slider above 60-70% but that is far too much feedback as it shakes my whole room.\r\n\r\nI have the original plus pedals and the new plus x control box. The control box usb is plugged directly into my pc. The box has a grounding wire going to the pedal.\r\n\r\nHopefully this is something that can be fixed as it really enjoy the little that i have been able to use them.\r\n\r\nThanks,\r\nJohn\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-10T19:56:38Z",
+  "updated_at": "2025-08-15T03:04:35Z",
+  "requester_id": 158002912632,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006663981,
+      "body_text": "Hi John,  If you are using a Fanatec wheelbase, please follow the steps below to resolve interference issues caused by the wheelbase.      To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability:     1.    Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding.     2.    Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive.     3.    Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup.     4.    Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible.     5.    Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs.     6.    Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference.     7.    Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements.     8.    Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources.     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-08-11T00:39:37Z",
+      "updated_at": "2025-08-11T00:39:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006822730,
+      "body_text": "I am using a moza r12 with original plus pedals.\r\n\r\nI have attached the ground wire from the control box to the pedal and am using a 3 prong power supply.\r\n\r\nI have tried with only the pedals plugged in directly to the pc using the provided usb cable with ferrite core. All other peripherals unplugged.\r\n\r\nFirmware has been updated to 2.1.0\r\n\r\nI bought a usb isolator and plugged the pedals into that directly to the pc.\r\n\r\nI am still having the exact same issue.\r\n\r\nStill interference on the pedals when the reactor activates.\r\n\r\nCould it be the control box?\r\n\r\nJohn\r\n\r\n⁣Get BlueMail for Android ​\r\n\r\n",
+      "user_id": 158002912632,
+      "created_at": "2025-08-13T22:49:18Z",
+      "updated_at": "2025-08-13T22:49:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006823053,
+      "body_text": "Here is an example of throttle activation affecting the brake.\r\n\r\nJohn\r\n\r\n",
+      "user_id": 158002912632,
+      "created_at": "2025-08-13T23:09:25Z",
+      "updated_at": "2025-08-13T23:09:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006827578,
+      "body_text": "I figured it out.\r\n\r\nThanks\r\n\r\n⁣Get BlueMail for Android ​\r\n\r\n",
+      "user_id": 158002912632,
+      "created_at": "2025-08-14T05:15:03Z",
+      "updated_at": "2025-08-14T05:15:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

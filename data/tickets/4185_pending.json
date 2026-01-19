@@ -1,0 +1,524 @@
+{
+  "id": 4185,
+  "subject": "Sv: Sv: Issue with VAM Pro Vibration Motors – Prolonged/Stuck Vibrations",
+  "description_text": "Hi,\r\n\r\nThe picture should now be attached. This is the status after reflashing, and after multiple disconncts of both power and usb then reconnecting both. I have also tried reflashing twice.\r\n\r\nGoogle link added aswell:\r\nhttps://photos.app.goo.gl/ygDo2vvEmFTWgatB9\r\n\r\n\r\n[cid:70912bc0-6997-4026-9556-b127da069488]\r\n\r\n\r\n//Simen\r\n\r\n________________________________\r\nFra: service@simsonn.com <service@simsonn.com>\r\nSendt: lørdag 27. september 2025 15:16\r\nTil: wowsimen97@hotmail.com <wowsimen97@hotmail.com>\r\nEmne: Re: Sv: Issue with VAM Pro Vibration Motors – Prolonged/Stuck Vibrations\r\n\r\nHi Simen Asphaug,\r\n\r\nThe screenshot you uploaded appears to be incomplete. Please try unplugging both the USB and the power cable, wait a few seconds, then reconnect them and test again.\r\n\r\n\r\nOn Sat, 27 Sep at 8:26 AM , Simen Asphaug <wowsimen97@hotmail.com> wrote:\r\nSeems like my picture was not added, so here it is again:\r\n________________________________\r\nFra: Simen Asphaug <simenasphaug@hotmail.com>\r\nSendt: lørdag 27. september 2025 14:25\r\nTil: service@simsonn.com <service@simsonn.com>\r\nEmne: Sv: Issue with VAM Pro Vibration Motors – Prolonged/Stuck Vibrations\r\n\r\nHi,\r\nUnfortunately, the update has made things worse.\r\nCPU2 now shows as version 0, even though the firmware flashing process completed without any errors. There were no disconnects during the update, and the software reported that the update was successful.\r\nAfter this, all motors now show “power disconnect”, no matter what I do.\r\nI’ve already tried:\r\n\r\n  *\r\nReflashing the firmware again\r\n  *\r\nDisconnecting and reconnecting all cables (power and USB)\r\n\r\nPlease advise on how to proceed, because the vibration motors are now completely unusable.\r\n[cid:2584a4da-7cd4-43b2-81d1-d4ab19c8f14e]\r\nBest regards,\r\nSimen\r\n\r\n________________________________\r\nFra: service@simsonn.com <service@simsonn.com>\r\nSendt: lørdag 27. september 2025 07:55\r\nTil: simenasphaug@hotmail.com <simenasphaug@hotmail.com>\r\nEmne: Re: Issue with VAM Pro Vibration Motors – Prolonged/Stuck Vibrations\r\n\r\nHi Simen Asphaug,\r\n\r\nIf your pedals are ProX Ultra, please update to the latest software and firmware to ensure optimal performance and compatibility.\r\n\r\nPlease first uninstall SIMSONN Manager 2.1.0 from your computer, and then download and install the 2.1.1 version using the provided link.\r\nOnce the installation is complete, go to:\r\nSettings → Update → Manual Firmware Update → Select the file pedals-firmware-pedals-proxultra.sfu\r\nAfter the firmware update is finished, check if the device connects properly.\r\nNext, open the Vibration Test interface to test the vibration function, making sure to select the correct motor type.\r\nWe also recommend updating the telemetry data to ensure everything works correctly.\r\n\r\n[https://attachment.freshdesk.com/inline/attachment?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTU4MDAyMTUyNjA5LCJkb21haW4iOiJzaW1zb25uLmZyZXNoZGVzay5jb20iLCJhY2NvdW50X2lkIjo0MjA2MDM2fQ.hm1xO01OvRnxVhC_7jkkA6SuWY2Z8HhmKP2pePtf5a4]\r\n\r\nhttps://drive.google.com/file/d/1BAdSWa1bxmbPksj9Hlzuo8bl7_bM8ixr/view?usp=sharing\r\n\r\n\r\nOn Thu, 25 Sep at 3:55 AM , Simen Asphaug <simenasphaug@hotmail.com> wrote:\r\nHi,\r\nI’m located in Oslo, Norway (CET time zone).\r\nMy availability is as follows:\r\n\r\n  *\r\nThursday–Sunday: 16:00–21:00 CET (also 09:00–16:00 CET if it doesn’t conflict with work meetings)\r\n  *\r\nMonday–Wednesday: 18:00–21:00 CET\r\n\r\n//Simen\r\n________________________________\r\nFra: service@simsonn.com <service@simsonn.com>\r\nSendt: onsdag 24. september 2025 17:43\r\nTil: simenasphaug@hotmail.com <simenasphaug@hotmail.com>\r\nEmne: Re: Issue with VAM Pro Vibration Motors – Prolonged/Stuck Vibrations\r\n\r\nHi Simen Asphaug,\r\n\r\nPlease let me know your city and local time, as well as when you are available. I will coordinate with your schedule to provide remote assistance.\r\n\r\n\r\nOn Sun, 21 Sep at 6:39 AM , Simen Asphaug <simenasphaug@hotmail.com> wrote:\r\nHi,\r\n\r\nHow can we schedule a session like this? At what time?\r\n\r\n//Simen\r\n\r\n________________________________\r\nFrom: service@simsonn.com <service@simsonn.com>\r\nSent: Sunday, September 21, 2025 12:37:54 PM\r\nTo: simenasphaug@hotmail.com <simenasphaug@hotmail.com>\r\nSubject: Re: Issue with VAM Pro Vibration Motors – Prolonged/Stuck Vibrations\r\n\r\nHi Simen Asphaug,\r\n\r\nHello, you may also use TeamViewer, and please don’t worry. If it turns out that the controller is faulty, we will send you a free replacement.\r\n\r\n\r\n4184:4206036\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-09-27T13:56:31Z",
+  "updated_at": "2025-10-22T06:59:47Z",
+  "requester_id": 158002153101,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004944133,
+      "body_text": "你好，Simen Asphaug，  您订购的是 ProX Ultra，这是我们的最新版本。ProX Upgrade 是过渡型号，即将停产。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T09:17:54Z",
+      "updated_at": "2025-07-16T09:17:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005779785,
+      "body_text": "Hi Simen Asphaug, Please confirm whether your software has been updated to SIMSONN Manager 2.1.0 and that your firmware is the latest version. Kindly provide a screenshot of the software interface for our reference. In addition, please let us know the brand of your wheelbase, as some models may cause interference. We also recommend connecting the USB cable directly to the rear USB 3.0 (blue) port of your computer instead of using a USB hub, as disconnections can prevent the VAM from receiving stop commands in time, resulting in continuous vibration. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-29T15:04:38Z",
+      "updated_at": "2025-07-29T15:04:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005889650,
+      "body_text": "Hi,\r\n\r\nI can confirm that my Simsonn manager is 2.1 but i dont know what firmware they're on.\r\n\r\nAttached is a screenshot of the software.\r\n\r\nMy wheelbase is the Simmagic Alpha Evo Pro with a GT neo wheel.\r\n\r\nI do use a USB hub, and connecting the pedals directly to the usb 3.0 port does seem to work. But i kinda rely on using a usb hub. Is there a way to solve this or just test different hubs?\r\n\r\n//Simen\r\n\r\n\r\n[cid:553a3e81-0dd6-4a7c-9021-d842eecba48a]\r\n________________________________\r\n",
+      "user_id": 158002153101,
+      "created_at": "2025-07-31T10:41:14Z",
+      "updated_at": "2025-07-31T10:41:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005895263,
+      "body_text": "Hi Simen Asphaug,    Please manually update the firmware first: go to Settings → Update → Manual Update Firmware → pedals → firmware → proxultra.sfu,  then test again.  If you really need to use a USB hub, make sure it is externally powered because multiple devices may exceed the power limit of the USB port.  A standard USB2.0 port only provides 500mA, and USB3.0 provides 900mA, while a powered USB hub can deliver more current.  For reference, the ProX Ultra alone consumes about 400mA at 50% LED brightness, so please keep this in mind.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-31T12:09:46Z",
+      "updated_at": "2025-07-31T12:09:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005914791,
+      "body_text": "Thanks for the reply. I’ve now manually updated the firmware as instructed, and the update completed successfully.\r\n\r\nUnfortunately, the issue still occurs, actually also when the pedals are connected directly to a USB 3.0 port on the PC (after some more testing), without using a hub. The vibration motors still occasionally get stuck and continue vibrating for several seconds (4–10s) after an event that should have been brief.\r\n\r\nI also tested disconnecting all USB devices except my mouse, keyboard and the pedals.\r\n\r\nThe hub i was using is a powered USB hub (2A supply), but the issue persists in that setup as well.\r\n\r\n//Simen\r\n\r\n\r\n________________________________\r\n",
+      "user_id": 158002153101,
+      "created_at": "2025-07-31T19:49:22Z",
+      "updated_at": "2025-07-31T19:49:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005918751,
+      "body_text": "Hi Simen Asphaug,  Did you turn off the wheelbase power during testing? If not, the issue is likely related to EMI interference. Please check whether your PC, wheelbase, and power strip use three‑prong power plugs and whether the wall outlet has a reliable ground connection. Unreliable grounding may cause unstable operation of USB devices. I can provide you with corresponding solutions.      To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability:     1.    Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding.     2.    Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive.     3.    Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup.     4.    Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible.     5.    Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs.     6.    Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference.     7.    Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements.     8.    Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources.     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding     https://www.youtube.com/watch?v=LciAFDFWJ1w  ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-31T23:55:24Z",
+      "updated_at": "2025-07-31T23:55:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006110258,
+      "body_text": "Hi,\r\nThanks again for the detailed guidance.\r\nTo answer your question: yes, I have tested with the wheelbase completely disconnected, both power and USB were unplugged during testing.\r\nI’ve now taken several additional grounding measures as recommended:\r\n\r\n  *\r\nThe rig is grounded to the house ground.\r\n  *\r\nThe PC is grounded via a standard Norwegian 3-prong outlet.\r\n  *\r\nThe wheelbase is grounded to the rig.\r\n  *\r\nThe pedals and control box are also grounded to the rig.\r\n  *\r\nAll grounding points are bare metal, and I’ve verified all connections with a multimeter showing 0.04 Ohms, confirming strong conductivity.\r\n\r\nThe control box is currently connected directly to a USB 3.0 port on the PC, not through a hub.\r\nI’ve also reorganized all cabling:\r\n\r\n  *\r\nData cables run along the right side of the rig.\r\n  *\r\nPower cables run along the left side.\r\n  *\r\nFor the pedal control box specifically, it was difficult to fully separate the pedal motor cables from power lines due to space and design constraints, but I did my best to minimize interference.\r\n\r\nI’ve updated to the firmware file you provided earlier, and I’m running Simsonn Manager version 2.1.0.\r\nHowever, I’m still experiencing issues:\r\n\r\n  *\r\nWhen I use the \"vibration\" function in the software, the motors sometimes do not activate at all, and when they do, they often get stuck vibrating.\r\n  *\r\nAdditionally, when I unplug and reconnect the power cable to the control box, there is a strong spark, which seems unusual considering it’s a 24V low-amp system. This was present also before the grounding.\r\n\r\nI have also watched and read the documentation added. But this does not seem like a EMI issue since all other devices is disconnected and the issue persists. Everything on the rig works just fine when vibration motors are disconnected.\r\nLet me know what the next steps should be, or if you suspect a hardware fault might be involved.\r\n//Simen\r\n\r\n________________________________\r\n",
+      "user_id": 158002153101,
+      "created_at": "2025-08-02T17:53:21Z",
+      "updated_at": "2025-08-02T17:53:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006274345,
+      "body_text": "Hi Simen Asphaug,  Please provide a video of the vibration test interface while repeatedly clicking to trigger the vibration, and check whether each vibration stops in time. I’d like to verify if this issue is caused by a lost software stop command, resulting in delayed stopping. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-05T13:19:08Z",
+      "updated_at": "2025-08-05T13:19:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006509029,
+      "body_text": "Hi,\r\nHere is a video link demonstrating the issue — I found it easiest to visualize in SimHub, but please note that the same behavior also occurs in Simsonn Manager.\r\nPlease turn up the volume to hear the mouse clicks as I trigger the test, and compare them to the actual vibration sounds:\r\nhttps://photos.app.goo.gl/gwbW9dpAcnKXfjcb8\r\n[https://lh3.googleusercontent.com/pw/AP1GczMqdB_j5gtM_IAz8KBFWcTfS-ioSdiMTsW-rCgtLcMxO-A-ZfhnvIz5JQsJQZgMeL2Aec23-VlPTR3vwRCDQEufg9f_xqBNCPtYhFM--AnH7P5ku6zi=w600-h315-p-k-no]<https://photos.app.goo.gl/gwbW9dpAcnKXfjcb8>\r\nNew video · Thursday, Aug 7 ?<https://photos.app.goo.gl/gwbW9dpAcnKXfjcb8>\r\nTap to view!\r\nphotos.app.goo.gl\r\nAfter further testing, I was able to both reproduce and work around the issue.\r\nThe problem seems to be related to the LED lighting mode:\r\n\r\n  *\r\nWhen I use the \"Follow\" lighting mode, the vibration motors frequently get stuck — this happens regardless of LED brightness (0%, 50%, or 100%).\r\n  *\r\nWhen switching to the \"Rainbow\" mode for all pedals, vibration works perfectly every time, at all brightness levels.\r\n\r\nThis leads me to believe the issue is software-related, not due to hardware, USB communication, or power draw.\r\nIf needed, I can also record and send a new video of me testing the vibration in Simsonn Manager, but from what I can tell, that interface doesn’t really help visualize the issue clearly — it behaves the same, but it's harder to observe what’s actually happening.\r\nI would really like a fix for this, as I prefer the look of the Follow mode and would like to continue using it without vibration issues.\r\nLet me know how you’d like to proceed or if there’s anything else you'd like me to test.\r\n\r\n//Simen\r\n\r\n________________________________\r\n",
+      "user_id": 158002153101,
+      "created_at": "2025-08-07T21:34:44Z",
+      "updated_at": "2025-08-07T21:34:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006602138,
+      "body_text": "Hi Simen Asphaug,  We will conduct a detailed test on Monday regarding the vibration stop issue with the ProX Ultra and VAM Pro, to check whether the stop command is being lost. Once the issue is resolved, we will get back to you promptly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-09T15:40:10Z",
+      "updated_at": "2025-08-09T15:40:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008290917,
+      "body_text": "Hi,\r\nI’m following up on the vibration stop issue we discussed earlier (ticket/order #SSN2012). You mentioned that you would conduct detailed testing to determine whether the stop command was being lost, but I haven’t received any update yet. Could you please let me know how that testing went, and whether a solution is being worked on?\r\nIn addition, I’m now experiencing a new problem:\r\n\r\n  *\r\nAll vibration motors stop working, except the throttle motor, which gets stuck on a very low, constant vibration.\r\n  *\r\nThe only way to reset this is to unplug both power and USB at the same time and reconnect them.\r\n  *\r\nI have already grounded my controller properly and I’m not using a USB hub.\r\n  *\r\nThe pedals keeps working, this only affects the vibration motors.\r\n  *\r\nThe pedals show as disconnected in the simsonn manager.\r\n\r\nThis new issue happens repeatedly and makes the motors randomly stop working mid session.\r\nCould you please advise on next steps? Do you think this is still a software issue, or could it be a hardware fault with my control box or vibration motors?\r\nThank you for your support — I’d appreciate an update on both the original testing and guidance on how to address this new problem.\r\nBest regards,\r\nSimen Asphaug\r\n\r\n________________________________\r\n",
+      "user_id": 158002153101,
+      "created_at": "2025-09-08T20:44:31Z",
+      "updated_at": "2025-09-08T20:44:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008562004,
+      "body_text": "Hi Simen Asphaug,     Please uninstall your current SIMSONN Manager 2.1.0, and then install version 2.1.1 using the link we provided.  Next, perform a manual firmware update in the software: Settings → Update → Manual Firmware Update → pedals-firmware → pedals-plusx.sfu  After the update, please test again:    Disconnect and reconnect the USB, then check if all three motors are working properly.    If they all work normally, the issue has been resolved.      If, after swapping the motor connections, a motor still does not work, it indicates that the motor is damaged. We will replace the faulty VAM motor free of charge.    Additionally, please make sure to connect the device directly to the USB 3.0 blue port on the back of your computer, and do not use a USB hub to ensure a stable connection.    https://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-09-12T04:51:45Z",
+      "updated_at": "2025-09-12T04:51:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008964342,
+      "body_text": "Hi,\r\nThank you for your response. I’ve tested as instructed.\r\nThe low-frequency, low-strength vibration follows the output port on the controller, not the motor itself. For example, if I swap two motor connections, the constant vibration still remains on (for example) port 1. This makes me think the issue is related to the controller rather than an individual VAM motor.\r\nFor reference, I am running:\r\n\r\n  *\r\nSimsonn Manager 2.1.1\r\n  *\r\nCPU1: v2.0.3\r\n  *\r\nCPU2: v2.0.0\r\n\r\nThe device is connected directly to a rear USB 3.0 port on the PC (no hub).\r\nCould you please advise on the next steps?\r\nBest regards,\r\nSimen Asphaug\r\n\r\n________________________________\r\n",
+      "user_id": 158002153101,
+      "created_at": "2025-09-19T20:25:29Z",
+      "updated_at": "2025-09-19T20:25:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008973618,
+      "body_text": "Hi Simen Asphaug,    Could you please install ToDesk? I can assist you remotely to check the issue. At present, only a very small number of users have reported that the vibration does not stop in time.     https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-09-20T03:53:12Z",
+      "updated_at": "2025-09-20T03:53:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008983021,
+      "body_text": "Hi again,\r\nUnfortunately, I wasn’t able to get ToDesk running in English, so I cannot use it for remote assistance. I can use teamviewer if that is a an option.\r\nAlso, to clarify: the original problem with the vibration hanging is no longer the main issue, I found a workaround by turning off all LEDs for the pedals.\r\nThe current and more serious problem is that one controller output is permanently stuck at a very low vibration:\r\n\r\n  *\r\nThis low vibration continues even if the PC is disconnected.\r\n  *\r\nIt also persists after disconnecting and reconnecting only the power.\r\n  *\r\nThe only way to stop it is to disconnect both the USB and the power at the same time.\r\n  *\r\nWhile this low-frequency vibration is present, none of the other motors respond at all.\r\n\r\nThis behavior makes the system unusable in practice. Since the issue follows the controller output and not the motor itself, it seems more like a controller fault than a motor issue.\r\n//Simen\r\n\r\n________________________________\r\n",
+      "user_id": 158002153101,
+      "created_at": "2025-09-20T08:39:44Z",
+      "updated_at": "2025-09-20T08:39:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009021842,
+      "body_text": "Hi Simen Asphaug,  Hello, you may also use TeamViewer, and please don’t worry. If it turns out that the controller is faulty, we will send you a free replacement. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-21T10:37:54Z",
+      "updated_at": "2025-09-21T10:37:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009021850,
+      "body_text": "Hi,\r\n\r\nHow can we schedule a session like this? At what time?\r\n\r\n//Simen\r\n\r\n________________________________\r\n",
+      "user_id": 158002153101,
+      "created_at": "2025-09-21T10:39:26Z",
+      "updated_at": "2025-09-21T10:39:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009236967,
+      "body_text": "Hi Simen Asphaug,  Please let me know your city and local time, as well as when you are available. I will coordinate with your schedule to provide remote assistance. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-24T15:43:24Z",
+      "updated_at": "2025-09-24T15:43:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009273493,
+      "body_text": "Hi,\r\nI’m located in Oslo, Norway (CET time zone).\r\nMy availability is as follows:\r\n\r\n  *\r\nThursday–Sunday: 16:00–21:00 CET (also 09:00–16:00 CET if it doesn’t conflict with work meetings)\r\n  *\r\nMonday–Wednesday: 18:00–21:00 CET\r\n\r\n//Simen\r\n________________________________\r\n",
+      "user_id": 158002153101,
+      "created_at": "2025-09-25T07:55:32Z",
+      "updated_at": "2025-09-25T07:55:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009362900,
+      "body_text": "Hi Simen Asphaug,     If your pedals are ProX Ultra, please update to the latest software and firmware to ensure optimal performance and compatibility.      Please first uninstall SIMSONN Manager 2.1.0 from your computer, and then download and install the 2.1.1 version using the provided link.  Once the installation is complete, go to: Settings → Update → Manual Firmware Update → Select the file pedals-firmware-pedals-proxultra.sfu  After the firmware update is finished, check if the device connects properly. Next, open the Vibration Test interface to test the vibration function, making sure to select the correct motor type. We also recommend updating the telemetry data to ensure everything works correctly.        https://drive.google.com/file/d/1BAdSWa1bxmbPksj9Hlzuo8bl7_bM8ixr/view?usp=sharing ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-27T05:55:28Z",
+      "updated_at": "2025-09-27T05:55:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009425040,
+      "body_text": "Hi,\r\nUnfortunately, the update has made things worse.\r\nCPU2 now shows as version 0, even though the firmware flashing process completed without any errors. There were no disconnects during the update, and the software reported that the update was successful.\r\nAfter this, all motors now show “power disconnect”, no matter what I do.\r\nI’ve already tried:\r\n\r\n  *\r\nReflashing the firmware again\r\n  *\r\nDisconnecting and reconnecting all cables (power and USB)\r\n\r\nPlease advise on how to proceed, because the vibration motors are now completely unusable.\r\n[cid:2584a4da-7cd4-43b2-81d1-d4ab19c8f14e]\r\nBest regards,\r\nSimen\r\n\r\n________________________________\r\n",
+      "user_id": 158002153101,
+      "created_at": "2025-09-27T12:26:08Z",
+      "updated_at": "2025-09-27T12:26:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009425074,
+      "body_text": "Outlook in web was not nice to me. Trying again.\r\n\r\n[cid:601d8c3f-52e7-4184-93e0-8ff38dd47c78]\r\n________________________________\r\n",
+      "user_id": 158002153101,
+      "created_at": "2025-09-27T12:28:00Z",
+      "updated_at": "2025-09-27T12:28:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009425175,
+      "body_text": "Just to add, if i downgrade back to the old firmware again, with this, atleast the motors shows as connected again:\r\n\r\n[cid:87266a5d-9c09-4f85-9300-8c6b8a6dd6b8]\r\n\r\nSo im not able to upgrade my firmware to the one linked, as this breaks CPU2 version and motors do not show at all.\r\n\r\n//Simen\r\n________________________________\r\n",
+      "user_id": 158002153101,
+      "created_at": "2025-09-27T12:36:40Z",
+      "updated_at": "2025-09-27T12:36:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009433734,
+      "body_text": "Just to add aswell, i am available for teamviewer right now if you are.",
+      "user_id": 158002153101,
+      "created_at": "2025-09-27T14:01:19Z",
+      "updated_at": "2025-09-27T14:01:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158009433759,
+      "body_text": "Also looks like this issue is not linked to the original issue. To see the start of this conversation, please look at #2025. It looks like 2 threads have been created.",
+      "user_id": 158002153101,
+      "created_at": "2025-09-27T14:03:35Z",
+      "updated_at": "2025-09-27T14:03:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158009433771,
+      "body_text": "Looks like this issue has been split into 2 issues, please also look at #4185",
+      "user_id": 158002153101,
+      "created_at": "2025-09-27T14:04:26Z",
+      "updated_at": "2025-09-27T14:04:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158009433979,
+      "body_text": "",
+      "user_id": 158002153101,
+      "created_at": "2025-09-27T14:23:40Z",
+      "updated_at": "2025-09-27T14:23:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158009569043,
+      "body_text": "Hi Simen Asphaug,  If you are available now, please install ToDesk remote support software. No registration is required — just install it and share your ID and password, so I can assist you remotely with troubleshooting. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-28T12:26:55Z",
+      "updated_at": "2025-09-28T12:26:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009569213,
+      "body_text": "ID 号为 1598 和 2025 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-28T12:41:06Z",
+      "updated_at": "2025-09-28T12:41:06Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158009569214,
+      "body_text": "合并来自工单1598  \n      主题: Upgraded version  \n      描述:  Hi, \n \n \n \n \nI just ordered Simsonn pro X ULTRA P3-H3. My\nOrder #SSN2012. \n \n \n \n \nI am struggeling to understand if i just bought the non-upgraded version since there also is a version called \"Simsonn Pro X upgraded\". \n \n \n \n \nWhat is the diffrence between Ultra and upgraded? Is the ultra not upgraded with the shorter spring? If so, why do you even sell the non-upgraded version? \n \n \n \n \n//Simen Asphaug",
+      "user_id": 158000445778,
+      "created_at": "2025-09-28T12:41:06Z",
+      "updated_at": "2025-09-28T12:41:06Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158009569216,
+      "body_text": "合并来自工单2025  \n      主题: Issue with VAM Pro Vibration Motors – Prolonged/Stuck Vibrations  \n      描述:  Hi, \n I’m experiencing an issue with the VAM Pro vibration motors\n where they occasionally get stuck vibrating for several seconds. \n This happens in both F1 25 and iRacing, and it occurs when\n using both Simsonn software and SimHub. The motors behave as configured most of the time — for example, they vibrate briefly after a gear shift — but about 10% of the time, the vibration continues for 4–10 seconds instead of the configured duration (e.g.,\n 50ms). This happens regardless of the frequency (Hz) or duration settings. \n The issue affects all types of vibration events and all motors\n — whether a single pedal motor is active or multiple are used. Sometimes the motors won’t stop vibrating at all unless I trigger a new event, such as shifting up or down. \n I’ve tested various configurations, and the problem persists\n across all scenarios. Would appreciate any guidance or troubleshooting steps. \n \nMy order number:\n#SSN2012\n \n  \n \n Best regards, \n Simen",
+      "user_id": 158000445778,
+      "created_at": "2025-09-28T12:41:07Z",
+      "updated_at": "2025-09-28T12:41:07Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158009569218,
+      "body_text": "Can we use teamviewer instead? Im not able to install a english version of ToDesk",
+      "user_id": 158002153101,
+      "created_at": "2025-09-28T12:41:18Z",
+      "updated_at": "2025-09-28T12:41:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158009569228,
+      "body_text": "Hi Simen Asphaug,  I will try installing TeamViewer first. Please provide your ID and password so that I can remotely assist you in troubleshooting the issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-28T12:42:40Z",
+      "updated_at": "2025-09-28T12:42:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009569262,
+      "body_text": "Now worries! I got ToDesk to work!    ToDesk:  device ID:331 436 356  Temporary password:vc218a04",
+      "user_id": 158002153101,
+      "created_at": "2025-09-28T12:43:52Z",
+      "updated_at": "2025-09-28T12:43:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158009569902,
+      "body_text": "Hi Simen Asphaug,  I couldn’t connect to your ID. Could you try downloading ToDesk instead? Is it that you can’t install it, or are you encountering another issue? ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-28T12:55:36Z",
+      "updated_at": "2025-09-28T12:55:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009569924,
+      "body_text": "This is my ToDesk ids and password:  device ID:331 436 356  Temporary password:vc218a04",
+      "user_id": 158002153101,
+      "created_at": "2025-09-28T12:56:20Z",
+      "updated_at": "2025-09-28T12:56:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158009569925,
+      "body_text": "This is my ToDesk ids and password:  device ID:331 436 356  Temporary password:vc218a04",
+      "user_id": 158002153101,
+      "created_at": "2025-09-28T12:56:21Z",
+      "updated_at": "2025-09-28T12:56:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158009571872,
+      "body_text": "Hi, as requested, here is my information for shipping a new control box:     Contact Name: Simen Asphaug  Shipping Address: Sennerudtoppen 2, 1920 Sorumsand, Norway  Phone number: +47 975 47 111",
+      "user_id": 158002153101,
+      "created_at": "2025-09-28T13:34:18Z",
+      "updated_at": "2025-09-28T13:34:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158009730159,
+      "body_text": "Hi Simen Asphaug,     Sorry, I previously sent you the wrong version. Please follow the steps below to restore the old version first. After we finish testing and confirm everything is fine, we will then update the latest firmware for you.     In the software, go to:  Settings → Update → Manual Firmware Update → pedals → firmware → pedals-proxultra-old.sfu  to complete the firmware update.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T11:19:01Z",
+      "updated_at": "2025-10-01T11:19:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009730350,
+      "body_text": "hi,     Im currently now on the -old firmware.",
+      "user_id": 158002153101,
+      "created_at": "2025-10-01T11:33:16Z",
+      "updated_at": "2025-10-01T11:33:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158009740365,
+      "body_text": "Hi Simen Asphaug,    Due to some delays yesterday, we didn’t manage to ship out the control box in time. Over the next couple of days, I’ll provide you with an updated firmware. We tested it and confirmed that the previous version we sent was incorrect, which is why it couldn’t connect to CPU2 — we encountered the same issue in our own tests. If the new firmware update still doesn’t resolve the problem, we’ll send you a replacement controller on October 9th. Since it’s currently the National Holiday in China, shipping isn’t possible right now, but I believe the new firmware will fix the issue for you.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T14:53:44Z",
+      "updated_at": "2025-10-01T14:53:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010219250,
+      "body_text": "Hi,  I have still not received a new firmware and its been 9 days. ",
+      "user_id": 158002153101,
+      "created_at": "2025-10-10T15:24:36Z",
+      "updated_at": "2025-10-10T15:24:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010219339,
+      "body_text": "Hi Simen Asphaug,  Please uninstall the old version on your computer, then reinstall version 2.1.2 and update the firmware. After the update, the device version should display as CPU1: 2.0.5, CPU2: 2.0.3. If the issue persists, please feel free to contact me.     https://drive.google.com/file/d/1PZwHUqhhmJw0IBGDO8mGONPbrICJU3z1/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-10-10T15:27:35Z",
+      "updated_at": "2025-10-10T15:27:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010219668,
+      "body_text": "I can atleast confirm that the firmware update was successfull. I will test the vibration ehile playing either today or tomorrow and get back to you. :)",
+      "user_id": 158002153101,
+      "created_at": "2025-10-10T15:37:30Z",
+      "updated_at": "2025-10-10T15:37:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010578734,
+      "body_text": "Hi,  I have had 2 sessions of about 20minutes, and in both sessions, within 10 minutes the low vibration on my throttle vibraton starts, and they dont react to any telemetry at all anymore. The pedals themselves still works as expected, but vibration does not work.    This is my Simsonn manager version and firmware.",
+      "user_id": 158002153101,
+      "created_at": "2025-10-16T19:04:47Z",
+      "updated_at": "2025-10-16T19:04:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010589795,
+      "body_text": "Hi Simen Asphaug,  Do you mean that the VAM Pro motor on the throttle pedal is malfunctioning?  Would you like us to send you a new replacement motor? ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-17T02:23:37Z",
+      "updated_at": "2025-10-17T02:23:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010685960,
+      "body_text": "The problem is not with the pedals, but with one of the VAM vibration motors being stuck on a low constant vibration. When this starts it never stops and no other motors vibrate either.  I've done some testing to isolate the issue. I swapped Motor 1 and Motor 2 between two ports on the control box. The problem did not follow the motor - it stayed with Port 1 on the control box regardless of which motor was connected to it. This indicates the issue is with the control box port, not the motor itself.  Since the problem remains on Port 1 no matter which motor is plugged into it, it appears to be a control box malfunction rather than a motor issue. Could you please send a replacement control box instead? Or maybe both? This have been many months now with this issue and no solution.",
+      "user_id": 158002153101,
+      "created_at": "2025-10-18T20:40:14Z",
+      "updated_at": "2025-10-18T20:40:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010714345,
+      "body_text": "Hi Simen Asphaug,  We will send you a VAM Pro and a ProX Ultra control box replacement today. Please provide your contact name, phone number, and shipping address so we can arrange the shipment as soon as possible. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-20T02:13:42Z",
+      "updated_at": "2025-10-20T02:13:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010714352,
+      "body_text": "Hi Simen Asphaug,  In addition, please provide your order number so we can verify it and arrange the shipment promptly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-20T02:15:18Z",
+      "updated_at": "2025-10-20T02:15:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010727757,
+      "body_text": "Contact Name: Simen Asphaug  Shipping Address: Sennerudtoppen 2, 1920 Sorumsand, Norway  Phone number: +47 975 47 111   Order number: #SSN2012",
+      "user_id": 158002153101,
+      "created_at": "2025-10-20T11:47:53Z",
+      "updated_at": "2025-10-20T11:47:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010858691,
+      "body_text": "Hi Simen Asphaug,    This is your logistics tracking link.  https://www.sf-international.com/gb/en/support/querySupport/waybill?No=SF3276760706546",
+      "user_id": 158001343601,
+      "created_at": "2025-10-22T06:59:46Z",
+      "updated_at": "2025-10-22T06:59:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

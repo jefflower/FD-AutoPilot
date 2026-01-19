@@ -1,0 +1,84 @@
+{
+  "id": 360,
+  "subject": "Missing pedal",
+  "description_text": "Hello,\r\n\r\nI recently ordered the SIMSONN Upgraded PRO Plus Pedals Sim Racing Pedals\r\nPC Racing Simulator Pressure Sensor Load Cell HE Hydraulic Pedals (Black\r\nP3) on Amazon and got the package today. However, I only received two\r\npedals instead of three. Do you know where this other pedal could be?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-12T00:19:27Z",
+  "updated_at": "2025-06-16T09:50:06Z",
+  "requester_id": 158001454129,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002945667,
+      "body_text": "Hi Derrick Davis,  Could you please provide your Amazon order number? We will check if the wrong item was sent. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-12T01:17:20Z",
+      "updated_at": "2025-06-12T01:17:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002946682,
+      "body_text": "   - Order # 111-4602835-2783426\r\n\r\n\r\nOn Wed, Jun 11, 2025 at 8:17 PM support@simsonn.com ",
+      "user_id": 158001454129,
+      "created_at": "2025-06-12T04:41:24Z",
+      "updated_at": "2025-06-12T04:41:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002946683,
+      "body_text": "[image: image.png]\r\n\r\nOn Wed, Jun 11, 2025 at 8:17 PM support@simsonn.com ",
+      "user_id": 158001454129,
+      "created_at": "2025-06-12T04:41:48Z",
+      "updated_at": "2025-06-12T04:41:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002946799,
+      "body_text": "Hi Derrick Davis,  Our operations team has replied that the wrong item may have been shipped from the overseas warehouse. We will arrange a replacement shipment for you tomorrow, as couriers are no longer picking up parcels today. As soon as we have the new tracking number, we’ll update you immediately. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-12T05:52:23Z",
+      "updated_at": "2025-06-12T05:52:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002946807,
+      "body_text": "Ok, thank you.\r\n\r\nOn Thu, Jun 12, 2025 at 12:52 AM support@simsonn.com ",
+      "user_id": 158001454129,
+      "created_at": "2025-06-12T05:54:24Z",
+      "updated_at": "2025-06-12T05:54:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003039597,
+      "body_text": "Is there any update on a tracking number?",
+      "user_id": 158001454129,
+      "created_at": "2025-06-13T22:22:23Z",
+      "updated_at": "2025-06-13T22:22:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158003248482,
+      "body_text": "Hi Derrick Davis,  Here is the tracking number of the clutch pedal:     JSEXF1654433424YQ. The shipping carrier is JS EXPRESS.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-16T09:50:06Z",
+      "updated_at": "2025-06-16T09:50:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

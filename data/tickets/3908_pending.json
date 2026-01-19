@@ -1,0 +1,54 @@
+{
+  "id": 3908,
+  "subject": "Pedal Order Shipping Issue",
+  "description_text": "I have recently ordered a set of the pro x ultra pedals but there appears\r\nto be an issue with the FedEx shipping. The shipping info hasn't updated in\r\ndays and the pedals have not been delivered. Can you please assist in\r\nfinding and resolving this issue? I have attached the order  confirmation\r\nbelow.\r\n\r\nThank you,\r\nKevin Moore\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-17T14:26:46Z",
+  "updated_at": "2025-09-24T09:03:15Z",
+  "requester_id": 158004603765,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008909256,
+      "body_text": "Hello, I note that the parcel has indeed been delayed, likely due to weather conditions. We shall investigate and follow up on this matter.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-18T07:48:32Z",
+      "updated_at": "2025-09-18T07:48:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008943533,
+      "body_text": "Thank you for your response. The pedals and base plate did arrive\r\nyesterday. Sadly, the haptics kit that was also oredered was not delivered.\r\n\r\nOn Thu, Sep 18, 2025, 2:48 AM service@simsonn.com ",
+      "user_id": 158004603765,
+      "created_at": "2025-09-19T15:18:01Z",
+      "updated_at": "2025-09-19T15:18:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009161794,
+      "body_text": "Hi Kevin Moore,     I must apologise for not replying to your email sooner. I see that your parcels have all been delivered. May I ask whether you have received them? https://t.17track.net/en#nums=SF6045903944658",
+      "user_id": 158001343601,
+      "created_at": "2025-09-23T10:03:16Z",
+      "updated_at": "2025-09-23T10:03:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009198036,
+      "body_text": "Yes, the second package arrived a day later. Thanks for checking in\r\n\r\nOn Tue, Sep 23, 2025, 5:03 AM service@simsonn.com ",
+      "user_id": 158004603765,
+      "created_at": "2025-09-23T23:39:56Z",
+      "updated_at": "2025-09-23T23:39:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

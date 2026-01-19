@@ -1,0 +1,54 @@
+{
+  "id": 6117,
+  "subject": "Simsonn vam pro problem",
+  "description_text": "Good morning, about 2 months ago I purchased the Simsonn VAM Pro motors to pair with my Simsonn RPO X pedal set. I installed everything as described, but after a few minutes of operation, the motors remain active, meaning they vibrate continuously even without pressing the pedal. Can you help me solve this problem? Thanks.",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-11-14T09:22:15Z",
+  "updated_at": "2025-11-16T02:11:43Z",
+  "requester_id": 158007054216,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012399579,
+      "body_text": "Hi Salvo Strazzeri, First, please make sure you are using a USB 3.0 (blue) port, and avoid using any USB hubs. Additionally, please refer to the link below and connect the computer case to the controller box screw using any piece of wire. This is because some computer cases are not properly grounded to the household earth, which may cause unstable device performance.      https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding     https://www.reddit.com/r/simracing/comments/1n291hi/solution_for_simsonn_vam_pro_emi_issues/",
+      "user_id": 158000445778,
+      "created_at": "2025-11-16T02:10:26Z",
+      "updated_at": "2025-11-16T02:10:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012399591,
+      "body_text": "Hi Salvoj80 Str,  First, please make sure you are using a USB 3.0 (blue) port, and avoid using any USB hubs. Additionally, please refer to the link below and connect the computer case to the controller box screw using any piece of wire. This is because some computer cases are not properly grounded to the household earth, which may cause unstable device performance.      https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding     https://www.reddit.com/r/simracing/comments/1n291hi/solution_for_simsonn_vam_pro_emi_issues/",
+      "user_id": 158000445778,
+      "created_at": "2025-11-16T02:11:11Z",
+      "updated_at": "2025-11-16T02:11:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012399601,
+      "body_text": "ID 为 6115 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-11-16T02:11:43Z",
+      "updated_at": "2025-11-16T02:11:43Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158012399603,
+      "body_text": "合并来自工单6115  \n      主题: Simsonn vam pro problem  \n      描述:   Good morning, about 2 months ago I purchased the Simsonn VAM Pro motors to pair with my Simsonn RPO X pedal set. I installed everything as described, but after a few minutes of operation, the motors remain active, meaning they vibrate continuously even without pressing the pedal. Can you help me solve this problem? Thanks.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-16T02:11:43Z",
+      "updated_at": "2025-11-16T02:11:43Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

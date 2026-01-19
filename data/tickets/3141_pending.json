@@ -1,0 +1,24 @@
+{
+  "id": 3141,
+  "subject": "Coupon code NEW15 as new customer not working",
+  "description_text": "Hey guys,\r\n\r\nI'm looking to purchase from your website for the first time.\r\nSince there is an advertisement for 15% off for new customers using the code \"NEW15\", I tried using it but to no avail.\r\nIt says that I haven't reached the minimum purchase amount.\r\n\r\nCould you help me out with that, kindly?\r\n\r\nKind regards,\r\nMarco\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-26T17:33:11Z",
+  "updated_at": "2025-08-27T01:50:49Z",
+  "requester_id": 158003610067,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007589618,
+      "body_text": "Hello, the minimum purchase requirement for using the discount code NEW15 is $159.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-27T01:50:49Z",
+      "updated_at": "2025-08-27T01:50:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

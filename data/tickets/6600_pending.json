@@ -1,0 +1,64 @@
+{
+  "id": 6600,
+  "subject": "Question about purchase",
+  "description_text": "Hi, it’s my Order #SSN3453. Can you say me please about it ? Because I’m a\r\nlittle bit worried.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-23T20:14:35Z",
+  "updated_at": "2025-11-24T10:59:47Z",
+  "requester_id": 158007280224,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012793501,
+      "body_text": "Hi Nika Nika,     We sincerely apologize for the delay. We have been actively seeking a suitable logistics solution for you, but unfortunately, none has been found at this time. Your order requires shipping in two separate packages, incurring high shipping costs of up to 1300 RMB (approximately $183 USD). Additionally, our product cost is 1593 RMB (approximately $224 USD). You have already paid $378.50 USD, and we require an additional $79 USD for shipping. Alternatively, you may wait for a suitable shipping channel to process your order. Is this acceptable?",
+      "user_id": 158001343601,
+      "created_at": "2025-11-24T04:02:52Z",
+      "updated_at": "2025-11-24T04:02:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012801895,
+      "body_text": "Hi, can you say me please how can we pay an additional 79$ for shipping?\r\n\r\nПн, 24 нояб. 2025 г. в 06:03, support@simsonn.com ",
+      "user_id": 158007280224,
+      "created_at": "2025-11-24T08:20:54Z",
+      "updated_at": "2025-11-24T08:20:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012801961,
+      "body_text": "Hi Nika Nika,    You can click this link to make the payment, and we'll ship it out to you as soon as possible.  https://www.simsonn.com/products/difference-2",
+      "user_id": 158001343601,
+      "created_at": "2025-11-24T08:23:45Z",
+      "updated_at": "2025-11-24T08:23:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012805848,
+      "body_text": "I just paid. Thanks for helping.\r\n\r\nПн, 24 нояб. 2025 г. в 10:23, support@simsonn.com ",
+      "user_id": 158007280224,
+      "created_at": "2025-11-24T10:30:57Z",
+      "updated_at": "2025-11-24T10:30:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012808342,
+      "body_text": "Okay, we've shipped your order. Hope everything goes smoothly!",
+      "user_id": 158001343601,
+      "created_at": "2025-11-24T10:59:46Z",
+      "updated_at": "2025-11-24T10:59:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

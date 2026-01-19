@@ -1,0 +1,135 @@
+{
+  "id": 9848,
+  "subject": "Pro X 踏板问题",
+  "description_text": "*尊敬的 Simsonn 支持团队，*\n\n我最近二手购买了一套 Pro X 踏板，并已成功使其正常工作。然而，前任卖家还附带了三个 Simagic P-HPR（触觉踏板反应器）。这些设备起初短暂工作了一段时间，但此后便停止了运作。\n\n以下是我已尝试的步骤：\n\n   - 将控制盒更新至最新固件。\n   - 安装并正在运行最新版本的 Simsonn Manager。\n   - 确认 24V 电源工作正常并输出正确的电压。\n\n其他观察：\n\n   - 控制盒上的电机 1 端口起初工作相当稳定，而端口 2 和 3 则没有反应。\n   - 曾经有一次，所有三个端口都短暂工作过，但现在它们都无响应。\n   - 在各端口之间交换 P-HPR 单元没有任何区别。\n\n我怀疑问题可能与控制盒有关。是否有特定的连接顺序（例如，先接电源再接 USB，或反之）对正常操作至关重要？如果您能提供任何故障排除步骤，我将不胜感激。\n\n为协助识别，我已附上：\n\n   - 踏板的零售包装盒照片。\n   - 控制盒的照片。\n   - Simsonn Manager 的屏幕截图，其中显示了控制盒的固件版本和 Simsonn Manager 的软件版本。\n\n感谢您的时间和支持。如需任何其他信息，请告知。\n\n此致，\n\n威尔·班恩",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-03T00:14:36Z",
+  "updated_at": "2026-01-12T05:38:09Z",
+  "requester_id": 158008881127,
+  "responder_id": 158007774664,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015542414,
+      "body_text": "你好，威尔·B， 请卸载您电脑上所有旧版本的软件，并安装 SIMSONN Manager 2.1.2。然后请按以下步骤操作： 打开软件，进入“设置”→“更新”，然后点击“检查更新”； 检查 ProX 固件是否可以更新到 2.0.5 版本； 如果没有自动更新提示，请选择“手动更新”：路径：设置 → 更新 → 手动更新固件 → pedals → firmware → pedals-prox.sfu； 更新完成后，请再次测试设备； 如果问题仍然存在，请尝试重新连接 USB 数据线和电源，然后再次测试； 如果问题依然存在，请将软件界面截图发给我，我将帮助您进一步调查。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-04T00:48:54Z",
+      "updated_at": "2026-01-04T00:48:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015546050,
+      "body_text": "你好，\n\n我按照您上一封邮件的步骤，重新安装了 Simsonn Manager 软件，手动更新了固件，并重新连接了 USB 和电源线，但触觉马达仍然不工作。我已按要求附上了 Simsonn Manager 软件的截图。\n\n此致，\n\n威尔",
+      "user_id": 158008881127,
+      "created_at": "2026-01-04T01:23:38Z",
+      "updated_at": "2026-01-04T01:23:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015546667,
+      "body_text": "你好，威尔·B， ProX 控制器仅支持音圈电机的单向控制，而 ProX Ultra 支持双向控制。您可以考虑升级到 ProX Ultra 控制器，因为它提供的电机输出比 ProX 强得多。如果您使用的是 Simagic 电机，理论上也是支持的。目前，您能否确认一下振动强度设置为 10% 是否太低，以及在拔下并重新连接 USB 和电源后问题是否仍然存在？ https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor?variant=51399342293306",
+      "user_id": 158000445778,
+      "created_at": "2026-01-04T01:27:06Z",
+      "updated_at": "2026-01-04T01:27:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015553874,
+      "body_text": "你好，\n\n我相信我的是新款控制盒（见附件）。我在任何百分比下都感觉不到任何振动。这个功能最初是好的，但现在不行了。",
+      "user_id": 158008881127,
+      "created_at": "2026-01-04T02:07:13Z",
+      "updated_at": "2026-01-04T02:07:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015746367,
+      "body_text": "你好，\n\n请问这件事有更新吗？看起来确实是控制盒的问题，因为它最初是好的。是否可以在保修期内更换一个？\n\n谢谢",
+      "user_id": 158008881127,
+      "created_at": "2026-01-05T15:10:25Z",
+      "updated_at": "2026-01-05T15:10:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016150162,
+      "body_text": "你好，威尔·B， 请提供您的踏板订单号，我将为您查询是否仍在保修期内。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T14:44:26Z",
+      "updated_at": "2026-01-07T14:44:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016462243,
+      "body_text": "你好，\n\n全球速卖通的原始订单号是 8199079164321706（2025年3月9日）。\n\n请将更换的控制盒寄到我的地址：\n\nWill Bann\n81 Keeley Ave,\nWarwick, RI 02886\nUSA",
+      "user_id": 158008881127,
+      "created_at": "2026-01-09T02:41:28Z",
+      "updated_at": "2026-01-09T02:41:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016490405,
+      "body_text": "你好，威尔·B， 很抱歉，由于您的订单已有一段时间，我们无法再找到您的地址信息。我们想请您提供您的电子邮件地址和电话号码。",
+      "user_id": 158007774664,
+      "created_at": "2026-01-09T06:38:04Z",
+      "updated_at": "2026-01-09T06:38:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016532037,
+      "body_text": "你好，\n\n什么截止日期？订单还在 12 个月的保修期内。\n\n订单使用的电子邮件和电话号码是：\n\n- Rogerioluiz16icloud @gmail.com\n- +1 (978) 872-6016\n\n我还附上了全球速卖通的订单截图。",
+      "user_id": 158008881127,
+      "created_at": "2026-01-09T11:50:38Z",
+      "updated_at": "2026-01-09T11:50:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016669805,
+      "body_text": "你好，威尔·B， 您的产品已经发货。物流单号是：JSEAT1014305229YQ。您可以在此网站上追踪：https://t.17track.net/zh-cn#nums=JSEAT1014305229YQ",
+      "user_id": 158007774664,
+      "created_at": "2026-01-10T05:45:24Z",
+      "updated_at": "2026-01-10T05:45:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016704664,
+      "body_text": "你好，\n\n只是想确认一下，你们是寄到以下地址吗？\n\nWill Bann\n81 Keeley Ave,\nWarwick, RI 02886\nUSA\n\n谢谢",
+      "user_id": 158008881127,
+      "created_at": "2026-01-10T11:51:45Z",
+      "updated_at": "2026-01-10T11:51:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016838228,
+      "body_text": "你好，威尔·B， 是的，就是寄到这个地址。",
+      "user_id": 158007774664,
+      "created_at": "2026-01-12T05:38:01Z",
+      "updated_at": "2026-01-12T05:38:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

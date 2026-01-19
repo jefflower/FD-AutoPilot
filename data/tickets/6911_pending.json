@@ -1,0 +1,164 @@
+{
+  "id": 6911,
+  "subject": "VAM Haptic Modules & Simhub",
+  "description_text": "Order through Amazon - placed August 15, 2025  Order # 112-4233887-1764209\r\n\r\nHello, \r\nI am having a ton of issues with the VAM modules connecting with Simhub. It continuously states \"searching for devices\" regardless of what game is being played. I've tried running the SIMSONN manager along with the simhub and with it closed. It doesnt connect in either scenario. I have reset the SIMSONN hub, I've added a grounding wire from the hub to the pedal base, nothing working. Assetto Corsa seems to recognize the modules as they work properly but reflect \"Searchig for devices\"???? Rfactor 2 & LMU do not work correctly. The modules vibrate at odd times and off just crash as they vibrate consistently without a reason. \r\nAMS 2 seems to work intermittently. Not sure what's going on. I need help as all I've gotten is frustration. Please advise how to resolve.\r\nThanks\r\nRichard Burns\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-11-28T01:42:34Z",
+  "updated_at": "2026-01-15T01:49:57Z",
+  "requester_id": 158003372681,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013037357,
+      "body_text": "Hi Rick Burns,   Could you please provide your order number, and also take a photo of the Simsonn Manager software interface along with the pedal’s motor installation? I’ll check the issue for you.      If this happens, it indicates that the computer’s grounding is not reliable, possibly because a three-prong plug was not used with a three-prong wall outlet. You can refer to the post below: connect the computer case to the stand, and connect the control box to the metal screws on the pedals. This should resolve the disconnection issue.     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-11-28T03:17:34Z",
+      "updated_at": "2025-11-28T03:17:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013070903,
+      "body_text": " Hello, \r\n Order #  112-4233887-1764209\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nPlease note that there is no disconnect message, it's not connecting at all. The modules work in Assetto Corsa although they are listed as \"searching for device\". This can't be a grounding issue. \r\nI'd have issues with other peripherals, not just yours. \r\nRegards,\r\nRick Burns\r\n    ",
+      "user_id": 158003372681,
+      "created_at": "2025-11-28T16:20:00Z",
+      "updated_at": "2025-11-28T16:20:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013077404,
+      "body_text": "",
+      "user_id": 158003372681,
+      "created_at": "2025-11-28T18:24:17Z",
+      "updated_at": "2025-11-28T18:24:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158013154554,
+      "body_text": "Hi Rick Burns,     Please connect an additional grounding wire to your PC case, and then manually update the firmware again following the procedure below.      ProX / ProX Ultra Pedal Firmware Update Procedure:    Press and hold the Upgrade button on the control box;    Reconnect the USB cable;    The software will indicate that the device has entered “Simsonn Flasher mode”;    In the software, go to: Settings → Update → Manual Firmware Update → pedals → firmware → pedals-proxultra.sfu (If it’s a ProX pedal, select pedals-prox.sfu)    Start the firmware update, and once it is complete, release the Upgrade button;    Finally, retest and calibrate the pedals.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-01T01:58:33Z",
+      "updated_at": "2025-12-01T01:58:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015167042,
+      "body_text": " Hello, \r\nI've been busy and finally completed the steps that you have referenced below and I still get the following:\r\n\r\n\r\n\r\nPlease advise next steps as in Assetto Corsa and Automobilista 2 the pedal operate correctly however in Le Mans Ultimate and Rfactor 2 - they do not. Often malfunction or crash. \r\nI've grounded the pedals and did the firmware update that you proposed. \r\nThanks in  advance for your help\r\nRick Burns\r\n\r\n\r\n    ",
+      "user_id": 158003372681,
+      "created_at": "2025-12-28T16:23:17Z",
+      "updated_at": "2025-12-28T16:23:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015245909,
+      "body_text": "Hi Rick Burns,  Please let me know a convenient time for you, along with your city and time zone, so I can assist you remotely. You just need to install ToDesk, no registration required, and provide the ID and temporary verification code. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T10:15:52Z",
+      "updated_at": "2025-12-30T10:15:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016159034,
+      "body_text": "Hi Rick Burns,  Please uninstall SIMSONN Manager version 2.1.2 from your computer first, then download and install SIMSONN Manager version 2.1.3 from our official website.  SIMSONN Manager 2.1.3 includes optimizations for the vibration function. Please test again using this version.  https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T15:38:43Z",
+      "updated_at": "2026-01-07T15:38:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016364249,
+      "body_text": " Good morning, \r\nThanks for the email and instructions. I have uninstalled 2.1.2 and installed 2.1.3 and no change. Same as below. \r\nWhich setting am I supposed to use, VAM, VAM NEO OR VAM PRO? I have the black neo shaped modules. I chose those but wanted to double check. Please advise any next steps.\r\nThanks\r\nRick\r\n    ",
+      "user_id": 158003372681,
+      "created_at": "2026-01-08T14:36:36Z",
+      "updated_at": "2026-01-08T14:36:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016469604,
+      "body_text": "Hi Rick Burns,  Please let me know a convenient time for you, along with your city and time zone, so I can assist you remotely. You just need to install ToDesk, no registration required, and provide the ID and temporary verification code.  ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-09T03:46:45Z",
+      "updated_at": "2026-01-09T03:46:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016525992,
+      "body_text": " Good morning, \r\nI am available today, 1/9/26 between 10 am and 12 pm Eastern Time (US). I am located in Fort Mill, South Carolina\r\n\r\n    ",
+      "user_id": 158003372681,
+      "created_at": "2026-01-09T11:04:05Z",
+      "updated_at": "2026-01-09T11:04:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016766207,
+      "body_text": "Hi Rick Burns,  Are you online right now? ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T02:50:02Z",
+      "updated_at": "2026-01-11T02:50:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016824983,
+      "body_text": " Hi, \r\nI was not online last night. I am available today until 4 pm Eastern Time (NY Time)\r\n    ",
+      "user_id": 158003372681,
+      "created_at": "2026-01-11T17:06:04Z",
+      "updated_at": "2026-01-11T17:06:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016846048,
+      "body_text": "Hi Rick Burns,  Yes, I’m online now. How can I help you? ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-12T08:29:26Z",
+      "updated_at": "2026-01-12T08:29:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016856143,
+      "body_text": " Wy did you ask me what time zone I'm in? 3:30 am ET, I'm not available...this is ridiculous. \r\nSend me a new control box as it is grounded and still sparks when i connect power. This thing is garbage.\r\nI'm not happy. Don't ask me for a time if you're going throw out random times \"Are you online now?\"\r\nVery poor!!!!\r\nRick Burns\r\n\r\n    ",
+      "user_id": 158003372681,
+      "created_at": "2026-01-12T11:27:12Z",
+      "updated_at": "2026-01-12T11:27:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017154682,
+      "body_text": "Hi Rick Burns,    We asked about your time zone only to confirm whether it’s daytime or nighttime on your side, so we don’t contact you at an inconvenient time.  Please follow the steps below to troubleshoot:    Uninstall the old software, then download and install the latest SIMSONN Manager 2.1.3 from our official website (this version fixes the telemetry issues with LMU and rF2);    Update the firmware to: CPU1: 2.0.6 / CPU2: 2.0.4;    Please connect the pedals directly to a rear USB 3.0 (blue) port on your PC — do not use a USB hub;    Secure the power connectors for both the control box and the haptic/vibration power supply (zip ties recommended) to prevent wobbling, which can cause intermittent disconnects.    Also, a small spark when connecting power is normal. It happens when the controller’s motor capacitors charge up. Since it’s 24V, there is no safety risk and it will not damage the control board. Please rest assured.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-15T01:49:55Z",
+      "updated_at": "2026-01-15T01:49:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

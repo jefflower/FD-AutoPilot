@@ -1,0 +1,64 @@
+{
+  "id": 8073,
+  "subject": "Pedals not connecting anymore",
+  "description_text": "\r\n\r\nHello,\r\n\r\nI did not use my pedals for a few months and then connected them today. \r\nThey seemed to be working fine, but when trying to calibrate it timed \r\nout on sending out the calibration to the pedals. The inputs were all \r\nworking fine. Since there were both updates for the pedals and the \r\nsoftware I did both: the software update for the manager went find. The \r\npedal update stood very long (5minutes?) on 100% and then said \"upgrade \r\ncompleted\".\r\n\r\nI restarted my PC and from then on I was not able to connect the pedals \r\nanymore and they showed up with the error in the image in the device \r\nmanager in Windows. The pedals are connected with the original USB cable \r\nto the PC and I tried different ports, but also another cable. The power \r\nto the pedals was disconnected after the restart of the PC when they did \r\nnot show up as connected as one of the troubleshooting steps.\r\n\r\nWhat can I do? I can't use the pedals like this.\r\n\r\nBest regards,\r\nMatthias\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-12T13:15:24Z",
+  "updated_at": "2025-12-16T09:44:54Z",
+  "requester_id": 158007777685,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014432521,
+      "body_text": "Hi Matthias Merlo,  Please provide your order number and pedal model. You can enter recovery mode to manually update the firmware for the corresponding pedals. Also, make sure to use a rear USB 3.0 (blue) port on your computer, and avoid using USB hubs without external power or USB 2.0 ports. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-13T05:59:32Z",
+      "updated_at": "2025-12-13T05:59:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014449400,
+      "body_text": "Hi,\r\n\r\nthe order number on Amazon was 306-9595094-8461903.\r\n\r\nHow can I enter recovery mode? During the firmware update it also showed \r\nthat there is CPU1 and CPU2 with different versions? Can I switch to the \r\nother one to test?\r\n\r\nBest regards,\r\nMatthias\r\n\r\n",
+      "user_id": 158007777685,
+      "created_at": "2025-12-13T10:16:04Z",
+      "updated_at": "2025-12-13T10:16:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014471637,
+      "body_text": "Hi Matthias Merlo,  May I ask whether your product is the PlusX pedal or the ProX Ultra pedal? ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-14T02:32:46Z",
+      "updated_at": "2025-12-14T02:32:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014485562,
+      "body_text": "Hi,\r\n\r\nit's the Plus X pedal.\r\n\r\nBest regards,\r\nMatthias\r\n\r\n",
+      "user_id": 158007777685,
+      "created_at": "2025-12-14T15:10:59Z",
+      "updated_at": "2025-12-14T15:10:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014563104,
+      "body_text": "Hi Matthias Merlo,  Please follow the steps below:  Press and hold the upgrade button on the PlusX main controller, then reconnect the USB cable.  Open SIMSONN Manager 2.1.2 and check if it has entered recovery mode.  If recovery mode is detected, go to Settings → Update → Manual Update Firmware → pedals → firmware → pedals-plusx.sfu.  After the update is complete, test the device to see if it has been restored successfully.",
+      "user_id": 158007774607,
+      "created_at": "2025-12-16T09:44:48Z",
+      "updated_at": "2025-12-16T09:44:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

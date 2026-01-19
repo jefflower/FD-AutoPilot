@@ -1,0 +1,64 @@
+{
+  "id": 1259,
+  "subject": "Vam telemetry issue",
+  "description_text": "Hi I have the simsonn pro x pedals and I just also got the vam pedal motors\r\nrecently.    I'm having an issue with the simsonn software recognizing the\r\ngame is running but it says that telemetry is not connected.  So far I've\r\ngotten it to work with assetto corsa but not with dirt really 2.0 or\r\nautomobilista 2. Both those games say telemetry is not connected.\r\n\r\nWould appreciate any help!\r\n\r\n\r\nAlso while I'm here, I noticed that with the pro x pedals if I have the RGB\r\nlights on. They never turn off even when I turn off my PC.    I have to go\r\nin to the simsonn software and toggle the light switch option whenever I\r\nwant to turn on or off the lights. Might be nice to add some options to\r\nauto turn off either when the software is closed or PC is turned off in a\r\nfuture software update.\r\n\r\nThanks!\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-07-06T04:47:46Z",
+  "updated_at": "2025-07-24T02:59:53Z",
+  "requester_id": 158001903814,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004452971,
+      "body_text": "Hi LacedChemist,  We’ll be releasing a new version 2.0.9 soon, which will support the two games you mentioned. In the meantime, you can also download SimHub version 9.9.3, which supports over 100 games and is fully compatible with our pedal devices. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T03:44:21Z",
+      "updated_at": "2025-07-07T03:44:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005096688,
+      "body_text": "Thank you for your response.\r\n\r\nI was able to install simhub and get it set up properly.\r\n\r\nUnfortunately, I keep having an issue where the vam motors stop working mid\r\nrace/after a couple of races. I think the longest I've had them work so far\r\nis like 15 minutes before they stop responding.\r\n\r\nWhen they stop working. I noticed that in the simsonn software my pedal\r\ninputs stop showing up in the position input bar. Like they stop\r\nregistering how far I push the pedals down in the software like they\r\nnormally do.\r\n\r\nThe only way to get it all to work again is a PC restart.\r\n\r\nOn Sun, Jul 6, 2025, 8:44 PM service@simsonn.com ",
+      "user_id": 158001903814,
+      "created_at": "2025-07-17T04:53:58Z",
+      "updated_at": "2025-07-17T04:53:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005133674,
+      "body_text": "Hi LacedChemist,    You can update the software to version 2.0.9, which automatically limits the maximum vibration strength of the VAM motors to prevent overload damage. For ProX pedals, we recommend setting the vibration strength between 15% and 30%, which is already sufficient for maximum feedback. Please do not exceed this range. The same rule applies when using SimHub—avoid running the VAM motors continuously for long periods, especially when triggered by telemetry like speed or RPM.  We also recommend swapping the VAM motor connections on the control box to identify which motor is faulty. Once confirmed, we will send you a free replacement for the damaged unit.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-17T08:51:40Z",
+      "updated_at": "2025-07-17T08:51:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005483340,
+      "body_text": "Hi. Yeah I don't believe the problem is with the motors. They all work fine\r\nfor a short time and then all stop working/responding to the game telemetry\r\nuntil I restart my computer.\r\n\r\nThe motors also stay on when they stop responding to the game telemetry\r\n and the simsonn software stops showing my pedal pressure inputs.\r\n\r\nThe motors continue vibrating constantly when the software stops responding.\r\n\r\n\r\n\r\nI believe it's a software issue.\r\n\r\nOn Thu, Jul 17, 2025, 1:51 AM service@simsonn.com ",
+      "user_id": 158001903814,
+      "created_at": "2025-07-23T20:01:05Z",
+      "updated_at": "2025-07-23T20:01:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005487649,
+      "body_text": "Hi LacedChemist,  If the device stops working after running for some time, please note that in our test environment it remains connected stably for days. This issue is typically caused by unstable USB power supply or electromagnetic interference from external wheelbases. First, you must use the blue USB 3.0 port on the back of the computer and avoid USB hubs to ensure a stable power supply. In addition, please refer to the video about USB sleep ports causing frequent disconnections and the video on grounding the wheelbase to the PC chassis to prevent interference.      https://www.youtube.com/watch?v=LciAFDFWJ1w     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-07-24T02:59:52Z",
+      "updated_at": "2025-07-24T02:59:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

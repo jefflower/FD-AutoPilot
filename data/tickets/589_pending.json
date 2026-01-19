@@ -1,0 +1,94 @@
+{
+  "id": 589,
+  "subject": "Pedal pro Plus issues",
+  "description_text": "Hi!\r\n\r\nI bought a set of pedal pro plus and enjoyed the pedals very much, but\r\nthere is a little issue regarding the input in game and in the software\r\ncalibration. There are some input spikes when pressing the pedals (Brake\r\nand Throttle in my case), like spikes related to grounding issues. I' ve\r\nchecked the wire ground to the module controller, and it is ok!..Using the\r\nSoftware manager 1.8.0 (tried to use Software v4 calibration tool but there\r\nis a huge deadzone and imprecise input). Can this issue be related to\r\nhardware or software? Is there any firmware update to solve this problem?\r\n\r\nThank you very much for your help!\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-06-19T00:13:58Z",
+  "updated_at": "2025-07-02T04:16:50Z",
+  "requester_id": 158001659369,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003479110,
+      "body_text": "Hi paulo vitor ferraz ribeiro,  Could you please provide some photos of the installation and a video showing the software in use to help explain the issue? This will allow me to assist you more quickly and effectively. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-19T03:34:09Z",
+      "updated_at": "2025-06-19T03:34:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003556681,
+      "body_text": "[image: image.png]\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n[image: image.png]\r\n[image: image.png]\r\n\r\n\r\nEm qui., 19 de jun. de 2025 às 00:34, service@simsonn.com <\r\nservice@simsonn.com> escreveu:\r\n\r\n> Hi paulo vitor ferraz ribeiro,\r\n>\r\n> Could you please provide some photos of the installation and a video\r\n> showing the software in use to help explain the issue? This will allow me\r\n> to assist you more quickly and effectively.\r\n>\r\n>\r\n> On Wed, 18 Jun at 8:13 PM , paulo vitor ferraz ribeiro <\r\n> paulovitor.aero@gmail.com> wrote:\r\n> Hi!\r\n>\r\n> I bought a set of pedal pro plus and enjoyed the pedals very much, but\r\n> there is a little issue regarding the input in game and in the software\r\n> calibration. There are some input spikes when pressing the pedals (Brake\r\n> and Throttle in my case), like spikes related to grounding issues. I' ve\r\n> checked the wire ground to the module controller, and it is ok!..Using the\r\n> Software manager 1.8.0 (tried to use Software v4 calibration tool but there\r\n> is a huge deadzone and imprecise input). Can this issue be related to\r\n> hardware or software? Is there any firmware update to solve this problem?\r\n>\r\n> Thank you very much for your help!\r\n>\r\n> 589:4206036\r\n>\r\n\r\n",
+      "user_id": 158001659369,
+      "created_at": "2025-06-20T02:57:03Z",
+      "updated_at": "2025-06-20T02:57:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003556707,
+      "body_text": "Hi!      I've sent  a couple of videos showing the issue in game and in software,  becomes more evident  in game  than in software. (some times the spikes goes for more than 1% of input).",
+      "user_id": 158001659369,
+      "created_at": "2025-06-20T03:01:26Z",
+      "updated_at": "2025-06-20T03:01:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158003679630,
+      "body_text": "Hi paulo vitor ferraz ribeiro,     I see that you've connected the green ground wire, but the black paint might be causing poor contact. It’s recommended to remove some of the paint at the contact point to ensure proper grounding with the metal surface.  Also, are you using a Fanatec or Simagic base? These bases can sometimes cause interference with other devices. To improve stability, it's best to ensure that both the base and the PC are properly connected to the household ground. With proper grounding, the signal should remain stable without fluctuations.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T02:34:23Z",
+      "updated_at": "2025-06-22T02:34:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003741241,
+      "body_text": "Thank you for help.\r\n\r\nI'm using a Cammus C5 DD wheel. Already removed some paint to make a better\r\ncontact.Unfortunately I don't have household ground. Can you send please a\r\nrecovery file download? I can access anymore in site.\r\n\r\nEm sáb., 21 de jun. de 2025 às 23:34, service@simsonn.com <\r\nservice@simsonn.com> escreveu:\r\n\r\n> Hi paulo vitor ferraz ribeiro,\r\n>\r\n> I see that you've connected the green ground wire, but the black paint\r\n> might be causing poor contact. It’s recommended to remove some of the paint\r\n> at the contact point to ensure proper grounding with the metal surface.\r\n> Also, are you using a Fanatec or Simagic base? These bases can sometimes\r\n> cause interference with other devices. To improve stability, it's best to\r\n> ensure that both the base and the PC are properly connected to the\r\n> household ground. With proper grounding, the signal should remain stable\r\n> without fluctuations.\r\n>\r\n> On Thu, 19 Jun at 11:01 PM , paulo vitor ferraz ribeiro <\r\n> paulovitor.aero@gmail.com> wrote:\r\n> Hi!\r\n>\r\n>  I've sent  a couple of videos showing the issue in game and in software,\r\n>  becomes more evident  in game  than in software. (some times the spikes\r\n> goes for more than 1% of input).\r\n>\r\n> 589:4206036\r\n>\r\n\r\n",
+      "user_id": 158001659369,
+      "created_at": "2025-06-24T01:27:03Z",
+      "updated_at": "2025-06-24T01:27:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003795159,
+      "body_text": "Hi paulo vitor ferraz ribeiro,  This is the firmware file for the SIMSONN Manager 2.0.8 software.  ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-24T11:27:46Z",
+      "updated_at": "2025-06-24T11:27:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003832462,
+      "body_text": "hi !\r\n I really appreciate the support, but you sent  a firmware to pro plus X,\r\nand my pedals are PRO PLUS (non X).\r\n\r\nthanks anyway!\r\n\r\nEm ter., 24 de jun. de 2025 às 08:28, service@simsonn.com <\r\nservice@simsonn.com> escreveu:\r\n\r\n> Hi paulo vitor ferraz ribeiro,\r\n>\r\n> This is the firmware file for the SIMSONN Manager 2.0.8 software.\r\n>\r\n>\r\n>\r\n> On Mon, 23 Jun at 9:27 PM , paulo vitor ferraz ribeiro <\r\n> paulovitor.aero@gmail.com> wrote:\r\n> Thank you for help.\r\n>\r\n> I'm using a Cammus C5 DD wheel. Already removed some paint to make a\r\n> better contact.Unfortunately I don't have household ground. Can you send\r\n> please a recovery file download? I can access anymore in site.\r\n>\r\n> Em sáb., 21 de jun. de 2025 às 23:34, service@simsonn.com <\r\n> service@simsonn.com> escreveu:\r\n>\r\n>> Hi paulo vitor ferraz ribeiro,\r\n>>\r\n>> I see that you've connected the green ground wire, but the black paint\r\n>> might be causing poor contact. It’s recommended to remove some of the paint\r\n>> at the contact point to ensure proper grounding with the metal surface.\r\n>> Also, are you using a Fanatec or Simagic base? These bases can sometimes\r\n>> cause interference with other devices. To improve stability, it's best to\r\n>> ensure that both the base and the PC are properly connected to the\r\n>> household ground. With proper grounding, the signal should remain stable\r\n>> without fluctuations.\r\n>>\r\n>> On Thu, 19 Jun at 11:01 PM , paulo vitor ferraz ribeiro <\r\n>> paulovitor.aero@gmail.com> wrote:\r\n>> Hi!\r\n>>\r\n>>  I've sent  a couple of videos showing the issue in game and in software,\r\n>>  becomes more evident  in game  than in software. (some times the spikes\r\n>> goes for more than 1% of input).\r\n>>\r\n>> 589:4206036\r\n>\r\n\r\n",
+      "user_id": 158001659369,
+      "created_at": "2025-06-24T22:18:01Z",
+      "updated_at": "2025-06-24T22:18:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003832992,
+      "body_text": "Hi paulo vitor ferraz ribeiro,     For the Pro Plus, you can update directly by going to the update interface → Manual Firmware Update → navigate to the “pedals-firmware” folder → then the “pedals” folder → and select the “plus.sfu” file.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-24T23:33:00Z",
+      "updated_at": "2025-06-24T23:33:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

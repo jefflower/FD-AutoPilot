@@ -1,0 +1,64 @@
+{
+  "id": 7756,
+  "subject": "Seeking support options",
+  "description_text": "Hi,\r\nI recently placed an order and recieved everything I requested. However I\r\nover looked that when I purchased my pedals a while back they are\r\nequivalent to your plus model and not the pro model. I like the hydraulic\r\nthat comes with the pro, so my question is, can I order the mounting plate\r\nand possibly the load cell if it is different for the brake from model to\r\nmodel. Any direction on this as I would prefer not to upgrade the whole\r\npedal and would like to refrain from a return if needed and still help\r\nsupport your awesome products.\r\nThanks\r\nKyle\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-09T04:31:23Z",
+  "updated_at": "2025-12-20T12:22:31Z",
+  "requester_id": 158007714537,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014166675,
+      "body_text": "Hi Kyle Rearick,    Could you please provide the order numbers and photos of both your previous pedals and the ones you purchased this time? I’ll review them and help you confirm the exact model.  In addition, I can provide you with the PlusX upgrade kit and the connection guide for the control box.         https://www.simsonn.com/products/plus-ultra-upgrade-kit?variant=51087403843898     https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor?variant=51351053533498",
+      "user_id": 158000445778,
+      "created_at": "2025-12-09T06:10:27Z",
+      "updated_at": "2025-12-09T06:10:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014167883,
+      "body_text": "So in my order I purchased the pro x upgrade kit. The issue i have is that\r\nthere is no way to mount the larger hydraulic on the pedals I currently\r\nhave. Attached is a picture of the pedals I purchased from you through\r\nAmazon in 2024. And my order number with the upgrade kit was #SSN3315.\r\nThanks\r\nKyle\r\n\r\n\r\n\r\n\r\n",
+      "user_id": 158007714537,
+      "created_at": "2025-12-09T06:47:48Z",
+      "updated_at": "2025-12-09T06:47:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014300848,
+      "body_text": "Hi Kyle Rearick,  The ProX Ultra upgrade kit is only compatible with upgrading the ProX and cannot be used for the PlusX. If you still want to use it on the PlusX, you can refer to the following post and find the corresponding parts, which can make it work.        https://www.reddit.com/r/simracing/comments/1cykdza/simjack_pedals_with_mods/",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T05:33:09Z",
+      "updated_at": "2025-12-11T05:33:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014317305,
+      "body_text": "Thats kind of a bummer you cant just offer the different mounting plates\r\nfrom the pro x. As well half the links in that reddit post are dead and\r\ndont really offer help to making the existing parts I have work with the\r\nplus x pedals.\r\n\r\n",
+      "user_id": 158007714537,
+      "created_at": "2025-12-11T12:14:08Z",
+      "updated_at": "2025-12-11T12:14:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014810143,
+      "body_text": "Hi Kyle Rearick,  The 8-gear adjustment was designed as an upgrade for the older ProX model and is not compatible with the PlusX. We apologize for the inconvenience. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-20T12:22:31Z",
+      "updated_at": "2025-12-20T12:22:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

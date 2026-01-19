@@ -1,0 +1,34 @@
+{
+  "id": 8392,
+  "subject": "Tracking order N* SSN4600",
+  "description_text": "Hello,\r\n\r\nI'm Samuele I placed an order that was confirmed on December 9, and the 10th second update of your site was shipped via SF Express.\r\n\r\nTo date 6 days after the shipping date on 17track.net my package is indicated as: \"Order information has been received\" while on the official SF Express website it indicates that that order has not been used for more than 2 months I would like to know if it is normal or something happened. I also made the standard shipping to get this order before Christmas as it is a gift.\r\n\r\nIf you can check it would be great thanks in advance have a good day.\r\n\r\nBest regards.\r\nSamuele\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-16T08:25:59Z",
+  "updated_at": "2025-12-24T09:13:24Z",
+  "requester_id": 158007830469,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014566178,
+      "body_text": "Hi Samuele Sommariva,    We sincerely apologise for any inconvenience caused. As the item is currently out of stock at our German warehouse, we will arrange an urgent dispatch via UPS for you. Delivery is expected on the 22nd.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-16T11:32:02Z",
+      "updated_at": "2025-12-16T11:32:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014767737,
+      "body_text": "Hi,\r\nthanks for the info..\r\n\r\nBut i saw that in the tracking is written that there’re 42 euro of import\r\nfee.. why?\r\n\r\nIl giorno mar 16 dic 2025 alle 12:32 service@simsonn.com <\r\nservice@simsonn.com> ha scritto:\r\n\r\n> Hi Samuele Sommariva,\r\n>\r\n> We sincerely apologise for any inconvenience caused. As the item is\r\n> currently out of stock at our German warehouse, we will arrange an urgent\r\n> dispatch via UPS for you. Delivery is expected on the 22nd.\r\n>\r\n>\r\n>\r\n> On Tue, 16 Dec at 3:25 AM , Samuele Sommariva <\r\n> samuele.sommariva12@gmail.com> wrote:\r\n> Hello,\r\n>\r\n> I'm Samuele I placed an order that was confirmed on December 9, and the\r\n> 10th second update of your site was shipped via SF Express.\r\n>\r\n> To date 6 days after the shipping date on 17track.net my package is\r\n> indicated as: \"Order information has been received\" while on the official\r\n> SF Express website it indicates that that order has not been used for more\r\n> than 2 months I would like to know if it is normal or something happened. I\r\n> also made the standard shipping to get this order before Christmas as it is\r\n> a gift.\r\n>\r\n> If you can check it would be great thanks in advance have a good day.\r\n>\r\n> Best regards.\r\n> Samuele\r\n>\r\n> 8392:4206036\r\n>\r\n\r\n",
+      "user_id": 158007830469,
+      "created_at": "2025-12-19T15:14:33Z",
+      "updated_at": "2025-12-19T15:14:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

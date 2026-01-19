@@ -1,0 +1,74 @@
+{
+  "id": 6852,
+  "subject": "Shipping",
+  "description_text": "Has my product shipped out yet?  I ordered from aliexpress\r\n\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-11-27T06:10:00Z",
+  "updated_at": "2025-12-01T02:09:27Z",
+  "requester_id": 158007359335,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012994306,
+      "body_text": "Hi Corey Mason,    You can inquire with the seller on the aliexpress store.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-27T06:47:36Z",
+      "updated_at": "2025-11-27T06:47:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013016069,
+      "body_text": "It is your guy's store.. is your official store. And I'm getting no response no matter how many times I message\r\n\r\n\r\n________________________________\r\n",
+      "user_id": 158007359335,
+      "created_at": "2025-11-27T15:15:15Z",
+      "updated_at": "2025-11-27T15:15:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013037812,
+      "body_text": "Hi Corey Mason,  Could you please provide a screenshot of your order number and the store name? I’ll check which store’s customer service responded. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-28T03:52:37Z",
+      "updated_at": "2025-11-28T03:52:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013087019,
+      "body_text": "I was excited to get this but now I'm extremely disappointed because here we are almost 5 days later and it hasn't even been sent but yet I'm being told it has been.\r\n\r\n\r\n________________________________\r\n",
+      "user_id": 158007359335,
+      "created_at": "2025-11-28T23:29:13Z",
+      "updated_at": "2025-11-28T23:29:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013089200,
+      "body_text": "Please I just want to know what's going on I feel like I'm going through too much to get an answer on this\r\n\r\n\r\n________________________________\r\n",
+      "user_id": 158007359335,
+      "created_at": "2025-11-29T01:17:03Z",
+      "updated_at": "2025-11-29T01:17:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013154703,
+      "body_text": "Hi Corey Mason,  I have contacted the AliExpress operations team. Due to a temporary shortage of some parts, the shipment might be slightly delayed, but it should be dispatched very soon. You don’t need to worry. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-01T02:09:27Z",
+      "updated_at": "2025-12-01T02:09:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

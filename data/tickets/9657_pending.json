@@ -1,0 +1,84 @@
+{
+  "id": 9657,
+  "subject": "CRSM30 doesnt work. is there a minimum order?",
+  "description_text": "good morning,\r\n\r\nCRSM30 doesnt work. is there a minimum order?\r\n\r\nthanks,\r\n\r\ntom\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-31T09:49:16Z",
+  "updated_at": "2026-01-15T09:54:53Z",
+  "requester_id": 158008830591,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015366387,
+      "body_text": "Hi Tom Bonser,  Could you provide a link that is not available for purchase? ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-01T15:21:02Z",
+      "updated_at": "2026-01-01T15:21:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015369070,
+      "body_text": "Happy new year!\r\n\r\nI've already placed my order:\r\nOrder #SSN5582\r\n\r\nMany thanks,\r\n\r\nTom\r\n________________________________\r\n",
+      "user_id": 158008830591,
+      "created_at": "2026-01-01T17:09:04Z",
+      "updated_at": "2026-01-01T17:09:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015377961,
+      "body_text": "Hi Tom Bonser,  Happy New Year! We will arrange the shipment as soon as we are back at work. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-02T03:41:23Z",
+      "updated_at": "2026-01-02T03:41:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016125034,
+      "body_text": "Good morning. Do you know the status of my delivery? Many thanks, Tom ",
+      "user_id": 158008830591,
+      "created_at": "2026-01-07T11:54:24Z",
+      "updated_at": "2026-01-07T11:54:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017172752,
+      "body_text": "Hi Tom Bonser,    I apologize for not getting back to you sooner. Your order has been delivered—did you receive it?  https://t.17track.net/en#nums=SF6047224805069",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T09:15:36Z",
+      "updated_at": "2026-01-15T09:15:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017174468,
+      "body_text": "Good morning. Yes I have the package and have installed the pedal. Thank you ",
+      "user_id": 158008830591,
+      "created_at": "2026-01-15T09:49:34Z",
+      "updated_at": "2026-01-15T09:49:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017174649,
+      "body_text": "Hi Tom Bonser,    I'm so glad to hear the good news. Have fun!",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T09:54:43Z",
+      "updated_at": "2026-01-15T09:54:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

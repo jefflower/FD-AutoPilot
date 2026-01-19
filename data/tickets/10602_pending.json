@@ -1,0 +1,44 @@
+{
+  "id": 10602,
+  "subject": "HS Pro Shifter not working correctly",
+  "description_text": "Hello\r\nI just received my package and when setting it up it seems the\r\nsoftware does not recognize the reverse gear correctly during calibration.\r\nThis makes shifting impossible in some games, and I was wondering if there\r\nwas a fix in the works so that I could use the product as intended.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-12T01:52:51Z",
+  "updated_at": "2026-01-13T02:37:10Z",
+  "requester_id": 158008557561,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016836529,
+      "body_text": "Hi Bailey Zampardi,     Please download the latest SIMSONN Manager 2.1.3 (EXE installer version) and recalibrate the device after installation. Please do not use the ZIP portable version, as it may cause missing files or incorrect paths.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-12T03:46:21Z",
+      "updated_at": "2026-01-12T03:46:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016905106,
+      "body_text": "I have done that and it seems like 7 and reverse are still switched",
+      "user_id": 158008557561,
+      "created_at": "2026-01-12T21:47:02Z",
+      "updated_at": "2026-01-12T21:47:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158016924753,
+      "body_text": "Hi Bailey Zampardi,  Could you please install the Todesk tool? Please provide the ID and temporary verification code, so I can check the issue remotely. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-13T02:37:09Z",
+      "updated_at": "2026-01-13T02:37:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

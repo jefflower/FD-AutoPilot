@@ -1,0 +1,24 @@
+{
+  "id": 8051,
+  "subject": "Order #SSN4492",
+  "description_text": "Hallo zusammen, \r\n \r\n wollte mich mal erkundigen, wann ich mit meiner Bestellung rechnen kann. \r\n \r\n \r\n VG Marcel \r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-12T06:58:11Z",
+  "updated_at": "2025-12-12T11:28:17Z",
+  "requester_id": 158007774980,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014380576,
+      "body_text": "Hi Marcel Lange,    We sincerely apologize for any inconvenience caused. Currently, our German warehouse has depleted its inventory of subflooring. We expect restocking by the 14th. At that time, we will ship your order via DHL and refund the additional shipping fees you paid.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-12T11:28:17Z",
+      "updated_at": "2025-12-12T11:28:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "id": 5286,
+  "subject": "Ssn2818",
+  "description_text": "My Order # SSN2818 arrived today and the wrong shifter was sent..i ordered the 6+R and was shipped the 7+R. Is there a way this can be exchanged for the shifter ordered? Thank youBlake Humber903 590 0189\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-26T07:33:30Z",
+  "updated_at": "2025-11-03T08:10:10Z",
+  "requester_id": 158005292420,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011144938,
+      "body_text": "We sincerely apologize for the inconvenience caused. Our warehouse staff mistakenly shipped the wrong item. If you can accept this 7+R, we can issue a $20 refund. If not, we can arrange a replacement for you. We apologize for the trouble.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-27T09:12:06Z",
+      "updated_at": "2025-10-27T09:12:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011182738,
+      "body_text": "I would like the 6+r shifter please if that can be arranged...what would be the steps involved in an exchange of this one for the one I ordered?Thanks for the replyBlake Humber903 590 0189 \n-------- Original message --------",
+      "user_id": 158005292420,
+      "created_at": "2025-10-27T20:02:54Z",
+      "updated_at": "2025-10-27T20:02:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011278756,
+      "body_text": "Hi subafor2003,    Please check the shipping cost for returning item 6+r to this address. Our US warehouse is currently unable to generate return labels. We apologize for the inconvenience.  Chino1 Warehouse,  13402 Yorba Avenue, Unit 102,  Chino, CA 91710  USA",
+      "user_id": 158001343601,
+      "created_at": "2025-10-29T10:42:23Z",
+      "updated_at": "2025-10-29T10:42:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011349768,
+      "body_text": "Id like to arrange for a replacement,  thank you. RespectfullyBlake Humber\n-------- Original message --------",
+      "user_id": 158005292420,
+      "created_at": "2025-10-30T14:10:39Z",
+      "updated_at": "2025-10-30T14:10:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011375487,
+      "body_text": "I will check the shipping and I will be shipping back the 7+r shifter that was sent to me instead of the 6+r I ordered... will my replacement 6 +r be shipped when this shifter is returned to the warehouse? ThanksBlake Humber \n-------- Original message --------",
+      "user_id": 158005292420,
+      "created_at": "2025-10-31T03:51:00Z",
+      "updated_at": "2025-10-31T03:51:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011375508,
+      "body_text": "Hi subafor2003,    We will arrange shipment of the hexagonal gearshift today, so please don't worry.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-31T03:52:57Z",
+      "updated_at": "2025-10-31T03:52:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011375685,
+      "body_text": "Hi subafor2003,    This is your logistics tracking link.  https://www.fedex.com/wtrk/track/?trknbr=394835194520",
+      "user_id": 158001343601,
+      "created_at": "2025-10-31T03:58:05Z",
+      "updated_at": "2025-10-31T03:58:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011375712,
+      "body_text": "Thank you, I will ship this shifter out tomorrow to the California warehouse. - Blake Humber \n-------- Original message --------",
+      "user_id": 158005292420,
+      "created_at": "2025-10-31T03:59:30Z",
+      "updated_at": "2025-10-31T03:59:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011461580,
+      "body_text": "Shipped USPS9534 6124 4126 5304 5359 14\n-------- Original message --------",
+      "user_id": 158005292420,
+      "created_at": "2025-10-31T15:50:18Z",
+      "updated_at": "2025-10-31T15:50:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

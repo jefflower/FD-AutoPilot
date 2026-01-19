@@ -1,0 +1,44 @@
+{
+  "id": 5600,
+  "subject": "Throttle cable broke",
+  "description_text": "Have been using these for a bit and today I noticed the connector came off the end of my throttle cable. Is this rj9? And if so what is the pin order I need to terminate a new one on? \r\nYahoo Mail: Search, Organize, Conquer\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-04T04:08:08Z",
+  "updated_at": "2025-11-05T06:00:03Z",
+  "requester_id": 158006452693,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011769356,
+      "body_text": "Hi Andrew Winningham,  The throttle uses an RJ11 4P4C connector. You can go to a nearby computer repair shop and re-crimp a connector, following the wiring sequence of the brake or clutch. This should resolve the issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-05T05:38:32Z",
+      "updated_at": "2025-11-05T05:38:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011769606,
+      "body_text": "It is 100% not an rj11 as I went out and purchased some and they were too big. It has to be an rj9 connector. \r\n\r\nYahoo Mail: Search, Organize, Conquer \r\n \r\n  ",
+      "user_id": 158006452693,
+      "created_at": "2025-11-05T05:57:37Z",
+      "updated_at": "2025-11-05T05:57:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011769636,
+      "body_text": "Hi Andrew Winningham,  The name may vary in different countries, but as long as the size is the same, it will work. However, a crimping tool is required to complete the task. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-05T06:00:01Z",
+      "updated_at": "2025-11-05T06:00:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

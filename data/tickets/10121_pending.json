@@ -1,0 +1,44 @@
+{
+  "id": 10121,
+  "subject": "I have and issue with an order",
+  "description_text": "The order  #SSN5072 seems to be stuck in Feucht at the DHL deposit and I\r\ncannot get in contact with them. My order has been sitting in there since\r\nthe 24th of December without any info about it. Are you able to check\r\nanything about it? The tracking number is CE326636821DE if you need it.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-06T18:06:09Z",
+  "updated_at": "2026-01-13T11:59:00Z",
+  "requester_id": 158008322474,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016315773,
+      "body_text": "Hi Cristy Ichim,    We apologize and will look into this for you as soon as possible.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-08T09:48:51Z",
+      "updated_at": "2026-01-08T09:48:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016841742,
+      "body_text": "Have you found anything about it?\r\n\r\n",
+      "user_id": 158008322474,
+      "created_at": "2026-01-12T06:30:33Z",
+      "updated_at": "2026-01-12T06:30:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016973860,
+      "body_text": "Hi Cristy Ichim,    DHL is investigating the matter. We will notify you immediately upon receiving any updates!",
+      "user_id": 158001343601,
+      "created_at": "2026-01-13T11:58:58Z",
+      "updated_at": "2026-01-13T11:58:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

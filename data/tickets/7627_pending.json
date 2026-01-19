@@ -1,0 +1,64 @@
+{
+  "id": 7627,
+  "subject": "Vam pro haptics broken",
+  "description_text": "Hello you guys had  helped me by remoting into my pc and getting my haptics\r\nto work right again. They were having a issue where in games the throttle\r\nwould just get stuck on and not shut off without unplugging the controller\r\nbox. Well that problem has came back. I even added the ground wire from the\r\npedals to the box. And bare metal contact from the box to the pedal plate.\r\nBut the haptics are messing up. The pedals still work just like normal but\r\nthe haptics are not. Please help.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-07T15:43:33Z",
+  "updated_at": "2025-12-14T03:26:33Z",
+  "requester_id": 158001853228,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014119804,
+      "body_text": "Hi Dalton Uhl,     You can first try testing with this solution as a reference.        If this happens, it indicates that the computer’s grounding is not reliable, possibly because a three-prong plug was not used with a three-prong wall outlet. You can refer to the post below: connect the computer case to the stand, and connect the control box to the metal screws on the pedals. This should resolve the disconnection issue.  https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-12-08T10:49:33Z",
+      "updated_at": "2025-12-08T10:49:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014121151,
+      "body_text": "Ive been through all of this. Your team remoted into my pc last time about\r\n2 to 3 weeks ago and they were working again for a bit. Ive added the\r\ngrounding wire from the pedals to the control box. Ive sanded everything so\r\nit had a bare metal contact. Amd it still doesnt work.\r\n\r\nI noticed that when it the throttle haptic gets stuck on, usually the\r\nsimsonn manager program has frozen itself when the throttle pedal is\r\npressed in so it thinks the pedal is pressed in when its not, and the only\r\nway to solve it is unplug the control box and use task manager to close\r\nsimsonn manager and the program gets frozen but nothing else on pc is\r\nfrozen\r\n\r\nOn Mon, Dec 8, 2025, 3:49 AM support@simsonn.com ",
+      "user_id": 158001853228,
+      "created_at": "2025-12-08T11:35:42Z",
+      "updated_at": "2025-12-08T11:35:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014301343,
+      "body_text": "Hi Dalton Uhl,     The most important part is ensuring a stable ground connection between the PC chassis and the control box chassis, which helps prevent disconnection issues. In addition, please use a blue USB 3.0 port and avoid using USB hubs whenever possible ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T06:09:49Z",
+      "updated_at": "2025-12-11T06:09:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014319833,
+      "body_text": "In the video the white cable goes from the control box to the pc as well.\r\nThe usb is plugged into the usb port with Still getting the issue. Is it\r\nnormal for the simsonn manager software to be using 15% of my cpu as well?\r\nDont think it was doing that before\r\n\r\n1000000879.mp4\r\nAdded\r\n<https://drive.google.com/file/d/1W9mpi3u5KVy_OaIZkB3M9U8nG8-OG-Ni/view?usp=drivesdk>\r\n\r\n\r\n\r\nOn Wed, Dec 10, 2025, 11:10 PM support@simsonn.com ",
+      "user_id": 158001853228,
+      "created_at": "2025-12-11T13:27:32Z",
+      "updated_at": "2025-12-11T13:27:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014472196,
+      "body_text": "Hi Dalton Uhl,  Please provide your order number, contact name, phone number, and shipping address, and we will send you a new ProX Ultra control box. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-14T03:26:32Z",
+      "updated_at": "2025-12-14T03:26:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

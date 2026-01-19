@@ -1,0 +1,64 @@
+{
+  "id": 7747,
+  "subject": "请问可以退Base Plate吗",
+  "description_text": "你好 我刚收到我的踏板 感觉很好 可惜我可能并不需要这个Base Plate，请问可以退货吗，就是我人不在国内在英国买的。你们的退货政策是什么样的？\r\n\r\n订单号：\r\nSSN4039\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-09T01:16:17Z",
+  "updated_at": "2025-12-09T02:28:31Z",
+  "requester_id": 158007712613,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014163285,
+      "body_text": "你好，根据我们的退货政策，如果产品没有问题，我们是不承担退货运费的。你可以在回国时把底板带回来，要不你就得把包裹寄到我们德国仓库，因为我们英国仓库还没建好，这样运费会很不划算。",
+      "user_id": 158001343601,
+      "created_at": "2025-12-09T02:20:24Z",
+      "updated_at": "2025-12-09T02:20:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014163311,
+      "body_text": "我可以回国寄回来！请麻烦给我一下地址\r\n\r\nOn Tue, 9 Dec 2025 at 02:20, support@simsonn.com ",
+      "user_id": 158007712613,
+      "created_at": "2025-12-09T02:21:37Z",
+      "updated_at": "2025-12-09T02:21:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014163397,
+      "body_text": "湖南雷旋智能科技有限公司|黄灿|(86)-15084924441|support@simsonn.com|410221，桐梓坡西路186号新仓库3楼民达医药有限责任公司三楼，岳麓区，长沙市，湖南省，中国",
+      "user_id": 158001343601,
+      "created_at": "2025-12-09T02:26:50Z",
+      "updated_at": "2025-12-09T02:26:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014163414,
+      "body_text": "好的 谢谢 那么退款怎么进行呢\r\n\r\nOn Tue, 9 Dec 2025 at 02:26, support@simsonn.com ",
+      "user_id": 158007712613,
+      "created_at": "2025-12-09T02:27:43Z",
+      "updated_at": "2025-12-09T02:27:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014163433,
+      "body_text": "我们会在收到并检查后为你退款，请确保产品保持原包装，且没有使用痕迹",
+      "user_id": 158001343601,
+      "created_at": "2025-12-09T02:28:30Z",
+      "updated_at": "2025-12-09T02:28:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

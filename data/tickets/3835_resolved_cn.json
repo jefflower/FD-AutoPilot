@@ -1,0 +1,35 @@
+{
+  "id": 3835,
+  "subject": "Pro X Ultra 控制盒",
+  "description_text": "您好，我联系您是因为当我连接电源和我的 Haptic VAM Pro 时，它不工作。我需要刷新控制盒还是控制盒有问题？",
+  "status": 4,
+  "priority": 3,
+  "created_at": "2025-09-15T10:11:14Z",
+  "updated_at": "2025-09-17T02:04:46Z",
+  "requester_id": 158004551334,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008837417,
+      "body_text": "您好，David Durand，您可以先断开控制盒的 USB 和电源。然后，先重新连接 USB，再连接电源。之后，请检查软件是否显示连接成功，并给我发送连接界面的截图，以便我验证版本是否正确。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-17T01:30:37Z",
+      "updated_at": "2025-09-17T01:30:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008837900,
+      "body_text": "您好，我在 Reddit 上找到了解决方案 谢谢 2025年9月17日周三 03:30，support@simsonn.com",
+      "user_id": 158004551334,
+      "created_at": "2025-09-17T02:00:05Z",
+      "updated_at": "2025-09-17T02:00:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

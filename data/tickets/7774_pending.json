@@ -1,0 +1,24 @@
+{
+  "id": 7774,
+  "subject": "please help me with my order",
+  "description_text": "Hi. I purchased the following items through your website (my email address is   sp-czesci@o2.pl , address is Andrzej Pańczyk, 62-700 Turek, ul. Zdrojki Prawne 55, Poland): a Simsonn HS Pro gear shift lever and a Simsonn HB Pro Racing handbrake. Unfortunately, after making the payment on December 2, 2025 (payment confirmation via App Pay attached), I did not receive any confirmation email or shipping confirmation. I am afraid I have been scammed. Could you please verify whether you received my transfer? If so, please send me the tracking number. When I log in to your website, I do not see that I have placed any order with you, and the money has already been transferred. Please verify this. Thank you in advance and best regards, Andrzej Pańczyk\r\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-09T09:38:35Z",
+  "updated_at": "2025-12-09T09:53:24Z",
+  "requester_id": 158007716026,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014176299,
+      "body_text": "Hi sp-czesci,    As you did not provide an email address, you did not receive the order confirmation and dispatch notification. We have added this email address for you to receive subsequent notifications. Here is your logistics tracking link.  https://t.17track.net/en#nums=YT2533700710339802",
+      "user_id": 158001343601,
+      "created_at": "2025-12-09T09:53:21Z",
+      "updated_at": "2025-12-09T09:53:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

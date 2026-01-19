@@ -1,0 +1,24 @@
+{
+  "id": 8663,
+  "subject": "Reminder about Refund Request for Order #SSN4382",
+  "description_text": "Dear SIMSONN team,\r\n\r\nI am writing to follow up on my previous request regarding the cancellation\r\nand refund of my order #SSN4382.\r\n\r\n It has now been several business days since you confirmed that the refund\r\nwould be processed, but I have not yet received it.\r\n\r\nCould you please provide an update on the status of the refund and let me\r\nknow when I can expect the payment to be completed?\r\n\r\nBest regards\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-19T09:02:11Z",
+  "updated_at": "2025-12-19T09:50:01Z",
+  "requester_id": 158007753560,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014752157,
+      "body_text": "We apologize for the inconvenience caused. Your refund has been processed. Please check your account.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-19T09:50:01Z",
+      "updated_at": "2025-12-19T09:50:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

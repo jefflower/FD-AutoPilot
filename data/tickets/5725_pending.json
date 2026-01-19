@@ -1,0 +1,24 @@
+{
+  "id": 5725,
+  "subject": "Pedal haptics just stop, and then it won't stop vibrating. How can I help?",
+  "description_text": "My Simsonn pedal haptic feedback devices tend to go crazy and stop working.\r\nI'm using SimHub to control them, and I'm playing Assetto Corsa. What\r\ninformation do you need for me to help fix this? It was doing this with\r\nthe plastic versions, but now I'm using the Pro versions with billet\r\naluminum bodies with the linear actuators, but they still go crazy and die.\r\nAt this very moment my brake pedal is still pulsing even after I've closed\r\nthe application. Is there a log file that I can send to you guys to help\r\nyou? I just need my pedal haptics to work correctly because I can't race\r\nwithout them. Don't make me sell this rig and go back to full time real\r\nlife racing. It's a bitch, so I'll help however I can. Tell me how to send\r\nyou logs so that we can fix this.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-06T11:18:40Z",
+  "updated_at": "2025-11-09T04:26:39Z",
+  "requester_id": 158001878569,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011984980,
+      "body_text": "Hi J W,    Please first make sure that your software is the latest version, SIMSONN Manager 2.1.2, and that the pedal firmware is CPU1: 2.0.5, CPU2: 2.0.4. Also, ensure the USB is connected to the USB 3.0 (blue) port on the back of your computer, and avoid using a USB hub.  Additionally, you can refer to the link below, which mainly involves connecting the computer case to the pedal stand with wires, and then connecting any metal screw on the pedal stand to our PlusX control box. This helps resolve interference caused by the computer or stand not being properly grounded.     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding        https://www.reddit.com/r/simracing/comments/1n291hi/solution_for_simsonn_vam_pro_emi_issues/",
+      "user_id": 158000445778,
+      "created_at": "2025-11-09T04:26:39Z",
+      "updated_at": "2025-11-09T04:26:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

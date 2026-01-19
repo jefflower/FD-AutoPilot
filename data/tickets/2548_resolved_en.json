@@ -1,0 +1,35 @@
+{
+  "id": 2548,
+  "subject": "VAM Motor - Throttle Pedal",
+  "description_text": "Hi\n\nI bought the plus x pedals and the vam motors a few weeks ago. However, I have only just got around to installing them.\n\nI am having trouble fitting the motor bracket on the throttle pedal, as it will not between the metal sides. Please see the attached picture. That is showing me trying to fit it in.\n\nI have fitted the brake and clutch motors fine.\n\nCould you please advise where I may be going wrong, or send me a narrower bracket?\n\n\nKind Regards\nAlex Walker",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-08-11T08:33:17Z",
+  "updated_at": "2025-08-13T00:49:38Z",
+  "requester_id": 158002930124,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006726877,
+      "body_text": "Hi Alex Walker,     Please loosen a few screws here from top to bottom in sequence, then install the motor bracket. Once installed, tighten the screws back in the same order.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-12T05:06:15Z",
+      "updated_at": "2025-08-12T05:06:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006732093,
+      "body_text": "Hi\n\nThank you for the assistance, I just want to confirm that I have now got it installed using your advice.\n\nKind Regards\nAlex Walker",
+      "user_id": 158002930124,
+      "created_at": "2025-08-12T07:51:02Z",
+      "updated_at": "2025-08-12T07:51:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

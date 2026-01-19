@@ -1,0 +1,24 @@
+{
+  "id": 6224,
+  "subject": "Issue with VAM (non pro) Haptics.",
+  "description_text": "I received my order #SSN3248 with pedals and haptics. I tested the haptics,\r\nbut there is an issue with the clutch haptic. In the Simsonn manager, when\r\nI do a vibration test of the clutch haptic, it sounds really strange\r\n(quality issue?) like it's broken, unlike the brake and throttle haptics,\r\nwhich seem to work pretty well.\r\n\r\nI'm going to send a video of my issue: in this video, I will do a test\r\nvibration at 30% strength of both haptics (clutch and brake). I will first\r\ntest the clutch and then the brake, and we can hear that the clutch at the\r\nsame strength doesn't make the same sound (it makes a little noise), and if\r\nI go to about 100% strength, the sound is very strange, like it's broken,\r\nbut the brake sounds normal. I don't want to do it anymore at 100% because\r\nI don't want to damage the clutch. If you respond, I can do it at 100%, and\r\nmaybe we can go for an exchange?\r\n\r\nLuca Fragapane\r\n IMG_0773.MOV\r\n<https://drive.google.com/file/d/1oMy4i83myBK7aBCo0EgorzqFLvebRmGP/view?usp=drive_web>\r\n\r\n[image: IMG_0772.jpeg]\r\n\r\n",
+  "status": 5,
+  "priority": 4,
+  "created_at": "2025-11-16T20:24:55Z",
+  "updated_at": "2025-12-04T01:41:18Z",
+  "requester_id": 158007140964,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013364358,
+      "body_text": "此工单已关闭并合并到工单 7362 中",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T01:41:18Z",
+      "updated_at": "2025-12-04T01:41:18Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

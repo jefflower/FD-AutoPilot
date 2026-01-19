@@ -1,0 +1,54 @@
+{
+  "id": 6960,
+  "subject": "Shipping",
+  "description_text": "Hello again, I sent a email a couple of days ago but never got any respons from my reply to your answer.\r\n\r\nI was told in that mail that the pedals would be restocked today, Can I expect the to be shipped today aswell or next week? and if so Is it possible for you guys to send a tracking link to that aswell.\r\n\r\nI was also told that I would get a refund for my faster shipping, if that is possible I would like that since the pedals have been out for over 11 days now.\r\n\r\nLast question. How much longer can I expect the haptics to take? It says they are in Sweden but not getting a lot of information of where is Sweden.\r\n\r\nMy order is: #SSN3585\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-28T14:10:15Z",
+  "updated_at": "2025-12-04T12:35:52Z",
+  "requester_id": 158007301322,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012857188,
+      "body_text": "Hi Harald Wernholm,    We apologize for the inconvenience. Our German warehouse is currently out of stock, with restocking expected by the 28th. At that time, we will ship your order via DHL and refund the additional shipping fees. Alternatively, we can ship from China via express, but there is approximately a 10% chance customs duties may apply.  Here is your Haptics logistics tracking link:  https://t.17track.net/en#nums=SF6047060798419",
+      "user_id": 158001343601,
+      "created_at": "2025-11-25T02:44:21Z",
+      "updated_at": "2025-11-25T02:44:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012869954,
+      "body_text": "Hello, I can wait until Germany has been restocked but I would like the extra shipping fee for faster shipping to be refunded if possible, how long can I expect the shipping from Germany to be?\r\n\r\n",
+      "user_id": 158007301322,
+      "created_at": "2025-11-25T09:25:13Z",
+      "updated_at": "2025-11-25T09:25:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013158347,
+      "body_text": "ID 为 6670 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-01T05:52:42Z",
+      "updated_at": "2025-12-01T05:52:42Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158013158348,
+      "body_text": "合并来自工单6670  \n      主题: Shipping  \n      描述:  \nHello, last monday I bought some pedals and haptic reactors with express delivery. Its been a week now and the pedals have not even started the shipping process, when can I expect that to happen? \n \n \n \n \nMy order is #SSN3585",
+      "user_id": 158000445778,
+      "created_at": "2025-12-01T05:52:42Z",
+      "updated_at": "2025-12-01T05:52:42Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

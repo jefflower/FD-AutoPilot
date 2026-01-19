@@ -1,0 +1,25 @@
+{
+  "id": 11103,
+  "subject": "No confirmation for Order",
+  "description_text": "Good afternoon,\nThis morning I placed an order but I never received any confirmation. I\nwanted to make sure the order was in fact placed, and maybe I put down the\nwrong contact information.\n\nOrder number RQI4IHL9\n\nThanks!",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-16T21:42:48Z",
+  "updated_at": "2026-01-17T06:36:03Z",
+  "requester_id": 158009081916,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017316032,
+      "body_text": "Hi Thomas Cameron, I have added this email address for you and sent a shipping notification. Please check your inbox.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T06:36:03Z",
+      "updated_at": "2026-01-17T06:36:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

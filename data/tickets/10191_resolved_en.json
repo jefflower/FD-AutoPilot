@@ -1,0 +1,105 @@
+{
+  "id": 10191,
+  "subject": "Purchase Replacement Brake Module for Simsonn Pedals",
+  "description_text": "Hi Simsonn Support,\n\nI recently purchased a used set of Simsonn pedals (throttle, clutch,\nbrake). The throttle and clutch work perfectly, but the brake pedal does\nnot register any input in Windows (joy.cpl), your software, or DiView.\n\nI’ve already tested multiple USB ports, rebooted, and confirmed the brake\nnever shows signal while the other two pedals do, so I believe the load\ncell or internal brake wiring has failed.\n\nCould you let me know:\n\nIf you sell a replacement brake load cell or brake pedal assembly for this\npedal set\n\nPricing and availability\n\nAny part number or compatibility details I should know before ordering\n\nI really like the pedals overall and would prefer to keep using them if\npossible.\n\nThanks for your time,\nBrendan",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-07T08:29:15Z",
+  "updated_at": "2026-01-14T02:01:46Z",
+  "requester_id": 158008964479,
+  "responder_id": 158007774664,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016095467,
+      "body_text": "Hi brendan shuey,     If your pedals are version 1.7.1, you can update the firmware using SIMSONN Manager 2.1.2: Go to Settings → Update → Manual Firmware Update → pedals → firmware → pedals-plus.sfu. After the update, the pedals will support the new software. Please test the brake pedal again.  If your pedals are version 1.7.0, you will need to use FreeJoy to calibrate the pedals, and some settings may need to be manually restored.     https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T08:36:30Z",
+      "updated_at": "2026-01-07T08:36:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016437091,
+      "body_text": "Hello,\n\nThank you for your reply, I really appreciate it. Unfortunately, this\ndid not work. These are version 1.7.0, so it is not letting me update the\nfirmware manually. The brake pedal does not have any response within\nFreejoy either, so I am unable to calibrate it there. Any suggestions?\n\nThank you,\nBrendan\n\n---\n\nOn Wed, Jan 7, 2026, 1:36 AM service @simsonn.com",
+      "user_id": 158008964479,
+      "created_at": "2026-01-08T22:45:19Z",
+      "updated_at": "2026-01-08T22:45:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016466038,
+      "body_text": "Hi brendan shuey,     Please use FreeJoy 1.7.0, then load and apply the recovery configuration file (CFG) to try restoring the pedal signal.   https://drive.google.com/file/d/1hnHNudj0VhE6xr7ypu-KeEDuVrlVHVg9/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2026-01-09T03:15:33Z",
+      "updated_at": "2026-01-09T03:15:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016629024,
+      "body_text": "Hello,\n\nThank you so much for trying to help me with this problem.\n\nUnfortunately, this fix also did not work. The throttle works, the clutch\nworks, but I cannot get the brake to work. Two unused axes jitter randomly,\nwith no correlation to pressing the brake pedal, but I cannot get any input\ndetected when pressing the brake. Are there any other options that you are\naware of?\n\nThank you again,\nBrendan\n\n--\nBrendan J. Shuey\nbshue2 @gmail.com\n(607) 319-9121\n\nOn Thu, Jan 8, 2026, 8:15 PM service @simsonn.com",
+      "user_id": 158008964479,
+      "created_at": "2026-01-09T22:36:00Z",
+      "updated_at": "2026-01-09T22:36:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016656017,
+      "body_text": "Hi brendan shuey,  Do you still have your original purchase order number? I can check whether it is still within the warranty period. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-10T03:35:44Z",
+      "updated_at": "2026-01-10T03:35:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016656824,
+      "body_text": "Hello,\n\nUnfortunately, I do not. This set was purchased used. Is there a way to\npurchase just the brake pedal or load cell separately?\n\n\nOn Fri, Jan 9, 2026, 8:35 PM service @simsonn.com",
+      "user_id": 158008964479,
+      "created_at": "2026-01-10T03:42:55Z",
+      "updated_at": "2026-01-10T03:42:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016671543,
+      "body_text": "Hi brendan shuey,       Do you have AliExpress? If convenient, please contact AliExpress customer service, and we can send you a pressure sensor at cost price plus shipping. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-10T06:01:10Z",
+      "updated_at": "2026-01-10T06:01:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016743057,
+      "body_text": "Hello,\n\nYes, I do. That would be great!\n\nJust to confirm, the pressure sensor you will send is the complete\nepoxy-encased module with cable, ready to install?\n\nI have attached a picture of my current brake pedal for your reference.\n\n\n\n\n\nThank you,\nBrendan\n\n\n\n--\n\nOn Fri, Jan 9, 2026, 11:01 PM service @simsonn.com",
+      "user_id": 158008964479,
+      "created_at": "2026-01-10T18:52:26Z",
+      "updated_at": "2026-01-10T18:52:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016843169,
+      "body_text": "Hi brendan shuey,     You can place your order via this link and specify \"brake sensor\" in the order notes; we will then send you the relevant product. https://www.aliexpress.us/item/3256810061354966.html?gatewayAdapt=glo2usa4itemAdapt",
+      "user_id": 158007774664,
+      "created_at": "2026-01-12T07:10:53Z",
+      "updated_at": "2026-01-12T07:10:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

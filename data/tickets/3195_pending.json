@@ -1,0 +1,84 @@
+{
+  "id": 3195,
+  "subject": "Simsonn Pluss Pedals F1 25",
+  "description_text": "Hello, I am having issues getting my pedals to work with F1 25. it says\r\nthere is no custom preset for this device. Are these pedals supported by F1\r\n25?\r\n\r\nThanks,\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-27T23:03:24Z",
+  "updated_at": "2025-08-30T03:45:54Z",
+  "requester_id": 158003677073,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007679381,
+      "body_text": "Hi Cameron McGugan,    Our pedals are fully compatible with F1 2025 without any issues. If you are using VAM Pro, you can even enjoy vibration telemetry support.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-27T23:28:47Z",
+      "updated_at": "2025-08-27T23:28:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007681994,
+      "body_text": "Is there a guide for how to connect them? They work in iracing no problem\r\nbut in Simpson manager F1 2025 isn’t shown and when I launch F1 25 it says\r\nthere is no default profile for Simpson plus\r\n\r\nOn Wed, Aug 27, 2025 at 7:29 PM service@simsonn.com ",
+      "user_id": 158003677073,
+      "created_at": "2025-08-28T02:14:53Z",
+      "updated_at": "2025-08-28T02:14:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007733776,
+      "body_text": "Hi Cameron McGugan,  We are planning to release the 2.1.1 update today or tomorrow. Please give it a try once it becomes available. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-29T00:49:14Z",
+      "updated_at": "2025-08-29T00:49:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007733983,
+      "body_text": "Hi Cameron McGugan,     In F1 25, you need to enable telemetry in the game settings and set the port number to 20777. In most cases, once telemetry is enabled, the port number will default to 20777.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-29T01:05:38Z",
+      "updated_at": "2025-08-29T01:05:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007734391,
+      "body_text": "Hello! I enabled telemetry and checked the port number and still no luck.\r\nWhat’s the UDP send rate supposed to be?\r\n\r\nOn Thu, Aug 28, 2025 at 9:05 PM service@simsonn.com ",
+      "user_id": 158003677073,
+      "created_at": "2025-08-29T01:38:15Z",
+      "updated_at": "2025-08-29T01:38:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007734512,
+      "body_text": "Additionally, this is the error message that keeps popping up\r\n\r\n\r\nOn Thu, Aug 28, 2025 at 9:37 PM Cameron McGugan <\r\ncameronmcgugan1265@gmail.com> wrote:\r\n\r\n> Hello! I enabled telemetry and checked the port number and still no luck.\r\n> What’s the UDP send rate supposed to be?\r\n>\r\n> On Thu, Aug 28, 2025 at 9:05 PM service@simsonn.com ",
+      "user_id": 158003677073,
+      "created_at": "2025-08-29T01:40:57Z",
+      "updated_at": "2025-08-29T01:40:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007802725,
+      "body_text": "Hi Cameron McGugan,  ​In F1 2025, you can go into the settings menu to configure your device. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-30T03:45:53Z",
+      "updated_at": "2025-08-30T03:45:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": 3672,
+  "subject": "Simson X pedals",
+  "description_text": "Hello i received the x pro pedals as a gift on the 7th ive been messing\r\naround with them to try and find the right set up for me but im having a\r\nhorrible experience with the brake pedal and it being way to stiff from\r\ndefault\r\n\r\nthe feel i am going for is more travel it currently feels like a wall using\r\nas mush force as possible to even get it pushed down how can i fix this to\r\nhave more travel and feel way less firm\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-09T22:24:16Z",
+  "updated_at": "2025-09-10T00:05:28Z",
+  "requester_id": 158004371447,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008345702,
+      "body_text": "Hi Nelson Silva,  You can remove the 10mm spacer inside the black brake spring. This spacer is designed for a shorter travel setup used in F1. Once removed, the spring can fully compress, increasing the travel and making it more suitable for rally racing. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-09T23:09:55Z",
+      "updated_at": "2025-09-09T23:09:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008346391,
+      "body_text": "sorry i’m not understanding\r\n\r\nOn Tue, Sep 9, 2025 at 7:10 PM service@simsonn.com ",
+      "user_id": 158004371447,
+      "created_at": "2025-09-09T23:45:38Z",
+      "updated_at": "2025-09-09T23:45:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008346712,
+      "body_text": "Hi Nelson Silva,  Please let us know the model of your pedals — is it PlusX or ProX? I’ve provided two reference diagrams for you to follow during the replacement process. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-10T00:05:27Z",
+      "updated_at": "2025-09-10T00:05:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

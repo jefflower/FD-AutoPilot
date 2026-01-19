@@ -1,0 +1,75 @@
+{
+  "id": 10159,
+  "subject": "HS Pro 换挡器无法使用",
+  "description_text": "您好，\n\n我刚收到我的 HS Pro 换挡器，安装好后，也安装了软件，但却无法使用。它卡在顺序模式，Simsonn Manager 中没有像说明书里说的校准磁贴。这到底是怎么回事？\n\n杰夫",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-07T02:14:22Z",
+  "updated_at": "2026-01-08T01:26:00Z",
+  "requester_id": 158008962043,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016060336,
+      "body_text": "您好，Jeffrey Fitzgerald，我们今天将发布一个新版本的软件，其中将正式添加对 HS Pro 校准页面的支持。请更新软件并尝试使用。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T05:03:36Z",
+      "updated_at": "2026-01-07T05:03:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016146159,
+      "body_text": "太棒了，谢谢！我想我是根据说明书假设的。换挡器本身感觉很棒，我昨晚还是在顺序模式下使用了它。\n\n另外，新年快乐！\n\n2026年1月6日星期二晚上11:03，来自 service@simsonn.com",
+      "user_id": 158008962043,
+      "created_at": "2026-01-07T14:18:00Z",
+      "updated_at": "2026-01-07T14:18:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016146615,
+      "body_text": "您好，Jeffrey Fitzgerald，请先从您的电脑上卸载 SIMSONN Manager 2.1.2 版，然后从我们的官方网站下载并安装 SIMSONN Manager 2.1.3 版。SIMSONN Manager 2.1.3 版增加了对 HS Pro 二合一换挡器配置和校准的全面支持。请使用此版本完成设置和校准。https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T14:20:25Z",
+      "updated_at": "2026-01-07T14:20:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016178422,
+      "body_text": "您好！我刚刚完成了校准，以下传感器似乎翻转了：7 和 R。这是唯一一个我向上换到 7 档时显示 R，换到 R 时显示 7 的档位。这容易修复吗？谢谢。通过我的 iPhone 发送",
+      "user_id": 158008962043,
+      "created_at": "2026-01-07T17:42:07Z",
+      "updated_at": "2026-01-07T17:42:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016226912,
+      "body_text": "您好，Jeffrey Fitzgerald，请尝试重新校准换挡器，在校准过程中，请务必严格按照以下顺序挂入档位：1 → 2 → 3 → 4 → 5 → 6 → 7 → R。校准完成后，请再次测试并检查 7 档和倒档是否正确显示。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T23:27:16Z",
+      "updated_at": "2026-01-07T23:27:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016241050,
+      "body_text": "您好，谢谢，我一切都准备好了，我打算去飙车并留下评论。感谢您的快速服务！Jeffrey 通过我的 iPhone 发送",
+      "user_id": 158008962043,
+      "created_at": "2026-01-08T01:23:42Z",
+      "updated_at": "2026-01-08T01:23:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

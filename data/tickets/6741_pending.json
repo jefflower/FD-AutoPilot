@@ -1,0 +1,44 @@
+{
+  "id": 6741,
+  "subject": "1\" yellow bushings",
+  "description_text": "Can you sell me 1\" yellow bushings seperately?\r\n\r\nJim Rowledge\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-25T23:13:54Z",
+  "updated_at": "2025-11-27T06:19:34Z",
+  "requester_id": 158007331358,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012939647,
+      "body_text": "Hi Jim Rowledge,    We apologize for not fully understanding your needs. Please provide an image.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-26T09:50:53Z",
+      "updated_at": "2025-11-26T09:50:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012947611,
+      "body_text": "Hello,\r\nI have a set of pedals (not yours) that I really like, but I keep\r\ndestroying the bushings on the slave cylinder for the brakes. I bought your\r\nkit off of Amazon and I really like the feel of the 1\" tall yellow bushing.\r\nCan you sell me some spares seperately or tell me where I can source them?\r\nThank you\r\nJim Rowledge\r\n\r\n\r\n[image: image.png]\r\n\r\nOn Wed, Nov 26, 2025 at 2:51 AM service@simsonn.com ",
+      "user_id": 158007331358,
+      "created_at": "2025-11-26T13:58:17Z",
+      "updated_at": "2025-11-26T13:58:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012993591,
+      "body_text": "Hi Jim Rowledge,    We typically do not sell them separately. You can purchase this white elastomer and request a yellow replacement in the notes.  https://www.simsonn.com/products/elastomer",
+      "user_id": 158001343601,
+      "created_at": "2025-11-27T06:19:33Z",
+      "updated_at": "2025-11-27T06:19:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

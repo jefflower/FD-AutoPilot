@@ -1,0 +1,24 @@
+{
+  "id": 6188,
+  "subject": "Order #SSN3179",
+  "description_text": "Bonjour,\r\n\r\nJ'ai bien reçu les kit pédalier.\r\n\r\nPar contre , je n'ai pas reçu le frein à main, pourquoi ?\r\n\r\nLe suivi de colis ne donne aucun résultat ???\r\nSF Express SF6047023888985 \r\n<https://www.sf-express.com/we/ow/chn/en/waybill/waybill-detail/SF6047023888985>\r\n\r\nCordialement\r\n\r\nPierre\r\n\r\n--------------------------------------------------------------------------\r\n\r\nHello,\r\n\r\nI received the pedal kit.\r\n\r\nHowever, I didn't receive the handbrake. Why?\r\n\r\nThe tracking information isn't showing any results.\r\nSF Express SF6047023888985 \r\n<https://www.sf-express.com/we/ow/chn/en/waybill/waybill-detail/SF6047023888985>\r\n\r\nSincerely,\r\n\r\nPierre\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-15T16:57:01Z",
+  "updated_at": "2025-11-17T08:24:07Z",
+  "requester_id": 158007103304,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012441612,
+      "body_text": "Hi Torkdul,    We apologize, the handbrake is currently out of stock. We will ship it to you tomorrow.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-17T08:24:07Z",
+      "updated_at": "2025-11-17T08:24:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

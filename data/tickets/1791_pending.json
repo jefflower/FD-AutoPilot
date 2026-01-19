@@ -1,0 +1,54 @@
+{
+  "id": 1791,
+  "subject": "Issue with pro plus pedal",
+  "description_text": "Good afternoon,\r\n\r\nI hope you are doing well. Almost 2 months ago I purchased your pro plus Sim pedals from Amazon,  and they've been working perfectly for the most part. However today after some time on my sim, the hydraulic shock ended up coming lose on the gas pedal, it ended up knocking breaking the plastic piece that I'm guessing was holding the controller in place and since the pedal is no longer functioning. Pictures will be attached. Hopefully there is a bit of warranty on them, still as I have been fairly light on the pedals.  It seems like the hydraulic shock loosened over time or something like that.\r\n\r\nThe Amazon order number was 701-9367604-5387455\r\n\r\nThanks,\r\nMatthew\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-22T15:44:13Z",
+  "updated_at": "2025-07-24T02:33:53Z",
+  "requester_id": 158000955963,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005355394,
+      "body_text": "Hi Matthew Hanscom,  We’ve received your feedback — thank you. We can send you replacement front and rear plastic plates for the repair. Would you be comfortable installing them yourself? Also, please note that we use plastic instead of metal for this part to prevent any electromagnetic interference from the wheelbase affecting the pressure sensor on the pedal. The plastic serves as an isolation layer. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-23T03:33:06Z",
+      "updated_at": "2025-07-23T03:33:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005449954,
+      "body_text": "Good morning,\r\n\r\nI can try doing the replacement myself. However, with the issue of the hydraulic shock coming loose it doesn't seem like it would be more than a temporary solution. It leaves the risk of it coming loose again and causing the same issue down the road. Would you accept return or an entire replacement of the throttle pedal? If not i can try replacing the plastic piece, but it doesn't seem like it would be that long term of a fix for it.\r\n________________________________\r\n",
+      "user_id": 158000955963,
+      "created_at": "2025-07-23T13:50:47Z",
+      "updated_at": "2025-07-23T13:50:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005487316,
+      "body_text": "Hi Matthew Hanscom,  This is the only case we’ve seen where a hydraulic rod screw caused the sensor mounting plate to break. You can hold one end with pliers and tighten the other, or apply some threadlocker to secure it permanently. The plastic plate is designed specifically to resist external interference from the base, and even the well-regarded Heusinkveld pedals use plastic plates. So there’s no need to worry about its reliability. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-24T02:15:05Z",
+      "updated_at": "2025-07-24T02:15:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005487426,
+      "body_text": "Hi Matthew Hanscom,  Here is the tracking number of the replacement: YT2520400704281095. You can track it via https://www.yunexpress.com/.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-24T02:33:43Z",
+      "updated_at": "2025-07-24T02:33:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

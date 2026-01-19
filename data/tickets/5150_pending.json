@@ -1,0 +1,94 @@
+{
+  "id": 5150,
+  "subject": "Frimeware pédalier simsonn",
+  "description_text": "Bonjour,\r\nJ ai un pédalier simsonn\r\nMais j' ai un gros soucis\r\nAvec sim pedal j ai flasher le frimeware\r\nDu coup mes pédales ne fonctionne plus du tout\r\nAuriez vous le frimeware\r\nEt la méthode pour le remette dans la carte svp\r\nJe vous met en pièces jointes une photo de ma carte qui gère les pédales\r\nJ espère avoir une réponse\r\nMerci a vous et bonne journée\r\nCordialement\r\nMr wattellier Aurélien\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-10-21T20:56:17Z",
+  "updated_at": "2025-10-23T02:44:25Z",
+  "requester_id": 158005954226,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010841782,
+      "body_text": "Hi Aurelien Wattellier,  Have you downloaded the SIMSONN Manager 2.1.2 software? If the interface shows “Version too old, not supported,” please go to Settings → Update → Manual Firmware Update → pedals-firmware-plus.sfu to update the firmware. Once the update is complete, please be sure to recalibrate the pedals, as they will not function properly in games without calibration.       https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-10-22T02:41:51Z",
+      "updated_at": "2025-10-22T02:41:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010859721,
+      "body_text": "Cela ne fonctionne pas mes pédales ne sont pas reconnu\r\nLe frimeware ne veux pas s instaler du tout\r\n\r\n\r\nLe mer. 22 oct. 2025, 04:42, service@simsonn.com ",
+      "user_id": 158005954226,
+      "created_at": "2025-10-22T07:54:28Z",
+      "updated_at": "2025-10-22T07:54:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010866039,
+      "body_text": "Hi Aurelien Wattellier,  Please send me a screenshot of how you flashed the firmware previously, as I suspect your device is running version 1.7.0, which may not support direct firmware updates. You can try updating it using FreeJoy version 1.7.0 instead.      https://drive.google.com/file/d/1hnHNudj0VhE6xr7ypu-KeEDuVrlVHVg9/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-10-22T09:00:42Z",
+      "updated_at": "2025-10-22T09:00:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010866462,
+      "body_text": "voici une capture d ecran\r\n________________________________\r\nDe : service@simsonn.com ",
+      "user_id": 158005954226,
+      "created_at": "2025-10-22T09:28:16Z",
+      "updated_at": "2025-10-22T09:28:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010866517,
+      "body_text": "voici avec votre freejoy une capture d ecran\r\n\r\n________________________________\r\nDe : Aurelien Wattellier <wga9360@gmail.com>\r\nEnvoyé : mercredi 22 octobre 2025 09:27\r\nÀ : service@simsonn.com ",
+      "user_id": 158005954226,
+      "created_at": "2025-10-22T09:32:27Z",
+      "updated_at": "2025-10-22T09:32:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010866589,
+      "body_text": "je pense que j ai plus le fichier cfg de mon pedalier\r\n________________________________\r\nDe : Aurelien Wattellier <wga9360@gmail.com>\r\nEnvoyé : mercredi 22 octobre 2025 09:32\r\nÀ : service@simsonn.com ",
+      "user_id": 158005954226,
+      "created_at": "2025-10-22T09:39:00Z",
+      "updated_at": "2025-10-22T09:39:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010867711,
+      "body_text": "Je ne sais pas comment faire\r\nJ espère que mon pédalier n' est pas hs\r\n\r\nLe mer. 22 oct. 2025, 11:38, Aurelien Wattellier <wga9360@gmail.com> a\r\nécrit :\r\n\r\n> je pense que j ai plus le fichier cfg de mon pedalier\r\n> ------------------------------\r\n> *De :* Aurelien Wattellier <wga9360@gmail.com>\r\n> *Envoyé :* mercredi 22 octobre 2025 09:32\r\n> *À :* service@simsonn.com ",
+      "user_id": 158005954226,
+      "created_at": "2025-10-22T10:56:28Z",
+      "updated_at": "2025-10-22T10:56:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010923015,
+      "body_text": "Hi Aurelien Wattellier,  The attachment includes the configuration file (.cfg). Please import it and restore your pedal settings first, then test again. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-23T02:44:24Z",
+      "updated_at": "2025-10-23T02:44:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

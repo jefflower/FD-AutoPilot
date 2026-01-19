@@ -1,0 +1,44 @@
+{
+  "id": 8209,
+  "subject": "Hardware Recognition Issue - Pedals Not Detected at System Level",
+  "description_text": "Dear Technical Support Team,\r\n\r\nI am writing to report a serious hardware recognition issue with my pedals.\r\n\r\n*Issue Description:*\r\nThe pedals are completely undetected by my computer.\r\n\r\n*Additional Symptom:*\r\nThe pedals have a blinking light issue (photo/video attached).\r\n\r\n*Requested Information:*\r\nItem Details\r\nOrder Number 1117556853843377 (aliexpress)\r\nWindows Version  Windows 11\r\nDrivers Installed No\r\n\r\n*Attachments:*\r\n\r\n   - Photo/video showing the blinking light issue\r\n\r\nI understand that your pedals should work without additional drivers, so I\r\nam unsure why the system is not detecting them at all.\r\n\r\nI would appreciate your assistance in resolving this issue as soon as\r\npossible.\r\n\r\nThank you for your support.\r\n\r\nBest regards,\r\nDongwoo, Kim\r\n\r\n-- \r\n------------------------------------------------------------------------------------------------------------------\r\n'Life is not fair, get used to it'\r\n김  동  우  (Kim, Dong Woo)\r\nMobile. +82-10-2639-0556\r\nHomepage. www.starstory.us\r\nE-Mail. nobaksan@me.com, nobaksan@gmail.com\r\n------------------------------------------------------------------------------------------------------------------\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-14T14:05:03Z",
+  "updated_at": "2025-12-22T12:28:01Z",
+  "requester_id": 158007805431,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014493332,
+      "body_text": "Hi DONGWOO KIM,    May I ask if your order was purchased from the SIMSONN Official Store on AliExpress? At the moment, we’re unable to locate your order in our system.  Could you please help us with one of the following:    Send us a screenshot of the store name where you placed the order; or    Contact the seller you purchased from directly for order confirmation.    In the meantime, please try the following recovery steps:    Put the device into SIMSONN Flasher recovery mode;    Open the software and go to Settings → Update → Manual Firmware Update;    Select the corresponding firmware (.sfu file) and proceed with the update.    ⚠️ Important notes:    Please connect the device to a USB 3.0 port (blue port) on the back of your PC;    Do not use USB 2.0 ports;    Do not use a USB hub.    If you have any updates or questions, feel free to contact us at any time.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-15T01:40:30Z",
+      "updated_at": "2025-12-15T01:40:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014495690,
+      "body_text": "Hello,\r\n\r\nThank you for your response regarding my order inquiry.\r\n\r\nYes, I can confirm that my order was purchased from the SIMSONN Official\r\nStore on AliExpress. I understand that you're currently unable to locate my\r\norder in your system.\r\n\r\nI will provide you with the requested information:\r\n\r\n   - I will send a screenshot of the store name where I placed the order\r\n   shortly\r\n\r\n- Regarding the recovery steps you've provided, I appreciate the detailed\r\ninstructions. However, I need some additional information to proceed:\r\n\r\n   1. *I did not receive the firmware file (.sfu file).* Could you please\r\n   provide the appropriate firmware file for my device?\r\n\r\n- *How do I enter SIMSONN Flasher recovery mode?* Could you please provide\r\nspecific instructions on how to access this mode? (e.g., specific button\r\ncombinations, procedures, etc.)\r\n\r\nI have noted the important technical requirements:\r\n\r\n   - Use USB 3.0 port (blue port) on the back of my PC\r\n   - Avoid USB 2.0 ports and USB hubs\r\n\r\nOnce I receive the above information, I will attempt the recovery steps and\r\nprovide you with an update on the results. If I encounter any issues during\r\nthe process or need further assistance, I will contact you immediately.\r\n\r\nThank you for your prompt support and clear instructions.\r\n\r\nBest regards,\r\n\r\nDONGWOO KIM\r\n\r\n\r\nhttps://www.aliexpress.com/store/1103394250?spm=a2g0o.order_detail.order_detail_item.1.7031f19coEtV2G\r\n[image: image.png]\r\n\r\nOn Mon, 15 Dec 2025 at 10:40, service@simsonn.com ",
+      "user_id": 158007805431,
+      "created_at": "2025-12-15T04:06:07Z",
+      "updated_at": "2025-12-15T04:06:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014620825,
+      "body_text": "Hi DONGWOO KIM,    ProX / ProX Ultra Pedal Firmware Update Procedure:    Press and hold the Upgrade button on the control box;    Reconnect the USB cable;    The software will indicate that the device has entered “Simsonn Flasher mode”;    In the software, go to: Settings → Update → Manual Firmware Update → pedals → firmware → pedals-proxultra.sfu (If it’s a ProX pedal, select pedals-prox.sfu)    Start the firmware update, and once it is complete, release the Upgrade button;    Finally, retest and calibrate the pedals.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T09:52:07Z",
+      "updated_at": "2025-12-17T09:52:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

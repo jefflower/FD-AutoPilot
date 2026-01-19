@@ -1,0 +1,74 @@
+{
+  "id": 5305,
+  "subject": "Aliexpress order number 3061063112100511 - not received",
+  "description_text": "Hello,\r\n\r\nRecently, I have contacted Simsonn about not receiving my order from the\r\nofficial Simsonn store on Aliexpress. (email attached)\r\nMy order was made September 14, 20203, and it has been more than 20 days\r\nsince the expected arrival of the package, and over a month since the\r\ntracking was last updated.\r\nIn my last email, I expressed two possible solutions for my side, but\r\nneither one was taken, and Simsonn completely ignored me.\r\nThis is my last try to ask you for a solution before I open a customer\r\nticket on Aliexpress and solve it involving their side, after which it'll\r\nresult in my negative review. (not a threat, just an honest opinion from my\r\nside)\r\nI am an old Simsonn customer, and following a good experience from the\r\npast, to be honest, with this order, I feel completely disappointed. There\r\nis no involvement from the Simsonn side, even after contacting you and\r\nexpressing my problem!\r\nI have tried to contact you over Aliexpress, but have not even received an\r\nanswer to this day!\r\nI often make orders from Aliexpress, and at this point, I'm 100% sure this\r\none is not arriving at my address and has probably gotten lost somewhere,\r\nas I receive all Aliexpress orders up to 15 days after the order date.\r\nStill, I do not think that I, as a customer, should bear the problems of\r\nit, as I have zero possibility to do anything except contact you as a\r\nseller.\r\n\r\nBest regards!\r\nVlado vrlika\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-26T23:11:23Z",
+  "updated_at": "2025-10-29T03:14:36Z",
+  "requester_id": 158002820193,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011127024,
+      "body_text": "Hi Vlado Vrlika,    Your order includes 3 VAM units and 1 power supply. According to the platform, the package was delivered on September 22. Could you please confirm whether the shipping address you provided is correct?",
+      "user_id": 158000445778,
+      "created_at": "2025-10-26T23:39:33Z",
+      "updated_at": "2025-10-26T23:39:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011127087,
+      "body_text": "Hello,\r\n\r\nI just checked and the address that I have provided is correct.\r\nPackage was definitely not delivered to me.\r\n\r\nBest regards!\r\nVlado Vrlika\r\n\r\nOn Mon, Oct 27, 2025 at 12:39 AM support@simsonn.com ",
+      "user_id": 158002820193,
+      "created_at": "2025-10-26T23:45:41Z",
+      "updated_at": "2025-10-26T23:45:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011127118,
+      "body_text": "Hi Vlado Vrlika,    Please don’t worry. We have just received your message regarding this issue. We will contact the logistics company today to investigate, and if the package is confirmed lost, we will arrange a replacement order for you.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-26T23:48:28Z",
+      "updated_at": "2025-10-26T23:48:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011127283,
+      "body_text": "Hello,\r\n\r\nI expect that package will be confirmed lost, but as I have already been\r\nwaiting for some time, and if I would have to wait for a new one to arrive,\r\nI would accept that if my order would be upgraded to VAM Pro set of two\r\nwith power supplie, otherwise, I would request a full refund because I can\r\nget a similar product as VAM Motors much sooner than waiting again for\r\nthese ones to arrive.\r\n\r\nBest regards!\r\nVlado Vrlika\r\n\r\npon, 27. lis 2025. 00:49 support@simsonn.com ",
+      "user_id": 158002820193,
+      "created_at": "2025-10-27T00:00:53Z",
+      "updated_at": "2025-10-27T00:00:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011187661,
+      "body_text": "Hello,\r\n\r\nAny updates from the logistics company?\r\n\r\n",
+      "user_id": 158002820193,
+      "created_at": "2025-10-27T22:17:22Z",
+      "updated_at": "2025-10-27T22:17:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011257700,
+      "body_text": "Hi Vlado Vrlika, Hello, since the platform logistics has not been updated for a long time, it is recommended that you can directly file a dispute regarding the non-updated logistics and apply for a refund at the AliExpress platform order section, and the platform will intervene to handle it. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-29T03:14:36Z",
+      "updated_at": "2025-10-29T03:14:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

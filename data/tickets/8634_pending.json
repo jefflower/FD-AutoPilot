@@ -1,0 +1,44 @@
+{
+  "id": 8634,
+  "subject": "UPDATE",
+  "description_text": "Good afternoon, can you give me an update on my order. thanks. \r\n\r\n\r\n\r\n\r\nSent from Yahoo Mail for iPhone\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-18T21:12:41Z",
+  "updated_at": "2026-01-16T07:40:00Z",
+  "requester_id": 158007718575,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014879602,
+      "body_text": "Hi Preed2014,     We will send HS Pro out this week.",
+      "user_id": 158007774607,
+      "created_at": "2025-12-22T12:28:38Z",
+      "updated_at": "2025-12-22T12:28:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015343073,
+      "body_text": "Can you give me an estimated delivery date please?\r\n\r\n\r\nSent from Yahoo Mail for iPhone\r\n\r\n\r\n",
+      "user_id": 158007718575,
+      "created_at": "2025-12-31T22:14:46Z",
+      "updated_at": "2025-12-31T22:14:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017246234,
+      "body_text": "Hi Preed2014,  I apologize for not responding to you promptly. I have confirmed that your package has been delivered. Have you received it?  https://t.17track.net/en#nums=JSELI2425275782YQ",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T07:40:00Z",
+      "updated_at": "2026-01-16T07:40:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

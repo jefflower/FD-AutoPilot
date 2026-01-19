@@ -1,0 +1,64 @@
+{
+  "id": 10021,
+  "subject": "Wholesale Inquiry",
+  "description_text": "Howdy,\r\n\r\nI have daily inquiries about your equipment, so I'd like to set up a new\r\naccount with you guys for my retail store. Looking forward to getting\r\nconnected with you guys! Let me know how you would like to proceed.\r\n\r\nPlease reply at your earliest convenience, I think we are missing out on a\r\ndecent amount of volume here.\r\n\r\nThanks\r\n\r\nMike\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-05T19:28:59Z",
+  "updated_at": "2026-01-15T01:37:44Z",
+  "requester_id": 158008943011,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016081016,
+      "body_text": "Hi RacingServices,  May I ask whether you plan to sell offline or online? ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T07:11:20Z",
+      "updated_at": "2026-01-07T07:11:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016374939,
+      "body_text": "The plan is both. We do in-person sales and on-site sim events constantly.\r\nFor example we are responsible for all sim events that The ACO hosts in the\r\nunited states. The ACO is the group responsible for the 24 Hours of Le Mans\r\nin real life. So we will be selling your products at events such as those,\r\nas well as on our website.\r\n\r\nThanks\r\n\r\nOn Wed, Jan 7, 2026, 1:11 AM service@simsonn.com ",
+      "user_id": 158008943011,
+      "created_at": "2026-01-08T15:28:45Z",
+      "updated_at": "2026-01-08T15:28:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016469932,
+      "body_text": "Hi RacingServices,  Do you already have a product list, purchasing plan, and estimated quantities? If so, I can arrange for our sales team to contact you directly to discuss the details. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-09T03:49:17Z",
+      "updated_at": "2026-01-09T03:49:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016592446,
+      "body_text": "Yes\r\n\r\nOn Thu, Jan 8, 2026, 9:49 PM service@simsonn.com ",
+      "user_id": 158008943011,
+      "created_at": "2026-01-09T18:12:20Z",
+      "updated_at": "2026-01-09T18:12:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017141580,
+      "body_text": "When will I be in contact with someone?\r\n\r\n\r\nOn Thu, Jan 8, 2026 at 9:49 PM service@simsonn.com ",
+      "user_id": 158008943011,
+      "created_at": "2026-01-14T20:48:43Z",
+      "updated_at": "2026-01-14T20:48:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

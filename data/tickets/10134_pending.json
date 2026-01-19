@@ -1,0 +1,94 @@
+{
+  "id": 10134,
+  "subject": "Vam Reactors",
+  "description_text": "Hello, i bought the haptic feedbacks from amazon and i got the control box\r\nwhich is in the packages from the Reators. So my problem is that i cant\r\nconnect the haptic with my pc. When i open the simsonn manager it says that\r\nmy control box is in upgrade mode. I did what it says but i still have the\r\nsame issue. Also simhib doenst recongnise the reactors. I need some help\r\nplease.\r\n\r\n\r\nSincerely\r\nAndy\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-06T20:50:06Z",
+  "updated_at": "2026-01-08T03:45:01Z",
+  "requester_id": 158008212404,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014867285,
+      "body_text": "Hi Andreas Balan,    Please provide your order number, and we will resolve this for you as soon as possible.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-22T09:08:50Z",
+      "updated_at": "2025-12-22T09:08:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016064706,
+      "body_text": "ID 为 8819 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T05:22:55Z",
+      "updated_at": "2026-01-07T05:22:55Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016064709,
+      "body_text": "合并来自工单8819  \n      主题: Haptic Reactors wont work  \n      描述:  I order the Haptic Reactors for my pedals. I dont have Simsonn pedals. I plugged in the controls box and the reactors and simhub doesnt recognizes them. When i start the software it says Simson Flasher Control Box is upgrade mode. Although i released the upgrade the mode doesnt change ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T05:22:55Z",
+      "updated_at": "2026-01-07T05:22:55Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016065107,
+      "body_text": "Hi Andreas Balan,  Please provide your order number first. If you are using the ProX Ultra, make sure the upgrade button on the controller box is released (popped out), then reconnect the USB cable. The device will enter normal operation mode. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T05:24:09Z",
+      "updated_at": "2026-01-07T05:24:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016118264,
+      "body_text": "Hello, I ordered it from amazon. I tried everything, but i think my control\r\nbox is broken because it keeps deconnecting after a while.\r\nCan I get an exchange maybe of the control box?\r\nI only use the haptics. I dont use ur pedals. I have heusinkveld sprints\r\natm. Simsonn manager shows that the pedals are connected but I dont have\r\nany.\r\nI dont know what to do anymore. I tried a lot of hours every possible way\r\nto fix it and it doesn't work. Changing Software, ports, updating firmware,\r\nwith Simson Manager, also with simhub, with differential usb hubs, on usb\r\n2.0/3.0/3.2 and used ground cabels. Nothing worked !\r\n\r\nOrdered 302-0041059-4912357\r\n\r\nSincerely,\r\n\r\nAndreas\r\n\r\n\r\n\r\nsupport@simsonn.com ",
+      "user_id": 158008212404,
+      "created_at": "2026-01-07T11:15:14Z",
+      "updated_at": "2026-01-07T11:15:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016145259,
+      "body_text": "Hi Andreas Balan,  Regarding the use of Heusinkveld Ultimate pedals with our controller, I will perform testing tomorrow and get back to you. At this stage, it appears that the wiring order may need to be adjusted. I will confirm this after testing and provide a detailed solution. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T14:12:42Z",
+      "updated_at": "2026-01-07T14:12:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016145902,
+      "body_text": "Hello,\r\n\r\nMy pedals are not connected to the simsonn control box.\r\nOn the simsonn control box i have only the vams connected, nothing else. I\r\nmounted the Haptics on the pedals thats what i meant.\r\n\r\nSincerely,\r\n\r\nAndreas\r\n\r\nsupport@simsonn.com ",
+      "user_id": 158008212404,
+      "created_at": "2026-01-07T14:16:23Z",
+      "updated_at": "2026-01-07T14:16:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016263503,
+      "body_text": "Hi Andreas Balan,  Please provide a photo of the installation, along with a screenshot of the vibration settings page in SIMSONN Manager. I will check the version and help further diagnose the issue. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-08T03:45:00Z",
+      "updated_at": "2026-01-08T03:45:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

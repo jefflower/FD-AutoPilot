@@ -1,0 +1,24 @@
+{
+  "id": 2170,
+  "subject": "FW: Simsonn Issue with VAM Pro",
+  "description_text": "Hi\r\n\r\nI am having issues getting my VAM pro's working in Simhub. It looks like it may be a usb issue however I have tried with 2 brand new USB A to USB B cable. With one it was registering in simhub but it was dropping out very often. With another USB cable (a better one) it does not register at all.\r\n\r\nThe USB drivers are all up to date\r\n\r\nSee below details and screenshots.\r\n\r\nAny ideas?\r\n\r\n________________________________\r\n[cid:e757f61b-0c40-48b4-9399-aa81087d77b9]\r\n[cid:9df0f12d-08f8-4a38-b7bf-6308229bcb26]\r\n[cid:131b199c-1b30-4852-b4ec-f5da756c922f]\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-01T02:16:30Z",
+  "updated_at": "2025-08-01T10:43:22Z",
+  "requester_id": 158002487407,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005997008,
+      "body_text": "Hi Timothy Nash | DAIKIN,  Please connect the device directly to the rear USB 3.0 (blue) port of your computer instead of using a USB hub, as the power supply may be insufficient. Also, are you using SIMHUB version 9.9.3? With SIMSONN Manager 2.1.0, there should be no issues. If it is indeed version 9.9.3, please provide me with the SimHub logo file. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-01T10:43:22Z",
+      "updated_at": "2025-08-01T10:43:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "id": 806,
+  "subject": "My vam haptic motors don’t work on Iracing",
+  "description_text": "I’m using the custom SimHub build you sent, but the VAM motors still\r\ndon’t show up as an output device in ShakeIt. Do I need to flash new\r\nfirmware to the control box for SimHub compatibility?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-25T04:49:06Z",
+  "updated_at": "2025-06-25T05:48:12Z",
+  "requester_id": 158001622293,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003679685,
+      "body_text": "Hi CUTTER 90,  Today is Saturday, and I’ve already notified our operations team. If the order hasn't been shipped yet, we can cancel it for you. However, since it’s been over a week, it’s likely that the order is already in transit and has tracking information. We will check it on Monday and get back to you promptly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T02:54:34Z",
+      "updated_at": "2025-06-22T02:54:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003679686,
+      "body_text": "Hi CUTTER 90,  Could you please provide your order number so we can look into it for you? ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T02:55:10Z",
+      "updated_at": "2025-06-22T02:55:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003833561,
+      "body_text": "Hi CUTTER 90,     Currently, we only support 8 games directly. Support for iRacing and Le Mans Ultimate (LMU) is being updated and will be available soon. In the meantime, we already support SimHub, which allows you to control our motors and is compatible with over 100 games.    https://drive.google.com/file/d/1QrSbAvCC5iyx9XgdRgSQV-hWpmDGkujc/view?usp=sharing ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-25T02:29:08Z",
+      "updated_at": "2025-06-25T02:29:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003834100,
+      "body_text": "ID 号为 537 和 789 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-25T05:45:07Z",
+      "updated_at": "2025-06-25T05:45:07Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158003834101,
+      "body_text": "合并来自工单537  \n      主题: My pedals order taking a long time  \n      描述:  Hello this is Tyler Stroman, and I ordered y’all’s pro pedals and vam haptic reactors and paid for faster shipping. I ordered the pedals on Wednesday last week and they haven’t even shipped yet so I just wanted to see what was going on. Thank you, Tyler.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-25T05:45:07Z",
+      "updated_at": "2025-06-25T05:45:07Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158003834103,
+      "body_text": "合并来自工单789  \n      主题: My vam haptic motors don’t work on Iracing  \n      描述:  Hello u am having trouble getting my vam haptic motors to give me feedback in game. They work in the software when I press the feedback button but they don’t work in the Iracing game. The software does recognize both Iracing and the pedals and the haptics.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-25T05:45:08Z",
+      "updated_at": "2025-06-25T05:45:08Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158003834116,
+      "body_text": "Hi，CUTTER 90，  Have you already added our device in the Devices section of SimHub? Next, make sure to select the pedal model in the Hardware Settings — this will allow the system to show a “Connected successfully” message. After that, you can launch iRacing directly from SimHub to use it, or test the vibration feedback directly within SimHub. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-25T05:48:12Z",
+      "updated_at": "2025-06-25T05:48:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

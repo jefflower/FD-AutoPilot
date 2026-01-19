@@ -1,0 +1,64 @@
+{
+  "id": 4928,
+  "subject": "I was expected to receive a package of you guys a set of pedals with haptics",
+  "description_text": "I was wondering if I can get it the soonest you guys can send it because I have a race tomorrow, I also contacted you guys on instagram too, my instagram id is _crissmmc__, I don’t know if there’s a problem with the shipping FEDEX.",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-10-16T04:45:57Z",
+  "updated_at": "2025-10-17T07:44:20Z",
+  "requester_id": 158005711018,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010534911,
+      "body_text": "ID 为 4914 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-16T05:31:16Z",
+      "updated_at": "2025-10-16T05:31:16Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158010534912,
+      "body_text": "合并来自工单4914  \n      主题: I was expecting to receive today the pedals but didn’t arrive I don’t know if it from fedex or what is happening   \n      描述:  I was wondering if I can get them the sooner you guys can if I can be by this week I live in shafter ca so is not too far from where the package is coming from. Thanks ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-16T05:31:16Z",
+      "updated_at": "2025-10-16T05:31:16Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158010535228,
+      "body_text": "Hi Cristian Moreno,  Our US warehouse staff have reported that the goods were dispatched on Monday US time, but FedEx has not scanned the shipment for transit. We shall continue to monitor this order and will liaise with FedEx once US working hours commence.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-16T06:02:52Z",
+      "updated_at": "2025-10-16T06:02:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010581640,
+      "body_text": "Thanks let me know when they ship it ",
+      "user_id": 158005711018,
+      "created_at": "2025-10-16T20:15:57Z",
+      "updated_at": "2025-10-16T20:15:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010604702,
+      "body_text": "Hello, your logistics information has been updated. FedEx indicates the estimated arrival date as the 17th. https://www.fedex.com/fedextrack/?trknbr=394173046241&trkqual=12029~394173046241~FDEG",
+      "user_id": 158001343601,
+      "created_at": "2025-10-17T07:44:19Z",
+      "updated_at": "2025-10-17T07:44:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

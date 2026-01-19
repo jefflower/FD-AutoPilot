@@ -1,0 +1,174 @@
+{
+  "id": 4331,
+  "subject": "Brake pedal issue",
+  "description_text": "Hi all \r\n\r\nAfter having my plus x pedals for around four months I am now having issues with a very squeaky break pedal, \r\n\r\nI have tryed loosening the collar where the elastomers sit but no joy. \r\n\r\nI haven’t added any grease or oil as I didn’t want to cause any further damage to the pedal and not sure what product to use. \r\n\r\nCan you advise on how I can solve this issue please \r\n\r\nThanks \r\n\r\nMatthew wright \r\nSent from my iPhone",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-02T09:21:32Z",
+  "updated_at": "2025-10-13T07:39:30Z",
+  "requester_id": 158001949189,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009777615,
+      "body_text": "Hi matthew wroght,    Could you please provide us with a video? This will help us analyze the issue more effectively. In addition, at the end of the PlusX manual, there are instructions indicating that this area can be lubricated.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-02T10:03:43Z",
+      "updated_at": "2025-10-02T10:03:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009780670,
+      "body_text": "Hi\r\n\r\nThanks for the speedy response\r\n\r\nPlease see video attached. Apologies for the poor angle\r\nRegards\r\nMatthew wright\r\n\r\nSent from my iPhone\r\n\r\n",
+      "user_id": 158001949189,
+      "created_at": "2025-10-02T11:53:29Z",
+      "updated_at": "2025-10-02T11:53:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009831551,
+      "body_text": "Hi matthew wroght,    I have forwarded your video to our production team for inspection. Once we receive a solution, I will get back to you promptly.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-03T07:02:19Z",
+      "updated_at": "2025-10-03T07:02:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009950439,
+      "body_text": "Hi matthew wroght,    Could you please take a clear photo of the black spring section of the brake pedal? I’d like to check whether any washers were not installed correctly.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T23:26:14Z",
+      "updated_at": "2025-10-05T23:26:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009961430,
+      "body_text": "Hi\r\n\r\nPlease see pictures as requested\r\n\r\nThanks\r\nMatthew wright\r\n[image0.jpeg][image1.jpeg][image2.jpeg]\r\nSent from my iPhone\r\n\r\n",
+      "user_id": 158001949189,
+      "created_at": "2025-10-06T08:22:07Z",
+      "updated_at": "2025-10-06T08:22:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009964154,
+      "body_text": "Hi matthew wroght,    The spring’s flange washer should be installed on the steel plate side. Your current installation is incorrect — it may damage the washer and cause noise.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-06T10:55:24Z",
+      "updated_at": "2025-10-06T10:55:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009964702,
+      "body_text": "Ok so I need to flip the black plate holding the spring around 180 degrees?\r\nSent from my iPhone\r\n\r\n",
+      "user_id": 158001949189,
+      "created_at": "2025-10-06T11:24:56Z",
+      "updated_at": "2025-10-06T11:24:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009964824,
+      "body_text": "Hi matthew wroght,    The washer located at the red-marked position.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-06T11:33:09Z",
+      "updated_at": "2025-10-06T11:33:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009980453,
+      "body_text": "Hi\r\n\r\nJustin to confirm this is the correct installation?\r\n\r\nIf so then I am still experiencing squeeking from the pedal. I shall send a further video in seperate email\r\n\r\nThanks\r\nMatthew wright\r\n\r\n[image0.jpeg][image1.jpeg]\r\nSent from my iPhone\r\n\r\n",
+      "user_id": 158001949189,
+      "created_at": "2025-10-06T17:59:41Z",
+      "updated_at": "2025-10-06T17:59:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009981517,
+      "body_text": "\r\nSent from my iPhone\r\n\r\n",
+      "user_id": 158001949189,
+      "created_at": "2025-10-06T18:24:14Z",
+      "updated_at": "2025-10-06T18:24:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009992399,
+      "body_text": "Hi matthew wroght,    Apply some lubricant to the plastic moving parts — once properly lubricated, there should be no noise.  Please remove the pedal from the bracket and place it on the floor, then press or step on it to check whether the sound is coming from the bracket.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-06T23:13:15Z",
+      "updated_at": "2025-10-06T23:13:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010145339,
+      "body_text": "Hi\r\n\r\nAfter doing a lot more testing and remounting the pedals I have found the issue. Please see vid attached\r\n\r\nI have applied ptfd spray multiple times and still can’t remove the squeak sound. There are no loose blots either.\r\n\r\nThanks\r\nMatthew wright\r\n\r\nSent from my iPhone\r\n\r\n",
+      "user_id": 158001949189,
+      "created_at": "2025-10-09T11:38:21Z",
+      "updated_at": "2025-10-09T11:38:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010185592,
+      "body_text": "Hi matthew wroght,  Please follow the picture and swap the positions of the thrust bearing and the black nylon washer, then test again. Also, please provide your order number, contact name, phone number, and address, and we’ll send you a new set of bearings for replacement. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-10T01:54:38Z",
+      "updated_at": "2025-10-10T01:54:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010221614,
+      "body_text": "Hi,\r\n\r\nOk I will do that thanks.\r\n\r\nMy previous order number was #SSN1881\r\n\r\nMy details for shipping are;\r\nMatthew Wright\r\n4 Quayside\r\nBrownhills\r\nWalsall\r\nWest Midlands\r\nWS8 - 6EU\r\n\r\n07398863283\r\n\r\nRegards\r\nMatthew\r\n________________________________\r\n",
+      "user_id": 158001949189,
+      "created_at": "2025-10-10T16:38:00Z",
+      "updated_at": "2025-10-10T16:38:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010263186,
+      "body_text": "Hi matthew wroght,    We apologize for the inconvenience caused. We will ship your order after we resume work next Monday.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-11T10:41:56Z",
+      "updated_at": "2025-10-11T10:41:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010342474,
+      "body_text": "Hi matthew wroght,    Here is your logistics tracking link:  https://t.17track.net/en#nums=SF6045968026559",
+      "user_id": 158001343601,
+      "created_at": "2025-10-13T07:39:30Z",
+      "updated_at": "2025-10-13T07:39:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

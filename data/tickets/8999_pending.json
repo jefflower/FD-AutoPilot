@@ -1,0 +1,24 @@
+{
+  "id": 8999,
+  "subject": "Simson plus X not working on f1 2025",
+  "description_text": "Hello i bought my pedals a few months ago and now i wanted to play f1 2025\r\nand they say they arent supported?? why cant i just play without the\r\nsupport it wont reconize them and wont play why is this? can i fix this or\r\nis it just a system error and it the games fault?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-23T13:46:12Z",
+  "updated_at": "2025-12-25T02:27:04Z",
+  "requester_id": 158002992994,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015057179,
+      "body_text": "Hi Luuk4100,  Hello, here is the setup guide for using the SIMSONN Plus X pedals in F1 25: First time entering the game You may see a message: NO PRESET CONTROL SCHEME FOR DEVICE(S) SIMSONN Plus X Please customise your controls in the Settings Menu... Click Okay to continue. Bind controls and save a new scheme Go to Settings → Controls to bind pedals and buttons. When exiting, select Save as new Control Scheme, give it a name (e.g., SIMSONN), and click Save. Manage and switch control schemes Main Menu → Settings → Controls → Control Scheme List Your SIMSONN scheme will appear; you can select it directly for future use. ? Note: If you delete the scheme without backup, you will need to repeat the binding and saving process. After completing these steps, your pedals will work properly in the game, providing a realistic driving experience.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-25T02:27:04Z",
+      "updated_at": "2025-12-25T02:27:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": 2947,
+  "subject": "Issue with HB pro handbrake",
+  "description_text": "The lights on the handbrake are showing as connected, but not showing on my PC or on the program.\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-21T15:52:57Z",
+  "updated_at": "2025-08-22T03:25:56Z",
+  "requester_id": 158003435659,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007324203,
+      "body_text": "Hi Hashim Umarji,     At the front bottom of the handbrake (indicated by the arrow), there is a small rectangular hole that contains the recovery button. Please use a toothpick to gently push it to the other side, then reconnect the USB cable. The device will enter recovery mode. Next, go to Settings → Update → Manual Firmware Update → handbrake-firmware → handbrake-hbpro.sfu in the software, and complete the update. After the upgrade, make sure to switch the recovery button back to its original position. You may also use the VKB tool to check the device connection status. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-22T03:16:13Z",
+      "updated_at": "2025-08-22T03:16:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007324307,
+      "body_text": "Hi Hashim Umarji,  At the front bottom of the handbrake (indicated by the arrow), there is a small rectangular hole that contains the recovery button. Please use a toothpick to gently push it to the other side, then reconnect the USB cable. The device will enter recovery mode. Next, go to Settings → Update → Manual Firmware Update → handbrake-firmware → handbrake-hbpro.sfu in the software, and complete the update. After the upgrade, make sure to switch the recovery button back to its original position. You may also use the VKB Joy Tester to check the device connection status.       https://www.vkbcontrollers.com/pages/downloads",
+      "user_id": 158000445778,
+      "created_at": "2025-08-22T03:25:56Z",
+      "updated_at": "2025-08-22T03:25:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

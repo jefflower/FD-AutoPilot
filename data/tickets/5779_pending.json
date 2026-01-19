@@ -1,0 +1,154 @@
+{
+  "id": 5779,
+  "subject": "Request for return and refund for Simsonn Plus X order: #SSN3115",
+  "description_text": "Hello,\r\n\r\n \r\n\r\nI recently purchased the Simsonn Plus X pedal set from you. After trying to\r\nadjust them, I've found that the brake pedal remains too stiff regardless of\r\nsettings, and the angle adjustment is much more limited than expected - the\r\npedals stay nearly upright in all positions, which doesn't fit my setup.\r\nI've also had ongoing issues with calibration in the software.\r\n\r\nI would like to request a return and refund. Please note that I no longer\r\nhave the original box, but I still have the internal foam packaging and can\r\nsend the pedals securely in another box.\r\n\r\n \r\n\r\nKind regards,\r\nKristupas\r\n\r\n \r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-07T12:51:12Z",
+  "updated_at": "2025-12-05T12:05:13Z",
+  "requester_id": 158006771189,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012042632,
+      "body_text": "Hi Kristupaszimblys,     If you find it too stiff, you can purchase a set of white elastomers. If you find the pedal too straight, you can swap the two points on the pedal base.  https://www.instagram.com/p/DO-08hIjI-0/",
+      "user_id": 158001343601,
+      "created_at": "2025-11-10T09:59:33Z",
+      "updated_at": "2025-11-10T09:59:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012048385,
+      "body_text": "Already set the pedals to the lowest possible setting, yet it still has only a minor angle. Thought of placing them on some inverter stand, but I struggle to find one that would fit these pedals and won't be as expensive as the pedals themselves.\r\nAs for stiffness, red ones seem squishy enough when pressed with fingers, so I assume there is something with the cylinder at the bottom. It is crazy that I have to push with my whole body just to get a couple o centimeterss of movement on the brake pedal. And I'm quite a buff guy (105kg), my wife on the other hand, struggles to apply any breaks with these pedals.\r\nI feel like giving up on this set unfortunately, and will have to switch to something else.\r\n\r\nIšsiųsta iš „Outlook“ skirta „Android“<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158006771189,
+      "created_at": "2025-11-10T12:30:59Z",
+      "updated_at": "2025-11-10T12:30:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012114511,
+      "body_text": "Hi Kristupaszimblys,     You need to calibrate the brake pedal in the software. You can remove the shim from the brake screw. If you feel the tilt is insufficient, swap the positions of these two studs as shown in the image.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-11T11:36:38Z",
+      "updated_at": "2025-11-11T11:36:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012268483,
+      "body_text": "As mentioned in my initial message, the software itself is a problem. I managed to lower the brake force from 60 kg to 15 kg, but the software still forces negative values during calibration, and both the accelerator and clutch only register about half travel when fully pressed. I also experience random disconnections with other peripherals when your software is running.\r\n\r\nRegarding the tilt: I already tried the most declined position. The adjustment shown in your picture would tilt the pedal forward, which is the opposite of what I need.\r\n\r\nGiven all this, I want to proceed with a return and refund. The pedals simply aren’t compatible with my setup.\r\n\r\n \r\n\r\n",
+      "user_id": 158006771189,
+      "created_at": "2025-11-13T15:51:24Z",
+      "updated_at": "2025-11-13T15:51:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012511923,
+      "body_text": "Hello?\r\nWhat would be the return procedure?\r\n\r\n2025-11-13, kt 17:51, <kristupaszimblys@gmail.com> rašė:\r\n\r\n> As mentioned in my initial message, the software itself is a problem. I\r\n> managed to lower the brake force from 60 kg to 15 kg, but the software\r\n> still forces negative values during calibration, and both the accelerator\r\n> and clutch only register about half travel when fully pressed. I also\r\n> experience random disconnections with other peripherals when your software\r\n> is running.\r\n>\r\n> Regarding the tilt: I already tried the most declined position. The\r\n> adjustment shown in your picture would tilt the pedal forward, which is the\r\n> opposite of what I need.\r\n>\r\n> Given all this, I want to proceed with a return and refund. The pedals\r\n> simply aren’t compatible with my setup.\r\n>\r\n>\r\n>\r\n> *",
+      "user_id": 158006771189,
+      "created_at": "2025-11-18T11:32:35Z",
+      "updated_at": "2025-11-18T11:32:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012559227,
+      "body_text": "Hi Kristupaszimblys,     The brake’s red damping being too stiff is a product characteristic issue. Please refer to the manual and remove the 10mm stop washer inside the black brake spring to change the pedal travel.  The factory default is short travel. If you need long travel, simply remove the 10mm stop washer. Refer to the screenshot below or the electronic version of the manual.  Additionally, after adjusting the damping, the manual specifies using the Offset function in the software to reset the white initial signal to 0%, then recalibrate the pedals.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-19T04:36:41Z",
+      "updated_at": "2025-11-19T04:36:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012590436,
+      "body_text": "This addresses only one of the issues I’ve had with these pedals. As mentioned several times before, I can’t get the right angle for my setup — no matter the position, the adjustment range is very limited and the pedals remain too upright. As a result, I end up pressing the top edge of the pedal instead of having full foot contact.\r\n\r\nIn addition, I keep experiencing software problems: it frequently disconnects my other peripherals whenever I adjust settings, which is quite concerning.\r\n\r\nOverall, I don’t see a way to make these pedals work properly in my setup and would like to return them for a refund. Could you please let me know the procedure?\r\n\r\n \r\n\r\n",
+      "user_id": 158006771189,
+      "created_at": "2025-11-19T15:14:30Z",
+      "updated_at": "2025-11-19T15:14:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012706144,
+      "body_text": "Hello? I have the feeling that you are deliberately keep avoiding the return procedure topic here.\r\n\r\n \r\n\r\n",
+      "user_id": 158006771189,
+      "created_at": "2025-11-21T13:31:21Z",
+      "updated_at": "2025-11-21T13:31:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012803375,
+      "body_text": "Hi Kristupaszimblys, Regarding the disconnection issue, if this occurs, it indicates that the PC grounding is unreliable, possibly because a three-prong plug is not used in a proper wall socket. You can refer to the following post to connect the PC case to the stand and connect the control unit to the pedal’s metal screws, which should resolve the disconnection problem.      https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-11-24T08:57:09Z",
+      "updated_at": "2025-11-24T08:57:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012813294,
+      "body_text": "You’re still not addressing my main question: *what is the return and\r\nrefund procedure?*\r\n\r\nAs we’ve already discussed multiple times, these pedals do not fit my\r\nsetup. The available angle adjustments are too limited — they remain too\r\nupright in every position — and the pressure feel isn’t right for me. On\r\ntop of that, the software behaves unpredictably and interferes with my\r\nother peripherals, which raises more concerns.\r\n\r\nEven if the stiffness or software issues could be partially resolved, the\r\npedals still won’t work in my setup due to the angle limitations. For this\r\nreason, I want to return them.\r\n\r\nPlease explain the return and refund procedure.\r\n\r\n2025-11-24, pr, 10:57 service@simsonn.com ",
+      "user_id": 158006771189,
+      "created_at": "2025-11-24T12:12:45Z",
+      "updated_at": "2025-11-24T12:12:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012859504,
+      "body_text": "Hi Kristupaszimblys,     When you say the “pedal force does not meet my requirements,” it means the pedal’s resistance does not match your personal preference. If the pedal feels too hard, you can remove the 10mm limit spacer inside the brake spring to increase the travel.  Our pedals, when properly grounded, do not interfere with other devices and have passed CE electromagnetic interference testing.  Regarding angle issues, these are not covered under our return policy.  If you encounter interference issues, please record a video and send it to us; we will inspect and verify the problem.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-25T05:23:35Z",
+      "updated_at": "2025-11-25T05:23:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012900593,
+      "body_text": "I’ve opened a return request during the 14-day withdrawal period under EU consumer law. This right does not depend on the reason for return, and your internal policy cannot override that.\r\n\r\nYou keep focusing on trying to solve secondary issues instead of answering the main question: how do you want me to return the item?\r\n\r\nJust to reiterate:\r\n\r\nPrimary issue: the pedal angle is unsuitable for my setup. The adjustment range is too limited, and I would need an additional decline platform or an inverter frame to make these pedals comfortable.\r\nSecondary issue: the brake pedal force is far too high for the titles I play (ETS2, BeamNG, etc). Even with your suggestions, it is still not within a realistic range for me.\r\nAdditional concern: your software (Simsonn Manager 2.1.2) causes device disconnects only when adjusting pedal settings in it. This is not a grounding problem on my end.\r\n\r\nRegardless of these points, I am exercising my right of withdrawal. Please provide the return address, required steps, and refund procedure.\r\n\r\n \r\n\r\n",
+      "user_id": 158006771189,
+      "created_at": "2025-11-25T17:46:50Z",
+      "updated_at": "2025-11-25T17:46:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013314156,
+      "body_text": "Hello,\r\n\r\nI see that you have ceased to communicate again and have not addressed my\r\nquestion regarding the return procedure. Is this how Simsonn treats\r\ncustomers normally? I'll ask you one last time - what is the return and\r\nrefund procedure?\r\n\r\n2025-11-25, an 19:46, <kristupaszimblys@gmail.com> rašė:\r\n\r\n> I’ve opened a return request during the 14-day withdrawal period under EU\r\n> consumer law. This right does not depend on the reason for return, and your\r\n> internal policy cannot override that.\r\n>\r\n> You keep focusing on trying to solve secondary issues instead of answering\r\n> the main question: how do you want me to return the item?\r\n>\r\n> Just to reiterate:\r\n>\r\n> Primary issue: the pedal angle is unsuitable for my setup. The adjustment\r\n> range is too limited, and I would need an additional decline platform or an\r\n> inverter frame to make these pedals comfortable.\r\n> Secondary issue: the brake pedal force is far too high for the titles I\r\n> play (ETS2, BeamNG, etc). Even with your suggestions, it is still not\r\n> within a realistic range for me.\r\n> Additional concern: your software (Simsonn Manager 2.1.2) causes device\r\n> disconnects *only when* adjusting pedal settings in it. This is *not* a\r\n> grounding problem on my end.\r\n>\r\n> Regardless of these points, I am exercising my right of withdrawal. Please\r\n> provide the return address, required steps, and refund procedure.\r\n>\r\n>\r\n>\r\n> *",
+      "user_id": 158006771189,
+      "created_at": "2025-12-03T07:56:24Z",
+      "updated_at": "2025-12-03T07:56:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013501262,
+      "body_text": "Hi Kristupaszimblys,    I apologize for not responding to you promptly.   We apologize for the delayed response. You may return the package to our German warehouse. We will process your refund once we receive and inspect the item.  Gubitz GmbH(LeiXuan A211) Hüttenkamp 12 Neumünster,Schleswig-Holstein   24536 +49 17622233089",
+      "user_id": 158001343601,
+      "created_at": "2025-12-05T12:05:13Z",
+      "updated_at": "2025-12-05T12:05:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

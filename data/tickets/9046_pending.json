@@ -1,0 +1,24 @@
+{
+  "id": 9046,
+  "subject": "Issue with recently received order",
+  "description_text": "Hello I recently ordered a set of Simsonn Pedal Pro X Ultra with Haptics and RGB Feedback from your website and paid for the option to come with haptics. Today only received the pedals and no haptics. I was wondering if there was some sort of mix up or if they had been shipped separately.\r\nSent from my iPhone[image0.jpeg]\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-24T02:20:44Z",
+  "updated_at": "2025-12-24T03:51:55Z",
+  "requester_id": 158008330245,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015017097,
+      "body_text": "Hi isaac tovar,  Please provide the order number starting with SSN, and I’ll help you check it. Usually, our orders are shipped in two separate packages. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-24T03:51:55Z",
+      "updated_at": "2025-12-24T03:51:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

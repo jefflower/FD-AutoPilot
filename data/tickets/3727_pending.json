@@ -1,0 +1,24 @@
+{
+  "id": 3727,
+  "subject": "Simsoon plus x",
+  "description_text": "Simsonn plus x brake pedal is interfering with the force feedback from the wheel. While driving the small details of texture is pressing the brake pedal slightly and continually. And I'm drifting so when I hit the bump at full lock it will also press the brake pedal the further I move past the lock It will press more\r\n\r\nSent from Outlook for Android<https://aka.ms/AAb9ysg>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-11T16:54:08Z",
+  "updated_at": "2025-09-12T04:19:11Z",
+  "requester_id": 158004441012,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008561661,
+      "body_text": "Hi yousifahmed321@outlook. com,  Our pedal controller has passed CE certification and will not emit external interference. Please first try using SIMSONN Manager 2.1.1, click Revert, then click Save to check if the RX axis has been disabled properly. If this does not resolve the issue, please try a manual firmware update instead of the automatic update. Additionally, you can follow the steps below to eliminate possible interference from the wheelbase.      https://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=drive_link      中文版本： 关于 EMI（电磁干扰）问题，建议按照以下流程进行排查与处理，以提升设备稳定性和连接可靠性：         1.        确认接地是否可靠：确保电脑插座为三孔插座，并具备有效接地功能。两孔插头无法实现有效接地。         2.        主控盒接地：使用绿色屏蔽线将主控盒的金属外壳（如铜柱或螺丝）与踏板金属部分连接；确保连接点无油漆、裸露金属接触良好。         3.        基座接地（如 Fanatec / MOZA 等）：建议使用导线将基座金属部分与电脑机箱或地线连接，释放积累的静电。         4.        避开强干扰源：避免 USB 线与高电压电源线（如电机驱动、电源适配器）平行靠近；尽量分开布线。         5.        更换 USB 接口：建议将设备直接连接至电脑主机背部的 USB 3.0 接口，避免使用无供电或劣质 USB 集线器。         6.        使用带磁环的 USB 线：必要时可更换为带有磁环的高质量 USB 线，有助于滤除高频干扰。         7.        软件固件升级：确保 SIMSONN Manager 和设备固件为最新版本，部分更新已优化抗干扰策略。         8.        使用 USB 隔离器：如果上述方法仍无法解决干扰问题，建议使用 USB 隔离器，从物理层面隔离干扰源，保护主控设备的稳定性。  ⸻  English Version: To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability:         1.        Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding.         2.        Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive.         3.        Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup.         4.        Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible.         5.        Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs.         6.        Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference.         7.        Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements.         8.        Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources.      https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting  https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-12T04:19:11Z",
+      "updated_at": "2025-09-12T04:19:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

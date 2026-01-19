@@ -1,0 +1,24 @@
+{
+  "id": 9558,
+  "subject": "Issue",
+  "description_text": "﻿Hello\r\nMy order =SSN5029 its still not deliver\r\nToday i check the tracker and surprise…..the order was in Budapest and now its back in China … Why???\r\nFrom 1 January i need to pay 50 euro extra for all the pack from China\r\nI realy don’t like this\r\nI also atach the screenshot’S\r\nVlad-Ionut Ilea\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-12-30T10:06:13Z",
+  "updated_at": "2025-12-30T10:31:16Z",
+  "requester_id": 158008818713,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015246303,
+      "body_text": "此工单已关闭并合并到工单 9557 中",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T10:31:16Z",
+      "updated_at": "2025-12-30T10:31:16Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

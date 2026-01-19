@@ -1,0 +1,54 @@
+{
+  "id": 10565,
+  "subject": "Wrong address, please help",
+  "description_text": "Rhe right address is\r\n\r\nVia Amendola 7, 70010 Casamassima Ba\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-11T12:19:54Z",
+  "updated_at": "2026-01-12T03:03:06Z",
+  "requester_id": 158009022480,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016812743,
+      "body_text": "Please help me soon",
+      "user_id": 158009022480,
+      "created_at": "2026-01-11T12:25:09Z",
+      "updated_at": "2026-01-11T12:25:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158016820950,
+      "body_text": "ID 为 10564 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T14:33:14Z",
+      "updated_at": "2026-01-11T14:33:14Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016820951,
+      "body_text": "合并来自工单10564  \n      主题: WRONG SHIPPING ADDRESS  \n      描述:  \n \n \n \n \nPlease change the shipping address on \n \nVia Amendola 7 , 70010 Casamassima (BA) ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T14:33:15Z",
+      "updated_at": "2026-01-11T14:33:15Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016835659,
+      "body_text": "Hi Ernesto Nigro,    I've already made the changes for you, so please don't worry.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-12T03:03:06Z",
+      "updated_at": "2026-01-12T03:03:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

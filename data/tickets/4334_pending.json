@@ -1,0 +1,114 @@
+{
+  "id": 4334,
+  "subject": "Recent order",
+  "description_text": "Hello\r\nOn Wednesday October 1st, I placed an order for a set of pedals online. My\r\ncredit card has been charged but I have not received any receipts or\r\npayment confirmation nor any shipment information.\r\n\r\nMy name and address are:\r\nsebastien katch\r\n465 hillspur rd\r\nAnn Arbor, MI\r\n48105\r\nUSA\r\n\r\nCan you please look into your systems and promptly\r\n1. send me a receipt and confirmation of the order\r\n2. send me the delivery information\r\n\r\nthank you\r\nSebastien\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-02T11:34:45Z",
+  "updated_at": "2025-10-14T08:23:34Z",
+  "requester_id": 158005271327,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009824302,
+      "body_text": "Hi Sebastien Katch,  Please provide the order date, order amount, contact name, and shipping address. I will help you check the order number and get back to you. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-03T02:28:51Z",
+      "updated_at": "2025-10-03T02:28:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009836105,
+      "body_text": "Hello\r\nThank you for your reply.\r\n\r\nOrder date: October 1st 2025\r\nOrder amount: $390.90 USD\r\nAddress:\r\nSebastien Katch\r\n465 Hillspur rd\r\nAnn Arbor, MI\r\n48105\r\nUSA\r\n\r\nI ordered the pedals.\r\nAttached are a few pictures to help.\r\n1) a screenshot of my credit card transaction\r\n2) screenshot of the product I ordered.\r\n\r\nThank you\r\n\r\n\r\n\r\nOn Thu, Oct 2, 2025 at 10:29 PM service@simsonn.com ",
+      "user_id": 158005271327,
+      "created_at": "2025-10-03T10:55:54Z",
+      "updated_at": "2025-10-03T10:55:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009960803,
+      "body_text": "Hello\r\nAny news on this front?\r\nDo you know where my product is and will be arriving?  I already paid and\r\nhave no confirmation, nothing.\r\nThank you.\r\n\r\nOn Fri, Oct 3, 2025 at 12:55 PM Sebastien Katch <sebastien.katch@gmail.com>\r\nwrote:\r\n\r\n> Hello\r\n> Thank you for your reply.\r\n>\r\n> Order date: October 1st 2025\r\n> Order amount: $390.90 USD\r\n> Address:\r\n> Sebastien Katch\r\n> 465 Hillspur rd\r\n> Ann Arbor, MI\r\n> 48105\r\n> USA\r\n>\r\n> I ordered the pedals.\r\n> Attached are a few pictures to help.\r\n> 1) a screenshot of my credit card transaction\r\n> 2) screenshot of the product I ordered.\r\n>\r\n> Thank you\r\n>\r\n>\r\n>\r\n> On Thu, Oct 2, 2025 at 10:29 PM service@simsonn.com ",
+      "user_id": 158005271327,
+      "created_at": "2025-10-06T07:47:37Z",
+      "updated_at": "2025-10-06T07:47:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010198434,
+      "body_text": "Hi Sebastien Katch,    We apologize for the delayed response; we've just returned from our 8-day holiday. Here is your shipping tracking link:  https://www.fedex.com/wtrk/track/?trknbr=884926163706     You didn't receive order updates because the email address on file was incorrect. We've now updated it to the email you provided. Please cancel the chargeback you initiated. We sincerely apologize for the inconvenience and concern this may have caused you!",
+      "user_id": 158001343601,
+      "created_at": "2025-10-10T08:38:09Z",
+      "updated_at": "2025-10-10T08:38:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010255870,
+      "body_text": "Hello\r\nThanks for the email and note.  We did indeed receive the pedals yesterday\r\nand they seem great.  I will call Amex and figure out a way to reverse the\r\ncancelation and dispute.  I will keep you posted.\r\n\r\nThank you\r\n\r\n\r\n\r\nOn Fri, Oct 10, 2025 at 9:38 AM service@simsonn.com ",
+      "user_id": 158005271327,
+      "created_at": "2025-10-11T08:24:36Z",
+      "updated_at": "2025-10-11T08:24:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010263172,
+      "body_text": "Hi Sebastien Katch,    Thank you for your support and understanding. We apologize for any inconvenience caused. Have fun!",
+      "user_id": 158001343601,
+      "created_at": "2025-10-11T10:40:08Z",
+      "updated_at": "2025-10-11T10:40:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010264096,
+      "body_text": "Great.\r\nHonestly I got concerned because I did not get a reply back from the\r\nSimsonn team in due time, and because when I tried to call, I could not\r\nconnect or go through. (Yes I tried to call the +86 China number, but to no\r\navail).\r\n\r\nBut all good.  Thanks for the follow up now and good product / initial\r\ntest.\r\n\r\n\r\n\r\nOn Sat, Oct 11, 2025 at 11:40 AM service@simsonn.com ",
+      "user_id": 158005271327,
+      "created_at": "2025-10-11T10:46:14Z",
+      "updated_at": "2025-10-11T10:46:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010343939,
+      "body_text": "Hi Sebastien Katch,    We apologize for any concern caused. Due to an extended 8-day holiday, we were unable to address our emails promptly.  Thank you for your continued support of our products. Should you encounter any issues, please feel free to contact us at any time. Also, please remember to cancel your chargeback.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-13T09:29:57Z",
+      "updated_at": "2025-10-13T09:29:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010375672,
+      "body_text": "Alright. I connected with Amex and reversed the \"dispute\".  They told me it\r\ncould take 7 to 10 days but it should reverse and you should get your\r\npayment.\r\nLet me know when you see it come through.\r\n\r\nthank you\r\nSebastien\r\n\r\nOn Mon, Oct 13, 2025 at 5:30 AM service@simsonn.com ",
+      "user_id": 158005271327,
+      "created_at": "2025-10-13T21:58:42Z",
+      "updated_at": "2025-10-13T21:58:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010389298,
+      "body_text": "Hi Sebastien Katch,    Thank you for your cooperation. Have a pleasant day!",
+      "user_id": 158001343601,
+      "created_at": "2025-10-14T08:23:33Z",
+      "updated_at": "2025-10-14T08:23:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

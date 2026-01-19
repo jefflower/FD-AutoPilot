@@ -1,0 +1,44 @@
+{
+  "id": 4408,
+  "subject": "Shipping of my order",
+  "description_text": "Hello,\r\n\r\nI ordered my pedals over 2 days ago now and havent recived any info on\r\nshipping, could you give me an update on that?\r\n\r\n#SSN2801\r\n\r\nThats my order number.\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-10-03T22:04:57Z",
+  "updated_at": "2025-10-09T10:20:56Z",
+  "requester_id": 158005383809,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009963679,
+      "body_text": "I didnt pay for express shipping for the product not beeing shipped for this long.   Could somebody please look at this issue?",
+      "user_id": 158005383809,
+      "created_at": "2025-10-06T10:29:01Z",
+      "updated_at": "2025-10-06T10:29:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010003712,
+      "body_text": "Hi Robs Mörschi,    We apologize for any inconvenience caused. We are currently on an 8-day holiday period. Your order has been shipped from our German warehouse. Thank you for your understanding and patience.    https://www.dhl.com/us-en/home/tracking.html?tracking-id=CE326626784DE",
+      "user_id": 158001343601,
+      "created_at": "2025-10-07T08:59:01Z",
+      "updated_at": "2025-10-07T08:59:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010021945,
+      "body_text": "That's great, thank you very much.\r\n\r\nsupport@simsonn.com ",
+      "user_id": 158005383809,
+      "created_at": "2025-10-07T13:27:05Z",
+      "updated_at": "2025-10-07T13:27:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

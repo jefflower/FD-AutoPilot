@@ -1,0 +1,294 @@
+{
+  "id": 9730,
+  "subject": "至急連絡ください！",
+  "description_text": "アリエクにてPro X\r\nUltra-P3-H3を20251203に購入し20251218に届いたが、ブレーキのみ反応しない。スロットル、クラッチは反応確認。コントローラーボックスへ差し込む際もブレーキのみ反応せず。他のはコントローラーボックスのどこへ挿しても反応する。アリエクに、問い合わせしたら6828円返金するとのこと。ブレーキのみ単品でsimsonnへ問い合わせ後若干の差額は発生するが再購入するよう言われたが、インターネットにて検索するもブレーキ単独では販売されていない為、直接連絡した。レビュー見てもブレーキの調整に難有りとの事が多いが故障等ではないのであれざ治し方を早期に教えて下さい。\r\n\r\n",
+  "status": 4,
+  "priority": 4,
+  "created_at": "2026-01-01T09:17:48Z",
+  "updated_at": "2026-01-15T09:16:42Z",
+  "requester_id": 158008839177,
+  "responder_id": 158007774664,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015365606,
+      "body_text": "Hi romeo kondo,    Offset をクリックしてポップアップ画面が表示されましたら、 まずスクリーンショットを撮ってお送りください。その後、手順に従ってペダルの元信号をゼロにしてください。  また、ブレーキペダル側面の全体がはっきり写った写真も撮影してお送りください。 調整の問題か、センサーの故障かをこちらで確認いたします。 もしセンサー不良と確認できた場合は、交換用の新しいセンサーをお送りいたします。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-01T14:51:51Z",
+      "updated_at": "2026-01-01T14:51:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015396225,
+      "body_text": "写真送付します。確認願います。\r\n\r\n\r\n2026年1月1日(木) 23:52 support@simsonn.com ",
+      "user_id": 158008839177,
+      "created_at": "2026-01-02T14:11:38Z",
+      "updated_at": "2026-01-02T14:11:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015544695,
+      "body_text": "Hi romeo kondo,  There is no issue with your brake pedal. After adjusting the Offset, is the signal now working normally? ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-04T01:09:52Z",
+      "updated_at": "2026-01-04T01:09:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015567872,
+      "body_text": "正常に機能していません。\r\n\r\n2026年1月4日(日) 10:10 support@simsonn.com ",
+      "user_id": 158008839177,
+      "created_at": "2026-01-04T03:27:37Z",
+      "updated_at": "2026-01-04T03:27:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015621504,
+      "body_text": "Hi,\r\n\r\nThank you for your reply.\r\n\r\nEven after adjusting the Offset, the brake pedal still does not work\r\nnormally.\r\nThe signal drops to zero suddenly and does not respond, even when fully\r\npressed.\r\n\r\nI have already tested:\r\n- Reconnecting the cable\r\n- Restarting the base and PC\r\n- Recalibrating in Pit House\r\n- Offset adjustment\r\n\r\nThe issue still remains, so this seems to be a hardware problem.\r\n\r\nPlease advise the next step for repair or replacement.\r\n\r\nThank you.\r\n\r\n\r\n2026年1月4日(日) 12:27 romeo kondo <romeo0605.romeo@gmail.com>:\r\n\r\n> 正常に機能していません。\r\n>\r\n> 2026年1月4日(日) 10:10 support@simsonn.com ",
+      "user_id": 158008839177,
+      "created_at": "2026-01-04T10:38:31Z",
+      "updated_at": "2026-01-04T10:38:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016152128,
+      "body_text": "Hi romeo kondo,     Please provide the contact name, phone number, and shipping address, and I will arrange a replacement shipment for you.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T14:56:15Z",
+      "updated_at": "2026-01-07T14:56:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016217525,
+      "body_text": "Hi,\r\n\r\nThank you for your support.\r\nHere is my contact information:\r\n\r\nContact name: Masatsugu Kondo\r\nPhone number: 090-4303-6293\r\nShipping address:\r\nGrand Ash Senri Furuiedai 503\r\n5-3-2 Furuiedai, Suita-shi, Osaka 565-0874\r\nJapan\r\n\r\nPlease proceed with the replacement shipment.\r\nThank you again.\r\n\r\nBest regards,\r\nMasatsugu Kondo\r\n\r\n\r\n2026年1月7日(水) 23:56 support@simsonn.com ",
+      "user_id": 158008839177,
+      "created_at": "2026-01-07T22:17:41Z",
+      "updated_at": "2026-01-07T22:17:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016290881,
+      "body_text": "Hi romeo kondo,       Please provide your AliExpress order number or a screenshot of your order so that we can notify you of the tracking number online.",
+      "user_id": 158007774664,
+      "created_at": "2026-01-08T07:02:00Z",
+      "updated_at": "2026-01-08T07:02:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016293008,
+      "body_text": "Hi romeo kondo,      Your product has been shipped. The logistics number is:YT2600800704728636. You can track it at this website:​https://t.17track.net/zh-cn#nums=YT2600800704728636",
+      "user_id": 158007774664,
+      "created_at": "2026-01-08T07:21:26Z",
+      "updated_at": "2026-01-08T07:21:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016305702,
+      "body_text": "Hi,\r\n\r\nHere is my AliExpress order number:\r\n1117695178021151\r\n\r\nI’ve also attached a screenshot of the order confirmation page for your\r\nreference.\r\n\r\nAlso, I noticed that the package weight is listed as only 0.01 kg.\r\nCould you please let me know what exactly is included in the shipment?\r\n\r\nLooking forward to your reply.\r\nThank you!\r\n\r\nBest regards,\r\nMasatsugu Kondo\r\n\r\n\r\n2026年1月8日(木) 16:21 support@simsonn.com ",
+      "user_id": 158008839177,
+      "created_at": "2026-01-08T08:45:33Z",
+      "updated_at": "2026-01-08T08:45:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016327296,
+      "body_text": "Hi romeo kondo,  Okay, here's a replacement brake sensor for you.",
+      "user_id": 158007774664,
+      "created_at": "2026-01-08T10:48:45Z",
+      "updated_at": "2026-01-08T10:48:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016337808,
+      "body_text": "Hi,\r\n\r\nThank you for the replacement brake sensor.\r\nI’ve received the tracking number and will wait for the delivery.\r\n\r\nBest regards,\r\nMasatsugu Kondo\r\n\r\n\r\n2026年1月8日(木) 19:49 support@simsonn.com ",
+      "user_id": 158008839177,
+      "created_at": "2026-01-08T12:10:21Z",
+      "updated_at": "2026-01-08T12:10:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016485230,
+      "body_text": "Hi romeo kondo,  You're welcome. If you have any further questions, please feel free to contact us directly in the buyer chat.",
+      "user_id": 158007774664,
+      "created_at": "2026-01-09T05:52:14Z",
+      "updated_at": "2026-01-09T05:52:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016940294,
+      "body_text": "Subject: Brake pedal not responding even after sensor replacement\r\n\r\nHello,\r\n\r\nI am contacting you again regarding the brake pedal issue.\r\n\r\nAs instructed, I have already replaced the brake load cell sensor.\r\nI also tested by swapping the brake sensor with the accelerator and clutch\r\nsensors, but none of the sensors work when connected to the brake input.\r\n\r\nThis means the problem is not the sensor.\r\nIt appears that the brake input circuit on the pedal’s internal board is\r\nnot functioning.\r\n\r\nAt this point, I have tried every possible user-side solution.\r\nCould you please arrange a repair or replacement of the internal board?\r\n\r\nThank you for your support.\r\n\r\n2026年1月9日(金) 14:52 support@simsonn.com ",
+      "user_id": 158008839177,
+      "created_at": "2026-01-13T06:40:45Z",
+      "updated_at": "2026-01-13T06:40:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016941400,
+      "body_text": "I would appreciate it if you could send a replacement unit as soon as\r\npossible.\r\n\r\n\r\n2026年1月13日(火) 15:40 romeo kondo <romeo0605.romeo@gmail.com>:\r\n\r\n> Subject: Brake pedal not responding even after sensor replacement\r\n>\r\n> Hello,\r\n>\r\n> I am contacting you again regarding the brake pedal issue.\r\n>\r\n> As instructed, I have already replaced the brake load cell sensor.\r\n> I also tested by swapping the brake sensor with the accelerator and clutch\r\n> sensors, but none of the sensors work when connected to the brake input.\r\n>\r\n> This means the problem is not the sensor.\r\n> It appears that the brake input circuit on the pedal’s internal board is\r\n> not functioning.\r\n>\r\n> At this point, I have tried every possible user-side solution.\r\n> Could you please arrange a repair or replacement of the internal board?\r\n>\r\n> Thank you for your support.\r\n>\r\n> 2026年1月9日(金) 14:52 support@simsonn.com ",
+      "user_id": 158008839177,
+      "created_at": "2026-01-13T06:58:36Z",
+      "updated_at": "2026-01-13T06:58:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016943914,
+      "body_text": "Hi romeo kondo,  Hello, I have already reissued it to you.  Your product has been shipped. The logistics number is:YT2600800704728636. You can track it at this website:​https://t.17track.net/zh-cn#nums=YT2600800704728636 ",
+      "user_id": 158007774664,
+      "created_at": "2026-01-13T07:17:54Z",
+      "updated_at": "2026-01-13T07:17:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016970470,
+      "body_text": "Subject: Item marked as delivered but not received\r\n\r\nHello,\r\n\r\nAccording to the tracking information (YT2600800704728636), the package is\r\nmarked as delivered on January 13th at 11:20 AM.\r\nHowever, I have not received the item.\r\n\r\nCould you please check with the logistics provider (Yuntu Logistics) and\r\nconfirm the delivery status?\r\nIf the item was lost or misdelivered, I would appreciate a reshipment or\r\nrefund.\r\n\r\nThank you for your support\r\n\r\n\r\n2026年1月13日(火) 16:18 support@simsonn.com ",
+      "user_id": 158008839177,
+      "created_at": "2026-01-13T11:34:10Z",
+      "updated_at": "2026-01-13T11:34:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016971024,
+      "body_text": "Subject: Item marked as delivered but not received     Hello,     According to the tracking information (YT2600800704728636), the package is marked as delivered on January 13th at 11:20 AM.  However, I have not received the item.     Could you please check with the logistics provider (Yuntu Logistics) and confirm the delivery status?  If the item was lost or misdelivered, I would appreciate a reshipment or refund.     Thank you for your support",
+      "user_id": 158008839177,
+      "created_at": "2026-01-13T11:40:29Z",
+      "updated_at": "2026-01-13T11:40:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158017076542,
+      "body_text": "Hi romeo kondo,  You can try checking at a package pickup point near your home, or wait a day or two.",
+      "user_id": 158007774664,
+      "created_at": "2026-01-14T07:04:01Z",
+      "updated_at": "2026-01-14T07:04:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017078057,
+      "body_text": "The sensor you sent earlier has already arrived.\r\nThe package that is missing now is the replacement pedal unit (tracking\r\nnumber: YT2600800704728636).\r\nThis one shows “delivered”, but I have not received it.\r\n\r\n\r\n2026年1月14日(水) 16:04 support@simsonn.com ",
+      "user_id": 158008839177,
+      "created_at": "2026-01-14T07:29:18Z",
+      "updated_at": "2026-01-14T07:29:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017079754,
+      "body_text": "Hi romeo kondo,  Please send photos of the brake sensor you received, along with photos or videos of it malfunctioning, to our AliExpress online store. We will verify the information and then provide a solution.",
+      "user_id": 158007774664,
+      "created_at": "2026-01-14T07:41:05Z",
+      "updated_at": "2026-01-14T07:41:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017080129,
+      "body_text": "*The brake sensor you sent earlier has already arrived and I have already\r\ninstalled it.The problem is not the sensor.The item that is missing now is\r\nthe replacement pedal unit (tracking number: YT2600800704728636).It shows\r\n“delivered”, but I have not received it.*\r\n\r\n\r\n2026年1月14日(水) 16:41 support@simsonn.com ",
+      "user_id": 158008839177,
+      "created_at": "2026-01-14T07:46:52Z",
+      "updated_at": "2026-01-14T07:46:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017080870,
+      "body_text": "Hi romeo kondo,  The tracking number YT2600800704728636 indicates that we shipped brake sensors, but the main control box was not included. We were not previously told that the main control box was required.",
+      "user_id": 158007774664,
+      "created_at": "2026-01-14T08:04:19Z",
+      "updated_at": "2026-01-14T08:04:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017096596,
+      "body_text": "Hi,\r\n\r\nThank you for your reply.\r\nTo clarify: the brake sensor you sent earlier has already arrived and I\r\nhave installed it.\r\nHowever, the brake still does not work, so the main control box (pedal\r\nunit) is required.\r\nI thought the replacement pedal unit was being shipped with tracking number\r\nYT2600800704728636.\r\nCould you please confirm whether the replacement pedal unit will be sent?\r\n\r\n\r\n2026年1月14日(水) 17:04 support@simsonn.com ",
+      "user_id": 158008839177,
+      "created_at": "2026-01-14T12:00:22Z",
+      "updated_at": "2026-01-14T12:00:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017162014,
+      "body_text": "Hi romeo kondo,     Could you please record a complete video and upload it to Google Drive? Then send me the link and set the sharing permission to “Anyone with the link can view.” The video should include the full process below (including zeroing the pedal signal following the steps inside the Offset pop-up dialog, and then Calibration/Calibrate):    Click Offset, and follow the steps in the pop-up dialog to zero the pedal signal;    Click Calibrate, then press each pedal with normal force;    Click Save;    After calibration, please test the pedals again — the blue progress bar should move smoothly from 0% to 100%. Only then is the calibration successful.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-15T04:23:32Z",
+      "updated_at": "2026-01-15T04:23:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017163080,
+      "body_text": "Hi,\r\n\r\nBefore I record a video, I need to clarify something.\r\nThe brake sensor you sent earlier has already arrived and I have installed\r\nit.\r\nHowever, the brake still does not respond at all — the signal stays at 0%\r\neven after Offset and Calibration.\r\nThis means the problem is not the sensor.\r\nThe main control box (pedal unit) itself seems to be faulty and needs\r\nreplacement.\r\n\r\nCould you please confirm whether the replacement pedal unit will be sent?\r\nI can record a video if necessary, but the brake axis does not move at all.\r\n\r\n2026年1月15日(木) 13:23 support@simsonn.com ",
+      "user_id": 158008839177,
+      "created_at": "2026-01-15T05:33:13Z",
+      "updated_at": "2026-01-15T05:33:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017165964,
+      "body_text": "Hi romeo kondo,  Okay, we will send you a replacement control box later.",
+      "user_id": 158007774664,
+      "created_at": "2026-01-15T06:58:28Z",
+      "updated_at": "2026-01-15T06:58:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017172735,
+      "body_text": "Hi romeo kondo,  Your product has been shipped. The logistics number is:SF6047243605811. You can track it at this website:https://t.17track.net/zh-cn#nums=SF6047243605811",
+      "user_id": 158007774664,
+      "created_at": "2026-01-15T09:15:02Z",
+      "updated_at": "2026-01-15T09:15:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

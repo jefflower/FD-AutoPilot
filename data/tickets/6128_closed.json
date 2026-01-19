@@ -1,0 +1,24 @@
+{
+  "id": 6128,
+  "subject": "Order #SSN3046",
+  "description_text": "Hi,\r\nI’ve ordered a set of pedals from you on the 21st of October and I haven’t received them yet. On the shipping details it said 9-15 days so I’m wondering why it’s taking so long as it’s been more than 15 working days now.\r\nThank you\r\nChelsea\r\nSent from my iPhone\r\n",
+  "status": 5,
+  "priority": 4,
+  "created_at": "2025-11-14T10:27:59Z",
+  "updated_at": "2025-12-04T01:45:55Z",
+  "requester_id": 158007054463,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013364456,
+      "body_text": "此工单已关闭并合并到工单 7361 中",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T01:45:55Z",
+      "updated_at": "2025-12-04T01:45:55Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

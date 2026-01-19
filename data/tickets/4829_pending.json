@@ -1,0 +1,24 @@
+{
+  "id": 4829,
+  "subject": "SSN2928",
+  "description_text": "Hello,\r\n\r\nI ordered on your website yesterday with express shipping the plus X\r\nI was wondering if everything is ok as it is mentioned « unfulfilled »\r\n\r\nLooking forward to hearing from you.\r\n\r\nBest\r\nMr Rucar\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-13T16:49:13Z",
+  "updated_at": "2025-10-14T06:06:55Z",
+  "requester_id": 158005644443,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010386250,
+      "body_text": "Hi Isaac Rucar,    To avoid customs duties, we shall dispatch your order today following replenishment at our German warehouse.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-14T06:06:55Z",
+      "updated_at": "2025-10-14T06:06:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

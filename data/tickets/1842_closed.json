@@ -1,0 +1,64 @@
+{
+  "id": 1842,
+  "subject": "Missing plate",
+  "description_text": "I orderded a black Plate with the second smaller Plate on AliExpress but\r\nthe small Plate was not in the package.\r\n\r\nOrder number was : 3057696368349782\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-07-23T20:31:14Z",
+  "updated_at": "2025-12-18T10:41:27Z",
+  "requester_id": 158002301372,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005487226,
+      "body_text": "Hi Michael Karrasch,  The items were shipped separately, and the base plate has not arrived yet. Please be patient. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-24T02:01:21Z",
+      "updated_at": "2025-07-24T02:01:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005501735,
+      "body_text": "I have now both packages and the small Plate isnt in the other there were\r\nonly the Pedals\r\n\r\nservice@simsonn.com ",
+      "user_id": 158002301372,
+      "created_at": "2025-07-24T15:05:16Z",
+      "updated_at": "2025-07-24T15:05:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005575225,
+      "body_text": "So this Plate is still missing, i already wrote a lot on AliExpress and\r\nthey Said i should wrote Here\r\n\r\n\r\nservice@simsonn.com ",
+      "user_id": 158002301372,
+      "created_at": "2025-07-26T08:28:27Z",
+      "updated_at": "2025-07-26T08:28:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005584394,
+      "body_text": "Hi Michael Karrasch,    I have just informed the operations team, and they will send you a replacement base plate next Monday. Please don’t worry.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-26T10:04:43Z",
+      "updated_at": "2025-07-26T10:04:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005616451,
+      "body_text": "Okay, thank you\r\n\r\nservice@simsonn.com ",
+      "user_id": 158002301372,
+      "created_at": "2025-07-26T14:34:38Z",
+      "updated_at": "2025-07-26T14:34:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

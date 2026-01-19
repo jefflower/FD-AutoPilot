@@ -1,0 +1,324 @@
+{
+  "id": 7922,
+  "subject": "Refund",
+  "description_text": "Can you please tell me what has happened to the refund of £28 I was promised on Monday?\r\n\r\n\r\n\r\nSent from my Galaxy\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-10T20:35:47Z",
+  "updated_at": "2025-12-11T12:25:01Z",
+  "requester_id": 158007041159,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012297979,
+      "body_text": "Hi mike h,    You can use two control boxes: the Vam Pro uses the X Ultra control box, while the pedal uses the original control box.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-14T03:54:16Z",
+      "updated_at": "2025-11-14T03:54:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012299611,
+      "body_text": "I have done that and they seemed to work ok but now they have stopped working...not connected in Simsonn manager but recognised in simhub but not working?\r\n\r\n\r\n\r\nSent from my Galaxy\r\n\r\n\r\n\r\n-------- Original message --------\r\n",
+      "user_id": 158007041159,
+      "created_at": "2025-11-14T05:00:13Z",
+      "updated_at": "2025-11-14T05:00:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012310380,
+      "body_text": "Nothing is working now,the Vam pro motors are not recognised in the Simsonn manager software?\r\n\r\n\r\n\r\nSent from my Galaxy\r\n\r\n\r\n\r\n-------- Original message --------\r\n",
+      "user_id": 158007041159,
+      "created_at": "2025-11-14T13:31:49Z",
+      "updated_at": "2025-11-14T13:31:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012399668,
+      "body_text": "Hi mike h,    Two different types of controllers may not work together properly. The older Simsonn Pro pedal is typically compatible only with the PlusX controller and may not work with the ProX Ultra controller box.  If the ProX Ultra controller cannot detect the motor, please try manually updating the firmware. Additionally, we recommend using a USB 3.0 (blue) port and avoiding USB hubs when connecting the device.         Please follow the steps below to start the firmware update process:    Press the upgrade button on the controller box;    Reconnect the USB cable;    Wait for the software to indicate that it has entered “Simsonn Flasher Mode”;    Go to Settings → Update → Manual Firmware Update → pedals → firmware → pedals-proxultra.sfu to start updating the firmware;    After the update is completed, release the upgrade button;    Finally, test and recalibrate the pedals.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-16T02:16:13Z",
+      "updated_at": "2025-11-16T02:16:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012400138,
+      "body_text": "Hi again, I have ordered a plus x control box so I can use the pedals and Vam motors from one box.Can I please return the Ultra box?\r\n        Regards,Mike\r\n\r\n\r\n\r\nSent from my Galaxy\r\n\r\n\r\n\r\n-------- Original message --------\r\n",
+      "user_id": 158007041159,
+      "created_at": "2025-11-16T02:55:34Z",
+      "updated_at": "2025-11-16T02:55:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012400189,
+      "body_text": "Hi mike h,  You can sell this Ultra controller box on the market. Since we provide the controller box mostly at shipping and cost price for customer upgrades, the return shipping cost could reach several tens of dollars, which exceeds the value of the controller box itself. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-16T03:00:07Z",
+      "updated_at": "2025-11-16T03:00:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012400696,
+      "body_text": "What if I can't get the ultra control box to work again,as it just stopped connection for no reason?\r\n\r\n\r\n\r\nSent from my Galaxy\r\n\r\n\r\n\r\n-------- Original message --------\r\n",
+      "user_id": 158007041159,
+      "created_at": "2025-11-16T03:40:48Z",
+      "updated_at": "2025-11-16T03:40:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012498664,
+      "body_text": "I have got the motors working again with the instructions you gave me, however when I plug my usb back into the pedal control box it says it's too old and then it's disconnected?\r\n\r\n\r\n\r\nSent from my Galaxy\r\n\r\n\r\n\r\n-------- Original message --------\r\n",
+      "user_id": 158007041159,
+      "created_at": "2025-11-18T02:59:20Z",
+      "updated_at": "2025-11-18T02:59:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012498730,
+      "body_text": "Should I try flashing the control box with 1.7.0 sfu?\r\n\r\n\r\n\r\nSent from my Galaxy\r\n\r\n\r\n\r\n-------- Original message --------\r\n",
+      "user_id": 158007041159,
+      "created_at": "2025-11-18T03:02:06Z",
+      "updated_at": "2025-11-18T03:02:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012558521,
+      "body_text": "Hi mike h,    First, please ensure you are using SIMSONN Manager 2.1.2. Also, connect only one SIMSONN control box at a time—do not connect multiple units simultaneously.    For Pro series control boxes: If the version is 1.7.1, you can update the firmware via: Settings → Update → Manual Firmware Update → pedals-firmware → pedals-plus.sfu (This method does not apply to 1.7.0 control boxes.)    For PlusX pedals: Only the plusx.sfu firmware can be used for updates.     If you are using the PlusX pedal, please refer to the recommendations below:    VAM Pro Interference Issue To prevent the VAM Pro motor from interfering with the brake signal, you can install nylon washers and nylon screws on the VAM Pro motor.    Vibration Not Stopping / Disconnection Caused by Poor Grounding If the pedal keeps vibrating or disconnects unexpectedly, it is usually due to poor grounding of the PC, often caused by not using a three-prong plug or an outlet without proper grounding. We recommend following the solutions mentioned in the posts:    Connect the PC case to the rig frame with a metal connection.    Connect the main control box to the pedal’s metal screws for proper grounding. These steps can effectively resolve issues such as continuous vibration, signal interference, and random disconnections.       https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding     https://www.reddit.com/r/simracing/comments/1n291hi/solution_for_simsonn_vam_pro_emi_issues/",
+      "user_id": 158000445778,
+      "created_at": "2025-11-19T03:33:19Z",
+      "updated_at": "2025-11-19T03:33:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012559258,
+      "body_text": "I do have the version 1.7.0 control box and it did work the other day for a couple of hours...when I went back to it it told me it was disconnected in Simsonn manager?\r\n\r\nSent from Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158007041159,
+      "created_at": "2025-11-19T04:40:23Z",
+      "updated_at": "2025-11-19T04:40:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012559407,
+      "body_text": "Hi mike h,  Version V1.7.0 cannot be updated and is not compatible with SIMSONN Manager. You can use Freejoy to update and restore it.      https://drive.google.com/file/d/1hnHNudj0VhE6xr7ypu-KeEDuVrlVHVg9/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-11-19T04:55:21Z",
+      "updated_at": "2025-11-19T04:55:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012559598,
+      "body_text": "How do I update with Freejoy.I use Freejoy now to calibrate the pedals but have never updated the pedals?\r\n\r\n\r\n\r\nSent from my Galaxy\r\n\r\n\r\n\r\n-------- Original message --------\r\n",
+      "user_id": 158007041159,
+      "created_at": "2025-11-19T05:12:14Z",
+      "updated_at": "2025-11-19T05:12:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012559985,
+      "body_text": "And is it possible to update the control box to 1.7.1...if so where is the file for v 1.7.1?\r\n\r\n\r\n\r\nSent from my Galaxy\r\n\r\n\r\n\r\n-------- Original message --------\r\n",
+      "user_id": 158007041159,
+      "created_at": "2025-11-19T05:46:23Z",
+      "updated_at": "2025-11-19T05:46:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012561252,
+      "body_text": "Hi mike h,  Version 1.7.0 is an early release and does not include a bootloader. As a result, it cannot be upgraded to 1.7.1 and is not compatible with the SIMSONN Manager software. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-19T07:09:15Z",
+      "updated_at": "2025-11-19T07:09:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013037796,
+      "body_text": "Hi mike h,  May I ask which pedal you are using? This control box is only compatible with the ProX Ultra. For PlusX or other pedals, a separate PlusX control box is required. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-28T03:51:17Z",
+      "updated_at": "2025-11-28T03:51:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013037856,
+      "body_text": "I am using the pro pedals, but as you can see from the attachment I was told that it would work with my pedals?\r\n\r\n\r\n\r\nSent from my Galaxy\r\n\r\n\r\n\r\n-------- Original message --------\r\n",
+      "user_id": 158007041159,
+      "created_at": "2025-11-28T03:55:35Z",
+      "updated_at": "2025-11-28T03:55:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013375453,
+      "body_text": "Hi mike h,    Could you please send us a screenshot of the reply from AliExpress so that we can verify the content? As it is currently the Black Friday period, our after-sales responses may be slightly delayed. We apologize for any inconvenience and appreciate your understanding and patience.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T07:42:49Z",
+      "updated_at": "2025-12-04T07:42:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013375458,
+      "body_text": "ID 号为 6080, 6308 和 6873 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T07:42:56Z",
+      "updated_at": "2025-12-04T07:42:56Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158013375459,
+      "body_text": "合并来自工单6080  \n      主题: Pedal control box  \n      描述:  \n \n \n Hi there,I have just purchased the Vam pro motors and the x ultra control box.The motors work ok but the pedals aren't showing any signal.My pedals are Simsonn Pro pedals pre April 13th 2024 and the connectors that go into the control box are\n smaller than the sockets in the box.Do I need theplus x control box instead?  \n \n \n \n \n \n \n \n Sent from my Galaxy",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T07:42:56Z",
+      "updated_at": "2025-12-04T07:42:56Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158013375462,
+      "body_text": "合并来自工单6308  \n      主题: Pedals not working  \n      描述:  Hi again,  \n                 I can get the Vam pro motors working after flashing the firmware but if I plug in the pedals they don't work says \"disconnected\" in Simsonn manager ? \n \n \n \n \n \n \n \n Sent from my Galaxy",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T07:42:57Z",
+      "updated_at": "2025-12-04T07:42:57Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158013375464,
+      "body_text": "合并来自工单6873  \n      主题: RE: Reminder: Order #SSN3146, how did it go?  \n      描述:  I would like to return the ultra control box as I was lead to believe (when I contacted your store on ali express)  that it would work with my pedals and it doesn't. \n                      Regards,Mike  \n \n \n \n \n \n \n \n Sent from my Galaxy \n \n \n \n \n \n \n \n \n \n \n -------- Original message -------- \n From: SIMSONN <no-reply@loox.io>  \n Date: 25/11/2025 17:21 (GMT+00:00)  \n To: mrharris1@hotmail.co.uk  \n Subject: Reminder: Order #SSN3146, how did it go?  \n \n \n \n \n\n\n\n \n \nHello mike, We would be grateful if you shared how things look and feel. Your review helps us and the community that supports us, and it only takes a few seconds. ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \n\n\n\n \n \n\n\n\n \n\n\n\n  \n\n\n\n\n\n\n Hello mike, \n \nWe would be grateful if you shared how things look and feel. Your review helps us and the community that supports us, and it only takes a few seconds. \n\n\n\n\n\n\n \n\n\n\n \n \n\n\n\n  \n\n\n \nSimsonn VAM Pro Linear Motor - the Pedals Haptic Reactor for Vibration Feedback \n\n\n \nVAM Pro Set (2 pac/includes power supply) \n\n\n\n \n \n\n\n\n\n\n\n \n \n\n\n\n  \n  \n  \n  \n  \n\n\n\n \n \n\n\n\n\n\n\n \n \n\n\n\n \nDislike it\n \n \n \nLove it!\n \n\n\n\n \n \n\n\n\n \n\n\n \n\n\n\n\n \n\n\n \n\n\n\n \n \n\n\n\n  \n\n\n \nSimsonn VAM Pro Linear Motor - the Pedals Haptic Reactor for Vibration Feedback \n\n\n \nPro X Ultra Pedal Control Box \n\n\n\n \n \n\n\n\n\n\n\n \n \n\n\n\n  \n  \n  \n  \n  \n\n\n\n \n \n\n\n\n\n\n\n \n \n\n\n\n \nDislike it\n \n \n \nLove it!\n \n\n\n\n \n \n\n\n\n \n\n\n\n \n\n\n\n \n \n\n\n\n\n\n\n \n \n\n\n\n \n\n\n \nUnsubscribe",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T07:42:57Z",
+      "updated_at": "2025-12-04T07:42:57Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158013386542,
+      "body_text": "Please find enclosed a screenshot from Simsonn store on Ali express.\r\n\r\n\r\n\r\nSent from my Galaxy\r\n\r\n\r\n\r\n-------- Original message --------\r\n",
+      "user_id": 158007041159,
+      "created_at": "2025-12-04T11:49:59Z",
+      "updated_at": "2025-12-04T11:49:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013771068,
+      "body_text": "Hi mike h,  Could you please confirm the total amount? We will arrange a refund for the main control box on Monday. This was our mistake; it was indeed written incorrectly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-06T05:50:25Z",
+      "updated_at": "2025-12-06T05:50:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013775515,
+      "body_text": "Hi again,\r\n                Thank you for your response to this issue, the ultra control box cost £28.Please find included a screenshot of the order.\r\n                     Best regards, Mike\r\n\r\n\r\n\r\nSent from my Galaxy\r\n\r\n\r\n\r\n-------- Original message --------\r\n",
+      "user_id": 158007041159,
+      "created_at": "2025-12-06T06:07:18Z",
+      "updated_at": "2025-12-06T06:07:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014217459,
+      "body_text": "Hi again,\r\n               Can you please tell me what has happened to the refund that I was supposed to be getting yesterday?\r\n                     Mike\r\n\r\n\r\n\r\nSent from my Galaxy\r\n\r\n\r\n\r\n-------- Original message --------\r\n",
+      "user_id": 158007041159,
+      "created_at": "2025-12-09T20:41:13Z",
+      "updated_at": "2025-12-09T20:41:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014297246,
+      "body_text": "ID 为 7196 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T01:19:11Z",
+      "updated_at": "2025-12-11T01:19:11Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014297247,
+      "body_text": "合并来自工单7196  \n      主题: Ultra control box  \n      描述:  \n \n \n \n \n \n Why have you stopped responding to my replies to my emails. \n I just want to return the ultra control box? \n \n \n \n \n Sent from my Galaxy",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T01:19:11Z",
+      "updated_at": "2025-12-11T01:19:11Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014297274,
+      "body_text": "Hi mike h,  Could you please provide your PayPal account? ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T01:20:24Z",
+      "updated_at": "2025-12-11T01:20:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014297515,
+      "body_text": "Hi mike h,  We have processed your refund. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T01:30:40Z",
+      "updated_at": "2025-12-11T01:30:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014297642,
+      "body_text": "Thank you.\r\n\r\n\r\n\r\nSent from my Galaxy\r\n\r\n\r\n\r\n-------- Original message --------\r\n",
+      "user_id": 158007041159,
+      "created_at": "2025-12-11T01:34:53Z",
+      "updated_at": "2025-12-11T01:34:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

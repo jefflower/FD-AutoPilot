@@ -1,0 +1,24 @@
+{
+  "id": 9788,
+  "subject": "Help",
+  "description_text": "[image: image.png]\r\n\r\n[image: image.png]\r\n\r\n\r\nI have a problem with my Simsonns. I did the latest software update and\r\ncalibration.\r\n\r\nI play iRacing, but now I have a problem: my brake keeps activating when it\r\nis not being used, and when changing gears, it triggers the brake and\r\nreduces the throttle. I calibrated several times, but without success.\r\n\r\nI also have the VAM Pro, and in my latest tests I detected that it was the\r\nvibrations from the VAM Pro causing this type of interference. The control\r\nbox is connected to the ground, as well as the cockpit.\r\n\r\nI also share my configuration within the SimHub software so you can see\r\nthat the values are not exaggerated enough to cause so much interference.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-02T10:34:16Z",
+  "updated_at": "2026-01-04T01:04:57Z",
+  "requester_id": 158008846659,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015544132,
+      "body_text": "Hi Telmo Carvalho,  We recommend installing the VAM Pro using nylon screws and nylon spacers. This helps electrically isolate the VAM Pro from the motor bracket, effectively preventing motor interference with the pedals. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-04T01:04:57Z",
+      "updated_at": "2026-01-04T01:04:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

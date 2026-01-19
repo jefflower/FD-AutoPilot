@@ -1,0 +1,74 @@
+{
+  "id": 4770,
+  "subject": "Missing Haptic Motors",
+  "description_text": "\r\nHello Simsonn,\r\n\r\n I just receiving my order (#SSN2873) this morning. Unfortunately though when I went through the box I did not find the Haptic Motors or their mounting hardware? I did not see any info about them shipping separately so I thought I should reach out and double check with you. I took a quick picture of what I received if that helps at all.\r\n\r\nLet me know if there is any info you need from me. I am excited to get these setup and to try then with active feedback!\r\n\r\nThank you, Payton G.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-11T18:47:56Z",
+  "updated_at": "2025-10-25T02:11:47Z",
+  "requester_id": 158005583814,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010342730,
+      "body_text": "Hi Payton Grose,    We apologize that Haptics is currently out of stock in our US warehouse, so we've shipped your order from China. However, please rest assured that there will be no additional taxes. Here is your tracking link:  https://t.17track.net/en#nums=SF6045960045025",
+      "user_id": 158001343601,
+      "created_at": "2025-10-13T07:57:29Z",
+      "updated_at": "2025-10-13T07:57:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010343034,
+      "body_text": "Thank you very much!\r\n\r\nAlso now that I have the pedals in person I realized I should have ordered the baseplate with them for my setup. Can I by chance get that separately?\r\n\r\nSent from my Verizon, Samsung Galaxy smartphone\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158005583814,
+      "created_at": "2025-10-13T08:15:36Z",
+      "updated_at": "2025-10-13T08:15:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010343536,
+      "body_text": "Hi Payton Grose,    You can purchase the Baseplate separately at this link.  https://www.simsonn.com/products/simsonn-racing-pedal-pro-x-with-heel-plate?variant=50475339645242",
+      "user_id": 158001343601,
+      "created_at": "2025-10-13T09:00:04Z",
+      "updated_at": "2025-10-13T09:00:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011039869,
+      "body_text": "Hello again!\r\n\r\n  I just got my haptic motors so no further issues there. I started to get my pedals setup and mounted however and unfortunately discovered I had an extra wire coming from underneath the brake pedal that Im not supposed to have I dont think.\r\n\r\nIts a small 3 pin connector on the bottom side of the brake pedal that I assumed was probably just RGB or something that plugged into the main power module. After realizing it does not go to the main control unit I started looking around and realized it has come unsoldered from the bottom of the brake pedal. I figured I should reach out before going any further. Ill attach some photos of the plug and where it came unsoldered from so you guys can see what you think.\r\n\r\n\r\n\r\n________________________________\r\n",
+      "user_id": 158005583814,
+      "created_at": "2025-10-24T19:39:47Z",
+      "updated_at": "2025-10-24T19:39:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011049777,
+      "body_text": "Hi Payton Grose,    Please don't worry. This wire is for connecting the light strip module to the heel board. Since you didn't purchase the base plate, it's not needed.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-25T01:51:11Z",
+      "updated_at": "2025-10-25T01:51:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011049911,
+      "body_text": "  I forgot about the base plate lighting connection being  a possibility. If that's the case I won't worry about it. Thank you for the quick reply!\r\n\r\nSent from my Verizon, Samsung Galaxy smartphone\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158005583814,
+      "created_at": "2025-10-25T01:59:17Z",
+      "updated_at": "2025-10-25T01:59:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

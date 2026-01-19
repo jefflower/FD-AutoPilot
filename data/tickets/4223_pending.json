@@ -1,0 +1,54 @@
+{
+  "id": 4223,
+  "subject": "Order SSN2052 incomplete",
+  "description_text": "Dear Simsonn team,\r\n\r\nI placed order SSN2052 on July 18, 2025. I received the pedals but didn't\r\nreceive the VAM Pro Linear Motors, brackets and power supply. I never\r\nreceived a credit but I am still interested in these items. Please send\r\nthem to me.\r\n\r\nThank you,\r\nHector Lopez\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-28T20:29:55Z",
+  "updated_at": "2025-10-09T10:44:42Z",
+  "requester_id": 158002219184,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009624794,
+      "body_text": "Hello, we currently have a set of VAM Pro Linear Motors in our US warehouse, but it's a two-piece set. If you need it, we can refund the price difference for you.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-29T10:36:26Z",
+      "updated_at": "2025-09-29T10:36:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009916093,
+      "body_text": "Hi,\r\n\r\nI need the whole set, it also includes power supply and the brackets to\r\nattach to the pedals.\r\n\r\nThanks\r\n\r\nOn Mon, Sep 29, 2025, 6:36 AM service@simsonn.com ",
+      "user_id": 158002219184,
+      "created_at": "2025-10-04T21:27:02Z",
+      "updated_at": "2025-10-04T21:27:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009941896,
+      "body_text": "Hi Hector Lopez,  As we are currently on the National Day holiday, our operations team will resume work on October 9th and will prioritize your case once back. We’ll also inform them in advance to ensure your issue is addressed as quickly as possible. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T16:49:53Z",
+      "updated_at": "2025-10-05T16:49:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010142227,
+      "body_text": "Hi Hector Lopez,    We apologize for the delayed response; we've just returned from our 8-day holiday. Your order has been shipped. Here is your tracking link:  https://t.17track.net/en#nums=GFUS01012701313216",
+      "user_id": 158001343601,
+      "created_at": "2025-10-09T10:44:42Z",
+      "updated_at": "2025-10-09T10:44:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

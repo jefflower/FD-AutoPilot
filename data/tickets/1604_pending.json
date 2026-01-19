@@ -1,0 +1,194 @@
+{
+  "id": 1604,
+  "subject": "Fwd: #SSN1814 - issue with pedal box.",
+  "description_text": "Hi,\r\n\r\nI recently purchased a haptic kit on order #SSN1814.\r\n\r\nI have installed everything correctly and have updated the pedal box to cpu\r\nversion:2.0.2.\r\n\r\nBut after a short period of testing, the box now freezes and the motors\r\ncontinue to shake while no input is being sent to the box. Secondly, the\r\nconnection to the usb to the pc then loses connectivity. After power\r\ncycling the box, it connects again.\r\n\r\nIf you go to the simsonn manager and send a vibration, the unit then\r\nfreezes and a power cycle is then required to stop the vibration.\r\n\r\nI then did a manual update and returned the unit to the original firmware,\r\nbut the same issue is still occurring.\r\n\r\nAny help would be appreciated. Thanks.\r\n\r\n-- \r\nHeath Greenland\r\n*0400132481*\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-07-16T14:06:46Z",
+  "updated_at": "2025-08-15T02:23:39Z",
+  "requester_id": 158001853881,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005038297,
+      "body_text": "Hi Heath Greenland,  Please take a screenshot of your current SIMSONN Manager interface so I can confirm whether you're using version 2.0.9. Also, was everything working fine before the update? Did the issue occur only after upgrading to 2.0.9? ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T23:26:09Z",
+      "updated_at": "2025-07-16T23:26:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005039888,
+      "body_text": "Hi,\r\n\r\n I cant confirm if it was working with the older firmware, as soon as I\r\nunboxed, I installed the manager, and installed the latest firmware.\r\n\r\nI had downloaded the latest 2.0.9 manager.\r\n\r\nI'll send a screenshot and a video later today to show what is happening.\r\n\r\nThanks.\r\nHeath Greenland\r\n*0400132481*\r\n\r\nOn Thu, 17 July 2025, 9:26 am support@simsonn.com, ",
+      "user_id": 158001853881,
+      "created_at": "2025-07-16T23:35:20Z",
+      "updated_at": "2025-07-16T23:35:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005155440,
+      "body_text": "Sorry for the delay. Please see the attached images of the software.\r\n\r\nSee the link for the video of what is happening.\r\n\r\n20250719_072656.mp4\r\n<https://1drv.ms/v/c/9a5d4c7b75c4d582/EemJsHTFgCFJhRZxEFBowu0BI7-xGd9OZm7Bjgwzmf0xCg?e=zyqCoX>\r\n\r\nAny further information please let me know.\r\n\r\nHeath.\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nHeath Greenland\r\n*0400132481*\r\n\r\nOn Thu, 17 July 2025, 9:34 am Heath Greenland, <heath.greenland@gmail.com>\r\nwrote:\r\n\r\n> Hi,\r\n>\r\n>  I cant confirm if it was working with the older firmware, as soon as I\r\n> unboxed, I installed the manager, and installed the latest firmware.\r\n>\r\n> I had downloaded the latest 2.0.9 manager.\r\n>\r\n> I'll send a screenshot and a video later today to show what is happening.\r\n>\r\n> Thanks.\r\n> Heath Greenland\r\n> *0400132481*\r\n>\r\n> On Thu, 17 July 2025, 9:26 am support@simsonn.com, ",
+      "user_id": 158001853881,
+      "created_at": "2025-07-18T21:40:10Z",
+      "updated_at": "2025-07-18T21:40:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005162526,
+      "body_text": "Hi Heath Greenland,    I’m unable to access the video you provided. Could you please try uploading it via Google Drive instead? Also, please send me a screenshot of your current software version so I can check it for you.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-19T07:38:46Z",
+      "updated_at": "2025-07-19T07:38:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005162597,
+      "body_text": "Hi,\r\nSee below for the photo of the version.\r\n\r\nhttps://drive.google.com/file/d/1512md9JSMUm3G310auAoaZ23SfwRCJIh/view?usp=drivesdk\r\nand this for the video\r\n\r\n\r\n\r\n\r\nHeath Greenland\r\n*0400132481*\r\n\r\nOn Sat, 19 July 2025, 5:39 pm support@simsonn.com, ",
+      "user_id": 158001853881,
+      "created_at": "2025-07-19T08:08:12Z",
+      "updated_at": "2025-07-19T08:08:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005163316,
+      "body_text": "Hi Heath Greenland,    I’ve submitted a Google access request — please check and approve it when convenient. Thank you!",
+      "user_id": 158000445778,
+      "created_at": "2025-07-19T09:42:47Z",
+      "updated_at": "2025-07-19T09:42:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005163328,
+      "body_text": "Hi Heath Greenland,    We noticed you’ve modified the pedals — could you kindly share some high-resolution photos and explain the purpose or idea behind the modification? We’d love to learn from your approach!     Also, to help us troubleshoot the USB disconnection issue, please try the following steps:      Turn off the wheelbase power;  Disconnect all other USB devices, keeping only our pedals, keyboard, and mouse connected;  Do not plug in the motor;  Connect the pedal’s USB and power supply only;  Open the software and click “Test” to check if the USB disconnection still occurs.         This issue seems unusual, and these steps will help us better understand the cause. Thank you for your cooperation!",
+      "user_id": 158000445778,
+      "created_at": "2025-07-19T09:50:43Z",
+      "updated_at": "2025-07-19T09:50:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005163557,
+      "body_text": "I have allowed you to view\r\n\r\nHeath Greenland\r\n*0400132481*\r\n\r\nOn Sat, 19 July 2025, 7:42 pm support@simsonn.com, ",
+      "user_id": 158001853881,
+      "created_at": "2025-07-19T10:04:23Z",
+      "updated_at": "2025-07-19T10:04:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005211639,
+      "body_text": "Hi Heath Greenland,    Please download and install the Todesk tool — no registration is required. If the software prompts you to register, simply click the “X” in the upper-right corner to enter the main interface. Then, provide your ID and temporary password, and I will assist you remotely.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-20T00:46:38Z",
+      "updated_at": "2025-07-20T00:46:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005211904,
+      "body_text": "I have downloaded and have the PC running now.\r\n\r\nToDesk:\r\ndevice ID:343 727 311\r\nTemporary password:gdq36phn\r\n\r\nOn Sun, Jul 20, 2025 at 10:46 AM support@simsonn.com ",
+      "user_id": 158001853881,
+      "created_at": "2025-07-20T02:11:04Z",
+      "updated_at": "2025-07-20T02:11:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005253489,
+      "body_text": "Hi, I had a support call over the weekend.\r\n\r\nThey had found that the control box had failed.\r\n\r\nCan you provide tracking of the new controller when you are able?\r\n\r\nThanks.\r\n\r\nHeath\r\n\r\nOn Sun, Jul 20, 2025 at 12:10 PM Heath Greenland <heath.greenland@gmail.com>\r\nwrote:\r\n\r\n> I have downloaded and have the PC running now.\r\n>\r\n> ToDesk:\r\n> device ID:343 727 311\r\n> Temporary password:gdq36phn\r\n>\r\n> On Sun, Jul 20, 2025 at 10:46 AM support@simsonn.com ",
+      "user_id": 158001853881,
+      "created_at": "2025-07-21T07:04:37Z",
+      "updated_at": "2025-07-21T07:04:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005354598,
+      "body_text": "Hi,\r\n\r\nAny update on this?\r\n\r\nThanks\r\n\r\nHeath Greenland\r\n*0400132481*\r\n\r\nOn Mon, 21 July 2025, 5:04 pm Heath Greenland, <heath.greenland@gmail.com>\r\nwrote:\r\n\r\n> Hi, I had a support call over the weekend.\r\n>\r\n> They had found that the control box had failed.\r\n>\r\n> Can you provide tracking of the new controller when you are able?\r\n>\r\n> Thanks.\r\n>\r\n> Heath\r\n>\r\n> On Sun, Jul 20, 2025 at 12:10 PM Heath Greenland <\r\n> heath.greenland@gmail.com> wrote:\r\n>\r\n>> I have downloaded and have the PC running now.\r\n>>\r\n>> ToDesk:\r\n>> device ID:343 727 311\r\n>> Temporary password:gdq36phn\r\n>>\r\n>> On Sun, Jul 20, 2025 at 10:46 AM support@simsonn.com ",
+      "user_id": 158001853881,
+      "created_at": "2025-07-23T01:09:26Z",
+      "updated_at": "2025-07-23T01:09:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005532712,
+      "body_text": "Hi Heath Greenland,  Here is your logistics tracking link.  https://t.17track.net/en#nums=SF6045821051084",
+      "user_id": 158001343601,
+      "created_at": "2025-07-25T09:09:24Z",
+      "updated_at": "2025-07-25T09:09:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005532871,
+      "body_text": "Thank you.\r\n\r\nHeath Greenland\r\n*0400132481*\r\n\r\nOn Fri, 25 July 2025, 7:09 pm support@simsonn.com, ",
+      "user_id": 158001853881,
+      "created_at": "2025-07-25T09:31:40Z",
+      "updated_at": "2025-07-25T09:31:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006614206,
+      "body_text": "Hi,\r\n\r\nI have received the newest control box and I have now updated the firmware\r\nof the new box.\r\n\r\nI have now done some further testing, and I believe that this was miss\r\ndiagnosed when I received the support call.\r\n\r\nIf I use the throttle motor in motor port 1, 2 and 3. I have no issues. The\r\nmotor and control box works as intended.\r\nIf I use the brake motor in any port, it causes the box to disconnect and\r\nfreeze so the brake motor will not stop shaking or it will disconnect from\r\nthe computer and restart.\r\n\r\nI have tried the first control box again and this is the same for both\r\nboxes.\r\nI have checked both motors for ohms and get 25.4ohms on each.\r\n\r\nI am 100% confident that the brake shaker motor is the one causing the\r\nissue, not the control box.\r\n\r\nSorry for the delay in the response, I have been away on vacation and have\r\nnot been able to test.\r\n\r\nThanks\r\nHeath\r\n\r\nOn Fri, Jul 25, 2025 at 7:31 PM Heath Greenland <heath.greenland@gmail.com>\r\nwrote:\r\n\r\n> Thank you.\r\n>\r\n> Heath Greenland\r\n> *0400132481*\r\n>\r\n> On Fri, 25 July 2025, 7:09 pm support@simsonn.com, ",
+      "user_id": 158001853881,
+      "created_at": "2025-08-09T23:56:39Z",
+      "updated_at": "2025-08-09T23:56:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006727160,
+      "body_text": "Hi Heath Greenland,  We will send you a replacement VAM motor. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-12T05:32:55Z",
+      "updated_at": "2025-08-12T05:32:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006835472,
+      "body_text": "Hi Heath Greenland,    We have sent you a Vam Pro, which is your logistics tracking link. We apologize for any inconvenience caused.  https://t.17track.net/en#nums=SF6045856544799",
+      "user_id": 158001343601,
+      "created_at": "2025-08-14T08:42:33Z",
+      "updated_at": "2025-08-14T08:42:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006855526,
+      "body_text": "It's all ok. Thanks for working with me on the issue.\r\n\r\nSorry that it's happened the way it's happened.\r\n\r\nHeath Greenland\r\n*0400132481*\r\n\r\nOn Thu, 14 Aug 2025, 6:42 pm support@simsonn.com, ",
+      "user_id": 158001853881,
+      "created_at": "2025-08-14T11:31:27Z",
+      "updated_at": "2025-08-14T11:31:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

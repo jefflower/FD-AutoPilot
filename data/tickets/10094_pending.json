@@ -1,0 +1,24 @@
+{
+  "id": 10094,
+  "subject": "Order shipping address",
+  "description_text": "Hi. I order shifter from you and i se that i give wrong shipping address.\r\n\r\nOrder #SSN5803\r\nThe shipping address i langmo 11 1860 TRØGSTAD NORWAY and not langmo 131\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-06T13:55:20Z",
+  "updated_at": "2026-01-07T10:07:52Z",
+  "requester_id": 158008952267,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016107891,
+      "body_text": "Hi Sander Osmundsen,    Okay, we've made the changes for you and will reship your order.  YT2600700705850647",
+      "user_id": 158001343601,
+      "created_at": "2026-01-07T10:07:52Z",
+      "updated_at": "2026-01-07T10:07:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

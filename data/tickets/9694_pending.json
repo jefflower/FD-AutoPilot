@@ -1,0 +1,24 @@
+{
+  "id": 9694,
+  "subject": "X plus ultra pedals",
+  "description_text": "Hello,\r\n\r\nI was wondering what the difference between the older x plus ultra pedals\r\nand the new version? What is RGB Feedback?\r\n\r\nThank you\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-31T19:30:27Z",
+  "updated_at": "2026-01-01T15:02:37Z",
+  "requester_id": 158008834918,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015365876,
+      "body_text": "Hi TheBoarderXman,      PlusX uses 12-bit resolution.    ProX Ultra uses 16-bit resolution.    ProX Ultra supports simultaneous sampling of three pedal channels.    PlusX uses polling-based sampling for pedal signals.    ProX Ultra supports telemetry-based LED flashing, pressure indicator LEDs, and cumulative vibration feedback.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-01T15:02:37Z",
+      "updated_at": "2026-01-01T15:02:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

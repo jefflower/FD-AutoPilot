@@ -1,0 +1,44 @@
+{
+  "id": 6708,
+  "subject": "Prices and taxes question",
+  "description_text": "Hello,\r\nI need a clear answer regarding your products on your webshop. Are the\r\nprices with tax included? Or will I have tax added at checkout?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-25T11:30:42Z",
+  "updated_at": "2025-11-25T11:43:44Z",
+  "requester_id": 158007320346,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012872913,
+      "body_text": "Hi Agata Fmic,    Our products do not include taxes, but they are typically tax-free. If you purchase from Europe, we have EU warehouses. We also have US warehouses for the United States.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-25T11:36:22Z",
+      "updated_at": "2025-11-25T11:36:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012873034,
+      "body_text": "Thank you for the information. I am from Europe, so the tax will be added\r\nat checkout?\r\n\r\nOn Tue, Nov 25, 2025 at 12:36 PM service@simsonn.com ",
+      "user_id": 158007320346,
+      "created_at": "2025-11-25T11:41:51Z",
+      "updated_at": "2025-11-25T11:41:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012873082,
+      "body_text": "Hi Agata Fmic,    We do not collect taxes on behalf of others.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-25T11:43:43Z",
+      "updated_at": "2025-11-25T11:43:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

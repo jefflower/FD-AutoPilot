@@ -1,0 +1,974 @@
+{
+  "id": 4278,
+  "subject": "Re: Can I please get a reply",
+  "description_text": "Not really. I got a response, id was i was instructed and they are now\r\n'dead'. Im very upset. I couldn't even sleep last night\r\n\r\nOn Tue, Sep 30, 2025, 7:13 AM General and sales enquiries <\r\nservice@simsonn.com> wrote:\r\n\r\n> OK, we will contact our support team to handle it for you as soon as\r\n> possible. We recently had an 8-day holiday, so the response time may be\r\n> delayed. I hope you can understand.\r\n>\r\n>\r\n>\r\n> ----------Reply to Message----------\r\n> On Tue, Sep 30, 2025 22:10 PM SJ Perkins<thatoneracerguysj@gmail.com>\r\n> wrote:\r\n> I did all updates as instructed. Now the vams dont turn on , and my LEDs\r\n> shut off!! ?\r\n>\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-09-30T14:15:59Z",
+  "updated_at": "2025-10-12T01:56:37Z",
+  "requester_id": 158005049076,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009361200,
+      "body_text": "Hi SJ Perkins,     Please provide your order number, so that I can check the exact product model.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-27T03:30:06Z",
+      "updated_at": "2025-09-27T03:30:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009361228,
+      "body_text": "On Fri, Sep 26, 2025, 8:30 PM support@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-09-27T03:33:38Z",
+      "updated_at": "2025-09-27T03:33:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009361841,
+      "body_text": "112-3645820-8561829\r\n\r\n\r\n\r\n\r\nOn Fri, Sep 26, 2025, 8:32 PM SJ Perkins <thatoneracerguysj@gmail.com>\r\nwrote:\r\n\r\n>\r\n> On Fri, Sep 26, 2025, 8:30 PM support@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-09-27T04:16:03Z",
+      "updated_at": "2025-09-27T04:16:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009362282,
+      "body_text": "Hi SJ Perkins,     Please first uninstall SIMSONN Manager 2.1.0 from your computer, and then download and install the 2.1.1 version using the provided link.  Once the installation is complete, go to: Settings → Update → Manual Firmware Update → Select the file pedals-firmware-pedals-proxultra.sfu  After the firmware update is finished, check if the device connects properly. Next, open the Vibration Test interface to test the vibration function, making sure to select the correct motor type. We also recommend updating the telemetry data to ensure everything works correctly.      https://drive.google.com/file/d/1BAdSWa1bxmbPksj9Hlzuo8bl7_bM8ixr/view?usp=sharing",
+      "user_id": 158000445778,
+      "created_at": "2025-09-27T04:50:49Z",
+      "updated_at": "2025-09-27T04:50:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009666675,
+      "body_text": "Ok, they updated, now my lights dont work!! Im getting very upset right now\r\n\r\nOn Fri, Sep 26, 2025, 9:51 PM support@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-09-30T05:12:46Z",
+      "updated_at": "2025-09-30T05:12:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009666860,
+      "body_text": "And they dont rsad now. Shows power to motor disconnected, but usb on.\r\nPlease help! Im not happy!\r\n\r\nOn Mon, Sep 29, 2025, 10:12 PM SJ Perkins <thatoneracerguysj@gmail.com>\r\nwrote:\r\n\r\n> Ok, they updated, now my lights dont work!! Im getting very upset right now\r\n>\r\n> On Fri, Sep 26, 2025, 9:51 PM support@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-09-30T05:25:20Z",
+      "updated_at": "2025-09-30T05:25:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009667122,
+      "body_text": "Now the motors show disconnected after I did all the updates as instructed.\r\nNo led's either. Have I mentioned how upset I am?\r\n\r\nOn Mon, Sep 29, 2025, 10:24 PM SJ Perkins <thatoneracerguysj@gmail.com>\r\nwrote:\r\n\r\n> And they dont rsad now. Shows power to motor disconnected, but usb on.\r\n> Please help! Im not happy!\r\n>\r\n> On Mon, Sep 29, 2025, 10:12 PM SJ Perkins <thatoneracerguysj@gmail.com>\r\n> wrote:\r\n>\r\n>> Ok, they updated, now my lights dont work!! Im getting very upset right\r\n>> now\r\n>>\r\n>> On Fri, Sep 26, 2025, 9:51 PM support@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-09-30T05:42:25Z",
+      "updated_at": "2025-09-30T05:42:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009682609,
+      "body_text": "I did as instructed -by your team-. Now nothing from vams and NO LED'S\r\n\r\nOn Tue, Sep 30, 2025, 7:15 AM SJ Perkins <thatoneracerguysj@gmail.com>\r\nwrote:\r\n\r\n> Not really. I got a response, id was i was instructed and they are now\r\n> 'dead'. Im very upset. I couldn't even sleep last night\r\n>\r\n> On Tue, Sep 30, 2025, 7:13 AM General and sales enquiries <\r\n> service@simsonn.com> wrote:\r\n>\r\n>> OK, we will contact our support team to handle it for you as soon as\r\n>> possible. We recently had an 8-day holiday, so the response time may be\r\n>> delayed. I hope you can understand.\r\n>>\r\n>>\r\n>>\r\n>> ----------Reply to Message----------\r\n>> On Tue, Sep 30, 2025 22:10 PM SJ Perkins<thatoneracerguysj@gmail.com>\r\n>> wrote:\r\n>> I did all updates as instructed. Now the vams dont turn on , and my LEDs\r\n>> shut off!! ?\r\n>>\r\n>\r\n\r\n",
+      "user_id": 158005049076,
+      "created_at": "2025-09-30T14:18:10Z",
+      "updated_at": "2025-09-30T14:18:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009693357,
+      "body_text": "Update: I revert to older firmware. Led's came back on. Vibration worked\r\nwell for 2 runs. Then upon exiting the game to try a different track, the\r\nthrottle pedal just 'low rumbles'. Constantly. Nothing from brakes. I tried\r\nplaying again, no output to the vams.\r\n\r\nThis -has to be- a firmware issue!!\r\n\r\nOn Tue, Sep 30, 2025, 7:17 AM SJ Perkins <thatoneracerguysj@gmail.com>\r\nwrote:\r\n\r\n> I did as instructed -by your team-. Now nothing from vams and NO LED'S\r\n>\r\n> On Tue, Sep 30, 2025, 7:15 AM SJ Perkins <thatoneracerguysj@gmail.com>\r\n> wrote:\r\n>\r\n>> Not really. I got a response, id was i was instructed and they are now\r\n>> 'dead'. Im very upset. I couldn't even sleep last night\r\n>>\r\n>> On Tue, Sep 30, 2025, 7:13 AM General and sales enquiries <\r\n>> service@simsonn.com> wrote:\r\n>>\r\n>>> OK, we will contact our support team to handle it for you as soon as\r\n>>> possible. We recently had an 8-day holiday, so the response time may be\r\n>>> delayed. I hope you can understand.\r\n>>>\r\n>>>\r\n>>>\r\n>>> ----------Reply to Message----------\r\n>>> On Tue, Sep 30, 2025 22:10 PM SJ Perkins<thatoneracerguysj@gmail.com>\r\n>>> wrote:\r\n>>> I did all updates as instructed. Now the vams dont turn on , and my LEDs\r\n>>> shut off!! ?\r\n>>>\r\n>>\r\n\r\n",
+      "user_id": 158005049076,
+      "created_at": "2025-09-30T18:15:13Z",
+      "updated_at": "2025-09-30T18:15:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009694766,
+      "body_text": "Further update. I uninstall the simhub. I also did a check on the motors. 1\r\nis extremely weak compared to the other 2. I would like to exchange them\r\nfor a set of the vam pro\r\n\r\nOn Tue, Sep 30, 2025, 11:14 AM SJ Perkins <thatoneracerguysj@gmail.com>\r\nwrote:\r\n\r\n> Update: I revert to older firmware. Led's came back on. Vibration worked\r\n> well for 2 runs. Then upon exiting the game to try a different track, the\r\n> throttle pedal just 'low rumbles'. Constantly. Nothing from brakes. I tried\r\n> playing again, no output to the vams.\r\n>\r\n> This -has to be- a firmware issue!!\r\n>\r\n> On Tue, Sep 30, 2025, 7:17 AM SJ Perkins <thatoneracerguysj@gmail.com>\r\n> wrote:\r\n>\r\n>> I did as instructed -by your team-. Now nothing from vams and NO LED'S\r\n>>\r\n>> On Tue, Sep 30, 2025, 7:15 AM SJ Perkins <thatoneracerguysj@gmail.com>\r\n>> wrote:\r\n>>\r\n>>> Not really. I got a response, id was i was instructed and they are now\r\n>>> 'dead'. Im very upset. I couldn't even sleep last night\r\n>>>\r\n>>> On Tue, Sep 30, 2025, 7:13 AM General and sales enquiries <\r\n>>> service@simsonn.com> wrote:\r\n>>>\r\n>>>> OK, we will contact our support team to handle it for you as soon as\r\n>>>> possible. We recently had an 8-day holiday, so the response time may be\r\n>>>> delayed. I hope you can understand.\r\n>>>>\r\n>>>>\r\n>>>>\r\n>>>> ----------Reply to Message----------\r\n>>>> On Tue, Sep 30, 2025 22:10 PM SJ Perkins<thatoneracerguysj@gmail.com>\r\n>>>> wrote:\r\n>>>> I did all updates as instructed. Now the vams dont turn on , and my\r\n>>>> LEDs shut off!! ?\r\n>>>>\r\n>>>\r\n\r\n",
+      "user_id": 158005049076,
+      "created_at": "2025-09-30T18:51:27Z",
+      "updated_at": "2025-09-30T18:51:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009725862,
+      "body_text": "ID 号为 4170 和 4277 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T09:53:11Z",
+      "updated_at": "2025-10-01T09:53:11Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158009725863,
+      "body_text": "合并来自工单4170  \n      主题: Vam help  \n      描述:  My VAMs are being odd. I hooked them up, changed a couple settings so it would vibrate with engine rpms and speed, and feel the lockup on the brakes. But as soon as I fire up iracing they just vibrate one speed, one tone, no increase with rpm, no brake shake with lockup. The throttle was just one note, solid. It wouldn't quit even when I exited the program. I had to unplug it to make it stop. Now it says power disconnected but its not. Any ideas??",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T09:53:11Z",
+      "updated_at": "2025-10-01T09:53:11Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158009725865,
+      "body_text": "合并来自工单4277  \n      主题: Can I please get a reply  \n      描述:  I did all updates as instructed. Now the vams dont turn on , and my LEDs shut off!! ? ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T09:53:12Z",
+      "updated_at": "2025-10-01T09:53:12Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158009725910,
+      "body_text": "Hi SJ Perkins,  ​Are you using the ProX Ultra pedals? It seems we may have sent you the wrong firmware version last time. Please avoid using a USB hub and instead connect the control box directly to the USB 3.0 blue port on the back of your PC. If the clutch motor vibration feels weaker than expected, you can swap the clutch and brake motor cables to test if the motor itself is working correctly. We will soon release a firmware update to address the issue of unstable vibration strength on the clutch port. In the meantime, you can always revert to the previous firmware version if needed. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T09:56:32Z",
+      "updated_at": "2025-10-01T09:56:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009733352,
+      "body_text": "Yes, they are the pro-x ultra. I have no clutch pedal. The vam motor is had\r\nin the throttle pedal is already fried. It is burnt, I can smell it, and is\r\nquite weak. I replaced it with thr 3rd(spare). I would expect some type of\r\nwarranty coverage on said unit?\r\nSo what do I do now? Which firmware do I use? I would really like them to\r\nwork. I literally lost sleep over it, I was that upset about it.\r\nCan I get a refund? A replacement? A firmware update? Something?\r\n\r\nOn Wed, Oct 1, 2025, 2:56 AM service@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-10-01T13:29:28Z",
+      "updated_at": "2025-10-01T13:29:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009733392,
+      "body_text": "I dont use a USB hub everyone seems to use. They are plugged in directly to\r\nthe blue 3.0 ports, yes\r\n\r\n",
+      "user_id": 158005049076,
+      "created_at": "2025-10-01T13:30:55Z",
+      "updated_at": "2025-10-01T13:30:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009739547,
+      "body_text": "Hi SJ Perkins,    Please don’t worry — we’ve optimized the algorithm, and the update will be available to you within the next couple of days. The new version makes the VAM more powerful while ensuring the motor won’t be damaged. For any units that are already damaged, we’ll send you replacements free of charge.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T14:33:38Z",
+      "updated_at": "2025-10-01T14:33:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009739725,
+      "body_text": "Thank you! (Is there any way i can just get the vam pro as a replacement??\r\nI should have gotten those to begin with)\r\n\r\nAddress for replacement is\r\n\r\nSJ Perkins\r\n4185 nw Walnut Pl\r\nCorvallis, OR 97330 USA\r\n\r\nOn Wed, Oct 1, 2025, 7:33 AM service@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-10-01T14:37:57Z",
+      "updated_at": "2025-10-01T14:37:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009739921,
+      "body_text": "Hi SJ Perkins,    I can send you a VAM Pro as a replacement. Since it’s the National Holiday in China from October 1st to 8th, we’ll ship it to you around October 9th.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T14:43:32Z",
+      "updated_at": "2025-10-01T14:43:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009740014,
+      "body_text": "A 2 pack?? One would be silly but I'll take it!! Thank you!\r\n\r\nLook forward to seeing it,  and the updated firmware\r\n\r\nOn Wed, Oct 1, 2025, 7:43 AM service@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-10-01T14:45:55Z",
+      "updated_at": "2025-10-01T14:45:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009740148,
+      "body_text": "Hi SJ Perkins,    I will send you one VAM and one VAM Pro. Could you confirm if both of your units are damaged? Please note that the cost of the VAM Pro is quite high — we are mainly providing it to ensure you have the best experience, rather than to make much profit from these two devices.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T14:49:29Z",
+      "updated_at": "2025-10-01T14:49:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009740568,
+      "body_text": "I honestly dont know, as they're  acting so irradicly. One is for sure\r\nfried, I can smell it. I dont want to even turn them on again till I get\r\nthe updated firmware; I'm afraid of damaging the other 2. And thank you\r\nagain for your help\r\n\r\nOn Wed, Oct 1, 2025, 7:49 AM service@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-10-01T14:55:27Z",
+      "updated_at": "2025-10-01T14:55:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009741070,
+      "body_text": "Hi SJ Perkins,    Alright, it should be ready within the next couple of days. Please wait for my updated file. I’ll also be testing it during my off hours, and once I confirm everything works properly, I’ll send it to you right away.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T14:58:27Z",
+      "updated_at": "2025-10-01T14:58:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009765382,
+      "body_text": "That is most amazing of you. Thank you again! I will even make a review\r\nvideo and post it on all the social media platforms for being such a\r\nstand-up company/ person.\r\n\r\nOn Wed, Oct 1, 2025, 7:58 AM service@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-10-02T02:13:12Z",
+      "updated_at": "2025-10-02T02:13:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009767273,
+      "body_text": "Hi SJ Perkins,    Thank you for your support! We will continue to develop more products, including wheel bases and steering wheels, to provide everyone with a better experience and service.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-02T04:01:11Z",
+      "updated_at": "2025-10-02T04:01:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009820669,
+      "body_text": "Any firmware update to share?\r\n\r\nOn Wed, Oct 1, 2025, 9:01 PM service@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-10-03T00:02:06Z",
+      "updated_at": "2025-10-03T00:02:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009918297,
+      "body_text": "I clicked the upgrade button like a fool and the red led's turned off\r\nagain. I tried to revert to the old firmware, but it won't work this time.\r\nI cannot uninstall it either, outside of just deleting the whole\r\nfile/folder. Is the controller box bad perhaps?\r\n\r\n",
+      "user_id": 158005049076,
+      "created_at": "2025-10-05T01:03:16Z",
+      "updated_at": "2025-10-05T01:03:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009937787,
+      "body_text": "Hi SJ Perkins,     Please uninstall the old version from your computer, then reinstall version 2.1.2 and update the firmware. After the update, the device version should display as CPU1: 2.0.5, CPU2: 2.0.3. If the issue still persists, please feel free to contact me.   ​https://drive.google.com/file/d/1PZwHUqhhmJw0IBGDO8mGONPbrICJU3z1/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T15:46:24Z",
+      "updated_at": "2025-10-05T15:46:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009937870,
+      "body_text": "I cannot uninstall it! I have tried this. Its not coming up in my app list\r\nto remove.  Every time I open it simsonn manager, it asks me for permission\r\nto make changes to the pc. ? please advise\r\n\r\nOn Sun, Oct 5, 2025, 8:46 AM service@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-10-05T15:54:41Z",
+      "updated_at": "2025-10-05T15:54:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009937976,
+      "body_text": "Hi SJ Perkins, Please make sure you exit the old version completely before opening the new version. If you see any message or prompt, please take a screenshot or photo and send it to me so I can check it for you. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T16:04:31Z",
+      "updated_at": "2025-10-05T16:04:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009937997,
+      "body_text": "Hi SJ Perkins,",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T16:06:09Z",
+      "updated_at": "2025-10-05T16:06:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009938007,
+      "body_text": "How do I uninstall the old version?  It won't show on the apps list to even\r\nperform that task\r\n\r\nOn Sun, Oct 5, 2025, 9:04 AM service@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-10-05T16:07:20Z",
+      "updated_at": "2025-10-05T16:07:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009938089,
+      "body_text": "Hi SJ Perkins, Please install the Todesk tool. Registration is not required — if a login prompt appears, simply click the close button in the top-right corner. Then, please copy and send me the ID and temporary code, so I can assist you remotely.      https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T16:13:13Z",
+      "updated_at": "2025-10-05T16:13:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009939873,
+      "body_text": "Its not finding the update file. Im a bit weary about letting you have\r\nremote access to my pc\r\n\r\nOn Sun, Oct 5, 2025, 9:13 AM service@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-10-05T16:25:12Z",
+      "updated_at": "2025-10-05T16:25:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009941547,
+      "body_text": "936 071 388\r\nrwd81va8\r\n\r\n",
+      "user_id": 158005049076,
+      "created_at": "2025-10-05T16:30:34Z",
+      "updated_at": "2025-10-05T16:30:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009941584,
+      "body_text": "Hi SJ Perkins,  Please open the 2.1.2 version of the software I provided, then go to Settings → Update. The system will automatically prompt if a new version is available — simply click Update Firmware. If the software version appears incorrect, please send me a screenshot so I can confirm. The process is very simple, and there’s no need for remote assistance. It’s 12:28 AM here, so I’ll be heading to rest soon. If you encounter any issues during testing, we can continue our discussion tomorrow. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T16:31:01Z",
+      "updated_at": "2025-10-05T16:31:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009941710,
+      "body_text": "Hi SJ Perkins, It seems that your remote tool hasn’t been closed yet, and I’m unable to connect at the moment.     936 071 388   rwd81va8",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T16:33:05Z",
+      "updated_at": "2025-10-05T16:33:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009941723,
+      "body_text": "I just tried the whole process, this is why I just gave remote access. Yes,\r\nthis is very late for you I appreciate that\r\n\r\nOn Sun, Oct 5, 2025, 9:31 AM service@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-10-05T16:33:26Z",
+      "updated_at": "2025-10-05T16:33:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009941736,
+      "body_text": "Its like the file doesn't exist.\r\n\r\n",
+      "user_id": 158005049076,
+      "created_at": "2025-10-05T16:34:44Z",
+      "updated_at": "2025-10-05T16:34:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009941746,
+      "body_text": "I literally dont understand. This is so frustrating\r\n\r\nOn Sun, Oct 5, 2025, 9:33 AM service@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-10-05T16:36:06Z",
+      "updated_at": "2025-10-05T16:36:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009941846,
+      "body_text": "I deleted the remote tool. Im going to try to remove it all later today,\r\nand re-install it. But it doesn't open or run automatically. I have to open\r\nand seek which file to extract and run. This is where I get lost, im sure.\r\nBut it looks for an update that doesn't exist. Its like the file for the\r\ncontroller box isn't there. This is much harder than it needs to be.\r\n\r\n",
+      "user_id": 158005049076,
+      "created_at": "2025-10-05T16:45:29Z",
+      "updated_at": "2025-10-05T16:45:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009949355,
+      "body_text": "I get the program loaded amd opened. But it will not update. Its looking\r\nfor a file that doesn't exist. I click manual update and try to load the\r\nfile thay way, and again... it looks for the file, but doesn't load\r\nanything.\r\n\r\n",
+      "user_id": 158005049076,
+      "created_at": "2025-10-05T22:19:31Z",
+      "updated_at": "2025-10-05T22:19:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009950456,
+      "body_text": "Hi SJ Perkins,     Let’s handle it through ToDesk — I can take a direct look at the issue you’re experiencing.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T23:27:34Z",
+      "updated_at": "2025-10-05T23:27:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009951170,
+      "body_text": "I dont know how\r\n\r\nOn Sun, Oct 5, 2025, 4:28 PM service@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-10-06T00:11:12Z",
+      "updated_at": "2025-10-06T00:11:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009951226,
+      "body_text": "Hi SJ Perkins,    You installed ToDesk yesterday — please copy your ID and password just like last time.  I’ll check and operate remotely while you observe the process.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-06T00:13:23Z",
+      "updated_at": "2025-10-06T00:13:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009951254,
+      "body_text": "I uninstalled it. I can re-install it after dinner.\r\n\r\nOn Sun, Oct 5, 2025, 5:13 PM service@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-10-06T00:14:32Z",
+      "updated_at": "2025-10-06T00:14:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009951283,
+      "body_text": "Hi SJ Perkins,    Alright, I’ll wait for you to come online.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-06T00:15:55Z",
+      "updated_at": "2025-10-06T00:15:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009951945,
+      "body_text": "Ok, I'm gonna try it\r\n\r\nOn Sun, Oct 5, 2025, 5:16 PM service@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-10-06T00:51:55Z",
+      "updated_at": "2025-10-06T00:51:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009952008,
+      "body_text": "Id\r\n937 071 378\r\nPass\r\nM@ple1033\r\n\r\n",
+      "user_id": 158005049076,
+      "created_at": "2025-10-06T00:56:33Z",
+      "updated_at": "2025-10-06T00:56:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009952022,
+      "body_text": "Do I put your device id in this box or mine?\r\n\r\n",
+      "user_id": 158005049076,
+      "created_at": "2025-10-06T00:57:13Z",
+      "updated_at": "2025-10-06T00:57:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009952140,
+      "body_text": "Hi SJ Perkins,  You just need to send me your ID and password, that’s all.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-06T01:03:30Z",
+      "updated_at": "2025-10-06T01:03:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009952197,
+      "body_text": "Ok, well that's it,  its on, do your thing\r\n936 071 378\r\n83s0bc1j\r\n\r\nOn Sun, Oct 5, 2025, 6:03 PM service@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-10-06T01:05:38Z",
+      "updated_at": "2025-10-06T01:05:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009952340,
+      "body_text": "Rbgs are in, all red\r\n\r\n",
+      "user_id": 158005049076,
+      "created_at": "2025-10-06T01:12:21Z",
+      "updated_at": "2025-10-06T01:12:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009952597,
+      "body_text": "Hi SJ Perkins,  Please remember to release the upgrade button on the control box, otherwise the device will enter recovery mode the next time it’s powered on. Here is the telemetry support list. The device also supports SimHub version 9.9.3 and above, but please note that SimHub and Simsonn Manager cannot run at the same time, as this will cause conflicts. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-06T01:26:09Z",
+      "updated_at": "2025-10-06T01:26:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009953542,
+      "body_text": "That was really cool to watch. Thank you for all that you do.  I will run\r\nit and make sure its stopping the vibrating upon exiting the run or\r\nwhatever not. And you said they were gonna get stronger, did they ever! I\r\nneed to tighten some hardware up! ?\r\n\r\n\r\n\r\nOn Sun, Oct 5, 2025, 6:26 PM service@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-10-06T02:33:14Z",
+      "updated_at": "2025-10-06T02:33:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009954048,
+      "body_text": "Ok, so... that is waaaaaay too strong. I have It on 1% and its still crazy\r\n\r\n",
+      "user_id": 158005049076,
+      "created_at": "2025-10-06T02:57:48Z",
+      "updated_at": "2025-10-06T02:57:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009954179,
+      "body_text": "I seriously can't even use them now. They're just too much\r\n\r\n",
+      "user_id": 158005049076,
+      "created_at": "2025-10-06T03:03:47Z",
+      "updated_at": "2025-10-06T03:03:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009954497,
+      "body_text": "And they quit again. I tried simhub to calm them down. But it only worked\r\nfor 1 test and then they won't work now. ?\r\nThis is getting ridiculous\r\n\r\n",
+      "user_id": 158005049076,
+      "created_at": "2025-10-06T03:19:08Z",
+      "updated_at": "2025-10-06T03:19:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009958199,
+      "body_text": "Hi SJ Perkins,    That’s impossible. Please open ToDesk so I can check the situation remotely.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-06T04:37:59Z",
+      "updated_at": "2025-10-06T04:37:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009958252,
+      "body_text": "Hi SJ Perkins,    Is your USB cable connected directly to the blue USB 3.0 port on the back of your computer? Please avoid using a USB hub, as it can cause unstable power supply and frequent disconnections.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-06T04:45:11Z",
+      "updated_at": "2025-10-06T04:45:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009958298,
+      "body_text": "Hi SJ Perkins,  It’s also possible that your VAM may be damaged or short-circuited. Under normal conditions, you can simply run multiple tests in the vibration interface to easily determine whether it’s functioning properly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-06T04:50:48Z",
+      "updated_at": "2025-10-06T04:50:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009958410,
+      "body_text": "Ok, hold on. Ill be on in a minute. But they are extremely powerful. Too\r\nmuch. I liked how they were before. (When they worked)\r\n\r\nOn Sun, Oct 5, 2025, 9:38 PM service@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-10-06T05:02:25Z",
+      "updated_at": "2025-10-06T05:02:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009958486,
+      "body_text": "Hi SJ Perkins,    The vibration intensity range of the VAM is intentionally limited, and its frequency cannot be adjusted — that’s by design. Fanatec’s vibration works in a similar way and also doesn’t allow intensity adjustment.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-06T05:11:30Z",
+      "updated_at": "2025-10-06T05:11:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009958491,
+      "body_text": "936 071 378\r\nvbb17skn\r\n\r\nOn Sun, Oct 5, 2025, 10:02 PM SJ Perkins <thatoneracerguysj@gmail.com>\r\nwrote:\r\n\r\n> Ok, hold on. Ill be on in a minute. But they are extremely powerful. Too\r\n> much. I liked how they were before. (When they worked)\r\n>\r\n> On Sun, Oct 5, 2025, 9:38 PM service@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-10-06T05:11:46Z",
+      "updated_at": "2025-10-06T05:11:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009958499,
+      "body_text": "Its got no limit on it now, even though its showing it. I can't even use it\r\nnow, it's too strong ?\r\n\r\nOn Sun, Oct 5, 2025, 10:11 PM service@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-10-06T05:13:28Z",
+      "updated_at": "2025-10-06T05:13:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009958915,
+      "body_text": "Ok, I had to try it. I put it on pro mode and they worked perfectly ?\r\n\r\nOn Sun, Oct 5, 2025, 10:13 PM SJ Perkins <thatoneracerguysj@gmail.com>\r\nwrote:\r\n\r\n> Its got no limit on it now, even though its showing it. I can't even use\r\n> it now, it's too strong ?\r\n>\r\n> On Sun, Oct 5, 2025, 10:11 PM service@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-10-06T05:57:49Z",
+      "updated_at": "2025-10-06T05:57:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009999072,
+      "body_text": "Ok, they show power disconnected again! What is going on\r\n\r\nOn Sun, Oct 5, 2025, 10:57 PM SJ Perkins <thatoneracerguysj@gmail.com>\r\nwrote:\r\n\r\n> Ok, I had to try it. I put it on pro mode and they worked perfectly ?\r\n>\r\n> On Sun, Oct 5, 2025, 10:13 PM SJ Perkins <thatoneracerguysj@gmail.com>\r\n> wrote:\r\n>\r\n>> Its got no limit on it now, even though its showing it. I can't even use\r\n>> it now, it's too strong ?\r\n>>\r\n>> On Sun, Oct 5, 2025, 10:11 PM service@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-10-07T05:01:29Z",
+      "updated_at": "2025-10-07T05:01:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010047395,
+      "body_text": "They have quit working again. So when i put the computer to sleep, the\r\nhaptics dont wake up again. They worked great all night after I changed the\r\nsettings, the motors were quieter and I had a good time using them. Next\r\nday, nothing.\r\n\r\nOn Mon, Oct 6, 2025, 10:01 PM SJ Perkins <thatoneracerguysj@gmail.com>\r\nwrote:\r\n\r\n> Ok, they show power disconnected again! What is going on\r\n>\r\n> On Sun, Oct 5, 2025, 10:57 PM SJ Perkins <thatoneracerguysj@gmail.com>\r\n> wrote:\r\n>\r\n>> Ok, I had to try it. I put it on pro mode and they worked perfectly ?\r\n>>\r\n>> On Sun, Oct 5, 2025, 10:13 PM SJ Perkins <thatoneracerguysj@gmail.com>\r\n>> wrote:\r\n>>\r\n>>> Its got no limit on it now, even though its showing it. I can't even use\r\n>>> it now, it's too strong ?\r\n>>>\r\n>>> On Sun, Oct 5, 2025, 10:11 PM service@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-10-08T01:44:20Z",
+      "updated_at": "2025-10-08T01:44:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010137347,
+      "body_text": "Hi SJ Perkins,  I will send you a replacement VAM, as your current device cannot use the VAM Pro settings and should be configured with the regular VAM. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-09T09:27:57Z",
+      "updated_at": "2025-10-09T09:27:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010156976,
+      "body_text": "At this point , I dont even want them. Its more hassle than its worth.\r\nEspecially if I have to keep them on the jackhammer settings ?\r\nOn vam pro mode they worked perfectly for one evening. I went back the next\r\nday and they didn't work again. They showed power disconnected!\r\n\r\nOn Thu, Oct 9, 2025, 2:28 AM service@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-10-09T14:18:09Z",
+      "updated_at": "2025-10-09T14:18:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010157359,
+      "body_text": "Hi SJ Perkins,     Your VAM device cannot operate in VAM Pro mode.  The Simagic and Fanatec vibration motors you mentioned produce almost the same effect, with very strong vibration.  I recommend adding rubber pads to the mounting bracket — this can effectively reduce resonance noise.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-09T14:28:33Z",
+      "updated_at": "2025-10-09T14:28:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010158079,
+      "body_text": "Im telling you it can and does. It was the best it has ever worked since I\r\ngot them!!\r\n\r\nOn Thu, Oct 9, 2025, 7:28 AM service@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-10-09T14:46:34Z",
+      "updated_at": "2025-10-09T14:46:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010158145,
+      "body_text": "Rubber mounts? No, fix them correctly. They are unusable!! They are so\r\nstrong it makes me jump. Its pros, pro mode, or not at all\r\n\r\nOn Thu, Oct 9, 2025, 7:28 AM service@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-10-09T14:48:49Z",
+      "updated_at": "2025-10-09T14:48:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010197689,
+      "body_text": "Hi SJ Perkins, We’ll send you a replacement package including one VAM and one voice coil motor. Please confirm if that’s correct. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-10T07:36:00Z",
+      "updated_at": "2025-10-10T07:36:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010209671,
+      "body_text": "Hi SJ Perkins,    We’ve optimized the vibration strength settings, and the full adjustment range is now 0–100%. Please try the VAM mode at around 18–20% intensity to see if it feels better for you. Download the attached firmware and perform a manual update:    CPU1: v2.0.5    CPU2: v2.0.4",
+      "user_id": 158000445778,
+      "created_at": "2025-10-10T11:22:36Z",
+      "updated_at": "2025-10-10T11:22:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010213264,
+      "body_text": "So one regular and one pro? ?\r\n\r\nOn Fri, Oct 10, 2025, 12:36 AM service@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-10-10T12:50:29Z",
+      "updated_at": "2025-10-10T12:50:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010213285,
+      "body_text": "Yes, please do.\r\n\r\nOn Fri, Oct 10, 2025, 2:21 AM support@simsonn.com <support@simsonn.com>\r\nwrote:\r\n\r\n> Hi SJ Perkins，\r\n> Can the pedal be used normally except for the light bar? Based on your\r\n> situation, it is possible that the main control box is damaged. We will\r\n> send you a new main control box as a replacement.\r\n>\r\n> ------------------------------\r\n> support@simsonn.com\r\n>\r\n>\r\n> *",
+      "user_id": 158005049076,
+      "created_at": "2025-10-10T12:51:26Z",
+      "updated_at": "2025-10-10T12:51:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010213507,
+      "body_text": "Hi SJ Perkins,  Please update to the latest version — you can now adjust the vibration strength freely, which should eliminate the noise issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-10T13:00:53Z",
+      "updated_at": "2025-10-10T13:00:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010213559,
+      "body_text": "There is another newer version? Do I have to do the whole button press,\r\nunplug replug button press again and it not work right thing again?\r\n\r\nOn Fri, Oct 10, 2025, 6:01 AM service@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-10-10T13:03:29Z",
+      "updated_at": "2025-10-10T13:03:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010214475,
+      "body_text": "Hi SJ Perkins,  That’s right, this is the version we just updated. Your computer’s CPU2 has been upgraded from 2.0.3 to 2.0.4",
+      "user_id": 158000445778,
+      "created_at": "2025-10-10T13:28:01Z",
+      "updated_at": "2025-10-10T13:28:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010218221,
+      "body_text": "You email me back on another thread and suggested my controller box may be\r\nbad?\r\n\r\nOn Fri, Oct 10, 2025, 6:28 AM service@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-10-10T14:51:30Z",
+      "updated_at": "2025-10-10T14:51:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010218349,
+      "body_text": "Hi SJ Perkins,    The main controller is generally quite reliable, so we suspect the issue might be related to the VAM.  Have you completed the update on your side?  Please take a screenshot of the full Simsonn Manager interface, showing the pedal’s firmware version and connection status, so I can help confirm whether the update was successful.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-10T14:56:15Z",
+      "updated_at": "2025-10-10T14:56:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010242085,
+      "body_text": "When i do the update, the light bar turns off. If i revert, it comes back on\r\n\r\nOn Fri, Oct 10, 2025, 5:51 AM SJ Perkins <thatoneracerguysj@gmail.com>\r\nwrote:\r\n\r\n> Yes, please do.\r\n>\r\n> On Fri, Oct 10, 2025, 2:21 AM support@simsonn.com <support@simsonn.com>\r\n> wrote:\r\n>\r\n>> Hi SJ Perkins，\r\n>> Can the pedal be used normally except for the light bar? Based on your\r\n>> situation, it is possible that the main control box is damaged. We will\r\n>> send you a new main control box as a replacement.\r\n>>\r\n>> ------------------------------\r\n>> support@simsonn.com\r\n>>\r\n>>\r\n>> *",
+      "user_id": 158005049076,
+      "created_at": "2025-10-11T03:36:14Z",
+      "updated_at": "2025-10-11T03:36:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010242087,
+      "body_text": "If you wanna do the remote thing again  with the ToDesk, we can try thay\r\nagain?\r\n\r\nOn Fri, Oct 10, 2025, 7:56 AM service@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-10-11T03:36:30Z",
+      "updated_at": "2025-10-11T03:36:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010242121,
+      "body_text": "Hi SJ Perkins,  ok",
+      "user_id": 158000445778,
+      "created_at": "2025-10-11T03:38:33Z",
+      "updated_at": "2025-10-11T03:38:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010242147,
+      "body_text": "Ill message again when I get free. Is there a better way to contact you? ?\r\n\r\nOn Fri, Oct 10, 2025, 8:38 PM service@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-10-11T03:40:10Z",
+      "updated_at": "2025-10-11T03:40:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010242269,
+      "body_text": "Hi SJ Perkins,  You can let me know what time works for you in a few hours, or share your local time availability. I’ll set a reminder according to China time so we can coordinate accordingly. We rarely use other communication methods. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-11T03:46:46Z",
+      "updated_at": "2025-10-11T03:46:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010242338,
+      "body_text": "It will be shortly. My daughter is sleeping on me. 30-45min or so?\r\n\r\nOn Fri, Oct 10, 2025, 8:47 PM service@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-10-11T03:49:13Z",
+      "updated_at": "2025-10-11T03:49:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010242355,
+      "body_text": "Hi SJ Perkins,  Alright, I’ve set a reminder and will be waiting for you. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-11T03:50:38Z",
+      "updated_at": "2025-10-11T03:50:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010242640,
+      "body_text": "936 071 378\r\n7jc6qaq2\r\n\r\nOn Fri, Oct 10, 2025, 8:50 PM service@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-10-11T04:07:01Z",
+      "updated_at": "2025-10-11T04:07:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010242902,
+      "body_text": "On Fri, Oct 10, 2025, 9:06 PM SJ Perkins <thatoneracerguysj@gmail.com>\r\nwrote:\r\n\r\n> 936 071 378\r\n> 7jc6qaq2\r\n>\r\n> On Fri, Oct 10, 2025, 8:50 PM service@simsonn.com \nAttachment(s) that exceed the 20 MB limit have been dropped. Please reach out to the sender.",
+      "user_id": 158005049076,
+      "created_at": "2025-10-11T04:29:02Z",
+      "updated_at": "2025-10-11T04:29:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010243014,
+      "body_text": "https://quickshare.samsungcloud.com/sQTDNq2PQHjt\r\n\r\nOn Fri, Oct 10, 2025, 9:27 PM SJ Perkins <thatoneracerguysj@gmail.com>\r\nwrote:\r\n\r\n>\r\n> On Fri, Oct 10, 2025, 9:06 PM SJ Perkins <thatoneracerguysj@gmail.com>\r\n> wrote:\r\n>\r\n>> 936 071 378\r\n>> 7jc6qaq2\r\n>>\r\n>> On Fri, Oct 10, 2025, 8:50 PM service@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-10-11T04:36:56Z",
+      "updated_at": "2025-10-11T04:36:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010243200,
+      "body_text": "As soon as I wnt to play iracing they dont work at all again. They show\r\nconnected and power, but the program delays when i click the vibration test\r\nand I get no output\r\n\r\nOn Fri, Oct 10, 2025, 9:36 PM SJ Perkins <thatoneracerguysj@gmail.com>\r\nwrote:\r\n\r\n> https://quickshare.samsungcloud.com/sQTDNq2PQHjt\r\n>\r\n> On Fri, Oct 10, 2025, 9:27 PM SJ Perkins <thatoneracerguysj@gmail.com>\r\n> wrote:\r\n>\r\n>>\r\n>> On Fri, Oct 10, 2025, 9:06 PM SJ Perkins <thatoneracerguysj@gmail.com>\r\n>> wrote:\r\n>>\r\n>>> 936 071 378\r\n>>> 7jc6qaq2\r\n>>>\r\n>>> On Fri, Oct 10, 2025, 8:50 PM service@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-10-11T04:48:57Z",
+      "updated_at": "2025-10-11T04:48:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010243356,
+      "body_text": "Are we sure its not the controller box? Why do they keep quitting all the\r\ntime? At this point I want a new box and a pair of pros or a full refund.\r\nIm basically over it. No one ever said I was a beta tester\r\n\r\nOn Fri, Oct 10, 2025, 9:48 PM SJ Perkins <thatoneracerguysj@gmail.com>\r\nwrote:\r\n\r\n> As soon as I wnt to play iracing they dont work at all again. They show\r\n> connected and power, but the program delays when i click the vibration test\r\n> and I get no output\r\n>\r\n> On Fri, Oct 10, 2025, 9:36 PM SJ Perkins <thatoneracerguysj@gmail.com>\r\n> wrote:\r\n>\r\n>> https://quickshare.samsungcloud.com/sQTDNq2PQHjt\r\n>>\r\n>> On Fri, Oct 10, 2025, 9:27 PM SJ Perkins <thatoneracerguysj@gmail.com>\r\n>> wrote:\r\n>>\r\n>>>\r\n>>> On Fri, Oct 10, 2025, 9:06 PM SJ Perkins <thatoneracerguysj@gmail.com>\r\n>>> wrote:\r\n>>>\r\n>>>> 936 071 378\r\n>>>> 7jc6qaq2\r\n>>>>\r\n>>>> On Fri, Oct 10, 2025, 8:50 PM service@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-10-11T05:04:09Z",
+      "updated_at": "2025-10-11T05:04:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010252595,
+      "body_text": "Found this on the iracing help pages. I know, not the same brand, but let's\r\nbe honest here, its basically the same thing.\r\n\r\nSimagic Alpha Wheelbase and Haptic Pedal Reactor:\r\nWe are currently investigating performance issues related to the Simagic\r\nAlpha Series wheelbases and Simagic Haptic Pedal Reactor.\r\n\r\nUsers have reported performance issues when using the Alpha series\r\nwheelbases in 360Hz mode and when using the Haptic Pedal Reactor, these\r\nissues seem to be related with the high polling rate of these features\r\ncausing USB bus flooding (see USB Issues for more info).\r\n\r\n360Hz for Alpha series wheelbases can be disabled by setting the line\r\n\"loadSimagicAPI=0\" in Documents/iRacing/app.ini.\r\n\r\nHaptic Pedal Reactor functionality can be disabled by unchecking \"vibrate\r\npedals\" in the Option Menu after launching iRacing.\r\n\r\nOn Fri, Oct 10, 2025, 10:03 PM SJ Perkins <thatoneracerguysj@gmail.com>\r\nwrote:\r\n\r\n> Are we sure its not the controller box? Why do they keep quitting all the\r\n> time? At this point I want a new box and a pair of pros or a full refund.\r\n> Im basically over it. No one ever said I was a beta tester\r\n>\r\n> On Fri, Oct 10, 2025, 9:48 PM SJ Perkins <thatoneracerguysj@gmail.com>\r\n> wrote:\r\n>\r\n>> As soon as I wnt to play iracing they dont work at all again. They show\r\n>> connected and power, but the program delays when i click the vibration test\r\n>> and I get no output\r\n>>\r\n>> On Fri, Oct 10, 2025, 9:36 PM SJ Perkins <thatoneracerguysj@gmail.com>\r\n>> wrote:\r\n>>\r\n>>> https://quickshare.samsungcloud.com/sQTDNq2PQHjt\r\n>>>\r\n>>> On Fri, Oct 10, 2025, 9:27 PM SJ Perkins <thatoneracerguysj@gmail.com>\r\n>>> wrote:\r\n>>>\r\n>>>>\r\n>>>> On Fri, Oct 10, 2025, 9:06 PM SJ Perkins <thatoneracerguysj@gmail.com>\r\n>>>> wrote:\r\n>>>>\r\n>>>>> 936 071 378\r\n>>>>> 7jc6qaq2\r\n>>>>>\r\n>>>>> On Fri, Oct 10, 2025, 8:50 PM service@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2025-10-11T07:20:34Z",
+      "updated_at": "2025-10-11T07:20:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010286553,
+      "body_text": "Maybe you should make sure your product works before releasing ?\r\nEven with the refund, im just extremely disappointed. Id rather my vams\r\nworked\r\n\r\nOn Sat, Oct 11, 2025, 12:20 AM SJ Perkins <thatoneracerguysj@gmail.com>\r\nwrote:\r\n\r\n> Found this on the iracing help pages. I know, not the same brand, but\r\n> let's be honest here, its basically the same thing.\r\n>\r\n> Simagic Alpha Wheelbase and Haptic Pedal Reactor:\r\n> We are currently investigating performance issues related to the Simagic\r\n> Alpha Series wheelbases and Simagic Haptic Pedal Reactor.\r\n>\r\n> Users have reported performance issues when using the Alpha series\r\n> wheelbases in 360Hz mode and when using the Haptic Pedal Reactor, these\r\n> issues seem to be related with the high polling rate of these features\r\n> causing USB bus flooding (see USB Issues for more info).\r\n>\r\n> 360Hz for Alpha series wheelbases can be disabled by setting the line\r\n> \"loadSimagicAPI=0\" in Documents/iRacing/app.ini.\r\n>\r\n> Haptic Pedal Reactor functionality can be disabled by unchecking \"vibrate\r\n> pedals\" in the Option Menu after launching iRacing.\r\n>\r\n> On Fri, Oct 10, 2025, 10:03 PM SJ Perkins <thatoneracerguysj@gmail.com>\r\n> wrote:\r\n>\r\n>> Are we sure its not the controller box? Why do they keep quitting all the\r\n>> time? At this point I want a new box and a pair of pros or a full refund.\r\n>> Im basically over it. No one ever said I was a beta tester\r\n>>\r\n>> On Fri, Oct 10, 2025, 9:48 PM SJ Perkins <thatoneracerguysj@gmail.com>\r\n>> wrote:\r\n>>\r\n>>> As soon as I wnt to play iracing they dont work at all again. They show\r\n>>> connected and power, but the program delays when i click the vibration test\r\n>>> and I get no output\r\n>>>\r\n>>> On Fri, Oct 10, 2025, 9:36 PM SJ Perkins <thatoneracerguysj@gmail.com>\r\n>>> wrote:\r\n>>>\r\n>>>> https://quickshare.samsungcloud.com/sQTDNq2PQHjt\r\n>>>>\r\n>>>> On Fri, Oct 10, 2025, 9:27 PM SJ Perkins <thatoneracerguysj@gmail.com>\r\n>>>> wrote:\r\n>>>>\r\n>>>>>\r\n>>>>> On Fri, Oct 10, 2025, 9:06 PM SJ Perkins <thatoneracerguysj@gmail.com>\r\n>>>>> wrote:\r\n>>>>>\r\n>>>>>> 936 071 378\r\n>>>>>> 7jc6qaq2\r\n>>>>>>\r\n>>>>>> On Fri, Oct 10, 2025, 8:50 PM service@simsonn.com <\r\n>>>>>> service@simsonn.com> wrote:\r\n>>>>>>\r\n>>>>>>> Hi SJ Perkins,\r\n>>>>>>>\r\n>>>>>>> Alright, I’ve set a reminder and will be waiting for you.\r\n>>>>>>>\r\n>>>>>>>\r\n>>>>>>> On Fri, 10 Oct at 11:49 PM , SJ Perkins <thatoneracerguysj@gmail.com>\r\n>>>>>>> wrote:\r\n>>>>>>> It will be shortly. My daughter is sleeping on me. 30-45min or so?\r\n>>>>>>>\r\n>>>>>>> On Fri, Oct 10, 2025, 8:47 PM service@simsonn.com <\r\n>>>>>>> service@simsonn.com> wrote:\r\n>>>>>>>\r\n>>>>>>>> Hi SJ Perkins,\r\n>>>>>>>>\r\n>>>>>>>> You can let me know what time works for you in a few hours, or\r\n>>>>>>>> share your local time availability.\r\n>>>>>>>> I’ll set a reminder according to China time so we can coordinate\r\n>>>>>>>> accordingly.\r\n>>>>>>>> We rarely use other communication methods.\r\n>>>>>>>>\r\n>>>>>>>> On Fri, 10 Oct at 11:40 PM , SJ Perkins <\r\n>>>>>>>> thatoneracerguysj@gmail.com> wrote:\r\n>>>>>>>> Ill message again when I get free. Is there a better way to contact\r\n>>>>>>>> you? ?\r\n>>>>>>>>\r\n>>>>>>>> On Fri, Oct 10, 2025, 8:38 PM service@simsonn.com <\r\n>>>>>>>> service@simsonn.com> wrote:\r\n>>>>>>>>\r\n>>>>>>>>> Hi SJ Perkins,\r\n>>>>>>>>>\r\n>>>>>>>>> ok\r\n>>>>>>>>>\r\n>>>>>>>>>\r\n>>>>>>>>> 4278:4206036\r\n>>>>>>>\r\n>>>>>>\r\n\r\n",
+      "user_id": 158005049076,
+      "created_at": "2025-10-11T15:14:24Z",
+      "updated_at": "2025-10-11T15:14:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "id": 3849,
+  "subject": "F1 25 game support",
+  "description_text": "Hii Simsonn ., \r\n\r\nI purchased recently the f1 2025 game \r\nMy pedals are not working with this game \r\nI run the software simsonn manager 2.1.0\r\n\r\nIs there any option for this game ? \r\nVerstuurd vanaf mijn iPhone\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-09-15T14:38:00Z",
+  "updated_at": "2025-09-17T17:03:12Z",
+  "requester_id": 158004553262,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008792535,
+      "body_text": "Hi Bart Caethoven,  In our test environment, F1 2025 runs without any issues.  Because the RX axis on our previous handbrake was not disabled, it may cause F1 2025 to fail to bind correctly. You can try fixing this issue using SIMSONN Manager 2.1.1: Open the SIMSONN Manager 2.1.1 software. In the interface, click the “Restore” button. Then click the “Save” button. Reinsert the USB cable. Finally, test to confirm if the RX axis has been successfully disabled. https://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=drive_link ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-16T01:14:23Z",
+      "updated_at": "2025-09-16T01:14:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008803744,
+      "body_text": "Ok i will try later this day\r\n\r\nAlso what I see is the game don’t show up in the list on the right\r\n\r\nEvery version off f1 game only the 25 not show up\r\n\r\nMy asseto corsa competitzione no problem it show up\r\n\r\n\r\nVerstuurd vanaf mijn iPhone\r\n\r\nOp 16 sep 2025 om 03:14 heeft service@simsonn.com het volgende geschreven:\r\n\r\n﻿\r\nHi Bart Caethoven,\r\n\r\nIn our test environment, F1 2025 runs without any issues.\r\nBecause the RX axis on our previous handbrake was not disabled,\r\nit may cause F1 2025 to fail to bind correctly.\r\nYou can try fixing this issue using SIMSONN Manager 2.1.1:\r\nOpen the SIMSONN Manager 2.1.1 software.\r\nIn the interface, click the “Restore” button.\r\nThen click the “Save” button.\r\nReinsert the USB cable.\r\nFinally, test to confirm if the RX axis has been successfully disabled.\r\nhttps://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=drive_link <https://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=drive_link%C2%A0>\r\n\r\n[https://attachment.freshdesk.com/inline/attachment?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTU4MDAxODgwMjMyLCJkb21haW4iOiJzaW1zb25uLmZyZXNoZGVzay5jb20iLCJhY2NvdW50X2lkIjo0MjA2MDM2fQ.YZ34UmlrteegbMdZrQV9TbJqXA8Cq_bdyaKnsnRfdTA]\r\n\r\n[https://attachment.freshdesk.com/inline/attachment?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTU4MDAxODgwMjM0LCJkb21haW4iOiJzaW1zb25uLmZyZXNoZGVzay5jb20iLCJhY2NvdW50X2lkIjo0MjA2MDM2fQ.Dmm374Di6jaeLBtxJn6bJViySGC3IReJDDrIWhkPDhY]\r\n",
+      "user_id": 158004553262,
+      "created_at": "2025-09-16T08:00:41Z",
+      "updated_at": "2025-09-16T08:00:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008837543,
+      "body_text": "Hi Bart Caethoven,  When testing, please take a screenshot of the F1 2025 settings screen so I can compare it and check for any differences from the settings on our computer. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-17T01:38:47Z",
+      "updated_at": "2025-09-17T01:38:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008851147,
+      "body_text": "Hi Bart Caethoven,",
+      "user_id": 158000445778,
+      "created_at": "2025-09-17T09:10:13Z",
+      "updated_at": "2025-09-17T09:10:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008851414,
+      "body_text": "Hii thanks !\r\nIt worked like this\r\n\r\nThank a lot for the help guys\r\n\r\nVerstuurd vanaf mijn iPhone\r\n\r\nOp 17 sep 2025 om 11:10 heeft service@simsonn.com het volgende geschreven:\r\n\r\n﻿\r\nHi Bart Caethoven,\r\n\r\n[https://attachment.freshdesk.com/inline/attachment?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTU4MDAxOTExMTEzLCJkb21haW4iOiJzaW1zb25uLmZyZXNoZGVzay5jb20iLCJhY2NvdW50X2lkIjo0MjA2MDM2fQ._qCQwkM09ol9VMNm_xkUjY8SjemLvulCBhxg8M7ZdGk]\r\n\r\n[https://attachment.freshdesk.com/inline/attachment?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTU4MDAxOTExMTE0LCJkb21haW4iOiJzaW1zb25uLmZyZXNoZGVzay5jb20iLCJhY2NvdW50X2lkIjo0MjA2MDM2fQ.RSHtcBNiYwjXXiX64fhnVkVtgTsjbtVNjq1BVRLNHDI]\r\n\r\n\r\n[https://attachment.freshdesk.com/inline/attachment?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTU4MDAxOTExMTE1LCJkb21haW4iOiJzaW1zb25uLmZyZXNoZGVzay5jb20iLCJhY2NvdW50X2lkIjo0MjA2MDM2fQ.Zg0X4oH7_OxD3d9hpLy0srkjb0_4ouHeGH8KNTEgd6Y]\r\n\r\n\r\n[https://attachment.freshdesk.com/inline/attachment?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTU4MDAxOTExMTIyLCJkb21haW4iOiJzaW1zb25uLmZyZXNoZGVzay5jb20iLCJhY2NvdW50X2lkIjo0MjA2MDM2fQ.ojluqdQgGMaD6BXIocmPJt3gXCLZBG_dIVJBPwYAcbc]\r\n",
+      "user_id": 158004553262,
+      "created_at": "2025-09-17T09:31:47Z",
+      "updated_at": "2025-09-17T09:31:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008880191,
+      "body_text": "",
+      "user_id": 158004553262,
+      "created_at": "2025-09-17T17:03:11Z",
+      "updated_at": "2025-09-17T17:03:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ]
+}

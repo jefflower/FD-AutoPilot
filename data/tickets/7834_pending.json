@@ -1,0 +1,24 @@
+{
+  "id": 7834,
+  "subject": "Order #SSN3883",
+  "description_text": "Hello,\r\n\r\nThe control box that was included in my order short circuited after about an hour of normal use and now sparks when it is plugged in and unplugged.  Please let me know what can be done to replace the defective unit.\r\n\r\nThank you in advance\r\n\r\nC Marshall\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-10T02:09:15Z",
+  "updated_at": "2025-12-13T06:12:55Z",
+  "requester_id": 158007727122,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014432796,
+      "body_text": "Hi Charles Marshall,   The pedals can work without connecting the power. A small spark may appear when connecting the 24V power supply, which is normal as it charges the capacitor for the haptic motor. 24V is a safe voltage and will not damage the main board, so there’s no need to worry. If the pedals fail to connect, please try entering recovery mode and manually updating the firmware before testing again.        Please follow the steps below:    Press and hold the upgrade button on the PlusX main controller, then reconnect the USB cable.    Open SIMSONN Manager 2.1.0 and check if it has entered recovery mode.    If recovery mode is detected, go to Settings → Update → Manual Update Firmware → pedals → firmware → pedals-plusx.sfu.    After the update is complete, test the device to see if it has been restored successfully.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-13T06:12:55Z",
+      "updated_at": "2025-12-13T06:12:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

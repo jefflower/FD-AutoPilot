@@ -1,0 +1,144 @@
+{
+  "id": 1423,
+  "subject": "pedals not working",
+  "description_text": "Goodday,     My pedal are not working (again)...  The clutch is fine, but the brake is stuck at the same 139kg load. The throttle is hovering at 15%.  When I quickly release the throttle, the brake \"comes loose\" sometimes, but when i press it it goes directly to the 139kg load.     Yesterday it worked fine (I have not raced more than 30 minutes with this pedal set.)     This is not ok, my thrust in this set is gone...  Either send a replacement set or take back or something.",
+  "status": 4,
+  "priority": 4,
+  "created_at": "2025-07-10T20:04:42Z",
+  "updated_at": "2025-07-23T14:03:34Z",
+  "requester_id": 158001710346,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004515898,
+      "body_text": "I tried offset, but no luck.  Plus, if I have to do this al the time, than I rather invest in other pedals.  It's a shame because i really liked the first versions of your pedals",
+      "user_id": 158001710346,
+      "created_at": "2025-07-10T20:06:06Z",
+      "updated_at": "2025-07-10T20:06:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158004518126,
+      "body_text": "After calibrating and offset AGAIN, they seem to work again like normal, BUT the brake is very inconsistent. it flips from normal load to full load, and the deadzone keeps increasing. Not ok.  I started with 6 kg load in rest (but it is very unstable) and after a few laps the pressure is now at 16 kg load (still with a nervous unstable line).",
+      "user_id": 158001710346,
+      "created_at": "2025-07-10T20:41:19Z",
+      "updated_at": "2025-07-10T20:41:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158004532205,
+      "body_text": "Hi Raymond van de Ven, Do you have time today? I can assist you remotely to troubleshoot and perform the upgrade.      simply click the close button in the top-right corner to access the main interface. Then, provide your ID and temporary password, and we’ll arrange a remote session to help you troubleshoot the issue.      https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-07-11T00:20:28Z",
+      "updated_at": "2025-07-11T00:20:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004557527,
+      "body_text": "What is the issue? Because I lost my trust in this pedal set. Why do I see other YouTubers with a clean input signal from the load cell and mine is all over the place? I did not do anything special.  What is it that you can fix?",
+      "user_id": 158001710346,
+      "created_at": "2025-07-11T09:12:15Z",
+      "updated_at": "2025-07-11T09:12:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158004557569,
+      "body_text": "Especially because this is the second time I lost my trust. And why is the load cell reading increasing over time?",
+      "user_id": 158001710346,
+      "created_at": "2025-07-11T09:13:33Z",
+      "updated_at": "2025-07-11T09:13:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158004642369,
+      "body_text": "Hi，Raymond van de Ven，  Please follow our instructions step by step — this is the fastest way to resolve the issue.  If it turns out to be a hardware problem, we will promptly send you replacement parts.  At this point, I cannot confirm whether your pedals have been assembled correctly or if the spring has sufficient preload.  Most of our customers are able to use the pedals right out of the box without encountering such issues.  That’s why I’d like to check the installation together with you via remote support (e.g., Todesk) and review photos of your setup to ensure everything is correctly installed. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-12T07:57:06Z",
+      "updated_at": "2025-07-12T07:57:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004707279,
+      "body_text": "I understand that it is difficult to diagnose the issue, but wat was the problem the last time? I did not alter the pedal since the last Todesk meeting. I read the manual step by step and followed it precisely.     Furthermore, the preload is sufficient i believe. The coil spring is compressed about 3 to 4mm with a hard elastomer setup (2 Blue, top elastomer replaced with washers).  I attached a video. The reading is all over the place and when i press the pedal, the kg change end stay higher, then they go lower.  There seems to be a connection between the brake and the throttle??     (The throttle is inconsistent too. After last use, the input is now at 15%???)     Attached is a Long video! Please watch entire video and especially second part for pedal and software in one shot to see the other problem.        How come this is such a problem. Can't whe switch units altogether? I am sick of this back and forth and not being able to use the SIM this way. Not okay... Maybe then my trust is back. As I said the old pedal set was brilliant. Maybe I will return this unit and use my old ones...",
+      "user_id": 158001710346,
+      "created_at": "2025-07-12T19:26:56Z",
+      "updated_at": "2025-07-12T19:26:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158004772678,
+      "body_text": "Maybe I found the problem!!!     Bass shakers magnetic interference is likely the problem for the bad reading.     I will test further today!",
+      "user_id": 158001710346,
+      "created_at": "2025-07-13T18:20:00Z",
+      "updated_at": "2025-07-13T18:20:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158004775044,
+      "body_text": "Hi Raymond van de Ven,    If your racing pedal’s data position keeps shifting and the initial position is unstable, it could be due to insufficient preload on the locking nut, which prevents the pedal from fully returning via its built-in elasticity.     May I ask if you’ve removed the return spring on the brake pedal? If so, that might affect the reset behavior. Alternatively, the throttle pedal’s locking nut may not be tightened enough, which could also prevent full return. We recommend checking these components and making the necessary adjustments.     In short, a proper reset of the pedal relies on adequate and well-balanced return force.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-14T04:06:38Z",
+      "updated_at": "2025-07-14T04:06:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004806871,
+      "body_text": "Preload is good, I did not do anything special with the spring in the brake. I did switched the spring in the throttle.  In my previous message I said the magnetic field of the bass shakers was the cause of the fluctuations.  I removed all shakers and the signal seems stable now.     How is it possible that the EMI from the system is interfering this pedal set and not the original set?",
+      "user_id": 158001710346,
+      "created_at": "2025-07-14T13:53:17Z",
+      "updated_at": "2025-07-14T13:53:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158004943113,
+      "body_text": "Hi Raymond van de Ven,    I just carefully reviewed all our previous conversations and would like to confirm—are you using a Fanatec or Moza wheelbase? These devices are known to emit EMI (electromagnetic interference) under certain conditions.  Please check the following:    Ensure that the control box and pedals are connected via a green grounding wire, attached to any metal screw on both sides.    Verify that your PC uses a three-prong power plug, which indicates it’s properly grounded through your home’s electrical system.    Once both conditions are met, please refer to the link we provided. It’s an official solution recommended by SIMHUB: Connect the metal housing of your wheelbase to your PC case using a wire. Since your PC is grounded, this creates a path for EMI to discharge safely, helping to prevent interference-related",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T06:30:38Z",
+      "updated_at": "2025-07-16T06:30:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004954838,
+      "body_text": "Thank you for the response. The problem was the EMI. I bought an \"EMI usb dongle\" and the problem is gone.  Thank you very much for your patience and wilingness to help. Maybe my old set did not have the EMI interference because of the mounting directly to aluminium rig? I have the new set on a pedal plate.     Greetings",
+      "user_id": 158001710346,
+      "created_at": "2025-07-16T12:00:03Z",
+      "updated_at": "2025-07-16T12:00:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158005452890,
+      "body_text": "Even though the person was very helpfull, there were a few questions not asked that could have saved a lot of time.\nCommunication was very friendly and helpful though!",
+      "user_id": 158001710346,
+      "created_at": "2025-07-23T14:03:33Z",
+      "updated_at": "2025-07-23T14:03:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ]
+}

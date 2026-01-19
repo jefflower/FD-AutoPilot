@@ -1,0 +1,64 @@
+{
+  "id": 5534,
+  "subject": "Postage",
+  "description_text": "Hello there jason here from australia. I have noticed that my pedals have reached sydney 6 days ago but havent moved since do you have an updated eta for my pedals please\r\n\r\nKind regards\r\nJason mccallum\r\n\r\nSent from Outlook for Android<https://aka.ms/AAb9ysg>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-02T01:46:58Z",
+  "updated_at": "2025-11-03T07:46:07Z",
+  "requester_id": 158006298533,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011603916,
+      "body_text": "Hi jason mccallum,   Please provide your order number so that I can check where the shipment is held and contact the international courier to find out the reason. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-02T02:37:38Z",
+      "updated_at": "2025-11-02T02:37:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011604343,
+      "body_text": "Attached is a photo of the order email\r\n\r\nSent from Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158006298533,
+      "created_at": "2025-11-02T03:17:54Z",
+      "updated_at": "2025-11-02T03:17:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011604357,
+      "body_text": "Tracking information\r\n\r\nSent from Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158006298533,
+      "created_at": "2025-11-02T03:19:37Z",
+      "updated_at": "2025-11-02T03:19:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011645917,
+      "body_text": "The parcel arrived today\r\n\r\nSent from Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158006298533,
+      "created_at": "2025-11-03T07:43:40Z",
+      "updated_at": "2025-11-03T07:43:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011645956,
+      "body_text": "Hi jason mccallum,    Thank you for your feedback. We apologize for any inconvenience caused. We've just returned to work after the holiday break.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-03T07:46:06Z",
+      "updated_at": "2025-11-03T07:46:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

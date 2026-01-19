@@ -1,0 +1,84 @@
+{
+  "id": 9105,
+  "subject": "Shipping Question",
+  "description_text": "Greetings\r\n\r\nDue to my countries import laws, shipping from the USA would make the\r\nproduct much more expensive, i’m looking at buying the simsonn plus x h3\r\np3, therefore my question is, is the product shipped from the USA?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-24T18:22:25Z",
+  "updated_at": "2025-12-30T09:20:16Z",
+  "requester_id": 158008496586,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015057452,
+      "body_text": "Hi Lorenzo Del Giudice,  We have two shipping options: shipping from China or shipping from the United States. Which country are you located in? ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-25T02:47:48Z",
+      "updated_at": "2025-12-25T02:47:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015057520,
+      "body_text": "I’m located  in uruguay, and the import laws I mentioned come into effect\r\non the 1st of january, ordering it earlier wouldn’t be viable.\r\n\r\nOn Wed, 24 Dec 2025 at 23:47 support@simsonn.com ",
+      "user_id": 158008496586,
+      "created_at": "2025-12-25T02:54:31Z",
+      "updated_at": "2025-12-25T02:54:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015058192,
+      "body_text": "Hi Lorenzo Del Giudice,  We can ship the order directly from China. After placing your order, please send me the order number and note “Ship from China” in the order remarks. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-25T04:13:12Z",
+      "updated_at": "2025-12-25T04:13:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015078532,
+      "body_text": "Ok, great, thank you.\r\n\r\nAnother question, by buying the £228 kit of the plus P3H3 (Plus X P3-H3,\r\nBlack, Baseplate and no haptics), do i get absolutely everything i need to\r\nstart racing??  Or is stuff like the control box separate?\r\n\r\nOn Thu, 25 Dec 2025 at 01:13 support@simsonn.com ",
+      "user_id": 158008496586,
+      "created_at": "2025-12-25T22:13:37Z",
+      "updated_at": "2025-12-25T22:13:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015166270,
+      "body_text": "Hi Lorenzo Del Giudice,  The control box and mounting screws are already included, so there is no need to purchase any additional parts. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T15:47:12Z",
+      "updated_at": "2025-12-28T15:47:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015169711,
+      "body_text": "Ok great, and sorry to nether you, but is the invoice coming from china or\r\nthe USA, because my country requires the invoice to also be from china to\r\nprevent heavy tariffs.\r\n\r\nOn Sun, 28 Dec 2025 at 12:47 support@simsonn.com ",
+      "user_id": 158008496586,
+      "created_at": "2025-12-28T19:15:53Z",
+      "updated_at": "2025-12-28T19:15:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015244382,
+      "body_text": "Hi Lorenzo Del Giudice,  The invoice can be issued from China. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T09:20:16Z",
+      "updated_at": "2025-12-30T09:20:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

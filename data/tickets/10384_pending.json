@@ -1,0 +1,24 @@
+{
+  "id": 10384,
+  "subject": "Problems with load cell.",
+  "description_text": "Hello,\r\n\r\nOn my Simsonn Pro X Ultra brake, the springs are fully compressed at ~49\r\nkg. I can press harder, but force barely increases and the load goes into\r\nthe cockpit instead of the load cell.\r\n[image: image.png]\r\n\r\nCan you tell me what the problem might be?\r\nCould you recommend the correct spring/elastomer setup to safely reach\r\nhigher brake force (around 100–120 kg) without bottoming out?\r\n\r\nThanks\r\nVladimir\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-09T08:46:24Z",
+  "updated_at": "2026-01-10T07:12:51Z",
+  "requester_id": 158008999607,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016678424,
+      "body_text": "Hi Vladimir Lunev,  Yesterday, you contacted us through our OZON platform support team, and I have already arranged to send you a replacement control box. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-10T07:12:51Z",
+      "updated_at": "2026-01-10T07:12:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

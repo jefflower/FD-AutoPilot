@@ -1,0 +1,65 @@
+{
+  "id": 1068,
+  "subject": "订单地址错误",
+  "description_text": "您好，我刚刚下了一个订单，但我不小心填错了收货地址。我的订单号是 SN1901。我希望将它们寄送到 9128 Janowicz st. Elk grove CA 95624。",
+  "status": 4,
+  "priority": 4,
+  "created_at": "2025-07-01T14:19:10Z",
+  "updated_at": "2025-07-02T03:29:14Z",
+  "requester_id": 158001867130,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004362961,
+      "body_text": "你好，Jeret Faure，好的，我们已经为您修改了。请确认。",
+      "user_id": 158001343601,
+      "created_at": "2025-07-02T02:49:02Z",
+      "updated_at": "2025-07-02T02:49:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004362975,
+      "body_text": "9285 Janowicz st. Elk grove CA 95624. 抱歉，我今天早上太累了，不知道自己在想什么。2025年7月1日星期二下午7:49，来自 service@simsonn.com。",
+      "user_id": 158001867130,
+      "created_at": "2025-07-02T02:53:22Z",
+      "updated_at": "2025-07-02T02:53:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004362983,
+      "body_text": "您好，Jeret Faure，没问题，我们已经为您更改了。",
+      "user_id": 158001343601,
+      "created_at": "2025-07-02T02:56:25Z",
+      "updated_at": "2025-07-02T02:56:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004362995,
+      "body_text": "非常感谢！2025年7月1日星期二晚上7:56 service@simsonn.com",
+      "user_id": 158001867130,
+      "created_at": "2025-07-02T03:02:54Z",
+      "updated_at": "2025-07-02T03:02:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004363049,
+      "body_text": "请尽快处理我的问题！",
+      "user_id": 158001867130,
+      "created_at": "2025-07-02T03:29:13Z",
+      "updated_at": "2025-07-02T03:29:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

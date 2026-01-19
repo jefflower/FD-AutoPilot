@@ -1,0 +1,34 @@
+{
+  "id": 8762,
+  "subject": "Vat being charged at checkout",
+  "description_text": "Hello,\r\nIs VAT being charged here at checkout?\r\nSimsonn Plus X Racing Simulation Pedal with Haptic Reactor Optional <https://www.simsonn.com/products/simsonn-plus-x-pedals?variant=50474714988858>\r\nChoose your pedal setup: Plus X P3-H3\r\nColor: Black\r\nBaseplate: without Baseplate\r\nQuantity\r\n\r\n€219,95\r\nSimsonn VAM Pro Linear Motor - the Pedals Haptic Reactor for Vibration Feedback <https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor?variant=51351053467962>\r\nChoose your model: VAM Pro Set (2 pac/includes power supply)\r\nMounting Bracket: U-Shaped Mounting Bracket for Brake, U-Shaped Mounting Bracket for Throttle | €6.79\r\nQuantity\r\n\r\n€107,74\r\n\r\nThanks\r\nAlan\r\n\r\n\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-20T18:47:44Z",
+  "updated_at": "2025-12-24T10:19:21Z",
+  "requester_id": 158007840668,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014881234,
+      "body_text": "VAT",
+      "user_id": 158007774607,
+      "created_at": "2025-12-22T13:04:59Z",
+      "updated_at": "2025-12-22T13:04:59Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158015030193,
+      "body_text": "I apologize for not responding to you sooner. This price is final and there will be no additional charges. Furthermore, our German warehouse has already restocked.  Merry Christmas!",
+      "user_id": 158001343601,
+      "created_at": "2025-12-24T10:19:21Z",
+      "updated_at": "2025-12-24T10:19:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": 10203,
+  "subject": "USB connectivity",
+  "description_text": "Good morning,\r\n\r\nDo you recommend using a USB Type A 3.2 or USB Type A 2.0 for connecting the\r\npedals to the computer or does it not make any difference\r\n\r\n \r\n\r\nBest regards\r\n\r\nSean Kukula\r\n\r\n\r\n\r\n\r\n \r\n\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-07T10:25:11Z",
+  "updated_at": "2026-01-07T12:30:26Z",
+  "requester_id": 158008964979,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016112293,
+      "body_text": "Hi Sean,  We recommend using the USB 3.0 (blue) port on the back of your PC, as it provides stable power for the pedals. Please avoid using USB hubs without independent power, as they may cause unstable power supply and affect the pedals’ performance. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T10:38:50Z",
+      "updated_at": "2026-01-07T10:38:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016123670,
+      "body_text": "Thank you for your quick reply\r\n\r\n \r\n\r\nBest regards\r\n\r\nSean Kukula\r\n\r\nCompetition Supplies Limited\r\nUnit 17 Silverstone Circuit\r\nTowcester\r\nNorthamptonshire\r\nNN12 8TL\r\n\r\nTel: 01327 857991\r\nemail: sean@competitionsupplies.com <mailto:sean@competitionsupplies.com> \r\nWeb: www.competitionsupplies.com <http://www.competitionsupplies.com>   \r\n\r\n \r\n\r\n",
+      "user_id": 158008964979,
+      "created_at": "2026-01-07T11:40:31Z",
+      "updated_at": "2026-01-07T11:40:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

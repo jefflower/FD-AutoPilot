@@ -1,0 +1,84 @@
+{
+  "id": 2344,
+  "subject": "Module/shifter",
+  "description_text": " Hello.. i have the pro pedals. How can i put a shifter at module first\r\nversion?(V4)\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-05T23:05:45Z",
+  "updated_at": "2025-08-09T15:53:40Z",
+  "requester_id": 158002663363,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006303008,
+      "body_text": "Hi Giorgos Pourgouris,  Only a sequential shifter can be connected, using two button inputs with a total of four wires. Please take a photo of your device and then configure it using Freejoy. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-06T01:04:30Z",
+      "updated_at": "2025-08-06T01:04:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006357372,
+      "body_text": "Can you send me the wiring diagram? I have sq shifter with 2 buttons\r\n\r\n",
+      "user_id": 158002663363,
+      "created_at": "2025-08-06T11:06:33Z",
+      "updated_at": "2025-08-06T11:06:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006358256,
+      "body_text": "",
+      "user_id": 158002663363,
+      "created_at": "2025-08-06T11:14:28Z",
+      "updated_at": "2025-08-06T11:14:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158006402226,
+      "body_text": "Hi Giorgos Pourgouris,  From left to right, connect the two wires to the normally open pins of the micro switch, then configure the corresponding pins as button_GND in Freejoy. After that, perform the test. You will need to refer to the Freejoy GitHub for more details. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-06T14:01:22Z",
+      "updated_at": "2025-08-06T14:01:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006434623,
+      "body_text": "Only 3 wires?\r\n\r\n",
+      "user_id": 158002663363,
+      "created_at": "2025-08-06T17:42:42Z",
+      "updated_at": "2025-08-06T17:42:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006481877,
+      "body_text": "??\r\n\r\nOn Wed, 6 Aug 2025, 20:42 Giorgos Pourgouris, <giorgospourgouris@gmail.com>\r\nwrote:\r\n\r\n> Only 3 wires?\r\n>\r\n> On Wed, 6 Aug 2025, 17:01 service@simsonn.com, ",
+      "user_id": 158002663363,
+      "created_at": "2025-08-07T11:38:41Z",
+      "updated_at": "2025-08-07T11:38:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006604660,
+      "body_text": "Hi Giorgos Pourgouris,  The button requires two wires for connection. You’ll need to research the implementation yourself on Freejoy — we only provide the wiring definitions, not the design solution. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-09T15:53:39Z",
+      "updated_at": "2025-08-09T15:53:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

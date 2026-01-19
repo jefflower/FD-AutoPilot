@@ -1,0 +1,24 @@
+{
+  "id": 6002,
+  "subject": "Shipping company - Delivery to Poland",
+  "description_text": "Hello,\r\nIm wondering with which company do you guys usually ship the pedals to\r\nPoland. Im interested in buying the simsonn plus X pedals, but because I\r\nmight not be home when the delivery guy arrives Im wondering which company\r\ndo you ship with, as some of them offer that you can redirect the parcel to\r\na parcel collection point and claim it any time I want (f.e. DPD or DHL). I\r\nwould highly appreciate a quick response.\r\nThanks in advance,\r\nOskar Tomala\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-12T14:58:32Z",
+  "updated_at": "2025-11-13T02:40:10Z",
+  "requester_id": 158006967313,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012217504,
+      "body_text": "Hi Oskar4531,    We will ship via DHL from Germany.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-13T02:40:10Z",
+      "updated_at": "2025-11-13T02:40:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

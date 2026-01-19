@@ -1,0 +1,124 @@
+{
+  "id": 5540,
+  "subject": "Newly purchased Pedals issue",
+  "description_text": "Hi,\r\n\r\nI have just received my new pedals order SSN3029.\r\n\r\nThey worked initially for about ½ hour then they started disconnecting from the computer and the are not being recognized via the usb.\r\nI have tried multiple usb ports it will register the use being plugged in via a windows sound but they will not be recognized.\r\nThey are not detected in the Manager app as well.\r\nWhen they 1st work , after calibrating them you could press the pedals in the calibration screen and they would lag or not register then register on the next press of the pedal.\r\nOr with the brake pedal, it would calibrate lower than the pedal press, you pressed the curve type button from straight to curve then back to straight again and it registered as calibrated in the brake setting basic setting screen.\r\n\r\n\r\n[cid:dde25342-0962-4df3-9d9e-a12d6dcb5e77]\r\n\r\nCan you please advise what might be the issue? could there be a fault in the control box, the power plug also seams loose to plug into this box.\r\n\r\nRegards Justin.\r\n\r\n\r\n\r\n[cid:6934d4e8-6ea1-47f9-8133-57fd9c28b9f7]\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-02T06:05:06Z",
+  "updated_at": "2025-11-04T06:39:50Z",
+  "requester_id": 158006303018,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011605423,
+      "body_text": "Hi Justin Gall,    Please plug the USB cable directly into the blue USB 3.0 port on the back of your computer, and do not use a USB hub.  Then follow the steps below to update the firmware:      Press and hold the main controller’s upgrade button.  While holding the button, reconnect the USB cable.  The controller will enter Recovery Mode, and you should see SIMSONN Flasher Mode displayed in SIMSONN Manager.  In the software, go to Settings → Update → Manual Firmware Update → Pedals → firmware → pedals-plusx.sfu.  After the update is complete, please test the device again to confirm proper operation.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-02T07:26:44Z",
+      "updated_at": "2025-11-02T07:26:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011607053,
+      "body_text": "Hi,\r\n\r\nI have done that and it showed connected for about 30 seconds and it has now gone back to disconnected and won't register the pedals as connected.\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158006303018,
+      "created_at": "2025-11-02T07:59:29Z",
+      "updated_at": "2025-11-02T07:59:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011607062,
+      "body_text": "Hi Justin Gall,    The issue might be caused by unstable USB power.  Please take a photo showing the pedal’s USB connection to the rear port of your computer and send it to me so I can check it for you.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-02T08:01:42Z",
+      "updated_at": "2025-11-02T08:01:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011607088,
+      "body_text": "The pedal usb is the 2nd one from the top.on the right. Mother board photo attached as well\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158006303018,
+      "created_at": "2025-11-02T08:09:05Z",
+      "updated_at": "2025-11-02T08:09:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011607105,
+      "body_text": "Hi Justin Gall,    That’s quite unusual — it normally shouldn’t get disconnected.  It could be due to an unstable USB connection on the controller or a faulty USB cable.  Please try testing it on another computer if possible.  If the issue persists, we can send you a replacement controller box.  Please confirm that your software version is 2.1.2,  and the firmware versions are CPU1: 2.0.5 and CPU2: 2.0.4.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-02T08:16:06Z",
+      "updated_at": "2025-11-02T08:16:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011607243,
+      "body_text": "Hi.\r\n\r\nYes all the software is up to date I have attached a photo. The issue seems to be in the haptic power port in the control box.\r\nIf I have the power supply plugged into the control box the pedals disconnect and reconnect. If I disconnect the haptic power cable into the control box they work fine. There is also a slight spark that you can see inside the box when you plug in the power cable.\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158006303018,
+      "created_at": "2025-11-02T08:54:25Z",
+      "updated_at": "2025-11-02T08:54:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011607253,
+      "body_text": "Hi Justin Gall,    Please provide your recipient name, phone number, and shipping address, along with your order number.  We will arrange to send you a replacement control box tomorrow.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-02T08:57:26Z",
+      "updated_at": "2025-11-02T08:57:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011607279,
+      "body_text": "That's great thank you very much for your help.\r\n\r\nMy order number was ssn3029\r\nJustin Gall\r\n0402064187\r\n79-85 evergreen drive south maclean 4280 Australia\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158006303018,
+      "created_at": "2025-11-02T09:03:55Z",
+      "updated_at": "2025-11-02T09:03:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011641122,
+      "body_text": "Hi.\r\nWould it be possible to get a tracking number when you send the replacement box.\r\n\r\nThanks\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158006303018,
+      "created_at": "2025-11-03T04:43:58Z",
+      "updated_at": "2025-11-03T04:43:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011645277,
+      "body_text": "Hi Justin Gall,    Here is your logistics tracking link:  https://t.17track.net/en#nums=SF6047023631530",
+      "user_id": 158001343601,
+      "created_at": "2025-11-03T07:08:57Z",
+      "updated_at": "2025-11-03T07:08:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011687299,
+      "body_text": "Thank you\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158006303018,
+      "created_at": "2025-11-03T21:01:48Z",
+      "updated_at": "2025-11-03T21:01:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

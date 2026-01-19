@@ -1,0 +1,174 @@
+{
+  "id": 654,
+  "subject": "refund",
+  "description_text": "hello, i placed an order for some pedals but i would like a refund instead. They haven’t been delivered yet so how do i go about doing that?\nSent from [Proton Mail](https://proton.me/mail/home) for iOS\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-06-20T18:13:27Z",
+  "updated_at": "2025-07-07T11:16:50Z",
+  "requester_id": 158001682988,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003609237,
+      "body_text": "Sent from [Proton Mail](https://proton.me/mail/home) for iOS\n\n> ---------- Forwarded message ----------\n> ",
+      "user_id": 158001682988,
+      "created_at": "2025-06-20T14:04:15Z",
+      "updated_at": "2025-06-20T14:04:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003621451,
+      "body_text": "Sent from [Proton Mail](https://proton.me/mail/home) for iOS\n\n> ---------- Forwarded message ----------\n> ",
+      "user_id": 158001682988,
+      "created_at": "2025-06-20T16:25:59Z",
+      "updated_at": "2025-06-20T16:25:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003677590,
+      "body_text": "Hi Roniportillo232,  Please provide your order number so we can check. If the order has already been shipped and handed over to the courier, we won’t be able to cancel it, as the shipping fee has already been paid and intercepting the package would incur double shipping costs. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-21T15:48:38Z",
+      "updated_at": "2025-06-21T15:48:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003677603,
+      "body_text": "SSN1770\n\nSent from [Proton Mail](https://proton.me/mail/home) for iOS\n\nOn Sat, Jun 21, 2025 at 11:48 AM, service@simsonn.com <[service@simsonn.com](mailto:",
+      "user_id": 158001682988,
+      "created_at": "2025-06-21T15:55:06Z",
+      "updated_at": "2025-06-21T15:55:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003677608,
+      "body_text": "Hi Roniportillo232,  We will check your order as soon as possible. It may have already been shipped, but the tracking number hasn't been updated yet. Once I have the details, I’ll get back to you immediately. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-21T15:56:07Z",
+      "updated_at": "2025-06-21T15:56:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003677609,
+      "body_text": "ID 号为 610 和 652 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-21T15:57:20Z",
+      "updated_at": "2025-06-21T15:57:20Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158003677610,
+      "body_text": "合并来自工单610  \n      主题: shipping  \n      描述:    \n hello when is #SSN1770 getting shipped? i placed order on monday. \n    Sent from Proton Mail for iOS",
+      "user_id": 158000445778,
+      "created_at": "2025-06-21T15:57:20Z",
+      "updated_at": "2025-06-21T15:57:20Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158003677612,
+      "body_text": "合并来自工单652  \n      主题: shipping  \n      描述:  \nhello when is #SSN1770 getting shipped? i placed order on monday.  \n \n      Sent from Proton Mail for iOS",
+      "user_id": 158000445778,
+      "created_at": "2025-06-21T15:57:21Z",
+      "updated_at": "2025-06-21T15:57:21Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158003677615,
+      "body_text": "Hi Roniportillo232,     Today is Saturday, and I’ve already notified our operations team. If the order hasn't been shipped yet, we can cancel it for you. However, since it’s been over a week, it’s likely that the order is already in transit and has tracking information. We will check it on Monday and get back to you promptly.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-21T16:00:19Z",
+      "updated_at": "2025-06-21T16:00:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003677618,
+      "body_text": "okay all good, thanks.\n\nSent from [Proton Mail](https://proton.me/mail/home) for iOS\n\nOn Sat, Jun 21, 2025 at 12:00 PM, service@simsonn.com <[service@simsonn.com](mailto:",
+      "user_id": 158001682988,
+      "created_at": "2025-06-21T16:02:13Z",
+      "updated_at": "2025-06-21T16:02:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003677719,
+      "body_text": "Hi Roniportillo232,  1ZX6190C0304902930",
+      "user_id": 158000445778,
+      "created_at": "2025-06-21T16:50:42Z",
+      "updated_at": "2025-06-21T16:50:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004218594,
+      "body_text": "ID 为 929 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-28T00:10:56Z",
+      "updated_at": "2025-06-28T00:10:56Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004218595,
+      "body_text": "合并来自工单929  \n      主题: shipping  \n      描述:  when is SSN1770 getting delivered? it’s been almost 3 weeks since i ordered and still nothing. Website said it would take 1 week to arrive and still not here. It’s literally the last thing i need to complete my set up and was the first thing i ordered. If it’s not here in a couple of days , i will dispute the charge because this is ridiculous.\n \n      Sent from Proton Mail for iOS",
+      "user_id": 158000445778,
+      "created_at": "2025-06-28T00:10:56Z",
+      "updated_at": "2025-06-28T00:10:56Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004218602,
+      "body_text": "Hi Roniportillo232,  We noticed that your order was placed on June 17, but the tracking number wasn’t provided until much later. I’ll follow up with our sales team today to find out what caused the delay. Also, I see that the UPS tracking number given on June 22 still shows no tracking updates. I’ll investigate the issue and get it resolved for you as soon as possible. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-28T00:15:49Z",
+      "updated_at": "2025-06-28T00:15:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004356287,
+      "body_text": "Hi Roniportillo232,  Sorry for the delay, your parcel was shipped from China and is now in the US Customs, UPS will pick it up after the customs clearance is completed and there will be a logistics update only then, thank you for your understanding. Your package is expected to be delivered on or around the 4th. ",
+      "user_id": 158001343601,
+      "created_at": "2025-07-01T11:02:43Z",
+      "updated_at": "2025-07-01T11:02:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004452846,
+      "body_text": "nothing has arrived yet. Been over 2 weeks now.\n\nSent from [Proton Mail](https://proton.me/mail/home) for iOS\n\nOn Tue, Jul 1, 2025 at 7:02 AM, service@simsonn.com <[service@simsonn.com](mailto:",
+      "user_id": 158001682988,
+      "created_at": "2025-07-07T03:10:31Z",
+      "updated_at": "2025-07-07T03:10:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

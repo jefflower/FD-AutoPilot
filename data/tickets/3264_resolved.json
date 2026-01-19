@@ -1,0 +1,214 @@
+{
+  "id": 3264,
+  "subject": "order #SSN1571 , Simsonn VAM Pro Linear Motors are not working",
+  "description_text": "Hi,\r\n\r\nI ordered for my simsonn pro x pedals the VAM pro liner motors (two of them)\r\n\r\nI connected them to the external box of the pedals and also connected the\r\npower supply (I didn't get any power cable in this shipment).\r\n\r\nYour software shows status of connected but when I am testing it I don't\r\nget any response from the motors. only silence!!!\r\n\r\nWhere is my problem??\r\n\r\nThanks in advanced,\r\n\r\nEitan lael\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-08-29T21:46:54Z",
+  "updated_at": "2025-09-07T02:56:02Z",
+  "requester_id": 158000955737,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003679567,
+      "body_text": "Hi EITAN LAEL,  Yes, we also hope everything will come to an end soon so that everyone can return to normal life. We will closely monitor the latest developments to ensure your order is handled promptly and keep you updated at all times. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T01:52:04Z",
+      "updated_at": "2025-06-22T01:52:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003679911,
+      "body_text": "That's great, thank you very much.\r\n\r\nOn Sun, Jun 22, 2025 at 4:52 AM service@simsonn.com ",
+      "user_id": 158000955737,
+      "created_at": "2025-06-22T07:19:55Z",
+      "updated_at": "2025-06-22T07:19:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004214162,
+      "body_text": "Hi simpsonn,\r\n\r\nNow after the war is ended can you try to send my order #SSN1571\r\n\r\nThanks,\r\nEitan\r\n\r\nOn Sun, Jun 22, 2025 at 4:52 AM service@simsonn.com ",
+      "user_id": 158000955737,
+      "created_at": "2025-06-27T12:58:03Z",
+      "updated_at": "2025-06-27T12:58:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004356339,
+      "body_text": "Hi EITAN LAEL,    We are contacting more logistics providers for viable shipping options. One is currently available to ship, but the price is unacceptable to us and we will wait for an update from him.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-01T11:07:19Z",
+      "updated_at": "2025-07-01T11:07:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007802442,
+      "body_text": "Hi EITAN LAEL,     Please make sure your SIMSONN Manager is updated to version 2.1.0. Then follow the steps below:    Open the software and go to Settings → Update, then click Check for Updates.    Check if the ProX firmware can be updated to version 2.0.3.    If no automatic update is available, please use Manual Update: Path: Settings → Update → Manual Update Firmware → pedals → firmware → pedals-prox.sfu.    After the update, please test again.    If the issue persists, try reconnecting the USB and power cable, then test again.    If it still doesn’t work, please send me a screenshot of the software interface so I can check further for you.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-30T03:34:39Z",
+      "updated_at": "2025-08-30T03:34:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007806706,
+      "body_text": "HI,\r\n\r\nWhen I am trying to run step 3 I have only these files in the location as\r\nhe appears in this screen shot:\r\n[image: image.png]\r\n\r\nI don't have a file by the name of \"*pedals-prox.sfu\"*\r\n\r\n*My pedals firmware version is: *\r\n[image: image.png]\r\n\r\nso step 3 can't be done....\r\n\r\nalso when I am checking for updated the software writs\r\n\"already latest version\"\r\n\r\nEitan\r\n\r\nOn Sat, Aug 30, 2025 at 6:34 AM service@simsonn.com ",
+      "user_id": 158000955737,
+      "created_at": "2025-08-30T07:08:48Z",
+      "updated_at": "2025-08-30T07:08:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007877876,
+      "body_text": "Hi EITAN LAEL,     Please select the prox.sfu file to perform the upgrade. After the upgrade is complete, reconnect the USB cable first, and then plug in the motor power supply. Finally, please confirm that the version numbers are displayed as: CPU1: 2.0.3, CPU2: 2.0.2. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-01T01:00:44Z",
+      "updated_at": "2025-09-01T01:00:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007908540,
+      "body_text": "Hi,\r\n\r\nI done all the steps above but the version still *CPU1: 2.0.2, CPU2: 2.0.0*\r\n\r\n*The FFB for VAM is not working*\r\n\r\n*what should I do?*\r\n\r\n*Thanks,*\r\n*Eitan*\r\n\r\nOn Mon, Sep 1, 2025 at 4:00 AM service@simsonn.com ",
+      "user_id": 158000955737,
+      "created_at": "2025-09-01T15:36:27Z",
+      "updated_at": "2025-09-01T15:36:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007989816,
+      "body_text": "Do you have any solution?\r\n\r\nplease response\r\n\r\nEitan\r\n\r\n",
+      "user_id": 158000955737,
+      "created_at": "2025-09-02T19:27:23Z",
+      "updated_at": "2025-09-02T19:27:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008004789,
+      "body_text": "Hi EITAN LAEL,  Could you please install the Todesk tool now? I happen to be available and can remotely check and update your device for you. Todesk does not require registration — if you see a registration prompt, simply click the “X” in the top-right corner to close it. Once installed, please provide me with the ID and temporary code, and I will be able to assist you remotely.      https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-09-03T04:40:21Z",
+      "updated_at": "2025-09-03T04:40:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008006559,
+      "body_text": "I will contact you at next day at morning (local time), now I am at work\r\nand not in front of my computer\r\n\r\nEitan\r\n\r\nOn Wed, Sep 3, 2025 at 7:40 AM service@simsonn.com ",
+      "user_id": 158000955737,
+      "created_at": "2025-09-03T06:50:20Z",
+      "updated_at": "2025-09-03T06:50:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008007076,
+      "body_text": "Hi EITAN LAEL,  Please let us know your time zone or city, and the time that works best for you locally, so that I can schedule an appropriate time to address your issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-03T07:04:27Z",
+      "updated_at": "2025-09-03T07:04:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008011894,
+      "body_text": "city: Tel aviv, israel gmt+2\r\n\r\nlocal time 07:00 am\r\n\r\nOn Wed, Sep 3, 2025 at 10:04 AM service@simsonn.com ",
+      "user_id": 158000955737,
+      "created_at": "2025-09-03T07:37:03Z",
+      "updated_at": "2025-09-03T07:37:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008020694,
+      "body_text": "Hi EITAN LAEL,  Okay, let's set it for 12:00 PM (China Time) on September 4th. I will be online on time. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-03T09:54:31Z",
+      "updated_at": "2025-09-03T09:54:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008056563,
+      "body_text": "Hi,\r\n\r\nDevice id: 993 335 301\r\ntemp pass: w4pgm65d\r\n\r\neitan\r\n\r\nOn Wed, Sep 3, 2025 at 12:54 PM service@simsonn.com ",
+      "user_id": 158000955737,
+      "created_at": "2025-09-04T03:59:15Z",
+      "updated_at": "2025-09-04T03:59:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008104169,
+      "body_text": "Hi Service,\r\n\r\nNo, we have a new problems with the VAM Pro:\r\n\r\n1. The Simpsson Manager does not open, there is an error popup in chinese\r\n[image: image.png]\r\n\r\n2. The VAM engine does not stop working. They are working when the computer\r\nis on and working when he is off. all the time. they will not\r\nwork only when I am disconnecting the power supply.\r\n\r\nThanks,\r\nEitan\r\n\r\n\r\nOn Thu, Sep 4, 2025 at 7:25 AM service@simsonn.com ",
+      "user_id": 158000955737,
+      "created_at": "2025-09-04T16:14:19Z",
+      "updated_at": "2025-09-04T16:14:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008113201,
+      "body_text": "also now it returns to previous version. no exe file for the new\r\n\r\nEitan\r\n\r\n",
+      "user_id": 158000955737,
+      "created_at": "2025-09-04T17:02:26Z",
+      "updated_at": "2025-09-04T17:02:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008120084,
+      "body_text": "Hi,\r\n\r\n After checking and replacing the right shortcut to the manager,  The\r\nsoftware and the hardware are running fine!!\r\n\r\nPlease ignore the last mail that I sent to you and close the ticket\r\n\r\nThanks,\r\nEitan\r\n\r\n",
+      "user_id": 158000955737,
+      "created_at": "2025-09-04T19:52:02Z",
+      "updated_at": "2025-09-04T19:52:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201094,
+      "body_text": "ID 为 607 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T02:55:47Z",
+      "updated_at": "2025-09-07T02:55:47Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158008201095,
+      "body_text": "合并来自工单607  \n      主题: Re: Simsonn Order Shipment Confirmation  \n      描述:  Thanks for your response.   \n I hope also this war will be ending in the near future \n   \n Eitan \n \n  \n בתאריך יום ה׳, 19 ביוני 2025, 13:53, מאת SIMSONN ‏<service@simsonn.com>: \n \n \n\n  \n  \n  \n  \n  \n\n\n\n   \n    \n      \n\n         \n          \n  \n\n     \n      \n\n        \n          \n\n             \n\n              \n                \n\n                   \n                       \n                        SIMSONN\n                       \n                   \n\n                \n              \n\n\n             \n          \n        \n\n\n      \n     \n  \n\n\n\n          \n  \n\n     \n      \n        \n          \n\n             \n              \n             Hi, your order package is ready, but due to the war, there is no logistics channel from China to Israel for the time being. We will ship your order when the logistics is restored. Protect yourself and wish you all the best my friend . \n\n             \n          \n        \n\n      \n     \n  \n\n\n          \n  \n\n     \n      \n        \n          \n\n             \n              \n               If you have any questions, reply to this email or contact us at service@simsonn.com",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T02:55:47Z",
+      "updated_at": "2025-09-07T02:55:47Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

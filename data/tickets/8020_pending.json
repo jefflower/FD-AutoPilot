@@ -1,0 +1,24 @@
+{
+  "id": 8020,
+  "subject": "Requesting Update on Order SSN4426",
+  "description_text": "Hi Simson,\r\n\r\n\r\nI’m reaching out to request an update on my order SSN4426. The delivery has\r\ntaken much longer than expected, and the communication throughout this\r\nprocess has been very poor.\r\n\r\n\r\nI would appreciate a clear update on when my order will arrive. Your\r\ncustomer service and support team need to be more responsive, as this\r\nexperience has been frustrating.\r\n\r\n\r\nPlease get back to me as soon as possible with the status and estimated\r\ndelivery date.\r\n\r\n\r\nThank you.\r\n\r\n\r\nBest regards,\r\n\r\nAdrina Alvarez\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-11T19:55:47Z",
+  "updated_at": "2025-12-12T11:53:40Z",
+  "requester_id": 158007667362,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014381212,
+      "body_text": "Hi Adrina Alvarez,    I'm terribly sorry for the delay in responding. Here is your parcel tracking information.  https://t.17track.net/en#nums=SF6047131099621",
+      "user_id": 158001343601,
+      "created_at": "2025-12-12T11:53:36Z",
+      "updated_at": "2025-12-12T11:53:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

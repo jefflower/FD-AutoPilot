@@ -1,0 +1,24 @@
+{
+  "id": 7828,
+  "subject": "Clutch pedal problem",
+  "description_text": "Dear Simsonn Customer Service Team,\r\n\r\nI am writing regarding my recent order for the Simracing Load Cell Pedals,\r\nOrder ID *SSN2962*, which was delivered on October 21, 2025.\r\n\r\nI am encountering an issue with my clutch pedal that I hope you can help me\r\nresolve.\r\n\r\nI initially configured the clutch when I first set up my equipment, but I\r\nhave not used it much since then. I recently acquired a shifter, and now I\r\ncannot get the system to recognize the clutch pedal.\r\n\r\nI have verified that the clutch is plugged in, and the accelerator and\r\nbrake pedals are working correctly.\r\n\r\nDo you have any suggestions for troubleshooting steps I could take to get\r\nthe clutch recognized?\r\n\r\nThank you for your assistance.\r\n\r\nTomas Lindstrom\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-10T01:30:15Z",
+  "updated_at": "2025-12-11T07:06:26Z",
+  "requester_id": 158007726829,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014302666,
+      "body_text": "Hi Tomas Lindstrom,  Please try updating the firmware again following the steps below, and then re-configure the offset. If the issue persists, please check whether the plastic part in the clutch mechanism is damaged or if the spring is missing or has fallen out.      Please follow the steps below:    Press and hold the upgrade button on the PlusX main controller, then reconnect the USB cable.    Open SIMSONN Manager 2.1.0 and check if it has entered recovery mode.    If recovery mode is detected, go to Settings → Update → Manual Update Firmware → pedals → firmware → pedals-plusx.sfu.    After the update is complete, test the device to see if it has been restored successfully.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T07:06:26Z",
+      "updated_at": "2025-12-11T07:06:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

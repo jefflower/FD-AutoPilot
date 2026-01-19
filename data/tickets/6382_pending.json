@@ -1,0 +1,34 @@
+{
+  "id": 6382,
+  "subject": "Order #SSN3335 - pedals not working",
+  "description_text": "Hello, I received my Simsonn Plus X pedals this week and I tried to connect\r\nthem today for the first time. I installed Simsonn manager and the pedals\r\nwere detected and the bars were moving with inputs. I was able to calibrate\r\nthe pedals. However when I tried several games the pedals were not\r\ndetected.\r\n\r\nOn windows game controllers (joy.cpl), the pedals are detected but there\r\nare no inputs at all - when pressing the pedals the bars do no move.\r\n\r\nI tried simhub and it only recognises the vam motors but not the pedals\r\nthemselves.\r\n\r\nI've returned to Simsonn manager and there now seems to be latency when I\r\npress the throttle pedal quickly before the bar moves which I did not\r\nnotice before. Simsonn manager is updated to latest firmware.\r\n\r\nI tried a second computer and windows detects the pedals as a controller\r\nthere too, but there are still no inputs when moving the pedals.\r\n\r\nI need a resolution to this please as soon as possible as I am currently\r\nstuck with no way of using my racing rig. I made the purchase from your\r\nAliExpress store.\r\n\r\nThank you,\r\nLiam Hutchinson\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-19T23:36:28Z",
+  "updated_at": "2025-12-22T11:02:29Z",
+  "requester_id": 158007181601,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012634365,
+      "body_text": "Ok I managed to manually update the firmware and this seems to have fixed it. At least I'm getting signal to my PC outside of Simsonn manager now but haven't tested in game.      However, another issue I need resolving is that the vam motor bracket supplied for the throttle pedal does not fit. It is too wide to fit in the available slot (see photo attached). I have attached the motor for the brake pedal and that is working, but to fit the bracket for the throttle pedal I would need to file it down. This is a little disappointing on brand new pedals. Is there another solution? Additionally, whilst the brake pedal is smooth, there is a lot of resistance on the throttle pedal and I feel a grinding sensation when pressing the pedal. It is not smooth. How can this be resolved?     I note you currently have black Friday sales such as BLACK45 discount code. Given the issues I'm experiencing, please could this discount be applied retrospectively?     Thank you ",
+      "user_id": 158007181601,
+      "created_at": "2025-11-20T11:43:25Z",
+      "updated_at": "2025-11-20T11:43:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158012738588,
+      "body_text": "你好，利亚姆·哈钦森，      We apologize for the issues you are experiencing.    Throttle bracket installation issue: Follow the instructions in the picture—loosen the M6 screws on both sides of the pedal arm, install the VAM bracket, and then tighten the screws.    Throttle signal delay: Use a wire to connect the computer case, the metal screws of the pedal, and the ground of the main controller to improve signal stability.    Throttle hydraulic operation: Normally, you should hear fluid movement in the pedal. You can clean any dust on the hydraulic surface and add a small amount of lubricant for testing.     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding     https://www.reddit.com/r/simracing/comments/1n291hi/solution_for_simsonn_vam_pro_emi_issues/",
+      "user_id": 158000445778,
+      "created_at": "2025-11-22T03:09:37Z",
+      "updated_at": "2025-11-22T03:09:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

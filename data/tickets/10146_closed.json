@@ -1,0 +1,24 @@
+{
+  "id": 10146,
+  "subject": "Order No. SSN5259",
+  "description_text": "Hi,\r\n\r\nI received the order but it doesn’t include the Vam Pro linear motor and\r\nmounting brackets for Brake and Gas pedals.\r\n\r\nMissing items ; 2x vam pro linear motors and 2x mounting brackets for brake\r\nand gas\r\n\r\nSee below pics\r\n\r\nThanks\r\nParth Patel\r\n\r\n",
+  "status": 5,
+  "priority": 4,
+  "created_at": "2026-01-06T23:16:54Z",
+  "updated_at": "2026-01-07T04:58:58Z",
+  "requester_id": 158008895420,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016013225,
+      "body_text": "",
+      "user_id": 158008895420,
+      "created_at": "2026-01-06T23:18:18Z",
+      "updated_at": "2026-01-06T23:18:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    }
+  ]
+}

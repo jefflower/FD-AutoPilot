@@ -1,0 +1,44 @@
+{
+  "id": 3853,
+  "subject": "Re: Simsonn VAM haptic pedals",
+  "description_text": "Everything connected correctly and it did work for the first couple of days. Then a few days ago it stopped working. Tried the test button on both simsonn manager and simhub and got no vibrations. Also when plugging in, I don’t hear anything move or vibrate. And even when it was working, the vibrations wasn’t as strong as I would have hoped even on max vibration settings. Some points of the game, I thought the vibrations wasn’t from the pedals but it was from the wheelbase and the pedals vibrate strength was low. Sent from my iPhone On Sep 15, 2025, at 04:58, General and sales enquiries <service@simsonn.com> wrote: ﻿ \r\n Hi Could you please provide us with some pinctures or a video? It will help us to know what the problem is. If it was damaged, we will ship the replacement to you. \r\n \r\n service@simsonn.com \r\n From: Ty Date: 2025-09-15 12:03 To: service Subject: Simsonn VAM haptic pedals I recently bought them on Amazon a few weeks ago and they recently stopped working. Tried on 2 games. Tested in simsonn software and simhub. I’m not sure if it’s software or it’s the haptic motors. The pedals and motors are recognized in software but doesn’t vibrate. \r\n \r\n Thanks \r\n Sent from my iPhone \r\n \r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-09-15T20:51:05Z",
+  "updated_at": "2025-09-25T10:23:53Z",
+  "requester_id": 158004549819,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008837335,
+      "body_text": "Hi Ty Anderson,    Please provide your order number, contact name, phone number, and address, and we will send you a replacement unit.  Additionally, we recommend keeping the PlusX strength setting below 50%, and the same applies to SimHub. High power combined with continuous vibration telemetry is not suitable for the VAM motor’s operating characteristics. The VAM motor is designed for short, pulsed movements, while the VAM Pro features bidirectional reciprocating motion specifically engineered to deliver more precise haptic feedback.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-17T01:24:20Z",
+      "updated_at": "2025-09-17T01:24:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008895556,
+      "body_text": "I thought they could be used to feel the road textures while driving. So the VAM Pro is more for the road textures and max strength? \r\n\r\n\r\nORDER # 114-4102869-4149022\r\nTy Anderson\r\n(956) 564-1754\r\n\r\n2400 Glenna Goodacre Blvd\r\nUnit 3114 - B\r\nLubbock TX 79401\r\nUnited States\r\n\r\n> ",
+      "user_id": 158004549819,
+      "created_at": "2025-09-17T21:22:21Z",
+      "updated_at": "2025-09-17T21:22:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008933326,
+      "body_text": "Hi Ty Anderson, The principle of the VAM Pro is based on high-frequency reciprocating motion, which makes it inherently well-suited for providing continuous vibration feedback. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-19T01:54:43Z",
+      "updated_at": "2025-09-19T01:54:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

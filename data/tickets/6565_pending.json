@@ -1,0 +1,94 @@
+{
+  "id": 6565,
+  "subject": "Change of billing address",
+  "description_text": "Hi, i have made a purchase but have forgotten to change the billing address\r\nfrom a personal one to a business one. I can't find a way to refund or\r\ncancel it before it arrives so I'm writing to you.\r\nIs there a way for you to refund it so i can fill the correct info next\r\ntime? Order number is #SSN3749\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-11-22T22:25:07Z",
+  "updated_at": "2025-12-05T11:17:13Z",
+  "requester_id": 158007262844,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012799358,
+      "body_text": "Hi Nikola Vatev,    Please don't worry, we can modify the address for you directly.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-24T07:49:12Z",
+      "updated_at": "2025-11-24T07:49:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012812915,
+      "body_text": "Thank you, what details exactly do you need me to provide? Said company is\r\nbased in bulgaria if that changes anything\r\n\r\nOn Mon, 24 Nov 2025 at 9:49, service@simsonn.com ",
+      "user_id": 158007262844,
+      "created_at": "2025-11-24T11:58:30Z",
+      "updated_at": "2025-11-24T11:58:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012816816,
+      "body_text": "Both, the new shipping address is “Sofia, 1000 Prohladen kat 12”.\r\n\r\nAs for the billing address\r\nCompany name: Air Tech LTD\r\nMaterially responsible person: Nikola Dimov\r\nBullstat/VAT number: BG130979452\r\n\r\nExcuse me if the translations are not correct, I am not aware if you need\r\nanything else, normally for in country invoices it is enough.\r\n\r\nOn Mon, 24 Nov 2025 at 14:38, General and sales enquiries <\r\nservice@simsonn.com> wrote:\r\n\r\n> You can provide the specific address you need to change. Only the billing\r\n> address needs to be changed; the shipping address doesn't need to be\r\n> changed, right?\r\n>\r\n>\r\n>\r\n> ----------Reply to Message----------\r\n> ",
+      "user_id": 158007262844,
+      "created_at": "2025-11-24T12:49:21Z",
+      "updated_at": "2025-11-24T12:49:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012817107,
+      "body_text": "Thank you for the amazing customer support and sorry for the inconvenience\r\n\r\nOn Mon, 24 Nov 2025 at 14:57, General and sales enquiries <\r\nservice@simsonn.com> wrote:\r\n\r\n> Okay, thank you for providing the information.\r\n>\r\n>\r\n>\r\n> ----------Reply to Message----------\r\n> ",
+      "user_id": 158007262844,
+      "created_at": "2025-11-24T13:01:46Z",
+      "updated_at": "2025-11-24T13:01:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012858227,
+      "body_text": "Hi Nikola Vatev,   ​   You mentioned a new shipping address as “Sofia, 1000 Prohladen Kat 12”. Could you please confirm the full details including:    Street name and number (e.g., Prohladen Kat 12)    Postal code (1000 or 1362?)    District/Neighbourhood (e.g., Suhodol)    Thank you for your help.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-25T03:47:48Z",
+      "updated_at": "2025-11-25T03:47:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012858638,
+      "body_text": "Of course\r\nProhladen Kat 12\r\n1000\r\nSuhodol\r\n\r\nThank you\r\n\r\nOn Tue, 25 Nov 2025 at 5:47, service@simsonn.com ",
+      "user_id": 158007262844,
+      "created_at": "2025-11-25T04:22:36Z",
+      "updated_at": "2025-11-25T04:22:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013097669,
+      "body_text": "Hi again, when can I expect the pedals to be shipped, most of my setup has\r\narrived, I’m only waiting for you.\r\n\r\n",
+      "user_id": 158007262844,
+      "created_at": "2025-11-29T08:12:51Z",
+      "updated_at": "2025-11-29T08:12:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013492181,
+      "body_text": "Hi Nikola Vatev,    I apologize for not getting back to you sooner. Here is your shipping tracking link.  https://www.dhl.com/us-en/home/tracking.html?tracking-id=CE326633737DE",
+      "user_id": 158001343601,
+      "created_at": "2025-12-05T11:17:12Z",
+      "updated_at": "2025-12-05T11:17:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

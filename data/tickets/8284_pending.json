@@ -1,0 +1,64 @@
+{
+  "id": 8284,
+  "subject": "VAM Pro Haptic issue",
+  "description_text": "To whom it concerns,\r\n\r\nHave fitted a set of VAM Pro Haptic to my Pro X Pedals some months ago. Even after a number of software updates I continue to have an issue.\r\n\r\nWhen I stop a sim race and exist the race the VAM continues to vibrate. The units have been installed with cable supplied and are isolated from the power cables.\r\n\r\nAny advice?\r\n\r\n\r\nRegards\r\nStephen\r\nStephen Wilson\r\n8A Lang Street, KURRI KURRI, NSW. 2327.  AUSTRALIA\r\nPhone  61 0417 040 028\r\nEmail   stephen913@outlook.com<mailto:stephen913@outlook.com>\r\n\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-15T10:52:15Z",
+  "updated_at": "2025-12-19T08:22:24Z",
+  "requester_id": 158001879833,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014505522,
+      "body_text": "Hi Stephen Wilson,  If this happens, it indicates that the computer’s grounding is not reliable, possibly because a three-prong plug was not used with a three-prong wall outlet. You can refer to the post below: connect the computer case to the stand, and connect the control box to the metal screws on the pedals. This should resolve the disconnection issue.  https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-12-15T10:55:47Z",
+      "updated_at": "2025-12-15T10:55:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014505625,
+      "body_text": "Whilst I will review your video I think this will be a red herring as in Australian 3 pin cabling and plugs are standard wall points and all power cables.\r\n\r\nAfter reviewing the video and acting on the advice I will get back and advise if there any change, in about 48 hours.\r\n\r\nRegards\r\nStephen\r\nStephen Wilson\r\n8A Lang Street, KURRI KURRI, NSW. 2327.  AUSTRALIA\r\nPhone  61 0417 040 028\r\nEmail   stephen913@outlook.com<mailto:stephen913@outlook.com>\r\n\r\n\r\n",
+      "user_id": 158001879833,
+      "created_at": "2025-12-15T11:00:58Z",
+      "updated_at": "2025-12-15T11:00:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014617102,
+      "body_text": "Hi Stephen Wilson,       In fact, you only need a single wire to connect the PC case, the control box housing, and the metal screws of the pedals together to create a common ground, which can effectively eliminate interference issues. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T07:51:06Z",
+      "updated_at": "2025-12-17T07:51:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014671781,
+      "body_text": "To whom concerns,\r\n\r\nHave run a ground to bolt below Wheel Hub (Moza R16).\r\n\r\nChecked wheel before and after for EMI but both time the wheel stayed turned off.\r\n\r\nUnfortunately the Pedals and VAM continue to stay on after stop running in the SIM or turning machine off.. Didn't mention before that the pedal lighting stays on unless I turn all power off.\r\n\r\nAny further advice?\r\n\r\n\r\nRegards\r\nStephen\r\nStephen Wilson\r\n8A Lang Street, KURRI KURRI, NSW. 2327.  AUSTRALIA\r\nPhone  61 0417 040 028\r\nEmail   stephen913@outlook.com<mailto:stephen913@outlook.com>\r\n\r\n\r\n",
+      "user_id": 158001879833,
+      "created_at": "2025-12-18T02:57:26Z",
+      "updated_at": "2025-12-18T02:57:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014747751,
+      "body_text": "Hi Stephen Wilson,  Most importantly, use a wire to securely connect the PC chassis to the screws on the main control box, ensuring a common ground. This helps improve system stability and reduce interference.      Many computer motherboards continue to supply power to USB ports even after shutdown. As a result, the pedals’ lights will stay on, since the pedals cannot detect whether the computer is off. You can try turning off the computer’s power switch to completely cut off power. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-19T08:22:23Z",
+      "updated_at": "2025-12-19T08:22:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

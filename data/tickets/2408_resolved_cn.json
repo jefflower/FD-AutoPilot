@@ -1,0 +1,375 @@
+{
+  "id": 2408,
+  "subject": "踏板输入不稳定",
+  "description_text": "你好，我有一套朋友送给我的 simsonn pro plus 踏板。在校准时遇到了问题，想问问有没有解决方法。问题是，即使完全不碰踏板，输入信号也会乱跳，导致无法校准。我试过将控制盒和踏板接地到墙上的插座，但似乎没什么用。是控制盒本身有问题吗？",
+  "status": 4,
+  "priority": 2,
+  "created_at": "2025-08-07T07:32:59Z",
+  "updated_at": "2025-08-10T13:56:19Z",
+  "requester_id": 158002784206,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006598795,
+      "body_text": "jesse sturgill，您好，请提供踏板和控制器安装的照片，并告知我们您的方向盘基座品牌。您也可以通过 Google Drive 分享一段视频，我们将分析所有信息为您提供解决方案。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-09T15:01:17Z",
+      "updated_at": "2025-08-09T15:01:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006608545,
+      "body_text": "感谢回复。我还没有把踏板完全安装到底盘上，因为想先测试它们是否正常工作。我用的是 thrustmaster t818 方向盘基座，但即使基座关闭并拔掉电源，踏板仍然显示随机输入。即使将踏板与控制器断开连接，x 旋转轴上也会显示随机不稳定的输入。",
+      "user_id": 158002784206,
+      "created_at": "2025-08-09T18:30:01Z",
+      "updated_at": "2025-08-09T18:30:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006615577,
+      "body_text": "jesse sturgill，您好，请将控制盒的绿线连接到踏板上的任意金属螺丝上，但请注意油漆可能会影响接地效果。您也可以尝试升级到 SIMSONN Manager 2.1.0。更新方法如下：进入“设置”→“更新”→“手动固件更新”→选择“踏板”→选择 plus.sfu 文件进行升级。 https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T03:10:46Z",
+      "updated_at": "2025-08-10T03:10:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006615629,
+      "body_text": "我的控制盒没有绿线。我试过用一根电线连接控制盒的一个螺丝到踏板上，但没有效果。我也在 simsonn manager 中更新了模拟踏板，但同样没有帮助。在 simsonn manager 中，刹车踏板会自己上下移动",
+      "user_id": 158002784206,
+      "created_at": "2025-08-10T03:17:36Z",
+      "updated_at": "2025-08-10T03:17:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006615666,
+      "body_text": "jesse sturgill，您好，请通过 Google Drive 上传并分享一段视频来说明问题，因为仅凭文字描述我们无法准确分析和解决问题。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T03:21:10Z",
+      "updated_at": "2025-08-10T03:21:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006616962,
+      "body_text": "https://drive.google.com/file/d/1s03FOZBf47USlwn2kPLGMhKWc3LUYR4Y/view?usp=drivesdk 这是一个链接，显示了当控制器直接放在踏板上时，输入信号自行跳动的情况",
+      "user_id": 158002784206,
+      "created_at": "2025-08-10T03:58:28Z",
+      "updated_at": "2025-08-10T03:58:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006619877,
+      "body_text": "jesse sturgill，您好，您的视频需要授权才能访问。请授权我们查看。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T04:23:43Z",
+      "updated_at": "2025-08-10T04:23:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006622330,
+      "body_text": "jesse sturgill，您好，这种程度的数值波动是正常的。无论压力传感器的量程是 1–20 公斤还是 1–200 公斤，当在 0–65536 范围内识别时，读数都不可能完全静止。高精度压力传感器不是角度传感器——任何轻微的移动或振动都会导致数值变化。但是，当这种变化缩放到 1–100% 的范围时，它不会影响您在游戏中的实际踏板操作。另外，请不要将控制盒放在踏板上。在实际使用中，我们只使用 X、Y 和 Z 轴；所有其他轴都可以忽略。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T04:37:02Z",
+      "updated_at": "2025-08-10T04:37:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006625540,
+      "body_text": "好的，我试了校准并启动游戏，但在 assetto corsa 和 BeamNG 中，油门和刹车都显示被踩下。在 simsonn manager 的滑块上一直显示白条。我该如何正确校准它们？",
+      "user_id": 158002784206,
+      "created_at": "2025-08-10T05:05:00Z",
+      "updated_at": "2025-08-10T05:05:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006625888,
+      "body_text": "jesse sturgill，您好，白条代表原始数据，可以忽略；只需确保完全踩下时，蓝色的游戏数据条能从 0% 到 100%。校准后，请在游戏中重新绑定按钮或踏板。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T05:15:28Z",
+      "updated_at": "2025-08-10T05:15:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006628048,
+      "body_text": "好的，我还是没法让它们在 assetto corsa 中工作。在控制设置里能识别到它们，但在游戏中完全没反应",
+      "user_id": 158002784206,
+      "created_at": "2025-08-10T05:52:12Z",
+      "updated_at": "2025-08-10T05:52:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006628055,
+      "body_text": "jesse sturgill，您好， 您可以下载 Todesk 工具（无需注册）。安装后，请提供您的 ID 和临时密码，我将远程协助您。 https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T05:55:27Z",
+      "updated_at": "2025-08-10T05:55:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006631115,
+      "body_text": "好的，设备 ID 是 262 561 734\n密码是 ems4zx8h",
+      "user_id": 158002784206,
+      "created_at": "2025-08-10T06:12:28Z",
+      "updated_at": "2025-08-10T06:12:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006631209,
+      "body_text": "踏板和控制器的图片",
+      "user_id": 158002784206,
+      "created_at": "2025-08-10T06:41:54Z",
+      "updated_at": "2025-08-10T06:41:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006633614,
+      "body_text": "jesse sturgill，您好，",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T07:03:42Z",
+      "updated_at": "2025-08-10T07:03:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006633631,
+      "body_text": "这是没有线缆接触刹车的情况",
+      "user_id": 158002784206,
+      "created_at": "2025-08-10T07:07:56Z",
+      "updated_at": "2025-08-10T07:07:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006633650,
+      "body_text": "jesse sturgill，您好， 刹车的黑色预紧螺母需要对减震器施加足够的预紧力；否则，刹车将无法正常复位。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T07:11:32Z",
+      "updated_at": "2025-08-10T07:11:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006633659,
+      "body_text": "jesse sturgill，您好，请将您的联系人姓名、电话号码和地址通过电子邮件发送给我们，我们将为您寄送一个替换的刹车压力传感器。另外，请提供一张照片，显示刹车线缆断裂的位置。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T07:14:43Z",
+      "updated_at": "2025-08-10T07:14:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006633665,
+      "body_text": "线缆刚从连接器末端脱出\n姓名：Jesse Sturgill 电话：520-404-7008 地址：700 W Southern Ave, Apache Junction, AZ 85120, United States of America",
+      "user_id": 158002784206,
+      "created_at": "2025-08-10T07:17:39Z",
+      "updated_at": "2025-08-10T07:17:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006633669,
+      "body_text": "jesse sturgill，您好，您可以尝试将刹车的 RJ11 4P4C 连接器带到附近的电脑商店，按照与油门和离合器相同的接线顺序重新压一个新接头。这应该能恢复功能。此外，请将离合器直接插入刹车端口，测试油门和刹车控制盒是否正常工作，然后在 VKB 工具中检查。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T07:20:39Z",
+      "updated_at": "2025-08-10T07:20:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006641295,
+      "body_text": "你好，我想告诉你们，我的刹车踏板修好了，又能用了。但是现在，在没有任何输入的情况下，刹车和油门都显示在 50% 左右",
+      "user_id": 158002784206,
+      "created_at": "2025-08-10T09:50:28Z",
+      "updated_at": "2025-08-10T09:50:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006646945,
+      "body_text": "jesse sturgill，您好， 请截取您的手动校准视频截图，并通过 Google Drive 将视频链接发送给我。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T11:06:44Z",
+      "updated_at": "2025-08-10T11:06:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006651672,
+      "body_text": "https://drive.google.com/file/d/1fgEGrlJP_m1Oy_WPo-788kvYcW3_bGGq/view?usp=drivesdk\n这是校准视频",
+      "user_id": 158002784206,
+      "created_at": "2025-08-10T11:32:03Z",
+      "updated_at": "2025-08-10T11:32:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006651740,
+      "body_text": "jesse sturgill，您好， 我需要您的授权才能查看该文件。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T11:34:00Z",
+      "updated_at": "2025-08-10T11:34:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006651759,
+      "body_text": "它们在 BeamNG 和 CarX Drift 中工作正常，但我仍然无法让它们在 Assetto Corsa 中工作",
+      "user_id": 158002784206,
+      "created_at": "2025-08-10T11:34:27Z",
+      "updated_at": "2025-08-10T11:34:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006651819,
+      "body_text": "现在应该可以查看了",
+      "user_id": 158002784206,
+      "created_at": "2025-08-10T11:36:07Z",
+      "updated_at": "2025-08-10T11:36:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006651864,
+      "body_text": "jesse sturgill，您好， 请使用 VKB 工具检查——只踩油门不应触发刹车输入，踩刹车也不应触发油门输入。请确认这一点，您也可以发一张照片给我。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T11:38:17Z",
+      "updated_at": "2025-08-10T11:38:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006651865,
+      "body_text": "jesse sturgill，您好， 请使用 VKB 工具检查——只踩油门不应触发刹车输入，踩刹车也不应触发油门输入。请确认这一点，您也可以发一张照片给我。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T11:39:08Z",
+      "updated_at": "2025-08-10T11:39:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006651927,
+      "body_text": "在 VKB 上，油门不再触发刹车，刹车也不再触发油门。我会发一个视频",
+      "user_id": 158002784206,
+      "created_at": "2025-08-10T11:42:55Z",
+      "updated_at": "2025-08-10T11:42:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006651955,
+      "body_text": "https://drive.google.com/file/d/1TiWE0xnlJRaGpUeVVf0gK4FMpl-5Tdpb/view?usp=drivesdk\n踏板在 VKB 上修复后的情况",
+      "user_id": 158002784206,
+      "created_at": "2025-08-10T11:44:32Z",
+      "updated_at": "2025-08-10T11:44:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006652312,
+      "body_text": "jesse sturgill，您好，我需要您的授权才能查看该文件。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T12:06:32Z",
+      "updated_at": "2025-08-10T12:06:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006652349,
+      "body_text": "jesse sturgill，您好， 踏板信号现在正常了，但 RX 轴仍然出现。请在桌面上选择 plus.sfu 文件，再次手动更新固件。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T12:09:34Z",
+      "updated_at": "2025-08-10T12:09:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006652462,
+      "body_text": "好的，已从桌面上的 plus.sfu 文件安装更新，rx 信号现在稳定了。它们在 carx 和 beamng 中仍然可以工作，但我完全无法让它们在 assetto corsa 中工作",
+      "user_id": 158002784206,
+      "created_at": "2025-08-10T12:41:56Z",
+      "updated_at": "2025-08-10T12:41:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006652495,
+      "body_text": "jesse sturgill，您好， 请提供您的 Todesk ID 和临时验证码，以便我为您检查。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T12:53:54Z",
+      "updated_at": "2025-08-10T12:53:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006652507,
+      "body_text": "ID: 262 561 734\n密码: i6n7ecj7",
+      "user_id": 158002784206,
+      "created_at": "2025-08-10T12:58:53Z",
+      "updated_at": "2025-08-10T12:58:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006654567,
+      "body_text": "",
+      "user_id": 158002784206,
+      "created_at": "2025-08-10T13:56:19Z",
+      "updated_at": "2025-08-10T13:56:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

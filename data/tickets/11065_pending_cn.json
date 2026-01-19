@@ -1,0 +1,45 @@
+{
+  "id": 11065,
+  "subject": "采购订单 #SSN5645",
+  "description_text": "亲爱的客服，\n\n \n\n我想通过此方式询问，上述采购订单预计何时可以发货。\n\n \n\n我期待您的答复。\n\n \n\n诚挚问候\n\nRaphael Hainke\n\n﻿",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-16T10:01:23Z",
+  "updated_at": "2026-01-17T07:06:08Z",
+  "requester_id": 158009278205,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017259737,
+      "body_text": "您好 Raphael-Hainke @t-online. de, 对于延误我们深表歉意。有两批运往我们德国仓库的货物因欧洲大雪影响，造成道路堵塞和派送延迟。我们将加急派送，或寻找其他物流渠道，尽快从中国为您发货。订单完成后，我们将根据延迟情况提供补偿。对于给您带来的不便，我们深表歉意。",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T11:57:23Z",
+      "updated_at": "2026-01-16T11:57:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017262408,
+      "body_text": "非常感谢您的快速答复。\n\n没问题。我只是想了解下当前的状态。\n\n非常感谢你们加急派送。\n\n \n\n \n\n \n\n \n\n \n\n-----原始消息-----\n\n主题: 回复: 采购订单 #SSN5645\n\n日期: 2026-01-16T12:57:39+0100",
+      "user_id": 158009278205,
+      "created_at": "2026-01-16T12:32:10Z",
+      "updated_at": "2026-01-16T12:32:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017318283,
+      "body_text": "您好 Raphael-Hainke @t-online. de, 不客气。感谢您购买我们的产品。将来如有任何问题，请随时与我们联系。我们会及时为您处理。",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T07:06:08Z",
+      "updated_at": "2026-01-17T07:06:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

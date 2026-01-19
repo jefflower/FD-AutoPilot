@@ -1,0 +1,65 @@
+{
+  "id": 6317,
+  "subject": "订单 #SSN3022",
+  "description_text": "你好，晚上好，在更新我的 Simsonn Plus X 踏板后，油门和离合器，即使踩到最大，也只能到39%，再也到不了100%。\n\n你能帮帮我吗？谢谢你。",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-11-18T23:23:44Z",
+  "updated_at": "2025-11-19T03:07:41Z",
+  "requester_id": 158007169231,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012557438,
+      "body_text": "嗨 Sneky,    更换硬件后，你必须重新校准。你可以点击这里，然后踩下踏板重新校准。",
+      "user_id": 158001343601,
+      "created_at": "2025-11-19T02:21:31Z",
+      "updated_at": "2025-11-19T02:21:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012557815,
+      "body_text": "你好，\n\n我没有更换我的硬件，是应用程序上的固件更新。\n重新校准并不能解决问题。\n\n\nsupport @simsonn.com",
+      "user_id": 158007169231,
+      "created_at": "2025-11-19T02:45:08Z",
+      "updated_at": "2025-11-19T02:45:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012558076,
+      "body_text": "嗨 Sneky,     你可以使用下面的链接下载最新的 SIMSONN Manager 2.1.2。然后，按照以下步骤进入固件更新过程：    按住PlusX控制器盒上的升级按钮，然后重新连接USB。软件将进入 SIMSONN 刷机模式；    进入设置 → 更新 → 手动固件更新 → pedals → firmware → pedals-plusx.sfu 开始固件更新；    固件更新完成后，松开升级按钮；    最后，测试踏板并进行校准。         https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-11-19T03:02:21Z",
+      "updated_at": "2025-11-19T03:02:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012558080,
+      "body_text": "重启电脑后，我重新进行了校准，现在它工作正常了。\n\n谢谢你。\n\nSneky <wsneky @gmail.com> 写于 (星期三, 19/11/2025 02:44):\n\n> 你好，\n>\n> 我没有更换我的硬件，是应用程序上的固件更新。\n> 重新校准并不能解决问题。\n>\n>\n> support @simsonn.com",
+      "user_id": 158007169231,
+      "created_at": "2025-11-19T03:02:40Z",
+      "updated_at": "2025-11-19T03:02:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012558173,
+      "body_text": "",
+      "user_id": 158007169231,
+      "created_at": "2025-11-19T03:07:40Z",
+      "updated_at": "2025-11-19T03:07:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

@@ -1,0 +1,55 @@
+{
+  "id": 8224,
+  "subject": "Device suddenly not detected.",
+  "description_text": "Hi,\n\nI purchased the SQ Pro sequential from Amazon along with the HB Pro on June 26, 2025. It has worked perfectly up until this morning, where now it is not detected and the LEDs are white instead of the static red I had both my SQ Pro and HB Pro set to. Simsonn Manager recognizes my VAM Pro haptic reactors and also my HB Pro, but the SQ Pro is no longer detected as it has been since new. I have tested the USB cable by switching it with my HB Pro, and the issue remains, ruling out the USB cord as the cause. This issue is with the SQ Pro device. Now, this is only less than six months old, what can you do to assist me with this issue? I have attached the invoice from Amazon detailing my purchase in PDF format, as well as a screen capture of SIMSONN Manager.\n\nThank you for your assistance\n\n[cid:fd5ab9ad-1db0-4d65-9634-1bc0c230bc5b]",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-14T18:49:06Z",
+  "updated_at": "2025-12-19T12:09:41Z",
+  "requester_id": 158007807790,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014588426,
+      "body_text": "Hi there,\n\nI'm unable to view the status of my ticket, and I would like to know the status. I'm still waiting for contact with regard to a resolution for my non-functioning SQ Pro.\n\nRegards,\n\nTed Nicholl",
+      "user_id": 158007807790,
+      "created_at": "2025-12-16T17:57:49Z",
+      "updated_at": "2025-12-16T17:57:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014620633,
+      "body_text": "Hi Ted Nicholl, At the front bottom position of the handbrake (indicated by the arrow), there is a recovery button. Please use a toothpick to gently switch it to the other side, then reconnect the USB cable. The device will enter recovery mode. Next, go to Settings → Update → Manual Firmware Update → seq-firmware → gear-sqpro.sfu in the software, complete the update, and then run a test. After the upgrade, make sure to switch the recovery button back to its original position. You may also use the VKB tool to check the device connection status.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T09:46:29Z",
+      "updated_at": "2025-12-17T09:46:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014630422,
+      "body_text": "Good morning,\n\nThank you so much for the assistance. I'm pleased to report that my SQ Pro has been restored and is now functioning perfectly. Thank you very much for your stellar support, I am a very happy and satisfied customer.\n\nKindest Regards,\n\nTed Nicholl",
+      "user_id": 158007807790,
+      "created_at": "2025-12-17T14:07:40Z",
+      "updated_at": "2025-12-17T14:07:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014756150,
+      "body_text": "Very quick resolution to reinstalling firmware, restoring my SQ Pro in minutes.",
+      "user_id": 158007807790,
+      "created_at": "2025-12-19T12:09:40Z",
+      "updated_at": "2025-12-19T12:09:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

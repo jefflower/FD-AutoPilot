@@ -1,0 +1,74 @@
+{
+  "id": 7203,
+  "subject": "Order #SSN3576",
+  "description_text": "What happen with the order?\r\n\r\nIt appears as returned.\r\n\r\nHelp please\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-01T22:54:19Z",
+  "updated_at": "2025-12-19T02:03:04Z",
+  "requester_id": 158007487546,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013375054,
+      "body_text": "Hi Andros Ávila,    The shipment was returned due to excess weight. We will inform you immediately once we have a new tracking number. Normally, we will reship the order for you, so please rest assured.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T07:24:21Z",
+      "updated_at": "2025-12-04T07:24:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013384751,
+      "body_text": "Hi Andros Ávila,    Our German warehouse is indeed out of stock. We have arranged for your order to be dispatched via alternative channels, but rest assured there will be no customs duties or additional charges. Should any arise, we shall reimburse them in full. We sincerely apologise for any inconvenience caused.  https://t.17track.net/en#nums=JSEKO2846334972YQ",
+      "user_id": 158001343601,
+      "created_at": "2025-12-04T10:33:25Z",
+      "updated_at": "2025-12-04T10:33:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014667298,
+      "body_text": "More than 6 weeks and nothing. New tracking appears to be stopped. I want\r\nfull refund.\r\n\r\nEl El jue, 4 dic 2025 a las 11:33, support@simsonn.com ",
+      "user_id": 158007487546,
+      "created_at": "2025-12-17T23:37:10Z",
+      "updated_at": "2025-12-17T23:37:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014684623,
+      "body_text": "Hi Andros Ávila,    We sincerely apologize for the inconvenience caused. Unfortunately, the shipment has been returned again. We can only ship your order via UPS Express, with an estimated delivery date of the 23rd. However, customs duties will apply. Alternatively, we can cancel your order since our German warehouse has indeed experienced delays.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-18T10:57:12Z",
+      "updated_at": "2025-12-18T10:57:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014684694,
+      "body_text": "Ok, cancel the order and refund, please. Thank you.\r\n\r\nEl El jue, 18 dic 2025 a las 11:57, support@simsonn.com ",
+      "user_id": 158007487546,
+      "created_at": "2025-12-18T11:01:08Z",
+      "updated_at": "2025-12-18T11:01:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014734502,
+      "body_text": "Hi Andros Ávila,    We apologize for the inconvenience caused. We have processed your refund.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-19T02:03:04Z",
+      "updated_at": "2025-12-19T02:03:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

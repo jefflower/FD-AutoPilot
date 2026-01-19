@@ -1,0 +1,145 @@
+{
+  "id": 10462,
+  "subject": "SSN4111 Simsonn Hs Pro Shifter Problem",
+  "description_text": "Good morning, I'm sending the following email to report a malfunction with my newly purchased transmission. Sometimes during calibration, it detects the seventh gear position as reverse, while other times it detects neutral as reverse. It's unusable this way. Is there a way to fix it?",
+  "status": 4,
+  "priority": 4,
+  "created_at": "2026-01-10T03:10:38Z",
+  "updated_at": "2026-01-11T02:24:00Z",
+  "requester_id": 158007845028,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016655010,
+      "body_text": "Hi Alex Bonifacino,  Please use the latest SIMSONN Manager 2.1.3, select 7R mode, and perform a full recalibration of all gears. During calibration, shift through the gears in the following order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → R. Once calibration is completed successfully, the device will work properly and switch modes normally.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-10T03:27:37Z",
+      "updated_at": "2026-01-10T03:27:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016697508,
+      "body_text": "It's exactly what I have done. But the problem is the same! I don't know where the problem is, but when I'm in the neutral position the software tells me it is in reverse.",
+      "user_id": 158007845028,
+      "created_at": "2026-01-10T10:13:04Z",
+      "updated_at": "2026-01-10T10:13:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016697974,
+      "body_text": "The R and the 7 gear are the problem... see the video..",
+      "user_id": 158007845028,
+      "created_at": "2026-01-10T10:19:44Z",
+      "updated_at": "2026-01-10T10:19:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016700956,
+      "body_text": "Among other things, it often doesn't pick up the third gear input, and when I'm in neutral, it detects reverse. Can I try opening and checking the contacts? Can you give me a guide?",
+      "user_id": 158007845028,
+      "created_at": "2026-01-10T10:43:54Z",
+      "updated_at": "2026-01-10T10:43:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016713225,
+      "body_text": "Hi Alex Bonifacino,  Please click the Revert button first, then click Save to restore the configuration. After that, recalibrate the device. If there are any display issues during calibration, you can ignore them and proceed with the calibration.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-10T13:29:35Z",
+      "updated_at": "2026-01-10T13:29:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016728989,
+      "body_text": "I've already done everything!!! It detects seventh gear as if it were reverse. And that causes problems! I'm giving up on these points. Can I return it?",
+      "user_id": 158007845028,
+      "created_at": "2026-01-10T16:08:59Z",
+      "updated_at": "2026-01-10T16:08:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016758566,
+      "body_text": "Hi Alex Bonifacino,     Please install ToDesk and provide me with your ID and temporary verification code. I will assist you remotely to check and resolve the issue.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T00:23:08Z",
+      "updated_at": "2026-01-11T00:23:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016761027,
+      "body_text": "Hi Alex Bonifacino,  It’s possible that your shifter is affected by a configuration logic issue. I can help you check this. Since other customers have not encountered the same problem, I would like to remotely verify whether the configuration was not properly restored. Previously, we made adjustments to the logic order for 7th gear and Reverse, and it’s currently unclear why this change was not correctly reset during the update.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T01:02:11Z",
+      "updated_at": "2026-01-11T01:02:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016762540,
+      "body_text": "Ok, when can I try to connect with you?",
+      "user_id": 158007845028,
+      "created_at": "2026-01-11T01:29:41Z",
+      "updated_at": "2026-01-11T01:29:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016762919,
+      "body_text": "Hi Alex Bonifacino,  Please install ToDesk. On the login screen, no registration is required — simply click the close button in the top-right corner to enter the main interface. Once you are on the main screen, please copy or take a photo of the ID and temporary password and send them to me.           https://www.todesk.com/download.html",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T01:35:38Z",
+      "updated_at": "2026-01-11T01:35:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016764054,
+      "body_text": "I don't understand nothing, where is the code?",
+      "user_id": 158007845028,
+      "created_at": "2026-01-11T01:57:24Z",
+      "updated_at": "2026-01-11T01:57:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016764159,
+      "body_text": "Hi Alex Bonifacino,",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T02:02:21Z",
+      "updated_at": "2026-01-11T02:02:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016764193,
+      "body_text": "",
+      "user_id": 158007845028,
+      "created_at": "2026-01-11T02:04:22Z",
+      "updated_at": "2026-01-11T02:04:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

@@ -1,0 +1,24 @@
+{
+  "id": 731,
+  "subject": "Simsonn Racing Simulator Pressure Handbrake and the Arduino broke",
+  "description_text": "Good morning, I bought a Simsonn Racing Simulator Pressure Handbrake\r\nand the Arduino broke, is there any way to order a new Arduino?\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-06-23T09:31:04Z",
+  "updated_at": "2025-06-23T10:42:24Z",
+  "requester_id": 158001723730,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003685675,
+      "body_text": "Hi d4rck,  After plugging in the USB, does the power indicator light turn on? Can the device be detected in Freejoy? Please send us a screenshot so we can help verify. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-23T10:42:24Z",
+      "updated_at": "2025-06-23T10:42:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

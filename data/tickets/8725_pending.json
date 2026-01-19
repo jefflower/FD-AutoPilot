@@ -1,0 +1,54 @@
+{
+  "id": 8725,
+  "subject": "Order SSN4260",
+  "description_text": "Hello, I ordered the Hall handbrake, along with the HS PRO shifter. The\r\nhandbrake along with the desk clamp arrived, but not the shifter.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-20T00:56:47Z",
+  "updated_at": "2026-01-16T08:09:41Z",
+  "requester_id": 158002203566,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014810699,
+      "body_text": "Hi Britton Seadon,  ​The HS Pro is expected to be shipped between December 20 and 22. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-20T13:10:09Z",
+      "updated_at": "2025-12-20T13:10:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015236704,
+      "body_text": "Hello, is there an update on my order? In terms of shipping\r\n\r\nOn Sat, Dec 20, 2025, 8:10 a.m. service@simsonn.com ",
+      "user_id": 158002203566,
+      "created_at": "2025-12-30T05:38:07Z",
+      "updated_at": "2025-12-30T05:38:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015503133,
+      "body_text": "Hello,\r\nMy order shows Delivered on December 19, but I only received the handbrake.\r\nThe HS Pro Shifter has not arrived, and I have not received a separate\r\ntracking number.\r\nPlease provide the shifter’s tracking number, or confirm that it has not\r\nshipped and give a specific ship date.\r\nAs the order is marked delivered, I will need this resolved to avoid\r\nopening a partial non-delivery dispute.\r\nThank you.\r\n\r\nOn Tue, Dec 30, 2025, 12:37 a.m. Britton Seadon <brittontseadon@gmail.com>\r\nwrote:\r\n\r\n> Hello, is there an update on my order? In terms of shipping\r\n>\r\n> On Sat, Dec 20, 2025, 8:10 a.m. service@simsonn.com ",
+      "user_id": 158002203566,
+      "created_at": "2026-01-03T17:58:16Z",
+      "updated_at": "2026-01-03T17:58:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017247323,
+      "body_text": "Hi Britton Seadon,  I apologize for not responding to you promptly. I have confirmed that your package has been delivered. Have you received it?  https://t.17track.net/en#nums=JSELI0241859690YQ,JSELP2439750602YQ",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T08:09:41Z",
+      "updated_at": "2026-01-16T08:09:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

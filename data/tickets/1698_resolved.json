@@ -1,0 +1,34 @@
+{
+  "id": 1698,
+  "subject": "Garanty pro X",
+  "description_text": "Bonjour j'ai un souci de connectivité avec mon pédalier simsonn pro X\r\nIl est reconnu dans les périphériques mais pas dans le logiciel simsonn merci pour votre retours\r\n\r\nEnvoyé à partir de Outlook pour iOS<https://aka.ms/o0ukef>\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-07-19T11:40:23Z",
+  "updated_at": "2025-07-22T02:28:06Z",
+  "requester_id": 158002229373,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005211611,
+      "body_text": "Hi jonathan benisti,    Please press and hold the upgrade button on the control box, then reconnect the USB cable while holding the button.  The software will detect the device in SIMSONN Flasher mode.     Next, go to Settings → Update in the software, then click Manual Firmware Update.  Navigate through the following folder path:     pedals-firmware → pedals → select the file prox.sfu     Click to update and wait for the process to complete.  Once done, please test your device again to see if the issue is resolved.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-20T00:36:58Z",
+      "updated_at": "2025-07-20T00:36:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005227463,
+      "body_text": "Bonjours super merci tous est rétabli sa marche parfaitement\r\n\r\nEnvoyé à partir de Outlook pour iOS<https://aka.ms/o0ukef>\r\n________________________________\r\nDe : service@simsonn.com ",
+      "user_id": 158002229373,
+      "created_at": "2025-07-20T12:44:12Z",
+      "updated_at": "2025-07-20T12:44:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

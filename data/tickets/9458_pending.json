@@ -1,0 +1,74 @@
+{
+  "id": 9458,
+  "subject": "Help",
+  "description_text": "Hi, how can I find out where my package is? The shipment arrived in Milan,\r\nbut it's been stuck since January 27th. I don't know which carrier is\r\nhandling it now...\r\nWhen will the other part of the shipment be shipped?\r\n\r\n*Rodolfo Carluccio*\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-29T12:40:15Z",
+  "updated_at": "2026-01-15T09:25:28Z",
+  "requester_id": 158008807257,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015242741,
+      "body_text": "Hi Rodolfo Carluccio,       Please provide your order number, and I will help you check it. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T08:54:33Z",
+      "updated_at": "2025-12-30T08:54:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015248190,
+      "body_text": "The order number is SSN5141, best regards\r\n\r\n\r\n*Rodolfo Carluccio*\r\n\r\nIl Mar 30 Dic 2025, 09:54 support@simsonn.com ",
+      "user_id": 158008807257,
+      "created_at": "2025-12-30T10:57:21Z",
+      "updated_at": "2025-12-30T10:57:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015248365,
+      "body_text": "Hi Rodolfo Carluccio,     Here is your tracking information. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T11:05:11Z",
+      "updated_at": "2025-12-30T11:05:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015253351,
+      "body_text": "Thanks for the reply. I'd seen the tracking too. It's that Rome line that\r\nseems strange to me because it then says Milan again. Well, let's wait.\r\nUnfortunately, the carriers in Italy don't work very well. Could you tell\r\nme how long it will take for the exchange to arrive? The current package\r\nshould only have the handbrake, at least that's what the email said. Thanks\r\nagain.\r\n\r\n*Rodolfo Carluccio*\r\n\r\nIl Mar 30 Dic 2025, 12:05 support@simsonn.com ",
+      "user_id": 158008807257,
+      "created_at": "2025-12-30T13:28:18Z",
+      "updated_at": "2025-12-30T13:28:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015700289,
+      "body_text": "Hi, I wanted to let you know that the handbrake arrived yesterday.\r\nCongratulations, it's a fantastic product.\r\nI'd like to take this opportunity to ask you approximately when the Simsonn\r\nHS Pro Shifter the H/SQ, purchased in the same order, is expected to ship.\r\n\r\nThank you.\r\n*Rodolfo Carluccio*\r\n\r\n\r\nIl giorno mar 30 dic 2025 alle ore 14:27 Rodolfo Carluccio <\r\nfoffetto@gmail.com> ha scritto:\r\n\r\n> Thanks for the reply. I'd seen the tracking too. It's that Rome line that\r\n> seems strange to me because it then says Milan again. Well, let's wait.\r\n> Unfortunately, the carriers in Italy don't work very well. Could you tell\r\n> me how long it will take for the exchange to arrive? The current package\r\n> should only have the handbrake, at least that's what the email said. Thanks\r\n> again.\r\n>\r\n> *Rodolfo Carluccio*\r\n>\r\n> Il Mar 30 Dic 2025, 12:05 support@simsonn.com ",
+      "user_id": 158008807257,
+      "created_at": "2026-01-05T01:24:00Z",
+      "updated_at": "2026-01-05T01:24:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017173170,
+      "body_text": "Hi Rodolfo Carluccio,  Due to demand far exceeding expectations, this item has been out of stock for nearly two weeks. We shipped your order yesterday and sincerely apologize for the delay. Below is your tracking link:  https://t.17track.net/en#nums=SF6047224482091",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T09:25:28Z",
+      "updated_at": "2026-01-15T09:25:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

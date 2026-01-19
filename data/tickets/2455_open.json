@@ -1,0 +1,84 @@
+{
+  "id": 2455,
+  "subject": "#SSN2239",
+  "description_text": "Hello,\r\n\r\nfew days ago, I made my order for Simsonn Plus x pedals under order\r\nnumber #SSN2239, but till now I have not received anything about shipping\r\nthe order.\r\n\r\nI just wanted to check was my order was well received, and if everything is\r\nok?\r\n\r\nBest regards!\r\nVlado Vrlika\r\n\r\n",
+  "status": 2,
+  "priority": 3,
+  "created_at": "2025-08-08T07:58:31Z",
+  "updated_at": "2025-09-10T09:18:26Z",
+  "requester_id": 158002820193,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006523893,
+      "body_text": "Hi Vlado Vrlika,    We apologize for the delay. Due to stock shortages at our warehouse in Germany, we plan to wait until around the 11th for new goods to arrive at the German warehouse before shipping your order. This will help avoid customs duties. Since we have always shipped goods to Croatia via our German warehouse, we are unsure whether shipping directly from China would result in unusually high taxes. If you need the items urgently, we can ship them to you via UPS. Please let us know your preference as soon as possible.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-08T08:56:05Z",
+      "updated_at": "2025-08-08T08:56:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006528076,
+      "body_text": "Hello,\r\n\r\nFirst, I want to thank you for your fast reply!\r\nEverything is ok, I just wanted to check if the whole order process went as\r\nit should!\r\n\r\nI can also confirm that if sent from China, it would result in additional\r\ncosts (customs clearance and tax).\r\nIt is always the case for shipments above 160€ sent by DHL, UPS, FEDEX; in\r\nother cases, sometimes it goes \"under the radar\" and it is not affected\r\n(but not always).\r\nMy background is also in global logistics, so I know it from experience.\r\n?\r\n\r\nOnce again, thank you, and I'm looking forward to using your products in\r\nthe future!\r\n\r\nBest regards!\r\nVlado Vrlika\r\n\r\nOn Fri, Aug 8, 2025 at 10:56 AM service@simsonn.com ",
+      "user_id": 158002820193,
+      "created_at": "2025-08-08T10:14:07Z",
+      "updated_at": "2025-08-08T10:14:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006530535,
+      "body_text": "Thank you for the information!",
+      "user_id": 158001343601,
+      "created_at": "2025-08-08T10:28:50Z",
+      "updated_at": "2025-08-08T10:28:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006706299,
+      "body_text": "Hi Vlado Vrlika,    The latest inventory from our German warehouse has arrived, but the Plus X P2-H2 / Silver / Baseplate you purchased is still out of stock. Can we replace it with the Plus X P2-H2 / Black / Baseplate version for you?",
+      "user_id": 158001343601,
+      "created_at": "2025-08-11T15:53:47Z",
+      "updated_at": "2025-08-11T15:53:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006706343,
+      "body_text": "Hello, yes black will also be ok.\r\n\r\nThank you!\r\n\r\npon, 11. kol 2025. 17:54 service@simsonn.com ",
+      "user_id": 158002820193,
+      "created_at": "2025-08-11T15:55:36Z",
+      "updated_at": "2025-08-11T15:55:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006706434,
+      "body_text": "​  Okay, thank you for your confirmation. We have arranged for your shipment!",
+      "user_id": 158001343601,
+      "created_at": "2025-08-11T15:59:18Z",
+      "updated_at": "2025-08-11T15:59:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008344521,
+      "body_text": "Hello,\r\n\r\nRecently I bought Simsonn Plus X pedals and I'm really happy with them.\r\nI was just on Simsonn's website checking the VAM Pro set of two haptic\r\nmotors with power supply and mounting brackets, but when I went to check\r\nout, it added 27,10$ of taxes to the price.\r\n\r\nI have received my pedals from Germany, and there were no additional taxes\r\nto the price. Is there a way to do it the same way for the haptic set?\r\n\r\nBest regards!\r\nVlado\r\n\r\nOn Mon, Aug 11, 2025 at 5:59 PM service@simsonn.com ",
+      "user_id": 158002820193,
+      "created_at": "2025-09-09T22:06:19Z",
+      "updated_at": "2025-09-09T22:06:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

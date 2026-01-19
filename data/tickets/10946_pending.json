@@ -1,0 +1,34 @@
+{
+  "id": 10946,
+  "subject": "Black Friday",
+  "description_text": "Good afternoon,\r\nI was planning on purchasing some pedals using a code from an ad I just\r\nsaw. BLACK45. I see this is now expired. Without the code, the pedals are\r\nout of my price range and I will not buy them. Is there an active code I\r\ncan use? The 15 from NEW15 isn’t large enough for me to able to make the\r\npurchase.\r\nThanks,\r\nThomas Cameron\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-15T03:29:42Z",
+  "updated_at": "2026-01-17T06:36:26Z",
+  "requester_id": 158009081916,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017163131,
+      "body_text": "Hi Thomas Cameron,  CRSM30",
+      "user_id": 158000445778,
+      "created_at": "2026-01-15T05:36:21Z",
+      "updated_at": "2026-01-15T05:36:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017187480,
+      "body_text": "Good morning,\r\nCRSM 30 seems to only work when making purchases larger than $200. The\r\npedals I wish to purchase are $179.\r\nThank you!\r\n\r\nOn Thu, Jan 15, 2026 at 12:36 AM service@simsonn.com ",
+      "user_id": 158009081916,
+      "created_at": "2026-01-15T12:55:18Z",
+      "updated_at": "2026-01-15T12:55:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

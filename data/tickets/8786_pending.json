@@ -1,0 +1,46 @@
+{
+  "id": 8786,
+  "subject": "Enquiry about delivery to US",
+  "description_text": "Hi,\r\n\r\nI want to purchase the simsonn plus x pedals, could you please let me know\r\nthe details on delivery, tax and customs, where is the product shipping\r\nfrom and whether I have to deal with customs my self if shipped from\r\noutside USA, and where will be taxed.\r\n\r\nThanks\r\nManideep\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-21T05:39:57Z",
+  "updated_at": "2025-12-24T12:01:08Z",
+  "requester_id": 158008209086,
+  "responder_id": 158001343601,
+  "cc_emails": [
+    "manideep.sridhara@gmail.com"
+  ],
+  "conversations": [
+    {
+      "id": 158014880008,
+      "body_text": "Hi Tushar Kanwaria,  We will cover the taxes and fees ourselves, and the goods will be shipped from our US warehouse, so please don't worry.",
+      "user_id": 158007774669,
+      "created_at": "2025-12-22T12:38:22Z",
+      "updated_at": "2025-12-22T12:38:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014892685,
+      "body_text": "Hi, thank you for your reply\r\n\r\nCan I expect it to be delivered before 31st December with express shipping?\r\n\r\n\r\n\r\n\r\n\r\n\r\nOn Mon, 22 Dec, 2025, 6:08 pm service@simsonn.com, ",
+      "user_id": 158008307205,
+      "created_at": "2025-12-22T15:39:59Z",
+      "updated_at": "2025-12-22T15:39:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015031986,
+      "body_text": "Hi Tushar Kanwaria,    Please place your order as soon as possible, as our US warehouse will soon be closing for the holidays. Orders placed today will ship immediately.  Merry Christmas!",
+      "user_id": 158001343601,
+      "created_at": "2025-12-24T12:01:08Z",
+      "updated_at": "2025-12-24T12:01:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

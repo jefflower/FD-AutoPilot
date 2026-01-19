@@ -1,0 +1,125 @@
+{
+  "id": 3642,
+  "subject": "液压刹车杆问题",
+  "description_text": "您好，我好像我的Pro X Ultra踏板随附的可调节液压刹车杆出了问题。我大约一个星期没用它们了，然后当我准备玩的时候，我注意到刹车时有咔嗒声。经过进一步测试和检查，问题出在可调节刹车杆上。我现在已经把它拆下来了，但它似乎失去了以前那种平滑的感觉，在初始刹车时会发出咔嗒声，如果你停下来并继续施加压力，它会反复发出咔嗒声。有什么办法可以解决吗？",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-09-09T05:59:29Z",
+  "updated_at": "2025-09-19T01:52:39Z",
+  "requester_id": 158002806240,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008303766,
+      "body_text": "Scott Krause，您好，请提供您的订单号。",
+      "user_id": 158001343601,
+      "created_at": "2025-09-09T06:23:24Z",
+      "updated_at": "2025-09-09T06:23:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008324110,
+      "body_text": "8202819374349390\n来自速卖通的订单号",
+      "user_id": 158002806240,
+      "created_at": "2025-09-09T13:01:58Z",
+      "updated_at": "2025-09-09T13:01:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008346329,
+      "body_text": "Scott Krause，您好，您能描述一下您遇到的问题吗？请提供详细描述以及视频或照片，以便我们更好地诊断和解决您的问题。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-09T23:42:12Z",
+      "updated_at": "2025-09-09T23:42:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008347912,
+      "body_text": "我会把这种感觉描述为一种“砰”或“死区”，在施加压力时，从开始到整个踏板行程，如果你停下来然后继续施加压力。虽然声音不是很明显，但我的问题是刹车时的感觉。我附上了连接和未连接液压系统时的视频，以及用手操作试图重现“死区”的视频。",
+      "user_id": 158002806240,
+      "created_at": "2025-09-10T01:22:57Z",
+      "updated_at": "2025-09-10T01:22:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008347942,
+      "body_text": "无法放入所有视频，附上用手操作的视频。",
+      "user_id": 158002806240,
+      "created_at": "2025-09-10T01:24:10Z",
+      "updated_at": "2025-09-10T01:24:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008349125,
+      "body_text": "Scott Krause，您好，请将视频上传到Google Drive并与我们分享链接。请确保分享设置为“任何有链接的人都可以查看”，否则我们可能无法访问。由于平台限制直接上传文件大小为20MB，Google Drive是分享大视频的推荐方式。一旦我们收到视频，我们将尽快审核并协助您。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-10T02:37:20Z",
+      "updated_at": "2025-09-10T02:37:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008349386,
+      "body_text": "明白了。第一个链接是带有液压杆的\n第二个是没有液压杆的\n第三个是手动操作的\n\nhttps://drive.google.com/file/d/10PE1wIri5XMdPpZBeXPfZjJkIvtDYla2/view?usp=drivesdk\n\nhttps://drive.com/file/d/1I9v7k6nkUHDYlCO1nuBOZbD4qk8HhEvd/view?usp=drivesdk\n\nhttps://drive.google.com/file/d/1mlBUq54NqMsbUt8nsMOJR5EgwCL2qS4T/view?usp=drivesdk",
+      "user_id": 158002806240,
+      "created_at": "2025-09-10T02:56:30Z",
+      "updated_at": "2025-09-10T02:56:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008351221,
+      "body_text": "Scott Krause，您好，在审查了问题之后，看来产品本身没有大的问题。在安装过程中，需要对液压阻尼器施加少量压力，然后拧紧安装螺钉以获得最佳性能。为了确保一切顺利，我们将免费为您发送一个新的刹车液压杆和一个油门液压杆。请提供以下信息：\n全名\n联系电话\n收货地址（包括国家和邮政编码）\n收到详细信息后，我们将尽快安排更换发货。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-10T05:15:12Z",
+      "updated_at": "2025-09-10T05:15:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008351424,
+      "body_text": "那太感谢了\nScott Krause\n16198308938\n29 Davidson st Chula Vista CA 91910 United States",
+      "user_id": 158002806240,
+      "created_at": "2025-09-10T05:28:15Z",
+      "updated_at": "2025-09-10T05:28:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008352288,
+      "body_text": "Scott Krause，您好，您的订单已发货。物流编号是：JSEIQ1079197331YQ。您可以在此网站追踪：https://www.17track.net/zh-cn。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-10T06:38:58Z",
+      "updated_at": "2025-09-10T06:38:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008921925,
+      "body_text": "您好，我收到了零件。关于可调节液压刹车杆，我收到的那个比我目前的要好得多。在压缩开始时没有间隙或“死区”。感谢您的零件，我喜欢这个产品，客户服务也很棒。再次感谢您。",
+      "user_id": 158002806240,
+      "created_at": "2025-09-18T17:02:40Z",
+      "updated_at": "2025-09-18T17:02:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

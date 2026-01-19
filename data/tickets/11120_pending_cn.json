@@ -1,0 +1,25 @@
+{
+  "id": 11120,
+  "subject": "回复：订单 #SSN6038 已确认",
+  "description_text": "将从哪里发货？我位于欧洲，如果能从欧洲发货以避免增值税会很好。",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-17T08:15:35Z",
+  "updated_at": "2026-01-17T08:18:52Z",
+  "requester_id": 158009343739,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017319136,
+      "body_text": "你好 Evaldas P, 是的，我们将从德国仓库发货。然而，由于欧洲大范围降雪，道路受阻和积雪，两批运往德国仓库的货物已被延误。我们将尽快安排运送至仓库。我们预计在22日发货。",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T08:18:52Z",
+      "updated_at": "2026-01-17T08:18:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

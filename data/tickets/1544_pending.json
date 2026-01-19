@@ -1,0 +1,24 @@
+{
+  "id": 1544,
+  "subject": "Pedal Faces",
+  "description_text": "Hi, I was wondering does the shorter pedal face like the clutch work on the accelerator pedal?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-15T04:31:48Z",
+  "updated_at": "2025-07-15T04:33:36Z",
+  "requester_id": 158002137050,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004842781,
+      "body_text": "Hi Jake Went,  The short panel cannot be installed on our current pedal design. However, we are considering making improvements in future versions to allow the throttle pedal to support the short panel as well. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-15T04:33:36Z",
+      "updated_at": "2025-07-15T04:33:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,664 @@
+{
+  "id": 2044,
+  "subject": "Re: Vam",
+  "description_text": "﻿I'm having problems with the pedals now, they are not being recognized. Today I checked the computer and they were like that, before they were working normally. I will send the photos you requested along with the photo of csoftawer not recognizing the pedals![image0.jpeg][image2.jpeg][image3.jpeg][image4.jpeg][image5.jpeg][image6.jpeg][image7.jpeg]\r\nEnviado do meu iPhone\r\n\r\nEm 28 de jul. de 2025, à(s) 12:56, service@simsonn.com escreveu:\r\n\r\n﻿\r\nHi Claudio Kambara,\r\n\r\nPlease take photos of the pedals, VAM, and the control box wiring, and we will check them and get back to you.\r\n\r\n\r\nOn Sun, 27 Jul at 10:12 PM , Claudio Kambara <nikihusky@outlook.com> wrote:\r\nolá eu já efetuei um procedimento pediram para eu aterrar o volante e o pc estava dando oscilação poderíamos continuar de onde paramos?[image0.png][image1.png]\r\nEnviado do meu iPhone\r\n\r\nEm 28 de jul. de 2025, à(s) 10:53, service@simsonn.com escreveu:\r\n\r\n﻿\r\nHi Claudio Kambara,\r\n\r\nWhat is your order number for the pedals and VAM?\r\nPlease take photos of the pedals, VAM, and the control box wiring, and we will check them and get back to you.\r\n\r\n\r\nOn Sun, 27 Jul at 6:19 PM , Claudio Kambara <nikihusky@outlook.com> wrote:\r\nHello, I recently purchased VAM engines and had some connection problems. They asked me to ground the steering wheel and the PC was built and still has problems connecting the VAM engines! I would like some help, please.\r\nEnviado do meu iPhone\r\n1987:4206036\r\n[cid:16%253aX%253aRgAAAAAYOGG6jjzmQq0awyPbLDUdBwASiAichTpZSJCyhCdlaOzpAAAAAAEJAAASiAichTpZSJCyhCdlaOzpAAXgUXfHAAAJ%253aEACmy%252fzE8CCzS5Guko1A2Lpo][cid:16%253aX%253aRgAAAAAYOGG6jjzmQq0awyPbLDUdBwASiAichTpZSJCyhCdlaOzpAAAAAAEJAAASiAichTpZSJCyhCdlaOzpAAXgUXfHAAAJ%253aEAA8Wc2RGky3TbcC%252bR0jQvb9][cid:16%253aX%253aRgAAAAAYOGG6jjzmQq0awyPbLDUdBwASiAichTpZSJCyhCdlaOzpAAAAAAEJAAASiAichTpZSJCyhCdlaOzpAAXgUXfHAAAJ%253aEADDgKdk2aGYTrcFXcNoVNZr][cid:16%253aX%253aRgAAAAAYOGG6jjzmQq0awyPbLDUdBwASiAichTpZSJCyhCdlaOzpAAAAAAEJAAASiAichTpZSJCyhCdlaOzpAAXgUXfHAAAJ%253aEACZy%252bxZhIelRZrpbfR7X6M3][cid:16%253aX%253aRgAAAAAYOGG6jjzmQq0awyPbLDUdBwASiAichTpZSJCyhCdlaOzpAAAAAAEJAAASiAichTpZSJCyhCdlaOzpAAXgUXfHAAAJ%253aEABtd5zZUEZYTL7URBBjKc8f][cid:16%253aX%253aRgAAAAAYOGG6jjzmQq0awyPbLDUdBwASiAichTpZSJCyhCdlaOzpAAAAAAEJAAASiAichTpZSJCyhCdlaOzpAAXgUXfHAAAJ%253aEADJBuXWaI6gS4A48NWTK1Ab][cid:16%253aX%253aRgAAAAAYOGG6jjzmQq0awyPbLDUdBwASiAichTpZSJCyhCdlaOzpAAAAAAEJAAASiAichTpZSJCyhCdlaOzpAAXgUXfHAAAJ%253aEAD6N7F0fyqdS7e6eFYQd9kE]\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-07-29T09:43:00Z",
+  "updated_at": "2025-12-18T10:40:00Z",
+  "requester_id": 158001932267,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004463092,
+      "body_text": "Hi Claudio Kambara,    Do you already have the Pro pedals and then separately purchased the PlusX controller and VAM Pro motor? Please use the Offset function in the top right corner of the SIMSONN Manager 2.0.8 software to perform a factory reset, ensuring the pedal signal starts from 0%. After that, proceed with calibration.  Also, are you using SimHub version 9.9.3? It supports over 100 racing games. Our upcoming 2.0.9 version will add support for Automobilista 2. We recommend using SimHub for now. Please remember not to run SimHub and SIMSONN Manager at the same time, as they will conflict with each other.  One more thing—what wheelbase are you using? Have you implemented EMI shielding or grounding, such as connecting the wheelbase shell to the PC case ground? This can effectively reduce interference issues.             https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-07-08T00:08:21Z",
+      "updated_at": "2025-07-08T00:08:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004463100,
+      "body_text": "合并来自工单1320  \n      主题: Funcionamento do disposto vam!  \n      描述:  Good morning! I recently purchased the VAM device for the Pro pedals and I had difficulty configuring them! iRacing did not work in Automobilista 2, it works with a large delay in Assertto Corsa Competizuone, it worked and then stopped! I have already plugged it into a separate outlet thinking it could be force, but it continued the same thing! Sometimes the vibration goes off, sometimes the accelerator locks up and it gets to the point of misconfiguring the steering wheel and pedals in the games! I need help Enviado do meu iPhone",
+      "user_id": 158000445778,
+      "created_at": "2025-07-08T00:09:02Z",
+      "updated_at": "2025-07-08T00:09:02Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004463099,
+      "body_text": "ID 为 1320 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-08T00:09:02Z",
+      "updated_at": "2025-07-08T00:09:02Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004470179,
+      "body_text": "Yes, the pedals were purchased separately, first the pedals, then the VAM! I believe it came with the Plus X controller, it has an input for the VAM! I need to confirm that there really isn't another type of controller? Regarding the software, I'll try to return to the factory offset. As for Simhub, I really didn't know about the existence of the program. I'll try it as soon as I get home and check if the oscillation to ground is there either! Thanks for your attention.\r\nEnviado do meu iPhone\r\n\r\nEm 8 de jul. de 2025, à(s) 09:08, service@simsonn.com escreveu:\r\n\r\n﻿\r\nHi Claudio Kambara,\r\n\r\nDo you already have the Pro pedals and then separately purchased the PlusX controller and VAM Pro motor?\r\nPlease use the Offset function in the top right corner of the SIMSONN Manager 2.0.8 software to perform a factory reset, ensuring the pedal signal starts from 0%. After that, proceed with calibration.\r\nAlso, are you using SimHub version 9.9.3? It supports over 100 racing games. Our upcoming 2.0.9 version will add support for Automobilista 2.\r\nWe recommend using SimHub for now. Please remember not to run SimHub and SIMSONN Manager at the same time, as they will conflict with each other.\r\nOne more thing—what wheelbase are you using? Have you implemented EMI shielding or grounding, such as connecting the wheelbase shell to the PC case ground? This can effectively reduce interference issues.\r\n\r\n\r\n\r\nhttps://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding\r\n",
+      "user_id": 158001932267,
+      "created_at": "2025-07-08T03:02:02Z",
+      "updated_at": "2025-07-08T03:02:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004483342,
+      "body_text": "Good morning! Yesterday I downloaded the Sim Hub program and had an exodus to run it on iRacing. It worked perfectly during the first lap, after that there were vibrations and the accelerator jammed to the point where I couldn't stop it from working on the computer! I unplugged it and after turning it on again it was no longer responding! Could it have burned out or is there any other way to solve this?\r\nEnviado do meu iPhone\r\n\r\nEm 8 de jul. de 2025, à(s) 12:01, Claudio Kambara <nikihusky@outlook.com> escreveu:\r\n\r\n﻿ Yes, the pedals were purchased separately, first the pedals, then the VAM! I believe it came with the Plus X controller, it has an input for the VAM! I need to confirm that there really isn't another type of controller? Regarding the software, I'll try to return to the factory offset. As for Simhub, I really didn't know about the existence of the program. I'll try it as soon as I get home and check if the oscillation to ground is there either! Thanks for your attention.\r\nEnviado do meu iPhone\r\n\r\nEm 8 de jul. de 2025, à(s) 09:08, service@simsonn.com escreveu:\r\n\r\n﻿\r\nHi Claudio Kambara,\r\n\r\nDo you already have the Pro pedals and then separately purchased the PlusX controller and VAM Pro motor?\r\nPlease use the Offset function in the top right corner of the SIMSONN Manager 2.0.8 software to perform a factory reset, ensuring the pedal signal starts from 0%. After that, proceed with calibration.\r\nAlso, are you using SimHub version 9.9.3? It supports over 100 racing games. Our upcoming 2.0.9 version will add support for Automobilista 2.\r\nWe recommend using SimHub for now. Please remember not to run SimHub and SIMSONN Manager at the same time, as they will conflict with each other.\r\nOne more thing—what wheelbase are you using? Have you implemented EMI shielding or grounding, such as connecting the wheelbase shell to the PC case ground? This can effectively reduce interference issues.\r\n\r\n\r\n\r\nhttps://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding\r\n",
+      "user_id": 158001932267,
+      "created_at": "2025-07-08T21:48:00Z",
+      "updated_at": "2025-07-08T21:48:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004483572,
+      "body_text": "Hi Claudio Kambara,    Could you please provide your order number so we can assist you as soon as possible?",
+      "user_id": 158000445778,
+      "created_at": "2025-07-08T22:01:18Z",
+      "updated_at": "2025-07-08T22:01:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004484078,
+      "body_text": "the order number placed by AliExpress is 1113893347785400\r\nEnviado do meu iPhone\r\n\r\nEm 9 de jul. de 2025, à(s) 07:01, service@simsonn.com escreveu:\r\n\r\n﻿\r\nHi Claudio Kambara,\r\n\r\nCould you please provide your order number so we can assist you as soon as possible?\r\n\r\n\r\n",
+      "user_id": 158001932267,
+      "created_at": "2025-07-08T23:16:37Z",
+      "updated_at": "2025-07-08T23:16:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004484099,
+      "body_text": "[image0.jpeg][image1.jpeg][image2.png][image3.png]\r\nEnviado do meu iPhone\r\n\r\nEm 9 de jul. de 2025, à(s) 08:16, Claudio Kambara <nikihusky@outlook.com> escreveu:\r\n\r\n﻿ the order number placed by AliExpress is 1113893347785400\r\nEnviado do meu iPhone\r\n\r\nEm 9 de jul. de 2025, à(s) 07:01, service@simsonn.com escreveu:\r\n\r\n﻿\r\nHi Claudio Kambara,\r\n\r\nCould you please provide your order number so we can assist you as soon as possible?\r\n\r\n\r\n",
+      "user_id": 158001932267,
+      "created_at": "2025-07-08T23:20:17Z",
+      "updated_at": "2025-07-08T23:20:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004484567,
+      "body_text": "Hi Claudio Kambara,    Please try swapping the ports to test the VAM motors and identify which one is faulty. This will help confirm that the controller itself is working properly. Once confirmed, we will send you a replacement VAM motor.     Additionally, please note that the controller does not limit motor power output by default—running at 100% force can damage the motor. We recommend setting the force limit to 50% and not exceeding 70%. The VAM Pro motors do not have this issue.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-09T00:46:42Z",
+      "updated_at": "2025-07-09T00:46:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004484587,
+      "body_text": "Hi Claudio Kambara,    What do you mean by “throttle locked”? When the throttle is locked, are you still able to press the brake pedal? Could you please install Todesk so I can check remotely?",
+      "user_id": 158000445778,
+      "created_at": "2025-07-09T00:51:53Z",
+      "updated_at": "2025-07-09T00:51:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004484589,
+      "body_text": "Hi Claudio Kambara,  https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-07-09T00:52:47Z",
+      "updated_at": "2025-07-09T00:52:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004485356,
+      "body_text": "the pedal returns to the non-acceleration position but the car in the game continues to accelerate! It happens when I have my foot on the accelerator for a long time, sometimes especially when I turn on the engines.\r\nEnviado do meu iPhone\r\n\r\nEm 9 de jul. de 2025, à(s) 09:52, service@simsonn.com escreveu:\r\n\r\nHi Claudio Kambara,\r\n\r\nWhat do you mean by “throttle locked”? When the throttle is locked, are you still able to press the brake pedal? Could you please install Todesk so I can check remotely?\r\n\r\n",
+      "user_id": 158001932267,
+      "created_at": "2025-07-09T02:58:47Z",
+      "updated_at": "2025-07-09T02:58:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004485361,
+      "body_text": "I'm currently at work on Friday so I can get in touch at the same time! Regarding the motors that don't work, I've already tried changing them on the doors and they still don't work. I can make a video if you'd like!\r\nEnviado do meu iPhone\r\n\r\nEm 9 de jul. de 2025, à(s) 11:58, Claudio Kambara <nikihusky@outlook.com> escreveu:\r\n\r\n﻿ the pedal returns to the non-acceleration position but the car in the game continues to accelerate! It happens when I have my foot on the accelerator for a long time, sometimes especially when I turn on the engines.\r\nEnviado do meu iPhone\r\n\r\nEm 9 de jul. de 2025, à(s) 09:52, service@simsonn.com escreveu:\r\n\r\nHi Claudio Kambara,\r\n\r\nWhat do you mean by “throttle locked”? When the throttle is locked, are you still able to press the brake pedal? Could you please install Todesk so I can check remotely?\r\n\r\n",
+      "user_id": 158001932267,
+      "created_at": "2025-07-09T03:00:24Z",
+      "updated_at": "2025-07-09T03:00:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004486186,
+      "body_text": "Hi Claudio Kambara,  Regarding the acceleration issue, you need to set a 5% dead zone for the throttle, and possibly for the other pedals as well. Otherwise, the pedals may be overly sensitive.      After the final remote session and confirmation, we will send you a replacement VAM motor. Please also make sure to apply the previously mentioned settings before use. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-09T06:03:12Z",
+      "updated_at": "2025-07-09T06:03:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004525346,
+      "body_text": "Hello good morning, can we carry out the remote session?\r\nEnviado do meu iPhone\r\n\r\nEm 9 de jul. de 2025, à(s) 15:03, service@simsonn.com escreveu:\r\n\r\n﻿\r\nHi Claudio Kambara,\r\n\r\nRegarding the acceleration issue, you need to set a 5% dead zone for the throttle, and possibly for the other pedals as well. Otherwise, the pedals may be overly sensitive.\r\n\r\nAfter the final remote session and confirmation, we will send you a replacement VAM motor. Please also make sure to apply the previously mentioned settings before use.\r\n\r\n\r\n",
+      "user_id": 158001932267,
+      "created_at": "2025-07-10T22:34:24Z",
+      "updated_at": "2025-07-10T22:34:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004527372,
+      "body_text": "Hi Claudio Kambara,    Is it okay to try it now?",
+      "user_id": 158000445778,
+      "created_at": "2025-07-10T23:06:08Z",
+      "updated_at": "2025-07-10T23:06:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004527643,
+      "body_text": "It’s ok I downloaded ToDesk, do you need the information contained in it?\r\nEnviado do meu iPhone\r\n\r\nEm 11 de jul. de 2025, à(s) 08:06, service@simsonn.com escreveu:\r\n\r\n﻿\r\nHi Claudio Kambara,\r\n\r\nIs it okay to try it now?\r\n\r\n\r\n",
+      "user_id": 158001932267,
+      "created_at": "2025-07-10T23:10:05Z",
+      "updated_at": "2025-07-10T23:10:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004527732,
+      "body_text": "[image0.jpeg]\r\nEnviado do meu iPhone\r\n\r\nEm 11 de jul. de 2025, à(s) 08:09, Claudio Kambara <nikihusky@outlook.com> escreveu:\r\n\r\n﻿ It’s ok I downloaded ToDesk, do you need the information contained in it?\r\nEnviado do meu iPhone\r\n\r\nEm 11 de jul. de 2025, à(s) 08:06, service@simsonn.com escreveu:\r\n\r\n﻿\r\nHi Claudio Kambara,\r\n\r\nIs it okay to try it now?\r\n\r\n\r\n",
+      "user_id": 158001932267,
+      "created_at": "2025-07-10T23:11:37Z",
+      "updated_at": "2025-07-10T23:11:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004535067,
+      "body_text": "Sorry, I had to go out, I had an appointment! Do I need to ground the Fanatec and the PC? Do you think this is really the solution?\r\nEnviado do meu iPhone\r\n\r\nEm 11 de jul. de 2025, à(s) 08:09, Claudio Kambara <nikihusky@outlook.com> escreveu:\r\n\r\n﻿ It’s ok I downloaded ToDesk, do you need the information contained in it?\r\nEnviado do meu iPhone\r\n\r\nEm 11 de jul. de 2025, à(s) 08:06, service@simsonn.com escreveu:\r\n\r\n﻿\r\nHi Claudio Kambara,\r\n\r\nIs it okay to try it now?\r\n\r\n\r\n",
+      "user_id": 158001932267,
+      "created_at": "2025-07-11T01:14:09Z",
+      "updated_at": "2025-07-11T01:14:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004642604,
+      "body_text": "Hi，Claudio Kambara     If the Fanatec device is reliably grounded through the PC to a proper household ground, it will not interfere with other equipment.  Our company owns a Fanatec CSL DD 8Nm unit and we have tested and confirmed this ourselves.      https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-07-12T08:01:20Z",
+      "updated_at": "2025-07-12T08:01:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005621581,
+      "body_text": "Hello, I just grounded my equipment. Could you help me with formatting the pedals again because one of the motors doesn't work like the last time?\r\nEnviado do meu iPhone\r\n\r\nEm 11 de jul. de 2025, à(s) 10:13, Claudio Kambara <nikihusky@outlook.com> escreveu:\r\n\r\n﻿ Sorry, I had to go out, I had an appointment! Do I need to ground the Fanatec and the PC? Do you think this is really the solution?\r\nEnviado do meu iPhone\r\n\r\nEm 11 de jul. de 2025, à(s) 08:09, Claudio Kambara <nikihusky@outlook.com> escreveu:\r\n\r\n﻿ It’s ok I downloaded ToDesk, do you need the information contained in it?\r\nEnviado do meu iPhone\r\n\r\nEm 11 de jul. de 2025, à(s) 08:06, service@simsonn.com escreveu:\r\n\r\n﻿\r\nHi Claudio Kambara,\r\n\r\nIs it okay to try it now?\r\n\r\n\r\n",
+      "user_id": 158001932267,
+      "created_at": "2025-07-27T07:17:34Z",
+      "updated_at": "2025-07-27T07:17:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005637619,
+      "body_text": "I noticed that it is still oscillating even though it is grounded, the vibration works after the accelerator locks\r\nEnviado do meu iPhone\r\n\r\nEm 27 de jul. de 2025, à(s) 16:17, Claudio Kambara <nikihusky@outlook.com> escreveu:\r\n\r\n﻿ Hello, I just grounded my equipment. Could you help me with formatting the pedals again because one of the motors doesn't work like the last time?\r\nEnviado do meu iPhone\r\n\r\nEm 11 de jul. de 2025, à(s) 10:13, Claudio Kambara <nikihusky@outlook.com> escreveu:\r\n\r\n﻿ Sorry, I had to go out, I had an appointment! Do I need to ground the Fanatec and the PC? Do you think this is really the solution?\r\nEnviado do meu iPhone\r\n\r\nEm 11 de jul. de 2025, à(s) 08:09, Claudio Kambara <nikihusky@outlook.com> escreveu:\r\n\r\n﻿ It’s ok I downloaded ToDesk, do you need the information contained in it?\r\nEnviado do meu iPhone\r\n\r\nEm 11 de jul. de 2025, à(s) 08:06, service@simsonn.com escreveu:\r\n\r\n﻿\r\nHi Claudio Kambara,\r\n\r\nIs it okay to try it now?\r\n\r\n\r\n",
+      "user_id": 158001932267,
+      "created_at": "2025-07-27T11:30:43Z",
+      "updated_at": "2025-07-27T11:30:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005653837,
+      "body_text": "Hi Claudio Kambara,  What is your order number for the pedals and VAM? Please take photos of the pedals, VAM, and the control box wiring, and we will check them and get back to you. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-28T01:53:23Z",
+      "updated_at": "2025-07-28T01:53:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005655491,
+      "body_text": "Hi Claudio Kambara,    First, please make sure your software is updated to the latest SIMSONN Manager 2.1.0 and that the pedal firmware is also up to date. If both are already updated, the issue may be caused by unstable USB power supply or EMI interference from the wheelbase.  Please connect the pedal’s USB cable directly to the blue USB 3.0 port on the back of your PC and avoid using a USB hub to ensure stable power. Additionally, if the wheelbase and PC are using a two-prong power plug, it may result in poor grounding, or the wall socket itself might lack proper grounding. You can refer to the following steps for troubleshooting.       To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability:     1.    Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding.     2.    Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive.     3.    Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup.     4.    Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible.     5.    Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs.     6.    Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference.     7.    Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements.     8.    Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources.     Among them, connecting the green wire between the control unit and the pedal’s metal screw, and using a USB isolator, are effective methods. Most importantly, ensure that the computer uses a three-prong power plug and that the wall socket has a valid ground connection, as this can directly eliminate all interference issues. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-28T02:10:01Z",
+      "updated_at": "2025-07-28T02:10:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005656000,
+      "body_text": "olá eu já efetuei um procedimento pediram para eu aterrar o volante e o pc estava dando oscilação poderíamos continuar de onde paramos?[image0.png][image1.png]\r\nEnviado do meu iPhone\r\n\r\nEm 28 de jul. de 2025, à(s) 10:53, service@simsonn.com escreveu:\r\n\r\n﻿\r\nHi Claudio Kambara,\r\n\r\nWhat is your order number for the pedals and VAM?\r\nPlease take photos of the pedals, VAM, and the control box wiring, and we will check them and get back to you.\r\n\r\n\r\n",
+      "user_id": 158001932267,
+      "created_at": "2025-07-28T02:12:28Z",
+      "updated_at": "2025-07-28T02:12:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005656991,
+      "body_text": "There seems to be problems when I plug the motors into the socket! After I put the Simpson pedals in, I started having these problems. Before, there was no problem! Regarding grounding, the sound stopped oscillating. I believe it is properly grounded. Only when I plug the vibration motors into the socket do the pedals have problems.\r\nEnviado do meu iPhone\r\n\r\nEm 28 de jul. de 2025, à(s) 11:10, service@simsonn.com escreveu:\r\n\r\n﻿\r\nHi Claudio Kambara,\r\n\r\nFirst, please make sure your software is updated to the latest SIMSONN Manager 2.1.0 and that the pedal firmware is also up to date.\r\nIf both are already updated, the issue may be caused by unstable USB power supply or EMI interference from the wheelbase.\r\nPlease connect the pedal’s USB cable directly to the blue USB 3.0 port on the back of your PC and avoid using a USB hub to ensure stable power.\r\nAdditionally, if the wheelbase and PC are using a two-prong power plug, it may result in poor grounding, or the wall socket itself might lack proper grounding.\r\nYou can refer to the following steps for troubleshooting.\r\n\r\nTo address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability:\r\n    1.    Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding.\r\n    2.    Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive.\r\n    3.    Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup.\r\n    4.    Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible.\r\n    5.    Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs.\r\n    6.    Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference.\r\n    7.    Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements.\r\n    8.    Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources.\r\n\r\nAmong them, connecting the green wire between the control unit and the pedal’s metal screw, and using a USB isolator, are effective methods.\r\nMost importantly, ensure that the computer uses a three-prong power plug and that the wall socket has a valid ground connection, as this can directly eliminate all interference issues.\r\n\r\n",
+      "user_id": 158001932267,
+      "created_at": "2025-07-28T02:18:06Z",
+      "updated_at": "2025-07-28T02:18:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005676340,
+      "body_text": "Hi Claudio Kambara,  Please take photos of the pedals, VAM, and the control box wiring, and we will check them and get back to you.  ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-28T03:56:37Z",
+      "updated_at": "2025-07-28T03:56:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005725949,
+      "body_text": "I'm having problems with the pedals now, they are not being recognized. Today I checked the computer and they were like that, before they were working normally. I will send the photos you requested along with the photo of csoftawer not recognizing the pedals![image0.jpeg][image2.jpeg][image3.jpeg][image4.jpeg][image5.jpeg][image6.jpeg][image7.jpeg]\r\nEnviado do meu iPhone\r\n\r\nEm 28 de jul. de 2025, à(s) 12:56, service@simsonn.com escreveu:\r\n\r\n﻿\r\nHi Claudio Kambara,\r\n\r\nPlease take photos of the pedals, VAM, and the control box wiring, and we will check them and get back to you.\r\n\r\n\r\n",
+      "user_id": 158001932267,
+      "created_at": "2025-07-28T12:30:45Z",
+      "updated_at": "2025-07-28T12:30:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005779251,
+      "body_text": "Hi Claudio Kambara,  Please release the upgrade button on the control box and reconnect the USB. This will exit the upgrade mode and switch the device back to normal operation mode. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-29T14:43:33Z",
+      "updated_at": "2025-07-29T14:43:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005781181,
+      "body_text": "Hi Claudio Kambara，  Please provide photos of your pedal installation from the front, back, left, and right, along with photos of the motor, bracket, and computer power plug.  These will allow me to analyze the issue, as it is difficult to resolve EMI interference problems based on text descriptions alone.  ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-29T16:01:25Z",
+      "updated_at": "2025-07-29T16:01:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005862329,
+      "body_text": "Hi Claudio Kambara,    Has the device been recognized now? In SIMSONN Manager 2.1.0, I saw the photos provided in ticket #2071, showing that the Toyota color can be changed and the device has already exited upgrade mode and entered normal operation. Are you still experiencing any other issues?",
+      "user_id": 158000445778,
+      "created_at": "2025-07-30T22:37:43Z",
+      "updated_at": "2025-07-30T22:37:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005862350,
+      "body_text": "合并来自工单1321  \n      主题: Vam pro  \n      描述:  Good morning! I recently purchased the VAM device for the Pro pedals and I had difficulty configuring them! iRacing did not work in Automobilista 2, it works with a large delay in Assertto Corsa Competizuone, it worked and then stopped! I have already plugged it into a separate outlet thinking it could be force, but it continued the same thing! Sometimes the vibration goes off, sometimes the accelerator locks up and it gets to the point of misconfiguring the steering wheel and pedals in the games! I need help Enviado do meu iPhone",
+      "user_id": 158000445778,
+      "created_at": "2025-07-30T22:38:48Z",
+      "updated_at": "2025-07-30T22:38:48Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158005862349,
+      "body_text": "ID 为 1321, 1987 and 2071 的工单已被合并至该工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-30T22:38:48Z",
+      "updated_at": "2025-07-30T22:38:48Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158005862352,
+      "body_text": "合并来自工单1987  \n      主题: Vam  \n      描述:  Hello, I recently purchased VAM engines and had some connection problems. They asked me to ground the steering wheel and the PC was built and still has problems connecting the VAM engines! I would like some help, please. Enviado do meu iPhone",
+      "user_id": 158000445778,
+      "created_at": "2025-07-30T22:38:49Z",
+      "updated_at": "2025-07-30T22:38:49Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158005862354,
+      "body_text": "合并来自工单2071  \n      主题: Re: Vam pro  \n      描述:  \n Enviado do meu iPhone \n \n \n Em 30 de jul. de 2025, à(s) 01:01, service@simsonn.com escreveu: \n \n \n \n \n \nHi Claudio Kambara， \n \nPlease provide photos of your pedal installation from the front, back, left, and right, along with photos of the motor, bracket, and computer power plug. \n These will allow me to analyze the issue, as it is difficult to resolve EMI interference problems based on text descriptions alone",
+      "user_id": 158000445778,
+      "created_at": "2025-07-30T22:38:50Z",
+      "updated_at": "2025-07-30T22:38:50Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158005863977,
+      "body_text": "I've already managed to connect the device! The problem actually appears when I plug the vam into the socket\r\nEnviado do meu iPhone\r\n\r\nEm 31 de jul. de 2025, à(s) 07:37, service@simsonn.com escreveu:\r\n\r\nHas the device been recognized now? In SIMSONN Manager 2.1.0, I saw the photos provided in ticket #2071, showing that the Toyota color can be changed and the device has already exited upgrade mode and entered normal operation. Are you still experiencing any other issues?\r\n\r\n",
+      "user_id": 158001932267,
+      "created_at": "2025-07-31T01:05:38Z",
+      "updated_at": "2025-07-31T01:05:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005867251,
+      "body_text": "Hi Claudio Kambara,  Alright, it seems the upgrade button was accidentally pressed. I’ve checked your wiring, and everything looks good. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-31T05:24:17Z",
+      "updated_at": "2025-07-31T05:24:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005873479,
+      "body_text": "I want you to reset the pedals and vibration motors! When can we schedule?\r\nEnviado do meu iPhone\r\n\r\nEm 31 de jul. de 2025, à(s) 14:24, service@simsonn.com escreveu:\r\n\r\n﻿\r\nHi Claudio Kambara,\r\n\r\nAlright, it seems the upgrade button was accidentally pressed.\r\nI’ve checked your wiring, and everything looks good.\r\n\r\n\r\n",
+      "user_id": 158001932267,
+      "created_at": "2025-07-31T06:56:22Z",
+      "updated_at": "2025-07-31T06:56:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005879104,
+      "body_text": "Hi Claudio Kambara,  Do you have time now? Shall we do remote assistance via Todesk? ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-31T08:15:36Z",
+      "updated_at": "2025-07-31T08:15:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005896598,
+      "body_text": "Hi Claudio Kambara,  yes",
+      "user_id": 158000445778,
+      "created_at": "2025-07-31T12:31:25Z",
+      "updated_at": "2025-07-31T12:31:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005896617,
+      "body_text": "Hi Claudio Kambara,     Please provide your ID and temporary code. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-31T12:33:06Z",
+      "updated_at": "2025-07-31T12:33:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005900614,
+      "body_text": "Hi Claudio Kambara,  If you wish to restore your pedals, I recommend uninstalling the current SIMSONN Manager and downloading the latest version SIMSONN Manager 2.1.0.exe from our official website. After installation, please manually update the firmware: Settings → Update → Manual Update Firmware → Pedals → firmware → proxultra.sfu. The pedals will reset automatically once this process is completed. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-31T13:29:05Z",
+      "updated_at": "2025-07-31T13:29:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005904079,
+      "body_text": "I will have some time tomorrow at 6pm Osaka time ok?\r\nEnviado do meu iPhone\r\n\r\nEm 31 de jul. de 2025, à(s) 21:33, service@simsonn.com escreveu:\r\n\r\n﻿\r\nHi Claudio Kambara,\r\n\r\nPlease provide your ID and temporary code.\r\n\r\n\r\n[https://attachment.freshdesk.com/inline/attachment?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTU4MDAxMDkwODQzLCJkb21haW4iOiJzaW1zb25uLmZyZXNoZGVzay5jb20iLCJhY2NvdW50X2lkIjo0MjA2MDM2fQ.5wVtWp8SytDCKbroyB5kBD3cpR4bz0s99483Br1Wr4w]\r\n",
+      "user_id": 158001932267,
+      "created_at": "2025-07-31T14:44:40Z",
+      "updated_at": "2025-07-31T14:44:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005904176,
+      "body_text": "Hi Claudio Kambara,    Yes, that works.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-31T14:49:57Z",
+      "updated_at": "2025-07-31T14:49:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005918333,
+      "body_text": "Is 6pm today ok?\r\nEnviado do meu iPhone\r\n\r\nEm 31 de jul. de 2025, à(s) 23:50, service@simsonn.com escreveu:\r\n\r\n﻿\r\nHi Claudio Kambara,\r\n\r\nYes, that works.\r\n\r\n\r\n",
+      "user_id": 158001932267,
+      "created_at": "2025-07-31T23:21:25Z",
+      "updated_at": "2025-07-31T23:21:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005918778,
+      "body_text": "Hi Claudio Kambara,  Alright, let's schedule it for 5:00 PM China time. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-31T23:58:46Z",
+      "updated_at": "2025-07-31T23:58:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005920586,
+      "body_text": "Ok\r\nEnviado do meu iPhone\r\n\r\nEm 1 de ago. de 2025, à(s) 08:58, service@simsonn.com escreveu:\r\n\r\n﻿\r\nHi Claudio Kambara,\r\n\r\nAlright, let's schedule it for 5:00 PM China time.\r\n\r\n\r\n\r\n",
+      "user_id": 158001932267,
+      "created_at": "2025-08-01T02:48:57Z",
+      "updated_at": "2025-08-01T02:48:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005967094,
+      "body_text": "Hi Claudio Kambara,  Are you online?",
+      "user_id": 158000445778,
+      "created_at": "2025-08-01T09:03:08Z",
+      "updated_at": "2025-08-01T09:03:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005988394,
+      "body_text": "Hey I’m sorry I’m here now\r\nEnviado do meu iPhone\r\n\r\nEm 1 de ago. de 2025, à(s) 18:03, service@simsonn.com escreveu:\r\n\r\n﻿\r\nHi Claudio Kambara,\r\n\r\nAre you online?\r\n\r\n\r\n",
+      "user_id": 158001932267,
+      "created_at": "2025-08-01T10:15:36Z",
+      "updated_at": "2025-08-01T10:15:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005989944,
+      "body_text": "[image0.jpeg]\r\nEnviado do meu iPhone\r\n\r\nEm 1 de ago. de 2025, à(s) 19:15, Claudio Kambara <nikihusky@outlook.com> escreveu:\r\n\r\n﻿ Hey I’m sorry I’m here now\r\nEnviado do meu iPhone\r\n\r\nEm 1 de ago. de 2025, à(s) 18:03, service@simsonn.com escreveu:\r\n\r\n﻿\r\nHi Claudio Kambara,\r\n\r\nAre you online?\r\n\r\n\r\n",
+      "user_id": 158001932267,
+      "created_at": "2025-08-01T10:20:47Z",
+      "updated_at": "2025-08-01T10:20:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005990617,
+      "body_text": "Hi Claudio Kambara,  The password needs to be displayed. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-01T10:22:56Z",
+      "updated_at": "2025-08-01T10:22:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005991854,
+      "body_text": "[image0.jpeg]\r\nEnviado do meu iPhone\r\n\r\nEm 1 de ago. de 2025, à(s) 19:23, service@simsonn.com escreveu:\r\n\r\n﻿\r\nHi Claudio Kambara,\r\n\r\nThe password needs to be displayed.\r\n\r\n\r\n",
+      "user_id": 158001932267,
+      "created_at": "2025-08-01T10:27:57Z",
+      "updated_at": "2025-08-01T10:27:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006168019,
+      "body_text": "Good morning, do you have the tracking number for the new VAMs that were sent to me?\r\nEnviado do meu iPhone\r\n\r\nEm 1 de ago. de 2025, à(s) 19:27, Claudio Kambara <nikihusky@outlook.com> escreveu:\r\n\r\n﻿\r\n<image0.jpeg>\r\n\r\nEnviado do meu iPhone\r\n\r\nEm 1 de ago. de 2025, à(s) 19:23, service@simsonn.com escreveu:\r\n\r\n﻿\r\nHi Claudio Kambara,\r\n\r\nThe password needs to be displayed.\r\n\r\n\r\n",
+      "user_id": 158001932267,
+      "created_at": "2025-08-04T01:06:36Z",
+      "updated_at": "2025-08-04T01:06:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006273175,
+      "body_text": "Hi Claudio Kambara,  I might have forgotten due to a business trip—does your pedal require a replacement main controller or a VAM motor? Could you please confirm the quantity and the shipping address? ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-05T13:15:05Z",
+      "updated_at": "2025-08-05T13:15:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006284397,
+      "body_text": "You were supposed to send only the VAM ones. I think the controller is ok! I hope it works this time! Would it be possible to send the PRO ones? You told me that if they were the PRO ones, there wouldn't be this problem.\r\nEnviado do meu iPhone\r\n\r\nEm 5 de ago. de 2025, à(s) 22:15, service@simsonn.com escreveu:\r\n\r\n﻿\r\nHi Claudio Kambara,\r\n\r\nI might have forgotten due to a business trip—does your pedal require a replacement main controller or a VAM motor?\r\nCould you please confirm the quantity and the shipping address?\r\n\r\n\r\n",
+      "user_id": 158001932267,
+      "created_at": "2025-08-05T14:39:48Z",
+      "updated_at": "2025-08-05T14:39:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006300247,
+      "body_text": "When I bought it, 3 came! In this case, the 3 stopped working. If you send me 2 that work perfectly, I would be grateful! Or send me 3 and they will work perfectly! The address is Japan 529-1311 Shiga ken Echigawa Aisho cho Ishihashi 39-13 name claudio kambara\r\nEnviado do meu iPhone\r\n\r\nEm 5 de ago. de 2025, à(s) 22:15, service@simsonn.com escreveu:\r\n\r\n﻿\r\nHi Claudio Kambara,\r\n\r\nI might have forgotten due to a business trip—does your pedal require a replacement main controller or a VAM motor?\r\nCould you please confirm the quantity and the shipping address?\r\n\r\n\r\n",
+      "user_id": 158001932267,
+      "created_at": "2025-08-05T21:41:51Z",
+      "updated_at": "2025-08-05T21:41:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006353282,
+      "body_text": "Can you tell me when it will be shipped?\r\nEnviado do meu iPhone\r\n\r\nEm 6 de ago. de 2025, à(s) 06:41, Claudio Kambara <nikihusky@outlook.com> escreveu:\r\n\r\n﻿ When I bought it, 3 came! In this case, the 3 stopped working. If you send me 2 that work perfectly, I would be grateful! Or send me 3 and they will work perfectly! The address is Japan 529-1311 Shiga ken Echigawa Aisho cho Ishihashi 39-13 name claudio kambara\r\nEnviado do meu iPhone\r\n\r\nEm 5 de ago. de 2025, à(s) 22:15, service@simsonn.com escreveu:\r\n\r\n﻿\r\nHi Claudio Kambara,\r\n\r\nI might have forgotten due to a business trip—does your pedal require a replacement main controller or a VAM motor?\r\nCould you please confirm the quantity and the shipping address?\r\n\r\n\r\n",
+      "user_id": 158001932267,
+      "created_at": "2025-08-06T09:43:41Z",
+      "updated_at": "2025-08-06T09:43:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006354934,
+      "body_text": "速卖通订单号: 1113893347785400",
+      "user_id": 158001343601,
+      "created_at": "2025-08-06T10:44:19Z",
+      "updated_at": "2025-08-06T10:44:19Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158006355176,
+      "body_text": "We apologize for not responding to you in a timely manner. Our support staff is on leave this week. We will resend your order immediately and send you the shipping link tomorrow. We sincerely apologize for the inconvenience!",
+      "user_id": 158001343601,
+      "created_at": "2025-08-06T10:46:29Z",
+      "updated_at": "2025-08-06T10:46:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006681077,
+      "body_text": "Good afternoon, were the vans sent?\r\nEnviado do meu iPhone\r\n\r\nEm 6 de ago. de 2025, à(s) 19:46, service@simsonn.com escreveu:\r\n\r\n﻿\r\nWe apologize for not responding to you in a timely manner. Our support staff is on leave this week. We will resend your order immediately and send you the shipping link tomorrow. We sincerely apologize for the inconvenience!\r\n2044:4206036\r\n\r\n",
+      "user_id": 158001932267,
+      "created_at": "2025-08-11T07:58:41Z",
+      "updated_at": "2025-08-11T07:58:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007071793,
+      "body_text": "Hello, I received the VAM today. I installed them correctly and left them at 50% until the third lap on the track. There were no problems after that, just vibration without being paired with the game. When changing gears and passing over the curbs, they did not vibrate according to the feedback, just vibration in a single wave!\r\nEnviado do meu iPhone\r\n\r\nEm 11 de ago. de 2025, à(s) 16:58, Claudio Kambara <nikihusky@outlook.com> escreveu:\r\n\r\n﻿ Good afternoon, were the vans sent?\r\nEnviado do meu iPhone\r\n\r\nEm 6 de ago. de 2025, à(s) 19:46, service@simsonn.com escreveu:\r\n\r\n﻿\r\nWe apologize for not responding to you in a timely manner. Our support staff is on leave this week. We will resend your order immediately and send you the shipping link tomorrow. We sincerely apologize for the inconvenience!\r\n2044:4206036\r\n\r\n",
+      "user_id": 158001932267,
+      "created_at": "2025-08-18T10:12:52Z",
+      "updated_at": "2025-08-18T10:12:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007081594,
+      "body_text": "Hi Claudio Kambara,   You can use SIMHUB 9.9.3. If similar issues occur, such as the vibration not stopping in time, we will investigate and fix it, then release an update. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-18T12:47:56Z",
+      "updated_at": "2025-08-18T12:47:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007082140,
+      "body_text": "I used SimHub only without the SimSoon app as recommended at 50% strength! I noticed that this time it was taking longer to give problems! But looking a little deeper I found that I'm not the first to have this problem with VAM!\r\nEnviado do meu iPhone\r\n\r\nEm 18 de ago. de 2025, à(s) 21:48, service@simsonn.com escreveu:\r\n\r\n﻿\r\nHi Claudio Kambara,\r\n\r\nYou can use SIMHUB 9.9.3. If similar issues occur, such as the vibration not stopping in time, we will investigate and fix it, then release an update.\r\n\r\n\r\n",
+      "user_id": 158001932267,
+      "created_at": "2025-08-18T13:10:13Z",
+      "updated_at": "2025-08-18T13:10:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007216186,
+      "body_text": "Hi Claudio Kambara,  We have also noticed this issue during our lab tests, and we will release an update in the coming days to fix it. At that time, you can go to Settings → Update → Check for updates to install the 2.1.1 software version, and then check for updates again to be prompted for a firmware upgrade. This should resolve the problem. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-20T14:47:43Z",
+      "updated_at": "2025-08-20T14:47:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007216209,
+      "body_text": "Hi Claudio Kambara,  In addition, please do not run SimHub and Simsonn Manager at the same time. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-20T14:48:30Z",
+      "updated_at": "2025-08-20T14:48:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

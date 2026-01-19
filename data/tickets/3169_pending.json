@@ -1,0 +1,54 @@
+{
+  "id": 3169,
+  "subject": "Simsonn Customs Clearance Documents",
+  "description_text": "Hello, we apologize for the inconvenience caused. You may use this invoice for customs clearance. Should any additional taxes apply, we will reimburse you for a portion of them. Please rest assured.",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-08-27T08:06:59Z",
+  "updated_at": "2025-08-28T06:25:09Z",
+  "requester_id": 158003629210,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007618300,
+      "body_text": "Thank you for your assistance.\r\n\r\nOn Wed, 27 Aug 2025 at 10:07, support@simsonn.com ",
+      "user_id": 158003629210,
+      "created_at": "2025-08-27T10:13:00Z",
+      "updated_at": "2025-08-27T10:13:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007618328,
+      "body_text": "Hi Gersham5260,    Please feel free to contact us anytime if you encounter any difficulties.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-27T10:18:10Z",
+      "updated_at": "2025-08-27T10:18:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007622302,
+      "body_text": "*Subject:* Clarification on Customs Invoice and Tax Reimbursement\r\n\r\nDear Simsonn Support Team,\r\n\r\nThank you for your message and for providing the invoice for customs\r\nclearance.\r\n\r\nI would appreciate it if you could clarify a few points:\r\n\r\n   -\r\n\r\n   What specific details are included in the invoice to ensure smooth\r\n   customs processing?\r\n   -\r\n\r\n   If additional taxes are charged, what portion of those will be\r\n   reimbursed, and what is the process for claiming reimbursement?\r\n\r\nI want to make sure everything is in order before presenting the invoice to\r\ncustoms. Thank you again for your assistance.\r\n\r\nBest regards,  Gersham5260\r\n\r\n\r\n",
+      "user_id": 158003629210,
+      "created_at": "2025-08-27T10:51:00Z",
+      "updated_at": "2025-08-27T10:51:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007685364,
+      "body_text": "Hello, the invoice contains all the information required for customs clearance. After completing customs clearance, you may send us the invoice, and we will reimburse you for a portion of the expenses, depending on the invoice details.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-28T06:25:08Z",
+      "updated_at": "2025-08-28T06:25:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

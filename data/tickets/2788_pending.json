@@ -1,0 +1,24 @@
+{
+  "id": 2788,
+  "subject": "R: 回复：R: Order #SSN2341 confirmed",
+  "description_text": "Buongiorno,\r\nOk va bene la versione nera dello stesso prodotto, vi chiedo solo la cortesia di spedirla il più presto possibile, serve a mio figlio per una gara del 22 agosto.\r\nGrazie.\r\n--\r\nInviato da Libero Mail\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-17T09:21:21Z",
+  "updated_at": "2025-08-18T03:45:15Z",
+  "requester_id": 158003254710,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007051851,
+      "body_text": "Hi pictom@libero. it,    Okay, we have arranged for shipment from our warehouse in Germany. Warehouse staff will ship your order after they arrive at work, and it is expected to arrive on the 21st.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-18T03:45:15Z",
+      "updated_at": "2025-08-18T03:45:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

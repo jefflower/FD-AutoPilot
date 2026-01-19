@@ -1,0 +1,84 @@
+{
+  "id": 7713,
+  "subject": "Ref Simsonn Plus X.",
+  "description_text": "Hello,\r\nI am having a potential issue with your Plus-X pedals. \r\n\r\nNo matter how hard I press on your pedals I cannot exceed 50kg force and up there is extremely hard to achieve. \r\n\r\nI am coming from thrustmaster load cell pedals where 80kg was relatively simple and also have a track-car with brake force telemetry that confirmed my normal on track peak force is 92kg. \r\n\r\nFor reference I am a 94kg male who can leg press 320kg. Not a small lady for example. Leg pressure isn’t the issue. \r\n\r\nI wonder if there may be an issue with my load cell calibration. Is it somehow adjustable?\r\n\r\nOrder number was: SSN2957\r\n\r\nBest Regards,\r\nStewart Sanderson\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-08T15:34:48Z",
+  "updated_at": "2025-12-20T12:27:33Z",
+  "requester_id": 158005680867,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014167159,
+      "body_text": "Hi Stewart Sanderson,  You can try replacing the damper with the yellow or blue one. Each color represents a different stiffness level: red is the softest, yellow is medium, and blue is the hardest. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-09T06:23:54Z",
+      "updated_at": "2025-12-09T06:23:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014208544,
+      "body_text": "Hi,\r\nYou seem to have completely misunderstood my message. \r\n\r\nThe elastomers make no  difference to load measurement, only to movement. \r\n\r\nMy issue is my load doesn’t go high enough on the load cell. \r\n\r\n\r\nBest Regards,\r\nStewart Sanderson\r\n\r\n\r\n> ",
+      "user_id": 158005680867,
+      "created_at": "2025-12-09T18:06:31Z",
+      "updated_at": "2025-12-09T18:06:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014301101,
+      "body_text": "Hi Stewart Sanderson,  The pedals have a travel range. With a stiffer elastomer, the maximum resistance is reached before the pedal completes its full travel. Therefore, to increase the pedal’s force, the elastomer needs to be replaced with a stiffer one. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T06:01:16Z",
+      "updated_at": "2025-12-11T06:01:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014338069,
+      "body_text": "Hi,\r\nThe pedal isn’t bottoming out. I have the hardest elastomer plus your plastic spacers. It almost doesn’t move at all!! It’s actually too stiff and I want to soften it eventually. \r\n\r\nBest Regards,\r\nStewart Sanderson\r\n\r\n\r\n> ",
+      "user_id": 158005680867,
+      "created_at": "2025-12-11T17:08:40Z",
+      "updated_at": "2025-12-11T17:08:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014472178,
+      "body_text": "Hi Stewart Sanderson,  If you want the brake pedal to feel softer, you can consider removing the 10mm limit spacer inside the black spring, which may increase the pedal travel. In fact, the pedal’s force and damping stiffness mainly depend on the compression of the damper. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-14T03:24:40Z",
+      "updated_at": "2025-12-14T03:24:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014486992,
+      "body_text": "This is getting silly,\r\nI think we need to start from the beginning again as you are not understanding me. \r\n\r\nNo matter how hard I press the pedal, the load cell will not register over 50kg. \r\n\r\nI think the load cell has an issue. I am\r\nA 100kg man with very large strong legs and your load cell won’t go above 50kg. My Fanatec and thrustmaster don’t have this issue.  \r\n\r\nI have tried all the elastomer colours and all the spacer options. The pedal travel is fine.  \r\n\r\nThis email was to ask if there is some mechanical calibration or alignment procedure required for the load cell?\r\n\r\nBest Regards,\r\nStewart Sanderson\r\n\r\n\r\n> ",
+      "user_id": 158005680867,
+      "created_at": "2025-12-14T16:50:46Z",
+      "updated_at": "2025-12-14T16:50:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014810196,
+      "body_text": "Hi Stewart Sanderson,     Please take a photo of the side installation of the brake pedal. I will check whether the front of the brake sensor is blocked by the bracket or any other object, which may prevent it from outputting correct data. Under normal conditions, it should be easy to reach a braking force of 60 kg. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-20T12:27:32Z",
+      "updated_at": "2025-12-20T12:27:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

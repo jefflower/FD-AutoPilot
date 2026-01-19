@@ -1,0 +1,184 @@
+{
+  "id": 3635,
+  "subject": "Simsonn Pedals in Lemans Ultimate and ACC",
+  "description_text": "I am having problems with my new set of Simsonn Pro X pedals I just\r\npurchased.  When trying to bind the throttle and the brake in LeMans\r\nUltimate (and ACC) the brake pedal is trying to bind to the same axis as\r\nthe steering wheel.\r\n\r\nHow do I correct this behaviour?  Have upgraded the pedals to the latest\r\nfirmware upon initial install.\r\n\r\nRegards\r\n\r\nTerry\r\n\r\n<https://www.avast.com/sig-email?utm_medium=email&utm_source=link&utm_campaign=sig-email&utm_content=webmail>\r\nVirus-free.www.avast.com\r\n<https://www.avast.com/sig-email?utm_medium=email&utm_source=link&utm_campaign=sig-email&utm_content=webmail>\r\n<#DAB4FAD8-2DD7-40BB-A1B8-4E2AA1F9FDF2>\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-09-09T02:47:11Z",
+  "updated_at": "2025-09-19T02:17:28Z",
+  "requester_id": 158004293805,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008346780,
+      "body_text": "Hi Terry Bullard,     Please use the SIMSONN Manager 2.1.1 download link. We’ll be releasing an updated version soon.  In version 2.1.1, please follow these steps:    Click Revert    Then click Save    Finally, reconnect the USB cable    This process will disable the previously reserved Rx axis, which was originally intended for the brake pedal but has now been removed.  If the Rx axis is not disabled, it may still be recognized by the software, causing interference and preventing the pedals from binding properly.  Once you complete these steps, everything should work normally and allow proper binding.       https://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-09-10T00:10:15Z",
+      "updated_at": "2025-09-10T00:10:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008347974,
+      "body_text": "Thank you for your quick response - however I am still having issues.   1st - Not sure I understand the directions given on reverting as listed in reply.  I downloaded and installed the Simsonn Manager 2.1.1  I did click the revert and then save.  However - I don't understand the step \"Finally, reconnect the USB Cable\"..  The USB cable was never disconnected. If I disconnected USB prior to clicking the revert button - the revert button cannot be clicked.  I did disconnect the USB cable at this point which then disconnected the pedal controller from the Simsonn Manager and then reconnected the USB which then reconnected the pedal controller to Simsonn Manager.   After this I then opened game and tried to rebind.  The steering left/right are binding to the Y axis as always.  At this point - the throttle is showing up as X+ and the brake is showing up as Y axis (which is still in conflict with steering).  I have also tried deleting the LeMans Ultimate direct input.json config file in steam so that it would have to be recreated.     Not sure if I have explained my situation properly - If you need any clarification please let me know.     Regards     Terry",
+      "user_id": 158004293805,
+      "created_at": "2025-09-10T01:27:57Z",
+      "updated_at": "2025-09-10T01:27:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158008349080,
+      "body_text": "Hi Terry Bullard,  Please install the Todesk software. No registration is required, and if it prompts you to register, simply close the window. I can assist you remotely to resolve the issue right now.      https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-09-10T02:34:45Z",
+      "updated_at": "2025-09-10T02:34:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008486948,
+      "body_text": "Hi - I have reinstalled everything and pedals appear to be working fine at\r\nthis time. However I do have a question. I have a screen shot of the\r\ncontrols binding in LeMans Ultimate.The brake is now mapping to the Y+ axis\r\nand Throttle is mapping to X+    The steering right is also mapped to X+\r\nbut it is not causing any problems.  Not sure if I still have issues as I\r\nwould not think that having throttle and steering mapped to same axis makes\r\nsense.\r\nIf you would still like to remote in I can do that tomorrow night. I am in\r\nthe US on the east coast.  We are -5.00 hours behind UTC so at the time I\r\nwrote this email it is Wednesday Sept 10 @ 9:26 PM\r\n\r\nThanks\r\n\r\nTerry Bullard\r\n[image: 2025-09-10 21_16_56-Le Mans Ultimate v1.0200.jpg]\r\n\r\n\r\nOn Tue, Sep 9, 2025 at 10:35 PM service@simsonn.com ",
+      "user_id": 158004293805,
+      "created_at": "2025-09-11T01:27:57Z",
+      "updated_at": "2025-09-11T01:27:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008561905,
+      "body_text": "Hi Terry Bullard,  I noticed that it’s currently late at night for you. Please let me know a convenient time, and I will adjust to your schedule for the remote support. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-12T04:35:49Z",
+      "updated_at": "2025-09-12T04:35:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008633694,
+      "body_text": "Hello - Yes - I am in the USA - East Coast Time Zone.  Can we do next\r\nTuesday (Sept 16th) any time from 7:30 PM until about 10:30 PM\r\n\r\nThanks\r\n\r\nTerry Bullard\r\n\r\nOn Fri, Sep 12, 2025 at 12:36 AM service@simsonn.com ",
+      "user_id": 158004293805,
+      "created_at": "2025-09-13T12:19:52Z",
+      "updated_at": "2025-09-13T12:19:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008792519,
+      "body_text": "Hi Terry Bullard,  Sure, no problem. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-16T01:13:04Z",
+      "updated_at": "2025-09-16T01:13:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008833657,
+      "body_text": "Hello - I have a conflict tonight and will not be able to talk with you. If\r\nit is not a problem - can we reschedule for Thursday night - same time\r\nframe?\r\n\r\nThanks\r\n\r\nTerry\r\n\r\n<https://www.avast.com/sig-email?utm_medium=email&utm_source=link&utm_campaign=sig-email&utm_content=webmail>\r\nVirus-free.www.avast.com\r\n<https://www.avast.com/sig-email?utm_medium=email&utm_source=link&utm_campaign=sig-email&utm_content=webmail>\r\n<#DAB4FAD8-2DD7-40BB-A1B8-4E2AA1F9FDF2>\r\n\r\nOn Mon, Sep 15, 2025 at 9:13 PM service@simsonn.com ",
+      "user_id": 158004293805,
+      "created_at": "2025-09-16T21:55:38Z",
+      "updated_at": "2025-09-16T21:55:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008837875,
+      "body_text": "Hi Terry Bullard,   Alright, we will proceed according to your request. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-17T01:58:46Z",
+      "updated_at": "2025-09-17T01:58:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008930986,
+      "body_text": "Have installed Todesk software and am sitting on the following screen.\r\n\r\n[image: image.png]\r\nLet me know when you want to proceed.  I will be keeping an eye on my\r\nemails.\r\n\r\nThanks\r\n\r\nTerry\r\n\r\nOn Tue, Sep 9, 2025 at 10:35 PM service@simsonn.com ",
+      "user_id": 158004293805,
+      "created_at": "2025-09-18T22:18:33Z",
+      "updated_at": "2025-09-18T22:18:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008933360,
+      "body_text": "Hi Terry Bullard,  Are you still online? It’s 9:57 AM here. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-19T01:58:17Z",
+      "updated_at": "2025-09-19T01:58:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008933383,
+      "body_text": "Yes, I am here.\r\n\r\nOn Thu, Sep 18, 2025 at 9:58 PM service@simsonn.com ",
+      "user_id": 158004293805,
+      "created_at": "2025-09-19T02:01:04Z",
+      "updated_at": "2025-09-19T02:01:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008933385,
+      "body_text": "Hi Terry Bullard,        Please try restoring the factory settings first. Then open Simsonn Manager 2.1.1. If the device connects successfully, go to: Settings → Update → Manual Firmware Update → pedals-firmware → pedals-prox.sfu.  After the firmware update is completed, please test the device again.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-19T02:01:24Z",
+      "updated_at": "2025-09-19T02:01:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008933498,
+      "body_text": "Inputs seem to be working properly.\r\n\r\n",
+      "user_id": 158004293805,
+      "created_at": "2025-09-19T02:11:46Z",
+      "updated_at": "2025-09-19T02:11:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008933508,
+      "body_text": "Hi Terry Bullard, Yes, I can see that it’s now working properly — it was simply a matter of upgrading. Please do not follow the upgrade steps mentioned in my previous email, as your pedals are actually PlusX, not ProX. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-19T02:12:47Z",
+      "updated_at": "2025-09-19T02:12:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008933518,
+      "body_text": "Very good. Thank you very much for your help....\r\n\r\n",
+      "user_id": 158004293805,
+      "created_at": "2025-09-19T02:14:20Z",
+      "updated_at": "2025-09-19T02:14:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008933534,
+      "body_text": "Service agent was very quick at resolving issue. Much appreciated.",
+      "user_id": 158004293805,
+      "created_at": "2025-09-19T02:17:27Z",
+      "updated_at": "2025-09-19T02:17:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "id": 2015,
+  "subject": "Issue with Simsonn Pro Pedals",
+  "description_text": "Hi Team,\r\nI am having an issue where the pedals appear to be connected to the PC, but it does not detect any input. It has been working fine until now.\r\nI ordered this via AliExpress on 20 March 2024. Order #8185832670935483.\r\nIs there anything I can do?\r\nHope to hear back soon!\r\n\r\n-Vinnie\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-07-28T15:24:59Z",
+  "updated_at": "2025-12-18T10:40:49Z",
+  "requester_id": 158002378259,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005767929,
+      "body_text": " Hi,\r\nI do not have any login details to view the ticket.\r\n-Vinnie\r\n    ",
+      "user_id": 158002378259,
+      "created_at": "2025-07-29T10:02:09Z",
+      "updated_at": "2025-07-29T10:02:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005780055,
+      "body_text": "Hi Vinh Nguyen,  Please take a screenshot of the connection status in our software and send it to us so we can help check the issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-29T15:17:07Z",
+      "updated_at": "2025-07-29T15:17:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005877116,
+      "body_text": " Hi,\r\nPlease see below.\r\n\r\nSimsonn Manager shows device disconnected. Freejoy shows it as connected, but it is not receiving any input.\r\nI should note that before it stopped working, the throttle input appeared to only register the pedal input at 50%. Not sure if that helps.\r\n-Vinnie\r\n\r\n\r\n    ",
+      "user_id": 158002378259,
+      "created_at": "2025-07-31T07:20:30Z",
+      "updated_at": "2025-07-31T07:20:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005879124,
+      "body_text": "Hi Vinh Nguyen,  For the Pro pedals with version 1.7.0, they do not support updates via SIMSONN Manager and can only be calibrated using Freejoy or Simconfigpedals v3.5. Your issue is caused by Freejoy overwriting the correct pedal configuration with its default settings. Please use the recovery file I provided to restore the pedal configuration. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-31T08:18:47Z",
+      "updated_at": "2025-07-31T08:18:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

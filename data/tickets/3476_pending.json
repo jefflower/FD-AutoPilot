@@ -1,0 +1,24 @@
+{
+  "id": 3476,
+  "subject": "Order change",
+  "description_text": "Hi, my order number is #SSN2491\r\nCan i either 1, change my order to do just the Plus X instead of the Pro X.\r\nOr 2, cancel my order so that i can reorder the Plus X. Upon further\r\nreading i've determined the Plus X is all that i need.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-04T15:28:19Z",
+  "updated_at": "2025-09-05T02:27:31Z",
+  "requester_id": 158004162263,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008126781,
+      "body_text": "Hello, your order has already been dispatched. We regret that we are unable to replace the product for you. ",
+      "user_id": 158001343601,
+      "created_at": "2025-09-05T02:27:31Z",
+      "updated_at": "2025-09-05T02:27:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

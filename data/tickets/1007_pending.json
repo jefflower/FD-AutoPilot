@@ -1,0 +1,24 @@
+{
+  "id": 1007,
+  "subject": "Pro Plus Pedal Manual",
+  "description_text": "Hello.\r\nI buy Simsonn Pro Plus Pedals. Where I can download PDF manual? \r\nLink https://download.simsonn.com/manual return 404 error.\r\nThanks.\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-30T16:33:47Z",
+  "updated_at": "2025-07-01T06:34:20Z",
+  "requester_id": 158001841043,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004353604,
+      "body_text": "Hi Nikita Burakov, You can refer to the PlusX user manual for guidance.       https://cdn.simsonn.vip/download/SIMSONN_Plus_X_EN.pdf",
+      "user_id": 158000445778,
+      "created_at": "2025-07-01T06:34:20Z",
+      "updated_at": "2025-07-01T06:34:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

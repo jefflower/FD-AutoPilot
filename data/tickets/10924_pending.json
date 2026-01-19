@@ -1,0 +1,24 @@
+{
+  "id": 10924,
+  "subject": "Help",
+  "description_text": "I have sim magic pedals... i bought the vam pro reactors and need a box to\r\nplug into. If i buy the plus x box, can i use YOUR reactors on MY simmagic\r\npedals?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-14T21:04:25Z",
+  "updated_at": "2026-01-16T02:01:57Z",
+  "requester_id": 158009077253,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017235562,
+      "body_text": "Hi Jimmy Secreet,  Does your Simagic pedal set have a dedicated port/connector for a haptics module? If it doesn’t, you can purchase a PlusX control box + power supply and use our control box specifically for telemetry/haptics output, while the Simagic pedals continue to handle the pedal input signals. This way, both systems can run independently without interfering with each other. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-16T02:01:57Z",
+      "updated_at": "2026-01-16T02:01:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

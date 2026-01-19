@@ -1,0 +1,65 @@
+{
+  "id": 1460,
+  "subject": "Pro Plus 踏板无法识别",
+  "description_text": "你好，\n\n我有一套 Pro Plus 踏板。\n\n不知为何，踏板在 freejoy 或 simsonn manager 中无法识别，只能在 simpedals config v4 中识别。我尝试重置固件或下载驱动程序，但你们网站产品页面上指向 download.simsonn.com 的链接似乎已损坏。\n\n希望能得到任何帮助。\n\n非常感谢，\nRees",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-07-11T18:33:03Z",
+  "updated_at": "2025-07-12T11:03:52Z",
+  "requester_id": 158002085504,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004638739,
+      "body_text": "你好，Rees Varney， 请下载最新的校准软件 SIMSONN Manager 2.0.8 版本。对于 Pro Plus，请进入更新界面并选择“手动固件更新”，然后导航到 pedals-firmware 文件夹 → pedals 文件夹，并选择 plus.sfu 文件进行更新。 https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-07-12T06:46:40Z",
+      "updated_at": "2025-07-12T06:46:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004647133,
+      "body_text": "你好，\n\n我试了提到的管理器，但它检测不到我的踏板，也没有提供手动固件更新选项（我试过点击设置 -> 更新部分的手动更新链接，但它没有任何反应/打不开任何东西）。\n\n踏板固件是和管理器一起下载的吗？如果是，那个文件夹在我电脑的什么位置？我在想是否可以用 simpedals config v4 的刷写工具来更新固件，以防固件太旧而无法被 simsonn manager 检测到。\n\n非常感谢，\nRees\n\n星期六，2025年7月12日，上午7:46，service @simsonn.com",
+      "user_id": 158002085504,
+      "created_at": "2025-07-12T09:15:11Z",
+      "updated_at": "2025-07-12T09:15:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004649221,
+      "body_text": "没关系了，我把应用在后台放了30分钟后重新打开，突然就识别到了？\n\n我猜这可能和为什么 sim pedals config 在一段时间内检测不到踏板时需要很长时间才能打开有关。",
+      "user_id": 158002085504,
+      "created_at": "2025-07-12T09:29:41Z",
+      "updated_at": "2025-07-12T09:29:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004655701,
+      "body_text": "你好 Rees Varney， 现在升级成功了吗？",
+      "user_id": 158000445778,
+      "created_at": "2025-07-12T10:33:35Z",
+      "updated_at": "2025-07-12T10:33:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004657383,
+      "body_text": "是的，谢谢！\n\n星期六，2025年7月12日上午11:33，service @simsonn.com",
+      "user_id": 158002085504,
+      "created_at": "2025-07-12T11:01:24Z",
+      "updated_at": "2025-07-12T11:01:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

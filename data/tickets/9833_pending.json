@@ -1,0 +1,34 @@
+{
+  "id": 9833,
+  "subject": "Refund Haptic Motors SSN4343",
+  "description_text": "Hello,\r\n\r\nI would like to request a refund for the Haptic Motors from Order SSN4343,\r\nI have waited for a month on these to arrive, I needed them for a project\r\nand had to purchase a different brand now since these never arrived.\r\n\r\nPlease let me know if any information is needed on my end.\r\n\r\nThank you,\r\n\r\nJose Chavez\r\n\r\nPlease let me know\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-02T20:52:24Z",
+  "updated_at": "2026-01-04T08:16:30Z",
+  "requester_id": 158007655769,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015603058,
+      "body_text": "Hi Juan Jose Chavez Fuentes,    I noticed your package appears to have been unsuccessful in delivery. Please try contacting the logistics provider to inquire about the specific situation: cs@too.express  ​https://oms.tooexp.com/tracking.html  TEP00106942893 ",
+      "user_id": 158001343601,
+      "created_at": "2026-01-04T08:09:40Z",
+      "updated_at": "2026-01-04T08:09:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015603723,
+      "body_text": "Hi Juan Jose Chavez Fuentes,    Logistics provider update:   Chicago and northern Illinois are currently experiencing severe winter weather conditions. Ice, snow, and cold winds are causing varying degrees of disruption to pickup operations at the Chicago port, as well as transit and delivery services in Chicago and northern Illinois. Combined with the peak shipping season, overall delivery times are expected to be extended.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-04T08:16:30Z",
+      "updated_at": "2026-01-04T08:16:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": 1961,
+  "subject": "油门死区",
+  "description_text": "我遇到了一个问题。在踩下踏板的初始阶段，有一个巨大的死区。几乎一半的行程都是死区。死区设置为0。",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-07-26T21:53:44Z",
+  "updated_at": "2025-07-27T02:48:05Z",
+  "requester_id": 158002358928,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005620281,
+      "body_text": "您好，Christian Mallon，请提供您的订单号、踏板安装照片以及SIMSONN Manager中死区设置的截图。如果您的设备是PlusX、ProX或ProX Ultra，请将软件更新到SIMSONN Manager 2.1.0，并通过设置菜单中的“检查更新”选项更新踏板固件。更新后，您可以使用偏移功能将偏移量重置为零，这将根据当前踏板压力自动将死区调整到最小边缘。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-27T02:24:19Z",
+      "updated_at": "2025-07-27T02:24:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005620355,
+      "body_text": "不知怎么的，问题自己解决了。现在没问题了。谢谢。2025年7月26日星期六晚上9:24，service@simsonn.com",
+      "user_id": 158002358928,
+      "created_at": "2025-07-27T02:46:17Z",
+      "updated_at": "2025-07-27T02:46:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

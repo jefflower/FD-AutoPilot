@@ -1,0 +1,234 @@
+{
+  "id": 1266,
+  "subject": "VAM pro EMI issues",
+  "description_text": "Hi,\r\n\r\nI have installed the VAM pro onto my Plus X brake pedal and I'm\r\nnoticing significant interference in the brake input when the motor\r\nactivates. I have attached the grounding cable and tried with all other usb\r\ndevices disconnected as well and this still has not fixed the issue. The\r\nonly way to fix it is to increase the strength of the effect over ~60%.\r\nHowever, I want to run the ABS effect at ~25% strength and 25Hz and this\r\ncauses huge interference in the brake input that makes the game undrivable\r\nwith the motor.\r\n\r\nDo you have any suggestions to fix this?\r\n\r\nRegards,\r\nNavin\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-06T09:02:48Z",
+  "updated_at": "2025-07-12T07:57:36Z",
+  "requester_id": 158001486644,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003041180,
+      "body_text": "Hi，Navin Adikari，   ​Could you please install the Todesk tool? It doesn’t require registration—just provide the ID and temporary password after installation, and I can assist you remotely in disabling the FIR filter. We’ll also release a new version soon, allowing customers to choose whether to enable or disable the filter for smoother input curves. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-14T02:03:03Z",
+      "updated_at": "2025-06-14T02:03:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003041256,
+      "body_text": "I believe I found the option to remove the filter. Is it the option in the\r\nimage I've sent? What should I set it at to remove the filter completely?\r\n\r\nOn Sat, 14 Jun 2025 at 12:03, service@simsonn.com ",
+      "user_id": 158001486644,
+      "created_at": "2025-06-14T02:12:24Z",
+      "updated_at": "2025-06-14T02:12:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003104066,
+      "body_text": "Hi，Navin Adikari，  ​ Yes, that’s the correct setting. You just need to set all three axis values to 0 to disable the function. However, you’ll also need to quickly double-click the version number (2.0.7 or 2.0.8) in the settings interface — this will bring up a hidden dialog. In that popup, select the .cfg configuration file you previously saved in the software and re-import it. Then click “Save.” This should disable the function. Alternatively, you can try saving a new configuration file and reloading it to confirm the setting was applied successfully. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-14T12:52:35Z",
+      "updated_at": "2025-06-14T12:52:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003228034,
+      "body_text": "Hi，Navin Adikari，     ​Has your issue been resolved? If not, I can provide you with a test version of the software that includes the necessary adjustments. We’ve already added a toggle option for this in the updated version. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-16T06:46:38Z",
+      "updated_at": "2025-06-16T06:46:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003228209,
+      "body_text": "Hi yes the issue is fully resolved now, thanks for the help!\r\n\r\nI have one more question. I had the plus X pedals and the VAM pro haptic\r\nreactor in my order. I have only received the pedals so far, do you have\r\nany idea when the haptic reactor will ship? The order number is SSN1572\r\n\r\nThanks\r\n\r\nOn Mon, 16 Jun 2025 at 16:46, service@simsonn.com ",
+      "user_id": 158001486644,
+      "created_at": "2025-06-16T07:01:48Z",
+      "updated_at": "2025-06-16T07:01:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003228249,
+      "body_text": "Sorry one more thing. When I try to change the maximum force value under\r\nthe brake it always resets to whatever I calibrated it to. Right now if I\r\nwant to recalibrate the brake I need to recalibrate and set deadzones for\r\nall 3 pedals. I would like to be able to either calibrate each pedal\r\nindividually or be able to adjust the maximum force value without it\r\nresetting. Alternatively, allow us to make the deadzone less than 85 so its\r\npossible to quickly change the force needed to reach maximum braking\r\n\r\n",
+      "user_id": 158001486644,
+      "created_at": "2025-06-16T07:05:40Z",
+      "updated_at": "2025-06-16T07:05:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003404614,
+      "body_text": "你好，Navin Adikari，  最新版本2.0.8现已添加禁用过滤功能的选项。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-18T08:53:43Z",
+      "updated_at": "2025-06-18T08:53:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003406268,
+      "body_text": "ID 为 412 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-18T09:06:03Z",
+      "updated_at": "2025-06-18T09:06:03Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158003406271,
+      "body_text": "合并来自工单412  \n      主题: Plux X pedals input latency  \n      描述:  \n Hi, \n   \n I've just received the plus x pedals and I am noticing significant input latency on all 3 pedals. When I fully press the pedal there is a noticeable delay before it reaches 100% and when I release it also smoothly goes back to 0%. When I compare this to my previous pedals or a handbrake I have, the signal goes very quickly from 0 to 100. It almost seems like there is some smoothing added to the signal which makes it not respond quickly. Is there any way to fix this? \n   \n Thanks, \n \n Navin",
+      "user_id": 158000445778,
+      "created_at": "2025-06-18T09:06:04Z",
+      "updated_at": "2025-06-18T09:06:04Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158003406276,
+      "body_text": "此工单已关闭并合并到工单 562 中",
+      "user_id": 158000445778,
+      "created_at": "2025-06-18T09:06:04Z",
+      "updated_at": "2025-06-18T09:06:04Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158003835592,
+      "body_text": "Hi Navin Adikari,     We're looking into it for you, it will definitely be delivered, please don't worry about it, sorry for the inconvenience",
+      "user_id": 158001343601,
+      "created_at": "2025-06-25T09:54:41Z",
+      "updated_at": "2025-06-25T09:54:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004452909,
+      "body_text": "ID 号为 412, 562 和 803 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T03:27:58Z",
+      "updated_at": "2025-07-07T03:27:58Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004452912,
+      "body_text": "合并来自工单562  \n      主题: Re: Re: Plux X pedals input latency  \n      描述:  \n Hi, \n   \n Any update on the VAM pro? My order still says it hasn't shipped? Maybe because the order was partially sent it's been marked as fulfilled? \n   \n Thanks \n \n  \n On Mon, 16 Jun 2025 at 17:03, General and sales enquiries <service@simsonn.com> wrote: \n \n \n \n  VAM Pro is being shipped today and will be all sent out in the next two days!  \n \n \n   \n   \n   \n \n            \n       \nNavin Adikari<navin.adikari@gmail.com> 在 2025年6月16日 周一 15:01 写道： \n \n \n \n \n Hi yes the issue is fully resolved now, thanks for the help! \n   \n I have one more question. I had the plus X pedals and the VAM pro haptic reactor in my order. I have only received the pedals so far, do you have any idea when the haptic reactor will ship? The order number is SSN1572 \n   \n Thanks \n \n  \n On Mon, 16 Jun 2025 at 16:46, service@simsonn.com <service@simsonn.com> wrote: \n \n  \n\t \n Hi，Navin Adikari， \n   \n ​Has your issue been resolved? If not, I can provide you with a test version of the software that includes the necessary adjustments. We’ve already added a toggle option for this in the updated version.  \n \n  \n \n     \n \n                           \n                            On\n                            Sat, 14 Jun at  8:52 AM\n                            ,  service@simsonn.com <service@simsonn.com>  wrote:\n                             \n Hi，Navin Adikari， \n \n​ Yes, that’s the correct setting. You just need to set all three axis values to 0 to disable the function. However, you’ll also need to quickly double-click the version number (2.0.7 or 2.0.8) in the settings interface — this will bring up a hidden dialog. In that popup, select the .cfg configuration file you previously saved in the software and re-import it. Then click “Save.” This should disable the function. Alternatively, you can try saving a new configuration file and reloading it to confirm the setting was applied successfully.   \n \n     \n   \n \n                           \n                            On\n                            Fri, 13 Jun at 10:12 PM\n                            ,  Navin Adikari <navin.adikari@gmail.com>  wrote:\n                             I believe I found the option to remove the filter. Is it the option in the image I've sent? What should I set it at to remove the filter completely? \n    \n  \n On Sat, 14 Jun 2025 at 12:03, service@simsonn.com <service@simsonn.com> wrote: \n \n  \n\t \n Hi，Navin Adikari， \n \n ​Could you please install the Todesk tool? It doesn’t require registration—just provide the ID and temporary password after installation, and I can assist you remotely in disabling the FIR filter. We’ll also release a new version soon, allowing customers to choose whether to enable or disable the filter for smoother input curves.   \n \n     \n \n                           \n                            On\n                            Fri, 13 Jun at  5:43 AM\n                            ,  Navin Adikari <navin.adikari@gmail.com>  wrote:\n                             \n Hi, \n   \n I've just received the plus x pedals and I am noticing significant input latency on all 3 pedals. When I fully press the pedal there is a noticeable delay before it reaches 100% and when I release it also smoothly goes back to 0%. When I compare this to my previous pedals or a handbrake I have, the signal goes very quickly from 0 to 100. It almost seems like there is some smoothing added to the signal which makes it not respond quickly. Is there any way to fix this? \n   \n Thanks, \n \n Navin",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T03:27:58Z",
+      "updated_at": "2025-07-07T03:27:58Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004452910,
+      "body_text": "合并来自工单412  \n      主题: Plux X pedals input latency  \n      描述:  \n Hi, \n   \n I've just received the plus x pedals and I am noticing significant input latency on all 3 pedals. When I fully press the pedal there is a noticeable delay before it reaches 100% and when I release it also smoothly goes back to 0%. When I compare this to my previous pedals or a handbrake I have, the signal goes very quickly from 0 to 100. It almost seems like there is some smoothing added to the signal which makes it not respond quickly. Is there any way to fix this? \n   \n Thanks, \n \n Navin",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T03:27:58Z",
+      "updated_at": "2025-07-07T03:27:58Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004452914,
+      "body_text": "合并来自工单803  \n      主题: Tracking not updating  \n      描述:  \n Hi, \n   \n I ordered the vam pro and received an email saying it is on the way. However, the tracking information hasn't been updated in a week and it still just says 'order information received'. Is this still coming or has there been an issue during shipping? \n   \n Order number: SSN1572 \n Tracking number: SF6045775297494 \n   \n Thanks, \n \n Navin",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T03:28:00Z",
+      "updated_at": "2025-07-07T03:28:00Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004452920,
+      "body_text": "Hi Navin Adikari,  We’ve tested all frequency and force settings and confirmed that they do not interfere with the brake signal. Please provide a video showing the issue, and then I can assist you remotely via Todesk to help identify the problem. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T03:30:01Z",
+      "updated_at": "2025-07-07T03:30:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004455784,
+      "body_text": "Hi\r\n\r\nHere is a video showing the issue: https://streamable.com/la90h7\r\nYou can see the signal jump when I press the 'vibration' button in the\r\nsoftware to activate the motor. It's worse with certain settings and better\r\nwith others.\r\n\r\nRegards,\r\nNavin\r\n\r\nOn Mon, 7 Jul 2025 at 13:30, service@simsonn.com ",
+      "user_id": 158001486644,
+      "created_at": "2025-07-07T12:16:47Z",
+      "updated_at": "2025-07-07T12:16:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004455903,
+      "body_text": "Hi Navin Adikari,    May I ask what maximum force you used when calibrating the brake pedal? It’s possible that the calibration was too light, which could cause signal issues.  I recommend installing the Todesk software. No registration is needed—just install it and send me your ID and temporary password, and I can assist you remotely right now.     https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T12:25:36Z",
+      "updated_at": "2025-07-07T12:25:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004470186,
+      "body_text": "Hi\r\n\r\nI am using 40kg maximum brake force. I have tried connecting the pedals to\r\nmy old control box from another pedal set and running the haptic motor on\r\nthe simsonn control box and this reduces the interference a lot. It is\r\nstill there but not as bad. Would I need to isolate something inside the\r\ncontrol box to fix this issue? I'm not available right now for remote\r\nsupport but I don't think it's anything that can be fixed on my computer,\r\nit seems like a hardware issue.\r\n\r\nNavin\r\n\r\nOn Mon, 7 Jul 2025 at 22:25, service@simsonn.com ",
+      "user_id": 158001486644,
+      "created_at": "2025-07-08T03:03:54Z",
+      "updated_at": "2025-07-08T03:03:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004470296,
+      "body_text": "Hi Navin Adikari,     You may refer to this EMI solution, which was shared by another VAM Pro user and successfully resolved his issue. Also, please check whether you've connected the top-left screw of the control box to the pedal using a grounding wire. This creates a complete EMI path from the controller to the pedal and from the rig to the PC, which helps improve system stability.     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting     https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-07-08T03:20:04Z",
+      "updated_at": "2025-07-08T03:20:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004483844,
+      "body_text": "Hi\r\n\r\nYes I have connected the ground wire to the top left screw. I tried\r\nconnecting a wire straight from my pedals to the ground pin on a power\r\nsocket and this still has not resolved the issue. I noticed that the\r\ninterference is less with the ground cable than when it's disconnected but\r\nits still quite bad. Any suggestions? Maybe the ground wire is too thin?\r\n\r\n\r\nOn Tue, 8 Jul 2025 at 13:20, service@simsonn.com ",
+      "user_id": 158001486644,
+      "created_at": "2025-07-08T22:40:54Z",
+      "updated_at": "2025-07-08T22:40:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004484674,
+      "body_text": "Hi Navin Adikari,    Please try testing with the MOZA base turned off to see if there’s still any interference.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-09T01:07:48Z",
+      "updated_at": "2025-07-09T01:07:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

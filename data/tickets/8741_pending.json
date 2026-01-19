@@ -1,0 +1,54 @@
+{
+  "id": 8741,
+  "subject": "Order",
+  "description_text": "Hello, I just noticed that my package landed in France in Marigane, and now\r\nit's in China...? Is this normal? I live in France\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-20T11:28:21Z",
+  "updated_at": "2025-12-23T05:52:42Z",
+  "requester_id": 158008199181,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014810537,
+      "body_text": "Hi martin mcfly,  Could you please provide the order number? I’ll help you check it. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-20T12:59:03Z",
+      "updated_at": "2025-12-20T12:59:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014812594,
+      "body_text": "Order #SSN4882\r\n\r\n And for UPS\r\n\r\n1ZJ455510435485521\r\n\r\nLe sam. 20 déc. 2025, 13:59, service@simsonn.com ",
+      "user_id": 158008199181,
+      "created_at": "2025-12-20T13:55:35Z",
+      "updated_at": "2025-12-20T13:55:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014835715,
+      "body_text": "So?\r\n\r\nLe sam. 20 déc. 2025, 14:55, martin mcfly <renderscyril@gmail.com> a écrit :\r\n\r\n> Order #SSN4882\r\n>\r\n>  And for UPS\r\n>\r\n> 1ZJ455510435485521\r\n>\r\n> Le sam. 20 déc. 2025, 13:59, service@simsonn.com ",
+      "user_id": 158008199181,
+      "created_at": "2025-12-21T10:11:50Z",
+      "updated_at": "2025-12-21T10:11:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014881087,
+      "body_text": "Hi，Martin McFly，  ​The package was Delivered at PERPIGNAN, FR on 12/22/2025. Di you get it? You can track it via https://www.ups.com/track?loc=en_US&requester=ST/trackdetails",
+      "user_id": 158007774607,
+      "created_at": "2025-12-22T13:02:29Z",
+      "updated_at": "2025-12-22T13:02:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

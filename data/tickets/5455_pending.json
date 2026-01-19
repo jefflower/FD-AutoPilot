@@ -1,0 +1,64 @@
+{
+  "id": 5455,
+  "subject": "Vam Pro Haptics",
+  "description_text": "Hi,\r\n\r\nOn the 25th I received my VAM Pro Haptics that I ordered on the 17th.   The\r\nhaptics seem very weak and do not properly change in strength with the gain\r\nsetting in either the Simsonn manager or in Simhub.   Regardless of if I\r\nhave it on 100% strength all the way down to 1% the strength of the motor\r\nremains the same.\r\n\r\nThis is with the Pro X pedals that I purchased last year.   The control box\r\nhas been upgraded to CPU 1:V2.0.5 CPU2:V2.0.4.\r\n\r\nRegarding the overall strength of the haptics.  I was previously running\r\nthe Simagic P-HPR Haptics on the pedals because your company's haptics were\r\nnot available when I purchased the pedals.  As it is currently your haptics\r\nfeel like less than 50% of the strength of the Simmagic ones.\r\n\r\nIs this an issue with the firmware or software that is limiting the output\r\nstrength of the motors?\r\n\r\nCan you please advise if this is an issue with the motors or the software?\r\n\r\nAlso I would suggest updating the support page on your website with clear\r\ninstructions on updating the firmware for the control box.\r\n\r\nThanks,\r\nJohn La\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-30T21:44:42Z",
+  "updated_at": "2025-11-05T05:42:59Z",
+  "requester_id": 158006230677,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011603498,
+      "body_text": "Hi johnnalson la,  Hello, the ProX is designed for VAM motors, and its hardware does not support bidirectional motor control. Therefore, it cannot fully utilize the VAM Pro’s force. For reference, the Simagic motor has a thrust of 0.47 kg, while our VAM Pro provides 0.7 kg. To achieve the maximum vibration force of the VAM Pro, you can purchase the Pro X Ultra controller separately, which supports bidirectional control of the VAM Pro motor.      https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor?variant=51399342293306",
+      "user_id": 158000445778,
+      "created_at": "2025-11-02T02:02:50Z",
+      "updated_at": "2025-11-02T02:02:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011627536,
+      "body_text": "[image: a0eae507-5441-4534-a3e5-2a247d1b1278.jpg]\r\n So I need to specify after looking at my original purchase orders for the\r\npedals.  They were ordered February 27th of this year.    This unit looks\r\nto be the one provided in the link in the last response.   Is this not the\r\ncorrect controller?\r\n\r\n\r\n\r\n\r\nOn Sat, Nov 1, 2025 at 7:03 PM service@simsonn.com ",
+      "user_id": 158006230677,
+      "created_at": "2025-11-02T17:35:03Z",
+      "updated_at": "2025-11-02T17:35:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011643958,
+      "body_text": "Hi johnnalson la,  You can provide a screenshot of the SIMSONN Manager connection window so we can verify whether your device is a SIMSONN Pro X or a SIMSONN Pro X Ultra. The order information can also help us confirm this. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-03T06:02:15Z",
+      "updated_at": "2025-11-03T06:02:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011665610,
+      "body_text": "It's listed as a Pro X.\r\n[image: manager.jpg]\r\nWhen is the cut off date for \"older\" Pro X devices that would require the\r\nnew control box?\r\n\r\n\r\nOn Sun, Nov 2, 2025 at 10:02 PM service@simsonn.com ",
+      "user_id": 158006230677,
+      "created_at": "2025-11-03T15:03:02Z",
+      "updated_at": "2025-11-03T15:03:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011769410,
+      "body_text": "Hi johnnalson，  We can confirm that your controller is ProX. You may also consider purchasing the ProX Ultra controller, which offers more powerful vibration performance.      ​https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor?variant=51399342293306",
+      "user_id": 158000445778,
+      "created_at": "2025-11-05T05:42:59Z",
+      "updated_at": "2025-11-05T05:42:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

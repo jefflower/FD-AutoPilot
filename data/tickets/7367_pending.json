@@ -1,0 +1,54 @@
+{
+  "id": 7367,
+  "subject": "RV: Ask for support: Plus X Throttle pedal not working",
+  "description_text": "Forwarded.. (I guess I sent to the wrong email)\r\nAny help appreciated.\r\nA few more things:\r\n\r\n  *\r\nNow the spring to the left fo the blue spacer is loose. (I understand thats what pushes down on the load cell. I don't know how to put it back in place (There is no space to operate in there.. I understand I have to dissasemble some part, could you guide me here ?\r\n  *\r\nIf I push with a finger on that part (where that spring should be pressing) I see throttle input... so the sensor it seems to be working (altough I have to push really hard for it)\r\n\r\n________________________________\r\nDe: Pablo Martinez <marty2756@hotmail.com>\r\nEnviado: miércoles, 3 de diciembre de 2025 10:22\r\nPara: service@simsonn.com <service@simsonn.com>\r\nAsunto: Ask for support: Plus X Throttle pedal not working\r\n\r\nHi,\r\nI bought the Plus X pedals weeks ago (just the throttle and brake pedals).  When I first connected them to my PC it worked fine, both of them.\r\nNow, I inverted the pedals orientation from back to front (so that I can change the angle a little), just dismounting each pedal from the base plate, and reversing them.\r\nBrake works fine, but throttle is now not registering any input. Checked cable, and it seems to be alright.\r\nI don't think I broke anything because I just reversed the pedal in the base plate.\r\nCould you think what could be happening here ?\r\n\r\nThanks\r\nPablo\r\n\r\nAttach image in case its usefull.\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-03T23:28:37Z",
+  "updated_at": "2025-12-06T05:36:16Z",
+  "requester_id": 158007523591,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013364182,
+      "body_text": "Hi Pablo Martinez,     Are you unable to install the throttle spring at the moment? You may use a screwdriver or other tools to help with the installation. I can also provide a reference photo showing the correctly installed spring.  After installing the spring, please connect the pedal to the main controller and reconnect the USB cable. Then, click “Offset” in the software to reset the pedal to zero. Once that is done, simply perform a new calibration and it should work properly.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T01:34:25Z",
+      "updated_at": "2025-12-04T01:34:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013387632,
+      "body_text": "Hi, I don't know if we are talking about the same spring.\r\nI'm talking about the little spring that pushes down to the load cell (I guess). This is what came out of place.\r\nProblem is I can't operate in there (no space) and place back that spring. Tried wich a screwdriver but cant make it stay in its place again.\r\nShould I dissasemble the whole pedal for that ?\r\n\r\n\r\n[cid:47b1eb56-73d1-470b-bd3f-b4b41ac01173]\r\n\r\n\r\n________________________________\r\nDe: support@simsonn.com ",
+      "user_id": 158007523591,
+      "created_at": "2025-12-04T12:26:20Z",
+      "updated_at": "2025-12-04T12:26:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013618882,
+      "body_text": "UPDATE:\r\nI think I could place that little spring where it belongs.... I attach an image.\r\nBut... still there is no throttle signal in Simsonn Manager, pedals are brand new ?\r\nNow, if I press the metalic bottom with my finger, I can raise the throttle input signal in Simsonn Manager until almost 70% , so sensor is working\r\nWhat could be happening here?\r\n\r\nAny help appreciated.\r\n\r\n________________________________\r\nDe: Pablo Martinez <marty2756@hotmail.com>\r\nEnviado: jueves, 4 de diciembre de 2025 09:25\r\nPara: support@simsonn.com ",
+      "user_id": 158007523591,
+      "created_at": "2025-12-05T20:16:22Z",
+      "updated_at": "2025-12-05T20:16:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013767356,
+      "body_text": "Hi Pablo Martinez,  Here’s the procedure: first, connect the pedals to the main control box, then unplug and replug the USB cable. Open the software and make sure you are using SIMSONN Manager 2.1.2, with the pedals showing CPU1:2.0.5 and CPU2:2.0.4. Next, click “Offset” and then recalibrate and test the pedals. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-06T05:36:15Z",
+      "updated_at": "2025-12-06T05:36:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

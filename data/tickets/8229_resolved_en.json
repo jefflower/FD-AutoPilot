@@ -1,0 +1,35 @@
+{
+  "id": 8229,
+  "subject": "Order Number: SSN3150 Faulty function rotary",
+  "description_text": "Hello, I have been using the GT2 wheel for about a month and today I noticed the multi-function rotary on the right is no longer working at all. I’ve verified it with Windows, SinHub and in game. None of the 12 functions register. I’ve unplugged the wheel and rebooted the computer but nothing has helped. \n\nThe function rotary was the main purpose of the wheel and without it I can’t use it fully. Can you please help me, hopefully a firmware update or exchange. \n\nPlease help. \n\nThanks\nGareth",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-14T21:24:45Z",
+  "updated_at": "2025-12-19T08:36:42Z",
+  "requester_id": 158006945596,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014620528,
+      "body_text": "Hi gareth_smith @btinternet. com,  Could you please take a photo and indicate exactly which knob you are referring to?      The knob is not damaged. The 12-position knob on the right is used to control the functionality of the left knob. For example, when the left knob is rotated left or right, it corresponds to button 17 and button 18. However, if the right knob is rotated first, the output of the left knob will switch to button 19 and button 20. Please note that this feature needs to be tested in-game, as Windows can only display the first 32 buttons, while the game itself can correctly recognize and display all 40 buttons. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T09:43:22Z",
+      "updated_at": "2025-12-17T09:43:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014624635,
+      "body_text": "Hello, I checked the functionality again and can I confirm it is working. I do understand how the left and right rotary buttons work but when I tried to configure the right rotary in SimHub Controll Mapper as function keys, they do not work like my other wheel does that has a similar rotary.\n\nAnyway, I just have to use it differently, that's a shame but there is no fault.\n\nThank you, please close this ticket.\nGareth\n________________________________",
+      "user_id": 158006945596,
+      "created_at": "2025-12-17T12:03:35Z",
+      "updated_at": "2025-12-17T12:03:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

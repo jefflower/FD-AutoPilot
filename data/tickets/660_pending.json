@@ -1,0 +1,204 @@
+{
+  "id": 660,
+  "subject": "Defective Brake Pedal - Ordered through Amazon",
+  "description_text": "Hello I ordered the Simsonn Pro X pedals on April 5th. The order number is\r\n114-8560934-3717863. The product overall is great however, after using it\r\nfor 2 months my brake pedal stopped working. It's connects successfully\r\nthrough the Simsonn manager app but it won't detect any pressure applied to\r\nthe pedal. I tried researching online for a potential fix but, it dosent\r\nseem anyone other than me has this related issue. Is there something that\r\ncan get this fixed?\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-06-20T22:12:07Z",
+  "updated_at": "2025-10-22T03:21:08Z",
+  "requester_id": 158001694886,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003677539,
+      "body_text": "Hi Nick Cruz,     Could you please provide a photo of the SIMSONN Manager and a screenshot showing the SIMSONN device selected in the VBK tool? If the issue only affects the brake pedal, you can try swapping the brake and throttle pedal cables to see if the problem persists. This will help determine whether the issue lies with the pedal itself or the controller. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-21T15:25:04Z",
+      "updated_at": "2025-06-21T15:25:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003839119,
+      "body_text": "Hello, Im very sorry for the late response. I didn't know that I needed to create an account to view the ticket. I thought all conversation was directly by email. I attached a screenshot plus a short video of pressing all 3 pedals. The trottle and clutch pedals work but the brake is not getting feedback after putting pressure to it.",
+      "user_id": 158001694886,
+      "created_at": "2025-06-25T16:44:20Z",
+      "updated_at": "2025-06-25T16:44:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158003839120,
+      "body_text": "Hello, I'm very sorry for the late response. I didn't know that I needed to create an account to view the ticket. I thought all conversation was directly by email. I attached a screenshot plus a short video of pressing all 3 pedals. The trottle and clutch pedals work but the brake is not getting feedback after putting pressure to it.",
+      "user_id": 158001694886,
+      "created_at": "2025-06-25T16:44:22Z",
+      "updated_at": "2025-06-25T16:44:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158003839169,
+      "body_text": "I also forgot to mention after switching the brake and throttle pedal cables, the throttle pedal works however, the brake pedal doesn't detect any feedback.",
+      "user_id": 158001694886,
+      "created_at": "2025-06-25T16:49:03Z",
+      "updated_at": "2025-06-25T16:49:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158004363186,
+      "body_text": "Hi Nick Cruz,  Please remove the brake pedal from the mounting bracket, then use an M3 screwdriver to take off the protective cover at the bottom of the brake pedal. Reconnect all the plugs to ensure none of them are loose or damaged. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T04:35:34Z",
+      "updated_at": "2025-07-02T04:35:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006110151,
+      "body_text": "Hello, I apologize for not replying I was on a month long trip and I didn't have my rig with me. I circled the cables that I unplugged and made sure that there were well connected. Unfortunately it didn't work and no input was received ",
+      "user_id": 158001694886,
+      "created_at": "2025-08-02T17:44:57Z",
+      "updated_at": "2025-08-02T17:44:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158006303173,
+      "body_text": "Hi Nick Cruz,  You can download SIMSONN Manager version 2.1.0 and update the pedal firmware. Then, use the Offset function in the interface to adjust the dead zone, which should solve the issue. If it still doesn’t work, you can install ToDesk and I can assist you remotely. If the problem remains unresolved, we will send you a replacement brake sensor. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-06T01:16:55Z",
+      "updated_at": "2025-08-06T01:16:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009608470,
+      "body_text": "Hello I installed the latest version of SIMSONN Manager and it still\r\ndoesn't work unfortunately. I have installed ToDesk onto my computer. When\r\ncan you connect to help me out remotely?\r\n\r\nOn Tue, Aug 5, 2025 at 9:17 PM service@simsonn.com ",
+      "user_id": 158001694886,
+      "created_at": "2025-09-29T01:06:51Z",
+      "updated_at": "2025-09-29T01:06:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009937955,
+      "body_text": "Hi Nick Cruz,     Please uninstall the old version on your computer, then reinstall version 2.1.2 and update the firmware. After the update, the device version should display as CPU1: 2.0.5, CPU2: 2.0.3. If the issue is still not resolved, please feel free to contact me. If it still doesn’t work, please let me know your city and local time, so we can schedule a remote support session tomorrow.   https://drive.google.com/file/d/1PZwHUqhhmJw0IBGDO8mGONPbrICJU3z1/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T16:02:34Z",
+      "updated_at": "2025-10-05T16:02:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009947701,
+      "body_text": "Where can I find version 2.1.2? I can only find 2.1.0.\r\n\r\nOn Sun, Oct 5, 2025, 12:02 PM service@simsonn.com ",
+      "user_id": 158001694886,
+      "created_at": "2025-10-05T20:30:51Z",
+      "updated_at": "2025-10-05T20:30:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009965696,
+      "body_text": "Apologies I didn't see the attached file on the email I'll test it out\r\ntonight and let you know if it works\r\n\r\n",
+      "user_id": 158001694886,
+      "created_at": "2025-10-06T12:11:53Z",
+      "updated_at": "2025-10-06T12:11:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010046651,
+      "body_text": "Hello, I tried using the new version and it still doesn't work. I attached\r\na video showing my brake inputs are not registering. I live in Plainfield,\r\nNJ and my timezone is EST let me know when we schedule a support session.\r\n\r\nOn Sun, Oct 5, 2025 at 12:02 PM service@simsonn.com ",
+      "user_id": 158001694886,
+      "created_at": "2025-10-08T00:25:14Z",
+      "updated_at": "2025-10-08T00:25:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010141447,
+      "body_text": "Hi Nick Cruz,  If you have adjusted the brake damping, you need to reset the pedal’s initial signal. Please click “Offset” in the software, set the initial pedal percentage to zero in the pop-up window, and then perform the calibration again. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-09T10:01:52Z",
+      "updated_at": "2025-10-09T10:01:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010165561,
+      "body_text": "Hello, I tried clicking offset in the software and It still can't detect\r\nany brake inputs\r\n\r\nOn Thu, Oct 9, 2025 at 6:02 AM service@simsonn.com ",
+      "user_id": 158001694886,
+      "created_at": "2025-10-09T16:58:28Z",
+      "updated_at": "2025-10-09T16:58:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010186867,
+      "body_text": "Hi Nick Cruz, Please swap the throttle and brake connectors on the main controller to determine whether the issue is with the brake input port or the brake sensor itself. If it turns out to be a sensor issue, we’ll send you a new brake sensor free of charge for ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-10T03:25:06Z",
+      "updated_at": "2025-10-10T03:25:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010294117,
+      "body_text": "I swamped my pedals and the brake input port worked with the throttle pedal\r\ngiving inputs but the brake pedal was not giving any inputs to the throttle\r\ninput.\r\n\r\nOn Thu, Oct 9, 2025 at 11:25 PM service@simsonn.com ",
+      "user_id": 158001694886,
+      "created_at": "2025-10-11T23:48:59Z",
+      "updated_at": "2025-10-11T23:48:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010539035,
+      "body_text": "Hi Nick Cruz,  If the brake signal only appears when you press very hard, please take a side photo of the brake so we can check. We’d like to confirm whether the upper limit screw above the sensor is improperly adjusted, which might be causing the issue. Also, please make sure that no bracket is blocking the bottom of the brake, as this could prevent the sensor from moving properly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-16T06:34:14Z",
+      "updated_at": "2025-10-16T06:34:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010688898,
+      "body_text": "Here is a photo of the brake pedal\r\n\r\nOn Thu, Oct 16, 2025, 2:34 AM service@simsonn.com ",
+      "user_id": 158001694886,
+      "created_at": "2025-10-19T00:35:29Z",
+      "updated_at": "2025-10-19T00:35:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010842846,
+      "body_text": "Hi Nick Cruz,     You need to adjust the screw inside the center hole of the silver brake sensor located at the bottom of the pedal. While adjusting, observe the side limit screw — stop turning once it reaches the top position. If it’s not properly adjusted, the limit screw will prevent the pedal from moving down and the sensor won’t receive the correct pressure input. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-22T03:21:07Z",
+      "updated_at": "2025-10-22T03:21:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

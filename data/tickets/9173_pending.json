@@ -1,0 +1,44 @@
+{
+  "id": 9173,
+  "subject": "order #SSN5219",
+  "description_text": "i put in the wrong shipping and billing address i would like to change it\r\nto 447 Tompkins Ave APT 1A, Brooklyn, NY 11216\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-25T21:25:06Z",
+  "updated_at": "2025-12-30T07:56:47Z",
+  "requester_id": 158008549621,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015147689,
+      "body_text": "ID 为 9124 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T03:55:31Z",
+      "updated_at": "2025-12-28T03:55:31Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158015147690,
+      "body_text": "合并来自工单9124  \n      主题: Order  \n      描述:  Hey I ordered a set of pedals but never received a confirmation email or a tracking number",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T03:55:31Z",
+      "updated_at": "2025-12-28T03:55:31Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158015241258,
+      "body_text": "Hi Ramon Luna,    We apologize for the delayed response. Your order has already been shipped. Please contact FedEx as soon as possible to make any necessary changes.  We will also have our US warehouse staff attempt to contact FedEx.  887390632610",
+      "user_id": 158001343601,
+      "created_at": "2025-12-30T07:56:47Z",
+      "updated_at": "2025-12-30T07:56:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": 8211,
+  "subject": "Christmas free shipping",
+  "description_text": "Hello,\r\n\r\n[Image]\r\n\r\n\r\nI saw this avertissement on facebook about christmas discount with free shipping but when i try to order the shipping are not free (See screenshots)\r\n\r\n\r\n\r\nWhat is the issue ? How to get free shipping like it's say on the ad ?\r\n\r\nBest regards\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-14T15:00:28Z",
+  "updated_at": "2025-12-15T09:19:36Z",
+  "requester_id": 158007805819,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014501024,
+      "body_text": "Hi H YH,    Free shipping applies to orders over $399. You may use our Christmas discount code: CRSM30",
+      "user_id": 158001343601,
+      "created_at": "2025-12-15T08:23:20Z",
+      "updated_at": "2025-12-15T08:23:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014501393,
+      "body_text": "Hello,\r\n\r\nPlease read the adversting i shared, it's said \"unlock 30$ off over 199$ + free shipping!\"\r\n\r\nNot free shipping over 399$\r\n\r\nIs that false adversting ?\r\n\r\nEnvoyé à partir de Outlook pour Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158007805819,
+      "created_at": "2025-12-15T08:34:23Z",
+      "updated_at": "2025-12-15T08:34:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

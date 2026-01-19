@@ -1,0 +1,54 @@
+{
+  "id": 4335,
+  "subject": "Delivery missing part: order Order #SSN2694",
+  "description_text": "Hi,\r\nI ordered pedals +  hapitics and with a baseplate.\r\n\r\nI received   CE326625174DE\r\n<https://www.logistics.dhl/us-en/home/tracking.html?tracking-id=CE326625174DE>\r\n Pedals\r\nI received SF6045931206922\r\n<https://www.logistics.dhl/us-en/home/tracking.html?tracking-id=SF6045931206922>\r\nHaptics\r\nmotors\r\n\r\n*missing Baseplate*\r\n\r\nPlease Let me know as soon as possible\r\n\r\n[image: image.png]\r\n-- \r\nCordiali Saluti,\r\nIng. Luca Bucci\r\n\r\nCell: +39 347 704 6352\r\n\r\nTHIS MESSAGE MAY CONTAIN INFORMATION THAT IS PRIVILEGED AND CONFIDENTIAL.\r\nThe information contained in, or attached to, this message is intended\r\nsolely for the use of the specific person(s) named above. If you are not\r\nthe intended recipient then you have received this communication in error\r\nand are prohibited from review, retransmission, taking any action in\r\nreliance upon, sharing the content of, disseminating or copying this\r\nmessage and any of the attachments in any way. If you have received this\r\ncommunication in error, please contact the sender immediately and promptly\r\ndelete this message from all types of media and devices. Thank you.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-10-02T11:59:48Z",
+  "updated_at": "2025-10-10T08:33:07Z",
+  "requester_id": 158005271618,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010041900,
+      "body_text": "Common guys, what do you have to do? Are 5 days!  Could you ship me the baseplate that I paid. I cannot use anything without the baseplate.",
+      "user_id": 158005271618,
+      "created_at": "2025-10-07T20:36:00Z",
+      "updated_at": "2025-10-07T20:36:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010124879,
+      "body_text": "Hi Luca Bucci,  We sincerely apologize for the delay. Our customer service team was unavailable during the National Day holiday (October 1st–8th). We have now resumed work, and I will immediately inform the operations team to look into your case and provide a quick solution. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-09T01:49:24Z",
+      "updated_at": "2025-10-09T01:49:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010147050,
+      "body_text": "Hi Luca Bucci,    We apologize for the inconvenience. Our Pro X Ultra baseplate is currently out of stock at our German warehouse, so we have sent you the pedal first. We can ship your baseplate via UPS, but customs duties may apply. Alternatively, we can reship it once the German warehouse restocks in next two days.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-09T11:46:21Z",
+      "updated_at": "2025-10-09T11:46:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010147457,
+      "body_text": "Hi,\r\n\r\nI don't want to pay customs duties, so I'll wait for the baseplate from the\r\nGerman warehouse.\r\n\r\nIl giorno gio 9 ott 2025 alle ore 13:46 service@simsonn.com <\r\nservice@simsonn.com> ha scritto:\r\n\r\n> Hi Luca Bucci,\r\n>\r\n> We apologize for the inconvenience. Our Pro X Ultra baseplate is currently\r\n> out of stock at our German warehouse, so we have sent you the pedal first.\r\n> We can ship your baseplate via UPS, but customs duties may apply.\r\n> Alternatively, we can reship it once the German warehouse restocks in next\r\n> two days.\r\n>\r\n> On Wed, 8 Oct at 9:49 PM , service@simsonn.com ",
+      "user_id": 158005271618,
+      "created_at": "2025-10-09T11:57:23Z",
+      "updated_at": "2025-10-09T11:57:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

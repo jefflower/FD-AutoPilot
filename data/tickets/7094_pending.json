@@ -1,0 +1,44 @@
+{
+  "id": 7094,
+  "subject": "Question Regarding Power Supply for VAM Pro Linear Motor",
+  "description_text": "Hello,\r\nI would like to place an order for the VAM Pro Linear Motor – The Pedals Haptic Reactor for Vibration Feedback. However, I noticed that in the product photos, the power supply appears to be a UK plug.\r\nI live in continental Europe and would need a power supply compatible with European outlets.\r\nI already have the items in my cart on your online store, but before completing the purchase, I would like to confirm:\r\n\r\n  *\r\nwhether the product can be delivered with a European power supply,\r\n  *\r\nor if an adaptation is required,\r\n  *\r\nand if so, whether I need to order an adapter or a specific version.\r\n\r\nPlease let me know what steps I should take — whether there is an option to select, an additional item to add to my order, or if you can directly provide the product with the appropriate power supply.\r\nThank you in advance for your help.\r\nKind regards,\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-30T14:49:55Z",
+  "updated_at": "2025-12-04T11:01:38Z",
+  "requester_id": 158007443925,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013156140,
+      "body_text": "Hi timothée alquier,  We will send the power plug according to the country of the address provided in your order. For EU countries, we will by default send a European plug, not a UK plug. You can rest assured. Additionally, you can leave a note specifying the power plug type you need. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-01T03:32:53Z",
+      "updated_at": "2025-12-01T03:32:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013165168,
+      "body_text": "\r\nThank you for your reply, I just placed my order. Could you please check that the note I added has been applied?\r\n\r\n#0LNL5GMFR\r\n\r\n________________________________\r\nDe : support@simsonn.com ",
+      "user_id": 158007443925,
+      "created_at": "2025-12-01T08:46:45Z",
+      "updated_at": "2025-12-01T08:46:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013385428,
+      "body_text": "Hi timothée alquier,    Do not worry, we have noted your comment.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-04T11:01:37Z",
+      "updated_at": "2025-12-04T11:01:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

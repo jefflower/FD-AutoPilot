@@ -1,0 +1,85 @@
+{
+  "id": 9521,
+  "subject": "My order has not been received",
+  "description_text": "",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-30T04:36:50Z",
+  "updated_at": "2026-01-08T09:54:03Z",
+  "requester_id": 158008816977,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015235507,
+      "body_text": "I haven't received any more information about my order and cannot get any tracking information.",
+      "user_id": 158008816977,
+      "created_at": "2025-12-30T04:43:58Z",
+      "updated_at": "2025-12-30T04:43:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015291262,
+      "body_text": "Hi Jasmine Sorrell, please provide the order date, contact name, country, and order amount, and I will help you find the order number.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T02:51:40Z",
+      "updated_at": "2025-12-31T02:51:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015302464,
+      "body_text": "I ordered it on the 20th of December under the name Jasmine Sorrell. The country is United Kingdom, and the delivery address is 34 Lovetofts Drive, IP15JZ.",
+      "user_id": 158008816977,
+      "created_at": "2025-12-31T08:20:54Z",
+      "updated_at": "2025-12-31T08:20:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015302973,
+      "body_text": "I think the order amount was £120.",
+      "user_id": 158008816977,
+      "created_at": "2025-12-31T08:53:46Z",
+      "updated_at": "2025-12-31T08:53:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015390341,
+      "body_text": "When will I receive an update about my order? I'm getting concerned I won't receive it, and it's a lot of money to lose. It was a Christmas present for my partner.",
+      "user_id": 158008816977,
+      "created_at": "2026-01-02T12:02:04Z",
+      "updated_at": "2026-01-02T12:02:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158016252241,
+      "body_text": "Hi Jasmine Sorrell, I can see that your order has been marked as delivered.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-08T02:16:46Z",
+      "updated_at": "2026-01-08T02:16:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016309457,
+      "body_text": "Yes, I have received it.",
+      "user_id": 158008816977,
+      "created_at": "2026-01-08T09:02:34Z",
+      "updated_at": "2026-01-08T09:02:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

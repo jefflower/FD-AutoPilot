@@ -1,0 +1,64 @@
+{
+  "id": 615,
+  "subject": "ペダルについて",
+  "description_text": "Simsonn Pro X Ultra Sim Racing Pedal を購入したのですが、\r\nアセットコルサというゲームで、ペダルを設定するときに\r\nアクセルとクラッチは普通に認識できたのですが、\r\nブレーキだけが認識できない現象が起こりました。\r\n\r\nペダルには、\r\n１、アクセル\r\n２、ブレーキ\r\n３、クラッチ\r\nの３つの出力しかないのですが、\r\nアセットコルサ側で、４つ目の謎の信号がブレーキとして認識され\r\n本来の２番目出力信号のブレーキが認識できませんでした。\r\n※アセットコルサ側で、ブレーキを踏むと２番目の出力信号として認識はされています。\r\nしかし、ブレーキの設定を開始すると、謎の４番目の出力信号で認識されてしまいます。\r\n\r\nSimsonn Managerでは３ペダルとも正常に認識できています。\r\n\r\n謎の４番目の出力信号を停止させることはできないのでしょうか？\r\n\r\n",
+  "status": 4,
+  "priority": 4,
+  "created_at": "2025-06-19T23:51:54Z",
+  "updated_at": "2025-06-29T01:20:14Z",
+  "requester_id": 158001685303,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003557223,
+      "body_text": "ログインできません。\r\nパスワードがわかりません。\r\n\r\n2025年6月20日(金) 8:57 support@simsonn.com ",
+      "user_id": 158001685303,
+      "created_at": "2025-06-20T04:29:45Z",
+      "updated_at": "2025-06-20T04:29:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003677705,
+      "body_text": "Hi gtr zeon,     お使いのペダルは正常にキャリブレーションされましたか？  Simsonn Manager 2.0.8 ソフトで、0%から100%まで踏み込むテストの動画を撮影していただけますか？  ゲーム内で誤った軸にバインドされている場合は、バインド手順の動画を提供していただければ、こちらで早急にサポートいたします。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-21T16:35:11Z",
+      "updated_at": "2025-06-21T16:35:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004221942,
+      "body_text": "この動画を見てください。\r\nsimsonnのペダルで、アセットコルサの設定ができないのがわかるはずです。\r\n4番目の信号は何ですか？\r\n解決をお願いします\r\n\r\n2025年6月22日(日) 1:35 support@simsonn.com ",
+      "user_id": 158001685303,
+      "created_at": "2025-06-29T00:30:45Z",
+      "updated_at": "2025-06-29T00:30:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004221957,
+      "body_text": "Hi gtr zeon,     「設定 → アップデート」画面で「手動ファームウェア更新」をクリックし、pedals-firmware フォルダ → pedals フォルダの順に進み、proxultra.sfu ファイルを選択して更新してください。このファームウェアは第4軸を無効にします。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-29T00:59:48Z",
+      "updated_at": "2025-06-29T00:59:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004221971,
+      "body_text": "ありがとうございます！\r\nファーム更新で正常に動作するようになりました！\r\n\r\n2025年6月29日(日) 10:00 support@simsonn.com ",
+      "user_id": 158001685303,
+      "created_at": "2025-06-29T01:13:23Z",
+      "updated_at": "2025-06-29T01:13:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

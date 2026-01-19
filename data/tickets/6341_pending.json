@@ -1,0 +1,84 @@
+{
+  "id": 6341,
+  "subject": "Delivery",
+  "description_text": "Hi,\r\n\r\nJust wanted to see when my order will be shipped. Paid for fast delivery,\r\nsays 1-2d to ship, but it looks like it hasn't been shipped.\r\n\r\nOrder #SSN3472\r\nThanks,\r\n\r\nAudrius Kliopkinas\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-11-19T07:16:13Z",
+  "updated_at": "2025-12-19T08:43:35Z",
+  "requester_id": 158007171983,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012572222,
+      "body_text": "Hi Audrius Kliopkinas,    We apologise for any inconvenience caused. Our German warehouse is currently out of stock, with replenishment expected next week. Your order will be dispatched via DHL once stock is available.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-19T10:55:27Z",
+      "updated_at": "2025-11-19T10:55:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012572275,
+      "body_text": "Hi,\r\n\r\nWhy did I pay for fast delivery then?\r\n\r\nOn Wed, 19 Nov 2025 at 12:55, service@simsonn.com ",
+      "user_id": 158007171983,
+      "created_at": "2025-11-19T10:57:56Z",
+      "updated_at": "2025-11-19T10:57:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012572371,
+      "body_text": "Hi Audrius Kliopkinas,    Please do not worry, we shall refund the additional delivery charges for you.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-19T11:02:20Z",
+      "updated_at": "2025-11-19T11:02:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014388130,
+      "body_text": "Hi,\r\n\r\nWhen can I expect shipping refund?\r\n\r\nI also want to order pedal base plate, but not going to chose fast delivery\r\nas it's not urgent. is it possible to get a discount for base plate instead\r\nof refund?\r\n\r\nOn Wed, 19 Nov 2025 at 13:02, service@simsonn.com ",
+      "user_id": 158007171983,
+      "created_at": "2025-12-12T13:42:31Z",
+      "updated_at": "2025-12-12T13:42:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014564654,
+      "body_text": "Hi,\r\n\r\nReminder, since no reply.\r\n\r\nThanks,\r\n\r\nAudrius Kliopkinas\r\n\r\nOn Fri, 12 Dec 2025 at 15:42, Audrius Kliopkinas <a.kliopkinas@gmail.com>\r\nwrote:\r\n\r\n> Hi,\r\n>\r\n> When can I expect shipping refund?\r\n>\r\n> I also want to order pedal base plate, but not going to chose fast\r\n> delivery as it's not urgent. is it possible to get a discount for base\r\n> plate instead of refund?\r\n>\r\n> On Wed, 19 Nov 2025 at 13:02, service@simsonn.com ",
+      "user_id": 158007171983,
+      "created_at": "2025-12-16T10:35:41Z",
+      "updated_at": "2025-12-16T10:35:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014699870,
+      "body_text": "Another reminder\r\n\r\nOn Tue, 16 Dec 2025, 12:35 Audrius Kliopkinas, <a.kliopkinas@gmail.com>\r\nwrote:\r\n\r\n> Hi,\r\n>\r\n> Reminder, since no reply.\r\n>\r\n> Thanks,\r\n>\r\n> Audrius Kliopkinas\r\n>\r\n> On Fri, 12 Dec 2025 at 15:42, Audrius Kliopkinas <a.kliopkinas@gmail.com>\r\n> wrote:\r\n>\r\n>> Hi,\r\n>>\r\n>> When can I expect shipping refund?\r\n>>\r\n>> I also want to order pedal base plate, but not going to chose fast\r\n>> delivery as it's not urgent. is it possible to get a discount for base\r\n>> plate instead of refund?\r\n>>\r\n>> On Wed, 19 Nov 2025 at 13:02, service@simsonn.com ",
+      "user_id": 158007171983,
+      "created_at": "2025-12-18T15:15:43Z",
+      "updated_at": "2025-12-18T15:15:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014748327,
+      "body_text": "Hi Audrius Kliopkinas,    Sorry for the delayed response. You can click this link to pay the base plate price difference, but shipping costs cannot be covered. Remember to include a note. https://www.simsonn.com/products/difference-1",
+      "user_id": 158001343601,
+      "created_at": "2025-12-19T08:43:25Z",
+      "updated_at": "2025-12-19T08:43:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

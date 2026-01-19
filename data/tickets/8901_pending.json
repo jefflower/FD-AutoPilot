@@ -1,0 +1,54 @@
+{
+  "id": 8901,
+  "subject": "Package stopped by customs",
+  "description_text": "Dear\r\n\r\nMy order #SSN4914 was stopped by local border control and they are asking me to provide my invoice and proof of payment.\r\nI notice the invoice they provided from you is for 59 USD.\r\n\r\nThis will most likely cause problems.\r\n\r\nI will wait a day for your response before sending them anything.\r\n\r\nKind regards\r\nMaximillien\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-22T15:39:53Z",
+  "updated_at": "2026-01-04T11:20:41Z",
+  "requester_id": 158008307204,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014968000,
+      "body_text": "Hi Maximillien Buron,    Please present your invoice. After paying the customs duties, send the invoice to us and we will reimburse you.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-23T10:26:51Z",
+      "updated_at": "2025-12-23T10:26:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015392866,
+      "body_text": "Dear\r\n\r\nPlease see attached invoice.\r\n\r\n\r\nItem value + transport =240.46 USD or 207.61 euros\r\n\r\nVAT 20% = 42 euros\r\n\r\nImport file fees UPS = 22.14 euros\r\n\r\nCustoms presentation fees = 33.96 euros\r\n\r\n\r\nKind regards\r\n\r\nMaximillien\r\n\r\n________________________________\r\n",
+      "user_id": 158008307204,
+      "created_at": "2026-01-02T12:47:25Z",
+      "updated_at": "2026-01-02T12:47:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015625884,
+      "body_text": "Hi Maximillien Buron,    Okay, we've reimbursed you 20 euros. Please check your account.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-04T11:19:17Z",
+      "updated_at": "2026-01-04T11:19:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015626080,
+      "body_text": "40",
+      "user_id": 158001343601,
+      "created_at": "2026-01-04T11:20:41Z",
+      "updated_at": "2026-01-04T11:20:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

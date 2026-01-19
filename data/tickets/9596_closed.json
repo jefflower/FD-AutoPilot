@@ -1,0 +1,124 @@
+{
+  "id": 9596,
+  "subject": "Problem with my handbrake order 3066003737970306",
+  "description_text": "Hi, I purchased a handbrake from you on aliexpress. Order number 3066003737970306.\r\n\r\nIt was for a  handbrake that doesn’t work and has major calibration issues.\r\n\r\nYou can see the videos linked in this mail.\r\n\r\nCan you help me ? I tried everything with the preload and the calibration from Windows. Nothing works.\r\n\r\nWaiting for your help.\r\n\r\nRegards,\r\nMaxime Soubras\r\n\r\n",
+  "status": 5,
+  "priority": 4,
+  "created_at": "2025-12-30T19:44:14Z",
+  "updated_at": "2026-01-08T10:40:10Z",
+  "requester_id": 158008824611,
+  "responder_id": 158007774664,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015290100,
+      "body_text": "Hi Maxime Soubras,     Please download FreeJoy 1.7.0. After connecting the device, follow these steps:    Click Read config from device    Click Axis    Click Calibrate    Pull the handbrake several times    Click Stop Calibration    Click Write config to device    After that, please check whether the blue progress bar of the handbrake moves from 0% to 100%. If it works correctly, you can then proceed with the in-game calibration.    https://drive.google.com/file/d/1hnHNudj0VhE6xr7ypu-KeEDuVrlVHVg9/view?usp=drive_link     https://drive.google.com/file/d/1R3FyAc8Xh-k_sCnl_Ido__AEeWshLjtT/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T01:43:26Z",
+      "updated_at": "2025-12-31T01:43:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015303371,
+      "body_text": "Hey,\r\n\r\nI did what you said multiple times, unfortunately it seems the settings are changing when I launch a game.\r\n\r\nHonestly I don't want to try this again and again, it has been 2 hours that i'm trying to make it work, if you do not have a good way to make it work now i'll ask for a refund.\r\n\r\nHere are the videos showing you I made everything in the right order and the results.\r\n\r\nThanks for your reactivity but I'll not try to make it work for hours again, it should be simple.\r\n\r\nRegards,\r\nMaxime Soubras\r\n________________________________\r\nDe : service@simsonn.com ",
+      "user_id": 158008824611,
+      "created_at": "2025-12-31T09:20:04Z",
+      "updated_at": "2025-12-31T09:20:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015366856,
+      "body_text": "Hi Maxime Soubras,  I see that the calibration is complete. Are you referring to the shaking issue? I believe it may be caused by interference from the base. You could try connecting the handbrake to the PC case using a wire attached to a screw and see if that helps. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-01T15:36:57Z",
+      "updated_at": "2026-01-01T15:36:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015369017,
+      "body_text": "﻿\r\nHi,\r\n\r\nYes i’ll try that but it’s not only interference, when I calibrate the Handbrake, it’s ok from 0 to 100%. But when I launch a game and I pull it to 100% it’s only going to like 50%, if I leave the game and come back, it’s ok, if I do it again it’s not ok.\r\nYou can see in the 2 videos I’ve sent before. It’s like the calibration is always changing so I don’t understand that.\r\nDo you have a picture of what I have to do ? Put a simple cable from the handbrake to the PC like that ?\r\nGoogle image to show if I have to do that :\r\n\r\n[image]\r\n\r\nThanks\r\nMaxime\r\n\r\nLe 1 janv. 2026 à 16:37, service@simsonn.com a écrit :\r\n\r\n﻿\r\nHi Maxime Soubras,\r\n\r\nI see that the calibration is complete. Are you referring to the shaking issue? I believe it may be caused by interference from the base. You could try connecting the handbrake to the PC case using a wire attached to a screw and see if that helps.\r\n\r\n\r\n\r\n",
+      "user_id": 158008824611,
+      "created_at": "2026-01-01T17:07:18Z",
+      "updated_at": "2026-01-01T17:07:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015378223,
+      "body_text": "Hi Maxime Soubras,  Additionally, we can assist you remotely with the configuration. You just need to install the Todesk software—no registration required—and provide the ID and temporary verification code. We can schedule a time to perform the setup. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-02T04:07:14Z",
+      "updated_at": "2026-01-02T04:07:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015403027,
+      "body_text": "Hi,\r\n\r\nI’ve just grounded the hanbrake to my PC, it is Even worse it is not Even possible to use it, the shaking are insane, I’ve tried everything, unplug it, plug it, tried on another USB port etc…\r\n\r\nI Will make a return on aliexpress on monday cause I want somethingplug and play and Ihave already done too much testing and tweaking and nothing works.\r\n\r\nThanks\r\nMaxime Soubras\r\n\r\nLe 2 janv. 2026 à 05:07, service@simsonn.com a écrit :\r\n\r\n﻿\r\nHi Maxime Soubras,\r\n\r\nAdditionally, we can assist you remotely with the configuration. You just need to install the Todesk software—no registration required—and provide the ID and temporary verification code. We can schedule a time to perform the setup.\r\n\r\n\r\n",
+      "user_id": 158008824611,
+      "created_at": "2026-01-02T16:10:33Z",
+      "updated_at": "2026-01-02T16:10:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016289798,
+      "body_text": "Hi Maxime Soubras,   We're sorry, but because you didn't cancel the dispute in time, the platform has automatically refunded you partially, and the order has been closed. We cannot refund you again.",
+      "user_id": 158007774664,
+      "created_at": "2026-01-08T06:53:47Z",
+      "updated_at": "2026-01-08T06:53:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016301778,
+      "body_text": "Hi,\r\n\r\nYou asked me to close the dispute without any more comments, the next hour the dispute was closed by Aliexpress, I'm not in fault in this case.\r\n\r\nI just want my money back, if you want I can send you the handbrake, how can I sell it if it doesn't work properly ? It's useless here at my home ...\r\n\r\nThere is only 20€ left from the order, they refunded me 35€and it was 56€.\r\n\r\nHope you can help, if I pay for something it has to work, if that's not the case I send it back to you and you refund me.\r\n\r\nThanks\r\n\r\nMaxime\r\n\r\n\r\n________________________________\r\nDe: service@simsonn.com ",
+      "user_id": 158008824611,
+      "created_at": "2026-01-08T08:31:59Z",
+      "updated_at": "2026-01-08T08:31:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016302086,
+      "body_text": "I'm not happy at all, as I said, the handbrake it not working properly after hours of settings. You helped me via mail and that is still not working.\r\n\r\nSo I want a full refund, and if you want I can get it back to you.\r\n\r\nMaxime\r\n________________________________\r\nDe : service@simsonn.com ",
+      "user_id": 158008824611,
+      "created_at": "2026-01-08T08:33:20Z",
+      "updated_at": "2026-01-08T08:33:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016302092,
+      "body_text": "i've sent several mails, now it's your responsability to help me.",
+      "user_id": 158008824611,
+      "created_at": "2026-01-08T08:33:21Z",
+      "updated_at": "2026-01-08T08:33:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    },
+    {
+      "id": 158016326272,
+      "body_text": "Hi Maxime Soubras,       Please provide photos of the product being destroyed or discarded. We will contact the platform to refund the remaining amount to you; you do not need to return the product.",
+      "user_id": 158007774664,
+      "created_at": "2026-01-08T10:40:06Z",
+      "updated_at": "2026-01-08T10:40:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

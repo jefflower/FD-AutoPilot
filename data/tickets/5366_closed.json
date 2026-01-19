@@ -1,0 +1,54 @@
+{
+  "id": 5366,
+  "subject": "Plus X pedal issue",
+  "description_text": "Good Day and Hello,\r\n\r\n  We purchased, on Oct 19th, the 3 pedal Plus X set up, including base\r\nplate with the Rector VAM Haptics to replace our Thrust Master pedals\r\non our PC based simulator through Amazon. At the same time we upgraded to a\r\nFanatec CSL DD wheel and hub which work perfectly.\r\nWe love the look and feel of the Plus X but we cannot get the throttle to\r\nconnect to any game we have. (LeMans, Kart Sim, etc)\r\nWe have downloaded 2.1.2 software and use the management system to\r\ncalibrate and everything works correctly there. We can make adjustments to\r\nall three pedals and activate the VAM no problem. But when we run any game,\r\nit will not recognize the throttle. Because it works on the management page\r\nwe believe the problem is in the software connection to a game....something\r\nis missing in the set up.\r\nAt first, we were getting the message on the bottom left of the management\r\nscreen, \"Not connected to telemetry\", but we worked through that, now it\r\nsays connected. We have tried every setting on the games too in order to\r\nget the pedals to work but under each setting it just says \"Blank\" and\r\ndoesn't recognize the presence of the pedal. We can't calibrate in any\r\ngame. (Which was no problem with the ThrustMaster set up.\r\n\r\nThings we have also tried,\r\nMaking sure the ground wire is attached to clean bare metal between the\r\ncontrol box and the sim frame.\r\nUnplugging and replugging every connection\r\nTrying different UBS ports on the PC\r\nRestarting the PC, the Simsonn app and each of the games after every\r\nadjustment\r\n\r\nShould we download any other version of your software? Or is there a driver\r\nthat we need to load?\r\n\r\nConsidering that it all worked with the Thrust Master we don't believe it\r\nto be a hardware issue.\r\n\r\nPlease let us know what your suggestions are as soon as possible. We are\r\neager to get our system up and running.\r\n(We are car racers who use the sim everyday for practice or to become\r\nfamiliar with a new track we're about to visit)\r\n\r\nAlso, on another note, the power plug for the control box seems to have too\r\nlarge of a hole in the middle for the connection in the box. The plug\r\nbarely attaches to the box and easily falls out. It seems like the wrong\r\nplug on the wire, 3.5 mm and the pin in the box is 2mm. Please let me know\r\nyour thoughts on this too.\r\n\r\nThank You,\r\n\r\nDoug Bolt\r\ndbolt2325@gmail.com\r\nOrlando, FL USA\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-10-28T14:12:16Z",
+  "updated_at": "2025-12-18T09:49:54Z",
+  "requester_id": 158006177814,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011257105,
+      "body_text": "Hi Doug Bolt,  Please test the throttle signal in SIMSONN Manager 2.1.2 and check whether the blue signal moves from 0% to 100%. You can click the Offset button to shift the white initial signal to 0%, then recalibrate the pedal. Once the blue signal responds correctly from 0% to 100%, proceed to your in-game settings. If the issue persists, please record a short video and send it to us via Google Drive, making sure the sharing permission is enabled. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-29T02:26:39Z",
+      "updated_at": "2025-10-29T02:26:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011257378,
+      "body_text": "Maddoxruiz73@gmail.com ",
+      "user_id": 158006177814,
+      "created_at": "2025-10-29T02:53:25Z",
+      "updated_at": "2025-10-29T02:53:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011257484,
+      "body_text": "Hi Doug Bolt,  Did you reply with an email address? ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-29T02:58:05Z",
+      "updated_at": "2025-10-29T02:58:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011257636,
+      "body_text": "We have to try their recommendations tomorrow. ",
+      "user_id": 158006177814,
+      "created_at": "2025-10-29T03:07:55Z",
+      "updated_at": "2025-10-29T03:07:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

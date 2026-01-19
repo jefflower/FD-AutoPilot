@@ -1,0 +1,24 @@
+{
+  "id": 10862,
+  "subject": "Order not completed",
+  "description_text": "Ordered a handful of thing from you guys and only received the pedal set\r\nand shifter. Haven't received the quick release or hand break.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-14T05:06:08Z",
+  "updated_at": "2026-01-14T06:00:46Z",
+  "requester_id": 158009061902,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017070518,
+      "body_text": "Hi Beyond Just Builds,    We apologize for the inconvenience caused. Since your original tracking link has not been updated, we have arranged for a reshipment. Here is your new tracking link:  https://t.17track.net/en#nums=SF6047240923161,SF6047240923286",
+      "user_id": 158001343601,
+      "created_at": "2026-01-14T06:00:46Z",
+      "updated_at": "2026-01-14T06:00:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

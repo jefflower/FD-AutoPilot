@@ -1,0 +1,24 @@
+{
+  "id": 9221,
+  "subject": "Re order SSN5209",
+  "description_text": "What’s going on with this order guys. It’s status has not changed in 3 days !\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-12-26T09:21:01Z",
+  "updated_at": "2025-12-28T02:28:32Z",
+  "requester_id": 158008372253,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015146781,
+      "body_text": "此工单已关闭并合并到工单 9269 中",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T02:28:32Z",
+      "updated_at": "2025-12-28T02:28:32Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

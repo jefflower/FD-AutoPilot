@@ -1,0 +1,44 @@
+{
+  "id": 1287,
+  "subject": "Where to order from",
+  "description_text": "Hi,\r\n\r\nI have a quick question.\r\nI would like to order the pro x pedals. However i am living in western europe.\r\nIf i look on ali express i see they ship from poland. \r\nMy question is: is it better to order from ali express for european customers or order from the site? For both time and custom clearance?\r\n\r\nI was unsure since the currency is in dollars.\r\n\r\nKind regards,\r\n\r\nWillem Hazelaar\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-07T06:48:09Z",
+  "updated_at": "2025-07-07T14:04:15Z",
+  "requester_id": 158001918942,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004455243,
+      "body_text": "Hi Willem Hazelaar,  We recommend placing your order on the official website and we will ship it from our warehouse in Germany.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-07T10:39:46Z",
+      "updated_at": "2025-07-07T10:39:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004456744,
+      "body_text": "Thank you for the quick response.\r\nI have a follow up question. If i click the page of the pro x pedals, there are three options. Is there a difference? Between the upgrade and the haptics there is a few dollar difference.\r\n\r\n\r\nMet vriendelijke groet,\r\n\r\nWillem Hazelaar\r\n\r\n\r\n> ",
+      "user_id": 158001918942,
+      "created_at": "2025-07-07T13:31:44Z",
+      "updated_at": "2025-07-07T13:31:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004457099,
+      "body_text": "Hi Willem Hazelaar,    We recommend choosing the ProX Ultra, as it features a reinforced structure and offers better compatibility with the VAM Pro motor. The ProX and ProX Upgrade are transitional versions and will be phased out in the future. Only the Ultra version will continue to be produced.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T14:04:14Z",
+      "updated_at": "2025-07-07T14:04:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

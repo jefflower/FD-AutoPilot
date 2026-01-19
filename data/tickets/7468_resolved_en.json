@@ -1,0 +1,35 @@
+{
+  "id": 7468,
+  "subject": "haptics sending pedals into upgrade mode",
+  "description_text": "I purchased the 3 haptic reactors as well as the pro plus x controller that was necessary for the haptics. upon delivery i realized that the pedal cables didnt fit in the pro x controller so i would have to run both simultaneously to be able to get haptics however my simsonn software does not like when i plug the second box in with the haptics and it sends my device into a \"simsonn flasher\" state in which my \"main controller is in upgrade mode, check if the upgrade button is released and reconnect the usb to exit\" i have tried in every which order of that button being pressed in, out, etc but the pedals are only recognized if i press the upgrade button and reconnect my original controller without the haptics the moment i plug my haptics controller usb in it is back to the flasher mode. any solutions? i dont want to have to return these",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-05T06:03:57Z",
+  "updated_at": "2025-12-06T05:29:32Z",
+  "requester_id": 158007277095,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013759632,
+      "body_text": "Hi Curious George,  Could you take photos of the two control boxes for me? There are a few things I don’t fully understand yet. If the Pro X has entered the upgrade mode, you can press and release the upgrade button on the main control box, then reconnect the USB to return to normal mode.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-06T05:05:27Z",
+      "updated_at": "2025-12-06T05:05:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013762671,
+      "body_text": "It was user error my apologies. I guess i didn’t need to order the second box but i don’t understand why the website says i need the newer box to be able to run haptics on the plus x’s instead of the newer pro plus’s or whatever the new black ones are called. I realized i can in fact plug the haptics into my original box and run them off of that because before i was trying to run it with two boxes at once, one with my pedals plugged into it and the other one with the haptics lol but yeah got it figured out man thanks for the response",
+      "user_id": 158007277095,
+      "created_at": "2025-12-06T05:17:43Z",
+      "updated_at": "2025-12-06T05:17:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

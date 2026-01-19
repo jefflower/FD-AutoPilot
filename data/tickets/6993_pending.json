@@ -1,0 +1,24 @@
+{
+  "id": 6993,
+  "subject": "Problem with Simsonn Racing Carbon Fiber Steering Wheel Hub",
+  "description_text": "Hi,\r\n\r\ni have a problem with this product, when i put on wheel base, not working,\r\nwhen release, work. i attach a vídeo. i have a csl dd fanatec\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-28T22:20:23Z",
+  "updated_at": "2025-12-01T05:44:40Z",
+  "requester_id": 158007406468,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013158190,
+      "body_text": "Hi Miguel Angel Martin Serrano,  Please make sure your computer is plugged into a three-prong wall socket to ensure proper grounding. Then follow the grounding method below, which can resolve interference from the Fanatec CLS DD affecting the wheel hub.              https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-12-01T05:44:40Z",
+      "updated_at": "2025-12-01T05:44:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

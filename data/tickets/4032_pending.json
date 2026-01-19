@@ -1,0 +1,24 @@
+{
+  "id": 4032,
+  "subject": "Extra axis causing trouble",
+  "description_text": "Hi, good morning,\r\n\r\nI got new pedals from the official store from Aliexpress (order\r\n8205296233924418). They are Simsonn Pro X ultra P3-H3.\r\n\r\nI have a small, possibly software related issue not related to the pedals.\r\n\r\nThere is a 4th axis \"flickering\" or \"unstable\". So when I try to\r\nassign the regular axes I have trouble because this 4th axis \"takes\r\nover\" the pulsation from axis I am pressing (throttle, brake or\r\nclutch).\r\n\r\nThis flickering is generated from the control box. I can tell because\r\nI can see it \"flickering\" even when I unplug the pedals. It is also\r\nnot OS dependent (ex. driver), because I also tested from Linux, and\r\nthis is what I get:\r\n\r\n# jstest /dev/input/js0\r\nDriver version is 2.1.0.\r\nJoystick (SIMSONN SIMSONN Pro X Ultra) has 4 axes (X, Y, Z, Rx)\r\nand 0 buttons ().\r\nTesting ... (interrupt to exit)\r\nAxes:  0:-32767  1:-32767  2:-32767  3:  1126\r\n\r\nThe issue is with the 4th axis/button (number 3), it alternates\r\nquickly from 0 to 1126.\r\n\r\nI upgraded the firmware from the official software before I even\r\ntested the pedals, so I don't know if it was being generated with the\r\nprevious version.\r\n\r\nIt only causes trouble when I assign the buttons, when I play any\r\ngame, I do not have that axis assigned to anything so it does not\r\nbother at all.\r\n\r\nAny ideas about how to solve it? It is annoying when I set the\r\ncontrols, and it drove me crazy until I found out what was going on.\r\n\r\nI searched how to block this unwanted button/axis and found I could do\r\nit with vjoy, but I am not sure if it will break other things such as\r\ncurves or pressure.\r\n\r\n\r\nHope you can help me. Other than this pedals are amazing.\r\n\r\nCheers, Jose\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-22T03:13:16Z",
+  "updated_at": "2025-09-23T02:58:58Z",
+  "requester_id": 158004765164,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009120857,
+      "body_text": "Hello,\r\n\r\nthis fixed it :). I only had to use the sfu version for the ultra pedals.\r\n\r\nThanks a lot.\r\n\r\nHave a good day.\r\n\r\n\r\nOn Mon, Sep 22, 2025 at 3:50 AM General and sales enquiries\r\n",
+      "user_id": 158004765164,
+      "created_at": "2025-09-22T15:33:38Z",
+      "updated_at": "2025-09-22T15:33:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 9216,
+  "subject": "Simsonn pedals plus x",
+  "description_text": "Hello. I connected the pedals to the computer, and the phantom brake presses started in the games. I took out the cable, plugged it in, error: usb not recognized appeared, the same error occurred with the other cable and the computer. simsonn manager 2.1.1 is installed\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-26T08:03:38Z",
+  "updated_at": "2025-12-28T03:07:28Z",
+  "requester_id": 158008757712,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015147243,
+      "body_text": "Hi A A,   Please uninstall the old version from your computer first, then download and install the latest SIMSONN Manager 2.1.2.   https://www.simsonn.com/pages/download     First, please ensure you are using SIMSONN Manager 2.1.2. Also, connect only one SIMSONN control box at a time—do not connect multiple units simultaneously.    For Pro series control boxes: If the version is 1.7.1, you can update the firmware via: Settings → Update → Manual Firmware Update → pedals-firmware → pedals-plus.sfu (This method does not apply to 1.7.0 control boxes.)    For PlusX pedals: Only the plusx.sfu firmware can be used for updates.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T03:07:28Z",
+      "updated_at": "2025-12-28T03:07:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

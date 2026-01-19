@@ -1,0 +1,54 @@
+{
+  "id": 10359,
+  "subject": "Warning",
+  "description_text": "We have tried to contact them multiple times but received no response. Our\r\ncommission is overdue. We seriously request payment from our partner before\r\nwe take any further action.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-09T01:32:30Z",
+  "updated_at": "2026-01-09T06:10:41Z",
+  "requester_id": 158001647536,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016458654,
+      "body_text": "ID 为 10052 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-09T02:11:14Z",
+      "updated_at": "2026-01-09T02:11:14Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016458656,
+      "body_text": "合并来自工单10052  \n      主题: Happy New Year & Affiliate Commission Payment Request  \n      描述:  \n Hello SIMSONN Team, \n Happy New Year! \nWe hope you are doing well and that your business is starting the year positively. Wishing SIMSONN continued growth and success in 2026. \n We are writing to kindly follow up regarding our affiliate commission payment. According to our affiliate dashboard, the commission has already been recorded and is currently pending. \n Commission details: \n \n \n \nAmount pending: $588.02 \n \n \n \nAmount paid: $0.00 \n \n \n We kindly request that the pending commission be processed for payment, so we can continue working with peace of mind and remain fully focused on promoting the SIMSONN project. \n For your reference, our PayPal payment details are: \nPayPal email: mcburrowsreali963@gmail.com\n \n We have attached screenshots from our affiliate dashboard for your reference. \n Best regards,",
+      "user_id": 158000445778,
+      "created_at": "2026-01-09T02:11:14Z",
+      "updated_at": "2026-01-09T02:11:14Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016459029,
+      "body_text": "Hi Oanh,  Thank you for your patience. Commission payments are usually settled with a one-month interval. For example, commissions from October are paid in December. As this is the peak season, with a high volume of shipments and emails, there have been some delays in processing. However, your commission payment is guaranteed, so please rest assured. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-09T02:14:23Z",
+      "updated_at": "2026-01-09T02:14:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016459860,
+      "body_text": "Our payment has been delayed by 3 months, so we are very unhappy with your\r\nwork.\r\n\r\n\r\nVào Th 6, 9 thg 1, 2026 lúc 09:14 service@simsonn.com ",
+      "user_id": 158001647536,
+      "created_at": "2026-01-09T02:20:45Z",
+      "updated_at": "2026-01-09T02:20:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

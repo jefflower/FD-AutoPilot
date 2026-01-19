@@ -1,0 +1,124 @@
+{
+  "id": 8883,
+  "subject": "Order error",
+  "description_text": "I ordered a pedal set with the 3 motors, I received the pedal set but not\r\nthe motors!\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-22T12:19:17Z",
+  "updated_at": "2025-12-31T10:58:26Z",
+  "requester_id": 158008199181,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014880934,
+      "body_text": "Hi martin mcfly,  Hello, please provide your order number so I can confirm it.",
+      "user_id": 158007774669,
+      "created_at": "2025-12-22T12:58:59Z",
+      "updated_at": "2025-12-22T12:58:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014881064,
+      "body_text": "您好，我们会尽快为您重新发放。",
+      "user_id": 158007774669,
+      "created_at": "2025-12-22T13:02:06Z",
+      "updated_at": "2025-12-22T13:02:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014881103,
+      "body_text": "Hi martin mcfly,  Hello, we will reissue it to you as soon as possible.",
+      "user_id": 158007774669,
+      "created_at": "2025-12-22T13:02:57Z",
+      "updated_at": "2025-12-22T13:02:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014881170,
+      "body_text": "Hi martin mcfly, Hello, we will reissue it to you as soon as possible",
+      "user_id": 158007774669,
+      "created_at": "2025-12-22T13:04:14Z",
+      "updated_at": "2025-12-22T13:04:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014881248,
+      "body_text": "ID 号为 8886 和 8887 的工单已合并到此工单。",
+      "user_id": 158007774669,
+      "created_at": "2025-12-22T13:05:16Z",
+      "updated_at": "2025-12-22T13:05:16Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014881249,
+      "body_text": "合并来自工单8886  \n      主题: Problème commande  \n      描述:  J'ai commander un pédalier simsonn plus x, avec 3 Motor, je n'est reçu que les pédal !    \n 1ZJ455510435485521 le numéro de suivi ",
+      "user_id": 158007774669,
+      "created_at": "2025-12-22T13:05:17Z",
+      "updated_at": "2025-12-22T13:05:17Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014881252,
+      "body_text": "合并来自工单8887  \n      主题: Order problem  \n      描述:  \nYou sent me the pedal assembly, but not the motors!   \n  1ZJ455510435485521 ",
+      "user_id": 158007774669,
+      "created_at": "2025-12-22T13:05:17Z",
+      "updated_at": "2025-12-22T13:05:17Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014881522,
+      "body_text": "Your order was originally scheduled for shipment from our German warehouse, but due to transportation delays, the goods arrived later than expected. They have now arrived at the warehouse, and we are processing them for storage and arranging DHL express shipping. We will update you with the tracking number tomorrow.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-22T13:10:41Z",
+      "updated_at": "2025-12-22T13:10:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014901582,
+      "body_text": "So tomorrow I'll have the follow-up for my second product?\r\n\r\nLe lun. 22 déc. 2025, 14:10, service@simsonn.com ",
+      "user_id": 158008199181,
+      "created_at": "2025-12-22T16:52:32Z",
+      "updated_at": "2025-12-22T16:52:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014966874,
+      "body_text": "Hi martin mcfly,    We apologize for the inconvenience. We have reshipped the haptics from our German warehouse.  ​https://www.dhl.de/en/privatkunden/pakete-empfangen/verfolgen.html?piececode=CE326636631DE",
+      "user_id": 158001343601,
+      "created_at": "2025-12-23T10:15:30Z",
+      "updated_at": "2025-12-23T10:15:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014970820,
+      "body_text": "Ok, thank you.\r\n\r\nLe mar. 23 déc. 2025, 11:15, service@simsonn.com ",
+      "user_id": 158008199181,
+      "created_at": "2025-12-23T11:34:43Z",
+      "updated_at": "2025-12-23T11:34:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

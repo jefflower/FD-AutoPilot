@@ -1,0 +1,94 @@
+{
+  "id": 2641,
+  "subject": "Order #rMtj2mxUXa7u7kDL1mvAVKkDk",
+  "description_text": "﻿Can I get an update on this order?\r\nPayment has gone though and I haven’t gotten shipping info\r\n\r\n\r\nThanks\r\nMatt\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-13T17:33:58Z",
+  "updated_at": "2025-08-25T03:43:49Z",
+  "requester_id": 158003023763,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006825385,
+      "body_text": "Hi Matthew Velasquez,  Your order has been shipped and the relevant information has been sent to the other email you provided (mrv5504@yahoo.com). Please check.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-14T01:56:40Z",
+      "updated_at": "2025-08-14T01:56:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006889830,
+      "body_text": "Hello, the Pro X Ultra-P2-H2 / Baseplate you purchased is currently out of stock in our US warehouse. We can upgrade you to the Pro X Ultra-P3-H3 / Baseplate at a discounted price of $34.90 (the original price difference is $53.31). Alternatively, we can ship it to you from China, or you can wait until the 20th when we will restock and ship it to you from our US warehouse. Please let me know your choice as soon as possible. We apologize for any inconvenience this may cause!",
+      "user_id": 158001343601,
+      "created_at": "2025-08-15T02:42:16Z",
+      "updated_at": "2025-08-15T02:42:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006889859,
+      "body_text": "Hi Matthew Velasquez,      This is the shipping tracking link for your Vam Pro Haptics. Unfortunately, the pedals are out of stock in the US. We apologize for the inconvenience.  https://www.sf-express.com/chn/en/waybill/waybill-detail/SF6045850984745",
+      "user_id": 158001343601,
+      "created_at": "2025-08-15T02:45:33Z",
+      "updated_at": "2025-08-15T02:45:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007108880,
+      "body_text": "I can no longer access that email and have changed my email to the one I am sending on now. Any way I can get the account to be transferred to this email \r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158003023763,
+      "created_at": "2025-08-19T01:02:51Z",
+      "updated_at": "2025-08-19T01:02:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007172446,
+      "body_text": "Are the pedals still scheduled to be in US warehouse by the 20th?\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158003023763,
+      "created_at": "2025-08-20T02:10:51Z",
+      "updated_at": "2025-08-20T02:10:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007173363,
+      "body_text": "Hi Matthew Velasquez,    Yes, the goods have arrived, and I have reshipped them for you. Here is your logistics tracking link. I apologise for the inconvenience caused.  https://www.fedex.com/fedextrack/no-results-found?trknbr=883705656097",
+      "user_id": 158001343601,
+      "created_at": "2025-08-20T03:09:52Z",
+      "updated_at": "2025-08-20T03:09:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007404705,
+      "body_text": "Everything from order has arrived. But now the haptics power supply isn’t working. There is power going to box but not the haptic motors. \r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158003023763,
+      "created_at": "2025-08-23T22:21:07Z",
+      "updated_at": "2025-08-23T22:21:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007441065,
+      "body_text": "Hi Matthew Velasquez,     Please provide a screenshot of your order for the pedals and VAM Pro motor so we can help confirm the model. If it is a Pro X, please update the firmware in the settings. After completing the update, unplug both the power and USB, then reconnect them and test again. If the issue still persists, please contact us — we will make sure to resolve the problem for you.            https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-08-25T03:43:48Z",
+      "updated_at": "2025-08-25T03:43:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

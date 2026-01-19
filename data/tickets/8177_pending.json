@@ -1,0 +1,34 @@
+{
+  "id": 8177,
+  "subject": "ORDER SSN4075",
+  "description_text": "Hello, I ordered the Simsonn Pedal Pro X Ultra with Haptics and only\r\nreceived the haptics. I looked up the tracking number and it shows that it\r\nhas been delivered. Will I receive more packages with the rest of the order?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-13T21:42:27Z",
+  "updated_at": "2025-12-15T09:08:12Z",
+  "requester_id": 158007800400,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014471751,
+      "body_text": "Hi Randy O'Neal,  Please rest assured that our operations team will handle your issue. Typically, the vibration motor and pedals are shipped separately, as they are not designed to be in the same package. In some cases, temporary stock shortages may also result in separate shipments. Due to a backlog of emails, responses may be slightly delayed. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-14T02:45:01Z",
+      "updated_at": "2025-12-14T02:45:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014502351,
+      "body_text": "Hi Randy O'Neal,    Don't worry, this is the logistics link for the pedals and base plate.  https://www.fedex.com/fedextrack/?trknbr=886915263689&trkqual=12029~886915263689~FDEG     https://www.ups.com/track?loc=en_US&requester=ST&trackNums=1ZJ201H40333113158/trackdetails",
+      "user_id": 158001343601,
+      "created_at": "2025-12-15T09:08:12Z",
+      "updated_at": "2025-12-15T09:08:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

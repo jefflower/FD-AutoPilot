@@ -1,0 +1,234 @@
+{
+  "id": 1959,
+  "subject": "Incompatible Order",
+  "description_text": "Good afternoon,\r\n\r\nI ordered the Haptic motors and Ultra Control box.  I was contacted by support a few days later to confirm my pedals, which are Pro X.  I installed the motors according to instructions, but the pedals will not plug into the box.  However, they do plug into the old box.  But now my haptics are not working, even after using the Manager software.  What am I missing to get my haptic motors to work?\r\n\r\nThank you,\r\nJames Waring\r\nOrder #SSN2043\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-26T20:40:57Z",
+  "updated_at": "2025-07-31T13:20:22Z",
+  "requester_id": 158002078379,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005620287,
+      "body_text": "Hi James Waring,  Please provide photos of the pedals and the control box along with the corresponding order number, so I can help verify if everything is correct. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-27T02:26:01Z",
+      "updated_at": "2025-07-27T02:26:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005620426,
+      "body_text": "Order number\r\nSSN2043\r\n\r\n\r\n\r\nThank You,\r\n\r\nJames Waring, NRP, CCP, A.A.,A.S.\r\n(352) 255-1064\r\n\r\n“Clients do not come first. Employees come first. If you take care of your\r\nemployees, they will take care of the clients.” - Sir Richard Branson\r\n\r\n\r\nOn Sat, Jul 26, 2025 at 10:26 PM service@simsonn.com ",
+      "user_id": 158002078379,
+      "created_at": "2025-07-27T03:24:48Z",
+      "updated_at": "2025-07-27T03:24:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005620756,
+      "body_text": "Hi James Waring,     In the settings → update menu, click “Check for Updates.” First, update the software to version 2.1.0, then update the firmware to 2.0.3 and 2.0.2, and test again afterward. SIMSONN Manager 2.1.0 supports over ten telemetry sources (list attached), while SIMHUB 9.9.3 supports over one hundred.      Additionally, your 24V power supply must be connected to the DC 24V power input on the control unit, not to the motor port, as that would cause an error. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-27T05:42:39Z",
+      "updated_at": "2025-07-27T05:42:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005648470,
+      "body_text": "Everything was plugged in to specs and the software is updated. Still\r\nnothing.\r\n\r\nThank You,\r\n\r\nJames Waring, NRP, CCP, A.A.,A.S.\r\n(352) 255-1064\r\n\r\n“Clients do not come first. Employees come first. If you take care of your\r\nemployees, they will take care of the clients.” - Sir Richard Branson\r\n\r\n\r\nOn Sun, Jul 27, 2025 at 1:42 AM service@simsonn.com ",
+      "user_id": 158002078379,
+      "created_at": "2025-07-27T13:25:23Z",
+      "updated_at": "2025-07-27T13:25:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005653879,
+      "body_text": "Hi James Waring,  ​Please provide a screenshot of the ProX connection version interface in SIMSONN Manager, along with photos of the pedal and VAM installation. There isn’t enough information at the moment, and I can’t fully resolve your issue based solely on the description. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-28T01:59:08Z",
+      "updated_at": "2025-07-28T01:59:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005654289,
+      "body_text": "I’ve sent you photos. But here they are again.\r\n\r\nThank You,\r\n\r\nJames Waring, NRP, CCP, A.A.,A.S.\r\n(352) 255-1064\r\n\r\n“Clients do not come first. Employees come first. If you take care of your\r\nemployees, they will take care of the clients.” - Sir Richard Branson\r\n\r\n\r\nOn Sun, Jul 27, 2025 at 9:59 PM service@simsonn.com ",
+      "user_id": 158002078379,
+      "created_at": "2025-07-28T02:02:49Z",
+      "updated_at": "2025-07-28T02:02:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005655609,
+      "body_text": "Thank You,\r\n\r\nJames Waring, NRP, CCP, A.A.,A.S.\r\n(352) 255-1064\r\n\r\n“Clients do not come first. Employees come first. If you take care of your\r\nemployees, they will take care of the clients.” - Sir Richard Branson\r\n\r\n\r\nOn Sun, Jul 27, 2025 at 10:01 PM James Waring <jamespwaring70@gmail.com>\r\nwrote:\r\n\r\n> I’ve sent you photos. But here they are again.\r\n>\r\n>\r\n> Thank You,\r\n>\r\n> James Waring, NRP, CCP, A.A.,A.S.\r\n> (352) 255-1064\r\n>\r\n> “Clients do not come first. Employees come first. If you take care of your\r\n> employees, they will take care of the clients.” - Sir Richard Branson\r\n>\r\n>\r\n> On Sun, Jul 27, 2025 at 9:59 PM service@simsonn.com ",
+      "user_id": 158002078379,
+      "created_at": "2025-07-28T02:10:41Z",
+      "updated_at": "2025-07-28T02:10:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005863684,
+      "body_text": "Now my pedals are stuck in upgrade mode. I need them out of this mode asap.\r\n\r\nThank You,\r\n\r\nJames Waring, NRP, CCP, A.A.,A.S.\r\n(352) 255-1064\r\n\r\n“Clients do not come first. Employees come first. If you take care of your\r\nemployees, they will take care of the clients.” - Sir Richard Branson\r\n\r\n\r\nOn Sun, Jul 27, 2025 at 10:10 PM James Waring <jamespwaring70@gmail.com>\r\nwrote:\r\n\r\n>\r\n>\r\n> Thank You,\r\n>\r\n> James Waring, NRP, CCP, A.A.,A.S.\r\n> (352) 255-1064\r\n>\r\n> “Clients do not come first. Employees come first. If you take care of your\r\n> employees, they will take care of the clients.” - Sir Richard Branson\r\n>\r\n>\r\n> On Sun, Jul 27, 2025 at 10:01 PM James Waring <jamespwaring70@gmail.com>\r\n> wrote:\r\n>\r\n>> I’ve sent you photos. But here they are again.\r\n>>\r\n>>\r\n>> Thank You,\r\n>>\r\n>> James Waring, NRP, CCP, A.A.,A.S.\r\n>> (352) 255-1064\r\n>>\r\n>> “Clients do not come first. Employees come first. If you take care of\r\n>> your employees, they will take care of the clients.” - Sir Richard Branson\r\n>>\r\n>>\r\n>> On Sun, Jul 27, 2025 at 9:59 PM service@simsonn.com ",
+      "user_id": 158002078379,
+      "created_at": "2025-07-31T00:27:08Z",
+      "updated_at": "2025-07-31T00:27:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005863764,
+      "body_text": "Hi James Waring,  Please release the upgrade button on the control box and reconnect the USB. This will exit the upgrade mode and switch the device back to normal operation mode.      If you still cannot exit upgrade mode and are using ProX pedals, please go to Settings → Update → Manual Firmware Update in the SIMSONN Manager 2.1.0 software. In the PESALS-Firmware/pedals directory, select the prox.sfu file to update, and this will fix the issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-31T00:37:40Z",
+      "updated_at": "2025-07-31T00:37:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005863824,
+      "body_text": "Thank you for the quick response.  Any resolution to the haptic problem?\r\n\r\n________________________________\r\n",
+      "user_id": 158002078379,
+      "created_at": "2025-07-31T00:42:32Z",
+      "updated_at": "2025-07-31T00:42:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005867769,
+      "body_text": "Hi James Waring,  After updating, in the SIMSONN Manager 2.1.0 interface, when you click “Vibration Test,” does the VAM Pro motor fail to activate? ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-31T05:31:18Z",
+      "updated_at": "2025-07-31T05:31:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005892369,
+      "body_text": "Correct no responses from any motor. And now my pedals also are not responding at all. Sent from my iPhone ",
+      "user_id": 158002078379,
+      "created_at": "2025-07-31T11:04:19Z",
+      "updated_at": "2025-07-31T11:04:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005895300,
+      "body_text": "Hi James Waring,    Please take a screenshot of the SIMSONN Manager connection status page.  Also, please download and run VKB Joy Tester so I can check whether the device is recognized correctly.      https://www.vkbcontrollers.com/pages/downloads",
+      "user_id": 158000445778,
+      "created_at": "2025-07-31T12:13:13Z",
+      "updated_at": "2025-07-31T12:13:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005895507,
+      "body_text": "Ok the pedals are now connected after unplugging everything and plugging\r\nback in. The motors are now active but nonstop now and unable to calibrate\r\nanything cause of the vibration. Here is a screen shot of the VKB joy\r\ntester.\r\n\r\n\r\nThank You,\r\n\r\nJames Waring, NRP, CCP, A.A.,A.S.\r\n(352) 255-1064\r\n\r\n“Clients do not come first. Employees come first. If you take care of your\r\nemployees, they will take care of the clients.” - Sir Richard Branson\r\n\r\n\r\nOn Thu, Jul 31, 2025 at 8:13 AM service@simsonn.com ",
+      "user_id": 158002078379,
+      "created_at": "2025-07-31T12:23:57Z",
+      "updated_at": "2025-07-31T12:23:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005896565,
+      "body_text": "Hi James Waring,     In the “Settings - Update” section, click “Manual Firmware Update,” then navigate to the pedals-firmware folder → pedals folder → and select the proxultra.sfu file to update. This firmware will disable the 4th axis.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-31T12:27:49Z",
+      "updated_at": "2025-07-31T12:27:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005896608,
+      "body_text": "I get this message. Click confirm and nothing happens.\r\n\r\nThank You,\r\n\r\nJames Waring, NRP, CCP, A.A.,A.S.\r\n(352) 255-1064\r\n\r\n“Clients do not come first. Employees come first. If you take care of your\r\nemployees, they will take care of the clients.” - Sir Richard Branson\r\n\r\n\r\nOn Thu, Jul 31, 2025 at 8:27 AM service@simsonn.com ",
+      "user_id": 158002078379,
+      "created_at": "2025-07-31T12:32:37Z",
+      "updated_at": "2025-07-31T12:32:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005896746,
+      "body_text": "Hi James Waring,  If you have confirmed that your pedals are the ProX Ultra model, please press the upgrade button on the pedal controller and then reconnect the USB cable. Next, open SIMSONN MANAGER 2.1.0 and verify that the device has entered SIMSONN Flasher Mode. After that, proceed with the manual update. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-31T12:43:29Z",
+      "updated_at": "2025-07-31T12:43:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005897229,
+      "body_text": "Hi James Waring,  ​Please install Todesk, and I will assist you remotely. Registration is not required—if you see a registration prompt, simply click the close button at the top right corner and then provide me with the ID and verification code.      https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-07-31T12:46:03Z",
+      "updated_at": "2025-07-31T12:46:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005897403,
+      "body_text": "These are not the ProX Ultra, just the ProX.  But I think I have it under control once I adjusted the strength settings.  Testing now but so far seems to work.\r\n________________________________\r\n",
+      "user_id": 158002078379,
+      "created_at": "2025-07-31T12:48:07Z",
+      "updated_at": "2025-07-31T12:48:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005897936,
+      "body_text": "Hi James Waring,  In the VKB tool, the fourth axis RX shown for the ProX pedals should not normally be displayed. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-31T12:50:05Z",
+      "updated_at": "2025-07-31T12:50:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005899583,
+      "body_text": "ToDesk:\r\ndevice ID:674 771 008\r\nTemporary password:596u6ag6\r\n________________________________\r\n",
+      "user_id": 158002078379,
+      "created_at": "2025-07-31T12:53:23Z",
+      "updated_at": "2025-07-31T12:53:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005900234,
+      "body_text": "Put it back on full display. The browser is on my forth display\r\n\r\nThank You,\r\n\r\nJames Waring, NRP, CCP, A.A.,A.S.\r\n(352) 255-1064\r\n\r\n“Clients do not come first. Employees come first. If you take care of your\r\nemployees, they will take care of the clients.” - Sir Richard Branson\r\n\r\n\r\nOn Thu, Jul 31, 2025 at 8:53 AM James Waring <jamespwaring70@gmail.com>\r\nwrote:\r\n\r\n> ToDesk:\r\n> device ID:674 771 008\r\n> Temporary password:596u6ag6\r\n> ------------------------------\r\n> *",
+      "user_id": 158002078379,
+      "created_at": "2025-07-31T13:02:31Z",
+      "updated_at": "2025-07-31T13:02:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

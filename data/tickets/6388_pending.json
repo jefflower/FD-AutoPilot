@@ -1,0 +1,54 @@
+{
+  "id": 6388,
+  "subject": "Simsonn Order #SSN3647 Address Confirmation",
+  "description_text": "Hi, could you please confirm your correct shipping address?  The address we received is:  621 E Manor Road Independence, MO 64086 USA  However, ZIP code 64086 normally belongs to Lee’s Summit, not Independence. To avoid delivery issues, please confirm:    Correct street address    Correct city (Independence or Lee’s Summit?)    Correct ZIP code    Once confirmed, we will ship your order immediately.  Thank you!",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-11-20T02:35:55Z",
+  "updated_at": "2025-11-27T11:34:23Z",
+  "requester_id": 158007182775,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012620734,
+      "body_text": "Hello! I apologize, the ZIP code is wrong.\r\nMy correct zip code is 64055\r\nMy full address is\r\n\r\n621 E Manor Road\r\nIndependence, MO 64055\r\n\r\nOn Wed, Nov 19, 2025 at 8:36 PM support@simsonn.com ",
+      "user_id": 158007182775,
+      "created_at": "2025-11-20T02:40:37Z",
+      "updated_at": "2025-11-20T02:40:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012621132,
+      "body_text": "Hi Ethanhale17,    Alright, thank you for your confirmation.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-20T03:13:05Z",
+      "updated_at": "2025-11-20T03:13:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012627868,
+      "body_text": "Hi Ethanhale17,    We apologize that the Plus X black baseplate is currently out of stock at our US warehouse and is expected to be restocked next week. Would you mind switching to the silver version instead, or opting for the black pedals with a silver baseplate?",
+      "user_id": 158001343601,
+      "created_at": "2025-11-20T08:51:15Z",
+      "updated_at": "2025-11-20T08:51:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012636938,
+      "body_text": "No problem at all, I’ll switch to the silver base plate and black pedals.\r\n\r\nOn Thu, Nov 20, 2025 at 2:51 AM support@simsonn.com ",
+      "user_id": 158007182775,
+      "created_at": "2025-11-20T13:25:42Z",
+      "updated_at": "2025-11-20T13:25:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

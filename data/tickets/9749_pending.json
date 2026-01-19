@@ -1,0 +1,44 @@
+{
+  "id": 9749,
+  "subject": "Fwd: VAM motors getting stuck on.",
+  "description_text": "Hi,\r\n\r\nPlease see forwarded. message... I don't know if I sent this to the wrong\r\nemail address but I sent it on the 26th of December and I have not received\r\nany type of response regarding this issue. I've also had this happening\r\nsince with I sent that email, with only ABS and Rumble strips effects on.\r\n\r\nI'm hoping to get these issues resolved soon because I want to post a\r\nreview on my blog about the Simsonn pedals and pedal haptic motors that I\r\nrecently purchased.\r\n\r\nThank you,\r\nFrank\r\n\r\n---------- Forwarded message ---------\r\nFrom: Frank Piccolo <gallery616simracing@gmail.com>\r\nDate: Fri., Dec. 26, 2025, 12:40 p.m.\r\nSubject: VAM motors getting stuck on.\r\nTo: <service@simsonn.com>\r\n\r\n\r\nHi,\r\n\r\nI recently purchased Simsonn pedals and haptic motors and whenever I choose\r\nto use Wheel Slip or Wheel lock effects, the motors get stuck on and won't\r\nstop vibrating until I completely turn off the the power, disconnect the\r\ncontrol box from USB and restart.\r\n\r\nI've been testing using only ABS, Gear shift and Road rumble and it seems\r\nto be okay with those, but I'd like to be able to use the other effects I\r\npreviously mentioned.\r\n\r\nMy hardware is the new Simsonn Pro Ultra with a pair of the newest VAM Pro\r\nmotors. I'm running on Windows 10 Pro and my main Sim is iRacing where I've\r\nbeen testing the haptics on the pedals using Simhub v9.10.15\r\n\r\nI tried using the effects through Simsonn Manager but the ABS kicks in as\r\nsoon as I touch the pedal which is obviously not accurate and I believe it\r\nalso ends up doing the same thing, as in getting stuck on.\r\n\r\nMy Pedals / Control box firmware shows CPU 1: v2.0.5, CPU 2: V2.0.4 and\r\nSimsonn Manager v2.1.2\r\nThe firmware update page shows \"Already the Latest Version!\"\r\n\r\nPlease advise.\r\n\r\nThank you,\r\nFrank\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-01T18:22:38Z",
+  "updated_at": "2026-01-07T14:46:48Z",
+  "requester_id": 158007336115,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015377837,
+      "body_text": "Hi Frank Piccolo,  If this occurs, it indicates that your PC’s grounding may be unreliable, possibly because a three-prong plug was not used in a grounded wall outlet. You can refer to the post below and connect the three metal screws on the PC case, control box, and pedals, which should resolve the disconnection issue.  https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2026-01-02T03:33:58Z",
+      "updated_at": "2026-01-02T03:33:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015797369,
+      "body_text": "My race rig is completely grounded I get continuity from the chassis,\r\nthrough to the pedals, the rods on the pedals and to my wheelbase and parts\r\nof my steering wheel to confirm all have continuity to the ground and my\r\ncomputer has always had a 3 prong ground plug, it's standard here in Canada.\r\nThe only thing that is getting disconnected would be the motors, not the\r\npedals. Occasionally if I launch the Simpson manager I get a message to\r\nupdate the firmware and if I try and run the updater it says completed but\r\nthe progress bar doesn't move, it stays at 0%. See attached screenshot.\r\nThe other thing I had mentioned in my previous email is the motor(s)\r\ngetting stuck on, as in a constant vibration that gets triggered from\r\nwithin iRacing and won't stop until I reset the pedals by unplugging the\r\nUSB.\r\n\r\nFrank\r\n\r\n\r\nOn Thu., Jan. 1, 2026, 10:34 p.m. support@simsonn.com, ",
+      "user_id": 158007336115,
+      "created_at": "2026-01-05T20:46:33Z",
+      "updated_at": "2026-01-05T20:46:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016150524,
+      "body_text": "Hi Frank Piccolo,     ​Please uninstall SIMSONN Manager version 2.1.2 from your computer first, then download and install SIMSONN Manager version 2.1.3 from our official website.  SIMSONN Manager 2.1.3 includes optimizations for the vibration function. Please test again using this version.  https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T14:46:47Z",
+      "updated_at": "2026-01-07T14:46:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

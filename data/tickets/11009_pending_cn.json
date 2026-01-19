@@ -1,0 +1,135 @@
+{
+  "id": 11009,
+  "subject": "你们收了我的钱，我订单的其余部分在哪里？",
+  "description_text": "已经一个星期了，Simsonn 没有任何人回复。这客户服务也太糟糕了。我准备联系我的信用卡公司，对这笔费用提出异议。",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-15T19:09:01Z",
+  "updated_at": "2026-01-17T02:15:46Z",
+  "requester_id": 158008877844,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015590885,
+      "body_text": "嗨，John，好的，感谢您的回复。",
+      "user_id": 158001343601,
+      "created_at": "2026-01-04T06:29:03Z",
+      "updated_at": "2026-01-04T06:29:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016900083,
+      "body_text": "你好 SIMSONN，\n我还没有收到我的全部订单。我仍在等待回复。有人能告诉我订单的最新情况吗？谢谢，John\n\n发自 2026年1月7日星期三, 下午5:16 service @simsonn.com",
+      "user_id": 158008877844,
+      "created_at": "2026-01-12T20:34:34Z",
+      "updated_at": "2026-01-12T20:34:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017014124,
+      "body_text": "没有人回复。有人能告诉我我的订单在哪里吗？",
+      "user_id": 158008877844,
+      "created_at": "2026-01-13T18:01:48Z",
+      "updated_at": "2026-01-13T18:01:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017216665,
+      "body_text": "这个工单已经一个星期了，还没有人联系我，告诉我我的订单在哪里！\n\n你们收了我的钱。我的订单在哪里？",
+      "user_id": 158008877844,
+      "created_at": "2026-01-15T19:04:14Z",
+      "updated_at": "2026-01-15T19:04:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017234515,
+      "body_text": "ID 号为 9827, 10259 和 10260 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-16T01:21:21Z",
+      "updated_at": "2026-01-16T01:21:21Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158017234516,
+      "body_text": "合并来自工单9827\n      主题: Re: Simsonn 订单 #SSN5549 地址确认\n      描述:  嗨，7th是街道名称。\n\n我的地址是：\n\n 1204 7th St. \n Imperial Beach, Ca. 91932\n谢谢,\n John \n\n\n\n2025年12月30日星期二, 晚上7:46, SIMSONN <service @simsonn.com> 写道:\n\n您的地址信息似乎缺少街道名称。请验证：1204 7th Imperial Beach, CA 91932 美国\n如果您有任何问题，请回复此电子邮件或通过 service @simsonn.com 与我们联系",
+      "user_id": 158000445778,
+      "created_at": "2026-01-16T01:21:21Z",
+      "updated_at": "2026-01-16T01:21:21Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158017234519,
+      "body_text": "合并来自工单10259\n      主题: Re: 订单 #SSN5549 已确认\n      描述:  你好 SIMSONN，我昨天收到了我的 Pro X Ultra 踏板订单，但是我没有收到踏板附带的触觉反馈器和支架。谢谢，John\n\n2025年12月30日星期二, 下午1:08, SIMSONN <service @simsonn.com> 写道:",
+      "user_id": 158000445778,
+      "created_at": "2026-01-16T01:21:22Z",
+      "updated_at": "2026-01-16T01:21:22Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158017234522,
+      "body_text": "合并来自工单10260\n      主题: Re: 订单#SSN5549 的一个货件已送达\n      描述:  你好 SIMSONN，我今天确实收到了 pro x ultra 踏板。但我没有收到触觉反馈器、支架和 RGB 反馈。谢谢，John\n\n2026年1月7日星期三, 下午4:01, SIMSONN <service @simsonn.com> 写道:",
+      "user_id": 158000445778,
+      "created_at": "2026-01-16T01:21:22Z",
+      "updated_at": "2026-01-16T01:21:22Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158017234541,
+      "body_text": "嗨，John，我们非常抱歉回复晚了。由于旺季和新年假期，我们积压了大量的电子邮件和订单，导致处理延迟。此外，我们的 VAM Pro 供应商的某些组件出现延迟，影响了生产。我们将尽快发货您的订单。货件将包括 3个 VAM Pro 和 3个电机支架。感谢您的理解和耐心。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-16T01:21:51Z",
+      "updated_at": "2026-01-16T01:21:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017235954,
+      "body_text": "嗨，John，抱歉回复晚了。这是您的货运跟踪链接。这个产品已经缺货近两周了——它实在太受欢迎了。您的包裹已经寄出，预计 22 号送达。https://t.17track.net/en#nums=SF6047224807280",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T02:18:03Z",
+      "updated_at": "2026-01-16T02:18:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017290392,
+      "body_text": "你好，\n感谢您联系并告知我订单的状态。我能理解假期过后你们有多忙。我期待着试用踏板的触觉反馈功能。谢谢，John\n\n发自 2026年1月15日星期四, 晚上6:18 service @simsonn.com",
+      "user_id": 158008877844,
+      "created_at": "2026-01-16T19:46:41Z",
+      "updated_at": "2026-01-16T19:46:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017310031,
+      "body_text": "嗨，John，感谢您的理解。祝您玩得愉快！",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T02:15:46Z",
+      "updated_at": "2026-01-17T02:15:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

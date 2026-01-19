@@ -1,0 +1,34 @@
+{
+  "id": 4900,
+  "subject": "Subject: Urgent follow-up on order SSN2784 – request for confirmed delivery date or refund",
+  "description_text": "Hello,\r\nI’m still waiting for order SSN2784, and the delivery date you provided is\r\nclearly unreliable. It’s unacceptable to receive estimates that don’t\r\nreflect the actual situation.\r\n\r\nI’m asking for a precise and confirmed delivery date. If you’re unable to\r\nship the order within a reasonable timeframe, I expect a full and immediate\r\nrefund.\r\n\r\nI look forward to a clear and definitive response shortly.\r\nThank you.\r\n\r\nBest regards,\r\nCristian Pezzotti\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-10-15T08:03:54Z",
+  "updated_at": "2025-10-15T09:32:55Z",
+  "requester_id": 158005269574,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010478200,
+      "body_text": "​  Hello, your parcel has been dispatched via DHL Express. Here is your tracking link:  https://www.dhl.com/us-en/home/tracking.html?tracking-id=CE326627997DE",
+      "user_id": 158001343601,
+      "created_at": "2025-10-15T08:51:50Z",
+      "updated_at": "2025-10-15T08:51:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010478459,
+      "body_text": "?\r\n\r\nCristian ha reagito tramite Gmail\r\n<https://www.google.com/gmail/about/?utm_source=gmail-in-product&utm_medium=et&utm_campaign=emojireactionemail#app>\r\n\r\nIl mer 15 ott 2025, 10:52 support@simsonn.com ",
+      "user_id": 158005269574,
+      "created_at": "2025-10-15T09:13:35Z",
+      "updated_at": "2025-10-15T09:13:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

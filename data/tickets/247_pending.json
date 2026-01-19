@@ -1,0 +1,94 @@
+{
+  "id": 247,
+  "subject": "Order",
+  "description_text": " I made an order on may 30th. I never got an email and when i try to log in\r\nit shows no order. Im not sure if i used the wrong email for the order.\r\n Only info i have is the order was for $75.70 on may 30th\r\n My shipping info is 426 southland st centerton ar\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-06T22:41:43Z",
+  "updated_at": "2025-06-24T11:29:22Z",
+  "requester_id": 158001312370,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002645870,
+      "body_text": "Hi Erik weber,     We’ve located your order: #SSN1577, and it has already been shipped. The tracking number is JSEXI0312667026YQ, and you can track the shipment on 17track.net. It was shipped on June 4th. If you have any questions, feel free to contact us. Also, we noticed that your email address was not provided in the order—please feel free to share it if needed.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-06T23:49:43Z",
+      "updated_at": "2025-06-06T23:49:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003224482,
+      "body_text": "Thank you i have received them, is there any video or instructions on what\r\nim supposed to do to hook them up like the new ones? I have the older pro’s.\r\n\r\nOn Fri, Jun 6, 2025 at 6:50 PM service@simsonn.com ",
+      "user_id": 158001312370,
+      "created_at": "2025-06-16T01:16:48Z",
+      "updated_at": "2025-06-16T01:16:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003412733,
+      "body_text": "Hi Erik weber, We’re currently filming the upgrade tutorial video, and it may take a bit more time to complete the editing. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-18T09:37:33Z",
+      "updated_at": "2025-06-18T09:37:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003471841,
+      "body_text": "Ok i think i got it figured out, i ordered two tho, i wanted to upgrade my\r\nthrottle as well. I feel like i only got one\r\nbrake pedal kit. Heres what i got\r\n\r\nOn Wed, Jun 18, 2025 at 4:37 AM service@simsonn.com ",
+      "user_id": 158001312370,
+      "created_at": "2025-06-18T16:06:59Z",
+      "updated_at": "2025-06-18T16:06:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003683680,
+      "body_text": "Hi Erik weber,    We sincerely apologize for the oversight — one upgrade kit was missed in your shipment. We will arrange the replacement to be sent out today.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-23T05:24:48Z",
+      "updated_at": "2025-06-23T05:24:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003684147,
+      "body_text": "Is there any way to change it to the throttle pedal upgrade? Thats what i\r\nmeant to do in the first place. I dont need two brake pedal upgrades i\r\nthought thats what i was doing when i ordered two.\r\n\r\nOn Mon, Jun 23, 2025 at 12:25 AM service@simsonn.com ",
+      "user_id": 158001312370,
+      "created_at": "2025-06-23T08:37:49Z",
+      "updated_at": "2025-06-23T08:37:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003688158,
+      "body_text": "Hi Erik weber,    Okay, we'll make up the upgrade kit for the throttle for you, a one-way hydraulic rod and a softer preload spring.",
+      "user_id": 158001343601,
+      "created_at": "2025-06-23T11:12:14Z",
+      "updated_at": "2025-06-23T11:12:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003737395,
+      "body_text": "Thank you!\r\n\r\nOn Mon, Jun 23, 2025 at 6:12 AM service@simsonn.com ",
+      "user_id": 158001312370,
+      "created_at": "2025-06-23T17:54:38Z",
+      "updated_at": "2025-06-23T17:54:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

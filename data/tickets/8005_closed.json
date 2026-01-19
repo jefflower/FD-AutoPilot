@@ -1,0 +1,24 @@
+{
+  "id": 8005,
+  "subject": "Issues with Pro X Ultra Pedals",
+  "description_text": "﻿Hi,\r\n\r\nI’m struggling with a few issues with my Pro X Ultra pedals:\r\n\r\nRandom dropping out of the VAM pro haptic reactors. The haptic reactors will ‘crash’ and continually vibrate unless I unplug the power and then reinsert the usb cable in that order.\r\nThe signal from the pedals ‘sticks’ at various inputs making it impossible to drive.\r\nWhen calibrating in iRacing all signals are erratic (bouncing all over the place extremely fast), everything is like this even the wheel and shifter. As soon as I unplug the pedals this stops.\r\n\r\nSo far I have tried:\r\n65w powered USB hub with only the pedals connected\r\nPedals plugged directly into motherboard (2.0, 3.0 and 3.1 ports)\r\nNew control box from you guys (the resistor was incorrect in the previous one, the above problems are still there)\r\nEarthing the rig\r\nEarthing the pedals\r\nRunning with the haptic reactors unplugged\r\nDisconnecting all other peripherals aside from pedals\r\nFirmware updates\r\nSoftware updates\r\nReinstalling Simsonn Manager\r\nRecalibrating pedals\r\nPC bios updates \r\nPc chipset updates\r\nUSB drivers all reinstalled\r\nWindows 11 up to date\r\nThe pc itself is a brand new high end build\r\n\r\nI have tried everything I have tried above and all three issues are present regardless.\r\n\r\nThe pedals are great when they’re working, but I can only get them working for a few minutes at a time before they stick, or the reactors crash.\r\n\r\nAny help or suggestions would be greatly appreciated, I’m running out of ideas.\r\n\r\nMy order number is #SSN2230.\r\n\r\nKind regards,\r\nAdam Shelton\r\nM: 07585 110811\r\n",
+  "status": 5,
+  "priority": 4,
+  "created_at": "2025-12-11T17:07:08Z",
+  "updated_at": "2025-12-25T02:50:04Z",
+  "requester_id": 158002939443,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015057474,
+      "body_text": "此工单已关闭并合并到工单 9102 中",
+      "user_id": 158000445778,
+      "created_at": "2025-12-25T02:50:04Z",
+      "updated_at": "2025-12-25T02:50:04Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": 2842,
+  "subject": "Pedal (Simsonn Pro X) misbehaving and bad readings (control box issues)",
+  "description_text": "Hi!\r\n\r\nI have started to experience issues with my pedalset. I have a SIMSONN Pro\r\nX set and the pedals are registering issues. This happens even when I\r\ndisconnect the pedals so I think is related to the control box. Please\r\nassist.\r\n\r\nBest,\r\n\r\n*A. Felipe Cabargas *\r\nProduct Manager, DXO, Acquia Inc.\r\n*DK: +4571583788 / CL: +56935353108*\r\n\r\nHave you tried turning it off and on again?\r\n\r\n------------------------------\r\nPlease avoid printing this email. Favor considere no imprimir este email.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-08-18T20:50:01Z",
+  "updated_at": "2025-08-25T04:35:31Z",
+  "requester_id": 158003296943,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007111665,
+      "body_text": "Hi Felipe Cabargas,  Please provide a video and installation photos via Google Drive, describing the issue in detail. We will assist you in resolving the problem as soon as possible. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-19T04:01:50Z",
+      "updated_at": "2025-08-19T04:01:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007351043,
+      "body_text": "Hi! \r\n\r\nSince then I got the VAM and now the pedals and VAM don’t work properly. The VAM vibrated for 30 seconds then died. I’m sure is the control box, it sparks when plugging it. Can you help me with a replacement?\r\n\r\n\r\nA. Felipe Cabargas\r\nSr. Software Engineer\r\nDK: +4571583788 / CL: +56935353108\r\n\r\nSent from my iPhone\r\nPlease avoid printing this message. \r\nPor favor evite imprimir este mensaje.\r\n\r\n> ",
+      "user_id": 158003296943,
+      "created_at": "2025-08-22T17:30:06Z",
+      "updated_at": "2025-08-22T17:30:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007448279,
+      "body_text": "Hi，Felipe Cabargas，  ​ Are you using SIMSONN Manager 2.1.0? This version has certain force limitations, and SIMHUB 9.9.3 also follows the same restriction.  If you notice sparks when plugging in the motor, this is normal — the three large capacitors inside the control box need to recharge. The 24V supply is safe and will not damage the mainboard.  Such issues usually occur if the force setting is too high or when using continuous telemetry functions.  Could you also confirm: does the pedal still function without connecting the VAM and power? Please provide photos for reference. In addition, please use VKB JoyTester to check if the device is properly connected. You may also record a video for us to review — please upload it to Google Drive and make sure access is enabled.  Rest assured, we will make sure to resolve all issues for you, and if any hardware damage is confirmed, we will send you a replacement.  ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-25T04:35:31Z",
+      "updated_at": "2025-08-25T04:35:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

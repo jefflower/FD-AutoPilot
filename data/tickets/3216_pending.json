@@ -1,0 +1,24 @@
+{
+  "id": 3216,
+  "subject": "ORDER #SSN2442",
+  "description_text": "Dear team,\r\n\r\nI placed my order for my pedals on August 24th. Five days later, I still haven't received any shipping news... is there a problem?\r\n\r\nThank you.\r\n\r\nBest regards,\r\n\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-28T16:59:14Z",
+  "updated_at": "2025-08-29T02:10:12Z",
+  "requester_id": 158003732194,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007734967,
+      "body_text": "Hi Pol Pujals Pozo,    We are waiting for the shipment to arrive at our German warehouse before dispatching it to you to avoid customs duties. We have now shipped your order and just updated your shipping notification. Please check your delivery.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-29T02:10:12Z",
+      "updated_at": "2025-08-29T02:10:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

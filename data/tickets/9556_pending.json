@@ -1,0 +1,74 @@
+{
+  "id": 9556,
+  "subject": "Hs pro shipping",
+  "description_text": "I noticed that on the site pre orders for the HS pro ship or started shipping on the 19th I bought one last week and just wanted to see how long till it ships ?\r\nSent from my iPhone\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-30T09:55:37Z",
+  "updated_at": "2026-01-15T09:01:04Z",
+  "requester_id": 158008818669,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016107989,
+      "body_text": "ID 为 9894 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T10:08:41Z",
+      "updated_at": "2026-01-07T10:08:41Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016108153,
+      "body_text": "合并来自工单9894  \n      主题: Order #SSN5251  \n      描述:  Hey just wanted to see if there is an estimate on when my order will ship? Sent from my iPhone",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T10:09:56Z",
+      "updated_at": "2026-01-07T10:09:56Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016108154,
+      "body_text": "此工单已关闭并合并到工单 9556 中",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T10:09:56Z",
+      "updated_at": "2026-01-07T10:09:56Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016108167,
+      "body_text": "ID 为 9894 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T10:10:02Z",
+      "updated_at": "2026-01-07T10:10:02Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016108396,
+      "body_text": "合并来自工单9894  \n      主题: Order #SSN5251  \n      描述:  Hey just wanted to see if there is an estimate on when my order will ship? Sent from my iPhone",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T10:11:43Z",
+      "updated_at": "2026-01-07T10:11:43Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158017172235,
+      "body_text": "I apologize for not responding to you promptly. I see your package has been delivered. Have you received it? Below is your package tracking link:  https://t.17track.net/en#nums=SF6047224410120",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T09:01:04Z",
+      "updated_at": "2026-01-15T09:01:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

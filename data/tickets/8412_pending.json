@@ -1,0 +1,44 @@
+{
+  "id": 8412,
+  "subject": "Tracking order #SSN3931",
+  "description_text": "Good morning\r\n\r\nI made an order with SimSonn and I got two tracking numbers.\r\nI already received the parts from one of the tracking numbers but the other\r\none still reports being in the airport but is oversized/overweight since\r\nthe forth of December.\r\nThe tracking number in question is:\r\nhttps://t.17track.net/en#nums=SF6047115288819\r\n\r\nCan you please help me with this situaction as I dont know if the package\r\nis stuck or is already coming.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-16T11:47:37Z",
+  "updated_at": "2025-12-24T09:15:43Z",
+  "requester_id": 158007361710,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014567003,
+      "body_text": "Hi Goncalo Costa,    We apologize for the inconvenience caused. I am currently contacting the logistics provider to investigate the matter on your behalf. We will arrange for a replacement shipment as soon as possible.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-16T12:05:33Z",
+      "updated_at": "2025-12-16T12:05:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014887393,
+      "body_text": "Hello\r\n\r\nI noticed that the package as returned to your instalations. Is the new\r\npackage on the way, and if it is how much time will it take to arrive and\r\nwhat is the tracking number?\r\n\r\n\r\nservice@simsonn.com ",
+      "user_id": 158007361710,
+      "created_at": "2025-12-22T14:55:28Z",
+      "updated_at": "2025-12-22T14:55:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015028758,
+      "body_text": "Hi Goncalo Costa,    I apologize for not getting back to you sooner. Here is your shipping tracking link.  https://t.17track.net/en#nums=JSELV1708582704YQ",
+      "user_id": 158001343601,
+      "created_at": "2025-12-24T09:15:43Z",
+      "updated_at": "2025-12-24T09:15:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

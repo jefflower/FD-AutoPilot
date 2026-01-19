@@ -1,0 +1,224 @@
+{
+  "id": 1807,
+  "subject": "Cannot get my VRAM pro to work",
+  "description_text": "Hi, \r\n\r\nI have the pro x pedals. I brought the VRAM pro for the pedals but I cannot get it working? I am using the control box that came with my pedals. Is this correct or am I doing something wrong?\r\n\r\nCould you give me a step by step? Or am I using the wrong control box?\r\n\r\nThank you \r\nSent from my iPhone\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-07-23T00:39:06Z",
+  "updated_at": "2025-09-04T02:20:29Z",
+  "requester_id": 158001342686,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005355188,
+      "body_text": "Hi Ben Linsdell,  Please go to Settings → Update and click Update to upgrade the software to version 2.0.9. Then, in the same interface, click Manual Firmware Update, navigate to the pedals-firmware folder → pedals folder, and select the prox.sfu file to update the firmware. Once the update is complete, please run the test again.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-23T02:51:06Z",
+      "updated_at": "2025-07-23T02:51:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005485479,
+      "body_text": "Hi,\r\n  I have tired this and really hoped it would work. But it hasn’t? I’m quite confused on why these arnt responding.\r\n\r\nThanks \r\n\r\nBen\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158001342686,
+      "created_at": "2025-07-23T22:17:09Z",
+      "updated_at": "2025-07-23T22:17:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005487298,
+      "body_text": "Hi Ben Linsdell,     Please first update the SIMSONN Manager to version 2.0.9, then click Check for Updates to upgrade the ProX firmware to version 2.0.3. After the update, test the vibration function in the vibration interface to ensure it works correctly. If everything works fine, proceed to enable the telemetry function or download SIMHUB 9.9.3 to handle game telemetry. I will also send you our telemetry support package. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-24T02:11:23Z",
+      "updated_at": "2025-07-24T02:11:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005543159,
+      "body_text": "Hi, thank you for the help. I have managed to get them working. But to my disappointment one of the VAM pros seems to be faulty? Or at least I think it is. It makes a very loud sound on the vibration test in comparison to the throttle one. I can send a video for proof. Is there a way of getting it replaced? \r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158001342686,
+      "created_at": "2025-07-25T20:55:24Z",
+      "updated_at": "2025-07-25T20:55:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005550963,
+      "body_text": "Hi Ben Linsdell,   Please provide a video or swap the motor connectors on the control box to check whether the issue is with the interface. If it is confirmed to be an interface fault, we can replace the control box; if it’s just a loose motor inside, it can be fixed by opening and securing it. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-26T04:06:45Z",
+      "updated_at": "2025-07-26T04:06:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005563001,
+      "body_text": "Hi, here is the video of the noise. What shall I do?\r\n\r\n\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158001342686,
+      "created_at": "2025-07-26T07:27:52Z",
+      "updated_at": "2025-07-26T07:27:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005568391,
+      "body_text": "Hi Ben Linsdell,  Is the noise occurring even when the game is not running and no motor vibration tests are active? If so, it indicates an EMI interference issue that needs to be addressed. The troubleshooting process is as follows.      To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability:     1.    Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding.     2.    Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive.     3.    Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup.     4.    Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible.     5.    Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs.     6.    Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference.     7.    Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements.     8.    Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources.          https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-07-26T07:54:37Z",
+      "updated_at": "2025-07-26T07:54:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005785386,
+      "body_text": "Thanks, I’ll try this and be in contact\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158001342686,
+      "created_at": "2025-07-29T19:08:34Z",
+      "updated_at": "2025-07-29T19:08:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006204936,
+      "body_text": "Hi,\r\n\r\n I have done as you have asked and fixed the EMI issues I was having. However the motor still seems to be faulty. Is it possible to have another sent out to me? And I can return this one. Thank you \r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158001342686,
+      "created_at": "2025-08-04T09:28:04Z",
+      "updated_at": "2025-08-04T09:28:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006278065,
+      "body_text": "Hi Ben Linsdell, Could you please open the housing of the faulty motor? We would like to check whether the issue is caused by internal parts coming loose. Otherwise, it’s difficult for us to accurately determine the root cause, and returning the motor for inspection would take significant time and cost. Once confirmed, we will promptly send you a brand-new motor as a replacement. You can refer to this blogger’s video for guidance.        https://www.youtube.com/watch?v=CQw-QvkhoEM",
+      "user_id": 158000445778,
+      "created_at": "2025-08-05T13:40:35Z",
+      "updated_at": "2025-08-05T13:40:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007305374,
+      "body_text": "Hi, I will try this today and let you know, thank you \r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158001342686,
+      "created_at": "2025-08-21T15:43:40Z",
+      "updated_at": "2025-08-21T15:43:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007313840,
+      "body_text": "Hi, \r\n\r\nI have taken the housing off. In comparison to the video you sent me the only difference I could see is that mine has significantly more grease than the YouTube video. And my “weight” as he called it was not retracted into the housing but floating at the top. I had to push it in manually. \r\n\r\nI’m not sure what else I am supposed to look at and am not exactly qualified to know for sure. \r\n\r\nI would greatly appreciate if you would be so kind to send me another that I could replace the faulty one with. \r\n\r\nThank you \r\nBen \r\n\r\n\r\n> ",
+      "user_id": 158001342686,
+      "created_at": "2025-08-21T18:55:27Z",
+      "updated_at": "2025-08-21T18:55:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007325284,
+      "body_text": "Hi Ben Linsdell,  No problem. Please send us a photo showing the issue with the defective item, and also provide your order number, contact name, phone number, and address. We will arrange a replacement for you. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-22T04:45:34Z",
+      "updated_at": "2025-08-22T04:45:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007541509,
+      "body_text": "Hi,\r\n Here is a photo of the inside, obviously from me checking previously I have pushed the weight back in myself so it’s sitting I would guess normally? But still an excessive amount of grease in comparison. If I could get a new one sent out that would be amazing. \r\nThank you\r\n\r\nOrder number - #SSN1546\r\nContact name - Ben Linsdell \r\nPhone number - 07540183067\r\nAddress - 5 the Hampshires, harrietsham, Maidstone ME171JU\r\n\r\n\r\n\r\n> ",
+      "user_id": 158001342686,
+      "created_at": "2025-08-25T21:14:58Z",
+      "updated_at": "2025-08-25T21:14:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007548366,
+      "body_text": "Hi Ben Linsdell,  After reinstalling, is the sound back to normal? As for the grease, there’s no need to worry — normally only a small amount is required. We apply a bit more just to be on the safe side, and it serves only as lubrication. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-26T03:45:47Z",
+      "updated_at": "2025-08-26T03:45:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007549641,
+      "body_text": "Hi,\r\n The noise is still the same unfortunately.\r\n\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158001342686,
+      "created_at": "2025-08-26T06:35:18Z",
+      "updated_at": "2025-08-26T06:35:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007590545,
+      "body_text": "Hi Ben Linsdell,  It’s one of the VAM Pros that has an issue, correct? We will replace it with a new one for you at no cost. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-27T03:39:51Z",
+      "updated_at": "2025-08-27T03:39:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007595093,
+      "body_text": "Yes that’s correct, thank you \r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158001342686,
+      "created_at": "2025-08-27T08:03:25Z",
+      "updated_at": "2025-08-27T08:03:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007729666,
+      "body_text": "Thanks, will I receive any tracking update or confirmation?\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158001342686,
+      "created_at": "2025-08-28T20:57:43Z",
+      "updated_at": "2025-08-28T20:57:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007921870,
+      "body_text": "Hi, do you have an update on the replacement VAM Pro? \r\n\r\nThank you \r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158001342686,
+      "created_at": "2025-09-01T23:04:26Z",
+      "updated_at": "2025-09-01T23:04:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008055305,
+      "body_text": "Hello, here is your delivery link. We apologise for the delay in dispatching your order until yesterday.  https://t.17track.net/en#nums=SF6045891368051",
+      "user_id": 158001343601,
+      "created_at": "2025-09-04T02:20:28Z",
+      "updated_at": "2025-09-04T02:20:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

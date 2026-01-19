@@ -1,0 +1,44 @@
+{
+  "id": 8531,
+  "subject": "Warranty for Order #SSN2564",
+  "description_text": "Hello,\r\nI purchased a set of pedals from you in September of this year. Everything\r\nwas fine until yesterday. The gas pedal hydraulic dampener stopped working.\r\nBefore it was a smooth pedal feel and now it's rough and has no real\r\nresistance. If possible could you ship me out another gas pedal hydraulic\r\ndampener to replace my current one. Thank you!\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-17T19:03:19Z",
+  "updated_at": "2025-12-30T09:31:06Z",
+  "requester_id": 158007851613,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014881509,
+      "body_text": "Hi Robert Ocampo,  You can remove the one-way hydraulic damper from the throttle pedal, clean any dust particles on the metal rod, and apply some lubrication. When testing manually, there should be damping when pressing down, and no damping when pulling back. If the problem persists, we can send you a new one as a replacement. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-22T13:10:25Z",
+      "updated_at": "2025-12-22T13:10:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015179711,
+      "body_text": "Hello,\r\nI tried relubricating the dampener but it is not working as it once did. If\r\npossible could you send me a replacement dampener. I plan on purchasing 2\r\nVAM pro pedal haptics. Would it be possible for you to just put the extra\r\ngas dampener with that order? I will wait to buy the VAM pro until I hear\r\nback from you.\r\n\r\nThanks for your help.\r\n\r\n-Robert\r\n\r\nOn Mon, Dec 22, 2025, 8:10 AM service@simsonn.com ",
+      "user_id": 158007851613,
+      "created_at": "2025-12-29T06:01:04Z",
+      "updated_at": "2025-12-29T06:01:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015244715,
+      "body_text": "Hi Robert Ocampo,  We can send you a replacement one-way hydraulic rod. You can also specify this in the order notes. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T09:31:06Z",
+      "updated_at": "2025-12-30T09:31:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

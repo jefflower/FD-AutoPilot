@@ -1,0 +1,24 @@
+{
+  "id": 5508,
+  "subject": "Buy and pick up in person",
+  "description_text": "Hello Simsonn team,\r\nI’m right now traveling in Shanghai, is it possible to buy and pick some products from your company in person? \r\n\r\nThank you very much!\r\nBest regards Marvin\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-11-01T03:48:22Z",
+  "updated_at": "2025-11-02T01:49:06Z",
+  "requester_id": 158006275635,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011603339,
+      "body_text": "Hi Marvinwessel,  Sure! When do you plan to come to Changsha? ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-02T01:49:06Z",
+      "updated_at": "2025-11-02T01:49:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "id": 2023,
+  "subject": "Simsonn Pro X Ultra control box disconnects.",
+  "description_text": "Hi,\r\nI would like to report issues with the Pro X Ultra disconnection issues.\r\nI found the online advice to not have SimHub and Simsonn Manager connected at the same time.\r\nBut still while having only SimHub running I still get disconnects.\r\nI made sure the control box is directly plugged in into the PC, into USB 2.0 port. But I also tried with other ports on the PC, still the same issue.\r\nI also made sure the control box is grounded.\r\n\r\nWhat I noticed that keeping only Simsonn Manager running without the SimHub I have stable connection.\r\nCan you provide some assistance.\r\n\r\nMany thanks.\r\n\r\nKind regards,\r\nIvan\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-07-28T20:08:24Z",
+  "updated_at": "2025-09-17T09:19:54Z",
+  "requester_id": 158001671860,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005779799,
+      "body_text": "Hi Ivan Kolic,  Please confirm whether your software has been updated to SIMSONN Manager 2.1.0 and that your firmware is the latest version. Kindly provide a screenshot of the software interface for our reference. In addition, please let us know the brand of your wheelbase, as some models may cause interference. We also recommend connecting the USB cable directly to the rear USB 3.0 (blue) port of your computer instead of using a USB hub, as disconnections can prevent the VAM from receiving stop commands in time, resulting in continuous vibration. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-29T15:05:30Z",
+      "updated_at": "2025-07-29T15:05:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005779989,
+      "body_text": "Hi, yes I’ve updated the Simsonn Manager and control box firmware.\r\nSimsonn manager screenshot with latest firmware reported:\r\n[cid:image001.png@01DC00AC.482CC220]\r\nMy wheelbase is Logitech G25.\r\nPedals are connected directly to the USB 3.0.\r\nI got disconnects either with USB 2.0 or 3.0 port.\r\n\r\nKind regards,\r\nIvan\r\n\r\n",
+      "user_id": 158001671860,
+      "created_at": "2025-07-29T15:15:07Z",
+      "updated_at": "2025-07-29T15:15:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005790587,
+      "body_text": "Hi Ivan Kolic,    Please download VKB Joy Tester and check if it can detect the SIMSONN device.  Kindly send me a screenshot so I can verify whether the device information is correct.  https://www.vkbcontrollers.com/pages/downloads",
+      "user_id": 158000445778,
+      "created_at": "2025-07-30T01:01:00Z",
+      "updated_at": "2025-07-30T01:01:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005858773,
+      "body_text": "Hi, here is the screenshot.\r\n[cid:image001.png@01DC018E.25643420]\r\n\r\nI'd like to add that I never get whole pedals disconnected only haptics are losing connection.\r\nAnd they are losing connection in SimHub. If I'm using Simsonn Manager I don't get connection loss.\r\nI'll attach SimHub Log where it show the connection loss.\r\n\r\nThank you for troubleshooting this.\r\n\r\nKind regards,\r\nIvan\r\n\r\n",
+      "user_id": 158001671860,
+      "created_at": "2025-07-30T19:13:36Z",
+      "updated_at": "2025-07-30T19:13:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005863643,
+      "body_text": "Hi Ivan Kolic,  I have forwarded the log you provided to the person in charge of SimHub. They will review it and get back to us with their feedback. Once I receive their response, I will follow up with you promptly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-31T00:24:27Z",
+      "updated_at": "2025-07-31T00:24:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006625931,
+      "body_text": "Hi Ivan Kolic,  SimHub responded today, indicating that the issue might be related to the USB hub or USB port.      Has your issue been resolved? This problem occurs relatively rarely and is usually related to the installation environment or external interference. Also, please note that SimHub 9.9.3 and SIMSONN Manager 2.1.0 should not be opened at the same time, as running both simultaneously may also cause this issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T05:26:18Z",
+      "updated_at": "2025-08-10T05:26:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006662599,
+      "body_text": "Hi, thank you for your response and still following up with helping me on this issue.\r\nI enjoy the haptics a lot it's just a shame I can't focus on enjoying them when instead I'm watching at what point are they going to disconnect.\r\n\r\nI tried every USB port on my PC and it was the same behavior. No changes.\r\nI was not running SimHub and Simson Manager at the same time.\r\n\r\nNo my issue was not resolved.\r\nBut it did several troubleshooting steps to trying to find out what it is or what is going on:\r\n\r\nFirstly I found out that Simsonn Manager holds a connection much more than SimHub. With Simhub disconnect happens in 10min or even less. Simsonn Manager disconnects after 20min or more.\r\n\r\nSo I think it's due to how many signals an application is sending to the haptics circuit. More signal >> sooner disconnect. If I keep SimHub with just one effect I get no disconnect, as soon as I add a few I get a disconnect.\r\nAlso I tried reducing the Hz for each effect but that did not fix it.\r\n\r\nEMI Troubleshooting\r\nI sanded to bare metal the metal housing of the controller and connected a ground wire from the controller to the metal frame of my rig.\r\nStill I got disconnects. I connected my metal frame of my rig to the earth ground of my wall outlet >> still a disconnect.\r\nIt's not a EMI issue.\r\n\r\nPower draw troubleshooting\r\nI purchased a powered USB 3 hub to exclude the option that it might be \"power brownout\" on the USB port. Hub supports 2.4 Amps on the port\r\n\r\nSignal issue troubleshooting\r\nI did notice that the controller PCB ground is not connected to the metal housing to the controller so I thought that their might be an EMI issue with the PCB.\r\nOne test that noticeably reduced the issue was connecting the USB plug's GND pin (controller side) directly to the earth pin of my wall outlet.\r\nMy thinking was that this would bring the controller's USB ground potential closer to the PC's earth ground, reducing ground noise and improving the stability of the USB differential signal (D+ / D-) against its reference.\r\nThis connection seemed to reduce full disconnects, but I still observed occasional brief stutters (~0.3 s) where the haptics froze or an effect got stuck.\r\nI'm now investigating whether an RC network between USB GND and earth might provide similar noise suppression without introducing loop currents that might be causing the microstutters.\r\nWould you be able to confirm if grounding-related noise could be the cause of these dropouts?\r\nDid you maybe intentionally designed the PCB of the controller to not be grounded through the USB?\r\n\r\nSince this gave me a stable connection, but with stutters I might try to make a RC circuit to make a low-impedance patch for high-frequency notice to escape to earth.\r\nI'm sending the schematics I might try to make to attempt this fix in the attachment.\r\n\r\nKnd regards,\r\nIvan\r\n\r\n",
+      "user_id": 158001671860,
+      "created_at": "2025-08-10T23:09:45Z",
+      "updated_at": "2025-08-10T23:09:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006664089,
+      "body_text": "Hi Ivan Kolic, Please provide a video showing how the issue gets stuck, along with your wheelbase brand, so that we can try to reproduce the problem in our test environment. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-11T00:51:33Z",
+      "updated_at": "2025-08-11T00:51:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008829290,
+      "body_text": "Hi,\r\nThere was nothing special to show in a video.\r\n\r\n\r\nIt’s just a disconnection in SimHub usually after 5 minutes, and sometimes especially with heavy effects. For example when the car goes off track and effects for the tyre slip are in high intensity….\r\nBut also mostly during low effects intensity at random.\r\n\r\nI already mentioned that I’m using Logitech G25 as my wheel, I doubt there was an issue there. This is not a direct drive wheelbase that would cause some EMI issues.\r\n\r\nBut anyway I’m happy to report that I managed to solve my issues by connecting the Simsonn Pro X Ultra control box to a USB 3.0 port on the back of my PC with a ADUM3160 USB Isolator.\r\n\r\n[https://ae01.alicdn.com/kf/S0a1f2832867847fb8cc07c30db3d2dd7d.jpg_640x640q90.jpg]\r\n\r\n With the control box connected with this USB Isolator I got no disconnects.\r\nCan you share an explanation why this device helped?\r\n\r\nKind regards,\r\nIvan\r\n\r\n________________________________\r\n\r\n",
+      "user_id": 158001671860,
+      "created_at": "2025-09-16T19:33:01Z",
+      "updated_at": "2025-09-16T19:33:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008851261,
+      "body_text": "Hi Ivan Kolic,  This USB isolator is designed to block electromagnetic interference transmitted from the wheelbase to the PC and from the PC to the pedals, and it is very effective. For the ProX Ultra, it typically requires around 400mA of current to support its LEDs, which means it must be connected directly to a USB 3.0 port on the back of the PC, and not through a USB hub. In our own testing, we have experienced disconnections when using hubs, which is why we strongly advise against them. In addition, the USB isolator provides a 5V voltage regulation function, which helps ensure stable operation of connected USB devices. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-17T09:19:54Z",
+      "updated_at": "2025-09-17T09:19:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

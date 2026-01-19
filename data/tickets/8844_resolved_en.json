@@ -1,0 +1,25 @@
+{
+  "id": 8844,
+  "subject": "Order No. SSN4104",
+  "description_text": "Good morning, I wanted information regarding order No. SSN4104 from 29-11-2025, which as of today, 22-12-2025, has not yet arrived. The tracking shows it has been stuck in Milan for a week now. I wanted to know if this waiting time is normal or if there is some problem. Thank you\n\nSent from iPhone",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-22T03:58:29Z",
+  "updated_at": "2025-12-22T11:55:08Z",
+  "requester_id": 158008252026,
+  "responder_id": 158007774669,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014876398,
+      "body_text": "Hi Marco Orangis, Hello, how can I help you?",
+      "user_id": 158007774669,
+      "created_at": "2025-12-22T11:54:53Z",
+      "updated_at": "2025-12-22T11:54:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

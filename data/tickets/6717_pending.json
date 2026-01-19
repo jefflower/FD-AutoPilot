@@ -1,0 +1,74 @@
+{
+  "id": 6717,
+  "subject": "What is my order status?",
+  "description_text": "Hi, i have the order with code #SSN3571, last week I was told that the\r\nstock on the wear house in Germany needs to be refilled, can I receive any\r\nstatus about my order?\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-11-25T14:20:59Z",
+  "updated_at": "2025-12-03T08:43:43Z",
+  "requester_id": 158007184923,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012998330,
+      "body_text": "Hi Andrei Chitu,  We sincerely apologize for the inconvenience caused by the logistics delay. Our German warehouse is currently out of stock, with restocking expected to be completed by the 28th. At that time, we will ship your order via DHL and refund the additional shipping fees.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-27T07:57:39Z",
+      "updated_at": "2025-11-27T07:57:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013059149,
+      "body_text": "Hi Andrei Chitu,    We are processing your shipment. Please verify your address and provide the correct postal code.  Chițu Andrei  Gârlași 51A  Buzău BZ  Romania  +40 770 560 236",
+      "user_id": 158001343601,
+      "created_at": "2025-11-28T13:33:31Z",
+      "updated_at": "2025-11-28T13:33:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013158012,
+      "body_text": "Hi Andrei Chitu,      We are processing your shipment. Please verify your address and provide the correct postal code.  Chițu Andrei  Gârlași 51A  Buzău BZ  Romania  +40 770 560 236",
+      "user_id": 158001343601,
+      "created_at": "2025-12-01T05:34:26Z",
+      "updated_at": "2025-12-01T05:34:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013158964,
+      "body_text": "Postal code: 120125\r\n\r\nOn Mon, 1 Dec 2025 at 07:34, service@simsonn.com ",
+      "user_id": 158007184923,
+      "created_at": "2025-12-01T06:19:15Z",
+      "updated_at": "2025-12-01T06:19:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013241412,
+      "body_text": "Hi Andrei Chitu,    Okay, we've shipped your order.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-02T02:46:31Z",
+      "updated_at": "2025-12-02T02:46:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013315615,
+      "body_text": "Hi Andrei Chitu,    We apologize that due to low stock of the silver Plus X P3-H3 at our German warehouse, your order cannot be shipped promptly. We will send you the Plus X P2-H2 instead, along with a separate clutch. Thank you for your understanding.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-03T08:43:43Z",
+      "updated_at": "2025-12-03T08:43:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

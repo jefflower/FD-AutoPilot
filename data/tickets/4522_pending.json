@@ -1,0 +1,294 @@
+{
+  "id": 4522,
+  "subject": "Order #SSN2666",
+  "description_text": "﻿Hello,\r\n\r\nWhen is my order arriving?\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-07T04:33:41Z",
+  "updated_at": "2025-10-10T12:14:25Z",
+  "requester_id": 158005152642,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009624928,
+      "body_text": "Hello, we have arranged for the reshipment of your Haptics Reactor.  However, for the pedal reshipment, you will need to contact DHL directly. Here is your DHL tracking number: CE326624655DE  Phone: +31 88-055 2000",
+      "user_id": 158001343601,
+      "created_at": "2025-09-29T10:46:25Z",
+      "updated_at": "2025-09-29T10:46:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009626491,
+      "body_text": "Hello,\r\n\r\nWhat do you mean with this?\r\nI dont know how to contact them.\r\nI did not order pedals at dhl but i ordered it at simsonn. \r\nSo i ask you kindly to re-send my order or please refund my money.\r\nI hope to hear from you soon.\r\n\r\nKind regards,\r\n\r\nErik van Empelen\r\n\r\n> Op 29 sep 2025 om 12:46 heeft service@simsonn.com het volgende geschreven:\r\n> \r\n> ﻿\r\n> Hello, we have arranged for the reshipment of your Haptics Reactor.\r\n> However, for the pedal reshipment, you will need to contact DHL directly. Here is your DHL tracking number: CE326624655DE\r\n> Phone: +31 88-055 2000\r\n> 4238:4206036\r\n\r\n",
+      "user_id": 158005152642,
+      "created_at": "2025-09-29T12:18:53Z",
+      "updated_at": "2025-09-29T12:18:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009665775,
+      "body_text": "Hello, we face time zone and language barriers with our local DHL partner in the Netherlands, so we can only communicate via email, which causes significant delays. Therefore, we typically ask customers to call and request a reshipment themselves. We hope you understand. If you prefer not to, we will handle the communication with them via email.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-30T04:09:28Z",
+      "updated_at": "2025-09-30T04:09:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009668612,
+      "body_text": "Goodmorning,\r\n\r\nThanks for replying my email regarding my order.\r\n\r\nIn the dhl.de app i can see that my order has been send back to the sender.\r\nI dont mind contacting dhl.nl but they dont have my package because it has been send back to sender.\r\nI guess the package now is at your office.\r\nSo… if i call dhl.nl…. What can is say to them?\r\n\r\nKind regards,\r\n\r\nErik\r\n\r\n> Op 30 sep 2025 om 06:09 heeft service@simsonn.com het volgende geschreven:\r\n> \r\n> ﻿\r\n> Hello, we face time zone and language barriers with our local DHL partner in the Netherlands, so we can only communicate via email, which causes significant delays. Therefore, we typically ask customers to call and request a reshipment themselves. We hope you understand. If you prefer not to, we will handle the communication with them via email.\r\n> 4238:4206036\r\n\r\n",
+      "user_id": 158005152642,
+      "created_at": "2025-09-30T06:32:11Z",
+      "updated_at": "2025-09-30T06:32:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009680893,
+      "body_text": "Goodday,\r\n\r\nI have contacted dhl in the netherlands but they say they couldn’t help me further.\r\nSo… can you help me further?\r\n\r\nKind regards,\r\n\r\nErik van Empelen\r\n\r\n> Op 30 sep 2025 om 08:31 heeft Gmail <nattezok@gmail.com> het volgende geschreven:\r\n> \r\n> ﻿\r\n> Goodmorning,\r\n> \r\n> Thanks for replying my email regarding my order.\r\n> \r\n> In the dhl.de app i can see that my order has been send back to the sender.\r\n> I dont mind contacting dhl.nl but they dont have my package because it has been send back to sender.\r\n> I guess the package now is at your office.\r\n> So… if i call dhl.nl…. What can is say to them?\r\n> \r\n> Kind regards,\r\n> \r\n> Erik\r\n> \r\n>>> Op 30 sep 2025 om 06:09 heeft service@simsonn.com het volgende geschreven:\r\n>>> \r\n>> ﻿\r\n>> Hello, we face time zone and language barriers with our local DHL partner in the Netherlands, so we can only communicate via email, which causes significant delays. Therefore, we typically ask customers to call and request a reshipment themselves. We hope you understand. If you prefer not to, we will handle the communication with them via email.\r\n>> 4238:4206036\r\n\r\n",
+      "user_id": 158005152642,
+      "created_at": "2025-09-30T13:25:25Z",
+      "updated_at": "2025-09-30T13:25:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009687713,
+      "body_text": "Ok fine.\r\n\r\nMy adress is;\r\n\r\nErik van Empelen\r\nCelebesstraat 52\r\n5014 BS Tilburg\r\n\r\nThank you\r\n\r\n\r\n> Op 30 sep 2025 om 16:36 heeft General and sales enquiries ",
+      "user_id": 158005152642,
+      "created_at": "2025-09-30T16:37:53Z",
+      "updated_at": "2025-09-30T16:37:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009831047,
+      "body_text": "\r\n\r\n> Op 3 okt 2025 om 08:21 heeft Gmail <nattezok@gmail.com> het volgende geschreven:\r\n> \r\n> ﻿When is my order coming?\r\n\r\n",
+      "user_id": 158005152642,
+      "created_at": "2025-10-03T06:22:30Z",
+      "updated_at": "2025-10-03T06:22:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009831048,
+      "body_text": "\r\n\r\n> Op 3 okt 2025 om 08:21 heeft Gmail <nattezok@gmail.com> het volgende geschreven:\r\n> \r\n> ﻿When is my order coming?\r\n\r\n",
+      "user_id": 158005152642,
+      "created_at": "2025-10-03T06:22:34Z",
+      "updated_at": "2025-10-03T06:22:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009831050,
+      "body_text": "\r\n\r\n> Op 3 okt 2025 om 08:21 heeft Gmail <nattezok@gmail.com> het volgende geschreven:\r\n> \r\n> ﻿When is my order coming?\r\n\r\n",
+      "user_id": 158005152642,
+      "created_at": "2025-10-03T06:22:44Z",
+      "updated_at": "2025-10-03T06:22:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009831052,
+      "body_text": "\r\n\r\n> Op 3 okt 2025 om 08:21 heeft Gmail <nattezok@gmail.com> het volgende geschreven:\r\n> \r\n> ﻿When is my order coming?\r\n\r\n",
+      "user_id": 158005152642,
+      "created_at": "2025-10-03T06:22:47Z",
+      "updated_at": "2025-10-03T06:22:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009831053,
+      "body_text": "\r\n\r\n> Op 3 okt 2025 om 08:21 heeft Gmail <nattezok@gmail.com> het volgende geschreven:\r\n> \r\n> ﻿When is my order coming?\r\n\r\n",
+      "user_id": 158005152642,
+      "created_at": "2025-10-03T06:22:50Z",
+      "updated_at": "2025-10-03T06:22:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009831054,
+      "body_text": "\r\n\r\n> Op 3 okt 2025 om 08:21 heeft Gmail <nattezok@gmail.com> het volgende geschreven:\r\n> \r\n> ﻿When is my order coming?\r\n\r\n",
+      "user_id": 158005152642,
+      "created_at": "2025-10-03T06:22:54Z",
+      "updated_at": "2025-10-03T06:22:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009831056,
+      "body_text": "\r\n\r\n> Op 3 okt 2025 om 08:21 heeft Gmail <nattezok@gmail.com> het volgende geschreven:\r\n> \r\n> ﻿When is my order coming?\r\n\r\n",
+      "user_id": 158005152642,
+      "created_at": "2025-10-03T06:22:57Z",
+      "updated_at": "2025-10-03T06:22:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009831057,
+      "body_text": "\r\n\r\n> Op 3 okt 2025 om 08:21 heeft Gmail <nattezok@gmail.com> het volgende geschreven:\r\n> \r\n> ﻿When is my order coming?\r\n\r\n",
+      "user_id": 158005152642,
+      "created_at": "2025-10-03T06:23:00Z",
+      "updated_at": "2025-10-03T06:23:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009831241,
+      "body_text": "Hi Gmail,    We are currently on the National Day holiday (October 1st–8th), so our customer service response may be slower than usual. I noticed that you have sent 19 identical emails. Please rest assured that as soon as we receive the latest logistics updates, we will reply to you promptly.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-03T06:39:24Z",
+      "updated_at": "2025-10-03T06:39:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009932851,
+      "body_text": "Hello!\r\nBut when is my order coming?\r\n\r\n> Op 3 okt 2025 om 08:39 heeft service@simsonn.com het volgende geschreven:\r\n> \r\n> ﻿\r\n> Hi Gmail,\r\n> \r\n> We are currently on the National Day holiday (October 1st–8th), so our customer service response may be slower than usual. I noticed that you have sent 19 identical emails. Please rest assured that as soon as we receive the latest logistics updates, we will reply to you promptly.\r\n> \r\n> \r\n> ",
+      "user_id": 158005152642,
+      "created_at": "2025-10-05T13:47:29Z",
+      "updated_at": "2025-10-05T13:47:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009960603,
+      "body_text": "Hello,\r\n\r\nWhen will i get a email?\r\n\r\n\r\n> Op 30 sep 2025 om 18:37 heeft Gmail <nattezok@gmail.com> het volgende geschreven:\r\n> \r\n> ﻿\r\n> Ok fine.\r\n> \r\n> My adress is;\r\n> \r\n> Erik van Empelen\r\n> Celebesstraat 52\r\n> 5014 BS Tilburg\r\n> \r\n> Thank you\r\n> \r\n> \r\n>>> Op 30 sep 2025 om 16:36 heeft General and sales enquiries ",
+      "user_id": 158005152642,
+      "created_at": "2025-10-06T07:36:26Z",
+      "updated_at": "2025-10-06T07:36:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010007039,
+      "body_text": "ID 为 4518, 4519, 4520 and 4521 的工单已被合并至该工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-07T09:17:36Z",
+      "updated_at": "2025-10-07T09:17:36Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158010007040,
+      "body_text": "合并来自工单4518  \n      主题: Order #SSN2666  \n      描述:  Hello,  When is my order arriving?",
+      "user_id": 158000445778,
+      "created_at": "2025-10-07T09:17:36Z",
+      "updated_at": "2025-10-07T09:17:36Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158010007043,
+      "body_text": "合并来自工单4519  \n      主题: Order #SSN2666  \n      描述:  Hello,  When is my order arriving?",
+      "user_id": 158000445778,
+      "created_at": "2025-10-07T09:17:37Z",
+      "updated_at": "2025-10-07T09:17:37Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158010007046,
+      "body_text": "合并来自工单4520  \n      主题: Order #SSN2666  \n      描述:  Hello,  When is my order arriving?",
+      "user_id": 158000445778,
+      "created_at": "2025-10-07T09:17:37Z",
+      "updated_at": "2025-10-07T09:17:37Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158010007048,
+      "body_text": "合并来自工单4521  \n      主题: Order #SSN2666  \n      描述:  Hello,  When is my order arriving?",
+      "user_id": 158000445778,
+      "created_at": "2025-10-07T09:17:38Z",
+      "updated_at": "2025-10-07T09:17:38Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158010007108,
+      "body_text": "ID 为 4238, 4326 and 4362 的工单已被合并至该工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-07T09:21:48Z",
+      "updated_at": "2025-10-07T09:21:48Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158010007109,
+      "body_text": "合并来自工单4238  \n      主题: Order #SSN2666  \n      描述:  Goodmorning, \n \n   \n Is it possible to re-send Order #SSN2666\n \n to the following address? \n   \n Erik van Empelen \n Celebesstraat 52 \n 5014 BS Tilburg \n   \n This order did not delivered because of missing shipping adress details. \n   \n Thank you so much. \n   \n Kind regards, \n   \n Erik van Empelen",
+      "user_id": 158000445778,
+      "created_at": "2025-10-07T09:21:48Z",
+      "updated_at": "2025-10-07T09:21:48Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158010007111,
+      "body_text": "合并来自工单4326  \n      主题: Order #SSN2666  \n      描述:  Hello,  Can you tell me if my order is send to me?  Greetz,  Erik van Empelen",
+      "user_id": 158000445778,
+      "created_at": "2025-10-07T09:21:49Z",
+      "updated_at": "2025-10-07T09:21:49Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158010007113,
+      "body_text": "合并来自工单4362  \n      主题: Order #SSN2666  \n      描述:  When is my order coming?",
+      "user_id": 158000445778,
+      "created_at": "2025-10-07T09:21:50Z",
+      "updated_at": "2025-10-07T09:21:50Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158010142644,
+      "body_text": "Hi Gmail,     We apologize for the delayed response; we've just returned from our 8-day holiday. We will resend your order. Please reconfirm your address again:  Erik van Empelen  Celebesstraat 52  5014 BS Tilburg",
+      "user_id": 158001343601,
+      "created_at": "2025-10-09T11:04:01Z",
+      "updated_at": "2025-10-09T11:04:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010211236,
+      "body_text": "Hello,\r\n\r\nDo you have a new track and trace number for me?\r\nThank you so much \r\n\r\n\r\n> Op 9 okt 2025 om 16:05 heeft Gmail <nattezok@gmail.com> het volgende geschreven:\r\n> \r\n> ﻿\r\n> Hello!\r\n> \r\n> I hope you had a very good holiday.\r\n> Yes! I confirm my adress and hope to see the pedals very quickly.\r\n> \r\n> Thank you\r\n> \r\n>>> Op 9 okt 2025 om 13:04 heeft service@simsonn.com het volgende geschreven:\r\n>>> \r\n>> ﻿\r\n>> Hi Gmail,\r\n>> \r\n>> We apologize for the delayed response; we've just returned from our 8-day holiday. We will resend your order. Please reconfirm your address again:\r\n>> Erik van Empelen\r\n>> Celebesstraat 52\r\n>> 5014 BS Tilburg\r\n>> \r\n>> \r\n>> \r\n>> \r\n>> ",
+      "user_id": 158005152642,
+      "created_at": "2025-10-10T12:14:25Z",
+      "updated_at": "2025-10-10T12:14:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

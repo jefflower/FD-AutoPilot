@@ -1,0 +1,54 @@
+{
+  "id": 8029,
+  "subject": "Missing parts",
+  "description_text": "Hello,\r\n      I received my order today, but I am missing the baseplate kit. My\r\norder number is SSN4123. Please let me know how we fix this problem! Thank\r\nyou\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-11T21:49:45Z",
+  "updated_at": "2025-12-24T08:02:48Z",
+  "requester_id": 158007770150,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014380907,
+      "body_text": "Hi Josh Byrd,    We sincerely apologize for the delay caused by the shortage of floor stock in our U.S. warehouse. We will ship your order immediately upon receiving the item today.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-12T11:42:07Z",
+      "updated_at": "2025-12-12T11:42:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014415110,
+      "body_text": "Ok! Thank you for the quick response. Let me know if there is tracking info\r\nfor this order.\r\n\r\nOn Fri, Dec 12, 2025 at 6:42 AM service@simsonn.com ",
+      "user_id": 158007770150,
+      "created_at": "2025-12-12T20:08:12Z",
+      "updated_at": "2025-12-12T20:08:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014986501,
+      "body_text": "Hello,\r\n     Unfortunately the package was somehow delivered to the wrong\r\naddress.... I am working to hopefully get the package from the home it was\r\ndelivered to. Why was the package not delivered to the same address that\r\nthe pedals were delivered to? Please explain?  This is a very old address\r\nthat is not linked to any of the accounts involved. FEDEX TRACKING :\r\n887038347839\r\n\r\n",
+      "user_id": 158007770150,
+      "created_at": "2025-12-23T16:12:41Z",
+      "updated_at": "2025-12-23T16:12:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015025446,
+      "body_text": "Hi Josh Byrd,    The address we provided is the same. It appears there was an error in FedEx delivery. We are currently investigating the matter and apologize for the inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-24T08:02:47Z",
+      "updated_at": "2025-12-24T08:02:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

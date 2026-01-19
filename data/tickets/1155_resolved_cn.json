@@ -1,0 +1,95 @@
+{
+  "id": 1155,
+  "subject": "关于 control plus control 的问题",
+  "description_text": "你好，vam pro 触觉反馈什么时候会在全球速卖通上架？\n\n另外，我为了等 vam pro 已经买了 simsonn plus x。\n\n我目前在用 simruito 踏板，在 asseto corsa 等游戏中可以识别到踏板输入。\n但是 simmonnmanager 显示输入为 0，所以我无法校准我的踏板。\n\n你们能单卖 plus x 的称重传感器（油门、离合、刹车）吗？\n我看到很多人说 simjack 的踏板用起来没问题，但它们不是一样的吗？",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-07-03T14:21:57Z",
+  "updated_at": "2025-07-05T09:32:28Z",
+  "requester_id": 158001886280,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004445200,
+      "body_text": "嗨 Wouter van Mensvoort， 您是否已经购买了 PlusX 控制器？如果是，请使用 SIMSONN Manager 2.0.8 版本。正确连接踏板后，拔下并重新连接 USB 数据线。然后在软件中点击“Offset”按钮进行出厂重置。这应该能解决您遇到的问题。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-04T13:44:41Z",
+      "updated_at": "2025-07-04T13:44:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445244,
+      "body_text": "嗨，是的，我买了 plus x 控制器，是在全球速卖通上买的。\n\n点了 offset 之后是这样：\n\n[cid:e4da7f29-a970-4494-8ecf-a3713b2bedb4]\n\n所以它识别到了踏板\n\n但当我校准时，它显示：\n\n[cid:7d6de62d-2e89-4d25-9b97-23ea06755751]\n\n那里没有任何输入？\n________________________________",
+      "user_id": 158001886280,
+      "created_at": "2025-07-04T13:56:05Z",
+      "updated_at": "2025-07-04T13:56:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445322,
+      "body_text": "嗨 Wouter van Mensvoort， 当您踩下踏板时，完全没有数据输出吗？",
+      "user_id": 158000445778,
+      "created_at": "2025-07-04T14:09:58Z",
+      "updated_at": "2025-07-04T14:09:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445393,
+      "body_text": "嗨，是的，\n\n在 asseto corsa/iracing 的校准中，它能看到，diview 也能看到\n\n但只有 simsonn manager 软件不行，它一直显示 0%：\n\n[cid:03afa36f-5914-4e4f-8908-fbac615df8a1]\n________________________________",
+      "user_id": 158001886280,
+      "created_at": "2025-07-04T14:26:58Z",
+      "updated_at": "2025-07-04T14:26:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447043,
+      "body_text": "嗨 Wouter van Mensvoort， 请拔下 USB，只连接电源线。检查控制盒内的 LED 灯是否亮起。或者，您可以安装远程支持工具 Todesk（无需注册）。安装后，只需提供您的 ID 和临时代码，我就可以远程协助您。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-04T23:45:17Z",
+      "updated_at": "2025-07-04T23:45:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447652,
+      "body_text": "你好，我来自荷兰。\n所以有时差。\n\n我不知道什么时候进行远程支持最好？\n________________________________",
+      "user_id": 158001886280,
+      "created_at": "2025-07-05T08:44:04Z",
+      "updated_at": "2025-07-05T08:44:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447654,
+      "body_text": "嗨 Wouter van Mensvoort， 我们现在可以吗？",
+      "user_id": 158000445778,
+      "created_at": "2025-07-05T08:53:05Z",
+      "updated_at": "2025-07-05T08:53:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447661,
+      "body_text": "嗨，可以的，\n\nToDesk：\n设备 ID：582 973 493\n临时密码：45pewj4f\n\n________________________________",
+      "user_id": 158001886280,
+      "created_at": "2025-07-05T09:00:30Z",
+      "updated_at": "2025-07-05T09:00:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

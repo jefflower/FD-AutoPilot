@@ -1,0 +1,84 @@
+{
+  "id": 7042,
+  "subject": "my order query",
+  "description_text": "hello there i ordered off you website my order number is #SSN3884\r\ni had got the\r\nNewest Simsonn Pedal Pro X Ultra with Haptics and RGB with mounting\r\nbrackets do i need to order the Plus x pedel control box or do i get that\r\nin my order\r\n\r\n",
+  "status": 2,
+  "priority": 4,
+  "created_at": "2025-11-29T15:30:23Z",
+  "updated_at": "2025-12-28T16:18:18Z",
+  "requester_id": 158007420201,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013157818,
+      "body_text": "Hi Rhxx,  If you purchased the ProX Ultra pedals, they come with the ProX Ultra control box by default, so there’s no need to buy an additional PlusX control box. Also, the PlusX control box is not compatible with the ProX Ultra pedals. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-01T05:22:49Z",
+      "updated_at": "2025-12-01T05:22:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013159588,
+      "body_text": "Thank you for the clarification.\r\n\r\nOn Mon, 1 Dec 2025 at 05:23, service@simsonn.com ",
+      "user_id": 158007420201,
+      "created_at": "2025-12-01T06:48:00Z",
+      "updated_at": "2025-12-01T06:48:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013195219,
+      "body_text": "Also is haptics been sent in another delivery\r\n\r\n",
+      "user_id": 158007420201,
+      "created_at": "2025-12-01T13:52:56Z",
+      "updated_at": "2025-12-01T13:52:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013775320,
+      "body_text": "Hi Rhxx,  We will ship your items separately because their packaging cannot be combined. Additionally, the processing of your order has been affected by a delay in the latest restocking at our warehouse. We are expediting your shipment, and we kindly ask for a little more patience. Thank you very much for your understanding and support.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-06T06:06:34Z",
+      "updated_at": "2025-12-06T06:06:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013853104,
+      "body_text": "No problem, thank you for the update.\r\nso when am i expected to receive the second item? the tracking\r\nis SF6047091732034\r\n\r\nOn Sat, Dec 6, 2025 at 6:06 AM service@simsonn.com ",
+      "user_id": 158007420201,
+      "created_at": "2025-12-06T11:00:02Z",
+      "updated_at": "2025-12-06T11:00:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014251646,
+      "body_text": "i never received a grounding cable for the pedals after i use them for\r\nabout 10-20 minutes the haptics stop working & the software as well but the\r\nonly the pedals work when that happens\r\n\r\n\r\n",
+      "user_id": 158007420201,
+      "created_at": "2025-12-10T12:56:46Z",
+      "updated_at": "2025-12-10T12:56:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014549729,
+      "body_text": "Are you able to send me the vertical mounting bracket & grounding cable plz\r\n\r\n",
+      "user_id": 158007420201,
+      "created_at": "2025-12-16T00:16:34Z",
+      "updated_at": "2025-12-16T00:16:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "id": 6228,
+  "subject": "Refund Request",
+  "description_text": "Hello,\r\nI would like to request a refund for the VAM haptic shaker in which I have purchased. After one session of installation they have appear to break. One of the shakers now rattle and the other appears to be working at 20% of its normal power. Please see attached the videos in reference. Vid1 shows the haptic working on the same setting and have an audible difference and Vid2 shows the rattle in one of haptics.\r\n\r\nMy order number is: #SSN3302.\r\n\r\nI have all original packaging still.\r\n\r\nKind regards,\r\nDaniel Wilkes\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-16T21:52:53Z",
+  "updated_at": "2025-11-17T11:44:16Z",
+  "requester_id": 158007141342,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012436823,
+      "body_text": "Hi Daniel Wilkes,    Don't worry, we'll send you a replacement.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-17T07:21:53Z",
+      "updated_at": "2025-11-17T07:21:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012441955,
+      "body_text": "Thank you very much, would you require an address?\r\n\r\nKind regards,\r\nDaniel Wilkes\r\n\r\nOn Mon, 17 Nov 2025 at 7:22 am, service@simsonn.com ",
+      "user_id": 158007141342,
+      "created_at": "2025-11-17T08:42:18Z",
+      "updated_at": "2025-11-17T08:42:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012442562,
+      "body_text": "Hi Daniel Wilkes,    Is it still the same address?",
+      "user_id": 158001343601,
+      "created_at": "2025-11-17T09:09:38Z",
+      "updated_at": "2025-11-17T09:09:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012445732,
+      "body_text": "Yes it is the same address.\r\n\r\nKind regards,\r\nDaniel Wilkes\r\n\r\nOn Mon, 17 Nov 2025 at 9:09 am, service@simsonn.com ",
+      "user_id": 158007141342,
+      "created_at": "2025-11-17T09:48:18Z",
+      "updated_at": "2025-11-17T09:48:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012446531,
+      "body_text": "Hi Daniel Wilkes,    Here is your logistics tracking link.  https://t.17track.net/en#nums=YT2532100710601833",
+      "user_id": 158001343601,
+      "created_at": "2025-11-17T10:37:51Z",
+      "updated_at": "2025-11-17T10:37:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012447049,
+      "body_text": "Perfect thank you very much!\r\n\r\nOn Mon, 17 Nov 2025 at 10:38 am, service@simsonn.com ",
+      "user_id": 158007141342,
+      "created_at": "2025-11-17T11:05:32Z",
+      "updated_at": "2025-11-17T11:05:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": 8069,
+  "subject": "来自simsonn.com的退信",
+  "description_text": "QQ邮箱退信 很抱歉您发送的邮件被退回，以下是该邮件的相关信息： 被退回邮件 主 题：Re: Order #SSN4492 时 间：2025-12-12 19:28:17 无法发送到 marcel_lange1@gmx.net 退信原因 邮件传输过程中断，通常由于收件人（marcel_lange1@gmx.net）所在服务商出现内部系统故障导致。 host mx00.emig.gmx.net[212.227.15.9] said: 451-Requested action aborted: local error in processingFor explanation visit https://postmaster.gmx.net/en/case?c=r1405&i=ip&v=52.59.177.22&r=1N3K9A-1wBEHt3qD4-012jUy (in reply to MAIL FROM command) 解决方案 请稍后重新尝试发送你的邮件，如仍有问题，请向收件人（marcel_lange1@gmx.net）所在服务商反馈。 此外，您还可以 点击这里 获取更多关于退信的帮助信息。",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-12T11:28:43Z",
+  "updated_at": "2025-12-12T11:29:49Z",
+  "requester_id": 158001011131,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": []
+}

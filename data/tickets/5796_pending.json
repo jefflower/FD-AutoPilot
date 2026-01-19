@@ -1,0 +1,34 @@
+{
+  "id": 5796,
+  "subject": "Shipment",
+  "description_text": "From which country does your products ship from?\r\n\r\nBecause I live in Greece and if the product is shipped from within in\r\nEurope, I don't have to pay customs.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-07T19:57:05Z",
+  "updated_at": "2025-11-25T02:52:43Z",
+  "requester_id": 158004499747,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011957906,
+      "body_text": "Hi Panagiotis Zeppos,      We ship to France from our German warehouse with no customs duties or other fees. Feel free to shop with confidence.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-07T23:56:11Z",
+      "updated_at": "2025-11-07T23:56:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012787304,
+      "body_text": " Hi, I have submitted my order with the order number #SSN3782, and I want\r\nto be sure that it will be shipped to Greece from your German warehouse. Is\r\nthis correct?\r\n\r\nΣτις Σάβ 8 Νοε 2025 στις 1:56 π.μ., ο/η service@simsonn.com <\r\nservice@simsonn.com> έγραψε:\r\n\r\n> Hi Panagiotis Zeppos,\r\n>\r\n> We ship to France from our German warehouse with no customs duties or\r\n> other fees. Feel free to shop with confidence.\r\n>\r\n> On Fri, 7 Nov at 2:57 PM , Panagiotis Zeppos <panzeppos1@gmail.com>\r\n> wrote:\r\n> From which country does your products ship from?\r\n> Because I live in Greece and if the product is shipped from within in\r\n> Europe, I don't have to pay customs.\r\n>\r\n>\r\n> 5796:4206036\r\n>\r\n\r\n",
+      "user_id": 158004499747,
+      "created_at": "2025-11-23T20:05:43Z",
+      "updated_at": "2025-11-23T20:05:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

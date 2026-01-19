@@ -1,0 +1,85 @@
+{
+  "id": 2814,
+  "subject": "Pro pedals ultra EMI",
+  "description_text": "I believe I might having some EMI issues with the pedals, there seems to be a small but constant reading from the pedals. Adjusting the deadzone does not seem to help, is there a way I can fix this?\n\nGet Outlook for iOS<https://aka.ms/o0ukef>",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-08-18T03:18:15Z",
+  "updated_at": "2025-08-20T14:24:22Z",
+  "requester_id": 158002806240,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007051526,
+      "body_text": "Get Outlook for iOS<https://aka.ms/o0ukef>\n________________________________",
+      "user_id": 158002806240,
+      "created_at": "2025-08-18T03:20:13Z",
+      "updated_at": "2025-08-18T03:20:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007081401,
+      "body_text": "Hi Scott Krause, You can set the offset first, and then perform the calibration test again.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-18T12:39:16Z",
+      "updated_at": "2025-08-18T12:39:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007099024,
+      "body_text": "its better but not completely gone, just a bit of interference on the throttle and clutch still\n\nGet Outlook for iOS<https://aka.ms/o0ukef>\n________________________________",
+      "user_id": 158002806240,
+      "created_at": "2025-08-18T18:14:28Z",
+      "updated_at": "2025-08-18T18:14:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007112308,
+      "body_text": "Hi Scott Krause, This issue is caused by EMI interference from the wheelbase. Please follow the steps below to troubleshoot and resolve it. Most customers with similar setups (such as Fanatec, MOZA, and T500 users) have resolved the problem using this method. To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability: \n1. Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding. \n2. Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive. \n3. Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup. \n4. Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible. \n5. Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs. \n6. Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference. \n7. Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements. \n8. Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources. \nhttps://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-08-19T04:34:30Z",
+      "updated_at": "2025-08-19T04:34:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007112927,
+      "body_text": "I will begin with these steps but I do have one question, what would be the best way to apply the ground cable to the control box? I’m seeing that the whole box is painted on the inside as well, so my concern was if I just need to scratch some paint off and simply ground the box itself or if it’s better to solder the ground cable to the actual board.\n\nI had expected this and have already ensured my frame is grounded and ready for this step, I just want to apply the ground wire with the best continuity I can achieve.\n\nGet Outlook for iOS<https://aka.ms/o0ukef>\n________________________________",
+      "user_id": 158002806240,
+      "created_at": "2025-08-19T05:13:41Z",
+      "updated_at": "2025-08-19T05:13:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007114109,
+      "body_text": "Hi Scott Krause, The ProX Ultra does not need to be connected to the main controller; this setup only applies to the PlusX pedals. This helps rule out other potential issues.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-19T06:41:18Z",
+      "updated_at": "2025-08-19T06:41:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007160983,
+      "body_text": "I grounded the box to the pedals, everything works. Thanks!\n\nGet Outlook for iOS<https://aka.ms/o0ukef>\n________________________________",
+      "user_id": 158002806240,
+      "created_at": "2025-08-19T17:13:27Z",
+      "updated_at": "2025-08-19T17:13:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

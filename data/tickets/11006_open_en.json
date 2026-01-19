@@ -1,0 +1,35 @@
+{
+  "id": 11006,
+  "subject": "Order #SSN5509",
+  "description_text": "Hey, I ordered your product on 29th december and it still hasn't been delivered. Tracking number says it's been in Lisbon since 7th january and until today i got no more information on it. I contacted the carrier and they told me to contact the seller directly. Thanks",
+  "status": 2,
+  "priority": 1,
+  "created_at": "2026-01-15T17:58:25Z",
+  "updated_at": "2026-01-17T11:48:30Z",
+  "requester_id": 158009127688,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017319096,
+      "body_text": "Hi Francisco Freitas, I'm very sorry for the delayed response. I have confirmed that your package has been delivered. Have you received it? https://t.17track.net/en#nums=CE326639006DE",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T08:15:53Z",
+      "updated_at": "2026-01-17T08:15:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017326569,
+      "body_text": "Yes I did thanks",
+      "user_id": 158009127688,
+      "created_at": "2026-01-17T11:48:30Z",
+      "updated_at": "2026-01-17T11:48:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

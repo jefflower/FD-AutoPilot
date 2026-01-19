@@ -1,0 +1,84 @@
+{
+  "id": 9068,
+  "subject": "Issue with Simsonn VAM Pro pedals connection (\"Power Disconnect\" error)",
+  "description_text": "Dear Simsonn Support Team,\r\n\r\nI am writing to you regarding an issue I am experiencing with my recently\r\npurchased Simsonn VAM Pro.\r\n\r\nI previously bought a set of Simsonn Plus X pedals in black color from\r\nOzon. Recently, I ordered and received the Simsonn VAM Pro. I assembled\r\neverything and connected it to the main board. In the feedback tab of the\r\nsoftware, I am consistently receiving the message \"Power Disconnect\".\r\n\r\nHere are the troubleshooting steps I have already taken:\r\n\r\n   - The motor connectors and the power supply unit are connected to the\r\n   board.\r\n   - The pedals themselves (the main set) are working.\r\n   - The board firmware has been updated; the current installed version is\r\n   2.0.5 on CPU1 and 2.0.4 on CPU2.\r\n   - The power supply unit is functional: it provides 24 V voltage, and the\r\n   green indicator light on it is on.\r\n   - I have restarted the computer.\r\n\r\n\r\nWhat could be causing this error? How can I verify that the connection\r\nboard itself is fully functional?\r\n\r\nOrder numbers on Ozon:\r\n\r\n   1. Plus X: *09090149-0693*\r\n   https://www.ozon.ru/product/simsonn-plus-x-sim-racing-pedals-pc-racing-simulator-pedals-he-gidravlicheskaya-podderzhka-2205695153/?oos_search=false\r\n   2. VAM Pro: *0909149-0793*\r\n   https://www.ozon.ru/product/simsonn-pedalnye-taktilnye-reaktory-vam-rumble-motor-i-vam-pro-linear-motor-dlya-2311638080/\r\n\r\n\r\n[image: Снимок экрана 2025-12-24 113255.png]\r\n\r\nThank you for your assistance.\r\n\r\nBest regards,\r\nAleksandr Mitkalev\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-24T08:43:16Z",
+  "updated_at": "2026-01-05T06:53:47Z",
+  "requester_id": 158008396979,
+  "responder_id": 158007774669,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015057968,
+      "body_text": "Hi Александр Миткалев,     Please follow the steps below. If the device still shows “unable to connect to power” after restoring the firmware, we can send you a replacement PlusX control box free of charge.    Press and hold the upgrade button on the PlusX main control box while reconnecting the USB cable.    Open SIMSONN Manager 2.1.2 and check if the device has entered Recovery Mode.    If it has entered Recovery Mode, go to Settings → Update → Manual Firmware Update → pedals → firmware → pedals-plusx.sfu.    After the update is complete, test the device to see if it functions normally.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-25T03:44:19Z",
+      "updated_at": "2025-12-25T03:44:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015063456,
+      "body_text": "Thanks for the answer.\r\n\r\nI put the main control box into recovery mode, selected manual update, then\r\nselected the file \"C:\\Program Files\\SIMSONN\r\nManager\\env\\firmware\\pedal\\plusx.sfu\",\r\nthe update completed,\r\nall settings were reset,\r\nthe firmware version remained unchanged.\r\nThe power supply still doesn't detect it.\r\n\r\n   1. [image: Снимок экрана 2025-12-25 111752.png]\r\n   2. [image: Снимок экрана 2025-12-25 111820.png]\r\n   3. [image: Снимок экрана 2025-12-25 111828.png]\r\n   4. [image: Снимок экрана 2025-12-25 111838.png]\r\n   5. [image: Снимок экрана 2025-12-25 111847.png]\r\n   6. [image: Снимок экрана 2025-12-25 111943.png]\r\n   7. [image: Снимок экрана 2025-12-25 111947.png]\r\n   8. [image: Снимок экрана 2025-12-25 111953.png]\r\n   9. [image: Снимок экрана 2025-12-25 111959.png]\r\n\r\n\r\nThe ground wire is connected to the brake pedal.\r\n[image: 1000022941.jpg][image: 1000022947.jpg]\r\n\r\n\r\nчт, 25 дек. 2025 г. в 06:44, service@simsonn.com ",
+      "user_id": 158008396979,
+      "created_at": "2025-12-25T08:56:02Z",
+      "updated_at": "2025-12-25T08:56:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015166352,
+      "body_text": "Hi Александр Миткалев,  Please provide your order number, contact name, phone number, and shipping address. We will send you a replacement control box. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T15:52:11Z",
+      "updated_at": "2025-12-28T15:52:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015190038,
+      "body_text": "Hi Simsonn support, here are my contact details.\r\n\r\nFull name: Миткалев Александр Борисович\r\nPhone: +79060622292\r\nAddress: 119607, г. Москва, ул. Раменки, д.25к4, кв. 905\r\n\r\nVibration motors arrived via international delivery.\r\nOrder number from Ozon:\r\n*0909149-0793-1*Product page:\r\nhttps://www.ozon.ru/product/simsonn-pedalnye-taktilnye-reaktory-vam-rumble-motor-i-vam-pro-linear-motor-dlya-2311638080/\r\n[image: PXL_20251229_102654009.jpg][image: PXL_20251229_102657867.jpg]\r\nPedals received by local delivery.\r\nOrder number from Ozon:\r\n*09090149-0693-1*Product page:\r\nhttps://www.ozon.ru/product/simsonn-plus-x-sim-racing-pedals-pc-racing-simulator-pedals-he-gidravlicheskaya-podderzhka-2205695153/?oos_search=false\r\n[image: PXL_20251229_102710373.jpg][image: PXL_20251229_103140724.jpg]\r\nThis store is no longer active.\r\nhttps://www.ozon.ru/seller/simsonn-official-store-2681165/\r\n\r\nBest regards,\r\nAleksandr Mitkalev\r\n\r\nвс, 28 дек. 2025 г., 18:52 service@simsonn.com ",
+      "user_id": 158008396979,
+      "created_at": "2025-12-29T10:46:24Z",
+      "updated_at": "2025-12-29T10:46:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015588959,
+      "body_text": "你好，亚历山大·米特卡列夫， https://www.ozon.ru/product/podstavka-dlya-derzhatelya-telefonnogo-zvonka-ugol-povorota-podstavki-dlya-paltsev-sovmestimyy-s-1729420824/?__rr=1 请通过此链接完成购买。我们将通过此链接向您发送新的主控单元。收到商品后，您可以申请退款。",
+      "user_id": 158007774669,
+      "created_at": "2026-01-04T06:12:55Z",
+      "updated_at": "2026-01-04T06:12:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015615619,
+      "body_text": "Hi Simsonn support.\r\n\r\nOkay, I have placed an order, its number is 09090149-0807.\r\n\r\nBest regards,\r\nAleksandr Mitkalev\r\n\r\nвс, 4 янв. 2026 г., 09:13 service@simsonn.com ",
+      "user_id": 158008396979,
+      "created_at": "2026-01-04T09:54:37Z",
+      "updated_at": "2026-01-04T09:54:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015619276,
+      "body_text": "你好，亚历山大·米特卡列夫，  OK",
+      "user_id": 158007774669,
+      "created_at": "2026-01-04T10:19:12Z",
+      "updated_at": "2026-01-04T10:19:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

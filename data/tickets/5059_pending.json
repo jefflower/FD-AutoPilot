@@ -1,0 +1,24 @@
+{
+  "id": 5059,
+  "subject": "Renseignement",
+  "description_text": "Bonjour, j'ai passé commande ce jour de 6 haptics et d'un cable\r\nsupplémentaire (commande #SSN3017)\r\n\r\nConcernant les câbles secteur, seront t'il adapter a ceux de notre pays qui\r\nest la france ?\r\n\r\nCordialement\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-19T19:29:11Z",
+  "updated_at": "2025-10-20T01:26:28Z",
+  "requester_id": 158005862812,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010713663,
+      "body_text": "Hi Cyril Charles,  We will include a power plug that meets your country’s standard (EU type by default for European countries). ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-20T01:26:28Z",
+      "updated_at": "2025-10-20T01:26:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

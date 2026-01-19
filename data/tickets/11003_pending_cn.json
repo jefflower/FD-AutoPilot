@@ -1,0 +1,25 @@
+{
+  "id": 11003,
+  "subject": "配送跟踪",
+  "description_text": "您好，我订购了一些踏板（订单号：#SSN6016），我想知道我是否会收到一个跟踪号？\n\n我非常期待收到您的踏板，不想对它们的到来时间一无所知。我还没有收到任何关于配送状态的信息，所以我才来询问。\n\n发自我的 iPhone",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-15T16:53:13Z",
+  "updated_at": "2026-01-17T08:23:11Z",
+  "requester_id": 158009126511,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017319188,
+      "body_text": "您好 Trey Houle，对于给您带来的不便，我们深表歉意。Pro X 踏板目前在我们美国仓库缺货。我们已紧急安排空运，预计将于22日发货，预计25日左右送达。",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T08:23:11Z",
+      "updated_at": "2026-01-17T08:23:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

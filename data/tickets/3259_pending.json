@@ -1,0 +1,104 @@
+{
+  "id": 3259,
+  "subject": "VAM motors failing",
+  "description_text": "Hi, just installed my 3 VAM haptics on the Plus X pedals. One motor has\r\ncompletely died and another is stuck at a very low permanent rumble. This\r\nis after about 2 sim hours total. Please help!\r\n\r\nMatt Verille\r\n954-604-4802\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-29T18:15:24Z",
+  "updated_at": "2025-09-10T07:49:34Z",
+  "requester_id": 158003862075,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007802483,
+      "body_text": "Hi Matt Verille,    Please make sure you are using SIMSONN Manager version 2.1.0. The vibration strength must be adjusted strictly according to the software settings. In most cases, motor damage occurs because the strength level was set too high. Also, the parameters in SimHub 9.9.3 should be referenced and kept consistent.  Important notes:    Do not use continuous vibration telemetry such as speed or rpm, as these signals may damage the VAM motor.    VAM Pro is not affected, since its motor design allows continuous operation.    By design, the VAM motor cannot operate at continuous high intensity.    Please cross-test the VAM motors. If they are confirmed damaged, we will send you 2 replacement motors. However, it is essential that you always follow the maximum strength limits set in the software to prevent further damage.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-30T03:37:40Z",
+      "updated_at": "2025-08-30T03:37:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007806307,
+      "body_text": "Thanks for the reply. I've kept the strength consistent at 50% across all\r\nhaptics, tried different ports on the haptic reactor, and the same problems\r\npersist. I've used both Simsonn Manager 2.1.0 and Simhub and the results\r\nare consistent across both. Definitely two defective motors. What do you\r\nneed from me to replace both motors? The haptics were purchased July 21,\r\n2025 on Amazon but I had to wait to install them on the Plus X pedals\r\npurchased on August 9, 2025 also on Amazon.\r\n\r\nOrder #\r\n112-6044120-8161019 haptics\r\n\r\nOrder #\r\n114-7429989-6004246 pedals\r\n\r\nOn Fri, Aug 29, 2025, 11:37 PM service@simsonn.com ",
+      "user_id": 158003862075,
+      "created_at": "2025-08-30T05:18:26Z",
+      "updated_at": "2025-08-30T05:18:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007806435,
+      "body_text": "Hi Matt Verille,  Alright, we will arrange to send you two replacement VAM units on Monday. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-30T05:48:35Z",
+      "updated_at": "2025-08-30T05:48:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007824427,
+      "body_text": "Great, thanks very much! Address is:\r\n\r\nMatt Verille\r\n8260 W 16th Ave\r\nHialeah, FL 33014 USA\r\n\r\nGreat job on the quick turnaround handling this issue!\r\n\r\nMatt\r\n\r\nOn Sat, Aug 30, 2025 at 1:48 AM service@simsonn.com ",
+      "user_id": 158003862075,
+      "created_at": "2025-08-30T16:38:14Z",
+      "updated_at": "2025-08-30T16:38:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007877899,
+      "body_text": "Hi Matt Verille,  Okay, our operations team will arrange a replacement shipment and provide the tracking number. I will get back to you as soon as it becomes available. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-01T01:02:02Z",
+      "updated_at": "2025-09-01T01:02:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007881173,
+      "body_text": "Hi Matt Verille,  Here is the tracking number: JSEIW0139215787YQ. You can track it via https://www.js-exp.com/EN/index.php?page=19.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-01T06:23:01Z",
+      "updated_at": "2025-09-01T06:23:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008195192,
+      "body_text": "I've had some trouble using the tracking website. Even ChatGPT helping me\r\nthrough it didn't work. Can you please provide a working link at your\r\nearliest convenience?\r\n\r\nMatt\r\n\r\nOn Mon, Sep 1, 2025 at 2:23 AM service@simsonn.com ",
+      "user_id": 158003862075,
+      "created_at": "2025-09-06T18:53:36Z",
+      "updated_at": "2025-09-06T18:53:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201138,
+      "body_text": "Hi Matt Verille,  I’ve already reported this to the logistics provider. It’s likely just a display issue on the website, and the shipment should still be in normal transit. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T03:00:25Z",
+      "updated_at": "2025-09-07T03:00:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008294788,
+      "body_text": "Many thanks!\r\n\r\nMatt\r\n\r\nOn Sat, Sep 6, 2025 at 11:00 PM service@simsonn.com ",
+      "user_id": 158003862075,
+      "created_at": "2025-09-08T23:53:28Z",
+      "updated_at": "2025-09-08T23:53:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

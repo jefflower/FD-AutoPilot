@@ -1,0 +1,84 @@
+{
+  "id": 6059,
+  "subject": "Missing items in order #SSN3209",
+  "description_text": "\r\nSent from my iPhone\r\nGood morning I am missing items in my order. I only received three haptic motors. I am missing one power pack and two control boxes. \r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-11-13T20:54:35Z",
+  "updated_at": "2025-11-27T03:42:25Z",
+  "requester_id": 158006761377,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012295711,
+      "body_text": "Hi Northpoleatv,    We apologize, but our US warehouse does not carry separate power supplies or control boxes, and we are unable to ship them to you from China. You may purchase a compatible power supply locally. We will ship a replacement control box to you once the new batch arrives at our US warehouse.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-14T02:45:56Z",
+      "updated_at": "2025-11-14T02:45:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012305006,
+      "body_text": "I think I would like a full refund\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158006761377,
+      "created_at": "2025-11-14T09:05:04Z",
+      "updated_at": "2025-11-14T09:05:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012305057,
+      "body_text": "Hi Northpoleatv,      Okay, we'll refund you for the power supply and control box that haven't been shipped yet.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-14T09:07:50Z",
+      "updated_at": "2025-11-14T09:07:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012335514,
+      "body_text": "No, you need to send me a shipping label so I can send these haptics back and I want a full refund for everything or I need you to ship me everything I ordered. I’ve spent over $200 with your company on something I won’t be able to use I want a full refund for all of my money!!\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158006761377,
+      "created_at": "2025-11-14T17:49:53Z",
+      "updated_at": "2025-11-14T17:49:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012400464,
+      "body_text": "Hi Northpoleatv,  We apologize for the inconvenience. Tomorrow (Monday), we will send all the missing accessories to you. The previous response to the customer was inappropriate. We will ship from China via courier and cover all customs duties. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-16T03:22:13Z",
+      "updated_at": "2025-11-16T03:22:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012401018,
+      "body_text": "Items that are missing\r\nOne power supply\r\nTwo command boxes\r\n\r\nThank you so much. I appreciate your help.\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158006761377,
+      "created_at": "2025-11-16T04:11:38Z",
+      "updated_at": "2025-11-16T04:11:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012989524,
+      "body_text": "Hi Northpoleatv,    We apologize for the delay in arranging a replacement for you. Here is your tracking link.  https://t.17track.net/en#nums=JSEKP2786149318YQ",
+      "user_id": 158001343601,
+      "created_at": "2025-11-27T03:42:24Z",
+      "updated_at": "2025-11-27T03:42:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

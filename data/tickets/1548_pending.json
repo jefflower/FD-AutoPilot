@@ -1,0 +1,44 @@
+{
+  "id": 1548,
+  "subject": "Return Order Request",
+  "description_text": "Hi,\r\n\r\nI would like to request a return for my recent order #SSN1799. Upon testing\r\nthe haptics reactor, I noticed that it emits excessively loud noise, even\r\nat the lowest frequency setting, which makes it unusable in my environment.\r\n\r\nThe item is still in its original packaging, in like-new condition, and I\r\nam contacting you within the 30-day window from the date of delivery. I\r\nbelieve this may be a manufacturing issue, as the noise level appears\r\nabnormal for expected operation.\r\n\r\nPlease let me know how to proceed and whether a return shipping label will\r\nbe provided. I’m happy to provide photos or video if needed.\r\n\r\nRegards,\r\n\r\nTun\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-15T08:27:25Z",
+  "updated_at": "2025-07-16T03:19:40Z",
+  "requester_id": 158002139358,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004853589,
+      "body_text": "Hi Jerry Lin,  Please provide a video of use and we will fix it for you please don't worry.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-15T08:53:21Z",
+      "updated_at": "2025-07-15T08:53:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004856415,
+      "body_text": "Hi,\r\n\r\nThanks for your reply.\r\n\r\nHere’s a video of the unit at 10Hz (lowest setting). I think it may not be\r\ndefective, but it’s still far too loud for my setup. I’ve made sure all\r\nscrews are tightened and did a few checks, but the noise remains very\r\nnoticeable.\r\n\r\nUnfortunately, the haptics just doesn’t suit the Simsonn Plus X pedals due\r\nto the excessive noise, so I’d prefer a return and refund instead of a fix.\r\n\r\nPlease let me know if you can provide a return label.\r\n\r\nBest,\r\n\r\nJerry Tun Lin\r\n\r\n\r\nOn Tue, 15 Jul 2025 at 6:53 pm, service@simsonn.com \nAttachment(s) that exceed the 20 MB limit have been dropped. Please reach out to the sender.",
+      "user_id": 158002139358,
+      "created_at": "2025-07-15T09:18:29Z",
+      "updated_at": "2025-07-15T09:18:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004922463,
+      "body_text": "Hi Jerry Lin,    The operating sound of the VAM Pro is completely normal and does not require any repair. At 10Hz, the vibration amplitude is larger, making the feedback more noticeable and the sound more prominent. If you prefer quieter operation, we recommend using 30Hz or even 50Hz, which produce less noise.  We have also tested the Simagic HPR, and its operating sound is consistent with that of our VAM Pro.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T03:18:57Z",
+      "updated_at": "2025-07-16T03:18:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

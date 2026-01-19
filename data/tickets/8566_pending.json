@@ -1,0 +1,44 @@
+{
+  "id": 8566,
+  "subject": "clutch pedal issue",
+  "description_text": "hi i purchased your pedals about a month ago. i've been having issues with\r\nclutch mechanism. its not smooth. very jerky and i can feel the jerkiness\r\nespecially on the bite point when im trying to be smooth. What can i do to\r\nfix this?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-18T07:43:16Z",
+  "updated_at": "2025-12-24T06:19:59Z",
+  "requester_id": 158007858487,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014881263,
+      "body_text": "Hi Anthony Jilwan,  You can try removing the dual-direction hydraulic damper on the clutch. If this resolves the issue, we will send you a replacement dual-direction hydraulic damper free of charge. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-22T13:05:21Z",
+      "updated_at": "2025-12-22T13:05:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014949294,
+      "body_text": "what solved it was when I loosened one of the bolts connecting the spring\r\nmechanism. The countersunk bolt wasn't flush with the surface of the\r\nmechanism on the inside. it works now but only with a loose bolt. can i get\r\na replacement for this part? or clutch or something?\r\n\r\n",
+      "user_id": 158007858487,
+      "created_at": "2025-12-23T00:53:45Z",
+      "updated_at": "2025-12-23T00:53:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015021436,
+      "body_text": "Hi Anthony Jilwan,  Please take a photo, and I’ll help you verify it. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-24T06:19:52Z",
+      "updated_at": "2025-12-24T06:19:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

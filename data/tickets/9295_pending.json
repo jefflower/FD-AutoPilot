@@ -1,0 +1,94 @@
+{
+  "id": 9295,
+  "subject": "Wrong Item",
+  "description_text": "I received a phone video amplifier instead of the hand brake and shifter I\r\nordered.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-27T13:54:12Z",
+  "updated_at": "2026-01-15T10:50:55Z",
+  "requester_id": 158008792571,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015134636,
+      "body_text": " The item order is :    #SSN4641  Tracking Number : JSELD1242731617YQ",
+      "user_id": 158008792571,
+      "created_at": "2025-12-27T14:13:44Z",
+      "updated_at": "2025-12-27T14:13:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015146679,
+      "body_text": "Hi Zarni Thway,  We have received your photos. You ordered a blue handbrake and a shifter. The blue handbrake has been shipped, but you received a magnifying glass instead. We have contacted the courier to investigate the issue and will ensure it is resolved. If the item is indeed lost, we will send you a replacement. Please don’t worry. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T02:20:33Z",
+      "updated_at": "2025-12-28T02:20:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015173817,
+      "body_text": "Hi Zarni Thway,    Could you please peel off the first shipping label and take a photo of the label underneath that is being covered, then send it to us? We need it to check the logistics status.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-29T01:04:30Z",
+      "updated_at": "2025-12-29T01:04:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015174864,
+      "body_text": "",
+      "user_id": 158008792571,
+      "created_at": "2025-12-29T02:12:24Z",
+      "updated_at": "2025-12-29T02:12:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015174869,
+      "body_text": "",
+      "user_id": 158008792571,
+      "created_at": "2025-12-29T02:12:57Z",
+      "updated_at": "2025-12-29T02:12:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015303468,
+      "body_text": "Hi Zarni Thway,    We sincerely apologize for the inconvenience caused. We have noted that this is indeed the incorrect tracking number and package. We will promptly arrange for a replacement shipment.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-31T09:26:05Z",
+      "updated_at": "2025-12-31T09:26:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016755070,
+      "body_text": "can i get a new tracking number",
+      "user_id": 158008792571,
+      "created_at": "2026-01-10T23:13:38Z",
+      "updated_at": "2026-01-10T23:13:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158017178199,
+      "body_text": "Hi Zarni Thway,    Sorry for the delayed response. Here is your shipping tracking link.  https://t.17track.net/en#nums=SF6047243835388",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T10:50:54Z",
+      "updated_at": "2026-01-15T10:50:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": 8511,
+  "subject": "Order #SSN4272",
+  "description_text": "Hi I am checking on the status of my order, I placed the order at the\r\nbeginning of December and selected local delivery (no tax) but according to\r\nthe tracking it shipped from China, and seems to be delayed in customs.\r\nTracking has been stuck at \"Flight landed in New York\" for several days\r\nnow.\r\n\r\nSF Express SF6047114667406\r\n<https://www.sf-express.com/we/ow/chn/en/waybill/waybill-detail/SF6047114667406>\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-17T13:00:43Z",
+  "updated_at": "2025-12-22T08:06:50Z",
+  "requester_id": 158007846423,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014759799,
+      "body_text": "Hello following up on this",
+      "user_id": 158007846423,
+      "created_at": "2025-12-19T13:14:48Z",
+      "updated_at": "2025-12-19T13:14:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158014782137,
+      "body_text": "Hi I haven't heard anything back.  I do not want to have to do a charge back with my credit card but I'm lost on what else to do at this point in time.",
+      "user_id": 158007846423,
+      "created_at": "2025-12-19T18:40:03Z",
+      "updated_at": "2025-12-19T18:40:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158014863195,
+      "body_text": "Hi James,    I apologize for not getting back to you sooner. Here is your shipping tracking link. Your package is expected to arrive within the next couple of days.  https://t.17track.net/en#nums=TEP00107010100",
+      "user_id": 158001343601,
+      "created_at": "2025-12-22T08:06:50Z",
+      "updated_at": "2025-12-22T08:06:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

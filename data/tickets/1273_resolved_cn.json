@@ -1,0 +1,35 @@
+{
+  "id": 1273,
+  "subject": "订单号 #SSN1885",
+  "description_text": "您好，\n\n我最近收到了踏板套装，看起来非常棒。\n\n我订购时选择了底板和触觉反馈器。\n\n[图片：image.png]\n\n我实际上从未收到踏板用的触觉反馈器。我猜每个踏板应该有一个，并且它们应该连接到踏板的背面？我收到的货物中没有包含这些。\n\n此致，\nR Jones",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-07-06T16:52:00Z",
+  "updated_at": "2025-07-09T06:04:48Z",
+  "requester_id": 158001910267,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004453054,
+      "body_text": "您好 Richard Jones，我查看了您的订单 #1885，发现其中不包含 VAM 或 VAM Pro 电机。这些电机需要单独购买。我将为您提供购买链接。\n      https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor?variant=51351053500730",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T04:03:52Z",
+      "updated_at": "2025-07-07T04:03:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004459593,
+      "body_text": "您好，\n\n感谢您的回复和提供的链接。我以为这是订单的一部分，但我没有单独订购这些。\n\n我的订单上写着“with Haptic reactor x”（这是什么触觉反馈器）是什么意思？\n\n[图片：image.png]\n\n此致，\nRichard ?\n\n\n在 2025 年 7 月 7 日星期一 05:04，service@simsonn.com",
+      "user_id": 158001910267,
+      "created_at": "2025-07-07T17:46:38Z",
+      "updated_at": "2025-07-07T17:46:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

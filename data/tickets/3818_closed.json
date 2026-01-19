@@ -1,0 +1,84 @@
+{
+  "id": 3818,
+  "subject": "7+r shifter",
+  "description_text": "Hello I was wondering if you have the firmware for this shifter. I messed\r\nup programming another item and wrote over this shifters information and\r\nnow it does not work.\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-09-14T23:19:16Z",
+  "updated_at": "2025-12-18T09:40:24Z",
+  "requester_id": 158004546358,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008716677,
+      "body_text": "Hi travis egbert,    Please provide a video showing the issue, and I will assist you in checking and resolving it.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-15T00:01:23Z",
+      "updated_at": "2025-09-15T00:01:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008717042,
+      "body_text": "It only recognizes gear 1 and 2 and that is the only information I can get\r\noff the computer. Hopefully this video works or helps.\r\n\r\n\r\n\r\n\r\nOn Sun, Sep 14, 2025 at 5:01 PM service@simsonn.com ",
+      "user_id": 158004546358,
+      "created_at": "2025-09-15T00:16:00Z",
+      "updated_at": "2025-09-15T00:16:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008717115,
+      "body_text": "Hi travis egbert,    Please provide your order number so that we can assist you with the recovery.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-15T00:17:58Z",
+      "updated_at": "2025-09-15T00:17:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008717229,
+      "body_text": "I ordered on Amazon last year in December 11th\r\n\r\nOrder number\r\n114-5125699-3116240\r\n\r\nOn Sun, Sep 14, 2025 at 5:18 PM service@simsonn.com ",
+      "user_id": 158004546358,
+      "created_at": "2025-09-15T00:20:34Z",
+      "updated_at": "2025-09-15T00:20:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008851121,
+      "body_text": "Hi travis egbert,  This is the recovery file, and you will need to use FreeJoy version 1.7.0 to proceed.      ​",
+      "user_id": 158000445778,
+      "created_at": "2025-09-17T09:07:22Z",
+      "updated_at": "2025-09-17T09:07:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008879332,
+      "body_text": "Perfect thank you so much that worked and now it is working as it should\r\nagain!!\r\n\r\nOn Wed, Sep 17, 2025 at 2:07 AM service@simsonn.com ",
+      "user_id": 158004546358,
+      "created_at": "2025-09-17T16:41:45Z",
+      "updated_at": "2025-09-17T16:41:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008879799,
+      "body_text": "Extremely professional and quick to respond and resolve the situation I had",
+      "user_id": 158004546358,
+      "created_at": "2025-09-17T16:54:50Z",
+      "updated_at": "2025-09-17T16:54:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ]
+}

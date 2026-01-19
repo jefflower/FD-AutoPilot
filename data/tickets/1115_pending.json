@@ -1,0 +1,24 @@
+{
+  "id": 1115,
+  "subject": "Order #SSN1689",
+  "description_text": "Just wondering the status on shipping for my items. The tracking number provided no longer works for me on the website for the tracking company. \r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-02T14:31:56Z",
+  "updated_at": "2025-07-03T03:07:52Z",
+  "requester_id": 158001874803,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004419288,
+      "body_text": "Hi Michael Moorhead,     Sorry for the inconvenience, you can track it using this new link and it is expected to be delivered for you in the next couple of days. https://www.track718.us/zh-CN/detail?nums=JSEXR1995168050YQ",
+      "user_id": 158001343601,
+      "created_at": "2025-07-03T03:07:52Z",
+      "updated_at": "2025-07-03T03:07:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

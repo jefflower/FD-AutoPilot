@@ -1,0 +1,44 @@
+{
+  "id": 4399,
+  "subject": "Problem with \"Vam Pros\"",
+  "description_text": "\r\n Hello, \r\n \r\n I recently had the time to install my 2 Vam Pros on my pedals. \r\n \r\n Unfortunatly it seems like I have a problem. Even when my car is not moving and when I close the Game (I only use Iracing), it still keeps on running and making the loud Vibration noises. \r\n \r\n Here is a video, so you can see what i mean: \r\n \r\n https://streamable.com/ybv4tk \r\n (its only online for 2 days) \r\n \r\n I looked at the \"simsonn manager\" but couldnt find an answer. \r\n \r\n So far I am happy with the pedals, but it would be nice if the Vam Pros would also work perfectly. After that I will rate my customer experience. \r\n \r\n Best regards, \r\n Rick. \r\n \r\n \r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-03T16:05:14Z",
+  "updated_at": "2025-10-11T01:10:29Z",
+  "requester_id": 158003944810,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009876102,
+      "body_text": "Hi Rick van Zwieten,    Please connect the USB cable directly to the USB3.0 blue port on the back of your computer. Avoid using a USB hub, as its power supply is often unstable and may cause the device to malfunction.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-04T01:07:30Z",
+      "updated_at": "2025-10-04T01:07:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010230332,
+      "body_text": "Hi, \r\n \r\n so I just did what you told me but it works only for like 10 minutes. After that it starts to vibrate all the time, even when the the sim (iracing) is closed or just vibrates every second just for a little time. \r\n \r\n I tried alot of things but dont know what to do anymore. \r\n \r\n Your reocmmend using the Simsonn Manager or maybe something else like Drivehub? What can I do. \r\n \r\n Best regards, \r\n Rick. \r\n \r\n \r\n Gesendet: Samstag, 4. Oktober 2025 um 03:07 \r\n ",
+      "user_id": 158003944810,
+      "created_at": "2025-10-10T18:33:42Z",
+      "updated_at": "2025-10-10T18:33:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010239918,
+      "body_text": "Hi Rick van Zwieten,  Please uninstall the old version from your computer, then reinstall version 2.1.2 and update the firmware. After the update, the device version should display as CPU1: 2.0.5, CPU2: 2.0.3. If the issue still persists, please feel free to contact me.     https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-10-11T01:10:28Z",
+      "updated_at": "2025-10-11T01:10:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

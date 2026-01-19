@@ -1,0 +1,124 @@
+{
+  "id": 1269,
+  "subject": "issues",
+  "description_text": "Hello..\r\n\r\n \r\n\r\nI Got new Simsonn Pro x pedals, orderd at simwelten.de\r\nI also ordered the reactor kit from simsonn (directly from simsonn) the VAM\r\nset: \r\n\r\n\r\n \r\n\r\nIssue: if I plug in the power supply from the VAM set to the control box the\r\nleds from the Heal Plate start flashing.\r\nand the VAM motors show no function when I cklick on Vibration on Simsonn\r\nmanager software..\r\n\r\n \r\n\r\nSecond: in the simsonn Manger it shows me always the update to Simsonn Pro x\r\n2.0.0 I did that 2 or 3 times and it completed.. next time I start it ask me\r\nto do the update again:\r\n\r\n\r\n\r\nI think there is something rong with the control box.. because VAM did not\r\nwork and this strange update behavior..\r\nlet me know if you need some more infos etc.\r\n\r\n \r\n\r\nBest regards\r\n\r\n \r\n\r\nMatthias lang\r\n\r\nMartin-kink-str. 5\r\n\r\nAustria-6890 Lustenau\r\n\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-07-06T11:49:57Z",
+  "updated_at": "2025-07-29T15:46:35Z",
+  "requester_id": 158001907277,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004452965,
+      "body_text": "Hi Matthias. lang,    Please press the upgrade button on the ProX control box, then reconnect the USB cable. This will put the controller into recovery mode. Open SIMSONN Manager 2.0.8, and navigate to: Settings → Update → Manual Firmware Update → Pedals → Firmware → pedals → prox.sfu to manually update the ProX firmware.  After the update, please test the motor again. We also recommend downloading and using SimHub version 9.9.3 for optimal compatibility.     There is a small bug with that update prompt — you don't need to click it. Please just ignore it. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T03:42:08Z",
+      "updated_at": "2025-07-07T03:42:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004454460,
+      "body_text": "So i followed your description..\r\n\r\nUpdate successful.. device also now in simhub.. but still no haptic reaction (I tried in simsonn manager the vibrate function and also in simhub the test channel)\r\n\r\n \r\n\r\nIf I plug in the power supply included in the VAM bundle to the control box the Heal Plate LED start flashing strange, so something is rong here..\r\n\r\n \r\n\r\nRegards\r\n\r\nmatthias\r\n\r\n \r\n\r\n",
+      "user_id": 158001907277,
+      "created_at": "2025-07-07T08:18:41Z",
+      "updated_at": "2025-07-07T08:18:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004472519,
+      "body_text": "You saw my reply..\r\n\r\n \r\n\r\nI did everything you wrote.. but haptic is still not working.. nothing.. !\r\n\r\n \r\n\r\n",
+      "user_id": 158001907277,
+      "created_at": "2025-07-08T11:30:17Z",
+      "updated_at": "2025-07-08T11:30:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004476247,
+      "body_text": "Hi Matthias. lang,    Please install the Todesk tool. No registration is required—just provide the ID and temporary password, and I will assist you remotely.  https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-07-08T14:39:46Z",
+      "updated_at": "2025-07-08T14:39:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004478724,
+      "body_text": "Hi Matthias. lang,  When you clicked “Vibration” in the Feedback settings, did the vibration not occur, or is the issue that telemetry-based vibration doesn’t work after entering the game? ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-08T15:06:31Z",
+      "updated_at": "2025-07-08T15:06:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004481285,
+      "body_text": "If i click the vibration button.. or test button in simhub..\r\n\r\nIt does nothing…  i\r\n\r\nsymptoms: if I plug in the power supply to the control box the led’s of the heal thing starts to flash strange..\r\n\r\nAll motors pluged in.. and nothing happened if I use the vibration button or in simhub the test button..\r\n\r\nAlso not in game (ACC)\r\n\r\n \r\n\r\nI am not stupid I have the Conspit cpp lite2 pedals as wheel.. there everything works in the Conspit software and in simhub..\r\n\r\nSimsonn.. no haptic @all no matter what I do!\r\n\r\n \r\n\r\n \r\n\r\n",
+      "user_id": 158001907277,
+      "created_at": "2025-07-08T18:38:24Z",
+      "updated_at": "2025-07-08T18:38:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004483589,
+      "body_text": "Hi Matthias. lang,    Please install Todesk, and I will check it for you remotely.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-08T22:03:23Z",
+      "updated_at": "2025-07-08T22:03:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004486229,
+      "body_text": "你好，Matthias。lang，  我还没有收到你的回复。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-09T06:19:40Z",
+      "updated_at": "2025-07-09T06:19:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005207029,
+      "body_text": "Hi..\r\n\r\n \r\n\r\ni downloaded the tool.. so when are you available for a check..\r\n\r\nLets find a time window..\r\n\r\nTo be honest I will not install a Chinese spy software and wait that Somone connect to my pc..\r\n\r\nSo we can do a teams meeting or something else and then we can do a remote session for the check..\r\n\r\n \r\n\r\nLet me know..\r\n\r\n \r\n\r\nRegards\r\n\r\nmatthias\r\n\r\n \r\n\r\n",
+      "user_id": 158001907277,
+      "created_at": "2025-07-19T22:39:58Z",
+      "updated_at": "2025-07-19T22:39:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005211526,
+      "body_text": "Hi Matthias. lang,    Will you be available in a few hours? I can adjust my schedule to match your availability.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-20T00:22:01Z",
+      "updated_at": "2025-07-20T00:22:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005737489,
+      "body_text": "Hey..\r\n\r\n \r\n\r\nSorry for the late replay..\r\n\r\nAfter the last firmware update the haptic motors are working.. \r\n\r\n \r\n\r\nRegards matthias\r\n\r\n \r\n\r\n",
+      "user_id": 158001907277,
+      "created_at": "2025-07-28T13:47:01Z",
+      "updated_at": "2025-07-28T13:47:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

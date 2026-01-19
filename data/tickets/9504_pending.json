@@ -1,0 +1,44 @@
+{
+  "id": 9504,
+  "subject": "Product Question",
+  "description_text": "Good Morning, I wanted to ask if the \"Simsonn Plus X Racing Simulator Pedal\r\nwith Baseplate\" already comes with the baseplate or if I still have to add\r\nit separately. Thankyou for your time.\r\n[image: image.png]\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-29T23:25:05Z",
+  "updated_at": "2026-01-15T09:13:14Z",
+  "requester_id": 158008815118,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015242541,
+      "body_text": "Hi D1NONLY JCOB,  Please provide the link and I’ll help you check it. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T08:45:29Z",
+      "updated_at": "2025-12-30T08:45:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015291972,
+      "body_text": "https://www.simsonn.com/products/simsonn-pedal-pro-plus-with-baseplate?variant=50297610862906\r\n\r\nOn Tue, Dec 30, 2025 at 4:45 PM service@simsonn.com ",
+      "user_id": 158008815118,
+      "created_at": "2025-12-31T03:39:25Z",
+      "updated_at": "2025-12-31T03:39:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017172664,
+      "body_text": "Hi D1NONLY JCOB,  I apologize for the delayed response.    This link includes the base plate by default.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T09:13:13Z",
+      "updated_at": "2026-01-15T09:13:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

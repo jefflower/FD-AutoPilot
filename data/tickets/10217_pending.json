@@ -1,0 +1,54 @@
+{
+  "id": 10217,
+  "subject": "Import fees",
+  "description_text": "Hello,\r\nIt says on my UPS tracking page that there is around 40 euros import fees\r\non my package. It wasn't explicitly mentioned on the simpson site that I\r\nwill have carry the burden of any additional fees so I'm a little confused.\r\nIs it possible that its some kind of misunderstanding?\r\n\r\nOrder number: SSN5782\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-07T12:48:06Z",
+  "updated_at": "2026-01-13T11:51:31Z",
+  "requester_id": 158008965787,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016312565,
+      "body_text": "Hi Mikołaj Posiadała,    Please don't worry. After completing payment, provide the UPS invoice and we will reimburse you.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-08T09:26:41Z",
+      "updated_at": "2026-01-08T09:26:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016706151,
+      "body_text": "Hello,\r\nI paid the fee but ups did not send me an invoice so, I'm sending the\r\nextract from my bank, as well as the receipt from ups (the only thing i\r\nreceived). I hope that's enough\r\n\r\nKind regards\r\nMikołaj Posiadała\r\n\r\nczw., 8 sty 2026 o 10:26 service@simsonn.com ",
+      "user_id": 158008965787,
+      "created_at": "2026-01-10T12:16:14Z",
+      "updated_at": "2026-01-10T12:16:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016858144,
+      "body_text": "Hi Mikołaj Posiadała,    Okay, we have refunded you 20 euros as compensation.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-12T12:00:05Z",
+      "updated_at": "2026-01-12T12:00:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016870967,
+      "body_text": "Hello,\r\nI wanted to thank you for refunduje me:)\r\n\r\nOn Mon, 12 Jan 2026 at 13:00, service@simsonn.com ",
+      "user_id": 158008965787,
+      "created_at": "2026-01-12T14:52:58Z",
+      "updated_at": "2026-01-12T14:52:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

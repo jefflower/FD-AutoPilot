@@ -1,0 +1,124 @@
+{
+  "id": 10822,
+  "subject": "Pedal not working",
+  "description_text": "Hello,\r\n\r\nI just bought the plus x racing pedals through Amazon order #701-4055465-6583421 and the gas pedal will not register when pressed. I checked all connections and tightened all bolts but it still doesn’t work. I can push down on the sensor with my finger and I can see it on the software but if I use the pedal it doesn’t show.",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-13T20:49:21Z",
+  "updated_at": "2026-01-16T03:44:19Z",
+  "requester_id": 158009056122,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017052529,
+      "body_text": "Hi Duane Delaney,       If you adjusted the throttle spring, you can set the Offset in the software to reset the pedal signal to zero, and then recalibrate the pedal. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-14T01:20:59Z",
+      "updated_at": "2026-01-14T01:20:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017054766,
+      "body_text": "hello,\r\n\r\nNothing has been adjusted but I went into the software and reset the offset but it still doesn’t work. It seems to me that the little spring that pushes on the sensor isn’t pushing hard enough. I can press my finger on the sensor and it shows input on the software.\r\n\r\n",
+      "user_id": 158009056122,
+      "created_at": "2026-01-14T02:03:19Z",
+      "updated_at": "2026-01-14T02:03:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017093136,
+      "body_text": "Hi Duane Delaney,  Would you allow us to assist you remotely? Please install ToDesk and send us your ID and the temporary verification code. Also, please check whether this connector/port is damaged (loose housing, deformation, bent pins, etc.), and share a clear photo with us so we can confirm. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-14T11:09:56Z",
+      "updated_at": "2026-01-14T11:09:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017107410,
+      "body_text": "Hello,\r\n\r\nNothing seems to be bent or out of place and all bolts have been tightened.\r\n\r\n\r\n\r\n",
+      "user_id": 158009056122,
+      "created_at": "2026-01-14T14:18:10Z",
+      "updated_at": "2026-01-14T14:18:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017107574,
+      "body_text": "﻿\r\nHello,\r\n\r\nNothing seems to be bent or out of place and all bolts have been tightened.\r\n\r\n\r\n\r\n",
+      "user_id": 158009056122,
+      "created_at": "2026-01-14T14:21:05Z",
+      "updated_at": "2026-01-14T14:21:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017135158,
+      "body_text": "Hello,\r\n\r\nIt’s definitely an issue with the load cell. I can just lay a finger on the clutch load cell and it shows input. On the throttle I have to forcefully push on it to show any input.\r\n\r\n",
+      "user_id": 158009056122,
+      "created_at": "2026-01-14T19:31:01Z",
+      "updated_at": "2026-01-14T19:31:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017154195,
+      "body_text": "Hi Duane Delaney,     Could you please record a complete video and upload it to Google Drive? Then send me the link and set the sharing permission to “Anyone with the link can view.” The video should include the full process below (including zeroing the pedal signal following the steps inside the Offset pop-up dialog, and then Calibration/Calibrate):    Click Offset, and follow the steps in the pop-up dialog to zero the pedal signal;    Click Calibrate, then press each pedal with normal force;    Click Save;    After calibration, please test the pedals again — the blue progress bar should move smoothly from 0% to 100%. Only then is the calibration successful.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-15T01:27:38Z",
+      "updated_at": "2026-01-15T01:27:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017162066,
+      "body_text": "hello,\r\n\r\nHere is the calibration\r\n<https://drive.google.com/file/d/1Lk-6qzj5slKSSXmOfMLID4qRSP-uWwEm/view?usp=drivesdk>\r\nCalibration.MOV<https://drive.google.com/file/d/1Lk-6qzj5slKSSXmOfMLID4qRSP-uWwEm/view?usp=drivesdk>\r\ndrive.google.com<https://drive.google.com/file/d/1Lk-6qzj5slKSSXmOfMLID4qRSP-uWwEm/view?usp=drivesdk>\r\n[drive_2020q4_32dp.png]<https://drive.google.com/file/d/1Lk-6qzj5slKSSXmOfMLID4qRSP-uWwEm/view?usp=drivesdk>\r\n\r\n\r\n",
+      "user_id": 158009056122,
+      "created_at": "2026-01-15T04:26:27Z",
+      "updated_at": "2026-01-15T04:26:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017162123,
+      "body_text": "Hi Duane Delaney,  We will ship a replacement PlusX throttle pressure sensor to you today and arrange dispatch as soon as possible. Once it’s shipped, I’ll share the tracking number with you. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-15T04:29:49Z",
+      "updated_at": "2026-01-15T04:29:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017162184,
+      "body_text": "Hi Duane Delaney,    Additionally, you can try updating the firmware first. After the update, please swap the throttle and clutch connectors to help determine whether the issue is from the control box or the throttle pressure sensor:    Go to: Settings → Update → Manual Firmware Update → pedals → firmware → pedals-plusx.sfu;    Select the firmware file and complete the update;    Re-plug the USB cable and recalibrate the pedals;    Swap the throttle and clutch connectors and test again:    If the issue follows the connector/channel, it may be related to the control box or that input channel;    If the issue still happens only on the throttle pedal, it’s more likely the throttle pressure sensor or the throttle pedal side.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-15T04:31:55Z",
+      "updated_at": "2026-01-15T04:31:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017162479,
+      "body_text": "hello,\r\n\r\nThe software has been updated and I tried switching channels on the control box but still same result. This video shows me just laying a drill bit on the clutch sensor and it shows up on the software compared to the throttle which I have to push down quite hard for it to show on the software.\r\n\r\n<https://drive.google.com/file/d/1hTTX60naBB6LnUKz5bQMetLSDUFNJad2/view?usp=drivesdk>\r\nLoad cell pressure.MOV<https://drive.google.com/file/d/1hTTX60naBB6LnUKz5bQMetLSDUFNJad2/view?usp=drivesdk>\r\ndrive.google.com<https://drive.google.com/file/d/1hTTX60naBB6LnUKz5bQMetLSDUFNJad2/view?usp=drivesdk>\r\n[drive_2020q4_32dp.png]<https://drive.google.com/file/d/1hTTX60naBB6LnUKz5bQMetLSDUFNJad2/view?usp=drivesdk>\r\n\r\n\r\n",
+      "user_id": 158009056122,
+      "created_at": "2026-01-15T04:49:30Z",
+      "updated_at": "2026-01-15T04:49:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

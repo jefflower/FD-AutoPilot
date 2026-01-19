@@ -1,0 +1,24 @@
+{
+  "id": 9261,
+  "subject": "Shipping to Poland",
+  "description_text": "Hi\r\nAre you not delivering to Poland.\r\nI can’t find the option of my country in you delivery settings, I found all\r\nour neighbors so I assume it could be an error.\r\nLet me know if we can resolve it together\r\nBest regards\r\nRafał\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-26T22:19:24Z",
+  "updated_at": "2025-12-28T15:36:58Z",
+  "requester_id": 158008778095,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015166133,
+      "body_text": "Hi Rafał Wołczyk,  Customers in Poland can place orders directly through our Polish distributor, and the products will be shipped locally from Poland  https:/fmic.pl/elektronika/simracing?product_brand=Simsonn",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T15:36:58Z",
+      "updated_at": "2025-12-28T15:36:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

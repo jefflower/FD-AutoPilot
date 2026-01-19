@@ -1,0 +1,224 @@
+{
+  "id": 3674,
+  "subject": "Simsonn Plus X - Throttle Pedal not working",
+  "description_text": "Hello!\r\n\r\nMy Plus X throttle pedal suddenly stopped working. The brake still works,\r\nand I tried using the grounding wire, however the throttle pedal input is\r\nnot recognized at all in the Simsonn software or in other places (games,\r\netc.). I've tried calibrating but nothing is being recognized.\r\n\r\nPlease help - thank you!\r\n\r\nCarlo\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-09-09T23:03:10Z",
+  "updated_at": "2025-09-20T03:31:19Z",
+  "requester_id": 158004372702,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008345668,
+      "body_text": "Hi Carlo Pacis-Lim,  Please take a photo and check if this part of the throttle pedal is damaged. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-09T23:07:57Z",
+      "updated_at": "2025-09-09T23:07:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008345713,
+      "body_text": "Hello, thank you so much for the quick reply.\r\n\r\nIt doesn’t seem to be damaged. Let me know what you think.\r\n\r\n\r\nOn Tue, Sep 9, 2025 at 4:08 PM service@simsonn.com ",
+      "user_id": 158004372702,
+      "created_at": "2025-09-09T23:10:19Z",
+      "updated_at": "2025-09-09T23:10:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008345794,
+      "body_text": "Actually when I touch this white part, it seems to register. So the cable\r\nis working fine.\r\n\r\nIs there a way I can repair this?\r\n\r\n\r\n\r\nOn Tue, Sep 9, 2025 at 4:09 PM Carlo Pacis-Lim <carlonathan@gmail.com>\r\nwrote:\r\n\r\n> Hello, thank you so much for the quick reply.\r\n>\r\n> It doesn’t seem to be damaged. Let me know what you think.\r\n>\r\n>\r\n> On Tue, Sep 9, 2025 at 4:08 PM service@simsonn.com ",
+      "user_id": 158004372702,
+      "created_at": "2025-09-09T23:14:38Z",
+      "updated_at": "2025-09-09T23:14:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008345816,
+      "body_text": "Hi Carlo Pacis-Lim,  First, connect all the pedals to the main control box and then unplug and replug the USB. Next, use the Offset feature in the software to reset the pedal percentage to zero and recalibrate to check if the throttle works properly. If the issue persists, please try a manual firmware update by navigating to: Settings → Update → Manual Firmware Update → pedals-firmware → pedals-plusx.sfu. After the update is complete, unplug and replug the USB again and test the pedals. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-09T23:15:51Z",
+      "updated_at": "2025-09-09T23:15:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008345889,
+      "body_text": "Hi, I tried updating the firmware already and using the offset function.\r\nDid you see my prior message re: white pad?\r\n\r\nThank you.\r\n\r\nOn Tue, Sep 9, 2025 at 4:16 PM service@simsonn.com ",
+      "user_id": 158004372702,
+      "created_at": "2025-09-09T23:19:49Z",
+      "updated_at": "2025-09-09T23:19:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008345971,
+      "body_text": "Hi Carlo Pacis-Lim,  Pressing the sensor with your finger is equivalent to the small spring inside the pedal applying pressure to the sensor. Typically, the finger press will exert more force. Please provide two videos:    A video showing the signal changes when pressing the sensor directly with your finger.    A video showing the signal changes when pressing the pedal normally.    I will review these videos to help identify the issue. Make sure the videos are fully uploaded before sending, and keep each video under 20MB. If the files are too large, you can upload them to Google Drive and grant us access to the link.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-09T23:24:39Z",
+      "updated_at": "2025-09-09T23:24:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008346079,
+      "body_text": "Here are the two videos!\r\n\r\nThank you for your help.\r\n\r\nOn Tue, Sep 9, 2025 at 4:24 PM service@simsonn.com ",
+      "user_id": 158004372702,
+      "created_at": "2025-09-09T23:30:45Z",
+      "updated_at": "2025-09-09T23:30:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008346238,
+      "body_text": "Hi Carlo Pacis-Lim,  When you click Offset, does a window pop up asking you to save the offset? ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-09T23:37:38Z",
+      "updated_at": "2025-09-09T23:37:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008346386,
+      "body_text": "Here's what happens when I press Offset. I'm also trying the app DIView to\r\ncheck the sensors and it doesn't register the throttle at all unless I\r\npress the sensor directly.\r\n\r\nCould there be something in the hardware I should adjust to ensure\r\nappropriate force is going to the sensor?\r\n\r\nThank you!\r\n\r\nOn Tue, Sep 9, 2025 at 4:37 PM service@simsonn.com ",
+      "user_id": 158004372702,
+      "created_at": "2025-09-09T23:45:10Z",
+      "updated_at": "2025-09-09T23:45:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008346494,
+      "body_text": "Hi Carlo Pacis-Lim, Please swap the connections between the throttle and clutch, then run a test to determine whether the issue is with the control box or the pedal itself. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-09T23:52:04Z",
+      "updated_at": "2025-09-09T23:52:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008346548,
+      "body_text": "Hello, I did this and the same thing occurs - I only receive a signal when\r\nI press the sensor directly. I tried calibrating as well.\r\n\r\nIs there anything I can try on the pedal hardware to try and fix this?\r\n\r\nThank you!\r\n\r\nOn Tue, Sep 9, 2025 at 4:52 PM service@simsonn.com ",
+      "user_id": 158004372702,
+      "created_at": "2025-09-09T23:54:51Z",
+      "updated_at": "2025-09-09T23:54:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008346646,
+      "body_text": "Hi Carlo Pacis-Lim,  Please provide your contact name, phone number, and address. We will send you a replacement throttle sensor today for you to install. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-10T00:01:27Z",
+      "updated_at": "2025-09-10T00:01:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008346678,
+      "body_text": "Name: Carlo Pacis-Lim\r\nPhone number: +1 778 999 4672\r\nAddress:\r\n508 - 645 Como Lake Ave.\r\nCoquitlam, BC\r\nCanada\r\nV3J 0N9\r\n\r\nThank you very much. Do you know roughly how long this might take?\r\n\r\nReally appreciate it.\r\n\r\nOn Tue, Sep 9, 2025 at 5:01 PM service@simsonn.com ",
+      "user_id": 158004372702,
+      "created_at": "2025-09-10T00:02:54Z",
+      "updated_at": "2025-09-10T00:02:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008348733,
+      "body_text": "Hello, please provide your order number. We shall process your order promptly and expect delivery within 3 to 7 days.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-10T02:14:50Z",
+      "updated_at": "2025-09-10T02:14:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008349019,
+      "body_text": "Hi, I’m not sure how to get my order number. I ordered from Aliexpress.\r\n\r\nOn Tue, Sep 9, 2025 at 7:15 PM service@simsonn.com ",
+      "user_id": 158004372702,
+      "created_at": "2025-09-10T02:31:45Z",
+      "updated_at": "2025-09-10T02:31:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008528919,
+      "body_text": "Thank you very much! Do you have instructions on how to replace the sensor?\r\n\r\nThanks :)\r\n\r\nOn Tue, Sep 9, 2025 at 8:44 PM General and sales enquiries <\r\nservice@simsonn.com> wrote:\r\n\r\n> your order has been shipped. The logistics number is:YT2525300703238002.\r\n> You can track it at this website https://www.17track.net/zh-cn.\r\n>\r\n> ------------------------------\r\n> service@simsonn.com\r\n>\r\n>\r\n> *",
+      "user_id": 158004372702,
+      "created_at": "2025-09-11T14:50:04Z",
+      "updated_at": "2025-09-11T14:50:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008531180,
+      "body_text": "Hi Carlo Pacis-Lim,    We will record a video to guide you through the replacement when the time comes.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-11T15:24:15Z",
+      "updated_at": "2025-09-11T15:24:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008566046,
+      "body_text": "Hi Carlo Pacis-Lim,   Your order has been shipped. The logistics number is:YT2525300703238002. You can track it at this website https://www.17track.net/zh-cn.Estimated 10-20 days, ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-12T06:01:32Z",
+      "updated_at": "2025-09-12T06:01:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008935208,
+      "body_text": "Hi! I’ve received the part. Can you please share instructions? Thank you!\r\n\r\nOn Thu, Sep 11, 2025 at 11:01 PM service@simsonn.com ",
+      "user_id": 158004372702,
+      "created_at": "2025-09-19T05:29:20Z",
+      "updated_at": "2025-09-19T05:29:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008936832,
+      "body_text": "Hi Carlo Pacis-Lim,  Alright, I will ask my colleagues from the production team to prepare it, and once the recording is ready, I will send it to you. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-19T08:49:52Z",
+      "updated_at": "2025-09-19T08:49:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008973504,
+      "body_text": "Hi Carlo Pacis-Lim,     You can replace it by removing these screws. A set of hex keys (Allen wrenches) will be required. If you encounter any issues during the process, please feel free to contact me. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-20T03:31:19Z",
+      "updated_at": "2025-09-20T03:31:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

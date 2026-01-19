@@ -1,0 +1,45 @@
+{
+  "id": 11098,
+  "subject": "",
+  "description_text": "你好，我刚收到我的踏板，但里面没有我订购的触觉反应器，想知道发生了什么事。",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-16T20:52:13Z",
+  "updated_at": "2026-01-17T06:37:54Z",
+  "requester_id": 158009307051,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017311560,
+      "body_text": "嗨，Paul Me，我们的 VAM Pro 是单独包装并分开运输的。由于新年旺季积压，订单发货有所延迟——对此造成的不便，我们深表歉意。我可以立即为您查询最新的运输状态。请分享您的订单号（以“SSN”开头）。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-17T03:42:28Z",
+      "updated_at": "2026-01-17T03:42:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017312787,
+      "body_text": "订单号 #SSN5691 的货物正在途中\n\n2026年1月17日星期六下午2:42，来自 service@simsonn.com 的邮件，",
+      "user_id": 158009307051,
+      "created_at": "2026-01-17T04:55:18Z",
+      "updated_at": "2026-01-17T04:55:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017316236,
+      "body_text": "嗨，Paul Me，感谢您购买我们的产品。将来如果您有任何疑问，请随时与我们联系。我们将及时处理。",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T06:37:54Z",
+      "updated_at": "2026-01-17T06:37:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

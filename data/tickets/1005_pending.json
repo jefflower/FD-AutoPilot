@@ -1,0 +1,24 @@
+{
+  "id": 1005,
+  "subject": "Shipping.",
+  "description_text": "I have a concern about the shipping. Because my address it's a deposit with\r\npeople that will receive the package. Is that good enough?\r\n\r\nThank You for you response\r\n\r\nSincerely\r\nClaudio Salvo\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-30T15:20:38Z",
+  "updated_at": "2025-07-02T07:20:34Z",
+  "requester_id": 158001840799,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004363582,
+      "body_text": "Hi Claudio Salvo,  It should be fine. Addresses like that are usually able to receive packages without any issues. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T07:20:34Z",
+      "updated_at": "2025-07-02T07:20:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

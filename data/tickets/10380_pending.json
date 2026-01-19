@@ -1,0 +1,24 @@
+{
+  "id": 10380,
+  "subject": "Steering Wheel compitability",
+  "description_text": "Hello,\r\n\r\nI just wanted to ask what extra parts I would need to get your steering\r\nwheel working with my simagic alpha mini wheelbase?\r\nIs it enough if i just take the qr option, I don't really understand those\r\noptions on your shopping website.\r\n\r\nKindest regards,\r\nIoan\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-09T08:15:28Z",
+  "updated_at": "2026-01-10T07:13:48Z",
+  "requester_id": 158008999465,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016678528,
+      "body_text": "Hi Ioan Rusu,     Our steering wheel quick release uses a 70 mm bolt pattern. To connect it to a Simagic base, an additional adapter is required.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-10T07:13:48Z",
+      "updated_at": "2026-01-10T07:13:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

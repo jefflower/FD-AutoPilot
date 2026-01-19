@@ -1,0 +1,134 @@
+{
+  "id": 658,
+  "subject": "Order confirmation?",
+  "description_text": "Hello Support,\r\n\r\nI've placed an order an hour ago using my email address and cell number,\r\nyet i haven't received any confirmation that my order has been received.\r\nCan i please get an update with a confirmation number? my bank does show\r\nthat the transaction went through... but haven't received any confirmation\r\nemail. I've checked my spam as well.\r\n\r\nEmail - sat90240@gmail.com\r\nCell - 5624169736\r\n\r\nBest,\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-20T20:06:52Z",
+  "updated_at": "2025-07-18T09:35:24Z",
+  "requester_id": 158001693183,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003677555,
+      "body_text": "Hi Steven Torres,    We haven’t found any orders associated with the email address sat90240@gmail.com. Please double-check to see if the payment was successfully completed.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-21T15:33:02Z",
+      "updated_at": "2025-06-21T15:33:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003677619,
+      "body_text": "Are you serious? Yes its been confirmed, I knew something was wrong. Can\r\nyou check with my payment method?\r\n\r\n\r\n\r\nOn Sat, Jun 21, 2025, 8:33 AM support@simsonn.com ",
+      "user_id": 158001693183,
+      "created_at": "2025-06-21T16:02:15Z",
+      "updated_at": "2025-06-21T16:02:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003677646,
+      "body_text": "Hi Steven Torres,     I located your order using the payment amount, and it appears that no email address was provided. Your order includes one PlusX controller, three VAM motors, and one 24V power supply. Since today is Saturday, we will arrange the shipment on Monday. No worries! ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-21T16:11:57Z",
+      "updated_at": "2025-06-21T16:11:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003677666,
+      "body_text": "Thank you,is there a confirmation number that i could get in case of any\r\ndelivery issues? 8548 clarinda ave pico 90660\r\n\r\nOn Sat, Jun 21, 2025, 9:12 AM support@simsonn.com ",
+      "user_id": 158001693183,
+      "created_at": "2025-06-21T16:15:19Z",
+      "updated_at": "2025-06-21T16:15:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003679520,
+      "body_text": "Hi Steven Torres,  I see that the shipping address for your order is 8548 Clarinda Ave, Pico 90660. Your order number is #SSN1804, and you can refer to this number in any future communication with us. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T01:38:46Z",
+      "updated_at": "2025-06-22T01:38:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004346803,
+      "body_text": "Hello Support,\r\n\r\nCan i get a tracking number for order  #SSN1804 please?\r\n\r\nMy order didn't send an email confirmation since my email wasn't added.\r\n\r\nThank you,\r\n\r\n\r\nOn Sat, Jun 21, 2025 at 6:38 PM support@simsonn.com ",
+      "user_id": 158001693183,
+      "created_at": "2025-06-30T18:27:15Z",
+      "updated_at": "2025-06-30T18:27:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004359231,
+      "body_text": " Hello Support,\r\n\r\nCan i get a tracking number for order  #SSN1804 please?\r\n\r\nMy order didn't send an email confirmation since my email wasn't added.\r\n\r\nThank you,\r\n\r\n\r\n\r\n",
+      "user_id": 158001693183,
+      "created_at": "2025-07-01T16:32:35Z",
+      "updated_at": "2025-07-01T16:32:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004375569,
+      "body_text": "你好，Steven Torres，  JSEXF2381282839YQ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T14:50:33Z",
+      "updated_at": "2025-07-02T14:50:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004773009,
+      "body_text": "Hello Support, ive received my order but it does not include the\r\ncontroller. I will include a photo of what was delivered. Is there another\r\npackage on the way? Or was there a mistake with my order because I ordered\r\nthe controller with it and I paid for it...so id like my controller sent or\r\nany information on a 2nd package that was sent.\r\n\r\nThank you\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nOn Wed, Jul 2, 2025, 7:51 AM support@simsonn.com ",
+      "user_id": 158001693183,
+      "created_at": "2025-07-13T20:07:43Z",
+      "updated_at": "2025-07-13T20:07:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004775947,
+      "body_text": "Hi Steven Torres,     Sorry, did your package not include a control box for the Plus X? This may have been an error on the part of our warehouse staff. We will send you a replacement immediately, sincerely apologize!",
+      "user_id": 158001343601,
+      "created_at": "2025-07-14T06:51:26Z",
+      "updated_at": "2025-07-14T06:51:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004834538,
+      "body_text": "Hello Support,\r\n\r\nI've emptied the entire box and no the controller is not included. Could I\r\nplease have the controller sent? Also could I please get a tracking number\r\nfor that item so that I could track it.\r\n\r\nThank you! Kind regards\r\n\r\n\r\n\r\nOn Sun, Jul 13, 2025, 11:51 PM support@simsonn.com ",
+      "user_id": 158001693183,
+      "created_at": "2025-07-14T19:40:00Z",
+      "updated_at": "2025-07-14T19:40:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005146667,
+      "body_text": "Hi Steven Torres,    Here's the link to your logistics tracking, sorry for the trouble.  https://www.track718.us/en/detail?nums=JSEGO1882052088YQ",
+      "user_id": 158001343601,
+      "created_at": "2025-07-18T09:35:23Z",
+      "updated_at": "2025-07-18T09:35:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

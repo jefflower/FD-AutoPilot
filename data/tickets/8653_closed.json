@@ -1,0 +1,24 @@
+{
+  "id": 8653,
+  "subject": "ORDER 4229",
+  "description_text": "Good evening, given your response time and to answer my questions as\r\nefficiently as possible, could you please tell me how soon you can send me\r\nthe footrest in black?\r\n\r\nAnd if it takes longer than 10 days, can you refund me without negotiation?\r\n\r\nYour item is available within 10 days at the same price as on your Amazon\r\nwebsite. It's a Christmas gift, so please understand the urgency. Thank you\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-12-19T07:11:25Z",
+  "updated_at": "2025-12-22T14:11:54Z",
+  "requester_id": 158007468087,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014884543,
+      "body_text": "此工单已关闭并合并到工单 8889 中",
+      "user_id": 158000445778,
+      "created_at": "2025-12-22T14:11:54Z",
+      "updated_at": "2025-12-22T14:11:54Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

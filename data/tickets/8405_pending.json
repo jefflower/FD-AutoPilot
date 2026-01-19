@@ -1,0 +1,44 @@
+{
+  "id": 8405,
+  "subject": "Order #SSN4545",
+  "description_text": "Hi,\r\n\r\nI don't know how to contact you to get a response, as I am not hearing back\r\nfrom you at any point.\r\nI paid for express delivery for my order #SSN4545 and should have arrived\r\nyesterday. The tracking number is SF6047152633735 with SF Express and it\r\nhas not been updated since the 11th of December. What am I supposed to do?\r\nI want a partial refund on the delivery, this is unacceptable.\r\n\r\n[image: image.png]\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-16T10:08:51Z",
+  "updated_at": "2025-12-17T06:34:48Z",
+  "requester_id": 158007701879,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014564591,
+      "body_text": "Hi Bogdan Branisteanu,    We sincerely apologize for any inconvenience caused. This shipping channel is currently at full capacity, so we will arrange an urgent UPS shipment for you. Delivery is expected on the 21st.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-16T10:33:47Z",
+      "updated_at": "2025-12-16T10:33:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014565443,
+      "body_text": "Hi\r\n\r\nCan you share a new tracking number?\r\n\r\nThanks,\r\nBogdan\r\n\r\n",
+      "user_id": 158007701879,
+      "created_at": "2025-12-16T10:59:49Z",
+      "updated_at": "2025-12-16T10:59:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014614911,
+      "body_text": "Hi Bogdan Branisteanu,    This is your logistics tracking link. Estimated delivery on the 22nd.  ​https://www.ups.com/track?loc=en_US&requester=ST&trackNums=1ZJ455510406405439/trackdetails",
+      "user_id": 158001343601,
+      "created_at": "2025-12-17T06:34:47Z",
+      "updated_at": "2025-12-17T06:34:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

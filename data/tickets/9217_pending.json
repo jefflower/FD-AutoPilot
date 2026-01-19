@@ -1,0 +1,44 @@
+{
+  "id": 9217,
+  "subject": "my simson vam pro does not show the power connected sighn and does not work dispite me checking multiple times to make sure that everything is connected properly.",
+  "description_text": "",
+  "status": 3,
+  "priority": 2,
+  "created_at": "2025-12-26T08:25:05Z",
+  "updated_at": "2025-12-28T03:06:30Z",
+  "requester_id": 158008757783,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015089095,
+      "body_text": "?\r\n\r\nZorawar Singh Grewal reacted via Gmail\r\n<https://www.google.com/gmail/about/?utm_source=gmail-in-product&utm_medium=et&utm_campaign=emojireactionemail#app>\r\n\r\nOn Fri, Dec 26, 2025 at 2:00 PM service@simsonn.com ",
+      "user_id": 158008757783,
+      "created_at": "2025-12-26T08:37:29Z",
+      "updated_at": "2025-12-26T08:37:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015134411,
+      "body_text": "any updates?",
+      "user_id": 158008757783,
+      "created_at": "2025-12-27T13:59:11Z",
+      "updated_at": "2025-12-27T13:59:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015147231,
+      "body_text": "Hi Zorawar Singh Grewal,   Please provide your order number, pedal model, and whether it is connected to an independent power supply using the USB 3.0 blue port. You can try updating the firmware first. Also, please provide screenshots of the SIMSONN Manager interface and photos of the vibration motor control box installation.             ProX / ProX Ultra Pedal Firmware Update Procedure:    Press and hold the Upgrade button on the control box;    Reconnect the USB cable;    The software will indicate that the device has entered “Simsonn Flasher mode”;    In the software, go to: Settings → Update → Manual Firmware Update → pedals → firmware → pedals-proxultra.sfu (If it’s a ProX pedal, select pedals-prox.sfu)    Start the firmware update, and once it is complete, release the Upgrade button;    Finally, retest and calibrate the pedals.        Launch the latest version of SIMSONN Manager 2.1.2. On the “Plus X” control unit, press and hold the “Upgrade” button. While holding the button, unplug the USB cable from the PC and then plug it back in. The software should detect the device entering “SIMSONN Flasher update mode”. In the software go to: Settings → Update → Manual Firmware Update. In the file selector choose: pedals‑firmware → pedals‑plusx.sfu. Click “Start Update” and wait until the firmware is completely written. During this process do not disconnect the USB or close the application. Once the update is finished (you’ll get a success prompt or the unit will reboot), unplug and re‑plug the USB then test the pedal device to confirm everything works correctly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T03:06:30Z",
+      "updated_at": "2025-12-28T03:06:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

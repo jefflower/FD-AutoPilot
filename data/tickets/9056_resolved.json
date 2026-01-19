@@ -1,0 +1,134 @@
+{
+  "id": 9056,
+  "subject": "Hey usb handbrake",
+  "description_text": "Do you sell the control box for usb handbrake mine is broken doesnt get\r\nrecongised by pc anymore.\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-24T06:36:47Z",
+  "updated_at": "2025-12-30T11:38:18Z",
+  "requester_id": 158005185367,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015058055,
+      "body_text": "Hi Immanuel Podesta,  Please download FreeJoy and take a screenshot of the interface for us to check. I will determine whether it’s a software configuration issue or a hardware problem. If it’s a configuration issue, it can be restored.      https://drive.google.com/file/d/1hnHNudj0VhE6xr7ypu-KeEDuVrlVHVg9/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-12-25T03:54:15Z",
+      "updated_at": "2025-12-25T03:54:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015081255,
+      "body_text": "On Thu, 25 Dec 2025, 1:54 pm support@simsonn.com, ",
+      "user_id": 158005185367,
+      "created_at": "2025-12-26T02:40:26Z",
+      "updated_at": "2025-12-26T02:40:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015081522,
+      "body_text": "its working now thanks so that means it was a software error?/\r\n\r\nOn Thu, Dec 25, 2025 at 1:54 PM support@simsonn.com ",
+      "user_id": 158005185367,
+      "created_at": "2025-12-26T03:03:20Z",
+      "updated_at": "2025-12-26T03:03:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015152898,
+      "body_text": "Its working but iam not able to calibrate it. So its at half strenght\r\n\r\nOn Fri, 26 Dec 2025, 1:02 pm Immanuel Podesta, <immanuelpodesta@gmail.com>\r\nwrote:\r\n\r\n> its working now thanks so that means it was a software error?/\r\n>\r\n> On Thu, Dec 25, 2025 at 1:54 PM support@simsonn.com ",
+      "user_id": 158005185367,
+      "created_at": "2025-12-28T07:16:40Z",
+      "updated_at": "2025-12-28T07:16:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015166368,
+      "body_text": "Hi Immanuel Podesta,  You need to use Freejoy 1.7.0, not 1.7.1.            https://drive.google.com/file/d/1hnHNudj0VhE6xr7ypu-KeEDuVrlVHVg9/view?usp=drive_link ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T15:53:31Z",
+      "updated_at": "2025-12-28T15:53:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015184049,
+      "body_text": "Opened the one u sent still cant config full use of handbrake .\r\n\r\nThats with handbrake at full\r\n\r\nI recalibrated and loaded the hb file you sent . Still the same\r\n\r\nOn Mon, 29 Dec 2025, 1:53 am support@simsonn.com, ",
+      "user_id": 158005185367,
+      "created_at": "2025-12-29T08:55:09Z",
+      "updated_at": "2025-12-29T08:55:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015185704,
+      "body_text": "On Mon, 29 Dec 2025, 6:54 pm Immanuel Podesta, <immanuelpodesta@gmail.com>\r\nwrote:\r\n\r\n> Opened the one u sent still cant config full use of handbrake .\r\n>\r\n> Thats with handbrake at full\r\n>\r\n> I recalibrated and loaded the hb file you sent . Still the same\r\n>\r\n> On Mon, 29 Dec 2025, 1:53 am support@simsonn.com, \nAttachment(s) that exceed the 20 MB limit have been dropped. Please reach out to the sender.",
+      "user_id": 158005185367,
+      "created_at": "2025-12-29T09:18:52Z",
+      "updated_at": "2025-12-29T09:18:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015244606,
+      "body_text": "Hi Immanuel Podesta,     After opening Freejoy 1.7.0, click Read Config from Device once to configure the handbrake. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T09:27:33Z",
+      "updated_at": "2025-12-30T09:27:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015244940,
+      "body_text": "Still the same\r\n\r\nOn Tue, 30 Dec 2025, 7:27 pm support@simsonn.com, ",
+      "user_id": 158005185367,
+      "created_at": "2025-12-30T09:37:27Z",
+      "updated_at": "2025-12-30T09:37:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015245037,
+      "body_text": "I reset everything and did all stels again what you told me to do and now\r\nits even less power\r\n\r\nOn Tue, 30 Dec 2025, 7:27 pm support@simsonn.com, ",
+      "user_id": 158005185367,
+      "created_at": "2025-12-30T09:40:25Z",
+      "updated_at": "2025-12-30T09:40:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015246125,
+      "body_text": "Hi Immanuel Podesta,     You only need to calibrate once: click Read Config from Device, then Axis, and then the Calibrate button. Pull the handbrake a few times with normal force, click Stop Calibration, and finally click Write Config to Device. After that, test whether the blue progress bar reaches 100%. If it does, the calibration is successful. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T10:24:56Z",
+      "updated_at": "2025-12-30T10:24:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015249466,
+      "body_text": "Thanks so much its working now .\r\n\r\nOn Tue, 30 Dec 2025, 8:25 pm support@simsonn.com, ",
+      "user_id": 158005185367,
+      "created_at": "2025-12-30T11:20:29Z",
+      "updated_at": "2025-12-30T11:20:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

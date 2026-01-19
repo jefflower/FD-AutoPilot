@@ -1,0 +1,64 @@
+{
+  "id": 2251,
+  "subject": "Pro plus pedals",
+  "description_text": "Hi,\r\n\r\nI recently recieved my pro plus pedals a couple of days ago. There isnt any additional springs in the kit for the brake pedal? Should there be any?\r\n\r\nMany thanks\r\nDanny\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-03T20:25:40Z",
+  "updated_at": "2025-08-06T01:13:54Z",
+  "requester_id": 158002585236,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006240877,
+      "body_text": "Hi Dannyhughes78,    Please provide your order number and we will look it up for you.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-05T06:38:07Z",
+      "updated_at": "2025-08-05T06:38:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006242555,
+      "body_text": "Hi my order number is SSN2104 \r\n\r\n\r\n> ",
+      "user_id": 158002585236,
+      "created_at": "2025-08-05T09:10:32Z",
+      "updated_at": "2025-08-05T09:10:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006247555,
+      "body_text": "Hi Dannyhughes78,    Hello, the Pro Plus pedals you purchased do not come with additional springs. Only the Plus X pedals come with additional springs.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-05T10:30:44Z",
+      "updated_at": "2025-08-05T10:30:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006286946,
+      "body_text": "Ok no problem thank you. \r\n\r\nIs there anyway of making the brake pedal softer? Even with the red elastomers fitted the brake pedal is very very hard \r\n\r\nThank you\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158002585236,
+      "created_at": "2025-08-05T15:01:24Z",
+      "updated_at": "2025-08-05T15:01:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006303128,
+      "body_text": "Hi Dannyhughes78, We noticed your feedback that the red damper feels too stiff. Please note that it is a silicone damper, available in standard hardness levels of 60HA, 70HA, and 80HA. The stiffness you feel may be due to a short travel setting. Please refer to the following guide for adjustment.      Our brake spring incorporates a 10 mm travel-limiting spacer, designed primarily to simulate the brake travel of Formula 1 cars.    With the spacer installed, it delivers the short-travel feel typical of F1 braking.    With the spacer removed, the brake pedal travel is increased, making it better suited for rally racing.    Specifications:    Spring length: 16.5 mm    Spacer thickness: 10 mm    Effective travel with spacer: (16.5−10)÷2=3.25 mm(16.5 - 10) ÷ 2 = 3.25\\text{ mm}(16.5−10)÷2=3.25 mm   Effective travel without spacer: 16.5÷2=8.25 mm16.5 ÷ 2 = 8.25\\text{ mm}16.5÷2=8.25 mm   Removing the spacer significantly increases the spring’s working travel, providing a softer pedal feel that is more suitable for prolonged braking and the varied conditions of rally racing.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-06T01:13:54Z",
+      "updated_at": "2025-08-06T01:13:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

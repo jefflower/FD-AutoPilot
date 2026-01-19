@@ -1,0 +1,44 @@
+{
+  "id": 9935,
+  "subject": "",
+  "description_text": "Hey I ordered a base plate Christmas Eve and my buddy ordered a set of\r\npedals like 3 days ago and his is already in Chicago and mine still says\r\nthe are in LA? Just trying to see what I need to do here is my order number\r\nSSN5255\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-04T17:11:11Z",
+  "updated_at": "2026-01-15T08:33:40Z",
+  "requester_id": 158008898344,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016104575,
+      "body_text": "Hi Raymond Haines,     The tracking information has been updated. Please check the latest status. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T09:42:57Z",
+      "updated_at": "2026-01-07T09:42:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016104799,
+      "body_text": "I have received it thank you\r\n\r\nOn Wed, Jan 7, 2026 at 4:43 AM service@simsonn.com ",
+      "user_id": 158008898344,
+      "created_at": "2026-01-07T09:44:43Z",
+      "updated_at": "2026-01-07T09:44:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017171286,
+      "body_text": "Hi Raymond Haines,  You're welcome. Thank you for purchasing our product. Should you have any questions in the future, please feel free to contact us. We will address them promptly.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T08:33:40Z",
+      "updated_at": "2026-01-15T08:33:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "id": 1185,
+  "subject": "VAM haptics issue",
+  "description_text": "Hi Simsonn, I ordered 2 VAM pros with a control plus x box. I've installed them and they work great. However when I play iracing, randomly within 30 mins, I wouldn't get anymore haptic feedback, I would go to the simsonn manager and press the 'vibration' button to test, and in both my VAMs, it doesn't do anything. The simsonn manager still displays them both as connected and powered on. This would only be fixed, if I disconnect the control box to the pc usb and reconnect. Sometimes also the haptics both just get stuck and vibrate constantly, in this case I would have to disconnect the control box to the pc uab and reconnect to fix it. Is there any solution? I suspect maybe the firmware on the control box might be losing connection or something.",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-07-04T01:12:19Z",
+  "updated_at": "2025-07-05T09:00:23Z",
+  "requester_id": 158001830687,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004445115,
+      "body_text": "Hi aиᴅʀᴇᴡ Hang,    We'll notify our tech support to help you see what's going on, and you can provide more information and take a video if you experience this issue again. We're sorry for the trouble we caused you, and we'll try to fix it for you, as soon as possible.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-04T13:29:36Z",
+      "updated_at": "2025-07-04T13:29:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447356,
+      "body_text": "Hi simsonn, This issue happens all the time, it doesn't last more then 15 minute before the haptics stop working. Which is must then reconnect the usb to the control box to get it working again. I have attached 2 photos and a dropbox link to view the video, the 2 photos are the settings of my simsonn manager. Video link: https://www.dropbox.com/scl/fi/9d4vsduxbbtbucjx7faur/20250705_150604.mp4?rlkey=ujqx6sfhbv04gk2yrat6jfwmb&st=dcs5dfo0&dl=0 The video: in the video, simsonn manager still shows the pedal control box as connected and the haptics has power, however when I press the vibration button, nothing happens. I then disconnect the usb to the plus x control box and reconnect, you can see in the simsonn manager that it is now disconnected and reconnects, once it it reconnected, when I press the vibration button, both the haptics work. ",
+      "user_id": 158001830687,
+      "created_at": "2025-07-05T05:17:08Z",
+      "updated_at": "2025-07-05T05:17:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447409,
+      "body_text": "Hi aиᴅʀᴇᴡ Hang,    Is your pedal controller connected to the computer through a powered USB hub, or is it plugged directly into a USB 3.0 port on the back of your PC?  We recommend first checking for any unstable external devices or insufficient USB power supply, as our internal testing and customer feedback have not shown similar issues.  Additionally, we suggest using SimHub version 9.9.3 from the official website, which fully supports our pedals and provides telemetry compatibility with over 100 popular racing games.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-05T06:12:21Z",
+      "updated_at": "2025-07-05T06:12:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447412,
+      "body_text": "Hi Simsonn,\r\n\r\nIt is connected to a USB 2.0 behind my pc and I am not using a USB hub.\r\n\r\nRegarding Simhub, yes my version of simhub is 9.9.3.\r\n________________________________\r\n",
+      "user_id": 158001830687,
+      "created_at": "2025-07-05T06:16:12Z",
+      "updated_at": "2025-07-05T06:16:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447436,
+      "body_text": "Hi aиᴅʀᴇᴡ Hang,    Are you experiencing the same issue while using SIMHUB version 9.9.3?",
+      "user_id": 158000445778,
+      "created_at": "2025-07-05T06:36:53Z",
+      "updated_at": "2025-07-05T06:36:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447494,
+      "body_text": "Yes I am\r\n________________________________\r\n",
+      "user_id": 158001830687,
+      "created_at": "2025-07-05T06:40:43Z",
+      "updated_at": "2025-07-05T06:40:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447512,
+      "body_text": "Hi aиᴅʀᴇᴡ Hang,    Please try closing the Simsonn Manager software and use only SIMHUB for testing. Let us know if the haptic feedback continues to work properly after running for about 15 minutes.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-05T06:59:42Z",
+      "updated_at": "2025-07-05T06:59:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447607,
+      "body_text": "Hi Simsonn, just did a 50 min session without any issues!.\r\n\r\nIt seems simhub and the simsonn manager are having inteference issues.\r\n\r\nLets hope this continues, but that seems to have fixed it.\r\n\r\nThanks so much\r\n________________________________\r\n",
+      "user_id": 158001830687,
+      "created_at": "2025-07-05T08:08:33Z",
+      "updated_at": "2025-07-05T08:08:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447622,
+      "body_text": "Hi aиᴅʀᴇᴡ Hang,  That's right. SIMHUB and SIMSONN Manager should not be open at the same time, as both access the game's telemetry data simultaneously, which can cause conflicts. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-05T08:20:31Z",
+      "updated_at": "2025-07-05T08:20:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447660,
+      "body_text": "",
+      "user_id": 158001830687,
+      "created_at": "2025-07-05T09:00:22Z",
+      "updated_at": "2025-07-05T09:00:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ]
+}

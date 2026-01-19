@@ -1,0 +1,35 @@
+{
+  "id": 10373,
+  "subject": "Brett Galvin - Simsonn Pro Plus - Assetto Corsa",
+  "description_text": "Hi Team,\n\nI purchased the Pro Plus and can see it active in the Simsonn Manager.\n\nI was able to initially calibrate the pedals in Assetto Corsa - however after I tested the pedals on track one time, they're not responding in the game. With the settings stuck as below - any ideas?\n\n[image: image.png]\n\nWith kind regards,\n\nBrett",
+  "status": 4,
+  "priority": 2,
+  "created_at": "2026-01-09T06:20:39Z",
+  "updated_at": "2026-01-11T01:18:44Z",
+  "requester_id": 158008998917,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016651991,
+      "body_text": "Hi Brett Galvin, Locate the upgrade button on the PlusX controller and hold it down continuously, then reconnect the USB cable. Once Simsonn Manager shows that it has entered firmware upgrade mode, you can release the button. Next, follow these steps: In the software, go to Settings → Update → Manual Firmware Update → pedals-firmware → pedals-plusx.sfu. After the update is completed, connect the USB to the USB 3.0 blue port at the back of your PC, then plug in the power cable. Test the device again to ensure it is functioning properly.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-10T02:55:18Z",
+      "updated_at": "2026-01-10T02:55:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016704043,
+      "body_text": "Awesome, that worked, thank you so much.\n\nOn Sat, Jan 10, 2026 at 1:55 PM support@simsonn.com",
+      "user_id": 158008998917,
+      "created_at": "2026-01-10T11:41:32Z",
+      "updated_at": "2026-01-10T11:41:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

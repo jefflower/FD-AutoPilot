@@ -1,0 +1,35 @@
+{
+  "id": 8266,
+  "subject": "Pro X 踏板7号订单仍未发货",
+  "description_text": "这是为什么？订单号 #SSN4509 请尽快给我一个更新，否则我可能不得不申请退款并在其他地方订购。谢谢",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-15T07:05:37Z",
+  "updated_at": "2025-12-22T12:08:16Z",
+  "requester_id": 158007798416,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014499808,
+      "body_text": "您好 Peter Apers，我们对因美国仓库底板库存短缺造成的延迟深表歉意。我们将在今天收到货品后立即发货。",
+      "user_id": 158001343601,
+      "created_at": "2025-12-15T07:44:59Z",
+      "updated_at": "2025-12-15T07:44:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014532568,
+      "body_text": "发货后请通知我。谢谢。",
+      "user_id": 158007798416,
+      "created_at": "2025-12-15T18:37:51Z",
+      "updated_at": "2025-12-15T18:37:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

@@ -1,0 +1,24 @@
+{
+  "id": 10339,
+  "subject": "Order #SSN5278",
+  "description_text": "Hello.\r\n\r\nDo you have any updates on my order? It has been confirmed since December 25th and payment was made on January 2nd through Klarna.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-08T20:16:35Z",
+  "updated_at": "2026-01-15T06:09:31Z",
+  "requester_id": 158008988317,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017163911,
+      "body_text": "Hi Bo Flod,    We apologize for the delay. Two shipments destined for our German warehouse have been affected by heavy snowfall in Europe, causing road blockages and delivery delays. We will expedite delivery or explore alternative logistics channels to ship your order from China as soon as possible.  Compensation will be provided based on the delay after your order is completed. We apologize for the inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T06:09:31Z",
+      "updated_at": "2026-01-15T06:09:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

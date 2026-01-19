@@ -1,0 +1,96 @@
+{
+  "id": 8114,
+  "subject": "Re: Pedal Pressure Issue",
+  "description_text": "Hello,\r\n\r\nThis is Joseph Danny Vance, we have been speaking back and forth regarding a pedal pressure issue. I am emailing from a different email.\r\n\r\nAttached you will find the google doc with the information that you requested. I was unable to attach the videos to the google doc so I am attaching the videos to this email.\r\n\r\nIf you could please reply all once you have reviewed my information, then I will be copied on my personal email (slidingbull@gmail.com)\r\n\r\nhttps://docs.google.com/document/d/102-v2I43aGVxb7oOhcBhIl391ub-lNYL49UlVnVzHM4/edit?usp=sharing\r\n\r\nThank you,\r\n\r\nJoseph Danny Vance\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-12T22:37:21Z",
+  "updated_at": "2026-01-15T04:27:13Z",
+  "requester_id": 158007790913,
+  "responder_id": 158000445778,
+  "cc_emails": [
+    "slidingbull@gmail.com"
+  ],
+  "conversations": [
+    {
+      "id": 158014427421,
+      "body_text": "Hi Valerie Vance,  I have just downloaded the attachment you provided, but I’m unable to open it because the upload was not completed. In addition, our after-sales support system does not support attachments larger than 20MB, which is why we ask customers to send files via Google Drive so we can review them properly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-13T02:57:15Z",
+      "updated_at": "2025-12-13T02:57:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014573419,
+      "body_text": "Hello,\r\n\r\nI will ask my daughter for assistance. I’m hoping she can help. I sent it in a zip file so it shouldn’t have been that large. When she gets home I will ask her to helps me.\r\n\r\nThank you\r\n\r\nValerie\r\n\r\n\r\nSent from my iPhone\r\n\r\n",
+      "user_id": 158007790913,
+      "created_at": "2025-12-16T14:15:39Z",
+      "updated_at": "2025-12-16T14:15:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014589259,
+      "body_text": " I can also send it to your Instagram. I tried messaging you on there as well.\r\n\r\n\r\n> ",
+      "user_id": 158007664702,
+      "created_at": "2025-12-16T18:11:29Z",
+      "updated_at": "2025-12-16T18:11:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014621699,
+      "body_text": "Hi Valerie Vance,     First, please ensure you are using SIMSONN Manager 2.1.2. Also, connect only one SIMSONN control box at a time—do not connect multiple units simultaneously.    For Pro series control boxes: If the version is 1.7.1, you can update the firmware via: Settings → Update → Manual Firmware Update → pedals-firmware → pedals-plus.sfu (This method does not apply to 1.7.0 control boxes.)    For PlusX pedals: Only the plusx.sfu firmware can be used for updates.     https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T10:21:40Z",
+      "updated_at": "2025-12-17T10:21:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015229865,
+      "body_text": "Hello,\r\n\r\nI am using the most updated and proper firmware. It has worked fine. There’s something wrong with the throttle and the clutch ears built the same way, so once I unhook the throttle and put the clutch port into the throttle port the clutch works fine as the throttle. It leads me to believe there is a problem in the hardware on the throttle. I believe it is the pressure switch. Is there a way to send me a new throttle or send me the parts to fix my existing one. Or a link to purchase my own parts.\r\n\r\nThank you\r\n\r\nValerie and Danny Vance\r\n\r\n\r\n\r\nSent from my iPhone\r\n\r\n",
+      "user_id": 158007790913,
+      "created_at": "2025-12-29T23:29:38Z",
+      "updated_at": "2025-12-29T23:29:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015245034,
+      "body_text": "Hi Valerie Vance,  Please provide your order number. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T09:40:22Z",
+      "updated_at": "2025-12-30T09:40:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017125940,
+      "body_text": "I am not able to figure out my order number. I have looked everywhere. I’m not sure how to do it. I think I made the purchase through PayPal and I believe I ordered it directly from you at this point I don’t care about the warranty. I just need the part. Let me know what the part cost so I can buy it either way. I just want to fix my pedals. Please help me make this easy. It’s already been months. \r\n\r\n> ",
+      "user_id": 158007664702,
+      "created_at": "2026-01-14T17:25:24Z",
+      "updated_at": "2026-01-14T17:25:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017162080,
+      "body_text": "Hi Valerie Vance,     Could you please record a complete video and upload it to Google Drive? Then send me the link and set the sharing permission to “Anyone with the link can view.” The video should include the full process below (including zeroing the pedal signal by following the steps inside the Offset pop-up dialog, and then Calibration/Calibrate):    Click Offset, and follow the steps in the pop-up dialog to zero the pedal signal;    Click Calibrate, then press each pedal with normal force;    Click Save;    After calibration, please test the pedals again — the blue progress bar should move smoothly from 0% to 100%. Only then is the calibration successful.    Also, please provide your contact name, phone number, and shipping address, and let me know which platform you purchased from (Amazon / AliExpress / our official website, etc.). I will ask the corresponding team to arrange a replacement throttle pressure sensor for you.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-15T04:27:13Z",
+      "updated_at": "2026-01-15T04:27:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

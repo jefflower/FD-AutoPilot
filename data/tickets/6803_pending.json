@@ -1,0 +1,64 @@
+{
+  "id": 6803,
+  "subject": "Order question",
+  "description_text": "Hello Simsonn team,\r\n\r\nI would like to know about my order no:  #SSN3556 made on 16th of November,\r\nI received elastomers and spring but still no pedals, could you please let\r\nme know when they will be shipped ?\r\np.s. I am currently without pedals and getting a bit nervous about not\r\nbeing able to drive... :-)\r\n\r\nThank you in advance and best regards\r\nMatjaz Trbovc\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-26T16:48:08Z",
+  "updated_at": "2025-12-05T11:05:06Z",
+  "requester_id": 158007342778,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012994502,
+      "body_text": "Hi Matjaž Trbovc,  We sincerely apologize for the inconvenience caused by the logistics delay. Our German warehouse is currently out of stock, with restocking expected to be completed by the 28th. At that time, we will ship your order via DHL and refund the additional shipping fees.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-27T06:58:13Z",
+      "updated_at": "2025-11-27T06:58:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013044020,
+      "body_text": "That's great, thank you very much.\r\n\r\nOn Thu, Nov 27, 2025 at 7:58 AM service@simsonn.com ",
+      "user_id": 158007342778,
+      "created_at": "2025-11-28T06:44:33Z",
+      "updated_at": "2025-11-28T06:44:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013330998,
+      "body_text": "Hello again,\r\n\r\nCould you please check about my order as the DHL tracking shows delivered\r\n(but in Austria!)? Please check the tracking number or the delivery\r\naddress...\r\n\r\nBest regards\r\nMatjaz Trbovc\r\n\r\nOn Fri, Nov 28, 2025 at 7:44 AM Matjaž Trbovc <matjaz.trbovc@gmail.com>\r\nwrote:\r\n\r\n> That's great, thank you very much.\r\n>\r\n> On Thu, Nov 27, 2025 at 7:58 AM service@simsonn.com ",
+      "user_id": 158007342778,
+      "created_at": "2025-12-03T15:25:53Z",
+      "updated_at": "2025-12-03T15:25:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013476992,
+      "body_text": "Hello,\r\n\r\nI got the pedals yesterday, sorry for the previous email (was probably just\r\na wrong tracking number...).\r\n\r\nBest regards\r\nMatjaz Trbovc\r\n\r\nOn Wed, Dec 3, 2025 at 4:25 PM Matjaž Trbovc <matjaz.trbovc@gmail.com>\r\nwrote:\r\n\r\n> Hello again,\r\n>\r\n> Could you please check about my order as the DHL tracking shows delivered\r\n> (but in Austria!)? Please check the tracking number or the delivery\r\n> address...\r\n>\r\n> Best regards\r\n> Matjaz Trbovc\r\n>\r\n> On Fri, Nov 28, 2025 at 7:44 AM Matjaž Trbovc <matjaz.trbovc@gmail.com>\r\n> wrote:\r\n>\r\n>> That's great, thank you very much.\r\n>>\r\n>> On Thu, Nov 27, 2025 at 7:58 AM service@simsonn.com ",
+      "user_id": 158007342778,
+      "created_at": "2025-12-05T09:41:03Z",
+      "updated_at": "2025-12-05T09:41:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013489886,
+      "body_text": "Hi Matjaž Trbovc,    I apologize for not responding to you promptly. I'm glad to hear you've received it. This is the correct tracking link for your shipment—our warehouse provided the incorrect one. I'm sorry for any confusion this may have caused.  https://www.dhl.com/us-en/home/tracking.html?tracking-id=CE326634278DE",
+      "user_id": 158001343601,
+      "created_at": "2025-12-05T11:05:02Z",
+      "updated_at": "2025-12-05T11:05:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

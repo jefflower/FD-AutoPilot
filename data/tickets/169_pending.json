@@ -1,0 +1,84 @@
+{
+  "id": 169,
+  "subject": "Portuguese customs",
+  "description_text": "Hello,\r\n\r\nI'm considering purchasing a set of your pedals. I’m located in Portugal\r\nand would like to know if there’s a chance the pedals could be held by\r\nPortuguese customs, since your company is based in China.\r\nDo you ship from within the European Union in such cases, or would the\r\norder be sent directly from China?\r\n\r\nThank you in advance for your help.\r\n\r\nBest regards,\r\nDaniel Costa\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-04T20:45:27Z",
+  "updated_at": "2025-06-11T10:31:16Z",
+  "requester_id": 158001224212,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002430776,
+      "body_text": "Hi Carlos Daniel,  Hello, which model do you need? ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-05T04:28:31Z",
+      "updated_at": "2025-06-05T04:28:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002434821,
+      "body_text": "Im looking for pro plus load cell\r\n\r\nA quinta, 5/06/2025, 05:28, service@simsonn.com ",
+      "user_id": 158001224212,
+      "created_at": "2025-06-05T07:11:12Z",
+      "updated_at": "2025-06-05T07:11:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002539786,
+      "body_text": "Hi Carlos Daniel,     Please take a look at this latest pedal model — it features a 200kg sensor and also supports a vibration module. The vibration module and power supply need to be purchased separately. Feel free to explore and learn more about it.    https://www.simsonn.com/products/simsonn-pro-plus-x-pedals",
+      "user_id": 158000445778,
+      "created_at": "2025-06-06T03:36:04Z",
+      "updated_at": "2025-06-06T03:36:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002640740,
+      "body_text": "But you didnt answer my question.\r\n\r\nA sexta, 6/06/2025, 04:36, service@simsonn.com ",
+      "user_id": 158001224212,
+      "created_at": "2025-06-06T16:04:54Z",
+      "updated_at": "2025-06-06T16:04:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002841252,
+      "body_text": "Hi Carlos Daniel,  Our PlusX pedals are expected to arrive at the German warehouse around June 15th. You can purchase the pedals directly from the German warehouse and enjoy tax-free benefits. Currently, the VAM vibration motors are only available from the China warehouse and are sold without tax; however, due to their low value, the customs duties are minimal. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-09T03:20:56Z",
+      "updated_at": "2025-06-09T03:20:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002861658,
+      "body_text": "and about the pro plus load cell ?\r\n\r\n\r\nservice@simsonn.com ",
+      "user_id": 158001224212,
+      "created_at": "2025-06-09T22:13:20Z",
+      "updated_at": "2025-06-09T22:13:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002930920,
+      "body_text": "Hi Carlos Daniel,  Pro Plus pedals still have some silver versions in the German warehouse, but no more black ones. You can buy it without any problem, it doesn't require any additional taxes.",
+      "user_id": 158001343601,
+      "created_at": "2025-06-11T10:31:15Z",
+      "updated_at": "2025-06-11T10:31:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

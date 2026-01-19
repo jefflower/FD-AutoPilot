@@ -1,0 +1,54 @@
+{
+  "id": 1449,
+  "subject": "Simsonn Manager Update",
+  "description_text": "Good morning,\r\n\r\nI am having issues updating my Manager to 2.0.5.  The update will download, but as soon as I select update, the program turns off.  After waiting for a few mintues, I select the program to turn it on and it's asking to download the update again.  Is their a way to manually update or can you send me a link to download the update and install?\r\n\r\nThank you,\r\n\r\nJames Waring\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-11T13:41:05Z",
+  "updated_at": "2025-07-18T06:43:30Z",
+  "requester_id": 158002078379,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004639227,
+      "body_text": "Hi，James Waring，  ​You can directly download and install version 2.0.8.  https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-07-12T06:55:29Z",
+      "updated_at": "2025-07-12T06:55:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005144916,
+      "body_text": "Hi James Waring,    I noticed you purchased the VAM Pro 3 pcs Set and Pro X Ultra control boxes, what pedals are you using now. If it's not a Pro X pedal, we'll replace it with a Plus X control box and refund the difference since they work the same for pedals other than the Pro X.  Since we don't plan on selling the Pro X Ultra box separately, we don't have a packaging solution for it, so choosing the Plus X box will make it easier for us to ship it in one package with the VAM Pro Set.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-18T03:04:45Z",
+      "updated_at": "2025-07-18T03:04:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005144924,
+      "body_text": "I have the Pro X pedals currently.\r\n\r\nThank You,\r\n\r\nJames Waring, NRP, CCP, A.A.,A.S.\r\n(352) 255-1064\r\n\r\n“Clients do not come first. Employees come first. If you take care of your\r\nemployees, they will take care of the clients.” - Sir Richard Branson\r\n\r\n\r\nOn Thu, Jul 17, 2025 at 11:04 PM service@simsonn.com ",
+      "user_id": 158002078379,
+      "created_at": "2025-07-18T03:06:29Z",
+      "updated_at": "2025-07-18T03:06:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005146090,
+      "body_text": "Hi James Waring,     Please download the latest version of SIMSONN Manager 2.0.9. For telemetry, you can use either our official software or SIMHUB 9.9.3 — both are compatible with our pedal system.    https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-07-18T06:43:30Z",
+      "updated_at": "2025-07-18T06:43:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

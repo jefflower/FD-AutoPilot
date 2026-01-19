@@ -1,0 +1,84 @@
+{
+  "id": 6694,
+  "subject": "Original pro x control box compatible with haptics?",
+  "description_text": "I have the simsonn pro x pedals, I am adding the haptics to it and I am trying to understand if I need the ultra control box or not? I am currently on the latest software/firmware on my pro x control box and I have a tab for haptics setup. But the description on the webpage for the haptics says a new control box is needed for the original pro x pedals?\r\nSent from my iPhone\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-25T03:40:57Z",
+  "updated_at": "2025-11-28T04:10:36Z",
+  "requester_id": 158007314889,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012858423,
+      "body_text": "Hi Chris Ellsworth,    Yes, a new control box is required.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-25T04:04:00Z",
+      "updated_at": "2025-11-25T04:04:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012882101,
+      "body_text": "My current control box has plug in locations for the haptics and my software/firmware is up to date with tabs for haptic control, if my current control box is not compatible why does it have the ports to plug in the haptics? \r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158007314889,
+      "created_at": "2025-11-25T13:23:52Z",
+      "updated_at": "2025-11-25T13:23:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012942697,
+      "body_text": "Hi Chris Ellsworth,  Please take a photo of your main control box and the software interface, and I’ll help you verify the issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T11:28:35Z",
+      "updated_at": "2025-11-26T11:28:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012984474,
+      "body_text": "\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158007314889,
+      "created_at": "2025-11-26T23:46:55Z",
+      "updated_at": "2025-11-26T23:46:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012984581,
+      "body_text": " This particular photo is from the Internet and is not mine, however in this persons photo of their simsonn manager they have some data displayed that I don’t have. I have checked for updates and there are no updates I see, but I would very much like to have these settings for my pedals  \r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158007314889,
+      "created_at": "2025-11-26T23:51:19Z",
+      "updated_at": "2025-11-26T23:51:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012999249,
+      "body_text": "老版本pro x控制盒",
+      "user_id": 158001343601,
+      "created_at": "2025-11-27T08:33:06Z",
+      "updated_at": "2025-11-27T08:33:06Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158013038062,
+      "body_text": "Hi Chris Ellsworth,  Because the ProX hardware is somewhat special, we need more time to test the accuracy of the kg weight conversion. Currently, the kg display is only supported on the ProX Ultra mainboard and PlusX control box. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-28T04:10:35Z",
+      "updated_at": "2025-11-28T04:10:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

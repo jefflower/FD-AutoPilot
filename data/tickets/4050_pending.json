@@ -1,0 +1,44 @@
+{
+  "id": 4050,
+  "subject": "Pro X Pedal Connection Issue",
+  "description_text": "Hello, I recently purchased the VAM Pro pedal haptic motors for my Pro X\r\npedals. I installed the new control box and the pedal motors, but am having\r\nconnection issues. I don’t believe anything is dysfunctional, at least to\r\nmy knowledge, because I did have them working at one point. I originally\r\ncouldn’t get them to connect to the Simsonn Manager Software, but fixed the\r\nissue by hitting the upgrade button. Everything was working smoothly until\r\nI decided to update the Simsonn Manager software to its current version and\r\nnow my pedals are not detected at all once again. I don’t believe it to be\r\na software issue either, as my other pedal software FreeJoy I was using\r\nbefore I needed the Simsonn manager for the pedal motors does not detect\r\nthem either. Any help on fixing the issue is greatly appreciated. I’ve\r\nattached some images of my issue to hopefully assist with the effort. Thank\r\nyou!\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-22T22:02:34Z",
+  "updated_at": "2025-09-24T23:57:31Z",
+  "requester_id": 158003627741,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009235682,
+      "body_text": "Hi Brenden Moennig,     You can try performing a manual firmware recovery using SIMSONN Manager 2.1.0 by following these steps:    Enter Firmware Upgrade Mode    Press and hold the Upgrade button on the PlusX control box.    While holding the button, reconnect the USB cable.    The software will indicate that the device has successfully entered firmware upgrade mode.      Manually Restore the Firmware    In the software, navigate to: Settings → Update → Manual Firmware Update    Select the firmware file: pedals-firmware-pedals-plusx.sfu    Wait for the update to complete, then reconnect the USB and power.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-24T15:03:50Z",
+      "updated_at": "2025-09-24T15:03:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009240905,
+      "body_text": "I would just like to say you guys genuinely have the best support team out\r\nthere. Every time I reach out not only do you always have the solution, but\r\nit’s in an efficient and timely manner. I’ll be leaving a 5 star review\r\nwith my experience attached to it. I’ve purchased your universal steering\r\nhub, pro x pedals, 6 speed shifter, and vam pro motors and have not had a\r\nsingle bad experience. I look forward to more Simsonn products in the\r\nfuture. If you guys are ever looking for an ambassador, I’d would have 0\r\nproblem shouting out such an amazing company. Thanks again for the fix and\r\nhave a wonderful day, cheers!\r\n\r\nOn Wed, Sep 24, 2025 at 10:04 AM service@simsonn.com ",
+      "user_id": 158003627741,
+      "created_at": "2025-09-24T17:00:57Z",
+      "updated_at": "2025-09-24T17:00:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009256429,
+      "body_text": "Hi Brenden Moennig,     Thank you so much for your support! We’ll keep working hard to make our products and service even better!",
+      "user_id": 158000445778,
+      "created_at": "2025-09-24T23:57:31Z",
+      "updated_at": "2025-09-24T23:57:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 5646,
+  "subject": "VS: firmware issues",
+  "description_text": "Hi simsonn,\r\n\r\ni have bought a pair of your pedals. whenever i open simsonn manager it says i have an old Version / firmware . when i scan the QR code on the box i comes with this text. SPRO-_V28WF_0324\r\n\r\nwhen i plug the usb in its called SIMSONN v1.7.1\r\n\r\nI think i need the right sfu file.\r\n\r\nCan you send me this\r\n\r\nbest regards\r\nRasmus Holm\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-04T20:19:08Z",
+  "updated_at": "2025-11-05T01:45:13Z",
+  "requester_id": 158006564016,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011765169,
+      "body_text": "Hi Rasmus Holm,  Have you downloaded the SIMSONN Manager 2.1.2 software? If the interface shows “Version too old, not supported,” please go to Settings → Update → Manual Firmware Update → pedals-firmware-plus.sfu to update the firmware. Once the update is complete, please be sure to recalibrate the pedals, as they will not function properly in games without calibration.      https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-11-05T01:45:13Z",
+      "updated_at": "2025-11-05T01:45:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

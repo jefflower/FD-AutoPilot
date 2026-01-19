@@ -1,0 +1,64 @@
+{
+  "id": 1866,
+  "subject": "VAT Inquiry for Austria & Small Typo on Product Page",
+  "description_text": "Dear Simsonn Team,\r\n\r\nI’m interested in purchasing the Plus X pedal set and would like to ask about VAT handling for deliveries to Austria. Is VAT already included at checkout, or will I need to pay it separately upon delivery? I’d appreciate some clarification to better understand the full cost before ordering.\r\n\r\nAlso, while browsing the product page, I noticed a small typo in Section 2 – Shipping Choices, in the table. The word \"weight\" appears to be misspelled as \"weiht\". Just wanted to bring this to your attention in case you’d like to correct it.\r\n\r\nThanks a lot for your help, and I’m looking forward to your response!\r\n\r\nBest regards,\r\nDiart Tahiri\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-24T14:41:55Z",
+  "updated_at": "2025-07-30T07:40:19Z",
+  "requester_id": 158002314887,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005532488,
+      "body_text": "Hi Diart Tahiri,    Thank you for pointing that out! We have made the correction. Plus X from Austria will be shipped from our warehouse in Germany, but only the silver version is currently available at the German warehouse.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-25T08:38:13Z",
+      "updated_at": "2025-07-25T08:38:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005532507,
+      "body_text": "No additional VAT tax is required. If shipping from China, there is a slight possibility that tax will be levied during customs clearance, but the probability is very low.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-25T08:40:47Z",
+      "updated_at": "2025-07-25T08:40:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005534898,
+      "body_text": "Hello Simsonn Team,\r\n\r\nI'm planning to purchase the Plus X pedal set around mid-August, and I would really prefer the black version. Will your warehouse in Germany have it in stock by then, or should I expect it to ship from China instead?\r\n\r\nThanks in advance for the information!\r\n\r\nBest regards,\r\nDiart Tahiri\r\n________________________________\r\n",
+      "user_id": 158002314887,
+      "created_at": "2025-07-25T13:38:58Z",
+      "updated_at": "2025-07-25T13:38:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005767748,
+      "body_text": "Hello!\r\nJust checking if my E-mail has been received.\r\n\r\nSent from Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158002314887,
+      "created_at": "2025-07-29T09:40:09Z",
+      "updated_at": "2025-07-29T09:40:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005795919,
+      "body_text": "Hi Diart Tahiri,    There will be a batch of inventory replenishment to the German warehouse in early August, and there will be sufficient inventory in August, so please do not worry.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-30T07:40:19Z",
+      "updated_at": "2025-07-30T07:40:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

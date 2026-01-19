@@ -1,0 +1,24 @@
+{
+  "id": 8432,
+  "subject": "Simsonn Pedal Comparison",
+  "description_text": "Dear Simsonn Team,\r\ni've recently stumbeled upon your pedals and i have a question about them.\r\nWhat exactly is the difference between the pro x and the plus x pedals.\r\nI've seen the obvious things like the damper on the brake padel and the RGB\r\nlights, but i was wondering if there are other differences or if it's just\r\nthese things.\r\nThank you for your answer\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-16T16:15:39Z",
+  "updated_at": "2025-12-17T01:47:21Z",
+  "requester_id": 158007834688,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014609472,
+      "body_text": "Hi Chrisi 31,  PlusX features 12-bit resolution, while ProX Ultra uses 16-bit resolution. ProX Ultra also supports 8 levels of hydraulic adjustment. For ADC sampling, ProX Ultra performs simultaneous (parallel) acquisition of all three pedals, whereas PlusX uses a polling-based sampling method. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T01:47:21Z",
+      "updated_at": "2025-12-17T01:47:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

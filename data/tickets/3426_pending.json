@@ -1,0 +1,24 @@
+{
+  "id": 3426,
+  "subject": "Problem with pedals",
+  "description_text": "Good morning,\r\nI have  recently purchased some of youre pedals, and up until recently they\r\nhave been fantastic, workin great.\r\nHowever they won't reset to zero now and are showing that the pedals are\r\npushed when they aren't, I have reinstalled the software, updated, re\r\ncalibrated, but nothing works.\r\nI have attached an image to show how they are sitting.\r\nMany thanks\r\nBen Moody\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-03T10:06:06Z",
+  "updated_at": "2025-09-03T10:56:11Z",
+  "requester_id": 158004123483,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008023443,
+      "body_text": "Hi Ben Moody,    The white progress bar represents the raw data, and the Plus pedals currently do not have a zeroing function, so this white signal is not the one used directly by the game. The blue progress bar is the signal that is actually used by the game.  We recommend that after calibration, you set a 5% dead zone to ensure proper operation.  If you see a green line, you can use a wire to connect the main control box to any metal screw on the pedal, which helps stabilize the signal.  Please rest assured that your pedals are functioning correctly.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-03T10:56:11Z",
+      "updated_at": "2025-09-03T10:56:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

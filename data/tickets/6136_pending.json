@@ -1,0 +1,44 @@
+{
+  "id": 6136,
+  "subject": "Vam pro",
+  "description_text": "Hi,\r\n\r\nFirst of all i like your products!\r\nOne of my motors have a really bad  knocking sound.\r\nThe other motor is still fine.\r\n\r\nPlease help me.\r\n\r\nKind regards,\r\n\r\nMichael van Eerdt\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-11-14T12:03:51Z",
+  "updated_at": "2025-11-19T11:55:32Z",
+  "requester_id": 158001380899,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012400375,
+      "body_text": "Hi Michael van Eerdt,  Please provide your order number, contact name, phone number, and shipping address, and we can send you a replacement VAM Pro. You may also open the top and check whether the internal spring or washer has shifted. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-16T03:11:51Z",
+      "updated_at": "2025-11-16T03:11:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012401732,
+      "body_text": "Hi,  First of all thank you for sorting this out, my ordernr is SSN1569 . Please send me a replacement to the adress below.  Michael van Eerdt Muntmeester 152 5406BH Uden   Netherlands  0031641302425  Kind regards,  Michael van Eerdt",
+      "user_id": 158001380899,
+      "created_at": "2025-11-16T06:09:37Z",
+      "updated_at": "2025-11-16T06:09:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158012575071,
+      "body_text": "Hi Michael van Eerdt,    This is your logistics tracking link.  https://t.17track.net/en#nums=SF6047065238382",
+      "user_id": 158001343601,
+      "created_at": "2025-11-19T11:55:31Z",
+      "updated_at": "2025-11-19T11:55:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

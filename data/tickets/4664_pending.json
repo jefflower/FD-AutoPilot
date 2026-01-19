@@ -1,0 +1,84 @@
+{
+  "id": 4664,
+  "subject": "Order #SSN2796",
+  "description_text": "Hi\r\nI wanted to know if my order had been shipped?\r\n\r\nI placed my order on October 1 and haven't received any updates yet.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-09T17:06:24Z",
+  "updated_at": "2025-10-16T10:24:35Z",
+  "requester_id": 158005523863,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010186255,
+      "body_text": "Hi bobik,    We sincerely apologize for the delay in shipping your order. We have just concluded our 8-day holiday. Due to the ongoing conflict, shipping options are limited, and we are actively working to find a suitable shipping method for you.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-10T02:37:44Z",
+      "updated_at": "2025-10-10T02:37:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010523913,
+      "body_text": "Hi\r\nAny updates about my order ?\r\n#SSN2796\r\n\r\nпт, 10 жовт. 2025 р. о 05:37 service@simsonn.com ",
+      "user_id": 158005523863,
+      "created_at": "2025-10-15T22:57:43Z",
+      "updated_at": "2025-10-15T22:57:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010549283,
+      "body_text": "Hi bobik,     We sincerely apologise for the delay caused. We have been unable to secure suitable logistics channels for your shipment. Existing options are prohibitively expensive and offer no guaranteed delivery times, with shipping costs for two items amounting to 1600 RMB (equivalent to 225 USD). You may wish to reconsider whether to retain your order. Should you proceed, we would require you to cover the 59 USD shipping charge. Alternatively, we can assist in cancelling your order.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-16T08:45:55Z",
+      "updated_at": "2025-10-16T08:45:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010551371,
+      "body_text": "Ok\r\nSo I would like to cancel my order\r\n\r\nчт, 16 жовт. 2025 р. о 11:46 service@simsonn.com ",
+      "user_id": 158005523863,
+      "created_at": "2025-10-16T09:34:56Z",
+      "updated_at": "2025-10-16T09:34:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010553251,
+      "body_text": "We have arranged a refund for you. Please check your account.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-16T09:41:51Z",
+      "updated_at": "2025-10-16T09:41:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010553283,
+      "body_text": "We apologise for any inconvenience caused. Have a pleasant day. We look forward to welcoming you again.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-16T09:43:25Z",
+      "updated_at": "2025-10-16T09:43:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010556799,
+      "body_text": "Is there anything else I need to do?\r\n\r\nIs there any information on when to expect a refund?\r\n\r\n\r\n\r\n\r\nчт, 16 жовт. 2025 р. о 12:43 service@simsonn.com ",
+      "user_id": 158005523863,
+      "created_at": "2025-10-16T09:59:49Z",
+      "updated_at": "2025-10-16T09:59:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": 3342,
+  "subject": "Re: Shipping Method",
+  "description_text": "Hello Simsonn Team, Awesome thank you for swift response :) Thanks again, Sent from my iPhone On Sep 1, 2025, at 12:47 AM, support@simsonn.com wrote: ﻿ Hello, we will deliver it to you by UPS support@simsonn.com From: Frank Galdamez Date: 2025-09-01 14:32 To: support Subject: Shipping Method Hello Simon Team,\r\n \r\n \r\n I made a purchase from your Simsonn page on Ali Express, I live in US and the product will get shipped from the US based from Alii Express. I wanted to know what shipping methods does your team use? ex: (UPS,Fedex or DHL?) Where I live packages tend to get lost, Is it possible to request package to be delivered be UPS or Fedex? \r\n \r\n \r\n Thanks!\r\n \r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-01T06:52:46Z",
+  "updated_at": "2025-09-01T07:46:12Z",
+  "requester_id": 158004058779,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007883837,
+      "body_text": "ID 为 3341 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-01T07:26:52Z",
+      "updated_at": "2025-09-01T07:26:52Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158007883838,
+      "body_text": "合并来自工单3341  \n      主题: Shipping Method  \n      描述:  Hello Simon Team,  I made a purchase from your Simsonn page on Ali Express, I live in US and the product will get shipped from the US based from Alii Express. I wanted to know what shipping methods does your team use? ex: (UPS,Fedex or DHL?) Where I live packages tend to get lost, Is it possible to request package to be delivered be UPS or Fedex?   Thanks!",
+      "user_id": 158000445778,
+      "created_at": "2025-09-01T07:26:53Z",
+      "updated_at": "2025-09-01T07:26:53Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

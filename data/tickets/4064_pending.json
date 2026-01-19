@@ -1,0 +1,44 @@
+{
+  "id": 4064,
+  "subject": "pro x upgrade",
+  "description_text": "i currently am waiting for my plus x pedals to come in i was wondering if the pro x upgrade can be installed on them if i want to?\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-23T12:03:48Z",
+  "updated_at": "2025-09-28T12:36:38Z",
+  "requester_id": 158004804879,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009215564,
+      "body_text": "Hi Dylan Weaver,    Some of our clients have indeed succeeded in doing so, but it may be quite complex, so we do not recommend it.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-24T08:33:19Z",
+      "updated_at": "2025-09-24T08:33:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009521252,
+      "body_text": "Ok I got the pedal in yesterday they worked fine in iracing right away but now today the throttle isn’t being picked up on iracing I have the ground wire attached as well \r\n\r\n> ",
+      "user_id": 158004804879,
+      "created_at": "2025-09-27T22:47:12Z",
+      "updated_at": "2025-09-27T22:47:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009569171,
+      "body_text": "Hi Dylan Weaver,  Please set the Offset feature first to adjust the white signal to the 0% initial position. After that, recalibrate the pedals. Once done, the blue game progress bar will correctly reach 100% when you press the pedal.      Please note: iRacing requires an additional in-game calibration — all axes must be calibrated to an output value of 4095. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-28T12:36:38Z",
+      "updated_at": "2025-09-28T12:36:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

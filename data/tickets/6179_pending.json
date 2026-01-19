@@ -1,0 +1,34 @@
+{
+  "id": 6179,
+  "subject": "",
+  "description_text": "Hi, when i put the BLACK45 discount code when adding the Simsonn plus x\r\npedals in my cart, the discount doesnt applies,what i need to do?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-15T11:16:15Z",
+  "updated_at": "2025-11-15T11:53:30Z",
+  "requester_id": 158007102019,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012376038,
+      "body_text": "Hi Iker Robles Martínez,    Please note that the discount code is $45 off orders of $199 or more.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-15T11:42:41Z",
+      "updated_at": "2025-11-15T11:42:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012376070,
+      "body_text": "Ohh okey,im sorry\r\n\r\nEl sáb, 15 nov 2025, 12:42, support@simsonn.com ",
+      "user_id": 158007102019,
+      "created_at": "2025-11-15T11:49:21Z",
+      "updated_at": "2025-11-15T11:49:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

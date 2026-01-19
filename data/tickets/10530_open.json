@@ -1,0 +1,35 @@
+{
+  "id": 10530,
+  "subject": "BESTELLUNG #SSN5518",
+  "description_text": "Guten Tag,\r\n\r\nIch habe heute die Lieferung mit den Vibrations Motoren erhalten. Ich habe noch keine Sendungsnummer für die Pedale selbst. Wann kommen die Pedale?\r\n\r\nMit freundlichen Grüßen \r\nPatrick Gregorius \r\n\r\n",
+  "status": 2,
+  "priority": 4,
+  "created_at": "2026-01-10T20:38:44Z",
+  "updated_at": "2026-01-17T13:13:09Z",
+  "requester_id": 158009018427,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016854987,
+      "body_text": "Hi Patrick,    We apologize for the delay. Two shipments have been impacted by heavy snowfall in Europe, with road blockages causing delivery delays to our warehouse. We will expedite delivery to the warehouse as soon as possible or explore alternative logistics channels to ship your goods from China.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-12T10:55:39Z",
+      "updated_at": "2026-01-12T10:55:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017326883,
+      "body_text": "Hallo,\r\n\r\nKnapp eine Woche ist nun vergangen und ich habe noch keine Info bekommen dass die Pedale sich auf dem Weg befinden. Der Schneefall ist in den meisten Teilen Europas vorbei. Wann kann ich mit meinen Pedalen rechnen?\r\n\r\nMit freundlichen Grüßen \r\nPatrick Gregorius \r\n\r\n> Am 12.01.2026 um 11:55 schrieb service@simsonn.com:\r\n> \r\n> ﻿\r\n> Hi Patrick,\r\n> \r\n> We apologize for the delay. Two shipments have been impacted by heavy snowfall in Europe, with road blockages causing delivery delays to our warehouse. We will expedite delivery to the warehouse as soon as possible or explore alternative logistics channels to ship your goods from China.\r\n> \r\n> \r\n> \r\n> Am So, 11 Jan um 4:38 VORMITTAGS , Patrick <patrickgregorius@yahoo.de> schrieb:\r\n> Guten Tag,\r\n> \r\n> Ich habe heute die Lieferung mit den Vibrations Motoren erhalten. Ich habe noch keine Sendungsnummer für die Pedale selbst. Wann kommen die Pedale?\r\n> \r\n> Mit freundlichen Grüßen\r\n> Patrick Gregorius\r\n> \r\n> 10530:4206036\r\n\r\n",
+      "user_id": 158009018427,
+      "created_at": "2026-01-17T12:17:14Z",
+      "updated_at": "2026-01-17T12:17:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

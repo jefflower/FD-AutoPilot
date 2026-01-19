@@ -1,0 +1,94 @@
+{
+  "id": 1951,
+  "subject": "",
+  "description_text": "Hello,\r\n\r\nI have the Simsonn Pro X Ultra pedals I bought a couple of months ago and\r\nI'm having a few issues.\r\n\r\nFirst and most importantly I'm having an issue where the pedals in the\r\nmanager are calibrated, however in any game the pedal input does not\r\nregister anything until it reaches 50% travel. I have tried to delete and\r\nredownload the software and I've updated both the manager and control box\r\nas well and it still is giving me an issue and I am unable to use them\r\neffectively.\r\n\r\nThe second issue is I have a VAM Pro motor on the brake pedal and it does\r\nnot do anything outside of the manager test. It will not react to any ABS\r\nevent in any game I've tried.\r\n\r\nThank you for your time\r\nChris\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-26T16:45:59Z",
+  "updated_at": "2025-07-31T00:42:45Z",
+  "requester_id": 158002357981,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005620301,
+      "body_text": "Hi Chris Bauer,    First, please update the software to SIMSONN Manager 2.1.0 and check for pedal firmware updates in the settings menu. Once the update is complete, you can use the Offset function to reset the offset to zero, which will automatically adjust the dead zone to the minimum edge based on the current pedal pressure.  Second, make sure the software is up to date and review our telemetry support list. If the telemetry you need is not listed, you can use SIMHUB 9.9.3, which supports over 100 telemetry features.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-27T02:29:46Z",
+      "updated_at": "2025-07-27T02:29:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005620360,
+      "body_text": "I have done all the steps you listed and the issue is still present\r\n\r\nOn Sat, Jul 26, 2025, 10:30 PM service@simsonn.com ",
+      "user_id": 158002357981,
+      "created_at": "2025-07-27T02:49:32Z",
+      "updated_at": "2025-07-27T02:49:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005620416,
+      "body_text": "Hi Chris Bauer,    You mentioned two different issues. Please provide screenshots or record a video for our analysis.  Kindly upload the video to Google Drive and share the link with us.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-27T03:16:55Z",
+      "updated_at": "2025-07-27T03:16:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005648759,
+      "body_text": "I have a video of the main issue in Lemans Ultimate. It does not register\r\nany input until 50% for both the throttle and the brake. In the Simsonn\r\nmanager it shows full range of 0%-100%.\r\n\r\n\r\nhttps://drive.google.com/file/d/1Ah-CQp3eaR-XPX7Jwa3s-k0_UV3Iqe8A/view?usp=drive_link\r\n\r\nOn Sat, Jul 26, 2025 at 11:17 PM service@simsonn.com ",
+      "user_id": 158002357981,
+      "created_at": "2025-07-27T13:53:08Z",
+      "updated_at": "2025-07-27T13:53:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005651166,
+      "body_text": "I have not been able to prove it but I think that this is an issue with the\r\ncontrol box itself. The issues were pretty non existent until I got a VAM\r\nPro installed and hooked it up. Since this time it has seemed to gone\r\nhaywire and the controls and inputs for the pedals are hit or miss. I have\r\nnot once been able to get the VAM Pro to work on any sim with the most\r\nupdated version of SIMHUB. The pedals and the motor just have a mind of\r\ntheir own at this point. Again I had almost no issues until I hooked up the\r\nVAM Pro and the power supply. Now it appears as if there is no going back\r\nas it happens whether the motor and power supply are hooked up or not. The\r\ncontrol box is mounted to my pedal plate and has been since I got the\r\npedals. It has gotten so bad i think it might be backfeeding power to my\r\nmotherboard as I'm now having intermittent issues with my keyboard, mouse\r\nand streamdeck all constantly connecting and disconnecting making my\r\nentire PC unusable. I have them completely unhooked just so i can do\r\nanything else on my PC and this is very frustrating to the point where i\r\nwant to get rid of them and go with another company.\r\n\r\nOn Sun, Jul 27, 2025 at 9:52 AM Chris Bauer <chris.bauer0513@gmail.com>\r\nwrote:\r\n\r\n> I have a video of the main issue in Lemans Ultimate. It does not register\r\n> any input until 50% for both the throttle and the brake. In the Simsonn\r\n> manager it shows full range of 0%-100%.\r\n>\r\n>\r\n> https://drive.google.com/file/d/1Ah-CQp3eaR-XPX7Jwa3s-k0_UV3Iqe8A/view?usp=drive_link\r\n>\r\n> On Sat, Jul 26, 2025 at 11:17 PM service@simsonn.com ",
+      "user_id": 158002357981,
+      "created_at": "2025-07-27T19:10:34Z",
+      "updated_at": "2025-07-27T19:10:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005787044,
+      "body_text": "What else can I do here? I would not have started this if I wasn't already\r\nout of ideas.\r\n\r\nOn Sun, Jul 27, 2025 at 3:10 PM Chris Bauer <chris.bauer0513@gmail.com>\r\nwrote:\r\n\r\n> I have not been able to prove it but I think that this is an issue with\r\n> the control box itself. The issues were pretty non existent until I got a\r\n> VAM Pro installed and hooked it up. Since this time it has seemed to gone\r\n> haywire and the controls and inputs for the pedals are hit or miss. I have\r\n> not once been able to get the VAM Pro to work on any sim with the most\r\n> updated version of SIMHUB. The pedals and the motor just have a mind of\r\n> their own at this point. Again I had almost no issues until I hooked up the\r\n> VAM Pro and the power supply. Now it appears as if there is no going back\r\n> as it happens whether the motor and power supply are hooked up or not. The\r\n> control box is mounted to my pedal plate and has been since I got the\r\n> pedals. It has gotten so bad i think it might be backfeeding power to my\r\n> motherboard as I'm now having intermittent issues with my keyboard, mouse\r\n> and streamdeck all constantly connecting and disconnecting making my\r\n> entire PC unusable. I have them completely unhooked just so i can do\r\n> anything else on my PC and this is very frustrating to the point where i\r\n> want to get rid of them and go with another company.\r\n>\r\n> On Sun, Jul 27, 2025 at 9:52 AM Chris Bauer <chris.bauer0513@gmail.com>\r\n> wrote:\r\n>\r\n>> I have a video of the main issue in Lemans Ultimate. It does not register\r\n>> any input until 50% for both the throttle and the brake. In the Simsonn\r\n>> manager it shows full range of 0%-100%.\r\n>>\r\n>>\r\n>> https://drive.google.com/file/d/1Ah-CQp3eaR-XPX7Jwa3s-k0_UV3Iqe8A/view?usp=drive_link\r\n>>\r\n>> On Sat, Jul 26, 2025 at 11:17 PM service@simsonn.com ",
+      "user_id": 158002357981,
+      "created_at": "2025-07-29T20:25:17Z",
+      "updated_at": "2025-07-29T20:25:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005862222,
+      "body_text": "Nevermind, I fixed it myself.\r\n\r\n",
+      "user_id": 158002357981,
+      "created_at": "2025-07-30T22:29:53Z",
+      "updated_at": "2025-07-30T22:29:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005863827,
+      "body_text": "Hi Chris Bauer,  Would you mind sharing how you ultimately resolved this issue? We’d like to include it in our knowledge base to help other customers facing similar problems. Thank you for your support! ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-31T00:42:45Z",
+      "updated_at": "2025-07-31T00:42:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 5923,
+  "subject": "Ultra x vs plus x",
+  "description_text": "Dear,\r\nWhat is the difference between ultra x and plus x padels?\r\n\r\nRegards\r\nIbrahim\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-11T05:15:05Z",
+  "updated_at": "2025-11-11T06:42:35Z",
+  "requester_id": 158006933986,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012097447,
+      "body_text": "Hi Ibrahim Albrahim,   The main differences between PlusX and ProX Ultra lie in sampling precision and control method: PlusX uses 12-bit resolution with polling sampling, while ProX Ultra offers 16-bit resolution with synchronous sampling, supports 8 levels of hydraulic damping adjustment, and includes RGB lighting, providing faster response, higher precision, and enhanced visual feedback. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-11T06:42:35Z",
+      "updated_at": "2025-11-11T06:42:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

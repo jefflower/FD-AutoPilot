@@ -1,0 +1,35 @@
+{
+  "id": 6272,
+  "subject": "触觉反馈器",
+  "description_text": "您好，\n\n我有一个问题。我尝试设置我的VAM Pro触觉反馈器，它们很棒！唯一的问题是，每次它们启动时，我的刹车都会自动开始制动，即使我油门踩到底也是如此。我该怎么办？\n\n此致，\nNik Terkaj",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-11-17T22:43:36Z",
+  "updated_at": "2025-11-22T03:45:35Z",
+  "requester_id": 158006655049,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012558290,
+      "body_text": "您好，Nik Terkaj，\n请问您的订单号是多少？我需要先确认您的踏板型号。如果您使用的是PlusX踏板，请参考以下建议：\n\nVAM Pro干扰问题\n为了防止VAM Pro电机干扰刹车信号，您可以在VAM Pro电机上安装尼龙垫圈和尼龙螺丝。\n\n震动不停/接地不良导致的断开连接\n如果踏板持续震动或意外断开连接，通常是由于PC接地不良造成的，这通常是因为没有使用三插头或没有正确接地的插座。我们建议遵循帖子中提到的解决方案：\n\n将PC机箱与设备框架用金属连接。\n将主控制盒连接到踏板的金属螺丝上以实现正确接地。这些步骤可以有效解决持续震动、信号干扰和随机断开连接等问题。\n\nhttps://www.reddit.com/r/simracing/comments/1n291hi/solution_for_simsonn_vam_pro_emi_issues/\nhttps://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting\nhttps://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-11-19T03:14:59Z",
+      "updated_at": "2025-11-19T03:14:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012566004,
+      "body_text": "您好，\n\n我尝试将刹车螺丝上的接地线连接到触觉反馈器螺丝上，问题解决了，谢谢您的帮助。\n\n此致，\nNik Terkaj",
+      "user_id": 158006655049,
+      "created_at": "2025-11-19T08:13:03Z",
+      "updated_at": "2025-11-19T08:13:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

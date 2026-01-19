@@ -1,0 +1,24 @@
+{
+  "id": 10304,
+  "subject": "Order status",
+  "description_text": "Hello,\r\n\r\nI placed an order on 25 december with the economy shipping but besides the\r\nconfirmation i havent received any other email and the order's status has\r\nnot changed from confirmed on the website. Can i have some information when\r\nwill the product be shipped or if it's at least being processed? The\r\norder's number is #SSN5274.\r\n\r\nThank you.\r\n\r\n",
+  "status": 5,
+  "priority": 4,
+  "created_at": "2026-01-08T12:39:40Z",
+  "updated_at": "2026-01-11T06:41:49Z",
+  "requester_id": 158008981542,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016781467,
+      "body_text": "此工单已关闭并合并至工单 10549。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T06:41:49Z",
+      "updated_at": "2026-01-11T06:41:49Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

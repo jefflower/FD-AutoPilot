@@ -1,0 +1,24 @@
+{
+  "id": 8929,
+  "subject": "Order #SSN4704 Loadcell issue",
+  "description_text": "Hi team,\r\n\r\nI ordered my pedals on Dec 11 with express shipping but was delivered after\r\n11 days (today) and now I just set it up and plugged it in the computer and\r\nthe load cell seems to have issues\r\nIt’s very frustrating when the delivery gets delayed even after paying for\r\nexpress delivery (Note: it’s not UPS fault for the delay the item itself\r\nwas dispatched only after 7th day) and now the pedals are faulty.\r\nNot sure why I have spend £200 for\r\n\r\nEven without touching the pedal there is load being applied in the pedal\r\nI double checked and nothing is touching or not even near the pedal\r\n\r\nWhat do I do now ?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-22T22:18:35Z",
+  "updated_at": "2025-12-22T23:01:39Z",
+  "requester_id": 158007808080,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014943937,
+      "body_text": "It’s getting worse and worse\r\n\r\n",
+      "user_id": 158007808080,
+      "created_at": "2025-12-22T22:29:03Z",
+      "updated_at": "2025-12-22T22:29:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": 1080,
+  "subject": "等待您的回复",
+  "description_text": "您好，\n\n我联系您是因为我想帮助我的妹妹 Becca Brown。她最近在 Facebook 上看到了您的帖子，并尝试在那里联系您。我不确定她的消息是否已发送，所以如果您能将她添加为好友，她将不胜感激——这样她就能直接给您发消息了。\n\n这是她的个人资料：[https://optinet.id/fbk0id-583456993457-BeccaBrown]\n\n她对此非常感兴趣，并期待您的回复。\n\n非常感谢您的时间！",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-07-01T19:11:02Z",
+  "updated_at": "2025-07-02T01:25:12Z",
+  "requester_id": 158001869575,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004362705,
+      "body_text": "您好 timwass，她对我们的产品感兴趣吗？她是想购买产品，还是有兴趣讨论潜在的合作关系？",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T01:25:12Z",
+      "updated_at": "2025-07-02T01:25:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

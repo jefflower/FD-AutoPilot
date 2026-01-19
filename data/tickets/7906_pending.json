@@ -1,0 +1,104 @@
+{
+  "id": 7906,
+  "subject": "Order #SSN4210",
+  "description_text": "﻿\r\n﻿\r\n﻿Good morning, I ordered a pro x ultra pedal kit along with Vam motor set on the 30th. Since then I haven’t received any updates. I emailed last week Friday and still haven’t got a response. I’m just trying to see if it can arrive before Christmas. \r\nThank you, \r\n                      Jason Goosby \r\nSent from my iPhone\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-10T16:34:41Z",
+  "updated_at": "2025-12-18T10:18:05Z",
+  "requester_id": 158007663172,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014297651,
+      "body_text": "ID 为 7517 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T01:35:21Z",
+      "updated_at": "2025-12-11T01:35:21Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014297652,
+      "body_text": "合并来自工单7517  \n      主题: Shipping  \n      描述:  Good morning I made an order on the 30th and I haven’t got an update that it has shipped yet. My order number is SSN4210. I was just checking in too make sure it wasn’t lost or something.  Thank you,                        Jason Goosby Sent from my iPhone",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T01:35:21Z",
+      "updated_at": "2025-12-11T01:35:21Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014297661,
+      "body_text": "Hi Jason Jr Goosby,  We apologize for the shortage during the Black Friday peak season due to limited stock in our US warehouse. I have confirmed with our operations team that a batch of goods has been shipped to the US warehouse via air freight. We will arrange your shipment as soon as possible. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T01:35:50Z",
+      "updated_at": "2025-12-11T01:35:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014336329,
+      "body_text": "Good morning. I understand thanks for the transparency.\r\n \r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158007663172,
+      "created_at": "2025-12-11T16:38:10Z",
+      "updated_at": "2025-12-11T16:38:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014563405,
+      "body_text": "Hi Jason Jr Goosby,     We apologize for the inconvenience. Our US warehouse has finally received the shipment, but I noticed your address is in Hawaii. Shipping from the US warehouse incurs a $118 fee. We require you to cover approximately $45 to offset the shipping costs. We appreciate your understanding.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-16T09:55:47Z",
+      "updated_at": "2025-12-16T09:55:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014580983,
+      "body_text": "﻿Good morning, \r\nCan you charge the card I used to place the order for the shipping fee. \r\nThank you \r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158007663172,
+      "created_at": "2025-12-16T16:11:17Z",
+      "updated_at": "2025-12-16T16:11:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014622730,
+      "body_text": "Hi Jason Jr Goosby,    You can pay the shipping fee at this link. Thank you for your understanding.  https://www.simsonn.com/products/difference",
+      "user_id": 158001343601,
+      "created_at": "2025-12-17T10:58:20Z",
+      "updated_at": "2025-12-17T10:58:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014666928,
+      "body_text": "Good afternoon,\r\n\r\n I payed the shipping fee.\r\n\r\nThank you \r\n\r\n> ",
+      "user_id": 158007663172,
+      "created_at": "2025-12-17T23:25:00Z",
+      "updated_at": "2025-12-17T23:25:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014682766,
+      "body_text": "Hi Jason Jr Goosby,    Okay, we've shipped your order and updated the shipping notification.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-18T10:18:04Z",
+      "updated_at": "2025-12-18T10:18:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

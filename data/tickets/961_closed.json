@@ -1,0 +1,44 @@
+{
+  "id": 961,
+  "subject": "Running a Pro X (without Ultra) pedals set (PROX-P3-H3-1) on a Pro X Ultra Control Box",
+  "description_text": "Good day dear support team, \r\n\r\n \r\n\r\nI would like to buy the Simsonn VAM Pro Linear Motor Package\r\n<https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor?variant=\r\n51399342293306>  (Pedals Haptic Reactor) in addition to my Simsonn Pro X\r\npedals\r\n<https://www.amazon.de/dp/B0DKXLDGDW?psc=1&ref=ppx_pop_dt_b_asin_title>\r\n(PROX-P3-H3-1) bought a few months ago. \r\n\r\n \r\n\r\nNow I have read on your website that the Simsonn VAM Pro Linear Motor\r\nPackage works after a software update and an update of the Control Box\r\nfirmware on the Control Box of the Pro X (without Ultra). However, the\r\nmotors then vibrate only in one direction, and not in two. \r\n\r\n \r\n\r\nNow the question arises for me whether the available Control Box for the Pro\r\nX Ultra can also be used for the Pro X (without Ultra) pedals in order to be\r\nable to achieve the vibration of the motors in both directions (since it\r\nrequires an Ultra Control Box for the double-sided function). \r\n\r\n \r\n\r\nIn short: Is the Pro X Ultra Pedal Control Box compatible with the Prox X\r\n(without Ultra) pedal set?\r\n\r\n \r\n\r\nI look forward to your valued feedback!\r\n\r\n \r\n\r\nKind regards\r\n\r\nMarc Morgenthaler\r\n\r\n \r\n\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-06-28T15:54:37Z",
+  "updated_at": "2025-12-18T09:40:23Z",
+  "requester_id": 158001836138,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004221992,
+      "body_text": "Hi Marc,    The ProX Ultra controller is fully compatible with ProX pedals without any issues.  After firmware optimization, the ProX controller can also achieve bidirectional motor movement. While the force feedback may be slightly weaker compared to the Ultra controller, it still works perfectly well for normal use.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-29T01:30:09Z",
+      "updated_at": "2025-06-29T01:30:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004222635,
+      "body_text": "Thank you very much for the ultra-fast response! This is very customer-friendly and highly appreciated!\r\n\r\nBest regards, Marc\r\n\r\n \r\n\r\n",
+      "user_id": 158001836138,
+      "created_at": "2025-06-29T11:11:44Z",
+      "updated_at": "2025-06-29T11:11:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004284669,
+      "body_text": "",
+      "user_id": 158001836138,
+      "created_at": "2025-06-30T09:35:27Z",
+      "updated_at": "2025-06-30T09:35:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ]
+}

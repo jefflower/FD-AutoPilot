@@ -1,0 +1,24 @@
+{
+  "id": 6380,
+  "subject": "Missing item from order",
+  "description_text": "Hello!\r\n\r\nMy Simsonn pedals came in today but I only have the pedals with no\r\nbaseplate.\r\n\r\nI’ve purchased a baseplate with the order. The order number is SSN3474.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-11-19T22:15:25Z",
+  "updated_at": "2025-11-27T11:36:14Z",
+  "requester_id": 158007180969,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013004093,
+      "body_text": "Hi Ry,    Have you received your baseplate?  https://www.fedex.com/wtrk/track/?trknbr=395650784398",
+      "user_id": 158001343601,
+      "created_at": "2025-11-27T11:36:14Z",
+      "updated_at": "2025-11-27T11:36:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": 11106,
+  "subject": "第三方支持/独立使用 Simsonn VAM 触觉电机 VAM 与 VAM Pro",
+  "description_text": "你好，\n\n我想知道是否可以在不连接任何踏板到控制单元（Plus X 控制盒）的情况下使用 Simsonn VAM 电机，因为我没有其他 Simsonn 设备。控制盒是否必须连接到踏板才能获得正确的游戏内反馈，例如 ABS，或者控制盒是否直接从驱动程序或游戏获取数据？另外，我想知道 VAM 和 VAM Pro 单元之间的区别是什么？它们是否更强大或噪音更小，或者 VAM Pro 有什么优点，以及您是否必须为 VAM Pro 电机购买 Pro X Ultra 控制盒？\n\n此致，\n\nM.K",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-16T23:06:44Z",
+  "updated_at": "2026-01-17T03:40:56Z",
+  "requester_id": 158009288335,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017311528,
+      "body_text": "嗨，Mikolaj Kadluczka，您可以单独购买 PlusX 控制盒和 VAM Pro 触觉电机——不需要踏板。连接到您的电脑后，您可以使用我们的 SIMSONN Manager 软件或 SimHub 在游戏中启用基于遥测的触觉反馈。以下是两种电机类型的区别：VAM：偏心旋转质量（ERM）电机。它只向一个方向旋转，产生更“粗糙”的振动感。VAM Pro：音圈致动器。它能以高频来回振动，提供更快的响应和更详细、更平滑、更线性的触觉感。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-17T03:40:56Z",
+      "updated_at": "2026-01-17T03:40:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

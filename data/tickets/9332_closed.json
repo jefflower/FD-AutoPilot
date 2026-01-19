@@ -1,0 +1,24 @@
+{
+  "id": 9332,
+  "subject": "No shipment after being over a week since buying?",
+  "description_text": "Hi there I purchased the simsonn HS pro and i purchased it on the 13th. I\r\nnever got a tracking number and it's never arrived. Please respond within a\r\ntimely manner thank you, the order number is #SSN4809\r\n\r\n",
+  "status": 5,
+  "priority": 3,
+  "created_at": "2025-12-28T00:18:16Z",
+  "updated_at": "2026-01-07T05:10:16Z",
+  "requester_id": 158008797672,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016061706,
+      "body_text": "此工单已关闭并合并到工单 10148 中",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T05:10:16Z",
+      "updated_at": "2026-01-07T05:10:16Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

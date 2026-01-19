@@ -1,0 +1,74 @@
+{
+  "id": 9159,
+  "subject": "Order# ssn4332",
+  "description_text": "Hi,\r\nI open my order this morning, and while the quality of the S1 wheel is fantastic,  I am missing one of the quick releases that I ordered. The invoice isn't clear that there should have been two QR. Attached are pictures of my invoice and the website showing prices with 2 QR.\r\n\r\nI am hoping a QR can been shipped ASAP.\r\n\r\nThank you.\r\n\r\nJon Harbour\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-25T16:20:51Z",
+  "updated_at": "2026-01-04T10:49:23Z",
+  "requester_id": 158008701791,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015147625,
+      "body_text": "Hi Jon Harbour,  It should be a misdescription by our operations staff: each steering wheel only requires one quick-release, and the quick-release itself cannot be damaged, as one is sufficient. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T03:45:31Z",
+      "updated_at": "2025-12-28T03:45:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015147662,
+      "body_text": "Hi,  the order I placed was for two quick release  devices.   I have a different wheel that I want an additional quick release.\r\n\r\n\r\n________________________________\r\n",
+      "user_id": 158008701791,
+      "created_at": "2025-12-28T03:50:46Z",
+      "updated_at": "2025-12-28T03:50:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015166235,
+      "body_text": "Hi Jon Harbour,  This was most likely missed by our warehouse. I have arranged for a quick-release unit to be shipped to you immediately tomorrow. Please rest assured. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T15:42:56Z",
+      "updated_at": "2025-12-28T15:42:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015166354,
+      "body_text": "Thank you so much. I really appreciate your great customer service.  Have a great day.\r\n\r\n\r\n________________________________\r\n",
+      "user_id": 158008701791,
+      "created_at": "2025-12-28T15:52:33Z",
+      "updated_at": "2025-12-28T15:52:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015304698,
+      "body_text": "Hi Jon Harbour,      Sorry for the delayed response. Here's your resend link.    https://t.17track.net/en#nums=SF6047211755404     Happy New Year!",
+      "user_id": 158001343601,
+      "created_at": "2025-12-31T09:45:16Z",
+      "updated_at": "2025-12-31T09:45:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015311574,
+      "body_text": "Thank you!\r\n\r\n\r\n________________________________\r\n",
+      "user_id": 158008701791,
+      "created_at": "2025-12-31T12:48:24Z",
+      "updated_at": "2025-12-31T12:48:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

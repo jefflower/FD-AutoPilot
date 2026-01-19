@@ -1,0 +1,24 @@
+{
+  "id": 2828,
+  "subject": "Throttle sticking",
+  "description_text": "Hello I recently purchased a set of the plus x pedals and I’m having trouble with my throttle staying engaged when I release the throttle it will not spring back to 0% instead will stick around 8% \r\nSent from my iPhone\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-18T12:45:00Z",
+  "updated_at": "2025-08-19T04:30:06Z",
+  "requester_id": 158003282326,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007112195,
+      "body_text": "Hi Tommy Kindle,  Please use the Offset function to zero the initial percentage signal of the pedal, and then recalibrate. If the issue persists, it may be caused by improper pedal reset. Please make sure to apply sufficient spring preload using the throttle’s tensioning nut. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-19T04:30:06Z",
+      "updated_at": "2025-08-19T04:30:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

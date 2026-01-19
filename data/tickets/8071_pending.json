@@ -1,0 +1,44 @@
+{
+  "id": 8071,
+  "subject": "Missing Order",
+  "description_text": "Hello,\r\nMy name is Kevin Graziose. I ordered a set of your black plus x 3 set\r\npedals back in November 28 via Amazon through your storefront. They were\r\nshipped via fedex and were supposed to arrive December 9. Tracking hasn’t\r\nmoved since Monday December 8 and fedex has no location of the package.\r\nShould I be in contact with them or you about trying to get a replacement\r\nset? I can provide the tracking number if you need it. Would you also\r\nrecommend I just purchase the replacement via your website?\r\n\r\nThank you,\r\nKevin\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-12T12:38:29Z",
+  "updated_at": "2025-12-22T08:48:57Z",
+  "requester_id": 158007777332,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014436727,
+      "body_text": "Hi Kevin Graziose,  Could you please provide us with your order number? We will check it.",
+      "user_id": 158007774607,
+      "created_at": "2025-12-13T06:56:20Z",
+      "updated_at": "2025-12-13T06:56:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014616022,
+      "body_text": "Thankfully they arrived the next day. I am however a bit confused. I made a\r\nseparate purchase for the h pattern shifter also via Amazon and it shipped\r\nfrom china but your product images said it ships in the USA. Do you\r\ntypically see long shipping times for those? The tracking number for that\r\none is:\r\nSF6047154991597\r\n\r\nOn Sat, Dec 13, 2025 at 1:56 AM service@simsonn.com ",
+      "user_id": 158007777332,
+      "created_at": "2025-12-17T07:12:55Z",
+      "updated_at": "2025-12-17T07:12:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014865963,
+      "body_text": "Hi Kevin Graziose,  This may be due to the fact that the goods in the US warehouse are sold out and can only be shipped from the Chinese warehouse.   the shipping carrier is SF Express, you can track it via https://www.sf-international.com/cn/en/support/querySupport/waybill",
+      "user_id": 158007774607,
+      "created_at": "2025-12-22T08:48:57Z",
+      "updated_at": "2025-12-22T08:48:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

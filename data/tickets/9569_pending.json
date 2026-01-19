@@ -1,0 +1,74 @@
+{
+  "id": 9569,
+  "subject": "Pedals fault",
+  "description_text": "Hi Iv recently bought my pedals but the hydraulic rod from the throttle is leaking fluid is this a part that can be sent out for me to replace or do I need to return the pedal it’s self my order number is Orders Order #SSN2446 Look forward to hearing from you",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-30T12:24:32Z",
+  "updated_at": "2026-01-17T02:41:41Z",
+  "requester_id": 158008819339,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015290718,
+      "body_text": "Hi Mick,  Please provide your contact name, address, and phone number, and we will send you a replacement one-way hydraulic rod for the throttle. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T02:16:36Z",
+      "updated_at": "2025-12-31T02:16:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015302987,
+      "body_text": "Thanks it’s Mick birnie 19 wellington road Stevenage Herts Sg29hr 07855667717 ",
+      "user_id": 158008819339,
+      "created_at": "2025-12-31T08:55:14Z",
+      "updated_at": "2025-12-31T08:55:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016679819,
+      "body_text": "Morning Iv not received the part yet can you confirm if this has been sent out yet please ",
+      "user_id": 158008819339,
+      "created_at": "2026-01-10T07:24:27Z",
+      "updated_at": "2026-01-10T07:24:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017221620,
+      "body_text": "Hi Iv not received this part yet could you please update me with if this has been sent ",
+      "user_id": 158008819339,
+      "created_at": "2026-01-15T20:19:14Z",
+      "updated_at": "2026-01-15T20:19:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017259195,
+      "body_text": "Hi Mick,    Sorry for the delay in processing your request. Here is your shipping tracking link.  https://t.17track.net/en#nums=SF6047246223178",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T11:40:05Z",
+      "updated_at": "2026-01-16T11:40:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017276313,
+      "body_text": "Thank you ",
+      "user_id": 158008819339,
+      "created_at": "2026-01-16T16:22:51Z",
+      "updated_at": "2026-01-16T16:22:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 9397,
+  "subject": "Missing Item",
+  "description_text": "Order #SSN3893\r\n\r\nI recently ordered the Simsonn HB Pro handbrake as well as a few other items. The only item that did not arrive was the handbrake. I was hoping to get a little more information about the status of the shipment. \r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-28T21:52:39Z",
+  "updated_at": "2025-12-31T02:35:53Z",
+  "requester_id": 158008803265,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015291020,
+      "body_text": "Hi AbraxosGaming,      I will check the shipping status of your handbrake order. The delay may be due to stock shortage, and I’ll confirm the details for you as soon as possible. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T02:35:48Z",
+      "updated_at": "2025-12-31T02:35:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 9672,
+  "subject": "Order #SSN5202 – Shipping Status Inquiry",
+  "description_text": "Dear Simsonn Team,\r\n\r\nI just wanted to ask if the pedals are already ready to ship.\r\n\r\nI placed my order on December 23rd, which was 8 days ago, and I was hoping\r\nto receive a short update on the current status.\r\n\r\nI would really appreciate it if you could give me some feedback regarding\r\nmy shipping situation.\r\nMy order number is *#SSN5202*.\r\n\r\nThank you very much for your time and support.\r\nI’m looking forward to your reply.\r\n\r\nKind regards,\r\nJonas\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-31T14:18:17Z",
+  "updated_at": "2026-01-15T09:11:09Z",
+  "requester_id": 158008831708,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017172597,
+      "body_text": "Hi Jonas Urschinger,    We apologize for the delay. Two shipments destined for our German warehouse have been affected by heavy snowfall in Europe, causing road blockages and delivery delays. We will expedite delivery or explore alternative logistics channels to ship your order from China as soon as possible.  Compensation will be provided based on the delay after your order is completed. We apologize for the inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T09:11:09Z",
+      "updated_at": "2026-01-15T09:11:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

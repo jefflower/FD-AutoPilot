@@ -1,0 +1,45 @@
+{
+  "id": 7623,
+  "subject": "Pro X pedals 4 axis",
+  "description_text": "Dear SIMSONN Support Team,\n\nI own SIMSONN pedals Pro X with Controller Box running the latest firmware: CPU1 v2.0.5, CPU2 v2.0.4 via SIMSONN Manager 2.1.2.\n\n**Problem Description:**\n- In games (and also Windows \"Set up USB game controllers\" → Properties → Axes tab), I see 4 axes.\n- Axes 1-3 work correctly (Throttle/Brake/Clutch).\n- **Axis 4 shows constant random noise/jitter** (moves erratically without any physical input), interfering with axis binding in games like Assetto Corsa.\n\n**What I tried (all steps from FAQ):**\n1. Updated SIMSONN Manager to 2.1.2 and confirmed latest firmware (no update available).\n2. Full calibration in SIMSONN Manager + increased Deadzone 15-20% on all 3 axes + Save to Device.\n3. Grounding wire connected to rig chassis.\n4. Direct USB connection to motherboard (no hubs).\n5. Windows calibration (sliders grayed out, no Null Zone control).\n\n**Result:** Axis 4 continues jittering in Windows test and blocks proper binding. SIMSONN Manager shows only 3 clean axes, but Windows sees noisy 4th axis from controller box.\n\nPlease advise:\n1. Is this known firmware bug with extra unused axis?\n2. How to disable/hide Axis 4 output from controller box?\n3. RMA/replacement needed?\n\nThank you for quick help. Ready to provide serial number.\n\nBest regards,\nAleksandr Kriukov",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-07T14:44:29Z",
+  "updated_at": "2025-12-08T12:29:22Z",
+  "requester_id": 158007686120,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014120007,
+      "body_text": "Hi Aleksandr Kriukov, Please first uninstall the old version 2.1.2 from your computer, then download and install SIMSONN Manager 2.1.2. After installation, click \"Revert\" followed by \"Save\" in the software. If the issue persists, try manually updating the firmware: Go to Settings → Update → Manual Firmware Update → pedals-firmware → pedals-prox.sfu. Once the update is complete, please test again. https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-12-08T10:56:26Z",
+      "updated_at": "2025-12-08T10:56:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014121693,
+      "body_text": "Hi!\n\nI've manually updated pedals with proxultra.sfu and it worked well.\nThanks a lot for your advice!\n\nBest regards,\nAleksandr Kriukov\n\nMon, Dec 8, 2025 at 1:56 PM, service @simsonn.com",
+      "user_id": 158007686120,
+      "created_at": "2025-12-08T11:54:36Z",
+      "updated_at": "2025-12-08T11:54:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014122723,
+      "body_text": "Received good advice and solved the problem",
+      "user_id": 158007686120,
+      "created_at": "2025-12-08T12:29:21Z",
+      "updated_at": "2025-12-08T12:29:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

@@ -1,0 +1,24 @@
+{
+  "id": 10730,
+  "subject": "",
+  "description_text": "Bonjour,\r\n\r\nJ’ai passé la commande #SSN5943 le 9 janvier et j’ai payé pour le shipping\r\nexpress.\r\n\r\nÀ ce jour, je n’ai reçu aucune expédition, aucun numéro de suivi et aucune\r\nmise à jour.\r\n\r\nMerci de m’envoyer immédiatement le statut de ma commande et le numéro de\r\nsuivi.\r\n\r\nSans réponse sous 48 heures, je demanderai un remboursement complet, y\r\ncompris du shipping express.\r\n\r\nCordialement\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-12T23:08:26Z",
+  "updated_at": "2026-01-16T02:19:32Z",
+  "requester_id": 158009032266,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017235980,
+      "body_text": "Hi Nathan Cordier,  ​  Your order was shipped on the 14th and is expected to arrive within the next few days.  Below is your tracking link: ​ https://www.sf-international.com/gb/en/support/querySupport/waybill?No=SF3267301899736",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T02:19:32Z",
+      "updated_at": "2026-01-16T02:19:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "id": 8036,
+  "subject": "Having problems with my haptics",
+  "description_text": "I purchased the VAM pro linear motor. Order #SSN3026. when they arrived i was missing the power cord. You sent that to me no problem. Them once set up the haptics did not function at all. I am left with a Simsonn flasher error. I had tried multiple things like updating the unit along with manually updating. I email Simsonn about this issue and i was told to ground the unit. I connected a ground wire to the control box and then to my computer housing as instructed. After this the pedals did work however they continued to shut off after 30-60 min of play. So, I moved to a slightly larger wire (the wire I originally used was tiny) i connect to the exact same spot and at the same time mounted the controller directly to the bottom of my rig so that it was ground out there also. Since i have moved the ground, I continue to get the Simsonn flasher error. I really want these to work; I don't want to be asking for a refund. What can i do to make these work. I have also found that every time they would turn off I could get them to work by disconnecting the signal USB and reconnecting. This is no longer working. \r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-12T02:24:35Z",
+  "updated_at": "2025-12-20T12:13:25Z",
+  "requester_id": 158007025899,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014471724,
+      "body_text": "Hi Ryon Remmers,  I have reviewed your previous ticket. First, please make sure to plug the USB into the blue USB 3.0 port at the back of your computer. Do not use USB 2.0 ports or USB hubs without independent power. Additionally, you can secure the pedal vibration power supply with cable ties to prevent it from coming loose. Please take photos of the grounding, as well as the connections between the case, the main control box, and the pedals. As long as the wiring is reliable, this issue can be resolved. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-14T02:41:48Z",
+      "updated_at": "2025-12-14T02:41:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014486780,
+      "body_text": "I have a few pictures here for you to review. \r\nThe grounding I’m sure is solid. The control box is mounted directly to my frame and I have tried attaching the ground cable to 3 different screws on the housing with no change. I check the USB once more and ensure I have it in a 3.0 USB. And I know the USB port is good since it was being used by my wheel and I had no issues. I’m not sure how this box was working at least for some time and now won’t work at all. \r\nI have also tried switching the white program switch on the control box, I have tried it multiple times in either position with no luck. \r\nI tried disconnecting the motors and seeing if communication was restored with no luck. \r\n\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158007025899,
+      "created_at": "2025-12-14T16:36:31Z",
+      "updated_at": "2025-12-14T16:36:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014622122,
+      "body_text": "Hi Ryon Remmers,  I see that your SIMSONN Manager indicates it has entered SIMSONN Flasher mode. Please release the upgrade button on the control box and reconnect the USB; the device will then return to normal working mode.      Additionally, if you encounter disconnection issues, please make sure to connect the computer case, the control box casing, and the pedal’s metal screws together with a single wire for grounding. This can effectively prevent disconnections or interference.      If this happens, it indicates that the computer’s grounding is not reliable, possibly because a three-prong plug was not used with a three-prong wall outlet. You can refer to the post below: connect the computer case to the stand, and connect the control box to the metal screws on the pedals. This should resolve the disconnection issue.  https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T10:36:24Z",
+      "updated_at": "2025-12-17T10:36:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014625988,
+      "body_text": "I wish I could say any of that worked. \r\nI have tried punching the white upgrade button in or out probably 12 times each and this doesn’t resolve the issue. \r\nMy ground cable is one single cable that is directly from the controller casing to the computer casing. \r\nI have gone as far as connecting the controller box directly to the ground pin on my wall outlet and that did not remedy the issue. \r\nI’m going to try one more thing I just thought of, I’m going to sand down the casing of computer case and controller box in the area to increase the contact and decrease resistance. If that doesn’t work then something else is causing the issue. \r\n\r\nCan you tell me for sure if the upgrade button should be pushed in or out for this box to work properly. \r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158007025899,
+      "created_at": "2025-12-17T12:38:15Z",
+      "updated_at": "2025-12-17T12:38:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014810033,
+      "body_text": "Hi Ryon Remmers,  After the upgrade is completed, the upgrade button should remain in the released (out) position. If the button is not released, the device will enter recovery mode the next time it is powered on and will not operate normally. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-20T12:13:24Z",
+      "updated_at": "2025-12-20T12:13:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

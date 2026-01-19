@@ -1,0 +1,34 @@
+{
+  "id": 2790,
+  "subject": "Faulty Handbrake?",
+  "description_text": "Hello from Germany. I've received the Handbrake and H-Shifter a couple days\r\nago.\r\nSo far, so good.\r\nBut now i discovered that the axis input of the Handbrake jitters all over\r\nthe place while traveling from min to max.\r\nI was wondering, if that is just a faulty handbrake?\r\nCan this be solved or can i even get a replacement?\r\nThe Order Number was:  3058791973630614\r\nI include 2 videos, where u see this issue in:\r\n-Assetto Corsa (Content Manager)\r\n-Windows Game Controller Settings\r\n\r\nBest Regards\r\nTimo Okken\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-08-17T14:21:02Z",
+  "updated_at": "2025-08-18T12:45:39Z",
+  "requester_id": 158003255662,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007050713,
+      "body_text": "Hi Moji,  This issue may be caused by interference. Could you please let us know which base model you are using? In addition, we recommend manually updating the firmware. The detailed procedure is as follows:      On the “Settings - Update” page, click “Manual Firmware Update”, then navigate to:  handbrake-firmware folder → handbrake folder → select hbpro.sfu file to complete the update.     To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability:     1.    Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding.     2.    Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive.     3.    Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup.     4.    Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible.     5.    Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs.     6.    Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference.     7.    Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements.     8.    Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-18T02:02:03Z",
+      "updated_at": "2025-08-18T02:02:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007060823,
+      "body_text": "Hello again.\r\nYour tip helped me solve this issue.\r\nIt was indeed connected to unpowered USB-Hub, which caused this issue.\r\nThank you and have a great day!\r\n\r\nBest Regards\r\n\r\nMoji\r\n\r\nAm Mo., 18. Aug. 2025 um 04:02 Uhr schrieb service@simsonn.com <\r\nservice@simsonn.com>:\r\n\r\n> Hi Moji,\r\n>\r\n> This issue may be caused by interference. Could you please let us know\r\n> which base model you are using? In addition, we recommend manually updating\r\n> the firmware. The detailed procedure is as follows:\r\n>\r\n> On the *“Settings - Update”* page, click *“Manual Firmware Update”*, then\r\n> navigate to:\r\n> *handbrake-firmware folder → handbrake folder → select hbpro.sfu file* to\r\n> complete the update.\r\n>\r\n> To address EMI (Electromagnetic Interference) issues, please follow the\r\n> steps below to improve device stability and USB connection reliability:\r\n>     1.    Ensure proper grounding: Make sure the computer is connected to\r\n> a three-prong outlet with a reliable ground. Two-prong plugs do not provide\r\n> grounding.\r\n>     2.    Control box grounding: Use a green shielding wire to connect\r\n> the metal housing (such as a copper post or screw) of the control box to\r\n> any metal screw on the pedal. Ensure the contact point is paint-free and\r\n> conductive.\r\n>     3.    Base grounding (e.g., Fanatec / MOZA): It’s recommended to\r\n> connect the metal part of the base to the PC chassis or an external ground\r\n> to discharge static buildup.\r\n>     4.    Avoid high-interference zones: Keep USB cables away from\r\n> high-voltage power lines or adapters; route cables separately where\r\n> possible.\r\n>     5.    Use direct USB connection: Connect devices directly to a rear\r\n> USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs.\r\n>     6.    Use USB cables with ferrite cores: If needed, switch to\r\n> high-quality USB cables with ferrite beads to reduce high-frequency\r\n> interference.\r\n>     7.    Keep software and firmware updated: Ensure SIMSONN Manager and\r\n> firmware are updated to the latest version, as some updates include EMI\r\n> handling improvements.\r\n>     8.    Use a USB isolator: If the above methods don’t resolve the\r\n> issue, using a USB isolator is recommended. It physically separates the USB\r\n> power and data lines, effectively shielding the control device from EMI\r\n> sources.\r\n>\r\n>\r\n>\r\n>\r\n> ",
+      "user_id": 158003255662,
+      "created_at": "2025-08-18T07:09:59Z",
+      "updated_at": "2025-08-18T07:09:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

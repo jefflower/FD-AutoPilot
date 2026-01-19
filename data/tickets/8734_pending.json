@@ -1,0 +1,24 @@
+{
+  "id": 8734,
+  "subject": "ALS01252125628=1Z01E9E16719907403 收到请回复",
+  "description_text": "您好，为您查看到这票件有产生税金，包裹在当地时间12月4日14:41已经由LUKE 签收了。\r\naliups@8dt.com\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-20T07:14:26Z",
+  "updated_at": "2025-12-20T13:01:02Z",
+  "requester_id": 158006052019,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014810564,
+      "body_text": "Hi aliups@8dt. com,  Please provide your order, and I’ll check which platform it was placed on. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-20T13:01:02Z",
+      "updated_at": "2025-12-20T13:01:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

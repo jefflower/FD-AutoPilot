@@ -1,0 +1,74 @@
+{
+  "id": 3037,
+  "subject": "Simsonn Pro X Ultra Pedals registering RX+ or RX- Signal with no presses",
+  "description_text": "Hello,\r\n\r\nToday I noticed when trying to re-calibrate my Simsonn Pro X Ultra  pedals that when I try to assign a button ingame it registeres RX+ or RX- as input without me pressing anything at all.\r\n\r\nWhen I check in the Simsonn software everything seems right, no loadcell fluctuation no nothing at all, I tried grounding the rig and using separate power but nothing seems to help, any other things that I can try?\r\n\r\n\r\nThank you,\r\n\r\nCosmin.\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-08-23T11:59:08Z",
+  "updated_at": "2025-08-27T06:04:49Z",
+  "requester_id": 158001949116,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004502036,
+      "body_text": "Hi Anichitei Cosmin,    Sorry for the delay, we are waiting for the German warehouse to arrive before we ship it to you to avoid customs duties. Your package has been shipped and is expected to arrive around the 13th.  https://t.17track.net/en#nums=CE326618434DE",
+      "user_id": 158001343601,
+      "created_at": "2025-07-10T10:37:35Z",
+      "updated_at": "2025-07-10T10:37:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007440852,
+      "body_text": "Hi Anichitei Cosmin,     This is a configuration issue. Please use version 2.1.1, then click “Restore” on the interface and afterwards click “Save.” This will disable the Rx axis. After that, please test again to see if the problem is resolved.   https://drive.google.com/file/d/1UPkeOHREyALtCtNmL87a2WnUDZV0Gx_b/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-08-25T03:06:28Z",
+      "updated_at": "2025-08-25T03:06:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007586768,
+      "body_text": "Sincerely thank you, this fixed everything. I really really appreciate the\r\nanswer and the constant replies.\r\n\r\nThank you again,\r\n\r\nCosmin.\r\n\r\nOn Mon, 25 Aug 2025 at 06:06, support@simsonn.com ",
+      "user_id": 158001949116,
+      "created_at": "2025-08-26T22:33:36Z",
+      "updated_at": "2025-08-26T22:33:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007590426,
+      "body_text": "ID 为 1336 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-27T03:22:46Z",
+      "updated_at": "2025-08-27T03:22:46Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158007590427,
+      "body_text": "合并来自工单1336  \n      主题: No update on order  \n      描述:  Good day,   \n I am sorry to bother, I placed an order on 1st of july ( order number 1899 ) and I haven't recieved any update regarding it. \n How does  an order gets it's updates? Sorry it is first time I buy from you. \n   \n Thank you, \n   \n Cosmin",
+      "user_id": 158000445778,
+      "created_at": "2025-08-27T03:22:46Z",
+      "updated_at": "2025-08-27T03:22:46Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158007593416,
+      "body_text": "All my questions were answered.",
+      "user_id": 158001949116,
+      "created_at": "2025-08-27T06:04:49Z",
+      "updated_at": "2025-08-27T06:04:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ]
+}

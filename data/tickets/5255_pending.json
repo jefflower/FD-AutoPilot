@@ -1,0 +1,24 @@
+{
+  "id": 5255,
+  "subject": "Pro x ultra",
+  "description_text": "Bonjour, comment faire pour régler le pédalier la force du frein Ne dépasse pas 40 kg, voire 45. Il est pourtant donné pour 100 kg, voire 140. Comment puis-je faire ? Merci \r\nEnvoyé de mon iPhone",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-24T22:16:46Z",
+  "updated_at": "2025-10-25T02:09:08Z",
+  "requester_id": 158006075706,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011050079,
+      "body_text": "Hi jean-claude doussot,    Please try replacing the default red damper with the blue damper, and see if this allows the brake force to reach a higher level. If the blue damper still cannot exceed 45 kg, it’s possible that the ProX Ultra hardware amplification factor does not match your pedal set. In that case, we can send you a new main controller.  Please note that this issue usually only affects the displayed kilogram value — the actual brake force is already correct. Also, please provide a photo of the side view of your brake pedal, so we can check whether any parts around the damper, limit screw, or pressure sensor are blocking the pedal’s travel.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-25T02:09:08Z",
+      "updated_at": "2025-10-25T02:09:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

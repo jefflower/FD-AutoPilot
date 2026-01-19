@@ -1,0 +1,55 @@
+{
+  "id": 7540,
+  "subject": "H档/序列式换挡器",
+  "description_text": "你好，能给我解释一下H档换挡器如何转换成序列式换挡器吗？是需要拧下顶部再换上另一个，还是有更简单的方法？谢谢。",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-06T01:24:42Z",
+  "updated_at": "2025-12-06T05:14:47Z",
+  "requester_id": 158007670605,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013754802,
+      "body_text": "你好 Stefan Dimitrov，请提供您的订单号并发送几张产品照片，以便我确认您使用的具体型号。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-06T04:46:17Z",
+      "updated_at": "2025-12-06T04:46:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013756780,
+      "body_text": "我说的是我想预购你们的新产品。Simsonn HS Pro 换挡器，那款H档/序列式双模式赛车模拟换挡器。",
+      "user_id": 158007670605,
+      "created_at": "2025-12-06T04:53:58Z",
+      "updated_at": "2025-12-06T04:53:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013760201,
+      "body_text": "你好 Stefan Dimitrov，新款换挡器在H档和序列模式之间切换是完全兼容的。你只需要取下换挡器顶部并松开两个小螺丝即可完成更换。然后在软件中切换到序列模式。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-06T05:07:52Z",
+      "updated_at": "2025-12-06T05:07:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013760955,
+      "body_text": "好的，谢谢你的澄清。",
+      "user_id": 158007670605,
+      "created_at": "2025-12-06T05:10:42Z",
+      "updated_at": "2025-12-06T05:10:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

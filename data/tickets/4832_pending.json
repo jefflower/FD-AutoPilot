@@ -1,0 +1,74 @@
+{
+  "id": 4832,
+  "subject": "",
+  "description_text": "Hi!\r\n\r\nJust got my handbrake pro and so far im impressed, though the light stopped\r\nworking in the configuration, is there a hidden Button? The handbrake works\r\nbut in the software it doesnt show up when i pull the brake, just in the\r\nlight tab, there i can see the color following\r\n\r\nBest regards/Erik\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-10-13T18:53:01Z",
+  "updated_at": "2025-10-22T03:37:54Z",
+  "requester_id": 158005651106,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010535216,
+      "body_text": "Hi Erik E,   Please uninstall the old version from your computer first, then download and install the latest SIMSONN Manager 2.1.2.     At the front bottom of the handbrake (indicated by the arrow), there is a small rectangular hole that contains the recovery button. Please use a toothpick to gently push it to the other side, then reconnect the USB cable. The device will enter recovery mode. Next, go to Settings → Update → Manual Firmware Update → handbrake-firmware → handbrake-hbpro.sfu in the software, and complete the update. After the upgrade, make sure to switch the recovery button back to its original position. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-16T06:02:05Z",
+      "updated_at": "2025-10-16T06:02:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010572533,
+      "body_text": "Thanks!\r\n\r\nDid exactly what you said but no light on the handbrake and dont show upp\r\non \"position\" in the app\r\n\r\nBest regards  Erik\r\n\r\nDen tors 16 okt. 2025 08:02service@simsonn.com ",
+      "user_id": 158005651106,
+      "created_at": "2025-10-16T16:37:20Z",
+      "updated_at": "2025-10-16T16:37:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010589407,
+      "body_text": "Hi Erik E,  Have you successfully completed the update? And are you still unable to connect to the software afterward? ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-17T02:03:53Z",
+      "updated_at": "2025-10-17T02:03:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010589432,
+      "body_text": "Hi Erik E,  We can schedule a time, then you can install ToDesk (no registration required). I will assist you remotely to resolve the issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-17T02:04:38Z",
+      "updated_at": "2025-10-17T02:04:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010595014,
+      "body_text": "Yes; the handbrake works, theres just that the rgb doesnt work on it\r\n\r\n/Erik\r\n\r\nDen fre 17 okt. 2025 04:04service@simsonn.com ",
+      "user_id": 158005651106,
+      "created_at": "2025-10-17T03:47:38Z",
+      "updated_at": "2025-10-17T03:47:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010595291,
+      "body_text": "Hi Erik E,  Please download ToDesk (no registration required) and share the temporary ID and password with us. I can remotely check the issue for you. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-17T04:16:05Z",
+      "updated_at": "2025-10-17T04:16:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

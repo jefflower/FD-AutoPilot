@@ -1,0 +1,34 @@
+{
+  "id": 8158,
+  "subject": "Problems with an order",
+  "description_text": "Hello, after receiving my order N SSN4314 I noticed that the vam set is missing. I request the shipment of the missing item. \r\nInviato da iPhone\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-13T14:55:09Z",
+  "updated_at": "2025-12-15T09:24:02Z",
+  "requester_id": 158007796305,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014472531,
+      "body_text": "Hi Francesco Pinzolo,  Please rest assured that our operations team will handle your issue. Typically, the vibration motor and pedals are shipped separately, as they are not designed to be in the same package. In some cases, temporary stock shortages may also result in separate shipments. Due to a backlog of emails, responses may be slightly delayed. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-14T04:00:24Z",
+      "updated_at": "2025-12-14T04:00:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014502828,
+      "body_text": "Hi Francesco Pinzolo,        Here is another link for your logistics tracking.    https://t.17track.net/en#nums=YT2533900706537290",
+      "user_id": 158001343601,
+      "created_at": "2025-12-15T09:24:02Z",
+      "updated_at": "2025-12-15T09:24:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

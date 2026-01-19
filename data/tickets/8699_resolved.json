@@ -1,0 +1,64 @@
+{
+  "id": 8699,
+  "subject": "Malfunzionamento motorino vam",
+  "description_text": "Buongiorno\r\nScrivo per un problema avuto con un motorino aptico vam. Ho acquistato il\r\nse completo di motorini con relativo alimentatore da collegare alla\r\npedaliera plus X già provvista di scatola di controllo.\r\nIn un primo momento tutto funzionava correttamente ma dopo soli 20 minuti\r\nun motorino ha smesso di funzionare. Ho provato a scambiare anche i vari\r\nmotori fra di loro ma solo quello non funziona. A schermo non viene\r\nvisualizzato nessun errore.\r\n Invio in allegato video\r\n\r\nGrazie mille\r\nZamparutti amedeo\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-19T17:57:36Z",
+  "updated_at": "2025-12-26T09:00:32Z",
+  "requester_id": 158008155545,
+  "responder_id": 158007774664,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014810888,
+      "body_text": "Hi Amedeo Zamparutti,  Please take a screenshot of the motor settings page so I can check your configuration. Additionally, the video you uploaded is incomplete. Please send us the link via Google Drive and ensure the sharing permissions are set correctly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-20T13:22:55Z",
+      "updated_at": "2025-12-20T13:22:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014939113,
+      "body_text": "Buongiorno\r\nEcco il link richiesto al video. Spero vada bene\r\n\r\nhttps://drive.google.com/file/d/11uFjdHy_LJuZKD1uOeuL7lWWgMzO8Swc/view?usp=drivesdk\r\n\r\nIn piu allego anche le foto richieste\r\n\r\nIl Sab 20 Dic 2025, 14:23 service@simsonn.com ",
+      "user_id": 158008155545,
+      "created_at": "2025-12-22T21:02:54Z",
+      "updated_at": "2025-12-22T21:02:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015021225,
+      "body_text": "Hi Amedeo Zamparutti,      Please provide your order number, contact person, phone number, and shipping address. We will send you 1 replacement VAM motors. Please also note that the VAM motors should not be used in VAM Pro mode. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-24T06:14:39Z",
+      "updated_at": "2025-12-24T06:14:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015028173,
+      "body_text": "Hi\r\n\r\nMy id order is 3065510739888092. I buy italiani on aliexpress.\r\n\r\nAdress:\r\nvia edmondo de amicis 52/1\r\n33030 Campoformido\r\nUDINE\r\nItaly\r\n\r\nPhone:\r\n+393406297105\r\n\r\nThank you vero much\r\n\r\nAmedeo Zamparutti\r\n\r\n\r\n\r\nIl Mer 24 Dic 2025, 07:14 service@simsonn.com ",
+      "user_id": 158008155545,
+      "created_at": "2025-12-24T08:49:17Z",
+      "updated_at": "2025-12-24T08:49:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015089514,
+      "body_text": "Hi Amedeo Zamparutti,  Your product has been shipped. The logistics number is:YT2536000705678042. You can track it at this website:https://t.17track.net/zh-cn#nums=YT2536000705678042 ",
+      "user_id": 158007774664,
+      "created_at": "2025-12-26T09:00:21Z",
+      "updated_at": "2025-12-26T09:00:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": 1086,
+  "subject": "No instruction manual with my purchased pedals.",
+  "description_text": "I purchased my Simsonn pro x about a month ago now off of your Amazon store. The box didnt have and instructions of and kind in the box. So, i went online to your website and seen there was a link to view the instructions, but the link is broken and can't be accessed. So, i was hoping that you could send the instructions to me or give the right working link to the pro x pedals on your website.\r\n\r\n\r\nthank you for your time.\r\n\r\n      Paul\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-07-02T01:05:58Z",
+  "updated_at": "2025-12-18T09:40:23Z",
+  "requester_id": 158001388465,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004362774,
+      "body_text": "Hi PJ Wentline,     Sorry for the oversight regarding the manual. I’ll provide you with the digital version.  https://cdn.simsonn.vip/download/SIMSONN_Pro_X_Ultra_EN.pdf",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T01:44:37Z",
+      "updated_at": "2025-07-02T01:44:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004363002,
+      "body_text": "Thanks for the fast reply. And thank you for helping me out.\r\n\r\n     Pj\r\n________________________________\r\n",
+      "user_id": 158001388465,
+      "created_at": "2025-07-02T03:11:02Z",
+      "updated_at": "2025-07-02T03:11:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

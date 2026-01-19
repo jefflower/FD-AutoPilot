@@ -1,0 +1,35 @@
+{
+  "id": 2728,
+  "subject": "触觉反馈反应器问题",
+  "description_text": "电机3的输出非常弱，我调换了电机，是盒子出了问题，而不是电机本身。通过iOS版Outlook获取<https://aka.ms/o0ukef>",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-08-15T14:05:45Z",
+  "updated_at": "2025-08-18T02:19:12Z",
+  "requester_id": 158002806240,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006950913,
+      "body_text": "您好 Scott Krause，请提供您的订单号，并告知您使用的是哪种踏板以及哪种触觉反馈模型。是我们的最新主控制盒吗？",
+      "user_id": 158001343601,
+      "created_at": "2025-08-16T05:54:47Z",
+      "updated_at": "2025-08-16T05:54:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007028168,
+      "body_text": "抱歉！问题解决了，不确定具体发生了什么，但在将强度提高1%后，它现在功能完全正常且可调节。踏板最近刚由支持团队刷新过，谢谢！通过iOS版Outlook获取<https://aka.ms/o0ukef>________________________________",
+      "user_id": 158002806240,
+      "created_at": "2025-08-17T18:58:58Z",
+      "updated_at": "2025-08-17T18:58:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

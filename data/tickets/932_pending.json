@@ -1,0 +1,54 @@
+{
+  "id": 932,
+  "subject": "Never received Haptic Motors",
+  "description_text": "I never received my haptic motors which I ordered (order no. #SSN1776) in my package. I only received the pedals but I hard ordered the haptic motors as well. ",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-06-27T20:38:08Z",
+  "updated_at": "2025-07-01T09:10:15Z",
+  "requester_id": 158001833184,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004218581,
+      "body_text": "Hi Luis Prieto,  We will check your order right away today and get back to you as soon as possible. Please don’t worry—we make sure every order is delivered properly to our customers. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-28T00:05:56Z",
+      "updated_at": "2025-06-28T00:05:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004307342,
+      "body_text": "Hi Luis Prieto,    Sorry, the first batch of VAM Pro stock is depleted, the second batch will be delivered tomorrow, we will ship it to you as soon as possible and refund you the extra shipping cost as compensation, we apologize for the delay!",
+      "user_id": 158001343601,
+      "created_at": "2025-06-30T10:59:29Z",
+      "updated_at": "2025-06-30T10:59:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004342763,
+      "body_text": "Thank you very much for the help.\r\n\r\nI appreciate the quick response and clarity.\r\n\r\nBest,\r\nLuis D Prieto\r\n\r\n",
+      "user_id": 158001833184,
+      "created_at": "2025-06-30T14:48:40Z",
+      "updated_at": "2025-06-30T14:48:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004355846,
+      "body_text": "Hi Luis Prieto,     Here's the link to your logistics tracking, your package was sent out before it went out of stock and is expected to arrive around the 5th. https://t.17track.net/en#nums=JSEXI1925370400YQ",
+      "user_id": 158001343601,
+      "created_at": "2025-07-01T09:10:15Z",
+      "updated_at": "2025-07-01T09:10:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

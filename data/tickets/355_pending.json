@@ -1,0 +1,84 @@
+{
+  "id": 355,
+  "subject": "Order #SSN1667",
+  "description_text": "Hi there,\r\nHow are you doing?  I would like to know the status of my order.  \r\nThanks!\r\nBest, Roy \r\n",
+  "status": 3,
+  "priority": 2,
+  "created_at": "2025-06-11T20:59:13Z",
+  "updated_at": "2025-06-17T11:04:04Z",
+  "requester_id": 158001450902,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002945717,
+      "body_text": "Hi，Roy Deng， We will check your order immediately to see if it has been partially shipped without a tracking number. We’ll get back to you shortly! ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-12T01:45:09Z",
+      "updated_at": "2025-06-12T01:45:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002993056,
+      "body_text": "Hi Roy Deng,  We have just confirmed that the Pro X Ultra you purchased is currently out of stock at our US warehouse.  We expect new stock to arrive soon, so we are in no rush to ship the baseplate from China for you, and we will arrange to ship the baseplate to you as soon as we receive it in our warehouse.  Thank you for your understanding and patience. Sorry for the delay caused!",
+      "user_id": 158001343601,
+      "created_at": "2025-06-12T10:02:48Z",
+      "updated_at": "2025-06-12T10:02:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002995906,
+      "body_text": " Hi there,\r\nThanks for your prompt response!\r\nWill wait to hear from you again.\r\nBest, Roy Deng \r\n    ",
+      "user_id": 158001450902,
+      "created_at": "2025-06-12T17:11:41Z",
+      "updated_at": "2025-06-12T17:11:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003004038,
+      "body_text": "Hi Roy Deng,  You're very welcome! As soon as the stock arrives at the warehouse, we’ll arrange the shipment for you immediately. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-13T04:23:13Z",
+      "updated_at": "2025-06-13T04:23:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003105797,
+      "body_text": " Hi,\r\nThanks for getting back to me!\r\nDo you have an estimate of when that will happen?\r\n\r\n\r\n    ",
+      "user_id": 158001450902,
+      "created_at": "2025-06-14T16:32:14Z",
+      "updated_at": "2025-06-14T16:32:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003259223,
+      "body_text": "Hi Roy Deng,     The goods will be in stock tomorrow and dispatched on Wednesday and are expected to arrive for you around the 21st.",
+      "user_id": 158001343601,
+      "created_at": "2025-06-16T10:48:50Z",
+      "updated_at": "2025-06-16T10:48:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003292375,
+      "body_text": " Great!!\r\nThanks!!!!\r\n    ",
+      "user_id": 158001450902,
+      "created_at": "2025-06-16T16:01:58Z",
+      "updated_at": "2025-06-16T16:01:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

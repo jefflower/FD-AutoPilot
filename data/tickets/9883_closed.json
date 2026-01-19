@@ -1,0 +1,124 @@
+{
+  "id": 9883,
+  "subject": "Order Confirmation",
+  "description_text": "Hello, I had tried speaking to another agent of yours and he has decided to not respond given multiple days. This is unacceptable and frankly my order, which is number SSN5180 has not even been declared as shipped yet. It has been almost two weeks without an update and your service department has been seriously lackluster when it comes to responding. I have sent them about 5 messages across the span of about a week, with only one response. This is unacceptable, and as I told them, I will be needing a refund is nothing is established within 2 days.",
+  "status": 5,
+  "priority": 4,
+  "created_at": "2026-01-03T17:00:11Z",
+  "updated_at": "2026-01-04T20:15:06Z",
+  "requester_id": 158008812225,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015358616,
+      "body_text": "This is ridiculous it has been almost 10 days with no update whatsoever.",
+      "user_id": 158008812225,
+      "created_at": "2026-01-01T08:52:37Z",
+      "updated_at": "2026-01-01T08:52:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015366642,
+      "body_text": "Hi Gabriel Perez,  Please provide your order number so I can check what the issue is. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-01T15:29:50Z",
+      "updated_at": "2026-01-01T15:29:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015368382,
+      "body_text": "Order number is\r\nSSN5180\r\n\r\nOn Thu, Jan 1, 2026 at 09:29 service@simsonn.com ",
+      "user_id": 158008812225,
+      "created_at": "2026-01-01T16:38:04Z",
+      "updated_at": "2026-01-01T16:38:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015371602,
+      "body_text": "SSN5180",
+      "user_id": 158008812225,
+      "created_at": "2026-01-01T19:57:37Z",
+      "updated_at": "2026-01-01T19:57:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015407270,
+      "body_text": "Absolutely wild, it has been 11 days now with no update to my shipping at all. this is not faring well for your company as well considering I have had to reach out MULTIPLE times to get a response at all. ",
+      "user_id": 158008812225,
+      "created_at": "2026-01-02T17:35:21Z",
+      "updated_at": "2026-01-02T17:35:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015407307,
+      "body_text": "I will not hesitate to ask for a refund soon, and take my business elsewhere.",
+      "user_id": 158008812225,
+      "created_at": "2026-01-02T17:36:00Z",
+      "updated_at": "2026-01-02T17:36:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015497014,
+      "body_text": "you have 2 days to respond, before I ask for a  full refund. I am also opening another ticket with another agent.",
+      "user_id": 158008812225,
+      "created_at": "2026-01-03T16:57:02Z",
+      "updated_at": "2026-01-03T16:57:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015549007,
+      "body_text": "ID 为 9488 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-04T01:39:24Z",
+      "updated_at": "2026-01-04T01:39:24Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158015549008,
+      "body_text": "合并来自工单9488  \n      主题: Order confirmation  \n      描述:  Hello, I was just wondering if my order from before christmas had shipped yet, and if not when that might be happening. Thanks.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-04T01:39:24Z",
+      "updated_at": "2026-01-04T01:39:24Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158015602073,
+      "body_text": "Hi Gabriel Perez,    We apologize for not updating you promptly. Your order has already been shipped.  https://t.17track.net/en#nums=JSELV2401539439YQ",
+      "user_id": 158001343601,
+      "created_at": "2026-01-04T08:00:21Z",
+      "updated_at": "2026-01-04T08:00:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015684032,
+      "body_text": "The first agent did not respond at all. The second agent, was quick to respond at least. Will not be ordering from simsonn again.",
+      "user_id": 158008812225,
+      "created_at": "2026-01-04T20:15:05Z",
+      "updated_at": "2026-01-04T20:15:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ]
+}

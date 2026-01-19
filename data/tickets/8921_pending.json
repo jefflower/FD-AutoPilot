@@ -1,0 +1,54 @@
+{
+  "id": 8921,
+  "subject": "Why can't I choose shipping to Poland?",
+  "description_text": "Why can't I choose shipping to Poland?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-22T20:15:50Z",
+  "updated_at": "2025-12-28T15:55:43Z",
+  "requester_id": 158008311618,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014945826,
+      "body_text": "Hi MatheoYT,     Customers in Poland can place orders directly through our Polish distributor, and the products will be shipped locally from Poland.  https://fmic.pl/elektronika/simracing?product_brand=Simsonn",
+      "user_id": 158000445778,
+      "created_at": "2025-12-22T23:08:40Z",
+      "updated_at": "2025-12-22T23:08:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014960695,
+      "body_text": "So there's no way to order from your website? Here in Poland, the price\r\ndifference is $200 per pedal. Then it's no longer worth it.\r\n\r\nwt., 23 gru 2025, 00:08 użytkownik support@simsonn.com ",
+      "user_id": 158008311618,
+      "created_at": "2025-12-23T07:44:44Z",
+      "updated_at": "2025-12-23T07:44:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015016761,
+      "body_text": "Hi MatheoYT,  Please provide a screenshot showing the significant differences with the Poland product, and I will contact them to check. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-24T03:27:13Z",
+      "updated_at": "2025-12-24T03:27:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015089697,
+      "body_text": "It's no longer an issue. I ordered Simnet. You're losing a lot of Polish\r\ncustomers because you don't ship to Poland, only through a distributor. I\r\ndon't understand this. Because you ship to Germany, Ukraine, and even\r\nHaiti, but not to Poland.\r\n\r\nśr., 24 gru 2025, 04:27 użytkownik support@simsonn.com ",
+      "user_id": 158008311618,
+      "created_at": "2025-12-26T09:02:31Z",
+      "updated_at": "2025-12-26T09:02:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

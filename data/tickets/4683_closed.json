@@ -1,0 +1,34 @@
+{
+  "id": 4683,
+  "subject": "Broken connecter",
+  "description_text": "Hi Simsonn Support Team,\r\n\r\nI hope you’re doing well. I recently purchased a set of *Simsonn Plus X\r\npedals*, and unfortunately, the *RJ11 connector for the load cell* broke\r\noff during setup. As a result, the load cell has become disconnected, and\r\nthe brake pedal is no longer connecting.\r\n\r\nThe rest of the unit appears to be in perfect condition — it’s just the\r\nRJ11 connection that was damaged. I wanted to reach out before attempting\r\nany further repair to see if a *replacement load cell or load cell cable\r\nassembly* could be sent out under warranty or purchased as a replacement\r\npart.\r\n\r\nHere are my details:\r\n\r\n   -\r\n\r\n   *Product:* Simsonn Plus X Pedals\r\n   -\r\n\r\n   *Purchase Date:* October 4th\r\n   -\r\n\r\n   *Purchased From: Amazon *\r\n   -\r\n\r\n   *Order Number:* 114-3645172-7744262\r\n\r\nI can also provide photos of the damage if needed. Please let me know the\r\nbest way to proceed — I’d really appreciate any help you can provide so I\r\ncan get the pedals back up and running.\r\n\r\nThank you very much for your time and support.\r\n\r\nBest regards,\r\n*Chase Matsko*\r\n? chasematsko@gmail.com\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-10-09T23:36:24Z",
+  "updated_at": "2025-12-18T09:40:24Z",
+  "requester_id": 158005536984,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010185033,
+      "body_text": "Hi Chase Matsko,  Please send me a photo so I can check where the wire is broken. If the break is close to the RJ11 connector, you can visit a nearby computer repair shop and have them re-crimp a new RJ11 connector, following the same wiring order as the clutch. If it can’t be repaired, please contact us and we’ll send you a new brake sensor for replacement. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-10T01:15:00Z",
+      "updated_at": "2025-10-10T01:15:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010185096,
+      "body_text": "I just got it fixed thank you!!!\r\n\r\nOn Thu, Oct 9, 2025 at 9:15 PM support@simsonn.com ",
+      "user_id": 158005536984,
+      "created_at": "2025-10-10T01:20:12Z",
+      "updated_at": "2025-10-10T01:20:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

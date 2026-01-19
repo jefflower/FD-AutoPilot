@@ -1,0 +1,34 @@
+{
+  "id": 10901,
+  "subject": "SF5127154688505 请确认税费是否挂贵司月结账号",
+  "description_text": "\n\n\n\n\n\n\n\n\n尊敬的先生/女士：\n\n\n    您好！\n\n    我是顺丰速运的客服，本次来邮是与您沟通快件单号SF5127154688505 当前情况，具体如下：\n\n   此件税费折算人民币大概982CNY，请确认是否挂贵公司月结，还是需要收件人支付，未确认税费，包裹无法放行，关于运费910CNY是原价，因此系统会生成原价的运费清单，海外会用于此办理清关手续\n\n\n\n\n谢谢\n\n\n\n\nJason                                                    \n\n如您有任何疑问，欢迎随时致电95338或邮件至intlcs@sf-express.com，谢谢！（温馨提示：本邮箱已更新为intlcs@sf-express.com，为了保证您的咨询能够被及时处理，请留意联系新邮箱，感谢您的支持与配合！）\n\n\n顺丰速运\n国际客服中心\nT_ 95338\nhttps://www.sf-international.com\n\n\n\n\n\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-14T14:18:49Z",
+  "updated_at": "2026-01-17T02:18:23Z",
+  "requester_id": 158000957568,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017180358,
+      "body_text": "税费怎么这么贵，给一下税单",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T11:50:45Z",
+      "updated_at": "2026-01-15T11:50:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017264153,
+      "body_text": "您好\n\n\n\n\n请查收附件，附件为此单SF5127154688505税单，据海外反馈，由于您申报价值太低，收方无法提供价值凭证\n\n后面收方提供了正确价值，海关才同意放行，现快件已签收，如无其他问题，将于24小时后结束跟进\n\n\n\n\n谢谢\n\n\n\n\n\n\n\n-----原始邮件-----\n发件人:\"support@simsonn.com\" ",
+      "user_id": 158000957568,
+      "created_at": "2026-01-16T13:14:42Z",
+      "updated_at": "2026-01-16T13:14:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

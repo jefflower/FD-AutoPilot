@@ -1,0 +1,114 @@
+{
+  "id": 5559,
+  "subject": "Editing an order",
+  "description_text": "Hi,\r\n\r\nI have recently purchased a pedal set (on Wednesday). I have just noticed\r\nthat you offer the pre black friday sale. If I had known that you would\r\noffer that I would have waited and got the clutch as well. Is it possible\r\nto add it to my order, or has it been sent already (haven't got any info\r\nabout it being sent)?\r\n\r\nThanks,\r\nLukas Jarmara\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-11-02T21:32:36Z",
+  "updated_at": "2025-11-03T08:26:30Z",
+  "requester_id": 158006168377,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011645097,
+      "body_text": "Hi Lukáš Jarmara,    Don't worry, we can adjust your order for you. 251.90(Plus X P3-H3 ) - 175.90(Plus X P2-H2 ) + 9.9(shipping) - 45(offer) = 40.9(difference). You only need to pay the $40.9 difference. You can click this link to make the payment, and we'll modify your order. https://www.simsonn.com/products/difference-2",
+      "user_id": 158001343601,
+      "created_at": "2025-11-03T06:58:00Z",
+      "updated_at": "2025-11-03T06:58:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011645521,
+      "body_text": "Hi,\r\n\r\nmay I ask why I need to pay the shipping again? Or is it an upgrade to the\r\nstandart shipping from economy shipping?\r\n\r\nThanks for clarification,\r\nLukas Jarmara\r\n\r\n",
+      "user_id": 158006168377,
+      "created_at": "2025-11-03T07:20:48Z",
+      "updated_at": "2025-11-03T07:20:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011645762,
+      "body_text": "Hi Lukáš Jarmara,    No, this is your original shipping fee, but we'll arrange delivery for you via DHL. Please don't worry.  ​",
+      "user_id": 158001343601,
+      "created_at": "2025-11-03T07:34:51Z",
+      "updated_at": "2025-11-03T07:34:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011645837,
+      "body_text": "Hi,\r\n\r\nso it will come in a different package than the pedals?\r\n\r\nThanks,\r\nLukáš Jarmara\r\n\r\n",
+      "user_id": 158006168377,
+      "created_at": "2025-11-03T07:39:51Z",
+      "updated_at": "2025-11-03T07:39:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011645895,
+      "body_text": "Hi Lukáš Jarmara,    Plus X Pedal has only one layer of packaging, and all its packaging are identical.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-03T07:42:16Z",
+      "updated_at": "2025-11-03T07:42:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011645947,
+      "body_text": "Hi,\r\n\r\nthen I still don’t get why I need to pay the shipping fee if I have already\r\npaid it for the previous shipping (the two pedal set), is it just heavier\r\nand thus need to pay more, or have you already sent it and thus would need\r\nto ship it again?\r\n\r\nThanks,\r\nLukáš Jarmara\r\n\r\n",
+      "user_id": 158006168377,
+      "created_at": "2025-11-03T07:45:34Z",
+      "updated_at": "2025-11-03T07:45:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011646071,
+      "body_text": "Hi Lukáš Jarmara,     You simply subtract 251.90 (Plus X P3-H3) minus the 165.9 you originally paid for Plus X P2-H2, then subtract 45 (the offer) = 41 (the difference).",
+      "user_id": 158001343601,
+      "created_at": "2025-11-03T07:52:03Z",
+      "updated_at": "2025-11-03T07:52:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011646525,
+      "body_text": "Hi,\r\n\r\nok turns out I am just bad at maths. Paid in full.\r\n\r\nApologies,\r\nLukas Jarmara\r\n\r\n",
+      "user_id": 158006168377,
+      "created_at": "2025-11-03T08:12:50Z",
+      "updated_at": "2025-11-03T08:12:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011646577,
+      "body_text": "Okay, we'll ship your order as soon as possible.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-03T08:14:51Z",
+      "updated_at": "2025-11-03T08:14:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011646604,
+      "body_text": "Great, thanks, looking forward to them a lot.\r\n\r\nBest,\r\nLukas Jarmara\r\n\r\n",
+      "user_id": 158006168377,
+      "created_at": "2025-11-03T08:16:26Z",
+      "updated_at": "2025-11-03T08:16:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

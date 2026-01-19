@@ -1,0 +1,44 @@
+{
+  "id": 7760,
+  "subject": "ORDER #SSN3870",
+  "description_text": "In reference to the above order you will see I ordered the 3 pack of haptic motors.\r\nToday I received the first package that been the haptic motors and it only included 2 motors.\r\nAs this is my first order with you I am slightly disappointed that the pedals did not arrive with the same package and the one that did arrive is short a haptic motor.\r\nRegards \r\nShaun Singleton \r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-09T06:12:07Z",
+  "updated_at": "2025-12-10T12:00:16Z",
+  "requester_id": 158007715094,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014167429,
+      "body_text": "Hi shaun singleton,      Our pedals and haptic motors are shipped separately, and the pedals should arrive soon. Please take a photo of the haptic motor and the packaging with the foam, and I will assist you in checking it.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-09T06:32:49Z",
+      "updated_at": "2025-12-09T06:32:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014167696,
+      "body_text": "[image0.jpeg][image1.jpeg]\r\n\r\nAs you can see there is space for the 3rd motor but it has a package with bolts and clips in there.\r\nRegards\r\nShaun Singleton\r\n",
+      "user_id": 158007715094,
+      "created_at": "2025-12-09T06:41:05Z",
+      "updated_at": "2025-12-09T06:41:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014230654,
+      "body_text": "Still awaiting your decision.\r\nRegards\r\nShaun Singleton\r\n\r\n",
+      "user_id": 158007715094,
+      "created_at": "2025-12-10T04:01:37Z",
+      "updated_at": "2025-12-10T04:01:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

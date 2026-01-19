@@ -1,0 +1,64 @@
+{
+  "id": 8761,
+  "subject": "SSN3947",
+  "description_text": "I received my first package for my order. Included are 3 pedals,\r\ncontroller, and hardware. Does the second package contain the base plate\r\nand haptics?\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-20T18:38:35Z",
+  "updated_at": "2025-12-23T09:34:45Z",
+  "requester_id": 158007367127,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014823332,
+      "body_text": "This is urgent due to the fact it ordered this almost a month ago and still haven't received my complete order.",
+      "user_id": 158007367127,
+      "created_at": "2025-12-20T22:54:11Z",
+      "updated_at": "2025-12-20T22:54:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158014834760,
+      "body_text": "There is also no heel plate or riser plate.",
+      "user_id": 158007367127,
+      "created_at": "2025-12-21T08:59:54Z",
+      "updated_at": "2025-12-21T08:59:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158014874268,
+      "body_text": "Hi Daniel Hardy,           Your order was shipped in multiple packages. You have received the first package (pedals, controller, and hardware). The other two packages are still in transit and include the floor/base and the haptic feedback components. ",
+      "user_id": 158001343601,
+      "created_at": "2025-12-22T11:28:00Z",
+      "updated_at": "2025-12-22T11:28:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014892940,
+      "body_text": "I need the tracking number to the third package.",
+      "user_id": 158007367127,
+      "created_at": "2025-12-22T15:43:40Z",
+      "updated_at": "2025-12-22T15:43:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158014964930,
+      "body_text": "Hi Daniel Hardy,    This is the tracking link for your third package.  https://t.17track.net/en#nums=SF6047195322611",
+      "user_id": 158001343601,
+      "created_at": "2025-12-23T09:34:44Z",
+      "updated_at": "2025-12-23T09:34:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

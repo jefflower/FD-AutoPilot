@@ -1,0 +1,35 @@
+{
+  "id": 9370,
+  "subject": "踏板增强版 X",
+  "description_text": "你好，我购买了油门和刹车踏板。当我运行管理器时，踏板正常工作，但是当我启动游戏（如rFactor2或Le Mans Ultimate）时，踏板仍然无法工作，游戏识别不到它...我该如何解决？",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-28T14:06:30Z",
+  "updated_at": "2025-12-30T09:05:50Z",
+  "requester_id": 158008800673,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015165889,
+      "body_text": "你好，Nicola Santi，这两款游戏都支持。请给我发送游戏内设置的截图，以便我查看并更好地了解问题。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T15:20:42Z",
+      "updated_at": "2025-12-28T15:20:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015183034,
+      "body_text": "已解决！我手动更新了固件，然后校准了踏板，现在它们可以工作了！无论如何，感谢您的支持！",
+      "user_id": 158008800673,
+      "created_at": "2025-12-29T08:16:07Z",
+      "updated_at": "2025-12-29T08:16:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    }
+  ],
+  "available_langs": []
+}

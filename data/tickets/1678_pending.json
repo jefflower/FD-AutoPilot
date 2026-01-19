@@ -1,0 +1,24 @@
+{
+  "id": 1678,
+  "subject": "Heel Plate Light Follow, Brake Pedal Hydraulic Adjustment",
+  "description_text": "Hi,\r\n\r\nThis week I received the Pro X Ultra pedals I ordered through your website.\r\nAfter putting them together and today mounting them on my rig, I am now\r\ntesting them. This brought up 2 questions for me.\r\n\r\nThe lighting is really neat and I have set it on the 3 pedals to 'Follow',\r\nsuch that it goes from black (off) to a colour as I press it. I would like\r\nto do the same for the heel plate: use 'Follow' and have the light off by\r\ndefault, to then progressively light up as I press my brake pedal.\r\nI can't find how to change the colour(s) for the heel plate though. When I\r\nselect 'Follow', it shows just 1 colour (red) and this colour I can't\r\nchange (unlike the pedal lights).\r\n\r\nIs this just the way it works? I saw a review on Youtube of the Pro X and\r\nthe guy has the light change from green to red. Is this perhaps no longer\r\npossible in Simsonn Manager 2.0.9 (the version I have) or with the Pro X\r\nUltra pedals? The one and only option I seem to have is it being coloured\r\nred by default and then turning off as I press the brake pedal.\r\n\r\nSecondly, the hydraulic adjustment knob at the back of the brake pedal\r\ndoesn't seem to have any effect. From a different review I got the\r\nimpression that if I set it to 8, it should make it practically impossible\r\nto press in the brake pedal. I can't feel a difference between 0 and 8\r\nthough. Furthermore, this knob can keep spinning in either direction it\r\nseems. I have made sure to always go back to the setting it arrived in, but\r\nit seems like it perhaps should not be able to go from 0 directly to 8 and\r\nvice versa. Could you please comment on this?\r\n\r\nThanks,\r\nBest regards,\r\n\r\nDirk\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-18T20:10:38Z",
+  "updated_at": "2025-07-19T06:46:11Z",
+  "requester_id": 158002216579,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005162331,
+      "body_text": "Hi Dirk Deckers,    When the heel rest is set to “Follow Mode,” its color depends on which pedal it is following — throttle, brake, or clutch. You can change the heel rest color by adjusting the color mode of the selected target pedal.  Regarding the 8-level damper adjustment, we’ve optimized the overall resistance to be lighter. This change was based on feedback from some YouTube users who reported that levels above 3 were too hard to press. As a result, all 0–8 levels are now easier to operate, and the resistance is roughly aligned with Fanatec’s 8-level damping strength.  If you require stronger resistance, we recommend switching to the yellow or blue damper elastomers.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-19T06:46:11Z",
+      "updated_at": "2025-07-19T06:46:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

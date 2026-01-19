@@ -1,0 +1,24 @@
+{
+  "id": 2927,
+  "subject": "Simsonn pro x pedal control box fail",
+  "description_text": "Good morning,\r\n\r\nI purchase a Pro X pedal set from the SIMSONN Official Store on aliexpress on the  23rd April this year (2025).\r\n\r\nThese pedals have been amazing and working perfectly up until a few days ago where they stopped working halfway through a race. There was no signal being received by my computer, when i opened the software manager it showed the pedals where not connected although the led lights were still working fine.\r\n\r\nI have trouble shoot this situation by using a different cable, checking for firmware updates and reinstalling the manager, I am on the latest firmware 2.0.1 and also tried reverting back to the 2.0.9 and even loading the Simsonn manager onto my laptop and it results in the same outcome. I have tried pushing in the white button on the control box in and back out also as well and unplugging every cable in and out to ensure proper connect.\r\n\r\nWhen I try to connect the cable to my PC or laptop the lights on the pedal will come on but the manager will show that they are not connected.\r\n\r\nI believe the control box have failed somewhat as it have been working this year just fine and not a single thing has changed in my rig.\r\n\r\nPlease see my order number 8200643109750981 and attached invoice from aliepress and also a short video showing the problem.\r\n\r\nI hope to have this fixed ASAP\r\n\r\nKind regards Glen\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-08-21T00:06:44Z",
+  "updated_at": "2025-08-21T04:20:31Z",
+  "requester_id": 158003423396,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007250565,
+      "body_text": " Hello,\r\n\r\nIt worked perfectly thank you!!\r\n     ",
+      "user_id": 158003423396,
+      "created_at": "2025-08-21T04:04:20Z",
+      "updated_at": "2025-08-21T04:04:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

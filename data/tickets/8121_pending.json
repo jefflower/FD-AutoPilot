@@ -1,0 +1,44 @@
+{
+  "id": 8121,
+  "subject": "My order issues, Missing items",
+  "description_text": "My order has been delivered, but I'm concerned about where the faceplate and pedals for the Haptic Pro are? With the plate together, it should be around $500. I'm expected to get things ready on time before my holiday break starts.  I have a few pictures that I hope can be resolved soon.\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-13T03:11:27Z",
+  "updated_at": "2025-12-15T09:48:50Z",
+  "requester_id": 158007792848,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014432332,
+      "body_text": "Hi Jay Trias,  Your VAM Pro motor was likely shipped separately. Please provide your order number so I can check the details for you. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-13T05:36:12Z",
+      "updated_at": "2025-12-13T05:36:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014433135,
+      "body_text": " \r\nOrder #SSN4157\r\n\r\nI didn't get everything that I wanted as well, and I'm going on vacation very soon and likely won't be back by the mid of January. May i change up the address?    ",
+      "user_id": 158007792848,
+      "created_at": "2025-12-13T06:31:07Z",
+      "updated_at": "2025-12-13T06:31:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014503596,
+      "body_text": "Hi Jay Trias,    Sorry for the delayed response. Here's the tracking link for the pedal:  https://www.ups.com/track?loc=en_US&requester=ST&trackNums=1ZJ201H40331265346/trackdetails  Here's the link for the base plate:  https://www.fedex.com/fedextrack/?trknbr=396662183086&trkqual=12029~396662183086~FDEG  Here is the link for the VAM Pro:  https://t.17track.net/en#nums=SF6047112544563",
+      "user_id": 158001343601,
+      "created_at": "2025-12-15T09:48:50Z",
+      "updated_at": "2025-12-15T09:48:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

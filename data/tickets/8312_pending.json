@@ -1,0 +1,24 @@
+{
+  "id": 8312,
+  "subject": "Pedals, missing content from order",
+  "description_text": "Dear Simsonn staff\r\n\r\nI received my pedals in perfect condition.\r\nBut, it seems the haptic motors and the upgrade kit are still missing.\r\nWill this be delivered separately?\r\n\r\nMy order is #SSN4558\r\n\r\nKind regards\r\n\r\nSteve\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-15T16:02:58Z",
+  "updated_at": "2025-12-22T07:57:58Z",
+  "requester_id": 158007820013,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014862899,
+      "body_text": "Hi NXGN Saxo,    I apologize for not getting back to you sooner. Here is your shipping tracking link.  https://t.17track.net/en#nums=SF6047152634679",
+      "user_id": 158001343601,
+      "created_at": "2025-12-22T07:57:58Z",
+      "updated_at": "2025-12-22T07:57:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

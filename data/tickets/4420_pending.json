@@ -1,0 +1,44 @@
+{
+  "id": 4420,
+  "subject": "3D print horizontal mounts",
+  "description_text": "Hi guys,\r\n\r\nI have the Pro X Ultra pedals and I'm really happy with them, but I want to try mounting the haptic motors horizontally (on the throttle and brake). I was thinking about getting this 3d printed locally, will it work?\r\n\r\nhttps://www.thingiverse.com/thing:6905682\r\n\r\nIf not, could you let me know what dimensions I should ask for, like width and fastener spacing - so I can have an exact fit printed?\r\n\r\nRegards,\r\n\r\nKonstantin\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-04T04:02:23Z",
+  "updated_at": "2025-10-10T06:56:38Z",
+  "requester_id": 158003018698,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009951101,
+      "body_text": "Hi Konstantin Dragostinov,     A user previously made this 3D-printed bracket, but it has since been taken down.  We’ll send you the file on October 9th so you can print it yourself.  https://makerworld.com/zh/models/1589395-mount-for-simsonn-vam-pro",
+      "user_id": 158000445778,
+      "created_at": "2025-10-06T00:05:55Z",
+      "updated_at": "2025-10-06T00:05:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010190647,
+      "body_text": "Hi guys, did you manage to find the 3D bracket? It's not urgent, but I do still want to print them.\r\n________________________________\r\n",
+      "user_id": 158003018698,
+      "created_at": "2025-10-10T06:04:57Z",
+      "updated_at": "2025-10-10T06:04:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010194862,
+      "body_text": "Hi Konstantin Dragostinov,  https://www.reddit.com/r/SimsonnRacing/comments/1nu0cn0/comparison_of_vam_pros_with_3d_printed_mount/ https://www.thingiverse.com/thing:6905682 https://www.youtube.com/watch?v=g1Bx8SV0KpQ&t=65s",
+      "user_id": 158000445778,
+      "created_at": "2025-10-10T06:56:38Z",
+      "updated_at": "2025-10-10T06:56:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": 4525,
+  "subject": "لم يتم تحديث الطرد الخاص بي",
+  "description_text": "مرحبا لدي طلب من 1 اكتوبر لم يتم التواصل معي مجددا لا اعلم ماذا حدث عن\r\nالطرد الخاص بي\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-07T05:51:21Z",
+  "updated_at": "2025-10-11T10:30:52Z",
+  "requester_id": 158005480145,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010134050,
+      "body_text": "Hi Mohamed Adam,    We sincerely apologize for the delayed response. We have just concluded our 8-day holiday. We will arrange for your shipment as soon as possible. Thank you for your understanding. Our deepest apologies!",
+      "user_id": 158001343601,
+      "created_at": "2025-10-09T07:50:17Z",
+      "updated_at": "2025-10-09T07:50:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010210171,
+      "body_text": "لم تجيب على سؤالي ..\r\n\r\nفي خميس، 9 أكتوبر، 2025 في 10:50 ص، كتب service@simsonn.com <\r\nservice@simsonn.com>:\r\n\r\n> Hi Mohamed Adam,\r\n>\r\n> We sincerely apologize for the delayed response. We have just concluded\r\n> our 8-day holiday. We will arrange for your shipment as soon as possible.\r\n> Thank you for your understanding. Our deepest apologies!\r\n>\r\n> تشغيل الثلاثاء, 7 أكتوبر في 1:51 ص , Mohamed Adam <\r\n> mohamedadam3900@gmail.com> كتب:\r\n> مرحبا لدي طلب من 1 اكتوبر لم يتم التواصل معي مجددا لا اعلم ماذا حدث عن\r\n> الطرد الخاص بي\r\n>\r\n> 4525:4206036\r\n>\r\n\r\n",
+      "user_id": 158005480145,
+      "created_at": "2025-10-10T11:41:20Z",
+      "updated_at": "2025-10-10T11:41:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010263103,
+      "body_text": "​  Hello, here is your logistics tracking link. We apologize for any inconvenience caused.  https://t.17track.net/en#nums=ALS01211166273",
+      "user_id": 158001343601,
+      "created_at": "2025-10-11T10:30:51Z",
+      "updated_at": "2025-10-11T10:30:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

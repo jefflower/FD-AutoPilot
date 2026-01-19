@@ -1,0 +1,24 @@
+{
+  "id": 558,
+  "subject": "Order #SSN1556",
+  "description_text": "Good afternoon,\r\n\r\nJust wondering if there is any update on shipping dates yet\r\n\r\nThanks\r\n\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-18T06:45:27Z",
+  "updated_at": "2025-06-22T02:37:49Z",
+  "requester_id": 158001154777,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003679638,
+      "body_text": "Hi Steve leon,  Your order has been shipped. Here is the latest tracking information—please take a look. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T02:37:49Z",
+      "updated_at": "2025-06-22T02:37:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

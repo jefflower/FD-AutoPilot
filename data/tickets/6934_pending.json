@@ -1,0 +1,44 @@
+{
+  "id": 6934,
+  "subject": "Stuck bolt",
+  "description_text": "hello there's a bolt on the brake pedal I'm trying to undo but no matter how much I unscrew it the bolt doesn't come out. it's spinning but won't tighten or untighten? This is on the simsonn plus x\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-28T09:28:06Z",
+  "updated_at": "2025-12-06T07:50:38Z",
+  "requester_id": 158007389916,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013154486,
+      "body_text": "Hi Ethan Nguyen,  The video you uploaded appears to be incomplete, and I’m unable to open it on my side. Additionally, if the screw is stripped, you can try using a different type of screwdriver to increase grip—for example, using a flat-head screwdriver often helps loosen stripped screws more easily. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-01T01:51:39Z",
+      "updated_at": "2025-12-01T01:51:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013243918,
+      "body_text": "Hi I've fixed it but I have a different issue now. The throttle doesn't seem to work without pressing the white bit and it requires quite a bit more pressure than the clutch to press on the white bit\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n\nAttachment(s) that exceed the 20 MB limit have been dropped. Please reach out to the sender.",
+      "user_id": 158007389916,
+      "created_at": "2025-12-02T05:50:36Z",
+      "updated_at": "2025-12-02T05:50:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013803574,
+      "body_text": "Hi Ethan Nguyen,  You can simply use the Offset function in the software to adjust the pedals. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-06T07:50:37Z",
+      "updated_at": "2025-12-06T07:50:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

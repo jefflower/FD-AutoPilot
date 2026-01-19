@@ -1,0 +1,134 @@
+{
+  "id": 2918,
+  "subject": "Request for a return label on order #SSN2347",
+  "description_text": "Hello i want to receive a return label as i wrote earlier.\r\n\r\nHello,\r\n\r\nI`d like to send it back to your warehouse in Germany so i will need an \r\nadвress or already prepared shipping label. And because I didn`t open the\r\npackage and assuming that it came with no defects how can i pay the shipping\r\ncost?\r\n \r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-20T14:08:45Z",
+  "updated_at": "2025-09-16T01:54:05Z",
+  "requester_id": 158003158004,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007549685,
+      "body_text": "\r\n?\r\n\r\n\r\n\r\n---------- Původní e-mail ----------\r\nOd: dikiv4ik@seznam.cz\r\nKomu: service@simsonn.com\r\nDatum: 20. 8. 2025 16:08:21\r\nPředmět: Request for a return label on order #SSN2347\r\n\"Hello i want to receive a return label as i wrote earlier.\r\n\r\nHello,\r\n\r\nI`d like to send it back to your warehouse in Germany so i will need an \r\nadвress or already prepared shipping label. And because I didn`t open the\r\npackage and assuming that it came with no defects how can i pay the shipping\r\ncost?\r\n \"\r\n",
+      "user_id": 158003158004,
+      "created_at": "2025-08-26T06:41:54Z",
+      "updated_at": "2025-08-26T06:41:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007618315,
+      "body_text": "Hi Dikiv4ik,     I apologise for the delayed response. The estimated cost for DPD's door-to-door collection service from the Czech Republic is €46.54, while the estimated postage via DHL's drop-off point is €26.05. You may select your preferred return method. Should you opt for DHL self-posting, you may send the parcel to our German warehouse at the following address:  Recipient/Company: Gubitz GmbH-KBL  Street + House Number: Hüttenkamp 12  Postcode: 24536  Town/City: Neumünster  State/Province: Schleswig-Holstein  Country: Germany  Telephone: 01762 223 3089",
+      "user_id": 158001343601,
+      "created_at": "2025-08-27T10:16:27Z",
+      "updated_at": "2025-08-27T10:16:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007618777,
+      "body_text": "To clarify, if you choose DHL for shipping, our German warehouse will generate a return label using their account. You simply need this tracking number to drop off your package at a DHL service point. Shipping it yourself would likely be more expensive.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-27T10:21:39Z",
+      "updated_at": "2025-08-27T10:21:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007619342,
+      "body_text": "\r\nHello,\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nI chose DHL and I would like to ship via your generated shipping label.\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n---------- Původní e-mail ----------\r\nOd: service@simsonn.com ",
+      "user_id": 158003158004,
+      "created_at": "2025-08-27T10:25:58Z",
+      "updated_at": "2025-08-27T10:25:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007682338,
+      "body_text": "Hello, here is your return label. You can take your package to DHL for shipping. We will process your refund once we receive and inspect the returned item.  Logistics Tracking Number: 510159570014",
+      "user_id": 158001343601,
+      "created_at": "2025-08-28T02:40:35Z",
+      "updated_at": "2025-08-28T02:40:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007760565,
+      "body_text": "Hello,\r\n\r\nToday I tried to send the parcel and in post office and they say that they\r\ncan`t find an parcel number in their system via bar code and i need a new \r\nlabel. \r\nMaybe i need to do something before taking parcel to the Czech post office\r\n(we don`t have DHL but it cooperate with CZ post)?\r\n\r\n\r\n\r\n\r\n\r\n\r\n---------- Původní e-mail ----------\r\nOd: service@simsonn.com ",
+      "user_id": 158003158004,
+      "created_at": "2025-08-29T12:13:07Z",
+      "updated_at": "2025-08-29T12:13:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007763525,
+      "body_text": "\r\nSo i find out that that parcel in DHL system so I`ll try on some DHL service\r\npoint\r\n\r\n\r\n\r\n---------- Původní e-mail ----------\r\nOd: dikiv4ik@seznam.cz\r\nKomu: service@simsonn.com ",
+      "user_id": 158003158004,
+      "created_at": "2025-08-29T12:36:34Z",
+      "updated_at": "2025-08-29T12:36:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008248755,
+      "body_text": "Hello, I am very interested in the status of my refund.---------- Původní e-\r\nmail ----------\r\nOd: service@simsonn.com ",
+      "user_id": 158003158004,
+      "created_at": "2025-09-08T08:23:47Z",
+      "updated_at": "2025-09-08T08:23:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008259109,
+      "body_text": "Okay, we will confirm the status of the shipment with our German warehouse staff immediately.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-08T10:48:29Z",
+      "updated_at": "2025-09-08T10:48:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008745930,
+      "body_text": "Hello, \r\n\r\n\r\n\r\n\r\n\r\n\r\nI'm willing to know in what status my money return \r\n\r\n\r\n---------- Původní e-mail ----------\r\nOd: service@simsonn.com ",
+      "user_id": 158003158004,
+      "created_at": "2025-09-15T10:38:27Z",
+      "updated_at": "2025-09-15T10:38:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008746168,
+      "body_text": "We shall process your refund this evening or tomorrow morning. We apologise for any inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-15T10:58:33Z",
+      "updated_at": "2025-09-15T10:58:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008793087,
+      "body_text": "Hello, we have processed your refund and deducted the shipping costs from the refund amount.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-16T01:54:05Z",
+      "updated_at": "2025-09-16T01:54:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

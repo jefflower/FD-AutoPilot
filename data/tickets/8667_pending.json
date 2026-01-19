@@ -1,0 +1,34 @@
+{
+  "id": 8667,
+  "subject": "Express Order Tracking",
+  "description_text": "Greetings,\n\nI recently ordered a set of Pro X Ultra pedals with express shipping.\nThe order was placed on 12th of December and I haven't received the package or a tracking number yet. Looking at the delivery time of 3-7 days, which terminates today, I wonder if there is any info you can give me on the status of the order.\n\nOrder Nr.: #SSN4742\n\nKind Regards, Jonas Roth\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-19T09:20:35Z",
+  "updated_at": "2025-12-23T01:30:37Z",
+  "requester_id": 158007848065,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014753539,
+      "body_text": "Greetings,\n\nI want to add that both the button for \"View Ticket\" and the provided link do not work. It prompts me to log in, but I don't even have an account and signing in via google does not grant me access to the ticket (probably because its a different mail).\nCreating an account does not prompt me to set a password, only asks for my mail and name and does not send a verification mail to set a password either. Trying to log in then tells me I put in the wrong password (because I didn't set any).\nI can not access the tickets on the freshdesk support page at all.\n\nRegards, Jonas Roth\nservice@simsonn.com ",
+      "user_id": 158007848065,
+      "created_at": "2025-12-19T10:38:12Z",
+      "updated_at": "2025-12-19T10:38:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014880696,
+      "body_text": "Hi Jonas Roth, We apologize for the delay; the warehouse in Germany is temporarily out of stock. Your order is expected to begin delivery next week.",
+      "user_id": 158007774664,
+      "created_at": "2025-12-22T12:53:16Z",
+      "updated_at": "2025-12-22T12:53:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

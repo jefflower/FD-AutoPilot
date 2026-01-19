@@ -1,0 +1,35 @@
+{
+  "id": 11113,
+  "subject": "SSN5844",
+  "description_text": "hello i ordered a set of pedal elastomers on january 7th and still haven’t gotten any update on shipping Sent from my iPhone",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-17T04:54:43Z",
+  "updated_at": "2026-01-17T06:31:36Z",
+  "requester_id": 158009342868,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017313052,
+      "body_text": "Hi Evan Summar, I’ll check it for you first and get back to you as soon as possible.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-17T05:22:04Z",
+      "updated_at": "2026-01-17T05:22:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017315974,
+      "body_text": "Hi Evan Summar, I apologize for not updating you promptly. I see your package has been delivered. Please confirm. https://t.17track.net/en#nums=SF6047231333102",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T06:31:36Z",
+      "updated_at": "2026-01-17T06:31:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

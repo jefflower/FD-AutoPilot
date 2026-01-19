@@ -1,0 +1,24 @@
+{
+  "id": 5283,
+  "subject": "Pedal Issue",
+  "description_text": "I have a set of the Plus X P3-H3 pedals, and I'm just starting to encounter an issue with the gas pedal. I got these pedals 5 months ago, and now I'm having an issue with what I believe to be the hydraulic rod on the gas pedal. When I press on the gas really hard, it becomes really stiff at about 80% travel, then I can depress it fully. How do I remedy this?\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-26T04:14:43Z",
+  "updated_at": "2025-10-26T14:30:06Z",
+  "requester_id": 158006127643,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011113798,
+      "body_text": "Hi colbeydburton2006,    You can try removing the hydraulic rod first and cleaning off any dust on its surface.  Then, press it a few times manually to test before reinstalling it and testing again.  If the issue persists, please contact us.  The problem may be caused by dust contamination or air entering the hydraulic system,  and performing several press tests after removal can often help eliminate trapped air.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-26T14:30:06Z",
+      "updated_at": "2025-10-26T14:30:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

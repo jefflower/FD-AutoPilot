@@ -1,0 +1,45 @@
+{
+  "id": 504,
+  "subject": "Device connection problem",
+  "description_text": "Hi, I was in the middle of a race and something went wrong with my computer. The screen went dark and I had to restart it. After that, the pedals no longer work. They don't recognize that they are connected in calibration mode.\n\nIn the computer's device manager, an error message appears about the USB device. I've already changed the inputs, restarted it, and tried to fix the error, but nothing works. Could you help me with a solution?",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-06-16T17:40:59Z",
+  "updated_at": "2025-06-19T04:16:48Z",
+  "requester_id": 158001588036,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003299318,
+      "body_text": "Hi Rafael Santos, Could you please let me know the model of your pedal? Also, kindly provide the error message from Device Manager and a screenshot of the software interface. I’ll assist you in resolving the issue as soon as possible.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-17T01:22:42Z",
+      "updated_at": "2025-06-17T01:22:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003375990,
+      "body_text": "Hello friend, thanks for replying. Now I turned on the desktop to get the information as requested and everything went back to working normally... I'm glad it seems to be resolved, but I got a big scare because I didn't know where the problem was, I still don't know but everything seems to be fine. I appreciate the punctuality of the Simsonn team who always gave me all the help whenever I needed it. Thank you very much.\n\nEm seg., 16 de jun. de 2025, 14:46, service @simsonn.com",
+      "user_id": 158001588036,
+      "created_at": "2025-06-18T02:00:24Z",
+      "updated_at": "2025-06-18T02:00:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003479439,
+      "body_text": "Hello, Rafael Santos, We are very happy to hear that your issue has been resolved!",
+      "user_id": 158000445778,
+      "created_at": "2025-06-19T04:16:48Z",
+      "updated_at": "2025-06-19T04:16:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

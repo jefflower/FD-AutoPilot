@@ -1,0 +1,34 @@
+{
+  "id": 1855,
+  "subject": "Sinsonn Shipping Notice #SSN2090",
+  "description_text": "Hello, in order to avoid customs duties, we have shipped the Pro Plus pedals from our warehouse in Germany and the Plus X upgrade kit from China. Is this acceptable to you?",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-24T07:55:22Z",
+  "updated_at": "2025-07-24T09:29:01Z",
+  "requester_id": 158002312052,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005489973,
+      "body_text": "Yes, that's fine, thank you very much!\r\n\r\ntors. 24. jul. 2025 kl. 10.55 skrev support@simsonn.com <support@simsonn.com\r\n>:\r\n\r\n> Hello, in order to avoid customs duties, we have shipped the Pro Plus\r\n> pedals from our warehouse in Germany and the Plus X upgrade kit from China.\r\n> Is this acceptable to you?\r\n>\r\n> 1855:4206036\r\n>\r\n\r\n",
+      "user_id": 158002312052,
+      "created_at": "2025-07-24T09:11:50Z",
+      "updated_at": "2025-07-24T09:11:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005490078,
+      "body_text": "Hi Mkv2510kostya,    Okay, thank you for your quick confirmation.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-24T09:29:01Z",
+      "updated_at": "2025-07-24T09:29:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

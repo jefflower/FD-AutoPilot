@@ -1,0 +1,44 @@
+{
+  "id": 4221,
+  "subject": "vam haptic reactors",
+  "description_text": "hello i have the pro x pedals and just recieved the haptic reactors and have tried everything that i can think of to get them working and still nothing and it even shows up on the simhub software that theyre being searched for then i have to unplug and olug them back in everytime to be recognized but still not working ive even tried multiple ports on the control box and still not working the box i have is the 3 ports for the gas brake and clutch pedals themselves, the 3 motor ports for the haptics, and the usb and power ports and im still trying to understand what the upgrade button on the control box is for thank u for the help\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-28T18:52:47Z",
+  "updated_at": "2025-10-01T14:38:55Z",
+  "requester_id": 158001870873,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009730004,
+      "body_text": "Hi metallicafan2488,    First, if the SimHub connection is unstable, please make sure to use the USB 3.0 (blue) port on the back of your PC. USB 2.0 may not provide sufficient power, which can cause unstable connections.     Next, uninstall the old software from your PC and install the new 2.1.1 version from the link.  In the software, go to: Settings → Update → Manual Firmware Update → pedals → firmware → pedals-prox.sfu to complete the firmware update.     After the update, your VAM Pro should work properly.  https://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T11:09:53Z",
+      "updated_at": "2025-10-01T11:09:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009735729,
+      "body_text": " i tired the link 2 or 3 times and it says the link is in the owners trash\r\n    ",
+      "user_id": 158001870873,
+      "created_at": "2025-10-01T13:55:16Z",
+      "updated_at": "2025-10-01T13:55:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009739746,
+      "body_text": "Hi metallicafan2488,     I’m sorry, I provided the wrong link earlier. Please find the correct one below.     https://drive.google.com/file/d/1BAdSWa1bxmbPksj9Hlzuo8bl7_bM8ixr/view?usp=drivesdk",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T14:38:53Z",
+      "updated_at": "2025-10-01T14:38:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

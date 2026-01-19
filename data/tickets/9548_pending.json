@@ -1,0 +1,24 @@
+{
+  "id": 9548,
+  "subject": "Order: SSN4716",
+  "description_text": "Hi there.\r\nJust received a package yesterday with the motor suports with the original\r\ntracking number being: WNBAA0414803854YQ, but I didn't received the motors\r\nyet (JSELP1220817975YQ).Today, both tracking numbers return as delivered.\r\nCan you help me, is anything wrong? or is just the case of waiting a little\r\nmore?\r\n\r\nThank you for your help and happy new year!\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-30T08:54:22Z",
+  "updated_at": "2025-12-31T07:15:05Z",
+  "requester_id": 158008818269,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015299343,
+      "body_text": "Hi Daniel Ribeiro,    Don't worry, the haptics and pedals have been shipped together from the German warehouse.    CE326637549DE",
+      "user_id": 158001343601,
+      "created_at": "2025-12-31T07:15:02Z",
+      "updated_at": "2025-12-31T07:15:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

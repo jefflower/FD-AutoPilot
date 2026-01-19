@@ -1,0 +1,54 @@
+{
+  "id": 10592,
+  "subject": "Order never confirmed",
+  "description_text": "Hey I ordered a shifter and a handbrake from you guys last week and never\r\ngot any kind of confirmation email or text or anything but my account was\r\ncharged for the order… just wanted to make sure you guys have an order in\r\nfor Kobe Stadel coming to Manhattan ks… any kind of confirmation would be\r\ngreat thanks!\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-11T23:17:11Z",
+  "updated_at": "2026-01-14T07:27:37Z",
+  "requester_id": 158009026679,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016832472,
+      "body_text": "Hi Kobe Stadel,  Please provide the order date and time, and I will help you check it. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-12T00:11:24Z",
+      "updated_at": "2026-01-12T00:11:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016832507,
+      "body_text": "It was Jan 7 at around 12-2 pm range central time\r\n\r\nOn Sun, Jan 11, 2026 at 6:11 PM service@simsonn.com ",
+      "user_id": 158009026679,
+      "created_at": "2026-01-12T00:13:44Z",
+      "updated_at": "2026-01-12T00:13:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016890519,
+      "body_text": "Just checking in to see if you had found anything?\r\n\r\n",
+      "user_id": 158009026679,
+      "created_at": "2026-01-12T18:36:29Z",
+      "updated_at": "2026-01-12T18:36:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016986863,
+      "body_text": "REACHING OUT AGAIN IN REGARDS TO MY ORDER THAT WAS NEVER CONFIRMED... ANY\r\nUPDATES??\r\n\r\n\r\n",
+      "user_id": 158009026679,
+      "created_at": "2026-01-13T13:50:41Z",
+      "updated_at": "2026-01-13T13:50:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

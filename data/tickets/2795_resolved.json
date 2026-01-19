@@ -1,0 +1,34 @@
+{
+  "id": 2795,
+  "subject": "Issue with VAM PRO Modules Causing Unintended Brake Input",
+  "description_text": "Dear Simsonn Team,\r\n\r\nI’ve been using your *Simsonn Ultra Pro pedals with VAM PRO modules (brake\r\nand throttle)* for several weeks now, and I’d like to report an issue with\r\nthe VAM PRO modules.\r\n\r\nIn games like *Assetto Corsa*, *Le Mans Ultimate* (and likely others), the\r\nmodules cause unintended *partial brake activation* (5–15%) when haptic\r\nfeedback is active. For example:\r\n\r\n   -\r\n\r\n   If the *throttle pedal’s module* is set to *gear shift feedback*, the\r\n   brake pedal (whose module is *disabled*) still registers input (5–15%)\r\n   during shifts.\r\n   -\r\n\r\n   If feedback is tied to *speed or RPM*, the brake input fluctuates\r\n   constantly (5–15%, depending on module intensity), making the in-game brake\r\n   slider jump erratically.\r\n\r\nThis issue persists regardless of which pedal’s module is active. Could you\r\nadvise how to resolve it?\r\n\r\nThank you for your support!\r\n\r\n\r\nBest regards,\r\n\r\nAndrey\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-08-17T16:10:45Z",
+  "updated_at": "2025-08-19T04:37:14Z",
+  "requester_id": 158003256268,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007050868,
+      "body_text": "Hi Andrey V,  This issue is caused by EMI interference from the wheelbase. Please follow the steps below to troubleshoot and resolve it. Most customers with similar setups (such as Fanatec, MOZA, and T500 users) have resolved the problem using this method.     To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability:     1.    Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding.     2.    Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive.     3.    Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup.     4.    Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible.     5.    Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs.     6.    Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference.     7.    Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements.     8.    Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources.     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-08-18T02:14:49Z",
+      "updated_at": "2025-08-18T02:14:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007097102,
+      "body_text": "Hi!  Yes, the issue was resolved by grounding the control box to the pedal, as suggested in Point 2 of the troubleshooting steps.  Thank you for your support.     Best wishes for your continued success ",
+      "user_id": 158003256268,
+      "created_at": "2025-08-18T17:15:47Z",
+      "updated_at": "2025-08-18T17:15:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    }
+  ]
+}

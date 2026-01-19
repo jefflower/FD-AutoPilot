@@ -1,0 +1,174 @@
+{
+  "id": 9106,
+  "subject": "Hi",
+  "description_text": "I would like to order a complete set for my pedals also wondering if one of\r\nthe haptic feedbacks will work on the shifter!\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-24T20:10:55Z",
+  "updated_at": "2026-01-16T08:24:12Z",
+  "requester_id": 158008497441,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015057422,
+      "body_text": "Hi Angel,  Could you please provide screenshots of the shifter and the haptic motor? I’ll help you check the compatibility. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-25T02:45:26Z",
+      "updated_at": "2025-12-25T02:45:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015057913,
+      "body_text": "I was hoping one of your haptic kits would work with Sim labs?\r\n\r\nOn Wed, Dec 24, 2025, 8:45 PM support@simsonn.com ",
+      "user_id": 158008497441,
+      "created_at": "2025-12-25T03:37:01Z",
+      "updated_at": "2025-12-25T03:37:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015058174,
+      "body_text": "Hi Angel,   Currently, the vibration module of VAM Pro is installed on the pedals. Our telemetry system supports shift vibration, and you can also use telemetry via SimHub. You would like to experience the vibration during gear shifts, correct? ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-25T04:11:32Z",
+      "updated_at": "2025-12-25T04:11:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015058290,
+      "body_text": "Yea gear shift vibration in the gears and a vibration in the shifter when\r\nit's in neutral . . As well as break, clutch and the accelerator.\r\n\r\nOn Wed, Dec 24, 2025, 10:11 PM support@simsonn.com ",
+      "user_id": 158008497441,
+      "created_at": "2025-12-25T04:25:10Z",
+      "updated_at": "2025-12-25T04:25:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015244356,
+      "body_text": "Hi Angel,  You can purchase our PlusX pedals, which support shift vibration telemetry and are also compatible with SimHub.            https://www.simsonn.com/products/simsonn-plus-x-pedal-for-racing-simulator",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T09:19:13Z",
+      "updated_at": "2025-12-30T09:19:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015262060,
+      "body_text": "I get the pedals but can I put one of those Motors under my H pattern\r\nthrustmaster shifter to get vibration in the shifter that feels like a\r\ntransmission?\r\n\r\nOn Tue, Dec 30, 2025, 4:19 AM support@simsonn.com ",
+      "user_id": 158008497441,
+      "created_at": "2025-12-30T16:13:37Z",
+      "updated_at": "2025-12-30T16:13:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015277054,
+      "body_text": "I guess where I'm getting at is can I hook up 4 of them at a time?\r\n\r\nOn Tue, Dec 30, 2025, 4:19 AM support@simsonn.com ",
+      "user_id": 158008497441,
+      "created_at": "2025-12-30T20:11:03Z",
+      "updated_at": "2025-12-30T20:11:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015289901,
+      "body_text": "Hi Angel,  It is not possible to connect four units at the same time. Alternatively, you can choose not to install the vibration motor on the clutch and use it on the shifter instead. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T01:35:35Z",
+      "updated_at": "2025-12-31T01:35:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015291428,
+      "body_text": "OK cool just one more question what about with a separate control box\r\nhaving two boxes hooked up can you do it that way?\r\n\r\nOn Tue, Dec 30, 2025, 8:35 PM support@simsonn.com ",
+      "user_id": 158008497441,
+      "created_at": "2025-12-31T03:02:59Z",
+      "updated_at": "2025-12-31T03:02:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015291720,
+      "body_text": "Hi Angel,  This is not easy to achieve, but you could consider purchasing a control box from another brand. We hadn’t taken into account the scenario where two SIMSONN control boxes are used simultaneously with SimHub and SIMSONN Manager, which can cause conflicts. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T03:24:11Z",
+      "updated_at": "2025-12-31T03:24:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015291945,
+      "body_text": "Thanks for all your help I will order the set with control box form you guys\r\n\r\nOn Tue, Dec 30, 2025, 10:24 PM support@simsonn.com ",
+      "user_id": 158008497441,
+      "created_at": "2025-12-31T03:38:01Z",
+      "updated_at": "2025-12-31T03:38:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015292156,
+      "body_text": "Hi Angel,  Alright, if you have any issues in the future, please feel free to contact us. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T03:55:32Z",
+      "updated_at": "2025-12-31T03:55:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015738541,
+      "body_text": "Hi I trying to order your haptic motors for the pedals and I tried three\r\ntimes to check out on PayPal and I'm not sure if it went through or not\r\n\r\n",
+      "user_id": 158008497441,
+      "created_at": "2026-01-05T14:01:21Z",
+      "updated_at": "2026-01-05T14:01:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016156827,
+      "body_text": "Hi Angel,  Please provide the contact name, order amount, country, and order date, and I will help you look up the order details. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T15:25:21Z",
+      "updated_at": "2026-01-07T15:25:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016157706,
+      "body_text": "Angel cancel SSN5774\r\n\r\nOn Wed, Jan 7, 2026, 9:25 AM support@simsonn.com ",
+      "user_id": 158008497441,
+      "created_at": "2026-01-07T15:31:19Z",
+      "updated_at": "2026-01-07T15:31:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016248238,
+      "body_text": "Hi Angel,  We have received this order and will arrange shipment shortly. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-08T01:56:47Z",
+      "updated_at": "2026-01-08T01:56:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

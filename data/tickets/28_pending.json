@@ -1,0 +1,54 @@
+{
+  "id": 28,
+  "subject": "simpson pro pedals not working in f1 2025",
+  "description_text": "im apparently not having any luck getting these to work in the new f1 2025 game off steam.\r\nf1 2023 they work great.  the simpsonn manager software doesnt list the new game f1 2025 so i cant configure it.  How do i get these to work.  kinda desperate now after forking over a lot of money for the new game.\r\nthanks .cory\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-03T23:42:24Z",
+  "updated_at": "2025-06-06T02:36:53Z",
+  "requester_id": 158000954877,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002483129,
+      "body_text": "You guys keep trying to close this ticket but haven't supplied an answer to my inquiry.   \r\n\r\nSent from AT&T Yahoo Mail on Android \r\n \r\n  ",
+      "user_id": 158000954877,
+      "created_at": "2025-06-05T10:42:06Z",
+      "updated_at": "2025-06-05T10:42:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002485170,
+      "body_text": "Hi Cory Drysdale, Our testers have just tested our pedals on F1 2025, and the results show that the throttle, brake, and clutch all work perfectly. Could it be a configuration issue on your end? We’ve attached a few screenshots of the setup interface for your reference. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-05T10:57:28Z",
+      "updated_at": "2025-06-05T10:57:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002524579,
+      "body_text": "Could you please set out the steps from opening simpson manager to selecting them in the game.  Do you have f1 2025 in the list of games in simpson manager.???  Does the manager have to be running for the game to see the pedals?\r\n\r\nSent from AT&T Yahoo Mail on Android \r\n \r\n  ",
+      "user_id": 158000954877,
+      "created_at": "2025-06-05T14:47:40Z",
+      "updated_at": "2025-06-05T14:47:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002539093,
+      "body_text": "Hi Cory Drysdale,  First, you need to calibrate all three pedals in Simsonn Manager. After calibration, test each pedal to ensure it works smoothly from 0% to 100%. We recommend setting both the minimum and maximum dead zones to 5%. Once calibration is complete, you can close Simsonn Manager and launch the game. In the game, make sure to bind the steering wheel first, then configure the pedals, pause button, view switch, gear buttons, and other necessary controls. Otherwise, the game may not save your settings as a new profile — for example, I named mine “SIMSONN.” After completing these steps, you should be able to enter the game normally. In our tests, ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-06T02:36:53Z",
+      "updated_at": "2025-06-06T02:36:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

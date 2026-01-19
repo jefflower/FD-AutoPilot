@@ -1,0 +1,25 @@
+{
+  "id": 11123,
+  "subject": "转发：Simsonn 脚踏板及您的推荐",
+  "description_text": "你好，能尽快联系这个人吗？",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-17T08:58:16Z",
+  "updated_at": "2026-01-17T11:16:16Z",
+  "requester_id": 158004189684,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017325042,
+      "body_text": "您好，Random CallSign，对于给您带来的不便，我们深表歉意。由于近期订单量过大，我们的电子邮件系统出现了积压。我们的工作人员已经回复了他。",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T11:16:16Z",
+      "updated_at": "2026-01-17T11:16:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

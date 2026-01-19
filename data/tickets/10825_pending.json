@@ -1,0 +1,44 @@
+{
+  "id": 10825,
+  "subject": "Poland shipping avaliable?",
+  "description_text": "Good day,\nI'm writing to ask about shipping to Poland - it's missing from the list of regions at checkout. Would it be possible to order to Poland or is it missing intentionally?\n\nSincirely,\nHubert Nicgorski\n\nWysłana przez bezpieczną pocztę [Proton Mail](https://proton.me/mail/home).\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-13T21:21:26Z",
+  "updated_at": "2026-01-15T01:26:31Z",
+  "requester_id": 158009056661,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017052831,
+      "body_text": "Hi Kapitan Kredens,  Customers in Poland can place orders directly through our Polish distributor, and the products will be shipped locally from Poland  https:/fmic.pl/elektronika/simracing?product_brand=Simsonn",
+      "user_id": 158000445778,
+      "created_at": "2026-01-14T01:27:05Z",
+      "updated_at": "2026-01-14T01:27:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017085148,
+      "body_text": "Thank You, but not all products are avaliable from Polish distributor and the prices are different. Would it be possible to buy from the main site simsonn.com to Poland, if it's not in the list of countries. Or if You give me direction to other distributors, I could look at other european distributors like in Czechia, Slovakia etc.\n\nSincirely,\nHubert Nicgorski\n\nSent from [Proton Mail](https://proton.me/mail/home) for Android.\n\n-------- Original Message --------\n",
+      "user_id": 158009056661,
+      "created_at": "2026-01-14T09:01:34Z",
+      "updated_at": "2026-01-14T09:01:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017154160,
+      "body_text": "Hi Kapitan Kredens,  At the moment, we only have this one authorized distributor in Poland, and we do not sell or ship to Poland through any other channels. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-15T01:26:30Z",
+      "updated_at": "2026-01-15T01:26:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

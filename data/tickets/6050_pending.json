@@ -1,0 +1,64 @@
+{
+  "id": 6050,
+  "subject": "Missing item",
+  "description_text": "Hi I placed an order for the haptic motors and gear shifter and have only\r\nreceived the haptic motors. The 6+r shifter is missing?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-13T14:53:52Z",
+  "updated_at": "2025-11-14T09:02:29Z",
+  "requester_id": 158001413646,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012295983,
+      "body_text": "Hi joshua williams,    I see that both of your packages have been delivered. Did you receive the second one?  https://t.17track.net/en#nums=SF6047023889486,SF6047023889510",
+      "user_id": 158001343601,
+      "created_at": "2025-11-14T02:58:12Z",
+      "updated_at": "2025-11-14T02:58:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012304509,
+      "body_text": "No I've not received the one item the vam pro haptic motors I need this\r\nsolving as they are Christmas presents and expensive ones\r\n\r\nOn Fri, 14 Nov 2025, 2:58 am support@simsonn.com, ",
+      "user_id": 158001413646,
+      "created_at": "2025-11-14T08:35:55Z",
+      "updated_at": "2025-11-14T08:35:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012304643,
+      "body_text": "Hi joshua williams,    The package has been delivered. Please check your front door first and ask your family members and neighbors. Thank you for your cooperation.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-14T08:43:48Z",
+      "updated_at": "2025-11-14T08:43:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012304912,
+      "body_text": "Yeah your right I found it. I was unaware of there been multiple delivery\r\ncompanies been used but thank you for the reply and help. Am thinking the\r\nhandbrake will be the next buy loving the equipment so far\r\n\r\nOn Fri, 14 Nov 2025, 8:44 am support@simsonn.com, ",
+      "user_id": 158001413646,
+      "created_at": "2025-11-14T08:59:58Z",
+      "updated_at": "2025-11-14T08:59:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012304959,
+      "body_text": "Hi joshua williams,    Thank you for your prompt reply. Have fun!",
+      "user_id": 158001343601,
+      "created_at": "2025-11-14T09:02:29Z",
+      "updated_at": "2025-11-14T09:02:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "id": 7283,
+  "subject": "",
+  "description_text": "Hi.\r\n\r\nOrder #SSN4193\r\n\r\nI'm  still having frequent disconnects when using the vam haptic through\r\nSimhub as your own software is quite limited in haptic options. So could\r\nyou please cancel the above order and  refund at your earliest convenience.\r\nI have literally spent the last week trying every conceivable hack, ie\r\ngrounding, power usb adapter, more grounding, update drivers etc...\r\nI'll have a look back when they're better supported.\r\n\r\nAshley\r\n\r\n",
+  "status": 2,
+  "priority": 3,
+  "created_at": "2025-12-02T21:20:53Z",
+  "updated_at": "2026-01-05T13:19:16Z",
+  "requester_id": 158007285706,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012801729,
+      "body_text": "Hi Ashley Meiklejohn,  You can use a cable tie to secure the 24V power connector to prevent it from moving. Also, the 24V voltage is a safe voltage, and any sparks generated pose no danger. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-24T08:14:39Z",
+      "updated_at": "2025-11-24T08:14:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012807031,
+      "body_text": "https://drive.google.com/file/d/14nxkBgRyEfqVJ4dKZnjtcWl8M3YdIhc0/view?usp=drivesdk\r\n\r\nThe power connector to the haptic controller is too loose, it sparks when\r\npushed into the controller and disconnects when in use. The connector\r\ndoesn't fit snuggly and is too loose as can be seen in the video. I can't\r\nget the benefit of haptic feedback as the power drops as the connector\r\nworks its way loose!\r\n\r\nRegards\r\nAshley\r\n\r\n",
+      "user_id": 158007285706,
+      "created_at": "2025-11-24T10:56:28Z",
+      "updated_at": "2025-11-24T10:56:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012856050,
+      "body_text": "Hi Ashley Meiklejohn, Please adjust the access permissions so I can view the video. Additionally, if the device frequently disconnects, it may be caused by a grounding issue with the pedal. You can refer to the following methods to check and resolve the problem.            If this happens, it indicates that the computer’s grounding is not reliable, possibly because a three-prong plug was not used with a three-prong wall outlet. You can refer to the post below: connect the computer case to the stand, and connect the control box to the metal screws on the pedals. This should resolve the disconnection issue.  https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-11-25T01:50:21Z",
+      "updated_at": "2025-11-25T01:50:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013149126,
+      "body_text": "Hi,\r\n\r\nThrough lots of trial and error I believe the problem of the haptic motors\r\nlosing connection was caused by one of the motors (the one attached to my\r\nbrake) was faulty and since removing it, all has worked great.\r\nPlease close my ticket and thanks for all your suggestions and support.\r\n\r\nAshley\r\n\r\n",
+      "user_id": 158007285706,
+      "created_at": "2025-11-30T19:40:14Z",
+      "updated_at": "2025-11-30T19:40:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013155087,
+      "body_text": "Hi Ashley Meiklejohn,  We’re glad to hear that your issue has been resolved. If you would like us to send you a new VAM, please provide your order number, contact name, phone number, and shipping address. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-01T02:32:02Z",
+      "updated_at": "2025-12-01T02:32:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013155746,
+      "body_text": "ID 为 6609 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-01T03:05:53Z",
+      "updated_at": "2025-12-01T03:05:53Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158013155747,
+      "body_text": "合并来自工单6609  \n      主题: Control box sparking when coonected  \n      描述:  \n  Hi,  Having a little issue with the haptic control box, it sparks when I try to connect the power source. Also losing power connection when in use as the connector is very loose {male to female) and disconnects.   Great when working but right now too dangerous to use {sparking)  Any chance of a replacement unit?  The pedals are awesome !!! Love then...  Ashley    Order #SSN3111 \n  \n  Order summary  \n \n \n    \n \n\n \nSimsonn Pro X Ultra Pedals with Baseplate and Carbon Fiber Heel Plate × 1 Pro X Ultra-P3-H3\n \n  £335.99  \n\n\n  \n \n1 × Simsonn Pro X Ultra Pedals with Baseplate and Carbon Fiber Heel Plate Pro X Ultra-P3-H3\n \n\n\n  \n \n1 × Simsonn VAM Pro Linear Motor - the Pedals Haptic Reactor for Vibration Feedback VAM Set (3 pac/includes power supply)\n \n\n \n \n\n \n \n\n\n  Subtotal  \n £335.99 \n\n\n  Shipping  \n £23.00 \n\n\n  Taxes  \n £0.00 \n\n\n\n  Total  \n £358.99 GBP",
+      "user_id": 158000445778,
+      "created_at": "2025-12-01T03:05:53Z",
+      "updated_at": "2025-12-01T03:05:53Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158013155784,
+      "body_text": "Hi Ashley Meiklejohn,  Our package includes a USB cable with the SIMSONN logo. Please connect it to the blue USB 3.0 port on the back of your PC and avoid using a USB hub. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-01T03:07:43Z",
+      "updated_at": "2025-12-01T03:07:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013171252,
+      "body_text": "I didn't receive a USB cable with my previous order (purchase of pedals) so\r\nI'm currently using an old printer cable to connect the pedals and haptic\r\nto my PC. Could this cable possibly cause interference with the haptics?\r\n\r\nAshley\r\n\r\n",
+      "user_id": 158007285706,
+      "created_at": "2025-12-01T12:24:05Z",
+      "updated_at": "2025-12-01T12:24:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013768457,
+      "body_text": "ID 为 7117 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-06T05:40:36Z",
+      "updated_at": "2025-12-06T05:40:36Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158013768458,
+      "body_text": "合并来自工单7117  \n      主题:   \n      描述:  Hi, What type of USB cable will I require for connecting to my PC? \n   \n Thanks \n Ashley ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-06T05:40:37Z",
+      "updated_at": "2025-12-06T05:40:37Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158013768804,
+      "body_text": "Hi Ashley Meiklejohn,  If this happens, it indicates that the computer’s grounding is not reliable, possibly because a three-prong plug was not used with a three-prong wall outlet. You can refer to the post below: connect the computer case to the stand, and connect the control box to the metal screws on the pedals. This should resolve the disconnection issue.  https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding     Additionally, please take a photo of the grounding connections between the PC case, the main control box, and the pedals. I will help you check the issue and provide a solution. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-06T05:41:59Z",
+      "updated_at": "2025-12-06T05:41:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013915557,
+      "body_text": "Hi\r\n\r\nTried following all possible fixes but no success. I have the pro x pedals\r\nand I don't believe that your control box is compatible. My box as I have\r\nstated before sparks when I connect it to the power. How do I return\r\neverything for a refund?\r\n\r\nRegards Ashley\r\n\r\n",
+      "user_id": 158007285706,
+      "created_at": "2025-12-06T15:01:50Z",
+      "updated_at": "2025-12-06T15:01:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014118009,
+      "body_text": "Hi Ashley Meiklejohn,    Please provide your order number, contact name, phone number, and shipping address. We will arrange a replacement main control box for you.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-08T09:41:00Z",
+      "updated_at": "2025-12-08T09:41:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014123646,
+      "body_text": "Hi,\r\n\r\nOrder No.: SSN3111\r\n\r\nAshley Meiklejohn\r\n10c Medwyn Place\r\nAlloa\r\nFK10 1NG\r\n\r\n07591 823291\r\n\r\nMany thanks.\r\n\r\nAshley\r\n\r\nSent from Outlook for Android<https://aka.ms/AAb9ysg>\r\n\r\n________________________________\r\n",
+      "user_id": 158007285706,
+      "created_at": "2025-12-08T12:55:18Z",
+      "updated_at": "2025-12-08T12:55:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014288552,
+      "body_text": "Hi,\r\n\r\nCould you please advise if a replacement control box has been\r\nrequested/ordered  as per your email below?\r\n\r\nRegards\r\nAshley\r\n\r\n",
+      "user_id": 158007285706,
+      "created_at": "2025-12-10T20:55:49Z",
+      "updated_at": "2025-12-10T20:55:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014880619,
+      "body_text": "Hi Ashley Meiklejohn,    We apologize for the delayed response. We have already arranged for a replacement to be sent to you.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-22T12:51:17Z",
+      "updated_at": "2025-12-22T12:51:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014882273,
+      "body_text": "Many thanks\r\n\r\nSent from Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158007285706,
+      "created_at": "2025-12-22T13:27:16Z",
+      "updated_at": "2025-12-22T13:27:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015396070,
+      "body_text": "Hi,\r\n\r\nCan you advise if delivery tracking is available for the replacement haptic\r\ncontrol box that was recently ordered as this has not been received yet?\r\n\r\nAshley.\r\n\r\n",
+      "user_id": 158007285706,
+      "created_at": "2026-01-02T14:08:52Z",
+      "updated_at": "2026-01-02T14:08:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015734809,
+      "body_text": "Hi\r\n\r\nJust to advise that the new control box was delivered this morning.\r\n\r\nMany thanks\r\nAshley\r\n\r\n",
+      "user_id": 158007285706,
+      "created_at": "2026-01-05T13:19:16Z",
+      "updated_at": "2026-01-05T13:19:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

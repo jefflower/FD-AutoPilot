@@ -1,0 +1,44 @@
+{
+  "id": 4076,
+  "subject": "Simsonn Pro X Ultra pedals and Simhub",
+  "description_text": "Hello support,\r\n\r\nis it possible to manage VAM linear motors by Simhub?\r\n\r\nis it possible to manage rbg stripes by Simhub?\r\n\r\nthanks\r\n\r\nFrancesco\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-23T19:53:50Z",
+  "updated_at": "2025-09-24T10:36:33Z",
+  "requester_id": 158004802498,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009216631,
+      "body_text": "Hi Bistospam,    Sorry, Simhub does not support lighting control for the Pro X Ultra.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-24T09:16:59Z",
+      "updated_at": "2025-09-24T09:16:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009216641,
+      "body_text": "Yes, you can manage VAM linear motors through Simhub.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-24T09:17:54Z",
+      "updated_at": "2025-09-24T09:17:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009218296,
+      "body_text": "Thanks for your reply,\r\n\r\ndo you consider to help Simhub developers to add this feature to Simhub? It could be useful\r\n\r\n> Il 24/09/2025 11:16 CEST support@simsonn.com ",
+      "user_id": 158004802498,
+      "created_at": "2025-09-24T09:54:45Z",
+      "updated_at": "2025-09-24T09:54:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

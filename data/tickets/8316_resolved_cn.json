@@ -1,0 +1,65 @@
+{
+  "id": 8316,
+  "subject": "商品尚未送达",
+  "description_text": "你好\n\n我于11月26日订购了一件商品，但至今仍未收到。\n查看提供的追踪信息，显示商品正在运输途中（已提供截图）。自12月7日以来，此信息一直没有更新。我已联系运输公司，但尚未收到回复。\n[图片：image.png]",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-15T17:17:17Z",
+  "updated_at": "2025-12-25T03:58:24Z",
+  "requester_id": 158007326161,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014689180,
+      "body_text": "你好\n\n关于此事，我仍未收到任何回复。",
+      "user_id": 158007326161,
+      "created_at": "2025-12-18T12:45:53Z",
+      "updated_at": "2025-12-18T12:45:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014749456,
+      "body_text": "你好 Connor Craven，    抱歉回复晚了。我注意到您的包裹已被扣留相当长一段时间。请联系皇家邮政更新您的收货地址：IM4420001405 https://www.royalmail.com/track-your-item#/tracking-results/IW270734817GB",
+      "user_id": 158001343601,
+      "created_at": "2025-12-19T09:18:46Z",
+      "updated_at": "2025-12-19T09:18:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014749621,
+      "body_text": "感谢您的更新。",
+      "user_id": 158007326161,
+      "created_at": "2025-12-19T09:24:41Z",
+      "updated_at": "2025-12-19T09:24:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014981280,
+      "body_text": "你好\n\n不幸的是，皇家邮政似乎可能把包裹弄丢了。\n我已经用尽了所有方法试图联系相关人员寻找包裹，但都没有成功。",
+      "user_id": 158007326161,
+      "created_at": "2025-12-23T14:49:55Z",
+      "updated_at": "2025-12-23T14:49:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015033152,
+      "body_text": "你好\n\n踏板已经送到了。非常感谢您的所有帮助。",
+      "user_id": 158007326161,
+      "created_at": "2025-12-24T12:55:20Z",
+      "updated_at": "2025-12-24T12:55:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

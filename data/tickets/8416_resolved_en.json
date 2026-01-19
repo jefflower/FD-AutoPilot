@@ -1,0 +1,35 @@
+{
+  "id": 8416,
+  "subject": "Order SSN4647",
+  "description_text": "You wrote me:\nHi Laurent Zeches,\n\nWe sincerely apologize for any inconvenience caused. Currently, our German warehouse is out of stock for the footrest, with restocking expected today. We will ship your order via DHL and refund the additional shipping fee you paid\n\n\nSo my questions now will the parcel delivered before christmas(24th of december)??\nAnd i also need tracking number. Sorry but i am a little bit angry! \n\nRegards\n\nZeches Laurent",
+  "status": 4,
+  "priority": 4,
+  "created_at": "2025-12-16T12:19:11Z",
+  "updated_at": "2025-12-22T12:10:50Z",
+  "requester_id": 158007745688,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014614831,
+      "body_text": "Hi Laurent Zeches, Your package will arrive before Christmas, don't worry.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-17T06:31:33Z",
+      "updated_at": "2025-12-17T06:31:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014878249,
+      "body_text": "I asked about an other order and it was send me information about my second!!",
+      "user_id": 158007745688,
+      "created_at": "2025-12-22T12:10:49Z",
+      "updated_at": "2025-12-22T12:10:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

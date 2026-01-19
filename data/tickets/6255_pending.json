@@ -1,0 +1,44 @@
+{
+  "id": 6255,
+  "subject": "Order enquirie",
+  "description_text": "Hello I just received my pedals and shifter today, all is well and very happy with them but the optional shifter plate I ordered to fit the handbrake is missing? Is there anyway we could resolve this please\r\n\r\nMy order number is #SSN3343\r\n\r\nThank you\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-17T15:51:09Z",
+  "updated_at": "2025-11-18T07:20:30Z",
+  "requester_id": 158007146892,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012503831,
+      "body_text": "Hi jake gunter,    We apologise for the inconvenience and will arrange for a replacement to be sent to you.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-18T07:03:21Z",
+      "updated_at": "2025-11-18T07:03:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012503935,
+      "body_text": "Hi no problem at all, thank you very much for getting that sent out amazing service\r\n\r\nSent from Outlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158007146892,
+      "created_at": "2025-11-18T07:12:27Z",
+      "updated_at": "2025-11-18T07:12:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012504073,
+      "body_text": "Hi jake gunter,    Here is your logistics tracking link.  https://t.17track.net/en#nums=SF6047061685051",
+      "user_id": 158001343601,
+      "created_at": "2025-11-18T07:20:30Z",
+      "updated_at": "2025-11-18T07:20:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "id": 8055,
+  "subject": "request",
+  "description_text": "Good morning. I purchased your Simsonn X Plus pedal set, but I'm having \r\ntrouble reading the kg on the load cell. Considering that I'm a 93 kg \r\nman, 1.90 m tall, even when pressing the brake pedal hard, the load cell \r\nnever reads above 30-35 kg... I've already calibrated and set everything \r\nseveral times with your software, but the pressure kg doesn't change. \r\nThis is quite inconvenient because after an hour of playing, my leg \r\nhurts. Do you have a solution?\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-12T07:42:16Z",
+  "updated_at": "2025-12-30T09:56:46Z",
+  "requester_id": 158007775258,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014471654,
+      "body_text": "Hi Davide Castelli,  Please take a photo of the brake pedal installation so I can help check it. Additionally, you may try using the yellow or blue dampers, as they are stiffer and can provide greater braking force. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-14T02:34:34Z",
+      "updated_at": "2025-12-14T02:34:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014727719,
+      "body_text": "Good morning. As you can see, the pedals are installed correctly and updated to the latest version. Even after calibrating and offsetting, the load cell doesn't go beyond 18/20 kg... and you have to apply a lot of force to press it :( I think the load cell is defective. Inviato da Outlook per Android Da: service@simsonn.com ",
+      "user_id": 158007775258,
+      "created_at": "2025-12-18T22:28:47Z",
+      "updated_at": "2025-12-18T22:28:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014749145,
+      "body_text": "Hi Davide Castelli,  This part of the sensor needs to move freely. It should not be obstructed by brackets or power strips in front, otherwise it will not output a signal properly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-19T09:09:35Z",
+      "updated_at": "2025-12-19T09:09:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014894280,
+      "body_text": "Hi. The pedal doesn't touch anything... I also tried installing other yellow spacers, but the force it detects doesn't go beyond 25 kg and my leg really struggles. Inviato da Outlook per Android Da: service@simsonn.com ",
+      "user_id": 158007775258,
+      "created_at": "2025-12-22T15:59:51Z",
+      "updated_at": "2025-12-22T15:59:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014929818,
+      "body_text": "Hi. Good morning. I also contacted you on Amazon, where I purchased your pedal board. Believe me, the load cell doesn't read the weight you press on the pedal. If you don't trust it, I'll send it back to you. Otherwise, please help me by replacing the load cell. Inviato da Outlook per Android Da: Davide <gabberimpreza@alice.it> Inviato: lunedì, dicembre 22, 2025 2:44:02 PM A: service@simsonn.com ",
+      "user_id": 158007775258,
+      "created_at": "2025-12-22T18:40:35Z",
+      "updated_at": "2025-12-22T18:40:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014949038,
+      "body_text": "Hi Davide Castelli,    After connecting all three pedals to the controller, please unplug and replug the USB once. Then, click Offset in the software and follow the procedure to reset the pedal’s initial signal to 0%, and recalibrate the pedals. If the calibration screenshot still shows only 20kg, we will send a replacement load cell. However, pressure sensors are generally very difficult to damage.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-23T00:44:14Z",
+      "updated_at": "2025-12-23T00:44:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014960040,
+      "body_text": "Good morning. I've already tried everything guys, otherwise I wouldn't have contacted you :( I also purchased the white elastomer kit on your site, but the cell doesn't read the correct kg. I also tried removing the hydraulic kit, thinking it was defective, but nothing changed... The procedure followed was: Reset the pedal board, press offset, let your program save the position of the pedals, reconnect the pedal board, start the calibration procedure, but in the end, even pressing the brake pedal with both legs, it reaches a maximum of 30 kg, applying a very high force. The pedal board is unusable, believe me. Playing is practically impossible. Trust me, I've tried everything. Send me a new cell and I'll send you back the one I mounted now, so you can see that it's defective. Inviato da Outlook per Android Da: service@simsonn.com ",
+      "user_id": 158007775258,
+      "created_at": "2025-12-23T07:18:24Z",
+      "updated_at": "2025-12-23T07:18:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015024774,
+      "body_text": "Hi Davide Castelli,  Please provide your order number, contact person, phone number, and shipping address. We will send you a replacement pressure sensor. However, there is also a possibility that the main control unit is damaged. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-24T07:24:38Z",
+      "updated_at": "2025-12-24T07:24:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015074425,
+      "body_text": "Good morning and Merry Christmas! So, please send me a control unit. I'm \r\nattaching a copy of the purchase invoice.\r\n\r\nIl 24/12/2025 08:24, service@simsonn.com ha scritto:\r\n> Hi Davide Castelli,\r\n>\r\n> Please provide your order number, contact person, phone number, and \r\n> shipping address. We will send you a replacement pressure sensor. \r\n> However, there is also a possibility that the main control unit is \r\n> damaged.\r\n>\r\n>\r\n>     On Tue, 23 Dec at 2:18 AM , Davide Castelli\r\n>     <gabberimpreza@alice.it> wrote:\r\n>     Good morning. I've already tried everything guys, otherwise I\r\n>     wouldn't have contacted you :( I also purchased the white\r\n>     elastomer kit on your site, but the cell doesn't read the correct\r\n>     kg. I also tried removing the hydraulic kit, thinking it was\r\n>     defective, but nothing changed... The procedure followed was:\r\n>     Reset the pedal board, press offset, let your program save the\r\n>     position of the pedals, reconnect the pedal board, start the\r\n>     calibration procedure, but in the end, even pressing the brake\r\n>     pedal with both legs, it reaches a maximum of 30 kg, applying a\r\n>     very high force. The pedal board is unusable, believe me. Playing\r\n>     is practically impossible. Trust me, I've tried everything. Send\r\n>     me a new cell and I'll send you back the one I mounted now, so you\r\n>     can see that it's defective.\r\n>\r\n>     Inviato da Outlook per Android <https://aka.ms/AAb9ysg>\r\n>\r\n>     ------------------------------------------------------------------------\r\n>     *Da:* service@simsonn.com ",
+      "user_id": 158007775258,
+      "created_at": "2025-12-25T18:05:10Z",
+      "updated_at": "2025-12-25T18:05:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015137456,
+      "body_text": "My contact information is: Castelli Davide Via Ariottina 51 28100 Pernate Novara Phone 3928389780 If you think the control unit is faulty, send it to me. Inviato da Outlook per Android Da: service@simsonn.com ",
+      "user_id": 158007775258,
+      "created_at": "2025-12-27T16:52:12Z",
+      "updated_at": "2025-12-27T16:52:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015137470,
+      "body_text": "My contact information is: Castelli Davide Via Ariottina 51 28100 Pernate Novara Phone 3928389780 If you think the control unit is faulty, send it to me. Inviato da Outlook per Android Da: Davide <gabberimpreza@alice.it> Inviato: sabato, dicembre 27, 2025 5:51:56 PM A: service@simsonn.com ",
+      "user_id": 158007775258,
+      "created_at": "2025-12-27T16:52:56Z",
+      "updated_at": "2025-12-27T16:52:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015245479,
+      "body_text": "Hi Davide Castelli,  Please also provide your order number, as I need to coordinate with the platform’s operations team to assist with the replacement. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T09:56:46Z",
+      "updated_at": "2025-12-30T09:56:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

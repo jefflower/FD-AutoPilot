@@ -1,0 +1,44 @@
+{
+  "id": 1962,
+  "subject": "Difference in price",
+  "description_text": "Hi im just enquiring about the price difference on your website\r\nincomparison to the same company on aliexpress.\r\nWhy are your products significantly more expensive on aliexpress? Just\r\nwondering.\r\nKind regards\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-07-26T23:20:31Z",
+  "updated_at": "2025-12-18T10:22:02Z",
+  "requester_id": 158002359189,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005620268,
+      "body_text": "Hi Sean Chad,  Could you please provide the links and price screenshots of the two products? We can check them for you. If the store on AliExpress is the official SIMSONN shop, the price difference could be due to factors such as platform commission, sales channel or timing, tax inclusion, or whether the items are shipped from an overseas local warehouse. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-27T02:21:01Z",
+      "updated_at": "2025-07-27T02:21:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005620626,
+      "body_text": "Ok on your website is all the prices in USD and needed to be converted to\r\nlocal currency at time of payment?\r\n\r\nOn Sun, 27 July 2025, 14:21 service@simsonn.com, ",
+      "user_id": 158002359189,
+      "created_at": "2025-07-27T04:56:37Z",
+      "updated_at": "2025-07-27T04:56:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005620741,
+      "body_text": "Hi Sean Chad,  Normally, no manual action is required as the payment tools will automatically handle the conversion. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-27T05:37:39Z",
+      "updated_at": "2025-07-27T05:37:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

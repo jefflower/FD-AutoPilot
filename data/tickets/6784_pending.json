@@ -1,0 +1,44 @@
+{
+  "id": 6784,
+  "subject": "didn't got any notification for tracking order",
+  "description_text": "order #SSN3698\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-11-26T12:58:21Z",
+  "updated_at": "2025-11-28T13:11:31Z",
+  "requester_id": 158007339311,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012989663,
+      "body_text": "Hi Sven_Kapetanovic,   We sincerely apologize for the inconvenience caused by the logistics delay. Our German warehouse is currently out of stock, with restocking expected to be completed by the 28th. At that time, we will ship your order via DHL and refund the additional shipping fees.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-27T03:52:34Z",
+      "updated_at": "2025-11-27T03:52:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013003454,
+      "body_text": "No problem, thank you for the update.\r\n\r\nčet, 27. stu 2025. 04:52 service@simsonn.com ",
+      "user_id": 158007339311,
+      "created_at": "2025-11-27T11:09:29Z",
+      "updated_at": "2025-11-27T11:09:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013057644,
+      "body_text": "Hello could i cancel my order and get refund?\r\n\r\nčet, 27. stu 2025. 12:09 Sven_Kapetanovic <sven.kapetanovic@gmail.com> je\r\nnapisao:\r\n\r\n> No problem, thank you for the update.\r\n>\r\n> čet, 27. stu 2025. 04:52 service@simsonn.com ",
+      "user_id": 158007339311,
+      "created_at": "2025-11-28T12:51:40Z",
+      "updated_at": "2025-11-28T12:51:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

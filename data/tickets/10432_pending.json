@@ -1,0 +1,34 @@
+{
+  "id": 10432,
+  "subject": "Order #SSN5702 not shipped out yet",
+  "description_text": "Hi,\r\n\r\nI hope this email finds you well :) Just wanted to contact you regarding\r\nOrder #SSN5702 as I haven't heard any updates regarding its status.\r\n\r\nKind regards,\r\nAidan Gerada\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-09T16:50:59Z",
+  "updated_at": "2026-01-15T07:04:27Z",
+  "requester_id": 158009003747,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016863868,
+      "body_text": "Kind Reminder\r\n\r\n",
+      "user_id": 158009003747,
+      "created_at": "2026-01-12T13:44:32Z",
+      "updated_at": "2026-01-12T13:44:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017166135,
+      "body_text": "Hi Aidan Gerada,  We sincerely apologize, but your order cannot be shipped. We will proceed to cancel your order on your behalf. Thank you for your understanding.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T07:04:27Z",
+      "updated_at": "2026-01-15T07:04:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "id": 1221,
+  "subject": "Lost shipment",
+  "description_text": "Hello, I have a problem with one of the two products I bought. I purchased\r\nit as shown in the images in this email. Although the product *\"Simsonn Pro\r\nPlus the Load Cell Pedals for Sim Racing*\" *arrived* without problems\r\npromptly, the product *\"SIMSONN PC USB 7+R H Simulator Gear Shifter\" has\r\nnot arrived*. I wouldn't worry because I know there may be a delay. The\r\nproblem is that I received an email from *SIMSONN* saying that both\r\nproducts arrived correctly and that I would give my opinion on them. I am\r\nworried that the product \"SIMSONN PC USB 7+R H Simulator Gear Shifter\" has\r\nbeen lost, which, as I said, never arrived.\r\nAnother thing that makes me suspect that there is something strange with\r\nthe shipment is that I received all the tracking for the pedals from DHL,\r\nbut I never received the tracking for the gear shifter.\r\nThe last image is the confirmed email from DHL for the pedals package and\r\nthat is correct. I received the pedals, but never received any news from\r\nthe gear shifter package. And for sure they didn't come in the same package.\r\n\r\nI look forward to a favorable response. Thank you very much.\r\n[image: Captura de pantalla 2025-07-04 a la(s) 12.41.10.png]\r\n[image: Captura de pantalla 2025-07-04 a la(s) 12.40.07.png]\r\n\r\n[image: Captura de pantalla 2025-07-04 a la(s) 12.38.41.png]\r\n\r\n[image: Captura de pantalla 2025-07-04 a la(s) 12.45.39.png]\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-04T15:50:03Z",
+  "updated_at": "2025-07-14T07:03:48Z",
+  "requester_id": 158001893864,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004445802,
+      "body_text": "Hi Nicolás Augusto González Martín,     Sorry, I will check with our warehouse to see if we missed this product.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-04T15:54:52Z",
+      "updated_at": "2025-07-04T15:54:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004461309,
+      "body_text": "Hi, thank you for the answer. Do you have any new information?\r\n\r\nOn Fri, Jul 4, 2025 at 12:54 PM service@simsonn.com ",
+      "user_id": 158001893864,
+      "created_at": "2025-07-07T20:21:56Z",
+      "updated_at": "2025-07-07T20:21:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004501797,
+      "body_text": "Hi Nicolás Augusto González Martín,    I apologize for the feedback from the warehouse that it was too expensive to send the 7+R H Simulator Gear Shifter separately, so it didn't ship for you. They notified me before but I overlooked this information, I am very sorry for the inconvenience and we have refunded you for this product. Sincere apologies!",
+      "user_id": 158001343601,
+      "created_at": "2025-07-10T09:48:43Z",
+      "updated_at": "2025-07-10T09:48:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004523340,
+      "body_text": "Why didn't you just ask me to pay a little more for shipping instead of returning the money to my credit card, which makes it very difficult to withdraw the money?",
+      "user_id": 158001893864,
+      "created_at": "2025-07-10T22:04:11Z",
+      "updated_at": "2025-07-10T22:04:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158004537476,
+      "body_text": "Hi Nicolás Augusto González Martín,  Sorry for not communicating with you in a timely manner, as the shipping cost is too expensive compared to the product price, so we didn't take into account that you would be willing to pay the shipping cost. The shipping cost will take about 371 RMB, which is equivalent to $52. If you can share the $30 shipping cost, we can reship the item for you immediately. We are very sorry for the inconvenience. ",
+      "user_id": 158001343601,
+      "created_at": "2025-07-11T01:59:34Z",
+      "updated_at": "2025-07-11T01:59:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004543833,
+      "body_text": "Yes, I have no problem purchasing the $30 extra for the shipping. Let me\r\nknow where I should make the payment.\r\n\r\nOn Thu, Jul 10, 2025 at 10:59 PM service@simsonn.com ",
+      "user_id": 158001893864,
+      "created_at": "2025-07-11T04:00:15Z",
+      "updated_at": "2025-07-11T04:00:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004775986,
+      "body_text": "Hi Nicolás Augusto González Martín,    Here is the link to the amount we refunded you + $30 shipping, thank you for your understanding and support of Simsonn.  https://www.simsonn.com/products/difference-1",
+      "user_id": 158001343601,
+      "created_at": "2025-07-14T07:03:48Z",
+      "updated_at": "2025-07-14T07:03:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

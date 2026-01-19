@@ -1,0 +1,24 @@
+{
+  "id": 5834,
+  "subject": "Vam (non-pro) shocking me",
+  "description_text": "Hi, every single time I plug in the vam 24V power supply to the control\r\nbox, it sends a 3-4 inch spark out of the DC outlet and shocks the living\r\ncrap out of me. It's caused some pretty severe pain in my left index finger\r\ntwice now. As you know, simracing is all about setting stuff up yourself\r\nand trying new things, every single time I try to change this I wear rubber\r\ngloves and rubber sole shoes and I'm still getting shocked bad enough that\r\nI'm having pain the following 2-3 days, is here ANY way to stop this thing\r\nfrom shocking me?\r\n\r\nIan Street, purchased on Amazon.\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-11-09T08:48:30Z",
+  "updated_at": "2025-12-18T10:02:59Z",
+  "requester_id": 158002190644,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012021935,
+      "body_text": "Hi BadDadGames,     24V is a safe voltage, so there’s no risk of electric shock. We recommend plugging in the 24V DC connector first, and then connecting the 110V AC power plug. The sparks you see are caused by the motor’s capacitor charging, which is completely normal and will not damage the main board or cause any safety issues.  In addition, if you notice any static electricity on the pedals or the mounting frame, please make sure your computer is connected to a three-prong grounded wall outlet. This ensures the entire system is properly grounded for stable and safe operation.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-10T01:32:29Z",
+      "updated_at": "2025-11-10T01:32:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

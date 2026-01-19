@@ -1,0 +1,74 @@
+{
+  "id": 5271,
+  "subject": "Product discount codes not working",
+  "description_text": "Hello.  I am trying to enter simsonn discount codes but they are all not\r\nworking.  Error is enter valid discount code.  I even tried the one from\r\nthe banner on the site and it is not working\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-25T10:13:50Z",
+  "updated_at": "2025-10-25T12:51:47Z",
+  "requester_id": 158006092125,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011073027,
+      "body_text": "Hi richard tanner,    Our discount code threshold is typically set at $199. May I ask which product you purchased?",
+      "user_id": 158001343601,
+      "created_at": "2025-10-25T10:22:52Z",
+      "updated_at": "2025-10-25T10:22:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011073105,
+      "body_text": "Hello. I was purchasing the 2 PC vam pro w/power supply\r\n\r\nOn Sat, Oct 25, 2025, 6:23 AM support@simsonn.com ",
+      "user_id": 158006092125,
+      "created_at": "2025-10-25T10:36:36Z",
+      "updated_at": "2025-10-25T10:36:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011073150,
+      "body_text": "Hello, your shopping amount does not meet the discount eligibility criteria. We have created an exclusive discount for you: $8 off orders over $99. Discount code: RT8",
+      "user_id": 158001343601,
+      "created_at": "2025-10-25T10:45:28Z",
+      "updated_at": "2025-10-25T10:45:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011073169,
+      "body_text": "Ok. FFLV20  wasn't applicable under 199?  I know the CNFRCS was for 199\r\n\r\nOn Sat, Oct 25, 2025, 6:45 AM support@simsonn.com ",
+      "user_id": 158006092125,
+      "created_at": "2025-10-25T10:49:28Z",
+      "updated_at": "2025-10-25T10:49:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011073173,
+      "body_text": "Ty for the discount code by the way\r\n\r\n",
+      "user_id": 158006092125,
+      "created_at": "2025-10-25T10:50:09Z",
+      "updated_at": "2025-10-25T10:50:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011073187,
+      "body_text": "The threshold for FFLV20 is also $199.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-25T10:52:01Z",
+      "updated_at": "2025-10-25T10:52:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

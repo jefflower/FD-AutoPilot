@@ -1,0 +1,25 @@
+{
+  "id": 10989,
+  "subject": "Brake pedal Travel",
+  "description_text": "Hello!\nI have a Simsson plus x pedals and I would like to know how do I increase the travel of the brake pedal. I'm using the red elastomer now and the brake feels stiff and has a very low pedal travel. I have the load cell setup to 26 kg.\n\nSent from Outlook for Android<https://aka.ms/AAb9ysg>",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-15T14:02:04Z",
+  "updated_at": "2026-01-16T01:45:23Z",
+  "requester_id": 158004441012,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017235157,
+      "body_text": "Hi yousifahmed321@outlook.com, You can remove the 10mm travel limiter spacer inside the black brake spring to increase the pedal travel. This spacer is the default F1-style setup: it shortens the compression travel of the black spring to simulate the ~1–2mm pad-to-disc clearance feel.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-16T01:45:23Z",
+      "updated_at": "2026-01-16T01:45:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

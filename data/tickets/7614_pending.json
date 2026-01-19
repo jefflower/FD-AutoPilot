@@ -1,0 +1,114 @@
+{
+  "id": 7614,
+  "subject": "Ordered pedals from AliExpress",
+  "description_text": "Hello,\r\n\r\nI’ve ordered a set of p2-h2 from AliExpress.\r\nI have these for about 2-3 weeks now, but today the brake pedal has\r\ncompletely stopped working.\r\nCould this be a broken wire to the loadcell?\r\n They aren’t a month old and already seem broken.\r\n\r\nSincerely,\r\n\r\nMark\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-07T13:13:37Z",
+  "updated_at": "2025-12-11T08:21:31Z",
+  "requester_id": 158007685714,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014116300,
+      "body_text": "Hello,\r\n\r\nIn addition, a video of what happened after disassembling and reassembling\r\nthe load cell.\r\n\r\nSincerely,\r\n\r\nMark van Laar\r\n\r\nOp zo 7 dec 2025 om 14:13 schreef mark van laar <m.vanlaar17@gmail.com>\r\n\r\n> Hello,\r\n>\r\n> I’ve ordered a set of p2-h2 from AliExpress.\r\n> I have these for about 2-3 weeks now, but today the brake pedal has\r\n> completely stopped working.\r\n> Could this be a broken wire to the loadcell?\r\n>  They aren’t a month old and already seem broken.\r\n>\r\n> Sincerely,\r\n>\r\n> Mark\r\n>\r\n\r\n",
+      "user_id": 158007685714,
+      "created_at": "2025-12-08T08:37:45Z",
+      "updated_at": "2025-12-08T08:37:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014116567,
+      "body_text": "Hello,\r\n\r\n3063400355418747 is what i have on AliExpress.\r\nIf i should have a different order number please let me know.\r\n\r\nSincerely,\r\n\r\nMark van Laar\r\n\r\nOp ma 8 dec 2025 om 09:45 schreef General and sales enquiries <\r\nservice@simsonn.com>:\r\n\r\n> Hello, please provide your order number so we can check and process your\r\n> after-sales service.\r\n>\r\n> ------------------------------\r\n> service@simsonn.com\r\n>\r\n>\r\n> *",
+      "user_id": 158007685714,
+      "created_at": "2025-12-08T08:47:50Z",
+      "updated_at": "2025-12-08T08:47:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014119711,
+      "body_text": "Hi mark van laar,     Please take a photo of the RJ connector on the brake pedal, using my reference image as a guide, so I can check if the connector is damaged. Also, please take a side photo of the brake pedal so I can check if the installation has any issues.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-08T10:47:12Z",
+      "updated_at": "2025-12-08T10:47:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014119852,
+      "body_text": "Hello,\r\n\r\nAre we gonna keep rocking back and forth between the chat in AliExpress and\r\nhere?\r\n\r\n\r\nOp ma 8 dec 2025 om 11:47 schreef service@simsonn.com ",
+      "user_id": 158007685714,
+      "created_at": "2025-12-08T10:51:15Z",
+      "updated_at": "2025-12-08T10:51:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014132912,
+      "body_text": "Hello,\r\n\r\nJust to clarify it’s about the load cell of the brake pedal, it’s not about\r\nthe throttle.\r\nNot sure why some one on AliExpress told to look for the spring on the\r\nthrottle.\r\n\r\nSincerely,\r\n\r\nMark\r\n\r\nOp ma 8 dec 2025 om 11:50 schreef mark van laar <m.vanlaar17@gmail.com>\r\n\r\n> Hello,\r\n>\r\n> Are we gonna keep rocking back and forth between the chat in AliExpress\r\n> and here?\r\n>\r\n>\r\n> Op ma 8 dec 2025 om 11:47 schreef service@simsonn.com <service@simsonn.com\r\n> >\r\n>\r\n>> Hi mark van laar,\r\n>>\r\n>>\r\n>> Please take a photo of the RJ connector on the brake pedal, using my\r\n>> reference image as a guide, so I can check if the connector is damaged.\r\n>> Also, please take a side photo of the brake pedal so I can check if the\r\n>> installation has any issues.\r\n>>\r\n>> ",
+      "user_id": 158007685714,
+      "created_at": "2025-12-08T15:33:13Z",
+      "updated_at": "2025-12-08T15:33:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014302365,
+      "body_text": "Hi mark van laar,  At the moment, the brake’s RJ connector appears to be connected properly. Here’s what you can do: please update the firmware again, then reconfigure the offset, and finally test whether the pedal is functioning normally.      Please follow the steps below:    Press and hold the upgrade button on the PlusX main controller, then reconnect the USB cable.    Open SIMSONN Manager 2.1.0 and check if it has entered recovery mode.    If recovery mode is detected, go to Settings → Update → Manual Update Firmware → pedals → firmware → pedals-plusx.sfu.    After the update is complete, test the device to see if it has been restored successfully.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T06:55:55Z",
+      "updated_at": "2025-12-11T06:55:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014302460,
+      "body_text": "Hello,\r\n\r\nAre we going trough this again?\r\nYou’ve literally emailed me yesterday that you were going to send me a new\r\nload cell.\r\nAswell as you’ve send this on Ali express aswell.\r\nI have tried all the options you’ve send me before, the load cell itself is\r\nbroken.\r\n\r\nThis has nothing to do with time difference, this is internal communication\r\nthats not being done.\r\n\r\nSincerely,\r\n\r\nMark van Laar\r\n\r\n\r\nOp do 11 dec 2025 om 07:56 schreef service@simsonn.com ",
+      "user_id": 158007685714,
+      "created_at": "2025-12-11T07:00:37Z",
+      "updated_at": "2025-12-11T07:00:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014307021,
+      "body_text": "Hi mark van laar,  That’s good. We will have a new sensor sent to you via AliExpress. Regarding issue resolution, we handle problems separately through email and the chat tools provided by each platform, so they are not processed simultaneously, which may cause some discrepancies. If any issue arises, you can contact us through either channel until it is fully resolved. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T07:45:21Z",
+      "updated_at": "2025-12-11T07:45:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014307851,
+      "body_text": "Hello,\r\n\r\nI understand I can use both tools to get my issue sorted.\r\nWhich it now has. All I’m trying to say is, I’ve been having to explain my\r\nproblem twice, with twice the same solution. (Which wasn’t the solution\r\nsince it’s internal) Due to no communication between the 2 departments. Is\r\na bit of a nuisance.\r\n\r\nSincerely,\r\n\r\nMark van Laar\r\n\r\nOp do 11 dec 2025 om 08:45 schreef service@simsonn.com ",
+      "user_id": 158007685714,
+      "created_at": "2025-12-11T08:15:08Z",
+      "updated_at": "2025-12-11T08:15:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014308065,
+      "body_text": "Hi mark van laar,  We appreciate your understanding. Due to the heavy backlog of emails during the Black Friday peak, there may have been some delays or inconveniences in handling your request. We have already resent a new pressure sensor to you.        Your product has been shipped. The logistics number is:YT2534500706602976. You can track it at this website:https://t.17track.net/zh-cn#nums=YT2534500706602976 ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T08:21:30Z",
+      "updated_at": "2025-12-11T08:21:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

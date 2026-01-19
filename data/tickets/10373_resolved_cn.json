@@ -1,0 +1,35 @@
+{
+  "id": 10373,
+  "subject": "布雷特·加尔文 - Simsonn Pro Plus - 神力科莎",
+  "description_text": "嗨，团队，\n\n我购买了 Pro Plus，并且可以在 Simsonn Manager 中看到它已激活。\n\n我最初能够在《神力科莎》中校准踏板 - 但是在我在赛道上测试了一次踏板后，它们在游戏中就没有响应了。设置卡在了如下所示的位置 - 有什么想法吗？\n\n[图片: image.png]\n\n致以诚挚的问候，\n\n布雷特",
+  "status": 4,
+  "priority": 2,
+  "created_at": "2026-01-09T06:20:39Z",
+  "updated_at": "2026-01-11T01:18:44Z",
+  "requester_id": 158008998917,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016651991,
+      "body_text": "嗨，布雷特·加尔文， 找到 PlusX 控制器上的升级按钮并持续按住，然后重新连接 USB 数据线。一旦 Simsonn Manager 显示已进入固件升级模式，您就可以松开按钮了。接下来，请按照以下步骤操作： 在软件中，进入“设置”→“更新”→“手动固件更新”→“pedals-firmware”→“pedals-plusx.sfu”。更新完成后，将 USB 连接到您 PC 背面的 USB 3.0 蓝色端口，然后插入电源线。再次测试设备以确保其功能正常。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-10T02:55:18Z",
+      "updated_at": "2026-01-10T02:55:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016704043,
+      "body_text": "太棒了，成功了，非常感谢。",
+      "user_id": 158008998917,
+      "created_at": "2026-01-10T11:41:32Z",
+      "updated_at": "2026-01-10T11:41:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

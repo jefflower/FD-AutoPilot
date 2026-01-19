@@ -1,0 +1,205 @@
+{
+  "id": 3845,
+  "subject": "让我们重新开始。",
+  "description_text": "附件是我当前的设置。触觉反馈正常。但是我玩游戏时油门无法达到100%。踏板已经过校准并正确设置了死区。插座全程是三孔的。控制盒直接接地到我的驾驶模拟器铝型材上。",
+  "status": 4,
+  "priority": 4,
+  "created_at": "2025-09-15T12:38:55Z",
+  "updated_at": "2025-10-01T11:13:57Z",
+  "requester_id": 158004552091,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008816215,
+      "body_text": "嗨 David Guidolin，您能提供一个视频演示并通过启用了访问权限的 Google Drive 分享吗？",
+      "user_id": 158000445778,
+      "created_at": "2025-09-16T13:24:15Z",
+      "updated_at": "2025-09-16T13:24:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008817842,
+      "body_text": "当然可以。我回家后就弄，谢谢。",
+      "user_id": 158004552091,
+      "created_at": "2025-09-16T14:20:58Z",
+      "updated_at": "2025-09-16T14:20:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008835355,
+      "body_text": "提供了带讲解的视频。谢谢。\n\nhttps://drive.google.com/drive/folders/1v5zIoeQbT4Y6givz-jeA1jdrbcYNI4Or",
+      "user_id": 158004552091,
+      "created_at": "2025-09-16T23:18:38Z",
+      "updated_at": "2025-09-16T23:18:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008837718,
+      "body_text": "嗨 David Guidolin，这是哪个游戏？您是否尝试过将油门死区最大值设置为5%？此外，我们建议使用VKB工具检查信号状态。我们还建议参考这篇文章，并使用尼龙螺丝和尼龙垫圈将VAM Pro电机与其安装支架隔离，以帮助减少干扰问题。\n\nhttps://cdn.shopify.com/s/files/1/0551/4739/7238/files/VKB_JoyTester_40fdd530-6057-437e-9b50-3ac2d59dbbcd.zip?v=1693176246\n\nhttps://www.reddit.com/r/simracing/comments/1n291hi/solution_for_simsonn_vam_pro_emi_issues/",
+      "user_id": 158000445778,
+      "created_at": "2025-09-17T01:48:54Z",
+      "updated_at": "2025-09-17T01:48:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008838080,
+      "body_text": "是《勒芒终极赛》，其他游戏也有问题。当触觉反馈不接通墙上电源时，踏板可以正常全范围工作。我只在油门踏板上遇到问题。所以你们新品牌踏板上的螺母和垫圈是尼龙的吗？我的是旧款踏板。另外，提供的用于安装在踏板上的指定硬件不够用吗？",
+      "user_id": 158004552091,
+      "created_at": "2025-09-17T02:11:17Z",
+      "updated_at": "2025-09-17T02:11:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008838131,
+      "body_text": "能给我提供一个套件吗？\n\n收货信息。\n51 Regent road Toronto Ontario m3k1g8\nDavid Guidolin\n16477819329",
+      "user_id": 158004552091,
+      "created_at": "2025-09-17T02:14:20Z",
+      "updated_at": "2025-09-17T02:14:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008838139,
+      "body_text": "嗨 David Guidolin，为了解决这个问题，我们为新客户提供一套免费的尼龙螺丝和垫圈，此外还有包装中包含的标准金属螺丝，以确保更好的安装和隔离。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-17T02:14:54Z",
+      "updated_at": "2025-09-17T02:14:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008838150,
+      "body_text": "嗨 David Guidolin，请提供您的订单号。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-17T02:15:34Z",
+      "updated_at": "2025-09-17T02:15:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008838402,
+      "body_text": "我是几个月前买的触觉反馈。你们不能帮我一下吗？",
+      "user_id": 158004552091,
+      "created_at": "2025-09-17T02:29:30Z",
+      "updated_at": "2025-09-17T02:29:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008851539,
+      "body_text": "嗨 David Guidolin，请提供您的订单号，我将为您安排寄送一套替换的尼龙螺丝和垫圈。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-17T09:44:07Z",
+      "updated_at": "2025-09-17T09:44:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008855780,
+      "body_text": "SSN1644",
+      "user_id": 158004552091,
+      "created_at": "2025-09-17T10:45:40Z",
+      "updated_at": "2025-09-17T10:45:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008874295,
+      "body_text": "谢谢你",
+      "user_id": 158004552091,
+      "created_at": "2025-09-17T16:02:31Z",
+      "updated_at": "2025-09-17T16:02:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008933399,
+      "body_text": "您好，这是您的物流追踪链接。 https://t.17track.net/en#nums=YT2526200702059434",
+      "user_id": 158001343601,
+      "created_at": "2025-09-19T02:02:43Z",
+      "updated_at": "2025-09-19T02:02:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008933528,
+      "body_text": "非常感谢！",
+      "user_id": 158004552091,
+      "created_at": "2025-09-19T02:16:52Z",
+      "updated_at": "2025-09-19T02:16:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009659380,
+      "body_text": "我刚收到硬件。安装了用于将螺栓与安装板隔开的尼龙垫圈，但在所有游戏中仍然存在同样的问题。",
+      "user_id": 158004552091,
+      "created_at": "2025-09-29T22:49:59Z",
+      "updated_at": "2025-09-29T22:49:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009659515,
+      "body_text": "我尝试了在软件中重新校准，并在游戏中设置了最大和最小行程，但问题依旧。？",
+      "user_id": 158004552091,
+      "created_at": "2025-09-29T22:53:22Z",
+      "updated_at": "2025-09-29T22:53:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009707944,
+      "body_text": "好消息，虽然我没有得到任何明确的指示，但关键在于电机和安装板之间的尼龙件。现在它能正常工作了。感谢你们提供的材料。我的模拟器终于完美了！",
+      "user_id": 158004552091,
+      "created_at": "2025-10-01T02:03:05Z",
+      "updated_at": "2025-10-01T02:03:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009726409,
+      "body_text": "嗨 David Guidolin，我们很高兴能帮助您解决问题。如果您需要进一步的帮助，请随时与我们联系。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T10:31:32Z",
+      "updated_at": "2025-10-01T10:31:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009729983,
+      "body_text": "谢谢你。",
+      "user_id": 158004552091,
+      "created_at": "2025-10-01T11:08:50Z",
+      "updated_at": "2025-10-01T11:08:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

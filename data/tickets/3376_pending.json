@@ -1,0 +1,74 @@
+{
+  "id": 3376,
+  "subject": "Order #SSN2464",
+  "description_text": "Hi,\r\ni have just now received my pedals but without the Haptics reactor and base\r\nplate that where in the order as i paid for.\r\nDo you have any news about the rest of my order?\r\nThat's totally a mistake.\r\nthanks.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-02T08:27:15Z",
+  "updated_at": "2025-09-04T03:30:29Z",
+  "requester_id": 158003606418,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007940770,
+      "body_text": "Hello, we are shipping items separately. Here is your Haptics Reactor link.  https://t.17track.net/en#nums=SF6045878835992",
+      "user_id": 158001343601,
+      "created_at": "2025-09-02T08:49:49Z",
+      "updated_at": "2025-09-02T08:49:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007940803,
+      "body_text": "Your base plate was omitted by our warehouse staff. We have now arranged for it to be dispatched from our German warehouse. We apologise for the inconvenience.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-02T08:55:15Z",
+      "updated_at": "2025-09-02T08:55:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007944557,
+      "body_text": "sorry but this link https://t.17track.net/en#nums=SF6045878835992  is about the pedals that i have just got and they do not have the Haptics reactor in it. Do you mean that i should have got two separate packages and i have to wait for the other one to arrive?",
+      "user_id": 158003606418,
+      "created_at": "2025-09-02T09:23:08Z",
+      "updated_at": "2025-09-02T09:23:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158007944591,
+      "body_text": "This is your pedal logistics link. We ship from Germany, so it will arrive very quickly.  https://t.17track.net/en#nums=CE326622632DE",
+      "user_id": 158001343601,
+      "created_at": "2025-09-02T09:28:15Z",
+      "updated_at": "2025-09-02T09:28:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008029592,
+      "body_text": "Hi, i'm not able to monitor the package with  the Haptics Reactor since the link that you gave me do not have any coherent status. Can you please give me an update regarding the package? Thanks.",
+      "user_id": 158003606418,
+      "created_at": "2025-09-03T12:43:42Z",
+      "updated_at": "2025-09-03T12:43:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158008056149,
+      "body_text": "Hi Francesco Gaeta,    Heere is your base plate tracking link:  https://t.17track.net/en#nums=CE326623394DE  Haptics:  https://t.17track.net/en#nums=SF6045878835992",
+      "user_id": 158001343601,
+      "created_at": "2025-09-04T03:30:28Z",
+      "updated_at": "2025-09-04T03:30:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

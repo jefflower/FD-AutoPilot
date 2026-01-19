@@ -1,0 +1,64 @@
+{
+  "id": 305,
+  "subject": "Order Has Not Shipped",
+  "description_text": "Hi,\r\n\r\nMy order says it’s shipped but i’ve been checking UPS for the last few days\r\nand it says they haven’t received the package yet. Could you give me an\r\nupdate please?\r\n\r\nSincerely,\r\nRichard Yung\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-09T18:08:59Z",
+  "updated_at": "2025-06-12T10:05:10Z",
+  "requester_id": 158000955752,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002906863,
+      "body_text": "Hi richard yung, Please provide your order number, and I will ask our operations team to look into the issue and get back to you as soon as possible. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-11T02:21:38Z",
+      "updated_at": "2025-06-11T02:21:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002906913,
+      "body_text": "Hi richard yung,  Is your order number SSN1561? We’ve noticed that the latest tracking number has been updated to Evri • T01E8A0076151398. Please keep an eye on the shipping status. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-11T02:26:25Z",
+      "updated_at": "2025-06-11T02:26:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002906917,
+      "body_text": "SSN1516\r\n\r\nSincerely,\r\nRichard Yung\r\n\r\n\r\n\r\nOn Mon, Jun 9, 2025 at 11:09 service@simsonn.com ",
+      "user_id": 158000955752,
+      "created_at": "2025-06-11T02:26:50Z",
+      "updated_at": "2025-06-11T02:26:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002930891,
+      "body_text": "Hi richard yung,  Your parcel has arrived in the USA and is being processed by the warehouse. UPS will be picking it up tomorrow. We are sorry for the delay caused to you, due to the tariffs, there will be some delay in logistics time, thank you for your understanding. Sincere apologies! ",
+      "user_id": 158001343601,
+      "created_at": "2025-06-11T10:25:23Z",
+      "updated_at": "2025-06-11T10:25:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002938495,
+      "body_text": "No problem, thank you for the update.\r\n\r\n\r\nOn Wed, Jun 11, 2025 at 03:25 service@simsonn.com ",
+      "user_id": 158000955752,
+      "created_at": "2025-06-11T15:19:52Z",
+      "updated_at": "2025-06-11T15:19:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

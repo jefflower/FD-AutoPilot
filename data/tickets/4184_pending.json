@@ -1,0 +1,24 @@
+{
+  "id": 4184,
+  "subject": "Sv: Issue with VAM Pro Vibration Motors – Prolonged/Stuck Vibrations",
+  "description_text": "Seems like my picture was not added, so here it is again:\r\n________________________________\r\nFra: Simen Asphaug <simenasphaug@hotmail.com>\r\nSendt: lørdag 27. september 2025 14:25\r\nTil: service@simsonn.com <service@simsonn.com>\r\nEmne: Sv: Issue with VAM Pro Vibration Motors – Prolonged/Stuck Vibrations\r\n\r\nHi,\r\nUnfortunately, the update has made things worse.\r\nCPU2 now shows as version 0, even though the firmware flashing process completed without any errors. There were no disconnects during the update, and the software reported that the update was successful.\r\nAfter this, all motors now show “power disconnect”, no matter what I do.\r\nI’ve already tried:\r\n\r\n  *\r\nReflashing the firmware again\r\n  *\r\nDisconnecting and reconnecting all cables (power and USB)\r\n\r\nPlease advise on how to proceed, because the vibration motors are now completely unusable.\r\n[cid:2584a4da-7cd4-43b2-81d1-d4ab19c8f14e]\r\nBest regards,\r\nSimen\r\n\r\n________________________________\r\nFra: service@simsonn.com <service@simsonn.com>\r\nSendt: lørdag 27. september 2025 07:55\r\nTil: simenasphaug@hotmail.com <simenasphaug@hotmail.com>\r\nEmne: Re: Issue with VAM Pro Vibration Motors – Prolonged/Stuck Vibrations\r\n\r\nHi Simen Asphaug,\r\n\r\nIf your pedals are ProX Ultra, please update to the latest software and firmware to ensure optimal performance and compatibility.\r\n\r\nPlease first uninstall SIMSONN Manager 2.1.0 from your computer, and then download and install the 2.1.1 version using the provided link.\r\nOnce the installation is complete, go to:\r\nSettings → Update → Manual Firmware Update → Select the file pedals-firmware-pedals-proxultra.sfu\r\nAfter the firmware update is finished, check if the device connects properly.\r\nNext, open the Vibration Test interface to test the vibration function, making sure to select the correct motor type.\r\nWe also recommend updating the telemetry data to ensure everything works correctly.\r\n\r\n[https://attachment.freshdesk.com/inline/attachment?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTU4MDAyMTUyNjA5LCJkb21haW4iOiJzaW1zb25uLmZyZXNoZGVzay5jb20iLCJhY2NvdW50X2lkIjo0MjA2MDM2fQ.hm1xO01OvRnxVhC_7jkkA6SuWY2Z8HhmKP2pePtf5a4]\r\n\r\nhttps://drive.google.com/file/d/1BAdSWa1bxmbPksj9Hlzuo8bl7_bM8ixr/view?usp=sharing\r\n\r\n\r\nOn Thu, 25 Sep at 3:55 AM , Simen Asphaug <simenasphaug@hotmail.com> wrote:\r\nHi,\r\nI’m located in Oslo, Norway (CET time zone).\r\nMy availability is as follows:\r\n\r\n  *\r\nThursday–Sunday: 16:00–21:00 CET (also 09:00–16:00 CET if it doesn’t conflict with work meetings)\r\n  *\r\nMonday–Wednesday: 18:00–21:00 CET\r\n\r\n//Simen\r\n________________________________\r\nFra: service@simsonn.com <service@simsonn.com>\r\nSendt: onsdag 24. september 2025 17:43\r\nTil: simenasphaug@hotmail.com <simenasphaug@hotmail.com>\r\nEmne: Re: Issue with VAM Pro Vibration Motors – Prolonged/Stuck Vibrations\r\n\r\nHi Simen Asphaug,\r\n\r\nPlease let me know your city and local time, as well as when you are available. I will coordinate with your schedule to provide remote assistance.\r\n\r\n\r\nOn Sun, 21 Sep at 6:39 AM , Simen Asphaug <simenasphaug@hotmail.com> wrote:\r\nHi,\r\n\r\nHow can we schedule a session like this? At what time?\r\n\r\n//Simen\r\n\r\n________________________________\r\nFrom: service@simsonn.com <service@simsonn.com>\r\nSent: Sunday, September 21, 2025 12:37:54 PM\r\nTo: simenasphaug@hotmail.com <simenasphaug@hotmail.com>\r\nSubject: Re: Issue with VAM Pro Vibration Motors – Prolonged/Stuck Vibrations\r\n\r\nHi Simen Asphaug,\r\n\r\nHello, you may also use TeamViewer, and please don’t worry. If it turns out that the controller is faulty, we will send you a free replacement.\r\n\r\n\r\n2025:4206036\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-27T12:26:59Z",
+  "updated_at": "2025-09-27T13:16:32Z",
+  "requester_id": 158005099373,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009425853,
+      "body_text": "Hi Simen Asphaug,  The screenshot you uploaded appears to be incomplete. Please try unplugging both the USB and the power cable, wait a few seconds, then reconnect them and test again. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-27T13:16:32Z",
+      "updated_at": "2025-09-27T13:16:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

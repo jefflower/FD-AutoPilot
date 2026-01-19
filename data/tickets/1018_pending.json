@@ -1,0 +1,24 @@
+{
+  "id": 1018,
+  "subject": "",
+  "description_text": "When I plug in my pro x ultra control box to my pro x upgraded pedals it\r\nworks in the simsonn manager software but in every game it just gets\r\nregistered like the pedals are buttons and not on a axis. If I put my pro x\r\nupgraded control box on my pedals it works fine\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-30T23:46:52Z",
+  "updated_at": "2025-07-01T06:28:42Z",
+  "requester_id": 158001853228,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004353506,
+      "body_text": "Hi Dalton Uhl,  Our software currently supports 10 games. May I ask which game you are using now? We are continuously working to add telemetry support for more titles. In the meantime, you can use the internal version of SimHub that I’ve provided. The official release is still undergoing testing and may take a bit more time.    https://drive.google.com/file/d/1QrSbAvCC5iyx9XgdRgSQV-hWpmDGkujc/view?usp=sharing     You also need to perform an Offset adjustment — please click the Offset button in the top right corner of the software. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-01T06:28:42Z",
+      "updated_at": "2025-07-01T06:28:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

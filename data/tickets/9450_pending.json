@@ -1,0 +1,64 @@
+{
+  "id": 9450,
+  "subject": "Plus X not working",
+  "description_text": "Hi,\r\nHope you are well. \r\n\r\nIve got a set of Plus x that are not working.  These are new out the box but are having connectivity issues.\r\n\r\nProblem 1.  They keep disconnecting.  Ive tried different usb ports and cables but they disconnect saying : \r\n\r\nThis device cannot start. (Code 10)\r\n\r\nThe I/O request was canceled\r\n\r\nProblem 2.  When they are connected they only show as being connected in your software.  When trying to configure them for use in any game or just the window’s joystick manager they do not show. \r\n\r\nAny thought as to what this could be ? \r\n\r\nThanks \r\n\r\n\r\n\r\nSent from my iPhone\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-29T11:13:24Z",
+  "updated_at": "2026-01-02T04:04:50Z",
+  "requester_id": 158008806863,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015241024,
+      "body_text": "Hi Owen Bishop,  ​Please connect the device to the blue USB 3.0 port at the back of your computer, and avoid using USB 2.0 ports or unpowered USB hubs. You need to calibrate the pedals first, then enter the game to set up the key bindings. Could you please specify which game you are referring to? ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T07:47:28Z",
+      "updated_at": "2025-12-30T07:47:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015300065,
+      "body_text": "Hi, \r\n\r\nI’ve been doing a little more digging and it seems the issue might be due to interference.   \r\nWhen i unplug the control box from power things seem to work fine - plug it in an everything stops working.  \r\n\r\nI need the box plugged in as i have vam pros.\r\n\r\nAny advice on where to mount the box and how to use the ground cable.  Ive got a wheel stand pro not a full rig and the control box is mounted to the pedal tray currently \r\n\r\nThanks \r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158008806863,
+      "created_at": "2025-12-31T07:52:08Z",
+      "updated_at": "2025-12-31T07:52:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015300977,
+      "body_text": "Hi Owen Bishop,  Please use the nylon screws and nylon spacers to install the VAM Pro motors. The purpose is to electrically isolate the VAM Pro motors from the metal rig or pedal plate, preventing unwanted grounding paths and electrical interference. In addition, please refer to the post/instructions below and follow the recommended grounding method, as proper grounding is critical to resolving interference-related issues.      If this happens, it indicates that the computer’s grounding is not reliable, possibly because a three-prong plug was not used with a three-prong wall outlet. You can refer to the post below: connect the computer case to the stand, and connect the control box to the metal screws on the pedals. This should resolve the disconnection issue.  https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T07:56:45Z",
+      "updated_at": "2025-12-31T07:56:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015366985,
+      "body_text": "Hi I’ve gone through all this and still find the moment i try to use the VAM pro the pedal set falls over and stops working.  I am using the ground cable and my pc is using a 3 pronged plug as i am in the uk this is pretty much mandatory.  \r\n\r\nCould there be an issue with my controller box,  or is there any other way to in ground it as I can see this tripping a-lot of people us and the vam pros are a one of the main reasons i landed on this pedal set - thanks \r\nOwen \r\nMany thanks\r\n\r\nOwen\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158008806863,
+      "created_at": "2026-01-01T15:47:59Z",
+      "updated_at": "2026-01-01T15:47:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015378201,
+      "body_text": "Hi Owen Bishop,  Please use nylon washers and nylon screws to install the VAM motor. This will electrically isolate the motor from the bracket, effectively preventing interference with the pedals. Please try this solution and see if it resolves the issue. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-02T04:04:49Z",
+      "updated_at": "2026-01-02T04:04:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

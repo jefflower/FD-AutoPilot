@@ -1,0 +1,54 @@
+{
+  "id": 10847,
+  "subject": "踏板故障",
+  "description_text": "我几个小时前刚收到了我最新的带触觉反馈和RGB反馈踏板的Simsonn Pedal Pro X Ultra，但它们缺少了应该随附的线性触觉反馈电机和支架。使用几分钟后，油门在完全踩下时提供的动力越来越少，请提供退货地址。谢谢！",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-14T02:28:52Z",
+  "updated_at": "2026-01-15T04:09:01Z",
+  "requester_id": 158009056454,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017093049,
+      "body_text": "您好 Connor Doolittle，请打开 SIMSONN Manager 并点击“Offset”按钮以重新归零/应用偏移。由于您调整了弹簧和机械设置，因此需要重新执行此步骤。如果问题仍未解决，请录制一个简短视频，展示问题并通过 Google Drive 与我们分享，权限设置为“任何拥有链接的人都可以查看”。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-14T11:07:16Z",
+      "updated_at": "2026-01-14T11:07:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017115601,
+      "body_text": "这是视频。我从来没有调整过弹簧和机械设置，我只是把油门连接到底板上，从来没有动过它。这是谷歌云端硬盘链接：https://drive.google.com/file/d/1c57ypRMEzKnbYEM95BItVaLF4f84Zq70/view?usp=drivesdk\n\n2026年1月14日星期三上午6:07，support@simsonn.com",
+      "user_id": 158009056454,
+      "created_at": "2026-01-14T15:47:42Z",
+      "updated_at": "2026-01-14T15:47:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017153915,
+      "body_text": "您好 Connor Doolittle，我已查看您的视频。点击“Offset”后，您需要执行一次完整的踏板校准：在 SIMSONN Manager 中，点击“Calibrate”；以正常力度踩下每个踏板（油门/刹车/离合器）；点击“Save”；保存后，再次测试踏板——蓝色进度条应平稳地从0%到100%。如果达到100%，则校准成功。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-15T01:18:26Z",
+      "updated_at": "2026-01-15T01:18:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017161720,
+      "body_text": "是的，这完全解决了问题，抱歉造成了所有困惑，感谢您对我的耐心。\n\n2026年1月14日星期三晚上8:18，support@simsonn.com",
+      "user_id": 158009056454,
+      "created_at": "2026-01-15T04:07:25Z",
+      "updated_at": "2026-01-15T04:07:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

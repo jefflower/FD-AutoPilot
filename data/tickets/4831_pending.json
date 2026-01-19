@@ -1,0 +1,24 @@
+{
+  "id": 4831,
+  "subject": "Calibration Help",
+  "description_text": "Hello\r\n\r\nI have the Plus X pedals with the haptics. I have the pedals hooked up, grounded, calibrated and everything responds in the software. When I go into a game, the game recognizes I have simsonn pedals but when I try to assign the controls and I press the pedals nothing happens. They work in the software but not in any game. I’m looking for some help. Thank you!\r\nJonah\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-13T18:15:12Z",
+  "updated_at": "2025-10-16T06:04:03Z",
+  "requester_id": 158005649186,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010535238,
+      "body_text": "Hi Jonah Fowle,  Please uninstall the old version from your computer, then reinstall version 2.1.2 and update the firmware. After the update, the device version should display as CPU1: 2.0.5, CPU2: 2.0.3. If the issue still persists, please feel free to contact me.     https://www.simsonn.com/pages/download     You can also download the latest version of SimHub to enable telemetry vibration feedback. Please note that SimHub and SIMSONN Manager should not be opened at the same time to avoid conflicts. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-16T06:04:03Z",
+      "updated_at": "2025-10-16T06:04:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

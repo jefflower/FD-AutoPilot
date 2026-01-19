@@ -1,0 +1,54 @@
+{
+  "id": 4086,
+  "subject": "Refund Order #SSN2548",
+  "description_text": "I never received the pedals. I only received the linear motors.\r\n\r\nI would like my money back.\r\n\r\nWhat is next step?\r\n\r\nThanks\r\n\r\nEarl\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-24T07:47:48Z",
+  "updated_at": "2025-09-24T08:38:56Z",
+  "requester_id": 158004845706,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009215206,
+      "body_text": "Hi Earl Snider,     We apologise for the delay caused. Your parcel will be delivered within the next couple of days. https://www.fedex.com/fedextrack/?trknbr=884470137425&trkqual=12029~884470137425~FDEG",
+      "user_id": 158001343601,
+      "created_at": "2025-09-24T08:10:09Z",
+      "updated_at": "2025-09-24T08:10:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009215418,
+      "body_text": "I was told the same thing last week and nothing.\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nThanks\r\n\r\nEarl\r\n\r\nOn Wed, Sep 24, 2025, 3:10 AM service@simsonn.com ",
+      "user_id": 158004845706,
+      "created_at": "2025-09-24T08:23:38Z",
+      "updated_at": "2025-09-24T08:23:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009215488,
+      "body_text": "Hi Earl Snider,    We sincerely apologize for the inconvenience. We will refund the additional shipping charges as compensation. I see that the tracking updates have not stopped. It may simply take longer for the shipment to arrive at your address from our California warehouse.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-24T08:28:21Z",
+      "updated_at": "2025-09-24T08:28:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009215575,
+      "body_text": "Ok.\r\nIf it is delivered in the next day or two I'll accept the shipping refund\r\n\r\nThanks\r\n\r\nEarl\r\n\r\nOn Wed, Sep 24, 2025, 3:28 AM service@simsonn.com ",
+      "user_id": 158004845706,
+      "created_at": "2025-09-24T08:33:43Z",
+      "updated_at": "2025-09-24T08:33:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "id": 4743,
+  "subject": "Re: Order #SSN2648",
+  "description_text": "Hi again, I’ve had a chance to use the unit for a bit now and am having a couple of issues with them. 1. The LED light on the footplate does not work, I’ve check the connections and all are connected correctly as I can tell. 2. Sticky throttle. I’m not sure if it’s the throttle sensor itself or the software, but after full throttle for a long straight the throttle randomly gets stuck on. Depressing the throttle again sometimes seems to resolve this however this is far to regular to be normal. Not sure if you have any suggestions for how I can address these issues. Thanks in advance. David Sent from my iPhone On 29 Sep 2025, at 4:29 pm, David Barker <David.Barker06@gmail.com> wrote: ﻿ Hi there I recently made this order from your site and it has arrived missing the brake upgrade kit. Simsonn Pro X Ultra Sim Racing Pedal with Haptic Reactor Optional Items in Simsonn Pro X Ultra Sim Racing Pedal with Haptic Reactor Optional bundle <Simsonn Pro X Ultra-P3-H3_ with Baseplate.webp> 1 x Simsonn Pro X Ultra Sim Racing Pedal with Haptic Reactor OptionalPro X Ultra-P3-H3 / Baseplate <Simsonn VAM Pro Linear Motor Set (3 pac_includes power supply).webp> 1 x Simsonn VAM Pro Linear Motor - the Pedals Haptic Reactor for Vibration FeedbackVAM Pro Set (3 pac/includes power supply) $534.90 <Simsonn Pro X Ultra Pedals Upgrade Kit.webp> productThumbnailQuantityLabel1 Simsonn Pro X Ultra Pedals Upgrade Kit just adjustable hydraulic rods $43.90 Order totals moneyLinesHeaderItem moneyLinesHeaderValue Subtotal $578.80 Shipping Free Total USD$578.80 Orders Order #SSN2648 Sent from my iPhone",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-10-11T02:05:46Z",
+  "updated_at": "2025-10-20T10:08:10Z",
+  "requester_id": 158005151609,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010241357,
+      "body_text": "Hi David Barker,    If the light is not working, please send us a photo, and we will provide a replacement light module free of charge.  Additionally, we will send you a new throttle hydraulic rod, which offers lighter resistance.  You can also upgrade the software and firmware for better performance.     Please uninstall the old version from your computer, then reinstall version 2.1.2 and update the firmware.  After the update, the device version should display as CPU1: 2.0.5, CPU2: 2.0.3.  If the issue still persists, please feel free to contact me.     https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-10-11T02:51:52Z",
+      "updated_at": "2025-10-11T02:51:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010385969,
+      "body_text": "Hi again, Thanks for your response. Regarding the light, solved - my fault was plugged into throttle end instead of clutch. No problem anymore. I’ve updated Simsonn manager and the pedal firmware, however I’m still getting some sticky moments, however they seem to have reduced. I may have spotted it on the brake as well, and have noticed that in the manager software, the live pedal position stutters/hangs often, and wonder if it’s a communication issue rather than load cell? Just wanted to proved as much info as I can. Let me know what else I can try. David Sent from my iPhone ",
+      "user_id": 158005151609,
+      "created_at": "2025-10-14T05:52:32Z",
+      "updated_at": "2025-10-14T05:52:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010528995,
+      "body_text": "Hi again, Can you please advise on the issue of sticking pedals? The problem seems to have increased frequency. Regards, David Sent from my iPhone ",
+      "user_id": 158005151609,
+      "created_at": "2025-10-16T03:41:53Z",
+      "updated_at": "2025-10-16T03:41:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010535367,
+      "body_text": "Hi David Barker,     You can download and use the VKB JoyTester tool, which shows the real-time pedal signal curve. Sometimes the “sticking” you see might just be a display delay in the application — it usually doesn’t affect in-game performance. By checking the curve in this tool, you can verify whether the pedal signal is actually lagging or not.   https://www.vkbcontrollers.com/pages/downloads",
+      "user_id": 158000445778,
+      "created_at": "2025-10-16T06:12:29Z",
+      "updated_at": "2025-10-16T06:12:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010691612,
+      "body_text": "Hi again, Thanks for this advice. I’ve downloaded the VKB Joytester as per below and have run some tests. Both the throttle and brake freeze at seeming random intervals. Please refer to attach video. Ive tried using different USB ports, and confirming that the USB ports all work with other devices including wheel and pedals without similar issues. Obviously I’ve checked the connections to the controllers/wheels and pedals to ensure no other issues. I’m not sure what further things I can do to try and resolve this issue. Regard David Barker Sent from my iPhone ",
+      "user_id": 158005151609,
+      "created_at": "2025-10-19T04:54:39Z",
+      "updated_at": "2025-10-19T04:54:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010714238,
+      "body_text": "Hi David Barker,     Please try the following steps:    Go to Settings → Update and update to SIMSONN Manager 2.1.2;    After the update, restart the software and update your pedal firmware;    Confirm the firmware versions are CPU1: 2.0.5 / CPU2: 2.0.4;    Then test again to see if the issue persists.    If the problem remains:    Please record a short video using VKB JoyTester, upload it to Google Drive, and make sure to grant access permission;    Or install ToDesk (no registration required), so I can remotely check your setup;    It could also be due to low PC performance, which may cause delayed signal display — unless it also happens in the game, there’s no need to worry about hardware malfunction.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-20T02:04:59Z",
+      "updated_at": "2025-10-20T02:04:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010715415,
+      "body_text": "Hi again,\r\n\r\nI just wanted to confirm that the software and firmware are up to date\r\naccording to the versions listed.\r\nThe freezing happens when no other programs are running, and when all\r\nprograms are running.\r\nI have recorded a video of the freezing using VKB Joytester, this has been\r\nuploaded to:\r\nhttps://drive.google.com/drive/folders/1vGLFU730u63e1k3D6c7bRJJTKamCpydF?usp=sharing\r\n\r\nPlease review and advise.\r\n\r\nRegards,\r\n\r\nDavid Barker\r\n\r\n\r\nOn Mon, Oct 20, 2025 at 1:05 PM service@simsonn.com ",
+      "user_id": 158005151609,
+      "created_at": "2025-10-20T04:22:20Z",
+      "updated_at": "2025-10-20T04:22:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010719074,
+      "body_text": "Hi David Barker,  Could you please install ToDesk? It doesn’t require registration to use. I can connect remotely to check whether the issue is caused by the control box or the USB port on your computer.      https://www.todesk.com/download.html ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-20T10:08:09Z",
+      "updated_at": "2025-10-20T10:08:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

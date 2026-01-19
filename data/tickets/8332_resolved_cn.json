@@ -1,0 +1,25 @@
+{
+  "id": 8332,
+  "subject": "我的订单状态... SSN4637",
+  "description_text": "您好！我5天前在您这里下的订单（SSN4637），至今没有消息，而且是加急发货... 我收到了订单被取消的信息，现在我有一个追踪号（SF3269866672416），但它不活跃。这是怎么回事？\n\n谢谢，\n\n*Jorge De Silva - 摄影与电影制作*\n\n\nwww.jorgedesilva.com\nwww.instagram.com/itsjorgedesilva\nwww.instagram.com/surrealsuki_\nwww.instagram.com/reezfilms\nhttps://www.youtube.com/channel/UC_wR8V-x6-jr0q6vWrq9dxg\nhttp://www.imdb.com/name/nm1843499/\njorge @capabilities/default.json <jorgedesilvaofficial @gmail.com>orgedesilva.com\n+41 (0) 78 841 05 11",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-15T18:41:29Z",
+  "updated_at": "2025-12-22T12:40:50Z",
+  "requester_id": 158007822425,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014880097,
+      "body_text": "您好，Jorge De Silva，您的追踪号是1ZJ455510425475417，显示包裹已签收。",
+      "user_id": 158007774664,
+      "created_at": "2025-12-22T12:40:45Z",
+      "updated_at": "2025-12-22T12:40:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

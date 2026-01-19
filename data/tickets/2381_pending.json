@@ -1,0 +1,54 @@
+{
+  "id": 2381,
+  "subject": "Simsonn Plus X Problem",
+  "description_text": "Hello,\r\ni have a Problem with my Plus X Pedal. They are only 1 month old but now\r\nthey are not working in games anymore.\r\nYou can see on the screenshot that in the Simsonn App they are shown as\r\nconnected, and i can calibrate them, they are only working in this app.\r\nBut Windows doesnt recognize them as a Game Controller, so i can not use\r\nthem in Games.\r\ncan you help me?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-06T15:27:25Z",
+  "updated_at": "2025-08-08T09:55:55Z",
+  "requester_id": 158002677657,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006433669,
+      "body_text": "i tried restarting multiple times, and also testing every other USB Port on the Mainboard, still same problem",
+      "user_id": 158002677657,
+      "created_at": "2025-08-06T17:26:57Z",
+      "updated_at": "2025-08-06T17:26:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158006446091,
+      "body_text": "Hi Markus Ihl,    Are there any pop-up prompts after entering the software device interface? Also, when you step on the pedal, is there any data fluctuation at the location indicated by the arrow?",
+      "user_id": 158001343601,
+      "created_at": "2025-08-07T03:40:26Z",
+      "updated_at": "2025-08-07T03:40:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006460255,
+      "body_text": "No pop-ups, and yes when I press the pedal it shows in the simsonn software\r\nAm 7. Aug. 2025, 05:40 +0200 schrieb service@simsonn.com ",
+      "user_id": 158002677657,
+      "created_at": "2025-08-07T06:33:18Z",
+      "updated_at": "2025-08-07T06:33:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006527863,
+      "body_text": "Hi Markus Ihl,    Please manually flash the firmware in the settings interface according to this video. If that doesn't work, select the plus x old upgrade file to upgrade.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-08T09:55:54Z",
+      "updated_at": "2025-08-08T09:55:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

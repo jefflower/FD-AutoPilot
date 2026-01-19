@@ -1,0 +1,74 @@
+{
+  "id": 5598,
+  "subject": "Order #SSN3147 confirmed",
+  "description_text": "您好，您提供的RFC税号是GZE240219JF9。它只有12位数字，但正确的格式应该是13位数字。请确认是否正确。 ",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-11-04T02:51:14Z",
+  "updated_at": "2025-11-04T10:27:37Z",
+  "requester_id": 158006448640,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011700370,
+      "body_text": "Hello, the RFC tax number you provided is GZE240219JF9. It only has 12 digits, but the correct format should be 13 digits. Please confirm that it is correct. ",
+      "user_id": 158001343601,
+      "created_at": "2025-11-04T02:51:29Z",
+      "updated_at": "2025-11-04T02:51:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011700951,
+      "body_text": "Correct\r\n\r\nGZE240219JF9\r\n\r\nEl lun, 3 nov 2025 a la(s) 8:51 p.m., support@simsonn.com (\r\nsupport@simsonn.com) escribió:\r\n\r\n> Hello, the RFC tax number you provided is GZE240219JF9. It only has 12\r\n> digits, but the correct format should be 13 digits. Please confirm that it\r\n> is correct.\r\n> 5598:4206036\r\n>\r\n\r\n\r\n--\r\n\r\n",
+      "user_id": 158006448640,
+      "created_at": "2025-11-04T03:21:48Z",
+      "updated_at": "2025-11-04T03:21:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011700955,
+      "body_text": "correct\r\n\r\nGZE240219JF9\r\n\r\nEl lun, 3 nov 2025 a la(s) 8:51 p.m., support@simsonn.com (\r\nsupport@simsonn.com) escribió:\r\n\r\n> 您好，您提供的RFC税号是GZE240219JF9。它只有12位数字，但正确的格式应该是13位数字。请确认是否正确。\r\n>\r\n> 5598:4206036\r\n>\r\n\r\n\r\n--\r\n\r\n",
+      "user_id": 158006448640,
+      "created_at": "2025-11-04T03:22:13Z",
+      "updated_at": "2025-11-04T03:22:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011707765,
+      "body_text": "Hi F1gamerzone,     Can you provide your personal RFC to clear customs under your personal name? Our logistics system appears unable to clear customs under the company name.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-04T06:15:18Z",
+      "updated_at": "2025-11-04T06:15:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011716251,
+      "body_text": "RFC: ZUCC8106012W3\r\n\r\nRazón Social: CHRISTIAN DANIEL ZUÑIGA COLIN\r\n\r\nDomicilio: ACACIA, No. Ext 186No. Int 2\r\n\r\nCOl. LAS FLORES C.P. 57310, NEZAHUALCOYOTL\r\n\r\nEstado ESTADO DE MÉXICO, MÉXICO\r\n\r\nEl mar, 4 nov 2025 a la(s) 12:15 a.m., support@simsonn.com (\r\nsupport@simsonn.com) escribió:\r\n\r\n> Hi F1gamerzone,\r\n>\r\n> Can you provide your personal RFC to clear customs under your personal\r\n> name? Our logistics system appears unable to clear customs under the\r\n> company name.\r\n>\r\n>\r\n> ",
+      "user_id": 158006448640,
+      "created_at": "2025-11-04T10:11:54Z",
+      "updated_at": "2025-11-04T10:11:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011716612,
+      "body_text": "Thank you for your message. We have shipped your order.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-04T10:27:36Z",
+      "updated_at": "2025-11-04T10:27:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

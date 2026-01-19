@@ -1,0 +1,34 @@
+{
+  "id": 3663,
+  "subject": "Order Cancellation and Refund",
+  "description_text": "To whom it may concern,\r\n\r\nWhile ordering some Simsonn Plus X pedals I tried to type in one of the\r\ndiscount codes, however I accidentally pressed pay now. Is there any way\r\nyou can refund my order so I can buy it again with the discount? I\r\nsincerely apologise for any inconvenience I am causing due to my silly\r\nmistake. My order was: ORDER #SSN2609.\r\n\r\nThank you for your time.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-09T15:36:19Z",
+  "updated_at": "2025-09-10T01:37:38Z",
+  "requester_id": 158004353677,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008334293,
+      "body_text": "I believe it was the code FFLV20 which was at the top of the website. It\r\ncame out to a discount of £14.78.\r\n\r\nThank you for such a quick response.\r\n\r\n\r\n\r\nOn Tue, 9 Sept 2025, 16:37 General and sales enquiries, ",
+      "user_id": 158004353677,
+      "created_at": "2025-09-09T16:19:23Z",
+      "updated_at": "2025-09-09T16:19:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008348164,
+      "body_text": "Okay, we've processed your refund request. Please check your account.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-10T01:37:38Z",
+      "updated_at": "2025-09-10T01:37:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

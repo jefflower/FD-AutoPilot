@@ -1,0 +1,24 @@
+{
+  "id": 4079,
+  "subject": "Order Mistake: Kindly Asking for Your Support",
+  "description_text": "Dear Simsonn Support team,\r\n\r\nI have just placed an order with the number #SN2724. Unfortunately, right\r\nafter completing the payment, I realized that I had mistakenly forgotten to\r\ninclude the mounting bracket for the Haptic Reactor. I actually attempted\r\nto add it to my cart, but for some reason it was not included.\r\n\r\nAs a result, I immediately placed another order for the mounting bracket\r\nunder the number #SN2725. I fully acknowledge that this was my mistake.\r\nHowever, I kindly ask if it would be possible to refund the shipping cost\r\nthat was applied to the second order. If this is not possible, I completely\r\nunderstand.\r\n\r\nAbove all, I would greatly appreciate it if the mounting bracket could be\r\nshipped together with my Haptic Reactor in the same box.\r\nThank you very much for your time and understanding.\r\n\r\nBest regards,\r\nKwanghee Lee\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-24T01:20:30Z",
+  "updated_at": "2025-09-24T08:19:47Z",
+  "requester_id": 158004837020,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009215357,
+      "body_text": "Okay, we shall dispatch your purchased items together in a larger box designed for the P3-H3 pedal.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-24T08:19:47Z",
+      "updated_at": "2025-09-24T08:19:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

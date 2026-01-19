@@ -1,0 +1,44 @@
+{
+  "id": 2384,
+  "subject": "Order #SSN2162",
+  "description_text": "﻿hi there,\r\n\r\nI recently ordered 2 packs of elastomers from your website, however I was sent 2 springs instead, this is not what I ordered. Is there a way I can have the correct goods sent to me? \r\n\r\nPlease find attached below the image of my parcel as I received it, being 2 springs with the shipping label\r\n\r\nI look forward to hearing back\r\nKind regards\r\nLiam \r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-06T16:27:57Z",
+  "updated_at": "2025-08-16T08:10:47Z",
+  "requester_id": 158002679042,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006445093,
+      "body_text": "Hi Liam Swinburn,    We apologize for the mistake made by our warehouse staff. We will resend your order immediately. We sincerely apologize for the inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-07T02:16:16Z",
+      "updated_at": "2025-08-07T02:16:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006796933,
+      "body_text": "Hi, \r\n\r\nThank you very much, could I please get an update when available with regards to this. And possibly a shipping number.\r\n\r\nThank you so much\r\nLiam \r\n\r\n\r\n> ",
+      "user_id": 158002679042,
+      "created_at": "2025-08-13T12:38:37Z",
+      "updated_at": "2025-08-13T12:38:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006952308,
+      "body_text": "Hi Liam Swinburn,    We have reshipped it for you. Here is your tracking link:  https://t.17track.net/en#nums=SF6045859789431",
+      "user_id": 158001343601,
+      "created_at": "2025-08-16T08:10:47Z",
+      "updated_at": "2025-08-16T08:10:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

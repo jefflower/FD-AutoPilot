@@ -1,0 +1,54 @@
+{
+  "id": 10039,
+  "subject": "Order",
+  "description_text": "No email no order number no tracking paid for nothing so far been 10 days no order \r\nSent from my iPhone\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-05T23:13:53Z",
+  "updated_at": "2026-01-07T06:43:00Z",
+  "requester_id": 158008842314,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016075667,
+      "body_text": "ID 号为 9752 和 9905 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T06:42:20Z",
+      "updated_at": "2026-01-07T06:42:20Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016075668,
+      "body_text": "合并来自工单9752  \n      主题: Order  \n      描述:  Hey I ordered a 6+r pc shifter last week and got the payment confirmation but no order email  Sent from my iPhone",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T06:42:20Z",
+      "updated_at": "2026-01-07T06:42:20Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016075673,
+      "body_text": "合并来自工单9905  \n      主题: Order  \n      描述:  Still no order confirmation email with tracking info. Paid 115$ for clearly nothing. I would like my shifter please.  Sent from my iPhone",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T06:42:21Z",
+      "updated_at": "2026-01-07T06:42:21Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016075819,
+      "body_text": "Hi Trey Robertson,  Please provide the recipient’s information, order amount, order date, and destination country. Once the payment is successfully completed, we will ship orders in sequence according to the order timeline. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T06:43:00Z",
+      "updated_at": "2026-01-07T06:43:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

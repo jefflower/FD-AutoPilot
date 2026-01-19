@@ -1,0 +1,75 @@
+{
+  "id": 2952,
+  "subject": "Vam Pro 电机",
+  "description_text": "你好，我想知道电机使用哪种电缆连接到集线器？我正在考虑为其购买延长线。",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-08-21T23:37:13Z",
+  "updated_at": "2025-08-25T04:21:12Z",
+  "requester_id": 158003453430,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007324114,
+      "body_text": "你好，Jason B，电机电源线使用 DC5525 连接器连接到控制箱上的电机端口，并由单独的 24V 电源供电。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-22T03:11:01Z",
+      "updated_at": "2025-08-22T03:11:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007324514,
+      "body_text": "你好，抱歉澄清一下，我指的是电机本身和控制箱之间的电缆。",
+      "user_id": 158003453430,
+      "created_at": "2025-08-22T03:39:36Z",
+      "updated_at": "2025-08-22T03:39:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007324697,
+      "body_text": "你好，Jason B，请拍一张清楚显示该电缆的照片，我将帮助你确认。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-22T03:55:53Z",
+      "updated_at": "2025-08-22T03:55:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007328072,
+      "body_text": "我手里拿着的这个",
+      "user_id": 158003453430,
+      "created_at": "2025-08-22T05:48:39Z",
+      "updated_at": "2025-08-22T05:48:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007331575,
+      "body_text": "你好，Jason B，",
+      "user_id": 158000445778,
+      "created_at": "2025-08-22T06:10:19Z",
+      "updated_at": "2025-08-22T06:10:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007331613,
+      "body_text": "谢谢",
+      "user_id": 158003453430,
+      "created_at": "2025-08-22T06:20:34Z",
+      "updated_at": "2025-08-22T06:20:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

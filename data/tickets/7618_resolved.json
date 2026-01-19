@@ -1,0 +1,74 @@
+{
+  "id": 7618,
+  "subject": "Pro plus xpedals",
+  "description_text": "Hi, I've just taken delivery of my 3 pedal set purchased from you via AliExpress and it came with plain nuts to secure the pedals to the supplied baseplate rather than the T shaped nuts that fit the slots allowing easy adjustments to be made. To move a pedal with the supplied hardware involves me having to take half of my wheel stand apart. Is it possible to get some of the T shaped nuts please? Secondly are you able to tell me when haptica will be configured for Assetto Corsa Rally? Regards Sean Kukula",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-07T13:28:04Z",
+  "updated_at": "2025-12-14T03:27:17Z",
+  "requester_id": 158007685769,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014120114,
+      "body_text": "Hi Sean,  Assetto Corsa Rally is compatible with the latest version of SimHub. You can take a photo of it—these standard nuts are usually available locally. If we were to ship them, the shipping cost would be high and it would take a long time. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-08T11:02:40Z",
+      "updated_at": "2025-12-08T11:02:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014121428,
+      "body_text": "Thanks for the quick reply, I still had no luck with Sim Hub on that game but it did work on some others so I will have to investigate further.\r\nAre the M6 T nuts just an uindustry standard size? If so I can find some locally.\r\nLastly are you able to tell me the length of the M6 stand off pillars supplied for the heel rest on the base plate as I wish to get some taller ones but I am now waorking away from home so I am unable to measure them.\r\n\r\nThanks again\r\nSean Kukula\r\n________________________________\r\n",
+      "user_id": 158007685769,
+      "created_at": "2025-12-08T11:44:26Z",
+      "updated_at": "2025-12-08T11:44:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014301431,
+      "body_text": "Hi Sean,  The M6 T-nuts are standard parts and very easy to purchase. The standoffs typically have a length of 30–40 mm. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T06:12:28Z",
+      "updated_at": "2025-12-11T06:12:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014306758,
+      "body_text": "Hi Sean,  The game Assetto Corsa Rally has just been released, so SimHub may not yet support it. However, our pedals are fully compatible and can be used without issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T07:36:19Z",
+      "updated_at": "2025-12-11T07:36:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014306986,
+      "body_text": "Hi Sean,",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T07:43:13Z",
+      "updated_at": "2025-12-11T07:43:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014310637,
+      "body_text": "Thank you again for your reply, I've managed to make the VAM haptics work via Simhub and sourced some of what I hope to be the correct profile T-nuts, I'm just waiting for some new taller stand offs to arrive and soft of the softer white elastomers then all should be good.\r\nRegards\r\n________________________________\r\n",
+      "user_id": 158007685769,
+      "created_at": "2025-12-11T09:45:51Z",
+      "updated_at": "2025-12-11T09:45:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

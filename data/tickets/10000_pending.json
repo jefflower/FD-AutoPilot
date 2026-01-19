@@ -1,0 +1,144 @@
+{
+  "id": 10000,
+  "subject": "Simsonn Plus X Issues",
+  "description_text": "Hi,\r\n\r\nI received my order of Simsonn Plus X pedals today, 3 pedal plus plate\r\nconfiguration.\r\n\r\nWhen I use the brake pedal it's extremely difficult to apply pressure to\r\nthe load cell, it will only register 15kg of pressure at maximum push even\r\nwith the softest possible settings.\r\n\r\nIn addition, when I apply the clutch pedal, the brake registers half the\r\nload it used to and therefore doesn't apply the brake properly in game.\r\n\r\nI have calibrated through the software and the issue persists. Can you help?\r\n\r\nThanks\r\n\r\nJoe Thompson\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-05T14:32:41Z",
+  "updated_at": "2026-01-14T08:30:41Z",
+  "requester_id": 158008935818,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016086095,
+      "body_text": "Hi Skeeve,     Please first connect all three pedals to the controller box, then unplug and reconnect the USB cable. Next, open SIMSONN Manager 2.1.2 and click the Offset button. Follow the on-screen steps in the pop-up window to reset the white signal to 0%. After that, please recalibrate the pedals.  If you would like stronger pedal resistance, you can switch to the stiffer blue or yellow elastomers.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T07:48:13Z",
+      "updated_at": "2026-01-07T07:48:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016313927,
+      "body_text": "Hello, I completed these steps but the brake pressure still drops when I\r\npress either clutch or throttle pedal, even when applying a constant\r\npressure with a clamp to the brake to ensure it's not a physical reaction\r\n\r\n",
+      "user_id": 158008935818,
+      "created_at": "2026-01-08T09:36:22Z",
+      "updated_at": "2026-01-08T09:36:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016315951,
+      "body_text": "Hi Skeeve,  Could you please record a video for our engineers to review? Kindly upload it to Google Drive, share the link with view access, and we will analyze it for you. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-08T09:49:53Z",
+      "updated_at": "2026-01-08T09:49:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016821854,
+      "body_text": "Hello, hopefully this video contains enough information\r\n\r\nhttps://drive.google.com/file/d/1vr1d_9O2MGg2y0HF4C5EAU5JRFfqOZth/view?usp=sharing\r\n\r\nIt shows when I depress the brake pedal some force gets applied, however\r\nwhen I press the throttle at the same time all braking force is removed,\r\nand coming off the throttle reapplies the braking force\r\n\r\nOn Thu, Jan 8, 2026 at 9:50 AM service@simsonn.com ",
+      "user_id": 158008935818,
+      "created_at": "2026-01-11T15:44:32Z",
+      "updated_at": "2026-01-11T15:44:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016821973,
+      "body_text": "Hi Skeeve,      Launch the latest version of SIMSONN Manager 2.1.2.  On the “Plus X” control unit, press and hold the “Upgrade” button.  While holding the button, unplug the USB cable from the PC and then plug it back in. The software should detect the device entering “SIMSONN Flasher update mode”.  In the software go to: Settings → Update → Manual Firmware Update.  In the file selector choose: pedals‑firmware → pedals‑plusx.sfu.  Click “Start Update” and wait until the firmware is completely written. During this process do not disconnect the USB or close the application.  Once the update is finished (you’ll get a success prompt or the unit will reboot), unplug and re‑plug the USB then test the pedal device to confirm everything works correctly.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T15:53:01Z",
+      "updated_at": "2026-01-11T15:53:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016830320,
+      "body_text": "Hello, I followed these steps however the issue is still there, pressing\r\nthe brake shows force, but as soon as I press the throttle at the same time\r\nthe brake loses force\r\n\r\n",
+      "user_id": 158008935818,
+      "created_at": "2026-01-11T21:32:15Z",
+      "updated_at": "2026-01-11T21:32:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016831388,
+      "body_text": "Hi Skeeve,    We will send you a replacement control box. Please provide your contact name, phone number, and shipping address.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T22:49:36Z",
+      "updated_at": "2026-01-11T22:49:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016831664,
+      "body_text": "*Contact Name*: Joe Thompson\r\n*Phone number*: (+44)7590 267292\r\n*Address*: 11 The Ridgeway\r\nFleetwood\r\nLancashire\r\nUnited Kingdom\r\nFY7 8AH\r\n\r\nThank you for your help\r\n\r\n",
+      "user_id": 158008935818,
+      "created_at": "2026-01-11T23:07:32Z",
+      "updated_at": "2026-01-11T23:07:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016832311,
+      "body_text": "Hi Skeeve,  Please also provide your order number, and I will ask the relevant platform’s support team to arrange a replacement for you. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T23:58:01Z",
+      "updated_at": "2026-01-11T23:58:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016843873,
+      "body_text": "Order was through Amazon order number 205-4515875-0791507\r\n\r\n",
+      "user_id": 158008935818,
+      "created_at": "2026-01-12T07:33:00Z",
+      "updated_at": "2026-01-12T07:33:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016851117,
+      "body_text": "Hi Skeeve,  OK. We will ship it ASAP. ",
+      "user_id": 158007774607,
+      "created_at": "2026-01-12T10:13:58Z",
+      "updated_at": "2026-01-12T10:13:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016859233,
+      "body_text": "Thank you for all the assistance\r\n\r\n",
+      "user_id": 158008935818,
+      "created_at": "2026-01-12T12:21:17Z",
+      "updated_at": "2026-01-12T12:21:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017083198,
+      "body_text": "Hi Skeeve,         Here is your new tracking number: SF6047239650329.   the shipping carrier is SF Express, you can track it via https://www.sf-international.com/cn/en/support/querySupport/waybill",
+      "user_id": 158007774607,
+      "created_at": "2026-01-14T08:30:36Z",
+      "updated_at": "2026-01-14T08:30:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

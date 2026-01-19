@@ -1,0 +1,64 @@
+{
+  "id": 2684,
+  "subject": "Re: Simsonn Order Confirmation #SSN2316",
+  "description_text": "Hi, aside from the price difference, if I did upgrade and paid the extra\r\ncost when would I receive it compared to if I waited. I don’t think it’s\r\nfair I have to experience such a large delay and then have to pay extra\r\njust for something to come sooner.\r\n\r\nOn Wed, Aug 13, 2025 at 11:27 PM SIMSONN <service@simsonn.com> wrote:\r\n\r\n> SIMSONN <https://www.simsonn.com>\r\n>\r\n> Hello, the Pro X Ultra-P2-H2 / Baseplate you purchased is currently out of\r\n> stock in our US warehouse. We can upgrade you to the Pro X Ultra-P3-H3 /\r\n> Baseplate at a discounted price of $34.90 (the original price difference is\r\n> $53.31). Alternatively, we can ship it to you from China, or you can wait\r\n> until the 20th when we will restock and ship it to you from our US\r\n> warehouse. Please let me know your choice as soon as possible. We apologize\r\n> for any inconvenience this may cause!\r\n>\r\n> If you have any questions, reply to this email or contact us at\r\n> service@simsonn.com\r\n>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-14T14:22:07Z",
+  "updated_at": "2025-08-15T06:04:47Z",
+  "requester_id": 158003104357,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006889496,
+      "body_text": "Hi SiMing Lin,    The 3-pedal version is in stock at our US warehouse and is expected to be delivered to you in about 3-5 days. In addition, we do not charge extra fees, but offer you an upgrade from the 2-pedal to the 3-pedal version at a discounted price. This is not a mandatory option, and we hope you understand.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-15T02:16:22Z",
+      "updated_at": "2025-08-15T02:16:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006890341,
+      "body_text": "Okay then let’s move forward with this.\r\n\r\nOn Thu, Aug 14, 2025 at 10:16 PM service@simsonn.com ",
+      "user_id": 158003104357,
+      "created_at": "2025-08-15T03:27:40Z",
+      "updated_at": "2025-08-15T03:27:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006894269,
+      "body_text": "I would be okay with having the 3-pedal version and it sounds good that it\r\ncan be delivered in about a week. Can I also inquire about the pedals\r\nthemselves? How many days before they would arrive?\r\n\r\n\r\n",
+      "user_id": 158003104357,
+      "created_at": "2025-08-15T05:01:11Z",
+      "updated_at": "2025-08-15T05:01:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006894476,
+      "body_text": "Hi SiMing Lin,      Okay, you can click on this link to make the payment, and we will arrange for your shipment first.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-15T05:56:32Z",
+      "updated_at": "2025-08-15T05:56:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006894509,
+      "body_text": "https://www.simsonn.com/products/difference-1",
+      "user_id": 158001343601,
+      "created_at": "2025-08-15T06:04:47Z",
+      "updated_at": "2025-08-15T06:04:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

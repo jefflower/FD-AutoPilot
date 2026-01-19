@@ -1,0 +1,75 @@
+{
+  "id": 5217,
+  "subject": "Simsonn Plus X 无法连接",
+  "description_text": "你好，我今天为 simsonn manager 和 plus x 踏板更新了固件，校准后我想我保存了配置文件，然后踏板就停止显示已连接",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-10-23T14:26:36Z",
+  "updated_at": "2025-10-24T01:52:47Z",
+  "requester_id": 158002874453,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010985133,
+      "body_text": "嗨 Osvaldo Sousa，    请按照以下步骤操作：    按住 PlusX 主控制器上的升级按钮，然后重新连接 USB 数据线。    打开 SIMSONN Manager 2.1.2 并检查它是否已进入恢复模式。    如果检测到恢复模式，请转到“设置”→“更新”→“手动更新固件”→“pedals”→“firmware”→“pedals-plusx.sfu”。    更新完成后，测试设备以查看其是否已成功恢复。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-24T01:25:29Z",
+      "updated_at": "2025-10-24T01:25:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010985214,
+      "body_text": "你好，谢谢你们的支持\n之前我什么都试过了，最后当我断开vam电机的电源，然后重新连接踏板盒，它就工作了，然后我只是重新连接了电机",
+      "user_id": 158002874453,
+      "created_at": "2025-10-24T01:30:57Z",
+      "updated_at": "2025-10-24T01:30:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010985325,
+      "body_text": "嗨 Osvaldo Sousa，      好的，我们还建议您使用计算机上的后置 USB 3.0 端口，并避免使用 USB 集线器。此外，请确保您的 VAM 设备设置为 VAM 模式。使用不兼容的 VAM Pro 模式可能会在短时间内导致电机故障。虽然我们的设计包含兼容性保护，但我们仍然建议严格使用正确的模式。另外，请确认您的固件版本是否显示为 CPU1: 2.0.5 和 CPU2: 2.0.4，以便我能核实您使用的是最新的固件版本。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-24T01:37:59Z",
+      "updated_at": "2025-10-24T01:37:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010985383,
+      "body_text": "我一直在用后置的usb 2.0，应该换成3.0吗？\n我有一个vam pro电机，所以应该用vam pro模式对吧？\n是的，是最新固件",
+      "user_id": 158002874453,
+      "created_at": "2025-10-24T01:42:16Z",
+      "updated_at": "2025-10-24T01:42:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010985424,
+      "body_text": "嗨 Osvaldo Sousa，  使用 USB 3.0 端口可提供更稳定的连接。另外，请确保 VAM Pro 设置为 VAM Pro 模式，VAM 设置为 VAM 模式。这种配置完全没问题。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-24T01:45:31Z",
+      "updated_at": "2025-10-24T01:45:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010985491,
+      "body_text": "是的，谢谢！",
+      "user_id": 158002874453,
+      "created_at": "2025-10-24T01:50:23Z",
+      "updated_at": "2025-10-24T01:50:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

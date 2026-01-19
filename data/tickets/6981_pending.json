@@ -1,0 +1,24 @@
+{
+  "id": 6981,
+  "subject": "Order #SSN3631",
+  "description_text": "Hey all. I ordered a hand brake + a deck clamp but the desk clamp has not\r\narrived with the order.\r\n\r\nOrder #SSN3631\r\n\r\nPlease advise.\r\n\r\nBest\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-28T19:32:24Z",
+  "updated_at": "2025-12-03T11:28:44Z",
+  "requester_id": 158007401512,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013285988,
+      "body_text": "No reply to this email and ticket no longer showing up on your portal.\r\n\r\nCan you answer this enquiry please.\r\n\r\n",
+      "user_id": 158007401512,
+      "created_at": "2025-12-02T17:52:59Z",
+      "updated_at": "2025-12-02T17:52:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

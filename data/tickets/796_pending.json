@@ -1,0 +1,24 @@
+{
+  "id": 796,
+  "subject": "Order shipment",
+  "description_text": "I ordered a set of pedals (order #SSN1726 and it’s says label created and has said that for over a week and has not shipped yet. Is this normal or is there an issue with the order? Just curious more than anything. Thanks!\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-24T22:05:47Z",
+  "updated_at": "2025-06-25T09:56:14Z",
+  "requester_id": 158001764665,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003835595,
+      "body_text": "Hi Camron Graves,     We have updated the logistics notification for you, here is your new logistics tracking link:  https://www.fedex.com/fedextrack/?trknbr=882053419038&trkqual=12029~882053419038~FDEG",
+      "user_id": 158001343601,
+      "created_at": "2025-06-25T09:56:14Z",
+      "updated_at": "2025-06-25T09:56:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

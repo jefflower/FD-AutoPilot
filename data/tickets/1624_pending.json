@@ -1,0 +1,24 @@
+{
+  "id": 1624,
+  "subject": "Problème Simsonn plus x",
+  "description_text": "bonjour, mes pédales sont reconnu dans le logiciel (2.0.9)mais quand j’appuie sur les pedales rien ne bouge. je ne peux pas les calibrer. elle sont branchées en usb directement sur le pc, elles sont mise à jour. pouvez vous me dire ce que je dois faire ? \r\nmerci\r\nEnvoyé de mon iPhone\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-17T06:29:16Z",
+  "updated_at": "2025-07-17T08:15:56Z",
+  "requester_id": 158002176370,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005132671,
+      "body_text": "Hi Sébastien Escande,     Puis-je avoir votre numéro de commande ? Vous pouvez essayer d'utiliser la fonction Offset pour réinitialiser le signal des pédales à 0 %, puis tester à nouveau pour voir si cela fonctionne correctement. Nous vous recommandons également d'utiliser l'outil VKB pour effectuer des tests supplémentaires et vérifier l'état du signal.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-17T08:15:56Z",
+      "updated_at": "2025-07-17T08:15:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

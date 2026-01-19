@@ -1,0 +1,114 @@
+{
+  "id": 847,
+  "subject": "Simsonn Order Confirmation #SSN1854",
+  "description_text": "Hello, the delivery from our German warehouse is scheduled for the 29th, we can ship the goods from our German warehouse for you on the 30th to avoid taxes. Alternatively, we can ship your order from China as soon as possible, please let me know which option you would prefer.",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-06-26T03:24:35Z",
+  "updated_at": "2025-07-09T02:38:14Z",
+  "requester_id": 158001795118,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004221447,
+      "body_text": "Hello, apologies I haven't seen the ticket.     Please do whichever would arrive faster and please let me know when that would be.     Thank you!",
+      "user_id": 158001795118,
+      "created_at": "2025-06-28T19:32:15Z",
+      "updated_at": "2025-06-28T19:32:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158004221450,
+      "body_text": "30th to avoid taxes is good also! ",
+      "user_id": 158001795118,
+      "created_at": "2025-06-28T19:34:19Z",
+      "updated_at": "2025-06-28T19:34:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158004330768,
+      "body_text": "Hi, Hope you had a good weekend and are doing well!   Just wanted to ask if everything is alright with the order, if you were able to ship it out and if you had a aproximate timeline for when it wouls arrive.   Thank you!",
+      "user_id": 158001795118,
+      "created_at": "2025-06-30T12:56:11Z",
+      "updated_at": "2025-06-30T12:56:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158004356139,
+      "body_text": "Hi David Tirica,  We will ship your order from Germany tomorrow, the day after tomorrow at the latest, and send you a logistic notification, which is expected to arrive around the 6th.  ",
+      "user_id": 158001343601,
+      "created_at": "2025-07-01T10:38:04Z",
+      "updated_at": "2025-07-01T10:38:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004356150,
+      "body_text": "Sounds good, thanks\r\n\r\nOn Tue, Jul 1, 2025, 1:38 PM support@simsonn.com ",
+      "user_id": 158001795118,
+      "created_at": "2025-07-01T10:41:49Z",
+      "updated_at": "2025-07-01T10:41:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445964,
+      "body_text": "Hi,   Hope you are doing good. Just wanted to check in if the pedals were able to be shipped out and if you can give me the logistics page to track.   Thank you, David",
+      "user_id": 158001795118,
+      "created_at": "2025-07-04T16:27:44Z",
+      "updated_at": "2025-07-04T16:27:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158004447323,
+      "body_text": "Hi David Tirica,    The goods have arrived at the German warehouse, the warehouse is counting the goods into the warehouse, we will not be able to ship the goods to you until next Monday, we are very sorry, we will refund you the extra shipping cost as compensation!",
+      "user_id": 158001343601,
+      "created_at": "2025-07-05T04:26:10Z",
+      "updated_at": "2025-07-05T04:26:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004453934,
+      "body_text": "Hi,  Understood. Are you referring to Monday today or next Monday (14 Jul) ?",
+      "user_id": 158001795118,
+      "created_at": "2025-07-07T06:45:43Z",
+      "updated_at": "2025-07-07T06:45:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158004476568,
+      "body_text": "Hi,  Hope everything is going well! Just wanted to check in to see if there are any updates by chance.   Thank you!",
+      "user_id": 158001795118,
+      "created_at": "2025-07-08T14:41:31Z",
+      "updated_at": "2025-07-08T14:41:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158004485265,
+      "body_text": "Hi David Tirica,     We have placed the order and are waiting for DHL to pick up the shipment, thank you for your patience, it is expected to be delivered for you on the 12th.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-09T02:38:14Z",
+      "updated_at": "2025-07-09T02:38:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

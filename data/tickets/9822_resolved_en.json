@@ -1,0 +1,35 @@
+{
+  "id": 9822,
+  "subject": "Request Order",
+  "description_text": "[image: image.png]\nMy friend is leaving soon, and he is thinking of getting this. How fast are\nyou able to ship it? Sorry to rush, he just wants to really try it before\nbuying.\nOrder ID: 8207698991052254\n[image: photo]\n\nPonce Garcia\n*UX Researcher/Designer | Digital Marketing Specialist*\n\n6576165591  |  poncegarcia576 @gmail.com  |  San Rafael, CA\n<https://maps.google.com/?q=Long+Beach,+CA>\n\n[image: linkedin]\n<https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BXQPki17BQtmhb4k13piXlw%3D%3D>\n\n[image: Meeting Button App] <https://calendly.com/poncegarcia576/30min>",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-02T17:56:30Z",
+  "updated_at": "2026-01-07T07:56:37Z",
+  "requester_id": 158008872788,
+  "responder_id": 158007774664,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016087405,
+      "body_text": "Hi Ponce Garcia,     You can try purchasing through this link.  https://www.aliexpress.us/item/3256805949676778.html?gatewayAdapt=glo2usa4itemAdapt",
+      "user_id": 158007774664,
+      "created_at": "2026-01-07T07:54:16Z",
+      "updated_at": "2026-01-07T07:54:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016088121,
+      "body_text": "Hi Ponce Garcia,  Sorry, please ignore the previous email. Your order (8207698991052254) has been cleared through customs and is expected to be delivered to you soon. Please wait patiently.",
+      "user_id": 158007774664,
+      "created_at": "2026-01-07T07:56:37Z",
+      "updated_at": "2026-01-07T07:56:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

@@ -1,0 +1,44 @@
+{
+  "id": 8808,
+  "subject": "No receipt",
+  "description_text": "Hello, I purchased \r\nSimsonn HS Pro Shifter the H/SQ Dual-Mode Racing Simulation Shifter.\r\n\r\nThe money was taken out of my bank account but I never received the order confirmation, or shipping details, now that they’ve been shipped. I emailed the support team, they created a ticket on December 3, 2025, but never reached back out to me. I would like to know the status of my order or a receipt. \r\nSent from my iPhone\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-21T13:02:40Z",
+  "updated_at": "2025-12-23T10:50:54Z",
+  "requester_id": 158007525302,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014841571,
+      "body_text": "hello, I click the link, and there’s no ticket! Sent from my iPhone ",
+      "user_id": 158007525302,
+      "created_at": "2025-12-21T13:36:40Z",
+      "updated_at": "2025-12-21T13:36:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014879410,
+      "body_text": "Hi Michelle Nava,  Hello, what is your order number? Your goods will be shipped out gradually this week. If you have already placed an order, please wait patiently. We sincerely apologize for any inconvenience this may cause.",
+      "user_id": 158007774669,
+      "created_at": "2025-12-22T12:24:50Z",
+      "updated_at": "2025-12-22T12:24:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014889867,
+      "body_text": "good morning! Again I never received either of those order numbers, nor receipt, or email or anything! Just the money was taken out of my account. Sent from my iPhone ",
+      "user_id": 158007525302,
+      "created_at": "2025-12-22T15:05:40Z",
+      "updated_at": "2025-12-22T15:05:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

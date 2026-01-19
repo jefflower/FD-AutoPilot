@@ -1,0 +1,34 @@
+{
+  "id": 8268,
+  "subject": "Commande #SSN4592",
+  "description_text": "Bonjour, malgré le numero de suivis je ne parvient pas a savoir ou en et\r\ncelui ci .  Pouvez vous me communiqué des information concernant ma\r\ncommande actuellement en transit ?\r\n\r\nCordialement Mr Mallard\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-15T07:48:47Z",
+  "updated_at": "2025-12-15T09:17:12Z",
+  "requester_id": 158007812832,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014500208,
+      "body_text": "Hi curtis mallard,    We sincerely apologize for any inconvenience caused. Due to current stock shortages at our German warehouse, we will arrange an expedited shipment via UPS for you. Delivery is expected by the 21th.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-15T07:59:39Z",
+      "updated_at": "2025-12-15T07:59:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014502205,
+      "body_text": "Merci d'avoir prit le temps de repondre rapidement j'accuse bonne reception\r\nde votre reponse et attend avec impattience ma commande pour le dimannche\r\n21 decembre\r\n\r\nCordialement Mr Mallard\r\n\r\nLe lun. 15 déc. 2025, 09:00, service@simsonn.com ",
+      "user_id": 158007812832,
+      "created_at": "2025-12-15T09:01:50Z",
+      "updated_at": "2025-12-15T09:01:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

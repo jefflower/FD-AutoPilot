@@ -1,0 +1,35 @@
+{
+  "id": 10004,
+  "subject": "PC to control box cable, big rumble",
+  "description_text": "Hi, I ordered your rumble and control box from Aliexpress, and I have a Moza pedal, but the PC cable for the rumble control box didn't come with the order. Can I use another type of USB-B cable or do I need to purchase one of yours??",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-05T16:28:21Z",
+  "updated_at": "2026-01-07T08:14:43Z",
+  "requester_id": 158008937677,
+  "responder_id": 158007774664,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016084693,
+      "body_text": "Hi Luca Pavanello, You will need a USB-A data cable, typically the same type used for printer connections.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T07:38:55Z",
+      "updated_at": "2026-01-07T07:38:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016086635,
+      "body_text": "Thank you for your answer.\n\nOn Wednesday, Jan 7, 2026, at 08:39 service@simsonn.com",
+      "user_id": 158008937677,
+      "created_at": "2026-01-07T07:51:52Z",
+      "updated_at": "2026-01-07T07:51:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

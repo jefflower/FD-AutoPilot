@@ -1,0 +1,375 @@
+{
+  "id": 4436,
+  "subject": "回复：提醒：订单 #SSN2608，使用体验如何？",
+  "description_text": "探头的问题是，每次启动电脑时都需要校准和更新软件",
+  "status": 4,
+  "priority": 4,
+  "created_at": "2025-10-04T13:35:33Z",
+  "updated_at": "2025-11-05T06:32:42Z",
+  "requester_id": 158004564748,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008837951,
+      "body_text": "您好，这是您的另一个包裹追踪链接。预计在未来两天内送达给您。https://t.17track.net/en#nums=SF6045905553307",
+      "user_id": 158001343601,
+      "created_at": "2025-09-17T02:02:51Z",
+      "updated_at": "2025-09-17T02:02:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008870886,
+      "body_text": "谢谢你。",
+      "user_id": 158004564748,
+      "created_at": "2025-09-17T14:56:27Z",
+      "updated_at": "2025-09-17T14:56:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008933113,
+      "body_text": "嗨 Alcir Lima de Paula，您的意思是想在我们官网上查询订单和物流信息，还是您想登录 SIMSONN Manager 2.1.0 软件？如果是软件，请注意，目前可用的试用功能有限。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-19T01:32:55Z",
+      "updated_at": "2025-09-19T01:32:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008933237,
+      "body_text": "嗨！不，我的货运一切正常，东西都收到了！我的问题是关于登录软件管理器的，我该如何操作",
+      "user_id": 158004564748,
+      "created_at": "2025-09-19T01:46:35Z",
+      "updated_at": "2025-09-19T01:46:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008933261,
+      "body_text": "嗨 Alcir Lima de Paula，您现在不需要登录，因为登录后的部分功能仍在开发中。现阶段，登录不是必需的。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-19T01:49:16Z",
+      "updated_at": "2025-09-19T01:49:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008934427,
+      "body_text": "那我该如何校准，因为模拟器管理软件无法识别我的踏板！",
+      "user_id": 158004564748,
+      "created_at": "2025-09-19T04:18:01Z",
+      "updated_at": "2025-09-19T04:18:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008934451,
+      "body_text": "显示 Simsonn Flasher，但什么都用不了",
+      "user_id": 158004564748,
+      "created_at": "2025-09-19T04:19:55Z",
+      "updated_at": "2025-09-19T04:19:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008934695,
+      "body_text": "模拟器管理器不能用，我该怎么办？",
+      "user_id": 158004564748,
+      "created_at": "2025-09-19T04:38:23Z",
+      "updated_at": "2025-09-19T04:38:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008935179,
+      "body_text": "我尝试在游戏 iRacing 中识别踏板但无法校准，我下载了很多软件但都无法识别，我尝试更新，但只打开了 2.1.0 应用程序，从未升级到 2.1.0",
+      "user_id": 158004564748,
+      "created_at": "2025-09-19T05:25:51Z",
+      "updated_at": "2025-09-19T05:25:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008935240,
+      "body_text": "求助，我正在尝试让这个踏板工作，但是模拟器管理应用不工作，也无法识别踏板",
+      "user_id": 158004564748,
+      "created_at": "2025-09-19T05:31:49Z",
+      "updated_at": "2025-09-19T05:31:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008935420,
+      "body_text": "应用还是卡住了，我禁用了所有防火墙！我用别的应用从来没遇到过问题，只有这个不行，我该怎么办？",
+      "user_id": 158004564748,
+      "created_at": "2025-09-19T05:56:48Z",
+      "updated_at": "2025-09-19T05:56:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008935431,
+      "body_text": "",
+      "user_id": 158004564748,
+      "created_at": "2025-09-19T05:58:40Z",
+      "updated_at": "2025-09-19T05:58:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008936609,
+      "body_text": "嗨 Alcir Lima de Paula，请从您的计算机上卸载 SIMSONN Manager 2.1.0。您能否确认是软件完全无法打开，还是可以打开但无法连接？然后，请从提供的链接下载并安装 2.1.1 版本。如果仍然显示“无法连接”，请在重新连接 USB 时按住控制盒上的升级按钮。软件应会提示已进入固件升级模式。如果问题仍然存在，可能是由于 USB 供电不足。请将 USB 数据线连接到计算机后置的 USB3.0 蓝色端口，并避免使用 USB 集线器。一旦此操作生效，请转到：设置 → 更新 → 手动固件更新 → 选择 pedals-firmware-pedals-proxultra.sfu。更新完成后，请检查连接是否正常。https://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-09-19T08:23:48Z",
+      "updated_at": "2025-09-19T08:23:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008936676,
+      "body_text": "嗨 Alcir Lima de Paula，当您双击程序时，通常应该会打开这个界面。您能否确认您是看到了错误信息，还是它根本没有正确打开？请录制一个短视频展示问题，上传到 Google Drive，并确保授予我们访问权限，以便我们查看并为您提供帮助。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-19T08:31:49Z",
+      "updated_at": "2025-09-19T08:31:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008973465,
+      "body_text": "工单 3872、3956 和 3967 已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-20T03:23:05Z",
+      "updated_at": "2025-09-20T03:23:05Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158008973466,
+      "body_text": "合并自工单3872\n      主题: 触觉反馈设备未送达\n      描述:\n 你好，我购买了配重和触觉反馈设备，但它们没有一起送达！\n  订单号 SSN2608",
+      "user_id": 158000445778,
+      "created_at": "2025-09-20T03:23:06Z",
+      "updated_at": "2025-09-20T03:23:06Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158008973468,
+      "body_text": "合并自工单3956\n      主题: 登录 Simsonn 应用管理器\n      描述: 嗨，几天前我购买了你们的 x pro 踏板和 van pro\n 如何用这个邮箱创建登录？",
+      "user_id": 158000445778,
+      "created_at": "2025-09-20T03:23:06Z",
+      "updated_at": "2025-09-20T03:23:06Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158008973470,
+      "body_text": "合并自工单3967\n      主题: 软件无法识别\n      描述: 你好，Pro X Ultra 踏板不工作。我安装并进行了初始配置。测试10分钟后，我关掉电脑去做别的事情。当我回来时，它就不工作了！应用程序被卡住了！SIM Manager 没有被卡住。iRacing 无法识别踏板，SIM Messenger 软件被卡住，无法移动或配置。我卸载后又重新安装了。我一整天都在尝试这个过程，但没有用。我周日有一个锦标赛，我想用这个踏板！我想知道你们有什么解释以及如何让它工作？",
+      "user_id": 158000445778,
+      "created_at": "2025-09-20T03:23:07Z",
+      "updated_at": "2025-09-20T03:23:07Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158008973474,
+      "body_text": "嗨 Alcir Lima de Paula，我检查了您提供的链接，但 Google Drive 需要访问权限，所以我目前无法查看。如果设备显示“Simsonn Flasher”模式，请松开控制盒上的恢复按钮，然后重新插入 USB 数据线——它将恢复正常模式。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-20T03:24:45Z",
+      "updated_at": "2025-09-20T03:24:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008994864,
+      "body_text": "好的，通过您发送的 2.1.1 版本链接可以正常工作了！但现在每次我关机再开机，都必须手动下载并重新配置它",
+      "user_id": 158004564748,
+      "created_at": "2025-09-20T15:59:36Z",
+      "updated_at": "2025-09-20T15:59:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009021822,
+      "body_text": "嗨 Alcir Lima de Paula，您好，您分享的视频目前无法访问。您能调整一下访问权限，以便我们查看并帮助您解决问题吗？     您好，请别担心。如果问题无法解决，您可以安装 ToDesk 软件，我们将远程协助您修复它。     https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-09-21T10:31:24Z",
+      "updated_at": "2025-09-21T10:31:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009025098,
+      "body_text": "那不行，每次关机再开机，应用都无法识别踏板，每次都需要更新才能用",
+      "user_id": 158004564748,
+      "created_at": "2025-09-21T13:15:54Z",
+      "updated_at": "2025-09-21T13:15:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009236528,
+      "body_text": "嗨 Alcir Lima de Paula，您好，您分享的视频目前无法访问。您能调整一下访问权限，以便我们查看并帮助您解决问题吗？      请设置 Google Drive 上视频的访问权限，因为我们目前无法查看其内容。     此外，如果我们的 SIMSONN Manager 软件无法打开，可能是由于您的计算机设置。您可以尝试在另一台计算机上测试，或者在打开软件时拍下错误屏幕的照片发送给我们。我们将帮助您分析和解决问题。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-24T15:29:58Z",
+      "updated_at": "2025-09-24T15:29:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009753975,
+      "body_text": "Simsonn 软件可以打开，但问题是每次断电后，都需要更新软件并重新校准！我该如何解决这个问题？",
+      "user_id": 158004564748,
+      "created_at": "2025-10-01T18:49:07Z",
+      "updated_at": "2025-10-01T18:49:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009937889,
+      "body_text": "工单 3986 已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T15:55:57Z",
+      "updated_at": "2025-10-05T15:55:57Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158009937890,
+      "body_text": "合并自工单3986\n      主题: 与您分享的项目: \"Desktop 2025.09.19 - 22.02.29.01.mp4\"\n      描述: \n \n Alcir Lima de Paula 分享了一个项目\n\n \n  \n \n \n Alcir Lima de Paula (alcirlp2 @gmail.com) 分享了以下项目: \n https://drive.google.com/file/d/1eQLrInyEPJAlSHX0dUcTA2-GJo8tLtiq/view?usp=drive_link    你好，我删除了 2.1.0 并下载了 2.1.1，但问题依旧（没有重置按钮，但我拔掉 USB 线又重新插上了。它已经插在蓝色的 USB 端口上了。我已经禁用了电脑上所有的防火墙。当我打开应用时，就像视频里显示的那样。我无法在软件里点击任何东西，它提示我拔掉 USB 再插回去。它一直停留在 Simsonn Flasher 界面，没有任何反应！肯定有办法解决的。我已经 3 天没法用了。\n \n \n\n\n\n\n  \nDesktop 2025.09.19 - 22.02.29.01.mp4\n  \n\n\n \n \n  \n 此电子邮件授予访问此项目的权限，无需登录。请仅转发给您信任的人。\n \n \n \n打开\n \n \n \n \n 此项目看起来可疑吗？屏蔽发件人\n   Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA  您收到此电子邮件是因为 alcirlp2 @gmail.com 与您分享了位于 Google Drive 中的文件或文件夹。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T15:55:58Z",
+      "updated_at": "2025-10-05T15:55:58Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158009937894,
+      "body_text": "嗨 Alcir Lima de Paula，请卸载您计算机上的旧版本，然后重新安装 2.1.2 版本并更新固件。更新后，设备版本应显示为 CPU1: 2.0.5, CPU2: 2.0.3。如果问题仍然存在，请随时与我联系。 https://drive.google.com/file/d/1PZwHUqhhmJw0IBGDO8mGONPbrICJU3z1/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T15:56:34Z",
+      "updated_at": "2025-10-05T15:56:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010116941,
+      "body_text": "我的踏板应用在使用 2.1.2 版本时，每次启动电脑仍然需要更新\n\n视频在这里\nhttps://drive.google.com/file/d/1AGHvlkNRiWLI7fEIwUY_q-OOTST-1-ZH/view?usp=sharing",
+      "user_id": 158004564748,
+      "created_at": "2025-10-08T19:26:22Z",
+      "updated_at": "2025-10-08T19:26:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010135096,
+      "body_text": "嗨 Alcir Lima de Paula，您好，如果您的 SIMSONN Manager 版本是 2.1.2，并且您的踏板固件是 2.0.5，那么一切都是正确的——不需要再更新了。\n如果您仍然看到更新提示，请截图或拍照发给我。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-09T09:11:51Z",
+      "updated_at": "2025-10-09T09:11:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010287647,
+      "body_text": "嗨，下午好。我安装了 2.1.2，我在哪里能找到固件 2.0.5？\n\n\n踏板仍然每次启动电脑都需要校准，这正常吗\n请告诉我？",
+      "user_id": 158004564748,
+      "created_at": "2025-10-11T16:08:58Z",
+      "updated_at": "2025-10-11T16:08:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010314352,
+      "body_text": "嗨 Alcir Lima de Paula，我不太明白您的意思。您能录制一个短视频来展示问题吗？\n请通过 Google Drive 发送给我们，并确保授予访问权限，以便我们查看并帮助您解决问题。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-12T11:48:14Z",
+      "updated_at": "2025-10-12T11:48:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010327634,
+      "body_text": "我想知道这是否正常。情况是，每次我启动电脑时，都需要更新和校准踏板，而且每次校准结果都不同。这是 Google Drive 上的视频，已开放权限！我用的是 2.1.2\n\n视频 Google Drive\n\nhttps://drive.google.com/file/d/1AGHvlkNRiWLI7fEIwUY_q-OOTST-1-ZH/view?usp=drivesdk",
+      "user_id": 158004564748,
+      "created_at": "2025-10-12T19:16:12Z",
+      "updated_at": "2025-10-12T19:16:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010539344,
+      "body_text": "嗨 Alcir Lima de Paula，请检查控制盒上的“升级”按钮是否被按下了——这可能导致设备每次启动时都进入恢复模式。请尝试松开按钮并重新连接 USB，看看是否能正常工作。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-16T06:42:55Z",
+      "updated_at": "2025-10-16T06:42:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010684609,
+      "body_text": "是的，成功了！",
+      "user_id": 158004564748,
+      "created_at": "2025-10-18T19:12:13Z",
+      "updated_at": "2025-10-18T19:12:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010714386,
+      "body_text": "",
+      "user_id": 158004564748,
+      "created_at": "2025-10-20T02:19:22Z",
+      "updated_at": "2025-10-20T02:19:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    },
+    {
+      "id": 158011771313,
+      "body_text": "在客服教我如何重置控制盒后，一切都完美运行了！谢谢！",
+      "user_id": 158004564748,
+      "created_at": "2025-11-05T06:27:56Z",
+      "updated_at": "2025-11-05T06:27:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

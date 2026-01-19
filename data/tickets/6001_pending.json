@@ -1,0 +1,24 @@
+{
+  "id": 6001,
+  "subject": "Order #SSN3354",
+  "description_text": "Hello\r\n\r\nIve recently ordered 2 of the Plus X P3-H3 pedals but only recieved 1 of\r\nthe 2 pedal sets. I would just like to know any updates or info that can\r\nhelp me understand why ive only recieved 1 of the 2 sets.\r\n\r\nKind Regards,\r\n\r\nAlexander Last\r\n070-9219413\r\n\r\n",
+  "status": 3,
+  "priority": 2,
+  "created_at": "2025-11-12T13:25:48Z",
+  "updated_at": "2025-11-13T02:42:21Z",
+  "requester_id": 158006965864,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012217538,
+      "body_text": "Hi Alexander Last,    We apologize that our warehouse staff did not notice the order was for two sets. We will immediately arrange for a replacement set to be sent to you.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-13T02:42:21Z",
+      "updated_at": "2025-11-13T02:42:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

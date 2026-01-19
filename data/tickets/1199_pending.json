@@ -1,0 +1,24 @@
+{
+  "id": 1199,
+  "subject": "Shipping",
+  "description_text": "Hello,\r\n Do you ship to Qatar?\r\nVery Respectfully,\r\nChristian Manceras\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-04T06:50:57Z",
+  "updated_at": "2025-07-04T13:23:37Z",
+  "requester_id": 158001891455,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004445087,
+      "body_text": "Hi chris manceras,    It can be ship to Qatar , but it may be on the long side, usually shipping for about 10-20 days.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-04T13:23:37Z",
+      "updated_at": "2025-07-04T13:23:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

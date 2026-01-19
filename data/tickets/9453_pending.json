@@ -1,0 +1,84 @@
+{
+  "id": 9453,
+  "subject": "pedal showing disconnected",
+  "description_text": "Hello I purchased your simpson pro x pedal gas and brake. They were working\r\nwell. I recently purchased the clutch for christmas and now none of the\r\npedals are working. The software says disconnected and when trying to click\r\non anything a circle with a line through it shows up not allowing you to\r\nclick anything. So far I have tried different usb ports and uninstalled\r\nsoftware and also tried installing software to a different location. but\r\nnothing works. The pedals light up but are red, not multicolor which they\r\nwere before adding clutch.\r\n\r\n  I ordered both from amazon.The order number for the clutch is\r\n113-8660152-7098607\r\nand the order number for the gas and brake was 112-4912263-6879467\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-29T11:23:06Z",
+  "updated_at": "2026-01-11T14:43:44Z",
+  "requester_id": 158008806901,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015240909,
+      "body_text": "Hi Moblack Productions,    ProX / ProX Ultra Pedal Firmware Update Procedure:    Press and hold the Upgrade button on the control box;    Reconnect the USB cable;    The software will indicate that the device has entered “Simsonn Flasher mode”;    In the software, go to: Settings → Update → Manual Firmware Update → pedals → firmware → pedals-proxultra.sfu (If it’s a ProX pedal, select pedals-prox.sfu)    Start the firmware update, and once it is complete, release the Upgrade button;    Finally, retest and calibrate the pedals.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T07:41:10Z",
+      "updated_at": "2025-12-30T07:41:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015249824,
+      "body_text": "I just realized that the gas and the brake is the pro x pedals but the\r\nclutch I purchase is the pro ultra so which firmware do I select or should\r\nI be sending the clutch back and getting the pro x clutch instead\r\n\r\nOn Tue, Dec 30, 2025, 2:41 AM service@simsonn.com ",
+      "user_id": 158008806901,
+      "created_at": "2025-12-30T11:28:48Z",
+      "updated_at": "2025-12-30T11:28:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015250020,
+      "body_text": "Hi Moblack Productions,  The upgrade is only related to the control box, not the pedals. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T11:38:11Z",
+      "updated_at": "2025-12-30T11:38:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015405141,
+      "body_text": "So this is weird. By accident the wire for the rgb lights from the brake\r\npedal to the heel plate came loose. Now all 3 pedals  are working\r\ncorrectly, until I plug the rgb cable back in. They then stop working\r\nagain. They turn red and the software says disconnected. Holding down the\r\nupgrade button and plugging them back in, still shows disconnected with\r\npedal light turning red not allowing for manual firmware update which is\r\ngreyed out.\r\n\r\n  Attached is a picture of where I am plugging in the cable from the brake\r\nto the heel plate. Can you confirm this is the correct location ?\r\n\r\nOn Tue, Dec 30, 2025 at 6:38 AM service@simsonn.com ",
+      "user_id": 158008806901,
+      "created_at": "2026-01-02T16:51:14Z",
+      "updated_at": "2026-01-02T16:51:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016152948,
+      "body_text": "Hi Moblack Productions,  Could you please confirm whether you modified or adjusted the pedal wiring? The pedals have specific wiring requirements, and incorrect wiring may cause abnormal behavior. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T15:01:42Z",
+      "updated_at": "2026-01-07T15:01:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016776736,
+      "body_text": "No I did not but the wire from the brake came a loose from the heel plate\r\nand not sure where to plug it in from what I see online I am plugging it in\r\nthe correct spot but when I do it stops working\r\n\r\nOn Wed, Jan 7, 2026, 10:01 AM service@simsonn.com ",
+      "user_id": 158008806901,
+      "created_at": "2026-01-11T05:48:04Z",
+      "updated_at": "2026-01-11T05:48:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016821060,
+      "body_text": "Hi Moblack Productions,  Please provide a clear, high-resolution photo of the wiring on the back of the pedal stop LED strip, showing the full connection. I will check whether the wiring is correct. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T14:43:43Z",
+      "updated_at": "2026-01-11T14:43:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": 9408,
+  "subject": "",
+  "description_text": "How do I connect my Simsonn Pro X Ultra Pedals with Baseplate and Carbon\r\nFiber Heel Plate to my fanatec wheel on a ps5?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-29T01:53:53Z",
+  "updated_at": "2025-12-30T08:56:44Z",
+  "requester_id": 158008804357,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015174588,
+      "body_text": "Hi Jason Middlebrooks,  Our pedals do not support the Fanatec platform, and therefore they do not support PS5 either. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-29T01:56:43Z",
+      "updated_at": "2025-12-29T01:56:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015174652,
+      "body_text": "It says on your website that they do.\r\n\r\nOn Sun, Dec 28, 2025, 8:56 PM service@simsonn.com ",
+      "user_id": 158008804357,
+      "created_at": "2025-12-29T02:00:32Z",
+      "updated_at": "2025-12-29T02:00:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015242778,
+      "body_text": "Hi Jason Middlebrooks,  Could you please provide the link and a screenshot so I can check it for you? ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T08:56:43Z",
+      "updated_at": "2025-12-30T08:56:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

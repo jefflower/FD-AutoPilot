@@ -1,0 +1,54 @@
+{
+  "id": 2483,
+  "subject": "Granular feeling",
+  "description_text": "Hello,\r\n\r\nI have an issue with my pedals! The accelerator pedal has a horrible granular feeling even after lubrication! I need a new rod and damper is really horrible to drive\r\n\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-08-08T21:35:14Z",
+  "updated_at": "2025-12-18T10:40:31Z",
+  "requester_id": 158002855033,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006597633,
+      "body_text": "Hi fabian botero,       Is your pedal the Pro Plus version? Please provide your order number first. If it is version 1.7.1, please download SIMSONN Manager 2.1.0, then manually update the firmware and test it. If the throttle feels grainy or the hydraulic rod is not functioning properly, please describe the issue in detail or provide a video. Static photos are not helpful in resolving functional issues.      Go to Settings → Update → Manual Firmware Update → Select Pedals → Choose the file plus.sfu to upgrade.      https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-08-09T14:40:29Z",
+      "updated_at": "2025-08-09T14:40:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006607931,
+      "body_text": "Hello,\r\n\r\nI just need you to sell me a new damper for the throttle and the rod that goes inside the spring on the throttle to make it new again. in not asking for nothing free. can you help me with that?\r\n\r\nmy order number is : Order ID: 3032346517917798\r\n________________________________\r\nDe: service@simsonn.com ",
+      "user_id": 158002855033,
+      "created_at": "2025-08-09T17:47:56Z",
+      "updated_at": "2025-08-09T17:47:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006615484,
+      "body_text": "Hi fabian botero,   Alright, I’ve informed the AliExpress operations team, and they will contact you tomorrow (Monday). ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T03:03:15Z",
+      "updated_at": "2025-08-10T03:03:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006664811,
+      "body_text": "Hi fabian botero,    Our AliExpress sales representative has already contacted you, and you can communicate with her directly.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-11T01:52:41Z",
+      "updated_at": "2025-08-11T01:52:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

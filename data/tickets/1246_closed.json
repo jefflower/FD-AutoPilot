@@ -1,0 +1,54 @@
+{
+  "id": 1246,
+  "subject": "Problema com a peça plástica do pedal do acelerador",
+  "description_text": "Hello Simson support team,\r\n\r\nI am writing to report a problem with the Simson pedals that I recently\r\npurchased. The plastic piece on the accelerator pedal broke after a short\r\nperiod of use, which has left me quite dissatisfied with the product.\r\n\r\n*Problem details:*\r\n\r\n- The plastic piece on the accelerator pedal is located between the\r\npressure sensor.\r\n- I have no idea how it broke, but the pedal either starts accelerating on\r\nits own or doesn't accelerate to 100%.\r\n- The product was used for a short period of time before the piece broke.\r\n\r\n*Request:*\r\n\r\nI would like to know if it is possible to obtain a replacement part or a\r\nsolution to resolve the problem. If the product is still under warranty, I\r\nwould like to know how to proceed to obtain the necessary assistance.\r\n\r\n*Contact information:*\r\n\r\n- Name: Ivo\r\n- Email: ivop5848@gmail.com\r\n\r\nThank you in advance for your attention to this matter and I look forward\r\nto a prompt response.\r\n\r\nBest regards,\r\nIvo Pinto\r\n\r\n",
+  "status": 5,
+  "priority": 4,
+  "created_at": "2025-07-05T18:02:01Z",
+  "updated_at": "2025-12-18T09:50:52Z",
+  "requester_id": 158001900525,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004453118,
+      "body_text": "Hi North Leads,  Alright, I’ll send you a replacement for the damaged part. Just to confirm — did the break occur after you adjusted the green travel range on the throttle? ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T04:21:36Z",
+      "updated_at": "2025-07-07T04:21:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004456515,
+      "body_text": "\"I have not made any adjustments to the accelerator pedal. It started\r\nmaking a strange noise whenever I accelerated. Upon reviewing the telemetry\r\ngraph, I noticed that it was not accelerating to 100%. I hope this can be\r\nresolved as soon as possible, as I am currently unable to play and, being\r\nin competitive mode, I am at a significant disadvantage.\"\r\n\r\n\r\n\r\nA segunda, 7/07/2025, 06:21, service@simsonn.com ",
+      "user_id": 158001900525,
+      "created_at": "2025-07-07T13:13:34Z",
+      "updated_at": "2025-07-07T13:13:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004456930,
+      "body_text": "Hi North Leads,    We will ship the replacement parts to you by air tomorrow.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T13:48:14Z",
+      "updated_at": "2025-07-07T13:48:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004943084,
+      "body_text": "Hi North Leads,  Since you didn’t place your order through our official website, please first contact the store where you purchased it on AliExpress. If that store is unable to resolve the issue, feel free to reach out to us and we’ll assist you further. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T06:23:20Z",
+      "updated_at": "2025-07-16T06:23:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

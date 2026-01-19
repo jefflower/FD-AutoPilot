@@ -1,0 +1,64 @@
+{
+  "id": 8156,
+  "subject": "Bestellung #SSN4669",
+  "description_text": "Hello,\r\n\r\nI would like to cancel my order. I accidentally ordered the wrong pedals, and unfortunately they are not compatible.\r\n\r\nBest regards,\r\nDavid\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-13T14:27:43Z",
+  "updated_at": "2025-12-18T11:29:11Z",
+  "requester_id": 158007796051,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014502893,
+      "body_text": "Hi D. leyser,    Okay, we've paused your order for you. We're sorry to hear that. Would you like to cancel the entire order, or just the pedal?",
+      "user_id": 158001343601,
+      "created_at": "2025-12-15T09:26:13Z",
+      "updated_at": "2025-12-15T09:26:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014504030,
+      "body_text": "\r\n\r\n \r\n \r\n \r\n \r\n Hello, Thank you. Yes I would like cancel the entire order. Sorry Best regards David Gesendet mit der GMX Mail App Am 15.12.25 um 10:26 schrieb support@simsonn.com\r\n \r\n \r\n \r\n \r\n ",
+      "user_id": 158007796051,
+      "created_at": "2025-12-15T10:05:10Z",
+      "updated_at": "2025-12-15T10:05:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014505165,
+      "body_text": "Hi D. leyser,     Alright, we'll cancel it for you.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-15T10:42:44Z",
+      "updated_at": "2025-12-15T10:42:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014636023,
+      "body_text": "\r\n\r\n \r\n \r\n \r\n \r\n Hi, You have canceled the order? Looks like I did not get an refund at PayPal? Best regards David Gesendet mit der GMX Mail App Am 15.12.25 um 11:42 schrieb support@simsonn.com\r\n \r\n \r\n \r\n \r\n ",
+      "user_id": 158007796051,
+      "created_at": "2025-12-17T15:33:38Z",
+      "updated_at": "2025-12-17T15:33:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014686279,
+      "body_text": "Hi D. leyser,    I apologize for the delay in processing your refund. I have now issued the refund. Please check your account.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-18T11:29:11Z",
+      "updated_at": "2025-12-18T11:29:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

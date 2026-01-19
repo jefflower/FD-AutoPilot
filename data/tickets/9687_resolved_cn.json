@@ -1,0 +1,35 @@
+{
+  "id": 9687,
+  "subject": "我的订单似乎丢失了",
+  "description_text": "我在12月22日订购了一套踏板。订单号 #SSN5169。联邦快递显示它们正在运送途中，并且直到昨天还显示它们应该在昨天送达，追踪号码 887361383064<https://www.fedex.com/fedextrack/?trknbr=887361383064>。现在我收到的消息是：\n\n“您的包裹仍在途中，我们正在积极为您争取新的送达日期。”\n\n根据追踪信息，它们似乎已经到达加利福尼亚州阿卡迪亚中心，之后就没有追踪记录了。\n\n请您调查一下，告诉我它们在哪里，以及预计何时送达。\n\n谢谢。\n\n此致，\n\nMitch Wildman\nMitchell L Wildman, LLC\n561-632-8786",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-31T17:23:14Z",
+  "updated_at": "2026-01-08T01:36:59Z",
+  "requester_id": 158008833536,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015338554,
+      "body_text": "我无法进入门户查看此工单\n\n此致，\n\nMitch Wildman\nMitchell L Wildman, LLC\n561-632-8786",
+      "user_id": 158008833536,
+      "created_at": "2025-12-31T20:44:18Z",
+      "updated_at": "2025-12-31T20:44:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015366460,
+      "body_text": "Mitchell Wildman 您好，请不必担心。我们会尽快核查并回复您。由于目前是假日期间，我们将在1月4日回复您。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-01T15:24:01Z",
+      "updated_at": "2026-01-01T15:24:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

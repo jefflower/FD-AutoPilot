@@ -1,0 +1,125 @@
+{
+  "id": 1125,
+  "subject": "刹车踏板的力传感器问题",
+  "description_text": "您好，\n\n我认为我的刹车踏板的力传感器有问题。我于2024年12月订购了一款simmson PRO X P3-H1 踏板。订单号：23215169900102004\n我可以用手完全踩下刹车踏板，并在simsonn管理器中达到100%的压力，我认为这在200kg力传感器上是不可能的。这是一个有缺陷的力传感器吗？\n\n我能否获得一份刹车升级套件的估价，仅包含刹车踏板，以及一个包含vam pro、电源和（如果需要）控制盒的触觉套件。\n\n此致。",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-07-02T19:53:21Z",
+  "updated_at": "2025-08-03T10:09:29Z",
+  "requester_id": 158001877059,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004445377,
+      "body_text": "你好 Fred Gourd，请用牙签或螺丝刀按住控制盒侧面小孔内的按钮，然后重新连接USB线。软件应该会进入恢复模式。接下来，请进入“设置”→“更新”→“手动固件更新”→“踏板”→“固件”→“踏板”→“plusX.sfu”并尝试手动更新固件。如果问题仍然存在，我们建议安装Todesk（无需注册）。只需提供您的ID和临时访问码，我们就可以安排时间远程协助您。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-04T14:21:50Z",
+      "updated_at": "2025-07-04T14:21:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004943699,
+      "body_text": "您好，\n\n谢谢您的回复，我照做了，情况有所改善，但感觉有点顺滑。\n我看到一个YouTube视频解释说需要拧紧踏板下方的内六角扳手才能变得更硬。\n您对此有何看法？\n\n此致。",
+      "user_id": 158001877059,
+      "created_at": "2025-07-16T08:23:52Z",
+      "updated_at": "2025-07-16T08:23:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004944353,
+      "body_text": "你好 Fred Gourd，我们未能在系统中找到您的订单，因此您可能不是通过我们的官方全球速卖通商店购买的。请将您的踏板和控制盒的照片发送给我们，以便我们确认型号。如果您使用的是ProX踏板，我们提供了一个升级套件，可以改善阻尼和液压感。此外，底座传感器内部有螺丝，可以微调传感器的行程范围。如果您指的是8级可调液压杆强度，那么是的——此升级套件包含一个较软的版本，专为喜欢更轻踏板感觉的用户设计。https://www.simsonn.com/products/simsonn-pro-x-ultra-pedals-upgrade-kit",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T09:49:12Z",
+      "updated_at": "2025-07-16T09:49:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005135094,
+      "body_text": "您好，谢谢您的回复。\n\n我是在阿里巴巴上订购的，订单号：232151699001020047，日期：2024-11-25 10:02:49\n附件是截图。\n你们有没有不带液压套件的升级套件，因为我的刹车有液压，油门和离合器不需要。\n\n我的油门踏板的LED灯还有另一个问题。我稍后会给您发照片，我不在家。\n\n此致",
+      "user_id": 158001877059,
+      "created_at": "2025-07-17T12:10:31Z",
+      "updated_at": "2025-07-17T12:10:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005143822,
+      "body_text": "你好 Fred Gourd，目前您还需要其他帮助吗？",
+      "user_id": 158000445778,
+      "created_at": "2025-07-18T00:10:18Z",
+      "updated_at": "2025-07-18T00:10:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005146684,
+      "body_text": "您好，\n\n油门踏板上的LED灯有问题，在未踩油门时是红色，踩下油门时是蓝色。\n我尝试设置其他颜色，但仍然是这样。\n\n此致",
+      "user_id": 158001877059,
+      "created_at": "2025-07-18T09:47:09Z",
+      "updated_at": "2025-07-18T09:47:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005162456,
+      "body_text": "你好 Fred Gourd，是油门左侧的LED灯条损坏了吗？请提供您的收货地址、联系人姓名和电话号码，我们将为您寄送一个替换的油门左侧LED模块组件。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-19T07:20:03Z",
+      "updated_at": "2025-07-19T07:20:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005286759,
+      "body_text": "您好，\n是的，在左侧。\n我的姓名和地址是：\n\nGourdonneau Frederic\n15 rue des crocs blancs\n87520 Oradour sur glane\n法国\n\n我的电话号码是：\n+33685821089\n\n谢谢。\n\n此致",
+      "user_id": 158001877059,
+      "created_at": "2025-07-21T20:20:00Z",
+      "updated_at": "2025-07-21T20:20:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005355689,
+      "body_text": "你好 Fred Gourd，这是您的追踪号码 YT2520300704321299，您可以通过 https://www.yuntrack.com/parcelTracking?id=YT2520300704321299 进行追踪。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-23T04:27:24Z",
+      "updated_at": "2025-07-23T04:27:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005785528,
+      "body_text": "您好，\n我今天收到了。\n非常感谢！\n此致",
+      "user_id": 158001877059,
+      "created_at": "2025-07-29T19:16:29Z",
+      "updated_at": "2025-07-29T19:16:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006129954,
+      "body_text": "",
+      "user_id": 158001877059,
+      "created_at": "2025-08-03T10:09:28Z",
+      "updated_at": "2025-08-03T10:09:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

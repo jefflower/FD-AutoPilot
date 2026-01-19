@@ -1,0 +1,74 @@
+{
+  "id": 1331,
+  "subject": "Order #SSN1653",
+  "description_text": "Hello Dear Support Team,\r\n\r\nI ordered pedals on June 5, 2025. Unfortunately, the package is stuck in a UPS warehouse. UPS is not providing any support or further information and is referring me to the retailer.\r\n\r\nCan you assist me? Do you have any additional information about the package and its delivery?\r\n\r\nThank you in advance.\r\n\r\nBest regards\r\nNino Achsel\r\n\r\nGesendet von Outlook für Android<https://aka.ms/AAb9ysg>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-08T08:50:40Z",
+  "updated_at": "2025-07-18T08:32:41Z",
+  "requester_id": 158001946370,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004478791,
+      "body_text": "你好，Nino Achsel，  好的，我们明天会联系 UPS 检查情况并给您提供解决方案。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-08T15:13:39Z",
+      "updated_at": "2025-07-08T15:13:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004502126,
+      "body_text": "Hi Nino Achsel,    We contacted UPS, they fed back that your package was checked at customs and may need some information, they will contact UPS in Germany to send an email for you, please pay attention to check, this is their email: importde@ups.com",
+      "user_id": 158001343601,
+      "created_at": "2025-07-10T10:56:43Z",
+      "updated_at": "2025-07-10T10:56:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004505863,
+      "body_text": "Hey,\r\n\r\nthank you for your help!\r\n\r\nBest regards\r\nNino\r\n\r\nGesendet von Outlook für Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158001946370,
+      "created_at": "2025-07-10T17:18:36Z",
+      "updated_at": "2025-07-10T17:18:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005134349,
+      "body_text": "Hi Nino Achsel,    Have you received information from UPS and assisted them with relevant clearance information yet.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-17T10:15:56Z",
+      "updated_at": "2025-07-17T10:15:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005134963,
+      "body_text": "Hello,\r\n\r\nUPS delivered the package as of today. Thank you for your Support!\r\n\r\nBest regards\r\nNino\r\n\r\nGesendet von Outlook für Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158001946370,
+      "created_at": "2025-07-17T11:52:01Z",
+      "updated_at": "2025-07-17T11:52:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005146477,
+      "body_text": "Hi Nino Achsel,    Glad to hear the good news, have fun!",
+      "user_id": 158001343601,
+      "created_at": "2025-07-18T08:32:41Z",
+      "updated_at": "2025-07-18T08:32:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "id": 10950,
+  "subject": "FINAL NOTICE to Request to cancel the order SSN5831",
+  "description_text": "The order #SSN5831 (Simsonn HS PRO Shifter), not being shipped until 1/15/2025 China Time.\r\n\r\n\r\nI request to cancel the order, and refund the order.\r\n\r\n\r\nI am proactively working with my bank to DISPUTE the transaction, as I have already contact your team to cancel the order over 3 times before I sent this final notice, but WITHOUT getting a single response for the cancellation and refund request.\r\n\r\n\r\nOrder number: SSN5831\r\nOrder made: 1/6/2025\r\nProduct: Simsonn HS Pro shifter\r\nBuyer email: Shop with chenqu@qq.com\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-15T04:33:53Z",
+  "updated_at": "2026-01-15T05:37:08Z",
+  "requester_id": 158009018592,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016833380,
+      "body_text": "Dear Simsonn team,\r\n\r\n\r\nIf the item was not shipped yet, it will wait too long for me, in that case, please kindly help me cancel the order.&nbsp;\r\n\r\n\r\nOrder number: SSN5831\r\nShipping label: SF6047227116079 (still no any update or info after one week)\r\n\r\n\r\nThanks!\r\n\r\n\r\nQ\r\n\r\n\r\n\r\n---Original---\r\n",
+      "user_id": 158009018592,
+      "created_at": "2026-01-12T01:11:31Z",
+      "updated_at": "2026-01-12T01:11:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017081680,
+      "body_text": "Hi chenqu,       We sincerely apologize that this item has been out of stock for nearly two weeks due to demand far exceeding our projections. We will arrange for shipment within the next two days and deeply regret this delay.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-14T08:23:03Z",
+      "updated_at": "2026-01-14T08:23:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017102046,
+      "body_text": "please cancel and refund this order. I will buy something else.\r\n\r\n\r\n\r\n---Original---\r\n",
+      "user_id": 158009018592,
+      "created_at": "2026-01-14T13:13:57Z",
+      "updated_at": "2026-01-14T13:13:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017104345,
+      "body_text": "Since this order takes too long, including the extremely hardship for the communication. I will NOT accept the order any more.\r\n\r\n\r\nPlease cancel the order and refund.&nbsp;\r\n\r\n\r\nPlease don't waste time.\r\n\r\n\r\nThanks.\r\n\r\n\r\n\r\n---Original---\r\n",
+      "user_id": 158009018592,
+      "created_at": "2026-01-14T13:23:47Z",
+      "updated_at": "2026-01-14T13:23:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017162929,
+      "body_text": "ID 号为 10532 和 10746 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-15T05:22:11Z",
+      "updated_at": "2026-01-15T05:22:11Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158017162930,
+      "body_text": "合并来自工单10532  \n      主题: Order SSN5831 shipping keeps showing not exist  \n      描述:  Dear Simsonn Team, \n   \n My order #SSN5831 (Simsonn HS PRO Shifter) shipping number SF6047227116079 shows not exists over 5 days. \n   \n Could you please check what happened there? \n   \n Thanks! \n   \n Qu",
+      "user_id": 158000445778,
+      "created_at": "2026-01-15T05:22:11Z",
+      "updated_at": "2026-01-15T05:22:11Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158017162933,
+      "body_text": "合并来自工单10746  \n      主题: Request to refund order SSN5831 as it is not shipped yet  \n      描述:  Dear Simsonn team, \n   \n The order #SSN5831 (Simsonn HS PRO Shifter) shipping number SF6047227116079 shows not exists over 7 days. \n   \n I would like to request to cancel the order as it is not shipped after one week and I don't want to wait any longer. \n   \n Order number: SSN5831 \n Product: Simsonn HS Pro shifter \n Buyer email: Shop with chenqu@qq.com \n shipping info: SF6047227116079 (Shows not receive item after one week) \n   \n Qu",
+      "user_id": 158000445778,
+      "created_at": "2026-01-15T05:22:12Z",
+      "updated_at": "2026-01-15T05:22:12Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158017163141,
+      "body_text": "Hi chenqu,    I apologize for the delayed response. Here is your shipping tracking link. This product has been out of stock for nearly two weeks—it's simply too popular. Your order has been shipped and is expected to arrive on the 20th.  https://t.17track.net/en#nums=SF6047227116079",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T05:37:08Z",
+      "updated_at": "2026-01-15T05:37:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,254 @@
+{
+  "id": 3985,
+  "subject": "VAM Support",
+  "description_text": "Good day.  I recently acquired a set of VAM Haptics for my pro x pedals.\r\nThey briefly worked and have since stopped.  They were working up to the\r\npoint I installed an external sound amp connected to the motherboard\r\nsound.  I have validated the proper 24v DC coming from the power supply.  I\r\nhave also swapped USB cables and ports.  The pedals are working fine. Only\r\nthe VAM Haptics are not.  Can you please provide some troubleshooting\r\nassistance?  Thank You.\r\n\r\nI am using the 2.10 Simsonn configuration application.\r\n\r\nKind Regards,\r\nJ. Sheldon\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-09-20T01:53:57Z",
+  "updated_at": "2025-12-18T10:11:12Z",
+  "requester_id": 158004666598,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008973438,
+      "body_text": "Hi Joe S.,      Please provide your order number and let us know how many VAM units are damaged. Have you tried swapping the VAMs for testing? At the same time, please record a video showing the vibration test interface in Simsonn Manager. Once completed, kindly share the video with us via Google Drive and make sure to grant access permissions.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-20T03:17:36Z",
+      "updated_at": "2025-09-20T03:17:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008990337,
+      "body_text": "Thank you.   I was given this as a gift delivered from Amazon and don't\r\nhave an order number as no gift receipt was provided.  I received them\r\nroughly 10 days ago.   I have the set of three but only have the throttle\r\nand brake.   I did swap the devices and get the same result, no activation.\r\n  All three do not work.\r\n\r\nThe video was shared from my wbijms2024@gmail.com account.  I think you can\r\nalso click this link.\r\n\r\nhttps://drive.google.com/file/d/1yhzVWi0f3bFjnYUX-ZL5-pDZYrYP0Gpp/view?usp=drivesdk\r\n\r\n\r\n\r\nKind Regards,\r\nJ Sheldon\r\n\r\nOn Fri, Sep 19, 2025 at 23:17 support@simsonn.com ",
+      "user_id": 158004666598,
+      "created_at": "2025-09-20T11:59:13Z",
+      "updated_at": "2025-09-20T11:59:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009021837,
+      "body_text": "Hi Joe S.,  Hello, please adjust the video access permissions so that I can review it and further check the issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-21T10:35:28Z",
+      "updated_at": "2025-09-21T10:35:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009024719,
+      "body_text": "I just changed the permissions.  You should now be able to access the\r\nvideo.\r\nhttps://drive.google.com/file/d/1yhzVWi0f3bFjnYUX-ZL5-pDZYrYP0Gpp/view?usp=drivesdk\r\n\r\nThank you\r\n\r\nJ Sheldon\r\nOn Sun, Sep 21, 2025 at 06:35 support@simsonn.com ",
+      "user_id": 158004666598,
+      "created_at": "2025-09-21T11:57:28Z",
+      "updated_at": "2025-09-21T11:57:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009185143,
+      "body_text": "Checking in to ensure you have received the video.\r\n\r\nBest Regards,\r\nJ Sheldon\r\n\r\n",
+      "user_id": 158004666598,
+      "created_at": "2025-09-23T16:31:13Z",
+      "updated_at": "2025-09-23T16:31:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009236639,
+      "body_text": "Hi Joe S.,  Please provide your contact person, phone number, and address, and we will send you 3 new VAM units. We will soon update the VAM algorithm, making the vibration stronger while ensuring it will not be damaged by prolonged or high-intensity use. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-24T15:33:20Z",
+      "updated_at": "2025-09-24T15:33:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009236978,
+      "body_text": "Thank you.  I actually don't think it is the VAM as I had the 3rd unused\r\nVAM (for the clutch) that i swapped in with the same result.  No vibration.\r\n  Do you think it could be the controller?\r\n\r\nNone the less, contact information is below.   Much appreciate your\r\nsupport.\r\n\r\nJoseph Sheldon +1 980 231 1614\r\n196 South San Agustin Drive\r\nMooresville,NC 28117 USA\r\n\r\nBest Regards,\r\nJ Sheldon\r\n\r\nOn Wed, Sep 24, 2025 at 11:33 support@simsonn.com ",
+      "user_id": 158004666598,
+      "created_at": "2025-09-24T15:43:33Z",
+      "updated_at": "2025-09-24T15:43:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009237341,
+      "body_text": "Hi Joe S.,  Please use SIMSONN Manager 2.1.1 for this new board, as it allows you to set the VAM type. Make sure to uninstall version 2.1.0 on your computer first to avoid conflicts when opening the software. Then, in version 2.1.1, go to Settings → Update → Manual Firmware Update → Pedals and select the plusx.sfu file I attached. After the update, please retest the vibration function.      https://drive.google.com/file/d/1aX1xWqdWBx5tM-Mzmgxk0FIUBqTixmnM/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-09-24T15:53:09Z",
+      "updated_at": "2025-09-24T15:53:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009243576,
+      "body_text": "I have followed the steps provided; removing v2.1.0, installing v2.1.1,\r\nupdated the firmware with the attached .sfu file and retested.  I am\r\ngetting the same result; no vibration output.  New video  uploaded.\r\n\r\nIMG_0047.MOV - Google Drive\r\n<https://drive.google.com/file/d/127a4oZnfXP4cYN8vDOXvtlKGvR0jc0U6/view>\r\n\r\nKinds Regards,\r\nJ Sheldon\r\n\r\nOn Wed, Sep 24, 2025 at 11:53 AM support@simsonn.com ",
+      "user_id": 158004666598,
+      "created_at": "2025-09-24T17:14:55Z",
+      "updated_at": "2025-09-24T17:14:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009257960,
+      "body_text": "Hi Joe S.,     I see that it shows CPU2 not connected. Please disconnect both the USB and power cables, then reconnect the USB first, wait a few seconds, and then plug in the vibration motor power to see if it restores the display to CPU1: 2.0.5  CPU2: 2.0.3. If it does, please test again; if not, please install ToDesk software so that I can remotely assist you in checking the upgrade issue.      https://www.todesk.com/download.html ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-25T00:47:25Z",
+      "updated_at": "2025-09-25T00:47:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009258287,
+      "body_text": "Both seem to be connected now...\r\n\r\n[image: image.png]\r\n\r\nOn Wed, Sep 24, 2025 at 5:47 PM support@simsonn.com ",
+      "user_id": 158004666598,
+      "created_at": "2025-09-25T00:56:07Z",
+      "updated_at": "2025-09-25T00:56:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009258477,
+      "body_text": "Hi Joe S.,    You can test the vibration function, but please make sure to select the correct vibration motor type first.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-25T01:02:56Z",
+      "updated_at": "2025-09-25T01:02:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009258681,
+      "body_text": "they are the VAM devices.   I have selected rhem and I ran the test, still\r\nno vibration.\r\n\r\nOn Wed, Sep 24, 2025 at 21:03 support@simsonn.com ",
+      "user_id": 158004666598,
+      "created_at": "2025-09-25T01:20:06Z",
+      "updated_at": "2025-09-25T01:20:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009258841,
+      "body_text": "Hi Joe S.,    Do you have time now? Please install the ToDesk software so I can check the issue remotely.  https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-09-25T01:35:10Z",
+      "updated_at": "2025-09-25T01:35:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009258965,
+      "body_text": "I'm sorry.  I don't have time now as there would be several network changes\r\nI would have to make to open up remote desktop services.   Are there any\r\nother options?\r\n\r\nOn Wed, Sep 24, 2025 at 21:35 support@simsonn.com ",
+      "user_id": 158004666598,
+      "created_at": "2025-09-25T01:43:58Z",
+      "updated_at": "2025-09-25T01:43:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009259084,
+      "body_text": "Hi Joe S., Could you advise whether we should send a replacement PlusX control box or a new VAM motor? Alternatively, we could schedule a new time for remote assistance. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-25T01:51:47Z",
+      "updated_at": "2025-09-25T01:51:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009259266,
+      "body_text": "I believe it may be the control box.  I applied 12v DC to the spare motor I\r\nhave is it vibrated just fine.  If you could forward a control box, I would\r\nbe most grateful.  Thank you.\r\n\r\nOn Wed, Sep 24, 2025 at 6:51 PM support@simsonn.com ",
+      "user_id": 158004666598,
+      "created_at": "2025-09-25T02:05:19Z",
+      "updated_at": "2025-09-25T02:05:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009259325,
+      "body_text": "Hi Joe S.,  Please provide the contact person, phone number, address, and order number, so I can send you a new control box today. Also, could you let me know how you tested it with 12V and provide a photo of the test? Thank you very much. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-25T02:09:43Z",
+      "updated_at": "2025-09-25T02:09:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009259415,
+      "body_text": "Sure.  I can get a video of the test tomorrow.   I simply connected an\r\nexternal 12v DC power supply directly to the motor on my test bench via a\r\nmatching female barrel connector.  As soon as I switch on the 12v power,\r\nthe motor vibrated.\r\n\r\nJoe Sheldon\r\n196 South San Agustin Drive\r\nMooresville, NC 28117\r\n\r\n(980)231-1614\r\n\r\nThank you for your consideration and courtesy to work through this.\r\n\r\n\r\n\r\nOn Wed, Sep 24, 2025 at 22:09 support@simsonn.com ",
+      "user_id": 158004666598,
+      "created_at": "2025-09-25T02:14:55Z",
+      "updated_at": "2025-09-25T02:14:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009280190,
+      "body_text": "Hi Joe S.,  Here is the tracking number : SF6045933999580. You can track it via https://www.sf-international.com/cn/en/support/querySupport/waybill ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-25T10:05:35Z",
+      "updated_at": "2025-09-25T10:05:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009287766,
+      "body_text": "Thank you.   As prokosed, attached is the method and tools I used to test\r\nthe motor.\r\n\r\n\r\n\r\nOn Thu, Sep 25, 2025 at 06:05 support@simsonn.com ",
+      "user_id": 158004666598,
+      "created_at": "2025-09-25T12:49:07Z",
+      "updated_at": "2025-09-25T12:49:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009306208,
+      "body_text": "Hello.\r\n\r\nNew development.  I plugged in the spare motor into the controller that I\r\nhad tested using the method in the previous email and it worked.  At this\r\npoint, the controller is confirmed good and the two motors are.confirmed as\r\nbad.  Any chance you can.hold the shipment on the controller and send me\r\ntwo replacement motors.\r\n\r\nKind regards\r\nJ Sheldon\r\n\r\n\r\n",
+      "user_id": 158004666598,
+      "created_at": "2025-09-25T18:20:38Z",
+      "updated_at": "2025-09-25T18:20:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009425865,
+      "body_text": "Hi Joe S.,     No problem. I’ll arrange for our operations team to send you two replacement VAM units. I’ll share the tracking number with you tomorrow.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-27T13:17:46Z",
+      "updated_at": "2025-09-27T13:17:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009433811,
+      "body_text": "Thank you very much.\r\n\r\nOn Sat, Sep 27, 2025 at 09:17 support@simsonn.com ",
+      "user_id": 158004666598,
+      "created_at": "2025-09-27T14:09:03Z",
+      "updated_at": "2025-09-27T14:09:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

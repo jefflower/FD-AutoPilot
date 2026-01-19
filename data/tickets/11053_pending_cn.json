@@ -1,0 +1,25 @@
+{
+  "id": 11053,
+  "subject": "关于订单的疑问",
+  "description_text": "您好，\n\n我上周一，即1月12日，在simsonn.com订购了赛车踏板。\n我的订单号是 #SSN6062。我联系您是想询问，我仍然没有收到发货确认。我大概什么时候能收到发货？",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-16T08:24:02Z",
+  "updated_at": "2026-01-17T09:35:05Z",
+  "requester_id": 158009259590,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017322108,
+      "body_text": "您好，Snorri Þorvaldsson，我们对您的订单发货延迟深表歉意。这是您的追踪链接：https://t.17track.net/en#nums=ALS01360260524",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T09:35:05Z",
+      "updated_at": "2026-01-17T09:35:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

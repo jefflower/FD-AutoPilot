@@ -1,0 +1,64 @@
+{
+  "id": 2618,
+  "subject": "Shipping Location?",
+  "description_text": "Hello,\r\n\r\nI am considering ordering (to Bulgaria)\r\n\r\nSimsonn Plus X  or Pro X + VAM Pro Linear Motor(3 pac/includes power supply)\r\n\r\nBut maybe I am feeling to see on the product page or checkout - where they ship from? I see estimated tax, but I'm hoping it's from EU to avoid going through customs hold-ups and payments.\r\n\r\nRegards,\r\n\r\nKonstantin\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-13T06:15:46Z",
+  "updated_at": "2025-08-28T06:37:59Z",
+  "requester_id": 158003018698,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006787892,
+      "body_text": "Hi Konstantin Dragostinov,    The pedals will be shipped from our warehouse in Germany, while the Haptics will be shipped from China, but both will go through IOSS one-stop customs clearance, so there won't be any extra taxes.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-13T06:17:47Z",
+      "updated_at": "2025-08-13T06:17:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007509128,
+      "body_text": "Hi guys, one more question: There's a 3-pin connector on the brake pedal, it doesn't seem to go to the control box, is it for the RGB stuff? I ordered the Pro X Ultra without the baseplate and I'm waiting for the motors to come in. I suppose I should just tuck it so it doesn't hang out?\r\n________________________________\r\n",
+      "user_id": 158003018698,
+      "created_at": "2025-08-25T13:17:15Z",
+      "updated_at": "2025-08-25T13:17:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007615369,
+      "body_text": "Sorry, we're afraid we haven't quite grasped your meaning. Would you mind taking a photograph for us?",
+      "user_id": 158001343601,
+      "created_at": "2025-08-27T09:41:32Z",
+      "updated_at": "2025-08-27T09:41:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007662702,
+      "body_text": "[cid:1cf1797c-9bd4-4ba0-8a29-c6b00951a196][cid:67faa043-2d88-4621-bb25-5255fe633332][cid:558d2cd6-3412-4847-94bf-2a68ca938274]\r\n________________________________\r\n",
+      "user_id": 158003018698,
+      "created_at": "2025-08-27T18:13:32Z",
+      "updated_at": "2025-08-27T18:13:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007685538,
+      "body_text": "Hi Konstantin Dragostinov,    This cable can connect to the light strip module on the riser plate. If you haven't purchased the base plate, this cable can indeed be tucked away.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-28T06:37:58Z",
+      "updated_at": "2025-08-28T06:37:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

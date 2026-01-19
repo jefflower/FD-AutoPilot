@@ -1,0 +1,44 @@
+{
+  "id": 4510,
+  "subject": "Never received order SSN2707",
+  "description_text": "I need help because I never received my order. I'd like to request a reshipment or refund. Order #SSN2707 SF Express tracking number: SF6045928902397 The SF website says delivered and someone signed for it. This is not true or accurate. Please respond. Tony Mouriño 502-301-0696 ______________________________________________________________________ This electronic mail may contain information that is privileged, proprietary and confidential and/or exempt from disclosure under applicable law. This transmission is intended solely for the individual or entity designated above. If you are not the intended recipient, you should understand that any distribution, copying, or use of the information contained in this transmission by anyone other than the intended recipient is unauthorized and strictly prohibited. If you have received this electronic mail in error, please immediately notify the sender and destroy all copies which you may have of this communication. Please consider the environment before printing this e-mail.",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-06T20:46:44Z",
+  "updated_at": "2025-10-20T10:41:35Z",
+  "requester_id": 158005403097,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010003077,
+      "body_text": "Hello, the package has indeed been marked as delivered. Please check your front door and ask your family members and neighbors. Thank you for your cooperation.    https://t.17track.net/en#nums=SF6045928902397",
+      "user_id": 158001343601,
+      "created_at": "2025-10-07T08:19:52Z",
+      "updated_at": "2025-10-07T08:19:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010715937,
+      "body_text": "I have not received an update - just request emails for feedback. Please let me know when to expect my refund? I never received my product. It was never delivered. Tony Mouriño 502-301-0696 ______________________________________________________________________ This electronic mail may contain information that is privileged, proprietary and confidential and/or exempt from disclosure under applicable law. This transmission is intended solely for the individual or entity designated above. If you are not the intended recipient, you should understand that any distribution, copying, or use of the information contained in this transmission by anyone other than the intended recipient is unauthorized and strictly prohibited. If you have received this electronic mail in error, please immediately notify the sender and destroy all copies which you may have of this communication. Please consider the environment before printing this e-mail. ",
+      "user_id": 158005403097,
+      "created_at": "2025-10-20T05:16:18Z",
+      "updated_at": "2025-10-20T05:16:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010722314,
+      "body_text": "Hi Tony Mourino,     Have you checked all possible locations? The courier has confirmed the package has been delivered.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-20T10:41:34Z",
+      "updated_at": "2025-10-20T10:41:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

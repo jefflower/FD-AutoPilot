@@ -1,0 +1,45 @@
+{
+  "id": 1354,
+  "subject": "Rx 轴问题",
+  "description_text": "我最近收到了全新的 Simsonn Pro X Ultra 脚踏板，但是 Rx 轴一直闪烁。即使将所有脚踏板从 Simsonn 小盒子中拔出，并将小盒子直接连接到电脑也无济于事。我的产品有缺陷吗？\n\n谢谢",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-07-08T23:40:29Z",
+  "updated_at": "2025-07-09T03:38:53Z",
+  "requester_id": 158001961315,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004484628,
+      "body_text": "您好，Cole，在“设置 - 更新”部分，点击“手动固件更新”，然后导航到 pedals-firmware 文件夹 → pedals 文件夹 → 选择 proxultra.sfu 文件进行更新。此固件将禁用第四轴。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-09T00:59:20Z",
+      "updated_at": "2025-07-09T00:59:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004485324,
+      "body_text": "非常感谢您的快速回复！它奏效了！祝您有个美好的一天！\n\n2025年7月8日星期二晚上8:59，来自 support@simsonn.com",
+      "user_id": 158001961315,
+      "created_at": "2025-07-09T02:50:49Z",
+      "updated_at": "2025-07-09T02:50:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004485554,
+      "body_text": "快速且有效",
+      "user_id": 158001961315,
+      "created_at": "2025-07-09T03:38:53Z",
+      "updated_at": "2025-07-09T03:38:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

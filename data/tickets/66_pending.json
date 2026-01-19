@@ -1,0 +1,54 @@
+{
+  "id": 66,
+  "subject": "Re: 回复：Problem with recent order",
+  "description_text": "# 114-8066481-3801024\r\n\r\n\r\n\r\nWesley Davis \r\n \r\n  On Tue, Jun 3, 2025 at 6:44 AM, General and sales enquiries<service@simsonn.com> wrote:   Hello, could you please provide us with your order number and we will look into this matter for you.\r\n\r\n Wes Davis<wesdavis901@yahoo.com> 在 2025年6月2日 周一 22:16 写道：I just received an order I placed for the Simsonn sim racing wheel and button box and first off I ordered the Alcantara / Suede wheel and received leather. It was also missing the front center plate cover. Then after setting up everything and plugging it in several buttons don't function on the hub. Needless to say I'm not happy. It was advertised to be shipped from a USA warehouse and that was a lie because it shipped from China. So this whole experience had been a bad one with your company. \r\n\r\nWesley Davis  \r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-06-03T23:44:54Z",
+  "updated_at": "2025-06-05T08:11:34Z",
+  "requester_id": 158000954927,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002446701,
+      "body_text": "ID 为 42 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-05T07:54:55Z",
+      "updated_at": "2025-06-05T07:54:55Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158002446708,
+      "body_text": "合并来自工单42  \n      主题: Problem with recent order  \n      描述:  I just received an order I placed for the Simsonn sim racing wheel and button box and first off I ordered the Alcantara / Suede wheel and received leather. It was also missing the front center plate cover. Then after setting up everything and plugging it in several buttons don't function on the hub. Needless to say I'm not happy. It was advertised to be shipped from a USA warehouse and that was a lie because it shipped from China. So this whole experience had been a bad one with your company.   \n \n Wesley Davis",
+      "user_id": 158000445778,
+      "created_at": "2025-06-05T07:54:58Z",
+      "updated_at": "2025-06-05T07:54:58Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158002451879,
+      "body_text": "你好，Wes Davis，     我们会尽快调查您的订单。由于我们美国仓库库存不足，包裹可能是从中国直接发货的。这大大增加了我们的运费，而且我们并非有意避免从美国发货。  关于版本错误和按钮无法使用的问题，请提供视频。我们会及时处理，并给您满意的解决方案。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-05T08:10:23Z",
+      "updated_at": "2025-06-05T08:10:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002452332,
+      "body_text": "Hi Wes Davis,  Our Amazon operations team mentioned that they are waiting for you to provide a video of the issue, so they can offer you a satisfactory solution. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-05T08:11:34Z",
+      "updated_at": "2025-06-05T08:11:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

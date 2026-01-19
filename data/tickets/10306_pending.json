@@ -1,0 +1,64 @@
+{
+  "id": 10306,
+  "subject": "Bitte um versandt info : #SSN5252",
+  "description_text": "Ich habe bei euch am 25.12.25. bestelt. Per Express   Bis heute noch\r\nkeine.  Sende Information erhalten  bitte um info.\r\n\r\nMit freundlichen Grüßen\r\nBrock Marco\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-08T13:14:44Z",
+  "updated_at": "2026-01-14T09:01:15Z",
+  "requester_id": 158008981814,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016532239,
+      "body_text": "Hi Marco Brock,    We apologize for the delay. The shipment is expected to arrive at our German warehouse on the 12th, at which time we will be able to ship your order.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-09T11:52:15Z",
+      "updated_at": "2026-01-09T11:52:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016954620,
+      "body_text": "Wie sieht es nun mit der Sendung aus ? ",
+      "user_id": 158008981814,
+      "created_at": "2026-01-13T09:21:53Z",
+      "updated_at": "2026-01-13T09:21:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158016972108,
+      "body_text": "Hi Marco Brock,  We apologize for the delay. Two shipments destined for our German warehouse have been affected by heavy snowfall in Europe, causing road blockages and delivery delays. We will expedite delivery or explore alternative logistics channels to ship your order from China as soon as possible. Compensation will be provided based on the delay after your order is completed. We apologize for the inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-13T11:50:51Z",
+      "updated_at": "2026-01-13T11:50:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017053071,
+      "body_text": "No problem, thank you for the update. Und bitte um weitere infos zur\r\nAnkunft  bei uns da wir es sehr dringend benötigt. Mit freundlichen Grüße\r\nMarco\r\n\r\nservice@simsonn.com ",
+      "user_id": 158008981814,
+      "created_at": "2026-01-14T01:30:51Z",
+      "updated_at": "2026-01-14T01:30:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017085131,
+      "body_text": "Hi Marco Brock,    We will try our best to ship from our German warehouse, but if further delays occur, we will ship to you from China instead. However, if any taxes or fees are incurred, I will reimburse you—no need to worry.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-14T09:01:15Z",
+      "updated_at": "2026-01-14T09:01:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

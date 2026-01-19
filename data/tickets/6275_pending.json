@@ -1,0 +1,54 @@
+{
+  "id": 6275,
+  "subject": "Simsonn Order #SSN3522 confirmed",
+  "description_text": "Hello, our system indicates that the postal code may be incorrect. Please verify your postal code. Thank you.   33660 Graham Ct Mission BC V2V 7P1 ",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-11-18T02:30:17Z",
+  "updated_at": "2025-11-24T03:32:04Z",
+  "requester_id": 158007159222,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012680768,
+      "body_text": "Hello, our system indicates that the postal code may be incorrect. Please verify your postal code. Thank you.   33660 Graham Ct Mission BC V2V 7P1 ",
+      "user_id": 158001343601,
+      "created_at": "2025-11-21T05:47:26Z",
+      "updated_at": "2025-11-21T05:47:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012680839,
+      "body_text": "That's the right address, provided u ship to canada\r\n\r\nOn Thu, Nov 20, 2025, 9:47 p.m. support@simsonn.com ",
+      "user_id": 158007159222,
+      "created_at": "2025-11-21T05:54:40Z",
+      "updated_at": "2025-11-21T05:54:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012697146,
+      "body_text": "Hi Openworld458,     Please double-check the postal code . If everything is in order, we will proceed with your shipment. Should the package become undeliverable, we will no longer be responsible. Thank you for your understanding!",
+      "user_id": 158001343601,
+      "created_at": "2025-11-21T11:21:06Z",
+      "updated_at": "2025-11-21T11:21:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012706162,
+      "body_text": "Yes, it is correct.\r\n\r\nOn Fri, Nov 21, 2025, 3:21 a.m. support@simsonn.com ",
+      "user_id": 158007159222,
+      "created_at": "2025-11-21T13:31:55Z",
+      "updated_at": "2025-11-21T13:31:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

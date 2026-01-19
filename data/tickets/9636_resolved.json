@@ -1,0 +1,24 @@
+{
+  "id": 9636,
+  "subject": "Missing Item",
+  "description_text": "Hello. I ordered a Plus X + Pedal Plate on Amazon and they forgot to send\r\nthe pedal plate with the package. I want to avoid returning the product\r\nsince it is a long wait to receive a new one.\r\n\r\nHow long will it take to receive the pedal plate? I will not be home after\r\nJanuary 9th so I need to know before it gets shipped out and the delivery\r\nETA is after I am away from home.\r\n\r\nMy amazon order number is 113-6582872-9104222\r\n\r\nThank You,\r\nDinnelky Tavarez\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-31T04:38:39Z",
+  "updated_at": "2026-01-04T06:27:22Z",
+  "requester_id": 158008829561,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015305128,
+      "body_text": "亚马逊后台已回复",
+      "user_id": 158007774607,
+      "created_at": "2025-12-31T10:03:48Z",
+      "updated_at": "2025-12-31T10:03:48Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

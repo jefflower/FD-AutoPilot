@@ -1,0 +1,24 @@
+{
+  "id": 575,
+  "subject": "Order #SSN1541",
+  "description_text": "Hi, I still have not received notification that the baseplate I ordered was\r\nshipped yet or any idea when it will ship. I was hoping for an update. Last\r\nI heard, last week the backorder shipment arrived at the US\r\ndistribution center, but hasnt shipped yet. Its been a week with no update.\r\n\r\nAny idea when I can expect this? Thank you\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-18T13:12:51Z",
+  "updated_at": "2025-06-22T02:21:29Z",
+  "requester_id": 158001381618,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003679614,
+      "body_text": "Hi Aaron Cummings,     I noticed that your order has two tracking numbers. I believe one of them is for the base plate shipment—please take a look.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T02:21:29Z",
+      "updated_at": "2025-06-22T02:21:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 4432,
+  "subject": "Problema de compatibilidade pedais SIMSONN PRO.",
+  "description_text": "Olá.\r\n\r\nTenho um kit de pedais Simsonn PRO. Porem após efetuar a troca do meu computador, o mesmo deixou de reconhecer a controladora dos pedais. Testei vários softwares até conseguir resolver o problema de reconhecimento.\r\nEntretanto suspeito que sem querer terminei apagando as configurações da controladora, pois agora ela é reconhecida pelo computador mas não recebe os sinais dos pedais, vocês tem alguma solução para esse problema?\r\n\r\nSegue print dos aplicativos que tentei utilizar.\r\n\r\n\r\n\r\n\r\nAtenciosamente.\r\n\r\n\r\n\r\nDiogo Cerqueira dos Santos\r\n\r\n\r\n\r\nGraduando em Eng. Mecânica.\r\n\r\nTécnico em mecânica industrial.\r\n\r\n\r\n\r\nTel: (75) 991668467/ 999897183\r\n\r\n\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-04T13:14:12Z",
+  "updated_at": "2025-10-05T16:10:56Z",
+  "requester_id": 158000956096,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009938054,
+      "body_text": "Hi Diogo Cerqueira dos Santos,  Please go to Settings → Update → Manual Firmware Update → pedals-firmware-plus.sfu to perform the update. This should restore normal functionality. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T16:10:56Z",
+      "updated_at": "2025-10-05T16:10:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

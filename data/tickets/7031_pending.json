@@ -1,0 +1,74 @@
+{
+  "id": 7031,
+  "subject": "",
+  "description_text": " I ordered a complete VAM haptic kit, one of the motors has stopped\r\nworking, regardless of which slot on the control unit it is plugged into.\r\nHave had the haptics kit for less than one month, the control box is\r\ngrounded and haptic strength was not above 70%\r\n\r\nAmazon order number 11-0039268-3534643\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-29T14:46:47Z",
+  "updated_at": "2025-12-29T08:12:36Z",
+  "requester_id": 158007419833,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013157863,
+      "body_text": "Hi Nick Johnson,  Please provide your shipping address, contact name, and phone number, and we will send you a replacement VAM motor. Also, your software is SIMSONN Manager 2.1.2, with firmware versions CPU1: 2.0.5 and CPU2: 2.0.4, correct? ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-01T05:26:03Z",
+      "updated_at": "2025-12-01T05:26:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013175014,
+      "body_text": "Shipping info as follows\r\nNicholas Johnson\r\n105 Shelby Rd\r\nAthens Pa 18810\r\n(570) 423 6139\r\n\r\nSimsonn manager is updated to the latest version and there's no available\r\nfirmware updates so to my knowledge it is the latest version as well. I use\r\nsimhub for haptic control as Simsonn manager doesn't work with Le Mans\r\nUltimate for haptics, or at least not that I could get any feedback from.\r\n\r\n\r\nOn Mon, Dec 1, 2025, 12:26 AM service@simsonn.com ",
+      "user_id": 158007419833,
+      "created_at": "2025-12-01T12:44:27Z",
+      "updated_at": "2025-12-01T12:44:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014118593,
+      "body_text": "Hi Nick Johnson,     SimHub is usually the most comprehensive.   Below is the list of game telemetry supported by our SIMSONN devices:    the tracking number for the Haptic Reactor is: JSELZ0889844915YQ (ships from China warehouse, the shipping carrier is JSEXPRESS, you can track it via https://www.17track.net/en",
+      "user_id": 158000445778,
+      "created_at": "2025-12-08T10:05:26Z",
+      "updated_at": "2025-12-08T10:05:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014167624,
+      "body_text": "Hi Nick Johnson,  The tracking number is: JSELZ0889844915YQ, the shipping carrier is JS EXPRESS, you can track it via https://www.17track.net/en ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-09T06:37:58Z",
+      "updated_at": "2025-12-09T06:37:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015167016,
+      "body_text": "I haven't received the replacement vibration motor referenced in this\r\nticket and have a second motor beginning to fail in the same way\r\n\r\nOn Thu, Dec 18, 2025, 4:40 AM service@simsonn.com ",
+      "user_id": 158007419833,
+      "created_at": "2025-12-28T16:22:44Z",
+      "updated_at": "2025-12-28T16:22:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015182954,
+      "body_text": "Hi Nick Johnson,  The current status is SAYRE - PA, Arrived at Post Office on 12-27, here is your local USPS tracking number: 9214490401712411767110.​",
+      "user_id": 158007774607,
+      "created_at": "2025-12-29T08:12:33Z",
+      "updated_at": "2025-12-29T08:12:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "id": 818,
+  "subject": "配送",
+  "description_text": "你好，请问你们能寄到澳大利亚吗？运费是多少？谢谢，Greg",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-06-25T09:44:33Z",
+  "updated_at": "2025-07-10T11:15:39Z",
+  "requester_id": 158001773286,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003845261,
+      "body_text": "嗨 G B，我们可以寄到澳大利亚，基础运费为9.90美元，订单满299美元免运费。",
+      "user_id": 158001343601,
+      "created_at": "2025-06-26T07:24:17Z",
+      "updated_at": "2025-06-26T07:24:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004137065,
+      "body_text": "你好，我从全球速卖通(Aliexpress.com)订购了Pro X超薄踏板和底板，请问运送需要多长时间？订单状态在将近48小时内没有更新。谢谢",
+      "user_id": 158001773286,
+      "created_at": "2025-06-27T07:45:04Z",
+      "updated_at": "2025-06-27T07:45:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004197234,
+      "body_text": "嗨 G B，Pello，请提供您的订单号，我们会为您查询。",
+      "user_id": 158001343601,
+      "created_at": "2025-06-27T10:51:16Z",
+      "updated_at": "2025-06-27T10:51:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004199755,
+      "body_text": "订单号 8201776481890899",
+      "user_id": 158001773286,
+      "created_at": "2025-06-27T10:58:52Z",
+      "updated_at": "2025-06-27T10:58:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004224030,
+      "body_text": "还在查看那个4天没动静的订单",
+      "user_id": 158001773286,
+      "created_at": "2025-06-30T00:44:37Z",
+      "updated_at": "2025-06-30T00:44:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

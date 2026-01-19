@@ -1,0 +1,44 @@
+{
+  "id": 467,
+  "subject": "Wrong address! (SSN1752)",
+  "description_text": "Hey my name is Juan arbelaez\r\nJust wanted to inform you that the address in order (SSN1752) is wrong.\r\n The correct address is \" 209 Abigail ln greer sc 29651\"\r\n\r\nThank you\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-15T15:42:29Z",
+  "updated_at": "2025-06-16T06:52:29Z",
+  "requester_id": 158001547874,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003227811,
+      "body_text": "Hi juan arbelaez,  OK, we've changed it for you. Please check if there is any information missing.  209 Abigail Ln Greer SC 29651 ",
+      "user_id": 158001343601,
+      "created_at": "2025-06-16T06:20:45Z",
+      "updated_at": "2025-06-16T06:20:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003228015,
+      "body_text": "Thank you so much.. that is all\r\n\r\nOn Mon, Jun 16, 2025, 2:20 AM service@simsonn.com ",
+      "user_id": 158001547874,
+      "created_at": "2025-06-16T06:41:02Z",
+      "updated_at": "2025-06-16T06:41:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003228079,
+      "body_text": "Hi juan arbelaez,    Okay, thank you for your prompt reply .",
+      "user_id": 158001343601,
+      "created_at": "2025-06-16T06:52:28Z",
+      "updated_at": "2025-06-16T06:52:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "id": 2237,
+  "subject": "Searching device issue",
+  "description_text": "Hello I have set up my vam pro pedal haptics with the control box and it works on simhub beta (simsonn release) for only 1 or 2 minutes before it disconnects from simhub. I have to disconnect and reconnect the PC USB B from the control box or move the USB A back and forth to different slots on PC to get it to connect again. I've tried multiple USB B to A cables. I don't know the issue but this is unusable after waiting so long to get the product then again waiting for control box separately.\r\n\r\nPlease tell me if there is a way to fix this issue. Thanks\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-02T23:24:20Z",
+  "updated_at": "2025-08-09T15:47:21Z",
+  "requester_id": 158002552022,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006127933,
+      "body_text": "Hi Rhys Benham,  Please download and install SimHub version 9.9.3 for testing. Also, kindly provide your order number and pedal model. Additionally, make sure to connect the USB cable directly to a USB 3.0 (blue) port on the back of your PC, and avoid using USB hubs. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-03T06:01:48Z",
+      "updated_at": "2025-08-03T06:01:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006324130,
+      "body_text": "#SSN1826\r\nAnd I ordered my control box via Amazon\r\n\r\nPedals are fine they are separately attached.\r\n\r\nIt's only the vam pros and the control box that could be causing this issue. I've plugged into USB 3.0 directly in motherboard. It loses connection still on latest build of simhub.\r\n\r\nTried different USB B wires also. And power sources as well.\r\n\r\nPlease help. This is unusable after I spent so long waiting for the products.\r\n\r\nSent from my T-Mobile 5G Device\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158002552022,
+      "created_at": "2025-08-06T06:25:53Z",
+      "updated_at": "2025-08-06T06:25:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006403995,
+      "body_text": "Hi Rhys Benham,  This issue is caused by interference. Are you using a Fanatec base? Also, what is the model of your pedals? I can provide you with a solution to eliminate the interference. Please rest assured, the motor hardware is fine and will not be damaged—everything is thoroughly tested before shipping.      To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability:     1.    Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding.     2.    Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive.     3.    Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup.     4.    Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible.     5.    Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs.     6.    Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference.     7.    Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements.     8.    Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources.     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding     https://www.youtube.com/watch?v=LciAFDFWJ1w  ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-06T14:15:11Z",
+      "updated_at": "2025-08-06T14:15:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006436717,
+      "body_text": "Yes the motors work. They just disconnect mid game. And will sometimes continue to rumble uncontrollably while disconnected.\r\n\r\nI have a fanatec wheel base yes.\r\n\r\nSo will an isolator fix the issue?\r\n\r\nSent from my T-Mobile 5G Device\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158002552022,
+      "created_at": "2025-08-06T19:00:43Z",
+      "updated_at": "2025-08-06T19:00:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006604338,
+      "body_text": "Hi Rhys Benham,  I’m still not sure about your pedal model. Also, the isolator has a noticeable effect. You can try turning off the Fanatec base power and run a test to compare the results. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-09T15:47:21Z",
+      "updated_at": "2025-08-09T15:47:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

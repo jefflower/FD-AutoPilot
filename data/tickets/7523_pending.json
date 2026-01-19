@@ -1,0 +1,94 @@
+{
+  "id": 7523,
+  "subject": "Simpson pro throttle pedal problem",
+  "description_text": "﻿I’m having a problem with the throttle pressure switch. It stopped working sporadically. It goes from nothing to all or nothing at all. The brake and clutch still worked perfectly fine with the configuration software. My number is 407-832-8856. my name is Danny.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-05T17:10:54Z",
+  "updated_at": "2025-12-20T12:37:14Z",
+  "requester_id": 158007664702,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013753385,
+      "body_text": "ID 为 7522 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-06T04:40:49Z",
+      "updated_at": "2025-12-06T04:40:49Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158013753387,
+      "body_text": "合并来自工单7522  \n      主题: Simpson pro throttle pedal problem  \n      描述:  I’m having a problem with the throttle pressure switch. It stopped working sporadically. It goes from nothing to all or nothing at all. The brake and clutch still worked perfectly fine with the configuration software. My number is 407-832-8856. my name is Danny.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-06T04:40:49Z",
+      "updated_at": "2025-12-06T04:40:49Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158013753952,
+      "body_text": "Hi Joseph Vance,  Please provide your order number. At the same time, please check whether the throttle pedal’s spring and pressure plate are damaged or have come loose, and verify that the RJ11 connector on the throttle is securely plugged in. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-06T04:42:57Z",
+      "updated_at": "2025-12-06T04:42:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014156515,
+      "body_text": "Yes, I have took it apart and put it back together. I have made sure the spring is making a good connection. I even tried slowly stretching the string to make sure it was getting proper pressure applied to the sensor. It was working sporadically with my finger and then it started going from 0 to 100 and then it quit working again. \r\n\r\n> ",
+      "user_id": 158007664702,
+      "created_at": "2025-12-08T22:35:25Z",
+      "updated_at": "2025-12-08T22:35:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014157298,
+      "body_text": "Also, I’m having a hard time figuring out my order number. I know that I purchased the pedals from you and then I also purchased the base plate. At a separate time \r\n\r\n> ",
+      "user_id": 158007664702,
+      "created_at": "2025-12-08T22:53:29Z",
+      "updated_at": "2025-12-08T22:53:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014158070,
+      "body_text": "Can you figure out by my address 2934 Echosassa Trail Oviedo, FL 32765\r\nJoseph Daniel Vance or Valerie vance would’ve made the purchase. It would’ve came from  vcortes15@hotmail.com.\r\nI purchased the pedals first and then I purchased the base plate second and it was probably around March of April 2025\r\n\r\n> ",
+      "user_id": 158007664702,
+      "created_at": "2025-12-08T23:12:45Z",
+      "updated_at": "2025-12-08T23:12:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014307789,
+      "body_text": "Hi Joseph Vance,  Could you please let us know which platform you purchased from and the model of your pedals? Could you provide a video via Google Drive and set the proper access permissions? In addition, please provide your contact name, phone number, and shipping address so that we can arrange a replacement throttle sensor through the corresponding platform. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T08:12:53Z",
+      "updated_at": "2025-12-11T08:12:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014328722,
+      "body_text": "Yes, absolutely I’ll take care of it this evening. Thank you so much.\r\n\r\n> ",
+      "user_id": 158007664702,
+      "created_at": "2025-12-11T15:08:38Z",
+      "updated_at": "2025-12-11T15:08:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

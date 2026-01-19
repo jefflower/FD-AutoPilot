@@ -1,0 +1,154 @@
+{
+  "id": 8726,
+  "subject": "Order: SSN4537",
+  "description_text": "Hi team,\r\n\r\nThis order did not arrive yet, I need help to know what happened and I have\r\nother problem with other order which one the vibrator was not working, 2 of\r\nthem, this one SSN3372, do you have any update of the tracking because you\r\ntold me I will have a replace of them.\r\n\r\nBest Regards,\r\n\r\nSergio Seara\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-20T01:47:58Z",
+  "updated_at": "2025-12-31T11:56:26Z",
+  "requester_id": 158007694316,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014117509,
+      "body_text": "Hi Sergio Moreira Seara,   Could you please take a screenshot of the Feedback Setting page in SIMSONN Manager? I’d like to check the configuration of your vibration motor. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-08T09:22:08Z",
+      "updated_at": "2025-12-08T09:22:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014118372,
+      "body_text": "[image: image.png]\r\n\r\nOn Mon, 8 Dec 2025 at 09:22, support@simsonn.com ",
+      "user_id": 158007694316,
+      "created_at": "2025-12-08T09:54:59Z",
+      "updated_at": "2025-12-08T09:54:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014118403,
+      "body_text": "I tested the motors, and aparecntly if I move the cable, to other place on\r\nthe controller only the one I have in the break y working now\r\n\r\nOn Mon, 8 Dec 2025 at 09:54, Sergio Moreira Seara <sergiomose96@gmail.com>\r\nwrote:\r\n\r\n> [image: image.png]\r\n>\r\n> On Mon, 8 Dec 2025 at 09:22, support@simsonn.com ",
+      "user_id": 158007694316,
+      "created_at": "2025-12-08T09:56:19Z",
+      "updated_at": "2025-12-08T09:56:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014118601,
+      "body_text": "Another thing I notice is when I have the motor in VAM on software, the\r\nstrength is stronger than when I have it in the VAM Pro (the one I need to\r\nhave for correct working, now about the tests I did it was on VAM), and\r\nsometimes when I do the test the motor finish the vibration at half of the\r\nbar of the progress of the test in the software in the only motor is working\r\n\r\nOn Mon, 8 Dec 2025 at 09:55, Sergio Moreira Seara <sergiomose96@gmail.com>\r\nwrote:\r\n\r\n> I tested the motors, and aparecntly if I move the cable, to other place on\r\n> the controller only the one I have in the break y working now\r\n>\r\n> On Mon, 8 Dec 2025 at 09:54, Sergio Moreira Seara <sergiomose96@gmail.com>\r\n> wrote:\r\n>\r\n>> [image: image.png]\r\n>>\r\n>> On Mon, 8 Dec 2025 at 09:22, support@simsonn.com ",
+      "user_id": 158007694316,
+      "created_at": "2025-12-08T10:05:35Z",
+      "updated_at": "2025-12-08T10:05:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014118672,
+      "body_text": "[image: image.png]\r\nThis is the configuration I use normally\r\n\r\nOn Mon, 8 Dec 2025 at 10:05, Sergio Moreira Seara <sergiomose96@gmail.com>\r\nwrote:\r\n\r\n> Another thing I notice is when I have the motor in VAM on software, the\r\n> strength is stronger than when I have it in the VAM Pro (the one I need to\r\n> have for correct working, now about the tests I did it was on VAM), and\r\n> sometimes when I do the test the motor finish the vibration at half of the\r\n> bar of the progress of the test in the software in the only motor is working\r\n>\r\n> On Mon, 8 Dec 2025 at 09:55, Sergio Moreira Seara <sergiomose96@gmail.com>\r\n> wrote:\r\n>\r\n>> I tested the motors, and aparecntly if I move the cable, to other place\r\n>> on the controller only the one I have in the break y working now\r\n>>\r\n>> On Mon, 8 Dec 2025 at 09:54, Sergio Moreira Seara <sergiomose96@gmail.com>\r\n>> wrote:\r\n>>\r\n>>> [image: image.png]\r\n>>>\r\n>>> On Mon, 8 Dec 2025 at 09:22, support@simsonn.com ",
+      "user_id": 158007694316,
+      "created_at": "2025-12-08T10:07:35Z",
+      "updated_at": "2025-12-08T10:07:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014119439,
+      "body_text": "Hi Sergio Moreira Seara,     I need to clarify something: for VAM motors, you must use VAM mode, not VAM Pro mode. The software provides this option because using VAM Pro mode can quickly damage the VAM motor.  Could you tell me how you have been using it? Also, which motors are currently working and which are not?",
+      "user_id": 158000445778,
+      "created_at": "2025-12-08T10:36:44Z",
+      "updated_at": "2025-12-08T10:36:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014119660,
+      "body_text": "I maintained the default settings they are VAM 30% strength and for the\r\nclutch 0-100% ratio range and the one is working now is the one on the\r\nbreak, the middle one is in the controller on motor 2\r\n\r\n",
+      "user_id": 158007694316,
+      "created_at": "2025-12-08T10:45:10Z",
+      "updated_at": "2025-12-08T10:45:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014120759,
+      "body_text": "Hi Sergio Moreira Seara,  So, two VAM units were damaged, correct? The VAM motor is not suitable for prolonged continuous vibration feedback, whereas VAM Pro does not have this issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-08T11:23:46Z",
+      "updated_at": "2025-12-08T11:23:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014121273,
+      "body_text": "[image: image.png]\r\nThis is the configuration I have, the thing is the Motor3 and Motor1 are\r\nnot working. And this happens after 2 hours of playing in all the time I\r\nused them\r\n\r\nOn Mon, 8 Dec 2025 at 11:24, support@simsonn.com ",
+      "user_id": 158007694316,
+      "created_at": "2025-12-08T11:40:10Z",
+      "updated_at": "2025-12-08T11:40:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014167550,
+      "body_text": "Hi Sergio Moreira Seara,  Please provide your contact name, address, and phone number, and we will send you two replacement VAM motors. Also, make sure to use VAM mode, not VAM Pro mode, and avoid using continuous telemetry signals such as RPM or speed. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-09T06:35:49Z",
+      "updated_at": "2025-12-09T06:35:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014211044,
+      "body_text": "Sergio Seara\r\n\r\nRua Actriz Palmira Bastos 13 1D\r\nLisboa, Lisboa 1950-003\r\nPortugal\r\n\r\n+351932620152‬\r\n\r\nTo Confirm I show to you the screenshot with the configuration:\r\n[image: image.png]\r\n\r\nOn Tue, 9 Dec 2025 at 06:36, support@simsonn.com ",
+      "user_id": 158007694316,
+      "created_at": "2025-12-09T18:46:14Z",
+      "updated_at": "2025-12-09T18:46:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014810642,
+      "body_text": "ID 为 7670 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-20T13:05:48Z",
+      "updated_at": "2025-12-20T13:05:48Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014810643,
+      "body_text": "合并来自工单7670  \n      主题: I have a problem with the vibration  \n      描述:  after few days of usage the vibration stop working in game, the break is still having a little bit of vibration but the others have not vibration can you help me?   \n Order: #SSN3372 \n Tracking number: CE326631529DE",
+      "user_id": 158000445778,
+      "created_at": "2025-12-20T13:05:49Z",
+      "updated_at": "2025-12-20T13:05:49Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158015310689,
+      "body_text": "Hi Sergio Moreira Seara,    I apologize for not responding to you sooner. I see your order has been delivered.   https://t.17track.net/en#nums=SF6047152632485   Also, here is your replacement link.   https://t.17track.net/en#nums=YT2536500706798566     Happy New Year! ",
+      "user_id": 158001343601,
+      "created_at": "2025-12-31T11:56:26Z",
+      "updated_at": "2025-12-31T11:56:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

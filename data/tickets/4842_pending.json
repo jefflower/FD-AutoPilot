@@ -1,0 +1,34 @@
+{
+  "id": 4842,
+  "subject": "Subject: Request for updates on order SSN2784",
+  "description_text": "Dear Simsonn Customer Service,\r\n\r\nApologies for reaching out every day, but I’d like to know if there are any\r\nupdates regarding order SSN2784.\r\n\r\nThank you very much for your support.\r\n\r\nBest regards,\r\nCristian Pezzotti\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-10-14T06:25:21Z",
+  "updated_at": "2025-10-14T08:26:16Z",
+  "requester_id": 158005269574,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010387117,
+      "body_text": "Hi Cristian Pezzotti,    We sincerely apologise, but our warehouse requires until today to complete the product listing. We shall dispatch your order today.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-14T06:51:48Z",
+      "updated_at": "2025-10-14T06:51:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010387530,
+      "body_text": "Dear Sirs,\r\n\r\nThank you for your update.\r\n\r\nI acknowledge that the shipment of the order is scheduled for today. I\r\nwould be grateful if you could inform me of the estimated delivery date and\r\nprovide the tracking number as soon as it becomes available.\r\n\r\nI look forward to your kind reply.\r\n\r\nYours sincerely,\r\nCristian Pezzotti\r\n\r\n---\r\n\r\nFammi sapere se vuoi aggiungere ulteriori dettagli o modificare il tono!\r\n\r\nIl mar 14 ott 2025, 08:51 support@simsonn.com ",
+      "user_id": 158005269574,
+      "created_at": "2025-10-14T07:15:34Z",
+      "updated_at": "2025-10-14T07:15:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

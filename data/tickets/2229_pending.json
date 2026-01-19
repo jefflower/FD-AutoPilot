@@ -1,0 +1,104 @@
+{
+  "id": 2229,
+  "subject": "HB Pro",
+  "description_text": "Hi, I recently picked up the new handbrake. Feels absolutely amazing but,\r\nassetto corsa is the only game that it will bind in. Everything detects it\r\nbut nothing binds. I tried the software but it won’t allow me to access the\r\nhandbrake settings. Do I need the pro pedals to make this work? Thanks\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-02T12:42:11Z",
+  "updated_at": "2025-08-09T15:44:56Z",
+  "requester_id": 158002531779,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006127957,
+      "body_text": "Hi Collin Richardson,    Have you calibrated the brake using SIMSONN Manager version 2.1.0? Once calibrated, it can be bound successfully. Which game are you unable to bind it to?",
+      "user_id": 158000445778,
+      "created_at": "2025-08-03T06:06:29Z",
+      "updated_at": "2025-08-03T06:06:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006130977,
+      "body_text": "Like I said, I tried but it doesn’t allow me to access the handbrake at all\r\nit the manager at all. The only game I’m am able to bind in is AC. Nothing\r\nelse works.\r\n\r\nOn Sun, Aug 3, 2025 at 2:06 AM service@simsonn.com ",
+      "user_id": 158002531779,
+      "created_at": "2025-08-03T12:25:32Z",
+      "updated_at": "2025-08-03T12:25:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006267750,
+      "body_text": "Hi Collin Richardson,  If AC (Assetto Corsa) can be bound correctly, there should generally be no problem with other games, provided the calibration reaches 100%. Have you also tried Dirt 2.0? This game requires changing the device type in the game settings to bind properly. Please provide a screenshot of the binding interface so I can check it for you. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-05T12:58:19Z",
+      "updated_at": "2025-08-05T12:58:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006302286,
+      "body_text": "Yea idk. I had the Simsonn original handbrake and it worked fine. The\r\nSimsonn software doesn’t recognize it either.\r\n\r\nOn Tue, Aug 5, 2025 at 8:58 AM service@simsonn.com ",
+      "user_id": 158002531779,
+      "created_at": "2025-08-05T23:59:56Z",
+      "updated_at": "2025-08-05T23:59:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006403156,
+      "body_text": "Hi Collin Richardson, Do you have a video showing the calibration and testing process in SIMSONN Manager 2.1.0? I can provide you with a VKB tool—please take a screenshot after testing so we can analyze it further. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-06T14:08:47Z",
+      "updated_at": "2025-08-06T14:08:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006552394,
+      "body_text": "I’ll be returning the handbrake.\r\n\r\nOn Tue, Aug 5, 2025 at 7:58 PM Collin Richardson <djshortstack89@gmail.com>\r\nwrote:\r\n\r\n> Yea idk. I had the Simsonn original handbrake and it worked fine. The\r\n> Simsonn software doesn’t recognize it either.\r\n>\r\n> On Tue, Aug 5, 2025 at 8:58 AM service@simsonn.com ",
+      "user_id": 158002531779,
+      "created_at": "2025-08-08T14:38:16Z",
+      "updated_at": "2025-08-08T14:38:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006600241,
+      "body_text": "Hi Collin Richardson,  ​If AC can be bound, then ACC and Dirt 2.0 should also be bindable, as they use exactly the same output data format and will recognize the same data. You can use the VKB tool to verify whether the signals are functioning correctly. To help us quickly identify and resolve the issue, please follow my suggestion and provide screenshots of both the VKB tool and SIMSONN Manager. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-09T15:29:45Z",
+      "updated_at": "2025-08-09T15:29:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006600850,
+      "body_text": "That’s incorrect. AC reads raw HID signal. Modern sims that rely on\r\nDirectInput (EA WRC, Dirt Rally 2.0, LMU, etc.) cannot bind it.\r\n\r\n I’ve also previously stated that the Simsonn manager does not recognize\r\nthe HB at all so there’s nothing to screenshot. I cannot select it all. It\r\njust says that the pedals aren’t connected Idk what the VKB tool is. I’ve\r\ninitiated a return.\r\n\r\n\r\nOn Sat, Aug 9, 2025 at 11:29 AM service@simsonn.com ",
+      "user_id": 158002531779,
+      "created_at": "2025-08-09T15:37:16Z",
+      "updated_at": "2025-08-09T15:37:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006603690,
+      "body_text": "Hi Collin Richardson,      EA WRC, Dirt Rally 2.0, and LMU have all performed very well in our testing environment. If you return products at will, we have to bear the full cost of the expensive two-way shipping and the product loss. In many cases, the shipping costs exceed the value of the returned product, which often ends up being destroyed. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-09T15:44:55Z",
+      "updated_at": "2025-08-09T15:44:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

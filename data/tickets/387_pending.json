@@ -1,0 +1,34 @@
+{
+  "id": 387,
+  "subject": "I wish to cancel order please. Order #SSN1728",
+  "description_text": "I am very sorry but i need to cancel this order. I am new to the sim game\r\nand ordered this thinking it would fit my pedals. I now know that they will\r\nnot..So i now longer need this item. I am sorry for any inconvenience. Next\r\ntime i will do more research. Once more i apologize. Order number is\r\n#SSN1728.\r\n\r\nMr David Pennycooke\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-12T17:46:05Z",
+  "updated_at": "2025-06-17T10:56:52Z",
+  "requester_id": 158001461914,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003015264,
+      "body_text": "Hi David Pennycooke,    Your parcel has already been shipped and we are unable to cancel it for you, we are very sorry. May I ask what pedal you are using, it is reasonable to say that it is adaptable to any pedal as long as you use Simsonn's control box and also the software. The only problem is how to connect it to the top of the pedal. If it's a similarly shaped pedal to ours, then it's fully compatible.",
+      "user_id": 158001343601,
+      "created_at": "2025-06-13T09:13:16Z",
+      "updated_at": "2025-06-13T09:13:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003031212,
+      "body_text": "I have the Logitech G pro peddles..\r\n\r\n\r\n",
+      "user_id": 158001461914,
+      "created_at": "2025-06-13T13:52:33Z",
+      "updated_at": "2025-06-13T13:52:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": 1102,
+  "subject": "Missing Product",
+  "description_text": "Dear Simsonn,\r\nI received my package, however, my order should have contained two products\r\nof yours, the Plus X pedals, that I received, and a set of elastomers that\r\nseems to be missing. Please let me know what should be done in such cases.\r\nOrder #SSN1703\r\nBest regards\r\nAndrea Perfetto\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-07-02T09:42:21Z",
+  "updated_at": "2025-07-04T15:17:34Z",
+  "requester_id": 158001647545,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004374383,
+      "body_text": "Hi Andrea Perfetto,    It seems the item was accidentally omitted from the shipment—our apologies for that. Would it be acceptable if we refund you the amount for the elastomer? The current combination of red, yellow, and blue dampers we provide is already more than sufficient and can support pedal forces of up to 140kg.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T14:27:50Z",
+      "updated_at": "2025-07-02T14:27:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004406968,
+      "body_text": "Yes that would be fine, thank you for the quick answer.\r\n\r\nIl mer 2 lug 2025, 16:28 service@simsonn.com ",
+      "user_id": 158001647545,
+      "created_at": "2025-07-02T21:35:18Z",
+      "updated_at": "2025-07-02T21:35:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

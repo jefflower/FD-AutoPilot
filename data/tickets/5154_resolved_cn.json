@@ -1,0 +1,55 @@
+{
+  "id": 5154,
+  "subject": "Plus X 踏板驱动程序错误",
+  "description_text": "你们好。我接上 Plus X 踏板后，短时间内踏板就停止响应了。重启电脑后，我在 Simsonn 软件中看到“已断开连接”状态，在 Windows 设备屏幕上看到“驱动程序错误”。我安装了你们软件的最新更新，但找不到如何手动加载驱动程序。能帮帮我吗？",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-10-21T21:49:43Z",
+  "updated_at": "2025-10-26T12:27:13Z",
+  "requester_id": 158005956678,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010841697,
+      "body_text": "嗨 Олег Загнитко， 请确保踏板的 USB 直接连接到您计算机的后置 USB 3.0（蓝色）端口。请勿使用 USB 集线器。 如果问题仍然存在，请按照以下步骤操作： 按住控制盒上的升级按钮； 连接 USB 数据线 — 此时，SIMSONN Manager 2.1.2 将显示设备已进入 SIMSONN 刷机模式； 前往“设置”→“更新”→“手动更新固件”→“pedals”→“firmware”→“pedals-plusx.sfu”； 更新完成后，请再次测试设备。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-22T02:40:01Z",
+      "updated_at": "2025-10-22T02:40:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010859810,
+      "body_text": "按住按钮并重新连接 USB 数据线没有任何改变。手动更新的链接被禁用，没有响应。我尝试使用旧版软件，但结果相同。我猜只有在旧版驱动程序的情况下，该按钮才会被启用。\n我尝试通过 Windows 设备选项卡手动删除驱动程序，但由于某种原因，该选项被禁用了。\n我该如何移除驱动程序？",
+      "user_id": 158005956678,
+      "created_at": "2025-10-22T07:59:23Z",
+      "updated_at": "2025-10-22T07:59:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010891256,
+      "body_text": "问题已解决。谢谢帮助",
+      "user_id": 158005956678,
+      "created_at": "2025-10-22T16:00:42Z",
+      "updated_at": "2025-10-22T16:00:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011110595,
+      "body_text": "",
+      "user_id": 158005956678,
+      "created_at": "2025-10-26T12:27:12Z",
+      "updated_at": "2025-10-26T12:27:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

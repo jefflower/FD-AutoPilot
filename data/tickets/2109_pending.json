@@ -1,0 +1,44 @@
+{
+  "id": 2109,
+  "subject": "Look to make a purchase",
+  "description_text": "Hey,\r\n\r\nI was looking at buying some pedals from you guys and just had a quick\r\nquestion before I went ahead with the purchase. As a Canadian will I have\r\nto worried about getting other shipping fees at my door or do I not need to\r\nworry about that?\r\n\r\nThank\r\n\r\nDaley\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-30T15:03:38Z",
+  "updated_at": "2025-08-01T10:07:31Z",
+  "requester_id": 158002437241,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005862624,
+      "body_text": "Hi Daley Pierce,    Our product prices already include shipping costs. However, when shipping from the US or China to Canada, there may be customs duties that you would need to pay. That said, it’s not guaranteed that you will always be charged duties.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-30T23:01:43Z",
+      "updated_at": "2025-07-30T23:01:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005908849,
+      "body_text": "Ah ok,\r\n\r\nSo pretty much have to just take the chance I guess. If whatever happens\r\nand I want to do a refund/return, are the return shipping costs on me?\r\n\r\nThanks\r\n\r\nDaley\r\n\r\n\r\nOn Wed, Jul 30, 2025, 7:01 p.m. support@simsonn.com ",
+      "user_id": 158002437241,
+      "created_at": "2025-07-31T17:04:43Z",
+      "updated_at": "2025-07-31T17:04:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005985518,
+      "body_text": "Hi Daley Pierce,    Don't worry, shipping to Canada usually does not incur any taxes. Regarding returns, if the product is defective, we will cover all costs.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-01T10:07:30Z",
+      "updated_at": "2025-08-01T10:07:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

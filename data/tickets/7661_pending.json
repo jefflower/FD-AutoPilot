@@ -1,0 +1,104 @@
+{
+  "id": 7661,
+  "subject": "Orders Order #SSN4321",
+  "description_text": "Hello, I see that the order is still not fulfilled due to lack of white\r\nelastomer (?). Can you send it without it? I dont need them at all.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-08T08:00:35Z",
+  "updated_at": "2025-12-23T11:02:30Z",
+  "requester_id": 158007693916,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014118718,
+      "body_text": "Hi Dawid Hagalaz,    We apologize for the inconvenience. Please provide a photo so we can verify with our warehouse. Additionally, if you no longer require the white elastomer, we can process a refund for that item.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-08T10:09:30Z",
+      "updated_at": "2025-12-08T10:09:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014118844,
+      "body_text": "Hello,\r\n\r\nThe package did not arrive yet.\r\n\r\nI think this is due to lack of white elastomer (but im not sure)\r\n\r\nCan you check what part is missing from order and holding it from being\r\nsent? Kindly let me know.\r\n\r\nPlease advise when package will be sent and provide tracking number or\r\npackage number. Thank you!\r\n\r\n\r\n\r\n\r\n",
+      "user_id": 158007693916,
+      "created_at": "2025-12-08T10:14:51Z",
+      "updated_at": "2025-12-08T10:14:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014119083,
+      "body_text": "Hi Dawid Hagalaz,    We sincerely apologize, but the pedals are currently sold out at our German warehouse. Shipping from China will incur customs duties. Therefore, we will ship your order after restocking at the German warehouse on Wednesday.  https://t.17track.net/en#nums=YT2533700709743204",
+      "user_id": 158001343601,
+      "created_at": "2025-12-08T10:23:44Z",
+      "updated_at": "2025-12-08T10:23:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014119216,
+      "body_text": "Hi,\r\n\r\nOkay understood, will compenastion be possible due to lack of sold out\r\ninformation and prolonged shipping time when i picked express shipping?\r\nThanks.\r\n\r\n\r\n",
+      "user_id": 158007693916,
+      "created_at": "2025-12-08T10:29:03Z",
+      "updated_at": "2025-12-08T10:29:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014120086,
+      "body_text": "Hi Dawid Hagalaz,  We will refund the additional shipping charges incurred.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-08T11:01:12Z",
+      "updated_at": "2025-12-08T11:01:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014122877,
+      "body_text": "Hello,\r\n\r\nThank you for help.\r\n\r\nCan you kindly advise if I will automatically receive tracking number for\r\nsecond package (pedals) or shall I contact you on friday 12.12.2025?\r\n\r\n",
+      "user_id": 158007693916,
+      "created_at": "2025-12-08T12:33:48Z",
+      "updated_at": "2025-12-08T12:33:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014402483,
+      "body_text": "Hello,\r\n\r\nCan you check if pedals have been sent from germany?\r\n\r\n",
+      "user_id": 158007693916,
+      "created_at": "2025-12-12T16:52:07Z",
+      "updated_at": "2025-12-12T16:52:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014507489,
+      "body_text": "Hello,\r\n\r\nKind reminder\r\n\r\n",
+      "user_id": 158007693916,
+      "created_at": "2025-12-15T11:56:55Z",
+      "updated_at": "2025-12-15T11:56:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014639227,
+      "body_text": "Hello,\r\n\r\nI got information that pedal set is being sent from Germany. but there was\r\nno pedals in stock and the new batch came on Tuesday 11.12.2025\r\n\r\nI placed my order on 2.12.2025 with express shipping 5-7 days...\r\n\r\nPlease check whether the pedals were sent from Germany to my address in\r\nPoland and share tracking number or give me information where are they.\r\n\r\nThank you.\r\n\r\n",
+      "user_id": 158007693916,
+      "created_at": "2025-12-17T16:20:05Z",
+      "updated_at": "2025-12-17T16:20:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "id": 7933,
+  "subject": "Is this the same company or a fake company",
+  "description_text": "I ordered pedals from an amazon page who claims to be the simsonn company,\r\nthe email in the user manual said to email support@simsonn.com and I wanted\r\nto make sure these are through the same entity and that the amazon page\r\nwasn't a fake page to look like you.\r\n\r\nhttps://www.amazon.com/dp/B0DJ29V2Z7?ref=ppx_yo2ov_dt_b_fed_asin_title\r\n\r\nThis is the amazon page I purchased from.\r\n\r\nThank you for your time,\r\nMatthew\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-12-11T00:47:51Z",
+  "updated_at": "2025-12-18T10:26:37Z",
+  "requester_id": 158007750675,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014296940,
+      "body_text": "Hi Matt,  The link you provided is indeed an authorized SIMSONN store. Please rest assured — it is an official partner shop, and all products and after-sales services are fully guaranteed. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T01:06:54Z",
+      "updated_at": "2025-12-11T01:06:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014296960,
+      "body_text": "ID 为 7932 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T01:07:35Z",
+      "updated_at": "2025-12-11T01:07:35Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014296961,
+      "body_text": "合并来自工单7932  \n      主题: Pedal plate  \n      描述:  \n  I ordered through amazon and I received the pedals, however the plate for me to mount the pedals to which I need and paid for did not arrive with the pedals.   \n amazon.com/dp/B0DJ29V2Z7?ref=ppx_yo2ov_dt_b_fed_asin_title \n   \n This is the link to the pedals purchased and you can see the description is Plus X-P2-H2-Plate and shows the imagery of the plate. \n   \n This is clearly linked to the Simsonn store page on amazon as well but when I reached out to amazon they wanted to start a full return and refund instead of just fixing the issue. \n   \n Provided in this email is a picture of everything that was in the box. \n   \n Thank you for your time, \n Matthew",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T01:07:35Z",
+      "updated_at": "2025-12-11T01:07:35Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014296973,
+      "body_text": "Hi Matt,  Could you please provide your Amazon order number? I will check the details with our operations team and get back to you as soon as possible. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T01:08:36Z",
+      "updated_at": "2025-12-11T01:08:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014297125,
+      "body_text": "114-6846215-3795435\r\nThis is my link for the purchase. I don’t know if you were able to see my\r\nother email but I purchased the option that should have been with the base\r\nplate and the base plate for the pedals never arrived. I was wondering if I\r\ncould just get the base plate sent to me directly as Amazon was wanting me\r\nto refund the entire order. Provided is a picture of all the contents\r\nreceived.\r\n\r\n",
+      "user_id": 158007750675,
+      "created_at": "2025-12-11T01:15:11Z",
+      "updated_at": "2025-12-11T01:15:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014683073,
+      "body_text": "已补发底板，邮箱已回复",
+      "user_id": 158007774607,
+      "created_at": "2025-12-18T10:26:34Z",
+      "updated_at": "2025-12-18T10:26:34Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

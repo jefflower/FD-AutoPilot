@@ -1,0 +1,64 @@
+{
+  "id": 8937,
+  "subject": "SSN5181",
+  "description_text": "Hey guys I meant to get my order sent to my local mail office. Either the\r\nups/ fed ex or whatever you all use. I just want to pick it up from there\r\nrather than in being sent to my house. Is this possible?\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-23T01:53:15Z",
+  "updated_at": "2025-12-30T10:16:30Z",
+  "requester_id": 158008315786,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014953248,
+      "body_text": "Hi Andrew Carelock,  May I confirm whether you would like to modify the delivery address? Are you planning to change it to a post office address? We are a bit concerned that using a post office address may involve some delivery or pickup risks, so we would like to confirm this with you first. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-23T03:46:43Z",
+      "updated_at": "2025-12-23T03:46:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014954917,
+      "body_text": "Hi Andrew Carelock,    If you need to change your address, please provide it as soon as possible.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-23T05:45:14Z",
+      "updated_at": "2025-12-23T05:45:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014980081,
+      "body_text": "I just found out that I can update the delivery instructions with the\r\nmailer to have them hold it for pick up. Sorry for causing any headache on\r\nyour end, just keep the mailing address the same and I’ll make sure to\r\nchange what I need when I get the tracking number. Are yall using ups or\r\nfedex?\r\n\r\nOn Mon, Dec 22, 2025 at 9:45 PM service@simsonn.com ",
+      "user_id": 158008315786,
+      "created_at": "2025-12-23T14:30:19Z",
+      "updated_at": "2025-12-23T14:30:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015024063,
+      "body_text": "Hi Andrew Carelock,    The pedal will be shipped via FedEx. The other two packages will be sent from China without express delivery, as express shipments incur customs duties.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-24T06:45:55Z",
+      "updated_at": "2025-12-24T06:45:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015024099,
+      "body_text": "Bummer that everything is sent separately. Please send the tracking numbers\r\nfor all shipments\r\n\r\nOn Tue, Dec 23, 2025 at 10:46 PM service@simsonn.com ",
+      "user_id": 158008315786,
+      "created_at": "2025-12-24T06:48:18Z",
+      "updated_at": "2025-12-24T06:48:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

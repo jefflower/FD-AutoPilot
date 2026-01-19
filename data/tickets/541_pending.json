@@ -1,0 +1,64 @@
+{
+  "id": 541,
+  "subject": "Pro X Pedal upgrade",
+  "description_text": "Hello\r\nI purchased the original Pro X pedals in December of 24.   I see now there\r\nare upgrades to this.  I purchased the upgrade kit from Amazon but it\r\ndoesn't appear to come with the new shorter break spring.   Can you let me\r\nknow what the size of that spring is?\r\n\r\n\r\n\r\n\r\n\r\nThanks\r\n\r\nBrian Pinnow\r\n769-8354\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-06-17T18:04:55Z",
+  "updated_at": "2025-06-23T10:52:20Z",
+  "requester_id": 158001626072,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003405244,
+      "body_text": "你好，Brian Pinnow，  请拍一张升级套件的照片，以便我检查是否缺少任何部件。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-18T08:58:59Z",
+      "updated_at": "2025-06-18T08:58:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003466045,
+      "body_text": "Can you translate to English?\r\n\r\nBrian Pinnow\r\n608 769 8354\r\n\r\n\r\nOn Wed, Jun 18, 2025 at 3:59 AM support@simsonn.com ",
+      "user_id": 158001626072,
+      "created_at": "2025-06-18T15:06:31Z",
+      "updated_at": "2025-06-18T15:06:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003471954,
+      "body_text": "I have not received it yet, but the picture doesn't show the shorter break\r\nspring, I just want to make sure its supposed to be included.\r\n\r\n[image: image.png]\r\nBrian Pinnow\r\n769-8354\r\n\r\n\r\nOn Wed, Jun 18, 2025 at 3:59 AM support@simsonn.com ",
+      "user_id": 158001626072,
+      "created_at": "2025-06-18T16:23:51Z",
+      "updated_at": "2025-06-18T16:23:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003679661,
+      "body_text": "Hi Brian Pinnow,  Please provide a photo of the current spring on your ProX pedal. We can send you a replacement spring and adjust our connector accordingly. Apologies for the oversight—we forgot that the older version of the ProX doesn't use the short spring.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T02:49:30Z",
+      "updated_at": "2025-06-22T02:49:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003686356,
+      "body_text": "Hi Brian Pinnow,     Please don't worry, this spring will be included in the package.",
+      "user_id": 158001343601,
+      "created_at": "2025-06-23T10:52:20Z",
+      "updated_at": "2025-06-23T10:52:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

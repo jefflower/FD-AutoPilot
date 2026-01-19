@@ -1,0 +1,64 @@
+{
+  "id": 7380,
+  "subject": "Order Cancellation",
+  "description_text": "Hello ,\r\n\r\nI would like to request that my order be cancelled and refunded to my\r\ncredit card ending in 94007. I am not pleased with the time to ship and a\r\nlack of communication which makes me nervous regarding this transaction.\r\nI’ve attached a screenshot from my card with the transaction day and amount\r\nfor further verification.\r\n\r\nBen Dyer\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-04T04:09:30Z",
+  "updated_at": "2025-12-04T06:35:31Z",
+  "requester_id": 158007421513,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013157735,
+      "body_text": "Hi Ben D, Please provide the date and amount of your order payment, and I will help you check the order status. Generally, once the payment is successful, we will ship the items in the order they were placed. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-01T05:16:54Z",
+      "updated_at": "2025-12-01T05:16:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013207268,
+      "body_text": "It was for $265.80 places on Thursday paid with an Amex ending in 4007\r\n\r\nRespectfully,\r\n\r\nBen Dyer\r\n\r\n\r\n\r\nOn Mon, Dec 1, 2025 at 00:17 support@simsonn.com ",
+      "user_id": 158007421513,
+      "created_at": "2025-12-01T16:14:16Z",
+      "updated_at": "2025-12-01T16:14:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013369886,
+      "body_text": "ID 为 7046 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T06:31:50Z",
+      "updated_at": "2025-12-04T06:31:50Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158013369888,
+      "body_text": "合并来自工单7046  \n      主题: Order Confirmation  \n      描述:  Hello, \n   \n I have submitted an order on Thursday which I do understand was thanksgiving and might delay orders, but I haven’t received an order confirmation email yet. I have checked spam and it’s not there and I tried signing in with shop to see if there was order status info but it says no orders have been placed.  I was hoping to receive a status update soon.  \n   \n -Ben Dyer ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T06:31:50Z",
+      "updated_at": "2025-12-04T06:31:50Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158013370023,
+      "body_text": "Hi Ben D,     ​We sincerely apologize for the delayed reply. Due to the high volume of messages during the Black Friday season, we were unable to respond in time. Your package has been shipped from our US warehouse via FedEx, and below is the latest tracking information. Your order number is SSN3944. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T06:35:31Z",
+      "updated_at": "2025-12-04T06:35:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "id": 2006,
+  "subject": "Issue with VAM Rumble Motor",
+  "description_text": "\nHello!\nI am using Simsonn pedals.\nRecently, I purchased the VAM Rumble Motor and have been using it with your Simsonn app (latest version).\nI’ve encountered the following issues:\n* \nIn most games, the motors do not work properly—for example, in  LeMans Ultimate . When launching the game, the motor just vibrates nonstop without interruption.\n* \nSome settings cannot be adjusted. I move the sliders, change the intensity, strength, and frequency, but the vibration remains unchanged. The functions that cannot be modified are highlighted in red in the image below.\n \nThat said, I tried using the VAM Rumble Motor with the  Simhub app—and the situation is better there. The same game,  LeMans Ultimate , works fine, and all settings can be adjusted.\nI would really like your Simsonn app to work correctly so that I don’t have to rely on third-party applications.\n\n\nThanks a lot.\n--\nСтанислав Носов\nОтправлено из Почты  Mail\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-07-28T09:18:36Z",
+  "updated_at": "2025-07-31T00:33:42Z",
+  "requester_id": 158002374468,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005724384,
+      "body_text": "\nI can’t follow this link and view the ticket. When I try to access it, I’m prompted to log in. I click 'I forgot my password,' but then nothing happens\n\n \n>Понедельник, 28 июля 2025, 12:23 +03:00 от support@simsonn.com ",
+      "user_id": 158002374468,
+      "created_at": "2025-07-28T09:40:41Z",
+      "updated_at": "2025-07-28T09:40:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005724400,
+      "body_text": "\nHere is a screenshot of the error\n\n>Понедельник, 28 июля 2025, 12:40 +03:00 от Носов Станислав <s.nosov@mail.ru>:\n> \n>I can’t follow this link and view the ticket. When I try to access it, I’m prompted to log in. I click 'I forgot my password,' but then nothing happens\n>\n> \n>>Понедельник, 28 июля 2025, 12:23 +03:00 от  support@simsonn.com < support@simsonn.com >:\n>> \n>>Hi Носов Станислав\n>>We would like to acknowledge that we have received your request and a ticket has been created.\n>>A support representative will be reviewing your request and will send you a personal response.(usually within 24 hours).\n>>\n>>To view the status of the ticket or add comments, please visit\n>>https://simsonn.freshdesk.com/helpdesk/tickets/2006?follow=email\n>>\n>>Thank you for your patience.\n>>View ticket\n>>If the button doesn't work, copy-paste this URL in your browser's address bar:  https://simsonn.freshdesk.com/helpdesk/tickets/2006?follow=email\n>>Regards,\n>>simsonn Support Team\n>>2006:4206036 \n> \n>--\n>Станислав Носов\n>Отправлено из Почты  Mail\n--\nСтанислав Носов\nОтправлено из Почты  Mail\r\n",
+      "user_id": 158002374468,
+      "created_at": "2025-07-28T09:42:20Z",
+      "updated_at": "2025-07-28T09:42:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005724625,
+      "body_text": "Hi Носов Станислав,  Вы используете версию SIMSONN Manager 2.1.0? В настоящее время она поддерживает чуть более десяти игр, а добавление новых игр требует некоторого времени для обновления. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-28T10:13:42Z",
+      "updated_at": "2025-07-28T10:13:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005725477,
+      "body_text": "\nBut i saw LMU is in your list. So it should work.\n\nAnd what about my second question? This is not related to a specific game. In Simson Manager I can't change the effect strength and the frequency in hertz.\n\nSome settings cannot be adjusted. I move the sliders, change the intensity, strength, and frequency, but the vibration remains unchanged. The functions that cannot be modified are highlighted in red in the image below.\n\n \n>Понедельник, 28 июля 2025, 13:13 +03:00 от support@simsonn.com ",
+      "user_id": 158002374468,
+      "created_at": "2025-07-28T11:51:48Z",
+      "updated_at": "2025-07-28T11:51:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005780195,
+      "body_text": "Hi Носов Станислав,  We will check it first and then get back to you. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-29T15:23:29Z",
+      "updated_at": "2025-07-29T15:23:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005863739,
+      "body_text": "Hi Носов Станислав,  In SIMSONN Manager test mode, the effect of telemetry intensity settings may not be fully reflected, but it should work properly during actual gameplay. If you are using VAM motors, we recommend avoiding continuous vibration telemetry types and limiting the intensity to 50% or below to prevent motor damage. For VAM Pro, there are no such restrictions. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-31T00:33:42Z",
+      "updated_at": "2025-07-31T00:33:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

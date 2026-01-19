@@ -1,0 +1,64 @@
+{
+  "id": 8529,
+  "subject": "Order SSN4869 – Status",
+  "description_text": "Hello,\r\n\r\nI placed and confirmed order SSN4869 on 15.12.2025. I also paid extra for\r\nexpress shipping.\r\n\r\nAs of today, there has been no update or change in the order status.\r\n\r\nCould you please confirm the current status of my order and provide an\r\nestimated shipping date?\r\n\r\nThank you.\r\n\r\nBest regards,\r\nDarian\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-17T18:28:12Z",
+  "updated_at": "2025-12-23T09:00:51Z",
+  "requester_id": 158007851045,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014716948,
+      "body_text": "Since you did not reply within 24 hours, if the order is not shipped and provided with a valid tracking number by the end of this week, I will request a full refund through my payment provider.     Regards",
+      "user_id": 158007851045,
+      "created_at": "2025-12-18T19:30:27Z",
+      "updated_at": "2025-12-18T19:30:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158014748015,
+      "body_text": "Hi Darian Mihovilović,    Your order was originally scheduled to ship from our German warehouse, but due to shipping delays, the goods arrived later than expected. They will now ship next Monday. We will issue a $30 refund as compensation. We sincerely apologize for the inconvenience caused!",
+      "user_id": 158001343601,
+      "created_at": "2025-12-19T08:32:52Z",
+      "updated_at": "2025-12-19T08:32:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014937927,
+      "body_text": "Hi,     You stated that the order would ship this Monday and today is Monday evening. There is still no tracking number and no shipping confirmation.     If I do not receive a valid tracking number within the next 24 hours, I will proceed with a full refund request through my payment provider, regardless of the proposed $30 compensation.     Please confirm shipment immediately.",
+      "user_id": 158007851045,
+      "created_at": "2025-12-22T20:43:22Z",
+      "updated_at": "2025-12-22T20:43:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158014947312,
+      "body_text": "Hi Darian Mihovilović,    will check the shipping status for you today. Due to the peak season, order processing has been delayed, and we sincerely apologize for this. We will handle your order as quickly as possible and keep you updated.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-22T23:47:41Z",
+      "updated_at": "2025-12-22T23:47:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014962835,
+      "body_text": "Hi Darian Mihovilović,    We apologize for the delay. Your order has been shipped, and we have updated your shipping notification.  https://www.dhl.com/us-en/home/tracking.html?tracking-id=CE326637623DE",
+      "user_id": 158001343601,
+      "created_at": "2025-12-23T09:00:51Z",
+      "updated_at": "2025-12-23T09:00:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

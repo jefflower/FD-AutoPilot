@@ -1,0 +1,64 @@
+{
+  "id": 1079,
+  "subject": "Plus X pedals",
+  "description_text": "Hello,\r\n\r\nI recently bought some Plus X pedals. I have to a fanatec csl DD to drive\r\nwith it.\r\n\r\nI have some interférences between the base and the pedals. Turning the\r\nwheel make my brake input go wild.\r\n\r\n\r\nWould you be able to help me? Or present to me some refund options?\r\n\r\nThank you,\r\nCelant Thomas\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-07-01T18:37:35Z",
+  "updated_at": "2025-07-02T07:02:17Z",
+  "requester_id": 158001869366,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004362677,
+      "body_text": "Hi Thomas Celant,  Please connect the green wire from the main controller to a screw or metal bracket on the pedal for testing. In our test environment, we also used the Fanatec CSL DD 8Nm wheel base, and it worked perfectly without any issues. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T01:18:48Z",
+      "updated_at": "2025-07-02T01:18:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004363249,
+      "body_text": "Hello,\r\n\r\nIt is actually connected to a point on my rig. On what part exactly should\r\nI attach it?\r\n\r\nLe mer. 2 juil. 2025, 03:19, service@simsonn.com ",
+      "user_id": 158001869366,
+      "created_at": "2025-07-02T05:19:13Z",
+      "updated_at": "2025-07-02T05:19:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004363328,
+      "body_text": "Hi Thomas Celant,    You can connect the green grounding wire to the silver screw post near the brake sensor. To do this, loosen one of the M6 screws, insert the spring terminal of the green wire into the gap between the screw and the bracket, and then tighten the screw to secure it.  This issue is typically caused by using a Fanatec wheelbase along with a PC or wall outlet that lacks proper grounding, which can lead to static interference or electrical instability.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T05:58:42Z",
+      "updated_at": "2025-07-02T05:58:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004363407,
+      "body_text": "One of those black screws directly on the pedals?\r\n\r\nLe mer. 2 juil. 2025, 07:58, service@simsonn.com ",
+      "user_id": 158001869366,
+      "created_at": "2025-07-02T06:29:33Z",
+      "updated_at": "2025-07-02T06:29:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004363526,
+      "body_text": "Hi，Thomas Celant，     ​You can try touching these areas first, then rotate the steering wheel to test whether the interference is resolved. Once confirmed, you can proceed to secure them in place. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T07:02:17Z",
+      "updated_at": "2025-07-02T07:02:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

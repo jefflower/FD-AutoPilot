@@ -1,0 +1,45 @@
+{
+  "id": 7576,
+  "subject": "信息",
+  "description_text": "您好，我今天本该收到包裹，但不幸的是由于紧急情况我不在家。我想知道他们周二是否会再派送，还是我必须取消订单？如果他们再派送，我下午1点以后有空，之前我在工作。无论如何，我留下我的电话号码 3495865118，这样如果他们给我打电话，我会告诉他们放在哪里。我希望能今天或最迟明天得到消息。\n\n包裹追踪号码：*934C00071694F*\n订单号码：# 407-9518134-4488348\n\n请告诉我，谢谢。",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-06T17:51:30Z",
+  "updated_at": "2025-12-11T08:10:17Z",
+  "requester_id": 158007171292,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013962383,
+      "body_text": "在这里回复我，我不知道如何使用工单。\n\n2025年12月6日星期六下午6:51，service@simsonn.com <service@simsonn.com> 写道：\n\n> 嗨，Salvo De Stradis\n>\n> 我们已收到您的请求，并已创建工单。\n> 一位客服代表将审查您的请求并向您发送个人回复。（通常在24小时内）\n>\n> 要查看工单状态或添加评论，请访问\n> https://simsonn.freshdesk.com/helpdesk/tickets/7576?follow=email\n>\n> 感谢您的耐心等待。\n> 查看工单\n> <https://simsonn.freshdesk.com/helpdesk/tickets/7576?follow=email>\n> *如果按钮不起作用，请将此URL复制粘贴到您浏览器的地址栏中：*https://simsonn.freshdesk.com/helpdesk/tickets/7576?follow=email\n>\n> 此致，\n> simsonn 支持团队\n>\n> 7576:4206036",
+      "user_id": 158007171292,
+      "created_at": "2025-12-06T18:02:57Z",
+      "updated_at": "2025-12-06T18:02:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014307568,
+      "body_text": "我已收到订单，谢谢？\n\n2025年12月11日星期四上午9:03，General and sales enquiries <service@simsonn.com> 写道：\n\n> 您好，Salvo，您能致电当地运输公司 803 160 协调时间吗？\n>\n> ------------------------------\n> service@simsonn.com\n>\n>\n> *",
+      "user_id": 158007171292,
+      "created_at": "2025-12-11T08:06:22Z",
+      "updated_at": "2025-12-11T08:06:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014307688,
+      "body_text": "您好，Salvo De Stradis，好的，我正要向您提供当地物流联系方式。收到货件后就可以了。如果您遇到任何问题，请随时通过电子邮件联系我们。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T08:10:17Z",
+      "updated_at": "2025-12-11T08:10:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

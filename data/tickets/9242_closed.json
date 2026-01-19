@@ -1,0 +1,54 @@
+{
+  "id": 9242,
+  "subject": "Alimentation pour les VAM pro",
+  "description_text": "Bonjour,\r\n\r\nJe pense acheter les VAM pro avec les pédales Plus X. Ma question est de\r\nsavoir s’il est possible d’avoir une alimentation avec un câble français,\r\ncar sur les photos il est montré un câble anglais. Si oui, est-ce qu’il\r\nfaut que je fasse quelque-chose lors de la commande ?\r\n\r\nMerci et bonne journée\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-12-26T15:51:04Z",
+  "updated_at": "2025-12-28T14:23:33Z",
+  "requester_id": 158008773994,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015108152,
+      "body_text": "De plus, est-ce que les options \"u shape mounting bracket\" permettent de mettre les VAM pro à l’horizontal et non pas à la vertical comme avec les supports originaux.     Merci",
+      "user_id": 158008773994,
+      "created_at": "2025-12-26T17:34:06Z",
+      "updated_at": "2025-12-26T17:34:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015147047,
+      "body_text": "Hi Tom Rouillon,  We offer multiple types of power plugs and will send the one corresponding to your country. For orders to France, the EU plug is sent by default. Additionally, the optional U-shaped bracket supports horizontal installation of the motor. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T02:50:26Z",
+      "updated_at": "2025-12-28T02:50:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015164014,
+      "body_text": "Merci beaucoup !     Bonne journée",
+      "user_id": 158008773994,
+      "created_at": "2025-12-28T14:23:18Z",
+      "updated_at": "2025-12-28T14:23:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015164035,
+      "body_text": "",
+      "user_id": 158008773994,
+      "created_at": "2025-12-28T14:23:32Z",
+      "updated_at": "2025-12-28T14:23:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ]
+}

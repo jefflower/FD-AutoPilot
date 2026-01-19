@@ -1,0 +1,44 @@
+{
+  "id": 4007,
+  "subject": "Heel rest dimensions",
+  "description_text": "Hi there\r\n\r\nAre you able to provide the measurements for the baseplate and the heel\r\nrest?\r\n\r\nI have a two pedal set and want to make sure I can have the spacing\r\ncorrect. Can you share the holes measurements?\r\n\r\nI am also interested in adding bass shakers, so knowing the total dimension\r\nof the base plate, and the height of the heel rest spacers would be useful.\r\nThank you!\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-20T23:34:35Z",
+  "updated_at": "2025-09-23T09:01:00Z",
+  "requester_id": 158001709759,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009102343,
+      "body_text": "Hi Chanho,    Here is the information you require. We hope it proves helpful. Should you require anything further, please do not hesitate to contact us.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-22T11:24:51Z",
+      "updated_at": "2025-09-22T11:24:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009146930,
+      "body_text": "Hi, thank you for the fast answer!\r\n\r\nI am curious in the Simsonn Manager software there is a maximum force (kg)\r\nsetting\r\n\r\nIs this kg for pressure on the pedal plate, or at the load cell sensor?\r\n\r\nAlso, what does changing the elastomer from soft/medium/hard do in the\r\nsoftware? I know how to change them on the physical pedal, but what is this\r\nsetting?\r\n\r\nThank you\r\nChanho\r\n\r\nOn Mon, 22 Sept 2025, 23:25 service@simsonn.com, ",
+      "user_id": 158001709759,
+      "created_at": "2025-09-23T05:49:29Z",
+      "updated_at": "2025-09-23T05:49:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009160880,
+      "body_text": "Hello, adjusting the soft/medium/hard settings for the elastic element within the software determines the upper limit for the maximum force you can set. Once the maximum force (kg) is configured in the software, any force exceeding this value will not be recognised. We recommend performing manual calibration first before setting an appropriate value.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-23T09:01:00Z",
+      "updated_at": "2025-09-23T09:01:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

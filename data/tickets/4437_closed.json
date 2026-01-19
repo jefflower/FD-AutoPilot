@@ -1,0 +1,24 @@
+{
+  "id": 4437,
+  "subject": "SSN2784 Notizie",
+  "description_text": "Ciao mi potete dare informazioni sulla mia spedizione grazie rispondete\r\ngrazie\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-10-04T13:56:38Z",
+  "updated_at": "2025-10-06T10:41:00Z",
+  "requester_id": 158005269574,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009963879,
+      "body_text": "此工单已关闭并合并至工单 4482。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-06T10:41:00Z",
+      "updated_at": "2025-10-06T10:41:00Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

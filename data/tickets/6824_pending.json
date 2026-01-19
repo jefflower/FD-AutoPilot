@@ -1,0 +1,24 @@
+{
+  "id": 6824,
+  "subject": "No confirmation email, nor tracking after a week since ordered",
+  "description_text": "I have been waiting almost a week now for my order. I haven’t even got a confirmation email, I took a screenshot of my order number. When i go to look up my order number it says it doesn’t exist. I also have a bank statement from where the money was transferred out. Please contact me so we can resolve this issue.",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-26T21:25:11Z",
+  "updated_at": "2025-11-27T03:07:16Z",
+  "requester_id": 158007340127,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012988960,
+      "body_text": "Hi Connor Fox,    This is your logistics tracking link.  https://t.17track.net/en#nums=SF6047072978374",
+      "user_id": 158001343601,
+      "created_at": "2025-11-27T03:07:16Z",
+      "updated_at": "2025-11-27T03:07:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

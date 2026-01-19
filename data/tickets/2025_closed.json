@@ -1,0 +1,24 @@
+{
+  "id": 2025,
+  "subject": "Issue with VAM Pro Vibration Motors – Prolonged/Stuck Vibrations",
+  "description_text": "Hi,\r\n\r\nI’m experiencing an issue with the VAM Pro vibration motors where they occasionally get stuck vibrating for several seconds.\r\n\r\nThis happens in both F1 25 and iRacing, and it occurs when using both Simsonn software and SimHub. The motors behave as configured most of the time — for example, they vibrate briefly after a gear shift — but about 10% of the time, the vibration continues for 4–10 seconds instead of the configured duration (e.g., 50ms). This happens regardless of the frequency (Hz) or duration settings.\r\n\r\nThe issue affects all types of vibration events and all motors — whether a single pedal motor is active or multiple are used. Sometimes the motors won’t stop vibrating at all unless I trigger a new event, such as shifting up or down.\r\n\r\nI’ve tested various configurations, and the problem persists across all scenarios. Would appreciate any guidance or troubleshooting steps.\r\n\r\nMy order number: #SSN2012\r\n\r\n\r\nBest regards,\r\n\r\nSimen\r\n\r\n\r\n\r\n\r\n",
+  "status": 5,
+  "priority": 4,
+  "created_at": "2025-07-28T20:29:30Z",
+  "updated_at": "2025-09-28T12:41:07Z",
+  "requester_id": 158002153101,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009569217,
+      "body_text": "此工单已关闭并合并到工单 4185 中",
+      "user_id": 158000445778,
+      "created_at": "2025-09-28T12:41:07Z",
+      "updated_at": "2025-09-28T12:41:07Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

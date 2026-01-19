@@ -1,0 +1,24 @@
+{
+  "id": 3354,
+  "subject": "Lieferung",
+  "description_text": "Hallo, gerne würde ich eure Pedale kaufen.\r\n\r\nKönnt ihr mir sagen ob ich zusätzlich noch Steuern in Deutschland bezahlen\r\nmuss? Von wo versendet ihr??\r\n\r\nOder ist es besser bei Amazon zu bestellen? Ist auch bei Amazon das neueste\r\nModell hinterlegt?\r\n\r\nWie sieht es mit der Garantie aus?\r\n\r\nVielen Dank und alles Gute!\r\n\r\nTobias\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-01T11:53:57Z",
+  "updated_at": "2025-09-02T02:37:15Z",
+  "requester_id": 158004059949,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007926946,
+      "body_text": "Hello, please rest assured to buy. We will ship it to you from the German warehouse, so no taxes will be incurred. It is better to order on the official website and enjoy a 2-year warranty.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-02T02:37:15Z",
+      "updated_at": "2025-09-02T02:37:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

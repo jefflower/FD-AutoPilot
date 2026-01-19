@@ -1,0 +1,34 @@
+{
+  "id": 1677,
+  "subject": "Question about the Simsonn Pro Pedals and Software",
+  "description_text": "\r\n Hello !\r\n\r\nMy name is Rodrigo.\r\n\r\nI purchased Simsonn Pro pedals, and would like to know if I can use the Simsonn Manager software to calibrate and update the firmware of the my Simsonn Pro pedals ?\r\n\r\nAre there any restrictions on using this newer software on older pedals ?\r\n\r\nI would like to use Simsonn manager on the old pedals because I find the new software much better and intuitive.\r\n\r\nThanks in advance !\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-18T19:11:34Z",
+  "updated_at": "2025-07-20T00:22:47Z",
+  "requester_id": 158002214121,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005162368,
+      "body_text": "Hi Rodrigo Borba,     I'm not sure if your current version supports firmware updates, but if it shows as v1.7.1, then it's compatible. In Simsonn Manager 2.0.9, go to the firmware update section, click on “Manual Firmware Update,” then navigate to the pedals-firmware → pedals folder and select the plus.sfu file to perform the update.      You may also consider upgrading to the PlusX control box, which supports the VAM Pro haptic feedback motor and offers a more immersive vibration experience.   https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor?variant=51351053533498     In addition, you can also upgrade with some accessory kits designed for the latest pedal version to enhance overall performance and experience.  https://www.simsonn.com/products/plus-ultra-upgrade-kit        https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-07-19T06:55:06Z",
+      "updated_at": "2025-07-19T06:55:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005193647,
+      "body_text": "  Thank you so much for the information guys !\r\n\r\nObter o Outlook para Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158002214121,
+      "created_at": "2025-07-19T14:33:52Z",
+      "updated_at": "2025-07-19T14:33:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

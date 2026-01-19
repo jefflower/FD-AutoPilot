@@ -1,0 +1,275 @@
+{
+  "id": 4984,
+  "subject": "离合器踏板不工作",
+  "description_text": "离合器踏板不工作。按复位按钮后工作了几次，现在无法使其工作",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-10-17T13:28:02Z",
+  "updated_at": "2025-11-16T03:05:51Z",
+  "requester_id": 158004441012,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010619241,
+      "body_text": "你好 yousifahmed321 @outlook. com, 请您提供订单号并告知您使用的踏板型号？请录制一段显示软件测试的短视频，然后将谷歌云盘链接发给我，并确保设置了访问权限，以便我查看并帮您分析问题。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-17T14:43:53Z",
+      "updated_at": "2025-10-17T14:43:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010619330,
+      "body_text": "Plus x\n\n由安卓版Outlook发送<https://aka.ms/AAb9ysg>\n________________________________",
+      "user_id": 158004441012,
+      "created_at": "2025-10-17T14:46:18Z",
+      "updated_at": "2025-10-17T14:46:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010619437,
+      "body_text": "https://drive.google.com/file/d/11mwI5T2Mq5qIH5A9tzqoART2PIQJ5tXB/view?usp=drivesdk\n\n\n\n由安卓版Outlook发送<https://aka.ms/AAb9ysg>\n________________________________",
+      "user_id": 158004441012,
+      "created_at": "2025-10-17T14:49:58Z",
+      "updated_at": "2025-10-17T14:49:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010619519,
+      "body_text": "你好 yousifahmed321 @outlook. com, 请在软件中点击“Offset”按钮以重置初始信号百分比，然后重新进行校准。如果离合器仍然没有信号，请尝试交换离合器和油门连接器，以确定问题出在离合器控制端口还是离合器传感器上。另外，请检查蓝色离合器限位器配件上的黑色弹簧夹是否损坏。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-17T14:51:51Z",
+      "updated_at": "2025-10-17T14:51:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010619749,
+      "body_text": "偏移和校准已完成\n尝试将刹车与离合器交换，离合器显示有信号\n\n由安卓版Outlook发送<https://aka.ms/AAb9ysg>\n________________________________",
+      "user_id": 158004441012,
+      "created_at": "2025-10-17T14:57:09Z",
+      "updated_at": "2025-10-17T14:57:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010619800,
+      "body_text": "\n\n由安卓版Outlook发送<https://aka.ms/AAb9ysg>\n________________________________",
+      "user_id": 158004441012,
+      "created_at": "2025-10-17T14:57:54Z",
+      "updated_at": "2025-10-17T14:57:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010619877,
+      "body_text": "你好 yousifahmed321 @outlook. com, 将离合器连接到刹车端口后，刹车通道上没有检测到信号吗？",
+      "user_id": 158000445778,
+      "created_at": "2025-10-17T14:59:33Z",
+      "updated_at": "2025-10-17T14:59:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010619923,
+      "body_text": "没有\n\n由安卓版Outlook发送<https://aka.ms/AAb9ysg>\n________________________________",
+      "user_id": 158004441012,
+      "created_at": "2025-10-17T15:00:37Z",
+      "updated_at": "2025-10-17T15:00:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010620021,
+      "body_text": "你好 yousifahmed321 @outlook. com, 我明天会给您寄一个新的离合器压力传感器更换件。请提供您的联系人姓名、送货地址和电话号码。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-17T15:02:34Z",
+      "updated_at": "2025-10-17T15:02:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010620149,
+      "body_text": "Yousif Ahmed\n1388号房屋，1422号路，714区\n国家 巴林\n城市 Hoarat A'ali\n\n由安卓版Outlook发送<https://aka.ms/AAb9ysg>\n________________________________",
+      "user_id": 158004441012,
+      "created_at": "2025-10-17T15:05:39Z",
+      "updated_at": "2025-10-17T15:05:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010620170,
+      "body_text": "电话 +97337234235\n\n由安卓版Outlook发送<https://aka.ms/AAb9ysg>\n________________________________",
+      "user_id": 158004441012,
+      "created_at": "2025-10-17T15:06:06Z",
+      "updated_at": "2025-10-17T15:06:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010620202,
+      "body_text": "你好 yousifahmed321 @outlook. com, 好的。明天货物寄出后，我会马上把追踪号码发给您！",
+      "user_id": 158000445778,
+      "created_at": "2025-10-17T15:07:14Z",
+      "updated_at": "2025-10-17T15:07:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010620257,
+      "body_text": "好的\n\n由安卓版Outlook发送<https://aka.ms/AAb9ysg>\n________________________________",
+      "user_id": 158004441012,
+      "created_at": "2025-10-17T15:08:19Z",
+      "updated_at": "2025-10-17T15:08:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010673187,
+      "body_text": "仍然没有物流更新\n\n由安卓版Outlook发送<https://aka.ms/AAb9ysg>\n________________________________",
+      "user_id": 158004441012,
+      "created_at": "2025-10-18T16:34:08Z",
+      "updated_at": "2025-10-18T16:34:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010711312,
+      "body_text": "如果你们不给我更新，我将不得不通过全球速卖通申请退款，而且我的体验非常糟糕，我买的3个产品中有2个有问题，其中一个我已经退款了，现在踏板又有问题，你们必须提高你们的质量\n\n由安卓版Outlook发送<https://aka.ms/AAb9ysg>\n________________________________",
+      "user_id": 158004441012,
+      "created_at": "2025-10-19T20:33:22Z",
+      "updated_at": "2025-10-19T20:33:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010711349,
+      "body_text": "如果你们不给我更新，我将不得不通过全球速卖通申请退款，而且我的体验非常糟糕，我买的3个产品中有2个有问题，其中一个我已经退款了，现在踏板又有问题，你们必须提高你们的质量\n\n由安卓版Outlook发送<https://aka.ms/AAb9ysg>\n________________________________",
+      "user_id": 158004441012,
+      "created_at": "2025-10-19T20:36:36Z",
+      "updated_at": "2025-10-19T20:36:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010714121,
+      "body_text": "你好 yousifahmed321 @outlook. com, 您好，由于您是在周末联系我们，我们的运营团队正在休假，未能及时回复。今天是星期一，我们会尽快为您提供追踪号码。请放心，我们会协助您直到问题完全解决。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-20T01:57:24Z",
+      "updated_at": "2025-10-20T01:57:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010714379,
+      "body_text": "希望如此\n\n由安卓版Outlook发送<https://aka.ms/AAb9ysg>\n________________________________",
+      "user_id": 158004441012,
+      "created_at": "2025-10-20T02:18:37Z",
+      "updated_at": "2025-10-20T02:18:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010718963,
+      "body_text": "你好 yousifahmed321 @outlook. com, 您的订单已发货。物流单号是：YT2529300200300319，UU841796550CN。您可以在此网站追踪 https://www.17track.net/zh-cn",
+      "user_id": 158000445778,
+      "created_at": "2025-10-20T10:00:08Z",
+      "updated_at": "2025-10-20T10:00:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010721393,
+      "body_text": "链接打不开\n\n由安卓版Outlook发送<https://aka.ms/AAb9ysg>\n________________________________",
+      "user_id": 158004441012,
+      "created_at": "2025-10-20T10:37:39Z",
+      "updated_at": "2025-10-20T10:37:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010843036,
+      "body_text": "你好 yousifahmed321 @outlook.com， https://www.17track.net/zh-cn",
+      "user_id": 158000445778,
+      "created_at": "2025-10-22T03:29:28Z",
+      "updated_at": "2025-10-22T03:29:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011643216,
+      "body_text": "你好，追踪链接只有中文，而且快两周了还没到\n\n由安卓版Outlook发送<https://aka.ms/AAb9ysg>\n________________________________",
+      "user_id": 158004441012,
+      "created_at": "2025-11-03T05:34:19Z",
+      "updated_at": "2025-11-03T05:34:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011644010,
+      "body_text": "你好 yousifahmed321 @outlook. com,  https://t.17track.net/en#nums=YT2529300200300319",
+      "user_id": 158000445778,
+      "created_at": "2025-11-03T06:05:34Z",
+      "updated_at": "2025-11-03T06:05:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011997422,
+      "body_text": "传感器收到了，我已经安装好了。但还是不工作\n\n由安卓版Outlook发送<https://aka.ms/AAb9ysg>\n________________________________",
+      "user_id": 158004441012,
+      "created_at": "2025-11-09T11:53:49Z",
+      "updated_at": "2025-11-09T11:53:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012096077,
+      "body_text": "你好 yousifahmed321 @outlook. com, 离合器弹簧安装了吗？能拍张照片我检查一下吗？安装后，将所有三个踏板连接到控制盒，然后拔下并重新连接一次控制盒的USB。在软件中，点击“Offset”将踏板的初始白色信号重置为0%，然后重新校准测试。如果问题仍然存在，请尝试交换离合器和油门的连接，以确定问题出在离合器还是油门上。",
+      "user_id": 158000445778,
+      "created_at": "2025-11-11T04:59:13Z",
+      "updated_at": "2025-11-11T04:59:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012255029,
+      "body_text": "之前少了弹簧，现在好了。谢谢你。\n\n由安卓版Outlook发送<https://aka.ms/AAb9ysg>\n________________________________",
+      "user_id": 158004441012,
+      "created_at": "2025-11-13T11:40:12Z",
+      "updated_at": "2025-11-13T11:40:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

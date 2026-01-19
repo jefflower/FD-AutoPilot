@@ -1,0 +1,44 @@
+{
+  "id": 1533,
+  "subject": "Inquiry about my order",
+  "description_text": "Hi im reaching out about my order, and would like to know if there has been any delays or issues with my order\r\nAnd when I can expect an update on my order\r\n\r\nHere is my details of the order\r\nOrder number: #SSN1957\r\nThe order item:\r\nSimsonn Pro Plus Pedal Upgrade Hydraulic Pedal Set Black\r\nPlus-P2-H2 / BaseplateChoose two Elastomer: 70HA, 80HA\r\n\r\n\r\nBest regards\r\n\r\nTim F. Skærlund\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-14T21:37:29Z",
+  "updated_at": "2025-07-16T02:54:12Z",
+  "requester_id": 158002014209,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004843194,
+      "body_text": "Hi Fse7en, your address is too remote for us to cover the shipping cost of the product, emailed you 5 days ago and need you to cover part of the shipping cost, can you accept the offer?",
+      "user_id": 158001343601,
+      "created_at": "2025-07-15T06:00:47Z",
+      "updated_at": "2025-07-15T06:00:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004868106,
+      "body_text": "Hi thank you for reaching back so quickly, I manage to forget checking my spam folder, I would like to pay the extra fee to cover the shipping.\r\nhow will I be able to pay for it?\r\n\r\nBest regards\r\n\r\nTim F. Skærlund\r\n________________________________\r\n",
+      "user_id": 158002014209,
+      "created_at": "2025-07-15T12:52:36Z",
+      "updated_at": "2025-07-15T12:52:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004918373,
+      "body_text": "Hi Fse7en,    Thank you for your understanding,  you can pay by clicking on this link.  https://www.simsonn.com/products/difference-2",
+      "user_id": 158001343601,
+      "created_at": "2025-07-16T02:54:12Z",
+      "updated_at": "2025-07-16T02:54:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

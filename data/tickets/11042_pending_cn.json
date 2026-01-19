@@ -1,0 +1,45 @@
+{
+  "id": 11042,
+  "subject": "订单 #SSN5743",
+  "description_text": "您好 Simpsonn 团队，\n\n希望您一切顺利。我写信是关于我在 1 月 4 日下的订单 (#SSN5743)。我收到了一个跟踪号，但不幸的是它似乎无法使用，而且我还没有看到任何配送更新。截至今天，1 月 15 日，包裹仍未送达。\n\n我完全理解可能会发生运输延误，尤其是在每年的这个时候。我只是想友好地询问一下，看看是否会有更新的跟踪号、运输状态或任何您可以分享的额外信息。\n\n感谢您的时间和帮助。\n\n此致，\nMario J. Portuondo\n总裁\nMP General, Inc.\nCCC1331298\n13860 Wellington Trace, 38-212\nWellington, FL 33414\n(561) 379-2341\nwww.mpgeneralinc.com\n免责声明：此电子邮件中包含的信息属于 MP General, Inc.，可能受到州和联邦法律的保护，免于披露，并且是特权、保密信息。如果您不是此电子邮件的预期收件人，特此通知您，严禁传播、分发和/或复制此邮件的全部或部分内容。如果您错误地收到了此通信，请立即致电 (561) 379-2341 通知发件人并删除所有副本。",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-16T04:56:14Z",
+  "updated_at": "2026-01-17T10:40:01Z",
+  "requester_id": 158009201564,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017318459,
+      "body_text": "您好 MP General, Inc.，您的订单已分两个包裹发货。1. 对于给您带来的不便，我们深表歉意。Pro X 脚踏板目前在美国仓库缺货。我们已紧急安排空运，预计将于 22 日发货，预计 25 日左右送达。2. 另一个包裹因产品升级缺货两周。升级现已完成，我们将在未来几天内将其发货给您。对于造成的任何不便，我们深表歉意。",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T07:21:31Z",
+      "updated_at": "2026-01-17T07:21:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017322161,
+      "body_text": "太棒了，没问题。谢谢您的更新！\n\n此致，\nMario J. Portuondo\n总裁\nMP General, Inc.\nCCC1331298\n13860 Wellington Trace, 38-212\nWellington, FL 33414\n(561) 379-2341\nwww.mpgeneralinc.com\n免责声明：此电子邮件中包含的信息属于 MP General, Inc.，可能受到州和联邦法律的保护，免于披露，并且是特权、保密信息。如果您不是此电子邮件的预期收件人，特此通知您，严禁传播、分发和/或复制此邮件的全部或部分内容。如果您错误地收到了此通信，请立即致电 (561) 379-2341 通知发件人并删除所有副本。",
+      "user_id": 158009201564,
+      "created_at": "2026-01-17T09:38:55Z",
+      "updated_at": "2026-01-17T09:38:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017323856,
+      "body_text": "您好 MP General, Inc.，不客气。感谢您购买我们的产品。如果您将来有任何疑问，请随时与我们联系。我们将及时解决。",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T10:40:01Z",
+      "updated_at": "2026-01-17T10:40:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

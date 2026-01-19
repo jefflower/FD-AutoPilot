@@ -1,0 +1,84 @@
+{
+  "id": 509,
+  "subject": "Inquiry about VaM Pro compatibility with SimHub",
+  "description_text": "Dear Simsonn Team,\r\n\r\n\r\n\r\nI hope this message finds you well.\r\n\r\n\r\n\r\nI’m interested in purchasing two units of the VaM Pro Linear Motor, along with the required power supply and control box. However, I do not own Simsonn pedals — I intend to install the motors on third-party pedals.\r\n\r\n\r\n\r\nMy question is:\r\n\r\nWill I be able to use the VaM Pro motors directly with SimHub, without needing to run or rely on Simsonn’s proprietary software? Full SimHub compatibility is very important for my use case.\r\n\r\n\r\n\r\nThank you in advance for your support, and I look forward to your response.\r\n\r\n\r\n\r\nBest regards\r\n\r\nSebastião \r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-17T01:52:10Z",
+  "updated_at": "2025-06-17T06:17:29Z",
+  "requester_id": 158001604804,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003300154,
+      "body_text": "ID 为 510 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-17T02:36:44Z",
+      "updated_at": "2025-06-17T02:36:44Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158003300155,
+      "body_text": "合并来自工单510  \n      主题: Using VaM Pro with SimHub, Control Box and Power Supply Only  \n      描述:  \n Hello, \n \n \n \n I’m interested in purchasing two VaM Pro Linear Motors. I’ve seen that you also offer a Control Box and Power Supply for them. \n \n \n \n My question is: \n If I buy only the two VaM Pro units, your Control Box, and the Power Supply, will I be able to use the vibration system directly with SimHub, without needing Simsonn pedals or any additional software? \n \n \n \n I don’t own Simsonn pedals, but I would like to use the VaM Pro motors in my current pedal set from another brand. \n \n \n \n Looking forward to your reply. \n \n \n \n Best regards \n Sebastião Ferreira ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-17T02:36:45Z",
+      "updated_at": "2025-06-17T02:36:45Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158003300190,
+      "body_text": "Hi Sebastião Ferreira, Hello! We’ve completed joint development with SimHub, and the SIMSONN PlusX pedal controller is now fully compatible with SimHub’s vibration feedback system. You can purchase with confidence. We can provide you with a test version of SimHub, or you can wait for the upcoming official release which will include SIMSONN support. There’s no need to run the SIMSONN software—everything can be managed directly through SimHub. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-17T02:40:04Z",
+      "updated_at": "2025-06-17T02:40:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003300745,
+      "body_text": "Hi! Thank you very much for the information.\r\n\r\n\r\n\r\nI’m interested in buying the VaM Pro linear motors and I’d like to know where I can buy them. Is it possible to order them directly through AliExpress?\r\n\r\n\r\n\r\nAlso, just to confirm: do I need to purchase the SIMSONN control box to use the motors with SimHub, or is there another way to connect them?\r\n\r\n\r\n\r\nThanks in advance!\r\n\r\n\r\n\r\n\r\n> Em 16 de jun. de 2025, à(s) 11:40 PM, support@simsonn.com escreveu:\r\n> \r\n> ﻿\r\n> Hi Sebastião Ferreira,\r\n> Hello! We’ve completed joint development with SimHub, and the SIMSONN PlusX pedal controller is now fully compatible with SimHub’s vibration feedback system. You can purchase with confidence. We can provide you with a test version of SimHub, or you can wait for the upcoming official release which will include SIMSONN support. There’s no need to run the SIMSONN software—everything can be managed directly through SimHub. \r\n> \r\n> \r\n> \r\n> ",
+      "user_id": 158001604804,
+      "created_at": "2025-06-17T03:24:47Z",
+      "updated_at": "2025-06-17T03:24:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003301119,
+      "body_text": "Hi Sebastião Ferreira,     You can place your order on our official website. You'll need the VAM Pro motor, a standalone 24V power supply (please specify your country's plug type), and the PlusX controller box. Since our SimHub integration is developed specifically through the controller box, it’s required—otherwise, SimHub won’t be able to connect to the device or send commands.   https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor",
+      "user_id": 158000445778,
+      "created_at": "2025-06-17T03:57:23Z",
+      "updated_at": "2025-06-17T03:57:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003304884,
+      "body_text": "Okay, thank you for everything. I’ve just completed my purchase! Could you now provide me with the software that will work with the system? I believe it’s the test version of SimHub, if I understood correctly.\r\n\r\n\r\nThanks for all!\r\n\r\n> Em 17 de jun. de 2025, à(s) 12:57 AM, support@simsonn.com escreveu:\r\n> \r\n> ﻿\r\n> Hi Sebastião Ferreira,\r\n> \r\n> You can place your order on our official website. You'll need the VAM Pro motor, a standalone 24V power supply (please specify your country's plug type), and the PlusX controller box.\r\n> Since our SimHub integration is developed specifically through the controller box, it’s required—otherwise, SimHub won’t be able to connect to the device or send commands. \r\n> \r\n> https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor\r\n> \r\n> \r\n> ",
+      "user_id": 158001604804,
+      "created_at": "2025-06-17T06:11:40Z",
+      "updated_at": "2025-06-17T06:11:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003306245,
+      "body_text": "Hi Sebastião Ferreira,  This is the test version of SimHub—please check it.      https://drive.google.com/file/d/1LaWboH_Z1Q7JGRsAJg_BFFqX36VR9TyJ/view",
+      "user_id": 158000445778,
+      "created_at": "2025-06-17T06:17:10Z",
+      "updated_at": "2025-06-17T06:17:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

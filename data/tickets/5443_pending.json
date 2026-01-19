@@ -1,0 +1,136 @@
+{
+  "id": 5443,
+  "subject": "SSN3058 // Just received 1/2 from my order",
+  "description_text": "Hello,\r\n\r\nI only received a part of my order.\r\nCould you please check what is the status?\r\n\r\nThx in advance,\r\n\r\nMannaerts Kenny\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-10-30T11:42:09Z",
+  "updated_at": "2025-11-05T09:38:11Z",
+  "requester_id": 158006219749,
+  "responder_id": 158001343601,
+  "cc_emails": [
+    "kennymannaerts@google.com"
+  ],
+  "conversations": [
+    {
+      "id": 158011354825,
+      "body_text": "Hello, I have paid extra for a speedy delivery. Not happy of the result and doubting my choose. ",
+      "user_id": 158006219749,
+      "created_at": "2025-10-30T16:05:33Z",
+      "updated_at": "2025-10-30T16:05:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158011379009,
+      "body_text": "Hi Kenny Mannaerts,    We apologize for the inconvenience. Our German warehouse is currently out of stock. We are awaiting restocking before shipping to avoid customs duties. However, customs processing delays mean we can only ship your order next Monday.  If you'd prefer, we can upgrade your order to the 3-pedal set. The original price difference was $47.10, but you'll only need to pay $27. We'll ship it via DHL Express, with an estimated delivery around the 3rd.  Alternatively, we can ship it now from China using UPS, with an estimated delivery around the 4th.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-31T06:05:14Z",
+      "updated_at": "2025-10-31T06:05:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011379022,
+      "body_text": "As a supplement, shipments from China using UPS may be subject to customs duties.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-31T06:06:10Z",
+      "updated_at": "2025-10-31T06:06:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011387433,
+      "body_text": "Hello,\r\n\r\nPlease find the quickest / additional cost free solution. If it is with the\r\nextra pedal or not.\r\nI will not pay customs, not extra.\r\n\r\nI am very disappointed. I avoided dealing with 3th party and wanted to deal\r\nwith Simsson to avoid any hiccups.\r\n\r\nBest regards,\r\n\r\n\r\n",
+      "user_id": 158006219749,
+      "created_at": "2025-10-31T08:21:43Z",
+      "updated_at": "2025-10-31T08:21:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011387514,
+      "body_text": "Hi Kenny Mannaerts,    Would you be open to silver pedals? We can ship a silver 3-pedal set from Germany for you—free upgrade.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-31T08:26:37Z",
+      "updated_at": "2025-10-31T08:26:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011387559,
+      "body_text": "Hello,\r\n\r\nyou may proceed with silver pedals.\r\n\r\nBest regards,\r\n\r\n\r\n\r\n\r\n",
+      "user_id": 158006219749,
+      "created_at": "2025-10-31T08:29:56Z",
+      "updated_at": "2025-10-31T08:29:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011387630,
+      "body_text": "Hi Kenny Mannaerts,    Alright, we've arranged for your shipment to be dispatched. We'll update you with the tracking information shortly.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-31T08:35:12Z",
+      "updated_at": "2025-10-31T08:35:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011648825,
+      "body_text": "Hello,\r\n\r\nStill have not received my order, not even a tracking number.\r\n\r\n\r\n\r\n",
+      "user_id": 158006219749,
+      "created_at": "2025-11-03T09:49:45Z",
+      "updated_at": "2025-11-03T09:49:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011650039,
+      "body_text": "Hi Kenny Mannaerts,    Your package has been shipped. Here is your tracking link. We apologize for not updating you in a timely manner.  https://www.dhl.com/us-en/home/tracking.html?tracking-id=CE326629600DE",
+      "user_id": 158001343601,
+      "created_at": "2025-11-03T10:11:59Z",
+      "updated_at": "2025-11-03T10:11:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011715102,
+      "body_text": "This is becoming ridiculous.\r\nPaid for speed delivery (ordered 22th of Oct SPEED DELIVERY)\r\nShould have spend more money and bought from a renowned company.\r\nPackage has not been received at DHL, just an administrative order created.\r\nI even accepted to change my order to go quicker, God I am so dumb.\r\n\r\n\r\n",
+      "user_id": 158006219749,
+      "created_at": "2025-11-04T09:21:50Z",
+      "updated_at": "2025-11-04T09:21:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011790061,
+      "body_text": "Hello,\r\n\r\nYou may cancel everything, I will ship you back what I have received\r\nalready. I am very disappointed with your service.\r\n\r\nBest regards,\r\n\r\nOn Tue, 4 Nov 2025, 10:21 Kenny Mannaerts, <mannaerts.kenny.belgie@gmail.com>\r\nwrote:\r\n\r\n> This is becoming ridiculous.\r\n> Paid for speed delivery (ordered 22th of Oct SPEED DELIVERY)\r\n> Should have spend more money and bought from a renowned company.\r\n> Package has not been received at DHL, just an administrative order created.\r\n> I even accepted to change my order to go quicker, God I am so dumb.\r\n>\r\n>\r\n> On Mon, 3 Nov 2025, 11:12 service@simsonn.com, ",
+      "user_id": 158006219749,
+      "created_at": "2025-11-05T09:10:43Z",
+      "updated_at": "2025-11-05T09:10:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011790416,
+      "body_text": "Hi Kenny Mannaerts,    We apologize for any inconvenience caused. We will provide appropriate compensation based on the delay once the product arrives. Please rest assured.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-05T09:38:10Z",
+      "updated_at": "2025-11-05T09:38:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

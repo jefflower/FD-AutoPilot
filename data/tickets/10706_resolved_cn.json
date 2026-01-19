@@ -1,0 +1,35 @@
+{
+  "id": 10706,
+  "subject": "速卖通踏板购买",
+  "description_text": "我正在速卖通应用中尝试购买踏板，配送信息显示发货地是美国，但当我前往结账时，却提示无法配送到我的地址。我住在美国。如果商品在美国有库存，为什么不能配送呢？底板没有问题，只有踏板有问题。我想要购买Plus X或Pro X Ultra的3踏板套装。请帮我购买这些。-James",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-12T18:08:39Z",
+  "updated_at": "2026-01-13T09:09:35Z",
+  "requester_id": 158009037309,
+  "responder_id": 158007774664,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016945856,
+      "body_text": "你好 James Crawford，你可以通过速卖通买家聊天联系我们，获得直接帮助以解决你的问题。",
+      "user_id": 158007774664,
+      "created_at": "2026-01-13T07:38:46Z",
+      "updated_at": "2026-01-13T07:38:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016953683,
+      "body_text": "你好 James Crawford，我们美国仓库目前没有踏板库存。预计大约一周后到货，届时我们将及时补货，以便你购买。",
+      "user_id": 158007774664,
+      "created_at": "2026-01-13T09:09:31Z",
+      "updated_at": "2026-01-13T09:09:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

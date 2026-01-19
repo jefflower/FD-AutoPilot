@@ -1,0 +1,24 @@
+{
+  "id": 9440,
+  "subject": "Refund",
+  "description_text": "Hello,\r\n\r\nI was informed that a representative would contact me within 24 hours, but it has now been longer than that and my order #SSN5198 is still marked as Unfulfilled.\r\n\r\nDue to the lack of response and the missed response time, I would like to request a cancellation and full refund.\r\n\r\nPlease confirm as soon as possible.\r\n\r\nThank you.\r\n\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-12-29T09:19:36Z",
+  "updated_at": "2026-01-04T01:16:15Z",
+  "requester_id": 158008797448,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015545394,
+      "body_text": "此工单已关闭并合并到工单 9815 中",
+      "user_id": 158000445778,
+      "created_at": "2026-01-04T01:16:15Z",
+      "updated_at": "2026-01-04T01:16:15Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

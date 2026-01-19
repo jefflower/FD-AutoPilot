@@ -1,0 +1,554 @@
+{
+  "id": 5082,
+  "subject": "VAM PRO issues",
+  "description_text": "Hello,\r\n\r\nI have issues with my vam pro connected with pro x ultra.\r\n\r\njust to be clear , i didn’t use both simsonn manager and simub at same\r\ntime.\r\n\r\nI solved most of the issues by updating the Simsonn Manager firmware and\r\nvery important thing is to NOT importing the previous pedals profile i have\r\ncreated from the old version.\r\n\r\nHowever, one issue still remains. When more than two effects are enabled in\r\nSimHub, the haptic motors lose connection — it switches from “Connected” to\r\n“Searching Device.” After that, the motors keep vibrating without stopping,\r\nand I have to unplug all cables and power to reset everything.\r\n\r\nIt looks like the motors can’t handle more than two simhub effects at once\r\n. Could you please check if this problem will be fixed in a future update\r\nor if there is a fixe ?\r\n\r\nI read other people having the same issue on reddit website. So I presume\r\nyou are aware of this problem.\r\n\r\nI really like the hardware, but this issue makes it difficult to enjoy the\r\nexperience\r\n\r\nthanks\r\n\r\n",
+  "status": 5,
+  "priority": 3,
+  "created_at": "2025-10-20T12:04:26Z",
+  "updated_at": "2025-12-22T11:22:54Z",
+  "requester_id": 158005879183,
+  "responder_id": 158007774664,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010842379,
+      "body_text": "Hi，Cayme，    Are you currently using SIMSONN Manager 2.1.2? Also, please confirm that your firmware has been updated to CPU1: 2.0.5 / CPU2: 2.0.4.  You mentioned two effects in SimHub — could you tell us which ones exactly, and in which game you experienced this issue? Have you tried running SIMSONN Manager 2.1.2 alone for telemetry without SimHub?  Please make sure that your pedal’s USB cable is connected directly to a rear USB 3.0 (blue) port, not through a USB hub, as insufficient power could cause disconnections. Try turning off all lighting on the ProX Ultra and test again with SimHub — if the disconnects stop, that confirms it’s a power supply issue.  Also, please share the Reddit post link you mentioned so we can review it. If the issue appears to come from SimHub, please send us a compressed copy of the log folder from your SimHub installation directory — we’ll work with the SimHub team to investigate and resolve it.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-22T03:02:03Z",
+      "updated_at": "2025-10-22T03:02:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010859891,
+      "body_text": "Hello,\r\n\r\nThank you for your previous message and for the detailed instructions.\r\nI’ve now gathered all the requested information, screenshots, and logs to\r\nhelp diagnose the issue with my *Simsonn Pro X Ultra + VAM Pro* pedals when\r\nusing *SimHub*.\r\n------------------------------\r\n? *System Information*\r\n\r\n   -\r\n\r\n   *SIMSONN Manager version:* 2.1.2  ✅\r\n   -\r\n\r\n   *Firmware versions:* CPU1: 2.0.5 / CPU2: 2.0.4 ✅\r\n   -\r\n\r\n   *Lighting:* All LEDs disabled during testing ✅\r\n   -\r\n\r\n   *Connection:* Directly plugged into a *rear USB 3.0 port* not through a\r\n   hub ❌\r\n*(not yet, waiting for extensions usb to arrive at home) **I ordered a 1m\r\n   shielded USB 3.0  and a 1m shielded USB 2.0 cable, both will be tested\r\n   directly on the rear ports 2.0 and 3.0*\r\n   -\r\n\r\n   *Connection : already tested with unshielded 1m USB 2.0 extension cable\r\n   to rear ports 2.0 and 3.0 ✅*\r\n   -\r\n\r\n   The issue still occurs when using SimHub (vibrations getting stuck with\r\n   \"searching device status\")\r\n\r\n\r\n\r\n*Installation Process already tested : *\r\n1 Install simsonn Manager\r\n2 Plug usb Pedals\r\n3 Click on physical update button on the pedal box to get red leds showing\r\nBEFORE LAUNCHING UPDATE\r\n4 Start Pedals Firmware Update via Simsonn Manager (pop up)\r\n\r\n1 Install simsonn Manager\r\n2 Plug usb Pedals\r\n3 Manually update by selecting pedals firmware in the folder >> path : *SIMSONN\r\nManager\\env\\firmware\\pedal \\proxultra.sfu*\r\n\r\n------------------------------\r\n?️ *1️⃣ SIMSONN Manager overview (Firmware & Device Information)*[image:\r\nFirmware Simsonn Manager.png]\r\n\r\n\r\n------------------------------\r\n?️ *2️⃣ VAM PRO Feedback Settings in SIMSONN Manager* [image: VAM PRO\r\nSimsonn Manager.png]\r\n\r\n\r\n------------------------------\r\n?️ *3️⃣ SimHub – Active effects list* [image: 1 simhub Effects.png]\r\n\r\n\r\n------------------------------\r\n?️ *4️⃣ Gear Shift Vibration – SimHub effect settings* [image: 2 simhub\r\nEffects (Gear Gift).png]\r\n\r\n\r\n------------------------------\r\n?️ *5️⃣ Road Rumble – SimHub effect settings* [image: 3 simhub Effects\r\n(Road Rumble).png]\r\n\r\n\r\n------------------------------\r\n?️ *6️⃣ Wheel Slip – SimHub effect settings*\r\n\r\n[image: 4 simhub Effects (Wheel Slip).png]\r\n?️ *7️⃣ Wheel Lock – SimHub effect settings* [image: 5 simhub Effects\r\n(Wheel Lock).png]\r\n\r\n\r\n?️ *7️⃣ Simhub - Searching Device / Lost conection issue*\r\n[image: 6 simhub Effects (Searching Device).png]\r\n\r\n\r\n------------------------------\r\n?\r\n*Behavior Summary*\r\n*Game used  : Automobilista 2*\r\n\r\nI'm not using *SIMSONN Manager for vibrations.*\r\n\r\nThe problem appears when *SimHub is used.*\r\n\r\nEven after disabling all lighting, updating firmware the issue persists\r\nintermittently.\r\n\r\nIt looks like SimHub may be sending overlapping or excessive haptic signals\r\nto the VAM Pro because, when using 2 effects (gear gift + road rumble)\r\neverything works well.\r\n\r\n*Wheel Slip and Wheel Lock* are causing either endless vibrations or a full\r\ndisconnect from the pedals actually.\r\n\r\nI will do the last test with 3.0 extension cable ( i can't plug without\r\nthis cable because my computer is a bit far away) and i'll let you know\r\n------------------------------\r\n? *Attached Files*\r\n\r\n   -\r\n\r\n   simhub logs.zip → contains the full SimHub log folder after my latest\r\n   tests.\r\n\r\n Reddit post (people speaking about same problems)\r\nhttps://www.reddit.com/r/simracing/comments/1m6pje3/simsonn_vam_pro_disconnect_issues/?tl=fr\r\n------------------------------\r\n\r\nPlease let me know if you need additional information or further testing.\r\nThanks again for your help — I hope these details make it easier to\r\nidentify the cause. I'm trying to solve it since 2 days and nights\r\n\r\nLe mer. 22 oct. 2025 à 05:02, service@simsonn.com ",
+      "user_id": 158005879183,
+      "created_at": "2025-10-22T08:04:34Z",
+      "updated_at": "2025-10-22T08:04:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010939568,
+      "body_text": "Hi Cayme,  Thank you for the detailed information. Our engineers are preparing to verify your setup, and we will fix this issue as soon as possible and notify you once it’s completed. For now, we recommend using only two effects during gameplay, as most users don’t typically enable so many effects simultaneously. Also, please note that Car Driver 2 telemetry is not yet supported, so you can continue using SimHub for vibration and feedback testing. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-23T10:50:09Z",
+      "updated_at": "2025-10-23T10:50:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010987279,
+      "body_text": "Hi Cayme,    The game Car Driver 2 cannot be found on Steam, and in the SimHub telemetry list, only Car Driver 3 is available.  Please confirm this by providing a screenshot of the game and letting us know where you downloaded it from. It appears that both Steam and SimHub may not fully support this game.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-24T04:10:19Z",
+      "updated_at": "2025-10-24T04:10:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010987383,
+      "body_text": "hello ,\r\ni'm playing 99% of time on automobilista 2.\r\nI just tested Grid Legend to test another game. But i don't know what game\r\nis \"Car driver\" you're talking ???\r\n\r\nToday i did few more test.\r\ni plugged usb cable on my 2.0 and 3.0 rear port without any extension cable\r\nand got same issues.\r\n\r\nTomorrow I'm gonna test if only two effect in simhub will be stable during\r\na very long session.\r\n\r\nI bought a usb isolator and waiting shipping from Amazon.\r\n\r\n\r\n\r\n\r\n\r\nThen i noticed something that could be improved on the command box.\r\nThe round power plug on your control box feels loose — it doesn’t lock or\r\nclick firmly when inserted. I'm thinking maybe it can be the issue ?\r\nIs this normal, or could the plug size be wrong (maybe 5.5×2.1 mm instead\r\nof 5.5×2.5 mm)?\r\ni think this should be improved.\r\n\r\ni really like your pedals and motors and i really hope to solve the issue\r\nand enjoy it a few days before my surgery at November 4th\r\n\r\nCheers\r\n\r\n\r\nLe ven. 24 oct. 2025, 06:10, service@simsonn.com ",
+      "user_id": 158005879183,
+      "created_at": "2025-10-24T04:23:22Z",
+      "updated_at": "2025-10-24T04:23:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011045392,
+      "body_text": "hello\r\n\r\nnew test today on automobilista 2.\r\nusb cable plugged to pc rear port 2.0 and 3.0.\r\nOn simhub : 2 effects active only ( gear gift + road rumble ) and i got\r\nsame problem. searching device.\r\n\r\nit seems to be a bit more stable than 3 or 4 effects active.\r\n\r\ncheers\r\n\r\n\r\n\r\nLe ven. 24 oct. 2025, 06:22, Cayme <oxidia.music@gmail.com> a écrit :\r\n\r\n> hello ,\r\n> i'm playing 99% of time on automobilista 2.\r\n> I just tested Grid Legend to test another game. But i don't know what game\r\n> is \"Car driver\" you're talking ???\r\n>\r\n> Today i did few more test.\r\n> i plugged usb cable on my 2.0 and 3.0 rear port without any extension\r\n> cable and got same issues.\r\n>\r\n> Tomorrow I'm gonna test if only two effect in simhub will be stable during\r\n> a very long session.\r\n>\r\n> I bought a usb isolator and waiting shipping from Amazon.\r\n>\r\n>\r\n>\r\n>\r\n>\r\n> Then i noticed something that could be improved on the command box.\r\n> The round power plug on your control box feels loose — it doesn’t lock or\r\n> click firmly when inserted. I'm thinking maybe it can be the issue ?\r\n> Is this normal, or could the plug size be wrong (maybe 5.5×2.1 mm instead\r\n> of 5.5×2.5 mm)?\r\n> i think this should be improved.\r\n>\r\n> i really like your pedals and motors and i really hope to solve the issue\r\n> and enjoy it a few days before my surgery at November 4th\r\n>\r\n> Cheers\r\n>\r\n>\r\n> Le ven. 24 oct. 2025, 06:10, service@simsonn.com ",
+      "user_id": 158005879183,
+      "created_at": "2025-10-24T21:57:56Z",
+      "updated_at": "2025-10-24T21:57:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011050514,
+      "body_text": "Hi Cayme,     Our testing team used the same version of SimHub as yours yesterday and tested four different game telemetry effects. In Automobilista, both vibration activation and stop functions worked normally — we didn’t encounter any “vibration stop failure” issues.  If your PC and wheelbase are properly grounded, the main controller and pedals are connected with the green grounding wire, and the VAM Pro motors are mounted with nylon screws and washers, then it’s likely that the main controller is faulty. In that case, we can send you a replacement unit, especially if you’ve already tried using a USB isolator and the problem persists.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-25T02:35:15Z",
+      "updated_at": "2025-10-25T02:35:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011113617,
+      "body_text": "hello ,\r\ni did everything possible to solve this issue.\r\ni bought\r\n- 2 m grounding cable linked to tour control box\r\n- Usb isolator\r\n- extension usb 3.0\r\n- extension usb 2.0\r\n\r\neverything cost me something like 40 € and still have the issue.\r\n\r\ni am very disappointed , stressed and angry right now because I spent so\r\nmany days to trying solving this issue.\r\nit is the worst experience in my entire life when buying something.\r\n\r\ni appreciate your effort to help but i doubt it will work now.\r\n\r\n????\r\n\r\n\r\n\r\nLe sam. 25 oct. 2025, 04:35, service@simsonn.com ",
+      "user_id": 158005879183,
+      "created_at": "2025-10-26T14:09:46Z",
+      "updated_at": "2025-10-26T14:09:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011113710,
+      "body_text": "Hi Cayme,    Could you please check if your ProX Ultra control box and pedal are connected by a green wire?  Please disconnect their ground connection and send me a photo.  Also, let me know the brand of your wheel base (for example, Fanatec) and include a photo of it.  Is your computer connected to a grounded three-prong wall outlet?  If the computer is properly grounded, the disconnection issue should not occur.  Please also take a photo of your power strip or wall outlet connection so I can help you check it.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-26T14:19:14Z",
+      "updated_at": "2025-10-26T14:19:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011113875,
+      "body_text": "Hi Cayme,     Is your wheel base a Fanatec model?  If your computer is connected to a grounded three-prong wall outlet, ensuring proper grounding, the issue of the base interfering with the pedal signal should not occur.  You can try turning off the base’s power to test whether the signal still gets stuck.  In the Simsonn Manager interface, you can monitor the pedal signal while continuously pressing the pedals to check for any signal lag or irregularities.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-26T14:37:06Z",
+      "updated_at": "2025-10-26T14:37:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011118936,
+      "body_text": "so many things to do...\r\nI'm using moza r9 on a wheel stand so I'll do all what you're asking by\r\ntomorrow.\r\n\r\nLe dim. 26 oct. 2025, 15:37, service@simsonn.com ",
+      "user_id": 158005879183,
+      "created_at": "2025-10-26T16:37:47Z",
+      "updated_at": "2025-10-26T16:37:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011119042,
+      "body_text": "i have no green ground cable when i bought the pedals there was no green\r\ncable inside the box.\r\n\r\nhere you can see my setup :\r\nleft outlet with white cable is where my computer/ wheel moza / speakers\r\nare plugged.\r\n\r\non the right  outlet are the ground cable + vam pro pedals power cable. so\r\nmy pedal + vam pro are not plugged on the same electric outlet as the\r\nothers devices\r\n\r\n\r\n\r\nLe dim. 26 oct. 2025, 17:37, Cayme <oxidia.music@gmail.com> a écrit :\r\n\r\n> so many things to do...\r\n> I'm using moza r9 on a wheel stand so I'll do all what you're asking by\r\n> tomorrow.\r\n>\r\n> Le dim. 26 oct. 2025, 15:37, service@simsonn.com ",
+      "user_id": 158005879183,
+      "created_at": "2025-10-26T16:48:51Z",
+      "updated_at": "2025-10-26T16:48:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011126851,
+      "body_text": "Hi Cayme,    I’d like to schedule a remote session via ToDesk today to help you check the issue. When would be a good time for you?",
+      "user_id": 158000445778,
+      "created_at": "2025-10-26T23:24:22Z",
+      "updated_at": "2025-10-26T23:24:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011127260,
+      "body_text": "I'm available all day long between 8 am to 7pm (France hour).\r\n\r\nLe lun. 27 oct. 2025, 00:24, service@simsonn.com ",
+      "user_id": 158005879183,
+      "created_at": "2025-10-26T23:58:40Z",
+      "updated_at": "2025-10-26T23:58:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011127373,
+      "body_text": "Hi Cayme,    Okay, that corresponds to 3:00 PM China time. I will assist you in resolving the issue then.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-27T00:08:39Z",
+      "updated_at": "2025-10-27T00:08:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011127445,
+      "body_text": "ok let's do this.\r\nI don't speak English very well , I'm better at writing. is there a chat or\r\nsomething like this during the remote session ? do you want me to setup\r\nsomething especially before the session ?\r\n\r\nLe lun. 27 oct. 2025, 01:08, service@simsonn.com ",
+      "user_id": 158005879183,
+      "created_at": "2025-10-27T00:13:53Z",
+      "updated_at": "2025-10-27T00:13:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011127775,
+      "body_text": "Hi Cayme,    Vous pouvez installer l’outil ToDesk, il n’est pas nécessaire de vous inscrire. Si une connexion est demandée, vous pouvez cliquer sur le bouton de fermeture en haut à droite de l’interface. Vous pouvez me fournir votre ID et le code de vérification, et je pourrai me connecter à votre bureau à distance pour vous aider à résoudre le problème. De plus, nous créerons un fichier bloc-notes (.txt) sur le bureau afin de communiquer par écrit en français.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-27T00:39:59Z",
+      "updated_at": "2025-10-27T00:39:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011127958,
+      "body_text": "all right sounds good to me\r\n thank you.\r\nI'm really curious to see what you will do because i have tried everything\r\n. cheers\r\n\r\nLe lun. 27 oct. 2025, 01:40, service@simsonn.com ",
+      "user_id": 158005879183,
+      "created_at": "2025-10-27T00:55:37Z",
+      "updated_at": "2025-10-27T00:55:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011128106,
+      "body_text": "can you please clarify some points ?\r\n\r\n1/ do i need to plug pedals usb in a 2.0 or 3.0 port ?\r\n\r\n2/ where i am supposed to connect the ground cable , on the wheel stand  ?\r\nthe pedals  ? or on the Simsonn control box ?\r\n\r\nhere is ground cable in picture\r\n\r\n\r\n\r\nLe lun. 27 oct. 2025, 01:55, Cayme <oxidia.music@gmail.com> a écrit :\r\n\r\n> all right sounds good to me\r\n>  thank you.\r\n> I'm really curious to see what you will do because i have tried everything\r\n> . cheers\r\n>\r\n> Le lun. 27 oct. 2025, 01:40, service@simsonn.com ",
+      "user_id": 158005879183,
+      "created_at": "2025-10-27T01:04:44Z",
+      "updated_at": "2025-10-27T01:04:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011128520,
+      "body_text": "Hi Cayme,     The pedal needs to be connected directly to the blue USB 3.0 port on the back of the computer. Please do not use a USB hub. Also, please take a photo of your pedal, including the main control unit, and send it to me.     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting     https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-10-27T01:31:15Z",
+      "updated_at": "2025-10-27T01:31:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011128833,
+      "body_text": "ok I'll do picture tomorrow morning because I'm in bed right now.\r\n\r\ni can confirm that i plugged my usb cable in 2.0 and 3.0 port in back of ly\r\ncomputer and got same issues.\r\nbut i was asking for our session.\r\n\r\nadditional information :\r\nMy Simsonn pedals are mounted on the metal pedal plate of my wheel stand\r\nnext level 2.0\r\n\r\nThe Simsonn control box is attached directly under this same metal plate,\r\nusing Velcro strips that cover the entire top of the box.\r\nIn other words, the control box is stuck to the underside of the pedal\r\nplate, not on the floor.\r\nThis way, the control box is firmly fixed and not in direct contact with\r\nany metal part of the wheel stand.\r\n\r\n\r\n\r\nLe lun. 27 oct. 2025, 02:31, service@simsonn.com ",
+      "user_id": 158005879183,
+      "created_at": "2025-10-27T01:48:21Z",
+      "updated_at": "2025-10-27T01:48:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011135143,
+      "body_text": "Hello, i'm doing a last test before our session with todesk\r\n\r\nLe lun. 27 oct. 2025 à 02:47, Cayme <oxidia.music@gmail.com> a écrit :\r\n\r\n> ok I'll do picture tomorrow morning because I'm in bed right now.\r\n>\r\n> i can confirm that i plugged my usb cable in 2.0 and 3.0 port in back of\r\n> ly computer and got same issues.\r\n> but i was asking for our session.\r\n>\r\n> additional information :\r\n> My Simsonn pedals are mounted on the metal pedal plate of my wheel stand\r\n> next level 2.0\r\n>\r\n> The Simsonn control box is attached directly under this same metal plate,\r\n> using Velcro strips that cover the entire top of the box.\r\n> In other words, the control box is stuck to the underside of the pedal\r\n> plate, not on the floor.\r\n> This way, the control box is firmly fixed and not in direct contact with\r\n> any metal part of the wheel stand.\r\n>\r\n>\r\n>\r\n> Le lun. 27 oct. 2025, 02:31, service@simsonn.com ",
+      "user_id": 158005879183,
+      "created_at": "2025-10-27T07:12:42Z",
+      "updated_at": "2025-10-27T07:12:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011141289,
+      "body_text": "Hello,\r\n\r\nI believe I may have solved the disconnection problem.\r\n\r\nBefore, my setup was split across two wall outlets — the Simsonn control\r\nbox and the ground cable were connected to a different wall outlet in my\r\nroom.\r\nNow, I have connected everything to the same power strip, which itself is\r\nplugged into a single wall outlet.\r\n\r\nOn this power strip, I have my PC, speakers, Moza R9 base, Simsonn control\r\nbox, and my homemade ground cable.\r\nThe ground cable starts from the power strip, goes to a screw on one of the\r\npedals, and from there I plan to add a second ground wire to connect the\r\npedal screw to my Moza R9 base for extra safety and better grounding.\r\n\r\nI also disconnected the USB isolator, because it was causing more\r\ninstability instead of helping.\r\n\r\nSo far, everything looks much more stable — I was able to complete a longer\r\ndriving session than before with all four effects enabled.\r\nIf the disconnection issue happens again, we can schedule another ToDesk\r\nsession depending on your availability.\r\n\r\nFingers crossed it keeps working! and thanks for your patience\r\n\r\nBest regards,\r\n\r\n\r\nLe lun. 27 oct. 2025, 08:11, Cayme <oxidia.music@gmail.com> a écrit :\r\n\r\n> Hello, i'm doing a last test before our session with todesk\r\n>\r\n> Le lun. 27 oct. 2025 à 02:47, Cayme <oxidia.music@gmail.com> a écrit :\r\n>\r\n>> ok I'll do picture tomorrow morning because I'm in bed right now.\r\n>>\r\n>> i can confirm that i plugged my usb cable in 2.0 and 3.0 port in back of\r\n>> ly computer and got same issues.\r\n>> but i was asking for our session.\r\n>>\r\n>> additional information :\r\n>> My Simsonn pedals are mounted on the metal pedal plate of my wheel stand\r\n>> next level 2.0\r\n>>\r\n>> The Simsonn control box is attached directly under this same metal plate,\r\n>> using Velcro strips that cover the entire top of the box.\r\n>> In other words, the control box is stuck to the underside of the pedal\r\n>> plate, not on the floor.\r\n>> This way, the control box is firmly fixed and not in direct contact with\r\n>> any metal part of the wheel stand.\r\n>>\r\n>>\r\n>>\r\n>> Le lun. 27 oct. 2025, 02:31, service@simsonn.com ",
+      "user_id": 158005879183,
+      "created_at": "2025-10-27T08:42:45Z",
+      "updated_at": "2025-10-27T08:42:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011152339,
+      "body_text": "Hi Cayme,  Our engineering team has also conducted tests, and we found that when the PC and the base share the same reliable grounding environment, the signal interference issue does not occur. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-27T10:35:13Z",
+      "updated_at": "2025-10-27T10:35:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011185129,
+      "body_text": "hello,\r\n\r\nstill have the issue ??\r\n\r\nii tested to play automobilista 2 without my moza r9 (unplugged )and still\r\ngot vibration stuck after few minutes /seconds. it is totally random.\r\n\r\ni have no idea what we can do to solve this issue.\r\n\r\ni will send you a picture to show you how is my setup.\r\n\r\nI am completely discouraged.\r\nMy wheel stand and all other devices are properly connected to the same\r\nground. My multimeter test is very conclusive.\r\n\r\n\r\nLe lun. 27 oct. 2025, 11:35, service@simsonn.com ",
+      "user_id": 158005879183,
+      "created_at": "2025-10-27T21:00:00Z",
+      "updated_at": "2025-10-27T21:00:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011186101,
+      "body_text": "Hi Cayme,    Without turning on the R9 power, only four types of telemetry were enabled. When playing a game, the signal freezes for one to two seconds after running for a few minutes or even just a few seconds.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-27T21:27:49Z",
+      "updated_at": "2025-10-27T21:27:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011186393,
+      "body_text": "Hi Cayme,    In Simsonn Manager version 2.1.2, the pedal firmware should be: CPU1: 2.0.5 and CPU2: 2.0.4, correct?  Also, please take a photo of the USB 3.0 port (the blue one) on the back of your PC.  I’d also like a few more photos, including:      The USB 3.0 port  The pedal installation  The pedal control box         Please make sure to use zip ties to secure the USB cable and vibration power cable to prevent them from becoming loose.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-27T21:35:42Z",
+      "updated_at": "2025-10-27T21:35:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011186780,
+      "body_text": "Hi Cayme,     You can try installing the VAM Pro motors using nylon screws and nylon washers to see if it improves the issue.        https://www.reddit.com/r/simracing/comments/1n291hi/solution_for_simsonn_vam_pro_emi_issues/",
+      "user_id": 158000445778,
+      "created_at": "2025-10-27T21:45:56Z",
+      "updated_at": "2025-10-27T21:45:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011188454,
+      "body_text": "Hello,\r\n\r\n*Here is USB 3.0 used in back of my PC : *\r\n[image: 4889778.jpg]\r\n\r\n\r\n? MY WHEEL STAND SETUP[image: 1.png]\r\n\r\n\r\n[image: 2.png]\r\n\r\n[image: 3.png]\r\n[image: 4.png]\r\n* Your control box is mounted under my rig using Velcro strips covering the\r\nentire surface of the control box to isolate metal from metal.*\r\n\r\n[image: 5.png]\r\n* The Simsonn pedal USB cable is routed separately from these cables to\r\navoid any possible EMI interference.*\r\n\r\n------------------------------\r\n? *System Information*\r\n\r\n   -\r\n\r\n   *SIMSONN Manager version:* 2.1.2  ✅\r\n   -\r\n\r\n   *Firmware versions:* CPU1: 2.0.5 / CPU2: 2.0.4 ✅\r\n   -\r\n\r\n   *Lighting:* All LEDs disabled during testing ✅\r\n   -\r\n\r\n   *MOZA R9 turned Off and* *disconnected* from outlet during testing ✅\r\n\r\n------------------------------\r\n?️ *1️⃣ SIMSONN Manager overview (Firmware & Device Information)*[image:\r\nFirmware Simsonn Manager.png]\r\n\r\n\r\n------------------------------\r\n?️ *2️⃣ VAM PRO Feedback Settings in SIMSONN Manager*[image: VAM PRO\r\nSimsonn Manager.png]\r\n\r\n?️ *7️⃣ Simhub - Searching Device / Lost conection issue*\r\n[image: 6 simhub Effects (Searching Device).png]\r\n\r\nI honestly don’t know what else I can do at this point.\r\nWhy doesn’t your control box include a grounded power plug by default? That\r\nseems essential to avoid EMI, right?\r\nI’ve tried everything for several days now — isolating cables, changing\r\nports, grounding, using a USB isolator… but the problem is still there.\r\n\r\nMy rig isn’t a big dynamic setup with heavy motion systems or anything like\r\nthat, so where could all this interference come from?\r\nMaybe the control box or the haptic motors are defective? Or could it\r\nsimply be that the USB cable isn’t properly shielded?\r\n\r\nAt this point, I really have no idea what else to try.\r\n\r\nLe lun. 27 oct. 2025 à 22:46, service@simsonn.com ",
+      "user_id": 158005879183,
+      "created_at": "2025-10-27T22:44:00Z",
+      "updated_at": "2025-10-27T22:44:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011188639,
+      "body_text": "Hi Cayme,    Please don’t worry. I will have our software engineers replicate your setup. If we encounter the same issue during testing, we will fix the software bug. If it turns out to be a hardware problem, we will send you a replacement. You don’t need to worry.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-27T22:51:28Z",
+      "updated_at": "2025-10-27T22:51:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011188757,
+      "body_text": "ok thank you,\r\ni already have nylon washer mounted.\r\nWhat worries me is that on November 3, I will undergo surgery, and I will\r\nno longer be able to perform tests for an indefinite period of time. I\r\nbought your haptic engine to enjoy my last few days before my surgery,\r\nwhich is why I am disappointed. But I still want to thank you for not\r\nabandoning me. Your customer service is truly professional.\r\n[image: IMG_20251027_234906.jpg]\r\n\r\nLe lun. 27 oct. 2025 à 23:51, service@simsonn.com ",
+      "user_id": 158005879183,
+      "created_at": "2025-10-27T22:58:47Z",
+      "updated_at": "2025-10-27T22:58:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011189498,
+      "body_text": "Hi Cayme,    Wishing you a quick and full recovery!",
+      "user_id": 158000445778,
+      "created_at": "2025-10-27T23:22:07Z",
+      "updated_at": "2025-10-27T23:22:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011189738,
+      "body_text": "thank you very much\r\n\r\nBest regards\r\n\r\nLe mar. 28 oct. 2025 à 00:22, service@simsonn.com ",
+      "user_id": 158005879183,
+      "created_at": "2025-10-27T23:27:15Z",
+      "updated_at": "2025-10-27T23:27:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011257733,
+      "body_text": "Hi Cayme,     I noticed an issue: the connection between the VAM Pro and the motor bracket must use both nylon screws and the red washer. Using only the red insulating washer will not isolate the electrical connection between the VAM Pro and the bracket. Proper isolation requires using the nylon screws as well. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-29T03:18:31Z",
+      "updated_at": "2025-10-29T03:18:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011257845,
+      "body_text": "hello , yes I discovered it yesterday. I already switched these screws but\r\nstill got the issue just using gear gift and rumble effects.\r\n\r\nstill stuck at same point\r\n\r\nLe mer. 29 oct. 2025, 04:18, service@simsonn.com ",
+      "user_id": 158005879183,
+      "created_at": "2025-10-29T03:31:55Z",
+      "updated_at": "2025-10-29T03:31:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011260947,
+      "body_text": "hello ,\r\n\r\nupdate :\r\n\r\nI added a ground bridge between the brake and throttle pedals.\r\nFrom this point, two ground wires go: one to the Simsonn control box, and\r\none to the wall outlet ground. Still have the issue.\r\nAt first i was able to play 10 minutes. then turned off everything et\r\nreboot , then got the issue after few seconds only.\r\n\r\ni already mounted your nylon screw yesterday and same issue.\r\n\r\n\r\n\r\nBest regards,\r\n\r\nLe mer. 29 oct. 2025, 04:31, Cayme <oxidia.music@gmail.com> a écrit :\r\n\r\n> hello , yes I discovered it yesterday. I already switched these screws but\r\n> still got the issue just using gear gift and rumble effects.\r\n>\r\n> still stuck at same point\r\n>\r\n> Le mer. 29 oct. 2025, 04:18, service@simsonn.com ",
+      "user_id": 158005879183,
+      "created_at": "2025-10-29T05:45:46Z",
+      "updated_at": "2025-10-29T05:45:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011273229,
+      "body_text": "Hello,\r\nupdate 2\r\n\r\nI performed some continuity tests on my Simsonn control box and noticed\r\nsomething interesting:\r\nWhen I touch two screws on the metal case, I get continuity (beep) —\r\nmeaning the case is properly conductive.\r\nHowever, when I touch the metal frame of the USB port and one of the case\r\nscrews, there is no continuity.\r\n\r\nThis means that the USB shield is not connected to the chassis ground.\r\nIf that’s the case, the USB port housing is floating electrically, which\r\ncould explain why the box loses USB connection randomly due to EMI or\r\nground potential differences.\r\n\r\nI also read a Reddit post from another user who found the same issue.\r\nHe said he solved it by adding a small wire (soldered somewhere inside the\r\nbox) to connect the USB port shield to the metal case — but he clearly\r\nmentioned it was “at your own risk”.\r\n\r\nPlease be sure to also read my previous message.\r\n\r\nI did all my best. ?\r\n\r\n\r\nLe mer. 29 oct. 2025, 06:45, Cayme <oxidia.music@gmail.com> a écrit :\r\n\r\n> hello ,\r\n>\r\n> update :\r\n>\r\n> I added a ground bridge between the brake and throttle pedals.\r\n> From this point, two ground wires go: one to the Simsonn control box, and\r\n> one to the wall outlet ground. Still have the issue.\r\n> At first i was able to play 10 minutes. then turned off everything et\r\n> reboot , then got the issue after few seconds only.\r\n>\r\n> i already mounted your nylon screw yesterday and same issue.\r\n>\r\n>\r\n>\r\n> Best regards,\r\n>\r\n> Le mer. 29 oct. 2025, 04:31, Cayme <oxidia.music@gmail.com> a écrit :\r\n>\r\n>> hello , yes I discovered it yesterday. I already switched these screws\r\n>> but still got the issue just using gear gift and rumble effects.\r\n>>\r\n>> still stuck at same point\r\n>>\r\n>> Le mer. 29 oct. 2025, 04:18, service@simsonn.com ",
+      "user_id": 158005879183,
+      "created_at": "2025-10-29T10:00:23Z",
+      "updated_at": "2025-10-29T10:00:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011319093,
+      "body_text": "Last update :\r\n\r\nHello,\r\n\r\nI have run extensive tests to isolate the issue with my Simsonn Pro X Ultra\r\n+ VAM Pro.\r\nThe problem still occurs and seems to come from the control box (USB\r\nstability / shielding or internal grounding).\r\n\r\n✅ *Actions already tested*\r\n\r\n- PC & power\r\n\r\n- PC is brand-new (3 months old)\r\n\r\n- PC grounded properly (Corsair RMx PSU)\r\n\r\n- Tried with and without ground cable between PC and rig\r\n\r\n- Direct wall outlet, no power strip issues\r\n\r\n- Tested with and without external USB hub (better without hub)\r\n\r\n- USB isolator tested → no improvement\r\n\r\n\r\n*USB & cables*\r\n\r\n- Cable routed far from all power wires and rig frame\r\n\r\n- Tried different USB ports (USB 2.0 & 3.0 rear ports)\r\n\r\n- No other devices near the Simsonn USB cable\r\n\r\n- Windows USB power saving options disabled\r\n\r\n- USB selective suspend disabled\r\n\r\n- Firmware reinstalled multiple times (manual & auto)\r\n\r\n\r\n*Rig / EMI tests*\r\n\r\n- Box placed on ground on foam (not touching rig / metal)\r\n\r\n- Box moved away as far as possible\r\n\r\n- Pedals bridged to control box ground\r\n\r\n- Pedal frame isolated with nylon screws and washers\r\n\r\n- Tested with Moza base completely powered off and disconnected\r\n\r\n- Tested with only 2, 3 or 4 effects in SimHub → same result\r\n\r\n- Random disconnects or signal freeze after some minutes under load\r\n\r\n\r\n*Multimeter tests*\r\n\r\n- All rig / wheel base / pedals points ground-checked\r\n\r\n- NOTE: USB shield of the control box does NOT beep / does not connect to\r\ncase metal\r\n→ possible shield / grounding issue inside the box?\r\n\r\n\r\n❗ *Symptoms*\r\n\r\n- Works for a few minutes then pedal signal freezes or disconnects\r\n\r\n- Behavior worse when heat increases or USB noise rises\r\n\r\n- With identical setup, only Simsonn device has this issue\r\n\r\n- Other USB devices 100% stable\r\n\r\n\r\n? *Conclusion*\r\n\r\nI have eliminated:\r\n\r\n- PC issues\r\n\r\n- Power issues\r\n\r\n- Ground loop issues\r\n\r\n- USB cable routing & EMI placement issues\r\n\r\n- Windows usb power management issues\r\n\r\n- Hub/port issues\r\n\r\n\r\nThe only remaining possibility is a defective control box (USB interface or\r\ninternal ground/shield problem).\r\n\r\n✅ Request\r\n\r\nPlease check and arrange a replacement control box under warranty, or\r\nprovide next steps for diagnostic.\r\n\r\nThank you very much.\r\n\r\n\r\nLe mer. 29 oct. 2025, 10:59, Cayme <oxidia.music@gmail.com> a écrit :\r\n\r\n> Hello,\r\n> update 2\r\n>\r\n> I performed some continuity tests on my Simsonn control box and noticed\r\n> something interesting:\r\n> When I touch two screws on the metal case, I get continuity (beep) —\r\n> meaning the case is properly conductive.\r\n> However, when I touch the metal frame of the USB port and one of the case\r\n> screws, there is no continuity.\r\n>\r\n> This means that the USB shield is not connected to the chassis ground.\r\n> If that’s the case, the USB port housing is floating electrically, which\r\n> could explain why the box loses USB connection randomly due to EMI or\r\n> ground potential differences.\r\n>\r\n> I also read a Reddit post from another user who found the same issue.\r\n> He said he solved it by adding a small wire (soldered somewhere inside the\r\n> box) to connect the USB port shield to the metal case — but he clearly\r\n> mentioned it was “at your own risk”.\r\n>\r\n> Please be sure to also read my previous message.\r\n>\r\n> I did all my best. ?\r\n>\r\n>\r\n> Le mer. 29 oct. 2025, 06:45, Cayme <oxidia.music@gmail.com> a écrit :\r\n>\r\n>> hello ,\r\n>>\r\n>> update :\r\n>>\r\n>> I added a ground bridge between the brake and throttle pedals.\r\n>> From this point, two ground wires go: one to the Simsonn control box, and\r\n>> one to the wall outlet ground. Still have the issue.\r\n>> At first i was able to play 10 minutes. then turned off everything et\r\n>> reboot , then got the issue after few seconds only.\r\n>>\r\n>> i already mounted your nylon screw yesterday and same issue.\r\n>>\r\n>>\r\n>>\r\n>> Best regards,\r\n>>\r\n>> Le mer. 29 oct. 2025, 04:31, Cayme <oxidia.music@gmail.com> a écrit :\r\n>>\r\n>>> hello , yes I discovered it yesterday. I already switched these screws\r\n>>> but still got the issue just using gear gift and rumble effects.\r\n>>>\r\n>>> still stuck at same point\r\n>>>\r\n>>> Le mer. 29 oct. 2025, 04:18, service@simsonn.com ",
+      "user_id": 158005879183,
+      "created_at": "2025-10-30T04:19:57Z",
+      "updated_at": "2025-10-30T04:19:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011603874,
+      "body_text": "Hi Cayme,  Okay, please provide the contact name, phone number, delivery address, and order number. I will send you a new control box tomorrow to see if it resolves the issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-02T02:32:07Z",
+      "updated_at": "2025-11-02T02:32:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011604742,
+      "body_text": "Hello ,\r\nthanks very much .\r\nPlease note that tomorrow i will go to surgery so i don't know when i will\r\nbe able to test the new control box.\r\n\r\n\r\nOrder number : 3062169424051480\r\nName : Stéphane Di Rocco\r\nAdress : 16 Chemin de l'infirmerie\r\nCity : Marseillan\r\nPostal Code : 34340\r\nCountry : France\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nLe dim. 2 nov. 2025, 03:32, service@simsonn.com ",
+      "user_id": 158005879183,
+      "created_at": "2025-11-02T04:34:29Z",
+      "updated_at": "2025-11-02T04:34:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011604755,
+      "body_text": "sorry I forgot the phone number in the previous message :\r\n\r\n\r\nHello ,\r\nthanks very much .\r\nPlease note that tomorrow i will go to surgery so i don't know when i will\r\nbe able to test the new control box.\r\n\r\n\r\nOrder number : 3062169424051480\r\nName : Stéphane Di Rocco\r\nAdress : 16 Chemin de l'infirmerie\r\nCity : Marseillan\r\nPostal Code : 34340\r\nCountry : France\r\nPhone : +33 766137320\r\n\r\n\r\n\r\nLe dim. 2 nov. 2025, 05:33, Cayme <oxidia.music@gmail.com> a écrit :\r\n\r\n> Hello ,\r\n> thanks very much .\r\n> Please note that tomorrow i will go to surgery so i don't know when i will\r\n> be able to test the new control box.\r\n>\r\n>\r\n> Order number : 3062169424051480\r\n> Name : Stéphane Di Rocco\r\n> Adress : 16 Chemin de l'infirmerie\r\n> City : Marseillan\r\n> Postal Code : 34340\r\n> Country : France\r\n>\r\n>\r\n>\r\n>\r\n>\r\n>\r\n>\r\n> Le dim. 2 nov. 2025, 03:32, service@simsonn.com ",
+      "user_id": 158005879183,
+      "created_at": "2025-11-02T04:37:44Z",
+      "updated_at": "2025-11-02T04:37:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011604933,
+      "body_text": "Hi Cayme,  OK, I will arrange to process your replacement order tomorrow.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-02T05:19:32Z",
+      "updated_at": "2025-11-02T05:19:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011765369,
+      "body_text": "Hi Cayme,     Thank you for explaining this issue in detail. We’ve also found that the GND on the mainboard is indeed not connected to the USB metal housing solder point. From a design perspective, it’s best to connect them together to improve USB transmission stability and reduce interference. Have you tried connecting them and performing a test? I’ve already informed our hardware team to investigate this issue.      Hello,  update 2     I performed some continuity tests on my Simsonn control box and noticed something interesting:  When I touch two screws on the metal case, I get continuity (beep) — meaning the case is properly conductive.  However, when I touch the metal frame of the USB port and one of the case screws, there is no continuity.     This means that the USB shield is not connected to the chassis ground.  If that’s the case, the USB port housing is floating electrically, which could explain why the box loses USB connection randomly due to EMI or ground potential differences.     I also read a Reddit post from another user who found the same issue.  He said he solved it by adding a small wire (soldered somewhere inside the box) to connect the USB port shield to the metal case — but he clearly mentioned it was “at your own risk”.     Please be sure to also read my previous message.      I did all my best. ?",
+      "user_id": 158000445778,
+      "created_at": "2025-11-05T01:56:47Z",
+      "updated_at": "2025-11-05T01:56:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011786008,
+      "body_text": "Hi Cayme,     We have sent you a replacement controller. We also verified your method just now — when the USB connector shell is connected to the mainboard ground, the signal lag issue no longer occurs.   Your main control box has been shipped. The logistics number is:YT2530900705620819. You can track it at this website: https://t.17track.net/zh-cn#nums=YT2530900705620819 ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-05T08:28:17Z",
+      "updated_at": "2025-11-05T08:28:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011865118,
+      "body_text": "Hello Team ,\r\n\r\nThank you very much for sending the replacement control box .\r\nI really appreciate it.\r\nI’m currently waiting to receive it and will test it as soon as possible\r\nonce it arrives.\r\n\r\nIf the new box still shows the same disconnection issue, I would appreciate\r\na video or image tutorial showing how to safely perform the USB port\r\nmodification you mentioned.\r\n\r\nPlease note that I recently had surgery on November 3rd, so I won’t be able\r\nto run tests or provide updates for a little while during my recovery.\r\nI kindly ask that you keep my support ticket open even if I don’t reply\r\nimmediately in the coming days.\r\n\r\nThank you again for your support and for forwarding this issue to your\r\nhardware team.\r\n\r\nBest regards,\r\nCayme\r\n\r\nLe mer. 5 nov. 2025, 09:28, service@simsonn.com ",
+      "user_id": 158005879183,
+      "created_at": "2025-11-06T14:25:04Z",
+      "updated_at": "2025-11-06T14:25:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013010052,
+      "body_text": "Hello,\r\n\r\nFirst of all, thank you for sending me a replacement control box.\r\nUnfortunately, I still have the same issue: *random USB disconnections*\r\nwith my VAM Pro pedals.\r\n\r\nLet me explain everything I have tested so far, so you understand the full\r\ncontext.\r\n------------------------------\r\n*1. Grounding tests already performed*\r\n\r\nI soldered a grounding wire inside the control box, from the scraped metal\r\narea to the USB port shell, to ensure the USB port is properly grounded to\r\nthe chassis.\r\n\r\nI also added multiple additional grounding wires on my rig, in every\r\nconfiguration possible.\r\nThese grounding tests *did improve the situation*, but they did *not* fix\r\nthe problem completely.\r\n------------------------------\r\n*2. Position tests of the control box*\r\n\r\nThis part is important:\r\n\r\n   - When the Simsonn box is mounted *under my rig* → I get frequent USB\r\n   disconnections.\r\n   - When I place the control box *in front of the rig*, as far as possible\r\n   (around 20 cm away), I can sometimes play for 1–2 days without any issue.\r\n   - But eventually, even in this “best position”, the box still\r\n   disconnects randomly — including during online races, which is a big\r\n   problem for competitive use.\r\n\r\nSo the only improvement I found was *moving the control box far away from\r\nthe rig*, but this solution is not stable and not reliable.\r\n------------------------------\r\n*3. Other devices never disconnect*\r\n\r\nEvery other USB device on my system is perfectly stable.\r\n*Only the VAM Pro pedals disconnect.*\r\nThis makes me think the issue may come from the control box or the USB\r\ncable itself.\r\n------------------------------\r\n*4. Conclusion*\r\n\r\nAfter testing every possible grounding method and every possible position\r\nfor the control box, I am starting to believe that the *USB cable and/or\r\nthe internal EMI protection of the Simsonn box might not be sufficient* in\r\nmy case.\r\n\r\nI am honestly out of solutions at this point, and I’m very disappointed\r\nbecause I really love the VAM Pro pedals and I don’t want to return them.\r\nI simply wish I could find a way to make the system 100% stable.\r\n\r\nThank you again for the replacement box, but the issue is still present.\r\nCould you please help me find a definitive solution?\r\n\r\nDo you plan to improve your control box to fix emi issues ?\r\n\r\nBest regards.\r\n\r\nLe jeu. 6 nov. 2025, 15:24, Cayme <oxidia.music@gmail.com> a écrit :\r\n\r\n> Hello Team ,\r\n>\r\n> Thank you very much for sending the replacement control box .\r\n> I really appreciate it.\r\n> I’m currently waiting to receive it and will test it as soon as possible\r\n> once it arrives.\r\n>\r\n> If the new box still shows the same disconnection issue, I would\r\n> appreciate a video or image tutorial showing how to safely perform the USB\r\n> port modification you mentioned.\r\n>\r\n> Please note that I recently had surgery on November 3rd, so I won’t be\r\n> able to run tests or provide updates for a little while during my recovery.\r\n> I kindly ask that you keep my support ticket open even if I don’t reply\r\n> immediately in the coming days.\r\n>\r\n> Thank you again for your support and for forwarding this issue to your\r\n> hardware team.\r\n>\r\n> Best regards,\r\n> Cayme\r\n>\r\n> Le mer. 5 nov. 2025, 09:28, service@simsonn.com ",
+      "user_id": 158005879183,
+      "created_at": "2025-11-27T13:49:45Z",
+      "updated_at": "2025-11-27T13:49:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013155678,
+      "body_text": "Hi Cayme,  Hello, due to Black Friday, I’ve been quite busy and didn’t see your reply in time. I apologize for the delay. I’m very glad to hear that your surgery went well and that you are recovering! I will send you a replacement control box. In the meantime, I’ve made a temporary soldering improvement to the circuit. The instability you experienced may have been caused by loose wiring. I’m sharing a photo of the circuit so you can see how I performed the local grounding soldering.              I’ve also made improvements to the new control board. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-01T03:01:47Z",
+      "updated_at": "2025-12-01T03:01:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013161826,
+      "body_text": "Hey, no worries, I understand?.\r\n\r\nThank you very much for everything you're the best.\r\n\r\nI just need a clarification to be sure I fully understand your suggestion:\r\n\r\n– Is this grounding modification something you recommend me to reproduce\r\ntemporarily on my current control box?\r\nSince I have a second unit, it’s not a problem if I damage this one.\r\n\r\nIf you want me to test this modification, could you please confirm *exactly*\r\nhow it should be done?\r\n\r\n   1.\r\n\r\n   Should it be a *direct solder bridge*, with the solder touching the\r\n   exposed copper all the way?\r\n   2.\r\n\r\n   Or is it better to use a *small wire* between the J1 pad and the\r\n   grounding point?\r\n\r\nTo avoid any mistake, could you also please send a *close-up photo* of your\r\nactual modification, showing the exact pad and the exact grounding area to\r\nscrape?\r\n\r\nThank you again for not abandoning my case and for taking my issue\r\nseriously.\r\nI really appreciate everything you are doing.\r\nI’m also very happy to help improve your product, which I truly enjoy using.\r\nAnd honestly, I’m almost sure that if we manage to fix my issue, you will\r\nhave solved the problem for 99% of all other users as well.\r\n\r\nBest regards,\r\n\r\n\r\nLe lun. 1 déc. 2025 à 04:01, service@simsonn.com ",
+      "user_id": 158005879183,
+      "created_at": "2025-12-01T07:16:13Z",
+      "updated_at": "2025-12-01T07:16:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014116541,
+      "body_text": "Hi Cayme,     My reply was delayed due to the backlog of emails during Black Friday, and I apologize for the inconvenience. I have already shipped the revised production board to you. Please feel free to test it once you receive it, and let me know if you have any questions.   Your product has been shipped. The logistics number is:YT2533801400375138. You can track it at this website:https://t.17track.net/zh-cn#nums=YT2533801400375138",
+      "user_id": 158000445778,
+      "created_at": "2025-12-08T08:46:59Z",
+      "updated_at": "2025-12-08T08:46:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014117061,
+      "body_text": "hello ,\r\noh my god you are the best. Thanks very much. Can't wait to test it.\r\n\r\nI'll back to you when i get it.\r\n\r\nI wish you a nice day.\r\n\r\nBest regards\r\n\r\nLe lun. 8 déc. 2025, 09:47, service@simsonn.com ",
+      "user_id": 158005879183,
+      "created_at": "2025-12-08T09:05:21Z",
+      "updated_at": "2025-12-08T09:05:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014732117,
+      "body_text": "Hello ,\r\n\r\nsorry for my late reply.\r\n\r\nI was able to try the new box today and sadly i got the same disconnection\r\nand infinite vibration remaining after less than 30 seconds.\r\n\r\n??\r\n\r\ni have no words... i appreciate the effort.\r\n\r\nLe lun. 8 déc. 2025, 10:04, Cayme <oxidia.music@gmail.com> a écrit :\r\n\r\n> hello ,\r\n> oh my god you are the best. Thanks very much. Can't wait to test it.\r\n>\r\n> I'll back to you when i get it.\r\n>\r\n> I wish you a nice day.\r\n>\r\n> Best regards\r\n>\r\n> Le lun. 8 déc. 2025, 09:47, service@simsonn.com ",
+      "user_id": 158005879183,
+      "created_at": "2025-12-19T00:16:45Z",
+      "updated_at": "2025-12-19T00:16:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014734148,
+      "body_text": "No, it has not.  still have disconnections and vibrations stucks.\r\ni don't know what i can do. we have tested everything i have no more\r\noptions to try ?\r\n\r\nLe jeu. 18 déc. 2025, 10:38, service@simsonn.com ",
+      "user_id": 158005879183,
+      "created_at": "2025-12-19T01:47:29Z",
+      "updated_at": "2025-12-19T01:47:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014862833,
+      "body_text": "订单号 3062169424051480",
+      "user_id": 158007774607,
+      "created_at": "2025-12-22T07:55:21Z",
+      "updated_at": "2025-12-22T07:55:21Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014863943,
+      "body_text": "Hi Cayme,  ​Please contact us at the customer service of your AliExpress store so that we can help you solve problems and provide pictures and other support",
+      "user_id": 158007774664,
+      "created_at": "2025-12-22T08:32:32Z",
+      "updated_at": "2025-12-22T08:32:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

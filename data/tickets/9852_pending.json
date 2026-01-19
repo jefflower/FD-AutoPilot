@@ -1,0 +1,54 @@
+{
+  "id": 9852,
+  "subject": "Time frame for HS pro shifter",
+  "description_text": "Hey I'm looking at ordering a HS Pro Shifter from you guys but was\r\nwondering how long it'd take to arrive before I buy it, I live in Western\r\nAustralia, post code 6171, I'd be keen on the express shipping but want to\r\nknow if it's come before the end of this month.\r\n\r\nKind regards,\r\n\r\nRonan McIsaac\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-03T03:28:45Z",
+  "updated_at": "2026-01-07T14:06:51Z",
+  "requester_id": 158008882219,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016105530,
+      "body_text": "Hi R J McIsaac,  The first batch has already been shipped. The second batch may require a few more days for assembly. We recommend waiting a few days, or not selecting expedited shipping at this time. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T09:49:46Z",
+      "updated_at": "2026-01-07T09:49:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016105785,
+      "body_text": "Also another question, does the pedal haptic feedback mount onto Moza SR-P\r\nlite pedals?\r\n\r\nOn Wed, 7 Jan 2026, 5:50 pm support@simsonn.com, ",
+      "user_id": 158008882219,
+      "created_at": "2026-01-07T09:52:06Z",
+      "updated_at": "2026-01-07T09:52:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016109716,
+      "body_text": "Hi R J McIsaac,  At the moment, we do not have a compatible mounting bracket. You may need to look online for a suitable 3D mount file and print it yourself. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T10:22:19Z",
+      "updated_at": "2026-01-07T10:22:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016110539,
+      "body_text": "?\r\n\r\nR J reacted via Gmail\r\n<https://www.google.com/gmail/about/?utm_source=gmail-in-product&utm_medium=et&utm_campaign=emojireactionemail#app>\r\n\r\nOn Wed, 7 Jan 2026, 6:22 pm support@simsonn.com, ",
+      "user_id": 158008882219,
+      "created_at": "2026-01-07T10:28:49Z",
+      "updated_at": "2026-01-07T10:28:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

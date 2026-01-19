@@ -1,0 +1,44 @@
+{
+  "id": 4049,
+  "subject": "Order and shipping",
+  "description_text": "I live in the EU, and if i place an order from your website.\r\n\r\nWould you ship it from within the EU or from a warehouse outside of the EU?\r\n\r\nKind regards Filip\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-22T18:50:48Z",
+  "updated_at": "2025-09-24T09:02:31Z",
+  "requester_id": 158004785146,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009141151,
+      "body_text": "Hi Tillo Neko,    The parcel will be dispatched from our German warehouse, so please do not worry.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-23T02:55:51Z",
+      "updated_at": "2025-09-23T02:55:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009216259,
+      "body_text": "Hello, I placed an order after your email. And recipient a tracking number.\r\n\r\nThe tracking indicates it’s being shipped from china and not from Germany.\r\n\r\nYT2526700701967263\r\n\r\n\r\n\r\n> ",
+      "user_id": 158004785146,
+      "created_at": "2025-09-24T08:57:38Z",
+      "updated_at": "2025-09-24T08:57:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009216339,
+      "body_text": "Hi Tillo Neko,    Don't worry, Vam is shipped from China, but no taxes are required. The pedal is shipped from Germany. Here is your DHL tracking number: CE326625231DE",
+      "user_id": 158001343601,
+      "created_at": "2025-09-24T09:02:30Z",
+      "updated_at": "2025-09-24T09:02:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

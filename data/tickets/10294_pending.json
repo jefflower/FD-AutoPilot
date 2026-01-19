@@ -1,0 +1,44 @@
+{
+  "id": 10294,
+  "subject": "Double VAT charge",
+  "description_text": "Hey! I believe I was charged VAT twice. From your store prices and the FAQ,\r\nif the value is more than 150€ the VAT is payed on arrival to customs,\r\nwhich I just payed for (just got charged around 110€ VAT by customs).\r\nHowever, in your checkout, the final price doesn't take this into account.\r\nIf the order is more than 150€, I don't get the VAT discount, like I\r\nusually do in other stores (AliExpress, for example). The price remains the\r\nsame, wether the final value is more or less than 150€, which doesn't make\r\nsense to me.\r\nI just tested and the price remains the same for the same item, if the\r\norder goes over that 150€ threshold. So for a order that is 100€ you pay\r\n23% VAT on my behalf through IOSS and I wouldn't pay anything to customs.\r\nHowever, if I add another 100€ item, the total is now 200€ but now you are\r\nnot paying taxes through IOSS. So you ask for the same amount of money for\r\nthe same item, but now I would have to pay 46€ VAT on arrival, making the\r\norder 246€.\r\nThis does not seem correct, if you are not paying any taxes on my behalf,\r\nwhy am I being charged the full price?\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-08T10:43:43Z",
+  "updated_at": "2026-01-16T11:24:03Z",
+  "requester_id": 158008810205,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017252082,
+      "body_text": "Hi Rui Martins,    Please provide the UPS payment invoice, and we will reimburse you for a portion of it. No need to worry.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T09:35:34Z",
+      "updated_at": "2026-01-16T09:35:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017252181,
+      "body_text": "Hello! I annexed the UPS invoice, thanks!\r\n\r\n\r\n",
+      "user_id": 158008810205,
+      "created_at": "2026-01-16T09:39:27Z",
+      "updated_at": "2026-01-16T09:39:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017258724,
+      "body_text": "Hi Rui Martins,     When orders exceed the €150 threshold, we do not collect VAT on your behalf. Therefore, the total order amount does not include tax. We appreciate your understanding. You will pay €113.99 in VAT, and we will reimburse you €40.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T11:24:02Z",
+      "updated_at": "2026-01-16T11:24:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

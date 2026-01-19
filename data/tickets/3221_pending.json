@@ -1,0 +1,54 @@
+{
+  "id": 3221,
+  "subject": "VAM Pro question",
+  "description_text": "Hi,\r\n\r\nAre all 8 effects of the VAM Pro supported in iRacing directly through\r\nSIMSONN Manager software?\r\n\r\nThanks,\r\nAdam\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-28T20:08:37Z",
+  "updated_at": "2025-08-30T03:44:47Z",
+  "requester_id": 158003750812,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007733252,
+      "body_text": "Hi Adam Dera, Our SIMSONN Manager 2.1.0 currently supports more than ten racing games, and I will send you the details of the supported features for your reference. In addition, our pedals are also compatible with SimHub 9.9.3, which provides telemetry support for over one hundred racing games. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-29T00:25:35Z",
+      "updated_at": "2025-08-29T00:25:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007751121,
+      "body_text": "Hi,\r\n\r\nThank you for the table, that's really informative, but that doesn't answer\r\nmy question.\r\n\r\nI'm interested in the VAM Pro haptic reactors, and what effects are\r\nsupported in iRacing. Which of the 8 effects listed ( including speed,\r\nclutch, tyre slip, RPM, ABS, gear shift, traction control (TC), and tyre\r\nlock) are supported in iRacing. And i they are not supported by the Simsonn\r\nManager are all of them supported using SimHub in iRacing?\r\n\r\nThanks,\r\nAdam\r\n\r\nOn Fri, Aug 29, 2025 at 2:25 AM support@simsonn.com ",
+      "user_id": 158003750812,
+      "created_at": "2025-08-29T10:46:02Z",
+      "updated_at": "2025-08-29T10:46:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007802494,
+      "body_text": "Hi Adam Dera,  You may also check the official SimHub website for more information. Their support is more comprehensive, and since SimHub has been released and updated for a longer period, it offers broader functionality and better compatibility. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-30T03:38:54Z",
+      "updated_at": "2025-08-30T03:38:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007802669,
+      "body_text": "Hi Adam Dera,  Currently, the vibration effects we support in iRacing include: speed, clutch, RPM, ABS, and gear shifting. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-30T03:44:47Z",
+      "updated_at": "2025-08-30T03:44:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

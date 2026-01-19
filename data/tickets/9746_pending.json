@@ -1,0 +1,84 @@
+{
+  "id": 9746,
+  "subject": "Haptics help",
+  "description_text": "Hello. I am writing on behalf of many sim racers. We all have identical\r\nissues. It is not related to underpowered usb as suggested by you. Its\r\nabsolutely a software or firmware issue.  The haptics will occasionally go\r\nto full power and not stop till unplugged from the power supply. Other\r\ntimes they will stop working, no vibration. Just disconnect shown on the\r\nsimhub. I can fix that simply by unplugging the usb and plug it back in\r\nimmediately and they work again. This happens on several sims including\r\niRacing and LeMans ultimate. Please come up with a real solution, because\r\nit ruins our racing experiences when my (our) pedals shake so badly mid\r\nrace. You have to stop driving and unplug it. Thank you. I look forward to\r\nhearing from you\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-01T17:47:20Z",
+  "updated_at": "2026-01-02T03:56:35Z",
+  "requester_id": 158005049076,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015377885,
+      "body_text": "Hi SJ Perkins,     Our engineers are currently investigating this issue. The preliminary cause appears to be that the USB cable is not properly connected to the controller ground. We have updated the design for new controller boards, and for existing controllers, the issue can be quickly resolved by following the method below.   If this occurs, it indicates that your PC’s grounding may be unreliable, possibly because a three-prong plug was not used in a grounded wall outlet. You can refer to the post below and connect the three metal screws on the PC case, control box, and pedals, which should resolve the disconnection issue.  https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2026-01-02T03:36:39Z",
+      "updated_at": "2026-01-02T03:36:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015377989,
+      "body_text": "No. I have a high end battery backup power strip/ surge protector. Its\r\nproperly grounded with a 3 prong. Try harder.\r\n\r\nOn Thu, Jan 1, 2026, 7:37 PM support@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2026-01-02T03:42:45Z",
+      "updated_at": "2026-01-02T03:42:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015378010,
+      "body_text": "Hi SJ Perkins,  The main solution is to use a single wire: connect one end to a screw on the computer case and the other end to a screw on our main controller. This should resolve the issue. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-02T03:44:51Z",
+      "updated_at": "2026-01-02T03:44:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015378019,
+      "body_text": "So are we, the existing customers going to get a replacement box once the\r\nissue is resolved?\r\n\r\n",
+      "user_id": 158005049076,
+      "created_at": "2026-01-02T03:45:59Z",
+      "updated_at": "2026-01-02T03:45:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015378035,
+      "body_text": "Ill try that. This box doesn't have the grounding post. Just use any screw\r\non the case?\r\n\r\nOn Thu, Jan 1, 2026, 7:45 PM support@simsonn.com ",
+      "user_id": 158005049076,
+      "created_at": "2026-01-02T03:47:12Z",
+      "updated_at": "2026-01-02T03:47:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015378075,
+      "body_text": "Hi SJ Perkins,  You are using the ProX Ultra, right? Any screw position will work. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-02T03:49:39Z",
+      "updated_at": "2026-01-02T03:49:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015378138,
+      "body_text": "Hi SJ Perkins,    In different countries, some plugs are two-pronged and lack a ground, which can cause similar issues. Usually, following the standard procedure can resolve this. If connecting the grounding wire does not solve the problem, we can replace the main board for the customer. The issue may also be due to the customer’s wiring, such as paint not being removed from the screw surfaces. Generally, if the customer prefers to avoid complicated steps, we will provide a replacement main board directly.  We have already begun optimizing the firmware to ensure the controller operates stably in any customer environment.     To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability:     1.    Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding.     2.    Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive.     3.    Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup.     4.    Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible.     5.    Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs.     6.    Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference.     7.    Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements.     8.    Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-02T03:56:35Z",
+      "updated_at": "2026-01-02T03:56:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

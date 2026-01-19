@@ -1,0 +1,64 @@
+{
+  "id": 2519,
+  "subject": "Simsonn pro x ultra not working",
+  "description_text": "Hi i have issue with my newly purchased simsonn pro x ultra pedal. I\r\ninstalled the simsonn manager software to calibrate and after that i try to\r\ntest with the lemans ultimate but the device is not working although it\r\ndetected by the game so i try to recalibrate again but same thing happen i\r\nalso try it to assetto corsa competizione but still same result.just for\r\nadditional info My wheel base is thrustmaster t598 is there something i\r\nmissing about i hope you could help me pls.\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-08-10T02:37:43Z",
+  "updated_at": "2025-08-10T05:45:08Z",
+  "requester_id": 158002899069,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006615390,
+      "body_text": "Hi kurt laina,  ​Please first update the software to SIMSONN Manager 2.1.0. Then, in the \"Settings - Update\" section, click \"Manual Firmware Update\", navigate to the pedals-firmware folder → pedals folder, and select the proxultra.sfu file to update. After the update is complete, please test again. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T02:53:02Z",
+      "updated_at": "2025-08-10T02:53:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006624192,
+      "body_text": "Unfortunately it still not working i already you intruction but still same\r\nissue im stress now\r\n\r\nOn Sun, 10 Aug 2025, 2:53 pm service@simsonn.com, ",
+      "user_id": 158002899069,
+      "created_at": "2025-08-10T04:57:15Z",
+      "updated_at": "2025-08-10T04:57:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006625023,
+      "body_text": "Hi kurt laina,    you can download the Todesk tool (no registration required). Once installed, please provide your ID and temporary password, and I’ll assist you remotely.  https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T05:01:08Z",
+      "updated_at": "2025-08-10T05:01:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006625914,
+      "body_text": "ToDesk:\r\n设备代码:834 229 716\r\n临时密码:7svmyxg3\r\n\r\nOn Sun, Aug 10, 2025 at 5:01 PM service@simsonn.com ",
+      "user_id": 158002899069,
+      "created_at": "2025-08-10T05:21:16Z",
+      "updated_at": "2025-08-10T05:21:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006627812,
+      "body_text": "",
+      "user_id": 158002899069,
+      "created_at": "2025-08-10T05:45:08Z",
+      "updated_at": "2025-08-10T05:45:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "id": 7780,
+  "subject": "Order SSN4583 request",
+  "description_text": "Hi Simsonn team,\r\n\r\nI just purchased an order SSN4583 but there is 1 item which will be available only at 15. december.\r\n\r\nCan you please send me rest of the order now so we can catch it until 24. december ? (Christmas present).\r\n\r\nI think you should be ok with shipping fee as the order is more than 2 x 399 USD\r\n\r\nAlso please send me commercial invoice for this company:\r\n\r\nCompany name: Kazuki s.r.o.\r\nCompany address: Pupavova 4161, 95117 Cabaj-Capor, Slovakia\r\nVAT ID: SK2122103214\r\n\r\nThank you very much for understanding.\r\n\r\nBest regards,\r\n\r\nFrantisek Balazsy\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-09T11:35:27Z",
+  "updated_at": "2025-12-12T11:48:37Z",
+  "requester_id": 158007716579,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014238645,
+      "body_text": "Hi Frank Balazsy,    Alright, we'll ship the other products to you as soon as possible.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-10T07:24:58Z",
+      "updated_at": "2025-12-10T07:24:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014239265,
+      "body_text": "Thank you very much !\r\n\r\nJust please don't forget that commercial invoice for company described\r\nabove as I will be doing customs on it.\r\n\r\nBest regards,\r\n\r\nFrank\r\n\r\nDňa st 10. 12. 2025, 8:25 support@simsonn.com ",
+      "user_id": 158007716579,
+      "created_at": "2025-12-10T07:48:05Z",
+      "updated_at": "2025-12-10T07:48:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014291266,
+      "body_text": "If you think it won't arrive on time we can use express shipping just sent me instructions I will pay to you through PayPal.\r\n\r\nThank you for understanding and your help.\r\n\r\n> ",
+      "user_id": 158007716579,
+      "created_at": "2025-12-10T21:55:59Z",
+      "updated_at": "2025-12-10T21:55:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014331269,
+      "body_text": "Hi guys please if possible I would like to pay more for express shipping I am really worried it won't arrive until 24.12.\r\n\r\nPlease let me know and save me. \r\n\r\nLove you. \r\n\r\nBest regards,\r\n\r\nFrank \r\n\r\n> ",
+      "user_id": 158007716579,
+      "created_at": "2025-12-11T15:48:10Z",
+      "updated_at": "2025-12-11T15:48:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014381085,
+      "body_text": "Hi Frank Balazsy,    Do not worry, we shall dispatch your order as soon as possible.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-12T11:48:36Z",
+      "updated_at": "2025-12-12T11:48:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

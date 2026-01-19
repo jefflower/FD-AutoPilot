@@ -1,0 +1,64 @@
+{
+  "id": 3087,
+  "subject": "Customs",
+  "description_text": "My package has been seized by slovak customs. It seems the invoice they\r\nrecieved the pedals have a value of 56USD. Customs asked for\r\n\r\n1. \"proof of payment (bank statement of payment, payment confirmation or\r\nPayPal confirmation)\"\r\n\r\n2. \"confirmed e-mail order, where the goods are listed with the amounts +\r\npossibly added postage or applied discount\"\r\n\r\n3. \"form in the attachment with the exact description of the goods in\r\nSlovak language\"\r\n\r\n4. \"form of authorization in the attachment\"\r\n\r\nNow wouldnt it be a problem that both the proof of statement and email\r\norder shows the value of the pedals not at 56USD but at 200+ USD?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-25T08:45:12Z",
+  "updated_at": "2025-09-03T06:06:16Z",
+  "requester_id": 158003565268,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007594951,
+      "body_text": "Hello, we apologize for the inconvenience caused. You may use this invoice for customs clearance. Should any additional taxes apply, we will reimburse you for a portion of them. Please rest assured.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-27T07:47:18Z",
+      "updated_at": "2025-08-27T07:47:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007611056,
+      "body_text": "This is great, thank you. However how do I even get a slovak description of\r\nthe product? I mean I assume there is no such document prepared by your\r\ncompany. Do i just make a manual description or translate it?\r\n\r\nOn Wed, 27 Aug 2025, 9:47 am service@simsonn.com, ",
+      "user_id": 158003565268,
+      "created_at": "2025-08-27T08:49:23Z",
+      "updated_at": "2025-08-27T08:49:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007618037,
+      "body_text": "Hi Arnold Ivan,    We are sorry that we do not have Slovak invoices available. You may translate this English version and submit it alongside the original.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-27T09:58:12Z",
+      "updated_at": "2025-08-27T09:58:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007954576,
+      "body_text": "The customs investigation came through and i got charged an additional 84€.\r\nCan i get that partial reimbursement?\r\n\r\nOn Wed, 27 Aug 2025, 11:58 am service@simsonn.com, ",
+      "user_id": 158003565268,
+      "created_at": "2025-09-02T11:21:38Z",
+      "updated_at": "2025-09-02T11:21:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008005815,
+      "body_text": "Hello, we have refunded the charges related to ‘poplatky za colno deklaračné služby ’ on your behalf.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-03T06:06:16Z",
+      "updated_at": "2025-09-03T06:06:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

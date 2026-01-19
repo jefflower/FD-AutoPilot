@@ -1,0 +1,35 @@
+{
+  "id": 7185,
+  "subject": "将折扣码添加到我的订单",
+  "description_text": "你好！我购买了 simson pro 踏板，想添加触觉反馈功能。我尝试将“BLACK45”代码添加到我的订单，但它不接受。有人能帮我解决这个问题吗？Zee ZJSPRO.MEDIA <http://ZJSPRO.MEDIA>",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-01T17:03:47Z",
+  "updated_at": "2025-12-04T07:50:46Z",
+  "requester_id": 158007476966,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013257601,
+      "body_text": "您好 ZJS Pro Media，很抱歉，此折扣码需要最低消费 $199。您可以使用此 10% 折扣码：CART10",
+      "user_id": 158001343601,
+      "created_at": "2025-12-02T10:00:02Z",
+      "updated_at": "2025-12-02T10:00:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013284223,
+      "body_text": "明白了，我之前不知道。谢谢您的澄清！喜欢你们的产品，请继续保持！Zee ZJSPRO.MEDIA <http://ZJSPRO.MEDIA> 2025年12月2日星期二，凌晨2:00 service @simsonn.com",
+      "user_id": 158007476966,
+      "created_at": "2025-12-02T17:25:13Z",
+      "updated_at": "2025-12-02T17:25:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

@@ -1,0 +1,24 @@
+{
+  "id": 4045,
+  "subject": "Shipping to Spain",
+  "description_text": "Hi, I already got a Simsonn pedal, and I'm interested now in the VAM pro.\r\nDo you sent the item to Spain?\r\nWhat is the shipping cost and VAT applicable for this item?\r\n\r\nThanks,\r\nJesus\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-22T12:34:16Z",
+  "updated_at": "2025-09-23T02:58:18Z",
+  "requester_id": 158004775048,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009141178,
+      "body_text": "Hi Jesuss,    The checkout price for Vam Pro is the final price; there will be no additional charges, so please rest assured.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-23T02:58:18Z",
+      "updated_at": "2025-09-23T02:58:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": 10829,
+  "subject": "Re: Plus X pedals stopped working",
+  "description_text": "Further information for you. I'm hoping you will respond soon.\n\nThings I've tried: \n- checked cable connection, \n- changed USB cables, \n- tried different USB ports on the motherboard, \n- restarted computer many times, \n- uninstalled the pedals in device manager, \n- uninstalled and reinstalled Simsonn Manager. \n- Device manager finds no issues.\n- joy.cpl shows the following properties but moving the pedals has no effect https://i.imgur.com/Y4cyzag.png\n- I have tested the pedals on another computer and see the same detection screen. Simsonn Manager on this new computer says the pedals are disconnected.\n\n\n\n\n________________________________________\nFrom: paul hansen <dodgybarnet @hotmail.com>\nSent: January 12, 2026 4:10 PM\nTo: service @simsonn.com\nSubject: Plus X pedals stopped working\n\nI have Simsonn brake and accelerator pedals for the last couple of months. They worked great.\n\nToday they will not function. I've tried all the usual steps (reboot, change USB port, check cables, uninstall USB drivers, uninstall and reinstall Simsonn manager).\n\nSimsonn Plus X enumerates in joy.cpl with Status OK but exposes zero axes. Controller appears to be in fallback HID mode?\n\nSimsonn Manager shows pedals as disconnected.\n\nWould reflashing the firmware work? If so can I have the firmware reflash tool and Plus X pedal firmware.\n\nThanks!\nPaul.",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-13T21:46:24Z",
+  "updated_at": "2026-01-14T11:07:35Z",
+  "requester_id": 158009057103,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017052473,
+      "body_text": "Hi paul hansen, Press and hold the upgrade button on the control box, then reconnect the USB cable. SIMSONN Manager should then display that the pedals have entered Recovery Mode. Next, go to: Settings → Update → Manual Firmware Update → pedals → firmware → pedals-plusx.sfu",
+      "user_id": 158000445778,
+      "created_at": "2026-01-14T01:19:19Z",
+      "updated_at": "2026-01-14T01:19:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017058598,
+      "body_text": "That fixed the issue! Thanks so much!",
+      "user_id": 158009057103,
+      "created_at": "2026-01-14T03:22:16Z",
+      "updated_at": "2026-01-14T03:22:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

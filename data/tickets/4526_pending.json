@@ -1,0 +1,44 @@
+{
+  "id": 4526,
+  "subject": "لم اتلق تحديث للطرد الخاص بي",
+  "description_text": "مرحبا لك اتلق تحديث للطرد الخاص بي علما ان الطلب من 1 اكتوبر\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-10-07T05:59:56Z",
+  "updated_at": "2025-10-09T07:49:26Z",
+  "requester_id": 158005480279,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010013057,
+      "body_text": "فقط اريد ان اعرف عن حالة الطرد الخاص هل تم الشحن او ماذا حدث\r\n\r\nفي ثلاثاء، 7 أكتوبر، 2025 في 9:00 ص، كتب service@simsonn.com <\r\nservice@simsonn.com>:\r\n\r\n> Hi Thuq 23\r\n>\r\n> We would like to acknowledge that we have received your request and a\r\n> ticket has been created.\r\n> A support representative will be reviewing your request and will send you\r\n> a personal response.(usually within 24 hours).\r\n>\r\n> To view the status of the ticket or add comments, please visit\r\n> https://simsonn.freshdesk.com/helpdesk/tickets/4526?follow=email\r\n>\r\n> Thank you for your patience.\r\n> View ticket\r\n> <https://simsonn.freshdesk.com/helpdesk/tickets/4526?follow=email>\r\n> *If the button doesn't work, copy-paste this URL in your browser's address\r\n> bar: *https://simsonn.freshdesk.com/helpdesk/tickets/4526?follow=email\r\n>\r\n> Regards,\r\n> simsonn Support Team\r\n>\r\n> 4526:4206036\r\n>\r\n\r\n",
+      "user_id": 158005480279,
+      "created_at": "2025-10-07T11:47:19Z",
+      "updated_at": "2025-10-07T11:47:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010045096,
+      "body_text": "؟؟؟",
+      "user_id": 158005480279,
+      "created_at": "2025-10-07T23:15:10Z",
+      "updated_at": "2025-10-07T23:15:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010134037,
+      "body_text": "Hi Thuq 23,    We sincerely apologize for the delayed response. We have just concluded our 8-day holiday. We will arrange for your shipment as soon as possible. Thank you for your understanding. Our deepest apologies!",
+      "user_id": 158001343601,
+      "created_at": "2025-10-09T07:49:26Z",
+      "updated_at": "2025-10-09T07:49:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

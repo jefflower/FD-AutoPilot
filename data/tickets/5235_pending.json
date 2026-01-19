@@ -1,0 +1,144 @@
+{
+  "id": 5235,
+  "subject": "Order #SSN3008",
+  "description_text": "Hello,\r\n\r\nI'm just curious, what production time I should expect for my order before\r\nit could be shipped?\r\nI found information about 1–2 days on your website, but it's already 5 days\r\nwith no updates.\r\n\r\nThank you!\r\n\r\nBest regards\r\nVladislav Bebchuk\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-10-24T06:40:52Z",
+  "updated_at": "2025-12-03T01:44:26Z",
+  "requester_id": 158006052830,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011010953,
+      "body_text": "Hi Vladislav Bebchuk,    We apologize for the inconvenience. The Pro X Ultra P3-H3 and baseplate are currently out of stock at our German warehouse. Since we can only ship to your country from this warehouse, we will need to ship your order once the items arrive at the warehouse by the end of the month. The other products have already been shipped to you. Here is your tracking number. An international shipping tracking number should be updated within the next couple of days.  https://t.17track.net/en#nums=ALS01224180696",
+      "user_id": 158001343601,
+      "created_at": "2025-10-24T10:07:31Z",
+      "updated_at": "2025-10-24T10:07:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011011239,
+      "body_text": "Thank you for the info! Will be waiting for the updates about pedals on the\r\nnext week.\r\n\r\nпт, 24 окт. 2025 г. в 13:07, service@simsonn.com ",
+      "user_id": 158006052830,
+      "created_at": "2025-10-24T10:37:03Z",
+      "updated_at": "2025-10-24T10:37:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011397064,
+      "body_text": "Hi Vladislav Bebchuk,       I noticed your package delivery failed. Please confirm that your address is complete.  Vladislav Bebchuk  Agias Paraskevis 6  apt.101  8046 Paphos  Cyprus  +357 95 116003  https://www.fedex.com/fedextrack/?trknbr=885476288283&trkqual=2460974000~885476288283~FX&simplified=true",
+      "user_id": 158001343601,
+      "created_at": "2025-10-31T09:58:54Z",
+      "updated_at": "2025-10-31T09:58:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011397365,
+      "body_text": "Hi! Address is correct, it’s just awful Cyprus delivery services, I’m gonna\r\ntry to collect package by myself at their office today. Thank you!\r\n\r\nP.S. is there are any updates about pedals shipment?\r\n\r\nOn Fri, 31 Oct 2025 at 11:59, service@simsonn.com ",
+      "user_id": 158006052830,
+      "created_at": "2025-10-31T10:02:01Z",
+      "updated_at": "2025-10-31T10:02:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011398322,
+      "body_text": "Hi Vladislav Bebchuk,    Your pedals have been scheduled for shipment, but our German warehouse is closed for Reformation Day (public holiday) and will ship your order next Monday. We use DHL Express, and delivery is expected around the 7th.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-31T10:05:14Z",
+      "updated_at": "2025-10-31T10:05:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011714427,
+      "body_text": "Hi, could you share with me tracking number if pedals already shipped?\r\nThank you!\r\n\r\nпт, 31 окт. 2025 г. в 12:05, service@simsonn.com ",
+      "user_id": 158006052830,
+      "created_at": "2025-11-04T08:51:16Z",
+      "updated_at": "2025-11-04T08:51:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011797467,
+      "body_text": "Hi Vladislav Bebchuk,     We apologize for the inconvenience caused. We have arranged for your order to be shipped from our German warehouse, but the tracking number has not yet been generated. We will immediately contact our German warehouse staff to confirm the order status.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-05T10:34:19Z",
+      "updated_at": "2025-11-05T10:34:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011956140,
+      "body_text": "Hi, I'm finally got a tracking number. And the parcel was sent via regular\r\nDHL, not DHL Express. I've paid for the fastest delivery, and I have huge\r\nconcerns about Deutsche Post speed and service quality.  It's already\r\nalmost a month I've been waiting my order. Why should I pay extra $30 for\r\nshipping if it anyway will take such a crazy time to be delivered and why\r\nyou are saying that it was sent by DHL Express if it not? The difference is\r\nhuge between those companies.\r\n\r\n[image: image.png]\r\n\r\nср, 5 нояб. 2025 г. в 12:34, service@simsonn.com ",
+      "user_id": 158006052830,
+      "created_at": "2025-11-07T22:55:24Z",
+      "updated_at": "2025-11-07T22:55:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012625810,
+      "body_text": "Hi, I just remind you, that I paid for the express delivery, and my parcel\r\nstuck in one status for 12 days already. For what I've paid for? For me, it\r\nseems like your employees from Germany just send my package through a\r\nregular post system. It's not normal to take money for delivery and then\r\nuse free shipping options instead.\r\n\r\n[image: image.png]\r\n\r\nсб, 8 нояб. 2025 г. в 00:54, Vladislav Bebchuk <maksim.frei@gmail.com>:\r\n\r\n> Hi, I'm finally got a tracking number. And the parcel was sent via regular\r\n> DHL, not DHL Express. I've paid for the fastest delivery, and I have huge\r\n> concerns about Deutsche Post speed and service quality.  It's already\r\n> almost a month I've been waiting my order. Why should I pay extra $30 for\r\n> shipping if it anyway will take such a crazy time to be delivered and why\r\n> you are saying that it was sent by DHL Express if it not? The difference is\r\n> huge between those companies.\r\n>\r\n> [image: image.png]\r\n>\r\n> ср, 5 нояб. 2025 г. в 12:34, service@simsonn.com ",
+      "user_id": 158006052830,
+      "created_at": "2025-11-20T07:10:23Z",
+      "updated_at": "2025-11-20T07:10:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012695417,
+      "body_text": "Hi Vladislav Bebchuk,    We sincerely apologize for this unusual situation. Typically, DHL shipments take only 3-4 days. We will investigate this matter promptly and provide compensation. We apologize for any inconvenience caused!",
+      "user_id": 158001343601,
+      "created_at": "2025-11-21T10:56:53Z",
+      "updated_at": "2025-11-21T10:56:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012799521,
+      "body_text": "Hi, any updates about the pedals? The waiting time is getting really\r\nridiculous, it's more than a month have been passed after I ordered them...\r\n\r\nпт, 21 нояб. 2025 г. в 12:57, service@simsonn.com ",
+      "user_id": 158006052830,
+      "created_at": "2025-11-24T07:57:56Z",
+      "updated_at": "2025-11-24T07:57:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012882998,
+      "body_text": "Hi! I'm just trying to understand is package got lost, or what happened to\r\nit? I still don't understand why it was sent via regular Deutschland Post\r\n(aka DHL) and not with DHL Express... Previously, I've been ready to order\r\nmore peripherals from your website, but after that, I'm really thinking\r\nabout looking more on Simagic solutions.\r\n\r\nпн, 24 нояб. 2025 г. в 09:57, Vladislav Bebchuk <maksim.frei@gmail.com>:\r\n\r\n> Hi, any updates about the pedals? The waiting time is getting really\r\n> ridiculous, it's more than a month have been passed after I ordered them...\r\n>\r\n> пт, 21 нояб. 2025 г. в 12:57, service@simsonn.com ",
+      "user_id": 158006052830,
+      "created_at": "2025-11-25T13:40:55Z",
+      "updated_at": "2025-11-25T13:40:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013306799,
+      "body_text": "Hi Vladislav Bebchuk,    We apologize for the inconvenience. Our warehouse staff has confirmed that the logistics information has been updated. Please check it.  https://www.dhl.de/en/privatkunden/pakete-empfangen/verfolgen.html?piececode=CE326630378DE&cid=c_dhl_2502061_2353",
+      "user_id": 158001343601,
+      "created_at": "2025-12-03T01:44:25Z",
+      "updated_at": "2025-12-03T01:44:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 10116,
+  "subject": "Pedales simsonn pro",
+  "description_text": "Buenas tardes\r\nHe intentado instalar los pedales simsonn pero me da un error que me dice\r\nque la telemetría no está conectada. Aparte de esto el pedal de freno tiene\r\nun cable suelto y en el manual no dice donde conectarlo. Si me podéis\r\nayudar los agradecería.\r\nUn cordial saludo.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-06T17:22:30Z",
+  "updated_at": "2026-01-07T05:48:00Z",
+  "requester_id": 158007370296,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016068334,
+      "body_text": "Hi luis santana,  I can see that SIMSONN Manager indicates the device has entered SIMSONN Flasher mode. Please release the Upgrade button on the control box and then reconnect the USB cable; the device will return to normal working mode. Additionally, that cable is for the baseplate LED strip. If you did not purchase the baseplate, you do not need to connect it. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T05:47:57Z",
+      "updated_at": "2026-01-07T05:47:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

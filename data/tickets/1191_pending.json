@@ -1,0 +1,74 @@
+{
+  "id": 1191,
+  "subject": "Simsonn Pro X pedals not behaving properly",
+  "description_text": "Hello,    \r\n\r\n    I've received my Simsonn ProX pedal's early this week and just got around to unboxing them and setting them up. Upon unboxing them I noticed the clutch pedal was extremely sticky when returning to neutral position from a full depress. Attached is a video of my pedal representing what I mean. I've tried shorting the travel but it seems to be a problem with the dampener itself. I've asked others on YouTube who have reviewed these pedals and/or own them as and they've confirmed their clutch does not behave this way and \"snaps back to neutral\" as a clutch should. Is there anything that can be done on my end or is this a faulty pedal? I've tried using it in game but it severely hinders performance as the clutch depresses to far to slowly causing the clutch to stay engaged long after shifts.\r\n\r\nOrder #SSN1829\r\n\r\nThanks,\r\nJames Falbow\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-07-04T02:05:58Z",
+  "updated_at": "2025-07-16T06:16:40Z",
+  "requester_id": 158001890582,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004445104,
+      "body_text": "Hi James Falbow,    We will notify our tech support to help you out, and if necessary, we will resend everything necessary for you, so please don't worry.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-04T13:26:23Z",
+      "updated_at": "2025-07-04T13:26:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445150,
+      "body_text": "Hi James Falbow,  The issue is likely related to the height adjustment of the clutch spring. One solution is to adjust the spring to the proper height, and another is to replace it with the red clutch spring for better feel and feedback performance. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-04T13:36:31Z",
+      "updated_at": "2025-07-04T13:36:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445327,
+      "body_text": "ID 为 1195 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-04T14:11:11Z",
+      "updated_at": "2025-07-04T14:11:11Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004445328,
+      "body_text": "合并来自工单1195  \n      主题: Ticket follow up on Order #SSN1829 clutch issue  \n      描述:  \nSimsonn Support, \n \n \n \n \nI could not log in to freshdesk to add notes to my current ticket as it said I did not have the clearance so I figured I'd send another email regarding my findings to limit any hassle. I narrowed the problem down to the hydraulic rod. Upon detaching it the\n clutch felt fine with nothing preventing it from returning to neutral position quickly. This prompted me to further examine the hydraulic rod to see if it was functioning properly and I found that it was indeed hanging and refusing to depress when pressed\n in. Attached is the original video of pedal assembled and a second video of the hydraulic rod failure. If after reviewing this ticket you feel this is the problem as well I would like to resolve this by receiving a replacement 2 way hydraulic rod to save the\n hassle returning the full set or sending the clutch in for a full replacement as I'm certain I've narrowed it down to a faulty 2 way hydraulic rod.  Below is the original message. \n \nOrder #SSN1829  \n \n \n \n \nThanks, \n \n \n \n \nJames Falbow \n \n \n \n \n \n \n \nHello,     \n \n \n \n \n    I've received my Simsonn ProX pedal's early this week and just got around to unboxing them and setting them up. Upon unboxing them I noticed the clutch pedal was extremely sticky when returning to neutral position from a full depress. Attached is a video\n of my pedal representing what I mean. I've tried shorting the travel but it seems to be a problem with the dampener itself. I've asked others on YouTube who have reviewed these pedals and/or own them as and they've confirmed their clutch does not behave this\n way and \"snaps back to neutral\" as a clutch should. Is there anything that can be done on my end or is this a faulty pedal? I've tried using it in game but it severely hinders performance as the clutch depresses to far to slowly causing the clutch to stay\n engaged long after shifts.  \n \n \n \n \nOrder #SSN1829\n \n \n \n \n \nThanks,  \n \nJames Falbow",
+      "user_id": 158000445778,
+      "created_at": "2025-07-04T14:11:12Z",
+      "updated_at": "2025-07-04T14:11:12Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004448482,
+      "body_text": "Simsonn Service,\r\n\r\n    I appreciate the response. Unfortunately these adjustments have not rectified the problem. The pedal works as it should with the 2 way hydraulic rod removed. What seems to be happening is the rod isn't fully depressing like the rod in the brake pedal and throttle and is getting hung up at about 50% (as seen in video). I was able to get the clutch pedal in a useable state after removing the rod and making some adjustments, but putting the rod back in makes the clutch depress very slowly. This keeps the car's gearbox in neutral longer than it should after shifting.\r\n________________________________\r\n",
+      "user_id": 158001890582,
+      "created_at": "2025-07-05T16:48:51Z",
+      "updated_at": "2025-07-05T16:48:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004454425,
+      "body_text": "Hi James Falbow,   Please provide your order number, shipping address, and phone number, and I will send you a replacement bidirectional hydraulic rod. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T08:08:04Z",
+      "updated_at": "2025-07-07T08:08:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

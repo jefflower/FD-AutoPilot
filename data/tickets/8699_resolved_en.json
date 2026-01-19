@@ -1,0 +1,65 @@
+{
+  "id": 8699,
+  "subject": "VAM motor malfunction",
+  "description_text": "Good morning\nI am writing about a problem I had with a VAM haptic motor. I purchased the complete set of motors with the relative power supply to connect to the Plus X pedal board, which was already equipped with a control box.\nAt first, everything worked correctly, but after only 20 minutes, one motor stopped working. I tried swapping the various motors, but only that one doesn't work. No error is displayed on the screen.\nI am attaching a video.\n\nThank you very much\nZamparutti Amedeo",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-19T17:57:36Z",
+  "updated_at": "2025-12-26T09:00:32Z",
+  "requester_id": 158008155545,
+  "responder_id": 158007774664,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014810888,
+      "body_text": "Hi Amedeo Zamparutti, Please take a screenshot of the motor settings page so I can check your configuration. Additionally, the video you uploaded is incomplete. Please send us the link via Google Drive and ensure the sharing permissions are set correctly.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-20T13:22:55Z",
+      "updated_at": "2025-12-20T13:22:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014939113,
+      "body_text": "Good morning\nHere is the requested video link. I hope it's fine\n\nhttps://drive.google.com/file/d/11uJdHy_LJuZKD1uOeuL7lWWgMzO8Swc/view?usp=drivesdk\n\nI also attach the requested photos\n\nSat 20 Dec 2025, 14:23 service @simsonn.com",
+      "user_id": 158008155545,
+      "created_at": "2025-12-22T21:02:54Z",
+      "updated_at": "2025-12-22T21:02:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015021225,
+      "body_text": "Hi Amedeo Zamparutti, Please provide your order number, contact person, phone number, and shipping address. We will send you 1 replacement VAM motors. Please also note that the VAM motors should not be used in VAM Pro mode.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-24T06:14:39Z",
+      "updated_at": "2025-12-24T06:14:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015028173,
+      "body_text": "Hi\n\nMy order ID is 3065510739888092. I bought Italian on aliexpress.\n\nAddress:\nvia edmondo de amicis 52/1\n33030 Campoformido\nUDINE\nItaly\n\nPhone:\n+393406297105\n\nThank you very much\n\nAmedeo Zamparutti\n\n\nWed 24 Dec 2025, 07:14 service @simsonn.com",
+      "user_id": 158008155545,
+      "created_at": "2025-12-24T08:49:17Z",
+      "updated_at": "2025-12-24T08:49:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015089514,
+      "body_text": "Hi Amedeo Zamparutti, Your product has been shipped. The logistics number is: YT2536000705678042. You can track it at this website: https://t.17track.net/zh-cn#nums=YT2536000705678042",
+      "user_id": 158007774664,
+      "created_at": "2025-12-26T09:00:21Z",
+      "updated_at": "2025-12-26T09:00:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

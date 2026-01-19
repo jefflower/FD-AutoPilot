@@ -1,0 +1,25 @@
+{
+  "id": 11069,
+  "subject": "订单尚未发货",
+  "description_text": "你好，\n\n我一周前下了订单，但仍然没有任何发货信息\n你能解释一下为什么还没发货吗？订单号 #SSN5960\n\n谢谢你",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-16T11:01:35Z",
+  "updated_at": "2026-01-16T11:50:35Z",
+  "requester_id": 158009298477,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017259508,
+      "body_text": "嗨 Justin Bernardus，对于延迟我们深表歉意。两批运往我们德国仓库的货物受到了欧洲大雪的影响，导致道路堵塞和交货延迟。我们将加快交货速度或探索其他物流渠道，尽快从中国发货给您。",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T11:50:35Z",
+      "updated_at": "2026-01-16T11:50:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

@@ -1,0 +1,24 @@
+{
+  "id": 9581,
+  "subject": "Livraison",
+  "description_text": "Bonjour,\r\n\r\nQuel est la durée de livraison sachant que j'habite en France.\r\nEt est ce que j'aurais une taxe de douane si j'achète un produit chez vous.\r\nDernière question peut-on se faire livrer dans un point relais.\r\n\r\nCordialement.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-30T14:27:44Z",
+  "updated_at": "2025-12-31T02:40:13Z",
+  "requester_id": 158008820418,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015291085,
+      "body_text": "Hi Rémi BRASSEUR,  For orders to France, we need to ship from our Germany warehouse, which will take approximately 10 days to arrive. Shipping directly from China may incur customs duties. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T02:40:13Z",
+      "updated_at": "2025-12-31T02:40:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

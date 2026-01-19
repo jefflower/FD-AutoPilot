@@ -1,0 +1,44 @@
+{
+  "id": 3728,
+  "subject": "Info",
+  "description_text": "Hello,\r\n\r\nRecently I bought Simsonn Plus X pedals and I'm really happy with them.\r\nI was just on Simsonn's website checking the VAM Pro set of two haptic\r\nmotors with power supply and mounting brackets, but when I went to check\r\nout, it added 27,10$ of taxes to the price.\r\n\r\nI have received my pedals from Germany, and there were no additional taxes\r\nto the price. Is there a way to do it the same way for the haptic set?\r\n\r\nBest regards!\r\nVlado Vrlika\r\n\r\n",
+  "status": 3,
+  "priority": 2,
+  "created_at": "2025-09-11T17:06:10Z",
+  "updated_at": "2025-09-15T10:22:29Z",
+  "requester_id": 158002820193,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008561621,
+      "body_text": "Hi Vlado Vrlika,  Since our German warehouse currently does not have stock of the motors, we do have a stocking plan, but the exact timeline is not yet confirmed. It is estimated that it will take about two months for the goods to arrive. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-12T04:15:42Z",
+      "updated_at": "2025-09-12T04:15:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008573751,
+      "body_text": "Ok, thank you.\r\nIf they arrive at the German warehouse in 2 months, will I be able to order\r\nfrom the Simsonn website without tax, or do I need to contact you via email?\r\n\r\nOn Fri, Sep 12, 2025 at 6:15 AM service@simsonn.com ",
+      "user_id": 158002820193,
+      "created_at": "2025-09-12T07:44:09Z",
+      "updated_at": "2025-09-12T07:44:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008744759,
+      "body_text": "Hi Vlado Vrlika,    Certainly, we shall remove the duty once the stock arrives. You may keep an eye on it.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-15T10:19:35Z",
+      "updated_at": "2025-09-15T10:19:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

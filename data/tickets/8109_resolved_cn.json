@@ -1,0 +1,107 @@
+{
+  "id": 8109,
+  "subject": "Simsonn VAM pro 触觉问题",
+  "description_text": "你好，\n\n我购买了 Simsonn pro X ultras 以及用于刹车踏板的 VAM pro 线性触觉反馈器。我遇到了间歇性反馈或有时在没有输入的情况下持续反馈的问题。我尝试了 simsoon 软件和 simhub。我已经在踏板和触觉反馈器之间增加了尼龙垫圈。我不确定还能做什么。我确实遇到过一个问题，即使触觉反馈器已正确插入，最初也无法显示通电。我想这可能是控制盒的问题？最终，在拔下并重新插入踏板几次后，它们似乎工作了。",
+  "status": 4,
+  "priority": 4,
+  "created_at": "2025-12-12T21:16:58Z",
+  "updated_at": "2025-12-23T05:38:31Z",
+  "requester_id": 158007789834,
+  "responder_id": 158007774664,
+  "cc_emails": [
+    "service@simsonn.com"
+  ],
+  "conversations": [
+    {
+      "id": 158014427471,
+      "body_text": "你好 Michael Allen， 如果出现这种情况，说明电脑接地不可靠，可能是因为没有使用三孔插头连接三孔墙壁插座。您可以参考下面的帖子：将电脑机箱连接到支架上，并将控制盒连接到踏板上的金属螺丝上。这应该可以解决断连问题。 https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-12-13T03:01:47Z",
+      "updated_at": "2025-12-13T03:01:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014463395,
+      "body_text": "你好，\n\n我把电脑的电源排插换成了三孔接头的。但这没有用，这次比赛时 VAM PRO 完全失去连接并一直震动，直到我从控制盒上拔下电源。我的控制盒电源输入接口似乎有些松动，会是控制盒的问题吗？\n\n谢谢，",
+      "user_id": 158007789834,
+      "created_at": "2025-12-13T16:42:00Z",
+      "updated_at": "2025-12-13T16:42:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014471515,
+      "body_text": "你好 Michael Allen， 能否请您拍一张接地连接的照片给我检查一下？我想看看 PC 机箱、控制盒和踏板之间的接线。如果三者都连接牢固，应该不会发生信号中断。另外，请尝试用扎带固定 VAM Pro 电源线，看看是否有帮助。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-14T02:24:32Z",
+      "updated_at": "2025-12-14T02:24:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014485182,
+      "body_text": "你可以在这里看到我从踏板连接到控制盒，再从控制盒连接到 PC 机箱的电源安装座，这应该有足够的接地。性能完全没有改变。\n\n我还打磨了所有连接表面以确保连接良好。",
+      "user_id": 158007789834,
+      "created_at": "2025-12-14T14:43:31Z",
+      "updated_at": "2025-12-14T14:43:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014574747,
+      "body_text": "你好？我还没有收到回复。我认为我的触觉电源或控制盒有问题。我在测试时关闭了我的低音炮和直驱底座，但仍然有同样的问题。\n\n触觉反馈的前4-5次测试工作正常，但之后在第5次测试时，我会从触觉反馈器收到一次非常长的震动，就好像它失去了连接一样。在玩游戏时也会发生同样的情况。",
+      "user_id": 158007789834,
+      "created_at": "2025-12-16T14:37:00Z",
+      "updated_at": "2025-12-16T14:37:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014621782,
+      "body_text": "你好 Michael Allen， 请提供您的订单号、联系人姓名、电话号码和送货地址，我们将为您寄送一块替换主板。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T10:24:34Z",
+      "updated_at": "2025-12-17T10:24:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014670882,
+      "body_text": "你好，\n\n我的 pro X ultra 踏板的订单号是 8206304594840205。我是在全球速卖通的 Simsonn 商店购买的踏板。我从亚马逊的 Simsonn 商店单独购买了 vam pro 触觉反馈器和电源，订单号是 #111-0081296-7833803。我的联系信息如下。\n\nMichael Allen\n248-979-4161\n10775 Elgin Ave, Huntington Woods, MI 48070",
+      "user_id": 158007789834,
+      "created_at": "2025-12-18T02:06:03Z",
+      "updated_at": "2025-12-18T02:06:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014878929,
+      "body_text": "你好，Michael Allen。好的，我明天会给你寄出替换的控制盒，并给你运单号。",
+      "user_id": 158007774664,
+      "created_at": "2025-12-22T12:15:57Z",
+      "updated_at": "2025-12-22T12:15:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014954836,
+      "body_text": "你好 Michael Allen， 你的产品已经发货。物流单号是：JSELV2352127554YQ。你可以在这个网站上追踪：https://t.17track.net/zh-cn#nums=JSELV2352127554YQ",
+      "user_id": 158007774664,
+      "created_at": "2025-12-23T05:38:23Z",
+      "updated_at": "2025-12-23T05:38:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

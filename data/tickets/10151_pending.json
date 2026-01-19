@@ -1,0 +1,44 @@
+{
+  "id": 10151,
+  "subject": "",
+  "description_text": "Hello dear worker of simsonn.\r\n\r\nI placed an order 6th of january under the name storm vanderlinde but i did\r\nnot recieve a confirmation.\r\n\r\nMay that be because i put in the wrong email?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-07T00:46:24Z",
+  "updated_at": "2026-01-08T01:50:24Z",
+  "requester_id": 158008961206,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016061409,
+      "body_text": "Hi Storm Van Der Linde,     Please provide the recipient’s information, order amount, order date, and destination country. Once the payment is successfully completed, we will ship orders in sequence according to the order timeline.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T05:08:20Z",
+      "updated_at": "2026-01-07T05:08:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016159535,
+      "body_text": "montesorristraat 5 1964TE heemserk netherlands\r\nJanuari 6th\r\nstorm vanderlinde\r\nphone number is 0618477255\r\n\r\ni bought the Simsonn Racing Simulator Carbon Fiber and Aluminum Steering\r\nWheel Hub\r\n\r\n\r\nOp wo 7 jan 2026 om 06:08 schreef service@simsonn.com ",
+      "user_id": 158008961206,
+      "created_at": "2026-01-07T15:41:05Z",
+      "updated_at": "2026-01-07T15:41:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016246882,
+      "body_text": "Hi Storm Van Der Linde,     Your order number is SSN5809. Below is the tracking information for your shipment: ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-08T01:50:23Z",
+      "updated_at": "2026-01-08T01:50:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

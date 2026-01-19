@@ -1,0 +1,74 @@
+{
+  "id": 86,
+  "subject": "Question about shipping",
+  "description_text": "Good morning,\r\n\r\nI recently ordered a shifter and pedal set from your company off Amazon Canada, and was wondering where they would be shipping from and if you knew whether they would be subject to any tarrifs or import fees. The listing on Amazon doesn't say there are any, but the pictures did mention shipping from within the United States so I wasn't fully sure. Any information would be greatly appreciated.\r\n\r\nThanks,\r\nMatthew\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-03T23:45:59Z",
+  "updated_at": "2025-06-05T05:35:57Z",
+  "requester_id": 158000955963,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002324295,
+      "body_text": "Hi Matthew Hanscom,  Hello, the item will be shipped from the United States, and no customs duties will be charged. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-04T06:51:38Z",
+      "updated_at": "2025-06-04T06:51:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002422165,
+      "body_text": "Thank you that's really helpful, however according to the tracking its not. Ups and yun express both say the parts are coming directly from China.\r\n\r\n________________________________\r\n",
+      "user_id": 158000955963,
+      "created_at": "2025-06-04T15:52:20Z",
+      "updated_at": "2025-06-04T15:52:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002426453,
+      "body_text": "Hi,\r\nBoth statements in your email were incorrect. Ups notified me that the pedals have an import fee of $28.82. Attached is a screenshot of the message with the tracking\r\n________________________________\r\n",
+      "user_id": 158000955963,
+      "created_at": "2025-06-04T21:37:09Z",
+      "updated_at": "2025-06-04T21:37:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002428273,
+      "body_text": "Hi Matthew Hanscom,    Orders for Canada are not shipped from the United States. Because the product images for Canada and the U.S. are shared, this may have caused some confusion. Please provide your order number, and we will arrange a refund for the customs duties.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-05T00:02:17Z",
+      "updated_at": "2025-06-05T00:02:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002428314,
+      "body_text": "Hi,\r\n\r\nI understand now, thank you for the clarification.\r\nThe amazon order number is 701-9367604-5387455\r\n\r\n________________________________\r\n",
+      "user_id": 158000955963,
+      "created_at": "2025-06-05T00:06:31Z",
+      "updated_at": "2025-06-05T00:06:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002431448,
+      "body_text": "Hello，Matthew Hanscom，  The customs duty has been refunded. Please check your Amazon account shortly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-05T05:35:56Z",
+      "updated_at": "2025-06-05T05:35:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

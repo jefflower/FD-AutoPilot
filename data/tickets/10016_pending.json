@@ -1,0 +1,24 @@
+{
+  "id": 10016,
+  "subject": "SIMSONN PRO PLUS PEDALS - New control box to make it compatible with Simsonn Software?",
+  "description_text": "I currently have the Simsonn Pro Plus Pedals (Older Model) The one that\r\nships with the old control box. The only way I can customize the settings\r\nis through the Freejoy Configuration App.\r\n\r\nBasically I want to get the Simsonn VAM Haptic Pedal Reactors for my pedals\r\nbut my current control box doesn't have a port for them.\r\n\r\nIf I buy the new Control Box (Plus X Control Box) Will my current Pro Plus\r\npedals work with it? And will I finally be able to use the Simsonn Software\r\nthrough it?\r\n\r\nThank You!\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-05T18:17:10Z",
+  "updated_at": "2026-01-07T07:18:06Z",
+  "requester_id": 158008940299,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016081818,
+      "body_text": "Hi Benjo,    If it is version 1.7.1, you can update the pedal firmware in Simsonn Manager via: Settings → Update → Manual Firmware Update → Pedals → firmware → pedals-plus.sfu.  If it is version 1.7.0, you can purchase the PlusX controller box. It supports Pro Plus pedals and also provides vibration motor interfaces.     https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor?variant=51351053533498",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T07:18:06Z",
+      "updated_at": "2026-01-07T07:18:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

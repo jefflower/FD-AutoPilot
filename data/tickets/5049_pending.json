@@ -1,0 +1,54 @@
+{
+  "id": 5049,
+  "subject": "Warranty",
+  "description_text": "Hello simsonn support. Yesterday I was adjusting my pedals because they\r\nwere a bit too vertical. What I did is turn around the plate (see attached\r\npicture) and nothing else. I did this to my throttle and brake also, and\r\nnothing happened. However, when I finally placed down my clutch and pressed\r\nit, a part fell out. I'm not sure if the pedal still works, I don't really\r\nwant to try because I'm afraid it will cause more damage. I would like to\r\nask what I can do about it, I'm looking for either a replacement or a\r\ntutorial on how to fix. The throttle and brake works fine, so if possible\r\nI'd only like to get my clutch pedal replaced. I have the SIMSONN plus X\r\npedal set. See part that fell off beneath.\r\n\r\nRegards, ksawery Zygmunt.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-10-19T14:43:53Z",
+  "updated_at": "2025-10-22T07:34:31Z",
+  "requester_id": 158005854998,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010713960,
+      "body_text": "Hi ksawery zygmunt,  Please take a photo showing the silver sensor position on the clutch and the small spring near the blue limiter, so I can check which part is damaged. Don’t worry — we can send you the replacement parts free of charge and provide a video guide to help you replace them easily.       ​In addition, please provide your order number, contact name, phone number, and shipping address so we can process your request as quickly as possible. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-20T01:46:22Z",
+      "updated_at": "2025-10-20T01:46:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010740393,
+      "body_text": "Hello. Here is the information you asked for:\r\n\r\nOrder number: SSN2326\r\nContact name: ksawery\r\nShopping address: The Netherlands, Enschede, cheribonstraat 1 7541 ZS\r\n(country, city, street and zip code)\r\nPhone number: +31 6 33202631\r\n\r\nIs this the part what you mean?\r\n\r\n\r\n\r\n\r\n> 5049:4206036\r\n>\r\n\r\n",
+      "user_id": 158005854998,
+      "created_at": "2025-10-20T13:41:21Z",
+      "updated_at": "2025-10-20T13:41:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010859151,
+      "body_text": "Hi ksawery zygmunt,         Okay, we've replaced the entire clutch pedal assembly for you.  https://t.17track.net/en#nums=YT2529500704513495",
+      "user_id": 158001343601,
+      "created_at": "2025-10-22T07:24:55Z",
+      "updated_at": "2025-10-22T07:24:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010859219,
+      "body_text": "That's great, thank you very much! Is there a place where I can give a\r\nrating?\r\n\r\n",
+      "user_id": 158005854998,
+      "created_at": "2025-10-22T07:29:43Z",
+      "updated_at": "2025-10-22T07:29:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": 2000,
+  "subject": "Simsonn Order Confirmation #SSN2143",
+  "description_text": "Hello, the Plus X P3-H3 / Silver / without Baseplate is out of stock in our US warehouse. We can replace it with the black version and ship it from our US warehouse, or ship the silver version from China, which will take longer. Please let me know your choice as soon as possible.",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-28T06:02:56Z",
+  "updated_at": "2025-07-28T10:38:39Z",
+  "requester_id": 158002373805,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005724502,
+      "body_text": "I will take the black version.\r\n\r\nOn Mon, Jul 28, 2025, 2:03 AM support@simsonn.com ",
+      "user_id": 158002373805,
+      "created_at": "2025-07-28T09:57:09Z",
+      "updated_at": "2025-07-28T09:57:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005724804,
+      "body_text": "Hi Burgner69,    Okay, thank you for your understanding. We have shipped the black version for you. Here is your shipping tracking link.    https://www.fedex.com.cn/wtrk/track/?trknbr=883105430018",
+      "user_id": 158001343601,
+      "created_at": "2025-07-28T10:38:39Z",
+      "updated_at": "2025-07-28T10:38:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

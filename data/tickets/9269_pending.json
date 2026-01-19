@@ -1,0 +1,274 @@
+{
+  "id": 9269,
+  "subject": "Order #SSN5209",
+  "description_text": "I just want an answer. \r\nThis is my third time of trying. \r\nAre you shipping these soon ?\r\nDo you even have stock. \r\nYour auto reply email says I will receive an answer in 24 hours. This is not happening. \r\nYou are making a very dissatisfied customer !\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-27T04:59:03Z",
+  "updated_at": "2026-01-15T11:35:26Z",
+  "requester_id": 158008372253,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015146778,
+      "body_text": "合并来自工单9058  \n      主题: SSN5209  \n      描述:  Placed an order today and you have still not confirmed it.  Can you please let me know what is going on.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T02:28:31Z",
+      "updated_at": "2025-12-28T02:28:31Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158015146776,
+      "body_text": "ID 号为 9058 和 9221 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T02:28:31Z",
+      "updated_at": "2025-12-28T02:28:31Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158015146780,
+      "body_text": "合并来自工单9221  \n      主题: Re order SSN5209  \n      描述:  What’s going on with this order guys. It’s status has not changed in 3 days !",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T02:28:32Z",
+      "updated_at": "2025-12-28T02:28:32Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158015146805,
+      "body_text": "Hi Stuart Ward,  Your order was shipped yesterday. We sincerely apologize for the delay caused by the high volume of orders during the peak season. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T02:30:42Z",
+      "updated_at": "2025-12-28T02:30:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015173146,
+      "body_text": "The tracking says the parcel hasn’t even been picked up yet. So it hasn’t shipped. \r\nYou’ve just created a label to say it’s shipped and now I can’t request a refund for delayed shipping. \r\n\r\n> ",
+      "user_id": 158008372253,
+      "created_at": "2025-12-28T23:51:11Z",
+      "updated_at": "2025-12-28T23:51:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015236803,
+      "body_text": "So why 3 days later do I still get this message from the shipping company. \r\nYou haven’t shipped it yet. \r\n\r\n\r\n> ",
+      "user_id": 158008372253,
+      "created_at": "2025-12-30T05:48:11Z",
+      "updated_at": "2025-12-30T05:48:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015285635,
+      "body_text": "Another day.     No response. \r\n\r\n> ",
+      "user_id": 158008372253,
+      "created_at": "2025-12-30T22:45:18Z",
+      "updated_at": "2025-12-30T22:45:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015292494,
+      "body_text": "Do you actually have stock, or are you waiting for it to arrive ? \r\nThis is ridiculous \r\n\r\n> ",
+      "user_id": 158008372253,
+      "created_at": "2025-12-31T04:23:58Z",
+      "updated_at": "2025-12-31T04:23:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015303639,
+      "body_text": "你好，斯图尔特·沃德，     给您带来的不便，我们深表歉意。很遗憾，触觉反馈产品目前在我们中国的仓库也已售罄——它们实在太受欢迎了。我们下周一就能为您发货。",
+      "user_id": 158001343601,
+      "created_at": "2025-12-31T09:35:28Z",
+      "updated_at": "2025-12-31T09:35:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015303643,
+      "body_text": "Hi Stuart Ward,    We apologize for the inconvenience. Unfortunately, the haptics are currently out of stock at our China warehouse as well—they're simply too popular. We'll be able to ship yours next Monday.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-31T09:35:41Z",
+      "updated_at": "2025-12-31T09:35:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015306651,
+      "body_text": "But on the 28th you told me it had shipped. \r\nLying to your customers is not good.  \r\n\r\n> ",
+      "user_id": 158008372253,
+      "created_at": "2025-12-31T10:15:31Z",
+      "updated_at": "2025-12-31T10:15:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015307131,
+      "body_text": "Hi Stuart Ward,    We sincerely apologize—we did indeed arrange for your shipment, but the warehouse is currently out of stock. We hope you understand. We're truly sorry.     Happy New Year!",
+      "user_id": 158001343601,
+      "created_at": "2025-12-31T10:31:02Z",
+      "updated_at": "2025-12-31T10:31:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015314711,
+      "body_text": "Not acceptable.  \r\nI expect some kind of refund for deception and mistruths on your part. You cannot say you have shipped something when you have not.  Any one can arrange a shipping document. \r\nI will accept either a discount or a baseplate as compensation for the deception.  \r\nThis order is now going to be significantly delayed compared to the delivery schedule on your website. \r\nAnd it is not due to natural disasters and other things out of your control you mention. This is purely down to your incompetence \r\n\r\n> ",
+      "user_id": 158008372253,
+      "created_at": "2025-12-31T14:58:32Z",
+      "updated_at": "2025-12-31T14:58:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015622434,
+      "body_text": "Hi Stuart Ward,    We will provide compensation based on the duration of the delay after delivery. We apologize for the inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-04T10:48:00Z",
+      "updated_at": "2026-01-04T10:48:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015699528,
+      "body_text": "I hope you do as promised and get this order shipped today. \r\nIf it is delayed any further it’s will be very disappointing. \r\n\r\n> ",
+      "user_id": 158008372253,
+      "created_at": "2026-01-05T00:27:33Z",
+      "updated_at": "2026-01-05T00:27:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015724127,
+      "body_text": "So disappointed with your poor service and lack of communication. \r\nI was promised that my goods would be shipped today and they haven’t. \r\nYou have had my money for almost 2 weeks now \r\nI suggest that you let me know how you wish to compensate me by return email. \r\nI would also expect that when you do eventually ship, you send it express delivery. \r\n\r\n> ",
+      "user_id": 158008372253,
+      "created_at": "2026-01-05T11:47:49Z",
+      "updated_at": "2026-01-05T11:47:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015858017,
+      "body_text": "Why are you ignoring me ?\r\n\r\n> ",
+      "user_id": 158008372253,
+      "created_at": "2026-01-06T06:20:41Z",
+      "updated_at": "2026-01-06T06:20:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016037819,
+      "body_text": "Can you please just be straight up with me and let me know when you will be shipping my order.  \r\n\r\n> ",
+      "user_id": 158008372253,
+      "created_at": "2026-01-07T02:10:31Z",
+      "updated_at": "2026-01-07T02:10:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016199102,
+      "body_text": "Come on guys. \r\nIt’s now Thursday, with no updates for days despite me reaching out to you. \r\nPlease let me know the status of my order.  \r\n\r\n> ",
+      "user_id": 158008372253,
+      "created_at": "2026-01-07T20:02:10Z",
+      "updated_at": "2026-01-07T20:02:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017161769,
+      "body_text": "My pedals came today finally. \r\nBut you have sent the wrong VAM brackets. \r\nThese are not what I ordered. \r\nAnd you were going to offer me a discount too \r\n\r\n\r\n\r\n> ",
+      "user_id": 158008372253,
+      "created_at": "2026-01-15T04:09:59Z",
+      "updated_at": "2026-01-15T04:09:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017178438,
+      "body_text": "Hi Stuart Ward,    Sorry for the delayed response. Please provide a photo showing the product you received, and we will look into it for you.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T10:56:56Z",
+      "updated_at": "2026-01-15T10:56:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017178557,
+      "body_text": "\r\n\r\n> ",
+      "user_id": 158008372253,
+      "created_at": "2026-01-15T11:00:18Z",
+      "updated_at": "2026-01-15T11:00:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017178813,
+      "body_text": "Hi Stuart Ward,    We apologize and will either refund the difference or send you a replacement.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T11:08:53Z",
+      "updated_at": "2026-01-15T11:08:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017179016,
+      "body_text": "I’ll take the refund please.  \r\nWhat about the refund for the lies given to me when you said you had shipped my items but you had not stock. I have email proof that you would send a refund once I had received my items.  \r\n\r\n> ",
+      "user_id": 158008372253,
+      "created_at": "2026-01-15T11:13:35Z",
+      "updated_at": "2026-01-15T11:13:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017179709,
+      "body_text": "Hi Stuart Ward,    I see you've selected the economy shipping option, with an estimated delivery time of 9-15 business days.  Additionally, we have already processed your refund.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T11:32:35Z",
+      "updated_at": "2026-01-15T11:32:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017179791,
+      "body_text": "That’s not the point. You told me you had shipped my items. When you hadn’t. \r\n\r\n> ",
+      "user_id": 158008372253,
+      "created_at": "2026-01-15T11:34:44Z",
+      "updated_at": "2026-01-15T11:34:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

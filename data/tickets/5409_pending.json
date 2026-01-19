@@ -1,0 +1,104 @@
+{
+  "id": 5409,
+  "subject": "Simsonn Manager Software ( Paddle )",
+  "description_text": "Dear Support, i have download the software manager now but it say Old\r\nVersion what should i do.\r\nSimsonn Pro Plus Paddle.\r\n[image: image.png]\r\nThanks\r\n\r\n",
+  "status": 3,
+  "priority": 2,
+  "created_at": "2025-10-29T12:23:47Z",
+  "updated_at": "2025-11-02T02:35:38Z",
+  "requester_id": 158004739940,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009021791,
+      "body_text": "Hi Hongty KIM,   Hello, may I confirm if this is the PlusX pedal? Do you have a computer repair shop nearby? Most shops have RJ11 crimping tools, and by re-crimping the cable in the correct order, the issue is usually resolved. If you encounter any difficulties, please let us know. In that case, we can send you a replacement throttle sensor, and you can simply install it yourself. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-21T10:22:35Z",
+      "updated_at": "2025-09-21T10:22:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009021821,
+      "body_text": "Dear support\r\n\r\nIt pro plus paddle\r\n\r\nOn Sun, Sep 21, 2025, 5:22 PM support@simsonn.com ",
+      "user_id": 158004739940,
+      "created_at": "2025-09-21T10:31:14Z",
+      "updated_at": "2025-09-21T10:31:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009021834,
+      "body_text": "Hi Hongty KIM,    Hello, please try this method first, as it is usually the quickest way to resolve the issue. If it still doesn’t work, kindly provide us with your contact name, phone number, address, and order number, and we will arrange a replacement shipment for you.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-21T10:33:55Z",
+      "updated_at": "2025-09-21T10:33:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009087538,
+      "body_text": "Dear support,\r\n\r\nIf I had to fix it using crimping tool I want to know does the color order\r\nmatter?\r\nBrake and Clutch\r\n\r\nThanks\r\n\r\nOn Sun, Sep 21, 2025, 5:34 PM support@simsonn.com ",
+      "user_id": 158004739940,
+      "created_at": "2025-09-22T03:30:28Z",
+      "updated_at": "2025-09-22T03:30:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009236070,
+      "body_text": "Hi Hongty KIM,  You just need to follow the same wiring order as the undamaged pedal, since all three pedals share the same wiring sequence. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-24T15:16:42Z",
+      "updated_at": "2025-09-24T15:16:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011412360,
+      "body_text": "Dear support\r\n\r\nI have install software manager but cannot use it , it says old version\r\n\r\n\r\n\r\n\r\nOn Wed, Sep 24, 2025, 10:16 PM support@simsonn.com ",
+      "user_id": 158004739940,
+      "created_at": "2025-10-31T13:13:34Z",
+      "updated_at": "2025-10-31T13:13:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011603692,
+      "body_text": "Hi Hongty KIM,  If the interface shows “Version too old, not supported,” please go to Settings → Update → Manual Firmware Update → pedals-firmware-plus.sfu to update the firmware. Once the update is complete, please be sure to recalibrate the pedals, as they will not function properly in games without calibration.         Please make sure your Pro Plus is running firmware version 1.7.1, as version 1.7.0 cannot be updated. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-02T02:15:23Z",
+      "updated_at": "2025-11-02T02:15:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011603902,
+      "body_text": "ID 为 4010 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-11-02T02:35:38Z",
+      "updated_at": "2025-11-02T02:35:38Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158011603903,
+      "body_text": "合并来自工单4010  \n      主题: Broken paddle cable  \n      描述:  Dear simson   \n I accidentally broke this cable how to fix it or any replacement ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-02T02:35:38Z",
+      "updated_at": "2025-11-02T02:35:38Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": 3544,
+  "subject": "SQ无法连接",
+  "description_text": "你好，\n\n有几个问题。已经有几个月没用过这个模拟器了。\n\n发现部分SQ按钮失灵，并且设备未在Simsonn管理器中显示。\n\n在游戏设备中，2号按钮一直显示为开启状态，只有1号按钮能正常工作。\n我已将其与电脑断开连接，并尝试了不同的USB接口。在拔出或重新插入USB时，能听到设备断开/连接的提示音。\n\n我已更新到Simsonn Manager 2.1.0版本，但问题依旧。请见附件。\n\n另外，我已将Simsonn管理器设置为英文，但大部分界面仍以中文显示。\n\n我将通过第二封邮件发送视频。\n\n谢谢，\n\nNick",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-09-06T02:54:13Z",
+  "updated_at": "2025-09-07T07:10:55Z",
+  "requester_id": 158004205060,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008200378,
+      "body_text": "你好，Nick Bell， 请卸载您当前的版本，然后安装我们的2.1.1版本。 在序列排挡的底部（如箭头所示），有一个恢复按钮。请用牙签轻轻地将其拨到另一侧，然后重新连接USB线。设备将进入恢复模式。 接下来，在软件中，请按以下路径操作：设置 → 更新 → 手动固件更新 → seq-firmware → gear-sqpro.sfu 固件更新完成后，请运行测试以验证其功能。 请注意，升级后，您必须将恢复按钮拨回其原始位置。 您也可以使用VKB工具检查设备连接状态，确认更新是否成功。 https://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=drive_link https://cdn.shopify.com/s/files/1/0551/4739/7238/files/VKB_JoyTester_40fdd530-6057-437e-9b50-3ac2d59dbbcd.zip?v=1693176246",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T01:35:34Z",
+      "updated_at": "2025-09-07T01:35:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008205637,
+      "body_text": "你好，\n\n谢谢，问题已解决。\n\n顺便说一下，我的SQ上的引导加载程序开关位于右上角“+”号附近，并没有箭头指向它。\n\n\n谢谢你，\n\n\n\nNick Bellefemine\n\n\n\n________________________________",
+      "user_id": 158004205060,
+      "created_at": "2025-09-07T06:05:07Z",
+      "updated_at": "2025-09-07T06:05:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008211635,
+      "body_text": "你好，Nick Bell， 我们很高兴能帮助您解决问题！ 我们会建议在外部升级按钮附近增加激光雕刻标记，以便用户更容易识别和操作。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T07:10:54Z",
+      "updated_at": "2025-09-07T07:10:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

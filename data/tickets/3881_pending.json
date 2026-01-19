@@ -1,0 +1,24 @@
+{
+  "id": 3881,
+  "subject": "VAM pro issues - Order #SSN1974",
+  "description_text": "Hello,\r\n\r\nI would kindly report an issue with my VAM pro.\r\nI tried to use haptic feedback on my pedals, but couldn't use as some interference occur when VAM motors vibrates and my brakes pedals read some input without pressing it.\r\nThe ground cable Is connected correctly, i tried many combination but when i set a low gain on the motors my pedals start reading inputs, if i set it to the max, no problems occour.\r\nI write you this email since i found on Reddit.com an official post of Simsonn in r/simracing addressing this problem to some EMI interference.\r\n\r\nhttps://www.reddit.com/r/simracing/s/6QN32illox\r\n\r\nI would like to know if you are available to provide me a solutions for this problem as stated in the post on Reddit.\r\n\r\nOrder #SSN1974\r\n\r\nKind regards,\r\nGabriele Baroni\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-09-16T21:38:51Z",
+  "updated_at": "2025-09-17T01:09:19Z",
+  "requester_id": 158002110247,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008837128,
+      "body_text": "Hi Gaga Baroni,  Yes, this solution is quite simple. You just need to isolate the metal connection between the VAM Pro and its mounting bracket by using nylon screws and nylon washers. If you are unable to purchase these small washers locally, please provide your address, contact name, and phone number, and we will arrange to send you a set. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-17T01:09:19Z",
+      "updated_at": "2025-09-17T01:09:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

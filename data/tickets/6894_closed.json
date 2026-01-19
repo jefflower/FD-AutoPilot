@@ -1,0 +1,54 @@
+{
+  "id": 6894,
+  "subject": "Help please order number 8ADDNZGCX",
+  "description_text": "I need to halt this order please. Im not fiscally able to afford this order\r\nat the moment.\r\n\r\n",
+  "status": 5,
+  "priority": 4,
+  "created_at": "2025-11-27T17:53:27Z",
+  "updated_at": "2025-11-30T01:15:35Z",
+  "requester_id": 158007367127,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013073385,
+      "body_text": "So the order went thru anyway?",
+      "user_id": 158007367127,
+      "created_at": "2025-11-28T17:17:47Z",
+      "updated_at": "2025-11-28T17:17:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158013074394,
+      "body_text": "if i cant cancel the order I at least would like to recieve the current black friday deal. ",
+      "user_id": 158007367127,
+      "created_at": "2025-11-28T17:43:10Z",
+      "updated_at": "2025-11-28T17:43:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158013074616,
+      "body_text": "Otto, do you have any idea of how long it will take you to respond? its been 24 hours.",
+      "user_id": 158007367127,
+      "created_at": "2025-11-28T17:45:12Z",
+      "updated_at": "2025-11-28T17:45:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158013124863,
+      "body_text": "Over 48hrs not one response ",
+      "user_id": 158007367127,
+      "created_at": "2025-11-30T01:15:35Z",
+      "updated_at": "2025-11-30T01:15:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ]
+}

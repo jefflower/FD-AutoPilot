@@ -1,0 +1,84 @@
+{
+  "id": 9379,
+  "subject": "Refund vam pro",
+  "description_text": "Hello,\r\n\r\nI recently purchased the Vam Pro, but I would like to return them because\r\nthey do not fit my pedals.\r\nCould you please tell me what steps I need to take?\r\nThank you!\r\n\r\nBest regards,\r\nEnzo Jacob\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-28T18:17:48Z",
+  "updated_at": "2026-01-15T09:39:24Z",
+  "requester_id": 158008802049,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015302972,
+      "body_text": "Hi Enzo Jacob,     You will need to 3D print the mounting bracket yourself. Our products generally cannot be returned after unboxing unless there is a manufacturing defect, as the metallic paint finish easily shows signs of use and cannot be reused. Thank you for your understanding. Happy New Year!",
+      "user_id": 158001343601,
+      "created_at": "2025-12-31T08:53:37Z",
+      "updated_at": "2025-12-31T08:53:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015319690,
+      "body_text": "Hello,\r\n\r\nI don't have a printer and don't know anyone who can print it for me.\r\n\r\nHonestly, when I bought the haptic feedback, I did so without hesitation\r\nbecause I was told that your customer service was superb and that I could\r\neasily return the product if necessary.\r\n\r\nI am sending you photos of the box I currently have at home (in perfect\r\ncondition, unopened) with the VAM Pro to show you that I haven't touched\r\nit. I only took out the two brake and accelerator mounts without even\r\ninstalling them, because I immediately saw that it wasn't possible for me\r\nto use them.\r\n\r\nIt's like buying shoes, taking them out of the box, and putting them right\r\nback in without even trying them on.\r\n\r\nI therefore ask you to please make an effort to give me a refund.\r\n\r\nWishing you a happy new year,\r\n\r\nSincerely,\r\nEnzo Jacob\r\n\r\nLe mer. 31 déc. 2025 à 09:53, service@simsonn.com ",
+      "user_id": 158008802049,
+      "created_at": "2025-12-31T16:48:49Z",
+      "updated_at": "2025-12-31T16:48:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015619244,
+      "body_text": "Hi Enzo Jacob,    We apologize for the delayed response. You may return the package to our German warehouse, and we will process your refund upon receipt and inspection. Please ensure the packaging remains intact and the product shows no signs of use, otherwise the return request will not be approved.  Gubitz GmbH (LeiXuan A211)  Hüttenkamp 12  Neumünster, Schleswig-Holstein 24536  +49 17622233089",
+      "user_id": 158001343601,
+      "created_at": "2026-01-04T10:18:27Z",
+      "updated_at": "2026-01-04T10:18:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015652522,
+      "body_text": "Hello, fine, I'll send it back to you. Thank you !\r\n\r\nWhich carrier would you like to use for the return shipment ?\r\n\r\nBest regards,\r\nEnzo Jacob\r\n\r\nLe dim. 4 janv. 2026 à 11:18, service@simsonn.com ",
+      "user_id": 158008802049,
+      "created_at": "2026-01-04T15:01:34Z",
+      "updated_at": "2026-01-04T15:01:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015719855,
+      "body_text": "Hi Enzo Jacob,  We generally cannot accept returns for products without defects. Since iron products are prone to scratches and other signs of use, we are typically unable to resell them. If your product is in perfect condition, you may return the package to our US warehouse. We will process your refund after receiving and inspecting the item. However, please ensure the packaging is intact and the product shows no signs of use—otherwise, your return request will not be approved!",
+      "user_id": 158001343601,
+      "created_at": "2026-01-05T10:48:16Z",
+      "updated_at": "2026-01-05T10:48:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016176088,
+      "body_text": "Hello,\r\n\r\nI dropped off the package at the post office today. The carrier is “La\r\nPoste.” It will be shipped tomorrow.\r\n\r\nHere is the tracking number (Colissimo): CC 0852 3250 7FR.\r\n\r\nBest regards,\r\nEnzo Jacob\r\n\r\nLe dim. 4 janv. 2026 à 11:18, service@simsonn.com ",
+      "user_id": 158008802049,
+      "created_at": "2026-01-07T17:26:24Z",
+      "updated_at": "2026-01-07T17:26:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017173632,
+      "body_text": "Hi Enzo Jacob,     Okay, we will process your refund after receiving and inspecting the item.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T09:39:24Z",
+      "updated_at": "2026-01-15T09:39:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

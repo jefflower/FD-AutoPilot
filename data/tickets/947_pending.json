@@ -1,0 +1,24 @@
+{
+  "id": 947,
+  "subject": "Pro x pedal haptics",
+  "description_text": "\r\nSent from my iPhone\r\n\r\nWill you pedal haptic motors work on all of your pedal models? \r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-28T05:17:55Z",
+  "updated_at": "2025-06-28T05:47:28Z",
+  "requester_id": 158001834855,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004219145,
+      "body_text": "Hi Keith Gallardo,  The ProX controller supports VAM motors and offers limited support for VAM Pro motors, though the force feedback may be slightly weaker. For full performance and compatibility, we recommend purchasing the ProX Ultra controller as a replacement.       https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor",
+      "user_id": 158000445778,
+      "created_at": "2025-06-28T05:47:28Z",
+      "updated_at": "2025-06-28T05:47:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

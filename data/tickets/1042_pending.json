@@ -1,0 +1,24 @@
+{
+  "id": 1042,
+  "subject": "Delivery city modification on Order #SSN1896",
+  "description_text": "Dear Support,\r\n\r\nI would like to request that you change the city in the delivery address.\r\nThe correct city is “Iklad” and not “Budapest”. All other details are\r\ncorrect\r\n\r\nI probably accidentally recorded the data incorrectly, I apologize for the\r\ninconvenience.\r\n\r\nThank you in advance for your help!\r\n\r\nBest Regards,\r\n\r\nSandor Csucs\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-01T06:34:45Z",
+  "updated_at": "2025-07-02T05:42:02Z",
+  "requester_id": 158001854063,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004363299,
+      "body_text": "Hi Sándor Csúcs,    Don't worry, we've changed it for you.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-02T05:42:02Z",
+      "updated_at": "2025-07-02T05:42:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

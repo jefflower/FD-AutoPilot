@@ -1,0 +1,24 @@
+{
+  "id": 8986,
+  "subject": "Order #SSN4797 Status",
+  "description_text": "Hi there,\r\n\r\nHaving ordered on the 13th December, I was hoping to receive the GT2 Racing Simulator Steering Wheel S1 in time for Christmas. However, I haven't received it. The shipment is express shipping and I haven't been updated on the status of the shipment as the order states 'waiting for details'.\r\nIf you can provide an update that would be appreciated, thank you.\r\n\r\nKind regards\r\nJames\r\n\r\n\r\nSent from Outlook for iOS<https://aka.ms/o0ukef>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-23T10:56:03Z",
+  "updated_at": "2025-12-28T04:31:31Z",
+  "requester_id": 158008318994,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015147967,
+      "body_text": "Hi james mclachlan,  We apologize for the delay. Here is the tracking information. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T04:31:31Z",
+      "updated_at": "2025-12-28T04:31:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

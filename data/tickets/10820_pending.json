@@ -1,0 +1,44 @@
+{
+  "id": 10820,
+  "subject": "Direct drive",
+  "description_text": "\r\nBonjour , je viens d’acheter un pédalier sur votre site et j’en suis très content, vous parlez du développement en cours d’une base direct drive, est ce une question de mois ou d’années avant une possible commercialisation de votre base et volant direct drive ? Je pense m’équiper bientôt Merci Sébastien Lebon \r\n\r\nEnvoyé depuis Yahoo Mail pour iPhone\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-13T19:53:22Z",
+  "updated_at": "2026-01-15T02:31:56Z",
+  "requester_id": 158009055131,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017073562,
+      "body_text": "Hi SEBASTIEN LEBON,       Hello, thank you very much for using our product. We expect this product to be available in March, so please stay tuned. We hope you enjoy playing!",
+      "user_id": 158001343601,
+      "created_at": "2026-01-14T06:26:49Z",
+      "updated_at": "2026-01-14T06:26:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017077908,
+      "body_text": "Thank you I wait for march \r\n\r\n\r\nEnvoyé depuis Yahoo Mail pour iPhone\r\n\r\n\r\nLe mercredi, janvier 14, 2026, 7:27 AM, service@simsonn.com ",
+      "user_id": 158009055131,
+      "created_at": "2026-01-14T07:25:46Z",
+      "updated_at": "2026-01-14T07:25:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017157219,
+      "body_text": "Hi SEBASTIEN LEBON,     Alright, thank you for waiting.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T02:31:56Z",
+      "updated_at": "2026-01-15T02:31:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

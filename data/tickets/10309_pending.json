@@ -1,0 +1,44 @@
+{
+  "id": 10309,
+  "subject": "Software Deadzone issue",
+  "description_text": "Hey,\r\n\r\nWhen i set deadzones in the software how i want, like 5% bottom deadzone on the brake,  it doesnt behave the same in games.\r\nIn game its about half of that and input comes sooner in game than it shows in the software.\r\n\r\nDIview software(with this its easy to see actual % difference vs your software %), Le mans Ultimate, ACC, all behaves the same.\r\n\r\nI have to work around this by applying 10% deadzone instead of 5% to software or apply additional deadzone in game to get about the same results/feeling.\r\n\r\nSame with the Gas pedal.\r\nI want 2% bottom and 3% top deadzones in software, but to get same results in game i will have to double those to 4% and 6%.\r\n\r\nSo there might be a bug on your software or is there something i can do to fix that?\r\n\r\nOtherwise very happy with the pedals!\r\n\r\nPs.\r\nAlso when setting deadzone in the software and looking brake KGs when input start, it changes slightly after i hit \"save\".\r\nThis is not as big deal, but thought you should know.\r\n\r\nLike if my deadzone is 5% with 50kg, before i hit save, input starts to come after like 4.5kg or so, but after i hit \"save\", the force needed is lower like 3.5-.\r\n\r\n-Keijo Vinni\r\n\r\n\r\nLähetettyOutlook for Android<https://aka.ms/AAb9ysg>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-08T13:42:21Z",
+  "updated_at": "2026-01-11T01:29:15Z",
+  "requester_id": 158007341130,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016460814,
+      "body_text": "Hi Keijo Vinni,          Please click Offset in the software to reset the pedal’s white signal to 0%, then recalibrate the pedals. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-09T02:29:35Z",
+      "updated_at": "2026-01-09T02:29:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016613101,
+      "body_text": "Hey,\r\n\r\nDid that multiple times today.\r\nStill behaves always the same.\r\n\r\nI need to put 2x deadzone to software that pedals behave about the same in game than with initial deadzone i would want if i just look software.\r\n\r\nI use medium yellow rubbers, 50kg.\r\nIf i put 5% deadzone in software, input comes around under 4kg in software but sooner around 2kg in game/DIview.\r\nI up deadzone to 10% and then input comes in software after 8kg, but in game/DIview after 5kg and this is my workaround right now.\r\n\r\nThrottle also behaves the same.\r\n\r\n-Keijo Vinni\r\n\r\nLähetettyOutlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158007341130,
+      "created_at": "2026-01-09T20:36:44Z",
+      "updated_at": "2026-01-09T20:36:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016762538,
+      "body_text": "Hi Keijo Vinni,  Please provide your order number, and I will check the controller version for you. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T01:29:14Z",
+      "updated_at": "2026-01-11T01:29:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

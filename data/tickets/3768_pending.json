@@ -1,0 +1,74 @@
+{
+  "id": 3768,
+  "subject": "Order #SSN2398 Order Issue – Request for Refund",
+  "description_text": "Good Afternoon,\r\n\r\nI have received my order of the *Simsonn VAM Pro Linear Motor – Pedals\r\nHaptic Reactor for Vibration Feedback (VAM Pro Set, 3-pack with power\r\nsupply)*. However, there was an issue with the shipment. I ordered one set,\r\nbut two items were sent to me.\r\n\r\nThis is similar to a previous issue we experienced regarding shipping. At\r\nthat time, I agreed to cover an additional shipping cost of *$20 USD* due\r\nto the high fee to Hawaii (347.3 RMB ≈ $50 USD).\r\n\r\nGiven the current mistake, I would like to request a refund for the extra\r\nitem that was sent. Since I already paid the additional shipping fee, I\r\nwould appreciate it if the refund could reflect the smaller adjusted amount\r\nwe previously agreed upon.\r\n\r\nPlease confirm how we can proceed. I look forward to your response.\r\n\r\nBest regards,\r\nMark Crider\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-09-13T03:54:29Z",
+  "updated_at": "2025-10-09T10:36:00Z",
+  "requester_id": 158003371861,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008886752,
+      "body_text": "Good Afternoon,     I have received my order of the Simsonn VAM Pro Linear Motor – Pedals Haptic Reactor for Vibration Feedback (VAM Pro Set, 3-pack with power supply). However, there was an issue with the shipment. I ordered one set, but two items were sent to me.This is similar to a previous issue we experienced regarding shipping.   At that time, I agreed to cover an additional shipping cost of $20 USD due to the high fee to Hawaii (347.3 RMB ≈ $50 USD).Given the current mistake, I would like to request a refund for the extra item that was sent. Since I already paid the additional shipping fee,   I would appreciate it if the refund could reflect the smaller adjusted amount we previously agreed upon.     Please confirm how we can proceed. I look forward to your response.     Best regards,  Mark Crider",
+      "user_id": 158003371861,
+      "created_at": "2025-09-17T17:48:40Z",
+      "updated_at": "2025-09-17T17:48:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158008888581,
+      "body_text": "I have attached a screenshot of the two orders I made, but you sent me two sets, and I only need one. I am okay with getting a refund for the lower amount, which we agreed to pay the additional shipping costs for.",
+      "user_id": 158003371861,
+      "created_at": "2025-09-17T17:56:09Z",
+      "updated_at": "2025-09-17T17:56:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158009010029,
+      "body_text": "Any updates? I love the product, but i don't have plans to keep two of them.",
+      "user_id": 158003371861,
+      "created_at": "2025-09-21T01:08:06Z",
+      "updated_at": "2025-09-21T01:08:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158009100332,
+      "body_text": "Hi Mcrider,    Sorry, we can't process your return, as you repurchased one item in your second order,so our warehouse staff dispatched both items directly to you. And we do not maintain a warehouse in Hawaii and are therefore unable to handle returns.  We can offer you a refund of $20 as compensation. Perhaps you could sell it to someone else? Would that be acceptable?",
+      "user_id": 158001343601,
+      "created_at": "2025-09-22T10:40:12Z",
+      "updated_at": "2025-09-22T10:40:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009128241,
+      "body_text": "Thank you for your response. I’d like to clarify my position regarding the\r\nextra item:\r\n\r\n   -\r\n\r\n   I am willing to pay the additional $20 or what ever the cost may be to\r\n   return the item to its original origin.\r\n   -\r\n\r\n   According to my tracking information, the shipment originated from *Elgin,\r\n   IL 60124*.\r\n   -\r\n\r\n   Since I have no use for an extra system, I kindly ask for either:\r\n   -\r\n\r\n      Instructions on how I can return the item (with me covering the\r\n      shipping), *or*\r\n      -\r\n\r\n      A higher compensation amount than $20, as selling the extra unit is\r\n      beyond my capabilities.\r\n\r\nI appreciate your assistance and hope we can reach a fair resolution.\r\n\r\nBest regards,\r\n\r\nMark\r\n\r\nOn Mon, Sep 22, 2025 at 12:40 AM service@simsonn.com ",
+      "user_id": 158003371861,
+      "created_at": "2025-09-22T17:40:27Z",
+      "updated_at": "2025-09-22T17:40:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009706583,
+      "body_text": "I guess i'll take that offer since there no other way \" refund of $20 as\r\ncompensation\"\r\n\r\n",
+      "user_id": 158003371861,
+      "created_at": "2025-10-01T00:49:54Z",
+      "updated_at": "2025-10-01T00:49:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

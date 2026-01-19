@@ -1,0 +1,74 @@
+{
+  "id": 2336,
+  "subject": "Pedal haptics",
+  "description_text": "Hi guys,\r\n\r\nMy pedalset arrived, same for my pedal haptics. Still waiting on the\r\npedalplate but it’s waiting for delivery.\r\n\r\nI was trying to get the VAM haptics to work in iracing, but no success so\r\nfar. They show as connected in the simsonn application and can test the\r\nrumble, but ingame I don’t feel them..\r\n\r\nAny suggestions?\r\n\r\nThank you in advance\r\nDave\r\n\r\n",
+  "status": 4,
+  "priority": 4,
+  "created_at": "2025-08-05T15:23:22Z",
+  "updated_at": "2025-09-28T12:40:00Z",
+  "requester_id": 158002312686,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006303039,
+      "body_text": "Hi Dave Kleinrensink, Please confirm that you are using SIMSONN Manager version 2.1.0 and that the telemetry feature is correctly configured. You can also use SimHub 9.9.3 for telemetry. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-06T01:07:13Z",
+      "updated_at": "2025-08-06T01:07:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007069301,
+      "body_text": "Ho,\r\n\r\nI’ve been trying to optimalize the haptics so now I’m using simhub in\r\ncombination with iracing. What should I do with the haptics in simsonn\r\nmanager, because they show up there, but I configured them for iracing in\r\nsimhub. Should I disconnect them in Simsonn manager somehow? Or leave it on\r\nfull strenght?\r\n\r\nBest\r\nDave\r\n\r\nOp wo 6 aug 2025 om 03:07 schreef support@simsonn.com ",
+      "user_id": 158002312686,
+      "created_at": "2025-08-18T08:52:52Z",
+      "updated_at": "2025-08-18T08:52:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007215686,
+      "body_text": "Hi Dave Kleinrensink,  Please let us know which telemetry data you need in iRacing. In addition, when using SimHub, make sure to keep the maximum strength within 50%–70%, otherwise it may damage the VAM. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-20T14:28:41Z",
+      "updated_at": "2025-08-20T14:28:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007215815,
+      "body_text": "Okay perfect will keep it at 60%.\r\nI want just wheel lock & abs in my brake pedal and wheel spin(slip) in my\r\nthrottle. That’s it. And it works, but I also feel other things like road\r\nand bumps(vert soft) while I have turned everything off.\r\n\r\nOp wo 20 aug 2025 om 16:28 schreef support@simsonn.com ",
+      "user_id": 158002312686,
+      "created_at": "2025-08-20T14:33:16Z",
+      "updated_at": "2025-08-20T14:33:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009362813,
+      "body_text": "Hi Dave Kleinrensink,  Hello, could you please confirm whether your pedals are PlusX, ProX, or ProX Ultra? Once I know the correct model, I will send you the appropriate update. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-27T05:46:58Z",
+      "updated_at": "2025-09-27T05:46:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009378836,
+      "body_text": "I emailed 20 of august and you reply 27 of sept. Thanks but I’m done with it\r\n\r\nOp za 27 sep 2025 om 07:47 schreef support@simsonn.com ",
+      "user_id": 158002312686,
+      "created_at": "2025-09-27T08:33:27Z",
+      "updated_at": "2025-09-27T08:33:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

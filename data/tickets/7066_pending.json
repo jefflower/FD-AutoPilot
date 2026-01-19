@@ -1,0 +1,54 @@
+{
+  "id": 7066,
+  "subject": "Urgent Assistance Required – Noise Issues with New Pedals (Clutch & Throttle)",
+  "description_text": "Dear Simon Support Team,\r\n\r\nI am writing to request urgent assistance regarding the new set of pedals I received. Unfortunately, the quality of the product I received is far from what I expected, and I am currently very disappointed with my experience.\r\n\r\nThe clutch pedal has a high-pitched squeaking noise at the end of its travel, which is extremely noticeable and makes it unpleasant to use. According to your product information, the pedals are shipped pre-lubricated and tested under quality control, but this unit clearly did not meet those standards.\r\n\r\nAdditionally, the throttle pedal is also producing a noticeable noise, although not as loud as the clutch. Taken together, these issues give the impression of poor assembly or insufficient lubrication, which is very surprising for a product in this price range.\r\n\r\nI would appreciate your prompt support in resolving this matter. Please let me know the steps I should take, whether that involves troubleshooting, replacement parts, or a full unit replacement. I genuinely want to enjoy your product, but in its current condition it’s not acceptable.\r\n\r\nLooking forward to your reply and a quick resolution.\r\n\r\nBest regards\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-11-30T04:35:19Z",
+  "updated_at": "2025-12-06T05:56:09Z",
+  "requester_id": 158007437703,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013156410,
+      "body_text": "Hi Ivan Ricardo,    First, please don’t worry—this issue can definitely be resolved. The video you sent is too large and wasn’t fully uploaded, so we couldn’t open or view it. You can send us a Google Drive link with proper access permissions, and we will check it and get back to you as soon as possible.  Regarding the throttle and clutch hydraulic rods, we use custom full-hydraulic dampers. They are entirely filled with fluid, so it is normal to hear hydraulic noises at the end of the stroke. Any other unusual sounds may indicate an issue. We don’t apply excessive lubrication at the factory. Due to global shipping regulations, lubricants are considered chemical products, which could lead to many returns and inquiries. Therefore, the originally included silicone-based lubricant was later removed. You may apply some lubrication to the key points as indicated in the manual and see if the noise disappears.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-01T03:50:01Z",
+      "updated_at": "2025-12-01T03:50:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013228876,
+      "body_text": "Hi, Simsonn team\r\n\r\nAs mentioned before, the clutch pedal produces a very loud and annoying squeaking noise during operation, and the accelerator pedal also makes a noticeable noise as well.\r\n\r\nThis morning I discovered an even more concerning problem: there is fluid leaking from the clutch pedal. I noticed liquid on the plate of my rig and confirmed that it is coming from the clutch mechanism. This is unacceptable for a brand-new unit and raises serious concerns about safety and durability.\r\n\r\n I have already checked the lubrication points recommended in the manual, but I am confident that the sound is not coming from those areas.\r\n\r\nI recorded a short video demonstrating the noise issues, and you can view it here:\r\n\r\nhttps://drive.google.com/file/d/1isbGgyx_T4sVm6zC4SNNpmGC3sqJnmUT/view?usp=sharing\r\n\r\n\r\nI kindly request your assistance in resolving these issues as soon as possible, whether through replacement parts, a full replacement of the unit, or any other appropriate solution.\r\n\r\nAt this point, I expected a much better build quality, and I am very disappointed with these problems appearing so early.\r\n\r\nPlease let me know the next steps.\r\n\r\nThank you, and I look forward to your prompt response.\r\nBest regards\r\n",
+      "user_id": 158007437703,
+      "created_at": "2025-12-01T20:35:11Z",
+      "updated_at": "2025-12-01T20:35:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013356488,
+      "body_text": "Hi Simsonn team,\r\n\r\nJust following up on my previous message and video submission.\r\nAny update regarding my pedal issue?\r\n\r\nIf I don’t receive a reply soon, I may need to consider opening a dispute through AliExpress to prevent the case from exceeding the response time window — but I would much prefer resolving this directly with you first.\r\n\r\n\r\nLooking forward to your response.\r\nKind regards\r\n",
+      "user_id": 158007437703,
+      "created_at": "2025-12-03T21:27:34Z",
+      "updated_at": "2025-12-03T21:27:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013772537,
+      "body_text": "Hi Ivan Ricardo,  Hello, you can first remove the clutch’s bidirectional damper and check if the noise disappears. If it is confirmed that the damper is causing the issue, we will immediately send you a new clutch bidirectional hydraulic damper. Please provide your contact name, phone number, and shipping address. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-06T05:56:04Z",
+      "updated_at": "2025-12-06T05:56:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

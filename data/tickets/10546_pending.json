@@ -1,0 +1,44 @@
+{
+  "id": 10546,
+  "subject": "Vam pros order",
+  "description_text": " Hi I made a vam pro order a week ago and I still don’t have them delivered\r\nto me , please check on my order . Here are my ssn and order number :\r\n\r\nSSN5727\r\n\r\nOrder number : SF6047224806072\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-11T05:33:59Z",
+  "updated_at": "2026-01-13T10:01:16Z",
+  "requester_id": 158009008508,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016854735,
+      "body_text": "Hi Yaniel Aponte,    We apologize for the delayed response; we've just returned from vacation. Here is your shipping tracking link. This product has been out of stock for nearly two weeks due to overwhelming demand. We'll ship it out within the next couple of days and sincerely apologize for the delay.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-12T10:48:57Z",
+      "updated_at": "2026-01-12T10:48:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016913785,
+      "body_text": "I’m sorry I never got the link for the shipping, can you please send it\r\nagain?\r\n\r\nOn Mon, Jan 12, 2026 at 4:49 AM service@simsonn.com ",
+      "user_id": 158009008508,
+      "created_at": "2026-01-12T23:46:35Z",
+      "updated_at": "2026-01-12T23:46:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016959641,
+      "body_text": "Hi Yaniel Aponte,    Here is your shipping link.  https://t.17track.net/en#nums=SF6047224806072",
+      "user_id": 158001343601,
+      "created_at": "2026-01-13T10:01:15Z",
+      "updated_at": "2026-01-13T10:01:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

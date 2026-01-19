@@ -1,0 +1,94 @@
+{
+  "id": 1462,
+  "subject": "Gaspedal Loadcell Halterung defekt",
+  "description_text": "Hello everyone, I have another problem, this time with the accelerator\r\npedal. Here's the bracket that holds the spring for the load cell in place\r\non the pedal and it ist broken. Attached are two pictures where you can\r\nclearly see it. Why is this part made of plastic, and what can I do now?\r\nSincerely, Simon Sander\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-07-11T20:43:03Z",
+  "updated_at": "2025-12-18T09:40:24Z",
+  "requester_id": 158001894728,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004638499,
+      "body_text": "你好，西蒙·桑德，  为了减轻底座的电磁干扰，我们在部分部件中使用了非金属材料来替代传统的金属结构——这种设计并不影响正常使用。事实上，像Heusinkveld这样的高端品牌也采用了非金属材料。 关于您提到的问题，可能是由于蓝色限位器设置过短造成的。请放心，我们将为您寄送一个全新改进的油门踏板。 您也可以提供蓝色限位器的侧面照片，以便我们进一步验证行程设置是否合适。 此外，请提供您的订单号，以便我们及时进行必要的安排。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-12T06:41:51Z",
+      "updated_at": "2025-07-12T06:41:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004639065,
+      "body_text": "Hello, thanks for the info. Attached is a picture of the blue buffer as it\r\nwas set up.\r\nMy address is:\r\n\r\nSimon Sander\r\n42579 Heiligenhaus\r\nIsenbügeler Str 12\r\nNordrhein-Westfalen\r\nDeutschland\r\n\r\n\r\n\r\nMany thanks and kind regards, Simon Sander\r\n\r\nservice@simsonn.com ",
+      "user_id": 158001894728,
+      "created_at": "2025-07-12T06:52:42Z",
+      "updated_at": "2025-07-12T06:52:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004641379,
+      "body_text": "Hi Simon Sander,    The non-metal piece was broken due to being pressed by the blue limiter, which was caused by the travel being set too short. This was a design issue in the earlier version, and we've already updated and improved the pedal in later versions.  We will send you a replacement throttle component free of charge. Please provide your order number, and I’ll forward it to our sales team to handle it as soon as possible.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-12T07:37:13Z",
+      "updated_at": "2025-07-12T07:37:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004641896,
+      "body_text": "Hallo, danke für den Hinweis. Ich habe bei Amazon bestellt. Ich habe ihnen\r\ndie Bestelldetails angehängt.\r\n\r\nMfg\r\nSimon Sander\r\n\r\n\r\n\r\nservice@simsonn.com ",
+      "user_id": 158001894728,
+      "created_at": "2025-07-12T07:47:38Z",
+      "updated_at": "2025-07-12T07:47:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004644898,
+      "body_text": "Hi Simon Sander,    We’ve received your message. We will resend the new parts for you on Monday. Once the shipment is sent out, we will provide you with the tracking number as soon as possible. Please keep an eye out for it!",
+      "user_id": 158000445778,
+      "created_at": "2025-07-12T08:47:01Z",
+      "updated_at": "2025-07-12T08:47:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004646747,
+      "body_text": "Thank you for your efforts, best regards, Simon Sander\r\n\r\nservice@simsonn.com ",
+      "user_id": 158001894728,
+      "created_at": "2025-07-12T09:07:23Z",
+      "updated_at": "2025-07-12T09:07:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004844510,
+      "body_text": "Guten Tag,\r\n\r\nist die Bestellung schon auf dem Weg?\r\n\r\nVorab vielen Dank\r\n\r\nMfg\r\nSimon Sander\r\n\r\nSimon Sander <simon.sander19@googlemail.com> schrieb am Sa., 12. Juli 2025,\r\n11:07:\r\n\r\n> Thank you for your efforts, best regards, Simon Sander\r\n>\r\n> service@simsonn.com ",
+      "user_id": 158001894728,
+      "created_at": "2025-07-15T07:38:34Z",
+      "updated_at": "2025-07-15T07:38:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004942936,
+      "body_text": "Hi Simon Sander, Here is your tracking number of the load cell YT2519600703685278, you can track it via https://www.yunexpress.com/. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T05:51:34Z",
+      "updated_at": "2025-07-16T05:51:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

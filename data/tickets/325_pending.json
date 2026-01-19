@@ -1,0 +1,144 @@
+{
+  "id": 325,
+  "subject": "Shipping Information - Amazon Order #112-7254322-1529816",
+  "description_text": "Hello, \r\n\r\nI recently purchased your Simsonn Upgraded Pro Plus Pedals on Amazon and I’m having issues with my tracking number. My amazon order number is 112-7254322-1529816. The tracking number you all sent to Amazon is incorrect, I contacted UPS and the name and delivery address attached to the tracking number is not my name or address. I tried calling the number on your website and the number is not active. If someone could help me with this issue that would be great. My name is Tyler Hesseling and order was placed on June 2nd through Amazon. Please let me know if you need any more information. \r\n\r\nThank you, \r\n\r\nTyler Hesseling\r\n864-380-8757\r\ntylerhesseling@gmail.com\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-06-10T14:53:57Z",
+  "updated_at": "2025-06-25T14:11:00Z",
+  "requester_id": 158001381749,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002993566,
+      "body_text": "Any update on this issue I’m having or any idea where my package is at. ",
+      "user_id": 158001381749,
+      "created_at": "2025-06-12T12:52:33Z",
+      "updated_at": "2025-06-12T12:52:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158003005235,
+      "body_text": "Hi Tyler Hesseling,  Please don’t worry — we’ll contact our operations team to check your order. As soon as we have the correct order number, we’ll get back to you right away. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-13T04:29:46Z",
+      "updated_at": "2025-06-13T04:29:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003006094,
+      "body_text": "Ok, thank you for the update.\r\n\r\nThank you,\r\nTyler Hesseling\r\n\r\nOn Fri, Jun 13, 2025 at 12:31 AM service@simsonn.com ",
+      "user_id": 158001381749,
+      "created_at": "2025-06-13T04:33:32Z",
+      "updated_at": "2025-06-13T04:33:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003013684,
+      "body_text": "Hi Tyler Hesseling,  Hello, this is probably because our staff filled in the wrong waybill number. We checked your package and found that your package may be lost. We are sorry for the inconvenience. Due to the recent unrest in the United States, our goods are stuck at the port and cannot reach our overseas warehouse. Therefore, this product is currently out of stock in our overseas warehouse and will not arrive until around June 18. We will send you a replacement set when the product arrives at the overseas warehouse.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-13T05:28:56Z",
+      "updated_at": "2025-06-13T05:28:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003039405,
+      "body_text": "Hello,\r\n\r\nThank you for looking into this issue and letting me know. Very frustrating\r\nto hear that the tracking number was filled out incorrectly. I'm unclear of\r\nwhen I will receive the product, what does that timeline look like? Would I\r\nbe better off canceling this order and ordering what you already have at\r\nthe warehouse (different model of pedals), or are a majority of your\r\nproducts out of stock?\r\n\r\nThank you,\r\nTyler Hesseling\r\n\r\n\r\nOn Fri, Jun 13, 2025 at 1:29 AM service@simsonn.com ",
+      "user_id": 158001381749,
+      "created_at": "2025-06-13T21:54:03Z",
+      "updated_at": "2025-06-13T21:54:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003248938,
+      "body_text": "Hi Tyler Hesseling,  ​Hi, we can confirm that the product you purchased will arrive on June 18th in the US warehouse. If you don't want to wait, the US warehouse currently has the same model in silver. Do you want to change to silver?",
+      "user_id": 158000445778,
+      "created_at": "2025-06-16T09:52:23Z",
+      "updated_at": "2025-06-16T09:52:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003271026,
+      "body_text": "That would be great! What would be the expected delivery date for those?\r\n\r\nThank you,\r\nTyler Hesseling\r\n\r\nOn Mon, Jun 16, 2025 at 5:52 AM service@simsonn.com ",
+      "user_id": 158001381749,
+      "created_at": "2025-06-16T11:42:12Z",
+      "updated_at": "2025-06-16T11:42:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003303133,
+      "body_text": "Hi Tyler Hesseling,  You want to change to silver? We can ship the silver one from our US warehouse today. If you don't change it, we can ship the black one on June 18th.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-17T06:05:48Z",
+      "updated_at": "2025-06-17T06:05:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003305261,
+      "body_text": "Hi Tyler Hesseling,  If you're simply looking for a discount, that's no problem—we can issue a refund to match the discount you had in mind. In addition, could you please share some screenshots of your Facebook promotion performance? For example, post views, likes, or follower stats—this will help us evaluate the potential reach. Thank you! ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-17T06:13:08Z",
+      "updated_at": "2025-06-17T06:13:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003306629,
+      "body_text": "Hi Tyler Hesseling,  Apologies—the last email was sent by mistake. Please kindly disregard it. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-17T06:18:25Z",
+      "updated_at": "2025-06-17T06:18:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003365839,
+      "body_text": "Yes, please change to silver and ship today.\r\n\r\n\r\nOn Tue, Jun 17, 2025 at 2:05 AM service@simsonn.com ",
+      "user_id": 158001381749,
+      "created_at": "2025-06-17T12:03:59Z",
+      "updated_at": "2025-06-17T12:03:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003371275,
+      "body_text": "Hello again,\r\n\r\nWe are in different time zones which makes it difficult to communicate in\r\na timely manner. Just wanted to reach out again to ask some questions. I\r\nknow the black models are arriving tomorrow (6/18) to your U.S warehouse\r\nand the silver ones are there now. At this point I don't care about the\r\ncolor as long as they are the model that I ordered. When you see this email\r\nplease just use your judgement on whichever pedals (black or silver) will\r\narrive to me the earliest. I also wanted to say thank you for the support\r\nwith these issues, I know this is out of your control especially with the\r\nproduct coming out of China. I look forward to receiving the pedals.\r\n\r\nThank you,\r\nTyler Hesseling\r\n\r\nOn Tue, Jun 17, 2025 at 8:03 AM Tyler Hesseling <tylerhesseling@gmail.com>\r\nwrote:\r\n\r\n> Yes, please change to silver and ship today.\r\n>\r\n>\r\n> On Tue, Jun 17, 2025 at 2:05 AM service@simsonn.com ",
+      "user_id": 158001381749,
+      "created_at": "2025-06-17T18:20:37Z",
+      "updated_at": "2025-06-17T18:20:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003551386,
+      "body_text": "That's great, thank you very much.\r\n\r\nOn Thu, Jun 19, 2025 at 3:51 AM General and sales enquiries <\r\nservice@simsonn.com> wrote:\r\n\r\n> Hi,\r\n> We have shipped your silver pedals from our US warehouse,\r\n> here is your FedEx tracking number: 882141513410.\r\n>\r\n> ------------------------------\r\n> service@simsonn.com\r\n>\r\n>\r\n> *",
+      "user_id": 158001381749,
+      "created_at": "2025-06-19T13:37:35Z",
+      "updated_at": "2025-06-19T13:37:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

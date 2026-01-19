@@ -1,0 +1,34 @@
+{
+  "id": 10112,
+  "subject": "order number SSN5488",
+  "description_text": "Hello, I have ordered the hs pro shifter with the express shipping on Monday the 29th of December, the shipping description stated that it would take 3-5 business days. Today (the 6th of January) marks the 5th business day and I have not had any updates on the product, please could you inform me on the progress on the product and possibly refund the extra money I paid for the express shipping as it has not arrived within the given time frame.\r\n\r\nMany thanks, Kaleb\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-06T16:16:06Z",
+  "updated_at": "2026-01-12T08:13:55Z",
+  "requester_id": 158008954468,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016109477,
+      "body_text": "Hi Kaleb Visram,  Due to a few days off during the New Year holiday, emails were accumulated, which caused a delay in our response. We sincerely apologize for this. We are currently working overtime to produce the HS Pro, and we will arrange shipment for you as soon as possible. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T10:20:14Z",
+      "updated_at": "2026-01-07T10:20:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016603195,
+      "body_text": "Okay thank you, however I would still like a refund on the shipping due to the false advertising on the website.\r\n\r\nSent from Outlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158008954468,
+      "created_at": "2026-01-09T19:27:42Z",
+      "updated_at": "2026-01-09T19:27:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

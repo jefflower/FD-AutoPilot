@@ -1,0 +1,24 @@
+{
+  "id": 9009,
+  "subject": "",
+  "description_text": "Hi. I want some news about my order #SSN5072\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-23T15:47:47Z",
+  "updated_at": "2025-12-31T10:36:19Z",
+  "requester_id": 158008322474,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015307187,
+      "body_text": "Hi Cristy Ichim,    Your order has been shipped. We apologize for not updating you in a timely manner. Happy New Year!  CE326636821DE",
+      "user_id": 158001343601,
+      "created_at": "2025-12-31T10:36:12Z",
+      "updated_at": "2025-12-31T10:36:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

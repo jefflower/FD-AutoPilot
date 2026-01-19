@@ -1,0 +1,64 @@
+{
+  "id": 10076,
+  "subject": "Hs pro shifter",
+  "description_text": "Hi,\r\n\r\nI have just purchased the HS pro shifter and the calibration manager (v2.1.2) doesn’t contain a section for my shifter. How can I get around this?\r\nSent from my iPhone",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-06T08:57:02Z",
+  "updated_at": "2026-01-14T13:58:38Z",
+  "requester_id": 158008950432,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016070684,
+      "body_text": "Hi Roman Yacopetti,    We will release a new software version today, which will officially add support for the HS Pro calibration page. Please update the software and try it out.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T06:07:58Z",
+      "updated_at": "2026-01-07T06:07:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016110266,
+      "body_text": "Hey guys,\r\n\r\nThanks for getting back to me. I tried the software again a few hours after your email was sent and still no progress. The issue I am actually having is that gear 1-2-5-6-7-Reverse are not engaging/showing up in game. The games aren't detecting any selection however gear 3-4 and the s1/s2 buttons are registering. I have provided a few images to show the steps I am going through.\r\n\r\nThanks\r\n\r\nGet Outlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158008950432,
+      "created_at": "2026-01-07T10:26:52Z",
+      "updated_at": "2026-01-07T10:26:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016144319,
+      "body_text": "Hi Roman Yacopetti,    Please uninstall SIMSONN Manager version 2.1.2 from your computer first, then download and install SIMSONN Manager version 2.1.3 from our official website.  SIMSONN Manager 2.1.3 adds full support for HS Pro 2-in-1 shifter configuration and calibration. Please use this version to complete the setup and calibration.     https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T14:06:31Z",
+      "updated_at": "2026-01-07T14:06:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016307624,
+      "body_text": "Hey,\r\n\r\nI downloaded the new file and everything is running smoothly. I appreciate the support and will leave a review online.\r\n\r\nRegards, Roma\r\n\r\nGet Outlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158008950432,
+      "created_at": "2026-01-08T08:52:51Z",
+      "updated_at": "2026-01-08T08:52:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017106212,
+      "body_text": "",
+      "user_id": 158008950432,
+      "created_at": "2026-01-14T13:58:37Z",
+      "updated_at": "2026-01-14T13:58:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ]
+}

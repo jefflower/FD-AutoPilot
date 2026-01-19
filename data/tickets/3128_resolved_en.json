@@ -1,0 +1,115 @@
+{
+  "id": 3128,
+  "subject": "Simsonn After-Sales Service Inquiry",
+  "description_text": "Hello, what issue are you experiencing? Please provide us with photos or videos. If the control box is damaged, we will replace it free of charge. Don't worry.",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-08-26T10:22:24Z",
+  "updated_at": "2025-09-03T04:21:34Z",
+  "requester_id": 158003606214,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007586523,
+      "body_text": "Hello. So i plugged the new control box in as the one for my pedals doesnt have the haptic motor option. When i plug it in the software says disconnected. When i hook up the original control box the pedals came with it works just fine. I attached a video to help show.\nSent from my iPhone",
+      "user_id": 158003606214,
+      "created_at": "2025-08-26T22:18:08Z",
+      "updated_at": "2025-08-26T22:18:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007590707,
+      "body_text": "Hi Codythompson90, The new PlusX control box requires higher and more stable power. Please connect it to the USB 3.0 port (blue) on the back of your PC, or use a USB hub with independent power supply. If the issue still persists, please download the VKB JoyTester tool from Google, check our SIMSONN device, and send me a screenshot for confirmation.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-27T04:03:49Z",
+      "updated_at": "2025-08-27T04:03:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007797373,
+      "body_text": "i have it plugged into a sabrent usb 3.0 dock that has its own power\nsupply.When i have it plugged in and load up the VKB joytester it shows\nnothing as well as nothing in the simsonn program\n\nOn Tue, Aug 26, 2025 at 11:04 PM service @simsonn.com",
+      "user_id": 158003606214,
+      "created_at": "2025-08-29T22:13:49Z",
+      "updated_at": "2025-08-29T22:13:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007802845,
+      "body_text": "Hi Codythompson90, Please follow the steps below: Press and hold the upgrade button on the PlusX main controller, then reconnect the USB cable. Open SIMSONN Manager 2.1.0 and check if it has entered recovery mode. If recovery mode is detected, go to Settings → Update → Manual Update Firmware → pedals → firmware → pedals-plusx.sfu. After the update is complete, test the device to see if it has been restored successfully.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-30T03:54:24Z",
+      "updated_at": "2025-08-30T03:54:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007876840,
+      "body_text": "After following these steps this is what the simsonn manager shows.\n\nOn Fri, Aug 29, 2025 at 10:54 PM service @simsonn.com",
+      "user_id": 158003606214,
+      "created_at": "2025-08-31T23:03:36Z",
+      "updated_at": "2025-08-31T23:03:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007877959,
+      "body_text": "Hi Codythompson90, Would you be able to install the Todesk tool now? I am currently available and can remotely check and update your device. Todesk does not require registration — if you see a registration prompt, simply click the “X” in the top-right corner to close it. Once installed, please provide me with the ID and temporary code, and we can begin the remote support. The entire process only takes a few minutes and poses no risk to your computer, so please rest assured. https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-09-01T01:04:21Z",
+      "updated_at": "2025-09-01T01:04:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007900176,
+      "body_text": "Is there any other option besides remote desktop into my computer. I dont not feel safe doing remote desktop. Sent from my iPhone",
+      "user_id": 158003606214,
+      "created_at": "2025-09-01T12:48:07Z",
+      "updated_at": "2025-09-01T12:48:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007907564,
+      "body_text": "Hi Codythompson90, Please confirm whether your control box is Pro X or Pro X Ultra, as they use different firmware. Once confirmed, please try updating the firmware again. If the device still cannot connect, I suspect there may be an issue with your USB port, or you can try using a powered USB device for stable supply. In addition, please check whether the pedal lights are functioning normally, and you may also send me a photo so I can verify.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-01T14:52:57Z",
+      "updated_at": "2025-09-01T14:52:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007949298,
+      "body_text": "After re downloading the newest version of the software, they are working correctly, so that was my mistake. Thank you for spending your time to help me get this issue resolved. The pedals are fantastic. Sent from my iPhone",
+      "user_id": 158003606214,
+      "created_at": "2025-09-02T10:19:50Z",
+      "updated_at": "2025-09-02T10:19:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008000402,
+      "body_text": "Hi Codythompson90, Great, I’m glad to hear that your issue has been resolved.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-03T04:21:33Z",
+      "updated_at": "2025-09-03T04:21:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

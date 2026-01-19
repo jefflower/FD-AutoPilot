@@ -1,0 +1,24 @@
+{
+  "id": 1162,
+  "subject": "[General] New message from Juane Pelizzari",
+  "description_text": "Hi, do you send pedals to Argentine?\r\n\r\n--\r\nJuane Pelizzari\r\njuanepelizzari@gmail.com\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-03T17:02:32Z",
+  "updated_at": "2025-07-04T13:37:54Z",
+  "requester_id": 158001199926,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004445155,
+      "body_text": "你好，Juane Pelizzari，  没问题。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-04T13:37:54Z",
+      "updated_at": "2025-07-04T13:37:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "id": 5437,
+  "subject": "Pro X throttle stopped working",
+  "description_text": "Hello,\r\n\r\nI am emailing to request help with my Simsonn Pro X Throttle Pedal. A video of the issue is attached.\r\n\r\nIt has suddenly stopped working. \r\nI had no issues with it prior to today, however when I loaded up to race the pedal provided no input. When I looked at it I saw that the LED lights weren’t working either. I tried looking at the connection points on the control box and throttle and everything is plugged in correctly and securely. \r\n\r\nI am on the latest software version and even tried loading a previous version, the throttle still didn’t work on either occasion.\r\n\r\nI am not sure why this has occurred but the throttle does not work anymore. Please advise what I need to do in order to get it fixed or get a replacement.\r\n\r\nThank you,\r\nDaniel Chadwick\r\n\r\nIn case the attached video doesn’t work here is a Google Drive link to the video.\r\nhttps://drive.google.com/drive/folders/1IY5rI7SrC-R2C_T8fkgOJT3MlOoSOZUa\r\n\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-30T09:01:11Z",
+  "updated_at": "2025-11-19T11:33:15Z",
+  "requester_id": 158001831070,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011603574,
+      "body_text": "Hi Daniel Chadwick,  Please make sure all three pedals are connected, then unplug and replug the USB cable. Click Offset in the software to reset the pedal signals, and then recalibrate for testing. If the issue persists, try swapping the throttle and brake connections, or connect the throttle to the clutch port to check whether the problem is with the pedals or the controller ports. We also recommend plugging the pedals directly into the blue USB 3.0 port on the back of the computer, and avoid using a USB hub. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-02T02:07:39Z",
+      "updated_at": "2025-11-02T02:07:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011646702,
+      "body_text": "Hello,\r\n\r\nI only have the two pedals (throttle and brake). \r\n\r\nI have tried doing the OFFSET, recalibrating, as ell as swapping the throttle and brake connections. \r\nThe throttle pedal still does not work. \r\n\r\nI cannot plug them directly into the PC because the cable is like 3” long and didn’t reach anywhere close.\r\n\r\nFurthermore, the pedals do not use a USB 3.0 connection, they use an RJ45 cable that i cannot connect to my PC. \r\n\r\nPlease advise on what i need to do to get a replacement pedal. \r\n\r\nI have been through this process before when my brake pedal also stopped working, I’m starting to think you’ve send a horribly damaged product.\r\n\r\nSo please just tell me what I have to prove to you to get a new throttle pedal that functions.\r\n\r\nThank you.\r\nDaniel Chadwick\r\n\r\n> ",
+      "user_id": 158001831070,
+      "created_at": "2025-11-03T08:20:03Z",
+      "updated_at": "2025-11-03T08:20:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011769461,
+      "body_text": "Hi Daniel Chadwick,  The RJ45 port on the ProX cannot be used, as it is designed specifically for our base. Additionally, have you tried swapping the throttle and brake connectors to see if it works? If it still doesn’t function, we can send you a replacement throttle sensor free of charge. Please provide your contact name, phone number, address, and order number. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-05T05:46:15Z",
+      "updated_at": "2025-11-05T05:46:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011771967,
+      "body_text": "Hello, \r\n\r\nI did try swapping the brake and throttle cables around and the throttle still did not function.\r\n\r\nMy details are;\r\n\r\nName: Daniel Chadwick\r\nNumber: 0431 805 857 \r\nAddress: 42/120 Thynne Street, Bruce, ACT, 2617\r\n\r\nI do not have the order number as I received the pedals as a gift.\r\n\r\nThank you,\r\nDaniel Chadwick\r\n\r\n> ",
+      "user_id": 158001831070,
+      "created_at": "2025-11-05T06:29:16Z",
+      "updated_at": "2025-11-05T06:29:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011784739,
+      "body_text": "Hi Daniel Chadwick,     Please check whether the small spring in this position is installed correctly and whether any parts are damaged. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-05T08:16:39Z",
+      "updated_at": "2025-11-05T08:16:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011801133,
+      "body_text": "Hello,\r\n\r\nThis spring is installed correctly and there is no damage.\r\n\r\nDaniel Chadwick\r\n\r\n> ",
+      "user_id": 158001831070,
+      "created_at": "2025-11-05T11:48:55Z",
+      "updated_at": "2025-11-05T11:48:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011985192,
+      "body_text": "Hi Daniel Chadwick,   We will send you a replacement ProX throttle sensor. Please provide a photo of your pedal, along with your contact name, phone number, and shipping address. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-09T04:44:45Z",
+      "updated_at": "2025-11-09T04:44:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011986282,
+      "body_text": "Hello, \r\n\r\nIt is not a sensor issue, the lighting on the pedal do not work either and the pedal makes no connection sound when it gets plugged into my computer. The whole circuit board onboard the pedal seems to be broken. Sending a new sensor would not fix the problem I fear. \r\n\r\nPlease advise,\r\nThank you,\r\nDaniel Chadwick\r\n\r\n> ",
+      "user_id": 158001831070,
+      "created_at": "2025-11-09T06:33:22Z",
+      "updated_at": "2025-11-09T06:33:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012095941,
+      "body_text": "Hi Daniel Chadwick,    Please uninstall the old software on your computer and install the 2.1.2 new version from the provided link. Press the upgrade button on the control box, then reconnect the USB cable. SIMSONN Manager will enter upgrade mode.  In the software, navigate to: Settings → Update → Manual Firmware Update → pedals → firmware → pedals-prox.sfu to complete the firmware update. If the pedal panel has 4 ports, it is the ProX Ultra.  After the update, please recalibrate the pedals, and the LEDs will function properly.     https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-11-11T04:49:04Z",
+      "updated_at": "2025-11-11T04:49:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012153301,
+      "body_text": "Hello,\r\n\r\nI have downloaded Version 2.1.2 from the link you provided and upgraded the pedal firmware correctly.\r\n\r\nHowever the lights, and the pedal input still do not work.\r\n\r\nThe lights haven’t worked at all since I got the pedals, however the input worked until recently.\r\n\r\nPlease see attached photo of the lights of the pedal not working correctly.\r\n\r\nThank you,\r\nDaniel Chadwick\r\n\r\n\r\n> ",
+      "user_id": 158001831070,
+      "created_at": "2025-11-12T04:15:02Z",
+      "updated_at": "2025-11-12T04:15:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012400277,
+      "body_text": "Hi Daniel Chadwick,     Is it only the LEDs on the throttle side that are not lighting up? Are the brake LEDs functioning normally?  We can send you a replacement LED module assembly for the throttle side. The issue may have been caused by severe vibrations during shipping, which could have resulted in loose solder joints on the LEDs.  Please provide your order number, contact name, phone number, and shipping address so that we can arrange the replacement.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-16T03:05:21Z",
+      "updated_at": "2025-11-16T03:05:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012400611,
+      "body_text": "Hello, \r\n\r\nYes it is just the throttle LED’s that do not work. The brake lights function normally.\r\n\r\nIt is possible for me to just get/pay for a new throttle completely? I do not want to play around with trying to install a new led and control module onto the throttle. If this isn’t possible then I will try to install the modules onto the throttle.\r\n\r\nI do not have the order number.\r\nContact name: Daniel Chadwick\r\nNumber: 0431 805 857\r\nAddress: 20 Yirawala St, Ngunnawal, ACT, 2617, Australia\r\n\r\nThank you very much,\r\nDaniel Chadwick\r\n\r\n> ",
+      "user_id": 158001831070,
+      "created_at": "2025-11-16T03:31:56Z",
+      "updated_at": "2025-11-16T03:31:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012574668,
+      "body_text": "Hi Daniel Chadwick,    You can click this link to complete your purchase and note that you need to replace the throttle pedal.  https://www.simsonn.com/products/simsonn-prox-ultra-pedal-clutch-and-control-box",
+      "user_id": 158001343601,
+      "created_at": "2025-11-19T11:33:14Z",
+      "updated_at": "2025-11-19T11:33:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

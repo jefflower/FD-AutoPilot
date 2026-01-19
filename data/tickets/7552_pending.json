@@ -1,0 +1,44 @@
+{
+  "id": 7552,
+  "subject": "#SSN4182 Order Status",
+  "description_text": "Hi,\r\n\r\nI would like to know the status of my order #SSN4182. I placed the order\r\nmore than a week ago and I haven't received any update or estimated\r\ndelivery date.\r\n\r\nBest regards\r\nGonzalo\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-06T07:35:12Z",
+  "updated_at": "2025-12-15T03:41:36Z",
+  "requester_id": 158007672580,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014180068,
+      "body_text": "Hi,\r\n\r\nI would like to know the status of my order #SSN4182. I placed the order\r\nmore than a week ago and I haven't received any update or estimated\r\ndelivery date.\r\n\r\nBest regards\r\nGonzalo\r\n\r\n",
+      "user_id": 158007672580,
+      "created_at": "2025-12-09T12:09:07Z",
+      "updated_at": "2025-12-09T12:09:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014237425,
+      "body_text": "您好，\r\n\r\n我想查詢我的訂單號碼 #SSN4182 的狀態。我一周多前下的單，但一直沒有收到任何更新資訊或預計送達日期。\r\n\r\n此致\r\n\r\nGonzalo\r\n\r\n",
+      "user_id": 158007672580,
+      "created_at": "2025-12-10T06:31:17Z",
+      "updated_at": "2025-12-10T06:31:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014238277,
+      "body_text": "Hi,\r\n\r\nI would like to know the status of my order #SSN4182. I placed the order\r\nmore than a week ago and I haven't received any update or estimated\r\ndelivery date.\r\n\r\nBest regards\r\nGonzalo\r\n\r\n",
+      "user_id": 158007672580,
+      "created_at": "2025-12-10T07:06:42Z",
+      "updated_at": "2025-12-10T07:06:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

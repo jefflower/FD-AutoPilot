@@ -1,0 +1,24 @@
+{
+  "id": 5846,
+  "subject": "Simsonn plus X pedals",
+  "description_text": "Hello,\r\n\r\nI recently got the Simsonn Plus X pedals, however I’ve been wondering. Can\r\nyou please confirm to me what is the polling rate of these pedals? How many\r\nhertz is it?\r\n\r\nThanks, K.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-09T19:04:59Z",
+  "updated_at": "2025-11-10T01:22:42Z",
+  "requester_id": 158006882114,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012021595,
+      "body_text": "Hi Kon Le,  The timer period of PlusX is 2 ms. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-10T01:22:42Z",
+      "updated_at": "2025-11-10T01:22:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

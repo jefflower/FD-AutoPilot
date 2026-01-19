@@ -1,0 +1,44 @@
+{
+  "id": 7430,
+  "subject": "Order SSN3588",
+  "description_text": "Hello , \r\n\r\nI have made an order with number SSN3588. You can find attached two different screenshots . I received today a notification to go and collect it myself , which I found weird as the box of a pedal set doesn’t fit the self collecting boxes . Went anyway got it , to find out it’s only the haptics . \r\n\r\nSent from my iPhone\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-04T16:04:33Z",
+  "updated_at": "2025-12-05T09:28:22Z",
+  "requester_id": 158007587133,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013398907,
+      "body_text": "And that’s the package . Am I about to receive my pedal set ? If yes what’s the tracking number and when ? . I have waited from the 17th of november,when I ordered , until now to get only the haptics ?  \r\n\r\nPlease inform me asap regarding the rest of my orders \r\n\r\nThank you \r\n\r\nSpiros Nakos \r\n\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158007587133,
+      "created_at": "2025-12-04T16:07:42Z",
+      "updated_at": "2025-12-04T16:07:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013474718,
+      "body_text": "Hi Spiros Sao,    This is the logistics link for the pedal.  https://www.dhl.de/en/privatkunden/pakete-empfangen/verfolgen.html?piececode=CE326633944DE",
+      "user_id": 158001343601,
+      "created_at": "2025-12-05T08:40:49Z",
+      "updated_at": "2025-12-05T08:40:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013476270,
+      "body_text": "Great , thank you so much . Can’t wait !\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158007587133,
+      "created_at": "2025-12-05T09:17:45Z",
+      "updated_at": "2025-12-05T09:17:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

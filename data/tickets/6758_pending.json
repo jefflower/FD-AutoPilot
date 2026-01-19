@@ -1,0 +1,24 @@
+{
+  "id": 6758,
+  "subject": "VAM",
+  "description_text": "Hello. I ordered today VAMs and some other stuff. I paid 164 USD (with\r\nshipping). That is 142 EUR. So my question is, you will pay VAT, and i do\r\nnot have to pay any other tax. On you page you say you will pay VAT under\r\n150 eur.\r\nThank you\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-26T06:21:55Z",
+  "updated_at": "2025-11-27T04:00:54Z",
+  "requester_id": 158007337012,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012989815,
+      "body_text": "Hi Ante,    Yes, our system experienced an outage, but it has now been resolved.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-27T04:00:54Z",
+      "updated_at": "2025-11-27T04:00:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

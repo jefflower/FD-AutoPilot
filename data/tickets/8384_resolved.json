@@ -1,0 +1,44 @@
+{
+  "id": 8384,
+  "subject": "Order SSN4647",
+  "description_text": "Hi why i recieve when i want to track my parcel always an error that this tracking number has no information? The parcel was sent on Thursday last week?\r\n\r\n\r\nRegards\r\nZeches Laurent\r\nVon meinem iPhone gesendet\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-16T07:10:58Z",
+  "updated_at": "2025-12-22T11:49:33Z",
+  "requester_id": 158007745688,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014566609,
+      "body_text": "Hi Laurent Zeches,    We sincerely apologize for any inconvenience caused. Currently, our German warehouse is out of stock for the footrest, with restocking expected today. We will ship your order via DHL and refund the additional shipping fee you paid.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-16T11:51:51Z",
+      "updated_at": "2025-12-16T11:51:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014566931,
+      "body_text": "Hi, so the order will be there before christmas?\r\nRegards\r\nZeches Laurent\r\nVon meinem iPhone gesendet\r\n\r\n> Am 16.12.2025 um 12:52 schrieb service@simsonn.com:\r\n> \r\n> ﻿\r\n> Hi Laurent Zeches,\r\n> \r\n> We sincerely apologize for any inconvenience caused. Currently, our German warehouse is out of stock for the footrest, with restocking expected today. We will ship your order via DHL and refund the additional shipping fee you paid.\r\n> \r\n> \r\n> \r\n> \r\n> ",
+      "user_id": 158007745688,
+      "created_at": "2025-12-16T12:04:08Z",
+      "updated_at": "2025-12-16T12:04:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014875237,
+      "body_text": "",
+      "user_id": 158007774669,
+      "created_at": "2025-12-22T11:49:30Z",
+      "updated_at": "2025-12-22T11:49:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

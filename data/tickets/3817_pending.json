@@ -1,0 +1,24 @@
+{
+  "id": 3817,
+  "subject": "Pro X Ultra Pedals with VAM Not Upgrading Firmware",
+  "description_text": "Simsonn Support,\r\n\r\nI have a set of Pro X Ultra pedals with VAM upgrade and am having the brake\r\npedal VAM unit stay vibrating at max oscillation after I have shut down\r\nAssetto Corsa and SimHub. The Simsonn software is showing that there is a\r\nfirmware update that I hope will fix this issue, but I can't get it to\r\ninstall. Can I get the latest Pro X Ultra firmware from you guys to see if\r\nthis fixes this issue? Really hoping that this fixes the issue because the\r\nonly way that I can get the brake pedal to stop vibrating is to power off\r\nthe control box and then pull the USB connection from the computer to force\r\nall power off of the pedals. Any help would be appreciated, and thanks so\r\nmuch!\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-14T21:52:43Z",
+  "updated_at": "2025-09-14T23:55:28Z",
+  "requester_id": 158001878569,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008716420,
+      "body_text": "Hi J W,  请您先卸载电脑上的 2.1.0 版本，然后通过这个链接安装 2.1.1 版本。接着在软件的设置中手动更新固件。  如果过程中遇到问题，请将截图或视频发给我，我会协助您检查环境并解决问题。     https://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=drive_lin",
+      "user_id": 158000445778,
+      "created_at": "2025-09-14T23:55:28Z",
+      "updated_at": "2025-09-14T23:55:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

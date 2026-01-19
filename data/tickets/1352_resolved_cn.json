@@ -1,0 +1,115 @@
+{
+  "id": 1352,
+  "subject": "踏板未被检测到",
+  "description_text": "我前段时间买了你们的sim pro plus踏板，一直用得很好，但是当我尝试升级到新软件时，感觉很奇怪，所以我现在想换回我之前使用的simpedalsconfigv4软件。现在当我启动应用程序时，它检测不到我的踏板，并显示设备已断开连接……是的，它们都插着电。",
+  "status": 4,
+  "priority": 3,
+  "created_at": "2025-07-08T22:04:14Z",
+  "updated_at": "2025-07-09T22:17:29Z",
+  "requester_id": 158001960213,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004483625,
+      "body_text": "嗨 Trevor Groh，升级新软件后您遇到了什么问题？您能详细描述一下吗？如果您想切换回V4版本，您需要首先使用新软件将固件降级到plus.1.7.1.sfu。之后，SimPedalsConfigV4就可以正常工作了。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-08T22:08:28Z",
+      "updated_at": "2025-07-08T22:08:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004484278,
+      "body_text": "当我启动v4软件时，右下角显示设备已断开连接，如果我需要降级固件，您能提供sfu文件的链接吗，以及我该如何操作",
+      "user_id": 158001960213,
+      "created_at": "2025-07-08T23:46:13Z",
+      "updated_at": "2025-07-08T23:46:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158004484493,
+      "body_text": "嗨 Trevor Groh，原始的升级目录中已经包含了降级所需的文件。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-09T00:28:51Z",
+      "updated_at": "2025-07-09T00:28:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004484590,
+      "body_text": "我明白了，我找到了文件，但我该如何安装呢？因为simmson manager和simmson v4软件都将踏板列为已断开连接，尽管它已插上电源……我该如何安装新固件",
+      "user_id": 158001960213,
+      "created_at": "2025-07-09T00:53:35Z",
+      "updated_at": "2025-07-09T00:53:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158004484650,
+      "body_text": "嗨 Trevor Groh，我可以通过Todesk远程协助您。无需注册——只需提供您的ID和临时密码。 https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-07-09T01:04:40Z",
+      "updated_at": "2025-07-09T01:04:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004484810,
+      "body_text": "我对此感到不舒服，直接告诉我步骤就好，我懂电脑知识",
+      "user_id": 158001960213,
+      "created_at": "2025-07-09T01:28:38Z",
+      "updated_at": "2025-07-09T01:28:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158004486092,
+      "body_text": "嗨 Trevor Groh，对于Pro Plus，您可以通过进入更新界面 → 手动固件更新 → 导航到“pedals-firmware”文件夹 → 然后进入“pedals”文件夹 → 并选择“plus-1.7.1.sfu”文件来直接更新。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-09T05:47:52Z",
+      "updated_at": "2025-07-09T05:47:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004493473,
+      "body_text": "好的我明白了，但是它显示灰色，因为这两个软件都没有检测到踏板已插入，所以它不让我手动更新踏板",
+      "user_id": 158001960213,
+      "created_at": "2025-07-09T15:59:48Z",
+      "updated_at": "2025-07-09T15:59:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158004493481,
+      "body_text": "踏板上有没有硬重置按钮？",
+      "user_id": 158001960213,
+      "created_at": "2025-07-09T16:00:12Z",
+      "updated_at": "2025-07-09T16:00:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158004493582,
+      "body_text": "算了，我捣鼓了一下就修好了……谢谢你的帮助",
+      "user_id": 158001960213,
+      "created_at": "2025-07-09T16:04:56Z",
+      "updated_at": "2025-07-09T16:04:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    }
+  ],
+  "available_langs": []
+}

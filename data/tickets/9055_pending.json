@@ -1,0 +1,44 @@
+{
+  "id": 9055,
+  "subject": "Baseplate tube not threaded",
+  "description_text": "Hi,\r\n\r\nMy pedals order arrived and I love them, but one of my baseplate legs isn’t\r\nthreaded, it’s just a tube. My order number is #SSN3789.\r\n\r\nPictures attached to show proof.\r\n\r\nI’ve just placed a new order with you #SSN5206\r\nif you can put a replacement one in there with that order or even just send\r\nme a replacement one separately that would be great and much appreciated.\r\n\r\nPlease let me know,\r\nThanks,\r\n\r\nPhilip\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-24T06:14:22Z",
+  "updated_at": "2026-01-17T03:21:08Z",
+  "requester_id": 158007500802,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017259678,
+      "body_text": "Hi Philip Andrews,    We apologize for the delayed response. We will arrange for a replacement to be sent to you as soon as possible. May I confirm that your address remains the same?",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T11:55:28Z",
+      "updated_at": "2026-01-16T11:55:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017274926,
+      "body_text": "Yes, that address is correct. 41 Lancaster Avenue OX10 6DP.\r\nThanks a lot.\r\n\r\nOn Fri, 16 Jan 2026 at 03:55, support@simsonn.com ",
+      "user_id": 158007500802,
+      "created_at": "2026-01-16T16:04:15Z",
+      "updated_at": "2026-01-16T16:04:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017311241,
+      "body_text": "Hi Philip Andrews,    Your order has been shipped. Here is your tracking link  https://t.17track.net/en#nums=SF6047247192034",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T03:21:07Z",
+      "updated_at": "2026-01-17T03:21:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": 5281,
+  "subject": "Tracking number SF6045967023267",
+  "description_text": "Good evening,\r\n\r\nI placed an order on the 15th of October 2025. Please refer to the tracking\r\nnumber above.\r\n\r\nIt shows my package has been out for delivery since October 23rd, 2025. Was\r\nthere any issues regarding delivery? What is the delivery time frame?\r\n\r\nPlease advise.\r\n\r\nThank you,\r\n\r\nDamien Jassor\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-10-26T00:26:42Z",
+  "updated_at": "2025-10-29T07:41:02Z",
+  "requester_id": 158006057104,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011151130,
+      "body_text": "Hi Damien Jassor,    We have inquired with the logistics provider and will provide you with an update tomorrow. We apologize for any inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-27T10:21:20Z",
+      "updated_at": "2025-10-27T10:21:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011228734,
+      "body_text": "Is there any update on this handbrake\r\n\r\nOn Mon, Oct 27, 2025 at 3:21 AM service@simsonn.com ",
+      "user_id": 158006057104,
+      "created_at": "2025-10-28T14:35:17Z",
+      "updated_at": "2025-10-28T14:35:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

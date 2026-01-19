@@ -1,0 +1,24 @@
+{
+  "id": 10210,
+  "subject": "Daniel muñoz",
+  "description_text": "Hola, compre los pedales SIMSONN PRO y los recibí hace unos días. L aplicación va muy mal, se quedan enganchados\r\ntanto el acelerador como el freno.\r\nimposible utilizar y el freno es muy duro y en escritorio no se puede usar.\r\nsolicite la devolución pero tengo que pagar yo 52e de envió? me parece una tomadura de pelo.\r\nme gustaria que me dieran una solucion razonable y no tener una mala imagen de SIMSONN.\r\nGracias\r\n\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-07T11:45:18Z",
+  "updated_at": "2026-01-07T15:51:22Z",
+  "requester_id": 158008965373,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016161066,
+      "body_text": "Hi dani muñoz ortiz,     If your control box version is 1.7.1, you can download and install SIMSONN Manager 2.1.3. Then perform a manual firmware update using the following path:  Settings → Update → Manual Update Firmware → pedals → firmware → pedals-plus.sfu  After the update is complete, the device will support the latest software version and work normally.         https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T15:51:22Z",
+      "updated_at": "2026-01-07T15:51:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

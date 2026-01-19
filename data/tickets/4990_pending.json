@@ -1,0 +1,44 @@
+{
+  "id": 4990,
+  "subject": "Order Update Request – Express Shipping for Pedals Ordered on October 3rd",
+  "description_text": "Dear Simsonn Team,\r\n\r\nI hope this message finds you well.\r\n\r\nI’m writing to inquire about the status of my recent order placed on October 3rd for a set of Simsonn Plus X pedals. I also paid an additional £20 for express shipping, but I haven’t yet received any updates regarding the delivery.\r\n\r\nCould you please let me know when I can expect the order to arrive? If there are any issues or delays, I’d appreciate an update.\r\n\r\nThank you in advance for your assistance.\r\n\r\nBest regards, Cane\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-17T16:40:08Z",
+  "updated_at": "2025-10-20T11:14:39Z",
+  "requester_id": 158005244908,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010134969,
+      "body_text": "Hi Cane Martos,    We apologize for the delayed response; we've just returned from our 8-day holiday. Your order has been shipped, and here is your tracking link:  https://t.17track.net/en#nums=SF6045959598114",
+      "user_id": 158001343601,
+      "created_at": "2025-10-09T09:01:01Z",
+      "updated_at": "2025-10-09T09:01:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010648973,
+      "body_text": "ID 为 4613 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-18T05:54:56Z",
+      "updated_at": "2025-10-18T05:54:56Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158010648974,
+      "body_text": "合并来自工单4613  \n      主题: Order  \n      描述:  \nHello, \n \n \n \n \nI recently ordered the Simsonn Plus X peddles and paid the extra £20 to receive the package with in 3 - 7 days. I ordered is on Friday the 3rd of October and have not heard back, the only thing I got was the confirmation email. If you need any more information,\n please email me back. Please let me know. Thank you",
+      "user_id": 158000445778,
+      "created_at": "2025-10-18T05:54:57Z",
+      "updated_at": "2025-10-18T05:54:57Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

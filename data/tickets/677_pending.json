@@ -1,0 +1,24 @@
+{
+  "id": 677,
+  "subject": "Bestellung",
+  "description_text": "\r\nHallo wo bleibt meine Bestellung ? Bestellnummer #SSN1579\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-21T11:12:20Z",
+  "updated_at": "2025-06-21T15:08:25Z",
+  "requester_id": 158001700116,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003677499,
+      "body_text": "Hi Warframe76, Here is the latest tracking information. Please have a look. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-21T15:08:25Z",
+      "updated_at": "2025-06-21T15:08:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

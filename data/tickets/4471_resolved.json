@@ -1,0 +1,44 @@
+{
+  "id": 4471,
+  "subject": "Simsonn Pro X Pedals stuck in upgrade mode after firmware update failed",
+  "description_text": " Hello Simsonn Team,\r\n\r\nmy Pro X Pedals are stuck in “upgrade mode” after the firmware update\r\nfailed.\r\nThe Simsonn Manager only shows “The main controller is in upgrade mode” and\r\ndoes not offer any firmware update anymore.\r\n\r\nCould you please send me the correct firmware file for manual flashing or\r\nprovide a recovery tool?\r\n\r\nThank you!\r\nBest regards,\r\nPeter\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-10-05T15:03:50Z",
+  "updated_at": "2025-10-05T23:20:55Z",
+  "requester_id": 158005408065,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009937920,
+      "body_text": "你好，Peter Potrawa，     Please uninstall the old version on your computer, then reinstall version 2.1.2 and update the firmware.  After the update, the device version should display as CPU1: 2.0.5, CPU2: 2.0.3.  If the issue persists, please feel free to contact me.  Also, make sure the upgrade button on the control box has popped up, then reconnect the USB cable.   https://drive.google.com/file/d/1PZwHUqhhmJw0IBGDO8mGONPbrICJU3z1/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T15:58:09Z",
+      "updated_at": "2025-10-05T15:58:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009942090,
+      "body_text": " Hello,\r\nI have uninstalled the Simsonn Manager and installed the version from your\r\ndownload link,\r\nbut I still don’t get any firmware update option.\r\n\r\nOn the update page there is a manual update function —\r\ncould you please just send me the firmware update file (.bin or .hex)\r\ndirectly,\r\nso that I can flash it manually?\r\n\r\nMy controller is stuck in *Upgrade Mode* after the previous update failed.\r\n\r\nThank you very much for your help!\r\n\r\n\r\n[image: grafik.png]\r\n\r\n[image: grafik.png]\r\n\r\n\r\n\r\nAm So., 5. Okt. 2025 um 17:58 Uhr schrieb support@simsonn.com <\r\nsupport@simsonn.com>:\r\n\r\n> 你好，Peter Potrawa，\r\n>\r\n> Please uninstall the old version on your computer, then reinstall *version\r\n> 2.1.2* and update the firmware.\r\n>  After the update, the device version should display as *CPU1: 2.0.5,\r\n> CPU2: 2.0.3*.\r\n>  If the issue persists, please feel free to contact me.\r\n>  Also, make sure the *upgrade button* on the control box has *popped up*,\r\n> then reconnect the *USB* cable.\r\n>\r\n>\r\n> https://drive.google.com/file/d/1PZwHUqhhmJw0IBGDO8mGONPbrICJU3z1/view?usp=drive_link\r\n>\r\n>\r\n> On Sun, 5 Oct at 11:03 AM , Peter Potrawa <peter.potrawa@gmail.com>\r\n> wrote:\r\n> Hello Simsonn Team,\r\n>\r\n> my Pro X Pedals are stuck in “upgrade mode” after the firmware update\r\n> failed.\r\n> The Simsonn Manager only shows “The main controller is in upgrade mode”\r\n> and does not offer any firmware update anymore.\r\n>\r\n> Could you please send me the correct firmware file for manual flashing or\r\n> provide a recovery tool?\r\n>\r\n> Thank you!\r\n> Best regards,\r\n> Peter\r\n>\r\n> 4471:4206036\r\n>\r\n\r\n",
+      "user_id": 158005408065,
+      "created_at": "2025-10-05T17:13:19Z",
+      "updated_at": "2025-10-05T17:13:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009942205,
+      "body_text": "*Sorry,*\r\nI just noticed that there was a *Firmware* folder, and I tried the manual\r\nupdate —\r\neverything is working again now!\r\n\r\nThank you very much for your help! ?\r\n\r\nAm So., 5. Okt. 2025 um 19:12 Uhr schrieb Peter Potrawa <\r\npeter.potrawa@gmail.com>:\r\n\r\n> Hello,\r\n> I have uninstalled the Simsonn Manager and installed the version from your\r\n> download link,\r\n> but I still don’t get any firmware update option.\r\n>\r\n> On the update page there is a manual update function —\r\n> could you please just send me the firmware update file (.bin or .hex)\r\n> directly,\r\n> so that I can flash it manually?\r\n>\r\n> My controller is stuck in *Upgrade Mode* after the previous update failed.\r\n>\r\n> Thank you very much for your help!\r\n>\r\n>\r\n> [image: grafik.png]\r\n>\r\n> [image: grafik.png]\r\n>\r\n>\r\n>\r\n> Am So., 5. Okt. 2025 um 17:58 Uhr schrieb support@simsonn.com <\r\n> support@simsonn.com>:\r\n>\r\n>> 你好，Peter Potrawa，\r\n>>\r\n>> Please uninstall the old version on your computer, then reinstall *version\r\n>> 2.1.2* and update the firmware.\r\n>>  After the update, the device version should display as *CPU1: 2.0.5,\r\n>> CPU2: 2.0.3*.\r\n>>  If the issue persists, please feel free to contact me.\r\n>>  Also, make sure the *upgrade button* on the control box has *popped up*,\r\n>> then reconnect the *USB* cable.\r\n>>\r\n>>\r\n>> https://drive.google.com/file/d/1PZwHUqhhmJw0IBGDO8mGONPbrICJU3z1/view?usp=drive_link\r\n>>\r\n>>\r\n>> On Sun, 5 Oct at 11:03 AM , Peter Potrawa <peter.potrawa@gmail.com>\r\n>> wrote:\r\n>> Hello Simsonn Team,\r\n>>\r\n>> my Pro X Pedals are stuck in “upgrade mode” after the firmware update\r\n>> failed.\r\n>> The Simsonn Manager only shows “The main controller is in upgrade mode”\r\n>> and does not offer any firmware update anymore.\r\n>>\r\n>> Could you please send me the correct firmware file for manual flashing or\r\n>> provide a recovery tool?\r\n>>\r\n>> Thank you!\r\n>> Best regards,\r\n>> Peter\r\n>>\r\n>> 4471:4206036\r\n>>\r\n>\r\n\r\n",
+      "user_id": 158005408065,
+      "created_at": "2025-10-05T17:28:13Z",
+      "updated_at": "2025-10-05T17:28:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

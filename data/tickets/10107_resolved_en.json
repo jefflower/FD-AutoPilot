@@ -1,0 +1,35 @@
+{
+  "id": 10107,
+  "subject": "Simsonn shipping",
+  "description_text": "Hello, I had ordered the Simsonn Plus X pedals and the 2 piece Vam Pro set through Amazon. They are expected to be here this weekend. While the pedals are shipping from the US (where I’m at), the Vam Pros are shipping globally, I think through SFexpress. I’ve been tracking my pedals as I’ve seen updates, but my Vam Pro shipment with SFexpress hasn’t updated since December 28th. My tracking number is SF6047206612732. Thank you!",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-06T15:32:17Z",
+  "updated_at": "2026-01-07T09:17:36Z",
+  "requester_id": 158008953764,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016006592,
+      "body_text": "I also put in a ticket through Amazon and they had brought up sending a replacement as it might have been lost in the warehouse. I responded through Amazon also, but yes, I do want a replacement set sent if it’s lost, and wanting the Vertical Mounting Brackets as shown in the Amazon picture.\n\nOn Tue, Jan 6, 2026 at 9:37 AM service@simsonn.com",
+      "user_id": 158008953764,
+      "created_at": "2026-01-06T22:43:23Z",
+      "updated_at": "2026-01-06T22:43:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016101603,
+      "body_text": "Replied in Amazon backend.",
+      "user_id": 158007774607,
+      "created_at": "2026-01-07T09:17:33Z",
+      "updated_at": "2026-01-07T09:17:33Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ],
+  "available_langs": []
+}

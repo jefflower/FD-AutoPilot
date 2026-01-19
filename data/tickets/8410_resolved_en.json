@@ -1,0 +1,35 @@
+{
+  "id": 8410,
+  "subject": "Product assistance",
+  "description_text": "Hi Simsonn,\n\nI purchased your pedals in August and have been using them regularly. First of all, they work great! awesome feedback with the motors once dialed in, really impressive build quality.\n\nUnfortunately, I’ve run into an issue I haven’t been able to resolve. Everything was working perfectly until I rewired my rig and connected the pedals through a USB adapter. Since then, my PC no longer detects the pedals. I’ve tried connecting them directly to the PC using multiple USB ports, but the issue persists. The control module still powers on and lights up, which makes me suspect a possible fault with the control module itself.\n\nIs there a recommended way to troubleshoot this? Alternatively, is it possible to purchase a replacement control module to test whether that resolves the issue? I’d really like to get back up and running, but I’ve exhausted all the troubleshooting steps I can think of.\n\nThanks very much for your help. I appreciate any guidance you can provide.\n\nBest regards,\nFrank",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-16T11:23:47Z",
+  "updated_at": "2025-12-19T08:05:04Z",
+  "requester_id": 158007831414,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014616783,
+      "body_text": "Hi Frank Hong,     Please launch the latest version of SIMSONN Manager 2.1.2.  On the Plus X control box, press and hold the “Upgrade” button. While holding the button, unplug the USB cable from the computer and plug it back in. The software should then detect the device entering “SIMSONN Flasher mode”.  Next, in the software, go to: Settings → Update → Manual Firmware Update.  In the file selection window, choose: pedals-firmware → pedals-plusx.sfu.  Click “Start Update” and wait until the firmware is fully written. Do not disconnect the USB cable or close the software during the update process.  Additionally, please connect the USB cable directly to a rear USB 3.0 (blue) port on the PC. Do not use a USB hub or a USB 2.0 port.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T07:39:37Z",
+      "updated_at": "2025-12-17T07:39:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014739882,
+      "body_text": "Happy to report the issue is resolved after some troubleshooting. Wonderful product, again. Thank you so much for your help!",
+      "user_id": 158007831414,
+      "created_at": "2025-12-19T05:41:58Z",
+      "updated_at": "2025-12-19T05:41:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

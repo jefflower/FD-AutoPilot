@@ -1,0 +1,24 @@
+{
+  "id": 758,
+  "subject": "simsonn haptic motor inquiry",
+  "description_text": "I hope this message finds you well.\n\nI recently ordered a haptic motor and have successfully tested it — the hardware connection and software setup work perfectly. It functions as expected in Assetto Corsa, and I can confirm that the haptic feedback is active and responsive.\n\nHowever, I’m encountering an issue with Forza Motorsport. Although the motor appears to be working within the Simsonn software interface, there is no feedback when playing Forza. I suspect it may be related to a telemetry or UDP connection issue.\n\nIs there a way to manually configure or verify the UDP settings for Forza Motorsport within Simsonn or elsewhere? I’d appreciate any guidance you can provide to help me resolve this issue.\n\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-24T05:21:24Z",
+  "updated_at": "2025-06-24T05:32:29Z",
+  "requester_id": 158001755146,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003742639,
+      "body_text": "Hi 정지운,     At the moment, we support around 10 games. If you need compatibility with more titles, we recommend using SimHub, as we’ve already integrated with it. SimHub supports up to 100 games.    https://drive.google.com/file/d/1QrSbAvCC5iyx9XgdRgSQV-hWpmDGkujc/view?usp=sharing",
+      "user_id": 158000445778,
+      "created_at": "2025-06-24T05:32:29Z",
+      "updated_at": "2025-06-24T05:32:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

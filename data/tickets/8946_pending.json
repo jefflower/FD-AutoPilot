@@ -1,0 +1,24 @@
+{
+  "id": 8946,
+  "subject": "Pro X Ultra lights don't go out",
+  "description_text": "The lights on the pedals and baseplate do not turn off when pc is powered\r\noff.  I've checked my bios and no power is going to usb ports, even\r\nunplugging usb they stay on. Is this supposed to happen, or do I need to\r\nturn off the lights from the app before shutting down.\r\n\r\nThank you,\r\nMichael\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-23T03:24:34Z",
+  "updated_at": "2025-12-23T03:31:31Z",
+  "requester_id": 158007751447,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014952924,
+      "body_text": "Hi Michael Beers,  Many modern motherboards continue to supply power to the USB ports even after the computer is shut down. As a result, the pedals remain powered on, and since the pedals cannot detect whether the computer is turned off, they will continue to operate. To completely power off the pedals, you need to turn off the power at the computer’s wall outlet or power strip switch. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-23T03:31:31Z",
+      "updated_at": "2025-12-23T03:31:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

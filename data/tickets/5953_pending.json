@@ -1,0 +1,24 @@
+{
+  "id": 5953,
+  "subject": "Question about load-cell sensors on Simsonn Pro X Ultra pedals",
+  "description_text": "*Message:*\r\n\r\nHello Simsonn Team,\r\n\r\nI’m planning to buy the *Simsonn Pro X Ultra* pedal set and I have a\r\ntechnical question before purchasing.\r\nCould you please confirm whether *both the brake and throttle pedals use\r\nload-cell sensors* (and what their respective capacities are)?\r\n\r\nI’ve seen some listings mention *200 kg for the brake* and *20 kg for the\r\nthrottle*, but I’d like to verify this information directly with you.\r\nIf possible, could you also confirm whether the clutch pedal uses a\r\nload-cell as well?\r\n\r\nThank you very much for your time and clarification.\r\n\r\nBest regards,\r\n*Berkay Çalışkan*\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-11T17:38:16Z",
+  "updated_at": "2025-11-12T09:57:31Z",
+  "requester_id": 158006945762,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012165706,
+      "body_text": "Hi Berkay Çalışkan,    Yes, the brake is rated at 200kg, while the throttle and clutch use 20kg load cells.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-12T09:57:31Z",
+      "updated_at": "2025-11-12T09:57:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

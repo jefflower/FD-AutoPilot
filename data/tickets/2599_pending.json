@@ -1,0 +1,24 @@
+{
+  "id": 2599,
+  "subject": "Order #SSN2333 – Ship from Germany Warehouse",
+  "description_text": "Hi Simsonn Team,\r\n\r\nI’ve just placed my order for the black Plus X pedal set (Order #SSN2333). As confirmed in a previous e-mail, please ship it from the Germany warehouse.\r\n\r\nThanks for your help!\r\nDiart Tahiri\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-12T15:11:23Z",
+  "updated_at": "2025-08-13T01:50:04Z",
+  "requester_id": 158002314887,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006781573,
+      "body_text": "Hi Diart Tahiri,    Don't worry, we have already shipped your order from our warehouse in Germany.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-13T01:50:04Z",
+      "updated_at": "2025-08-13T01:50:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

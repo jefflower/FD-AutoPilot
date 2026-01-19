@@ -1,0 +1,24 @@
+{
+  "id": 4579,
+  "subject": "Pro X calibration doesn't stick",
+  "description_text": "Hello there,\r\n\r\nI purchased the Simsonn Pro X pedals and for some reason I have to\r\nre-calibrate them every time I restart my PC. This only seems to affect the\r\nbrakes however. They lose calibration completely.\r\nThe throttle stays calibrated.\r\n\r\nAny help would be appreciated.\r\n\r\nThanks\r\nMarc\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-08T07:56:33Z",
+  "updated_at": "2025-10-09T01:52:56Z",
+  "requester_id": 158005505381,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010124921,
+      "body_text": "Hi Marc Bonaldo,  Hello, may I confirm whether the calibration cannot be saved in SIMSONN Manager 2.1.0? Please try downloading the latest version 2.1.2. Also, could you clarify whether the issue occurs in the game (calibration not saving) or in our calibration software itself? You may also upload a short video via Google Drive and grant access permission, so we can review it and provide a quick solution. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-09T01:52:56Z",
+      "updated_at": "2025-10-09T01:52:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

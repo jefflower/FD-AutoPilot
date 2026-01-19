@@ -1,0 +1,35 @@
+{
+  "id": 3153,
+  "subject": "Pro Pedals not X and haptics",
+  "description_text": "I have the original pro pedals attached pic.\nis there a control box that will allow me to use the Simsonn haptics my wife got me for my birthday? I have the plus x control box and it recognizes the pedals with the old controller but just says disconected when I plug throttle and brake into plus x control box.\n[image0.png]\nEric Armstrong\nInformation Technology Director\nSauk-Suiattle Indian Tribe",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-08-27T01:42:49Z",
+  "updated_at": "2025-08-27T02:57:52Z",
+  "requester_id": 158003626062,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007590146,
+      "body_text": "Hi Eric Armstrong, The PlusX control box supports the haptic module, but it requires a separate 24V power supply. Are you currently using the USB 3.0 port (blue) on the back of your PC? Please avoid using USB hubs without independent power. Could you take a photo showing your pedal connections and the SIMSONN Manager 2.1.0 software screen? I can help you check whether the installation and software version are working correctly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-27T02:42:46Z",
+      "updated_at": "2025-08-27T02:42:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007590223,
+      "body_text": "I think I figured it out the control box was mounted to a plastic part of my rig. ( not grounded ) once I bolted it to metal ( grounded ) it seems to be working.\n\nGet Outlook for iOS<https://aka.ms/o0ukef>\n________________________________",
+      "user_id": 158003626062,
+      "created_at": "2025-08-27T02:54:15Z",
+      "updated_at": "2025-08-27T02:54:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

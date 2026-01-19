@@ -1,0 +1,94 @@
+{
+  "id": 6517,
+  "subject": "Order # SSN3563",
+  "description_text": "Hey, \r\n\r\nI recently placed this order and it arrived today, but I am missing the baseplate for it! \r\n\r\nThanks in advance, \r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-21T23:31:02Z",
+  "updated_at": "2025-12-19T08:55:33Z",
+  "requester_id": 158007244932,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012735279,
+      "body_text": "Everything else arrived perfect! Excited to use them\r\n\r\n\r\nOn Fri, Nov 21, 2025 at 6:30 PM Kleyton Slaybaugh <jkleyton99@gmail.com>\r\nwrote:\r\n\r\n> Hey,\r\n>\r\n> I recently placed this order and it arrived today, but I am missing the\r\n> baseplate for it!\r\n>\r\n> Thanks in advance,\r\n\r\n",
+      "user_id": 158007244932,
+      "created_at": "2025-11-21T23:35:04Z",
+      "updated_at": "2025-11-21T23:35:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012801705,
+      "body_text": "Hi Kleyton Slaybaugh,      We apologize for the inconvenience. The Pro X Ultra baseplate is currently out of stock in our US warehouse. New inventory will be replenished tomorrow, and we will ship your order within the next two days.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-24T08:13:54Z",
+      "updated_at": "2025-11-24T08:13:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012828315,
+      "body_text": "Hey,\r\n\r\nNo worries! I’m super excited for it to arrive so I can give them a go,\r\nfingers crossed it ships soon!\r\n\r\nThanks for your help!\r\n\r\nOn Mon, Nov 24, 2025 at 3:14 AM service@simsonn.com ",
+      "user_id": 158007244932,
+      "created_at": "2025-11-24T15:40:55Z",
+      "updated_at": "2025-11-24T15:40:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013203547,
+      "body_text": "Hey,\r\n\r\nWhen available, could I get a tracking number for the package?\r\n\r\nThanks in advance!\r\n\r\nOn Mon, Nov 24, 2025 at 10:40 AM Kleyton Slaybaugh <jkleyton99@gmail.com>\r\nwrote:\r\n\r\n> Hey,\r\n>\r\n> No worries! I’m super excited for it to arrive so I can give them a go,\r\n> fingers crossed it ships soon!\r\n>\r\n> Thanks for your help!\r\n>\r\n> On Mon, Nov 24, 2025 at 3:14 AM service@simsonn.com ",
+      "user_id": 158007244932,
+      "created_at": "2025-12-01T15:19:30Z",
+      "updated_at": "2025-12-01T15:19:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013405839,
+      "body_text": "Hey,\r\n\r\nAny updates for this?\r\n\r\nOn Mon, Dec 1, 2025 at 10:19 AM Kleyton Slaybaugh <jkleyton99@gmail.com>\r\nwrote:\r\n\r\n> Hey,\r\n>\r\n> When available, could I get a tracking number for the package?\r\n>\r\n> Thanks in advance!\r\n>\r\n> On Mon, Nov 24, 2025 at 10:40 AM Kleyton Slaybaugh <jkleyton99@gmail.com>\r\n> wrote:\r\n>\r\n>> Hey,\r\n>>\r\n>> No worries! I’m super excited for it to arrive so I can give them a go,\r\n>> fingers crossed it ships soon!\r\n>>\r\n>> Thanks for your help!\r\n>>\r\n>> On Mon, Nov 24, 2025 at 3:14 AM service@simsonn.com ",
+      "user_id": 158007244932,
+      "created_at": "2025-12-04T17:17:20Z",
+      "updated_at": "2025-12-04T17:17:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013492547,
+      "body_text": "Hi Kleyton Slaybaugh,    I apologize for not getting back to you sooner. Here is your shipping tracking link.    https://www.fedex.com/fedextrack/?trknbr=396147929753&trkqual=12029~396147929753~FDEG",
+      "user_id": 158001343601,
+      "created_at": "2025-12-05T11:19:18Z",
+      "updated_at": "2025-12-05T11:19:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014295065,
+      "body_text": "Hey,\r\n\r\nThe package was delivered today and the baseplate appears to be all there.\r\n\r\nI got the pedals installed and start looking towards the connections, only\r\nto realize I didn’t get a usb cable to PC!\r\n\r\n\r\n\r\nOn Fri, Dec 5, 2025 at 6:19 AM service@simsonn.com ",
+      "user_id": 158007244932,
+      "created_at": "2025-12-10T23:48:48Z",
+      "updated_at": "2025-12-10T23:48:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014296304,
+      "body_text": "Disregard! I found the cable!\r\n\r\nEverything is working as it should thanks for the help!\r\n\r\nOn Wed, Dec 10, 2025 at 6:48 PM Kleyton Slaybaugh <jkleyton99@gmail.com>\r\nwrote:\r\n\r\n> Hey,\r\n>\r\n> The package was delivered today and the baseplate appears to be all there.\r\n>\r\n> I got the pedals installed and start looking towards the connections, only\r\n> to realize I didn’t get a usb cable to PC!\r\n>\r\n>\r\n>\r\n> On Fri, Dec 5, 2025 at 6:19 AM service@simsonn.com ",
+      "user_id": 158007244932,
+      "created_at": "2025-12-11T00:41:28Z",
+      "updated_at": "2025-12-11T00:41:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

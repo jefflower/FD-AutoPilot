@@ -1,0 +1,25 @@
+{
+  "id": 9015,
+  "subject": "回复：工单已关闭 - 回复：踏板底座",
+  "description_text": "我的工单可能已经解决了。我被告知底座应该在17号到达贵公司，但我还没有收到任何关于发货的更新。",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-23T18:11:28Z",
+  "updated_at": "2025-12-25T04:05:17Z",
+  "requester_id": 158007750675,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015012474,
+      "body_text": "问题已解决。底座今天到了。抱歉浪费了您的时间。",
+      "user_id": 158007750675,
+      "created_at": "2025-12-24T00:13:05Z",
+      "updated_at": "2025-12-24T00:13:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

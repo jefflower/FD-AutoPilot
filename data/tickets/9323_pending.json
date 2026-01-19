@@ -1,0 +1,54 @@
+{
+  "id": 9323,
+  "subject": "",
+  "description_text": "Hi if i order from Greece am i gonna pay anything extra except the ship payment like extra commissions?\r\n\r\nΣτάλθηκε από Outlook για Android<https://aka.ms/AAb9ysg>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-27T21:16:34Z",
+  "updated_at": "2026-01-07T09:37:15Z",
+  "requester_id": 158008796484,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015146081,
+      "body_text": "Hi xaritos marnieros,  We can ship it from our Germany warehouse. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T01:28:54Z",
+      "updated_at": "2025-12-28T01:28:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015146099,
+      "body_text": "I ordered already ai told me thanx\r\n\r\nΣτάλθηκε από Outlook για Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158008796484,
+      "created_at": "2025-12-28T01:30:28Z",
+      "updated_at": "2025-12-28T01:30:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015258456,
+      "body_text": "I have made the order but i have not any mail received about tha tracking number or something order number is  #SSN5418\r\n\r\nΣτάλθηκε από Outlook για Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158008796484,
+      "created_at": "2025-12-30T15:12:12Z",
+      "updated_at": "2025-12-30T15:12:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015487721,
+      "body_text": "Is anybody going to reply to me so i know what is happening?\r\n\r\nΣτάλθηκε από Outlook για Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158008796484,
+      "created_at": "2026-01-03T15:19:28Z",
+      "updated_at": "2026-01-03T15:19:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

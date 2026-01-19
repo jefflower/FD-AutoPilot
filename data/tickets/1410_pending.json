@@ -1,0 +1,24 @@
+{
+  "id": 1410,
+  "subject": "Simsonn Order Shipment Notification #SSN1957",
+  "description_text": "Hello, I'm sorry to bother you. We are in the process of shipping your order, but we will face a high remote area surcharge that we can't afford. It's about 384 RMB, which is roughly $53 USD, and we need you to share $30 USD for shipping, can you accept this offer please?",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-07-10T08:23:43Z",
+  "updated_at": "2025-07-16T02:54:21Z",
+  "requester_id": 158002014209,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004872750,
+      "body_text": "Yes i accept offer and would like to pay\r\n________________________________\r\n",
+      "user_id": 158002014209,
+      "created_at": "2025-07-15T14:06:24Z",
+      "updated_at": "2025-07-15T14:06:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

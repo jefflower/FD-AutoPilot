@@ -1,0 +1,24 @@
+{
+  "id": 7504,
+  "subject": "",
+  "description_text": "Hello, I wanted to ask when my order (#SSN4311) will be shipped.\r\n\r\nThank you.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-05T14:44:09Z",
+  "updated_at": "2025-12-15T09:28:27Z",
+  "requester_id": 158007661893,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013758446,
+      "body_text": "Hi Marblelake,  Hello, due to the increased volume of orders during Black Friday, there has been a slight delay in shipping. I have seen your order, and please rest assured that we will process and ship it to you as soon as possible. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-06T05:00:41Z",
+      "updated_at": "2025-12-06T05:00:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

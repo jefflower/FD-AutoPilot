@@ -1,0 +1,54 @@
+{
+  "id": 290,
+  "subject": "Delivery to Europe",
+  "description_text": "Hi,\r\n\r\nDo you have warehouse in Europe for GT2 steering wheel & hub or is the\r\nshipment from outside of Europe? How about for Plus X pedals?\r\n\r\nBR\r\n\r\nAntti\r\n\r\n",
+  "status": 2,
+  "priority": 1,
+  "created_at": "2025-06-09T08:09:10Z",
+  "updated_at": "2025-08-09T14:54:58Z",
+  "requester_id": 158001346208,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002845763,
+      "body_text": "Hi Antti L,  The GT2 steering wheel and hub need to be shipped from China. The PlusX will be available for shipping from the German warehouse starting after June 15th. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-09T08:46:34Z",
+      "updated_at": "2025-06-09T08:46:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002865340,
+      "body_text": "Thanks for this information. This was very good to know.\r\n\r\nDo you have plans to deliver also GT2 wheels from German warehouse later?\r\n\r\nAntti\r\n\r\n\r\nma 9. kesäk. 2025 klo 11.46 support@simsonn.com ",
+      "user_id": 158001346208,
+      "created_at": "2025-06-10T06:51:52Z",
+      "updated_at": "2025-06-10T06:51:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002907282,
+      "body_text": "Hi，Antti L， ​We already have plans to ship the GT2 to Europe, and it is expected to arrive in about one month. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-11T02:45:07Z",
+      "updated_at": "2025-06-11T02:45:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006477361,
+      "body_text": "Hello\r\n\r\nDo you already have the GT2 wheel / wheel hub in Europe warehouse? Your\r\nwebsite is unclear that from where the products are delivered. Are you\r\nplanning to make some changes to website in near future? I'm interested in\r\nyour pedals and wheel hub's but I'm not interested of paying extra taxes. I\r\nlive in Finland.\r\n\r\nRegards,\r\n\r\nAntti\r\n\r\nkeskiviikko 11. kesäkuuta 2025 support@simsonn.com ",
+      "user_id": 158001346208,
+      "created_at": "2025-08-07T10:44:27Z",
+      "updated_at": "2025-08-07T10:44:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

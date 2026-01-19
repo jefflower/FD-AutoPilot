@@ -1,0 +1,24 @@
+{
+  "id": 4564,
+  "subject": "Shipping email not received",
+  "description_text": "Hello I ordered my simsonn VAM haptics last Wednesday and the website said\r\nthere would be a shipping confirmation email a couple days after the\r\npurchase but it has been 6 days and I have not received that email. I just\r\nwanted to make sure that my order went through correctly. Thank you!\r\n\r\nOrder Number #SSN2813\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-07T22:45:59Z",
+  "updated_at": "2025-10-09T09:40:29Z",
+  "requester_id": 158005206444,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010141164,
+      "body_text": "Hi Ron,    We apologize for the delayed response; we've just returned from our 8-day holiday. Your order has been shipped, and here is your tracking link:  https://t.17track.net/en#nums=JSEJV0933025422YQ",
+      "user_id": 158001343601,
+      "created_at": "2025-10-09T09:40:29Z",
+      "updated_at": "2025-10-09T09:40:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

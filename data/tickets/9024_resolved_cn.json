@@ -1,0 +1,35 @@
+{
+  "id": 9024,
+  "subject": "底板缺失 订单号 #SSN5051",
+  "description_text": "您好，我的订单中缺少碳纤维底板，它没有在这里。",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-23T20:35:44Z",
+  "updated_at": "2025-12-28T04:06:32Z",
+  "requester_id": 158008326320,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015003256,
+      "body_text": "我只有踏板和底板的RGB灯。我没有底板，也没有安装板。",
+      "user_id": 158008326320,
+      "created_at": "2025-12-23T20:39:20Z",
+      "updated_at": "2025-12-23T20:39:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015003406,
+      "body_text": "您好，请忽略，我已经找到了。",
+      "user_id": 158008326320,
+      "created_at": "2025-12-23T20:41:39Z",
+      "updated_at": "2025-12-23T20:41:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

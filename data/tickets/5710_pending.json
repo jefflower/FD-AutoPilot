@@ -1,0 +1,24 @@
+{
+  "id": 5710,
+  "subject": "Order #SSN3220",
+  "description_text": "Good morning,\r\n\r\nI just want to ask you if you could give me please an update about my order.\r\nI orderer the new simsonn pedals plus x, order number #SSN3220 on 03.11 and\r\nuntil now is still not sipped.\r\nJust want to make sure that everything is right.\r\n\r\nThank you in advance.\r\nBest regard\r\nPatrick Zambaldi\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-06T08:33:35Z",
+  "updated_at": "2025-11-06T08:38:34Z",
+  "requester_id": 158006697623,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011853980,
+      "body_text": "sorry I cant believe 1 min. ago before I wrote this Mail I recieved a Mail\r\nfrom your side that the order is on the way...\r\n\r\nThank you a lot :)\r\n\r\nAm Do., 6. Nov. 2025 um 09:34 Uhr schrieb Patrick Zambaldi <\r\nzambaldi.patrick@gmail.com>:\r\n\r\n> Good morning,\r\n>\r\n> I just want to ask you if you could give me please an update about my\r\n> order.\r\n> I orderer the new simsonn pedals plus x, order number #SSN3220 on 03.11\r\n> and until now is still not sipped.\r\n> Just want to make sure that everything is right.\r\n>\r\n> Thank you in advance.\r\n> Best regard\r\n> Patrick Zambaldi\r\n>\r\n\r\n",
+      "user_id": 158006697623,
+      "created_at": "2025-11-06T08:34:33Z",
+      "updated_at": "2025-11-06T08:34:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

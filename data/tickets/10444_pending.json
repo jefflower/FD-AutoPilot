@@ -1,0 +1,54 @@
+{
+  "id": 10444,
+  "subject": "Missing parts",
+  "description_text": "Hi, I am missing the baseplate and heel rest from my order. If I could have that sent out to me as soon as possible I would greatly appreciate it. \r\n\r\nOrder # 112-7068275-2333024 \r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-09T21:15:32Z",
+  "updated_at": "2026-01-16T03:39:20Z",
+  "requester_id": 158009008481,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016843337,
+      "body_text": "Hi Lanhamelliot,  Hi, I am sorry for it. Due to a current shortage of black base plate in our US warehouse, we have sent you the pedals first. The black base plate will arrive at the warehouse  Wednesday, and we will ship the black base plate immediately upon arrival and provide you with the tracking number. Or would you be okay with a silver base plate? We have silver base plate in stock in our US warehouse.",
+      "user_id": 158007774607,
+      "created_at": "2026-01-12T07:16:39Z",
+      "updated_at": "2026-01-12T07:16:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016877295,
+      "body_text": "I am okay with waiting until Wednesday for a black base plate to be\r\nshipped. Thank you for getting back with me.\r\n\r\nOn Mon, Jan 12, 2026 at 2:16 AM service@simsonn.com ",
+      "user_id": 158009008481,
+      "created_at": "2026-01-12T16:08:51Z",
+      "updated_at": "2026-01-12T16:08:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017125518,
+      "body_text": "Hi, will it be sent out today?\r\n\r\nOn Mon, Jan 12, 2026 at 2:16 AM service@simsonn.com ",
+      "user_id": 158009008481,
+      "created_at": "2026-01-14T17:20:02Z",
+      "updated_at": "2026-01-14T17:20:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017237974,
+      "body_text": "Hi Lanhamelliot,  Yes, we have shipped it. Here is your tracking number: 887920379311,   ships from US warehouse, the shipping carrier is FedEx, you can track it via https://www.fedex.com/fedextrack",
+      "user_id": 158007774607,
+      "created_at": "2026-01-16T03:39:17Z",
+      "updated_at": "2026-01-16T03:39:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

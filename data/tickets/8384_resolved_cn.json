@@ -1,0 +1,45 @@
+{
+  "id": 8384,
+  "subject": "订单 SSN4647",
+  "description_text": "您好，为什么当我尝试追踪我的包裹时，总是收到一个错误，说这个追踪号码没有信息？包裹是上周四寄出的？\n\n此致\n泽切斯·劳伦特\n发自我的 iPhone",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-16T07:10:58Z",
+  "updated_at": "2025-12-22T11:49:33Z",
+  "requester_id": 158007745688,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014566609,
+      "body_text": "您好，泽切斯·劳伦特，对于给您带来的不便，我们深表歉意。目前，我们的德国仓库脚踏板缺货，预计今天补货。我们将通过DHL发货您的订单，并退还您支付的额外运费。",
+      "user_id": 158001343601,
+      "created_at": "2025-12-16T11:51:51Z",
+      "updated_at": "2025-12-16T11:51:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014566931,
+      "body_text": "您好，那么订单会在圣诞节前到达吗？\n此致\n泽切斯·劳伦特\n发自我的 iPhone",
+      "user_id": 158007745688,
+      "created_at": "2025-12-16T12:04:08Z",
+      "updated_at": "2025-12-16T12:04:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014875237,
+      "body_text": "",
+      "user_id": 158007774669,
+      "created_at": "2025-12-22T11:49:30Z",
+      "updated_at": "2025-12-22T11:49:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

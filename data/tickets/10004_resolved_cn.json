@@ -1,0 +1,35 @@
+{
+  "id": 10004,
+  "subject": "用于控制盒的PC线缆有振动",
+  "description_text": "您好，我从速卖通订购了您的振动器和控制盒，我有一个Moza踏板，但订单中没有附带用于振动器控制盒的PC线缆，我可以使用其他类型的USB-B线缆吗？还是需要购买你们的线缆？",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-05T16:28:21Z",
+  "updated_at": "2026-01-07T08:14:43Z",
+  "requester_id": 158008937677,
+  "responder_id": 158007774664,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016084693,
+      "body_text": "您好，luca pavanello，您需要一根USB-A数据线，通常是打印机连接使用的那种类型。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T07:38:55Z",
+      "updated_at": "2026-01-07T07:38:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016086635,
+      "body_text": "谢谢您的回答。\n\n2026年1月7日星期三上午08:39，service@simsonn.com",
+      "user_id": 158008937677,
+      "created_at": "2026-01-07T07:51:52Z",
+      "updated_at": "2026-01-07T07:51:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

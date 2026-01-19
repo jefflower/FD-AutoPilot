@@ -1,0 +1,45 @@
+{
+  "id": 9916,
+  "subject": "Simsonn GT2 方向盘问题",
+  "description_text": "您好，\n我写此信是关于我于2025年1月30日从您处购买的GT2方向盘的问题，订单号：3048989491525520。\n\n我的电脑无法识别它。\n\n错误消息：未知USB设备（设备描述符请求失败）。\n我已执行以下测试：\n\n- 在不同的USB端口上测试\n- 在不同的电脑上测试\n- 更换了USB线缆\n- 在设备管理器中删除了故障条目\n- 重置了Windows USB驱动程序\n在设备管理器中，无论在哪台电脑上，方向盘都显示为VID/VIP：VID_0000&PID_0002。\n\n然而，方向盘的LED灯亮着，说明它正在通电。\n\n由于方向盘的保修期到2026年1月30日，\n请给我寄一个替换品，即使需要我自己更换零件。\n\n感谢您的理解和帮助。\n\n此致，\nGuillaume Lebleu",
+  "status": 4,
+  "priority": 2,
+  "created_at": "2026-01-04T09:33:01Z",
+  "updated_at": "2026-01-07T10:18:18Z",
+  "requester_id": 158008896661,
+  "responder_id": 158007774664,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015612781,
+      "body_text": "我不知道这是否相关，但前面提到的订单号是来自全球速卖通的。",
+      "user_id": 158008896661,
+      "created_at": "2026-01-04T09:42:48Z",
+      "updated_at": "2026-01-04T09:42:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158016105722,
+      "body_text": "您好，Guillaume Lebleu，我们将为您寄送一根替换数据线。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T09:51:30Z",
+      "updated_at": "2026-01-07T09:51:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016109261,
+      "body_text": "您好，\n我正在等待数据线，但我对您的响应速度非常满意。\n来自法国的衷心感谢",
+      "user_id": 158008896661,
+      "created_at": "2026-01-07T10:18:17Z",
+      "updated_at": "2026-01-07T10:18:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

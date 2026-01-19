@@ -1,0 +1,44 @@
+{
+  "id": 1707,
+  "subject": "Problem plus x",
+  "description_text": "Hi, I can't update the Plus X software.\r\nIt often doesn't recognize any USB ports, and when it does, it won't\r\nlet me calibrate.\r\nI'm using Manager 2.0.9.\r\nCan you please help me?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-19T19:05:06Z",
+  "updated_at": "2025-08-06T14:17:52Z",
+  "requester_id": 158002230750,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005211585,
+      "body_text": "Hi Mirko Parente,    There are a few common reasons for disconnection:     First, if your computer uses a 2-prong power plug instead of a 3-prong grounded plug, electromagnetic interference from the wheelbase may not be properly discharged, which can cause instability in connected USB devices.     Second, if you’re using a USB hub without independent power supply, please avoid doing so. We recommend connecting the device directly to the blue USB 3.0 port on the back of your PC for stable power and data transmission.     In our testing environment, the PlusX control box and motor remain consistently connected, even after several days of inactivity, without any disconnection issues.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-20T00:32:03Z",
+      "updated_at": "2025-07-20T00:32:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006163434,
+      "body_text": "What's the exact procedure?\r\nI can't finalize the update because when I click \"update now\" the\r\nSimsonn Manager interface disappears.\r\nCan you please help me?\r\nI'm attaching the video.\r\n\r\n\r\nIl Dom 20 Lug 2025, 02:32 service@simsonn.com \nAttachment(s) that exceed the 20 MB limit have been dropped. Please reach out to the sender.",
+      "user_id": 158002230750,
+      "created_at": "2025-08-03T17:32:36Z",
+      "updated_at": "2025-08-03T17:32:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006404363,
+      "body_text": "Hi Mirko Parente,  Please send the video via Google Drive, as I haven’t received it on my end. Also, kindly provide a screenshot so I can assist you in resolving the issue promptly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-06T14:17:52Z",
+      "updated_at": "2025-08-06T14:17:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

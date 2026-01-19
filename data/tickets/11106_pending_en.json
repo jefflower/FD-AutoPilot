@@ -1,0 +1,25 @@
+{
+  "id": 11106,
+  "subject": "Third Party Support/ Standalone Use Simsonn VAM Haptic Motors VAM vs. VAM Pro",
+  "description_text": "Hey,\n\nI wanted to know if you can use the simsonn VAM Motors with a Control Unit\n(Plus X Control Box) without to connect any Pedals to the Control Box,\nbecause I don't own any other Simsonn devices. Does the Control Box have to\nbe connected to pedals to get the Correct in game Feedback like ABS or does\nthe Box get the Data directly from the drivers or Games? Also I want to\nknow the differences between the VAM and VAM Pro Units? Are they stronger\nor less noisy or what makes the VAM Pro better and do you have to buy a Pro\nX Ultra Control Box for the VAM Pro Motors?\n\n\nSincerely,\n\n\nM.K",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-16T23:06:44Z",
+  "updated_at": "2026-01-17T03:40:56Z",
+  "requester_id": 158009288335,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017311528,
+      "body_text": "Hi Mikolaj Kadluczka,     You can purchase the PlusX control box and the VAM Pro haptic motor separately—no pedals are required. Once connected to your PC, you can use our SIMSONN Manager software or SimHub to enable telemetry-based haptic feedback in games.  Here’s the difference between the two motor types:    VAM: An eccentric rotating mass (ERM) motor. It spins in one direction only, producing a more “coarse” vibration feel.    VAM Pro: A voice-coil actuator. It can vibrate back and forth at high frequency, delivering faster response and a more detailed, smooth, and linear haptic feel.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-17T03:40:56Z",
+      "updated_at": "2026-01-17T03:40:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

@@ -1,0 +1,44 @@
+{
+  "id": 9550,
+  "subject": "Commande SSN5357",
+  "description_text": "Bonjour\r\nJ'ai passé commande le 26 Décembre d'un pédalier  Simsonn Plus X Racing Simulation Pedal with Haptic Reactor Optional × 1Plus X P2-H2 / Black / Baseplate.Pourriez vous me dire sous quel délai ma commande sera envoyée svp ? Je n'ai pas  de nouvelles concernant le delai de réception. \r\nCordialement David Dupuis \r\n\r\nYahoo Mail : Recherchez, organisez, maîtrisez\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-30T09:01:05Z",
+  "updated_at": "2026-01-07T15:09:33Z",
+  "requester_id": 158008818301,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015291241,
+      "body_text": "Hi Dupuis david,  We have shipped your order via UPS, and it is currently in transit. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T02:50:19Z",
+      "updated_at": "2025-12-31T02:50:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015730526,
+      "body_text": " Bonjour, \r\nLe livreur UPS me demande un paiement complémentaire de 66,10€, est-ce normal ? Ce n'étais pas prévu initialement ??Cordialement\r\nDavid Dupuis\r\n    Le mardi 30 décembre 2025 à 10:00:43 UTC+1, Dupuis david <dupuidavid@yahoo.fr> a écrit :  \r\n \r\n Bonjour\r\nJ'ai passé commande le 26 Décembre d'un pédalier  Simsonn Plus X Racing Simulation Pedal with Haptic Reactor Optional × 1Plus X P2-H2 / Black / Baseplate.Pourriez vous me dire sous quel délai ma commande sera envoyée svp ? Je n'ai pas  de nouvelles concernant le delai de réception. \r\nCordialement David Dupuis \r\n\r\nYahoo Mail : Recherchez, organisez, maîtrisez  \r\n",
+      "user_id": 158008818301,
+      "created_at": "2026-01-05T12:37:23Z",
+      "updated_at": "2026-01-05T12:37:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016154414,
+      "body_text": "你好，杜普伊斯·大卫  这是关税还是其他类型的费用？ ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T15:09:32Z",
+      "updated_at": "2026-01-07T15:09:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

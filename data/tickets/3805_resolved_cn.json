@@ -1,0 +1,95 @@
+{
+  "id": 3805,
+  "subject": "Simsonn管理器软件问题",
+  "description_text": "你好。我购买了 simsonn plus x 踏板并下载了软件，但软件似乎缺少图标和文本，因此我无法更改曲线或进行任何其他操作\n发自我的 iPhone",
+  "status": 4,
+  "priority": 3,
+  "created_at": "2025-09-14T09:25:05Z",
+  "updated_at": "2025-09-17T09:42:12Z",
+  "requester_id": 158004528099,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008716983,
+      "body_text": "嗨 robin ratsep，请确认您已下载 2.1.0 版本。您可以在软件安装目录中找到日志文件夹，将其压缩并发送给我们进行检查。此外，请提供您所在的国家、您的计算机操作系统版本和语言设置。同时，请卸载当前版本，并尝试使用我提供的链接安装 2.1.1 版本。 https://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=drive_lin",
+      "user_id": 158000445778,
+      "created_at": "2025-09-15T00:13:35Z",
+      "updated_at": "2025-09-15T00:13:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008813407,
+      "body_text": "是的，我用的是 2.1.0 版本。我来自爱沙尼亚，使用的是 Windows 10 系统，语言是英语。",
+      "user_id": 158004528099,
+      "created_at": "2025-09-16T10:47:22Z",
+      "updated_at": "2025-09-16T10:47:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008813431,
+      "body_text": "我试了 2.1.1 版本，但问题依旧，它无法识别踏板输入，但踏板本身是好的。另外，当我下载时，Windows 会警告说这不是一个常见下载文件，但我可以点击“仍然下载”和“仍然打开”。",
+      "user_id": 158004528099,
+      "created_at": "2025-09-16T10:50:22Z",
+      "updated_at": "2025-09-16T10:50:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008846033,
+      "body_text": "嗨 robin ratsep，请将您 C 盘中的 Simsonn Manager 安装目录压缩后发给我。一旦我查看了日志，我就能快速定位并解决问题。或者，您可以安装 ToDesk 工具，我可以通过远程协助为您检查——修复通常只需要很短的时间。正常情况下，其他地区的用户不会遇到这个问题。请安装 Todesk 软件。无需注册，如果提示您注册，直接关闭窗口即可。 https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-09-17T07:55:28Z",
+      "updated_at": "2025-09-17T07:55:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008846576,
+      "body_text": "它不让我压缩这个文件，但我下载了 todesk",
+      "user_id": 158004528099,
+      "created_at": "2025-09-17T08:04:21Z",
+      "updated_at": "2025-09-17T08:04:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008847499,
+      "body_text": "SIMSONN Manager.rar\n<https://drive.google.com/file/d/1gXzlAx62AEM8PGCXF-q-m6Sen1i-oGBu/view?usp=drive_web>",
+      "user_id": 158004528099,
+      "created_at": "2025-09-17T08:06:13Z",
+      "updated_at": "2025-09-17T08:06:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008851185,
+      "body_text": "嗨 robin ratsep，我们的工程师刚刚查看了您提供的日志。请在您桌面左下角找到 Simsonn Manager 的“S”图标，右键单击退出程序，然后启动新的 2.1.1 软件。如果您不确定如何操作，可以先从计算机上卸载 2.1.0 版本，然后安装并打开新的 2.1.1 版本进行测试。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-17T09:13:49Z",
+      "updated_at": "2025-09-17T09:13:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008851409,
+      "body_text": "目前看来这个方法奏效了。非常感谢 :)",
+      "user_id": 158004528099,
+      "created_at": "2025-09-17T09:31:09Z",
+      "updated_at": "2025-09-17T09:31:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

@@ -1,0 +1,134 @@
+{
+  "id": 3472,
+  "subject": "Unable to get pedals and vam working",
+  "description_text": "Hello I recently purchased the 3 Vam set along with the plus X control box.\r\nI already own the older Pro Pedals.\r\n\r\nWhen trying to install through Simsonn manager, the VAM and pedals were\r\nworking and registering in the Simsonn manager app, but the games were not\r\nrecognizing the pedal inputs. In an attempt to fix this, I manually tried\r\nflashing the firmware with plusx.sfu\r\n\r\nThis fixed the issue with the games not detecting the pedals but now the\r\nVAM haptics don't vibrate. (Although Simsonn manager can detect them.) How\r\ncan I get both the pedals and vam working at the same time? Do I need to\r\nflash to a legacy firmware for my older Pro pedals?\r\n\r\nPlease help. Thanks!\r\n\r\n-Patrick\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-09-04T13:25:09Z",
+  "updated_at": "2025-09-15T07:41:53Z",
+  "requester_id": 158004161236,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008125828,
+      "body_text": "Hi Patrick Engracia,  Please reconnect the USB and then plug in the power to see if it works properly. Additionally, make sure to connect the device directly to the USB 3.0 blue port on the back of your computer case, and do not use a USB hub. Please also provide a video so we can better understand the issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-05T01:05:39Z",
+      "updated_at": "2025-09-05T01:05:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008127825,
+      "body_text": "Yes I have tried to replug it. No change. Several pc restarts as well. The\r\ndevice is plugged directly into a USB 3.0 to the back of the computer. No\r\nchange. I provided a video of it not working.  Clearly, the plus x control\r\nbox detects the Vams are plugged in.\r\n\r\nI suspect that it's a firmware issue. I believe I need the firmware for my\r\nold Pro pedals, which is not available in the list in the firmware>pedal\r\nfolder. Can you please supply me with that firmware file for my Pro\r\npedals?  Probably called pro.sfu or maybe pro-old.sfu. I can't find it\r\nonline.\r\n\r\nI'm open to any other suggestions as well.\r\n\r\n\r\n\r\nOn Thu, Sep 4, 2025, 6:05 PM support@simsonn.com ",
+      "user_id": 158004161236,
+      "created_at": "2025-09-05T03:58:37Z",
+      "updated_at": "2025-09-05T03:58:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008127946,
+      "body_text": "Sorry forgot to attach\r\n\r\n\nAttachment(s) that exceed the 20 MB limit have been dropped. Please reach out to the sender.",
+      "user_id": 158004161236,
+      "created_at": "2025-09-05T04:07:21Z",
+      "updated_at": "2025-09-05T04:07:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201071,
+      "body_text": "Hi Patrick Engracia,       Please install the Todesk software. No registration is required — if prompted to register, simply click the close button in the top right corner. Then provide the ID and temporary password, and I can assist you remotely to resolve this issue now.      https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T02:51:23Z",
+      "updated_at": "2025-09-07T02:51:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201377,
+      "body_text": "I will not be giving you access to my computer. If this problem is so\r\ncomplex that you need to remotely control my computer, then I give up.\r\nEspecially since I haven't been provided with the firmware for my pedals.\r\n\r\nI purchased 2 sets of these haptics and I'll be promptly returning them\r\nboth. The Pro pedals I bought not even 9 months ago are already not\r\nsupported in this eco system. This is extremely frustrating. You can look\r\nforward to my reviews on Amazon and comments on YouTube.\r\n\r\nOn Sat, Sep 6, 2025, 7:51 PM support@simsonn.com ",
+      "user_id": 158004161236,
+      "created_at": "2025-09-07T03:27:31Z",
+      "updated_at": "2025-09-07T03:27:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201426,
+      "body_text": "Hi Patrick Engracia,    Our service has always been focused on providing a great customer experience. If a VAM unit is damaged, we will send you a replacement free of charge.  However, I noticed in your email that if you could provide a video and software screenshots, it would allow us to locate the problem much more quickly and accurately. Relying solely on text descriptions makes it very difficult to determine exactly what went wrong during each customer’s setup or installation process.  Remote support is one of our premium services, allowing us to directly view your environment, quickly identify the issue, fix it, and update your configuration. This not only improves efficiency but also saves you a lot of time.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T03:33:16Z",
+      "updated_at": "2025-09-07T03:33:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201451,
+      "body_text": "Hi Patrick Engracia,    The Pro Plus pedals are compatible with SIMSONN Manager software. However, since we needed to add a vibration interface, we had to upgrade to a completely new hardware version.  This is part of natural product iteration and market evolution. As new features and requirements emerge, hardware updates become inevitable, ensuring we can provide users with better functionality and an improved overall experience.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T03:35:14Z",
+      "updated_at": "2025-09-07T03:35:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201490,
+      "body_text": "I did provide a video. I just checked. It's an MP4 file.  I don't trust\r\nthis company - I don't trust that remote app. So I will not be downloading\r\na sketchy app I've never heard of. I'm returning them. You can consider\r\nthis matter closed.\r\n\r\nOn Sat, Sep 6, 2025, 8:33 PM support@simsonn.com ",
+      "user_id": 158004161236,
+      "created_at": "2025-09-07T03:40:55Z",
+      "updated_at": "2025-09-07T03:40:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201519,
+      "body_text": "Hi，Patrick Engracia，    Today is Sunday, so let me first organize your issue and provide the steps to follow:  You purchased Pro Plus pedals, as well as a PlusX control box and VAM motors. To use the vibration feature, you must use the PlusX control box, as it has the required motor interface.  Please follow these steps and send me the results so I can quickly assist you in resolving the issue:   1. Verify Software & Hardware Versions    Open the SIMSONN Manager 2.1.0 software.    Take a full screenshot of the interface and send it to me.    I will check whether both your software version and hardware version are correct.     2. Pedal Calibration & Testing    Press the pedals and perform calibration.    It’s recommended to set the Offset first, then calibrate the pedals.    Check if the blue progress bar for each pedal moves smoothly from 0% to 100%:    If yes → The pedals are functioning correctly.    If no → There’s a signal or installation issue with the pedals.       3. Check Vibration Motor Connection    Go to the Vibration Feedback page.    Confirm whether the power status for the motor shows green, indicating a proper connection.    Click Vibration Test:    If it works → The VAM motor is functioning normally.    If it doesn’t work → Check the power and connection cables.       4. Test Telemetry in Game  If the vibration test works but there’s no vibration feedback in the game:    Close SIMSONN Manager.    Download and install SimHub 9.9.3.    Our product is fully supported by SimHub.    SimHub supports telemetry data for over 100 games, allowing you to test vibration feedback directly.     5. Provide Feedback  Please share the following information with me:    SIMSONN Manager interface screenshot.    Blue progress bar test results for the pedals.    Vibration motor test results.    Telemetry test results in SimHub.    With this information, I can quickly pinpoint and resolve the issue. Otherwise, due to the time zone difference, troubleshooting may take longer.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T03:45:19Z",
+      "updated_at": "2025-09-07T03:45:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201521,
+      "body_text": "Hi Patrick Engracia,",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T03:46:04Z",
+      "updated_at": "2025-09-07T03:46:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201613,
+      "body_text": "Hi Patrick Engracia,     I suspect that your PlusX may have been updated with the wrong firmware version. You can try restoring it manually using SIMSONN Manager 2.1.1 by following these steps:   1. Enter Firmware Upgrade Mode    Press and hold the upgrade button on the PlusX control box.    While holding the button, reinsert the USB cable.    The software should indicate that the device has entered firmware upgrade mode.     2. Manually Restore the Firmware    In the software, go to: Settings → Update → Manual Firmware Update    Select the firmware file:   pedals-firmware-pedals-plusx.sfu      Wait for the upgrade process to complete, then reinsert the USB cable and the power supply.     3. Verify the Firmware Version  After the upgrade is complete, check the firmware version in SIMSONN Manager. The correct versions should be:    CPU1: 2.0.4    CPU2: 2.0.2    If these match, the restoration was successful.   4. Test the Vibration Function    In SIMSONN Manager, run the vibration test.    Recommended setting for VAM intensity: keep it below 50%    VAM and VAM Pro share the same hardware.    However, VAM does not require high intensity levels.    Staying under 50% ensures a more comfortable and stable experience.       By following these steps, you can ensure the PlusX firmware is correctly restored and confirm whether the vibration function is working properly.       https://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T03:57:13Z",
+      "updated_at": "2025-09-07T03:57:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008725969,
+      "body_text": "Hi Patrick Engracia,  Please try the 2.1.1 version from the link. First uninstall version 2.1.0 from your computer, then perform a manual firmware update by selecting the attached plusx.sfu file, and check if this resolves the issue.            https://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-09-15T07:41:53Z",
+      "updated_at": "2025-09-15T07:41:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

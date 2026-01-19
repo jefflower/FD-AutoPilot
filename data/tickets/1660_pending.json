@@ -1,0 +1,84 @@
+{
+  "id": 1660,
+  "subject": "How to get started to configure pedals with games?",
+  "description_text": "Hello,\r\n\r\nSorry I'm new to this. How do games detect the pedals? I don't see any videos on how to configure the pedals with Forza 5 and other popular games. DO I need 3rd party software like Freejoy? I've found also something called Forza Emuwheel. Do I need to use these softwares?\r\n\r\nThanks,\r\nSebastien\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-18T06:19:06Z",
+  "updated_at": "2025-07-22T02:31:55Z",
+  "requester_id": 158002129528,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005145986,
+      "body_text": "Hi Sebastien Prompt,  Have you downloaded SIMSONN Manager version 2.0.9? We recommend performing a full calibration or test of your pedals. Here is the download link for your convenience:      https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-07-18T06:27:08Z",
+      "updated_at": "2025-07-18T06:27:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005148310,
+      "body_text": "Yes, I have but  I have a hard time pressing on the break pedal:\r\n\r\nDoes that look normal?\r\n\r\n[cid:4f0894fa-bf07-4fee-b428-ba1f54ff8203]\r\n\r\n\r\n________________________________\r\n",
+      "user_id": 158002129528,
+      "created_at": "2025-07-18T14:01:57Z",
+      "updated_at": "2025-07-18T14:01:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005162390,
+      "body_text": "Hi Sebastien Prompt,    Please take a photo of your brake pedal installation so I can take a look at the setup.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-19T07:03:01Z",
+      "updated_at": "2025-07-19T07:03:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005194269,
+      "body_text": "I need to press real hard to get it to move...\r\nThanks for the help,\r\n\r\nSebastien\r\n________________________________\r\n",
+      "user_id": 158002129528,
+      "created_at": "2025-07-19T14:52:07Z",
+      "updated_at": "2025-07-19T14:52:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005195260,
+      "body_text": "This might give you a better idea:\r\n\r\n[https://res.public.onecdn.static.microsoft/assets/mail/file-icon/png/video_16x16.png]Media Player 2025-07-19 08-02-53.mp4<https://1drv.ms/v/c/acd8bf2db850c398/EdpCVURKwSpFpe580xxGVioBFFRrXk9O2656kDXCW4efog>\r\n\r\n________________________________\r\n",
+      "user_id": 158002129528,
+      "created_at": "2025-07-19T15:05:33Z",
+      "updated_at": "2025-07-19T15:05:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005211507,
+      "body_text": "Hi Sebastien Prompt,    This is normal. Without a supporting seat, the typical pedal force ranges from 40 to 60 kg. After calibration, the full 100% input can be achieved — that’s the purpose of calibration, as everyone’s pedal force and installation setup may vary.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-20T00:15:38Z",
+      "updated_at": "2025-07-20T00:15:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005212067,
+      "body_text": "You could have mentioned that there was a white elastomer with less force. Anyway, I found it on your web site. Appreciate all the help though!\r\n\r\n________________________________\r\n",
+      "user_id": 158002129528,
+      "created_at": "2025-07-20T02:54:35Z",
+      "updated_at": "2025-07-20T02:54:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

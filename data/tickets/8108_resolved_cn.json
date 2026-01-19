@@ -1,0 +1,65 @@
+{
+  "id": 8108,
+  "subject": "转发：Simsonn 赛车模拟器压力手刹",
+  "description_text": "您好，我购买了此设备，但我的 Windows 11 电脑无法识别它。我收到了关于未知 USB 设备的错误，请参阅附件图片。当我将它插入电脑的 USB 端口时，有一个白色 LED 灯亮起。您能帮我一下吗？谢谢，Lee 发自我的 iPhone",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-12T21:01:23Z",
+  "updated_at": "2025-12-13T06:48:54Z",
+  "requester_id": 158007789598,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014427485,
+      "body_text": "嗨 Lee Hua，请尝试将设备连接到电脑后部的 USB 3.0（蓝色）端口，或者使用带有独立外部电源的 USB 集线器。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-13T03:03:09Z",
+      "updated_at": "2025-12-13T03:03:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014427882,
+      "body_text": "谢谢！后置 USB 3.0 蓝色端口解决了问题。我之前将它插在一个 USB 2.0 黑色端口，并尝试了另外两个 USB 2.0 端口，但都没有用。发自我的 iPhone",
+      "user_id": 158007789598,
+      "created_at": "2025-12-13T03:33:49Z",
+      "updated_at": "2025-12-13T03:33:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014432343,
+      "body_text": "ID 为 8107 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-13T05:37:50Z",
+      "updated_at": "2025-12-13T05:37:50Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014432344,
+      "body_text": "合并来自工单8107 主题: Simsonn 赛车模拟器压力手刹 描述: 您好，我购买了此设备，但我的 Windows 11 电脑无法识别它。我收到此错误：当我将它插入电脑的 USB 端口时，有一个白色 LED 灯亮起：您能帮我一下吗？谢谢，Lee 发自我的 iPhone",
+      "user_id": 158000445778,
+      "created_at": "2025-12-13T05:37:50Z",
+      "updated_at": "2025-12-13T05:37:50Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014436650,
+      "body_text": "",
+      "user_id": 158007789598,
+      "created_at": "2025-12-13T06:48:53Z",
+      "updated_at": "2025-12-13T06:48:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

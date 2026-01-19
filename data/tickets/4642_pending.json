@@ -1,0 +1,24 @@
+{
+  "id": 4642,
+  "subject": "Grounding guidance for Simsonn Plus X + VAM Pro (throttle haptics cause brake sensor fluctuations)",
+  "description_text": "Hello,\r\n\r\nHardware: Simsonn Plus X pedals with VAM Pro haptic kit\r\nSoftware/FW: SIMSONN Manager v2.1.2; CPU1 v2.0.5 / CPU2 v2.0.3\r\nGame used for testing: Assetto Corsa Competizione (ACC) (the behavior is\r\nalso visible in SIMSONN Manager’s calibration window)\r\n\r\nIssue description:\r\nWhen any vibration effect is active on the throttle pedal (Slip / TC / RPM,\r\netc.), the brake sensor signal starts fluctuating rapidly—as if the brake\r\nwere being pressed and released quickly. As soon as throttle vibration\r\nstops (or the game is paused), the brake signal becomes stable. Disabling\r\nall throttle haptic effects eliminates the issue.\r\n\r\nWhat I have already done:\r\n• Replaced the motor mounting screws with nylon (non-metal) screws.\r\n• Added insulating gaskets/pads between the motors and the pedal plates to\r\nmechanically isolate them.\r\nThese measures helped reduce crosstalk, but a proper ground is still\r\nrequired to solve the problem completely.\r\n\r\nWhere I’m stuck (ground connection):\r\nI’m trying to ground the brake pedal to the pedal controller housing\r\n(metal-to-metal), but I cannot use the corner cover screw for the ground:\r\n• The screw head has a smooth, round recess (no drive), so it cannot be\r\nloosened.\r\n• A U-shaped (spade/fork) terminal will not slide under the screw head\r\nbecause the screw is tightened all the way down and there is no gap under\r\nthe head.\r\n\r\nCould you please advise an approved grounding method and location on this\r\nunit?\r\nFor example, is it acceptable to:\r\n1) Use a different mounting screw on the base/bracket (after removing paint\r\nat the contact point and adding a star/serrated washer)?\r\n2) Install my own M3/M2.5 bolt through an unused hole in the mounting plate\r\nto create a dedicated ground stud?\r\n3) Use another designated point on the chassis that you recommend?\r\n\r\nIf possible, please specify:\r\n• The preferred terminal type (ring or spade/fork) and washer\r\n(star/serrated) to ensure a reliable metal-to-metal bond;\r\n• Any surface preparation (paint removal area) and the target continuity\r\n(e.g., < 1 Ω to chassis);\r\n• Whether this ground should be tied into a single-point system ground\r\n(pedal frame → controller chassis → PC case).\r\n\r\nI can provide photos/video and my configuration/profile export if needed.\r\nThank you for your help!\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-09T10:30:03Z",
+  "updated_at": "2025-10-09T10:38:39Z",
+  "requester_id": 158005516037,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010142090,
+      "body_text": "Hi Tima Nk,     You can scrape off a small area of paint at this spot to expose the bare metal, then secure the grounding terminal here with a screw and connect the green wire to the same point — this will provide an effective ground. Additionally, if your PC, wheelbase, and wall outlet all use three-prong grounded sockets, and the wall outlet is properly grounded, this will also resolve the issue quickly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-09T10:38:39Z",
+      "updated_at": "2025-10-09T10:38:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

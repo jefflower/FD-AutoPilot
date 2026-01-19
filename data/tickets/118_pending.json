@@ -1,0 +1,24 @@
+{
+  "id": 118,
+  "subject": "Order #SSN1602",
+  "description_text": "Hi,\r\n\r\nJust wondering what is the delay before the order is shipped.\r\n\r\nOrder #SSN1602\r\n\r\nThank you!\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-03T23:50:58Z",
+  "updated_at": "2025-06-04T03:10:09Z",
+  "requester_id": 158000958943,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002321434,
+      "body_text": "Hi MaxFZ,  This order was shipped out today via UPS, and it's expected to arrive around the 9th. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-04T02:09:59Z",
+      "updated_at": "2025-06-04T02:09:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

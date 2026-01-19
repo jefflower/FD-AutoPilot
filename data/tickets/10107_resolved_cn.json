@@ -1,0 +1,35 @@
+{
+  "id": 10107,
+  "subject": "Simsonn 运输",
+  "description_text": "您好，我通过亚马逊订购了simsonn plus x 脚踏板和2件套vam pro套装。预计本周末到货，其中脚踏板从美国（我所在的地方）发货，而Vam pro套装我认为是通过顺丰快递全球发货。我一直有关注脚踏板的更新，但我的Vam pro套装通过顺丰快递发货的物流信息自12月28日以来就没有更新了。我的追踪号码是SF6047206612732 谢谢！",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-06T15:32:17Z",
+  "updated_at": "2026-01-07T09:17:36Z",
+  "requester_id": 158008953764,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016006592,
+      "body_text": "我也通过亚马逊提交了一张工单，他们提到了可能会因为包裹在仓库中丢失而发送替换品。我通过亚马逊也回复了，是的，如果包裹丢失，我确实希望发送一套替换品，并且需要亚马逊图片中显示的垂直安装支架。2026年1月6日星期二上午9:37，来自service@simsonn.com",
+      "user_id": 158008953764,
+      "created_at": "2026-01-06T22:43:23Z",
+      "updated_at": "2026-01-06T22:43:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016101603,
+      "body_text": "亚马逊后台已回复",
+      "user_id": 158007774607,
+      "created_at": "2026-01-07T09:17:33Z",
+      "updated_at": "2026-01-07T09:17:33Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ],
+  "available_langs": []
+}

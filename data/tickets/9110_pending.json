@@ -1,0 +1,24 @@
+{
+  "id": 9110,
+  "subject": "Brake Pedal Cable Issue – Request for Guidance",
+  "description_text": "Hello Simsonn Support Team,\r\n\r\nI hope you are doing well.\r\n\r\nFirst of all, I would like to say that my experience with your products and\r\nsupport has been very positive so far — everything has been handled very\r\nprofessionally, and I truly appreciate that.\r\n\r\nUnfortunately, I encountered an issue with my Simsonn Plus X pedals,\r\nspecifically with the brake pedal cable, and I would like to kindly ask for\r\nyour guidance on how to best proceed.\r\n\r\nThe situation occurred while I was reorganizing my setup. I first\r\ndisconnected the throttle pedal normally, and then, when I wanted to\r\ndisconnect the brake pedal in order to move the entire stand, I only\r\nremoved the transparent connector (the white/clear plug). I did not pull on\r\nthe cable itself at all. As soon as the connector was removed, the internal\r\nwires came out on their own, without any force being applied.\r\n\r\nI always disconnect the pedals only by pulling out the connector, never by\r\npulling on the cable, which is why this was quite unexpected. The cable\r\nappears to have failed very close to the control box.\r\n\r\nI have attached a photo for reference.\r\n\r\nCould you please let me know:\r\n\r\n   -\r\n\r\n   What options are available in this situation?\r\n   -\r\n\r\n   What would be the easiest and most recommended solution from your side?\r\n   -\r\n\r\n   Whether you would suggest a replacement part, repair, or another\r\n   approach?\r\n\r\nI would really appreciate your advice on how to handle this in the best way.\r\n\r\nThank you very much for your time and support. I look forward to your\r\nrecommendation.\r\n\r\nKind regards,\r\n*Dobre Alexandru Ionut*\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-24T23:31:21Z",
+  "updated_at": "2025-12-25T02:38:08Z",
+  "requester_id": 158007589448,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015057327,
+      "body_text": "Hi Dobre Alexandru Ionut,  We have two possible solutions for you: 1️⃣ You can take the brake pedal to a local computer repair shop and use a crimping tool to install a new RJ11 4P4C connector. The wiring order can simply follow the throttle pedal. 2️⃣ Alternatively, we can send you a replacement sensor, but you would need to replace it manually, and the shipping time may be relatively long. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-25T02:38:08Z",
+      "updated_at": "2025-12-25T02:38:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

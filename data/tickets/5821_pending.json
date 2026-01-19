@@ -1,0 +1,74 @@
+{
+  "id": 5821,
+  "subject": "Updating Firmware",
+  "description_text": "Hi\r\n\r\nPlease do you have a document on how to update my pedals firmware.I think when i got my pedals there was a cross over. I didnt get the ultras as they werent released however i believe I got the ultra box i think.\r\n\r\nIs there a set procedure on how to do the update and which one to do. For example the update button on the box (in or out or when to press it)and which update I do (pro x or pro x ultra)\r\n\r\nNot sure if it makes any difference but I am also using VAM. The last time i tried to do an update it ended up constantly conecting and disconnecting all my USB's on my motherboard\r\n\r\nThank you so much in advance\r\nKevin Gregson\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-08T14:29:08Z",
+  "updated_at": "2025-11-11T02:59:22Z",
+  "requester_id": 158001833215,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011984252,
+      "body_text": "Hi Kevin Gregson,  Please provide your order number so I can check the device version for you. Also, please uninstall the current software version on your computer, then download and install the latest SIMSONN Manager 2.1.2. After installation, update the firmware and test again. If the device frequently disconnects, please plug the USB cable directly into a USB 3.0 (blue) port on the back of your computer, and avoid using a USB hub. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-09T03:25:13Z",
+      "updated_at": "2025-11-09T03:25:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011987059,
+      "body_text": "Thank you for the information. Do I need to use the update button on the box? Also shall I just use the auto update or use the manual version where I select the file that corresponds with my version\r\n\r\nThanks in advance\r\n\r\nSent from Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158001833215,
+      "created_at": "2025-11-09T08:10:06Z",
+      "updated_at": "2025-11-09T08:10:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011987184,
+      "body_text": "Attached is my order details from aliexpress\r\n\r\n\r\nSent from Outlook<http://aka.ms/weboutlook>\r\n\r\n________________________________\r\n",
+      "user_id": 158001833215,
+      "created_at": "2025-11-09T08:33:30Z",
+      "updated_at": "2025-11-09T08:33:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012093406,
+      "body_text": "Hi Kevin Gregson,  You can try selecting ProX for the update. If it’s a ProX Ultra, its panel should have four screw holes, while the ProX version only has two. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-11T01:55:14Z",
+      "updated_at": "2025-11-11T01:55:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012093768,
+      "body_text": "Ok good info. My box has 4 screw holes so must be the ultra.\r\n\r\nDo you have info on the correct way to update it. Update switch in or out etc. Also would you recommend the auto or the manual update?\r\n\r\nSent from Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158001833215,
+      "created_at": "2025-11-11T02:14:39Z",
+      "updated_at": "2025-11-11T02:14:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012094468,
+      "body_text": "Hi Kevin Gregson,     You can check for updates under [Settings → Update] and click to update if a new version is available. If the pedals behave abnormally, press the upgrade button on the controller, reconnect the USB, enter recovery mode, and manually update the firmware.      In the software, go to: Settings → Update → Manual Firmware Update → pedals → firmware → pedals-proxultra.sfu to complete the firmware update. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-11T02:59:21Z",
+      "updated_at": "2025-11-11T02:59:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

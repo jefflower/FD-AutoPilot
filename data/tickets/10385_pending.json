@@ -1,0 +1,154 @@
+{
+  "id": 10385,
+  "subject": "Brake Pedal Issue",
+  "description_text": "Hi,\r\n\r\nYesterday I was racing using the Pro X Ultra pedal set, when suddenly my\r\nbrake remained engaged even though I had taken my foot off. I have been\r\ntesting and there are 2 issues I've found:\r\n- There is a sudden jump from +/- 60% to 100% registered in the Simsonn\r\nsoftware, even though I am only gradually pressing the pedal. This issue\r\nhappens in perhaps 9 out of 10 times of pressing the pedal, the remaining 1\r\nout of 10 times the registration does go up gradually as expected. I am\r\nusing the linear curve type.\r\n- Frequently after releasing the pedal the Simsonn software is still\r\nregistering anywhere between 15% - 100% engagement. I can't find a pattern\r\nin when this happens, it just seems random. This happens perhaps 3 out of\r\n10 times of pressing the pedal and I've seen mostly 15%, 30% and 100%\r\nregistration remaining. Pressing the pedal again and releasing tends to\r\nresolve it momentarily, though usually it takes a couple of pressings for\r\nit to go away.\r\n\r\nSteps I've tried:\r\n- Recalibrate the pedals\r\n- Offset, then disconnect the device, then recalibrate\r\n- The process I was advised by you previously in the screenshot:\r\n[image: image.png]\r\nSince that didn't help either, I did another recalibration, which also did\r\nnot fix the issue(s).\r\n\r\nSome additional info that I think is relevant:\r\n- I have been using the pedals for almost half a year without any issue and\r\nhave not made changes to the setup or the cabling in the past few months.\r\n- I have performed the above steps both before and after updating the\r\nSimsonn software to the latest version.\r\n\r\nCould you please advise on what the next steps are?\r\n\r\nBest regards,\r\n\r\nDirk Deckers\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-09T08:51:49Z",
+  "updated_at": "2026-01-15T03:31:25Z",
+  "requester_id": 158002216579,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016540937,
+      "body_text": "Hello,     Just wanted to add that I now noticed that my VAM Pro motors have also stopped working. In the Simsonn software they show as disconnected, while in Simhub they still show as connected, but when I test the effects, nothing happens / triggers. I don't know if these issues are connected.     Best regards,     Dirk",
+      "user_id": 158002216579,
+      "created_at": "2026-01-09T12:59:01Z",
+      "updated_at": "2026-01-09T12:59:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158016678267,
+      "body_text": "Hi Dirk Deckers,     Please first update the firmware using Simsonn Manager 2.1.3 and confirm that the versions are CPU1: 2.0.6 and CPU2: 2.0.4, then check whether the issue is resolved. Additionally, please send me a clear photo of the side of your brake pedal so I can check it. Please also provide your order number for further verification.        Please uninstall the old version of the software from your computer, then download and install the latest Simsonn Manager 2.1.2. Next, follow the steps below to start the firmware update process:    Press the Upgrade button on the control box;    Reconnect the USB cable;    The software will prompt that it has entered “Simsonn Flasher Mode”;    Go to Settings → Update → Manual Firmware Update → pedals → firmware → pedals-proxultra.sfu to start the update;    Once the firmware update is complete, release the Upgrade button;    Finally, test and recalibrate the pedals.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-10T07:11:39Z",
+      "updated_at": "2026-01-10T07:11:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016689133,
+      "body_text": "Hi,\r\n\r\nThank you for the response. Just to clarify and make sure I use the right\r\nversion: first you write to use Simsonn Manager 2.1.3, but int he next\r\nparagraph it says 2.1.2. I find both versions on your website. Which one\r\nshould I use? I'll continue with the above steps once you confirm.\r\n\r\nThank you,\r\nBr,\r\n\r\nDirk\r\n\r\nOn Sat, 10 Jan 2026 at 09:11, service@simsonn.com ",
+      "user_id": 158002216579,
+      "created_at": "2026-01-10T08:10:23Z",
+      "updated_at": "2026-01-10T08:10:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016714539,
+      "body_text": "Hello,\r\n\r\nSince your previous reply mentioned CPU1 and CPU2 codes, I took those into\r\naccount. I first removed the existing installation and installed 2.1.2.\r\nNoticing that it had 2.0.5 for CPU1 (instead of 2.0.6 as you wrote), I\r\nremoved that installation too and then installed Simsonn Manager version\r\n2.1.3. I also made sure to be on the latest updates under settings and saw\r\nthat now I was matching the CPU1 2.0.6 as well as CPU 2.0.4.\r\n\r\nWith this out of the way, I went through the steps you wrote out. This has\r\nfixed the VAM Pro motors issue, they are now working. The brake pedal issue\r\nhas not been resolved though, they still act the same way. Is there\r\nanything else I can try further?\r\n\r\nMy order number was #SSN1870. Please find photos of the pedal below. I took\r\nmultiple, because it's pretty hard to get a clear shot of the whole thing,\r\nas well I wasn't sure if it needed to be a particular side, left or right.\r\nShould they not contain the detail(s) you're looking for, then please let\r\nme know which part to focus on and I can take another photo.\r\n\r\nBest regards,\r\n\r\nDirk\r\n\r\n[image: image.png]\r\n[image: image.png]\r\n[image: image.png]\r\n\r\n\r\n\r\n",
+      "user_id": 158002216579,
+      "created_at": "2026-01-10T13:52:16Z",
+      "updated_at": "2026-01-10T13:52:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016761974,
+      "body_text": "Hi Dirk Deckers,     Please check whether the limit screw is adjusted too low, which could prevent the pedal from moving downward properly during pressing, resulting in incorrect or missing output data.  You can follow these steps to troubleshoot:    Remove the pedal from the mounting bracket;    Inspect the central screw post of the pedal sensor;    Adjust the screw to raise the limit screw slightly;    Reinstall the pedal onto the bracket;    Connect the pedal to the controller box and replug the USB once;    Open the software and click the Offset button;    Recalibrate the pedal and check whether the output is normal.    If the issue still persists after these steps, it is likely that the brake pressure sensor is damaged, and we can send you a replacement pressure sensor.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T01:18:32Z",
+      "updated_at": "2026-01-11T01:18:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016819963,
+      "body_text": "Hello,\r\n\r\nCould you please elaborate on which piece is which? I'm not sure which one\r\nwould be the central screw post and which is the limit screw. I'm also\r\nunclear on how the limit screw would be slightly raised. Do I tighten it?\r\nOr release it, move it manually and then retighten?\r\n\r\nBr,\r\n\r\nDirk\r\n\r\n[image: image.png]\r\n\r\n\r\nOn Sun, 11 Jan 2026 at 03:18, service@simsonn.com ",
+      "user_id": 158002216579,
+      "created_at": "2026-01-11T14:12:19Z",
+      "updated_at": "2026-01-11T14:12:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016821022,
+      "body_text": "Hi Dirk Deckers,     Please adjust this hole at the bottom of the brake pedal. As it is currently the weekend, I do not have a high-resolution reference image available at the moment. Thank you for your understanding.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T14:40:21Z",
+      "updated_at": "2026-01-11T14:40:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016829452,
+      "body_text": "Hi,\r\n\r\nThe image was very helpful, thank you. I found the screw, tightened it by\r\n75% of 1 full turn and went through the rest of the steps. It looks like\r\nthe issue is resolved with this. Thanks again, I'm very happy :) I\r\nappreciate the help on the weekend all the more.\r\n\r\nFYI, the registration is showing higher numbers than before. For the same\r\npressure I applied before, it's now showing me +/- 80 kg of pressure,\r\ninstead of the 60 kg. I imagine that's what the limit screw influences and\r\nto me it doesn't matter, since I have it set up to feel the same regardless\r\nof what number it shows now. Just figured I'd mention it, in case it is\r\nuseful for you to know.\r\n\r\nBest regards,\r\n\r\nDirk\r\n\r\nOn Sun, 11 Jan 2026 at 16:40, service@simsonn.com ",
+      "user_id": 158002216579,
+      "created_at": "2026-01-11T20:38:06Z",
+      "updated_at": "2026-01-11T20:38:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016832267,
+      "body_text": "Hi Dirk Deckers,  I’m very glad to hear that the issue has been resolved. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T23:54:55Z",
+      "updated_at": "2026-01-11T23:54:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016843277,
+      "body_text": "Very fast replies, especially considering it was the weekend.",
+      "user_id": 158002216579,
+      "created_at": "2026-01-12T07:15:01Z",
+      "updated_at": "2026-01-12T07:15:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    },
+    {
+      "id": 158016890439,
+      "body_text": "Hi,\r\n\r\nTonight I tried to race again with the pedal fixed. Unfortunately the same\r\nbrake pedal reappeared after using the pedal for about an hour. Does this\r\nmean, as you mentioned previously, that the sensor would need replacing?\r\n\r\nBr,\r\n\r\nDirk\r\n\r\nOn Mon, 12 Jan 2026 at 01:55, service@simsonn.com ",
+      "user_id": 158002216579,
+      "created_at": "2026-01-12T18:35:47Z",
+      "updated_at": "2026-01-12T18:35:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016924923,
+      "body_text": "Hi Dirk Deckers,  Please provide your order number, contact name, phone number, and address. We will send you a replacement pressure sensor. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-13T02:40:44Z",
+      "updated_at": "2026-01-13T02:40:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016936395,
+      "body_text": "Hi,\r\n\r\nThank you. The contact name is my name, so Dirk Deckers. My phone number is\r\n0032 474 71 01 84 and my address is:\r\nAnniitunkatu 16\r\n20900 Turku\r\nFinland\r\n\r\nThe original order number was #SSN1870.\r\n\r\nBr,\r\n\r\nDirk Deckers\r\n\r\n",
+      "user_id": 158002216579,
+      "created_at": "2026-01-13T06:14:43Z",
+      "updated_at": "2026-01-13T06:14:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017161082,
+      "body_text": "Hi Dirk Deckers,    We apologize for the delay in addressing your request. Here is your logistics tracking link.  https://t.17track.net/en#nums=YT2601500702653666",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T03:31:25Z",
+      "updated_at": "2026-01-15T03:31:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

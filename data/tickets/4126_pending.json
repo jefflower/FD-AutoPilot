@@ -1,0 +1,24 @@
+{
+  "id": 4126,
+  "subject": "Issue after firmware update – Pro X Pedals",
+  "description_text": "Dear Simsonn Support Team,\r\nI have just installed the latest firmware requested for the Pro X pedals. The update completed successfully, but right after that the pedals are no longer detected by the system.\r\nTo help you better understand the situation, I have attached a video showing the issue.\r\nI kindly ask for your assistance in resolving this problem as soon as possible.\r\nLooking forward to your reply.\r\nBest regards,\r\nVito\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-25T16:41:15Z",
+  "updated_at": "2025-09-27T02:25:27Z",
+  "requester_id": 158004989491,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009360622,
+      "body_text": "Hi Vito Rebaudo,    Please make sure your SIMSONN Manager is updated to version 2.1.0. Then follow the steps below:    Open the software and go to Settings → Update, then click Check for Updates.    Check if the ProX firmware can be updated to version 2.0.3.    If no automatic update is available, please use Manual Update: Path: Settings → Update → Manual Update Firmware → pedals → firmware → pedals-prox.sfu.    After the update, please test again.    If the issue persists, try reconnecting the USB and power cable, then test again.    If it still doesn’t work, please send me a screenshot of the software interface so I can check further for you",
+      "user_id": 158000445778,
+      "created_at": "2025-09-27T02:25:27Z",
+      "updated_at": "2025-09-27T02:25:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

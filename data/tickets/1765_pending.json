@@ -1,0 +1,54 @@
+{
+  "id": 1765,
+  "subject": "Simsonn Pedals Pro X stopped working",
+  "description_text": "Good day,\r\n\r\nI got my pedals back in January and they worked just fine until today, I connected them and the sofware still says they are disconected, try unplugging everything and plug it again, tried to reinstall the software several times, installed the 2.0.8 and the 2.0.9 and nothing, they used to light on blue and now just the gas pedal lights blue the other light white, I just missed a race of an important championship here in Costa Rica due to this, is there anything I could do, or are they dead?\r\n\r\nHopefully you can guide me on this.\r\n\r\nBest regards,\r\n\r\nChristopher Gómez Sibaja\r\nAntiGravity Sim Racing CEO & Driver\r\n[cid:bb271a15-e457-4f73-b6e8-f73f8cf09263]\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-22T02:57:39Z",
+  "updated_at": "2025-07-22T05:06:24Z",
+  "requester_id": 158002269098,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005291023,
+      "body_text": "Hi Christopher Gómez,  Please go to Settings → Update and click Update to upgrade the software to version 2.0.9. Then, in the same interface, click Manual Firmware Update, navigate to the pedals-firmware folder → pedals folder, and select the prox.sfu file to update the firmware. Once the update is complete, please run the test again.     You can use the Offset function to reset the pedal percentage to zero. This ensures that each pedal's progress bar starts at around 0%. After applying the Offset, please recalibrate the pedals again. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-22T03:03:59Z",
+      "updated_at": "2025-07-22T03:03:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005291416,
+      "body_text": "Thank you for your quick answer!\r\n\r\nUnfortunately, I cannot locate the \"Manual Firmware Update\", I do see an option down left corner but it does not let me click on it.\r\n\r\n[cid:c28b3881-5b90-48ee-aae7-5d7ae2b3ca9a]\r\n\r\nI am also attaching this other screeshot in case it helps\r\n\r\n[cid:39560546-155d-4735-815d-06faaf08caf8]\r\n\r\nIs the firmware file something you can share through email along with instructions or any other way for me to update it?\r\n\r\nThanks,\r\n\r\nChristopher Gómez Sibaja\r\nAntiGravity Sim Racing CEO & Driver\r\n[cid:c6963bbc-2d01-4ece-934a-5a0294f0fac0]\r\n________________________________\r\nDe: service@simsonn.com ",
+      "user_id": 158002269098,
+      "created_at": "2025-07-22T04:07:55Z",
+      "updated_at": "2025-07-22T04:07:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005291491,
+      "body_text": "Hi Christopher Gómez,    Please press and hold the upgrade button on the control box, then reconnect the USB cable while holding the button. The software will detect the device in SIMSONN Flasher mode.  Next, go to Settings → Update in the software, then click Manual Firmware Update. Navigate through the following folder path:     pedals-firmware → pedals → select the file prox.sfu         Click to update and wait for the process to complete. Once done, please test your device again to see if the issue is resolved. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-22T04:17:47Z",
+      "updated_at": "2025-07-22T04:17:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005291714,
+      "body_text": "Thank you so muuuuch!! It worked, they are working just as they were before, I don´t know who you are but you do an amazing work, I love you so much!\r\n\r\nThank you again!\r\n\r\nChristopher Gómez Sibaja\r\nAntiGravity Sim Racing CEO & Driver\r\n[cid:c43f4cc0-0509-4bac-9dd7-3a6f116753e7]\r\n________________________________\r\nDe: service@simsonn.com ",
+      "user_id": 158002269098,
+      "created_at": "2025-07-22T05:00:06Z",
+      "updated_at": "2025-07-22T05:00:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

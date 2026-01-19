@@ -1,0 +1,24 @@
+{
+  "id": 10115,
+  "subject": "HS Pro Shifter",
+  "description_text": "hello, unfortunately after receiving my HS Pro shifter today i downloaded\r\nthe most recent version of SIMSONN Manager and the 'Gear Shift' tab in the\r\nDevices screen is not appearing. I live in the UK, im not sure if you guys\r\nhave released a new version of the software but i can only use my shifter\r\nin sequential mode because of this. please resolve this because i am\r\ngetting a little frustrated...\r\n\r\nthank you.\r\n\r\n",
+  "status": 5,
+  "priority": 4,
+  "created_at": "2026-01-06T17:09:12Z",
+  "updated_at": "2026-01-06T23:09:28Z",
+  "requester_id": 158008955327,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016004196,
+      "body_text": "Hi dckwods,  We will release a new software version today, which will officially add support for the HS Pro calibration page.  Please update the software and try it out.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-06T22:27:27Z",
+      "updated_at": "2026-01-06T22:27:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

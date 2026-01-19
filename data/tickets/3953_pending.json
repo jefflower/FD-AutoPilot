@@ -1,0 +1,44 @@
+{
+  "id": 3953,
+  "subject": "Help needed – Simsonn Pro Plus pedals stuck in “FreeJoy Flasher” after firmware update",
+  "description_text": "Hello Simsonn Support Team,\r\nI recently purchased the Simsonn Pro Plus pedals (order number: 3046090959951851, via your official AliExpress store, on November 28th 2024).\r\nAfter updating the firmware using Simsonn Manager, my pedal controller no longer works properly. Now, when I connect it to my PC, it is only detected as “FreeJoy Flasher” and does not appear as a normal joystick device.\r\nI have already tried the following:\r\n\r\n  *\r\nUsed Simsonn Manager (latest version) → it shows the .sfu firmware (v1.8.0 and v1.7.1) but does not allow me to flash it.\r\n  *\r\nUsed Simsonn Pedals Configurator V4 → it accepts the .sfu files and says “firmware update completed”, but after reboot the controller still stays in FreeJoy Flasher mode.\r\n  *\r\nTested on different USB ports, with driver reinstall, and tried both .sfu versions. The result is always the same: stuck in flasher mode.\r\n\r\nIt looks like the firmware update did not install correctly, and now the controller cannot boot normally.\r\nCould you please provide:\r\n\r\n  1.\r\nA recovery tool or special firmware package to restore the controller.\r\n  2.\r\nConfirmation if my PCB revision requires a different firmware file.\r\n  3.\r\nAny instructions (pads, jumper, reset method) to force the controller into recovery/bootloader mode for reflashing.\r\n\r\nI would prefer to avoid sending the hardware back (shipping from Spain would take a very long time). If possible, please provide a solution I can apply myself.\r\nThank you very much for your help.\r\nBest regards,\r\nRaul Guijon Martinez\r\nOrder ID: 3046090959951851\r\nLocation: Valencia, Spain\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-18T19:44:47Z",
+  "updated_at": "2025-09-19T14:23:03Z",
+  "requester_id": 158004638855,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008933154,
+      "body_text": "Hi Hiyu Aven,  Please uninstall the old version from your computer and install the latest SIMSONN Manager 2.1.1 from the provided link. After connecting the device, if you see a message saying “Version too old, not supported” or Simsonn Flasher mode, go to Settings → Update → Manual Firmware Update → pedals-firmware-plus.sfu to update the firmware. Once the update is complete, make sure to recalibrate the pedals, as they will not function properly in games without calibration.      https://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-09-19T01:37:27Z",
+      "updated_at": "2025-09-19T01:37:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008941507,
+      "body_text": "Hello,\r\n\r\nSince I needed to use my only pedal set, I temporarily flashed the controller with a stock FreeJoy firmware. With this firmware the pedals work in Windows and games, but now Simsonn Manager does not recognize the device anymore.\r\n\r\nAt the moment, the only software that detects the board is FreeJoy Configurator.\r\n\r\nIs there any way to reinstall your official firmware from FreeJoy (in .hex or .bin format), or do you provide another method to make Simsonn Manager detect the pedals again?\r\n\r\nThank you for your help,\r\n\r\nBest regards,\r\nH\r\n\r\n________________________________\r\nDe: service@simsonn.com ",
+      "user_id": 158004638855,
+      "created_at": "2025-09-19T14:03:44Z",
+      "updated_at": "2025-09-19T14:03:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008942034,
+      "body_text": "Hi Hiyu Aven,    Your pedal controller is version 1.7.0, which does not have a built-in bootloader.  As a result, it cannot be upgraded via software and therefore is not compatible with Simsonn Manager.  If you would like to use Simsonn Manager, you can purchase a PlusX control box. Here is the link:  https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor?variant=51351053533498",
+      "user_id": 158000445778,
+      "created_at": "2025-09-19T14:23:02Z",
+      "updated_at": "2025-09-19T14:23:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

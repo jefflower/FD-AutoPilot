@@ -1,0 +1,54 @@
+{
+  "id": 7234,
+  "subject": "order change SSN4303",
+  "description_text": "hi\r\nI just placed an order from you. (Order #SSN4303)\r\nI can see that I have ordered 4 pieces of Simsonn VAM Pro Linear Motor - the Pedals Haptic Reactor for Vibration Feedback.\r\nIt was only meant that I would need 2 pieces and not 4 pieces.\r\nIs it possible that you can change the order and to 2 pieces.\r\n\r\n Kind regards Jesper Midtgaard\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-02T10:50:40Z",
+  "updated_at": "2025-12-05T10:11:33Z",
+  "requester_id": 158007492884,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013314094,
+      "body_text": "Hi Jesper Midtgaard,    Alright, we've updated your order for you. No need to worry.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-03T07:53:38Z",
+      "updated_at": "2025-12-03T07:53:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013317532,
+      "body_text": "Thank you very much.\r\n\r\n\r\n________________________________\r\n",
+      "user_id": 158007492884,
+      "created_at": "2025-12-03T09:57:14Z",
+      "updated_at": "2025-12-03T09:57:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013477528,
+      "body_text": "hi again.\r\nI am writing to you in connection with the order ( #SSN4303)\r\nI had made, what is the status of it?\r\nI can see, if I go into the order that there are still 4 pcs under Simsonn VAM Pro Linear Motor - the Pedals Haptic Reactor for Vibration Feedback.\r\nEven though you wanted to correct them to 2 pcs. And I can see that you have deducted the full amount for the entire order. and that means that I have paid for 4 pcs. Simsonn VAM Pro Linear Motor.\r\n\r\nKind regards\r\nJesper Midtgaard\r\n________________________________\r\n",
+      "user_id": 158007492884,
+      "created_at": "2025-12-05T09:59:46Z",
+      "updated_at": "2025-12-05T09:59:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013477846,
+      "body_text": "Hi Jesper Midtgaard,    We apologize for the inconvenience caused. We have processed your refund and arranged for shipment.  https://t.17track.net/en#nums=YT2533700710139426",
+      "user_id": 158001343601,
+      "created_at": "2025-12-05T10:11:33Z",
+      "updated_at": "2025-12-05T10:11:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": 5278,
+  "subject": "I did not receive my order complete",
+  "description_text": "\r\n I ya e reviewed my order and there was only one box with the pedals, the gear shifter did not arrive.\r\nThe tracking label was just one box of one (you can see the label)\r\nI will appreciate if you ship what is missing \r\n\r\n\r\nThanks a lot and regards\r\n\r\nArnoldo Chávez\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-25T19:05:20Z",
+  "updated_at": "2025-10-28T07:44:23Z",
+  "requester_id": 158006097393,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011148709,
+      "body_text": "Hi Arnoldo Chavez,    We sincerely apologize for the inconvenience caused. Our staff overlooked this item, and we have arranged for a replacement shipment. However, our US warehouse not have the desktop fixed.  https://www.track123.com/result?trackNos=GFUS01015882226753",
+      "user_id": 158001343601,
+      "created_at": "2025-10-27T10:12:29Z",
+      "updated_at": "2025-10-27T10:12:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011195862,
+      "body_text": "Thank you but I didn’t followed on message, it was truncated.\r\nI understand you will be shipping the missing gear shifter.\r\nThe tracking link leads to an error page.\r\nI look forward to learn more about my shipment.\r\nRegards \r\n\r\nArnoldo Chavez\r\n\r\n> El 27 oct 2025, a la(s) 3:12, service@simsonn.com escribió:\r\n> \r\n> ﻿\r\n> Hi Arnoldo Chavez,\r\n> \r\n> We sincerely apologize for the inconvenience caused. Our staff overlooked this item, and we have arranged for a replacement shipment. However, our US warehouse not have the desktop fixed.\r\n> https://www.track123.com/result?trackNos=GFUS01015882226753\r\n> \r\n> ",
+      "user_id": 158006097393,
+      "created_at": "2025-10-28T04:05:18Z",
+      "updated_at": "2025-10-28T04:05:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011207617,
+      "body_text": "Since the U.S. warehouse has not yet handed this package over to the logistics provider, there has been no update. An update should be available today.  https://www.track123.com/track?trackNos=GFUS01015882226753",
+      "user_id": 158001343601,
+      "created_at": "2025-10-28T07:44:22Z",
+      "updated_at": "2025-10-28T07:44:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

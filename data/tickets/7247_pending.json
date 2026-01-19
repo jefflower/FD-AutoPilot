@@ -1,0 +1,24 @@
+{
+  "id": 7247,
+  "subject": "simsonn",
+  "description_text": "\nЗдравствуйте. приобрел новые педали  SIMSONN Plus X с вибромоторами VAM 3шт. собрал, установил, скачал приложение simsonn manager полследней версии, запустил. все было хорошо примерно минут 20, потом перестали реагировать в игре вибромоторы, а в самом приложении работают. А потом и вовсе перестали реагировать педали в играх, но в приложении все работает. Например, в ETS2 первые 10 минут все было хорошо, потом нет. после сброса настроек игры вообще не удается назначить педали газа тормоза сцепления. Как решить проблему?\n \nАндрей См\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-02T14:11:45Z",
+  "updated_at": "2025-12-04T07:07:48Z",
+  "requester_id": 158007495356,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013374720,
+      "body_text": "Hi Андрей См,    First, please make sure you are using the USB 3.0 (blue) port on the back of your PC, and avoid using any USB hubs. Then check whether your SIMSONN Manager is updated to the latest versions: CPU1: 2.0.5, CPU2: 2.0.4, and SIMSONN Manager 2.1.2.  If the blue pedal signal bar in the software moves smoothly from 0% to 100% when pressing the pedal, it indicates that the pedals are functioning correctly. After that, you can focus on checking whether there might be interference from other devices or environmental factors.         If this happens, it indicates that the computer’s grounding is not reliable, possibly because a three-prong plug was not used with a three-prong wall outlet. You can refer to the post below: connect the computer case to the stand, and connect the control box to the metal screws on the pedals. This should resolve the disconnection issue.  https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T07:07:48Z",
+      "updated_at": "2025-12-04T07:07:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

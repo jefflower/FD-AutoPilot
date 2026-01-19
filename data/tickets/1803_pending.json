@@ -1,0 +1,44 @@
+{
+  "id": 1803,
+  "subject": "Pro x",
+  "description_text": "If I buy the pro x two pedal set and the control box will these hook\r\nRight up to my asetek forte pedals or\r\nIs there more I have to buy?\r\n\r\nThank you \r\nSent from my iPhone\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-22T21:47:16Z",
+  "updated_at": "2025-07-23T04:31:31Z",
+  "requester_id": 158002288348,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005355212,
+      "body_text": "Hi Mark Bouley,  If you already have Asetek Forte pedals, do you still need to purchase our ProX pedals? If you're only interested in using our telemetry-based vibration features, you only need to purchase the ProX Ultra control box, the VAM Pro motors, and the power supply. Then, simply use them with SIMSONN Manager 2.0.9 or SIMHUB 9.9.3 to activate vibration feedback based on telemetry data. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-23T02:54:16Z",
+      "updated_at": "2025-07-23T02:54:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005355572,
+      "body_text": "I’m sorry lol no I don’t need the two pedal set not sure why I wrote that,\r\nwhat I meant to ask was if the mount that comes with the vam pro motors\r\nwill work with the forte pedals.\r\nThank you\r\n\r\nOn Tue, Jul 22, 2025 at 10:54 PM support@simsonn.com ",
+      "user_id": 158002288348,
+      "created_at": "2025-07-23T04:01:56Z",
+      "updated_at": "2025-07-23T04:01:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005355704,
+      "body_text": "Hi Mark Bouley,  We haven't designed a dedicated bracket for it yet. It's possible that some users may release 3D-printed designs in the future, as the demand for it is relatively low. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-23T04:31:31Z",
+      "updated_at": "2025-07-23T04:31:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

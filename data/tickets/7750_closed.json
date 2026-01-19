@@ -1,0 +1,24 @@
+{
+  "id": 7750,
+  "subject": "Order cancellation, refund request. It's urgent.",
+  "description_text": "I canceled my order, when will I be able to get a refund for my card\r\npayment? I need to repurchase it with a different card, but I haven't\r\nreceived a refund yet, so I can't place the order.\r\n\r\nOrder number SSN4432\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-12-09T02:20:57Z",
+  "updated_at": "2026-01-12T00:11:58Z",
+  "requester_id": 158007669767,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016832482,
+      "body_text": "此工单已关闭并合并到工单 10587 中",
+      "user_id": 158000445778,
+      "created_at": "2026-01-12T00:11:58Z",
+      "updated_at": "2026-01-12T00:11:58Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

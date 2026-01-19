@@ -1,0 +1,45 @@
+{
+  "id": 11095,
+  "subject": "Tracking trouble",
+  "description_text": "Hi,\n\nI would like to track my order but i need some privacy number. ?‍♂️?‍♂️",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-16T18:41:36Z",
+  "updated_at": "2026-01-17T10:38:37Z",
+  "requester_id": 158009304576,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017318039,
+      "body_text": "Hi Matthieu Buschmann,\n\nYour order has been shipped in two separate packages. One package was dispatched on the 13th and is currently in transit. The other package was out of stock for two weeks due to a product upgrade. The upgrade is now complete, and we will ship it to you within the next few days. We sincerely apologize for any inconvenience caused. You can track your shipping information via the following link: https://t.17track.net/en#nums=SF6047238966311,SF6047238966541",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T06:49:33Z",
+      "updated_at": "2026-01-17T06:49:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017319524,
+      "body_text": "Okay thank you !\n\nCan you tell which package is out of stock please.\n\n> \n> Le 17 janv. 2026 à 07:49, service @simsonn.com a écrit :\n> \n> ﻿\n> Hi Matthieu Buschmann,\n> \n> ​\n> Your order has been shipped in two separate packages.\n> One package was dispatched on the 13th and is currently in transit.\n> The other package was out of stock for two weeks due to a product upgrade. The upgrade is now complete, and we will ship it to you within the next few days.\n> We sincerely apologize for any inconvenience caused.\n> You can track your shipping information via the following link:\n> https://t.17track.net/en#nums=SF6047238966311,SF6047238966541\n> \n> \n> \n> \n",
+      "user_id": 158009304576,
+      "created_at": "2026-01-17T08:48:38Z",
+      "updated_at": "2026-01-17T08:48:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017323842,
+      "body_text": "Hi Matthieu Buschmann, I'm happy to help. It's that the power supply is out of stock.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T10:38:37Z",
+      "updated_at": "2026-01-17T10:38:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

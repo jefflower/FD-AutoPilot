@@ -1,0 +1,74 @@
+{
+  "id": 10431,
+  "subject": "Order #SSN5659 after 7 days still not shipped and without any update",
+  "description_text": "Hello I have placed an order last friday, but since then the order info on your site still says confirmed but nothing else. I cant even see any updates on SHOP app where it still says waiting for details.... Nothing else Can I atleast get some info? Cause I have already created a ticket that hasnt been answered even tho its 2 days old....",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-09T16:32:00Z",
+  "updated_at": "2026-01-15T02:49:09Z",
+  "requester_id": 158008968457,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016842687,
+      "body_text": "Hi Šimon Rada,    We apologize for the delay. Two shipments have been impacted by heavy snowfall in Europe, with road blockages causing delivery delays to our warehouse. We will expedite delivery to the warehouse as soon as possible or explore alternative logistics channels to ship your goods from China.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-12T06:56:23Z",
+      "updated_at": "2026-01-12T06:56:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016862513,
+      "body_text": "Can I please get a rough estimate of the expected delivery? I know its unfortunate and out of your control, but if you have any estimate, it would be appreciated.  Thanks for your help.",
+      "user_id": 158008968457,
+      "created_at": "2026-01-12T13:19:46Z",
+      "updated_at": "2026-01-12T13:19:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158016862631,
+      "body_text": " Can I please get a rough estimate of the expected delivery? I know it's\r\nunfortunate and out of your control, but if you have any estimate, it would\r\nbe appreciated.\r\n\r\nThanks for your help.\r\n\r\nOn Mon, Jan 12, 2026 at 7:56 AM support@simsonn.com ",
+      "user_id": 158008968457,
+      "created_at": "2026-01-12T13:21:49Z",
+      "updated_at": "2026-01-12T13:21:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016971033,
+      "body_text": "Hi Šimon Rada,    The shipment is expected to arrive at the warehouse around the 17th and may not be dispatched until next week. We will do our best to expedite it for Friday shipment.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-13T11:40:33Z",
+      "updated_at": "2026-01-13T11:40:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017134659,
+      "body_text": "Your warehouse is in Europe or it still needs to ship from china?\r\n\r\n\r\nOn Tue, Jan 13, 2026 at 12:40 PM support@simsonn.com ",
+      "user_id": 158008968457,
+      "created_at": "2026-01-14T19:25:13Z",
+      "updated_at": "2026-01-14T19:25:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017158369,
+      "body_text": "Hi Šimon Rada,    We apologize for the delay. Two shipments destined for our German warehouse have been affected by heavy snowfall in Europe, causing road blockages and delivery delays. We will expedite delivery or explore alternative logistics channels to ship your order from China as soon as possible.  Compensation will be provided based on the delay after your order is completed. We apologize for the inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T02:49:09Z",
+      "updated_at": "2026-01-15T02:49:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

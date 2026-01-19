@@ -1,0 +1,64 @@
+{
+  "id": 2452,
+  "subject": "SimPedalsConfig V3,5",
+  "description_text": "Pro plus pedal owner. I recently had a computer failure, and after\r\nlodging SimPedalsConfig V4.0 I get a message that my firmware is\r\nincompatible with V4 and I need to use V3.5.\r\nMay I have a copy of that version please?\r\nLove the pedals.\r\n\r\nDavid Beickert\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-08T04:09:26Z",
+  "updated_at": "2025-11-11T05:02:07Z",
+  "requester_id": 158002815462,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006597687,
+      "body_text": "Hi David Beickert,     Please try downloading it from this link first. If it doesn’t work, please provide a full screenshot of the software, and I will assist you in resolving the issue.       https://drive.google.com/file/d/1YhwexXrW_OvE3QTHZZ302qeBnYuMA9WA/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-08-09T14:48:02Z",
+      "updated_at": "2025-08-09T14:48:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010461781,
+      "body_text": "I am not able to calibrate using this vs.  I have  compressed files vs 3.0\r\n& 3.5 but both open as vs 3.0. It show that it recognizes the pedals but no\r\nmeters show when i press them. It only runs for about 30 seconds before\r\nthis message pops up.\r\n\r\n\r\nNote, the pedals are calibrated for only 1 game, forza horizon, no others.\r\n\r\nOn Sat, Aug 9, 2025, 10:48 AM service@simsonn.com ",
+      "user_id": 158002815462,
+      "created_at": "2025-10-15T02:02:56Z",
+      "updated_at": "2025-10-15T02:02:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010538246,
+      "body_text": "Hi David Beickert,  https://drive.google.com/file/d/1hnHNudj0VhE6xr7ypu-KeEDuVrlVHVg9/view?usp=drive_link     Please first download FreeJoy version 1.7.0, then use the pedal .cfg recovery file attached to restore the pedal settings. After the restoration is complete, you can proceed to calibrate it using other software. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-16T06:31:04Z",
+      "updated_at": "2025-10-16T06:31:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012080313,
+      "body_text": "Thank you, l was successful in using Freejoy to calibrate and send new\r\nconfig file to pedals.\r\nUnfortunately that only works for 1 game, Forza Horizon 5. In all other\r\ngames the pedals are not calibrated\r\n\r\nOn Thu, Oct 16, 2025, 2:31 AM service@simsonn.com ",
+      "user_id": 158002815462,
+      "created_at": "2025-11-10T19:13:18Z",
+      "updated_at": "2025-11-10T19:13:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012096107,
+      "body_text": "Hi David Beickert,  Is it not working in Assetto Corsa? If it works in one game, it should also work in other compatible games. Please record a video of testing the pedals in Freejoy, along with a video showing the progress bars, so I can verify the situation. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-11T05:02:07Z",
+      "updated_at": "2025-11-11T05:02:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

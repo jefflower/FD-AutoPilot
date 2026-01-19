@@ -1,0 +1,204 @@
+{
+  "id": 1926,
+  "subject": "Wrong control box order #SSN2009",
+  "description_text": "Hello,\r\n\r\nI received the wrong control box for order SSN2009. I received the plus x instead of the pro x.\r\n\r\nJohn Ford\r\n\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-26T03:22:05Z",
+  "updated_at": "2025-12-22T12:35:30Z",
+  "requester_id": 158002353777,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005550630,
+      "body_text": "Hi Main,  Please provide a photo so that we can assist you with inspection and arrange to send you a new PlusX controller. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-26T03:27:42Z",
+      "updated_at": "2025-07-26T03:27:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005551257,
+      "body_text": "I ordered the pro but received the plus.\r\n\r\nIt also turns out I don't have a proper power supply so I will need to buy one. Can that be sent at the same time as the controller unit?\r\n\r\nJohn\r\n\r\n",
+      "user_id": 158002353777,
+      "created_at": "2025-07-26T04:40:52Z",
+      "updated_at": "2025-07-26T04:40:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005551352,
+      "body_text": "Hi Main,   Sure, you can place an order for a power supply and add a note that you need a ProX Ultra control box. We will ship them together for you. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-26T05:01:04Z",
+      "updated_at": "2025-07-26T05:01:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005619181,
+      "body_text": "What is the difference between the pro and the plus controllers? I am using an older pro plus (non x) brake and gas pedal.\r\n\r\nJohn\r\n\r\n⁣Get BlueMail for Android ​\r\n\r\n",
+      "user_id": 158002353777,
+      "created_at": "2025-07-26T20:07:29Z",
+      "updated_at": "2025-07-26T20:07:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005703805,
+      "body_text": "Hi Main,    Plus X is an upgraded version of Pro Plus, and the Plus X control box is perfect for you. You only need to purchase a separate power supply.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-28T07:25:23Z",
+      "updated_at": "2025-07-28T07:25:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006237320,
+      "body_text": "I have found a power supply that works. Could I please get the correct control box sent to me?\r\n\r\nThanks,\r\nJohn\r\n\r\n⁣Get BlueMail for Android ​\r\n\r\n",
+      "user_id": 158002353777,
+      "created_at": "2025-08-04T23:39:37Z",
+      "updated_at": "2025-08-04T23:39:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006239563,
+      "body_text": "Hello, the Plus X control box we sent you is the most suitable version for you. ",
+      "user_id": 158001343601,
+      "created_at": "2025-08-05T03:49:34Z",
+      "updated_at": "2025-08-05T03:49:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006239895,
+      "body_text": "I paid for the pro control box though. Do I get a refund of the difference?\r\n\r\n⁣Get BlueMail for Android ​\r\n\r\n",
+      "user_id": 158002353777,
+      "created_at": "2025-08-05T04:27:50Z",
+      "updated_at": "2025-08-05T04:27:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006514718,
+      "body_text": "Any update on my previous question about refunding the difference or sending me the controller i ordered?\r\n\r\nI may have an issue with my current control box or motors. I am getting really bad interference if I use both motors. When the throttle motor activates it cuts the throttle back to about 3/4 and applies brake to about 50%. It makes it undriveable. Same thing with the brake but it is more manageble.\r\n\r\nI appreciate your help with all this.\r\n\r\nThanks,\r\nJohn\r\n\r\n⁣Get BlueMail for Android ​\r\n\r\n",
+      "user_id": 158002353777,
+      "created_at": "2025-08-08T03:54:38Z",
+      "updated_at": "2025-08-08T03:54:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006686384,
+      "body_text": "Hi Main,    We apologize for not responding to you in a timely manner. We have refunded the difference for you. Regarding your EMI interference issue, you can first try connecting the green grounding wire we provided.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-11T10:19:27Z",
+      "updated_at": "2025-08-11T10:19:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006822789,
+      "body_text": "My kit didn't come with a grounding wire or any mounting hardware. I used the grounding wire from my original control box. I have tried a usb isolator, only plugging the pedal control box directly to the pc, different power supplies.\r\n\r\nThe issue hasn't gotten any better. Any chance I have a faulty control box?\r\n\r\nJohn\r\n\r\n⁣Get BlueMail for Android ​\r\n\r\n",
+      "user_id": 158002353777,
+      "created_at": "2025-08-13T22:52:44Z",
+      "updated_at": "2025-08-13T22:52:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006823035,
+      "body_text": "Here is an example of throttle activation affecting the brake.\r\n\r\nJohn\r\n\r\n⁣Get BlueMail for Android ​\r\n\r\n",
+      "user_id": 158002353777,
+      "created_at": "2025-08-13T23:08:18Z",
+      "updated_at": "2025-08-13T23:08:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006890342,
+      "body_text": "Hi Main,  This issue is caused by EMI interference from the wheelbase. Please follow the steps below to troubleshoot and resolve it. Most customers with similar setups (such as Fanatec, MOZA, and T500 users) have resolved the problem using this method.     To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability:     1.    Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding.     2.    Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive.     3.    Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup.     4.    Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible.     5.    Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs.     6.    Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference.     7.    Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements.     8.    Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources.     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-08-15T03:27:50Z",
+      "updated_at": "2025-08-15T03:27:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007172391,
+      "body_text": "Hello.\r\n\r\nI have done everything in your list. Nothing helped. I even tried it on a different computer and it did the same thing. I've mounted my petals to wood. I've mounted them to metal. I've had them off the rig. I have everything grounded to the wall. Steering wheel pedals, base frame. Control box. It's all been grounded. I have an isolator on my usb and it is plugged directly into the computer.\r\n\r\nThere is someone else having the exact same issue as me on reddit.\r\n\r\nhttps://www.reddit.com/r/simracing/s/Sjutz5vNLK\r\n\r\nI really want these to work but i am running out of options. I have spent $150 buying new cables,  isolator and power supplies to troubleshoot.\r\n\r\nThe strange thing is all interference goes away when put at 50% power or above. I can't run that high as it shakes my whole apartment and my neighbors won't like that.\r\n\r\nIts either a bad batch of motors that only interfere when run at low-power or it is the control box.\r\n\r\nIf we can't solve this i will need to return my motors and hopefully buy again in the future.\r\n\r\nJohn\r\n\r\n",
+      "user_id": 158002353777,
+      "created_at": "2025-08-20T02:07:06Z",
+      "updated_at": "2025-08-20T02:07:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007216284,
+      "body_text": "Hi Main,  We have identified this issue and will fix it within the next few days through a software update. Thank you for your patience. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-20T14:51:38Z",
+      "updated_at": "2025-08-20T14:51:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007231406,
+      "body_text": "Hi Main,  The quickest replacement solution is to use nylon screws and nylon washers of the same specification (non-metal material) instead of the provided metal screws. The screw specification is M4×8mm, and the washer has an M4 inner diameter. This ensures proper electrical isolation between the bracket and the VAM Pro motor. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-20T16:21:39Z",
+      "updated_at": "2025-08-20T16:21:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007706615,
+      "body_text": "I love in a remote area and am not able to find appropriate nylon hardware.  I also never got any mounting hardware with my kit when it arrived.\r\n\r\nAre you able to send me a nylon screw kit and the mounting hardware for my 2 VAM pro motors?\r\n\r\nThank you\r\nJohn\r\n\r\n⁣Get BlueMail for Android ​\r\n\r\n",
+      "user_id": 158002353777,
+      "created_at": "2025-08-28T13:07:20Z",
+      "updated_at": "2025-08-28T13:07:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007733844,
+      "body_text": "Hi Main,  No problem. May I confirm if you are missing the motor bracket? If the bracket is not missing, we will send you a replacement set of nylon screws and washers. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-29T00:52:56Z",
+      "updated_at": "2025-08-29T00:52:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007734519,
+      "body_text": "I have the mounting brackets. I just didn't get any screws for mounting the motors to the brackets. I found some but they are not ideal.\r\n\r\nThank you very much for your excellent customer service and support.  I will happily recommend Simsonn to anyone that asks.\r\n\r\nJohn\r\n\r\n⁣Get BlueMail for Android ​\r\n\r\n",
+      "user_id": 158002353777,
+      "created_at": "2025-08-29T01:41:20Z",
+      "updated_at": "2025-08-29T01:41:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

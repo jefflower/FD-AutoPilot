@@ -1,0 +1,24 @@
+{
+  "id": 5829,
+  "subject": "Discount",
+  "description_text": "Hi,\r\n\r\nHow long does the BLACK45 Pre sale discount last, thinking about ordering something but don't want to miss it!\r\n\r\nThanks\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-08T21:07:58Z",
+  "updated_at": "2025-11-10T06:52:31Z",
+  "requester_id": 158006839612,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012030840,
+      "body_text": "Hello, this discount ends on November 30th.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-10T06:52:31Z",
+      "updated_at": "2025-11-10T06:52:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

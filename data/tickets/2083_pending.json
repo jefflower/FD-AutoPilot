@@ -1,0 +1,24 @@
+{
+  "id": 2083,
+  "subject": "Import duties",
+  "description_text": "Hello, i recently purchased a pair of pedals from you and i really thought that you guys had a European warehouse.\r\n\r\nI was just slapped with a 95$ fee for import.\r\n\r\nPlease add at checkout that it will be sent from China so users may know that before ordering.\r\n\r\nThanks\r\nJesper\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-30T02:38:46Z",
+  "updated_at": "2025-07-30T02:44:03Z",
+  "requester_id": 158002425314,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005791740,
+      "body_text": "Hi Jesper Müllern,    Sorry, our German warehouse is out of stock. We apologize for the inconvenience.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-30T02:44:03Z",
+      "updated_at": "2025-07-30T02:44:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

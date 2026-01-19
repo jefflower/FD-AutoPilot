@@ -1,0 +1,94 @@
+{
+  "id": 1155,
+  "subject": "Question control plus control",
+  "description_text": "Hello, when will be the vam pro haptics be avaiable at aliexpress?\r\n\r\nAlso i got the simsonn plus x as anticipation for above vam pro.\r\n\r\nI use atm simruito pedals, in asseto corsa etc the pedals input get recognized.\r\nBut the simmonnmanager says 0 input so i can't calibrate my pedals.\r\n\r\nCan you please sell spare plus x loadcell sensors (throttle,clutch,brake).\r\nI did read from multiple people that simjack pedals work fine, but arent those the same?\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-07-03T14:21:57Z",
+  "updated_at": "2025-07-05T09:32:28Z",
+  "requester_id": 158001886280,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004445200,
+      "body_text": "Hi Wouter van Mensvoort,  Have you already purchased the PlusX controller? If so, please use SIMSONN Manager version 2.0.8. After properly connecting the pedals, unplug and reconnect the USB cable. Then click the \"Offset\" button in the software to perform a factory reset. This should resolve the issue you’re experiencing. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-04T13:44:41Z",
+      "updated_at": "2025-07-04T13:44:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445244,
+      "body_text": "Hi yes i got plus x contoller its bought via the aliexpress store.\r\n\r\nwith offset i get this:\r\n\r\n[cid:e4da7f29-a970-4494-8ecf-a3713b2bedb4]\r\n\r\nSo it register pedals\r\n\r\nBut when i do calibrate it shows:\r\n\r\n[cid:7d6de62d-2e89-4d25-9b97-23ea06755751]\r\n\r\nthere are no inputs there?\r\n________________________________\r\n",
+      "user_id": 158001886280,
+      "created_at": "2025-07-04T13:56:05Z",
+      "updated_at": "2025-07-04T13:56:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445322,
+      "body_text": "Hi Wouter van Mensvoort,  When you press the pedal, is there no data output at all? ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-04T14:09:58Z",
+      "updated_at": "2025-07-04T14:09:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445393,
+      "body_text": "Hi yes,\r\n\r\nIn asseto corsa/iracing calibration it sees and diview aswell\r\n\r\nbut only the simsonn manager software not it keeps saying 0%:\r\n\r\n[cid:03afa36f-5914-4e4f-8908-fbac615df8a1]\r\n________________________________\r\n",
+      "user_id": 158001886280,
+      "created_at": "2025-07-04T14:26:58Z",
+      "updated_at": "2025-07-04T14:26:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447043,
+      "body_text": "Hi Wouter van Mensvoort,  Please unplug the USB and reconnect only the power cable. Check if the LED inside the control box lights up. Alternatively, you can install the remote support tool Todesk (no registration required). After installation, just provide your ID and temporary code, and I can assist you remotely. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-04T23:45:17Z",
+      "updated_at": "2025-07-04T23:45:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447652,
+      "body_text": "Hi, im from the netherlands.\r\nSo there is a time difference.\r\n\r\n\r\ni dont know when its the best time for the remote support?\r\n________________________________\r\n",
+      "user_id": 158001886280,
+      "created_at": "2025-07-05T08:44:04Z",
+      "updated_at": "2025-07-05T08:44:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447654,
+      "body_text": "Hi Wouter van Mensvoort,    Can we do it now?",
+      "user_id": 158000445778,
+      "created_at": "2025-07-05T08:53:05Z",
+      "updated_at": "2025-07-05T08:53:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447661,
+      "body_text": "Hi yes,\r\n\r\nToDesk:\r\ndevice ID:582 973 493\r\nTemporary password:45pewj4f\r\n\r\n________________________________\r\n",
+      "user_id": 158001886280,
+      "created_at": "2025-07-05T09:00:30Z",
+      "updated_at": "2025-07-05T09:00:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

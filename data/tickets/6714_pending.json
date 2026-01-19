@@ -1,0 +1,44 @@
+{
+  "id": 6714,
+  "subject": "Vam pro",
+  "description_text": "Hello just received my vam pro. Configured it through samsonn manager but not work in game( raceroom)\r\n\r\nAny solution\r\nSent from my iPad\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-25T13:23:38Z",
+  "updated_at": "2025-12-08T10:08:46Z",
+  "requester_id": 158007321503,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012942514,
+      "body_text": "Hi Fezan J,  Our current SIMSONN Manager 2.1.2 only supports around ten games. You can try the latest SimHub, which supports over 100 games. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T11:24:52Z",
+      "updated_at": "2025-11-26T11:24:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013197008,
+      "body_text": "So my game isnt compitable. It is listed on the app\r\nSent from my iPad\r\n\r\n> ",
+      "user_id": 158007321503,
+      "created_at": "2025-12-01T14:22:46Z",
+      "updated_at": "2025-12-01T14:22:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014118704,
+      "body_text": "Hi Fezan J,     I will have our engineer test it. This game isn’t commonly used on our side, so it hasn’t been tested before.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-08T10:08:45Z",
+      "updated_at": "2025-12-08T10:08:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

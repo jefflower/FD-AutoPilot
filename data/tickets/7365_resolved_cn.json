@@ -1,0 +1,35 @@
+{
+  "id": 7365,
+  "subject": "刹车踏板上的松动电缆",
+  "description_text": "我今天收到了我订购的 pro x ultra，里面有一根松动的电缆没有插到任何地方。它应该插在哪里？",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-03T23:23:12Z",
+  "updated_at": "2025-12-06T05:36:29Z",
+  "requester_id": 158007523546,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013364310,
+      "body_text": "你好 Brayden Divine，如果你没有购买底板，你可以直接忽略这根电缆，因为它用于底板上的 LED 灯带。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T01:39:31Z",
+      "updated_at": "2025-12-04T01:39:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013367086,
+      "body_text": "好的，谢谢你。2025年12月3日星期三 下午7:39 support @simsonn.com",
+      "user_id": 158007523546,
+      "created_at": "2025-12-04T03:17:44Z",
+      "updated_at": "2025-12-04T03:17:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

@@ -1,0 +1,24 @@
+{
+  "id": 1374,
+  "subject": "long shipping time",
+  "description_text": "﻿\r\n﻿Hi i last week i ordered a pair of plus x pedals and the shipping hasnt updated and for the last 6 or so days its been stuck on “shipping label created” im wondering if you guys haven’t sent it out or if something is causing a delay.\r\ntracking number:9234690383093300086882\r\norder number: #SSN1918\r\nshipping service:usps\r\nthank you for your time\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-09T11:23:01Z",
+  "updated_at": "2025-07-10T06:36:02Z",
+  "requester_id": 158001972814,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004500928,
+      "body_text": "Hi Kaleb Aguilar,  I noticed that the logistics information has finally been updated and I apologize for the delay.    https://t.17track.net/en#nums=9234690383093300086882",
+      "user_id": 158001343601,
+      "created_at": "2025-07-10T06:36:02Z",
+      "updated_at": "2025-07-10T06:36:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

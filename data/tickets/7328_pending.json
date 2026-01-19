@@ -1,0 +1,44 @@
+{
+  "id": 7328,
+  "subject": "SSN3770",
+  "description_text": "Hey,\r\n\r\nOrdered a pedal set last week, till havent received it, any updates on this please?\r\n\r\nSent from Outlook for Android<https://aka.ms/AAb9ysg>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-03T09:55:01Z",
+  "updated_at": "2025-12-04T02:16:59Z",
+  "requester_id": 158007511115,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013317562,
+      "body_text": "Hi Earlando James,    Here is your logistics tracking link.  https://t.17track.net/en#nums=SF6047079990183",
+      "user_id": 158001343601,
+      "created_at": "2025-12-03T09:58:48Z",
+      "updated_at": "2025-12-03T09:58:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013329821,
+      "body_text": "Hi,\r\n\r\nThis doesn't tell me what company is delivering it, I cant seem to know where is it, i will have to cancel my order\r\n\r\nSent from Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158007511115,
+      "created_at": "2025-12-03T15:07:14Z",
+      "updated_at": "2025-12-03T15:07:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013365640,
+      "body_text": "Hi Earlando James,     Hello, this is SF Express International, and the final delivery is usually handled by UPS.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T02:16:59Z",
+      "updated_at": "2025-12-04T02:16:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

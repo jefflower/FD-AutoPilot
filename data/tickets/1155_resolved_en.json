@@ -1,0 +1,95 @@
+{
+  "id": 1155,
+  "subject": "Question about Plus X Controller",
+  "description_text": "Hello, when will the VAM Pro Haptics be available on AliExpress?\n\nAlso, I got the Simsonn Plus X in anticipation of the VAM Pro.\n\nI am currently using Simruito pedals. In Assetto Corsa, etc., the pedal input is recognized.\nBut the Simsonn Manager shows 0 input, so I can't calibrate my pedals.\n\nCan you please sell spare Plus X loadcell sensors (throttle, clutch, brake)?\nI have read from multiple people that Simjack pedals work fine, but aren't they the same?",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-07-03T14:21:57Z",
+  "updated_at": "2025-07-05T09:32:28Z",
+  "requester_id": 158001886280,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004445200,
+      "body_text": "Hi Wouter van Mensvoort, Have you already purchased the PlusX controller? If so, please use SIMSONN Manager version 2.0.8. After properly connecting the pedals, unplug and reconnect the USB cable. Then click the \"Offset\" button in the software to perform a factory reset. This should resolve the issue you’re experiencing.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-04T13:44:41Z",
+      "updated_at": "2025-07-04T13:44:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445244,
+      "body_text": "Hi, yes, I have the Plus X controller, which I bought from the AliExpress store.\n\nWhen I click 'Offset', it seems to register the pedals.\n\nBut when I go to calibrate, it shows no input.",
+      "user_id": 158001886280,
+      "created_at": "2025-07-04T13:56:05Z",
+      "updated_at": "2025-07-04T13:56:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445322,
+      "body_text": "Hi Wouter van Mensvoort, When you press the pedal, is there no data output at all?",
+      "user_id": 158000445778,
+      "created_at": "2025-07-04T14:09:58Z",
+      "updated_at": "2025-07-04T14:09:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445393,
+      "body_text": "Hi, yes.\n\nIn Assetto Corsa/iRacing calibration, it is detected, and in DIView as well.\n\nBut the Simsonn Manager software does not; it keeps showing 0%.",
+      "user_id": 158001886280,
+      "created_at": "2025-07-04T14:26:58Z",
+      "updated_at": "2025-07-04T14:26:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447043,
+      "body_text": "Hi Wouter van Mensvoort, Please unplug the USB and reconnect only the power cable. Check if the LED inside the control box lights up. Alternatively, you can install the remote support tool Todesk (no registration required). After installation, just provide your ID and temporary code, and I can assist you remotely.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-04T23:45:17Z",
+      "updated_at": "2025-07-04T23:45:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447652,
+      "body_text": "Hi, I'm from the Netherlands, so there is a time difference.\n\nI don't know what the best time for remote support would be.",
+      "user_id": 158001886280,
+      "created_at": "2025-07-05T08:44:04Z",
+      "updated_at": "2025-07-05T08:44:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447654,
+      "body_text": "Hi Wouter van Mensvoort, Can we do it now?",
+      "user_id": 158000445778,
+      "created_at": "2025-07-05T08:53:05Z",
+      "updated_at": "2025-07-05T08:53:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447661,
+      "body_text": "Hi, yes.\n\nToDesk:\nDevice ID: 582 973 493\nTemporary password: 45pewj4f",
+      "user_id": 158001886280,
+      "created_at": "2025-07-05T09:00:30Z",
+      "updated_at": "2025-07-05T09:00:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

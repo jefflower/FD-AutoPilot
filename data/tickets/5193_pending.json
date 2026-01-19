@@ -1,0 +1,24 @@
+{
+  "id": 5193,
+  "subject": "VAM linear motor order #SSN2822",
+  "description_text": "Hi,\r\n\r\nI installed my pedals and haptics and am impressed.\r\n\r\nI hadn’t managed my brake cables and pinched one of the VAM cables with the throttle:\r\n\r\n\r\nIt still works and I’ve taped it.  \r\n\r\nAny chance I could get a replacement cable? Can the cable be cut and spliced like a speaker cable?\r\n\r\nAny help would be appreciated.\r\n\r\nThanks, Scott\r\n\r\n\r\nSent from my iPad\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-23T00:58:44Z",
+  "updated_at": "2025-10-23T01:50:57Z",
+  "requester_id": 158006012394,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010917831,
+      "body_text": "Hi Scott Zeeb,    The connection is actually quite simple — the vibration motor has only two wires: a red wire (positive) and a black wire (negative). Just connect them correctly and insulate the joint properly with electrical tape to ensure there’s no short circuit.  If you prefer us to send a replacement power cable, it would be a bit more complicated, as it requires disassembling the housing, resoldering the internal wiring, and reapplying adhesive for sealing, which makes the process more involved.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-23T01:50:57Z",
+      "updated_at": "2025-10-23T01:50:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

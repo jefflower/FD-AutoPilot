@@ -1,0 +1,134 @@
+{
+  "id": 535,
+  "subject": "Simsonn pro x",
+  "description_text": "Good afternoon,\r\n\r\n\r\nI encountered an issue with my Pro X pedals.\r\n\r\nThey are connected via a USB isolator, but the brake pedal sticks\r\n(software-wise) when I press it and then release it quickly.\r\n\r\nPhysically, the pedal returns to its neutral position, but in the software,\r\nit shows as being pressed – sometimes at 10%, sometimes at 70%. It stays\r\nstuck until I press the pedal again.\r\n\r\n\r\nI would like to know how to resolve this problem.\r\n\r\nThank you.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-06-17T15:23:01Z",
+  "updated_at": "2025-12-14T03:56:10Z",
+  "requester_id": 158001621064,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003408155,
+      "body_text": "Hi Leo Leoo,   Please download the latest version 2.0.8 and try to update the firmware manually by following the steps below. If it still doesn't work, I can assist you remotely via Todesk.      After launching the software, go to the settings menu and manually select the firmware-pedals-prox.sfu file to perform the upgrade.     https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-06-18T09:12:52Z",
+      "updated_at": "2025-06-18T09:12:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004427391,
+      "body_text": "Hello again,\r\n\r\nI’ve updated the software from the official website and also attached a\r\ngrounding wire from the pedal box to the PC case. Unfortunately, the issue\r\nstill persists. I would like to ask: what is the proper way to ground the\r\npedal box? Maybe I did something wrong.\r\n\r\nLet’s say 1 out of 20 presses on the brake pedal causes it to become in\r\nrandom percentage “digitally stuck” (it stays engaged in the software even\r\nthough it’s physically released)\r\n\r\n\r\nCould it also be that some sensor needs cleaning? If so, how should I clean\r\nit properly?\r\n\r\n\r\nThank you, and have a great day!\r\n\r\n\r\nСр, 18 июня 2025 г. в 11:13, support@simsonn.com ",
+      "user_id": 158001621064,
+      "created_at": "2025-07-03T13:34:51Z",
+      "updated_at": "2025-07-03T13:34:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445392,
+      "body_text": "Hi Leo Leoo,  Is every pedal getting stuck on a fixed value, or is it just one of them? If all pedals are affected, it could be due to a faulty USB hub or unstable power supply. We recommend connecting the device directly to a USB 3.0 port on the back of your PC, or using a powered USB hub to ensure stable operation.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-04T14:26:27Z",
+      "updated_at": "2025-07-04T14:26:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445607,
+      "body_text": "It’s happening only with the brake pedal, pedals are connected directly to\r\nthe motherboard usb 3.0\r\n\r\nПт, 4 июля 2025 г. в 16:26, support@simsonn.com ",
+      "user_id": 158001621064,
+      "created_at": "2025-07-04T15:18:48Z",
+      "updated_at": "2025-07-04T15:18:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447114,
+      "body_text": "Hi Leo Leoo,  Please swap the brake and throttle pedals and plug them into each other’s port on the control box. This will help me determine whether the issue lies with the control box port or the brake pedal itself, so I can arrange the correct replacement part for you. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-05T00:26:06Z",
+      "updated_at": "2025-07-05T00:26:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012709876,
+      "body_text": "Good day, I’ve upgraded a firmware via simsonn manager, and now:\r\nthrottle works from 0-43%\r\nBrake 0-9%\r\nClutch 0-67%\r\nWith dead zone 0-85.\r\nTried to flash a firmware, and install the previous version - the same\r\nSo using is impossible, and everything I’ve tried not solving a problem\r\nI’ve downloaded SimpedalsConfig via this app I received a message that my\r\nfirmware is incompatible\r\nThank you\r\n\r\nСр, 18 июня 2025 г. в 11:13, support@simsonn.com ",
+      "user_id": 158001621064,
+      "created_at": "2025-11-21T14:27:19Z",
+      "updated_at": "2025-11-21T14:27:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012714176,
+      "body_text": "And also I’ve checked that raw position of most pedals with MINUS, for\r\nexample brake pedal has raw (-32760) with 0% input, and 3500 with max input\r\n\r\nПт, 21 нояб. 2025 г. в 15:26, Leo Leoo <kozakov88@gmail.com>:\r\n\r\n> Good day, I’ve upgraded a firmware via simsonn manager, and now:\r\n> throttle works from 0-43%\r\n> Brake 0-9%\r\n> Clutch 0-67%\r\n> With dead zone 0-85.\r\n> Tried to flash a firmware, and install the previous version - the same\r\n> So using is impossible, and everything I’ve tried not solving a problem\r\n> I’ve downloaded SimpedalsConfig via this app I received a message that my\r\n> firmware is incompatible\r\n> Thank you\r\n>\r\n> Ср, 18 июня 2025 г. в 11:13, support@simsonn.com ",
+      "user_id": 158001621064,
+      "created_at": "2025-11-21T15:27:59Z",
+      "updated_at": "2025-11-21T15:27:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012859370,
+      "body_text": "Hi Leo Leoo,    SimpedalsConfig is an older version. For ProX pedals, please use SIMSONN Manager 2.1.2.  You can update the firmware to CPU1: 2.0.5 and CPU2: 2.0.4, then use the offset function in the software to zero the original signal of the white pedal, and recalibrate the pedals.  If you experience disconnections or lag, please refer to the solution provided below.         https://www.simsonn.com/pages/download     If this happens, it indicates that the computer’s grounding is not reliable, possibly because a three-prong plug was not used with a three-prong wall outlet. You can refer to the post below: connect the computer case to the stand, and connect the control box to the metal screws on the pedals. This should resolve the disconnection issue.     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-11-25T05:15:50Z",
+      "updated_at": "2025-11-25T05:15:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014121604,
+      "body_text": "Good day once again\r\n\r\nI would like to ask, is it possible to get an old version of firmware for\r\nmy pro x pedals? Let’s say versions that have been 1 year ago, or more?\r\n\r\nBecause I didn’t have any problems with pedals from the box. Everything\r\nworked well, I had 0 problems.\r\n\r\nBut now, unfortunately, the pedals firmware with each update are getting\r\nworse and worse, and getting problems during racing\r\n\r\nMy pedals are grounded , working through the usb isolator, but just after\r\nI’ve made first update of the firmware till now (about 5 updates) I have\r\nmore and more problems\r\n\r\nmy raw values in max pressure of pedals after calibration, offset\r\ncalibration are:\r\nThrottle minus -2946 (about 45% show the app in calibration window)\r\nBrake minus -30000 (about 10%)\r\nClutch +833 (50%)\r\n\r\nAs I can see the sensors have a negative values in zero position. After\r\ncalibration, offset, the software adjusts every pedal to work as 100%, but\r\nthe pedals are becoming imprecise at all because of it, and it’s impossible\r\nto adjust manually by the settings of pedals.\r\nBecause it takes let’s say 10% from the coming value from the brake sensor\r\nand extends it by software to 100% which is ridiculous and making the pedal\r\nimprecise at all\r\nEverything you have written before to solve this problem I’ve tried, but\r\nthe problem still remains\r\n\r\nI attached the photo of the values of pedals in 100% physical positions\r\nI’m using the latest software and firmware\r\n\r\nThank you. Have a good day!\r\nВт, 25 нояб. 2025 г. в 06:16, support@simsonn.com ",
+      "user_id": 158001621064,
+      "created_at": "2025-12-08T11:50:48Z",
+      "updated_at": "2025-12-08T11:50:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014314908,
+      "body_text": "Hi Leo Leoo,  You can use the Offset function to zero the white signal of the pedals. Please try this first to see the effect. This is just the raw signal of the pedals at their initial position. The actual signal used by the game is the calibrated blue signal. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T10:42:32Z",
+      "updated_at": "2025-12-11T10:42:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014335454,
+      "body_text": "I’ve made this photo after offset calibration))\r\n\r\nAfter offset and calibration pedals work well (if we are talking about\r\n0-100%\r\nBut because the software takes a raw values (which are small, I wrote it\r\nearlier ) and extends it by software.\r\nBut my main problem is that the precision of pedals (especially throttle)\r\nare very poor, and It’s impossible to adjust by software graphics.\r\nEverything I do in the software my throttle has zero precise, last 20% of\r\npedal has 50% of throttle by software, so during racing I control 50% of\r\nengine revs just by lets say 1 centimetre of physical position of throttle\r\nI’ve tried all the positions set by myself in the software, and everything\r\nI do, still the last 20% of throttle works like this\r\n\r\nSo the main question for you, is it possible to get an old firmware for the\r\npedals? At least firmware of 2024\r\nThank you\r\n\r\nЧт, 11 дек. 2025 г. в 11:42, support@simsonn.com ",
+      "user_id": 158001621064,
+      "created_at": "2025-12-11T16:24:06Z",
+      "updated_at": "2025-12-11T16:24:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014472482,
+      "body_text": "Hi Leo Leoo,  Could you record a video to show this? Also, the throttle’s accuracy is related to its maximum travel. Please send the video to me via Google Drive and make sure the viewing permissions are set. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-14T03:56:09Z",
+      "updated_at": "2025-12-14T03:56:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

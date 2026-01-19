@@ -1,0 +1,24 @@
+{
+  "id": 8289,
+  "subject": "Ordr #SSN4321",
+  "description_text": "Hello,\r\n\r\nI got information that pedal set is being sent from Germany. but there was\r\nno pedals in stock and the new batch came on Tuesday 11.12.2025\r\n\r\nI placed my order on 2.12.2025 with express shipping 5-7 days...\r\n\r\nPlease check whether the pedals were sent from Germany to my address in\r\nPoland and share tracking number or give me information where are they.\r\n\r\nThank you.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-15T12:03:50Z",
+  "updated_at": "2025-12-22T12:00:17Z",
+  "requester_id": 158007693916,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014639235,
+      "body_text": "Hello,\r\n\r\nI got information that pedal set is being sent from Germany. but there was\r\nno pedals in stock and the new batch came on Tuesday 11.12.2025\r\n\r\nI placed my order on 2.12.2025 with express shipping 5-7 days...\r\n\r\nPlease check whether the pedals were sent from Germany to my address in\r\nPoland and share tracking number or give me information where are they.\r\n\r\nThank you.\r\n\r\n",
+      "user_id": 158007693916,
+      "created_at": "2025-12-17T16:20:16Z",
+      "updated_at": "2025-12-17T16:20:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "id": 2378,
+  "subject": "JSEGH2167266568YQ Missing Order",
+  "description_text": "JSEGH2167266568YQ\r\n\r\nPlease help me understand what is going on with my order.\r\nAre you able to get it delivered to my address within the next week?\r\n2513 N Alafaya Trail, APT 24. Orlando, FL, 32826 \r\n\r\nOr can we initiate the return process.\r\nI need feedback as soon as possible. I haven’t heard from anyone in over 24 hours.\r\n\r\nThank you,\r\n\r\nMarcos.\r\nSent from my iPhone\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-06T13:51:00Z",
+  "updated_at": "2025-08-11T10:44:23Z",
+  "requester_id": 158002282328,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006401050,
+      "body_text": "Hi Marcos Mendez,  Our operations team will assist in tracking the shipping status and provide you with timely updates. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-06T13:52:32Z",
+      "updated_at": "2025-08-06T13:52:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006446225,
+      "body_text": "Hi Marcos Mendez,     Sorry, due to an incorrect address you provided (2513 was entered as 2413), the delivery person was unable to deliver the package and left it in a parcel locker. The current situation is that the package has been returned due to exceeding the pickup deadline. You can first contact USPS to provide the correct address. If redelivery is not possible, we will explore other options for you.  Contact  USPS: 1-800-275-8777 / 1-800-222-1811",
+      "user_id": 158001343601,
+      "created_at": "2025-08-07T03:53:27Z",
+      "updated_at": "2025-08-07T03:53:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006488047,
+      "body_text": "I haven’t gotten any emails from anyone after this one yet.\r\n\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158002282328,
+      "created_at": "2025-08-07T13:54:28Z",
+      "updated_at": "2025-08-07T13:54:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006688216,
+      "body_text": "Hi Marcos Mendez,    Didn't you receive our email?",
+      "user_id": 158001343601,
+      "created_at": "2025-08-11T10:44:23Z",
+      "updated_at": "2025-08-11T10:44:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

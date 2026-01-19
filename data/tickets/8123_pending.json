@@ -1,0 +1,194 @@
+{
+  "id": 8123,
+  "subject": "Plus X pedals",
+  "description_text": "Hello!\r\n I have your new plus X pedals. I have used them for a total of maybe two\r\nhours . Today I went to use them this time with the haptics motors and on\r\nthe simsonn app it shows they are connected.but when I went to play on Le\r\nMans ultimate or iracing it says telemetry not working and the pedals don’t\r\nwork at all. So I tried resetting the app and re calibrating and they still\r\ndon’t work on either game. I disconnected all the plug ins and plugged them\r\nall back in and still nothing. I then tried to unplug just the haptics\r\nmotors and play without them and  it still shows connected on the simsonn\r\napp but doesn’t work on either game. I am at a loss and need some help\r\ntrouble shooting to get them to work especially with the haptics as well.\r\n\r\nThank you\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-13T03:49:44Z",
+  "updated_at": "2025-12-22T15:49:36Z",
+  "requester_id": 158007524755,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013363926,
+      "body_text": "Hi Matthew Kirkendall,     We will ship your items separately because their packaging cannot be combined. Additionally, the processing of your order has been affected by a delay in the latest restocking at our warehouse. We are expediting your shipment, and we kindly ask for a little more patience. Thank you very much for your understanding and support.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T01:23:47Z",
+      "updated_at": "2025-12-04T01:23:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013363971,
+      "body_text": "No problem, thank you for the update! I was curious how long the delay will\r\nbe until they’re shipped out?\r\n\r\nOn Wed, Dec 3, 2025 at 5:23 PM service@simsonn.com ",
+      "user_id": 158007524755,
+      "created_at": "2025-12-04T01:25:46Z",
+      "updated_at": "2025-12-04T01:25:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013364492,
+      "body_text": "Hi Matthew Kirkendall,    This is another link to your package.   https://www.fedex.com/fedextrack/?trknbr=886667182018&trkqual=12029~886667182018~FDEG",
+      "user_id": 158001343601,
+      "created_at": "2025-12-04T01:46:59Z",
+      "updated_at": "2025-12-04T01:46:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013365024,
+      "body_text": "Awesome, thank you so much!\r\n\r\nOn Wed, Dec 3, 2025 at 5:47 PM service@simsonn.com ",
+      "user_id": 158007524755,
+      "created_at": "2025-12-04T02:01:14Z",
+      "updated_at": "2025-12-04T02:01:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013415477,
+      "body_text": "Hello! I was curious what the delay time for shipping the pedals would be?\r\nAlso I was curious if I’d be able to do overnight shipping ?\r\n\r\nOn Wed, Dec 3, 2025 at 5:47 PM service@simsonn.com ",
+      "user_id": 158007524755,
+      "created_at": "2025-12-04T20:12:23Z",
+      "updated_at": "2025-12-04T20:12:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013476985,
+      "body_text": "Hi Matthew Kirkendall,    Your pedals have been shipped. Here's your tracking link. They should arrive within the next couple of days.  https://www.fedex.com/fedextrack/?trknbr=886667182018&trkqual=12029~886667182018~FDEG ",
+      "user_id": 158001343601,
+      "created_at": "2025-12-05T09:40:53Z",
+      "updated_at": "2025-12-05T09:40:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014432315,
+      "body_text": "Hi Matthew Kirkendall,  Could you please confirm whether everything works normally when testing in SIMSONN Manager? If possible, please provide a test video and send it to us via Google Drive, with access permissions enabled. The video should include both the pedal travel test and the haptic feedback test. Haptic feedback can also be tested using SimHub. Additionally, we recommend following the troubleshooting steps to check for any grounding issues.      If this happens, it indicates that the computer’s grounding is not reliable, possibly because a three-prong plug was not used with a three-prong wall outlet. You can refer to the post below: connect the computer case to the stand, and connect the control box to the metal screws on the pedals. This should resolve the disconnection issue.  https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-12-13T05:34:21Z",
+      "updated_at": "2025-12-13T05:34:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014471908,
+      "body_text": "ID 为 7372 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-14T02:57:39Z",
+      "updated_at": "2025-12-14T02:57:39Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014471909,
+      "body_text": "合并来自工单7372  \n      主题: Order Number #SSN3863  \n      描述:  Hello,  \n My name is Matthew Kirkendall. I ordered the new plus X pedals with haptics . The haptics came in one box but I have not received the box with the pedals at all. I also only received the tracking number just for the box with the haptics. I was curious if the pedals were shipped out? \n \n   \n Thank you so much! ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-14T02:57:39Z",
+      "updated_at": "2025-12-14T02:57:39Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014471914,
+      "body_text": "ID 为 8128 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-14T02:58:11Z",
+      "updated_at": "2025-12-14T02:58:11Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014471915,
+      "body_text": "合并来自工单8128  \n      主题: 4 items shared with you  \n      描述:   \n \n Matthew Kirkendall shared 4 items \n\n \n  \n \n \n Matthew Kirkendall (mattkirk2509@gmail.com) has shared the following items: \n attached are the videos of me trying to do the tests. I also uploaded a picture of the upload settings being \" default prox\" even though I have plus x pedals. Is this normal or do I need to adjust something on that end as well? i was also curious where i would put the ground exactly on the throttle pedal? i figured i would use the grounding wire that came with my shipment. \n \n\n\n\n\n  \nIMG_0598.MOV\n  \n  \nIMG_0600.MOV\n  \n  \nIMG_0601.HEIC\n  \n  \nIMG_0596.MOV\n  \n\n\n \n \n  \n This email grants access to all of these items without logging in. Only forward it to people you trust. \n \n \n \n \n Do these items look suspicious? Block sender\n   Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA  You have received this email because mattkirk2509@gmail.com shared files or folders located in Google Drive with you.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-14T02:58:11Z",
+      "updated_at": "2025-12-14T02:58:11Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014471924,
+      "body_text": "Hi Matthew Kirkendall,  Please adjust the viewing permissions for the video you provided, as I am currently unable to access it. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-14T02:59:10Z",
+      "updated_at": "2025-12-14T02:59:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014485599,
+      "body_text": "Oh sorry about that I will go figure out how to change that right now\r\n\r\nOn Sat, Dec 13, 2025 at 6:59 PM service@simsonn.com ",
+      "user_id": 158007524755,
+      "created_at": "2025-12-14T15:14:01Z",
+      "updated_at": "2025-12-14T15:14:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014485669,
+      "body_text": "The permissions should be good now for you to access it\r\n\r\nOn Sun, Dec 14, 2025 at 7:13 AM Matthew Kirkendall <mattkirk2509@gmail.com>\r\nwrote:\r\n\r\n> Oh sorry about that I will go figure out how to change that right now\r\n>\r\n> On Sat, Dec 13, 2025 at 6:59 PM service@simsonn.com ",
+      "user_id": 158007524755,
+      "created_at": "2025-12-14T15:18:35Z",
+      "updated_at": "2025-12-14T15:18:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014621637,
+      "body_text": "Hi Matthew Kirkendall,  Launch the latest version of SIMSONN Manager 2.1.2. On the “Plus X” control unit, press and hold the “Upgrade” button. While holding the button, unplug the USB cable from the PC and then plug it back in. The software should detect the device entering “SIMSONN Flasher update mode”. In the software go to: Settings → Update → Manual Firmware Update. In the file selector choose: pedals‑firmware → pedals‑plusx.sfu. Click “Start Update” and wait until the firmware is completely written. During this process do not disconnect the USB or close the application. Once the update is finished (you’ll get a success prompt or the unit will reboot), ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T10:19:31Z",
+      "updated_at": "2025-12-17T10:19:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014730354,
+      "body_text": "Okay I will absolutely try this!\r\n\r\nOn Wed, Dec 17, 2025 at 2:19 AM service@simsonn.com ",
+      "user_id": 158007524755,
+      "created_at": "2025-12-18T23:16:19Z",
+      "updated_at": "2025-12-18T23:16:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014843819,
+      "body_text": "Hello!\r\nI tried this and the pedals are still having issues connecting to games. It\r\nshows up on the Simsonn manager app as connected and calibrated but when I\r\ntry to play any game they are not working at all no response whatsoever\r\n\r\nOn Wed, Dec 17, 2025 at 2:19 AM service@simsonn.com ",
+      "user_id": 158007524755,
+      "created_at": "2025-12-21T16:20:33Z",
+      "updated_at": "2025-12-21T16:20:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014893397,
+      "body_text": "Hi Matthew Kirkendall,    Please record a video of the pedal input test in the software and share it with me via Google Drive. Kindly set the sharing permission to view-only. Thank you for your cooperation.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-22T15:49:36Z",
+      "updated_at": "2025-12-22T15:49:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

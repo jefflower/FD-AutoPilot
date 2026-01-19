@@ -1,0 +1,64 @@
+{
+  "id": 608,
+  "subject": "Order #SSN1732",
+  "description_text": "Hello, I emailed yesterday about not receiving my order, but I cannot get\r\naccess to the ticket system to view my ticket.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-06-19T17:43:07Z",
+  "updated_at": "2025-06-23T10:40:26Z",
+  "requester_id": 158001647598,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003552407,
+      "body_text": "I do not have access to freshdesk\r\n\r\nOn Wed, Jun 18, 2025 at 9:59 AM service@simsonn.com ",
+      "user_id": 158001647598,
+      "created_at": "2025-06-19T15:07:44Z",
+      "updated_at": "2025-06-19T15:07:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003679526,
+      "body_text": "ID 为 579 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T01:43:07Z",
+      "updated_at": "2025-06-22T01:43:07Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158003679527,
+      "body_text": "合并来自工单579  \n      主题: ORDER #SSN1732  \n      描述:  Hello, I checked the tracking info and UPS says “Shipment Cancelled” do I have the correct tracking number?",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T01:43:07Z",
+      "updated_at": "2025-06-22T01:43:07Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158003679539,
+      "body_text": "Hi Evan Halpaus,  Please don’t worry — we’ve already informed our operations team to look into your order. I noticed that both tracking numbers currently show no shipping activity. We will verify the details first thing on Monday and update you accordingly, in case the tracking numbers were entered incorrectly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T01:45:07Z",
+      "updated_at": "2025-06-22T01:45:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003685560,
+      "body_text": "Hi Evan Halpaus,    You can use this link for logistics tracking, the parcel has arrived in the US, Fedex hasn't picked it up yet, it will be coming over to pick it up today and there will be a logistics update tomorrow. The explanation from the logistics provider is that the US has had a lot of customs checks and riots recently, which will have an impact on the timeframe.  https://t.17track.net/en#nums=882053444109",
+      "user_id": 158001343601,
+      "created_at": "2025-06-23T10:40:26Z",
+      "updated_at": "2025-06-23T10:40:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

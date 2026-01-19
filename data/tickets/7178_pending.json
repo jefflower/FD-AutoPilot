@@ -1,0 +1,84 @@
+{
+  "id": 7178,
+  "subject": "Order from Argentina.",
+  "description_text": "Hi! I wanted to order but want to know why now prices are on GBP instead of\r\nUSD as before. And wich shipping carrier will be used to ship to Argentina?\r\nI prefer DHL honestly.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-01T15:52:24Z",
+  "updated_at": "2025-12-05T10:14:06Z",
+  "requester_id": 158002181968,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013375810,
+      "body_text": "Hi Mateo Kot,  We can ship via DHL. The prices shown in GBP or USD are for display purposes only. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T08:01:10Z",
+      "updated_at": "2025-12-04T08:01:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013387463,
+      "body_text": "Should I select something to use DHL or just point in a note?\r\n\r\nEl jue, 4 dic 2025 a la(s) 5:01 a.m., service@simsonn.com (\r\nservice@simsonn.com) escribió:\r\n\r\n> Hi Mateo Kot,\r\n>\r\n> We can ship via DHL. The prices shown in GBP or USD are for display\r\n> purposes only.\r\n>\r\n>\r\n> ",
+      "user_id": 158002181968,
+      "created_at": "2025-12-04T12:21:41Z",
+      "updated_at": "2025-12-04T12:21:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013387664,
+      "body_text": "Hi Mateo Kot,    You need to select express delivery.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-04T12:27:11Z",
+      "updated_at": "2025-12-04T12:27:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013388015,
+      "body_text": "[image: image.png]\r\nwhy this dont give me free shipping as website states? is more than 400usd.\r\nalso in that case DHL will be used?\r\n\r\nEl jue, 4 dic 2025 a la(s) 9:27 a.m., service@simsonn.com (\r\nservice@simsonn.com) escribió:\r\n\r\n> Hi Mateo Kot,\r\n>\r\n> You need to select express delivery.\r\n>\r\n> ",
+      "user_id": 158002181968,
+      "created_at": "2025-12-04T12:37:11Z",
+      "updated_at": "2025-12-04T12:37:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013388086,
+      "body_text": "Hi Mateo Kot,    We regret that we are unable to offer free shipping to certain regions where delivery costs are exceptionally high. However, we can upgrade your standard shipping to DHL.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-04T12:39:18Z",
+      "updated_at": "2025-12-04T12:39:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013390117,
+      "body_text": "Ok, let me think about ordering with or without the haptics and I will\r\ncontact you again.\r\n\r\nThanks!\r\n\r\nEl jue, 4 dic 2025 a la(s) 9:39 a.m., service@simsonn.com (\r\nservice@simsonn.com) escribió:\r\n\r\n> Hi Mateo Kot,\r\n>\r\n> We regret that we are unable to offer free shipping to certain regions\r\n> where delivery costs are exceptionally high. However, we can upgrade your\r\n> standard shipping to DHL.\r\n>\r\n>\r\n>\r\n> ",
+      "user_id": 158002181968,
+      "created_at": "2025-12-04T13:33:47Z",
+      "updated_at": "2025-12-04T13:33:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013477897,
+      "body_text": "​Okay",
+      "user_id": 158001343601,
+      "created_at": "2025-12-05T10:14:05Z",
+      "updated_at": "2025-12-05T10:14:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

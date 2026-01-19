@@ -1,0 +1,134 @@
+{
+  "id": 9163,
+  "subject": "VAM Pro Help",
+  "description_text": "I just got the 2 pack of the VAM Pro's. Installed on throttle and brake.\r\nThe software sees them but they do nothing. SimHub is the same way. I have\r\ntried different usb ports, cables, power outlets. Everything looks perfect\r\nbut i have nothing. Ive had the pedals for a year now and they work\r\nperfect. Any help?\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-25T17:35:19Z",
+  "updated_at": "2026-01-11T01:09:55Z",
+  "requester_id": 158008702347,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015147406,
+      "body_text": "Hi Gerry Turner,  Launch the latest version of SIMSONN Manager 2.1.2. On the “Plus X” control unit, press and hold the “Upgrade” button. While holding the button, unplug the USB cable from the PC and then plug it back in. The software should detect the device entering “SIMSONN Flasher update mode”. In the software go to: Settings → Update → Manual Firmware Update. In the file selector choose: pedals‑firmware → pedals‑plusx.sfu. Click “Start Update” and wait until the firmware is completely written. During this process do not disconnect the USB or close the application. Once the update is finished (you’ll get a success prompt or the unit will reboot), unplug and re‑plug the USB then test the pedal device to confirm everything works correctly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T03:21:47Z",
+      "updated_at": "2025-12-28T03:21:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015266496,
+      "body_text": "I have tried this 4 times now and I am getting the same results. Simsonn\r\nsoftware and simhub show them but when I click test or vibrate, I get\r\nnothing\r\n\r\nOn Sat, Dec 27, 2025 at 10:21 PM support@simsonn.com ",
+      "user_id": 158008702347,
+      "created_at": "2025-12-30T17:18:33Z",
+      "updated_at": "2025-12-30T17:18:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015289878,
+      "body_text": "Hi Gerry Turner,     After a successful update, the CPU2 version should be 2.0.4. Based on the current situation, the update process may not have completed correctly. Please try performing the update again. If the progress bar cannot complete normally from 0% to 100%, it is likely that the mainboard is faulty. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T01:34:31Z",
+      "updated_at": "2025-12-31T01:34:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015292198,
+      "body_text": "no matter how many times I flash it, nothing changes. I tried installing\r\nthe plusx-old.sfu and i get CPU2 to v2.0.0 (see picture). as soon as i\r\nupgrade to 2.0.5 the cpu2 goes to not connected. Anything else i can try?\r\nAgain, my pedals work 100% perfect, its only the Vam pro's not working.\r\nThank you!\r\n\r\nOn Tue, Dec 30, 2025 at 8:34 PM support@simsonn.com ",
+      "user_id": 158008702347,
+      "created_at": "2025-12-31T03:58:47Z",
+      "updated_at": "2025-12-31T03:58:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015299888,
+      "body_text": "Hi Gerry Turner,  Please install ToDesk so I can assist you with a remote update and testing now. If the issue still cannot be resolved, we can arrange to send you a new control box. Kindly provide your ToDesk ID and temporary access code. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T07:50:25Z",
+      "updated_at": "2025-12-31T07:50:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015310954,
+      "body_text": "here is the todesk info. When i booted up my computer, the CPU2 version is\r\ngone? last night it had the image that i sent you\r\n\r\nOn Wed, Dec 31, 2025 at 2:50 AM support@simsonn.com ",
+      "user_id": 158008702347,
+      "created_at": "2025-12-31T12:15:52Z",
+      "updated_at": "2025-12-31T12:15:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015378629,
+      "body_text": "Hi Gerry Turner,  I can assist you remotely today. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-02T04:46:28Z",
+      "updated_at": "2026-01-02T04:46:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015384253,
+      "body_text": "Tell me what you need from me?\r\n\r\nSince our last email, the CPU2 is showing nothing again. I did not flash\r\nit. It somehow deleted itself\r\n\r\nOn Thu, Jan 1, 2026 at 11:46 PM support@simsonn.com ",
+      "user_id": 158008702347,
+      "created_at": "2026-01-02T09:11:43Z",
+      "updated_at": "2026-01-02T09:11:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015760727,
+      "body_text": "Well I’m not sure what else I’m supposed to do? I get a single response\r\nevery few days a then nothing. I ordered another control box to see if that\r\nsolves my problem. I doubt id ever see a reimbursement for that?\r\n\r\n",
+      "user_id": 158008702347,
+      "created_at": "2026-01-05T17:44:25Z",
+      "updated_at": "2026-01-05T17:44:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016158158,
+      "body_text": "Hi Gerry Turner,  Due to the high volume of emails during the peak season, our response was delayed—thank you for your understanding. Once you receive the control box, we will refund the cost of the control box to you. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T15:33:24Z",
+      "updated_at": "2026-01-07T15:33:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016751088,
+      "body_text": "Got my new control box. Everything works as it should. Thank you for your\r\nhelp\r\n\r\nOn Wed, Jan 7, 2026 at 10:33 AM support@simsonn.com ",
+      "user_id": 158008702347,
+      "created_at": "2026-01-10T21:47:48Z",
+      "updated_at": "2026-01-10T21:47:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016761430,
+      "body_text": "Hi Gerry Turner,  Please provide your PayPal account and the refund amount, and we will refund the cost of the controller purchased separately. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T01:09:51Z",
+      "updated_at": "2026-01-11T01:09:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

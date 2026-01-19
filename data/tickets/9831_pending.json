@@ -1,0 +1,24 @@
+{
+  "id": 9831,
+  "subject": "EU shipping question",
+  "description_text": "Hello,\r\nI have question about, where do you ship From to Hungary (EU country). I have to pay customs duty?\r\nThank you!Norbert Lorinczi\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-02T20:35:20Z",
+  "updated_at": "2026-01-07T10:25:43Z",
+  "requester_id": 158008879182,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016110093,
+      "body_text": "Hi Norbert Lőrinczi,     It depends on which product you ordered. If the item is in stock at our Germany warehouse, shipments within the EU usually do not require customs duties. If it is shipped from China, customs duties may apply.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T10:25:36Z",
+      "updated_at": "2026-01-07T10:25:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

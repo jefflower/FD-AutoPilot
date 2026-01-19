@@ -1,0 +1,525 @@
+{
+  "id": 899,
+  "subject": "Issues with Pro X pedals",
+  "description_text": "Hello,\nI hope this email finds you well. \n\nI’ve recently gotten a set of your Pro X pedals, and while the feel and build quality is amazing, I’m having some severe technical issues getting them setup.\n\nI’ve attached a video of this issue to this email. However what’s happening is the Throttle pedal is stuck at 50% input and the brake stuck at 90% input, giving me very little range to operate the pedals in. \n\nDuring calibration the brake will get stuck at 50% input and get incredibly shaky and inaccurate in its readings, I have tried using the grounding wire but the issue still persists. \n\nIf I push hard on the underside of the throttle pedals I can reduce the percentage that it is stuck at, however it returns to ‘normal’ when I release this pressure.\n\nI have tried updating the firmware however it didn’t help at all.\n\nI am hoping you can advise what this issue may be caused by, or if needed help to organize a replacement product and collect this potentially faulty one. \n\nThank you very much, please let me know if there is any further information you require.\n\nDaniel Chadwick",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-06-27T06:08:52Z",
+  "updated_at": "2025-07-31T06:24:13Z",
+  "requester_id": 158001831070,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004119367,
+      "body_text": "Hi Daniel Chadwick,  Could you please take a photo of the side of the brake pedal? I'd like to check the preload on the damper and the position of the limit nut to see if there's any installation or adjustment issue.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-27T06:54:23Z",
+      "updated_at": "2025-06-27T06:54:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004139042,
+      "body_text": "Hello,\n\nThank you for the prompt response,\nPlease see the side photos of the brake pedals attached.\n\nThank you,\nDaniel\n\n\nDaniel Chadwick",
+      "user_id": 158001831070,
+      "created_at": "2025-06-27T07:50:33Z",
+      "updated_at": "2025-06-27T07:50:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004205417,
+      "body_text": "Hi Daniel Chadwick,      Do you have time to install Todesk now? It doesn’t require registration — just provide the ID and temporary password, and I can remotely help you check the issue.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-27T11:17:54Z",
+      "updated_at": "2025-06-27T11:17:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004213935,
+      "body_text": "Hi,\n\nI’m not comfortable installing a program like that on my computer sorry.\n\nI have already tried adjusting the load cell pressure on the bottom, I’ve tried grounding the control box to my sim rig and I have tried updating firmware, but nothing seems to fix this issue. \n\nThe pedals are registering inputs incorrectly and seem to have faulty sensors as the brake inputs will jump from 10% to 100% and then back down even if I don’t touch the pedal.\n\nThe video I attached to my first email shows this.\n\nIs there another way you can help without this “ToDesk’ program?\n\nThank you\nDaniel",
+      "user_id": 158001831070,
+      "created_at": "2025-06-27T12:09:18Z",
+      "updated_at": "2025-06-27T12:09:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004214843,
+      "body_text": "Hi Daniel Chadwick,   Did you download version 2.0.8?",
+      "user_id": 158000445778,
+      "created_at": "2025-06-27T14:43:03Z",
+      "updated_at": "2025-06-27T14:43:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004218783,
+      "body_text": "Hi,\n\nYes i downloaded version 2.0.8. I tried an older version too and still had these issues.\n\nDaniel Chadwick",
+      "user_id": 158001831070,
+      "created_at": "2025-06-28T01:47:02Z",
+      "updated_at": "2025-06-28T01:47:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004219139,
+      "body_text": "Hi Daniel Chadwick,  In the “Settings – Update” section, click “Manual Firmware Update,” then navigate to the pedals-firmware folder → pedals folder → and select the prox.sfu file to update. After the update, please test the device again.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-28T05:45:09Z",
+      "updated_at": "2025-06-28T05:45:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004219377,
+      "body_text": "Hello,\n\nI tried this just now. However the issues have gotten even worse, no matter how I try calibrating the pedals they are still stuck at 50-90% input constantly.\n\nI even tried u installing and reinstalling 2.0.8 however this hasn’t fixed anything.\n\nThank you,\nDaniel",
+      "user_id": 158001831070,
+      "created_at": "2025-06-28T08:24:26Z",
+      "updated_at": "2025-06-28T08:24:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004219389,
+      "body_text": "Hi Daniel Chadwick,    I recommend using remote assistance, as back-and-forth communication can be inefficient and may significantly delay problem resolution.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-28T08:32:08Z",
+      "updated_at": "2025-06-28T08:32:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004219576,
+      "body_text": "Hello,\n\nI understand that, however I do not feel comfortable installing an app like that onto my computer. Due to the severe privacy breach of allowing someone access to my system.\n\nI have shown in the videos and photos what the issue is and what I have tried doing. All accessing my system does is allow you to see all of this again.\n\nIf you would like I can take another video of the problem and send it, however I don’t want someone accessing my computer.\n\nThank you,\nDaniel",
+      "user_id": 158001831070,
+      "created_at": "2025-06-28T09:22:10Z",
+      "updated_at": "2025-06-28T09:22:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004219598,
+      "body_text": "Hi Daniel Chadwick,    Did the pedal suddenly become like this? What was it like when you first received it? Was this caused by hardware adjustments, or could it be due to something else?",
+      "user_id": 158000445778,
+      "created_at": "2025-06-28T09:26:19Z",
+      "updated_at": "2025-06-28T09:26:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004219943,
+      "body_text": "Hi, \n\nIt was like this when I received it. I just opened the box and began setting the pedals up, and when I got to the calibration stage I noticed the problem. \n\nI made no adjustments to any aspect of the pedals before I ran into this issue. I into tried changing springs and dampeners and other things AFTER I already had the issue.\n\nSo these issues were happening to the pedals as they had been shipped. Which is why I think it is an issue with the sensors/chip inside the pedals.\n\nThank you,\nDaniel",
+      "user_id": 158001831070,
+      "created_at": "2025-06-28T11:10:55Z",
+      "updated_at": "2025-06-28T11:10:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004219955,
+      "body_text": "Hi Daniel Chadwick,    This Monday, we will send you a replacement ProX Ultra control box, which should resolve the issue you’re experiencing. It also supports the VAM Pro motor.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-28T11:14:11Z",
+      "updated_at": "2025-06-28T11:14:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004219960,
+      "body_text": "Hi Daniel Chadwick,    Please provide me with your order number and shipping address. This is the only way we can resolve the issue.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-28T11:15:26Z",
+      "updated_at": "2025-06-28T11:15:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004220033,
+      "body_text": "Hi, \n\nThese were purchased for me as a gift from a friend and I don’t have the order number. I tried getting him to find it but he can’t find it in his emails.\n\nThe address is 20 Yirawala Street, Ngunnawal, 2913, ACT, Australia\n\nThank you for this, I really appreciate the help.\nDaniel",
+      "user_id": 158001831070,
+      "created_at": "2025-06-28T11:49:27Z",
+      "updated_at": "2025-06-28T11:49:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004362954,
+      "body_text": "Hi Daniel Chadwick,  Please let me know which platform you purchased it from and we will resend it for you, please don't worry .",
+      "user_id": 158001343601,
+      "created_at": "2025-07-02T02:43:22Z",
+      "updated_at": "2025-07-02T02:43:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004363067,
+      "body_text": "Hi,\n\nI believe they were bought from AliExpress.\n\nThank you,\nDaniel",
+      "user_id": 158001831070,
+      "created_at": "2025-07-02T03:35:06Z",
+      "updated_at": "2025-07-02T03:35:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004363127,
+      "body_text": "Hi Daniel Chadwick,  We've released updated versions of the software and firmware in the past couple of days. I’ll send them to you soon so you can perform an update and run some tests. At this stage, we’re not yet certain whether the issue is with the controller or something else.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T04:02:58Z",
+      "updated_at": "2025-07-02T04:02:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004363238,
+      "body_text": "Hi, \n\nSounds good, I’m thinking it’s a hardware issue, because if I press on the metal sensor on the bottom of the throttle, the firmware starts showing a lower reading. So it’s almost as if the sensors are compressed too much? And by pushing on this I’m lowering that compression temporarily.\n\nI’m of course happy to test that newer software too.\n\nThank you,\nDaniel",
+      "user_id": 158001831070,
+      "created_at": "2025-07-02T05:13:27Z",
+      "updated_at": "2025-07-02T05:13:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004449599,
+      "body_text": "Hi, \n\nIs there any update on this?\n\nThe pedals still do not work, I cannot calibrate them at all, I have tried uninstalling and reinstalling the software but nothing has fixed this. Not even grounding the control box has changed anything. \n\nThanks,\nDaniel",
+      "user_id": 158001831070,
+      "created_at": "2025-07-06T08:16:19Z",
+      "updated_at": "2025-07-06T08:16:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004455163,
+      "body_text": "Hi Daniel Chadwick,  Please update the firmware to version 2.0.3, then set the Offset. Check whether all three pedal signals are properly zeroed.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T10:15:28Z",
+      "updated_at": "2025-07-07T10:15:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004472406,
+      "body_text": "Hello,\n\nI cannot download version 2.0.3 from your website and I cannot manually update to that version from within the software. Please advise.\n\nThank you,\nDaniel Chadwick",
+      "user_id": 158001831070,
+      "created_at": "2025-07-08T10:58:28Z",
+      "updated_at": "2025-07-08T10:58:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004472443,
+      "body_text": "Hi，Daniel Chadwick，   I’ve sent you the prox.sfu file via email. Please save the attachment to your desktop.  Then, press the upgrade button on your ProX control box, and reconnect the USB cable. The device will enter recovery mode.  Next, open SIMSONN Manager 2.0.8, and go to:  Settings → Update → Manual Firmware Update → Pedals, then select the prox.sfu file you just saved on your desktop to proceed with the upgrade.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-08T11:12:55Z",
+      "updated_at": "2025-07-08T11:12:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004485399,
+      "body_text": "Hi, I have updated the pedals according to your instructions, however the issues persists. I have attached a video of the issue to this email again. The brake is stuck at almost 100 percent input even after properly calibrating. The throttle seems to work fine, however it’s range of motion is only about a third of the total travel, I have attached another video of this. I am starting to think the pedals or control box are broken. Thank you, Daniel",
+      "user_id": 158001831070,
+      "created_at": "2025-07-09T03:06:25Z",
+      "updated_at": "2025-07-09T03:06:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004756287,
+      "body_text": "Hello, I am forwarding this again in hopes of a response. Thank you, Daniel Begin forwarded message:",
+      "user_id": 158001831070,
+      "created_at": "2025-07-13T11:40:05Z",
+      "updated_at": "2025-07-13T11:40:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004775060,
+      "body_text": "Hi Daniel Chadwick,    After adjusting the pedal’s mechanical structure, please follow these steps:      Connect the pedal to the control box.  Replug the USB cable.  Use the Offset function to perform a percentage reset. If there’s no response at first, try clicking it a few times.  Once the reset is complete, calibrate the pedal again — simply press the pedal gradually from its natural position to the full end to complete the 0%–100% calibration.         From what we see, the control box should be working fine. If it still doesn’t work, please install Todesk so I can assist you remotely.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-14T04:13:08Z",
+      "updated_at": "2025-07-14T04:13:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004775138,
+      "body_text": "Hello,\n\nI cannot click the “offset” button in the app. I have tried clicking it many times but it doesn’t do anything. I have tried this on multiple version of your software, it hasn’t worked at any point.\n\nSecondly, I am not going to install ToDesk, I am not comfortable with you remote accessing my computer and I’m not download any app to let you do so. I should not have to give you control over my PC for you to fix a problem.\n\nI have been speaking with you for weeks now and I have made the issue very clear, you said previously you thought the control box was the problem and you were going to send a new one, I gave you my address so you could do so. \n\nEither the sensors in the control box, or the sensors in the pedals are broken, I paid for this product and it doesn’t work. So I would like a replacement.\n\nThank you\nDaniel",
+      "user_id": 158001831070,
+      "created_at": "2025-07-14T04:39:58Z",
+      "updated_at": "2025-07-14T04:39:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004842804,
+      "body_text": "Hi Daniel Chadwick,     Please update the firmware first and then perform the Offset reset. This process will help us determine whether the issue lies with the control box or the pedal itself. While doing so, kindly record a continuous video showing the following steps:    The firmware update process    Setting the Offset    Calibrating the pedal    Make sure the entire process is captured in one uninterrupted video. If the file is too large, you can upload it to Google Drive and send me the link. This will help us diagnose the issue accurately in one go.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-15T04:39:59Z",
+      "updated_at": "2025-07-15T04:39:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004856467,
+      "body_text": "Hello,\n\nAs you can see from the attached UNINTERRUPTED video, I am UNABLE to set the offset at all. The button simply doesn’t work. \n\nI tried calibrating after the video and the issue persisted again. I do not have the pedals mounted to my rig right now because they do not work.\n\nPlease advise me how I am supposed use the offset.\n\nThank you,\nDaniel",
+      "user_id": 158001831070,
+      "created_at": "2025-07-15T09:31:17Z",
+      "updated_at": "2025-07-15T09:31:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004943032,
+      "body_text": "Hi Daniel Chadwick,  So far, I’ve only seen the part of your video related to the firmware update. The rest may not have uploaded completely, as it’s not visible. If clicking the Offset button doesn’t respond, please try clicking it multiple times — it should eventually bring up a settings window.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T06:09:55Z",
+      "updated_at": "2025-07-16T06:09:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004943236,
+      "body_text": "Hello, Here is the link to the google drive folder containing the full video. The offset button doesn’t work, I have tried clicking it HUNDREDS of times. I don’t know how I can make this anymore clearly to you. Stop telling me to do stuff that I have explicitly told you I have already tried. Watch the full video and tell me what I am supposed to do because the offset button doesn’t function. I have tried using software version 2.0.8, 2.0.7 and 2.0.6 and the offset doesn’t work in ANY of them. Thank you, Daniel Simsonn Issues Video – Google Drive drive.google.com",
+      "user_id": 158001831070,
+      "created_at": "2025-07-16T07:05:46Z",
+      "updated_at": "2025-07-16T07:05:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004944285,
+      "body_text": "Hi Daniel Chadwick,      Alright, I’ll send you version 2.0.9. Please install it and test whether the offset function works correctly.      https://drive.google.com/file/d/1bLzY53f09S4V74qW5p_Ly6drplTrxUDt/view?usp=sharing",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T09:40:35Z",
+      "updated_at": "2025-07-16T09:40:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004965276,
+      "body_text": "Hi Daniel Chadwick,    Additionally, version 2.0.9 supports automatic update detection and upgrade from the settings page in older versions.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T12:53:29Z",
+      "updated_at": "2025-07-16T12:53:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004970729,
+      "body_text": "Simsonn Issues Video – Google Drive drive.google.com Hello, I have attached a new video of me conducting the process you requested to the google drive folder. The offset function now worked, however the issues have not changed, the throttle still works but only within ~40% of its total range, and the brake pedal almost doesn’t function at all after doing the calibration. I also note that the light on the left side of the accelerator is broken and 90% of the lights don’t work. As you can see this appears to be a hardware issue. I believe the sensors in the brake and accelerator are damaged. Thank you, Daniel Chadwick",
+      "user_id": 158001831070,
+      "created_at": "2025-07-16T13:38:51Z",
+      "updated_at": "2025-07-16T13:38:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005048008,
+      "body_text": "Hi Daniel Chadwick, It’s normal that the throttle only reaches around 40% before calibration. After completing the calibration, the blue output bar will reach 100%. Also, if you press the brake pedal by hand, you may not see significant data movement—please test it with actual foot pressure.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-17T00:24:42Z",
+      "updated_at": "2025-07-17T00:24:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005051139,
+      "body_text": "Hi,\n\nI have tested it with actual foot pressure many times before while it was mounted to my rig. There is no more movement in the sensors when using my foot than when I used my hand. \n\nThis also doesn’t explain the issue of the brake input being very shaking and twitchy even while no brake pressure is applied. The brake will also shoot from 20% to 80% instantly and then WHILE APPLYING MORE PRESSURE, it decreases the brake input. \n\nAlso, I have tried swapping the brake and throttle cables into the other slot, and the issues persisted, so the issue is with the pedals not the control box.\n\nI have done every single little test you wanted, when are you going to accept these pedals are broken. The throttle have broken light and the brake doesn’t function. I have been sim racing for years and I know how these things are supposed to function, I don’t need to be babied into conducting tests that I have done many times. \n\nI understand you don’t just want to hand out things, I’m more than happy for you to take these pedals back and give me a new set, but these do not work properly. \n\nI am requesting that you provide me with a replacement product as the one I’ve have been sold do not work. \n\nThank you,\nDaniel Chadwick",
+      "user_id": 158001831070,
+      "created_at": "2025-07-17T00:41:19Z",
+      "updated_at": "2025-07-17T00:41:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005065860,
+      "body_text": "Hi Daniel Chadwick,     I still need a few more photos from you to help identify the issue more accurately:    Please confirm whether your software version matches the one I sent earlier, and provide a screenshot of your software interface.    If the issue is related to the brake, please send clear high-resolution photos of both the front and side of the brake pedal so I can verify that it’s installed correctly, especially since I noticed you’ve changed the damper.    Additionally, there is a hole in the middle of the sensor at the bottom of the brake pedal, which contains a screw. You can try adjusting this screw slightly.    Also, please check the limit screw on the side of the brake. It might be preventing the brake sensor from moving properly.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-17T02:04:50Z",
+      "updated_at": "2025-07-17T02:04:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005076478,
+      "body_text": "Hello,\n\nI would like you to note that I have already sent photos of the brake pedal before, over a week ago.\n\nLike I stated in my last email, I have already tried changing various setting with the brakes AFTER the issues occurred. This includes adjusting the limit screw on the underside of the brake. THE ISSUES STILL HAPPEN.\n\nPlease see MORE photos of my brake pedal below, as well as a screenshot of the Simsonn software version 2.0.9 that you sent me the other day.\n\nI hope we can FINALLY reach a resolution here, because if this process goes on much longer I will be seeking legal action against your company for selling damaged goods.\n\nThank you,\nDaniel",
+      "user_id": 158001831070,
+      "created_at": "2025-07-17T03:00:05Z",
+      "updated_at": "2025-07-17T03:00:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005133579,
+      "body_text": "Hi Daniel Chadwick,     Please provide your AliExpress order number so we can verify your order information. The image you provided is incomplete and does not contain the necessary details for us to assist with after-sales service — we appreciate your understanding. If the purchase was not made through our official store, we kindly recommend reaching out to the store where you placed the order for further assistance.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-17T08:40:21Z",
+      "updated_at": "2025-07-17T08:40:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005133673,
+      "body_text": "Hello,\n\nLike I said in a previous email OVER A WEEK AGO. This was purchased as a birthday gift for me by a friend, I do not have the order number, what I do have is your faulty product in front of me.\n\nI’ve no idea why you cannot view the images as they sent perfectly fine but I will attach lower resolution versions to this email.\n\n\nThank you,\nDaniel",
+      "user_id": 158001831070,
+      "created_at": "2025-07-17T08:51:39Z",
+      "updated_at": "2025-07-17T08:51:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005133766,
+      "body_text": "Hi Daniel Chadwick,     I noticed that this screw is positioned too low, which prevents the pressure sensor from moving properly, resulting in no signal output. Please adjust the screw at the bottom of the pedal so that it sits closer to the top. This will allow the pedal to push down on the sensor during pressing and generate a proper pressure signal.        Please refer to the photo we provided. Although the screw may not look exactly the same, it can still be used as a valid reference.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-17T09:05:12Z",
+      "updated_at": "2025-07-17T09:05:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005161620,
+      "body_text": "Hello,\n\nI have adjusted the screw as you requested and the issues have not been resolved, the brake input still does not work correctly, even when mounted to my rig.\n\n\nPlease advise,\nDaniel Chadwick",
+      "user_id": 158001831070,
+      "created_at": "2025-07-19T03:56:55Z",
+      "updated_at": "2025-07-19T03:56:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005162446,
+      "body_text": "Hi Daniel Chadwick,    Please try swapping the throttle and brake pedal connections on the control box, then test by pressing the pedals to see if there is any data output. This will help determine whether the issue lies with the control box or the pedal itself. Based on the result, we’ll arrange to either send you a replacement brake pedal or a new control box.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-19T07:17:21Z",
+      "updated_at": "2025-07-19T07:17:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005162761,
+      "body_text": "Hello,\n\nI did the test, I plugged the throttle into the brake input, and the brake into the throttle input.\n\nWhen I pressed the throttle (now the brake) I got normal input, just in a small section of the total range.\n\nAnd the brake (now the throttle) had no input at all.\n\nBefore doing the calibration I did the offset, and tried it again without the offset, both times the physical brake pedal gave no input.\n\nThank you,\nDaniel Chadwick",
+      "user_id": 158001831070,
+      "created_at": "2025-07-19T08:30:56Z",
+      "updated_at": "2025-07-19T08:30:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005163311,
+      "body_text": "Hi Daniel Chadwick,    We will send you a replacement brake pedal. Please provide the following information so we can arrange the shipment as soon as possible:      Recipient Name:  Phone Number:  Shipping Address (with postal code):         Thank you for your cooperation!",
+      "user_id": 158000445778,
+      "created_at": "2025-07-19T09:40:54Z",
+      "updated_at": "2025-07-19T09:40:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005165304,
+      "body_text": "Hi,\n\nThank you very much for this, I really appreciate it.\n\nMy details are;\n\nName: Daniel Chadwick \nNumber: 0431 805 857\nAddress: 20 Yirawala Street, Ngunnawal, 2913, ACT, Australia\n\nThank you again,\nDaniel Chadwick",
+      "user_id": 158001831070,
+      "created_at": "2025-07-19T10:42:24Z",
+      "updated_at": "2025-07-19T10:42:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005291802,
+      "body_text": "Hi Daniel Chadwick,  I have already informed our sales team to send you a replacement ProX brake pedal. As soon as the tracking number is available, I will update you immediately.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-22T05:17:39Z",
+      "updated_at": "2025-07-22T05:17:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005355693,
+      "body_text": "Hi Daniel Chadwick,  Here is your tracking number YT2520300703581737 , you track it via https://www.yuntrack.com/parcelTracking?id=​YT2520300703581737",
+      "user_id": 158000445778,
+      "created_at": "2025-07-23T04:28:02Z",
+      "updated_at": "2025-07-23T04:28:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005757556,
+      "body_text": "Hi, Thank you for this. Just wanted to ask when the shipping information might update? Currently I don’t have any information about the shipment. (See photo below) Thank you again, Daniel Chadwick",
+      "user_id": 158001831070,
+      "created_at": "2025-07-29T04:30:20Z",
+      "updated_at": "2025-07-29T04:30:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005793256,
+      "body_text": "Hello, Just wanted to follow up and say that I have received the replacement pedal and will set it up soon. Not sure why I couldn’t see the tracking information but it’s all good now! Thank you again, Daniel Chadwick",
+      "user_id": 158001831070,
+      "created_at": "2025-07-30T06:05:37Z",
+      "updated_at": "2025-07-30T06:05:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005872696,
+      "body_text": "Despite the slightly long process to try and get the issue resolved, it was eventually resolved with a very positive outcome.",
+      "user_id": 158001831070,
+      "created_at": "2025-07-31T06:24:12Z",
+      "updated_at": "2025-07-31T06:24:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

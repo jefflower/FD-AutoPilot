@@ -1,0 +1,34 @@
+{
+  "id": 10903,
+  "subject": "order SSN5141",
+  "description_text": "Hello, I'm contacting you regarding the order I placed for the shifter. Why\r\ndid I receive a shipping confirmation email on January 8th, and checking\r\nthe tracking today shows that shipping began on January 14th? That's six\r\ndays too long. I understand I had to wait because it was on pre-order, and\r\nI'm glad you've had so many requests, but I paid for the fastest shipping\r\npossible. I think once it's shipped by you, the courier should be more\r\nrespectful...\r\n\r\nRegarding the handbrake I received, I've already given it an excellent\r\nreview, both for the product and for you as a company. Congratulations...\r\n\r\nI hope to be able to do the same for the rest of the order. It's a shame I\r\ncouldn't say the same about the courier...\r\n\r\nThank you!!!\r\n\r\n*Rodolfo Carluccio*\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-14T14:42:11Z",
+  "updated_at": "2026-01-17T09:36:54Z",
+  "requester_id": 158008807257,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017109186,
+      "body_text": "*Rodolfo Carluccio*\r\n\r\n\r\nIl giorno mer 14 gen 2026 alle ore 15:41 Rodolfo Carluccio <\r\nfoffetto@gmail.com> ha scritto:\r\n\r\n> Hello, I'm contacting you regarding the order I placed for the shifter.\r\n> Why did I receive a shipping confirmation email on January 8th, and\r\n> checking the tracking today shows that shipping began on January 14th?\r\n> That's six days too long. I understand I had to wait because it was on\r\n> pre-order, and I'm glad you've had so many requests, but I paid for the\r\n> fastest shipping possible. I think once it's shipped by you, the courier\r\n> should be more respectful...\r\n>\r\n> Regarding the handbrake I received, I've already given it an excellent\r\n> review, both for the product and for you as a company. Congratulations...\r\n>\r\n> I hope to be able to do the same for the rest of the order. It's a shame I\r\n> couldn't say the same about the courier...\r\n>\r\n> Thank you!!!\r\n>\r\n> *Rodolfo Carluccio*\r\n>\r\n\r\n",
+      "user_id": 158008807257,
+      "created_at": "2026-01-14T14:44:06Z",
+      "updated_at": "2026-01-14T14:44:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017322134,
+      "body_text": "Hi Rodolfo Carluccio,   ​We have found that your order will be shipped in two packages.  The gear shift lever was out of stock for two weeks due to the need for product upgrading. Currently, we have completed the upgrade and arranged for shipment on the 14th. You can track your shipping information via the following link:  https://t.17track.net/en#nums=SF6047195322056,SF6047224482091 We sincerely apologize again for the inconvenience caused to you. We will give priority to handling any problems you may have.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T09:36:54Z",
+      "updated_at": "2026-01-17T09:36:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

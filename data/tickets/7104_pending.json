@@ -1,0 +1,54 @@
+{
+  "id": 7104,
+  "subject": "Latest pedals",
+  "description_text": "Can you tell me about the differences between the latest pedals? I just\r\nordered the (Plus X Black P3-H3-Plate) and the (VAM PRO 3pcs) what exactly\r\nare the differences to the (PRO X U-P3-H3-1-1) ?  I've heard light,\r\nsoftware, bearings, haptics controller and emi management but that is all\r\nrumors so I thought I should ask the source. I will be using haptics so I\r\nwant to make sure I got the right/best pedals for me.\r\n\r\nJustin Jones\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-30T19:31:13Z",
+  "updated_at": "2025-12-06T06:01:57Z",
+  "requester_id": 158007449690,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013155987,
+      "body_text": "Hi Justin Jones,  The ProX Ultra primarily uses 16-bit signal acquisition and differential signaling, providing strong anti-interference performance, along with 8-step hydraulic fine-tuning and RGB lighting synchronization. The PlusX has also resolved interference issues; however, if your home PC has unreliable grounding, it is recommended to connect a ground wire to the control box and PC case to ensure both work reliably. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-01T03:22:12Z",
+      "updated_at": "2025-12-01T03:22:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013202539,
+      "body_text": "Thank you for the fast reply. So the software is the same between them?\r\nIt's just the encoding has a higher bit count on the Ultimates? Is that\r\nfrom a more precise hall effect sensor or a different analog to digital\r\ncontroller?\r\n\r\nI'm using a laptop so I could see grounding being a concern.\r\n\r\nThank you again for the help.\r\n\r\nJustin Jones\r\n\r\n\r\nOn Sun, Nov 30, 2025, 9:22 PM service@simsonn.com ",
+      "user_id": 158007449690,
+      "created_at": "2025-12-01T15:04:27Z",
+      "updated_at": "2025-12-01T15:04:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013773785,
+      "body_text": "Hi Justin Jones,  If you are using a laptop, interference issues usually do not occur. The Ultra uses a 16-bit ADC, and all sensors are pressure sensors. Pressure sensors perform far better than magnetic Hall sensors, and both of our devices use pressure sensors. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-06T06:00:58Z",
+      "updated_at": "2025-12-06T06:00:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013774042,
+      "body_text": "Hi Justin Jones,  Additionally, both devices use the same SIMSONN Manager software for calibration and telemetry, and the latest SimHub software can also be used for telemetry-based vibration. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-06T06:01:57Z",
+      "updated_at": "2025-12-06T06:01:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

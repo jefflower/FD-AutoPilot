@@ -1,0 +1,45 @@
+{
+  "id": 11095,
+  "subject": "追踪问题",
+  "description_text": "您好，\n\n我想追踪我的订单，但我需要一些隐私号码。?‍♂️?‍♂️",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-16T18:41:36Z",
+  "updated_at": "2026-01-17T10:38:37Z",
+  "requester_id": 158009304576,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017318039,
+      "body_text": "您好 Matthieu Buschmann，您的订单已分两个包裹发货。其中一个包裹已于13日寄出，目前正在运输途中。另一个包裹因产品升级缺货两周。升级现已完成，我们将在未来几天内发货。对于由此造成的不便，我们深表歉意。您可以通过以下链接追踪您的物流信息：https://t.17track.net/en#nums=SF6047238966311,SF6047238966541",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T06:49:33Z",
+      "updated_at": "2026-01-17T06:49:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017319524,
+      "body_text": "好的，谢谢！\n\n能告诉我哪个包裹缺货吗？\n\n> \n> 2026年1月17日07:49，service@simsonn.com 写道：\n> \n> ﻿\n> 您好 Matthieu Buschmann，\n> \n> ​\n> 您的订单已分两个包裹发货。\n> 其中一个包裹已于13日寄出，目前正在运输途中。\n> 另一个包裹因产品升级缺货两周。升级现已完成，我们将在未来几天内发货。\n> 对于由此造成的不便，我们深表歉意。\n> 您可以通过以下链接追踪您的物流信息：\n> https://t.17track.net/en#nums=SF6047238966311,SF6047238966541\n> \n> \n> \n> \n",
+      "user_id": 158009304576,
+      "created_at": "2026-01-17T08:48:38Z",
+      "updated_at": "2026-01-17T08:48:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017323842,
+      "body_text": "您好 Matthieu Buschmann，我很乐意帮助您。是电源缺货。",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T10:38:37Z",
+      "updated_at": "2026-01-17T10:38:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

@@ -1,0 +1,124 @@
+{
+  "id": 2920,
+  "subject": "Re: Ticket 2749 Issue Feedback - SIMSONN",
+  "description_text": " How am I receiving this email if you are sending it to my incorrect address?    Your note is very confusing -  \"Please use an alternative email address to contact us, as your current email is unable to successfully receive our after-sales messages\"\r\nDo you mean I am sending my email to your address incorrectly   OR   Are you trying to respond to me and my address you have is wrong?\r\nPlease read my email address carefully.  It is not - larryssbn64.1@yahoo.com - \r\n\r\nIt is - larryssbn641@yahoo.com\r\n    On Wednesday, August 20, 2025 at 09:02:27 AM CDT, support@simsonn.com <support@simsonn.com> wrote:  \r\n \r\n \r\nHi Robert Haworth, \r\nPlease use an alternative email address to contact us, as your current email is unable to successfully receive our after-sales messages.support@simsonn.com  \r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-20T17:14:01Z",
+  "updated_at": "2025-09-07T03:15:38Z",
+  "requester_id": 158003119069,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007237251,
+      "body_text": "Original ticket - 2749 - In response to -   I have a SIMSONN Plus X 2 Pedal set with the processor that came with this set.  I have noticed you have a new “Processor”.  Questions is can I purchase the new \"New Dual Core Processor' for my rig and will it work.   My processor does not always connect with my desktop, like I believe it is supposed to upon desk top start up.  The processor is connected to USB 3 and is grounded.       Recently (8/14/2025) I sent you an email about my problem with the pedal set not connecting.  No answer as yet.     Or   Is the problem in my desktop, in that it does not always know the correct path to see the pedal set?  Upon your advice about a year ago I did download “ToDesk\",  but have not yet been requested to contact “Simsonn”.  Thank you in advance for your help.  Love your pedals, but very frustrating when they will not connect.  Thank you.",
+      "user_id": 158003119069,
+      "created_at": "2025-08-20T17:29:04Z",
+      "updated_at": "2025-08-20T17:29:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158007249281,
+      "body_text": "Hi Robert Haworth,     The issue you mentioned seems a bit complex. Please install ToDesk (no registration required) and share the ID and verification code with me so that I can assist you remotely.   https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-08-21T02:22:04Z",
+      "updated_at": "2025-08-21T02:22:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007851009,
+      "body_text": " My pedals are not connected again.  What is the best time to contact you and get this fixed.  I have ToDesk downloaded but no idea how to use it.\r\n    ",
+      "user_id": 158003119069,
+      "created_at": "2025-08-30T23:41:22Z",
+      "updated_at": "2025-08-30T23:41:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007877977,
+      "body_text": "Hi Robert Haworth,  Todesk does not require registration — if you see a registration prompt, simply click the “X” in the top-right corner to close it. Once installed, please provide me with the ID and temporary code, and we can begin the remote support. The entire process only takes a few minutes and poses no risk to your computer, so please rest assured. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-01T01:06:24Z",
+      "updated_at": "2025-09-01T01:06:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007917337,
+      "body_text": " The device ID is 725  706 105 Code 7724\r\n   ",
+      "user_id": 158003119069,
+      "created_at": "2025-09-01T18:02:14Z",
+      "updated_at": "2025-09-01T18:02:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007919175,
+      "body_text": " Sorry there is no way I can use this ToDesk.  I am not able get signed in because there is no registration window or icon or an other way to sign in.  What does the \"registration\" prompt look like.  There is nowhere to change translation from whatever comes up to english (See attachment that I can not read).  What do you want for the ID or my Code.  Try to send me what to look for in order to setup the pedals .  Is the \"processor\" you provide supposed to look for a USB port or is my pc supposed to find your processor.  Please,  what the hell is going on with this system.  I am sure there are other ways for you to be able to access my pc in order to fix this F------ problem.  I am at my wits end with this.  Is your new processor meant for my pedal set? Can it be used with my pedal set?????????????????\r\n    ",
+      "user_id": 158003119069,
+      "created_at": "2025-09-01T19:47:08Z",
+      "updated_at": "2025-09-01T19:47:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008004853,
+      "body_text": "Hi，Robert Haworth，    Hello, ToDesk does not require an account to use for remote assistance. You only need to provide the ID and verification code.  When would you be available? I suspect that the issue may be caused by an unstable USB power supply. It is recommended to use the rear USB 3.0 blue port on your PC or a USB 3.0 hub with independent power supply to ensure stable power delivery.        Please follow the steps below:    Download and install the provided SIMSONN Manager 2.1.1.    Press and hold the upgrade button on the PlusX main controller, then reconnect the USB cable.    Check if the software has entered Recovery Mode.    If Recovery Mode is detected, go to: Settings → Update → Manual Update Firmware → pedals → firmware → pedals-plusx.sfu and select this file to perform the upgrade.    Once the upgrade is complete, test the device to ensure it is functioning normally again.     https://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-09-03T04:51:05Z",
+      "updated_at": "2025-09-03T04:51:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008041560,
+      "body_text": " First of all Let us assume I am an absolute novice at this PC stuff\r\n1)  What and where is the ID and Verification code?\r\n2) I am connected to a usb hub 3.0 with an independent power supply. The hub is connected to a 3.0 USB port on the MB\r\n3) I am available from 0800 to 1100 CDT (USA) every morning except Tuesday and Sunday.\r\nYour procedure>>>\r\n1) \"SIMSONN MANAGER 2.2.1\" is up on my pc.  I have disconnected the usb cable but;\r\n        I don't see a \"PlusX\" main controller.  What is it and where is it?  How can I \"Press and Hold\" something that is not there.\r\n        Is it part of the \"manager\"?\r\n        Will the software pop up?\r\nNeed more help to continue.\r\nI will wait patiently for your reply.\r\n    ",
+      "user_id": 158003119069,
+      "created_at": "2025-09-03T16:56:34Z",
+      "updated_at": "2025-09-03T16:56:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008057024,
+      "body_text": "Hi Robert Haworth,     There is an upgrade button at the location indicated by the arrow. Please press and hold this button, then reconnect the USB cable. At this point, SIMSONN Manager will display that the device has entered firmware upgrade mode. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-04T04:40:03Z",
+      "updated_at": "2025-09-04T04:40:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008093915,
+      "body_text": " Sorry.  Your instructions will not work as I have a different model a than what you show.  Please see attachment.\r\nIf you can exchange or sell me the new model I can do that.  Just let me know how and from where.\r\nBy the way - Your first name please.  Don't like \"Hey you\".\r\n    ",
+      "user_id": 158003119069,
+      "created_at": "2025-09-04T14:57:31Z",
+      "updated_at": "2025-09-04T14:57:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201270,
+      "body_text": "Hi Robert Haworth,    If you need to upgrade the PlusX control box, you can purchase it directly from our official website at the following link:     https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor?variant=51351053533498   ​   Since we are using the after-sales system for recovery, our response may be slightly lacking in detail, and we appreciate your understanding.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T03:15:21Z",
+      "updated_at": "2025-09-07T03:15:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

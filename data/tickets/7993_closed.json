@@ -1,0 +1,24 @@
+{
+  "id": 7993,
+  "subject": "SRM#1772",
+  "description_text": "Hi\r\n\r\nI order haptic Simsonn van pro 2x\r\nAnd VAM linear 2x\r\n\r\nAnd only get one set\r\n\r\n",
+  "status": 5,
+  "priority": 4,
+  "created_at": "2025-12-11T15:03:51Z",
+  "updated_at": "2025-12-22T12:13:40Z",
+  "requester_id": 158007303621,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014878626,
+      "body_text": "此工单已关闭并合并到工单 8710 中",
+      "user_id": 158000445778,
+      "created_at": "2025-12-22T12:13:40Z",
+      "updated_at": "2025-12-22T12:13:40Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

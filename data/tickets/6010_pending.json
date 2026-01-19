@@ -1,0 +1,54 @@
+{
+  "id": 6010,
+  "subject": "Shipping",
+  "description_text": "Hello! \r\n\r\nWhere do you ship from? \r\nIs there an option to be shipped from Europe in order to avoid customs? \r\n\r\nSent from my iPhone\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-12T19:41:02Z",
+  "updated_at": "2025-11-18T07:43:00Z",
+  "requester_id": 158006970987,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012217061,
+      "body_text": "Hi Japan7marios,    Yes, we have a warehouse in Germany and will ship from there. Please don't worry.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-13T02:05:09Z",
+      "updated_at": "2025-11-13T02:05:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012361039,
+      "body_text": "Thank you for your reply!\r\nDo you have also an ETA for the new shifter?\r\n\r\nOn Thu, 13 Nov 2025 at 04:05, support@simsonn.com ",
+      "user_id": 158006970987,
+      "created_at": "2025-11-15T05:23:42Z",
+      "updated_at": "2025-11-15T05:23:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012449437,
+      "body_text": "Hi Japan7marios,    Expected to be listed by the end of this month.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-17T11:55:21Z",
+      "updated_at": "2025-11-17T11:55:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012451904,
+      "body_text": "Thank you for you answer.\r\nJust asking because i want to buy them with the pedals.\r\n\r\nOn Mon, 17 Nov 2025 at 13:55, support@simsonn.com ",
+      "user_id": 158006970987,
+      "created_at": "2025-11-17T12:25:15Z",
+      "updated_at": "2025-11-17T12:25:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 10736,
+  "subject": "Problem with Brake pedal",
+  "description_text": "Hello, I just set up my new Pro X Ultra pedals (Newest) and the brake pedal\r\nis not working. When I connect and disconnect it from the control box, it\r\nregisters in the simsonn software for a moment, but when I press it in\r\nnothing happens. The gas and clutch pedals work fine. I ran the firmware\r\nupdate as soon as I plugged them in as well.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-13T00:52:07Z",
+  "updated_at": "2026-01-13T01:36:44Z",
+  "requester_id": 158009042706,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016921683,
+      "body_text": "Hi Steven Holmes,  Please provide your order number so we can check the details. Also, after any mechanical or damper adjustments, please confirm whether you have used the Offset function to re-zero the initial signal. Additionally, please check whether the RJ11 4P4C connector on the brake pedal is loose. Have you secured the power cable with cable ties to prevent movement or poor contact? ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-13T01:36:44Z",
+      "updated_at": "2026-01-13T01:36:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

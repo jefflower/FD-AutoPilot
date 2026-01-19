@@ -1,0 +1,24 @@
+{
+  "id": 9930,
+  "subject": "Qr moza",
+  "description_text": "Hello, I'm interested in your steering wheel. Do you have any QR for Moza?\r\nEnvoyé de mon iPhone\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-04T13:03:59Z",
+  "updated_at": "2026-01-07T09:45:55Z",
+  "requester_id": 158008897203,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016104984,
+      "body_text": "Hi Renaudcalderon,  Our quick release uses a 70 mm bolt pattern. When used with Moza hardware, an adapter is required for proper installation and compatibility. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T09:45:50Z",
+      "updated_at": "2026-01-07T09:45:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

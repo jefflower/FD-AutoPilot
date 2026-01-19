@@ -1,0 +1,54 @@
+{
+  "id": 2530,
+  "subject": "Pedals ebay",
+  "description_text": "  Hi, I have a question regarding this offer\r\nhttps://www.ebay.pl/itm/388484542442?_skw=simsonn&itmmeta=01K29VFTVJMQQFMHEXEQJ9W2CY&hash=item5a737bafea:g:IhoAAOSwbsFoN8mC&itmprp=enc%3AAQAKAAAAwFkggFvd1GGDu0w3yXCmi1faFgRHv3ZgRRzwI5P2LO2Uu62iOlOKsMcA--4sA8mEQbKQU0Nar8m6NBrmgHfjsR02FwA7MaEJ3212Hm7hhEFwaMQn6cobG9IDny%2BjHCkKtsB%2Bqbm9WOSdoEniqavNNDVvV7OXvaeajAAxik%2FvlGIZGxBTnCUlWF8NpojeOL8kYjNb4mO5QWHL0xD7wfQ2%2FDc%2B4FHMscgZgYs9Wr87p4k5j4KVM%2BY9q8diHGQNicJmDA%3D%3D%7Ctkp%3ABk9SR_Stv7uSZg.\r\nAre there any additional costs like customs duty or VAT applied when\r\nshipping to Poland?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-10T11:24:53Z",
+  "updated_at": "2025-08-15T02:42:03Z",
+  "requester_id": 158002902217,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006651602,
+      "body_text": "Hi Mateusz Ubraniak,    If there are no customs duties, we will need to ship from our Germany or France stock. However, it is currently out of stock, and the latest batch is expected to arrive around August 15th.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T11:29:57Z",
+      "updated_at": "2025-08-10T11:29:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006651891,
+      "body_text": "  So this is the price for the finished product including all fees, and the\r\nshipment will be on August 15th or later, right?\r\n\r\nniedz., 10 sie 2025 o 13:30 service@simsonn.com ",
+      "user_id": 158002902217,
+      "created_at": "2025-08-10T11:41:05Z",
+      "updated_at": "2025-08-10T11:41:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006652356,
+      "body_text": "Hi Mateusz Ubraniak,    You can confirm again on August 15th, or place an order on our official website at that time.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T12:11:06Z",
+      "updated_at": "2025-08-10T12:11:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006889824,
+      "body_text": "Hi Mateusz Ubraniak,     The German warehouse now has stock available. You can place your order through this Amazon link.   https://www.amazon.pl/dp/B0FMF87H36",
+      "user_id": 158000445778,
+      "created_at": "2025-08-15T02:42:03Z",
+      "updated_at": "2025-08-15T02:42:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

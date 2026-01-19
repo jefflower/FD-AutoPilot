@@ -1,0 +1,215 @@
+{
+  "id": 3619,
+  "subject": "Re: A shipment from order #SSN2575 is on the way",
+  "description_text": "Good afternoon, how are you?\n\nI checked the tracking number and received a message that the shipment had been canceled. Could you please check this information?\n\nHave a great day!\n\nLucas Lino de Souza.",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-09-08T10:57:21Z",
+  "updated_at": "2025-10-16T09:02:08Z",
+  "requester_id": 158004269939,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008259250,
+      "body_text": "Hi Lucas Lino,  We have resent your package, here is your tracking link.  https://www.sf-express.com/chn/en/waybill/waybill-detail/SF3237097837557",
+      "user_id": 158001343601,
+      "created_at": "2025-09-08T11:04:20Z",
+      "updated_at": "2025-09-08T11:04:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008259421,
+      "body_text": "That's great, thank you very much.",
+      "user_id": 158004269939,
+      "created_at": "2025-09-08T11:18:52Z",
+      "updated_at": "2025-09-08T11:18:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008352355,
+      "body_text": "Good morning, the tracking code you sent is not working, could you please check?",
+      "user_id": 158004269939,
+      "created_at": "2025-09-10T06:45:29Z",
+      "updated_at": "2025-09-10T06:45:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008375065,
+      "body_text": "​Hello, there is an anomaly in the logistics of your order. Please check the address information, especially the zip code.  LUCAS LINO DE SOUZA / SIMONE AFONSO Rue Albert Bousser, 5 3.9 - LUCAS LINO DE SOUZA / SIMONE AFONSO L5894 ALZINGEN Luxembourg     You can re-enter using the format below. Thank you. Recipient: Street Address: Apartment/Room Number: City: Zip Code:",
+      "user_id": 158001343601,
+      "created_at": "2025-09-10T11:01:33Z",
+      "updated_at": "2025-09-10T11:01:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008376120,
+      "body_text": "Hello,\nBelow is the address:\n\n5, Rue Albert Bousser, L-5894 Alzingen\n\nRecipient: Lucas Lino de Souza / Simone Afonso\nStreet Address: Albert Bousser\nApartment/Room Number: 3.9\nCity: Alzingen\nZip Code: L-5894\n\nLink to address in google maps:\nhttps://maps.app.goo.gl/13ueVf9z8fVpn1CA8",
+      "user_id": 158004269939,
+      "created_at": "2025-09-10T11:53:40Z",
+      "updated_at": "2025-09-10T11:53:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008489615,
+      "body_text": "Hello, we have re-shipped your order. We sincerely apologise for the delay caused. We will refund your additional shipping charges.  https://t.17track.net/en#nums=ALS01179603623",
+      "user_id": 158001343601,
+      "created_at": "2025-09-11T02:29:41Z",
+      "updated_at": "2025-09-11T02:29:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008721599,
+      "body_text": "Hello,\n\nCould you please clarify what happened to the package?",
+      "user_id": 158004269939,
+      "created_at": "2025-09-15T06:25:56Z",
+      "updated_at": "2025-09-15T06:25:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008742651,
+      "body_text": "Please don’t worry — the issue was simply that our logistics account ran out of balance, so we need to make a manual payment on our side. You don’t need to pay any additional fees.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-15T10:03:21Z",
+      "updated_at": "2025-09-15T10:03:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008746311,
+      "body_text": "Thank you for the clarification.",
+      "user_id": 158004269939,
+      "created_at": "2025-09-15T11:11:20Z",
+      "updated_at": "2025-09-15T11:11:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009324556,
+      "body_text": "Good morning, how are you?\nTracking has been in this status since Monday. Could you please check?\nThank you in advance.",
+      "user_id": 158004269939,
+      "created_at": "2025-09-26T06:39:48Z",
+      "updated_at": "2025-09-26T06:39:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009378810,
+      "body_text": "Hi Lucas Lino, here is your new logistics tracking link: https://t.17track.net/en#nums=84150004559304",
+      "user_id": 158001343601,
+      "created_at": "2025-09-27T08:30:29Z",
+      "updated_at": "2025-09-27T08:30:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009685506,
+      "body_text": "Hello, I just received the handbrake and the sequential shifter. But in handbrake there is on piece missing. Can you please sent this piece to me ? Sent from my iPhone",
+      "user_id": 158004269939,
+      "created_at": "2025-09-30T15:46:08Z",
+      "updated_at": "2025-09-30T15:46:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009698790,
+      "body_text": "Hello. During the handbrake calibration in the Simsonn software, both the handbrake and the sequential gearbox are no longer being recognized. What should I do? Is there any way to do some kind of reset? Sent from my iPhone",
+      "user_id": 158004269939,
+      "created_at": "2025-09-30T20:33:03Z",
+      "updated_at": "2025-09-30T20:33:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009775593,
+      "body_text": "Good morning, I already purchased an adapter screw and was able to assemble the shifter. So, you won't need to send me the missing adapter.\n\nHowever, both the handbrake and the sequential shifter aren't being recognized after the initial calibration. How can I solve this problem? I tried using other USB ports and reinstalling the Simsonn software, but the problem persists. When I connect the USB ports to the computer, the LEDs light up, but the software doesn't recognize them.\n\nI await your response, thank you in advance for your support.\n\nLucas Lino\n+352 661 556 789",
+      "user_id": 158004269939,
+      "created_at": "2025-10-02T09:13:47Z",
+      "updated_at": "2025-10-02T09:13:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009965304,
+      "body_text": "Good morning, any feedback on the problem?\n\nLucas Lino\n+352 661 556 789",
+      "user_id": 158004269939,
+      "created_at": "2025-10-06T11:53:50Z",
+      "updated_at": "2025-10-06T11:53:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010141354,
+      "body_text": "Hi Lucas Lino,     First, please make sure that both the handbrake and sequential shifter are connected directly to the rear USB3.0 port (blue) on your PC — do not use a USB hub. If the USB power supply is stable, please follow the steps below to restore the device:    Open the software and take screenshots of the two indicated positions — one of them has a “Restore” button.    Slide the button horizontally to the other side, then reconnect the USB cable. The device will enter upgrade mode.    Once in upgrade mode, follow the steps below to complete the restoration process.        handbrake：    At the front bottom of the handbrake (indicated by the arrow), there is a small rectangular hole that contains the recovery button. Please use a toothpick to gently push it to the other side, then reconnect the USB cable. The device will enter recovery mode. Next, go to Settings → Update → Manual Firmware Update → handbrake-firmware → handbrake-hbpro.sfu in the software, and complete the update. After the upgrade, make sure to switch the recovery button back to its original position        seq shifter:  At the lower side of the sequential shifter (as indicated by the arrow), there is a recovery button. Use a toothpick to gently switch it to the other side, then reconnect the USB cable. The device will enter recovery mode.  Next, in the software, go to: Settings → Update → Manual Firmware Update → gear-firmware → gear-sqpro.sfu After completing the firmware update, please run a test again.  Please note that after the upgrade, you must return the recovery button to its original position. You can also use the VKB tool to check the device connection status and confirm that the update was successful.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-09T09:55:06Z",
+      "updated_at": "2025-10-09T09:55:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010165307,
+      "body_text": "Good afternoon.\n\nThe sequential shifter worked perfectly as soon as I reset it and returned the key to the normal position. However, the handbrake didn't. I went through the process and updated the software manually, but the Simsonn software doesn't recognize the handbrake after the process.\n\nI repeated the process a few times, but it still isn't recognized by Simsonn. When I go to the Windows connected devices menu, it appears as a connected device, but the axes don't move.\n\nI've included some screenshots below showing both being recognized in Windows, but only the sequential one in the Simsonn software.\n\nThank you in advance for your support.",
+      "user_id": 158004269939,
+      "created_at": "2025-10-09T16:51:56Z",
+      "updated_at": "2025-10-09T16:51:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010194459,
+      "body_text": "Hi Lucas Lino,     Please try updating it again. I just tested the latest version, and everything is working fine on my side.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-10T06:49:53Z",
+      "updated_at": "2025-10-10T06:49:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010340749,
+      "body_text": "Hello,\n\nAfter trying the latest version of SiMSONN's software, the handbrake started working again. Thank you very much for your support.\n\nHave a great day!",
+      "user_id": 158004269939,
+      "created_at": "2025-10-13T05:20:18Z",
+      "updated_at": "2025-10-13T05:20:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010549506,
+      "body_text": "The support worked really well. My issue was resolved and I'm super happy with the product.",
+      "user_id": 158004269939,
+      "created_at": "2025-10-16T09:02:08Z",
+      "updated_at": "2025-10-16T09:02:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

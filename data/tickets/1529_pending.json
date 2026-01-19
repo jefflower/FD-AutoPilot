@@ -1,0 +1,54 @@
+{
+  "id": 1529,
+  "subject": "refund",
+  "description_text": "orderSSN1770 came in yesterday and i would like to process a return please. How can i go about that.\nSent from [Proton Mail](https://proton.me/mail/home) for iOS\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-14T20:04:55Z",
+  "updated_at": "2025-07-17T09:14:37Z",
+  "requester_id": 158001682988,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004843226,
+      "body_text": "Hi Roniportillo232,  May I ask why you wish to cancel this order? Is there something wrong with the product you received?",
+      "user_id": 158001343601,
+      "created_at": "2025-07-15T06:07:54Z",
+      "updated_at": "2025-07-15T06:07:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004857861,
+      "body_text": "i just don’t need them anymore. It took over 3 weeks to arrive and i just went and got a different set instead.\n\nSent from [Proton Mail](https://proton.me/mail/home) for iOS\n\nOn Tue, Jul 15, 2025 at 2:08 AM, service@simsonn.com <[service@simsonn.com](mailto:",
+      "user_id": 158001682988,
+      "created_at": "2025-07-15T11:36:21Z",
+      "updated_at": "2025-07-15T11:36:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004972153,
+      "body_text": "so can we set up a refund please??\n\nSent from [Proton Mail](https://proton.me/mail/home) for iOS\n\nOn Tue, Jul 15, 2025 at 7:36 AM, <[roniportillo232@protonmail.com](mailto:",
+      "user_id": 158001682988,
+      "created_at": "2025-07-16T15:10:20Z",
+      "updated_at": "2025-07-16T15:10:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005133837,
+      "body_text": "Hi Roniportillo232,    Sorry, the return process requires the conditions in the return policy below to be met, we are unable to make a free return for you if the product is not defective, sincere apologies. If you really need to return it, you can return it to our US warehouse by yourself and we will refund you after inspection by our warehouse staff. This is the warehouse address:   CAMZ Chino Warehouse (System Code: CAMZ)  Contact: Greg -MZ(1330006)  Phone: 480 387 3114  ADD: 14210 Telephone Ave, Chino, CA 91710 USA,Dock 4-10",
+      "user_id": 158001343601,
+      "created_at": "2025-07-17T09:14:37Z",
+      "updated_at": "2025-07-17T09:14:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

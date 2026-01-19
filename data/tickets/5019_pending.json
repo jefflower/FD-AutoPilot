@@ -1,0 +1,64 @@
+{
+  "id": 5019,
+  "subject": "ORDER #SSN2666",
+  "description_text": "Hello,\r\n\r\nToday i received a beautiful set of pedals which im very happy with.\r\nBut it didn’t contain the haptic motors.\r\nIs it possible to send them to me?\r\n Thank you so much\r\n\r\nGreets,\r\n\r\nErik",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-18T17:48:03Z",
+  "updated_at": "2025-10-22T07:09:08Z",
+  "requester_id": 158004843508,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010723666,
+      "body_text": "Hi Erik van Empelen,    I noticed your package was destroyed instead of being redelivered. We will resend it for you. However, you will need to cover part of the loss, approximately $39. Would you be willing to accept this arrangement? Thank you for your understanding.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-20T10:50:11Z",
+      "updated_at": "2025-10-20T10:50:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010738978,
+      "body_text": "Hello,\r\nIm ok with paying $39,- for the loss.\r\n\r\n\r\n\r\nOp 20 okt 2025 om 12:50 heeft service@simsonn.com het volgende geschreven:\r\n\r\n﻿\r\nHi Erik van Empelen,\r\n\r\nI noticed your package was destroyed instead of being redelivered. We will resend it for you. However, you will need to cover part of the loss, approximately $39. Would you be willing to accept this arrangement? Thank you for your understanding.\r\n\r\n\r\n\r\n",
+      "user_id": 158004843508,
+      "created_at": "2025-10-20T13:35:11Z",
+      "updated_at": "2025-10-20T13:35:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010795738,
+      "body_text": "Hi Erik van Empelen,    Thank you for your understanding. We shall resend it to you as soon as possible. Please complete payment via the link.  https://www.simsonn.com/products/difference-2",
+      "user_id": 158001343601,
+      "created_at": "2025-10-21T10:57:06Z",
+      "updated_at": "2025-10-21T10:57:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010810565,
+      "body_text": "Hello, payment has been done.\r\n\r\nGreetzz\r\n\r\n\r\nOp 21 okt 2025 om 12:57 heeft service@simsonn.com het volgende geschreven:\r\n\r\n﻿\r\nHi Erik van Empelen,\r\n\r\n<https://www.simsonn.com/products/difference-2>\r\nThank you for your understanding. We shall resend it to you as soon as possible. Please complete payment via the link.\r\nhttps://www.simsonn.com/products/difference-2\r\n\r\n\r\n",
+      "user_id": 158004843508,
+      "created_at": "2025-10-21T14:03:21Z",
+      "updated_at": "2025-10-21T14:03:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010858909,
+      "body_text": "Hi Erik van Empelen,    This is your logistics tracking link.  https://t.17track.net/en#nums=SF6045985586436",
+      "user_id": 158001343601,
+      "created_at": "2025-10-22T07:09:07Z",
+      "updated_at": "2025-10-22T07:09:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

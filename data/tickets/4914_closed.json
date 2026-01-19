@@ -1,0 +1,24 @@
+{
+  "id": 4914,
+  "subject": "I was expecting to receive today the pedals but didn’t arrive I don’t know if it from fedex or what is happening ",
+  "description_text": "I was wondering if I can get them the sooner you guys can if I can be by this week I live in shafter ca so is not too far from where the package is coming from. Thanks ",
+  "status": 5,
+  "priority": 4,
+  "created_at": "2025-10-15T16:14:53Z",
+  "updated_at": "2025-10-16T05:31:16Z",
+  "requester_id": 158005711018,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010534913,
+      "body_text": "此工单已关闭并合并到工单 4928 中",
+      "user_id": 158000445778,
+      "created_at": "2025-10-16T05:31:16Z",
+      "updated_at": "2025-10-16T05:31:16Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

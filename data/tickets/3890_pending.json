@@ -1,0 +1,24 @@
+{
+  "id": 3890,
+  "subject": "Hydraulic Rod leak",
+  "description_text": "The hydraulic fluid from the rod on my throttle is leaking\r\nSent from my iPhone\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-17T04:52:42Z",
+  "updated_at": "2025-09-17T07:43:02Z",
+  "requester_id": 158002478452,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008845902,
+      "body_text": "Hi Anthony Maffucci,   Please provide us with the photos and your order details, and we will assist you in checking the issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-17T07:43:02Z",
+      "updated_at": "2025-09-17T07:43:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

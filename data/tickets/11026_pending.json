@@ -1,0 +1,24 @@
+{
+  "id": 11026,
+  "subject": "Order Update",
+  "description_text": "Good morning,\r\n\r\nI would like an update on my order, has it been dispatched yet? Order\r\nnumber is SSN6078.\r\n\r\nthank you,\r\n\r\nBlake Johnston.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-16T02:42:58Z",
+  "updated_at": "2026-01-17T07:27:19Z",
+  "requester_id": 158009157444,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017318518,
+      "body_text": "Hi Noname Johnno, ​  Your order has been shipped in two separate packages, both of which have already been dispatched.     You can track your shipping information via the following link:  https://t.17track.net/en#nums=SF6047240581809,YT2601400705728260",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T07:27:19Z",
+      "updated_at": "2026-01-17T07:27:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

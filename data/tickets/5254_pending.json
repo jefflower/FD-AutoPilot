@@ -1,0 +1,24 @@
+{
+  "id": 5254,
+  "subject": "Problème ks",
+  "description_text": "Bonjour, suite à la mise à jour de mon Volant KS les LED font n’importe quoi. J’allume l’application, elle se coupe quand joue en jeu elle se mette à clignoter Orange et on sort du jeu, elle se remettent en mode veille comme avant la mise à jour. Que puis-je faire ? Merci\r\nEnvoyé de mon iPhone",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-24T22:05:41Z",
+  "updated_at": "2025-10-25T02:13:14Z",
+  "requester_id": 158006075706,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011050148,
+      "body_text": "Hi jean-claude doussot,  Please provide your order number and a video showing the issue so we can check it. You can upload the video to Google Drive and make sure access permission is enabled. Also, please let us know which brand of wheelbase you are using — in some cases, interference may be caused by the PC not being properly grounded. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-25T02:13:14Z",
+      "updated_at": "2025-10-25T02:13:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "id": 7939,
+  "subject": "Pro X and Plus X compatibility",
+  "description_text": "Hi,\r\n\r\nI just received my Pro X clutch. I have previously purchased the Plus X\r\nBrake and Throttle, and was unaware that the Pro X pedals used a RJ45\r\nconnector rather than the RJ11 that is used for the Plus X pedals and the\r\nPlus X control box. I would rather not return the item and get the Plus X\r\nclutch if possible. Is there any way  to modify the pedals in any way to\r\nuse a RJ11 connector and be compatible with the Plus X control box?\r\n\r\nRegards,\r\n\r\nTaaj\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-12-11T02:32:28Z",
+  "updated_at": "2025-12-17T06:02:44Z",
+  "requester_id": 158007751463,
+  "responder_id": 158007774664,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014300763,
+      "body_text": "Hi Taaj Street,     Let’s wait a few days. I’ll purchase several RJ45 female connectors and crimp an RJ11 plug to send to you. It will work, but the lighting won’t be functional. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T05:25:13Z",
+      "updated_at": "2025-12-11T05:25:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014316382,
+      "body_text": "Awesome, thank you much appreciated\r\n\r\nOn Thu, Dec 11, 2025 at 4:25 PM service@simsonn.com ",
+      "user_id": 158007751463,
+      "created_at": "2025-12-11T11:34:57Z",
+      "updated_at": "2025-12-11T11:34:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014472096,
+      "body_text": "Hi Taaj Street,  The adapter is ready. Please provide your order number, contact name, phone number, and shipping address, and I will ship it to you tomorrow (Monday). ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-14T03:15:52Z",
+      "updated_at": "2025-12-14T03:15:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014472656,
+      "body_text": "Great, thank you!!\r\n\r\nOrder Number: 8207355820179714\r\nPhone number: +61 424 046 052\r\nContact Name: Taaj Street\r\nAddress: Unit 1/3 Edna Street, Mount Waverly 3149\r\n\r\n",
+      "user_id": 158007751463,
+      "created_at": "2025-12-14T04:15:02Z",
+      "updated_at": "2025-12-14T04:15:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014614101,
+      "body_text": "Hi Taaj Street,      Your product has been shipped. The logistics number is:YT2535100705663258. You can track it at this website:https://t.17track.net/zh-cn#nums=YT2535100705663258",
+      "user_id": 158007774664,
+      "created_at": "2025-12-17T06:02:26Z",
+      "updated_at": "2025-12-17T06:02:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 7435,
+  "subject": "Order not shipped #SSN3943",
+  "description_text": "Hi my order number is #SSN3943. I ordered November 27. I paid for express shipping. My order hasn’t been shipped. Are the pedals on back order? Why haven’t they been shipped?\r\n\r\nThanks in advance, \r\nBen Wilder \r\n\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-04T17:14:27Z",
+  "updated_at": "2025-12-05T08:37:39Z",
+  "requester_id": 158007615472,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013474099,
+      "body_text": "Hi Ben Wilder,    We apologize that the Pro X Ultra is currently out of stock at our US warehouse. We expect it to arrive next Tuesday and will ship your order promptly upon arrival. We sincerely apologize for the delay this may cause. We will refund the additional shipping charges for you.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-05T08:37:33Z",
+      "updated_at": "2025-12-05T08:37:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "id": 2602,
+  "subject": "Control Module/Haptic issue",
+  "description_text": "Good Morning,  \r\n\r\nI received my haptic sensors and installed them as per the instructions. However, the Haptic inserted into motor 1 (throttle) is vibrating while the computer is off. It is a very low frequency, but it is engaged. I unplugged the unit, and reinserted with no changes. Powering up the PC did not change also.  Only when I opened the Simsonn Manager app and tested the individual Motor did it disengage. Is this a known issue, and is there a troubleshoot that I can try?  Thank you for your assistance. Have a great day. \r\n\r\nJason\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-12T16:24:18Z",
+  "updated_at": "2025-08-19T04:44:51Z",
+  "requester_id": 158002524315,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006780434,
+      "body_text": "Hi Jason Pena,    Is your software version 2.1.0?  Please take a screenshot of the software interface so I can confirm the version for you.  Also, is your wheelbase a Fanatec? This kind of issue could be caused by EMI interference affecting the motor. I can provide you with a troubleshooting procedure to address it.  To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability:      1.    Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding.      2.    Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive.      3.    Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup.      4.    Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible.      5.    Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs.      6.    Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference.      7.    Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements.      8.    Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-13T00:44:31Z",
+      "updated_at": "2025-08-13T00:44:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006876771,
+      "body_text": "Good Afternoon,\r\n\r\nSoftware 2.1.0 was installed and updated the same day the issue occurred.  Wheelbase is Thrustmaster T818  (not connected to ground). I believe it maybe a grounding issue for the control box. I did not receive a grounding wire with my pedals or haptic motors that I noticed. Was it supposed to be included? I will follow all other instructions listed below. I have the option on my baseplate to mount the control box directly to the mounting bolts to the throttle. That should ground the control box, correct?  \r\n\r\nI have also come across another challenge. The haptic motors are not functioning using the Simsonn software. I have had to resort to using SimHub and launching the F1 25 app via Steam for which they are working. I have also tried F1 24 with no success using the Simon software. Any advise?  \r\n\r\nThank you again for your assistance. \r\n\r\nJason\r\n\r\n\r\n \r\n> ",
+      "user_id": 158002524315,
+      "created_at": "2025-08-14T19:18:25Z",
+      "updated_at": "2025-08-14T19:18:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006889903,
+      "body_text": "Hi Jason Pena, Could you please provide your pedal model and the order number?      Additionally, the following is the list of telemetry supported by SIMSONN Manager 2.1.0. If any telemetry on the list is not responding correctly, please let me know, and I will contact the developers to check it. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-15T02:47:40Z",
+      "updated_at": "2025-08-15T02:47:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006926406,
+      "body_text": "Pedal model: Pro X\r\n\tP2-H2 (throttle, brake) + baseplate\r\n\r\nOrder number: SSN2210, SS2212\r\n\r\nThere are 2 order numbers because I had to order the haptics separate a couple hours after the initial order when I was informed the haptics were not included, even though they are advertised (with Haptic Reactor). While disingenuous, I'm sure I'm not the first person to make that mistake. I would just prefer the haptics function with the simsonn manager. Steam uses an excessive amount of memory producing a lag response to the haptics and I would prefer to only launch the game from EA. I believe that will alleviate some of the lag response. I have tried to run F1 25 with the Simon Manager open and closed after saving, with no response from the haptics. I have also made pedal configuration changes while in game with immediate effect, with no issues. The haptics, however, only function with SimHub and steam currently.  I’m pleased with the pedal performance and at this point have no issues with them. Thank you again for your timely responses. \r\n\r\nJason\r\n\r\nPC Spec just in case: \r\nRyzen 7 7800 3dx\r\nMobo: Asus ROG B850\r\nGPU: RTX 5070\r\nMemory: 64g DDR5 6400Htz\r\n\r\n\r\n\r\n> ",
+      "user_id": 158002524315,
+      "created_at": "2025-08-15T16:41:59Z",
+      "updated_at": "2025-08-15T16:41:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006978237,
+      "body_text": "Hi Jason Pena,  Regarding the ambiguity in the advertisement, I have informed the sales team to make corrections. Additionally, the haptic module works properly in SimHub, so the hardware is fine. If it does not work in SIMSONN Manager 2.1.0, please assist by recording a video showing whether the motors respond when performing the vibration test, or if the telemetry from F1 2025 is not functioning. For clarification, games downloaded via Steam behave the same whether launched through Steam or separately. You can share the video with me via Google Drive, and I will assist you in resolving the issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-17T04:22:21Z",
+      "updated_at": "2025-08-17T04:22:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007014370,
+      "body_text": "The motors work when tested in the Simsonn Manager. However, in F1 25 the motors do not work. I have also grounded the control box with no changes noted. It sounds like the telemetry data in F1 25 might be causing the issue. \r\n\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158002524315,
+      "created_at": "2025-08-17T14:21:08Z",
+      "updated_at": "2025-08-17T14:21:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007112503,
+      "body_text": "Hi Jason Pena,  Our engineers expect to fix the telemetry for F1 2025 tomorrow. In the meantime, you can use SIMHUB 9.9.3, which supports telemetry for over 100 racing games. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-19T04:44:29Z",
+      "updated_at": "2025-08-19T04:44:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

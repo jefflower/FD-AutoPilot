@@ -1,0 +1,24 @@
+{
+  "id": 9793,
+  "subject": "Invalid discount code",
+  "description_text": "Hi.\r\n\r\nI am trying to use discount code NEW15 on your website, which is for new\r\nracers, according to your website, to buy Simsonn HS shifter. However, the\r\ncode doesn't work. Why?\r\n\r\nThanks\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-02T12:12:34Z",
+  "updated_at": "2026-01-07T09:18:28Z",
+  "requester_id": 158007467056,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016101716,
+      "body_text": "Hi Kris Bijan,     The coupon has a minimum order requirement and can be used only when the order total reaches 199.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T09:18:28Z",
+      "updated_at": "2026-01-07T09:18:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

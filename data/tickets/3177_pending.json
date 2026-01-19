@@ -1,0 +1,13 @@
+{
+  "id": 3177,
+  "subject": "来自simsonn.com的退信",
+  "description_text": "QQ邮箱退信 很抱歉您发送的邮件被退回，以下是该邮件的相关信息： 被退回邮件 主 题：Ticket Received - Aanpassing van uw advertenties noodzakelijk volgens ons beleid 时 间：2025-08-27 17:45:10 无法发送到 noreply@appsheet.com 退信原因 收件人邮件地址（noreply@appsheet.com）不存在，邮件无法送达。 host aspmx.l.google.com[142.251.12.27] said: 550-5.1.1 The email account that you tried to reach does not exist. Please try double-checking the recipient's email address for typos or unnecessary spaces. For more information, go to https://support.google.com/mail/?p=NoSuchUser d9443c01a7336-246688cb936si79062755ad.581 - gsmtp (in reply to RCPT TO command) 解决方案 请联系你的收件人，重新核实邮箱地址，或发送到其他收信邮箱。 此外，您还可以 点击这里 获取更多关于退信的帮助信息。",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-27T09:45:36Z",
+  "updated_at": "2025-08-27T10:03:23Z",
+  "requester_id": 158001011131,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": []
+}

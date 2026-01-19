@@ -1,0 +1,24 @@
+{
+  "id": 6060,
+  "subject": "Controlador com defeito",
+  "description_text": "Tenho um kit de pedais que começou apresentar defeito já faz alguns meses\r\nestavam falhando mas ainda era possível usar . Agora não é mais possível\r\nusar, o acelerador não calibra corretamente e fica oscilando e falhando,\r\nquando encosto no pedal de freio o acelerador também aciona sozinho.\r\nPoderia me ajudar.\r\nObrigado\r\nEm anexo uma foto do meu equipamento\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-13T20:57:55Z",
+  "updated_at": "2025-11-16T02:27:55Z",
+  "requester_id": 158001588036,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012399829,
+      "body_text": "Hi Rafael Santos,    If your pedal is version 1.7.1, you can download the latest SIMSONN Manager 2.1.2 using the link below. Then, follow the steps below to update the firmware:    If the software indicates that the version is too old, go to Settings → Update → Manual Firmware Update → pedals → firmware → pedals-plus.sfu to start the firmware update;    After the firmware update is completed, release the upgrade button;    Finally, test the pedal and perform a calibration.    Additionally, please ensure that your computer is properly grounded.        https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-11-16T02:27:55Z",
+      "updated_at": "2025-11-16T02:27:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

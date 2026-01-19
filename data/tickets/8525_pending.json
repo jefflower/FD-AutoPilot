@@ -1,0 +1,44 @@
+{
+  "id": 8525,
+  "subject": "Re: Ordr #SSN4321",
+  "description_text": "Hello,\r\n\r\nI got information that pedal set is being sent from Germany. but there was\r\nno pedals in stock and the new batch came on Tuesday 11.12.2025\r\n\r\nI placed my order on 2.12.2025 with express shipping 5-7 days...\r\n\r\nPlease check whether the pedals were sent from Germany to my address in\r\nPoland and share tracking number or give me information where are they.\r\n\r\nThank you.\r\n\r\nOn Mon, 15 Dec 2025 at 13:03, Dawid Hagalaz <zulizna@gmail.com> wrote:\r\n\r\n> Hello,\r\n>\r\n> I got information that pedal set is being sent from Germany. but there was\r\n> no pedals in stock and the new batch came on Tuesday 11.12.2025\r\n>\r\n> I placed my order on 2.12.2025 with express shipping 5-7 days...\r\n>\r\n> Please check whether the pedals were sent from Germany to my address in\r\n> Poland and share tracking number or give me information where are they.\r\n>\r\n> Thank you.\r\n>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-17T16:20:17Z",
+  "updated_at": "2025-12-23T11:04:37Z",
+  "requester_id": 158007693916,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014875054,
+      "body_text": "Hi Dawid Hagalaz,     Your order was originally scheduled for shipment from our German warehouse, but due to transportation delays, the goods arrived later than expected. They have now arrived at the warehouse, and we are processing them for storage and arranging DHL express shipping.",
+      "user_id": 158007774607,
+      "created_at": "2025-12-22T11:44:55Z",
+      "updated_at": "2025-12-22T11:44:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014882162,
+      "body_text": "Hello,\r\nWhat do you mean that it has been sent via DHL?\r\n\r\nYou sent me tracking number for ups (tracking number: 1ZJ455510430311815)\r\n\r\nI can see it on tracking\r\n\r\n\r\n",
+      "user_id": 158007693916,
+      "created_at": "2025-12-22T13:24:37Z",
+      "updated_at": "2025-12-22T13:24:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014969942,
+      "body_text": "Hi Dawid Hagalaz,    Your order was originally scheduled to ship from our German warehouse, but due to transportation delays, the goods arrived later than expected. To ensure delivery before Christmas, we had no choice but to ship via UPS.  https://www.ups.com/track?loc=en_US&requester=ST&trackNums=1ZJ455510430311815/trackdetails",
+      "user_id": 158001343601,
+      "created_at": "2025-12-23T11:04:36Z",
+      "updated_at": "2025-12-23T11:04:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

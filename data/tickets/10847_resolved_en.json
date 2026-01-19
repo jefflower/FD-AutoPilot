@@ -1,0 +1,55 @@
+{
+  "id": 10847,
+  "subject": "Pedals not working",
+  "description_text": "I just got my Newest Simsonn Pedal Pro X Ultra with Haptics and RGB Feedback pedals a couple of hours ago and they were missing the linear haptic feedback motors and brackets that were supposed to come with them. After still using them for a few minutes the throttle started to give less and less power when fully depressed, please supply a return address. Thank you!",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-14T02:28:52Z",
+  "updated_at": "2026-01-15T04:09:01Z",
+  "requester_id": 158009056454,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017093049,
+      "body_text": "Hi Connor Doolittle, Please open SIMSONN Manager and click the Offset button to re-zero/apply the offset. Since you adjusted the spring and mechanical setup, this step needs to be done again. If the issue still isn’t resolved, please record a short video showing the problem and share it with us via Google Drive, with the permission set to Anyone with the link can view.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-14T11:07:16Z",
+      "updated_at": "2026-01-14T11:07:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017115601,
+      "body_text": "Here is the video. I also never adjusted the spring and mechanical setup, I just attached the throttle to the baseplate and never messed with it. Here is the google drive link: https://drive.google.com/file/d/1c57ypRMEzKnbYEM95BItVaLF4f84Zq70/view?usp=drivesdk On Wed, Jan 14, 2026 at 6:07 AM support@simsonn.com",
+      "user_id": 158009056454,
+      "created_at": "2026-01-14T15:47:42Z",
+      "updated_at": "2026-01-14T15:47:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017153915,
+      "body_text": "Hi Connor Doolittle, I’ve reviewed your video. After you click Offset, you’ll need to run a full pedal calibration once: In SIMSONN Manager, click Calibrate; Press each pedal (Throttle/Brake/Clutch) with normal force; Click Save; After saving, test the pedals again — the blue progress bar should go smoothly from 0% to 100%. If it reaches 100%, the calibration is successful.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-15T01:18:26Z",
+      "updated_at": "2026-01-15T01:18:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017161720,
+      "body_text": "Yes that completely fixed the problem, sorry for all of the confusion and thank you for being so patient with me. On Wed, Jan 14, 2026 at 8:18 PM support@simsonn.com",
+      "user_id": 158009056454,
+      "created_at": "2026-01-15T04:07:25Z",
+      "updated_at": "2026-01-15T04:07:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

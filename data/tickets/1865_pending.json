@@ -1,0 +1,154 @@
+{
+  "id": 1865,
+  "subject": "Problem with VAM Pro Haptics",
+  "description_text": "Hi support,\r\n\r\nPlease help me. I encountered an issue where it makes vam pro unusable. Every time vam pro whether it’s on throttle effect or brake , it will cause my brake input signal to rise a lot which makes it unusable .\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-07-24T14:04:57Z",
+  "updated_at": "2025-08-20T16:22:42Z",
+  "requester_id": 158002314672,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005514693,
+      "body_text": "Hi FAibS Yoooooo,  To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability:     1.    Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding.     2.    Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive.     3.    Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup.     4.    Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible.     5.    Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs.     6.    Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference.     7.    Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements.     8.    Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-25T02:15:25Z",
+      "updated_at": "2025-07-25T02:15:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005533028,
+      "body_text": "Hi support ,\r\n\r\nI have just done all that you suggested but this still happening . It only happens to my brake pedal . My throttle and clutch input gets affected only a little so it doesn’t bother me. But the brake is completely unusable with vam pro. I’m using vam pro with plus x pedals\r\n\r\n\r\nSent from my iPhone\r\n\r\n",
+      "user_id": 158002314672,
+      "created_at": "2025-07-25T10:03:46Z",
+      "updated_at": "2025-07-25T10:03:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005533114,
+      "body_text": "I have just done all that you suggested but this still happening . It only happens to my brake pedal . My throttle and clutch input gets affected only a little so it doesn’t bother me. But the brake is completely unusable with vam pro. I’m using vam pro with plus x pedals .\r\n\r\nI have also completely disconnected my wheelbase to test the plus x pedals with vam pro alone and the result is the same . The issue isn’t cause of emi from the wheelbase . Maybe the lack of emi protection on the brake pedal\r\n\r\nSent from my iPhone\r\n\r\n",
+      "user_id": 158002314672,
+      "created_at": "2025-07-25T10:15:23Z",
+      "updated_at": "2025-07-25T10:15:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005550725,
+      "body_text": "Hi FAibS Yoooooo,     Have you connected the green wire from the control box to any metal screw on the brake pedal? Please provide a photo for confirmation. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-26T03:38:22Z",
+      "updated_at": "2025-07-26T03:38:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005551422,
+      "body_text": "[image0.jpeg]\r\n\r\nYes I have , I even grounded the whole rig and all accessories using star grounding method\r\n\r\nSent from my iPhone\r\n\r\n",
+      "user_id": 158002314672,
+      "created_at": "2025-07-26T05:11:36Z",
+      "updated_at": "2025-07-26T05:11:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005567652,
+      "body_text": "Hi FAibS Yoooooo,  ​Additionally, you need to place the cables and control box away from the brake and make sure the cables do not touch it. Otherwise, the vibration will keep triggering the brake and cause signal fluctuations. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-26T07:51:20Z",
+      "updated_at": "2025-07-26T07:51:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005567748,
+      "body_text": "Hi FAibS Yoooooo,  https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-07-26T07:51:44Z",
+      "updated_at": "2025-07-26T07:51:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005620664,
+      "body_text": "Hi support,\r\n\r\n\r\nI have cleaned up the cables and move the control box far away from my rig . The problem is still the same . I also notice if I lower the volume for the vam pro , the brake signal gets affected more . If I use wheel slip effect , it will automatically brake for me and the brake signal is super noisy\r\n\r\nSent from my iPhone\r\n\r\n",
+      "user_id": 158002314672,
+      "created_at": "2025-07-27T05:08:52Z",
+      "updated_at": "2025-07-27T05:08:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005620766,
+      "body_text": "Hi FAibS Yoooooo,  Alternatively, you can share your location and available time, and we can schedule a session for me to remotely assist you in identifying and resolving the EMI issue. Please install ToDesk; no registration is required. If a registration prompt appears, simply close it using the button in the upper right corner. Then, provide me with your ID and temporary password. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-27T05:45:08Z",
+      "updated_at": "2025-07-27T05:45:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005722028,
+      "body_text": "Hi support\r\n\r\nThank you, I am from Malaysia and yes I will install the software and would like to have an appointment .  I will be free this Friday 1st of August 2pm gmt+8 or next Monday 4th of August 2pm gmt+8. The only thing I haven’t tried with your suggestion is usb isolator . I have purchased it but it hasn’t arrived yet. It arrives on approximately on 2nd of August . Should I only schedule an appointment after I test it with the usb isolator ?\r\n\r\nSent from my iPhone\r\n\r\n",
+      "user_id": 158002314672,
+      "created_at": "2025-07-28T09:00:50Z",
+      "updated_at": "2025-07-28T09:00:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005780684,
+      "body_text": "你好，FAibS Yoooooo，  您可以先测试一下USB接口，并提供您的订单号、脚踏安装照片、以及您的轴距型号， 我帮您检查一下。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-29T15:40:49Z",
+      "updated_at": "2025-07-29T15:40:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007114212,
+      "body_text": "Hi Simsonn support,\r\n\r\nI have tried the usb isolator and it does not help the issue. I will install Todesk and will need your help . Are you available this Friday 22/8/2025 at 2pm gmt +8?\r\nSent from my iPhone\r\n\r\n",
+      "user_id": 158002314672,
+      "created_at": "2025-08-19T06:54:36Z",
+      "updated_at": "2025-08-19T06:54:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007216383,
+      "body_text": "Hi FAibS Yoooooo,  We have identified this issue and will fix it within the next few days through a software update. Thank you for your patience. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-20T14:55:17Z",
+      "updated_at": "2025-08-20T14:55:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007231432,
+      "body_text": "Hi FAibS Yoooooo,  The quickest replacement solution is to use nylon screws and nylon washers of the same specification (non-metal material) instead of the provided metal screws. The screw specification is M4×8mm, and the washer has an M4 inner diameter. This ensures proper electrical isolation between the bracket and the VAM Pro motor.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-20T16:22:42Z",
+      "updated_at": "2025-08-20T16:22:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": 6720,
+  "subject": "刹车踏板故障",
+  "description_text": "你好，\n\n根据您的要求，这是一段展示相关行为的视频：\n\n\n\n\n在 simsonn 应用和校准中，踩下刹车只产生一个非常小且不稳定的值。\n\n史蒂文·斯宾塞\n028-1754586-7574715",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-11-25T15:23:18Z",
+  "updated_at": "2025-11-26T23:12:47Z",
+  "requester_id": 158007323105,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012942929,
+      "body_text": "你好 史蒂文·斯宾塞， 如果是这种情况，说明踏板的机械结构被调整过了。请在软件中点击“Offset”将踏板信号归零，此时白色信号会从0%开始。重新校准踏板后，蓝色信号将能正确地在0%到100%的范围内变化。",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T11:35:29Z",
+      "updated_at": "2025-11-26T11:35:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

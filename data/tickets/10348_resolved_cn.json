@@ -1,0 +1,65 @@
+{
+  "id": 10348,
+  "subject": "订单号：SSN5499",
+  "description_text": "下午好，\n我向您购买了一套双踏板，本周二刚收到。一切看起来都很好，直到我尝试将踏板连接到我的 Fanatec GT DD 方向盘底座上使用。当您的踏板插上后，方向盘底座就会关闭并无法使用。在过去几天里，我尝试了多种方法来解决这个问题，但方向盘底座仍然会关闭。如果我拔掉您的踏板并重新连接 Fanatec 踏板，方向盘底座就会立即重新启动并正常使用。我想知道这个问题该如何解决。感谢您的时间。\n\nBruce Ellingwood\n406 561 1860",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-08T22:02:18Z",
+  "updated_at": "2026-01-11T01:26:27Z",
+  "requester_id": 158008989766,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016452212,
+      "body_text": "您好，Bear，为了解决电磁干扰 (EMI) 问题，请遵循以下步骤来提高设备稳定性和 USB 连接可靠性：\n1. 确保正确接地：确保计算机连接到带可靠接地的三孔插座。两孔插头不提供接地。\n2. 控制盒接地：使用绿色屏蔽线将控制盒的金属外壳（例如铜柱或螺丝）连接到踏板上的任何金属螺丝。确保接触点无油漆且导电。\n3. 底座接地（例如 Fanatec / MOZA）：建议将底座的金属部分连接到 PC 机箱或外部接地，以释放静电。\n4. 避免高干扰区域：使 USB 电缆远离高压电源线或适配器；如果可能，请单独布线。\n5. 使用直接 USB 连接：将设备直接连接到 PC 背面的 USB 3.0 端口，而不是使用无源或低质量的 USB 集线器。\n6. 使用带铁氧体磁芯的 USB 电缆：如果需要，请改用带铁氧体磁珠的高质量 USB 电缆，以减少高频干扰。\n7. 保持软件和固件更新：确保 SIMSONN Manager 和固件更新到最新版本，因为某些更新包含 EMI 处理改进。\n8. 使用 USB 隔离器：如果以上方法无法解决问题，建议使用 USB 隔离器。它物理隔离 USB 电源和数据线，有效屏蔽控制设备免受 EMI 源的影响。\nhttps://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2026-01-09T01:11:24Z",
+      "updated_at": "2026-01-09T01:11:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016452544,
+      "body_text": "我已完成所有操作。仍然没有进展。下一步怎么办？\n\nBruce Ellingwood\n\n406 561 1860\n\n-------- 原始消息 --------",
+      "user_id": 158008989766,
+      "created_at": "2026-01-09T01:14:12Z",
+      "updated_at": "2026-01-09T01:14:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016462119,
+      "body_text": "很抱歉，我不得不订购一个 USB 隔离器，它将于周一到货。我会向您报告。谢谢\n\nBear Woods 406 561 1860\n\n-------- 原始消息 --------",
+      "user_id": 158008989766,
+      "created_at": "2026-01-09T02:40:26Z",
+      "updated_at": "2026-01-09T02:40:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016751434,
+      "body_text": "USB 隔离器提前收到了，所以今天设法测试了所有东西。效果非常好。踏板很棒。远远超出我的预期。再次感谢您，并为我的知识匮乏和虚惊一场致歉。\n\nBear Woods 406 561 1860\n\n-------- 原始消息 --------",
+      "user_id": 158008989766,
+      "created_at": "2026-01-10T21:54:54Z",
+      "updated_at": "2026-01-10T21:54:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016762418,
+      "body_text": "您好，Bear，我们很高兴听到您的问题已解决。如果您在使用过程中有任何其他问题或遇到任何困难，请随时与我们联系。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T01:26:26Z",
+      "updated_at": "2026-01-11T01:26:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

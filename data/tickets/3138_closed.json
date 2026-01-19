@@ -1,0 +1,24 @@
+{
+  "id": 3138,
+  "subject": "Order Confirmation",
+  "description_text": "Hello,\r\nI recently purchased the control box on Sunday. I haven’t seen any updates\r\nor received an order confirmation yet. It is for Chris Romero, going to\r\n1006 N Murray Blvd Colorado Springs Co. I was just wanting to see if I\r\ncould get an update?\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-08-26T15:08:07Z",
+  "updated_at": "2025-09-24T15:10:53Z",
+  "requester_id": 158003607773,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009235888,
+      "body_text": "此工单已关闭并合并到工单 4020 中",
+      "user_id": 158000445778,
+      "created_at": "2025-09-24T15:10:53Z",
+      "updated_at": "2025-09-24T15:10:53Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

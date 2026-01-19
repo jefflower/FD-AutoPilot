@@ -1,0 +1,84 @@
+{
+  "id": 4903,
+  "subject": "Ticket #4267",
+  "description_text": "Hi.\r\n\r\nI've had an open ticket for a few days now, and I haven't received a\r\nresponse.\r\n\r\nI bought PLUS X PEDAL CONTROL BOX + 1 VAM (without power suply) and 1\r\nMOUNTING BRAKET\r\n\r\nBut I receipt this:\r\n[image: attachment.jpg]\r\nMy order number is SSN2771, but I never received the confirmation email and\r\nwhat I paid does not correspond to what I received.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-15T10:01:17Z",
+  "updated_at": "2025-10-16T07:18:52Z",
+  "requester_id": 158005189583,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010479181,
+      "body_text": "I need to resolve this as soon as possible because it's a gift for November\r\n1st.\r\nThank you for your help.\r\n\r\nRegards, Libe.\r\n\r\n",
+      "user_id": 158005189583,
+      "created_at": "2025-10-15T10:02:26Z",
+      "updated_at": "2025-10-15T10:02:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010479244,
+      "body_text": "Hi Libe Matesanz García,    We sincerely apologise for the delay in addressing your email, which appears to have been directed to your spam folder. We have noted that an error did occur with your order. Did you not receive the Plus X control box?",
+      "user_id": 158001343601,
+      "created_at": "2025-10-15T10:07:55Z",
+      "updated_at": "2025-10-15T10:07:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010479275,
+      "body_text": "You did not receive the order confirmation and dispatch notification because you did not provide a valid email address. We have now added this email address.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-15T10:10:05Z",
+      "updated_at": "2025-10-15T10:10:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010512074,
+      "body_text": "No... only the items in the picture... no control box.",
+      "user_id": 158005189583,
+      "created_at": "2025-10-15T17:23:35Z",
+      "updated_at": "2025-10-15T17:23:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010512167,
+      "body_text": "No... only the items in the picture... no control box.\r\n\r\nEl mié, 15 oct 2025 a las 12:10, service@simsonn.com (",
+      "user_id": 158005189583,
+      "created_at": "2025-10-15T17:26:41Z",
+      "updated_at": "2025-10-15T17:26:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010544605,
+      "body_text": "Hi Libe Matesanz García,    We sincerely apologise for any inconvenience caused. An error has been made by our staff, and we shall arrange for a replacement to be sent to you immediately.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-16T07:16:12Z",
+      "updated_at": "2025-10-16T07:16:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010544658,
+      "body_text": "​  This is your logistics tracking link:  https://t.17track.net/en#nums=SF6045974582522",
+      "user_id": 158001343601,
+      "created_at": "2025-10-16T07:18:52Z",
+      "updated_at": "2025-10-16T07:18:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

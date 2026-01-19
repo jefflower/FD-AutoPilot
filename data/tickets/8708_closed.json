@@ -1,0 +1,24 @@
+{
+  "id": 8708,
+  "subject": "non-delivery of items",
+  "description_text": "I need a refund for 3 quick releases that were never delivered. SSN3540 AND\r\nSSN3336\r\nYour company did not deliver 3 of these quick releases and you have not\r\ncommunicated with me. I need a full refund immediately for all 3 plus\r\nshipping charges. I do not want promises I need a refund.\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-12-19T20:18:20Z",
+  "updated_at": "2025-12-20T13:18:03Z",
+  "requester_id": 158001655554,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014810825,
+      "body_text": "此工单已关闭并合并到工单 8712 中",
+      "user_id": 158000445778,
+      "created_at": "2025-12-20T13:18:03Z",
+      "updated_at": "2025-12-20T13:18:03Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

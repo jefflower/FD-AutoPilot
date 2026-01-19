@@ -1,0 +1,64 @@
+{
+  "id": 2481,
+  "subject": "Missing DC cable",
+  "description_text": "﻿Hello Simsonn I just purchased your +X pedals from Amazon, and upon building I noticed I’m Missing a DC cable for the transmitter box. Do I need that cable?\r\n\r\nSent from my iPad\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-08-08T19:05:25Z",
+  "updated_at": "2025-12-21T02:24:43Z",
+  "requester_id": 158002848378,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006597499,
+      "body_text": "Hi Carlos Garcia,  Are you referring to the 24V DC power cable? That is only included when you purchase the VAM Pro motor package separately. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-09T14:27:55Z",
+      "updated_at": "2025-08-09T14:27:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006696868,
+      "body_text": "Yes I guess it’s that cable, I see the option on my transmitter box, but don’t know if I need that cable for my set up.\r\n\r\nSent from my iPad\r\n\r\n> ",
+      "user_id": 158002848378,
+      "created_at": "2025-08-11T14:20:39Z",
+      "updated_at": "2025-08-11T14:20:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006727107,
+      "body_text": "Hi Carlos Garcia,   If you did not purchase the VAM Pro motor, you do not need the DC 24V power cable, as the USB cable alone is sufficient. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-12T05:28:11Z",
+      "updated_at": "2025-08-12T05:28:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006750710,
+      "body_text": "Ok Thank you \r\n\r\nCarlos\r\n\r\n\r\n> ",
+      "user_id": 158002848378,
+      "created_at": "2025-08-12T13:36:46Z",
+      "updated_at": "2025-08-12T13:36:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014824719,
+      "body_text": "It was and the pedals work fine Carlos ",
+      "user_id": 158002848378,
+      "created_at": "2025-12-21T00:28:19Z",
+      "updated_at": "2025-12-21T00:28:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

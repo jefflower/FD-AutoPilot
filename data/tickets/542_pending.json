@@ -1,0 +1,24 @@
+{
+  "id": 542,
+  "subject": "Order not received",
+  "description_text": "Hey i ordered Simsonn VAM Pro Linear Motor - the Pedals Haptic Reactor for Vibration Feedback 8 working days ago 5 June and still havent received my order or had any contact regarding delivery. Order number is #SSN1663\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-17T18:32:30Z",
+  "updated_at": "2025-06-22T02:47:11Z",
+  "requester_id": 158001626995,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003679652,
+      "body_text": "Hi Jason Schmidt, The motor has already been shipped. Below is the latest tracking information for your reference. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T02:47:11Z",
+      "updated_at": "2025-06-22T02:47:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

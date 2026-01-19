@@ -1,0 +1,124 @@
+{
+  "id": 10216,
+  "subject": "Warranty request – SIMSONN shifter not recognized by PC",
+  "description_text": "Hello.\r\n\r\nI purchased a SIMSONN shifter from your official store.\r\nThe device worked normally for about two weeks.Order #SSN4047\r\n\r\nNow it receives power (button LEDs are working), but it is *not recognized\r\nby the PC as a USB device at all*.\r\nThere is no USB connection sound and nothing appears in Device Manager.\r\n\r\nThere is no physical damage and the device has not been modified or\r\ndisassembled.\r\nThe product is still under the 12-month warranty.\r\n\r\nPlease advise how to proceed with warranty service.\r\n\r\nThank you.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-07T12:40:17Z",
+  "updated_at": "2026-01-12T12:07:55Z",
+  "requester_id": 158008157759,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016143282,
+      "body_text": "Hi Іван Шаламов,     Please connect the device directly to a rear motherboard USB 3.0 (blue) port on your PC. Do not use a USB hub, as it may cause power or communication instability.  If the issue persists, please record a short video showing the problem and share it with me via Google Drive, making sure the link is set to view access so I can further assist you.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T14:00:04Z",
+      "updated_at": "2026-01-07T14:00:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016175720,
+      "body_text": "ср, 7 янв. 2026 г. в 14:00, service@simsonn.com ",
+      "user_id": 158008157759,
+      "created_at": "2026-01-07T17:23:45Z",
+      "updated_at": "2026-01-07T17:23:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016241933,
+      "body_text": "Hi Іван Шаламов,  The video you uploaded appears to be incomplete, and we’re unable to open or view it properly. Please re-upload the full video, or share it via Google Drive with the viewing permission set to “Anyone with the link can view,” so we can further check the issue. Thank you for your understanding and cooperation. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-08T01:28:46Z",
+      "updated_at": "2026-01-08T01:28:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016314257,
+      "body_text": " video_2026-01-07_17-18-13.mp4\r\n<https://drive.google.com/open?id=1UAnCZpct1n34i1nLx0sYIRtNrvx2m10Q>\r\n\r\nчт, 8 янв. 2026 г. в 01:29, service@simsonn.com ",
+      "user_id": 158008157759,
+      "created_at": "2026-01-08T09:38:10Z",
+      "updated_at": "2026-01-08T09:38:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016318893,
+      "body_text": "Hi Іван Шаламов,  You can first remove the handle head, then unscrew the six outer screws on the bottom to open the housing. Please check whether the PCB has been scratched or damaged, or if overly long mounting screws from the bottom bracket may have damaged the board. If there is any issue, we can send you a replacement PCB for installation. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-08T09:58:55Z",
+      "updated_at": "2026-01-08T09:58:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016364856,
+      "body_text": " video_2026-01-08_14-36-06.mp4\r\n<https://drive.google.com/open?id=1ew4eq2QWn3XG-focV5jybObAS0A3GdC5>\r\n\r\nHello,\r\n\r\nThank you for your instructions.\r\n\r\nI followed your steps:\r\n\r\n   -\r\n\r\n   removed the handle head\r\n   -\r\n\r\n   unscrewed the six outer screws on the bottom\r\n   -\r\n\r\n   opened the housing and checked the PCB\r\n\r\nThere are *no scratches, no visible damage, and no marks from mounting\r\nscrews* on the PCB.\r\nThe board looks clean and intact.\r\n\r\nHowever, the issue remains:\r\n\r\n   -\r\n\r\n   the shifter receives power (button LEDs are working)\r\n   -\r\n\r\n   the PC does *not detect it as a USB device*\r\n   -\r\n\r\n   no connection sound\r\n   -\r\n\r\n   nothing appears in Device Manager\r\n   -\r\n\r\n   the D1 LED on the PCB does not light up\r\n\r\nI have attached a video showing the issue.\r\n\r\nPlease advise the next step.\r\nIf possible, I would appreciate a *replacement PCB under warranty*, as\r\nsuggested.\r\n\r\nThank you.\r\n\r\n\r\nчт, 8 янв. 2026 г. в 09:59, service@simsonn.com ",
+      "user_id": 158008157759,
+      "created_at": "2026-01-08T14:40:31Z",
+      "updated_at": "2026-01-08T14:40:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016470458,
+      "body_text": "Hi Іван Шаламов,     Please disconnect the two 4-pin data cables first and check whether the LED on the control board lights up. Also, please verify whether the USB cable is damaged, which could prevent the controller from receiving power. If none of these steps resolve the issue, we will send you a replacement control board. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-09T03:54:53Z",
+      "updated_at": "2026-01-09T03:54:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016522857,
+      "body_text": "Hello,\r\n\r\nI followed your instructions.\r\n\r\n* I disconnected both 4-pin data cables and connected the USB cable.\r\n* The LED on the control board (D1) still does not light up.\r\n* The PC does not detect the device as a USB device.\r\n* I also checked the USB cable\r\n\r\nThe issue remains unchanged.\r\n\r\nPlease proceed with sending a replacement control board under warranty.\r\n\r\nThank you.\r\n\r\nпт, 9 янв. 2026 г. в 03:55, service@simsonn.com ",
+      "user_id": 158008157759,
+      "created_at": "2026-01-09T10:41:06Z",
+      "updated_at": "2026-01-09T10:41:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016748145,
+      "body_text": "Hello,\r\n\r\nJust following up on my previous message.\r\n\r\nI completed all the checks you requested, and the issue remains unchanged.\r\nPlease let me know the next step for the warranty replacement of the\r\ncontrol board, or if you need any additional information from my side.\r\n\r\nThank you.\r\n\r\nпт, 9 янв. 2026 г. в 10:40, Іван Шаламов <ivanshalamov1@gmail.com>:\r\n\r\n> Hello,\r\n>\r\n> I followed your instructions.\r\n>\r\n> * I disconnected both 4-pin data cables and connected the USB cable.\r\n> * The LED on the control board (D1) still does not light up.\r\n> * The PC does not detect the device as a USB device.\r\n> * I also checked the USB cable\r\n>\r\n> The issue remains unchanged.\r\n>\r\n> Please proceed with sending a replacement control board under warranty.\r\n>\r\n> Thank you.\r\n>\r\n> пт, 9 янв. 2026 г. в 03:55, service@simsonn.com ",
+      "user_id": 158008157759,
+      "created_at": "2026-01-10T20:48:11Z",
+      "updated_at": "2026-01-10T20:48:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016767690,
+      "body_text": "Hi Іван Шаламов,  We will send you a new replacement mainboard as soon as possible. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T03:14:35Z",
+      "updated_at": "2026-01-11T03:14:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016858395,
+      "body_text": "Hi Іван Шаламов,    Here is your replacement link.  https://t.17track.net/en#nums=YT2601200709335769",
+      "user_id": 158001343601,
+      "created_at": "2026-01-12T12:07:55Z",
+      "updated_at": "2026-01-12T12:07:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

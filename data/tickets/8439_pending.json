@@ -1,0 +1,24 @@
+{
+  "id": 8439,
+  "subject": "Re: Reminder: Order #SSN3569, how did it go?",
+  "description_text": "Bonjour\r\n\r\nPour la connexion USB c'est ok par contre j'ai un problème avec Rfactor 2 car au bout de 2 ou 3 tours de circuit soit je perds la connexion avec les Haptics ou alors ils se mettent à vibrer tout seul très fortement. Quand je les testent avec Simhub ou avec Simmsson Manager ils fonctionnent bien. Pour quand Simmsson Manager est en marche cela ralenti ma souris sans fils comme si quelques chose interférait avec elle.\r\nPouvez-vous m'aider ?\r\n\r\nCordialement\r\n\r\n\r\n\r\n\r\n----- Mail original -----\r\nDe: \"SIMSONN\" <no-reply@loox.io>\r\nÀ: \"herve pellegrini\" <herve.pellegrini@free.fr>\r\nEnvoyé: Mardi 16 Décembre 2025 18:51:34\r\nObjet: Reminder: Order #SSN3569, how did it go?\r\n\r\n\r\nHello herve, We would be grateful if you shared how things look and feel. Your review helps us and the community that supports us, and it only takes a few seconds. ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ \tHello herve, \r\n\r\nWe would be grateful if you shared how things look and feel. Your review helps us and the community that supports us, and it only takes a few seconds. \tSimsonn VAM Pro Linear Motor -  the Pedals Haptic Reactor for Vibration Feedback\r\nSimsonn VAM Pro Linear Motor - the Pedals Haptic Reactor for Vibration Feedback \r\nVAM Pro Set (3 pac/includes power supply) \t\t\t\t\t\t\t\tDislike it \t\tLove it! \t\r\n\r\n\tSimsonn VAM Pro Linear Motor -  the Pedals Haptic Reactor for Vibration Feedback\r\nSimsonn VAM Pro Linear Motor - the Pedals Haptic Reactor for Vibration Feedback \r\nPro X Ultra Pedal Control Box \t\t\t\t\t\t\t\tDislike it \t\tLove it! \t\t\t\r\nUnsubscribe \t\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-16T19:11:01Z",
+  "updated_at": "2025-12-17T01:44:11Z",
+  "requester_id": 158007837312,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014609430,
+      "body_text": "Hi Herve. pellegrini,  If this happens, it indicates that the computer’s grounding is not reliable, possibly because a three-prong plug was not used with a three-prong wall outlet. You can refer to the post below: connect the computer case to the stand, and connect the control box to the metal screws on the pedals. This should resolve the disconnection issue.  https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T01:44:11Z",
+      "updated_at": "2025-12-17T01:44:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

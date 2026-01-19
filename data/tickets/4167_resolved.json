@@ -1,0 +1,64 @@
+{
+  "id": 4167,
+  "subject": "Simsonn Manager",
+  "description_text": "My pedals were working fine then I installed the Simsonn Manager, which\r\nthere is no clear guidance on which version to install, then I installed\r\nthe update that was available and now the program will not work and my\r\npedals will not work. I tried to uninstall the Manager program and it\r\ncannot be uninstalled. Now my pedals do not work at all. How do I uninstall\r\nthis program or how do I fix this?\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-09-26T20:57:32Z",
+  "updated_at": "2025-09-29T11:25:53Z",
+  "requester_id": 158001868657,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009360657,
+      "body_text": "Hi John Zoeller,  Could you please let me know the model of your pedals? This issue can be resolved by updating the firmware. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-27T02:28:30Z",
+      "updated_at": "2025-09-27T02:28:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009424646,
+      "body_text": "I have the 2 pedal Pro X model. Also, after I installed the update the main\r\nprogram was in Chinese and it was only a partial install as the main screen\r\nwas not all there. The pedals worked great before I installed the Simsonn\r\nManager, I was just hoping to tweak them a little for different cars I\r\ndrive.\r\n\r\nOn Fri, Sep 26, 2025, 10:28 PM service@simsonn.com ",
+      "user_id": 158001868657,
+      "created_at": "2025-09-27T12:01:16Z",
+      "updated_at": "2025-09-27T12:01:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009425133,
+      "body_text": "Hi John Zoeller,         In SIMSONN Manager 2.1.0, you can switch the interface to English. Please try a manual firmware update:    Press and hold the upgrade button on the control box, then reconnect the USB cable.    The software will indicate that it has entered Flash update mode.    Go to Settings → Update → Manual Firmware Update → pedals-firmware → pedals-prox.sfu.    Once the update is complete, please test the device again.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-27T12:33:27Z",
+      "updated_at": "2025-09-27T12:33:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009433986,
+      "body_text": "That seems to have worked! Thank you for your help!\r\n\r\nOn Sat, Sep 27, 2025, 8:33 AM service@simsonn.com ",
+      "user_id": 158001868657,
+      "created_at": "2025-09-27T14:25:09Z",
+      "updated_at": "2025-09-27T14:25:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009625585,
+      "body_text": "I was told exactly what to do to fix my issue and it worked! The response time was also very quick and appreciated. Thank you ",
+      "user_id": 158001868657,
+      "created_at": "2025-09-29T11:25:52Z",
+      "updated_at": "2025-09-29T11:25:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ]
+}

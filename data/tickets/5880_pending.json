@@ -1,0 +1,44 @@
+{
+  "id": 5880,
+  "subject": "Order SSN2851",
+  "description_text": "Good morning.\r\nYesterday I had a problem with my pedals and my PC isn't detecting them. I imagine it's due to a problem with the controller. I've attached images so you can see the problem.\r\n\r\nThank you very much for your attention and I look forward to your response.\r\n\r\nBest regards.\r\n\r\nObtener Outlook para Android<https://aka.ms/ghei36>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-10T10:08:42Z",
+  "updated_at": "2025-11-16T02:53:49Z",
+  "requester_id": 158006917598,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012092954,
+      "body_text": "Hi Francisco Monzón,      Launch the latest version of SIMSONN Manager 2.1.2.    On the “Plus X” control unit, press and hold the “Upgrade” button.    While holding the button, unplug the USB cable from the PC and then plug it back in. The software should detect the device entering “SIMSONN Flasher update mode”.    In the software go to: Settings → Update → Manual Firmware Update.    In the file selector choose: pedals‑firmware → pedals‑plusx.sfu.    Click “Start Update” and wait until the firmware is completely written. During this process do not disconnect the USB or close the application.    Once the update is finished (you’ll get a success prompt or the unit will reboot), unplug and re‑plug the USB then test the pedal device to confirm everything works correctly.     This issue is usually caused by using a USB hub, which can result in an unstable connection. We recommend connecting the device directly to the USB 3.0 blue port on the back of your PC. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-11T01:31:45Z",
+      "updated_at": "2025-11-11T01:31:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012165452,
+      "body_text": "Good morning. Thank you for the quick response from support.\r\n I followed the steps outlined in the email and reset the firmware. The problem is resolved; however, the brake load cell fluctuates even without pressing the pedal after calibration. I had to increase the dead zone to fix the issue, but it seems to work fine in the simulator.\r\n\r\nThank you. Best regards.\r\n\r\nPaco.\r\n________________________________\r\nDe: service@simsonn.com ",
+      "user_id": 158006917598,
+      "created_at": "2025-11-12T09:48:31Z",
+      "updated_at": "2025-11-12T09:48:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012400101,
+      "body_text": "Hi Francisco Monzón,  First, please make sure you are using a USB 3.0 (blue) port, and avoid connecting the device through a USB hub. Additionally, please refer to the link below and use any wire to connect the computer case to a screw on the controller box. You may also connect any screw on the controller box to any screw on the pedal.  The reason for this is that some computer cases are not properly grounded to the household earth, which may cause grounding issues and affect device stability.     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-11-16T02:53:48Z",
+      "updated_at": "2025-11-16T02:53:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

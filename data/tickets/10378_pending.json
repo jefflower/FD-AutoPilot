@@ -1,0 +1,24 @@
+{
+  "id": 10378,
+  "subject": "Order#SSN5495",
+  "description_text": "I placed order the 30th paid for product with expedited shipping shipment still only shows label created . I made a complaint about this received an email regarding a ticket but I can not log into your site . This was purchased through shop , I also attempted to create a log in but your system seems to be malfunctioning . In creation of account  I never set password  as I was never prompted to .  But then taken to login page and I have no password I also never received an email for registration I tried two other email addresses thinking it was the email account no luck . I need to know what the status of my order is.\r\n\r\nGet Outlook for iOS<https://aka.ms/o0ukef>\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-09T07:55:15Z",
+  "updated_at": "2026-01-12T11:39:04Z",
+  "requester_id": 158008963646,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016856510,
+      "body_text": "Hi Adam Mcdaniel,    We apologize for the delayed response; we've just returned from vacation. Here is your shipping tracking link. This product has been out of stock for nearly two weeks due to overwhelming demand. We'll ship it out within the next couple of days and sincerely apologize for the delay.  https://t.17track.net/en#nums=SF6047209431506",
+      "user_id": 158001343601,
+      "created_at": "2026-01-12T11:39:04Z",
+      "updated_at": "2026-01-12T11:39:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

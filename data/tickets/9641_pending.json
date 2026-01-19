@@ -1,0 +1,64 @@
+{
+  "id": 9641,
+  "subject": "Order follow up #SSN4262",
+  "description_text": "Hello Simsonn team,\r\n\r\nI'm following up on order #SSN4262.\r\nI placed the order on the 1st of December.\r\nLast time I talked with you I was advised it would be shipped and delivered\r\non the 20th of December, however I still have not received it and the\r\ntracking is on \"Label Created\" ever since.\r\n\r\nAny chance you can help me with this or give me any update?\r\nThank you in advance and wishes for a happy new year.\r\n\r\nKind regards\r\nTasos\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-31T07:12:26Z",
+  "updated_at": "2026-01-04T09:52:11Z",
+  "requester_id": 158007812530,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015301155,
+      "body_text": "Hi Tasos Sklias,  I have reported this issue to our operations team. They will investigate immediately to determine whether it was caused by an incorrectly entered UPS tracking number. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T07:58:28Z",
+      "updated_at": "2025-12-31T07:58:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015310526,
+      "body_text": "Thank you for this, however it's still 11 days over the suggested delivery\r\ndate, and 31 days since the order placement.\r\nI would love to know when I will receive the purchased item please.\r\n\r\nKind regards\r\n\r\n\r\n",
+      "user_id": 158007812530,
+      "created_at": "2025-12-31T11:44:53Z",
+      "updated_at": "2025-12-31T11:44:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015310585,
+      "body_text": "你好，Tasos Sklias，    给您带来的不便，我们深表歉意。您的订单可能已丢失。我们将尽快调查并重新寄送。",
+      "user_id": 158001343601,
+      "created_at": "2025-12-31T11:49:24Z",
+      "updated_at": "2025-12-31T11:49:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015476544,
+      "body_text": "Hello Simsonn team,\r\n\r\nHappy new year. Are there any news with my order?\r\n\r\nKind regards\r\n\r\nΣτις Τετ 31 Δεκ 2025 στις 12:49 μ.μ., ο/η service@simsonn.com <\r\nservice@simsonn.com> έγραψε:\r\n\r\n> 你好，Tasos Sklias，\r\n>\r\n> 给您带来的不便，我们深表歉意。您的订单可能已丢失。我们将尽快调查并重新寄送。\r\n>\r\n>\r\n> On Wed, 31 Dec at 2:58 AM , service@simsonn.com ",
+      "user_id": 158007812530,
+      "created_at": "2026-01-03T11:59:48Z",
+      "updated_at": "2026-01-03T11:59:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015614837,
+      "body_text": "Hi Tasos Sklias,    We apologize, but this package has been lost. We have arranged for UPS to reship your order. Here is your tracking number:  1ZJ455510407917705  It is expected to arrive on the 9th.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-04T09:52:10Z",
+      "updated_at": "2026-01-04T09:52:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

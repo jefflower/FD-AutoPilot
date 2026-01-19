@@ -1,0 +1,74 @@
+{
+  "id": 6639,
+  "subject": "Order #SSN3566",
+  "description_text": "Hey!\r\n\r\n\r\nCan you give me some info about my order? I put up my order in 7 days ago\r\nand haven’t received any information about it.\r\n\r\n\r\nBest regards\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-24T10:43:36Z",
+  "updated_at": "2025-11-25T11:46:57Z",
+  "requester_id": 158007293724,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012806355,
+      "body_text": "Hi Jürgen Järveküla,    We apologise for any inconvenience caused. Our German warehouse is currently out of stock, with replenishment expected by the 27th. At that time, we shall dispatch your order via DHL and refund the additional shipping charges incurred.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-24T10:46:16Z",
+      "updated_at": "2025-11-24T10:46:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012806439,
+      "body_text": "Okay.\r\n\r\nAnd when I can expect it to be delivered based on your past experience?\r\n\r\nAnd also does it mean I won’t need to pay any extra import taxes and extra\r\nfees in Estonia because it will be shipped from Germany?\r\n\r\n\r\nOn Mon, 24. Nov 2025 at 12:46, support@simsonn.com ",
+      "user_id": 158007293724,
+      "created_at": "2025-11-24T10:50:21Z",
+      "updated_at": "2025-11-24T10:50:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012808590,
+      "body_text": "Hi Jürgen Järveküla,    Estimated delivery in 3-5 days. Yes, no customs duties required.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-24T11:00:34Z",
+      "updated_at": "2025-11-24T11:00:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012809857,
+      "body_text": "Okay.\r\n\r\nThank you so much!\r\n\r\n\r\nOn Mon, 24. Nov 2025 at 13:00, support@simsonn.com ",
+      "user_id": 158007293724,
+      "created_at": "2025-11-24T11:05:15Z",
+      "updated_at": "2025-11-24T11:05:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012868205,
+      "body_text": "Hey again!\r\n\r\n\r\nWill you send me tracking link if the order is shipped? And also did I got\r\nit right that you can’t send my order from your warehouse not until 27th\r\nand from that on I can expect 3-5 days to arrive?\r\n\r\n\r\nOn Mon, 24. Nov 2025 at 13:04, Jürgen Järveküla <jurgenjarv@gmail.com>\r\nwrote:\r\n\r\n> Okay.\r\n>\r\n> Thank you so much!\r\n>\r\n>\r\n> On Mon, 24. Nov 2025 at 13:00, support@simsonn.com ",
+      "user_id": 158007293724,
+      "created_at": "2025-11-25T08:19:11Z",
+      "updated_at": "2025-11-25T08:19:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012873177,
+      "body_text": "Hi Jürgen Järveküla,    Yes, we will update your logistics tracking link at that time. Thank you for your understanding!",
+      "user_id": 158001343601,
+      "created_at": "2025-11-25T11:46:57Z",
+      "updated_at": "2025-11-25T11:46:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

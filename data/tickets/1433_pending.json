@@ -1,0 +1,74 @@
+{
+  "id": 1433,
+  "subject": "Order Update SSN1851 & SSN1847",
+  "description_text": "Hello there,\r\n\r\nI am reaching out in regards to an update on my orders as last I checked for updates only the tracking number has been provided with no indication that it has been picked up or out in shipment. Please let me know if any additional information is needed.\r\n\r\nBest Regards,\r\n\r\nJustin Zetterlund \r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-11T01:36:30Z",
+  "updated_at": "2025-07-18T08:48:28Z",
+  "requester_id": 158002068583,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004836707,
+      "body_text": "Hi there,\r\n\r\nI never heard back from this email. Is there any updates? It has now been almost a month.\r\n\r\n> ",
+      "user_id": 158002068583,
+      "created_at": "2025-07-14T22:37:55Z",
+      "updated_at": "2025-07-14T22:37:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004856733,
+      "body_text": "Hi Justin Zetterlund,  I'm very sorry, we really didn't check the logistic update, we will investigate it for you immediately and if there is an accident we will part you immediately and upgrade you a Vam Pro haptics for free.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-15T10:40:49Z",
+      "updated_at": "2025-07-15T10:40:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004884579,
+      "body_text": "Hello there,\r\n\r\nThank you again for the update. Let know if anything has changed.\r\n\r\nBest regards,\r\n\r\nJustin\r\n\r\n\r\n> ",
+      "user_id": 158002068583,
+      "created_at": "2025-07-15T17:14:53Z",
+      "updated_at": "2025-07-15T17:14:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005134185,
+      "body_text": "Hi Justin Zetterlund,  Your package has been shipped and we have replaced it with a Vam Pro for you.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-17T09:51:18Z",
+      "updated_at": "2025-07-17T09:51:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005146468,
+      "body_text": "Hello there,\r\n\r\nThank you again for the update and the upgrade. I wanted to ask are both orders shipped out as I only got a tracking number for one order.\r\n\r\nThanks again,\r\n\r\nJustin \r\n\r\n> ",
+      "user_id": 158002068583,
+      "created_at": "2025-07-18T08:30:54Z",
+      "updated_at": "2025-07-18T08:30:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005146524,
+      "body_text": "Yes, they were sent in the same package, please don't worry.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-18T08:48:28Z",
+      "updated_at": "2025-07-18T08:48:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

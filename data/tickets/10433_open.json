@@ -1,0 +1,55 @@
+{
+  "id": 10433,
+  "subject": "Order purchased",
+  "description_text": "I’m trying to see what’s going on with my orders, I did express shipping.\r\n#SSN5850, #SSN5864\r\n\r\n\r\nSent from Yahoo Mail for iPhone\r\n\r\n",
+  "status": 2,
+  "priority": 4,
+  "created_at": "2026-01-09T17:30:48Z",
+  "updated_at": "2026-01-17T11:58:13Z",
+  "requester_id": 158009004464,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016856097,
+      "body_text": "Hi Tay Jackson,    Our US warehouse is currently out of stock. The items will arrive at the warehouse within the next couple of days, and we will arrange shipment for you as soon as possible.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-12T11:25:57Z",
+      "updated_at": "2026-01-12T11:25:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016869946,
+      "body_text": "So your telling me that are both items out of stock and your expecting a shipping in the next few days and also I paid for express shipping with my order. Since I purchased my order on Wednesday and nobody could communicate with me the items or item I purchased was not in stock. You would think on the website somewhere it would say out of stock to prevent people from having to go through this type of stuff.?\r\n\r\n\r\nSent from Yahoo Mail for iPhone\r\n\r\n\r\n",
+      "user_id": 158009004464,
+      "created_at": "2026-01-12T14:41:22Z",
+      "updated_at": "2026-01-12T14:41:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017318980,
+      "body_text": "Hi Tay Jackson,     We sincerely apologize for the inconvenience caused.  We have identified two orders placed by you, with details as follows:  1. Order #SSN5864: The product was out of stock for two weeks due to an upgrade. The upgrade is now complete, and we will arrange shipment within the next few days.  2. #SSN5850 Pro X pedals are currently sold out at our US warehouse. We have urgently arranged air freight and expect shipment on the 22nd, with an estimated delivery date around the 25th.  We sincerely apologize for any inconvenience this may cause.  If your order is delayed and you have paid for expedited shipping, we will issue a refund through the platform. You need not worry.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T08:06:30Z",
+      "updated_at": "2026-01-17T08:06:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017325034,
+      "body_text": "Thank you\r\n\r\n\r\nSent from Yahoo Mail for iPhone\r\n\r\n\r\n",
+      "user_id": 158009004464,
+      "created_at": "2026-01-17T11:14:50Z",
+      "updated_at": "2026-01-17T11:14:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

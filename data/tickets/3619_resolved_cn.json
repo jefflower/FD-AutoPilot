@@ -1,0 +1,215 @@
+{
+  "id": 3619,
+  "subject": "回复：订单#SSN2575的货件已在运送途中",
+  "description_text": "下午好，您好吗？\n\n我查询了追踪号码，收到一条信息说货运已被取消。您能帮忙核实一下这个信息吗？\n\n祝您一天愉快！\n\n卢卡斯·利诺·德索萨。",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-09-08T10:57:21Z",
+  "updated_at": "2025-10-16T09:02:08Z",
+  "requester_id": 158004269939,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008259250,
+      "body_text": "嗨，卢卡斯·利诺，我们已经重新发送了您的包裹，这是您的追踪链接。https://www.sf-express.com/chn/en/waybill/waybill-detail/SF3237097837557",
+      "user_id": 158001343601,
+      "created_at": "2025-09-08T11:04:20Z",
+      "updated_at": "2025-09-08T11:04:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008259421,
+      "body_text": "太好了，非常感谢。",
+      "user_id": 158004269939,
+      "created_at": "2025-09-08T11:18:52Z",
+      "updated_at": "2025-09-08T11:18:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008352355,
+      "body_text": "早上好，您发送的追踪代码无效，您能检查一下吗？",
+      "user_id": 158004269939,
+      "created_at": "2025-09-10T06:45:29Z",
+      "updated_at": "2025-09-10T06:45:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008375065,
+      "body_text": "您好，您的订单物流出现异常。请检查地址信息，特别是邮政编码。LUCAS LINO DE SOUZA / SIMONE AFONSO, Rue Albert Bousser, 5 3.9 - LUCAS LINO DE SOUZA / SIMONE AFONSO L5894 ALZINGEN Luxembourg 您可以使用以下格式重新输入。谢谢。收件人：街道地址：公寓/房间号：城市：邮政编码：",
+      "user_id": 158001343601,
+      "created_at": "2025-09-10T11:01:33Z",
+      "updated_at": "2025-09-10T11:01:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008376120,
+      "body_text": "你好，\n地址如下：\n\n5, Rue Albert Bousser, L-5894 Alzingen\n\n收件人：Lucas Lino de Souza / Simone Afonso\n街道地址：Albert Bousser\n公寓/房间号：3.9\n城市：Alzingen\n邮政编码：L-5894\n\n谷歌地图地址链接：\nhttps://maps.app.goo.gl/13ueVf9z8fVpn1CA8",
+      "user_id": 158004269939,
+      "created_at": "2025-09-10T11:53:40Z",
+      "updated_at": "2025-09-10T11:53:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008489615,
+      "body_text": "您好，我们已重新发货。对于造成的延误，我们深表歉意。我们将退还您额外的运费。https://t.17track.net/en#nums=ALS01179603623",
+      "user_id": 158001343601,
+      "created_at": "2025-09-11T02:29:41Z",
+      "updated_at": "2025-09-11T02:29:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008721599,
+      "body_text": "你好，\n\n请问包裹发生了什么事？",
+      "user_id": 158004269939,
+      "created_at": "2025-09-15T06:25:56Z",
+      "updated_at": "2025-09-15T06:25:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008742651,
+      "body_text": "请别担心 — 问题仅仅是我们的物流账户余额不足，所以我们需要在后台手动付款。您不需要支付任何额外费用。",
+      "user_id": 158001343601,
+      "created_at": "2025-09-15T10:03:21Z",
+      "updated_at": "2025-09-15T10:03:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008746311,
+      "body_text": "感谢您的澄清。",
+      "user_id": 158004269939,
+      "created_at": "2025-09-15T11:11:20Z",
+      "updated_at": "2025-09-15T11:11:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009324556,
+      "body_text": "早上好，您好吗？\n追踪状态自周一以来一直如此。您能帮忙核实一下吗？\n提前感谢。",
+      "user_id": 158004269939,
+      "created_at": "2025-09-26T06:39:48Z",
+      "updated_at": "2025-09-26T06:39:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009378810,
+      "body_text": "嗨，卢卡斯·利诺，这是您新的物流追踪链接：https://t.17track.net/en#nums=84150004559304",
+      "user_id": 158001343601,
+      "created_at": "2025-09-27T08:30:29Z",
+      "updated_at": "2025-09-27T08:30:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009685506,
+      "body_text": "你好，我刚收到了手刹和序列式换挡器。但是手刹上少了一个零件。能请您把这个零件寄给我吗？发自我的iPhone",
+      "user_id": 158004269939,
+      "created_at": "2025-09-30T15:46:08Z",
+      "updated_at": "2025-09-30T15:46:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009698790,
+      "body_text": "你好。在Simsonn软件中校准手刹时，手刹和序列式变速箱都无法被识别了。我该怎么办？有什么方法可以进行重置吗？发自我的iPhone",
+      "user_id": 158004269939,
+      "created_at": "2025-09-30T20:33:03Z",
+      "updated_at": "2025-09-30T20:33:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009775593,
+      "body_text": "早上好，我已经购买了一个转接螺丝并且能够组装换挡器了。所以，你们不需要再寄给我缺失的转接器。\n\n但是，在初次校准后，手刹和序列式换挡器都无法被识别。我该如何解决这个问题？我尝试了使用其他USB端口和重装Simsonn软件，但问题依旧。当我把USB端口连接到电脑时，LED灯会亮，但软件无法识别它们。\n\n我等待您的回复，提前感谢您的支持。\n\n卢卡斯·利诺\n+352 661 556 789",
+      "user_id": 158004269939,
+      "created_at": "2025-10-02T09:13:47Z",
+      "updated_at": "2025-10-02T09:13:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009965304,
+      "body_text": "早上好，关于那个问题有什么进展吗？\n\n卢卡斯·利诺\n+352 661 556 789",
+      "user_id": 158004269939,
+      "created_at": "2025-10-06T11:53:50Z",
+      "updated_at": "2025-10-06T11:53:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010141354,
+      "body_text": "嗨 卢卡斯·利诺， 首先，请确保手刹和序列换挡器都直接连接到您电脑后置的USB3.0端口（蓝色）——不要使用USB集线器。如果USB电源稳定，请按照以下步骤恢复设备： 打开软件并截取两个指定位置的屏幕截图——其中一个有“恢复”按钮。 将该按钮水平滑动到另一侧，然后重新连接USB电缆。设备将进入升级模式。 进入升级模式后，请按照以下步骤完成恢复过程。 手刹：在手刹的前部底部（箭头所示），有一个包含恢复按钮的小矩形孔。请用牙签轻轻将其推到另一侧，然后重新连接USB电缆。设备将进入恢复模式。接下来，在软件中进入“设置”→“更新”→“手动固件更新”→“handbrake-firmware”→“handbrake-hbpro.sfu”，并完成更新。升级后，请务必将恢复按钮拨回其原始位置 序列换挡器：在序列换挡器的下侧（箭头所示），有一个恢复按钮。用牙签轻轻将其切换到另一侧，然后重新连接USB电缆。设备将进入恢复模式。接下来，在软件中，进入：“设置”→“更新”→“手动固件更新”→“gear-firmware”→“gear-sqpro.sfu”。完成固件更新后，请再次进行测试。请注意，升级后，您必须将恢复按钮返回其原始位置。您也可以使用VKB工具检查设备连接状态并确认更新是否成功。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-09T09:55:06Z",
+      "updated_at": "2025-10-09T09:55:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010165307,
+      "body_text": "下午好。\n\n序列换挡器在我重置并把钥匙拨回正常位置后就完美工作了。但是，手刹没有。我走了一遍流程并手动更新了软件，但之后Simsonn软件无法识别手刹。\n\n我重复了几次这个过程，但它仍然不被Simsonn识别。当我去Windows的已连接设备菜单时，它显示为已连接设备，但坐标轴不动。\n\n我在下面附上了一些截图，显示了两者在Windows中都被识别，但在Simsonn软件中只有序列换挡器被识别。\n\n提前感谢您的支持。",
+      "user_id": 158004269939,
+      "created_at": "2025-10-09T16:51:56Z",
+      "updated_at": "2025-10-09T16:51:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010194459,
+      "body_text": "嗨，卢卡斯·利诺， 请再试一次更新。我刚测试了最新版本，在我这边一切正常。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-10T06:49:53Z",
+      "updated_at": "2025-10-10T06:49:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010340749,
+      "body_text": "你好，\n\n在尝试了SiMSONN软件的最新版本后，手刹又开始工作了。非常感谢您的支持。\n\n祝您有美好的一天！",
+      "user_id": 158004269939,
+      "created_at": "2025-10-13T05:20:18Z",
+      "updated_at": "2025-10-13T05:20:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010549506,
+      "body_text": "技术支持非常棒。我的问题解决了，我对产品超级满意。",
+      "user_id": 158004269939,
+      "created_at": "2025-10-16T09:02:08Z",
+      "updated_at": "2025-10-16T09:02:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

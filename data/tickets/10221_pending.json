@@ -1,0 +1,44 @@
+{
+  "id": 10221,
+  "subject": "HS Pro Software Update",
+  "description_text": "Hi,\r\n\r\nIve just had the HS Pro delivered, however the software does not give me\r\nthe option to manage it:\r\n[image: image.png]\r\n\r\nAccording to screenshots on your website and instruction manual (which also\r\nshows v2.1.2), I should be able to see an additional Device Overview at the\r\nbottom named Gear Shift.\r\n\r\nThanks\r\n\r\nIan\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-07T13:25:38Z",
+  "updated_at": "2026-01-07T14:16:29Z",
+  "requester_id": 158008777213,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016142676,
+      "body_text": "Hi Ian Hartwell,    Please uninstall SIMSONN Manager version 2.1.2 from your computer first, then download and install SIMSONN Manager version 2.1.3 from our official website.  SIMSONN Manager 2.1.3 adds full support for HS Pro 2-in-1 shifter configuration and calibration. Please use this version to complete the setup and calibration.     https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T13:56:03Z",
+      "updated_at": "2026-01-07T13:56:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016144902,
+      "body_text": "That version wasn't there when I raised the ticket! :P\r\n\r\nP.s, you forgot to add HS Pro to the note \"Note: For Simsonn Plus, Plus X,\r\nPro X, Pro X Ultra Pedals and HB Pro, SQ Pro\"\r\n\r\nThanks for updating the site and replying so quickly, much appreciated\r\n\r\nOn Wed, 7 Jan 2026 at 13:56, support@simsonn.com ",
+      "user_id": 158008777213,
+      "created_at": "2026-01-07T14:10:16Z",
+      "updated_at": "2026-01-07T14:10:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016145918,
+      "body_text": "Hi Ian Hartwell,  Thank you for the reminder. I have informed our engineers to make the necessary changes and add support for HS Pro. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T14:16:28Z",
+      "updated_at": "2026-01-07T14:16:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

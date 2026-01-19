@@ -1,0 +1,34 @@
+{
+  "id": 8686,
+  "subject": "Re order #SSN4928",
+  "description_text": "Hello, I purchased the above and paid an extra charge for express shipping as it was purchased as a gift and your website stated the item was ready for shippig from the 15th of December as needed in time for Christmas; however, I still haven't received a dispatch email. Can you please let me know the shipping status of this item and when I can expect to receive it thankyou\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-19T13:50:38Z",
+  "updated_at": "2025-12-24T11:17:19Z",
+  "requester_id": 158008151724,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014880480,
+      "body_text": "Hi teresa jones,  We apologize for the delay; the warehouse in Germany is temporarily out of stock. Your order is expected to begin delivery next week.",
+      "user_id": 158007774664,
+      "created_at": "2025-12-22T12:48:02Z",
+      "updated_at": "2025-12-22T12:48:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014885784,
+      "body_text": "Hi I'm very disappointed with this as when my order was placed there was stock and I also paid extra for an expedited delivery which I have not had nor was I informed of the stock delay.\r\n\r\nSent from Outlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158008151724,
+      "created_at": "2025-12-22T14:32:55Z",
+      "updated_at": "2025-12-22T14:32:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

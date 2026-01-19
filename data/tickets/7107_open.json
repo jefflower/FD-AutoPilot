@@ -1,0 +1,74 @@
+{
+  "id": 7107,
+  "subject": "commande",
+  "description_text": "Bonjour, je souhaite annuler ma commande SSN4200? pour faire une nouvelle\r\ncommande.\r\nmerci\r\nBLACHE JEREMY\r\n\r\n",
+  "status": 2,
+  "priority": 4,
+  "created_at": "2025-11-30T20:34:40Z",
+  "updated_at": "2026-01-07T15:22:09Z",
+  "requester_id": 158007451673,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013314238,
+      "body_text": "Hi jeremy blache,    We apologize for the delayed response. Your order has already been shipped. Please let us know how you'd like to modify it, and we can intercept the package directly to make the changes.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-03T08:00:21Z",
+      "updated_at": "2025-12-03T08:00:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013314299,
+      "body_text": "Hi jeremy blache,    Sorry, the package can no longer be intercepted. If you need to add anything, we can add it for you at the price difference of the combined purchase.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-03T08:03:10Z",
+      "updated_at": "2025-12-03T08:03:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013314984,
+      "body_text": "Comme indiquer dans mes precedant mail, je veux annuler cette commande\r\n\r\nLe mer. 3 déc. 2025, 09:03, service@simsonn.com ",
+      "user_id": 158007451673,
+      "created_at": "2025-12-03T08:24:18Z",
+      "updated_at": "2025-12-03T08:24:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015268425,
+      "body_text": "Bonjour,  Je vous ai envoyé plusieurs e-mails restés sans réponse de votre part.  J’avais tenté d’annuler ma commande avant son expédition, mais n’ayant reçu aucun retour, celle-ci a tout de même été envoyée. Je trouve cela peu professionnel.  Je souhaite donc procéder au retour de ma commande. Vous avez normalement reçu un e-mail de Mondial Relay afin de choisir un point de retrait.     Cordialement,     BLACHE JEREMY",
+      "user_id": 158007451673,
+      "created_at": "2025-12-30T17:47:32Z",
+      "updated_at": "2025-12-30T17:47:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015290838,
+      "body_text": "Hi jeremy blache,      Due to the peak season, our responses have been slightly delayed, and since you submitted 7 tickets, the process may have been a bit confusing. I noticed that you requested a cancellation on December 1, but the shipment has already been handed over to the international courier, so it is difficult to cancel at this stage.  Your order is about to arrive. Could you let me know what issue you are facing? I will assist you in resolving it. I will close the other follow-up tickets for now, and you can reply directly to this ticket.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T02:23:33Z",
+      "updated_at": "2025-12-31T02:23:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015313440,
+      "body_text": "Bonjour,     Je souhaite donc procéder au retour de ma commande. Donc soit vous m envoyer un bon de retour soit Vous répondez au mail de mondial relay pour choisir un point de retrait     Cordialement,     BLACHE JEREMY",
+      "user_id": 158007451673,
+      "created_at": "2025-12-31T14:18:28Z",
+      "updated_at": "2025-12-31T14:18:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    }
+  ]
+}

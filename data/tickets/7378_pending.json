@@ -1,0 +1,104 @@
+{
+  "id": 7378,
+  "subject": "Order SSN4346",
+  "description_text": "hello I would like to cancel the order SSN4346, the motive is that i would like to add the bellow item to my buying.\r\nhttps://www.simsonn.com/products/simsonn-racing-simulator-pressure-handbrake?variant=50264440537402\r\n\r\nCan you help me?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-04T02:52:35Z",
+  "updated_at": "2025-12-17T03:40:33Z",
+  "requester_id": 158007525704,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013375329,
+      "body_text": "I Would like to add the item\r\nhttps://www.simsonn.com/products/simsonn-racing-simulator-pressure-handbrake?variant=50264440537402\r\n\r\nto my order.\r\nIf it is possible.\r\n________________________________\r\nDe: service@simsonn.com ",
+      "user_id": 158007525704,
+      "created_at": "2025-12-04T07:35:53Z",
+      "updated_at": "2025-12-04T07:35:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013378662,
+      "body_text": "Hi Thiago Rodrigues,    You may proceed directly with payment via this link. No additional delivery charges apply.  https://www.simsonn.com/products/difference",
+      "user_id": 158001343601,
+      "created_at": "2025-12-04T08:41:09Z",
+      "updated_at": "2025-12-04T08:41:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013378926,
+      "body_text": "Hi payment made,\r\nthe order would have been more than 400 dollars, to the shipment would free, do I get the 16 dollars discount?\r\n\r\nthanks.\r\n________________________________\r\nDe: service@simsonn.com ",
+      "user_id": 158007525704,
+      "created_at": "2025-12-04T08:47:45Z",
+      "updated_at": "2025-12-04T08:47:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013379007,
+      "body_text": "Hi Thiago Rodrigues,      Alright, we'll ship your order as soon as possible and refund the price difference for you.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-04T08:49:31Z",
+      "updated_at": "2025-12-04T08:49:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013379045,
+      "body_text": "Thank you ?\r\n________________________________\r\nDe: service@simsonn.com ",
+      "user_id": 158007525704,
+      "created_at": "2025-12-04T08:50:35Z",
+      "updated_at": "2025-12-04T08:50:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014499926,
+      "body_text": "hello can you add at my order this item?\r\n\r\nI still have the shifter to be sent, since I bought it on pre-order.\r\nAnd the 16 dollars refund haven't been done yet so It would better for me.\r\n\r\nthe pedals are, but I didn't expected that softest would be so hard.\r\n\r\nhttps://www.simsonn.com/products/elastomer?variant=50362386710842\r\n\r\nColor: white please\r\n\r\n\r\nSorry to bother you again, first time on it many mistakes are being made.\r\n\r\nThank you again.\r\n________________________________\r\nDe: Thiago Rodrigues <thiago-tar@hotmail.com>\r\nEnviado: quinta-feira, 4 de dezembro de 2025 06:50\r\nPara: service@simsonn.com ",
+      "user_id": 158007525704,
+      "created_at": "2025-12-15T07:48:25Z",
+      "updated_at": "2025-12-15T07:48:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014565547,
+      "body_text": "Hello,\r\nIn addition, I did not receive the Simsonn VAM Pro Linear Motor kit (the pedal haptic vibration feedback).\r\nWill the remaining parts be delivered together?\r\nSo far, I have only received the pedals and the handbrake.\r\nThank you.\r\n\r\n________________________________\r\nDe: Thiago Rodrigues <thiago-tar@hotmail.com>\r\nEnviado: quinta-feira, 4 de dezembro de 2025 05:35\r\nPara: service@simsonn.com ",
+      "user_id": 158007525704,
+      "created_at": "2025-12-16T11:03:26Z",
+      "updated_at": "2025-12-16T11:03:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014610026,
+      "body_text": "Updating: I have received the Simsonn VAM Pro Linear Motor kit (the pedal haptic vibration feedback), It was very well hide.\r\nsorry the missundestanding.\r\n________________________________\r\nDe: Thiago Rodrigues <thiago-tar@hotmail.com>\r\nEnviado: terça-feira, 16 de dezembro de 2025 09:03\r\nPara: service@simsonn.com ",
+      "user_id": 158007525704,
+      "created_at": "2025-12-17T02:13:03Z",
+      "updated_at": "2025-12-17T02:13:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014611906,
+      "body_text": "I apologize for not getting back to you sooner. I'm thrilled to hear the good news. Please feel free to reach out anytime with questions, though there may be some delays in our responses during this period.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-17T03:40:32Z",
+      "updated_at": "2025-12-17T03:40:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

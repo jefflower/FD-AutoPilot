@@ -1,0 +1,34 @@
+{
+  "id": 10220,
+  "subject": "Order #SSN5276",
+  "description_text": "Hello,\r\n\r\nWhen will my order be shipped?\r\n\r\nKind regards\r\nGoran\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-07T13:03:23Z",
+  "updated_at": "2026-01-08T09:25:13Z",
+  "requester_id": 158008965926,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016310411,
+      "body_text": "Hello,     Is there any update about this ticket and my question?",
+      "user_id": 158008965926,
+      "created_at": "2026-01-08T09:10:45Z",
+      "updated_at": "2026-01-08T09:10:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158016312316,
+      "body_text": "Hi goran dukic,    We apologize for the delay. The shipment is expected to arrive at our German warehouse on the 12th, at which time we will be able to ship your order. We apologize for the inconvenience.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-08T09:25:13Z",
+      "updated_at": "2026-01-08T09:25:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

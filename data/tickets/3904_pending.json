@@ -1,0 +1,64 @@
+{
+  "id": 3904,
+  "subject": "Needed solution for this problem.",
+  "description_text": "Hello, I just received the product today, and an accident occurred while I\r\nwas assembling the Simsonn Plux X to my rig. The throttle head came off,\r\nand I have no idea how to reconnect it. Can you help me with this?\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-09-17T11:46:50Z",
+  "updated_at": "2025-09-19T23:39:42Z",
+  "requester_id": 158004601377,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008862135,
+      "body_text": "Hi Jiraputt Veerakanchanpong,    You can visit a nearby computer store and, using the clutch’s wiring sequence as a reference, have an RJ11 connector re-crimped. This is usually the fastest solution.  If that’s not convenient, we can send you a replacement throttle sensor, which you can simply install to replace the existing one.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-17T12:42:33Z",
+      "updated_at": "2025-09-17T12:42:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008866149,
+      "body_text": "Thank you for your fast reply. I know it’s hard to believe, but I live in a suburban area where there are no electric repair shops nearby. Is it possible to send me a replacement throttle sensor? And do I need to pay anything? best regard Sent from Mail for Windows ",
+      "user_id": 158004601377,
+      "created_at": "2025-09-17T14:42:46Z",
+      "updated_at": "2025-09-17T14:42:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008933278,
+      "body_text": "Hi Jiraputt Veerakanchanpong,  Please provide your contact name, address, phone number, and order number, and I will arrange to send you a new throttle sensor free of charge. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-19T01:50:51Z",
+      "updated_at": "2025-09-19T01:50:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008950094,
+      "body_text": "Thank you for a respond I bought a Simsonn Plus X from AliExpress. Is it okay to use the AliExpress Order ID? If okay. Name : Jiraputt Veerakanchanpong Address : 431-0431,Shizuoka-ken,Kosai,Washizu,2511-7, レイくパレス中村 A504, Japan Phone number : (+81)70-9323-8554 Order ID : 1115819564713075 Order time : Sep 10,2025 If you want screenshot from AliExpress too please let me know. Thank you Sent from Mail for Windows ",
+      "user_id": 158004601377,
+      "created_at": "2025-09-19T16:40:56Z",
+      "updated_at": "2025-09-19T16:40:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008968244,
+      "body_text": "Hi Jiraputt Veerakanchanpong,    After we send the replacement today, we will provide you with the tracking number.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-19T23:39:42Z",
+      "updated_at": "2025-09-19T23:39:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

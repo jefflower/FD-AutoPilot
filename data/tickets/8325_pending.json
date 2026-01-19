@@ -1,0 +1,44 @@
+{
+  "id": 8325,
+  "subject": "",
+  "description_text": "Hi, I placed an order and paid on Tuesday 2nd December for Simsonn HS Pro Shifter the H/SQ Dual-Mode Racing Simulation Shifter on pre-order, but I have not since had a confirmation email or text and so I am a little worried. I have tried searching the order using the confirmation number given but it cannot find it.\r\n\r\nCan you please check that this order has gone through for me? Thank you.\r\n\r\nSara Mobbs\r\n\r\n[image0.png]\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-15T18:13:31Z",
+  "updated_at": "2025-12-24T09:05:48Z",
+  "requester_id": 158007821913,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014612103,
+      "body_text": "Hi Sara Mobbs,  Please provide your order date, payment amount, and name so I can check your order. Shipments will begin on the 20th. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T03:53:29Z",
+      "updated_at": "2025-12-17T03:53:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014616461,
+      "body_text": "thanks for your reply,\r\n\r\nI ordered on 2nd December 2025, the order amount was £110, £98 plus £12 postage and the name is Sara Mobbs.\r\n\r\nThank you\r\n\r\nSara Mobbs\r\n\r\n",
+      "user_id": 158007821913,
+      "created_at": "2025-12-17T07:27:48Z",
+      "updated_at": "2025-12-17T07:27:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015028571,
+      "body_text": "Hi Sara Mobbs,    We apologize for the delayed response. We have located your order number and added this email address to your account. We have updated your shipping notifications.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-24T09:05:48Z",
+      "updated_at": "2025-12-24T09:05:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

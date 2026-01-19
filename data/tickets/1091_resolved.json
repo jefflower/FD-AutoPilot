@@ -1,0 +1,54 @@
+{
+  "id": 1091,
+  "subject": "Foto Arttur",
+  "description_text": "artturpauloo@gmail.com\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-07-02T04:01:06Z",
+  "updated_at": "2025-07-02T04:48:02Z",
+  "requester_id": 158001661531,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004363132,
+      "body_text": "Hi Arttur Paulo,    It looks like the configuration file for version 1.7.0 was incorrectly modified. I’ll send you a recovery .cfg file.  Please follow these steps:    Click “Load config from file” and select the .cfg file I sent you.    Then click “Write config to device” to upload the settings to your device.    Important: Always click “Read config from device” before making any changes. Otherwise, the software may overwrite the correct settings in your device with the default configuration from your PC.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T04:06:28Z",
+      "updated_at": "2025-07-02T04:06:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004363146,
+      "body_text": "Deu certo. Como faço para calibrar os pedais?\r\n\r\nartturpauloo@gmail.com\r\n\r\n\r\nEm qua., 2 de jul. de 2025 às 01:06, support@simsonn.com <\r\nsupport@simsonn.com> escreveu:\r\n\r\n> Hi Arttur Paulo,\r\n>\r\n> It looks like the configuration file for version 1.7.0 was incorrectly\r\n> modified. I’ll send you a recovery .cfg file.\r\n> Please follow these steps:\r\n>\r\n>    1. Click *“Load config from file”* and select the .cfg file I sent you.\r\n>    2. Then click *“Write config to device”* to upload the settings to\r\n>    your device.\r\n>\r\n> *Important:* Always click *“Read config from device”* before making any\r\n> changes.\r\n> Otherwise, the software may overwrite the correct settings in your device\r\n> with the default configuration from your PC.\r\n>\r\n> ",
+      "user_id": 158001661531,
+      "created_at": "2025-07-02T04:17:06Z",
+      "updated_at": "2025-07-02T04:17:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004363157,
+      "body_text": "Hi Arttur Paulo,    In the Freejoy axis interface, click the “Calibrate” button next to the X, Y, and Z axes. Then press each pedal three times. After that, click “Stop Calibration” and then click “Write config to device” to save the settings to your device.  You can also adjust the Min Value and Max Value to set the dead zones, or configure them directly in the game.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T04:20:55Z",
+      "updated_at": "2025-07-02T04:20:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004363178,
+      "body_text": "Deu tudo certo??\r\nMuito obrigado!!!\r\n\r\nartturpauloo@gmail.com\r\n\r\n\r\nEm qua., 2 de jul. de 2025 às 01:21, support@simsonn.com <\r\nsupport@simsonn.com> escreveu:\r\n\r\n> Hi Arttur Paulo,\r\n>\r\n> In the Freejoy axis interface, click the “Calibrate” button next to the X,\r\n> Y, and Z axes. Then press each pedal three times.\r\n> After that, click “Stop Calibration” and then click “Write config to\r\n> device” to save the settings to your device.\r\n> You can also adjust the Min Value and Max Value to set the dead zones, or\r\n> configure them directly in the game.\r\n>\r\n> ",
+      "user_id": 158001661531,
+      "created_at": "2025-07-02T04:31:51Z",
+      "updated_at": "2025-07-02T04:31:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

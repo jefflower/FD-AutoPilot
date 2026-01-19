@@ -1,0 +1,35 @@
+{
+  "id": 9107,
+  "subject": "Calibration",
+  "description_text": "Hello, I’m trying to calibrate my Simsonn Pro X Ultra pedals in Trophy AI for iRacing, but during calibration the input bar is extremely jittery, as if there’s excess signal noise. This occurs even when I am not pressing the pedal at all. I’m running Windows 11. I’ve tried unplugging the clutch and throttle pedals while calibrating, disconnecting other USB devices, moving cables away from potential interference sources, and connecting the pedals directly to the PC instead of through a USB hub. Despite this, the input remains unstable, and I’m unable to complete calibration.",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-24T20:20:33Z",
+  "updated_at": "2025-12-25T04:09:13Z",
+  "requester_id": 158008497494,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015057406,
+      "body_text": "Hi Konstantin zyk, Please first uninstall the software currently installed on your computer, then download and install the latest SIMSONN Manager 2.1.2. Next, go to Settings → Update → Manual Firmware Update → pedals-firmware → pedals-proxultra.sfu to upgrade the firmware. After the firmware update is completed, please recalibrate all three pedals, and then enter iRacing to recalibrate and rebind the pedals.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-25T02:44:01Z",
+      "updated_at": "2025-12-25T02:44:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015057432,
+      "body_text": "It worked! Thank you!\n\nOn Wed, Dec 24, 2025 at 8:44 PM support @simsonn.com",
+      "user_id": 158008497494,
+      "created_at": "2025-12-25T02:46:11Z",
+      "updated_at": "2025-12-25T02:46:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

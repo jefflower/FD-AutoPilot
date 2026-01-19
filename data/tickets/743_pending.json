@@ -1,0 +1,54 @@
+{
+  "id": 743,
+  "subject": "Hello I was trying to find out when my order will be shipped? The order confirmation is attached for reference.",
+  "description_text": "\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-23T18:04:08Z",
+  "updated_at": "2025-06-26T07:13:36Z",
+  "requester_id": 158001744015,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003742116,
+      "body_text": "Hi Dillon Defaria,  Your package has reached the U.S. and is being inspected by Customs, you have to wait for Customs to release Fedex to pick up the goods, and the logistics status will be updated. We will follow up this matter for you in real time.",
+      "user_id": 158001343601,
+      "created_at": "2025-06-24T03:49:06Z",
+      "updated_at": "2025-06-24T03:49:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003805477,
+      "body_text": "Thank you for the quick response. It seems it's been 4 days since that hold was placed. Is this a common issue for your products coming in lately?\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158001744015,
+      "created_at": "2025-06-24T13:29:12Z",
+      "updated_at": "2025-06-24T13:29:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003835746,
+      "body_text": "Hi Dillon Defaria,    Yes, customs checks in the US have been particularly strict lately, so we are preparing to stock new products into our US warehouse as soon as possible. Sorry for the delay, sincere apologies!",
+      "user_id": 158001343601,
+      "created_at": "2025-06-25T10:22:37Z",
+      "updated_at": "2025-06-25T10:22:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003845227,
+      "body_text": "Hi Dillon Defaria,    Your parcel has been released by customs and is expected to be delivered to you on the 29th, sorry for the inconvenience.",
+      "user_id": 158001343601,
+      "created_at": "2025-06-26T07:13:36Z",
+      "updated_at": "2025-06-26T07:13:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

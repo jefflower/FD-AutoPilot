@@ -1,0 +1,44 @@
+{
+  "id": 6827,
+  "subject": "Missing motor",
+  "description_text": "Hello Simsonn Team,\r\n\r\nOn November 21, I received my package with the rumbling motors. However, the package contained only 2 VAM motors, and the additional VAM PRO motor was missing.\r\n\r\nOrder number: #SSN3329\r\n\r\nI would like to know whether the VAM PRO motor has already been shipped or if there was a packaging error \r\n\r\nBest regards,\r\n\r\nTobi Heitmeier\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-26T23:23:03Z",
+  "updated_at": "2025-12-05T11:02:30Z",
+  "requester_id": 158007351574,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012988933,
+      "body_text": "Hi Tobias Heitmeier,    We apologize for the inconvenience. Our warehouse has confirmed no items were missing, and the shipment weight was normal. Please check if the package was damaged, which may have caused the loss.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-27T03:05:30Z",
+      "updated_at": "2025-11-27T03:05:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013004308,
+      "body_text": "Hello, \r\nNo the package was not damaged in any way but the VAM PRO was still missing. \r\nThere were only two VAM motors in the package and the place for the third was empty.\r\n \r\n\r\n> Am 27.11.2025 um 04:05 schrieb service@simsonn.com:\r\n> \r\n> ﻿\r\n> Hi Tobias Heitmeier,\r\n> \r\n> We apologize for the inconvenience. Our warehouse has confirmed no items were missing, and the shipment weight was normal. Please check if the package was damaged, which may have caused the loss.\r\n> \r\n> ",
+      "user_id": 158007351574,
+      "created_at": "2025-11-27T11:45:02Z",
+      "updated_at": "2025-11-27T11:45:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013489376,
+      "body_text": "Hi Tobias Heitmeier,    We apologize for the delayed response. We will reconfirm with the warehouse.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-05T11:02:29Z",
+      "updated_at": "2025-12-05T11:02:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

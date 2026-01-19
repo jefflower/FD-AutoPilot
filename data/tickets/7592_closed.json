@@ -1,0 +1,24 @@
+{
+  "id": 7592,
+  "subject": "Order ##SSN4334 not complete",
+  "description_text": "My order of the Plus X Pedals and VAM Pro Haptic Reactors arrived today, except that the only thing that was in the box was the pedals.  The VAM Pro reactors weren't there and neither were the two U-shaped mounting brackets that were supposed to be in the order as well.\r\n\r\nI've attached pictures of everything that came in the box.\r\n\r\nI would appreciate some assistance as soon as possible.\r\n\r\nThank you.\r\n\r\nMichael Shreve\r\n16120 35th Park SE\r\nBothell, WA, 98012\r\nmichael.shreve@comcast.net\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-12-07T05:29:15Z",
+  "updated_at": "2025-12-11T01:38:36Z",
+  "requester_id": 158007682796,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014297715,
+      "body_text": "此工单已关闭并合并到工单 7899 中",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T01:38:36Z",
+      "updated_at": "2025-12-11T01:38:36Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

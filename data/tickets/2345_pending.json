@@ -1,0 +1,154 @@
+{
+  "id": 2345,
+  "subject": "Issue with the LEDs on Simsonn Pro X Ultra Pedals with Baseplate order #SSN1998",
+  "description_text": "Hi there,\r\n\r\nThe LED on the heelplate for the baseplate seems to be faulty - it'll\r\ntrigger random parts in the last 1/3 of the right side when nothing is\r\nconnected to trigger said lights (set to off in Simsonn software)\r\n\r\nAttached a video for reference as it's easier than typing out.\r\n\r\nWould it be possible to get a replacement for this piece?\r\n\r\nMany thanks and take care,\r\nChase\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-08-05T23:51:07Z",
+  "updated_at": "2025-08-20T09:42:14Z",
+  "requester_id": 158002664866,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006302983,
+      "body_text": "Hi Chase J,  After you received it, did the LED on the heel plate ever work normally? If you set it to red or green individually, does the issue still occur? I will first analyze the cause and then provide you with a solution. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-06T01:01:42Z",
+      "updated_at": "2025-08-06T01:01:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006303303,
+      "body_text": "Hey there,\r\n\r\nAppeared correctly on the first boot of everything, after that (approx 1hr)\r\nI noticed the last third begin to flicker. Setting the LEDs to a full color\r\n(green/red) will do one of three things: the last third will show as a\r\ndifferent colour (if green it’ll show red) some of the individual lights\r\nmay be a blend of the rgb typically orange or some individual lights being\r\nwhite. Last one will be showing the entire led strip correctly but if I\r\nthen turn those lights off it’ll hold whatever that last color was on\r\nindefinitely until the power source is removed. Checked the daisy chained\r\nconnector between each third on the back and they seem to be in solidly.\r\n\r\nThanks for the quick reply!\r\n\r\nOn Wed, 6 Aug 2025 at 02:01, service@simsonn.com ",
+      "user_id": 158002664866,
+      "created_at": "2025-08-06T01:28:45Z",
+      "updated_at": "2025-08-06T01:28:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006401425,
+      "body_text": "Hi Chase J,  Can the three light strips currently display the same color? We can send you replacement light strips. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-06T13:55:22Z",
+      "updated_at": "2025-08-06T13:55:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006438956,
+      "body_text": "Two of the three do. The last one (furthest to the right) is the only one\r\nthat will activate on/off when set to a solid color\r\n\r\nOn Wed, 6 Aug 2025 at 14:55, service@simsonn.com ",
+      "user_id": 158002664866,
+      "created_at": "2025-08-06T20:26:28Z",
+      "updated_at": "2025-08-06T20:26:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006443697,
+      "body_text": "Just to add some photos with the leds on\r\n\r\n",
+      "user_id": 158002664866,
+      "created_at": "2025-08-07T00:26:24Z",
+      "updated_at": "2025-08-07T00:26:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006443761,
+      "body_text": "Itd help if I actually added them ?. These are with them both on full green\r\n\r\n",
+      "user_id": 158002664866,
+      "created_at": "2025-08-07T00:30:03Z",
+      "updated_at": "2025-08-07T00:30:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006600188,
+      "body_text": "Hi Chase J,  If the LEDs can display red, green, and blue correctly, and each light strip has 14 LEDs with none missing, then the LEDs should be functioning normally. May I ask what brand of wheelbase you are using, and is it properly grounded? ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-09T15:20:14Z",
+      "updated_at": "2025-08-09T15:20:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006601010,
+      "body_text": "Properly grounded yes. Moza R9 wheelbase.\r\n\r\nOn Sat, 9 Aug 2025 at 16:20, service@simsonn.com ",
+      "user_id": 158002664866,
+      "created_at": "2025-08-09T15:37:43Z",
+      "updated_at": "2025-08-09T15:37:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006604696,
+      "body_text": "Hi Chase J,  Turn off the Moza base power and test again. If everything works fine, then the issue is caused by interference from the base.      To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability:     1.    Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding.     2.    Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive.     3.    Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup.     4.    Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible.     5.    Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs.     6.    Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference.     7.    Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements.     8.    Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources.     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-08-09T15:55:17Z",
+      "updated_at": "2025-08-09T15:55:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006716797,
+      "body_text": "Hey there!\r\n\r\nI've had a look through and implemented most of these solutions except for\r\n8,however, the issue persists.\r\nIm curious if it was EMI wouldn't it affect the entire daisy chained LED\r\nstrip rather than the final one? Just as an example\r\n\r\nAs a diagram these are the ones I'm seeing flickering:\r\nSegment 1: LEDs 1–16   Segment 2: LEDs 17–32   Segment 3: LEDs 33–48\r\n[● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●] → [● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ✸] → [✸\r\n✸ ✸ ✸ ✸ ✸ ✸ ✸ ✸ ✸ ✸ ✸ ✸ ✸ ✸ ✸]\r\n\r\n                              ▲\r\n\r\n                               last LED of seg. 2 flickers\r\nSegment 1: Always displays correctly. Segment 2 17-31 always displays\r\ncorrectly. Segment 2 32 and Segment 33-48: Flicker.  None of the other\r\nindividual leds exhibit the same behaviour.\r\n\r\nThanks for the help!\r\n\r\nOn Sat, Aug 9, 2025 at 4:55 PM service@simsonn.com ",
+      "user_id": 158002664866,
+      "created_at": "2025-08-11T19:05:08Z",
+      "updated_at": "2025-08-11T19:05:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006727143,
+      "body_text": "Hi Chase J,  We can send you 3 replacement LED modules for the footrest board. Would you be able to replace them yourself, or would you prefer us to send the entire footrest board? Please note that the full board is a bit heavy. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-12T05:30:59Z",
+      "updated_at": "2025-08-12T05:30:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006885603,
+      "body_text": "Hey there,\r\n\r\nI'm happy to replace the LED modules myself. Saves you folks having to ship\r\nsomething heavier across too.\r\n\r\nMany thanks,\r\nChase\r\n\r\nOn Tue, Aug 12, 2025 at 6:31 AM service@simsonn.com ",
+      "user_id": 158002664866,
+      "created_at": "2025-08-14T22:40:25Z",
+      "updated_at": "2025-08-14T22:40:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006890293,
+      "body_text": "Hi Chase J,  Thank you for your understanding and support. We will send the LED strip module along with the corresponding screws to you today, and I will provide the tracking number later. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-15T03:17:32Z",
+      "updated_at": "2025-08-15T03:17:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007194051,
+      "body_text": "Hi Chase J,      This is your logistics tracking link. To avoid damage and installation problems, we have sent you a replacement for the entire part.    https://t.17track.net/en#nums=SF6045866960764",
+      "user_id": 158001343601,
+      "created_at": "2025-08-20T09:42:14Z",
+      "updated_at": "2025-08-20T09:42:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

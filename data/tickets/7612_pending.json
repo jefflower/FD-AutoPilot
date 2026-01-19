@@ -1,0 +1,154 @@
+{
+  "id": 7612,
+  "subject": "Order shipping",
+  "description_text": "Hello, when will my order be shipped? I placed it on December 2nd and it still hasn’t make its way past confirmation. Also I have issues with Freshdesk, I can’t see my support tickets statuses.\r\nRegards,\r\nMichal\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-07T12:15:58Z",
+  "updated_at": "2026-01-04T11:45:15Z",
+  "requester_id": 158007498914,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014121300,
+      "body_text": "Hi Michał Krupa,    We sincerely apologize that the base plates in our German warehouse are currently sold out. We will reship your order after restocking this week.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-08T11:41:06Z",
+      "updated_at": "2025-12-08T11:41:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014388238,
+      "body_text": "When can I expect the shipment on? I hoped to get them before christmas, they were supposed to be a gift☹️. Thank you in advance,\r\nMichal\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158007498914,
+      "created_at": "2025-12-12T13:45:11Z",
+      "updated_at": "2025-12-12T13:45:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014518905,
+      "body_text": "Can I get at least some kind of answer? At least I need to know what should I do next, I really don't want to be forced to get different pedals.\r\nRegards,\r\nMichal\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158007498914,
+      "created_at": "2025-12-15T15:16:12Z",
+      "updated_at": "2025-12-15T15:16:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014624995,
+      "body_text": "Hi Michał Krupa,    We apologize for the delayed response. Your order has been expedited via UPS and is expected to arrive on the 22nd.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-17T12:13:48Z",
+      "updated_at": "2025-12-17T12:13:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014644360,
+      "body_text": "Thank you. Will I need to pay import tax due to the fact it ships from China and not Germany? This kind of situation is completely unacceptable. \r\nRegards, Michal\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158007498914,
+      "created_at": "2025-12-17T17:36:37Z",
+      "updated_at": "2025-12-17T17:36:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014645082,
+      "body_text": "I ordered these pedals more than two weeks ago, you told me that you won't ship because you are out of baseplates in Germany (this doesn't affect me because I ordered them WITHOUT a baseplate), you assured me it will ship last week, and at the end of it you ship them from China AND later than promised? This whole thing has really gotten out of hand and I am very displeased with all of it. My friend ordered these later than me (8th December) and got them before me. \r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158007498914,
+      "created_at": "2025-12-17T17:47:59Z",
+      "updated_at": "2025-12-17T17:47:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014684139,
+      "body_text": "Hi Michał Krupa,    There won't be any customs duties, and your friend likely didn't encounter any either. Your order was originally scheduled to ship from our German warehouse, but due to shipping delays, the goods arrived later than planned. To ensure delivery before Christmas, we had to expedite the shipment via UPS. Thank you for your understanding!",
+      "user_id": 158001343601,
+      "created_at": "2025-12-18T10:49:45Z",
+      "updated_at": "2025-12-18T10:49:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014913561,
+      "body_text": "Hello, I encountered a very unpleasant surprise again, despite your assurance that I won't have to pay taxes, I just got a message I will have to pay additional import tax. Again, why didn't you ship from Germany? Now not only I have waited more than 3 weeks for my order, I will also have to pay 23% more than I wanted.\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158007498914,
+      "created_at": "2025-12-22T17:23:03Z",
+      "updated_at": "2025-12-22T17:23:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014962637,
+      "body_text": "Hi Michał Krupa,    Please send me the invoice after payment is completed, and we will reimburse you.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-23T08:53:52Z",
+      "updated_at": "2025-12-23T08:53:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014962988,
+      "body_text": "Thank you very much, definitely will do this. Another update, it's 23rd and they are not out for delivery. They won't arrive before christmas?.\r\nMerry christmas,\r\nMichal\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158007498914,
+      "created_at": "2025-12-23T09:04:42Z",
+      "updated_at": "2025-12-23T09:04:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014964646,
+      "body_text": "I called UPS, the earliest they will arrive will be 29th. It's at least 27 days from the date of ordering. 27. Shipping info on your website? 7-15days. I can understand small hiccups but that's way too much. If I had the chance to cancel my order before they were sent I would 100% do this because last thing I could imagine is that my christmas present I ordered on December 2nd WOULDN'T arrive on time. This was my sons only gift, now I have nothing to give to him.\r\nBest regards,\r\nMichal\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158007498914,
+      "created_at": "2025-12-23T09:22:09Z",
+      "updated_at": "2025-12-23T09:22:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014965469,
+      "body_text": "Hi Michał Krupa,    We apologize for the inconvenience caused. We will reimburse you for the full amount of the customs duties.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-23T09:57:58Z",
+      "updated_at": "2025-12-23T09:57:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015189668,
+      "body_text": "Hello, I am sending the UPS invoice as well as my bank details. Total amount paid on delivery by me was PLN 208.55 (by todays exchange rate ~ USD 58.10, CNY 408.38). Please take into account all bank exchange rates and fees.\r\n\r\nI deeply hope this whole situation won't happen again in the future and it will be made up to me. If you need any other information please let me know.\r\n\r\nRegards,\r\nMichał\r\n\r\nMichał Krupa\r\nIBAN: PL53 1140 2004 0000 3002 8042 2432\r\nBIC/SWIFT: BREXPLPWMBK\r\n\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158007498914,
+      "created_at": "2025-12-29T10:31:08Z",
+      "updated_at": "2025-12-29T10:31:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015628856,
+      "body_text": "Hi Michał Krupa,      Okay, we've processed your refund. Please check your account.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-04T11:45:14Z",
+      "updated_at": "2026-01-04T11:45:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

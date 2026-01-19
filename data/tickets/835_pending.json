@@ -1,0 +1,44 @@
+{
+  "id": 835,
+  "subject": "Vam pro",
+  "description_text": "Hello Simsonn.\r\nI have problems with the VAM pro.\r\n\r\nIt works in the simsonn Manager  vibration test and frequency changes works.\r\n\r\nIngame it is not working.\r\n\r\nSimhub don't see the VAM pro, other baseshakers worked good in simhub.\r\n\r\nPlease help else they are unusable.\r\n\r\nAlex lampen\r\nalampen@gmail.com\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-25T18:02:20Z",
+  "updated_at": "2025-06-27T12:04:37Z",
+  "requester_id": 158001614972,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003845678,
+      "body_text": "Hi A Lampen,     Our software currently supports 10 games. May I ask which game you are using now? We are continuously working to add telemetry support for more titles. In the meantime, you can use the internal version of SimHub that I’ve provided. The official release is still undergoing testing and may take a bit more time.   https://drive.google.com/file/d/1QrSbAvCC5iyx9XgdRgSQV-hWpmDGkujc/view?usp=sharing",
+      "user_id": 158000445778,
+      "created_at": "2025-06-26T09:30:14Z",
+      "updated_at": "2025-06-26T09:30:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004126000,
+      "body_text": "Hi Simsonn,\r\nThanks for the quick response.\r\nI mainly use LMU AC evo or F1 and the beta simhub workes perfectly thank u\r\nfor giving it.\r\nI have different ssd storage for games and the simsonn manager didn't work\r\nwith my LMU install and simhub workes great.\r\nThe plus x set with the VAM pro on only 25-40% power is a dream now.\r\n\r\nI'm looking forward to new products from simsonn.\r\n\r\nKind Regards,\r\n\r\nAlex lampen\r\n\r\n\r\n\r\n\r\nOp do 26 jun 2025, 11:30 schreef service@simsonn.com ",
+      "user_id": 158001614972,
+      "created_at": "2025-06-27T07:12:23Z",
+      "updated_at": "2025-06-27T07:12:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004213919,
+      "body_text": "Hi A Lampen,  We will improve the detection of the LMU installation path. Thank you very much for your valuable feedback. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-27T12:04:37Z",
+      "updated_at": "2025-06-27T12:04:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

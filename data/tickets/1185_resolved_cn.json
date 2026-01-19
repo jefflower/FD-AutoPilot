@@ -1,0 +1,115 @@
+{
+  "id": 1185,
+  "subject": "VAM 触觉反馈问题",
+  "description_text": "嗨 Simsonn，我订购了2个VAM pros和一个control plus x盒子。我已经安装好了，它们工作得很好。但是当玩iracing时，在30分钟内会随机出现，我不再收到任何触觉反馈，我去simsonn管理器按“振动”按钮测试，我的两个VAM都没有任何反应。simsonn管理器仍然显示它们都已连接并通电。只有在我断开控制盒与电脑的USB连接再重新连接后，这个问题才能解决。有时两个触觉反馈都会卡住并持续振动，这种情况下我必须断开控制盒与电脑的USB连接再重新连接才能解决。有什么解决办法吗？我怀疑可能是控制盒的固件丢失了连接之类的。",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-07-04T01:12:19Z",
+  "updated_at": "2025-07-05T09:00:23Z",
+  "requester_id": 158001830687,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004445115,
+      "body_text": "嗨 aиᴅʀᴇᴡ Hang，我们会通知我们的技术支持来帮您看看发生了什么事，如果您再次遇到此问题，可以提供更多信息并拍摄视频。对于给您带来的麻烦，我们深表歉意，我们会尽快为您解决。",
+      "user_id": 158001343601,
+      "created_at": "2025-07-04T13:29:36Z",
+      "updated_at": "2025-07-04T13:29:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447356,
+      "body_text": "嗨 simsonn，这个问题一直发生，触觉反馈停止工作不会超过15分钟。这时必须重新连接USB到控制盒才能让它再次工作。我附上了2张照片和一个Dropbox链接以查看视频，这2张照片是我的simsonn管理器的设置。视频链接：https://www.dropbox.com/scl/fi/9d4vsduxbbtbucjx7faur/20250705_150604.mp4?rlkey=ujqx6sfhbv04gk2yrat6jfwmb&st=dcs5dfo0&dl=0 视频内容：在视频中，simsonn管理器仍然显示踏板控制盒已连接且触觉有电，但是当我按下振动按钮时，没有任何反应。然后我断开plus x控制盒的USB再重新连接，您可以在simsonn管理器中看到它现在已断开并重新连接，一旦重新连接，当我按下振动按钮时，两个触觉都工作了。",
+      "user_id": 158001830687,
+      "created_at": "2025-07-05T05:17:08Z",
+      "updated_at": "2025-07-05T05:17:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447409,
+      "body_text": "嗨 aиᴅʀᴇᴡ Hang，您的踏板控制器是通过带电源的USB集线器连接到计算机，还是直接插入PC背面的USB 3.0端口？我们建议首先检查是否有任何不稳定的外部设备或USB供电不足，因为我们的内部测试和客户反馈并未显示类似问题。此外，我们建议使用官网的SimHub 9.9.3版本，该版本完全支持我们的踏板，并提供与100多种流行赛车游戏的遥测兼容性。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-05T06:12:21Z",
+      "updated_at": "2025-07-05T06:12:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447412,
+      "body_text": "嗨 Simsonn，它连接在我电脑后面的一个USB 2.0接口上，我没有使用USB集线器。关于Simhub，是的，我的simhub版本是9.9.3。",
+      "user_id": 158001830687,
+      "created_at": "2025-07-05T06:16:12Z",
+      "updated_at": "2025-07-05T06:16:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447436,
+      "body_text": "嗨 aиᴅʀᴇew Hang，您在使用SIMHUB 9.9.3版本时是否遇到同样的问题？",
+      "user_id": 158000445778,
+      "created_at": "2025-07-05T06:36:53Z",
+      "updated_at": "2025-07-05T06:36:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447494,
+      "body_text": "是的，我遇到了",
+      "user_id": 158001830687,
+      "created_at": "2025-07-05T06:40:43Z",
+      "updated_at": "2025-07-05T06:40:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447512,
+      "body_text": "嗨 aиᴅʀᴇᴡ Hang，请尝试关闭 Simsonn Manager 软件，仅使用 SIMHUB 进行测试。请告知我们，在运行约15分钟后，触觉反馈是否仍然正常工作。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-05T06:59:42Z",
+      "updated_at": "2025-07-05T06:59:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447607,
+      "body_text": "嗨 Simsonn，刚完成了一个50分钟的会话，没有任何问题！。看来simhub和simsonn管理器之间存在干扰问题。希望这种情况能持续下去，但看起来问题已经解决了。非常感谢",
+      "user_id": 158001830687,
+      "created_at": "2025-07-05T08:08:33Z",
+      "updated_at": "2025-07-05T08:08:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447622,
+      "body_text": "嗨 aиᴅʀᴇᴡ Hang，是的。SIMHUB 和 SIMSONN Manager 不应同时打开，因为两者会同时访问游戏的遥测数据，这可能会导致冲突。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-05T08:20:31Z",
+      "updated_at": "2025-07-05T08:20:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447660,
+      "body_text": "",
+      "user_id": 158001830687,
+      "created_at": "2025-07-05T09:00:22Z",
+      "updated_at": "2025-07-05T09:00:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

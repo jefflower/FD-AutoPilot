@@ -1,0 +1,84 @@
+{
+  "id": 10117,
+  "subject": "Pro X Ultra pedals - problem with haptics (??)",
+  "description_text": "Hi\r\n\r\nI have purchased directly from your website the pedals Pro X Ultra with the\r\nVAM Pro haptics in July 2025.\r\n\r\nRight from the start, always had a few problems with haptics disconnecting\r\nevery once in a while. Tried pretty much everything I've researched in the\r\nWeb, like buying a ferrite USB cable, using a USB ground loop isolator and\r\ngrounding the pedals and control box.\r\nThis did not solve the issues but made it manageable, and 95% of the time\r\npedals and haptics worked and when they disconnected, unplugging and\r\nplugging the USB made everything ok.\r\n\r\nA few days ago everything stopped working, pedals disconnect after 2 or 3\r\nminutes, haptics start vibrating non-stop and the usual method of\r\nunplug and re-plug doesn't work anymore. I have changed nothing and, as far\r\nas I know, this happened suddenly.\r\n\r\nI've tried everything, disconnected everything, connected back, checked all\r\nwiring and connections, re-installed the program manager, reinstalled\r\nfirmware etc etc and the problem persists.\r\n\r\nIf I disconnect the haptics, the pedals alone are working, but I want to\r\nuse (and paid for) the haptics together with the pedals.\r\n\r\nCan you please let me know how can I resolve this situation? The product is\r\nstill under guarantee and should work without any issues.\r\n\r\nThank you\r\n\r\nEduardo\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-06T17:32:46Z",
+  "updated_at": "2026-01-14T12:22:21Z",
+  "requester_id": 158008955697,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016067678,
+      "body_text": "Hi Eduardo Mendes,     ProX / ProX Ultra Pedal Firmware Update Procedure:    Press and hold the Upgrade button on the control box;    Reconnect the USB cable;    The software will indicate that the device has entered “Simsonn Flasher Mode”;    In the software, go to: Settings → Update → Manual Firmware Update → pedals → firmware → select proxultra.sfu from the attachment to update and test (Target versions: CPU1: 2.0.6 / CPU2: 2.0.4);    Start the firmware update. Once completed, release the Upgrade button;    Finally, retest and recalibrate the pedals.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T05:42:42Z",
+      "updated_at": "2026-01-07T05:42:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016416515,
+      "body_text": "Hi\r\n\r\nThank you for your reply.\r\n\r\nI am unable to put the device on Flash Mode, I've tried the steps you\r\nmention and it never goes into Flasher Mode.\r\n\r\nBut, I was able to update the firmware to the version you have sent, but\r\nthe issues persist. The pedals and haptics will disconnect after a few\r\nminutes.\r\n\r\nIs there anything more I can do?\r\n\r\nThank you\r\n\r\n\r\n",
+      "user_id": 158008955697,
+      "created_at": "2026-01-08T19:51:56Z",
+      "updated_at": "2026-01-08T19:51:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016468622,
+      "body_text": "Hi Eduardo Mendes,      If this occurs, it indicates that your PC’s grounding may be unreliable, possibly because a three-prong plug was not used in a grounded wall outlet. You can refer to the post below and connect the three metal screws on the PC case, control box, and pedals, which should resolve the disconnection issue.  https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2026-01-09T03:37:45Z",
+      "updated_at": "2026-01-09T03:37:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016501642,
+      "body_text": "Hi\r\n\r\nThank you for your effort in trying to get a resolution.\r\n\r\nGrounding is not the problem, the PC and pedals are connected to a PSU and\r\nthe PSU is connected to a proper grounded outlet.\r\n\r\nOn top of that I already have a grounding cable between the pedals and\r\ncontrol box as suggested.\r\n\r\nLack of grounding does not explain the problem. Everything worked fine for\r\n6 months and then suddenly stopped working?\r\nIf grounding was a problem, it would be since day 1.\r\n\r\nIt seems to me the control box is malfunctioning for some reason, is it not\r\npossible to have a replacement?\r\n\r\nThank you.\r\n\r\n\r\n",
+      "user_id": 158008955697,
+      "created_at": "2026-01-09T08:15:24Z",
+      "updated_at": "2026-01-09T08:15:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016655780,
+      "body_text": "Hi Eduardo Mendes,  Please provide your order number, and we will send you a replacement control box. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-10T03:34:03Z",
+      "updated_at": "2026-01-10T03:34:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016722721,
+      "body_text": "Hi\r\n\r\nOrder #SSN2027\r\nThank you\r\n\r\n[image: image.png]\r\n\r\n\r\nservice@simsonn.com ",
+      "user_id": 158008955697,
+      "created_at": "2026-01-10T15:08:32Z",
+      "updated_at": "2026-01-10T15:08:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017099308,
+      "body_text": "Hi Eduardo Mendes,    I apologize for not getting back to you sooner. Here is your shipping tracking link.  https://t.17track.net/en#nums=SF6047241771878",
+      "user_id": 158001343601,
+      "created_at": "2026-01-14T12:22:21Z",
+      "updated_at": "2026-01-14T12:22:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

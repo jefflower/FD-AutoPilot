@@ -1,0 +1,54 @@
+{
+  "id": 8665,
+  "subject": "express shipping max 4 days",
+  "description_text": "Hi\r\n\r\nI paid extra to get this delivered in 2-4 days, now i see on my order \r\nits expected dec 30. it should have been here 2 days ago latest.\r\nNeed it before x-mas, if i knew you could not keep what you promise on \r\nthe webpage i would have ordered somewhere else.\r\nNow i have to buy another set of pedals somewhere else and pray i can \r\nget them before x-mas.\r\n\r\nBest regards\r\nTom Erik\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-19T09:14:45Z",
+  "updated_at": "2025-12-24T11:12:44Z",
+  "requester_id": 158008105416,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014880752,
+      "body_text": "Hi Tom Erik Voll, ​We apologize for the shipping delay. Please provide your order number.",
+      "user_id": 158007774664,
+      "created_at": "2025-12-22T12:54:40Z",
+      "updated_at": "2025-12-22T12:54:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014880830,
+      "body_text": "\r\n  Order #SSN4821\r\n\r\n\r\n",
+      "user_id": 158008105416,
+      "created_at": "2025-12-22T12:56:51Z",
+      "updated_at": "2025-12-22T12:56:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014880996,
+      "body_text": "Order #SSN4821 but it looks like it may be here before x-mas if im \r\nlucky, its now registered in norway and is getting sorted, if it moves \r\non today it should be here tomorrow.\r\n\r\n",
+      "user_id": 158008105416,
+      "created_at": "2025-12-22T13:00:31Z",
+      "updated_at": "2025-12-22T13:00:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015031147,
+      "body_text": "Hi Tom Erik Voll,     Your package has been delivered. Please pick it up at the UPS Access Point location.  Merry Christmas! https://www.ups.com/track?loc=en_US&requester=ST&trackNums=1ZJ455510438287301/trackdetails",
+      "user_id": 158001343601,
+      "created_at": "2025-12-24T11:12:44Z",
+      "updated_at": "2025-12-24T11:12:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

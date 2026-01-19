@@ -1,0 +1,84 @@
+{
+  "id": 9315,
+  "subject": "Botonera simpsonn",
+  "description_text": "Buenos dias, revisando mi botonera simsonn anoche descubri que he perdido\r\nun tornillo de los soportes de las levas de cambio.\r\nDebido a que son extremadamente pequeños no tengo instrumentos para medir\r\nel tornillo y no hay sitios especializados en mi zona que puedan\r\nproporcionarmelo.\r\nMe preguntaba si ustedes pueden proporcionarme el tornillo o si no pueden\r\nal menos pueden proporcionarme las medidas del tornillo para poder buscarlo\r\nen internet?\r\n\r\nGracias de antemano.\r\nUn saludo\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-27T19:04:23Z",
+  "updated_at": "2025-12-30T10:27:11Z",
+  "requester_id": 158006092266,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015146310,
+      "body_text": "Hi A. j.,  I will provide you with the dimensions and specifications on Monday. You can first check whether a local hardware store has them available. If not, we can also mail them to you, but the shipping time may be a bit longer. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T01:51:47Z",
+      "updated_at": "2025-12-28T01:51:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015148288,
+      "body_text": "Comprobe en ferrererias locales, pero es un tornillo demasiado pequeño y no\r\nme lo pueden proporcionar. Deberia ser una ferreteria mas especializada\r\npero no tengo una en mis alrededores.\r\nSi me podeis ayudar ustedes aunque el tiempo sea mas largo se lo\r\nagradecere. Estoy muy muy contento con mi botonera ahora que funciona bien\r\ny no quiero que se dañe por falta de ese tornillo.\r\nespero noticias.\r\ngracias por su respuesta!\r\n\r\nEl dom, 28 dic 2025, 2:52, service@simsonn.com ",
+      "user_id": 158006092266,
+      "created_at": "2025-12-28T05:18:55Z",
+      "updated_at": "2025-12-28T05:18:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015166078,
+      "body_text": "Hi A. j.,  Please provide your order number, contact name, phone number, and shipping address, and we will arrange a replacement shipment for you. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T15:32:29Z",
+      "updated_at": "2025-12-28T15:32:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015182313,
+      "body_text": "Creo que esta fuera de garantia. No es problema para mi si debo pagar el\r\nreemplazo, comuniquemelo.\r\n\r\nPor otro lado, el rotari derecho no es detectado, un compañero suyo me\r\nenvio un comando para simhub, pero no se si cometio un error, instale el\r\ncomando pero era de loa vibradores de pedales. Hay algun comando simhub\r\npara botonera simpson? No consigo dar utilidad al rotari derecho inferior.\r\n\r\nGracias. Quedo a esperas de informacion del tornillo.\r\n\r\nEl dom, 28 dic 2025, 16:32, service@simsonn.com ",
+      "user_id": 158006092266,
+      "created_at": "2025-12-29T07:43:24Z",
+      "updated_at": "2025-12-29T07:43:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015244253,
+      "body_text": "Hi A. j.,  Our steering wheel hub does not support SimHub vibration telemetry.       The knob is not damaged. The 12-position knob on the right is used to control the functionality of the left knob. For example, when the left knob is rotated left or right, it corresponds to button 17 and button 18. However, if the right knob is rotated first, the output of the left knob will switch to button 19 and button 20. Please note that this feature needs to be tested in-game, as Windows can only display the first 32 buttons, while the game itself can correctly recognize and display all 40 buttons. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T09:15:15Z",
+      "updated_at": "2025-12-30T09:15:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015244714,
+      "body_text": "Disculpa , creo que no me explico bien. Se que no esta rota. Pero no soy\r\ncapaz de configurar esa ruleta. No la detecta ningun juego. Como puedo\r\nhacer que sea detectada?\r\n\r\nEl mar, 30 dic 2025, 10:15, service@simsonn.com ",
+      "user_id": 158006092266,
+      "created_at": "2025-12-30T09:31:01Z",
+      "updated_at": "2025-12-30T09:31:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015246168,
+      "body_text": "Hi A. j.,  Please record a video of the binding process and send it to me via Google Drive with proper viewing permissions. I will check if there are any errors in your operation. You can test it using AC or ACC. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T10:27:10Z",
+      "updated_at": "2025-12-30T10:27:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

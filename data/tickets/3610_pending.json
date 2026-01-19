@@ -1,0 +1,354 @@
+{
+  "id": 3610,
+  "subject": "RE: Re: RE: Ticket Received - RE: Re: RE: Ticket Received - RE: Re: RE: Ticket Received - RE: Ticket Received - RE: Ticket Received - RE: Re: RE: Re: Connection problem VAM PRO",
+  "description_text": "\r\n\r\n\r\n \r\n Hello, I'm getting back to you because I think I've found my problem. The problem is that when I change the color of the lights on my pedalboard, it causes the interference I sent you in the video. So I'm forced to leave the original lights in all colors, and that's not cool. Envoyé depuis l'application Mail Orange ---------------- De : \"support@simsonn.com\" <support@simsonn.com> Envoyé : dimanche 07 septembre 2025 03:45 À : nicolas.meney@orange.fr Objet : Re: RE: Ticket Received - RE: Re: RE: Ticket Received - RE: Re: RE: Ticket Received - RE: Ticket Received - RE: Ticket Received - RE: Re: RE: Re: Connection problem VAM PRO Hi Nicolas MENEY, If everything is working properly, you can continue using the current version. We will release the SIMSONN Manager 2.1.1 update in the next few days, and you can decide then whether to update. On\r\n Fri, 5 Sep at 2:31 PM , Nicolas MENEY <nicolas.meney@orange.fr> wrote: Hello, I'm contacting you because I received the control box. I just tested it, and it works very well. However, I didn't dare update it, something I did on the other one and perhaps shouldn't have done because everything works perfectly without it. However, to ensure everything is perfect, I have to go through SimHub because your software is very buggy. Do you advise me to still update it or not? However, thank you very much for sending me a new control box. Aside from the control box, which was defective, if I have any complaints, you should provide more tutorials regarding installations and known issues because for foreign countries, language is a barrier, even if it's just translating the manual into French, as in other languages. Thank you very much, and I hope to see you soon. ?? Envoyé depuis l'application Mail Orange ---------------- De : \"support@simsonn.com\" <support@simsonn.com> Envoyé : jeudi 04 septembre 2025 08:18 À : nicolas.meney@orange.fr Objet : Ticket Received - RE: Re: RE: Ticket Received - RE: Re: RE: Ticket Received - RE: Ticket Received - RE: Ticket Received - RE: Re: RE: Re: Connection problem VAM PRO Hi Nicolas MENEY We would like to acknowledge that we have received your request and a ticket has been created. A support representative will be reviewing your request and will send you a personal response.(usually within 24 hours). To view the status of the ticket or add comments, please visit https://simsonn.freshdesk.com/helpdesk/tickets/3457?follow=email Thank you for your patience. View ticket If the button doesn't work, copy-paste this URL in your browser's address bar: https://simsonn.freshdesk.com/helpdesk/tickets/3457?follow=email Regards, simsonn Support Team 3535:4206036 \r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-08T09:26:39Z",
+  "updated_at": "2025-09-09T23:59:39Z",
+  "requester_id": 158003442740,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007324103,
+      "body_text": "Hi Nicolas MENEY,  Could you also test with SIMHUB 9.9.3 to see if the same issue occurs? In addition, may I ask which brand of wheelbase you are using? Please also check whether your PC is properly grounded. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-22T03:09:27Z",
+      "updated_at": "2025-08-22T03:09:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007324399,
+      "body_text": "Hi Nicolas MENEY,  For a small number of Pro X Ultra control boxes, there may be slight inaccuracies in the force display. For example, the red curve should be close to 60kg at full brake travel, but the displayed value might not be entirely correct. However, this does not affect normal usage. When calibrating, simply apply your usual pedal force during the calibration process. In addition, Fanatec DD wheelbases can cause significant interference. For the motor issue, I will provide you with a detailed troubleshooting procedure.      In addition, could you please provide your order details as well, so that we can assist you accordingly?      To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability:     1.    Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding.     2.    Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive.     3.    Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup.     4.    Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible.     5.    Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs.     6.    Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference.     7.    Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements.     8.    Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources.     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-08-22T03:33:12Z",
+      "updated_at": "2025-08-22T03:33:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007324400,
+      "body_text": "ID 为 2949 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-22T03:33:12Z",
+      "updated_at": "2025-08-22T03:33:12Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158007324401,
+      "body_text": "合并来自工单2949  \n      主题: Connection problem VAM PRO  \n      描述:  Hello, following my purchase of the Pro X Ultra pedals and the Haptic Vam Pro from your website, I'm contacting you because I can't get the haptic feedback to work. \n It would be nice if you could provide a manual for this in the future, and if possible in French, that would be even better, but that's another matter. \n Could you help me because when I launch my game, on some games like Le Mans Ultimate, when I activate ABS and traction control, as soon as I press the brake, it automatically triggers, even when almost stationary when the car isn't moving. For the TC, it triggers when I pass over the kerbs, even though I'm in TC mode. \n Could you help me? \n Thanks in advance.  \n \n Nicolas Meney.  \n   \n Envoyé depuis l'application Mail Orange",
+      "user_id": 158000445778,
+      "created_at": "2025-08-22T03:33:13Z",
+      "updated_at": "2025-08-22T03:33:13Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158007444921,
+      "body_text": "Hi Nicolas MENEY,  Has your issue been resolved? If you are still concerned about the force display, we can send you a replacement Pro X Ultra control box. In addition, for the brake’s VAM Pro, we recommend using 4 nylon screws and washers, which can effectively isolate VAM Pro interference on the brake signal. The throttle and clutch are not affected, as their sensors are made from non-metallic materials. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-25T04:20:38Z",
+      "updated_at": "2025-08-25T04:20:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007451401,
+      "body_text": "Hi Nicolas MENEY,  Please provide your order number along with your contact name, phone number, and address, and we will arrange the reshipment for you today. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-25T05:00:34Z",
+      "updated_at": "2025-08-25T05:00:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007451416,
+      "body_text": "ID 号为 2965, 2991, 2996, 2997 和 3079 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-25T05:02:03Z",
+      "updated_at": "2025-08-25T05:02:03Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158007451417,
+      "body_text": "合并来自工单2965  \n      主题: RE: Re: Connection problem VAM PRO  \n      描述:  The base is a Fanatec DD Pro 8nm, and I don't have any grounding because I don't have any interference issues. \n I also have another small issue, but I didn't want to mix everything up at once. \n It's the brake that's relatively hard. I have the red elastomers, which are the softest, and when I press it fully, it indicates 21 kg of pressure. \n Is this normal? \n I'll try using SIMhub to test it. \n Mr. Meney.  \n   \n Envoyé depuis l'application Mail Orange \n \n   \n   \n ---------------- \n \n \nDe : \"support@simsonn.com\" <support@simsonn.com> \n \n \nEnvoyé : vendredi 22 août 2025 05:09 \n \n \nÀ : nicolas.meney@orange.fr \n \n \nObjet : Re: Connection problem VAM PRO \n \n   \n   \n \n \n \n Hi Nicolas MENEY, \n \n   \n Could you also test with SIMHUB 9.9.3 to see if the same issue occurs? In addition, may I ask which brand of wheelbase you are using? Please also check whether your PC is properly grounded.  \n \n \n       \n  \n On\n                            Thu, 21 Aug at  3:44 PM \n \n ,  Nicolas MENEY <nicolas.meney@orange.fr>  wrote: \n \n Hello, following my purchase of the Pro X Ultra pedals and the Haptic Vam Pro from your website, I'm contacting you because I can't get the haptic feedback to work. \n \n It would be nice if you could provide a manual for this in the future, and if possible in French, that would be even better, but that's another matter. \n \n Could you help me because when I launch my game, on some games like Le Mans Ultimate, when I activate ABS and traction control, as soon as I press the brake, it automatically triggers, even when almost stationary when the car isn't moving. For the TC, it triggers when I pass over the kerbs, even though I'm in TC mode. \n \n Could you help me? \n \n Thanks in advance.  \n \n Nicolas Meney.  \n \n   \n Envoyé depuis l'application Mail Orange",
+      "user_id": 158000445778,
+      "created_at": "2025-08-25T05:02:03Z",
+      "updated_at": "2025-08-25T05:02:03Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158007451419,
+      "body_text": "合并来自工单2991  \n      主题: RE: Re: RE: Re: Connection problem VAM PRO  \n      描述:    \n   \n Envoyé depuis l'application Mail Orange \n \n   \n   \n ---------------- \n \n \nDe : \"support@simsonn.com\" <support@simsonn.com> \n \n \nEnvoyé : vendredi 22 août 2025 05:33 \n \n \nÀ : nicolas.meney@orange.fr \n \n \nObjet : Re: RE: Re: Connection problem VAM PRO \n \n   \n   \n \n \n \n Hi Nicolas MENEY, \n \n   \n For a small number of Pro X Ultra control boxes, there may be slight inaccuracies in the force display. For example, the red curve should be close to 60kg at full brake travel, but the displayed value might not be entirely correct. However, this does not affect normal usage. When calibrating, simply apply your usual pedal force during the calibration process. \n \n In addition, Fanatec DD wheelbases can cause significant interference. For the motor issue, I will provide you with a detailed troubleshooting procedure.  \n \n \n   \n In addition, could you please provide your order details as well, so that we can assist you accordingly?  \n \n   \n \n To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability: \n \n \n    1.    Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding. \n \n \n    2.    Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive. \n \n \n    3.    Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup. \n \n \n    4.    Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible. \n \n \n    5.    Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs. \n \n \n    6.    Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference. \n \n \n    7.    Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements. \n \n \n    8.    Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources. \n \n \n   \n \n \nhttps://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting \n \n \nhttps://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding \n \n \n       \n  \n On\n                            Thu, 21 Aug at 11:21 PM \n \n ,  Nicolas MENEY <nicolas.meney@orange.fr>  wrote: \n \n The base is a Fanatec DD Pro 8nm, and I don't have any grounding because I don't have any interference issues. \n \n I also have another small issue, but I didn't want to mix everything up at once. \n \n It's the brake that's relatively hard. I have the red elastomers, which are the softest, and when I press it fully, it indicates 21 kg of pressure. \n \n Is this normal? \n \n I'll try using SIMhub to test it. \n \n Mr. Meney.  \n \n   \n Envoyé depuis l'application Mail Orange \n \n   \n   \n ---------------- \n \n \nDe : \"support@simsonn.com\" <support@simsonn.com> \n \n \nEnvoyé : vendredi 22 août 2025 05:09 \n \n \nÀ : nicolas.meney@orange.fr \n \n \nObjet : Re: Connection problem VAM PRO \n \n   \n   \n \n \n \n Hi Nicolas MENEY, \n \n   \n Could you also test with SIMHUB 9.9.3 to see if the same issue occurs? In addition, may I ask which brand of wheelbase you are using? Please also check whether your PC is properly grounded.  \n \n \n       \n  \n On\n                            Thu, 21 Aug at  3:44 PM \n \n ,  Nicolas MENEY <nicolas.meney@orange.fr>  wrote: \n \n Hello, following my purchase of the Pro X Ultra pedals and the Haptic Vam Pro from your website, I'm contacting you because I can't get the haptic feedback to work. \n \n It would be nice if you could provide a manual for this in the future, and if possible in French, that would be even better, but that's another matter. \n \n Could you help me because when I launch my game, on some games like Le Mans Ultimate, when I activate ABS and traction control, as soon as I press the brake, it automatically triggers, even when almost stationary when the car isn't moving. For the TC, it triggers when I pass over the kerbs, even though I'm in TC mode. \n \n Could you help me? \n \n Thanks in advance.  \n \n Nicolas Meney.  \n \n   \n Envoyé depuis l'application Mail Orange",
+      "user_id": 158000445778,
+      "created_at": "2025-08-25T05:02:04Z",
+      "updated_at": "2025-08-25T05:02:04Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158007451421,
+      "body_text": "合并来自工单2996  \n      主题: RE: Ticket Received - RE: Re: RE: Re: Connection problem VAM PRO  \n      描述:  What is the small white button with the word upgrade written behind the control box for and what is the BTR screw under the brake pedal for?  \n   \n Envoyé depuis l'application Mail Orange \n \n   \n   \n ---------------- \n \n \nDe : \"support@simsonn.com\" <support@simsonn.com> \n \n \nEnvoyé : vendredi 22 août 2025 11:56 \n \n \nÀ : nicolas.meney@orange.fr \n \n \nObjet : Ticket Received - RE: Re: RE: Re: Connection problem VAM PRO \n \n   \n   \n \n  \n Hi Nicolas MENEY \n \n \n We would like to acknowledge that we have received your request and a ticket has been created. \n \n A support representative will be reviewing your request and will send you a personal response.(usually within 24 hours). \n \n   \n To view the status of the ticket or add comments, please visit  \n \n \nhttps://simsonn.freshdesk.com/helpdesk/tickets/2991?follow=email \n \n   \n Thank you for your patience. \n \n \n \nView ticket \n \n \nIf the button doesn't work, copy-paste this URL in your browser's address bar: https://simsonn.freshdesk.com/helpdesk/tickets/2991?follow=email \n \n \n \n Regards, \n \n simsonn Support Team",
+      "user_id": 158000445778,
+      "created_at": "2025-08-25T05:02:05Z",
+      "updated_at": "2025-08-25T05:02:05Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158007451423,
+      "body_text": "合并来自工单2997  \n      主题: RE: Ticket Received - RE: Ticket Received - RE: Re: RE: Re: Connection problem VAM PRO  \n      描述:  I can't talk to you on your ticket platform because my translator doesn't work on it, so I have to talk to you in French if I go through this ticket application.  \n   \n Envoyé depuis l'application Mail Orange \n \n   \n   \n ---------------- \n \n \nDe : \"support@simsonn.com\" <support@simsonn.com> \n \n \nEnvoyé : vendredi 22 août 2025 15:16 \n \n \nÀ : nicolas.meney@orange.fr \n \n \nObjet : Ticket Received - RE: Ticket Received - RE: Re: RE: Re: Connection problem VAM PRO \n \n   \n   \n \n  \n Hi Nicolas MENEY \n \n \n We would like to acknowledge that we have received your request and a ticket has been created. \n \n A support representative will be reviewing your request and will send you a personal response.(usually within 24 hours). \n \n   \n To view the status of the ticket or add comments, please visit  \n \n \nhttps://simsonn.freshdesk.com/helpdesk/tickets/2996?follow=email \n \n   \n Thank you for your patience. \n \n \n \nView ticket \n \n \nIf the button doesn't work, copy-paste this URL in your browser's address bar: https://simsonn.freshdesk.com/helpdesk/tickets/2996?follow=email \n \n \n \n Regards, \n \n simsonn Support Team",
+      "user_id": 158000445778,
+      "created_at": "2025-08-25T05:02:05Z",
+      "updated_at": "2025-08-25T05:02:05Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158007451425,
+      "body_text": "合并来自工单3079  \n      主题: RE: Ticket Received - RE: Re: RE: Re: RE: Re: Connection problem VAM PRO  \n      描述:  Hello, and great to hear from you. \n Honestly, I'd like a new unit, yes, because I'll admit I was messing around again last night, and I'm having serious trouble adjusting the pedal force. \n And the biggest problem is that even when using SIMhub and disabling the TC and ABS, just activating the gear shift, I still experience vibrations at any time. \n And that's true for the brake, clutch, and accelerator pedals. \n I'll admit I'm not very satisfied, and I certainly wasn't expecting that. \n I'm going to try again with the small plastic washers you recommended for the brake pedal.  \n   \n Envoyé depuis l'application Mail Orange \n \n   \n   \n ---------------- \n \n \nDe : \"support@simsonn.com\" <support@simsonn.com> \n \n \nEnvoyé : lundi 25 août 2025 06:30 \n \n \nÀ : nicolas.meney@orange.fr \n \n \nObjet : Ticket Received - RE: Re: RE: Re: RE: Re: Connection problem VAM PRO \n \n   \n   \n \n  \n Hi Nicolas MENEY \n \n   \n We would like to acknowledge that we have received your request and a ticket has been created. \n \n A support representative will be reviewing your request and will send you a personal response.(usually within 24 hours). \n \n   \n To view the status of the ticket or add comments, please visit \n \n \nhttps://simsonn.freshdesk.com/helpdesk/tickets/3078?follow=email \n \n   \n Thank you for your patience. \n \n   \n \n \nView ticket \n \n \nIf the button doesn't work, copy-paste this URL in your browser's address bar: https://simsonn.freshdesk.com/helpdesk/tickets/3078?follow=email \n \n \n   \n Regards, \n \n simsonn Support Team",
+      "user_id": 158000445778,
+      "created_at": "2025-08-25T05:02:05Z",
+      "updated_at": "2025-08-25T05:02:05Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158007451432,
+      "body_text": "Hi Nicolas MENEY,  Please provide your order number along with your contact name, phone number, and address, and we will arrange the reshipment for you today. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-25T05:03:49Z",
+      "updated_at": "2025-08-25T05:03:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007547608,
+      "body_text": "Hi Nicolas MENEY,  Please provide your order number along with your contact name, phone number, and address, so that we can arrange the reshipment for you today. We will send you a replacement Pro X Ultra main control box. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-26T02:44:07Z",
+      "updated_at": "2025-08-26T02:44:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007590261,
+      "body_text": "ID 号为 3078 和 3090 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-27T02:59:25Z",
+      "updated_at": "2025-08-27T02:59:25Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158007590262,
+      "body_text": "合并来自工单3078  \n      主题: RE: Re: RE: Re: RE: Re: Connection problem VAM PRO  \n      描述:  Bonjour et ravi d'avoir de vos nouvelles. \n \n Franchement je veux bien un nouveau boîtier oui car je vous avouerai que j'ai encore joué hier soir et en effet j'ai de gros soucis pour régler la force du pédalier. \n \n Et alors le plus gros souci c'est que même en passant par SIMhub et en désactivant le TC et ABS en activant donc juste le passage de vitesse et bien je les vibrations qui se font à n'importe quel moment. \n \n Et ça que ce soit sur la pédale de frein comme d'embrayage comme d'accélérateur. \n \n Je vous avouerai que je suis pas très satisfait et je ne m'attendais surtout pas à ça. \n \n Je vais faire de nouveaux essais avec les petites rondelles plastiques que vous m'avez conseillé au niveau de la pédale de frein. \n \n   \n Envoyé depuis l'application Mail Orange \n \n   \n   \n ---------------- \n \n \nDe : \"support@simsonn.com\" <support@simsonn.com> \n \n \nEnvoyé : lundi 25 août 2025 06:20 \n \n \nÀ : nicolas.meney@orange.fr \n \n \nObjet : Re: RE: Re: RE: Re: Connection problem VAM PRO \n \n   \n   \n \n \n \n Hi Nicolas MENEY, \n \n   \n Has your issue been resolved? If you are still concerned about the force display, we can send you a replacement Pro X Ultra control box. \n \n In addition, for the brake’s VAM Pro, we recommend using 4 nylon screws and washers, which can effectively isolate VAM Pro interference on the brake signal. The throttle and clutch are not affected, as their sensors are made from non-metallic materials.  \n \n \n       \n  \n On\n                            Fri, 22 Aug at  5:56 AM \n \n ,  Nicolas MENEY <nicolas.meney@orange.fr>  wrote: \n \n   \n   \n Envoyé depuis l'application Mail Orange \n \n   \n   \n ---------------- \n \n \nDe : \"support@simsonn.com\" <support@simsonn.com> \n \n \nEnvoyé : vendredi 22 août 2025 05:33 \n \n \nÀ : nicolas.meney@orange.fr \n \n \nObjet : Re: RE: Re: Connection problem VAM PRO \n \n   \n   \n \n \n \n Hi Nicolas MENEY, \n \n   \n For a small number of Pro X Ultra control boxes, there may be slight inaccuracies in the force display. For example, the red curve should be close to 60kg at full brake travel, but the displayed value might not be entirely correct. However, this does not affect normal usage. When calibrating, simply apply your usual pedal force during the calibration process. \n \n In addition, Fanatec DD wheelbases can cause significant interference. For the motor issue, I will provide you with a detailed troubleshooting procedure.  \n \n \n   \n In addition, could you please provide your order details as well, so that we can assist you accordingly?  \n \n   \n \n To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability: \n \n \n    1.    Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding. \n \n \n    2.    Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive. \n \n \n    3.    Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup. \n \n \n    4.    Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible. \n \n \n    5.    Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs. \n \n \n    6.    Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference. \n \n \n    7.    Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements. \n \n \n    8.    Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources. \n \n \n   \n \n \nhttps://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting \n \n \nhttps://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding \n \n \n       \n  \n On\n                            Thu, 21 Aug at 11:21 PM \n \n ,  Nicolas MENEY <nicolas.meney@orange.fr>  wrote: \n \n The base is a Fanatec DD Pro 8nm, and I don't have any grounding because I don't have any interference issues. \n \n I also have another small issue, but I didn't want to mix everything up at once. \n \n It's the brake that's relatively hard. I have the red elastomers, which are the softest, and when I press it fully, it indicates 21 kg of pressure. \n \n Is this normal? \n \n I'll try using SIMhub to test it. \n \n Mr. Meney.  \n \n   \n Envoyé depuis l'application Mail Orange \n \n   \n   \n ---------------- \n \n \nDe : \"support@simsonn.com\" <support@simsonn.com> \n \n \nEnvoyé : vendredi 22 août 2025 05:09 \n \n \nÀ : nicolas.meney@orange.fr \n \n \nObjet : Re: Connection problem VAM PRO \n \n   \n   \n \n \n \n Hi Nicolas MENEY, \n \n   \n Could you also test with SIMHUB 9.9.3 to see if the same issue occurs? In addition, may I ask which brand of wheelbase you are using? Please also check whether your PC is properly grounded.  \n \n \n       \n  \n On\n                            Thu, 21 Aug at  3:44 PM \n \n ,  Nicolas MENEY <nicolas.meney@orange.fr>  wrote: \n \n Hello, following my purchase of the Pro X Ultra pedals and the Haptic Vam Pro from your website, I'm contacting you because I can't get the haptic feedback to work. \n \n It would be nice if you could provide a manual for this in the future, and if possible in French, that would be even better, but that's another matter. \n \n Could you help me because when I launch my game, on some games like Le Mans Ultimate, when I activate ABS and traction control, as soon as I press the brake, it automatically triggers, even when almost stationary when the car isn't moving. For the TC, it triggers when I pass over the kerbs, even though I'm in TC mode. \n \n Could you help me? \n \n Thanks in advance.  \n \n Nicolas Meney.  \n \n   \n Envoyé depuis l'application Mail Orange",
+      "user_id": 158000445778,
+      "created_at": "2025-08-27T02:59:25Z",
+      "updated_at": "2025-08-27T02:59:25Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158007590264,
+      "body_text": "合并来自工单3090  \n      主题: RE: Re: RE: Re: RE: Re: RE: Re: Connection problem VAM PRO  \n      描述:  Order #SSN2302 \n \n Meney Nicolas  \n \n 4 rue des marchands  \n \n 30420 calvisson  \n \n France  \n \n 0683346315 \n   \n Envoyé depuis l'application Mail Orange \n \n   \n   \n ---------------- \n \n \nDe : \"support@simsonn.com\" <support@simsonn.com> \n \n \nEnvoyé : lundi 25 août 2025 07:04 \n \n \nÀ : nicolas.meney@orange.fr \n \n \nObjet : Re: RE: Re: RE: Re: RE: Re: Connection problem VAM PRO \n \n   \n   \n \n \n \n Hi Nicolas MENEY, \n \n   \n Please provide your order number along with your contact name, phone number, and address, and we will arrange the reshipment for you today.  \n \n \n       \n  \n On\n                            Mon, 25 Aug at  1:00 AM \n \n , support@simsonn.com <support@simsonn.com>  wrote: \n \n \n \n Hi Nicolas MENEY, \n \n   \n Please provide your order number along with your contact name, phone number, and address, and we will arrange the reshipment for you today.  \n \n \n       \n  \n On\n                            Mon, 25 Aug at 12:30 AM \n \n ,  Nicolas MENEY <nicolas.meney@orange.fr>  wrote: \n \n Bonjour et ravi d'avoir de vos nouvelles. \n \n Franchement je veux bien un nouveau boîtier oui car je vous avouerai que j'ai encore joué hier soir et en effet j'ai de gros soucis pour régler la force du pédalier. \n \n Et alors le plus gros souci c'est que même en passant par SIMhub et en désactivant le TC et ABS en activant donc juste le passage de vitesse et bien je les vibrations qui se font à n'importe quel moment. \n \n Et ça que ce soit sur la pédale de frein comme d'embrayage comme d'accélérateur. \n \n Je vous avouerai que je suis pas très satisfait et je ne m'attendais surtout pas à ça. \n \n Je vais faire de nouveaux essais avec les petites rondelles plastiques que vous m'avez conseillé au niveau de la pédale de frein. \n \n   \n Envoyé depuis l'application Mail Orange \n \n   \n   \n ---------------- \n \n \nDe : \"support@simsonn.com\" <support@simsonn.com> \n \n \nEnvoyé : lundi 25 août 2025 06:20 \n \n \nÀ : nicolas.meney@orange.fr \n \n \nObjet : Re: RE: Re: RE: Re: Connection problem VAM PRO \n \n   \n   \n \n \n \n Hi Nicolas MENEY, \n \n   \n Has your issue been resolved? If you are still concerned about the force display, we can send you a replacement Pro X Ultra control box. \n \n In addition, for the brake’s VAM Pro, we recommend using 4 nylon screws and washers, which can effectively isolate VAM Pro interference on the brake signal. The throttle and clutch are not affected, as their sensors are made from non-metallic materials.  \n \n \n       \n  \n On\n                            Fri, 22 Aug at  5:56 AM \n \n ,  Nicolas MENEY <nicolas.meney@orange.fr>  wrote: \n \n   \n   \n Envoyé depuis l'application Mail Orange \n \n   \n   \n ---------------- \n \n \nDe : \"support@simsonn.com\" <support@simsonn.com> \n \n \nEnvoyé : vendredi 22 août 2025 05:33 \n \n \nÀ : nicolas.meney@orange.fr \n \n \nObjet : Re: RE: Re: Connection problem VAM PRO \n \n   \n   \n \n \n \n Hi Nicolas MENEY, \n \n   \n For a small number of Pro X Ultra control boxes, there may be slight inaccuracies in the force display. For example, the red curve should be close to 60kg at full brake travel, but the displayed value might not be entirely correct. However, this does not affect normal usage. When calibrating, simply apply your usual pedal force during the calibration process. \n \n In addition, Fanatec DD wheelbases can cause significant interference. For the motor issue, I will provide you with a detailed troubleshooting procedure.  \n \n \n   \n In addition, could you please provide your order details as well, so that we can assist you accordingly?  \n \n   \n \n To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability: \n \n \n    1.    Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding. \n \n \n    2.    Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive. \n \n \n    3.    Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup. \n \n \n    4.    Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible. \n \n \n    5.    Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs. \n \n \n    6.    Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference. \n \n \n    7.    Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements. \n \n \n    8.    Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources. \n \n \n   \n \n \nhttps://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting \n \n \nhttps://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding \n \n \n       \n  \n On\n                            Thu, 21 Aug at 11:21 PM \n \n ,  Nicolas MENEY <nicolas.meney@orange.fr>  wrote: \n \n The base is a Fanatec DD Pro 8nm, and I don't have any grounding because I don't have any interference issues. \n \n I also have another small issue, but I didn't want to mix everything up at once. \n \n It's the brake that's relatively hard. I have the red elastomers, which are the softest, and when I press it fully, it indicates 21 kg of pressure. \n \n Is this normal? \n \n I'll try using SIMhub to test it. \n \n Mr. Meney.  \n \n   \n Envoyé depuis l'application Mail Orange \n \n   \n   \n ---------------- \n \n \nDe : \"support@simsonn.com\" <support@simsonn.com> \n \n \nEnvoyé : vendredi 22 août 2025 05:09 \n \n \nÀ : nicolas.meney@orange.fr \n \n \nObjet : Re: Connection problem VAM PRO \n \n   \n   \n \n \n \n Hi Nicolas MENEY, \n \n   \n Could you also test with SIMHUB 9.9.3 to see if the same issue occurs? In addition, may I ask which brand of wheelbase you are using? Please also check whether your PC is properly grounded. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-27T02:59:26Z",
+      "updated_at": "2025-08-27T02:59:26Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158007590308,
+      "body_text": "Hi Nicolas MENEY,  This is the replacement Pro X Ultra control box we sent you. The shipment is via SF Express International, and the tracking number is SF6045877008201. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-27T03:06:25Z",
+      "updated_at": "2025-08-27T03:06:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007998141,
+      "body_text": "​Hi Nicolas MENEY,     We have already shipped the new control box. Please provide us with a video so we can review the issue. The kind of complex interference you described is highly unusual. Other ProX Ultra users, after following the recommended steps, have not experienced such frequent vibration problems.   This is the replacement Pro X Ultra control box we sent you. The shipment is via SF Express International, and the tracking number is SF6045877008201.  ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-03T01:59:17Z",
+      "updated_at": "2025-09-03T01:59:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007998145,
+      "body_text": "ID 号为 3108 和 3163 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-03T01:59:26Z",
+      "updated_at": "2025-09-03T01:59:26Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158007998146,
+      "body_text": "合并来自工单3108  \n      主题: RE: Re: RE: Re: RE: Re: RE: Re: Connection problem VAM PRO  \n      描述:    \n Order #SSN2302 \n Meney Nicolas  \n 4 rue des marchands  \n 30420 calvisson  \n France  \n 0683346315 \n   \n Envoyé depuis l'application Mail Orange \n \n   \n   \n ---------------- \n \n \nDe : \"support@simsonn.com\" <support@simsonn.com> \n \n \nEnvoyé : mardi 26 août 2025 04:44 \n \n \nÀ : nicolas.meney@orange.fr \n \n \nObjet : Re: RE: Re: RE: Re: RE: Re: Connection problem VAM PRO \n \n   \n   \n \n \n \n Hi Nicolas MENEY, \n \n   \n \nPlease provide your order number along with your contact name, phone number, and address, so that we can arrange the reshipment for you today. We will send you a replacement Pro X Ultra main control box.  \n \n   \n \n       \n  \n On\n                            Mon, 25 Aug at  1:03 AM \n \n , support@simsonn.com <support@simsonn.com>  wrote: \n \n \n \n Hi Nicolas MENEY, \n \n   \n Please provide your order number along with your contact name, phone number, and address, and we will arrange the reshipment for you today.  \n \n \n       \n  \n On\n                            Mon, 25 Aug at  1:00 AM \n \n , support@simsonn.com <support@simsonn.com>  wrote: \n \n \n \n Hi Nicolas MENEY, \n \n   \n Please provide your order number along with your contact name, phone number, and address, and we will arrange the reshipment for you today.  \n \n \n       \n  \n On\n                            Mon, 25 Aug at 12:30 AM \n \n ,  Nicolas MENEY <nicolas.meney@orange.fr>  wrote: \n \n Bonjour et ravi d'avoir de vos nouvelles. \n \n Franchement je veux bien un nouveau boîtier oui car je vous avouerai que j'ai encore joué hier soir et en effet j'ai de gros soucis pour régler la force du pédalier. \n \n Et alors le plus gros souci c'est que même en passant par SIMhub et en désactivant le TC et ABS en activant donc juste le passage de vitesse et bien je les vibrations qui se font à n'importe quel moment. \n \n Et ça que ce soit sur la pédale de frein comme d'embrayage comme d'accélérateur. \n \n Je vous avouerai que je suis pas très satisfait et je ne m'attendais surtout pas à ça. \n \n Je vais faire de nouveaux essais avec les petites rondelles plastiques que vous m'avez conseillé au niveau de la pédale de frein. \n \n   \n Envoyé depuis l'application Mail Orange \n \n   \n   \n ---------------- \n \n \nDe : \"support@simsonn.com\" <support@simsonn.com> \n \n \nEnvoyé : lundi 25 août 2025 06:20 \n \n \nÀ : nicolas.meney@orange.fr \n \n \nObjet : Re: RE: Re: RE: Re: Connection problem VAM PRO \n \n   \n   \n \n \n \n Hi Nicolas MENEY, \n \n   \n Has your issue been resolved? If you are still concerned about the force display, we can send you a replacement Pro X Ultra control box. \n \n In addition, for the brake’s VAM Pro, we recommend using 4 nylon screws and washers, which can effectively isolate VAM Pro interference on the brake signal. The throttle and clutch are not affected, as their sensors are made from non-metallic materials.  \n \n \n       \n  \n On\n                            Fri, 22 Aug at  5:56 AM \n \n ,  Nicolas MENEY <nicolas.meney@orange.fr>  wrote: \n \n   \n   \n Envoyé depuis l'application Mail Orange \n \n   \n   \n ---------------- \n \n \nDe : \"support@simsonn.com\" <support@simsonn.com> \n \n \nEnvoyé : vendredi 22 août 2025 05:33 \n \n \nÀ : nicolas.meney@orange.fr \n \n \nObjet : Re: RE: Re: Connection problem VAM PRO \n \n   \n   \n \n \n \n Hi Nicolas MENEY, \n \n   \n For a small number of Pro X Ultra control boxes, there may be slight inaccuracies in the force display. For example, the red curve should be close to 60kg at full brake travel, but the displayed value might not be entirely correct. However, this does not affect normal usage. When calibrating, simply apply your usual pedal force during the calibration process. \n \n In addition, Fanatec DD wheelbases can cause significant interference. For the motor issue, I will provide you with a detailed troubleshooting procedure.  \n \n \n   \n In addition, could you please provide your order details as well, so that we can assist you accordingly?  \n \n   \n \n To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability: \n \n \n    1.    Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding. \n \n \n    2.    Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive. \n \n \n    3.    Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup. \n \n \n    4.    Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible. \n \n \n    5.    Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs. \n \n \n    6.    Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference. \n \n \n    7.    Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements. \n \n \n    8.    Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources. \n \n \n   \n \n \nhttps://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting \n \n \nhttps://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-09-03T01:59:26Z",
+      "updated_at": "2025-09-03T01:59:26Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158007998148,
+      "body_text": "合并来自工单3163  \n      主题: RE: Re: RE: Re: RE: Re: RE: Re: RE: Re: Connection problem VAM PRO  \n      描述:  Merci beaucoup je vais essayer avec ce nouveau boîtier en espérant que tout rentre dans l'ordre?? \n   \n Envoyé depuis l'application Mail Orange \n \n   \n   \n ---------------- \n \n \nDe : \"support@simsonn.com\" <support@simsonn.com> \n \n \nEnvoyé : mercredi 27 août 2025 05:07 \n \n \nÀ : nicolas.meney@orange.fr \n \n \nObjet : Re: RE: Re: RE: Re: RE: Re: RE: Re: Connection problem VAM PRO \n \n   \n   \n \n \n \n Hi Nicolas MENEY, \n \n   \n This is the replacement Pro X Ultra control box we sent you. The shipment is via SF Express International, and the tracking number is SF6045877008201.  \n \n \n       \n  \n On\n                            Mon, 25 Aug at 10:44 PM \n \n , support@simsonn.com <support@simsonn.com>  wrote: \n \n \n \n Hi Nicolas MENEY, \n \n   \n \nPlease provide your order number along with your contact name, phone number, and address, so that we can arrange the reshipment for you today. We will send you a replacement Pro X Ultra main control box.  \n \n   \n \n       \n  \n On\n                            Mon, 25 Aug at  1:03 AM \n \n , support@simsonn.com <support@simsonn.com>  wrote: \n \n \n \n Hi Nicolas MENEY, \n \n   \n Please provide your order number along with your contact name, phone number, and address, and we will arrange the reshipment for you today.  \n \n \n       \n  \n On\n                            Mon, 25 Aug at  1:00 AM \n \n , support@simsonn.com <support@simsonn.com>  wrote: \n \n \n \n Hi Nicolas MENEY, \n \n   \n Please provide your order number along with your contact name, phone number, and address, and we will arrange the reshipment for you today.  \n \n \n       \n  \n On\n                            Mon, 25 Aug at 12:30 AM \n \n ,  Nicolas MENEY <nicolas.meney@orange.fr>  wrote: \n \n Bonjour et ravi d'avoir de vos nouvelles. \n \n Franchement je veux bien un nouveau boîtier oui car je vous avouerai que j'ai encore joué hier soir et en effet j'ai de gros soucis pour régler la force du pédalier. \n \n Et alors le plus gros souci c'est que même en passant par SIMhub et en désactivant le TC et ABS en activant donc juste le passage de vitesse et bien je les vibrations qui se font à n'importe quel moment. \n \n Et ça que ce soit sur la pédale de frein comme d'embrayage comme d'accélérateur. \n \n Je vous avouerai que je suis pas très satisfait et je ne m'attendais surtout pas à ça. \n \n Je vais faire de nouveaux essais avec les petites rondelles plastiques que vous m'avez conseillé au niveau de la pédale de frein. \n \n   \n Envoyé depuis l'application Mail Orange \n \n   \n   \n ---------------- \n \n \nDe : \"support@simsonn.com\" <support@simsonn.com> \n \n \nEnvoyé : lundi 25 août 2025 06:20 \n \n \nÀ : nicolas.meney@orange.fr \n \n \nObjet : Re: RE: Re: RE: Re: Connection problem VAM PRO \n \n   \n   \n \n \n \n Hi Nicolas MENEY, \n \n   \n Has your issue been resolved? If you are still concerned about the force display, we can send you a replacement Pro X Ultra control box. \n \n In addition, for the brake’s VAM Pro, we recommend using 4 nylon screws and washers, which can effectively isolate VAM Pro interference on the brake signal. The throttle and clutch are not affected, as their sensors are made from non-metallic materials. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-03T01:59:27Z",
+      "updated_at": "2025-09-03T01:59:27Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158007998218,
+      "body_text": "Hi Nicolas MENEY,  Could you please install the Todesk tool now? I happen to be available and can remotely check and update your device for you. Todesk does not require registration — if you see a registration prompt, simply click the “X” in the top-right corner to close it. Once installed, please provide me with the ID and temporary code, and I will be able to assist you remotely.      https://dl.todesk.com/windows/ToDesk_Setup.exe ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-03T02:04:49Z",
+      "updated_at": "2025-09-03T02:04:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008056857,
+      "body_text": "ID 号为 3362 和 3430 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-04T04:27:14Z",
+      "updated_at": "2025-09-04T04:27:14Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158008056858,
+      "body_text": "合并来自工单3362  \n      主题: RE: Ticket Received - RE: Ticket Received - RE: Ticket Received - RE: Re: RE: Re: Connection problem VAM PRO  \n      描述:  Hello, I'm getting back to you because I still want to inform you that the haptics still aren't working. \n Whether it's on the clutch, the accelerator, or the brake, the problem is the same. \n I ran a ground cable from the control box to my brake pedal while carefully removing the paint, and nothing worked. \n I bought a USB isolator, and that didn't help either. \n A colleague of mine, an electrician, came to check my ground connection, and it works fine. \n I bought some ferrite beads that I put on the box's USB cable that connects to the PC, and it still doesn't work. \n I've of course tried using SIM Hub directly and your software; the problem is the same on both sides. \n All that's left is to wait for the new box you must have sent me, but I haven't heard anything because I haven't had any follow-up, and I'm hoping that will correct the problem. It would still be a good idea in the future to ensure that a product is compliant and functions properly before selling it, especially for a pedalboard price plus haptic, which is certainly not cheap. \n Please know, however, that I'm starting to regret my purchase, especially when I see my colleagues next door who bought haptics from Simagic or Simnet, which work very well and without EMI issues, a well-known problem with you, but which has never been resolved, and I should have looked into the problem before my purchase. \n Hoping to receive your box as soon as possible and that it works, of course. Otherwise, I hope to be able to return the product since it doesn't work. \n Thank you for your understanding. \n Mr. Meney  \n   \n Envoyé depuis l'application Mail Orange \n \n   \n   \n ---------------- \n \n \nDe : \"support@simsonn.com\" <support@simsonn.com> \n \n \nEnvoyé : vendredi 22 août 2025 15:32 \n \n \nÀ : nicolas.meney@orange.fr \n \n \nObjet : Ticket Received - RE: Ticket Received - RE: Ticket Received - RE: Re: RE: Re: Connection problem VAM PRO \n \n   \n   \n \n  \n Hi Nicolas MENEY \n \n \n We would like to acknowledge that we have received your request and a ticket has been created. \n \n A support representative will be reviewing your request and will send you a personal response.(usually within 24 hours). \n \n   \n To view the status of the ticket or add comments, please visit  \n \n \nhttps://simsonn.freshdesk.com/helpdesk/tickets/2997?follow=email \n \n   \n Thank you for your patience. \n \n \n \nView ticket \n \n \nIf the button doesn't work, copy-paste this URL in your browser's address bar: https://simsonn.freshdesk.com/helpdesk/tickets/2997?follow=email \n \n \n \n Regards, \n \n simsonn Support Team",
+      "user_id": 158000445778,
+      "created_at": "2025-09-04T04:27:14Z",
+      "updated_at": "2025-09-04T04:27:14Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158008056860,
+      "body_text": "合并来自工单3430  \n      主题: RE: Re: RE: Ticket Received - RE: Ticket Received - RE: Ticket Received - RE: Re: RE: Re: Connection problem VAM PRO  \n      描述:  Je vous fais part de photos et vidéos du problème. \n \n Merci.  \n \n   \n Envoyé depuis l'application Mail Orange \n \n   \n   \n ---------------- \n \n \nDe : \"support@simsonn.com\" <support@simsonn.com> \n \n \nEnvoyé : mercredi 03 septembre 2025 03:59 \n \n \nÀ : nicolas.meney@orange.fr \n \n \nObjet : Re: RE: Ticket Received - RE: Ticket Received - RE: Ticket Received - RE: Re: RE: Re: Connection problem VAM PRO \n \n   \n   \n \n \n \nHi Nicolas MENEY, \n \n   \n \n \nWe have already shipped the new control box. Please provide us with a video so we can review the issue. The kind of complex interference you described is highly unusual. Other ProX Ultra users, after following the recommended steps, have not experienced such frequent vibration problems.  \n \n   \n \nThis is the replacement Pro X Ultra control box we sent you. The shipment is via SF Express International, and the tracking number is SF6045877008201.   \n \n   \n   \n \n       \n  \n On\n                            Mon, 1 Sep at  3:19 PM \n \n ,  Nicolas MENEY <nicolas.meney@orange.fr>  wrote: \n \n Hello, I'm getting back to you because I still want to inform you that the haptics still aren't working. \n \n Whether it's on the clutch, the accelerator, or the brake, the problem is the same. \n \n I ran a ground cable from the control box to my brake pedal while carefully removing the paint, and nothing worked. \n \n I bought a USB isolator, and that didn't help either. \n \n A colleague of mine, an electrician, came to check my ground connection, and it works fine. \n \n I bought some ferrite beads that I put on the box's USB cable that connects to the PC, and it still doesn't work. \n \n I've of course tried using SIM Hub directly and your software; the problem is the same on both sides. \n \n All that's left is to wait for the new box you must have sent me, but I haven't heard anything because I haven't had any follow-up, and I'm hoping that will correct the problem. It would still be a good idea in the future to ensure that a product is compliant and functions properly before selling it, especially for a pedalboard price plus haptic, which is certainly not cheap. \n \n Please know, however, that I'm starting to regret my purchase, especially when I see my colleagues next door who bought haptics from Simagic or Simnet, which work very well and without EMI issues, a well-known problem with you, but which has never been resolved, and I should have looked into the problem before my purchase. \n \n Hoping to receive your box as soon as possible and that it works, of course. Otherwise, I hope to be able to return the product since it doesn't work. \n \n Thank you for your understanding. \n \n Mr. Meney  \n \n   \n Envoyé depuis l'application Mail Orange \n \n   \n   \n ---------------- \n \n \nDe : \"support@simsonn.com\" <support@simsonn.com> \n \n \nEnvoyé : vendredi 22 août 2025 15:32 \n \n \nÀ : nicolas.meney@orange.fr \n \n \nObjet : Ticket Received - RE: Ticket Received - RE: Ticket Received - RE: Re: RE: Re: Connection problem VAM PRO \n \n   \n   \n \n  \n Hi Nicolas MENEY \n \n   \n We would like to acknowledge that we have received your request and a ticket has been created. \n \n A support representative will be reviewing your request and will send you a personal response.(usually within 24 hours). \n \n   \n To view the status of the ticket or add comments, please visit \n \n \nhttps://simsonn.freshdesk.com/helpdesk/tickets/2997?follow=email \n \n   \n Thank you for your patience. \n \n \n \nView ticket \n \n \nIf the button doesn't work, copy-paste this URL in your browser's address bar: https://simsonn.freshdesk.com/helpdesk/tickets/2997?follow=email \n \n \n   \n Regards, \n \n simsonn Support Team",
+      "user_id": 158000445778,
+      "created_at": "2025-09-04T04:27:17Z",
+      "updated_at": "2025-09-04T04:27:17Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158008056902,
+      "body_text": "Hi Nicolas MENEY,     Could you please install the Todesk tool now? I happen to be available and can remotely check and update your device for you. Todesk does not require registration — if you see a registration prompt, simply click the “X” in the top-right corner to close it. Once installed, please provide me with the ID and temporary code, and I will be able to assist you remotely.      https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-09-04T04:29:44Z",
+      "updated_at": "2025-09-04T04:29:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008200465,
+      "body_text": "Hi Nicolas MENEY,   If everything is working properly, you can continue using the current version. We will release the SIMSONN Manager 2.1.1 update in the next few days, and you can decide then whether to update. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T01:45:41Z",
+      "updated_at": "2025-09-07T01:45:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008200466,
+      "body_text": "ID 号为 3431 和 3457 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T01:45:42Z",
+      "updated_at": "2025-09-07T01:45:42Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158008200467,
+      "body_text": "合并来自工单3431  \n      主题: RE: Ticket Received - RE: Re: RE: Ticket Received - RE: Ticket Received - RE: Ticket Received - RE: Re: RE: Re: Connection problem VAM PRO  \n      描述:    \n   \n Envoyé depuis l'application Mail Orange \n \n   \n   \n ---------------- \n \n \nDe : \"support@simsonn.com\" <support@simsonn.com> \n \n \nEnvoyé : mercredi 03 septembre 2025 14:13 \n \n \nÀ : nicolas.meney@orange.fr \n \n \nObjet : Ticket Received - RE: Re: RE: Ticket Received - RE: Ticket Received - RE: Ticket Received - RE: Re: RE: Re: Connection problem VAM PRO \n \n   \n   \n \n  \n Hi Nicolas MENEY \n \n   \n We would like to acknowledge that we have received your request and a ticket has been created. \n \n A support representative will be reviewing your request and will send you a personal response.(usually within 24 hours). \n \n   \n To view the status of the ticket or add comments, please visit \n \n \nhttps://simsonn.freshdesk.com/helpdesk/tickets/3430?follow=email \n \n   \n Thank you for your patience. \n \n   \n \n \nView ticket \n \n \nIf the button doesn't work, copy-paste this URL in your browser's address bar: https://simsonn.freshdesk.com/helpdesk/tickets/3430?follow=email \n \n \n   \n Regards, \n \n simsonn Support Team",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T01:45:42Z",
+      "updated_at": "2025-09-07T01:45:42Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158008200471,
+      "body_text": "合并来自工单3457  \n      主题: RE: Re: RE: Ticket Received - RE: Re: RE: Ticket Received - RE: Ticket Received - RE: Ticket Received - RE: Re: RE: Re: Connection problem VAM PRO  \n      描述:  Hello, yes, it's possible. However, to be able to do this, I'm only available Monday or Tuesday mornings because we don't have the same hours in France. \n Would 7:00 a.m. French time be possible for you next Monday or Tuesday, since I don't know exactly where you are for your own schedule? \n I look forward to hearing from you. \n   \n   \n Envoyé depuis l'application Mail Orange \n \n   \n   \n ---------------- \n \n \nDe : \"support@simsonn.com\" <support@simsonn.com> \n \n \nEnvoyé : jeudi 04 septembre 2025 06:29 \n \n \nÀ : nicolas.meney@orange.fr \n \n \nObjet : Re: RE: Ticket Received - RE: Re: RE: Ticket Received - RE: Ticket Received - RE: Ticket Received - RE: Re: RE: Re: Connection problem VAM PRO \n \n   \n   \n \n \n \n Hi Nicolas MENEY, \n \n   \n \n Could you please install the Todesk tool now? I happen to be available and can remotely check and update your device for you. \n \n Todesk does not require registration — if you see a registration prompt, simply click the “X” in the top-right corner to close it. Once installed, please provide me with the ID and temporary code, and I will be able to assist you remotely.  \n \n \n   \n \nhttps://dl.todesk.com/windows/ToDesk_Setup.exe \n \n \n   \n   \n \n       \n \n  \n On\n                            Tue, 2 Sep at 10:04 PM \n \n , support@simsonn.com <support@simsonn.com>  wrote: \n \n \n \n Hi Nicolas MENEY, \n \n   \n Could you please install the Todesk tool now? I happen to be available and can remotely check and update your device for you. \n \n Todesk does not require registration — if you see a registration prompt, simply click the “X” in the top-right corner to close it. Once installed, please provide me with the ID and temporary code, and I will be able to assist you remotely.  \n \n \n   \n \nhttps://dl.todesk.com/windows/ToDesk_Setup.exe  \n \n       \n  \n On\n                            Tue, 2 Sep at  9:59 PM \n \n , support@simsonn.com <support@simsonn.com>  wrote: \n \n \n \nHi Nicolas MENEY, \n \n   \n \n \nWe have already shipped the new control box. Please provide us with a video so we can review the issue. The kind of complex interference you described is highly unusual. Other ProX Ultra users, after following the recommended steps, have not experienced such frequent vibration problems.  \n \n   \n \nThis is the replacement Pro X Ultra control box we sent you. The shipment is via SF Express International, and the tracking number is SF6045877008201.   \n \n   \n   \n \n       \n  \n On\n                            Mon, 1 Sep at  3:19 PM \n \n ,  Nicolas MENEY <nicolas.meney@orange.fr>  wrote: \n \n Hello, I'm getting back to you because I still want to inform you that the haptics still aren't working. \n \n Whether it's on the clutch, the accelerator, or the brake, the problem is the same. \n \n I ran a ground cable from the control box to my brake pedal while carefully removing the paint, and nothing worked. \n \n I bought a USB isolator, and that didn't help either. \n \n A colleague of mine, an electrician, came to check my ground connection, and it works fine. \n \n I bought some ferrite beads that I put on the box's USB cable that connects to the PC, and it still doesn't work. \n \n I've of course tried using SIM Hub directly and your software; the problem is the same on both sides. \n \n All that's left is to wait for the new box you must have sent me, but I haven't heard anything because I haven't had any follow-up, and I'm hoping that will correct the problem. It would still be a good idea in the future to ensure that a product is compliant and functions properly before selling it, especially for a pedalboard price plus haptic, which is certainly not cheap. \n \n Please know, however, that I'm starting to regret my purchase, especially when I see my colleagues next door who bought haptics from Simagic or Simnet, which work very well and without EMI issues, a well-known problem with you, but which has never been resolved, and I should have looked into the problem before my purchase. \n \n Hoping to receive your box as soon as possible and that it works, of course. Otherwise, I hope to be able to return the product since it doesn't work. \n \n Thank you for your understanding. \n \n Mr. Meney  \n \n   \n Envoyé depuis l'application Mail Orange \n \n   \n   \n ---------------- \n \n \nDe : \"support@simsonn.com\" <support@simsonn.com> \n \n \nEnvoyé : vendredi 22 août 2025 15:32 \n \n \nÀ : nicolas.meney@orange.fr \n \n \nObjet : Ticket Received - RE: Ticket Received - RE: Ticket Received - RE: Re: RE: Re: Connection problem VAM PRO \n \n   \n   \n \n  \n Hi Nicolas MENEY \n \n   \n We would like to acknowledge that we have received your request and a ticket has been created. \n \n A support representative will be reviewing your request and will send you a personal response.(usually within 24 hours). \n \n   \n To view the status of the ticket or add comments, please visit \n \n \nhttps://simsonn.freshdesk.com/helpdesk/tickets/2997?follow=email \n \n   \n Thank you for your patience. \n \n \n \nView ticket \n \n \nIf the button doesn't work, copy-paste this URL in your browser's address bar: https://simsonn.freshdesk.com/helpdesk/tickets/2997?follow=email \n \n \n   \n Regards, \n \n simsonn Support Team",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T01:45:42Z",
+      "updated_at": "2025-09-07T01:45:42Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158008346568,
+      "body_text": "ID 为 3535 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-09T23:56:31Z",
+      "updated_at": "2025-09-09T23:56:31Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158008346569,
+      "body_text": "合并来自工单3535  \n      主题: RE: Ticket Received - RE: Re: RE: Ticket Received - RE: Re: RE: Ticket Received - RE: Ticket Received - RE: Ticket Received - RE: Re: RE: Re: Connection problem VAM PRO  \n      描述:  Hello, I'm contacting you because I received the control box. I just tested it, and it works very well. However, I didn't dare update it, something I did on the other one and perhaps shouldn't have done because everything works perfectly without it. \n However, to ensure everything is perfect, I have to go through SimHub because your software is very buggy. \n Do you advise me to still update it or not? \n However, thank you very much for sending me a new control box. \n Aside from the control box, which was defective, if I have any complaints, you should provide more tutorials regarding installations and known issues because for foreign countries, language is a barrier, even if it's just translating the manual into French, as in other languages. \n Thank you very much, and I hope to see you soon. ??  \n   \n Envoyé depuis l'application Mail Orange \n \n   \n   \n ---------------- \n \n \nDe : \"support@simsonn.com\" <support@simsonn.com> \n \n \nEnvoyé : jeudi 04 septembre 2025 08:18 \n \n \nÀ : nicolas.meney@orange.fr \n \n \nObjet : Ticket Received - RE: Re: RE: Ticket Received - RE: Re: RE: Ticket Received - RE: Ticket Received - RE: Ticket Received - RE: Re: RE: Re: Connection problem VAM PRO \n \n   \n   \n \n  \n Hi Nicolas MENEY \n \n \n We would like to acknowledge that we have received your request and a ticket has been created. \n \n A support representative will be reviewing your request and will send you a personal response.(usually within 24 hours). \n \n   \n To view the status of the ticket or add comments, please visit  \n \n \nhttps://simsonn.freshdesk.com/helpdesk/tickets/3457?follow=email \n \n   \n Thank you for your patience. \n \n \n \nView ticket \n \n \nIf the button doesn't work, copy-paste this URL in your browser's address bar: https://simsonn.freshdesk.com/helpdesk/tickets/3457?follow=email \n \n \n \n Regards, \n \n simsonn Support Team",
+      "user_id": 158000445778,
+      "created_at": "2025-09-09T23:56:31Z",
+      "updated_at": "2025-09-09T23:56:31Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158008346616,
+      "body_text": "Hi Nicolas MENEY,  You have received the new control box we sent, but the issue is still the same, correct? The video you uploaded is incomplete, so I’m unable to fully check the problem. Please upload the complete video to Google Drive and grant access permissions, so I can review how the RGB interference occurs. We will also run internal tests to better address the issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-09T23:59:39Z",
+      "updated_at": "2025-09-09T23:59:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

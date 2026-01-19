@@ -1,0 +1,25 @@
+{
+  "id": 9792,
+  "subject": "丢失的订单",
+  "description_text": "查询我的亚马逊订单的预计送达时间 订单号 701-3017782-2354622 追踪号 YT2533100706344314 谢谢, 乔",
+  "status": 4,
+  "priority": 3,
+  "created_at": "2026-01-02T11:45:51Z",
+  "updated_at": "2026-01-08T10:06:48Z",
+  "requester_id": 158007836554,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016320495,
+      "body_text": "亚马逊后台已回复",
+      "user_id": 158007774607,
+      "created_at": "2026-01-08T10:06:45Z",
+      "updated_at": "2026-01-08T10:06:45Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ],
+  "available_langs": []
+}

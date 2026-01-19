@@ -1,0 +1,34 @@
+{
+  "id": 7171,
+  "subject": "Fimware Upgrade help",
+  "description_text": "I would like some help because I have a set of Simsoon accelerator and brake pedals, silver model.\r\nlike the one in the photo below, and I would like instructions on how to update the firmware so \r\nI can use the new Simsoon software. Thank you.\r\n\r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-01T14:05:54Z",
+  "updated_at": "2025-12-04T08:08:14Z",
+  "requester_id": 158007472011,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013270369,
+      "body_text": "Hello, good morning! I can't access the page to view my ticket. Could you please send me the firmware update instructions and links via email? Thank you.\r\n\r\n> Em 01/12/2025 10:05 -04 support@simsonn.com ",
+      "user_id": 158007472011,
+      "created_at": "2025-12-02T13:59:31Z",
+      "updated_at": "2025-12-02T13:59:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013376648,
+      "body_text": "Hi Tarcisio Fernandes,      If your pedal is version 1.7.1, you can download the latest SIMSONN Manager 2.1.2 using the link below. Then, follow the steps below to update the firmware:  If the software indicates that the version is too old, go to Settings → Update → Manual Firmware Update → pedals → firmware → pedals-proxultra.sfu to start the firmware update;  After the firmware update is completed, release the upgrade button;  Finally, test the pedal and perform a calibration.  Additionally, please ensure that your computer is properly grounded.  https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T08:08:14Z",
+      "updated_at": "2025-12-04T08:08:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

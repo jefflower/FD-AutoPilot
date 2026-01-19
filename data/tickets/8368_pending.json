@@ -1,0 +1,44 @@
+{
+  "id": 8368,
+  "subject": "#SSN4619",
+  "description_text": "Hello, I wanted to ask where my order is. I wait for 7 days\r\n\r\nGesendet von Outlook für Android<https://aka.ms/AAb9ysg>\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-16T02:48:48Z",
+  "updated_at": "2025-12-17T07:52:09Z",
+  "requester_id": 158007828399,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014614061,
+      "body_text": "II can't log in.\r\n\r\n\r\nGesendet von Outlook für Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158007828399,
+      "created_at": "2025-12-17T05:59:40Z",
+      "updated_at": "2025-12-17T05:59:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014615215,
+      "body_text": "Hi Domenic Laszig,    I apologize for not updating you promptly. Here is your shipping tracking link.  https://t.17track.net/en#nums=SF6047154797779,SF6047154797812",
+      "user_id": 158001343601,
+      "created_at": "2025-12-17T06:45:12Z",
+      "updated_at": "2025-12-17T06:45:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014615641,
+      "body_text": "Ok When can I expect my order to arrive? I paid extra for express shipping.\r\n\r\n\r\nGesendet von Outlook für Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158007828399,
+      "created_at": "2025-12-17T06:59:11Z",
+      "updated_at": "2025-12-17T06:59:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": 3473,
+  "subject": "info plus X",
+  "description_text": "Hello, I would like to know if the \"PLUS X\" crankset was compatible with a\r\n\"cammus\" brand steering wheel.Sincerely\r\n\r\nCordialement,\r\n*JOUR JP  *\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-04T13:34:07Z",
+  "updated_at": "2025-09-08T10:56:52Z",
+  "requester_id": 158004161280,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008089085,
+      "body_text": "Oui, c'est exact.\r\nCordialement,\r\n*JOUR JP  *\r\n\r\n\r\nLe jeu. 4 sept. 2025 à 15:47, General and sales enquiries <\r\nservice@simsonn.com> a écrit :\r\n\r\n> Hi, I'm sorry I don't quite understand what part you mean by \"crankset\".\r\n> Is it the pedal arm? Could you please circle it for us in the picture?\r\n>\r\n>\r\n>\r\n> ----------Reply to Message----------\r\n> On Thu, Sep 4, 2025 21:33 PM Pas_moi De_par_la<\r\n> dagetjean.philippe@gmail.com> wrote:\r\n> Hello, I would like to know if the \"PLUS X\" crankset was compatible with a\r\n> \"cammus\" brand steering wheel.Sincerely\r\n>\r\n> Cordialement,\r\n> *JOUR JP  *\r\n>\r\n\r\n",
+      "user_id": 158004161280,
+      "created_at": "2025-09-04T13:57:34Z",
+      "updated_at": "2025-09-04T13:57:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008125927,
+      "body_text": "你好，Not_me From_there，  PlusX works on Windows PCs and is fully compatible with all steering wheels. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-05T01:11:42Z",
+      "updated_at": "2025-09-05T01:11:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008132230,
+      "body_text": "Génial, merci pour l'info !\r\nCordialement,\r\n*JOUR JP  *\r\n\r\n\r\nLe ven. 5 sept. 2025 à 03:11, service@simsonn.com ",
+      "user_id": 158004161280,
+      "created_at": "2025-09-05T06:07:31Z",
+      "updated_at": "2025-09-05T06:07:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

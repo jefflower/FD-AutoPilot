@@ -1,0 +1,74 @@
+{
+  "id": 709,
+  "subject": "This is what I did so far and tbh it sucks",
+  "description_text": "",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-22T16:43:03Z",
+  "updated_at": "2025-06-23T05:31:56Z",
+  "requester_id": 158001658176,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003479423,
+      "body_text": "Hi breakman200,  Please provide your order number so we can help check whether the baseplate was not shipped due to a stock issue. If it was indeed missed, we will arrange a reshipment for you immediately. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-19T04:11:09Z",
+      "updated_at": "2025-06-19T04:11:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003507284,
+      "body_text": "Order number :112-7225017-8653065\r\n\r\nOn Thu, Jun 19, 2025, 12:11 AM service@simsonn.com ",
+      "user_id": 158001658176,
+      "created_at": "2025-06-19T07:19:57Z",
+      "updated_at": "2025-06-19T07:19:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003683423,
+      "body_text": "ID 号为 587 和 708 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-23T04:08:25Z",
+      "updated_at": "2025-06-23T04:08:25Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158003683424,
+      "body_text": "合并来自工单587  \n      主题: Base plate did not come  \n      描述:  So I ordered yalls pedals with the baseplate combo so I could have the base plate to take with me as a potable option and keep my rig mobile, but when I received the package the one thing I really wanted with the pedals never arrived, I got the pedals and they are fantastic, but I litterally have nothing to use with them except a wooden board set up I had made from scraps of heavy wood,     \n Would there be anything yall can do for me?",
+      "user_id": 158000445778,
+      "created_at": "2025-06-23T04:08:25Z",
+      "updated_at": "2025-06-23T04:08:25Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158003683426,
+      "body_text": "合并来自工单708  \n      主题: So.... any news?  \n      描述:  I sent the order number, but haven't heard back?",
+      "user_id": 158000445778,
+      "created_at": "2025-06-23T04:08:27Z",
+      "updated_at": "2025-06-23T04:08:27Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158003683699,
+      "body_text": "Hi breakman200, We are sorry for the inconvenience caused to you. We have re-sent you the base plate today. Here is your waybill number: JSEXQ2378259696YQ. The shipping carrier is JSEXPRESS",
+      "user_id": 158000445778,
+      "created_at": "2025-06-23T05:31:56Z",
+      "updated_at": "2025-06-23T05:31:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

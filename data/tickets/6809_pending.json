@@ -1,0 +1,44 @@
+{
+  "id": 6809,
+  "subject": "Fw: Costs",
+  "description_text": "Ok you do not wish\r\nTo do business!!\r\nAnother missed sale because your customer service is bad!!\r\nWill add you to my  Youtube review channel I run as poor communicators and service\r\n\r\n________________________________\r\nFrom: Gazzo Yep <gazzo6512@googlemail.com>\r\nSent: Tuesday, November 25, 2025 00:55\r\nTo: service@simsonn.com <service@simsonn.com>\r\nSubject: Costs\r\n\r\nHi\r\nYour website currently shows\r\n\r\nSimsonn Pro X Ultra Pedals with Baseplate and Carbon Fiber Heel Plate\r\n£288.00Save 10%\r\n\r\nI am in the UK\r\n\r\nIf I pay the Express Shipping cost  additionally\r\n\r\nIs that the only cost to me?\r\nNo import taxes\r\n\r\nRegards Gary\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-26T17:43:03Z",
+  "updated_at": "2025-11-27T07:46:22Z",
+  "requester_id": 158007343665,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012983866,
+      "body_text": "Hi Gazzo Yep,    Hello, due to the Black Friday period over the past few days, our sales and customer service teams have been very busy, so our email response time has been slower than usual. We sincerely apologize for the inconvenience. We currently have stock in our German warehouse, but it is responsible for EU shipments. For orders shipped to the UK, we may need to dispatch the package directly from our China warehouse, which could result in customs duties. Thank you for your understanding.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T23:26:43Z",
+      "updated_at": "2025-11-26T23:26:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012997888,
+      "body_text": "Why cant you send from Germany??\r\n________________________________\r\n",
+      "user_id": 158007343665,
+      "created_at": "2025-11-27T07:34:49Z",
+      "updated_at": "2025-11-27T07:34:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012998092,
+      "body_text": "Hi Gazzo Yep,    The operations team just replied that inventory in Germany is expected to be restocked in a few days. However, shipping from Germany to the UK will incur customs duties. Meanwhile, shipping from China to the UK is also quite fast.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-27T07:46:22Z",
+      "updated_at": "2025-11-27T07:46:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": 7355,
+  "subject": "Ssn4947",
+  "description_text": "I would like to inquire if this order is still on the way?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-03T18:30:23Z",
+  "updated_at": "2025-12-05T08:14:07Z",
+  "requester_id": 158007367127,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013366499,
+      "body_text": "Hi Daniel Hardy,    We apologise for any inconvenience caused. Here is the tracking link for your VAM Pro shipment:  https://t.17track.net/en#nums=SF6047116257728  The other parcel has been delayed due to stock shortages at our US warehouse. It is now scheduled for dispatch on the 8th and is expected to arrive on the 12th.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-04T02:41:47Z",
+      "updated_at": "2025-12-04T02:41:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013410897,
+      "body_text": "No worries, thanks for the update!\r\nCan you also confirm the status of ssn3947?\r\n\r\nOn Wed, Dec 3, 2025, 9:42 PM service@simsonn.com ",
+      "user_id": 158007367127,
+      "created_at": "2025-12-04T18:44:01Z",
+      "updated_at": "2025-12-04T18:44:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

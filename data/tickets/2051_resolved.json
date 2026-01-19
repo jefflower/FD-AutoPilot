@@ -1,0 +1,44 @@
+{
+  "id": 2051,
+  "subject": "Haptic reactor pro disconnects",
+  "description_text": "Hi,\r\n\r\nMy Simsonn haptic reactor pro disconnects after 10-15 min of use.\r\n\r\nAny ideas to solve this problem?\r\n\r\nMet vriendelijke groet, kind regards,\r\n\r\nMichael van Eerdt\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-07-29T13:09:00Z",
+  "updated_at": "2025-07-31T00:54:04Z",
+  "requester_id": 158001380899,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005779328,
+      "body_text": "Hi Michael van Eerdt,    This issue is most likely caused by insufficient power supply. Please connect the USB cable directly to the blue USB 3.0 port on the back of your PC and avoid using a USB hub, as it may cause unstable power or connection issues.  If you are using a PlusX control box, please check for the green grounding wire and securely connect it to a screw on the pedal body or frame to ensure proper grounding.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-29T14:46:27Z",
+      "updated_at": "2025-07-29T14:46:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005791817,
+      "body_text": "Hi,\r\n\r\nThanks for your quick reply.\r\n\r\nIndeed direct connect to a pc 3.0 slot solves my problem.\r\n\r\nI’m very impressed and happy with my pedals, great job!\r\n\r\nHave a nice day.\r\n\r\nMet vriendelijke groet, kind regards,\r\n\r\nMichael van Eerdt\r\n\r\n",
+      "user_id": 158001380899,
+      "created_at": "2025-07-30T02:53:25Z",
+      "updated_at": "2025-07-30T02:53:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005863927,
+      "body_text": "Fast reply with right solution. I’m very happy. ",
+      "user_id": 158001380899,
+      "created_at": "2025-07-31T00:54:03Z",
+      "updated_at": "2025-07-31T00:54:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ]
+}

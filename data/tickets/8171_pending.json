@@ -1,0 +1,24 @@
+{
+  "id": 8171,
+  "subject": "Eu warehouse",
+  "description_text": "Dear Simson team,\r\n\r\nI'm interested in knowing if, when ordering from Hungary through you, the\r\nshipment comes from an EU warehouse or not, and whether I need to account\r\nfor VAT as well. Thank you for your response.\r\n\r\nBest regards,\r\nPörge László\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-13T18:51:41Z",
+  "updated_at": "2025-12-14T02:47:55Z",
+  "requester_id": 158007798763,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014471785,
+      "body_text": "Hi László Pörge,  If there is stock in our German warehouse, orders within the EU are shipped from Germany. As a result, orders to EU countries do not incur customs duties. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-14T02:47:55Z",
+      "updated_at": "2025-12-14T02:47:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

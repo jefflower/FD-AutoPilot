@@ -1,0 +1,35 @@
+{
+  "id": 3835,
+  "subject": "pro x ultra control box",
+  "description_text": "Hello, I am contacting you because when I connect my power supply and my haptic vam pro it doesn't work. Should I flash the control box or does the box have a problem?",
+  "status": 4,
+  "priority": 3,
+  "created_at": "2025-09-15T10:11:14Z",
+  "updated_at": "2025-09-17T02:04:46Z",
+  "requester_id": 158004551334,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008837417,
+      "body_text": "Hi David Durand,  You can first disconnect both the USB and the power supply from the control box. Then, reconnect the USB first, followed by the power supply. After that, please check if the software shows a successful connection and send me a screenshot of the connection interface so I can verify if the version is correct. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-17T01:30:37Z",
+      "updated_at": "2025-09-17T01:30:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008837900,
+      "body_text": "Hello I found the solution on redit\nThank you\n\nOn Wed, Sep 17, 2025 at 3:30 AM, support@simsonn.com",
+      "user_id": 158004551334,
+      "created_at": "2025-09-17T02:00:05Z",
+      "updated_at": "2025-09-17T02:00:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

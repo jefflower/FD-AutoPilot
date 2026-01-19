@@ -1,0 +1,45 @@
+{
+  "id": 9525,
+  "subject": "Simsonn hs pro 变速杆",
+  "description_text": "你好。你们什么时候寄出变速杆？",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-30T05:42:05Z",
+  "updated_at": "2025-12-31T05:55:34Z",
+  "requester_id": 158008817390,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015290943,
+      "body_text": "您好，Mikko Paavilainen，我们的HS Pro发货已正常开始。请问您的订单号是多少？",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T02:30:51Z",
+      "updated_at": "2025-12-31T02:30:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015292523,
+      "body_text": "SSN4826 好像你们昨天已经寄出了。所以没关系了。",
+      "user_id": 158008817390,
+      "created_at": "2025-12-31T04:26:14Z",
+      "updated_at": "2025-12-31T04:26:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015296435,
+      "body_text": "",
+      "user_id": 158008817390,
+      "created_at": "2025-12-31T05:55:34Z",
+      "updated_at": "2025-12-31T05:55:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

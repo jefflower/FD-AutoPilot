@@ -1,0 +1,44 @@
+{
+  "id": 10082,
+  "subject": "SSN5752 - order status",
+  "description_text": "Hello, I would like to know the status of the order and what your forecast\r\nis for dispatch. Thank you and have a good day.\r\n\r\n\r\njoana valerio\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-06T10:31:57Z",
+  "updated_at": "2026-01-16T03:02:54Z",
+  "requester_id": 158008950854,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017170104,
+      "body_text": "Hi Nelson silva,  I apologize for not responding to you promptly. I see your package has been delivered. Have you received it?",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T08:05:00Z",
+      "updated_at": "2026-01-15T08:05:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017172636,
+      "body_text": "Yes, I have received it.\r\nthank you very much.\r\nBut I've already placed a new order because I forgot the base plate.\r\n SSN6113\r\n\r\n\r\nservice@simsonn.com ",
+      "user_id": 158008950854,
+      "created_at": "2026-01-15T09:12:19Z",
+      "updated_at": "2026-01-15T09:12:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017237079,
+      "body_text": "Hi Nelson silva,  You're welcome. Thank you for purchasing our product. Should you have any questions in the future, please feel free to contact us. We will address them promptly.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T03:02:54Z",
+      "updated_at": "2026-01-16T03:02:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

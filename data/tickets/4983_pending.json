@@ -1,0 +1,34 @@
+{
+  "id": 4983,
+  "subject": "Missing content from shipment",
+  "description_text": "So I have order #9274 where I was supposed to get the simpson plus x pedals\r\nwith 1 haptic sensor and also a base plate, but instead I just got the\r\npedals. May I ask if it was meant to be sent on a later date or forgotten\r\nall along?\r\n\r\nP.S. If any photos need to be attached please inform me.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-10-17T13:10:36Z",
+  "updated_at": "2025-10-20T09:36:34Z",
+  "requester_id": 158005790353,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010616766,
+      "body_text": "I made an error with the order number. The correct one is: #SSN2923",
+      "user_id": 158005790353,
+      "created_at": "2025-10-17T13:31:52Z",
+      "updated_at": "2025-10-17T13:31:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010718648,
+      "body_text": "Hi Ilin Krastev,    This is your Haptics logistics tracking link.  https://t.17track.net/en#nums=YT2528600704057906",
+      "user_id": 158001343601,
+      "created_at": "2025-10-20T09:36:34Z",
+      "updated_at": "2025-10-20T09:36:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

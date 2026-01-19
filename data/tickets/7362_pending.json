@@ -1,0 +1,104 @@
+{
+  "id": 7362,
+  "subject": "Est ce que je peux avoir une réponse ? #SSN3248",
+  "description_text": "J'ai créé un ticket pour une commande avec un moteur défectueux j'ai\r\nstipulé mon adresse comme demandé mais personne ne ma répondu quand je\r\nclique sur le lien de mon ticket il est inacessible il me renvoie a\r\nl'accueil du site.\r\nEst ce que je pourrais savoir si ma demande à bien été prise en compte ?\r\norder #SSN3248 and it was the ticket 6224\r\nhttps://simsonn.freshdesk.com/helpdesk/tickets/6224?follow=email\r\n[image: image.png]\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-03T20:36:26Z",
+  "updated_at": "2025-12-04T01:42:45Z",
+  "requester_id": 158007140964,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012490151,
+      "body_text": "I think I'm going to request a full refund for the haptics because I felt that they didn't feel the same between two sessions. I suspect they have really terrible durability. The clutch motor arrived with quality issues, and I don't want to have any further problems with these.  If I request a refund, what am I supposed to include in the package? I mean, I've already installed some cable management pieces and used the tools included in the package. I can include them, but they are not new.",
+      "user_id": 158007140964,
+      "created_at": "2025-11-17T21:02:16Z",
+      "updated_at": "2025-11-17T21:02:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158012490395,
+      "body_text": "All the items like the power supply, cables, aluminum plate, and motors (except the one with the quality issue) are literally new; I only screwed them in and tested them.",
+      "user_id": 158007140964,
+      "created_at": "2025-11-17T21:08:15Z",
+      "updated_at": "2025-11-17T21:08:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158012558375,
+      "body_text": "Hi Luca Fragapane,  Please provide your contact name, address, and phone number, and we will send you a new VAM motor free of charge. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-19T03:21:37Z",
+      "updated_at": "2025-11-19T03:21:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012592594,
+      "body_text": "I would prefer a refund. I don't want to have any trouble with this. Your pedals are amazing, but maybe not your VAM motor. I've got everything new (except for the clutch motor): the cardboard box, all the screws, the power supply, all the cables, the manual, the motors, etc.",
+      "user_id": 158007140964,
+      "created_at": "2025-11-19T15:55:10Z",
+      "updated_at": "2025-11-19T15:55:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158012627812,
+      "body_text": "nevermind i think that i would just take the clutch motors, forgot for the refund sorry.  Name : Luca Fragapane  Country: France   City : Saint-parres-aux-tertres, 10410  Street : 18 Rue Paul cézanne   Email : luca.fragap@gmail.com  Number : 07 69 99 45 59  Or here",
+      "user_id": 158007140964,
+      "created_at": "2025-11-20T08:48:46Z",
+      "updated_at": "2025-11-20T08:48:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158013148047,
+      "body_text": "Can I get an answer? i mean 10 days is pretty long.",
+      "user_id": 158007140964,
+      "created_at": "2025-11-30T18:24:42Z",
+      "updated_at": "2025-11-30T18:24:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158013364356,
+      "body_text": "ID 为 6224 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T01:41:18Z",
+      "updated_at": "2025-12-04T01:41:18Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158013364357,
+      "body_text": "合并来自工单6224  \n      主题: Issue with VAM (non pro) Haptics.  \n      描述:  \n \n I received my order #SSN3248 with pedals and haptics. I tested the haptics, but there is an issue with the clutch haptic. In the Simsonn manager, when I do a vibration test of the clutch haptic, it sounds really strange (quality issue?) like it's broken, unlike the brake and throttle haptics, which seem to work pretty well. \n I'm going to send a video of my issue: in this video, I will do a test vibration at 30% strength of both haptics (clutch and brake). I will first test the clutch and then the brake, and we can hear that the clutch at the same strength doesn't make the same sound (it makes a little noise), and if I go to about 100% strength, the sound is very strange, like it's broken, but the brake sounds normal. I don't want to do it anymore at 100% because I don't want to damage the clutch. If you respond, I can do it at 100%, and maybe we can go for an exchange? \n Luca Fragapane \n  IMG_0773.MOV",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T01:41:18Z",
+      "updated_at": "2025-12-04T01:41:18Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158013364379,
+      "body_text": "Hi Luca Fragapane,    We sincerely apologize for not responding promptly when there were updates to your previous support ticket. Today, we will check your ticket number immediately and get back to you as soon as possible.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T01:42:45Z",
+      "updated_at": "2025-12-04T01:42:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

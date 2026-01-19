@@ -1,0 +1,24 @@
+{
+  "id": 6183,
+  "subject": "SImsonn X Plus Connection Problem",
+  "description_text": "Dear Simsonn Support Team,\r\n\r\nI am writing to you regarding a connection problem with my pedals (Simsonn\r\nPlus X + VAM Motor).\r\n\r\nThe pedals are not displayed in the Simsonn Manager application\r\naltough they did for a short time when I first connected them. They are\r\nconnected to the PC via a USB extension cable and installed on a GT Omega\r\nART cockpit.\r\n\r\nCould you please let me know what steps I can take to troubleshoot the\r\nproblem or offer me a solution to this connection issue?\r\n\r\nThank you very much for your help.\r\n\r\nKind regards,\r\n\r\nFelix\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-11-15T14:34:18Z",
+  "updated_at": "2025-11-16T03:09:19Z",
+  "requester_id": 158007102610,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012400337,
+      "body_text": "Hi HueFelix,    You can download the latest SIMSONN Manager 2.1.2 using the link below. Then, follow the steps below to enter the firmware update process:    Press and hold the upgrade button on the PlusX controller box, then reconnect the USB. The software will enter SIMSONN Flasher Mode;    Go to Settings → Update → Manual Firmware Update → pedals → firmware → pedals-plusx.sfu to start the firmware update;    After the firmware update is completed, release the upgrade button;    Finally, test the pedal and perform a calibration.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-16T03:09:19Z",
+      "updated_at": "2025-11-16T03:09:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

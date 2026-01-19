@@ -1,0 +1,35 @@
+{
+  "id": 10706,
+  "subject": "AliExpress Pedal purchase",
+  "description_text": "I'm trying to buy pedals in the AliExpress app and the shipping says it's from the US, but when I go to checkout I says it cannot be delivered to my address.\n\nI live in the US. If the item is stocked in the USA, why can't it be done?\n\nTh base plate doesn't have any issue, only the pedals. I either want to buy the 3 pedal set of the Plus X or the Pro X Ultra.\n\nPlease help me buy these.\n\n-James",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-12T18:08:39Z",
+  "updated_at": "2026-01-13T09:09:35Z",
+  "requester_id": 158009037309,
+  "responder_id": 158007774664,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016945856,
+      "body_text": "Hi James Crawford, You can contact us through the buyer chat on AliExpress for direct assistance in resolving your issues.",
+      "user_id": 158007774664,
+      "created_at": "2026-01-13T07:38:46Z",
+      "updated_at": "2026-01-13T07:38:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016953683,
+      "body_text": "Hi James Crawford, There are currently no pedals in stock in our US warehouse. They are expected to arrive in about a week, at which point we will promptly restock them so you can purchase them.",
+      "user_id": 158007774664,
+      "created_at": "2026-01-13T09:09:31Z",
+      "updated_at": "2026-01-13T09:09:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

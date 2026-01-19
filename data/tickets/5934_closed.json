@@ -1,0 +1,24 @@
+{
+  "id": 5934,
+  "subject": "Pedal problem",
+  "description_text": "Hello,\ntoday i received from Amazon the Pro plus X Pedals.\nI installed und calibrate it.\nAfter the First start the simsonn Software Show the Pedals as not connectet.\nI use the latest Software.\nWin11 Show a Driver fault ?\nAll USB ist correct installed.\n\nPlease Help me. I dont know whats happend.\nIst the Controller Box defekt ?\n\nWhen i Put the ACDC Adapter to the controllerbox\nI See Sparks in the Box.\n\nSorry for my Bad english.\n\nRegards\nMichael\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-11-11T11:58:06Z",
+  "updated_at": "2025-12-18T10:04:33Z",
+  "requester_id": 158006942329,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012117532,
+      "body_text": "Hi Hansdampfer,    Launch the latest version of SIMSONN Manager 2.1.2.     On the “Plus X” control unit, press and hold the “Upgrade” button.     While holding the button, unplug the USB cable from the PC and then plug it back in. The software should detect the device entering “SIMSONN Flasher update mode”.     In the software go to: Settings → Update → Manual Firmware Update.     In the file selector choose: pedals‑firmware → pedals‑plusx.sfu.     Click “Start Update” and wait until the firmware is completely written. During this process do not disconnect the USB or close the application.     Once the update is finished (you’ll get a success prompt or the unit will reboot), unplug and re‑plug the USB then test the pedal device to confirm everything works correctly.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-11T12:24:08Z",
+      "updated_at": "2025-11-11T12:24:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

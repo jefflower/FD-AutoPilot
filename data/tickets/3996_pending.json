@@ -1,0 +1,54 @@
+{
+  "id": 3996,
+  "subject": "Missing items",
+  "description_text": "Hello,\r\n\r\nOrder #SSN2655. I believe I am missing items from my order. I ordered the\r\nplus-x pedals with the haptics reactors. I did not receive the haptics\r\nreactors in the packaging. Is there any support I could receive with this?\r\n\r\nThank you,\r\nLogan Lohmar\r\n\r\n",
+  "status": 3,
+  "priority": 2,
+  "created_at": "2025-09-20T12:32:54Z",
+  "updated_at": "2025-09-23T10:18:06Z",
+  "requester_id": 158004684021,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008993266,
+      "body_text": "It also appears after further inspection that there is no power cable for the hub that the pedals plug into.",
+      "user_id": 158004684021,
+      "created_at": "2025-09-20T12:44:47Z",
+      "updated_at": "2025-09-20T12:44:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158009021806,
+      "body_text": "Hi Logan Lohmar,  Hello, the VAM Pro units might have been shipped separately since they are usually packed individually. Could you please take a photo to confirm which power cable is missing — is it the USB cable, or the dedicated power cable for the VAM Pro vibration motor? This will help us arrange a replacement for you as quickly as possible. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-21T10:26:27Z",
+      "updated_at": "2025-09-21T10:26:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009024838,
+      "body_text": "Hello,\r\n\r\nThanks for that information. I see why I was given two different tracking\r\nnumbers now but the second one has not worked at all. These are both the\r\ntracking numbers that were in the order email.\r\n\r\n884362239740\r\nSF6045916098461 - This is the one that does not work on Fedex's tracking\r\nsystem so I really have no way of checking where it is.\r\n\r\nAs for the power cable, that is my mistake. I initially thought that the\r\npedal hub needed a dedicated power supply to operate the pedals and didn't\r\nrealize that it gets power by the USB cable which was in the packaging. I\r\ndo not have the power cable for the VAM Pro vibration motor but from your\r\nemail it sounds like it would be in the second missing package with the\r\nhaptics modules.\r\n\r\nApologies for the confusion and thank you for clearing some up for me.\r\nPlease let me know if there's anything else you need from me.\r\n\r\nThank you.\r\n\r\n\r\n\r\nOn Sun, Sep 21, 2025 at 5:26 AM service@simsonn.com ",
+      "user_id": 158004684021,
+      "created_at": "2025-09-21T12:29:18Z",
+      "updated_at": "2025-09-21T12:29:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009162026,
+      "body_text": "Hi Logan Lohmar,     This  tracking number is valid, but we are sorry that we appear to have sent an incorrect link. You can click this link to track your shipment. https://t.17track.net/en#nums=SF6045916098461",
+      "user_id": 158001343601,
+      "created_at": "2025-09-23T10:18:06Z",
+      "updated_at": "2025-09-23T10:18:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

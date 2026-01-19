@@ -1,0 +1,24 @@
+{
+  "id": 5383,
+  "subject": "gearbox H 7+R support",
+  "description_text": "This morning when i started my computer to play est 2 my gearbox did not\r\nreceive any signal and i checked with the software all the buttons\r\ndisappeared in the test section. i think there is some bug related to the\r\nprogramming or software of the gearbox that made the code disappear, i hope\r\nyour side will help me fix it. thank you[image: Chưa có tên.png]\r\n [sorry my english is quite bad and i used part of google translate]\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-29T03:42:59Z",
+  "updated_at": "2025-10-29T05:45:56Z",
+  "requester_id": 158006185279,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011260950,
+      "body_text": "Hi Piyon 2. 0,     You can use VKB Joy Tester for testing, as the built-in Windows testing tool can sometimes be unstable.        https://www.vkbcontrollers.com/pages/downloads",
+      "user_id": 158000445778,
+      "created_at": "2025-10-29T05:45:56Z",
+      "updated_at": "2025-10-29T05:45:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "id": 10140,
+  "subject": "Pro not working",
+  "description_text": "Hello, I have had my pros for 1 year and up till now they have been fantastic but all of a sudden they are not recognised in any game but the Simsonn software is picking them up can you help in anyway Stephen Elward Hello I have had my pros for 1 year and up till now they have been fantastic but all of a sudden they are not recognised in any game but the Simsonn software is picking them up can you help in anyway Sent from my iPhone",
+  "status": 4,
+  "priority": 4,
+  "created_at": "2026-01-06T21:57:42Z",
+  "updated_at": "2026-01-09T03:21:15Z",
+  "requester_id": 158008959538,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016063715,
+      "body_text": "Hi Stephen Elward, If your pedal is version 1.7.1, you can download the latest SIMSONN Manager 2.1.2 using the link below. Then, follow the steps below to update the firmware: If the software indicates that the version is too old, go to Settings → Update → Manual Firmware Update → pedals → firmware → pedals-proxultra.sfu to start the firmware update; After the firmware update is completed, release the upgrade button; Finally, test the pedal and perform a calibration. Additionally, please ensure that your computer is properly grounded. https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T05:17:52Z",
+      "updated_at": "2026-01-07T05:17:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016087661,
+      "body_text": "Hi mate thanks for the reply If I try to update to *proxultra.sfu* its says i need to contact administrator On Wed, 7 Jan 2026 at 05:18, support@simsonn.com",
+      "user_id": 158008959538,
+      "created_at": "2026-01-07T07:55:06Z",
+      "updated_at": "2026-01-07T07:55:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016144701,
+      "body_text": "Hi Stephen Elward, Please select plus.sfu when performing the firmware update.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T14:09:05Z",
+      "updated_at": "2026-01-07T14:09:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016159116,
+      "body_text": "Yea I have tried that it says connected but will not register in ANY game On Wed, 7 Jan 2026 at 14:09, support@simsonn.com",
+      "user_id": 158008959538,
+      "created_at": "2026-01-07T15:39:23Z",
+      "updated_at": "2026-01-07T15:39:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016159810,
+      "body_text": "Hi Stephen Elward, In SIMSONN Manager 2.1.3, after calibrating the pedals, please check whether the blue progress bar moves normally from 0% to 100% when you press the pedal. If it does, this indicates that the pedal itself is working correctly and can be properly bound and used in the game. May I ask which game you are currently using? https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T15:43:29Z",
+      "updated_at": "2026-01-07T15:43:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016180570,
+      "body_text": "F125, race room, acc and leman I will check when I get home from work tomorrow I am devastated as I love your product so much infact I have even convinced a few I race with to purchase so when I will get home I will check and get back to you On Wed, 7 Jan 2026 at 15:43, support@simsonn.com",
+      "user_id": 158008959538,
+      "created_at": "2026-01-07T17:57:51Z",
+      "updated_at": "2026-01-07T17:57:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016243333,
+      "body_text": "Hi Stephen Elward, If it still doesn’t work, you can install ToDesk, and I can assist you remotely to check and resolve the issue. No registration is required—just provide the connection ID and the temporary access code.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-08T01:35:33Z",
+      "updated_at": "2026-01-08T01:35:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016438094,
+      "body_text": "Hello and thanks for al your help did some digging and it was a bad usb driver thank you ever so much love your products take care On Thu, 8 Jan 2026 at 01:35, support@simsonn.com",
+      "user_id": 158008959538,
+      "created_at": "2026-01-08T23:06:14Z",
+      "updated_at": "2026-01-08T23:06:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

@@ -1,0 +1,54 @@
+{
+  "id": 8497,
+  "subject": "Order SSN4111",
+  "description_text": "Good morning, I'm sending the following email to find out the status of the\r\nsecond part of my order. Since my order consisted of a handbrake and a\r\nH-gear/sequential shifter, the announcement initially stated that shipping\r\nfor the second item would begin on December 15th. However, as of today, it\r\nhasn't shipped yet. Any news? Thank you so much!\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-17T09:51:59Z",
+  "updated_at": "2025-12-23T05:52:38Z",
+  "requester_id": 158007845028,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014782326,
+      "body_text": "Good morning, I am writing to follow up on my previous email regarding the\r\nstatus of my order. I look forward to hearing from you.\r\n\r\nThank you\r\n\r\n---------- Forwarded message ---------\r\nDa: Alex Bonifacino <alex.bonifacino@gmail.com>\r\nDate: Mer 17 Dic 2025, 10:51\r\nSubject: Order SSN4111\r\nTo: ",
+      "user_id": 158007845028,
+      "created_at": "2025-12-19T18:43:31Z",
+      "updated_at": "2025-12-19T18:43:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014835771,
+      "body_text": "Can i have information?",
+      "user_id": 158007845028,
+      "created_at": "2025-12-21T10:17:05Z",
+      "updated_at": "2025-12-21T10:17:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158014835816,
+      "body_text": "Good morning, I wrote to you five days ago to inquire about my order. When\r\nI purchased it, it was stated that shipments of the H- and Sequential\r\ngearboxes would begin on December 15th. It's the 21st, and I have no\r\ninformation about it. Could you please reply? Thank you!\r\n\r\nIl Ven 19 Dic 2025, 19:43 Alex Bonifacino <alex.bonifacino@gmail.com> ha\r\nscritto:\r\n\r\n> Good morning, I am writing to follow up on my previous email regarding the\r\n> status of my order. I look forward to hearing from you.\r\n>\r\n> Thank you\r\n>\r\n> ---------- Forwarded message ---------\r\n> Da: Alex Bonifacino <alex.bonifacino@gmail.com>\r\n> Date: Mer 17 Dic 2025, 10:51\r\n> Subject: Order SSN4111\r\n> To: ",
+      "user_id": 158007845028,
+      "created_at": "2025-12-21T10:21:24Z",
+      "updated_at": "2025-12-21T10:21:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014874469,
+      "body_text": "Hi Alex Bonifacino,  We will send HS Pro out this week.",
+      "user_id": 158007774607,
+      "created_at": "2025-12-22T11:28:56Z",
+      "updated_at": "2025-12-22T11:28:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

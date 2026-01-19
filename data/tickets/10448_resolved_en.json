@@ -1,0 +1,95 @@
+{
+  "id": 10448,
+  "subject": "Info",
+  "description_text": "Good morning.\n\nI recently bought your Plus X pedalboard with haptic motors. It's a great product and I'm very comfortable with both your software and simhub. The only problem I encountered is the failure of the motors with Le Mans Ultimate. I've tried in every way and with both software but I just can't get them to work. With the other simulators, however, I had no problem. Surely it's me who's doing something wrong, I kindly ask you for help to solve this problem.\n\nThank you in advance.\n\nBest regards, Simone Ricci",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-09T22:30:27Z",
+  "updated_at": "2026-01-13T02:38:13Z",
+  "requester_id": 158009009422,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016677782,
+      "body_text": "Hello, Simone Ricci     Our SIMSONN Manager currently supports these titles, while SimHub itself supports over 100 games. \nCould you let me know what specific issue you’re experiencing with LMU? Is it no vibration feedback, or something else? That way I can help troubleshoot more accurately.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-10T07:07:18Z",
+      "updated_at": "2026-01-10T07:07:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016691247,
+      "body_text": "Good morning\n\nThe problem I find is a total lack of haptic feedback, it's as if the engines were turned off or disconnected. This only with LMU, because with the other games in my possession they work perfectly.\n\nThank you\n\nSent from iPhone\n\nOn January 10, 2026, at 08:07, service@simsonn.com wrote:\n\n﻿\nHello, Simone Ricci\n\nOur SIMSONN Manager currently supports these titles, while SimHub itself supports over 100 games.\n Could you let me know what specific issue you’re experiencing with LMU? Is it no vibration feedback, or something else? That way I can help troubleshoot more accurately.\n\n\n\n[https://attachment.freshdesk.com/inline/attachment?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTU4MDA1OTc2NDYyLCJkb21haW4iOiJzaW1zb25uLmZyZXNoZGVzay5jb20iLCJhY2NvdW50X2lkIjo0MjA2MDM2fQ.LobGfH6F0Y4xbJpVqCOCnimRJfM3vbBKIyHLoijbQcU]",
+      "user_id": 158009009422,
+      "created_at": "2026-01-10T08:25:56Z",
+      "updated_at": "2026-01-10T08:25:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016762491,
+      "body_text": "Hi Simone Ricci,  Could you please confirm whether you are using SIMSONN Manager version 2.1.3? Also, is the controller firmware version CPU1: 2.0.6 and CPU2: 2.0.4?",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T01:28:06Z",
+      "updated_at": "2026-01-11T01:28:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016766361,
+      "body_text": "Hi Simone Ricci,  When you are running LMU, please check whether SIMSONN Manager shows “Telemetry Connected” in the bottom-left corner. Please take a screenshot and send it to me, and I will forward it to our engineers for further investigation.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T02:52:28Z",
+      "updated_at": "2026-01-11T02:52:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016807805,
+      "body_text": "Good morning Software and firmware are updated, when I start LMU the telemetry is disconnected,[image0.jpeg][image1.jpeg][image2.jpeg]\nSent from iPhone\n\nOn January 11, 2026, at 03:52, service@simsonn.com wrote:\n\n﻿\nHi Simone Ricci,\n\nWhen you are running LMU, please check whether SIMSONN Manager shows “Telemetry Connected” in the bottom-left corner.\nPlease take a screenshot and send it to me, and I will forward it to our engineers for further investigation.",
+      "user_id": 158009009422,
+      "created_at": "2026-01-11T11:36:37Z",
+      "updated_at": "2026-01-11T11:36:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016807992,
+      "body_text": "Good morning\n\nSoftware and firmware are updated, when I start LMU the telemetry is disconnected,\n[image0.jpeg][image1.jpeg][image2.jpeg]\nSent from iPhone\n\nOn January 11, 2026, at 03:52, service@simsonn.com wrote:\n\n﻿\nHi Simone Ricci,\n\nWhen you are running LMU, please check whether SIMSONN Manager shows “Telemetry Connected” in the bottom-left corner.\nPlease take a screenshot and send it to me, and I will forward it to our engineers for further investigation.",
+      "user_id": 158009009422,
+      "created_at": "2026-01-11T11:39:53Z",
+      "updated_at": "2026-01-11T11:39:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016835952,
+      "body_text": "Hi Simone Ricci,    If LMU is not working properly, it is usually because some required files were not correctly copied into the game directory. Please first uninstall the old version from your computer, then download and install SIMSONN Manager version 2.1.3, and test again after installation.  If the issue still persists, please manually copy the required files into the game directory, then reopen the software and test again.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-12T03:17:26Z",
+      "updated_at": "2026-01-12T03:17:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016851147,
+      "body_text": "Good morning, the files were not present on my PC, I solved the problem by reinstalling RFactor 2, now they work perfectly.\n\nThanks a lot\n\nKind regards\n\n\nSent from iPhone\n\nOn January 12, 2026, at 04:17, service@simsonn.com wrote:\n\n﻿\nHi Simone Ricci,\n\nIf LMU is not working properly, it is usually because some required files were not correctly copied into the game directory.\nPlease first uninstall the old version from your computer, then download and install SIMSONN Manager version 2.1.3, and test again after installation.\nIf the issue still persists, please manually copy the required files into the game directory, then reopen the software and test again.\n\n\n[https://attachment.freshdesk.com/inline/attachment?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTU4MDA2MDAwMDUzLCJkb21haW4iOiJzaW1zb25uLmZyZXNoZGVzay5jb20iLCJhY2NvdW50X2lkIjo0MjA2MDM2fQ.dfg1bVpaRpVTBGRyCV7TKA17qMcmZnQw9ZeNHBLbVyw]\n\n[https://attachment.freshdesk.com/inline/attachment?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTU4MDA2MDAwMDU1LCJkb21haW4iOiJzaW1zb25uLmZyZXNoZGVzay5jb20iLCJhY2NvdW50X2idCI6NDIwNjAzNn0.fVB4oNLIKjZy3YJDh-zw5-gT5R_Mfc7zdi_FCdE_x2E]",
+      "user_id": 158009009422,
+      "created_at": "2026-01-12T10:14:53Z",
+      "updated_at": "2026-01-12T10:14:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

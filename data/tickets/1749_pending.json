@@ -1,0 +1,24 @@
+{
+  "id": 1749,
+  "subject": "Ali express order",
+  "description_text": "Hi i placed an order for pedals via ali expreaa, thw pedals did not come with the pedal heel plate, can you confirm if this was supposed to be included please?\r\n\r\n\r\nOdder id : 3057146579374666\r\n\r\nSent from Outlook for Android<https://aka.ms/AAb9ysg>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-21T20:33:36Z",
+  "updated_at": "2025-07-22T01:50:25Z",
+  "requester_id": 158001351631,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005290555,
+      "body_text": "Hi Richard Pugh,   I’ve checked your order, and it does not include the base plate and heel rest. If you need them, you can purchase them separately. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-22T01:50:25Z",
+      "updated_at": "2025-07-22T01:50:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

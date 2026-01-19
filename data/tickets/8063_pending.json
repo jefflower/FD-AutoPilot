@@ -1,0 +1,114 @@
+{
+  "id": 8063,
+  "subject": "defective pedals",
+  "description_text": "Hello I purchased a set of you guys pro plus racing pedals back in May of\r\nthis year on you guys Amazon storefront and they just started developing an\r\nissue where they have just started having ghost inputs as if they were\r\nbeing pressed and then started disconnecting all together from my rig. I\r\nseen I have a 12 month defective warranty on these and wondered how do we\r\nget the process started for a replacement set shipped to me.\r\n\r\nThanks pedals were wonderful till this issue started happening. Attached is\r\nthe invoice from Amazon.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-12T09:01:36Z",
+  "updated_at": "2025-12-30T09:55:09Z",
+  "requester_id": 158007775807,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014436811,
+      "body_text": "Hi Travis McCorkle,  Could you please provide us with some pictures of the problem? Or a video about it? We will check the problem.",
+      "user_id": 158007774607,
+      "created_at": "2025-12-13T07:03:53Z",
+      "updated_at": "2025-12-13T07:03:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014480806,
+      "body_text": "sure here is a screenshot of the pedals app nothing is being pressed in\r\nthis picture, also the brake pedals is twitching between 1-4% of input\r\nracing is almost like i'm dragging the brake the whole race even after i\r\nset the threshold and recalibrate. Also tried updating the app wouldn't let\r\nme update as the app fails to load after update. Also lose of pedal input\r\nhappened mid race in LMU and its completely random, it has happened in\r\nIracing several times also completely random but will happen during one of\r\nmy racing sessions guaranteed\r\n\r\n\r\nOn Sat, Dec 13, 2025 at 02:04 support@simsonn.com ",
+      "user_id": 158007775807,
+      "created_at": "2025-12-14T10:37:11Z",
+      "updated_at": "2025-12-14T10:37:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014563032,
+      "body_text": "Hi Travis McCorkle, Please try to follow the steps below:  Press and hold the upgrade button on the PlusX main controller, then reconnect the USB cable.  Open SIMSONN Manager 2.1.2 and check if it has entered recovery mode.  If recovery mode is detected, go to Settings → Update → Manual Update Firmware → pedals → firmware → pedals-plusx.sfu.  After the update is complete, test the device to see if it has been restored successfully.",
+      "user_id": 158007774607,
+      "created_at": "2025-12-16T09:42:00Z",
+      "updated_at": "2025-12-16T09:42:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014564703,
+      "body_text": "Updated software after a uninstall and redownload of the new version, main\r\ncontroller cant update due to it saying \"incorrect file version talk to\r\nadmin\"\r\n\r\nattached screenshot\r\n\r\nalso still getting jitter and random dc of pedals in race\r\n\r\nOn Tue, Dec 16, 2025 at 4:42 AM support@simsonn.com ",
+      "user_id": 158007775807,
+      "created_at": "2025-12-16T10:37:28Z",
+      "updated_at": "2025-12-16T10:37:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014865605,
+      "body_text": "Hi Travis McCorkle,  The reinstalled software also needs to be manually updated again.   Please try to follow the steps below:  Press and hold the upgrade button on the PlusX main controller, then reconnect the USB cable.  Open SIMSONN Manager 2.1.2 and check if it has entered recovery mode.  If recovery mode is detected, go to Settings → Update → Manual Update Firmware → pedals → firmware → pedals-plusx.sfu.  After the update is complete, test the device to see if it has been restored successfully. ",
+      "user_id": 158007774607,
+      "created_at": "2025-12-22T08:46:47Z",
+      "updated_at": "2025-12-22T08:46:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014927851,
+      "body_text": "I did that and the screenshot in the previous email is what I get.\r\n\r\nOn Mon, Dec 22, 2025 at 03:47 support@simsonn.com ",
+      "user_id": 158007775807,
+      "created_at": "2025-12-22T18:10:11Z",
+      "updated_at": "2025-12-22T18:10:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015130642,
+      "body_text": "Hi Travis McCorkle,  maybe a new control box will solve your problem, could you please provide your shipping address (include your phone number)?",
+      "user_id": 158007774607,
+      "created_at": "2025-12-27T09:16:41Z",
+      "updated_at": "2025-12-27T09:16:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015139501,
+      "body_text": "1211 Ridge Trace Dr Apt 201, Raleigh, NC 27606\r\n\r\nPhone number : 919-597-8546\r\n\r\nOn Sat, Dec 27, 2025 at 04:16 support@simsonn.com ",
+      "user_id": 158007775807,
+      "created_at": "2025-12-27T18:19:04Z",
+      "updated_at": "2025-12-27T18:19:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015183111,
+      "body_text": "Hi Travis McCorkle,  OK, WE WILL SHIP IT ASAP",
+      "user_id": 158007774607,
+      "created_at": "2025-12-29T08:18:30Z",
+      "updated_at": "2025-12-29T08:18:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015199609,
+      "body_text": "I appreciate you guys so much\r\n\r\nOn Mon, Dec 29, 2025 at 03:18 support@simsonn.com ",
+      "user_id": 158007775807,
+      "created_at": "2025-12-29T14:28:39Z",
+      "updated_at": "2025-12-29T14:28:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

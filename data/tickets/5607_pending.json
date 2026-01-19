@@ -1,0 +1,24 @@
+{
+  "id": 5607,
+  "subject": "Order #SSN3186",
+  "description_text": "Hello,\r\n\r\nIt's been a few days since I put an order in your shop but it's still\r\nunfulfilled.\r\n\r\nIs it a lack of stock?\r\n\r\nMy order number is #SSN3186.\r\n\r\n\r\nCordialement,\r\n\r\n*Zakarya JMYI*\r\n\r\nzakarya.jimy@gmail.com <zakarya.jmyi@atos.net>\r\n\r\n+33(0)665383960\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-04T07:52:05Z",
+  "updated_at": "2025-11-04T08:23:41Z",
+  "requester_id": 158006479595,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011713721,
+      "body_text": "Hi Zakarya JMYI,    This is your logistics tracking link.  https://www.dhl.com/us-en/home/tracking.html?tracking-id=CE326629587DE",
+      "user_id": 158001343601,
+      "created_at": "2025-11-04T08:23:41Z",
+      "updated_at": "2025-11-04T08:23:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

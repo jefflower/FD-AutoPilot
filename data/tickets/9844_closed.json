@@ -1,0 +1,24 @@
+{
+  "id": 9844,
+  "subject": "SSN5191",
+  "description_text": "Hi just wondering when my order #SSN5191 will be shipped?\r\n\r\nThanks\r\nJordan\r\n\r\n\r\nSent from Gmail Mobile\r\n\r\n",
+  "status": 5,
+  "priority": 3,
+  "created_at": "2026-01-02T23:50:27Z",
+  "updated_at": "2026-01-13T08:11:03Z",
+  "requester_id": 158008880944,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016947720,
+      "body_text": "此工单已关闭并合并到工单 10760 中",
+      "user_id": 158000445778,
+      "created_at": "2026-01-13T08:11:03Z",
+      "updated_at": "2026-01-13T08:11:03Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

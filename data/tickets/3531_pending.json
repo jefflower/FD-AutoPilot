@@ -1,0 +1,44 @@
+{
+  "id": 3531,
+  "subject": "Firmware download issue",
+  "description_text": "Hello ? \r\nI need to download new firmware for my pedals, but there is a 404 error for download link on simsonn official site. Can you send to me latest firmware for simsonn plus x pedals? \r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-05T16:05:54Z",
+  "updated_at": "2025-09-07T09:32:10Z",
+  "requester_id": 158004192822,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008200540,
+      "body_text": "Hi Захар Рыбальченко,     Please try this latest version and see if it resolves the issue.   https://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T01:54:52Z",
+      "updated_at": "2025-09-07T01:54:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008216864,
+      "body_text": "It didn’t help:(\r\n\r\nAlso the pedals constantly turn off for a second and then switch on again. I connected them to different USB and checked all the connections and everything is fine. What could this be?\r\n\r\n\r\n> \r\n> 7 сент. 2025 г., в 04:55, service@simsonn.com написал(а):\r\n> \r\n> ﻿\r\n> Hi Захар Рыбальченко,\r\n> \r\n> Please try this latest version and see if it resolves the issue. \r\n> \r\n> https://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=drive_link\r\n> \r\n> \r\n> ",
+      "user_id": 158004192822,
+      "created_at": "2025-09-07T07:47:35Z",
+      "updated_at": "2025-09-07T07:47:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008217242,
+      "body_text": "Hi Захар Рыбальченко,    Please provide your order number so we can check the exact model of your pedals. From what I can see, your pedals might not be from the PlusX series.  You can try using either Simconfigpedals v3.5 or v4, depending on when you made your purchase, as the two versions are different.  Please send me a screenshot of the Simconfigpedals interface, and I can help you confirm which version you have and determine whether your pedals can be manually upgraded to the new software that supports SIMSONN Manager 2.1.1.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T09:32:09Z",
+      "updated_at": "2025-09-07T09:32:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

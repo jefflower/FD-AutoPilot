@@ -1,0 +1,24 @@
+{
+  "id": 2612,
+  "subject": "Firmware update broke pedals (interference)",
+  "description_text": "Hello, I have been enjoying the use of the Simsonn Pro X Ultra pedals for the last couple months. They have been working great. I upgraded to a new PC and reinstalled the Simsonn software. It worked fine for a week and then I noticed there was a firmware update available from late July. I completed the update successfully and now the pedals are causing interference with every game. I tested it with a joystick input tester and it is showing a signal on channel rX. Normally, the signals should be throttle on channel X, brake on channel Y, and clutch on channel Z. I have never seen any signal coming through on channel rX before. I think something in the firmware update broke it. Is there a way to revert back to the previous firmware verson? I have included a screenshot of the joystick input tester software showing the interference. Thanks, - Jason Purdie jason.purdie@icloud.com\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-12T21:45:18Z",
+  "updated_at": "2025-08-13T00:08:31Z",
+  "requester_id": 158001925437,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006779938,
+      "body_text": "Hi Jason Purdie,    Please make sure your SIMSONN Manager is updated to the latest 2.1.0 version, then update the firmware to disable the RX axis.  In the “Settings - Update” section, click “Manual Firmware Update,” then navigate to the pedals-firmware folder → pedals folder → and select the proxultra.sfu file to update. This firmware will disable the 4th axis.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-13T00:08:31Z",
+      "updated_at": "2025-08-13T00:08:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

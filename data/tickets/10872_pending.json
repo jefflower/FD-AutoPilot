@@ -1,0 +1,24 @@
+{
+  "id": 10872,
+  "subject": "Final Notice - Order *#SSN5249*",
+  "description_text": "Hello,\r\n\r\nI paid in full for order *#SSN5249 placed on 25 December 2025.*\r\nDespite *multiple messages* and initiated calls (your numbers don't work)\r\nand *support ticket (nr.10411)* sent since the beginning of January, I have\r\nreceived no response and the order has not been delivered.\r\n\r\nThis is a final notice.\r\n*Please provide tracking information or confirm shipment within 24 hours of\r\nthis message.*\r\n\r\nIf I do not receive a response *within 24 hours* , I will immediately\r\ninitiate a *chargeback / payment* dispute through *my bank or payment\r\nprovider.*\r\n\r\nRegards\r\nKudela\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-14T07:19:00Z",
+  "updated_at": "2026-01-14T08:55:43Z",
+  "requester_id": 158008950040,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017084896,
+      "body_text": "Hi Jozef Kudela,    We apologize for the delay. Two shipments destined for our German warehouse have been affected by heavy snowfall in Europe, causing road blockages and delivery delays. We will expedite delivery or explore alternative logistics channels to ship your order from China as soon as possible.  Compensation will be provided based on the delay after your order is completed. We apologize for the inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-14T08:55:43Z",
+      "updated_at": "2026-01-14T08:55:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

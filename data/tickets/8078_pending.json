@@ -1,0 +1,54 @@
+{
+  "id": 8078,
+  "subject": "Order #SSN4513 Status",
+  "description_text": "Hi!\r\nLast sunday 7th of december I made an order for a set of pedals, since that\r\nday the order status has been just \"confirmed\" and hasn't changed since.\r\n\r\n[image: image.png]\r\n\r\n\r\nHas there been any kind of problem with the order (or the status display)?\r\n\r\nThanks in advance!\r\n-- \r\nAtt. Iván Segura Valiente\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-12T13:51:03Z",
+  "updated_at": "2025-12-19T06:59:31Z",
+  "requester_id": 158007781875,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014565651,
+      "body_text": "Hi,\r\n\r\nI haven't yet received a response to the inquiry, but the included lint to\r\nthe ticket (https://simsonn.freshdesk.com/helpdesk/tickets/8078?follow=email)\r\nis not working for me.\r\n\r\nUn saludo,\r\n\r\nIván Segura\r\n\r\n",
+      "user_id": 158007781875,
+      "created_at": "2025-12-16T11:06:52Z",
+      "updated_at": "2025-12-16T11:06:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014684925,
+      "body_text": "Hi Iván Segura Valiente,    Your order was originally scheduled to ship from our German warehouse, but due to transportation delays, the goods arrived later than expected. To ensure delivery before Christmas, we've had to arrange UPS express shipping. However, customs duties may apply. Do you need it before Christmas?",
+      "user_id": 158001343601,
+      "created_at": "2025-12-18T11:06:50Z",
+      "updated_at": "2025-12-18T11:06:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014684993,
+      "body_text": "Hi, I don't need it before Christmas as it's not a gift. Just wanted to\r\nknow if the order was received correctly or not.\r\n\r\nI'd prefer to wait for the shipment to arrive as clearing customs would be\r\ntime consuming (and costly).\r\n\r\nRegards\r\n\r\nIván Segura\r\n\r\n",
+      "user_id": 158007781875,
+      "created_at": "2025-12-18T11:09:47Z",
+      "updated_at": "2025-12-18T11:09:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014743972,
+      "body_text": "Hi Iván Segura Valiente,    Alright, thank you for your confirmation.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-19T06:59:31Z",
+      "updated_at": "2025-12-19T06:59:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

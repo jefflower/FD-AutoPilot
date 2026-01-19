@@ -1,0 +1,84 @@
+{
+  "id": 8333,
+  "subject": "replacement part for simsonn pedals",
+  "description_text": "hello\r\ndidn't get response from my last answer,\r\ni will need plastic washer behind clutch spring because somehow mine was\r\nbroken\r\n\r\n[image: 0.jpg]\r\nyou said to provide ticket number for that part,\r\nbeside my order for simsoon vam pro linear motor\r\nbut i don't see my ticket number\r\n\r\nbest regards\r\nAndrej\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-15T18:57:06Z",
+  "updated_at": "2025-12-19T07:17:22Z",
+  "requester_id": 158007193425,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014381314,
+      "body_text": "Hi Andrej Vojvoda,    We will provide the appropriate adapter plug for your region of purchase, so you may proceed with confidence. Additionally, you may specify your requirements and your ticket number in the order notes, and we shall dispatch these to you alongside your order.  https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor?variant=51351053500730",
+      "user_id": 158001343601,
+      "created_at": "2025-12-12T11:57:17Z",
+      "updated_at": "2025-12-12T11:57:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014414507,
+      "body_text": "where i can see ticket number?\r\ngreetings\r\nAndrej\r\n\r\nOn Fri, Dec 12, 2025 at 12:57 PM service@simsonn.com ",
+      "user_id": 158007193425,
+      "created_at": "2025-12-12T19:57:03Z",
+      "updated_at": "2025-12-12T19:57:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014611158,
+      "body_text": "ID 为 8019 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T03:03:32Z",
+      "updated_at": "2025-12-17T03:03:32Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014611161,
+      "body_text": "合并来自工单8019  \n      主题: about Simsonn VAM Pro Linear Motor  \n      描述:  \n helllo \n i want to ask few things \n is possible to order the Simsonn VAM Pro Linear Motors with eu cabble? \n   \n and i will ask if there is possible to order spare parts for pedals? somehow the edge of plastic washer on clutch pedal is broken. i did fix it but i want to replace it \n \n  \n \n   \n \ngreetings\n\n \n \n Andrej",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T03:03:32Z",
+      "updated_at": "2025-12-17T03:03:32Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014620243,
+      "body_text": "Hi Andrej Vojvoda,    We apologize for the delayed response. Please provide your order number, and we will arrange for a replacement shipment as soon as possible.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-17T09:34:51Z",
+      "updated_at": "2025-12-17T09:34:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014703665,
+      "body_text": "hello\r\nmy order number is\r\nOrder #SSN5026\r\n\r\nbest regards\r\nAndrej\r\n\r\nOn Wed, Dec 17, 2025 at 10:34 AM service@simsonn.com ",
+      "user_id": 158007193425,
+      "created_at": "2025-12-18T16:11:49Z",
+      "updated_at": "2025-12-18T16:11:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014744504,
+      "body_text": "Hi Andrej Vojvoda,    Alright, I've had our warehouse add this part to your order.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-19T07:17:22Z",
+      "updated_at": "2025-12-19T07:17:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

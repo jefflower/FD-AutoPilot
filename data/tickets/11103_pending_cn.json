@@ -1,0 +1,25 @@
+{
+  "id": 11103,
+  "subject": "订单未收到确认",
+  "description_text": "下午好，我今天上午下了一个订单，但一直没有收到任何确认信息。我想确认订单是否已成功提交，也可能是我的联系信息填写错误了。订单号：RQI4IHL9 谢谢！",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-16T21:42:48Z",
+  "updated_at": "2026-01-17T06:36:03Z",
+  "requester_id": 158009081916,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017316032,
+      "body_text": "您好 Thomas Cameron，我已为您添加此电子邮件地址并发送了发货通知。请检查您的收件箱。",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T06:36:03Z",
+      "updated_at": "2026-01-17T06:36:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

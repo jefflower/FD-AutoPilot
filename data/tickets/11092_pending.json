@@ -1,0 +1,94 @@
+{
+  "id": 11092,
+  "subject": "Order #ssn6195",
+  "description_text": "Hello i just placed this order and was wondering if this kit comes with all\r\n3 haptics or just 1?\r\n\r\nAnd also curious if there are import charges for it being shipped to the\r\nusa?\r\n\r\nThank you!\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-16T17:15:28Z",
+  "updated_at": "2026-01-17T06:49:11Z",
+  "requester_id": 158009303393,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017311601,
+      "body_text": "Hi Erik,     I’ve checked your order, and it does not include the VAM Pro haptic motor. If you’d like the VAM Pro, you can either:    Purchase the VAM Pro separately, or    Buy a pedal bundle that includes the VAM Pro. If you tell me what setup you’re aiming for (how many motors / which pedals), I can recommend the right option for you.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-17T03:47:10Z",
+      "updated_at": "2026-01-17T03:47:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017311731,
+      "body_text": "I want the plus x pedals and the haptics for brake and throttle. I feel\r\nlike this is misleading showing pictures of the pedals with haptics on them\r\nbut saying they do not come with them?\r\n\r\n",
+      "user_id": 158009303393,
+      "created_at": "2026-01-17T03:56:16Z",
+      "updated_at": "2026-01-17T03:56:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017311749,
+      "body_text": "Oh really? Than what did i purchase? This says it comes with the haptics\r\nreactor?? I'm confused now\r\n\r\n\r\n\r\nOn Fri, Jan 16, 2026, 7:47 PM service@simsonn.com ",
+      "user_id": 158009303393,
+      "created_at": "2026-01-17T03:57:58Z",
+      "updated_at": "2026-01-17T03:57:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017311863,
+      "body_text": "Maybe I have misread, was this just an upgrade? Sorry for the confusion,\r\nbut I want all three pedals, and haptics for both the brake and throttle.\r\nCan you cancel my current order and suggest a package?\r\n\r\n",
+      "user_id": 158009303393,
+      "created_at": "2026-01-17T04:02:29Z",
+      "updated_at": "2026-01-17T04:02:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017312291,
+      "body_text": "Hi Erik,  ​We’re very sorry. I’ve just confirmed with our operations team that your PlusX 2-pedal package includes two VAM Pro motors, two U-shaped mounting brackets, and one baseplate. We sincerely apologize for the incorrect information in our previous reply and for any confusion caused. We will process your order as soon as possible. Due to a high backlog of orders and emails during the New Year period, there may be a slight delay. Thank you for your understanding. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-17T04:22:38Z",
+      "updated_at": "2026-01-17T04:22:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017312418,
+      "body_text": "Okay thank you,  but possibly another mistake on your end maybe? I've\r\nordered the plus-x-p3-h3 so I'm assuming that includes, p3 = 3 pedals and\r\nthe h3 = 3 haptics and /black means they will be black. And I paid the\r\nextra 29.90 for express shipping.\r\n\r\nI'm not trying to be mean,  I just want clarification on what I have\r\nordered. Thank you so much!\r\n\r\nOn Friday, January 16, 2026, service@simsonn.com ",
+      "user_id": 158009303393,
+      "created_at": "2026-01-17T04:29:31Z",
+      "updated_at": "2026-01-17T04:29:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017312513,
+      "body_text": "Hi Erik,  Yes, you purchased the PlusX 3-pedal package, which includes three VAM Pro motors and one baseplate. I’m very sorry—I mixed up your email with another customer’s. I’ll check the shipping schedule for you right away. If it wasn’t shipped on time, I will ask our operations team to refund the expedited shipping fee. Please don’t worry. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-17T04:34:33Z",
+      "updated_at": "2026-01-17T04:34:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017312628,
+      "body_text": "Okay sounds great! I really appreciate it that, and I can't wait to try\r\nthese pedals. Sorry for the confusion, but I was confused and then you were\r\nconfused and we all became confused. Hopefully the pedals arrive swiftly,\r\nthank you so much!\r\n\r\n\r\nOn Fri, Jan 16, 2026, 8:34 PM service@simsonn.com ",
+      "user_id": 158009303393,
+      "created_at": "2026-01-17T04:41:31Z",
+      "updated_at": "2026-01-17T04:41:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

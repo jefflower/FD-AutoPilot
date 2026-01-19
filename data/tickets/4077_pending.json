@@ -1,0 +1,44 @@
+{
+  "id": 4077,
+  "subject": "missing baseplate in order",
+  "description_text": "order #SSN2670. i ordered the pro x ultra with the throttle, brake, and\r\nbaseplate, but i did not receive a baseplate in the package.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-23T20:10:26Z",
+  "updated_at": "2025-10-07T09:02:56Z",
+  "requester_id": 158004824064,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009193370,
+      "body_text": "i also did not receive the haptic motors i ordered. in my order\r\nconfirmation email there is 2 tracking codes but only one of them works.\r\nwhich is the one i received\r\n\r\n",
+      "user_id": 158004824064,
+      "created_at": "2025-09-23T20:23:06Z",
+      "updated_at": "2025-09-23T20:23:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009215405,
+      "body_text": "Hello, here is your logistics link.  https://t.17track.net/en#nums=SF6045919609203   Additionally, the baseplate is currently out of stock at our US warehouse. We shall dispatch it to you separately once it arrives within the next couple of days.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-24T08:22:45Z",
+      "updated_at": "2025-09-24T08:22:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009796294,
+      "body_text": "did the baseplates ever come in\r\n\r\n\r\nOn Wed, Sep 24, 2025 at 4:23 AM service@simsonn.com ",
+      "user_id": 158004824064,
+      "created_at": "2025-10-02T15:20:34Z",
+      "updated_at": "2025-10-02T15:20:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "id": 6756,
+  "subject": "踏板退货 - 订单号 #SSN3597",
+  "description_text": "您好，\n\n我最近购买了 Plus X 踏板，但它们用起来非常不顺畅。它们经常与我的电脑断开连接，而且有些游戏甚至无法识别信号。我尝试过使用 Simsonn 管理器，甚至 freejoy，但都无法解决问题。我想申请退货，请告诉我退货的后续步骤。\n\n订单号是 #SSN3597\n\n谢谢。",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-11-26T05:18:17Z",
+  "updated_at": "2025-12-01T02:24:41Z",
+  "requester_id": 158007336666,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012941605,
+      "body_text": "你好 Abdullah Khokhar， 可能有两个问题： 请使用电脑背面的 USB 3.0 端口，并避免使用 USB 集线器。 可能存在接地问题。 如果出现此问题，则表示您的电脑可能未正确接地——例如，电源插头可能未连接到三孔墙壁插座。您可以参考以下帖子：将电脑机箱连接到踏板框架，并将主控制盒连接到踏板的金属螺丝。这将有效解决断开连接的问题。 https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T11:00:11Z",
+      "updated_at": "2025-11-26T11:00:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012942791,
+      "body_text": "您好，\n\n我确实尝试了这两个方法。它直接插入了 USB 3.0 端口，而且我的电脑接地良好。我甚至使用了踏板随附的接地线并进行了接地。没有任何区别。游戏只有在按下 50% 后才能识别踏板，即使它在应用程序中已校准（这还是在它能工作的前提下）\n\n在 2025 年 11 月 26 日星期三 04:00 service@simsonn.com",
+      "user_id": 158007336666,
+      "created_at": "2025-11-26T11:32:37Z",
+      "updated_at": "2025-11-26T11:32:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012942903,
+      "body_text": "你好 Abdullah Khokhar， 如果是这种情况，则意味着踏板的机械结构已经调整。请在软件中点击偏移以将踏板信号重置为零；白色信号将从 0% 开始。重新校准踏板后，蓝色信号将正确地在 0% 到 100% 之间。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T11:34:55Z",
+      "updated_at": "2025-11-26T11:34:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012943550,
+      "body_text": "在软件中显示校准正常，但在游戏中直到 50% 才识别\n\n在 2025 年 11 月 26 日星期三 04:35 service@simsonn.com",
+      "user_id": 158007336666,
+      "created_at": "2025-11-26T11:50:46Z",
+      "updated_at": "2025-11-26T11:50:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012943685,
+      "body_text": "你好 Abdullah Khokhar， 如果软件校准正确，按下每个踏板应该会使蓝色进度条从 0% 到 100%，表明踏板功能正常。您只需要重新打开游戏并在游戏设置中重新绑定踏板。 对于 iRacing 或 F1 游戏，可能需要额外的游戏内校准。这里有一个 F1 2025 的参考链接来指导您。 https://www.reddit.com/r/simracing/comments/1nj93bq/simsonn_plus_x_pedals_setup_guide_in_f1_25/ ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T11:56:07Z",
+      "updated_at": "2025-11-26T11:56:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012943937,
+      "body_text": "你好\n\n那个帖子被删除了。请多发些技巧或另一个帖子。踏板在软件中工作正常，但在游戏中我必须按下 50% 才能开始有任何反应。我尝试在 F1 中校准，但我搞不明白。\n\n在 2025 年 11 月 26 日星期三 04:56 service@simsonn.com",
+      "user_id": 158007336666,
+      "created_at": "2025-11-26T12:06:06Z",
+      "updated_at": "2025-11-26T12:06:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012944275,
+      "body_text": "你好 Abdullah Khokhar， 您好，以下是 F1 25 中使用 SIMSONN Plus X 踏板的设置指南： 首次进入游戏 您可能会看到一条消息： NO PRESET CONTROL SCHEME FOR DEVICE(S) SIMSONN Plus X Please customise your controls in the Settings Menu... 点击“确定”继续。 绑定控件并保存新方案 进入“设置”→“控件”以绑定踏板和按钮。 退出时，选择“保存为新控制方案”，命名（例如 SIMSONN），然后点击“保存”。 管理和切换控制方案 主菜单 → 设置 → 控件 → 控制方案列表 您的 SIMSONN 方案将出现；您可以直接选择它以备将来使用。 ? 注意：如果您在没有备份的情况下删除方案，则需要重复绑定和保存过程。 完成这些步骤后，您的踏板将在游戏中正常工作，提供逼真的驾驶体验。",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T12:16:06Z",
+      "updated_at": "2025-11-26T12:16:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012945602,
+      "body_text": "你好，\n这条消息只弹出了一次，之后再也没有出现。此外，当 F125 运行时，Simsonn 管理器显示 F125 正在运行，遥测未连接。\n\n在 2025 年 11 月 26 日星期三 05:16 service@simsonn.com",
+      "user_id": 158007336666,
+      "created_at": "2025-11-26T13:02:36Z",
+      "updated_at": "2025-11-26T13:02:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012945916,
+      "body_text": "我重新启动后它出现了。即使在自定义设置方案之后，踏板也有很大的死区，只有在按下 50% 后才能工作。在管理器中是正常的。",
+      "user_id": 158007336666,
+      "created_at": "2025-11-26T13:12:21Z",
+      "updated_at": "2025-11-26T13:12:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012946266,
+      "body_text": "我还尝试使用 free joy 软件，但它无法检测到踏板。",
+      "user_id": 158007336666,
+      "created_at": "2025-11-26T13:22:47Z",
+      "updated_at": "2025-11-26T13:22:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012947550,
+      "body_text": "你好 Abdullah Khokhar， PlusX 不再支持 FreeJoy。请录制一个视频，显示 Simsonn Manager 中踏板测试进度条从 0% 到 100% 的过程，并发送给我，以便我验证踏板是否配置正确。",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T13:56:20Z",
+      "updated_at": "2025-11-26T13:56:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013004895,
+      "body_text": "好的，给你。\n\n在 2025 年 11 月 26 日星期三 06:56 service@simsonn.com",
+      "user_id": 158007336666,
+      "created_at": "2025-11-27T12:17:54Z",
+      "updated_at": "2025-11-27T12:17:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013037964,
+      "body_text": "你好 Abdullah Khokhar， 您上传的视频不完整。请为我们录制一个完整的视频进行检查，并通过 Google Drive 分享链接，确保已设置访问权限。",
+      "user_id": 158000445778,
+      "created_at": "2025-11-28T04:02:35Z",
+      "updated_at": "2025-11-28T04:02:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013038066,
+      "body_text": "不确定你说的视频不完整是什么意思。请确切告诉我视频中需要包含什么。\n\n在 2025 年 11 月 27 日星期四 21:02 service@simsonn.com",
+      "user_id": 158007336666,
+      "created_at": "2025-11-28T04:10:39Z",
+      "updated_at": "2025-11-28T04:10:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013038083,
+      "body_text": "我还尝试了我在网上找到的所有解决方案，但似乎没有任何作用。我想继续退货。",
+      "user_id": 158007336666,
+      "created_at": "2025-11-28T04:11:43Z",
+      "updated_at": "2025-11-28T04:11:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013038104,
+      "body_text": "你好 Abdullah Khokhar， “不完整”是指视频播放到一半时卡住了，所以上传的视频不完整。",
+      "user_id": 158000445778,
+      "created_at": "2025-11-28T04:12:32Z",
+      "updated_at": "2025-11-28T04:12:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013038690,
+      "body_text": "这是链接\n\nhttps://drive.google.com/file/d/1xLru0iLQeUjkAT-Z54UDn3fJsR9jtDPA/view?usp=drivesdk\n\n在 2025 年 11 月 27 日星期四 21:12 service@simsonn.com",
+      "user_id": 158007336666,
+      "created_at": "2025-11-28T05:06:16Z",
+      "updated_at": "2025-11-28T05:06:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013102702,
+      "body_text": "您好，\n\n如果我们无法解决这个问题，我想发起退货。那时踏板对我来说就没用了。似乎我尝试了所有解决方案，但都没有奏效。\n\n>",
+      "user_id": 158007336666,
+      "created_at": "2025-11-29T13:03:01Z",
+      "updated_at": "2025-11-29T13:03:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013154864,
+      "body_text": "你好 Abdullah Khokhar， 我可以确认踏板在 SIMSONN Manager 2.1.2 中工作正常，并且已完全校准，因此 F1 2025 完全支持。我们自己也在测试和玩 F1 2025，我相信问题不在于硬件，而可能在于设置。如果您不确定如何配置，我们可以远程协助您。您只需安装 Todesk 软件——无需注册——并提供您的 ID 和临时验证码。我们可以安排一个时间进行设置。或者，您也可以在线查找 F1 2025 配置指南。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-01T02:20:12Z",
+      "updated_at": "2025-12-01T02:20:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013154886,
+      "body_text": "您好，\n\n感谢您的帮助。我最终调整了许多设置，现在它们可以工作了。\n\n在 2025 年 11 月 30 日星期日 19:20 service@simsonn.com",
+      "user_id": 158007336666,
+      "created_at": "2025-12-01T02:21:38Z",
+      "updated_at": "2025-12-01T02:21:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

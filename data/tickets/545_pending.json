@@ -1,0 +1,24 @@
+{
+  "id": 545,
+  "subject": "Simsonn VAM",
+  "description_text": "Hi, I can't setup the Haptic Reactor with SimHub, they don't appear in the\r\ndevice list. I have the Simsonn Pro Plus Pedal Upgrade. \r\n\r\nWhat could be the problem? \r\n\r\nThanks\r\n\r\n \r\n\r\nLucio Flavio Delmestre\r\n\r\n \r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-17T21:38:02Z",
+  "updated_at": "2025-06-18T08:56:04Z",
+  "requester_id": 158001632019,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003404894,
+      "body_text": "Hi Ludelme,  SIMHUB will be releasing a new version soon. We can provide you with an internal test build in advance — it’s nearly identical to the upcoming official release.      https://drive.google.com/file/d/1QrSbAvCC5iyx9XgdRgSQV-hWpmDGkujc/view",
+      "user_id": 158000445778,
+      "created_at": "2025-06-18T08:56:04Z",
+      "updated_at": "2025-06-18T08:56:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

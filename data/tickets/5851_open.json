@@ -1,0 +1,174 @@
+{
+  "id": 5851,
+  "subject": "Pro x pedals return",
+  "description_text": "Dear simsonn support team\r\n\r\nI hope you're well. I have recently purchased a set of your pro x pedals\r\nfrom your website (Order #SSN3158) and, unfortunately am not satisfied with\r\nthe product. After testing I've found that they do not meet my expectations\r\nand would like to arrange a return and refund in accordance with your\r\nreturn policy.\r\n\r\nCould you please let me know the steps I need to follow to return the\r\npedals. The item is in its original packaging in new condition\r\n\r\nThank you for your help,\r\n\r\nJack Artherton\r\n\r\n",
+  "status": 2,
+  "priority": 1,
+  "created_at": "2025-11-09T21:28:17Z",
+  "updated_at": "2026-01-01T12:52:54Z",
+  "requester_id": 158006892189,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012029314,
+      "body_text": "Hi Jack Artherton,    I'm sorry to hear that. What's the problem with your pedal?",
+      "user_id": 158001343601,
+      "created_at": "2025-11-10T06:17:26Z",
+      "updated_at": "2025-11-10T06:17:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012042634,
+      "body_text": "Hello and thank you for your response,\r\n\r\nThe issues are mainly to do with the noise coming from them as when I press\r\nthe throttle it has a very loud squeak. It also is very rough having an\r\nalmost jolty response, feeling as if it gets stuck at points in its travel.\r\nI have also had issues when pressing the brake with noise from the\r\nbaseplate.\r\n\r\nSome more issues are with the haptic reactors as they can be very\r\ntemperamental in use often disconnecting.\r\n\r\nOverall they just haven't provided a smooth or reliable feel and I am\r\nafraid these hardware issues lead me to wanting to return them. Could you\r\nplease advise me to the steps to take to process with the return &\r\nsubsequent refund\r\n\r\nThank you,\r\n\r\nJack Artherton\r\n\r\n\r\n",
+      "user_id": 158006892189,
+      "created_at": "2025-11-10T09:59:47Z",
+      "updated_at": "2025-11-10T09:59:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012093109,
+      "body_text": "Hi Jack Artherton,    The throttle uses a single-direction hydraulic damper, and the sound of liquid movement inside is completely normal—it’s not caused by blockage or malfunction. When applying strong brake force, please make sure that the pedal base plate is securely fixed, otherwise the whole pedal assembly might produce noise due to insufficient support.  For connection or signal interruption issues, we recommend the following grounding solution:    Connect the PC case to the simulator frame;    Connect the main controller box to any metal screw on the pedal.    This can effectively improve stability. The main cause of such problems is usually that the wall outlet your PC is plugged into does not have a reliable three-prong ground, resulting in unstable grounding.     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding     https://www.reddit.com/r/simracing/comments/1n291hi/solution_for_simsonn_vam_pro_emi_issues/",
+      "user_id": 158000445778,
+      "created_at": "2025-11-11T01:39:08Z",
+      "updated_at": "2025-11-11T01:39:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012096930,
+      "body_text": "Thank you for your detailed response.\r\n\r\nI understand the points regarding the hydraulic damper, base plate support,\r\nand grounding. However, after reviewing your suggestions and testing the\r\npedals again, the issues are still present. The throttle continues to feel\r\nextremely jolty, as if getting stuck throughout its travel, and the overall\r\npedal feel remains unsatisfactory. The noises (loud squeaks from the\r\nconstruction itself not damper) and inconsistencies are not what I would\r\nexpect from a properly functioning set.\r\n\r\nAt this point, I would like to proceed with a return/refund, as the pedals\r\ndo not meet my expectations despite the troubleshooting steps provided.\r\n\r\nPlease let me know the next steps in the return process.\r\n\r\nThank you for your time and assistance.\r\n\r\nBest regards,\r\nJack Artherton\r\n\r\n",
+      "user_id": 158006892189,
+      "created_at": "2025-11-11T06:09:21Z",
+      "updated_at": "2025-11-11T06:09:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012098300,
+      "body_text": "Hi Jack Artherton,  If the issue is related to noise during use, please record a short video and send it to us. Our engineers will check if there’s any installation issue and assist you in resolving it quickly. You can share the video with us via Google Drive — please make sure the access permissions are set correctly. We’ll review it promptly and help you resolve the issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-11T06:53:08Z",
+      "updated_at": "2025-11-11T06:53:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012134255,
+      "body_text": "Hi Simsonn Support Team,\r\n\r\nThank you for your reply.\r\n\r\nI have recorded the video as requested and linked it below. However, I\r\nwould like to clarify that I am not looking for a repair or further\r\ntroubleshooting. The pedals simply do not meet my expectations, and as\r\nsuch, I would like to proceed with a return in accordance with your return\r\npolicy.\r\n\r\nPlease let me know the steps required to begin the return process.\r\n\r\nThank you for your understanding.\r\n\r\nKind regards,\r\nJack Artherton\r\n\r\nhttps://drive.google.com/file/d/1Zn6lCU5vNfLmDO6ZGqb5eK6rd32-JD7E/view?usp=drivesdk\r\n\r\n\r\n",
+      "user_id": 158006892189,
+      "created_at": "2025-11-11T17:26:00Z",
+      "updated_at": "2025-11-11T17:26:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012380754,
+      "body_text": "Good Afternoon,\r\n\r\nI write to you further to my email of 11th November as I haven't heard back\r\nfrom you so wanted to ensure you received my communication below.\r\n\r\nAs advised, I would like to exercise my legal right for a refund and I have\r\nalso set out for you the issue with the pedals.\r\n\r\nAs requested, please advise how to progress a return and refund.\r\n\r\nI look forward to hearing from you.\r\n\r\nRegards\r\n\r\njack\r\n\r\n---------- Forwarded message ---------\r\n",
+      "user_id": 158006892189,
+      "created_at": "2025-11-15T14:28:56Z",
+      "updated_at": "2025-11-15T14:28:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012400172,
+      "body_text": "Hi Jack Artherton,  You only need to apply lubricant to the noisy parts according to the manual to resolve the noise issue. The pedals require regular maintenance. Additionally, this situation does not qualify for a refund under our policy.              https://www.simsonn.com/pages/simsonn-product-manuals",
+      "user_id": 158000445778,
+      "created_at": "2025-11-16T02:57:48Z",
+      "updated_at": "2025-11-16T02:57:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012411503,
+      "body_text": "*Pro X Pedals - Faulty goods refund under UK Consumer Rights Act 2015,*\r\n\r\nOrder: SSN3158\r\nDelivery to UK: 3 November 2025\r\n\r\nDear Simsoon,\r\n\r\nI reported faults within days of delivery, provided the requested video,\r\nand made clear I was not seeking a repair, only a refund (emails of 11\r\nNovember and 15 November) [1]. The throttle is jolty/sticking throughout\r\nits travel, there are loud squeaks from the construction, and the pedal\r\nfeel is inconsistent. The goods are not of satisfactory quality.\r\n\r\nI am exercising my short‑term right to reject the goods for a full refund\r\nunder the UK Consumer Rights Act 2015. In the alternative, I am also\r\nexercising my right to cancel under the Consumer Contracts Regulations 2013.\r\n\r\nPlease confirm within 7 calendar days:\r\n\r\n1) You will issue a full refund to my original payment method upon return,\r\nincluding any standard outbound delivery charge;\r\n2) You will provide a prepaid tracked return label, or confirm in writing\r\nyou will reimburse my tracked return postage because the goods are faulty;\r\n3) The RMA number and correct return address.\r\n\r\nIf I do not receive confirmation within 7 days, I will proceed with a\r\nchargeback via the payment provider and pursue my statutory remedies.\r\n\r\nKind regards,\r\nJack Artherton\r\n185 Elburton Road\r\n\r\nOrder: SSN3158\r\n\r\nOn Sun, 16 Nov 2025 at 02:57, service@simsonn.com ",
+      "user_id": 158006892189,
+      "created_at": "2025-11-16T12:29:03Z",
+      "updated_at": "2025-11-16T12:29:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012512090,
+      "body_text": "Hi Jack Artherton,    Please do not worry, we shall send you a replacement hydraulic rod. This is an issue with the hydraulic rod itself. You may remove the existing rod for use until the new one arrives.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-18T11:40:47Z",
+      "updated_at": "2025-11-18T11:40:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012611895,
+      "body_text": "Hello,\r\n\r\nThank you for your email.\r\n\r\nI appreciate your offer; however, I refer you to my previous emails where I\r\nhave clearly set out, on a number of occasions, that I wish to exercise my\r\nright for a full refund.\r\n\r\nPlease refer to my previous email of 16th November requesting the return\r\ndetails.  If you have not provided me with details of the return process\r\nwithin 7 days from my below email I will make a claim for recovery of full\r\nfunds through my bank.\r\n\r\nRegards\r\n\r\nJack\r\n\r\nA copy of the referred email herein:\r\n\r\nJack Artherton <jacknartherton@gmail.com>\r\nSun 16 Nov, 12:28 (3 days ago)\r\nto service@simsonn.com\r\n\r\n*Pro X Pedals - Faulty goods refund under UK Consumer Rights Act 2015,*\r\n\r\nOrder: SSN3158\r\nDelivery to UK: 3 November 2025\r\n\r\nDear Simsoon,\r\n\r\nI reported faults within days of delivery, provided the requested video,\r\nand made clear I was not seeking a repair, only a refund (emails of 11\r\nNovember and 15 November) [1]. The throttle is jolty/sticking throughout\r\nits travel, there are loud squeaks from the construction, and the pedal\r\nfeel is inconsistent. The goods are not of satisfactory quality.\r\n\r\nI am exercising my short‑term right to reject the goods for a full refund\r\nunder the UK Consumer Rights Act 2015. In the alternative, I am also\r\nexercising my right to cancel under the Consumer Contracts Regulations 2013.\r\n\r\nPlease confirm within 7 calendar days:\r\n\r\n1) You will issue a full refund to my original payment method upon return,\r\nincluding any standard outbound delivery charge;\r\n2) You will provide a prepaid tracked return label, or confirm in writing\r\nyou will reimburse my tracked return postage because the goods are faulty;\r\n3) The RMA number and correct return address.\r\n\r\nIf I do not receive confirmation within 7 days, I will proceed with a\r\nchargeback via the payment provider and pursue my statutory remedies.\r\n\r\nKind regards,\r\nJack Artherton\r\n185 Elburton Road\r\n\r\nOrder: SSN3158\r\n\r\nOn Tue, 18 Nov 2025 at 11:41, service@simsonn.com ",
+      "user_id": 158006892189,
+      "created_at": "2025-11-19T20:54:31Z",
+      "updated_at": "2025-11-19T20:54:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012696509,
+      "body_text": "Hi Jack Artherton,     Do you meet the above return conditions?",
+      "user_id": 158001343601,
+      "created_at": "2025-11-21T11:03:07Z",
+      "updated_at": "2025-11-21T11:03:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012774259,
+      "body_text": "Dear Simsonn,\r\n\r\nYes, aside from my legal rights, I can confirm I meet the criteria set out\r\nin your policy.\r\n\r\nI look forward to recieving the return detials\r\n\r\nThank you\r\n\r\nJack\r\n\r\nOn Fri, 21 Nov 2025 at 11:03, service@simsonn.com ",
+      "user_id": 158006892189,
+      "created_at": "2025-11-23T11:10:13Z",
+      "updated_at": "2025-11-23T11:10:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013501080,
+      "body_text": "Hi Jack Artherton,     I apologize for not responding to you promptly.   We apologize for the delayed response. Since we do not yet have a warehouse in the UK, you may return the package to our German warehouse. We will process your refund once we receive and inspect the item.  Gubitz GmbH(LeiXuan A211) Hüttenkamp 12 Neumünster,Schleswig-Holstein   24536 +49 17622233089",
+      "user_id": 158001343601,
+      "created_at": "2025-12-05T12:04:16Z",
+      "updated_at": "2025-12-05T12:04:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014705651,
+      "body_text": "Thank you for your email confirm acceptance of my return.\r\n\r\nI am in the process of arranging the necessary postage. As the item had\r\na fault I am entitled to a reimbursement of the postage costs, therefore\r\nplease advise if their are specific mail instructions/conditions and\r\nthat you will reimburse this upon receipt. I will share the return\r\ndetails once posted\r\n\r\nRegards\r\n\r\njack\r\n\r\n",
+      "user_id": 158006892189,
+      "created_at": "2025-12-18T16:40:28Z",
+      "updated_at": "2025-12-18T16:40:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015362688,
+      "body_text": "I would just like to confirm you have received my prior email as I am\r\nawaiting your response before further action\r\n\r\n",
+      "user_id": 158006892189,
+      "created_at": "2026-01-01T12:52:54Z",
+      "updated_at": "2026-01-01T12:52:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

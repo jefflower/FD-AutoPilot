@@ -1,0 +1,24 @@
+{
+  "id": 6720,
+  "subject": "Faulty brake pedal",
+  "description_text": "﻿\r\nHi,\r\n\r\nAs requested, here is a video showing the behaviour:\r\n\r\n\r\n\r\n\r\nPressing the brake produces only a very small and erratic value in the simsonn app and calibration.\r\n\r\nSteven Spencer \r\n028-1754586-7574715\r\n\r\n\r\n\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-11-25T15:23:18Z",
+  "updated_at": "2025-11-26T23:12:47Z",
+  "requester_id": 158007323105,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012942929,
+      "body_text": "Hi Steve Spencer,  If this is the case, it means the pedal’s mechanical structure has been adjusted. Please click Offset in the software to reset the pedal signal to zero; the white signal will then start from 0%. After recalibrating the pedal, the blue signal will correctly range from 0% to 100%. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T11:35:29Z",
+      "updated_at": "2025-11-26T11:35:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

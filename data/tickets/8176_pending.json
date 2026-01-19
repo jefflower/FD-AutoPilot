@@ -1,0 +1,24 @@
+{
+  "id": 8176,
+  "subject": "Change Coupon Code",
+  "description_text": "Hello,\r\n\r\nI just set up my affiliate account under official.artemisesports@gmail.com, but the coupon is “MARK”. \r\n\r\nCould we change it to “ARTEMIS” or “ARTEMISESPORTS”?\r\n\r\nThank you,\r\n\r\nMark Katske\r\nOwner/CEO\r\nArtemis Esports LLC\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-13T20:48:19Z",
+  "updated_at": "2025-12-15T09:10:02Z",
+  "requester_id": 158007799765,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014502414,
+      "body_text": "Hi Artemis Esports,    Alright, I've changed it for you to: ARTEMIS",
+      "user_id": 158001343601,
+      "created_at": "2025-12-15T09:10:02Z",
+      "updated_at": "2025-12-15T09:10:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

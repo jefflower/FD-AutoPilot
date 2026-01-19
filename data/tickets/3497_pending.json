@@ -1,0 +1,44 @@
+{
+  "id": 3497,
+  "subject": "Simsonn pro plus pedal brake issue",
+  "description_text": "Hi I bought the pedals a few months ago and had issues only with the brake pedal.\r\nWhenever I don’t touch it, it inputs at 100 then as soon as I press it, it goes from 0-100 instantly almost like it’s not acting as a load cell pedal. Do you have any advice to fix this I have grounded it as shown in the photos as well as bought a usb isolator to try and solve the solution\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-05T00:22:22Z",
+  "updated_at": "2025-09-07T02:23:38Z",
+  "requester_id": 158004180743,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008125898,
+      "body_text": "Hi Ollie Whitby,     Have you downloaded the SIMSONN Manager software? If the interface shows “Version too old, not supported,” please go to Settings → Update → Manual Firmware Update → pedals-firmware-plus.sfu to update the firmware. Once the update is complete, please be sure to recalibrate the pedals, as they will not function properly in games without calibration.   https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-09-05T01:09:55Z",
+      "updated_at": "2025-09-05T01:09:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008147846,
+      "body_text": "I downloaded this and it doesn’t recognise the pedals only allowing the new\r\nx model to be calibrated says it’s disconnected but if I use the older\r\nsoftware whenever I put pressure on the pedal floor it inputs brake travel\r\nsomehow\r\n\r\n\r\nOn Fri, 5 Sep 2025 at 02:10, service@simsonn.com ",
+      "user_id": 158004180743,
+      "created_at": "2025-09-05T14:53:35Z",
+      "updated_at": "2025-09-05T14:53:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008200818,
+      "body_text": "Hi Ollie Whitby, Please install the Todesk software. No registration is required, and if it prompts you to register, simply close the window. I can assist you remotely to resolve the issue right now.      https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T02:23:38Z",
+      "updated_at": "2025-09-07T02:23:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

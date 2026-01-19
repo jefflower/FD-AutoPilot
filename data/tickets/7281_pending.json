@@ -1,0 +1,24 @@
+{
+  "id": 7281,
+  "subject": "Missing Item from Recent Order #SSN3636",
+  "description_text": "Dear Customer Service,\r\n\r\n\r\n\r\nI hope you are well.\r\n\r\nI am writing regarding my recent order. I ordered two items, but I have only received one of them.\r\n\r\n\r\n\r\nCould you please check the status of the missing item and let me know when I can expect to receive it?\r\n\r\n\r\n\r\n\r\n\r\nThank you in advance for your help.\r\n\r\nI look forward to your reply.\r\n\r\n\r\n\r\nCarlos\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-02T20:48:19Z",
+  "updated_at": "2025-12-03T10:54:42Z",
+  "requester_id": 158007503213,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013319369,
+      "body_text": "Hi Carlos Czc,    We apologize for the inconvenience caused. Our German warehouse experienced a temporary stock shortage and has only recently completed restocking, which delayed your shipment. Here is your tracking link. Delivery is expected around the 6th.  https://www.dhl.de/en/privatkunden/pakete-empfangen/verfolgen.html?piececode=CE326634009DE",
+      "user_id": 158001343601,
+      "created_at": "2025-12-03T10:54:42Z",
+      "updated_at": "2025-12-03T10:54:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

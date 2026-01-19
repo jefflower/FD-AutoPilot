@@ -1,0 +1,34 @@
+{
+  "id": 469,
+  "subject": "Custom Curves in Sim Pedals Config",
+  "description_text": "Hello,\r\n\r\nI have purchased a set of Simsonn Pro pedals in September 2024 and have\r\nbeen configuring the settings with the Sim Pedals Config V4.1 software. I\r\nlove the product and it works great!\r\n\r\nI was wondering if it is possible to customize the curve profiles, at the\r\nmoment I am only able to select presets: linear, exponential, etc.\r\nI'd like to be able to fine tune the curves to suit my braking style, the\r\nindividual points along the curve get highlighted when I hover the mouse\r\nover them, however I cannot shift their position.\r\n\r\nIs it not a feature in this software? If so, would it be possible to update\r\nthe software to implement this functionality?\r\n\r\nThank you for the clarifications,\r\nLucas\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-06-15T16:19:26Z",
+  "updated_at": "2025-06-17T03:04:19Z",
+  "requester_id": 158001548474,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003225408,
+      "body_text": "Hi LG,  You can upgrade to our latest software, SIMSONN Manager version 2.0.8. After launching the software, go to the settings menu and manually update the firmware by selecting the firmware-pedals-plus.sfu file. Once the upgrade is complete, you’ll be able to access the new configuration features in the updated software.      https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-06-16T02:37:58Z",
+      "updated_at": "2025-06-16T02:37:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003239685,
+      "body_text": "Perfect, thank you for your help! That's exactly what I needed.\r\n\r\nOn Mon, 16 Jun 2025 at 02:38, support@simsonn.com ",
+      "user_id": 158001548474,
+      "created_at": "2025-06-16T09:14:27Z",
+      "updated_at": "2025-06-16T09:14:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

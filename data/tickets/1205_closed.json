@@ -1,0 +1,214 @@
+{
+  "id": 1205,
+  "subject": "Simsonn VAM Not Detected in Simsonn Manager",
+  "description_text": "Hi,\r\n\r\nI have plugged in all three VAM units and the power cable but the Simsonn\r\nVAM is not showing up under Simsonn manager, please help with this issue.\r\nPlease see attached video\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-07-04T08:25:11Z",
+  "updated_at": "2025-12-18T09:51:51Z",
+  "requester_id": 158001891819,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004445082,
+      "body_text": "Hi Gary Billing,  In the vibration feedback section of SIMSONN Manager 2.0.8, did you see the green \"Power Connected\" indicator? If it appears green, it means the power is properly connected and the hardware is functioning correctly—you can proceed to test the vibration. Additionally, you can use SIMHUB version 9.9.3 for telemetry control, as it supports over 100 popular games. If you're unsure about the current status, feel free to send us a screenshot of the software interface, and I’ll help you verify the setup. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-04T13:21:28Z",
+      "updated_at": "2025-07-04T13:21:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445169,
+      "body_text": "I made sure to update to SIMSONN Manager 2.0.8 but there is still no green\r\nunder power connected, please see attached screenshot, The physical\r\npower adapter itself shows a small green light indicating it has power but\r\nI can only see my pedals in SIMSONN Manager.\r\n\r\n[image: image.png]\r\n\r\nOn Fri, Jul 4, 2025 at 9:21 AM service@simsonn.com ",
+      "user_id": 158001891819,
+      "created_at": "2025-07-04T13:40:16Z",
+      "updated_at": "2025-07-04T13:40:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445341,
+      "body_text": "Hi Gary Billing,  Please unplug both the USB and power cables. Then, reconnect the USB first, wait a few seconds, and plug in the power cable afterward. Check the software interface to see if the connection is successful. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-04T14:13:47Z",
+      "updated_at": "2025-07-04T14:13:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445571,
+      "body_text": "Hi,\r\n\r\nI just tried these steps but it is still showing power disconnected, My\r\nSIMSONN Plus X pedals have a successful connection but the VAM does not.\r\n\r\nOn Fri, Jul 4, 2025 at 10:13 AM service@simsonn.com ",
+      "user_id": 158001891819,
+      "created_at": "2025-07-04T15:08:33Z",
+      "updated_at": "2025-07-04T15:08:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447040,
+      "body_text": "Hi Gary Billing,  Please unplug the USB and reconnect only the power cable. Check if the LED inside the control box lights up. Alternatively, you can install the remote support tool Todesk (no registration required). After installation, just provide your ID and temporary code, and I can assist you remotely. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-04T23:43:07Z",
+      "updated_at": "2025-07-04T23:43:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447051,
+      "body_text": "The white LED inside the control box does not light up with the power\r\ncable. It only lights up when I connect the USB. This seems like a hardware\r\nissue rather than software.\r\n\r\nOn Fri, Jul 4, 2025 at 7:43 PM service@simsonn.com ",
+      "user_id": 158001891819,
+      "created_at": "2025-07-04T23:48:53Z",
+      "updated_at": "2025-07-04T23:48:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447088,
+      "body_text": "Hi Gary Billing,  Do you have another 24V power supply available? If so, please try testing the device with it. This will help us determine whether the issue is with the power supply or the PlusX control box, so we can arrange a replacement accordingly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-05T00:15:04Z",
+      "updated_at": "2025-07-05T00:15:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447179,
+      "body_text": "Yes, I tried another 24v power supply and there was no connection\r\nand the white LED did not turn on with the power cable. See attached image.\r\nIt seems like the control box power connection is defective.\r\n\r\n\r\nOn Fri, Jul 4, 2025 at 8:15 PM service@simsonn.com ",
+      "user_id": 158001891819,
+      "created_at": "2025-07-05T01:29:11Z",
+      "updated_at": "2025-07-05T01:29:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447184,
+      "body_text": "Hi Gary Billing,    Sure, please provide your order number, shipping address, and phone number so we can arrange a replacement shipment for you.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-05T01:43:24Z",
+      "updated_at": "2025-07-05T01:43:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447651,
+      "body_text": "Plus X Pedals: Ordered on Amazon - Order #\r\n702-1855324-7980214\r\n\r\nVAM: Ordered on AliExpress - Order #\r\n8202099985197602\r\n\r\nShipping address: 26 Scotchmere Crescent, Brampton, ON, Canada. L6P 3A7\r\n\r\nPhone number: 647-987-1324\r\n\r\nWill I get a tracking number? Thanks for the help.\r\n\r\n\r\nOn Fri, Jul 4, 2025 at 9:43 PM service@simsonn.com ",
+      "user_id": 158001891819,
+      "created_at": "2025-07-05T08:43:28Z",
+      "updated_at": "2025-07-05T08:43:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004452832,
+      "body_text": "Hi,\r\n\r\nCould you please let me know when the new control box has shipped and the\r\ntracking number? Thanks for your help.\r\n\r\n",
+      "user_id": 158001891819,
+      "created_at": "2025-07-07T03:07:38Z",
+      "updated_at": "2025-07-07T03:07:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004455053,
+      "body_text": "Hi Gary Billing,  We’ve already arranged the shipment of the replacement control box. As soon as the tracking number is available, I’ll update you immediately. Please note that it may require transshipment, so the international tracking number might take a bit of time to become available. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T09:52:05Z",
+      "updated_at": "2025-07-07T09:52:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004455244,
+      "body_text": "Thank you I just had some questions.\r\n1. What is the estimated shipping time to Canada? 2. Is it coming by boat\r\nor plane?\r\n3. Which shipping service was used?\r\n\r\nOn Mon, Jul 7, 2025 at 5:52 AM service@simsonn.com ",
+      "user_id": 158001891819,
+      "created_at": "2025-07-07T10:40:38Z",
+      "updated_at": "2025-07-07T10:40:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004455472,
+      "body_text": "Hi Gary Billing,  plane ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T11:33:20Z",
+      "updated_at": "2025-07-07T11:33:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004460004,
+      "body_text": "Ok thanks\r\n\r\nOn Mon, Jul 7, 2025 at 7:33 AM service@simsonn.com ",
+      "user_id": 158001891819,
+      "created_at": "2025-07-07T18:29:30Z",
+      "updated_at": "2025-07-07T18:29:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004471258,
+      "body_text": "Hi Gary Billing,  Here is your tracking number: YT2518800706183344. You can track it via https://www.yunexpress.com/.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-08T06:47:29Z",
+      "updated_at": "2025-07-08T06:47:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004471320,
+      "body_text": "Great, thank you\r\n\r\nOn Tue, Jul 8, 2025 at 2:47 AM service@simsonn.com ",
+      "user_id": 158001891819,
+      "created_at": "2025-07-08T06:55:27Z",
+      "updated_at": "2025-07-08T06:55:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004917527,
+      "body_text": "Hi could you please provide me with the sim hub compatible version for the\r\nVAM haptic reactors? Thanks.\r\n\r\n",
+      "user_id": 158001891819,
+      "created_at": "2025-07-15T23:58:58Z",
+      "updated_at": "2025-07-15T23:58:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004943056,
+      "body_text": "Hi Gary Billing, You can download version 9.9.3 directly from the official SIMHUB website. It offers full support for our pedals and vibration motors. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T06:17:51Z",
+      "updated_at": "2025-07-16T06:17:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004956124,
+      "body_text": "Ok thanks, I will try with that version.\r\n\r\nOn Wed, Jul 16, 2025 at 2:18 AM service@simsonn.com ",
+      "user_id": 158001891819,
+      "created_at": "2025-07-16T12:12:56Z",
+      "updated_at": "2025-07-16T12:12:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": 3215,
+  "subject": "Problem with my Plus X Pedals",
+  "description_text": "Hi Simsonn Team,\r\n\r\nI got a set of Plus X Pedals and I have to say I absolutely LOVE them. The\r\nonly problem I've had is with the gas struts. From the very first day, the\r\nclutch pedal was making a clicking noise. I tracked that noise down to the\r\ngas strut. It would make a loud metallic click every time it was fully\r\ndepressed.\r\n\r\nI heard some people say they preferred the gas pedal with no gas strut, so\r\nI removed the strut from the clutch pedal and replaced it with the strut\r\nfrom the gas pedal. That worked great for a day or two but then it started\r\nsqueaking. I tried using some WD40 Dry Lube at the recommendation of others\r\nonline but it didn't help the squeak.\r\n\r\nI have since removed the squeaky strut from the clutch pedal, and now I\r\nhave 2 gas struts in ziplock bags, and I'm only using the one on the brake\r\npedal. Would it be possible to get the 2 faulty gas struts replaced?\r\n\r\nMy Order #SSN2315\r\n\r\nThank you,\r\nBen\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-28T16:05:17Z",
+  "updated_at": "2025-09-12T04:47:00Z",
+  "requester_id": 158003728361,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007733561,
+      "body_text": "Hi Ben Dudek,    Based on your description, if you manually hold the hydraulic cylinder upright and then compress and extend it, and you only hear a water-like sound without any unusual noises, this indicates that the hydraulic rod is normal and not damaged. I recommend recording a video close to the clutch pedal to clearly capture the source of the sound, so I can help you identify the issue and assist in resolving it.  Please note that the hydraulic rod functions as a damper to stabilize the data. You may upload the video to Google Drive and ensure that access permissions are enabled so we can view it.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-29T00:41:49Z",
+      "updated_at": "2025-08-29T00:41:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008556473,
+      "body_text": "I still like the pedals without the hydraulic rod and I can't get them to\r\nmake any noise just by pushing them with my hand. I would have to\r\nre-install them to show you the noise. I may get around to that, but now I\r\nhave a bigger problem. I installed the VAM haptic motors, and everything\r\nwas working fine for the first test drive. The 2nd time I tried playing,\r\nthe pedals weren't working. I checked the Simsonn Manager and the pedal\r\ndata is hitching and freezing constantly. I tried restarting my PC,\r\nunplugging and replugging the pedals, I made sure the ground cable is\r\nsecurely fastened to a bare bolt on the chassis, and as a last resort I\r\neven unplugged all of the VAM motors, and they still won't work properly.\r\nAny suggestions?\r\n\r\nHere's a video of the Simsonn manager so you can see what's happening.  I'm\r\njust pressing on the gas and releasing it over and over, but you can see it\r\nfreezing up.\r\n\r\nhttps://drive.google.com/file/d/1RfZmlNvz3ovG1450W8-HYjICwF0H1_SI/view?usp=sharing\r\n\r\n\r\nOn Thu, Aug 28, 2025 at 6:42 PM service@simsonn.com ",
+      "user_id": 158003728361,
+      "created_at": "2025-09-11T22:57:52Z",
+      "updated_at": "2025-09-11T22:57:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008561969,
+      "body_text": "Hi Ben Dudek,     This issue is usually caused by using a USB hub, which can result in an unstable connection. We recommend connecting the device directly to the USB 3.0 blue port on the back of your PC for a more stable connection.  In addition, there must be a green wire connection between the PlusX controller and the pedals. Please note that paint on the surface may affect the quality of the connection.  Below is a motor interference troubleshooting checklist for your reference:     中文版本： 关于 EMI（电磁干扰）问题，建议按照以下流程进行排查与处理，以提升设备稳定性和连接可靠性：         1.        确认接地是否可靠：确保电脑插座为三孔插座，并具备有效接地功能。两孔插头无法实现有效接地。         2.        主控盒接地：使用绿色屏蔽线将主控盒的金属外壳（如铜柱或螺丝）与踏板金属部分连接；确保连接点无油漆、裸露金属接触良好。         3.        基座接地（如 Fanatec / MOZA 等）：建议使用导线将基座金属部分与电脑机箱或地线连接，释放积累的静电。         4.        避开强干扰源：避免 USB 线与高电压电源线（如电机驱动、电源适配器）平行靠近；尽量分开布线。         5.        更换 USB 接口：建议将设备直接连接至电脑主机背部的 USB 3.0 接口，避免使用无供电或劣质 USB 集线器。         6.        使用带磁环的 USB 线：必要时可更换为带有磁环的高质量 USB 线，有助于滤除高频干扰。         7.        软件固件升级：确保 SIMSONN Manager 和设备固件为最新版本，部分更新已优化抗干扰策略。         8.        使用 USB 隔离器：如果上述方法仍无法解决干扰问题，建议使用 USB 隔离器，从物理层面隔离干扰源，保护主控设备的稳定性。  ⸻  English Version: To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability:         1.        Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding.         2.        Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive.         3.        Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup.         4.        Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible.         5.        Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs.         6.        Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference.         7.        Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements.         8.        Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources.      https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting  https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-12T04:47:00Z",
+      "updated_at": "2025-09-12T04:47:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

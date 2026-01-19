@@ -1,0 +1,114 @@
+{
+  "id": 883,
+  "subject": "Calibration",
+  "description_text": "Hey there, I have for the last few hours been tring to set up your Pro Plus pedals. I am unable to make them show up through Freejoy, or your own configurator. I have made sure all of my connections are secure and in the correct places. ",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-26T19:51:59Z",
+  "updated_at": "2025-06-27T15:20:55Z",
+  "requester_id": 158001829835,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004039536,
+      "body_text": "Hi Avery Lang,     Please check if there is a button on the control box that can be pressed. If there is, press and hold the button while reconnecting the USB cable to enter recovery mode.  If there’s no button, you can go directly to the firmware update section in Simsonn Manager 2.0.8 and manually select the plus.dfu or v1.8.0.sfu file from the pedals folder to perform the update.     https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-06-26T23:44:16Z",
+      "updated_at": "2025-06-26T23:44:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004055674,
+      "body_text": "I am unable to click anything in Simsonn Manager including manually\r\nupdating. There is no button on the control box to press. I’m not sure what\r\nI am doing incorrectly.\r\n\r\n\r\nOn Thu, Jun 26, 2025 at 6:44 PM support@simsonn.com ",
+      "user_id": 158001829835,
+      "created_at": "2025-06-27T00:28:24Z",
+      "updated_at": "2025-06-27T00:28:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004076314,
+      "body_text": "你好，Avery Lang，",
+      "user_id": 158000445778,
+      "created_at": "2025-06-27T01:22:41Z",
+      "updated_at": "2025-06-27T01:22:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004100939,
+      "body_text": "I’m still unable to click manual update, my pedals were detected by Diview\r\nbut will not show any inputs on Freejoy and Simsonn manager. Now I am\r\nunable to get the brake pedal to read 100% no matter how I configure it.\r\n\r\nOn Thu, Jun 26, 2025 at 8:22 PM support@simsonn.com ",
+      "user_id": 158001829835,
+      "created_at": "2025-06-27T02:46:41Z",
+      "updated_at": "2025-06-27T02:46:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004101159,
+      "body_text": "Hi Avery Lang,  You can go to the update interface and select \"Manual Update\", then navigate to the pedals-firmware folder → pedals folder, and select the ​plus.sfu file to see if it resolves the issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-27T04:12:59Z",
+      "updated_at": "2025-06-27T04:12:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004214793,
+      "body_text": "As it stated previously, I’m unable to click the manual update, it is\r\ngrayed out. I’m very much debating putting them back in the box and\r\nreturning them. I have no idea what in the file (plus.sfu) I’m supposed to\r\nbe doing, if there is a remote way of doing this it would be incredibly\r\nhelpful.\r\n\r\nOn Thu, Jun 26, 2025 at 11:13 PM support@simsonn.com ",
+      "user_id": 158001829835,
+      "created_at": "2025-06-27T14:37:10Z",
+      "updated_at": "2025-06-27T14:37:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004214925,
+      "body_text": "Hi Avery Lang,  Please install Todesk—no registration is needed. Just provide the ID and temporary password, and I’ll assist you remotely right away. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-27T14:52:11Z",
+      "updated_at": "2025-06-27T14:52:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004214994,
+      "body_text": "Here is the login\r\n\r\nOn Thu, Jun 26, 2025 at 11:13 PM support@simsonn.com ",
+      "user_id": 158001829835,
+      "created_at": "2025-06-27T15:02:35Z",
+      "updated_at": "2025-06-27T15:02:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004215100,
+      "body_text": "I thank you so incredibly much, there was absolutely no way I was figuring\r\nthat out.\r\n\r\n",
+      "user_id": 158001829835,
+      "created_at": "2025-06-27T15:15:17Z",
+      "updated_at": "2025-06-27T15:15:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004215114,
+      "body_text": "Hi Avery Lang,  The issue has been resolved, and we've upgraded you to the latest calibration software—SIMSONN Manager 2.0.8. You no longer need to use older calibration tools like Freejoy or V4, making setup much more convenient. The problem occurred because key data was incorrectly modified using Freejoy, which caused the new software to fail in recognizing the device. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-27T15:16:42Z",
+      "updated_at": "2025-06-27T15:16:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

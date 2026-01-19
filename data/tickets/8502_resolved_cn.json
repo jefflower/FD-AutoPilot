@@ -1,0 +1,25 @@
+{
+  "id": 8502,
+  "subject": "回复：已送达",
+  "description_text": "天啊，非常感谢你\n发自我的 iPhone\n\n> 2025年12月17日 12:12，support @simsonn.com 写道：\n>\n> 这是经销商的定价，我们无法确定。\n> 我已暂时为您开通了官网购买权限。您可以在官网进行购买。",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-17T11:14:31Z",
+  "updated_at": "2025-12-22T11:30:18Z",
+  "requester_id": 158007832517,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014623870,
+      "body_text": "已经购买了，非常感谢这个选项，祝您有美好的一天\n发自我的 iPhone",
+      "user_id": 158007832517,
+      "created_at": "2025-12-17T11:37:13Z",
+      "updated_at": "2025-12-17T11:37:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

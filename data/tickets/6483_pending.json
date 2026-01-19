@@ -1,0 +1,24 @@
+{
+  "id": 6483,
+  "subject": "Customs for Italy",
+  "description_text": "Hi if I place an order from southern Italy, I will pay any extra taxes for vat or customs?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-21T11:46:14Z",
+  "updated_at": "2025-11-24T03:06:27Z",
+  "requester_id": 158007226409,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012792672,
+      "body_text": "Hi Emax Draven,    Don't worry, there are no additional fees for orders placed in Italy.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-24T03:06:27Z",
+      "updated_at": "2025-11-24T03:06:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

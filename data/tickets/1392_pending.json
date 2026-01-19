@@ -1,0 +1,44 @@
+{
+  "id": 1392,
+  "subject": "Pro x pedal and vam pro motors",
+  "description_text": "Hello I have a set of pro x pedals and I purchased a set of the vam pro haptic reactors.\r\n\r\nAfter purchasing them I saw the note on the website about they are for the ultra and the plus. My question is can I just buy the pro x ultra control box with my pedals?\r\nIt also says I can upgrade the software and control box firmware with my current setup but won't work as well. Is that true? I've tried everything and I can't get them to work, I even tried to use simhub to control them and nothings working.\r\nIf you could let me know what I should do to make them work I'd appreciate it.\r\nThanks\r\n\r\n\r\nSteve McCormick\r\nMPG Motorsports\r\n7561 Tyler Blvd Unit 3\r\nMentor OH 44060\r\n440-563-1025\r\nWWW.MPGMOTORSPORTS.COM\r\n\r\n\r\n\r\n\r\nThank you\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-09T23:19:02Z",
+  "updated_at": "2025-07-10T03:29:13Z",
+  "requester_id": 158001989311,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004497814,
+      "body_text": "Hi Steven McCormick,    In the “Settings – Update” section, click “Manual Firmware Update,” then navigate to the pedals-firmware folder → pedals folder → and select the prox.sfu file to update. After the update, please test the device again.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-09T23:40:55Z",
+      "updated_at": "2025-07-09T23:40:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004497932,
+      "body_text": "Just did it. It works now. If I upgrade the control box\r\nTo the pro x ultra will they be stronger?\r\nThank you for your help\r\n\r\nSteve McCormick\r\nMPG Motorsports\r\n7561 Tyler Blvd Unit 3\r\nMentor OH 44060\r\n440-563-1025\r\nWWW.MPGMOTORSPORTS.COM\r\n\r\n\r\n\r\n\r\nThank you\r\n________________________________\r\n",
+      "user_id": 158001989311,
+      "created_at": "2025-07-09T23:49:42Z",
+      "updated_at": "2025-07-09T23:49:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004498079,
+      "body_text": "Hi Steven McCormick,    Upgrading to the Ultra control box will provide stronger force feedback.  However, if you’re already satisfied with the current strength, there’s no need to upgrade!",
+      "user_id": 158000445778,
+      "created_at": "2025-07-09T23:58:13Z",
+      "updated_at": "2025-07-09T23:58:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

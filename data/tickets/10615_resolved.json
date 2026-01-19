@@ -1,0 +1,294 @@
+{
+  "id": 10615,
+  "subject": "Handbrake",
+  "description_text": "Based on previous emails it is still disconnecting and not being recognised\r\nby the pc . This happends randomly and sometimes mid game. Only the pedels\r\nare being detected mot the handbrake .\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-12T05:45:06Z",
+  "updated_at": "2026-01-14T07:04:48Z",
+  "requester_id": 158005185367,
+  "responder_id": 158007774664,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016841187,
+      "body_text": "Hi Immanuel Podesta,    Could you please confirm that you are using the handbrake? The issue appears to be caused by an incorrect configuration profile.  Please provide your order number so I can verify the exact model. Then, please use the correct handbrake profile to restore the device to factory settings, and recalibrate it afterward.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-12T06:27:22Z",
+      "updated_at": "2026-01-12T06:27:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016841585,
+      "body_text": "Hi Immanuel Podesta,     The restore procedure is as follows:    Click Load config from file    Select the downloaded SIMSONN HB.cfg file    Click Write config to device    This procedure applies to our load cell (pressure) handbrake.       Please download FreeJoy 1.7.0. After connecting the device, follow these steps:    Click Read config from device    Click Axis    Click Calibrate    Pull the handbrake several times    Click Stop Calibration    Click Write config to device    After that, please check whether the blue progress bar of the handbrake moves from 0% to 100%. If it works correctly, you can then proceed with the in-game calibration.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-12T06:29:44Z",
+      "updated_at": "2026-01-12T06:29:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016842264,
+      "body_text": "Ive done all those steps before and it started working but it randomly\r\ndisconnects randomly again .\r\n\r\nOn Mon, 12 Jan 2026, 4:27 pm support@simsonn.com, ",
+      "user_id": 158005185367,
+      "created_at": "2026-01-12T06:38:32Z",
+      "updated_at": "2026-01-12T06:38:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016842352,
+      "body_text": "The handbrake is not showing in the freejoy software only the pro pedels\r\nare showing\r\n\r\nOn Mon, 12 Jan 2026, 4:27 pm support@simsonn.com, ",
+      "user_id": 158005185367,
+      "created_at": "2026-01-12T06:42:05Z",
+      "updated_at": "2026-01-12T06:42:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016842609,
+      "body_text": "I have now done all the steps you said and handbrake is not showing up or\r\nworking at all . On the freejoy its only the simson pro pedels that show up\r\nbut the encoder for the handbrake doesnt get recognised by the pc anymore .\r\nAnd does not show up on the freejoy software\r\n\r\nOn Mon, 12 Jan 2026, 4:27 pm support@simsonn.com, ",
+      "user_id": 158005185367,
+      "created_at": "2026-01-12T06:52:33Z",
+      "updated_at": "2026-01-12T06:52:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016844086,
+      "body_text": "Hi Immanuel Podesta,  Please install the ToDesk remote tool (no registration required) and provide your ID and temporary access code. I will assist you remotely to check and resolve the issue.      https://dl.todesk.com/irrigation/ToDesk_4.8.4.2.exe",
+      "user_id": 158000445778,
+      "created_at": "2026-01-12T07:40:50Z",
+      "updated_at": "2026-01-12T07:40:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016844210,
+      "body_text": "Ive downloaded it but its in chinese i can understand what to click\r\n\r\nOn Mon, 12 Jan 2026, 5:41 pm support@simsonn.com, ",
+      "user_id": 158005185367,
+      "created_at": "2026-01-12T07:45:34Z",
+      "updated_at": "2026-01-12T07:45:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016844349,
+      "body_text": "Cant understand i mean .. sorry\r\n\r\nOn Mon, 12 Jan 2026, 5:45 pm Immanuel Podesta, <immanuelpodesta@gmail.com>\r\nwrote:\r\n\r\n> Ive downloaded it but its in chinese i can understand what to click\r\n>\r\n> On Mon, 12 Jan 2026, 5:41 pm support@simsonn.com, ",
+      "user_id": 158005185367,
+      "created_at": "2026-01-12T07:50:17Z",
+      "updated_at": "2026-01-12T07:50:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016844361,
+      "body_text": "Hi Immanuel Podesta,     If it prompts you to log in, please click the close button in the top right corner, then copy the ID and verification code and send them to me. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-12T07:50:48Z",
+      "updated_at": "2026-01-12T07:50:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016844423,
+      "body_text": "394912956\r\n\r\nOn Mon, 12 Jan 2026, 5:51 pm support@simsonn.com, ",
+      "user_id": 158005185367,
+      "created_at": "2026-01-12T07:53:06Z",
+      "updated_at": "2026-01-12T07:53:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016844595,
+      "body_text": "Hi Immanuel Podesta,  Please click “Accept.” ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-12T07:58:22Z",
+      "updated_at": "2026-01-12T07:58:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016844642,
+      "body_text": "Show me where i dont understand chinese\r\n\r\nOn Mon, 12 Jan 2026, 5:58 pm support@simsonn.com, ",
+      "user_id": 158005185367,
+      "created_at": "2026-01-12T07:59:56Z",
+      "updated_at": "2026-01-12T07:59:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016844712,
+      "body_text": "Hi Immanuel Podesta,  Please take a photo of the current interface and send it to me. I will guide you through the steps. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-12T08:01:48Z",
+      "updated_at": "2026-01-12T08:01:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016844795,
+      "body_text": "I managed to find the language so its in english now if u try again i\r\nshould be able to accept now\r\n\r\nOn Mon, 12 Jan 2026, 6:01 pm support@simsonn.com, ",
+      "user_id": 158005185367,
+      "created_at": "2026-01-12T08:03:22Z",
+      "updated_at": "2026-01-12T08:03:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016844816,
+      "body_text": "On Mon, 12 Jan 2026, 6:01 pm support@simsonn.com, ",
+      "user_id": 158005185367,
+      "created_at": "2026-01-12T08:04:14Z",
+      "updated_at": "2026-01-12T08:04:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016845275,
+      "body_text": "On Mon, 12 Jan 2026, 5:51 pm support@simsonn.com, ",
+      "user_id": 158005185367,
+      "created_at": "2026-01-12T08:12:23Z",
+      "updated_at": "2026-01-12T08:12:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016845839,
+      "body_text": "Order number : 8192485336827283\r\nImmanuel podesta\r\n0455456047\r\n40 miers Cres, Murrumba Downs QLD 4503, Australia\r\n\r\nOn Mon, 12 Jan 2026, 6:03 pm Immanuel Podesta, <immanuelpodesta@gmail.com>\r\nwrote:\r\n\r\n>\r\n>\r\n>\r\n> On Mon, 12 Jan 2026, 6:01 pm support@simsonn.com, ",
+      "user_id": 158005185367,
+      "created_at": "2026-01-12T08:24:53Z",
+      "updated_at": "2026-01-12T08:24:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016850032,
+      "body_text": "Hi Immanuel Podesta,  Your product has been shipped. The logistics number is:JSEAA1208444138YQ. You can track it at this website:https://t.17track.net/zh-cn#nums=JSEAA1208444138YQ ",
+      "user_id": 158007774664,
+      "created_at": "2026-01-12T09:41:50Z",
+      "updated_at": "2026-01-12T09:41:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016871567,
+      "body_text": "On Tue, 13 Jan 2026, 12:58 am Immanuel Podesta, <immanuelpodesta@gmail.com>\r\nwrote:\r\n\r\n> My pedels  are now not being detected\r\n>\r\n>\r\n>\r\n> On Mon, 12 Jan 2026, 7:42 pm support@simsonn.com, ",
+      "user_id": 158005185367,
+      "created_at": "2026-01-12T15:00:16Z",
+      "updated_at": "2026-01-12T15:00:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016872273,
+      "body_text": "My pedels  are now not being detected\r\n\r\n\r\n\r\nOn Mon, 12 Jan 2026, 7:42 pm support@simsonn.com, ",
+      "user_id": 158005185367,
+      "created_at": "2026-01-12T15:08:00Z",
+      "updated_at": "2026-01-12T15:08:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016945631,
+      "body_text": "Hi Immanuel Podesta,  Please use a USB 3.0 interface.      Simsonn Manager Download：  http://download.simsonn.com/simsonnmanager ​",
+      "user_id": 158007774664,
+      "created_at": "2026-01-13T07:36:07Z",
+      "updated_at": "2026-01-13T07:36:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016946274,
+      "body_text": "But there is no button in the controll box . It worked fined until after\r\nyou guys changed some setting trying to fix my handbrake via remote access\r\n\r\nOn Tue, 13 Jan 2026, 5:36 pm support@simsonn.com, ",
+      "user_id": 158005185367,
+      "created_at": "2026-01-13T07:44:29Z",
+      "updated_at": "2026-01-13T07:44:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016946718,
+      "body_text": "Also i have the old pro pedels not the new ones\r\n\r\nOn Tue, 13 Jan 2026, 5:43 pm Immanuel Podesta, <immanuelpodesta@gmail.com>\r\nwrote:\r\n\r\n>\r\n> But there is no button in the controll box . It worked fined until after\r\n> you guys changed some setting trying to fix my handbrake via remote access\r\n>\r\n> On Tue, 13 Jan 2026, 5:36 pm support@simsonn.com, ",
+      "user_id": 158005185367,
+      "created_at": "2026-01-13T07:49:17Z",
+      "updated_at": "2026-01-13T07:49:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016947196,
+      "body_text": "Hi Immanuel Podesta,      Please follow the steps below:  Press and hold the upgrade button on the PlusX main controller, then reconnect the USB cable.  Open SIMSONN Manager 2.1.2 and check if it has entered recovery mode.  If recovery mode is detected, go to Settings → Update → Manual Update Firmware → pedals → firmware → pedals-proxultra/plusx.sfu.  After the update is complete, test the device to see if it has been restored successfully.              Upgrade button on the main control box:",
+      "user_id": 158007774664,
+      "created_at": "2026-01-13T07:59:31Z",
+      "updated_at": "2026-01-13T07:59:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016947302,
+      "body_text": "Thats not my control box\r\n\r\n\r\n\r\n\r\n\r\nOn Tue, 13 Jan 2026, 5:59 pm support@simsonn.com, ",
+      "user_id": 158005185367,
+      "created_at": "2026-01-13T08:02:00Z",
+      "updated_at": "2026-01-13T08:02:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016954690,
+      "body_text": "Hi Immanuel Podesta,  ​Please follow the attached video to upgrade.",
+      "user_id": 158007774664,
+      "created_at": "2026-01-13T09:23:05Z",
+      "updated_at": "2026-01-13T09:23:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016998176,
+      "body_text": "It now workes thanks so much\r\n\r\nOn Tue, 13 Jan 2026, 7:23 pm support@simsonn.com, ",
+      "user_id": 158005185367,
+      "created_at": "2026-01-13T15:37:17Z",
+      "updated_at": "2026-01-13T15:37:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017076709,
+      "body_text": "Hi Immanuel Podesta,  You are welcome. If you have any questions, please feel free to contact us.",
+      "user_id": 158007774664,
+      "created_at": "2026-01-14T07:04:41Z",
+      "updated_at": "2026-01-14T07:04:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

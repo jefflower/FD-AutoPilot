@@ -1,0 +1,94 @@
+{
+  "id": 9880,
+  "subject": "Order #SSN5223",
+  "description_text": "Hi,\r\n\r\nPlease can you tell me where my parcel is, when i track it i get\r\nthe following message: *The following waybills have not been collected or\r\nhave been shipped for more than 3 months: SF6047201467860*\r\n\r\nThanks\r\nHayden\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2026-01-03T15:41:06Z",
+  "updated_at": "2026-01-16T03:16:35Z",
+  "requester_id": 158008889634,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015807796,
+      "body_text": "Please can i have a reply, its been 2 days since i opened the ticket...\r\nwhere is my item?\r\n\r\n",
+      "user_id": 158008889634,
+      "created_at": "2026-01-05T21:28:04Z",
+      "updated_at": "2026-01-05T21:28:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016003330,
+      "body_text": "Please can i have a response on this",
+      "user_id": 158008889634,
+      "created_at": "2026-01-06T22:21:19Z",
+      "updated_at": "2026-01-06T22:21:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158016108961,
+      "body_text": "Hi Hayden Sweet,  Due to a few days off during the New Year holiday, emails were accumulated, which caused a delay in our response. We sincerely apologize for this. We are currently working overtime to produce the VAM Pro, and your order will be shipped as soon as possible. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T10:16:20Z",
+      "updated_at": "2026-01-07T10:16:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016220169,
+      "body_text": "Ok, Do you know how long it will take to dispatch?",
+      "user_id": 158008889634,
+      "created_at": "2026-01-07T22:35:57Z",
+      "updated_at": "2026-01-07T22:35:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158016626915,
+      "body_text": "Can i have an update please?",
+      "user_id": 158008889634,
+      "created_at": "2026-01-09T22:18:18Z",
+      "updated_at": "2026-01-09T22:18:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158017171952,
+      "body_text": "Hi Hayden Sweet,  I apologize for the delayed response.  Your package is currently in transit and is expected to arrive around the 19th. Below is your package tracking link:  https://t.17track.net/en#nums=SF6047201467860",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T08:53:24Z",
+      "updated_at": "2026-01-15T08:53:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017172027,
+      "body_text": "No problem, thank you for the update.\r\n\r\nOn Thu, 15 Jan 2026 at 08:53, service@simsonn.com ",
+      "user_id": 158008889634,
+      "created_at": "2026-01-15T08:55:20Z",
+      "updated_at": "2026-01-15T08:55:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017237454,
+      "body_text": "Hi Hayden Sweet,  You're welcome. Thank you for purchasing our product. Should you have any questions in the future, please feel free to contact us. We will address them promptly.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T03:16:34Z",
+      "updated_at": "2026-01-16T03:16:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

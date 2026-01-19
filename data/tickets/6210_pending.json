@@ -1,0 +1,24 @@
+{
+  "id": 6210,
+  "subject": "application connection problem",
+  "description_text": "\r\n\r\n\r\n \r\n Hello, my pedals simsonn pro x are correctly connected in Windows, but they appear disconnected in the Simsonn Manager application. Could you please help me quickly, as I have special events coming up in a competition? Please see photo above.",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-16T11:55:04Z",
+  "updated_at": "2025-11-19T03:23:31Z",
+  "requester_id": 158002632564,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012558401,
+      "body_text": "Hi Dominique CASTEL,    ProX / ProX Ultra Pedal Firmware Update Procedure:    Press and hold the Upgrade button on the control box;    Reconnect the USB cable;    The software will indicate that the device has entered “Simsonn Flasher mode”;    In the software, go to: Settings → Update → Manual Firmware Update → pedals → firmware → pedals-proxultra.sfu (If it’s a ProX pedal, select pedals-prox.sfu)    Start the firmware update, and once it is complete, release the Upgrade button;    Finally, retest and calibrate the pedals.    Note: Make sure to use the USB 3.0 port on the back of your PC and avoid USB hubs to ensure stable power and proper device recognition.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-19T03:23:31Z",
+      "updated_at": "2025-11-19T03:23:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

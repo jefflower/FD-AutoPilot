@@ -1,0 +1,74 @@
+{
+  "id": 6063,
+  "subject": "Brake pedal",
+  "description_text": "Hello. I am currently experiencing an issue where my brake pedal with randomly register even when I am not touching it. It normally starts around 10-20% then if I hit the brakes again it will go to full pressure registering. I also have an issue where my clutch pedal is bouncing around 10-15% but with the dead zone input with the software I am able to get it to go away not sure if they are related or not. I don't believe I should have to have such a big dead zone in the clutch pedal. Any advise is appreciated as I am unable to race currently due to the brake pedal issue. \r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-13T23:10:18Z",
+  "updated_at": "2025-11-19T03:39:22Z",
+  "requester_id": 158005537565,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012399749,
+      "body_text": "Hi barry acker,  First, please make sure you are using a USB 3.0 (blue) port, and avoid connecting the device through a USB hub. Additionally, please refer to the link below and use any wire to connect the computer case to a screw on the controller box. You may also connect any screw on the controller box to any screw on the pedal.  The reason for this is that some computer cases are not properly grounded to the household earth, which may cause grounding issues and affect device stability.     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-11-16T02:23:02Z",
+      "updated_at": "2025-11-16T02:23:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012399778,
+      "body_text": "Hi barry acker,  Additionally, you can use the Offset function to adjust the pedal’s original white signal to start at 0%, and then perform a new calibration. After calibration, the game will use the blue signal. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-16T02:24:34Z",
+      "updated_at": "2025-11-16T02:24:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012422773,
+      "body_text": "I can give that a go but I don’t believe that is the issue considering I’ve had this problem on two different pcs and it just started becoming a constant issue. Nothing has changed on anything. Do you have any other suggestions? If it was a EMI issue why would it only affect the brake pedal? The clutch pedal issue has been there since day one of me receiving the pedals but the brake issue just started becoming consistent. It has happened before but normally would go right away. So any other thoughts? \r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158005537565,
+      "created_at": "2025-11-16T18:47:46Z",
+      "updated_at": "2025-11-16T18:47:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012426195,
+      "body_text": "Okay so I have tried the grounding method and still having the same exact issue. Also confirmed that I am plugged into a USB 3.0 slot. So is there any reason that this is still happening? \r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158005537565,
+      "created_at": "2025-11-16T23:43:45Z",
+      "updated_at": "2025-11-16T23:43:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012555927,
+      "body_text": "Good evening. I am hoping to receive some sort of assistance with this issue? I have done everything you recommended and am still having this issue. I currently can not use my pedals which is very disappointing. Please let me know what else can be done? \r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158005537565,
+      "created_at": "2025-11-19T00:50:51Z",
+      "updated_at": "2025-11-19T00:50:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012558588,
+      "body_text": "Hi barry acker,    Sorry for the late reply. In theory, the ProX uses a differential amplified signal, so it should not be affected by such obvious interference.  You can record a video using SIMSONN Manager 2.1.2 and share it with me via Google Drive, making sure to set the proper access permissions. Alternatively, you can use VKB JoyTester to show the pedal curves for me to check.     https://cdn.shopify.com/s/files/1/0551/4739/7238/files/VKB_JoyTester_40fdd530-6057-437e-9b50-3ac2d59dbbcd.zip?v=1693176246",
+      "user_id": 158000445778,
+      "created_at": "2025-11-19T03:39:21Z",
+      "updated_at": "2025-11-19T03:39:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": 2513,
+  "subject": "踏板问题",
+  "description_text": "嗨。我的 Simsonn black pro plus 踏板的刹车踏板有问题。我当时正在比赛，一切都很好。比赛结束后，我想在 Simpedalsconfig_v4 程序中恢复我之前的校准设置。我点击了“加载校准”后，我的刹车踏板好像无法识别了。我无法校准它，什么都做不了。\nhttps://youtu.be/fL7X1i2eIf4",
+  "status": 4,
+  "priority": 3,
+  "created_at": "2025-08-09T20:39:18Z",
+  "updated_at": "2025-08-10T07:33:42Z",
+  "requester_id": 158002887755,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006615447,
+      "body_text": "嗨 Tomek Nagler，您当前使用的版本太旧了。我们建议您下载并安装最新的 SIMSONN Manager 2.1.0。请按照以下步骤手动更新固件： 步骤： 打开软件，进入设置 → 更新 → 手动固件更新 选择踏板 选择 plus.sfu 文件执行更新 更新完成后，问题应该就解决了。 https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T02:59:35Z",
+      "updated_at": "2025-08-10T02:59:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006631202,
+      "body_text": "奏效了。非常感谢 :)",
+      "user_id": 158002887755,
+      "created_at": "2025-08-10T06:38:29Z",
+      "updated_at": "2025-08-10T06:38:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006633694,
+      "body_text": "星期日，2025年8月10日04:59 service@simsonn.com",
+      "user_id": 158002887755,
+      "created_at": "2025-08-10T07:33:41Z",
+      "updated_at": "2025-08-10T07:33:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

@@ -1,0 +1,124 @@
+{
+  "id": 1125,
+  "subject": "Brake load cell",
+  "description_text": "Hello,\r\n\r\nI think i have an issue with the load cell of my braking pedal. I ordered an simmson PRO X  P3-H1 pedal on december 2024. Number order : 23215169900102004\r\nI can full push the brake pedal with my hand and reach 100% on simsonn manager, i think it's impossible to do that on 200kg loadcell. Is it a defective load cell?\r\nCan i have an estimate for a brake upgrade kit pedal only for braking pedal + an haptic  kit   included vam pro,power supply and if nedeed control box.\r\n\r\nBest regards.\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-07-02T19:53:21Z",
+  "updated_at": "2025-08-03T10:09:29Z",
+  "requester_id": 158001877059,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004445377,
+      "body_text": "Hi Fred Gourd, Please use a toothpick or screwdriver to press and hold the small button inside the hole on the side of the control box, then reconnect the USB cable. The software should enter recovery mode. Next, go to Settings → Update → Manual Firmware Update → Pedals → Firmware → Pedals → plusX.sfu and try updating the firmware manually. If the issue persists, we recommend installing Todesk (no registration required). Simply provide your ID and temporary access code, and we can schedule a time to assist you remotely. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-04T14:21:50Z",
+      "updated_at": "2025-07-04T14:21:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004943699,
+      "body_text": "Hi,\r\n\r\nThanks for your answer, i did  and it's better but a little smooth.\r\nI saw a youtube video wich explain taht you have to\r\nthighten the hex wrench under the pedal to become harder.\r\nWhat do you think about that?\r\n\r\nBest regards.\r\n________________________________\r\nDe : support@simsonn.com ",
+      "user_id": 158001877059,
+      "created_at": "2025-07-16T08:23:52Z",
+      "updated_at": "2025-07-16T08:23:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004944353,
+      "body_text": "Hi Fred Gourd,  We couldn’t find your order in our system, so it’s possible that you didn’t purchase it from our official AliExpress store. Please send us photos of your pedal and control box so we can confirm the model. If you’re using the ProX pedals, we offer an upgrade kit that can improve the damping and hydraulic feel. Additionally, there are internal screws inside the base sensor that allow for fine-tuning the sensor’s travel range.      If you're referring to the 8-level adjustable hydraulic rod strength, then yes — this upgrade kit includes a softer version, designed for users who prefer a lighter pedal feel.       https://www.simsonn.com/products/simsonn-pro-x-ultra-pedals-upgrade-kit",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T09:49:12Z",
+      "updated_at": "2025-07-16T09:49:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005135094,
+      "body_text": "Hi , thanks for your answer.\r\n\r\nI ordered it on alibaba, N# 232151699001020047, date 2024-11-25  10:02:49\r\nScreenshot in atachment.\r\nDo you sell upgrade kit without hydraulics , because i have it on the brake and no need for trhotle and clutch.\r\n\r\nI have another issue with the led on the throttle. I'will send you pictures of that latter, i'm not at home.\r\n\r\nBests regards\r\n\r\n________________________________\r\nDe : support@simsonn.com ",
+      "user_id": 158001877059,
+      "created_at": "2025-07-17T12:10:31Z",
+      "updated_at": "2025-07-17T12:10:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005143822,
+      "body_text": "Hi Fred Gourd,    Is there anything else you need assistance with at the moment?",
+      "user_id": 158000445778,
+      "created_at": "2025-07-18T00:10:18Z",
+      "updated_at": "2025-07-18T00:10:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005146684,
+      "body_text": "Hello,\r\n\r\nThe led on the throttle have an issue, it is set on red off throttle and blue on throttle.\r\nI tried to set another colors and it s still the same.\r\n\r\n\r\n\r\n________________________________\r\nDe : support@simsonn.com ",
+      "user_id": 158001877059,
+      "created_at": "2025-07-18T09:47:09Z",
+      "updated_at": "2025-07-18T09:47:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005162456,
+      "body_text": "Hi Fred Gourd,  Is it the LED strip on the left side of the throttle that’s damaged? Please provide your shipping address, contact name, and phone number, and we will send you a replacement LED module assembly for the left side of the throttle.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-19T07:20:03Z",
+      "updated_at": "2025-07-19T07:20:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005286759,
+      "body_text": "Hi,\r\nYes it is on the left side.\r\nMy name and adress are:\r\n\r\nGourdonneau Frederic\r\n15 rue des crocs blancs\r\n87520 Oradour sur glane\r\nFrance\r\n\r\nMy phone number is :\r\n+33685821089\r\n\r\nThank you .\r\n\r\nBests regards.\r\n________________________________\r\nDe : support@simsonn.com ",
+      "user_id": 158001877059,
+      "created_at": "2025-07-21T20:20:00Z",
+      "updated_at": "2025-07-21T20:20:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005355689,
+      "body_text": "Hi Fred Gourd,  Here is your tracking number YT2520300704321299 , you track it via https://www.yuntrack.com/parcelTracking?id=​YT2520300704321299 ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-23T04:27:24Z",
+      "updated_at": "2025-07-23T04:27:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005785528,
+      "body_text": "Hi,\r\nI receive it today.\r\nThank you very much!\r\nBest regards\r\n________________________________\r\nDe : support@simsonn.com ",
+      "user_id": 158001877059,
+      "created_at": "2025-07-29T19:16:29Z",
+      "updated_at": "2025-07-29T19:16:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006129954,
+      "body_text": "",
+      "user_id": 158001877059,
+      "created_at": "2025-08-03T10:09:28Z",
+      "updated_at": "2025-08-03T10:09:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ]
+}

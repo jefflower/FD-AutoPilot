@@ -1,0 +1,44 @@
+{
+  "id": 8593,
+  "subject": "Order cancelled",
+  "description_text": "Hello, I would like to cancel my order #SSN4759 immediately. The order has not been fulfilled yet, and I no longer wish to proceed. Please confirm the cancellation and issue a full refund as soon as possible. Thank you\r\n\r\nVon meinem iPhone gesendet\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-18T11:44:14Z",
+  "updated_at": "2025-12-24T11:03:11Z",
+  "requester_id": 158007859870,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014863824,
+      "body_text": "Hi Tobias Raudaschl,    Your order was originally scheduled for shipment from our German warehouse, but due to transportation delays, the goods arrived later than expected. They have now arrived at the warehouse, and we are arranging for them to be stocked and shipped via DHL Express. May I confirm your cancellation request?",
+      "user_id": 158001343601,
+      "created_at": "2025-12-22T08:29:16Z",
+      "updated_at": "2025-12-22T08:29:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014884939,
+      "body_text": "No, if they arrived i dont want to cancell,\r\nThanks for your Information.\r\nVon meinem iPhone gesendet\r\n\r\n> Am 22.12.2025 um 09:29 schrieb service@simsonn.com:\r\n> \r\n> ﻿\r\n> Hi Tobias Raudaschl,\r\n> \r\n> Your order was originally scheduled for shipment from our German warehouse, but due to transportation delays, the goods arrived later than expected. They have now arrived at the warehouse, and we are arranging for them to be stocked and shipped via DHL Express. May I confirm your cancellation request?\r\n> \r\n> \r\n> \r\n> ",
+      "user_id": 158007859870,
+      "created_at": "2025-12-22T14:18:54Z",
+      "updated_at": "2025-12-22T14:18:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014884996,
+      "body_text": "So feel free to ship them\r\nVon meinem iPhone gesendet\r\n\r\n> Am 22.12.2025 um 15:18 schrieb Tobias Raudaschl <tobraudi49@icloud.com>:\r\n> \r\n> ﻿No, if they arrived i dont want to cancell,\r\n> Thanks for your Information.\r\n> Von meinem iPhone gesendet\r\n> \r\n>>> Am 22.12.2025 um 09:29 schrieb service@simsonn.com:\r\n>>> \r\n>> ﻿\r\n>> Hi Tobias Raudaschl,\r\n>> \r\n>> Your order was originally scheduled for shipment from our German warehouse, but due to transportation delays, the goods arrived later than expected. They have now arrived at the warehouse, and we are arranging for them to be stocked and shipped via DHL Express. May I confirm your cancellation request?\r\n>> \r\n>> \r\n>> \r\n>> ",
+      "user_id": 158007859870,
+      "created_at": "2025-12-22T14:19:46Z",
+      "updated_at": "2025-12-22T14:19:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

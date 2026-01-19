@@ -1,0 +1,24 @@
+{
+  "id": 6306,
+  "subject": "No order confirmation received after purchasing pedals",
+  "description_text": "Hello,\r\n\r\nI purchased yesterday a set of pedals Simsonn Plus X (Plus X P2-H2Black\r\nwith baseplate) but haven't received any order confirmation since then. I\r\ndid not enter my mail adress while making the order but my phone number\r\ninstead.\r\n\r\nI can see that the payment is processing at the moment on my bank account.\r\nIt was made on November 17th at 22:38.\r\n\r\nIs this normal ? Will I received a text message when the payment is\r\ncomplete ?\r\n\r\nInformation I entered in the checkout form :\r\n- Phone number : +33 6 77 87 25 39 (french phone number)\r\n- First name : Matthieu\r\n- Last name : PARENT\r\n- Address : 2 Ter Route de la Loeuf - 44119 Grandchamp-des-Fontaines, FRANCE\r\n\r\nThank you for your help.\r\n\r\nBest regards,\r\n\r\nMatthieu PARENT\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-11-18T16:58:58Z",
+  "updated_at": "2025-11-21T11:26:08Z",
+  "requester_id": 158007164591,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012698239,
+      "body_text": "Hi Parent Matthieu,    You did not provide an email address, so you did not receive the order notification. Here is your logistics tracking link.  https://www.sf-international.com/gb/en/support/querySupport/waybill?No=SF3277374739303",
+      "user_id": 158001343601,
+      "created_at": "2025-11-21T11:26:08Z",
+      "updated_at": "2025-11-21T11:26:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

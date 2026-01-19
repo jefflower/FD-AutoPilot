@@ -1,0 +1,84 @@
+{
+  "id": 87,
+  "subject": "Re: 回复：Haptoc motor not working on pro x pedals.",
+  "description_text": "Hi There,\r\n\r\nThank you for the response.\r\nI did upgrade the software on the control box to the latest, however what do you mean by \"original control box firmware to support Haptic Reactor\".\r\nI would like to use the Vam Pro, how do I get a new control box or motherboard?\r\n\r\nThanks,\r\n\r\nPete\r\n\r\n________________________________\r\nFrom: General and sales enquiries <service@simsonn.com>\r\nSent: Wednesday, 4 June 2025 1:27 AM\r\nTo: Peter herath <peterherath@hotmail.com>\r\nSubject: 回复：Haptoc motor not working on pro x pedals.\r\n\r\nHello, the Pro X control box needs to upgrade the software and the original control box firmware to support Haptic Reactor. And using Vam Pro can only vibrate in one direction, and the intensity is lower than Pro X Ultra. You can check the precautions point 3. If you need stronger vibration, you can choose Vam. If you need a better feeling, you can choose Vam pro. We will give you a Pro X Ultra control box or motherboard.\r\n\r\n\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-03T23:46:02Z",
+  "updated_at": "2025-06-05T07:58:28Z",
+  "requester_id": 158000954928,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002319933,
+      "body_text": "What do I need to gwt this working? A new controller, a specific motor? Does the Simsonn app allow me to turn on the haptic motor? It says there is a button for it, but I don't know if it works. I am on the most up to date software too. Thanks. ",
+      "user_id": 158000954928,
+      "created_at": "2025-06-03T23:45:19Z",
+      "updated_at": "2025-06-03T23:45:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002324247,
+      "body_text": "Hi Peter herath,  Hello, the ProX supports the VAM vibration motor, but its compatibility with the VAM Pro is limited — the vibration strength may be weaker. We recommend purchasing the ProX Ultra controller, which offers the best support for the VAM Pro. The Ultra version features upgraded hardware specifically designed to drive the VAM Pro more effectively. We will be listing the ProX Ultra controller board on our store soon — please stay tuned. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-04T06:47:42Z",
+      "updated_at": "2025-06-04T06:47:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002401838,
+      "body_text": "Hi Peter herath, The ProX requires an external 24V power supply before it can be tested. It also supports our VAM motors, which are available for purchase on our official website: www.simsonn.com. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-04T12:47:07Z",
+      "updated_at": "2025-06-04T12:47:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002447371,
+      "body_text": "ID 号为 43 和 63 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-05T07:56:48Z",
+      "updated_at": "2025-06-05T07:56:48Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158002447372,
+      "body_text": "合并来自工单43  \n      主题: Haptoc motor not working on pro x pedals.  \n      描述:  Hi there,  How do I get the haptic motors working with my pro x pedals? \n Using the Simsonn controller app, when I try to test the vibrate function, I see no voltage output from the control box. \n Thanks, \n Pete",
+      "user_id": 158000445778,
+      "created_at": "2025-06-05T07:56:48Z",
+      "updated_at": "2025-06-05T07:56:48Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158002447380,
+      "body_text": "合并来自工单63  \n      主题: Re: 回复：Haptoc motor not working on pro x pedals.  \n      描述:  I sont have any motor yet, I'm just measuring voltage to see if there is output.  I see no voltage, so I doubt any motor would work. Which motor should I use for the pro x?  \n Thanks, \n Pete \n \n \n  On Jun 3, 2025 3:43 AM, General and sales enquiries <service@simsonn.com> wrote:  \n \n Hi, which brand of haptic motors are you using. \n \n \n   \n \n            \n       Peter herath<peterherath@hotmail.com> 在 2025年6月2日 周一 22:28 写道： \n \n \n  Hi there,  How do I get the haptic motors working with my pro x pedals? \n Using the Simsonn controller app, when I try to test the vibrate function, I see no voltage output from the control box. \n Thanks, \n Pete",
+      "user_id": 158000445778,
+      "created_at": "2025-06-05T07:56:50Z",
+      "updated_at": "2025-06-05T07:56:50Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158002447991,
+      "body_text": "Hi Peter herath, Hello, you can purchase the PlusX or ProX Ultra control boxes on our official website. Both support VAM and VAM Pro. The ProX only supports VAM and does not support VAM Pro. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-05T07:58:28Z",
+      "updated_at": "2025-06-05T07:58:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

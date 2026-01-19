@@ -1,0 +1,24 @@
+{
+  "id": 5843,
+  "subject": "Payment & Discount codes",
+  "description_text": "hello. when does your BLLACK30 sale expire? because if it expires soon i\r\nneed to know so i wont miss it. thanks a lot\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-09T14:06:44Z",
+  "updated_at": "2025-11-10T06:40:38Z",
+  "requester_id": 158001853224,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012030631,
+      "body_text": "Hi Etain the games,  The promotion ends on November 30th. You can use the code Black45 to enjoy a $45 discount, with a minimum purchase requirement of $199.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-10T06:40:38Z",
+      "updated_at": "2025-11-10T06:40:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "id": 10284,
+  "subject": "Question regarding import charges on my order",
+  "description_text": "Hello,\r\n\r\n\r\nI am writing to follow up on my previous message, as I have not yet\r\nreceived a reply.\r\n\r\nOrder N’ SSN4600\r\n\r\nI recently had to pay 41.82 € in import charges requested by UPS, as the\r\norder was shipped from China. At the time of purchase, I understood that\r\nthe product would be shipped from a European warehouse, and I was not aware\r\nthat additional customs charges could apply.\r\n\r\nFor this reason, I would kindly like to ask:\r\n- why the order was shipped from outside the EU, and\r\n- whether it is possible to receive a refund or compensation for the import\r\ncharges I had to pay.\r\n\r\nI paid these fees only to avoid delays with the delivery, Since it was a\r\nChristmas gift as anticipated in the old email, and I would really\r\nappreciate your clarification on this matter.\r\n\r\nThank you very much for your time and support.\r\nI look forward to your reply.\r\n\r\nKind regards,\r\nSamuele\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-08T09:08:41Z",
+  "updated_at": "2026-01-08T10:44:26Z",
+  "requester_id": 158007830469,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016320095,
+      "body_text": "Hi Samuele Sommariva,    Please don't worry. After completing payment, provide the UPS invoice and we will reimburse you for a portion of the cost.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-08T10:03:19Z",
+      "updated_at": "2026-01-08T10:03:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016322940,
+      "body_text": "Hello,\r\n\r\n\r\nthank you for your reply, I really appreciate it.\r\n\r\n\r\nI have already completed the payment to UPS.\r\n\r\nPlease find the UPS invoice attached for reference.\r\n\r\n\r\nCould you please let me know which portion of the 41.82 € import charges\r\nwill be reimbursed and how the reimbursement will be processed?\r\n\r\n\r\nThank you very much for your support.\r\n\r\nI look forward to your confirmation.\r\n\r\n\r\nKind regards.\r\n\r\n\r\n\r\nIl giorno gio 8 gen 2026 alle 11:03 service@simsonn.com ",
+      "user_id": 158007830469,
+      "created_at": "2026-01-08T10:23:45Z",
+      "updated_at": "2026-01-08T10:23:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016324964,
+      "body_text": "Hi Samuele Sommariva,    We have refunded you 20 euros as compensation.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-08T10:30:06Z",
+      "updated_at": "2026-01-08T10:30:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016326496,
+      "body_text": "Hello,\r\n\r\nthank you again for the refund, I really appreciate it.\r\n\r\nI just wanted to ask if it would be possible to also cover the remaining\r\nUPS brokerage fee of 17.50 €, as it was applied due to the shipment coming\r\nfrom outside the EU.\r\n\r\nIn any case, thank you for your support.\r\n\r\n\r\n\r\nIl giorno gio 8 gen 2026 alle 11:30 service@simsonn.com ",
+      "user_id": 158007830469,
+      "created_at": "2026-01-08T10:42:32Z",
+      "updated_at": "2026-01-08T10:42:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

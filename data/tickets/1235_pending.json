@@ -1,0 +1,314 @@
+{
+  "id": 1235,
+  "subject": "Throttle unresponsive",
+  "description_text": "Throttle does not work\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-07-05T06:52:58Z",
+  "updated_at": "2025-07-09T06:18:33Z",
+  "requester_id": 158001897830,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004447515,
+      "body_text": "Hi Alex Hope,    Please check whether the throttle spring and the insulating washer above it are properly installed. Kindly provide photos of the installation area and a video showing the behavior in the software for further analysis.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-05T07:02:02Z",
+      "updated_at": "2025-07-05T07:02:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447525,
+      "body_text": "As I was recording the video the software worked. I pressed back down again\r\n3 seconds later and now it stopped working. I’m unsure of the insulated\r\nwasher\r\n\r\nOn Sat, Jul 5, 2025 at 3:02 AM support@simsonn.com ",
+      "user_id": 158001897830,
+      "created_at": "2025-07-05T07:10:43Z",
+      "updated_at": "2025-07-05T07:10:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447528,
+      "body_text": "On Sat, Jul 5, 2025 at 3:10 AM Alex Hope <hopealex347@gmail.com> wrote:  \n \n As I was recording the video the software worked. I pressed back down again 3 seconds later and now it stopped working. I’m unsure of the insulated washer  \n \n  \n On Sat, Jul 5, 2025 at 3:02 AM support@simsonn.com <support@simsonn.com> wrote: \n \n  \n\t Hi Alex Hope,  \n \n Please check whether the throttle spring and the insulating washer above it are properly installed. Kindly provide photos of the installation area and a video showing the behavior in the software for further analysis. \n   \n     \n  On Sat, 5 Jul at 2:52 AM , Alex Hope <hopealex347@gmail.com> wrote:  Throttle does not work ",
+      "user_id": 158001897830,
+      "created_at": "2025-07-05T07:11:20Z",
+      "updated_at": "2025-07-05T07:11:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447538,
+      "body_text": "Hi，Alex Hope，  Please install Todesk so I can assist you remotely. It doesn’t require registration. Once installed, simply send me a photo of your ID and temporary password.        https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-07-05T07:16:08Z",
+      "updated_at": "2025-07-05T07:16:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447543,
+      "body_text": "Where do i find the id\r\n\r\n\r\nOn Sat, Jul 5, 2025 at 3:16 AM support@simsonn.com ",
+      "user_id": 158001897830,
+      "created_at": "2025-07-05T07:20:51Z",
+      "updated_at": "2025-07-05T07:20:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447559,
+      "body_text": "Hi Alex Hope,",
+      "user_id": 158000445778,
+      "created_at": "2025-07-05T07:32:10Z",
+      "updated_at": "2025-07-05T07:32:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447573,
+      "body_text": "it wants me to make an account and I do not understand the\r\nforeign characters\r\n\r\nOn Sat, Jul 5, 2025 at 3:32 AM support@simsonn.com ",
+      "user_id": 158001897830,
+      "created_at": "2025-07-05T07:38:05Z",
+      "updated_at": "2025-07-05T07:38:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447579,
+      "body_text": "Hi，Alex Hope，  You don't need to create an account. Just click the close button in the top right corner to enter the main interface. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-05T07:39:23Z",
+      "updated_at": "2025-07-05T07:39:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447586,
+      "body_text": "ToDesk:\r\ndevice ID:823 324 755\r\nTemporary password:d58s1krc\r\n\r\nOn Sat, Jul 5, 2025 at 3:39 AM support@simsonn.com ",
+      "user_id": 158001897830,
+      "created_at": "2025-07-05T07:41:27Z",
+      "updated_at": "2025-07-05T07:41:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447642,
+      "body_text": "It stopped working again\r\n\r\n",
+      "user_id": 158001897830,
+      "created_at": "2025-07-05T08:30:26Z",
+      "updated_at": "2025-07-05T08:30:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447643,
+      "body_text": "It stopped working again\r\n\r\nOn Sat, Jul 5, 2025 at 4:14 AM support@simsonn.com ",
+      "user_id": 158001897830,
+      "created_at": "2025-07-05T08:30:46Z",
+      "updated_at": "2025-07-05T08:30:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447656,
+      "body_text": "Hi Alex Hope,    Please plug the throttle into the clutch port, reconnect the USB, and use the Offset function. If the device works normally without stopping, I will send you a replacement main controller.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-05T08:56:50Z",
+      "updated_at": "2025-07-05T08:56:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447668,
+      "body_text": "Ya still not working after offset and clutch. I tried to switch the\r\nthrottle and brake and I put the brake usb into the throttle and throttle\r\ninto brake. The throttle showed up on the telemetry when hitting the brake\r\nthe actual throttle Pedal still showed nothing.\r\n\r\nOn Sat, Jul 5, 2025 at 4:56 AM support@simsonn.com ",
+      "user_id": 158001897830,
+      "created_at": "2025-07-05T09:05:00Z",
+      "updated_at": "2025-07-05T09:05:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447688,
+      "body_text": "Hi Alex Hope,  You may need to check the small spring and acrylic part on the throttle pedal to see if they are damaged or incorrectly installed. The correct setup should have the spring positioned between the two screws. I’ll send you a reference image. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-05T09:39:15Z",
+      "updated_at": "2025-07-05T09:39:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004448494,
+      "body_text": "Ya it is installed like that\r\n\r\nOn Sat, Jul 5, 2025 at 5:39 AM support@simsonn.com ",
+      "user_id": 158001897830,
+      "created_at": "2025-07-05T16:56:57Z",
+      "updated_at": "2025-07-05T16:56:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004455413,
+      "body_text": "Hi Alex Hope,  Could you provide a clear photo of the plastic spacer? I need to check if it's in good condition. Also, if plugging the throttle into the brake port doesn’t work, but plugging the brake into the throttle port works fine, then the control box is likely functioning properly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T11:14:28Z",
+      "updated_at": "2025-07-07T11:14:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004460496,
+      "body_text": "On Mon, Jul 7, 2025 at 7:14 AM support@simsonn.com ",
+      "user_id": 158001897830,
+      "created_at": "2025-07-07T19:13:53Z",
+      "updated_at": "2025-07-07T19:13:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004471216,
+      "body_text": "Hi Alex Hope,  I'll check it remotely for you again. Since the hardware and sensors are not damaged, the issue is most likely software-related. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-08T06:39:44Z",
+      "updated_at": "2025-07-08T06:39:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004471256,
+      "body_text": "Hi，Alex Hope，  I'll send you a replacement throttle sensor — the issue might be caused by a damaged RJ11 cable on the throttle. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-08T06:46:59Z",
+      "updated_at": "2025-07-08T06:46:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004471283,
+      "body_text": "Ok thank you cause from what I understand the rest of the setup looks\r\ncorrect\r\n\r\nOn Tue, Jul 8, 2025 at 2:47 AM support@simsonn.com ",
+      "user_id": 158001897830,
+      "created_at": "2025-07-08T06:51:33Z",
+      "updated_at": "2025-07-08T06:51:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004471375,
+      "body_text": "Hi Alex Hope,    I’m the engineer. Please provide your ID and temporary password. Once I confirm, I will arrange the replacement parts shipment for you.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-08T07:01:32Z",
+      "updated_at": "2025-07-08T07:01:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004471388,
+      "body_text": "Your mean id and password for the screen share\r\n\r\nOn Tue, Jul 8, 2025 at 3:01 AM support@simsonn.com ",
+      "user_id": 158001897830,
+      "created_at": "2025-07-08T07:02:49Z",
+      "updated_at": "2025-07-08T07:02:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004471463,
+      "body_text": "Hi Alex Hope,  Yes",
+      "user_id": 158000445778,
+      "created_at": "2025-07-08T07:16:56Z",
+      "updated_at": "2025-07-08T07:16:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004471510,
+      "body_text": "823324755 2t0e014p\r\n\r\nOn Tue, Jul 8, 2025 at 3:17 AM support@simsonn.com ",
+      "user_id": 158001897830,
+      "created_at": "2025-07-08T07:25:29Z",
+      "updated_at": "2025-07-08T07:25:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004471603,
+      "body_text": "Please use a screwdriver to directly press the silver sensor located at the spring area, so I can check if it’s functioning properly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-08T07:52:34Z",
+      "updated_at": "2025-07-08T07:52:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004471612,
+      "body_text": "On Tue, Jul 8, 2025 at 3:52 AM support@simsonn.com ",
+      "user_id": 158001897830,
+      "created_at": "2025-07-08T07:54:24Z",
+      "updated_at": "2025-07-08T07:54:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004471685,
+      "body_text": "My brake pedal just stopped working it’s never done that\r\n\r\n",
+      "user_id": 158001897830,
+      "created_at": "2025-07-08T08:12:07Z",
+      "updated_at": "2025-07-08T08:12:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004471697,
+      "body_text": "On Tue, Jul 8, 2025 at 4:11 AM Alex Hope <hopealex347@gmail.com> wrote:  \n \n My brake pedal just stopped working it’s never done that  \n \n  \n On Tue, Jul 8, 2025 at 3:53 AM Alex Hope <hopealex347@gmail.com> wrote: \n \n \n   \n \n  \n On Tue, Jul 8, 2025 at 3:52 AM support@simsonn.com <support@simsonn.com> wrote: \n \n  \n\t \n Please use a screwdriver to directly press the silver sensor located at the spring area, so I can check if it’s functioning properly.  \n \n  \n \n \n                           \n                            On\n                            Tue, 8 Jul at  3:16 AM\n                            ,  support@simsonn.com <support@simsonn.com>  wrote:\n                             Hi Alex Hope,  Yes \n \n   \n \n \n                           \n                            On\n                            Tue, 8 Jul at  3:02 AM\n                            ,  Alex Hope <hopealex347@gmail.com>  wrote:\n                             Your mean id and password for the screen share  \n \n    \n \n  \n On Tue, Jul 8, 2025 at 3:01 AM support@simsonn.com <support@simsonn.com> wrote: \n \n  \n\t Hi Alex Hope,  \n \n I’m the engineer. Please provide your ID and temporary password. Once I confirm, I will arrange the replacement parts shipment for you. \n   \n     \n  On Tue, 8 Jul at 2:51 AM , Alex Hope <hopealex347@gmail.com> wrote:  Ok thank you cause from what I understand the rest of the setup looks correct ",
+      "user_id": 158001897830,
+      "created_at": "2025-07-08T08:13:58Z",
+      "updated_at": "2025-07-08T08:13:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004471712,
+      "body_text": "Nvm I reset my computer and brake is working again I think it was from\r\nscreen share cause my resolution was distorted\r\n\r\n",
+      "user_id": 158001897830,
+      "created_at": "2025-07-08T08:16:49Z",
+      "updated_at": "2025-07-08T08:16:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004486226,
+      "body_text": "Hi Alex Hope,  Regarding this issue, I’ve also replied to you on Amazon. She will be sending you the throttle sensor accessory today. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-09T06:18:32Z",
+      "updated_at": "2025-07-09T06:18:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

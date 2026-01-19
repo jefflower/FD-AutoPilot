@@ -1,0 +1,24 @@
+{
+  "id": 9754,
+  "subject": "id ordine 3054444709830540",
+  "description_text": "\r\nAllego video migliore\r\n\r\n\r\nInviato dal mio Galaxy\r\n\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2026-01-01T20:34:55Z",
+  "updated_at": "2026-01-02T03:27:22Z",
+  "requester_id": 158008842451,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015377726,
+      "body_text": "此工单已关闭并合并到工单 9753 中",
+      "user_id": 158000445778,
+      "created_at": "2026-01-02T03:27:22Z",
+      "updated_at": "2026-01-02T03:27:22Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

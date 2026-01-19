@@ -1,0 +1,24 @@
+{
+  "id": 8997,
+  "subject": "ORDER #SSN4585",
+  "description_text": "Hi,\r\n\r\nI just wanted to find out if you knew roughly when the shifter is likely to be shipped for order #SSN4585.\r\n\r\nThanks,\r\nMark\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-23T13:33:11Z",
+  "updated_at": "2026-01-15T10:24:58Z",
+  "requester_id": 158008320368,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017177304,
+      "body_text": "Hi mark steff,  I apologize for not responding to you promptly. I see your package has been delivered. Have you received it?  https://t.17track.net/en#nums=SF6047154893171,SF6047209528735",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T10:24:58Z",
+      "updated_at": "2026-01-15T10:24:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

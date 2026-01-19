@@ -1,0 +1,44 @@
+{
+  "id": 3779,
+  "subject": "Non-existent axis causing interference - Pro X Pedals",
+  "description_text": "Hello,\r\n\r\nI have the Pro-X pedals (including clutch) and have been having a \r\nproblem for quite some time.\r\nSince no patch has been released yet, I wanted to report it to you.\r\n\r\nIn the Windows controller settings and in all games, an additional axis \r\nis displayed, but it does not remain stationary and constantly jumps \r\nback and forth. I have attached a picture.\r\n\r\nThe problem is that this makes it very difficult for me to assign \r\nbuttons and axes, as this axis is constantly being recognized because it \r\nis permanently sending signals.\r\nAnd since this axis does not physically exist, it must be a \r\nsoftware/firmware or hardware problem with the controller box.\r\n\r\nSoftware: Simsonn Manager 2.1.0\r\nFirmware controllbox: CPU1:v2.0.3 CPU2:v2.0.2\r\n\r\nI am curious to know whether you are already aware of this.\r\n\r\nKind regards,\r\nAndreas Kienle\r\n\r\n\r\n\r\nTranslated with DeepL.com (free version)\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-09-13T07:19:02Z",
+  "updated_at": "2025-09-15T06:01:02Z",
+  "requester_id": 158004499135,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008632918,
+      "body_text": "Hi Andreaas Kienle,     First, uninstall the old 2.1.0 version and install SIMSONN Manager 2.1.1. In the software, click Revert and then Save, and check whether the RX axis is disabled.  If the issue is still not resolved, try a manual firmware update: Go to Settings → Update → Manual Firmware Update → pedals-firmware → pedals-prox.sfu.  After completing the update, please test again.    https://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-09-13T10:23:12Z",
+      "updated_at": "2025-09-13T10:23:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008633388,
+      "body_text": "Great, it worked!\r\n\r\nThanks for the quick reply and help.\r\nThe RX axis is gone and everything is working as\r\nit should.\r\n\r\nAm 13.09.2025 um 12:23 schrieb service@simsonn.com:\r\n> Hi Andreaas Kienle,\r\n>\r\n> First, uninstall the old *2.1.0* version and install *SIMSONN Manager \r\n> 2.1.1*.\r\n> In the software, click *Revert* and then *Save*, and check whether the \r\n> *RX axis* is disabled.\r\n> If the issue is still not resolved, try a *manual firmware update*:\r\n> Go to *Settings → Update → Manual Firmware Update → pedals-firmware → \r\n> pedals-prox.sfu*.\r\n> After completing the update, please test again.\r\n>\r\n>\r\n> https://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=drive_link\r\n>\r\n>\r\n>     On Sat, 13 Sep at 3:19 AM , Andreaas Kienle <andykienle@gmx.de>\r\n>     wrote:\r\n>     Hello,\r\n>\r\n>     I have the Pro-X pedals (including clutch) and have been having a\r\n>     problem for quite some time.\r\n>     Since no patch has been released yet, I wanted to report it to you.\r\n>\r\n>     In the Windows controller settings and in all games, an additional\r\n>     axis\r\n>     is displayed, but it does not remain stationary and constantly jumps\r\n>     back and forth. I have attached a picture.\r\n>\r\n>     The problem is that this makes it very difficult for me to assign\r\n>     buttons and axes, as this axis is constantly being recognized\r\n>     because it\r\n>     is permanently sending signals.\r\n>     And since this axis does not physically exist, it must be a\r\n>     software/firmware or hardware problem with the controller box.\r\n>\r\n>     Software: Simsonn Manager 2.1.0\r\n>     Firmware controllbox: CPU1:v2.0.3 CPU2:v2.0.2\r\n>\r\n>     I am curious to know whether you are already aware of this.\r\n>\r\n>     Kind regards,\r\n>     Andreas Kienle\r\n>\r\n>\r\n>\r\n>     Translated with DeepL.com (free version)\r\n>\r\n> 3779:4206036\r\n\r\n",
+      "user_id": 158004499135,
+      "created_at": "2025-09-13T11:41:15Z",
+      "updated_at": "2025-09-13T11:41:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008721397,
+      "body_text": "",
+      "user_id": 158004499135,
+      "created_at": "2025-09-15T06:01:01Z",
+      "updated_at": "2025-09-15T06:01:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ]
+}

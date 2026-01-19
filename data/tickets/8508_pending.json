@@ -1,0 +1,54 @@
+{
+  "id": 8508,
+  "subject": "Order #SSN4759",
+  "description_text": "Hello, when will you send my item?\r\n\r\nGesendet von Outlook für iOS<https://aka.ms/o0ukef>\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-17T11:51:48Z",
+  "updated_at": "2025-12-22T08:04:19Z",
+  "requester_id": 158007845705,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014686503,
+      "body_text": "In the notes ut states that the order is unfullfiled",
+      "user_id": 158007845705,
+      "created_at": "2025-12-18T11:34:25Z",
+      "updated_at": "2025-12-18T11:34:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158014686521,
+      "body_text": "",
+      "user_id": 158007845705,
+      "created_at": "2025-12-18T11:34:54Z",
+      "updated_at": "2025-12-18T11:34:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158014747869,
+      "body_text": "Hi Tobias Raudaschl,    Your order was originally scheduled to ship from our German warehouse, but due to shipping delays, the goods arrived later than expected. They will now ship next Monday. We will issue a $30 refund as compensation. We sincerely apologize for the inconvenience caused!",
+      "user_id": 158001343601,
+      "created_at": "2025-12-19T08:27:15Z",
+      "updated_at": "2025-12-19T08:27:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014765801,
+      "body_text": "So it will be shipped from germany on monday right?\r\n\r\nGesendet von Outlook für iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158007845705,
+      "created_at": "2025-12-19T14:43:29Z",
+      "updated_at": "2025-12-19T14:43:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

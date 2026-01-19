@@ -1,0 +1,24 @@
+{
+  "id": 9802,
+  "subject": "Issue with Simsonn Racing Simulator Carbon Fiber and Aluminum Steering Wheel Hub",
+  "description_text": "Hello,\r\n\r\nI just received a steering wheel hub and I can achieve to make the bottom\r\nright rotary to work.\r\nWhen I check with windows game controller window I can see some buttons or\r\nrotaries activate but nothing regarding the bottom right rotary.\r\nNothing also in all the games I use (AMS2,PMR, LMU, Assetto Corsa and so\r\non).\r\n\r\nAny help would be appreciated.\r\n\r\nBest Regards\r\n\r\nMathieu Dupont\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2026-01-02T13:28:43Z",
+  "updated_at": "2026-01-04T01:01:58Z",
+  "requester_id": 158008847834,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015543806,
+      "body_text": "Hi Mathieu Dupont,      The knob is not damaged. The 12-position knob on the right is used to control the functionality of the left knob. For example, when the left knob is rotated left or right, it corresponds to button 17 and button 18. However, if the right knob is rotated first, the output of the left knob will switch to button 19 and button 20. Please note that this feature needs to be tested in-game, as Windows can only display the first 32 buttons, while the game itself can correctly recognize and display all 40 buttons. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-04T01:01:58Z",
+      "updated_at": "2026-01-04T01:01:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

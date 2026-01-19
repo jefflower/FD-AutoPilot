@@ -1,0 +1,74 @@
+{
+  "id": 573,
+  "subject": "Order #SSN1736",
+  "description_text": "Email said shipping was cancelled has this been resolved and if so is there\r\na new tracking number.\r\nOrder\r\n #SSN1736\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-06-18T12:59:31Z",
+  "updated_at": "2025-06-25T10:24:40Z",
+  "requester_id": 158001647066,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003679619,
+      "body_text": "Hi Doug Henry, Please don’t worry — we’ve already informed our operations team to look into your order. I noticed that both tracking numbers currently show no shipping activity. We will verify the details first thing on Monday and update you accordingly, in case the tracking numbers were entered incorrectly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T02:24:18Z",
+      "updated_at": "2025-06-22T02:24:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003679806,
+      "body_text": "ID 为 691 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T04:47:10Z",
+      "updated_at": "2025-06-22T04:47:10Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158003679807,
+      "body_text": "合并来自工单691  \n      主题: Shipping of pedals order #ssn1736  \n      描述:  Want to know about my shipping of the purchase I made",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T04:47:10Z",
+      "updated_at": "2025-06-22T04:47:10Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158003679812,
+      "body_text": "Hi Doug Henry,    We will get back to you tomorrow (Monday), as the logistics company is currently unable to provide any information today.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T04:49:30Z",
+      "updated_at": "2025-06-22T04:49:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003810821,
+      "body_text": "Still haven’t got any tracking info or order info.. just inquiring as to\r\nwhat is the status\r\n\r\nOn Sat, Jun 21, 2025 at 11:49 PM service@simsonn.com ",
+      "user_id": 158001647066,
+      "created_at": "2025-06-24T14:37:05Z",
+      "updated_at": "2025-06-24T14:37:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003835763,
+      "body_text": "Hi Doug Henry,     Here's the link to the latest logistics tracking, delivery expected on the 27th.  https://t.17track.net/en#nums=882053431418",
+      "user_id": 158001343601,
+      "created_at": "2025-06-25T10:24:39Z",
+      "updated_at": "2025-06-25T10:24:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": 3153,
+  "subject": "Pro 踏板非 X 轴且无触觉反馈",
+  "description_text": "我这里有原始的专业踏板，附图。有没有一个控制盒能让我使用我妻子生日送给我的 Simsonn 触觉反馈装置？我有一个 Plus X 控制盒，它能识别旧控制器上的踏板，但当我把油门和刹车插到 Plus X 控制盒上时，却显示已断开连接。[image0.png] 埃里克·阿姆斯特朗 信息技术总监 索克-苏亚特尔印第安部落",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-08-27T01:42:49Z",
+  "updated_at": "2025-08-27T02:57:52Z",
+  "requester_id": 158003626062,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007590146,
+      "body_text": "您好，埃里克·阿姆斯特朗，PlusX 控制盒支持触觉模块，但它需要一个单独的 24V 电源。您目前使用的是电脑背面的 USB 3.0 端口（蓝色）吗？请避免使用没有独立电源的 USB 集线器。您能拍一张踏板连接的照片以及 SIMSONN Manager 2.1.0 软件界面的截图吗？我可以帮助您检查安装和软件版本是否正常工作。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-27T02:42:46Z",
+      "updated_at": "2025-08-27T02:42:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007590223,
+      "body_text": "我想我找到问题了，控制盒之前安装在我设备的塑料部件上（没有接地）。一旦我把它固定到金属上（接地），它似乎就能正常工作了。通过 iOS 版 Outlook 发送<https://aka.ms/o0ukef>________________________________",
+      "user_id": 158003626062,
+      "created_at": "2025-08-27T02:54:15Z",
+      "updated_at": "2025-08-27T02:54:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

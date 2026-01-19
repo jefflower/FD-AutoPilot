@@ -1,0 +1,94 @@
+{
+  "id": 2689,
+  "subject": "Order #SSN2251",
+  "description_text": "Good afternoon,\r\n\r\nPlease can you confirm if the vibration pedals (1 × Simsonn VAM Pro Linear Motor - the Pedals Haptic Reactor for Vibration Feedback) were sent within the same shipment as the pedals. \r\n\r\nIve received my parcel today and there is only one box and only the pedals are inside. \r\n\r\nImages attached. \r\n\r\nThanks,\r\nKayden \r\n",
+  "status": 4,
+  "priority": 3,
+  "created_at": "2025-08-14T18:20:54Z",
+  "updated_at": "2025-08-19T04:42:55Z",
+  "requester_id": 158003119810,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006889332,
+      "body_text": "Hi Kaydenslevin22,    Here is the tracking link for your other package:  https://t.17track.net/en#nums=SF6045842274286",
+      "user_id": 158001343601,
+      "created_at": "2025-08-15T02:01:40Z",
+      "updated_at": "2025-08-15T02:01:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007034004,
+      "body_text": "Good evening,\r\n\r\nHope you are well. \r\n\r\nI am having issues with my pedals, specifically when playing F1 25, the brake pedal does not register until pressed half way. \r\n\r\nI have tried recalibrating the pedals multiple times but this has not fixed the problem, also looked at the in game settings within F1 and this hasn’t fixed the issue. \r\n\r\nThe pedal works fine within other games, such as iRacing,, however, F1 is my preferred game to play but this issue makes it unplayable. \r\n\r\nI have attached a video to show the issue. Follow LED lights are set up to see the pressure of the pedal. \r\n\r\nPlease can you advise of anything I need to try to get this working? If there is nothing further to be done, I would like arrange a return for the pedals. \r\n\r\nThanks,\r\nKayden\r\n\r\n\r\n\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158003119810,
+      "created_at": "2025-08-17T19:57:43Z",
+      "updated_at": "2025-08-17T19:57:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007050946,
+      "body_text": "Hi Kaydenslevin22,  First, if you have adjusted the brake pedal damping, please use the Offset function to recalibrate the pedal. Additionally, iRacing may require recalibration of the pedals within the game. Please check: if the pedals work normally in other games, then iRacing itself is not the issue—we also use iRacing. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-18T02:21:49Z",
+      "updated_at": "2025-08-18T02:21:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007056594,
+      "body_text": "Iracing isnt the proble the pedals work great on iracing it the F1 game where it plays up. They work great on ACC, Lemans Ultimate but the main game i play is F1 and it makes it unplayable only having the last half of the pedal travel\r\n\r\n> ",
+      "user_id": 158003119810,
+      "created_at": "2025-08-18T06:10:50Z",
+      "updated_at": "2025-08-18T06:10:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007081659,
+      "body_text": "Hi Kaydenslevin22,  I will run a test tomorrow, and if I encounter the same issue, I will update the firmware to fix it and release a new version as soon as possible. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-18T12:50:51Z",
+      "updated_at": "2025-08-18T12:50:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007081754,
+      "body_text": "Hi Kaydenslevin22,  Please install the Todesk software. No registration is required — if prompted to register, simply click the close button in the top right corner. Then provide the ID and temporary password, and I can assist you remotely to resolve this issue now.      In our test environment, F1 2025 runs without any issues. I can provide photos for your reference. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-18T12:55:01Z",
+      "updated_at": "2025-08-18T12:55:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007087040,
+      "body_text": "I dont get home from work until 5pm uk time. The game and pedals work on the game my issue is that the brake pedal doesnt register any movement until the pedal has been pressed half way down before it will apply the brakes at the minimum amount of brake pressure in the game  \r\n \r\n> ",
+      "user_id": 158003119810,
+      "created_at": "2025-08-18T14:15:46Z",
+      "updated_at": "2025-08-18T14:15:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007102839,
+      "body_text": "Hi, iv gotten home from work and tried my pedals again on f1 just to double check over everything and the pedal has randomly started to work as it should and starts detecting pressure from the beginning of the travel instead of 50% pedal travel. \r\n\r\nI guess its a problem that has fixed itself which are always a welcome surprise, i really do appreciate the time you have spent trying to trouble shoot this for me and would like to say thank you for your time. \r\n\r\n  \r\n\r\n> ",
+      "user_id": 158003119810,
+      "created_at": "2025-08-18T20:01:19Z",
+      "updated_at": "2025-08-18T20:01:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "id": 1351,
+  "subject": "Major issue throttle pedal simsonn pro plus",
+  "description_text": "Hello,\r\n\r\nI have a big issue with my throttle pedal on my Pro Plus. (Order #SSN1768)\r\n\r\nWhen setting up my pedals, I wanted to limit my throttle pedal travel by\r\nadjusting the blue stop block (picture 1).\r\nBut after adjustment, at the first test, the part which pushed on the\r\nlittle grey spring, broke instantly. (picture 2 to 4). It seems that the\r\nblue stop block and the now broken part went too close.\r\n\r\nPlease can you send me a replacement for these plastic parts in order to\r\nrepair my pedal.\r\n\r\nRegards,\r\nValentin Charron\r\n5 rue Réaumur, 85170 Saint-Denis-la-Chevasse, Vendée, France.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-07-08T22:02:40Z",
+  "updated_at": "2025-07-18T08:19:10Z",
+  "requester_id": 158001960198,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004483604,
+      "body_text": "Hi Valentin Charron,    We will ship this throttle part to you today.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-08T22:05:17Z",
+      "updated_at": "2025-07-08T22:05:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004485920,
+      "body_text": "Hello\r\n\r\nGreat, thank you !\r\nWhen do you think the part will be delivered ? There is a tracking number ?\r\n\r\n\r\nLe mer. 9 juil. 2025, 00:05, service@simsonn.com ",
+      "user_id": 158001960198,
+      "created_at": "2025-07-09T05:12:15Z",
+      "updated_at": "2025-07-09T05:12:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004943918,
+      "body_text": "Hello,\r\n\r\nAny news ? I have not received the part yet.\r\n\r\n\r\nLe mer. 9 juil. 2025, 07:11, Valentin Charron <valentin.charron85@gmail.com>\r\na écrit :\r\n\r\n> Hello\r\n>\r\n> Great, thank you !\r\n> When do you think the part will be delivered ? There is a tracking number\r\n> ?\r\n>\r\n>\r\n> Le mer. 9 juil. 2025, 00:05, service@simsonn.com ",
+      "user_id": 158001960198,
+      "created_at": "2025-07-16T08:52:44Z",
+      "updated_at": "2025-07-16T08:52:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005146436,
+      "body_text": "Hi Valentin Charron,    Here's your logistics tracking, sorry for the delay, it's expected to arrive for you on the 21st.  https://www.track718.us/en/detail?nums=1ZJ455510436892062",
+      "user_id": 158001343601,
+      "created_at": "2025-07-18T08:19:09Z",
+      "updated_at": "2025-07-18T08:19:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

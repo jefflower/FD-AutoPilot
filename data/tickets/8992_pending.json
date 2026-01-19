@@ -1,0 +1,24 @@
+{
+  "id": 8992,
+  "subject": "Order #SSN4763",
+  "description_text": "Hi.\r\n\r\nI know my order was dispatched over 10 days ago now. I havent had any\r\nfurther updates since. Can you please confirm whats going on?\r\n\r\nI understand its the holiday season. But other vendors are posting\r\nreasonably quickly still.\r\n\r\nKind regards\r\n\r\n*Z.BURROWS*\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-23T11:59:03Z",
+  "updated_at": "2025-12-28T04:27:47Z",
+  "requester_id": 158008319411,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015147934,
+      "body_text": "Hi Zachary Burrows,       I see that the order has arrived in Australia, but it may take some additional time to be delivered. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T04:27:47Z",
+      "updated_at": "2025-12-28T04:27:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

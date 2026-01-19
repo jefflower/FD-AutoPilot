@@ -1,0 +1,44 @@
+{
+  "id": 5562,
+  "subject": "Ebay store",
+  "description_text": "Hi, I've purchased through what's advertised as your official store. Is\r\nthis correct ?\r\n\r\nRegards\r\n\r\nRob Cross\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-03T00:49:00Z",
+  "updated_at": "2025-11-03T05:54:08Z",
+  "requester_id": 158006326110,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011634724,
+      "body_text": "Hi Robert Cr,    You can purchase through our official eBay store without any problem.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-03T00:59:10Z",
+      "updated_at": "2025-11-03T00:59:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011634916,
+      "body_text": "Ok, thank you.\r\n\r\nI ordered the P3-H3 and assume that the H3 is haptic packs x3 ?\r\n\r\nOn Mon, 3 Nov 2025, 11:29 am service@simsonn.com, ",
+      "user_id": 158006326110,
+      "created_at": "2025-11-03T01:09:43Z",
+      "updated_at": "2025-11-03T01:09:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011643820,
+      "body_text": "Hi Robert Cr,  H3 represents three hydraulic rods and does not include the haptic motor. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-03T05:54:07Z",
+      "updated_at": "2025-11-03T05:54:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

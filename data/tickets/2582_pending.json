@@ -1,0 +1,27 @@
+{
+  "id": 2582,
+  "subject": "1Z4W260E0406199611 Customs clearance information provided",
+  "description_text": "Hello, this is the invoice information required for shipping order number 1Z4W260E0406199611. If you need any further information, please let me know as soon as possible. Thank you!",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-08-12T09:48:10Z",
+  "updated_at": "2025-08-14T02:14:43Z",
+  "requester_id": 158002979344,
+  "responder_id": 158001343601,
+  "cc_emails": [
+    "warsawimport@ups.com",
+    "support@simsonn.com"
+  ],
+  "conversations": [
+    {
+      "id": 158006801508,
+      "body_text": "Dear Partner,\r\n\r\n\r\nPlease assist this matter.\r\n\r\n\r\nKind Regards\r\n\r\nJagoda H. Kowalczyk\r\nGBS Customer Support\r\n\r\nUPS Polska Sp. z o.o.\r\nul. Prądzyńskiego 1/3\r\n01-222 Warsaw, Poland\r\nwww.ups.com\r\n\r\nTreść tej wiadomości, wraz z ewentualnymi załącznikami, zawiera informacje przeznaczone tylko dla wymienionego w niej adresata i może zawierać informacje, które są poufne oraz prawnie chronione. Jeżeli nie są Państwo jej adresatem, bądź otrzymali ją przez pomyłkę należy: powiadomić niezwłocznie nadawcę poprzez odesłanie zwrotnej odpowiedzi na tą wiadomość, usunąć wiadomość w całości, nie ujawniać, nie rozpowszechniać, nie powielać i nie używać jej w jakikolwiek sposób w całości lub w części w jakiejkolwiek formie. UPS GBS Polska Sp. z o.o. z siedzibą we Wrocławiu, ul. Gen. J. Bema 2, 50-265 Wrocław.\r\n\r\n\r\n--------------- Forwarded Message ---------------\r\n",
+      "user_id": 158002979344,
+      "created_at": "2025-08-13T13:19:23Z",
+      "updated_at": "2025-08-13T13:19:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

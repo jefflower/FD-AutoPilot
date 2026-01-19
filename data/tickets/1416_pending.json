@@ -1,0 +1,44 @@
+{
+  "id": 1416,
+  "subject": "Delivery address incorrect. SSN1979",
+  "description_text": "Hi everyone, I am writing about a mistake I done when I purchased the\r\nlinear actuators; order number SSN1979. Is it possible to have the delivery\r\naddress update as the billing address? At the moment the delivery address\r\nis u13,63/67 Gladstone street Kogarah; is it possible to update it to 67\r\nDunmore Street South, Bexley, NSW, Australia.?\r\n Thanks, I will wait for your reply.\r\nKind regards,\r\nRipamonti Andrea.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-07-10T13:49:06Z",
+  "updated_at": "2025-07-12T08:48:12Z",
+  "requester_id": 158002047911,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004532525,
+      "body_text": "你好，Andrea Ripamonti，  不用担心——我已经将您的信息转发给我们的销售团队，他们今天就会为您处理。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-11T00:27:02Z",
+      "updated_at": "2025-07-11T00:27:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004534698,
+      "body_text": "Thank you! Have a good day.\r\nKind regards\r\nRipamonti Andrea\r\n\r\nOn Fri, 11 July 2025, 10:27 am service@simsonn.com, ",
+      "user_id": 158002047911,
+      "created_at": "2025-07-11T01:07:46Z",
+      "updated_at": "2025-07-11T01:07:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004644966,
+      "body_text": "Hi Andrea Ripamonti,    The sales team has confirmed that the address has been updated as per your request.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-12T08:48:11Z",
+      "updated_at": "2025-07-12T08:48:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

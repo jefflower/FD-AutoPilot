@@ -1,0 +1,104 @@
+{
+  "id": 4022,
+  "subject": "Pro X Brake Problem",
+  "description_text": "Hello! Hooked up the Pro X pedals and got everything working. The next day the brake pedal doesn’t do anything. The RGB lights are still on. I’ve disconnected and reconnected the pedal from the controller. Still nothing. \r\nSent from my iPhone\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-21T21:10:55Z",
+  "updated_at": "2025-09-25T04:02:49Z",
+  "requester_id": 158004750216,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009120307,
+      "body_text": "I got your email about seeing my ticket in the “FreshDesk” website but it’s not letting me login to see the ticket. Sent from my iPhone ",
+      "user_id": 158004750216,
+      "created_at": "2025-09-22T15:17:52Z",
+      "updated_at": "2025-09-22T15:17:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009235850,
+      "body_text": "Hi Race Ashley,    Please make sure your SIMSONN Manager is updated to version 2.1.0. Then follow the steps below:    Open the software and go to Settings → Update, then click Check for Updates.    Check if the ProX firmware can be updated to version 2.0.3.    If no automatic update is available, please use Manual Update: Path: Settings → Update → Manual Update Firmware → pedals → firmware → pedals-prox.sfu.    After the update, please test again.    If the issue persists, try reconnecting the USB and power cable, then test again.    If it still doesn’t work, please send me a screenshot of the software interface so I can check further for you.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-24T15:09:54Z",
+      "updated_at": "2025-09-24T15:09:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009236016,
+      "body_text": "I will try that after work. Thank you for the response! Sent from my iPhone ",
+      "user_id": 158004750216,
+      "created_at": "2025-09-24T15:14:45Z",
+      "updated_at": "2025-09-24T15:14:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009253312,
+      "body_text": "Here is where I’m stuck now. After I do the manual update with “prox.sfu” this pops up. I hit update and then says update completed but nothing changes. I’ve exited and restarted the app and still nothing. Clutch and Gas pedal work. Just the brake doesn’t. Sent from my iPhone ",
+      "user_id": 158004750216,
+      "created_at": "2025-09-24T22:07:23Z",
+      "updated_at": "2025-09-24T22:07:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009257527,
+      "body_text": "Hi Race Ashley,    Please click on Offset in the software interface, then set the offset for all pedals in the pop-up window. This will reset the initial pedal signal to 0%, after which you can recalibrate and test again.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-25T00:35:06Z",
+      "updated_at": "2025-09-25T00:35:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009260855,
+      "body_text": "Got it! The offset worked! Still have some adjustments to do now to get it comfortable because of the rig I have. Thank you for the help! Sent from my iPhone ",
+      "user_id": 158004750216,
+      "created_at": "2025-09-25T03:40:39Z",
+      "updated_at": "2025-09-25T03:40:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009261121,
+      "body_text": "Hi Race Ashley,   It looks really cool! It must have cost quite a bit to get this car body, right? ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-25T03:54:30Z",
+      "updated_at": "2025-09-25T03:54:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009261253,
+      "body_text": "Actually no! A buddy of mine gave it to me on the terms that I made it into a simulator. So I cut the windshield and the front end off. Had to turn the whole car on its side to fit it through the door. \r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158004750216,
+      "created_at": "2025-09-25T04:01:02Z",
+      "updated_at": "2025-09-25T04:01:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009261277,
+      "body_text": "Hi Race Ashley,  I’m really looking forward to seeing it in action. Keep up the great work! ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-25T04:02:45Z",
+      "updated_at": "2025-09-25T04:02:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

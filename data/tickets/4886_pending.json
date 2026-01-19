@@ -1,0 +1,24 @@
+{
+  "id": 4886,
+  "subject": "Throttle Not Working?",
+  "description_text": "Hello,\r\n\r\nI have a set of prox pedals and I downloaded LeMans Ultimate and suddenly the throttle isn't working. It doesn't register at all in the Simpsonn manager but I can unplug it from the throttle port on the control box into the clutch or brake and it registers. I used it 12 hours ago and nothing has changed other than a game download. \r\n\r\nSent from my iPhone\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-14T23:35:10Z",
+  "updated_at": "2025-10-16T05:45:43Z",
+  "requester_id": 158001886224,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010535044,
+      "body_text": "Hi Thomas Kirk,  Please make sure the pedals are properly connected to the main controller. Then, click “Offset” in the software interface and set the initial offset percentage in the pop-up window. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-16T05:45:43Z",
+      "updated_at": "2025-10-16T05:45:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

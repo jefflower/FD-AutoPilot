@@ -1,0 +1,74 @@
+{
+  "id": 1956,
+  "subject": "Elastomers",
+  "description_text": "Have not yet received \r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-26T17:50:40Z",
+  "updated_at": "2025-07-31T08:42:42Z",
+  "requester_id": 158002358088,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005620288,
+      "body_text": "Hi carl swanwick,  Please provide your order number so I can check the progress for you. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-27T02:26:40Z",
+      "updated_at": "2025-07-27T02:26:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005621573,
+      "body_text": "\r\nORDER #SSN1968\r\n\r\n> ",
+      "user_id": 158002358088,
+      "created_at": "2025-07-27T07:16:42Z",
+      "updated_at": "2025-07-27T07:16:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005812728,
+      "body_text": "Hi carl swanwick,    I have confirmed with our warehouse staff that these two elastomers are out of stock and have not been shipped. We can replace them with the new elastomers or issue a refund. Please confirm.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-30T10:20:35Z",
+      "updated_at": "2025-07-30T10:20:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005816689,
+      "body_text": "Hello there,\r\n\r\nI accept a refund, & reorder in the near future. Thank you.\r\n\r\nRegards Carl\r\n\r\n> ",
+      "user_id": 158002358088,
+      "created_at": "2025-07-30T10:59:34Z",
+      "updated_at": "2025-07-30T10:59:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005879013,
+      "body_text": "Hi carl swanwick,    Okay, we have refunded your money. We apologize for not updating your shipping information in a timely manner!",
+      "user_id": 158001343601,
+      "created_at": "2025-07-31T07:58:14Z",
+      "updated_at": "2025-07-31T07:58:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005879313,
+      "body_text": "That’s alright, nice to do business with you.\r\nUntil next time-have a good day.\r\nRegards Carl\r\n\r\n> ",
+      "user_id": 158002358088,
+      "created_at": "2025-07-31T08:42:29Z",
+      "updated_at": "2025-07-31T08:42:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

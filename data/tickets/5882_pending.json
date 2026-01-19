@@ -1,0 +1,24 @@
+{
+  "id": 5882,
+  "subject": "Brackets",
+  "description_text": "Hi, does the 2 pac include 2 brackets of the same type for brake and accelerator? I don’t need clutch. \r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-10T10:38:46Z",
+  "updated_at": "2025-11-10T10:44:49Z",
+  "requester_id": 158006917731,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012043522,
+      "body_text": "Yes, we will include all the brackets needed for the three pedals, so you can switch them freely.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-10T10:44:49Z",
+      "updated_at": "2025-11-10T10:44:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

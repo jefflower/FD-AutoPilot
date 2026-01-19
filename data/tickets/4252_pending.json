@@ -1,0 +1,54 @@
+{
+  "id": 4252,
+  "subject": "Shipping problem",
+  "description_text": "Hi,\r\n\r\nI have recently ordered a product from your page in the form of a steering\r\nwheel and decided that to go with the Express 3-7 days shipping as I was in\r\na rush to get it. However, unfortunately more then 7 days have passed since\r\nI placed my order and my order has not even gotten in my country of\r\ndelivery. Because of this I would like to ask for compensation due to the\r\nfact that the mentioned delivery time frame was not meet.\r\n\r\nI have waited not only 7 days as of today 30th of September in my time zone\r\nof the Uk. But also allocated enough time in the form of 7 BUSINESS days\r\n(Monday to Friday) but also with the 1-2 days manufacturing  delay.\r\n\r\nHope to hear from you soon and be able to come up with a suitable agreement\r\nfor the inconvenience I have experienced.\r\n\r\nThanks,\r\nAlex Ancuta\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-29T22:02:07Z",
+  "updated_at": "2025-10-09T05:59:25Z",
+  "requester_id": 158005171245,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009658460,
+      "body_text": "Sorry for the confusion but I forgot to add the order number which is : *Order\r\n#SSN2689*\r\n\r\n",
+      "user_id": 158005171245,
+      "created_at": "2025-09-29T22:06:07Z",
+      "updated_at": "2025-09-29T22:06:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009665246,
+      "body_text": "Hello, I see that your package has indeed been delayed. We will provide appropriate compensation based on the delivery time once the package arrives. https://t.17track.net/en#nums=SF6045928902193",
+      "user_id": 158001343601,
+      "created_at": "2025-09-30T03:39:44Z",
+      "updated_at": "2025-09-30T03:39:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009760264,
+      "body_text": "Hi, I received my package today. I was wondering what will be the\r\ncompensation based on the delivery delay.\r\n\r\nAnd also I will also like to ask for some directions on the use of the\r\nproduct as I am unable to connect it to my computer. When I plugged it in\r\nto my computer and others the product does not appear on the\r\nSimsonn manager app and some of the buttons do not work.\r\n\r\nThanks,\r\nAlex Ancuta\r\n\r\n",
+      "user_id": 158005171245,
+      "created_at": "2025-10-01T21:37:17Z",
+      "updated_at": "2025-10-01T21:37:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010131492,
+      "body_text": "Hi Flow,      We apologize for the delayed response—we've just returned from our 8-day holiday. This steering wheel does not support Simsonn Manager adjustments; it's plug-and-play. The buttons require in-game configuration. If you continue to encounter issues, please provide us with a video.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-09T05:59:24Z",
+      "updated_at": "2025-10-09T05:59:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

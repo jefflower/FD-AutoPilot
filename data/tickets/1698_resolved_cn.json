@@ -1,0 +1,35 @@
+{
+  "id": 1698,
+  "subject": "X 的保修",
+  "description_text": "您好，我的 Simsonn Pro X 踏板连接有问题。它在设备中被识别，但在 Simsonn 软件中却无法识别。感谢您的反馈。",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-07-19T11:40:23Z",
+  "updated_at": "2025-07-22T02:28:06Z",
+  "requester_id": 158002229373,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005211611,
+      "body_text": "您好，Jonathan Benisti，请按住控制盒上的升级按钮，然后按住按钮的同时重新连接USB线。软件将会在SIMSONN Flasher模式下检测到设备。接下来，请在软件中进入“设置”→“更新”，然后点击“手动固件更新”。导航至以下文件夹路径：pedals-firmware → pedals → 选择文件prox.sfu。点击更新并等待过程完成。完成后，请再次测试您的设备，看问题是否已解决。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-20T00:36:58Z",
+      "updated_at": "2025-07-20T00:36:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005227463,
+      "body_text": "您好，太好了，谢谢，一切都已恢复，运行完美。",
+      "user_id": 158002229373,
+      "created_at": "2025-07-20T12:44:12Z",
+      "updated_at": "2025-07-20T12:44:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

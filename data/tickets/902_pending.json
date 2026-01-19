@@ -1,0 +1,54 @@
+{
+  "id": 902,
+  "subject": "retour haptique vam pro",
+  "description_text": " \r\n\r\nBonjour , je possède vos moteurs Vram pro avec le nouveau boitier de\r\ncommunication .\r\n\r\n \r\n\r\nJutilise le simsonn manager pour la configuration , mais certains jeux ne\r\nfonctionne  pas ( ex f1 22 ) .\r\n\r\n \r\n\r\nVotre boitier est -il compatible avec simhub et si oui comment le configurer\r\n. \r\n\r\n \r\n\r\n \r\n\r\nMerci \r\n\r\n \r\n\r\n \r\n\r\n \r\n\r\n \r\n\r\n \r\n\r\n \r\n\r\n \r\n\r\n \r\n\r\n \r\n\r\n \r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-27T07:20:37Z",
+  "updated_at": "2025-06-27T23:17:09Z",
+  "requester_id": 158001831205,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004190746,
+      "body_text": "Hi F. landaud,  Our software currently supports 10 games. May I ask which game you are using now? We are continuously working to add telemetry support for more titles. In the meantime, you can use the internal version of SimHub that I’ve provided. The official release is still undergoing testing and may take a bit more time.   https://drive.google.com/file/d/1QrSbAvCC5iyx9XgdRgSQV-hWpmDGkujc/view?usp=sharing",
+      "user_id": 158000445778,
+      "created_at": "2025-06-27T10:32:19Z",
+      "updated_at": "2025-06-27T10:32:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004216156,
+      "body_text": "Merci pour votre retour  .\r\n\r\n \r\n\r\n \r\n\r\nJe joue avec F 1 2022 – pas de fonctionnement  avec vam pro alors que le jeux est bien dans la base\r\n\r\n \r\n\r\nAvec  Asseto corsa et Asseto corsa competition tout fonctionne bien\r\n\r\n \r\n\r\n \r\n\r\nAutomobilista 2 fonctionne bien \r\n\r\n \r\n\r\n \r\n\r\nHorizon 5 pas encore testé \r\n\r\n \r\n\r\nJe vais essayer votre beta test simhub je vous fait du retour  ..\r\n\r\n \r\n\r\n \r\n\r\nCordialement\r\n\r\n \r\n\r\n \r\n\r\n \r\n\r\n \r\n\r\nDe : service@simsonn.com ",
+      "user_id": 158001831205,
+      "created_at": "2025-06-27T17:10:13Z",
+      "updated_at": "2025-06-27T17:10:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004218422,
+      "body_text": "Hi F. landaud,    Our software currently supports 10 games. May I ask which game you are using now?  We are continuously working to add telemetry support for more titles.  In the meantime, you can use the internal version of SimHub that I’ve provided. The official release is still undergoing testing and may take a bit more time.      https://drive.google.com/file/d/1QrSbAvCC5iyx9XgdRgSQV-hWpmDGkujc/view?usp=sharing",
+      "user_id": 158000445778,
+      "created_at": "2025-06-27T23:11:23Z",
+      "updated_at": "2025-06-27T23:11:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004218435,
+      "body_text": "Hi F. landaud,     If you are using the ProX pedals (not the latest ProX Ultra or PlusX), please go to Settings → Update → Manual Firmware Update in the SIMSONN Manager 2.0.8 software. In the PESALS-Firmware/pedals directory, select the prox.sfu file to update the firmware. After the update is complete, your pedals will support the VAM Pro motor.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-27T23:17:09Z",
+      "updated_at": "2025-06-27T23:17:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

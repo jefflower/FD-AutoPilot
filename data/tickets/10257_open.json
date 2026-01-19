@@ -1,0 +1,44 @@
+{
+  "id": 10257,
+  "subject": "Return Items",
+  "description_text": "Hello,     I'd like to return the steering wheel and the shifter. There isn't anything wrong with them, I just don't like how the shifter shifts. The steering wheel quick release doesnt work for my wheelbase (simagic alpha evo), I went with the neo x steering wheel instead. The quick release is not 6/4 like many of the other quick releases.     Thanks",
+  "status": 2,
+  "priority": 3,
+  "created_at": "2026-01-08T00:58:09Z",
+  "updated_at": "2026-01-16T09:19:06Z",
+  "requester_id": 158007771368,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016832629,
+      "body_text": "Hi William Mac,  Please provide your order number first so we can review it. This situation may not be covered by our refund policy. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-12T00:21:33Z",
+      "updated_at": "2026-01-12T00:21:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016833054,
+      "body_text": "Here are the order #s.\r\n\r\nI read your return policy and I believe this will qualify.\r\n\r\nThanks\r\n\r\nWilliam Mac\r\n*Data Scientist/Consultant/Engineer*\r\nCell: (909)272-6728\r\nEmail: william.mac1990@gmail.com\r\n\r\n\r\nOn Sun, Jan 11, 2026 at 4:21 PM support@simsonn.com ",
+      "user_id": 158007771368,
+      "created_at": "2026-01-12T00:51:59Z",
+      "updated_at": "2026-01-12T00:51:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017132501,
+      "body_text": "Hello?\r\n\r\nOn Sun, Jan 11, 2026 at 4:51 PM William Mac <william.mac1990@gmail.com>\r\nwrote:\r\n\r\n> Here are the order #s.\r\n>\r\n> I read your return policy and I believe this will qualify.\r\n>\r\n> Thanks\r\n>\r\n> William Mac\r\n> *Data Scientist/Consultant/Engineer*\r\n> Cell: (909)272-6728\r\n> Email: william.mac1990@gmail.com\r\n>\r\n>\r\n> On Sun, Jan 11, 2026 at 4:21 PM support@simsonn.com ",
+      "user_id": 158007771368,
+      "created_at": "2026-01-14T18:53:10Z",
+      "updated_at": "2026-01-14T18:53:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

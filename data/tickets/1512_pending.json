@@ -1,0 +1,514 @@
+{
+  "id": 1512,
+  "subject": "Issue with product",
+  "description_text": "The product showed up defective\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-14T00:37:07Z",
+  "updated_at": "2025-07-21T10:34:59Z",
+  "requester_id": 158002114637,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004774955,
+      "body_text": "Hi Justin Olsen,    What issue are you experiencing with the product? Please provide some photos so we can verify and assist you as soon as possible. Thank you!",
+      "user_id": 158000445778,
+      "created_at": "2025-07-14T03:40:06Z",
+      "updated_at": "2025-07-14T03:40:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004775080,
+      "body_text": "Hi yes it connects and disconnects no visible damage\r\n\r\nOn Sun, Jul 13, 2025, 8:40 PM service@simsonn.com ",
+      "user_id": 158002114637,
+      "created_at": "2025-07-14T04:22:17Z",
+      "updated_at": "2025-07-14T04:22:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004775088,
+      "body_text": "Im not home currently\r\n\r\nOn Sun, Jul 13, 2025, 9:21 PM Justin Olsen <justin.olsen122@gmail.com>\r\nwrote:\r\n\r\n> Hi yes it connects and disconnects no visible damage\r\n>\r\n> On Sun, Jul 13, 2025, 8:40 PM service@simsonn.com ",
+      "user_id": 158002114637,
+      "created_at": "2025-07-14T04:24:17Z",
+      "updated_at": "2025-07-14T04:24:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004779129,
+      "body_text": "Any updates\r\n\r\nOn Sun, Jul 13, 2025, 9:23 PM Justin Olsen <justin.olsen122@gmail.com>\r\nwrote:\r\n\r\n> Im not home currently\r\n>\r\n> On Sun, Jul 13, 2025, 9:21 PM Justin Olsen <justin.olsen122@gmail.com>\r\n> wrote:\r\n>\r\n>> Hi yes it connects and disconnects no visible damage\r\n>>\r\n>> On Sun, Jul 13, 2025, 8:40 PM service@simsonn.com ",
+      "user_id": 158002114637,
+      "created_at": "2025-07-14T09:43:35Z",
+      "updated_at": "2025-07-14T09:43:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004834778,
+      "body_text": "I'd love to get this resolved promptly\r\n\r\nOn Mon, Jul 14, 2025, 2:43 AM Justin Olsen <justin.olsen122@gmail.com>\r\nwrote:\r\n\r\n> Any updates\r\n>\r\n> On Sun, Jul 13, 2025, 9:23 PM Justin Olsen <justin.olsen122@gmail.com>\r\n> wrote:\r\n>\r\n>> Im not home currently\r\n>>\r\n>> On Sun, Jul 13, 2025, 9:21 PM Justin Olsen <justin.olsen122@gmail.com>\r\n>> wrote:\r\n>>\r\n>>> Hi yes it connects and disconnects no visible damage\r\n>>>\r\n>>> On Sun, Jul 13, 2025, 8:40 PM service@simsonn.com ",
+      "user_id": 158002114637,
+      "created_at": "2025-07-14T19:58:53Z",
+      "updated_at": "2025-07-14T19:58:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004918059,
+      "body_text": "Any update on this?\r\n\r\nOn Mon, Jul 14, 2025, 12:58 PM Justin Olsen <justin.olsen122@gmail.com>\r\nwrote:\r\n\r\n> I'd love to get this resolved promptly\r\n>\r\n> On Mon, Jul 14, 2025, 2:43 AM Justin Olsen <justin.olsen122@gmail.com>\r\n> wrote:\r\n>\r\n>> Any updates\r\n>>\r\n>> On Sun, Jul 13, 2025, 9:23 PM Justin Olsen <justin.olsen122@gmail.com>\r\n>> wrote:\r\n>>\r\n>>> Im not home currently\r\n>>>\r\n>>> On Sun, Jul 13, 2025, 9:21 PM Justin Olsen <justin.olsen122@gmail.com>\r\n>>> wrote:\r\n>>>\r\n>>>> Hi yes it connects and disconnects no visible damage\r\n>>>>\r\n>>>> On Sun, Jul 13, 2025, 8:40 PM service@simsonn.com ",
+      "user_id": 158002114637,
+      "created_at": "2025-07-16T01:45:40Z",
+      "updated_at": "2025-07-16T01:45:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004922493,
+      "body_text": "Hi Justin Olsen, ​The issue of connecting and then disconnecting is usually caused by insufficient USB power. Please avoid using a USB hub — instead, connect the device directly to a USB 3.0 port on the back of your PC. This will ensure stable power supply and should resolve the problem. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T03:32:11Z",
+      "updated_at": "2025-07-16T03:32:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004922529,
+      "body_text": "Its plugged directly into the pc. This is very frustrating because I was\r\nexited for the product but its not working like I'd hoped.\r\n\r\nOn Tue, Jul 15, 2025, 8:32 PM service@simsonn.com ",
+      "user_id": 158002114637,
+      "created_at": "2025-07-16T03:42:14Z",
+      "updated_at": "2025-07-16T03:42:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004922546,
+      "body_text": "I'd love to continue buying your products but im worried now about quality\r\nand customer support. Please help\r\n\r\nOn Tue, Jul 15, 2025, 8:41 PM Justin Olsen <justin.olsen122@gmail.com>\r\nwrote:\r\n\r\n> Its plugged directly into the pc. This is very frustrating because I was\r\n> exited for the product but its not working like I'd hoped.\r\n>\r\n> On Tue, Jul 15, 2025, 8:32 PM service@simsonn.com ",
+      "user_id": 158002114637,
+      "created_at": "2025-07-16T03:44:04Z",
+      "updated_at": "2025-07-16T03:44:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004922967,
+      "body_text": "Hi Justin Olsen,    Could you please provide your order number and let us know which control box model you're using? This will help us identify exactly which product you purchased.  Our products have been sold extensively worldwide and have undergone thorough validation — basic issues like this are extremely rare. Please rest assured, we will fully resolve the issue for you.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T03:46:49Z",
+      "updated_at": "2025-07-16T03:46:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004924219,
+      "body_text": "Thank tou for your response. The order number is SSN1959 unsure what you\r\nmean by control box?\r\n\r\nOn Tue, Jul 15, 2025, 8:46 PM service@simsonn.com ",
+      "user_id": 158002114637,
+      "created_at": "2025-07-16T03:53:16Z",
+      "updated_at": "2025-07-16T03:53:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004925666,
+      "body_text": "Any ideas?\r\n\r\nOn Tue, Jul 15, 2025, 8:52 PM Justin Olsen <justin.olsen122@gmail.com>\r\nwrote:\r\n\r\n> Thank tou for your response. The order number is SSN1959 unsure what you\r\n> mean by control box?\r\n>\r\n> On Tue, Jul 15, 2025, 8:46 PM service@simsonn.com ",
+      "user_id": 158002114637,
+      "created_at": "2025-07-16T04:00:22Z",
+      "updated_at": "2025-07-16T04:00:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004943298,
+      "body_text": "Any updates?\r\n\r\nOn Tue, Jul 15, 2025, 8:59 PM Justin Olsen <justin.olsen122@gmail.com>\r\nwrote:\r\n\r\n> Any ideas?\r\n>\r\n> On Tue, Jul 15, 2025, 8:52 PM Justin Olsen <justin.olsen122@gmail.com>\r\n> wrote:\r\n>\r\n>> Thank tou for your response. The order number is SSN1959 unsure what you\r\n>> mean by control box?\r\n>>\r\n>> On Tue, Jul 15, 2025, 8:46 PM service@simsonn.com ",
+      "user_id": 158002114637,
+      "created_at": "2025-07-16T07:26:06Z",
+      "updated_at": "2025-07-16T07:26:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004943341,
+      "body_text": "Hi Justin Olsen,  You purchased an HB Pro handbrake. Could you please clarify — does it disconnect immediately after plugging into USB, or does it disconnect after being connected for a while?  Once you're back home, I can assist you remotely to quickly identify and resolve the issue. Rest assured, we provide full after-sales support to ensure your device works as expected.  您购买的",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T07:35:11Z",
+      "updated_at": "2025-07-16T07:35:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004943351,
+      "body_text": "After a while. Yeah it just disconnects randomly. But frequently. Also im\r\nhome now yes\r\n\r\nOn Wed, Jul 16, 2025, 12:35 AM service@simsonn.com ",
+      "user_id": 158002114637,
+      "created_at": "2025-07-16T07:37:58Z",
+      "updated_at": "2025-07-16T07:37:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004943370,
+      "body_text": "Anyway I could get a replacement or a refund so I can re order?\r\n\r\nOn Wed, Jul 16, 2025, 12:37 AM Justin Olsen <justin.olsen122@gmail.com>\r\nwrote:\r\n\r\n> After a while. Yeah it just disconnects randomly. But frequently. Also im\r\n> home now yes\r\n>\r\n> On Wed, Jul 16, 2025, 12:35 AM service@simsonn.com ",
+      "user_id": 158002114637,
+      "created_at": "2025-07-16T07:42:37Z",
+      "updated_at": "2025-07-16T07:42:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004943374,
+      "body_text": "Hi Justin Olsen,  It's also possible that the Type-C connector on the handbrake is loose. Please try gently touching the Type-C connection to see if it causes the device to disconnect, which may indicate a loose or unstable connection.  Additionally, please take a photo showing the Type-C cable plugged into your computer so we can verify if everything looks properly connected.  To check if the USB disconnection issue is caused by insufficient power supply, you can try setting the LED brightness to 0% in SIMSONN Manager 2.0.8 to turn off the lighting effects. Then observe whether the disconnection issue still occurs.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T07:43:44Z",
+      "updated_at": "2025-07-16T07:43:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004943383,
+      "body_text": "Let me try all that. I don't think any of that is the case. Im pretty\r\ntechnically savy and I think its more likely internal. But happy to\r\ntroubleshoot.\r\n\r\nOn Wed, Jul 16, 2025, 12:43 AM service@simsonn.com ",
+      "user_id": 158002114637,
+      "created_at": "2025-07-16T07:45:47Z",
+      "updated_at": "2025-07-16T07:45:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004943403,
+      "body_text": "None of that works for me\r\n\r\nOn Wed, Jul 16, 2025, 12:45 AM Justin Olsen <justin.olsen122@gmail.com>\r\nwrote:\r\n\r\n> Let me try all that. I don't think any of that is the case. Im pretty\r\n> technically savy and I think its more likely internal. But happy to\r\n> troubleshoot.\r\n>\r\n> On Wed, Jul 16, 2025, 12:43 AM service@simsonn.com ",
+      "user_id": 158002114637,
+      "created_at": "2025-07-16T07:51:49Z",
+      "updated_at": "2025-07-16T07:51:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004943422,
+      "body_text": "Hi Justin Olsen,    So far, we haven’t received similar reports from other customers about frequent disconnection issues with the HB Pro.  To help us investigate further, could you please provide a photo of the Type-C port on the back of your PC? This will help us verify whether you’re using a USB 3.0 port and assess if the power supply is stable.  In most cases, such issues are related to unstable USB power from the computer rather than a problem with the device itself. If it were a hardware issue, we would likely be receiving the same feedback from other users — but so far, we haven't.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T07:55:02Z",
+      "updated_at": "2025-07-16T07:55:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004943440,
+      "body_text": "It is indeed plugged into a 3.0 port its hard to take a photo because of\r\nhow the pc is placed.  Any other ideas?\r\n\r\nOn Wed, Jul 16, 2025, 12:55 AM service@simsonn.com ",
+      "user_id": 158002114637,
+      "created_at": "2025-07-16T07:58:04Z",
+      "updated_at": "2025-07-16T07:58:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004943520,
+      "body_text": "Hi Justin Olsen,  If the disconnection only happens while you're playing games, it's likely caused by frequent movement when pulling the handbrake, which may lead to a loose USB connection. We recommend using a zip tie to secure the USB cable, ensuring a stable and tight connection before testing again. Otherwise, even if we send you a replacement, the issue could persist if the USB connection becomes loose again due to constant movement of the rig. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T08:07:57Z",
+      "updated_at": "2025-07-16T08:07:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004943560,
+      "body_text": "This is very frustrating. I feel like a product this expensive shouldn't be\r\nhaving these issues. I'll see if I can try to see if it works. Is there\r\nanything you can do to compensate me? For the trouble\r\n\r\nOn Wed, Jul 16, 2025, 1:08 AM service@simsonn.com ",
+      "user_id": 158002114637,
+      "created_at": "2025-07-16T08:10:08Z",
+      "updated_at": "2025-07-16T08:10:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004943579,
+      "body_text": "I'd love to keep buying products from you guys in the future as well as\r\nleaving good reviews!\r\n\r\nOn Wed, Jul 16, 2025, 1:09 AM Justin Olsen <justin.olsen122@gmail.com>\r\nwrote:\r\n\r\n> This is very frustrating. I feel like a product this expensive shouldn't\r\n> be having these issues. I'll see if I can try to see if it works. Is there\r\n> anything you can do to compensate me? For the trouble\r\n>\r\n> On Wed, Jul 16, 2025, 1:08 AM service@simsonn.com ",
+      "user_id": 158002114637,
+      "created_at": "2025-07-16T08:12:10Z",
+      "updated_at": "2025-07-16T08:12:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004943857,
+      "body_text": "Please help smooth this over. Its very frustrating\r\n\r\nOn Wed, Jul 16, 2025, 1:11 AM Justin Olsen <justin.olsen122@gmail.com>\r\nwrote:\r\n\r\n> I'd love to keep buying products from you guys in the future as well as\r\n> leaving good reviews!\r\n>\r\n> On Wed, Jul 16, 2025, 1:09 AM Justin Olsen <justin.olsen122@gmail.com>\r\n> wrote:\r\n>\r\n>> This is very frustrating. I feel like a product this expensive shouldn't\r\n>> be having these issues. I'll see if I can try to see if it works. Is there\r\n>> anything you can do to compensate me? For the trouble\r\n>>\r\n>> On Wed, Jul 16, 2025, 1:08 AM service@simsonn.com ",
+      "user_id": 158002114637,
+      "created_at": "2025-07-16T08:43:52Z",
+      "updated_at": "2025-07-16T08:43:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004944170,
+      "body_text": "Hi Justin Olsen,  Sure, I’ll submit the request first and get back to you shortly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T09:22:48Z",
+      "updated_at": "2025-07-16T09:22:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005022019,
+      "body_text": "Any updates?\r\n\r\nOn Wed, Jul 16, 2025, 2:22 AM service@simsonn.com ",
+      "user_id": 158002114637,
+      "created_at": "2025-07-16T21:51:03Z",
+      "updated_at": "2025-07-16T21:51:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005118141,
+      "body_text": "I'd love more help with this\r\n\r\nOn Wed, Jul 16, 2025, 2:50 PM Justin Olsen <justin.olsen122@gmail.com>\r\nwrote:\r\n\r\n> Any updates?\r\n>\r\n> On Wed, Jul 16, 2025, 2:22 AM service@simsonn.com ",
+      "user_id": 158002114637,
+      "created_at": "2025-07-17T06:53:00Z",
+      "updated_at": "2025-07-17T06:53:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005134120,
+      "body_text": "这单问题还没找到，不好进行补偿吧",
+      "user_id": 158001343601,
+      "created_at": "2025-07-17T09:43:28Z",
+      "updated_at": "2025-07-17T09:43:28Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158005134563,
+      "body_text": "Hi Justin Olsen,  Has your issue been resolved? If so, we will proceed with the compensation application for you. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-17T10:43:24Z",
+      "updated_at": "2025-07-17T10:43:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005138252,
+      "body_text": "No unfortunately not\r\n\r\nOn Thu, Jul 17, 2025, 3:43 AM service@simsonn.com ",
+      "user_id": 158002114637,
+      "created_at": "2025-07-17T16:00:25Z",
+      "updated_at": "2025-07-17T16:00:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005143761,
+      "body_text": "Hi Justin Olsen,    So even with a zip tie securing the Type-C connector on the handbrake side, the USB connection is still frequently disconnecting due to movement — is that correct?  Please let us know what kind of compensation you would consider acceptable, and we will do our best to address the issue for you.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-18T00:01:16Z",
+      "updated_at": "2025-07-18T00:01:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005144104,
+      "body_text": "Im not sure obviously a full refund would be ideal. What do you think is\r\nfair?\r\n\r\nOn Thu, Jul 17, 2025, 5:01 PM service@simsonn.com ",
+      "user_id": 158002114637,
+      "created_at": "2025-07-18T00:46:40Z",
+      "updated_at": "2025-07-18T00:46:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005144128,
+      "body_text": "Hi Justin Olsen,    The product is not damaged; this is a usage-related issue. Therefore, we are unable to accept a return or exchange under these circumstances.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-18T00:49:56Z",
+      "updated_at": "2025-07-18T00:49:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005144309,
+      "body_text": "Im confused on how you could possibly make an assessment that its not\r\ndefective? It doesn't work consistently.\r\n\r\nOn Thu, Jul 17, 2025, 5:50 PM service@simsonn.com ",
+      "user_id": 158002114637,
+      "created_at": "2025-07-18T01:15:05Z",
+      "updated_at": "2025-07-18T01:15:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005144591,
+      "body_text": "Hi Justin Olsen,     There are typically only a few reasons for USB disconnection issues:    Using a USB hub, which can cause unstable connections;    Not plugging the device into a USB 3.0 port on the back of your PC case;    A loose or frequently wobbled USB connection;    If you're using a Fanatec or Moza base, lack of proper grounding to your PC case can also cause USB dropouts due to EMI.    We recommend turning off your wheelbase and leaving it off for an hour to observe whether the USB disconnection still occurs. Meanwhile, check SIMSONN Manager to see if your device is still sending output signals—this can help determine whether the issue is hardware-related. The HB Pro hardware is highly reliable and very unlikely to fail under normal conditions.      Here are the recommended solutions for interference mitigation:  1. Ensure your PC is properly grounded to a reliable household ground. Some wall outlets have only two wires and no ground line. This not only poses a safety risk but also prevents electromagnetic interference from devices like Fanatec from being properly discharged.  2. Use a wire to connect the metal housing of the rig or base to the PC case. This helps establish a shielding path and improves overall interference resistance.     3.    Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible.  ​   4. Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources.  ​   https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting  ​   https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding  ​   Additionally, our device is CE EMI certified and does not emit electromagnetic interference to external equipment. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-18T02:06:13Z",
+      "updated_at": "2025-07-18T02:06:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005144769,
+      "body_text": "I will try all that.\r\n\r\nOn Thu, Jul 17, 2025, 7:06 PM service@simsonn.com ",
+      "user_id": 158002114637,
+      "created_at": "2025-07-18T02:38:56Z",
+      "updated_at": "2025-07-18T02:38:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005145165,
+      "body_text": "Didn't work. Could I maybe get a discount code for other products? I am\r\ninterested in your sequential shifter\r\n\r\nOn Thu, Jul 17, 2025, 7:38 PM Justin Olsen <justin.olsen122@gmail.com>\r\nwrote:\r\n\r\n> I will try all that.\r\n>\r\n> On Thu, Jul 17, 2025, 7:06 PM service@simsonn.com ",
+      "user_id": 158002114637,
+      "created_at": "2025-07-18T04:02:38Z",
+      "updated_at": "2025-07-18T04:02:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005145185,
+      "body_text": "Or maybe even free expedited shipping or something\r\n\r\nOn Thu, Jul 17, 2025, 9:02 PM Justin Olsen <justin.olsen122@gmail.com>\r\nwrote:\r\n\r\n> Didn't work. Could I maybe get a discount code for other products? I am\r\n> interested in your sequential shifter\r\n>\r\n> On Thu, Jul 17, 2025, 7:38 PM Justin Olsen <justin.olsen122@gmail.com>\r\n> wrote:\r\n>\r\n>> I will try all that.\r\n>>\r\n>> On Thu, Jul 17, 2025, 7:06 PM service@simsonn.com ",
+      "user_id": 158002114637,
+      "created_at": "2025-07-18T04:05:42Z",
+      "updated_at": "2025-07-18T04:05:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005145264,
+      "body_text": "I've had an issue with mozas shipping i bought a sequential shifter from\r\nthem.  But if you can help me put if rather but it from you guys! Like with\r\na 30% off or something.\r\n\r\nOn Thu, Jul 17, 2025, 9:05 PM Justin Olsen <justin.olsen122@gmail.com>\r\nwrote:\r\n\r\n> Or maybe even free expedited shipping or something\r\n>\r\n> On Thu, Jul 17, 2025, 9:02 PM Justin Olsen <justin.olsen122@gmail.com>\r\n> wrote:\r\n>\r\n>> Didn't work. Could I maybe get a discount code for other products? I am\r\n>> interested in your sequential shifter\r\n>>\r\n>> On Thu, Jul 17, 2025, 7:38 PM Justin Olsen <justin.olsen122@gmail.com>\r\n>> wrote:\r\n>>\r\n>>> I will try all that.\r\n>>>\r\n>>> On Thu, Jul 17, 2025, 7:06 PM service@simsonn.com ",
+      "user_id": 158002114637,
+      "created_at": "2025-07-18T04:15:19Z",
+      "updated_at": "2025-07-18T04:15:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005146318,
+      "body_text": "Hi Justin Olsen,    Hi, we can upgrade you to Expedited  Delivery for free as we don't have discounts under $200 at the moment, sorry.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-18T07:41:18Z",
+      "updated_at": "2025-07-18T07:41:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005146347,
+      "body_text": "It would be for your more pro shifter at 200! Could you do a discount on\r\nthat?\r\n\r\nOn Fri, Jul 18, 2025, 12:41 AM service@simsonn.com ",
+      "user_id": 158002114637,
+      "created_at": "2025-07-18T07:48:15Z",
+      "updated_at": "2025-07-18T07:48:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005146358,
+      "body_text": "This product!\r\n\r\nOn Fri, Jul 18, 2025, 12:47 AM Justin Olsen <justin.olsen122@gmail.com>\r\nwrote:\r\n\r\n> It would be for your more pro shifter at 200! Could you do a discount on\r\n> that?\r\n>\r\n> On Fri, Jul 18, 2025, 12:41 AM service@simsonn.com ",
+      "user_id": 158002114637,
+      "created_at": "2025-07-18T07:50:19Z",
+      "updated_at": "2025-07-18T07:50:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005146360,
+      "body_text": "What can you do on that product\r\n\r\nOn Fri, Jul 18, 2025, 12:49 AM Justin Olsen <justin.olsen122@gmail.com>\r\nwrote:\r\n\r\n>\r\n> This product!\r\n>\r\n> On Fri, Jul 18, 2025, 12:47 AM Justin Olsen <justin.olsen122@gmail.com>\r\n> wrote:\r\n>\r\n>> It would be for your more pro shifter at 200! Could you do a discount on\r\n>> that?\r\n>>\r\n>> On Fri, Jul 18, 2025, 12:41 AM service@simsonn.com ",
+      "user_id": 158002114637,
+      "created_at": "2025-07-18T07:51:47Z",
+      "updated_at": "2025-07-18T07:51:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005146411,
+      "body_text": "Hi Justin Olsen,    Sorry, this product is out of stock and we will immediately set it to out of stock, you may want to consider our new SQ Pro Sequential Shifter. We can give you a link to it for $150 and there is no shipping charge and we will still ship it to you with priority.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-18T08:08:56Z",
+      "updated_at": "2025-07-18T08:08:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005146444,
+      "body_text": "I've heard that it has issues with durability and that makes me very nervous\r\n\r\nOn Fri, Jul 18, 2025, 1:09 AM service@simsonn.com ",
+      "user_id": 158002114637,
+      "created_at": "2025-07-18T08:24:35Z",
+      "updated_at": "2025-07-18T08:24:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005163224,
+      "body_text": "Any update on this?\r\n\r\nOn Fri, Jul 18, 2025, 1:24 AM Justin Olsen <justin.olsen122@gmail.com>\r\nwrote:\r\n\r\n> I've heard that it has issues with durability and that makes me very\r\n> nervous\r\n>\r\n> On Fri, Jul 18, 2025, 1:09 AM service@simsonn.com ",
+      "user_id": 158002114637,
+      "created_at": "2025-07-19T09:15:26Z",
+      "updated_at": "2025-07-19T09:15:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005165284,
+      "body_text": "Hi Justin Olsen,    Please don't worry, it's been through a lot of testing and we've had no mishaps with it on our own go-to racing rigs. If an accident does occur that makes it unavailable, we will resend it for you, so don't worry!",
+      "user_id": 158001343601,
+      "created_at": "2025-07-19T10:38:12Z",
+      "updated_at": "2025-07-19T10:38:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005165303,
+      "body_text": "I really liked the idea of the heavy mechanical feel of the other version.\r\nIm not sure i am interested in the one you recommended. Is there anything\r\nelse you could do?\r\n\r\nOn Sat, Jul 19, 2025, 3:38 AM service@simsonn.com ",
+      "user_id": 158002114637,
+      "created_at": "2025-07-19T10:41:51Z",
+      "updated_at": "2025-07-19T10:41:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005268129,
+      "body_text": "Hi Justin Olsen,    This older version has been discontinued because it doesn't perform or feel as good as the newer versions and has a more expensive price tag.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-21T10:34:59Z",
+      "updated_at": "2025-07-21T10:34:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

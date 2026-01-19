@@ -1,0 +1,44 @@
+{
+  "id": 10192,
+  "subject": "Aw: A shipment from order #SSN5258 is on the way",
+  "description_text": "Dear Team, \r\n \r\n according to the tracking the package should have arrived. The only thing I got was a small parcel with 2 mounting brackets, no haptic motors, can you please clarify? \r\n \r\n See also screenshot, package only had 0.12kg. \r\n \r\n Thanks \r\n Timo \r\n \r\n \r\n \r\n Gesendet: Dienstag, 30. Dezember 2025 um 13:19 \r\n Von: SIMSONN <service@simsonn.com> \r\n An: timo.lamm@gmx.de \r\n Betreff: A shipment from order #SSN5258 is on the way \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n SIMSONN \r\n \r\n \r\n \r\n \r\n \r\n Order #SSN5258 \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n One item in your order is on the way \r\n One item in your order is on the way. Track your shipment to see the delivery status. \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n View your order \r\n \r\n \r\n \r\n \r\n \r\n \r\n or Visit our store \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n DHL Express tracking number: CE326638195DE \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n Items in this shipment \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n Simsonn Plus X Racing Simulation Pedal with Haptic Reactor Optional × 1 Plus X P3-H3 / Silver / Baseplate Part of: Simsonn Plus X Racing Simulation Pedal with Haptic Reactor Optional \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n If you have any questions, reply to this email or contact us at service@simsonn.com \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-07T08:37:29Z",
+  "updated_at": "2026-01-08T09:32:31Z",
+  "requester_id": 158008800786,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016096588,
+      "body_text": "Hi Timo Lamm,  I can see that your order includes PlusX pedals and VAM Pro haptic motors, which were shipped in two separate packages. Could you please confirm which tracking number corresponds to the package you have already received? Also, please take photos of everything you have received so far. I will help you check whether any items are missing or if the second package is still in transit. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T08:40:23Z",
+      "updated_at": "2026-01-07T08:40:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016097197,
+      "body_text": "Hello, \r\n \r\n belongs to SF6047201468555 which arrived according to the delivery - as you can see in my screenshot, last mile was done by PostNL with only 0.12kg of weight - see picture attached this was all \r\n \r\n Thanks \r\n Timo \r\n \r\n Regards \r\n Timo \r\n \r\n \r\n Gesendet: Mittwoch, 7. Januar 2026 um 09:40 \r\n ",
+      "user_id": 158008800786,
+      "created_at": "2026-01-07T08:44:25Z",
+      "updated_at": "2026-01-07T08:44:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016313447,
+      "body_text": "Hi Timo Lamm,    Haptics is included in your DHL tracking number, shipped from the German warehouse.  CE326638195DE",
+      "user_id": 158001343601,
+      "created_at": "2026-01-08T09:32:29Z",
+      "updated_at": "2026-01-08T09:32:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

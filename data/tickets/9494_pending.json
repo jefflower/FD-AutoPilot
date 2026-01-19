@@ -1,0 +1,24 @@
+{
+  "id": 9494,
+  "subject": "Delivery to Poland",
+  "description_text": "Hello!\r\nI'd like to purchase some of your products (Simsonn Plus X + additional\r\nitems), but Poland isn't listed as a delivery destination.\r\nIs this correct?\r\n\r\n--\r\nArtsiom Kuis\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-29T20:15:37Z",
+  "updated_at": "2025-12-30T07:58:59Z",
+  "requester_id": 158008813246,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015241320,
+      "body_text": "Hi Artsiom Kuis,  Customers in Poland can place orders directly through our Polish distributor, and the products will be shipped locally from Poland.   https://fmic.pl/elektronika/simracing?product%20brand=Simsonn",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T07:58:59Z",
+      "updated_at": "2025-12-30T07:58:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

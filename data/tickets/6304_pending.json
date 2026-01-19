@@ -1,0 +1,34 @@
+{
+  "id": 6304,
+  "subject": "Update Shipping Address to Prevent Return",
+  "description_text": "Dear Customer Service Team,\r\n\r\n\r\n\r\nI am contacting you regarding an issue with my shipment (tracking number: 5P63D60093644). The package appears to be stuck in transit, and the tracking updates indicate it may be returned to the sender.\r\n\r\n\r\n\r\nTo prevent this, please urgently inform the courier that the correct delivery address is:\r\n\r\nVia Alessandro Manzoni 20, 20091 Bresso (MI), Italy\r\n\r\n\r\n\r\nIt is essential that the shipment is not returned, as this would create a significant problem for me. I kindly ask you to update the address with the courier as soon as possible and ensure the delivery can proceed correctly.\r\n\r\n\r\n\r\nThank you for your prompt assistance.\r\n\r\n\r\n\r\nBest regards\r\n\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-11-18T15:02:29Z",
+  "updated_at": "2025-11-21T11:23:20Z",
+  "requester_id": 158007163095,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012621112,
+      "body_text": "Hi Francesco. soldano002,    Please provide your order number and the platform where you made the purchase.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-20T03:11:20Z",
+      "updated_at": "2025-11-20T03:11:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012629457,
+      "body_text": "The platform is aliexpress and the number is\r\n3062853145128192, i hope u can find a solution.\r\n\r\n\r\nIl giorno gio 20 nov 2025 alle 04:11 service@simsonn.com <\r\nservice@simsonn.com> ha scritto:\r\n\r\n> Hi Francesco. soldano002,\r\n>\r\n> Please provide your order number and the platform where you made the\r\n> purchase.\r\n>\r\n>\r\n>\r\n> On Tue, 18 Nov at 10:02 AM , Francesco. soldano002 <\r\n> francesco.soldano002@gmail.com> wrote:\r\n> Dear Customer Service Team,\r\n>\r\n> I am contacting you regarding an issue with my shipment (tracking number:\r\n> 5P63D60093644). The package appears to be stuck in transit, and the\r\n> tracking updates indicate it may be returned to the sender.\r\n>\r\n> To prevent this, please urgently inform the courier that the correct\r\n> delivery address is:\r\n> Via Alessandro Manzoni 20, 20091 Bresso (MI), Italy\r\n> <https://www.google.com/maps/search/Via+Alessandro+Manzoni+20,+20091+Bresso+(MI),+Italy?entry=gmail&source=g>\r\n>\r\n> It is essential that the shipment is not returned, as this would create a\r\n> significant problem for me. I kindly ask you to update the address with the\r\n> courier as soon as possible and ensure the delivery can proceed correctly.\r\n>\r\n> Thank you for your prompt assistance.\r\n>\r\n> Best regards\r\n>\r\n> 6304:4206036\r\n>\r\n\r\n",
+      "user_id": 158007163095,
+      "created_at": "2025-11-20T10:03:19Z",
+      "updated_at": "2025-11-20T10:03:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

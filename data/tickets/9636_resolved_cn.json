@@ -1,0 +1,25 @@
+{
+  "id": 9636,
+  "subject": "缺少物品",
+  "description_text": "您好，我在亚马逊订购了一个Plus X + 踏板，但他们忘记随包裹发送踏板。我不想退货，因为重新收到一个需要很长时间。\n\n需要多久才能收到踏板？我1月9日之后就不在家了，所以需要在发货前知道交货预计到达时间是否在我离家之后。\n\n我的亚马逊订单号是 113-6582872-9104222\n\n谢谢，\nDinnelky Tavarez",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-31T04:38:39Z",
+  "updated_at": "2026-01-04T06:27:22Z",
+  "requester_id": 158008829561,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015305128,
+      "body_text": "亚马逊后台已回复",
+      "user_id": 158007774607,
+      "created_at": "2025-12-31T10:03:48Z",
+      "updated_at": "2025-12-31T10:03:48Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ],
+  "available_langs": []
+}

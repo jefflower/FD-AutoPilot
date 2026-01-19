@@ -1,0 +1,84 @@
+{
+  "id": 5324,
+  "subject": "Commande #SSN3017",
+  "description_text": "Bonjour, Suite a ma commande #SSN3017, ma commande se compose de 2x 3\r\nhaptics ainsi qu'une alimentation supplémentaire\r\n\r\nLors de la livraison je n'ai eu qu'un seul lot de 3hatpics complet mais il\r\nme manque encore 1 lot de 3 haptics ainsi que l'alimentation.\r\nPouvez vous me dire ou ce trouve le reste de ma livraison ?\r\n\r\nCordialement\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-27T09:11:28Z",
+  "updated_at": "2025-11-04T11:03:33Z",
+  "requester_id": 158005862812,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011146283,
+      "body_text": "Hi Cyril Charles,    We sincerely apologize for the inconvenience caused. Our warehouse staff did indeed only send you one set of 3 haptics. We will arrange for a replacement shipment immediately. We apologize for the error.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-27T09:15:55Z",
+      "updated_at": "2025-10-27T09:15:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011146317,
+      "body_text": "Bonjour merci pour votre réactivité.\r\n\r\nDonc le colis que je vais recevoir sera un lot complet + une alimentation\r\nsupplémentaire ?\r\n\r\nCordialement\r\n\r\n\r\n\r\nLe lun. 27 oct. 2025, 10:16, service@simsonn.com ",
+      "user_id": 158005862812,
+      "created_at": "2025-10-27T09:18:42Z",
+      "updated_at": "2025-10-27T09:18:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011146335,
+      "body_text": "Pouvez vous les envoyer en expresse ?\r\nMerci\r\nCordialement\r\n\r\nLe lun. 27 oct. 2025, 10:16, service@simsonn.com ",
+      "user_id": 158005862812,
+      "created_at": "2025-10-27T09:19:57Z",
+      "updated_at": "2025-10-27T09:19:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011148497,
+      "body_text": "Hi Cyril Charles,    Shipping from China via express delivery may incur customs duties. We will use the fastest available shipping method.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-27T09:57:31Z",
+      "updated_at": "2025-10-27T09:57:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011148558,
+      "body_text": "Hi Cyril Charles,    We have sent your package via priority shipping and expect it to arrive in approximately 5 days.  https://t.17track.net/en#nums=SF6045994860802",
+      "user_id": 158001343601,
+      "created_at": "2025-10-27T10:00:49Z",
+      "updated_at": "2025-10-27T10:00:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011148593,
+      "body_text": "Ha je ne savais pas, vous etes déjà très réactif\r\n\r\nLe lun. 27 oct. 2025, 10:57, service@simsonn.com ",
+      "user_id": 158005862812,
+      "created_at": "2025-10-27T10:03:45Z",
+      "updated_at": "2025-10-27T10:03:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011715065,
+      "body_text": "Bonjour, je viens de recevoir le reste de ma commande mais il mange une\r\nprise secteur pour l'alimentation.\r\n\r\nCi joint la photos du colis\r\n\r\nCordialement\r\n\r\n\r\n\r\nLe lun. 27 oct. 2025, 11:03, Cyril Charles <ccharles0108@gmail.com> a\r\nécrit :\r\n\r\n> Ha je ne savais pas, vous etes déjà très réactif\r\n>\r\n> Le lun. 27 oct. 2025, 10:57, service@simsonn.com ",
+      "user_id": 158005862812,
+      "created_at": "2025-11-04T09:20:32Z",
+      "updated_at": "2025-11-04T09:20:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

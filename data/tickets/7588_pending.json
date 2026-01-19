@@ -1,0 +1,124 @@
+{
+  "id": 7588,
+  "subject": "Plus x pedals",
+  "description_text": "Dear simsonn, \r\n\r\nRecently I bought the plus x pedals. However, I have a huge issue. When plugging the brake wire into the box, it will not work at all. I used the clutch in the brake slot and it works. I tried taking it apart but I realize the wire is all the way enclosed in the sensor box. I am emailing to request a replacement load cell module box. Let me know what information you need from me in order to resolve this issue. It’s incredibly frustrating.\r\n\r\nSincerely,\r\nMatthew Patriak \r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-07T02:14:14Z",
+  "updated_at": "2025-12-30T09:50:20Z",
+  "requester_id": 158007680634,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014120257,
+      "body_text": "Hi Matthew Patriak,  Please click “Offset” in the software and then recalibrate the pedals. After calibration, the blue signal bar should reach 100%. You can then proceed to bind the controls in the game. Detailed instructions can be found in the user manual. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-08T11:07:54Z",
+      "updated_at": "2025-12-08T11:07:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014159987,
+      "body_text": "\r\nHello, \r\n\r\nI have now just tried this. When I click offset, unplug and plug in, and recalibrate, the software blue bar still does not move at all when pushing the brake pedal. When I push the gas and clutch pedal, they both work. Thank you . \r\n\r\nSincerely,\r\nMP\r\n\r\n> ",
+      "user_id": 158007680634,
+      "created_at": "2025-12-09T00:06:38Z",
+      "updated_at": "2025-12-09T00:06:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014307124,
+      "body_text": "Hi Matthew Patriak,  Have you tried swapping the brake and throttle connections to see if they output signals correctly? This will help determine whether the issue is with the brake pedal itself or the control box. Normally, there shouldn’t be any problem, as all units are tested before shipping. Also, please check if any bracket at the front of the brake pedal is blocking the sensor, preventing it from moving. You can send a photo of the side view of the brake pedal installation, and I will help you check. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T07:50:28Z",
+      "updated_at": "2025-12-11T07:50:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014470138,
+      "body_text": "Hi, \r\n\r\nYes I tried swapping the brake and throttle, the throttle works in the brake slot but the brake does not work in the throttle slot. I have sent a picture of the side view. \r\n\r\nMP\r\n\r\n> ",
+      "user_id": 158007680634,
+      "created_at": "2025-12-14T00:04:42Z",
+      "updated_at": "2025-12-14T00:04:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014472213,
+      "body_text": "Hi Matthew Patriak,   Do you feel comfortable handling the installation yourself? We can send you a new brake sensor. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-14T03:28:43Z",
+      "updated_at": "2025-12-14T03:28:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014547791,
+      "body_text": "Hi, \r\n\r\nYes I do feel comfortable enough to do that. My address is 123 Vanida Drive, Camillus NY 13031. If there is anything else you need from me , please let me know. Thank you \r\n\r\nSincerely,\r\nMP\r\n\r\n> ",
+      "user_id": 158007680634,
+      "created_at": "2025-12-15T23:14:36Z",
+      "updated_at": "2025-12-15T23:14:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014810283,
+      "body_text": "Hi Matthew Patriak,  We sincerely apologize for the delayed response, as a large number of emails accumulated before Christmas. Please provide your order information, and we will arrange for the appropriate operations team to send you a replacement. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-20T12:33:10Z",
+      "updated_at": "2025-12-20T12:33:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014846870,
+      "body_text": "I have attached my order invoice \r\n\r\n\r\n> ",
+      "user_id": 158007680634,
+      "created_at": "2025-12-21T19:13:42Z",
+      "updated_at": "2025-12-21T19:13:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015182998,
+      "body_text": "Hi Matthew Patriak,  OK, WE WILL SHIP IT ASAP. ",
+      "user_id": 158007774607,
+      "created_at": "2025-12-29T08:14:44Z",
+      "updated_at": "2025-12-29T08:14:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015234780,
+      "body_text": "Awesome, thank you so much!\r\n\r\nOn Mon, Dec 29, 2025 at 3:14 AM service@simsonn.com ",
+      "user_id": 158007680634,
+      "created_at": "2025-12-30T03:42:38Z",
+      "updated_at": "2025-12-30T03:42:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015245303,
+      "body_text": "Hi Matthew Patriak,  Here is the tracking number: JSELD2264893598YQ.   the shipping carrier is JSEXPRESS, you can track it via https://www.17track.net/en)",
+      "user_id": 158007774607,
+      "created_at": "2025-12-30T09:50:15Z",
+      "updated_at": "2025-12-30T09:50:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

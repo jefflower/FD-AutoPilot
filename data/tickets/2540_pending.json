@@ -1,0 +1,54 @@
+{
+  "id": 2540,
+  "subject": "Pedal axis values",
+  "description_text": "Hi,\r\n\r\nMy Simsonn X Ultra pedals seem to be doing the oddest thing in iRacing. I can’t calibrate the controls because the pedals seem to be engaged but aren’t. I’ve sent a video for reference. \r\n\r\nThanks! \r\n\r\n\r\n\r\nSent from my iPhone\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-10T23:54:11Z",
+  "updated_at": "2025-08-13T00:23:31Z",
+  "requester_id": 158002923432,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006663971,
+      "body_text": "Hi chance lyon,  In the “Settings - Update” section, click “Manual Firmware Update,” then navigate to the pedals-firmware folder → pedals folder → and select the proxultra.sfu file to update. This firmware will disable the 4th axis. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-11T00:37:23Z",
+      "updated_at": "2025-08-11T00:37:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006775501,
+      "body_text": "Unfortunately I have tried this and it didn’t work. ",
+      "user_id": 158002923432,
+      "created_at": "2025-08-12T20:01:57Z",
+      "updated_at": "2025-08-12T20:01:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158006775521,
+      "body_text": "Does it matter if I didn’t have the clutch pedal installed when I did the manual update? ",
+      "user_id": 158002923432,
+      "created_at": "2025-08-12T20:03:03Z",
+      "updated_at": "2025-08-12T20:03:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158006780212,
+      "body_text": "Hi chance lyon,     Please download VKB Joy Tester to check, and send me a screenshot of the SIMSONN device status so I can see if the RX axis is disabled.     https://www.vkbcontrollers.com/pages/downloads",
+      "user_id": 158000445778,
+      "created_at": "2025-08-13T00:23:30Z",
+      "updated_at": "2025-08-13T00:23:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

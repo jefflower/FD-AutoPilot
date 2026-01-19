@@ -1,0 +1,44 @@
+{
+  "id": 8850,
+  "subject": "Crypto payment question",
+  "description_text": "Hello,\r\n\r\nI was wondering if Solana is an acceptable crypto payment method? Also how\r\ndoes the crypto payment process work? Do I just send the amount listed for\r\nthe product and then the order is automatically processed, or do I send an\r\nemail after saying I sent crypto and then tell you what I ordered?\r\n\r\nThanks\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-22T06:54:43Z",
+  "updated_at": "2025-12-24T12:19:29Z",
+  "requester_id": 158008284482,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014874772,
+      "body_text": "Hi Domas Dicpetris,  We currently do not accept cryptocurrency payments. You may pay using PayPal or a credit card. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-22T11:36:52Z",
+      "updated_at": "2025-12-22T11:36:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014881293,
+      "body_text": "When I check out, it lets me use phantom wallet and pay with USDC, is that\r\na valid payment method?\r\n\r\n\r\nOn Mon, Dec 22, 2025 at 5:36 AM service@simsonn.com ",
+      "user_id": 158008284482,
+      "created_at": "2025-12-22T13:05:45Z",
+      "updated_at": "2025-12-22T13:05:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015032369,
+      "body_text": "Hi Domas Dicpetris,    As long as payment can be completed, it's feasible.  Merry Christmas!",
+      "user_id": 158001343601,
+      "created_at": "2025-12-24T12:19:29Z",
+      "updated_at": "2025-12-24T12:19:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

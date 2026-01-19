@@ -1,0 +1,24 @@
+{
+  "id": 3360,
+  "subject": "Order Status Inquiry – Haptic Pedal Sensors",
+  "description_text": "Hello,\r\n\r\n\r\nI placed an order for the haptic pedal sensors on your website, and\r\naccording to the tracking information, the package has been marked as in\r\ntransit / on the way for about two weeks now. Since there has been no\r\nupdate in the tracking status, I am a bit concerned and would like to know\r\nmore about the current location and estimated delivery time of my order.\r\n\r\n\r\nCould you please provide me with an update on the shipping status?\r\n\r\n\r\nThank you very much for your help.\r\n\r\n\r\nBest regards,\r\n\r\nAlexi Vigeant\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-01T16:37:33Z",
+  "updated_at": "2025-09-02T02:20:44Z",
+  "requester_id": 158004061863,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007926226,
+      "body_text": "Hi Alexi Vigeant,  Your parcel appears to have been placed at a collection point. It is possible the courier was unable to contact you. Please check your letterbox for any notification cards they may have left. If none are found, kindly contact Canada Post. Here is your tracking number: 1029777130304828     Call：1-866-607-6301  https://t.17track.net/en#nums=1029777130304828",
+      "user_id": 158001343601,
+      "created_at": "2025-09-02T02:20:44Z",
+      "updated_at": "2025-09-02T02:20:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

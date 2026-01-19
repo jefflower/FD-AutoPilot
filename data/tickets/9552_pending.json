@@ -1,0 +1,54 @@
+{
+  "id": 9552,
+  "subject": "Plus X question",
+  "description_text": "Hi Team,\r\n\r\nI hope this email finds you well. I am reaching out with a query regarding the Plus X pedal sets listed on your website. I have noticed that there are two separate listings: one that includes 'load cell' in the title and another that does not. This has caused some confusion for me, as the online materials seem to suggest that all Plus X pedal sets come with load cell sensors.\r\n\r\nCould you please clarify whether all Plus X pedal sets are equipped with load cell sensors, or if there are indeed different versions available? Your assistance in this matter would be greatly appreciated, as it will help me make an informed decision.\r\n\r\nThank you in advance for your time and support.\r\n\r\nBest regards, Jakub Lasoń\r\n\r\nSent from Outlook for Android<https://aka.ms/AAb9ysg>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-30T09:34:15Z",
+  "updated_at": "2025-12-30T13:30:05Z",
+  "requester_id": 158008818530,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015247071,
+      "body_text": "Hi Jakub Lasoń,  All of our pedals use load cell pressure sensors. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T10:49:10Z",
+      "updated_at": "2025-12-30T10:49:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015249172,
+      "body_text": "Than what is the difference between this listing:\r\nhttps://www.simsonn.com/products/simsonn-plus-x-pedal-for-racing-simulator?variant=50932387512634\r\n\r\nAnd this:\r\nhttps://www.simsonn.com/products/simsonn-plus-x-pedals?variant=51288365105466\r\n\r\nBoth are plus X, but one has load cell in title, and other one don't. There is also difference in price.\r\n\r\nRegards,\r\nJakub Lasoń\r\n\r\nSent from Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158008818530,
+      "created_at": "2025-12-30T11:18:37Z",
+      "updated_at": "2025-12-30T11:18:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015249848,
+      "body_text": "Hi Jakub Lasoń,       They are: one package with the VAM Pro force feedback motor, and the other without the VAM Pro. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T11:30:01Z",
+      "updated_at": "2025-12-30T11:30:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015250294,
+      "body_text": "Ohh ok. I understand now.\r\n\r\nIt's a little bit unclear on the website. It would help to add some section like package content.\r\n\r\nThanks for clearing it up.\r\n\r\nRegards\r\nJakub Lasoń\r\n\r\nSent from Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158008818530,
+      "created_at": "2025-12-30T11:49:26Z",
+      "updated_at": "2025-12-30T11:49:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

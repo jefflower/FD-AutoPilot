@@ -1,0 +1,26 @@
+{
+  "id": 8172,
+  "subject": "Firmware update",
+  "description_text": "Hello,\r\nI’m trying to update the firmware, but I’m not being able to do it.\r\nI go to Settings/Update, the pending update shows up, I click on update, the message “Firmware Updating” appears, then the message “Upgrade Complete.”\r\nThe firmware loading bar never goes beyond 0%, and the pending update doesn’t disappear.\r\n\r\n\r\n[cid:ffeb3196-ffef-4d58-8423-484d02114df7]\r\n\r\n\r\n\r\n\r\n[cid:a3a9d053-b7f5-4b90-b658-abe08ae55d84]\r\n\r\n\r\nWhen I click on Manual Update, I don’t have any file with a recent date to update.\r\n\r\nWhen I go back to the calibration page, I still get the message that there is a new pedal firmware update, and I can’t calibrate. Pressing the pedals doesn’t show any movement in the software’s graphs.\r\n\r\n\r\nBest Regards,\r\nPedro Lima\r\n\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-13T19:01:47Z",
+  "updated_at": "2025-12-14T02:46:48Z",
+  "requester_id": 158007332285,
+  "responder_id": 158000445778,
+  "cc_emails": [
+    "simsonnsupport@gmail.com"
+  ],
+  "conversations": [
+    {
+      "id": 158014471771,
+      "body_text": "Hi Lima Jr,  Could you please provide your pedal model or order number? You can manually update the pedals by going to Settings → Update in the software, then clicking Manual Update at the bottom of the page. Select pedals-firmware → the corresponding pedal firmware and proceed with the update. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-14T02:46:48Z",
+      "updated_at": "2025-12-14T02:46:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

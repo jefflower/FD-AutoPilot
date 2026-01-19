@@ -1,0 +1,24 @@
+{
+  "id": 2570,
+  "subject": "Outlet in Australia?",
+  "description_text": "Hello,  do you have a distributor in Australia?\r\n\r\nI wish to try out/purchase the haptic range.\r\n\r\nThank you\r\nScott\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-11T23:12:36Z",
+  "updated_at": "2025-08-12T01:39:49Z",
+  "requester_id": 158002958270,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006724191,
+      "body_text": "Hi Scott Cows,    Sorry, we don't have any dealer partners in Australia yet.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-12T01:39:49Z",
+      "updated_at": "2025-08-12T01:39:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

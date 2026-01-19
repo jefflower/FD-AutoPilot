@@ -1,0 +1,35 @@
+{
+  "id": 11113,
+  "subject": "SSN5844",
+  "description_text": "你好，我于1月7日订购了一套踏板弹性体，但至今未收到任何发货更新。\n发自我的 iPhone",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-17T04:54:43Z",
+  "updated_at": "2026-01-17T06:31:36Z",
+  "requester_id": 158009342868,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017313052,
+      "body_text": "你好，Evan Summar，我先帮你查一下，尽快回复你。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-17T05:22:04Z",
+      "updated_at": "2026-01-17T05:22:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017315974,
+      "body_text": "你好，Evan Summar，很抱歉没有及时向你更新。我看到你的包裹已送达。请确认。\nhttps://t.17track.net/en#nums=SF6047231333102",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T06:31:36Z",
+      "updated_at": "2026-01-17T06:31:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

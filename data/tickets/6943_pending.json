@@ -1,0 +1,94 @@
+{
+  "id": 6943,
+  "subject": "Order #SSN3614 confirmed",
+  "description_text": "We apologize for the inconvenience. Shipping to Brazil is prohibitively expensive, costing approximately $131. We require you to cover the additional $46 shipping fee. We will ship your order at cost price. If you agree, please click this link to complete payment. https://www.simsonn.com/products/difference-1",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-11-28T11:45:42Z",
+  "updated_at": "2025-12-17T11:54:43Z",
+  "requester_id": 158007391021,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014155361,
+      "body_text": "Hey there,\r\nwhen i go to the link, it shows it as a product called \"difference\", and\r\nit's 8 dollars instead of the 46. Also, i got an email saying the pedals\r\nwere in transit. What's going on? I don't know what to do, the payment link\r\nis wrong and the pedals are supposedly shipping.\r\n\r\nEm sex., 28 de nov. de 2025 08:45, support@simsonn.com ",
+      "user_id": 158007391021,
+      "created_at": "2025-12-08T22:05:31Z",
+      "updated_at": "2025-12-08T22:05:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014178901,
+      "body_text": "Hi Davizinhobeltrao,    You can click the link to make the payment.  https://www.simsonn.com/products/difference-1",
+      "user_id": 158001343601,
+      "created_at": "2025-12-09T11:26:12Z",
+      "updated_at": "2025-12-09T11:26:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014193381,
+      "body_text": "Ok, thank you.\r\nJust one thing, as said in my response, I got another email saying the\r\npedals were already shipping.\r\nWhat would happen if I didn't pay this? Would they get blocked at customs?\r\n\r\nEm ter., 9 de dez. de 2025 às 08:26, support@simsonn.com <\r\nsupport@simsonn.com> escreveu:\r\n\r\n> Hi Davizinhobeltrao,\r\n>\r\n> You can click the link to make the payment.\r\n> https://www.simsonn.com/products/difference-1\r\n>\r\n> On Mon, 8 Dec at 5:05 PM , Davizinhobeltrao <davizinhobeltrao@gmail.com>\r\n> wrote:\r\n> Hey there,\r\n> when i go to the link, it shows it as a product called \"difference\", and\r\n> it's 8 dollars instead of the 46. Also, i got an email saying the pedals\r\n> were in transit. What's going on? I don't know what to do, the payment link\r\n> is wrong and the pedals are supposedly shipping.\r\n>\r\n> Em sex., 28 de nov. de 2025 08:45, support@simsonn.com <\r\n> support@simsonn.com> escreveu:\r\n>\r\n>> We apologize for the inconvenience. Shipping to Brazil is prohibitively\r\n>> expensive, costing approximately $131. We require you to cover the\r\n>> additional $46 shipping fee. We will ship your order at cost price. If you\r\n>> agree, please click this link to complete payment.\r\n>> https://www.simsonn.com/products/difference-1\r\n>>\r\n>> 6943:4206036\r\n>\r\n\r\n",
+      "user_id": 158007391021,
+      "created_at": "2025-12-09T15:01:53Z",
+      "updated_at": "2025-12-09T15:01:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014237081,
+      "body_text": "Hi Davizinhobeltrao,    Due to your prolonged delay in payment, we have decided to ship your order first. However, you will still be required to cover the additional shipping costs. Thank you for your understanding.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-10T06:22:58Z",
+      "updated_at": "2025-12-10T06:22:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014335012,
+      "body_text": "Ok, i will go through with the payment as soon as i sort everything out,\r\nworst case is by tomorrow night, maybe even today. Just one thing, this is\r\nguaranteed to be the last payment I'll need to make, right? And it won't\r\nget blocked at customs for it?\r\n\r\nEm qua., 10 de dez. de 2025 03:23, support@simsonn.com ",
+      "user_id": 158007391021,
+      "created_at": "2025-12-11T16:17:08Z",
+      "updated_at": "2025-12-11T16:17:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014362254,
+      "body_text": "Hi Davizinhobeltrao,    Okay, thank you for your understanding.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-12T03:54:10Z",
+      "updated_at": "2025-12-12T03:54:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014395063,
+      "body_text": "You guys didn't answer my last question. Is this guaranteed to be the last\r\npayment I'll need to make and is this guaranteed to make the pedals pass\r\nthrough brazilian customs?\r\n\r\nEm sex., 12 de dez. de 2025 00:54, support@simsonn.com ",
+      "user_id": 158007391021,
+      "created_at": "2025-12-12T14:53:53Z",
+      "updated_at": "2025-12-12T14:53:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014624388,
+      "body_text": "Hi Davizinhobeltrao,    Shipments to Brazil may be subject to customs duties, but we have declared the value as low for you.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-17T11:54:43Z",
+      "updated_at": "2025-12-17T11:54:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

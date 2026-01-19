@@ -1,0 +1,44 @@
+{
+  "id": 6558,
+  "subject": "brake pedal not working",
+  "description_text": "Hello, i have recently received my Plus X pedals from amazon and when i plugged everything in and tried to calibrate the brake, it is not working. i have watched videos and followed the instructions and while the throttle and clutch seem to be working fine, no matter how hard i stomp on the brakes, they do not register on the simmson manager. i have tried swapping the brake and throttle cables  on the hub and it registers as me hitting the brakes but brake is still not responding when i press it. am i missing something or did the brake pedal come broken?\r\nSent from my iPhone\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-22T18:14:18Z",
+  "updated_at": "2025-11-26T11:47:30Z",
+  "requester_id": 158007258266,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012799428,
+      "body_text": "Hi tanner faden,  Please take a photo of the brake installation and ensure that there is no bracket or other damping in front of the brake sensor, as this could prevent the sensor from moving properly and stop it from outputting data. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-24T07:53:29Z",
+      "updated_at": "2025-11-24T07:53:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012899147,
+      "body_text": "I don’t have it on my rig at the moment but here are a couple pictures of\r\nwhat it looks like right now, other than mounting and unmounting i have\r\ndone nothing to it.\r\n\r\nOn Mon, Nov 24, 2025 at 2:53 AM service@simsonn.com ",
+      "user_id": 158007258266,
+      "created_at": "2025-11-25T17:17:38Z",
+      "updated_at": "2025-11-25T17:17:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012943435,
+      "body_text": "Hi tanner faden,  Please set the Offset first, and then recalibrate the pedals. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T11:47:29Z",
+      "updated_at": "2025-11-26T11:47:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

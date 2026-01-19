@@ -1,0 +1,64 @@
+{
+  "id": 4327,
+  "subject": "Problem: Simsonn Pedals - Interference from Base & False Input",
+  "description_text": "\nHello Simagic Support Team,\n \nI am writing to report an issue with my Simsonn pedals after switching to a Simagic wheel base.\n \nFollowing the installation of the new base, the pedals have begun registering severe electrical interference. Specifically, during sharp turns in the simulator, the brake pedal sensor detects a false press of approximately 20-30%, which makes the setup unusable.\n \nI have followed your recommended solution and grounded the pedal base, as you can see in the attached photo. Unfortunately, this did not resolve the problem, and the interference persists.\n\n \nI would greatly appreciate your assistance in diagnosing and resolving this issue.\n \nThank you for your time and support.\n \nBest regards,\nStanley\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-02T08:18:36Z",
+  "updated_at": "2025-10-03T11:03:07Z",
+  "requester_id": 158002374468,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009779127,
+      "body_text": "Hi Носов Станислав,     To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability:      1.    Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding.      2.    Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive.      3.    Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup.      4.    Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible.      5.    Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs.      6.    Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference.      7.    Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements.      8.    Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources.     You can follow the steps below to resolve the interference issue. In addition, we recommend connecting the green grounding wire to the brake pedal mounting screw, as this will help reduce the interference more effectively.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-02T10:17:56Z",
+      "updated_at": "2025-10-02T10:17:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009784127,
+      "body_text": "\nThank you for your reply!\n \nBut it looks like you didn't read my letter or look at the attached image: I already grounded the control unit to the pedal. It didn't help.\nAll the wires are plugged into their own connectors.\n>Четверг, 2 октября 2025, 13:18 +03:00 от  support@simsonn.com < support@simsonn.com >:\n> \n>Hi Носов Станислав,\n>\n> \n>To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability:\n>    1.    Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding.\n>    2.    Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive.\n>    3.    Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup.\n>    4.    Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible.\n>    5.    Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs.\n>    6.    Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference.\n>    7.    Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements.\n>    8.    Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources.\n> \n>You can follow the steps below to resolve the interference issue. In addition, we recommend connecting the green grounding wire to the brake pedal mounting screw, as this will help reduce the interference more effectively.\n> \n> \n>>",
+      "user_id": 158002374468,
+      "created_at": "2025-10-02T13:04:01Z",
+      "updated_at": "2025-10-02T13:04:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009831485,
+      "body_text": "Hi Носов Станислав,    I saw the picture you provided. At the moment, the green wire is connected to the throttle. Please try connecting it to the brake instead.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-03T06:58:22Z",
+      "updated_at": "2025-10-03T06:58:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009832059,
+      "body_text": "\nSadly, nothig changes. \n\n \n>Пятница, 3 октября 2025, 09:58 +03:00 от  support@simsonn.com < support@simsonn.com >:\n> \n>Hi Носов Станислав,\n> \n>I saw the picture you provided. At the moment, the green wire is connected to the throttle. Please try connecting it to the brake instead.\n> \n> \n>>",
+      "user_id": 158002374468,
+      "created_at": "2025-10-03T07:41:22Z",
+      "updated_at": "2025-10-03T07:41:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009836211,
+      "body_text": "Hi Носов Станислав,     Please download VKB JoyTester using this link and select our pedal device. This will help determine whether the brake signal is being affected by interference from the wheel base. You can hold the brake steady at around 30% and then rotate the steering wheel to see if the brake signal shows any issues. Kindly record a video of the test, upload it to Google Drive, and share the link with access enabled. After analyzing the video, we will provide you with a solution.       https://www.vkbcontrollers.com/pages/downloads",
+      "user_id": 158000445778,
+      "created_at": "2025-10-03T11:03:06Z",
+      "updated_at": "2025-10-03T11:03:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

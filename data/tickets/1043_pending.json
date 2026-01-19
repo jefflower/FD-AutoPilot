@@ -1,0 +1,174 @@
+{
+  "id": 1043,
+  "subject": "#SSN1738 Simsonn Shipping Confirmation",
+  "description_text": "Hi, your order was returned due to not being able to pass customs, please provide the Korean name that matches the customs code you provided. We will ask the logistics provider to reship your order as soon as possible. ",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-07-01T06:37:27Z",
+  "updated_at": "2025-07-17T10:29:11Z",
+  "requester_id": 158001854066,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004356091,
+      "body_text": "Do I need my customs code and my Korean name in English or only my Korean\r\nname in English? Please reply.\r\n\r\n2025년 7월 1일 (화) 15:37, support@simsonn.com ",
+      "user_id": 158001854066,
+      "created_at": "2025-07-01T10:28:15Z",
+      "updated_at": "2025-07-01T10:28:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004356154,
+      "body_text": "Hi Bikinibroek965,    We provided Customs with your English name “Hyukjin seo” and your Personal Customs Code: P210004867170. However, it didn't go through Customs because the two pieces of information didn't match. So we need you to provide the matching information again.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-01T10:43:03Z",
+      "updated_at": "2025-07-01T10:43:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004356199,
+      "body_text": "Yes, I gave you the correct code and my name. The code is P210004867170, my\r\nlast name is Seo, and my name is Hyukjin. All the information is correct,\r\nbut I don't know where there is a mistake.\r\n\r\n2025년 7월 1일 (화) 19:43, support@simsonn.com ",
+      "user_id": 158001854066,
+      "created_at": "2025-07-01T10:52:01Z",
+      "updated_at": "2025-07-01T10:52:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004356244,
+      "body_text": "Hi Bikinibroek965,    We will confirm with the logistics company, please don't worry. And it may be safer if you can provide your name in Korean.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-01T10:58:25Z",
+      "updated_at": "2025-07-01T10:58:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004356273,
+      "body_text": "The Korean name is 서혁진.\r\n\r\n2025년 7월 1일 (화) 19:58, support@simsonn.com ",
+      "user_id": 158001854066,
+      "created_at": "2025-07-01T11:01:14Z",
+      "updated_at": "2025-07-01T11:01:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004356299,
+      "body_text": "Hi Bikinibroek965,    Thank you for the information.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-01T11:03:33Z",
+      "updated_at": "2025-07-01T11:03:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004449553,
+      "body_text": "How far has the delivery been made?\r\n\r\n2025년 7월 1일 (화) 20:03, support@simsonn.com ",
+      "user_id": 158001854066,
+      "created_at": "2025-07-06T07:44:10Z",
+      "updated_at": "2025-07-06T07:44:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004487508,
+      "body_text": "Hi Bikinibroek965,     Your package has been reshipped and is expected to arrive for you around the 14th, sorry for the inconvenience. https://t.17track.net/en#nums=YT2518800708506443",
+      "user_id": 158001343601,
+      "created_at": "2025-07-09T09:45:26Z",
+      "updated_at": "2025-07-09T09:45:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004487654,
+      "body_text": "Thank you for letting me know. Have a nice day.\r\n\r\n2025년 7월 9일 (수) 18:45, support@simsonn.com ",
+      "user_id": 158001854066,
+      "created_at": "2025-07-09T10:08:59Z",
+      "updated_at": "2025-07-09T10:08:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004852021,
+      "body_text": "Hi Bikinibroek965,  I noticed you purchased a Pro X Ultra control box, may I ask what pedals you are using, if they are not Pro X pedals, we will send Plus X control boxes by default, as they work the same for pedals other than the Pro X.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-15T08:43:17Z",
+      "updated_at": "2025-07-15T08:43:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004856428,
+      "body_text": " I'm currently using a plus x pedal. If you want to send me another item,\r\nwill you refund the rest of the amount? If the rest of the money is\r\nrefunded, I would be fine.\r\n2025년 7월 15일 (화) 오후 5:43, support@simsonn.com ",
+      "user_id": 158001854066,
+      "created_at": "2025-07-15T09:21:27Z",
+      "updated_at": "2025-07-15T09:21:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004856811,
+      "body_text": "Hi Bikinibroek965,    Plus X doesn't need an additional control box, could you please send us a photo of the control box to confirm?",
+      "user_id": 158001343601,
+      "created_at": "2025-07-15T11:00:47Z",
+      "updated_at": "2025-07-15T11:00:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004858593,
+      "body_text": "[image: 20250715_204202.jpg]\r\n[image: 2873b481-4976-47db-b90f-6a8587ceb479.jpg]\r\n\r\nThis is the picture.\r\nThe mail I sent you before was a little strange\r\nI mean, I ordered a Pro X, but if I downgrade it to a Plus X, the price\r\nwill be lower, so I would like to ask if I can get a refund for the\r\ndifference that occurred there.\r\n---------- Forwarded message ---------\r\n보낸사람: support@simsonn.com ",
+      "user_id": 158001854066,
+      "created_at": "2025-07-15T11:47:54Z",
+      "updated_at": "2025-07-15T11:47:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004921436,
+      "body_text": "Hi Bikinibroek965,  Of course the difference will be refunded for you, so please don't worry. Thank you for your confirmation.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-16T03:09:53Z",
+      "updated_at": "2025-07-16T03:09:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004930760,
+      "body_text": "Thank you. So, just to confirm, using the control box for the Plus X won’t\r\ncause any compatibility issues with the VAM Pro, correct?\r\n\r\n2025년 7월 16일 (수) 12:10, support@simsonn.com ",
+      "user_id": 158001854066,
+      "created_at": "2025-07-16T04:22:15Z",
+      "updated_at": "2025-07-16T04:22:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005134451,
+      "body_text": "Hi Bikinibroek965,    Don't worry, it's fully compatible.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-17T10:29:11Z",
+      "updated_at": "2025-07-17T10:29:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": 7685,
+  "subject": "Simsonn Shipping Confirmed #SSN4164",
+  "description_text": "We apologize, but the base plates are currently out of stock at our German warehouse. We have shipped them to you from China, and customs duties are now required. Please provide us with the invoice after paying the duties, and we will reimburse you for a portion of the amount. Here is your logistics link.  https://www.ups.com/track?loc=en_US&requester=ST&trackNums=1Z144AW70423971765/trackdetails",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-08T11:14:54Z",
+  "updated_at": "2025-12-09T01:40:51Z",
+  "requester_id": 158007699188,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014121368,
+      "body_text": "Sorry friend i have already pay tax for delivery.\r\nIf i must pay tax please give me money friend.\r\nI hope work with you next Time.\r\nVery thanks\r\nSteeve Parriche\r\n\r\nLe lun. 8 déc. 2025, 12:15, support@simsonn.com ",
+      "user_id": 158007699188,
+      "created_at": "2025-12-08T11:42:58Z",
+      "updated_at": "2025-12-08T11:42:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014121546,
+      "body_text": "Custom need facture real please\r\nYou need pay tax friend\r\n\r\nLe lun. 8 déc. 2025, 12:15, support@simsonn.com ",
+      "user_id": 158007699188,
+      "created_at": "2025-12-08T11:48:48Z",
+      "updated_at": "2025-12-08T11:48:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014162436,
+      "body_text": "Hi Omakaze33,    Don't worry, please send us the UPS invoice and we'll reimburse you for part of it.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-09T01:40:51Z",
+      "updated_at": "2025-12-09T01:40:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

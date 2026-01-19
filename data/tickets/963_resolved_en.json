@@ -1,0 +1,55 @@
+{
+  "id": 963,
+  "subject": "connection issue",
+  "description_text": "Hi ,\n\nI installed the haptic motor , everything is fine in the simsonn software,\nbut doesn’t work in Iracing .\n\nCan you help me with this please",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-06-28T17:40:57Z",
+  "updated_at": "2025-06-30T10:23:21Z",
+  "requester_id": 158001836275,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004221987,
+      "body_text": "Hi Charles Jobin,    Our software currently supports 10 racing games, and telemetry support for iRacing and LMU will be released next week. We will continue to expand support for more games in the future.  In the meantime, you can use the internal test version of SimHub we provided. The official release is still under testing and may take a bit more time.     https://drive.google.com/file/d/1p5kEGqiBUoGbt3qYI03tZ0NQ1VuhyOgv/view",
+      "user_id": 158000445778,
+      "created_at": "2025-06-29T01:25:50Z",
+      "updated_at": "2025-06-29T01:25:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004221989,
+      "body_text": "Awesome, thanks for the info!\n\nSat. June 28, 2025 at 21:26, service @simsonn.com",
+      "user_id": 158001836275,
+      "created_at": "2025-06-29T01:29:00Z",
+      "updated_at": "2025-06-29T01:29:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004223237,
+      "body_text": "Your service is awesome, everything is fine now\n\nthank you very much\n\nSat. June 28, 2025 at 21:28, Charles Jobin <jobin0621 @gmail.com> wrote :\n\n> Awesome, thanks for the info!\n>\n> Sat. June 28, 2025 at 21:26, service @simsonn.com",
+      "user_id": 158001836275,
+      "created_at": "2025-06-29T15:35:49Z",
+      "updated_at": "2025-06-29T15:35:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004297310,
+      "body_text": "awesome service",
+      "user_id": 158001836275,
+      "created_at": "2025-06-30T10:23:20Z",
+      "updated_at": "2025-06-30T10:23:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

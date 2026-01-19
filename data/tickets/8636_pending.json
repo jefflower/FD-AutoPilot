@@ -1,0 +1,24 @@
+{
+  "id": 8636,
+  "subject": "Order No. SSN4240",
+  "description_text": "Hi,\r\n\r\n I ordered simsonn plus x clutch at the same time I preordered the HS Pro shifter.\r\n\r\nThe order shows both items as being delivered:\r\n\r\nWill I get sent a copy of the tracking for the HS pro shifter when it is dispatched?\r\n\r\nRegards Ben \r\n\r\nSent from my iPhone\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-18T21:56:36Z",
+  "updated_at": "2025-12-23T05:52:41Z",
+  "requester_id": 158007868335,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014879912,
+      "body_text": "Hi ben barrett,     We will send HS Pro out this week.",
+      "user_id": 158007774607,
+      "created_at": "2025-12-22T12:35:25Z",
+      "updated_at": "2025-12-22T12:35:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 9215,
+  "subject": "Commande n° SSN5008 – Demande de remboursement des frais de livraison express",
+  "description_text": "Bonjour,\r\nJe vous contacte concernant ma commande n° SSN5008, passée le 18 décembre 2024, avec une livraison express (délai annoncé : 3–7 jours) facturée 34,95 €.À ce jour, 26 décembre, le colis est toujours en transit à Paris et n’a pas encore été livré. Le délai de livraison express n’est donc plus respecté.Je constate par ailleurs que les frais de livraison express sont actuellement affichés à 25,95 €, soit un tarif inférieur à celui que j’ai payé lors de ma commande.Dans ces conditions, je vous demande le remboursement des frais de livraison express, le service correspondant n’ayant pas été assuré.\r\nJe vous remercie par avance pour votre retour et la régularisation de la situation.\r\nCordialement,\r\nIona FuentesCommande n° SSN5008\r\n",
+  "status": 5,
+  "priority": 4,
+  "created_at": "2025-12-26T07:44:57Z",
+  "updated_at": "2026-01-07T06:39:12Z",
+  "requester_id": 158008757625,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016074872,
+      "body_text": "此工单已关闭并合并到工单 9993 中",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T06:39:12Z",
+      "updated_at": "2026-01-07T06:39:12Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

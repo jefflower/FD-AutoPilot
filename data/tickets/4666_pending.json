@@ -1,0 +1,74 @@
+{
+  "id": 4666,
+  "subject": "commande par erreur",
+  "description_text": "bonjours je voulais simplement regarder le prix voir s'il y avais des taxte mais je ne savais pas que s'etais en USD est ce que sa serrais possible d'annuler la commande\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-10-09T19:33:20Z",
+  "updated_at": "2025-10-11T10:33:01Z",
+  "requester_id": 158005529251,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010186191,
+      "body_text": "Hello, shipping to Canada will not incur any taxes or fees. There are no additional charges. Additionally, we can apply a $20 store discount for you. Please do not cancel the order.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-10T02:32:53Z",
+      "updated_at": "2025-10-10T02:32:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010194347,
+      "body_text": "Je comprend mais chez amazon sa m’aurais couté 100$ de moins puisque ses en usd est ce que vous pouvez faire 50$ ?",
+      "user_id": 158005529251,
+      "created_at": "2025-10-10T06:40:30Z",
+      "updated_at": "2025-10-10T06:40:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010198218,
+      "body_text": "亚马逊上的含税价格与官网结账价格一致。这是亚马逊的错误，我们已更正价格。对于由此造成的不便，我们深表歉意。我们将向您退款 30 美元作为补偿。",
+      "user_id": 158001343601,
+      "created_at": "2025-10-10T08:20:29Z",
+      "updated_at": "2025-10-10T08:20:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010198221,
+      "body_text": "Hi mathis monette,    The tax-inclusive price on Amazon matches the checkout price on the official website. This was an error on Amazon's part, and we have corrected the price. We apologize for the inconvenience caused. We will issue you a $30 refund as compensation.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-10T08:20:44Z",
+      "updated_at": "2025-10-10T08:20:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010198764,
+      "body_text": "Ok parfait merci ",
+      "user_id": 158005529251,
+      "created_at": "2025-10-10T09:07:28Z",
+      "updated_at": "2025-10-10T09:07:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010221156,
+      "body_text": "Sa va prendre combien de temps avant que je reçois?",
+      "user_id": 158005529251,
+      "created_at": "2025-10-10T16:24:27Z",
+      "updated_at": "2025-10-10T16:24:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    }
+  ]
+}

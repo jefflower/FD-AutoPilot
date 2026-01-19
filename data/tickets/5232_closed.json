@@ -1,0 +1,54 @@
+{
+  "id": 5232,
+  "subject": "Re: Re: shipping to Argentina",
+  "description_text": "Gracias por su respuesta.\r\n\r\nEl vie, 24 oct 2025 a la(s) 12:40 a.m., service@simsonn.com (\r\nservice@simsonn.com) escribió:\r\n\r\n> Hola TryerFpv,\r\n> Se ha actualizado el estado de tu envío. No te preocupes.\r\n>\r\n>\r\n> El jue., 23 oct. a las 23:10 , service@simsonn.com < service@simsonn.com\r\n> > escribió:\r\n> Estamos procesando su solicitud. Por favor, espere.\r\n>\r\n>\r\n> El jue., 23 oct. a las 21:02 , TryerFpv < fernandomasetro@gmail.com >\r\n> escribió:\r\n> Hola, buenas noches. Tengo un problema con su envío. Está programado para\r\n> el 22 de este mes y aún está en origen. Quiero saber cuál es el problema y\r\n> si lo recibiré.\r\n>\r\n> 4913:4206036\r\n>\r\n\r\n",
+  "status": 5,
+  "priority": 3,
+  "created_at": "2025-10-24T03:53:56Z",
+  "updated_at": "2025-11-27T01:17:44Z",
+  "requester_id": 158005453593,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011556427,
+      "body_text": "Hello, good evening. I'm having a problem with my UPS shipment and my order. After taking more than a week longer than expected, and after contacting them many times and being told it would be delivered on Monday, November 3rd, I received an email saying it was delivered on October 31st at 6 PM, and it was received by someone I don't know! I need a solution, please.",
+      "user_id": 158005453593,
+      "created_at": "2025-11-01T04:49:28Z",
+      "updated_at": "2025-11-01T04:49:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158011652058,
+      "body_text": "Hi TryerFpv,     I didn't notice that your package has indeed been marked as delivered. We are currently contacting the logistics provider to verify the situation and request proof of delivery.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-03T10:50:16Z",
+      "updated_at": "2025-11-03T10:50:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011706203,
+      "body_text": "Hello, good evening. I wanted to let you know that I received the pedals today. I also wanted to ask you a question: why can't I get the load cell to maintain a constant charge even when the pedal is not under load, like in the following photo?",
+      "user_id": 158005453593,
+      "created_at": "2025-11-04T05:31:08Z",
+      "updated_at": "2025-11-04T05:31:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158011769625,
+      "body_text": "Hi TryerFpv,   We display the raw pressure signal (white), while the game uses the blue signal. If you have adjusted the mechanical setup, you can use the Offset function to shift the white signal to its initial position. Alternatively, you can ignore the white signal and simply set a 5% dead zone, which will not affect the game output. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-05T05:58:58Z",
+      "updated_at": "2025-11-05T05:58:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

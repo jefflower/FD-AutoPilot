@@ -1,0 +1,44 @@
+{
+  "id": 2561,
+  "subject": "warranty service",
+  "description_text": "Hi, I recently purchased two VAM motors. Order #SSN1729\r\n\r\nOne of the motors stopped working. I've tested it in every way, plugged it\r\ninto all the controller ports, but it still doesn't work.\r\n\r\nHow do I proceed with warranty service?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-11T15:59:25Z",
+  "updated_at": "2025-08-14T08:58:06Z",
+  "requester_id": 158001347133,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006726830,
+      "body_text": "Hi Iago Leal,  Please provide your order number, contact name, phone number, and address, and we will send you a replacement free of charge. Also, please upgrade to SIMSONN Manager 2.1.0, make sure not to set the VAM strength too high, and avoid using the continuous vibration telemetry function. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-12T05:02:18Z",
+      "updated_at": "2025-08-12T05:02:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006771872,
+      "body_text": "Thank you, I will do that.\r\n\r\n*name*: iago de carvalho leal\r\n*Order *#SSN1729\r\n\r\nShipping address:\r\n\r\nIago leal\r\n\r\nRua C 316\r\n\r\n60743-235 Fortaleza Ceará\r\n\r\nBrazil\r\n\r\n85997667464\r\n\r\nEm ter., 12 de ago. de 2025 às 02:02, service@simsonn.com <\r\nservice@simsonn.com> escreveu:\r\n\r\n> Hi Iago Leal,\r\n>\r\n> Please provide your order number, contact name, phone number, and address,\r\n> and we will send you a replacement free of charge. Also, please upgrade to\r\n> SIMSONN Manager 2.1.0, make sure not to set the VAM strength too high, and\r\n> avoid using the continuous vibration telemetry function.\r\n>\r\n>\r\n> ",
+      "user_id": 158001347133,
+      "created_at": "2025-08-12T17:42:59Z",
+      "updated_at": "2025-08-12T17:42:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006837897,
+      "body_text": "Hi Iago Leal,    We have sent you Vam Haptics, which is your logistics tracking link. We apologize for any inconvenience caused.  https://t.17track.net/en#nums=YT2522600705351197",
+      "user_id": 158001343601,
+      "created_at": "2025-08-14T08:58:06Z",
+      "updated_at": "2025-08-14T08:58:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

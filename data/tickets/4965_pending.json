@@ -1,0 +1,24 @@
+{
+  "id": 4965,
+  "subject": "Question RE: Pro X Ultra break install",
+  "description_text": "Hello - I just purchased a set of Pro X Ultra pedals and am in the process\r\nof installing them. I cannot figure out what the cable on the brake pedal\r\nin the attached image is used for, and I do not see any references to it in\r\nthe instruction manual.\r\n\r\nThe control box does not have a matching input. Can you please tell me\r\nwhere this cable connects?\r\n\r\nThank you,\r\nDam\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-16T21:18:56Z",
+  "updated_at": "2025-10-17T01:27:57Z",
+  "requester_id": 158005772625,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010588762,
+      "body_text": "Hi Daniel Saitta,  This is the signal cable for the footboard LED strip. If you purchased the version with the base plate, please connect it; otherwise, you can ignore this connector. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-17T01:27:57Z",
+      "updated_at": "2025-10-17T01:27:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

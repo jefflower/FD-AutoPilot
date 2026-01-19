@@ -1,0 +1,24 @@
+{
+  "id": 507,
+  "subject": "Order #SSN1615",
+  "description_text": "Hello,\r\n\r\ni just want to ask, where my order is. I ordered that 14 Days ago and\r\nnothing changed. So i just wanna ask, where my order is?\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-06-16T20:38:08Z",
+  "updated_at": "2025-06-17T01:58:48Z",
+  "requester_id": 158001594385,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003299754,
+      "body_text": "Hi Philipp Nagel,     I'm sorry for not updating you with the despatch notification in a timely manner. I have checked your logistics order number(  YT2515600702845828  ) and found that the logistics has not been updated, we will investigate for you and if there is any accident we will make up the shipment for you immediately, sincere apologies!",
+      "user_id": 158001343601,
+      "created_at": "2025-06-17T01:58:48Z",
+      "updated_at": "2025-06-17T01:58:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

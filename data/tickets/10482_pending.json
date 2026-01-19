@@ -1,0 +1,44 @@
+{
+  "id": 10482,
+  "subject": "about shipping",
+  "description_text": "Hello\r\n\r\nCan i have any information about my order?\r\ntracking number:  ALS01308420586\r\ni don't see any new information after this\r\n2026-01-04 21:26 DE, Pickup success, in transit\r\n\r\ngreetings\r\nAndrej\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-10T10:32:25Z",
+  "updated_at": "2026-01-15T06:50:46Z",
+  "requester_id": 158007193425,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016774036,
+      "body_text": "Hi Andrej Vojvoda,  Please provide your order number so we can check it for you. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T05:06:16Z",
+      "updated_at": "2026-01-11T05:06:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016793213,
+      "body_text": "hello\r\norder number is #SSN5026 ... anyway got the package yesterday.\r\nthanks anyway\r\n\r\nnow need to get everything work\r\ngreetings\r\nAndrej\r\n\r\nOn Sun, Jan 11, 2026 at 6:06 AM service@simsonn.com ",
+      "user_id": 158007193425,
+      "created_at": "2026-01-11T08:47:26Z",
+      "updated_at": "2026-01-11T08:47:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017165726,
+      "body_text": "Hi Andrej Vojvoda,  ​You're welcome. Thank you for purchasing our product. Should you have any questions in the future, please feel free to contact us. We will address them promptly.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T06:50:46Z",
+      "updated_at": "2026-01-15T06:50:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

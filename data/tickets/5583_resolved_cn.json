@@ -1,0 +1,85 @@
+{
+  "id": 5583,
+  "subject": "Simsonn Plus X 刹车问题",
+  "description_text": "您好，我最近购买了Simsonn Plus X 踏板（三件套），现在刹车输入有问题。它无法读取正确的输入，我也无法校准它。\n期待您的回复\nKostas Kordatos\n\n通过 Outlook for Android 发送<https://aka.ms/AAb9ysg>",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-11-03T17:17:57Z",
+  "updated_at": "2025-11-09T07:46:25Z",
+  "requester_id": 158006368893,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011769322,
+      "body_text": "嗨 Kostas Kordatos，请使用偏移功能将踏板的白色初始信号归零。另外，请提供刹车踏板安装的照片，我会协助您检查。",
+      "user_id": 158000445778,
+      "created_at": "2025-11-05T05:35:55Z",
+      "updated_at": "2025-11-05T05:35:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011824391,
+      "body_text": "我试过偏移，但什么都没改变，数值很奇怪\n油门 1888\n刹车 774\n离合 1910\n\n油门和离合工作正常。\n我附上了刹车和控制箱在我设备上的安装照片。\n\n方向盘是 Fanatec csl dd 8nm，如果这很重要的话。\n期待您的快速回复\n\n通过 Outlook for Android 发送<https://aka.ms/AAb9ysg>\n________________________________\n\n超出 20 MB 限制的附件已被删除。请联系发件人。",
+      "user_id": 158006368893,
+      "created_at": "2025-11-05T17:09:29Z",
+      "updated_at": "2025-11-05T17:09:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011902872,
+      "body_text": "嘿伙计们，我需要尽快解决这个问题，关于我的问题有什么消息吗？？\n\n通过 Outlook for Android 发送<https://aka.ms/AAb9ysg>\n________________________________",
+      "user_id": 158006368893,
+      "created_at": "2025-11-06T23:07:10Z",
+      "updated_at": "2025-11-06T23:07:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011914556,
+      "body_text": "嗨 Kostas Kordatos，您好，您的赛车支架阻碍了刹车传感器的移动，导致刹车踏板无响应。请相应调整安装。",
+      "user_id": 158000445778,
+      "created_at": "2025-11-07T09:03:25Z",
+      "updated_at": "2025-11-07T09:03:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011914564,
+      "body_text": "嗨 Kostas Kordatos，您好，您的赛车支架阻碍了刹车传感器的移动，导致刹车踏板无响应。请相应调整安装。",
+      "user_id": 158000445778,
+      "created_at": "2025-11-07T09:04:06Z",
+      "updated_at": "2025-11-07T09:04:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011955208,
+      "body_text": "非常感谢各位的回复！幸运的是，问题正如你们所说，现在一切都完美运行了！非常感谢，干杯\n\n通过 Outlook for Android 发送<https://aka.ms/AAb9ysg>\n________________________________",
+      "user_id": 158006368893,
+      "created_at": "2025-11-07T22:21:41Z",
+      "updated_at": "2025-11-07T22:21:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011986950,
+      "body_text": "对情况理解非常透彻，并提供了即时的问题解决方案。",
+      "user_id": 158006368893,
+      "created_at": "2025-11-09T07:46:24Z",
+      "updated_at": "2025-11-09T07:46:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

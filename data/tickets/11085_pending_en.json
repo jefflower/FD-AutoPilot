@@ -1,0 +1,25 @@
+{
+  "id": 11085,
+  "subject": "Compatibility",
+  "description_text": "Good day!\n\nIs your product compatible with PS5?\n\nThank you,\n\nMartin Hamel\noutbacktaz @hotmail.com",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-16T13:51:56Z",
+  "updated_at": "2026-01-17T03:47:57Z",
+  "requester_id": 158009300023,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017311611,
+      "body_text": "Hi Martin Hamel, Sorry, our products are not compatible with PS5 at the moment. They are mainly designed for PC (Windows) use.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-17T03:47:57Z",
+      "updated_at": "2026-01-17T03:47:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

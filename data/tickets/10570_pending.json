@@ -1,0 +1,24 @@
+{
+  "id": 10570,
+  "subject": "i ordered on december 19th, where is my order? Order number SSN5062",
+  "description_text": "if the order doesnt get here by next week, i would like a full refund of my\r\norder, im done waiting.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-11T15:29:01Z",
+  "updated_at": "2026-01-12T08:04:20Z",
+  "requester_id": 158009023235,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016844821,
+      "body_text": "Hi Wald Al Wahsh,     We apologize for the delay in processing your request. We will arrange for a replacement order to be shipped to you as soon as possible.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-12T08:04:20Z",
+      "updated_at": "2026-01-12T08:04:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

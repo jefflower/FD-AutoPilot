@@ -1,0 +1,44 @@
+{
+  "id": 8317,
+  "subject": "Haptic",
+  "description_text": "Hello , i just receive my haptic , everything work but,  i have a problem\r\nwhen i exit the game , the haptic still working all at the same frequency\r\nvibration . I had check the forum and have done some ajustment such as add\r\nthe non conductive washer in between the haptic and the support on all my\r\npedal . I have also bolted on and grounded the Simmons control box directly\r\non my metal frame . I still have the same problem even ive done those\r\nthing.  Could you please come back with a solution ? I really enjoy the\r\npedal but i think im gonna have to refund the haptic if the problem\r\npersist...\r\n\r\nThank you very much\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-15T17:24:11Z",
+  "updated_at": "2025-12-19T08:16:35Z",
+  "requester_id": 158007711398,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014611884,
+      "body_text": "Hi billy dancause,  If this happens, it indicates that the computer’s grounding is not reliable, possibly because a three-prong plug was not used with a three-prong wall outlet. You can refer to the post below: connect the computer case to the stand, and connect the control box to the metal screws on the pedals. This should resolve the disconnection issue.  https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T03:38:54Z",
+      "updated_at": "2025-12-17T03:38:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014627139,
+      "body_text": "I also saw that there is a three pin white connector with the pedal that\r\ndont seem to connect nowwhere on the control box . Do i need to do\r\nsomething with it?\r\n\r\nLe mar. 16 déc. 2025, 22 h 39, service@simsonn.com ",
+      "user_id": 158007711398,
+      "created_at": "2025-12-17T13:04:59Z",
+      "updated_at": "2025-12-17T13:04:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014747623,
+      "body_text": "Hi billy dancause,  If you did not purchase the base plate, you can ignore this part, as it is only used for the LED strip on the base plate. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-19T08:16:35Z",
+      "updated_at": "2025-12-19T08:16:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

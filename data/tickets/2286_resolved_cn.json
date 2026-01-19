@@ -1,0 +1,35 @@
+{
+  "id": 2286,
+  "subject": "Simsonn 工具无响应",
+  "description_text": "您好，\n\n我的Simsonn Pro踏板在Simsonn Pedals V4工具中没有响应。\n\n在Simsonn Manager工具中显示为旧版本\n\n我该怎么做？\n\n此致，Alex",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-08-04T17:23:33Z",
+  "updated_at": "2025-08-05T13:36:48Z",
+  "requester_id": 158002604818,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006264300,
+      "body_text": "您好，Alexander Nübel，您提供的版本太旧了。请下载 SIMSONN Manager 2.1.0。您可以通过以下步骤手动更新固件：前往“设置”→“更新”→“手动固件更新”→“选择踏板”→“选择 plus.sfu 文件”进行升级。更新完成后，问题应该就能解决了。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-05T12:45:21Z",
+      "updated_at": "2025-08-05T12:45:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006274745,
+      "body_text": "非常感谢。这解决了问题。",
+      "user_id": 158002604818,
+      "created_at": "2025-08-05T13:20:46Z",
+      "updated_at": "2025-08-05T13:20:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

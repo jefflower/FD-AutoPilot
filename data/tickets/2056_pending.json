@@ -1,0 +1,26 @@
+{
+  "id": 2056,
+  "subject": "New review (2★) of Simsonn VAM Pro Linear Motor - the Pedals Haptic Reactor for Vibration Feedback (from Tobias H.)",
+  "description_text": "Rating: 2 | Review Text: I’m using both the VAM and the VAM Pro, and to me, the regular VAM feels noticeably stronger than the VAM Pro. I previously used the Simagic HPM Haptic – which looks very similar to the VAM Pro – but in my opinion, it felt significantly more powerful. Another issue I’m facing, especially in LMU, is that some effects get stuck. For example, when I brake into a corner, the ABS feedback kicks in and then just keeps running, even when it shouldn't. On top of that, I barely feel any difference between 20% and 100% power settings on the VAM Pro. All of this unfortunately affects the overall experience for me. ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ This review was automatically published.Learn more You have a new 2-star review of Simsonn VAM Pro Linear Motor - the Pedals Haptic Reactor for Vibration Feedback from Tobias Hoffer tobias.hoffer@proton.me Tobias Hoffer Display name: Tobias H. I’m using both the VAM and the VAM Pro, and to me, the regular VAM feels noticeably stronger than the VAM Pro. I previously used the Simagic HPM Haptic – which looks very similar to the VAM Pro – but in my opinion, it felt significantly more powerful. Another issue I’m facing, especially in LMU, is that some effects get stuck. For example, when I brake into a corner, the ABS feedback kicks in and then just keeps running, even when it shouldn't. On top of that, I barely feel any difference between 20% and 100% power settings on the VAM Pro. All of this unfortunately affects the overall experience for me. View, Reply or Share Unpublish review This email is sent for 0a6bb1.myshopify.com Unsubscribe \r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-29T15:01:31Z",
+  "updated_at": "2025-07-29T15:12:22Z",
+  "requester_id": 158000954852,
+  "responder_id": 158000445778,
+  "cc_emails": [
+    "tobias.hoffer@proton.me"
+  ],
+  "conversations": [
+    {
+      "id": 158005779933,
+      "body_text": "Hi Tobias H.,  Please confirm whether your software has been updated to SIMSONN Manager 2.1.0 and that your firmware is the latest version. Kindly provide a screenshot of the software interface for our reference. In addition, please let us know the brand of your wheelbase, as some models may cause interference. We also recommend connecting the USB cable directly to the rear USB 3.0 (blue) port of your computer instead of using a USB hub, as disconnections can prevent the VAM from receiving stop commands in time, resulting in continuous vibration.      In addition, if your pedal is a ProX, it does not support bidirectional motion, so when using the VAM Pro, its vibration strength is much lower compared to the PlusX and ProX Ultra control boxes. At the same time, our VAM Pro has superior tested thrust compared to the Simagic HPR: Simagic provides 0.4 kg, while our VAM Pro delivers 0.7 kg of thrust. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-29T15:12:22Z",
+      "updated_at": "2025-07-29T15:12:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

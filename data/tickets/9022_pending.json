@@ -1,0 +1,54 @@
+{
+  "id": 9022,
+  "subject": "Using a 2nd set of VAMs in addtion to the pedal set.",
+  "description_text": "Hi SIMSONN,\r\n\r\nI got a new set of Simsonn Pro X Ultra Sim Racing Pedals with VAM Haptic\r\nReactors which work great.\r\n\r\nSo now I'm wondering if I can order another set of 3 VAM Haptic Reactors so\r\nI have two sets of VAM reactors on my rig for more effects.\r\n\r\nI have the *Pro X Ultra Pedal Control Box* for reactors on my pedals, I'm\r\nwondering if I could use a *second Plus X Pedal Control Box *to control\r\nanother set of 3 reactors attached to my seat without the 2 boxes\r\nconflicting with each other.\r\n\r\nI plan to use SimHub to control the effects so I don't need your software\r\nto detect both but I'm wondering if I have both will they confuse your\r\nsoftware?\r\n\r\nThank you for your time,\r\nLloyd Johnston\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-23T19:40:28Z",
+  "updated_at": "2026-01-12T00:08:37Z",
+  "requester_id": 158007809155,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015147823,
+      "body_text": "Hi Lloyd Johnston,  We will conduct a test on Monday to see if it can be compatible with both control units, and then get back to you. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T04:11:47Z",
+      "updated_at": "2025-12-28T04:11:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015292182,
+      "body_text": "Hi Lloyd Johnston,   This is not easy to achieve, but you could consider purchasing a control box from another brand. We hadn’t taken into account the scenario where two SIMSONN control boxes are used simultaneously with SimHub and SIMSONN Manager, which can cause conflicts.  ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T03:57:26Z",
+      "updated_at": "2025-12-31T03:57:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016825317,
+      "body_text": "Ok, thank you for getting back to me.\r\n\r\nIm thinking of getting a simmagic box to drive your vams\r\n\r\nThanks for checking\r\nLloyd\r\n\r\n",
+      "user_id": 158007809155,
+      "created_at": "2026-01-11T17:31:15Z",
+      "updated_at": "2026-01-11T17:31:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016832441,
+      "body_text": "Hi Lloyd Johnston,  However, please note that driving a VAM with Simagic can easily cause damage, as Simagic only supports the voice-coil motor mode. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-12T00:08:37Z",
+      "updated_at": "2026-01-12T00:08:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

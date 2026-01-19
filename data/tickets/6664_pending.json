@@ -1,0 +1,44 @@
+{
+  "id": 6664,
+  "subject": "Shipment from German warehouse",
+  "description_text": "Hi, I have submitted an order with the order number #SSN3782, and I want to\r\nbe sure that it will be shipped from your German warehouse. Because I live\r\nin Greece and if the product is shipped from within Europe, I don't have to\r\npay customs.  Is this correct?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-24T15:37:53Z",
+  "updated_at": "2025-12-02T10:01:19Z",
+  "requester_id": 158004499747,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012857344,
+      "body_text": "Hi Panagiotis Zeppos,    Alright, but our German warehouse is currently out of stock. We expect to restock by the 28th and will ship your order via DHL at that time.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-25T02:52:27Z",
+      "updated_at": "2025-11-25T02:52:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012858554,
+      "body_text": "Ok, I don't mind waiting\r\nThank, you\r\n\r\nΣτις Τρί 25 Νοε 2025, 04:52 ο χρήστης service@simsonn.com <\r\nservice@simsonn.com> έγραψε:\r\n\r\n> Hi Panagiotis Zeppos,\r\n>\r\n> Alright, but our German warehouse is currently out of stock. We expect to\r\n> restock by the 28th and will ship your order via DHL at that time.\r\n>\r\n>\r\n>\r\n> On Mon, 24 Nov at 10:37 AM , Panagiotis Zeppos <panzeppos1@gmail.com>\r\n> wrote:\r\n> Hi, I have submitted an order with the order number #SSN3782, and I want\r\n> to be sure that it will be shipped from your German warehouse. Because I\r\n> live in Greece and if the product is shipped from within Europe, I don't\r\n> have to pay customs.  Is this correct?\r\n>\r\n> 6664:4206036\r\n>\r\n\r\n",
+      "user_id": 158004499747,
+      "created_at": "2025-11-25T04:16:48Z",
+      "updated_at": "2025-11-25T04:16:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013149186,
+      "body_text": "Could you send me the DHL traking number of my order\r\n\r\nΣτις Τρί 25 Νοε 2025, 06:16 ο χρήστης Panagiotis Zeppos <\r\npanzeppos1@gmail.com> έγραψε:\r\n\r\n> Ok, I don't mind waiting\r\n> Thank, you\r\n>\r\n> Στις Τρί 25 Νοε 2025, 04:52 ο χρήστης service@simsonn.com <\r\n> service@simsonn.com> έγραψε:\r\n>\r\n>> Hi Panagiotis Zeppos,\r\n>>\r\n>> Alright, but our German warehouse is currently out of stock. We expect to\r\n>> restock by the 28th and will ship your order via DHL at that time.\r\n>>\r\n>>\r\n>>\r\n>> On Mon, 24 Nov at 10:37 AM , Panagiotis Zeppos <panzeppos1@gmail.com>\r\n>> wrote:\r\n>> Hi, I have submitted an order with the order number #SSN3782, and I want\r\n>> to be sure that it will be shipped from your German warehouse. Because I\r\n>> live in Greece and if the product is shipped from within Europe, I don't\r\n>> have to pay customs.  Is this correct?\r\n>>\r\n>> 6664:4206036\r\n>>\r\n>\r\n\r\n",
+      "user_id": 158004499747,
+      "created_at": "2025-11-30T19:45:11Z",
+      "updated_at": "2025-11-30T19:45:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

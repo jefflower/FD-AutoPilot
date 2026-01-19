@@ -1,0 +1,24 @@
+{
+  "id": 2747,
+  "subject": "Odd behaviour with the VAM Pro Haptics",
+  "description_text": "Hi!,\r\n\r\nI'm order Order #SSN1769\r\n\r\nI'm working with the VAM Pro haptics I received with this order, I'm finding after I'm done playing (using SimHub or Simsonn software) - the haptics continue buzzing away until I unplug them, even when the game and pedal / haptic software is shutdown.\r\n\r\nIs this normal? I've changed the USB from using a hub (powered) to going direct (as much as there is an extension) - but wondering if I've set something up correctly?\r\n\r\nI did try to search online for an answer before choosing to send an email! ?\r\n\r\nCheers\r\nMartin\r\n\r\n\r\n\r\n\r\nMartin Edge\r\n\r\nDirector\r\n\r\nPhone: +61 439 367 205\r\n\r\nWeb: https://www.asmorphic.com/\r\n\r\n\r\n\r\n[cid:7f6c9423-664a-4a89-844f-cda0618318ca]\r\n\r\n\r\n\r\nDesign, Enable and Accelerate.\r\n\r\n\r\n\r\nWorking in areas such as\r\n\r\n  *   Enterprise, Solution and Software Architecture\r\n  *   Software Development and SDLC\r\n  *   Carrier, Software Licensing, Payment Processing, Customer Management and Accounting Integration\r\n  *   Workforce Engagement Management and OSS/BSS Configuration\r\n\r\n\r\n\r\nSee our website for more information\r\n\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-16T07:44:52Z",
+  "updated_at": "2025-08-17T04:23:41Z",
+  "requester_id": 158002390852,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006978253,
+      "body_text": "Hi Martin Edge,  This issue is caused by EMI interference from the wheelbase. Please follow the steps below to troubleshoot and resolve it. Most customers with similar setups (such as Fanatec, MOZA, and T500 users) have resolved the problem using this method.     EMI (Electromagnetic Interference) Troubleshooting and Mitigation Guide  To improve device stability and connection reliability, please follow the steps below:  Verify Proper Grounding Ensure the computer uses a three-prong power plug and the wall outlet provides effective grounding. Two-prong plugs cannot achieve proper grounding. If the base does not have a three-prong plug, connect the base’s metal housing to the computer chassis using a wire.  Control Box Grounding Use a green shielded wire to connect the metal housing of the control box (e.g., copper standoffs or screws) to the metal parts of the pedals, ensuring the contact points are free of paint and maintain good metal-to-metal contact.  Base Grounding (e.g., Fanatec CLS DD, MOZA, DIY OSW) Connect the metal parts of the base to the computer chassis or ground wire to release accumulated static electricity.  Avoid Strong Interference Sources Keep USB cables away from high-voltage power lines (e.g., motor drivers, power adapters) and avoid parallel routing; separate the wiring as much as possible.  Brake Sensor Installation Ensure the brake pressure sensor does not touch the bracket, wall, control box, or cables to prevent interference with sensor movement or large signal fluctuations.  Change USB Port Connect the device directly to the rear blue USB 3.0 port of the computer. Avoid unpowered or low-quality USB hubs, which may cause insufficient power and frequent disconnections.  Software and Firmware Updates Make sure SIMSONN Manager and device firmware are up-to-date; some updates include improved EMI protection strategies.  Use a USB Isolator If the above steps do not resolve the issue, consider using a USB isolator to physically isolate interference sources and protect control device stability. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-17T04:23:41Z",
+      "updated_at": "2025-08-17T04:23:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

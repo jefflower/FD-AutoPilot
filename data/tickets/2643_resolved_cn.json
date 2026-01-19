@@ -1,0 +1,45 @@
+{
+  "id": 2643,
+  "subject": "Simsonn Pro x 赛车踏板断开连接状态",
+  "description_text": "您好，客服，\n\n我的原始订单是2025年4月14日的sn1336。\n\n两天前我的踏板变成了“断开连接”状态，我将USB从集线器断开，并直接通过USB3连接到电脑，重新启动了Simsson软件并升级到2.1.0版本，但状态仍然相同。我还用一根地线将BOX连接到模拟器底座的框架上，但结果也一样。\n\n我突然无法使用踏板了……为什么？？\n\n请帮忙，\n\n谢谢，\nEitan lael",
+  "status": 4,
+  "priority": 3,
+  "created_at": "2025-08-13T18:09:49Z",
+  "updated_at": "2025-08-17T05:15:02Z",
+  "requester_id": 158000955737,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006889706,
+      "body_text": "您好，EITAN LAEL，请尝试手动更新踏板固件：按下主控制器板上的升级按钮，然后重新连接USB线。SIMSONN Manager 2.1.0软件将自动进入恢复模式。在软件中，进入设置 → 更新 → 手动固件更新 → 踏板 → firmware-prox.sfu 进行更新。更新完成后，请再次测试踏板。如果问题仍然存在，请下载ToDesk（无需注册），向我们提供临时ID和密码，我们可以安排时间远程协助您解决问题。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-15T02:30:56Z",
+      "updated_at": "2025-08-15T02:30:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006894487,
+      "body_text": "谢谢，它工作了\n\nEitan\n\n2025年8月15日星期五上午5:31，来自 service @simsonn.com",
+      "user_id": 158000955737,
+      "created_at": "2025-08-15T05:59:03Z",
+      "updated_at": "2025-08-15T05:59:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006978531,
+      "body_text": "",
+      "user_id": 158000955737,
+      "created_at": "2025-08-17T05:15:01Z",
+      "updated_at": "2025-08-17T05:15:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

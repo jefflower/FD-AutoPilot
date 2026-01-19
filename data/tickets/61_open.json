@@ -1,0 +1,44 @@
+{
+  "id": 61,
+  "subject": "Torsion spring second failure",
+  "description_text": "     In March of this year I ordered many of your products through Amazon.  Pro pedals, 6+R shifter, Handbrake, and the Sequential shifter.  5 days after receiving the Sequential shifter, the torsion spring inside broke.  I replaced the entire unit through Amazon's return policy.  I had gotten the new SQ shifter (May 5th) and started using it with a few Rally and Drifting PC games.  The return window for Amazon closed on the 20th of May, and I have had another torsion spring failure.  I did not adjust any of the 3mm tension screws on the side of the shifter body.  I am inclined to believe that there are a batch of these torsion springs used in the manufacture of the Sequential shifter that are sub-optimal almost as if they were made with pot metal.  The place where the original spring broke had a deformation or indent that had a type of coating in it that leads me to believe it was bound for failure.  As to the second spring failure, I have yet to remove it from the housing because I am trying to find the easiest way to remove it without having to disassemble the entire Shifter.  I would not want to damage any of the circuit components and render any kind of warranty void.\r\n\r\n     I am mainly writing to inform that maybe a new spring system, maybe 2-3 narrower springs with 4-6 \"legs\" going down into the assembly area to mitigate the surface tension displaced in the back-and-forth motion of the shifter would be more beneficial, something like the image I have provided.  This is the course that I will be attempting once I have safely removed the sleeve with the spring surrounding it.  I hope that I can do so without having to take the entire shifter apart.\r\n\r\n     Thank you for your time.                    [Torsion Springs Manufacturer & Designer | Springtech Ltd]\r\n\r\n",
+  "status": 2,
+  "priority": 4,
+  "created_at": "2025-06-03T23:44:23Z",
+  "updated_at": "2025-10-20T01:53:01Z",
+  "requester_id": 158000954973,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002402766,
+      "body_text": "Hi Joseph Demeny, We will have an internal discussion tomorrow, as there may be an issue with this batch of springs. We’ll communicate with the spring manufacturer to determine how to produce springs that meet our quality standards. I will get back to you with a solution tomorrow. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-04T12:50:50Z",
+      "updated_at": "2025-06-04T12:50:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010649082,
+      "body_text": "Having had no further communication, I decided to reach out again because I have been trying to figure out how to fix my SQ shifter problem to no avail.  I realize that it has been some time since our last interaction, but I have finally felt so defeated by trying to resolve this that I am writing to you again to find a solution.  I have found no suitable replacement spring options, nor do I possess the skills to disassemble and reassemble your beautifully manufactured device.  Any help in this matter would be greatly appreciated.\r\n\r\n\r\nSent from Yahoo Mail for iPhone\r\n\r\n\r\n",
+      "user_id": 158000954973,
+      "created_at": "2025-10-18T06:22:49Z",
+      "updated_at": "2025-10-18T06:22:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010714063,
+      "body_text": "Hi Joseph Demeny,  Please wait a little longer. Our improved sequential shifter design has removed this spring and significantly optimized the overall structure. Once it’s ready, we will send you a new upgraded shifter free of charge. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-20T01:53:00Z",
+      "updated_at": "2025-10-20T01:53:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

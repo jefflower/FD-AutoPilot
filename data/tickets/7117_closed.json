@@ -1,0 +1,24 @@
+{
+  "id": 7117,
+  "subject": "",
+  "description_text": "Hi,\r\nWhat type of USB cable will I require for connecting to my PC?\r\n\r\nThanks\r\nAshley\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-11-30T23:47:08Z",
+  "updated_at": "2025-12-06T05:40:37Z",
+  "requester_id": 158007285706,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013768461,
+      "body_text": "此工单已关闭并合并到工单 7283 中",
+      "user_id": 158000445778,
+      "created_at": "2025-12-06T05:40:37Z",
+      "updated_at": "2025-12-06T05:40:37Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

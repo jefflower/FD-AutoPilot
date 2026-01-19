@@ -1,0 +1,24 @@
+{
+  "id": 4496,
+  "subject": "Lost Order Number",
+  "description_text": "Hi! I ordered a\r\nSimsonn Plus X Hydraulic Pedal Black Set, P2H2 with baseplate last Friday\r\nbut I don’t believe I ever received an email confirmation. I’m not sure if\r\ni input some information wrong so I’m wondering if you would be able to\r\nhelp find the order number/email. The shipping and contact information\r\nshould be:\r\nEmail (could be 1 of 2)\r\n• Granthwise@gmail.com\r\n• Granthwiser@gmail.com\r\n\r\nPhone: 8133940109\r\n\r\nShipping Address: 77 Park Ave Apt 713 Hoboken NJ 07030\r\n\r\nIf you need any more information please let me know\r\n\r\nThank you,\r\nGrant Wise\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-06T14:11:37Z",
+  "updated_at": "2025-10-06T23:09:13Z",
+  "requester_id": 158005438477,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009992302,
+      "body_text": "Hi Grant Wise,     I’ve located your order SSN2830.  The tracking number is FedEx • 884926739395.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-06T23:09:13Z",
+      "updated_at": "2025-10-06T23:09:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

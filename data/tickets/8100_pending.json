@@ -1,0 +1,84 @@
+{
+  "id": 8100,
+  "subject": "Issue with order #SSN4515",
+  "description_text": "Good afternoon,\r\nToday I received my new Simsonn pedals as part of the above order #, but\r\nthe baseplate is missing from the order, and the haptic motors are still\r\nnot here as it looks like they never left China.\r\n\r\nWhen can I expect the haptic motors as I paid for expedited shipping, and\r\nwhat can be done about the missing baseplate? I look forward to your answer\r\nas I have been looking forward to these new pedals.\r\n\r\nThank you,\r\nMorgan Anderson\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-12-12T19:12:51Z",
+  "updated_at": "2025-12-30T09:54:58Z",
+  "requester_id": 158007787883,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014505510,
+      "body_text": "Hi Morgan,     We sincerely apologize for the delays caused by the shortage of floor stock in our U.S. warehouse. Our inventory has now been replenished, and we have arranged for your shipment. Here is your new tracking number: 1ZJ201H40334526817  Vam Pro: https://t.17track.net/en#nums=JSELO0810892729YQ",
+      "user_id": 158001343601,
+      "created_at": "2025-12-15T10:55:31Z",
+      "updated_at": "2025-12-15T10:55:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014736740,
+      "body_text": "Hello,\r\nI have received all of the parts and have set them up. My brake pedal is\r\nnot registering in the Simsonn software. I have run Firmware updates, tried\r\nchecking different ports on the Simsonn hub & on my computer, nothing is\r\nseeming to work. Please help as I want to be able to use my pedals.\r\n\r\nOn Mon, Dec 15, 2025, 4:55 AM service@simsonn.com ",
+      "user_id": 158007787883,
+      "created_at": "2025-12-19T03:44:46Z",
+      "updated_at": "2025-12-19T03:44:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014845908,
+      "body_text": "Good afternoon,\r\nMore issues are arriving since this order.\r\n\r\n- the haptic motors are still not here.\r\n- the brake pedal is still experiencing issues, specifically with the small\r\nwire that connects it to the Simsonn hub. It is almost like it tried to\r\ncome apart at one point.\r\n- after one day of use, the pedals now will not be ready by any sim racing\r\ngame, and are having issues inside the Simsonn app. They will randomly stop\r\nsending a signal when being tested every 3-4 seconds, and will not\r\ncalibrate properly.\r\n\r\n",
+      "user_id": 158007787883,
+      "created_at": "2025-12-21T18:23:05Z",
+      "updated_at": "2025-12-21T18:23:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014950310,
+      "body_text": "Hello Simsonn,  I am still having issues with the brake pedal I ordered. It is no longer registering at all with the computer.",
+      "user_id": 158007787883,
+      "created_at": "2025-12-23T01:33:39Z",
+      "updated_at": "2025-12-23T01:33:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015166635,
+      "body_text": "Hi Morgan,  If this happens, it indicates that the computer’s grounding is not reliable, possibly because a three-prong plug was not used with a three-prong wall outlet. You can refer to the post below: connect the computer case to the stand, and connect the control box to the metal screws on the pedals. This should resolve the disconnection issue.  https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding  ​   Please make sure the pedal’s USB is directly connected to the rear USB 3.0 (blue) port of your computer. Do not use a USB hub.  If the issue persists, please follow these steps:    Press and hold the upgrade button on the control box;    Connect the USB cable — at this point, SIMSONN Manager 2.1.2 will show that the device has entered SIMSONN Flasher Mode;    Go to Settings → Update → Manual Update Firmware → pedals → firmware → pedals-plusx.sfu;    After the update is complete, please test the device again.     If you adjust the brake damping, you need to click Offset to zero the pedal’s white signal to the 0% position. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T16:06:43Z",
+      "updated_at": "2025-12-28T16:06:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015240303,
+      "body_text": "Hello,\r\nThe steps provided did not rectify the issue. The throttle pedal is working\r\njust fine, the brake is not registering at all.\r\n\r\nOn Sun, Dec 28, 2025, 10:06 AM service@simsonn.com ",
+      "user_id": 158007787883,
+      "created_at": "2025-12-30T07:11:08Z",
+      "updated_at": "2025-12-30T07:11:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015245447,
+      "body_text": "Hi Morgan,  Please click Offset, take a photo of the pop-up window and send it to me. Then follow the procedure to zero the pedal signal and recalibrate to see if it resolves the brake issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T09:54:57Z",
+      "updated_at": "2025-12-30T09:54:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

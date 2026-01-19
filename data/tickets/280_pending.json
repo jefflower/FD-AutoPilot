@@ -1,0 +1,44 @@
+{
+  "id": 280,
+  "subject": "Order SSN1688 - Special request",
+  "description_text": "Dear,\r\nI am glad to buy your product, I would like to ask a few questions :)\r\n [image: Screenshot 2025-06-09 005508.jpg]\r\n\r\n1. I would like to make sure I am getting the upgraded pedals, since in the\r\nshop the same pedals with the same price and look but little change in the\r\nname ( \"Simsonn Pro X Ultra Sim Racing Pedal\" vs \"Pro X Pedal Upgrade New\r\nSimsonn Pedals for Racing Simulator\" ).\r\n2. I have noticed lately about the newcomers discount code of 20$ that I\r\nhave missed to place in my cart. Will you please refund me ?(even though\r\nyou don't have to, it will make me a much happier customer)\r\n3. Will you please help me lower the tax by declaring a low price ?\r\n\r\nThanks for the service.\r\n*Avi Peretz*\r\nSoftware Developer\r\n(mobile) +972-50-3433997 || (mail) Avishai651@gmail.com\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-06-08T21:56:44Z",
+  "updated_at": "2025-06-13T09:49:03Z",
+  "requester_id": 158001342905,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002849472,
+      "body_text": "Hi avi peretz,   ​  Thank you for reaching out! I'm happy to help clarify your concerns:    Yes, your order is for the newest model.    Regarding the $20 newcomer discount, I’m really sorry, but we’re unable to apply discount codes after an order has been placed. We understand this might be disappointing, but we hope the performance of your new pedals will still bring you a great experience!    As for the customs declaration, no worries – we will declare a reasonable value to help minimize any import tax for you.    If you have any other questions or need further assistance, feel free to let us know. Thanks again for your order and support!  Best regards, Simsonn Support Team",
+      "user_id": 158001343601,
+      "created_at": "2025-06-09T10:33:41Z",
+      "updated_at": "2025-06-09T10:33:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002993309,
+      "body_text": "Hi Support team :)\r\nThanks for the service! One last question, When will it be shipped?\r\nWill you notify and send a tracking identifier ?\r\n\r\nOn Mon, Jun 9, 2025 at 1:33 PM service@simsonn.com ",
+      "user_id": 158001342905,
+      "created_at": "2025-06-12T11:18:06Z",
+      "updated_at": "2025-06-12T11:18:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003015510,
+      "body_text": "Hi avi peretz,     We have updated your logistics information, please check.",
+      "user_id": 158001343601,
+      "created_at": "2025-06-13T09:49:03Z",
+      "updated_at": "2025-06-13T09:49:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

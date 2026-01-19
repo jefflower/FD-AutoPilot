@@ -1,0 +1,35 @@
+{
+  "id": 794,
+  "subject": "控制器",
+  "description_text": "我正在寻找一个 Pro Plus 离合器，但它已经缺货一段时间了。我可以使用 Pro X 或 Plus X 控制器搭配我的 Pro Plus 踏板吗？",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-06-24T20:40:42Z",
+  "updated_at": "2025-06-24T23:42:52Z",
+  "requester_id": 158001762965,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003833032,
+      "body_text": "您好，Brian Curtice，是的，您可以使用 PlusX 离合器。您还可以升级到 PlusX 控制器，这将支持振动反馈电机。https://www.simsonn.com/products/simsonn-racing-simulator-pedal-black",
+      "user_id": 158000445778,
+      "created_at": "2025-06-24T23:36:08Z",
+      "updated_at": "2025-06-24T23:36:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003833052,
+      "body_text": "太棒了，谢谢你。",
+      "user_id": 158001762965,
+      "created_at": "2025-06-24T23:38:32Z",
+      "updated_at": "2025-06-24T23:38:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

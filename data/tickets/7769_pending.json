@@ -1,0 +1,44 @@
+{
+  "id": 7769,
+  "subject": "Order #SSN4363",
+  "description_text": "Hello,\r\n\r\nWould you be able to tell me, when can you ship out my order #SSN4363 ?\r\n\r\nIt has been a while since I made the order.\r\n\r\nThank you\r\n\r\n-- \r\nBest,\r\nArvid Tampuu\r\nFookus Pookus Grip\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-09T08:58:36Z",
+  "updated_at": "2025-12-23T11:13:46Z",
+  "requester_id": 158007715830,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014175341,
+      "body_text": "Hi Arvid Tampuu,    We sincerely apologize that the pedals are currently sold out at our German warehouse. We will ship them to you via DHL after restocking this week and refund your additional shipping fees.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-09T09:17:52Z",
+      "updated_at": "2025-12-09T09:17:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014674524,
+      "body_text": "Hello,\r\nThe merchandise is still not shipped out, it has been weeks already. Please\r\ntell me when can i expect the order or a refund?\r\n\r\nBest,\r\nArvid Tampuu\r\nFookus Pookus Grip\r\n\r\n\r\nOn Tue, 9. Dec 2025 at 11:18, service@simsonn.com ",
+      "user_id": 158007715830,
+      "created_at": "2025-12-18T05:58:32Z",
+      "updated_at": "2025-12-18T05:58:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014970170,
+      "body_text": "Hi Arvid Tampuu,    We apologize for the delayed response. Your order was scheduled for shipment from our German warehouse, but due to shipping delays, the goods arrived later than expected. They arrived today, and we have now shipped your order and updated your shipping notification.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-23T11:13:46Z",
+      "updated_at": "2025-12-23T11:13:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "id": 3916,
+  "subject": "Can’t make it work",
+  "description_text": "Hi: i bought a  plus X pedals P2-H2 and can’t make it work.\r\nI installed S. Manager and despite it recognizes both pedals, my PC constantly seems to restart and my pedals are shown as disconnected by then they appear as connected. That happends every 30 seconds.  In Iracing I was able to configure pedals but my Fanatec wheel is not reconized. I didn’t make any changes to my hardware bu iracing changed y FOV and I can’t maket show my cockit as it was.\r\nIt seesm Simsonn is causing a conflict with my PC\r\n\r\n\r\nEnviado desde Móvil \r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-09-17T22:07:54Z",
+  "updated_at": "2025-09-27T08:54:52Z",
+  "requester_id": 158004616787,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008896680,
+      "body_text": "My PO was SSN2607. Just disconnected uSB cable from control box and my PC stopped reinitializing. That confirms that pedals are causing some conflict. Just to make clear, I have a fanatec wheel and wheelbase and replaced my fanatec pedals for yours\r\n\r\n\r\nEnviado desde Móvil \r\n\r\n\r\nEl miércoles, septiembre 17, 2025, 5:07 p.m., Carlos Otalora <cotalora@yahoo.com> escribió:\r\n\r\nHi: i bought a  plus X pedals P2-H2 and can’t make it work.\r\nI installed S. Manager and despite it recognizes both pedals, my PC constantly seems to restart and my pedals are shown as disconnected by then they appear as connected. That happends every 30 seconds.  In Iracing I was able to configure pedals but my Fanatec wheel is not reconized. I didn’t make any changes to my hardware bu iracing changed y FOV and I can’t maket show my cockit as it was.\r\nIt seesm Simsonn is causing a conflict with my PC\r\n\r\n\r\nEnviado desde Móvil \r\n\r\n\r\n\r\n\r\n",
+      "user_id": 158004616787,
+      "created_at": "2025-09-17T22:15:30Z",
+      "updated_at": "2025-09-17T22:15:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008933247,
+      "body_text": "Hi Carlos Otalora,    This issue is usually caused by using a USB hub or by unstable USB power, which can lead to an unstable connection. We recommend connecting the device directly to the USB 3.0 blue port on the back of your PC, and avoid using a USB hub.  In addition, there should be a green wire connection between the PlusX and the pedals. Please note that paint on the surface may affect the quality of this connection.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-19T01:47:41Z",
+      "updated_at": "2025-09-19T01:47:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008968671,
+      "body_text": "Hi: Thanks for the info. I’ve had some issues:1. Provided cable didn’t work. Used a similar cable that I had and worked2. Plugged pedals outside the rig and\r\n it seemed to work so I installed in my rig but now pedals don’t work. Plugged pedals to various usb from my PC but it didn’t work.3. Also connected green cable from control box to pedals and then to the rig but didn’t work. Tried also by disconnectin green cable and didn’ work\r\nAttached please find a picture of green cable connected to my rig. Have a bass shaker between pedals\r\n\r\n\r\nEnviado desde Móvil \r\n\r\n\r\nEl jueves, septiembre 18, 2025, 8:47 p.m., service@simsonn.com ",
+      "user_id": 158004616787,
+      "created_at": "2025-09-20T00:07:10Z",
+      "updated_at": "2025-09-20T00:07:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008968815,
+      "body_text": "Hi Carlos Otalora,    You can search on Google to download the VKB JoyTester tool, and then check if it detects the Simsonn device.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-20T00:17:57Z",
+      "updated_at": "2025-09-20T00:17:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009199456,
+      "body_text": "Hi:I installed that software and initially my PC identified pedals. Then I tested in Iracing and pedals worked bu with imprecission. I calibrated pedals in Simsonn manager and then pedals stopped working. I ran again VKB and now it doesn’t recognized pedals.\r\n\r\n\r\nEnviado desde Móvil \r\n\r\n\r\nEl viernes, septiembre 19, 2025, 7:18 p.m., service@simsonn.com ",
+      "user_id": 158004616787,
+      "created_at": "2025-09-24T01:13:18Z",
+      "updated_at": "2025-09-24T01:13:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009236808,
+      "body_text": "Hi Carlos Otalora,  Please use the blue USB 3.0 port at the back of your computer and avoid using a USB hub. Is VKB still unable to detect our SIMSONN control box? This is quite unusual. Does your computer have proper grounding? I suspect there may be a leakage issue with your rig. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-24T15:38:19Z",
+      "updated_at": "2025-09-24T15:38:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009240723,
+      "body_text": "Hi: I'm using directly a usb port from the back of my motherboard. Initially I tried one of the ports from the bottom but it didn't work and then I switched to one of the top. I'm not using any usb a hub.VKB initially detected pedals but after a few minutes it stopped detecting it. I dont' have this issue with my current fanatec pedals. \r\nThere is something that simsonn pedals are causing as also when connecting pedals, my Fanatec wheel is not recognized by the software.\r\nMy rig doesn't have grounding and I've both used a grounding cable from pedals to control box and also disconnectes that cable and happensa the same thing. I also bought a piece of wood plate and mounted my pedals to it trying\r\n\r\nCarlos Andres Otalora Bogota, Colombia \r\n\r\n    ",
+      "user_id": 158004616787,
+      "created_at": "2025-09-24T16:54:33Z",
+      "updated_at": "2025-09-24T16:54:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009258598,
+      "body_text": "Hi Carlos Otalora,    Is the LED inside your control box lit? If not, it may be damaged, and we can send you a replacement. However, please ensure that your computer is properly connected to a household three-prong wall socket with reliable grounding. Please provide your contact person, phone number, address, and order number, and we will send you a new PlusX control box.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-25T01:13:38Z",
+      "updated_at": "2025-09-25T01:13:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009347634,
+      "body_text": "Hi:\r\nIt seems that finally, pedals are working. Don’t really know what was wrong but had to disconnect and reconnect everything from my PC and rig. Reinstalled drivers from my GPU and some other things.Only issue is that original USB cable sent from you didn’t work from the beginning. Had to buy another cable and now everything seems to be working.\r\n\r\nEnviado desde Yahoo Mail para iPhone\r\n\r\n\r\nEl miércoles, septiembre 24, 2025, 8:13 p.m., service@simsonn.com ",
+      "user_id": 158004616787,
+      "created_at": "2025-09-26T17:16:46Z",
+      "updated_at": "2025-09-26T17:16:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009379055,
+      "body_text": "Hi Carlos Otalora,    Great to hear the good news! If you run into any issues, feel free to reach out anytime. Have fun!",
+      "user_id": 158001343601,
+      "created_at": "2025-09-27T08:54:52Z",
+      "updated_at": "2025-09-27T08:54:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

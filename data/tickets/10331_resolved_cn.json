@@ -1,0 +1,35 @@
+{
+  "id": 10331,
+  "subject": "S1 方向盘",
+  "description_text": "我对您的 S1 方向盘和按键盒很感兴趣。但我有一些问题。方向盘的直径是多少？它是否使用标准的 6x70mm 螺栓模式，以便我可以将其连接到我现有的 VRS 快速释放装置？发自我的 iPhone",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-08T17:34:32Z",
+  "updated_at": "2026-01-09T03:09:26Z",
+  "requester_id": 158008985811,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016453314,
+      "body_text": "您好，Tim Coates，我们的方向盘是 13 英寸，快速释放装置使用 6×70 毫米的螺栓模式——没错。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-09T01:21:25Z",
+      "updated_at": "2026-01-09T01:21:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016455380,
+      "body_text": "感谢您的快速回复。发自我的 iPhone",
+      "user_id": 158008985811,
+      "created_at": "2026-01-09T01:40:47Z",
+      "updated_at": "2026-01-09T01:40:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

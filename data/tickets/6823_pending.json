@@ -1,0 +1,74 @@
+{
+  "id": 6823,
+  "subject": "My order",
+  "description_text": "I haven't received a confirmation of my order?\r\n\r\nSent from Outlook for Android<https://aka.ms/AAb9ysg>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-26T21:16:03Z",
+  "updated_at": "2025-11-27T03:09:17Z",
+  "requester_id": 158007342758,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012972438,
+      "body_text": "Won't let me log in?\r\n\r\nSent from Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158007342758,
+      "created_at": "2025-11-26T18:40:49Z",
+      "updated_at": "2025-11-26T18:40:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012983651,
+      "body_text": "Hi DAFYDD JAMES,    Hello, there’s no need to worry. As long as the order was placed successfully, we will ship it according to the details. You may also provide the order date and amount, and I can help you look up the corresponding SSN order number.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T23:19:19Z",
+      "updated_at": "2025-11-26T23:19:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012983668,
+      "body_text": "ID 为 6802 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T23:19:57Z",
+      "updated_at": "2025-11-26T23:19:57Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158012983669,
+      "body_text": "合并来自工单6802  \n      主题: Dafydd James  \n      描述:  \nHi I can't seem to find my order and have not received confirmation of my order? \n \n \n \n \n \n \nSent from\nOutlook for Android",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T23:19:57Z",
+      "updated_at": "2025-11-26T23:19:57Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158012983765,
+      "body_text": "Order date was the 22 November 2025 and the price was £ 166.24\r\n\r\nSent from Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158007342758,
+      "created_at": "2025-11-26T23:23:09Z",
+      "updated_at": "2025-11-26T23:23:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012988988,
+      "body_text": "Hi DAFYDD JAMES,    This is your logistics tracking link.  https://t.17track.net/en#nums=SF6047079991479",
+      "user_id": 158001343601,
+      "created_at": "2025-11-27T03:09:16Z",
+      "updated_at": "2025-11-27T03:09:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

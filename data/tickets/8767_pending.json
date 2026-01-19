@@ -1,0 +1,344 @@
+{
+  "id": 8767,
+  "subject": "Control box replacement",
+  "description_text": "Order # SSN3137\r\nJean-Marie Gagnon\r\nPhone: 15142360077\r\nShipping address:\r\n1704 Chemin Morrisson\r\nSaint Lin Laurentides\r\nQuebec, Canada\r\nJ5M 1W7\r\n\r\nThank you!\r\n\r\nPlease send me a tracking number when shipped\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-20T20:28:36Z",
+  "updated_at": "2025-12-24T11:52:52Z",
+  "requester_id": 158006210767,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011317632,
+      "body_text": "Hi Jean Marie Gagnon,    We will provide the mounting bracket free of charge, please don't worry.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-30T02:21:16Z",
+      "updated_at": "2025-10-30T02:21:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011317641,
+      "body_text": "That's great, thank you very much.\r\n\r\nLe mer. 29 oct. 2025 à 22:21, service@simsonn.com ",
+      "user_id": 158006210767,
+      "created_at": "2025-10-30T02:22:24Z",
+      "updated_at": "2025-10-30T02:22:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011703219,
+      "body_text": "Just received my pedals they are great but just à weird question for you …\r\n\r\nHow do we shutdown the led lights on the pedals, tried everything even by\r\nunplugging everything ?‍♂️\r\n\r\nLe mer. 29 oct. 2025 à 22:21, Jean Marie Gagnon <jmgagnon61@gmail.com> a\r\nécrit :\r\n\r\n> That's great, thank you very much.\r\n>\r\n> Le mer. 29 oct. 2025 à 22:21, service@simsonn.com ",
+      "user_id": 158006210767,
+      "created_at": "2025-11-04T04:20:05Z",
+      "updated_at": "2025-11-04T04:20:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011708189,
+      "body_text": "Hi Jean Marie Gagnon,     You can turn off the rgb lights by following these steps.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-04T06:24:33Z",
+      "updated_at": "2025-11-04T06:24:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011708481,
+      "body_text": "Awesome, thank you so much!\r\n\r\nLe mar. 4 nov. 2025 à 01:24, service@simsonn.com ",
+      "user_id": 158006210767,
+      "created_at": "2025-11-04T06:31:05Z",
+      "updated_at": "2025-11-04T06:31:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012799180,
+      "body_text": "Hi Jean Marie Gagnon,    If you are using the PlusX pedals, the device is currently in SIMSONN Flasher mode. First, please make sure you are using SIMSONN Manager version 2.1.2. Then go to Settings → Update → Manual Firmware Update → pedals → firmware → pedals-plusx.sfu to restore the device.  Also, please make sure to use the USB 3.0 (blue) port on the back of the PC, and do not use any USB hub.  The spark you see is just the motor capacitors charging. It is only 24V and completely safe — it will not damage the control box.  Regarding the software freezing issue, please follow these steps to resolve it:       If this happens, it indicates that the computer’s grounding is not reliable, possibly because a three-prong plug was not used with a three-prong wall outlet. You can refer to the post below: connect the computer case to the stand, and connect the control box to the metal screws on the pedals. This should resolve the disconnection issue.     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-11-24T07:36:59Z",
+      "updated_at": "2025-11-24T07:36:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012822305,
+      "body_text": "Thanks for the quick response followed your instructions but the pedals\r\nstill not working\r\n\r\nWaiting for a ground wire from Amazone but everything else pluged on my sim\r\nworks well\r\n\r\nGot the pedals a week ago and I am very desapointed\r\n\r\nWaiting for a solution from you\r\n\r\nRegards\r\n\r\nLe lun. 24 nov. 2025 à 02:37, service@simsonn.com ",
+      "user_id": 158006210767,
+      "created_at": "2025-11-24T14:09:10Z",
+      "updated_at": "2025-11-24T14:09:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012826580,
+      "body_text": "Update I installed a new clutch pedal from you and plugged it in the\r\ncontrol box\r\n\r\nI just unplugged it from the clutch port on the control box and the manager\r\nworks now\r\n\r\nSo I think the problem is ether the control box or my new clutch\r\n\r\nWaiting for your return on the matter\r\n\r\nRegards\r\n\r\nLe lun. 24 nov. 2025 à 09:08, Jean Marie Gagnon <jmgagnon61@gmail.com> a\r\nécrit :\r\n\r\n> Thanks for the quick response followed your instructions but the pedals\r\n> still not working\r\n>\r\n> Waiting for a ground wire from Amazone but everything else pluged on my\r\n> sim works well\r\n>\r\n> Got the pedals a week ago and I am very desapointed\r\n>\r\n> Waiting for a solution from you\r\n>\r\n> Regards\r\n>\r\n> Le lun. 24 nov. 2025 à 02:37, service@simsonn.com ",
+      "user_id": 158006210767,
+      "created_at": "2025-11-24T15:13:39Z",
+      "updated_at": "2025-11-24T15:13:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012856171,
+      "body_text": "Hi Jean Marie Gagnon,    We can first determine whether the issue is with the main controller port:    Plug the throttle pedal into the clutch port and check if the controller works normally;    Then plug the clutch pedal into the throttle port and check if the controller functions properly.    This will help identify whether the problem lies with the main controller or the clutch pedal. I believe it is more likely an issue with the controller. If that is the case, once I receive your reply tomorrow, I will send you a replacement PlusX main controller.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-25T01:56:03Z",
+      "updated_at": "2025-11-25T01:56:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012899190,
+      "body_text": "They both seems to work but still freeze up when closing the aps\r\nI think it’s the box the problem\r\nThanks\r\n\r\nLe lun. 24 nov. 2025 à 20:56, service@simsonn.com ",
+      "user_id": 158006210767,
+      "created_at": "2025-11-25T17:18:19Z",
+      "updated_at": "2025-11-25T17:18:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012943238,
+      "body_text": "Hi Jean Marie Gagnon,    Could you take a photo of the ground connection between your PC case, main control box, and pedals? I can help you check it. If the pedals get stuck, it’s usually caused by an unreliable ground connection.  You can download the VKB tool to test—it displays the pedal curves. Continuously press the pedals for 1–3 minutes; if the pedals get stuck, the curve will suddenly become a straight line. This helps determine whether the grounding issue is resolved.  If it turns out to be a problem with the main control box, we will replace it with a new one. However, in most cases, the issue is due to poor grounding.     https://www.vkbcontrollers.com/pages/downloads",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T11:43:16Z",
+      "updated_at": "2025-11-26T11:43:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013009796,
+      "body_text": "Here are some pictures of the 2ground wires\r\nOne from pc to sim rig\r\nOne from control box to pedals\r\n\r\nLe mer. 26 nov. 2025 à 06:43, service@simsonn.com ",
+      "user_id": 158006210767,
+      "created_at": "2025-11-27T13:42:34Z",
+      "updated_at": "2025-11-27T13:42:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013033151,
+      "body_text": "I can not use the pedals anymore\r\nThey stay frozen all the time\r\nPlease help\r\n\r\nLe jeu. 27 nov. 2025 à 08:41, Jean Marie Gagnon <jmgagnon61@gmail.com> a\r\nécrit :\r\n\r\n> Here are some pictures of the 2ground wires\r\n> One from pc to sim rig\r\n> One from control box to pedals\r\n>\r\n> Le mer. 26 nov. 2025 à 06:43, service@simsonn.com ",
+      "user_id": 158006210767,
+      "created_at": "2025-11-27T23:17:34Z",
+      "updated_at": "2025-11-27T23:17:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013038127,
+      "body_text": "Hi Jean Marie Gagnon,  Hello, you mentioned that the pedals stay frozen and don’t respond. Could you please provide photos or a video showing the issue? This will help us check it more effectively. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-28T04:14:30Z",
+      "updated_at": "2025-11-28T04:14:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013055460,
+      "body_text": "There it is\r\n\r\nLe jeu. 27 nov. 2025 à 23:14, service@simsonn.com \nAttachment(s) that exceed the 20 MB limit have been dropped. Please reach out to the sender.",
+      "user_id": 158006210767,
+      "created_at": "2025-11-28T11:23:20Z",
+      "updated_at": "2025-11-28T11:23:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013070980,
+      "body_text": "Still waiting for a response and a solution or I will return your product\r\nVery desapointed I sent pictures plus video\r\nI can’t use my sim now without pedals\r\n\r\nLe ven. 28 nov. 2025 à 06:22, Jean Marie Gagnon <jmgagnon61@gmail.com> a\r\nécrit :\r\n\r\n> There it is\r\n>\r\n> Le jeu. 27 nov. 2025 à 23:14, service@simsonn.com ",
+      "user_id": 158006210767,
+      "created_at": "2025-11-28T16:22:11Z",
+      "updated_at": "2025-11-28T16:22:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013155190,
+      "body_text": "Hi Jean Marie Gagnon,  ”I can not use the pedals anymore They stay frozen all the time “     Is your pedal having issues? We recommend manually updating the firmware again. Please follow the steps below:      Launch the latest version of SIMSONN Manager 2.1.2. On the “Plus X” control unit, press and hold the “Upgrade” button. While holding the button, unplug the USB cable from the PC and then plug it back in. The software should detect the device entering “SIMSONN Flasher update mode”. In the software go to: Settings → Update → Manual Firmware Update. In the file selector choose: pedals‑firmware → pedals‑plusx.sfu. Click “Start Update” and wait until the firmware is completely written. During this process do not disconnect the USB or close the application. Once the update is finished (you’ll get a success prompt or the unit will reboot), unplug and re‑plug the USB then test the pedal device to confirm everything works correctly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-01T02:37:11Z",
+      "updated_at": "2025-12-01T02:37:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013223379,
+      "body_text": "Not working still freezes when trying to close the manager even after the\r\nmanual update\r\n\r\nLe dim. 30 nov. 2025 à 21:37, service@simsonn.com ",
+      "user_id": 158006210767,
+      "created_at": "2025-12-01T18:59:40Z",
+      "updated_at": "2025-12-01T18:59:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013364236,
+      "body_text": "Can someone help me find a solution or send me a new control box\r\n\r\nLe lun. 1 déc. 2025 à 13:59, Jean Marie Gagnon <jmgagnon61@gmail.com> a\r\nécrit :\r\n\r\n> Not working still freezes when trying to close the manager even after the\r\n> manual update\r\n>\r\n> Le dim. 30 nov. 2025 à 21:37, service@simsonn.com ",
+      "user_id": 158006210767,
+      "created_at": "2025-12-04T01:36:33Z",
+      "updated_at": "2025-12-04T01:36:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013520611,
+      "body_text": "Can someone help me???\r\n\r\nLe mer. 3 déc. 2025 à 20:35, Jean Marie Gagnon <jmgagnon61@gmail.com> a\r\nécrit :\r\n\r\n> Can someone help me find a solution or send me a new control box\r\n>\r\n> Le lun. 1 déc. 2025 à 13:59, Jean Marie Gagnon <jmgagnon61@gmail.com> a\r\n> écrit :\r\n>\r\n>> Not working still freezes when trying to close the manager even after the\r\n>> manual update\r\n>>\r\n>> Le dim. 30 nov. 2025 à 21:37, service@simsonn.com ",
+      "user_id": 158006210767,
+      "created_at": "2025-12-05T13:44:08Z",
+      "updated_at": "2025-12-05T13:44:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014118934,
+      "body_text": "Hi Jean Marie Gagnon,     Could you please record a video of the issue where it gets stuck? I need to verify the problem and then provide a solution. Please send the video link via Google Drive and make sure the access permissions are set correctly.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-08T10:18:11Z",
+      "updated_at": "2025-12-08T10:18:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014121005,
+      "body_text": "I already sent it????\r\n\r\nLe lun. 8 déc. 2025 à 05:18, service@simsonn.com \nAttachment(s) that exceed the 20 MB limit have been dropped. Please reach out to the sender.",
+      "user_id": 158006210767,
+      "created_at": "2025-12-08T11:31:02Z",
+      "updated_at": "2025-12-08T11:31:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014121474,
+      "body_text": "There’s The ground wires pictures\r\n\r\nLe lun. 8 déc. 2025 à 06:29, Jean Marie Gagnon <jmgagnon61@gmail.com> a\r\nécrit :\r\n\r\n> I already sent it????\r\n>\r\n> Le lun. 8 déc. 2025 à 05:18, service@simsonn.com ",
+      "user_id": 158006210767,
+      "created_at": "2025-12-08T11:46:03Z",
+      "updated_at": "2025-12-08T11:46:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014351529,
+      "body_text": "Please answer my request for help in this matter that is going on since I\r\ngot the pedals a month ago\r\n\r\n---------- Message transféré ---------\r\nDe : Jean Marie Gagnon <jmgagnon61@gmail.com>\r\nDate : lun. 8 déc. 2025 à 06:34\r\nObjet : Re: contrôle box\r\nÀ : service@simsonn.com ",
+      "user_id": 158006210767,
+      "created_at": "2025-12-11T21:06:17Z",
+      "updated_at": "2025-12-11T21:06:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014472323,
+      "body_text": "Hi Jean Marie Gagnon,  Please provide your order number, contact name, phone number, and shipping address, and we will send you a new control box tomorrow. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-14T03:41:02Z",
+      "updated_at": "2025-12-14T03:41:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014472331,
+      "body_text": "Hi Jean Marie Gagnon,  Please provide your order number along with your contact name, phone number, and shipping address, and we will send you a new control box tomorrow. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-14T03:41:31Z",
+      "updated_at": "2025-12-14T03:41:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014472876,
+      "body_text": "Order # SSN3137\r\nJean-Marie Gagnon\r\nPhone: 15142360077\r\nShipping address:\r\n1704 Chemin Morrisson\r\nSaint Lin Laurentides\r\nQuebec, Canada\r\nJ5M 1W7\r\n\r\nThank you!\r\n\r\n\r\nLe sam. 13 déc. 2025 à 22:41, service@simsonn.com ",
+      "user_id": 158006210767,
+      "created_at": "2025-12-14T04:49:57Z",
+      "updated_at": "2025-12-14T04:49:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014820612,
+      "body_text": "Hi Jean Marie Gagnon,\r\n\r\nPlease provide your order number along with your contact name, phone\r\nnumber, and shipping address, and we will send you a new control box\r\ntomorrow.\r\n\r\n\r\n\r\n\r\nLe sam. 13 déc. 2025 à 23:49, Jean Marie Gagnon <jmgagnon61@gmail.com> a\r\nécrit :\r\n\r\n> Order # SSN3137\r\n> Jean-Marie Gagnon\r\n> Phone: 15142360077\r\n> Shipping address:\r\n> 1704 Chemin Morrisson\r\n> Saint Lin Laurentides\r\n> Quebec, Canada\r\n> J5M 1W7\r\n>\r\n> Thank you!\r\n>\r\n>\r\n> Le sam. 13 déc. 2025 à 22:41, service@simsonn.com ",
+      "user_id": 158006210767,
+      "created_at": "2025-12-20T20:25:16Z",
+      "updated_at": "2025-12-20T20:25:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014825919,
+      "body_text": "ID 号为 5415, 6594 和 8768 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-21T02:32:04Z",
+      "updated_at": "2025-12-21T02:32:04Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014825920,
+      "body_text": "合并来自工单5415  \n      主题: Order  \n      描述:  Hi just ordered a pedal set order number: POP7MWPLG   I would like to know if it comes with the the shaker mounting bracket or if I need to order it  \n Thanks ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-21T02:32:05Z",
+      "updated_at": "2025-12-21T02:32:05Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014825922,
+      "body_text": "合并来自工单6594  \n      主题: contrôle box  \n      描述:  Hi, since i received the pedals control box the simmson manager is freezing regularly with this message    \n SIMMSON FLASHER, THE CONTROL BOX IS IN UPDATE MODE PLEASE VERIFY IF THE UPDATE BUTTON IS FREE AND UNPLUG THEN PLUG THE USB TO GET OUT OF THAT MODE \n   \n Did that many times and not working anymore, also the controle bol is sparkling when a plug it \n   \n Please help",
+      "user_id": 158000445778,
+      "created_at": "2025-12-21T02:32:05Z",
+      "updated_at": "2025-12-21T02:32:05Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014825924,
+      "body_text": "合并来自工单8768  \n      主题: Control box  \n      描述:  \nHi Jean Marie Gagnon,  Please provide your order number along with your contact name, phone number, and shipping address, and we will send you a new control box tomorrow. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-21T02:32:05Z",
+      "updated_at": "2025-12-21T02:32:05Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158015031831,
+      "body_text": "Hi Jean Marie Gagnon,    Sorry for the delay in sending this to you. Here's your tracking link.  Merry Christmas!  https://t.17track.net/en#nums=JSELA2404410087YQ",
+      "user_id": 158001343601,
+      "created_at": "2025-12-24T11:52:52Z",
+      "updated_at": "2025-12-24T11:52:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

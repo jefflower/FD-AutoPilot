@@ -1,0 +1,34 @@
+{
+  "id": 2482,
+  "subject": "Old Simsonn Pro Pedals software",
+  "description_text": "Hello,\r\n\r\nI bought some time ago the old Pro Pedals, the ones that they have the old control box.\r\n\r\nI was wondering if these pedals have a newer software update. Are these compatible with the new Simsonn manager software?\r\n\r\nThanks in advance,\r\n\r\nEduardo\r\n\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-08T19:08:36Z",
+  "updated_at": "2025-08-12T08:35:53Z",
+  "requester_id": 158002848731,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006597587,
+      "body_text": "Hi Eduardo Escotto,  Please check the purchase date of your Pro Plus and confirm that the version is 1.7.1. If so, you can manually update the firmware via SIMSONN Manager 2.1.0.      Go to Settings → Update → Manual Firmware Update → Select Pedals → Choose the file plus.sfu to upgrade.      https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-08-09T14:35:22Z",
+      "updated_at": "2025-08-09T14:35:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006607581,
+      "body_text": "Hello Simsonn Team,\r\n\r\nThanks for the instructions, I was able to update my pedals :).\r\n\r\nKind regards,\r\n\r\nEduardo\r\n\r\nObtener Outlook para Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158002848731,
+      "created_at": "2025-08-09T17:13:36Z",
+      "updated_at": "2025-08-09T17:13:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

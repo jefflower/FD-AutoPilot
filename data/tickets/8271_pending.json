@@ -1,0 +1,164 @@
+{
+  "id": 8271,
+  "subject": "SIMSONN-HB Handbrake in Simsonn Manager",
+  "description_text": "Hello,\r\n\r\nI’m using a SIMSONN-HB standalone load-cell handbrake with Simsonn Manager\r\nv2.1.2. Windows detects it correctly as SIMSONN-HB, but in Simsonn Manager\r\nI can’t configure it — the Handbrake tab does nothing and I don’t see a way\r\nto select the handbrake as the active device.\r\n\r\nShould the SIMSONN-HB appear as a selectable device in Simsonn Manager, and\r\nif so, how is it configured?\r\n\r\nThank you for your help.\r\n\r\nBest regards,\r\nTomas Lindstrom\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-15T08:38:11Z",
+  "updated_at": "2025-12-30T09:36:31Z",
+  "requester_id": 158007726829,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014505493,
+      "body_text": "Hi Tomas Lindstrom,  At the front bottom of the handbrake (indicated by the arrow), there is a small rectangular hole that contains the recovery button. Please use a toothpick to gently push it to the other side, then reconnect the USB cable. The device will enter recovery mode. Next, go to Settings → Update → Manual Firmware Update → handbrake-firmware → handbrake-hbpro.sfu in the software, and complete the update. After the upgrade, make sure to switch the recovery button back to its original position. You may also use the VKB tool to check the device connection status. ww",
+      "user_id": 158000445778,
+      "created_at": "2025-12-15T10:54:47Z",
+      "updated_at": "2025-12-15T10:54:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014521016,
+      "body_text": "Hello,\r\n\r\nThank you for the clarification. I actually have the SIMSONN SPRO-LC load\r\ncell handbrake. Could you please provide the correct firmware update\r\ninstructions for the SPRO-LC model?\r\n\r\nBest regards,\r\nTomas Lindstrom\r\n\r\n\r\n\r\nOn Mon, Dec 15, 2025, 4:54 AM service@simsonn.com ",
+      "user_id": 158007726829,
+      "created_at": "2025-12-15T15:48:14Z",
+      "updated_at": "2025-12-15T15:48:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014617274,
+      "body_text": "Hi Tomas Lindstrom,     Please use Freejoy 1.7.0 and switch the language to English. After the device is connected, click “Read config from device”, then take screenshots of the Pin page and the Axis page and send them to me. I will check whether the configuration is correct.   https://drive.google.com/file/d/1hnHNudj0VhE6xr7ypu-KeEDuVrlVHVg9/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T07:58:03Z",
+      "updated_at": "2025-12-17T07:58:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014800222,
+      "body_text": "Hi,\r\n\r\nPlease see the attached screenshots of the Pin and Axis pages from Freejoy\r\n1.7.0.\r\n\r\nLet me know if you need any other information.\r\n\r\nThanks,\r\nTomas Lindstrom\r\n\r\n\r\nOn Wed, Dec 17, 2025 at 1:58 AM service@simsonn.com ",
+      "user_id": 158007726829,
+      "created_at": "2025-12-20T02:53:38Z",
+      "updated_at": "2025-12-20T02:53:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014809925,
+      "body_text": "Hi Tomas Lindstrom,    Please calibrate the pedals following this procedure: During calibration, pull the handbrake several times using normal force, then save the calibration. Next, click “Write config to device” to write the configuration to the device. After that, test whether the handbrake can reach 100%. If it does, you can proceed directly to calibrate it in the game.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-20T12:03:49Z",
+      "updated_at": "2025-12-20T12:03:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014829281,
+      "body_text": "Hi,\r\n\r\nI followed the calibration instructions, and while the process seemed to go\r\nokay, the output is now stuck at maximum (100%).\r\n\r\nPlease see the attached screenshot for reference.\r\n\r\nCould you advise on what I should try next to resolve this?\r\n\r\nThank you,\r\nTomas Lindstrom\r\n\r\n\r\nOn Sat, Dec 20, 2025 at 6:03 AM service@simsonn.com ",
+      "user_id": 158007726829,
+      "created_at": "2025-12-21T05:06:25Z",
+      "updated_at": "2025-12-21T05:06:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014840990,
+      "body_text": "Hi Tomas Lindstrom,     Please download the CFG file first and restore its correct settings. Then, perform recalibration. Every time you open Freejoy, make sure to click ‘Read config from device.’        https://drive.google.com/file/d/1R3FyAc8Xh-k_sCnl_Ido__AEeWshLjtT/view?usp=drivesdk",
+      "user_id": 158000445778,
+      "created_at": "2025-12-21T12:49:25Z",
+      "updated_at": "2025-12-21T12:49:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014855841,
+      "body_text": "Hi,\r\n\r\nI followed the instructions, loaded the CFG file, and restored the\r\nsettings. However, I am still experiencing an issue where no input from the\r\nhandbrake registers.\r\n\r\nI clicked \"Read config from device\" as instructed, but the device output\r\nremains unresponsive.\r\n\r\nCould you please advise on the next steps?\r\n\r\nThank you,\r\nTomas Lindstrom\r\n\r\nOn Sun, Dec 21, 2025 at 6:49 AM service@simsonn.com ",
+      "user_id": 158007726829,
+      "created_at": "2025-12-22T03:12:37Z",
+      "updated_at": "2025-12-22T03:12:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014893096,
+      "body_text": "Hi Tomas Lindstrom,    Please record the CFG loading recovery process and the testing video, then send them to me via Google Drive. Kindly set the sharing permission to view-only. Thank you for your cooperation.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-22T15:45:47Z",
+      "updated_at": "2025-12-22T15:45:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014997068,
+      "body_text": "Hi,\r\n\r\nThe link to the video showing the CFG loading recovery process and testing\r\nis below.\r\n\r\nhttps://drive.google.com/file/d/1MPUrwpktTyPy3LLYTCyXcgXJ8ZTEsZAS/view?usp=drivesdk\r\n\r\nThank you for reviewing this.\r\n\r\nBest regards,\r\nTomas Lindstrom\r\n\r\n\r\nOn Mon, Dec 22, 2025, 9:45 AM service@simsonn.com ",
+      "user_id": 158007726829,
+      "created_at": "2025-12-23T18:56:49Z",
+      "updated_at": "2025-12-23T18:56:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015023935,
+      "body_text": "Hi Tomas Lindstrom,     I noticed that your device name shows HShfiter, which is incorrect. This means the settings were not successfully applied. You need to perform Step 3 and click “Write config to device” to write the configuration to the device. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-24T06:34:58Z",
+      "updated_at": "2025-12-24T06:34:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015054531,
+      "body_text": "Hi,\r\n\r\nMy apologies. I have now recorded the same CFG loading and testing process\r\nusing the device when it appears as \"HShifter.\"\r\n\r\nThe issue persists, and the results seem to be the same as before.\r\n\r\nHere is the link to the video:\r\n\r\nhttps://drive.google.com/file/d/164BAhO3mThIiNhSHFlOe_ylM6sKUypvV/view?usp=sharing\r\n\r\n\r\nThank you for your continued help.\r\n\r\nBest regards,\r\nTomas Lindstrom\r\n\r\n\r\nOn Wed, Dec 24, 2025 at 12:35 AM service@simsonn.com ",
+      "user_id": 158007726829,
+      "created_at": "2025-12-24T23:12:03Z",
+      "updated_at": "2025-12-24T23:12:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015058281,
+      "body_text": "Hi Tomas Lindstrom,  Are you using this recovery file? Also, after loading it, you need to click “Write Config to Device” to write it to the device. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-25T04:23:59Z",
+      "updated_at": "2025-12-25T04:23:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015058445,
+      "body_text": "Hi,\r\n\r\nI was loading the CFG file that was linked in your previous email.\r\n\r\nIn the video I sent, the final step I performed was clicking \"Write Config\r\nto Device.\"\r\n\r\nCould you please confirm if this is the correct recovery file, and what I\r\nshould try next?\r\n\r\nBest regards,\r\nTomas Lindstrom\r\n\r\nOn Wed, Dec 24, 2025, 10:24 PM service@simsonn.com ",
+      "user_id": 158007726829,
+      "created_at": "2025-12-25T04:46:27Z",
+      "updated_at": "2025-12-25T04:46:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015244895,
+      "body_text": "Hi Tomas Lindstrom,  I’ve watched your video and noticed that you selected the wrong configuration file. Please download the configuration file from my attachment and select the downloaded SIMSONN-HB.cfg. The file you previously selected was incorrect. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T09:36:30Z",
+      "updated_at": "2025-12-30T09:36:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

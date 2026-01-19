@@ -1,0 +1,44 @@
+{
+  "id": 4700,
+  "subject": "#SSN2789 Missing Mounting Plates",
+  "description_text": "Hello!I have just received my pedals. I ordered the Full Set (P3H3/Base Plate) but only got the pedals. Could you please send the missing plates? It shows up on my order that I ticked the base plate option. Thank you.Max\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-10T09:12:53Z",
+  "updated_at": "2025-10-10T10:07:36Z",
+  "requester_id": 158005506943,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010198941,
+      "body_text": "Hi thwoawya,    We apologize for the inconvenience. Our Pro X Ultra baseplate is currently out of stock at our German warehouse, so we have sent you the pedal first. We can ship your baseplate via UPS, but customs duties may apply. Alternatively, we can reship it once the German warehouse restocks in a couple of days. ",
+      "user_id": 158001343601,
+      "created_at": "2025-10-10T09:21:52Z",
+      "updated_at": "2025-10-10T09:21:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010201939,
+      "body_text": "In that case please just resend them from Germany as soon as they are available. How long do you expect this to take?\n-------- Original message --------",
+      "user_id": 158005506943,
+      "created_at": "2025-10-10T10:03:52Z",
+      "updated_at": "2025-10-10T10:03:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010202973,
+      "body_text": "Hi thwoawya,    The latest shipment is expected to arrive at our German warehouse around the 12th. We will ship it to you via DHL Express once the products are listed.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-10T10:07:35Z",
+      "updated_at": "2025-10-10T10:07:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

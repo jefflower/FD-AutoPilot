@@ -1,0 +1,104 @@
+{
+  "id": 8857,
+  "subject": "Return order",
+  "description_text": "Hi\r\n\r\nI placed 2 orders with Simsonn and would like to return them.\r\n\r\nMy wife has purchased other items for me as a Xmas present and I no longer\r\nneed the Simsonn items.\r\n\r\nHow do I go about returning these items? Do I need an RMA? Can you send me\r\nreturn instructions please.\r\n\r\nOrder numbers are:\r\nSSN4236 and SSN4115\r\n\r\n\r\nThanks\r\n\r\nMarc\r\n\r\n",
+  "status": 2,
+  "priority": 4,
+  "created_at": "2025-12-22T08:22:10Z",
+  "updated_at": "2026-01-17T08:11:14Z",
+  "requester_id": 158007468448,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014874631,
+      "body_text": "你好，马克·道伊， SF6047110695854  您好，货物已发货。货物在运输途中无法退货。由此给您带来的不便，我深表歉意。",
+      "user_id": 158007774669,
+      "created_at": "2025-12-22T11:31:53Z",
+      "updated_at": "2025-12-22T11:31:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014879883,
+      "body_text": "Hi\r\n\r\nMy orders are delivered. Can you help me with the return?\r\n\r\n\r\n\r\nThanks\r\n\r\nMarc\r\n\r\n\r\nOn Mon, 22 Dec 2025 at 11:32, service@simsonn.com ",
+      "user_id": 158007468448,
+      "created_at": "2025-12-22T12:34:38Z",
+      "updated_at": "2025-12-22T12:34:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014881796,
+      "body_text": "Hi Marc Dowie,    We apologize, but according to our return policy, we do not accept returns for undamaged products. ",
+      "user_id": 158001343601,
+      "created_at": "2025-12-22T13:15:59Z",
+      "updated_at": "2025-12-22T13:15:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014886620,
+      "body_text": "Hi Simsonn Customer Service,\r\n\r\n\r\nThank you for your response.\r\n\r\n\r\nI have reviewed your return policy, which states that customers may request\r\na return within 30 days. I contacted you within 14 days of receiving the\r\ngoods to request a return, as I am dissatisfied with the quality of the\r\nproduct.\r\n\r\n\r\nI am based in the United Kingdom, and this purchase was made online. Under\r\nUK consumer law for distance selling, I am exercising my right to cancel\r\nthe contract within 14 days of receipt, which applies regardless of your\r\ninternal returns policy.\r\n\r\n\r\nI am therefore formally requesting:\r\n\r\n\r\n   -\r\n\r\n   Confirmation that you will accept the return, and\r\n   -\r\n\r\n   A full refund to the original payment method once the goods are returned.\r\n\r\n\r\nPlease provide return instructions within 7 days. If I do not receive\r\nconfirmation, I will have no option but to escalate this matter via my\r\npayment provider.\r\n\r\n\r\nI look forward to resolving this promptly.\r\n\r\n\r\nKind regards,\r\n\r\nMarc Dowie\r\n\r\n\r\nOn Mon, 22 Dec 2025 at 13:16, service@simsonn.com ",
+      "user_id": 158007468448,
+      "created_at": "2025-12-22T14:46:47Z",
+      "updated_at": "2025-12-22T14:46:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015032426,
+      "body_text": "Hi Marc Dowie,    You may return the package to our German warehouse. We will process your refund after receiving and inspecting it. Please ensure the packaging is intact and the product shows no signs of use; otherwise, the return request will not be approved.  Gubitz GmbH(LeiXuan A211) Hüttenkamp 12 Neumünster,Schleswig-Holstein   24536 +49 17622233089",
+      "user_id": 158001343601,
+      "created_at": "2025-12-24T12:21:46Z",
+      "updated_at": "2025-12-24T12:21:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016200022,
+      "body_text": "Hi\r\n\r\nI have returned the items and they are on way back you German warehouse.\r\n\r\nThanks\r\n\r\nMarc\r\n\r\nOn Wed, 24 Dec 2025 at 12:21, service@simsonn.com ",
+      "user_id": 158007468448,
+      "created_at": "2026-01-07T20:07:30Z",
+      "updated_at": "2026-01-07T20:07:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017259981,
+      "body_text": "Hi\r\n\r\nThe items have now been returned\r\n\r\n[image: image.png]\r\nI will contact again next week to make sure all is as expected.\r\n\r\nThank you\r\n\r\nMarc\r\n\r\n\r\nOn Wed, 24 Dec 2025 at 12:21, service@simsonn.com ",
+      "user_id": 158007468448,
+      "created_at": "2026-01-16T12:05:54Z",
+      "updated_at": "2026-01-16T12:05:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017311682,
+      "body_text": "Hi Marc Dowie,    Please provide the tracking number.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T03:51:35Z",
+      "updated_at": "2026-01-17T03:51:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017318583,
+      "body_text": "Thank you\r\n\r\nIt’s is fedex 887712749511\r\n\r\n\r\nhttps://www.fedex.com/fedextrack/?trknbr=887712749511&trkqual=2461048000~887712749511~FX\r\n\r\nhttps://www.niparcels.com/tracking?hash=229255002187205011225219208098160162217210075205\r\n\r\n\r\nThanks\r\n\r\nMarc\r\n\r\n\r\n\r\n\r\nOn Sat, 17 Jan 2026 at 03:51, service@simsonn.com ",
+      "user_id": 158007468448,
+      "created_at": "2026-01-17T07:32:02Z",
+      "updated_at": "2026-01-17T07:32:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

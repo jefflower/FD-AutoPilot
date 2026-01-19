@@ -1,0 +1,24 @@
+{
+  "id": 9243,
+  "subject": "Problem with the brake",
+  "description_text": "Hi,\r\nWe gave my son the hydraulic pedal black set for Christmas. He says the brake pedal is not responding the way it should (the gas pedal and clutch are fine). I have attached a video of him pushing each pedal along with the software opened on his monitor showing the pedal not responding while pushing. When he releases his foot from the pedal is when the software shows that it is responding. We would like to exchange for the exact product if possible. Please let me know what I need to do. \r\n\r\nMy order number is SSN4098\r\n\r\nThank you,\r\nKatie Clanton\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-26T15:55:52Z",
+  "updated_at": "2025-12-28T02:48:33Z",
+  "requester_id": 158008774084,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015147021,
+      "body_text": "Hi Katie Clanton,  I see the issue. The brake only outputs data after being pressed through a certain range. You can click the offset function in the software, a popup will appear, and you can follow the steps to set the pedal’s initial signal close to 0%, then recalibrate. This is generally required after adjusting damping or mechanical components. Detailed instructions are in the manual. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T02:48:33Z",
+      "updated_at": "2025-12-28T02:48:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

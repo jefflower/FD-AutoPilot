@@ -1,0 +1,24 @@
+{
+  "id": 6734,
+  "subject": "Placed order using phone number",
+  "description_text": "Good Afternoon,\r\nI placed an order earlier today and checked out as a guest using my phone number rather than an email.  I never received a confirmation text.  I am not sure if my order was received.  My phone number is +17179928203.\r\n\r\nSincerely,\r\nJohn\r\nSent from my iPhone\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-25T19:17:34Z",
+  "updated_at": "2025-11-26T11:06:56Z",
+  "requester_id": 158007326312,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012941792,
+      "body_text": "Hi John Spyker,  Please provide the payment amount and the order date, and we will help you check the order status. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T11:06:56Z",
+      "updated_at": "2025-11-26T11:06:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

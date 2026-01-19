@@ -1,0 +1,35 @@
+{
+  "id": 3691,
+  "subject": "Pedals not connected",
+  "description_text": "Dear Simpson, I’ve had my sim racing pro pedals for a few months now and I love them. I’ve even purchased the brake upgrade kit, but now they are no longer being recognized in the Simpson app and are also not appearing in game controllers. They are not being recognized there either. Do you have any ideas? Will the newer controller work, the sealed one? Sent from my iPhone",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-09-10T13:27:23Z",
+  "updated_at": "2025-09-12T04:33:15Z",
+  "requester_id": 158004393257,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008530367,
+      "body_text": "Hi Simon Cryer, Please provide your order number and pedal model. If the connection issue persists even when using a rear USB 3.0 port, press and hold the upgrade button on the control box while reconnecting the USB cable to enter upgrade mode. Then go to Settings → Update → Manual Firmware Update → pedals-firmware-pedals, and select the .sfu firmware file that matches your pedal model to update.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-11T14:57:31Z",
+      "updated_at": "2025-09-11T14:57:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008542375,
+      "body_text": "I’m so sorry, it turned out to be a USB extension I was using. I have moved my system around now so I can plug them directly into the computer and they have been fine so far. Thanks, Simon. Sent from my iPhone",
+      "user_id": 158004393257,
+      "created_at": "2025-09-11T16:51:47Z",
+      "updated_at": "2025-09-11T16:51:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

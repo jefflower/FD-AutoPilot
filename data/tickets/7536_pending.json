@@ -1,0 +1,24 @@
+{
+  "id": 7536,
+  "subject": "Order ssn3707",
+  "description_text": "bonjour, j’ai bien reçu ma commande. j’ai un soucis de déconnections des VAM pro, ils fonctionnent 2 minute puis ne marchent plus ou alors reste bloqué en vibration. \r\nLe Pro X ultra est bien connecté en direct au pc sur un usb3.0.\r\nJ’utilise simhub.\r\ncordialement\r\nEnvoyé de mon iPad",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-05T23:35:52Z",
+  "updated_at": "2025-12-06T04:56:06Z",
+  "requester_id": 158007207330,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013757304,
+      "body_text": "Hi ROM ROM,  If this happens, it indicates that the computer’s grounding is not reliable, possibly because a three-prong plug was not used with a three-prong wall outlet. You can refer to the post below: connect the computer case to the stand, and connect the control box to the metal screws on the pedals. This should resolve the disconnection issue.     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-12-06T04:56:06Z",
+      "updated_at": "2025-12-06T04:56:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

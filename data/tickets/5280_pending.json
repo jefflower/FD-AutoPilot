@@ -1,0 +1,214 @@
+{
+  "id": 5280,
+  "subject": "Throttle pedal malfunction",
+  "description_text": "﻿Good afternoon,\r\n\r\nI am reaching out to report another issue with my throttle. I was sent a replacement for a broken part on my first throttle pedal. I installed the new one and it was running good for a while. But for the last few weeks now, the throttle has been sticking. It’s not the actual pedal but the sensor that sticks every so often. It’ll happen in the middle of a race and when I release the throttle pedal, the sensor maintains 100% throttle for 2-3 seconds before cutting off. It’s very frustrating as it has ruined several races now. Are there any know fixes to this issue? I’ve inspected the pedal and didn’t find any physical malfunctions. \r\n\r\nThanks, \r\n\r\n\r\n \r\n\r\n\r\n\r\n \r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-10-25T21:44:03Z",
+  "updated_at": "2025-11-21T10:57:29Z",
+  "requester_id": 158001830449,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011113864,
+      "body_text": "Hi Michaelaliffi,    Is your wheel base a Fanatec model?  If your computer is connected to a grounded three-prong wall outlet, ensuring proper grounding, the issue of the base interfering with the pedal signal should not occur.  You can try turning off the base’s power to test whether the signal still gets stuck.  In the Simsonn Manager interface, you can monitor the pedal signal while continuously pressing the pedals to check for any signal lag or irregularities.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-26T14:35:31Z",
+      "updated_at": "2025-10-26T14:35:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011118976,
+      "body_text": "The wheel base is indeed fanatec. My computer and sim rig are grounded to prevent any interference. I also did not experience any interference with the first pedal I had originally purchased. It worked fine until a physical piece broke. Honestly what can I do about a refund at this point. It’s been a few months now and it’s been one thing after another with these pedals. I’ve gone through now 2 throttle pedals and a control box and am still no closer to reliable pedals. It’s become extremely frustrating to constantly deal with one issue or another.\r\n\r\n\r\n \r\n\r\n> ",
+      "user_id": 158001830449,
+      "created_at": "2025-10-26T16:41:30Z",
+      "updated_at": "2025-10-26T16:41:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011127209,
+      "body_text": "Hi Michaelaliffi,    Please take a photo of the side view of the throttle pedal and send it to me. I will first check whether there might be an installation issue and then provide you with a suitable solution.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-26T23:55:17Z",
+      "updated_at": "2025-10-26T23:55:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011165077,
+      "body_text": "Please see attached\r\n\r\n\r\n\r\n \r\n\r\n> ",
+      "user_id": 158001830449,
+      "created_at": "2025-10-27T14:17:35Z",
+      "updated_at": "2025-10-27T14:17:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011257581,
+      "body_text": "Hi Michaelaliffi,    The throttle pedal appears to be installed correctly. Does it only get stuck on the throttle? Please make sure that the Fanatec, Moza, and your PC are all properly connected to the household ground.        https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-10-29T03:04:00Z",
+      "updated_at": "2025-10-29T03:04:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011278710,
+      "body_text": "Yes it is only the throttle, and everything is grounded correctly. \r\n\r\n\r\n \r\n\r\n> ",
+      "user_id": 158001830449,
+      "created_at": "2025-10-29T10:38:45Z",
+      "updated_at": "2025-10-29T10:38:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011543746,
+      "body_text": "Any update? Pedal is still not working.\r\n\r\n\r\n \r\n\r\n> ",
+      "user_id": 158001830449,
+      "created_at": "2025-11-01T00:31:47Z",
+      "updated_at": "2025-11-01T00:31:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011603836,
+      "body_text": "Hi Michaelaliffi,  We will send you a new throttle pressure sensor on Monday to resolve the issue. Please provide the contact name, phone number, delivery address, and order information. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-02T02:26:38Z",
+      "updated_at": "2025-11-02T02:26:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011635174,
+      "body_text": "I would rather return the pedals at this point. There have been too many issues and I’m not happy with them at all. \r\n\r\n\r\n \r\n\r\n> ",
+      "user_id": 158001830449,
+      "created_at": "2025-11-03T01:26:28Z",
+      "updated_at": "2025-11-03T01:26:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011769584,
+      "body_text": "Hi Michaelaliffi,  ​If your computer cannot safely connect to the household ground via a three-prong plug, you can prepare an additional wire to connect one end of the controller casing to the computer case and the other end to the pedal’s metal screw. Please note that paint may affect the connection. This should resolve the issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-05T05:56:06Z",
+      "updated_at": "2025-11-05T05:56:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011827160,
+      "body_text": "My computer is grounded correctly. I also have an additional ground running from my sim rig to my pc housing as well as ferrite chokes on each cable. I have had no EMI issues with any of my other equipment or pedals. I want to return the pedals at this point. Please let me know next steps to process a return.\r\n\r\n\r\n\r\n \r\n\r\n> ",
+      "user_id": 158001830449,
+      "created_at": "2025-11-05T17:31:37Z",
+      "updated_at": "2025-11-05T17:31:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011979172,
+      "body_text": "Please follow up on my last email. \r\n\r\n\r\n \r\n\r\n> ",
+      "user_id": 158001830449,
+      "created_at": "2025-11-08T21:06:02Z",
+      "updated_at": "2025-11-08T21:06:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011985252,
+      "body_text": "Hi Michaelaliffi,  Please take several photos showing your computer plugged into the power strip or wall outlet, as well as the grounding connections for both the control unit and the computer. I will help check for any issues. Please provide multiple shots, focusing on the grounding between the computer and the rig, and between the control unit and pedals. This will help prevent interference or disconnection problems. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-09T04:52:52Z",
+      "updated_at": "2025-11-09T04:52:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012001520,
+      "body_text": "Respectfully, i am requesting a refund and want to return the product. I have asked several times what steps i need to take to return the pedals. I do not want to continue chasing an issue just to have another issue next week. These pedals have been a problem from the start. I want them returned and refunded.\r\n\r\n\r\n \r\n\r\n> ",
+      "user_id": 158001830449,
+      "created_at": "2025-11-09T14:00:03Z",
+      "updated_at": "2025-11-09T14:00:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012095969,
+      "body_text": "Hi Michaelaliffi,   The interference issue is not caused by our pedals. In fact, if the computer or Fanatec device is not properly grounded, it can affect other low-voltage USB devices. This does not indicate a fault with our equipment itself. In a typical home setup, ungrounded computers can produce static sensations in winter, let alone electronic devices like USB pedals. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-11T04:51:45Z",
+      "updated_at": "2025-11-11T04:51:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012102168,
+      "body_text": "The issue is absolutely with the product. I have had to report an issue 3 separate times now. I have several other pedal sets none of which have an issue. My PC and my wheelbase are PROPERLY grounded. I am requesting a return due to the issues I have had since day one. It’s unacceptable that I have yet to receive a working product and you are trying to blame it on everything but the pedals while your track record in my experience is poor. I don’t want this product as this is the THIRD faulty experience in a row. Please stop trying to blame it on my setup and trying to come up with any other reason to not refund the items. I paid for pedals and still do not have a functioning product. I want a refund. \r\n\r\n\r\n \r\n\r\n> ",
+      "user_id": 158001830449,
+      "created_at": "2025-11-11T07:46:31Z",
+      "updated_at": "2025-11-11T07:46:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012113727,
+      "body_text": "Hi Michaelaliffi,     We're sorry to inform you that you no longer qualify for our return policy. We'll help troubleshoot and resolve the issue for you—please don't worry.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-11T10:49:21Z",
+      "updated_at": "2025-11-11T10:49:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012320942,
+      "body_text": "I’ve been dealing with issues and trying to get them resolved since I bought the pedals. The only reason I didn’t return the immediately is because I was trying to work with you guys on resolving issues which caused me to go outside the return window. \r\n\r\n\r\n \r\n\r\n> ",
+      "user_id": 158001830449,
+      "created_at": "2025-11-14T15:44:04Z",
+      "updated_at": "2025-11-14T15:44:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012572828,
+      "body_text": "Hi Michaelaliffi,    Please don't worry; we will work with you to resolve all issues. You can remove the hydraulic rod to determine whether the problem lies with the rod or the sensor. Additionally, has the EMI interference issue been resolved?",
+      "user_id": 158001343601,
+      "created_at": "2025-11-19T11:19:26Z",
+      "updated_at": "2025-11-19T11:19:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012669638,
+      "body_text": "This issue is not resolved. I won’t be using the product any and have switched to a different company. \r\n\r\n\r\n \r\n\r\n> ",
+      "user_id": 158001830449,
+      "created_at": "2025-11-20T22:07:50Z",
+      "updated_at": "2025-11-20T22:07:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

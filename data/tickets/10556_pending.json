@@ -1,0 +1,74 @@
+{
+  "id": 10556,
+  "subject": "Order 5559 hand brake not working",
+  "description_text": "Refer to my order 5559.\r\nI have connected and system not able to detect.\r\n\r\nI go no issue with my pedal connection.\r\nI have try change USB port and cable. Still no connection. \r\nThe usb controller connected with white light.\r\n\r\n\r\n\r\n\r\nSent from mk iPhone\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-11T08:57:48Z",
+  "updated_at": "2026-01-15T02:05:23Z",
+  "requester_id": 158008329421,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016795789,
+      "body_text": "Hi Mklee,     This handbrake does not support SIMSONN Manager.  You can use FreeJoy to calibrate and configure it.      https://drive.google.com/file/d/1hnHNudj0VhE6xr7ypu-KeEDuVrlVHVg9/view?usp=drivesdk",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T09:15:40Z",
+      "updated_at": "2026-01-11T09:15:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016801626,
+      "body_text": "Got it. Is working now. But why is not supported in Simsonn software? And it’s not specific in your specifications?\r\n\r\nBy the way another question regarding pro X ultra pedal VAM vibration always hanged / vibrate non stop with Simsonn or simhub software.\r\nCan you advise?\r\nSent from mk iPhone\r\n\r\n> ",
+      "user_id": 158008329421,
+      "created_at": "2026-01-11T10:17:01Z",
+      "updated_at": "2026-01-11T10:17:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016820976,
+      "body_text": "Hi Mklee,  Please try using a wire to connect the metal chassis of your PC to any screw on the ProX Ultra controller box, establishing a common ground, and then test whether this resolves the issue. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T14:35:30Z",
+      "updated_at": "2026-01-11T14:35:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016820988,
+      "body_text": "Hi Mklee,  Additionally, please uninstall SIMSONN Manager version 2.1.2 from your computer, then download and install SIMSONN Manager version 2.1.3 from our official website. After installation, please update the pedal firmware to version 2.0.6. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T14:36:43Z",
+      "updated_at": "2026-01-11T14:36:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017153902,
+      "body_text": "FOR YOUR INFORMATION, so far after install new version of software & firmware is working good for now. \r\nThanks.\r\n\r\nbut still have question why hand brake need to use 3rd party software to calibrate and not able to detect on Simsonn manager?\r\n\r\n\r\nMKLEE\r\n0122820226\r\nmunkin98@gmail.com\r\n\r\n\r\n\r\n> ",
+      "user_id": 158008329421,
+      "created_at": "2026-01-15T01:18:04Z",
+      "updated_at": "2026-01-15T01:18:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017155489,
+      "body_text": "Hi Mklee,     Recently, most of our resources have been focused on developing and launching new products, so we haven’t had enough time to maintain and update the software for the older handbrake model. That said, the older handbrake is still well-built and mechanically solid — it’s just that the software updates and compatibility improvements haven’t caught up yet.             https://www.simsonn.com/products/simsonn-hb-pro-racing-simulator-handbrake",
+      "user_id": 158000445778,
+      "created_at": "2026-01-15T02:05:22Z",
+      "updated_at": "2026-01-15T02:05:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

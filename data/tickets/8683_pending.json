@@ -1,0 +1,44 @@
+{
+  "id": 8683,
+  "subject": "Order",
+  "description_text": "Hi do you have Simsonn Plus X 3-Pedal Set stock in European Warehouse?\r\nIm from Germany and need it\r\n\r\nMfg\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-19T12:40:16Z",
+  "updated_at": "2026-01-12T11:56:59Z",
+  "requester_id": 158007686130,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014873423,
+      "body_text": "The German warehouse has received the shipment today. Feel free to place your order.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-22T11:24:14Z",
+      "updated_at": "2025-12-22T11:24:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014880090,
+      "body_text": "Thx for the Info Order placed ?\r\nPlease Ship fast and Merry Christmas\r\n________________________________\r\n",
+      "user_id": 158007686130,
+      "created_at": "2025-12-22T12:40:41Z",
+      "updated_at": "2025-12-22T12:40:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015101358,
+      "body_text": "Hey i have placed my order and you have telled me that when i order over\r\nthe Website you ship also from German Warehouse. But the Pedals are Shipped\r\nfrom China!\r\nSo i hope i dont need to pay extra taxes or anything.\r\n\r\nBecause that wouldn't be nice. I specifically asked whether it would be\r\nshipped from the German warehouse.\r\n\r\nAm Mo., 22. Dez. 2025 um 12:24 Uhr schrieb support@simsonn.com <\r\nsupport@simsonn.com>:\r\n\r\n> The German warehouse has received the shipment today. Feel free to place\r\n> your order.\r\n> 8683:4206036\r\n>\r\n\r\n",
+      "user_id": 158007686130,
+      "created_at": "2025-12-26T14:51:38Z",
+      "updated_at": "2025-12-26T14:51:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

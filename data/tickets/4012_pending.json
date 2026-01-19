@@ -1,0 +1,54 @@
+{
+  "id": 4012,
+  "subject": "Throttle 0 - 100 Too Fast",
+  "description_text": "Hi,\r\n\r\nEarly in the summer I ordered and received the Pro X Ultra pedals. After\r\ninitial set up hiccups, they have been great to use. This morning however I\r\nnoticed the throttle pedal was registering about 15% (with constant, small\r\nfluctuations) of input. I've tried resolving it, but haven't succeeded,\r\nhence my contacting you now.\r\n\r\nFirst I checked the cables and noticed the clutch haptic  cable came close\r\nto the connection point for the throttle pedal cable. I made sure to move\r\nit further away, thinking it could be interference. Next I tried\r\nrecalibrating the pedals several times. I then tried the offset function\r\nand followed the instructions (including disconnecting and reconnecting the\r\ndevice when it was done). Next I tried recalibrating some more times, as\r\nwell as restarting my computer and the Simsonn software.\r\n\r\nNone of these attempts fixed the issues, though the issue did change a bit.\r\nAt first it was registering constant input at around the 15% mark. After\r\npressing the pedal, it went to 85% (roughly) without coming back down when\r\nthe pedal was released.\r\n\r\nAfter doing calibration etc, the issue currently is that position seems to\r\nbe read accurately (the white bar moves smoothly with the pedal being\r\npressed), but the throttle input stays at 0% for maybe 40% of the travel,\r\nthen quickly jumps from registering input at 0% to input at 100% between\r\nmaybe 40% - 43% of the pedal travel, then stays at 100% for the rest of the\r\ntravel.\r\n\r\nThis is very different from before. I have always used to basic curve\r\nsetting (straight line), and would like to keep using it. With this new\r\nbehaviour though, that is unworkable and gives no control over the amount\r\nof input registered. I checked the other curves to see if it might help,\r\nbut that is not the, they all have a very sudden jump from registering 0%\r\nto suddenly registering 100% with barely a difference in pedal travel\r\ndistance between them. Screenshots below to hopefully illustrate more\r\nclearly than I can put into words.\r\n\r\nCould you please advise what I can try next to resolve this?\r\n\r\nBest regards,\r\n\r\nDirk\r\n\r\n[image: image.png]\r\n[image: image.png]\r\n[image: image.png]\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-21T08:21:28Z",
+  "updated_at": "2025-09-24T15:14:09Z",
+  "requester_id": 158002216579,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009021784,
+      "body_text": "Hi Dirk Deckers,    Please first check that the throttle pedal sensor/position is not physically damaged. Once confirmed, follow these steps:    Reconnect all three pedals to the control box.    Then reconnect the USB cable.    In the software, use the Offset function.    After completing this step successfully, the white signal bar of the pedal should return to 0%. Then perform a full pedal calibration again. Please test it and let us know if this resolves the issue.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-21T10:20:25Z",
+      "updated_at": "2025-09-21T10:20:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009023167,
+      "body_text": "Hi,\r\n\r\nThanks for the quick response. I've followed the steps and the problem has\r\nnot been resolved.\r\n\r\nTo confirm: checking that the pedal sensor/position is not physically\r\ndamaged means doing a visual inspection? I don't see any damage in any\r\ncase. Also, the pedals were working fine when I used them yesterday\r\nevening, then weren't touched until I noticed the issue (based on the\r\nthrottle LED light cue) today.\r\n\r\nAlso, just making sure this part is clear: when the pedal is not pressed,\r\nthe bar next to 'Position' is fully grey. When I press the pedal gradually,\r\nthe white signal bar appears, consistent with the travel of the pedal. Then\r\nclose to halfway through the travel of the pedal, the previously grey bar\r\nvery quickly / sharply turns blue, in line with the percentage above the\r\nbar shooting up to 100% very fast.\r\n\r\nI'm not sure how the pedal is engineered, so I might be wrong about this,\r\nbut to me it looks like there are 2 sensors in play:\r\n- a sensor keeping track of the distance of travel, which seems to be\r\nworking fine (visible through the white signal bar that appears /\r\ndisappears consistent with actual pedal travel)\r\n- a (load cell) sensor keeping track of pressure applied, which seems to\r\nnow have very large dead zones both at the lower and upper end, where\r\nbefore today it was more in line with the travel distance sensor\r\n\r\nBr,\r\n\r\nDirk\r\n\r\nOn Sun, 21 Sept 2025 at 13:20, service@simsonn.com ",
+      "user_id": 158002216579,
+      "created_at": "2025-09-21T11:34:32Z",
+      "updated_at": "2025-09-21T11:34:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009104544,
+      "body_text": "Hi,\r\n\r\nThe issue is resolved. I'm not sure why it suddenly changed again and I'll\r\nkeep an eye on it for the future, but today I tried again with the above\r\nsteps and everything seems back to normal. It's a little worrisome that I\r\ndon't know why it changed suddenly, but if it stays like this, it's fine I\r\nsuppose.\r\n\r\nBr,\r\n\r\nDirk\r\n\r\n",
+      "user_id": 158002216579,
+      "created_at": "2025-09-22T11:44:03Z",
+      "updated_at": "2025-09-22T11:44:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009236004,
+      "body_text": "Hi Dirk Deckers,  The white progress bar corresponds to the pedal’s damping adjustment. If you have changed the pedal’s mechanical position, you can use the Offset function to reset the white bar to 0%, returning it to its initial position. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-24T15:14:07Z",
+      "updated_at": "2025-09-24T15:14:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

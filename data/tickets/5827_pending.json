@@ -1,0 +1,44 @@
+{
+  "id": 5827,
+  "subject": "",
+  "description_text": "Is there a way to make your 7 speed shifter a sequential one\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-08T20:09:50Z",
+  "updated_at": "2025-11-11T01:48:45Z",
+  "requester_id": 158006837042,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011984182,
+      "body_text": "Hi James Agar,  Your order number usually cannot be modified. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-09T03:19:02Z",
+      "updated_at": "2025-11-09T03:19:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011987095,
+      "body_text": "Sorry that's not what I meant\r\n, I mean is there a modification for your sim racing shifter with 7 gears\r\nand reverse to make it a sequential gearbox instead of a H pattern.\r\n\r\n",
+      "user_id": 158006837042,
+      "created_at": "2025-11-09T08:17:33Z",
+      "updated_at": "2025-11-09T08:17:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012093291,
+      "body_text": "Hi James Agar,  Your current shifter uses a Hall sensor, so it can’t be modified into a sequential type through DIY. Please provide your order information, so I can help you confirm the exact model. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-11T01:48:45Z",
+      "updated_at": "2025-11-11T01:48:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

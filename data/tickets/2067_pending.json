@@ -1,0 +1,24 @@
+{
+  "id": 2067,
+  "subject": "Missing item",
+  "description_text": "Hello\r\n\r\nI am emailing regarding a missing item in my order, i received the simsonn\r\nplus x pedals last week and im incredibly happy with them but after double\r\nchecking the order i ordered mine with 1 of the haptic reactors, this is\r\nmissing in the order. would it be possible to have one sent to me. my order\r\nnumber is\r\n#SSN2019\r\n\r\nMany thanks Craig Winter\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-29T19:02:54Z",
+  "updated_at": "2025-07-30T08:05:42Z",
+  "requester_id": 158002413717,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005799736,
+      "body_text": "Hi Craig Winter,  Sorry, but the Haptic reactor comes with an optional purchase.   ",
+      "user_id": 158001343601,
+      "created_at": "2025-07-30T08:05:42Z",
+      "updated_at": "2025-07-30T08:05:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

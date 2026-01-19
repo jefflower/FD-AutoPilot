@@ -1,0 +1,106 @@
+{
+  "id": 364,
+  "subject": "转发：Quality Issue - Control Box not working",
+  "description_text": "----------转发的邮件信息----------\r\n发件人：Paulo<paulo@wyfort.com&gt;\r\n日期：2025年6月11日 周三 1:58\r\n收件人：每天只吃半碗饭_<lillian@simsonn.com&gt;\r\n主题：Quality Issue - Control Box not working\r\n\r\n\r\n\r\n\r\n\r\n   \r\nHi Lillian,\r\n \r\n&nbsp;\r\n \r\nI got a pedal returned by a customer because it was not working.\r\n \r\nAfter testing it, the software shows the device is connected as attached photo, but the pedals don’t work.\r\n \r\nI switched to a different control box and the pedals worked.\r\n \r\nWhat could be the problem? Should we try to update the firmware in this control box?\r\n \r\nLet me know what to do or if we need a replacement control box.\r\n \r\n&nbsp;\r\n \r\nBest Regards,\r\n \r\nPaulo Franca\r\n \r\nWyfort Electronics, Sales Director\r\n \r\n \r\nUSA: +1 949 508 0061 \r\n \r\nhttp://www.wyfort.com\r\n \r\n&nbsp;\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-06-12T03:07:23Z",
+  "updated_at": "2025-06-22T03:13:59Z",
+  "requester_id": 158001454651,
+  "responder_id": 158000445778,
+  "cc_emails": [
+    "paulo@wyfort.com"
+  ],
+  "conversations": [
+    {
+      "id": 158002946499,
+      "body_text": "​Hi Paulo Franca ,     I noticed that your device is running firmware version v1.8.0, which suggests the firmware has been updated to the latest version. However, it seems you're not using the compatible SIMSONN Manager 2.0.7.  Please download and test it using the link below:      https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-06-12T03:56:52Z",
+      "updated_at": "2025-06-12T03:56:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002993244,
+      "body_text": "Hi There,\r\n\r\nI didnt update anything. Do you mean the customer might have tried to update the firmware and that’s the reason the control box is not working?\r\n\r\n\r\nPaulo Franca\r\n\r\nUSA:+1 949 508 0061\r\n\r\nSkype: miumarunner\r\n\r\n________________________________\r\n",
+      "user_id": 158001456194,
+      "created_at": "2025-06-12T11:00:46Z",
+      "updated_at": "2025-06-12T11:00:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003003254,
+      "body_text": "Hi Paulo Franca       Firmware version v1.8.0 is only compatible with SIMSONN Manager 2.0.7, which offers a better user experience. Please give it a try. Note: This is not just a firmware update — after upgrading, the older Simconfigpedals V4 will no longer be supported. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-13T03:48:00Z",
+      "updated_at": "2025-06-13T03:48:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003015575,
+      "body_text": "Got it!\r\nI will give a try today.\r\nCould you share the instructions how to upgrade the firmware to 1.80?\r\n\r\n\r\nPaulo Franca\r\n\r\nUSA:+1 949 508 0061\r\n\r\nSkype: miumarunner\r\n\r\n________________________________\r\n",
+      "user_id": 158001456194,
+      "created_at": "2025-06-13T09:56:40Z",
+      "updated_at": "2025-06-13T09:56:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003042160,
+      "body_text": "Hi ​paulo  Please check if there is a button on the control box that can be pressed. If there is, press and hold the button while reconnecting the USB cable to enter recovery mode. If there's no button, you can go directly to the firmware update section in Simsonn Manager and manually select the plus.dfu or v1.8.0.sfu file from the pedals folder to perform the update. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-14T03:55:09Z",
+      "updated_at": "2025-06-14T03:55:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003424572,
+      "body_text": "Hi there,\r\n\r\nGood day!\r\nI got a Customer with the following request:\r\n\r\nFriend, I saw that there is a new SIMSONN software with support for the P3 H3. Could you help me with software installation and updating? I would like to know about his haptics also if they are compatible with this controller\r\n\r\nCan you please provide the step-by-step instructions to update the firmware to use the Simsonn Manager software instead if the old version?\r\nIf possible, send me a video too.\r\n\r\nBest Regards,\r\nPaulo Franca\r\nWyfort Electronics, Sales Director\r\n[cid:image001.jpg@01DBE025.3A11ABD0]\r\nUSA: +1 949 508 0061\r\nhttp://www.wyfort.com<http://www.wyfort.com/>\r\n\r\n",
+      "user_id": 158001456194,
+      "created_at": "2025-06-18T10:47:53Z",
+      "updated_at": "2025-06-18T10:47:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003430046,
+      "body_text": "Hi paulo     Currently, only the PlusX and ProX Ultra control units support the VAM or VAM Pro motors. You’ll need to purchase the PlusX control box, a dedicated 24V power supply, and the VAM Pro motor separately. ,  https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor     You can upgrade to our latest software, SIMSONN Manager version 2.0.8. After launching the software, go to the settings menu and manually update the firmware by selecting the firmware-pedals-plus.sfu file. Once the upgrade is complete, you’ll be able to access the new configuration features in the updated software.     https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-06-18T11:21:24Z",
+      "updated_at": "2025-06-18T11:21:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003460807,
+      "body_text": "Hi,\r\n\r\nI downloaded the Simsonn manager 2.0.8, but I don’t find the file you mentioned below.\r\nThe only options are these in the photo\r\n[cid:image001.png@01DBE045.4B68DB90]\r\n\r\nAm I in the right place?\r\n\r\nBest Regards,\r\nPaulo Franca\r\nWyfort Electronics, Sales Director\r\n[cid:image002.jpg@01DBE045.4B68DB90]\r\nUSA: +1 949 508 0061\r\nhttp://www.wyfort.com<http://www.wyfort.com/>\r\n\r\n",
+      "user_id": 158001456194,
+      "created_at": "2025-06-18T14:37:28Z",
+      "updated_at": "2025-06-18T14:37:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003679713,
+      "body_text": "Hi paulo,  For the Pro Plus device, you can select the plus.sfu file to perform the firmware upgrade.    ​",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T03:13:44Z",
+      "updated_at": "2025-06-22T03:13:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

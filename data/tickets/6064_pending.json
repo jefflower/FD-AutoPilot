@@ -1,0 +1,44 @@
+{
+  "id": 6064,
+  "subject": "PROBLEME PEDALIER",
+  "description_text": "Bonjour, j'ai un problème sur mon pédalier,\r\ncommande #SSN2204 passée le 01/08/2025,\r\n\r\n je n'arrive pas à monter à plus de 25 kg sur ma pédale de frein, même en\r\nappuyant le plus fort possible lors du calibrage de la pédale\r\n\r\n- j'ai essayé de serrer la bille de pression du loadcell,\r\n\r\n- j'ai changé les elastomers,\r\n\r\n- j'ai mis la butée de la pédale au maximum,\r\n\r\n- j'ai absolument tout essayé, rien ne marche.\r\n\r\nJe me tourne donc vers vous pour savoir quelle est la solution pour régler\r\nmon problème.\r\n\r\nCordialement,\r\n\r\nAlexandre Debaisieux.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-13T23:42:26Z",
+  "updated_at": "2025-11-19T09:32:03Z",
+  "requester_id": 158007022543,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012399732,
+      "body_text": "Hi Alexandre Debaisieux,    If, after switching to the blue damper, the maximum force is only 25kg, it is likely that our warehouse sent the wrong controller box, resulting in an incorrect amplification ratio. Please provide your contact name, shipping address, and phone number, and we will send you a replacement controller box.  To clarify: Although the amplification ratio is incorrect, the controller itself is fully functional. The issue only affects the kg value display. As long as you press the pedal with normal force and complete the calibration, it will not affect actual performance, and you can continue playing games without any problem.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-16T02:21:25Z",
+      "updated_at": "2025-11-16T02:21:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012411236,
+      "body_text": "Bonjour, merci pour votre réponse rapide, \r\nVoici mes coordonnés pour l’envoi du boîtier, \r\n\r\nNom: Alexandre Debaisieux \r\n\r\nAdresse d’envoi: \r\n3 rue de belle île \r\n35132 vezin le coquet \r\n\r\nNuméro téléphone: +33787085606\r\n\r\nDans l’attente de votre retour.\r\nMerci par avance. \r\nCordialement. \r\n\r\n\r\n\r\n\r\n\r\n\r\nEnvoyé de mon iPhone\r\n\r\n> Le 16 nov. 2025 à 03:21, service@simsonn.com a écrit :\r\n> ﻿\r\n> Hi Alexandre Debaisieux,\r\n> \r\n> If, after switching to the blue damper, the maximum force is only 25kg, it is likely that our warehouse sent the wrong controller box, resulting in an incorrect amplification ratio.\r\n> Please provide your contact name, shipping address, and phone number, and we will send you a replacement controller box.\r\n> To clarify:\r\n> Although the amplification ratio is incorrect, the controller itself is fully functional. The issue only affects the kg value display.\r\n> As long as you press the pedal with normal force and complete the calibration, it will not affect actual performance, and you can continue playing games without any problem.\r\n> \r\n> Activé Jeu, 13 Nov. à 6:42 H , Alexandre Debaisieux <alexandre.263081@gmail.com> a écrit:\r\n> Bonjour, j'ai un problème sur mon pédalier,\r\n> commande #SSN2204 passée le 01/08/2025,\r\n> \r\n>  je n'arrive pas à monter à plus de 25 kg sur ma pédale de frein, même en appuyant le plus fort possible lors du calibrage de la pédale\r\n> \r\n> - j'ai essayé de serrer la bille de pression du loadcell, \r\n> \r\n> - j'ai changé les elastomers,\r\n> \r\n> - j'ai mis la butée de la pédale au maximum, \r\n> \r\n> - j'ai absolument tout essayé, rien ne marche. \r\n> \r\n> Je me tourne donc vers vous pour savoir quelle est la solution pour régler mon problème.\r\n> \r\n> Cordialement,\r\n> \r\n> Alexandre Debaisieux.\r\n> 6064:4206036\r\n\r\n",
+      "user_id": 158007022543,
+      "created_at": "2025-11-16T11:23:57Z",
+      "updated_at": "2025-11-16T11:23:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012567581,
+      "body_text": "Hi Alexandre Debaisieux,    Okay, we've arranged for a replacement to be sent out for you. Here is your tracking link.  https://t.17track.net/en#nums=SF6047065020804",
+      "user_id": 158001343601,
+      "created_at": "2025-11-19T09:32:02Z",
+      "updated_at": "2025-11-19T09:32:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

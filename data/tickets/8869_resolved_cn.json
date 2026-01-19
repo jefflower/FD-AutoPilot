@@ -1,0 +1,25 @@
+{
+  "id": 8869,
+  "subject": "订单 SSN4111",
+  "description_text": "请问我订单的第二部分是否已发货？这真是无法接受。我尝试联系你们一个星期了，你们甚至都没有回复。请回复。",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-22T10:11:28Z",
+  "updated_at": "2025-12-22T11:24:41Z",
+  "requester_id": 158007845028,
+  "responder_id": 158007774669,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014873482,
+      "body_text": "你好，Alex Bonifacino，您的外卖订单将于23日至26日期间陆续发货。对于由此给您带来的任何不便，我们深表歉意。",
+      "user_id": 158007774669,
+      "created_at": "2025-12-22T11:24:35Z",
+      "updated_at": "2025-12-22T11:24:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

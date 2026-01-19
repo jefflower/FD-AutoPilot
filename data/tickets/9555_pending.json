@@ -1,0 +1,24 @@
+{
+  "id": 9555,
+  "subject": "Order #SSN4579",
+  "description_text": "Good morning, i saw from the shipping site that the pack was returned. Can\r\nyou please tell me what’s happening? Thank you.  waiting for the Z bracket\r\nand the 2 haptic sensors.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-30T09:54:22Z",
+  "updated_at": "2025-12-31T07:11:56Z",
+  "requester_id": 158007500017,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015299288,
+      "body_text": "Hi Matteo Cerino,    Your package has been reshipped. No need to worry.  https://t.17track.net/en#nums=YT2535300706192915",
+      "user_id": 158001343601,
+      "created_at": "2025-12-31T07:11:56Z",
+      "updated_at": "2025-12-31T07:11:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

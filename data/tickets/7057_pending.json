@@ -1,0 +1,44 @@
+{
+  "id": 7057,
+  "subject": "Simsonn Amazon Shop",
+  "description_text": "Hi there!\r\n\r\nI’m wondering if you have an official Amazon shop. I see there are two Simsonn shops on Amazon. One is called SIMSONN, and the other is called SIMSONN Official. I’m shopping from Canada, so it would be great if you do.\r\n\r\nThanks,\r\nDingxi\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-29T20:59:51Z",
+  "updated_at": "2025-12-04T12:21:30Z",
+  "requester_id": 158007427612,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013124699,
+      "body_text": "Hi Dingxi Yang,     You can purchase on our official website to enjoy better service guarantees and support.  https://www.simsonn.com/products/simsonn-plus-x-pedals",
+      "user_id": 158001343601,
+      "created_at": "2025-11-30T00:58:53Z",
+      "updated_at": "2025-11-30T00:58:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013124890,
+      "body_text": "Hi,\r\n\r\nHow about the two stores on Aliexpress, is either of them officially hosted by Simsonn? The pedals on your official website is a bit over budget for me since they all come with hydraulic rods which I don’t need. But there is options for no hydraulic rods for lower price on Amazon or Aliexpress.\r\n\r\nBest,\r\nDingxi\r\n\r\n> ",
+      "user_id": 158007427612,
+      "created_at": "2025-11-30T01:22:18Z",
+      "updated_at": "2025-11-30T01:22:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013387456,
+      "body_text": "Hi Dingxi Yang, ​  Our official stores only carry versions with hydraulic rods. Versions without hydraulic rods on Amazon and AliExpress are not from our official stores. You can use the discount code Black45 for $45 off orders over $199 (expires tomorrow).",
+      "user_id": 158001343601,
+      "created_at": "2025-12-04T12:21:29Z",
+      "updated_at": "2025-12-04T12:21:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

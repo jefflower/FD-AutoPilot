@@ -1,0 +1,74 @@
+{
+  "id": 10931,
+  "subject": "Warranty Issue: Order# SSN5109",
+  "description_text": "Hi Team,\r\n\r\nOne of my haptic motors failed and I'd like to lodge a warranty claim.\r\n\r\nPlease see attached video.\r\n\r\nThanks,\r\nSem\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-14T23:06:25Z",
+  "updated_at": "2026-01-16T04:03:18Z",
+  "requester_id": 158008901436,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017163290,
+      "body_text": "Hi Sam Fonseka，    You can slightly loosen the four screws on the cover on the “S” side of the VAM Pro, then remove the motor and inspect it. Please check whether the washer inside has shifted. You can reposition it properly, or take a photo and send it to me for confirmation. After that, reinstall the motor — in many cases, this will restore normal operation.  If the issue is still not resolved after this, we will send you a replacement VAM Pro.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-15T05:47:25Z",
+      "updated_at": "2026-01-15T05:47:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017236730,
+      "body_text": "Hi there,\r\n\r\nI opened up the case and repositioned the washer, unfortunately it hasn't\r\nfixed the issue.\r\n\r\nThanks,\r\n\r\nSem\r\n\r\nOn Thu, Jan 15, 2026 at 4:47 PM service@simsonn.com ",
+      "user_id": 158008901436,
+      "created_at": "2026-01-16T02:48:03Z",
+      "updated_at": "2026-01-16T02:48:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017237571,
+      "body_text": "Hi Sem Fonseka,  ​Could you please provide your order number and the recipient name, phone number, and shipping address? We will arrange a replacement VAM Pro for you as soon as possible. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-16T03:21:52Z",
+      "updated_at": "2026-01-16T03:21:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017237673,
+      "body_text": "Hi there,\r\n\r\nMy order number is: Order #SSN5109\r\n\r\nName: Semina Fonseka\r\n\r\n\r\nAddress: 509 Swan St, Richmond Victoria 3121, Australia\r\n\r\nPhone Number: +61 421 631 330\r\n\r\n\r\nThank you,\r\n\r\nSem\r\n\r\nOn Fri, Jan 16, 2026 at 2:22 PM service@simsonn.com ",
+      "user_id": 158008901436,
+      "created_at": "2026-01-16T03:26:14Z",
+      "updated_at": "2026-01-16T03:26:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017238184,
+      "body_text": "Hi Sem Fonseka,    Here is your logistics tracking link. We apologize for any inconvenience caused.  https://t.17track.net/en#nums=SF6047245123000",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T03:50:23Z",
+      "updated_at": "2026-01-16T03:50:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017238273,
+      "body_text": "That's great, thank you very much.\r\n\r\nOn Fri, Jan 16, 2026 at 2:50 PM service@simsonn.com ",
+      "user_id": 158008901436,
+      "created_at": "2026-01-16T03:54:18Z",
+      "updated_at": "2026-01-16T03:54:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

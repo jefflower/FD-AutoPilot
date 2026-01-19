@@ -1,0 +1,34 @@
+{
+  "id": 1148,
+  "subject": "Shipping update issue.",
+  "description_text": "Hello. I am reaching out because the pedals my girlfriend ordered for me on 23 June 2025 seem not to be updating the tracking information at all. We received the order confirmation on june 23rd, as well as the delivery status/tracking on june 26th, however, it has continued to state that \"UPS doesn’t have possession of the package yet. Estimated delivery date will be available as soon as we get the package.\" since the e-mail was received.\r\n\r\nI am aware that delivery could take 8-12 business days, but was concerned that UPS doesn't have possession of the package with only 4 business days remaining. I was wondering if someone could look into it and ensure that things are in fact moving along normally.\r\nOrder #SSN1828\r\n\r\nAnd in case it helps, the UPS tracking number we received. (though I'm sure you have this information) - 1ZX6190C0325581971\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-03T12:56:50Z",
+  "updated_at": "2025-07-04T14:42:44Z",
+  "requester_id": 158001882114,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004444729,
+      "body_text": "Not sure if this is automated, or if I am able to respond, but I'll try anyway.\r\n\r\nI am unable to review the ticket via the provided link. When I click it, the website opens and tells me I must be logged into access this page. When trying to create an account, it states this e-mail has already been taken. When requesting to change the password, it states \"You are not authorised to access this portal. Kindly contact your helpdesk administrator.\"\r\n\r\n________________________________\r\n",
+      "user_id": 158001882114,
+      "created_at": "2025-07-04T11:48:58Z",
+      "updated_at": "2025-07-04T11:48:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445457,
+      "body_text": "Hi Allen Fowler,     Your order has been shipped from China to the US and is currently in the process of clearing customs, which is expected to be completed tomorrow.UPS will pick up the parcel after customs clearance is complete, and there will be a logistics update at that time. It is expected to be delivered to you around the 8th, sorry for the delay.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-04T14:42:44Z",
+      "updated_at": "2025-07-04T14:42:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

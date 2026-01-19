@@ -1,0 +1,54 @@
+{
+  "id": 3590,
+  "subject": "Order",
+  "description_text": "Hello, \r\n\r\nMy apologies, my name is Randall Campbell. I just completed an order for Plus X P2-H2 pedal set. I did not notice it was PC only. I know that was a major oversight. Is there any way to cancel the order before it is processed and shipped? Again, my apologies. \r\n\r\nRandall Campbell\r\nrac.adamcampbell@gmail.com\r\n1-443-783-8088\r\n\r\n\r\nSent from my iPhone\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-07T20:43:58Z",
+  "updated_at": "2025-09-10T09:16:56Z",
+  "requester_id": 158004247375,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008245083,
+      "body_text": "Hi Adam Campbell,    Okay, we've terminated the logistics for your parcel. What device are you using? If it's not compatible, we'll cancel your order for you.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-08T07:05:13Z",
+      "updated_at": "2025-09-08T07:05:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008258999,
+      "body_text": "Thrustmaster TX servo base into a Xbox series S\r\n\r\nR. Adam Campbell\r\nrac.adamcampbell@gmail.com\r\n(443)783-8088\r\n\r\n\r\nOn Mon, Sep 8, 2025 at 03:05 service@simsonn.com ",
+      "user_id": 158004247375,
+      "created_at": "2025-09-08T10:36:21Z",
+      "updated_at": "2025-09-08T10:36:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008259028,
+      "body_text": "Unfortunately, this is indeed incompatible and we will cancel your order.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-08T10:39:43Z",
+      "updated_at": "2025-09-08T10:39:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008259090,
+      "body_text": "Ok, thank you. My apologies again.\r\n\r\n\r\nOn Mon, Sep 8, 2025 at 06:39 service@simsonn.com ",
+      "user_id": 158004247375,
+      "created_at": "2025-09-08T10:46:49Z",
+      "updated_at": "2025-09-08T10:46:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

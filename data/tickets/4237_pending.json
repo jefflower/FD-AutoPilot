@@ -1,0 +1,34 @@
+{
+  "id": 4237,
+  "subject": "Shipping Issue – ALS01196289964",
+  "description_text": "Hello,\r\n\r\nMy tracking number ALS01196289964 shows “Nancheng, Verification failed” and\r\nno updates since 2025-09-26.\r\n\r\nKorean customs also has no record.\r\n\r\nIf shipped on order date, it should already be in Korea.\r\n\r\nKorean Thanksgiving holidays begins soon, so urgent resolution is needed.\r\n\r\nPlease tell me the problem and request any info you need from me.\r\n\r\nThank you.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-09-29T09:17:48Z",
+  "updated_at": "2025-09-29T10:52:16Z",
+  "requester_id": 158004837020,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009624970,
+      "body_text": "Hi 이광희,    The logistics company has closed for the day. We will confirm your order first thing tomorrow morning. Please don't worry—we'll deliver it to you as soon as possible.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-29T10:49:38Z",
+      "updated_at": "2025-09-29T10:49:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009624980,
+      "body_text": "Ok, thank you so much.\r\n\r\n2025년 9월 29일 (월) 19:49, service@simsonn.com ",
+      "user_id": 158004837020,
+      "created_at": "2025-09-29T10:50:52Z",
+      "updated_at": "2025-09-29T10:50:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

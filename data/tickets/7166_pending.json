@@ -1,0 +1,44 @@
+{
+  "id": 7166,
+  "subject": "My order .",
+  "description_text": "Hello can you tell me when my shipment will be shipped ? I pay for express\r\nshipping\r\nOrder #SSN4114 thank you\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-01T12:58:42Z",
+  "updated_at": "2025-12-04T12:31:16Z",
+  "requester_id": 158007409625,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013313584,
+      "body_text": "Hello can you tell me when my shipment will be shipped ? I pay for express\r\nshipping\r\nOrder #SSN4114 thank you . It's been 5 days without information\r\n\r\n",
+      "user_id": 158007409625,
+      "created_at": "2025-12-03T07:39:19Z",
+      "updated_at": "2025-12-03T07:39:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013377788,
+      "body_text": "Hi Sakis Avramidis,    Due to a delay in stocking the latest batch of items at our warehouse, the processing of your order has been affected. We are expediting your package, and we sincerely appreciate your patience and understanding.  Additionally, your order was shipped yesterday.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T08:10:34Z",
+      "updated_at": "2025-12-04T08:10:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013387793,
+      "body_text": "Hi Sakis Avramidis,    I'm terribly sorry for the delay in replying. Your parcel has now been dispatched and is expected to arrive on the 6th.  https://www.sf-international.com/gb/en/support/querySupport/waybill?No=SF3274587694519",
+      "user_id": 158001343601,
+      "created_at": "2025-12-04T12:31:11Z",
+      "updated_at": "2025-12-04T12:31:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

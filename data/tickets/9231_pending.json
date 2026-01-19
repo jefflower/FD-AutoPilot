@@ -1,0 +1,24 @@
+{
+  "id": 9231,
+  "subject": "Order #SSN4924",
+  "description_text": "Hi,\r\n\r\nCan you please provide an update on delivery for the above order confirmed on 16th Dec & to be sent express?\r\n\r\nThanks,\r\nMei Lee\r\nSent from my iPhone\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-26T11:57:48Z",
+  "updated_at": "2026-01-16T08:31:10Z",
+  "requester_id": 158008758612,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015147165,
+      "body_text": "Hi Mei Lee,  最新生产进度：HS Pro变速器将于12月29日发货。由于发货前零部件出现问题，发货计划略有延迟。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T02:59:45Z",
+      "updated_at": "2025-12-28T02:59:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

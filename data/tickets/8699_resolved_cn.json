@@ -1,0 +1,65 @@
+{
+  "id": 8699,
+  "subject": "VAM电机故障",
+  "description_text": "您好，\n我遇到了一个VAM触觉电机的问题。我购买了一整套电机，配有电源适配器，用于连接到已配备控制盒的Plus X踏板。\n起初一切正常，但在仅仅20分钟后，一个电机停止工作。我还尝试了交换不同的电机，但只有那个不工作。屏幕上没有显示任何错误。\n附件中随附视频。\n\n非常感谢\n阿梅迪奥·赞帕鲁蒂",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-19T17:57:36Z",
+  "updated_at": "2025-12-26T09:00:32Z",
+  "requester_id": 158008155545,
+  "responder_id": 158007774664,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014810888,
+      "body_text": "您好，阿梅迪奥·赞帕鲁蒂，请截取电机设置页面的截图，以便我检查您的配置。此外，您上传的视频不完整。请通过Google Drive发送链接给我们，并确保分享权限设置正确。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-20T13:22:55Z",
+      "updated_at": "2025-12-20T13:22:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014939113,
+      "body_text": "您好，这是您要求的视频链接。希望可以。\n\nhttps://drive.google.com/file/d/11uFjdHy_LJuZKD1uOeuL7lWWgMzO8Swc/view?usp=drivesdk\n\n另外，我还附上了所要求的照片。\n\n2025年12月20日星期六，14:23 service @simsonn.com",
+      "user_id": 158008155545,
+      "created_at": "2025-12-22T21:02:54Z",
+      "updated_at": "2025-12-22T21:02:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015021225,
+      "body_text": "您好，阿梅迪奥·赞帕鲁蒂，请提供您的订单号、联系人、电话号码和收货地址。我们将向您发送1个VAM电机替换件。另请注意，VAM电机不应在VAM Pro模式下使用。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-24T06:14:39Z",
+      "updated_at": "2025-12-24T06:14:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015028173,
+      "body_text": "您好，我的订单号是3065510739888092。我从速卖通购买的意大利产品。\n\n地址：\nvia edmondo de amicis 52/1\n33030 Campoformido\n乌迪内\n意大利\n\n电话：\n+393406297105\n\n非常感谢\n阿梅迪奥·赞帕鲁蒂\n\n2025年12月24日星期三，07:14 service @simsonn.com",
+      "user_id": 158008155545,
+      "created_at": "2025-12-24T08:49:17Z",
+      "updated_at": "2025-12-24T08:49:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015089514,
+      "body_text": "您好，阿梅迪奥·赞帕鲁蒂，您的产品已发货。物流单号是：YT2536000705678042。您可以在此网站追踪：https://t.17track.net/zh-cn#nums=YT2536000705678042",
+      "user_id": 158007774664,
+      "created_at": "2025-12-26T09:00:21Z",
+      "updated_at": "2025-12-26T09:00:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

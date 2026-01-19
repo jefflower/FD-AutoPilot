@@ -1,0 +1,74 @@
+{
+  "id": 2818,
+  "subject": "probleme vam",
+  "description_text": "Bonjour je rencontre un probleme avec les vam.\r\n\r\nTout est bien connecté et à jour, j'ai un pedalier pro plus et le boitier\r\nplux x.\r\n\r\nsimsonn manager me dit que c'est sous tension mais pas de vibrations.\r\n mise à la terre ok.\r\n versions/ simsonn manager: V2.1.0; CPU1: V2.0.2; CPU2:V2.0.0\r\n\r\nque faire? Merci\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-08-18T07:17:39Z",
+  "updated_at": "2025-08-19T06:38:56Z",
+  "requester_id": 158003280924,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007081506,
+      "body_text": "Hi Marc Tardy,    Are all three motors not vibrating, or just one of them? Also, could you confirm if the power cable is properly connected? If possible, please provide installation photos and software test screenshots so that I can help you check the issue.  ​",
+      "user_id": 158000445778,
+      "created_at": "2025-08-18T12:44:12Z",
+      "updated_at": "2025-08-18T12:44:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007082153,
+      "body_text": "Problème trouvé celà venait des soudures de deux moteurs, elles sont de\r\ntrès mauvaise qualité et ont cédé, certainement à cause des vibrations\r\n\r\nLe lun. 18 août 2025, 14:44, service@simsonn.com ",
+      "user_id": 158003280924,
+      "created_at": "2025-08-18T13:10:24Z",
+      "updated_at": "2025-08-18T13:10:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007097628,
+      "body_text": "Pas de réponse de votre part ? J'aurais espéré des explications ou un geste\r\ncommercial... Bonne journée\r\n\r\nLe lun. 18 août 2025, 15:09, Marc Tardy <marctardycharpente@gmail.com> a\r\nécrit :\r\n\r\n> Problème trouvé celà venait des soudures de deux moteurs, elles sont de\r\n> très mauvaise qualité et ont cédé, certainement à cause des vibrations\r\n>\r\n> Le lun. 18 août 2025, 14:44, service@simsonn.com ",
+      "user_id": 158003280924,
+      "created_at": "2025-08-18T17:31:02Z",
+      "updated_at": "2025-08-18T17:31:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007112352,
+      "body_text": "Hi Marc Tardy,  Please provide the relevant photos so we can identify the issue. Once confirmed, we will arrange to send you a replacement. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-19T04:36:22Z",
+      "updated_at": "2025-08-19T04:36:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007112536,
+      "body_text": "Bonjour malheureusement je n'ai pas pris de photos... Et maintenant c'est\r\nressoudé. Le câble rouge se sectionne a l'intérieur de la gaine a l'endroit\r\noù il fait une boucle sur une longueur de 1cm sur le premier moteur, quand\r\nà l'autre il n'y avait quasiment pas d'étain donc la soudure à lâché.. je\r\npense qu'une amélioration est possible à cet endroit car il n'y a rien qui\r\nbride le fil. Cordialement\r\n\r\nLe mar. 19 août 2025, 06:36, service@simsonn.com ",
+      "user_id": 158003280924,
+      "created_at": "2025-08-19T04:46:53Z",
+      "updated_at": "2025-08-19T04:46:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007114072,
+      "body_text": "Hi Marc Tardy,  Alright, we will improve the soldering process and cable fixing to prevent this issue from happening again. If you encounter any further problems, please feel free to contact us. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-19T06:38:56Z",
+      "updated_at": "2025-08-19T06:38:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

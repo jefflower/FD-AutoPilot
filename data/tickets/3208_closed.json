@@ -1,0 +1,64 @@
+{
+  "id": 3208,
+  "subject": "BESTELLNR. 302-9156040-8436336 Amazon.de",
+  "description_text": "Hallo RCR,\r\nEs tut mir leid, dass Sie ein Problem hatten. Können Sie uns bitte\r\nmitteilen, wo das Problem liegt? Funktionieren die drei VAM-Motoren derzeit\r\nalle nicht? Falls ja, schicken wir Ihnen drei neue VAM-Motoren zum\r\nAustausch. Bitte senden Sie uns ein paar Bilder oder ein Video.\r\n\r\nGuten Tag\r\n\r\nDie Buchse für die Stromversorgung am Gerät weist einen Wackelkontakt auf.\r\nDer Stecker des Netzteils hat in der Buchse erhebliches Spiel und sitzt\r\nnicht fest. Bereits leichte Berührungen oder die bei der normalen Nutzung\r\nan einem Sim-Rig entstehenden Vibrationen führen zu einer Unterbrechung der\r\nStromzufuhr. Ein zuverlässiger Betrieb des Gerätes ist somit nicht möglich.\r\n​Zusätzlich ist beim Einstecken des Steckers eine deutliche Funkenbildung\r\n(Lichtbogen) zu beobachten. Da die Verbindung durch den Wackelkontakt\r\nständig neu hergestellt werden könnte, besteht die Gefahr, dass dieser\r\nVorgang die Kontakte dauerhaft beschädigt und ein Sicherheitsrisiko\r\n(Wärmeentwicklung) darstellt. Ich habe diesen Defekt auch in einem Video\r\ndokumentiert.\r\n​Der Artikel weist somit nicht die vereinbarte Beschaffenheit auf und\r\neignet sich nicht für die gewöhnliche Verwendung.\r\n\r\nMit freundlichen Grüssen\r\nRainer Reiss\r\n\r\n",
+  "status": 5,
+  "priority": 4,
+  "created_at": "2025-08-28T09:37:26Z",
+  "updated_at": "2025-12-18T10:16:09Z",
+  "requester_id": 158003704217,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007733725,
+      "body_text": "Hi Rainer Reiss,  Hello, yes, you may use a cable tie to secure the plug in place, which helps prevent it from loosening due to movement. Please note that 24V is a safe voltage and does not pose any danger. The spark you see when plugging it in is normal, as it is caused by the three capacitors inside the vibration motor charging. Rest assured, this spark will not damage the main controller. If any issue does occur, we are always ready to provide you with a replacement main controller or VAM motor. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-29T00:47:50Z",
+      "updated_at": "2025-08-29T00:47:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007769975,
+      "body_text": "  simsonn vam.mp4\r\n<https://drive.google.com/file/d/1msJpPMKZlQoJIUmhY3PCFSoX2pPmpEPV/view?usp=drivesdk>\r\n\r\nHello\r\n\r\nNow I'll send you another video. Here you can clearly hear that only one\r\nVam works. I don't know whether 2 Vams are defective or whether the control\r\nunit is not working. I only know that the parts I bought do not do what\r\nthey are supposed to do. A very disappointing experience.\r\n\r\nKind regards\r\n\r\nservice@simsonn.com ",
+      "user_id": 158003704217,
+      "created_at": "2025-08-29T14:10:19Z",
+      "updated_at": "2025-08-29T14:10:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007802601,
+      "body_text": "Hi Rainer Reiss,    The main cause of VAM motor failure is usually excessive vibration strength settings. That’s why we generally recommend customers to choose the VAM Pro, which can handle higher intensity and longer continuous operation. However, many customers still prefer to use the VAM.  You may try swapping the VAM connectors to test:    If the main controller works normally, then it indicates that the VAM motor is damaged.    In this case, we can send you new replacement VAM motors.    Important reminders:    Do not use continuous vibration telemetry such as speed or rpm.    Avoid setting the vibration strength too high; we recommend keeping it at around 50% for safe and reliable operation.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-30T03:42:44Z",
+      "updated_at": "2025-08-30T03:42:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010653326,
+      "body_text": "Dear Simsonn Team,\r\n\r\nI am writing to follow up on my previous correspondence regarding the\r\nissues with my order (Order No. 302-9156040-8436336 Amazon.de).\r\n\r\nUnfortunately, I have not yet received a replacement. After further\r\nassessment, I believe the control unit (the box) is likely causing the\r\nproblems, not the motors themselves.\r\n\r\nTherefore, I would like to request a warranty shipment for the control unit.\r\n\r\nSincerely,\r\nRainer Reiss\r\n\r\nRainer Reiss <rainer.reiss@gmail.com> schrieb am Sa., 30. Aug. 2025, 08:40:\r\n\r\n>\r\n> Dear simsonn team,\r\n>\r\n> ​Thank you for your quick reply and for the offer to send me new\r\n> replacement motors.\r\n>\r\n> ​However, I would like to address your analysis of the cause of the\r\n> failure. I cannot confirm the assumption that the failure was due to\r\n> excessively high vibration strength settings.\r\n>\r\n> ​I received the motors on *July 21, 2025*, and started using them. At\r\n> that time, and thereafter, there was no indication in either the product\r\n> description or the manual that the motors should only be operated at a\r\n> maximum strength of 50%. Such a significant operational limitation must be\r\n> made clear to the customer in advance.\r\n>\r\n> ​Furthermore, I would like to note the following points:\r\n>\r\n>    1. ​*Software Limitation:* The settings you mentioned as allegedly\r\n>    harmful were freely accessible through your software. The limitation to 70%\r\n>    was only introduced with one of the recent software updates, long after I\r\n>    had received the product. Previously, the software itself allowed settings\r\n>    of 100%, which suggests that these values are within the normal operating\r\n>    range.\r\n>    2. ​*Specific Usage:* I do not use the motors for continuous\r\n>    vibrations like RPM or speed, but exclusively for short, intermittent\r\n>    effects such as ABS and traction control (TC). The load in this case is\r\n>    therefore minimal and cannot be compared to continuous operation.\r\n>    3. ​*Misleading Software Options:* In general, I find it strange that\r\n>    your software offers the user a multitude of telemetry options, while you\r\n>    subsequently strongly advise against their use because they damage the\r\n>    hardware. If certain functions lead to damage, they should either be\r\n>    removed from the software or be accompanied by a clear warning.\r\n>    4. ​*Reference to \"VAM Pro\":* Your recommendation that I should have\r\n>    chosen the VAM Pro model is not reasonable. You are comparing a 55 Euro\r\n>    product (rotational motors) with a 165 Euro product (linear motors). This\r\n>    is a completely different technology in a different price class. I\r\n>    purchased the VAM model with the features offered in your software and I\r\n>    expect it to withstand them.\r\n>\r\n> ​Therefore, I continue to assume that this is a product flaw and not a\r\n> user error.\r\n>\r\n> ​I gladly accept your offer to send replacement motors and ask you to\r\n> arrange for their shipment.\r\n>\r\n> ​Sincerely,\r\n>\r\n> Rainer Reiss\r\n>\r\n> PS Of course you can also send me the Vam pro?\r\n>\r\n>\r\n>\r\n> service@simsonn.com ",
+      "user_id": 158003704217,
+      "created_at": "2025-10-18T08:03:11Z",
+      "updated_at": "2025-10-18T08:03:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010843017,
+      "body_text": "Hi Rainer Reiss,  Here is the tracking number : YT2529400706245701. You can track it via https://www.yunexpress.com/. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-22T03:28:31Z",
+      "updated_at": "2025-10-22T03:28:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

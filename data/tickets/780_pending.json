@@ -1,0 +1,24 @@
+{
+  "id": 780,
+  "subject": "No tracking provided",
+  "description_text": "I have received no tracking information for order rzhF7pnmPjlrb4rUDY5e8SUCP it should have arrived roughly by today\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-24T12:15:06Z",
+  "updated_at": "2025-06-25T03:19:06Z",
+  "requester_id": 158001756733,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003833718,
+      "body_text": "Hi Jarrett Moore,    Hi, here's the link to your logistics tracking, which is expected to arrive for you on the 25th. https://tools.usps.com/go/TrackConfirmAction_input?qtc_tLabels1=9234690383093300066495",
+      "user_id": 158001343601,
+      "created_at": "2025-06-25T03:19:06Z",
+      "updated_at": "2025-06-25T03:19:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

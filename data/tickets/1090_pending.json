@@ -1,0 +1,74 @@
+{
+  "id": 1090,
+  "subject": "SSN1838",
+  "description_text": "Hello, what country are these pedals shipping from?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-02T03:25:20Z",
+  "updated_at": "2025-07-10T09:09:23Z",
+  "requester_id": 158001872096,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004363063,
+      "body_text": "Hi Joseph Lancellotti,  Your parcel was shipped from China and is now in the US Customs, UPS will pick it up after the customs clearance is completed and there will be a logistics update only then, thank you for your understanding. Your package is expected to be delivered on or around the 5th. ",
+      "user_id": 158001343601,
+      "created_at": "2025-07-02T03:32:49Z",
+      "updated_at": "2025-07-02T03:32:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004452283,
+      "body_text": "Hello, I have not seen any logistics update yet, can you provide another\r\nupdate please? Thank you.\r\n\r\nOn Tue, Jul 1, 2025 at 11:33 PM service@simsonn.com ",
+      "user_id": 158001872096,
+      "created_at": "2025-07-07T00:53:29Z",
+      "updated_at": "2025-07-07T00:53:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004473503,
+      "body_text": "Hello, I still have not seen any logistics updates, please advise.\r\n\r\nOn Sun, Jul 6, 2025 at 8:53 PM Joseph Lancellotti <lancellottijoe@gmail.com>\r\nwrote:\r\n\r\n> Hello, I have not seen any logistics update yet, can you provide another\r\n> update please? Thank you.\r\n>\r\n> On Tue, Jul 1, 2025 at 11:33 PM service@simsonn.com ",
+      "user_id": 158001872096,
+      "created_at": "2025-07-08T13:38:36Z",
+      "updated_at": "2025-07-08T13:38:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004487649,
+      "body_text": "Hi Joseph Lancellotti,     Our logistics provider responded that your package has been cleared and picked up by UPS on the 5th, but due to the holiday in the U.S. it was not updated in time and is expected to be delivered to you around the 11th, sorry for the inconvenience.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-09T10:07:01Z",
+      "updated_at": "2025-07-09T10:07:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004500015,
+      "body_text": "Thanks can you confirm the Ups tracking number?\r\n\r\nOn Wed, Jul 9, 2025, 6:07 AM service@simsonn.com ",
+      "user_id": 158001872096,
+      "created_at": "2025-07-10T02:50:39Z",
+      "updated_at": "2025-07-10T02:50:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004501618,
+      "body_text": "Hi Joseph Lancellotti,     Here is the link to your logistics. https://t.17track.net/en#nums=1ZX6190C0331593581",
+      "user_id": 158001343601,
+      "created_at": "2025-07-10T09:09:23Z",
+      "updated_at": "2025-07-10T09:09:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

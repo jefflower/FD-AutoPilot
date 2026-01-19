@@ -1,0 +1,24 @@
+{
+  "id": 551,
+  "subject": "Order update",
+  "description_text": "Hi team,\r\n\r\nI ordered some haptics on the 6th June - Order #SSN1657\r\n\r\nThere was information on your website at the time suggesting these would be sent on the 16th June. However I've yet to receive any update as to when I will receive them.\r\n\r\nCan you please provide an update on when they will be delivered.\r\n\r\nThanks.\r\n\r\nCameron\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-18T05:12:55Z",
+  "updated_at": "2025-06-22T02:39:13Z",
+  "requester_id": 158001645475,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003679640,
+      "body_text": "Hi，Cameron Steward，  Your order has been shipped. Here is the latest tracking information—please take a look. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T02:39:13Z",
+      "updated_at": "2025-06-22T02:39:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

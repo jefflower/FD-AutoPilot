@@ -1,0 +1,24 @@
+{
+  "id": 4493,
+  "subject": "Urgent: No Response Regarding Order SSN2784",
+  "description_text": "Dear Simsonn Support Team,\r\nI hope this message finds you well. I am writing to follow up on my order\r\nSSN2784, which I have already inquired about multiple times over the past\r\nweek. This is now the fourth email I’ve sent, and I have yet to receive any\r\nresponse.\r\nCould you please let me know where my order is and provide an update as\r\nsoon as possible? I would appreciate a prompt reply, as the delay and lack\r\nof communication are becoming very frustrating.\r\nThank you for your attention to this matter. I look forward to hearing from\r\nyou soon.\r\nBest regard Cristian Pezzotti\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-10-06T10:16:48Z",
+  "updated_at": "2025-10-06T10:41:00Z",
+  "requester_id": 158005269574,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009963881,
+      "body_text": "此工单已关闭并合并至工单 4482。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-06T10:41:00Z",
+      "updated_at": "2025-10-06T10:41:00Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 10226,
+  "subject": "Question about shipping",
+  "description_text": "Hello, good morning. I'm writing because I'm interested in buying The\r\nSimpsons Plus X, but I wanted to know if there's any way, even if it means\r\npaying more for shipping, to have it sent via DHL. I'm from Argentina, and\r\nshipments with other couriers always have problems with taxes, so to make\r\nthe purchase I need some way to know that the order will be sent by DHL.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-07T15:15:03Z",
+  "updated_at": "2026-01-16T09:00:10Z",
+  "requester_id": 158008968028,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017250874,
+      "body_text": "Hi Franco Viarengo,  I apologize for the delayed response.  You may select express shipping, and we will ship your order via DHL.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T09:00:10Z",
+      "updated_at": "2026-01-16T09:00:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

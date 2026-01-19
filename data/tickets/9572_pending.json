@@ -1,0 +1,34 @@
+{
+  "id": 9572,
+  "subject": "Order #SSN5295",
+  "description_text": "Hi ! My name is Kristiyan Dobrev.\r\nI have an order for Pedals and Haptic motors my order is #SSN5295 from\r\n26.12.2026\r\n\r\nSo I saw that you guys send me only the haptic motors today and I just\r\nwanted to get some information about the shipping process.\r\nFrom what I understand from today’s email you will send me the pedals and\r\nthe haptic motors on the separately , is that right ?\r\n\r\nBecause in today’s email the information saying you guys sending me only\r\nthe haptic motors.\r\nSo my question is are you guys sending me motors and pedals on two\r\ndifferent shipments and how long it will take pedals to be shipped?\r\n\r\nThanks!\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-30T12:49:41Z",
+  "updated_at": "2026-01-13T11:27:28Z",
+  "requester_id": 158008819530,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015290966,
+      "body_text": "Hi 20v Wagon,  Our motors and pedals are shipped separately. The pedals will be shipped to you soon, so there’s no need to worry. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T02:32:25Z",
+      "updated_at": "2025-12-31T02:32:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015953028,
+      "body_text": "Hello!\r\ncan you guys give me an estimate time for pedals for be shipped?\r\nSaw that haptic motors are coming tomorrow but I still have no information\r\nabout the pedals.\r\n\r\nThanks.\r\n\r\nНа ср, 31.12.2025 г., 4:32 service@simsonn.com ",
+      "user_id": 158008819530,
+      "created_at": "2026-01-06T16:19:09Z",
+      "updated_at": "2026-01-06T16:19:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "id": 10900,
+  "subject": "Forgot an item #SSN5577",
+  "description_text": "Hello, I just received my Simpson Pro X Ultra package, but the heightening\r\nplate for the heel support was missing. Could you please send it to me with\r\nthe correct screws, which are also missing?\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-14T14:10:26Z",
+  "updated_at": "2026-01-16T09:00:30Z",
+  "requester_id": 158009030863,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017235602,
+      "body_text": "Hi Grégory,  It’s possible the baseplate was shipped separately. I’ll ask our operations team to check whether it was sent in a separate parcel and get back to you as soon as possible. Could you please provide your order number (e.g., SSNXXXX) so we can look it up? ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-16T02:03:14Z",
+      "updated_at": "2026-01-16T02:03:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017237463,
+      "body_text": "Hi Grégory,    We apologize for the inconvenience. Is this particular part missing? Is the LED strip module missing?  Please confirm as soon as possible. We will resend the missing part to you promptly.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T03:16:55Z",
+      "updated_at": "2026-01-16T03:16:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017241353,
+      "body_text": "#SSN5577\r\n\r\nLe ven. 16 janv. 2026, 04:17, service@simsonn.com ",
+      "user_id": 158009030863,
+      "created_at": "2026-01-16T05:51:18Z",
+      "updated_at": "2026-01-16T05:51:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017241421,
+      "body_text": "#SSN5577\r\n\r\nThis isn't the base plate for the pedals; it's the second, smaller plate\r\nfor the heels.\r\n\r\nLe ven. 16 janv. 2026, 06:50, Grégory <gregory.pommier13@gmail.com> a\r\nécrit :\r\n\r\n> #SSN5577\r\n>\r\n> Le ven. 16 janv. 2026, 04:17, service@simsonn.com ",
+      "user_id": 158009030863,
+      "created_at": "2026-01-16T05:55:34Z",
+      "updated_at": "2026-01-16T05:55:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017247483,
+      "body_text": "Hi Grégory,     Is this it?",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T08:14:31Z",
+      "updated_at": "2026-01-16T08:14:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017247902,
+      "body_text": "Yes is that missing\r\n\r\nLe ven. 16 janv. 2026, 09:14, service@simsonn.com ",
+      "user_id": 158009030863,
+      "created_at": "2026-01-16T08:25:55Z",
+      "updated_at": "2026-01-16T08:25:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017250883,
+      "body_text": "Hi Grégory,    Okay, here's your reshipped link.  https://t.17track.net/en#nums=SF6047245960590",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T09:00:29Z",
+      "updated_at": "2026-01-16T09:00:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

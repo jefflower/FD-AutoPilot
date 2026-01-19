@@ -1,0 +1,84 @@
+{
+  "id": 10435,
+  "subject": "Question about the old Simpson pedals wiring?",
+  "description_text": "Hello Simpsonn employee! I recently been having wire disconnecting\r\nproblems, and was wondering if there’s anywhere I can buy replacement wires\r\nfor the throttle?\r\nIt seems that whenever the angle of the wire coming out of the box is too\r\nsharp it will put in a signal at 100% throttle pressure.\r\nIs there anything I can do? I’ve been using these original pedals for years\r\nand they amazing!!\r\nThank you so much for the awesome pedals so far!\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-09T18:42:38Z",
+  "updated_at": "2026-01-15T01:35:58Z",
+  "requester_id": 158009005676,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016656834,
+      "body_text": "Hi Mr. Simple,     You can go to a local computer repair shop and have them re-crimp a RJ11 4P4C connector. Please follow the throttle wiring order, cut the cable at the position indicated by the arrow, and make a new connector. This should quickly resolve the issue. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-10T03:43:01Z",
+      "updated_at": "2026-01-10T03:43:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016662507,
+      "body_text": "Awesome, thank you so much!\r\n\r\nOn Fri, Jan 9, 2026 at 9:43 PM service@simsonn.com ",
+      "user_id": 158009005676,
+      "created_at": "2026-01-10T04:36:51Z",
+      "updated_at": "2026-01-10T04:36:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016947099,
+      "body_text": "I found that the black wire could be reconnected as a temporary fix, but\r\nwhat is that 5th wire?\r\n\r\nOn Fri, Jan 9, 2026 at 9:43 PM service@simsonn.com ",
+      "user_id": 158009005676,
+      "created_at": "2026-01-13T07:56:30Z",
+      "updated_at": "2026-01-13T07:56:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016947301,
+      "body_text": "Hi Mr. Simple,      The yellow wire is the ground wire. It doesn’t need to be connected separately at the moment; you can also tie it together with the black wire. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-13T08:02:00Z",
+      "updated_at": "2026-01-13T08:02:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016948053,
+      "body_text": "This is my funny temporary fix with some pliers instead of electrical tape\r\nlol.\r\nNot sure how there was almost a centimeter of missing black wire, Looked\r\nmay be burnt from a short.\r\nBut it’s working now lol\r\nOn Tue, Jan 13, 2026 at 2:02 AM service@simsonn.com ",
+      "user_id": 158009005676,
+      "created_at": "2026-01-13T08:21:30Z",
+      "updated_at": "2026-01-13T08:21:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016948077,
+      "body_text": "Forgot to attach the picture of the fix\r\n\r\nOn Tue, Jan 13, 2026 at 2:02 AM service@simsonn.com ",
+      "user_id": 158009005676,
+      "created_at": "2026-01-13T08:22:31Z",
+      "updated_at": "2026-01-13T08:22:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017154352,
+      "body_text": "Hi Mr. Simple,  This is the solder joint where we previously soldered the yellow wire to the black wire. It may have come loose due to pulling or tension. Please re-solder this connection — using pliers is only a temporary workaround and may still cause an unstable connection over time. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-15T01:35:57Z",
+      "updated_at": "2026-01-15T01:35:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

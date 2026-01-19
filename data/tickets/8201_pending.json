@@ -1,0 +1,124 @@
+{
+  "id": 8201,
+  "subject": "ORDER #SSN4819",
+  "description_text": "Hello,\r\n\r\nI made this order with the baseplate for just realised that I think it’s\r\ntoo wide for my Playseat trophy.\r\n\r\nCan you please remove the baseplate from the order?\r\n\r\nThanks\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-14T10:10:52Z",
+  "updated_at": "2026-01-08T10:43:57Z",
+  "requester_id": 158007804294,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014481559,
+      "body_text": "Hello,\r\n\r\nAs well as removing the baseplate, can I also add a set of white elastomers.\r\n\r\nThanks.\r\n\r\nOn Sun, 14 Dec 2025 at 11:16, service@simsonn.com ",
+      "user_id": 158007804294,
+      "created_at": "2025-12-14T12:11:25Z",
+      "updated_at": "2025-12-14T12:11:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014501830,
+      "body_text": "Hi sam levy,    Okay, I've modified your order.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-15T08:47:00Z",
+      "updated_at": "2025-12-15T08:47:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014505125,
+      "body_text": "Hello,\r\n\r\nThank you!\r\n\r\nWhat was the difference in price?\r\n\r\nThanks!\r\n\r\nOn Mon, 15 Dec 2025 at 09:47, service@simsonn.com ",
+      "user_id": 158007804294,
+      "created_at": "2025-12-15T10:41:12Z",
+      "updated_at": "2025-12-15T10:41:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014507407,
+      "body_text": "Hi sam levy,    We'll refund the difference for you, so don't worry.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-15T11:53:34Z",
+      "updated_at": "2025-12-15T11:53:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014845419,
+      "body_text": "Hello,\r\n\r\nHave these been shipped yet?\r\n\r\nOn the tracking I just see label received but no tracking information.\r\n\r\nThanks.\r\n\r\nOn Mon, 15 Dec 2025 at 12:53, service@simsonn.com ",
+      "user_id": 158007804294,
+      "created_at": "2025-12-21T17:54:08Z",
+      "updated_at": "2025-12-21T17:54:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015027828,
+      "body_text": "Hi sam levy,    We sincerely apologize for the inconvenience caused. Our warehouse has been exceptionally busy recently, resulting in some errors. We discovered that the DHL package shipped to you yesterday contained only the pedals without the base plate.   https://www.dhl.de/en/privatkunden/pakete-empfangen/verfolgen.html?piececode=CE326637380DE  We will reship the base plate and haptics from our German warehouse.   And this tracking number will be sent for your white elastomer and U-shaped bracket.  https://t.17track.net/en#nums=YT2534900709306197",
+      "user_id": 158001343601,
+      "created_at": "2025-12-24T08:32:41Z",
+      "updated_at": "2025-12-24T08:32:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015027874,
+      "body_text": "Hello,\r\n\r\nI don’t want the base plate, it should have been cancelled from the order\r\nand refunded.\r\n\r\nNo problems on the haptics, looking forward to receiving them!\r\n\r\nOn Wed, 24 Dec 2025 at 09:32, service@simsonn.com ",
+      "user_id": 158007804294,
+      "created_at": "2025-12-24T08:34:29Z",
+      "updated_at": "2025-12-24T08:34:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015028886,
+      "body_text": "Hi sam levy,    Alright, thank you for your confirmation.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-24T09:22:54Z",
+      "updated_at": "2025-12-24T09:22:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015028920,
+      "body_text": "Thank you!\r\n\r\nMerry Christmas ?\r\n\r\nOn Wed, 24 Dec 2025 at 10:23, service@simsonn.com ",
+      "user_id": 158007804294,
+      "created_at": "2025-12-24T09:24:12Z",
+      "updated_at": "2025-12-24T09:24:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015028925,
+      "body_text": "Merry Christmas!",
+      "user_id": 158001343601,
+      "created_at": "2025-12-24T09:24:48Z",
+      "updated_at": "2025-12-24T09:24:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015475328,
+      "body_text": "Hello,\r\n\r\nI have not received the refund for my the pedal plate.\r\n\r\nAlso do you know when the adapters for the haptics and the elastomers are\r\narriving?\r\n\r\nThanks.\r\n\r\nOn Wed, 24 Dec 2025 at 10:24, service@simsonn.com ",
+      "user_id": 158007804294,
+      "created_at": "2026-01-03T11:30:22Z",
+      "updated_at": "2026-01-03T11:30:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": 7790,
+  "subject": "Plus X 踏板 - 最大刹车力",
+  "description_text": "你好，\n\n我正在尝试设置我的最大刹车力，但我觉得我操作有误。\n我打开软件，进行校准，然后将最大公斤力设置为45。但是\n当我点击保存后，数字每次都会变。\n\n我需要怎么做才能让最大刹-车力保持在45公斤？\n\n谢谢，\n\nMitch Hoff\n513-582-0259",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-09T14:14:36Z",
+  "updated_at": "2025-12-14T03:21:26Z",
+  "requester_id": 158007717927,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014228063,
+      "body_text": "你好 Mitchell Hoff，请提供 SIMSONN Manager 2.1.2 的完整截图，以便我核实您是否使用了正确的版本。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-10T01:26:18Z",
+      "updated_at": "2025-12-10T01:26:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014401648,
+      "body_text": "我昨天发现有个更新，更新后问题就解决了。\n现在一切正常。\n\n谢谢，\n\nMitch Hoff\n513-582-0259\n\n\n于2025年12月9日星期二晚上8:26，service @simsonn.com",
+      "user_id": 158007717927,
+      "created_at": "2025-12-12T16:40:32Z",
+      "updated_at": "2025-12-12T16:40:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

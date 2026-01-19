@@ -1,0 +1,104 @@
+{
+  "id": 5171,
+  "subject": "Re: Simsonn Order Confirmation #SSN3031",
+  "description_text": "Dear SIMSONN!\r\n\r\nI'm sorry that's the case!\r\nIf I upgrade to the three-pedal set, does that price include the reactor?\r\n\r\nSIMSONN <service@simsonn.com> ezt írta (időpont: 2025. okt. 22., Sze,\r\n11:48):\r\n\r\n> SIMSONN <https://www.simsonn.com>\r\n>\r\n> We apologise for any inconvenience caused. Our Plus X P2-H2/Black is\r\n> currently out of stock at our German warehouse, with restocking expected by\r\n> the end of the month. We can offer you a replacement in the silver version:\r\n> Plus X P2-H2/Silver. Alternatively, you may upgrade to the three-pedal set\r\n> Plus X P3-H3/Black at a discounted price of $37.90, representing a saving\r\n> of $70 on the original price difference. Either of these options can be\r\n> dispatched immediately from our German warehouse.\r\n>\r\n> If you have any questions, reply to this email or contact us at\r\n> service@simsonn.com\r\n>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-22T10:05:01Z",
+  "updated_at": "2025-10-23T10:10:33Z",
+  "requester_id": 158005976410,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010867222,
+      "body_text": "It does not include a haptic reactor. If you require one, we can offer it to you at a discounted price of $34.90.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-22T10:17:21Z",
+      "updated_at": "2025-10-22T10:17:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010867307,
+      "body_text": "I'll stick with my order. I'll wait for the stock.  Is it expected by the end of October as stated?",
+      "user_id": 158005976410,
+      "created_at": "2025-10-22T10:24:24Z",
+      "updated_at": "2025-10-22T10:24:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010867443,
+      "body_text": "Yes, thank you for confirming.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-22T10:33:57Z",
+      "updated_at": "2025-10-22T10:33:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010906258,
+      "body_text": "I've been thinking! I don't want to wait. I'd like to get the three-pedal offer in black.",
+      "user_id": 158005976410,
+      "created_at": "2025-10-22T19:39:21Z",
+      "updated_at": "2025-10-22T19:39:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010918338,
+      "body_text": "Okay, you can click this link to make the payment. We'll ship you the black version of the three pedal set.  https://www.simsonn.com/products/difference-2",
+      "user_id": 158001343601,
+      "created_at": "2025-10-23T02:12:44Z",
+      "updated_at": "2025-10-23T02:12:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010924883,
+      "body_text": "Does this package include the two reactors that were in my original order?",
+      "user_id": 158005976410,
+      "created_at": "2025-10-23T04:57:58Z",
+      "updated_at": "2025-10-23T04:57:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010930090,
+      "body_text": "Hi RobexX 10,    The reactors will be dispatched separately, as they too require until the end of the month to arrive at the German warehouse. We shall ship them from China, but rest assured there will be no customs duties or taxes incurred.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-23T05:53:35Z",
+      "updated_at": "2025-10-23T05:53:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010930741,
+      "body_text": "So I'll get the three pedals now. And the two reactors later when they're in stock? Does the price include everything?",
+      "user_id": 158005976410,
+      "created_at": "2025-10-23T06:45:16Z",
+      "updated_at": "2025-10-23T06:45:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010937676,
+      "body_text": "Hi RobexX 10,    Both of your packages have been shipped. The pedals have been upgraded to 3-pedal set for you, but the reactors have not been upgraded. You can click this link to complete payment.  https://www.simsonn.com/products/difference-2 ",
+      "user_id": 158001343601,
+      "created_at": "2025-10-23T10:10:33Z",
+      "updated_at": "2025-10-23T10:10:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

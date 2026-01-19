@@ -1,0 +1,64 @@
+{
+  "id": 5362,
+  "subject": "Order number: SSN3047",
+  "description_text": "Morning,\r\n\r\nJust wondering when my order will arrive as I paid for the express shipment which is now late and hasn't left China yet according to the shipping.\r\n\r\nDue to the fact my order is now late will I also receive a refund for the shipping paid?\r\n\r\nMany thanks,\r\n\r\nScott Howard\r\n\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-28T10:55:42Z",
+  "updated_at": "2025-11-04T05:41:46Z",
+  "requester_id": 158005955949,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011267858,
+      "body_text": "We apologize for the inconvenience. We have contacted the logistics provider, who informed us that due to the recent high volume of shipments to the UK, all packages are experiencing some delays. Your package is expected to arrive around the 31st. We will refund the additional shipping fees you paid. We apologize for the inconvenience.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-29T07:26:52Z",
+      "updated_at": "2025-10-29T07:26:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011405586,
+      "body_text": "My order is still not here, and the tracking doesn't seem to be working or accurate.\r\n I want to know where my parcel is and a true timeline of where it is and has been as according to the tracking it's been sat in the middle of nowhere in America for the last week.\r\n\r\nThanks,\r\n Scott\r\n\r\nSent from Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158005955949,
+      "created_at": "2025-10-31T11:34:13Z",
+      "updated_at": "2025-10-31T11:34:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011646154,
+      "body_text": "Hi Scott Howard,  We apologize for the delay. We have refunded your extra shipping charges; please check your account. Additionally, your package is expected to arrive around the 4th.  https://t.17track.net/en#nums=SF6045985077987",
+      "user_id": 158001343601,
+      "created_at": "2025-11-03T07:56:24Z",
+      "updated_at": "2025-11-03T07:56:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011655354,
+      "body_text": "I need the royal mail tracking number please\r\n\r\n\r\nSent from Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158005955949,
+      "created_at": "2025-11-03T11:58:05Z",
+      "updated_at": "2025-11-03T11:58:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011706638,
+      "body_text": "Hi Scott Howard,    This is your Royal Mail tracking number: IT978162819GB  I see your package has been delivered. Have you received it?",
+      "user_id": 158001343601,
+      "created_at": "2025-11-04T05:41:45Z",
+      "updated_at": "2025-11-04T05:41:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

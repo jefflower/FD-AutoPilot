@@ -1,0 +1,24 @@
+{
+  "id": 10559,
+  "subject": "issue with the save file",
+  "description_text": "Hello,\r\n\r\ni got the simsonn pro plus pedals for about 3 months now but i have a issue that everytime i close the app or restart my pc my loadcell KG and Elastomer choice in the save file reset hisself back to medium elastomers and 60kg while i´m using hard elastumers and always need to putit back to 70kg as i use 70kg loadcell pressure it is really anying to do this everytime i enter the rig i need to change that i tried previous version and newer versions of the simmson manager and keep getting this issue i deleted the software downloaded it again i keep having this issue\r\n\r\ni hope there is a solution\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-11T09:56:42Z",
+  "updated_at": "2026-01-11T14:34:37Z",
+  "requester_id": 158009022153,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016820971,
+      "body_text": "Hi ricky Bekelaar,  Please take a clear photo of the side of the brake pedal and send it to us. Additionally, please confirm whether you are currently using SIMSONN Manager version 2.1.3. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T14:34:37Z",
+      "updated_at": "2026-01-11T14:34:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": 5881,
+  "subject": "Load Cell Brake Preload",
+  "description_text": "Good evening,\r\n\r\nI just want to ask about the preload of the brake, would tightening the preload (reducing the gap of rubber) decrease the deadzone of the brake? I want the brake to apply almost as soon as I push onto the pedal.\r\n\r\nKevin Tran\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-10T10:37:46Z",
+  "updated_at": "2025-11-11T08:58:28Z",
+  "requester_id": 158005120871,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012092895,
+      "body_text": "Hi Zayne Jaan Tran,  Click the “Offset” button in the software to shift the white initial signal to 0%, and then perform the calibration again. This is necessary because adjusting the damping or mechanical components changes the initial position, so the Offset needs to be recalibrated for accurate readings. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-11T01:29:14Z",
+      "updated_at": "2025-11-11T01:29:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012103033,
+      "body_text": "Hello,\r\n\r\nDo i do the offset on top of adjusting the preload?\r\n\r\nDoes tightening preload reduces deadzone?\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158005120871,
+      "created_at": "2025-11-11T08:34:53Z",
+      "updated_at": "2025-11-11T08:34:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012105512,
+      "body_text": "Hi Zayne Jaan Tran,    After adjusting the damping and preload, make sure the pedals are properly connected to the control box, then unplug and reconnect the USB once. Next, click the Offset button and recalibrate the pedals. Finally, you can also set the dead zones for the minimum and maximum pedal values.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-11T08:58:26Z",
+      "updated_at": "2025-11-11T08:58:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

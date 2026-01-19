@@ -1,0 +1,174 @@
+{
+  "id": 4240,
+  "subject": "USB cable failure, RGB LEDS malfunctioning.",
+  "description_text": "Yesterday while doing an endurance race with the pedals the device kept\r\ndisconnecting.  After disconnecting 3 times within 20 minutes I decided to\r\nplug the cable into another usb port on my pc.  It stopped disconnecting\r\nfor the duration of that race.  But the RGB leds on the brake and throttle\r\npedal kept changing colors/flashing randomly.  I have the RGB set to stay a\r\nsolid color.  Today I went to use the pedals again and they kept\r\ndisconnecting every couple of seconds.  After swapping out the usb cable it\r\nstopped disconnecting.  However the RGB leds still keep changing colors\r\nrandomly.\r\n\r\nI've included a picture of the brake pedal leds.  It's hard to see in the\r\npicture but some of the leds are purple, some are blue, and a couple are\r\norange...\r\n\r\nThere is no visible damage to the usb cables.  I've also included pictures\r\nof that as well.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-09-29T10:05:37Z",
+  "updated_at": "2025-10-10T09:19:38Z",
+  "requester_id": 158005152786,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009624457,
+      "body_text": "I forgot to include my order number.  It is #SSN1253\r\n[image: image.png]\r\n\r\n\r\nOn Mon, Sep 29, 2025 at 6:04 AM Brian Woodward <woodwardba0526@gmail.com>\r\nwrote:\r\n\r\n> Yesterday while doing an endurance race with the pedals the device kept\r\n> disconnecting.  After disconnecting 3 times within 20 minutes I decided to\r\n> plug the cable into another usb port on my pc.  It stopped disconnecting\r\n> for the duration of that race.  But the RGB leds on the brake and throttle\r\n> pedal kept changing colors/flashing randomly.  I have the RGB set to stay a\r\n> solid color.  Today I went to use the pedals again and they kept\r\n> disconnecting every couple of seconds.  After swapping out the usb cable it\r\n> stopped disconnecting.  However the RGB leds still keep changing colors\r\n> randomly.\r\n>\r\n> I've included a picture of the brake pedal leds.  It's hard to see in the\r\n> picture but some of the leds are purple, some are blue, and a couple are\r\n> orange...\r\n>\r\n> There is no visible damage to the usb cables.  I've also included pictures\r\n> of that as well.\r\n>\r\n\r\n",
+      "user_id": 158005152786,
+      "created_at": "2025-09-29T10:06:53Z",
+      "updated_at": "2025-09-29T10:06:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009632199,
+      "body_text": "I also just noticed that the brake pedal is also broken.  It's like this on\r\nboth sides.\r\n\r\n[image: PXL_20250929_135735926.jpg]\r\n\r\n\r\n\r\nOn Mon, Sep 29, 2025 at 6:05 AM Brian Woodward <woodwardba0526@gmail.com>\r\nwrote:\r\n\r\n> I forgot to include my order number.  It is #SSN1253\r\n> [image: image.png]\r\n>\r\n>\r\n> On Mon, Sep 29, 2025 at 6:04 AM Brian Woodward <woodwardba0526@gmail.com>\r\n> wrote:\r\n>\r\n>> Yesterday while doing an endurance race with the pedals the device kept\r\n>> disconnecting.  After disconnecting 3 times within 20 minutes I decided to\r\n>> plug the cable into another usb port on my pc.  It stopped disconnecting\r\n>> for the duration of that race.  But the RGB leds on the brake and throttle\r\n>> pedal kept changing colors/flashing randomly.  I have the RGB set to stay a\r\n>> solid color.  Today I went to use the pedals again and they kept\r\n>> disconnecting every couple of seconds.  After swapping out the usb cable it\r\n>> stopped disconnecting.  However the RGB leds still keep changing colors\r\n>> randomly.\r\n>>\r\n>> I've included a picture of the brake pedal leds.  It's hard to see in the\r\n>> picture but some of the leds are purple, some are blue, and a couple are\r\n>> orange...\r\n>>\r\n>> There is no visible damage to the usb cables.  I've also included\r\n>> pictures of that as well.\r\n>>\r\n>\r\n\r\n",
+      "user_id": 158005152786,
+      "created_at": "2025-09-29T14:02:57Z",
+      "updated_at": "2025-09-29T14:02:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009726230,
+      "body_text": "Hi Brian Woodward,    The brake sensor mount on your pedal has cracked, and we will replace it with a new brake pedal for you. Meanwhile, please check if the LED on your throttle pedal is working properly.  Please uninstall the old version of the software from your PC and install the provided version 2.1.1 (download link attached). In the software, go to Settings → Update → Manual Firmware Update, and select the file pedals-firmware-pedals-prox.sfu. After the update is completed, please test the pedals again.  In addition, regarding the disconnection issue, please avoid using USB hubs and connect the device directly to the rear USB 3.0 (blue) port of your PC to ensure stable power and data transmission.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T10:18:34Z",
+      "updated_at": "2025-10-01T10:18:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009739526,
+      "body_text": "After updating the firmware the LEDs seem to be functioning properly again.  I tried the old usb cable in every usb 3 port on my motherboard and it is definitely faulty.  With a new cable it is working fine.",
+      "user_id": 158005152786,
+      "created_at": "2025-10-01T14:32:57Z",
+      "updated_at": "2025-10-01T14:32:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158009739611,
+      "body_text": "Hi Brian Woodward,    As compensation for the cable issue, we can offer you USD 10. Please provide your PayPal account, and we’ll arrange the payment promptly.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T14:35:17Z",
+      "updated_at": "2025-10-01T14:35:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009739693,
+      "body_text": "Hi Brian Woodward,    Did the brake area also develop cracks? Have both sides split?",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T14:37:00Z",
+      "updated_at": "2025-10-01T14:37:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009739802,
+      "body_text": "Yes both sides of the brake pedal have cracked in the same place.",
+      "user_id": 158005152786,
+      "created_at": "2025-10-01T14:40:55Z",
+      "updated_at": "2025-10-01T14:40:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158009739813,
+      "body_text": "My paypal email is woodwardba0526@gmail.com",
+      "user_id": 158005152786,
+      "created_at": "2025-10-01T14:41:21Z",
+      "updated_at": "2025-10-01T14:41:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158009740044,
+      "body_text": "Hi Brian Woodward,    I have already sent you the USD 10 payment.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T14:46:40Z",
+      "updated_at": "2025-10-01T14:46:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009984393,
+      "body_text": "Has the replacement brake pedal been shipped out?  Also will the replacement be with the updated/improved design?",
+      "user_id": 158005152786,
+      "created_at": "2025-10-06T19:27:19Z",
+      "updated_at": "2025-10-06T19:27:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158009991651,
+      "body_text": "Hi Brian Woodward,  We are currently on the National Day holiday and will resume work on October 9th. At that time, we will arrange the replacement shipment for you.  The version issue you reported has only occurred on your unit so far — it’s likely due to a cutting defect, not a widespread problem.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-06T22:41:30Z",
+      "updated_at": "2025-10-06T22:41:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009992114,
+      "body_text": "Alright I was just curious.  Thanks",
+      "user_id": 158005152786,
+      "created_at": "2025-10-06T23:00:47Z",
+      "updated_at": "2025-10-06T23:00:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010138072,
+      "body_text": "Hi Brian Woodward,  We will send you a reinforced and upgraded ProX Ultra brake pedal, correct? ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-09T09:30:21Z",
+      "updated_at": "2025-10-09T09:30:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010141202,
+      "body_text": "Sounds great to me",
+      "user_id": 158005152786,
+      "created_at": "2025-10-09T09:42:47Z",
+      "updated_at": "2025-10-09T09:42:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010198841,
+      "body_text": "Hi Brian Woodward,    We've reshipped it for you. Here's your tracking link:  https://t.17track.net/en#nums=SF6045961767664",
+      "user_id": 158001343601,
+      "created_at": "2025-10-10T09:13:55Z",
+      "updated_at": "2025-10-10T09:13:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010198919,
+      "body_text": "Hi Brian Woodward,    We've reshipped it for you. Here's your tracking link:  https://t.17track.net/en#nums=SF6045962681111",
+      "user_id": 158001343601,
+      "created_at": "2025-10-10T09:19:38Z",
+      "updated_at": "2025-10-10T09:19:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

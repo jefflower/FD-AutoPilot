@@ -1,0 +1,24 @@
+{
+  "id": 8345,
+  "subject": "Shipping to Poland.",
+  "description_text": "Hello, do you ship your products to Poland, i can’t find „Poland” as an\r\noption in country/region section at the checkout. If i order these pedals,\r\ni will need to get them before Christmas (24th December). Thanks for\r\nanwsering in advance!\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-12-15T21:41:06Z",
+  "updated_at": "2025-12-18T08:34:37Z",
+  "requester_id": 158007825081,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014678565,
+      "body_text": "Hi Hubert Górzyński,  ​  This is the link to our Polish brand distributor's store (https://fmic.pl/elektronika/simracing?product_brand=Simsonn). You can purchase the product through this link, and they will ship it directly from Poland.",
+      "user_id": 158007774607,
+      "created_at": "2025-12-18T08:34:33Z",
+      "updated_at": "2025-12-18T08:34:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

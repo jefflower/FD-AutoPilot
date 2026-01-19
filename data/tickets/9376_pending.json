@@ -1,0 +1,54 @@
+{
+  "id": 9376,
+  "subject": "No confirmation email received",
+  "description_text": "Hello, i ve placed and order last night yesterday using this email address.\r\nI haven't received a confirmation email with an order number to track my\r\norder. Please help me track my order. Thank you!\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-28T18:01:56Z",
+  "updated_at": "2025-12-29T09:34:16Z",
+  "requester_id": 158008801962,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015174557,
+      "body_text": "Hi Cezar Claudiu,  Please provide the payment date, payment amount, and the payer’s name, and I will help you look up the corresponding order number. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-29T01:54:22Z",
+      "updated_at": "2025-12-29T01:54:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015181257,
+      "body_text": "Hello, the payment date as per my bank is 27.12.2025 at 23:19\r\nI guess this is the time at which the transaction passed and the money was\r\ntransferred. The payment amount was 2428.28 RON.\r\nThe order contained the bundle \"newest simsonn plus x with haptics and a\r\nsimsonn hs pro shiftrr h/sq, before paying using a disccount code OFF8.\r\n\r\n",
+      "user_id": 158008801962,
+      "created_at": "2025-12-29T06:54:30Z",
+      "updated_at": "2025-12-29T06:54:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015182223,
+      "body_text": "Hi Cezar Claudiu,    I have resent your order confirmation. Please check your email. Additionally, I noticed you did not provide your postal code. Please provide it as soon as possible.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-29T07:38:14Z",
+      "updated_at": "2025-12-29T07:38:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015182267,
+      "body_text": "Thank you, i got it. The postal code is 010459.\r\n\r\n",
+      "user_id": 158008801962,
+      "created_at": "2025-12-29T07:40:37Z",
+      "updated_at": "2025-12-29T07:40:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

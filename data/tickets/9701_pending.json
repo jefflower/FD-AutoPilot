@@ -1,0 +1,74 @@
+{
+  "id": 9701,
+  "subject": "No Haptics delivered with Order #SSN5137",
+  "description_text": "Hello,\r\n\r\nI did not receive the haptic vam pro motors or the 2 extra mounts I\r\nordered. Only the Pedals and the RGB baseplate were delivered.\r\n\r\n\r\n[image: image.png]\r\n\r\nThis is the picture from the FedEx website verifying delivery. Thank you\r\nfor your attention to this matter.\r\n\r\nNicholas Adamicki\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-31T23:06:03Z",
+  "updated_at": "2026-01-08T11:59:27Z",
+  "requester_id": 158008836828,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015365902,
+      "body_text": "Hi B H,    Our vibration feedback motors are shipped separately. I will check the shipment status for you after the holiday.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-01T15:03:36Z",
+      "updated_at": "2026-01-01T15:03:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016079051,
+      "body_text": "ID 为 10026 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T06:56:50Z",
+      "updated_at": "2026-01-07T06:56:50Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016079053,
+      "body_text": "合并来自工单10026  \n      主题: Request update on haptic motors  \n      描述:  Someone was supposed to let me know what's up with the 3 haptic motors and 2 mounts that weren't delivered.    \n Thanks, \n Nicholas Adamicki ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T06:56:50Z",
+      "updated_at": "2026-01-07T06:56:50Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016079168,
+      "body_text": "Hi B H,  Have you already received your VAM Pro motors? ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T06:58:20Z",
+      "updated_at": "2026-01-07T06:58:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016096744,
+      "body_text": "No, not yet. I have not received them. There is no tracking number for them\r\neither.\r\n\r\nOn Tue, Jan 6, 2026, 10:58 PM service@simsonn.com ",
+      "user_id": 158008836828,
+      "created_at": "2026-01-07T08:41:37Z",
+      "updated_at": "2026-01-07T08:41:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016335676,
+      "body_text": "Hi B H,    We apologize for not updating you promptly about your shipment. Your package has been shipped.  https://t.17track.net/en#nums=SF6047195321874",
+      "user_id": 158001343601,
+      "created_at": "2026-01-08T11:59:27Z",
+      "updated_at": "2026-01-08T11:59:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

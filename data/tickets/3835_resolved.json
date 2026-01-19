@@ -1,0 +1,34 @@
+{
+  "id": 3835,
+  "subject": "boitier de commande pro x ultra",
+  "description_text": "bonjour je vous contact car en branchant mon alimentation et mon haptique\r\nvam pro cela ne fonctionne pas faut il flasher le boîtier de commande ou le\r\nboîtier a un problème ?\r\n\r\n",
+  "status": 4,
+  "priority": 3,
+  "created_at": "2025-09-15T10:11:14Z",
+  "updated_at": "2025-09-17T02:04:46Z",
+  "requester_id": 158004551334,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008837417,
+      "body_text": "Hi David Durand,  You can first disconnect both the USB and the power supply from the control box. Then, reconnect the USB first, followed by the power supply. After that, please check if the software shows a successful connection and send me a screenshot of the connection interface so I can verify if the version is correct. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-17T01:30:37Z",
+      "updated_at": "2025-09-17T01:30:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008837900,
+      "body_text": "Bonjour j'ai trouvé la solution sur redit\r\nMerci\r\n\r\nLe mer. 17 sept. 2025 à 03:30, support@simsonn.com ",
+      "user_id": 158004551334,
+      "created_at": "2025-09-17T02:00:05Z",
+      "updated_at": "2025-09-17T02:00:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

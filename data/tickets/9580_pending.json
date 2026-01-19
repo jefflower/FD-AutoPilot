@@ -1,0 +1,24 @@
+{
+  "id": 9580,
+  "subject": "pedales simsonn pro pedals",
+  "description_text": "hola buenas felices fiestas, mi duda es que tengo vuestros pedales simsonn pro pedals comprados en aliexprex hace ya cosa de 1 año y medio o así, el tema es que siendo estos de las primeras versiones que sacaron como podría utilizar el nuevo software simsonn manager para calibrar estos pedales en este, lo instalo pero no me reconoce los pedales y me gustaría calibrarlos en este porque es mas completo que el antiguo, solamente me deja calibrarlos en la versión antigua v4 y me gustaría calibrarlos en la nueva simsonn manager, hay alguna manera de hacer esto? o comprándome solamente la ultima placa controladora de los pedales podría hacerlo aunque estos pedales sean mas antiguos? saludos.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-30T14:17:23Z",
+  "updated_at": "2025-12-31T02:28:37Z",
+  "requester_id": 158008820280,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015290909,
+      "body_text": "Hi Felipe Alarcon,  Only pedals with firmware version 1.7.1 are compatible with SIMSONN Manager 2.1.2. If the software indicates that the firmware is too old, please go to Settings → Update → Manual Firmware Update → pedals-firmware → pedals-plus.sfu to update it. If your pedals are running version 1.7.0, they do not support the latest software. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T02:28:37Z",
+      "updated_at": "2025-12-31T02:28:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

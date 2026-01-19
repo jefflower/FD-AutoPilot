@@ -1,0 +1,134 @@
+{
+  "id": 1296,
+  "subject": "Detection Issues",
+  "description_text": "Hi,\r\n\r\nMy Pro X Ultra pedals are detecting just fine in the Simsonn Manager, but\r\ndo not register in Assetto Corsa Content Manager. Please advise.\r\n\r\nThank you,\r\nJoren Reyes\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-07T09:31:14Z",
+  "updated_at": "2025-10-09T09:03:13Z",
+  "requester_id": 158001920994,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004454986,
+      "body_text": "Hi Joren Reyes,  ​Please press the upgrade button on the control box and reconnect the USB cable. SIMSONN Manager 2.0.8 will enter upgrade mode, and then you can manually proceed with the firmware update.          In the “Settings - Update” section, click “Manual Firmware Update,” then navigate to the pedals-firmware folder → pedals folder → and select the proxultra.sfu file to update. This firmware will disable the 4th axis.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T09:39:23Z",
+      "updated_at": "2025-07-07T09:39:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004455177,
+      "body_text": "Do I press the upgrade button before disconnecting the usb or after?\r\n\r\nOn Mon, Jul 7, 2025 at 2:39 AM service@simsonn.com ",
+      "user_id": 158001920994,
+      "created_at": "2025-07-07T10:18:38Z",
+      "updated_at": "2025-07-07T10:18:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004455249,
+      "body_text": "你好，Joren Reyes，  请断开USB，按住升级按钮，然后重新连接USB。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T10:42:12Z",
+      "updated_at": "2025-07-07T10:42:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004455286,
+      "body_text": "I tried that and the device now shows as “disconnected”. I am also unable\r\nto click “manual update”\r\n\r\nOn Mon, Jul 7, 2025 at 3:42 AM service@simsonn.com ",
+      "user_id": 158001920994,
+      "created_at": "2025-07-07T10:49:10Z",
+      "updated_at": "2025-07-07T10:49:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004455306,
+      "body_text": "Hi Joren Reyes,  I can assist you remotely via Todesk. No registration is needed — just provide your ID and temporary password.      https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T10:51:30Z",
+      "updated_at": "2025-07-07T10:51:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004455342,
+      "body_text": "Jorencreyes@gmail.com\r\nAccess code is 12345\r\n\r\nOn Mon, Jul 7, 2025 at 3:51 AM service@simsonn.com ",
+      "user_id": 158001920994,
+      "created_at": "2025-07-07T11:01:56Z",
+      "updated_at": "2025-07-07T11:01:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004455368,
+      "body_text": "Sorry I cannot log in as I do not have a +86 phone number and the app won’t\r\nlet me change it. The ID and temporary password I gave you was incorrect\r\n\r\n",
+      "user_id": 158001920994,
+      "created_at": "2025-07-07T11:09:28Z",
+      "updated_at": "2025-07-07T11:09:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004455372,
+      "body_text": "Hi Joren Reyes, Do I need to provide this ID and temporary password? ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T11:10:13Z",
+      "updated_at": "2025-07-07T11:10:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004455383,
+      "body_text": "Hi Joren Reyes,  You don't need to log in — just click the close button in the top right corner.      Do I need to provide this ID and temporary password? ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T11:11:29Z",
+      "updated_at": "2025-07-07T11:11:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004455403,
+      "body_text": "341787344\r\nn4dd0xk4\r\n\r\nOn Mon, Jul 7, 2025 at 4:11 AM service@simsonn.com ",
+      "user_id": 158001920994,
+      "created_at": "2025-07-07T11:14:09Z",
+      "updated_at": "2025-07-07T11:14:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010126682,
+      "body_text": "Hi,\r\nI'm having the same issues getting the software to detect the pedals with\r\nmy dad's rig. Can you please help? I can give you remote access like I did\r\nlast time\r\n\r\n\r\n",
+      "user_id": 158001920994,
+      "created_at": "2025-10-09T04:35:29Z",
+      "updated_at": "2025-10-09T04:35:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010135000,
+      "body_text": "Hi Joren Reyes,     Please uninstall the old version from your computer, then reinstall version 2.1.2 and update the firmware. After the update, the device version should display as CPU1: 2.0.5, CPU2: 2.0.3. If the issue still persists, please feel free to contact me.   https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-10-09T09:03:13Z",
+      "updated_at": "2025-10-09T09:03:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

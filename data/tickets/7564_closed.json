@@ -1,0 +1,24 @@
+{
+  "id": 7564,
+  "subject": "",
+  "description_text": "Hi put a quest for cancellation Ssn4429 put now want them you cancel the\r\nquest or will I have to put another order in thanks\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-12-06T12:28:09Z",
+  "updated_at": "2025-12-09T06:24:58Z",
+  "requester_id": 158007668571,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014167197,
+      "body_text": "此工单已关闭并合并到工单 7707 中",
+      "user_id": 158000445778,
+      "created_at": "2025-12-09T06:24:58Z",
+      "updated_at": "2025-12-09T06:24:58Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

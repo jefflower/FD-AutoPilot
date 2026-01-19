@@ -1,0 +1,44 @@
+{
+  "id": 2510,
+  "subject": "Estimated Delivery date for Order #SSN2072",
+  "description_text": "I made the order on 7/20 and don't know when I'll receive my order. Any update?\r\n\r\nThank you,\r\nSebastien\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-09T15:30:06Z",
+  "updated_at": "2025-08-12T08:35:28Z",
+  "requester_id": 158002129528,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006664938,
+      "body_text": "Hi Sebastien Prompt,    Sorry, our warehouse has reported that your package has not been shipped because the white elastic band is out of stock. We can upgrade you to our latest 50HA red elastic band for free or cancel your order. We apologize for any inconvenience this may cause!",
+      "user_id": 158001343601,
+      "created_at": "2025-08-11T02:14:42Z",
+      "updated_at": "2025-08-11T02:14:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006696806,
+      "body_text": "So there's no ETA as to when you'll have them? I'm willing to wait if it's a matter of weeks. Else, please cancel my order.\r\n\r\nThanks,\r\nSebastien\r\n________________________________\r\n",
+      "user_id": 158002129528,
+      "created_at": "2025-08-11T14:16:34Z",
+      "updated_at": "2025-08-11T14:16:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006732347,
+      "body_text": "Hi Sebastien Prompt,      We have refunded you because the white damper may no longer be in production and has been discontinued. We apologize for any inconvenience this may cause you.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-12T08:35:28Z",
+      "updated_at": "2025-08-12T08:35:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

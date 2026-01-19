@@ -1,0 +1,24 @@
+{
+  "id": 651,
+  "subject": "Throttle stuck issue",
+  "description_text": "Hello,\r\n\r\nI have a software issue, my throttle is in the fully back position (no\r\npressure on it) and in the simsonn software I am at 45% throttle.\r\n\r\n[image: {B8D89423-6D1F-4A07-9645-02926D02EE25}.png]\r\n\r\nPlease help, I have tried unplugging the USB as well as the controller with\r\nnothing working.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-06-20T17:56:26Z",
+  "updated_at": "2025-06-21T16:03:10Z",
+  "requester_id": 158001691091,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003677620,
+      "body_text": "Hi Nick,  Which version of the pedal are you using? Once confirmed, I’ll provide you with the appropriate solution. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-21T16:03:10Z",
+      "updated_at": "2025-06-21T16:03:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

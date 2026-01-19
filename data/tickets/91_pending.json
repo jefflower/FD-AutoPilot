@@ -1,0 +1,44 @@
+{
+  "id": 91,
+  "subject": "Incompatibilidade de software",
+  "description_text": "Olá, tudo bem Tenho um conjunto Simpson Pro a aproximadamente um ano, porém após efetuar a troca do computador, o aplicativo de calibração não mais reconhece os pedais. Eles aparecem nas conexões dos computador, porém aparecem com desconectados no aplicativo de calibração. Já tentei com o Free Joy, mas parece como incompatibilidade de firmware. O que pode ser feito para resolver esse problema? Fico no aguardo. Obrigado.",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-03T23:46:15Z",
+  "updated_at": "2025-06-04T12:40:21Z",
+  "requester_id": 158000956096,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002322259,
+      "body_text": "Hi Diogo Cerqueira dos Santos,  Could you please provide a screenshot of the software when the device is not recognized? We can assist in checking the issue based on the screenshot. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-04T03:19:32Z",
+      "updated_at": "2025-06-04T03:19:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002350189,
+      "body_text": "Em 4 de jun. de 2025 00:19, service@simsonn.com escreveu: \r\n \r\n Hi Diogo Cerqueira dos Santos, Could you please provide a screenshot of the software when the device is not recognized? We can assist in checking the issue based on the screenshot. \r\n \r\n \r\n \r\n \r\n Ativado\r\n Tue, 3 Jun às 7:46 PM\r\n , Diogo Cerqueira dos Santos <diogo_csantos@outlook.com> escreveu:\r\n Olá, tudo bem \r\n Tenho um conjunto Simpson Pro a aproximadamente um ano, porém após efetuar a troca do computador, o aplicativo de calibração não mais reconhece os pedais. Eles aparecem nas conexões dos computador, porém aparecem com desconectados no aplicativo de calibração. Já tentei com o Free Joy, mas parece como incompatibilidade de firmware. \r\n O que pode ser feito para resolver esse problema? \r\n \r\n Fico no aguardo. \r\n \r\n Obrigado. \r\n \r\n\r\n\r\n \r\n \r\n \r\n \r\n\r\n\r\n \r\n\r\n\r\n\r\n\r\n\r\n\r\n91:4206036\r\n\r\n",
+      "user_id": 158000956096,
+      "created_at": "2025-06-04T09:16:03Z",
+      "updated_at": "2025-06-04T09:16:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002400603,
+      "body_text": "Hi Diogo Cerqueira dos Santos,  It requires Freejoy version 1.7.0, as version 1.7.1 is not compatible. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-04T12:40:21Z",
+      "updated_at": "2025-06-04T12:40:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": 5496,
+  "subject": "Missing haptics.",
+  "description_text": "\r\nGood afternoon,\r\nI recently ordered the newest simsonn pro x ultra pedals with haptics and rgb feedback.\r\nThe pedals have just arrived however they do not have any haptics with them.\r\nPlease could you help me to sort this discrepancy out?\r\nKindest regards\r\nRichard Oldcorn.\r\nSent from Outlook for iOS<https://aka.ms/o0ukef>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-31T15:31:00Z",
+  "updated_at": "2025-11-03T08:02:52Z",
+  "requester_id": 158006239606,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011603372,
+      "body_text": "Hi Richard Oldcorn,  Please provide your order number, and I’ll check whether the items were shipped separately. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-02T01:51:32Z",
+      "updated_at": "2025-11-02T01:51:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011604758,
+      "body_text": "Good morning,\r\nMy order number is #SSN3097\r\nThankyou for getting back to me, however I’ve figured it out now, on my original email from simsonn, it gave two tracking numbers which I hadn’t noticed originally.\r\nMy second package is  currently in a distribution centre in London .\r\nI’m sorry for any inconvenience on your end.\r\nKindest regards\r\nRichard.\r\n\r\nSent from Outlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158006239606,
+      "created_at": "2025-11-02T04:38:25Z",
+      "updated_at": "2025-11-02T04:38:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011646284,
+      "body_text": "Hi Richard Oldcorn,    We apologize for any confusion this may have caused. Thank you for letting us know. Have fun!",
+      "user_id": 158001343601,
+      "created_at": "2025-11-03T08:02:51Z",
+      "updated_at": "2025-11-03T08:02:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

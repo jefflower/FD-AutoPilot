@@ -1,0 +1,125 @@
+{
+  "id": 1269,
+  "subject": "问题",
+  "description_text": "你好..\n\n我买了一套新的Simsonn Pro x 踏板，在simwelten.de订购的。\n我还从Simsonn（直接从Simsonn）订购了VAM的Reactor套件：\n\n问题：如果我将VAM套件的电源插入控制盒，Heel Plate的LED就会开始闪烁。\n当我点击Simsonn Manager软件中的振动功能时，VAM电机没有任何反应。\n\n其次：在Simsonn Manager中，它总是显示更新到Simsonn Pro x 2.0.0。我做了2到3次，它完成了。下次我启动它时，它又要求我进行更新：\n\n我认为控制盒有问题。因为VAM不工作，而且有这种奇怪的更新行为。\n如果你需要更多信息，请告诉我。\n\n此致\n\nMatthias Lang\nMartin-kink-str. 5\nAustria-6890 Lustenau",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-07-06T11:49:57Z",
+  "updated_at": "2025-07-29T15:46:35Z",
+  "requester_id": 158001907277,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004452965,
+      "body_text": "你好，Matthias. Lang，请按ProX控制盒上的升级按钮，然后重新连接USB线。这将使控制器进入恢复模式。打开SIMSONN Manager 2.0.8，导航到：设置 → 更新 → 手动固件更新 → 踏板 → 固件 → pedals → prox.sfu 以手动更新ProX固件。更新后，请再次测试电机。我们还建议下载并使用SimHub 9.9.3版本以获得最佳兼容性。那个更新提示有一个小错误——你不需要点击它。请忽略它。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T03:42:08Z",
+      "updated_at": "2025-07-07T03:42:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004454460,
+      "body_text": "我按照你的描述做了..\n\n更新成功..设备现在也在simhub中..但仍然没有触觉反应（我在simsonn manager中尝试了振动功能，也在simhub中尝试了测试通道）\n\n如果我将VAM套装中包含的电源插入控制盒，Heel Plate LED就会开始奇怪地闪烁，所以这里有些问题..\n\n此致\nMatthias",
+      "user_id": 158001907277,
+      "created_at": "2025-07-07T08:18:41Z",
+      "updated_at": "2025-07-07T08:18:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004472519,
+      "body_text": "你看到了我的回复..\n\n我做了你写的一切..但触觉仍然不工作..什么都没有..！",
+      "user_id": 158001907277,
+      "created_at": "2025-07-08T11:30:17Z",
+      "updated_at": "2025-07-08T11:30:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004476247,
+      "body_text": "你好，Matthias. Lang，请安装Todesk工具。无需注册——只需提供ID和临时密码，我将远程协助你。https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-07-08T14:39:46Z",
+      "updated_at": "2025-07-08T14:39:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004478724,
+      "body_text": "你好，Matthias. Lang，当你点击反馈设置中的“振动”时，是没有发生振动，还是进入游戏后基于遥测的振动不起作用？",
+      "user_id": 158000445778,
+      "created_at": "2025-07-08T15:06:31Z",
+      "updated_at": "2025-07-08T15:06:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004481285,
+      "body_text": "如果我点击振动按钮..或simhub中的测试按钮..\n\n它什么都不做..症状：如果我将电源插入控制盒，Heel Plate的LED就会开始奇怪地闪烁..\n\n所有电机都已插入..但如果我使用振动按钮或simhub中的测试按钮，什么都没有发生..\n\n在游戏（ACC）中也没有\n\n我不是傻瓜，我用的是Conspit cpp lite2踏板作为方向盘..在那里所有东西都在Conspit软件和simhub中工作..\nSimsonn..完全没有触觉反应，无论我做什么！",
+      "user_id": 158001907277,
+      "created_at": "2025-07-08T18:38:24Z",
+      "updated_at": "2025-07-08T18:38:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004483589,
+      "body_text": "你好，Matthias. Lang，请安装Todesk，我将远程为你检查。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-08T22:03:23Z",
+      "updated_at": "2025-07-08T22:03:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004486229,
+      "body_text": "你好，Matthias. Lang，我还没有收到你的回复。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-09T06:19:40Z",
+      "updated_at": "2025-07-09T06:19:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005207029,
+      "body_text": "你好..\n\n我下载了工具..那么你什么时候可以检查..\n我们找个时间窗口..\n老实说，我不会安装一个中国间谍软件，然后等着有人连接到我的电脑..\n所以我们可以开一个Teams会议或其他什么，然后我们可以进行远程会话进行检查..\n\n请告诉我..\n\n此致\nMatthias",
+      "user_id": 158001907277,
+      "created_at": "2025-07-19T22:39:58Z",
+      "updated_at": "2025-07-19T22:39:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005211526,
+      "body_text": "你好，Matthias. Lang，你几个小时后有空吗？我可以调整我的日程来配合你的时间。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-20T00:22:01Z",
+      "updated_at": "2025-07-20T00:22:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005737489,
+      "body_text": "嘿..\n\n抱歉回复晚了..\n在上次固件更新后，触觉电机正在工作..\n\n此致，Matthias",
+      "user_id": 158001907277,
+      "created_at": "2025-07-28T13:47:01Z",
+      "updated_at": "2025-07-28T13:47:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

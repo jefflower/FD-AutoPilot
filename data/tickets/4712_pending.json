@@ -1,0 +1,44 @@
+{
+  "id": 4712,
+  "subject": "Bestellungsnummer #SSN2852",
+  "description_text": "Guten Tag,\r\n\r\nEs geht um meine Bestellung, die die Pro X Ultra-P3-H3 und eine Baseplate\r\nbeinhaltet. In dem Paket das ich erhalten habe war nur das Pro X\r\nUltra-P3-H3. Die Baseplate scheint darin zu fehlen, daher wollte ich fragen\r\nob diese noch geliefert wird oder ob sie vergessen wurde.\r\n\r\nMit freundlichen Grüßen\r\nArtjom Stoll\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-10T12:41:22Z",
+  "updated_at": "2025-10-14T06:40:00Z",
+  "requester_id": 158005543748,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010262740,
+      "body_text": "Hi Artjom Stoll,    We apologize for the inconvenience. Our Pro X Ultra baseplate is currently out of stock at our German warehouse, so we have sent you the pedal first. We can ship your baseplate via UPS, but customs duties may apply. Alternatively, we can ship it once the German warehouse restocks in next two days. ",
+      "user_id": 158001343601,
+      "created_at": "2025-10-11T09:41:30Z",
+      "updated_at": "2025-10-11T09:41:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010287193,
+      "body_text": "Guten Tag,\r\n\r\nNein Lieferung in den nächsten 2 Tagen passt schon vielen Dank.\r\n\r\nMit freundlichen Grüßen\r\nArtjom Stoll\r\n\r\nservice@simsonn.com ",
+      "user_id": 158005543748,
+      "created_at": "2025-10-11T15:45:18Z",
+      "updated_at": "2025-10-11T15:45:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010386874,
+      "body_text": "Hi Artjom Stoll,    We sincerely apologise, but our warehouse requires until today to complete the product listing. We shall dispatch your order today.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-14T06:39:59Z",
+      "updated_at": "2025-10-14T06:39:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

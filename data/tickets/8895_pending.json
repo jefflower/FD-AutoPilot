@@ -1,0 +1,94 @@
+{
+  "id": 8895,
+  "subject": "Vam haptics",
+  "description_text": "Hey I have recently purchased a set of Vam haptics from you guys I set them up on my rig. I’ve had them for a week and they have been fine until today I was going around track when I noticed that they were no longer working. I stopped my practice session to see if they were connected and simhub said they were but I wwws only getting feedback from one pedal (throttle) to exact . What can I do I enjoy your product so much I can’t see myself without them \r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-22T13:37:32Z",
+  "updated_at": "2025-12-31T10:57:03Z",
+  "requester_id": 158008305026,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014882995,
+      "body_text": "Hi Travis Payne,  Please provide your order information and confirm whether your VAM motor is operating in VAM mode or VAM Pro mode. Also, please avoid using continuous telemetry vibration, such as RPM or speed feedback. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-22T13:41:10Z",
+      "updated_at": "2025-12-22T13:41:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014886838,
+      "body_text": "ORDER #SSN4443",
+      "user_id": 158008305026,
+      "created_at": "2025-12-22T14:50:08Z",
+      "updated_at": "2025-12-22T14:50:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158014948864,
+      "body_text": "Hi Travis Payne,    Are the VAM units on your brake and clutch also not working? You can try swapping them with the throttle VAM to check whether the issue is with the controller or the VAM itself. Also, please confirm whether you are using VAM mode or VAM Pro mode, as using VAM Pro mode may damage the motors.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-23T00:37:55Z",
+      "updated_at": "2025-12-23T00:37:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014948890,
+      "body_text": "No, they are not.\r\n\r\nOn Mon, Dec 22, 2025 at 6:38 PM support@simsonn.com ",
+      "user_id": 158008305026,
+      "created_at": "2025-12-23T00:38:55Z",
+      "updated_at": "2025-12-23T00:38:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014967902,
+      "body_text": "I was using them in vam mode and there isn’t a issue with the controller is\r\nthe 2 vams themselves the controller is good and the throttle vam works in\r\neach port on the controller\r\n\r\n\r\n",
+      "user_id": 158008305026,
+      "created_at": "2025-12-23T10:23:21Z",
+      "updated_at": "2025-12-23T10:23:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015020504,
+      "body_text": "Hi Travis Payne,  Please provide your order number, contact person, phone number, and shipping address. We will send you 2 replacement VAM motors. Please also note that the VAM motors should not be used in VAM Pro mode. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-24T06:03:22Z",
+      "updated_at": "2025-12-24T06:03:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015023979,
+      "body_text": "Thank you, , I understand that I shouldn’t run them in Vam Pro mode . I’ve\r\nuse them with sim hub is there any parameters You guys can send me so\r\nnothing breaks or if it’s put together right\r\nWith the right inputs\r\nMy order number was SSN4443 , MY NAME IS Travis Payne , 3143659286\r\n3913 San Francisco ct . St.louis ,Mo 63115\r\n\r\nOn Wed, Dec 24, 2025 at 12:03 AM support@simsonn.com ",
+      "user_id": 158008305026,
+      "created_at": "2025-12-24T06:39:05Z",
+      "updated_at": "2025-12-24T06:39:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015308136,
+      "body_text": "Hi Travis Payne,    I apologize for not getting back to you sooner. Here is your replacement link.  https://t.17track.net/en#nums=JSELA3119641525YQ          Happy New Year!",
+      "user_id": 158001343601,
+      "created_at": "2025-12-31T10:57:03Z",
+      "updated_at": "2025-12-31T10:57:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

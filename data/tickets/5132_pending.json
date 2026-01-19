@@ -1,0 +1,334 @@
+{
+  "id": 5132,
+  "subject": "Throttle pedal malfunction",
+  "description_text": "Good afternoon,\r\n\r\nI am reaching out to report another issue with my throttle. I was sent a replacement for a broken part on my first throttle pedal. I installed the new one and it was running good for a while. But for the last few weeks now, the throttle has been sticking. It’s not the actual pedal but the sensor that sticks every so often. It’ll happen in the middle of a race and when I release the throttle pedal, the sensor maintains 100% throttle for 2-3 seconds before cutting off. It’s very frustrating as it has ruined several races now. Are there any know fixes to this issue? I’ve inspected the pedal and didn’t find any physical malfunctions. \r\n\r\nThanks, \r\n\r\n\r\n \r\n\r\n\r\n\r\n \r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-21T12:27:53Z",
+  "updated_at": "2025-10-22T02:51:33Z",
+  "requester_id": 158001830449,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004038673,
+      "body_text": "Hi Michaelaliffi,    In the “Settings - Update” section, click “Manual Firmware Update,” then navigate to the pedals-firmware folder → pedals folder → and select the proxultra.sfu file to update. This firmware will disable the 4th axis.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-26T23:41:28Z",
+      "updated_at": "2025-06-26T23:41:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004077791,
+      "body_text": "I've completed these steps, and the throttle pedal is still not responding.\r\nNothing happens when trying to calibrate and the same issue is still\r\noccurring.\r\n\r\nOn Thu, Jun 26, 2025 at 7:41 PM support@simsonn.com ",
+      "user_id": 158001830449,
+      "created_at": "2025-06-27T01:27:31Z",
+      "updated_at": "2025-06-27T01:27:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004100917,
+      "body_text": "I’ve got the thrills pedal working now. But it has a ton of travel. Not physical, but the sensor doesn’t pick up any throttle until the pedal is fully depressed. I’ve tried recalibrating the pedal with no success. Any advice on how to remedy this issue? ",
+      "user_id": 158001830449,
+      "created_at": "2025-06-27T02:40:08Z",
+      "updated_at": "2025-06-27T02:40:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004101152,
+      "body_text": "Hi Michaelaliffi,  Please click the “offset” function at the top right corner of the SIMSONN MANAGER software to reset the pedals to zero. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-27T04:10:05Z",
+      "updated_at": "2025-06-27T04:10:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004101164,
+      "body_text": "I have done that and still cannot get the pedal to function properly. These\r\nare the offset values that I receive.\r\n[image: image.png]\r\n\r\nthis is what it looks like when i have the pedal fully depressed.\r\n[image: image.png]\r\n The pedal is still not registering any movement until it has been\r\ndepressed nearly fully.\r\n\r\nOn Fri, Jun 27, 2025 at 12:10 AM support@simsonn.com ",
+      "user_id": 158001830449,
+      "created_at": "2025-06-27T04:15:20Z",
+      "updated_at": "2025-06-27T04:15:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004207335,
+      "body_text": "Hi Michaelaliffi,  Were all the pedals properly connected when you performed the offset calibration? ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-27T11:22:40Z",
+      "updated_at": "2025-06-27T11:22:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004207800,
+      "body_text": "Hi Michaelaliffi,  Shall we schedule a time for you to install Todesk? It doesn’t require registration — just provide the ID and temporary password, and I can remotely assist you in checking the issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-27T11:23:22Z",
+      "updated_at": "2025-06-27T11:23:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004213971,
+      "body_text": "Yes please, any assistance you can provide would be great. I spent 9 hours trying to get this to work yesterday. I will download todesk now. Michael Aliffi | Asset Protection Analyst RaceTrac, Inc. | o. 770.431.7600 x1154 | c.346.235.9733 | racetrac.com 200 Galleria Parkway SE, Suite 900, Atlanta, GA 30339 ",
+      "user_id": 158001830449,
+      "created_at": "2025-06-27T12:19:29Z",
+      "updated_at": "2025-06-27T12:19:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004214940,
+      "body_text": "Hi Michaelaliffi, Hello, is it convenient for a remote session now? ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-27T14:53:46Z",
+      "updated_at": "2025-06-27T14:53:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004215373,
+      "body_text": "I have time now, yes \r\n\r\nMichael Aliffi | Asset Protection Analyst\r\nRaceTrac, Inc. | o. 770.431.7600 x1154 | c.346.235.9733 | racetrac.com\r\n200 Galleria Parkway SE, Suite 900, Atlanta, GA 30339\r\n \r\n\r\n> ",
+      "user_id": 158001830449,
+      "created_at": "2025-06-27T15:35:55Z",
+      "updated_at": "2025-06-27T15:35:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004218322,
+      "body_text": "Can we please schedule a time for a remote session? I cannot get the pedal to work properly. I’m hoping you can fix it instead of having to exchange it.\r\n \r\n\r\n> ",
+      "user_id": 158001830449,
+      "created_at": "2025-06-27T22:40:26Z",
+      "updated_at": "2025-06-27T22:40:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004218390,
+      "body_text": "Hi Michaelaliffi, Hello, is it convenient for a remote session now? ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-27T22:58:08Z",
+      "updated_at": "2025-06-27T22:58:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004218409,
+      "body_text": "Yes, now is fine. Please advise what you need me to do.\r\n\r\nMichael Aliffi | Asset Protection Analyst\r\nRaceTrac, Inc. | o. 770.431.7600 x1154 | c.346.235.9733 | racetrac.com\r\n200 Galleria Parkway SE, Suite 900, Atlanta, GA 30339\r\n \r\n\r\n> ",
+      "user_id": 158001830449,
+      "created_at": "2025-06-27T23:04:19Z",
+      "updated_at": "2025-06-27T23:04:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004218437,
+      "body_text": "I have todesk installed, I’m ready when you are.\r\n\r\n\r\n\r\n \r\n\r\n> ",
+      "user_id": 158001830449,
+      "created_at": "2025-06-27T23:17:44Z",
+      "updated_at": "2025-06-27T23:17:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004218442,
+      "body_text": "Hi Michaelaliffi,  Ok",
+      "user_id": 158000445778,
+      "created_at": "2025-06-27T23:19:12Z",
+      "updated_at": "2025-06-27T23:19:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004218457,
+      "body_text": "Hi Michaelaliffi,  I can't see the image properly—it isn't displaying correctly. Could you please send me the ID and temporary verification code again? I just got up and can help you remotely now. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-27T23:24:47Z",
+      "updated_at": "2025-06-27T23:24:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004218462,
+      "body_text": "[image: image.png]\r\n\r\nOn Fri, Jun 27, 2025 at 7:24 PM support@simsonn.com ",
+      "user_id": 158001830449,
+      "created_at": "2025-06-27T23:26:25Z",
+      "updated_at": "2025-06-27T23:26:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004218517,
+      "body_text": "Hi Michaelaliffi,  Press the spring down by hand and slide it into place—that's all you need to do. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-27T23:47:43Z",
+      "updated_at": "2025-06-27T23:47:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004469930,
+      "body_text": "Good evening, The spring continues to pop out of place. I’ve also ran into the added issue now to at the throttle is always recoding input. I cannot adjust the dead zone enough to compensate so there is a constant 3-5% input in the throttle. I’ve tried every solution I can think of to fix it with no success. I must admit this has not been a great experience. I really want to like these pedals but it’s been tough getting everything working correctly. Is the replacement part on the way for the throttle pedal? Or do I just need a new pedal at this point? Michael Aliffi | Asset Protection Analyst RaceTrac, Inc. | o. 770.431.7600 x1154 | c.346.235.9733 | racetrac.com 200 Galleria Parkway SE, Suite 900, Atlanta, GA 30339 ",
+      "user_id": 158001830449,
+      "created_at": "2025-07-08T02:20:18Z",
+      "updated_at": "2025-07-08T02:20:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004469961,
+      "body_text": "Now a new issue, I received the haptic motors today and got them installed. As soon as I turned the system back on and went to test the motors, both pedals cut off. Now nothing will power on anymore and the entire system is dead. Michael Aliffi | Asset Protection Analyst RaceTrac, Inc. | o. 770.431.7600 x1154 | c.346.235.9733 | racetrac.com 200 Galleria Parkway SE, Suite 900, Atlanta, GA 30339 ",
+      "user_id": 158001830449,
+      "created_at": "2025-07-08T02:29:13Z",
+      "updated_at": "2025-07-08T02:29:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004469972,
+      "body_text": "The control box sparks when I plug it into the dc power outlet and nothing is receiving power. Michael Aliffi | Asset Protection Analyst RaceTrac, Inc. | o. 770.431.7600 x1154 | c.346.235.9733 | racetrac.com 200 Galleria Parkway SE, Suite 900, Atlanta, GA 30339 ",
+      "user_id": 158001830449,
+      "created_at": "2025-07-08T02:31:14Z",
+      "updated_at": "2025-07-08T02:31:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004486203,
+      "body_text": "你好，Michaelaliffi，  我们可以安排一个时间帮您安装 Todesk 吗？无需注册——只需提供 ID 和临时密码，我就可以远程协助您检查问题。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-09T06:07:11Z",
+      "updated_at": "2025-07-09T06:07:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004488290,
+      "body_text": "I don’t know what that says…. Michael Aliffi | Asset Protection Analyst RaceTrac, Inc. | o. 770.431.7600 x1154 | c.346.235.9733 | racetrac.com 200 Galleria Parkway SE, Suite 900, Atlanta, GA 30339 ",
+      "user_id": 158001830449,
+      "created_at": "2025-07-09T12:02:30Z",
+      "updated_at": "2025-07-09T12:02:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004488422,
+      "body_text": "Hi Michaelaliffi,    Please provide your shipping address and phone number, and I will arrange for a new control box to be shipped to you tomorrow!",
+      "user_id": 158000445778,
+      "created_at": "2025-07-09T12:23:31Z",
+      "updated_at": "2025-07-09T12:23:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004488465,
+      "body_text": "Hi Michaelaliffi,    Without connecting the VAM and DC power supply, if you plug in only the USB, is the pedal recognized successfully?",
+      "user_id": 158000445778,
+      "created_at": "2025-07-09T12:29:22Z",
+      "updated_at": "2025-07-09T12:29:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004488504,
+      "body_text": "Hi Michaelaliffi,    I’m an engineer on this side, and if you’re able to use Todesk for remote support, I can likely resolve your issue very quickly.  If remote assistance isn’t possible, I can also arrange to ship you a replacement part to help you get everything working again as soon as possible.  Due to the time zone difference, it’s sometimes hard to coordinate our schedules, which may have caused delays — I sincerely apologize for that.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-09T12:33:55Z",
+      "updated_at": "2025-07-09T12:33:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004488637,
+      "body_text": "I have to desk installed from the last time. But the issue is already known in terms of the throttle. It’s because the spring retention plate is arrived broken. A new part was supposed to be sent out last week. In terms of the control box, I’ve already ordered a new one to see if that’ll fix the issue with the power. Remote access wouldn’t help right now as none of the pedals are able to be powered on at all. \r\n\r\nMichael Aliffi | Asset Protection Analyst\r\nRaceTrac, Inc. | o. 770.431.7600 x1154 | c.346.235.9733 | racetrac.com\r\n200 Galleria Parkway SE, Suite 900, Atlanta, GA 30339\r\n \r\n\r\n> ",
+      "user_id": 158001830449,
+      "created_at": "2025-07-09T12:54:04Z",
+      "updated_at": "2025-07-09T12:54:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004488641,
+      "body_text": "No it is not, none of the pedals will power on at all. I’ve already ordered a new control box.\r\n\r\nMichael Aliffi | Asset Protection Analyst\r\nRaceTrac, Inc. | o. 770.431.7600 x1154 | c.346.235.9733 | racetrac.com\r\n200 Galleria Parkway SE, Suite 900, Atlanta, GA 30339\r\n \r\n\r\n> ",
+      "user_id": 158001830449,
+      "created_at": "2025-07-09T12:54:44Z",
+      "updated_at": "2025-07-09T12:54:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010707888,
+      "body_text": "Good afternoon,\r\n\r\nI am reaching out to report another issue with my throttle. I was sent a replacement for a broken part on my first throttle pedal. I installed the new one and it was running good for a while. But for the last few weeks now, the throttle has been sticking. It’s not the actual pedal but the sensor that sticks every so often. It’ll happen in the middle of a race and when I release the throttle pedal, the sensor maintains 100% throttle for 2-3 seconds before cutting off. It’s very frustrating as it has ruined several races now. Are there any know fixes to this issue? I’ve inspected the pedal and didn’t find any physical malfunctions. \r\n\r\nThanks, \r\n\r\n\r\n \r\n\r\n> ",
+      "user_id": 158001830449,
+      "created_at": "2025-10-19T15:44:00Z",
+      "updated_at": "2025-10-19T15:44:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010842024,
+      "body_text": "ID 为 885 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-22T02:48:58Z",
+      "updated_at": "2025-10-22T02:48:58Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158010842025,
+      "body_text": "合并来自工单885  \n      主题: Fwd: Simsonn pro x ultra troubleshoot  \n      描述:       \n  ﻿  \n \n Hi Simsonn, \n \n \n \n \nI’m experiencing a serious issue with my Pro X Ultra pedals. The throttle signal flickers/jumps erratically in DIView, Windows, and iRacing — even when the throttle pedal cable is completely unplugged.\n \n \n \n \n \nWhat I’ve tested:\n \n \n \n \n \n \nDifferent USB ports\n \n \nSwapped cables between the brake and throttle\n \n \nConfirmed brake works fine\n \n \nTried calibration and firmware software\n \n \nThrottle input flickers in DIView even with no cable connected\n \n \n \n \n \n \n \n \n \nThere’s no visible serial number on the unit, and it doesn’t show in the Simsonn software. \n \n Order number: SSN1791 \n Date of purchase: 06-18-2025 (june 18th) \n Purchased through simsonn website. \n   \n Attached is a video of what the USB controller is showing, both with and without pedals plugged in. \n   \n \nThanks,\n \n \nMichael Aliffi",
+      "user_id": 158000445778,
+      "created_at": "2025-10-22T02:48:58Z",
+      "updated_at": "2025-10-22T02:48:58Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158010842097,
+      "body_text": "Hi Michaelaliffi,     Please try the following steps:    Go to Settings → Update and update to the latest version of SIMSONN Manager 2.1.2;    After the update, restart the software, then update your pedal firmware;    Confirm that the firmware versions are CPU1: 2.0.5 / CPU2: 2.0.4;    Test again to see if the issue persists.    If the problem remains, we can send you a new throttle sensor for replacement.        https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-10-22T02:51:33Z",
+      "updated_at": "2025-10-22T02:51:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

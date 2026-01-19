@@ -1,0 +1,35 @@
+{
+  "id": 11086,
+  "subject": "France",
+  "description_text": "Hello, I'm trying to order your PLUS X P3-H3 pedalboard from Amazon, but they seem to be blocking the order. I can only order through Amazon because I have gift vouchers that I need to use.",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-16T14:29:04Z",
+  "updated_at": "2026-01-17T07:41:37Z",
+  "requester_id": 158009300525,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017318670,
+      "body_text": "Hi Aureltouch orl, You can try buying the P2-H2 first, then buying the clutch separately.",
+      "user_id": 158007774607,
+      "created_at": "2026-01-17T07:38:27Z",
+      "updated_at": "2026-01-17T07:38:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017318697,
+      "body_text": "I can't find the clutch on Amazon.",
+      "user_id": 158009300525,
+      "created_at": "2026-01-17T07:40:49Z",
+      "updated_at": "2026-01-17T07:40:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

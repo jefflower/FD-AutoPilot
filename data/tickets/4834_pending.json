@@ -1,0 +1,54 @@
+{
+  "id": 4834,
+  "subject": "Issue with brake load cell",
+  "description_text": "I have a issue with de brake load cell when calibrating, is there a way to got a new load cell for the brake only?\r\n\r\nSee the video for the issue when calibrating\r\n\r\n\r\n\r\n\r\nThanks you for your reply\r\n\r\n\r\n\r\n\r\nEnvoyé de mon iPhone\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-10-13T20:25:06Z",
+  "updated_at": "2025-10-22T03:39:27Z",
+  "requester_id": 158005655109,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010535179,
+      "body_text": "Hi Samuel Morin,    Please first check the version number shown at the bottom left of the software. If it is 1.7.1, we recommend updating to the latest version SIMSONN Manager 2.1.2. Please follow the steps below to perform the update.   After connecting the device, if you see a message saying “Version too old, not supported” or Simsonn Flasher mode, go to Settings → Update → Manual Firmware Update → pedals-firmware-plus.sfu to update the firmware. Once the update is complete, make sure to recalibrate the pedals, as they will not function properly in games without calibration.           https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-10-16T05:58:49Z",
+      "updated_at": "2025-10-16T05:58:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010581554,
+      "body_text": "Hi,     I have install de lastest version of your software, Simsonn Manager 2.1.2 .     I still got the same probleme, the loadcell is not accurate on high value. As i press harder the value got down, when i release the pedal the value go up before going down. It seem to be a probleme with the load cell…     I got the Simsonn Plus V1.8.0     I already unplug and clean all the usb and rj12 connector with dust cleaner, nothing change…     All the wire are in good condition…     I have put a video to show you what happening",
+      "user_id": 158005655109,
+      "created_at": "2025-10-16T20:13:57Z",
+      "updated_at": "2025-10-16T20:13:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010589388,
+      "body_text": "Hi Samuel Morin,     Please provide your order number and purchase date, so we can check your order details and offer you an appropriate solution.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-17T02:02:18Z",
+      "updated_at": "2025-10-17T02:02:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010607519,
+      "body_text": "Hi,     I put the invoce in the attachment      My purchase date is 22 july 2024     The order number :   702-3078208-2464253",
+      "user_id": 158005655109,
+      "created_at": "2025-10-17T08:54:51Z",
+      "updated_at": "2025-10-17T08:54:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    }
+  ]
+}

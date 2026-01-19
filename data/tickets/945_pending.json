@@ -1,0 +1,24 @@
+{
+  "id": 945,
+  "subject": "Control Box Issues",
+  "description_text": "Recently ordered the Pro X Ultra pedals and they seem to be working fine.\r\nHowever, the control box appears to have an issue. I only have the 3 pedals\r\nconnected but input 4 is continuously being depressed. See attached clip of\r\nonly the control box connected to the PC. Pedals are disconnected but get\r\nthe same results with them connected. .\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-28T04:42:49Z",
+  "updated_at": "2025-06-28T05:40:13Z",
+  "requester_id": 158001834764,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004219129,
+      "body_text": "Hi Alkoholism,  In the “Settings - Update” section, click “Manual Firmware Update,” then navigate to the pedals-firmware folder → pedals folder → and select the proxultra.sfu file to update. This firmware will disable the 4th axis. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-28T05:40:13Z",
+      "updated_at": "2025-06-28T05:40:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

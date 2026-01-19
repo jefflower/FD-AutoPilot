@@ -1,0 +1,24 @@
+{
+  "id": 8336,
+  "subject": "Simsonn Plus X pedals – throttle axis mapped to X (HID conflict with wheel)",
+  "description_text": "Hello Simsonn Support Team,\r\n\r\nI am writing regarding an issue with my *Simsonn Plus X pedals*,\r\nconnected *directly\r\nvia USB to the PC*.\r\n\r\nAfter extensive troubleshooting, including a *fresh Windows reinstall*, the\r\nproblem persists, which indicates a *firmware / HID descriptor issue* on\r\nthe pedal side.\r\n\r\n*Problem description:*\r\n\r\n   -\r\n\r\n   The *throttle pedal is exported on the X axis* at the HID level.\r\n   -\r\n\r\n   My wheelbase (Moza R5) also uses the X axis for steering.\r\n   -\r\n\r\n   As a result, Windows merges both inputs into *X+*.\r\n   -\r\n\r\n   This is confirmed using *DIView* (raw HID viewer).\r\n   -\r\n\r\n   In the Simsonn software, *no axis assignment or HID mode options are\r\n   available*, and no axes are visible for reassignment.\r\n\r\n*Key observations:*\r\n\r\n   -\r\n\r\n   Clean Windows installation → same behavior\r\n   -\r\n\r\n   Devices connected individually (no USB hub)\r\n   -\r\n\r\n   Brake pedal exports on a separate axis correctly\r\n   -\r\n\r\n   Throttle + steering share X axis at HID level\r\n   -\r\n\r\n   This makes the pedals unusable with a separate wheelbase\r\n\r\n*Request:*\r\nCould you please:\r\n\r\n   1.\r\n\r\n   Provide the *latest firmware* that exports the throttle on a *Z / Slider\r\n   axis* (independent USB HID axes), or\r\n   2.\r\n\r\n   Confirm whether my *controller box is faulty* and advise on a *replacement\r\n   (RMA)*, or\r\n   3.\r\n\r\n   Confirm if this Plus X unit is limited to a legacy HID profile.\r\n\r\nI am happy to provide:\r\n\r\n   -\r\n\r\n   DIView screenshots\r\n   -\r\n\r\n   Firmware version\r\n   -\r\n\r\n   Order details and serial number\r\n\r\nThank you for your support. I look forward to your guidance on how to\r\nresolve this.\r\n\r\n\r\n-- \r\nAdrian Șuță\r\n673113065\r\nsuta.adrian92@gmail.com\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-15T19:13:31Z",
+  "updated_at": "2025-12-17T03:37:41Z",
+  "requester_id": 158007822892,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014611862,
+      "body_text": "Hi Adrian Șuţă,  Launch the latest version of SIMSONN Manager 2.1.2. On the “Plus X” control unit, press and hold the “Upgrade” button. While holding the button, unplug the USB cable from the PC and then plug it back in. The software should detect the device entering “SIMSONN Flasher update mode”. In the software go to: Settings → Update → Manual Firmware Update. In the file selector choose: pedals‑firmware → pedals‑plusx.sfu. Click “Start Update” and wait until the firmware is completely written. During this process do not disconnect the USB or close the application. Once the update is finished (you’ll get a success prompt or the unit will reboot), unplug and re‑plug the USB then test the pedal device to confirm everything works correctly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T03:37:41Z",
+      "updated_at": "2025-12-17T03:37:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

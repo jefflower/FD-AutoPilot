@@ -1,0 +1,24 @@
+{
+  "id": 1606,
+  "subject": "Enquiry about part",
+  "description_text": "Hi\r\n\r\nWe received this green cord with the pedals. However we can't locate any information on how to use it. In the manual, links or even online.\r\n\r\nCan you please send us some information on how to use the green wire thankyou\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-16T15:18:27Z",
+  "updated_at": "2025-07-16T23:18:09Z",
+  "requester_id": 158002158178,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005036928,
+      "body_text": "Hi Melody Giitara Arreola,     Please connect one end of the green shielding wire to a copper standoff or screw on the control box, and the other end to any metal screw on the pedal. This grounding setup is especially recommended when using a Fanatec base, as it significantly improves anti-interference performance and system stability. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T23:18:09Z",
+      "updated_at": "2025-07-16T23:18:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

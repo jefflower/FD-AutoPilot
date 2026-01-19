@@ -1,0 +1,64 @@
+{
+  "id": 5785,
+  "subject": "Shipping query",
+  "description_text": "Re: Order #SSN3084\r\n\r\nWhen will I be receiving my order? Below are screenshots of the current status. No update since 27th October and a linked site that's displaying an error so is useless to me.\r\n\r\n[cid:e8a8bd3d-206a-405c-a1d4-b94fe5c9d032]\r\n\r\n[cid:66560253-e6f0-4603-9150-cf908639994e]\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-07T14:00:40Z",
+  "updated_at": "2025-11-11T14:31:55Z",
+  "requester_id": 158005867690,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011984600,
+      "body_text": "你好，大卫·皮肯，  您的订单已发货。运单号为顺丰速运 • SF6045993559319。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-09T03:53:39Z",
+      "updated_at": "2025-11-09T03:53:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011984608,
+      "body_text": "Hi David Picken,   Here is your shipping/tracking record. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-09T03:54:56Z",
+      "updated_at": "2025-11-09T03:54:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011984629,
+      "body_text": "Thanks. I've since received notification from the local courier that the package will be delivered on Monday.\r\n________________________________\r\n",
+      "user_id": 158005867690,
+      "created_at": "2025-11-09T03:56:45Z",
+      "updated_at": "2025-11-09T03:56:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012103675,
+      "body_text": "Hi David Picken,    I noticed your package delivery failed and is awaiting pickup. Have you received any related phone calls or emails?   Here is your Royal Mail tracking number: IT978583555GB  https://t.17track.net/en#nums=SF6045993559319",
+      "user_id": 158001343601,
+      "created_at": "2025-11-11T08:49:58Z",
+      "updated_at": "2025-11-11T08:49:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012119323,
+      "body_text": "I'm picking it up tomorrow.\r\n________________________________\r\n",
+      "user_id": 158005867690,
+      "created_at": "2025-11-11T13:26:18Z",
+      "updated_at": "2025-11-11T13:26:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

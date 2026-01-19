@@ -1,0 +1,44 @@
+{
+  "id": 8902,
+  "subject": "Order #SSN4311",
+  "description_text": "hello, turns out that I have to pay about 56 euro in import fees, there\r\nwasn't any information about additional fees on your site.[image: image.png]\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-22T15:54:58Z",
+  "updated_at": "2025-12-23T11:40:45Z",
+  "requester_id": 158007661893,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014968032,
+      "body_text": "Hi Marblelake,    Please send us the invoice after paying the customs duties, and we will reimburse you for a portion of the amount.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-23T10:27:51Z",
+      "updated_at": "2025-12-23T10:27:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014969100,
+      "body_text": "here's the PDF,\r\nthank you.\r\n\r\n",
+      "user_id": 158007661893,
+      "created_at": "2025-12-23T10:57:33Z",
+      "updated_at": "2025-12-23T10:57:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014972081,
+      "body_text": "Hi Marblelake,    Okay, we have refunded the Government Charges item for you.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-23T11:40:45Z",
+      "updated_at": "2025-12-23T11:40:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": 8844,
+  "subject": "订单号 SSN4104",
+  "description_text": "早上好，我想咨询一下关于订单号SSN4104（日期为2025年11月29日）的情况。截至今天2025年12月22日，订单仍未送达。跟踪信息显示，它已经在米兰停留了一周。我想知道这个等待时间是否正常，或者是否存在什么问题。谢谢您。\n\n通过iPhone发送",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-22T03:58:29Z",
+  "updated_at": "2025-12-22T11:55:08Z",
+  "requester_id": 158008252026,
+  "responder_id": 158007774669,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014876398,
+      "body_text": "您好，Marco Orangis，我能为您提供什么帮助？",
+      "user_id": 158007774669,
+      "created_at": "2025-12-22T11:54:53Z",
+      "updated_at": "2025-12-22T11:54:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

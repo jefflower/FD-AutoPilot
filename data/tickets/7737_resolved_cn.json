@@ -1,0 +1,85 @@
+{
+  "id": 7737,
+  "subject": "接地帮助",
+  "description_text": "我买了 Simsonn Pro Plus 踏板，一直想试用，但我无法将它们接地，这导致刹车踏板抖动。我使用了 USB 隔离器，将踏板插到不同的端口，将地线连接到任何可以连接的地方，但仍然有抖动。我正在考虑退货。抱歉，谢谢！",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-08T20:22:15Z",
+  "updated_at": "2025-12-11T05:33:31Z",
+  "requester_id": 158007706889,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014166798,
+      "body_text": "A Barr 您好，如果发生这种情况，表明电脑的接地不可靠，可能是因为没有使用带三孔墙壁插座的三相插头。您可以参考下面的帖子：将电脑机箱连接到支架，并将控制盒连接到踏板上的金属螺丝。这应该能解决断开连接的问题。 https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-12-09T06:13:59Z",
+      "updated_at": "2025-12-09T06:13:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014167790,
+      "body_text": "为了确保我理解正确，我是不是需要将一根接地线连接到我的支架，然后将迷你盒的接地线连接到踏板？ 2025年12月8日星期一晚上10:14，support @simsonn.com 写道：",
+      "user_id": 158007706889,
+      "created_at": "2025-12-09T06:44:44Z",
+      "updated_at": "2025-12-09T06:44:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014168392,
+      "body_text": "A Barr 您好，使用任何电线连接三个点：PC 机箱、踏板上的金属螺丝和主控制盒。三个点就足够了。请注意，油漆可能会影响接地效果。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-09T07:07:54Z",
+      "updated_at": "2025-12-09T07:07:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014169528,
+      "body_text": "非常感谢！！我将铜线连接到我的 PC 电源安装螺栓，连接到踏板，然后将主控制盒的接地线连接到同一个螺栓。为了额外的措施，我又连接了一根到我的 PC 机箱到方向盘支架，唯一的抖动是 kgs，但我相信这是正常的，对吗？ 2025年12月8日星期一晚上11:08，support @simsonn.com 写道：",
+      "user_id": 158007706889,
+      "created_at": "2025-12-09T07:53:04Z",
+      "updated_at": "2025-12-09T07:53:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014169997,
+      "body_text": "我还将死区调整到了 5",
+      "user_id": 158007706889,
+      "created_at": "2025-12-09T08:09:48Z",
+      "updated_at": "2025-12-09T08:09:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014170496,
+      "body_text": "A Barr 您好，重量波动是正常的。您可以先在游戏中尝试一下。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-09T08:26:43Z",
+      "updated_at": "2025-12-09T08:26:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014173672,
+      "body_text": "非常感谢，我是模拟赛车新手，我非常喜欢这些踏板，非常感谢，我以为我的一天被毁了，但你拯救了我。 2025年12月9日星期二凌晨12:26，support @simsonn.com 写道：",
+      "user_id": 158007706889,
+      "created_at": "2025-12-09T09:06:20Z",
+      "updated_at": "2025-12-09T09:06:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

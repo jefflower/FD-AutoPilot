@@ -1,0 +1,34 @@
+{
+  "id": 4818,
+  "subject": "",
+  "description_text": "Hello, on 10/03/25, the pedals arrived, and on 10/11/25, after a race, I noticed that the brake pedal had developed 1-3mm of play. Upon inspection, it turned out that the centering bushing for the spring had cracked. Can it be replaced with something, or is it possible to use the pedal without it? -- Отправлено из мобильного приложения Яндекс Почты\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-13T08:53:33Z",
+  "updated_at": "2025-10-14T06:27:35Z",
+  "requester_id": 158005636579,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010343885,
+      "body_text": "Hi Олег,    We apologize for the inconvenience caused. Please provide us with a photo or video along with your order number, and we will arrange for a replacement immediately.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-13T09:24:52Z",
+      "updated_at": "2025-10-13T09:24:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010365367,
+      "body_text": "I ordered pedals from ozon.ru. Attached is the order number: 71194545-0079, a photo of the receipt, and a photo of the problem.   Кому: \"oleg.schichckin@yandex.ru\" <oleg.schichckin@yandex.ru>; Тема: [#4818]; 12:25, 13 октября 2025 г., \"service@simsonn.com\" ",
+      "user_id": 158005636579,
+      "created_at": "2025-10-13T16:56:14Z",
+      "updated_at": "2025-10-13T16:56:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

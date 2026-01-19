@@ -1,0 +1,154 @@
+{
+  "id": 7220,
+  "subject": "Simsonn Plus X Pedal Not Connecting",
+  "description_text": "Hi team,\r\n\r\nI had purchased Simsonn Plus X Pedals with the VAM Pro Linear Motors on\r\nNovember 19, 2025 through your store on Aliexpress (Order\r\nID:8207000543300377).\r\n\r\nIt arrived a few days ago and I have set them up, but when I boot up the\r\nSimsonn software, the pedals are not detected. I have tried countless ways\r\nto try to troubleshoot, but nothing has worked.\r\n\r\nI have tried to troubleshoot by doing the following:\r\n\r\n   - Restarting my PC\r\n   - Uninstalled/downloaded/redownloaded Simsonn Manager 2.0.9 and 2.1.2\r\n   - Tried leaving the power supply for the VAM Pro unplugged and plugged\r\n   - Tried different USB ports\r\n   - Tried different USB cables\r\n\r\nNothing seems to be working and I suspect that it may be because of the\r\ncontrol box.\r\n\r\nI don't wish to return the product as it is very high quality, so I am\r\nhoping that the team can help me further troubleshoot the issue. Perhaps\r\nsend me a new control box to see if that fixes the issue and I can send the\r\nold one back.\r\n\r\nThank you and please let me know if you have any questions.\r\n\r\nWarm regards,\r\n\r\nJimmy\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-12-02T08:46:08Z",
+  "updated_at": "2025-12-17T06:13:37Z",
+  "requester_id": 158007492215,
+  "responder_id": 158007774664,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013375693,
+      "body_text": "Hi,\r\n\r\nI am quickly following up to see if you had a chance to review my previous\r\nemail.\r\n\r\nThanks!\r\n\r\n",
+      "user_id": 158007492215,
+      "created_at": "2025-12-04T07:54:48Z",
+      "updated_at": "2025-12-04T07:54:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013769798,
+      "body_text": "Hi Jimmy Phan,    Please follow the steps below to enter the upgrade process:    Press and hold the upgrade button on the main control box;    Reinsert the USB cable;    The software will prompt that it has entered “Simsonn Flasher Mode”;    Go to Settings → Update → Manual Firmware Update → pedals → firmware → pedals-plusx.sfu to start the firmware update;    After the firmware update is complete, recalibrate the pedals and test them.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-06T05:45:41Z",
+      "updated_at": "2025-12-06T05:45:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014086164,
+      "body_text": "Hi,\r\n\r\nI have pressed the button on the control box and reinserted the USB cable,\r\nbut my computer still doesn't recognize the device.\r\n\r\nOn Fri, Dec 5, 2025 at 10:45 PM service@simsonn.com ",
+      "user_id": 158007492215,
+      "created_at": "2025-12-07T07:00:51Z",
+      "updated_at": "2025-12-07T07:00:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014118097,
+      "body_text": "Hi Jimmy Phan,    You need to hold down the upgrade button and then reconnect the USB. This will put the device into recovery mode.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-08T09:42:56Z",
+      "updated_at": "2025-12-08T09:42:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014140363,
+      "body_text": "Hi,\r\n\r\nI have held the button down while reconnecting the USB and my computer\r\nstill does not recognize the device. I have checked Device Manager, and it\r\ndoesn't appear there as a USB controller or anywhere else in the list.\r\n\r\nOn Mon, Dec 8, 2025 at 2:43 AM service@simsonn.com ",
+      "user_id": 158007492215,
+      "created_at": "2025-12-08T17:30:12Z",
+      "updated_at": "2025-12-08T17:30:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014225404,
+      "body_text": "Hi Jimmy Phan,   We can assist you remotely to help resolve the issue. Please install ToDesk and provide your ID and temporary password — no registration is required. Let’s schedule a suitable time for the remote session.      https://dl.todesk.com/irrigation/ToDesk_4.7.6.3.exe ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-09T23:46:33Z",
+      "updated_at": "2025-12-09T23:46:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014226674,
+      "body_text": "Hi team,\r\n\r\nI can download this and connect with the team later tonight. Would 12:00 AM\r\nMST work for the team?\r\n\r\nOn Tue, Dec 9, 2025 at 4:46 PM service@simsonn.com ",
+      "user_id": 158007492215,
+      "created_at": "2025-12-10T00:30:17Z",
+      "updated_at": "2025-12-10T00:30:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014227531,
+      "body_text": "Can you also send a new link to the download of ToDesk? The link provided\r\ndoes not work. Thank you.\r\n\r\n",
+      "user_id": 158007492215,
+      "created_at": "2025-12-10T01:01:04Z",
+      "updated_at": "2025-12-10T01:01:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014301001,
+      "body_text": "Hi,\r\n\r\nPlease see attached a screenshot of my desktop when plugging in the device.\r\n\r\n[image: Screenshot_2025-12-10_223645.png]\r\n\r\nWhile capturing this screenshot, I also noticed that there was smoke coming\r\nout of the controller. I took a quick video for proof.\r\n IMG_5159.MOV\r\n<https://drive.google.com/file/d/1AC0vi6Owu2WQqCX_WTBaz5I0Jm5NfY6z/view?usp=drive_web>\r\n\r\nLet me know if you want me to upload it somewhere else for you to see.\r\n\r\nBest regards,\r\n\r\n",
+      "user_id": 158007492215,
+      "created_at": "2025-12-11T05:49:12Z",
+      "updated_at": "2025-12-11T05:49:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014309271,
+      "body_text": "Hi Jimmy Phan,     You can download the Windows version.   https://www.todesk.com/download.html",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T08:56:19Z",
+      "updated_at": "2025-12-11T08:56:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014371134,
+      "body_text": "Hi,\r\n\r\nThe support team appears to be sending me a new controller hub to replace\r\nmy current one, as per the Aliexpress messages. I will let the team know if\r\nany issues come up when I receive the replacement.\r\n\r\nThank you\r\n\r\nOn Thu, Dec 11, 2025 at 1:56 AM service@simsonn.com ",
+      "user_id": 158007492215,
+      "created_at": "2025-12-12T08:01:58Z",
+      "updated_at": "2025-12-12T08:01:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014505498,
+      "body_text": "Hi Jimmy Phan,  we cannot find your order number in the store. Please check your order and store name.",
+      "user_id": 158007774664,
+      "created_at": "2025-12-15T10:55:03Z",
+      "updated_at": "2025-12-15T10:55:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014528160,
+      "body_text": "Hi team,\r\n\r\nAs mentioned, the purchase was made through Aliexpress and the order number\r\nwas provided there as well.\r\n\r\n[image: image.png]\r\nI am in discussion with the Simsonn support team through the Aliexpress\r\nmessenger as well, to help resolve the issue.\r\n\r\nThanks,\r\n\r\nOn Mon, Dec 15, 2025 at 3:55 AM service@simsonn.com ",
+      "user_id": 158007492215,
+      "created_at": "2025-12-15T17:31:05Z",
+      "updated_at": "2025-12-15T17:31:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014614349,
+      "body_text": "Hi Jimmy Phan,  Your product has been shipped. The logistics number is:YT2535100703840551. You can track it at this website:https://t.17track.net/zh-cn#nums=YT2535100703840551 ",
+      "user_id": 158007774664,
+      "created_at": "2025-12-17T06:13:27Z",
+      "updated_at": "2025-12-17T06:13:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

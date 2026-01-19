@@ -1,0 +1,44 @@
+{
+  "id": 7348,
+  "subject": "Missing Parts",
+  "description_text": "Dear Ladies and Gentleman\r\n\r\nI ordered on Nov 28 with the order number #SSN3983.\r\nAnd today the package arrived which was very fast delivery! But unluckily some parts were messing. The two < Simsonn Haptic Reactor Mounting Brackets> <U-Shaped> were missing.\r\nI attached my order aswell as my arrived parts. Please resend the missing parts to the same adress.\r\n\r\nThanks for your assistance !!\r\nBest regards.\r\nLaurin Gygax\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-03T16:16:23Z",
+  "updated_at": "2025-12-04T09:29:41Z",
+  "requester_id": 158007516665,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013364954,
+      "body_text": "Hi Laurin Gygax,    We will send you the new U-shaped bracket as soon as possible.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T01:59:04Z",
+      "updated_at": "2025-12-04T01:59:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013367908,
+      "body_text": "Hello\r\nI have ordered 2 U-shaped brackets so i will need 2.\r\nDo you have a date when you can ship them?\r\nThanks and best regards.\r\nLaurin\r\n\r\nGesendet von Outlook für Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158007516665,
+      "created_at": "2025-12-04T04:13:03Z",
+      "updated_at": "2025-12-04T04:13:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013382588,
+      "body_text": "Hi Laurin Gygax,    Here is your logistics tracking link.    https://t.17track.net/en#nums=YT2533800709158310",
+      "user_id": 158001343601,
+      "created_at": "2025-12-04T09:29:40Z",
+      "updated_at": "2025-12-04T09:29:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

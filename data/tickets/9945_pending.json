@@ -1,0 +1,24 @@
+{
+  "id": 9945,
+  "subject": "Any updates on order #SSN5062?",
+  "description_text": "It has been several weeks since ordering, any updates?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-04T23:22:32Z",
+  "updated_at": "2026-01-07T09:25:50Z",
+  "requester_id": 158008901608,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016102462,
+      "body_text": "Hi Saif. albadawna,   The tracking information has been updated. Please check the latest status. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T09:25:50Z",
+      "updated_at": "2026-01-07T09:25:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

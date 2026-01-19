@@ -1,0 +1,34 @@
+{
+  "id": 6444,
+  "subject": "Address",
+  "description_text": "Hello, i am writing about my Order #SSN366 as i have made a mistake. My\r\naddress is wrong and i would like to inform you it is gulbės g.13A not\r\ngulbės g.13\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-11-20T17:50:24Z",
+  "updated_at": "2025-11-26T10:10:29Z",
+  "requester_id": 158007189331,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012677134,
+      "body_text": "Hi Domas Zilinskas,     Don't worry, I've already made the changes for you. Please confirm.    Domas Žilinskas  Gulbės g. 13A  LT53212 Jonučiai  Lithuania  +370 674 39129",
+      "user_id": 158001343601,
+      "created_at": "2025-11-21T02:30:51Z",
+      "updated_at": "2025-11-21T02:30:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012680783,
+      "body_text": "Hi, thank you for changing it.\r\n\r\nOn Friday, November 21, 2025, service@simsonn.com ",
+      "user_id": 158007189331,
+      "created_at": "2025-11-21T05:49:15Z",
+      "updated_at": "2025-11-21T05:49:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

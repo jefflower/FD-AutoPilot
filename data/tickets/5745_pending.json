@@ -1,0 +1,84 @@
+{
+  "id": 5745,
+  "subject": "VAM Pro issues",
+  "description_text": "Hello,\r\n\r\nI have Pro X Ultra pedals and I just added the VAM Pro Reactors\r\nAfter a clean firmware flash of the control box the VAM Pro Reactors behave\r\nexactly like they should, however after you hit the \"Save\" button after\r\ndoing a pedal calibration or making lighting changes the reactors stop\r\nworking properly. They either don't respond at all to a signal or they\r\nnever stop vibrating after a signal. When I do a manual firmware flash to\r\nthe control box again they work properly again. But now the calibration and\r\nlighting settings are wrong. And then after doing those changes and hitting\r\nsave again the reactors go back to not working like they should.\r\n\r\nThis likely comes from an issue in the SimSonn Manager.\r\n\r\nIs this a known issue that will be fixed in a future update?\r\n\r\nKind regards,\r\n\r\nRoderick\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-11-06T18:08:41Z",
+  "updated_at": "2025-12-11T00:36:39Z",
+  "requester_id": 158006716255,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011984905,
+      "body_text": "Hi Roderick Griffioen,  Are you using the USB 3.0 (blue) port on the back of your computer? Please avoid using a USB hub. I have reported this issue to our software team and we aim to test it on Monday, after which we will provide you with a solution or updated software. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-09T04:19:21Z",
+      "updated_at": "2025-11-09T04:19:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012001838,
+      "body_text": "Hello,\r\n\r\nYes I’m using a USB3.0 port on my computer and I’ve tried many different alternatives as well. Through powered usb hubs or directly to the pcb. The issue remains the same. \r\n\r\nThank you for looking into it!\r\n\r\nKind regards,\r\n\r\nRoderick\r\n\r\n> ",
+      "user_id": 158006716255,
+      "created_at": "2025-11-09T14:45:47Z",
+      "updated_at": "2025-11-09T14:45:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012095902,
+      "body_text": "Hi Roderick Griffioen,   If this happens, it indicates that the computer’s grounding is not reliable, possibly because a three-prong plug was not used with a three-prong wall outlet. You can refer to the post below: connect the computer case to the stand, and connect the control box to the metal screws on the pedals. This should resolve the disconnection issue.      https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-11-11T04:46:02Z",
+      "updated_at": "2025-11-11T04:46:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012147530,
+      "body_text": "Hello,\r\n\r\nAfter extensive testing I cannot find any issue with grounding or EMI.\r\nWhat I've done to rule it out: Connect the Ultra Pro Control Box Directly\r\nto the motherboard with the supplied USB cable to a blue USB 3.0 port.\r\nMy PC's power cable shares the same earth as my FFB wheel and the supplied\r\nVAM power supply (although this supplied cable is without earth).\r\n\r\nWhen I flash the firmware manually (Settings, Update, Manual Update, Choose\r\nproxultra.sfu) and then don't change any settings in the simsonn manager.\r\nThe haptics function exactly like they should.\r\nNow when I go to calibrate the pedals or change the lighting settings and\r\nhit save in the manager, the haptics instantly don't behave like they\r\nshould. I'm getting this result in both Simsonn manager testing of the\r\nhaptics and in simhub.\r\nWhen I use simhub for example to do a feedback for shifting gears in both\r\nthe throttle and brake pedal. One of the 2 haptics will not behave properly\r\nwhile the other does. And when I switch it to only use 1 of the 2 motors,\r\nthat single motor will also not behave (even when it was behaving before).\r\n\r\nWhen I do the whole process of manually flashing the firmware again the\r\nhaptics behave properly again until I make changes in the settings. This\r\nhappens without me rebooting my PC or changing any cables. Nothing changes\r\non the power or cable side.\r\n\r\nI've also ran a multimeter to check continuity to ground from the pedal to\r\nthe control box, and they are properly grounded together. The haptics are\r\nisolated with plastic mounts from the pedals.\r\n\r\nKind regards,\r\n\r\nRoderick\r\n\r\n\r\nOn Tue, Nov 11, 2025 at 5:46 AM support@simsonn.com ",
+      "user_id": 158006716255,
+      "created_at": "2025-11-11T23:15:59Z",
+      "updated_at": "2025-11-11T23:15:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012400226,
+      "body_text": "Hi Roderick Griffioen,  You can try connecting the computer case to a screw on the controller box using any wire, and also connect any screw on the controller box to the pedal. Please check if this resolves your issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-16T03:02:36Z",
+      "updated_at": "2025-11-16T03:02:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014283481,
+      "body_text": "Hello,\r\n\r\nI've tried this as well and it is still the same issue. On a fresh firmware\r\nflash the haptics behave perfectly. The moment I hit \"save\" after a\r\ncalibration or changing the light setup they no longer work properly.\r\nNo matter what USB cable I try, or USB port, or whatever.\r\n\r\nAnything else I can try?\r\n\r\nRoderick\r\n\r\nOn Sun, Nov 16, 2025 at 4:02 AM support@simsonn.com ",
+      "user_id": 158006716255,
+      "created_at": "2025-12-10T19:24:15Z",
+      "updated_at": "2025-12-10T19:24:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014296181,
+      "body_text": "Hi Roderick Griffioen,    Is your software version 2.1.2?  Please try uninstalling the local software and then download the latest version again from the official website.  If the issue persists, could you please record a short video of your operation? I will ask our engineers to check it, as we haven’t encountered this problem when adjusting the light settings.     You may send the video to me via Google Drive, and please make sure to grant access permission.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T00:36:39Z",
+      "updated_at": "2025-12-11T00:36:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

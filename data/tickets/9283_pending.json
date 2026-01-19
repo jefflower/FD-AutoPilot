@@ -1,0 +1,24 @@
+{
+  "id": 9283,
+  "subject": "Shipping of my order #SSN5145",
+  "description_text": "I bought a pedal system on dec 22nd, but have not been notified of any\r\nprogress on the order. When will it be shipped ?\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-27T09:40:56Z",
+  "updated_at": "2025-12-31T09:34:22Z",
+  "requester_id": 158008791243,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015303617,
+      "body_text": "Hi Hugues Verclytte,    Your order has been shipped. We apologize for not updating you in a timely manner.  https://www.ups.com/track?loc=en_US&requester=ST&trackNums=1ZJ455510401766157/trackdetails",
+      "user_id": 158001343601,
+      "created_at": "2025-12-31T09:34:22Z",
+      "updated_at": "2025-12-31T09:34:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

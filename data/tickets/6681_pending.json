@@ -1,0 +1,74 @@
+{
+  "id": 6681,
+  "subject": "pedal will not connect",
+  "description_text": "Have not used my sim in a while and your pedal set will not work.\r\nPedals worked when I last used the sim rig.\r\nEverything else works except the pedals\r\nNo changes have been made to my PC.\r\nBoth Simsonn and Freejoy software says it is disconnected.\r\nI have tried a different USB cable, USB port, and tested both cable and port with another device.\r\nI inspected the control box and find no damage, nor smell any burnt components.\r\nAmazon  Order # 112-7828331-8804246 SIMSONN PRO Sim Racing Pedals\r\nPlease advise.\r\nOrlin Bible\r\n\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-24T21:15:47Z",
+  "updated_at": "2025-12-01T02:29:11Z",
+  "requester_id": 158007306551,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012855802,
+      "body_text": "Hi ORLIN BIBLE,     I can see that your order was placed on September 30th, 2024. Please try plugging the device directly into a USB 3.0 port on the back of your PC, and avoid using any USB hubs. Also, check whether the LED indicator on the main controller lights up. After that, please send me a screenshot of the FreeJoy connection status page. Once I review it, I will get back to you with a solution as soon as possible.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-25T01:37:54Z",
+      "updated_at": "2025-11-25T01:37:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012882113,
+      "body_text": "The control box is plugged in directly and always has been. Freejoy and Simsonn software does not recognize the control box therefore they show it being disconnected. PC also doesn't make the normal connect/disconnect sound when the control block is plugged in and unplugged, but it does using other devices, so it is not the USB port. This has to be a failure of the control box. ",
+      "user_id": 158007306551,
+      "created_at": "2025-11-25T13:24:17Z",
+      "updated_at": "2025-11-25T13:24:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012882213,
+      "body_text": "Also there is no light on the control box. ",
+      "user_id": 158007306551,
+      "created_at": "2025-11-25T13:26:52Z",
+      "updated_at": "2025-11-25T13:26:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012943072,
+      "body_text": "Hi ORLIN BIBLE,  If the issue is not caused by the USB cable, the main control box may be defective. You can purchase the latest Plus X control box, which supports vibration feedback and force display, and is compatible with the latest SIMSONN Manager software.      https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor?variant=51351053533498",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T11:39:54Z",
+      "updated_at": "2025-11-26T11:39:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013114103,
+      "body_text": "I ordered the Plus X control box. Is a power supply required for it to work , or is it needed only if Vam hapitcs are used also?\r\n________________________________\r\n",
+      "user_id": 158007306551,
+      "created_at": "2025-11-29T16:40:01Z",
+      "updated_at": "2025-11-29T16:40:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013155064,
+      "body_text": "Hi ORLIN BIBLE,  A 24V independent power supply is only required if you purchase a VAM or VAM Pro motor. If you are using the pedals alone, no 24V power supply is needed—just a USB data cable is sufficient. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-01T02:29:10Z",
+      "updated_at": "2025-12-01T02:29:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

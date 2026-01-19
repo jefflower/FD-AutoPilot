@@ -1,0 +1,24 @@
+{
+  "id": 830,
+  "subject": "Order No. #SSN1776",
+  "description_text": "Good afternoon,\r\n\r\nI received my order (Order No. #SSN1776), which came with the pro x pedals but it did not bring the Simsonn VAM Pro Linear Motors (haptic reactor) that I had ordered and allegedly shipped. \r\n\r\nCould you please provide me with an update as to this. \r\n\r\nThank you,\r\nLuis D. Prieto \r\nSent from my iPhone\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-25T16:12:48Z",
+  "updated_at": "2025-06-26T09:37:10Z",
+  "requester_id": 158001782713,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003845696,
+      "body_text": "Hi Luis Prieto,  The second batch of motors will start arriving this Saturday. Once we receive the motor cores from our supplier, we’ll immediately arrange express shipping for you. The delivery will also be very fast—please rest assured! ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-26T09:37:10Z",
+      "updated_at": "2025-06-26T09:37:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

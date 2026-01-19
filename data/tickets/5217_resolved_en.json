@@ -1,0 +1,75 @@
+{
+  "id": 5217,
+  "subject": "Simsonn Plus X not Connecting",
+  "description_text": "Hello, I updated the firmware today for Simsonn Manager and Plus X pedals, and after calibrating, I think I saved the profile and the pedals stopped showing as connected.",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-10-23T14:26:36Z",
+  "updated_at": "2025-10-24T01:52:47Z",
+  "requester_id": 158002874453,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010985133,
+      "body_text": "Hi Osvaldo Sousa,    Please follow the steps below:    Press and hold the upgrade button on the PlusX main controller, then reconnect the USB cable.    Open SIMSONN Manager 2.1.2 and check if it has entered recovery mode.    If recovery mode is detected, go to Settings → Update → Manual Update Firmware → pedals → firmware → pedals-plusx.sfu.    After the update is complete, test the device to see if it has been restored successfully.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-24T01:25:29Z",
+      "updated_at": "2025-10-24T01:25:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010985214,
+      "body_text": "Hello, thank you for your support. Earlier I tried everything and finally when I just disconnected the power supply for the VAM motors and reconnected the box pedals, it worked. Then I just connected the motors again.",
+      "user_id": 158002874453,
+      "created_at": "2025-10-24T01:30:57Z",
+      "updated_at": "2025-10-24T01:30:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010985325,
+      "body_text": "Hi Osvaldo Sousa,      Okay, we also recommend using the rear USB 3.0 port on your computer and avoiding the use of USB hubs.  In addition, please ensure your VAM device is set to VAM mode. Using the incompatible VAM Pro mode may cause the motor to fail within a short period of time. Although our design includes compatibility protection, we still recommend strictly using the correct mode.  Also, please confirm whether your firmware version shows CPU1: 2.0.5 and CPU2: 2.0.4, so I can verify that you are using the latest firmware version.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-24T01:37:59Z",
+      "updated_at": "2025-10-24T01:37:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010985383,
+      "body_text": "I have been using a rear USB 2.0, should I change to 3.0?\nI have 1 VAM Pro motor so I should use VAM Pro mode, right?\nYes, it is the latest firmware.",
+      "user_id": 158002874453,
+      "created_at": "2025-10-24T01:42:16Z",
+      "updated_at": "2025-10-24T01:42:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010985424,
+      "body_text": "Hi Osvaldo Sousa,  Using a USB 3.0 port provides a more stable connection. Also, please ensure that VAM Pro is set to VAM Pro mode, and VAM is set to VAM mode. This configuration is perfectly fine.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-24T01:45:31Z",
+      "updated_at": "2025-10-24T01:45:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010985491,
+      "body_text": "Yes, thank you!",
+      "user_id": 158002874453,
+      "created_at": "2025-10-24T01:50:23Z",
+      "updated_at": "2025-10-24T01:50:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

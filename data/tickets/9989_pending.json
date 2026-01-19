@@ -1,0 +1,44 @@
+{
+  "id": 9989,
+  "subject": "my vam haptic reactors do not work. i have made sure that all the connections are proper which they are and the brick even shows a green light yet in the app my haptic reactors are show as power disconnected.I have also made sure that i have updated them",
+  "description_text": "",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-05T12:06:05Z",
+  "updated_at": "2026-01-07T14:40:49Z",
+  "requester_id": 158008757783,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015875296,
+      "body_text": "Hi Zorawar Singh Grewal,     Please provide your order number, pedal model, and whether it is connected to an independent power supply using the USB 3.0 blue port. You can try updating the firmware first. Also, please provide screenshots of the SIMSONN Manager interface and photos of the vibration motor control box installation.           ProX / ProX Ultra Pedal Firmware Update Procedure:    Press and hold the Upgrade button on the control box;    Reconnect the USB cable;    The software will indicate that the device has entered “Simsonn Flasher mode”;    In the software, go to: Settings → Update → Manual Firmware Update → pedals → firmware → pedals-proxultra.sfu (If it’s a ProX pedal, select pedals-prox.sfu)    Start the firmware update, and once it is complete, release the Upgrade button;    Finally, retest and calibrate the pedals.        Launch the latest version of SIMSONN Manager 2.1.2. On the “Plus X” control unit, press and hold the “Upgrade” button. While holding the button, unplug the USB cable from the PC and then plug it back in. The software should detect the device entering “SIMSONN Flasher update mode”. In the software go to: Settings → Update → Manual Firmware Update. In the file selector choose: pedals‑firmware → pedals‑plusx.sfu. Click “Start Update” and wait until the firmware is completely written. During this process do not disconnect the USB or close the application. Once the update is finished (you’ll get a success prompt or the unit will reboot), unplug and re‑plug the USB then test the pedal device to confirm everything works correctly. ",
+      "user_id": 158001343601,
+      "created_at": "2026-01-06T08:07:34Z",
+      "updated_at": "2026-01-06T08:07:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015946662,
+      "body_text": "the problem is not in m y pedals as i have done this procedure yet the vam\r\nhaptic reactors still show the same power disconnected.\r\n\r\nOn Tue, Jan 6, 2026 at 1:37 PM service@simsonn.com ",
+      "user_id": 158008757783,
+      "created_at": "2026-01-06T15:33:24Z",
+      "updated_at": "2026-01-06T15:33:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016147458,
+      "body_text": "Hi Zorawar Singh Grewal,  Please provide your order number, contact name, phone number, and shipping address, and we will send you a replacement PlusX controller box. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T14:26:38Z",
+      "updated_at": "2026-01-07T14:26:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

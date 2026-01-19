@@ -1,0 +1,74 @@
+{
+  "id": 10197,
+  "subject": "Where is my order",
+  "description_text": "\r\nHi\r\nI've paid extra to have my order arrive earlier than usual but I still dont have it. I would like a refund of the extra postage and packaging I paid!! But also where is my order? I have also submitted a previous ticket and have had no response!Order number : SF6045959598187\r\nRegards\r\nRyan Clarke\r\nYahoo Mail: Search, organise, conquer\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-07T09:39:50Z",
+  "updated_at": "2026-01-17T03:15:17Z",
+  "requester_id": 158008892540,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016104680,
+      "body_text": "ID 为 9890 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T09:43:48Z",
+      "updated_at": "2026-01-07T09:43:48Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016104682,
+      "body_text": "合并来自工单9890  \n      主题: Where is my order  \n      描述:  Hi \n   \n I ordered the Vam pro haptics on 25th Dec 2025 and paid for 3-5 days delivery. It's now the 3rd Jan and I still haven't recieved my order. Where is it? \n   \n Order number : SF6045959598187 \n   \n Regards \n Ryan Clarke   Yahoo Mail: Search, organise, conquer",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T09:43:48Z",
+      "updated_at": "2026-01-07T09:43:48Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016104793,
+      "body_text": "Hi Ryan Clarke,  Please provide your order number starting with “SSN”, and I will help check it for you. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T09:44:38Z",
+      "updated_at": "2026-01-07T09:44:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016105151,
+      "body_text": "Hi\r\nMy order number is SSN5264\r\n\r\n\r\nYahoo Mail: Search, organise, conquer \r\n \r\n  ",
+      "user_id": 158008892540,
+      "created_at": "2026-01-07T09:47:28Z",
+      "updated_at": "2026-01-07T09:47:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016570989,
+      "body_text": "Hi\r\nI've provided my order number and I haven't heard from you? Could you please update me where my items are. Also a refund of the extra I paid for fast delivery as its been longer\r\nSSN5264\r\nRegards\r\nRyan clarke\r\n\r\nYahoo Mail: Search, organise, conquer \r\n \r\n  ",
+      "user_id": 158008892540,
+      "created_at": "2026-01-09T15:46:02Z",
+      "updated_at": "2026-01-09T15:46:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017311160,
+      "body_text": "Hi Ryan Clarke,  I sincerely apologize for the delayed response.Due to the New Year holiday and the subsequent surge in orders, a significant backlog of unprocessed emails has resulted in delayed responses. We extend our deepest apologies once again.  The excess express shipping fee you paid has been refunded. Please check your account.  Additionally, the product in your order was recalled due to quality issues and was out of stock for two weeks. We have upgraded the product quality and shipped it on the 10th.  You can track your shipping information via the following link:  https://t.17track.net/en#nums=SF6047201468607",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T03:15:16Z",
+      "updated_at": "2026-01-17T03:15:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

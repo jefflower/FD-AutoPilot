@@ -1,0 +1,24 @@
+{
+  "id": 8346,
+  "subject": "Compatibility question – older SIMSONN hydraulic pedals with Pro X Ultra control box",
+  "description_text": "Hello Simsonn Support,\r\nI have an older SIMSONN PC Simracing hydraulic pedal set (AliExpress\r\nlisting title: “SIMSONN PC Simracing pedals Sim Racing Simulator pedal\r\nhydraulic for PC Cockpit Pedal for Logitech G27 G29”).\r\nI have attached some photos of my pedal set for your reference.\r\n\r\nMy pedals currently use small 4‑pin modular connectors (RJ9/RJ10 style) to\r\nconnect to the original control box.I would like to upgrade to the new Pro\r\nX Ultra main control box.\r\nIs the Pro X Ultra control box electrically compatible with my pedal set?\r\nCan I plug my pedals directly into the Pro X Ultra control box, or would I\r\nneed to re‑terminate the cables/connectors?\r\nIf rewiring is required, could you please provide:the pinout for my current\r\npedals (throttle, brake, clutch), andthe pinout for each RJ45 pedal port on\r\nthe Pro X Ultra control box?\r\nI would like to avoid damaging the pedals or the new control box, so any\r\nofficial guidance or diagrams you can share would be very helpful.Thank you\r\nin advance for your support.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-15T21:54:06Z",
+  "updated_at": "2025-12-17T02:45:59Z",
+  "requester_id": 158007825274,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014610684,
+      "body_text": "Hi Andrea Squinzani,     I recommend upgrading directly to the PlusX control box, which also supports the vibration feedback interface.     https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor?variant=51351053533498",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T02:45:59Z",
+      "updated_at": "2025-12-17T02:45:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

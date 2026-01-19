@@ -1,0 +1,24 @@
+{
+  "id": 10013,
+  "subject": "Commande #SSN4825",
+  "description_text": "Bonjour, je suis toujours dans l'attente de ma commande du 15/12/2025, où est mon colis?",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2026-01-05T17:10:55Z",
+  "updated_at": "2026-01-07T07:21:49Z",
+  "requester_id": 158008938434,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016082347,
+      "body_text": "Hi Kevin Cret,     Here is the shipment tracking information. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T07:21:49Z",
+      "updated_at": "2026-01-07T07:21:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

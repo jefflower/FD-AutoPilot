@@ -1,0 +1,24 @@
+{
+  "id": 4631,
+  "subject": "Shipping",
+  "description_text": "Hey there simsonn, just wondering when my order SSN2832 is going to be dispatched or sent a tracking number, i ordered it on the 4th of october so its been a fair few days.\r\n\r\nThanks, \r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-09T07:16:08Z",
+  "updated_at": "2025-10-09T08:18:39Z",
+  "requester_id": 158005515290,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010134373,
+      "body_text": "Hi ThatOnlyDev,    We apologize for the delayed response; we've just returned from our 8-day holiday. Your order has been shipped, and here is your tracking link:  https://t.17track.net/en#nums=SF6045959667362",
+      "user_id": 158001343601,
+      "created_at": "2025-10-09T08:18:39Z",
+      "updated_at": "2025-10-09T08:18:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

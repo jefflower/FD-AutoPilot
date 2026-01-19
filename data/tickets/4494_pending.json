@@ -1,0 +1,24 @@
+{
+  "id": 4494,
+  "subject": "image-06-10-25-07-29.jpeg",
+  "description_text": "\nHello, why isn't the brake kilogram display in my driver? Pro x ultra pedals\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-06T12:30:51Z",
+  "updated_at": "2025-10-06T12:34:09Z",
+  "requester_id": 158005437489,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009966249,
+      "body_text": "Hi Денис,    The Kg feature was added in later updates, and it’s not yet supported by ProX.  However, PlusX and ProX Ultra do support it.  Since ProX has a different hardware design, further testing and development are required, so we can’t support it at the moment.  Our development team hasn’t provided a specific plan or timeline yet.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-06T12:34:09Z",
+      "updated_at": "2025-10-06T12:34:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

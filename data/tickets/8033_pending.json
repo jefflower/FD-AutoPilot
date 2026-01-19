@@ -1,0 +1,24 @@
+{
+  "id": 8033,
+  "subject": "Missing baseplate",
+  "description_text": "Hello I received my package but no baseplate\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-12T00:37:51Z",
+  "updated_at": "2025-12-12T02:39:54Z",
+  "requester_id": 158007771890,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014361095,
+      "body_text": "Hi Leiruy,  We apologize that the baseplate is currently out of stock at our US warehouse. We have urgently arranged an air shipment to replenish inventory, with the shipment expected to arrive at the warehouse on Friday. We will ship your order immediately upon arrival. ",
+      "user_id": 158001343601,
+      "created_at": "2025-12-12T02:39:54Z",
+      "updated_at": "2025-12-12T02:39:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

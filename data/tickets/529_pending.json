@@ -1,0 +1,54 @@
+{
+  "id": 529,
+  "subject": "Order #SSN1754",
+  "description_text": "What is the estimated arrival time of this order? I can't find the info in your site \r\n\r\nYahoo Mail: Search, Organize, Conquer\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-06-17T13:00:54Z",
+  "updated_at": "2025-06-24T11:15:07Z",
+  "requester_id": 158001615145,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003679697,
+      "body_text": "Hi Fernando Carrillo,  Here is the latest tracking information. Please have a look. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T03:05:36Z",
+      "updated_at": "2025-06-22T03:05:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003680879,
+      "body_text": "Thanks, I got the package. However it is incomplete. The feedback motors did not arrive.\r\n| \r\n| \r\n |\r\n\r\n |\r\n| \r\n|  | Simsonn VAM Pro Linear Motor - the Pedals Haptic Reactor for Vibration Feedback × 1 |\r\n\r\n |\r\n\r\n\r\nYahoo Mail: Search, Organize, Conquer \r\n \r\n  ",
+      "user_id": 158001615145,
+      "created_at": "2025-06-22T18:10:41Z",
+      "updated_at": "2025-06-22T18:10:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003741553,
+      "body_text": "你好，Fernando Carrillo，  我们的订单应该会单独发货，包括踏板和电机。我会让销售团队查询 VAM Pro 的追踪号，并尽快回复您。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-24T02:15:04Z",
+      "updated_at": "2025-06-24T02:15:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003794033,
+      "body_text": "Hi Fernando Carrillo,  Your package has shipped, here's the link to your logistics update, Vam Pro has been overloaded with orders which has caused some delays in shipping, sincere apologies!  https://t.17track.net/en#nums=JSEXI1943887355YQ",
+      "user_id": 158001343601,
+      "created_at": "2025-06-24T11:15:07Z",
+      "updated_at": "2025-06-24T11:15:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "id": 911,
+  "subject": "Simhub support for new VAM Pro",
+  "description_text": "Hello. I’ve just received my new VAM Pro units for my Pro X pedals. I am testing them before installing them onto my pedals and I cannot see these as detected devices in Simhub. \r\n\r\nAfter a discussion on Reddit, I learned from someone else that Simhub support is still in beta, but you may have a version I could obtain? \r\n\r\nAnd if I can use Simhub, do I need to switch off all feedback modes in Simsonn Manager? \r\n\r\nThanks!\r\n\r\nKind regards\r\nGavin\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-27T10:24:21Z",
+  "updated_at": "2025-07-10T03:27:42Z",
+  "requester_id": 158001404098,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004189527,
+      "body_text": "Hi Gavin and Lynda Miller,  Our software currently supports 10 games. May I ask which game you are using now? We are continuously working to add telemetry support for more titles. In the meantime, you can use the internal version of SimHub that I’ve provided. The official release is still undergoing testing and may take a bit more time.   https://drive.google.com/file/d/1QrSbAvCC5iyx9XgdRgSQV-hWpmDGkujc/view?usp=sharing",
+      "user_id": 158000445778,
+      "created_at": "2025-06-27T10:28:28Z",
+      "updated_at": "2025-06-27T10:28:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004217060,
+      "body_text": "Hello. Thanks for replying so quickly. I mainly use F1 2023 and Assetto Corsa.\r\n\r\nDoes Simsonn Manager 2.0.8 support F1 telemetry on its own? Because I cannot find anywhere the port number to receive telemetry data.\r\n\r\n\r\nKind regards\r\nGavin\r\n\r\n\r\n",
+      "user_id": 158001404098,
+      "created_at": "2025-06-27T19:14:29Z",
+      "updated_at": "2025-06-27T19:14:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004218419,
+      "body_text": "Hi Gavin and Lynda Miller,    The current version 2.0.8 supports F1 2020 through F1 2025 and should work without issues. You can configure telemetry settings such as ABS feedback and test if the vibration works correctly. Once confirmed, launch the F1 game from our software, and telemetry data should be read properly. Please make sure to close SimHub and any other calibration tools, as they may cause UDP conflicts and disrupt telemetry functionality.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-27T23:09:38Z",
+      "updated_at": "2025-06-27T23:09:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004218436,
+      "body_text": "Hi Gavin and Lynda Miller,    If you are using the ProX pedals (not the latest ProX Ultra or PlusX), please go to Settings → Update → Manual Firmware Update in the SIMSONN Manager 2.0.8 software. In the PESALS-Firmware/pedals directory, select the prox.sfu file to update the firmware. After the update is complete, your pedals will support the VAM Pro motor.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-27T23:17:40Z",
+      "updated_at": "2025-06-27T23:17:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004222387,
+      "body_text": "Thank you for being so responsive. I have another question….\r\n\r\nCan I upgrade my Pro X pedals to Pro X Ultra by purchasing a Pro X Ultra control box? Or are the pedals different?\r\n\r\nKind regards\r\nGavin\r\n\r\n\r\n",
+      "user_id": 158001404098,
+      "created_at": "2025-06-29T08:49:11Z",
+      "updated_at": "2025-06-29T08:49:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004354241,
+      "body_text": "Hi Gavin and Lynda Miller,  The difference in the main controller is quite noticeable, and the pedal thickness has also been reinforced. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-01T06:56:02Z",
+      "updated_at": "2025-07-01T06:56:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004500159,
+      "body_text": "Hi Gavin and Lynda Miller,   We will be releasing the new SIMSONN Manager 2.0.9 version within the next couple of days, and I’ll send you the compatibility list as well. In addition, the official SimHub version 9.9.3 has been released and is now fully compatible with all SIMSONN pedals. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-10T03:27:42Z",
+      "updated_at": "2025-07-10T03:27:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

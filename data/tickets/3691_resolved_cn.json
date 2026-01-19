@@ -1,0 +1,35 @@
+{
+  "id": 3691,
+  "subject": "踏板未连接",
+  "description_text": "亲爱的辛普森，我的模拟赛车专业踏板已经用了几个月了，我非常喜欢它们。我甚至购买了刹车升级套件，但现在它们在辛普森应用程序中不再被识别，也无法在游戏控制器中被识别。你有什么想法吗？新的控制器，就是那个密封的，能用吗？发自我的 iPhone",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-09-10T13:27:23Z",
+  "updated_at": "2025-09-12T04:33:15Z",
+  "requester_id": 158004393257,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008530367,
+      "body_text": "你好 Simon Cryer，请提供您的订单号和踏板型号。如果即使使用后置 USB 3.0 端口连接问题仍然存在，请在重新连接 USB 线缆时按住控制盒上的升级按钮，进入升级模式。然后前往设置 → 更新 → 手动固件更新 → pedals-firmware-pedals，并选择与您的踏板型号匹配的 .sfu 固件文件进行更新。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-11T14:57:31Z",
+      "updated_at": "2025-09-11T14:57:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008542375,
+      "body_text": "我很抱歉，原来是我使用的 USB 延长线的问题。我现在已经调整了我的系统，可以直接将它们插入电脑，目前为止一切正常。谢谢，Simon，发自我的 iPhone",
+      "user_id": 158004393257,
+      "created_at": "2025-09-11T16:51:47Z",
+      "updated_at": "2025-09-11T16:51:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

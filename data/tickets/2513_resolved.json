@@ -1,0 +1,44 @@
+{
+  "id": 2513,
+  "subject": "Problem with pedals",
+  "description_text": "Hi. I have a problem with a break pedal in Simsonn black pro plus pedals. I\r\nwas doing a race, everything was fine. After race i've wanted to restore my\r\nprevious calibration settings in a Simpedalsconfig_v4 program. I've clicked\r\n\"load calibration\" and after that my brake pedal looks like unrecognisable.\r\nI can't calibrate it, nothing.\r\nhttps://youtu.be/fL7X1i2eIf4\r\n\r\n",
+  "status": 4,
+  "priority": 3,
+  "created_at": "2025-08-09T20:39:18Z",
+  "updated_at": "2025-08-10T07:33:42Z",
+  "requester_id": 158002887755,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006615447,
+      "body_text": "Hi Tomek Nagler,    Hello, the version you are currently using is too outdated. We recommend downloading and installing the latest SIMSONN Manager 2.1.0. Please follow the steps below to manually update the firmware:  Steps:    Open the software and go to Settings → Update → Manual Firmware Update    Select Pedals    Choose the plus.sfu file to perform the update    Once the update is completed, the issue should be resolved.     https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T02:59:35Z",
+      "updated_at": "2025-08-10T02:59:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006631202,
+      "body_text": "It worked. Thank you very much :)\r\n\r\n\r\nniedz., 10 sie 2025 o 04:59 service@simsonn.com ",
+      "user_id": 158002887755,
+      "created_at": "2025-08-10T06:38:29Z",
+      "updated_at": "2025-08-10T06:38:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006633694,
+      "body_text": "",
+      "user_id": 158002887755,
+      "created_at": "2025-08-10T07:33:41Z",
+      "updated_at": "2025-08-10T07:33:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ]
+}

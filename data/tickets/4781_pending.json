@@ -1,0 +1,24 @@
+{
+  "id": 4781,
+  "subject": "Phantom inputs from unknown 4th axis",
+  "description_text": "I have the pro x ultras and vam pro motors, only 3 pedals, but recently ive\r\nbeen getting this oscillating peanuts from what seems to be a 4th axis. Its\r\npreventing me from binding the pedals in games. Ive attached a screenshot\r\nfrom assetto corsa where you can see the input. Ive noticed that there are\r\nreports of EMI interference with the vam pro motors but i'm not\r\nconvinced that's the case, as it was fine earlier. I think it could have\r\nbeen the last firmware update or something else\r\n\r\n[image: Screenshot 2025-10-12 173822.png]\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-12T06:43:38Z",
+  "updated_at": "2025-10-12T11:24:08Z",
+  "requester_id": 158003453430,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010313104,
+      "body_text": "Hi Jason B,    Please uninstall the old version from your computer, then reinstall version 2.1.2 and update the firmware.  After the update, the device version should display as CPU1: 2.0.5, CPU2: 2.0.3.  If the issue still persists, please feel free to contact me.      https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-10-12T11:24:08Z",
+      "updated_at": "2025-10-12T11:24:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

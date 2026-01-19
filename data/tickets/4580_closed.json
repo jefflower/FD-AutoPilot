@@ -1,0 +1,224 @@
+{
+  "id": 4580,
+  "subject": "Missing refund",
+  "description_text": "Hello, I haven’t gotten any updates on my refunded pedals and haptic reactors. They arrived on the 25th of September and I’ve already contacted you twice about this issue but haven’t be sent a response.\r\n",
+  "status": 5,
+  "priority": 4,
+  "created_at": "2025-10-08T08:09:27Z",
+  "updated_at": "2025-10-22T04:25:33Z",
+  "requester_id": 158004481984,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008720271,
+      "body_text": "Hello, your order has been dispatched in separate parcels, so please do not be concerned. The other parcel is expected to be delivered to you within the next days.  https://www.sf-express.com/chn/en/waybill/waybill-detail/SF6045901450965",
+      "user_id": 158001343601,
+      "created_at": "2025-09-15T03:42:16Z",
+      "updated_at": "2025-09-15T03:42:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008786582,
+      "body_text": "Hello, I’ve received the package. I would still like to return the package as I already purchased another set of pedals that I am going to use.",
+      "user_id": 158004481984,
+      "created_at": "2025-09-15T19:25:37Z",
+      "updated_at": "2025-09-15T19:25:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158008793534,
+      "body_text": "May I ask if there is any issue with the product you received?",
+      "user_id": 158001343601,
+      "created_at": "2025-09-16T02:30:09Z",
+      "updated_at": "2025-09-16T02:30:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008839495,
+      "body_text": "No there was no issues with the product I just wasn’t satisfied with my purchase.",
+      "user_id": 158004481984,
+      "created_at": "2025-09-17T03:48:21Z",
+      "updated_at": "2025-09-17T03:48:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158008855844,
+      "body_text": "Hello, should the product be free from manufacturing defects, our returns policy does not permit refunds or exchanges. Should you wish to return the item, you will be required to arrange its return to our nearest warehouse at your own expense.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-17T10:53:37Z",
+      "updated_at": "2025-09-17T10:53:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008880228,
+      "body_text": "If I return the item to the local warehouse will I get my money back besides shipping and handling fees.\r\n\r\n> ",
+      "user_id": 158004481984,
+      "created_at": "2025-09-17T17:03:22Z",
+      "updated_at": "2025-09-17T17:03:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008894613,
+      "body_text": "Your return policy states if the product has quality issues or doesn’t match the description then I can return it. Well to me it has quality issues and doesn’t match the description. The quality is not a $420 set of petals and the description made them sound better than they are. So please do the right thing and send me the address where to ship it back to so I can get refunded. \r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158004481984,
+      "created_at": "2025-09-17T20:49:45Z",
+      "updated_at": "2025-09-17T20:49:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008903645,
+      "body_text": "Hi Zach Parrott, our pedals quality absolutely exceeds the price. Did you encounter any difficulties during the adjustment? You may try letting us assist you in resolving it.  Should you insist on returning the item, please send the parcel to our nearest US warehouse. Please ensure the packaging and product remain intact. We shall process your refund after inspection and receipt.   ADD： Greg -MZ（1330006） 13402 YORBA AVENUE，Unit 102， Chino，CA  91710  USA TEL：480 387 3114",
+      "user_id": 158001343601,
+      "created_at": "2025-09-18T05:58:22Z",
+      "updated_at": "2025-09-18T05:58:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009002834,
+      "body_text": "I’ve shipped the product to your warehouse in two separate parcels with UPS and the tracking number is MFCWRTSTPCP.\r\n\r\n> ",
+      "user_id": 158004481984,
+      "created_at": "2025-09-20T16:51:35Z",
+      "updated_at": "2025-09-20T16:51:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009162470,
+      "body_text": "Hi Zach Parrott,    Okay, but we seem unable to track it. Please provide us with a tracking link.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-23T10:25:26Z",
+      "updated_at": "2025-09-23T10:25:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009199340,
+      "body_text": "Hello, sorry I gave you the wrong information the tracking number is 1Z3X30R40360386779 this one should work I tried it myself to make sure.\r\n\r\n> ",
+      "user_id": 158004481984,
+      "created_at": "2025-09-24T01:04:30Z",
+      "updated_at": "2025-09-24T01:04:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009216525,
+      "body_text": "​  Alright, we'll process your refund once we receive and inspect the returned items.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-24T09:12:38Z",
+      "updated_at": "2025-09-24T09:12:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009715686,
+      "body_text": "I returned my package and it arrived on the 25th of September and I haven’t gotten a refund or any update on the status of my return  the tracking number is 1Z3X30R40360386779 with UPS if you need confirmation I paid over 100 dollars to return it so any update would be appreciated.\r\n\r\n> ",
+      "user_id": 158004481984,
+      "created_at": "2025-10-01T06:29:11Z",
+      "updated_at": "2025-10-01T06:29:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009991088,
+      "body_text": "It’s been ten days since you’ve received my package and I still haven’t received a refund. I already asked for an update and asked if there were any problems five days ago and there has been no response. I’d like to resolve this quickly I have receipts that I’ve shipped my package to you with the correct address you gave me and it has arrived. I also can provide picture and video graphic evidence if needed. If there’s no problem then I should have received my refund by now.\r\n\r\n> ",
+      "user_id": 158004481984,
+      "created_at": "2025-10-06T22:22:38Z",
+      "updated_at": "2025-10-06T22:22:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010125863,
+      "body_text": "Hello, we have just concluded our 8-day holiday. We will immediately arrange for an inspection of the warehouse and process your refund. We apologize for any inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-09T03:12:00Z",
+      "updated_at": "2025-10-09T03:12:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010564254,
+      "body_text": "Hello, when will I be receiving my refund.",
+      "user_id": 158004481984,
+      "created_at": "2025-10-16T13:05:04Z",
+      "updated_at": "2025-10-16T13:05:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010588982,
+      "body_text": "ID 为 3763 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-17T01:39:44Z",
+      "updated_at": "2025-10-17T01:39:44Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158010588983,
+      "body_text": "合并来自工单3763  \n      主题: Return  \n      描述:  I bought the simsonn plus x pedals with load cell and haptic reactors and the haptic reactors did not come, only the pedals and baseplate were shipped and I want to return the package shipping number is 884174488476 with FedEx",
+      "user_id": 158000445778,
+      "created_at": "2025-10-17T01:39:45Z",
+      "updated_at": "2025-10-17T01:39:45Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158010606692,
+      "body_text": "Hi Zach Parrott,    Have you returned the Haptics? Our warehouse has only received the pedals.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-17T08:40:46Z",
+      "updated_at": "2025-10-17T08:40:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010626032,
+      "body_text": "Yes, they should have arrived on the same day in the original packaging, There were two separate packages but the were both shipped together \r\n\r\n> ",
+      "user_id": 158004481984,
+      "created_at": "2025-10-17T17:31:59Z",
+      "updated_at": "2025-10-17T17:31:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010718620,
+      "body_text": "Hi Zach Parrott,    Okay, we've processed your refund. Please check your account.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-20T09:33:58Z",
+      "updated_at": "2025-10-20T09:33:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

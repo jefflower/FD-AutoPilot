@@ -1,0 +1,94 @@
+{
+  "id": 8366,
+  "subject": "Tracking Number Request",
+  "description_text": "Hi ! I placed an order under the phone number 3365881277 I was wondering if I could get the tracking number.\r\n\r\n-Best regards, Harvey\r\nOutlook for iOS<https://aka.ms/o0ukef>\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-16T01:08:36Z",
+  "updated_at": "2025-12-24T09:13:14Z",
+  "requester_id": 158007827429,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014610522,
+      "body_text": "Hi Harvey Lanier,  Could you please provide the order date and amount? I’ll help you look it up. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T02:37:47Z",
+      "updated_at": "2025-12-17T02:37:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014612756,
+      "body_text": "Hi, I placed the order on Saturday the 13th and my total was $138.90\r\n\r\n-Best regards, Harvey\r\nOutlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158007827429,
+      "created_at": "2025-12-17T04:39:04Z",
+      "updated_at": "2025-12-17T04:39:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014616922,
+      "body_text": "Hi Harvey Lanier,  If you ordered the H-pattern and sequential 2-in-1 shifter, the shipment has been delayed and is scheduled to be dispatched on the 20th. Thank you for your patience and understanding. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T07:44:28Z",
+      "updated_at": "2025-12-17T07:44:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014641130,
+      "body_text": "Okay I appreciate you getting back to me. Will I be provided with a tracking number once it ships?\r\n\r\n-Best regards, Harvey\r\nOutlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158007827429,
+      "created_at": "2025-12-17T16:48:56Z",
+      "updated_at": "2025-12-17T16:48:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014747402,
+      "body_text": "Hi Harvey Lanier,  Yes, once the order is shipped, we will upload the tracking number to the system. May I ask if you provided an email address when placing the order? ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-19T08:07:04Z",
+      "updated_at": "2025-12-19T08:07:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014782040,
+      "body_text": "No I did not provide an email address just a phone number.\r\n\r\n-Best regards, Harvey\r\nOutlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158007827429,
+      "created_at": "2025-12-19T18:38:47Z",
+      "updated_at": "2025-12-19T18:38:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014844795,
+      "body_text": "Hi there just wanted to follow up and see where my order is. I was told it would be dispatched on the 20th and I still have not heard anything.\r\n\r\n-Best regards, Harvey\r\nOutlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158007827429,
+      "created_at": "2025-12-21T17:18:14Z",
+      "updated_at": "2025-12-21T17:18:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015028697,
+      "body_text": "Hi Harvey Lanier,    Apologies, the new shifter orders will be dispatched throughout this week.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-24T09:13:14Z",
+      "updated_at": "2025-12-24T09:13:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

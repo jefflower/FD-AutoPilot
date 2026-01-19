@@ -1,0 +1,64 @@
+{
+  "id": 10785,
+  "subject": "Pedaliera p2h2",
+  "description_text": "É già la seconda mail che mando, è possibile sapere se i pedali sono\r\ncompatibili con base fanatec DD pro per ps5?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-13T12:41:15Z",
+  "updated_at": "2026-01-15T01:32:10Z",
+  "requester_id": 158009031488,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017092876,
+      "body_text": "ID 为 10639 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-14T11:01:55Z",
+      "updated_at": "2026-01-14T11:01:55Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158017092877,
+      "body_text": "合并来自工单10639  \n      主题: Pedaliera pro x ultra p2h2  \n      描述:  Salve stavo valutando l'acquisto della pedaliera in oggetto, mi chiedevo se sono compatibili con la base fanatec DD pro per ps5, la pedaliera si può connettere direttamente alla base? ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-14T11:01:55Z",
+      "updated_at": "2026-01-14T11:01:55Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158017092879,
+      "body_text": "Hi Sergio Infantino,  Our products are designed for PC use and currently do not support PS5. They can also work with Fanatec wheelbases on PC. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-14T11:01:57Z",
+      "updated_at": "2026-01-14T11:01:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017094977,
+      "body_text": "Avete pedaliera compatibili con DD pro per ps5?\r\n\r\nIl mer 14 gen 2026, 12:02 support@simsonn.com ",
+      "user_id": 158009031488,
+      "created_at": "2026-01-14T11:34:46Z",
+      "updated_at": "2026-01-14T11:34:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017154272,
+      "body_text": "Hi Sergio Infantino,  Sorry, this feature/function isn’t supported at the moment. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-15T01:32:10Z",
+      "updated_at": "2026-01-15T01:32:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

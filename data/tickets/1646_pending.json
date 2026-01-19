@@ -1,0 +1,74 @@
+{
+  "id": 1646,
+  "subject": "Purchased from amazon, Plus X",
+  "description_text": "[image: image.png]\r\nHello, I purchased this from amazon, I do not want to return it thru them\r\nas I know that cost you money and me time. However, when plugging the thing\r\nin, initially I had a problem where it wouldn't save settings in\r\nsimpson manager, it would simply default back to 44kg/medium instead of 39\r\nand \"soft\". Second, after a few days the EMI usb plug stopped working, then\r\ntoday my control box no longer works, sees signal, anything. I'm unsure\r\nwhat to do, how do I get a new control box? I was really excited because I\r\nalso ordered the reactors and they will be here in the next few days and\r\nnow I can't use them or my pedals at all.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-07-17T15:37:43Z",
+  "updated_at": "2025-07-18T06:13:09Z",
+  "requester_id": 158002190644,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005138132,
+      "body_text": "Hi BadDadGames,     First, please go to Settings → Update in the software and upgrade to version 2.0.9.  Then follow the steps below to manually update the PlusX firmware:      Press and hold the upgrade button on the PlusX control box;  Plug in the USB while holding the button — the device will enter recovery mode. Then release the button;  Open SIMSONN Manager, go to Settings → Update → Manual Firmware Update, and select the plusx.sfu file I sent you to complete the update.      To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability:      Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding.  Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive.  Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup.  Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible.  Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs.  Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference.  Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements.  Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources.       ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-17T15:53:50Z",
+      "updated_at": "2025-07-17T15:53:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005138366,
+      "body_text": "Hi, this didn't fix it. The control box still isn't working, when checking\r\nit with a devusb, it gets no usb output. I believe the controlbox maybe\r\ndead.\r\n\r\nOn Thu, Jul 17, 2025 at 11:54 AM service@simsonn.com ",
+      "user_id": 158002190644,
+      "created_at": "2025-07-17T16:08:50Z",
+      "updated_at": "2025-07-17T16:08:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005143545,
+      "body_text": "Hi BadDadGames,     Then follow the steps below to manually update the PlusX firmware:      Press and hold the upgrade button on the PlusX control box;  Plug in the USB while holding the button — the device will enter recovery mode. Then release the button;       After performing these two steps, is your PlusX still not showing up as “Simsonn Flasher” mode in SIMSONN MANAGER?  https://www.vkbcontrollers.com/pages/downloads     Please download VKB Joy Tester and check if our device is detected.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-17T23:23:59Z",
+      "updated_at": "2025-07-17T23:23:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005143739,
+      "body_text": "Hi BadDadGames,     Make sure to connect the USB cable directly to a USB 3.0 port on the back of your PC, not through a USB hub, as hubs can cause unstable power or data transmission.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-17T23:57:31Z",
+      "updated_at": "2025-07-17T23:57:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005145687,
+      "body_text": "I have tried troubleshooting it everyway possible, it will not work, it\r\nregisters in the app but doesn't register any movement of the pedals even\r\nthough I've double checked their plugged in, flashed the firmware, updated\r\nsoftware.\r\n\r\nOn Thu, Jul 17, 2025 at 7:57 PM service@simsonn.com ",
+      "user_id": 158002190644,
+      "created_at": "2025-07-18T05:35:36Z",
+      "updated_at": "2025-07-18T05:35:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005145888,
+      "body_text": "Hi BadDadGames,  Please let me know how many hours later you’ll be available so we can schedule the remote session. Also, please download the Todesk tool. No registration is required — if prompted to register, simply click the close button in the top-right corner to access the main interface. Then just provide your ID and temporary password.      https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-07-18T06:13:08Z",
+      "updated_at": "2025-07-18T06:13:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

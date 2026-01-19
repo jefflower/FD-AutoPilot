@@ -1,0 +1,24 @@
+{
+  "id": 2393,
+  "subject": "The Wrong Product",
+  "description_text": "I had bought the 7+R shifter and received the 6+R one. I paid the price for\r\nthe 7+R and would be willing to send the other one back, but I don't know\r\nhow or rather what processes I would need to follow to get that back to you.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-07T01:16:25Z",
+  "updated_at": "2025-08-07T02:03:34Z",
+  "requester_id": 158002746797,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006444917,
+      "body_text": "Hi Robert Sellers,  6+R is better than 7+R, and it is also more expensive. You can try it out first.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-07T02:03:28Z",
+      "updated_at": "2025-08-07T02:03:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

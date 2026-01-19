@@ -1,0 +1,75 @@
+{
+  "id": 3849,
+  "subject": "F1 25 game support",
+  "description_text": "Hi Simsonn,\n\nI recently purchased the F1 2025 game.\nMy pedals are not working with this game.\nI am running the software Simsonn Manager 2.1.0.\n\nIs there any option for this game?",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-09-15T14:38:00Z",
+  "updated_at": "2025-09-17T17:03:12Z",
+  "requester_id": 158004553262,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008792535,
+      "body_text": "Hi Bart Caethoven, In our test environment, F1 2025 runs without any issues. Because the RX axis on our previous handbrake was not disabled, it may cause F1 2025 to fail to bind correctly. You can try fixing this issue using SIMSONN Manager 2.1.1: Open the SIMSONN Manager 2.1.1 software. In the interface, click the “Restore” button. Then click the “Save” button. Reinsert the USB cable. Finally, test to confirm if the RX axis has been successfully disabled. https://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-09-16T01:14:23Z",
+      "updated_at": "2025-09-16T01:14:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008803744,
+      "body_text": "Ok I will try later this day.\n\nAlso, what I see is the game doesn't show up in the list on the right.\n\nEvery version of the F1 game shows up, only 25 doesn't.\n\nMy Assetto Corsa Competizione has no problem, it shows up.",
+      "user_id": 158004553262,
+      "created_at": "2025-09-16T08:00:41Z",
+      "updated_at": "2025-09-16T08:00:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008837543,
+      "body_text": "Hi Bart Caethoven, When testing, please take a screenshot of the F1 2025 settings screen so I can compare it and check for any differences from the settings on our computer.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-17T01:38:47Z",
+      "updated_at": "2025-09-17T01:38:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008851147,
+      "body_text": "Hi Bart Caethoven,",
+      "user_id": 158000445778,
+      "created_at": "2025-09-17T09:10:13Z",
+      "updated_at": "2025-09-17T09:10:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008851414,
+      "body_text": "Hi thanks!\nIt worked like this.\n\nThank you a lot for the help guys.",
+      "user_id": 158004553262,
+      "created_at": "2025-09-17T09:31:47Z",
+      "updated_at": "2025-09-17T09:31:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008880191,
+      "body_text": "",
+      "user_id": 158004553262,
+      "created_at": "2025-09-17T17:03:11Z",
+      "updated_at": "2025-09-17T17:03:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

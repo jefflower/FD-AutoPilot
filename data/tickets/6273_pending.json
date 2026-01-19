@@ -1,0 +1,134 @@
+{
+  "id": 6273,
+  "subject": "prox ultra pedals/vam pro haptics",
+  "description_text": "mt prox ultra pedals with vam pro haptics were working fine a few days ago\r\ni did a fresh window 11 install and now they wont shut off at all or give\r\nweird telemetry vibrations at wrong times or straight up just not work at\r\nall in the game. im on version 2.1.2 manager with pedal cpu1 v2.0.5 and\r\ncpu2 v2.0.4, also the manager says i have a handbrake pro update and i\r\nclick it and says update complete but then ask me again to install update.\r\nhandbrake pro is on cpu1 and cpu2 v2.0.0 and wont update to v2.0.1 even\r\nwith manual update\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-11-18T01:48:16Z",
+  "updated_at": "2025-11-22T06:58:20Z",
+  "requester_id": 158001853228,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012558228,
+      "body_text": "Hi Dalton Uhl,  If this happens, it indicates that the computer’s grounding is not reliable, possibly because a three-prong plug was not used with a three-prong wall outlet. You can refer to the post below: connect the computer case to the stand, and connect the control box to the metal screws on the pedals. This should resolve the disconnection issue.     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding     Please make sure that SIMSONN Manager is updated to the latest version 2.1.2. For the handbrake, you can perform a manual firmware update by going to: Settings → Update → Manual Firmware Update → handbrake-firmware → handbrake-hbpro.sfu. After completing the firmware update, please run a test again. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-19T03:10:32Z",
+      "updated_at": "2025-11-19T03:10:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012574624,
+      "body_text": "My control box is plugged into it own outlet and bolted down to the same\r\nplate the pedals are on and im still getting the issue where they wont shut\r\noff after each race\r\n\r\nOn Tue, Nov 18, 2025, 8:10 PM support@simsonn.com ",
+      "user_id": 158001853228,
+      "created_at": "2025-11-19T11:30:44Z",
+      "updated_at": "2025-11-19T11:30:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012647452,
+      "body_text": "Someone on facebook claimed you guys remote desktop i to his pc and got\r\nthen working as it was software related and id assume mine is aswell. Since\r\nive had not issue with 4+hour sessions daily with them since the day of\r\nrelease of the vam pro haptics with zero issues what so ever, and I did a\r\nwindows reinstall and now they dont act right at all. They will work fine\r\nin the manager for a few minutes then just get stuck on. And if you load\r\ninto a racing game after a few minutes the throttle just gets stuck on a\r\n100% power even tho its set to 35% strength\r\n\r\nOn Tue, Nov 18, 2025, 8:10 PM support@simsonn.com ",
+      "user_id": 158001853228,
+      "created_at": "2025-11-20T16:17:44Z",
+      "updated_at": "2025-11-20T16:17:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012739186,
+      "body_text": "Hi Dalton Uhl,  Which country are you in? Please let me know your available time, and we can schedule a ToDesk remote session so I can assist you.       you can download this link, so that this side of the engineer to help you deal with, you do not need to log in, and then click on this verification code, copy the id and temporary password to us on it!     https://dl.todesk.com/irrigation/ToDesk_4.7.6.3.exe ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-22T03:44:44Z",
+      "updated_at": "2025-11-22T03:44:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012739244,
+      "body_text": "I live in arizona in the United states. I can be available anytime in the\r\nnext 24hrs\r\n\r\nOn Fri, Nov 21, 2025, 8:45 PM support@simsonn.com ",
+      "user_id": 158001853228,
+      "created_at": "2025-11-22T03:50:30Z",
+      "updated_at": "2025-11-22T03:50:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012739298,
+      "body_text": "Hi Dalton Uhl,  I just stepped out and will be back in about two hours. I will address your issue as soon as I return. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-22T03:56:27Z",
+      "updated_at": "2025-11-22T03:56:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012739348,
+      "body_text": "tried to go to the website you sent me to i get this webpage\r\n\r\nOn Fri, Nov 21, 2025 at 8:56 PM support@simsonn.com ",
+      "user_id": 158001853228,
+      "created_at": "2025-11-22T04:01:02Z",
+      "updated_at": "2025-11-22T04:01:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012739466,
+      "body_text": "ToDesk:\r\ndevice ID:695 290 826\r\nTemporary password:b9103xv6\r\n\r\nOn Fri, Nov 21, 2025 at 8:56 PM support@simsonn.com ",
+      "user_id": 158001853228,
+      "created_at": "2025-11-22T04:10:51Z",
+      "updated_at": "2025-11-22T04:10:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012740503,
+      "body_text": "Hi Dalton Uhl,  Are you online right now? ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-22T06:06:58Z",
+      "updated_at": "2025-11-22T06:06:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012740546,
+      "body_text": "yes i am here is the info\r\n\r\nToDesk:\r\ndevice ID:695 290 826\r\nTemporary password:kc0q0euz\r\n\r\nOn Fri, Nov 21, 2025 at 11:07 PM support@simsonn.com ",
+      "user_id": 158001853228,
+      "created_at": "2025-11-22T06:12:24Z",
+      "updated_at": "2025-11-22T06:12:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012740641,
+      "body_text": "1000000787.mp4\r\n<https://drive.google.com/file/d/1rKa4RAxfE4_PbpR6rZO2_O_rsU7HyYQ8/view?usp=drivesdk>\r\n\r\n\r\n",
+      "user_id": 158001853228,
+      "created_at": "2025-11-22T06:27:19Z",
+      "updated_at": "2025-11-22T06:27:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012740712,
+      "body_text": "Hi Dalton Uhl,     You may need to remove some of the black oxidation layer at the screws of the main controller, and possibly some of the black paint on the bracket base. Otherwise, it could cause poor grounding between the computer case and the main controller pedals. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-22T06:34:34Z",
+      "updated_at": "2025-11-22T06:34:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

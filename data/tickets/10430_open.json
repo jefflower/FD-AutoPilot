@@ -1,0 +1,64 @@
+{
+  "id": 10430,
+  "subject": "",
+  "description_text": "Salve vorrei sapere informazioni sul mio ordine  vorrei sapere a se è stato\r\nspedito grazie  attendo vostre notizie\r\n\r\n*Alessandro Siragusano*\r\n\r\n",
+  "status": 2,
+  "priority": 1,
+  "created_at": "2026-01-09T16:10:15Z",
+  "updated_at": "2026-01-16T01:41:47Z",
+  "requester_id": 158009003107,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016778376,
+      "body_text": "Hi Alessandro Siragusano,  Could you please provide your order number so we can check it for you? ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T06:08:03Z",
+      "updated_at": "2026-01-11T06:08:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016808842,
+      "body_text": "Salve il mio numero di ordine e Order #SSN5846\r\n Attendo informazioni grazie\r\n*Alessandro Siragusano*\r\n\r\nIl Dom 11 Gen 2026, 07:08 support@simsonn.com ",
+      "user_id": 158009003107,
+      "created_at": "2026-01-11T11:52:06Z",
+      "updated_at": "2026-01-11T11:52:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016860829,
+      "body_text": "Avete qualche novità??  Order #SSN5846\r\n\r\n*Alessandro Siragusano*\r\n\r\nIl Dom 11 Gen 2026, 12:51 Alessandro Siragusano <\r\nsiragusanoalessandro@gmail.com> ha scritto:\r\n\r\n> Salve il mio numero di ordine e Order #SSN5846\r\n>  Attendo informazioni grazie\r\n> *Alessandro Siragusano*\r\n>\r\n> Il Dom 11 Gen 2026, 07:08 support@simsonn.com ",
+      "user_id": 158009003107,
+      "created_at": "2026-01-12T12:48:52Z",
+      "updated_at": "2026-01-12T12:48:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017166316,
+      "body_text": "Hi Alessandro Siragusano,     One of the items in your package has been shipped today. Below is your tracking link:  https://www.sf-international.com/gb/en/support/querySupport/waybill?No=SF3265828359915     Another product，Due to demand far exceeding expectations, this item has been out of stock for nearly two weeks. We will arrange shipment within the next two days and sincerely apologize for the delay. Below is your tracking link:    https://t.17track.net/en#nums=SF6047239668663",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T07:12:08Z",
+      "updated_at": "2026-01-15T07:12:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017210866,
+      "body_text": "Salve posso sapere cosa non e stato spedito?.. e che tempi di attesa ci\r\nsono\r\n\r\n*Alessandro Siragusano*\r\n\r\nIl Gio 15 Gen 2026, 08:12 support@simsonn.com ",
+      "user_id": 158009003107,
+      "created_at": "2026-01-15T17:35:48Z",
+      "updated_at": "2026-01-15T17:35:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

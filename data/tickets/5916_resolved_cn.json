@@ -1,0 +1,35 @@
+{
+  "id": 5916,
+  "subject": "刹车踏板力传感器故障",
+  "description_text": "我于2025年5月25日购买了一套Plus X踏板，它们一直表现良好，但最近刹车踏板在未施加任何压力的情况下显示36公斤的力。我已经重新校准了多次。有没有办法更换力传感器或获得新的刹车踏板？",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-11-11T01:19:20Z",
+  "updated_at": "2025-11-11T01:48:50Z",
+  "requester_id": 158003606214,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012092876,
+      "body_text": "您好 Codythompson90，请点击软件中的“偏移”按钮，将白色初始信号调整到0%，然后再次执行校准。这是必要的，因为调整阻尼或机械部件会改变初始位置，因此需要重新校准偏移量以获得准确读数。",
+      "user_id": 158000445778,
+      "created_at": "2025-11-11T01:28:25Z",
+      "updated_at": "2025-11-11T01:28:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012093266,
+      "body_text": "完成此操作后，现在读数为0公斤，谢谢。\n\n2025年11月10日星期一晚上7:28 service@simsonn.com",
+      "user_id": 158003606214,
+      "created_at": "2025-11-11T01:47:22Z",
+      "updated_at": "2025-11-11T01:47:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

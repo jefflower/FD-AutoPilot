@@ -1,0 +1,44 @@
+{
+  "id": 8021,
+  "subject": "Problem with VAM Pro Motor",
+  "description_text": "\r\n Dear Ladies and Gentleman, \r\n \r\n Unfortunatly I have a problem with my VAM Pro Haptic Motor. One motor is noticable more weaker than the other. With the same settings in the SIMSONN Manager and in Simhub one motor is about 30% of the strength of the other. I tested all three interfaces at the controller but on motor is much weaker then the other. \r\n So please tell me how can I fix the problem. If this doesn't works it would be super kindful if you send me a new one, cause the diffrence is massive between the two VAM Pro motors. If one is at 100% the weaker is barely noticeably. \r\n \r\n Order #SSN3729 \r\n \r\n Best regards, \r\n David Reifinger \r\n \r\n \r\n \r\n \r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-11T20:17:48Z",
+  "updated_at": "2025-12-18T11:04:04Z",
+  "requester_id": 158007420851,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014472015,
+      "body_text": "Hi david reifinger,  No problem. We will send you a new VAM Pro motor tomorrow (Monday) and provide you with the tracking number. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-14T03:08:23Z",
+      "updated_at": "2025-12-14T03:08:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014649062,
+      "body_text": "Dear Ladies and Gentleman, \r\n Thank you for that that is super kindful. I only wanted to let you know that my baseplate arrvived today. \r\n Best wishes \r\n David \r\n \r\n \r\n Gesendet: Sonntag, 14. Dezember 2025 um 04:08 \r\n ",
+      "user_id": 158007420851,
+      "created_at": "2025-12-17T18:48:25Z",
+      "updated_at": "2025-12-17T18:48:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014684827,
+      "body_text": "Hi david reifinger,    We apologize for not arranging a replacement promptly. Here is your tracking link.  https://t.17track.net/en#nums=YT2535200707627044",
+      "user_id": 158001343601,
+      "created_at": "2025-12-18T11:04:04Z",
+      "updated_at": "2025-12-18T11:04:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

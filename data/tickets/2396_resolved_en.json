@@ -1,0 +1,35 @@
+{
+  "id": 2396,
+  "subject": "Software manager version 2.1",
+  "description_text": "Hi, what is the LEVEL OF FILTERING in the samsonn management software. Thank you Eric Fillion",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-08-07T01:48:27Z",
+  "updated_at": "2025-08-11T00:47:59Z",
+  "requester_id": 158002751383,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006600125,
+      "body_text": "Hi Eric Fillion, The default filter level is Level 2. You can disable it to improve the signal response speed, especially in iRacing.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-09T15:09:05Z",
+      "updated_at": "2025-08-09T15:09:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006661560,
+      "body_text": "Ok thank you Eric Fillion",
+      "user_id": 158002751383,
+      "created_at": "2025-08-10T21:36:12Z",
+      "updated_at": "2025-08-10T21:36:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

@@ -1,0 +1,44 @@
+{
+  "id": 1345,
+  "subject": "Inquiry About Tax, Shipping, and Special Price for Pro Plus Pedals and Steering Wheel Set",
+  "description_text": "Dear Simsonn Team,\r\n\r\n\r\nGood day!\r\n\r\n\r\nI am very interested in purchasing the Pro Plus pedals and steering wheel\r\nset from your store. Before placing my order, I would like to kindly ask\r\nfor the following information:\r\n\r\n\r\n   1.\r\n\r\n   Shipping cost to the Philippines\r\n   2.\r\n\r\n   Estimated delivery time\r\n   3.\r\n\r\n   Taxes or import duties I might need to pay upon delivery\r\n   4.\r\n\r\n   If it’s possible to receive a special price or discount for the set\r\n\r\n\r\nI would truly appreciate your support, as I am planning to use the setup\r\nfor a new sim racing project here in the Philippines.\r\n\r\n\r\nLooking forward to your reply. Thank you in advance for your assistance!\r\n\r\n\r\nBest regards,\r\n\r\nCarlo Sampang\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-08T19:23:39Z",
+  "updated_at": "2025-07-10T10:57:41Z",
+  "requester_id": 158001957627,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004500266,
+      "body_text": "Hi John Carlo Sampang,     Here's the shipping schedule for shipping to the Philippines, with an estimated delivery time of 3-10 days. Regarding taxes, we are not sure if there will be any as we have so few orders from the Philippines. You can apply our special Member's Day discount for 12% off in this discount box.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-10T04:01:51Z",
+      "updated_at": "2025-07-10T04:01:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004501558,
+      "body_text": "How to apply the Member's Day discount? Do you have any discount/coupon\r\ncode? Because this is my first time buying in your store also.\r\n\r\nOn Thu, Jul 10, 2025 at 06:02 support@simsonn.com ",
+      "user_id": 158001957627,
+      "created_at": "2025-07-10T08:47:22Z",
+      "updated_at": "2025-07-10T08:47:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004502135,
+      "body_text": "Hi John Carlo Sampang,    You can type in this discount box in the picture: HF12",
+      "user_id": 158001343601,
+      "created_at": "2025-07-10T10:57:40Z",
+      "updated_at": "2025-07-10T10:57:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

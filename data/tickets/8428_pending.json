@@ -1,0 +1,24 @@
+{
+  "id": 8428,
+  "subject": "Order SSN4929",
+  "description_text": "Just ordered a clutch pedal and control box as is listed, but I'm confused.\r\nDoes the control box come with the clutch pedal? Or do I need to order it\r\nseparately?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-16T15:33:40Z",
+  "updated_at": "2025-12-17T02:07:15Z",
+  "requester_id": 158007833983,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014609898,
+      "body_text": "Hi Sniper Jones,  Purchasing the clutch alone does not include the control box, which needs to be purchased separately. If you have previously purchased a pedal set that already includes a control box, there is no need to buy it again. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T02:07:15Z",
+      "updated_at": "2025-12-17T02:07:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

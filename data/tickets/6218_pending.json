@@ -1,0 +1,13 @@
+{
+  "id": 6218,
+  "subject": "来自simsonn.com的退信",
+  "description_text": "QQ邮箱退信 很抱歉您发送的邮件被退回，以下是该邮件的相关信息： 被退回邮件 主 题：Ticket Received - Action required: You've been invited to join the Meta Agency Partner Program devops.business-agency-... 时 间：2025-11-17 00:06:18 无法发送到 noreply@business.facebook.com 退信原因 收件人邮件地址（noreply@business.facebook.com）不存在，邮件无法送达。 host smtpin.vvv.facebook.com[173.252.87.251] said: 550 5.1.1 RCP-P1 Recipient address does not exist https://www.facebook.com/postmaster/response_codes?ip=54.243.244.52#RCP-P1 (in reply to end of DATA command) 解决方案 请联系你的收件人，重新核实邮箱地址，或发送到其他收信邮箱。 此外，您还可以 点击这里 获取更多关于退信的帮助信息。",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-16T16:06:47Z",
+  "updated_at": "2025-11-17T03:29:59Z",
+  "requester_id": 158001011131,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": []
+}

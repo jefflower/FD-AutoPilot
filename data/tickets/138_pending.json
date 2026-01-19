@@ -1,0 +1,104 @@
+{
+  "id": 138,
+  "subject": "Aliexpress orders",
+  "description_text": "Good afternoon\r\n\r\nIf I ordered a product ed through aliexpress and it was the wrong product, can i email this address or go through the app\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-04T07:47:22Z",
+  "updated_at": "2025-06-05T09:07:59Z",
+  "requester_id": 158001154777,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002334317,
+      "body_text": "你好，Steve Leon，  您好，请问您遇到了什么问题？我们可以帮您解决与 AliExpress 订单相关的任何问题。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-04T08:10:29Z",
+      "updated_at": "2025-06-04T08:10:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002393651,
+      "body_text": "Hello,\r\nI ordered the pro hb got the wrong handbrake sent out. I happy if you have the stock to just have the pro hb sent instead of a refund\r\n[Image]\r\n\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n\r\n________________________________\r\n",
+      "user_id": 158001154777,
+      "created_at": "2025-06-04T12:09:26Z",
+      "updated_at": "2025-06-04T12:09:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002400339,
+      "body_text": "Hi Steve leon,  I’m not quite sure what you mean. Are you referring to the HB PRO or the PRO HB? Could you please provide a picture of the product you’re referring to? ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-04T12:38:53Z",
+      "updated_at": "2025-06-04T12:38:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002401955,
+      "body_text": "Hello,\r\n\r\nI ordered the hb pro order number 8200793475953878\r\n\r\nBut I received the wrong handbrake the picture of the handbrake in the box is what I got sent.\r\nWhich is that handbrake usb  200kg\r\n\r\n\r\n\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158001154777,
+      "created_at": "2025-06-04T12:47:49Z",
+      "updated_at": "2025-06-04T12:47:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002404155,
+      "body_text": "Hi Steve leon,     We will get in touch with you tomorrow and provide a solution.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-04T12:56:47Z",
+      "updated_at": "2025-06-04T12:56:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002431523,
+      "body_text": "Hello,\r\n\r\nI have been told that there is a refund in place when the other handbrake is received, is there any chance of you just sending out the hb pro instead of a refund\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158001154777,
+      "created_at": "2025-06-05T05:45:59Z",
+      "updated_at": "2025-06-05T05:45:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002458476,
+      "body_text": "Hi Steve leon,  I just spoke with our AliExpress sales representative, and they will arrange the reshipment of the HB PRO as soon as possible. Once it’s shipped, I’ll get back to you with the tracking number. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-05T08:31:50Z",
+      "updated_at": "2025-06-05T08:31:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002459136,
+      "body_text": "Thanks so much\r\n\r\nI really do appreciate it\r\n\r\nYour products are fantastic\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158001154777,
+      "created_at": "2025-06-05T08:34:01Z",
+      "updated_at": "2025-06-05T08:34:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002467186,
+      "body_text": "Hi Steve leon,  Your order has been shipped. Here is your tracking number.   JSEXZ0516442928YQ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-05T09:07:04Z",
+      "updated_at": "2025-06-05T09:07:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

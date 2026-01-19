@@ -1,0 +1,94 @@
+{
+  "id": 3805,
+  "subject": "Simsonn manager software problems",
+  "description_text": "Hello. I have simsonn plus x pedals and i downloaded software but it seems to be missing icons and text and because of this it doesnt let me change curves or anything\r\nSent from my iPhone\r\n",
+  "status": 4,
+  "priority": 3,
+  "created_at": "2025-09-14T09:25:05Z",
+  "updated_at": "2025-09-17T09:42:12Z",
+  "requester_id": 158004528099,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008716983,
+      "body_text": "Hi robin ratsep,     Please confirm that you have downloaded version 2.1.0.  You can locate the log folder in the software installation directory, compress it, and send it to us for inspection.  Additionally, please provide your country, your computer’s OS version, and language settings.  Meanwhile, uninstall the current version and try installing version 2.1.1 using the link I provided.      https://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=drive_lin",
+      "user_id": 158000445778,
+      "created_at": "2025-09-15T00:13:35Z",
+      "updated_at": "2025-09-15T00:13:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008813407,
+      "body_text": "Manuse SIMSONNManager-2.1.1.exe eelvaadeManuse SIMSONNManager-2.1.1.exe\r\neelvaade\r\nSIMSONNManager-2.1.1.exe\r\nJagatud Drive'is\r\n<https://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=gmail>YES,\r\nI HAVE 2.1.O. i am in Estonia and have windows 10. language is english.\r\n\r\nKontakt support@simsonn.com (",
+      "user_id": 158004528099,
+      "created_at": "2025-09-16T10:47:22Z",
+      "updated_at": "2025-09-16T10:47:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008813431,
+      "body_text": "I tried 2.1.1 but same problem and it doesnt reconise pedal inputs but\r\npedals work. Also when i download windows gives me warnings that its not\r\ncommonly downloaded file but i can press download anyway and open anyway.\r\n\r\nKontakt robin ratsep (<robin.ratsep@gmail.com>) kirjutas kuupäeval T, 16.\r\nseptember 2025 kell 13:46:\r\n\r\n> Manuse SIMSONNManager-2.1.1.exe eelvaadeManuse SIMSONNManager-2.1.1.exe\r\n> eelvaade\r\n> SIMSONNManager-2.1.1.exe\r\n> Jagatud Drive'is\r\n>\r\n> <https://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=gmail>YES,\r\n> I HAVE 2.1.O. i am in Estonia and have windows 10. language is english.\r\n>\r\n> Kontakt support@simsonn.com (",
+      "user_id": 158004528099,
+      "created_at": "2025-09-16T10:50:22Z",
+      "updated_at": "2025-09-16T10:50:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008846033,
+      "body_text": "Hi robin ratsep,       Please compress the installation directory of Simsonn Manager from your C drive and send it to me. Once I review the logs, I will be able to quickly identify and resolve the issue. Alternatively, you can install the ToDesk tool, and I can check it remotely for you — the fix usually takes only a short time. Normally, users in other regions do not encounter this issue.      Please install the Todesk software. No registration is required, and if it prompts you to register, simply close the window.      https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-09-17T07:55:28Z",
+      "updated_at": "2025-09-17T07:55:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008846576,
+      "body_text": "it does not let me zip this file but i downloaded todesk\r\n\r\nKontakt support@simsonn.com (",
+      "user_id": 158004528099,
+      "created_at": "2025-09-17T08:04:21Z",
+      "updated_at": "2025-09-17T08:04:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008847499,
+      "body_text": " SIMSONN Manager.rar\r\n<https://drive.google.com/file/d/1gXzlAx62AEM8PGCXF-q-m6Sen1i-oGBu/view?usp=drive_web>\r\n\r\nKontakt robin ratsep (<robin.ratsep@gmail.com>) kirjutas kuupäeval K, 17.\r\nseptember 2025 kell 11:03:\r\n\r\n> it does not let me zip this file but i downloaded todesk\r\n>\r\n> Kontakt support@simsonn.com (",
+      "user_id": 158004528099,
+      "created_at": "2025-09-17T08:06:13Z",
+      "updated_at": "2025-09-17T08:06:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008851185,
+      "body_text": "Hi robin ratsep,  Our engineer has just reviewed the logo you provided. Please locate the Simsonn Manager “S” icon on the bottom-left of your desktop, right-click to exit the program, and then launch the new 2.1.1 software. If you are not sure how to do this, you can first uninstall the 2.1.0 version from your computer, then install and open the new 2.1.1 version for testing. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-17T09:13:49Z",
+      "updated_at": "2025-09-17T09:13:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008851409,
+      "body_text": "for now this seemed to work. huge thanks for it :)\r\n\r\nKontakt support@simsonn.com (",
+      "user_id": 158004528099,
+      "created_at": "2025-09-17T09:31:09Z",
+      "updated_at": "2025-09-17T09:31:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": 7354,
+  "subject": "Delivery expectations not met - Refund on the delivery",
+  "description_text": "Hi,\r\nOrder #SSN3664\r\n\r\nI have bought a few items on the Simsonn website about two weeks ago. I paid extra for the Fedex Express shipping which was advertised on your website to only take 3-7 business days. However, it has now been 7 business days and the package still hasn't left china.\r\n\r\nSince the delivery will not arrive within the expected time frame, and I've paid extra for it to arrive within that time frame, and no extra time was mentionned during the order. I would like a refund on the shipping I paid for.\r\n\r\nIf you are not willing to refund the shipping, I will simply cancel the order and expect a full refund of the entire order including shipping, and will take my business elsewhere.\r\n\r\nThis is far from the first time I buy from Simsonn, but it might be the last, depending on customer service.\r\n\r\nI hope we can work together on this issue. Thank you in advance, best regards.\r\n\r\n-Charles.\r\n\r\nORDER #SSN3664\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-03T18:27:52Z",
+  "updated_at": "2025-12-05T09:41:24Z",
+  "requester_id": 158001832474,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013379043,
+      "body_text": "Hi Charles Étienne,    We sincerely apologise for any inconvenience caused. As we currently do not have a warehouse in Canada, all items must be shipped from China. Furthermore, as your order consists of multiple individual items, we will need to dispatch them across three separate parcels. This significantly exceeds the standard shipping charges we apply. We thank you for your understanding.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-04T08:50:31Z",
+      "updated_at": "2025-12-04T08:50:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013413993,
+      "body_text": "Hi, \r\n\r\nIf all items come from the same warehouse, why have they not been put into the same box? \r\n\r\nI don’t see how this is of my concern. You’ve stated on the order that this was one singular order, and that shipping was estimated to take between 3-7 business days. I would not have paid three times the normal shipping price if I knew this order would have taken multiple weeks to arrive.",
+      "user_id": 158001832474,
+      "created_at": "2025-12-04T19:42:19Z",
+      "updated_at": "2025-12-04T19:42:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013414051,
+      "body_text": "How will you make this right?\r\n\r\n",
+      "user_id": 158001832474,
+      "created_at": "2025-12-04T19:43:31Z",
+      "updated_at": "2025-12-04T19:43:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

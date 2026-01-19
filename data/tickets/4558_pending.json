@@ -1,0 +1,24 @@
+{
+  "id": 4558,
+  "subject": "Order #SSN2802 has this been shipped?",
+  "description_text": "Wondering if my order has been shipped its been 6 days, no word of the package.\r\n\r\nOrder #SSN2802\r\n\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-07T19:29:55Z",
+  "updated_at": "2025-10-09T09:41:49Z",
+  "requester_id": 158005491426,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010141173,
+      "body_text": "Hi JAYSON AUTRY,    We apologize for the delayed response; we've just returned from our 8-day holiday. Your order has been shipped, and here is your tracking link:  https://t.17track.net/en#nums=SF6045959529265",
+      "user_id": 158001343601,
+      "created_at": "2025-10-09T09:41:49Z",
+      "updated_at": "2025-10-09T09:41:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

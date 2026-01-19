@@ -1,0 +1,44 @@
+{
+  "id": 6353,
+  "subject": "CE326631020DE",
+  "description_text": "Good morning,\r\n\r\nI still didint receive my package. In the link to follow, there is no new\r\nstatus sińce 12.11.\r\nCan You please help?\r\nSSN3305\r\n\r\n",
+  "status": 3,
+  "priority": 2,
+  "created_at": "2025-11-19T12:52:05Z",
+  "updated_at": "2025-11-27T08:23:31Z",
+  "requester_id": 158007173588,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012698732,
+      "body_text": "Hi Kacper Myga,     Your parcel has been returned. Please verify your address details.  Kacper Kwiecień  Rzepakowa 1A  40-541 Katowice  Poland  +48 664 524 392",
+      "user_id": 158001343601,
+      "created_at": "2025-11-21T11:35:35Z",
+      "updated_at": "2025-11-21T11:35:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012702121,
+      "body_text": "Dear Sir/Madam,\r\n\r\nI would like to emphasize that the shipping address was provided correctly,\r\nyet the courier did not attempt to deliver the package and did not contact\r\nme by phone on the provided number.\r\n\r\nFurthermore, until yesterday, the parcel status indicated that the package\r\nwas stationary. I have now noticed that the statuses have been changed, and\r\nthe shipment is most likely already returning to your warehouse.\r\n\r\nI have been waiting for the product for a very long time, and therefore I\r\nam urgently requesting a prompt reshipment of the product.\r\n\r\nSince the courier failed to deliver the package to the original address, I\r\ncan provide an alternative shipping address:\r\n\r\n * Name: Kacper Myga\r\n * Address: WINCENTEGO POLA 21c/20\r\n * Postal Code: 40-596\r\n * City: Katowice\r\n * Phone number: 666079976\r\n\r\nI kindly request urgent information regarding the date of the reshipment to\r\nthe new address.\r\n\r\nSincerely,\r\nKacper Myga\r\n\r\n\r\npt., 21 lis 2025, 08:35 użytkownik service@simsonn.com ",
+      "user_id": 158007173588,
+      "created_at": "2025-11-21T12:22:30Z",
+      "updated_at": "2025-11-21T12:22:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012817329,
+      "body_text": "Can you update on the package?\r\n\r\npt., 21 lis 2025, 13:22 użytkownik Kacper Myga <kacpermyga65@gmail.com>\r\nnapisał:\r\n\r\n> Dear Sir/Madam,\r\n>\r\n> I would like to emphasize that the shipping address was provided\r\n> correctly, yet the courier did not attempt to deliver the package and did\r\n> not contact me by phone on the provided number.\r\n>\r\n> Furthermore, until yesterday, the parcel status indicated that the package\r\n> was stationary. I have now noticed that the statuses have been changed, and\r\n> the shipment is most likely already returning to your warehouse.\r\n>\r\n> I have been waiting for the product for a very long time, and therefore I\r\n> am urgently requesting a prompt reshipment of the product.\r\n>\r\n> Since the courier failed to deliver the package to the original address, I\r\n> can provide an alternative shipping address:\r\n>\r\n>  * Name: Kacper Myga\r\n>  * Address: WINCENTEGO POLA 21c/20\r\n>  * Postal Code: 40-596\r\n>  * City: Katowice\r\n>  * Phone number: 666079976\r\n>\r\n> I kindly request urgent information regarding the date of the reshipment\r\n> to the new address.\r\n>\r\n> Sincerely,\r\n> Kacper Myga\r\n>\r\n>\r\n> pt., 21 lis 2025, 08:35 użytkownik service@simsonn.com <\r\n> service@simsonn.com> napisał:\r\n>\r\n>> Hi Kacper Myga,\r\n>>\r\n>> Your parcel has been returned. Please verify your address details.\r\n>> Kacper Kwiecień\r\n>> Rzepakowa 1A\r\n>> 40-541 Katowice\r\n>> Poland\r\n>> +48 664 524 392\r\n>>\r\n>>\r\n>> ",
+      "user_id": 158007173588,
+      "created_at": "2025-11-24T13:07:03Z",
+      "updated_at": "2025-11-24T13:07:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

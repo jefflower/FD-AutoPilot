@@ -1,0 +1,34 @@
+{
+  "id": 7647,
+  "subject": "Order # SSN4417 didn't receive item",
+  "description_text": "\r\nHi\r\n\r\nI didn’t receive the updated U-Shape mounting brackets for the Vam Pro Haptic reactor motors I ordered. My order number is SSN4417\r\nI had also ordered a Plus X clutch pedal, but that seems to still be in transit, would the brackets be included with that package?\r\n\r\nThanks\r\n\r\nMorgan Segal\r\n\r\n\r\n\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-08T02:24:30Z",
+  "updated_at": "2026-01-04T10:25:08Z",
+  "requester_id": 158007691576,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014118883,
+      "body_text": "Hi Morgan Segal,    Yes, this clutch and U-bracket are shipped together from China.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-08T10:15:49Z",
+      "updated_at": "2025-12-08T10:15:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015050861,
+      "body_text": "Hi\r\n\r\nI still have not received my order, it has been over three weeks and is the last pieces I need to complete my build. Tracking shows no movement. Any way to find out what has happened?\r\n\r\nThank you\r\n\r\nMorgan \r\n\r\n\r\n\r\n\r\n> ",
+      "user_id": 158007691576,
+      "created_at": "2025-12-24T20:08:10Z",
+      "updated_at": "2025-12-24T20:08:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

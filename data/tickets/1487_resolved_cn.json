@@ -1,0 +1,45 @@
+{
+  "id": 1487,
+  "subject": "订单号: 3039453337647512 / 速卖通 / 刹车问题",
+  "description_text": "你好 Simsonn，我的订单号 3039453337647512 遇到了一些问题。当我踩下刹车踏板时，USB 似乎有时会断开连接。我尝试了不同的盒子、线缆、电脑和不同的方向盘底座，最新的固件和之前的版本都出现了同样的问题，接地线也已连接。这是不是一个有缺陷的单元？如果是的话，你们会更换它吗？或者给一个新产品提供很大的折扣？\n\n此致\nMarkus",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-07-12T17:59:08Z",
+  "updated_at": "2025-07-16T05:48:54Z",
+  "requester_id": 158002099212,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004725113,
+      "body_text": "你好 Markus Andersson，这个问题可能是由 USB 供电不足引起的。我们建议避免使用 USB 集线器，而是将设备直接连接到电脑背面的 USB 3.0 端口。此外，您可以尝试更新到最新固件，尽管我们目前不确定您的控制盒是否支持升级。请参考下面的下载链接和更新说明： 在 SIMSONN Manager 2.0.8 中，进入更新部分，点击“手动固件更新”。然后导航到 pedals-firmware 文件夹，打开 pedals 子文件夹，选择 plus.sfu 文件进行固件更新。 https://www.simsonn.com/pages/download 您也可以考虑升级到最新的 PlusX 控制盒。它支持最新的 VAM Pro 触觉电机，并兼容我们升级后的液压和阻尼系统，以获得更好的体验。 https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor?variant=51351053533498 https://www.simsonn.com/products/plus-ultra-upgrade-kit",
+      "user_id": 158000445778,
+      "created_at": "2025-07-13T01:05:33Z",
+      "updated_at": "2025-07-13T01:05:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004777845,
+      "body_text": "我使用的是最新固件，它直接连接到电脑，我尝试了 3.0 和 2.0 端口。而且，如前所述，只有刹车出现这种情况，油门没有问题。\n\n请忽略来自 simagic 的触觉反馈，因为我也尝试过不连接它们，你们当时还没有发布你们的产品。\n\n\n此致\n\n\n\nMarkus Andersson\n\nIT 专家\n\n厄勒布鲁市\n\n市政府办公室/IT 部门/技术支持\n\n地址：Tomtagatan 9, 70323 Örebro\n电话 (总机) 019-21 20 00 (市政支持) 分机 4, 子分机 3\n\n电子邮件：markus.a.andersson@orebro.se\n\n\n\n\n\nIT 专家\n\n\n\n厄勒布鲁市\n\n\n\n市政府办公室/IT 部门/技术支持\n\n\n\n地址：Tomtagatan 9, 70323 Örebro\n\n电话 (总机) 019-21 20 00 (市政支持) 分机 4, 子分机 3\n\n\n\n电子邮件：markus.a.andersson@orebro.se\n\n________________________________\n发件人：service@simsonn.com",
+      "user_id": 158002099212,
+      "created_at": "2025-07-14T08:52:33Z",
+      "updated_at": "2025-07-14T08:52:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004936812,
+      "body_text": "你好 Markus Andersson，请提供 Freejoy 或 SimConfigPedal 软件的截图，以及演示该问题的视频。根据您提供的信息，我们将评估您的设置是否需要更换零件。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T04:46:48Z",
+      "updated_at": "2025-07-16T04:46:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

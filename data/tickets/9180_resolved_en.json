@@ -1,0 +1,65 @@
+{
+  "id": 9180,
+  "subject": "Simsonn VAM Pro Linear Motors no longer vibrating after update",
+  "description_text": "Hi Simsonn support,\n\nJust setup my Simsonn VAM Pro (2x for Throttle and Break).\nTested it and worked.\n\nUpdated Simsonn manager + Pedal firmware to the latest version and it no\nlonger vibrates.\n\nAny suggestions?\n\nOrder #SSN3532\nSimsonn Manager 2.1.2\nPedals: Simsonn PLus X\n\nScreenshot attached.\n\n[image: image.png]\n\nCheers\nBen",
+  "status": 4,
+  "priority": 2,
+  "created_at": "2025-12-25T23:31:45Z",
+  "updated_at": "2025-12-30T10:12:34Z",
+  "requester_id": 158008705512,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015147578,
+      "body_text": "Hi Ben Ryan, Launch the latest version of SIMSONN Manager 2.1.2. On the “Plus X” control unit, press and hold the “Upgrade” button. While holding the button, unplug the USB cable from the PC and then plug it back in. The software should detect the device entering “SIMSONN Flasher update mode”. In the software go to: Settings → Update → Manual Firmware Update. In the file selector choose: pedals‑firmware → pedals‑plusx.sfu. Click “Start Update” and wait until the firmware is completely written. During this process do not disconnect the USB or close the application. Once the update is finished (you’ll get a success prompt or the unit will reboot), unplug and re‑plug the USB then test the pedal device to confirm everything works correctly.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T03:36:53Z",
+      "updated_at": "2025-12-28T03:36:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015161084,
+      "body_text": "Hi,\n\nThanks for getting back to me, I have haptics again.\n\nNow I'm facing an issue with my break coming on 20% when any vibration\noccurs. If I disable the haptics I can drive normally in iRacing.\nAs soon as I re-enable haptics, I can no longer drive.\n\nI have put the ground wire from the pedal control box to the clutch and\nalso the break but same problem still occurs.\nUsed the U connector to mount the VAM PRO motors to the Plus X Pedals.\n\nThanks\n\nOn Sun, 28 Dec 2025 at 14:37, service @simsonn.com",
+      "user_id": 158008705512,
+      "created_at": "2025-12-28T11:34:33Z",
+      "updated_at": "2025-12-28T11:34:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015166220,
+      "body_text": "Hello, Ben Ryan. Please use the included nylon screws and nylon washers to install the motor. This is intended to electrically isolate the motor from the mounting bracket and prevent interference caused by the motor.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T15:41:49Z",
+      "updated_at": "2025-12-28T15:41:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015172495,
+      "body_text": "All fixed, thanks very much for your help.\n\nOn Mon, Dec 29, 2025, 2:42 AM service @simsonn.com",
+      "user_id": 158008705512,
+      "created_at": "2025-12-28T22:54:26Z",
+      "updated_at": "2025-12-28T22:54:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015245801,
+      "body_text": "",
+      "user_id": 158008705512,
+      "created_at": "2025-12-30T10:12:33Z",
+      "updated_at": "2025-12-30T10:12:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

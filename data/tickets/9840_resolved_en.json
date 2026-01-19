@@ -1,0 +1,55 @@
+{
+  "id": 9840,
+  "subject": "Haptic mounting brackets",
+  "description_text": "I saw on one of you Facebook ads that you've modified the brackets for the haptics so that the transducers are horizontal rather than vertical. I'm considering ordering a set of pedals and two of the VAM Pro linear motors from Amazon. If I order from Amazon, will the haptics have the new/improved brackets? Or does Amazon still have old stock (the pictures on the Amazon page still show the old brackets)?\n\nPlease let me know. I'm looking forward to upgrading from my old Logitech pedals.\n\nThanks,\nScott Borders",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-02T21:54:24Z",
+  "updated_at": "2026-01-06T03:52:46Z",
+  "requester_id": 158008162796,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015592150,
+      "body_text": "Hi Scott Borders, Which country and motor do you want? VAM or VAM Pro?",
+      "user_id": 158007774607,
+      "created_at": "2026-01-04T06:39:03Z",
+      "updated_at": "2026-01-04T06:39:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015623225,
+      "body_text": "I'm in the US. I'm looking at the VAM Pro linear motors.",
+      "user_id": 158008162796,
+      "created_at": "2026-01-04T10:55:32Z",
+      "updated_at": "2026-01-04T10:55:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015703277,
+      "body_text": "Hi Scott Borders, https://www.amazon.com/dp/B0G2M4KRGN?th=1, please check this link. The VAM Pro linear currently comes standard with the latest bracket, but the VAM still uses the older bracket.",
+      "user_id": 158007774607,
+      "created_at": "2026-01-05T03:28:20Z",
+      "updated_at": "2026-01-05T03:28:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015706038,
+      "body_text": "Thanks.",
+      "user_id": 158008162796,
+      "created_at": "2026-01-05T05:24:54Z",
+      "updated_at": "2026-01-05T05:24:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

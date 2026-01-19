@@ -1,0 +1,44 @@
+{
+  "id": 4230,
+  "subject": "Order #SSN2648",
+  "description_text": "Hi there I recently made this order from your site and it has arrived missing the brake upgrade kit. Simsonn Pro X Ultra Sim Racing Pedal with Haptic Reactor Optional Items in Simsonn Pro X Ultra Sim Racing Pedal with Haptic Reactor Optional bundle 1 x Simsonn Pro X Ultra Sim Racing Pedal with Haptic Reactor OptionalPro X Ultra-P3-H3 / Baseplate 1 x Simsonn VAM Pro Linear Motor - the Pedals Haptic Reactor for Vibration FeedbackVAM Pro Set (3 pac/includes power supply) $534.90 productThumbnailQuantityLabel1 Simsonn Pro X Ultra Pedals Upgrade Kit just adjustable hydraulic rods $43.90 Order totals moneyLinesHeaderItem moneyLinesHeaderValue Subtotal $578.80 Shipping Free Total USD$578.80 Orders Order #SSN2648 Sent from my iPhone",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-29T06:29:57Z",
+  "updated_at": "2025-09-30T04:11:40Z",
+  "requester_id": 158005151609,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009625052,
+      "body_text": "Hi David Barker，    Hello, you have purchased the Pro X Ultra pedal and do not require any additional upgrade kits. We apologize for any confusion this may have caused. If you do not need it, we will process a refund for you.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-29T10:54:05Z",
+      "updated_at": "2025-09-29T10:54:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009665541,
+      "body_text": "Hi there, Thanks for your reply. I did unfortunately purchase the upgrade kit thinking it was an upgrade for the ultra. How can we got about refund that part of the order? Regards, David Sent from my iPhone ",
+      "user_id": 158005151609,
+      "created_at": "2025-09-30T03:58:01Z",
+      "updated_at": "2025-09-30T03:58:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009665808,
+      "body_text": "Hi David Barker,    We have processed your refund. Please check your account.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-30T04:11:39Z",
+      "updated_at": "2025-09-30T04:11:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

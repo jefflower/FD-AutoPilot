@@ -1,0 +1,45 @@
+{
+  "id": 10998,
+  "subject": "订单发货",
+  "description_text": "您好，\n\n我订购了一些踏板，想了解一下具体的送货时间。我的交易收据已附上。任何信息都会很有帮助。\n\n谢谢\n\n丹\n\n丹尼尔·奥布莱恩\n\n发送自 [Proton Mail](https://proton.me/mail/home) Android",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-15T15:06:11Z",
+  "updated_at": "2026-01-17T10:40:54Z",
+  "requester_id": 158009124828,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017319301,
+      "body_text": "嗨，丹尼·奥布莱恩，您的订单已分两个包裹发货：1. Pro X 踏板目前在我们美国仓库已售罄。我们已紧急安排空运，预计22日发货，预计25日左右送达。2. 电源因产品升级延迟了两周。升级现已完成，电源已于14日发货。对于由此可能造成的任何不便，我们深表歉意。如果您有任何问题，我们将优先为您解决。",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T08:29:21Z",
+      "updated_at": "2026-01-17T08:29:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017319722,
+      "body_text": "谢谢您的更新。\n\n丹尼尔·奥布莱恩\n\n发送自 [Proton Mail](https://proton.me/mail/home) Android",
+      "user_id": 158009124828,
+      "created_at": "2026-01-17T09:03:29Z",
+      "updated_at": "2026-01-17T09:03:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017323869,
+      "body_text": "嗨，丹尼·奥布莱恩，不客气。感谢您购买我们的产品。如果您将来有任何问题，请随时联系我们。我们将及时为您解决。",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T10:40:53Z",
+      "updated_at": "2026-01-17T10:40:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

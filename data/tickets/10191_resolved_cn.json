@@ -1,0 +1,105 @@
+{
+  "id": 10191,
+  "subject": "购买 Simsonn 踏板替换刹车模块",
+  "description_text": "Simsonn 支持您好，\n\n我最近购买了一套二手的 Simsonn 踏板（油门、离合、刹车）。油门和离合工作正常，但刹车踏板在 Windows (joy.cpl)、您的软件或 DiView 中均无任何输入信号。\n\n我已经尝试了多个 USB 端口，重启电脑，并确认刹车从未显示信号，而其他两个踏板则有信号，所以我认为力传感器或内部刹车接线可能已损坏。\n\n请问：\n\n你们是否销售该踏板套装的替换刹车力传感器或刹车踏板总成\n价格和供货情况\n订购前我应该了解的任何零件编号或兼容性详情\n\n我真的很喜欢这套踏板，如果可能的话，我希望继续使用它们。\n\n感谢您的时间，\n布兰登",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-07T08:29:15Z",
+  "updated_at": "2026-01-14T02:01:46Z",
+  "requester_id": 158008964479,
+  "responder_id": 158007774664,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016095467,
+      "body_text": "您好，布兰登·休伊，如果您的踏板是 1.7.1 版本，您可以使用 SIMSONN Manager 2.1.2 更新固件：转到“设置”→“更新”→“手动固件更新”→“踏板”→“固件”→“pedals-plus.sfu”。更新后，踏板将支持新软件。请再次测试刹车踏板。如果您的踏板是 1.7.0 版本，您需要使用 FreeJoy 校准踏板，并且可能需要手动恢复一些设置。 https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T08:36:30Z",
+      "updated_at": "2026-01-07T08:36:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016437091,
+      "body_text": "您好，\n\n感谢您的回复，我非常感激。不幸的是，这没有起作用。我的踏板是 1.7.0 版本，所以它不允许我手动更新固件。刹车踏板在 Freejoy 中也没有任何反应，所以我无法在那里校准它。有什么建议吗？\n\n谢谢，\n布兰登\n\n---2026年1月7日星期三，凌晨1:36 service@simsonn.com",
+      "user_id": 158008964479,
+      "created_at": "2026-01-08T22:45:19Z",
+      "updated_at": "2026-01-08T22:45:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016466038,
+      "body_text": "您好，布兰登·休伊，请使用 FreeJoy 1.7.0，然后加载并应用恢复配置文件 (CFG)，尝试恢复踏板信号。https://drive.google.com/file/d/1hnHNudj0VhE6xr7ypu-KeEDuVrlVHVg9/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2026-01-09T03:15:33Z",
+      "updated_at": "2026-01-09T03:15:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016629024,
+      "body_text": "您好，\n\n非常感谢您帮助我解决这个问题。\n\n不幸的是，这个修复也没有奏效。油门和离合都工作正常，但我无法让刹车工作。两个未使用的轴随机抖动，与踩刹车踏板无关，但我无法在踩刹车时检测到任何输入。您知道还有其他选择吗？\n\n再次感谢，\n布兰登\n\n--\n布兰登·J·休伊\nbshue2@gmail.com\n(607) 319-9121\n\n2026年1月8日星期四，晚上8:15 service@simsonn.com",
+      "user_id": 158008964479,
+      "created_at": "2026-01-09T22:36:00Z",
+      "updated_at": "2026-01-09T22:36:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016656017,
+      "body_text": "您好，布兰登·休伊，您还有原始采购订单号吗？我可以检查它是否仍在保修期内。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-10T03:35:44Z",
+      "updated_at": "2026-01-10T03:35:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016656824,
+      "body_text": "您好，\n\n很抱歉，我没有。这套设备是二手购买的。有没有办法单独购买刹车踏板或力传感器？\n\n2026年1月9日星期五，晚上8:35 service@simsonn.com",
+      "user_id": 158008964479,
+      "created_at": "2026-01-10T03:42:55Z",
+      "updated_at": "2026-01-10T03:42:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016671543,
+      "body_text": "您好，布兰登·休伊，您有速卖通吗？如果方便的话，请联系速卖通客服，我们可以以成本价加上运费给您寄送一个压力传感器。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-10T06:01:10Z",
+      "updated_at": "2026-01-10T06:01:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016743057,
+      "body_text": "您好，\n\n是的，我有。那太好了！\n\n只是为了确认，您将发送的压力传感器是完整的环氧树脂封装模块，带电缆，可以直接安装吗？\n\n我附上了我目前刹车踏板的图片供您参考。\n\n\n\n\n谢谢，\n布兰登\n\n\n---\n\n2026年1月9日星期五，晚上11:01 service@simsonn.com",
+      "user_id": 158008964479,
+      "created_at": "2026-01-10T18:52:26Z",
+      "updated_at": "2026-01-10T18:52:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016843169,
+      "body_text": "您好，布兰登·休伊，您可以通过此链接下订单，并在订单备注中注明“刹车传感器”；然后我们将向您发送相关产品。https://www.aliexpress.us/item/3256810061354966.html?gatewayAdapt=glo2usa4itemAdapt",
+      "user_id": 158007774664,
+      "created_at": "2026-01-12T07:10:53Z",
+      "updated_at": "2026-01-12T07:10:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

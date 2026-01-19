@@ -1,0 +1,24 @@
+{
+  "id": 7089,
+  "subject": "SSN4171",
+  "description_text": "Hello,\r\n\r\nI have just placed an order for the control box forgetting that it comes with the pedal that I have already ordered. Would it be possible to cancel this order before it is shipped.\r\n\r\nKind regards,\r\n\r\nDavid \r\nSent from my iPhone\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-30T12:10:53Z",
+  "updated_at": "2025-12-04T12:15:36Z",
+  "requester_id": 158007443304,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013387242,
+      "body_text": "Hi David Kerr,    I apologize for not responding to you promptly. Your package has already been shipped, and we are unable to cancel it. My apologies.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-04T12:15:36Z",
+      "updated_at": "2025-12-04T12:15:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

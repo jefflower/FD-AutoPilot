@@ -1,0 +1,94 @@
+{
+  "id": 1504,
+  "subject": "Order #SSN1974 stopped in customs",
+  "description_text": "Hello,\r\n\r\nI received this document from UPS after shipping from China to Italy and they ask me to provide additional informations.\r\nIt's an invoice and they ask me to confirm the value of the items with your invoice, but I didn't received any invoice from Simsonn.\r\n\r\nWhat should I do?\r\n\r\nBest regards\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-07-13T16:27:43Z",
+  "updated_at": "2025-09-16T21:41:59Z",
+  "requester_id": 158002110247,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004853460,
+      "body_text": "Hi Gaga Baroni, is this invoice you attached not available?",
+      "user_id": 158001343601,
+      "created_at": "2025-07-15T08:51:53Z",
+      "updated_at": "2025-07-15T08:51:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004854398,
+      "body_text": "The invoice i attached to this ticket Is from UPS courier. I would like to receive an original invoice from SIMSONN, i only have order confirmation in my email but not a invoice ",
+      "user_id": 158002110247,
+      "created_at": "2025-07-15T09:00:42Z",
+      "updated_at": "2025-07-15T09:00:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158004856547,
+      "body_text": "Hi Gaga Baroni,  Do you need an invoice for the original price or do you need us to do a low value declaration for you.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-15T09:48:02Z",
+      "updated_at": "2025-07-15T09:48:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004856579,
+      "body_text": "Hello, i'm sorry but i don't know what i need to provider to UPS. Yesterday i provided to UPS a screenshots of the order confirmation i received from you in email and my identity documents, that were requested from them. I didn't received any answer since then. If you can provide me both invoice at least i could be prepared to what they could ask me in future days",
+      "user_id": 158002110247,
+      "created_at": "2025-07-15T09:57:44Z",
+      "updated_at": "2025-07-15T09:57:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158004856709,
+      "body_text": "Here",
+      "user_id": 158001343601,
+      "created_at": "2025-07-15T10:35:47Z",
+      "updated_at": "2025-07-15T10:35:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004877893,
+      "body_text": "Hello, thanks. Hope this would be enough for UPS.  Can i ask you to share me the other invoice of the second shipment of the order (tracking SF6047015303029) so i can be ready for the next shipment.",
+      "user_id": 158002110247,
+      "created_at": "2025-07-15T15:17:54Z",
+      "updated_at": "2025-07-15T15:17:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158008833338,
+      "body_text": "Everything good, thanks",
+      "user_id": 158002110247,
+      "created_at": "2025-09-16T21:41:46Z",
+      "updated_at": "2025-09-16T21:41:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158008833342,
+      "body_text": "",
+      "user_id": 158002110247,
+      "created_at": "2025-09-16T21:41:59Z",
+      "updated_at": "2025-09-16T21:41:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ]
+}

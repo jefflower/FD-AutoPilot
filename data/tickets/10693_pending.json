@@ -1,0 +1,44 @@
+{
+  "id": 10693,
+  "subject": "",
+  "description_text": "Hello,\r\nSorry to disturb you, but I was wondering something regarding an order I\r\nmade a week ago. I was wondering if you had some sort of information on\r\nwhen they will be shipped. I do not want to be that guy that is rushing\r\neverything up, but I selected the express shipment for it to arrive as soon\r\nas possible since this weekend is the biggest weekend on Iracing, but Shop\r\napp says there is no information available.\r\nSorry for disturbing again and thank you in advance,\r\nAgustín\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-12T16:19:34Z",
+  "updated_at": "2026-01-16T02:30:17Z",
+  "requester_id": 158009035337,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017091761,
+      "body_text": "Hi Gusete Team,  We apologize for the delay. Two shipments destined for our German warehouse have been affected by heavy snowfall in Europe, causing road blockages and delivery delays. We will expedite delivery or explore alternative logistics channels to ship your order from China as soon as possible. Compensation will be provided based on the delay after your order is completed. We apologize for the inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-14T10:30:11Z",
+      "updated_at": "2026-01-14T10:30:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017122680,
+      "body_text": "Hello,\r\nThank you for your response. I have no problem at all waiting as long as it\r\ntakes, I was just wondering since I needed them for this weekend, but I do\r\nnot any longer so there is no rush at all.\r\nWish you the best of luck with all the delayed orders and sorry again for\r\ndisturbing,\r\nAgustín\r\n\r\nEl mié, 14 ene 2026 a las 11:30, service@simsonn.com (",
+      "user_id": 158009035337,
+      "created_at": "2026-01-14T16:54:13Z",
+      "updated_at": "2026-01-14T16:54:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017236291,
+      "body_text": "Hi Gusete Team,    Thank you for your understanding.  Thank you for purchasing our product. Should you have any questions in the future, please feel free to contact us. We will address them promptly.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T02:30:16Z",
+      "updated_at": "2026-01-16T02:30:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

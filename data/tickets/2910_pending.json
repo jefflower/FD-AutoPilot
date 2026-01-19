@@ -1,0 +1,54 @@
+{
+  "id": 2910,
+  "subject": "Sav",
+  "description_text": "Bonjour j'ai bien reçu ma commande commandé sur Aliexpress mais ils\r\nmanquent des accessoires qui étais sur la photo.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-08-20T11:32:55Z",
+  "updated_at": "2025-09-01T01:09:44Z",
+  "requester_id": 158003372884,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007214518,
+      "body_text": "Hi Bryan Da Silva,  Could you please provide your AliExpress order number? I will arrange our operations team to send you a replacement tomorrow. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-20T13:33:57Z",
+      "updated_at": "2025-08-20T13:33:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007214557,
+      "body_text": "Voici le numéro de commande 3058961303666395\r\n\r\nLe mer. 20 août 2025, 15:34, service@simsonn.com ",
+      "user_id": 158003372884,
+      "created_at": "2025-08-20T13:36:05Z",
+      "updated_at": "2025-08-20T13:36:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007819658,
+      "body_text": "Bonjour, la pedale d'accélérateur ne marche plus dans aucun jeux elle et\r\nreconnu pourtant la pedale de frein fonctionne très bien.\r\n\r\nLe mer. 20 août 2025, 15:35, Bryan Da Silva <bryan.dasilva28@gmail.com> a\r\nécrit :\r\n\r\n> Voici le numéro de commande 3058961303666395\r\n>\r\n> Le mer. 20 août 2025, 15:34, service@simsonn.com ",
+      "user_id": 158003372884,
+      "created_at": "2025-08-30T12:54:06Z",
+      "updated_at": "2025-08-30T12:54:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007878022,
+      "body_text": "Hi Bryan Da Silva,  Could you please confirm if you are using SIMSONN Manager 2.1.0? Also, try unplugging and reconnecting the USB, then set the Offset in the software interface to see if the throttle recovers. If the issue persists, we will send you a replacement throttle sensor for you to install. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-01T01:09:44Z",
+      "updated_at": "2025-09-01T01:09:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

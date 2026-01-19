@@ -1,0 +1,24 @@
+{
+  "id": 9811,
+  "subject": "Shipment returned to sender",
+  "description_text": "Hello, i bought the plus x pedals with the haptic motors bundle, but the motors show up as shipment returned to sender? Order #SSN5227 Haptic motors tracking number: YT2536000706174090",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-02T15:08:44Z",
+  "updated_at": "2026-01-04T09:15:37Z",
+  "requester_id": 158008849726,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015609910,
+      "body_text": "Hi Refugee,    Don't worry, it has already been shipped from the warehouse in Germany along with the pedals.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-04T09:15:37Z",
+      "updated_at": "2026-01-04T09:15:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

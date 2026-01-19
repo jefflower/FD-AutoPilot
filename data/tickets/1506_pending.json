@@ -1,0 +1,54 @@
+{
+  "id": 1506,
+  "subject": "Throttle Pedals Broken Plus X",
+  "description_text": "Good afternoon,\r\n\r\n\r\n\r\nI recently purchased the PLUS X pedal set and was really excited to start using them. However, I’m experiencing a serious issue with the throttle pedal.\r\n\r\n\r\n\r\nRight out of the box, I was unable to get proper calibration. I ruled out EMI by using both the included USB isolator and grounding cable, but neither resolved the issue. I then inspected the pedal hardware itself and compared it to the clutch pedal.\r\n\r\n\r\n\r\nI noticed that the spring under the throttle face was out of alignment. After further inspection, I found that the black plastic piece directly beneath the faceplate had broken. This break is preventing the spring from engaging the sensor arm, which appears to be the root cause of the problem.\r\n\r\n\r\n\r\nThis has been very disappointing, especially given how excited I was to try these pedals. I’d appreciate any assistance you can offer in replacing the faulty throttle pedal.\r\n\r\n\r\n\r\nI’ve attached a clear photo showing the problem.\r\n\r\n\r\n\r\nThank you in advance for your help,\r\n\r\nGarrett Springer\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nThanks in advance,\r\nWilliam Springer\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-13T18:32:40Z",
+  "updated_at": "2025-07-16T05:47:26Z",
+  "requester_id": 158002111536,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004775020,
+      "body_text": "Hi William Springer,    Hello, could you please provide your order number? We’ll arrange a replacement for the defective item.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-14T03:54:29Z",
+      "updated_at": "2025-07-14T03:54:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004834117,
+      "body_text": "Good afternoon,\r\n\r\nThe order number is 114-6308274-8397048. \r\n\r\nBelow is the screenshot of the order details. Thank you for your timely response. \r\n\r\n\r\n\r\n\r\n\r\nWilliam Springer\r\n\r\n> ",
+      "user_id": 158002111536,
+      "created_at": "2025-07-14T19:02:42Z",
+      "updated_at": "2025-07-14T19:02:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004934035,
+      "body_text": "Hi William Springer,  I’ve already informed our sales team to send you a brand-new, upgraded PlusX throttle pedal free of charge. I’ll get back to you with the tracking number as soon as it’s available. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T04:35:37Z",
+      "updated_at": "2025-07-16T04:35:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004942922,
+      "body_text": "Hi William Springer,  Here is the tracking number of the throttle pedal:  JSEGV1652370113YQ, you can track it via https://www.js-exp.com/EN/index.php?page=19",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T05:47:26Z",
+      "updated_at": "2025-07-16T05:47:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

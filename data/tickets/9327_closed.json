@@ -1,0 +1,24 @@
+{
+  "id": 9327,
+  "subject": "Shipment",
+  "description_text": "\r\n\r\nHello,\r\nI will be travelling on January 4th and chose express shipping specifically to receive the pedals before then.\r\n\r\nCould you please prioritize shipping order #SSN5198 or let me know if this is possible?\r\n\r\nThank you very much.\r\n\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-12-27T23:20:43Z",
+  "updated_at": "2025-12-31T02:57:23Z",
+  "requester_id": 158008797448,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015291351,
+      "body_text": "此工单已关闭并合并到工单 9440 中",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T02:57:23Z",
+      "updated_at": "2025-12-31T02:57:23Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

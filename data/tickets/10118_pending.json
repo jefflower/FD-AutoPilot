@@ -1,0 +1,74 @@
+{
+  "id": 10118,
+  "subject": "Replacement gas pedal",
+  "description_text": "Hi I recently purchased the Simsonn Plus X pedal and the wire for the gas pedal snapped apart. Could I purchase a replacement gas pedal?",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-06T17:32:52Z",
+  "updated_at": "2026-01-14T12:19:47Z",
+  "requester_id": 158008955674,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016004125,
+      "body_text": "Hi Cpt Bagels,  We will release a new software version today, which will officially add support for the HS Pro calibration page.  Please update the software and try it out.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-06T22:27:03Z",
+      "updated_at": "2026-01-06T22:27:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016066795,
+      "body_text": "Hi Cpt Bagels,  The throttle connector can be taken to a local computer repair shop and re-crimped according to the brake wiring sequence. It’s a very simple process. The connector is indeed an RJ11 4P4C plug. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T05:34:51Z",
+      "updated_at": "2026-01-07T05:34:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016220959,
+      "body_text": "Hi, I took it to a few local shops and they said they wouldn’t be able to repair it. Can I just purchase a new gas pedal?",
+      "user_id": 158008955674,
+      "created_at": "2026-01-07T22:42:51Z",
+      "updated_at": "2026-01-07T22:42:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158016248974,
+      "body_text": "Hi Cpt Bagels,  Please provide your order number, contact name, phone number, and shipping address. We will send you a throttle pressure sensor replacement, which you can install manually. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-08T02:00:26Z",
+      "updated_at": "2026-01-08T02:00:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016435703,
+      "body_text": "Order Number: SSN4219  Name: Brandon Le  Number: 510-890-9411  Shipping Address: 8590 Windsor Point Way  Elk Grove, CA 95624",
+      "user_id": 158008955674,
+      "created_at": "2026-01-08T22:22:28Z",
+      "updated_at": "2026-01-08T22:22:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158017099211,
+      "body_text": "Hi Cpt Bagels,    I apologize for not getting back to you sooner. Here is your shipping tracking link.  https://t.17track.net/en#nums=SF6047241768212",
+      "user_id": 158001343601,
+      "created_at": "2026-01-14T12:19:47Z",
+      "updated_at": "2026-01-14T12:19:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

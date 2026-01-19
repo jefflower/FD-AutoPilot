@@ -1,0 +1,44 @@
+{
+  "id": 10364,
+  "subject": "Pro pedals not working",
+  "description_text": "I got my heptics vram pro today only to find i got the wrong controller\r\nbox.\r\nSo I connected the other box just for the heptics and installed the simsonn\r\nmanger software and not my pedals wont work\r\n\r\nSimsonn v4 software says the pedals are disconnected\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2026-01-09T03:02:14Z",
+  "updated_at": "2026-01-10T02:33:22Z",
+  "requester_id": 158007836554,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016466380,
+      "body_text": "Hi Joe Q,  Could you please provide some photos to illustrate the issue? This will help me better understand the situation and assist you. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-09T03:17:53Z",
+      "updated_at": "2026-01-09T03:17:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016524790,
+      "body_text": "Sorry for the late reply\r\n\r\nAttached are some pics of my issue\r\n\r\nSo first is the device not showing connected in simpedalsconfig v4\r\n\r\nAnd the other is simsonn manager that see the pedals and I can calibrate it\r\nthis morning\r\n\r\n\r\nThis morning I unplugged all my USB devices and closed all programs running\r\nand started connecting usb one by one and check for each device.\r\n\r\nThe pedals worked first but if I  connect the new simsonn usb controller\r\nfor my heptics,  it switches the pedals to pro x ultra (3rd pic)\r\n\r\nOn Thu, Jan 8, 2026, 11:48 p.m. service@simsonn.com ",
+      "user_id": 158007836554,
+      "created_at": "2026-01-09T10:55:08Z",
+      "updated_at": "2026-01-09T10:55:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016649482,
+      "body_text": "Hi Joe Q,  Please provide your order number and also send a photo of the main control box. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-10T02:33:21Z",
+      "updated_at": "2026-01-10T02:33:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

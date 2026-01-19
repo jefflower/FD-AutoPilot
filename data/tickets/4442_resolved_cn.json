@@ -1,0 +1,45 @@
+{
+  "id": 4442,
+  "subject": "Pro Ultra 踏板问题",
+  "description_text": "我刚买的 Pro Ultra 踏板在 iRacing 中无法校准，数值跳动非常大。我尝试了所有方法，但都没有进展。有什么建议吗？我开始觉得我的控制盒有故障，因为这些是新踏板却无法工作。\n\n发自我的 iPhone",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-10-04T16:41:47Z",
+  "updated_at": "2025-10-05T23:51:08Z",
+  "requester_id": 158005401329,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009941795,
+      "body_text": "您好，Bobby Holton，请在您的电脑上卸载旧版本，然后重新安装 2.1.2 版本并更新固件。更新后，设备版本应显示为 CPU1: 2.0.5, CPU2: 2.0.3。如果问题仍未解决，请随时与我联系。\nhttps://drive.google.com/file/d/1PZwHUqhhmJw0IBGDO8mGONPbrICJU3z1/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T16:40:15Z",
+      "updated_at": "2025-10-05T16:40:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009948442,
+      "body_text": "问题解决了！谢谢您的帮助！",
+      "user_id": 158005401329,
+      "created_at": "2025-10-05T21:22:13Z",
+      "updated_at": "2025-10-05T21:22:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009950852,
+      "body_text": "完美运行",
+      "user_id": 158005401329,
+      "created_at": "2025-10-05T23:51:07Z",
+      "updated_at": "2025-10-05T23:51:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

@@ -1,0 +1,24 @@
+{
+  "id": 8430,
+  "subject": "Delivery country",
+  "description_text": "Hello,\r\n\r\nI don’t have the option to choose Poland as the delivery country!  It doesn’t show up on the list \r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-16T15:51:00Z",
+  "updated_at": "2025-12-17T06:29:37Z",
+  "requester_id": 158007148758,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014614778,
+      "body_text": "Hi ILIAS PELEKAS,     This is our Polish agent's website where you can make purchases.  https://fmic.pl/elektronika/simracing?product_brand=Simsonn",
+      "user_id": 158001343601,
+      "created_at": "2025-12-17T06:29:37Z",
+      "updated_at": "2025-12-17T06:29:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

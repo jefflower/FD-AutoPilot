@@ -1,0 +1,135 @@
+{
+  "id": 934,
+  "subject": "触觉软件",
+  "description_text": "嘿，我把所有东西都安装到了踏板上，但现在不太确定如何让它们工作。我没有看到 SIMSONN 管理器软件有任何更新。有什么办法可以把它们自定义添加到 SimHub 吗？",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-06-27T20:44:55Z",
+  "updated_at": "2025-06-30T08:41:57Z",
+  "requester_id": 158001833215,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004218394,
+      "body_text": "嗨 Kevin Gregson，我们的软件目前支持10款游戏。请问您现在使用的是哪款游戏？我们正在持续努力为更多游戏添加遥测支持。在此期间，您可以使用我提供的 SimHub 内部版本。正式版仍在测试中，可能还需要一些时间。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-27T22:59:57Z",
+      "updated_at": "2025-06-27T22:59:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004218551,
+      "body_text": "感谢回复。我下载了 SimHub 版本，但发现我用的是旧版的 Simsonn 管理器，所以触觉设备无法被识别。现在下一个问题是，如果我更新到 2.0.8 版本，我的电脑上所有的 USB 设备就会无故随机地关闭然后又重新打开。即使只连接了踏板，没有连接 VAM，情况也很奇怪。不过，我现在已经回退到 2.0.6 版本和三月份的踏板固件，一切又恢复正常了。你有什么想法吗？如果你能告诉我具体需要下载什么，以及按什么顺序下载，我会再试一次，但我知道 VAM 在我目前使用的这个版本里是用不了的，即使在 Simhub 里也不行。",
+      "user_id": 158001833215,
+      "created_at": "2025-06-27T23:56:06Z",
+      "updated_at": "2025-06-27T23:56:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004219134,
+      "body_text": "嗨 Kevin Gregson，请从您的电脑上卸载 SIMHUB 和 SIMSONN Manager，并删除它们的安装目录。然后，从我们的官方网站下载 SIMSONN Manager 2.0.8 版本，并安装我们提供的 SIMHUB 测试版本。之后，再尝试使用该设置。如果问题仍然存在，我们可以安排一次使用 Todesk 工具的远程会话来进一步协助您。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-28T05:43:10Z",
+      "updated_at": "2025-06-28T05:43:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004221359,
+      "body_text": "嘿，感谢回复。我只是想确认几件事，因为我有点不清楚。我应该下载 2.0.8 普通版还是结尾带 zip 的那个？假设我之后也需要更新固件，我应该在 VAM pro 插入盒子并通电的情况下进行，还是在没有连接的情况下正常进行？另外，我应该选择哪个文件来更新？我用的是 pro x（非 ultra）。我在想是不是有驱动冲突，或者固件没有正确更新之类的。提前致谢，Kev Gregson。",
+      "user_id": 158001833215,
+      "created_at": "2025-06-28T18:22:19Z",
+      "updated_at": "2025-06-28T18:22:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004221808,
+      "body_text": "嘿，只是想补充一些信息。我尝试卸载 2.0.6 并再次下载 2.0.8，一切正常，直到我进行固件更新，之后它就开始断开所有插入主板的 USB 设备。我移除了 SimHub Beta 版，没有再用它。我正在更新踏板下的 pro x 固件。我回退到 2.0.6 并重新安装了旧固件，然后卸载了 2.0.6 并安装了 2.0.8，但没有进行固件更新，现在一切正常。当然，除了 VAM 不工作。它提示我更新，但我没有更新。我尝试了所有这些步骤，都没有连接 VAM pro 或插入电源线。有没有什么固定的方法来移除旧的固件文件，或者我有什么不确定或遗漏的地方吗？",
+      "user_id": 158001833215,
+      "created_at": "2025-06-28T23:02:21Z",
+      "updated_at": "2025-06-28T23:02:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004221960,
+      "body_text": "嗨 Kevin Gregson，您需要我通过 Todesk 远程协助您吗？如果需要，请提供您的 ID 和临时密码，我会尽快帮您检查并解决问题。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-29T01:02:00Z",
+      "updated_at": "2025-06-29T01:02:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004222308,
+      "body_text": "早上好，那也许是可行的。Todesk 似乎很难下载和运行，但我吃完早餐回来后会试试。在此期间，你有什么建议可以让我试试吗？有没有可能我用的不是 pro x 而是 pro x ultra，因此下载了错误的固件？",
+      "user_id": 158001833215,
+      "created_at": "2025-06-29T07:37:00Z",
+      "updated_at": "2025-06-29T07:37:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004222311,
+      "body_text": "附上我现有设备的照片",
+      "user_id": 158001833215,
+      "created_at": "2025-06-29T07:39:14Z",
+      "updated_at": "2025-06-29T07:39:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004224795,
+      "body_text": "嗨 Kevin Gregson，我注意到您缺少一个 24V 的独立电源，这就是 VAM Pro 无法正常工作的原因。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-30T05:44:31Z",
+      "updated_at": "2025-06-30T05:44:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004238044,
+      "body_text": "不，我有那个电源，只是没连接。是和触觉设备一起从你这里订购的。关于固件问题有什么信息吗？",
+      "user_id": 158001833215,
+      "created_at": "2025-06-30T07:12:40Z",
+      "updated_at": "2025-06-30T07:12:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004240194,
+      "body_text": "嗨 Kevin Gregson，请安装 Todesk。我现在有空，可以远程协助您。安装后无需注册，只需提供您的 ID 和临时密码即可。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-30T07:20:14Z",
+      "updated_at": "2025-06-30T07:20:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004255487,
+      "body_text": "临时密码是 70e258ns。如果需要的话，设备代码是 158 962 212。",
+      "user_id": 158001833215,
+      "created_at": "2025-06-30T08:05:47Z",
+      "updated_at": "2025-06-30T08:05:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

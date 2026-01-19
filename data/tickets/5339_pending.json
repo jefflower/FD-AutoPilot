@@ -1,0 +1,24 @@
+{
+  "id": 5339,
+  "subject": "Issues with VAM pro haptics",
+  "description_text": "Dear sir/madam,\r\n\r\nI recently (order SSN2927) bought a set of Simsonn plus x with VAM pro haptic feedback motors, but I am experiencing some problems with it.\r\n\r\nFirst they were buzzing, and asked for some advice on Reddit. I followed the suggestions given by RadiantReindeer9708, but I keep experiencing issues.\r\n\r\nWhen I ground the controller to the pedals with the grounding cable, the whole set is laggy, with the pedals not even responding some times.\r\n\r\nI love the pedals, but I am not happy with the haptics, so I would like to return them, as they seem to mess with the system too much. Without them connected the pedals stay online and responding very nice.\r\n\r\nMany thanks in advance for your reply.\r\n\r\nBest regards,\r\n\r\nStefan Hekman\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-27T20:02:07Z",
+  "updated_at": "2025-10-27T21:48:06Z",
+  "requester_id": 158005789932,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011186711,
+      "body_text": "Hi Stefan Hekman,    Did you install the VAM Pro motors using nylon screws and nylon washers?  Also, is your PC properly grounded through a three-prong power plug connected to the household ground?  Please make sure the pedals are connected to a USB 3.0 port on the back of the PC, not through a USB hub.  And could you please let me know the model of your wheel base?  https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting  https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding     https://www.reddit.com/r/simracing/comments/1n291hi/solution_for_simsonn_vam_pro_emi_issues/",
+      "user_id": 158000445778,
+      "created_at": "2025-10-27T21:44:09Z",
+      "updated_at": "2025-10-27T21:44:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

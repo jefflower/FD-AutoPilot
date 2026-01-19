@@ -1,0 +1,44 @@
+{
+  "id": 11097,
+  "subject": "Night wrong control box",
+  "description_text": "Will the pro box work Plusx pedals even though the connector is bigger?? Waited 2 weeks just to find out I got the wrong one \r\nSent from my iPhone\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-16T19:47:55Z",
+  "updated_at": "2026-01-17T09:36:03Z",
+  "requester_id": 158009305829,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017291949,
+      "body_text": "Ordered the right set maybe we can set up an exchange or something",
+      "user_id": 158009305829,
+      "created_at": "2026-01-16T20:11:24Z",
+      "updated_at": "2026-01-16T20:11:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158017309933,
+      "body_text": "Hi Ryan R,    You can use the Pro X box and Simhub to control haptics, while using the original box to control the pedals.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T02:12:23Z",
+      "updated_at": "2026-01-17T02:12:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017319570,
+      "body_text": "I got the Plus X pedals is what I shoulda have added, worried about trying too plug into the PlusX pedals into the pro box",
+      "user_id": 158009305829,
+      "created_at": "2026-01-17T08:51:25Z",
+      "updated_at": "2026-01-17T08:51:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    }
+  ]
+}

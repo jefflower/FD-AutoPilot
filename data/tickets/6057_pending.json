@@ -1,0 +1,24 @@
+{
+  "id": 6057,
+  "subject": "Pedal problem",
+  "description_text": "Hello,\r\nI have recently purchased your plus x pedals, they are reading 100% and working fine in your software and content manager but when I start up Assetto Corsa they read up to 80%, anyway you could help me \r\nKind regards,\r\nDominik\r\n\r\nSent from my iPhone\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-11-13T18:57:48Z",
+  "updated_at": "2025-11-16T02:29:54Z",
+  "requester_id": 158006646640,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012399856,
+      "body_text": "Hi Dominik Lelas,    You can download the latest SIMSONN Manager 2.1.2 using the link below. Then, follow the steps below to update the firmware:    Go to Settings → Update → Manual Firmware Update → pedals → firmware → pedals-plusx.sfu to start the firmware update;    After the firmware update is completed, release the upgrade button;    Finally, test the pedal and perform a calibration.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-16T02:29:54Z",
+      "updated_at": "2025-11-16T02:29:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

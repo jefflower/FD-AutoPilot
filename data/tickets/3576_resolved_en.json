@@ -1,0 +1,115 @@
+{
+  "id": 3576,
+  "subject": "Pedal Registering Movement",
+  "description_text": "Hello, I am encountering an issue with my Simsonn Pro x pedals and I cannot solve it or find a resolution.\n\nWhen calibrating, the pedals are registering some sort of movement shown in my attached video.\n\nThis takes place when calibrating the simagic wheel and when calibrating the pedals themselves in iracing.\n\nI am not registering any movement in the simsonn software however and the pedals have been calibrated.\n\nAny solutions you can provide would be greatly appreciated.\n\nThanks,\nChris",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-09-07T03:18:14Z",
+  "updated_at": "2025-09-07T04:55:04Z",
+  "requester_id": 158004236011,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008201315,
+      "body_text": "Hi Christopher French Jr,    This issue is caused by the RX axis of our previous handbrake not being disabled, which resulted in interference. You can try resolving it using SIMSONN Manager 2.1.1:    Open the SIMSONN Manager 2.1.1 software.    Click the “Restore” button in the interface.    Then click the “Save” button.    Reinsert the USB cable.    Finally, test to see if the RX axis has been successfully disabled.    You can also try using SIMSONN Manager 2.1.1. In the software interface, click the “Restore” button, then click “Save”. After that, reinsert the USB and test whether the RX axis has been successfully disabled.       https://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T03:21:49Z",
+      "updated_at": "2025-09-07T03:21:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201392,
+      "body_text": "Thank you for your response. I do not see a restore button in the interface. Where would I locate this?\n\nOn Sat, Sep 6, 2025 at 11:21 PM support @simsonn.com",
+      "user_id": 158004236011,
+      "created_at": "2025-09-07T03:29:21Z",
+      "updated_at": "2025-09-07T03:29:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201445,
+      "body_text": "Thank you for your respons.\n\nI do not have a handbrake. Only a gas pedal and brake pedal.\n\nThere are no restore buttons on my simsonn interface.\n\nOn Sat, Sep 6, 2025 at 11:21 PM support @simsonn.com",
+      "user_id": 158004236011,
+      "created_at": "2025-09-07T03:34:48Z",
+      "updated_at": "2025-09-07T03:34:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201572,
+      "body_text": "I did some additional tests.\n\nI unplugged the wheel and all other USB ported items and the laptop charger.\n\nI went to the control panel in my pc. Went to properties for the simsonn pedals.\n\nI noticed the z axis sits still but the x rotation is twitching whether the brake or gas pedal is plugged into the simsonn power box.\n\nWhen I unplug both the brake and gas pedal - the x rotation is still twitching up and down. I have included a short video of what I am seeing and showing both pedal are unplugged from the box.\n\nIs the power box the issue?\n\nOn Sat, Sep 6, 2025 at 11:34 PM Christopher French Jr <\nchris.french1791 @gmail.com> wrote:\n\n> Thank you for your respons.\n>\n> I do not have a handbrake. Only a gas pedal and brake pedal.\n>\n> There are no restore buttons on my simsonn interface.\n>\n> On Sat, Sep 6, 2025 at 11:21 PM support @simsonn.com",
+      "user_id": 158004236011,
+      "created_at": "2025-09-07T03:52:46Z",
+      "updated_at": "2025-09-07T03:52:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201631,
+      "body_text": "Hi Christopher French Jr,",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T04:01:29Z",
+      "updated_at": "2025-09-07T04:01:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201652,
+      "body_text": "Thank you for forwarding the screenshot. However, it does not allow me to click revert when the pedals are unplugged.\n\nAny solution?\n\nOn Sun, Sep 7, 2025 at 12:01 AM support @simsonn.com",
+      "user_id": 158004236011,
+      "created_at": "2025-09-07T04:05:20Z",
+      "updated_at": "2025-09-07T04:05:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201662,
+      "body_text": "Hi，Christopher French Jr，  Please connect the power supply first,  then click the “Revert” button followed by the “Save” button. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T04:08:52Z",
+      "updated_at": "2025-09-07T04:08:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201703,
+      "body_text": "I have done this prior to reaching out to support and have done it once more. It did not solve the problem.\n\nI did some additional tests.\n\nI unplugged the wheel and all other USB ported items and the laptop charger in order to try and isolate.\n\nI went to the control panel in my pc. Went to properties for the simsonn pedals.\n\nI noticed the z axis does not move but the x rotation is twitching regardless if only the brake is plugged into the control box or only the gas pedal.\n\nWhen I unplug both the brake and gas pedal - the x rotation is still twitching up and down. I have included a short video of what I am seeing and showing both pedal are unplugged from the box.\n\nThis is also the same issue I am seeing in the sim that causing calibration interference with both the wheel and pedals.\n\nIs the control box the issue?\n\n\nOn Sun, Sep 7, 2025 at 12:09 AM support @simsonn.com",
+      "user_id": 158004236011,
+      "created_at": "2025-09-07T04:15:32Z",
+      "updated_at": "2025-09-07T04:15:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201715,
+      "body_text": "Hi Christopher French Jr,  Please install the Todesk software. No registration is required, and if it prompts you to register, simply close the window. I can assist you remotely to resolve the issue right now.      https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T04:17:22Z",
+      "updated_at": "2025-09-07T04:17:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201757,
+      "body_text": "I have installed.\n\nDevice Id ToDesk:\n878 627 097\nTemporary password:pw722g32\n\nOn Sun, Sep 7, 2025 at 12:17 AM support @simsonn.com",
+      "user_id": 158004236011,
+      "created_at": "2025-09-07T04:21:36Z",
+      "updated_at": "2025-09-07T04:21:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

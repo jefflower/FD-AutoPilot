@@ -1,0 +1,154 @@
+{
+  "id": 1608,
+  "subject": "Please help my vam modules have stopped working",
+  "description_text": "Hi\r\nI purchased 3 VAM modules from you a couple of weeks ago, they worked intermittently for a while, now they are not working at all.\r\nI have tried re-installing the software and the simhub beta that you said use but still nothing.\r\nCan you help troubleshoot please?\r\nRegards Andrew Lawrence\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-07-16T16:00:38Z",
+  "updated_at": "2025-10-05T16:01:01Z",
+  "requester_id": 158001612738,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005035401,
+      "body_text": "Hi Andy Lawrence,  Please update to SIMSONN Manager version 2.0.9 and SIMHUB version 9.9.3. After updating, test whether the motor operates normally. If it is confirmed that the motor was damaged due to excessive vibration intensity, we will send you a free replacement. Kindly provide your order number and shipping address so we can arrange the replacement promptly. Note: Version 2.0.9 will automatically limit the maximum vibration strength of VAM motors to 30% or 50%, to prevent damage caused by overly aggressive settings.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T23:08:55Z",
+      "updated_at": "2025-07-16T23:08:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005156443,
+      "body_text": " Hi\r\nI have done as you asked and updated both simhub and the simsonn software but the modules are still not working, the simsonn software is registering that the modules are connected via USB but the power is disconnected. My original order number is SSN#1693.If they the 3 modules are deemed faulty can you please send 3 more, thank you.\r\nAndrew Lawrence\r\n    ",
+      "user_id": 158001612738,
+      "created_at": "2025-07-18T22:22:37Z",
+      "updated_at": "2025-07-18T22:22:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005162437,
+      "body_text": "Hi Andy Lawrence,     It's understandable that the motor might be damaged, but please try unplugging all three motors, then reconnect the USB and plug in the DC power supply again. Does the software indicate that the power is connected? If it shows that the power is disconnected, try unplugging and reconnecting both the USB and the power. If the power connection still doesn't show up after multiple attempts, then the control box may be faulty.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-19T07:14:23Z",
+      "updated_at": "2025-07-19T07:14:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005182486,
+      "body_text": " Hi\r\nI have tried to disconnect and reconnect everything but it didn't change the function at all.This is what the simsonn software is showing when everything is connected and turned on.\r\n\r\n\r\nRegards\r\n    ",
+      "user_id": 158001612738,
+      "created_at": "2025-07-19T12:42:22Z",
+      "updated_at": "2025-07-19T12:42:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005211558,
+      "body_text": "Hi Andy Lawrence,    Please take a photo showing how the DC power supply is connected to the control box so I can check it. Also, please confirm whether the green indicator light on the power supply is on.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-20T00:28:09Z",
+      "updated_at": "2025-07-20T00:28:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005316948,
+      "body_text": "\r\n\r\n\r\n\r\n\r\nSent from Yahoo Mail for iPhone\r\n\r\n\r\n",
+      "user_id": 158001612738,
+      "created_at": "2025-07-22T12:10:13Z",
+      "updated_at": "2025-07-22T12:10:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005348218,
+      "body_text": "Please find attached the photo you requested.\r\n\r\n\r\nSent from Yahoo Mail for iPhone\r\n\r\n\r\n",
+      "user_id": 158001612738,
+      "created_at": "2025-07-22T18:35:58Z",
+      "updated_at": "2025-07-22T18:35:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005355614,
+      "body_text": "Hi Andy Lawrence,    Shall we schedule a time for you to install Todesk? It doesn’t require registration — just provide the ID and temporary password, and I can remotely assist you in checking the issue.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-23T04:11:04Z",
+      "updated_at": "2025-07-23T04:11:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005484585,
+      "body_text": "Yes sure, I am at home all day on Friday and Saturday so could do it then if you are available?\r\nThanks \r\n\r\n\r\nSent from Yahoo Mail for iPhone\r\n\r\n\r\n",
+      "user_id": 158001612738,
+      "created_at": "2025-07-23T21:01:18Z",
+      "updated_at": "2025-07-23T21:01:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005488357,
+      "body_text": "Hi Andy Lawrence,  Sure, I have time and can cooperate with you anytime. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-24T04:48:43Z",
+      "updated_at": "2025-07-24T04:48:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005532336,
+      "body_text": "Hi\r\nI can do Saturday at 10am GMT? Does this work for you?\r\nRegards \r\n\r\n\r\nSent from Yahoo Mail for iPhone\r\n\r\n\r\n",
+      "user_id": 158001612738,
+      "created_at": "2025-07-25T08:19:53Z",
+      "updated_at": "2025-07-25T08:19:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005550690,
+      "body_text": "Hi Andy Lawrence,  Hello, are you available for remote assistance now? ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-26T03:34:09Z",
+      "updated_at": "2025-07-26T03:34:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009674143,
+      "body_text": "Hello\r\nSorry for the late reply, I have been very busy with work. My haptic that I purchase still do not work, can you help please, I think it is a problem with the base unit.\r\nRegards Andrew Lawrence \r\n\r\n\r\nSent from Yahoo Mail for iPhone\r\n\r\n\r\n",
+      "user_id": 158001612738,
+      "created_at": "2025-09-30T08:15:28Z",
+      "updated_at": "2025-09-30T08:15:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009937941,
+      "body_text": "Hi Andy Lawrence,     Please uninstall the old version on your computer, then reinstall version 2.1.2 and update the firmware. After the update, the device version should display as CPU1: 2.0.5, CPU2: 2.0.3. If the issue persists, please feel free to contact me.   https://drive.google.com/file/d/1PZwHUqhhmJw0IBGDO8mGONPbrICJU3z1/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T16:01:01Z",
+      "updated_at": "2025-10-05T16:01:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "id": 481,
+  "subject": "DHL returned my order to the shipper",
+  "description_text": "Hello,\r\n\r\n\r\nI just received a DHL notification that my order was returned to the\r\nshipper from Hong Kong. The tracking number is 7604577212, and the package\r\nwas originally shipping to Kuwait.\r\n\r\n\r\nCan you please confirm:\r\n\r\n\r\n   1.\r\n\r\n   Why it was returned?\r\n   2.\r\n\r\n   Can you resend it without extra charges?\r\n   3.\r\n\r\n   Can we correct the address or provide documentation needed for customs?\r\n\r\n\r\nI am still interested in receiving the product.\r\n\r\n\r\nThank you,\r\n\r\nAbdulrahman Mohammed\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-06-16T03:44:15Z",
+  "updated_at": "2025-06-17T10:11:36Z",
+  "requester_id": 158001573231,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003226263,
+      "body_text": "Hi Abdulrahaman Alhammadi,  Alright, we will contact the shipping carrier immediately to investigate the issue. If necessary, we’ll arrange a replacement shipment for you. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-16T03:46:32Z",
+      "updated_at": "2025-06-16T03:46:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003226272,
+      "body_text": "That's great, thank you very much.\r\n\r\nOn Mon, 16 Jun 2025 at 6:46 AM support@simsonn.com ",
+      "user_id": 158001573231,
+      "created_at": "2025-06-16T03:47:40Z",
+      "updated_at": "2025-06-16T03:47:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003228446,
+      "body_text": "Dear Simsonn Team,\r\n\r\n\r\nThank you for following up on my shipment. I’ve contacted DHL regarding the\r\nreturn of the original package (Waybill: 7604577212), and they confirmed\r\nthat the issue was due to my name being incomplete on the shipping label.\r\n\r\n\r\nTo ensure successful delivery for the replacement shipment, please use the\r\nfollowing full and corrected details:\r\n\r\n\r\nFull Name: Abdulrahman Abdullah Mohammed\r\n\r\nStreet Address: Street 21, Block 8\r\n\r\nHousing Complex: Sakan Al Awqaf\r\n\r\nCity: Mubarak Al Kabeer\r\n\r\nPostal Code: 47068\r\n\r\nCountry: Kuwait\r\n\r\nPhone Number: 99164424\r\n\r\n\r\nPlease let me know once the new shipment is dispatched and provide the\r\nupdated tracking number. I’m happy to assist if you need anything further\r\nfrom my side.\r\n\r\n\r\nThank you once again for your support.\r\n\r\n\r\nBest regards\r\n\r\n\r\nOn Mon, 16 Jun 2025 at 6:47 AM Abdulrahaman Alhammadi <\r\nstarslight110@gmail.com> wrote:\r\n\r\n> That's great, thank you very much.\r\n>\r\n> On Mon, 16 Jun 2025 at 6:46 AM support@simsonn.com ",
+      "user_id": 158001573231,
+      "created_at": "2025-06-16T07:20:48Z",
+      "updated_at": "2025-06-16T07:20:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003228468,
+      "body_text": "Dear Simsonn Team,     Thank you for following up on my shipment. I’ve contacted DHL regarding the return of the original package (Waybill: 7604577212), and they confirmed that the issue was due to my name being incomplete on the shipping label.     To ensure successful delivery for the replacement shipment, please use the following full and corrected details:     Full Name: Abdulrahman Abdullah Mohammed  Street Address: Street 21, Block 8  Housing Complex: Sakan Al Awqaf  City: Mubarak Al Kabeer  Postal Code: 47068  Country: Kuwait  Phone Number: 99164424     Please let me know once the new shipment is dispatched and provide the updated tracking number. I’m happy to assist if you need anything further from my side.     Thank you once again for your support.     Best regards",
+      "user_id": 158001573231,
+      "created_at": "2025-06-16T07:24:19Z",
+      "updated_at": "2025-06-16T07:24:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158003358838,
+      "body_text": "Hi Abdulrahaman Alhammadi,    Please note that we have updated your logistics information.  New bill number: 2590487620",
+      "user_id": 158001343601,
+      "created_at": "2025-06-17T10:11:35Z",
+      "updated_at": "2025-06-17T10:11:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

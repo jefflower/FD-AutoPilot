@@ -1,0 +1,104 @@
+{
+  "id": 1363,
+  "subject": "Simsonn VAM Pro",
+  "description_text": "Hi,\r\n\r\nI'm Interested on your products VAM pro haptic feedback. Can I use VAM Pro\r\nwith Simhub software?\r\n\r\nThanks\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-09T06:31:24Z",
+  "updated_at": "2025-07-09T08:19:25Z",
+  "requester_id": 158000954970,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002431459,
+      "body_text": "Hi Alfani Gunawan,  The throttle uses a unidirectional damping design, while the clutch features damping in both directions. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-05T05:38:47Z",
+      "updated_at": "2025-06-05T05:38:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004486330,
+      "body_text": "Hi Alfani Gunawan,  ​Yes, SimHub version 9.9.3 already supports our SIMSONN pedals and VAM Pro motor, so you can go ahead with the purchase. Do you already have one of our pedal models—PlusX, ProX, or ProX Ultra? If not, you may need to purchase our PlusX controller separately, as it is required for telemetry-based motor control.      https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor",
+      "user_id": 158000445778,
+      "created_at": "2025-07-09T06:38:36Z",
+      "updated_at": "2025-07-09T06:38:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004486338,
+      "body_text": "ID 号为 57, 474 和 1364 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-09T06:39:44Z",
+      "updated_at": "2025-07-09T06:39:44Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004486340,
+      "body_text": "合并来自工单57  \n      主题: Hydrolic Rod  \n      描述:  Is there any difference between Hydraulic Rod for throttle and clutch?   \n Thanks",
+      "user_id": 158000445778,
+      "created_at": "2025-07-09T06:39:44Z",
+      "updated_at": "2025-07-09T06:39:44Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004486343,
+      "body_text": "合并来自工单474  \n      主题: Control box  \n      描述:  Is there any major difference between pro x and pro x ultra control box? Since I've just bought pro x pedal for 2 weeks and willing to buy the Vam pro. Because I cant spend extra 30$ for pro x ultra control box. It's just too expensive for me.   \n Thanks ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-09T06:39:45Z",
+      "updated_at": "2025-07-09T06:39:45Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004486345,
+      "body_text": "合并来自工单1364  \n      主题: Simsonn VAM pro  \n      描述:  \n \n   Hi,    \n I'm Interested on your products VAM pro haptic feedback. Can I use VAM Pro with Simhub software? \n   \n Thanks",
+      "user_id": 158000445778,
+      "created_at": "2025-07-09T06:39:46Z",
+      "updated_at": "2025-07-09T06:39:46Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004486459,
+      "body_text": "I already have simsonn x plus pedal, is it plug and play?\r\n\r\nOn Wed, Jul 9, 2025, 2:38 PM service@simsonn.com ",
+      "user_id": 158000954970,
+      "created_at": "2025-07-09T06:55:32Z",
+      "updated_at": "2025-07-09T06:55:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004486480,
+      "body_text": "I have pedal with this controller\r\n\r\nOn Wed, Jul 9, 2025, 2:55 PM Alfani Gunawan <alfani.gunawan@gmail.com>\r\nwrote:\r\n\r\n> I already have simsonn x plus pedal, is it plug and play?\r\n>\r\n> On Wed, Jul 9, 2025, 2:38 PM service@simsonn.com ",
+      "user_id": 158000954970,
+      "created_at": "2025-07-09T06:59:47Z",
+      "updated_at": "2025-07-09T06:59:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004487033,
+      "body_text": "Hi Alfani Gunawan,  Yes, if you already have a Plus X pedal, you can just use the Vam Pro without having to buy an additional control box, plug and play and adjustable with Simhub.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-09T08:19:25Z",
+      "updated_at": "2025-07-09T08:19:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

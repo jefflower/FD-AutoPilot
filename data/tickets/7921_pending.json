@@ -1,0 +1,74 @@
+{
+  "id": 7921,
+  "subject": "Shipping question",
+  "description_text": "Hello,\r\n\r\nIf I would order black plus x 3 pedals as in the photo, from where they\r\nwould be shipped out? Because if it not from Europe, I have to pay taxes.\r\n\r\n\r\n\r\nKarolis Bučinskas\r\n+370 605 08661\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-10T20:31:40Z",
+  "updated_at": "2025-12-30T09:54:04Z",
+  "requester_id": 158007748054,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014299980,
+      "body_text": "Hi Karolis Bučinskas,    We ship from our German warehouse. If an item is out of stock there, we'll ship it from China instead. Should any customs duties apply, we'll cover them for you—no need to worry.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-11T04:06:02Z",
+      "updated_at": "2025-12-11T04:06:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014574067,
+      "body_text": "Hello,\r\n\r\nI have ordered your pedals from your amazon.de shop, but still got to pay\r\nimport tax. Is it normal?\r\n\r\n2025-12-11, kt, 06:06 support@simsonn.com ",
+      "user_id": 158007748054,
+      "created_at": "2025-12-16T14:26:21Z",
+      "updated_at": "2025-12-16T14:26:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015183072,
+      "body_text": "Hi Karolis Bučinskas,  ​How much is the fee? Please provide your order number, we will refund it to you. ",
+      "user_id": 158007774607,
+      "created_at": "2025-12-29T08:16:57Z",
+      "updated_at": "2025-12-29T08:16:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015183120,
+      "body_text": "Hello, please find  and payment copy attached.\r\n\r\nKarolis Bučinskas\r\n+370 605 08661\r\n\r\n\r\nOn Mon, 29 Dec 2025 at 10:17, support@simsonn.com ",
+      "user_id": 158007748054,
+      "created_at": "2025-12-29T08:18:55Z",
+      "updated_at": "2025-12-29T08:18:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015245403,
+      "body_text": "Hi Karolis Bučinskas,     We have issued the fee to you through Amazon’s refund system, please check it later. ",
+      "user_id": 158007774607,
+      "created_at": "2025-12-30T09:53:31Z",
+      "updated_at": "2025-12-30T09:53:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015245412,
+      "body_text": "亚马逊已回复",
+      "user_id": 158007774607,
+      "created_at": "2025-12-30T09:54:04Z",
+      "updated_at": "2025-12-30T09:54:04Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "id": 9423,
+  "subject": "6 + r shifter not recognizing",
+  "description_text": "Hello,\r\n\r\nI believe there is a issue with my shifter I just purchased on Ali as it is not connecting. I have tried other cables, ports and other computer get same error. Image of error below.\r\nHelp would be appreciated.\r\n\r\nThanks\r\nJasper\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-29T06:18:03Z",
+  "updated_at": "2026-01-16T03:12:14Z",
+  "requester_id": 158008805756,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015181623,
+      "body_text": "Also my shakers (non pro) show connected in simhub but do not vibrate when I test channels",
+      "user_id": 158008805756,
+      "created_at": "2025-12-29T07:07:15Z",
+      "updated_at": "2025-12-29T07:07:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015290240,
+      "body_text": "Hi Jasper,  You can plug the device directly into the blue USB 3.0 port on the back of your PC, or try using a USB hub with independent power supply. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T01:50:30Z",
+      "updated_at": "2025-12-31T01:50:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017039041,
+      "body_text": "﻿ Hello, I was away for holiday and am now back. I tried again with usb 3.0 directly from my laptop and from a powered usb hub, restarting computer same result and my shakers show they are connected but cannot activate. My pedals register though. Help would be appreciated, I believe there is something wrong with the shifter, maybe it is possible software issue for shaker as pedals work but I do not know. Help would be appreciated as these are Christmas presents that I have not gotten to use as they do not work yet. Thanks, Jasper ",
+      "user_id": 158008805756,
+      "created_at": "2026-01-13T22:02:17Z",
+      "updated_at": "2026-01-13T22:02:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017237308,
+      "body_text": "Hi Jasper,  Could you please provide your AliExpress order number? I’ll check the order details first. Also, to help us identify the issue quickly, please send a few clear photos/screenshots of:    The pedal controller box (please include the ports/connectors);    The haptic motors and the wiring/installation;    The power supply adapter (including the specification label);    A full screenshot of the SIMSONN Manager window (showing the version, device detection, and the current settings page).    Once I review these, I can pinpoint the cause and guide you to the correct solution.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-16T03:12:11Z",
+      "updated_at": "2026-01-16T03:12:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

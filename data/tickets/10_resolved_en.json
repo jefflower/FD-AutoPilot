@@ -1,0 +1,27 @@
+{
+  "id": 10,
+  "subject": "Pedals problem",
+  "description_text": "Hello,\nSince I installed the new Simsonn Manager software, the pedals are no longer recognized! There are no inputs or axes displayed.\n\nPro pedals V3 firmware 1.7.0\nAlso not recognized with Simsonn Pro Pedals Config V3.\n\nThe control box is green.\n\nThank you,\nFrancois",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-06-03T23:40:35Z",
+  "updated_at": "2025-06-05T06:48:01Z",
+  "requester_id": 158000954790,
+  "responder_id": null,
+  "cc_emails": [
+    "service@simsonn.com"
+  ],
+  "conversations": [
+    {
+      "id": 158002432025,
+      "body_text": "This ticket has been closed and merged into ticket 36.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-05T06:47:10Z",
+      "updated_at": "2025-06-05T06:47:10Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ],
+  "available_langs": []
+}

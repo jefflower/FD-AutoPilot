@@ -1,0 +1,24 @@
+{
+  "id": 6390,
+  "subject": "ALS01236357169=1Z01E9E16711356424 收到请回复",
+  "description_text": "您好，目的国UPS回复这票件收件人已经支付了52895.23当地货币的税金，会在近期派送，请知悉，谢谢。\r\n\r\n\r\n\r\n\r\naliups@8dt.com\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-20T03:13:09Z",
+  "updated_at": "2025-11-20T03:55:05Z",
+  "requester_id": 158006052019,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012621594,
+      "body_text": "好的",
+      "user_id": 158001343601,
+      "created_at": "2025-11-20T03:55:05Z",
+      "updated_at": "2025-11-20T03:55:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

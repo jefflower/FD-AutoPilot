@@ -1,0 +1,44 @@
+{
+  "id": 3796,
+  "subject": "Informations",
+  "description_text": "I have the simsonn Shifter ans il have lost one parts!\r\nFor adjust the force and Click...\r\n\r\nObtenir Outlook pour Android<https://aka.ms/AAb9ysg>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-13T18:55:49Z",
+  "updated_at": "2025-09-16T07:10:47Z",
+  "requester_id": 158004503292,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008716534,
+      "body_text": "Hi Pier-Luc B,    Please provide your order number, contact name, phone number, and shipping address, and we will arrange a replacement shipment for the missing parts.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-14T23:58:07Z",
+      "updated_at": "2025-09-14T23:58:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008716889,
+      "body_text": "SSN1092\r\nPier-Luc Boiteau\r\n4182841185\r\n1372 rue du Grand bourg\r\nQuébec Québec Canada\r\nG3j1j3\r\n\r\nObtenir Outlook pour Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158004503292,
+      "created_at": "2025-09-15T00:08:41Z",
+      "updated_at": "2025-09-15T00:08:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008803186,
+      "body_text": "Okay, we've arranged a replacement for you. Here is your tracking link: https://t.17track.net/en#nums=YT2525900704601809",
+      "user_id": 158001343601,
+      "created_at": "2025-09-16T07:10:47Z",
+      "updated_at": "2025-09-16T07:10:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

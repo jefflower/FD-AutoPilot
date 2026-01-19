@@ -1,0 +1,24 @@
+{
+  "id": 10962,
+  "subject": "Shipping info",
+  "description_text": "Hello,\r\n\r\nI would like to know from where do you ship your products? I am from\r\nslovenia (europe), do you have a warehouse in europe so i do not inccur\r\nadditional customs fees?\r\n\r\nBest regards,\r\nŽiga\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-15T07:36:35Z",
+  "updated_at": "2026-01-17T08:49:02Z",
+  "requester_id": 158009118650,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017319531,
+      "body_text": "Hi Žiga Hrovat,     We ship from Germany, so you won't incur any additional charges.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T08:49:02Z",
+      "updated_at": "2026-01-17T08:49:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

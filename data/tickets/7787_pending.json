@@ -1,0 +1,84 @@
+{
+  "id": 7787,
+  "subject": "Shipping info on Order",
+  "description_text": "Hi, I was wondering if there is any info on the shipping of my order. My order number is #SSN4150 . The order status hasn't changed since i ordered the Pedals. Thanks in advance, Calvin\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-09T13:28:28Z",
+  "updated_at": "2025-12-23T03:14:52Z",
+  "requester_id": 158007717463,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014484157,
+      "body_text": "Hi, in case my mail didn’t get through to you, the last time.\r\n\r\n> ",
+      "user_id": 158007717463,
+      "created_at": "2025-12-14T13:08:07Z",
+      "updated_at": "2025-12-14T13:08:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014700778,
+      "body_text": "Begin forwarded message: ",
+      "user_id": 158007717463,
+      "created_at": "2025-12-18T15:28:50Z",
+      "updated_at": "2025-12-18T15:28:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014879098,
+      "body_text": "Hi Calvin Williams,           Hello, we apologize for the delay. Your order will be delivered next week.",
+      "user_id": 158007774664,
+      "created_at": "2025-12-22T12:17:17Z",
+      "updated_at": "2025-12-22T12:17:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014881063,
+      "body_text": "Hi Calvin Williams,  Please provide your order number and take photos of all the products you received. We will review them and provide a solution. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-22T13:02:03Z",
+      "updated_at": "2025-12-22T13:02:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014929187,
+      "body_text": "Vielen Dank für die Rückmeldung und danke fürs Angebot. Wenn’s passt würd ich die 15€ nehmen. Grüße, Calvin W ",
+      "user_id": 158007717463,
+      "created_at": "2025-12-22T18:30:40Z",
+      "updated_at": "2025-12-22T18:30:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014948541,
+      "body_text": "ID 为 8613 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-23T00:26:57Z",
+      "updated_at": "2025-12-23T00:26:57Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014948542,
+      "body_text": "合并来自工单8613  \n      主题: Fwd: Teil Fehlt von TC-1 Kit  \n      描述:  \n Gibt es irgendwelche Neuigkeiten? \n   \n \n Begin forwarded message: \n   \n \nFrom: Calvin Williams <calvin@wi.llia.ms> \n \nSubject: Re: Teil Fehlt von TC-1 Kit\n \n \nDate: Dec 3, 2025 at 4:55 PM \n \nTo: Calumet Kundenservice <kundenservice@calumet.de> \n   \n   \n \n   \n Passt, vielen Dank. \n \n   \n  On 03.12.2025, at 14:31, Calumet Kundenservice <kundenservice@calumet.de> wrote:  \n \n  \n ﻿ \n \n \n \n   \n Hallo Calvin, \n   \n vielen Dank für Ihre Nachricht.  \n   \n Ich habe Ihr Anliegen geprüft und werde Rücksprache mit unserem Einkauf halten. \n Sobald ich eine Rückmeldung habe, melde ich mich. \n   \n   \n \n   \n   \n Viele Grüße, \n   \n Louiza Draoui \n \nHead of Customer Service \n \n \n____________________________________    \n \n   \n \nCalumet Photo Video Friesenweg 12  22763 Hamburg E-Mail: Kundenservice@calumet.de \n \n   \n WWW.CALUMET.DE \n   \n \nCalumet Photo Video GmbH, Friesenweg\n12, 22763 Hamburg  Geschäftsführer: Timo Voswinckel, Samuel Piers Nicols | Handelsregister AG Hamburg HRB 45430\n \n  Finanzamt Hamburg, Steuernr. 41/710/02805 | Umsatzsteueridentifikationsnr. DE118602497 \n   \n Diese E-Mail\nenthält vertrauliche und/oder rechtlich geschützte Informationen. Wenn Sie\nnicht der richtige Adressat sind oder diese E-Mail irrtümlich erhalten haben,\ninformieren Sie bitte sofort den Absender und vernichten Sie diese Mail. Das\nunerlaubte Kopieren sowie die unbefugte Weitergabe dieser Mail ist nicht\ngestattet. This e-mail may contain confidential and/or privileged\ninformation. If you are not the intended recipient (or have received this\ne-mail in error) please notify the sender immediately and destroy this e-mail.\nAny unauthorised copying, disclosure, or distribution of the material in this\ne-mail is strictly forbidden. \n   \n   \n  \n Am\n                            Mo, 1 Dez um  6:31 NACHMITTAGS \n ,  Calvin Williams <calvin@wi.llia.ms>  schrieb: \n \n Hallo,  \n es fehlt ein Kabel von meinem Deity tc-1 kit. Es sind nur ein 3,5mm-TRS-zu-BNC-Kabel und ein 3,5mm-TRS-zu-3,5mm-TRS-Kabel dabei. Der 3,5mm-TRS-zu-5-pin-Timecode-Kabel fehlt aber. Laut Beschreibung sollt der dabei sein.  \n   \n Danke im Vorhinein, \n Calvin \n   \n Bestellnummer: W-10435910-DE",
+      "user_id": 158000445778,
+      "created_at": "2025-12-23T00:26:57Z",
+      "updated_at": "2025-12-23T00:26:57Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

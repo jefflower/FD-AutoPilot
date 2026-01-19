@@ -1,0 +1,24 @@
+{
+  "id": 9036,
+  "subject": "Delivery status on Tracking # 396844726851",
+  "description_text": "Hi, I placed an order on Amazon for the Simsonn Pro Plus pedals plus haptics. Today it says delivered by Fedex with tracking number 396844726851. Can you confirm if it was delivered to my physical address or to USPS and what the delivery address is? Because it’s not at my physical address.\r\nThanks,\r\nAustin Edington-Moore\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-23T23:35:13Z",
+  "updated_at": "2025-12-29T08:48:36Z",
+  "requester_id": 158008328502,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015183887,
+      "body_text": "Hi Austin Moore,  we ship it to the address you provide on AMAZON",
+      "user_id": 158007774607,
+      "created_at": "2025-12-29T08:48:32Z",
+      "updated_at": "2025-12-29T08:48:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": 6780,
+  "subject": "Re: Faulty brake pedal",
+  "description_text": "Thanks for the advice.  I just tool delivery of the pedals a couple of days\r\nago and they have not been reconfigured.  They are the condition that they\r\narrived from the factory.\r\n\r\nI tried several times to reset the offset.  The problem still remains, ie.\r\nfull depression of the brake pedal produces only a small signal and once\r\nrecalibrated the signal is very erratic.  This makes it unusable because\r\nthe brake pressure does not correlate to the strength of the signal\r\nreceived and it's impossible to achieve 100% braking.\r\n\r\nI've attached a video showing what happens.\r\n\r\nPlease advise on next steps\r\n\r\nke 26.11.2025 klo 13.35 support@simsonn.com (support@simsonn.com) kirjoitti:\r\n\r\n> Hi Steve Spencer,\r\n>\r\n> If this is the case, it means the pedal’s mechanical structure has been\r\n> adjusted.\r\n> Please click *Offset* in the software to reset the pedal signal to zero;\r\n> the white signal will then start from 0%.\r\n> After recalibrating the pedal, the blue signal will correctly range from\r\n> 0% to 100%.\r\n>\r\n>\r\n> On Tue, 25 Nov at 10:23 AM , Steve Spencer <solidm@gmail.com> wrote:\r\n> ﻿\r\n> Hi,\r\n>\r\n> As requested, here is a video showing the behaviour:\r\n>\r\n>\r\n> Pressing the brake produces only a very small and erratic value in the\r\n> simsonn app and calibration.\r\n>\r\n> Steven Spencer\r\n> 028-1754586-7574715\r\n>\r\n>\r\n>\r\n> 6720:4206036\r\n>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-26T12:34:41Z",
+  "updated_at": "2025-11-26T12:57:02Z",
+  "requester_id": 158007339105,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012945166,
+      "body_text": "Hi Steve Spencer,  Please check if there is a bracket in front of your brake pedal blocking the movement of the brake sensor. You can take a photo and send it to me for confirmation. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T12:42:27Z",
+      "updated_at": "2025-11-26T12:42:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012945396,
+      "body_text": "Hi!\r\n\r\nHere are some photos of the brake assembly:\r\n\r\n\r\n\r\nke 26.11.2025 klo 14.43 support@simsonn.com (support@simsonn.com) kirjoitti:\r\n\r\n> Hi Steve Spencer,\r\n>\r\n> Please check if there is a bracket in front of your brake pedal blocking\r\n> the movement of the brake sensor. You can take a photo and send it to me\r\n> for confirmation.\r\n>\r\n>\r\n> ",
+      "user_id": 158007339105,
+      "created_at": "2025-11-26T12:52:56Z",
+      "updated_at": "2025-11-26T12:52:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012945498,
+      "body_text": "Hi Steve Spencer,    It appears that the silver aluminum bracket is blocking the movement of the brake pressure sensor, preventing it from outputting data. Please adjust the installation position of the brake accordingly.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T12:57:01Z",
+      "updated_at": "2025-11-26T12:57:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

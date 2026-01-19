@@ -1,0 +1,64 @@
+{
+  "id": 9650,
+  "subject": "#SSN5237",
+  "description_text": "Hi,\r\n\r\nI have just received my order and there is no baseplate in the box. I\r\nspecifically selected that when purchasing, which you can tell by the price\r\nthat I paid for the set.\r\n\r\nCan you please arrange for this to be sent out asap.\r\n\r\nKind Regards\r\nJoseph Bowers\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-31T08:57:53Z",
+  "updated_at": "2026-01-15T09:23:12Z",
+  "requester_id": 158008830479,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015366429,
+      "body_text": "Hi Joseph Bowers,  The base plate may have been shipped separately. I will check for you and get back to you after the holiday. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-01T15:22:56Z",
+      "updated_at": "2026-01-01T15:22:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015978097,
+      "body_text": "Hi,\r\n\r\nHave you heard anything regarding the baseplate for my order?\r\n\r\nKind Regards\r\nJoseph Bowers\r\n\r\n",
+      "user_id": 158008830479,
+      "created_at": "2026-01-06T19:45:11Z",
+      "updated_at": "2026-01-06T19:45:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016365804,
+      "body_text": "Hi, do you have an update? I am currently unable to use the product.\r\n\r\nKind Regards\r\nJoseph Bowers\r\n\r\n",
+      "user_id": 158008830479,
+      "created_at": "2026-01-08T14:47:02Z",
+      "updated_at": "2026-01-08T14:47:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017170566,
+      "body_text": "Hi,\r\n\r\nCan you please respond to my previous queries. I am currently waiting for\r\nthe baseplate and have been unable to use the pedals up until now.\r\n\r\nKind Regards\r\n\r\n",
+      "user_id": 158008830479,
+      "created_at": "2026-01-15T08:15:48Z",
+      "updated_at": "2026-01-15T08:15:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017173101,
+      "body_text": "Hi Joseph Bowers,    We apologize for the delayed response. We have arranged for a replacement to be sent to you. We sincerely apologize for any inconvenience caused.  https://t.17track.net/en#nums=SF6047243687519",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T09:23:12Z",
+      "updated_at": "2026-01-15T09:23:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": 6272,
+  "subject": "Haptic Reactors",
+  "description_text": "Hello,\r\n\r\nI have a question. I tried to set up my haptic reactors vam pro and they\r\nare great! The only issue I'm having is that every single time they turn\r\non, my brake starts braking automatically, even when going full throttle.\r\nWhat should I do?\r\n\r\nKind Regards,\r\nNik Terkaj\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-11-17T22:43:36Z",
+  "updated_at": "2025-11-22T03:45:35Z",
+  "requester_id": 158006655049,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012558290,
+      "body_text": "Hi Nik Terkaj,    May I have your order number, please? I need to confirm the exact model of your pedal first.  If you are using the PlusX pedal, please refer to the recommendations below:    VAM Pro Interference Issue To prevent the VAM Pro motor from interfering with the brake signal, you can install nylon washers and nylon screws on the VAM Pro motor.    Vibration Not Stopping / Disconnection Caused by Poor Grounding If the pedal keeps vibrating or disconnects unexpectedly, it is usually due to poor grounding of the PC, often caused by not using a three-prong plug or an outlet without proper grounding. We recommend following the solutions mentioned in the posts:    Connect the PC case to the rig frame with a metal connection.    Connect the main control box to the pedal’s metal screws for proper grounding. These steps can effectively resolve issues such as continuous vibration, signal interference, and random disconnections.          https://www.reddit.com/r/simracing/comments/1n291hi/solution_for_simsonn_vam_pro_emi_issues/         https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-11-19T03:14:59Z",
+      "updated_at": "2025-11-19T03:14:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012566004,
+      "body_text": "Hello,\r\n\r\nI tried to connect the grounding wire from brake screw to haptic screw and\r\nit fixed the problem, thank you for your help.\r\n\r\nKind Regards,\r\nNik Terkaj\r\n\r\n",
+      "user_id": 158006655049,
+      "created_at": "2025-11-19T08:13:03Z",
+      "updated_at": "2025-11-19T08:13:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

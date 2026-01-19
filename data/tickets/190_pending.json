@@ -1,0 +1,24 @@
+{
+  "id": 190,
+  "subject": "New Pro Plus load cell adjustment",
+  "description_text": "Hi, I recently purchased a new set of Pro Plus pedals and everything is good apart from the brake pedal. I have to adjust the deadzone to 14% to stop it registering any movement after calibration. After watching Youtube videos of how to adjust the loadcell with an allen key theese new pedals have a white plastic covering and are different. Can you provide me a pdf manual or advice on how to adjust the loadcell.\r\n\r\nThanks, Ryan.\r\n\r\n",
+  "status": 3,
+  "priority": 2,
+  "created_at": "2025-06-05T08:45:48Z",
+  "updated_at": "2025-06-05T09:03:53Z",
+  "requester_id": 158001248612,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002466295,
+      "body_text": "Hi Ryan Dallat, You can refer to this PlusX user manual, and you're also welcome to share a video — we’ll help you check and troubleshoot the issue.  https://cdn.simsonn.vip/download/SIMSONN_Plus_X_EN.pdf",
+      "user_id": 158000445778,
+      "created_at": "2025-06-05T09:03:53Z",
+      "updated_at": "2025-06-05T09:03:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

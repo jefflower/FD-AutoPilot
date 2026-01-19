@@ -1,0 +1,24 @@
+{
+  "id": 7473,
+  "subject": "Ssn3947",
+  "description_text": "Hello! I was wondering what the status of my order is?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-05T07:52:54Z",
+  "updated_at": "2025-12-05T08:14:13Z",
+  "requester_id": 158007367127,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013466373,
+      "body_text": "Hi Daniel Hardy,    We apologize that the Pro X Ultra is currently out of stock at our US warehouse. We expect it to arrive next Tuesday and will ship your order immediately upon arrival. We sincerely apologize for the delay this may cause.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-05T08:13:48Z",
+      "updated_at": "2025-12-05T08:13:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

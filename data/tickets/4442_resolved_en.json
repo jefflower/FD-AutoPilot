@@ -1,0 +1,45 @@
+{
+  "id": 4442,
+  "subject": "Pro Ultra Pedals Problem",
+  "description_text": "I have the pro ultra pedal that I just purchased and they will not calibrate in iRacing at all and the numbers are jumping all over the place, I have tried everything and get no where so far. Any recommendations? I’m starting to think my control box is dysfunctional as these are new and not working. \nSent from my iPhone",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-10-04T16:41:47Z",
+  "updated_at": "2025-10-05T23:51:08Z",
+  "requester_id": 158005401329,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009941795,
+      "body_text": "Hi Bobby Holton, Please uninstall the old version on your computer, then reinstall version 2.1.2 and update the firmware. After the update, the device version should display as CPU1: 2.0.5, CPU2: 2.0.3. If the issue is still not resolved, please feel free to contact me. https://drive.google.com/file/d/1PZwHUqhhmJw0IBGDO8mGONPbrICJU3z1/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T16:40:15Z",
+      "updated_at": "2025-10-05T16:40:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009948442,
+      "body_text": "That solved the issue! Thank you for you help!",
+      "user_id": 158005401329,
+      "created_at": "2025-10-05T21:22:13Z",
+      "updated_at": "2025-10-05T21:22:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009950852,
+      "body_text": "worked pefectly",
+      "user_id": 158005401329,
+      "created_at": "2025-10-05T23:51:07Z",
+      "updated_at": "2025-10-05T23:51:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

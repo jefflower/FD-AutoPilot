@@ -1,0 +1,34 @@
+{
+  "id": 2609,
+  "subject": "Question regarding shipping to United States of America",
+  "description_text": "Hello,\r\n\r\nI am interested in purchasing your Plus X sim pedals and VAM Pro linear \r\nmotor set. I see on your Amazon.com listing that your merchandise ships \r\nfrom a US warehouse. Do items purchased on your website, simsonn.com, \r\nalso ship from a US warehouse? I am concerned about tariff issues.\r\n\r\nThanks,\r\nTony Fitzgerald\r\n",
+  "status": 3,
+  "priority": 2,
+  "created_at": "2025-08-12T20:59:04Z",
+  "updated_at": "2025-08-25T03:58:51Z",
+  "requester_id": 158002995015,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006781240,
+      "body_text": "Hi Doomhauser Scalawag,    Please don't worry, our pedals are shipped from our warehouse in the United States, while VAM Pro is shipped from China, but customers do not need to pay any taxes.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-13T01:33:01Z",
+      "updated_at": "2025-08-13T01:33:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007357337,
+      "body_text": "Hello again,     I ordered the Pro X Ultra Pedals with baseplate and the VAM Pro 3 piece set from your amazon store, and have since received the Pedals and baseplate. The VAM Pro showed as having shipped with the pedals and baseplate with the same tracking number. The VAM Pro 3 piece set has not arrived. Can you tell me if the VAM Pro 3 piece set on amazon also ships from China, and if so, would I receive some sort of tracking there to track it with? My Order number on amazon is 112-9258458-0001834  . Amazon won't allow me to contact you there for some reason. They say they are handling customer service.",
+      "user_id": 158002995015,
+      "created_at": "2025-08-22T21:31:46Z",
+      "updated_at": "2025-08-22T21:31:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 8340,
+  "subject": "Order",
+  "description_text": "Hi,\r\n\r\nI made an order on 10/12/25 and I am yet to receive any sort of update on its current whereabouts. On the website it is showing as unfulfilled. Just curious how long I should be expecting to wait.\r\n\r\nOrder number- \r\n#SSN4656\r\n\r\nMany Thanks\r\nCurtis\r\nSent from my iPhone\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-15T20:55:54Z",
+  "updated_at": "2025-12-17T09:00:33Z",
+  "requester_id": 158007824414,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014619158,
+      "body_text": "Hi Curtis McArthur,    We sincerely apologize for any inconvenience caused. Due to recent high demand, we will arrange an expedited UPS shipment for you, with delivery expected on the 22nd.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-17T09:00:33Z",
+      "updated_at": "2025-12-17T09:00:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

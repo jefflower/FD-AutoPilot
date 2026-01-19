@@ -1,0 +1,24 @@
+{
+  "id": 8047,
+  "subject": "Order information",
+  "description_text": "Order number #SSN4627\r\n\r\nHello!\r\n\r\nI made an order for a set of simsonn pedals + haptics + u bracket mounts. The order has been placed on 10th of december and still no information since then..\r\n\r\nPlease do let me know if everything is ok and also per conversation on support@simsonn.com I was told to give you a heads up after placing the order so it will be sent with a low declaration invoice, preferably under 75$.\r\n\r\nI attached some screenshots of the order and conversation mentioned.\r\n\r\nThank you so much, waiting to hear from you!\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-12T05:56:28Z",
+  "updated_at": "2025-12-12T11:29:20Z",
+  "requester_id": 158006891455,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014380616,
+      "body_text": "Hi Cosmin Alin,    Alright, we'll adjust the declared amount for you.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-12T11:29:20Z",
+      "updated_at": "2025-12-12T11:29:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

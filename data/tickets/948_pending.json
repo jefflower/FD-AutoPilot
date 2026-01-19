@@ -1,0 +1,74 @@
+{
+  "id": 948,
+  "subject": "broken throttle wire",
+  "description_text": "What do I need to do? Can the cable be pulled out of the pedal itself and\r\nreplaced or is it sodered directly to the pedal?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-28T05:49:04Z",
+  "updated_at": "2025-06-28T07:49:18Z",
+  "requester_id": 158001834910,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004219147,
+      "body_text": "Hi alex ash,  You can visit a nearby computer repair shop to purchase an RJ11 4P4C connector. Ask them to crimp a new connector using a proper crimping tool, making sure the wiring order matches the original exactly. It's a very simple process. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-28T05:53:07Z",
+      "updated_at": "2025-06-28T05:53:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004219148,
+      "body_text": "do you guys sell replacement cables?\r\n\r\nOn Fri, Jun 27, 2025 at 10:53 PM service@simsonn.com ",
+      "user_id": 158001834910,
+      "created_at": "2025-06-28T05:54:45Z",
+      "updated_at": "2025-06-28T05:54:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004219149,
+      "body_text": "or can the original cable from the pedal not even be replaced?\r\n\r\n",
+      "user_id": 158001834910,
+      "created_at": "2025-06-28T05:54:58Z",
+      "updated_at": "2025-06-28T05:54:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004219150,
+      "body_text": "would it be easier to instead buy this and just plug it into the throttle?\r\n\r\n",
+      "user_id": 158001834910,
+      "created_at": "2025-06-28T05:56:51Z",
+      "updated_at": "2025-06-28T05:56:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004219161,
+      "body_text": "or does the throttle side of the cable not have the rj11 4p4c jack and it’s\r\njust wired directly to the load cell?\r\n\r\n",
+      "user_id": 158001834910,
+      "created_at": "2025-06-28T06:09:01Z",
+      "updated_at": "2025-06-28T06:09:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004219279,
+      "body_text": "Hi alex ash,  Since the wires are already connected inside the sensor, the purchased cable cannot be used directly unless the wires are manually connected. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-28T07:49:17Z",
+      "updated_at": "2025-06-28T07:49:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

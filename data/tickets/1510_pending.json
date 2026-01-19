@@ -1,0 +1,44 @@
+{
+  "id": 1510,
+  "subject": "Throttle response and PC wake behaviour",
+  "description_text": "Hi there\r\n\r\nThank you for sending the replacement throttle pedal and repair part. I\r\nwill have a try to fix the original damaged pedal. The replacement has been\r\nplugged in and is working well, thank you. I just have two questions about\r\nthe pedal.\r\n\r\n1. When I use the throttle and press it to full, the pedal response will\r\nmomentarily pause at 95% or 98%, before going to 100%. Is this behaviour\r\ncaused by the hydraulic piston? What is the best way to work around this?\r\nCan the hydralic rod be adjusted, or is it better to calibrate the pedal\r\nand set a deadzone to that this blip does not occur?\r\n\r\n2. When I have the pedals plugged in, it continuously wakes the PC or does\r\nnot allow it to go to sleep or for the screen to turn off. This happens\r\nwhether or not i have the Simsonn control software running on the PC. I\r\nhave checked whether it is registering any inputs without the pedal being\r\npressed, and there is no activity however the screen will stay awake, or\r\nimmediately turn on if it is off and I plug the control box in. I have had\r\nto unplug the pedals for power conservation. Is this a bug in the hardware\r\nor software? If you can advise me of a fix or any help, that would be\r\ngreatly appreciated.\r\n\r\nThank you very much.\r\n\r\nKind regards\r\nChanho\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-13T22:48:53Z",
+  "updated_at": "2025-07-16T03:49:22Z",
+  "requester_id": 158001709759,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004774997,
+      "body_text": "Hi Chanho,    Regarding your first question, we recommend leaving a bit of headroom when calibrating the maximum value — avoid pressing the pedal all the way down. Also, make sure to set a proper deadzone. This issue might also be related to the installation method.     As for the second issue, the pedals continuously send game data to the PC, which may cause the screen to stay on.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-14T03:49:51Z",
+      "updated_at": "2025-07-14T03:49:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004837576,
+      "body_text": "Hi there\r\n\r\nThank you, so is unplugging the USB when pedals are not in use the only way\r\nto reduce the power consumption? This behaviour occurs when no sim racing\r\ntitle or the Simsonn control software is running.\r\n\r\n",
+      "user_id": 158001709759,
+      "created_at": "2025-07-15T00:29:36Z",
+      "updated_at": "2025-07-15T00:29:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004923605,
+      "body_text": "Hi Chanho,  Yes, even if you're not playing a racing game, the control box will still send data continuously because it has no way of knowing whether a game has started. The simplest and most effective solution is to disconnect the USB when you're not using the device. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T03:49:21Z",
+      "updated_at": "2025-07-16T03:49:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

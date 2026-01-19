@@ -1,0 +1,24 @@
+{
+  "id": 8871,
+  "subject": "Pedales",
+  "description_text": "Hola buenos días el día 17 hice un pedido en vuestra web, y me gustaría saber qué día llegará el pedido o cómo puedo saber su localización gracias.\r\nEl código del pedido es:\r\n #SSN4982\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-12-22T11:23:37Z",
+  "updated_at": "2025-12-28T02:40:05Z",
+  "requester_id": 158008304269,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015146916,
+      "body_text": "此工单已关闭并合并到工单 9252 中",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T02:40:05Z",
+      "updated_at": "2025-12-28T02:40:05Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

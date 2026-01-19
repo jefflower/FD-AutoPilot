@@ -1,0 +1,35 @@
+{
+  "id": 8416,
+  "subject": "订单 SSN4647",
+  "description_text": "你给我写道：\n你好，Laurent Zeches,\n\n我们对给您带来的不便深表歉意。目前，我们的德国仓库脚踏板缺货，预计今天补货。我们将通过DHL发货您的订单，并退还您支付的额外运费。\n\n所以我的问题是，包裹能在圣诞节（12月24日）之前送达吗？\n我还需要追踪号码。抱歉，但我有点生气！\n\n此致\n\nZeches Laurent",
+  "status": 4,
+  "priority": 4,
+  "created_at": "2025-12-16T12:19:11Z",
+  "updated_at": "2025-12-22T12:10:50Z",
+  "requester_id": 158007745688,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014614831,
+      "body_text": "你好，Laurent Zeches，您的包裹会在圣诞节前送达，请放心。",
+      "user_id": 158001343601,
+      "created_at": "2025-12-17T06:31:33Z",
+      "updated_at": "2025-12-17T06:31:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014878249,
+      "body_text": "我问的是另一个订单，结果给我发了第二个订单的信息！！",
+      "user_id": 158007745688,
+      "created_at": "2025-12-22T12:10:49Z",
+      "updated_at": "2025-12-22T12:10:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

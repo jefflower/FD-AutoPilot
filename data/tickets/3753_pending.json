@@ -1,0 +1,54 @@
+{
+  "id": 3753,
+  "subject": "Pedals not working anymore",
+  "description_text": "Moin, wie bei Amazon schon beschrieben funktionieren die Pedale nicht mehr.\r\nSind beim Fahren ausgefallen. Ein Video ist zu groß um es Ihnen zu senden.\r\nWas kann ich noch tun?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-12T10:24:01Z",
+  "updated_at": "2025-09-12T12:58:42Z",
+  "requester_id": 158004473086,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008578078,
+      "body_text": " short video from my problem. and the headunit is ultra hot!\r\n\r\nAm Fr., 12. Sept. 2025 um 12:24 Uhr schrieb support@simsonn.com <\r\nsupport@simsonn.com>:\r\n\r\n> Hi Ricoo Leone\r\n>\r\n> We would like to acknowledge that we have received your request and a\r\n> ticket has been created.\r\n> A support representative will be reviewing your request and will send you\r\n> a personal response.(usually within 24 hours).\r\n>\r\n> To view the status of the ticket or add comments, please visit\r\n> https://simsonn.freshdesk.com/helpdesk/tickets/3753?follow=email\r\n>\r\n> Thank you for your patience.\r\n> View ticket\r\n> <https://simsonn.freshdesk.com/helpdesk/tickets/3753?follow=email>\r\n> *If the button doesn't work, copy-paste this URL in your browser's address\r\n> bar: *https://simsonn.freshdesk.com/helpdesk/tickets/3753?follow=email\r\n>\r\n> Regards,\r\n> simsonn Support Team\r\n>\r\n> 3753:4206036\r\n>\r\n\r\n",
+      "user_id": 158004473086,
+      "created_at": "2025-09-12T10:33:34Z",
+      "updated_at": "2025-09-12T10:33:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008583370,
+      "body_text": "Hi Ricoo Leone,  Please use a toothpick or screwdriver to press and hold the small button inside the hole on the side of the control box, then reconnect the USB cable. The software should enter recovery mode. Next, go to Settings → Update → Manual Firmware Update → Pedals → Firmware → Pedals → plusX.sfu and try updating the firmware manually. If the issue persists, we recommend installing Todesk (no registration required). Simply provide your ID and temporary access code, and we can schedule a time to assist you remotely. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-12T12:37:21Z",
+      "updated_at": "2025-09-12T12:37:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008583762,
+      "body_text": "Hey guys, thank you for answer me. I do it right now with a screwdriver and hold it for 10seconds. And reconnected the USB but the problem is already there. I have the latest driver installed. I am right now on a short road trip and back on Monday. So maybe we can meet us on Monday afternoon to check the steps remotely? Von meinem Telefon gesendet -------- Ursprüngliche Nachricht -------- ",
+      "user_id": 158004473086,
+      "created_at": "2025-09-12T12:53:43Z",
+      "updated_at": "2025-09-12T12:53:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008583921,
+      "body_text": "Hi Ricoo Leone,     Keep holding down the upgrade button and then re-insert the USB cable. Once Simsonn Manager indicates that it has entered firmware upgrade mode, you can release the button and follow the steps in the software to complete the recovery process.  If this does not solve the issue, please let me know your city and local time, and we can schedule a remote session so I can assist you directly.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-12T12:58:41Z",
+      "updated_at": "2025-09-12T12:58:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

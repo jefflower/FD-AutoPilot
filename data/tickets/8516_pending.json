@@ -1,0 +1,54 @@
+{
+  "id": 8516,
+  "subject": "Order SSN4846 - Shipment",
+  "description_text": "Hello Team,\r\n\r\ncan you share when the pedals will be shipped?\r\nI see only Haptics were sent.\r\n\r\nThanks,\r\nStefano\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-17T14:08:12Z",
+  "updated_at": "2025-12-24T10:29:11Z",
+  "requester_id": 158007847161,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014679170,
+      "body_text": "Team, I am reading on Reddit that you have people waiting for you to ship pedals since beginning of December in EU. This is not only not fair, but also very disappointing as you promise on your website to deliver within 12 days. If you are not able to ship by today, I want you to immediately refund my order. Please confirm. I will buy from some other of your competitors. Thanks. Stefano Sent from mobile ",
+      "user_id": 158007847161,
+      "created_at": "2025-12-18T08:57:12Z",
+      "updated_at": "2025-12-18T08:57:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014874661,
+      "body_text": "在未发货，要退款",
+      "user_id": 158007774607,
+      "created_at": "2025-12-22T11:32:53Z",
+      "updated_at": "2025-12-22T11:32:53Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014962785,
+      "body_text": "Hi Stefano Laguardia,    We apologize for the delay. Your order has been shipped, and we have updated your shipping notification.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-23T08:59:18Z",
+      "updated_at": "2025-12-23T08:59:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015006356,
+      "body_text": "Thank you! Sent from mobile ",
+      "user_id": 158007847161,
+      "created_at": "2025-12-23T21:34:49Z",
+      "updated_at": "2025-12-23T21:34:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "id": 601,
+  "subject": "Tracking number for order Order #SSN1761",
+  "description_text": "Hi, can I get some tracking information for the order Order #SSN1761\r\n\r\nThank you.\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-06-19T10:28:42Z",
+  "updated_at": "2025-06-26T07:25:10Z",
+  "requester_id": 158001671860,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003679603,
+      "body_text": "Hi Ivan Kolic,  We will look into it as soon as possible and get back to you once tracking information is available. As today is Sunday, processing may be a bit slower than usual—thank you for your understanding. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T02:10:06Z",
+      "updated_at": "2025-06-22T02:10:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003832818,
+      "body_text": "I got some tracking info with the number: ALS01091583985\r\nBut there weren't any updated since 19th.\r\n________________________________\r\n",
+      "user_id": 158001671860,
+      "created_at": "2025-06-24T23:06:55Z",
+      "updated_at": "2025-06-24T23:06:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003835802,
+      "body_text": "Hi Ivan Kolic,     Sorry for the delays with the logistics provider, here's the link to your logistics tracking, it's been updated.  https://t.17track.net/en#nums=SYAL000770167",
+      "user_id": 158001343601,
+      "created_at": "2025-06-25T10:35:14Z",
+      "updated_at": "2025-06-25T10:35:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003836192,
+      "body_text": "Thank you.\r\n________________________________\r\n",
+      "user_id": 158001671860,
+      "created_at": "2025-06-25T11:34:25Z",
+      "updated_at": "2025-06-25T11:34:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

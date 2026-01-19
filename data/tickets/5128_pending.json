@@ -1,0 +1,74 @@
+{
+  "id": 5128,
+  "subject": "One button not returning",
+  "description_text": "Hey there I just received  order SSN2959.\r\nOne of the buttons is not returning and is stuck.\r\nI’m happy to fix it myself if you send me a replacement.\r\n\r\n\r\nThanks Max Vogt\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-21T10:56:43Z",
+  "updated_at": "2025-10-27T10:24:35Z",
+  "requester_id": 158005927698,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010859199,
+      "body_text": "Hi Maximilian - Gordon Vogt,    This is your logistics tracking link.  https://t.17track.net/en#nums=SF6045985624788",
+      "user_id": 158001343601,
+      "created_at": "2025-10-22T07:28:14Z",
+      "updated_at": "2025-10-22T07:28:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010866485,
+      "body_text": "That was quick thank you, I was going to ask if it’s possible to send me 5\r\ngreen led buttons. I like to swap em all out for green to match my pit.\r\n\r\nAlso, is it possible to utilise the rotary push function? It’s not wired up\r\nright now, wondering if there are free inputs on your pcb?\r\n\r\nThank you!\r\n\r\nOn Wed, 22 Oct 2025 at 08:28, service@simsonn.com ",
+      "user_id": 158005927698,
+      "created_at": "2025-10-22T09:30:00Z",
+      "updated_at": "2025-10-22T09:30:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010938094,
+      "body_text": "Hi Maximilian - Gordon Vogt,  Sure, we can send you 6 green LED buttons as replacements. Regarding the rotary push function — it’s currently not in use because the total number of buttons has already reached the Windows limit of 40 inputs. Please provide your contact name, phone number, and shipping address, and we’ll arrange the shipment for you right away. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-23T10:43:49Z",
+      "updated_at": "2025-10-23T10:43:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010946520,
+      "body_text": "That's great, thank you very much.\r\n\r\nMaximilian-Gordon Vogt\r\n0 Stowe Road, ZERO Stowe Road\r\nW12 8BN\r\nLondon\r\nGB\r\n\r\n\r\n\r\nOn Thu, 23 Oct 2025 at 11:44, service@simsonn.com ",
+      "user_id": 158005927698,
+      "created_at": "2025-10-23T12:30:37Z",
+      "updated_at": "2025-10-23T12:30:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011105511,
+      "body_text": "Please let me know when you got a new tracking link.\r\n\r\nOn Thu, 23 Oct 2025 at 13:30, Maximilian - Gordon Vogt <neok23@gmail.com>\r\nwrote:\r\n\r\n> That's great, thank you very much.\r\n>\r\n> Maximilian-Gordon Vogt\r\n> 0 Stowe Road, ZERO Stowe Road\r\n> W12 8BN\r\n> London\r\n> GB\r\n>\r\n>\r\n>\r\n> On Thu, 23 Oct 2025 at 11:44, service@simsonn.com ",
+      "user_id": 158005927698,
+      "created_at": "2025-10-26T10:13:25Z",
+      "updated_at": "2025-10-26T10:13:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011151868,
+      "body_text": "Hi Maximilian - Gordon Vogt,    We apologize for any inconvenience caused. Here is your logistics tracking link.  https://t.17track.net/en#nums=SF6045994902155",
+      "user_id": 158001343601,
+      "created_at": "2025-10-27T10:24:35Z",
+      "updated_at": "2025-10-27T10:24:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

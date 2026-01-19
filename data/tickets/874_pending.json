@@ -1,0 +1,24 @@
+{
+  "id": 874,
+  "subject": "Pedals not recognised",
+  "description_text": "Hello Simsonn support, \r\nSo ive just received my plus x pedals. I‘ve set them up in the software and the inputs are received there. But when i try to set them up in Assetto corsa competizione, the pedals arent recognized by the game when trying to map the inputs. \r\nI hope you can help me out because i couldnt really find anything online. \r\nWith kind regards\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-26T12:16:18Z",
+  "updated_at": "2025-07-02T01:58:02Z",
+  "requester_id": 158001797920,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004052295,
+      "body_text": "Hi Jonathan Läsker,    Have you completed the calibration? In the software, can you see that all three pedals respond correctly and reach 100% during testing? If the game cannot detect them, please provide screenshots of the software interface and the in-game issue. Normally, ACC is fully compatible and should recognize and work with our pedal set without any problems.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-27T00:19:59Z",
+      "updated_at": "2025-06-27T00:19:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

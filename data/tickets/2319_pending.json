@@ -1,0 +1,24 @@
+{
+  "id": 2319,
+  "subject": "Order ID 8202481698612865",
+  "description_text": "Hello\r\n\r\nOrder ID 8202481698612865.\r\nWhenever I have the power supply for the VAM pro plugged into the control\r\nbox the pedals are not recognised in game.\r\nAssetto Corsa, Assetto Corsa Competizione, iRacing, LMU.\r\nWhen I unplug power supply the pedals work.\r\nI borrowed a friends control box and his works. I believe the control box\r\nis faulty.\r\n\r\nThanks Dean Merchant\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-05T09:49:46Z",
+  "updated_at": "2025-08-05T12:36:52Z",
+  "requester_id": 158000954896,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006263450,
+      "body_text": "Hi Dean Merchant,   Are you sure that using your friend’s ProX Ultra control box resolves the issue? Please use the VKB tool to check whether four axes are detected. If yes, update your software to version 2.1.0 and flash the plusxultra.sfu firmware. After that, please provide a VKB screenshot so we can confirm if the issue has been resolved. If it is still not resolved, we will arrange to send you a replacement control box. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-05T12:36:52Z",
+      "updated_at": "2025-08-05T12:36:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

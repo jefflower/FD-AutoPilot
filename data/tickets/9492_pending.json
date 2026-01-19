@@ -1,0 +1,24 @@
+{
+  "id": 9492,
+  "subject": "Amazon Purchase",
+  "description_text": "I order a set of your pedals from Amazon (Invoice Attached) in the U.S. \r\nback on Dec 19th. They just showed up today and I have a question about \r\nwhether or not the product I ordered should have included the base \r\nplate? From the listing and the pictures it certainly looks like it should.\r\n\r\nHere is a picture of what I received.\r\n\r\nPlease let me know. If I received the correct product and your \r\nadvertising shows the base plate in the picture and makes no mention of \r\nthat fact they are for sure getting returned.\r\n\r\nThanks.\r\n\r\n-Rich\r\n\r\n-- \r\n\r\n\r\n      Rich Gunthert\r\n\r\nOwner / Managing Member\r\n\r\nBlaze It Firewood Products, LLC\r\n\r\n\t(615) 522-9238 <tel:16155551212>\r\n\r\n\trich@blazeitfirewood.com <mailto:test@bif.com>\r\n\r\n\twww.blazeitfirewood.com <//www.bif.com>\r\n\r\n\t275 Old Natchez Trace Trail,  Camden, TN 38320\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-29T19:46:43Z",
+  "updated_at": "2025-12-30T10:08:32Z",
+  "requester_id": 158008812921,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015245716,
+      "body_text": "Hi Rich Gunthert,     Hi, I am sorry for it. We have reshipped a new package to you from our US warehouse, here is the tracking number: 1ZJ201H40300933100 , the shipping carrier is UPS, you can track it via https://www.ups.com/track.",
+      "user_id": 158007774607,
+      "created_at": "2025-12-30T10:08:28Z",
+      "updated_at": "2025-12-30T10:08:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

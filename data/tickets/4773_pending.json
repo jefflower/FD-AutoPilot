@@ -1,0 +1,44 @@
+{
+  "id": 4773,
+  "subject": "compatibility fanatec?",
+  "description_text": "Hello,\r\n\r\n\r\ni bought a simsonn pro X ultra, i saw on the controler box a RJ12 connector\r\nwitch indicate < BASE >. \r\nis it compatible with fanatec base like simnet pro pedals ? even without rgb\r\nor haptic, i just want the pedals to be recognised.\r\n\r\nthank you\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-11T20:32:08Z",
+  "updated_at": "2025-10-16T06:08:54Z",
+  "requester_id": 158005589082,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010314056,
+      "body_text": "Hi Joebar65,    They are compatible with Fanatec systems — we have a Fanatec CSL DD 8 Nm in our lab for testing.  Please send me a screenshot so I can take a look. Also, make sure the device is connected directly to a rear USB 3.0 (blue) port on your PC, not through a hub.  Is our Simsonn Manager software not detecting your device?",
+      "user_id": 158000445778,
+      "created_at": "2025-10-12T11:30:22Z",
+      "updated_at": "2025-10-12T11:30:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010454766,
+      "body_text": "Hello,\r\n\r\nthanks for quick reply , what i’d like is connectec my fanatec base to the controler\r\n\r\n\r\n\r\n\r\ni’ve wired a rj12 6P6C cable from the fanatec base and nothing happen, pedals are not moving\r\n\r\nthanks\r\n\r\n\r\n\r\n \r\n\r\nDe : service@simsonn.com ",
+      "user_id": 158005589082,
+      "created_at": "2025-10-14T20:52:17Z",
+      "updated_at": "2025-10-14T20:52:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010535312,
+      "body_text": "Hi Joebar65,     I understand your point. When we mention “compatibility,” it means that Fanatec devices and our ProX pedals can work together in PC games. However, our pedals cannot be connected directly to a Fanatec wheelbase — they must be connected to the PC via USB. In addition, the 6P6C port on our pedals is reserved for our upcoming wheelbase and is not compatible with other brands’ bases. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-16T06:08:53Z",
+      "updated_at": "2025-10-16T06:08:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

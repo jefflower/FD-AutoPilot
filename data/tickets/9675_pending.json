@@ -1,0 +1,34 @@
+{
+  "id": 9675,
+  "subject": "Size of elastomers",
+  "description_text": "Hello,\r\nI've asked myself multiple times now, what size of elastomers in the pro x\r\npedals there are.\r\n\r\nGreetings, linus.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-31T15:19:56Z",
+  "updated_at": "2026-01-02T03:40:01Z",
+  "requester_id": 158008832194,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015366048,
+      "body_text": "Hi Linus Mohr,  I have only received one inquiry from you. Please provide your order number and specify which part’s size you need. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-01T15:08:51Z",
+      "updated_at": "2026-01-01T15:08:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015367161,
+      "body_text": "Hello,\r\nI havent purchased any product of you yet, but i would like to know what\r\nsizes the brake elastomers on the plus x ultra pedals are\r\nGreetings, linus\r\n\r\nservice@simsonn.com ",
+      "user_id": 158008832194,
+      "created_at": "2026-01-01T16:00:01Z",
+      "updated_at": "2026-01-01T16:00:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

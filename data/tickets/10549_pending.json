@@ -1,0 +1,104 @@
+{
+  "id": 10549,
+  "subject": "Order status",
+  "description_text": "Hello\r\n\r\nI placed an order on december 25 for the plus x pedals with the economy\r\nshipping, which says 9-15 days. However, on the website, the order's status\r\nhasnt changed from confirmed. I assume my order still hasnt been proccesed.\r\nI want to know what is it happening and why is this delay. This is my order\r\nnumber #SSN5274.\r\n\r\nAlso, i want to mention that 3 days ago i sent you another email asking\r\nabout this and i receives an automated response saying someone will contact\r\nme in 24h but no one contacted me about my problem.\r\n\r\nThank you.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-11T06:32:34Z",
+  "updated_at": "2026-01-17T07:21:24Z",
+  "requester_id": 158008981542,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016781464,
+      "body_text": "ID 为 10304 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T06:41:48Z",
+      "updated_at": "2026-01-11T06:41:48Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016781465,
+      "body_text": "合并来自工单10304  \n      主题: Order status  \n      描述:  Hello,   \n I placed an order on 25 december with the economy shipping but besides the confirmation i havent received any other email and the order's status has not changed from confirmed on the website. Can i have some information when will the product be shipped or if it's at least being processed? The order's number is #SSN5274. \n   \n Thank you.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T06:41:48Z",
+      "updated_at": "2026-01-11T06:41:48Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016782061,
+      "body_text": "Hi Iustin Ionescu,     I will check the shipment status of your order tomorrow to see if there are any issues and get back to you as soon as possible.  Due to the peak season, we have a large volume of emails and orders, which has caused some delays. We sincerely apologize for the inconvenience and truly appreciate your understanding and patience",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T06:48:25Z",
+      "updated_at": "2026-01-11T06:48:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016782725,
+      "body_text": "Thank you for clarifying.\r\n\r\ndum., 11 ian. 2026, 08:48 service@simsonn.com ",
+      "user_id": 158008981542,
+      "created_at": "2026-01-11T06:53:48Z",
+      "updated_at": "2026-01-11T06:53:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016854642,
+      "body_text": "Hi Iustin Ionescu,    We apologize for the delay. Two shipments have been impacted by heavy snowfall in Europe, with road blockages causing delivery delays to our warehouse. We will expedite delivery to the warehouse as soon as possible or explore alternative logistics channels to ship your goods from China.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-12T10:46:31Z",
+      "updated_at": "2026-01-12T10:46:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016979205,
+      "body_text": "No problem, thank you for the update.\r\n\r\nlun., 12 ian. 2026, 12:46 service@simsonn.com ",
+      "user_id": 158008981542,
+      "created_at": "2026-01-13T12:42:16Z",
+      "updated_at": "2026-01-13T12:42:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017271606,
+      "body_text": "Hello,\r\n\r\nDo you have any updates? Thank you.\r\n\r\nlun., 12 ian. 2026, 12:46 service@simsonn.com ",
+      "user_id": 158008981542,
+      "created_at": "2026-01-16T15:15:16Z",
+      "updated_at": "2026-01-16T15:15:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017310566,
+      "body_text": "Hi Iustin Ionescu,    We will try our best to ship your order after the goods arrive at our German warehouse on the 21st. However, if further delays occur, we will ship your order from China via UPS Express. Should any taxes or fees arise, I will reimburse you. We will do our utmost to ensure delivery by the end of the month.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T02:36:51Z",
+      "updated_at": "2026-01-17T02:36:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017315582,
+      "body_text": "Ok, thank you.\r\n\r\nsâm., 17 ian. 2026, 04:36 service@simsonn.com ",
+      "user_id": 158008981542,
+      "created_at": "2026-01-17T06:14:01Z",
+      "updated_at": "2026-01-17T06:14:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

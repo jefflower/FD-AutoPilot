@@ -1,0 +1,144 @@
+{
+  "id": 7479,
+  "subject": "Steering wheel",
+  "description_text": "Hi\r\n\r\nI bought a steering wheel Hub.  When I plug it into the pc, it lights up ok.  But an error comes up.\r\nDevice Descriptor Request failed.\r\n\r\nIs their a driver I need to install for this?\r\n\r\nThanks\r\nJonathan\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-05T08:49:31Z",
+  "updated_at": "2026-01-04T09:36:11Z",
+  "requester_id": 158007657266,
+  "responder_id": 158007774664,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013760580,
+      "body_text": "Hi Jonathan Kirwan,  You can try using a different USB 3.0 port or connect through a USB hub with independent power supply. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-06T05:09:18Z",
+      "updated_at": "2025-12-06T05:09:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013836666,
+      "body_text": "Hi\r\n\r\nI have tried that. It does not work.\r\nIt lights up ok\r\n\r\n\r\nMany Thanks\r\nJonathan\r\n\r\n",
+      "user_id": 158007657266,
+      "created_at": "2025-12-06T09:57:31Z",
+      "updated_at": "2025-12-06T09:57:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014117879,
+      "body_text": "Hi Jonathan Kirwan,     Could you take a photo of the USB 3.0 port for me to verify? Under normal circumstances it shouldn’t be damaged, as we perform full inspection before shipping. Please also try it on another computer. Additionally, which version of Windows are you using?",
+      "user_id": 158000445778,
+      "created_at": "2025-12-08T09:36:05Z",
+      "updated_at": "2025-12-08T09:36:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014139001,
+      "body_text": "Hi\r\n\r\nOn the computer I am using windows 10. It is not recognised on the laptop top either. That is running windows 11. [image0.jpeg] [image1.jpeg]\r\nMany Thanks\r\nJonathan\r\n\r\n",
+      "user_id": 158007657266,
+      "created_at": "2025-12-08T17:09:47Z",
+      "updated_at": "2025-12-08T17:09:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014139053,
+      "body_text": "[image0.jpeg]\r\nMany Thanks\r\nJonathan\r\n\r\n",
+      "user_id": 158007657266,
+      "created_at": "2025-12-08T17:10:25Z",
+      "updated_at": "2025-12-08T17:10:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014259808,
+      "body_text": "Hi\r\n\r\nAny update?\r\n\r\nThanks\r\nJonathan\r\n\r\n",
+      "user_id": 158007657266,
+      "created_at": "2025-12-10T14:35:18Z",
+      "updated_at": "2025-12-10T14:35:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014308253,
+      "body_text": "Hi Jonathan Kirwan,  Could you try testing it on another computer? If it still doesn’t work, it might be a power supply issue. Do you have a USB hub with independent power? If none of these work, it could be a poor USB connection. We can send you a replacement spring cable to try. Please provide your order number, contact name, phone number, and address, and we will arrange the replacement for you. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T08:26:57Z",
+      "updated_at": "2025-12-11T08:26:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014509159,
+      "body_text": "Hi\r\n\r\nI have tried it on a few computers, same error message. Unknown USB Device (Device Descriptor request failed)\r\nMy details are\r\nJonathan Kirwan\r\nBurleigh Lodge\r\nPortland Road\r\nThe Burnaby\r\nGreystones\r\nCo. Wicklow\r\nIreland\r\nA63 NX61\r\n\r\n++353 862598442\r\n\r\nThanks\r\nJonathan\r\n\r\n",
+      "user_id": 158007657266,
+      "created_at": "2025-12-15T12:38:40Z",
+      "updated_at": "2025-12-15T12:38:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014810377,
+      "body_text": "Hi Jonathan Kirwan,  The issue might be caused by a damaged spring cable. Please check if it’s broken. Also, kindly provide the contact name, phone number, and shipping address, and I can send you a replacement spring cable to try. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-20T12:40:56Z",
+      "updated_at": "2025-12-20T12:40:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014813757,
+      "body_text": "Hi\r\n\r\nMy details are\r\n\r\nJonathan Kirwan\r\nBurleigh Lodge\r\nPortland Road\r\nThe Burnaby\r\nGreystones\r\nCo. Wicklow\r\nIreland\r\nA63 NX61\r\n\r\nPhone\r\n++353 862598442\r\n\r\n\r\nMany Thanks\r\nJonathan\r\n\r\n",
+      "user_id": 158007657266,
+      "created_at": "2025-12-20T15:00:58Z",
+      "updated_at": "2025-12-20T15:00:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015306734,
+      "body_text": "Hi Jonathan Kirwan,  Could you please provide your order number?",
+      "user_id": 158007774607,
+      "created_at": "2025-12-31T10:21:03Z",
+      "updated_at": "2025-12-31T10:21:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015401552,
+      "body_text": "Hi\r\n\r\nI bought it on Aliexpress and I cant find any details\r\n\r\nThanks\r\nJonathan\r\n\r\n",
+      "user_id": 158007657266,
+      "created_at": "2026-01-02T15:38:52Z",
+      "updated_at": "2026-01-02T15:38:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015611921,
+      "body_text": "Hi Jonathan Kirwan,  Hello, we're sorry, we can't find your order by address. Could you please provide a screenshot of your AliExpress order page so we can access the AliExpress platform and locate your order for verification? Thank you for your cooperation.",
+      "user_id": 158007774664,
+      "created_at": "2026-01-04T09:36:03Z",
+      "updated_at": "2026-01-04T09:36:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

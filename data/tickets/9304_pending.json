@@ -1,0 +1,24 @@
+{
+  "id": 9304,
+  "subject": "Shipping",
+  "description_text": "Hello! I ordered from Finland. Where do you guys ship the package from and\r\ndo i need to pay customs? Thank you!!\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-27T15:55:06Z",
+  "updated_at": "2025-12-31T08:49:12Z",
+  "requester_id": 158008793446,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015146549,
+      "body_text": "Hi Eeka Poikela,  We can ship from Germany, and there will be no customs duties within the EU. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T02:10:56Z",
+      "updated_at": "2025-12-28T02:10:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

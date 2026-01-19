@@ -1,0 +1,24 @@
+{
+  "id": 11053,
+  "subject": "Question about order",
+  "description_text": "Hello,\r\n\r\nI ordered racing pedals from simsonn.com last Monday, the 12th of January.\r\nMy order number is\r\n#SSN6062. I just wanted to reach out because I still have not received\r\nshipping confirmation. When could I expect them to be shipped?\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-16T08:24:02Z",
+  "updated_at": "2026-01-17T09:35:05Z",
+  "requester_id": 158009259590,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017322108,
+      "body_text": "Hi Snorri Þorvaldsson,    We apologize for the delay in shipping your order. Here is your tracking link.  https://t.17track.net/en#nums=ALS01360260524",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T09:35:05Z",
+      "updated_at": "2026-01-17T09:35:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

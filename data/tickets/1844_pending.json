@@ -1,0 +1,184 @@
+{
+  "id": 1844,
+  "subject": "pedal faces",
+  "description_text": "do the face plates of the pro plus pedals fit on the pro pedals?\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-07-23T20:54:31Z",
+  "updated_at": "2025-08-11T01:32:21Z",
+  "requester_id": 158002301700,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005487193,
+      "body_text": "Hi Mick Lo,  They should be the same, except for the earliest Pro throttle and brake, which were both straight. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-24T01:57:19Z",
+      "updated_at": "2025-07-24T01:57:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005505743,
+      "body_text": "thanks one more question please, I have the pro pedals.  I  bought the pro\r\nplus upgrade kit including the vam motors.  After some tinkering i got them\r\nto work, but they abruptly stopped working..  I thought i might have\r\nshorted the box out, because when i pulled and reinserted the AC plug into\r\ncontrol box i saw a spark.  I ordered a second \"pro plus\" control box but\r\nstill not working.  on Simsonn manager it shows that power IS connected to\r\nall 3 motors.  But nothing in game or when i hit the \"test\" buttons.  ive\r\nalso tried with simhub separately and while running simsonn mgr.\r\nInitially it worked with either or both programs running.  They also both\r\nshow \"power\" to the motors.\r\n\r\nOn Wed, Jul 23, 2025 at 9:57 PM service@simsonn.com ",
+      "user_id": 158002301700,
+      "created_at": "2025-07-24T19:02:16Z",
+      "updated_at": "2025-07-24T19:02:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005515563,
+      "body_text": "Hi Mick Lo,  Did you purchase the VAM motor? Is your SIMSONN Manager version 2.0.9? The older version did not limit the maximum force of the VAM to 50%, which could easily cause overload and damage to the VAM. The VAM Pro does not have this issue. Please test the VAM motors on different ports. If damage is confirmed, we can send you a replacement motor. However, we need to first verify that the control box is functioning correctly, so please record a video and send it to us for inspection.      Sparks are normal — the motor’s capacitor needs to charge when the power is connected. This will not damage the control board, and the voltage is only 24V, so there’s no need to worry. Our power supplies are custom-made by certified manufacturers and have passed multiple safety certifications. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-25T02:24:12Z",
+      "updated_at": "2025-07-25T02:24:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005530665,
+      "body_text": "Yes I have the normal Vam motors. I think I blew out 2 of the motors. I did update to 2.0.9 but only AFTER everything stopped working. In the attached video, you can see I have power to all 3 motors but no rumble. The clutch motor is actually fully functional, maybe a lower frequency. I knew either the control box or motors were blown, I bought a replacement controller box as it was much cheaper than 3 new motors. Plus I wasn’t sure if that would fix it. I saw on Reddit that Simsonn customer service was excellent. So any way you can help would be appreciated, I love the simsonn ecosystem and want to continue to upgrade. Sent from my iPhone ",
+      "user_id": 158002301700,
+      "created_at": "2025-07-25T03:59:07Z",
+      "updated_at": "2025-07-25T03:59:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005550951,
+      "body_text": "Hi Mick Lo,  Could you please provide your order number? I will arrange to send you two replacement VAM motors. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-26T04:04:08Z",
+      "updated_at": "2025-07-26T04:04:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005619732,
+      "body_text": "this is the original upgrade kit bought from amazon SIMSONN store\r\nOrder placed\r\nJune 19, 2025\r\nOrder #\r\n113-1067522-6813831\r\n\r\nand this is the extra box i bought (you were correct, first one is fine)\r\nOrder placed\r\nJuly 15, 2025\r\nOrder #\r\n113-7487429-2262657\r\n\r\nthe 3rd \"clutch motor\" worked for few minutes.  When they initially stopped\r\nworking the clutch motor worked UNTIL I switched to a diff port to see if\r\nit was motor or box.  Anyway none of the motors work now.\r\n\r\nOn Sat, Jul 26, 2025 at 12:04 AM service@simsonn.com ",
+      "user_id": 158002301700,
+      "created_at": "2025-07-26T22:53:14Z",
+      "updated_at": "2025-07-26T22:53:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005620319,
+      "body_text": "Hi Mick Lo,  Are all three motors not working? Please share a screenshot of the motor mode configuration so I can check if the strength settings are appropriate. Otherwise, I’m concerned that even after sending replacements, they might fail again. In that case, I might consider only selling the VAM Pro motors. This motor doesn’t require very high force settings and may not be suitable for long-term heavy use. However, since many users and customers prefer this more affordable version, it has also significantly increased our after-sales costs. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-27T02:37:14Z",
+      "updated_at": "2025-07-27T02:37:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005620398,
+      "body_text": "After they originally stopped working, i was able to get a low buzz from\r\nthe clutch motor.  This happened seemingly randomly, i was clicking away on\r\nthe vibrate button and out of nowhere it started to buzz.  I then changed\r\nthe power wires to see if it would work on a diff pedal but it didnt and\r\ndid not work again.  UNTIL i got the new control box, once again i got just\r\nthe clutch pedal to work by keep hitting the vibrate button. But same thing\r\nstopped working.   At this point im really not sure which box was hooked up\r\nthe second time, actually not sure which box (old or new) im using now.  I\r\ncertainly did try to save a few bucks by buying the weaker motors but\r\nhaving never used haptics before didnt want to risk the extra $.  In\r\nhindsight the pro motors were the way to go.  The screenshot below i\r\nbelieve is what you are asking to see.\r\n\r\nOn Sat, Jul 26, 2025 at 10:37 PM service@simsonn.com ",
+      "user_id": 158002301700,
+      "created_at": "2025-07-27T03:08:35Z",
+      "updated_at": "2025-07-27T03:08:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005620413,
+      "body_text": "Hi Mick Lo,    If the pedal vibrates by itself, it usually indicates that there is still interference present.  This interference is likely coming from the wheelbase, especially when both the wheelbase and the computer are not properly grounded.  If the wall socket is a two-prong type or the ground wire is ineffective, the interference cannot be properly discharged, which may cause abnormal device behavior.        To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability:      1.    Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding.      2.    Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive.      3.    Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup.      4.    Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible.      5.    Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs.      6.    Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference.      7.    Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements.      8.    Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-27T03:14:54Z",
+      "updated_at": "2025-07-27T03:14:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005620467,
+      "body_text": "I’m sorry I think I explained wrong.  AFTER the motors stopped working, I\r\nwas just messing with all the settings and hitting the “vibration” button.\r\nAt some point hitting the vibration button for the clutch, it started to\r\nvibrate.  I then plugged the clutch motor into motor #2 on the control\r\nbox.  To see if the issue was box or motor.  After that I couldn’t get\r\nanything to work again. Which is why I originally assumed the box was\r\nshorted out.  ALSO NOTE:  initially upon receiving the motors, I couldn’t\r\nget motors to work at all using Simsonn manager, I then downloaded SIMHUB.\r\nAnd through SIMHUB\r\neverything was working, once it worked on SIMHUB it suddenly started\r\nworking on Simsonn MGR as well.  All plugs and outlets are 3 prong w\r\nground.  Since the motors stopped working I haven’t been running SIMHUB\r\nanymore.\r\n\r\nOn Sat, Jul 26, 2025 at 11:15 PM service@simsonn.com ",
+      "user_id": 158002301700,
+      "created_at": "2025-07-27T03:57:34Z",
+      "updated_at": "2025-07-27T03:57:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005656289,
+      "body_text": "Hi Mick Lo,     You need to update SIMSONN Manager to version 2.1.0 and also update the firmware if available by clicking the Check for Updates button in the settings → update menu. Also, have you confirmed whether the control box or the motor is damaged? ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-28T02:14:07Z",
+      "updated_at": "2025-07-28T02:14:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005779603,
+      "body_text": "OK, I am on version 2.1.0. Not sure if was a software or firmware update,\r\nbut there was something to update there as which i did.  I now have the\r\nability to toggle between vam and vam pro where as before im fairly certain\r\ni didnt.  note the release date of the update seemed to be the prior day.\r\nIt says version 2.1.0 on settings page and the device tab shows cpu1:v2.0.2\r\ncpu2:v2.0.0.  I am fairly certain that the motors are burnt out.  I\r\npurchased a second control box and the 2 boxes seem to be working\r\nidentical.  The \"Power Connected\" box on all 3 motors is GREEN and only\r\ngoes red if i unplug AC from box.  If i pull the individual MOTOR AC wires\r\nfrom the box it STAYS green.  These worked perfectly for about a week and\r\nthen stopped out of nowhere, what i didnt realize initially is that the\r\nclutch motor actually still worked.  I believe it still worked because the\r\nclutch was set at a much lower frequency, HOWEVER I then switched the AC\r\nfor clutch motor into the brake port of control box (to see if it was the\r\nmotor or box).  I think that then blew out the 3rd motor.  In conclusion i\r\nam up to date software/firmware and i seem to have power to the control\r\nbox.  i dont know if there is a circuit board inside of the control box\r\nthat can be \"fried\" but it really looks to me as if the motors are done.\r\n\r\nOn Sun, Jul 27, 2025 at 10:14 PM service@simsonn.com ",
+      "user_id": 158002301700,
+      "created_at": "2025-07-29T14:56:58Z",
+      "updated_at": "2025-07-29T14:56:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005866534,
+      "body_text": "Hi Mick Lo,  We will arrange to send you a brand-new replacement motor. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-31T05:20:34Z",
+      "updated_at": "2025-07-31T05:20:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005919237,
+      "body_text": "That's great, thank you very much.\r\n\r\nOn Thu, Jul 31, 2025 at 1:20 AM service@simsonn.com ",
+      "user_id": 158002301700,
+      "created_at": "2025-08-01T00:40:17Z",
+      "updated_at": "2025-08-01T00:40:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006486956,
+      "body_text": "﻿ ﻿ That's great, thank you very much. ",
+      "user_id": 158002301700,
+      "created_at": "2025-08-07T12:44:55Z",
+      "updated_at": "2025-08-07T12:44:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006486988,
+      "body_text": "﻿ ﻿ ﻿ ﻿ That's great, thank you very much. ",
+      "user_id": 158002301700,
+      "created_at": "2025-08-07T12:47:09Z",
+      "updated_at": "2025-08-07T12:47:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006664578,
+      "body_text": "Hi Mick Lo,   Here is the tracking number: JSEHU0137495646YQ. You can track it via https://www.js-exp.com/EN/index.php?page=19.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-11T01:32:20Z",
+      "updated_at": "2025-08-11T01:32:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

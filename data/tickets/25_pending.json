@@ -1,0 +1,24 @@
+{
+  "id": 25,
+  "subject": "Pro X pedals - Haptic motor not working",
+  "description_text": "Hi there, I just purchased the Pro X pedals, and I cannot get the haptic\r\nmotor to work with the control box.  Im trying to trigger the haptic motor\r\nwith the Simsonn manager app.  I see no voltage output at all.\r\nDo i need a special control box that didn't come with my Pro X pedals?\r\n\r\nThanks,\r\n\r\nPete\r\n\r\n-- \r\nCONFIDENTIALITY NOTE: This electronic message (including any attachments) \r\nmay contain information that is privileged, confidential, and proprietary. \r\nIf you are not the intended recipient, you are hereby notified that any \r\ndisclosure, copying, distribution, or use of the information contained \r\nherein (including any reliance thereon) is strictly prohibited. If you \r\nreceived this electronic message in error, please immediately reply to the \r\nsender that you have received this communication and destroy the material \r\nin its entirety, whether in electronic or hard copy format. Although Rivian \r\nand VW Group Technology, LLC has taken reasonable precautions to ensure no \r\nviruses are present in this email, Rivian and VW Group Technology, LLC \r\naccepts no responsibility for any loss or damage arising from the use of \r\nthis email or attachments.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-03T23:42:14Z",
+  "updated_at": "2025-06-04T07:39:21Z",
+  "requester_id": 158000954855,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002326338,
+      "body_text": "Hi Pete Herath,    Have you already purchased the motor? Please note that an external 24V power supply is required to test the vibration.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-04T07:39:21Z",
+      "updated_at": "2025-06-04T07:39:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

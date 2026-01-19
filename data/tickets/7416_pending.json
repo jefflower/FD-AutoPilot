@@ -1,0 +1,74 @@
+{
+  "id": 7416,
+  "subject": "Missing item",
+  "description_text": "Dear Simsonn!\r\n\r\nToday I received my order (#SSN3783). It arrived in good condition, but unfortunately it was incomplete — along with the VAM Set, I found only 2 piece L-Shaped Mounting Bracket.\r\nPlease kindly send the missing item.\r\nThank you,\r\n\r\nGabor Bernhardt\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-04T13:46:53Z",
+  "updated_at": "2025-12-22T12:36:59Z",
+  "requester_id": 158007366362,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013476892,
+      "body_text": "Hi Bernhardt Gábor,    Please provide a photo, and we'll verify with our warehouse. We'll arrange a replacement shipment as soon as possible—no need to worry.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-05T09:37:44Z",
+      "updated_at": "2025-12-05T09:37:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013477640,
+      "body_text": "service@simsonn.com ",
+      "user_id": 158007366362,
+      "created_at": "2025-12-05T10:03:03Z",
+      "updated_at": "2025-12-05T10:03:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013477735,
+      "body_text": "Hi Bernhardt Gábor,    We apologize for the inconvenience caused. We will resend it to you as soon as possible.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-05T10:07:12Z",
+      "updated_at": "2025-12-05T10:07:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013618551,
+      "body_text": "Thank you in advance!\r\n\r\nI saw on the website, that there are available new Vertical Mounting Brackets.\r\nCan you send for me 1 item from this bracket? I'm going to order two more later. Are they compatible with the VAM set I ordered before?\r\n\r\nThank you!\r\n\r\nGabor\r\n\r\n\r\n________________________________\r\nFeladó: service@simsonn.com ",
+      "user_id": 158007366362,
+      "created_at": "2025-12-05T20:15:04Z",
+      "updated_at": "2025-12-05T20:15:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014777524,
+      "body_text": "Dear Simsonn!\r\n\r\nI still doesnt received any update about this missing item. Please respond whats happening.\r\nIt is really frustrating, I paid a lot of money for a pedal set with base plate(base plate still not here, ordered it 21st of November), and a haptic set, and part of them still not here.\r\nI waiting for 1 package, need to be here soon, if something is missing from what I ordered, I'm gonna ask a full refund, because it's unacceptable.\r\n\r\nRegards,\r\nGabor Bernhardt\r\n________________________________\r\nFeladó: service@simsonn.com ",
+      "user_id": 158007366362,
+      "created_at": "2025-12-19T17:24:44Z",
+      "updated_at": "2025-12-19T17:24:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014879962,
+      "body_text": "Hi Bernhardt Gábor,        I apologize for not getting back to you sooner. I see your base plate package is about to arrive—please don't worry. Also, is there anything else you need?  https://t.17track.net/en#nums=JSELI0279354123YQ",
+      "user_id": 158001343601,
+      "created_at": "2025-12-22T12:36:58Z",
+      "updated_at": "2025-12-22T12:36:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

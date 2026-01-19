@@ -1,0 +1,264 @@
+{
+  "id": 4008,
+  "subject": "Order SSN2577 - Pedal Controller",
+  "description_text": "Hello Simsonn,\r\n\r\nI recently received my pedals and VAM motors.  The pedals work properly and\r\nI was able to configure them.  However, the motors are not detected by the\r\nSimsonn Manager.  When I plugged in the motor to the controller there was a\r\npop and a burning electrical smell.  I believe the controller shorted out.\r\n\r\nAre you able to send me a replacement controller?\r\n\r\nThanks,\r\nBen\r\n\r\n",
+  "status": 4,
+  "priority": 4,
+  "created_at": "2025-09-21T04:24:02Z",
+  "updated_at": "2025-10-12T13:36:19Z",
+  "requester_id": 158004739478,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009021795,
+      "body_text": "Hi Ben Smith,  Hello, could you please provide us with a photo of the pedals and your order number? This will help us determine whether the issue is caused by a faulty VAM or by the control box. Once confirmed, we will arrange a replacement for you. Please rest assured that every unit is thoroughly tested before shipping, and such cases are very rare. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-21T10:24:17Z",
+      "updated_at": "2025-09-21T10:24:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009074978,
+      "body_text": "Sure thing\r\n\r\nOn Sun, Sep 21, 2025, 5:24 AM service@simsonn.com ",
+      "user_id": 158004739478,
+      "created_at": "2025-09-21T22:57:20Z",
+      "updated_at": "2025-09-21T22:57:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009236225,
+      "body_text": "Hi Ben Smith,  Can your PlusX controller work normally without the motor power connected? I want to confirm whether the issue is with the VAM Pro or the PlusX controller. It is normal to see sparks when connecting the 24V power to the PlusX control box, as the motor capacitors are charging. Since it uses a 24V safe voltage, there is no risk and it will not damage the control box. Please reconnect the USB, then connect the 24V power, and check in the SIMSONN Manager interface whether the power shows as connected. Also, click the “Vibration” button to see if the VAM Pro vibrates properly. You can also use SimHub version 9.9.3 or later to telemetry our motor. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-24T15:21:01Z",
+      "updated_at": "2025-09-24T15:21:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009243148,
+      "body_text": "I have two motors and neither are detected.  The pedals seem to operate\r\nproperly with the controller, but I am not able to calibrate them.\r\n\r\nOn Wed, Sep 24, 2025, 10:21 AM service@simsonn.com ",
+      "user_id": 158004739478,
+      "created_at": "2025-09-24T17:11:04Z",
+      "updated_at": "2025-09-24T17:11:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009244107,
+      "body_text": "Thank you.\r\n\r\nI am able to calibrate the motors with simhub.  I still am not able to\r\ncalibrate the pedals however.  After I install Simsonn Manager from the\r\nwebsite I am able to open the application.  But, I receive a prompt stating\r\nI may be running pirated software and I am unable to calibrate the pedals.\r\n\r\n",
+      "user_id": 158004739478,
+      "created_at": "2025-09-24T17:29:08Z",
+      "updated_at": "2025-09-24T17:29:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009257825,
+      "body_text": "Hi Ben Smith,     Please use SIMSONN Manager 2.1.1 for this new board, as it allows you to set the VAM type. Make sure to uninstall version 2.1.0 on your computer first to avoid conflicts when opening the software. Then, in version 2.1.1, go to Settings → Update → Manual Firmware Update → Pedals and select the plusx.sfu file I attached. After the update, please retest the vibration function.        https://drive.google.com/file/d/1aX1xWqdWBx5tM-Mzmgxk0FIUBqTixmnM/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-09-25T00:43:39Z",
+      "updated_at": "2025-09-25T00:43:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009304975,
+      "body_text": "Ok.  I have downloaded the files and followed the instructions.  However,\r\nthe manual update just hangs at 0%.  I've attached a screenshot:\r\n\r\n[image: image.png]\r\n\r\nOn Wed, Sep 24, 2025 at 7:43 PM service@simsonn.com ",
+      "user_id": 158004739478,
+      "created_at": "2025-09-25T17:50:01Z",
+      "updated_at": "2025-09-25T17:50:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009319456,
+      "body_text": "After another attempt I was able to update the firmware.  However, I am\r\nstill unable to calibrate the pedals.  They show disconnected:\r\n\r\n[image: image.png]\r\n\r\n",
+      "user_id": 158004739478,
+      "created_at": "2025-09-26T01:33:51Z",
+      "updated_at": "2025-09-26T01:33:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009360711,
+      "body_text": "Hi Ben Smith,  Could you please install the ToDesk software? I can check the issue for you through remote assistance.      https://www.todesk.com/download.html",
+      "user_id": 158000445778,
+      "created_at": "2025-09-27T02:35:07Z",
+      "updated_at": "2025-09-27T02:35:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009653092,
+      "body_text": "Ok.  I have installed the software.  Please tell me how to proceed.\r\n\r\nOn Fri, Sep 26, 2025 at 9:35 PM service@simsonn.com ",
+      "user_id": 158004739478,
+      "created_at": "2025-09-29T19:29:14Z",
+      "updated_at": "2025-09-29T19:29:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009730116,
+      "body_text": "Hi Ben Smith,     Which city are you located in? I can coordinate according to your time zone and arrange a suitable time for remote support.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T11:15:48Z",
+      "updated_at": "2025-10-01T11:15:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009730536,
+      "body_text": "Hi Ben Smith,     We’re sorry, please use this link instead.      https://drive.google.com/file/d/1BAdSWa1bxmbPksj9Hlzuo8bl7_bM8ixr/view?usp=drivesdk",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T11:42:59Z",
+      "updated_at": "2025-10-01T11:42:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009731204,
+      "body_text": "I am in US - Central Time Zone.  Are you able to remote sometime between\r\n5pm - midnight US Central?\r\n\r\nOn Wed, Oct 1, 2025 at 6:16 AM service@simsonn.com ",
+      "user_id": 158004739478,
+      "created_at": "2025-10-01T12:13:29Z",
+      "updated_at": "2025-10-01T12:13:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009731252,
+      "body_text": "Hi Ben Smith,     That’s fine, but I can only provide remote support on October 3rd (China time), as we are currently on the National Day holiday (October 1st–8th).",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T12:15:34Z",
+      "updated_at": "2025-10-01T12:15:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009733321,
+      "body_text": "Ok.  Can you send me instructions for the remote app?  I am not familiar\r\nwith it and I do not know how to login\r\n\r\nOn Wed, Oct 1, 2025, 7:15 AM service@simsonn.com ",
+      "user_id": 158004739478,
+      "created_at": "2025-10-01T13:28:34Z",
+      "updated_at": "2025-10-01T13:28:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009739803,
+      "body_text": "Hi Ben Smith,    It doesn’t require registration. If it asks you to log in, simply click the close button at the top right to access the interface. Once inside, you can copy the ID and verification code and send them to me. However, I don’t have a computer at the moment, so I’m unable to operate it right now.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T14:40:56Z",
+      "updated_at": "2025-10-01T14:40:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009912125,
+      "body_text": "Do you have availability today?\r\n\r\nOn Wed, Oct 1, 2025, 9:41 AM service@simsonn.com ",
+      "user_id": 158004739478,
+      "created_at": "2025-10-04T18:21:43Z",
+      "updated_at": "2025-10-04T18:21:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009937872,
+      "body_text": "Hi Ben Smith,     Please uninstall the old version on your computer, then reinstall version 2.1.2 and update the firmware. After the update, the device version should display as CPU1: 2.0.5, CPU2: 2.0.3. If the issue persists, please feel free to contact me.   https://drive.google.com/file/d/1PZwHUqhhmJw0IBGDO8mGONPbrICJU3z1/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T15:54:49Z",
+      "updated_at": "2025-10-05T15:54:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010034582,
+      "body_text": "I have tried the new version and the pedals are still not detected.\r\n\r\n[image: image.png]\r\n\r\n\r\n\r\nOn Sun, Oct 5, 2025 at 10:55 AM service@simsonn.com ",
+      "user_id": 158004739478,
+      "created_at": "2025-10-07T17:01:02Z",
+      "updated_at": "2025-10-07T17:01:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010141227,
+      "body_text": "Hi Ben Smith,  Is your USB plugged directly into the blue USB 3.0 port on the back of your computer? Please avoid using a USB hub. Then, follow the steps below to update the firmware again.     Please follow the steps below:    Press and hold the upgrade button on the PlusX main controller, then reconnect the USB cable.    Open SIMSONN Manager 2.1.2 and check if it has entered recovery mode.    If recovery mode is detected, go to Settings → Update → Manual Update Firmware → pedals → firmware → pedals-plusx.sfu.    After the update is complete, test the device to see if it has been restored successfully.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-09T09:45:23Z",
+      "updated_at": "2025-10-09T09:45:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010164156,
+      "body_text": "Yes, it is plugged in directly.  The haptics work properly via SimHub so it\r\nseems the PC is communicating properly over USB.  However, the pedals have\r\nnot worked at all since the last firmware update.  I believe the controller\r\nis faulty.\r\n\r\nOn Thu, Oct 9, 2025 at 4:45 AM service@simsonn.com ",
+      "user_id": 158004739478,
+      "created_at": "2025-10-09T16:20:52Z",
+      "updated_at": "2025-10-09T16:20:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010197706,
+      "body_text": "Hi Ben Smith,  Please follow the firmware update procedure and perform the update again — this should resolve the issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-10T07:37:07Z",
+      "updated_at": "2025-10-10T07:37:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010291009,
+      "body_text": "Thank you.\r\n\r\nI was able to follow your instructions and enter the recovery mode.  I was\r\nthen able to apply the firmware update.  Simsonn Manager showed a progress\r\nbar reach 100% and then reported the firmware was applied successfully.\r\nHowever, Windows then reports it is unable to communicate with the USB\r\ndevice.  I have copied a screenshot of my device manager below.\r\nFurthermore, now that the firmware update is applied, Simsonn Manager again\r\nshows the device is disconnected.\r\n\r\n[image: image.png]\r\n\r\nOn Fri, Oct 10, 2025 at 2:37 AM service@simsonn.com ",
+      "user_id": 158004739478,
+      "created_at": "2025-10-11T19:27:28Z",
+      "updated_at": "2025-10-11T19:27:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010291250,
+      "body_text": "After power off / on and reconnecting my pedals I am now able to calibrate\r\nthem!  Thank you very much for your help!\r\n\r\n",
+      "user_id": 158004739478,
+      "created_at": "2025-10-11T19:38:40Z",
+      "updated_at": "2025-10-11T19:38:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010322205,
+      "body_text": "",
+      "user_id": 158004739478,
+      "created_at": "2025-10-12T13:36:18Z",
+      "updated_at": "2025-10-12T13:36:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ]
+}

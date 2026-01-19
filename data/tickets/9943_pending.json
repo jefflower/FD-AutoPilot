@@ -1,0 +1,84 @@
+{
+  "id": 9943,
+  "subject": "Order# SSN5109",
+  "description_text": "Hi there,\r\n\r\nI received my order today, however I ordered this with the mounting plate,\r\nwhich I didn't receive.\r\n\r\nCan you please confirm this was shipped?\r\n\r\nThanks,\r\nSem\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-04T22:52:22Z",
+  "updated_at": "2026-01-15T07:10:09Z",
+  "requester_id": 158008901436,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016010515,
+      "body_text": "Hi,     Any updates on this? I know shipping takes some timem, so I'd like to get this resolved as soon as possible.     Thanks,  Sem ",
+      "user_id": 158008901436,
+      "created_at": "2026-01-06T23:05:02Z",
+      "updated_at": "2026-01-06T23:05:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158016103230,
+      "body_text": "Hi Sem Fonseka,  I’ve checked your order and confirmed that you purchased the bundle with VAM Pro, which does not include the base plate.      https://www.simsonn.com/products/simsonn-racing-pedal-pro-x-with-heel-plate?variant=50475339645242",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T09:32:08Z",
+      "updated_at": "2026-01-07T09:32:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016104252,
+      "body_text": "Hi there,\r\n\r\nThe price I paid is including the baseplate, I think there was an issue\r\nwith the website.\r\n\r\n\r\n\r\n\r\nAnd the price on the website is:\r\n\r\n\r\n\r\nThe base price is $453, plus the $131.40 for the plate.\r\n\r\nIs this not correct?\r\n\r\nThanks,\r\nSem\r\n\r\n\r\nOn Wed, 7 Jan 2026, 8:32 pm service@simsonn.com, ",
+      "user_id": 158008901436,
+      "created_at": "2026-01-07T09:40:13Z",
+      "updated_at": "2026-01-07T09:40:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016262270,
+      "body_text": "Hi,\r\n\r\nI have checked the packaging and you have also sent me the\r\nassembly hardware for the plate, but not the plate itself. See photo\r\nattached.\r\n\r\n\r\n\r\n\r\n\r\nThanks,\r\nSem\r\n\r\n",
+      "user_id": 158008901436,
+      "created_at": "2026-01-08T03:34:08Z",
+      "updated_at": "2026-01-08T03:34:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016331917,
+      "body_text": "Hi Sem Fonseka,    We apologize for the inconvenience caused. We have already reshipped your order.  https://t.17track.net/en#nums=SF6047229426808",
+      "user_id": 158001343601,
+      "created_at": "2026-01-08T11:26:47Z",
+      "updated_at": "2026-01-08T11:26:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016333128,
+      "body_text": "Hi team,\r\n\r\nThat's great news, thank you for getting that organised so quickly.\r\n\r\nThanks,\r\nSem\r\n\r\nOn Thu, 8 Jan 2026, 10:27 pm service@simsonn.com, ",
+      "user_id": 158008901436,
+      "created_at": "2026-01-08T11:37:45Z",
+      "updated_at": "2026-01-08T11:37:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016652346,
+      "body_text": "Hi there,\r\n\r\nUnfortunately it looks like one of the haptic motors have failed.\r\n\r\nI have attached a video, can I please lodge a warranty claim for this?\r\n\r\nThanks,\r\nSem\r\n\r\n",
+      "user_id": 158008901436,
+      "created_at": "2026-01-10T02:58:59Z",
+      "updated_at": "2026-01-10T02:58:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

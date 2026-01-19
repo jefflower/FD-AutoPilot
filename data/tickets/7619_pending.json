@@ -1,0 +1,24 @@
+{
+  "id": 7619,
+  "subject": "Plus X pedals",
+  "description_text": "Hello,       I purchased a set of your plus x pedals and have been having trouble with connectivity.  The pedals are amazing but unfortunately I think my hub is going bad? Is there a way i could get a new one? I'll attached a few photos. My computer will OFTEN not read these and drop signal mid race, I've even tried running a \"no interference\" adapter that helped some but still continues to disconnect. Thank you for any help!\r\n\r\n\r\n\r\n\r\n:Dylan Cote 31 beechwood road Oakdale, CT 06370\r\n\r\nYahoo Mail: Search, Organize, Conquer\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-07T13:50:17Z",
+  "updated_at": "2025-12-08T11:05:57Z",
+  "requester_id": 158007685859,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014120195,
+      "body_text": "Hi Dylan Cote,  If this happens, it indicates that the computer’s grounding is not reliable, possibly because a three-prong plug was not used with a three-prong wall outlet. You can refer to the post below: connect the computer case to the stand, and connect the control box to the metal screws on the pedals. This should resolve the disconnection issue.  https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-12-08T11:05:57Z",
+      "updated_at": "2025-12-08T11:05:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

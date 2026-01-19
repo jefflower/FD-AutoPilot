@@ -1,0 +1,44 @@
+{
+  "id": 790,
+  "subject": "Upgrade for pedals",
+  "description_text": "Hello,\r\nRecently purchased the below pedals and would like to know the exact parts to upgrade with the new haptics. To include power supply, control box or upgrade kit for pedals.\r\nThank you\r\nSincerely,\r\n\r\nMark Maday\r\nRisk Management\r\n(925)768-3389\r\nmark@bmtearoff.com\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-24T17:31:34Z",
+  "updated_at": "2025-06-26T09:40:48Z",
+  "requester_id": 158001759684,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003833615,
+      "body_text": "Hi Mark Maday,  Which pedal model did you purchase? Is it the PlusX or the ProX Ultra? ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-25T02:44:44Z",
+      "updated_at": "2025-06-25T02:44:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003836569,
+      "body_text": "Pro X Pedals.  Looking to upgrade these with the haptics and upgrade kit. \r\nSincerely,\r\n\r\n\r\nMark Maday\r\n(925)768-3389\r\nB&M Tear Off Inc. \r\n\r\n\r\n> ",
+      "user_id": 158001759684,
+      "created_at": "2025-06-25T12:33:09Z",
+      "updated_at": "2025-06-25T12:33:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003845704,
+      "body_text": "Hi Mark Maday,     The ProX pedals can be optionally equipped with a VAM motor and a separate 24V power supply. While the ProX controller is compatible with the VAM Pro motor, the vibration strength will be slightly weaker. If you require stronger vibration feedback, we recommend purchasing a dedicated Pro X Ultra controller.  Here is the purchase link:       https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor",
+      "user_id": 158000445778,
+      "created_at": "2025-06-26T09:40:48Z",
+      "updated_at": "2025-06-26T09:40:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

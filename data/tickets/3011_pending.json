@@ -1,0 +1,54 @@
+{
+  "id": 3011,
+  "subject": "VAM Pros not working",
+  "description_text": "Hello, I recently ordered a set of the plus x pedals and two vam pros for\r\nthe brake and throttle. They are recognized in simhub but don't react to\r\nany test and won't provide any feedback whatsoever. It's as if they have no\r\npower even though they are being recognized? What do I need to do in order\r\nto get them to work?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-23T02:25:29Z",
+  "updated_at": "2025-08-26T03:16:09Z",
+  "requester_id": 158003498459,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007441837,
+      "body_text": "Hi Tom Pearce,  Just to confirm, you added the SIMSONN PlusX device in SIMHUB 9.9.3, correct? The software shows the device as connected, but when you click “Test,” there is no vibration feedback? Please download and install SIMSONN Manager 2.1.0, then go to the vibration feedback interface to test and verify whether the power is properly connected and the vibration works. If the software does not display “Not Connected,” try unplugging both the power and USB cables, then reconnect the USB first, followed by the power, and test again. If possible, please provide screenshots of your test. If a video is needed, kindly upload it to Google Drive and make sure access is granted.      https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-08-25T03:58:57Z",
+      "updated_at": "2025-08-25T03:58:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007444412,
+      "body_text": "Apologies, meant to get back to you all. I got them working! It was the\r\ngrounding wire. Once I installed that they started working.\r\n\r\nThanks!\r\n\r\nOn Sun, Aug 24, 2025 at 11:59 PM support@simsonn.com ",
+      "user_id": 158003498459,
+      "created_at": "2025-08-25T04:06:51Z",
+      "updated_at": "2025-08-25T04:06:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007444654,
+      "body_text": "Hi Tom Pearce,  Could you please take a photo of the grounding wire location? This will help us as a reference and allow us to share it with other customers who may have similar issues. Thank you very much for your cooperation. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-25T04:11:01Z",
+      "updated_at": "2025-08-25T04:11:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007498970,
+      "body_text": "Sure thing. I can take some this afternoon when I get home from work.\r\n\r\nOn Mon, Aug 25, 2025 at 12:11 AM support@simsonn.com ",
+      "user_id": 158003498459,
+      "created_at": "2025-08-25T11:42:17Z",
+      "updated_at": "2025-08-25T11:42:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

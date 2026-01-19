@@ -1,0 +1,35 @@
+{
+  "id": 11083,
+  "subject": "回复：simsonn pro x ultra",
+  "description_text": "你好，请回复我的邮件，我需要帮助。\n\n2026年1月13日星期二下午1:50，gary poole <garypooles06@gmail.com> 写道：\n\n> 你好，我收到了我的踏板，但我的RGB灯有问题，当我关闭电脑时它们不会熄灭，RGB灯会一直亮着。我已经确保BIOS设置正确，并且ERP已关闭，BIOS和Windows 10中的快速启动已设置为取消选中“开启快速启动”。\n> \n> 之后建议：\n> \n> 如果这些步骤不起作用，问题可能出在控制盒本身。在这种情况下，您应该联系Simsonn客户支持 <https://www.simsonn.com/tools/faq> 寻求进一步帮助或潜在的硬件更换。\n> \n> 您能帮我一下吗？此致，加里·普尔\n> \n> 订单号：SSN5674",
+  "status": 2,
+  "priority": 4,
+  "created_at": "2026-01-16T13:31:40Z",
+  "updated_at": "2026-01-17T07:11:40Z",
+  "requester_id": 158009299808,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017265078,
+      "body_text": "如果我拔掉电源线，当我的电脑关闭时它就会熄灭，但如果交流电源线插着，它就会一直亮着，直到我拔掉它，希望这有帮助。",
+      "user_id": 158009299808,
+      "created_at": "2026-01-16T13:33:23Z",
+      "updated_at": "2026-01-16T13:33:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017265369,
+      "body_text": "抱歉，我应该说如果USB插着并且交流电源线也插着，灯会熄灭，但如果主电源插着，它就会一直亮着，直到我从插座上拔掉它。",
+      "user_id": 158009299808,
+      "created_at": "2026-01-16T13:37:34Z",
+      "updated_at": "2026-01-16T13:37:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    }
+  ],
+  "available_langs": []
+}

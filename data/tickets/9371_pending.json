@@ -1,0 +1,24 @@
+{
+  "id": 9371,
+  "subject": "Order SSN4823",
+  "description_text": "Dear Sirs,     This email to ask you about the order #SSN4823 status as it is marked as \"On its way\" since December 15th though the tracking number does not change since december 15th.     Can you please inform me about the shipment status ?     Indeed, I was looking to buy other equipment from you (steering wheel) though this 1st order does not give me confidence by lack of information.     Thank you for your help.     Best regards,     MILOSAVLJEVIC Misa (Micha)",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-28T14:12:16Z",
+  "updated_at": "2025-12-31T08:57:59Z",
+  "requester_id": 158008800681,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015303024,
+      "body_text": "Hi Misa Milosavljevic,    We apologize for the inconvenience caused. Due to a temporary stock shortage of Vam Pro, your order was delayed. It has now been shipped. Happy New Year!  https://t.17track.net/en#nums=YT2534900709106480",
+      "user_id": 158001343601,
+      "created_at": "2025-12-31T08:57:59Z",
+      "updated_at": "2025-12-31T08:57:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

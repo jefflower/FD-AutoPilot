@@ -1,0 +1,44 @@
+{
+  "id": 7004,
+  "subject": "Hello",
+  "description_text": "Hello can anybody respond to me please?\r\n\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-29T05:21:53Z",
+  "updated_at": "2025-12-01T05:35:07Z",
+  "requester_id": 158007417787,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013101035,
+      "body_text": "Hi C. Mason,    Is there anything I can do to help you?",
+      "user_id": 158001343601,
+      "created_at": "2025-11-29T09:50:29Z",
+      "updated_at": "2025-11-29T09:50:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013102324,
+      "body_text": "Yes I've been trying to get a hold of you guys about an order I placed. I feel like I'm being ignored.\r\n\r\n\r\n________________________________\r\n",
+      "user_id": 158007417787,
+      "created_at": "2025-11-29T12:25:44Z",
+      "updated_at": "2025-11-29T12:25:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013158030,
+      "body_text": "Hi C. Mason,  Hello, please provide your order number so I can help you check the status. If you don’t have the order number, you can provide the payment date, amount, and country, and I will help you look it up. Don’t worry. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-01T05:35:06Z",
+      "updated_at": "2025-12-01T05:35:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

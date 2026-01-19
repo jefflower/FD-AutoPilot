@@ -1,0 +1,74 @@
+{
+  "id": 4282,
+  "subject": "Order #SSN2787",
+  "description_text": "Hi,\r\n\r\nI would like to cancel the order placed today (Order #SSN2787) so that I \r\ncan reorder with 3 pedals instead of 2. Would that be possible?\r\n\r\nMany thanks\r\n\r\nJonathan Hughes\r\n\r\n-- \r\n\r\nAutoflow Technology Ltd | Mob: +44 (0)7968 250338\r\n\r\nThis message and the information it contains are confidential. Any \r\nunauthorised use, disclosure or copying of this email, or any \r\ninformation it contains, is strictly prohibited and may be unlawful. If \r\nyou have received this email in error, please advise the sender \r\nimmediately and remove this email from your system. Email is not secure \r\nand can be intercepted and amended. We do not accept any liability for \r\nany changes to this email after it was sent or any viruses transmitted \r\nthrough this email or any attachment. It is your responsibility to scan \r\nattachments. Email entering or leaving Autoflow Technology's system may \r\nbe subject to monitoring and recording for business and other lawful \r\npurposes. Autoflow Technology Ltd is a company registered in England No \r\n13045590 whose registered office is 2 Frederick Street, Kings Cross, \r\nLondon, United Kingdom, WC1X 0ND.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-30T15:37:39Z",
+  "updated_at": "2025-10-11T10:44:22Z",
+  "requester_id": 158005199159,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010133840,
+      "body_text": "Hi Jonathan Hughes,    We apologize for the delayed response—we've just returned from our 8-day holiday. We've intercepted your shipment and can modify your order. Please let us know the pedal specifications you require and the checkout price; you'll only need to cover the price difference.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-09T07:37:46Z",
+      "updated_at": "2025-10-09T07:37:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010134317,
+      "body_text": "Thanks,\r\n\r\nThe total price is £191.02 for 'Simsonn Plus X Racing Simulation Pedal \r\nwith Haptic Reactor Optional Plus X P3-H3 / Black / without Baseplate'. \r\nSee screen capture below for details\r\n\r\nThis is with express delivery - I would really appreciate if this can be \r\ndispatched as quickly as possible as it is required for a project \r\nstarting next week.\r\n\r\nMuch appreciated,\r\n\r\nJonathan Hughes\r\n\r\n",
+      "user_id": 158005199159,
+      "created_at": "2025-10-09T08:13:10Z",
+      "updated_at": "2025-10-09T08:13:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010142997,
+      "body_text": "Hi Jonathan Hughes,    Please pay via this link, and we will ship it to you via express delivery as soon as possible.  https://www.simsonn.com/products/difference-1",
+      "user_id": 158001343601,
+      "created_at": "2025-10-09T11:19:05Z",
+      "updated_at": "2025-10-09T11:19:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010143180,
+      "body_text": "Hi,\r\n\r\nThat's paid now.\r\n\r\nCheers\r\n\r\nJonathan\r\n\r\n",
+      "user_id": 158005199159,
+      "created_at": "2025-10-09T11:27:11Z",
+      "updated_at": "2025-10-09T11:27:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010221066,
+      "body_text": "Hi\r\n\r\nI've had order confirmation email through, but it still shows the item \r\nas the P2-H2, not the 3 pedal - I'm assuming that's just because you're \r\nusing the original order and that you will ship the 3 pedal?\r\n\r\nCheers\r\n\r\nJonathan\r\n\r\n\r\n",
+      "user_id": 158005199159,
+      "created_at": "2025-10-10T16:21:35Z",
+      "updated_at": "2025-10-10T16:21:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010263510,
+      "body_text": "Hi Jonathan Hughes,    Please don't worry—we did indeed ship the 3-pedal set. The order page simply won't be updated.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-11T10:44:22Z",
+      "updated_at": "2025-10-11T10:44:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

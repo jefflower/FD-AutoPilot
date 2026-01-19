@@ -1,0 +1,34 @@
+{
+  "id": 9393,
+  "subject": "Wrong address for order #SSN5457",
+  "description_text": "I just realised my Apple Pay is still on my old address .\r\n\r\nI live at :\r\n5 sands st Redcliffe , 4020 QLD\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-28T20:23:56Z",
+  "updated_at": "2025-12-29T06:53:33Z",
+  "requester_id": 158008802798,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015180550,
+      "body_text": "Hi Stephanos Caraiannis,    We have made the changes for you. Please confirm.  Stephanos Caraiannis  5 Sands St  Redcliffe QLD 4020  Australia  +61 435 775 078",
+      "user_id": 158001343601,
+      "created_at": "2025-12-29T06:15:27Z",
+      "updated_at": "2025-12-29T06:15:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015181239,
+      "body_text": "Yes perfect\r\n\r\nOn Mon, 29 Dec 2025 at 4:15 pm, service@simsonn.com ",
+      "user_id": 158008802798,
+      "created_at": "2025-12-29T06:53:23Z",
+      "updated_at": "2025-12-29T06:53:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

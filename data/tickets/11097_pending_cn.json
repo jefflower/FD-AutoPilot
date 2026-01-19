@@ -1,0 +1,45 @@
+{
+  "id": 11097,
+  "subject": "错误的夜间控制箱",
+  "description_text": "Pro box能用Plusx踏板吗，即使连接器更大？等了两周才发现我买错了。发自我的iPhone",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-16T19:47:55Z",
+  "updated_at": "2026-01-17T09:36:03Z",
+  "requester_id": 158009305829,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017291949,
+      "body_text": "订购了正确的套装，也许我们可以安排换货之类的。",
+      "user_id": 158009305829,
+      "created_at": "2026-01-16T20:11:24Z",
+      "updated_at": "2026-01-16T20:11:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158017309933,
+      "body_text": "嗨 Ryan R，您可以使用 Pro X 盒子和 Simhub 来控制触觉反馈，同时使用原装盒子来控制踏板。",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T02:12:23Z",
+      "updated_at": "2026-01-17T02:12:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017319570,
+      "body_text": "我本该加上 Plus X 踏板的，现在担心把 PlusX 踏板接到专业盒上。",
+      "user_id": 158009305829,
+      "created_at": "2026-01-17T08:51:25Z",
+      "updated_at": "2026-01-17T08:51:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    }
+  ],
+  "available_langs": []
+}

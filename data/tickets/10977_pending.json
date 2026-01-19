@@ -1,0 +1,24 @@
+{
+  "id": 10977,
+  "subject": "Order #SSN5570",
+  "description_text": "Hello, can i get an update on this order?\r\n #SSN5570\r\nThank you in advance!\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-15T11:21:35Z",
+  "updated_at": "2026-01-17T08:45:27Z",
+  "requester_id": 158009120088,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017319490,
+      "body_text": "Hi Rab Lorand,    I'm sorry to inform you  ​Our German warehouse has informed us that DHL is still investigating the matter, and a shipment destined for Romania has been held up. We will urge them to provide updates promptly or arrange for a replacement shipment.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T08:45:27Z",
+      "updated_at": "2026-01-17T08:45:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

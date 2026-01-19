@@ -1,0 +1,64 @@
+{
+  "id": 1535,
+  "subject": "Kilogram scale is no there",
+  "description_text": "Hello,\n\nmy customers asked for the scale of kilograms on the brake calibration of the PRO X Pedals. In earlier versions of the Simsonn Manager there was a scale for it. Now there is only a percentage scale.\n\nCan you help me.\n\nThanks a lot\n\nKind regards\n\nTobias\n\nSimWelten.de\n\nshop@simwelten.de\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-15T00:18:27Z",
+  "updated_at": "2025-07-18T00:08:11Z",
+  "requester_id": 158002128785,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004842779,
+      "body_text": "Hi SimWelten. de - Tobias Hoffer,  Currently, the kg display feature is only available on the PlusX and Pro X Ultra control boards. These upgraded hardware versions have been specifically adjusted and calibrated to accurately display weight in kilograms. The ProX control board does not support this feature at this time. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-15T04:32:25Z",
+      "updated_at": "2025-07-15T04:32:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004842885,
+      "body_text": "Thanks for the fast Response. That‘s sad. Is there a way to update this later per firmware update?\n\nYou have send me the upgrade Kit and I‘m Build it to the Pro X to sell them hast Pro X Upgraded Version because you released the Ultra Version shortly After my order at your warehouse. That makes it hard to sell this pedals with an old control Board.\n\nBest regards\n\nTobias\n\nSimWelten.de\n\nshop@simwelten.de\n\nAm Dienstag, 15. Juli 2025 um 06:32, support@simsonn.com <[support@simsonn.com](mailto:Am Dienstag, 15. Juli 2025 um 06:32, support@simsonn.com <<a href=)> schrieb:\n\n> Hi SimWelten. de - Tobias Hoffer,\n>\n> Currently, the kg display feature is only available on the PlusX and Pro X Ultra control boards. These upgraded hardware versions have been specifically adjusted and calibrated to accurately display weight in kilograms. The ProX control board does not support this feature at this time.\n>\n>> ",
+      "user_id": 158002128785,
+      "created_at": "2025-07-15T04:57:23Z",
+      "updated_at": "2025-07-15T04:57:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004920013,
+      "body_text": "Hi Tobias     We will be testing and updating the ProX firmware in the future to support display in kilograms (kg).  Additionally, the upgrade to ProX can be achieved by replacing a few components, and the process is relatively simple. It seems the order information you provided may be incorrect — please kindly double-check the details.  We look forward to a long-term partnership with you. Feel free to reach out if you need any assistance!",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T03:02:28Z",
+      "updated_at": "2025-07-16T03:02:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005042219,
+      "body_text": "That sounds great and is something I can tell to my customers.\nI´ve done the replacing of the parts of the upgrade kit by my own and can tell the customers how to do it.\n\nI´m looking forward to a partnership to and asking for dropshipping your products from your warehouse in germandy. Is this possible?. I´m also interested in your haptic motors. Can you send me maybe all available products you have in your german warehouse? I will add it to my onlineshop and you can tell me how to push an incoming order to your warehouse to send it directly to the customer.\n\nThank you and kind regards\n\nTobias\n\nSimWelten.de\n\nshop@simwelten.de\n\nsupport@simsonn.com ",
+      "user_id": 158002128785,
+      "created_at": "2025-07-16T23:48:55Z",
+      "updated_at": "2025-07-16T23:48:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005143805,
+      "body_text": "Hi SimWelten. de - Tobias Hoffer,    Currently, our German warehouse only supports orders from our own sales platform and does not supply to external channels.  If you have demand, you can place a bulk order with us, and we will arrange stock and shipping accordingly.  Our inventory is strictly aligned with the order volume from our own platform, so at this time, there is no additional stock allocated for third-party sales.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-18T00:08:11Z",
+      "updated_at": "2025-07-18T00:08:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

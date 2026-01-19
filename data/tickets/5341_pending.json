@@ -1,0 +1,64 @@
+{
+  "id": 5341,
+  "subject": "Order #SSN2907",
+  "description_text": "Hello,\r\n\r\nI wanted to check in on Order #SSN2907. I am still waiting to receive the haptics but there has been no shipping update for almost 10 days now. Is there anyway to look into what is going on with the package? I received the pedals themself already but this seems weird to not have a haptics update for almost 10 days on the tracking.\r\n\r\nThank you,\r\n\r\n\r\n\r\nJohn Poorman\r\n913-948-4995\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-27T20:45:30Z",
+  "updated_at": "2025-11-05T10:28:00Z",
+  "requester_id": 158006160531,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011278564,
+      "body_text": "Hi John Poorman,     We sincerely apologize for the inconvenience caused. The logistics provider is currently investigating the matter. We will arrange for a replacement shipment from our U.S. warehouse within the next two days.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-29T10:28:10Z",
+      "updated_at": "2025-10-29T10:28:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011278645,
+      "body_text": "That would be awesome, thank you!\r\n\r\nWill I receive the tracking information for the new set as well?\r\n\r\nJohn\r\n\r\nGet Outlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158006160531,
+      "created_at": "2025-10-29T10:33:58Z",
+      "updated_at": "2025-10-29T10:33:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011675674,
+      "body_text": "Hello,\r\n\r\nCan I have an update on this? I still have not received anything and I order close to a month ago.\r\n\r\n\r\nJohn Poorman\r\n913-948-4995\r\n\r\n",
+      "user_id": 158006160531,
+      "created_at": "2025-11-03T17:21:42Z",
+      "updated_at": "2025-11-03T17:21:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011732087,
+      "body_text": "Hello,\r\n\r\nI wanted to check in this again. Support previously said they would look to send haptics from a US warehouse but I have not heard anything back and I have attempted to follow up a couple times. I have still not received my haptics and it’s been almost a month since I ordered. The last update on the shipping is 2-3 weeks ago.\r\n\r\nCan I please get some help on this….\r\n\r\nJohn Poorman\r\n913-948-4995\r\n\r\n",
+      "user_id": 158006160531,
+      "created_at": "2025-11-04T14:09:29Z",
+      "updated_at": "2025-11-04T14:09:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011795697,
+      "body_text": "Hi John Poorman,    We apologize for the inconvenience caused. We have arranged for delivery from our U.S. warehouse. Here is your FedEx tracking number: 394995566302",
+      "user_id": 158001343601,
+      "created_at": "2025-11-05T10:27:59Z",
+      "updated_at": "2025-11-05T10:27:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

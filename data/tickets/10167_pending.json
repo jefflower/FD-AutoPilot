@@ -1,0 +1,54 @@
+{
+  "id": 10167,
+  "subject": "HS Pro Shifter",
+  "description_text": "Hi I just purchased the simpson hs pro shifter. The simsonn manager does\r\nnot show the hs pro shifter i have the latest installed. I can only\r\ncalibrate gears 3 and 4 only\r\n[image: Screenshot 2026-01-06 223610.png]\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-07T03:46:35Z",
+  "updated_at": "2026-01-07T13:56:41Z",
+  "requester_id": 158008794835,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016059266,
+      "body_text": "Hi Hassan Majid,  We will release a new software version today, which will officially add support for the HS Pro calibration page. Please update the software and try it out. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T04:56:57Z",
+      "updated_at": "2026-01-07T04:56:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016059383,
+      "body_text": "ID 为 10170 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T04:57:48Z",
+      "updated_at": "2026-01-07T04:57:48Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016059384,
+      "body_text": "合并来自工单10170  \n      主题: HS PRO shifter  \n      描述:  Issue with HS Pro shifter not showing on simsonn manager. Cannot calibrate shifter. Only gears 3 and 4 seems to work. Not sure if it is stuck on sequential mode",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T04:57:48Z",
+      "updated_at": "2026-01-07T04:57:48Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016142750,
+      "body_text": "Hi Hassan Majid,     Please uninstall SIMSONN Manager version 2.1.2 from your computer first, then download and install SIMSONN Manager version 2.1.3 from our official website.  SIMSONN Manager 2.1.3 adds full support for HS Pro 2-in-1 shifter configuration and calibration. Please use this version to complete the setup and calibration.     https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T13:56:41Z",
+      "updated_at": "2026-01-07T13:56:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

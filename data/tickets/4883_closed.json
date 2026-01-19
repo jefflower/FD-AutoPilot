@@ -1,0 +1,24 @@
+{
+  "id": 4883,
+  "subject": "Order from Amazon 112-6664006-0033805",
+  "description_text": "Hello I placed an order through Amazon and received the wrong product. I\r\ntried reaching out to them to solve this issue but got no response as they\r\nsaid it is done directly through your warehouse, so I'm wondering if there\r\nis some way to fix this? I ordered the black pro plus and received the\r\nsilver plus x.\r\n\r\n",
+  "status": 5,
+  "priority": 4,
+  "created_at": "2025-10-14T17:09:20Z",
+  "updated_at": "2025-12-18T09:40:25Z",
+  "requester_id": 158005681722,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010567942,
+      "body_text": "I have requested the replacement order\r\n\r\nOn Wed, Oct 15, 2025, 2:02 AM General and sales enquiries <\r\nservice@simsonn.com> wrote:\r\n\r\n> Hi So_Cal Ninja,\r\n> I am sorry for it. Could you please request a replacement order on Amazon,\r\n> the you can return the silver pedals, and we'll send you a new set of black\r\n> ones. It's likely the warehouse accidentally sent the wrong one. Or you can\r\n> keep the silver pedals and we'll give you a $15 compensation. Is that okay\r\n> with you? I am very sorry for the inconvenience caused.\r\n>\r\n> ------------------------------\r\n> service@simsonn.com\r\n>\r\n>\r\n> *",
+      "user_id": 158005681722,
+      "created_at": "2025-10-16T14:48:13Z",
+      "updated_at": "2025-10-16T14:48:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

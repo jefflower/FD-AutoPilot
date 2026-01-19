@@ -1,0 +1,44 @@
+{
+  "id": 7534,
+  "subject": "Throttle pedal no input",
+  "description_text": "﻿Hi,\r\n\r\nGot my Pro X Ultra pedals in June a couple days back my throttle pedal\r\nisn’t getting any input neither in game nor in the Simsonn manager app.\r\nAfter inspection and removing the hydraulic damper noticed the spring had\r\njust fallen, but there is nothing really that it can hold on to… as if it’s\r\nmissing a piece.\r\nTried to reposition the spring in between the screws from the pedal and\r\nload cell respectively. This resulted in the Simsonn app receiving input\r\nfrom the throttle pedal but not in a normal way.\r\nNow I have to depress the pedal about 40% before it shows a any input, the\r\nreading is unstable even after calibration which I tried a few times.\r\nI’m hoping we can resolve this issue soon since I just got my Simsonn\r\nhaptic reactors and I really wanted to install them and use.\r\nHerby I attached my purchase invoice and a few photos of the issue.\r\nLet me know if you require something else\r\n[image: image5.jpeg]\r\n[image: image3.jpeg][image: image4.jpeg][image: image1.jpeg][image:\r\nimage2.jpeg]\r\nSent from my iPhone\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-05T21:46:16Z",
+  "updated_at": "2025-12-09T06:37:38Z",
+  "requester_id": 158007668635,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013755959,
+      "body_text": "Hi Julia Menache,     I can see that the non-metal pressure plate of the throttle spring was broken because the travel was too short and it was pressed by the blue limiter. We will ship the replacement parts to you on Monday, and you can replace the component once you receive them. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-06T04:50:57Z",
+      "updated_at": "2025-12-06T04:50:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013756836,
+      "body_text": "That's great, thank you very much!\r\n\r\nOn Fri, Dec 5, 2025 at 11:51 PM support@simsonn.com ",
+      "user_id": 158007668635,
+      "created_at": "2025-12-06T04:54:09Z",
+      "updated_at": "2025-12-06T04:54:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014167621,
+      "body_text": "Hi Julia Menache,  The tracking number is: YT2534300706921306, the shipping carrier is YunExpress, you can track it via https://www.yunexpress.com/. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-09T06:37:37Z",
+      "updated_at": "2025-12-09T06:37:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": 1309,
+  "subject": "Order number #4QHNEG",
+  "description_text": "Hello, \r\n\r\nI believe my order number is #4QHNEG or my tracking number is 1ZX619C030018505. I paid for better shipping and was told in a prior email that yesterday July 6th was gonna be the date it should have been arriving and it has not arrived and the shipping tracking hasn't updated at all. I would just like an update or something on what's going on. \r\n\r\nThank you,\r\nMaxwell Newman\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-07T14:14:39Z",
+  "updated_at": "2025-07-09T08:39:00Z",
+  "requester_id": 158001701978,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004457237,
+      "body_text": "And I'm really not sure whether or not that's my order number as I can't log in like I was saying but I can confirm the tracking number. Sent from my iPhone ",
+      "user_id": 158001701978,
+      "created_at": "2025-07-07T14:16:38Z",
+      "updated_at": "2025-07-07T14:16:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004463157,
+      "body_text": "Hi Maxwell Newman,  May I ask which platform you placed the order on? Could you please provide the order date and amount? I will help you look up the order number. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-08T00:17:38Z",
+      "updated_at": "2025-07-08T00:17:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004470184,
+      "body_text": "Yes sir I have attached below images of the order # and other such. I used\r\nsafari. I'm not sure the exact date but the screenshot of the order\r\nconfirmation should have it and is attached. Very sorry have been traveling.\r\n\r\nThank you,\r\nMaxwell Newman\r\n\r\nOn Mon, Jul 7, 2025 at 5:18 PM support@simsonn.com ",
+      "user_id": 158001701978,
+      "created_at": "2025-07-08T03:02:55Z",
+      "updated_at": "2025-07-08T03:02:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

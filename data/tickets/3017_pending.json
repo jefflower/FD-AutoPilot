@@ -1,0 +1,74 @@
+{
+  "id": 3017,
+  "subject": "Haptic motors not working",
+  "description_text": "I just recently ordered: VAM PRO 2 PCS PER SET with the Power supply  from\r\nAmazon And just ordered a third motor from you guys. Transformer's putting\r\nout 23.8 V SIM hub detect, them\r\nBut will not activate them\r\n YouR software doesn't even activate them? SIM hub does absolutely nothing.\r\nThey don't work at all. Nothing's going through the control box. I have\r\nyour simsonn pro x pedals. I truly think it may be the control box that\r\ncame with the pedals. The petals are maybe four months old got them also\r\nthrough amazon. It's either that or both the motors.You sent me were no\r\ngood. Plz help me out. I know you pray.Can't call me back but here's my\r\nphone number in case you need it\r\n 814-421-5208 I also unplugged and repluged the USB and plugged it back in\r\nreinstalled software. Of course I restarted my computer once too. I also\r\nnoticed when I plug transformer into the control box the lights get\r\nbrighter. Also reinstalled your software.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-23T05:59:34Z",
+  "updated_at": "2025-08-26T03:15:28Z",
+  "requester_id": 158003500941,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007390687,
+      "body_text": "From what I can see on Reddit. Some people are saying ground the control\r\nbox. But I do not think that's my problem being I'm getting nothing. But\r\nI'm going to try that today. I planned on doing a full review on YouTube.\r\nHopefully we can get this working. I have a dedicated u s b cable going\r\nfrom the control box  to the pc. On a u s b 3.1 one gen two. Again, I do\r\nnot think grounds is gonna fix it.Being i'm getting no signal out of the\r\nbox at all , most of these people were just getting false signals. If I get\r\nno joy out of these motors in 2 weeks I'm sending them back including the\r\n3rd motor I ordered off your site. Will go simmagic. There seems to work\r\nout of the box.. But hopefully we Can turn this review into a good one.\r\nThey're new on the market so I can understand some growing pains.\r\n\r\nOn Sat, Aug 23, 2025, 1:59 AM service@simsonn.com ",
+      "user_id": 158003500941,
+      "created_at": "2025-08-23T14:51:08Z",
+      "updated_at": "2025-08-23T14:51:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007401050,
+      "body_text": "I was able to get them working after installing driver 2.1 would show a\r\nfirmware update.You really should put the newest drivers on top. But the\r\npedals feel super weak even at 100%. Should I be running the V4 is that the\r\nnewest?\r\n\r\n",
+      "user_id": 158003500941,
+      "created_at": "2025-08-23T16:57:13Z",
+      "updated_at": "2025-08-23T16:57:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007440959,
+      "body_text": "Hi Mike Nev,  The Pro X control box currently does not support bidirectional motor movement. It works very well with VAM, but the strength is slightly weaker when driving VAM Pro. If you require stronger vibration, we recommend upgrading to the Pro X Ultra control box, which provides more force than Simagic. Also, you do not need to use the V4 version, as V4 is only for Pro Plus devices.       https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor?variant=51399342293306",
+      "user_id": 158000445778,
+      "created_at": "2025-08-25T03:17:30Z",
+      "updated_at": "2025-08-25T03:17:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007449564,
+      "body_text": "I have the pro x ultra pedals. So that was not the problem. Had some issues\r\nwith your software. Motors kept dropping out after a couple laps ended up\r\nusing SIM hub. Having it boot with the computer and giving Admin rights and\r\nit actually works fine now.  Until I gave sim hub Admin rights. They would\r\ndrop out after a few laps. Sim hub would not detect them. Your software did\r\nnot ether. But After many hours on reddit I got it finally to work well.\r\n\r\nOn Sun, Aug 24, 2025, 11:17 PM service@simsonn.com ",
+      "user_id": 158003500941,
+      "created_at": "2025-08-25T04:39:39Z",
+      "updated_at": "2025-08-25T04:39:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007454978,
+      "body_text": "Hi Mike Nev,  Alright, we will also continue to improve SIMSONN Manager. Could you let us know which game you encountered the issue with? I will ask our engineers to check and fix it. In addition, SimHub began supporting our pedals after our collaboration. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-25T05:32:07Z",
+      "updated_at": "2025-08-25T05:32:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007528874,
+      "body_text": "Well, for sure, keep up the good work as far as collaborating with other\r\nsoftware. Like sim hub. As far as games that that happened on, it was the\r\nla mans ultimate. Autobilista 2\r\n And  ACC. Did not try Iracing.\r\n\r\nOn Mon, Aug 25, 2025, 1:32 AM service@simsonn.com ",
+      "user_id": 158003500941,
+      "created_at": "2025-08-25T17:55:13Z",
+      "updated_at": "2025-08-25T17:55:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

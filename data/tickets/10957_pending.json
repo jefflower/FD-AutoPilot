@@ -1,0 +1,24 @@
+{
+  "id": 10957,
+  "subject": "Orders status",
+  "description_text": "Hello , just wanted to ask about the status of my order : SSN5373\r\n\r\nThank you very much and have a nice day :)\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-15T06:44:00Z",
+  "updated_at": "2026-01-17T08:51:09Z",
+  "requester_id": 158009047781,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017319568,
+      "body_text": "Hi Daniel Vodňaruk,  We apologize for the delay. Two shipments destined for our German warehouse have been affected by heavy snowfall in Europe, causing road blockages and delivery delays. We will expedite delivery or explore alternative logistics channels to ship your order from China as soon as possible. Compensation will be provided based on the delay after your order is completed. We apologize for the inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T08:51:09Z",
+      "updated_at": "2026-01-17T08:51:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

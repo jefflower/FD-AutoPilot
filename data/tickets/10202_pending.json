@@ -1,0 +1,174 @@
+{
+  "id": 10202,
+  "subject": "No response to issue raised regarding order ref: #SSN4242",
+  "description_text": "Hello - I’ve raised an issue with you regarding the haptic motors from my order ref: #SSN4242\r\n\r\nI’ve had a number of responses from you to try and diagnose the issue; however, I’ve not heard from you since 31st December.\r\n\r\nI’d really like to get this issue resolved. The pedals are excellent, and when the haptics worked, they were also very good. But I’ve not been able to use them since 26th December due to the issues I’ve experienced.\r\n\r\nPlease let me know what else you need from me to get to a resolution.\r\n\r\nKind regards\r\n\r\nSteven\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-07T10:18:11Z",
+  "updated_at": "2026-01-12T12:11:49Z",
+  "requester_id": 158008810905,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015278881,
+      "body_text": "Hello - just wanted to check this has been seen, I’ve followed the link to the status and I don’t see any tickets. Kind regards Steven ",
+      "user_id": 158008810905,
+      "created_at": "2025-12-30T20:41:32Z",
+      "updated_at": "2025-12-30T20:41:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015291570,
+      "body_text": "Hi steven@foers. co. uk,  Please take a screenshot of the vibration feedback interface in SIMSONN Manager so I can check the motor configuration. Are all three motors currently experiencing reduced vibration strength? ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T03:13:28Z",
+      "updated_at": "2025-12-31T03:13:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015313321,
+      "body_text": "Hello and thankyou for your reply. Attached is the screen from the manager app. All three were reduced power, but the unit on the accelerator pedal seems to be working now. I’ve tried plugging it into the different power feeds on the control unit, but no matter which I plug it into (motor 1, 2 or 3) it’s always the same motor (the one on the accelerator pedal) that has full power. This would suggest it’s the units themselves rather than the control box or software? Kind regards Steven ",
+      "user_id": 158008810905,
+      "created_at": "2025-12-31T14:14:29Z",
+      "updated_at": "2025-12-31T14:14:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015313389,
+      "body_text": "On 31 Dec 2025, at 14:12, steven@foers.co.uk wrote:   \n  ﻿\n Hello and thankyou for your reply.  \n   \n Attached is the screen from the manager app.  \n   \n All three were reduced power, but the unit on the accelerator pedal seems to be working now. I’ve tried plugging it into the different power feeds on the control unit, but no matter which I plug it into (motor 1, 2 or 3) it’s always the same motor (the one on the accelerator pedal) that has full power. This would suggest it’s the units themselves rather than the control box or software? \n   \n Kind regards \n   \n Steven  \n\n \n \n  On 31 Dec 2025, at 03:13, service@simsonn.com wrote:  \n \n \n  ﻿ \n\t \n Hi steven@foers. co. uk,  Please take a screenshot of the vibration feedback interface in SIMSONN Manager so I can check the motor configuration. Are all three motors currently experiencing reduced vibration strength?   \n \n       \n \n                           \n                            On\n                            Wed, 31 Dec at  4:41 AM\n                            ,  steven@foers. co. uk <steven@foers.co.uk>  wrote:\n                             Hello - just wanted to check this has been seen, I’ve followed the link to the status and I don’t see any tickets. \n   \n Kind regards \n \n  Steven \n \n  \n \n \n  \n On 29 Dec 2025, at 17:17, service@simsonn.com wrote:  \n \n  ﻿ \n\t\n  \n Hi steven@foers. co. uk \n We would like to acknowledge that we have received your request and a ticket has been created. A support representative will be reviewing your request and will send you a personal response.(usually within 24 hours).  To view the status of the ticket or add comments, please visit  https://simsonn.freshdesk.com/helpdesk/tickets/9480?follow=email  Thank you for your patience. \n \n View ticket \n \nIf the button doesn't work, copy-paste this URL in your browser's address bar: https://simsonn.freshdesk.com/helpdesk/tickets/9480?follow=email\n \n \n Regards, Support Center Support Team",
+      "user_id": 158008810905,
+      "created_at": "2025-12-31T14:16:40Z",
+      "updated_at": "2025-12-31T14:16:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015441652,
+      "body_text": "Hello - just checking in to see if you’ve any more news? Apologies if you’ve responded, my email provider has had technical issues for the last 18 hrs. Kind regards Steven ",
+      "user_id": 158008810905,
+      "created_at": "2026-01-02T21:48:00Z",
+      "updated_at": "2026-01-02T21:48:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015889247,
+      "body_text": "Hello - any update on this please? Kind regards Steven ",
+      "user_id": 158008810905,
+      "created_at": "2026-01-06T09:55:06Z",
+      "updated_at": "2026-01-06T09:55:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016111650,
+      "body_text": "ID 为 9480 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T10:36:09Z",
+      "updated_at": "2026-01-07T10:36:09Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016111652,
+      "body_text": "合并来自工单9480  \n      主题: Re: Order #SSN4242 confirmed  \n      描述:  Hello \n   \n This order arrived and has been working fine since installing them on the 26th Dec. However today the patio motors seem to have lost almost all power. I can just about hear them when they activate, but there is not enough power from them to feel anything- quite the opposite to the great feedback they had been giving.  \n   \n I’ve power cycled them, tried a different usb port (always direct to PC, not via a hub).  \n   \n Can you advise how I should proceed? \n   \n Kind regards \n   \n Steven \n \n  On 1 Dec 2025, at 13:40, SIMSONN <service@simsonn.com> wrote:  \n \n \n  ﻿\n\n\n\n\n\n\n\n\n\n\n\n  \n  \n  \n  \n  \n  \n\n\n  \n    \n      \n\n         \n          \n  \n\n     \n      \n\n        \n          \n\n             \n\n              \n                \n\n                   \n                       \n                        SIMSONN\n                       \n                   \n\n                     \n                      \n                        \n\n                           \n                            \n                              Order #SSN4242\n                            \n                           \n                        \n                      \n\n                     \n                \n              \n\n\n             \n          \n        \n\n\n      \n     \n  \n\n\n\n          \n  \n\n     \n      \n        \n          \n\n             \n              \n             \n  \n    Thank you for your purchase!\n  \n \n             \n  \n    \n    \n          We're getting your order ready to be shipped. We will notify you when it has been sent.\n      \n        \n       \n    \n  \n  \n  \n  \n  \n \n            \n  \n    \n      \n    \n      \n    \n  \n\n            \n              \n  \n\n       \n  \n  \n     \n      \n        \n\n           View your order \n        \n      \n\n        \n    \n      \n\n         or Visit our store\n \n      \n    \n\n\n\n     \n  \n\n\n\n            \n\n             \n          \n        \n\n      \n     \n  \n\n\n\n          \n  \n\n     \n      \n        \n          \n\n             \n               Order summary \n             \n          \n        \n\n        \n          \n\n             \n              \n            \n              \n  \n\n  \n    \n  \n    \n  \n  \n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n   \n    \n        \n \n          \n            \n\n               \n                \n                  \n                \n               \n            \n            \n          \n\n         \n\n         \n          \n            \n\n               \n                Simsonn Plus X Racing Simulation Pedal with Haptic Reactor Optional × 1 \n                \n                  Plus X P3-H3 / Black / Baseplate\n                \n\n                \n                  \n                \n               \n\n                 \n                  \n                   \n                    \n                      £285.84\n                    \n                   \n                 \n            \n\n            \n              \n                \n\n\n\n     \n        \n        \n        \n     \n\n     \n        \n\n        \n            1 × Simsonn Plus X Racing Simulation Pedal with Haptic Reactor Optional\n        \n         \n        \n            Plus X P3-H3 / Black / Baseplate\n        \n\n        \n     \n\n    \n\n\n              \n                \n\n\n\n     \n        \n        \n        \n     \n\n     \n        \n\n        \n            1 × Simsonn VAM Pro Linear Motor -  the Pedals Haptic Reactor for Vibration Feedback\n        \n         \n        \n            VAM Set (3 pac/includes power supply)\n        \n\n        \n     \n\n    \n\n\n              \n            \n          \n\n         \n    \n\n    \n   \n\n\n  \n\n\n\n            \n            \n  \n\n     \n     \n      \n\n        \n\n\n\n\n\n\n\n\n\n\n   \n     \n      Subtotal\n     \n   \n   \n      £285.84\n   \n\n\n\n\n\n  \n    \n\n   \n     \n      Order discount\n     \n   \n   \n      -£33.92\n   \n\n\n  \n  \n  \n    \n      \n   \n     \n      \n        \n        \n            Black45 (-£33.92)\n        \n      \n     \n   \n\n\n    \n  \n\n\n\n        \n          \n            \n  \n\n   \n     \n      Shipping\n     \n   \n   \n      £8.00\n   \n\n\n\n\n          \n        \n\n        \n\n        \n\n   \n     \n      Taxes\n     \n   \n   \n      £0.00\n   \n\n\n\n        \n      \n\n\n      \n      \n      \n      \n      \n      \n      \n      \n\n      \n      \n      \n      \n        \n\n\n   \n     \n      Total\n     \n   \n   \n      £259.92 GBP\n   \n\n\n        \n          \n             \n             \n                You saved £33.92\n             \n          \n        \n        \n        \n      \n      \n\n\n      \n      \n\n\n      \n     \n  \n\n\n\n\n             \n          \n        \n\n      \n     \n  \n\n\n\n          \n  \n\n     \n      \n        \n          \n\n             \n               Customer information \n             \n          \n        \n\n        \n          \n\n             \n              \n            \n              \n\n                \n                   \n                     Shipping address \n                     Steven Foers 106 Rothbury Gardens Lobley Hill Gateshead NE11 0AU United Kingdom \n                   \n                \n                \n                   \n                     Billing address \n                     Steven Foers 106 Rothbury Gardens Lobley Hill Gateshead NE11 0AU United Kingdom \n                   \n                \n              \n            \n\n            \n              \n\n                \n                \n                   \n                     Payment \n                     \n                      \n                      \n                        \n                          \n                        \n                          \n                            \n                              \n                                \n                                ending with 0264 \n                              \n                            \n                          \n                        \n                      \n                     \n                   \n                \n              \n              \n                \n                  \n                     \n                       Shipping method \n                         \n                          \n                            Economy Shipping\n                          \n                         \n                     \n                  \n                \n              \n            \n\n\n             \n          \n        \n\n      \n     \n  \n\n\n\n          \n  \n\n     \n      \n        \n          \n\n             \n              \n               If you have any questions, reply to this email or contact us at service@simsonn.com",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T10:36:10Z",
+      "updated_at": "2026-01-07T10:36:10Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016111912,
+      "body_text": "Hi steven@foers. co. uk,     We will send you replacement VAM motors. Please let us know how many units are faulty. Also, please note that VAM motors are not recommended for long-term continuous vibration telemetry effects. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T10:37:21Z",
+      "updated_at": "2026-01-07T10:37:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016113601,
+      "body_text": "Thank you for your response, it’s very much appreciated.\r\n\r\nCurrently, one motor is working, the other two are giving minimal responses - enough to just about hear, but certainly not feel.\r\n\r\nIf the VAM Pro motors were a better option, I’m more than happy to pay the difference for them. I should have ordered them originally, but my wife placed the order on my behalf and chose the VAM motors instead.\r\n\r\nKind regards\r\n\r\nSteven\r\n\r\n> ",
+      "user_id": 158008810905,
+      "created_at": "2026-01-07T10:43:00Z",
+      "updated_at": "2026-01-07T10:43:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016250715,
+      "body_text": "Hi steven@foers. co. uk,   Please calculate the price difference, and I will submit an application on your behalf to see if it can be approved. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-08T02:09:23Z",
+      "updated_at": "2026-01-08T02:09:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016311727,
+      "body_text": "Based on what I can see on your website, the difference between the VAM and VAM Pro for the 3 motor kits with power supply is £68\r\n\r\nI can return the VAM motors to you (two that are broken, one that seems to be ok) for a credit and buy the VAM Pros separately if it’s easier?\r\n\r\nKind regards\r\n\r\nSteven\r\n\r\n> ",
+      "user_id": 158008810905,
+      "created_at": "2026-01-08T09:20:03Z",
+      "updated_at": "2026-01-08T09:20:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016324565,
+      "body_text": "Hi steven@foers. co. uk,    You can click the link to pay the difference (including shipping), and we will send you 3 Vam Pro Plus new U-shaped brackets.    https://www.simsonn.com/products/difference-2",
+      "user_id": 158001343601,
+      "created_at": "2026-01-08T10:27:28Z",
+      "updated_at": "2026-01-08T10:27:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016332101,
+      "body_text": "Thank you for your help, that’s been paid.\r\n\r\n> ",
+      "user_id": 158008810905,
+      "created_at": "2026-01-08T11:28:50Z",
+      "updated_at": "2026-01-08T11:28:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016332271,
+      "body_text": "Would you like the faulty ones returned? Please let me know what to do with them.\r\n\r\n> ",
+      "user_id": 158008810905,
+      "created_at": "2026-01-08T11:30:08Z",
+      "updated_at": "2026-01-08T11:30:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016858638,
+      "body_text": "Hi steven@foers. co. uk,    Here's your shipping tracking link. No need to return the damaged item. Enjoy!  https://t.17track.net/en#nums=SF6047231372859",
+      "user_id": 158001343601,
+      "created_at": "2026-01-12T12:11:49Z",
+      "updated_at": "2026-01-12T12:11:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

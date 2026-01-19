@@ -1,0 +1,24 @@
+{
+  "id": 1338,
+  "subject": "ORDER #SSN1881",
+  "description_text": "Hi all \r\n\r\nI have been checking the shipment tracker for my order and it showing as being out for delivery but I am yet to receive a text or email from the courier company. \r\n\r\nIs there anyway you can advice who the courier is and if I can be updated when the delivery is due as I don’t want to miss it \r\n\r\nThe shipment number is SF6045795607326\r\n\r\nThanks \r\nMatthew wright\r\nSent from my iPhone",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-08T13:32:04Z",
+  "updated_at": "2025-07-10T10:46:17Z",
+  "requester_id": 158001949189,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004502074,
+      "body_text": "Hi matthew wroght,  I apologize for not responding in a timely manner, I noticed that your package was successfully signed for, may I ask if you received .",
+      "user_id": 158001343601,
+      "created_at": "2025-07-10T10:46:17Z",
+      "updated_at": "2025-07-10T10:46:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

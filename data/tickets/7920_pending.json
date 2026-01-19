@@ -1,0 +1,64 @@
+{
+  "id": 7920,
+  "subject": "Product Return",
+  "description_text": "Hello, I would like to return this orderOrder #SSN3629\r\nI did not open the box for this product.\r\n\r\n   0.\r\n\r\n   Yuyang Li / Ian Li (he/him/his)\r\n   Columbia University\r\n\r\n   *www.linkedin.com/in/yuyang-li-16b9a6283\r\n   <http://www.linkedin.com/in/yuyang-li-16b9a6283> *yl5339@columbia.edu\r\n\r\n   *(631)-552-2755*                    (+86) 18518222908\r\n   1.\r\n\r\n   Ph.D Student in Electrical Engineering                     [image: Learn\r\n   more about Columbia Crown Commuter initiative]\r\n   <https://sustainable.columbia.edu/crown-commuter>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-10T19:57:35Z",
+  "updated_at": "2026-01-05T11:19:15Z",
+  "requester_id": 158007177663,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014317648,
+      "body_text": "Hi Ian Li,    Did you encounter any issues with the product you received?",
+      "user_id": 158001343601,
+      "created_at": "2025-12-11T12:26:01Z",
+      "updated_at": "2025-12-11T12:26:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014490218,
+      "body_text": "I just ordered the wrong product.\r\n\r\n   0.\r\n\r\n   Yuyang Li / Ian Li (he/him/his)\r\n   Columbia University\r\n\r\n   *www.linkedin.com/in/yuyang-li-16b9a6283\r\n   <http://www.linkedin.com/in/yuyang-li-16b9a6283> *yl5339@columbia.edu\r\n\r\n   *(631)-552-2755*                    (+86) 18518222908\r\n   1.\r\n\r\n   Ph.D Student in Electrical Engineering                     [image: Learn\r\n   more about Columbia Crown Commuter initiative]\r\n   <https://sustainable.columbia.edu/crown-commuter>\r\n\r\n\r\n\r\nOn Thu, Dec 11, 2025 at 7:26 AM service@simsonn.com ",
+      "user_id": 158007177663,
+      "created_at": "2025-12-14T20:37:20Z",
+      "updated_at": "2025-12-14T20:37:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014785322,
+      "body_text": "Nothing, just ordered the wrong product",
+      "user_id": 158007177663,
+      "created_at": "2025-12-19T19:37:28Z",
+      "updated_at": "2025-12-19T19:37:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015015822,
+      "body_text": "Hi Ian Li,  Okay. Please ensure the packaging remains intact and the product shows no signs of use; otherwise, the return request will not be approved.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-24T02:31:20Z",
+      "updated_at": "2025-12-24T02:31:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015216183,
+      "body_text": "yes, are there any instructions on returning? could u provide me with a\r\nshipping label?\r\n\r\n\r\n   0.\r\n\r\n   Yuyang Li / Ian Li (he/him/his)\r\n   Columbia University\r\n\r\n   *www.linkedin.com/in/yuyang-li-16b9a6283\r\n   <http://www.linkedin.com/in/yuyang-li-16b9a6283> *yl5339@columbia.edu\r\n\r\n   *(631)-552-2755*                    (+86) 18518222908\r\n   1.\r\n\r\n   Ph.D Student in Electrical Engineering                     [image: Learn\r\n   more about Columbia Crown Commuter initiative]\r\n   <https://sustainable.columbia.edu/crown-commuter>\r\n\r\n\r\nOn Tue, Dec 23, 2025, 9:31 PM service@simsonn.com ",
+      "user_id": 158007177663,
+      "created_at": "2025-12-29T18:44:37Z",
+      "updated_at": "2025-12-29T18:44:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

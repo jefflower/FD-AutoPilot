@@ -1,0 +1,54 @@
+{
+  "id": 5196,
+  "subject": "10/20 Order for Silver Baseplate",
+  "description_text": "Hi there,\r\n\r\nI placed an order on 10/20 for the Silver Base-plate\r\n(https://www.simsonn.com/products/simsonn-pedal-pro-plus-with-baseplate?variant=50475291476282)\r\nand paid $90.90 after tax and shipping on my Amex (via ApplePay).\r\n\r\nI did not receive a confirmation email from Shop.com nor Simsonn.com\r\nand am unable to see the order placed on either website using my email\r\naddress, pkrengel26@gmail.com.\r\n\r\n\r\nPlease confirm the order exists, re-instantiate it in the system, or\r\nrefund me ASAP.  I'd prefer to not need to contact my credit card\r\ncompany regarding this issue.\r\n\r\nThank you,\r\nPeter\r\n\r\nPS: I am aware that there was a massive AWS outage on Monday which\r\ncould be related, I am very interested in receiving the product but am\r\nworried about the payment with missing order.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-23T02:51:06Z",
+  "updated_at": "2025-10-23T03:51:02Z",
+  "requester_id": 158006018100,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010923319,
+      "body_text": "I cannot sign into the help desk portal but was able to pull up a\r\nscreenshot from my browser history to help investigate:\r\n\r\n\r\nOn Wed, Oct 22, 2025 at 19:56 support@simsonn.com ",
+      "user_id": 158006018100,
+      "created_at": "2025-10-23T03:06:29Z",
+      "updated_at": "2025-10-23T03:06:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010923951,
+      "body_text": "Hi Peter Krengel,    As you did not provide an email address, you did not receive the order confirmation and dispatch notification. I have now added your email address. Here is your logistics tracking link.  https://www.fedex.com/wtrk/track/?trknbr=885339454640",
+      "user_id": 158001343601,
+      "created_at": "2025-10-23T03:45:42Z",
+      "updated_at": "2025-10-23T03:45:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010923991,
+      "body_text": "Interesting, maybe an issue with the way I signed into Shop.  Thank you for\r\nsolving it!  Looks like it’s arriving this Saturday!\r\n\r\nOn Wed, Oct 22, 2025 at 20:45 support@simsonn.com ",
+      "user_id": 158006018100,
+      "created_at": "2025-10-23T03:47:44Z",
+      "updated_at": "2025-10-23T03:47:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010924036,
+      "body_text": "You may also click the link here to track it.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-23T03:51:02Z",
+      "updated_at": "2025-10-23T03:51:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

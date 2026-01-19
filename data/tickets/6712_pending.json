@@ -1,0 +1,104 @@
+{
+  "id": 6712,
+  "subject": "Shipment of the order #SSN3305",
+  "description_text": "Hi,\r\n\r\nMy order #SSN3305 has been send 10.11.2025 but due to \" wrong adress data\"\r\nhas been returned to you. The link says that the package was already picked\r\nby you.\r\nI gave you correct adress, courier didnt contact me, I dont know why he\r\ndidint delivered.\r\n\r\nPlease let me know when you will make a claim to DHL and when my order will\r\ncome.\r\n\r\nI am waiting for a long time, you've got my payment so I am asking for a\r\nnew link to follow new package.\r\n\r\nI am sending one again new adress,  maybe now it won't be any problem:\r\nKacper Myga\r\nWINCENTEGO POLA 21c/20\r\n40-596\r\n666079976\r\n\r\nI am waiting for your answer till tommorrow.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-11-25T12:28:09Z",
+  "updated_at": "2025-12-04T09:30:54Z",
+  "requester_id": 158007173588,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012999053,
+      "body_text": "Hi Kacper Myga,      We apologize for the delayed response. Your original address was incorrect, causing the package to be returned. We have reshipped it to your new address—no need to worry.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-27T08:25:23Z",
+      "updated_at": "2025-11-27T08:25:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012999080,
+      "body_text": "Please confirm your new address:  Kacper Kwiecień  Wincentego Pola 21  40-596 Katowice  Poland  +48 666 079 976",
+      "user_id": 158001343601,
+      "created_at": "2025-11-27T08:26:42Z",
+      "updated_at": "2025-11-27T08:26:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012999363,
+      "body_text": "Perfect, can i have the tracking number?\r\n\r\nczw., 27 lis 2025, 09:25 użytkownik service@simsonn.com ",
+      "user_id": 158007173588,
+      "created_at": "2025-11-27T08:38:12Z",
+      "updated_at": "2025-11-27T08:38:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013015290,
+      "body_text": "That adress is not correct.\r\n\r\nI am sending correct one:\r\n\r\nKacper Kwiecień\r\nWINCENTEGO POLA 21c/20\r\n40-596 Katowice\r\nPhone number: 666079976\r\n\r\nczw., 27 lis 2025, 09:26 użytkownik service@simsonn.com ",
+      "user_id": 158007173588,
+      "created_at": "2025-11-27T14:51:00Z",
+      "updated_at": "2025-11-27T14:51:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013027682,
+      "body_text": "Can I have shipping tracking number for the package?\r\n\r\nczw., 27 lis 2025, 15:50 użytkownik Kacper Myga <kacpermyga65@gmail.com>\r\nnapisał:\r\n\r\n> That adress is not correct.\r\n>\r\n> I am sending correct one:\r\n>\r\n> Kacper Kwiecień\r\n> WINCENTEGO POLA 21c/20\r\n> 40-596 Katowice\r\n> Phone number: 666079976\r\n>\r\n> czw., 27 lis 2025, 09:26 użytkownik service@simsonn.com <\r\n> service@simsonn.com> napisał:\r\n>\r\n>> Please confirm your new address:\r\n>> Kacper Kwiecień\r\n>> Wincentego Pola 21\r\n>> 40-596 Katowice\r\n>> Poland\r\n>> +48 666 079 976\r\n>> 6712:4206036\r\n>>\r\n>\r\n\r\n",
+      "user_id": 158007173588,
+      "created_at": "2025-11-27T19:55:01Z",
+      "updated_at": "2025-11-27T19:55:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013100983,
+      "body_text": "??\r\n\r\nczw., 27 lis 2025, 20:54 użytkownik Kacper Myga <kacpermyga65@gmail.com>\r\nnapisał:\r\n\r\n> Can I have shipping tracking number for the package?\r\n>\r\n> czw., 27 lis 2025, 15:50 użytkownik Kacper Myga <kacpermyga65@gmail.com>\r\n> napisał:\r\n>\r\n>> That adress is not correct.\r\n>>\r\n>> I am sending correct one:\r\n>>\r\n>> Kacper Kwiecień\r\n>> WINCENTEGO POLA 21c/20\r\n>> 40-596 Katowice\r\n>> Phone number: 666079976\r\n>>\r\n>> czw., 27 lis 2025, 09:26 użytkownik service@simsonn.com <\r\n>> service@simsonn.com> napisał:\r\n>>\r\n>>> Please confirm your new address:\r\n>>> Kacper Kwiecień\r\n>>> Wincentego Pola 21\r\n>>> 40-596 Katowice\r\n>>> Poland\r\n>>> +48 666 079 976\r\n>>> 6712:4206036\r\n>>>\r\n>>\r\n\r\n",
+      "user_id": 158007173588,
+      "created_at": "2025-11-29T09:40:19Z",
+      "updated_at": "2025-11-29T09:40:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013101016,
+      "body_text": "Hi Kacper Myga,    We apologise for any inconvenience caused. We have already arranged for a replacement to be sent, but our German warehouse has yet to update the logistics information. As they do not operate over the weekend, we shall follow up with them on Monday and provide you with an updated tracking link.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-29T09:46:02Z",
+      "updated_at": "2025-11-29T09:46:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013101054,
+      "body_text": "Sure, I look forward for the link\r\n\r\nsob., 29 lis 2025, 10:46 użytkownik service@simsonn.com ",
+      "user_id": 158007173588,
+      "created_at": "2025-11-29T09:52:45Z",
+      "updated_at": "2025-11-29T09:52:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013137909,
+      "body_text": "Is there any information yet?\r\n\r\nsob., 29 lis 2025, 10:52 użytkownik Kacper Myga <kacpermyga65@gmail.com>\r\nnapisał:\r\n\r\n> Sure, I look forward for the link\r\n>\r\n> sob., 29 lis 2025, 10:46 użytkownik service@simsonn.com <\r\n> service@simsonn.com> napisał:\r\n>\r\n>> Hi Kacper Myga,\r\n>>\r\n>> We apologise for any inconvenience caused. We have already arranged for a\r\n>> replacement to be sent, but our German warehouse has yet to update the\r\n>> logistics information. As they do not operate over the weekend, we shall\r\n>> follow up with them on Monday and provide you with an updated tracking link.\r\n>>\r\n>> ",
+      "user_id": 158007173588,
+      "created_at": "2025-11-30T13:20:48Z",
+      "updated_at": "2025-11-30T13:20:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

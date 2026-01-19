@@ -1,0 +1,24 @@
+{
+  "id": 9561,
+  "subject": "Order #SSN4944",
+  "description_text": "Hello,\r\nI ordered (Order #SSN4944)\r\n\r\nThe Handbrake    ( YunExpress YT2535100706109129<http://www.yuntrack.com/Track/Detail/YT2535100706109129>) already arrived.\r\n\r\n\r\n\r\nThe Pedals               (YunExpress CE326637040DE<http://www.yuntrack.com/Track/Detail/CE326637040DE>) Has not arrived yet and the link doesn´t work.\r\n\r\n\r\nCould you please check if the Order is being delivered correctly?\r\n\r\nBest Regards Sandra Sapotnig\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-30T10:59:39Z",
+  "updated_at": "2025-12-30T11:03:13Z",
+  "requester_id": 158008818902,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015248311,
+      "body_text": "Hi Sandra Sapotnig,     Here is your tracking information.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T11:03:13Z",
+      "updated_at": "2025-12-30T11:03:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "id": 10555,
+  "subject": "URGENT: Shipping Request for Order #SSN5982 - DHL Express to Amman",
+  "description_text": "Hello Simsonn Team,\r\nI have just placed order #SSN5982 for Plus X P2-H2 / Black / Baseplate\r\nI am located in Amman, Jordan. I have chosen the fastest shipping: express shipping in my order.\r\nI would like to request that this order be shipped specifically via DHL Express. DHL provides the most reliable customs clearance for my country, and I want to ensure the flat-rate duty for items under 200 JOD is handled correctly.\r\nPlease confirm once the tracking number is available.\r\nThank you,\r\nLayth\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-11T08:38:49Z",
+  "updated_at": "2026-01-14T08:55:59Z",
+  "requester_id": 158008965605,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016846147,
+      "body_text": "Hi Layth Baddar,     We apologize for any inconvenience caused. Shipping to Jordan is quite expensive, costing approximately $137.59. We kindly request that you cover $47 of this amount, and we will cover the remaining portion. Thank you for your understanding.  https://www.simsonn.com/products/difference-1",
+      "user_id": 158001343601,
+      "created_at": "2026-01-12T08:31:09Z",
+      "updated_at": "2026-01-12T08:31:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016846764,
+      "body_text": "Hello Simsonn Team,\r\n\r\nI can pay the $47 for shipping, but please\r\n\r\n  1.\r\nShip with DHL express/priority as they handle customs in my country.\r\n  2.\r\nProvide DHL with an invoice they can use for customs that is below £200/200JOD (it is very important that total of item and shipping costs included be below 200JOD as customs in my country is CIF and shipping cost is calculated in customs charge). The original invoice I paid was below 200JOD and that is the reason I got from your site. In my country anything above 200JOD gets 50%+ customs on it, so I cannot risk that situation.\r\n\r\nPlease let me know if possible.\r\n\r\nThanks,\r\nLayth\r\n\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158008965605,
+      "created_at": "2026-01-12T08:51:03Z",
+      "updated_at": "2026-01-12T08:51:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016850083,
+      "body_text": "Hi Layth Baddar,    This may be a UPS delivery. We've declared the value as $137 for you. Is this price acceptable?",
+      "user_id": 158001343601,
+      "created_at": "2026-01-12T09:43:35Z",
+      "updated_at": "2026-01-12T09:43:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016850624,
+      "body_text": "Hello,\r\n\r\nUPS is ok if its the only option. UPS usually hands over to Aramex that also handle customs but differently, than DHL.\r\n\r\nIs the $137 cost plus shipping via UPS less than $280 on the invoice? If yes that is ok.\r\n\r\nIt must be item+shipping = $280 (£210 or 200JOD) maximum for no customs duty in Jordan.\r\n\r\nSorry for inconvenience, and thank you for being helpful in this matter.\r\n\r\nLayth\r\n________________________________\r\n",
+      "user_id": 158008965605,
+      "created_at": "2026-01-12T10:00:48Z",
+      "updated_at": "2026-01-12T10:00:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016854339,
+      "body_text": "Hi Layth Baddar,     We have placed your order. Please complete payment as soon as possible. We will ship your order once payment is confirmed.  https://t.17track.net/en#nums=ALS01349055227",
+      "user_id": 158001343601,
+      "created_at": "2026-01-12T10:37:38Z",
+      "updated_at": "2026-01-12T10:37:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016854706,
+      "body_text": "Hello,\r\n\r\nThank you. The payment pending is currently out of my control, it is PayPal regulations for international transactions. It should clear in a day or so. I have paid the shipping difference from a separate Paypal to avoid this issue.\r\n\r\n[cid:c150abe0-b80a-48c4-b7f7-03298009b3a2]\r\n________________________________\r\n",
+      "user_id": 158008965605,
+      "created_at": "2026-01-12T10:48:11Z",
+      "updated_at": "2026-01-12T10:48:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016854763,
+      "body_text": "Hi Layth Baddar,    Alright, we'll ship your order first.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-12T10:49:55Z",
+      "updated_at": "2026-01-12T10:49:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016854827,
+      "body_text": "Hello,\r\n\r\nThank you, and thank you for your support in this matter. I appreciate your patience.\r\n\r\nLayth\r\n________________________________\r\n",
+      "user_id": 158008965605,
+      "created_at": "2026-01-12T10:51:59Z",
+      "updated_at": "2026-01-12T10:51:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017080664,
+      "body_text": "Hello,\r\n\r\nThanks for shipping my order.\r\n\r\nIs it too late to ship the white 30HA elastomers with my order #SSN5982?\r\n\r\nhttps://www.simsonn.com/products/elastomer?variant=50362386710842\r\n\r\nThanks,\r\n\r\nLayth\r\n________________________________\r\n",
+      "user_id": 158008965605,
+      "created_at": "2026-01-14T07:59:35Z",
+      "updated_at": "2026-01-14T07:59:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017084729,
+      "body_text": "Hi Layth Baddar,    Sorry, your order has already been shipped and we are unable to add any items to it.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-14T08:53:52Z",
+      "updated_at": "2026-01-14T08:53:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017084858,
+      "body_text": "Hello,\r\n\r\nNo problem. Thanks for letting me know.\r\n\r\nLayth\r\n________________________________\r\n",
+      "user_id": 158008965605,
+      "created_at": "2026-01-14T08:55:01Z",
+      "updated_at": "2026-01-14T08:55:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

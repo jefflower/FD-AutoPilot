@@ -1,0 +1,54 @@
+{
+  "id": 4321,
+  "subject": "Order #SSN2782",
+  "description_text": "Hello,\r\nWhen do I get a tracking number for my order? How long does it usually take\r\nto UK to arrive?\r\nThank you\r\nDean\r\nOrder #SSN2782\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-02T06:09:53Z",
+  "updated_at": "2025-10-10T08:42:46Z",
+  "requester_id": 158004950517,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010005288,
+      "body_text": "Hi Dean0,    We apologize for any inconvenience caused. We are currently on an 8-day holiday break and will ship your order on the 9th. Thank you for your understanding and patience.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-07T09:06:26Z",
+      "updated_at": "2025-10-07T09:06:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010135006,
+      "body_text": "Thanks, is it possible to remove the baseplate from my order and get that\r\npart refunded (£59.16) as I've realised I don't need it, thanks\r\n\r\n",
+      "user_id": 158004950517,
+      "created_at": "2025-10-09T09:03:47Z",
+      "updated_at": "2025-10-09T09:03:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010142787,
+      "body_text": "Hi Dean0,    We apologize, but your package has already been shipped. We are unable to remove this portion for you. Here is your tracking link:  https://t.17track.net/en#nums=SF6045959302743",
+      "user_id": 158001343601,
+      "created_at": "2025-10-09T11:10:22Z",
+      "updated_at": "2025-10-09T11:10:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010147109,
+      "body_text": " No problem\r\n\r\n",
+      "user_id": 158004950517,
+      "created_at": "2025-10-09T11:50:09Z",
+      "updated_at": "2025-10-09T11:50:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 1640,
+  "subject": "Taxes.",
+  "description_text": "Hi,\r\nI have been looking at some pedals and the website says taxes included.\r\nThe F.A.Q. Section says taxes are not included. These are mutually exclusive statements.\r\nFor someone residing in the U.K. Which is true?\r\nRegards, Daniel.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-17T12:50:42Z",
+  "updated_at": "2025-07-18T02:11:50Z",
+  "requester_id": 158002181867,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005144614,
+      "body_text": "Hi Daniel Thomas,  We have warehouses in both the United States and Germany. If stock is available in either of these warehouses, orders will be shipped locally by default. However, for countries outside the U.S. and the European Union, shipments will be dispatched directly from China. Please note that the United Kingdom is no longer part of the EU, so orders shipped to the UK may be subject to customs duties. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-18T02:10:29Z",
+      "updated_at": "2025-07-18T02:10:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

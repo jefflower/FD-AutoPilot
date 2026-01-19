@@ -1,0 +1,34 @@
+{
+  "id": 4132,
+  "subject": "VAM motor not shaking issues",
+  "description_text": "Hello I have issues with my VAM shakers I bought from your aliexpress store\r\nMy isse is that when I got the fresh on my rig they worked fine but they\r\nstopped vibrating completely!\r\nI tried plugging the control box to independent 3.0 usb port but still no\r\nshake\r\nits weird I fully updated the driver and firmware to latest version to\r\nit there any known fix?\r\nthank you\r\n[image: Snímek obrazovky 2025-09-26 012447.png]\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-25T23:27:42Z",
+  "updated_at": "2025-09-26T02:01:53Z",
+  "requester_id": 158005007557,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009317947,
+      "body_text": "new observation got them working BUT motor one (the one on my throttle) works fine motor2 (one located on my brake) very weak  vibration no mather what setting used  and finaly motor3 (clutch) no effect  weirder part is when I swapped motor 1 and motor 2 ports the throttle was still the strongest  do you think I have faulty units?",
+      "user_id": 158005007557,
+      "created_at": "2025-09-26T00:37:48Z",
+      "updated_at": "2025-09-26T00:37:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158009317948,
+      "body_text": "new observation got them working BUT motor one (the one on my throttle) works fine motor2 (one located on my brake) very weak  vibration no mather what setting used  and finaly motor3 (clutch) no effect  weirder part is when I swapped motor 1 and motor 2 ports the throttle was still the strongest  do you think I have faulty units?",
+      "user_id": 158005007557,
+      "created_at": "2025-09-26T00:37:49Z",
+      "updated_at": "2025-09-26T00:37:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    }
+  ]
+}

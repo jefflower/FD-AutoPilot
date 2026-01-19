@@ -1,0 +1,304 @@
+{
+  "id": 5902,
+  "subject": "Broken control box",
+  "description_text": "Hello, I got your plus X pedals with VAM  motors, like a month ago and on Friday, I was playing as usual and suddenly I heard a pop and smell like something was burning and the pedals stoppped working. It feels like it shorted how, I don’t know why, this should be covered by warranty, right? \r\n\r\nI got my hands on older control box from old Plus pedals and its working just fine.\r\n\r\nOrder number of the pedals was : SSN2712.\r\n\r\nThanks for response in advance.\r\n\r\nMatěj Pavlát \r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-11-10T18:44:35Z",
+  "updated_at": "2026-01-15T06:02:22Z",
+  "requester_id": 158005039973,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012097521,
+      "body_text": "Hi Matěj Pavlát,  Please confirm that the PlusX control box is working properly and only one VAM motor is damaged, correct? If so, we can send you a replacement motor. Please provide your contact name, phone number, and shipping address. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-11T06:46:11Z",
+      "updated_at": "2025-11-11T06:46:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012101450,
+      "body_text": "Np. the whole control box is broken, nothing works when its connect to PC,\r\nI have two VAM motors, brake and throttle pedal, when its connected to the\r\ncontrol box it doesnt work, my PC wont even recognize that its plugged in.\r\nWhen I use the old control box with the SAME cable that I used the pedals\r\nwork, cant really test the VAM motors, since the old control box doesn´t\r\nhave a slot for them.\r\n\r\nThe problem is clearly in the control box, not in the motor, the power\r\nsupply should be fine since its still showing a green light.\r\n\r\nút 11. 11. 2025 v 7:46 odesílatel service@simsonn.com ",
+      "user_id": 158005039973,
+      "created_at": "2025-11-11T07:04:43Z",
+      "updated_at": "2025-11-11T07:04:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012104559,
+      "body_text": "Hi Matěj Pavlát,     Please try the following steps to restore the system.   Launch the latest version of SIMSONN Manager 2.1.2.  On the “Plus X” control unit, press and hold the “Upgrade” button.  While holding the button, unplug the USB cable from the PC and then plug it back in. The software should detect the device entering “SIMSONN Flasher update mode”.  In the software go to: Settings → Update → Manual Firmware Update.  In the file selector choose: pedals‑firmware → pedals‑plusx.sfu.  Click “Start Update” and wait until the firmware is completely written. During this process do not disconnect the USB or close the application.  Once the update is finished (you’ll get a success prompt or the unit will reboot), unplug and re‑plug the USB then test the pedal device to confirm everything works correctly.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-11T08:54:44Z",
+      "updated_at": "2025-11-11T08:54:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012113655,
+      "body_text": "Unfortunatelly this solution didn´t work, the app showed its not connected\r\nthe whole time\r\n\r\nút 11. 11. 2025 v 9:55 odesílatel service@simsonn.com ",
+      "user_id": 158005039973,
+      "created_at": "2025-11-11T10:45:19Z",
+      "updated_at": "2025-11-11T10:45:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012116964,
+      "body_text": "Hi Matěj Pavlát,  Please press and hold the Upgrade button on the control box, then reconnect the USB cable. Does Simsonn Manager 2.1.2 still fail to display “SIMSONN Flasher Mode”? If it doesn’t enter the mode, I can help you check it remotely. Could you please install ToDesk? ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-11T11:58:30Z",
+      "updated_at": "2025-11-11T11:58:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012129982,
+      "body_text": "Tried it again, didn’t show up + the box was obviously overheating and funky smell was coming from it.\r\n\r\nWhat exactly do you need a remote control for? I am an IT technician so I can get you whatever you need, I work with things like this everyday\r\n\r\nOdesláno z aplikace Outlook pro iOS<https://aka.ms/o0ukef>\r\n________________________________\r\nOd: service@simsonn.com ",
+      "user_id": 158005039973,
+      "created_at": "2025-11-11T16:07:21Z",
+      "updated_at": "2025-11-11T16:07:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012153149,
+      "body_text": "Hi Matěj Pavlát,    Okay, we've already sent you a new control box.  https://t.17track.net/en#nums=SF6047044215321",
+      "user_id": 158001343601,
+      "created_at": "2025-11-12T04:01:33Z",
+      "updated_at": "2025-11-12T04:01:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012155515,
+      "body_text": "Thank you,\r\n\r\nThis was really fast, great customer service, thank you again!\r\n\r\nOdesláno z aplikace Outlook pro iOS<https://aka.ms/o0ukef>\r\n________________________________\r\nOd: service@simsonn.com ",
+      "user_id": 158005039973,
+      "created_at": "2025-11-12T07:07:56Z",
+      "updated_at": "2025-11-12T07:07:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012770939,
+      "body_text": "Hi,\r\n\r\nDo you by any chance have the tracking number which the package recieved in Czech Republic? The post office here is terrible\r\n\r\nOdesláno z aplikace Outlook pro iOS<https://aka.ms/o0ukef>\r\n________________________________\r\nOd: Matěj Pavlát <matej.pavlat16@gmail.com>\r\nOdesláno: Wednesday, November 12, 2025 8:07:40 AM\r\nKomu: service@simsonn.com ",
+      "user_id": 158005039973,
+      "created_at": "2025-11-23T04:36:48Z",
+      "updated_at": "2025-11-23T04:36:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013076932,
+      "body_text": "I recieved the control box today but everything got even worst than it was.\r\n\r\nfor starters, the brake works fine, but I am not getting any input on the\r\nthrottle pedal, I mean, it jumps in like ten numbers, but when I press it,\r\nnothing happens. It sometimes works, but only when its plugged in the\r\nclucth port and the cable has to be in a very specific position which is\r\nnot suistainable.\r\n\r\nand as if this wasnt enough, something greasy came from the throttle pedal\r\nhydraulic rod, which I think caused everything, because it dripped right\r\nonto the throttle load cell sensor.\r\n\r\nI also grounded the box to the throttle pedal, even to brake pedal, nothing\r\nworks.\r\n\r\nFrankly, I am tired of this, I got your pedals for three months and they\r\nwere unusable for most of the time. Firstly the VAMs were taking forever to\r\narrive from china, then the control box stopped working and now this..This\r\nain´t even a decent product..\r\n\r\nHow can we resolve this? I want to use the pedals after almost three\r\nmonths..\r\n\r\npo 24. 11. 2025 v 9:12 odesílatel service@simsonn.com ",
+      "user_id": 158005039973,
+      "created_at": "2025-11-28T18:12:09Z",
+      "updated_at": "2025-11-28T18:12:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013077406,
+      "body_text": "For now, the pedals at least worked with the old control box, the brake still does, but the throttle stopped working on the control box aswell\r\n\r\nOdesláno z aplikace Outlook pro iOS<https://aka.ms/o0ukef>\r\n________________________________\r\nOd: Matěj Pavlát <matej.pavlat16@gmail.com>\r\nOdesláno: Friday, November 28, 2025 7:11:45 PM\r\nKomu: service@simsonn.com ",
+      "user_id": 158005039973,
+      "created_at": "2025-11-28T18:24:20Z",
+      "updated_at": "2025-11-28T18:24:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013155388,
+      "body_text": "Hi Matěj Pavlát,  If the throttle pedal needs to be plugged into the clutch port to work, first make sure all pedals are connected to the control unit. Then unplug and re-plug the USB, open SIMSONN Manager 2.1.2, click the Offset button to zero the pedal signal, and recalibrate the pedals. After this, the throttle should function properly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-01T02:47:54Z",
+      "updated_at": "2025-12-01T02:47:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013175305,
+      "body_text": "Did not help, the Plus X throttle still doesn’t work .\r\n\r\nTo clarify the problem, I have your new Plus X pedals, the throttle doesn’t work; it does have some signal (video included here: https://youtube.com/shorts/n83ZjzpTkCc?si=FOdnf9SuUiGI-cXz )    , but its just jumping even though its grounded properly.\r\n\r\nI also have lent your Plus pedals from my friend, and the throttle on them works perfectly fine, even in the throttle port.\r\n\r\nMy guess is that either I grounded it properly since you don’t have clear instructions on grounding it (photo of my rig included) or the oil from hydraulic rod which broke and leaked out damaged the sensor, which is obviously not my fault..\r\n\r\nThank you for response\r\n\r\nMatej\r\n\r\nOdesláno z aplikace Outlook pro iOS<https://aka.ms/o0ukef>\r\n________________________________\r\nOd: service@simsonn.com ",
+      "user_id": 158005039973,
+      "created_at": "2025-12-01T12:48:59Z",
+      "updated_at": "2025-12-01T12:48:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013289328,
+      "body_text": "I would also like to add that the problem with throttle is with the old control box aswell\r\n\r\nOdesláno z aplikace Outlook pro iOS<https://aka.ms/o0ukef>\r\n________________________________\r\nOd: Matěj Pavlát <matej.pavlat16@gmail.com>\r\nOdesláno: Monday, December 1, 2025 1:48:37 PM\r\nKomu: service@simsonn.com ",
+      "user_id": 158005039973,
+      "created_at": "2025-12-02T18:48:34Z",
+      "updated_at": "2025-12-02T18:48:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013355087,
+      "body_text": "Could you please respond?\r\n\r\nOdesláno z aplikace Outlook pro iOS<https://aka.ms/o0ukef>\r\n________________________________\r\nOd: Matěj Pavlát <matej.pavlat16@gmail.com>\r\nOdesláno: Tuesday, December 2, 2025 7:48:19 PM\r\nKomu: service@simsonn.com ",
+      "user_id": 158005039973,
+      "created_at": "2025-12-03T20:57:30Z",
+      "updated_at": "2025-12-03T20:57:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013777318,
+      "body_text": "Hi Matěj Pavlát,   Is your throttle pedal damaged? Please provide your contact name, phone number, and shipping address, and we will send you a new Plus X black throttle pedal. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-06T06:13:41Z",
+      "updated_at": "2025-12-06T06:13:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013783641,
+      "body_text": "Most probably, as I said; the liquid from the hydraulic rod dripped onto the sensor.\r\n\r\nContact:\r\n\r\nName: Matěj Pavlát\r\nPhone: +420739251269\r\nStreet and house number: Ztracená 260/18\r\nCity: Olomouc, Czech republic\r\nPostal code: 779 00\r\n\r\nThank you\r\n\r\n\r\nOdesláno z aplikace Outlook pro iOS<https://aka.ms/o0ukef>\r\n________________________________\r\nOd: service@simsonn.com ",
+      "user_id": 158005039973,
+      "created_at": "2025-12-06T06:36:45Z",
+      "updated_at": "2025-12-06T06:36:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014116926,
+      "body_text": "Hi Matěj Pavlát,    Okay, we will resend it to you immediately.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-08T09:00:15Z",
+      "updated_at": "2025-12-08T09:00:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014118067,
+      "body_text": "Allright, thank you\r\n\r\nIs it gonna go from Europe warehouse or china one?\r\n\r\nAlso could you send me the tracking number when you send it?\r\n\r\nThank you.\r\n\r\nOdesláno z aplikace Outlook pro iOS<https://aka.ms/o0ukef>\r\n________________________________\r\nOd: service@simsonn.com ",
+      "user_id": 158005039973,
+      "created_at": "2025-12-08T09:42:02Z",
+      "updated_at": "2025-12-08T09:42:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014178146,
+      "body_text": "Hi Matěj Pavlát,    Here is your logistics tracking link.  https://t.17track.net/en#nums=YT2534300708375048",
+      "user_id": 158001343601,
+      "created_at": "2025-12-09T11:03:24Z",
+      "updated_at": "2025-12-09T11:03:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014767916,
+      "body_text": "Ehh, thank you for the replacement throttle pedal, but I’m pretty sure this is a clutch, not throttle.. how are we going to figure this out ? I don’t want to use clutch instead od throttle…\r\n\r\nMatěj Pavlát\r\n\r\nmatej.pavlat16@gmail.com\r\n+420 739 251 269\r\n\r\n________________________________\r\nOd: service@simsonn.com ",
+      "user_id": 158005039973,
+      "created_at": "2025-12-19T15:17:17Z",
+      "updated_at": "2025-12-19T15:17:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014859680,
+      "body_text": "Needles to say pressing clutch instead of throttle is not easiest on the leg, its pretty stiff compared to the throttle, do you want me to send it back and you send me a proper, throttle pedal ?\r\n\r\nThank you\r\n\r\nMatěj Pavlát\r\n\r\nmatej.pavlat16@gmail.com\r\n+420 739 251 269\r\n\r\n________________________________\r\nOd: Matěj Pavlát <matej.pavlat16@gmail.com>\r\nOdesláno: Friday, December 19, 2025 4:15:50 PM\r\nKomu: service@simsonn.com ",
+      "user_id": 158005039973,
+      "created_at": "2025-12-22T05:53:58Z",
+      "updated_at": "2025-12-22T05:53:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015986401,
+      "body_text": "Come on, I know it was Christmas but it’s three weeks and I have wrong pedal that you sent me a still no response… atleast answer me\r\n\r\nMatěj Pavlát\r\n\r\nmatej.pavlat16@gmail.com\r\n+420 739 251 269\r\n\r\n________________________________\r\nOd: Matěj Pavlát <matej.pavlat16@gmail.com>\r\nOdesláno: Monday, December 22, 2025 6:53:33 AM\r\nKomu: service@simsonn.com ",
+      "user_id": 158005039973,
+      "created_at": "2026-01-06T20:56:46Z",
+      "updated_at": "2026-01-06T20:56:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017075648,
+      "body_text": "Hello,\r\n\r\nthis is the last time I´m writting you,\r\n\r\non 19th of january it will be 30 days of you ignoring me, if nothing\r\nchanges, I´m gonna apply for a chargeback at my bank since the 30-day\r\nstatutory period for resolving the claim has expired. I want a proper\r\nreplacement part delivered on 19th of january, if not, I´m applying for a\r\nchargeback with my bank.\r\n\r\nHave a nice day.\r\n\r\nút 6. 1. 2026 v 21:56 odesílatel Matěj Pavlát <matej.pavlat16@gmail.com>\r\nnapsal:\r\n\r\n> Come on, I know it was Christmas but it’s three weeks and I have wrong\r\n> pedal that you sent me a still no response… atleast answer me\r\n>\r\n> *Matěj Pavlát*\r\n>\r\n> matej.pavlat16@gmail.com\r\n> +420 739 251 269\r\n>\r\n> ------------------------------\r\n> *Od:* Matěj Pavlát <matej.pavlat16@gmail.com>\r\n> *Odesláno:* Monday, December 22, 2025 6:53:33 AM\r\n> *Komu:* service@simsonn.com ",
+      "user_id": 158005039973,
+      "created_at": "2026-01-14T06:43:35Z",
+      "updated_at": "2026-01-14T06:43:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017163404,
+      "body_text": "Hi Matěj Pavlát,     I apologize for the delayed response. After verification, we have reshipped the accelerator pedal to you. However, you now mention that the clutch pedal is defective. Both the product cost and the logistics cost for each shipment are extremely high, and I hope you can understand this. I aim to resolve this issue as soon as possible, but we are currently experiencing some confusion. Will reshipping the clutch pedal fully resolve your problem, or are there still other issues present?",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T05:54:58Z",
+      "updated_at": "2026-01-15T05:54:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017163430,
+      "body_text": "Hi Matěj Pavlát,    We apologize for misunderstanding your request. We mistakenly sent you the wrong pedal. We will promptly resend the throttle pedal to you.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T05:57:36Z",
+      "updated_at": "2026-01-15T05:57:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017163436,
+      "body_text": "Hi,\r\n\r\nThank you for your response.\r\n\r\nAll I need is the accelerator pedal, the clutch one is fine as I don’t really need it and there are no problems with it, I only wrote that it’s not ideal to use it as a throttle pedal. So as long as I get a proper accelerator pedal, I’m fine.\r\n\r\nThank you\r\n\r\nMatěj Pavlát\r\n\r\nmatej.pavlat16@gmail.com\r\n+420 739 251 269\r\n\r\n________________________________\r\nOd: service@simsonn.com ",
+      "user_id": 158005039973,
+      "created_at": "2026-01-15T05:58:11Z",
+      "updated_at": "2026-01-15T05:58:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017163481,
+      "body_text": "Just please send me a tracking link once it’s sent so I can track it and contact the carrier since the company that delivers stuff like this is not reliable.\r\n\r\nThank you\r\n\r\nMatěj Pavlát\r\n\r\nmatej.pavlat16@gmail.com\r\n+420 739 251 269\r\n\r\n________________________________\r\nOd: Matěj Pavlát <matej.pavlat16@gmail.com>\r\nOdesláno: Thursday, January 15, 2026 6:57:57 AM\r\nKomu: service@simsonn.com ",
+      "user_id": 158005039973,
+      "created_at": "2026-01-15T06:01:04Z",
+      "updated_at": "2026-01-15T06:01:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017163543,
+      "body_text": "Hi Matěj Pavlát,    Here is your replacement link. We apologize for any inconvenience caused!  https://t.17track.net/en#nums=YT2601500703642858",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T06:02:22Z",
+      "updated_at": "2026-01-15T06:02:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

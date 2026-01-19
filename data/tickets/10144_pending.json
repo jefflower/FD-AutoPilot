@@ -1,0 +1,64 @@
+{
+  "id": 10144,
+  "subject": "Simsonn haptics issue",
+  "description_text": "Hello, good day\r\n\r\nI purchased the haptic motors and I'm having a problem: when the ABS\r\nengages and I brake, the motor continues to vibrate even after I release\r\nthe brake pedal. Additionally, as you can see in the video, I experience a\r\nvery strange vibration when the ABS is engaged, which also affects the car.\r\nThe car in the game also starts to stutter, and my braking distance is\r\ntwice as long. Furthermore, you still haven't responded to my email from\r\nDecember 10th. Please refund me for the Z-shaped mounting brackets, as I\r\nhaven't received them, as I mentioned in the email. If the problem with the\r\npedals isn't resolved, I will have to return the haptic motors.\r\n\r\n\r\nBest regards\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-06T22:37:48Z",
+  "updated_at": "2026-01-15T01:36:51Z",
+  "requester_id": 158007401773,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016062810,
+      "body_text": "Hi Ebu Tosun,  We recommend installing the VAM Pro using nylon screws and nylon spacers. This helps electrically isolate the VAM Pro from the motor bracket, effectively preventing motor interference with the pedals. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T05:14:46Z",
+      "updated_at": "2026-01-07T05:14:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016081311,
+      "body_text": "Hello,\r\nPlease refund me for the two Z-shaped mounting brackets. I have not\r\nreceived them to this day, as I already stated in my email of December 10,\r\n2025, the day I received the pedals.\r\n\r\nBest regards\r\n\r\nservice@simsonn.com ",
+      "user_id": 158007401773,
+      "created_at": "2026-01-07T07:13:41Z",
+      "updated_at": "2026-01-07T07:13:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016314520,
+      "body_text": "Hi Ebu Tosun,    Okay, we've processed your refund.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-08T09:40:30Z",
+      "updated_at": "2026-01-08T09:40:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016659109,
+      "body_text": "Hello,\r\n\r\nthe problem has improved, however the motors still sometimes vibrate even\r\nthough I'm not putting my feet on them. I've also grounded the brake pedal.\r\nWhat else can I do?\r\n\r\n\r\n\r\nservice@simsonn.com ",
+      "user_id": 158007401773,
+      "created_at": "2026-01-10T04:07:56Z",
+      "updated_at": "2026-01-10T04:07:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017154365,
+      "body_text": "Hi Ebu Tosun,  If this occurs, it indicates that your PC’s grounding may be unreliable, possibly because a three-prong plug was not used in a grounded wall outlet. You can refer to the post below and connect the three metal screws on the PC case, control box, and pedals, which should resolve the disconnection issue.  https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2026-01-15T01:36:51Z",
+      "updated_at": "2026-01-15T01:36:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

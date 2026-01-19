@@ -1,0 +1,24 @@
+{
+  "id": 5313,
+  "subject": "Order #SSN3088",
+  "description_text": "when will this be sent out.\r\n\r\nI paid for express shipping so i can get asap\r\n\r\n*Jimmy Mitchell | Managing Director*\r\nC: MyOnlineGuy\r\nE: jimmy@myonlineguy.com.au\r\nP: +61 429 045 177\r\nA: Suite 5, 69 Allnutt Street, Mandurah, Western Australia 6210\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-27T03:02:25Z",
+  "updated_at": "2025-10-27T07:12:36Z",
+  "requester_id": 158006146973,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011135126,
+      "body_text": "Hi James Mitchell,  Your parcel has been dispatched. Here is your tracking link.   https://t.17track.net/en#nums=SF6045993558605,SF6045993558710,SF6045993558747  ​However, we regret to inform you that our express delivery service to Australia has been suspended. We are currently preparing a warehouse in Australia. Your parcel is expected to arrive around the 6th. We will refund the additional shipping charges you paid. We apologise for any inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-27T07:12:36Z",
+      "updated_at": "2025-10-27T07:12:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 8151,
+  "subject": "Questions about Affiliate Program Payments",
+  "description_text": "Hello,\r\n\r\nI am interested in joining your affiliate program and have a few questions\r\nabout your payment process:\r\n\r\nPayment Schedule: What is the frequency of payouts?\r\n\r\nPayment Methods: Which payout methods do you support (e.g., PayPal, Bank\r\nTransfer)?\r\n\r\nContact by email requesting payment or automatic payment?\r\n\r\nThank you for the information.\r\n\r\nBest regards,\r\nVo Tuan Vi\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-13T12:42:19Z",
+  "updated_at": "2025-12-15T09:27:31Z",
+  "requester_id": 158004500137,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014502928,
+      "body_text": "Hi VO TUAN VI,     We will process commission payments through the PayPal account you provided during registration.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-15T09:27:31Z",
+      "updated_at": "2025-12-15T09:27:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

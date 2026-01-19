@@ -1,0 +1,64 @@
+{
+  "id": 5106,
+  "subject": "pro x pedals wont connect",
+  "description_text": "Hello, i received my pro x pedals today and hooked them up following the\r\ndirections given. they worked for a while and then i went to the game spot\r\nin the simpson manager and set it to iracing. since then the pedals have\r\nsaid disconnected and will not reconnect  and on the home screen is says\r\nthat iracings path isnt set.  is there a way to fix this?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-21T00:45:38Z",
+  "updated_at": "2025-10-22T03:06:00Z",
+  "requester_id": 158005915084,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010779027,
+      "body_text": "Hi Dana Burdick,  Hello, please make sure that the pedal’s USB cable is directly connected to the rear USB 3.0 (blue) port of your computer. Do not use a USB hub, as insufficient power supply may cause the device to disconnect. If the issue persists, please download the latest version of SIMSONN Manager 2.1.2 and follow the steps below to update the firmware again.      Please press the recovery button on the main control box and reconnect the USB cable. The software will then enter recovery mode. Next, go to Settings → Update → Manual Update Firmware → pedals → firmware → pedals and select the prox.sfu file to perform the upgrade.  After the upgrade:    Reconnect the USB cable first;    Then plug in the motor power supply.    Finally, please confirm that the version numbers are displayed as: CPU1: 2.0.5, CPU2: 2.0.4.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-21T01:35:38Z",
+      "updated_at": "2025-10-21T01:35:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010779465,
+      "body_text": "I got them to connect had a driver error, but now they aren't registering\r\nin iracing\r\n\r\nOn Mon, Oct 20, 2025, 8:35 PM service@simsonn.com ",
+      "user_id": 158005915084,
+      "created_at": "2025-10-21T01:57:10Z",
+      "updated_at": "2025-10-21T01:57:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010779782,
+      "body_text": "Hi Dana Burdick,     Could you please provide a video and send it to me via Google Drive? Please make sure to grant access permission so I can view it.  Also, this device is driver-free, and the issue may be caused by using a non–USB 3.0 port.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-21T02:13:35Z",
+      "updated_at": "2025-10-21T02:13:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010814581,
+      "body_text": "Got pedals to connect but have no inputs in iracing. Simsonn manager tells\r\nme game not found  and it won't let me set a working path\r\n\r\nOn Mon, Oct 20, 2025, 9:13 PM service@simsonn.com ",
+      "user_id": 158005915084,
+      "created_at": "2025-10-21T14:59:57Z",
+      "updated_at": "2025-10-21T14:59:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010842500,
+      "body_text": "Hi Dana Burdick,  Please check whether your pedals are properly recognized in iRacing. Note that iRacing requires you to recalibrate the pedals within its settings menu before they can work correctly. If you still encounter issues, please record a short video and share it with me via Google Drive, making sure to grant access permission so I can review it and help you troubleshoot. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-22T03:06:00Z",
+      "updated_at": "2025-10-22T03:06:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

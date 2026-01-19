@@ -1,0 +1,24 @@
+{
+  "id": 10240,
+  "subject": "Order SSN5141",
+  "description_text": "Hi, I wanted to ask when the remaining part of the order is expected to be\r\ndelivered?\r\nSince only the handbrake was shipped, I was asking for the shifter\r\n\r\n\r\n*Rodolfo Carluccio*\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-07T19:09:52Z",
+  "updated_at": "2026-01-16T09:15:01Z",
+  "requester_id": 158008807257,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017251391,
+      "body_text": "Hi Rodolfo Carluccio,     Due to demand far exceeding expectations, this item has been out of stock for nearly two weeks. We confirm your order was shipped on the 14th and sincerely apologize for the delay. Below is your tracking link:  https://t.17track.net/en#nums=SF6047224482091",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T09:15:01Z",
+      "updated_at": "2026-01-16T09:15:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

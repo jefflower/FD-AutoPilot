@@ -1,0 +1,134 @@
+{
+  "id": 5423,
+  "subject": "upgraded to the latest software pedals showing disconnected",
+  "description_text": "I upgraded to the latest version of the software now my pedals keep showing\r\ndisconnected, sometimes the pop up connected but most of the time shows\r\ndisconnected! I had no problem before the updated!\r\n\r\n[image: Screenshot 2025-10-29 232709.png]\r\n\r\n[image: image.png]\r\n[image: image.png]\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-10-29T23:35:35Z",
+  "updated_at": "2025-11-03T06:02:57Z",
+  "requester_id": 158002429769,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011315724,
+      "body_text": "attached my latest log file 20251029.log.\r\n\r\nalso attached yesterday log file 20251028.log if this helps to compare\r\n\r\nOn Wed, 29 Oct 2025 at 23:35, support@simsonn.com ",
+      "user_id": 158002429769,
+      "created_at": "2025-10-29T23:50:47Z",
+      "updated_at": "2025-10-29T23:50:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011315974,
+      "body_text": "Also noticed my keyboard and mouse (usb) are dropping out and weird usb\r\nissues are happening, like lockups / hangs from usb connected devices.\r\n\r\nUnplugging my pedal usb connection everything is working fine.\r\n\r\nBefore the upgrade had no issues the pedals were always plugged in and\r\nalways connected fine.\r\n\r\n\r\n\r\nOn Wed, 29 Oct 2025, 11:48 pm Lindell Harry, <lindell.harry@gmail.com>\r\nwrote:\r\n\r\n> attached my latest log file 20251029.log.\r\n>\r\n> also attached yesterday log file 20251028.log if this helps to compare\r\n>\r\n> On Wed, 29 Oct 2025 at 23:35, support@simsonn.com ",
+      "user_id": 158002429769,
+      "created_at": "2025-10-30T00:11:09Z",
+      "updated_at": "2025-10-30T00:11:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011335640,
+      "body_text": "Hi any update ? Thanks ",
+      "user_id": 158002429769,
+      "created_at": "2025-10-30T09:38:44Z",
+      "updated_at": "2025-10-30T09:38:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158011346325,
+      "body_text": "I have a league race tonight is this going to be fixed?",
+      "user_id": 158002429769,
+      "created_at": "2025-10-30T12:29:05Z",
+      "updated_at": "2025-10-30T12:29:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158011358277,
+      "body_text": "Disappointing your update bricked my pedals and I can't even get a reply! Guess I won't be doing my league race tonight and looking for some reliable pedals !",
+      "user_id": 158002429769,
+      "created_at": "2025-10-30T17:25:22Z",
+      "updated_at": "2025-10-30T17:25:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158011358280,
+      "body_text": "Disappointing your update bricked my pedals and I can't even get a reply! Guess I won't be doing my league race tonight and looking for some reliable pedals !",
+      "user_id": 158002429769,
+      "created_at": "2025-10-30T17:25:23Z",
+      "updated_at": "2025-10-30T17:25:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158011358284,
+      "body_text": "Disappointing your update bricked my pedals and I can't even get a reply! Guess I won't be doing my league race tonight and looking for some reliable pedals !",
+      "user_id": 158002429769,
+      "created_at": "2025-10-30T17:25:25Z",
+      "updated_at": "2025-10-30T17:25:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158011409525,
+      "body_text": "Any updates?!",
+      "user_id": 158002429769,
+      "created_at": "2025-10-31T12:22:49Z",
+      "updated_at": "2025-10-31T12:22:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158011603629,
+      "body_text": "Hi Lindell Harry,    Hello, as replies over the weekend may be delayed, here is some information:    The pedals can be manually updated or reverted to an older firmware version via: Settings → Update → Manual Firmware Update → Pedals → Firmware → pedals-plusx-old.sfu.    Regarding USB disconnections, please plug the pedals directly into the blue USB 3.0 port on the back of your computer and avoid using a USB hub, as this issue is usually caused by insufficient power.    Also, please ensure that both your computer and the base are properly grounded, meaning the plug or power strip should be connected to a three-prong wall outlet.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-02T02:11:14Z",
+      "updated_at": "2025-11-02T02:11:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011603668,
+      "body_text": "Hi Lindell Harry,  If it shows “disconnected” and the firmware cannot be updated, please follow the steps below to update it.      Please follow the steps below:  1. Enter Firmware Upgrade Mode    Press and hold the “Upgrade” button on the PlusX control box;    While holding the button, reinsert the USB cable;    Release the button once the software shows “Entered Firmware Upgrade Mode”.    2. Manually Restore Firmware    In the software, go to: Settings → Update → Manual Firmware Update;    Select the firmware file path: pedals-firmware-pedals-plusx.sfu or plusx-old.sfu;    Wait for the upgrade to complete, then reinsert the USB and test the pedals again.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-02T02:13:03Z",
+      "updated_at": "2025-11-02T02:13:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011619052,
+      "body_text": "Can you send me a copy of the firmware I uninstalled and reinstalled\r\nSimsonn Manager? So think the .old file has been deleted.\r\n\r\n\r\n\r\nOn Sun, 2 Nov 2025, 2:13 am support@simsonn.com, ",
+      "user_id": 158002429769,
+      "created_at": "2025-11-02T12:49:41Z",
+      "updated_at": "2025-11-02T12:49:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011643972,
+      "body_text": "Hi Lindell Harry,     You can download it from here.   https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-11-03T06:02:57Z",
+      "updated_at": "2025-11-03T06:02:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

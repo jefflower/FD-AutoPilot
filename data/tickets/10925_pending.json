@@ -1,0 +1,44 @@
+{
+  "id": 10925,
+  "subject": "Simsonn Pedals",
+  "description_text": "Hi, \r\nI am having issues with shipping information, I ordered through amazon and got SF # through the amazon app, however, amazon app says that a delivery was attempted today, but the package is not even in the right state. I called SFExpress and they said that the SF# was incorrect and that I needed to reach out to you guys to get my correct shipping number. Any help would be appreciated, thank you. \r\n\r\nSincerely,\r\nSpencer\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-14T21:12:35Z",
+  "updated_at": "2026-01-17T07:34:20Z",
+  "requester_id": 158009077373,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017238200,
+      "body_text": "Hi Spencer 777,  Could you please provide us with your order number? We will check it for you. ",
+      "user_id": 158007774607,
+      "created_at": "2026-01-16T03:50:54Z",
+      "updated_at": "2026-01-16T03:50:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017250778,
+      "body_text": "Order #\r\n111-8922373-4165826 from Amazon\r\n\r\nTracking ID: SF6047227116158\r\n\r\n\r\n\r\nOn Thu, 15 Jan 2026 at 21:51, service@simsonn.com ",
+      "user_id": 158009077373,
+      "created_at": "2026-01-16T08:56:49Z",
+      "updated_at": "2026-01-16T08:56:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017318612,
+      "body_text": "Hi Spencer 777,  I am sorry for the inconvenience caused. As per your case, we found your situation before, so we have reshipped a new package to you from our US warehouse. Here is your new tracking number: 887920088053,   the shipping carrier is FedEx, you can track it via https://www.fedex.com/fedextrack",
+      "user_id": 158007774607,
+      "created_at": "2026-01-17T07:34:16Z",
+      "updated_at": "2026-01-17T07:34:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

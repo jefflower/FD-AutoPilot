@@ -1,0 +1,214 @@
+{
+  "id": 6756,
+  "subject": "Pedal Return - Order #SSN3597",
+  "description_text": "Hello,\r\n\r\nI recently purchased the Plus X pedals, and they have been very rough to\r\nuse. They constantly disconnect from my PC, and certain games don't even\r\npick up the signals. I have tried using the Simsonn manager and even\r\nfreejoy but both don't fix the Issue. I would like to refund the pedals\r\nplease. Let me know what the next steps are to make the return.\r\n\r\nOrder number is #SSN3597\r\n\r\nThank you.\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-11-26T05:18:17Z",
+  "updated_at": "2025-12-01T02:24:41Z",
+  "requester_id": 158007336666,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012941605,
+      "body_text": "Hi Abdullah Khokhar,    There may be two possible issues:    Please use the USB 3.0 port on the back of your PC and avoid using USB hubs.    There may be a grounding issue.    If this problem occurs, it indicates that your PC might not be properly grounded—for example, the power plug may not be connected to a three-prong wall outlet. You can refer to the post below: connect the PC case to the pedal frame, and also connect the main control box to the metal screws of the pedals. This will effectively resolve the disconnection issue.     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T11:00:11Z",
+      "updated_at": "2025-11-26T11:00:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012942791,
+      "body_text": "Hello,\r\n\r\nI did attempt those two. It was straight plugged into a USB 3.0 and also my\r\nPC is well grounded. I even used the ground cable included in the pedals\r\nand grounded them. No difference. Games only pick up the pedals after 50%\r\npresses even though it’s calibrated in the app (this is if it even works in\r\nthe first place)\r\n\r\nOn Wed, Nov 26, 2025 at 04:00 service@simsonn.com ",
+      "user_id": 158007336666,
+      "created_at": "2025-11-26T11:32:37Z",
+      "updated_at": "2025-11-26T11:32:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012942903,
+      "body_text": "Hi Abdullah Khokhar,  If this is the case, it means the pedal’s mechanical structure has been adjusted. Please click Offset in the software to reset the pedal signal to zero; the white signal will then start from 0%. After recalibrating the pedal, the blue signal will correctly range from 0% to 100%. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T11:34:55Z",
+      "updated_at": "2025-11-26T11:34:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012943550,
+      "body_text": "On the software it shows proper calibration but in game it doesn’t register\r\nuntil 50%\r\n\r\nOn Wed, Nov 26, 2025 at 04:35 service@simsonn.com ",
+      "user_id": 158007336666,
+      "created_at": "2025-11-26T11:50:46Z",
+      "updated_at": "2025-11-26T11:50:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012943685,
+      "body_text": "Hi Abdullah Khokhar,     If the software calibration is correct, pressing each pedal should make the blue progress bar go from 0% to 100%, indicating that the pedals are functioning normally. You only need to reopen the game and rebind the pedals in the game settings.  For iRacing or F1 games, additional in-game calibration may be required. Here is a reference link for F1 2025 to guide you.     https://www.reddit.com/r/simracing/comments/1nj93bq/simsonn_plus_x_pedals_setup_guide_in_f1_25/ ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T11:56:07Z",
+      "updated_at": "2025-11-26T11:56:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012943937,
+      "body_text": "Hi\r\n\r\nThat post was deleted. Please send more tips or another post. The pedals\r\nare working in the software but in the game I have to press 50% for\r\nanything to start happening. I tried calibrating in F1 but I can’t figure\r\nit out.\r\n\r\nOn Wed, Nov 26, 2025 at 04:56 service@simsonn.com ",
+      "user_id": 158007336666,
+      "created_at": "2025-11-26T12:06:06Z",
+      "updated_at": "2025-11-26T12:06:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012944275,
+      "body_text": "Hi Abdullah Khokhar,    Hello, here is the setup guide for using the SIMSONN Plus X pedals in F1 25:    First time entering the game    You may see a message:   NO PRESET CONTROL SCHEME FOR DEVICE(S) SIMSONN Plus X Please customise your controls in the Settings Menu...     Click Okay to continue.      Bind controls and save a new scheme    Go to Settings → Controls to bind pedals and buttons.    When exiting, select Save as new Control Scheme, give it a name (e.g., SIMSONN), and click Save.      Manage and switch control schemes    Main Menu → Settings → Controls → Control Scheme List    Your SIMSONN scheme will appear; you can select it directly for future use.       ? Note: If you delete the scheme without backup, you will need to repeat the binding and saving process.     After completing these steps, your pedals will work properly in the game, providing a realistic driving experience.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T12:16:06Z",
+      "updated_at": "2025-11-26T12:16:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012945602,
+      "body_text": "Hi,\r\nThe message did pop up one time and never again. Also when F125 is running,\r\non the Simsonn Manager it sais F125 running Telemtry not connected\r\n\r\nOn Wed, Nov 26, 2025 at 05:16 service@simsonn.com ",
+      "user_id": 158007336666,
+      "created_at": "2025-11-26T13:02:36Z",
+      "updated_at": "2025-11-26T13:02:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012945916,
+      "body_text": "I restarted and it came. Even after the custom setup scheme the pedals have\r\na huge dead zone and only work after 50% press. It is normal in the manager\r\n\r\n",
+      "user_id": 158007336666,
+      "created_at": "2025-11-26T13:12:21Z",
+      "updated_at": "2025-11-26T13:12:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012946266,
+      "body_text": "I also tried to use free joy software but it doesn’t detect the pedals\r\n\r\n",
+      "user_id": 158007336666,
+      "created_at": "2025-11-26T13:22:47Z",
+      "updated_at": "2025-11-26T13:22:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012947550,
+      "body_text": "Hi Abdullah Khokhar,    PlusX no longer supports FreeJoy. Please record a video showing the pedal test progress bar in Simsonn Manager going from 0% to 100% and send it to me, so I can verify whether the pedal is configured correctly.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T13:56:20Z",
+      "updated_at": "2025-11-26T13:56:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013004895,
+      "body_text": "Sure, here it is.\r\n\r\nOn Wed, Nov 26, 2025 at 06:56 service@simsonn.com ",
+      "user_id": 158007336666,
+      "created_at": "2025-11-27T12:17:54Z",
+      "updated_at": "2025-11-27T12:17:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013037964,
+      "body_text": "Hi Abdullah Khokhar,  The video you uploaded is incomplete. Please record a complete video for us to check and share the link via Google Drive, making sure the access permissions are set. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-28T04:02:35Z",
+      "updated_at": "2025-11-28T04:02:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013038066,
+      "body_text": "Not sure what you mean by incomplete video. Please tell me exactly what you\r\nneed me to include in the video.\r\n\r\nOn Thu, Nov 27, 2025 at 21:02 service@simsonn.com ",
+      "user_id": 158007336666,
+      "created_at": "2025-11-28T04:10:39Z",
+      "updated_at": "2025-11-28T04:10:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013038083,
+      "body_text": "I’ve also tried every solution I’ve found on the internet and nothing seems\r\nto be fixing this. I would like to move forward with returning the pedals.\r\n\r\n",
+      "user_id": 158007336666,
+      "created_at": "2025-11-28T04:11:43Z",
+      "updated_at": "2025-11-28T04:11:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013038104,
+      "body_text": "Hi Abdullah Khokhar,  By “incomplete,” we mean the video freezes halfway during playback, so the uploaded video is not complete. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-28T04:12:32Z",
+      "updated_at": "2025-11-28T04:12:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013038690,
+      "body_text": "Here’s the link\r\n\r\nhttps://drive.google.com/file/d/1xLru0iLQeUjkAT-Z54UDn3fJsR9jtDPA/view?usp=drivesdk\r\n\r\nOn Thu, Nov 27, 2025 at 21:12 service@simsonn.com ",
+      "user_id": 158007336666,
+      "created_at": "2025-11-28T05:06:16Z",
+      "updated_at": "2025-11-28T05:06:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013102702,
+      "body_text": "Hello,\r\n\r\nIf we're not able to resolve this matter, I would like to initiate the\r\nreturn. The pedals are useless to me at that point. Seems like i've tried\r\nevery solution and nothing works.\r\n\r\n>\r\n\r\n",
+      "user_id": 158007336666,
+      "created_at": "2025-11-29T13:03:01Z",
+      "updated_at": "2025-11-29T13:03:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013154864,
+      "body_text": "Hi Abdullah Khokhar,  I can confirm that the pedals work properly in SIMSONN Manager 2.1.2 and have been fully calibrated, so F1 2025 is fully supported. We are also testing and playing F1 2025 ourselves, and I believe the issue is not with the hardware but likely with the settings. If you are unsure how to configure it, we can assist you remotely. You just need to install the Todesk software—no registration required—and provide your ID and temporary verification code. We can schedule a time for the setup. Alternatively, you can also look up F1 2025 configuration guides online. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-01T02:20:12Z",
+      "updated_at": "2025-12-01T02:20:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013154886,
+      "body_text": "Hello,\r\n\r\nThanks for your help. I ended up messing around with the settings a bunch\r\nand they now work\r\n\r\nOn Sun, Nov 30, 2025 at 19:20 service@simsonn.com ",
+      "user_id": 158007336666,
+      "created_at": "2025-12-01T02:21:38Z",
+      "updated_at": "2025-12-01T02:21:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

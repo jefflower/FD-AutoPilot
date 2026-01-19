@@ -1,0 +1,35 @@
+{
+  "id": 7566,
+  "subject": "Pedals not working",
+  "description_text": "Hi; I just received my pedals and they do not work; they registered in the app but did not work in any games; now they do not register in the app anymore. Sent from Outlook for Android<https://aka.ms/AAb9ysg>",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-06T13:58:31Z",
+  "updated_at": "2025-12-11T08:00:46Z",
+  "requester_id": 158007511115,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014120454,
+      "body_text": "Hi Earlando James, Please provide your order number, the model of your pedals, and a screenshot of the Simsonn Manager 2.1.2 software interface. You can try manually restoring the firmware. Also, be sure to use a USB 3.0 port and avoid using a hub. Unstable power supply may cause connection issues or missing accessories.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-08T11:14:21Z",
+      "updated_at": "2025-12-08T11:14:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014120596,
+      "body_text": "Thank you, it's working perfectly now, and it's a great product too. Sent from Outlook for Android<https://aka.ms/AAb9ysg>",
+      "user_id": 158007511115,
+      "created_at": "2025-12-08T11:19:25Z",
+      "updated_at": "2025-12-08T11:19:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

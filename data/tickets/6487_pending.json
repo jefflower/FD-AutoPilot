@@ -1,0 +1,64 @@
+{
+  "id": 6487,
+  "subject": "Order #SSN3579",
+  "description_text": "Hello,\r\ni'm writing u about order number SSN3579. I have changed my mind and would\r\nto cancel it. As i can see u didn't sent it yet anyway. Thank you.\r\n\r\nStjepan Krakić\r\n\r\nKoranska 12\r\n\r\n10370 Dugo Selo\r\n\r\n091/525-6822\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-21T13:34:58Z",
+  "updated_at": "2025-11-28T13:55:47Z",
+  "requester_id": 158007227011,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012802436,
+      "body_text": "Hi Stjepan Krakić,    We apologise for any inconvenience caused. Our German warehouse is currently out of stock, with replenishment expected by the 27th. At that time, we shall dispatch your order via DHL and refund the additional shipping charges incurred.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-24T08:41:55Z",
+      "updated_at": "2025-11-24T08:41:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012803292,
+      "body_text": "As i said i would like to cancel my order. Thank you.\r\n\r\nStjepan Krakić\r\n\r\nKoranska 12\r\n\r\n10370 Dugo Selo\r\n\r\n091/525-6822\r\n\r\n",
+      "user_id": 158007227011,
+      "created_at": "2025-11-24T08:53:19Z",
+      "updated_at": "2025-11-24T08:53:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012803938,
+      "body_text": "Hi Stjepan Krakić,    Alright, we'll cancel it for you. May I ask why you'd like to cancel the order? This is important to us.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-24T09:18:59Z",
+      "updated_at": "2025-11-24T09:18:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012803963,
+      "body_text": "I am no longer interested.\r\n\r\nStjepan Krakić\r\n\r\nKoranska 12\r\n\r\n10370 Dugo Selo\r\n\r\n091/525-6822\r\n\r\n",
+      "user_id": 158007227011,
+      "created_at": "2025-11-24T09:20:36Z",
+      "updated_at": "2025-11-24T09:20:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013038358,
+      "body_text": "Hello,  my order is still not cancelled? I would like to get my money back soon. Thank you.",
+      "user_id": 158007227011,
+      "created_at": "2025-11-28T04:32:03Z",
+      "updated_at": "2025-11-28T04:32:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 10446,
+  "subject": "Haptic motor information",
+  "description_text": "Dear Service team!\r\nI’m about to purchase a haptic motor but I have a few questions.\r\n1. I have a Moza SR-P pedal, can I mount it to it? And does the mounting\r\nthat you provide is enough?\r\n2. What do I need to order, because I’m a bit lost honestly. Currently I\r\ndon’t have any haptic motors or anything, so no power supply and etc. What\r\nkit do I need to order? I want it to cover every need, the power, the\r\ncontrol, mounting, and the motors or anything that needed.\r\nThank you for your help!\r\nBest regards,\r\nBenedek Kovacs\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-09T21:30:17Z",
+  "updated_at": "2026-01-10T07:20:10Z",
+  "requester_id": 158009008688,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016679312,
+      "body_text": "Hi Benedek Kovács,  You can purchase a PlusX control box for telemetry, along with one VAM Pro motor and a power supply, and that will be sufficient. For mounting, you can find and use a 3D-printed bracket available online. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-10T07:20:10Z",
+      "updated_at": "2026-01-10T07:20:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

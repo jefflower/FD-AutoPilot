@@ -1,0 +1,54 @@
+{
+  "id": 7667,
+  "subject": "Simsonn VAM PRO issues with Plus X pedals",
+  "description_text": "Hello,\r\n\r\nI am encountering issues while using Simsonn VAM PRO with Plus X pedals,\r\nspecifically random disconnections/missing inputs/blocked inputs from the\r\npedals in eg. iRacing.\r\n\r\nI have:\r\n- grounded the control box to the pedal metal plate,\r\n- tried to put it under the metal plate of the pedals with - metal screw,\r\nwithout metal screw (adhesive tape), on the floor\r\n- tried with simhub only (I need it working during the sessions so it's not\r\nan option to close it),\r\n- tried with Simhub and Simsonn manager 2.1.2 (even worse)\r\n- tried to Faraday cage the control box with aluminum foil on the floor\r\n(even worse disconnecting/blockages)\r\n\r\nPedals do work properly when power cable for the VAMs is unplugged. I lost\r\na lot of Safety Rating since installing the VAMs due to random\r\ndisconnections which I fortunately made back since unplugging them.\r\n\r\nAlso when I plug the AC cable in the control box, I can see some tiny\r\nsparks coming from the slot, which is worrying.\r\n\r\nPlease offer me some help.\r\n\r\n\r\n*Alexandru Șerban*\r\n*+40 749 629994*\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-08T08:52:38Z",
+  "updated_at": "2025-12-09T13:09:41Z",
+  "requester_id": 158007694173,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014119476,
+      "body_text": "Hi Alexandru Serban,    I need to clarify something: for VAM motors, you must use VAM mode, not VAM Pro mode. The software provides this option because using VAM Pro mode can quickly damage the VAM motor.  Could you tell me how you have been using it? Also, which motors are currently working and which are not?     Additionally, regarding the sparks from the independent power supply, this is normal when the power is charging the motor capacitors. It is a normal phenomenon. Since it is 24V, it is safe and will not damage the main control unit, so please rest assured.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-08T10:38:20Z",
+      "updated_at": "2025-12-08T10:38:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014149352,
+      "body_text": "Hello,\r\n\r\nSo I should use VAM mode even if I have the VAM PRO product?\r\n\r\nAs for the motors, they both work (brake and throttle), they only get stuck\r\nvibrating sometimes when the pedal input stops/blocks to last percentage\r\nfor some seconds.\r\n\r\n\r\n\r\n*​Alexandru Șerban*\r\n​\r\n*+40 749 629994​​*\r\n\r\n\r\n\r\n\r\nOn Mon, 8 Dec 2025 at 12:38, service@simsonn.com ",
+      "user_id": 158007694173,
+      "created_at": "2025-12-08T20:03:36Z",
+      "updated_at": "2025-12-08T20:03:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014150222,
+      "body_text": "Adding to my answer above, even with VAM mode I encounter the same pedal\r\ninput blocking\r\n\r\nMost common example: I arrive at the end of a straight, and after being the\r\nduration of the straight with throttle pedal 100% I want to drop it to 0%\r\nand brake but the throttle remains and 100% and brake doesn’t engage for\r\nalmost a second)\r\n\r\n\r\n\r\n\r\n*​Alexandru Șerban*\r\n​\r\n*+40 749 629994​​*\r\n\r\n\r\n\r\n\r\nOn Mon, 8 Dec 2025 at 22:03, Alexandru Serban <\r\nalexandru.boje.serban@gmail.com> wrote:\r\n\r\n> Hello,\r\n>\r\n> So I should use VAM mode even if I have the VAM PRO product?\r\n>\r\n> As for the motors, they both work (brake and throttle), they only get\r\n> stuck vibrating sometimes when the pedal input stops/blocks to last\r\n> percentage for some seconds.\r\n>\r\n>\r\n>\r\n>\r\n> *​Alexandru Șerban*\r\n> ​\r\n> *+40 749 629994​​*\r\n>\r\n>\r\n>\r\n>\r\n> On Mon, 8 Dec 2025 at 12:38, service@simsonn.com ",
+      "user_id": 158007694173,
+      "created_at": "2025-12-08T20:20:40Z",
+      "updated_at": "2025-12-08T20:20:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014184722,
+      "body_text": "Hi Alexandru Serban,  If this happens, it indicates that the computer’s grounding is not reliable, possibly because a three-prong plug was not used with a three-prong wall outlet. You can refer to the post below: connect the computer case to the stand, and connect the control box to the metal screws on the pedals. This should resolve the disconnection issue.  https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-12-09T13:09:41Z",
+      "updated_at": "2025-12-09T13:09:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

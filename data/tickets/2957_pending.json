@@ -1,0 +1,54 @@
+{
+  "id": 2957,
+  "subject": "Re: Simsonn Order Confirmation #SSN2398",
+  "description_text": "Sure sorry I didn’t get this email until now\r\n\r\nOn Tue, Aug 19, 2025 at 8:34 PM SIMSONN <service@simsonn.com> wrote:\r\n\r\n> SIMSONN <https://www.simsonn.com>\r\n>\r\n> Hello, the shipping cost to Hawaii is very high, 347.3 RMB, which is\r\n> equivalent to 50 USD. We need you to pay an additional 20 USD for shipping.\r\n> Is that acceptable to you?\r\n>\r\n> If you have any questions, reply to this email or contact us at\r\n> service@simsonn.com\r\n>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-22T02:17:38Z",
+  "updated_at": "2025-08-27T09:51:12Z",
+  "requester_id": 158003371861,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007323534,
+      "body_text": "Hi Mcrider46,    Okay, you can click on the link to pay the shipping fee. Thank you for your understanding. We will ship your order as soon as possible.  https://www.simsonn.com/products/difference-2",
+      "user_id": 158001343601,
+      "created_at": "2025-08-22T02:19:06Z",
+      "updated_at": "2025-08-22T02:19:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007403052,
+      "body_text": "Good morning, I paid the difference with order #SSN2422 for the amount of 193.70, and I paid through PayPal Pay in 4 twice. Am I going to get a refund from the previous or reverse the charge? I'll include several screenshots to get clarification on what's going on. ",
+      "user_id": 158003371861,
+      "created_at": "2025-08-23T19:25:34Z",
+      "updated_at": "2025-08-23T19:25:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158007441079,
+      "body_text": "Hi Mcrider46,    Do you mean you only need one Haptics Reactor? But we have already shipped two sets of products to you.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-25T03:48:21Z",
+      "updated_at": "2025-08-25T03:48:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007445979,
+      "body_text": "Yes, that is correct. I just wanted to pay the 20-dollar difference, as you\r\ncouldn't send me in the first place, that's why I agreed on not buying two\r\nsets.\r\n\r\nSIMSONN <https://www.simsonn.com/>\r\n\r\nHello, the shipping cost to Hawaii is very high, 347.3 RMB, which is\r\nequivalent to 50 USD. We need you to pay an additional 20 USD for shipping.\r\nIs that acceptable to you?\r\n\r\n\r\n\r\nOn Sun, Aug 24, 2025 at 5:48 PM service@simsonn.com ",
+      "user_id": 158003371861,
+      "created_at": "2025-08-25T04:23:10Z",
+      "updated_at": "2025-08-25T04:23:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

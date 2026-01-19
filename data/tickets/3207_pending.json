@@ -1,0 +1,24 @@
+{
+  "id": 3207,
+  "subject": "Simsonn Order Confirmation #SSN2071",
+  "description_text": "Hello, your package has been placed in a USPS hold. You may contact USPS to arrange pickup. Here is your tracking number: 9200190381600200758131  https://www.track718.us/en/detail?nums=9200190381600200758131",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-08-28T08:47:42Z",
+  "updated_at": "2025-08-28T08:49:33Z",
+  "requester_id": 158002282328,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007689866,
+      "body_text": "We have sent you multiple emails. Please check your spam folder.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-28T08:49:33Z",
+      "updated_at": "2025-08-28T08:49:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

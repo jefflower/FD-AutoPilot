@@ -1,0 +1,24 @@
+{
+  "id": 4164,
+  "subject": "Pedals suddenly show up as disconnected",
+  "description_text": "Hello,\r\nI have new plus x pedals. They worked normally for 1 race, then suddenly\r\nthey no longer connect on the software, it shows up as disconnected all the\r\ntime no matter what I do and is not recognized my the simsons software or\r\nthe game. I tried changing usb ports, plugging it into a 3.0 port with no\r\nUSB hubs. I made the pore cable is working, there id a green LED lighting\r\nup. I also updated the software and firware to latest versions and the\r\ngames are also updated (acc and LMU) But it still show up as disconnected\r\nin red box on the sismons software. Please help, I've been trying to\r\ntroubleshoot for days with no luck.\r\n\r\nBaraa Amir\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-26T17:49:27Z",
+  "updated_at": "2025-09-27T02:23:57Z",
+  "requester_id": 158005030973,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009360605,
+      "body_text": "Hi baraa amir,     Please follow the steps below:  1. Enter Firmware Upgrade Mode    Press and hold the “Upgrade” button on the PlusX control box;    While holding the button, reinsert the USB cable;    Release the button once the software shows “Entered Firmware Upgrade Mode”.    2. Manually Restore Firmware    In the software, go to: Settings → Update → Manual Firmware Update;    Select the firmware file path: pedals-firmware-pedals-plusx.sfu;    Wait for the upgrade to complete, then reinsert the USB and test the pedals again.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-27T02:23:57Z",
+      "updated_at": "2025-09-27T02:23:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

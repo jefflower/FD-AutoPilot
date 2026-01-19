@@ -1,0 +1,34 @@
+{
+  "id": 10952,
+  "subject": "Request for returning the order SSN5831",
+  "description_text": "As I have notified your team multiple times to cancel the order BEFORE the item being shipped, but your team still shipped out the item.\r\n\r\n\r\nSo I request to return the item. I will NOT open the box, I will NOT accept the item, I will NOT accept any return fee related to this item, and I will NOT accept or pay any fee for ANY tariff related to this item.\r\n\r\n\r\nFurther, please prepare the return shipping label for the item.\r\n\r\n\r\nI will return it back whenever the item is being delivered.\r\n\r\n\r\nThanks.\r\n",
+  "status": 2,
+  "priority": 4,
+  "created_at": "2026-01-15T05:48:24Z",
+  "updated_at": "2026-01-17T08:56:42Z",
+  "requester_id": 158009018592,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017251502,
+      "body_text": "Hi chenqu,     We apologize, but we can only accept order cancellations within 12 hours of placing the order.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T09:18:12Z",
+      "updated_at": "2026-01-16T09:18:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017271087,
+      "body_text": "1. You have clearly indicated that you were out of stock when I made the order, but there is NO ANY INDICATOR from your web site to bring that out. If I know it is not in stock, I will not buy this item.\r\n\r\n\r\n2. You issued a tracking number as soon as I made the order, within 12 hours, on 1/6, which implies shipment initiation, and indicated everything should be ready and the item MUST BE IN STOCK AT THE MOMENT, but you have confirmed that is not the case from your reply.\r\n\r\n\r\n3. When I first time contact you on 1/9&nbsp;to query the situation and CLEARLY REQUESTED CANCELLATION IF THE ITEM WAS NOT BEING ACTUALLY SHIPPED&nbsp;on 1/10. I attached all the conversations/tickets that I made related to it.\r\n\r\n\r\n4. You first replied with all my inquiries on 1/14, clearly indicating the item is OUT OF STOCK, which means the tracking information that you made on 1/6 is a MISREPRESENTATION AND MISDIRECTIONAL&nbsp;behavior.\r\n\r\n\r\n5. Even though I requested the order cancellation MUCH PRIOR&nbsp;to when you actually shipped out the item, you still shipped out the item on 1/14,&nbsp;which is UNSOLICITED OR FORCED delivery after the refund/cancellation request.\r\n\r\n\r\n6. Until now, on 1/16, you are still NOT trying to resolve the problem, still trying to point the finger to the customer, and PUSH BACK to the customer, which is totally unaccepatable.\r\n\r\n\r\n7. If you really want to resolve the problem, please prepare the return shipping label for the item. I will return it back whenever the item is being delivered. And refund me after the return.\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n---Original---\r\n",
+      "user_id": 158009018592,
+      "created_at": "2026-01-16T15:07:21Z",
+      "updated_at": "2026-01-16T15:07:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "id": 6223,
+  "subject": "Shipping to Sweden",
+  "description_text": "Hello, i am ordering a simsonn pedal set to Sweden, but i just had some questions before ordering.\r\n\r\nWhere do you ship from if ordering to Sweden?\r\n\r\nIs Vat included in the price?\r\n\r\nWill there be any shipping taxes or extra costs when ordering from simsonn to Sweden?\r\n\r\n/Gustav\r\n",
+  "status": 2,
+  "priority": 1,
+  "created_at": "2025-11-16T18:58:17Z",
+  "updated_at": "2025-12-10T22:41:09Z",
+  "requester_id": 158007140434,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012439254,
+      "body_text": "Hi Gustav Wessbladh,    We ship from our German warehouse, so no customs duties are required. Please don't worry.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-17T07:45:22Z",
+      "updated_at": "2025-11-17T07:45:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012774817,
+      "body_text": "Hello!\r\nI have just purchased a set of Simsonn Plus X P2-H2 pedals from you, and in the previous mail, you specifically told me that you would ship the products from your German warehouse, and that there would be no import tax.\r\n\r\nBut when i now check the order #SSN3709 it says that the product is being shipped from china. \r\nIf i were to get any tax on this order i absolutely expect you to cover any import tax on this product, would this be correct??\r\nBecause you specifically told me the would be NO IMPORT TAX, and that it would be shipped from GERMANY…\r\n\r\n> ",
+      "user_id": 158007140434,
+      "created_at": "2025-11-23T12:42:17Z",
+      "updated_at": "2025-11-23T12:42:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013004205,
+      "body_text": "Hi Gustav Wessbladh,    We apologize, but the item is currently out of stock at our German warehouse. We will cover part of the costs for you. Please provide me with your customs invoice. We sincerely apologize for the inconvenience!",
+      "user_id": 158001343601,
+      "created_at": "2025-11-27T11:40:23Z",
+      "updated_at": "2025-11-27T11:40:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013398244,
+      "body_text": "Hello, i just got informed that i had to pay 446 sek as customs. I payed om UPS website, and i have the invoice pdf in this mail.\r\nDo you need a card number to send it to, or can you just send it to the cars that was used on my order #SSN3709.\r\nThe best would be if you could send it to the card i used for my order.\r\n\r\nWhen you have sent the compensation van you please mail me back and confirm that you have sent it.\r\n\r\nAnd sorry if it is in Swedish, UPS did not let me change to English. So you will have to translate.\r\n\r\nBest regards Gustav\r\n\r\n\r\n> ",
+      "user_id": 158007140434,
+      "created_at": "2025-12-04T15:57:26Z",
+      "updated_at": "2025-12-04T15:57:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013497379,
+      "body_text": "Hi Gustav Wessbladh,    Please make the payment first and send me the receipt after the payment is successful. I will refund you.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-05T11:44:39Z",
+      "updated_at": "2025-12-05T11:44:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013520384,
+      "body_text": "I have already paid it.\r\nThat was the recipt they gave me.\r\nAnd they also gave me a downloadable file. This one..\r\nBut yes i have already paid it.\r\n\r\n\r\n\r\n> ",
+      "user_id": 158007140434,
+      "created_at": "2025-12-05T13:43:08Z",
+      "updated_at": "2025-12-05T13:43:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014293061,
+      "body_text": "Hello!\r\nI have not received the compensation yet.\r\nI have paid the custom’s, and have sent you the receipt file.\r\nDo you need any card information on where to sent the money, or can you use the card on my order #SSN3709.\r\nPlease inform me on how we solve this as soon as possible.\r\n\r\n\r\n> ",
+      "user_id": 158007140434,
+      "created_at": "2025-12-10T22:41:09Z",
+      "updated_at": "2025-12-10T22:41:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

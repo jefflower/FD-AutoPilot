@@ -1,0 +1,24 @@
+{
+  "id": 4054,
+  "subject": "Pro X Pedal Firmware Update Issue",
+  "description_text": "Hi,\r\n\r\nSimsonn pedal suddenly stopped working. Simsonn manager indicated that there are firmware update for the pedals. I tried to update but the update stuck at 0%, however the status said update complete. I tried to close and reopen the simsonn manager but the same thing happen. Now the pedal is not detected and unable to be calibrated. See screenshots attached and please your urgent support. Thank you.\r\n\r\nRef: Order #SSN1467\r\n\r\nThank you\r\nPandu\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-23T05:27:00Z",
+  "updated_at": "2025-09-24T14:59:44Z",
+  "requester_id": 158001248450,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009235553,
+      "body_text": "Hi Pandu Wirawan,    Please press the Upgrade button on the control box and reconnect the USB. The software should then indicate that it has entered Firmware Upgrade Mode. If it still shows “Not Connected,” the issue may be due to insufficient USB power. In this case, please connect the USB cable to a USB 3.0 port (blue) on the back of your PC, and avoid using USB hubs.  Once the above steps are completed, navigate to: Settings → Update → Manual Firmware Update → Select the file pedals-firmware-pedals-prox.sfu After the update is finished, check again to confirm whether the device connects properly.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-24T14:59:44Z",
+      "updated_at": "2025-09-24T14:59:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": 7294,
+  "subject": "Simsonn Pro Pedals With Plus X Control Box Not Recognized in Games",
+  "description_text": "My pedals are not recognized as an option to bind in games and there is no response when a pedal is pressed.\nTo work with my Simsonn Pro Pedals, I purchased the Plus X Control Box, power supply, and 2 VAM Pro Linear Motors received 22 November 2025. After downloading and installing Simsonn Manager 2.1.2., my pedals and VAM Pro motors calibrate and work just fine in Simsonn Manager and are also listed in Windows USB Game Control Panel although without the option to test. But when I tried to assign the pedals in Assetto Corsa and Assetto Corsa Competizione, they did not display and there was no response to the pedals being pressed.\nI appreciate your assistance in this matter.\nV/r,\nJames",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-02T23:40:09Z",
+  "updated_at": "2025-12-08T09:36:46Z",
+  "requester_id": 158007505605,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013803311,
+      "body_text": "Hi James jones, Both AC and ACC are popular racing games and support binding your pedals. When testing the pedals in SIMSONN Manager, do the blue progress bars for all three pedals show the full 0%–100% travel range?",
+      "user_id": 158000445778,
+      "created_at": "2025-12-06T07:49:38Z",
+      "updated_at": "2025-12-06T07:49:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014085499,
+      "body_text": "I disconnected the pedals and power adapter from the controller. Once I reconnected everything the pedals were recognized and functioned properly in the games.",
+      "user_id": 158007505605,
+      "created_at": "2025-12-07T06:24:38Z",
+      "updated_at": "2025-12-07T06:24:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

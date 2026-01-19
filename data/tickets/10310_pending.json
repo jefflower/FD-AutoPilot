@@ -1,0 +1,74 @@
+{
+  "id": 10310,
+  "subject": "Problème de rod hydraulique",
+  "description_text": "Bonjour,\r\n\r\nj'ai un problème avec mon rod qui n'est pas fluide du tout. Sur les trois quart de la course il n'y a aucune résistance et le retour \"gratte\" beaucoup.\r\nMerci pour votre aide.\r\n\r\nFacture n° SSN4200\r\nProduit : accélérateur Plus X\r\nVidéo du phénomène :  ​[https://res.public.onecdn.static.microsoft/assets/fluentui-resources/1.1.0/app-min/assets/item-types/24_1.5x/video.png]20260108_144237.mp4<https://1drv.ms/v/c/890450ae93c7d46d/IQAL1CN3zsIaTKsVWz3F6sPEAdQ-P6bU8Plo86x20fQjff4>​\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-08T13:46:17Z",
+  "updated_at": "2026-01-13T02:43:09Z",
+  "requester_id": 158008982147,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016460678,
+      "body_text": "Hi José ternullo,  Please upload the video via Google Drive and set the permission to viewable. We’re unable to access OneDrive links. Additionally, you can apply some lubricant to the metal rod of the hydraulic damper to see if that resolves the issue. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-09T02:28:12Z",
+      "updated_at": "2026-01-09T02:28:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016507340,
+      "body_text": "Hi,\r\nvoici le lien google drive.\r\n\r\nhttps://drive.google.com/file/d/1lli5ocsaSmuxck1OosebmUdSS_dZ0Iez/view?usp=drive_link\r\n________________________________\r\nDe : service@simsonn.com ",
+      "user_id": 158008982147,
+      "created_at": "2026-01-09T08:51:08Z",
+      "updated_at": "2026-01-09T08:51:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016649619,
+      "body_text": "Hi José ternullo,  Please make sure the video’s viewing permission is set to accessible. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-10T02:34:38Z",
+      "updated_at": "2026-01-10T02:34:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016694490,
+      "body_text": "Hi\r\nc'est bon l'accès est ouvert. Le bruit de liquide est très important aussi.\r\ncordialement\r\n________________________________\r\nDe : service@simsonn.com ",
+      "user_id": 158008982147,
+      "created_at": "2026-01-10T09:02:00Z",
+      "updated_at": "2026-01-10T09:02:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016762260,
+      "body_text": "Hi José ternullo,  This hydraulic test must be performed with the cylinder body facing upward and the metal rod facing downward. Otherwise, air may enter the system during movement, resulting in a dead stroke, which can affect the test results and performance. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T01:24:14Z",
+      "updated_at": "2026-01-11T01:24:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016852366,
+      "body_text": "Hi,\r\nah d'accord merci beaucoup pour l'explication. Mes pédales sont inversés donc je vais devoir enlever le rod et perdre ses bénéfices, tant pis.\r\n\r\nBien cordialement,\r\nJosé\r\n\r\n[cid:d6b8beae-c15f-4460-86f4-b5fd7fb86dea]\r\n\r\n\r\n________________________________\r\nDe : service@simsonn.com ",
+      "user_id": 158008982147,
+      "created_at": "2026-01-12T10:25:45Z",
+      "updated_at": "2026-01-12T10:25:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

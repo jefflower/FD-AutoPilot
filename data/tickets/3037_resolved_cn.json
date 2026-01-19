@@ -1,0 +1,75 @@
+{
+  "id": 3037,
+  "subject": "Simsonn Pro X Ultra 踏板在未按下的情况下注册 RX+ 或 RX- 信号",
+  "description_text": "你好，今天我注意到在尝试重新校准我的 Simsonn Pro X Ultra 踏板时，当我在游戏中尝试分配一个按钮时，它在没有任何按压的情况下注册了 RX+ 或 RX- 作为输入。\n\n当我在 Simsonn 软件中检查时，一切似乎都正常，没有称重传感器波动，什么都没有。我尝试了给设备接地并使用单独的电源，但似乎都没有帮助，还有其他我可以尝试的吗？\n\n谢谢，\n\nCosmin。",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-08-23T11:59:08Z",
+  "updated_at": "2025-08-27T06:04:49Z",
+  "requester_id": 158001949116,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004502036,
+      "body_text": "嗨 Anichitei Cosmin，抱歉延迟了，我们正在等待德国仓库发货，然后再运送给您，以避免关税。您的包裹已发货，预计将于 13 号左右送达。https://t.17track.net/en#nums=CE326618434DE",
+      "user_id": 158001343601,
+      "created_at": "2025-07-10T10:37:35Z",
+      "updated_at": "2025-07-10T10:37:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007440852,
+      "body_text": "嗨 Anichitei Cosmin，这是一个配置问题。请使用 2.1.1 版本，然后点击界面上的“恢复”，之后再点击“保存”。这将禁用 Rx 轴。之后，请再次测试以查看问题是否已解决。\nhttps://drive.google.com/file/d/1UPkeOHREyALtCtNmL87a2WnUDZV0Gx_b/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-08-25T03:06:28Z",
+      "updated_at": "2025-08-25T03:06:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007586768,
+      "body_text": "真诚地感谢您，这解决了一切。我非常非常感谢您的答复和持续的回复。\n\n再次感谢您，\n\nCosmin。\n\n2025 年 8 月 25 日星期一 06:06，support@simsonn.com 发送",
+      "user_id": 158001949116,
+      "created_at": "2025-08-26T22:33:36Z",
+      "updated_at": "2025-08-26T22:33:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007590426,
+      "body_text": "ID 为 1336 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-27T03:22:46Z",
+      "updated_at": "2025-08-27T03:22:46Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158007590427,
+      "body_text": "合并来自工单1336\n      主题: 订单没有更新\n      描述: 您好，\n 我很抱歉打扰，我于 7 月 1 日下了一个订单（订单号 1899），但至今未收到任何更新。\n 订单如何获取更新？抱歉，这是我第一次从您这里购买。\n\n 谢谢，\n\n Cosmin",
+      "user_id": 158000445778,
+      "created_at": "2025-08-27T03:22:46Z",
+      "updated_at": "2025-08-27T03:22:46Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158007593416,
+      "body_text": "我的所有问题都已得到解答。",
+      "user_id": 158001949116,
+      "created_at": "2025-08-27T06:04:49Z",
+      "updated_at": "2025-08-27T06:04:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

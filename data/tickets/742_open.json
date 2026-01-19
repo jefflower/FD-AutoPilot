@@ -1,0 +1,164 @@
+{
+  "id": 742,
+  "subject": "Looking to cancel order #SSN1784",
+  "description_text": "Hello Simsonn team I’m looking to get this order cancelled before you ship\r\nthis order out. I’ve sent another email a few days ago and never got\r\na response. Thank you.\r\n\r\n",
+  "status": 2,
+  "priority": 1,
+  "created_at": "2025-06-23T17:26:44Z",
+  "updated_at": "2025-08-20T13:59:48Z",
+  "requester_id": 158001743726,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003679510,
+      "body_text": "Hi Chris Kiatsirikun,  ​I will check on Monday whether your order is already in transit. If it has been shipped and handed over to the courier, we will not be able to cancel it, as the shipping fee has already been paid, and requesting an interception would incur a high double shipping cost. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T01:27:22Z",
+      "updated_at": "2025-06-22T01:27:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003741485,
+      "body_text": "ID 为 690 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-24T02:05:36Z",
+      "updated_at": "2025-06-24T02:05:36Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158003741486,
+      "body_text": "合并来自工单690  \n      主题: Cancel order Order #SSN1784  \n      描述:  Hello Simsonn team. \n I’m looking to get Order #SSN1784 cancelled and refunded.  \n A buddy of mine sold me his simsonn pedals he no longer needs. Thank you ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-24T02:05:37Z",
+      "updated_at": "2025-06-24T02:05:37Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158003830324,
+      "body_text": "What do I have to do to get this order refunded then?",
+      "user_id": 158001743726,
+      "created_at": "2025-06-24T18:54:55Z",
+      "updated_at": "2025-06-24T18:54:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158003835779,
+      "body_text": "Hi Chris Kiatsirikun,    If you really don't need this product, you can return the goods to us after you receive it (the shipping cost needs to be borne by the receiving party), and we will refund your payment for you after we receive it.",
+      "user_id": 158001343601,
+      "created_at": "2025-06-25T10:30:00Z",
+      "updated_at": "2025-06-25T10:30:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004221541,
+      "body_text": "Has this product shipped out? Been looking at the tracking number and UPS is saying that they have not received any package from you guys yet. I’m just looking to get the order canceled before it gets shipped out and having to deal with sending it back to you guys ",
+      "user_id": 158001743726,
+      "created_at": "2025-06-28T20:23:03Z",
+      "updated_at": "2025-06-28T20:23:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158004356192,
+      "body_text": "Hi Chris Kiatsirikun,  Sorry for the delay, your parcel was shipped from China and is now in the US Customs, UPS will pick it up after the customs clearance is completed and there will be a logistics update only then, thank you for your understanding. Your package is expected to be delivered on or around the 4th.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-01T10:50:59Z",
+      "updated_at": "2025-07-01T10:50:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004448830,
+      "body_text": "I will receive the package in a few days what is a good address I can send the package back too?",
+      "user_id": 158001743726,
+      "created_at": "2025-07-05T20:23:45Z",
+      "updated_at": "2025-07-05T20:23:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158004448831,
+      "body_text": "I will receive the package in a few days what is a good address I can send the package back too?",
+      "user_id": 158001743726,
+      "created_at": "2025-07-05T20:23:46Z",
+      "updated_at": "2025-07-05T20:23:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158004486308,
+      "body_text": "Hi Chris Kiatsirikun,  We apologize for the delay, we are willing to refund you the shipping fee paid of $9.90 and refund $50 as compensation, thank you for your understanding.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-09T06:34:00Z",
+      "updated_at": "2025-07-09T06:34:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004496050,
+      "body_text": "How much would shipping be to have this order sent back to you guys for a refund?",
+      "user_id": 158001743726,
+      "created_at": "2025-07-09T20:06:33Z",
+      "updated_at": "2025-07-09T20:06:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158004501497,
+      "body_text": "Hi Chris Kiatsirikun,    This can be very expensive, you can contact the post office to ask for a price and let us know, this is our US warehouse address and it will be cheaper to send it here.  CAMZ Chino Warehouse  Contact: Greg -MZ(1330006)   Phone: 480 387 3114   ADD: 14210 Telephone Ave, Chino, CA 91710 USA,Dock 4-10",
+      "user_id": 158001343601,
+      "created_at": "2025-07-10T08:28:39Z",
+      "updated_at": "2025-07-10T08:28:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005791423,
+      "body_text": "Hi Chris Kiatsirikun,    I noticed that you initiated a chargeback and it was successful. Please return your product to our warehouse.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-30T02:14:07Z",
+      "updated_at": "2025-07-30T02:14:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006740507,
+      "body_text": "Hi Chris Kiatsirikun,    I noticed that you initiated a chargeback and it was successful. Please return your product to our warehouse.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-12T10:37:44Z",
+      "updated_at": "2025-08-12T10:37:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007175501,
+      "body_text": "Hey sorry about the late reply. I just got back from a family vacation. I will have the product shipped out asap. Is there where you want me to send the pedals too?  CAMZ Chino Warehouse  Contact: Greg -MZ(1330006)   Phone: 480 387 3114   ADD: 14210 Telephone Ave, Chino, CA 91710 USA,Dock 4-10",
+      "user_id": 158001743726,
+      "created_at": "2025-08-20T05:52:05Z",
+      "updated_at": "2025-08-20T05:52:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    }
+  ]
+}

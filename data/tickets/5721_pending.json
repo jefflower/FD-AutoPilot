@@ -1,0 +1,34 @@
+{
+  "id": 5721,
+  "subject": "Throttle hydraulic damper issue #SSN3016",
+  "description_text": "Hello Simsonn Support,\r\n\r\nI’m getting in touch regarding the damper on my throttle. No matter which\r\nhole I use with the built-in height adjustment, I can’t seem to fix the\r\nissue. I’ve tried both springs in the throttle and adjusted the pre-load,\r\nbut it still has a sticky feeling.\r\n\r\nIf I remove the damper, it feels *much* better — but I feel like I’m\r\nmissing out on something I’ve paid for. I purchased the pedals on 19th\r\nOctober and the issue has been there since day one, so I suspect the damper\r\nmight be defective. Would you be able to send out a replacement to resolve\r\nthis?\r\n\r\nI can provide photos or a short video if that helps, and I’d really\r\nappreciate it if this could be processed soon, as I’m unable to use the\r\nthrottle comfortably at the moment. Although I'm going to find it hard to\r\nconvey *feel* over video.\r\n\r\nOrder #SSN3016\r\n\r\nKind regards,\r\nLewis\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-06T10:48:33Z",
+  "updated_at": "2025-11-11T11:27:04Z",
+  "requester_id": 158006698246,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011914760,
+      "body_text": "Hi Lewis Travis,    Could you provide a video demonstrating the hydraulic rod's compression and rebound? Please don't worry—if there's an issue with the hydraulic rod, we'll send you a replacement.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-07T09:13:37Z",
+      "updated_at": "2025-11-07T09:13:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012108051,
+      "body_text": "Hi,\r\n\r\nI've since removed the damper from the throttle and the brake and both feel\r\nmuch better. The stickiness has disappeared, however I feel like I've paid\r\nfor something I've not got. Is it possible to return the dampers for a\r\nrefund?\r\n\r\nThanks,\r\nLewis\r\n\r\nOn Fri, 7 Nov 2025 at 09:13, service@simsonn.com ",
+      "user_id": 158006698246,
+      "created_at": "2025-11-11T09:42:44Z",
+      "updated_at": "2025-11-11T09:42:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

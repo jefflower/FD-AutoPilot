@@ -1,0 +1,74 @@
+{
+  "id": 8940,
+  "subject": "Throttle Pedal Hardware Failure – Replacement Request (eBay order #06-13134-89762)",
+  "description_text": "Hello SIMSONN Support Team,\r\n\r\n\r\nI want to start by saying that I really love these pedals when they are\r\nworking properly. The Pro X pedals have been excellent for my sim racing,\r\nand I’ve been very happy with them overall—until this recent issue.\r\n\r\n\r\nI’m reaching out regarding a confirmed hardware failure with the throttle\r\npedal from the order below.\r\n\r\n------------------------------\r\n\r\nOrder Information\r\n\r\n\r\n   -\r\n\r\n   eBay Order Number: 06-13134-89762\r\n   -\r\n\r\n   Purchase Date: May 27, 2025\r\n   -\r\n\r\n   Delivered: June 4, 2025\r\n   -\r\n\r\n   Seller: simsonn-official-store\r\n   -\r\n\r\n   Item: SIMSONN New Upgraded PRO X Pedals\r\n\r\n------------------------------\r\n\r\nConfirmed Hardware Issue (Photo Attached)\r\n\r\n\r\nThe throttle pedal developed a mechanical failure that directly affects\r\nsensor input:\r\n\r\n\r\n   -\r\n\r\n   The damper / linkage piston became physically disconnected from the rear\r\n   coupling\r\n   -\r\n\r\n   This caused the pedal to move mechanically without moving the\r\n   magnet/sensor correctly\r\n   -\r\n\r\n   As a result, the first portion of pedal travel registers 0% input\r\n   -\r\n\r\n   Input then jumps suddenly around ~40–50%, making smooth throttle\r\n   modulation impossible\r\n\r\n\r\nI have attached a photo clearly showing the disconnected hardware, which\r\nconfirms this is not a software or calibration issue.\r\n\r\n------------------------------\r\n\r\nControl Test (Clutch Pedal Swap – Sensor Verified)\r\n\r\n\r\nTo further confirm this is a throttle-specific mechanical issue, I\r\nperformed a control test:\r\n\r\n\r\n   -\r\n\r\n   I temporarily swapped the clutch linkage onto the throttle\r\n   -\r\n\r\n   The clutch sensor immediately registered clean 1% input\r\n   -\r\n\r\n   This confirms the sensor electronics and calibration are functioning\r\n   correctly\r\n   -\r\n\r\n   The issue is isolated to the throttle’s mechanical linkage / damper\r\n   assembly\r\n\r\n\r\nThis behavior is also visible in the SIMSONN calibration tool, where raw\r\nthrottle input remains at 0% until the pedal is already significantly\r\ndepressed.\r\n\r\n------------------------------\r\n\r\nTemporary Reassembly (Not a Permanent Fix)\r\n\r\n\r\nI was able to temporarily reassemble the linkage to make the pedal usable\r\nagain, but:\r\n\r\n\r\n   -\r\n\r\n   Throttle response is no longer linear\r\n   -\r\n\r\n   Fine throttle control is unreliable\r\n   -\r\n\r\n   This creates incorrect muscle memory and inconsistent driving behavior\r\n\r\n\r\nThe pedal previously registered 1–3% input accurately, which is no longer\r\npossible.\r\n\r\n------------------------------\r\n\r\nRequest\r\n\r\n\r\nBecause this is a confirmed mechanical hardware failure, I am requesting a\r\nreplacement throttle pedal unit.\r\n\r\n\r\nI am happy to provide:\r\n\r\n\r\n   -\r\n\r\n   Additional photos if needed\r\n   -\r\n\r\n   Any serial numbers or markings\r\n   -\r\n\r\n   Any further diagnostics you request\r\n\r\n\r\nReplacement Shipping Address:\r\n\r\nGeovanny Alvarenga\r\n\r\n20 Windsor Rd, Left side of house private door\r\n\r\nStaten Island, NY 10314-4516\r\n\r\nUnited States\r\n\r\n------------------------------\r\n\r\nI truly enjoy these pedals when functioning correctly and would like to\r\ncontinue using SIMSONN products. I appreciate your help and look forward to\r\nresolving this.\r\n\r\n\r\nKind regards,\r\n\r\nGeovanny Alvarenga\r\n\r\n\r\nP.s. I also sent message via eBay store\r\n\r\nImage attached shows the dampening rod completely snapped off and even\r\nafter screwing or back on the first half of pedal does nothing now\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-23T02:29:53Z",
+  "updated_at": "2026-01-01T15:46:07Z",
+  "requester_id": 158008316141,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014952887,
+      "body_text": "Hi Geovanny. alvarenga,     Hello, for this throttle component, you can first try removing the one-way hydraulic damper. Both ends of the damper are fixed with M6 screws. Please check whether the screws are loose, tighten the rod properly, and then reinstall it. In addition, the sensor may require an offset adjustment, which allows the initial pressure signal to be reset to around 0%. This ensures that the throttle outputs a signal immediately when you start pressing the pedal. After adjusting the offset, please recalibrate the pedal. Please try the above steps first. If the issue cannot be resolved, the sensor may be damaged, and we can send you a replacement throttle sensor. If the one-way hydraulic damper can be reinstalled but does not function properly, we can also send a replacement damper. In most cases, this issue is simply caused by loose screws. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-23T03:29:42Z",
+      "updated_at": "2025-12-23T03:29:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014953739,
+      "body_text": "Hello,\r\n\r\nThank you for the guidance. I want to clarify a few important points.\r\n\r\nI have consistently inspected and tightened all screws and fasteners on the\r\npedals as part of regular maintenance. The throttle failure was not caused\r\nby loose screws. The hydraulic linkage disengaged despite proper\r\ninstallation and ongoing checks.\r\n\r\nI have already removed and reinstalled the damper, verified alignment,\r\ntightened all components, and recalibrated the throttle. The issue\r\npersists: the throttle does not register input until deep into pedal\r\ntravel, making precise modulation impossible.\r\n\r\nAdditionally, I am currently recovering from major heart surgery, and I am\r\nnot physically able to continue disassembling or rebuilding pedal\r\ncomponents or crawling under the rig. Repeated mechanical work is not\r\nfeasible or safe for me at this time.\r\n\r\nBecause of this, I am requesting a complete replacement throttle pedal\r\nassembly, not individual internal parts. A full replacement is the only\r\npractical way to resolve this issue without further disassembly.\r\n\r\nPlease let me know how we can proceed with sending a replacement throttle\r\npedal.\r\n\r\nThank you for your understanding.\r\n\r\nBest regards,\r\n\r\nGeovanny\r\n\r\n\r\nOn Mon, Dec 22, 2025 at 10:29 PM service@simsonn.com ",
+      "user_id": 158008316141,
+      "created_at": "2025-12-23T04:17:15Z",
+      "updated_at": "2025-12-23T04:17:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014954883,
+      "body_text": "Hi Geovanny. alvarenga,     If the throttle requires a deep press before it starts outputting a signal, this is usually caused by changes in the mechanical structure or spring preload. Please follow the instructions shown in the screenshot, click the offset button to reset the initial signal, and then recalibrate the pedal. After this, the pedal should output the signal immediately when pressed.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-23T05:42:55Z",
+      "updated_at": "2025-12-23T05:42:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015349078,
+      "body_text": "Hello Simsonn Support,\r\n\r\n\r\nI wanted to follow up regarding the throttle issue.\r\n\r\n\r\nThe pedal offset / reset position adjustment you suggested did resolve the\r\nfunctional problem, and the throttle is now registering correctly again.\r\nThank you for that guidance.\r\n\r\n\r\nThat said, I want to be clear that the fact this issue occurred at all is\r\nstill concerning to me, especially on a relatively new pedal set.\r\n\r\n\r\nAdditionally, during the adjustment process, I noticed that one of the\r\nblack plastic bushings/spacers on the throttle spring is now missing (the\r\nplastic piece that sits on the spring/rod to center it). I’ve attached a\r\nphoto showing the area — the part is present on one side but missing on the\r\nother.\r\n\r\n\r\nCould you please:\r\n\r\n\r\n   1.\r\n\r\n   Confirm the exact name and size/spec of this plastic spring bushing, and\r\n   2.\r\n\r\n   Let me know whether you can send a replacement, or advise how it should\r\n   be sourced?\r\n\r\n\r\nI want to make sure the throttle assembly remains mechanically correct and\r\ndoesn’t develop wear or instability over time.\r\n\r\n\r\nThank you\r\n\r\nOn Tue, Dec 23, 2025 at 12:43 AM service@simsonn.com ",
+      "user_id": 158008316141,
+      "created_at": "2026-01-01T02:28:19Z",
+      "updated_at": "2026-01-01T02:28:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015349089,
+      "body_text": "These black things are missing on throttle and that is what I meant that I\r\nneed to get the right sizes\r\n\r\n\r\n\r\n",
+      "user_id": 158008316141,
+      "created_at": "2026-01-01T02:29:17Z",
+      "updated_at": "2026-01-01T02:29:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015366967,
+      "body_text": "Hi Geovanny. alvarenga,  Could you take a clearer photo? ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-01T15:46:05Z",
+      "updated_at": "2026-01-01T15:46:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

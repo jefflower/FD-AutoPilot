@@ -1,0 +1,34 @@
+{
+  "id": 873,
+  "subject": "Wrong adress",
+  "description_text": "Hi my last order #SSN1846\r\n\r\ni was putting the wrong adress on that, it gonna be shipping to\r\n\r\n\r\n\r\nJoakim Linné\r\nCentrumplan 4A\r\n333 31 Smålandsstenar\r\nSweden\r\n+46 76 813 29 82\r\n\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-06-26T11:42:04Z",
+  "updated_at": "2025-07-01T09:41:42Z",
+  "requester_id": 158001342279,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004214993,
+      "body_text": "Hi Joakim Linné,  I will contact our sales team tomorrow to assist you with this. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-27T15:02:26Z",
+      "updated_at": "2025-06-27T15:02:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004355945,
+      "body_text": "Hi Joakim Linné,    We apologize that we did not succeed in changing your address because the logistics company did not receive our address change request in time over the weekend. Can you receive the parcel at the address you filled in?   If not, could you please contact Sweden Post to change the address when you hand it over to them at +46771333310  We will send you a reminder when the parcel is handed over to them.   Your two logistic order numbers:   LR201450165NL   LR201450179NL",
+      "user_id": 158001343601,
+      "created_at": "2025-07-01T09:41:42Z",
+      "updated_at": "2025-07-01T09:41:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

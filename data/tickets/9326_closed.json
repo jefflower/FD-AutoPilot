@@ -1,0 +1,24 @@
+{
+  "id": 9326,
+  "subject": "Cancel Delivery",
+  "description_text": "Evening,\r\n\r\nYesterday I ordered the the Plus X 2-Pedal set without a baseplate. After\r\nsome thinking, I've decided I do not need this and would like to cancel my\r\norder.\r\n\r\nMy order number is Order #SSN5356 and the email attached to my order is the\r\nsame as the one I am using right now.\r\n\r\nThank you,\r\nGriffin\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-12-27T22:28:10Z",
+  "updated_at": "2026-01-07T07:00:15Z",
+  "requester_id": 158008797034,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016079402,
+      "body_text": "此工单已关闭并合并到工单 10025 中",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T07:00:15Z",
+      "updated_at": "2026-01-07T07:00:15Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

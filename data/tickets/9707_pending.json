@@ -1,0 +1,24 @@
+{
+  "id": 9707,
+  "subject": "",
+  "description_text": "Hi,\r\n​I would like to know if the brake pedal in the Plus X model is a load cell\r\nor not.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-01T04:15:58Z",
+  "updated_at": "2026-01-01T14:57:07Z",
+  "requester_id": 158008838242,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015365738,
+      "body_text": "Hi RYAN,   Both PlusX and ProX Ultra use load cell (pressure) sensors. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-01T14:57:07Z",
+      "updated_at": "2026-01-01T14:57:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

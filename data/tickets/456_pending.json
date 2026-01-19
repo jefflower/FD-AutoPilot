@@ -1,0 +1,104 @@
+{
+  "id": 456,
+  "subject": "Amazon Listing",
+  "description_text": "Hi, I have a question about the amazon listing it is very confusing to me.\r\nWhich one is the latest one plus X version. Because I want to make sure im\r\ngetting the latest plus x version. Can you link me that and with the\r\ndiscount too?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-15T07:25:59Z",
+  "updated_at": "2025-07-12T15:04:24Z",
+  "requester_id": 158001542816,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003225559,
+      "body_text": "Hi Natsu Dragneel,     Hello, this is our latest PlusX pedal, which supports the VAM motor. Please note that the motor and power supply need to be purchased separately.   https://www.simsonn.com/products/simsonn-pro-plus-x-pedals     https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor",
+      "user_id": 158000445778,
+      "created_at": "2025-06-16T02:51:30Z",
+      "updated_at": "2025-06-16T02:51:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003225575,
+      "body_text": "I mean for amazon link? because your amazon listing is kinda confusing.. so\r\nwhich ASIN number is for the latest one?\r\n\r\nOn Sun, Jun 15, 2025 at 7:51 PM support@simsonn.com ",
+      "user_id": 158001542816,
+      "created_at": "2025-06-16T02:53:53Z",
+      "updated_at": "2025-06-16T02:53:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003248606,
+      "body_text": "Hi Natsu Dragneel,  Here is the link of the PLUS X version: https://www.amazon.com/dp/B0FBFZ6VLY",
+      "user_id": 158000445778,
+      "created_at": "2025-06-16T09:50:45Z",
+      "updated_at": "2025-06-16T09:50:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003291051,
+      "body_text": "why is that you have another listing for much cheaper but it also says\r\nplusx version? could it be you mean thats old version thats why cheaper?\r\n\r\nOn Mon, Jun 16, 2025 at 2:50 AM support@simsonn.com ",
+      "user_id": 158001542816,
+      "created_at": "2025-06-16T13:52:46Z",
+      "updated_at": "2025-06-16T13:52:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003300685,
+      "body_text": "Hi Natsu Dragneel,  Sorry for the confusion caused. We will check it. As long as the title says PLUS X, we will send you PLUS X. You can choose to buy it yourself. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-17T03:19:58Z",
+      "updated_at": "2025-06-17T03:19:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003300721,
+      "body_text": "Ok I just dont want to deal with returns cause by the wrong prduct thats\r\nwhy I asked, and btw can I ask the dffirence between the vam and vam pro?\r\n\r\nOn Mon, Jun 16, 2025 at 8:20 PM support@simsonn.com ",
+      "user_id": 158001542816,
+      "created_at": "2025-06-17T03:22:41Z",
+      "updated_at": "2025-06-17T03:22:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003683684,
+      "body_text": "Hi Natsu Dragneel,  The vibration strength of the VAM Pro has been improved, and the vibration frequencies are now more diverse, providing a more realistic feedback experience. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-23T05:26:11Z",
+      "updated_at": "2025-06-23T05:26:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004632011,
+      "body_text": "H I just purchased simpson vam, how do I use it works on simson manager but\r\nhow can I connect to the game?\r\n\r\n\r\nOn Sun, Jun 22, 2025 at 10:26 PM support@simsonn.com ",
+      "user_id": 158001542816,
+      "created_at": "2025-07-12T04:35:48Z",
+      "updated_at": "2025-07-12T04:35:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004689312,
+      "body_text": "Hi Natsu Dragneel,    Currently, version 2.0.8 supports telemetry for 8 games, and version 2.0.9 will expand support to over 10 mainstream titles.  However, SimHub has already released version 9.9.3, which includes compatibility with our pedals, so they are now fully functional in supported games.  As for usage recommendations: In Speed mode, excessive travel or continuous rotation may lead to motor damage. We suggest setting a reasonable speed range and limiting the vibration intensity to around 50%, with a maximum of 70%. Also, try to avoid prolonged continuous operation to extend the motor’s lifespan.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-12T15:04:24Z",
+      "updated_at": "2025-07-12T15:04:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

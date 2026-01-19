@@ -1,0 +1,104 @@
+{
+  "id": 915,
+  "subject": "Where is My Order",
+  "description_text": "Hello,\r\nI have placed this order  #SSN1666 from your official website more than 20 days back until now I have not received any item, can you please advise?\r\n\r\nThanks.\r\n\r\nGet Outlook for iOS<https://aka.ms/o0ukef>\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-06-27T11:19:12Z",
+  "updated_at": "2025-07-09T05:55:59Z",
+  "requester_id": 158001831516,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004214915,
+      "body_text": "Hi Ahmad Bahlawan,  We sincerely apologize—it's currently 10:49 PM. We'll investigate the issue first thing tomorrow during working hours and get back to you as soon as possible. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-27T14:50:39Z",
+      "updated_at": "2025-06-27T14:50:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004309101,
+      "body_text": "Hi Ahmad Bahlawan,    Sorry, we checked your logistic links and found an anomaly in one of them, we will investigate and deal with it for you immediately. The other package is expected to arrive tomorrow.  https://t.17track.net/en#nums=ALS01077921376,YT2516900708011063",
+      "user_id": 158001343601,
+      "created_at": "2025-06-30T11:04:56Z",
+      "updated_at": "2025-06-30T11:04:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004444735,
+      "body_text": "Hi,\r\n\r\nI have only received 1 haptic motor, what about the remaining items? It is more than a month now!!\r\n\r\nGet Outlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158001831516,
+      "created_at": "2025-07-04T11:53:28Z",
+      "updated_at": "2025-07-04T11:53:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445630,
+      "body_text": "Hi Ahmad Bahlawan,     Your parcel was returned for unknown reasons, we will find the fastest logistics to resend it for you, sorry for the inconvenience!",
+      "user_id": 158001343601,
+      "created_at": "2025-07-04T15:23:29Z",
+      "updated_at": "2025-07-04T15:23:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445722,
+      "body_text": "Hi,\r\n\r\nThat’s a problem, because I am traveling after 2 weeks, so are you able to send it and I receive it maximum by 17-July?\r\n\r\nGet Outlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158001831516,
+      "created_at": "2025-07-04T15:44:04Z",
+      "updated_at": "2025-07-04T15:44:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445761,
+      "body_text": "Hi Ahmad Bahlawan,    Yes, don't worry.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-04T15:49:31Z",
+      "updated_at": "2025-07-04T15:49:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004471106,
+      "body_text": "Hello,\r\n\r\nAny update please?\r\n\r\nGet Outlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158001831516,
+      "created_at": "2025-07-08T06:11:34Z",
+      "updated_at": "2025-07-08T06:11:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004485542,
+      "body_text": "Hi Ahmad Bahlawan,    We have reshipped your order via Fedex Express and expect it to arrive for you around the 14th.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-09T03:37:06Z",
+      "updated_at": "2025-07-09T03:37:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004486124,
+      "body_text": "Okay thanks let us see.\r\n\r\nGet Outlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158001831516,
+      "created_at": "2025-07-09T05:52:26Z",
+      "updated_at": "2025-07-09T05:52:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": 2163,
+  "subject": "Pro X Ultra pedals issue",
+  "description_text": "Hello Simsonn team,\n\nI recently purchased a set of Pro X Ultra pedals and I am very happy with\nitem construction and appearance\n\nHowever with F1 24 the pedals are being mapped to the same axis than the\nsteering wheel (Fanatec DD) so I’m not able to use the pedals with that\ngame.\n\nCouldn’t find any proper solution online so I was wondering if you could\nprovide any solution or workaround for this, in example change the mapping\nsetting for the pedals\n\nLooking forward to hearing from you and expecting to find a solution to be\nable to enjoy the pedals with my favaorite game\n\nThanks in advance\nRoberto\n\nSent from Gmail Mobile",
+  "status": 4,
+  "priority": 2,
+  "created_at": "2025-08-01T01:12:04Z",
+  "updated_at": "2025-08-05T13:15:23Z",
+  "requester_id": 158002485784,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005997913,
+      "body_text": "Hi Roberto Cotelo,  First, update the software to SIMSONN Manager 2.1.0 in the “Settings → Update” section. Then, in the Settings → Update interface, click Manual Firmware Update, navigate to the pedals-firmware folder → pedals folder, and select the proxultra.sfu file to update. This firmware will disable the 4th axis. After completing the update, please test again. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-01T10:47:07Z",
+      "updated_at": "2025-08-01T10:47:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006239223,
+      "body_text": "Thanks, it worked.\n\n\nOn Fri, Aug 1, 2025 at 6:47 AM service @simsonn.com ",
+      "user_id": 158002485784,
+      "created_at": "2025-08-05T03:07:50Z",
+      "updated_at": "2025-08-05T03:07:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006273246,
+      "body_text": "Customer support was very helpful and resolved my issue",
+      "user_id": 158002485784,
+      "created_at": "2025-08-05T13:15:23Z",
+      "updated_at": "2025-08-05T13:15:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

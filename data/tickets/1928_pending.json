@@ -1,0 +1,214 @@
+{
+  "id": 1928,
+  "subject": "Pro X Clutch Pedal Not Working",
+  "description_text": "Hello, I am having troubles connecting my Pro X clutch in the Simsonn Manager.  My throttle and brake pedals work and are connected just fine\r\n\r\nBrian A Poffenberger\r\nbn_poffenberger@outlook.com\r\n[cid:a41db7ef-287e-42e5-9416-4a568816609a]\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-07-26T03:45:11Z",
+  "updated_at": "2025-08-09T15:14:24Z",
+  "requester_id": 158002354383,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005550867,
+      "body_text": "Hi Brian Poffenberger,  Please update the firmware to the latest version first, then use the Offset function to reset the percentage to zero and run the test. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-26T03:53:03Z",
+      "updated_at": "2025-07-26T03:53:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005550941,
+      "body_text": "Okay, I did all of that and the clutch is still not registering\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158002354383,
+      "created_at": "2025-07-26T04:01:43Z",
+      "updated_at": "2025-07-26T04:01:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005550981,
+      "body_text": "Hi Brian Poffenberger,  You can try swapping the connections by plugging the throttle pedal into the clutch port and the clutch pedal into the throttle port to determine whether the issue is with the pedal or the control box. If necessary, you can also use the Offset function to reconfigure it. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-26T04:09:33Z",
+      "updated_at": "2025-07-26T04:09:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005551114,
+      "body_text": "For a brief moment I had all 3 pedals working after using the offset function but the roles were reversed obviously. I switched the clutch and throttle back and now there's no connection to the clutch\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158002354383,
+      "created_at": "2025-07-26T04:23:55Z",
+      "updated_at": "2025-07-26T04:23:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005551219,
+      "body_text": "Hi Brian Poffenberger,  This basically confirms that all three pedals and the hardware are fine. You need to correctly perform the Offset function: First, connect all three pedals to the correct ports, then use the Offset function to calibrate the initial percentage, and finally run the calibration test. You can also provide a video so I can check if there were any mistakes during the operation. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-26T04:36:51Z",
+      "updated_at": "2025-07-26T04:36:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005551280,
+      "body_text": "I noticed that your CPU1 is a different version than mine. It says I'm already at the most updated version. I'm still not able to get the clutch to work. I will prepare a video\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158002354383,
+      "created_at": "2025-07-26T04:46:29Z",
+      "updated_at": "2025-07-26T04:46:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005551432,
+      "body_text": "I am unable to send a video because it refuses to upload\r\n\r\nBrian A Poffenberger\r\nbn_poffenberger@outlook.com\r\n[cid:f474e42f-74b5-4a7e-ba4e-6b1a85725133]\r\n________________________________\r\n",
+      "user_id": 158002354383,
+      "created_at": "2025-07-26T05:11:58Z",
+      "updated_at": "2025-07-26T05:11:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005551515,
+      "body_text": "Hello,\r\n\r\nAre you still there?\r\n\r\nBrian A Poffenberger\r\nbn_poffenberger@outlook.com\r\n[cid:164a7761-01a7-45a9-a3c1-cf926ae1a585]\r\n________________________________\r\n",
+      "user_id": 158002354383,
+      "created_at": "2025-07-26T05:25:14Z",
+      "updated_at": "2025-07-26T05:25:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005551540,
+      "body_text": "​[https://res.cdn.office.net/files/fabric-cdn-prod_20230815.002/assets/item-types/16/video.svg]1000001183.mp4<https://1drv.ms/v/c/219c440927414025/EbvYiWuyqp9Dmn8xCEhlAnoBRX818WQFvTewx1ZFBo1aQg>​\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158002354383,
+      "created_at": "2025-07-26T05:28:41Z",
+      "updated_at": "2025-07-26T05:28:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005566670,
+      "body_text": "Hi Brian Poffenberger,  It is recommended to upload the file to Google Drive, as OneDrive often cannot be opened. This issue has also occurred with files sent by others before. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-26T07:45:56Z",
+      "updated_at": "2025-07-26T07:45:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005566681,
+      "body_text": "ID 为 1934 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-26T07:45:57Z",
+      "updated_at": "2025-07-26T07:45:57Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158005566682,
+      "body_text": "合并来自工单1934  \n      主题: Pro X Ultra Clutch Pedal not working  \n      描述:  Hello, \n \nI am unable to get my clutch pedal to respond when hooked up to the manager app. I have tried every troubleshooting method and all has failed I have a feeling that I have a bad cable box \n \n \n \n \n \nBrian A Poffenberger \n \nbn_poffenberger@outlook.com",
+      "user_id": 158000445778,
+      "created_at": "2025-07-26T07:45:58Z",
+      "updated_at": "2025-07-26T07:45:58Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158005588599,
+      "body_text": "https://drive.google.com/file/d/1rm-ikVIczouB3eemPFZiGf_5_YMD1XGs/view?usp=drivesdk\r\n\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158002354383,
+      "created_at": "2025-07-26T11:01:36Z",
+      "updated_at": "2025-07-26T11:01:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005592070,
+      "body_text": "Hi Brian Poffenberger,    Please check whether the small spring retainer on the clutch is broken.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-26T11:18:54Z",
+      "updated_at": "2025-07-26T11:18:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005596555,
+      "body_text": "It does not look to be broken. When the clutch is swapped with the throttle, the clutch works as the throttle and the throttle does not register for the clutch. I would also like to say that I just pulled these new out of the box yesterday\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158002354383,
+      "created_at": "2025-07-26T11:40:49Z",
+      "updated_at": "2025-07-26T11:40:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005597859,
+      "body_text": "Hi Brian Poffenberger,    Please provide your order information so that we can send you a replacement control box.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-26T11:47:12Z",
+      "updated_at": "2025-07-26T11:47:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005598306,
+      "body_text": "\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158002354383,
+      "created_at": "2025-07-26T11:50:48Z",
+      "updated_at": "2025-07-26T11:50:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005779836,
+      "body_text": "Hi Brian Poffenberger,  Here is the tracking number of the control box : JSEGA2866829848YQ. You can track it via https://www.js-exp.com/EN/index.php?page=19.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-29T15:07:33Z",
+      "updated_at": "2025-07-29T15:07:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006443173,
+      "body_text": "So I received the new control box today and set everything up as previously mentioned in this email thread and my clutch still does not register in the clutch settings.\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158002354383,
+      "created_at": "2025-08-06T23:56:56Z",
+      "updated_at": "2025-08-06T23:56:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006600163,
+      "body_text": "Hi Brian Poffenberger,  Since you previously mentioned that the control box was faulty, we sent you a new one. If the issue still persists after replacement, that means the original control box was likely not the problem. Please install the Todesk software (no registration required — if prompted to register, simply click the close button in the top right), then provide your ID and temporary code, and we can arrange a time for a remote check. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-09T15:14:24Z",
+      "updated_at": "2025-08-09T15:14:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

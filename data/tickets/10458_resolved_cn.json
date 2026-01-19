@@ -1,0 +1,75 @@
+{
+  "id": 10458,
+  "subject": "校准",
+  "description_text": "当我校准并挂入1档时，1档和2档会同时切换。当我挂入2档时，2档和4档会同时切换。当我挂入3档时，1、3、5档会同时切换。这里有一个视频。我的校准或对齐有问题吗？？？",
+  "status": 4,
+  "priority": 4,
+  "created_at": "2026-01-10T01:47:34Z",
+  "updated_at": "2026-01-10T05:46:38Z",
+  "requester_id": 158008794835,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016651036,
+      "body_text": "您好，Hassan Majid，您只需将所有档位切换一次即可完成校准，之后一切都应该正常工作。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-10T02:46:31Z",
+      "updated_at": "2026-01-10T02:46:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016663165,
+      "body_text": "您好，我试过了，没有用。它根本无法校准，我进入游戏并在那里尝试校准，也是同样的问题。2026年1月9日星期五晚上9:46 support @simsonn.com",
+      "user_id": 158008794835,
+      "created_at": "2026-01-10T04:41:43Z",
+      "updated_at": "2026-01-10T04:41:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016664319,
+      "body_text": "您好，Hassan Majid，请点击“恢复”，然后点击“保存”，再尝试重新校准。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-10T04:52:42Z",
+      "updated_at": "2026-01-10T04:52:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016665723,
+      "body_text": "试过了，还是不行。2026年1月9日星期五晚上11:52 support @simsonn.com",
+      "user_id": 158008794835,
+      "created_at": "2026-01-10T05:10:16Z",
+      "updated_at": "2026-01-10T05:10:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016666956,
+      "body_text": "您好，Hassan Majid，请尝试手动固件更新：进入“设置”→“更新”→“手动固件更新”→“H档”→“固件”→“hgear-hspro.sfu”。更新完成后，请重新校准设备。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-10T05:22:39Z",
+      "updated_at": "2026-01-10T05:22:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016668479,
+      "body_text": "我取下了一个垫圈，不确定是不是那个问题，现在一切正常了。谢谢你的帮助！2026年1月10日星期六凌晨12:22 support @simsonn.com",
+      "user_id": 158008794835,
+      "created_at": "2026-01-10T05:35:43Z",
+      "updated_at": "2026-01-10T05:35:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

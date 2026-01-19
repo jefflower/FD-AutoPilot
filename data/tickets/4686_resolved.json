@@ -1,0 +1,34 @@
+{
+  "id": 4686,
+  "subject": "Simsonn Pro X Issue",
+  "description_text": "Good evening. I recently purchased a set of your Simsonn Pro X pedals back in April. I have had zero issues until tonight. My computer is recognizing the pedals my game can see inputs from the pedals except for the clutch pedal. Unfortunately the software is saying the pedals are disconnected. The LED lights on the pedals are still lighting up so I'm not sure what is going on. Any help is appreciated. \r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-10-10T01:05:59Z",
+  "updated_at": "2025-10-10T07:32:04Z",
+  "requester_id": 158005537565,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010184984,
+      "body_text": "Hi barry acker,  Please uninstall the old version from your computer, then reinstall version 2.1.2 and update the firmware. After the update, the device version should display as CPU1: 2.0.5, CPU2: 2.0.3. If the issue still persists, please feel free to contact me.     Please follow the steps below to start the firmware update process:    Press the upgrade button on the control box.    Reconnect the USB cable.    The software will display a prompt indicating it has entered “Simsonn Flasher Mode.”    Go to Settings → Update → Manual Firmware Update → pedals → firmware → pedals-prox.sfu to update the firmware.    After the update is complete, release the upgrade button.    Finally, test and recalibrate your pedals.          https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-10-10T01:10:45Z",
+      "updated_at": "2025-10-10T01:10:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010185507,
+      "body_text": "That fixed it thank you so much!!! Awesome response time if I must say! \r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158005537565,
+      "created_at": "2025-10-10T01:46:57Z",
+      "updated_at": "2025-10-10T01:46:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

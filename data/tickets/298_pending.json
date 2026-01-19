@@ -1,0 +1,64 @@
+{
+  "id": 298,
+  "subject": "Vam",
+  "description_text": "Hello to all at Simsonn,\r\n\r\nI'm interested in your haptic system, but as i do not have Simsonn pedals i need a control box.\r\n\r\nWich one should i choose ?\r\n\r\nThank you !\r\n\r\nYvan Bergeron\r\nBergy011@hotmail.com\r\n\r\nObtenir Outlook pour Android<https://aka.ms/AAb9ysg>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-09T11:50:26Z",
+  "updated_at": "2025-06-11T02:37:21Z",
+  "requester_id": 158001346706,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002855247,
+      "body_text": "Hi Yvan Bergeron,  May I ask what brand your pedals are? Different pedal brands may use different connector types and wiring sequences, which could result in compatibility issues. Please refer to the link below for more information:      https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor?variant=51351053533498",
+      "user_id": 158000445778,
+      "created_at": "2025-06-09T13:58:31Z",
+      "updated_at": "2025-06-09T13:58:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002856240,
+      "body_text": "Hi thank you for rapid answer.\r\n\r\nI own a set of Sim Ruito pedals.\r\n\r\n\r\nEnvoyé de mon appareil Samsung de Bell via le réseau le plus vaste au pays.\r\n________________________________\r\n",
+      "user_id": 158001346706,
+      "created_at": "2025-06-09T14:36:09Z",
+      "updated_at": "2025-06-09T14:36:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002856545,
+      "body_text": "Hi Yvan Bergeron,     That’s fine, but you will need a separate power supply.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-09T14:56:22Z",
+      "updated_at": "2025-06-09T14:56:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002856635,
+      "body_text": "Hi,\r\n\r\nThat's good of course the seperate power supply.\r\n\r\nThe control box should be the Plus X, but is there a difference when using the other one ?\r\n\r\nDo my pedals should be plugged that control box ?\r\n\r\nI suppose that no, because should not talk to other system. Am i wrong ?\r\n\r\n\r\nThank you and sorry for those questions ?\r\n\r\nObtenir Outlook pour Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158001346706,
+      "created_at": "2025-06-09T15:04:11Z",
+      "updated_at": "2025-06-09T15:04:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002907108,
+      "body_text": "Hi Yvan Bergeron,     The Ruito pedal can be directly connected to our PlusX control board. In addition to an independent power supply, you will also need to purchase a VAM or VAM Pro vibration motor separately. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-11T02:37:20Z",
+      "updated_at": "2025-06-11T02:37:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

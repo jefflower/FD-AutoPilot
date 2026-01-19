@@ -1,0 +1,45 @@
+{
+  "id": 11065,
+  "subject": "Purchase Order #SSN5645",
+  "description_text": "Dear Customer Service,\n\nI want to ask in this way, when I can expect the shipment of the above named Purchase Order.\n\nI'm looking forward to your answer.\n\nKind regards\n\nRaphael Hainke",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-16T10:01:23Z",
+  "updated_at": "2026-01-17T07:06:08Z",
+  "requester_id": 158009278205,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017259737,
+      "body_text": "Hi Raphael-Hainke @t-online.de,    We apologize for the delay. Two shipments destined for our German warehouse have been affected by heavy snowfall in Europe, causing road blockages and delivery delays. We will expedite delivery or explore alternative logistics channels to ship your order from China as soon as possible.  Compensation will be provided based on the delay after your order is completed. We apologize for the inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T11:57:23Z",
+      "updated_at": "2026-01-16T11:57:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017262408,
+      "body_text": "Thanks a lot for your quick answer.\n\nThat is no problem. I was only interested in the current status.\n\nMuch appreciated for expediting the delivery.\n\n\n\n\n\n\n-----Original Message-----\n\nSubject: Re: Purchase Order #SSN5645\n\nDate: 2026-01-16T12:57:39+0100",
+      "user_id": 158009278205,
+      "created_at": "2026-01-16T12:32:10Z",
+      "updated_at": "2026-01-16T12:32:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017318283,
+      "body_text": "Hi Raphael-Hainke @t-online.de,  You're welcome. Thank you for purchasing our product. Should you have any questions in the future, please feel free to contact us. We will address them promptly.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T07:06:08Z",
+      "updated_at": "2026-01-17T07:06:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

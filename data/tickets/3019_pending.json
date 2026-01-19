@@ -1,0 +1,174 @@
+{
+  "id": 3019,
+  "subject": "Simsonn pedals",
+  "description_text": "Hi there,\r\n\r\nI have a set of pedals and I am not able to get them working, I have\r\ndownloaded the software and have tried multiple usb cables and ports, the\r\nground wire from the control box is connected. The simsonn device is found\r\nbut the pedals do not do anything in either the simsonn software, windows\r\ngame controller setup or assetto corsa.\r\n\r\nI have attached a photo of my device for reference.\r\nCan you please advise me on what to do?\r\n\r\nKind regards,\r\nTyler Knolles\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-23T06:46:57Z",
+  "updated_at": "2025-08-29T09:20:03Z",
+  "requester_id": 158003500981,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007367821,
+      "body_text": "On Sat, 23 Aug 2025, 6:46 pm Tyler Knolles, <teamknollesracing@gmail.com>\r\nwrote:\r\n\r\n> Hi there,\r\n>\r\n> I have a set of pedals and I am not able to get them working, I have\r\n> downloaded the software and have tried multiple usb cables and ports, the\r\n> ground wire from the control box is connected. The simsonn device is found\r\n> but the pedals do not do anything in either the simsonn software, windows\r\n> game controller setup or assetto corsa.\r\n>\r\n> I have attached a photo of my device for reference.\r\n> Can you please advise me on what to do?\r\n>\r\n> Kind regards,\r\n> Tyler Knolles\r\n>\r\n\r\n",
+      "user_id": 158003500981,
+      "created_at": "2025-08-23T06:48:07Z",
+      "updated_at": "2025-08-23T06:48:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007440929,
+      "body_text": "Hi Tyler Knolles,     Are you using the SIMSONN Manager software? If it shows “Not Supported,” please go to Settings → Update → Manual Firmware Update → pedals-firmware-plus.sfu to update. After completing the update, please make sure to recalibrate the pedals, otherwise they will not function properly in games. In addition, if SIMSONN Manager shows “Not Connected,” please download and run the VKB JoyTester tool, then send me a screenshot so I can verify. Rest assured, we will definitely assist you in resolving this issue.   https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-08-25T03:12:33Z",
+      "updated_at": "2025-08-25T03:12:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007440946,
+      "body_text": "Thank you for your reply.\r\n\r\nI am using simsonn manager (lastest verion), I tried manual update to that\r\nsoftware and it said \"this software is not an upgrade\"\r\n\r\nI will download the software you mentioned and send a screenshot later this\r\nafternoon.\r\n\r\nThank you for your time.\r\n\r\nKind regards,\r\nTyler Knolles\r\n021 123 5455\r\n\r\nOn Mon, 25 Aug 2025, 3:12 pm service@simsonn.com, ",
+      "user_id": 158003500981,
+      "created_at": "2025-08-25T03:15:37Z",
+      "updated_at": "2025-08-25T03:15:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007441104,
+      "body_text": "Hi Tyler Knolles,  Alright, we will wait for your updated reply. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-25T03:54:24Z",
+      "updated_at": "2025-08-25T03:54:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007456289,
+      "body_text": "Hi Simsonn team,\r\n\r\nPlease find attached image of VKB joytester\r\n\r\nKind regards,\r\nTyler Knolles\r\n021 123 5455\r\n\r\n\r\n\r\nOn Mon, 25 Aug 2025, 3:54 pm service@simsonn.com, ",
+      "user_id": 158003500981,
+      "created_at": "2025-08-25T06:20:19Z",
+      "updated_at": "2025-08-25T06:20:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007545353,
+      "body_text": "Hi there,\r\n\r\nI am just following up to confirm you received the image of VKB joytester?\r\n\r\nKind regards,\r\nTyler Knolles\r\n021 123 5455\r\n\r\nOn Mon, 25 Aug 2025, 6:19 pm Tyler Knolles, <teamknollesracing@gmail.com>\r\nwrote:\r\n\r\n> Hi Simsonn team,\r\n>\r\n> Please find attached image of VKB joytester\r\n>\r\n> Kind regards,\r\n> Tyler Knolles\r\n> 021 123 5455\r\n>\r\n>\r\n>\r\n> On Mon, 25 Aug 2025, 3:54 pm service@simsonn.com, ",
+      "user_id": 158003500981,
+      "created_at": "2025-08-26T00:14:17Z",
+      "updated_at": "2025-08-26T00:14:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007547948,
+      "body_text": "Hi Tyler Knolles,  Your current version of the main control can only be calibrated using FreeJoy 1.7.0 or SimConfigPedals V3.5. It does not support upgrading to the SIMSONN Manager 2.1.0 software.       https://cdn.simsonn.vip/download/SimPedalsConfig_V3.5.zip     ​If the issue still cannot be resolved, it may be necessary to use the FreeJoy recovery file to restore the main control settings. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-26T03:06:48Z",
+      "updated_at": "2025-08-26T03:06:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007548028,
+      "body_text": "I had previously tried pedal config 3.5 with no success, can you run me\r\nthrough the freejoy recovery file process?\r\n\r\nKind regards,\r\nTyler Knolles\r\n021 123 5455\r\n\r\nOn Tue, 26 Aug 2025, 3:07 pm service@simsonn.com, ",
+      "user_id": 158003500981,
+      "created_at": "2025-08-26T03:14:39Z",
+      "updated_at": "2025-08-26T03:14:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007548082,
+      "body_text": "Hi Tyler Knolles,  I have provided the FreeJoy recovery procedure. Please download FreeJoy 1.7.0 online (note: not 1.7.1), and then try to perform the recovery and calibration. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-26T03:21:43Z",
+      "updated_at": "2025-08-26T03:21:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007549337,
+      "body_text": "The freejoy recovery worked! I just wanted to say a huge thank you for\r\nhelping me out, I really appreciate the support. In return, I’d love to\r\noffer a sponsorship opportunity with you.\r\n\r\nI am a competitive drifter in the D1NZ,  New Zealand's premier drifting\r\nseries. I use my simulator as an important tool for practice, and I\r\nregularly get asked by other drivers and enthusiasts for advice on sim gear\r\nand upgrades. It would be awesome to represent your brand by promoting your\r\nproducts and service directly to that community.\r\n\r\nI’m not phased on the value of the gear,  even something small would allow\r\nme to showcase and recommend your products in an authentic way. In return,\r\nI’d be more than happy to promote your brand through my drifting journey,\r\nsocial media and word of mouth in the sim and motorsport communities.\r\n\r\nLet me know what you think, I’d love to work with you and help get your\r\nbrand out there even more.\r\n\r\nI have also attached my sponsorship proposal.\r\n\r\nInstagram: racing_breed\r\nFacebook: Tyler Knolles\r\n\r\nKind regards,\r\nTyler Knolles\r\n021 123 5455\r\n\r\nOn Tue, 26 Aug 2025, 3:22 pm service@simsonn.com, ",
+      "user_id": 158003500981,
+      "created_at": "2025-08-26T05:52:17Z",
+      "updated_at": "2025-08-26T05:52:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007617383,
+      "body_text": "Hi Tyler,  Thank you again for reaching out—I'm thrilled to hear that the FreeJoy recovery worked and that our support has been valuable to you.  Your passion for sim racing and active involvement in D1NZ make you an outstanding candidate for collaboration. We’re especially excited by your offer to authentically promote our products within the motorsport and sim-racing communities.  We’d love to explore this further and thought you might be interested in considering our Brand Ambassador Program. Through this program, you can share product recommendations via your social platforms, website, or content. When someone makes a purchase through your referral link, you’ll earn commissions—starting at 6% and increasing based on your performance, with potential earnings up to 15%. There are also special rewards as you hit sales milestones, like gift cards and early access to new gear.  https://www.simsonn.com/pages/affiliate-program     Would you be interested in exploring this path? It would give you the flexibility to promote products in a way that complements your content and motorsport journey—with tangible benefits based on your impact.  Looking forward to hearing from you!  Best regards, Simsonn",
+      "user_id": 158001343601,
+      "created_at": "2025-08-27T09:56:12Z",
+      "updated_at": "2025-08-27T09:56:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007682782,
+      "body_text": "Hi there,\r\n\r\nThanks heaps for getting back to me and for considering me for the Brand\r\nAmbassador Program! I think the affiliate side could definitely work well\r\nwith what I do, as I get a lot of people asking me about sim gear and what\r\nI recommend.\r\n\r\nAt the same time, I was wondering if there’s room for a bit of a hybrid\r\nsetup? Having some direct support with sim gear would let me actually use\r\nand showcase your products in my training and content. I think that would\r\nadd more value than links alone, since people could see the gear in action\r\nand how it performs.\r\n\r\nHappy to chat about how we could make something like that work in a way\r\nthat benefits both of us.\r\n\r\nKimd regards,\r\nTyler Knolles\r\n021 123 5455\r\n\r\nOn Wed, 27 Aug 2025, 9:56 pm service@simsonn.com, ",
+      "user_id": 158003500981,
+      "created_at": "2025-08-28T03:13:05Z",
+      "updated_at": "2025-08-28T03:13:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007684794,
+      "body_text": "Hello, you can try this out first. If your efforts prove effective for us (we'll track the performance of orders made through your affiliate link), we'll send you more devices.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-28T05:43:16Z",
+      "updated_at": "2025-08-28T05:43:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007685360,
+      "body_text": "I’ll put some time into creating content around the pedals and see how I\r\ncan get the most out of this. Over the next couple of days, I’ll think\r\nabout how to structure it all and will likely come back to you with a few\r\nquestions or a bit of a plan.\r\n\r\nAppreciate the opportunity and looking forward to getting started.\r\n\r\nKind regards,\r\nTyler Knolles\r\n021 123 5455\r\n\r\nOn Thu, 28 Aug 2025, 5:43 pm service@simsonn.com, ",
+      "user_id": 158003500981,
+      "created_at": "2025-08-28T06:24:43Z",
+      "updated_at": "2025-08-28T06:24:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007685405,
+      "body_text": "Great, we look forward to your outstanding work. If there's anything we can assist with, please don't hesitate to reach out!",
+      "user_id": 158001343601,
+      "created_at": "2025-08-28T06:27:45Z",
+      "updated_at": "2025-08-28T06:27:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007685490,
+      "body_text": "Thank you and I will do.\r\n\r\nKind regards,\r\nTyler Knolles\r\n021 123 5455\r\n\r\n\r\nOn Thu, 28 Aug 2025, 6:27 pm service@simsonn.com, ",
+      "user_id": 158003500981,
+      "created_at": "2025-08-28T06:34:08Z",
+      "updated_at": "2025-08-28T06:34:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

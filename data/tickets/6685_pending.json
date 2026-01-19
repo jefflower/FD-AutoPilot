@@ -1,0 +1,24 @@
+{
+  "id": 6685,
+  "subject": "Connection issues",
+  "description_text": "I’m having issues with connection. \r\nHaptic feedback lasts about 2 laps and then shuts off, I’ve also noticed that they slightly vibrate the entire time, even when not in a game. Is this something you can help me with? I have tried things I’ve found online, I’m ensure I’m using a direct 3.0 use at my computer. Software has been updated. If I disconnect USB and reconnect it works but stops after a few laps. I saw somewhere that I may need a ground wire but not sure where I would ground it to? Any advice would be great. \r\nSent from my iPhone\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-24T22:24:36Z",
+  "updated_at": "2025-11-25T01:30:26Z",
+  "requester_id": 158007025899,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012855642,
+      "body_text": "Hi Ryon Remmers,     If this happens, it indicates that the computer’s grounding is not reliable, possibly because a three-prong plug was not used with a three-prong wall outlet. You can refer to the post below: connect the computer case to the stand, and connect the control box to the metal screws on the pedals. This should resolve the disconnection issue.     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding      https://www.reddit.com/r/simracing/comments/1n291hi/solution_for_simsonn_vam_pro_emi_issues/",
+      "user_id": 158000445778,
+      "created_at": "2025-11-25T01:30:26Z",
+      "updated_at": "2025-11-25T01:30:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

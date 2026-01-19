@@ -1,0 +1,64 @@
+{
+  "id": 204,
+  "subject": "order status.",
+  "description_text": "#SSN1606\r\n\r\nGet Outlook for iOS<https://aka.ms/o0ukef>\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-06-05T14:32:45Z",
+  "updated_at": "2025-06-13T09:51:18Z",
+  "requester_id": 158001249186,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002538958,
+      "body_text": "你好，Dylan Butler， 我们昨天完成了发货。物流代理尚未提供追踪号，但我们收到后会立即更新您的订单。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-06T02:27:48Z",
+      "updated_at": "2025-06-06T02:27:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002538991,
+      "body_text": "好的，谢谢，我很感谢你的沟通\r\n\r\nGet Outlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158001249186,
+      "created_at": "2025-06-06T02:30:02Z",
+      "updated_at": "2025-06-06T02:30:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002539921,
+      "body_text": "Hi Dylan Butler,  You’re welcome; it’s our pleasure to assist. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-06T03:50:43Z",
+      "updated_at": "2025-06-06T03:50:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002927038,
+      "body_text": "Hi not trying to be a bother but i paid for express shipping and it hasn’t arrived at shipping yet any update on where it is at?\r\n\r\nGet Outlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158001249186,
+      "created_at": "2025-06-11T08:08:46Z",
+      "updated_at": "2025-06-11T08:08:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003015522,
+      "body_text": "Hi Dylan Butler,    Your logistics have been updated and are expected to arrive for you tomorrow, sorry for the delay!  https://www.fedex.com/fedextrack/?trknbr=881851089621&trkqual=12029~881851089621~FDEG",
+      "user_id": 158001343601,
+      "created_at": "2025-06-13T09:51:17Z",
+      "updated_at": "2025-06-13T09:51:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

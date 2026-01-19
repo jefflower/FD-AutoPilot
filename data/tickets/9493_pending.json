@@ -1,0 +1,44 @@
+{
+  "id": 9493,
+  "subject": "Shipment not moving past \"Label Created. Date pending\"",
+  "description_text": "My order that I placed on December 23rd has been said it is \"shipped\" but\r\ninside of the tracking number it has not made an update since \"Label\r\nCreated\". I am curious if this is a bug in the system or what is happening\r\nhere.\r\n\r\nMy order number is SSN5214\r\n\r\nThanks in advance.\r\n-- \r\n*Carter Jostock*\r\nCinematographer | Director of Photography\r\n? Based in Minneapolis, Minnesota\r\n? (651)-231-7179\r\n✉️ carterjostock15@gmail.com\r\n? Portfolio: Carter Jostock <https://www.instagram.com/carterjostock/>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-29T20:00:36Z",
+  "updated_at": "2026-01-15T09:14:50Z",
+  "requester_id": 158008813076,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015291055,
+      "body_text": "Hi Carter Jostock,  I see that the tracking shows your order is already in transit. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T02:38:29Z",
+      "updated_at": "2025-12-31T02:38:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015291196,
+      "body_text": "It’s been updated, thank you!\r\n\r\n*Carter Jostock*\r\nCinematographer | Director of Photography\r\n? Based in Minneapolis, Minnesota\r\n? (651)-231-7179\r\n✉️ carterjostock15@gmail.com\r\n? Portfolio: Carter Jostock <https://www.instagram.com/carterjostock/>\r\n\r\n\r\nOn Tue, Dec 30, 2025 at 8:38 PM service@simsonn.com ",
+      "user_id": 158008813076,
+      "created_at": "2025-12-31T02:47:12Z",
+      "updated_at": "2025-12-31T02:47:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017172727,
+      "body_text": "Hi Carter Jostock,  You're welcome. Thank you for purchasing our product. Should you have any questions in the future, please feel free to contact us. We will address them promptly.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T09:14:49Z",
+      "updated_at": "2026-01-15T09:14:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

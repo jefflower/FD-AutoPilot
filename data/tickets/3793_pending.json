@@ -1,0 +1,64 @@
+{
+  "id": 3793,
+  "subject": "VAM Pros Disconnecting",
+  "description_text": "Hello,\r\n\r\nI’m running the VAM Pros through simhub and they work for 15-20 minutes\r\nthen disconnect and there’s a constant low vibration that happens after\r\nthey stop working. I’ve tried to reflash the firmware for my pro x ultra\r\ncontrol box but no changes. Could you assist?\r\n\r\nThank you,\r\n\r\nMike Jones\r\n302-632-7045\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-09-13T16:37:39Z",
+  "updated_at": "2025-09-15T03:13:57Z",
+  "requester_id": 158001494617,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008717450,
+      "body_text": "Hi Mike Jones,    Please connect the USB directly to the blue USB 3.0 port on the back of your computer and avoid using a USB hub.  Meanwhile, uninstall version 2.1.0 from your computer and install version 2.1.1 using the link we provided to update the firmware. Follow these steps:      Open the software and go to Settings → Update → Manual Firmware Update  Select the file pedals-firmware-pedals-proxultra.sfu  After the update, test the pedals again         If you still encounter any issues, please feel free to contact us.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-15T00:27:45Z",
+      "updated_at": "2025-09-15T00:27:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008717674,
+      "body_text": "Thank you for the info. I do not see the link to update the firmware in the\r\nemail\r\n\r\nMike Jones\r\n302-632-7045\r\n\r\n\r\nOn Sun, Sep 14, 2025 at 8:27 PM support@simsonn.com ",
+      "user_id": 158001494617,
+      "created_at": "2025-09-15T00:35:40Z",
+      "updated_at": "2025-09-15T00:35:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008717987,
+      "body_text": "Hi Mike Jones,  https://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=drive_lin",
+      "user_id": 158000445778,
+      "created_at": "2025-09-15T00:48:34Z",
+      "updated_at": "2025-09-15T00:48:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008719212,
+      "body_text": "Thank you. Should the box be in upgrade mode when I do the manual update?\r\n\r\nMike Jones\r\n302-632-7045\r\n\r\n\r\nOn Sun, Sep 14, 2025 at 8:48 PM support@simsonn.com ",
+      "user_id": 158001494617,
+      "created_at": "2025-09-15T01:38:44Z",
+      "updated_at": "2025-09-15T01:38:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008720019,
+      "body_text": "Hi Mike Jones,  If Simsonn Manager already shows the device as connected, there’s no need to manually enter recovery mode—you can proceed with the update directly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-15T03:13:57Z",
+      "updated_at": "2025-09-15T03:13:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

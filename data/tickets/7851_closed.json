@@ -1,0 +1,44 @@
+{
+  "id": 7851,
+  "subject": "Re: Envío",
+  "description_text": "Ya está aclarado, me hacéis devolución vía Amazon, el pedido era JSEKO2665927334YQ El 10 dic 2025, a las 7:18, General and sales enquiries <service@simsonn.com> escribió: ﻿ \r\n ¿Podría proporcionarnos su número de pedido? Se lo reenviaremos. \r\n \r\n service@simsonn.com \r\n 发件人： David Segura 发送时间： 2025-12-07 05:22 收件人： service 主题： Envío Hola! \r\n Me habéis hecho un envío por js express y me sale como que se ha devuelto el paquete por ser muy grande \r\n Qué solución me dais? Volverlo a enviar o la devolución del dinero vía Amazon ? \r\n \r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-12-10T07:03:56Z",
+  "updated_at": "2025-12-18T09:13:51Z",
+  "requester_id": 158007678461,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014302741,
+      "body_text": "ID 为 7583 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T07:09:18Z",
+      "updated_at": "2025-12-11T07:09:18Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014302742,
+      "body_text": "合并来自工单7583  \n      主题: Envío  \n      描述:  Hola! Me habéis hecho un envío por js express y me sale como que se ha devuelto el paquete por ser muy grande Qué solución me dais? Volverlo a enviar o la devolución del dinero vía Amazon ?",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T07:09:18Z",
+      "updated_at": "2025-12-11T07:09:18Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014679619,
+      "body_text": "已退款，亚马逊后台已回复",
+      "user_id": 158007774607,
+      "created_at": "2025-12-18T09:13:47Z",
+      "updated_at": "2025-12-18T09:13:47Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

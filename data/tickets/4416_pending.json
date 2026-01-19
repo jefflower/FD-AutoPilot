@@ -1,0 +1,64 @@
+{
+  "id": 4416,
+  "subject": "Probelm",
+  "description_text": "Hello\r\n\r\nI recently purchased the Ultra X pedals, but I am experiencing an issue.\r\nIn my games, the pedals are being detected with 4 axes instead of 3, which\r\nis causing configuration problems.\r\n\r\nCould you please help me resolve this issue?\r\n\r\nThank you in advance for your support.\r\n\r\nBest regards,\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-04T02:10:47Z",
+  "updated_at": "2025-10-05T23:17:10Z",
+  "requester_id": 158005387384,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009876819,
+      "body_text": "Hi YoT Black,     Please use version 2.1.1 of the software. In the interface, click “Restore”, then click “Save”, and finally re-plug the USB. This will disable the fourth axis (RX).  https://drive.google.com/file/d/1BAdSWa1bxmbPksj9Hlzuo8bl7_bM8ixr/view?usp=drivesdk",
+      "user_id": 158000445778,
+      "created_at": "2025-10-04T02:26:45Z",
+      "updated_at": "2025-10-04T02:26:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009915404,
+      "body_text": "Hello, I’ve just installed your file and followed the procedure, but now\r\nthe brake pedal no longer works, and the pedal set light doesn’t turn on\r\neither, nor do the vibration motors behind each pedal. Can you help me?\r\n\r\nLe sam. 4 oct. 2025, 04:27, service@simsonn.com ",
+      "user_id": 158005387384,
+      "created_at": "2025-10-04T20:20:00Z",
+      "updated_at": "2025-10-04T20:20:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009937669,
+      "body_text": "Hi YoT Black,     Please uninstall the previous version from your computer, as the earlier update may have caused file issues. Then, install version 2.1.2 and update the firmware. After the update, the device should display: CPU1: 2.0.5, CPU2: 2.0.3.    https://drive.google.com/file/d/1PZwHUqhhmJw0IBGDO8mGONPbrICJU3z1/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T15:39:18Z",
+      "updated_at": "2025-10-05T15:39:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009947309,
+      "body_text": "Dear [Support Team],\r\n\r\nI followed the update process exactly as explained in your previous\r\nmessage. I now have the correct firmware and software versions, but I’m\r\nstill experiencing an unstable axis, and my haptic (vibration) sensors are\r\nnot being recognized.\r\n\r\nI truly appreciate your responsiveness and the overall quality of the\r\nhardware. However, the software remains highly unstable, which makes the\r\nproduct very difficult to use. Considering these ongoing issues, I believe\r\nthe device does not currently justify its price, as it prevents me from\r\nfully enjoying my sim racing setup.\r\n\r\nI sincerely hope you can provide a definitive solution to resolve these\r\nproblems, or alternatively, offer an appropriate commercial gesture or\r\nrefund.\r\n\r\nBest regards,\r\n\r\n\r\nLe dim. 5 oct. 2025, 17:39, service@simsonn.com ",
+      "user_id": 158005387384,
+      "created_at": "2025-10-05T19:59:10Z",
+      "updated_at": "2025-10-05T19:59:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009950340,
+      "body_text": "Hi YoT Black,    Please provide your order number so I can confirm whether you have the ProX or ProX Ultra pedals.     Also, please follow the steps below:      Unplug both the pedal’s USB cable and the vibration feedback power cable.  Reconnect the USB cable first, then plug in the power supply.  Open the vibration feedback interface and check whether the power indicator shows green (connected).  Make sure the USB is connected directly to the rear USB 3.0 blue port on your PC. Please do not use a USB hub or USB 2.0 port, as they may provide unstable power.  In the latest firmware version, the RX axis issue should no longer occur.         If the issue persists, I can assist you remotely. Please install ToDesk (no registration required) and provide your ID and password. We can schedule a quick remote session to identify and fix the problem.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T23:17:09Z",
+      "updated_at": "2025-10-05T23:17:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

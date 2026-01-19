@@ -1,0 +1,24 @@
+{
+  "id": 4075,
+  "subject": "Order #SSN2697",
+  "description_text": "Order #SSN2697\r\n\r\nprovided tracking doesn't work. FedEx 9234690399941600022509\r\n<https://www.fedex.com/fedextrack/?trknbr=9234690399941600022509>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-23T18:34:05Z",
+  "updated_at": "2025-09-24T08:30:01Z",
+  "requester_id": 158004819437,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009215511,
+      "body_text": "Hi Jesse Sluman,     We apologize for the system error. Here is your correct logistics tracking link. https://t.17track.net/en#nums=9234690399941600022509",
+      "user_id": 158001343601,
+      "created_at": "2025-09-24T08:30:01Z",
+      "updated_at": "2025-09-24T08:30:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

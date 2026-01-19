@@ -1,0 +1,64 @@
+{
+  "id": 1563,
+  "subject": "VAM pro not detected",
+  "description_text": "Hi, my vam pro pedals are not being detected on your app or on simhub. It\r\nsays to disable upgrade mode - which it already is.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-15T13:43:34Z",
+  "updated_at": "2025-07-16T09:53:05Z",
+  "requester_id": 158002140214,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004918357,
+      "body_text": "Hi Sam Melton,    Please check if the upgrade button on the control box was accidentally pressed. If so, release the button and reconnect the USB cable.  Also, make sure you are using SIMHUB version 9.9.3 to ensure compatibility with our device.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T02:48:12Z",
+      "updated_at": "2025-07-16T02:48:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004943900,
+      "body_text": "Yes I have checked both of these multiple times and nothing changes.\r\n\r\n",
+      "user_id": 158002140214,
+      "created_at": "2025-07-16T08:49:36Z",
+      "updated_at": "2025-07-16T08:49:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004944191,
+      "body_text": "Hi Sam Melton,    Please provide your order number and the model of your pedal, and take a clear photo of the control box. In addition, please use the VKB tool and SIMSONN Manager 2.0.8 to capture screenshots of their interfaces and relevant settings. With this information, I will assist you in troubleshooting and resolving the issue as quickly as possible.     I’ve provided you with some reference screenshots. Please take a look so I can confirm your software version and better understand the issue you’re experiencing. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T09:29:03Z",
+      "updated_at": "2025-07-16T09:29:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004944334,
+      "body_text": "By chance when I turned my pc on this morning it has been detected and is\r\nworking fine!\r\n\r\nThank you for your help anyway\r\n\r\n",
+      "user_id": 158002140214,
+      "created_at": "2025-07-16T09:46:37Z",
+      "updated_at": "2025-07-16T09:46:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004944376,
+      "body_text": "Hi Sam Melton,  Alright, if you encounter any issues, feel free to email us at any time. We’ll assist you promptly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T09:50:46Z",
+      "updated_at": "2025-07-16T09:50:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

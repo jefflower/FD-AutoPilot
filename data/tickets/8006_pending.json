@@ -1,0 +1,84 @@
+{
+  "id": 8006,
+  "subject": "Issue with order: #SSN4043",
+  "description_text": "Hello,\r\n\r\nI have an issue with my order. I tried contacting you before but didn’t receive answer.\r\nMy order has the wrong DHL tracking number, so would you be so kind and send me the correct one.\r\n\r\nThank you in advance and kind regards\r\n\r\nSent using the mobile mail app\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-11T17:08:19Z",
+  "updated_at": "2025-12-19T02:49:08Z",
+  "requester_id": 158007665342,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014381684,
+      "body_text": "Hi Luis-22,     We apologize for the inconvenience. Here is your correct shipping tracking link.  https://www.dhl.com/us-en/home/tracking.html?tracking-id=00340434776544037986         Additionally, due to stock shortages, we have shipped the base plate to you from China. Here is another link for your reference.   https://t.17track.net/en#nums=SF6047114881768",
+      "user_id": 158001343601,
+      "created_at": "2025-12-12T12:10:56Z",
+      "updated_at": "2025-12-12T12:10:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014449755,
+      "body_text": "\r\n\r\n \r\n \r\n \r\n \r\n Thanks for the quick reply. I’ve received the base plate, but it seems like the pedals have been sent back. So I have to order them again and get the first order refunded or how do we proceed? Kind regards Sent using the mobile mail app ",
+      "user_id": 158007665342,
+      "created_at": "2025-12-13T10:47:25Z",
+      "updated_at": "2025-12-13T10:47:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014556252,
+      "body_text": "Hi Luis-22,    I apologize for the delayed response. Please confirm your address:  Luis-Enrique Breuer  Landecker Str. 8  14199 Berlin  Germany  +49 1575 8236604     We will resend your order. There is no need to place a new order. Please rest assured.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-16T06:01:51Z",
+      "updated_at": "2025-12-16T06:01:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014558565,
+      "body_text": "\r\n\r\n \r\n \r\n \r\n \r\n Yes that’s the correct address. Thanks! Sent using the mobile mail app ",
+      "user_id": 158007665342,
+      "created_at": "2025-12-16T07:20:37Z",
+      "updated_at": "2025-12-16T07:20:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014684676,
+      "body_text": "Hi Luis-22,    Your order was originally scheduled to ship from our German warehouse, but due to transportation delays, the goods arrived later than expected. To ensure delivery before Christmas, we've had to arrange UPS express shipping. However, customs duties may apply. Do you need it before Christmas?",
+      "user_id": 158001343601,
+      "created_at": "2025-12-18T11:00:00Z",
+      "updated_at": "2025-12-18T11:00:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014716344,
+      "body_text": "\r\n\r\n \r\n \r\n \r\n I’d prefer before Christmas. Sent using the mobile mail app ",
+      "user_id": 158007665342,
+      "created_at": "2025-12-18T19:22:31Z",
+      "updated_at": "2025-12-18T19:22:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014735552,
+      "body_text": "Hi Luis-22,    Okay, we've shipped your order and expect it to arrive on the 24th.  https://www.ups.com/track?loc=en_US&requester=ST&trackNums=1ZJ455510415873569/trackdetails",
+      "user_id": 158001343601,
+      "created_at": "2025-12-19T02:49:08Z",
+      "updated_at": "2025-12-19T02:49:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

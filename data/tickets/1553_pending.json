@@ -1,0 +1,74 @@
+{
+  "id": 1553,
+  "subject": "Where is the rest of my order?",
+  "description_text": "Hello.\r\nOn the 5/7 I ordered Simsonn Plus X Simulation Pedals with Haptic Reactor.\r\nPlus X P2-H2 / Black / without Baseplate.\r\nI ordered a Carbon Fiber Heel Plate at the same time.\r\n\r\nOrder #SSN1927\r\n\r\nI'v got the pedals very fast and they are working well.\r\nBut, where is the haptic and heel plate?\r\n\r\nHope to hear from you.\r\n\r\nThanks.\r\n\r\nJohan Larsson\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-07-15T10:24:32Z",
+  "updated_at": "2025-07-25T09:14:03Z",
+  "requester_id": 158002139662,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004856708,
+      "body_text": "Hi Johan Larsson,    Here's a link to your other package:  https://t.17track.net/en#nums=SF6047007138983",
+      "user_id": 158001343601,
+      "created_at": "2025-07-15T10:35:06Z",
+      "updated_at": "2025-07-15T10:35:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005345616,
+      "body_text": "Hello again.  I just got the second package, the heal plate.  But I still miss the haptic.  Please fix this.  Thanks",
+      "user_id": 158002139662,
+      "created_at": "2025-07-22T16:09:24Z",
+      "updated_at": "2025-07-22T16:09:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158005396026,
+      "body_text": "Hi Johan Larsson,  Sorry, but the Haptic reactor comes with an optional purchase.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-23T08:22:23Z",
+      "updated_at": "2025-07-23T08:22:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005420627,
+      "body_text": "Ahhh... I missunderstood as the are named \"with haptic\" you should change the name.Anyhow.Can you send a link to the ones i need?Is it the VAM PRO SET (2 PAC/INCLUDING POWER SUPPLY)?Dont want to get this wrong.. again.Ps. The pedals are great. Thank you. DsSkickat från min Galaxy\n-------- Originalmeddelande --------Från: service@simsonn.com Datum: 2025-07-23  10:22  (GMT+01:00) Till: n0ssral66@gmail.com Ämne: Re: Where is the rest of my order? \n\t\nHi Johan Larsson,\nSorry, but the Haptic reactor comes with an optional purchase.\n\n\n\n                          \n                            On\n                            Tue, 22 Jul at 12:09 PM\n                            ,  Johan Larsson <n0ssral66@gmail.com>  wrote:\n                            Hello again.\nI just got the second package, the heal plate.\nBut I still miss the haptic.\nPlease fix this.\nThanks\n                          \n\n                        \n\n\n\n\t\n\n\n\n\n\n\n1553:4206036\n\n\r\n",
+      "user_id": 158002139662,
+      "created_at": "2025-07-23T10:23:25Z",
+      "updated_at": "2025-07-23T10:23:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005532729,
+      "body_text": "Hi Johan Larsson,    We apologise for any confusion. You can click on the link to purchase the product, which includes two VAM PROs, a power supply, three mounting brackets, and other accessories.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-25T09:13:52Z",
+      "updated_at": "2025-07-25T09:13:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005532734,
+      "body_text": "https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor?variant=51351053467962",
+      "user_id": 158001343601,
+      "created_at": "2025-07-25T09:14:03Z",
+      "updated_at": "2025-07-25T09:14:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

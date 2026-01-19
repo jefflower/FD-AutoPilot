@@ -1,0 +1,134 @@
+{
+  "id": 8803,
+  "subject": "PEDIDO SSN4850",
+  "description_text": "Buenos días.\r\n\r\nMe gustaría que me informarán del estado de este pedido SSN4850, ya que fue\r\nrealizado el día 14/12/2025 y no tengo ninguna noticia de el.\r\n\r\nMuchas gracias\r\n\r\nR. Cruz\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-21T11:17:06Z",
+  "updated_at": "2025-12-23T02:39:04Z",
+  "requester_id": 158007785458,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014432405,
+      "body_text": "Hi Roberto Cruz Oteo,  The PlusX pedals come by default with the main board and mounting screws. The base plate is optional and can be purchased separately. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-13T05:45:20Z",
+      "updated_at": "2025-12-13T05:45:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014610271,
+      "body_text": "ID 为 8302 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T02:24:15Z",
+      "updated_at": "2025-12-17T02:24:15Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014610272,
+      "body_text": "合并来自工单8302  \n      主题: Pedido SSN4850  \n      描述:  \n Buenos días.  \n   \n Me gustaría saber si el pedido SSN4850  a entrado en vuestro sistema, ya que lo realice ayer por la noche y me gustaría tener alguna noticia de su estado.\n \n   \n Muchas gracias \n   \n R. Cruz",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T02:24:15Z",
+      "updated_at": "2025-12-17T02:24:15Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014610273,
+      "body_text": "此工单已关闭并合并到工单 8377 中",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T02:24:15Z",
+      "updated_at": "2025-12-17T02:24:15Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014610301,
+      "body_text": "你好，罗伯托·克鲁兹·奥特奥  我们已收到您的订单，并将尽快发货。德国仓库的库存预计将于本周到货。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T02:25:34Z",
+      "updated_at": "2025-12-17T02:25:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014841104,
+      "body_text": "ID 为 8092, 8302, 8377 and 8802 的工单已被合并至该工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-21T12:59:52Z",
+      "updated_at": "2025-12-21T12:59:52Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014841105,
+      "body_text": "合并来自工单8092  \n      主题: Simsonn Plus X P2-H2  \n      描述:  \nBuenas tardes.  \n \n \n \n \nMe gustaría saber si los pedales Simsonn Plus X P2-H2 vienen con la placa base para su instalacion, asi como saber si de primeras son necesariasalguno de los conjuntos de reactor aptico.\n \n \n \n\n \n \nMuchas ngracias\n \n \n \n \n \n \nRoberto Cruz",
+      "user_id": 158000445778,
+      "created_at": "2025-12-21T12:59:53Z",
+      "updated_at": "2025-12-21T12:59:53Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014841107,
+      "body_text": "合并来自工单8302  \n      主题: Pedido SSN4850  \n      描述:  \n Buenos días.  \n   \n Me gustaría saber si el pedido SSN4850  a entrado en vuestro sistema, ya que lo realice ayer por la noche y me gustaría tener alguna noticia de su estado.\n \n   \n Muchas gracias \n   \n R. Cruz",
+      "user_id": 158000445778,
+      "created_at": "2025-12-21T12:59:53Z",
+      "updated_at": "2025-12-21T12:59:53Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014841109,
+      "body_text": "合并来自工单8377  \n      主题: Pedido SSN4850  \n      描述:  \n Buenos días, \n   \n Me podrían informar si este pedido a entrado en su sistema SSN4850 \n \n   \n Muchas gracias \n   \n R. Cruz",
+      "user_id": 158000445778,
+      "created_at": "2025-12-21T12:59:54Z",
+      "updated_at": "2025-12-21T12:59:54Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014841111,
+      "body_text": "合并来自工单8802  \n      主题: PEDIDO SSN4850  \n      描述:  \n Buenos días. \n   \n Me gustaría que me informarán del estado de este pedido SSN4850, ya que fue realizado el día 14/12/2025 y no tengo ninguna noticia de el. \n   \n Muchas gracias \n   \n R. Cruz",
+      "user_id": 158000445778,
+      "created_at": "2025-12-21T12:59:54Z",
+      "updated_at": "2025-12-21T12:59:54Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014841142,
+      "body_text": "Hi Roberto Cruz Oteo,    Due to the peak season, we have a backlog of emails these days. I will check the shipping status for you tomorrow and get back to you as soon as possible.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-21T13:01:59Z",
+      "updated_at": "2025-12-21T13:01:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014951843,
+      "body_text": "Hi Roberto Cruz Oteo,    Your order was originally scheduled for shipment from our German warehouse, but due to transportation delays, the goods arrived later than expected. They have now arrived at the warehouse, and we are arranging for them to be stocked and shipped via DHL Express. We will update you with the tracking number.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-23T02:39:04Z",
+      "updated_at": "2025-12-23T02:39:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

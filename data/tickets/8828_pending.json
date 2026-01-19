@@ -1,0 +1,54 @@
+{
+  "id": 8828,
+  "subject": "Re: Ticket #4267",
+  "description_text": "Good afternoon,\r\n\r\nAfter more than one month, the motor has stopped working.\r\n\r\nIt started vibrating when switching to Q in ACC for about 5 minutes, and\r\nthen suddenly it stopped and no longer works.\r\n\r\nI have checked the power supply and the motor. The power supply is working,\r\nand the motor vibrates if I connect it directly. However, even though the\r\napp shows everything as connected and correct, it does not work either from\r\nthe app or from the game.\r\n\r\nI have changed the PC USB port, the power supply socket, reinstalled the\r\napp, and nothing has worked.\r\n\r\nWhat is strange is that it was working perfectly until today.\r\n\r\nI look forward to hearing from you.\r\n\r\nKind regards,\r\n\r\nEl mié, 15 oct 2025 a las 12:00, Libe Matesanz García (<\r\nlibematesanz@gmail.com>) escribió:\r\n\r\n> Hi.\r\n>\r\n> I've had an open ticket for a few days now, and I haven't received a\r\n> response.\r\n>\r\n> I bought PLUS X PEDAL CONTROL BOX + 1 VAM (without power suply) and 1\r\n> MOUNTING BRAKET\r\n>\r\n> But I receipt this:\r\n> [image: attachment.jpg]\r\n> My order number is SSN2771, but I never received the confirmation email\r\n> and what I paid does not correspond to what I received.\r\n>\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-21T19:48:45Z",
+  "updated_at": "2025-12-31T11:28:34Z",
+  "requester_id": 158005189583,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014880191,
+      "body_text": "Hi Libe Matesanz García,  Could you please confirm whether you are using VAM mode or VAM Pro mode? Also, we do not recommend using telemetry vibration for extended periods in VAM mode, such as RPM or speed telemetry. If the vibration cannot stop, please refer to the grounding method below. If the device is confirmed to be damaged, we can send you a replacement. Additionally, please clarify what the issue with your order is.      If this happens, it indicates that the computer’s grounding is not reliable, possibly because a three-prong plug was not used with a three-prong wall outlet. You can refer to the post below: connect the computer case to the stand, and connect the control box to the metal screws on the pedals. This should resolve the disconnection issue.  https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-12-22T12:42:55Z",
+      "updated_at": "2025-12-22T12:42:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015027636,
+      "body_text": "HI\r\nIts conected ONE VAM to ground in my aluminium simrig mounting in a\r\nHusinkveld pedal tray.\r\nI ONLY use ABS vibration 70% in ONE VAM.\r\nSudenly Its stop working after the strange incident after more than a month.\r\nPedal inputs works perfectly.\r\nI ordered TWO more VAM than arrives son...\r\nRegards\r\n\r\nEl lun, 22 dic 2025, 13:43, service@simsonn.com ",
+      "user_id": 158005189583,
+      "created_at": "2025-12-24T08:23:44Z",
+      "updated_at": "2025-12-24T08:23:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015166456,
+      "body_text": "Hi Libe Matesanz García,  Please provide your order number, contact name, phone number, and shipping address, and we will send you three replacement VAM modules. Please use VAM mode, not VAM Pro mode. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T15:58:27Z",
+      "updated_at": "2025-12-28T15:58:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015310277,
+      "body_text": "Hi Libe Matesanz García,     We apologize for the delayed response. Here is your replacement link. We will reshipp 2 VAM units for you.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-31T11:28:34Z",
+      "updated_at": "2025-12-31T11:28:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

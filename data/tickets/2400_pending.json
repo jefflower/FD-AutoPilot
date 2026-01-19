@@ -1,0 +1,444 @@
+{
+  "id": 2400,
+  "subject": "Issues after installing VAM Pro Linear Motors",
+  "description_text": "Hello,\r\n\r\nThis is all in reference to Order # SSN2057.\r\n\r\nPedals are great and have been using them without any issues. I just\r\nreceived the haptic motors yesterday and have them installed and powered\r\non. I have the Brake Pedal haptic powered on using the ABS feedback mode\r\nand testing works great.\r\n\r\nWhenever I apply the brake to the point that the motors kick on, as soon as\r\nI take my foot entirely off the brake pedal there is still input being\r\nregistered for maybe 3 seconds or so.. I've tried routing the brake haptic\r\naway from the brake pedal but it still persists..\r\n\r\nI have the control box mounted below my pedals and am curious if that is\r\ncausing the issue but I wouldn't think it would. I also cannot get my\r\nthrottle haptic to work when selecting TC under the Feedback Mode. It works\r\nwhen I click and hold on the Vibration button but within iRacing if I spin\r\nmy tires it does not do anything. It's a bit frustrating and I haven't\r\nturned them on yet since receiving and installing them.\r\n\r\n-Shane C.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-08-07T03:14:19Z",
+  "updated_at": "2025-08-29T00:18:53Z",
+  "requester_id": 158002761453,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006600004,
+      "body_text": "Hi Shane Clore,  I suspect there may be an issue with your installation: the brake pressure sensor must not come into contact with any brackets or the control box, as vibration can cause abnormal signal changes. Also, the test function is only for checking motor vibration and is not directly related to whether ABS or TC telemetry is enabled. I will provide you with a supported telemetry list, and you may also try using SIMHUB 9.9.3, which supports a wider range of telemetry types. Please note that SIMSONN Manager 2.1.0 and SIMHUB 9.9.3 cannot run at the same time. Could you provide photos of the front, back, and side of your pedals, as well as the installation of the VAM Pro? I will help you analyze the issue. Also, what is the brand of your wheelbase? ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-09T15:07:50Z",
+      "updated_at": "2025-08-09T15:07:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006781217,
+      "body_text": "Here are pictures of the setup.\r\n\r\nPedals work fine it's just once the haptics are turned on the issue with\r\nthe brake happens.. I tried running the cable over the clutch thinking it\r\nwould potentially interfere with the brake but it still persists..\r\n\r\nI'm running Simsonn Manager 2.1.0. I have a Fanatec DD Pro with a Club\r\nSport Steering wheel.\r\n\r\nI cannot get the throttle haptic to provide any feedback when having TC\r\nselected assuming it would vibrate when there is wheel slip on throttle.\r\nMaybe I'm not setting it up correctly? I just want to be able to feel when\r\nthe tires are locking up on my brake pedal and when tires start slipping\r\nwhen giving too much throttle. I am racing on iRacing Nascar cars.\r\n[image: Screenshot 2025-08-12 213028.png][image: Screenshot 2025-08-12\r\n213012.png]\r\n\r\nOn Sat, Aug 9, 2025 at 11:08 AM service@simsonn.com ",
+      "user_id": 158002761453,
+      "created_at": "2025-08-13T01:31:42Z",
+      "updated_at": "2025-08-13T01:31:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006783066,
+      "body_text": "Hi Shane Clore,    I’ve reviewed the photos you provided — the green grounding between the pedals and control box looks fine. However, the Fanatec base is known to cause electromagnetic interference (EMI), which can affect both the vibration motor and the control box. We recommend following the steps below to resolve the EMI issue — other customers with similar setups have resolved it this way as well.     To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability:     1.    Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding.     2.    Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive.     3.    Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup.     4.    Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible.     5.    Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs.     6.    Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference.     7.    Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements.     8.    Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources.     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding   ​",
+      "user_id": 158000445778,
+      "created_at": "2025-08-13T03:18:47Z",
+      "updated_at": "2025-08-13T03:18:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006783719,
+      "body_text": "Ok thanks I will try to work on that tomorrow. How will that answer the\r\nissue with the Throttle haptic not responding to in game input? Do I have\r\nthe correct settings selected for what I am wanting?\r\n\r\n*- I cannot get the throttle haptic to provide any feedback when having TC\r\nselected assuming it would vibrate when there is wheel slip on throttle.\r\nMaybe I'm not setting it up correctly? I just want to be able to feel when\r\nthe tires are locking up on my brake pedal and when tires start slipping\r\nwhen giving too much throttle. I am racing on iRacing Nascar cars. *\r\n\r\nOn Tue, Aug 12, 2025 at 11:18 PM service@simsonn.com ",
+      "user_id": 158002761453,
+      "created_at": "2025-08-13T04:03:38Z",
+      "updated_at": "2025-08-13T04:03:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006783774,
+      "body_text": "Hi Shane Clore,  Has the TC telemetry been tested in SimHub 9.9.3 to confirm whether it can be triggered normally? Also, please let us know which game’s TC telemetry you are referring to so we can check. Please note that SimHub and SIMSONN Manager cannot be opened at the same time, as doing so will cause conflicts when reading telemetry data. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-13T04:07:11Z",
+      "updated_at": "2025-08-13T04:07:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006808431,
+      "body_text": "As previously mentioned I am on iRacing. I am using SimHub and the brake\r\npedal still persists. I've added power to the USB hub. I removed my wheel\r\nfrom power and my computer to prevent any sort of EMI and the brake pedal\r\nstill has input when there is no pressure being applied. This is only as\r\nsoon as the haptics are turned on. When the haptics are turned off there is\r\nno false input on the brake pedal.. This is incredibly frustrating.\r\n\r\nOn Wed, Aug 13, 2025 at 12:07 AM service@simsonn.com ",
+      "user_id": 158002761453,
+      "created_at": "2025-08-13T15:53:28Z",
+      "updated_at": "2025-08-13T15:53:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006890288,
+      "body_text": "Hi Shane Clore,  If testing is done with the Fanatec unpowered, there should be no EMI interference. The issue may be that the brake sensor is touching wires, the control box, or the bracket, transmitting vibrations to the brake pressure sensor. Please take photos of the brake installation from different angles and send them to me for confirmation. Additionally, please check whether the green wire from the PlusX control board is connected to any metal screws on the brake, as paint may affect the connection. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-15T03:16:22Z",
+      "updated_at": "2025-08-15T03:16:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006947124,
+      "body_text": "Sent from my iPhone \nAttachment(s) that exceed the 20 MB limit have been dropped. Please reach out to the sender.",
+      "user_id": 158002761453,
+      "created_at": "2025-08-16T00:53:10Z",
+      "updated_at": "2025-08-16T00:53:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006947212,
+      "body_text": "Here is a video link of how it's responding within iRacing. At this point\r\nI'm tempted to just return the pedals and haptics since I have yet to be\r\nable to use them. I have yet to use the haptics that I spent $150 on.. I am\r\nstarting to wish I just went with the Fanatec v3 pedals..\r\n\r\n\nAttachment(s) that exceed the 20 MB limit have been dropped. Please reach out to the sender.",
+      "user_id": 158002761453,
+      "created_at": "2025-08-16T01:02:36Z",
+      "updated_at": "2025-08-16T01:02:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006947213,
+      "body_text": "https://youtu.be/eCOjGYgXrYQ\r\n\r\n\nAttachment(s) that exceed the 20 MB limit have been dropped. Please reach out to the sender.",
+      "user_id": 158002761453,
+      "created_at": "2025-08-16T01:03:01Z",
+      "updated_at": "2025-08-16T01:03:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006978390,
+      "body_text": "你好，Shane Clore，     From the images, the pedals work properly when the motors are not installed, which indicates that the pedals themselves are fine. The issue arises after the motors are installed. I believe the first step is to apply slightly more preload on the black locking nut of the brake damping to prevent poor return, ensuring that the signal can reset in time.  Additionally, please reset the offset and recalibrate, setting a 5% dead zone. Rest assured, choosing Simsonn pedals is definitely much better than Fanatec spring pedals. This pedal offers many adjustment options, so careful attention is needed.  Furthermore, you can use SimHub 9.9.3 to handle telemetry. If the signal response is slow, disabling filtering can provide faster feedback.   ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-17T04:33:37Z",
+      "updated_at": "2025-08-17T04:33:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007037527,
+      "body_text": "This is incredibly frustrating.. The pedals work FINE. As soon as I go into\r\nSimsonn Manager 2.1.0 and within the Feedback Setting selecting ABS under\r\nthe haptic plugged into my brake pedal it keeps showing input when there is\r\nno input. The input within the basic setting is also very jumpy and choppy\r\nand not smooth as it should be based on my foot pushing the pedal.. I\r\nincreased the deadzone and the haptic will now not stick like before. Why\r\nis this happening??\r\n\r\nIs there a breakdown for how each feedback mode should work (i.e. Speed,\r\nABS, TC, Clutch, GearShift, etc)? My assumption is for ABS it should start\r\nto vibrate as soon as my tires lock within iRacing correct?\r\n\r\nI'm to the point where I just want to return these pedals because I've yet\r\nto be able to use the haptics as I intended to when I made this purchase.\r\nYes they may have more features than the Fanatec v3 pedals but I wouldn't\r\nbe working with support on getting these haptics to work like one would\r\nthink they should..\r\n\r\nOn Sun, Aug 17, 2025 at 12:33 AM service@simsonn.com ",
+      "user_id": 158002761453,
+      "created_at": "2025-08-17T20:28:51Z",
+      "updated_at": "2025-08-17T20:28:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007051011,
+      "body_text": "Hi Shane Clore,  You can first use the Offset function to set the pedal deadzone to 0%, and then adjust it to 5%. This is normal. The pressure sensor will always show some data fluctuations. After offsetting and setting the deadzone, the pedal remains very sensitive. This is not an issue with the pedal. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-18T02:26:57Z",
+      "updated_at": "2025-08-18T02:26:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007051817,
+      "body_text": "I know the pedals are not the issue. I have said numerous times now the\r\npedals work just fine since I received them. The haptics are the problem.\r\nWhenever a haptic is triggered it engages my brakes. *WHY IS THIS HAPPENING\r\nHAS BEEN MY QUESTION SINCE AUG 6, 2025!u*\r\n\r\nI have isolated the haptic cable running from the motors to the box so that\r\nit touches nothing thinking maybe there is interference between wires\r\ntouching and that does nothing.\r\n\r\nI have calibrated, set the offset and then set the deadzone for my brakes\r\nto be 5-95. What settings am I missing to be able to effectively use these\r\nhaptics that I purchased?!\r\n\r\nOn Sun, Aug 17, 2025 at 10:27 PM service@simsonn.com ",
+      "user_id": 158002761453,
+      "created_at": "2025-08-18T03:42:51Z",
+      "updated_at": "2025-08-18T03:42:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007124042,
+      "body_text": "Hi Shane Clore,  Please turn off the Fanatec power and check whether the pedal’s test vibration and pedal operation are functioning properly.    Then, please provide a video of the pedal being tested. I want to check whether the pedal operates smoothly and the motor test works properly after the base power is turned off.      Please make sure the firmware is updated to the latest version. Then, go to “Settings → Update” and click “Manual Firmware Update”. Navigate to the pedals-firmware folder → pedals folder → and select the plusx.sfu file to perform the update. After updating, run the test. If everything works normally, it indicates that the issue is caused by EMI interference from the Fanatec base, as other customers have not encountered such complex problems. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-19T09:50:29Z",
+      "updated_at": "2025-08-19T09:50:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007139998,
+      "body_text": "I don't believe the issue is with the Fanatec base. I say this because when\r\nI bought these pedals and haptics I was using a Logitech G293 wheel and it\r\nwas still happening. I have done all trouble shooting to isolate the issue\r\nto be the brake pedal. Any sort of haptic input is triggering my brake\r\npedal to go off. As mentioned before, the pedals work with NO issue when\r\nthe haptics are turned off.\r\n\r\nIt is frustrating to see a reddit post with people claiming to have the\r\nsame problem with one person saying that they too are being told it's an\r\nEMI issue.\r\n\r\nHow do I start the return process for the haptics and pedals?\r\n\r\nOn Tue, Aug 19, 2025 at 5:50 AM service@simsonn.com ",
+      "user_id": 158002761453,
+      "created_at": "2025-08-19T13:09:16Z",
+      "updated_at": "2025-08-19T13:09:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007172447,
+      "body_text": "Hi Shane Clore,    Please install ToDesk (no registration required) and provide me with the ID and temporary verification code. I am an engineer and can assist you remotely to resolve the issue.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-20T02:11:04Z",
+      "updated_at": "2025-08-20T02:11:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007172719,
+      "body_text": "Hi Shane Clore,  From our after‑sales analysis, most interference issues can be resolved by following our EMI checklist. For your case, I’ll assist you remotely to determine whether the root cause is hardware or software. If it’s confirmed that the VAM Pro or the main controller hardware is faulty, we will offer appropriate compensation. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-20T02:31:04Z",
+      "updated_at": "2025-08-20T02:31:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007172776,
+      "body_text": "I do not feel comfortable downloading a Chinese remote desktop software and\r\nhaving you remote into my computer if I'm being honest.. What steps are you\r\nlooking to perform and I can do that and share the results.\r\n\r\nOn Tue, Aug 19, 2025 at 10:31 PM service@simsonn.com ",
+      "user_id": 158002761453,
+      "created_at": "2025-08-20T02:34:29Z",
+      "updated_at": "2025-08-20T02:34:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007172983,
+      "body_text": "Hi Shane Clore,     Your baseplate wiring looks very neat and tidy. I suggest removing the USB hub marked in the red circle and testing again to see if the EMI issue still exists. Since we have already exchanged more than 15 messages on this matter, I really want to help you resolve it quickly. Installing ToDesk is completely safe — it’s a remote desktop tool, and I will only operate under your full supervision. It usually takes me just a few minutes to identify the issue and provide an effective solution. Once the problem is solved, you can simply uninstall ToDesk right away. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-20T02:48:40Z",
+      "updated_at": "2025-08-20T02:48:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007173040,
+      "body_text": "Hi Shane Clore,  https://dl.todesk.com/windows/ToDesk_Setup.exe     Please download it from the official link and select Personal during installation. No registration is required — if you see a registration prompt, simply click the close button in the upper right corner. Then, provide me with the ID and verification code shown in the screenshot. I’ve just started work (it’s 10:50 AM now), so I can quickly resolve your issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-20T02:51:33Z",
+      "updated_at": "2025-08-20T02:51:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007173125,
+      "body_text": "ToDesk:\r\ndevice ID:171 141 898\r\nTemporary password:dr81qh48\r\n\r\n\r\nOn Tue, Aug 19, 2025 at 10:51 PM service@simsonn.com ",
+      "user_id": 158002761453,
+      "created_at": "2025-08-20T02:55:44Z",
+      "updated_at": "2025-08-20T02:55:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007221810,
+      "body_text": "Hi Shane Clore,     Several customers have reported the same issue, and we will need some time to provide a complete fix. For now, the fastest and most effective workaround is to use four M4×8 round-head nylon screws (non-metal material) together with M4×10×1.2 insulating washers (non-metal material). Similar-sized non-metal components will also work. The main purpose is to isolate the VAM Pro motor from the brake pedal, thereby completely eliminating interference with the brake sensor signal. Please note that this interference is not caused by vibration, but by direct contact.  Verifying this method is quite simple: remove the VAM Pro motor from the brake pedal so that it no longer makes contact, then test the vibration while monitoring the signal in VKB. You will notice that the throttle and clutch do not have this issue, since their pressure sensors are isolated by design.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-20T15:20:32Z",
+      "updated_at": "2025-08-20T15:20:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007231563,
+      "body_text": "Can you share what it should look like in VKB when testing the motors? Then I can compare to what it is doing now versus after fixing it with the non metal material hardware. Sent from my iPhone ",
+      "user_id": 158002761453,
+      "created_at": "2025-08-20T16:28:23Z",
+      "updated_at": "2025-08-20T16:28:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007232574,
+      "body_text": "Hi Shane Clore,  You only need to remove the brake motor and perform the test. When you click to activate the motor vibration, the interference disappears; however, once the motor touches the brake pedal again, the interference reappears. This phenomenon can be clearly observed in VKB, especially when the force is set to 0%. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-20T16:33:17Z",
+      "updated_at": "2025-08-20T16:33:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007235871,
+      "body_text": "I guess I don’t know what VKB should look like when I remove and test. Can you share a screenshot of what it should look like within VKB when testing properly looking motors? Sent from my iPhone ",
+      "user_id": 158002761453,
+      "created_at": "2025-08-20T16:41:49Z",
+      "updated_at": "2025-08-20T16:41:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007235953,
+      "body_text": "Hi Shane Clore,     When you press the brake signal to around 20%, the red line represents the brake input. Under normal conditions, the signal should remain stable, but when interference occurs, it shows a waveform fluctuation similar to the arrow. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-20T16:45:23Z",
+      "updated_at": "2025-08-20T16:45:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007547527,
+      "body_text": "Issue still persists after buying the nylon screw and washers… there is still interference whenever I test the signal.. \r\n\r\nIf I remove the motors and put them on the carpet there is no issue when testing. I have still yet to use these as intended after spending $150 on these. \r\n\r\nSent from my iPhone  \r\n\r\n> ",
+      "user_id": 158002761453,
+      "created_at": "2025-08-26T02:39:05Z",
+      "updated_at": "2025-08-26T02:39:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007548285,
+      "body_text": "Hi Shane Clore,  The nylon washers must be installed between the motor and the bracket, otherwise the isolation will not be effective. You may also consider installing two washers at once to ensure effective isolation when securing the bracket. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-26T03:37:13Z",
+      "updated_at": "2025-08-26T03:37:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007548589,
+      "body_text": "I had nylon screws and washers installed. The washers were installed between the haptic motors and the bracket to the pedal..\r\n\r\n\r\n\r\nSent from my iPhone  \r\n\r\n> ",
+      "user_id": 158002761453,
+      "created_at": "2025-08-26T04:09:00Z",
+      "updated_at": "2025-08-26T04:09:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007590341,
+      "body_text": "Hi Shane Clore,  Are you available now? I can assist you remotely to check the issue. In theory, using nylon screws has the same effect as when you placed the motor on the carpet earlier, since it eliminates conductive interference between metal parts. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-27T03:10:52Z",
+      "updated_at": "2025-08-27T03:10:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007590365,
+      "body_text": "Hi Shane Clore,     Is the blue VAM Pro touching the pedal’s motor bracket or the pedal arm at any point? ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-27T03:14:04Z",
+      "updated_at": "2025-08-27T03:14:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007619376,
+      "body_text": "\r\nThis is what it looks like. Nothing is touching the bracket.. Sorry, I’m in the US so timing is challenging to connect live. \r\n\r\nSent from my iPhone  \r\n\r\n> ",
+      "user_id": 158002761453,
+      "created_at": "2025-08-27T10:27:35Z",
+      "updated_at": "2025-08-27T10:27:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007637088,
+      "body_text": "Hi Shane Clore,    Are you available now?",
+      "user_id": 158000445778,
+      "created_at": "2025-08-27T14:51:09Z",
+      "updated_at": "2025-08-27T14:51:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007659547,
+      "body_text": "Sorry I was golfing. I might have time after 9pm ET tonight.  \r\n\r\nSent from my iPhone  \r\n\r\n> ",
+      "user_id": 158002761453,
+      "created_at": "2025-08-27T17:21:28Z",
+      "updated_at": "2025-08-27T17:21:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007678698,
+      "body_text": "Hi Shane Clore,    Alright, that will be 9:00 AM China time, right at the start of the workday. I’ll wait for you to come online.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-27T22:55:59Z",
+      "updated_at": "2025-08-27T22:55:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007680809,
+      "body_text": "Ok I’m around. \r\n\r\nSent from my iPhone  \r\n\r\n> ",
+      "user_id": 158002761453,
+      "created_at": "2025-08-28T01:03:14Z",
+      "updated_at": "2025-08-28T01:03:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007680834,
+      "body_text": "Hi Shane Clore,    I was a bit delayed earlier, and I will be at the office to power on the computer at 9:30.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-28T01:05:23Z",
+      "updated_at": "2025-08-28T01:05:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007680872,
+      "body_text": "Hi Shane Clore,     Could you please send me the interference video first so I can take a look?",
+      "user_id": 158000445778,
+      "created_at": "2025-08-28T01:09:15Z",
+      "updated_at": "2025-08-28T01:09:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007680987,
+      "body_text": "My entire setup is a disaster since I've been trying to trouble shoot... I\r\ndon't have a video but whenever I trigger the vibration button the VKB has\r\na big spike and isn't consistent..\r\n\r\nOn Wed, Aug 27, 2025 at 9:09 PM service@simsonn.com ",
+      "user_id": 158002761453,
+      "created_at": "2025-08-28T01:16:29Z",
+      "updated_at": "2025-08-28T01:16:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007681031,
+      "body_text": "Hi Shane Clore,      No worries, I’ll handle it for you.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-28T01:18:28Z",
+      "updated_at": "2025-08-28T01:18:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007681172,
+      "body_text": "Hi Shane Clore,  Please provide me with the ID and temporary code, and I’ll be able to proceed.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-28T01:28:48Z",
+      "updated_at": "2025-08-28T01:28:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007681200,
+      "body_text": "ToDesk:\r\ndevice ID:171 141 898\r\nTemporary password:ir2m4rg5\r\n\r\nOn Wed, Aug 27, 2025 at 9:29 PM service@simsonn.com ",
+      "user_id": 158002761453,
+      "created_at": "2025-08-28T01:29:46Z",
+      "updated_at": "2025-08-28T01:29:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

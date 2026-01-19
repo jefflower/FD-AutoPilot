@@ -1,0 +1,115 @@
+{
+  "id": 783,
+  "subject": "踏板升级",
+  "description_text": "你好，\n\n我有一套 Simsonn Pro Pedal Plus，想要升级控制盒的软件以便在 Simsonn Manager 中使用。\n踏板在 Simsonn Manager 应用中能被识别，但提示：“版本过旧，无法使用”。\n\n我在 Reddit 上找到了这篇帖子：\n\n“SIMSONN MANAGER 可用于将 Simsonn Pro Pedal 控制盒的固件升级到 1.8.0 版本。之后，Pro Pedals 就可以使用 SIMSONN MANAGER 校准软件正常校准。手动升级步骤如下：\n\n1. 下载 SIMSONN MANAGER 软件，并确保其为最新版本 2.0.6（显示在右下角）。以下是软件和软件校准视频的链接：http://download.simsonn.com/simsonnmanager。然后，按主控盒上的‘升级按钮’进入升级模式。\n2. 重新连接 USB：拔下当前的 USB 数据线，然后重新连接，以确保设备已正确重新连接且踏板进入升级模式。\n3. 手动升级固件：从软件存储目录中找到 SIMSONN Manager\\env\\firmware\\pedal 文件夹，找到对应的固件文件，然后开始升级。\n4. 等待升级完成，请注意：升级过程中，不要断开连接、关闭电源或退出程序，否则控制盒将无法工作！对于 Pro X 踏板，踏板上的 LED 灯会熄灭，表示灯光正在升级中。\n5. 升级完成后，手动松开控制盒上的升级按钮。\n6. 返回正常操作模式：最后，拔下并重新连接。”\n\n你们提到要“按主控盒上的‘升级按钮’进入升级模式”。能告诉我这个按钮在哪里吗？我附上了控制盒的图片。\n\n我还在应用里找到了一个标签页（设置 - 更新 - 手动更新，踏板），然后我选择了 pedals 文件夹和“plus 1.8.0”版本。选择版本后，一个进度条开始并显示正在升级，但实际上什么也没发生。只是断开了我的踏板与电脑的连接，我必须重新连接才能让它们工作，然后又提示“版本过旧，无法使用”。\n\n能帮我一下如何升级软件吗？谢谢！",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-06-24T14:21:52Z",
+  "updated_at": "2025-06-28T12:14:00Z",
+  "requester_id": 158001757417,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003811872,
+      "body_text": "嗨 Albert Stoicescu，    请检查旧版软件——1703版本无法升级，但1713版本可以。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-24T14:49:13Z",
+      "updated_at": "2025-06-24T14:49:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003812187,
+      "body_text": "那么如果我的控制盒是1703版本就无法升级了？我该如何查看我的是哪个版本？这对踏板是2024年10月购买的。\n\n在2025年6月24日星期二 17:49，support @simsonn.com 写道：",
+      "user_id": 158001757417,
+      "created_at": "2025-06-24T14:52:48Z",
+      "updated_at": "2025-06-24T14:52:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003834999,
+      "body_text": "嗨 Albert Stoicescu， 您可以从我们的官方网站下载 SimConfigPedals V4 来检查设备版本。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-25T08:01:21Z",
+      "updated_at": "2025-06-25T08:01:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004184717,
+      "body_text": "你好。我检查了，控制盒的软件是1713。要升级到新版本以使用 Simsonn Manager 应用，下一步该怎么做？\n\n在2025年6月25日星期三 上午11:01，support @simsonn.com 写道：",
+      "user_id": 158001757417,
+      "created_at": "2025-06-27T10:13:03Z",
+      "updated_at": "2025-06-27T10:13:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004215251,
+      "body_text": "嗨 Albert Stoicescu，   您成功完成升级了吗？请分享一张软件的截图，以便我检查。如果 SIMSONN Manager 2.0.8 显示“SIMSONN Plus”已连接，那就意味着升级成功了。接着您就可以校准踏板，设置最小和最大死区，并在您的游戏中绑定踏板开始玩了。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-27T15:20:46Z",
+      "updated_at": "2025-06-27T15:20:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004219840,
+      "body_text": "你好，我之前问您如何进行更新，因为我没能成功。Simsonn Manager 显示踏板已连接，但版本太旧（图1），然后我按了设置、更新、手动更新，选择了踏板和1.8.0版本，然后立刻提示“升级完成”，但更新并没有发生。\n\n在2025年6月27日星期五 下午6:20，support @simsonn.com 写道：",
+      "user_id": 158001757417,
+      "created_at": "2025-06-28T10:34:08Z",
+      "updated_at": "2025-06-28T10:34:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004219888,
+      "body_text": "嗨 Albert Stoicescu，    您能安装一下 Todesk 远程工具吗？我可以远程协助您解决问题——您方便吗？",
+      "user_id": 158000445778,
+      "created_at": "2025-06-28T10:57:01Z",
+      "updated_at": "2025-06-28T10:57:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004219906,
+      "body_text": "ToDesk:\n设备ID: 464 020 794\n临时密码: 5jcepwg3\n\n在2025年6月28日星期六 下午1:57，support @simsonn.com 写道：",
+      "user_id": 158001757417,
+      "created_at": "2025-06-28T11:00:09Z",
+      "updated_at": "2025-06-28T11:00:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004219984,
+      "body_text": "嗨 Albert Stoicescu，    请稍等大约半小时——我目前网络有些问题。可以吗？",
+      "user_id": 158000445778,
+      "created_at": "2025-06-28T11:21:53Z",
+      "updated_at": "2025-06-28T11:21:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004219987,
+      "body_text": "好的，我会让电脑一直开着。我可能在。你随时可以连接进来。\n\n在2025年6月28日星期六 下午2:22，support @simsonn.com 写道：",
+      "user_id": 158001757417,
+      "created_at": "2025-06-28T11:24:04Z",
+      "updated_at": "2025-06-28T11:24:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

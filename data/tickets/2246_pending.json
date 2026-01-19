@@ -1,0 +1,144 @@
+{
+  "id": 2246,
+  "subject": "Re: Issue after updating Simulator Pro Pedals",
+  "description_text": "*Hi.*\r\nSeveral months ago, you sent me a replacement unit for the controller, and\r\nit had been working perfectly until about a week ago.\r\nRecently, I’ve started experiencing issues again: there’s noticeable input\r\nlag, and sometimes *the pedal gets stuck halfway down*.\r\n\r\nMy PC is fully updated.\r\n\r\nI’ve been considering purchasing the new controller model, but I’m hesitant\r\nbecause I’m worried about running into the same problems again. At the\r\nmoment,\r\n\r\nI don’t even feel confident entering an online championship race, as I’m\r\nafraid the issue could happen during a session.\r\n\r\nAre there any driver or firmware updates available that might fix this?\r\n\r\nThank you.\r\n\r\nEl mar, 14 ene 2025 a las 10:30, Eduardo Odriozola (<esles69@gmail.com>)\r\nescribió:\r\n\r\n> Hi.\r\n> I’m still having the same issues.\r\n> I can’t calibrate the pedals, and they keep disconnecting and reconnecting\r\n> during gameplay.\r\n> How can I restore the firmware of the box?\r\n> Regards, Eduardo.\r\n>\r\n> El dom, 12 ene 2025 a las 2:00, Eduardo Odriozola (<esles69@gmail.com>)\r\n> escribió:\r\n>\r\n>>  Hi,\r\n>> I can't calibrate the pedals, and the repuging issue keeps popping up all\r\n>> the time. Is there any solution?\r\n>> I don't understand why the firmware was updated if the program doesn't\r\n>> support the pedals. It said there was an upgrade, and it executed it.\r\n>> Regards, Eduardo.\r\n>>\r\n>> El vie, 10 ene 2025 a las 16:19, Eduardo Odriozola (<esles69@gmail.com>)\r\n>> escribió:\r\n>>\r\n>>> SPRO-P2-H2  3038916732144139\r\n>>>\r\n>>> El jue, 9 ene 2025 a las 3:14, support@simsonn.com (<support@simsonn.com>)\r\n>>> escribió:\r\n>>>\r\n>>>> Hi Eduardo,\r\n>>>> Could you please tell us your order ID? Your control box may have been\r\n>>>> damaged during the upgrade process. If your pedal is the PRO version,\r\n>>>> please do not use the Manager software (version 2.0.4), which is for PRO X\r\n>>>> pedals.\r\n>>>>\r\n>>>> ------------------------------\r\n>>>> support@simsonn.com\r\n>>>>\r\n>>>>\r\n>>>> *From:* Eduardo Odriozola <esles69@gmail.com>\r\n>>>> *Date:* 2025-01-08 23:33\r\n>>>> *To:* support <support@simsonn.com>\r\n>>>> *Subject:* Issue after updating Simulator Pro Pedals\r\n>>>>\r\n>>>> Hi,\r\n>>>>\r\n>>>> I am experiencing an issue in my *Simulator Pro Pedals *after updating\r\n>>>> the firmware of my racing simulator pedals using the *Manager software\r\n>>>> (version 2.0.4).* The firmware update seems to have caused two\r\n>>>> problems:\r\n>>>>\r\n>>>>    1. *False detection issue*: The Manager software is trying to\r\n>>>>    upgrade a different pedal model (Professional Pedal Pro X), which I don’t\r\n>>>>    own.\r\n>>>>    2. *USB connection issue*: A second USB device repeatedly attempts\r\n>>>>    to connect and fails, causing an error and frequent re-plugging.\r\n>>>>\r\n>>>> Additionally, *after the firmware update*, older software I used\r\n>>>> (SimPedalsConfig_V4 and FreeJoy) stopped working. As a result, I have no\r\n>>>> choice but to continue using Manager 2.0.4 despite these issues.\r\n>>>>\r\n>>>> I would like to know if the problems with USB re-plugging and false\r\n>>>> pedal detection will be resolved.\r\n>>>>\r\n>>>> Regads, Eduardo.\r\n>>>>\r\n>>>>\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-08-03T10:50:20Z",
+  "updated_at": "2025-08-22T04:29:14Z",
+  "requester_id": 158002206291,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006240876,
+      "body_text": "Hi Eduardo Odriozola,    I will contact our support staff immediately to troubleshoot the problem for you.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-05T06:36:28Z",
+      "updated_at": "2025-08-05T06:36:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006567248,
+      "body_text": "Hi.\r\n\r\nEl mar, 5 ago 2025 a las 8:36, support@simsonn.com (",
+      "user_id": 158002206291,
+      "created_at": "2025-08-08T19:41:04Z",
+      "updated_at": "2025-08-08T19:41:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006567481,
+      "body_text": "  Hi.\r\nI can't use the pedals; the USB keeps connecting and disconnecting until\r\nthey get stuck halfway.\r\n\r\nEl mar, 5 ago 2025 a las 8:36, support@simsonn.com (",
+      "user_id": 158002206291,
+      "created_at": "2025-08-08T19:43:24Z",
+      "updated_at": "2025-08-08T19:43:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006567579,
+      "body_text": "  Is there a new firmware available or something I can try?\r\n\r\nEl mar, 5 ago 2025 a las 8:36, support@simsonn.com (",
+      "user_id": 158002206291,
+      "created_at": "2025-08-08T19:43:36Z",
+      "updated_at": "2025-08-08T19:43:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006604594,
+      "body_text": "Hi Eduardo Odriozola,  Is your wheelbase a Fanatec? This is definitely not an issue with the pedals or the control box — it’s caused by interference. Please follow the steps below to troubleshoot and resolve it.      To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability:     1.    Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding.     2.    Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive.     3.    Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup.     4.    Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible.     5.    Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs.     6.    Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference.     7.    Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements.     8.    Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-09T15:49:47Z",
+      "updated_at": "2025-08-09T15:49:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006681253,
+      "body_text": "Hi,\r\n\r\nI’ve already done all of that… except for the firmware, which I don’t know\r\nwhere to download for my model.\r\nIt’s a USB replug error that was temporarily fixed with the second\r\ncontroller… but it’s come back.\r\n\r\nCant race with this problem... think I must return to fanatecs ones.\r\n\r\nRegards, Eduardo.\r\n\r\nEl sáb., 9 ago. 2025 17:49, support@simsonn.com ",
+      "user_id": 158002206291,
+      "created_at": "2025-08-11T08:35:47Z",
+      "updated_at": "2025-08-11T08:35:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006727091,
+      "body_text": "Hi Eduardo Odriozola,  Please provide multi-angle photos of your pedal installation, photos showing the modifications you made to address EMI, and a video capturing the interference when it occurs. I will analyze them comprehensively to identify possible issues and their causes. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-12T05:27:13Z",
+      "updated_at": "2025-08-12T05:27:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007159831,
+      "body_text": "[image: image.png][image: ground.jpg][image: emi filter.jpg]\r\nHi\r\nIn the Motec app, it’s clearly visible that both the throttle and brake\r\npositions (at the bottom) get stuck halfway.\r\n I’ve been away for a few days and I wasn’t able to send the images earlier.\r\n Regards, Eduardo.\r\n\r\nEl mar, 12 ago 2025 a las 7:27, support@simsonn.com (",
+      "user_id": 158002206291,
+      "created_at": "2025-08-19T16:17:56Z",
+      "updated_at": "2025-08-19T16:17:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007215894,
+      "body_text": "Hi Eduardo Odriozola,  This type of pedal normally does not cause such severe stuttering, as this model has been shipped in large quantities. If stuttering were common, it would be a widespread issue. It is more likely related to the USB cable or the USB port. Otherwise, it wouldn’t make sense for the problem to persist even after replacing two controllers. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-20T14:36:35Z",
+      "updated_at": "2025-08-20T14:36:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007238511,
+      "body_text": "Dear Support Team,\r\n\r\nThank you for your explanations. I truly appreciate the creativity behind\r\neach of your suggestions. Unfortunately, this is a braided USB cable with\r\ndouble ferrite shielding, and yes—I’ve already tested it on multiple ports.\r\n\r\nSince it seems that every reply only brings new excuses rather than\r\nsolutions, I’ll take the practical route: I’ll install the Fanatec pedals\r\nand simply sell these on Wallapop. Problem solved.\r\n\r\nKind regards, Eduardo.\r\n\r\nEl mié, 20 ago 2025 a las 16:36, support@simsonn.com (",
+      "user_id": 158002206291,
+      "created_at": "2025-08-20T18:11:42Z",
+      "updated_at": "2025-08-20T18:11:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007246696,
+      "body_text": "Hi Eduardo Odriozola,    In fact, we do not need any excuses. In international transactions, communication limitations and differences in each user’s computer environment mean that from version 2.0.4 to the latest 2.1.0, we can only provide possible solutions to customers based on the limited information available through emails. Making excuses or shifting responsibility is never the purpose of our after-sales support—if that were the case, there would be no point in offering support at all.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-20T23:34:04Z",
+      "updated_at": "2025-08-20T23:34:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007278355,
+      "body_text": "  The problem is with the controller. Isn’t there any firmware update?\r\n  I can’t find it on the website.\r\n\r\nEl jue, 21 ago 2025 a las 1:34, support@simsonn.com (",
+      "user_id": 158002206291,
+      "created_at": "2025-08-21T08:35:47Z",
+      "updated_at": "2025-08-21T08:35:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007325087,
+      "body_text": "Hi Eduardo Odriozola,  You can download the latest version from here. In addition, you may also purchase the latest PlusX controller, which supports vibration telemetry. Our software provides vibration support as listed below, and it is also compatible with SimHub 9.9.3, which supports telemetry for over 100 games.      https://www.simsonn.com/pages/download     https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor?variant=51351053533498     https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor?variant=51351053500730     https://www.simsonn.com/products/plus-ultra-upgrade-kit",
+      "user_id": 158000445778,
+      "created_at": "2025-08-22T04:29:14Z",
+      "updated_at": "2025-08-22T04:29:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

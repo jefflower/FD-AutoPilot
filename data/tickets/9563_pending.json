@@ -1,0 +1,44 @@
+{
+  "id": 9563,
+  "subject": "Help with my order",
+  "description_text": "Hello, i've purchased the plus pedals and my order was good, the money got\r\nout of my account, but i've put the track order and ir says \"unfulfilled\"\r\n\r\nAnd i wanted to know what is happening.\r\n\r\nOrder number: SSN5205\r\nPhone number: +351 913579826\r\n\r\nBest regards,\r\nGuilherme Neves\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-30T11:11:45Z",
+  "updated_at": "2025-12-31T02:12:54Z",
+  "requester_id": 158008818933,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015249229,
+      "body_text": "Hi Guilherme Neves,  I have checked your order and the payment has been confirmed. We will arrange the shipment as soon as possible. Due to the high volume of orders during the peak season, there might be some delays. Thank you for your understanding. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T11:18:52Z",
+      "updated_at": "2025-12-30T11:18:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015249735,
+      "body_text": "Thank you, yeah i know the delays are expected in this time of the year.\r\n\r\nI just wanted to know if everything was ok with the order.\r\n\r\nHave a nice reveillon and a great 2026.\r\n\r\nBest regards\r\n\r\nA terça, 30/12/2025, 11:19, support@simsonn.com ",
+      "user_id": 158008818933,
+      "created_at": "2025-12-30T11:23:34Z",
+      "updated_at": "2025-12-30T11:23:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015290653,
+      "body_text": "Hi Guilherme Neves,  We shipped your order via DHL last night. The tracking number is CE326638221DE. The tracking information should be updated soon, and you can check it at any time. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T02:12:53Z",
+      "updated_at": "2025-12-31T02:12:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

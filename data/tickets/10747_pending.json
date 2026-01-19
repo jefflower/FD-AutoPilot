@@ -1,0 +1,44 @@
+{
+  "id": 10747,
+  "subject": "Based on older tickets",
+  "description_text": "I now cant access my pedals after you change some settings via remote\r\naccess to try and fix my handbrake in the joy software\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-13T03:55:52Z",
+  "updated_at": "2026-01-15T01:31:31Z",
+  "requester_id": 158005185367,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016948963,
+      "body_text": "Hi Immanuel Podesta,       Which pedal model are you using? Please provide the order number for the pedals. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-13T08:31:13Z",
+      "updated_at": "2026-01-13T08:31:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016952976,
+      "body_text": "8192485336827283\r\n\r\nOn Tue, 13 Jan 2026, 6:31 pm support@simsonn.com, ",
+      "user_id": 158005185367,
+      "created_at": "2026-01-13T08:59:58Z",
+      "updated_at": "2026-01-13T08:59:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017154262,
+      "body_text": "Hi Immanuel Podesta,    I can see that your pedals were purchased in April 2024, so they are now outside the 1-year warranty period. Please record a video showing the issue and upload it to Google Drive, then send me the link and set the sharing permission to “Anyone with the link can view.” This will help us identify the cause and provide the best solution.  In the video, please also confirm whether the control box LED is on. In addition, please troubleshoot in the following order:    Try using a powered USB hub (with its own external power);    Or plug the device directly into a rear USB 3.0 (blue) port on your PC;    If possible, test the pedals on another computer.    If none of the above works, it most likely indicates that the control box is damaged, and you will need to purchase a new PlusX control box for replacement.     https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2026-01-15T01:31:30Z",
+      "updated_at": "2026-01-15T01:31:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

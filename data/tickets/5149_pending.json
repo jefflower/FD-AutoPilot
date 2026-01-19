@@ -1,0 +1,24 @@
+{
+  "id": 5149,
+  "subject": "Hpatics don't work on LMU",
+  "description_text": "Hi,\r\nI've currently bought the simsonn plus X pedals, with the haptic VAM pro.\r\nThe haptics don't work on Le Mans Ultimate. It seems it doesn't get the\r\ntelemetry from LMU.\r\nDo you know if there is a fix for that.\r\nThank you\r\n*Nuno Tiago Goulart*\r\n\r\n*tel: +351 962 480 021*\r\n*email: t.goulart@gmail.com <t.goulart@gmail.com>*\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-21T20:14:56Z",
+  "updated_at": "2025-10-22T02:42:53Z",
+  "requester_id": 158005951835,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010841814,
+      "body_text": "Hi，Tiago Goulart，     Please try the following steps:    Go to Settings → Update and update to SIMSONN Manager 2.1.2;    After the update, restart the software and update your pedal firmware;    Confirm the firmware versions are CPU1: 2.0.5 / CPU2: 2.0.4;    Then test again to see if the issue persists.    ​  https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-10-22T02:42:53Z",
+      "updated_at": "2025-10-22T02:42:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

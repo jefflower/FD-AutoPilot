@@ -1,0 +1,24 @@
+{
+  "id": 10814,
+  "subject": "order number SSN5488",
+  "description_text": "My product has came missing the 6+r shift plate and the cable I would like to return my product, please let me know on the process I will have to follow for the return.\r\nThankyou, Kaleb\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-13T18:51:02Z",
+  "updated_at": "2026-01-15T02:38:24Z",
+  "requester_id": 158008954468,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017157664,
+      "body_text": "Hi Kaleb Visram,    The missing item has been shipped for you. Here is the replacement link we have arranged:   https://t.17track.net/en#nums=SF6047241254488",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T02:38:24Z",
+      "updated_at": "2026-01-15T02:38:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 3759,
+  "subject": "Order SSN2585",
+  "description_text": "Hello!\r\n\r\nI ordered some pedals from you, with haptic motors. I've recieved the\r\npedals, but I have not recieved any motors. Is it possible for you to see\r\nif the motors are on their way?\r\n\r\nThanks!\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-12T14:34:08Z",
+  "updated_at": "2025-09-15T10:34:39Z",
+  "requester_id": 158004475718,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008745888,
+      "body_text": "Hello, here is your alternative tracking link. The package is expected to be delivered to you within the next two days.   https://t.17track.net/en#nums=YT2525100706766631",
+      "user_id": 158001343601,
+      "created_at": "2025-09-15T10:34:39Z",
+      "updated_at": "2025-09-15T10:34:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

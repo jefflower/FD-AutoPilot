@@ -1,0 +1,94 @@
+{
+  "id": 8685,
+  "subject": "Order #SSN4037  \"the shipment is being returned\"",
+  "description_text": "Hi,      what is happening? Why this \"the shipment is being returned\" at https://www.sf-express.com/chn/en/waybill/waybill-detail/SF6047100352334 related to Order #SSN4037 by Francesco Bistolfi ??  Shipping address    Shipping address  Francesco Bistolfi     Viale Des Geneys 30/4     16148 Genova Genoa     Italy    please note that I didn't receive any request for custom fee payment  please do your best because this is the Xmas gift for my son     Please check what is going on and let me know asap     best regards     Francesco Bistolfi",
+  "status": 5,
+  "priority": 4,
+  "created_at": "2025-12-19T12:44:49Z",
+  "updated_at": "2025-12-20T13:48:56Z",
+  "requester_id": 158008151095,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014758728,
+      "body_text": "please note that for some couriers   \"Viale Ammiraglio Giorgio Des Geneys 30/4\"  is preferred to shortened version   \"Viale Des Geneys 30/4\"   if it could help",
+      "user_id": 158008151095,
+      "created_at": "2025-12-19T12:48:19Z",
+      "updated_at": "2025-12-19T12:48:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158014773143,
+      "body_text": "Hi Fabio Leonetti,",
+      "user_id": 158001343601,
+      "created_at": "2025-12-19T16:19:39Z",
+      "updated_at": "2025-12-19T16:19:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014773314,
+      "body_text": "Hi support",
+      "user_id": 158008151095,
+      "created_at": "2025-12-19T16:22:29Z",
+      "updated_at": "2025-12-19T16:22:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158014773673,
+      "body_text": "Hi Fabio Leonetti,    Please contact your international logistics provider first. Here is your tracking number: 934C00072800F     Name of Last-Mile Service: SENGI  phone：0645263160   web：https://www.poste.it/index.html",
+      "user_id": 158001343601,
+      "created_at": "2025-12-19T16:26:37Z",
+      "updated_at": "2025-12-19T16:26:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014773710,
+      "body_text": "just note that the order is at name Francesco Bistolfi , are you able to avoid shipment returnment to China, please?",
+      "user_id": 158008151095,
+      "created_at": "2025-12-19T16:27:16Z",
+      "updated_at": "2025-12-19T16:27:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158014778310,
+      "body_text": "Hello support,     I phoned them at 0645263160 and they told me that you are the only one authorized to check and modify the address that is the following and ask for a new delivery temptative :           Francesco Bistolfi  Viale Ammiraglio Giorgio Des Geneys 30/4  16148 Genova   Italy        on tracking service https://www.poste.it/cerca/index.html#/risultati-spedizioni/934C00072800F  is written \"Delivery unsuccessful because the recipient's address is incorrect or incomplete.\"     I insisted a lot, but they say that for shipments of this kind, only the sender can change the address, even if it is incomplete.     Could you please do that and confirm it here?   thanks in advance",
+      "user_id": 158008151095,
+      "created_at": "2025-12-19T17:37:33Z",
+      "updated_at": "2025-12-19T17:37:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158014788136,
+      "body_text": "As far as I understand, the house number (30/4) is missing, but only you can have it added to the courier",
+      "user_id": 158008151095,
+      "created_at": "2025-12-19T20:26:03Z",
+      "updated_at": "2025-12-19T20:26:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158014811501,
+      "body_text": "I solved going to the courier place , thanks",
+      "user_id": 158008151095,
+      "created_at": "2025-12-20T13:48:51Z",
+      "updated_at": "2025-12-20T13:48:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "id": 6982,
+  "subject": "SHOP QUESTION",
+  "description_text": "I live in Germany and wanted to ask if I will incur additional costs such\r\nas customs and taxes\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-28T19:41:00Z",
+  "updated_at": "2025-12-03T09:40:08Z",
+  "requester_id": 158007401773,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013101585,
+      "body_text": "Hi Ebu Tosun,        No need, we shall dispatch your order from our German warehouse.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-29T11:04:53Z",
+      "updated_at": "2025-11-29T11:04:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013102193,
+      "body_text": "Hello,\r\n\r\nHow long will shipping take? They say it's shipped from Germany, but the\r\nshop page says 9 to 15 days when I order.\r\n\r\nBest regards\r\n\r\n\r\nservice@simsonn.com ",
+      "user_id": 158007401773,
+      "created_at": "2025-11-29T12:12:52Z",
+      "updated_at": "2025-11-29T12:12:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013102498,
+      "body_text": "Hello,\r\n\r\nIf something is defective, do I have to send it back to China, and if so,\r\ndo I have to pay for it? And how long would that take?\r\n\r\n\r\nGeneral and sales enquiries ",
+      "user_id": 158007401773,
+      "created_at": "2025-11-29T12:42:51Z",
+      "updated_at": "2025-11-29T12:42:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013126051,
+      "body_text": "Hello, how long is the shipping to germany?\r\n\r\nGeneral and sales enquiries ",
+      "user_id": 158007401773,
+      "created_at": "2025-11-30T03:41:45Z",
+      "updated_at": "2025-11-30T03:41:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013158318,
+      "body_text": "Hi Ebu Tosun,  In most cases, the issue can be resolved by sending replacement parts, so there’s no need to worry. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-01T05:50:58Z",
+      "updated_at": "2025-12-01T05:50:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013158933,
+      "body_text": "Hello, how long is the shipping to germany?\r\n\r\n\r\nservice@simsonn.com ",
+      "user_id": 158007401773,
+      "created_at": "2025-12-01T06:17:29Z",
+      "updated_at": "2025-12-01T06:17:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

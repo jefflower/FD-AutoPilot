@@ -1,0 +1,44 @@
+{
+  "id": 7016,
+  "subject": "Pedal baseplate",
+  "description_text": "Dear Sir or Madam,\r\n\r\nI ordered the pedal set without the baseplate, but I wanted to order the pedal with the baseplate.\r\nCould you support me with changing the order?\r\nOrder Number: SSN4112\r\n\r\nThank you in advance,\r\nLaszlo Maitz\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-11-29T09:59:50Z",
+  "updated_at": "2025-12-01T12:11:47Z",
+  "requester_id": 158007418521,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013101510,
+      "body_text": "Hi Maitz László,    Okay, you can click the link to pay the difference.  https://www.simsonn.com/products/difference-1",
+      "user_id": 158001343601,
+      "created_at": "2025-11-29T10:52:29Z",
+      "updated_at": "2025-11-29T10:52:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013101948,
+      "body_text": "\r\nDear Sir or Madam,\r\n\r\nThank you for the support,\r\nI will pay the difference today. (2025.11.29.)\r\n\r\nBR,\r\nLaszlo Maitz\r\n\r\n> 2025. nov. 29. dátummal, 11:52 időpontban support@simsonn.com írta:\r\n> \r\n> ﻿\r\n> Hi Maitz László,\r\n> \r\n> Okay, you can click the link to pay the difference.\r\n> https://www.simsonn.com/products/difference-1\r\n> ",
+      "user_id": 158007418521,
+      "created_at": "2025-11-29T11:45:56Z",
+      "updated_at": "2025-11-29T11:45:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013170539,
+      "body_text": "Hi Maitz László,    Okay, we've updated your order for you.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-01T12:11:46Z",
+      "updated_at": "2025-12-01T12:11:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

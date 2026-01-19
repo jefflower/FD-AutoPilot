@@ -1,0 +1,74 @@
+{
+  "id": 8342,
+  "subject": "Simsonn Pro X Ultra",
+  "description_text": "Dear team\r\n\r\nFirst of all I would like to tell you since I don't have any regrets buying\r\nthese pedals and I highly recommend this article to all my friends who wish\r\nto purchase a new pedals set.\r\nDuring discussions with my friends about the settings, some of them said\r\nthey see the brake force displayed on the software. On my side, nothing\r\nappears, which is quite strange. I've checked, and I have version 2.1.2,\r\nand the firmware is up to date.\r\nDo you have any idea why I don't see the brake force displayed on my brake\r\npedal?\r\n\r\nSincerely\r\n\r\nRomain\r\n\r\n[image: image.png]\r\n\r\n[image: image.png]\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-15T21:21:15Z",
+  "updated_at": "2025-12-20T12:33:39Z",
+  "requester_id": 158001575574,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014610767,
+      "body_text": "Hi Romain Roussel,  If you purchased the Pro X, our software does not currently support displaying weight in kg. The Pro X Ultra does support this feature. Since the Pro X is already on the market, modifying its firmware could affect existing customers, so we have conducted additional testing. Please provide your order number so we can assist you further. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T02:50:38Z",
+      "updated_at": "2025-12-17T02:50:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014778761,
+      "body_text": "Hello\r\n\r\nThank you for your answer\r\nThere is m'y order number #SSN1416, normal the pédales are Pro X ultra (the\r\none with RGB LED).\r\n\r\nThank you\r\n\r\n\r\nLe mer. 17 déc. 2025, 03:50, service@simsonn.com ",
+      "user_id": 158001575574,
+      "created_at": "2025-12-19T17:45:32Z",
+      "updated_at": "2025-12-19T17:45:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014809877,
+      "body_text": "Hi Romain Roussel,  I checked your order and it appears that you purchased the ProX version. If this feature is important to you, we recommend upgrading to the ProX Ultra controller board. In addition to supporting force display in kg, it also supports bidirectional control of vibration motors and provides better compatibility and performance for voice coil motors.      https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor?variant=51399342293306",
+      "user_id": 158000445778,
+      "created_at": "2025-12-20T11:59:33Z",
+      "updated_at": "2025-12-20T11:59:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014810163,
+      "body_text": "Hi\r\nThere is something that I dont understand because it's look like I already\r\nhave the pro X ultra controller.\r\n\r\n\r\n\r\n\r\nLe sam. 20 déc. 2025, 12:59, service@simsonn.com ",
+      "user_id": 158001575574,
+      "created_at": "2025-12-20T12:25:18Z",
+      "updated_at": "2025-12-20T12:25:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014810256,
+      "body_text": "Hi Romain Roussel, The ProX Ultra control board has been upgraded. The three pedals of the ProX Ultra feature panels with four screw holes, whereas the ProX panels only have two. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-20T12:30:29Z",
+      "updated_at": "2025-12-20T12:30:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014810274,
+      "body_text": "Thank you for the clarification.\r\n\r\nI will check later if it's necessary from m'y side to upgrade the\r\ncontroller.\r\n\r\n\r\n\r\nLe sam. 20 déc. 2025, 13:30, service@simsonn.com ",
+      "user_id": 158001575574,
+      "created_at": "2025-12-20T12:32:27Z",
+      "updated_at": "2025-12-20T12:32:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

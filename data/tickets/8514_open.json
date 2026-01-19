@@ -1,0 +1,44 @@
+{
+  "id": 8514,
+  "subject": "Orders Order #SSN4166",
+  "description_text": "Hallo\r\n\r\nWo ist meine Bestellung. Es wurde bis jetzt nur die Trägerplatte geliefert.\r\nOrders\r\n<https://account.simsonn.com/orders>Order #SSN4166\r\n\r\nMFG\r\nChristian Oitzinger\r\n\r\n",
+  "status": 2,
+  "priority": 2,
+  "created_at": "2025-12-17T13:54:37Z",
+  "updated_at": "2025-12-29T19:58:06Z",
+  "requester_id": 158007846994,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014874622,
+      "body_text": "Hi Christian Oitzinger,     Your order was originally scheduled for shipment from our German warehouse, but due to transportation delays, the goods arrived later than expected. They have now arrived at the warehouse, and we are processing them for storage and arranging DHL express shipping. We will update you with the tracking number tomorrow.",
+      "user_id": 158007774607,
+      "created_at": "2025-12-22T11:31:22Z",
+      "updated_at": "2025-12-22T11:31:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014874627,
+      "body_text": "Hi Christian Oitzinger,  Ihre Bestellung sollte ursprünglich von unserem deutschen Lager aus versendet werden, doch aufgrund von Transportverzögerungen sind die Waren später als erwartet eingetroffen. Sie sind nun im Lager angekommen, und wir bereiten sie für die Einlagerung vor und organisieren den Expressversand mit DHL. Wir werden Ihnen die Sendungsverfolgungsnummer morgen mitteilen.",
+      "user_id": 158007774607,
+      "created_at": "2025-12-22T11:31:41Z",
+      "updated_at": "2025-12-22T11:31:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015204843,
+      "body_text": "Guten Tag\r\n\r\nHabe noch immer keine Pedale oder Motoren erhalten.\r\nAuch keine Sendungsnummer.\r\n\r\nMfg\r\nChristian\r\n\r\n\r\nservice@simsonn.com ",
+      "user_id": 158007846994,
+      "created_at": "2025-12-29T15:54:16Z",
+      "updated_at": "2025-12-29T15:54:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

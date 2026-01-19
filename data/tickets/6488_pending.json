@@ -1,0 +1,24 @@
+{
+  "id": 6488,
+  "subject": "Products Dimensions",
+  "description_text": "Can you please tell me the dimensions of your product:\r\nhttps://www.simsonn.com/products/carbon-fiber-heel-plate-1\r\n\r\n-- \r\nRegards,\r\nToby\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-21T14:17:58Z",
+  "updated_at": "2025-11-22T02:38:12Z",
+  "requester_id": 158007227359,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012738225,
+      "body_text": "Hi Toby Phillippe,  Here are the size details. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-22T02:38:12Z",
+      "updated_at": "2025-11-22T02:38:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

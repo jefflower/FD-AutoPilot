@@ -1,0 +1,74 @@
+{
+  "id": 5952,
+  "subject": "Order Number: SSN3150 missing items and faulty function rotary",
+  "description_text": "Hello, I received my order today for: \"Simsonn GT2 Racing Simulator Steering Wheel S1\" and unfortunately I have a few issues.\r\n\r\nThe delivery is missing the sticker sheet and the quick release. Additionally, the wheel is different to the images i.e it's not an OMP wheel although is 330mm and suede and the right function selector rotary switch does not work fully. 4 of the positions do not do anything when using the left rotary switch.\r\n\r\nIs there anything that can be done about this?\r\n\r\nThank you for any assistance you can offer.\r\n\r\n[cid:e6c46486-4b53-4400-b41f-7c7642323411]\r\n\r\nGareth Smith\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-11T17:25:20Z",
+  "updated_at": "2025-11-25T06:11:49Z",
+  "requester_id": 158006945596,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012370617,
+      "body_text": "Hello support, is there an update on this ticket please? Thank you Gareth ",
+      "user_id": 158006945596,
+      "created_at": "2025-11-15T10:20:08Z",
+      "updated_at": "2025-11-15T10:20:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012399947,
+      "body_text": "Hi gareth_smith@btinternet. com,    The steering wheel you purchased is from the same manufacturer, so there’s no need to worry—we do not specifically require OMP. The wheel comes in leather and suede materials, unless we sent the wrong version.  The right-side knob controls the left-side knob. For example, rotating the left-side knob left or right corresponds to buttons 17 and 18. When the right-side knob is rotated one step, the left-side knob switches to buttons 19 and 20, allowing a total of 2×12 = 24 positions.  Additionally, Windows can display a maximum of 32 buttons, but the full 40 buttons are recognized when entering the game.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-16T02:39:32Z",
+      "updated_at": "2025-11-16T02:39:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012548665,
+      "body_text": "Hi thank you for getting back to me. I can confirm it was just Windows not recognising all the buttons, SinHub sees them just fine so that’s all good. I do have a question however, can you tell me the strength of the magnets used on the shifters? I am looking to replace them for stronger ones and the ones I bought were weaker so if I could know the strength I can look for stronger ones. Many thanks Gareth ",
+      "user_id": 158006945596,
+      "created_at": "2025-11-18T21:13:08Z",
+      "updated_at": "2025-11-18T21:13:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012558937,
+      "body_text": "Hi gareth_smith@btinternet. com,   If you need to increase the strength of the magnet, do not change its diameter. You can achieve stronger magnetic force by increasing the thickness of the magnet. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-19T04:10:33Z",
+      "updated_at": "2025-11-19T04:10:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012614797,
+      "body_text": "Thanks for the reply, could you provide the size and strength in kgs of the magnets? I found replacement 12mm round magnets but not sure if these are the correct size and no idea on the strength. The ones I found are either 3kg or 4.3kg pull. Thank you for all the support! Gareth ",
+      "user_id": 158006945596,
+      "created_at": "2025-11-19T22:07:11Z",
+      "updated_at": "2025-11-19T22:07:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012859686,
+      "body_text": "Hi gareth_smith@btinternet. com,  As long as the diameter fits, it can be installed. However, we do not have test experience regarding the weight (kg), so you may try it yourself. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-25T05:37:27Z",
+      "updated_at": "2025-11-25T05:37:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

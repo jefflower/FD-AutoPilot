@@ -1,0 +1,24 @@
+{
+  "id": 8470,
+  "subject": "Order #SSN4789",
+  "description_text": "Hello,\r\n\r\nMy email says this has been shipped but fedex still says they have not\r\nreceived the package. Was this handed over to fedex on Monday December 15th?\r\n\r\nThanks,\r\nBrandon Crow\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-17T04:19:32Z",
+  "updated_at": "2025-12-17T05:47:20Z",
+  "requester_id": 158007832333,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014613846,
+      "body_text": "Hi Brandon Crow,    Don't worry, the warehouse shows it's in stock. It's likely just that the logistics update hasn't been processed yet.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-17T05:47:20Z",
+      "updated_at": "2025-12-17T05:47:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

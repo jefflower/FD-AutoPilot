@@ -1,0 +1,34 @@
+{
+  "id": 6696,
+  "subject": "In regards to Order #SSN3836",
+  "description_text": "Hi,\r\n\r\nI forgot to purchase an adaptor plate and a desktop fixing clamp for the\r\nshifter when I placed the order. Could you please add these two items and\r\ncharge me the extra? (should be an additional $33.80)\r\n\r\nMany thanks,\r\nHenry\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-11-25T05:09:01Z",
+  "updated_at": "2025-11-25T09:41:43Z",
+  "requester_id": 158007316410,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012869221,
+      "body_text": "Hi, upon review I'd like to cancel this order. Other than not getting an adaptor plate and a desktop fixing clamp, I didn't use the code BLACK45 to get the pre-sale discount. ",
+      "user_id": 158007316410,
+      "created_at": "2025-11-25T08:54:57Z",
+      "updated_at": "2025-11-25T08:54:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158012870411,
+      "body_text": "Alright, we'll add the adapter plate and the Desktop Fixed for you. Additionally, you didn't use the BLACK45 discount but applied a $31.75 discount instead, resulting in a difference of $13.25. Therefore, you only need to pay $20.55. You can click this link to complete the payment.  https://www.simsonn.com/products/difference-2",
+      "user_id": 158001343601,
+      "created_at": "2025-11-25T09:41:43Z",
+      "updated_at": "2025-11-25T09:41:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

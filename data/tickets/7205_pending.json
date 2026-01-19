@@ -1,0 +1,104 @@
+{
+  "id": 7205,
+  "subject": "Order #SSN3862",
+  "description_text": "Hello,\r\nI ordered the Simsonn Plus X racing pedals and haptic sensors on November 25th and I see that only the haptic sensors are being delivered. Can you confirm that the pedals are also on their way to me within the 5-7 business day shipping time?\r\nThank you,\r\nDavid\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-01T23:13:57Z",
+  "updated_at": "2025-12-22T13:03:37Z",
+  "requester_id": 158007487739,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013311258,
+      "body_text": "Hello, any updates on this? David ",
+      "user_id": 158007487739,
+      "created_at": "2025-12-03T06:10:17Z",
+      "updated_at": "2025-12-03T06:10:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013374977,
+      "body_text": "Hi david whiting,     Hello, I see that your order has been delivered. Below is the tracking information for your reference.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T07:21:25Z",
+      "updated_at": "2025-12-04T07:21:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013424583,
+      "body_text": "Thank you, I just received it! However, I ordered the version with the black baseplate but that was not included. Can you please send the baseplate as per my original order? For reference, I ordered the Plus X P2-H2 with Baseplate in black. Thank you, David Whiting ",
+      "user_id": 158007487739,
+      "created_at": "2025-12-04T23:50:43Z",
+      "updated_at": "2025-12-04T23:50:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013426240,
+      "body_text": "Here’s a photo of the pedals and haptic units installed on the pedals but no baseplate. Thank you, David Whiting ",
+      "user_id": 158007487739,
+      "created_at": "2025-12-05T00:41:38Z",
+      "updated_at": "2025-12-05T00:41:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013477873,
+      "body_text": "Hi david whiting,  We apologize for the delay caused by the current stock shortage of the base plate at our U.S. warehouse. We expect to ship your order once the item arrives next Thursday. ",
+      "user_id": 158001343601,
+      "created_at": "2025-12-05T10:12:51Z",
+      "updated_at": "2025-12-05T10:12:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013536039,
+      "body_text": "That’s unfortunate but I understand, thank you. David Whiting ",
+      "user_id": 158007487739,
+      "created_at": "2025-12-05T14:54:13Z",
+      "updated_at": "2025-12-05T14:54:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014229395,
+      "body_text": "Hello, can I please have updated shipping information on the pedal plate please? Thank you, David ",
+      "user_id": 158007487739,
+      "created_at": "2025-12-10T02:41:28Z",
+      "updated_at": "2025-12-10T02:41:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014380855,
+      "body_text": "Hi david whiting,     There has been a delay in the delivery of the parcel.   We will ship your order immediately upon receiving the item today.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-12T11:39:41Z",
+      "updated_at": "2025-12-12T11:39:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014381770,
+      "body_text": "Understood, thank you.\r\nDavid Whiting\r\n\r\n> ",
+      "user_id": 158007487739,
+      "created_at": "2025-12-12T12:14:03Z",
+      "updated_at": "2025-12-12T12:14:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

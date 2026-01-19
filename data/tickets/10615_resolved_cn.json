@@ -1,0 +1,294 @@
+{
+  "id": 10615,
+  "subject": "手刹",
+  "description_text": "根据之前的邮件，设备仍然会断开连接，无法被电脑识别。这种情况会随机发生，有时在游戏中途发生。只有踏板能被检测到，手刹检测不到。",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-12T05:45:06Z",
+  "updated_at": "2026-01-14T07:04:48Z",
+  "requester_id": 158005185367,
+  "responder_id": 158007774664,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016841187,
+      "body_text": "你好 Immanuel Podesta，\n\n请问您是否正在使用手刹？问题似乎是由不正确的配置文件引起的。请提供您的订单号，以便我核实具体型号。然后，请使用正确的手刹配置文件将设备恢复到出厂设置，之后再重新校准。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-12T06:27:22Z",
+      "updated_at": "2026-01-12T06:27:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016841585,
+      "body_text": "你好 Immanuel Podesta，\n\n恢复步骤如下：\n\n点击“从文件加载配置”\n选择下载的 SIMSONN HB.cfg 文件\n点击“将配置写入设备”\n此程序适用于我们的称重传感器（压力）手刹。\n\n请下载 FreeJoy 1.7.0。连接设备后，请按照以下步骤操作：\n\n点击“从设备读取配置”\n点击“轴”\n点击“校准”\n多次拉动手刹\n点击“停止校准”\n点击“将配置写入设备”\n之后，请检查手刹的蓝色进度条是否从 0% 移动到 100%。如果工作正常，您就可以进行游戏内校准了。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-12T06:29:44Z",
+      "updated_at": "2026-01-12T06:29:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016842264,
+      "body_text": "我之前已经做过所有这些步骤，它开始工作了，但又开始随机断开连接。",
+      "user_id": 158005185367,
+      "created_at": "2026-01-12T06:38:32Z",
+      "updated_at": "2026-01-12T06:38:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016842352,
+      "body_text": "在freejoy软件里手刹没显示，只显示了pro踏板",
+      "user_id": 158005185367,
+      "created_at": "2026-01-12T06:42:05Z",
+      "updated_at": "2026-01-12T06:42:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016842609,
+      "body_text": "你说的步骤我全都试过了，手刹根本显示不出来，也完全没用。在FreeJoy上只显示Simsonn Pro踏板，手刹的编码器电脑也识别不了了，FreeJoy软件里也看不到。",
+      "user_id": 158005185367,
+      "created_at": "2026-01-12T06:52:33Z",
+      "updated_at": "2026-01-12T06:52:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016844086,
+      "body_text": "你好 Immanuel Podesta，\n\n请安装 ToDesk 远程工具（无需注册），并提供您的ID和临时访问码。我将远程协助您检查并解决问题。\n\nhttps://dl.todesk.com/irrigation/ToDesk_4.8.4.2.exe",
+      "user_id": 158000445778,
+      "created_at": "2026-01-12T07:40:50Z",
+      "updated_at": "2026-01-12T07:40:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016844210,
+      "body_text": "我下载了，但是是中文的，我看不懂点哪里",
+      "user_id": 158005185367,
+      "created_at": "2026-01-12T07:45:34Z",
+      "updated_at": "2026-01-12T07:45:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016844349,
+      "body_text": "我的意思是看不懂……抱歉",
+      "user_id": 158005185367,
+      "created_at": "2026-01-12T07:50:17Z",
+      "updated_at": "2026-01-12T07:50:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016844361,
+      "body_text": "你好 Immanuel Podesta，\n\n如果提示您登录，请点击右上角的关闭按钮，然后复制 ID 和验证码发给我。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-12T07:50:48Z",
+      "updated_at": "2026-01-12T07:50:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016844423,
+      "body_text": "394912956",
+      "user_id": 158005185367,
+      "created_at": "2026-01-12T07:53:06Z",
+      "updated_at": "2026-01-12T07:53:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016844595,
+      "body_text": "你好 Immanuel Podesta，\n\n请点击“接受”。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-12T07:58:22Z",
+      "updated_at": "2026-01-12T07:58:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016844642,
+      "body_text": "我不懂中文，请指给我看是哪里",
+      "user_id": 158005185367,
+      "created_at": "2026-01-12T07:59:56Z",
+      "updated_at": "2026-01-12T07:59:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016844712,
+      "body_text": "你好 Immanuel Podesta，\n\n请拍下当前界面的照片发给我。我会指导您完成这些步骤。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-12T08:01:48Z",
+      "updated_at": "2026-01-12T08:01:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016844795,
+      "body_text": "我找到语言设置了，现在是英文了，如果你再试一次，我现在应该可以接受了",
+      "user_id": 158005185367,
+      "created_at": "2026-01-12T08:03:22Z",
+      "updated_at": "2026-01-12T08:03:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016844816,
+      "body_text": "",
+      "user_id": 158005185367,
+      "created_at": "2026-01-12T08:04:14Z",
+      "updated_at": "2026-01-12T08:04:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016845275,
+      "body_text": "",
+      "user_id": 158005185367,
+      "created_at": "2026-01-12T08:12:23Z",
+      "updated_at": "2026-01-12T08:12:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016845839,
+      "body_text": "订单号：8192485336827283\nImmanuel podesta\n0455456047\n40 miers Cres, Murrumba Downs QLD 4503, Australia",
+      "user_id": 158005185367,
+      "created_at": "2026-01-12T08:24:53Z",
+      "updated_at": "2026-01-12T08:24:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016850032,
+      "body_text": "你好 Immanuel Podesta，\n\n您的产品已经发货。物流单号是：JSEAA1208444138YQ。您可以在这个网站上追踪：https://t.17track.net/zh-cn#nums=JSEAA1208444138YQ",
+      "user_id": 158007774664,
+      "created_at": "2026-01-12T09:41:50Z",
+      "updated_at": "2026-01-12T09:41:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016871567,
+      "body_text": "我的踏板现在检测不到了",
+      "user_id": 158005185367,
+      "created_at": "2026-01-12T15:00:16Z",
+      "updated_at": "2026-01-12T15:00:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016872273,
+      "body_text": "我的踏板现在检测不到了",
+      "user_id": 158005185367,
+      "created_at": "2026-01-12T15:08:00Z",
+      "updated_at": "2026-01-12T15:08:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016945631,
+      "body_text": "你好 Immanuel Podesta，\n\n请使用 USB 3.0 接口。\n\nSimsonn Manager 下载：\nhttp://download.simsonn.com/simsonnmanager",
+      "user_id": 158007774664,
+      "created_at": "2026-01-13T07:36:07Z",
+      "updated_at": "2026-01-13T07:36:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016946274,
+      "body_text": "但是控制盒里没有按钮。自从你们远程帮我修手刹改了设置之后，就一直有问题。",
+      "user_id": 158005185367,
+      "created_at": "2026-01-13T07:44:29Z",
+      "updated_at": "2026-01-13T07:44:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016946718,
+      "body_text": "而且我的是旧款pro踏板，不是新款的",
+      "user_id": 158005185367,
+      "created_at": "2026-01-13T07:49:17Z",
+      "updated_at": "2026-01-13T07:49:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016947196,
+      "body_text": "你好 Immanuel Podesta，\n\n请按照以下步骤操作：\n按住 PlusX 主控制器上的升级按钮，然后重新连接 USB 数据线。\n打开 SIMSONN Manager 2.1.2 并检查它是否已进入恢复模式。\n如果检测到恢复模式，请转到设置 → 更新 → 手动更新固件 → 踏板 → 固件 → pedals-proxultra/plusx.sfu。\n更新完成后，测试设备以查看是否已成功恢复。\n\n主控制盒上的升级按钮：",
+      "user_id": 158007774664,
+      "created_at": "2026-01-13T07:59:31Z",
+      "updated_at": "2026-01-13T07:59:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016947302,
+      "body_text": "那不是我的控制盒",
+      "user_id": 158005185367,
+      "created_at": "2026-01-13T08:02:00Z",
+      "updated_at": "2026-01-13T08:02:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016954690,
+      "body_text": "你好 Immanuel Podesta，\n\n请按照附件视频进行升级。",
+      "user_id": 158007774664,
+      "created_at": "2026-01-13T09:23:05Z",
+      "updated_at": "2026-01-13T09:23:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016998176,
+      "body_text": "现在好了，太谢谢了",
+      "user_id": 158005185367,
+      "created_at": "2026-01-13T15:37:17Z",
+      "updated_at": "2026-01-13T15:37:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017076709,
+      "body_text": "你好 Immanuel Podesta，\n\n不客气。如果您有任何问题，请随时与我们联系。",
+      "user_id": 158007774664,
+      "created_at": "2026-01-14T07:04:41Z",
+      "updated_at": "2026-01-14T07:04:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

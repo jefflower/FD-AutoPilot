@@ -1,0 +1,35 @@
+{
+  "id": 59,
+  "subject": "回复: 回复: 踏板底板缺失",
+  "description_text": "您好，我仍然没有收到踏板底板或任何配送跟踪信息，您能确认它正在路上吗？\n\n周二，2025年5月20日，03:36，support @simsonn.com <support @simsonn.com>写道：\n\n> \n> 您好！对于给您带来的不便，我们深表歉意！经核实，我们的仓库同事在发货时意外遗漏了底板。我们已紧急安排补发，并将在今天寄出。感谢您的理解与支持！\n> ------------------------------\n> support @simsonn.com\n> \n> \n> *发件人：* Filipe Cunha <feg2k18 @gmail.com>\n> *日期：* 2025年5月20日 10:17\n> *收件人：* support <support @simsonn.com>\n> *主题：* 回复: 踏板底板缺失\n> 订单 #SSN1461\n> \n> \n> 周二，2025年5月20日，02:58，support @simsonn.com <support @simsonn.com>\n> 写道：\n> \n>> \n>> 您好，能提供订单号吗？\n>> \n>> ------------------------------\n>> support @simsonn.com\n>> \n>> \n>> *发件人：* Filipe Cunha <feg2k18 @gmail.com>\n> *日期：* 2025年5月19日 23:35\n> *收件人：* support <support @simsonn.com>\n> *主题：* 踏板底板缺失\n> 您好，我刚刚收到了我订购的踏板，但是踏板底板没有到货，我想知道发生了什么以及我们如何解决这个问题\n> \n> 谢谢您\n> ",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-06-03T23:44:19Z",
+  "updated_at": "2025-06-09T02:47:30Z",
+  "requester_id": 158000954971,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002656387,
+      "body_text": "您好，我想知道问题是否已检查以及产品是否已发货，我确实收到了电子邮件，但我仍然没有跟踪代码或任何确认。\n\n谢谢您\n\n周三，2025年6月4日，00:49，support @simsonn.com",
+      "user_id": 158000954971,
+      "created_at": "2025-06-07T06:47:12Z",
+      "updated_at": "2025-06-07T06:47:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002841175,
+      "body_text": "你好 Filipe Cunha， 这是顺丰国际的追踪号码。包裹已于6月7日寄出。 SF3172442478434",
+      "user_id": 158000445778,
+      "created_at": "2025-06-09T02:47:30Z",
+      "updated_at": "2025-06-09T02:47:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

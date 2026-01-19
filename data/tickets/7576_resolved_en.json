@@ -1,0 +1,45 @@
+{
+  "id": 7576,
+  "subject": "info",
+  "description_text": "Hello, I was supposed to receive the package today but unfortunately I was not at home for an emergency. I would like to know if they will try again on Tuesday or if I have to cancel the order? In case they pass by, I am available after 1 pm, before that I am at work. In any case, I leave you my phone number 3495865118 so if they call me I will tell them where to leave it. I would like to have news by today or tomorrow at the latest.\n\nThe package tracking number is *934C00071694F*\nOrder Number # 407-9518134-4488348\nlet me know, thank you.",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-06T17:51:30Z",
+  "updated_at": "2025-12-11T08:10:17Z",
+  "requester_id": 158007171292,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013962383,
+      "body_text": "reply to me here I don't know how to use tickets",
+      "user_id": 158007171292,
+      "created_at": "2025-12-06T18:02:57Z",
+      "updated_at": "2025-12-06T18:02:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014307568,
+      "body_text": "I already received the order thank you ?",
+      "user_id": 158007171292,
+      "created_at": "2025-12-11T08:06:22Z",
+      "updated_at": "2025-12-11T08:06:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014307688,
+      "body_text": "Hi Salvo De Stradis,  Okay, I was just about to provide you with the local logistics contact. Once you receive the shipment, that’s fine. If you encounter any issues, feel free to contact us via email.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T08:10:17Z",
+      "updated_at": "2025-12-11T08:10:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

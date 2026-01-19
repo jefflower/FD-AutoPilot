@@ -1,0 +1,45 @@
+{
+  "id": 4471,
+  "subject": "Simsonn Pro X 踏板固件更新失败后卡在升级模式",
+  "description_text": "您好，Simsonn 团队，\n\n我的 Pro X 踏板在固件更新失败后卡在了“升级模式”。\nSimsonn 管理器只显示“主控制器处于升级模式”，并且不再提供任何固件更新选项。\n\n请问您能否提供正确的固件文件用于手动刷写，或者提供一个恢复工具？\n\n谢谢！\n此致，\nPeter",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-10-05T15:03:50Z",
+  "updated_at": "2025-10-05T23:20:55Z",
+  "requester_id": 158005408065,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009937920,
+      "body_text": "你好，Peter Potrawa，请在您的电脑上卸载旧版本，然后重新安装 2.1.2 版本并更新固件。更新后，设备版本应显示为 CPU1: 2.0.5, CPU2: 2.0.3。如果问题仍然存在，请随时与我联系。另外，请确保控制盒上的升级按钮已弹出，然后重新连接 USB 线。 https://drive.google.com/file/d/1PZwHUqhhmJw0IBGDO8mGONPbrICJU3z1/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T15:58:09Z",
+      "updated_at": "2025-10-05T15:58:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009942090,
+      "body_text": "您好，\n我已经卸载了 Simsonn 管理器并安装了您下载链接中的版本，\n但我仍然没有固件更新选项。\n\n在更新页面上有一个手动更新功能 —\n您能否直接发送固件更新文件（.bin 或 .hex），\n这样我就可以手动刷写了？\n\n我的控制器在上次更新失败后卡在*升级模式*。\n\n非常感谢您的帮助！\n\n\n[图片：grafik.png]\n\n[图片：grafik.png]\n\n\n\n2025年10月5日周日 17:58，support@simsonn.com 写道：\n\n> 你好，Peter Potrawa，\n>\n> 请在您的电脑上卸载旧版本，然后重新安装 *2.1.2 版本*并更新固件。\n>  更新后，设备版本应显示为 *CPU1: 2.0.5, CPU2: 2.0.3*。\n>  如果问题仍然存在，请随时与我联系。\n>  另外，请确保控制盒上的 *升级按钮*已 *弹出*，然后重新连接 *USB* 线。\n>\n>\n> https://drive.google.com/file/d/1PZwHUqhhmJw0IBGDO8mGONPbrICJU3z1/view?usp=drive_link\n>\n>\n> 2025年10月5日周日 11:03，Peter Potrawa <peter.potrawa@gmail.com> 写道：\n> 您好 Simsonn 团队，\n>\n> 我的 Pro X 踏板在固件更新失败后卡在“升级模式”。\n> Simsonn 管理器只显示“主控制器处于升级模式”，并且不再提供任何固件更新。\n>\n> 您能否发送正确的固件文件用于手动刷写，或者提供一个恢复工具？\n>\n> 谢谢！\n> 此致，\n> Peter\n>\n> 4471:4206036\n>",
+      "user_id": 158005408065,
+      "created_at": "2025-10-05T17:13:19Z",
+      "updated_at": "2025-10-05T17:13:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009942205,
+      "body_text": "*抱歉，*\n我刚才发现有一个 *Firmware* 文件夹，我已经尝试了手动更新 —\n现在一切都恢复正常了！\n\n非常感谢您的帮助！ ?\n\n2025年10月5日周日 19:12，Peter Potrawa <peter.potrawa@gmail.com> 写道：\n\n> 您好，\n> 我已经卸载了 Simsonn 管理器并安装了您下载链接中的版本，\n> 但我仍然没有固件更新选项。\n> \n> 在更新页面上有一个手动更新功能 —\n> 您能否直接发送固件更新文件（.bin 或 .hex），\n> 这样我就可以手动刷写了？\n> \n> 我的控制器在上次更新失败后卡在*升级模式*。\n> \n> 非常感谢您的帮助！\n> \n> \n> [图片：grafik.png]\n> \n> [图片：grafik.png]\n> \n> \n> \n> 2025年10月5日周日 17:58，support@simsonn.com 写道：\n> \n>> 你好，Peter Potrawa，\n>>\n>> 请在您的电脑上卸载旧版本，然后重新安装 *2.1.2 版本*并更新固件。\n>>  更新后，设备版本应显示为 *CPU1: 2.0.5, CPU2: 2.0.3*。\n>>  如果问题仍然存在，请随时与我联系。\n>>  另外，请确保控制盒上的 *升级按钮*已 *弹出*，然后重新连接 *USB* 线。\n>>\n>>\n>> https://drive.google.com/file/d/1PZwHUqhhmJw0IBGDO8mGONPbrICJU3z1/view?usp=drive_link\n>>\n>>\n>> 2025年10月5日周日 11:03，Peter Potrawa <peter.potrawa@gmail.com> 写道：\n>> 您好 Simsonn 团队，\n>>\n>> 我的 Pro X 踏板在固件更新失败后卡在“升级模式”。\n>> Simsonn 管理器只显示“主控制器处于升级模式”，并且不再提供任何固件更新。\n>>\n>> 您能否发送正确的固件文件用于手动刷写，或者提供一个恢复工具？\n>>\n>> 谢谢！\n>> 此致，\n>> Peter\n>>\n>> 4471:4206036\n>>\n>",
+      "user_id": 158005408065,
+      "created_at": "2025-10-05T17:28:13Z",
+      "updated_at": "2025-10-05T17:28:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

@@ -1,0 +1,44 @@
+{
+  "id": 10481,
+  "subject": "Broken power supply cable",
+  "description_text": "My power supply cable stopped working properly, it sits loose when inside\r\nthe control box, I put it in DC input, as I should, everything correct but\r\nit sits loose and the pedals are loosing response now, only go to 35, 50%\r\nand 33%. If you can send a new Control box and power supply cable, because\r\nI don't know which is the wrong one, maybe both, email me back. Awaiting on\r\nyour response\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-10T10:14:31Z",
+  "updated_at": "2026-01-15T01:34:12Z",
+  "requester_id": 158009014221,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016713108,
+      "body_text": "Hi Geek77,  Please take a photo to show the issue and also provide your order number for further checking. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-10T13:27:14Z",
+      "updated_at": "2026-01-10T13:27:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017015346,
+      "body_text": "Here are the photos, you can see that it sits very loose and it's always\r\nfalling. I bought it from aliexpress, do you also fix it?\r\n\r\nA sáb, 10 de jan. de 2026, 1:27 p.m., service@simsonn.com <\r\nservice@simsonn.com> escreveu:\r\n\r\n> Hi Geek77,\r\n>\r\n> Please take a photo to show the issue and also provide your order number\r\n> for further checking.\r\n>\r\n>\r\n> ",
+      "user_id": 158009014221,
+      "created_at": "2026-01-13T18:12:57Z",
+      "updated_at": "2026-01-13T18:12:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017154318,
+      "body_text": "Hi Geek77,  Could you please provide your order number? Also, please try placing the control box in a more stable position to prevent it from shaking, and use a zip tie to secure the power connector to avoid a loose connection. After that, please test again and let me know if it improves. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-15T01:34:12Z",
+      "updated_at": "2026-01-15T01:34:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

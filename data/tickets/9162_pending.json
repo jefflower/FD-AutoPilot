@@ -1,0 +1,24 @@
+{
+  "id": 9162,
+  "subject": "Order #SSN4947",
+  "description_text": "Hello,\r\n\r\nI have a question, I got the pedals delivered, but not the haptics, are\r\nthose coming in a different delivery? Thanks in advance.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-25T17:13:42Z",
+  "updated_at": "2025-12-28T03:30:26Z",
+  "requester_id": 158008702211,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015147517,
+      "body_text": "Hi Guido Agustin Pappalardo,       The motor is shipped separately and has a different tracking number. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T03:30:26Z",
+      "updated_at": "2025-12-28T03:30:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "id": 1317,
+  "subject": "Shipping Address Confirmation Request",
+  "description_text": "Dear Simsonn Team,\r\n\r\nI hope this message finds you well.\r\n\r\nI placed an order on your website yesterday and received the FedEx tracking\r\nnumber today. However, when I checked the tracking information, it shows\r\nthat the final destination is Wellington, Florida.\r\n\r\nI am located in Deerfield Beach, Florida, and I would like to kindly ask\r\nyou to verify that the shipping address on my order is correct. Could you\r\nplease confirm the delivery address associated with my order?\r\n\r\nThank you for your help and I look forward to your reply.\r\n\r\nBest regards,\r\nLuiz.\r\nOrder #SSN1944\r\n\r\n\r\n[image: image.png]\r\n\r\n\r\n[image: image.png]\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-07-07T18:16:57Z",
+  "updated_at": "2025-07-14T07:29:18Z",
+  "requester_id": 158001928168,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004501997,
+      "body_text": "Hi Luiz Fernando Borges,     Please don't worry, we ship with the correct information entered.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-10T10:26:00Z",
+      "updated_at": "2025-07-10T10:26:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004702399,
+      "body_text": "Now what ? Didn't receive.\r\n\r\n[image: image.png]\r\n\r\nOn Thu, Jul 10, 2025 at 6:26 AM service@simsonn.com ",
+      "user_id": 158001928168,
+      "created_at": "2025-07-12T17:57:15Z",
+      "updated_at": "2025-07-12T17:57:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004702457,
+      "body_text": "[image: image.png]\r\nWellington, wrong address\r\n\r\nOn Sat, Jul 12, 2025 at 1:56 PM Luiz Fernando Borges <\r\nluhortaborges@gmail.com> wrote:\r\n\r\n> Now what ? Didn't receive.\r\n>\r\n> [image: image.png]\r\n>\r\n> On Thu, Jul 10, 2025 at 6:26 AM service@simsonn.com ",
+      "user_id": 158001928168,
+      "created_at": "2025-07-12T17:57:57Z",
+      "updated_at": "2025-07-12T17:57:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004776133,
+      "body_text": "Hi Luiz Fernando Borges,     Sorry, we filled in the wrong logistics number, your package has been delivered, please check your front door. We apologize for the inconvenience! https://www.fedex.com/fedextrack/?trknbr=882556886381&trkqual=12029~882556886381~FDEG",
+      "user_id": 158001343601,
+      "created_at": "2025-07-14T07:29:17Z",
+      "updated_at": "2025-07-14T07:29:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

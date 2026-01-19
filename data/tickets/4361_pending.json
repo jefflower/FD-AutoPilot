@@ -1,0 +1,24 @@
+{
+  "id": 4361,
+  "subject": "throttle pedal stopped working",
+  "description_text": "hello i purchased your sim racing pro pedals off amazon in april. Pedals\r\nhave been working great until today when i tried using them and only the\r\nbrake was registering any input. i was wondering if there was anything you\r\ncould do to help me solve this issue\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-03T05:59:40Z",
+  "updated_at": "2025-10-03T06:36:25Z",
+  "requester_id": 158005357898,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009831208,
+      "body_text": "Hi Lev,    Please check whether the plastic clip on the spring near the blue throttle limiter is damaged. In addition, kindly confirm if you have reset the pedal’s initial signal to zero using the offset function.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-03T06:36:25Z",
+      "updated_at": "2025-10-03T06:36:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

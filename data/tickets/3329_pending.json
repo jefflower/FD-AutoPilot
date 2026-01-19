@@ -1,0 +1,44 @@
+{
+  "id": 3329,
+  "subject": "Alignment for Plux X Throttle + VAM Pro",
+  "description_text": "Hi there\r\n\r\nI am trying to attach the VAM Pro to my Plus X throttle pedal. However, the\r\nscrew spacing does not align to allow for two of the screws.\r\n\r\nThis is for the top of the pedal. The holes in the pedal face do not align\r\nwith the spacing on the plate inside the pedal. At the highest position, it\r\noverlaps the bottom hole. The opposite is true at the lowest position.\r\n\r\nThere is no central position where both holes line up.\r\n\r\nI have tried to take photos using telephoto lens to minimise the lens\r\ndistortion.\r\n\r\n\r\n\r\nCan you please advise what I am doing wrong?\r\n\r\nBrake has no issues.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-31T22:18:50Z",
+  "updated_at": "2025-09-01T00:58:54Z",
+  "requester_id": 158001709759,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007877552,
+      "body_text": "Hi Chanho,   Hello, the VAM Pro on the throttle is designed to be securely fixed with just one screw. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-01T00:29:03Z",
+      "updated_at": "2025-09-01T00:29:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007877730,
+      "body_text": "Thank you. There is a little bit of movement using just one screw but it is\r\nnot an issue.\r\n\r\nIf I can provide some feedback, the mounting bracket design is quite\r\ndisappointing. Having the motors angled 90° to the pedal creates a lot of\r\ndamping, and the motors are too noisy to use beyond 35% strength. There is\r\na loss of clarity and the noise efficiency is poor - I wish I had better\r\nfeedback, but it is too loud.\r\n\r\nThe design also means you have to attach the bracket to the pedal first,\r\nand then screw in the motors. The 3mm hex key is very weak and difficult to\r\nline up without removing the pedal from the rig entirely.\r\n\r\nTrying to screw in the motors with the pedals on the rig, it is very\r\ndifficult to line up the 3mm wrench correctly. I worry about stripping the\r\nscrews. I feel like a flathead or square wrench design would be more\r\nsuitable when it is so small.\r\n\r\nA flat plate which you can screw in the motors first, and then a spacer or\r\nstandoff which you can use to connect it to the pedal face from the front\r\nwould be a lot easier to install and machine, and also provide superior\r\nfeedback quality. I will probably attempt to machine or print this myself,\r\nbut the original design seems lacking.\r\n\r\n\r\n\r\n\r\nI am a big fan of your products. I truly appreicate how quickly you have\r\niterated the design of your Pro Plus pedals to the Plus X which are\r\nfantastic and unbeatable for the price.\r\n\r\nThe VAM Pro motors are almost great! A better bracket would greatly improve\r\nthe experience.\r\n\r\nIf there is the option of maybe adding some damping material inside the\r\nlinear motor, this could allow you to use higher strength without creating\r\na jackhammer like noise. It sounds like there is metal-to-metal contact.\r\n\r\nA slightly higher frequency change, even 75Hz would also greatly enhance\r\nthe ability to use wheel lock up or traction loss effects without requiring\r\na second bass shaker. I think this could give you an advantage over the\r\nSimagic design if it can be done at a similar price.\r\n\r\nI hope you will consider these for your next revision!\r\n\r\nKind regards\r\nChanho\r\n\r\n",
+      "user_id": 158001709759,
+      "created_at": "2025-09-01T00:47:01Z",
+      "updated_at": "2025-09-01T00:47:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007877853,
+      "body_text": "Hi Chanho,     Hello, and thank you very much for your feedback. We did take many factors into account when designing the bracket, including installation methods similar to Simagic. However, since the front structure of our pedals would otherwise interfere and collide with the motor, we adopted the current design.  In addition, we also recommend using nylon screws and washers, which are very effective in reducing EMI interference from the motor.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-01T00:58:54Z",
+      "updated_at": "2025-09-01T00:58:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "id": 1505,
+  "subject": "Delivery issue",
+  "description_text": "Hi there,\r\n\r\nI have issue with my order it’s showing on the tracking application that it’s has been returned to the sender.\r\nI am writing for you gentlemen to understand why it’s returned to the sender and I will appreciate your advice.\r\nMy Order #SSN1932\r\nTracking number: ALS01110510398<https://t.17track.net/en#nums=ALS01110510398>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-13T17:07:57Z",
+  "updated_at": "2025-07-25T09:15:50Z",
+  "requester_id": 158002110702,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004843955,
+      "body_text": "Hi Ahmed Alalawi,  We are in the process of confirming with the logistics company and will keep you updated with the latest news.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-15T07:33:10Z",
+      "updated_at": "2025-07-15T07:33:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005146762,
+      "body_text": "Hi Ahmed Alalawi, your package was returned to our warehouse due to unshippable hydraulic rods, we have reshipped it for you by changing channels, please don't worry!  Here's the link to your logistics tracking. Expect an update tomorrow.  https://t.17track.net/en#nums=ALS01124631994",
+      "user_id": 158001343601,
+      "created_at": "2025-07-18T10:10:12Z",
+      "updated_at": "2025-07-18T10:10:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005479984,
+      "body_text": "Hi there,\r\nI didn’t receive my order yet. And you have sent me an email asking me for my review about it.\r\nPlease let me know which company is going to deliver my package.\r\nRegards,\r\n",
+      "user_id": 158002110702,
+      "created_at": "2025-07-23T16:49:03Z",
+      "updated_at": "2025-07-23T16:49:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005532749,
+      "body_text": "Hi Ahmed Alalawi,    We apologise for the delay. The evaluation email was sent automatically. Your parcel is expected to arrive tomorrow.  https://t.17track.net/en#nums=1Z01E9E16704039781",
+      "user_id": 158001343601,
+      "created_at": "2025-07-25T09:15:48Z",
+      "updated_at": "2025-07-25T09:15:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

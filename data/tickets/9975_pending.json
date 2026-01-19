@@ -1,0 +1,24 @@
+{
+  "id": 9975,
+  "subject": "Order #SSN5762",
+  "description_text": "Dear Sir or\r\nMadam, I would like to know if the haptic motors are included\r\nin my order or if I need to order them separately? Furthermore, I\r\nwould like to know about the electricity connection for Germany? Is a suitable\r\nconnection available? Best regards Markus Goldian \r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-05T08:36:57Z",
+  "updated_at": "2026-01-07T08:20:33Z",
+  "requester_id": 158008932066,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016092426,
+      "body_text": "Hi Markus Goldian,  Your order is the ProX Ultra 2-pedal set, which already includes two VAM Pro vibration motors and U-shaped horizontal mounting brackets. You do not need to purchase additional VAM Pro motors. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T08:20:33Z",
+      "updated_at": "2026-01-07T08:20:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": 3918,
+  "subject": "missing parts",
+  "description_text": "hi I ordered the upgrade kit for the plus x with the throttle clutch and brake set on amazon Order # 111-6009812-773065 and I only received the brake upgrade is there a way to get rest sent or would i have to return and reorder the kit. I'm happy with the product just not happy that only part of the kit was sent\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-18T01:44:20Z",
+  "updated_at": "2025-09-25T01:15:10Z",
+  "requester_id": 158004626255,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008913837,
+      "body_text": "7600 old Plank Rd Lot 24 32220 Jacksonville Florida, United States .\r\nthe order was through amazon.com if that helps\r\n#111-6009812-7730653\r\n\r\nSent from my Metro By T-Mobile 5G LTE Android Device\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158004626255,
+      "created_at": "2025-09-18T13:12:51Z",
+      "updated_at": "2025-09-18T13:12:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009258638,
+      "body_text": "Hi joseph smith,  Here is the tracking number : SF6045923850372. You can track it via https://www.sf-international.com/cn/en/support/querySupport/waybill",
+      "user_id": 158000445778,
+      "created_at": "2025-09-25T01:15:10Z",
+      "updated_at": "2025-09-25T01:15:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

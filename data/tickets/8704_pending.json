@@ -1,0 +1,44 @@
+{
+  "id": 8704,
+  "subject": "Question about import duties and VAT - European Union",
+  "description_text": "Dear Sir/Madam,\r\n\r\nI am located in Hungary and have a question about import duties and taxes.\r\nI'm interested in buying the Simsonn Plus X + VAM motors from your website\r\ndirectly as it offers a better deal than getting it through other retails\r\nlike amazon for example.\r\n\r\nYour FAQ says over 150 € purchases have import duties if it ships from\r\noutside the EU. Is there any way to figure out if the pedals would be\r\nshipped from inside the EU or not?\r\nAnd another question is the VAT included in the price or not?\r\n\r\nThank you!\r\nDaniel\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-19T19:47:55Z",
+  "updated_at": "2025-12-24T12:23:48Z",
+  "requester_id": 158008157350,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014886219,
+      "body_text": "Hi Dániel Gönczi,  Our Plus X pedals can be shipped from Germany. I will check tomorrow whether VAM Germany has them in stock; otherwise, VAM will ship from China. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-22T14:40:04Z",
+      "updated_at": "2025-12-22T14:40:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015031269,
+      "body_text": "Hi Dániel Gönczi,    Our German warehouse holds stock of pedals and Vam haptics, so please feel free to purchase.  Merry Christmas!",
+      "user_id": 158001343601,
+      "created_at": "2025-12-24T11:18:33Z",
+      "updated_at": "2025-12-24T11:18:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015031939,
+      "body_text": "Thank you for the answer and happy holidays to you too!\r\n\r\nDaniel\r\n\r\n> 2025. dec. 24. dátummal, 12:18 időpontban service@simsonn.com írta:\r\n> \r\n> ﻿\r\n> Hi Dániel Gönczi,\r\n> \r\n> Our German warehouse holds stock of pedals and Vam haptics, so please feel free to purchase.\r\n> Merry Christmas!\r\n> \r\n> \r\n> \r\n> ",
+      "user_id": 158008157350,
+      "created_at": "2025-12-24T11:58:21Z",
+      "updated_at": "2025-12-24T11:58:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

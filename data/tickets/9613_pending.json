@@ -1,0 +1,44 @@
+{
+  "id": 9613,
+  "subject": "Following up on order or tracking number",
+  "description_text": "Hello, i just made an order on december 29 2025 (hawaiian time). I on the\r\npage said im going to get a confirmation text shortly about the my order,\r\nhowever i have not received yet any. I just wanted to follow up on my order\r\nor tracking number please.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-31T00:14:48Z",
+  "updated_at": "2026-01-14T06:16:21Z",
+  "requester_id": 158008828181,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015290510,
+      "body_text": "Hi Michael Handel,  I have checked your order SSN5525. The US warehouse has received the items today and they should be shipped to you soon. We apologize for any delay, as logistics can be slower during the peak season. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T02:05:11Z",
+      "updated_at": "2025-12-31T02:05:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015302248,
+      "body_text": "No problem, thank you for the update.\r\n\r\nOn Tue, Dec 30, 2025 at 16:05 support@simsonn.com ",
+      "user_id": 158008828181,
+      "created_at": "2025-12-31T08:08:32Z",
+      "updated_at": "2025-12-31T08:08:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015401951,
+      "body_text": "Hello, just wanted to follow up again once more if there is an available\r\ntracking number, i am very excited for these new pedals! Thank you! Happy\r\nnew year!\r\n\r\n",
+      "user_id": 158008828181,
+      "created_at": "2026-01-02T15:47:19Z",
+      "updated_at": "2026-01-02T15:47:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

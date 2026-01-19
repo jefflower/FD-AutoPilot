@@ -1,0 +1,24 @@
+{
+  "id": 3109,
+  "subject": "ALS01147500181订单最新状态-FedEx末端FEDEX单号为 883708720823",
+  "description_text": "text/html\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-26T06:37:45Z",
+  "updated_at": "2025-08-26T09:39:51Z",
+  "requester_id": 158002625940,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007549983,
+      "body_text": "您好；\r\n&nbsp;请问此单当前需要什么协助，烦请详细说明，请知悉，谢谢\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n客服二组（公用）对客\r\n\r\n杭州泛远国际物流有限公司/专线事业部/客服部/阿里组\r\n\r\n\r\n\r\n总部地址：中国浙江省杭州市拱墅区长城街22号201室\r\n\r\n\r\n\r\n\r\n&nbsp;\r\n&nbsp;\r\n&nbsp;\r\n------------------&nbsp;Original&nbsp;------------------\r\n",
+      "user_id": 158002625940,
+      "created_at": "2025-08-26T07:21:14Z",
+      "updated_at": "2025-08-26T07:21:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

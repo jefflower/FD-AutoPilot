@@ -1,0 +1,94 @@
+{
+  "id": 2823,
+  "subject": "PRO X ULTRA: Inconsistent Brake",
+  "description_text": "G'day,\r\n\r\nI'm having some trouble with my brake pedal, and I'm hoping you can help.\r\nThe input isn't consistent; about 80% of the time, it registers full\r\nbraking power with the same amount of pressure, but occasionally it reads\r\nhalf, three-quarters, or nothing at all.\r\n\r\nI've already tried grounding the box to the rig and attempting to remove\r\nany electromagnetic interference (EMI). I've also searched online to see if\r\nanyone else has experienced similar issues, but I haven't found any similar\r\ncases.\r\n\r\nI'd prefer not to return the pedal if possible, as it would be quite a\r\nhassle. Is there anything I can do to fix this issue?\r\n\r\nThanks,\r\nToby\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-08-18T10:30:28Z",
+  "updated_at": "2025-08-20T14:44:56Z",
+  "requester_id": 158003281674,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007078494,
+      "body_text": "Braking Video     I'll also attach this. This is a video of me attempting to braking consistently 0-100%. I was using the same amount of pressure the whole time. You can see at the end that it starts behaving normally again. ",
+      "user_id": 158003281674,
+      "created_at": "2025-08-18T11:52:09Z",
+      "updated_at": "2025-08-18T11:52:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158007081463,
+      "body_text": "Hi Toby Harrison,     Could you please provide a photo of the side view of the brake damper so that I can confirm whether it is installed correctly? Also, please check if there is any bracket interference or contact beneath the brake sensor. In addition, could you let me know which wheel base you are using? ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-18T12:42:20Z",
+      "updated_at": "2025-08-18T12:42:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007109868,
+      "body_text": "G'day,\r\n\r\nHere are the photos of the brake damper from the side. It looks like it's\r\ninstalled correctly, but I'm not sure. I'm using the MOZA R3 wherlbase\r\n\r\nCheers,\r\nToby\r\n\r\nOn Mon, 18 Aug 2025, 10:12 pm service@simsonn.com, ",
+      "user_id": 158003281674,
+      "created_at": "2025-08-19T01:56:25Z",
+      "updated_at": "2025-08-19T01:56:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007112279,
+      "body_text": "Hi Toby Harrison,  This is a photo of the front of the brake. I also need a photo of the brake side plate. It’s possible that the damping preload nut on the brake was not properly adjusted, resulting in insufficient reset force. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-19T04:33:18Z",
+      "updated_at": "2025-08-19T04:33:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007184615,
+      "body_text": "G'day\r\n\r\nSorry for the delayed response and for forgetting to attach the other photo\r\nin my previous email.\r\n\r\nI've attached a few photos this time from various angles to ensure you have\r\nall the views you need.\r\n\r\n\r\n\r\n\r\n\r\nOn Tue, 19 Aug 2025, 2:03 pm service@simsonn.com, ",
+      "user_id": 158003281674,
+      "created_at": "2025-08-20T07:19:45Z",
+      "updated_at": "2025-08-20T07:19:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007215442,
+      "body_text": "Hi Toby Harrison,  Please use the test version 2.1.1, click Revert → Save, and then recalibrate and test again. If the issue persists, you may try refreshing the firmware manually: go to Settings → Update → Manual Firmware Update → pedals-firmware-proxultra.sfu to upgrade. For now, please avoid using version 2.1.0—we will release an online update soon.      https://drive.google.com/file/d/1UPkeOHREyALtCtNmL87a2WnUDZV0Gx_b/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-08-20T14:18:50Z",
+      "updated_at": "2025-08-20T14:18:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007216058,
+      "body_text": "G'day,\r\n\r\nI'll proceed with the firmware update as suggested.\r\n\r\nIn the meantime, I also tried swapping the USB port the pedal was plugged\r\ninto. It was previously in one of the fastest speed ports on my\r\nmotherboard, and I've now moved it to a standard USB port. This has\r\nimproved the consistency somewhat, though I still occasionally get a random\r\nlow output.\r\n\r\nHopefully, with this change and the firmware update, the issue will be\r\nfully resolved. I'll provide another update tomorrow.\r\n\r\nCheers\r\n\r\n\r\nOn Wed, 20 Aug 2025, 11:49 pm service@simsonn.com, ",
+      "user_id": 158003281674,
+      "created_at": "2025-08-20T14:42:09Z",
+      "updated_at": "2025-08-20T14:42:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007216126,
+      "body_text": "Hi Toby Harrison,  Alternatively, you may consider using a USB 3.0 hub with independent power supply. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-20T14:44:55Z",
+      "updated_at": "2025-08-20T14:44:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 4704,
+  "subject": "Noise in hydraulics dampers",
+  "description_text": "Hi I've just started using the plus x pedals. The \"hydraulics\" dampers in all of the pedals make a lot of squishing noise when pressure is applied. Doesn't sound right.\r\n\r\n\r\nPlease advise if it can be remedied.\r\n\r\nThanks\r\nJo\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-10T10:32:10Z",
+  "updated_at": "2025-10-10T12:58:47Z",
+  "requester_id": 158005543213,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010213464,
+      "body_text": "Hi Joel Chen,  Our product uses a hydraulic damper filled with liquid, not a low-cost gas spring. So, hearing a liquid flow sound during operation is completely normal and nothing to worry about. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-10T12:58:47Z",
+      "updated_at": "2025-10-10T12:58:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

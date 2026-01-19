@@ -1,0 +1,45 @@
+{
+  "id": 2051,
+  "subject": "触觉反应器专业版断开连接",
+  "description_text": "您好，\n\n我的 Simsonn 触觉反应器专业版在使用 10-15 分钟后会断开连接。\n\n有什么解决办法吗？\n\n此致，\n\nMichael van Eerdt",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-07-29T13:09:00Z",
+  "updated_at": "2025-07-31T00:54:04Z",
+  "requester_id": 158001380899,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005779328,
+      "body_text": "您好 Michael van Eerdt，此问题很可能是由于供电不足引起的。请将 USB 线直接连接到电脑背面的蓝色 USB 3.0 端口，并避免使用 USB 集线器，因为它可能导致供电不稳定或连接问题。如果您正在使用 PlusX 控制盒，请检查绿色接地线并将其牢固地连接到踏板主体或框架上的螺丝，以确保正确接地。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-29T14:46:27Z",
+      "updated_at": "2025-07-29T14:46:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005791817,
+      "body_text": "您好，\n\n感谢您的快速回复。\n\n确实直接连接到电脑的 3.0 插槽解决了我的问题。\n\n我对我的踏板印象深刻且非常满意，做得好！\n\n祝您有美好的一天。\n\n此致，\n\nMichael van Eerdt",
+      "user_id": 158001380899,
+      "created_at": "2025-07-30T02:53:25Z",
+      "updated_at": "2025-07-30T02:53:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005863927,
+      "body_text": "回复迅速，解决方案正确。我非常高兴。",
+      "user_id": 158001380899,
+      "created_at": "2025-07-31T00:54:03Z",
+      "updated_at": "2025-07-31T00:54:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

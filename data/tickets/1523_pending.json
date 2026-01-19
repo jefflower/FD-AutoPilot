@@ -1,0 +1,504 @@
+{
+  "id": 1523,
+  "subject": "Order number 206-7934812-6721916",
+  "description_text": "Hello,\r\n\r\nThis is a follow up email. I have sent a few emails asking for return\r\npostage, but have received no response. I have already received the refund\r\nso please advise on when postage will be sent so I can return items.\r\n\r\nKind regards\r\nF Farah\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-14T18:00:49Z",
+  "updated_at": "2025-07-23T05:56:48Z",
+  "requester_id": 158001831635,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004214755,
+      "body_text": "Hi F Farah,  Our software currently supports 10 games. May I ask which game you are using now? We are continuously working to add telemetry support for more titles. In the meantime, you can use the internal version of SimHub that I’ve provided. The official release is still undergoing testing and may take a bit more time.   https://drive.google.com/file/d/1QrSbAvCC5iyx9XgdRgSQV-hWpmDGkujc/view?usp=sharing",
+      "user_id": 158000445778,
+      "created_at": "2025-06-27T14:33:07Z",
+      "updated_at": "2025-06-27T14:33:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004362713,
+      "body_text": "Hi F Farah,  It seems the certificate may be missing. Could you please install the Todesk tool? No registration is required—just provide the ID and temporary password, and I can assist you remotely. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T01:26:29Z",
+      "updated_at": "2025-07-02T01:26:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004362738,
+      "body_text": "Hi F Farah,    Did you purchase the PlusX controller board along with the VAM motor? First, please use the Offset function in the SIMSONN Manager software to perform an initial calibration of the pedals. If you purchased the complete PlusX set (including the controller and pedals), we’ve already calibrated it before shipping. However, if you bought the controller or pedals separately, a manual calibration is required.  Also, make sure to connect the device directly to a USB 3.0 port on the back of your PC. We do not recommend using USB hubs, as some of them may have unstable power supply, which can cause communication issues.  Please provide your order number so I can check your purchase details. All our products are fully tested before shipment, so it's rare for any issue to occur upon delivery.  If your video exceeds 20MB, I won’t be able to receive it directly. Please upload it to Google Drive or another cloud service and share the link with us for further analysis. Don’t worry—if there’s any issue, we will help resolve it promptly.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T01:37:08Z",
+      "updated_at": "2025-07-02T01:37:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004362880,
+      "body_text": "Hi F Farah,  Please right-click on the SIMSONN Manager icon and go to \"Properties\" to locate the installation directory. Once there, navigate to the etc folder and zip the log folder inside. Sending it to us will help me quickly analyze and resolve your issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T02:14:44Z",
+      "updated_at": "2025-07-02T02:14:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004363347,
+      "body_text": "Hi F Farah,  The official SIMHUB website has released version 9.9.3. This is the official stable release, and you can now download and use it. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T06:05:08Z",
+      "updated_at": "2025-07-02T06:05:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004367620,
+      "body_text": "Hello,\r\n\r\nI bought the pedal set with baseplate and controller, but offset them\r\nanyway. They are connected directly to PC via USB 3.\r\n\r\nI have managed to get them to work by manually updating them via the\r\nmanager, however, it seems I need to do so everytime i start the PC.\r\n\r\nThe VAM pro haptics are not being recognised by the manager. They are being\r\nrecognised by the latest Simhub software but they are not working at all.\r\nNot sure why but this is getting frustrating.\r\n\r\nI bought all equipment via Amazon. order number from invoice is\r\n206-7934812-6721916\r\n\r\nI have attached all logs as advised\r\n\r\nOn Wed, 2 Jul 2025 at 03:14, service@simsonn.com ",
+      "user_id": 158001831635,
+      "created_at": "2025-07-02T08:50:38Z",
+      "updated_at": "2025-07-02T08:50:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004367785,
+      "body_text": "Hi F Farah,    Will you be available in about three hours? I can assist you remotely to check and resolve the issue. Please install the Todesk software in advance and provide your ID and temporary password. I’ll connect as soon as I’m ready.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T08:55:21Z",
+      "updated_at": "2025-07-02T08:55:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004368469,
+      "body_text": "Hello,\r\n\r\nI have downloaded ToDesk but it is in Chinese, so not sure what to do. I am\r\nassuming this is the info: ToDesk:\r\n设备代码:336 774 578\r\n临时密码:3aav0acy\r\n\r\nLet me know when you are ready via email and I will have PC ready\r\n\r\nBW\r\nFarah\r\n\r\nOn Wed, 2 Jul 2025 at 09:55, service@simsonn.com ",
+      "user_id": 158001831635,
+      "created_at": "2025-07-02T09:03:37Z",
+      "updated_at": "2025-07-02T09:03:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004371594,
+      "body_text": "Hi F Farah,  Do you have time now? We can start the remote session. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T12:15:02Z",
+      "updated_at": "2025-07-02T12:15:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004371602,
+      "body_text": "Yes I am ready, few more issues popped up, how can we chat more easily ?\r\nOn Wed, 2 Jul 2025 at 1:15 pm, service@simsonn.com ",
+      "user_id": 158001831635,
+      "created_at": "2025-07-02T12:16:03Z",
+      "updated_at": "2025-07-02T12:16:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004371618,
+      "body_text": "I have disconnected the VAM pro, would you like me to connect them?\r\n\r\n",
+      "user_id": 158001831635,
+      "created_at": "2025-07-02T12:19:46Z",
+      "updated_at": "2025-07-02T12:19:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004374194,
+      "body_text": "此工单已关闭并合并到工单 1078 中",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T14:07:14Z",
+      "updated_at": "2025-07-02T14:07:14Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004374195,
+      "body_text": "合并来自工单1064  \n      主题: VAM haptics  \n      描述:  Hello, \n   \n I have sent a message on Amazon and was advised to send a video to this email. I recently bought simsonn pro plus pedals and VAM motors.  \n   \n When I connect the VAM motor to the control box, the pedals disconnect and stop working. If I remove connection, it works again but also randomly disconnects with random pedal inputs despite not pushing on them ( I have grounded the pedals).  \n   \n I am quite unhappy with both products, would appreciate any advice or fixes. I have attached the video.  \n   \n Best wishes \n Firas  \n\n Attachment(s) that exceed the 20 MB limit have been dropped. Please reach out to the sender.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T14:07:14Z",
+      "updated_at": "2025-07-02T14:07:14Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004374193,
+      "body_text": "合并来自工单917  \n      主题: Simsonn VAM pro  \n      描述:  Hello,    \n I have just received and installed the VAM pro haptic motors on my Simsonn pedals. I used the simpson manager to adjust vibrations etc but they are not being activated during any game I try. I have tried everything but nothing works.  \n   \n Website also claims it is compatible with Simhub but simhub is not recognising the motors at all.  \n   \n Help would be appreciated.  \n   \n Best wishes \n F. Farah",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T14:07:14Z",
+      "updated_at": "2025-07-02T14:07:14Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004374192,
+      "body_text": "ID 号为 917 和 1064 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T14:07:14Z",
+      "updated_at": "2025-07-02T14:07:14Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004374196,
+      "body_text": "此工单已关闭并合并到工单 1078 中",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T14:07:15Z",
+      "updated_at": "2025-07-02T14:07:15Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004374248,
+      "body_text": "Hi，F Farah，  我们的工程师刚刚通知我们，踏板和电机需要退回德国仓库进行检查。我们的运营团队明天会核实运费，如果合理，我们将安排退货并全额退款。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T14:15:48Z",
+      "updated_at": "2025-07-02T14:15:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004374253,
+      "body_text": "ID 为 1078 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T14:16:26Z",
+      "updated_at": "2025-07-02T14:16:26Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004374254,
+      "body_text": "合并来自工单1078  \n      主题: Pedals  \n      描述:  Following up from my last email, now the pedals are not working at all despite showing they are connected. There is no input when i press on them. Also, everytime i start the manager I get this pop up, which i am not sure what it means.    \n Please help. \n   \n BW \n F Farah",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T14:16:26Z",
+      "updated_at": "2025-07-02T14:16:26Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004374255,
+      "body_text": "此工单已关闭并合并到工单 1114 中",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T14:16:26Z",
+      "updated_at": "2025-07-02T14:16:26Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004374276,
+      "body_text": "Your engineer just told me there is no need to return items, but i am happy\r\nto return anyway. Please send me details\r\n\r\nOn Wed, 2 Jul 2025 at 15:16, service@simsonn.com ",
+      "user_id": 158001831635,
+      "created_at": "2025-07-02T14:17:58Z",
+      "updated_at": "2025-07-02T14:17:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004423420,
+      "body_text": "Hello,\r\n\r\nFollowing from the below email, any updates regarding the refund process?\r\nSince your engineer has tried to help all pedals have stopped working and I\r\nam unhappy with the products. Would be grateful if you may start the\r\nrefund process as soon as possible.\r\n\r\nBest wishes\r\nF Farah\r\n\r\n\r\n",
+      "user_id": 158001831635,
+      "created_at": "2025-07-03T11:21:14Z",
+      "updated_at": "2025-07-03T11:21:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004442297,
+      "body_text": "Hello,\r\n\r\nI have not received any information yet, can you please contact me and send\r\nthe refund details ?\r\n\r\nBest wishes\r\nF Farah\r\n\r\n\r\n",
+      "user_id": 158001831635,
+      "created_at": "2025-07-03T20:39:05Z",
+      "updated_at": "2025-07-03T20:39:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445106,
+      "body_text": "合并来自工单1114  \n      主题: Return of products Order number: 206-7934812-6721916  \n      描述:  Hello,    \n Following a few hours with remote access from your support team, the issues with my order have not been resolved and it has been established that it is a hardware issue. Your staff member has confirmed he will issue a full refund of the purchase. He has asked me to dispose of the defective product and no need to send it back. \n   \n Order number: 206-7934812-6721916 \n   \n Total: 358 GDP.  \n   \n Would be very grateful if you may please issue my refund.  \n   \n Best wishes, \n F Farah ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-04T13:27:09Z",
+      "updated_at": "2025-07-04T13:27:09Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004445105,
+      "body_text": "ID 为 1114 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-04T13:27:09Z",
+      "updated_at": "2025-07-04T13:27:09Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004445107,
+      "body_text": "此工单已关闭并合并到工单 1215 中",
+      "user_id": 158000445778,
+      "created_at": "2025-07-04T13:27:12Z",
+      "updated_at": "2025-07-04T13:27:12Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004445109,
+      "body_text": "Hi F Farah,    We apologize for the delayed response, as our company has been in the process of relocating to a new address over the past few days. We will assist you with the refund within the next two days. Thank you for your patience and understanding.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-04T13:28:33Z",
+      "updated_at": "2025-07-04T13:28:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445117,
+      "body_text": "Hi F Farah,  By the way, did you purchase the Pro Plus pedals separately? And did you also purchase the PlusX controller and motor separately? If so, the original controller that came with the Pro Plus pedals should still be working fine, correct? ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-04T13:29:47Z",
+      "updated_at": "2025-07-04T13:29:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445463,
+      "body_text": "Hello,\r\n\r\nNo I purchased everything as a package from Amazon, including controller\r\nand baseplate. There is only one controller box.\r\n\r\nWould be grateful if you may start with the process as soon as possible.\r\n\r\nBest wishes\r\nF Farah\r\n\r\nOn Fri, 4 Jul 2025 at 2:30 pm, service@simsonn.com ",
+      "user_id": 158001831635,
+      "created_at": "2025-07-04T14:43:44Z",
+      "updated_at": "2025-07-04T14:43:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447527,
+      "body_text": "Address is\r\n\r\n20 Digpal road\r\nMorley\r\nLeeds\r\nLS27 7GE\r\n\r\nBest wishes\r\nF Farah\r\n\r\nOn Sat, 5 Jul 2025 at 3:30 am, General and sales enquiries <\r\nservice@simsonn.com> wrote:\r\n\r\n>\r\n> Could you please provide us with your door-to-door pickup address？We will\r\n> arrange door-to-door pickup.\r\n> ------------------------------\r\n> service@simsonn.com\r\n>\r\n>\r\n> *",
+      "user_id": 158001831635,
+      "created_at": "2025-07-05T07:10:48Z",
+      "updated_at": "2025-07-05T07:10:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004454376,
+      "body_text": "Hi F Farah,  Our Amazon sales team has sent you two messages via the Amazon platform, requesting your address so we can arrange a pickup and evaluate the shipping cost. However, we haven’t received any response from you yet. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T07:58:35Z",
+      "updated_at": "2025-07-07T07:58:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004454378,
+      "body_text": "ID 号为 917, 1064, 1078, 1114 和 1215 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T07:58:54Z",
+      "updated_at": "2025-07-07T07:58:54Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004454379,
+      "body_text": "合并来自工单917  \n      主题: Simsonn VAM pro  \n      描述:  Hello,    \n I have just received and installed the VAM pro haptic motors on my Simsonn pedals. I used the simpson manager to adjust vibrations etc but they are not being activated during any game I try. I have tried everything but nothing works.  \n   \n Website also claims it is compatible with Simhub but simhub is not recognising the motors at all.  \n   \n Help would be appreciated.  \n   \n Best wishes \n F. Farah",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T07:58:54Z",
+      "updated_at": "2025-07-07T07:58:54Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004454381,
+      "body_text": "合并来自工单1064  \n      主题: VAM haptics  \n      描述:  Hello, \n   \n I have sent a message on Amazon and was advised to send a video to this email. I recently bought simsonn pro plus pedals and VAM motors.  \n   \n When I connect the VAM motor to the control box, the pedals disconnect and stop working. If I remove connection, it works again but also randomly disconnects with random pedal inputs despite not pushing on them ( I have grounded the pedals).  \n   \n I am quite unhappy with both products, would appreciate any advice or fixes. I have attached the video.  \n   \n Best wishes \n Firas  \n\n Attachment(s) that exceed the 20 MB limit have been dropped. Please reach out to the sender.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T07:58:55Z",
+      "updated_at": "2025-07-07T07:58:55Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004454387,
+      "body_text": "合并来自工单1215  \n      主题: Order number: 206-7934812-6721916  \n      描述:  Hello, \n   \n I have emailed numerous times following my session with your engineer attempting to fix fault equipment. Equipment remains faulty and not working and engineer said you will start refund process. I have not received any contact from you since.  \n   \n I would appreciate if you may contact me and initiate refund please. Order number  206-7934812-6721916 \n   \n Best wishes  \n F Farah ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T07:58:56Z",
+      "updated_at": "2025-07-07T07:58:56Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004454385,
+      "body_text": "合并来自工单1114  \n      主题: Return of products Order number: 206-7934812-6721916  \n      描述:  Hello,    \n Following a few hours with remote access from your support team, the issues with my order have not been resolved and it has been established that it is a hardware issue. Your staff member has confirmed he will issue a full refund of the purchase. He has asked me to dispose of the defective product and no need to send it back. \n   \n Order number: 206-7934812-6721916 \n   \n Total: 358 GDP.  \n   \n Would be very grateful if you may please issue my refund.  \n   \n Best wishes, \n F Farah ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T07:58:56Z",
+      "updated_at": "2025-07-07T07:58:56Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004454383,
+      "body_text": "合并来自工单1078  \n      主题: Pedals  \n      描述:  Following up from my last email, now the pedals are not working at all despite showing they are connected. There is no input when i press on them. Also, everytime i start the manager I get this pop up, which i am not sure what it means.    \n Please help. \n   \n BW \n F Farah",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T07:58:56Z",
+      "updated_at": "2025-07-07T07:58:56Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004454395,
+      "body_text": "Hello,\r\n\r\nI have received the emails and replied with my address but did not hear\r\nback from them.\r\n\r\nI will reply here again.\r\n\r\nMy address is 20 Digpal road, Morley, Leeds, LS27 7GE\r\n\r\nOn Mon, 7 Jul 2025 at 08:58, service@simsonn.com ",
+      "user_id": 158001831635,
+      "created_at": "2025-07-07T08:01:33Z",
+      "updated_at": "2025-07-07T08:01:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004454465,
+      "body_text": "Any updates please? This has dragged on for too long and it seems like\r\nunnecessary delays for refund process.\r\n\r\n",
+      "user_id": 158001831635,
+      "created_at": "2025-07-07T08:18:58Z",
+      "updated_at": "2025-07-07T08:18:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004454980,
+      "body_text": "Hi F Farah,  We’ve arranged a pickup for your return. Once the item has been collected, we will issue a full refund. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T09:37:25Z",
+      "updated_at": "2025-07-07T09:37:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004455081,
+      "body_text": "Thank you, can you give me details of collection; i.e service, date, time?\r\n\r\nAlso pedals came in a box and the haptic motors came in a separate box, so\r\ncollection will need to be for two boxes please\r\n\r\nBest wishes\r\nF Farah\r\n\r\nOn Mon, 7 Jul 2025 at 10:37, service@simsonn.com ",
+      "user_id": 158001831635,
+      "created_at": "2025-07-07T09:58:26Z",
+      "updated_at": "2025-07-07T09:58:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004455310,
+      "body_text": "Hi F Farah,   The pickup in the UK has been scheduled and is expected to take place sometime this week, most likely between Wednesday and Friday. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T10:52:20Z",
+      "updated_at": "2025-07-07T10:52:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004455337,
+      "body_text": "I have requested return on Amazon as I need the return label, to show the\r\nservice and to make sure it is within the 30 day period.\r\n\r\nBest wishes\r\nF Farah\r\n\r\nOn Mon, 7 Jul 2025 at 11:52 am, service@simsonn.com ",
+      "user_id": 158001831635,
+      "created_at": "2025-07-07T11:00:48Z",
+      "updated_at": "2025-07-07T11:00:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004639000,
+      "body_text": "ID 为 1290 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-12T06:51:32Z",
+      "updated_at": "2025-07-12T06:51:32Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004639001,
+      "body_text": "合并来自工单1290  \n      主题: Order number: 206-7934812-6721916  \n      描述:  Hello,    \n I have emailed several times regarding refund process for the order above. The equipment is faulty and not working despite your engineer trying to fix. He said it is likely a hardware issue. May the refund process start?  \n   \n thanks \n   \n BW \n F Farah",
+      "user_id": 158000445778,
+      "created_at": "2025-07-12T06:51:32Z",
+      "updated_at": "2025-07-12T06:51:32Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004922506,
+      "body_text": "ID 为 1451 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T03:37:20Z",
+      "updated_at": "2025-07-16T03:37:20Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004922507,
+      "body_text": "合并来自工单1451  \n      主题: Order number 206-7934812-6721916  \n      描述:  Hello, \n   \n I have received the refund for the above order but did not receive any postage info to send items back. Please advise on what to do  \n   \n Best wishes \n F Farah ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T03:37:20Z",
+      "updated_at": "2025-07-16T03:37:20Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004922522,
+      "body_text": "Hi F Farah,  Our warehouse has arranged for GLS to pick up the package. Please wait for a few days.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T03:38:12Z",
+      "updated_at": "2025-07-16T03:38:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005338791,
+      "body_text": "Hello,\r\n\r\nI have not heard from any pickups, its been more than two weeks now.\r\n\r\nBest Wishes\r\nF Farah\r\n\r\nOn Wed, 16 Jul 2025 at 04:38, service@simsonn.com ",
+      "user_id": 158001831635,
+      "created_at": "2025-07-22T14:34:00Z",
+      "updated_at": "2025-07-22T14:34:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

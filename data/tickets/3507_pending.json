@@ -1,0 +1,44 @@
+{
+  "id": 3507,
+  "subject": "Issue an Order with Amazon",
+  "description_text": "Good morning,\r\nI recently purchased the SIMSONN Plus X Sim Racing Pedals (Plus X\r\nP3-H3-Plate) through Amazon.\r\nThe shipping and item were excellent, but I noticed during the unboxing\r\nthat the power supply that connects to the SIMSONN switch where the pedal\r\ncables are attached is missing.\r\nThe USB cable for connecting to the PC is included, but the power supply\r\nfor connecting to the wall is missing.\r\n\r\nLet me know if you need any additional information. I can share my Amazon\r\norder number: 171-3870407-4173940.\r\n\r\nBest regards\r\n-- \r\n*Gabriele Granata*\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-05T06:58:40Z",
+  "updated_at": "2025-09-10T00:33:58Z",
+  "requester_id": 158004189683,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008200667,
+      "body_text": "Hi Gabriele Granata,  If you did not purchase the VAM Pro motor, our pedal set does not include a power adapter. This is because the pedals can be fully powered through a USB 3.0 port alone, without requiring an additional power supply. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T02:06:38Z",
+      "updated_at": "2025-09-07T02:06:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008248303,
+      "body_text": "Ah, so it's enough to connect the pedal board via USB?  Could you kindly tell me how much the VAM Pro motor costs?",
+      "user_id": 158004189683,
+      "created_at": "2025-09-08T07:32:04Z",
+      "updated_at": "2025-09-08T07:32:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158008347152,
+      "body_text": "Hi Gabriele Granata,     Yes, if the motors are not connected, you can still set up and test the system using only the USB connection to your PC.  If you would like to upgrade to VAM Pro motors, here is the purchase link:    https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor?variant=51351053467962",
+      "user_id": 158000445778,
+      "created_at": "2025-09-10T00:33:57Z",
+      "updated_at": "2025-09-10T00:33:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

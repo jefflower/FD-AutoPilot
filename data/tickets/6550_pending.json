@@ -1,0 +1,214 @@
+{
+  "id": 6550,
+  "subject": "Re: Pro x pedals",
+  "description_text": "I updated Simsonn manager to the latest and it will now recognize in\r\nIracing and everything appears ok except the throttle.   It only registers\r\nabout 25% for the first 75% of travel and then 75% for the last 25%\r\ntravel.  I have it set to straight curve.\r\n\r\nMy haptics at times will stay in the vibrating position until I restart my\r\ncomputer.  I have the controller box grounded to the pedals and PC.  I had\r\nthis issue with my old base as well.\r\n\r\nBrian Pinnow\r\n608 769 8354\r\n\r\n\r\nOn Fri, Nov 21, 2025 at 9:21 PM Brian Pinnow <brijeninvest@gmail.com> wrote:\r\n\r\n> Hello\r\n> I just installed a simagic evo pro and now Iracing won’t recognize my\r\n> Simsonn pro x pedals.  The base and pedals are not connected in anyway but\r\n> that’s all that changed.   I had a moza base.\r\n>\r\n> The pedals will sometimes be recognized in Simsonn manager but when they\r\n> are they are glitchy.  In have the control grounded to the pedals.  I\r\n> removed that but it’s not any different.\r\n>\r\n> I just don’t know what could cause it.\r\n>\r\n>\r\n> Brian Pinnow\r\n> 608 769 8354\r\n>\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-11-22T15:11:34Z",
+  "updated_at": "2025-12-20T12:49:43Z",
+  "requester_id": 158001626072,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012799463,
+      "body_text": "Hi Brian Pinnow,    Please make sure you are using SIMSONN Manager 2.1.2 with firmware versions: CPU1: 2.0.5 CPU2: 2.0.4  Then click the Offset button in the software to zero the pedal signals, and recalibrate the pedals.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-24T07:55:22Z",
+      "updated_at": "2025-11-24T07:55:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012856811,
+      "body_text": "How do I check the CPU1 and 2?\r\n\r\nAlso my haptics run in either a very high frequency or low power in Iracing\r\nthru simhub.  When tested in simhub they feel fine though.\r\n\r\nI still have issues with the haptics locking on even with the controller\r\ngrounded.\r\nBrian Pinnow\r\n608 769 8354\r\n\r\n\r\nOn Mon, Nov 24, 2025 at 1:55 AM support@simsonn.com ",
+      "user_id": 158001626072,
+      "created_at": "2025-11-25T02:27:14Z",
+      "updated_at": "2025-11-25T02:27:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012943458,
+      "body_text": "Hi Brian Pinnow,",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T11:48:17Z",
+      "updated_at": "2025-11-26T11:48:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012943742,
+      "body_text": "That is what I’m running.  How do I setup a return for these?  I’m tired of\r\nthe constant problems with connection.  I have tried grounding even though\r\nmy pro x ultra controls box doesn’t even have a grounding screw.\r\n\r\nBrian Pinnow\r\n608 769 8354\r\n\r\n\r\nOn Wed, Nov 26, 2025 at 5:48 AM support@simsonn.com ",
+      "user_id": 158001626072,
+      "created_at": "2025-11-26T11:58:46Z",
+      "updated_at": "2025-11-26T11:58:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012944084,
+      "body_text": "Hi Brian Pinnow, If this happens, it indicates that the computer’s grounding is not reliable, possibly because a three-prong plug was not used with a three-prong wall outlet. You can refer to the post below: connect the computer case to the stand, and connect the control box to the metal screws on the pedals. This should resolve the disconnection issue.     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T12:09:42Z",
+      "updated_at": "2025-11-26T12:09:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012944213,
+      "body_text": "I have done this already.\r\n\r\nBrian Pinnow\r\n608 769 8354\r\n\r\n\r\nOn Wed, Nov 26, 2025 at 6:09 AM support@simsonn.com ",
+      "user_id": 158001626072,
+      "created_at": "2025-11-26T12:13:46Z",
+      "updated_at": "2025-11-26T12:13:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012944382,
+      "body_text": "Hi Brian Pinnow,    Could you take a photo of the ground connection between your PC case, main control box, and pedals? I can help you check it. If the pedals get stuck, it’s usually caused by an unreliable ground connection.  You can download the VKB tool to test—it displays the pedal curves. Continuously press the pedals for 1–3 minutes; if the pedals get stuck, the curve will suddenly become a straight line. This helps determine whether the grounding issue is resolved.  If it turns out to be a problem with the main control box, we will replace it with a new one. However, in most cases, the issue is due to poor grounding.       https://www.vkbcontrollers.com/pages/downloads",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T12:18:54Z",
+      "updated_at": "2025-11-26T12:18:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012944772,
+      "body_text": "I have already sent this\r\nI have attached again.  I also tried from my wheel base to the computer.\r\nAgain I don’t have a grounding location on my control box\r\n\r\n\r\nBrian Pinnow\r\n\r\n608 769 8354\r\n\r\n\r\nOn Wed, Nov 26, 2025 at 6:19 AM support@simsonn.com ",
+      "user_id": 158001626072,
+      "created_at": "2025-11-26T12:30:24Z",
+      "updated_at": "2025-11-26T12:30:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012945002,
+      "body_text": "Hi Brian Pinnow,        I’ve seen your connection setup, and overall it is correct, but some optimizations can be made:    Connect one screw on the PC case to the right side of the pedal, and the left screw of the pedal to the control box. This will solve the issue of the control box lacking a screw mounting point.    Also, the cables seem thick and hard to secure. Simply remove some of the black paint or oxidation layer so that the PC case, pedal, and control box share a common ground, which should resolve the problem.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T12:38:46Z",
+      "updated_at": "2025-11-26T12:38:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012953492,
+      "body_text": "I have them on both sides of the control box already.  I’m not sure what\r\nwould be different with your way?\r\n\r\n\r\nBrian Pinnow\r\n608 769 8354\r\n\r\n\r\nOn Wed, Nov 26, 2025 at 6:39 AM support@simsonn.com ",
+      "user_id": 158001626072,
+      "created_at": "2025-11-26T15:17:27Z",
+      "updated_at": "2025-11-26T15:17:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013155258,
+      "body_text": "Hi Brian Pinnow,  I see that the grounding is fine. The pedals are working properly in SIMSONN Manager 2.1.2 and in the game, but occasionally there’s a disconnection that causes the motor to keep vibrating, correct? ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-01T02:40:00Z",
+      "updated_at": "2025-12-01T02:40:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013155828,
+      "body_text": "Correct.  They typically get disconnected when one motor is vibrating for a\r\nlonger period of time.  Also if operated in simhub they have a high pitch\r\nand low force to them.   They seem fine when operated in Simsonn.  When I\r\ndo a test in simhub they are fine but not in the game.\r\n\r\nBrian Pinnow\r\n608 769 8354\r\n\r\n\r\nOn Sun, Nov 30, 2025 at 8:40 PM support@simsonn.com ",
+      "user_id": 158001626072,
+      "created_at": "2025-12-01T03:10:26Z",
+      "updated_at": "2025-12-01T03:10:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013428145,
+      "body_text": "And now my brake motor has lost almost all strength.  Other motors seem\r\nnormal and I have not changed settings.  I tried changing them to get more\r\nstrength and it won’t get as strong as others or what it was.\r\n\r\nBrian Pinnow\r\n608 769 8354\r\n\r\n\r\n",
+      "user_id": 158001626072,
+      "created_at": "2025-12-05T01:59:48Z",
+      "updated_at": "2025-12-05T01:59:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014119190,
+      "body_text": "Hi Brian Pinnow,    Do you need us to send a new VAM Pro to resolve the issue? Please provide your order number, contact name, phone number, and shipping address.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-08T10:27:47Z",
+      "updated_at": "2025-12-08T10:27:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014227068,
+      "body_text": "We can try that, attached is the amazon purchase.\r\n\r\nBrian Pinnow\r\nN7169 Bice Ave\r\nHolmen, WI 54636\r\n\r\nAlso I still have the issue of only high pitch sounds and no feedback when\r\nusing simhub.  I try all the strength and frequency settings and nothing\r\nchanges.  When I do the \"test\" in simhub they are fine, but just high pitch\r\nnoise in Iracing.  If I use Simsonn manager, they are fine.\r\n\r\nBrian Pinnow\r\n769-8354\r\n\r\n\r\nOn Mon, Dec 8, 2025 at 4:27 AM support@simsonn.com ",
+      "user_id": 158001626072,
+      "created_at": "2025-12-10T00:42:44Z",
+      "updated_at": "2025-12-10T00:42:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014247658,
+      "body_text": "What about the high pitch from simhub?  I even reinstall simhub.\r\n\r\nBrian Pinnow\r\n608 769 8354\r\n\r\n\r\nOn Wed, Dec 10, 2025 at 12:34 AM support@simsonn.com ",
+      "user_id": 158001626072,
+      "created_at": "2025-12-10T10:52:01Z",
+      "updated_at": "2025-12-10T10:52:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014459434,
+      "body_text": "I just noticed the power supply that was provided does not have a ground.\r\nWhy would that be?  Is it supposed too?\r\n\r\n\r\nBrian Pinnow\r\n608 769 8354\r\n\r\n\r\n",
+      "user_id": 158001626072,
+      "created_at": "2025-12-13T15:55:26Z",
+      "updated_at": "2025-12-13T15:55:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014472355,
+      "body_text": "Hi Brian Pinnow,  This 24V power supply does not require a ground connection. If SimHub is not working properly, please let me know which game and which telemetry it concerns, so I can test it on my side. Additionally, do you need me to send a new control box or a VAM motor? ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-14T03:44:22Z",
+      "updated_at": "2025-12-14T03:44:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014484838,
+      "body_text": "It’s in Iracing.  In don’t know why simhub is all high pitch and Simsonn\r\nmanager works fine.\r\n\r\nWe can try a new control box.  I’m at a loss at how to get them to not\r\nconstantly disconnect, I have tried all your grounding suggestions and sent\r\npictures and you confirmed.\r\n\r\nBrian Pinnow\r\n608 769 8354\r\n\r\n\r\nOn Sat, Dec 13, 2025 at 9:44 PM support@simsonn.com ",
+      "user_id": 158001626072,
+      "created_at": "2025-12-14T14:12:39Z",
+      "updated_at": "2025-12-14T14:12:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014810449,
+      "body_text": "Hi Brian Pinnow,  You can adjust the offset in the software, which will shift all pedals’ white signals close to 0%, and then recalibrate the pedals. Also, for the interference issue, please refer to the link below.      If this happens, it indicates that the computer’s grounding is not reliable, possibly because a three-prong plug was not used with a three-prong wall outlet. You can refer to the post below: connect the computer case to the stand, and connect the control box to the metal screws on the pedals. This should resolve the disconnection issue.  https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-12-20T12:49:43Z",
+      "updated_at": "2025-12-20T12:49:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

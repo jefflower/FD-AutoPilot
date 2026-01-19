@@ -1,0 +1,135 @@
+{
+  "id": 934,
+  "subject": "Haptic Software",
+  "description_text": "Hey\n\nGot everything all mounted onto the pedals but now not really too sure how to get them to actually work. I dont see any update for the SIMSONN manager software.\n\nIs there a way to custom add them to SimHub",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-06-27T20:44:55Z",
+  "updated_at": "2025-06-30T08:41:57Z",
+  "requester_id": 158001833215,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004218394,
+      "body_text": "Hi Kevin Gregson,    Our software currently supports 10 games. May I ask which game you are using now?  We are continuously working to add telemetry support for more titles.  In the meantime, you can use the internal version of SimHub that I’ve provided. The official release is still undergoing testing and may take a bit more time.     https://drive.google.com/file/d/1QrSbAvCC5iyx9XgdRgSQV-hWpmDGkujc/view?usp=sharing",
+      "user_id": 158000445778,
+      "created_at": "2025-06-27T22:59:57Z",
+      "updated_at": "2025-06-27T22:59:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004218551,
+      "body_text": "Thanks for the reply.\n\nI download the simhub version nut turned out I was using an older version of the Simsonn manager so the haptics couldnt be reconised.\n\nNow this is the next problem if i update to 2.0.8 then for some reason all the USB's on my computer turn of and then back on randomly. Even with just the pedals in and no VAM's it was still being strange. However i have now gone all way back to 2.0.6 and the pedal firmware from march and all is good again. You have any ideas?\n\nIf you can let me know exactly what needs downloading and in what order ill give it another go, but I know VAM wont work in this version im currently on even in Simhub",
+      "user_id": 158001833215,
+      "created_at": "2025-06-27T23:56:06Z",
+      "updated_at": "2025-06-27T23:56:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004219134,
+      "body_text": "Hi Kevin Gregson,    Please uninstall both SIMHUB and SIMSONN Manager from your computer, and delete their installation directories. Then, download SIMSONN Manager version 2.0.8 from our official website and install the SIMHUB test version we provided.  After that, try using the setup again. If the issue persists, we can schedule a remote session using the Todesk tool to assist you further.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-28T05:43:10Z",
+      "updated_at": "2025-06-28T05:43:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004221359,
+      "body_text": "Hey\n\nThanks for the reply. I just wanna confirm a few things as im a little unclear.\n\nShall I download the 2.0.8 normal or the one with zip at end of it. Assuming i then need to update the firmware too, should i do this with VAM pro's plug into box and powered or just normal without. Also then which file shall i select to use to update. I have the pro x (non ultra). Im wondering if there was a driver conflict with them or something like the firmware didnt update properly\n\nThanks in advance\n\nKev Gregson",
+      "user_id": 158001833215,
+      "created_at": "2025-06-28T18:22:19Z",
+      "updated_at": "2025-06-28T18:22:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004221808,
+      "body_text": "Hey\n\nJust wanted to add some info.\n\nI tried uninstalling 2.0.6 and downloaded 2.0.8 again and it was fine until I did the firmware update then after that it starts to disconnect ALL usbs plugged into motherboard. I removed the sim hub beta and left that off. I am doing the prox firmware under pedals\n\nI went back to 2.0.6 and installed old firmware again and then unistalled 2.0.6 and installed 2.0.8 and have not done the firmware update and everything is fine. Obviously except VAM's not working. It is promting me to update but I havent\n\nI tried all these steps with the VAM pros not connected or power cable plugged in.\n\nIs there a set way to remove old firmware files or anything that im not sure about or missing.",
+      "user_id": 158001833215,
+      "created_at": "2025-06-28T23:02:21Z",
+      "updated_at": "2025-06-28T23:02:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004221960,
+      "body_text": "Hi Kevin Gregson,    Would you like me to assist you remotely via Todesk? If so, please provide your ID and temporary password, and I’ll help you check and resolve the issue as soon as possible.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-29T01:02:00Z",
+      "updated_at": "2025-06-29T01:02:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004222308,
+      "body_text": "Morning\n\nThat may be possible. Todesk seems to be pretty tricky to download and get working but ill give it a go later when I get back from breakfast.\n\nDo you have any ppointers in the meantime for me to try? Is it possible I may not have the prox and actually the proxultra therefore downloading the wrong firmware?",
+      "user_id": 158001833215,
+      "created_at": "2025-06-29T07:37:00Z",
+      "updated_at": "2025-06-29T07:37:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004222311,
+      "body_text": "Attached pictures of what I have",
+      "user_id": 158001833215,
+      "created_at": "2025-06-29T07:39:14Z",
+      "updated_at": "2025-06-29T07:39:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004224795,
+      "body_text": "Hi Kevin Gregson,  I noticed that you're missing a 24V independent power supply, which is why the VAM Pro isn't functioning properly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-30T05:44:31Z",
+      "updated_at": "2025-06-30T05:44:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004238044,
+      "body_text": "No I have that just don't have it connected. Ordered through yourself with the haptics.\n\nAny information on the firmware problem?",
+      "user_id": 158001833215,
+      "created_at": "2025-06-30T07:12:40Z",
+      "updated_at": "2025-06-30T07:12:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004240194,
+      "body_text": "Hi Kevin Gregson,  Please install Todesk. I’m available now and can assist you remotely. No registration is needed—just provide your ID and temporary password after installation. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-30T07:20:14Z",
+      "updated_at": "2025-06-30T07:20:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004255487,
+      "body_text": "70e258ns is the temporary password\nDevice code if you need it is 158 962 212",
+      "user_id": 158001833215,
+      "created_at": "2025-06-30T08:05:47Z",
+      "updated_at": "2025-06-30T08:05:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

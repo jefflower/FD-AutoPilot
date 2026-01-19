@@ -1,0 +1,115 @@
+{
+  "id": 10568,
+  "subject": "技术问题：振动马达卡住/延迟 - Simsonn Manager 2.1.3 & 固件 2.0.6",
+  "description_text": "尊敬的 Simsonn 支持团队，\n我写信给您是关于我的 Simsonn 振动马达套件持续存在的技术问题。\n我使用的是带有力触感 VAM Pro 马达的 3 Pedal Pro X Ultra 套装。踏板工作正常，只有振动马达无法使用。\n问题在于：振动马达表现出不稳定的行为。具体来说：\n\n  1.\n“卡顿”振动：在模拟中遥测效果（例如，ABS 或 TC）结束后，马达经常会持续振动几秒钟。它们会“卡”在活动状态。在 Simsonn Manager 中测试时也是如此。\n  2.\n信号丢失：尽管游戏遥测数据显示有活动效果，但马达偶尔会完全无法启动。在 Simsonn Manager 中测试时也是如此。\n\n\n故障排除步骤：为了排除用户错误或硬件缺陷，我根据你们最新的文档执行了以下步骤：\n\n  *\n软件更新：我已将 Simsonn Manager 更新到 2.1.3 版本。\n  *\n固件更新：我已成功将控制器固件刷至 2.0.6 版本。\n  *\n线缆与端口：我测试了不同的 USB 端口并验证了所有线缆连接。\n  *\n接地：我将控制器盒接地到设备上。没有接地回路。\n  *\nReddit：我基本上尝试了此帖子上您能找到的所有技巧：https://www.reddit.com/r/SimsonnRacing/comments/1mxsv3j/vam_pro_linear_motor_stays_stuck_after_vibration/\n\n硬件验证（关键）：为了隔离问题，我将振动马达直接连接到一个 DIY 的 Arduino 电机驱动板上。\n\n  *\n结果：在 Arduino 控制下，马达响应迅速且立即停止。它们工作完美。\n  *\n结论：这证实了马达本身没有缺陷。问题出在 Simsonn 控制盒或 Simsonn Manager 软件/固件的信号处理上。\n\n由于更新到 Manager 2.1.3 和固件 2.0.6 并未解决这些信号延迟和“挂起”问题，我怀疑当前固件存在错误或控制器硬件存在故障。\n请告知我们如何进行下一步。是否有解决信号延迟问题的测试版固件，或者我需要更换控制盒？\n\n此致，\nStefan Boldt",
+  "status": 4,
+  "priority": 4,
+  "created_at": "2026-01-11T13:44:56Z",
+  "updated_at": "2026-01-15T07:15:10Z",
+  "requester_id": 158009022758,
+  "responder_id": 158007774664,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016820937,
+      "body_text": "您好 Stefan Boldt，     请尝试用一根电线将您 PC 的金属机箱连接到 ProX Ultra 控制器盒上的任意螺丝，以建立共地，然后测试这是否能解决问题。  如果完成此测试后问题仍然存在，我们将安排给您发送一个更换的控制器盒。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T14:31:41Z",
+      "updated_at": "2026-01-11T14:31:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016821062,
+      "body_text": "首先，感谢您的快速回复。非常感谢。\n\n其次。接地线是我最先尝试的事情之一。请见附图。\n\n不幸的是，这没有帮助。\n\n谢谢\nStefan Boldt",
+      "user_id": 158009022758,
+      "created_at": "2026-01-11T14:44:05Z",
+      "updated_at": "2026-01-11T14:44:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016821153,
+      "body_text": "您好 Stefan Boldt，     ​请拧下螺丝并打开控制器盒（无需将 PCB 从外壳中取出），然后按照以下步骤进行测试。请注意：当 PCB 暴露在外壳保护之外时，不要直接将其放在金属支架或托架上。我们建议在下面放一本书或其他绝缘物体以防止短路。       目前，我们在内部测试环境中无法复现此“卡住/延迟”问题，因此希望您能协助进行以下检查。  请不要将黄色接地线连接到控制器螺丝上。相反，请将其直接连接到红色箭头指示的 GND 引脚并进行测试。在此过程中，请确保使用绝缘胶带，并确保黄线不会碰到相邻的排针以防短路。  如果完成此测试后问题消失，将有助于我们进一步确定根本原因。无论测试结果如何，我都会在明天安排给您发送一个新的控制器盒。  非常感谢您的合作与支持。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T14:54:10Z",
+      "updated_at": "2026-01-11T14:54:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016821174,
+      "body_text": "您好 Stefan Boldt，  打开控制器盒（将 PCB 从外壳中取出） ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T14:55:49Z",
+      "updated_at": "2026-01-11T14:55:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016823161,
+      "body_text": "不幸的是，问题没有解决。我把 PCB 从盒子里拿出来，用鳄鱼夹把它接地到 GND 引脚，但问题依旧。\n\n在 Simsonn Manager 测试中，即使进度条走完了，振动还是不停。而且，测试几次之后，它就完全不振动了——我点击“振动”，能看到进度条，但实际上什么也没发生。等几秒钟后，马达又对我的测试有反应了，但还是有之前说过的那些问题。\n\n现在我明白为什么给外壳接地对 PCB 没影响了。PCB 的地线根本没和外壳连着。\n\n谢谢\nStefan",
+      "user_id": 158009022758,
+      "created_at": "2026-01-11T16:04:09Z",
+      "updated_at": "2026-01-11T16:04:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016846009,
+      "body_text": "您好 Stefan Boldt，  请通过电子邮件提供您的订单号、联系人、电话号码和送货地址。我们将给您寄送一个全新的 ProX Ultra 控制盒，以检查是否能解决问题。 ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-12T08:28:12Z",
+      "updated_at": "2026-01-12T08:28:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016855089,
+      "body_text": "你好\n\n附件是两个订单的收据。\n\n订单号 1：3062873731114159\n订单号 2：3063369111874159\n\n联系人：Stefan Boldt\n电话号码：+49 6074 2110578\n送货地址：Schömbsstraße 5B, 63322 Roedermark - Germany\n\n\n此致，谢谢\n\nStefan Boldt",
+      "user_id": 158009022758,
+      "created_at": "2026-01-12T10:58:25Z",
+      "updated_at": "2026-01-12T10:58:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017147947,
+      "body_text": "你好\n\n这个主题有任何更新吗？\n\n谢谢\nStefan",
+      "user_id": 158009022758,
+      "created_at": "2026-01-14T22:34:06Z",
+      "updated_at": "2026-01-14T22:34:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017154731,
+      "body_text": "您好 Stefan Boldt，  我们将首先给您寄送一个更换的控制盒，以帮助尽快排查和解决问题。请确认/提供您的送货信息（姓名、电话号码和地址），我们将尽快安排发货。 ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-15T01:51:24Z",
+      "updated_at": "2026-01-15T01:51:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017166475,
+      "body_text": "您好 Stefan Boldt，  您的产品已发货。物流单号是：JSEAN1518022228YQ。您可以在此网站上追踪：https://t.17track.net/zh-cn#nums=JSEAN1518022228YQ",
+      "user_id": 158007774664,
+      "created_at": "2026-01-15T07:15:03Z",
+      "updated_at": "2026-01-15T07:15:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

@@ -1,0 +1,134 @@
+{
+  "id": 9815,
+  "subject": "Second follow-up – order not shipped / refund request",
+  "description_text": "Hello,\r\n\r\n\r\n\r\nThis is my second follow-up regarding order #SSN5198.\r\n\r\n\r\n\r\nIt has now been over a week since I placed the order, and it is still marked as Unfulfilled and has not been shipped, despite being placed with express shipping.\r\n\r\n\r\n\r\nDue to this, I am now requesting a cancellation and full refund.\r\n\r\n\r\n\r\nPlease confirm as soon as possible.\r\n\r\n\r\n\r\nThank you.\r\n\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-02T15:49:30Z",
+  "updated_at": "2026-01-04T09:37:53Z",
+  "requester_id": 158008797448,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015172969,
+      "body_text": "Well it has been a long 24 hours, where is my response? And almost a week since i ordered and it still hasn’t left the warehouse even with express shipping. 28 dec. 2025 kl. 00:26 skrev support@simsonn.com: ﻿ \r\n \r\n Hi Felix Walkenstrom We would like to acknowledge that we have received your request and a ticket has been created. A support representative will be reviewing your request and will send you a personal response.(usually within 24 hours). To view the status of the ticket or add comments, please visit https://simsonn.freshdesk.com/helpdesk/tickets/9327?follow=email Thank you for your patience. View ticket If the button doesn't work, copy-paste this URL in your browser's address bar: https://simsonn.freshdesk.com/helpdesk/tickets/9327?follow=email Regards, Support Center Support Team \r\n\r\n\r\n\r\n\r\n\r\n \r\n \r\n\r\n\r\n\r\n\r\n9327:4206036\r\n\r\n",
+      "user_id": 158008797448,
+      "created_at": "2025-12-28T23:36:19Z",
+      "updated_at": "2025-12-28T23:36:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015291349,
+      "body_text": "ID 为 9327 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T02:57:22Z",
+      "updated_at": "2025-12-31T02:57:22Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158015291350,
+      "body_text": "合并来自工单9327  \n      主题: Shipment  \n      描述:  \n \n \n \n \n \n Hello, \n I will be travelling on January 4th and chose express shipping specifically to receive the pedals before then. \n   \n Could you please prioritize shipping order #SSN5198 or let me know if this is possible? \n   \n Thank you very much.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T02:57:22Z",
+      "updated_at": "2025-12-31T02:57:22Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158015291368,
+      "body_text": "Hi Felix Walkenstrom,  Due to the high volume of emails during the peak season, our responses may be delayed. We apologize for the inconvenience, and your order will be shipped soon. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T02:58:31Z",
+      "updated_at": "2025-12-31T02:58:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015319886,
+      "body_text": "Can you give me a estimated time when you can ship it or i would like a full refund so i can get my simulator finished on time. 31 dec. 2025 kl. 03:58 skrev support@simsonn.com: ﻿ \r\n \r\n Hi Felix Walkenstrom, Due to the high volume of emails during the peak season, our responses may be delayed. We apologize for the inconvenience, and your order will be shipped soon. \r\n \r\n \r\n \r\n \r\n On\r\n Mon, 29 Dec at 7:36 AM\r\n , Felix Walkenstrom <felix.walkenstrom@icloud.com> wrote:\r\n Well it has been a long 24 hours, where is my response? And almost a week since i ordered and it still hasn’t left the warehouse even with express shipping. \r\n \r\n 28 dec. 2025 kl. 00:26 skrev support@simsonn.com: \r\n \r\n \r\n ﻿ \r\n \r\n \r\n Hi Felix Walkenstrom \r\n We would like to acknowledge that we have received your request and a ticket has been created. A support representative will be reviewing your request and will send you a personal response.(usually within 24 hours). To view the status of the ticket or add comments, please visit https://simsonn.freshdesk.com/helpdesk/tickets/9327?follow=email Thank you for your patience. \r\n \r\n View ticket \r\n \r\nIf the button doesn't work, copy-paste this URL in your browser's address bar: https://simsonn.freshdesk.com/helpdesk/tickets/9327?follow=email\r\n \r\n \r\n Regards, Support Center Support Team \r\n \r\n\r\n\r\n\r\n\r\n\r\n \r\n \r\n\r\n\r\n\r\n\r\n\r\n\r\n \r\n \r\n \r\n \r\n \r\n \r\n\r\n\r\n \r\n\r\n\r\n\r\n\r\n\r\n\r\n9440:4206036\r\n\r\n",
+      "user_id": 158008797448,
+      "created_at": "2025-12-31T16:52:56Z",
+      "updated_at": "2025-12-31T16:52:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015545392,
+      "body_text": "ID 为 9440 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-04T01:16:15Z",
+      "updated_at": "2026-01-04T01:16:15Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158015545393,
+      "body_text": "合并来自工单9440  \n      主题: Refund  \n      描述:  \n Hello, \n \n \n \n I was informed that a representative would contact me within 24 hours, but it has now been longer than that and my order #SSN5198 is still marked as Unfulfilled. \n \n \n \n Due to the lack of response and the missed response time, I would like to request a cancellation and full refund. \n \n \n \n Please confirm as soon as possible. \n \n \n \n Thank you.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-04T01:16:15Z",
+      "updated_at": "2026-01-04T01:16:15Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158015604052,
+      "body_text": "Hi Felix Walkenstrom,     We apologize, but these products are currently out of stock in our German warehouse. They are expected to arrive next week.   We can ship them from China via UPS, but customs duties may apply. Alternatively, we can issue a refund. We apologize for any inconvenience this may cause.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-04T08:20:00Z",
+      "updated_at": "2026-01-04T08:20:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015609629,
+      "body_text": "Yes i would like if you could issue a refund for me please 4 jan. 2026 kl. 09:20 skrev support@simsonn.com: ﻿ \r\n \r\n Hi Felix Walkenstrom, \r\n \r\n We apologize, but these products are currently out of stock in our German warehouse. They are expected to arrive next week. \r\n We can ship them from China via UPS, but customs duties may apply. Alternatively, we can issue a refund. We apologize for any inconvenience this may cause. \r\n \r\n \r\n \r\n \r\n On\r\n Thu, 1 Jan at 12:52 AM\r\n , Felix Walkenstrom <felix.walkenstrom@icloud.com> wrote:\r\n Can you give me a estimated time when you can ship it or i would like a full refund so i can get my simulator finished on time. \r\n \r\n 31 dec. 2025 kl. 03:58 skrev support@simsonn.com: \r\n \r\n \r\n ﻿ \r\n \r\n Hi Felix Walkenstrom, Due to the high volume of emails during the peak season, our responses may be delayed. We apologize for the inconvenience, and your order will be shipped soon. \r\n \r\n \r\n \r\n \r\n On\r\n Mon, 29 Dec at 7:36 AM\r\n , Felix Walkenstrom <felix.walkenstrom@icloud.com> wrote:\r\n Well it has been a long 24 hours, where is my response? And almost a week since i ordered and it still hasn’t left the warehouse even with express shipping. \r\n \r\n 28 dec. 2025 kl. 00:26 skrev support@simsonn.com: \r\n \r\n \r\n ﻿ \r\n \r\n \r\n Hi Felix Walkenstrom \r\n We would like to acknowledge that we have received your request and a ticket has been created. A support representative will be reviewing your request and will send you a personal response.(usually within 24 hours). To view the status of the ticket or add comments, please visit https://simsonn.freshdesk.com/helpdesk/tickets/9327?follow=email Thank you for your patience. \r\n \r\n View ticket \r\n \r\nIf the button doesn't work, copy-paste this URL in your browser's address bar: https://simsonn.freshdesk.com/helpdesk/tickets/9327?follow=email\r\n \r\n \r\n Regards, Support Center Support Team \r\n \r\n\r\n\r\n\r\n\r\n\r\n \r\n \r\n\r\n\r\n\r\n\r\n\r\n\r\n \r\n \r\n \r\n \r\n \r\n \r\n\r\n\r\n \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n \r\n \r\n \r\n \r\n \r\n \r\n\r\n\r\n \r\n\r\n\r\n\r\n\r\n\r\n\r\n9815:4206036\r\n\r\n",
+      "user_id": 158008797448,
+      "created_at": "2026-01-04T09:12:58Z",
+      "updated_at": "2026-01-04T09:12:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015611039,
+      "body_text": "Hi Felix Walkenstrom,    Great news! A shipment has just arrived at our German warehouse, and we can ship it out to you immediately. Do you need it?",
+      "user_id": 158001343601,
+      "created_at": "2026-01-04T09:25:44Z",
+      "updated_at": "2026-01-04T09:25:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015611206,
+      "body_text": "Yes, please send it out, would i be able to get an refund on the the shipping tho, totalt fine of not 4 jan. 2026 kl. 10:26 skrev support@simsonn.com: ﻿ \r\n \r\n Hi Felix Walkenstrom, \r\n \r\n Great news! A shipment has just arrived at our German warehouse, and we can ship it out to you immediately. Do you need it? \r\n \r\n \r\n \r\n \r\n \r\n \r\n On\r\n Sun, 4 Jan at 5:12 PM\r\n , Felix Walkenstrom <felix.walkenstrom@icloud.com> wrote:\r\n Yes i would like if you could issue a refund for me please \r\n \r\n 4 jan. 2026 kl. 09:20 skrev support@simsonn.com: \r\n \r\n \r\n ﻿ \r\n \r\n Hi Felix Walkenstrom, \r\n \r\n We apologize, but these products are currently out of stock in our German warehouse. They are expected to arrive next week. \r\n We can ship them from China via UPS, but customs duties may apply. Alternatively, we can issue a refund. We apologize for any inconvenience this may cause. \r\n \r\n \r\n \r\n \r\n On\r\n Thu, 1 Jan at 12:52 AM\r\n , Felix Walkenstrom <felix.walkenstrom@icloud.com> wrote:\r\n Can you give me a estimated time when you can ship it or i would like a full refund so i can get my simulator finished on time. \r\n \r\n 31 dec. 2025 kl. 03:58 skrev support@simsonn.com: \r\n \r\n \r\n ﻿ \r\n \r\n Hi Felix Walkenstrom, Due to the high volume of emails during the peak season, our responses may be delayed. We apologize for the inconvenience, and your order will be shipped soon. \r\n \r\n \r\n \r\n \r\n On\r\n Mon, 29 Dec at 7:36 AM\r\n , Felix Walkenstrom <felix.walkenstrom@icloud.com> wrote:\r\n Well it has been a long 24 hours, where is my response? And almost a week since i ordered and it still hasn’t left the warehouse even with express shipping. \r\n \r\n 28 dec. 2025 kl. 00:26 skrev support@simsonn.com: \r\n \r\n \r\n ﻿ \r\n \r\n \r\n Hi Felix Walkenstrom \r\n We would like to acknowledge that we have received your request and a ticket has been created. A support representative will be reviewing your request and will send you a personal response.(usually within 24 hours). To view the status of the ticket or add comments, please visit https://simsonn.freshdesk.com/helpdesk/tickets/9327?follow=email Thank you for your patience. \r\n \r\n View ticket \r\n \r\nIf the button doesn't work, copy-paste this URL in your browser's address bar: https://simsonn.freshdesk.com/helpdesk/tickets/9327?follow=email\r\n \r\n \r\n Regards, Support Center Support Team \r\n \r\n\r\n\r\n\r\n\r\n\r\n \r\n \r\n\r\n\r\n\r\n\r\n\r\n\r\n \r\n \r\n \r\n \r\n \r\n \r\n\r\n\r\n \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n \r\n \r\n \r\n \r\n \r\n \r\n\r\n\r\n \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n \r\n \r\n \r\n \r\n \r\n \r\n\r\n\r\n \r\n\r\n\r\n\r\n\r\n\r\n\r\n9815:4206036\r\n\r\n",
+      "user_id": 158008797448,
+      "created_at": "2026-01-04T09:29:09Z",
+      "updated_at": "2026-01-04T09:29:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015612141,
+      "body_text": "Hi Felix Walkenstrom,    Alright, I've arranged for your shipment to be dispatched. I'll send you a shipping notification shortly.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-04T09:37:52Z",
+      "updated_at": "2026-01-04T09:37:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 5168,
+  "subject": "Order confirmation",
+  "description_text": "Hi,\r\nI have placed an order with confirmation no T4JFN8CN2\r\nI did not receive any confirmation text and i tried through order checking, but not avail.\r\nPls assist to confirm my order.\r\nYahoo Mail: Search, organise, conquer\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-22T08:29:59Z",
+  "updated_at": "2025-10-22T08:48:01Z",
+  "requester_id": 158005974786,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010863440,
+      "body_text": "Hi James Lim,    As you did not provide an email address, you did not receive the order confirmation. I have now added your email address and sent the dispatch notification. Please confirm receipt.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-22T08:48:01Z",
+      "updated_at": "2025-10-22T08:48:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": 11004,
+  "subject": "订单状态",
+  "description_text": "您好，我无法打开您发送的网页。此邮件发自我的 iPhone",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-15T17:00:27Z",
+  "updated_at": "2026-01-17T08:20:09Z",
+  "requester_id": 158009047479,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017235714,
+      "body_text": "您好，Jon Serna，我们对延迟表示歉意。两批运往我们德国仓库的货物受到了欧洲大雪的影响，导致道路堵塞和交货延误。我们将尽快加快交付或探索替代物流渠道，以便尽快从中国运送您的订单。您的订单完成后，将根据延误情况提供赔偿。对此造成的不便，我们深表歉意。",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T02:07:19Z",
+      "updated_at": "2026-01-16T02:07:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017246070,
+      "body_text": "啊，好的，非常感谢。至于你们用于支持的平台，我收到了这条消息，不知道是否正常，以防万一。\n[image0.png]\n此邮件发自我的 iPhone",
+      "user_id": 158009047479,
+      "created_at": "2026-01-16T07:36:06Z",
+      "updated_at": "2026-01-16T07:36:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017319152,
+      "body_text": "您好，Jon Serna，是的，请放心。这是我们的工单系统。您也可以直接通过电子邮件联系我们。",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T08:20:08Z",
+      "updated_at": "2026-01-17T08:20:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

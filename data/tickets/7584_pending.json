@@ -1,0 +1,24 @@
+{
+  "id": 7584,
+  "subject": "",
+  "description_text": "Hi,\r\n\r\nI have Simsonn v1.7.1 pedals. The throttle and brake work perfectly but the\r\nclutch pedal doesn't work. I'm plugging it in for the first time and it\r\ndoesn't register at all to assign it to the clutch function in game. I'd\r\nlove some help to figure out why it doesn't work.\r\n\r\nKind regards,\r\nVasko\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-06T22:45:23Z",
+  "updated_at": "2025-12-08T11:09:12Z",
+  "requester_id": 158007679085,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014120291,
+      "body_text": "Hi Vasko Kolarski,  If it is version 1.7.1, you can update the pedal firmware in Simsonn Manager 2.1.2 via Settings → Update → Manual Firmware Update → Pedals → firmware → pedals-plus.sfu.      https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-12-08T11:09:12Z",
+      "updated_at": "2025-12-08T11:09:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "id": 3919,
+  "subject": "Package",
+  "description_text": "I ordered pedals and the Vam pros for my pedals off of amazon. i received my pedals but have never received my Vam pro's . There is no tracking information on amazon just looking to see what i can do to at least track my items that i am missing.\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-09-18T03:07:14Z",
+  "updated_at": "2025-09-27T05:49:10Z",
+  "requester_id": 158004630351,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008931247,
+      "body_text": "\r\n Order # 114-6212624-0829827\r\n\r\nThanks\r\n\r\nElliott O’Neal\r\n\r\n660-654-9729\r\n\r\n\r\n\r\n\r\n\r\n________________________________\r\n",
+      "user_id": 158004630351,
+      "created_at": "2025-09-18T22:37:34Z",
+      "updated_at": "2025-09-18T22:37:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008955637,
+      "body_text": "Just checking in on this to see where we are at on it. We are well over the day that was estimated for delivery for these items. Please let me know what you have found out.\r\n\r\n\r\nThanks\r\n\r\nElliott O’Neal\r\n\r\n\r\n\r\n\r\n\r\n\r\n________________________________\r\n",
+      "user_id": 158004630351,
+      "created_at": "2025-09-19T17:36:57Z",
+      "updated_at": "2025-09-19T17:36:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009236723,
+      "body_text": "Hi Elliott O'Neal,  I will notify our operations team tomorrow to check the issue for you and provide you with a prompt response. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-24T15:35:39Z",
+      "updated_at": "2025-09-24T15:35:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009258699,
+      "body_text": "Hi Elliott O'Neal,    Hi, your order 114-6212624-0829827 from SIMSONN was sent out in 2 packages. The tracking number for the Plus X Pedals is 884181375898 (ships from US warehouse, the shipping carrier is FedEx, you can track it via https://www.fedex.com/fedextrack ), this pacakge bas been delivered on 2025-09-12 \"Fort Gibson, OK, US 74434, Delivered, Left at front door. \". and the tracking number for the Haptic Reactor is: JSEIG0803966041YQ (ships from China warehouse, the shipping carrier is JSEXPRESS, you can track it via https://www.17track.net/en), the second package also delivered on 2025-09-20 12:27     FORT GIBSON - OK, Delivered, Front Door/Porch. Could you please check your house around or ask your neighbors if they have taken the package.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-25T01:21:29Z",
+      "updated_at": "2025-09-25T01:21:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009304872,
+      "body_text": "I received the package but the port for my gas pedal is not working properly. The brake and clutch one works but the gas pedal one does not.\r\n\r\n\r\nThanks\r\n\r\nElliott O’Neal\r\n\r\n660-654-9729\r\n\r\n\r\n\r\n\r\n\r\n________________________________\r\n",
+      "user_id": 158004630351,
+      "created_at": "2025-09-25T17:47:13Z",
+      "updated_at": "2025-09-25T17:47:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009362833,
+      "body_text": "Hi Elliott O'Neal,  In the SIMSONN Manager software, please click Offset to reset the initial pedal percentage to zero. After that, run the test again and also check whether the small plastic spring piece near the blue limiter is damaged. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-27T05:49:09Z",
+      "updated_at": "2025-09-27T05:49:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

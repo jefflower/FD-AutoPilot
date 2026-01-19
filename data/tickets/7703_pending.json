@@ -1,0 +1,104 @@
+{
+  "id": 7703,
+  "subject": "Haptics not working",
+  "description_text": "Hello, I recently bought a pair of plus x pedals and 2 haptics from you guys, after barely an hour of use on of the haptics (the one for the brake) stopped working completely. I've tried the the other 2 ports with the haptic, still didnt work and I tried the ports with the one that work and it worked fine with all of the ports. So it is clearly the actual haptic  that is not working. I tried both your software and simhub, nothing happened.\r\n\r\nI tried unplugging, restarting and everything inbetween and it doesnt do anything. How can we fix this?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-08T14:39:20Z",
+  "updated_at": "2025-12-11T06:04:45Z",
+  "requester_id": 158007301322,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013363829,
+      "body_text": "Hi Harald Wernholm,    May I ask if your pedals have already been calibrated? After successful calibration, you should see the blue progress bar in the SIMSONN Manager move smoothly from 0% to 100% as you press the pedal. Once calibration is complete, you can bind the pedal axis or buttons within the game.  Additionally, which racing games are you trying to bind the pedals to? Our pedals are compatible with the vast majority of mainstream racing games, so there’s no need to worry. If you can let us know the specific game titles, we can help you check the settings and assist further.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T01:18:26Z",
+      "updated_at": "2025-12-04T01:18:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013363962,
+      "body_text": "Hi, Yes I have manually calibrated the pedals and the blue bar fills up all the way when the pedal is fully pressed. Even though your software recognize the pedals windows don’t seem to think that they are a controller. I’ve tried in both IRacing and beaming drive, non worked.\r\n\r\n",
+      "user_id": 158007301322,
+      "created_at": "2025-12-04T01:25:25Z",
+      "updated_at": "2025-12-04T01:25:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013378538,
+      "body_text": "Hi Harald Wernholm,  With this setup, the pedals should work properly. Also, there should be no issue with iRacing, as we play it ourselves. Any problem is likely related to the game settings. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T08:38:45Z",
+      "updated_at": "2025-12-04T08:38:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013387144,
+      "body_text": "Hello again, the pedals work now, I waited the night and now they work, Im unsure if one of the ports for the haptic feedback is faulty since it doesnt give the same amount of force as the other one but I will have to tune it more to figure that out.\r\n\r\nAnother thing tho I was promised by you guys to get my express delivery fee refunded since it took almost double to promised express time. When can I expect the refund to get to my account?\r\n\r\nMy order number was #SSN3585\r\n________________________________\r\nFrån: support@simsonn.com ",
+      "user_id": 158007301322,
+      "created_at": "2025-12-04T12:12:57Z",
+      "updated_at": "2025-12-04T12:12:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013766031,
+      "body_text": "Hi Harald Wernholm,  I plan to have our operations team handle compensation for the shipping delay on Monday. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-06T05:30:54Z",
+      "updated_at": "2025-12-06T05:30:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014166457,
+      "body_text": "ID 为 7371 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-09T06:02:13Z",
+      "updated_at": "2025-12-09T06:02:13Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014166458,
+      "body_text": "合并来自工单7371  \n      主题: plus x pedal problem  \n      描述:  \nHello, I just got my pedals and they show up in the software but do not work in any games and windows does not show any input being made from the pedals even though they are shown in the controller input menu. How can I fix this?",
+      "user_id": 158000445778,
+      "created_at": "2025-12-09T06:02:13Z",
+      "updated_at": "2025-12-09T06:02:13Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014166530,
+      "body_text": "Hi Harald Wernholm,     Could you please check whether the cable of the brake VAM Pro haptic module is damaged or broken? If the issue is confirmed to be with the haptic module itself, we can send you a replacement free of charge.  Please provide the following information so we can arrange the shipment:    Recipient name    Phone number    Shipping address    Thank you!",
+      "user_id": 158000445778,
+      "created_at": "2025-12-09T06:04:49Z",
+      "updated_at": "2025-12-09T06:04:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014169049,
+      "body_text": "Hello again, really sorry for all the trouble I have sent your guys way. Really appreciate all the help I’m getting and to be clear I really like the pedals.\r\n\r\nI’m sending som picture of the cable, is it possible for you guys to send it to the same address as my last shipment ? It was #SSN3585.\r\nIf you need me to send my details via email that is fine too just send me another email and I’ll do it.\r\n\r\nTried it again today, nothing from the haptic but the other one works fine on all ports.\r\n[image0.jpeg][image1.jpeg][image2.jpeg][image3.jpeg]\r\n\r\n",
+      "user_id": 158007301322,
+      "created_at": "2025-12-09T07:35:39Z",
+      "updated_at": "2025-12-09T07:35:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 9974,
+  "subject": "Order #SSN5537",
+  "description_text": "Hey,\r\n\r\nI wanted to ask if the order is already out for shipping or what is the current process for the order?\r\n\r\nKind regards\r\nMichael\r\n\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-05T08:32:28Z",
+  "updated_at": "2026-01-08T11:14:46Z",
+  "requester_id": 158008932044,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016330514,
+      "body_text": "Hi Michael Miemczyk,    We apologize for not updating you promptly about your shipment. Your package has been shipped.  https://t.17track.net/en#nums=SF6047224806521",
+      "user_id": 158001343601,
+      "created_at": "2026-01-08T11:14:46Z",
+      "updated_at": "2026-01-08T11:14:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

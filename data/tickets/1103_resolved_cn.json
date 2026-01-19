@@ -1,0 +1,35 @@
+{
+  "id": 1103,
+  "subject": "设备故障，紧急",
+  "description_text": "您好，我认为设备已损坏，我已经尝试了多台电脑，结果都一样。",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-07-02T09:45:19Z",
+  "updated_at": "2025-07-02T14:28:16Z",
+  "requester_id": 158001873282,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004374245,
+      "body_text": "您好，Arhaam Rahaman，在“设置-更新”部分，点击“手动固件更新”，然后导航到pedals-firmware文件夹→pedals文件夹→选择proxultra.sfu文件进行更新。此固件将禁用第四轴。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T14:15:03Z",
+      "updated_at": "2025-07-02T14:15:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004374319,
+      "body_text": "您好，谢谢，现在已经可以工作了。",
+      "user_id": 158001873282,
+      "created_at": "2025-07-02T14:22:03Z",
+      "updated_at": "2025-07-02T14:22:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

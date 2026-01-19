@@ -1,0 +1,165 @@
+{
+  "id": 435,
+  "subject": "回复：取消订单 #SSN1741",
+  "description_text": "我已经翻译了中文。\n\n是的，谢谢。请取消这个订单。\n发自我的iPhone\n\n> 在2025年6月13日，晚上9:11，service @simsonn.com 写道：\n> \n> 您可以取消订单，我们将为您办理退款。",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-06-14T04:25:20Z",
+  "updated_at": "2025-06-16T06:36:15Z",
+  "requester_id": 158001507649,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003041818,
+      "body_text": "你好，我需要取消一个订单 发自我的iPhone",
+      "user_id": 158001507649,
+      "created_at": "2025-06-14T03:12:25Z",
+      "updated_at": "2025-06-14T03:12:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003041876,
+      "body_text": "ID 为 432 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-14T03:18:58Z",
+      "updated_at": "2025-06-14T03:18:58Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158003041877,
+      "body_text": "合并来自工单432\n      主题: 取消订单 #SSN1741\n      描述:    请取消订单 #SSN1741\n John Carr",
+      "user_id": 158000445778,
+      "created_at": "2025-06-14T03:18:58Z",
+      "updated_at": "2025-06-14T03:18:58Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158003041923,
+      "body_text": "你好，Johnny Carr， 我们可以为您提供15美元的退款作为差价，约合20.38加元。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-14T03:23:14Z",
+      "updated_at": "2025-06-14T03:23:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003042049,
+      "body_text": "谢谢，但差价是140美元 发自我的iPhone",
+      "user_id": 158001507649,
+      "created_at": "2025-06-14T03:39:57Z",
+      "updated_at": "2025-06-14T03:39:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003042068,
+      "body_text": "140美元，外加任何中介费、进口费和税费 发自我的iPhone",
+      "user_id": 158001507649,
+      "created_at": "2025-06-14T03:41:49Z",
+      "updated_at": "2025-06-14T03:41:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003042188,
+      "body_text": "你们的网站说我可以在12小时内取消订单。我就是想这么做。 发自我的iPhone",
+      "user_id": 158001507649,
+      "created_at": "2025-06-14T03:56:43Z",
+      "updated_at": "2025-06-14T03:56:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003042331,
+      "body_text": "你好，约翰尼·卡尔， 您可以取消订单，我们将为您办理退款。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-14T04:11:21Z",
+      "updated_at": "2025-06-14T04:11:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003042398,
+      "body_text": "我是一个66岁的老人，从1996年开始玩模拟赛车。我的第一个iRacing账户是2008年的。我一定会把我的经历分享到iRacing论坛上。这些中文是我应该自己翻译，还是应该猜测它们的意思？ 发自我的iPhone",
+      "user_id": 158001507649,
+      "created_at": "2025-06-14T04:22:39Z",
+      "updated_at": "2025-06-14T04:22:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003080620,
+      "body_text": "ID 为 433 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-14T08:33:16Z",
+      "updated_at": "2025-06-14T08:33:16Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158003080623,
+      "body_text": "合并来自工单433\n      主题: 回复：取消订单 #SSN1741\n      描述:  我没意识到这是美元价格。我是加拿大人\n\n\n  发自我的iPhone\n\n  在2025年6月13日，晚上8:08，常规和销售咨询 <service @simsonn.com> 写道：\n\n\n  你好，你有什么问题吗？我们可以帮你解决。\n\n\n\n\n\n\n ----------回复消息----------\n 2025年6月14日星期六上午10:59 Johnny Carr<jcarrgreens @telus.net> 写道：\n\n\n   请取消订单 #SSN1741\n John Carr",
+      "user_id": 158000445778,
+      "created_at": "2025-06-14T08:33:16Z",
+      "updated_at": "2025-06-14T08:33:16Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158003084002,
+      "body_text": "你好，Johnny Carr， 你的意思是我们承担全部140美元的关税，你就会在iRacing论坛上为我们提供诚实的评价或一些推广吗？",
+      "user_id": 158000445778,
+      "created_at": "2025-06-14T09:00:17Z",
+      "updated_at": "2025-06-14T09:00:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003103668,
+      "body_text": "我会把这次对话的全部内容复制粘贴到iRacing论坛上，让人们看看Simsonn的客服是如何戏弄人而不是试图帮助人的。\n\n你们公司说在12小时内联系客服就可以退款。我这么做了，但你们却一直跟我玩花样。\n\n用中文发那条信息给我传达了一个明确的信息，我也会把这个信息传达给模拟赛车界。\n\n140美元是299美元的汇率差价。关税和税费还要另外60美元。\n\n\n\n\n发自我的iPhone\n\n>",
+      "user_id": 158001507649,
+      "created_at": "2025-06-14T11:56:18Z",
+      "updated_at": "2025-06-14T11:56:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003103969,
+      "body_text": "你好，Johnny Carr， 无论如何，我们已经明确表示，欢迎您退货并获得全额退款。由于今天是星期六，我们原计划在星期一为您取消订单。但是，我们已经联系了我们的运营团队加班，访问了系统，并在今天处理了您的退款。 此外，我们认为可能存在误解。我们的网站明确说明产品从美国发货，而不是加拿大，并且产品价格不包括关税。 关于您提到的关税费用，我们最初假设大约是20美元，所以我们主动提出承担差价。 后来，您澄清说关税实际上是140美元，并提到了您在iRacing多年的经验。那时，我们没有完全理解您的意思，直到您最近的电子邮件才让事情更清楚。 我们希望您能理解，今天是我们的休息日，我们可能一开始没有仔细查看您的信息。“12小时”的提法只是提醒订单一旦发货通常无法取消——而不是为了限制您的权利。如果商品尚未发货，我们总是很乐意协助取消。 请不要误解。对于这样简单直接的事情，退款是绝对正确的做法——它永远不应该需要威胁或让人感到沮丧。我们珍视每一位客户，并真诚地希望我们能以积极和尊重的方式沟通。 SIMSONN支持团队",
+      "user_id": 158000445778,
+      "created_at": "2025-06-14T12:39:39Z",
+      "updated_at": "2025-06-14T12:39:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003104138,
+      "body_text": "你好，Johnny Carr， 由于翻译问题，我之前的邮件有误。既然订单还没有发货，就不需要退货了。那是我的疏忽——为造成的混乱道歉。 SIMSONN支持团队",
+      "user_id": 158000445778,
+      "created_at": "2025-06-14T13:06:49Z",
+      "updated_at": "2025-06-14T13:06:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

@@ -1,0 +1,24 @@
+{
+  "id": 194,
+  "subject": "Return order SSN1504",
+  "description_text": "Good morning\r\n\r\nPlease can I return my order number \r\nSSN1504. Thanks have not opened or used this, and I am now moving abroad to Australia, so this is no longer needed.\r\n\r\nPlease send me return details asap.\r\n\r\nMany thanks\r\n\r\nJack Bintcliffe\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-05T09:44:16Z",
+  "updated_at": "2025-06-06T02:38:21Z",
+  "requester_id": 158001248678,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002539105,
+      "body_text": "Hi Jack Bintcliffe,  Hi, if the product you received is not defective, we cannot accept returns. Because we can't afford the shipping and return shipping costs, thank you for your understanding!",
+      "user_id": 158000445778,
+      "created_at": "2025-06-06T02:38:21Z",
+      "updated_at": "2025-06-06T02:38:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

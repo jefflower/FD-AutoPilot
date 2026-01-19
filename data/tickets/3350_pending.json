@@ -1,0 +1,24 @@
+{
+  "id": 3350,
+  "subject": "The device just not connect",
+  "description_text": "Hi Simsonn,\r\n\r\nI just receive the pedal Pro. And connect with the pc. 1st time work very\r\nwell, I check on simsonn manager and saw every work. But after I change the\r\nusb cable to another usb gatr. It show disconnected and can’t do anyhing.\r\n\r\nPlease help me what to do\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-01T10:17:12Z",
+  "updated_at": "2025-09-01T14:49:25Z",
+  "requester_id": 158004059585,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007906786,
+      "body_text": "Hi nguyen wan,    We recommend connecting the device to the rear USB 3.0 (blue) port of your computer, or using a powered USB hub with independent supply, as stable power is required.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-01T14:49:25Z",
+      "updated_at": "2025-09-01T14:49:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

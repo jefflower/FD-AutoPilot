@@ -1,0 +1,56 @@
+{
+  "id": 7007,
+  "subject": "Please cancel my order",
+  "description_text": "Shopify wouldn’t let me put the shipping address in there and it just confirmed it before I could… I wanted it to go to Georgetown, Texas, not to California\r\nSent from my iPhone\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-11-29T06:15:13Z",
+  "updated_at": "2025-12-05T10:19:45Z",
+  "requester_id": 158007417872,
+  "responder_id": 158001343601,
+  "cc_emails": [
+    "pmnotary@att.net"
+  ],
+  "conversations": [
+    {
+      "id": 158013095105,
+      "body_text": "Hi Pam McLaughlin,    Please provide your correct address and we shall amend it for you. Do not worry.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-29T06:22:24Z",
+      "updated_at": "2025-11-29T06:22:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013119337,
+      "body_text": "Thank you so much … please sendTo: Shane McLaughlin. 700 Del Mar Dr., Georgetown, TX 98626. Could you confirm that you received this? I didn’t see your email and I sent my concern again . I was panicking this morning.\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158007417872,
+      "created_at": "2025-11-29T18:54:51Z",
+      "updated_at": "2025-11-29T18:54:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013124582,
+      "body_text": "Hi Pam McLaughlin,      Do not worry, we have amended the address for you. Please confirm the postcode is 78626, not 98626.  Shane Mclaughlin  700 Del Mar Drive  Georgetown, Texas 78626  United States  +1 661-203-8883",
+      "user_id": 158001343601,
+      "created_at": "2025-11-30T00:51:57Z",
+      "updated_at": "2025-11-30T00:51:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013427607,
+      "body_text": "Yes its 78626\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158007417872,
+      "created_at": "2025-12-05T01:30:46Z",
+      "updated_at": "2025-12-05T01:30:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

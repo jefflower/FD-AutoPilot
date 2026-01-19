@@ -1,0 +1,24 @@
+{
+  "id": 9174,
+  "subject": "Technical Support Required: Load Cell malfunction and RJ12 connector failure - Order SSN4544",
+  "description_text": "Dear Simsonn Support Team,\r\n​I am writing to request urgent technical assistance regarding my gas\r\npedal. I have encountered several serious issues that make the product\r\nunusable.\r\n​Problem Description:\r\n​Physical damage: The original RJ12 connector on the gas pedal load cell\r\ncable fell off/broke.\r\n​Attempted repair: I have tried to reconnect the wires to a new RJ12 plug.\r\nDespite the connection being recognized by the PC, the signal is extremely\r\nweak and incorrect.\r\n​Malfunction: In the Simsonn software, the pedal shows only 1% to 2% of\r\ninput, even when pressing with maximum force. It is impossible to calibrate.\r\n​Previous issues: Even before the connector fell off, the pedal was\r\n\"freezing,\" stuttering, or not responding correctly to input.\r\n​Request for assistance:\r\n​Please provide the official wiring diagram (pinout) for the RJ12 connector\r\n(colors: Red, Black, White, Green) so I can verify my connection.\r\n​Please provide a technical assembly drawing of the gas pedal to ensure the\r\nLoad Cell is positioned correctly.\r\n​If the Load Cell or the controller is defective, please advise on the\r\nwarranty/replacement procedure.\r\n​I have attached photos of the current assembly and the wiring. I am\r\nlooking forward to your guidance on how to fix this issue.\r\n​Best regards,\r\nKamil Adamowski\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-25T21:31:58Z",
+  "updated_at": "2025-12-28T03:42:57Z",
+  "requester_id": 158007739815,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015147615,
+      "body_text": "Hi Kamil Adamowski,     Please take a photo from this side; the wire colors are red, white, green, and black. You can refer to the brake pedal wiring sequence and have it re-terminated using a crimping tool at a local computer repair shop. You can also adjust the dead zone in the software. If there is a disconnection issue, please follow the procedure below.      Please first make sure your SIMSONN Manager software is version 2.1.2, with firmware versions CPU1: 2.0.5 and CPU2: 2.0.4. When connecting to your PC, use the blue USB 3.0 port on the back and avoid using any USB hubs.  If disconnection issues still occur, it may indicate that your PC is not properly grounded, possibly due to not using a three-prong plug in a grounded wall outlet. You can try the following solutions:  * Connect the PC case to the support frame. * Connect the metal screws of the control box to the pedals (note that black paint or metal oxidation may affect grounding).  This setup usually resolves disconnection problems.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T03:42:57Z",
+      "updated_at": "2025-12-28T03:42:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

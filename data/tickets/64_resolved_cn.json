@@ -1,0 +1,55 @@
+{
+  "id": 64,
+  "subject": "回复：订单 #SSN1549 已确认",
+  "description_text": "早上好，请问这个订单可以取消吗？ 安东尼·索伦蒂诺 发自我的iPhone 在2025年5月28日上午8:48，SIMSONN <service@simsonn.com> 写道： 感谢您的购买！ 我们正在准备您的订单以便发货。发货后我们会通知您。 查看您的订单或访问我们的商店。 订单摘要：Simsonn Plus X 赛车模拟踏板 – 兼容Simsonn震动模块 × 1，Plus X P3-H3 / 黑色 / 带底板，$309.00。小计 $309.00，运费 $29.90，税费 $0.00，总计 $338.90 USD。客户信息：送货地址 安东尼·索伦蒂诺 2417 48th Ave Kenosha WI 53144 美国。账单地址 安东尼·索рентино 2417 48th Ave Kenosha WI 53144 美国。运输方式：快递（免税）。如有任何问题，请回复此邮件或通过 service@simsonn.com 联系我们。",
+  "status": 4,
+  "priority": 3,
+  "created_at": "2025-06-03T23:44:45Z",
+  "updated_at": "2025-06-14T03:30:33Z",
+  "requester_id": 158000955176,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002405458,
+      "body_text": "你好，安东尼·索伦蒂诺，我们的仓库已经将货物移交给物流公司，所以订单无法取消。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-04T13:02:35Z",
+      "updated_at": "2025-06-04T13:02:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002640719,
+      "body_text": "请忽略。安东尼·索伦蒂诺 发自我的iPhone",
+      "user_id": 158000955176,
+      "created_at": "2025-06-06T16:04:10Z",
+      "updated_at": "2025-06-06T16:04:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002861255,
+      "body_text": "我无法访问帮助中心，当我尝试选择忘记密码时，系统提示我没有权限。我订购的这个商品一直处于停滞状态，只创建了运单标签，却迟迟没有物流动态。而且我为了加急运输付了额外的费用，结果你们却给我用了陆运。所以我本想取消订单，从别的地方购买。但后来我又说不用取消了。所以现在我搞不清楚状况，只想知道我什么时候能收到我的踏板…… 安东尼·索伦蒂诺 发自我的iPhone",
+      "user_id": 158000955176,
+      "created_at": "2025-06-09T21:32:23Z",
+      "updated_at": "2025-06-09T21:32:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003041985,
+      "body_text": "你好，安东尼·索伦蒂诺，根据17track的查询，包裹状态已标记为“已送达”。请您检查并确认。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-14T03:30:32Z",
+      "updated_at": "2025-06-14T03:30:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

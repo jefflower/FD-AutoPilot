@@ -1,0 +1,175 @@
+{
+  "id": 4431,
+  "subject": "关于 Simsonn SQ Pro 的间隙问题",
+  "description_text": "你好。我最近在速卖通上买了一个 SQ Pro，已经用了10天了。我注意到中心位置有很多间隙，而且随着使用情况越来越糟。我已经试过拧紧所有的螺丝，但问题没有解决。有没有办法消除这个间隙，还是我的这个产品有问题？附件是一个显示问题的视频。\n\n\n谢谢！",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-10-04T13:06:19Z",
+  "updated_at": "2025-10-25T12:58:27Z",
+  "requester_id": 158005392648,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009941817,
+      "body_text": "你好 Raul Ramires, 两侧的银色嵌入式螺母用于调整中心和换挡力度。你可以稍微拧紧它们——类似于调整手刹——但要确保两侧调整均匀。不要拧得太紧，否则可能会导致换挡时卡住。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T16:43:03Z",
+      "updated_at": "2025-10-05T16:43:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009941837,
+      "body_text": "我已经试过拧紧了，但没有解决间隙问题。只有当我把它拧到换挡杆完全动不了的时候，间隙才会消失。",
+      "user_id": 158005392648,
+      "created_at": "2025-10-05T16:44:24Z",
+      "updated_at": "2025-10-05T16:44:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158009951014,
+      "body_text": "你好 Raul Ramires, 我们会在10月9日给你寄一个新的扭力弹簧。我们还会提供一个视频指南来帮助你更换——这应该能解决问题。请提供你的联系人姓名、地址、电话号码和订单号。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-06T00:00:31Z",
+      "updated_at": "2025-10-06T00:00:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009951299,
+      "body_text": "谢谢！我非常感激。但我有一个问题：我需要支付进口关税吗？ 姓名：Raul Ramires 地址：Avenida Antonio Bortoloto 1409 城市：Maringá - PR 国家：巴西 邮政编码：87103-278 订单号：8204416378927647 购买于速卖通官方商店",
+      "user_id": 158005392648,
+      "created_at": "2025-10-06T00:16:17Z",
+      "updated_at": "2025-10-06T00:16:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158009951479,
+      "body_text": "你好 Raul Ramires, 你不需要支付任何关税或运费。如果有关税，金额应该很小，我们可以通过 PayPal 给你报销。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-06T00:25:27Z",
+      "updated_at": "2025-10-06T00:25:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009951491,
+      "body_text": "明白了。再次感谢！",
+      "user_id": 158005392648,
+      "created_at": "2025-10-06T00:26:16Z",
+      "updated_at": "2025-10-06T00:26:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010197610,
+      "body_text": "你好 Raul Ramires, 你的订单已经发货。物流单号是：YT2528300704598641。你可以在这个网站上跟踪：https://www.17track.net/zh-cn。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-10T07:29:23Z",
+      "updated_at": "2025-10-10T07:29:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010207690,
+      "body_text": "非常感谢！",
+      "user_id": 158005392648,
+      "created_at": "2025-10-10T11:05:20Z",
+      "updated_at": "2025-10-10T11:05:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010213242,
+      "body_text": "你能给我发一个更换弹簧的视频教程吗？谢谢！",
+      "user_id": 158005392648,
+      "created_at": "2025-10-10T12:49:01Z",
+      "updated_at": "2025-10-10T12:49:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010240242,
+      "body_text": "你好 Raul Ramires, 这是更换弹簧的视频。 https://drive.google.com/file/d/15CFmRx99jD5XLC79d6UZ8R7KdaxytMZ2/view?usp=drive_link https://drive.google.com/file/d/1fiEh5ov6qwUDfHvnrEhi1jYj0jF7GIeK/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-10-11T01:32:08Z",
+      "updated_at": "2025-10-11T01:32:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010946669,
+      "body_text": "你好。我为这个包裹支付了总计 R$33,40 的进口费用",
+      "user_id": 158005392648,
+      "created_at": "2025-10-23T12:35:45Z",
+      "updated_at": "2025-10-23T12:35:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010985474,
+      "body_text": "你好 Raul Ramires, 你好，换算成美元是多少？请提供你的 PayPal 地址，我会把钱转给你。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-24T01:48:34Z",
+      "updated_at": "2025-10-24T01:48:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011014318,
+      "body_text": "你好。R$33,40 = 6.22美元 我的 Paypal 邮箱是 rrramires @hotmail.com。 谢谢！",
+      "user_id": 158005392648,
+      "created_at": "2025-10-24T13:10:48Z",
+      "updated_at": "2025-10-24T13:10:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158011050566,
+      "body_text": "你好 Raul Ramires, 你好，我已收到你的付款。非常感谢你的支持！如果将来遇到任何问题，请随时直接联系我们——我们会迅速回应并帮助你解决。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-25T02:37:47Z",
+      "updated_at": "2025-10-25T02:37:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011051356,
+      "body_text": "你好 Raul Ramires, 你好，我们已经向你支付了6.22美元。非常感谢你的支持！如果将来遇到任何问题，请随时联系我们——我们会尽快协助你。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-25T03:29:38Z",
+      "updated_at": "2025-10-25T03:29:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011073567,
+      "body_text": "你好。我已收到付款。非常感谢你们出色的支持。你们太棒了！",
+      "user_id": 158005392648,
+      "created_at": "2025-10-25T11:50:38Z",
+      "updated_at": "2025-10-25T11:50:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    }
+  ],
+  "available_langs": []
+}

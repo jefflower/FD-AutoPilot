@@ -1,0 +1,25 @@
+{
+  "id": 10989,
+  "subject": "刹车踏板行程",
+  "description_text": "你好！\n我有一个 Simsson plus x 踏板，我想知道如何增加刹车踏板的行程。我现在使用的是红色弹性体，刹车感觉很硬，踏板行程非常短，我将载荷传感器设置为 26 公斤。\n\n发自 Outlook for Android<https://aka.ms/AAb9ysg>",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-15T14:02:04Z",
+  "updated_at": "2026-01-16T01:45:23Z",
+  "requester_id": 158004441012,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017235157,
+      "body_text": "嗨 yousifahmed321@outlook.com，       您可以拆下黑色刹车弹簧内部的 10 毫米行程限制垫片以增加踏板行程。此垫片是默认的 F1 风格设置：它缩短了黑色弹簧的压缩行程，以模拟约 1-2 毫米的刹车片与刹车盘间隙感。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-16T01:45:23Z",
+      "updated_at": "2026-01-16T01:45:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

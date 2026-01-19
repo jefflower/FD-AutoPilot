@@ -1,0 +1,24 @@
+{
+  "id": 1017,
+  "subject": "Follow-up on Order #SSN1771 – No Shipping Progress",
+  "description_text": "Dear SIMSONN Support Team,\r\n\r\n\r\n\r\nI hope this message finds you well.\r\n\r\n\r\n\r\nI am writing to follow up on my previous support request regarding order #SSN1771, placed on June 17, 2025, with Express Shipping selected and paid for (USD 59.90), which had an advertised delivery timeframe of 6 to 12 days.\r\n\r\n\r\n\r\nOn June 19, the tracking status was updated to “Shipment Information Received,” but since then, there has been no further movement or confirmation that the package was handed over to YunExpress. Today is June 30, and the tracking remains unchanged, with no actual shipping activity reported.\r\n\r\n\r\n\r\nI initially reached out on June 27 and received confirmation that a support ticket had been created (Ticket #894) and an investigation would begin immediately. However, since then, I have not received any meaningful updates on the status of my order. I even replied to the support thread on June 28 and 29, reiterating the issue, but unfortunately, there has still been no response.\r\n\r\n\r\n\r\nAt this point, it has been 13 days since my order and 11 days since the label was generated, with no indication that the item has left your warehouse. As such, I kindly request one of the following actions:\r\n\r\n\r\n\r\nEither: Provide a clear and confirmed update indicating when my package will be shipped and handed to YunExpress.\r\nOr: Proceed with the cancellation of the order and issue a full refund, including the shipping fee (USD 59.90), since the express shipping timeline has not been met and no shipping activity has occurred.\r\n\r\n\r\n\r\n\r\nI would appreciate a response as soon as possible. If no progress is reported or the package is not shipped shortly, I will have to request a formal cancellation through my payment provider.\r\n\r\n\r\n\r\nThank you in advance for your attention to this matter.\r\n\r\n\r\n\r\nSincerely,\r\n\r\nSebastião de Sena Ferreira\r\n\r\nEmail: sebastiaosf@icloud.com\r\n\r\nOrder #: SSN1771\r\n\r\nTracking #: YT2517000705760363\r\n\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-30T23:21:35Z",
+  "updated_at": "2025-07-01T09:21:40Z",
+  "requester_id": 158001604804,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004355878,
+      "body_text": "Hi Sebastião Ferreira,     Sorry, the first batch of VAM Pro stock is depleted, the second batch will be delivered tomorrow, we will ship it to you as soon as possible and refund you the extra shipping cost as compensation, we apologize for the delay!",
+      "user_id": 158001343601,
+      "created_at": "2025-07-01T09:21:40Z",
+      "updated_at": "2025-07-01T09:21:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": 9455,
+  "subject": "Control box for 3rd party pedals",
+  "description_text": "Good morning, I hope you had a great holiday. I am just wondering what control box would you recommend for the haptic motors using third-party pedal sets?\r\n\r\nSent from Outlook for Android<https://aka.ms/AAb9ysg>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-29T11:37:03Z",
+  "updated_at": "2025-12-31T01:46:24Z",
+  "requester_id": 158008806949,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015241118,
+      "body_text": "Hi James Esaw,  Could you please tell me which pedal model you have? We can help evaluate it, and generally, the PlusX control box is recommended. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T07:51:29Z",
+      "updated_at": "2025-12-30T07:51:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015252344,
+      "body_text": "Hello, I have a set of Logitech G pro pedals that I would like to add some haptics to. :)\r\n\r\nSent from Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158008806949,
+      "created_at": "2025-12-30T13:02:39Z",
+      "updated_at": "2025-12-30T13:02:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015290154,
+      "body_text": "Hi James Esaw,  There are some 3D-printable connectors available online that can be used to mount our vibration module.            https://www.etsy.com/listing/4379222112/simsonn-vam-and-vam-pro-haptic-pedal?dd_referrer=https%3A%2F%2Fwww.google.com%2F",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T01:46:24Z",
+      "updated_at": "2025-12-31T01:46:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

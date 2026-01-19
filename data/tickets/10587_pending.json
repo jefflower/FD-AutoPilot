@@ -1,0 +1,164 @@
+{
+  "id": 10587,
+  "subject": "When can I get a refund? Order number Ssn5375",
+  "description_text": "I applied for a refund, but it hasn't been refunded yet\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-11T22:36:34Z",
+  "updated_at": "2026-01-12T02:58:21Z",
+  "requester_id": 158007669767,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014099363,
+      "body_text": "Hello.. I sent you an order cancellation email on Saturday but there is no\r\nanswer yet.. I want to change it to another one and order again.. Please\r\nreply quickly..\r\n\r\nOrder #SSN4432\r\n\r\n2025년 12월 6일 (토) 오전 8:46, service@simsonn.com ",
+      "user_id": 158007669767,
+      "created_at": "2025-12-08T01:32:54Z",
+      "updated_at": "2025-12-08T01:32:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014104797,
+      "body_text": "Hi 테레비갓달새,    We apologize for the delayed response. Since it's the weekend, we can immediately adjust your order for you—any overpayment will be refunded, and any underpayment will be collected.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-08T07:18:53Z",
+      "updated_at": "2025-12-08T07:18:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014113103,
+      "body_text": "Thank you. Once the full refund is confirmed, I will place another order\r\nwith a different card.\r\n\r\n2025년 12월 8일 (월) 오후 4:19, service@simsonn.com ",
+      "user_id": 158007669767,
+      "created_at": "2025-12-08T07:43:12Z",
+      "updated_at": "2025-12-08T07:43:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014163378,
+      "body_text": "Hi 테레비갓달새,    We apologize for the delayed response. We have already processed your refund.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-09T02:25:40Z",
+      "updated_at": "2025-12-09T02:25:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015302895,
+      "body_text": "OK",
+      "user_id": 158001343601,
+      "created_at": "2025-12-31T08:47:51Z",
+      "updated_at": "2025-12-31T08:47:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016831253,
+      "body_text": "When can I get a refund? It's been two weeks since I applied for a refund\r\n\r\n2025년 12월 31일 (수) 오후 5:48, service@simsonn.com ",
+      "user_id": 158007669767,
+      "created_at": "2026-01-11T22:39:28Z",
+      "updated_at": "2026-01-11T22:39:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016831607,
+      "body_text": "",
+      "user_id": 158007669767,
+      "created_at": "2026-01-11T23:04:11Z",
+      "updated_at": "2026-01-11T23:04:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158016831636,
+      "body_text": "I requested a refund... Did you send it?",
+      "user_id": 158007669767,
+      "created_at": "2026-01-11T23:05:19Z",
+      "updated_at": "2026-01-11T23:05:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158016832476,
+      "body_text": "ID 号为 7537, 7651, 7750, 9449 和 9522 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-12T00:11:56Z",
+      "updated_at": "2026-01-12T00:11:56Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016832477,
+      "body_text": "合并来自工单7537  \n      主题: I would like to cancel my order  \n      描述:  \n I placed an order yesterday. I'd like to cancel it. Is that possible?\n\nOrder number: SSN4432 \n 어제 주문을 하였습니다.. 주문을 취소하고 싶습니다. 가능할까요  주문번호 Order #SSN4432",
+      "user_id": 158000445778,
+      "created_at": "2026-01-12T00:11:56Z",
+      "updated_at": "2026-01-12T00:11:56Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016832479,
+      "body_text": "合并来自工单7651  \n      主题: SSN4432 Order cancellation inquiry  \n      描述:  \n Hello.. I sent you an order cancellation email on Saturday but there is no answer yet.. I want to change it to another one and order again.. Please reply quickly.. \n   \n Order #SSN4432",
+      "user_id": 158000445778,
+      "created_at": "2026-01-12T00:11:57Z",
+      "updated_at": "2026-01-12T00:11:57Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016832481,
+      "body_text": "合并来自工单7750  \n      主题: Order cancellation, refund request. It's urgent.  \n      描述:  \n I canceled my order, when will I be able to get a refund for my card payment? I need to repurchase it with a different card, but I haven't received a refund yet, so I can't place the order.  \n   \n Order number SSN4432 ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-12T00:11:58Z",
+      "updated_at": "2026-01-12T00:11:58Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016832483,
+      "body_text": "合并来自工单9449  \n      主题: ( SSN5375) request a refund..I'm sorry  \n      描述:  I accidentally made the wrong order.. I'm sorry, but can I get a refund",
+      "user_id": 158000445778,
+      "created_at": "2026-01-12T00:11:58Z",
+      "updated_at": "2026-01-12T00:11:58Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016832485,
+      "body_text": "合并来自工单9522  \n      主题: Order number Ssn5375 I request a refund by mistake  \n      描述:  I want to get a refund because I made a mistake in my order.. Order number Ssn5375.. Please answer me",
+      "user_id": 158000445778,
+      "created_at": "2026-01-12T00:11:59Z",
+      "updated_at": "2026-01-12T00:11:59Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016835583,
+      "body_text": "Hi 테레비갓달새,    Sorry for the delayed response. I've already processed your refund. Please check your account.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-12T02:58:21Z",
+      "updated_at": "2026-01-12T02:58:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

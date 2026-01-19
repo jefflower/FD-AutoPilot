@@ -1,0 +1,54 @@
+{
+  "id": 7276,
+  "subject": "I'd like to do a return",
+  "description_text": "Hey,\n\nI've bought the « Newest Simsonn Plus X Simracing Load Cell Pedal with Haptics Reactor » for a total of €376,02. And the thing is, that I've made a mistake between what I wanted and what I've bought! I wanted the « Pro X Ultra-P2-H2 / Baseplate » but looks like I messed up haha. My order is #SSN3936, and I would like to apologize for the inconvenience and my mistake ?\n\nThe package is still not delivered, but as soon as it is, I will directly return it without opening it, to make sure everything's fine!\n\nThanks for your understanding,\nYouness Rami.\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-12-02T19:12:08Z",
+  "updated_at": "2025-12-15T10:51:24Z",
+  "requester_id": 158007501451,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013319826,
+      "body_text": "Hi Younessrami,  Okay, you can send the package to our warehouse in Germany, and we will refund you after we receive it.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-03T11:11:39Z",
+      "updated_at": "2025-12-03T11:11:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013319828,
+      "body_text": "Gubitz GmbH(LeiXuan A211) Hüttenkamp 12 Neumünster,Schleswig-Holstein   24536 +49 17622233089",
+      "user_id": 158001343601,
+      "created_at": "2025-12-03T11:11:52Z",
+      "updated_at": "2025-12-03T11:11:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013824989,
+      "body_text": "Hey, I've just sent it!\n\nHere's the code to follow the 2 box (I've sent it via Bpost) :\n- CE636792546BE\n- CE636792648BE\nThanks,\nYouness Rami.\n\n-------- Original Message --------\n",
+      "user_id": 158007501451,
+      "created_at": "2025-12-06T09:13:23Z",
+      "updated_at": "2025-12-06T09:13:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014505398,
+      "body_text": "Hi Younessrami,    We apologize for the delayed response. We have contacted our warehouse staff to inspect and restock the item. Once the inspection is complete, we will process your refund.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-15T10:51:24Z",
+      "updated_at": "2025-12-15T10:51:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

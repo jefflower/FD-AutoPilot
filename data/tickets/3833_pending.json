@@ -1,0 +1,84 @@
+{
+  "id": 3833,
+  "subject": "Simsonn Pro X Ultra",
+  "description_text": "Good morning,\r\n\r\n\r\nI am trying out your Pro X Ultra pedals for the first time, and I have a\r\ncouple of problems that I cannot solve. I wonder if you could help me.\r\n\r\n\r\n1. I'm experiencing electronic interference, which is causing problems with\r\nthe base (Simagic). Do you have a solution for this?\r\n\r\n2. The telemetry lights aren't working. I can change the color, shape, and\r\nspeed of the lights, but the telemetry isn't working (I race on iRacing).\r\n\r\n3. I also don't have 100% pedal play in the software. The three pedals are\r\nmarked as if I were pressing 50% on the top bar, although when calibrated\r\nit does detect 100%. It seems that the pressure I can apply to both is\r\nstuck at around 50%. Is this a matter of maximum pedal travel?\r\n\r\n\r\nThank you very much. Best regards.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-15T09:44:02Z",
+  "updated_at": "2025-09-17T07:52:03Z",
+  "requester_id": 158004551226,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008792494,
+      "body_text": "Hi Marcos Bachiller,  Our pedals have been CE certified and will not cause interference to external devices such as wheelbases. Please check whether your home grounding is reliable, for example, whether your power strip has a proper three-prong socket. Regarding iRacing: Simsonn Manager currently supports a limited number of telemetry items in iRacing, and I will provide you with a full list. After calibrating the pedals in the software, please make sure the test output goes from 0–100%. Then restart iRacing and rebind the pedals. Many of our customers are using iRacing with our pedals without issues. Additionally, I recommend using the 2.1.1 version of the software that I will provide. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-16T01:10:04Z",
+      "updated_at": "2025-09-16T01:10:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008792632,
+      "body_text": "Hi Marcos Bachiller,  Please note: iRacing requires an additional one-time in-game calibration. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-16T01:23:36Z",
+      "updated_at": "2025-09-16T01:23:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008803326,
+      "body_text": "Good morning,\r\n\r\n\r\nWhen I try to calibrate the steering wheel and pedals in iRacing, or any\r\nother simulator, I have to disconnect the pedals to calibrate the base,\r\notherwise it goes haywire and won't let me calibrate it. Once calibrated, I\r\nhave no problems when playing, but I need to check the telemetry lights\r\ntoday with the data I've been given.\r\n\r\n\r\nThank you very much. Best regards.\r\n\r\nEl mar, 16 sept 2025 a las 3:23, service@simsonn.com (",
+      "user_id": 158004551226,
+      "created_at": "2025-09-16T07:22:57Z",
+      "updated_at": "2025-09-16T07:22:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008807449,
+      "body_text": "Good morning,\r\n\r\n\r\nAnother issue: I only have them connected to the PC via USB. I don't have a\r\npower cable because it didn't come with the pedals, just the box where the\r\npedals are connected, and from there, via USB to the PC.\r\n\r\n\r\nCould that be the problem?\r\n\r\n\r\nBest regards\r\n\r\nEl mar, 16 sept 2025 a las 9:22, Marcos Bachiller (<\r\nmarcosbachillerguerrero@gmail.com>) escribió:\r\n\r\n> Good morning,\r\n>\r\n>\r\n> When I try to calibrate the steering wheel and pedals in iRacing, or any\r\n> other simulator, I have to disconnect the pedals to calibrate the base,\r\n> otherwise it goes haywire and won't let me calibrate it. Once calibrated, I\r\n> have no problems when playing, but I need to check the telemetry lights\r\n> today with the data I've been given.\r\n>\r\n>\r\n> Thank you very much. Best regards.\r\n>\r\n> El mar, 16 sept 2025 a las 3:23, service@simsonn.com (",
+      "user_id": 158004551226,
+      "created_at": "2025-09-16T09:43:44Z",
+      "updated_at": "2025-09-16T09:43:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008837830,
+      "body_text": "Hi Marcos Bachiller,  When using the pedals alone, only a USB cable is required. If you purchase a vibration motor, you can choose to buy a separate power supply for it. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-17T01:56:04Z",
+      "updated_at": "2025-09-17T01:56:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008845905,
+      "body_text": "Good morning,\r\n\r\n\r\nThe problem I have is that the pedals continue to cause interference with\r\nthe base I currently have, which doesn't make much sense since they are\r\nonly connected via USB.\r\n\r\n\r\nI've been searching online, and many people say that it's a problem with\r\nthe ground wire being removed in the new version, or they recommend buying\r\na USB isolator. Could you tell me if this would work?\r\n\r\n\r\nThank you very much. Best regards.\r\n\r\n\r\n\r\nEl mié, 17 sept 2025 a las 3:56, service@simsonn.com (",
+      "user_id": 158004551226,
+      "created_at": "2025-09-17T07:43:13Z",
+      "updated_at": "2025-09-17T07:43:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008845998,
+      "body_text": "Hi Marcos Bachiller,     The ProX Ultra adopts differential signal acquisition for enhanced stability, so there is no need to connect the green ground wire. The green wire is designed to link any screw on the controller to a metal screw on the pedal to further stabilize the signal. You may use the VKB JoyTester tool to review the pedal and base curves to check for any interference issues. In addition, please try Simsonn Manager 2.1.1. On the software interface, click Revert, then Save, and test again. It is also worth noting that the ProX Ultra has passed CE electromagnetic interference certification. Typically, an isolator is used to block interference paths from the base to the PC USB port and rig, and you may consider trying one as well. These are our recommended anti-interference measures for your reference.   https://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=drive_link     https://cdn.shopify.com/s/files/1/0551/4739/7238/files/VKB_JoyTester_40fdd530-6057-437e-9b50-3ac2d59dbbcd.zip?v=1693176246     To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability:     1.    Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding.     2.    Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive.     3.    Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup.     4.    Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible.     5.    Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs.     6.    Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference.     7.    Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements.     8.    Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources.     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-09-17T07:52:02Z",
+      "updated_at": "2025-09-17T07:52:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": 9257,
+  "subject": "changing account name",
+  "description_text": "hi simsonn support i would like to change my username from Diesel792 to\r\nDiesel7926 my account email address is thehutchfamily4@gmail.com\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-26T19:55:53Z",
+  "updated_at": "2026-01-17T03:38:54Z",
+  "requester_id": 158008776934,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015123443,
+      "body_text": "Hi Ryan and Ashley Hutchinson,    Sorry, we couldn't find your account.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-27T02:44:42Z",
+      "updated_at": "2025-12-27T02:44:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015124209,
+      "body_text": "hi simsonn service that is the email i use for the account i just logged in\r\nwith it so i dont know why you guys cant find it the username is diesel 792\r\n\r\n\r\nOn Fri, Dec 26, 2025 at 9:44 PM service@simsonn.com ",
+      "user_id": 158008776934,
+      "created_at": "2025-12-27T03:54:27Z",
+      "updated_at": "2025-12-27T03:54:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017311478,
+      "body_text": "Hi Ryan and Ashley Hutchinson,  I sincerely apologize for the delayed response.Due to the New Year holiday and the subsequent surge in orders, a significant backlog of unprocessed emails has resulted in delayed responses. We extend our deepest apologies once again.  Has your issue been resolved?",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T03:38:53Z",
+      "updated_at": "2026-01-17T03:38:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "id": 7789,
+  "subject": "ORDER #SSN3264",
+  "description_text": "Hi there,\r\n\r\nI ordered the Simsonn Plus X Racing Simulation Pedal with Haptic Reactor Optional × 1\r\nPlus X P3-H3 / Black / without Baseplate\r\n\r\nI would like to return the product. It is still in the original shipping box and has not been opened or un-packed\r\n\r\nIt was received November 11, 2025\r\n\r\nKind regards,\r\n\r\nRobert Tenwesteneind\r\nORDER #SSN326\r\n\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-09T13:55:34Z",
+  "updated_at": "2025-12-24T02:38:40Z",
+  "requester_id": 158007717703,
+  "responder_id": 158001343601,
+  "cc_emails": [
+    "carla@10west.ca"
+  ],
+  "conversations": [
+    {
+      "id": 158014970196,
+      "body_text": "Hi Rob TenWesteneind,    I apologize for not getting back to you sooner. Is there a problem with your product?",
+      "user_id": 158001343601,
+      "created_at": "2025-12-23T11:14:50Z",
+      "updated_at": "2025-12-23T11:14:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014983656,
+      "body_text": "No there is not any problem with the product. It is still in the original\r\npackage un opened still.\r\n\r\n\r\n\r\nWe just want to return it for a refund\r\n\r\n\r\n\r\n*",
+      "user_id": 158007717703,
+      "created_at": "2025-12-23T15:28:07Z",
+      "updated_at": "2025-12-23T15:28:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015015949,
+      "body_text": "Hi Rob TenWesteneind,    Alright, you may return the package to our U.S. warehouse. We will process your refund after receiving and inspecting the item. Please ensure the packaging is intact and the product shows no signs of use, otherwise the return request will not be approved.       MZ CAChino13402 YORBA AVENUE,  Unit 102,  Chino, CA  91710  USA  +1 480-387-3114",
+      "user_id": 158001343601,
+      "created_at": "2025-12-24T02:37:25Z",
+      "updated_at": "2025-12-24T02:37:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015015983,
+      "body_text": "Hi Rob TenWesteneind,    Alright, you may return the package to our U.S. warehouse. We will process your refund after receiving and inspecting the item. Please ensure the packaging is intact and the product shows no signs of use, otherwise the return request will not be approved.       MaZon CA Chino 13402 YORBA AVENUE,  Unit 102,  Chino, CA  91710  USA  +1 480-387-3114",
+      "user_id": 158001343601,
+      "created_at": "2025-12-24T02:38:40Z",
+      "updated_at": "2025-12-24T02:38:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

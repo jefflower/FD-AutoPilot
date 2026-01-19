@@ -1,0 +1,25 @@
+{
+  "id": 11084,
+  "subject": "Simsonn Plus X pedal not working after a month",
+  "description_text": "Dear Simsonn Support,\n\nI would like to ask for your help with my Simsonn Plus X.\nI made my order at the end of November and received it in the first week of January.\nToday I tried to calibrate my pedal a little bit more as I was using the default settings. I tried to lower the kg force on the brake pedal from the default 60kg to 55kg. Also, I pressed the Calibrate button and recalibrated all 3 of the pedals. After that, none of my games recognized the pedals or saw any input from them, only the software did. I tried to unplug the pedals from the USB hub and plug them back in, but it didn't work. I tried to plug it into the motherboard via an open USB port at the back, but it didn't work; at this point, the software could not detect the pedals anymore. I tried to unplug the control box and plug it back in, and I also tried to restart my computer (twice already), but no luck at all. Is there a firmware update or something I need to do? How do I update the pedal firmware? Is the pedal broken or does the control box perhaps have some issues? Earlier, I noticed the VAM Pro motors were not working, but after I moved the cable for the power supply a little bit, it worked just fine. Do you have any advice on what I should try?\n\nI will be looking forward to your answer!\n\nBest regards,\nPéter Gál",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-16T13:43:48Z",
+  "updated_at": "2026-01-17T03:51:52Z",
+  "requester_id": 158008087407,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017311687,
+      "body_text": "Hi Péter Gál,\n\nPlease follow the steps below to restore the firmware and recalibrate the pedals:\n\n1.  Uninstall the current SIMSONN Manager from your PC.\n2.  Download and install the latest SIMSONN Manager v2.1.3 from our official website.\n3.  Press and hold the upgrade button on the PlusX control box, then unplug and replug the USB cable (keep holding the button).\n4.  Once SIMSONN Manager shows that it has entered SIMSONN Flasher mode, go to: Settings → Update → Manual Firmware Update → pedals → firmware → pedals-plusx.sfu, and complete the firmware update.\n5.  After the update, recalibrate the pedals.\n6.  Please connect the pedals directly to a rear USB 3.0 (blue) port on your PC and do not use a USB hub, to ensure stable power and data connection.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-17T03:51:52Z",
+      "updated_at": "2026-01-17T03:51:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

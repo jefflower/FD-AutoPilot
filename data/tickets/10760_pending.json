@@ -1,0 +1,114 @@
+{
+  "id": 10760,
+  "subject": "Refund immediately",
+  "description_text": "Hi it’s been way too long without a reply and I’ve reached out on every platform I can. Can you please just either ship my order immediately or issue me a refund otherwise I will have to go through my bank. ",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-13T07:41:26Z",
+  "updated_at": "2026-01-17T07:03:23Z",
+  "requester_id": 158008880944,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016157252,
+      "body_text": "Any update please?",
+      "user_id": 158008880944,
+      "created_at": "2026-01-07T15:28:25Z",
+      "updated_at": "2026-01-07T15:28:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158016947716,
+      "body_text": "ID 号为 9844 和 10298 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-13T08:11:03Z",
+      "updated_at": "2026-01-13T08:11:03Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016947718,
+      "body_text": "合并来自工单9844  \n      主题: SSN5191  \n      描述:  Hi just wondering when my order #SSN5191 will be shipped? \n   \n Thanks  \n Jordan     Sent from Gmail Mobile",
+      "user_id": 158000445778,
+      "created_at": "2026-01-13T08:11:03Z",
+      "updated_at": "2026-01-13T08:11:03Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016947721,
+      "body_text": "合并来自工单10298  \n      主题: SSN5191  \n      描述:  Hi, \n   \n Can I please get an update on my order and when it will ship please.  \n   \n Thanks  \n Jordan    Sent from Gmail Mobile",
+      "user_id": 158000445778,
+      "created_at": "2026-01-13T08:11:04Z",
+      "updated_at": "2026-01-13T08:11:04Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016951156,
+      "body_text": "Hi Jordan Reilly,    We apologize for the delay. Two shipments destined for our German warehouse have been affected by heavy snowfall in Europe, causing road blockages and delivery delays. We will expedite delivery or explore alternative logistics channels to ship your order from China as soon as possible.  Compensation will be provided based on the delay after your order is completed. We apologize for the inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-13T08:40:06Z",
+      "updated_at": "2026-01-13T08:40:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016952328,
+      "body_text": "Hi thank you for the reply. That is good to know what is going on. Thank you for the update and please advise when the order is shipped.      Thanks  Jordan ",
+      "user_id": 158008880944,
+      "created_at": "2026-01-13T08:49:36Z",
+      "updated_at": "2026-01-13T08:49:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158017306989,
+      "body_text": "Hi any more updates or a rough idea when it might ship please?",
+      "user_id": 158008880944,
+      "created_at": "2026-01-17T00:21:51Z",
+      "updated_at": "2026-01-17T00:21:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158017310429,
+      "body_text": "Hi Jordan Reilly,    We will try our best to ship your order after the goods arrive at our German warehouse on the 21st. However, if further delays occur, we will ship your order from China via UPS Express. Should any taxes or fees arise, I will reimburse you. We will do our utmost to ensure delivery by the end of the month.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T02:30:52Z",
+      "updated_at": "2026-01-17T02:30:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017315367,
+      "body_text": "Hi that all sounds good thanks for the update much appreciated ",
+      "user_id": 158008880944,
+      "created_at": "2026-01-17T06:07:42Z",
+      "updated_at": "2026-01-17T06:07:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158017315954,
+      "body_text": "Hi Jordan Reilly,  Thank you for your patience and support. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-17T06:29:41Z",
+      "updated_at": "2026-01-17T06:29:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

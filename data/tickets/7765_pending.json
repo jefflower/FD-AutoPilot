@@ -1,0 +1,54 @@
+{
+  "id": 7765,
+  "subject": "delivery of Order #SSN4388",
+  "description_text": "Hello,\r\n4th of December i have created Order #SSN4388 and till this day i have not\r\nreceived any information about shipping. I have paid extra for early\r\nshipping and it was not yet shipped.\r\n\r\nCan i kindly ask you when i can expect my order delivery?\r\n\r\n\r\n\r\n\r\nBR\r\n\r\nMiroslav Havelka\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-09T08:29:49Z",
+  "updated_at": "2025-12-16T11:21:23Z",
+  "requester_id": 158007715698,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014175355,
+      "body_text": "Hi Miroslav Havelka,    We sincerely apologize that the pedals are currently sold out at our German warehouse. We will ship them to you via DHL after restocking this week and refund your additional shipping fees.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-09T09:18:12Z",
+      "updated_at": "2025-12-09T09:18:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014175585,
+      "body_text": "Hello, thank you for the information, so pedals should arrive next week as\r\nyou will restock them this week?\r\n\r\n\r\n\r\nMiroslav\r\n---------- Původní e-mail ----------\r\nOd: service@simsonn.com ",
+      "user_id": 158007715698,
+      "created_at": "2025-12-09T09:28:12Z",
+      "updated_at": "2025-12-09T09:28:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014175733,
+      "body_text": "Yes, thank you for your understanding.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-09T09:33:37Z",
+      "updated_at": "2025-12-09T09:33:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014510803,
+      "body_text": "Hello, can i expect the delivery to be done this week ? The order is still\r\nin \"confirmed\" state.\r\n\r\n\r\n\r\nThank you\r\n---------- Původní e-mail ----------\r\nOd: service@simsonn.com ",
+      "user_id": 158007715698,
+      "created_at": "2025-12-15T13:20:58Z",
+      "updated_at": "2025-12-15T13:20:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 10995,
+  "subject": "Order Shipment",
+  "description_text": "Hello,\r\n\r\nI placed my order on the 12th of January and it still hasn’t got shipped, how much time will it take?\r\n\r\nOrder number: #SSN6061\r\n\r\nThanks,\r\nIvan\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-15T14:35:58Z",
+  "updated_at": "2026-01-16T02:22:34Z",
+  "requester_id": 158009040023,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017236057,
+      "body_text": "Hi Ivan Terziev,  We apologize for the delay. Two shipments destined for our German warehouse have been affected by heavy snowfall in Europe, causing road blockages and delivery delays. We will expedite delivery or explore alternative logistics channels to ship your order from China as soon as possible. Compensation will be provided based on the delay after your order is completed. We apologize for the inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T02:22:34Z",
+      "updated_at": "2026-01-16T02:22:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

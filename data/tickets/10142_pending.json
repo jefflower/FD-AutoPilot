@@ -1,0 +1,34 @@
+{
+  "id": 10142,
+  "subject": "Simsonn HS Pro H/SQ Dual-Mode Shifter – Partial Gear Detection (#SSN4240)",
+  "description_text": "Hello Simsonn Support,\r\n\r\nI am contacting you regarding my *HS Pro H-pattern shifter*, which is not\r\nworking correctly.\r\n\r\n*Exact problem:*\r\nOnly the following inputs are detected:\r\n\r\n   -\r\n\r\n   Gear 3\r\n   -\r\n\r\n   Gear 4\r\n   -\r\n\r\n   S1 button\r\n   -\r\n\r\n   S2 button\r\n\r\nAll other gears (1, 2, 5, 6, 7, and Reverse) do *not* register.\r\n\r\n*Troubleshooting already completed:*\r\n\r\n   -\r\n\r\n   Tested on multiple USB ports (direct to motherboard, no hub)\r\n   -\r\n\r\n   Tested after full PC reboot\r\n   -\r\n\r\n   Tested in multiple games\r\n   -\r\n\r\n   Tested in JoyToKey (raw USB HID input)\r\n   -\r\n\r\n   Windows Device Manager shows the device working correctly\r\n   -\r\n\r\n   JoyToKey only detects Gear 3, Gear 4, S1, and S2\r\n   -\r\n\r\n   Opened the shifter and confirmed:\r\n   -\r\n\r\n      The internal magnetic sensor board and magnet mechanism are correctly\r\n      installed\r\n      -\r\n\r\n      All internal cables are fully connected\r\n      -\r\n\r\n      This is a full H-pattern shifter, not a sequential model\r\n\r\n*Conclusion:*\r\nBecause only some gears appear at the USB HID level, this indicates a\r\n*controller\r\nPCB or firmware input scanning fault*, not a software or configuration\r\nissue.\r\n\r\n*Request:*\r\nPlease advise the *fastest way* to resolve this issue.\r\n\r\nThank you for your assistance.\r\n\r\nKind regards,\r\nBen Barrett\r\n#SSN4240\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-06T22:19:29Z",
+  "updated_at": "2026-01-07T05:15:54Z",
+  "requester_id": 158007868335,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016004255,
+      "body_text": "Hi ben barrett,    We will release a new software version today, which will officially add support for the HS Pro calibration page.  Please update the software and try it out.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-06T22:28:01Z",
+      "updated_at": "2026-01-06T22:28:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016005075,
+      "body_text": "Hello,  Thank you for the update. I will install the new software version once it is released and test it.  Please note that currently the missing gears do not appear at the USB HID level (JoyToKey only detects Gear 3, Gear 4, S1, and S2). I will confirm whether the new software changes this behaviour.  I will update the ticket with results after testing.  Kind regards, Ben",
+      "user_id": 158007868335,
+      "created_at": "2026-01-06T22:32:43Z",
+      "updated_at": "2026-01-06T22:32:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    }
+  ]
+}

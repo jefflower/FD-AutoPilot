@@ -1,0 +1,44 @@
+{
+  "id": 3620,
+  "subject": "Haptic Reactors mount",
+  "description_text": "Hello,\r\n\r\nI have a question regarding the orientation of the haptic reactors of the\r\nbrake and throttle.\r\n\r\nI've seen other systems that have the reactor as you have the clutch. Is\r\nthere a reason for your option on having on in a different orientation for\r\nthe brake and throttle?  Can it be mount as the clutch? If so, does your\r\nsystem already have this option (the mounting piece allows both\r\norientations)?\r\n\r\nThanks.\r\n\r\nBest regards,\r\nJoão Oliveira\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-08T13:14:29Z",
+  "updated_at": "2025-09-12T04:39:23Z",
+  "requester_id": 158003435494,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008346438,
+      "body_text": "Hi Joao Oliveira,    During the design phase, we initially intended for the throttle, brake, and clutch to share the same mounting orientation. However, due to structural interference at the clutch position, the clutch had to be mounted on the side. If all three haptic motors were mounted in the same orientation as the clutch, it could lead to accidental missteps when switching between pedals or result in excessive horizontal spacing. This may also affect the stability of some pedal mounts or cause insufficient mounting width.  If you believe that most users would prefer the clutch-style mounting orientation, please let us know. We will conduct tests and evaluations based on user feedback.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-09T23:49:07Z",
+      "updated_at": "2025-09-09T23:49:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008358697,
+      "body_text": "Good morning,\r\n\r\nThanks for replying. From what I read, the way that Haptic shake, it's more\r\nefficient if you mount them perpendicular to the pedal.\r\n\r\nFrom what you describe, it seems more like a limitation on terms of space\r\nrather an option for user experience.\r\n\r\nIn this post on Reddit, there are already people mounting the haptic\r\nreactors this way and giving a good feedback:\r\nhttps://www.reddit.com/r/simracing/comments/1lvaf22/ive_made_mounts_for_simsonns_new_vam_pro_haptic/\r\n\r\nBest of all was giving option to the user to be able the mount the haptics\r\nin both ways with a second mounting piece or an universal one.\r\n\r\nWould be great if you consider this solution and offer the clients both\r\noptions.\r\n\r\nHope that I contributed to improve your pedals.\r\n\r\nBest regards,\r\nJoão Oliveira\r\n\r\nA quarta, 10/09/2025, 00:49, support@simsonn.com ",
+      "user_id": 158003435494,
+      "created_at": "2025-09-10T08:44:41Z",
+      "updated_at": "2025-09-10T08:44:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008561924,
+      "body_text": "Hi Joao Oliveira,  Alright, we will have our engineers download this model and test for any interference issues. If we find a better solution, we will make improvements to this bracket. Thank you very much for your valuable feedback! ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-12T04:39:22Z",
+      "updated_at": "2025-09-12T04:39:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "id": 10223,
+  "subject": "Commande ssn9754",
+  "description_text": "Bonjour,\r\nDans le suivi de commande UPS je voie qu'il me demande de PAYER des frais\r\nsupplémentaires d' envoi.\r\nJe ne payerai pas de frais supplémentaires donc je pense que le colis va\r\nrevenir chez vous.\r\nFaudrait peut-être prévenir vos clients avant commande qui a des frais\r\nsupplémentaires.\r\nSont appliqués.\r\nJ espère être remboursé de ma commande.\r\n\r\nLuyckx Mike\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-07T14:12:28Z",
+  "updated_at": "2026-01-08T09:16:30Z",
+  "requester_id": 158008967005,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016161679,
+      "body_text": "Hi Futil Ombre,  Is the fee charged by UPS customs duty, or is it another type of clearance-related fee? ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T15:55:07Z",
+      "updated_at": "2026-01-07T15:55:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016162013,
+      "body_text": "Hi Futil Ombre,  The control box and the VAM Pro motor have very limited profit margins and are mainly provided as supporting components to enhance the pedal experience. If they are returned, due to shipping and customs costs, UPS usually destroys the package directly. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T15:56:29Z",
+      "updated_at": "2026-01-07T15:56:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016166907,
+      "body_text": "Re-bonjour,\r\n\r\nIl me demande des frais importation.\r\n\r\nLe mer. 7 janv. 2026 à 16:55, service@simsonn.com ",
+      "user_id": 158008967005,
+      "created_at": "2026-01-07T16:28:49Z",
+      "updated_at": "2026-01-07T16:28:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016311200,
+      "body_text": "Hi Futil Ombre,    Please don't worry. After completing payment, provide the UPS invoice and we will reimburse you.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-08T09:16:13Z",
+      "updated_at": "2026-01-08T09:16:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

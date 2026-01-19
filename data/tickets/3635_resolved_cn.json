@@ -1,0 +1,185 @@
+{
+  "id": 3635,
+  "subject": "Simsonn踏板在Lemans Ultimate和ACC中的问题",
+  "description_text": "我新买的一套Simsonn Pro X踏板出了问题。在LeMans Ultimate（以及ACC）中尝试绑定油门和刹车时，刹车踏板试图与方向盘绑定到同一个轴上。\n\n我该如何纠正这个问题？在初次安装时已将踏板升级到最新固件。",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-09-09T02:47:11Z",
+  "updated_at": "2025-09-19T02:17:28Z",
+  "requester_id": 158004293805,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008346780,
+      "body_text": "请使用SIMSONN Manager 2.1.1的下载链接。我们很快会发布一个更新版本。在2.1.1版本中，请按照以下步骤操作：点击Revert，然后点击Save，最后，重新连接USB线。这个过程将禁用先前为刹车踏板保留但现已移除的Rx轴。如果Rx轴未被禁用，它可能仍会被软件识别，导致干扰并妨碍踏板正常绑定。完成这些步骤后，一切应该会恢复正常并允许正确绑定。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-10T00:10:15Z",
+      "updated_at": "2025-09-10T00:10:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008347974,
+      "body_text": "感谢您的快速回复 - 但我仍然遇到问题。首先 - 我不太明白回复中关于reverting的说明。我下载并安装了Simsonn Manager 2.1.1，我点击了revert然后save。但是 - 我不明白“最后，重新连接USB Cable”这一步。USB线从未断开过。如果在点击revert按钮之前断开USB - revert按钮就无法点击。我此时断开了USB线，这使得踏板控制器与Simsonn Manager断开连接，然后重新连接USB，踏板控制器又重新连接到Simsonn Manager。之后我打开游戏尝试重新绑定。方向盘的左/右转向仍然绑定到Y轴。此时 - 油门显示为X+，而刹车显示为Y轴（这仍然与方向盘冲突）。我也尝试删除了Steam中的LeMans Ultimate direct input.json配置文件，以便重新生成。不确定我是否已清楚说明我的情况 - 如果您需要任何澄清，请告诉我。",
+      "user_id": 158004293805,
+      "created_at": "2025-09-10T01:27:57Z",
+      "updated_at": "2025-09-10T01:27:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158008349080,
+      "body_text": "请安装Todesk软件。无需注册，如果提示您注册，只需关闭窗口即可。我现在可以远程协助您解决问题。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-10T02:34:45Z",
+      "updated_at": "2025-09-10T02:34:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008486948,
+      "body_text": "你好 - 我已经重新安装了所有东西，踏板目前似乎工作正常。但我有一个问题。我有一张在LeMans Ultimate中绑定控制的截图。刹车现在映射到Y+轴，油门映射到X+。方向盘右转也映射到X+，但这没有引起任何问题。不确定我是否还有问题，因为我认为油门和方向盘映射到同一个轴上是不合理的。\n如果您还想远程连接，我明晚可以。我在美国东海岸。我们比UTC晚5.00小时，所以在我写这封邮件的时候是9月10日星期三晚上9点26分。",
+      "user_id": 158004293805,
+      "created_at": "2025-09-11T01:27:57Z",
+      "updated_at": "2025-09-11T01:27:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008561905,
+      "body_text": "我注意到您现在是深夜。请告诉我一个方便的时间，我会根据您的时间安排进行远程支持。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-12T04:35:49Z",
+      "updated_at": "2025-09-12T04:35:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008633694,
+      "body_text": "你好 - 是的 - 我在美国 - 东海岸时区。我们下周二（9月16日）晚上7:30到10:30之间的任何时间可以吗？",
+      "user_id": 158004293805,
+      "created_at": "2025-09-13T12:19:52Z",
+      "updated_at": "2025-09-13T12:19:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008792519,
+      "body_text": "当然，没问题。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-16T01:13:04Z",
+      "updated_at": "2025-09-16T01:13:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008833657,
+      "body_text": "你好 - 我今晚有事，无法与您通话。如果没问题的话 - 我们可以改到周四晚上 - 同样的时间段吗？",
+      "user_id": 158004293805,
+      "created_at": "2025-09-16T21:55:38Z",
+      "updated_at": "2025-09-16T21:55:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008837875,
+      "body_text": "好的，我们将按您的要求进行。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-17T01:58:46Z",
+      "updated_at": "2025-09-17T01:58:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008930986,
+      "body_text": "已安装Todesk软件，正停留在此界面。\n让我知道您何时想继续。我会留意我的邮件。",
+      "user_id": 158004293805,
+      "created_at": "2025-09-18T22:18:33Z",
+      "updated_at": "2025-09-18T22:18:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008933360,
+      "body_text": "你还在吗？我这里是上午9点57分。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-19T01:58:17Z",
+      "updated_at": "2025-09-19T01:58:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008933383,
+      "body_text": "是的，我在这里。",
+      "user_id": 158004293805,
+      "created_at": "2025-09-19T02:01:04Z",
+      "updated_at": "2025-09-19T02:01:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008933385,
+      "body_text": "请先尝试恢复出厂设置。然后打开Simsonn Manager 2.1.1。如果设备连接成功，请进入：Settings → Update → Manual Firmware Update → pedals-firmware → pedals-prox.sfu。固件更新完成后，请再次测试设备。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-19T02:01:24Z",
+      "updated_at": "2025-09-19T02:01:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008933498,
+      "body_text": "输入似乎工作正常。",
+      "user_id": 158004293805,
+      "created_at": "2025-09-19T02:11:46Z",
+      "updated_at": "2025-09-19T02:11:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008933508,
+      "body_text": "是的，我看到现在工作正常了 — 只是升级一下的问题。请不要按照我上一封邮件中提到的升级步骤操作，因为您的踏板实际上是PlusX，而不是ProX。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-19T02:12:47Z",
+      "updated_at": "2025-09-19T02:12:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008933518,
+      "body_text": "非常好。非常感谢您的帮助....",
+      "user_id": 158004293805,
+      "created_at": "2025-09-19T02:14:20Z",
+      "updated_at": "2025-09-19T02:14:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008933534,
+      "body_text": "客服人员非常迅速地解决了问题。非常感谢。",
+      "user_id": 158004293805,
+      "created_at": "2025-09-19T02:17:27Z",
+      "updated_at": "2025-09-19T02:17:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

@@ -1,0 +1,36 @@
+{
+  "id": 5702,
+  "subject": "\"Request for Pending Commission Payment \"",
+  "description_text": "Dear Team,\r\n\r\nI hope this message finds you well.\r\n\r\nI am an affiliate partner currently promoting your brand. I’m writing to\r\nfollow up regarding an outstanding commission payment that has not yet been\r\nreceived.\r\n\r\nHere are my details for your reference:\r\n\r\nEmail: wytchbrittany@gmail.com\r\n\r\nPayPal Account: chunhan1980@gmail.com\r\n\r\nI would appreciate it if you could kindly review the status of this payment\r\nand let me know if any further information or clarification is needed from\r\nmy side.\r\n\r\nI look forward to your prompt response and a swift resolution.\r\n\r\nThank you for your time and cooperation.\r\n\r\nWarm regards,\r\nwytchbrittany@gmail.com\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-06T02:49:06Z",
+  "updated_at": "2025-11-06T06:48:36Z",
+  "requester_id": 158000954899,
+  "responder_id": null,
+  "cc_emails": [
+    "contact@coziya-outdoor.com"
+  ],
+  "conversations": [
+    {
+      "id": 158011847539,
+      "body_text": "Hi Vita Shepp,    We regret to inform you that you have not met the commission payment threshold of $60.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-06T03:32:23Z",
+      "updated_at": "2025-11-06T03:32:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011849631,
+      "body_text": "Thank you for informing me.\r\n\r\nVào Th 5, 6 thg 11, 2025 vào lúc 13:32 service@simsonn.com <\r\nservice@simsonn.com> đã viết:\r\n\r\n> Hi Vita Shepp,\r\n>\r\n> We regret to inform you that you have not met the commission payment\r\n> threshold of $60.\r\n>\r\n> ",
+      "user_id": 158000954899,
+      "created_at": "2025-11-06T05:17:29Z",
+      "updated_at": "2025-11-06T05:17:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+{
+  "id": 1527,
+  "subject": "Simsonn Plus X Pedals Issue",
+  "description_text": "Hi,\r\n\r\nI Have an issue with my Simsonn Plus X Pedals. I recently just received the\r\nVAM & VAM Pro Haptic Reactors, I have plugged them in and started setting\r\nthem up on the Simsonn Manager software, After having pressed the vibration\r\non the VAM reactor plugged into Motor 1, the VAM vibrated for a split\r\nsecond before stopping & the USB being recognised as disconnected from the\r\nPC\r\n\r\nEverytime I plug in the pedals now, I have an error stating \"Windows has\r\nstopped this device because it has reported problems. (Code 43)\r\n\r\nA request for the USB device descriptor failed.\" and the pedals do not work\r\nor get recognised.\r\n\r\nAfter the USB disconnected the control box that was included with the Plus\r\nX pedals became quite hot to touch.\r\nI have tried uninstalling the device driver, using  different USB port on\r\nmy PC & restarting my PC but the pedals still no longer work.\r\n\r\nCan you please help,\r\n\r\nThanks,\r\nRonan\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-07-14T19:14:07Z",
+  "updated_at": "2025-07-22T09:55:02Z",
+  "requester_id": 158002122150,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004837460,
+      "body_text": "Hi，Ronan Keane，  After disconnecting the VAM motor, does the control box still become hot? ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-15T00:15:02Z",
+      "updated_at": "2025-07-15T00:15:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004843408,
+      "body_text": "Yes, even with just the control box plugged in with no pedals power or\r\nmotors, the control box heats up\r\n\r\nRonan\r\n\r\n",
+      "user_id": 158002122150,
+      "created_at": "2025-07-15T06:38:33Z",
+      "updated_at": "2025-07-15T06:38:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004922484,
+      "body_text": "Hi Ronan Keane,    Would you be able to open the control box and help us check if any of the metal pins on the PCB inside may have come into contact with or sprayed onto the metal enclosure? This could potentially cause a short circuit and overheating. Under normal conditions, the control box should remain cool during operation.  Based on your findings, we will decide whether to send a replacement control box, a VAM motor, or both. We truly appreciate your assistance and understanding!",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T03:27:39Z",
+      "updated_at": "2025-07-16T03:27:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004943312,
+      "body_text": "Hi,\r\n\r\nPlease see pictures of the PCB unit. Even when I plug the control box in\r\nwith no pedals or motors connected, the control box still gets hit\r\n\r\nThanks,\r\nRonan\r\n\r\n\nAttachment(s) that exceed the 20 MB limit have been dropped. Please reach out to the sender.",
+      "user_id": 158002122150,
+      "created_at": "2025-07-16T07:29:25Z",
+      "updated_at": "2025-07-16T07:29:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004943337,
+      "body_text": "Hi Ronan Keane,  Please check the gap between the back of the PCB and the aluminum base plate to see if any pins on the board are touching the bottom. If there is contact, it could potentially cause a short circuit or overheating issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T07:34:51Z",
+      "updated_at": "2025-07-16T07:34:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004943369,
+      "body_text": "None of the pins appear to be touching the plate\r\n\r\n",
+      "user_id": 158002122150,
+      "created_at": "2025-07-16T07:42:09Z",
+      "updated_at": "2025-07-16T07:42:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004943381,
+      "body_text": "Hi Ronan Keane,  How many VAM and VAM Pro motors do you have respectively? ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T07:45:22Z",
+      "updated_at": "2025-07-16T07:45:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004943396,
+      "body_text": "One Vam Pro on my brake and One Vam on my throttle\r\n\r\n",
+      "user_id": 158002122150,
+      "created_at": "2025-07-16T07:49:09Z",
+      "updated_at": "2025-07-16T07:49:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004943408,
+      "body_text": "Hi Ronan Keane, You purchased two VAM Pro motors, correct? Just to confirm, there were no standard VAM motors included in your order, right? ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T07:52:26Z",
+      "updated_at": "2025-07-16T07:52:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004943423,
+      "body_text": "Screenshot attached if the order\r\n\r\n\r\n\r\n",
+      "user_id": 158002122150,
+      "created_at": "2025-07-16T07:55:03Z",
+      "updated_at": "2025-07-16T07:55:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004943473,
+      "body_text": "Hi Ronan Keane,  Alright, we will send you a replacement PlusX control box and one VAM motor. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T08:03:57Z",
+      "updated_at": "2025-07-16T08:03:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004943514,
+      "body_text": "Thank you,\r\nMuch appreciated\r\n\r\n",
+      "user_id": 158002122150,
+      "created_at": "2025-07-16T08:07:42Z",
+      "updated_at": "2025-07-16T08:07:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005275318,
+      "body_text": "Hi All,\r\n\r\nJust wondeing if you've had a chance to dispatch the above?\r\n\r\nThanks for your help,\r\nRonan\r\n\r\nOn Wed, 16 Jul 2025 at 09:04, service@simsonn.com ",
+      "user_id": 158002122150,
+      "created_at": "2025-07-21T13:40:45Z",
+      "updated_at": "2025-07-21T13:40:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005306757,
+      "body_text": "Hi Ronan Keane, Here is your tracking link. https://t.17track.net/en#nums=YT2519900704748053",
+      "user_id": 158001343601,
+      "created_at": "2025-07-22T09:55:01Z",
+      "updated_at": "2025-07-22T09:55:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

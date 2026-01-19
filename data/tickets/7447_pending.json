@@ -1,0 +1,24 @@
+{
+  "id": 7447,
+  "subject": "Simosonn Pedals F1 2025",
+  "description_text": "Good morning. I recently purchased Simsonn pedals, and until now I’ve been playing without any issues. Now I’ve bought F1 2025, and it doesn’t recognize the pedals. Could you tell me if they are compatible with this game and how to make them work? Thank you very much.\r\n\r\n\r\nEnviado desde mi iPhone\r\n\r\n«Aviso de confidencialidad»\r\nLa presente comunicación y los documentos que, en su caso, lleve anexos, son para uso exclusivo del/de los destinatario/s designado/s y contienen información privilegiada y confidencial. Si Vd. no fuera el destinatario se le informa que la divulgación, distribución, reproducción o cualquier otro uso de su contenido sin la autorización del remitente está prohibida por ley, por lo que sí ha recibido esta comunicación por error, hágaselo saber al remitente a esta misma dirección de correo electrónico, absténgase de leerlo, copiarlo, remitirlo, tratarlo o entregarlo a un tercero, y proceda a su inmediata destrucción. Las comunicaciones por medio de Internet no permiten asegurar ni garantizar su integridad y seguridad, o su correcta recepción, por lo que el emisor no asume responsabilidad alguna por tales circunstancias.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-04T21:55:09Z",
+  "updated_at": "2025-12-06T05:10:39Z",
+  "requester_id": 158007652057,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013760942,
+      "body_text": "Hi Borja Garcia Muñiz,  Hello, here is the setup guide for using the SIMSONN Plus X pedals in F1 25: First time entering the game You may see a message: NO PRESET CONTROL SCHEME FOR DEVICE(S) SIMSONN Plus X Please customise your controls in the Settings Menu... Click Okay to continue. Bind controls and save a new scheme Go to Settings → Controls to bind pedals and buttons. When exiting, select Save as new Control Scheme, give it a name (e.g., SIMSONN), and click Save. Manage and switch control schemes Main Menu → Settings → Controls → Control Scheme List Your SIMSONN scheme will appear; you can select it directly for future use. ? Note: If you delete the scheme without backup, you will need to repeat the binding and saving process. After completing these steps, your pedals will work properly in the game, providing a realistic driving experience.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-06T05:10:39Z",
+      "updated_at": "2025-12-06T05:10:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

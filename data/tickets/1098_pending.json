@@ -1,0 +1,44 @@
+{
+  "id": 1098,
+  "subject": "Defect",
+  "description_text": "\r\n﻿ Приветствую, во вложении два видео\r\nОтправлено с iPhone\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-02T07:14:00Z",
+  "updated_at": "2025-07-02T08:06:05Z",
+  "requester_id": 158001873089,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004364840,
+      "body_text": "Hi Selivanov Alex,     I’ve reviewed the two videos you provided. For the throttle pedal’s side-to-side movement, please try tightening the M6 screws on both sides at the base of the pedal to see if that resolves the issue.  As for the brake pedal, are you experiencing a decrease in damping resistance? When did you purchase the pedals? The damping components are consumables and may degrade over time, which is normal. If needed, we offer upgraded damping kits on our official website — feel free to check them out.         https://www.simsonn.com/products/plus-ultra-upgrade-kit",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T07:50:48Z",
+      "updated_at": "2025-07-02T07:50:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004365328,
+      "body_text": "Приветствую, болты затянуты на максимум. Боковой люфт имеется и на педали тормоза. Ну у меня параллельно есть п1000, там проблем с эластомером нет. Приобретал в августе 2024.\r\nОтправлено с iPhone\r\n\r\n> 2 июля 2025 г., в 10:51, support@simsonn.com написал(а):\r\n> \r\n> Hi Selivanov Alex,\r\n> \r\n> \r\n> I’ve reviewed the two videos you provided. For the throttle pedal’s side-to-side movement, please try tightening the M6 screws on both sides at the base of the pedal to see if that resolves the issue.\r\n> As for the brake pedal, are you experiencing a decrease in damping resistance? When did you purchase the pedals? The damping components are consumables and may degrade over time, which is normal. If needed, we offer upgraded damping kits on our official website — feel free to check them out.\r\n",
+      "user_id": 158001873089,
+      "created_at": "2025-07-02T07:59:17Z",
+      "updated_at": "2025-07-02T07:59:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004365688,
+      "body_text": "Hi Selivanov Alex,    Мы отправим вам дополнительные регулировочные шайбы и новый комплект демпферов.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T08:06:05Z",
+      "updated_at": "2025-07-02T08:06:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

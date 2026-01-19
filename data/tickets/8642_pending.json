@@ -1,0 +1,44 @@
+{
+  "id": 8642,
+  "subject": "Delevery Address,",
+  "description_text": "Good Afternoon hope this email finds you well.\r\n\r\nI have bought the  SIMSONN PC USB 6+R H Simulator Gear Shifter  Order\r\nNumber #SSN5044\r\n\r\nI believe i have put down the wrong address and wish to delever it to the\r\ncorrect address.\r\n\r\nAPT 10 Norsemans Court\r\nLusk,\r\nCo,Dublin\r\nK45 ND74\r\n\r\nKind Regards\r\nMark,\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-19T01:56:05Z",
+  "updated_at": "2025-12-23T05:52:41Z",
+  "requester_id": 158007872029,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014737227,
+      "body_text": "Hi force66,    No need to worry, we've already updated your shipping information. Please confirm:  Mark Palancevics  APT 10, Norsemans Court  Lusk  Dublin  K45 ND74  Ireland  +353 89 404 0076",
+      "user_id": 158001343601,
+      "created_at": "2025-12-19T04:17:27Z",
+      "updated_at": "2025-12-19T04:17:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014771333,
+      "body_text": "Hi service team,\r\n\r\nThanks for the reply and yes its:\r\nMark Palancevics\r\n10 Apartments Norsemans Court\r\nLusk\r\nDublin\r\nK45 ND74\r\nIreland\r\n+353 0892533766\r\n\r\n\r\nOn Fri, 19 Dec 2025 at 04:17, service@simsonn.com ",
+      "user_id": 158007872029,
+      "created_at": "2025-12-19T16:07:09Z",
+      "updated_at": "2025-12-19T16:07:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014879957,
+      "body_text": "Hi force66,    Here is the tracking number: YT2535300704436223. You can track it via https://www.17track.net/en. ",
+      "user_id": 158007774607,
+      "created_at": "2025-12-22T12:36:52Z",
+      "updated_at": "2025-12-22T12:36:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

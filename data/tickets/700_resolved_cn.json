@@ -1,0 +1,175 @@
+{
+  "id": 700,
+  "subject": "油门踏板中多余的小弹簧",
+  "description_text": "你们好！\n\n我注意到油门踏板里面有一个松动的小弹簧。我不确定它应该安装在哪里。请问能告诉我它应该连接到哪里吗？\n\n此致\nChanho",
+  "status": 4,
+  "priority": 4,
+  "created_at": "2025-06-22T06:59:44Z",
+  "updated_at": "2025-07-07T07:55:26Z",
+  "requester_id": 158001709759,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003679898,
+      "body_text": "Chanho 你好，所有的螺丝都拧松了吗？请参考离合器踏板——你需要压缩弹簧才能正确安装。另外请拍一张这个区域的照片，以便我检查是否有任何损坏。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T07:10:40Z",
+      "updated_at": "2025-06-22T07:10:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003679909,
+      "body_text": "你好\n\n我正在用蓝色橡胶限位器调整踏板行程时，注意到油门踏板内部有一个松动的弹簧。\n\n我拆下了侧面的安装支架。我没有拆下任何其他螺丝。如果没必要，我不想拆卸整个踏板。\n\n我只有刹车和油门，所以没有离合器踏板可以比较。\n\n你能告诉我弹簧应该连接到哪里吗？",
+      "user_id": 158001709759,
+      "created_at": "2025-06-22T07:18:03Z",
+      "updated_at": "2025-06-22T07:18:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003679919,
+      "body_text": "踏板前端使用的一个垫圈变形了，我可以看到它划伤了踏板内部。",
+      "user_id": 158001709759,
+      "created_at": "2025-06-22T07:27:01Z",
+      "updated_at": "2025-06-22T07:27:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003679936,
+      "body_text": "Chanho 你好，这是我们的疏忽。你可以用螺丝刀刮掉它。我们也会通知生产团队提前筛选出有缺陷的垫片，加强质量控制。顺便问一下，你安装好弹簧了吗？",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T07:46:48Z",
+      "updated_at": "2025-06-22T07:46:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003679938,
+      "body_text": "垫片是个小问题。\n\n我看不清弹簧应该连接在哪里，你能给我看看吗？",
+      "user_id": 158001709759,
+      "created_at": "2025-06-22T07:50:55Z",
+      "updated_at": "2025-06-22T07:50:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003679940,
+      "body_text": "",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T07:52:22Z",
+      "updated_at": "2025-06-22T07:52:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003679944,
+      "body_text": "Chanho 你好，这个部件坏了吗？",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T07:55:21Z",
+      "updated_at": "2025-06-22T07:55:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003679951,
+      "body_text": "拆下弹簧后我感觉不到任何松动，但是好像有裂缝。",
+      "user_id": 158001709759,
+      "created_at": "2025-06-22T08:07:09Z",
+      "updated_at": "2025-06-22T08:07:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003679956,
+      "body_text": "Chanho 你好，确实裂了。我们可以寄给你一个替换的油门踏板。但是，如果只是需要更换损坏的部分，我们不确定你是否方便自己安装。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T08:19:22Z",
+      "updated_at": "2025-06-22T08:19:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003679960,
+      "body_text": "越快越好。我仍然不清楚弹簧应该如何连接，我可以看到有一个小螺丝，但没有弹簧的安装位置。\n\n我的原始订单是通过 AliExpress 下的，订单号是 8201038097223122",
+      "user_id": 158001709759,
+      "created_at": "2025-06-22T08:27:10Z",
+      "updated_at": "2025-06-22T08:27:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003679973,
+      "body_text": "Chanho 你好，我们将在周一寄给你一个替换的油门踏板，并为你预留一个追踪号。一旦可用，我们会立即通知你。顺便问一下，油门弹簧是在你玩游戏时脱落的吗？是在油门完全踩下或完全松开时损坏的吗？",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T08:37:47Z",
+      "updated_at": "2025-06-22T08:37:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003679982,
+      "body_text": "我还没有用油门玩游戏，我还在等待我的驾驶舱到货。\n\n我插上电源确认踏板与 Simsonn 软件兼容，但没有怎么使用过。\n\n我不知道它坏了，但我听到了一些咔嗒声，并注意到松动的弹簧。",
+      "user_id": 158001709759,
+      "created_at": "2025-06-22T08:40:22Z",
+      "updated_at": "2025-06-22T08:40:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003686491,
+      "body_text": "Chanho 你好，我们已经给你寄送了一个新的加速器和一些用于修复损坏踏板的零件。大约两天后我们会更新追踪号给你，因为国际运输需要转发一次。抛光",
+      "user_id": 158000445778,
+      "created_at": "2025-06-23T10:54:13Z",
+      "updated_at": "2025-06-23T10:54:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004219207,
+      "body_text": "你好\n\n我还没有收到追踪信息，你能更新一下吗？非常感谢",
+      "user_id": 158001709759,
+      "created_at": "2025-06-28T07:05:07Z",
+      "updated_at": "2025-06-28T07:05:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004371198,
+      "body_text": "速卖通的单",
+      "user_id": 158001343601,
+      "created_at": "2025-07-02T10:34:18Z",
+      "updated_at": "2025-07-02T10:34:18Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004454352,
+      "body_text": "Chanho 你好，这是我们寄给你的新油门和替换零件。EMS：EB842018239CN",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T07:55:25Z",
+      "updated_at": "2025-07-07T07:55:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

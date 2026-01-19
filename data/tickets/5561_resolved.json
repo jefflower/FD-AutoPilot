@@ -1,0 +1,44 @@
+{
+  "id": 5561,
+  "subject": "Throttle input not registering",
+  "description_text": "Hello,\r\n\r\nI recently received a set of Pro Plus throttle and brake. The throttle was\r\nworking fine until I attempted to reverse the mounting feet to angle the\r\npeddle further back.\r\n\r\nWhen reassembling, a small silver spring fell out of the bottom of the\r\npeddle and now the throttle will not register an input in the software.\r\n\r\nI am unable to get the peddle back together with the silver spring in place\r\nand need help reassembling the peddle correctly.\r\n\r\nDo you have any videos/tutorials/diagrams on how to properly reassemble the\r\npeddle?\r\n\r\nThank you,\r\nColton\r\n\r\n\r\n\r\n-- \r\n*F. Colton Barnes*\r\n(606) 275-2150\r\n\r\n*Confidentiality Notice*\r\nThis message and/or attachment is intended only for the addressee and may\r\ncontain information that is privileged, confidential and/or proprietary\r\nwork product. If you are not the intended recipient, or an authorized\r\nemployee, agent or representative of the intended recipient, do not read,\r\ncopy, retain or disseminate this message or any attachment. Do not forward\r\nthis message and attachment without the express written consent of the\r\nsender. If you have received this message in error, please contact the\r\nsender immediately and delete all copies of the message and any attachment.\r\nTransmission or misdelivery shall not constitute waiver of any applicable\r\nlegal privilege.\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-11-03T00:47:29Z",
+  "updated_at": "2025-11-03T13:44:41Z",
+  "requester_id": 158006325958,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011634809,
+      "body_text": "Hi Colton Barnes,  You can use a small screwdriver to press the spring into the correct position easily.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-03T01:04:26Z",
+      "updated_at": "2025-11-03T01:04:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011635719,
+      "body_text": "That worked perfectly, all fixed now. Thank you very much!\r\n\r\nFCB\r\n\r\nOn Sun, Nov 2, 2025 at 8:04 PM support@simsonn.com ",
+      "user_id": 158006325958,
+      "created_at": "2025-11-03T01:55:17Z",
+      "updated_at": "2025-11-03T01:55:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011658640,
+      "body_text": "",
+      "user_id": 158006325958,
+      "created_at": "2025-11-03T13:44:40Z",
+      "updated_at": "2025-11-03T13:44:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ]
+}

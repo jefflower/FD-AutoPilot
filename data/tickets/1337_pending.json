@@ -1,0 +1,164 @@
+{
+  "id": 1337,
+  "subject": "Label Created Package Not Shipped!",
+  "description_text": "Package not shipped yet after Simsonn customer service already said it was\r\nshipped!!! I talked to USPS with the provided tracking number and they told\r\nme you guys only created the shipping label and never handed it to them!!!\r\nThis is very frustrating and the lack of customer service makes it worse!!\r\nGet back to me ASAP! And give me someone other than Otto Prutha he sucks as\r\na customer service rep! Ive been waiting over 2 weeks and nothing!!\r\nOrder #SSN1889\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-07-08T13:24:06Z",
+  "updated_at": "2025-07-10T06:30:32Z",
+  "requester_id": 158001873904,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004473375,
+      "body_text": "On Tue, Jul 8, 2025, 8:23 AM Carlos Rios <crios8294@gmail.com> wrote:  \n \n Package not shipped yet after Simsonn customer service already said it was shipped!!! I talked to USPS with the provided tracking number and they told me you guys only created the shipping label and never handed it to them!!! This is very frustrating and the lack of customer service makes it worse!! Get back to me ASAP! And give me someone other than Otto Prutha he sucks as a customer service rep! Ive been waiting over 2 weeks and nothing!!  Order #SSN1889",
+      "user_id": 158001873904,
+      "created_at": "2025-07-08T13:25:55Z",
+      "updated_at": "2025-07-08T13:25:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004473429,
+      "body_text": "And please have a US based number to call so I can actually SPEAK to someone! I cant call the chinese number on your contact page!!",
+      "user_id": 158001873904,
+      "created_at": "2025-07-08T13:31:47Z",
+      "updated_at": "2025-07-08T13:31:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158004473432,
+      "body_text": "Why the fuck is it always Otto Prutha!!!",
+      "user_id": 158001873904,
+      "created_at": "2025-07-08T13:32:09Z",
+      "updated_at": "2025-07-08T13:32:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158004473440,
+      "body_text": "Give me your phone number Otto I want to talk to you directly",
+      "user_id": 158001873904,
+      "created_at": "2025-07-08T13:33:28Z",
+      "updated_at": "2025-07-08T13:33:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158004478680,
+      "body_text": "Amazing customer service",
+      "user_id": 158001873904,
+      "created_at": "2025-07-08T14:59:44Z",
+      "updated_at": "2025-07-08T14:59:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158004478855,
+      "body_text": "Hi Carlos Rios,     our factory is currently relocating to a new office, which has caused a backlog of after-sales emails that we haven’t been able to address in time. It’s now 11:17 PM, but we will handle and respond to your issue tomorrow. We’ll also check whether the tracking number was entered incorrectly. Please don’t worry — we’ll get back to you as soon as possible. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-08T15:19:40Z",
+      "updated_at": "2025-07-08T15:19:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004478883,
+      "body_text": "Hi，Carlos Rios，     Additionally, due to the U.S. holiday combined with the weekend, the overseas warehouse will be on break, which may cause shipping delays. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-08T15:23:52Z",
+      "updated_at": "2025-07-08T15:23:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004480371,
+      "body_text": "Overseas? This was supposed to be shipped from a local warehouse. And I\r\nordered this last month.\r\n\r\nOn Tue, Jul 8, 2025, 10:24 AM service@simsonn.com ",
+      "user_id": 158001873904,
+      "created_at": "2025-07-08T17:21:07Z",
+      "updated_at": "2025-07-08T17:21:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004486149,
+      "body_text": "你好，Carlos Rios，  “海外仓”是指我们位于美国的仓库。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-09T05:57:56Z",
+      "updated_at": "2025-07-09T05:57:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004487800,
+      "body_text": "Hi Carlos Rios,     Overseas Warehouse means our U.S. warehouse, and I'm sorry for the inconvenience this has caused you.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-09T10:44:16Z",
+      "updated_at": "2025-07-09T10:44:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004497430,
+      "body_text": "Did you solve this problem?\r\n\r\nOn Wed, Jul 9, 2025, 5:44 AM service@simsonn.com ",
+      "user_id": 158001873904,
+      "created_at": "2025-07-09T22:45:19Z",
+      "updated_at": "2025-07-09T22:45:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004497531,
+      "body_text": "I still havent gotten any updates on this issue. And USPS still has not\r\nreceived this item.\r\n\r\n",
+      "user_id": 158001873904,
+      "created_at": "2025-07-09T23:00:06Z",
+      "updated_at": "2025-07-09T23:00:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004497839,
+      "body_text": "I think I know what the issue is. You guys are using usps in Chino,\r\nCalifornia and I was reading the reviews for that post office and people\r\nthat work there steal packages, misship them and just are a\r\nterrible company at that location at least. Im probably just gonna ask for\r\na refund and all my money back because you guys should at least know who to\r\nuse as a shipping company to avoid situations like this.\r\n\r\n",
+      "user_id": 158001873904,
+      "created_at": "2025-07-09T23:44:41Z",
+      "updated_at": "2025-07-09T23:44:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004500107,
+      "body_text": "Hi Carlos Rios,    Logistics providers are automatically matched by the system according to the destination and product, the three major logistics providers we choose (UPS, Fedex, USPS) are all reliable, please don't worry.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-10T03:09:12Z",
+      "updated_at": "2025-07-10T03:09:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004500375,
+      "body_text": "Okay, sorry for me getting antsy, this is the first time Ive bought with\r\nsimsonn and didnt know what to expect. Usps just received the item so im\r\ngood now. I wont ask for a refund.\r\n\r\nOn Wed, Jul 9, 2025, 10:09 PM service@simsonn.com ",
+      "user_id": 158001873904,
+      "created_at": "2025-07-10T04:36:42Z",
+      "updated_at": "2025-07-10T04:36:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

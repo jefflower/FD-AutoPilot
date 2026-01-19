@@ -1,0 +1,54 @@
+{
+  "id": 10861,
+  "subject": "please help",
+  "description_text": "Hello, I have the plus x pedals and have just set them up. However I cannot get them to register in any game. I have installed the app multiple time and that doesn't seem to work. I have also moved the grounding wire around but that has not changed anything.\r\nthe calibration works in the Simsonn app but as soon as i try calibrate in a  game there is no input.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-14T04:35:10Z",
+  "updated_at": "2026-01-17T04:40:52Z",
+  "requester_id": 158009061745,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017085244,
+      "body_text": "Hi Ethan Boehm,  When calibrating the pedals in SIMSONN Manager, did you actually press the pedals during the calibration? A successful calibration means the blue progress bar can move from 0% up to 100% as you press the pedal. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-14T09:04:31Z",
+      "updated_at": "2026-01-14T09:04:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017153494,
+      "body_text": "Yes I have done this multiple times.\r\n\r\nKind regards,\r\nEthan Boehm- Director\r\n\r\n[https://ci3.googleusercontent.com/mail-sig/AIorK4wLib5BlBQB1xBDVL4W7FPlA8W2ks1Uq5Bbem_MU2D0FYcuWwKgxRQyCLL_AeMvC3EsChSF6ek]\r\nWeb:    adelaideconcretesolutions.com.au<http://adelaideconcretesolutions.com.au/>\r\nPh:       0428885627\r\nOffice: 7B Tooronga Ave,\r\n             Edwardstown SA 5039\r\n\r\n________________________________\r\n",
+      "user_id": 158009061745,
+      "created_at": "2026-01-15T01:08:07Z",
+      "updated_at": "2026-01-15T01:08:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017154035,
+      "body_text": "Hi Ethan Boehm,     Could you please record a complete video and upload it to Google Drive? Then send me the link and set the sharing permission to “Anyone with the link can view.” The video should include the full process below (including zeroing the pedal signal following the steps inside the Offset pop-up dialog, and then Calibration/Calibrate):    Click Offset, and follow the steps in the pop-up dialog to zero the pedal signal;    Click Calibrate, then press each pedal with normal force;    Click Save;    After calibration, please test the pedals again — the blue progress bar should move smoothly from 0% to 100%. Only then is the calibration successful.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-15T01:21:37Z",
+      "updated_at": "2026-01-15T01:21:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017155919,
+      "body_text": "I will try this now and see how it goes.\r\n\r\nKind regards,\r\nEthan Boehm- Director\r\n\r\n[https://ci3.googleusercontent.com/mail-sig/AIorK4wLib5BlBQB1xBDVL4W7FPlA8W2ks1Uq5Bbem_MU2D0FYcuWwKgxRQyCLL_AeMvC3EsChSF6ek]\r\nWeb:    adelaideconcretesolutions.com.au<http://adelaideconcretesolutions.com.au/>\r\nPh:       0428885627\r\nOffice: 7B Tooronga Ave,\r\n             Edwardstown SA 5039\r\n\r\n________________________________\r\n",
+      "user_id": 158009061745,
+      "created_at": "2026-01-15T02:12:14Z",
+      "updated_at": "2026-01-15T02:12:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

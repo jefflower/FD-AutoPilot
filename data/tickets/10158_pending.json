@@ -1,0 +1,64 @@
+{
+  "id": 10158,
+  "subject": "Dual mode shifter",
+  "description_text": "Good evening, I just received my dual mode shifter. When I hook it up, it registers the 2 bottom “s1” “s2” buttons but none of the “gears”\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-07T02:03:39Z",
+  "updated_at": "2026-01-08T03:47:29Z",
+  "requester_id": 158008211358,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016060491,
+      "body_text": "Hi Alex Wiuker,  We will release a new software version today, which will officially add support for the HS Pro calibration page. Please update the software and try it out. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T05:04:04Z",
+      "updated_at": "2026-01-07T05:04:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016123405,
+      "body_text": "Good morning, thank you! I will try! \r\n\r\n> ",
+      "user_id": 158008211358,
+      "created_at": "2026-01-07T11:38:09Z",
+      "updated_at": "2026-01-07T11:38:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016144150,
+      "body_text": "Hi Alex Wiuker,    Please uninstall SIMSONN Manager version 2.1.2 from your computer first, then download and install SIMSONN Manager version 2.1.3 from our official website.  SIMSONN Manager 2.1.3 adds full support for HS Pro 2-in-1 shifter configuration and calibration. Please use this version to complete the setup and calibration.     https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T14:05:32Z",
+      "updated_at": "2026-01-07T14:05:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016256207,
+      "body_text": "1-6 are working great! 7 and R are reversed!\r\n\r\n> ",
+      "user_id": 158008211358,
+      "created_at": "2026-01-08T02:39:52Z",
+      "updated_at": "2026-01-08T02:39:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016263818,
+      "body_text": "Hi Alex Wiuker,  Please try recalibrating the shifter. During the calibration process, make sure to shift strictly in the following order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → R. After calibration, please test again and check whether 7th gear and Reverse (R) are displayed correctly. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-08T03:47:29Z",
+      "updated_at": "2026-01-08T03:47:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

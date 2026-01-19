@@ -1,0 +1,115 @@
+{
+  "id": 3576,
+  "subject": "踏板感应到移动",
+  "description_text": "您好，我的Simsonn Pro x踏板遇到了一个问题，我无法解决或找到解决方案。\n\n在校准时，踏板会感应到某种移动，如我附带的视频所示。\n\n这在校准simagic方向盘以及在iracing中校准踏板本身时都会发生。\n\n然而，我在simsonn软件中没有检测到任何移动，并且踏板已经校准过了。\n\n如果您能提供任何解决方案，将不胜感激。\n\n谢谢，\nChris",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-09-07T03:18:14Z",
+  "updated_at": "2025-09-07T04:55:04Z",
+  "requester_id": 158004236011,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008201315,
+      "body_text": "您好，Christopher French Jr，此问题是由于我们之前的手刹的RX轴未禁用导致的，这造成了干扰。您可以尝试使用SIMSONN Manager 2.1.1解决：打开SIMSONN Manager 2.1.1软件。点击界面中的“恢复”按钮。然后点击“保存”按钮。重新插入USB线。最后，测试RX轴是否已成功禁用。您也可以尝试使用SIMSONN Manager 2.1.1。在软件界面中，点击“恢复”按钮，然后点击“保存”。之后，重新插入USB并测试RX轴是否已成功禁用。https://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T03:21:49Z",
+      "updated_at": "2025-09-07T03:21:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201392,
+      "body_text": "感谢您的回复。我在界面中没有看到恢复按钮。我应该在哪里找到它？\n\n2025年9月6日星期六晚上11:21 support @simsonn.com",
+      "user_id": 158004236011,
+      "created_at": "2025-09-07T03:29:21Z",
+      "updated_at": "2025-09-07T03:29:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201445,
+      "body_text": "感谢您的回复。\n\n我没有手刹。只有油门踏板和刹车踏板。\n\n我的simsonn界面上没有恢复按钮。\n\n2025年9月6日星期六晚上11:21 support @simsonn.com",
+      "user_id": 158004236011,
+      "created_at": "2025-09-07T03:34:48Z",
+      "updated_at": "2025-09-07T03:34:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201572,
+      "body_text": "我做了一些额外的测试。\n\n我拔掉了方向盘和所有其他USB设备以及笔记本电脑充电器。\n\n我进入了电脑的控制面板。查看了simsonn踏板的属性。\n\n我注意到z轴保持静止，但x轴旋转在抖动，无论刹车踏板还是油门踏板连接到simsonn电源盒。\n\n当我拔掉刹车踏板和油门踏板时，x轴旋转仍然上下抖动。我附上了一个简短的视频，展示了我所看到的情况以及两个踏板都从盒子上拔下。\n\n是电源盒的问题吗？\n\n2025年9月6日星期六晚上11:34 Christopher French Jr < chris.french1791 @gmail.com> 写道：\n\n> 感谢您的回复。\n>\n> 我没有手刹。只有油门踏板和刹车踏板。\n>\n> 我的simsonn界面上没有恢复按钮。\n>\n> 2025年9月6日星期六晚上11:21 support @simsonn.com",
+      "user_id": 158004236011,
+      "created_at": "2025-09-07T03:52:46Z",
+      "updated_at": "2025-09-07T03:52:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201631,
+      "body_text": "您好，Christopher French Jr，",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T04:01:29Z",
+      "updated_at": "2025-09-07T04:01:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201652,
+      "body_text": "感谢您转发的截图。但是，当踏板拔下时，我无法点击恢复。\n\n有什么解决方案吗？\n\n2025年9月7日星期日凌晨12:01 support @simsonn.com",
+      "user_id": 158004236011,
+      "created_at": "2025-09-07T04:05:20Z",
+      "updated_at": "2025-09-07T04:05:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201662,
+      "body_text": "您好，Christopher French Jr，请先连接电源，然后点击“恢复”按钮，再点击“保存”按钮。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T04:08:52Z",
+      "updated_at": "2025-09-07T04:08:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201703,
+      "body_text": "在联系支持部门之前我已经这样做了，并且又做了一次。但这并没有解决问题。\n\n我做了一些额外的测试。\n\n我拔掉了方向盘和所有其他USB设备以及笔记本电脑充电器，以尝试隔离问题。\n\n我进入了电脑的控制面板。查看了simsonn踏板的属性。\n\n我注意到z轴没有移动，但x轴旋转在抖动，无论只有刹车踏板连接到控制盒还是只有油门踏板。\n\n当我拔掉刹车踏板和油门踏板时，x轴旋转仍然上下抖动。我附上了一个简短的视频，展示了我所看到的情况以及两个踏板都从盒子上拔下。\n\n这也是我在模拟器中看到的问题，导致方向盘和踏板的校准受到干扰。\n\n是控制盒的问题吗？\n\n2025年9月7日星期日凌晨12:09 support @simsonn.com",
+      "user_id": 158004236011,
+      "created_at": "2025-09-07T04:15:32Z",
+      "updated_at": "2025-09-07T04:15:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201715,
+      "body_text": "您好，Christopher French Jr，请安装Todesk软件。无需注册，如果提示您注册，只需关闭窗口即可。我将立即远程协助您解决问题。https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T04:17:22Z",
+      "updated_at": "2025-09-07T04:17:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201757,
+      "body_text": "我已经安装了。\n\nTodesk设备ID：\n878 627 097\n临时密码：pw722g32\n\n2025年9月7日星期日凌晨12:17 support @simsonn.com",
+      "user_id": 158004236011,
+      "created_at": "2025-09-07T04:21:36Z",
+      "updated_at": "2025-09-07T04:21:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

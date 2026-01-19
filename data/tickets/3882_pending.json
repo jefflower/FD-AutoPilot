@@ -1,0 +1,64 @@
+{
+  "id": 3882,
+  "subject": "Simsonn Pro controller box",
+  "description_text": "To Whom it may concern,\r\n\r\nHow do I go about upgrading the controller box so I can use the simsonn\r\nManager software?\r\n\r\nPete Hill\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-16T21:46:11Z",
+  "updated_at": "2025-09-17T02:04:14Z",
+  "requester_id": 158004579948,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008837102,
+      "body_text": "Hi Pete Hill,  Could you please let me know which calibration software you are using for your Pro Plus pedals? If the firmware version is 1.7.1, we recommend updating to SIMSONN Manager 2.1.0. If the software indicates that the version is too old, you can manually upgrade the firmware by navigating to: Settings → Update → Manual Firmware Update → pedals-firmware → pedals-plus.sfu.      https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-09-17T01:06:43Z",
+      "updated_at": "2025-09-17T01:06:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008837636,
+      "body_text": "I am using SIMSONN Manager 2.1.0. When i try to go to manual update i\r\ncannot select it.\r\n\r\nOn Tue, Sep 16, 2025 at 9:06 PM service@simsonn.com ",
+      "user_id": 158004579948,
+      "created_at": "2025-09-17T01:44:40Z",
+      "updated_at": "2025-09-17T01:44:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008837734,
+      "body_text": "Hi Pete Hill,     Please send me a screenshot of this interface and let me know the version of your Pro pedals. Also, please let me know which testing software you were using before. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-17T01:50:18Z",
+      "updated_at": "2025-09-17T01:50:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008837931,
+      "body_text": "[image: image.png]\r\nI was using freejoy and also using the Simsonn  SimPedalsConfig_V3.5\r\n<https://cdn.simsonn.vip/download/SimPedalsConfig_V3.5.zip> software. Does\r\nit matter that I have the older controller box. I had read online that even\r\nthe older controller box could use the newer software.\r\n\r\nOn Tue, Sep 16, 2025 at 9:50 PM service@simsonn.com ",
+      "user_id": 158004579948,
+      "created_at": "2025-09-17T02:01:56Z",
+      "updated_at": "2025-09-17T02:01:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008837972,
+      "body_text": "Hi Pete Hill,  In that case, upgrading would not be possible. You can consider purchasing a new PlusX control box, which also supports vibration feedback motor interfaces for enhanced functionality.      https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor?variant=51351053533498",
+      "user_id": 158000445778,
+      "created_at": "2025-09-17T02:04:14Z",
+      "updated_at": "2025-09-17T02:04:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

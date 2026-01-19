@@ -1,0 +1,44 @@
+{
+  "id": 3444,
+  "subject": "Mounting",
+  "description_text": "hi there, i just bought a set of plus x pedals, but how can i safely mount\r\nthe pedal baseplate to my sim rig's pedal plate? The screw holes don't line\r\nup, and I can drill new holes if I need to, but the plates don't sit flush\r\nbecause the nuts are in the way... I was thinking maybe drill new holes in\r\nthe 4 corners, and use the plastic rings included for the brake pedal as\r\nspacers to lift the nuts off of the black plate? Any other ideas? Thanks\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-03T20:44:46Z",
+  "updated_at": "2025-09-07T03:04:30Z",
+  "requester_id": 158004139549,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008201084,
+      "body_text": "Hi iGPR3,  Hello, I will test your bracket on Monday. Could you please let me know the model of the bracket? ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T02:52:33Z",
+      "updated_at": "2025-09-07T02:52:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201120,
+      "body_text": "This is the Plus X with the GT-OMEGA ART cockpit.\r\n\r\n\r\n\r\n\r\nFor now, I've drilled new holes to allow longer M8 bolts than the stock\r\nones, and used nuts as spacers to lift up the nuts on the simsonn pedal\r\nplate up from the gtomega plate. I think this is probably the best\r\nsolution. The biggest weakness now is the cheap rig ?\r\n\r\n",
+      "user_id": 158004139549,
+      "created_at": "2025-09-07T02:57:21Z",
+      "updated_at": "2025-09-07T02:57:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201191,
+      "body_text": "Hi iGPR3,  You’re really amazing! If you have any further issues, please don’t hesitate to reach out to us. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T03:04:22Z",
+      "updated_at": "2025-09-07T03:04:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

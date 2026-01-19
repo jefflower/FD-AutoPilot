@@ -1,0 +1,94 @@
+{
+  "id": 4513,
+  "subject": "Order #SSN2698 - Baseplate received with no screws",
+  "description_text": "Hi I ordered the Pro X Ultra Plate with the heel rest. I received the\r\nproduct, but I did not receive any screws with it. I bought the Simsonn\r\nPlus X which I intend to use with the base plate. Is there a way to get\r\nthese screws? or what do you recommend?\r\n\r\nthanks\r\n\r\n-- \r\nChristian A. Rivera\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-07T01:12:59Z",
+  "updated_at": "2025-10-14T06:58:44Z",
+  "requester_id": 158002335130,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010046986,
+      "body_text": "I received an email asking for a review with pictures? Did you intend to ask for pictures of the package?",
+      "user_id": 158002335130,
+      "created_at": "2025-10-08T00:58:52Z",
+      "updated_at": "2025-10-08T00:58:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010046987,
+      "body_text": "I received an email asking for a review with pictures? Did you intend to ask for pictures of the package?",
+      "user_id": 158002335130,
+      "created_at": "2025-10-08T00:58:53Z",
+      "updated_at": "2025-10-08T00:58:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010141486,
+      "body_text": "Hi Christian Rivera,    Since our baseplates typically come with all accessories, so we need a photo showing all items included in the baseplate package you recently received. We will then confirm which parts are missing.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-09T10:03:21Z",
+      "updated_at": "2025-10-09T10:03:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010141500,
+      "body_text": "Hi Christian Rivera,  Hello, please provide your order number. We’ve just returned to work after the holiday and can arrange to resend the screws tomorrow. Please take a photo of the parts you received — I’ll first verify which components are missing and then arrange the replacement shipment. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-09T10:04:51Z",
+      "updated_at": "2025-10-09T10:04:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010240341,
+      "body_text": "Hi.\r\n\r\nThe order is SSN2698.\r\n\r\nI'm attaching pictures of everything I received. I screwed the heel rest\r\nwith some leftover screws I have from my rig.\r\n\r\nI also would like to note that the plage itself has wear and tear as if\r\nit's been used before.\r\n\r\nI also did not receive electric cables for the leds\r\n\r\nLet me know if you need anything else.\r\n\r\nThanks\r\n\r\nChristian A. Rivera, Esq\r\n\r\n\r\n\r\n\r\n\r\nOn Thu, Oct 9, 2025, 5:05 AM service@simsonn.com ",
+      "user_id": 158002335130,
+      "created_at": "2025-10-11T01:38:45Z",
+      "updated_at": "2025-10-11T01:38:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010263161,
+      "body_text": "Hi Christian Rivera,      We have noted the wear and tear. We will reship the replacement parts and issue a $20 refund as compensation. We apologize for the inconvenience caused!",
+      "user_id": 158001343601,
+      "created_at": "2025-10-11T10:37:29Z",
+      "updated_at": "2025-10-11T10:37:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010342492,
+      "body_text": "Hi Christian Rivera,    Here is your logistics tracking link:  https://t.17track.net/en#nums=SF6045968030809",
+      "user_id": 158001343601,
+      "created_at": "2025-10-13T07:41:31Z",
+      "updated_at": "2025-10-13T07:41:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010345249,
+      "body_text": "Thank you very much!!\r\n\r\nYou guys have excellent customer service.\r\n\r\nChristian A. Rivera, Esq\r\n\r\n\r\n\r\n\r\n\r\nOn Mon, Oct 13, 2025, 2:41 AM service@simsonn.com ",
+      "user_id": 158002335130,
+      "created_at": "2025-10-13T11:20:18Z",
+      "updated_at": "2025-10-13T11:20:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

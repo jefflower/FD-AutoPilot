@@ -1,0 +1,24 @@
+{
+  "id": 9653,
+  "subject": "Demande d'informations",
+  "description_text": "Bonjour,\r\nJe vous contacte concernant ma commande expédiée via UPS (colis 1Z144AW70406291380).\r\nLe colis est bloqué en douane à Roissy depuis le 22/12, soit près de 10 jours, alors que j’ai payé une livraison express casi 40€. Ce blocage est dû à une erreur de qualification : UPS a considéré à tort que j’étais professionnelle, alors que je suis particulier.Aucun document n’est donc requis pour le dédouanement, ce qui m’a été confirmé.\r\nUPS m’indique par ailleurs que seul l’expéditeur peut ouvrir une réclamation et demander le remboursement des frais de port.Je vous remercie donc de bien vouloir intervenir rapidement auprès d’UPS pour débloquer le colis et engager la demande de remboursement des frais de livraison express.\r\nMerci de me tenir informée rapidement.\r\nCordialement,Iona Fuentes\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-12-31T09:19:04Z",
+  "updated_at": "2026-01-07T06:39:12Z",
+  "requester_id": 158008757625,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016074877,
+      "body_text": "此工单已关闭并合并到工单 9993 中",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T06:39:12Z",
+      "updated_at": "2026-01-07T06:39:12Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

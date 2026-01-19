@@ -1,0 +1,25 @@
+{
+  "id": 11100,
+  "subject": "踏板",
+  "description_text": "我的踏板什么时候发货？如果我早知道会等这么久，我可能就订购其他东西了。订单号：#ssn6024\nRyan Wenndt",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-16T21:19:08Z",
+  "updated_at": "2026-01-17T03:09:40Z",
+  "requester_id": 158009307506,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017311068,
+      "body_text": "您好，Ryan Wenndt，对于给您带来的不便，我们深表歉意。Pro X 踏板目前在我们美国仓库缺货。我们已紧急安排空运，预计您的订单将于22日发货，预计25日左右送达。此外，这是您的触觉反馈装置的跟踪链接：https://t.17track.net/en#nums=SF6047238967828",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T03:09:40Z",
+      "updated_at": "2026-01-17T03:09:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

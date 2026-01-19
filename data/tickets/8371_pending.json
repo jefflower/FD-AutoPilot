@@ -1,0 +1,44 @@
+{
+  "id": 8371,
+  "subject": "Questions about ordering and shipping goods",
+  "description_text": "Hello!\r\n\r\nI would like to know the order number of my order and the tracking number\r\nif it has been sent. Please reply by e-mail.\r\n\r\nAnd please check the attached picture.\r\n\r\nThank you!\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-16T03:19:08Z",
+  "updated_at": "2025-12-18T09:05:19Z",
+  "requester_id": 158007684255,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014610423,
+      "body_text": "Hi 임동권,  We apologize for the delay in shipping to our partner. The original estimated date was the 15th, but it has now been adjusted to the 20th. Rest assured, all products are ready and will be shipped as soon as they pass quality inspection. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T02:31:31Z",
+      "updated_at": "2025-12-17T02:31:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014612846,
+      "body_text": "Hello,\r\n\r\nI would like to request the cancellation of my order and a full refund.\r\n\r\nDue to unexpected shipping delays, I am no longer able to wait for the\r\ndelivery,\r\nand I have decided to cancel this order.\r\nSince the item has not yet been delivered, I kindly ask you to cancel the\r\nshipment and process the refund.\r\n\r\nThank you for your understanding.\r\nI look forward to your confirmation.\r\n\r\n2025년 12월 17일 (수) AM 11:31, support@simsonn.com ",
+      "user_id": 158007684255,
+      "created_at": "2025-12-17T04:43:48Z",
+      "updated_at": "2025-12-17T04:43:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014679371,
+      "body_text": "Hi 임동권,    We have processed your refund. We apologize for the delay in addressing your request.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-18T09:05:19Z",
+      "updated_at": "2025-12-18T09:05:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

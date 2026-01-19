@@ -1,0 +1,125 @@
+{
+  "id": 1976,
+  "subject": "回复：SSN1299 - 故障",
+  "description_text": "你好。\n\n问题仍在继续。\n\n电脑本身将USB驱动识别为simsonn hb pro。但你的软件完全不识别手刹。现在我想校准它，但因此无法进行。\n\n我已经尝试了你们上面所有的步骤，包括只将手刹直接插入电脑。甚至额外花钱更换了带电源的USB集线器。\n\n根据上述邮件记录，这个问题从第一天起就出现了。我设法让它识别并校准了一次，但现在它又不让我这样做了。\n\n我也在一台单独的电脑上试过，出现了同样的问题。这个产品坏了。\n\n请最好给我寄一个新的，或者全额退款，包括运费。\n\n从 Outlook for Android 发送<https://aka.ms/AAb9ysg>\n________________________________\n发件人：Aaron Francis <aaron.francis.89 @hotmail.com>\n发送时间：2025年4月18日星期五 下午4:45:37\n收件人：销售咨询 <service @simsonn.com>\n主题：回复：SSN1299 - 故障\n\n你好，我最终还是让它工作了。是电脑需要识别的一个驱动程序。\n\n从 Outlook for Android 发送<https://aka.ms/AAb9ysg>\n________________________________\n发件人：销售咨询 <service @simsonn.com>\n发送时间：2025年4月18日星期五 上午11:11:32\n收件人：aaron.francis.89 <aaron.francis.89 @hotmail.com>\n主题：回复：SSN1299 - 故障\n\n你好，\n对于给您带来的不便，我们深表歉意。您的问题可能是由于USB端口供电不足造成的。请尝试将其连接到USB 3.0端口，或者使用带独立电源的USB集线器。请将USB线连接到电脑背面的USB 3.0端口。这个端口通常是蓝色的。如果问题仍然没有解决，请随时联系我们，我们将尽力解决。\n\n以下是可能出现的问题，您可以逐一检查：\n\n1. 检查USB是否插紧。您可以尝试另一根数据线或另一台电脑。\n\n2. 建议使用主板后部的USB端口，以避免前面板或扩展端口供电不足。\n\n3. 检查控制面板上的LED灯是否亮起 - 如果不亮，可能是供电问题。\n\n4. USB集线器中是否插入了多个其他USB设备，导致整体供电不稳定？\n\n5. 您是否测试过带独立电源的USB集线器？\n\n6. 检查踏板设备是否可以在“游戏控制器”中找到。\n\n7. 禁用Windows的“电源管理关闭USB省电”功能（在设备管理器 → USB Root Hub → 电源管理中设置）。\n\n________________________________\nservice @simsonn.com\n\n发件人：Aaron Francis<mailto:aaron.francis.89 @hotmail.com>\n日期：2025-04-17 21:22\n收件人：service @simsonn.com<mailto:service@simsonn.com>\n主题：SSN1299 - 故障\n你好。\n\n我今天收到了手刹并已安装，我认为要么是我做错了什么，要么是手刹有故障。\n\n附件中有一个视频。\n\n我已经连接到装有最新软件的电脑。\n\n打开simsonn管理器不识别手刹。\n\n请提供解决方案。\n\n谢谢。\n\n从 Outlook for Android 发送<https://aka.ms/AAb9ysg>",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-07-27T06:42:30Z",
+  "updated_at": "2025-07-28T03:55:28Z",
+  "requester_id": 158002360650,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005653862,
+      "body_text": "你好 Aaron Francis，请提供 SIMSONN Manager 软件连接状态的截图。另外，请使用 VKB 工具检查 SIMSONN 设备连接并发送截图给我们。请放心，我们一定会帮助您解决这个问题。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-28T01:55:52Z",
+      "updated_at": "2025-07-28T01:55:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005657317,
+      "body_text": "你好，\n\n我无法从您的电子邮件中下载 joy tester。\n\n您可以看到电脑识别出了以下硬件：\n\n[cid:ade8abbe-3bdc-4a71-bb24-b27d2fe93a07]\n\n这是 FreeJoy 工具（我相信与您附加的类似），它也不识别 HB\n[cid:29576cd8-c0de-4845-91e5-0674b57599de]\n\n这是管理器中的截图：它甚至不允许我点击手刹，因为它未被识别。\n\n________________________________",
+      "user_id": 158002360650,
+      "created_at": "2025-07-28T02:19:34Z",
+      "updated_at": "2025-07-28T02:19:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005658451,
+      "body_text": "你好 Aaron Francis，或者，我现在可以远程协助您。请安装 ToDesk；无需注册。如果出现注册提示，只需点击右上角的关闭按钮。然后，请提供您的 ID 和临时密码。https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-07-28T02:25:15Z",
+      "updated_at": "2025-07-28T02:25:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005663799,
+      "body_text": "啊，这不是英文——我认为是普通话——所以我无法做任何事情。\n________________________________",
+      "user_id": 158002360650,
+      "created_at": "2025-07-28T02:52:45Z",
+      "updated_at": "2025-07-28T02:52:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005664173,
+      "body_text": "[cid:199c2f47-624a-4760-a266-2b519933459d]\n________________________________",
+      "user_id": 158002360650,
+      "created_at": "2025-07-28T02:54:10Z",
+      "updated_at": "2025-07-28T02:54:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005666734,
+      "body_text": "你好 Aaron Francis，密码已过期，请点击接受连接。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-28T03:05:59Z",
+      "updated_at": "2025-07-28T03:05:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005667403,
+      "body_text": "完成\n\n从 Outlook for Android 发送<https://aka.ms/AAb9ysg>\n________________________________",
+      "user_id": 158002360650,
+      "created_at": "2025-07-28T03:10:14Z",
+      "updated_at": "2025-07-28T03:10:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005669971,
+      "body_text": "你好 Aaron Francis，密码已过期，请点击接受连接。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-28T03:23:44Z",
+      "updated_at": "2025-07-28T03:23:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005670687,
+      "body_text": "？",
+      "user_id": 158002360650,
+      "created_at": "2025-07-28T03:28:47Z",
+      "updated_at": "2025-07-28T03:28:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005670873,
+      "body_text": "[cid:77f7af7a-01d4-4c78-a411-4dd98f6cecd9]\n________________________________",
+      "user_id": 158002360650,
+      "created_at": "2025-07-28T03:29:29Z",
+      "updated_at": "2025-07-28T03:29:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005674488,
+      "body_text": "你好，Aaron Francis，",
+      "user_id": 158000445778,
+      "created_at": "2025-07-28T03:47:32Z",
+      "updated_at": "2025-07-28T03:47:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

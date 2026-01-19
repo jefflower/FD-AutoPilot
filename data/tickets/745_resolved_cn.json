@@ -1,0 +1,45 @@
+{
+  "id": 745,
+  "subject": "Iracing 配对问题",
+  "description_text": "大家好，我的 Plus X 踏板在使用 Iracing 时遇到了一些问题。Iracing 完美识别了刹车踏板，但油门踏板却没有任何反应。油门踏板在 Simsonn Manager 中工作正常，但在 Iracing 中却无法识别和校准。\n有什么建议或想法可以帮助我吗？\n谢谢",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-06-23T20:46:11Z",
+  "updated_at": "2025-07-07T07:48:00Z",
+  "requester_id": 158001750559,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003741517,
+      "body_text": "嗨 Adrian Michau，您是否已完成踏板校准？为了帮助我们诊断问题，请提供一段视频，显示在软件中将所有三个踏板从 0% 按下到 100% 的过程。此外，请附上 iRacing 中按键绑定界面的视频。谢谢！",
+      "user_id": 158000445778,
+      "created_at": "2025-06-24T02:10:11Z",
+      "updated_at": "2025-06-24T02:10:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004454322,
+      "body_text": "ID 为 1239 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T07:48:00Z",
+      "updated_at": "2025-07-07T07:48:00Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004454323,
+      "body_text": "合并来自工单1239\n主题: Re: 提醒：订单 #SSN1690，情况如何？\n描述: 抱歉回复晚了，问题没什么，只是重启电脑后一切都正常了，踏板很完美，非常满意我的购买，非常感谢\n\n2025年7月5日星期六 14:18，SIMSONN <no-reply @loox.io> 写道：\n\n您好 Adrian，如果您能分享一下使用感受，我们将不胜感激。您的评价对我们和支持我们的社区都有帮助，而且只需几秒钟。\n\n\n您好 Adrian，如果您能分享一下使用感受，我们将不胜感激。您的评价对我们和支持我们的社区都有帮助。\n\n\nSimsonn Plus X 赛车模拟踏板带触觉反应器\nPlus X P2-H2 / 黑色 / 底板\n\n\n\n\n不喜欢\n\n喜欢！\n\n\n\n\n取消订阅",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T07:48:00Z",
+      "updated_at": "2025-07-07T07:48:00Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ],
+  "available_langs": []
+}

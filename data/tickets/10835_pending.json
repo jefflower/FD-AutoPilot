@@ -1,0 +1,24 @@
+{
+  "id": 10835,
+  "subject": "Issue with an Order",
+  "description_text": "Hi,\r\nI made an order 10 days ago and the website didn't send me any\r\nshipping notification.\r\n\r\nI tried contacting you by a ticket, but I don't know how much it is\r\ngoing to take, maybe if i send the issue by email I will get a faster\r\nresponse.\r\n\r\nMy order was the Simsonn Pro X Ultra P2-H2 with baseplate. It costed\r\n292.79€, it was ordered the day 3/1/2026 and it was destined to Spain,\r\nBarcelona, Barberà del Vallès Carrer del Pintor Goya nº50 1º1ª.\r\n\r\nI believe i put this email on the payment, but still, as a\r\nconfirmation i'll send you the screenshot of the bank account\r\nconfirmation.\r\n\r\nThank you for everything,\r\n\r\nDavid.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-13T22:59:39Z",
+  "updated_at": "2026-01-14T06:19:26Z",
+  "requester_id": 158008902193,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017073202,
+      "body_text": "Hi David Fernandez Gonzalez,  We apologize for the delay. Two shipments destined for our German warehouse have been affected by heavy snowfall in Europe, causing road blockages and delivery delays. We will expedite delivery or explore alternative logistics channels to ship your order from China as soon as possible. Compensation will be provided based on the delay after your order is completed. We apologize for the inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-14T06:19:26Z",
+      "updated_at": "2026-01-14T06:19:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

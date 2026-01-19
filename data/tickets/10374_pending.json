@@ -1,0 +1,74 @@
+{
+  "id": 10374,
+  "subject": "Issues with VAM Haptic Pedals Reactor (VAM 3 PCS PER SET) purchased 3 months ago",
+  "description_text": "Hello,\r\n\r\nI’m reaching out regarding an issue with my Simsonn X Plus pedals and the\r\nVAM 3-piece haptic set that I purchased approximately three months ago\r\nthrough Amazon.\r\n\r\n\r\nUnfortunately, the haptics have stopped working entirely. They appear to be\r\ncompletely unresponsive. I do not use the third haptic motor, and I tested\r\nthe ports on the hub using the unused motor, which worked correctly. This\r\nleads me to believe the issue is with the haptic units themselves rather\r\nthan the hub.\r\n\r\n\r\nAdditionally, I’ve noticed that the power adapter included with the\r\n3-haptic set fits extremely loosely in the hub. Because of this, it\r\ndisconnects very easily, which may have contributed to the failure.\r\n\r\n\r\nI will attach my Amazon order details below for reference. Please let me\r\nknow the next steps for troubleshooting, repair, or replacement under\r\nwarranty.\r\n\r\n\r\nThank you for your time and support. I look forward to your assistance.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-09T06:29:41Z",
+  "updated_at": "2026-01-12T08:23:58Z",
+  "requester_id": 158008998957,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016678982,
+      "body_text": "Hi B HIll,  For VAM motors, please make sure to use VAM mode only. Do not use VAM Pro mode, and avoid long-duration vibration telemetry effects such as RPM or engine speed. For the damaged motors, we will send you two replacement VAM motors. If the power connector feels loose, we recommend securing it with a cable tie to prevent movement and poor contact. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-10T07:17:19Z",
+      "updated_at": "2026-01-10T07:17:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016701850,
+      "body_text": "Hi,\r\n\r\n\r\n\r\nThank you for the clarification and for offering to send the two replacement VAM motors I appreciate the support.\r\n\r\n\r\n\r\nUnderstood regarding usage going forward. I will ensure the replacements are used in VAM mode only, and I never used VAM Pro mode for any duration with the current motors.\r\n\r\n\r\n\r\nI will also secure the power connector to prevent movement, as suggested.\r\n\r\n\r\n\r\nPlease let me know if you need any additional information from me (shipping address confirmation, order number, etc.) to proceed with sending the replacement motors.\r\n\r\n\r\n\r\nThanks again for your assistanc\r\n\r\n\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158008998957,
+      "created_at": "2026-01-10T10:59:03Z",
+      "updated_at": "2026-01-10T10:59:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016844387,
+      "body_text": "Hi B HIll, Please provide your detailed delivery address and contact number so we can ship your order as soon as possible.",
+      "user_id": 158007774607,
+      "created_at": "2026-01-12T07:51:44Z",
+      "updated_at": "2026-01-12T07:51:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016844507,
+      "body_text": "Name:Blake Hill\r\n\r\nAddress:\r\n3548 Shelby Ln\r\nNRA5308-1\r\nDenton, TX 76207\r\n\r\nPhone:430-200-7023\r\n\r\n\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158008998957,
+      "created_at": "2026-01-12T07:55:21Z",
+      "updated_at": "2026-01-12T07:55:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016845226,
+      "body_text": "Hi B HIll,  This is the tracking number for the replacement part: SF6047236949951. The shipping carrier is SF Express. You can track it via https://www.sf-international.com/cn/en/support/querySupport/waybill.",
+      "user_id": 158007774607,
+      "created_at": "2026-01-12T08:11:10Z",
+      "updated_at": "2026-01-12T08:11:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016845807,
+      "body_text": "Hi B HIll,  Sorry, this is the correct tracking number for the replacement part: JSEAV1213521725YQ, the shipping carrier is JS Express，you can track it via https://www.17track.net/en",
+      "user_id": 158007774607,
+      "created_at": "2026-01-12T08:23:58Z",
+      "updated_at": "2026-01-12T08:23:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

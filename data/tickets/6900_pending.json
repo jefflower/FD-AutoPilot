@@ -1,0 +1,24 @@
+{
+  "id": 6900,
+  "subject": "Simsonn Pro X Ultra Pedals",
+  "description_text": "Hello simsonn\r\n\r\nI am looking to buy the Simsonn Pro X Ultra Pedals but I have a some question. What is the maximum pressure the brake pedal can be used ad? And what does it mean when you say “Maximum sensor sensing value: 20kg” ?\r\n\r\nBest regards Søren-Emil Meng\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-27T20:08:52Z",
+  "updated_at": "2025-11-28T03:43:09Z",
+  "requester_id": 158007370227,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013037688,
+      "body_text": "Hi Søren-Emil Meng,  The sensor has a 200kg range. If Simsonn Manager shows a real-time value of 20kg, it means the pedal was pressed with a force of 20kg at that moment. You can recalibrate the pedals according to your own force and preference. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-28T03:43:09Z",
+      "updated_at": "2025-11-28T03:43:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

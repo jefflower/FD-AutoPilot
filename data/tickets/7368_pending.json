@@ -1,0 +1,74 @@
+{
+  "id": 7368,
+  "subject": "[PLEASE HELP ME] [Rewrite] My SIMSONN PRO pedal isn't working.",
+  "description_text": "I wrote the ticket last time, but surppor@simsonn.com isnt now working, so\r\nI'm rewriting it. I'll explain the order number, model name, and the shape\r\nof the control box you will ask first.\r\n\r\nFirst of all, my pedal is SIMSONN PRO model, and I bought a model that says\r\nSPRO 2P 2H from AliExpress. The software recognized my pedal as SIMSONN\r\n1.7.1.\r\n\r\nThe order number I ordered from SIMSONN's official AliExpress website is\r\n1105747314449841. Currently, the product page has disappeared, but I\r\npurchased it on June 17, 2024.\r\n\r\nMy control box is a control box with an open side to which the ground wire\r\nis attached, so you can see the substrate. The grounding is well done.\r\n\r\nThe issue is as follows.\r\nI first used SIMSONN Manager 2.1.2 version on the SIMSONN homepage, but\r\nwhen I connected, it showed an old version. I was told to install manually,\r\nso I did it with the correct procedure, but the installation did not\r\nproceed properly. The progress bar did not move and the software showed a\r\nmessage that the installation was complete, but I did not recognize it\r\nproperly. Sometimes I recognized it with the device name SIMSONN 1.7.1, but\r\nI couldn't recognize the axis and when the pedal was connected at any time,\r\nthe program's rack was severe, so the screen was cut off every two seconds.\r\nWhen I unplugged the pedal line, it got better. After that, I installed and\r\nran SimPedalsConfig_V4, but strangely, when the pedal was connected, the\r\nprogram failed. I recognized that the device was connected, but I couldn't\r\nfind the axis moving. I finally used Freejoy because I couldn't use both\r\nprograms. However, in the process, I accidentally pressed Write and the\r\nprogram was covered and burned. This machine failed.\r\n\r\nI want a solution to this problem. I'm a boarding student, so I can only\r\nplay games on weekends, and it's sad that this happens :(\r\n\r\nFirst of all, I'd like you to give me a way to install proper firmware in\r\nmy control box and a config file to rewrite as Freejoy that fits my pedal\r\nmodel. Manual installation in SIMSONN Manager did not work well.\r\n\r\nI really want to solve this problem and use Padal. Please reply. Have a\r\nnice day\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-03T23:33:43Z",
+  "updated_at": "2025-12-06T05:23:19Z",
+  "requester_id": 158007419070,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013364064,
+      "body_text": "ID 为 7209 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T01:28:46Z",
+      "updated_at": "2025-12-04T01:28:46Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158013364065,
+      "body_text": "合并来自工单7209  \n      主题: [PLEASE HELP ME] [Rewrite] My SIMSONN PRO pedal isn't working.  \n      描述:  I wrote the ticket last time, but it didn't open again, so I'm rewriting it. I'll explain the order number, model name, and the shape of the control box you will ask first.   \n First of all, my pedal is SIMSONN PRO model, and I bought a model that says SPRO 2P 2H from AliExpress. The software recognized my pedal as SIMSONN 1.7.1. \n   \n The order number I ordered from SIMSONN's official AliExpress website is 1105747314449841. Currently, the product page has disappeared, but I purchased it on June 17, 2024. \n   \n My control box is a control box with an open side to which the ground wire is attached, so you can see the substrate. The grounding is well done.  \n   \n The issue is as follows. \n I first used SIMSONN Manager 2.1.2 version on the SIMSONN homepage, but when I connected, it showed an old version. I was told to install manually, so I did it with the correct procedure, but the installation did not proceed properly. The progress bar did not move and the software showed a message that the installation was complete, but I did not recognize it properly. Sometimes I recognized it with the device name SIMSONN 1.7.1, but I couldn't recognize the axis and when the pedal was connected at any time, the program's rack was severe, so the screen was cut off every two seconds. When I unplugged the pedal line, it got better. After that, I installed and ran SimPedalsConfig_V4, but strangely, when the pedal was connected, the program failed. I recognized that the device was connected, but I couldn't find the axis moving. I finally used Freejoy because I couldn't use both programs. However, in the process, I accidentally pressed Write and the program was covered and burned. This machine failed. \n   \n I want a solution to this problem. I'm a boarding student, so I can only play games on weekends, and it's sad that this happens :( \n   \n First of all, I'd like you to give me a way to install proper firmware in my control box and a config file to rewrite as Freejoy that fits my pedal model. Manual installation in SIMSONN Manager did not work well.  \n   \n I really want to solve this problem and use Padal. Please reply. Have a nice day",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T01:28:46Z",
+      "updated_at": "2025-12-04T01:28:46Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158013364124,
+      "body_text": "Hi Dowon lee,    Are you still online? If convenient, please install the Todesk software, and I can assist you remotely to check and update your settings. You only need to provide the temporary ID and verification code—no registration or login is required.     https://dl.todesk.com/irrigation/ToDesk_4.7.6.3.exe ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T01:30:39Z",
+      "updated_at": "2025-12-04T01:30:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013366649,
+      "body_text": "I'm a dorm student, so I can't use this. I just need guidance on how to\r\nsolve this.\r\n\r\n2025년 12월 4일 (목) 오전 10:30, service@simsonn.com ",
+      "user_id": 158007419070,
+      "created_at": "2025-12-04T02:50:34Z",
+      "updated_at": "2025-12-04T02:50:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013366887,
+      "body_text": "What I want is some guidelines to solve this problem that I have not tried\r\nand to get the config file for SIMSONN pedal version 1.7.1 from Freejoy\r\n\r\n2025년 12월 4일 (목) 오전 11:50, Dowon lee <dowontv0910@gmail.com>님이 작성:\r\n\r\n> I'm a dorm student, so I can't use this. I just need guidance on how to\r\n> solve this.\r\n>\r\n> 2025년 12월 4일 (목) 오전 10:30, service@simsonn.com ",
+      "user_id": 158007419070,
+      "created_at": "2025-12-04T03:05:19Z",
+      "updated_at": "2025-12-04T03:05:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013764110,
+      "body_text": "Hi Dowon lee,     This is the Freejoy 1.7.1 version. Please check if it is possible to reconfigure or update it via the firmware.   https://drive.google.com/file/d/1-OVsjq9qvPZ4EmozElBgHzQ7LdMk4Wyd/view?usp=drive_link     https://drive.google.com/file/d/13go4s8eV1xrdtNyuuEqSQ_0FntA6ubh-/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-12-06T05:23:18Z",
+      "updated_at": "2025-12-06T05:23:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

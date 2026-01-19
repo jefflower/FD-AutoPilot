@@ -1,0 +1,64 @@
+{
+  "id": 8882,
+  "subject": "Colis non distribué",
+  "description_text": "Bonjour\r\n\r\nCommande n° SSN4506\r\nMme Crespin Fabienne\r\n\r\nJe me permets de vous contacter car mon colis n'est toujours pas arrivé.\r\nEn regardant sur le suivi de colis  il était dit que le livreur était passé\r\nle 18/12  pendant notre absence et repasserai le lendemain. Mais depuis\r\nplus de nouvelles.\r\nMerci de faire le nécessaire ou alors,\r\nserait-il possible d'avoir le numéro de suivi de mon colis ainsi que led\r\ncoordonnées du transporteur que je puisse le contacter\r\nJe vous remercie d'avance\r\nCordialement\r\nMme Crespin Fabienne\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-22T12:15:11Z",
+  "updated_at": "2025-12-31T10:58:51Z",
+  "requester_id": 158008304517,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014881391,
+      "body_text": "Hi Fabienne Crespin,  JSELH0897066355YQ Hello, this is the logistics information, please check.",
+      "user_id": 158007774669,
+      "created_at": "2025-12-22T13:08:02Z",
+      "updated_at": "2025-12-22T13:08:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014881481,
+      "body_text": "Hi Fabienne Crespin, Since you're not home today, they will resend it to you tomorrow.",
+      "user_id": 158007774669,
+      "created_at": "2025-12-22T13:09:48Z",
+      "updated_at": "2025-12-22T13:09:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014902482,
+      "body_text": "Ça, je l'ai vu aussi mais depuis, je n'ai pas de nouvelles et aucune\r\ninformation pour contacter le livreur.\r\nPouvez-vous me donner les mails ou numéro de téléphone pour les contacter.\r\nMerci\r\n\r\nLe lun. 22 déc. 2025, 14:08, service@simsonn.com ",
+      "user_id": 158008304517,
+      "created_at": "2025-12-22T16:54:46Z",
+      "updated_at": "2025-12-22T16:54:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014948021,
+      "body_text": "Hi Fabienne Crespin,    We will contact the shipping company today to check the status. Please see the tracking screenshot below for your reference.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-23T00:08:29Z",
+      "updated_at": "2025-12-23T00:08:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015099633,
+      "body_text": "Bonjour\r\n\r\nMa commande est arrivée.\r\nJe vous remercie d'avoir pris mes demande en considération.\r\nCordialement\r\nMme Crespin Fabienne\r\n\r\nLe mar. 23 déc. 2025, 01:08, service@simsonn.com ",
+      "user_id": 158008304517,
+      "created_at": "2025-12-26T13:55:19Z",
+      "updated_at": "2025-12-26T13:55:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

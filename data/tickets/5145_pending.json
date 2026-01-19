@@ -1,0 +1,44 @@
+{
+  "id": 5145,
+  "subject": "Question about customs fees",
+  "description_text": "Hello, I'm planning to buy the Simsonn Plus X P2-H2. They cost  $169.00 and\r\nthe shipping cost for my location in France is $9.90. That brings the total\r\nto $178.90 or 154.11€.\r\nIf I understand correctly what is said in your help section, for an order\r\nvalue less than 150€ shipped in the EU, there is no additional customs\r\nfees.\r\nAs such, do you think it would be possible to get a 5% discount code, or\r\none that brings the order value just below 150€ to avoid potential\r\nadditional fees?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-21T17:15:53Z",
+  "updated_at": "2025-10-22T06:02:48Z",
+  "requester_id": 158005940622,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010837330,
+      "body_text": "Hi clem04,    Please rest assured, we shall dispatch your order from our German warehouse, and no taxes will be incurred. Additionally, the two-piece black pedal set is currently out of stock at our German warehouse and will only be available for dispatch by the end of the month. You may wish to consider the silver or black three-piece pedal set instead.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-21T22:57:39Z",
+      "updated_at": "2025-10-21T22:57:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010837388,
+      "body_text": "Thanks for your reply. Is the two piece silver pedal set also out of stock ?\r\n\r\nOn Wed, 22 Oct 2025 at 00:57, support@simsonn.com ",
+      "user_id": 158005940622,
+      "created_at": "2025-10-21T23:00:10Z",
+      "updated_at": "2025-10-21T23:00:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010853606,
+      "body_text": "The silver version is in stock at our German warehouse.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-22T06:02:48Z",
+      "updated_at": "2025-10-22T06:02:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

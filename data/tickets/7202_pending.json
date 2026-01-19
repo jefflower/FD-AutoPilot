@@ -1,0 +1,64 @@
+{
+  "id": 7202,
+  "subject": "Issue with VAM PRO",
+  "description_text": "Hello,\r\n\r\nI am contacting you regarding a recurring issue with my Simsonn VAM PRO units. The haptic feedback works, but an abnormal behavior occurs consistently: when an impact or a kerb triggers the vibration, the vibration does not stop once the effect is over. Instead of shutting off immediately, it remains active indefinitely until another impact happens, which then abruptly cancels the previous vibration.\r\n\r\nThe vibration continues at the exact same intensity, with no decay, as if the module stays stuck in the “ON” state. I am using SimHub to manage the effects, and even when the settings are configured to send short pulses, the outcome remains the same. It also seems impossible to adjust the vibration strength: it is either very strong or completely off, with no intermediate levels.\r\n\r\nAfter multiple checks, everything suggests that the device maintains an active state instead of performing a momentary pulse, which does not match the expected behavior for this type of effect. Before going further, I would like to know whether this is normal for the VAM PRO or if it indicates a hardware or firmware malfunction.\r\n\r\nCould you please let me know if this issue is known, whether a software/firmware fix exists, or if the unit needs to be inspected or replaced?\r\n\r\nFor your information, I’m using it with Simsonn Pro X pedals (throttle & brake), with the Pro X control board.\r\n\r\n\r\n\r\nThank you in advance for your assistance.\r\n\r\nKind regards,\r\n\r\n\r\n\r\nVincent GALARD\r\nvincent@galard.fr\r\n+33 6 75 20 52 92\r\n\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-01T22:07:41Z",
+  "updated_at": "2025-12-31T06:55:42Z",
+  "requester_id": 158007487038,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013375138,
+      "body_text": "Hi Vincent Galard,  Please first make sure your SIMSONN Manager software is version 2.1.2, with firmware versions CPU1: 2.0.5 and CPU2: 2.0.4. When connecting to your PC, use the blue USB 3.0 port on the back and avoid using any USB hubs.  If disconnection issues still occur, it may indicate that your PC is not properly grounded, possibly due to not using a three-prong plug in a grounded wall outlet. You can try the following solutions:  * Connect the PC case to the support frame. * Connect the metal screws of the control box to the pedals (note that black paint or metal oxidation may affect grounding).  This setup usually resolves disconnection problems.     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T07:28:22Z",
+      "updated_at": "2025-12-04T07:28:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013384931,
+      "body_text": "Hello,\r\n\r\nThank you for your reply. I have reviewed your recommendations regarding software version, firmware version, USB connection and grounding. However, I would like to clarify that my issue is not related to disconnections.\r\n\r\nThe problem is specifically with the haptic vibration behavior of the VAM PRO modules. After a vibration is triggered (for example when going over a kerb), the vibration does not stop once the effect is finished. Instead, it stays active indefinitely and only stops when a new impact occurs. This happens even when using SimHub with short pulse settings, and the intensity cannot be modulated (only full strength or off).\r\n\r\nThere are no disconnections, no USB drops, and the device remains detected at all times. The issue is purely that the vibration output remains stuck in the ON state.\r\n\r\nCould you please provide support specifically for this behavior?\r\nIs this an expected limitation of the VAM PRO, or does it indicate a hardware or firmware malfunction?\r\n\r\nThank you for your assistance, and I look forward to your clarification.\r\n\r\nKind regards,\r\nVincent Galard\r\n\r\n\r\n> Le 4 déc. 2025 à 08:28, service@simsonn.com a écrit :\r\n> \r\n> Hi Vincent Galard,\r\n> \r\n> Please first make sure your SIMSONN Manager software is version 2.1.2, with firmware versions CPU1: 2.0.5 and CPU2: 2.0.4.\r\n> When connecting to your PC, use the blue USB 3.0 port on the back and avoid using any USB hubs.\r\n> \r\n> If disconnection issues still occur, it may indicate that your PC is not properly grounded, possibly due to not using a three-prong plug in a grounded wall outlet. You can try the following solutions:\r\n> \r\n> * Connect the PC case to the support frame.\r\n> * Connect the metal screws of the control box to the pedals (note that black paint or metal oxidation may affect grounding).\r\n> \r\n> This setup usually resolves disconnection problems.\r\n> \r\n> https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting\r\n> https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding\r\n> \r\n> \r\n> \r\n> ",
+      "user_id": 158007487038,
+      "created_at": "2025-12-04T10:40:01Z",
+      "updated_at": "2025-12-04T10:40:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013771687,
+      "body_text": "Hi Vincent Galard,  Which game are you using? I will have our software engineer test this bug and work on fixing it. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-06T05:52:41Z",
+      "updated_at": "2025-12-06T05:52:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014505011,
+      "body_text": "Hi, \r\n\r\nI’m on Iracing.\r\n\r\nThanks you\r\n\r\n\r\n> Le 6 déc. 2025 à 06:52, service@simsonn.com a écrit :\r\n> \r\n> Hi Vincent Galard,\r\n> \r\n> Which game are you using? I will have our software engineer test this bug and work on fixing it. \r\n> \r\n> \r\n> ",
+      "user_id": 158007487038,
+      "created_at": "2025-12-15T10:36:21Z",
+      "updated_at": "2025-12-15T10:36:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015297582,
+      "body_text": "Hi Vincent Galard,     Please compress the entire SimHub log directory into a ZIP file and send it to me. I will help analyze the SimHub logs. Kindly share the file via Google Drive and set the access permission to “View only.” ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T06:55:41Z",
+      "updated_at": "2025-12-31T06:55:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

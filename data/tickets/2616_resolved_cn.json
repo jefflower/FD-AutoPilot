@@ -1,0 +1,75 @@
+{
+  "id": 2616,
+  "subject": "Handbrake Pro 连接问题",
+  "description_text": "Pro Handbrake 在电脑上显示已连接，但在 Simsonn 管理器上未显示，之前一直正常工作。我尝试卸载所有驱动程序但没有成功，是否可以对该设备进行出厂重置？即使在删除并重新安装驱动程序后，LED 灯仍然不亮，这正是我在无法通过 Simsonn 管理器进行调整之前设置的状态。\n\n通过 iOS 版 Outlook 获取<https://aka.ms/o0ukef>",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-08-13T02:29:53Z",
+  "updated_at": "2025-08-13T04:03:28Z",
+  "requester_id": 158002207210,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006782962,
+      "body_text": "您好 Scott Krause，如果问题仍然存在，我们建议安装 ToDesk（无需注册）。只需提供您的 ID 和临时访问码，我们就可以安排时间远程协助您。\nhttps://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-08-13T03:12:27Z",
+      "updated_at": "2025-08-13T03:12:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006783073,
+      "body_text": "如果您有时间，我会在电脑旁，否则我很乐意安排时间。\n\n通过 iOS 版 Outlook 获取<https://aka.ms/o0ukef>",
+      "user_id": 158002207210,
+      "created_at": "2025-08-13T03:19:30Z",
+      "updated_at": "2025-08-13T03:19:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006783114,
+      "body_text": "您好 Scott Krause，您的当前软件版本太旧，我无法连接。请下载并安装最新版本，然后重试。\nhttps://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-08-13T03:22:50Z",
+      "updated_at": "2025-08-13T03:22:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006783167,
+      "body_text": "\n通过 iOS 版 Outlook 获取<https://aka.ms/o0ukef>",
+      "user_id": 158002207210,
+      "created_at": "2025-08-13T03:27:43Z",
+      "updated_at": "2025-08-13T03:27:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006783184,
+      "body_text": "已更新，我还失去了踏板连接。\n\n通过 iOS 版 Outlook 获取<https://aka.ms/o0ukef>",
+      "user_id": 158002207210,
+      "created_at": "2025-08-13T03:28:36Z",
+      "updated_at": "2025-08-13T03:28:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006783415,
+      "body_text": "正在获取订单信息。\n\n通过 iOS 版 Outlook 获取<https://aka.ms/o0ukef>",
+      "user_id": 158002207210,
+      "created_at": "2025-08-13T03:42:47Z",
+      "updated_at": "2025-08-13T03:42:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

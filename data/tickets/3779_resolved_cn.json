@@ -1,0 +1,45 @@
+{
+  "id": 3779,
+  "subject": "不存在的轴导致干扰 - Pro X 踏板",
+  "description_text": "你好，\n\n我使用 Pro-X 踏板（包括离合器）已经有一段时间了，一直遇到一个问题。\n由于尚未发布任何补丁，我想向您报告此问题。\n\n在 Windows 控制器设置和所有游戏中，都会显示一个额外的轴，但它不是静止的，而是不停地来回跳动。我附上了一张图片。\n\n问题在于，这使得我很难分配按钮和轴，因为这个轴由于持续发送信号而不断被识别。\n而且由于这个轴物理上并不存在，所以这肯定是控制器盒的软件/固件或硬件问题。\n\n软件：Simsonn Manager 2.1.0\n固件控制器盒：CPU1:v2.0.3 CPU2:v2.0.2\n\n我很想知道您是否已经意识到这个问题。\n\n此致，\nAndreas Kienle\n\n\n\n使用 DeepL.com 免费版翻译",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-09-13T07:19:02Z",
+  "updated_at": "2025-09-15T06:01:02Z",
+  "requester_id": 158004499135,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008632918,
+      "body_text": "你好 Andreaas Kienle， 首先，请卸载旧的 2.1.0 版本，然后安装 SIMSONN Manager 2.1.1。在软件中，点击“恢复”（Revert），然后点击“保存”（Save），并检查 RX 轴是否已被禁用。 如果问题仍未解决，请尝试手动更新固件：转到“设置”→“更新”→“手动固件更新”→“pedals-firmware”→“pedals-prox.sfu”。 完成更新后，请再次测试。 https://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-09-13T10:23:12Z",
+      "updated_at": "2025-09-13T10:23:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008633388,
+      "body_text": "太好了，成功了！\n\n感谢您的快速回复和帮助。\nRX 轴消失了，一切都按预期工作。\n\n在 2025年9月13日 12:23，service @simsonn.com 写道：\n> 你好 Andreaas Kienle，\n>\n> 首先，请卸载旧的 *2.1.0* 版本，然后安装 *SIMSONN Manager 2.1.1*。\n> 在软件中，点击 *恢复*（Revert），然后 *保存*（Save），并检查 *RX 轴* 是否已被禁用。\n> 如果问题仍未解决，请尝试 *手动固件更新*：\n> 转到 *设置 → 更新 → 手动固件更新 → pedals-firmware → pedals-prox.sfu*。\n> 完成更新后，请再次测试。\n>\n>\n> https://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=drive_link\n>\n>\n>     在 9月13日星期六 凌晨3:19，Andreaas Kienle <andykienle @gmx.de>\n>     写道：\n>     你好，\n>\n>     我使用 Pro-X 踏板（包括离合器）已经有一段时间了，一直遇到一个问题。\n>     由于尚未发布任何补丁，我想向您报告此问题。\n>\n>     在 Windows 控制器设置和所有游戏中，都会显示一个额外的轴，\n>     但它不是静止的，而是不停地来回跳动。我附上了一张图片。\n>\n>     问题在于，这使得我很难分配按钮和轴，因为这个轴由于\n>     持续发送信号而不断被识别。\n>     而且由于这个轴物理上并不存在，所以这肯定是\n>     控制器盒的软件/固件或硬件问题。\n>\n>     软件：Simsonn Manager 2.1.0\n>     固件控制器盒：CPU1:v2.0.3 CPU2:v2.0.2\n>\n>     我很想知道您是否已经意识到这个问题。\n>\n>     此致，\n>     Andreas Kienle\n>\n>\n>\n>     使用 DeepL.com 免费版翻译\n>\n> 3779:4206036",
+      "user_id": 158004499135,
+      "created_at": "2025-09-13T11:41:15Z",
+      "updated_at": "2025-09-13T11:41:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008721397,
+      "body_text": "",
+      "user_id": 158004499135,
+      "created_at": "2025-09-15T06:01:01Z",
+      "updated_at": "2025-09-15T06:01:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

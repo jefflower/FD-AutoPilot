@@ -1,0 +1,54 @@
+{
+  "id": 3100,
+  "subject": "Simsonn Manager not recognising pedals.",
+  "description_text": "Hello,\r\n\r\nFor some reason the simsonn manager (latest version) is not recognising the pedals. It is constantly saying disconnected despite having been using them all day. They still operate but I need to adjust some settings in the software which I am unable to do.\r\n\r\nI have reinstalled the software, unplugged and re plugged all associated plugs for the pedals and reset my PC. None of which has worked.\r\n\r\nIf you know of a solution, i'd be grateful to know!\r\n\r\nThanks.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-25T19:59:01Z",
+  "updated_at": "2025-08-29T00:56:03Z",
+  "requester_id": 158003582858,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007547566,
+      "body_text": "Hi jack unitt smith,  Could you let me know which model of pedals you are using? Please try updating the firmware first: go to Settings → Update → Manual Firmware Update → pedals → firmware → pedals, then select the corresponding .sfu file (such as plusx.sfu or proxultra.sfu). After completing the update, check again to see if the issue is resolved. If the problem persists, please download the VKB JoyTester tool from Google, check the SIMSONN device, and send me a screenshot. We will then confirm whether a key update is required. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-26T02:42:06Z",
+      "updated_at": "2025-08-26T02:42:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007555039,
+      "body_text": "I am using the Pro X pedals. I just checked the directions you gave but i am unable to manually update it. I am using version 2.1.0\r\n\r\n\r\n",
+      "user_id": 158003582858,
+      "created_at": "2025-08-26T09:43:45Z",
+      "updated_at": "2025-08-26T09:43:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007590377,
+      "body_text": "Hi jack unitt smith,  Please press the upgrade button on the control box and then reinsert the USB. The software will enter recovery mode, and you can then follow the previous steps to select the prox.sfu file to update the firmware. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-27T03:15:58Z",
+      "updated_at": "2025-08-27T03:15:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007618231,
+      "body_text": "Thank you, that worked.\r\n\r\nI do believe it’d still be worth looking into having the firmware implemented in all latest updates as i am now being told my software has an update available but i will not do it so the issue doesn’t crop back up. Thanks for your help\r\n\r\n",
+      "user_id": 158003582858,
+      "created_at": "2025-08-27T10:09:00Z",
+      "updated_at": "2025-08-27T10:09:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

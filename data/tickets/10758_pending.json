@@ -1,0 +1,64 @@
+{
+  "id": 10758,
+  "subject": "Inquiry regarding Order #SSN4832- Shipping Status",
+  "description_text": "> Hello,\r\n\r\nI placed an order (Order #SSN4832) and the tracking number\r\n(YT2600800704718413) was generated on Jan 8th. However, it has been stuck\r\nat \"Shipment information received\" for 5 days, and the weight is showing as\r\n0.01kg.\r\n\r\nHas the package actually been handed over to YunExpress? Please provide the\r\nexact shipping status. If it hasn't been shipped yet, I would like to know\r\nthe reason for the delay.\r\n\r\nLooking forward to your prompt reply.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-13T07:33:11Z",
+  "updated_at": "2026-01-17T03:53:42Z",
+  "requester_id": 158008330118,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017080118,
+      "body_text": "Hi YOUNG HUN KWON,    I apologize for the delayed response. Here is your shipping tracking link. This product has been out of stock for nearly two weeks—it's simply too popular. We'll ship it out to you within the next couple of days. We sincerely apologize for the inconvenience caused.  https://t.17track.net/en#nums=YT2600800704718413",
+      "user_id": 158001343601,
+      "created_at": "2026-01-14T07:46:24Z",
+      "updated_at": "2026-01-14T07:46:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017310810,
+      "body_text": "We apologize for the inconvenience. The logistics provider has reported a customs clearance failure. Please verify your information.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T02:51:50Z",
+      "updated_at": "2026-01-17T02:51:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017310880,
+      "body_text": "Hi YOUNG HUN KWON,     The logistics provider appears to have updated your information. We have re-updated it and hope everything goes smoothly.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T02:55:20Z",
+      "updated_at": "2026-01-17T02:55:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017311533,
+      "body_text": "Hello, this is Order SSN4832.\r\n\r\nMy PCCC(Personal Customs Clearance Code) is P160019891061\r\n\r\nProvinced And States - 서울특별시 ->Seoul\r\nCity - 영등포구 -> Yeongdeungpo-Gu\r\n\r\nSee Image for more information\r\n\r\n2026년 1월 17일 (토) AM 11:55, support@simsonn.com ",
+      "user_id": 158008330118,
+      "created_at": "2026-01-17T03:40:59Z",
+      "updated_at": "2026-01-17T03:40:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017311708,
+      "body_text": "Hi YOUNG HUN KWON,      Alright, thank you for your prompt reply.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T03:53:41Z",
+      "updated_at": "2026-01-17T03:53:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

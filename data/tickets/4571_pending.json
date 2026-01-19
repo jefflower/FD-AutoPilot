@@ -1,0 +1,154 @@
+{
+  "id": 4571,
+  "subject": "Purchasing 5 sets of Simsonn Plus X Racing Simulation Pedal",
+  "description_text": "Hello,\r\n\r\nI am interested in purchasing 5pc SIMSONN Pedals from your store - \r\nhttps://www.simsonn.com/\r\n\r\nAs far as I can see I cannot change the currency to Euro for a purchase \r\nto Bulgaria?\r\n\r\nWhere do you ship from for Bulgaria?\r\n\r\nBefore I place my order, can you confirm if you can provide a commercial \r\nVAT invoice after purchase?\r\n\r\nI need this invoice for business purposes and VAT refund in Bulgaria.\r\n\r\nThe invoice should include:\r\n- Your company details (name, address, German VAT number)\r\n- My company details\r\n- Product description and price\r\n- VAT amount shown separately\r\n- Proper invoice number and date\r\n\r\nCan you issue such invoices for your customers? Can you share with me an \r\nexample of such an invoice so I can ask my accountant if it is good?\r\n\r\nThank you for your confirmation.\r\n\r\nBest regards,\r\n\r\n-- \r\n\r\nИван Марков\r\n\r\nУправител на ApexVR\r\n\r\nТелефон: +359888562731 <tel:+359888562731>\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-10-08T06:35:26Z",
+  "updated_at": "2025-10-11T09:16:29Z",
+  "requester_id": 158005505083,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010125328,
+      "body_text": "Hello, we currently do not accept payments in euros, but you should be able to make payments in euros. The system will convert the amount to USD based on the exchange rate. We will provide the corresponding order invoice, and we will ship from our German warehouse to Bulgaria.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-09T02:21:37Z",
+      "updated_at": "2025-10-09T02:21:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010132619,
+      "body_text": "Hello,\r\n\r\nThank you for the response. Do you offer a discount for businesses for a \r\nbundle purchase? We are in phase one of our sim club and we are going to \r\nneed 5 sets of black pedals + 5 sets of VAM rumble motors. Also can you \r\nplease send me an example of how your order invoice will look like \r\nbecause I need to verify with my accountant that it is going to work for \r\na VAT return in Bulgaria. Or maybe some pro-form invoice.\r\n\r\nBest regards,\r\nIvan Markov\r\n\r\n\r\n",
+      "user_id": 158005505083,
+      "created_at": "2025-10-09T06:11:20Z",
+      "updated_at": "2025-10-09T06:11:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010140906,
+      "body_text": "Hi Иван Марков,    You may refer to this invoice. If there are any other requirements, we can add them for you.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-09T09:36:34Z",
+      "updated_at": "2025-10-09T09:36:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010141549,
+      "body_text": "Hello,\r\n\r\nThank you, I've passed the invoice to my accountant. I saw that you are \r\noffering discount codes in your website. Can you offer some discount \r\ncode for a bundle purchases?\r\n\r\nBest regards,\r\nIvan Markov\r\n\r\n",
+      "user_id": 158005505083,
+      "created_at": "2025-10-09T10:08:33Z",
+      "updated_at": "2025-10-09T10:08:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010141711,
+      "body_text": "Of course, you can use this 10% discount code: CART10",
+      "user_id": 158001343601,
+      "created_at": "2025-10-09T10:17:57Z",
+      "updated_at": "2025-10-09T10:17:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010142331,
+      "body_text": "Hello,\r\n\r\nI showed the invoice to my accountant but he told me to ask you:\r\n\r\n\"Do you have valid EU VAT Number ? If you have, please provide. I see on \r\ninvoices Chinese supplier. Why you want to charge me VAT?\"\r\n\r\nBest regards,\r\nIvan Markov\r\n\r\n",
+      "user_id": 158005505083,
+      "created_at": "2025-10-09T10:49:19Z",
+      "updated_at": "2025-10-09T10:49:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010142579,
+      "body_text": "Hello, this is our German VAT number: 368879693  For orders exceeding 150 euros, we do not charge taxes upfront. These are typically collected by customs along with any applicable duties. However, since we ship from Germany, no customs duties or VAT charges apply.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-09T11:01:26Z",
+      "updated_at": "2025-10-09T11:01:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010150529,
+      "body_text": "Hello,\r\n\r\nWere you able to provide me with an invoice with your German VAT number \r\nfor my accounting purpose once I create the order? I will provide you \r\nhere with my company details.\r\nAlso I guess there won't be any VAT added in the invoice.\r\n\r\nBest regards,\r\nIvan Markov\r\n\r\n",
+      "user_id": 158005505083,
+      "created_at": "2025-10-09T12:44:41Z",
+      "updated_at": "2025-10-09T12:44:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010163718,
+      "body_text": "Hello,\r\n\r\nI'm about to create the order but I need to know that you can send me \r\ninvoice coming from your German VAT number for my accounting purposes.\r\n\r\nBest regards,\r\nIvan Markov\r\n\r\n",
+      "user_id": 158005505083,
+      "created_at": "2025-10-09T16:06:11Z",
+      "updated_at": "2025-10-09T16:06:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010198032,
+      "body_text": "Hi Иван Марков,    We apologize for the delayed response.  Our pricing does not include VAT, so we are unable to issue invoices with a German VAT number.     However, if you require an invoice, we can charge you 19% VAT at checkout and provide a legally compliant invoice containing full order details (including product names, quantities, and total amount) for your records.     Thank you for your understanding.     Sincerely,  The Simsonn Team",
+      "user_id": 158001343601,
+      "created_at": "2025-10-10T08:03:38Z",
+      "updated_at": "2025-10-10T08:03:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010205968,
+      "body_text": "Thank you for the clarification.\r\n\r\nThis is a B2B intra‑EU supply of goods from Germany to Bulgaria. As an \r\nEU VAT‑registered business customer, we provide our valid Bulgarian VAT \r\nID (BG208480539). Under EU VAT rules and German UStG, such cross‑border \r\nB2B supplies are invoiced without German VAT and subject to reverse \r\ncharge in the Member State of destination.\r\n\r\nPlease issue a net invoice without VAT, including:\r\n\r\nYour German VAT ID and our Bulgarian VAT ID\r\n\r\nA reverse charge note, e.g. “Steuerschuldnerschaft des \r\nLeistungsempfängers (§13b UStG)﻿\r\n” or “Reverse charge – intra‑Community supply (Article 138 VAT Directive)”\r\n\r\nAll mandatory invoice items (supplier and customer name/address, invoice \r\nnumber, date, description, quantities, net amounts)\r\n\r\nWe will account for VAT in Bulgaria as an intra‑Community acquisition.\r\n\r\nIf needed, please consult your tax advisor: for cross‑border B2B \r\nsupplies within the EU, VAT is not charged by the supplier in Germany; \r\nthe tax liability shifts to the customer (Section 13b UStG / Article 196 \r\nVAT Directive).\r\n\r\nOur company details for the invoice are:\r\n\r\nCompany name: ApexVR\r\n\r\nAddress: Bulgaria, Sofia, ul. Osogovo 50, fl. 6, ap. 21, zipcode: 1309…\r\n\r\nVAT ID: BG208480539…\r\n\r\nDelivery address in Bulgaria: Bulgaria, Sofia, ul. Osogovo 50, fl. 6, \r\nap. 21…\r\n\r\nPlease confirm you can issue the invoice accordingly.\r\n\r\n",
+      "user_id": 158005505083,
+      "created_at": "2025-10-10T10:52:31Z",
+      "updated_at": "2025-10-10T10:52:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010240852,
+      "body_text": "Hi Иван Марков,    No problem, you may proceed with your purchase with confidence. We will issue a reverse charge invoice for you.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-11T02:16:55Z",
+      "updated_at": "2025-10-11T02:16:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010257602,
+      "body_text": "Hello,\r\n\r\nWe've made the order. Order #SSN2921\r\nPlease issue the reverse charge invoice.\r\nCompany name: ApexVR\r\n\r\nAddress: Bulgaria, Sofia, ul. Osogovo 50, fl. 6, ap. 21, zipcode: 1309\r\n\r\nVAT ID: BG208480539\r\n\r\nBest regards,\r\nIvan Markov\r\n\r\n",
+      "user_id": 158005505083,
+      "created_at": "2025-10-11T09:02:05Z",
+      "updated_at": "2025-10-11T09:02:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010259140,
+      "body_text": "Hello, here is the invoice you requested. Thank you for your purchase.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-11T09:14:23Z",
+      "updated_at": "2025-10-11T09:14:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

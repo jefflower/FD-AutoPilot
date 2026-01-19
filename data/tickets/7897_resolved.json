@@ -1,0 +1,44 @@
+{
+  "id": 7897,
+  "subject": "Problème pit house",
+  "description_text": "Bonjour je vous envoie ce message car je rencontre un petit désagrément sur\r\nle pit house.\r\nje lance le pc puis le jeu LMU mais je suis obligé de lancer le pit house\r\nsimsson et de rechargé le réglage pour qu'il soit opérationnel alors\r\nqu'avant je n'avais pas besoin de le faire.\r\n\r\nCordialement Mr forestier David\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-10T13:53:58Z",
+  "updated_at": "2025-12-17T04:18:19Z",
+  "requester_id": 158004246291,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014302548,
+      "body_text": "Hi David Forestier,    Please follow the steps below:    Press and hold the upgrade button on the PlusX main controller, then reconnect the USB cable.    Open SIMSONN Manager 2.1.0 and check if it has entered recovery mode.    If recovery mode is detected, go to Settings → Update → Manual Update Firmware → pedals → firmware → pedals-plusx.sfu.    After the update is complete, test the device to see if it has been restored successfully.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T07:02:45Z",
+      "updated_at": "2025-12-11T07:02:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014508689,
+      "body_text": "Bonjour je vous fais un retour donc j'ai bien fait la manipulation que vous\r\nm'aviez envoyé et cela résolu mon problème.\r\nMerci encore pour votre rapidité et simplicité des explications.\r\n\r\nBon courage a toutes l'équipe et surtout passé de bonnes fêtes de fin\r\nd'année\r\n\r\nCordialement Mr forestier David\r\n\r\nLe jeu. 11 déc. 2025, 08:02, service@simsonn.com ",
+      "user_id": 158004246291,
+      "created_at": "2025-12-15T12:28:51Z",
+      "updated_at": "2025-12-15T12:28:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014612450,
+      "body_text": "",
+      "user_id": 158004246291,
+      "created_at": "2025-12-17T04:18:19Z",
+      "updated_at": "2025-12-17T04:18:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ]
+}

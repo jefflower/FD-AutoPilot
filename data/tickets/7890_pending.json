@@ -1,0 +1,24 @@
+{
+  "id": 7890,
+  "subject": "Import & customs",
+  "description_text": "Good afternoon,\r\n\r\nI hope you are well.\r\n\r\nI am interested in the plus x pedals but I am concerned about import and customs charges.\r\n\r\nI note at checkout it says taxes included but just wanted to check as I am based in the uk, can you advise if these would still be applicable?\r\n\r\nKind regards,\r\n\r\nSent from my iPhone\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-10T12:30:33Z",
+  "updated_at": "2025-12-23T11:44:58Z",
+  "requester_id": 158007740391,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014972632,
+      "body_text": "Hi Jordan Butler,       I apologize for not getting back to you sooner. There will be no customs duties on shipments to the UK, so please don't worry.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-23T11:44:58Z",
+      "updated_at": "2025-12-23T11:44:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

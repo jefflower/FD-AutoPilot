@@ -1,0 +1,24 @@
+{
+  "id": 9992,
+  "subject": "Order cannot be tracked, and is very late",
+  "description_text": "Hi, I placed an order: # SSN5163 and purchased express shipping which\r\nshould have been 3-7 days. I have been unable to track this order, and it\r\nhas been two weeks since I placed it. I get this message from the tracking\r\nsite:\r\n\r\nThe following waybills have not been collected or have been shipped for\r\nmore than 3 months: SF6047195599460\r\n\r\nI would like to know where my order is, thanks for any help you can provide.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-05T12:28:25Z",
+  "updated_at": "2026-01-08T11:11:03Z",
+  "requester_id": 158008934341,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016087203,
+      "body_text": "Hi Chad Cartier,     We sincerely apologize for the shipping error earlier. Here is the latest tracking information for your reference. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T07:53:30Z",
+      "updated_at": "2026-01-07T07:53:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "id": 8602,
+  "subject": "Shipping taking to long to arrive",
+  "description_text": "Hi, I just ordered a Simsonn plus X pedals back in November and they\r\nhaven't arrived yet, and don't know anything about it just that they\r\narrived to Spain and that's it, so I just wanna know if you can tell me if\r\nthere's is anything wrong with it\r\n\r\nOrder #SSN3635\r\n\r\nMy tracking number: JSEKP2815941120YQ\r\n\r\nThanks you!\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-18T14:06:06Z",
+  "updated_at": "2025-12-23T03:04:48Z",
+  "requester_id": 158007861107,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014878526,
+      "body_text": "Hi Manro45GT,  The package of JSEKP2815941120YQ was returned to us. We reship it from our German warehouse this week.",
+      "user_id": 158007774607,
+      "created_at": "2025-12-22T12:13:07Z",
+      "updated_at": "2025-12-22T12:13:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014880922,
+      "body_text": "Oh I see, then what do I do? My money is going to be refund? Or can I do\r\nanything to get my pedals?\r\n\r\n",
+      "user_id": 158007861107,
+      "created_at": "2025-12-22T12:58:48Z",
+      "updated_at": "2025-12-22T12:58:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014883877,
+      "body_text": "Oh I see, so if everything goes ok it will arrive soon?\r\n\r\n\r\nEl lun, 22 dic 2025 a las 13:13, service@simsonn.com (",
+      "user_id": 158007861107,
+      "created_at": "2025-12-22T13:58:57Z",
+      "updated_at": "2025-12-22T13:58:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014952362,
+      "body_text": "Hi Manro45GT,    Yes, the goods have arrived at the warehouse today. We are currently arranging for them to be shelved and shipped via DHL Express. We will update you with the tracking number today.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-23T03:04:48Z",
+      "updated_at": "2025-12-23T03:04:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

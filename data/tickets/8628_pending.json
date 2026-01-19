@@ -1,0 +1,84 @@
+{
+  "id": 8628,
+  "subject": "Hey Order Nr #SSN4744",
+  "description_text": "Hey I already sent 2 emails and no one have said nothing 1 week ago \r\nPls I need to cancel this order I cant take it For now it was a mistake from My part pls can you guys answer me PLS im asking \r\nEnviado do meu iPhone\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-18T18:03:23Z",
+  "updated_at": "2025-12-31T12:00:28Z",
+  "requester_id": 158007782504,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014879454,
+      "body_text": "在未发货，要取消",
+      "user_id": 158007774607,
+      "created_at": "2025-12-22T12:25:51Z",
+      "updated_at": "2025-12-22T12:25:51Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014951739,
+      "body_text": "Hi Andr? Nunes,    We apologize for not responding to you promptly. We will cancel your order. Could you please tell us the reason? It's important for us, thank you!",
+      "user_id": 158001343601,
+      "created_at": "2025-12-23T02:32:33Z",
+      "updated_at": "2025-12-23T02:32:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014965771,
+      "body_text": "Its just the moment is not the rigth nothing abouth you its something person im sorry for that\r\nEnviado do meu iPhone\r\n\r\nNo dia 23/12/2025, às 02:32, service@simsonn.com escreveu:\r\n\r\n﻿\r\nHi Andr? Nunes,\r\n\r\nWe apologize for not responding to you promptly. We will cancel your order. Could you please tell us the reason? It's important for us, thank you!\r\n\r\n\r\n\r\n",
+      "user_id": 158007782504,
+      "created_at": "2025-12-23T10:07:29Z",
+      "updated_at": "2025-12-23T10:07:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015030962,
+      "body_text": "Hi Andr? Nunes,    We're sorry to hear that. We'll cancel it for you.  Merry Christmas!",
+      "user_id": 158001343601,
+      "created_at": "2025-12-24T11:04:12Z",
+      "updated_at": "2025-12-24T11:04:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015031546,
+      "body_text": "Thank you and sorry ??\r\nEnviado do meu iPhone\r\n\r\nNo dia 24/12/2025, às 11:04, service@simsonn.com escreveu:\r\n\r\n﻿\r\nHi Andr? Nunes,\r\n\r\nWe're sorry to hear that. We'll cancel it for you.\r\nMerry Christmas!\r\n\r\n\r\n\r\n",
+      "user_id": 158007782504,
+      "created_at": "2025-12-24T11:35:29Z",
+      "updated_at": "2025-12-24T11:35:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015310338,
+      "body_text": "Hey can I Ask something i think we can continue with the order im sorry about that of it possível to continue with the order, if the order is not cancel we can continue with it, i have resolve the problem and now if is possível we can continue the order im sorry about that\r\nEnviado do meu iPhone\r\n\r\nNo dia 24/12/2025, às 11:35, André Nunes <andreferreira1@live.com.pt> escreveu:\r\n\r\n﻿ Thank you and sorry ??\r\nEnviado do meu iPhone\r\n\r\nNo dia 24/12/2025, às 11:04, service@simsonn.com escreveu:\r\n\r\n﻿\r\nHi Andr? Nunes,\r\n\r\nWe're sorry to hear that. We'll cancel it for you.\r\nMerry Christmas!\r\n\r\n\r\n\r\n",
+      "user_id": 158007782504,
+      "created_at": "2025-12-31T11:33:29Z",
+      "updated_at": "2025-12-31T11:33:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015310752,
+      "body_text": "Hi Andr? Nunes,    Alright, we'll proceed with your order.  Happy New Year!",
+      "user_id": 158001343601,
+      "created_at": "2025-12-31T12:00:19Z",
+      "updated_at": "2025-12-31T12:00:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

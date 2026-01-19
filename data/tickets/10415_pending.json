@@ -1,0 +1,74 @@
+{
+  "id": 10415,
+  "subject": "Anfrage Bestellung",
+  "description_text": "Hallo, ich wollte mal fragen da ich Express versandt genommen habe wann das\r\nPaket versendet wird.\r\n\r\nBestellnummer:\r\nSSN5882\r\n\r\nLiebe Grüße Zocher\r\n\r\nVon Gmail Mobile gesendet\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-09T12:39:53Z",
+  "updated_at": "2026-01-15T08:24:31Z",
+  "requester_id": 158009000699,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016926160,
+      "body_text": "Hi Fluffybeard,    We apologize for the delay. Two shipments have been impacted by heavy snowfall in Europe, with road blockages causing delivery delays to our warehouse. We will expedite delivery to the warehouse as soon as possible or explore alternative logistics channels to ship your goods from China.  We will compensate you based on the delay after your order is completed. We apologize for the inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-13T03:03:19Z",
+      "updated_at": "2026-01-13T03:03:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016942543,
+      "body_text": "Hello thanks for the answer, but some information might have been good. I\r\nwould take some Haptic, no fun, but you don't pay for otherwise express\r\nthat it's there quickly.\r\n\r\nAmong other things, I also possibly a partner who accompanies my path as a\r\nSimracer rookie to the experienced driver. Maybe you are interested :)\r\n\r\n\r\nVon Gmail Mobile gesendet\r\n\r\n\r\nservice@simsonn.com ",
+      "user_id": 158009000699,
+      "created_at": "2026-01-13T07:10:51Z",
+      "updated_at": "2026-01-13T07:10:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017110851,
+      "body_text": "It's almost when I write the next day Thursday that means 6 days are over,\r\nyou get no information, you write to the service and even there you wait\r\nlonger than 24 hours. What kind of service is this? According to the order\r\nit was said the delivery is within 3-7 delivery. How do you want to meet me\r\nnow? I'm really angry. Money has been deducted, the main thing is that the\r\nmoney is there.\r\n\r\n\r\nGreat Day ??\r\n\r\nVon Gmail Mobile gesendet\r\n\r\n\r\nFluffybeard <johannes.zocher93@googlemail.com> schrieb am Di. 13. Jan. 2026\r\num 08:10:\r\n\r\n> Hello thanks for the answer, but some information might have been good. I\r\n> would take some Haptic, no fun, but you don't pay for otherwise express\r\n> that it's there quickly.\r\n>\r\n> Among other things, I also possibly a partner who accompanies my path as a\r\n> Simracer rookie to the experienced driver. Maybe you are interested :)\r\n>\r\n>\r\n> Von Gmail Mobile gesendet\r\n>\r\n>\r\n> service@simsonn.com ",
+      "user_id": 158009000699,
+      "created_at": "2026-01-14T15:06:57Z",
+      "updated_at": "2026-01-14T15:06:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017158733,
+      "body_text": "Hi Fluffybeard,    We apologize for the inconvenience. We will ship your order from China in two separate packages and cover all associated taxes and fees.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T02:56:01Z",
+      "updated_at": "2026-01-15T02:56:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017170377,
+      "body_text": "Eine Information von der Sendungsnummer wäre Hilfreich man bekommt keine\r\nInformationen hier.\r\n\r\nVon Gmail Mobile gesendet\r\n\r\n\r\nservice@simsonn.com ",
+      "user_id": 158009000699,
+      "created_at": "2026-01-15T08:11:14Z",
+      "updated_at": "2026-01-15T08:11:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017170921,
+      "body_text": "Hi Fluffybeard,    Okay, here's your shipping tracking link.  https://t.17track.net/en#nums=SF6047243500960,SF6047243500997",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T08:24:31Z",
+      "updated_at": "2026-01-15T08:24:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

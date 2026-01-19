@@ -1,0 +1,24 @@
+{
+  "id": 1121,
+  "subject": "Pedal connection to games",
+  "description_text": "Hello!\r\n\r\nJust bought a Simsonn Plus X pedals but when starting a game like Le Mans\r\nUltimate or Assetto Corsa Competizione, the pedals are not detected.\r\n\r\nIn the Simsonn Manager 2.0.8, the pedals are detected and when i press the\r\nbrake/throttle it works completely normally. But if i start a game, there\r\nis no input whatsoever.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-02T17:06:34Z",
+  "updated_at": "2025-07-04T23:33:22Z",
+  "requester_id": 158001875753,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004447026,
+      "body_text": "Hi Emil Erngård,  Has your pedal been successfully calibrated? You need to complete the calibration in SIMSONN Manager first, otherwise the game won’t recognize it correctly. Our system fully supports both Assetto Corsa Competizione (ACC) and Le Mans Ultimate (LMU). ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-04T23:33:22Z",
+      "updated_at": "2025-07-04T23:33:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

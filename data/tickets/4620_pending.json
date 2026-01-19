@@ -1,0 +1,44 @@
+{
+  "id": 4620,
+  "subject": "Order #SSN2843 -Simsonn",
+  "description_text": "Can you please advise if this order has shipped yet?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-09T02:21:11Z",
+  "updated_at": "2025-10-21T09:52:27Z",
+  "requester_id": 158005514177,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010134575,
+      "body_text": "Hi Zach Haight,    We apologize for the delayed response; we've just returned from our 8-day holiday. Your order has been shipped, and here is your tracking link:  https://www.fedex.com/wtrk/track/?trknbr=885031741640",
+      "user_id": 158001343601,
+      "created_at": "2025-10-09T08:33:15Z",
+      "updated_at": "2025-10-09T08:33:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010735826,
+      "body_text": "I have not received my motors yet at this point - when should i expect them?\r\n\r\nOn Thu, Oct 9, 2025 at 1:33 AM service@simsonn.com ",
+      "user_id": 158005514177,
+      "created_at": "2025-10-20T12:46:49Z",
+      "updated_at": "2025-10-20T12:46:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010794920,
+      "body_text": "Hi Zach Haight,    This is your parcel tracking link. Delivery is expected around the 22nd.  https://t.17track.net/en#nums=JSEJF0989736688YQ",
+      "user_id": 158001343601,
+      "created_at": "2025-10-21T09:52:27Z",
+      "updated_at": "2025-10-21T09:52:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

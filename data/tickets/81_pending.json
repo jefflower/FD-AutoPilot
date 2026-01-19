@@ -1,0 +1,74 @@
+{
+  "id": 81,
+  "subject": "Pedals configuration",
+  "description_text": "Hi!\r\n\r\nI have already received the pedals, but the Simsonn Manager software does not recognize them. I connected the pedals to the box, and the box to the PC. When I make the connection, I hear a sound on the PC, so it recognizes that something has been connected; however, they are disconnected in the app.\r\n\r\nWhat can I do to resolve the situation?\r\n\r\n[cid:f910fe23-6eaf-4de3-9d6d-f7588c881f64]\r\n\r\nThanks,\r\nDiogo Pereira\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-06-03T23:45:47Z",
+  "updated_at": "2025-06-11T02:49:02Z",
+  "requester_id": 158000955827,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002324365,
+      "body_text": "Hi Diogo Pereira,  Please download VKB Joy Tester and check if it can detect the SIMSONN device. Kindly send me a screenshot so I can verify whether the device information is correct.      https://www.vkbcontrollers.com/pages/downloads",
+      "user_id": 158000445778,
+      "created_at": "2025-06-04T07:00:10Z",
+      "updated_at": "2025-06-04T07:00:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002363495,
+      "body_text": "Hi!\r\n\r\nVKB tester recognized the both pedals.\r\nThere is the screenshot.\r\n\r\n[cid:d4240734-84e9-405e-af97-c23ab9f6b596]\r\n\r\nThanks,\r\nDiogo Pereira\r\n________________________________\r\nDe: service@simsonn.com ",
+      "user_id": 158000955827,
+      "created_at": "2025-06-04T10:09:15Z",
+      "updated_at": "2025-06-04T10:09:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002376501,
+      "body_text": "Hi Diogo Pereira,  Hello, could you please download the Todesk remote tool? I can help you update the device certificate remotely—it will only take about 1 to 3 minutes. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-04T11:00:30Z",
+      "updated_at": "2025-06-04T11:00:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002770268,
+      "body_text": "Hi!\r\n\r\nOk, I appreciate your support!\r\nI’m out on vacations, I will only be available on the 14th.\r\n\r\nThanks,\r\nDiogo Pereira\r\n________________________________\r\nDe: service@simsonn.com ",
+      "user_id": 158000955827,
+      "created_at": "2025-06-08T12:50:54Z",
+      "updated_at": "2025-06-08T12:50:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002841214,
+      "body_text": "Hi Diogo Pereira,  May we assist you with a remote check via ToDesk? ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-09T03:03:12Z",
+      "updated_at": "2025-06-09T03:03:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002907350,
+      "body_text": "Hi，Diogo Pereira，  我们将在14日继续协助您解决此问题。对于由此造成的不便，我们深表歉意。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-11T02:49:02Z",
+      "updated_at": "2025-06-11T02:49:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

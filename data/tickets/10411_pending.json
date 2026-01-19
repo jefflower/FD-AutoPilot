@@ -1,0 +1,34 @@
+{
+  "id": 10411,
+  "subject": "Delivery status of Order #SSN5249",
+  "description_text": "Hi,\r\n\r\ncan you please provide me with delivery status of my order? According to\r\npayed shipping costs, the goods should have been here by now. I\r\nhavent received any info about the goods being shipped nor the tracking\r\nnumber.\r\n\r\nThank you\r\n\r\nRegards\r\nKudela\r\n\r\n\r\n<https://www.avast.com/sig-email?utm_medium=email&utm_source=link&utm_campaign=sig-email&utm_content=webmail>\r\nVirus-free.www.avast.com\r\n<https://www.avast.com/sig-email?utm_medium=email&utm_source=link&utm_campaign=sig-email&utm_content=webmail>\r\n<#DAB4FAD8-2DD7-40BB-A1B8-4E2AA1F9FDF2>\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-09T11:43:24Z",
+  "updated_at": "2026-01-14T08:55:12Z",
+  "requester_id": 158008950040,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017070374,
+      "body_text": "Hi,  Can you please address this ticket? I still have no info regarding delivery status and no tracking number nor any other activity was spotted about it.  Thank you  Kudela",
+      "user_id": 158008950040,
+      "created_at": "2026-01-14T05:58:41Z",
+      "updated_at": "2026-01-14T05:58:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158017084875,
+      "body_text": "Hi Jozef Kudela,    We apologize for the delay. Two shipments destined for our German warehouse have been affected by heavy snowfall in Europe, causing road blockages and delivery delays. We will expedite delivery or explore alternative logistics channels to ship your order from China as soon as possible.  Compensation will be provided based on the delay after your order is completed. We apologize for the inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-14T08:55:12Z",
+      "updated_at": "2026-01-14T08:55:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

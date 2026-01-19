@@ -1,0 +1,44 @@
+{
+  "id": 6905,
+  "subject": "Order SSN3658",
+  "description_text": "Hello Can i have an update about my order?",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-11-27T22:06:04Z",
+  "updated_at": "2025-12-11T09:10:34Z",
+  "requester_id": 158007375059,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013482116,
+      "body_text": "Hi Christos Foudoulis,    I apologize for the delayed response. The pedals are currently out of stock at our German warehouse, which caused the delay. Here is your tracking link:  https://t.17track.net/en#nums=1Z144AW70433089236",
+      "user_id": 158001343601,
+      "created_at": "2025-12-05T10:27:38Z",
+      "updated_at": "2025-12-05T10:27:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014192602,
+      "body_text": "Hello\r\n\r\nToday I received my package. Thank you for sending it with express.\r\n\r\n I have assembled the pedals but I have an issue. In the package there is 1 cable usb-c to usb-c but on the controller there is another type. Please see the photos I attached .\r\nWhat can I do in this situation?\r\n\r\n________________________________\r\n",
+      "user_id": 158007375059,
+      "created_at": "2025-12-09T14:47:40Z",
+      "updated_at": "2025-12-09T14:47:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014309657,
+      "body_text": "Hi Christos Foudoulis,  You can purchase a USB cable locally, and we will compensate you. Alternatively, you can provide your address, contact information, phone number, and order number, and we will send you the correct cable. It seems there was a packing error. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T09:10:34Z",
+      "updated_at": "2025-12-11T09:10:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

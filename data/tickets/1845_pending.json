@@ -1,0 +1,24 @@
+{
+  "id": 1845,
+  "subject": "Pro plus",
+  "description_text": "Hello I'm trying to calibrate my pro plus pedals and it's not working\r\ncorrectly. I'm pressing the throttle all the way down but it's only\r\nregistering about 40% in the simsonn app. Any ideas on how to fix this?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-23T23:25:23Z",
+  "updated_at": "2025-07-24T01:56:16Z",
+  "requester_id": 158002304476,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005487181,
+      "body_text": "Hi Alex Waldner,  This is normal; you just need to recalibrate the pedals. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-24T01:56:16Z",
+      "updated_at": "2025-07-24T01:56:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": 7356,
+  "subject": "Order delivered",
+  "description_text": "Hello,\r\n\r\nI ordered a pack of pedals with the haptic and the package is displayed in\r\nthe page that the haptic is delivered and the pedals are still in transit.\r\nHowever I didn’t received any package at all\r\n\r\nThe haptics will come with the pedals or separate ?\r\n\r\nBecause In this way, is displayed as delivered but is not.\r\n\r\nThe order number is\r\nSSN3679\r\n\r\nTracking number\r\nYT2532600706190949 <http://www.yuntrack.com/Track/Detail/YT2532600706190949>\r\n\r\n\r\nThank you for your time.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-03T18:38:35Z",
+  "updated_at": "2025-12-04T02:37:54Z",
+  "requester_id": 158007519443,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013364733,
+      "body_text": "Hi Javi M. H.,  Due to a delay in the latest restocking at our warehouse, the processing of your order has been affected. We are expediting your shipment, and we kindly ask for a bit more patience. Thank you very much for your understanding and support.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T01:52:40Z",
+      "updated_at": "2025-12-04T01:52:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013366437,
+      "body_text": "Hi Javi M. H.,    We note that your first parcel, VAM Pro, has been marked as delivered. Please check your premises and enquire with family and neighbours. The other parcel has been delayed due to stock shortages at our German warehouse. We apologise for any inconvenience caused.  https://www.yuntrack.com/parcelTracking?id=YT2532600706190949",
+      "user_id": 158001343601,
+      "created_at": "2025-12-04T02:37:54Z",
+      "updated_at": "2025-12-04T02:37:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

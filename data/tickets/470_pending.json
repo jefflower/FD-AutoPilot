@@ -1,0 +1,34 @@
+{
+  "id": 470,
+  "subject": "Upgrade question",
+  "description_text": "Purchased pedals in Sept 2024.  I see you now offer ha[tocs for the\r\npedals.  Would they work with these.  Do I need to also purchase ultra box\r\nif I buy VAM linear haptics?\r\n\r\n\r\nSIMSONN NEW PRO Pedals Sim Racing Pedals PC Racing Simulator Pressure\r\nSensor Load Cell HE Hydraulic Pedal for Pc Cockpit Pedal (SPRO-P2-H2)\r\n<https://www.amazon.com/dp/B0CNWGDP54?ref_=ppx_hzod_title_dt_b_fed_asin_title_0_0>\r\nSold by: SIMSONN\r\n<https://www.amazon.com/gp/aag/main?ie=UTF8&seller=A3UDZK29XKRJ05>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-15T17:30:54Z",
+  "updated_at": "2025-06-16T02:35:58Z",
+  "requester_id": 158001550495,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003223804,
+      "body_text": "Ps is 15% code done?  New15?\r\n\r\nOn Sun, Jun 15, 2025, 1:36 PM service@simsonn.com ",
+      "user_id": 158001550495,
+      "created_at": "2025-06-16T00:20:15Z",
+      "updated_at": "2025-06-16T00:20:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003225384,
+      "body_text": "Hi 288DJ,  Yes, you’ll need to purchase the PlusX control box, a dedicated 24V power supply, and either the VAM or VAM Pro motor, as the older versions of the control box were not designed with motor support interfaces.      https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor",
+      "user_id": 158000445778,
+      "created_at": "2025-06-16T02:35:58Z",
+      "updated_at": "2025-06-16T02:35:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

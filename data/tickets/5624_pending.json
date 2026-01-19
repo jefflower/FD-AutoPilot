@@ -1,0 +1,74 @@
+{
+  "id": 5624,
+  "subject": "Pro pedals firmware update",
+  "description_text": "Hello,\r\n\r\nI have the Simsonn Pro Pedals purchased off Aliexpress.  How do I update\r\nthe firmware on the controller box to work with the Simsonn Manager app?\r\n\r\nhttps://www.aliexpress.com/item/1005006173126690.html?spm=a2g0o.order_list.order_list_main.5.27b01802vZq9nS\r\n\r\nSIMSONN NEW PRO Pedals Sim Racing Pedals PC Racing Simulator Pressure\r\nSensor Load Cell HE Hydraulic Pedal for Pc Cockpit Pedal SPRO-P3-H3\r\n\r\nThanks,\r\n\r\nBin\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-04T13:08:29Z",
+  "updated_at": "2025-11-07T09:00:41Z",
+  "requester_id": 158006516596,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011732486,
+      "body_text": "I tried using SimPedals Config_V4 to enter flasher mode but it is telling me to use version 3.5 which does not have flasher mode.  Pedals was purchased on Mar 23, 2024.     9:10:09 AM > Incompatibe Firmware 9:10:09 AM > Please Use SimPedalsConfig V3.5  9:10:25 AM > Entered firmware recovery mode. Please do not power off or unplug the main controller during the firmware download process. 9:10:26 AM > Incompatibe Firmware 9:10:27 AM > Please Use SimPedalsConfig V3.5 9:10:27 AM > Incompatibe Firmware 9:10:27 AM > Please Use SimPedalsConfig V3.5",
+      "user_id": 158006516596,
+      "created_at": "2025-11-04T14:10:39Z",
+      "updated_at": "2025-11-04T14:10:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158011769899,
+      "body_text": "Hi Bin Ren,     If your version is 1.7.0, please use version V3.5.   https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-11-05T06:16:33Z",
+      "updated_at": "2025-11-05T06:16:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011774482,
+      "body_text": "Can the controller box be upgraded to 1.8?\r\n\r\nOn Wed, Nov 5, 2025, 1:16 a.m. service@simsonn.com ",
+      "user_id": 158006516596,
+      "created_at": "2025-11-05T06:36:57Z",
+      "updated_at": "2025-11-05T06:36:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011784248,
+      "body_text": "Hi Bin Ren,  If it’s version 1.7.0, it cannot be updated as it doesn’t include a bootloader. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-05T08:09:57Z",
+      "updated_at": "2025-11-05T08:09:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011805438,
+      "body_text": "Ok, thanks for the clarification.\r\nIs the Plus X Control Box compatible with Pro pedals?\r\n\r\nOn Wed, Nov 5, 2025 at 3:10 AM service@simsonn.com ",
+      "user_id": 158006516596,
+      "created_at": "2025-11-05T12:48:26Z",
+      "updated_at": "2025-11-05T12:48:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011914508,
+      "body_text": "Hi Bin Ren,    Yes, the Pro pedal can be used with the latest Plus X control box.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-07T09:00:40Z",
+      "updated_at": "2025-11-07T09:00:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "id": 4822,
+  "subject": "My order",
+  "description_text": "Hello,\r\n\r\nI have made an order and paid for express shipping around a week ago. The parcel tracking is showing that they have been sat in the same place for the past 5 days. \r\n\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-13T10:07:37Z",
+  "updated_at": "2025-10-17T08:16:46Z",
+  "requester_id": 158005636886,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010344472,
+      "body_text": "Hi Matthew Woodward,    We will follow up on your behalf, please don't worry.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-13T10:24:14Z",
+      "updated_at": "2025-10-13T10:24:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010346868,
+      "body_text": "Hi,\r\n\r\nOkay can you let me know an update please?\r\n\r\n\r\nOn Mon, 13 Oct 2025 at 11:24, service@simsonn.com ",
+      "user_id": 158005636886,
+      "created_at": "2025-10-13T12:51:32Z",
+      "updated_at": "2025-10-13T12:51:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010386567,
+      "body_text": "Hello, the courier service has confirmed that there are no issues with the delivery, and it is expected to arrive on the 16th.  https://t.17track.net/en#nums=SF6045960045061",
+      "user_id": 158001343601,
+      "created_at": "2025-10-14T06:26:06Z",
+      "updated_at": "2025-10-14T06:26:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010556088,
+      "body_text": "Looking at the tracking you have said my parcel is due today but it’s not\r\neven in my country as of yet.\r\n\r\nOn Tue, 14 Oct 2025 at 07:26, service@simsonn.com ",
+      "user_id": 158005636886,
+      "created_at": "2025-10-16T09:53:35Z",
+      "updated_at": "2025-10-16T09:53:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010605098,
+      "body_text": "Hi Matthew Woodward,   We sincerely apologise for the delay caused. We shall investigate the reason for the delay and refund your additional express delivery charges.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-17T08:16:45Z",
+      "updated_at": "2025-10-17T08:16:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

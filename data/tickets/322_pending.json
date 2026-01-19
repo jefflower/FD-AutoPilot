@@ -1,0 +1,84 @@
+{
+  "id": 322,
+  "subject": "#SSN1541",
+  "description_text": "Hi, I received my order last week, however the base plate was not included.\r\nI got an emails saying it was out of stock and would ship around the 10th.\r\nAs today is the 10th, I was just curious if there was any further update\r\nfor when that would ship out?\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-06-10T14:24:52Z",
+  "updated_at": "2025-06-20T10:35:54Z",
+  "requester_id": 158001381618,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002907532,
+      "body_text": "Hi，Aaron Cummings，  We’ve informed our operations team to check the status of your order and verify whether it has been shipped. If a tracking number is available, we will get back to you immediately. Please don’t worry. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-11T03:00:50Z",
+      "updated_at": "2025-06-11T03:00:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002930682,
+      "body_text": "Hi Aaron Cummings,  We are very sorry for the delay. Our shipment arrived in the US but is not yet in the warehouse. According to our logistics partner in California, USA, the explanation is that California recently broke out in unrest and is under curfew, delaying their timeframe. However, it should be in storage in the next couple of days and we will process your order as soon as it is in storage.",
+      "user_id": 158001343601,
+      "created_at": "2025-06-11T10:18:13Z",
+      "updated_at": "2025-06-11T10:18:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002930900,
+      "body_text": "Thanks for that update!\r\n\r\nOn Wed, Jun 11, 2025 at 6:18 AM support@simsonn.com ",
+      "user_id": 158001381618,
+      "created_at": "2025-06-11T10:27:54Z",
+      "updated_at": "2025-06-11T10:27:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002931000,
+      "body_text": "Hi Aaron Cummings,    Thank you for your understanding, we will take care of it for you as soon as possible!",
+      "user_id": 158001343601,
+      "created_at": "2025-06-11T10:36:52Z",
+      "updated_at": "2025-06-11T10:36:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003373526,
+      "body_text": "Hi, it’s been a week. Any updates?\r\n\r\nOn Wed, Jun 11, 2025 at 6:37 AM support@simsonn.com ",
+      "user_id": 158001381618,
+      "created_at": "2025-06-17T21:44:27Z",
+      "updated_at": "2025-06-17T21:44:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003540090,
+      "body_text": "Hi Aaron Cummings,     Your parcel has been shipped, sorry for the delay, this is your Fedex logistics bill number: 881582790235",
+      "user_id": 158001343601,
+      "created_at": "2025-06-19T11:35:09Z",
+      "updated_at": "2025-06-19T11:35:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003540151,
+      "body_text": "Thank you!\r\n\r\nOn Thu, Jun 19, 2025 at 7:35 AM support@simsonn.com ",
+      "user_id": 158001381618,
+      "created_at": "2025-06-19T11:56:45Z",
+      "updated_at": "2025-06-19T11:56:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

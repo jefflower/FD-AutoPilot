@@ -1,0 +1,54 @@
+{
+  "id": 3157,
+  "subject": "Simsonn Order Confirmation #SSN2435",
+  "description_text": "Hello, I noticed you purchased the Pro X Ultra pedals in order #SSN2424, but in order #SSN2435 you purchased the Plus X Baseplate and the Ultra upgrade kit. The Ultra pedals do not require the upgrade kit. Additionally, please confirm whether the baseplate needs to be replaced with the Pro X Ultra Baseplate. Please reply to us as soon as possible to avoid shipping products you won't be able to use. ",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-08-27T03:10:47Z",
+  "updated_at": "2025-08-27T03:55:53Z",
+  "requester_id": 158003627477,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007590416,
+      "body_text": "Hi sorry thankyou for letting me know about that If I can change the order\r\nand get that part refunded I would like the upgrade kit to be removed and\r\nreplace the baseplate with the Pro X Ultra one. Again sorry for mistaking\r\nthe order and thankyou for letting me know!\r\n\r\nOn Tue, Aug 26, 2025 at 11:11 PM support@simsonn.com ",
+      "user_id": 158003627477,
+      "created_at": "2025-08-27T03:22:22Z",
+      "updated_at": "2025-08-27T03:22:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007590613,
+      "body_text": "Hi Mattypt,    Okay, thank you for your prompt reply. We've refunded the price difference and arranged for shipment. Enjoy!",
+      "user_id": 158001343601,
+      "created_at": "2025-08-27T03:51:11Z",
+      "updated_at": "2025-08-27T03:51:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007590621,
+      "body_text": "That's great, thank you very much. I will make sure to recommend your brand\r\nbecause this is some of the best customer service I have ever received\r\n\r\nOn Tue, Aug 26, 2025 at 11:51 PM support@simsonn.com ",
+      "user_id": 158003627477,
+      "created_at": "2025-08-27T03:52:47Z",
+      "updated_at": "2025-08-27T03:52:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007590650,
+      "body_text": "Thank you, it's our pleasure.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-27T03:55:53Z",
+      "updated_at": "2025-08-27T03:55:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

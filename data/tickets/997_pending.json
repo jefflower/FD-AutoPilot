@@ -1,0 +1,94 @@
+{
+  "id": 997,
+  "subject": "Order #SSN1822",
+  "description_text": "Hello!\r\n\r\nI placed an order a week ago and it only tells me that it has been\r\nconfirmed and not sent out.\r\n\r\nI also read that the sending out takes approximately 1-2 business days, but\r\nstill haven’t received any email about it being sent out.\r\n\r\n\r\nBest wishes\r\nJohann Vain\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-30T09:36:59Z",
+  "updated_at": "2025-07-04T15:49:01Z",
+  "requester_id": 158001795312,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004301979,
+      "body_text": "​  Hello, the delivery from our German warehouse is scheduled for the 29th, we will ship the goods from our German warehouse for you on the 30th to avoid taxes. ",
+      "user_id": 158001343601,
+      "created_at": "2025-06-30T10:43:21Z",
+      "updated_at": "2025-06-30T10:43:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004348369,
+      "body_text": "Hello!\r\n\r\nWill I get a confirmation then aswell plus the tracking number?\r\n\r\nBest wishes\r\n\r\n> ​\r\n> Hello, the delivery from our German warehouse is scheduled for the 29th,\r\n> we will ship the goods from our German warehouse for you on the 30th to\r\n> avoid taxes.\r\n>\r\n> On Mon, 30 Jun at 5:36 AM , Johann Vain <johannmiikael.vain@gmail.com>\r\n> wrote:\r\n> Hello!\r\n>\r\n> I placed an order a week ago and it only tells me that it has been\r\n> confirmed and not sent out.\r\n>\r\n> I also read that the sending out takes approximately 1-2 business days,\r\n> but still haven’t received any email about it being sent out.\r\n>\r\n>\r\n> Best wishes\r\n> Johann Vain\r\n>\r\n> 997:4206036\r\n>\r\n\r\n",
+      "user_id": 158001795312,
+      "created_at": "2025-06-30T21:25:04Z",
+      "updated_at": "2025-06-30T21:25:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004353503,
+      "body_text": "Hi Johann Vain,    Of course, we will ship your order from Germany tomorrow, the day after tomorrow at the latest, and send you a logistic notification, which is expected to arrive around the 6th.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-01T06:28:39Z",
+      "updated_at": "2025-07-01T06:28:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004356076,
+      "body_text": "Hello!\r\n\r\nThank you for the information and for your cooperation.\r\n\r\nHi Johann Vain,\r\n>\r\n> Of course, we will ship your order from Germany tomorrow, the day after\r\n> tomorrow at the latest, and send you a logistic notification, which is\r\n> expected to arrive around the 6th.\r\n>\r\n>\r\n> On Mon, 30 Jun at 5:25 PM , Johann Vain <johannmiikael.vain@gmail.com>\r\n> wrote:\r\n> Hello!\r\n>\r\n> Will I get a confirmation then aswell plus the tracking number?\r\n>\r\n> Best wishes\r\n>\r\n>> ​\r\n>> Hello, the delivery from our German warehouse is scheduled for the 29th,\r\n>> we will ship the goods from our German warehouse for you on the 30th to\r\n>> avoid taxes.\r\n>>\r\n>> On Mon, 30 Jun at 5:36 AM , Johann Vain <johannmiikael.vain@gmail.com>\r\n>> wrote:\r\n>> Hello!\r\n>>\r\n>> I placed an order a week ago and it only tells me that it has been\r\n>> confirmed and not sent out.\r\n>>\r\n>> I also read that the sending out takes approximately 1-2 business days,\r\n>> but still haven’t received any email about it being sent out.\r\n>>\r\n>>\r\n>> Best wishes\r\n>> Johann Vain\r\n>>\r\n>> 997:4206036\r\n>\r\n\r\n",
+      "user_id": 158001795312,
+      "created_at": "2025-07-01T10:21:44Z",
+      "updated_at": "2025-07-01T10:21:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004444384,
+      "body_text": "Hello!\r\n\r\nI still haven’t received any logistic update.\r\n\r\n\r\nHello!\r\n>\r\n> Thank you for the information and for your cooperation.\r\n>\r\n> Hi Johann Vain,\r\n>>\r\n>> Of course, we will ship your order from Germany tomorrow, the day after\r\n>> tomorrow at the latest, and send you a logistic notification, which is\r\n>> expected to arrive around the 6th.\r\n>>\r\n>>\r\n>> On Mon, 30 Jun at 5:25 PM , Johann Vain <johannmiikael.vain@gmail.com>\r\n>> wrote:\r\n>> Hello!\r\n>>\r\n>> Will I get a confirmation then aswell plus the tracking number?\r\n>>\r\n>> Best wishes\r\n>>\r\n>>> ​\r\n>>> Hello, the delivery from our German warehouse is scheduled for the 29th,\r\n>>> we will ship the goods from our German warehouse for you on the 30th to\r\n>>> avoid taxes.\r\n>>>\r\n>>> On Mon, 30 Jun at 5:36 AM , Johann Vain <johannmiikael.vain@gmail.com>\r\n>>> wrote:\r\n>>> Hello!\r\n>>>\r\n>>> I placed an order a week ago and it only tells me that it has been\r\n>>> confirmed and not sent out.\r\n>>>\r\n>>> I also read that the sending out takes approximately 1-2 business days,\r\n>>> but still haven’t received any email about it being sent out.\r\n>>>\r\n>>>\r\n>>> Best wishes\r\n>>> Johann Vain\r\n>>>\r\n>>> 997:4206036\r\n>>\r\n>\r\n\r\n",
+      "user_id": 158001795312,
+      "created_at": "2025-07-04T09:17:23Z",
+      "updated_at": "2025-07-04T09:17:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445531,
+      "body_text": "Hi Johann Vain,     The goods have arrived at the German warehouse, the warehouse is counting the goods into the warehouse, we will not be able to ship the goods to you until next Monday, we are very sorry, we will refund you the extra shipping cost as compensation!",
+      "user_id": 158001343601,
+      "created_at": "2025-07-04T14:56:32Z",
+      "updated_at": "2025-07-04T14:56:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445679,
+      "body_text": "Hello!\r\n\r\nIs it possible to add in an order for the haptic reactors VAM Pro through\r\nhere or should I order from the website.\r\n\r\n2 motors plus the power supply\r\n\r\nBest wishes\r\n\r\nHi Johann Vain,\r\n>\r\n>\r\n> The goods have arrived at the German warehouse, the warehouse is counting\r\n> the goods into the warehouse, we will not be able to ship the goods to you\r\n> until next Monday, we are very sorry, we will refund you the extra shipping\r\n> cost as compensation!\r\n>\r\n> On Fri, 4 Jul at 5:17 AM , Johann Vain <johannmiikael.vain@gmail.com>\r\n> wrote:\r\n> Hello!\r\n>\r\n> I still haven’t received any logistic update.\r\n>\r\n>\r\n> Hello!\r\n>>\r\n>> Thank you for the information and for your cooperation.\r\n>>\r\n>> Hi Johann Vain,\r\n>>>\r\n>>> Of course, we will ship your order from Germany tomorrow, the day after\r\n>>> tomorrow at the latest, and send you a logistic notification, which is\r\n>>> expected to arrive around the 6th.\r\n>>>\r\n>>>\r\n>>> On Mon, 30 Jun at 5:25 PM , Johann Vain <johannmiikael.vain@gmail.com>\r\n>>> wrote:\r\n>>> Hello!\r\n>>>\r\n>>> Will I get a confirmation then aswell plus the tracking number?\r\n>>>\r\n>>> Best wishes\r\n>>>\r\n>>>> ​\r\n>>>> Hello, the delivery from our German warehouse is scheduled for the\r\n>>>> 29th, we will ship the goods from our German warehouse for you on the 30th\r\n>>>> to avoid taxes.\r\n>>>>\r\n>>>> On Mon, 30 Jun at 5:36 AM , Johann Vain <johannmiikael.vain@gmail.com>\r\n>>>> wrote:\r\n>>>> Hello!\r\n>>>>\r\n>>>> I placed an order a week ago and it only tells me that it has been\r\n>>>> confirmed and not sent out.\r\n>>>>\r\n>>>> I also read that the sending out takes approximately 1-2 business days,\r\n>>>> but still haven’t received any email about it being sent out.\r\n>>>>\r\n>>>>\r\n>>>> Best wishes\r\n>>>> Johann Vain\r\n>>>>\r\n>>>> 997:4206036\r\n>\r\n\r\n",
+      "user_id": 158001795312,
+      "created_at": "2025-07-04T15:34:27Z",
+      "updated_at": "2025-07-04T15:34:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445756,
+      "body_text": "Hi Johann Vain,    You can make your purchase on the website, but it can only be shipped from China, as it's not currently stocked to European warehouses.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-04T15:49:00Z",
+      "updated_at": "2025-07-04T15:49:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": 10829,
+  "subject": "回复：Plus X 踏板停止工作",
+  "description_text": "为您提供更多信息。希望您能尽快回复。\n\n我已尝试过的方法：\n- 检查了电缆连接，\n- 更换了 USB 数据线，\n- 尝试了主板上不同的 USB 端口，\n- 多次重启电脑，\n- 在设备管理器中卸载了踏板，\n- 卸载并重新安装了 Simsonn Manager。\n- 设备管理器未发现任何问题。\n- joy.cpl 显示以下属性，但移动踏板没有任何效果 https://i.imgur.com/Y4cyzag.png\n- 我在另一台电脑上测试了踏板，看到了相同的检测屏幕。这台新电脑上的 Simsonn Manager 显示踏板已断开连接。\n\n\n\n________________________________________\n发件人: paul hansen <dodgybarnet @hotmail.com>\n发送时间: 2026年1月12日 下午4:10\n收件人: service @simsonn.com\n主题: Plus X 踏板停止工作\n\n我使用 Simsonn 刹车和油门踏板已有几个月了。它们一直运行良好。\n\n今天它们不工作了。我尝试了所有常规步骤（重启、更换 USB 端口、检查电缆、卸载 USB 驱动程序、卸载并重新安装 Simsonn manager）。\n\nSimsonn Plus X 在 joy.cpl 中枚举正常，状态为“正常”，但不显示任何轴。控制器似乎处于备用 HID 模式？\n\nSimsonn Manager 显示踏板已断开连接。\n\n重刷固件会有用吗？如果可以，我能获取固件重刷工具和 Plus X 踏板固件吗？\n\n谢谢！\n保罗。",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-13T21:46:24Z",
+  "updated_at": "2026-01-14T11:07:35Z",
+  "requester_id": 158009057103,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017052473,
+      "body_text": "嗨，paul hansen，请按住控制盒上的升级按钮，然后重新连接 USB 数据线。SIMSONN Manager 随后应会显示踏板已进入恢复模式。接下来，请转到：设置 → 更新 → 手动固件更新 → 踏板 → 固件 → pedals-plusx.sfu",
+      "user_id": 158000445778,
+      "created_at": "2026-01-14T01:19:19Z",
+      "updated_at": "2026-01-14T01:19:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017058598,
+      "body_text": "问题解决了！非常感谢！",
+      "user_id": 158009057103,
+      "created_at": "2026-01-14T03:22:16Z",
+      "updated_at": "2026-01-14T03:22:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

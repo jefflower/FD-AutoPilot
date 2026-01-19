@@ -1,0 +1,34 @@
+{
+  "id": 5411,
+  "subject": "Pro X Ultra fulfillment",
+  "description_text": "Goodmorning,\r\n\r\nI hope you’re having a wonderful morning today. I placed an order for\r\npedals and received a tracking number. It seems the package has not moved\r\nfrom its original location still and I am just wondering if you have any\r\nupdates as to when they may be shipped out?\r\nI fully understand these things take time and I am in no way rushing or\r\nexpecting anything to change, but if you have any update at all that would\r\nbe greatly appreciated!\r\nThank you in advance for your time\r\n\r\n-Regards,\r\n\r\nCharles Campanella\r\n1317 Warren drive\r\nBrunswick, Ohio 44212\r\n(440) 202-0685\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-29T13:05:45Z",
+  "updated_at": "2025-10-30T03:52:24Z",
+  "requester_id": 158006204581,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011299789,
+      "body_text": "I just updated my inbox and realised that the package has shipped, so no\r\nworries.\r\nThank you again~!\r\n\r\nOn Wed, Oct 29, 2025 at 9:05 AM service@simsonn.com ",
+      "user_id": 158006204581,
+      "created_at": "2025-10-29T15:47:33Z",
+      "updated_at": "2025-10-29T15:47:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011318780,
+      "body_text": "If you have any questions, feel free to contact us anytime. Have fun!",
+      "user_id": 158001343601,
+      "created_at": "2025-10-30T03:52:24Z",
+      "updated_at": "2025-10-30T03:52:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

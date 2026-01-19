@@ -1,0 +1,104 @@
+{
+  "id": 8811,
+  "subject": "Delivery and support issue",
+  "description_text": "Greetings,   I already tried contacting support multiple times. Using the mail I placed my order with doesn't work since you seem to handle support tickets via feshdesk, which does not allow me to set a password and therefore makes it impossible for me to log in and access my ticket. Freshdesk gives me this: You are not authorised to access this portal. Kindly contact your helpdesk administrator. I can't seem to access the support/ticket area and haven't received a reply in over 96 hours.  I now create this ticket with my google account, which I can use to log in without setting a password first and hopefully view the ticket after creation (I will only be able to tell after submitting tho).    I recently ordered a set of Pro X Ultra pedals with express shipping. The order was placed on 12th of December and I haven't received the package or a tracking number yet. Looking at the delivery time of 3-7 days, which terminated 19.12., I wonder if there is any info you can give me on the status of the order.  Order Nr.: #SSN4742  Regards, Jonas Roth",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-21T13:28:46Z",
+  "updated_at": "2026-01-04T11:21:15Z",
+  "requester_id": 158008111170,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014841470,
+      "body_text": "I confirm that I can here see the ticket, using my google account as login. I cannot acces any other tickets I created using my other mails (jonas@pyra.it and jonas.pyra@proton.me)",
+      "user_id": 158008111170,
+      "created_at": "2025-12-21T13:30:15Z",
+      "updated_at": "2025-12-21T13:30:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158014879332,
+      "body_text": "你好 Kobrabiss，  您的订单原计划从我们的德国仓库发货，但由于运输延误，货物到达时间晚于预期。目前货物已抵达仓库，我们正在进行入库处理并安排DHL快递发货。我们将于明日提供运单号。",
+      "user_id": 158007774669,
+      "created_at": "2025-12-22T12:22:38Z",
+      "updated_at": "2025-12-22T12:22:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014879533,
+      "body_text": "I received an update via mail: \"Your order was originally scheduled for shipment from our German warehouse, but due to transportation delays, the goods arrived later than expected. They have now arrived at the warehouse, and we are processing them for storage and arranging DHL express shipping. We will update you with the tracking number tomorrow.\"  Following this up, I want to ask about my possibilities of a compensation for the express delivery which I paid for but couldn't be provided. Regards",
+      "user_id": 158008111170,
+      "created_at": "2025-12-22T12:27:20Z",
+      "updated_at": "2025-12-22T12:27:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158014880276,
+      "body_text": "Hi Kobrabiss,  After the goods arrive and we begin shipping, I will have the operations team assist with handling the expedited shipping fees. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-22T12:44:23Z",
+      "updated_at": "2025-12-22T12:44:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015056378,
+      "body_text": "Hello,  The package arrived but seemingly only contained one half of my order. The package only contained the Pro X Ultra brake and throttle pedal with accessories. The package did not contain the haptic feedback modules and their accessory. Are these to be shipped separately? I double checked and I can see in the order details that I ordered the bundle with the haptic feedback modules and mounts.  Thanks for your time, Jonas Roth",
+      "user_id": 158008111170,
+      "created_at": "2025-12-25T01:27:34Z",
+      "updated_at": "2025-12-25T01:27:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015056411,
+      "body_text": "",
+      "user_id": 158008111170,
+      "created_at": "2025-12-25T01:30:38Z",
+      "updated_at": "2025-12-25T01:30:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015310323,
+      "body_text": "Hi Kobrabiss,    We apologize for the delayed response. Here is another link for you.    https://t.17track.net/en#nums=JSELW1317991306YQ",
+      "user_id": 158001343601,
+      "created_at": "2025-12-31T11:32:26Z",
+      "updated_at": "2025-12-31T11:32:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015455071,
+      "body_text": "Hello, I received the package and all the ordered contents arrived now, it doesn't look like anything is missing",
+      "user_id": 158008111170,
+      "created_at": "2026-01-03T02:04:12Z",
+      "updated_at": "2026-01-03T02:04:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015626096,
+      "body_text": "Hi Kobrabiss,    Alright, thank you for your confirmation.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-04T11:21:15Z",
+      "updated_at": "2026-01-04T11:21:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

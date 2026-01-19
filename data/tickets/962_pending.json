@@ -1,0 +1,24 @@
+{
+  "id": 962,
+  "subject": "SHIPPING INQUIRY",
+  "description_text": "Good afternoon, I'd like to know how I can purchase a pedalboard with\r\nshipping to Uruguay.\r\nThank you.\r\n\r\n-- \r\n*Ruben Ballestero*\r\n*092**767468*\r\n*Antonio Diaz 4661 apto 2*\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-28T16:02:21Z",
+  "updated_at": "2025-06-30T10:57:52Z",
+  "requester_id": 158001836144,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004306757,
+      "body_text": "Hi Andrés 711,    You can select your country to Uruguay at checkout.",
+      "user_id": 158001343601,
+      "created_at": "2025-06-30T10:57:52Z",
+      "updated_at": "2025-06-30T10:57:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

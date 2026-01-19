@@ -1,0 +1,24 @@
+{
+  "id": 2374,
+  "subject": "Product clarification",
+  "description_text": "Hello,\r\n          As a current Fanatec V3 user, I am interested in purchasing one of your pedal sets for comparison.\r\nI currently have this pedal set in the shopping cart but have a few questions, as the description is not 100% clear.\r\n    Do I need to order the haptic motors or do they come integrated with this particular set of pedals?\r\nThe description states 'with haptic reactor' but I do not see one from the displayed image.\r\nIf they do need to be ordered, I assume it will be the PlusX control box as opposed to the ProX Ultra?\r\n    Does the pedal control box (which comes as part of the pedal purchase) natively support the pedal reactor motors or do I need a separate box?\r\nThank you.\r\n\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-06T11:03:49Z",
+  "updated_at": "2025-08-06T13:45:58Z",
+  "requester_id": 158002675691,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006400207,
+      "body_text": "Hi T. Rock,   ​The PlusX controller already supports the VAM Pro motor, so there is no need to purchase an additional controller. You only need to buy the VAM Pro motor and power supply kit.  https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor?variant=51351053500730",
+      "user_id": 158000445778,
+      "created_at": "2025-08-06T13:45:58Z",
+      "updated_at": "2025-08-06T13:45:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": 7738,
+  "subject": "转向底座开启时的问题",
+  "description_text": "您好，\n\n我最近购买了Simsonn plus x踏板套装，订单号#SSN3720。\n当我的方向盘和踏板同时打开时，刹车踏板输入有很多静电干扰。有没有办法解决这个问题，因为我无法这样使用踏板？\n\n在附件视频中，我打开了转向底座，然后将其关闭，然后再重新打开。\n\n提前感谢，\n凯文\n\n-- \n凯文·伊塞博恩\nkeviniseborn@googlemail.com\n+44 7718276785",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-08T21:00:07Z",
+  "updated_at": "2025-12-20T12:22:46Z",
+  "requester_id": 158007707396,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014166811,
+      "body_text": "您好，凯文，如果出现这种情况，表明电脑的接地不可靠，可能是因为没有使用三相插头连接三相墙壁插座。您可以参考以下帖子：将电脑机箱连接到支架，并将控制盒连接到踏板上的金属螺丝。这应该可以解决断开连接的问题。https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-12-09T06:14:28Z",
+      "updated_at": "2025-12-09T06:14:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014502871,
+      "body_text": "这非常有帮助，谢谢。\n\n2025年12月9日星期二上午06:14，service@simsonn.com",
+      "user_id": 158007707396,
+      "created_at": "2025-12-15T09:25:03Z",
+      "updated_at": "2025-12-15T09:25:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

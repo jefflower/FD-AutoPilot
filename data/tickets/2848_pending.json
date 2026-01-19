@@ -1,0 +1,74 @@
+{
+  "id": 2848,
+  "subject": "VAM suddenly stops working",
+  "description_text": "Hi,\r\n\r\nIn less than a month of using it just on weekends, it seems one of the\r\nvibration module is already broken. It can be detected in the simsonn\r\nmanager software but when clicking vibration button, the VAM does not\r\nvibrate. Other VAM modules are working fine. I remove the VAM module from\r\nthe pedals, and tried to shake them, i notice that there is a very\r\nnoticible clanking when shaking the defective VAM. I seem something loose\r\ninside. See attached video.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-19T00:14:05Z",
+  "updated_at": "2025-08-20T03:58:00Z",
+  "requester_id": 158003306126,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007111892,
+      "body_text": "Hi Rolie Agustin,  Please update to the latest SIMSONN Manager 2.1.0 and correctly set the maximum force for the VAM in SIMHUB as well. You may also open the VAM and provide photos so we can analyze the damage. At the same time, we will send you a replacement. Please provide your order number, contact name, phone number, and address. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-19T04:15:33Z",
+      "updated_at": "2025-08-19T04:15:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007111905,
+      "body_text": "Hi Rolie Agustin,  Please send the video via Google Drive. The video you provided cannot be viewed, likely due to restricted access. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-19T04:16:27Z",
+      "updated_at": "2025-08-19T04:16:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007112826,
+      "body_text": "Gdrive link:\r\nhttps://drive.google.com/file/d/17w366t8EqWL3FfiaBxRSiNzrrPtrtX0M/view?usp=drivesdk\r\n\r\nOn Tue, 19 Aug 2025, 12:16 pm support@simsonn.com, ",
+      "user_id": 158003306126,
+      "created_at": "2025-08-19T05:05:15Z",
+      "updated_at": "2025-08-19T05:05:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007113175,
+      "body_text": "Both simsonn manager and simhub are updated. Other VAM is ok, so i think\r\nthe configuration is correct.\r\n\r\nI opened the defective VAM. And the RED wire was disconnected. I also\r\nnoticed that the plastic inside was melted. I think this VAM overheated and\r\nmelted the plastic casing and then since the plastic was melted the\r\nvibration motor was no longer seated properly inside the casing. So the\r\nmotor, circled around the casing and snapped the wiring.\r\n\r\n\r\n\r\n\r\n\r\nOn Tue, 19 Aug 2025, 12:15 pm support@simsonn.com, ",
+      "user_id": 158003306126,
+      "created_at": "2025-08-19T05:34:29Z",
+      "updated_at": "2025-08-19T05:34:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007113487,
+      "body_text": "Hi Rolie Agustin,  We will improve the fixing method and enhance the welding quality. Today, we will send you a replacement VAM.      Please provide your order number, contact person, phone number, and shipping address. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-19T05:59:49Z",
+      "updated_at": "2025-08-19T05:59:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007113755,
+      "body_text": "Order number: 21747205501037289\r\n\r\nChina AIR warehouse address:\r\naddress:深圳市宝安区福海街道黄屋二区9-1-元初转3532\r\nContact person:元初-3532\r\nTelephone:19154950702\r\nZip code: 518103\r\n\r\nName: Rolie Agustin\r\nshipping mark：CR-3532\r\n\r\n\r\n\r\nCould you assist me on one more thing?\r\nI have an old simsonn pedals. The control box stops working after about 2\r\nyears.\r\n\r\n\r\n\r\nWould the Plus X control box work without issues on my old pedals? I am\r\nplanning to buy one.\r\n\r\nIf it would work, is it possible to send it together to save on shipping\r\nfee?\r\n\r\nOn Tue, 19 Aug 2025, 2:00 pm support@simsonn.com, ",
+      "user_id": 158003306126,
+      "created_at": "2025-08-19T06:19:40Z",
+      "updated_at": "2025-08-19T06:19:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

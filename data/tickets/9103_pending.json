@@ -1,0 +1,24 @@
+{
+  "id": 9103,
+  "subject": "Order # SSN4841 shipping status",
+  "description_text": "Hi I ordered a package that was confirmed Dec 14th just trying to see where\r\nthat was\r\n\r\n",
+  "status": 3,
+  "priority": 2,
+  "created_at": "2025-12-24T17:44:43Z",
+  "updated_at": "2026-01-16T03:31:59Z",
+  "requester_id": 158008496086,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017237795,
+      "body_text": "Hi Jalan Lee,  I apologize for not responding to you promptly. I have confirmed that your package has been delivered. Have you received it?  https://t.17track.net/en#nums=JSELM2473772391YQ",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T03:31:59Z",
+      "updated_at": "2026-01-16T03:31:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

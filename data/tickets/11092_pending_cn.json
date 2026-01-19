@@ -1,0 +1,95 @@
+{
+  "id": 11092,
+  "subject": "订单 #ssn6195",
+  "description_text": "你好，我刚下了这个订单，想知道这个套件是包含所有3个触觉反馈器还是只有1个？\n\n另外，运到美国会有关税吗？\n\n谢谢！",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-16T17:15:28Z",
+  "updated_at": "2026-01-17T06:49:11Z",
+  "requester_id": 158009303393,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017311601,
+      "body_text": "嗨 Erik，\n\n我已经检查了您的订单，其中不包含 VAM Pro 触觉马达。如果您想要 VAM Pro，您可以：\n\n单独购买 VAM Pro，或者\n购买包含 VAM Pro 的踏板套装。\n如果您告诉我您想要什么样的配置（多少个马达/哪些踏板），我可以为您推荐合适的选项。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-17T03:47:10Z",
+      "updated_at": "2026-01-17T03:47:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017311731,
+      "body_text": "我想要 plus x 踏板以及刹车和油门的触觉反馈。我觉得这有点误导人，图片上显示踏板带有触觉反馈，但又说不附带？",
+      "user_id": 158009303393,
+      "created_at": "2026-01-17T03:56:16Z",
+      "updated_at": "2026-01-17T03:56:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017311749,
+      "body_text": "哦真的吗？那我买的是什么？这里说它带有触觉反应器？？我现在很困惑\n\n\n\n在 2026年1月16日星期五，下午7:47，service @simsonn.com",
+      "user_id": 158009303393,
+      "created_at": "2026-01-17T03:57:58Z",
+      "updated_at": "2026-01-17T03:57:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017311863,
+      "body_text": "也许我理解错了，这只是一个升级吗？很抱歉造成困惑，但我想要所有三个踏板，以及刹车和油门的触觉反馈。你能取消我目前的订单并推荐一个套餐吗？",
+      "user_id": 158009303393,
+      "created_at": "2026-01-17T04:02:29Z",
+      "updated_at": "2026-01-17T04:02:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017312291,
+      "body_text": "嗨 Erik，\n\n非常抱歉。我刚与我们的运营团队确认，您的 PlusX 双踏板套装包含两个 VAM Pro 马达、两个 U 形安装支架和一个底板。我们对之前回复中的错误信息以及造成的任何困惑深表歉意。我们会尽快处理您的订单。由于新年期间订单和邮件积压严重，可能会有轻微延迟。感谢您的理解。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-17T04:22:38Z",
+      "updated_at": "2026-01-17T04:22:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017312418,
+      "body_text": "好的，谢谢你。但可能你们那边又搞错了？我订购的是 plus-x-p3-h3，所以我猜这包括 p3 = 3个踏板，h3 = 3个触觉反馈器，而 /black 意味着它们是黑色的。而且我额外支付了29.90的快递费。\n\n我不是有意冒犯，我只是想弄清楚我到底订购了什么。非常感谢！\n\n\n在 2026年1月16日星期五，service @simsonn.com",
+      "user_id": 158009303393,
+      "created_at": "2026-01-17T04:29:31Z",
+      "updated_at": "2026-01-17T04:29:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017312513,
+      "body_text": "嗨 Erik，\n\n是的，您购买的是 PlusX 三踏板套装，其中包含三个 VAM Pro 马达和一个底板。非常抱歉——我把您的邮件和另一位客户的搞混了。我会马上为您查询发货计划。如果没有按时发货，我会请我们的运营团队退还加急运费。请不要担心。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-17T04:34:33Z",
+      "updated_at": "2026-01-17T04:34:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017312628,
+      "body_text": "好的，听起来太棒了！我真的很感激，我已经迫不及待想试试这些踏板了。很抱歉造成了困惑，但我当时很困惑，然后你也很困惑，我们都变得困惑了。希望踏板能快点到，非常感谢！\n\n\n在 2026年1月16日星期五，下午8:34，service @simsonn.com",
+      "user_id": 158009303393,
+      "created_at": "2026-01-17T04:41:31Z",
+      "updated_at": "2026-01-17T04:41:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

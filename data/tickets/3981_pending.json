@@ -1,0 +1,24 @@
+{
+  "id": 3981,
+  "subject": "",
+  "description_text": "Hi there. Does your product “Simsonn racing simulator sequential shifter”\r\nplug into a Fanatec wheel base. If it does does that mean it would work\r\nwith Xbox. I’m only asking because I see that other products say that it\r\nwon’t work with the q box and this doesn’t say it isn’t compatible with\r\nanything. I look forward to hearing from you. Thanks.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-19T20:29:16Z",
+  "updated_at": "2025-09-19T23:29:45Z",
+  "requester_id": 158004652506,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008968047,
+      "body_text": "Hi Jude Stone,     Currently, our sequential shifter interface is designed specifically for our upcoming in-house base and is not compatible with Fanatec bases.  Because the power wiring sequence is different, plugging it directly into a Fanatec base may cause damage to the device.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-19T23:29:45Z",
+      "updated_at": "2025-09-19T23:29:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

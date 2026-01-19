@@ -1,0 +1,24 @@
+{
+  "id": 778,
+  "subject": "Delayed Shipment",
+  "description_text": "Dear Simsonn,\r\nI'm writing to you for the second time to inform you that UPS hasn't\r\nreceived my package yet, and more than 10 days have passed already since\r\nyou created a label for this shipment. I'd like to know what's happened to\r\nmy order and if I'm actually going to receive it any time soon, or\r\notherwise, how should I proceed for an eventual refund.\r\nI hope to hear news from you very soon.\r\nOrder #SSN1703, Tracking Number 1Z14V4W16894618303.\r\nBest regards\r\nAndrea Perfetto\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-24T11:05:24Z",
+  "updated_at": "2025-06-25T10:05:36Z",
+  "requester_id": 158001647545,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003835656,
+      "body_text": "Hi Andrea Perfetto,    We are investigating this matter for you, please don't worry, if there is an accident we will use ups courier to send you a replacement, sorry for the inconvenience.",
+      "user_id": 158001343601,
+      "created_at": "2025-06-25T10:05:36Z",
+      "updated_at": "2025-06-25T10:05:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

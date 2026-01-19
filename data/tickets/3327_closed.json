@@ -1,0 +1,214 @@
+{
+  "id": 3327,
+  "subject": "Pro x",
+  "description_text": "",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-08-31T21:50:54Z",
+  "updated_at": "2025-12-18T09:40:24Z",
+  "requester_id": 158001607481,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007590177,
+      "body_text": "Hi 4c farm and racing,  Please take photos of both your old control box and the new one so that we can verify them. In addition, I recommend using SIMSONN Manager 2.1.1. On the software interface, click the Restore button first, then click Save to see if the issue can be resolved. I also need you to provide some videos clearly showing the problem. It’s recommended to upload the complete video as an attachment before sending the email to us. Once we analyze the details, we will help you resolve the issue as soon as possible.      https://drive.google.com/file/d/1UPkeOHREyALtCtNmL87a2WnUDZV0Gx_b/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-08-27T02:47:16Z",
+      "updated_at": "2025-08-27T02:47:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007877557,
+      "body_text": "ID 号为 3152 和 3326 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-01T00:30:47Z",
+      "updated_at": "2025-09-01T00:30:47Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158007877558,
+      "body_text": "合并来自工单3152  \n      主题: Simsonn pro x  \n      描述:  Hello a few months ago I sent an email on how my pedals stopped working on just the brake plug and I just plugged the brake into the clutch and it worked. Simsonn you guys sent me a new box , but it was DOA I still have it but it does not work I tried everything so I used my old one.. well now I have updated with new software and everything seemed ok but now it’s gone out as well, what happens in iracing I can’t calibrate my wheel or pedals it moves none stop and I thought it was the wheel base. But when I unplug base it is jittery.when i unplug simsonn box it is fine . Is there anything I can do I know it has been awhile but im kind worried and now can’t race and have a lot of league races coming up looks like I will miss I purchased them from Amazon please let me know thank you Sent from my iPhone",
+      "user_id": 158000445778,
+      "created_at": "2025-09-01T00:30:48Z",
+      "updated_at": "2025-09-01T00:30:48Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158007877560,
+      "body_text": "合并来自工单3326  \n      主题: Pro x pedals  \n      描述:  I have talked with you about the issues I have been having, I don’t really have the time to do pictures and videos etc.  I know that if I have the control box unplugged from pc. All works fine when I plug it back in with or without the pedals plugged in, iracing I can not calibrate with in iracing, unless I unplug the box, I downloaded huskavelt controller app and it pics up the random glitch on x and y axis. I have had trouble with this same box before, and you sent me a new one however it is either un programmed or it bad as well, Simsonn tool shows its reconnected, when I push the upgrade button it shows that’s active however on the pc side it shows driver error and I have no way of finding a driver or a way to update the box. The box I am using the brake pedal socket does not work I have had to use the clutch socket since I received the pedals. I have really had many problems with pedals the hydraulic damper on the throttle pedal locked up, and had to remove it, the rod that hold the elastomer for the brakes fell out even though there was a lock nut in place, causing it to fail during a race event and ruining the threads, I was able to repair. I do want to thank you for your fast response, I have let everyone in my leagues know what has happened and the fast response I have received, they are all interested it what happens, I race with a little over 200 people between all the leagues I’m part of, when the pedals do work they are nice I wish I could change the elastomers but with the rod damage, I have to remove the whole unit to change them..my question to you is can I purchase a new box from Amazon will it come programmed for plug and plug, or ready to update, although all of this started a few days later after update but I hoping to try a new box, other wise I will try and see if I can return with a RMA for a refund. And find a replacement set somewhere else I have not had these long I’m sending a copy of when purchased. April 9th 2025 Again thanks for all the support and help. Sent from my iPhone",
+      "user_id": 158000445778,
+      "created_at": "2025-09-01T00:30:48Z",
+      "updated_at": "2025-09-01T00:30:48Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158007877642,
+      "body_text": "Hi 4c farm and racing,  From what I can see, your control box issue is likely not a hardware fault. Please install the ToDesk tool, and I can remotely check the control box hardware under your supervision to help resolve the problem quickly. ToDesk does not require registration—just provide the ID and temporary access code.      https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-09-01T00:38:55Z",
+      "updated_at": "2025-09-01T00:38:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007879540,
+      "body_text": "What time would you like to do this ? It is currently 10:31 pm aug 31.\r\n\r\nOn Sun, Aug 31, 2025 at 7:39 PM service@simsonn.com ",
+      "user_id": 158001607481,
+      "created_at": "2025-09-01T03:32:17Z",
+      "updated_at": "2025-09-01T03:32:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007879671,
+      "body_text": "Can we set up a schedule session so I can let you in the system, I will be\r\navailable from 11pm central time (USA) aug 31 to 10pm September 1st .\r\nPlease let me know a time that we can look at it. We can load iracing and\r\nwe can try both boxes and you can see . On Sun, Aug 31, 2025 at 10:31 PM 4c\r\nfarm and racing <bcarmon1972@gmail.com> wrote:\r\n\r\n> What time would you like to do this ? It is currently 10:31 pm aug 31.\r\n>\r\n> On Sun, Aug 31, 2025 at 7:39 PM service@simsonn.com ",
+      "user_id": 158001607481,
+      "created_at": "2025-09-01T03:47:52Z",
+      "updated_at": "2025-09-01T03:47:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007880314,
+      "body_text": "Actually is there a way you could call or text me. 1(580)351-7335\r\nOn Sun, Aug 31, 2025 at 10:47 PM 4c farm and racing <bcarmon1972@gmail.com>\r\nwrote:\r\n\r\n> Can we set up a schedule session so I can let you in the system, I will be\r\n> available from 11pm central time (USA) aug 31 to 10pm September 1st .\r\n> Please let me know a time that we can look at it. We can load iracing and\r\n> we can try both boxes and you can see . On Sun, Aug 31, 2025 at 10:31 PM 4c\r\n> farm and racing <bcarmon1972@gmail.com> wrote:\r\n>\r\n>> What time would you like to do this ? It is currently 10:31 pm aug 31.\r\n>>\r\n>> On Sun, Aug 31, 2025 at 7:39 PM service@simsonn.com ",
+      "user_id": 158001607481,
+      "created_at": "2025-09-01T04:41:29Z",
+      "updated_at": "2025-09-01T04:41:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007883865,
+      "body_text": "Hi 4c farm and racing,   Our appointment is set for September 1st at 10:00 PM (US Central Time), which corresponds to September 2nd at 11:00 AM (China Time). I will be waiting for you to come online at that time. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-01T07:32:48Z",
+      "updated_at": "2025-09-01T07:32:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007903391,
+      "body_text": "I will be there\r\n\r\nOn Mon, Sep 1, 2025 at 2:33 AM service@simsonn.com ",
+      "user_id": 158001607481,
+      "created_at": "2025-09-01T14:13:33Z",
+      "updated_at": "2025-09-01T14:13:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007918701,
+      "body_text": "i have downloaded the app but do not know how to use do i need to make a\r\naccount or do you log in from there?\r\n\r\n\r\nOn Mon, Sep 1, 2025 at 9:13 AM 4c farm and racing <bcarmon1972@gmail.com>\r\nwrote:\r\n\r\n> I will be there\r\n>\r\n> On Mon, Sep 1, 2025 at 2:33 AM service@simsonn.com ",
+      "user_id": 158001607481,
+      "created_at": "2025-09-01T19:12:31Z",
+      "updated_at": "2025-09-01T19:12:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007925594,
+      "body_text": "device ID 341 266 472   connection password fee9rwx3\r\n\r\nOn Mon, Sep 1, 2025 at 2:12 PM 4c farm and racing <bcarmon1972@gmail.com>\r\nwrote:\r\n\r\n> i have downloaded the app but do not know how to use do i need to make a\r\n> account or do you log in from there?\r\n>\r\n>\r\n> On Mon, Sep 1, 2025 at 9:13 AM 4c farm and racing <bcarmon1972@gmail.com>\r\n> wrote:\r\n>\r\n>> I will be there\r\n>>\r\n>> On Mon, Sep 1, 2025 at 2:33 AM service@simsonn.com ",
+      "user_id": 158001607481,
+      "created_at": "2025-09-02T02:06:47Z",
+      "updated_at": "2025-09-02T02:06:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007928627,
+      "body_text": "I’m on line what else do you need ",
+      "user_id": 158001607481,
+      "created_at": "2025-09-02T03:22:46Z",
+      "updated_at": "2025-09-02T03:22:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158007954501,
+      "body_text": "Yes, that would be fine.\r\n\r\nOn Tue, Sep 2, 2025 at 3:38 AM General and sales enquiries <\r\nservice@simsonn.com> wrote:\r\n\r\n> We have a client coming to visit us unexpectedly today, so we don't have\r\n> time to serve you remotely. Can we make an appointment for the same time\r\n> tomorrow? I am sorry for it.\r\n>\r\n> ------------------------------\r\n> service@simsonn.com\r\n>\r\n>\r\n> *",
+      "user_id": 158001607481,
+      "created_at": "2025-09-02T11:14:14Z",
+      "updated_at": "2025-09-02T11:14:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007954916,
+      "body_text": "Can we possibly do it an hour earlier?\r\nI will have to send you new pass code\r\n\r\nOn Tue, Sep 2, 2025 at 6:13 AM 4c farm and racing <bcarmon1972@gmail.com>\r\nwrote:\r\n\r\n> Yes, that would be fine.\r\n>\r\n> On Tue, Sep 2, 2025 at 3:38 AM General and sales enquiries <\r\n> service@simsonn.com> wrote:\r\n>\r\n>> We have a client coming to visit us unexpectedly today, so we don't have\r\n>> time to serve you remotely. Can we make an appointment for the same time\r\n>> tomorrow? I am sorry for it.\r\n>>\r\n>> ------------------------------\r\n>> service@simsonn.com\r\n>>\r\n>>\r\n>> *",
+      "user_id": 158001607481,
+      "created_at": "2025-09-02T11:56:13Z",
+      "updated_at": "2025-09-02T11:56:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007997756,
+      "body_text": "ID# 341 266 473\r\nPass word 92gemk2g\r\nReminder I have 2 control boxes\r\nI will have notes up\r\n\r\nOn Tue, Sep 2, 2025 at 8:32 PM General and sales enquiries <\r\nservice@simsonn.com> wrote:\r\n\r\n> Yes, it is OK. So we start in half an hour?\r\n>\r\n> ------------------------------\r\n> service@simsonn.com\r\n>\r\n>\r\n> *",
+      "user_id": 158001607481,
+      "created_at": "2025-09-03T01:35:31Z",
+      "updated_at": "2025-09-03T01:35:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007998191,
+      "body_text": "Hi 4c farm and racing,  Hello, I’m online now. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-03T02:02:31Z",
+      "updated_at": "2025-09-03T02:02:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007998215,
+      "body_text": "I sent the codes did you get them\r\nOn Tue, Sep 2, 2025 at 9:02 PM service@simsonn.com ",
+      "user_id": 158001607481,
+      "created_at": "2025-09-03T02:04:33Z",
+      "updated_at": "2025-09-03T02:04:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007998240,
+      "body_text": "Hi 4c farm and racing,  Please reopen Todesk and copy the ID and verification code to me, as the one you sent earlier could not connect. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-03T02:06:22Z",
+      "updated_at": "2025-09-03T02:06:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007998275,
+      "body_text": "341 266 472\r\nqfe2fpf2\r\nOn Tue, Sep 2, 2025 at 9:06 PM service@simsonn.com ",
+      "user_id": 158001607481,
+      "created_at": "2025-09-03T02:08:26Z",
+      "updated_at": "2025-09-03T02:08:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

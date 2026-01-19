@@ -1,0 +1,24 @@
+{
+  "id": 9890,
+  "subject": "Where is my order",
+  "description_text": "Hi\r\nI ordered the Vam pro haptics on 25th Dec 2025 and paid for 3-5 days delivery. It's now the 3rd Jan and I still haven't recieved my order. Where is it?\r\nOrder number : SF6045959598187\r\nRegardsRyan Clarke\r\n\r\nYahoo Mail: Search, organise, conquer\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2026-01-03T20:20:01Z",
+  "updated_at": "2026-01-07T09:43:48Z",
+  "requester_id": 158008892540,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016104684,
+      "body_text": "此工单已关闭并合并到工单 10197 中",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T09:43:48Z",
+      "updated_at": "2026-01-07T09:43:48Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

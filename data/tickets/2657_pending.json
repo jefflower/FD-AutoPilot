@@ -1,0 +1,24 @@
+{
+  "id": 2657,
+  "subject": "Configurations/control box sparking",
+  "description_text": "Hi, i have powered the control box with the dc power for haptics, and its\r\nsparked a bit. I read it needs some type of grounding wire. Do these come\r\nwith grounding wire? Im also going to assume that control box will cause\r\nissues with other faulty configurations.\r\nWithout haptics/power plugged in, it all works fine. And technically it\r\ndoes work now, i just cant configure any other controllers or anything\r\nbecause its reading something in the control box/pedals as an input.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-13T23:17:41Z",
+  "updated_at": "2025-08-15T02:25:20Z",
+  "requester_id": 158003050439,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006889620,
+      "body_text": "Hi，David Yang，  Sparks appearing are normal — this is caused by the three small capacitors on the main controller board (responsible for the motors) charging up. It will not damage the board, and using 24V is completely safe. Regarding the “cannot configure and set” issue you mentioned, could you clarify what exactly happens? Please provide a screenshot or a video for us to review (videos can be shared via Google Drive). In most cases, this is simply a configuration issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-15T02:25:20Z",
+      "updated_at": "2025-08-15T02:25:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,324 @@
+{
+  "id": 4711,
+  "subject": "Plus X Pedals Suddenly Not working properly",
+  "description_text": "Hello,\r\n\r\nI am reaching out regarding an issue I am experiencing with my Plus X pedals. They were functioning correctly until recently when I began noticing a lag issue. Specifically, during both calibration and regular use, the throttle and brake inputs appear to freeze briefly in the software’s calibration curve box before continuing. This makes it difficult to achieve smooth and accurate pedal response.\r\n\r\nTo troubleshoot, I have already rewired the control box to avoid any EMI issue, but unfortunately, the issue persists. I would appreciate any guidance you can provide to help resolve this problem. Could you please advise on the next steps for further troubleshooting?\r\n\r\nThank you for your assistance.\r\n\r\nGet Outlook for iOS<https://aka.ms/o0ukef>\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-10-10T12:32:44Z",
+  "updated_at": "2025-10-20T11:20:29Z",
+  "requester_id": 158001831516,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010213266,
+      "body_text": "Hi Ahmad Bahlawan, Please make sure the USB cable is connected directly to the rear USB 3.0 blue port on your PC and not through a USB hub, to ensure stable power. Also, please download the latest Simsonn Manager 2.1.2 software and update the firmware.      https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-10-10T12:50:40Z",
+      "updated_at": "2025-10-10T12:50:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010213713,
+      "body_text": "Hello,\r\n\r\nCould you please clarify what you mean by the “blue USB port”? I do not see any colored ports on the back panel of my PC; it appears to be a standard USB port.\r\n\r\nGet Outlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158001831516,
+      "created_at": "2025-10-10T13:09:55Z",
+      "updated_at": "2025-10-10T13:09:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010214669,
+      "body_text": "Hi Ahmad Bahlawan,    May I ask which brand of docking station you are using? Also, if you don’t have a blue USB 3.0 port, you could try switching to another USB 2.0 port to see if that works.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-10T13:33:52Z",
+      "updated_at": "2025-10-10T13:33:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010214997,
+      "body_text": "Hello,\r\n\r\n\r\nASUS Rog z390-e gaming, it is not a new PC though\r\n\r\n\r\n\r\n\r\nGet Outlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158001831516,
+      "created_at": "2025-10-10T13:46:35Z",
+      "updated_at": "2025-10-10T13:46:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010215121,
+      "body_text": "Hi Ahmad Bahlawan,     Please take a photo of the motherboard ports at the back of the PC and show me.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-10T13:51:44Z",
+      "updated_at": "2025-10-10T13:51:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010215193,
+      "body_text": "By the way now I saw the blue USB ports, are those the USB 3.0?\r\n\r\n\r\n\r\nGet Outlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158001831516,
+      "created_at": "2025-10-10T13:54:43Z",
+      "updated_at": "2025-10-10T13:54:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010216423,
+      "body_text": "Hi Ahmad Bahlawan,  The blue one is USB 3.0. Please plug it in and test if there are still any issues.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-10T14:05:40Z",
+      "updated_at": "2025-10-10T14:05:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010216950,
+      "body_text": "Okay, thanks, will test it out\r\n\r\nGet Outlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158001831516,
+      "created_at": "2025-10-10T14:08:41Z",
+      "updated_at": "2025-10-10T14:08:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010217473,
+      "body_text": "Unfortunately, it is still doing the same… The curves freezes for a second and then the motion continues and inside the  game the pedals aren’t working by the way i only bought this pedals from your official store last month\r\n\r\nGet Outlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158001831516,
+      "created_at": "2025-10-10T14:27:16Z",
+      "updated_at": "2025-10-10T14:27:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010217588,
+      "body_text": "Hi Ahmad Bahlawan,     Have you updated the firmware version yet?  Please take a photo of the pedal and the main controller so I can check whether the green wire is connected.  Also, could you let me know the model of your base?         Hi Ahmad Bahlawan, Please make sure the USB cable is connected directly to the rear USB 3.0 blue port on your PC and not through a USB hub, to ensure stable power. Also, please download the latest Simsonn Manager 2.1.2software and update the firmware.      https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-10-10T14:30:59Z",
+      "updated_at": "2025-10-10T14:30:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010217697,
+      "body_text": "Hi, Yes i did update everything, my wheelbase is Thrustmaster T818, by the way, day before yesterday everything was working super find\r\n\r\nGet Outlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158001831516,
+      "created_at": "2025-10-10T14:34:29Z",
+      "updated_at": "2025-10-10T14:34:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010217920,
+      "body_text": "Hi Ahmad Bahlawan,    I noticed that you’re also using the VAM Pro printed mount — it looks great.  Please turn off the base power and disconnect the VAM Pro power supply, then check whether the stuttering issue still occurs.  If the problem persists, we’ll send you a replacement main controller.  If the issue disappears, it’s likely that the base is interfering with the pedal, or that the base or the computer is not properly grounded through a three-prong outlet.  In that case, changes in the setup environment may have affected the pedal signal stability.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-10T14:40:45Z",
+      "updated_at": "2025-10-10T14:40:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010218144,
+      "body_text": "I did all what you mentioned and still the issue persists unfortunately…\r\n\r\nWhen you mention base, do you mean Wheelbase? Or Pedals stand base?\r\n\r\nWhat is the problem?\r\n\r\nGet Outlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158001831516,
+      "created_at": "2025-10-10T14:49:16Z",
+      "updated_at": "2025-10-10T14:49:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010218245,
+      "body_text": "Hi Ahmad Bahlawan,    Please turn off the Thrustmaster T818 base, then reconnect the pedals and test whether the stuttering issue still occurs when pressing them.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-10T14:52:18Z",
+      "updated_at": "2025-10-10T14:52:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010218385,
+      "body_text": "Yes, I did that, and it is still doing the same, and the issue persists unfortunately\r\n\r\nGet Outlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158001831516,
+      "created_at": "2025-10-10T14:57:33Z",
+      "updated_at": "2025-10-10T14:57:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010218536,
+      "body_text": "So, what is the issue now? Is the control box got faulty?\r\n\r\nGet Outlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158001831516,
+      "created_at": "2025-10-10T15:03:24Z",
+      "updated_at": "2025-10-10T15:03:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010218592,
+      "body_text": "Hi Ahmad Bahlawan,     Please provide your order number, contact person, phone number, and address. I will send you a replacement main controller and a USB data cable tomorrow.  However, this is the first time I’ve encountered such an issue. In theory, the pedals should not stutter unless your computer is running slowly.  In addition, you can download the VKB JoyTester tool, which allows you to monitor the pedal’s input curves in real time. If the pedals are genuinely stuttering, you’ll immediately see breaks in the curve.  If Simsonn Manager shows stuttering but VKB JoyTester does not, it is likely due to low computer specifications affecting the software performance.     https://www.vkbcontrollers.com/pages/downloads",
+      "user_id": 158000445778,
+      "created_at": "2025-10-10T15:05:03Z",
+      "updated_at": "2025-10-10T15:05:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010218766,
+      "body_text": "This is the order # SSN2732\r\n\r\nThe VAM pro adapter was received without the power cable!\r\n\r\nBelow are my address details:\r\n\r\n\r\nAhmad Bahlawan\r\n\r\nAshuaytha steet, Riyadh\r\n\r\nVilla 7880 1/B\r\n\r\nKing Fahad 12274\r\n\r\nSaudi Arabia\r\n\r\n+966569460672\r\n\r\n\r\n\r\nGet Outlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158001831516,
+      "created_at": "2025-10-10T15:09:33Z",
+      "updated_at": "2025-10-10T15:09:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010218903,
+      "body_text": "Hi Ahmad Bahlawan,    Since you are in Saudi Arabia, could you let us know which type of power plug you require?  Also, how is the power currently connected on your side?",
+      "user_id": 158000445778,
+      "created_at": "2025-10-10T15:13:20Z",
+      "updated_at": "2025-10-10T15:13:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010218929,
+      "body_text": "I don't think the PC specs are low..  attached are their specs\r\n\r\nGet Outlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158001831516,
+      "created_at": "2025-10-10T15:14:46Z",
+      "updated_at": "2025-10-10T15:14:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010218959,
+      "body_text": "Saudi Arabia uses UK standards, and I connected the VAM pro adapter by a power cable i bought separately here from the market\r\n\r\nGet Outlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158001831516,
+      "created_at": "2025-10-10T15:15:40Z",
+      "updated_at": "2025-10-10T15:15:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010219103,
+      "body_text": "Hi Ahmad Bahlawan,    Alright, please let me know the amount you spent, and I will reimburse you via PayPal tomorrow; alternatively, we can send you a replacement power cable with a UK plug.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-10T15:20:24Z",
+      "updated_at": "2025-10-10T15:20:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010219187,
+      "body_text": "No need mate to reimburse me, just send a new cable from your store better, I wish the issue resolves when you send for me a new controller and please I need as fast as possible please\r\n\r\nGet Outlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158001831516,
+      "created_at": "2025-10-10T15:22:33Z",
+      "updated_at": "2025-10-10T15:22:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010219262,
+      "body_text": "Hi Ahmad Bahlawan,    You can first use the VKB tool to check the pedal curves.  This will help prevent any delay in case the issue is not related to the pedals or the main controller when the replacement arrives.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-10T15:24:57Z",
+      "updated_at": "2025-10-10T15:24:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010219640,
+      "body_text": "Hi, I will check later as now I switched the PC off and left the house.\r\n\r\nThanks.\r\n\r\nGet Outlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158001831516,
+      "created_at": "2025-10-10T15:36:27Z",
+      "updated_at": "2025-10-10T15:36:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010222991,
+      "body_text": "Hello again, please I have a question, does the Pro X Ultra control box works with the Plus X pedals?\r\n\r\nGet Outlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158001831516,
+      "created_at": "2025-10-10T17:21:40Z",
+      "updated_at": "2025-10-10T17:21:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010239612,
+      "body_text": "Hi Ahmad Bahlawan,  The ProX Ultra and PlusX are not interchangeable, as their sensor interfaces are completely different. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-11T00:50:52Z",
+      "updated_at": "2025-10-11T00:50:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010622592,
+      "body_text": "Hello,\r\n\r\nAny update please about the new controller box shipment? Along with the VAM Pro adapter power cable?\r\n\r\nGet Outlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158001831516,
+      "created_at": "2025-10-17T16:04:39Z",
+      "updated_at": "2025-10-17T16:04:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010640266,
+      "body_text": "Hi Ahmad Bahlawan,  I’ll look into it for you today and get back to you as soon as possible. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-18T02:29:48Z",
+      "updated_at": "2025-10-18T02:29:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010718069,
+      "body_text": "We apologize for any inconvenience caused. Here is your shipping tracking link.  https://t.17track.net/en#nums=YT2529301900104662",
+      "user_id": 158001343601,
+      "created_at": "2025-10-20T08:50:06Z",
+      "updated_at": "2025-10-20T08:50:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010724015,
+      "body_text": "Thanks\r\n\r\nGet Outlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158001831516,
+      "created_at": "2025-10-20T11:12:02Z",
+      "updated_at": "2025-10-20T11:12:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

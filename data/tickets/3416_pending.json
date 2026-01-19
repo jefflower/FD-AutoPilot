@@ -1,0 +1,24 @@
+{
+  "id": 3416,
+  "subject": "Order #SSN2476",
+  "description_text": "Hi\r\n\r\nI received my order and when I connect the power supply to the main box for the haptics, the power cable doesn't stay in the power port. It just falls out.\r\n\r\nSent from Outlook for Android<https://aka.ms/AAb9ysg>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-02T21:45:46Z",
+  "updated_at": "2025-09-03T04:38:57Z",
+  "requester_id": 158004105671,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008004783,
+      "body_text": "Hi wayne burton,  Are you saying that the DC power port feels loose when the power cable is plugged in? You can try securing the plug with a zip tie to see if it helps. Alternatively, you can record a video for me to check. Please make sure the video is fully uploaded before sending it via email, otherwise we won’t be able to open it. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-03T04:38:57Z",
+      "updated_at": "2025-09-03T04:38:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

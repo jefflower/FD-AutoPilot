@@ -1,0 +1,164 @@
+{
+  "id": 3701,
+  "subject": "#SSN2434",
+  "description_text": "Hi, you have failed to reply on my issue with this likely faulty product, I would therefore be grateful if you can send me a returns label.\r\nno dc input should arc when being connected, it’s either faulty or bad design.\r\nRegardsRob M\r\n\r\n\r\nSent from Sky Yahoo Mail for iPad\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-09-10T19:28:38Z",
+  "updated_at": "2025-09-20T03:26:11Z",
+  "requester_id": 158003983616,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007880956,
+      "body_text": "Hi hanhamreds@sky. com,    We apologise for the omission in your shipment, which may have been caused by an oversight on the part of our warehouse staff. We shall arrange for a replacement to be dispatched immediately. Here is your tracking number.  https://t.17track.net/en#nums=SF6045887198606",
+      "user_id": 158001343601,
+      "created_at": "2025-09-01T05:52:33Z",
+      "updated_at": "2025-09-01T05:52:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007979798,
+      "body_text": "Hi, what’s the eta please?\r\nRegardsRob \r\n\r\n\r\nSent from Sky Yahoo Mail for iPad\r\n\r\n\r\n",
+      "user_id": 158003983616,
+      "created_at": "2025-09-02T16:10:28Z",
+      "updated_at": "2025-09-02T16:10:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007999903,
+      "body_text": "Hello, your delivery is expected to arrive between the 5th and 8th.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-03T03:41:13Z",
+      "updated_at": "2025-09-03T03:41:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008345928,
+      "body_text": "Hi hanhamreds@sky. com,      First, please plug the USB cable into a USB 3.0 blue port on the back of your computer and avoid using any USB hubs. Next, use a wire to connect any metal screw on the pedal to the grounding screw on the main control box. Please ensure the connection is solid, as paint may affect grounding.  Then, I recommend performing a manual firmware update: Settings → Update → Manual Firmware Update → pedals-firmware → pedals-plusx.sfu  After completing the update, unplug and replug the USB, then reconnect the power and test again. If the issue persists, please provide the following:    A screenshot of the pedal signal in SIMSONN Manager to verify if the signal is normal.    A screenshot of the vibration feedback interface showing whether the device is recognized by the computer.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-09T23:21:42Z",
+      "updated_at": "2025-09-09T23:21:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008498127,
+      "body_text": "Hello, you may proceed with the troubleshooting steps provided by our engineer.  First, please plug the USB cable into a USB 3.0 blue port on the back of your computer and avoid using any USB hubs. Next, use a wire to connect any metal screw on the pedal to the grounding screw on the main control box. Please ensure the connection is solid, as paint may affect grounding.  Then, I recommend performing a manual firmware update: Settings → Update → Manual Firmware Update → pedals-firmware → pedals-plusx.sfu  After completing the update, unplug and replug the USB, then reconnect the power and test again. If the issue persists, please provide the following:    A screenshot of the pedal signal in SIMSONN Manager to verify if the signal is normal.    A screenshot of the vibration feedback interface showing whether the device is recognized by the computer.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-11T07:16:21Z",
+      "updated_at": "2025-09-11T07:16:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008579900,
+      "body_text": "Hi, I've tried everything you suggested but no luck.\r\nI don't even get an option to do a manual firmware update \r\n\r\n\r\nRob Morgan\r\n \r\n\r\n    ",
+      "user_id": 158003983616,
+      "created_at": "2025-09-12T11:26:38Z",
+      "updated_at": "2025-09-12T11:26:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008583479,
+      "body_text": "Hi hanhamreds@sky. com,  Please use a toothpick or screwdriver to press and hold the small button inside the hole on the side of the control box, then reconnect the USB cable. The software should enter recovery mode. Next, go to Settings → Update → Manual Firmware Update → Pedals → Firmware → Pedals → plusX.sfu and try updating the firmware manually. If the issue persists, we recommend installing Todesk (no registration required). Simply provide your ID and temporary access code, and we can schedule a time to assist you remotely.      https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-09-12T12:43:04Z",
+      "updated_at": "2025-09-12T12:43:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008602878,
+      "body_text": "Hi, further to my email earlier today I have come to the conclusion that the control box is dead. Windows is not detecting it - and nothing is coming up in device manager.\r\nThe PSU appears to be ok and I’ve tried without any of the VAM pros connected - your Simsonn manager does not see the device (see previous screenshots), I would be grateful if you can send me a replacement plus X control box.\r\nBest regardsRob M\r\n\r\n\r\nSent from Sky Yahoo Mail for iPad\r\n\r\n\r\nBegin forwarded message:\r\n\r\n",
+      "user_id": 158003983616,
+      "created_at": "2025-09-12T17:43:12Z",
+      "updated_at": "2025-09-12T17:43:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008615465,
+      "body_text": "Hi hanhamreds@sky. com,    If it is confirmed to be a hardware issue, we usually provide a free replacement. However, we need to confirm the cause of the problem first. Would you be available now for us to assist you remotely?  Please install ToDesk software — no registration is required. If a registration window pops up, simply click the close button at the top right corner. Then, please share the ID and temporary verification code with us. We will remotely assist you in checking and testing the device, which will allow us to resolve the issue more quickly.   https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-09-13T01:36:41Z",
+      "updated_at": "2025-09-13T01:36:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008632911,
+      "body_text": "Hi, I'm not comfortable with allowing remote software on my system.\r\nRegardsRob M\r\n\r\nSent from Sky Yahoo Mail on Android \r\n \r\n  ",
+      "user_id": 158003983616,
+      "created_at": "2025-09-13T10:22:22Z",
+      "updated_at": "2025-09-13T10:22:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008760313,
+      "body_text": "Hi support, anynews on the replacement please?\r\nI've done some additional testing using an old laptop, I installed Simsonn manager and simhub onto that - neither sees the control box - so I'm confident it's a hardware issue.\r\n\r\nPlease see my previous reply concerning remote access to my PC. \r\nRegardsRob M\r\n\r\nSent from Sky Yahoo Mail on Android \r\n \r\n  ",
+      "user_id": 158003983616,
+      "created_at": "2025-09-15T13:41:02Z",
+      "updated_at": "2025-09-15T13:41:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008838243,
+      "body_text": "Hi hanhamreds@sky. com,     Please use this tool to run a check and select the Simsonn device. See if it appears in the list and whether the pedals are showing any signal. If it does not appear or there is no signal, we will send you a replacement control box.           https://cdn.shopify.com/s/files/1/0551/4739/7238/files/VKB_JoyTester_40fdd530-6057-437e-9b50-3ac2d59dbbcd.zip?v=1693176246",
+      "user_id": 158000445778,
+      "created_at": "2025-09-17T02:19:31Z",
+      "updated_at": "2025-09-17T02:19:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008968455,
+      "body_text": "ID 为 3304 and 3668 的工单已被合并至该工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-19T23:54:20Z",
+      "updated_at": "2025-09-19T23:54:20Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158008968456,
+      "body_text": "合并来自工单3304  \n      主题: Order #ssn2428  \n      描述:  Hi, I've not received #ssn2428.   \n Order #ssn2434 arrived though, both are showing the same tracking number - so I'm missing the motors. \n   \n Regards \n Rob M \n \n  Sent from Sky Yahoo Mail on Android",
+      "user_id": 158000445778,
+      "created_at": "2025-09-19T23:54:20Z",
+      "updated_at": "2025-09-19T23:54:20Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158008968459,
+      "body_text": "合并来自工单3668  \n      主题: VAM pros note working  \n      描述:  Hi I’m having issues. I’ve purchased the VAM pros, PSU and plus x control box.  Everything was working for about 5mins, but now I cannot get them to work at all simhub doesn’t see them, and windows isn’t detecting when I plug in the usb cable.  The control box is earthed to my pedal tray   I’ve tried another usb cable Direct connection to Pc using either cable Disconnected the power and usb cables from the control box, then reconnect all to no avail.  One thing I’ve noticed, when I plug the PSU cable into the DC input port on the control box there’s a small spark!  Please advise    Order #ssn2434, #ssn2428  Regards Rob M  Sent from my iPad",
+      "user_id": 158000445778,
+      "created_at": "2025-09-19T23:54:21Z",
+      "updated_at": "2025-09-19T23:54:21Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

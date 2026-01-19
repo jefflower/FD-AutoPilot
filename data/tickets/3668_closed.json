@@ -1,0 +1,24 @@
+{
+  "id": 3668,
+  "subject": "VAM pros note working",
+  "description_text": "Hi I’m having issues.\r\nI’ve purchased the VAM pros, PSU and plus x control box.\r\n\r\nEverything was working for about 5mins, but now I cannot get them to work at all simhub doesn’t see them, and windows isn’t detecting when I plug in the usb cable.\r\n\r\nThe control box is earthed to my pedal tray \r\n\r\nI’ve tried another usb cable\r\nDirect connection to Pc using either cable\r\nDisconnected the power and usb cables from the control box, then reconnect all to no avail.\r\n\r\nOne thing I’ve noticed, when I plug the PSU cable into the DC input port on the control box there’s a small spark!\r\n\r\nPlease advise\r\n\r\n\r\n\r\nOrder #ssn2434, #ssn2428\r\n\r\nRegards\r\nRob M\r\n\r\nSent from my iPad\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-09-09T20:07:12Z",
+  "updated_at": "2025-09-19T23:54:21Z",
+  "requester_id": 158003983616,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008968460,
+      "body_text": "此工单已关闭并合并至工单 3701。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-19T23:54:21Z",
+      "updated_at": "2025-09-19T23:54:21Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

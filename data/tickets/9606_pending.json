@@ -1,0 +1,64 @@
+{
+  "id": 9606,
+  "subject": "",
+  "description_text": "Hello,\r\n\r\nI bought the plus x pedals around half a year ago.\r\nI was very satisfied with it, after a few months the throttle started\r\nsqeeking, but that is fixed now.\r\nHowever, last week, my brake pedal started to make a cracking sound when\r\npressed hard and when being released.\r\nThe very rear part of the pedal also bends a bit when pressed hard.\r\nI do not think that this is normal wear and i would like a solution.\r\n\r\nRegards,\r\nBram van Keeken\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-30T22:13:04Z",
+  "updated_at": "2026-01-07T15:05:37Z",
+  "requester_id": 158006074919,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015290020,
+      "body_text": "Hi Bram van keeken,  Please record a video clearly showing the bending issue and the abnormal noise, then send us the link via Google Drive and set the access permission to View. After reviewing the video, we will analyze the issue and provide you with a solution. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T01:40:30Z",
+      "updated_at": "2025-12-31T01:40:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015310462,
+      "body_text": "Thank you for your respond,\r\nHere is the link:\r\n\r\nhttps://drive.google.com/file/d/1eXyGjEutZjZHBkxOrWC3J8yNBgJNmpcy/view?usp=drivesdk\r\n\r\nOp wo 31 dec 2025 02:40 schreef service@simsonn.com ",
+      "user_id": 158006074919,
+      "created_at": "2025-12-31T11:40:55Z",
+      "updated_at": "2025-12-31T11:40:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015378050,
+      "body_text": "Hi Bram van keeken,       I’ve reviewed your video, and it appears the noise may be caused by deformation of the racing rig. You can remove the brake pedal from the rig and place it on a stable stand or flat surface, then test whether the brake still makes noise. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-02T03:48:06Z",
+      "updated_at": "2026-01-02T03:48:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015405107,
+      "body_text": "Hello,\r\n\r\nI tried what you said and the cracking noise indeed came from my rig.\r\nThank you for helping with that!\r\nOne more thing, it is not an issue that the pedal is bending a bit as said\r\nand viewed before?\r\n\r\n\r\nOp vr 2 jan 2026 04:48 schreef service@simsonn.com ",
+      "user_id": 158006074919,
+      "created_at": "2026-01-02T16:50:13Z",
+      "updated_at": "2026-01-02T16:50:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016153662,
+      "body_text": "Hi Bram van keeken,  It will not have a significant impact. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T15:05:36Z",
+      "updated_at": "2026-01-07T15:05:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

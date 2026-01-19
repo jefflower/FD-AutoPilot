@@ -1,0 +1,84 @@
+{
+  "id": 1538,
+  "subject": "Issue with VAM Haptics and Plus X Pedals – Possible Control Box Defect",
+  "description_text": "Hello,\r\n\r\nI recently purchased a set of Plus X Pedals along with the VAM Haptics\r\nsystem, and I’m experiencing an issue when connecting the VAM Haptics.\r\nSpecifically, when I plug in the VAM unit, it appears to cause a short or\r\npower disruption—resulting in the entire system cutting out.\r\n\r\nI noticed this especially when the VAM Haptics was connected to a front USB\r\nport on my PC, positioned next to my keyboard. When this happens, my\r\nkeyboard also loses power. However, if I unplug the VAM Haptics and then\r\ncompletely disconnect and reconnect the pedals, everything functions\r\nnormally—until I reconnect the VAM system.\r\n\r\nI'm unsure if this points to a defective control box or another issue, but\r\nI’d appreciate your help in diagnosing and resolving the problem.\r\n\r\nThank you,\r\nAndrew Metcalf\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-07-15T02:22:56Z",
+  "updated_at": "2025-07-15T10:28:02Z",
+  "requester_id": 158001897255,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004838472,
+      "body_text": "Hi Andrew Metcalf,  Did the issue occur right after you received the product, or did it happen after some time of use? Please note that if the VAM motor strength exceeds 70%, it could indeed be damaged due to its design characteristics. We recommend checking whether all three VAM motors are affected, or if it's an issue with the control box ports, so we can arrange a replacement accordingly. To protect the motor, we advise keeping the VAM intensity around 50% and avoiding prolonged high-force operation. We're also releasing a firmware update that will limit the maximum VAM intensity to help protect the motor from damage. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-15T02:29:04Z",
+      "updated_at": "2025-07-15T02:29:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004842696,
+      "body_text": "  Apologies for the delayed response—I just saw this. I wanted to mention\r\nthat everything arrived brand new today, straight out of the box.\r\n\r\n\r\nOn Mon, Jul 14, 2025 at 9:29 PM service@simsonn.com ",
+      "user_id": 158001897255,
+      "created_at": "2025-07-15T04:12:09Z",
+      "updated_at": "2025-07-15T04:12:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004842768,
+      "body_text": "Hi Andrew Metcalf,  Please plug the USB cable into a USB 3.0 port on the back of your desktop PC, then test each VAM motor individually to check if any of them are faulty. It’s also possible that the vibration output port on the PlusX control box is damaged. If a fault is confirmed, we’ll promptly arrange a replacement for you. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-15T04:30:39Z",
+      "updated_at": "2025-07-15T04:30:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004842780,
+      "body_text": "Thank you, I will do that. And get back with you on what comes about it\r\n\r\nOn Mon, Jul 14, 2025 at 11:30 PM service@simsonn.com ",
+      "user_id": 158001897255,
+      "created_at": "2025-07-15T04:32:26Z",
+      "updated_at": "2025-07-15T04:32:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004842867,
+      "body_text": "  Everything appears to be working fine now. It seems it may have been a\r\none-time issue, possibly a fluke, that hasn’t repeated itself.\r\n\r\nOn Mon, Jul 14, 2025 at 11:30 PM service@simsonn.com ",
+      "user_id": 158001897255,
+      "created_at": "2025-07-15T04:53:59Z",
+      "updated_at": "2025-07-15T04:53:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004843118,
+      "body_text": "Hi Andrew Metcalf,    We recommend setting the VAM motor strength to 50%, even when using SIMHUB version 9.9.3. To prevent damage to the VAM motor, please avoid using telemetry effects based on speed or RPM, as these can cause the motor to run continuously for extended periods, which may lead to overheating or wear.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-15T05:49:29Z",
+      "updated_at": "2025-07-15T05:49:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004843144,
+      "body_text": "Thank you i appreciate that information and will make sure tomorrow all of\r\nits turned down before i go into the game.\r\n\r\nOn Tue, Jul 15, 2025 at 12:49 AM service@simsonn.com ",
+      "user_id": 158001897255,
+      "created_at": "2025-07-15T05:52:26Z",
+      "updated_at": "2025-07-15T05:52:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

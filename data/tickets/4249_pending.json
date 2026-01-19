@@ -1,0 +1,94 @@
+{
+  "id": 4249,
+  "subject": "Simsonn Plus Connection Issue",
+  "description_text": "Hello, I bought simsonn pedals, but clutch and gas are not recognized and\r\nbrake is being activated without being touched. Can you please help.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-09-29T18:13:53Z",
+  "updated_at": "2025-10-20T02:10:03Z",
+  "requester_id": 158005158395,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009726129,
+      "body_text": "Hi Minh-Dan Luong,     Please uninstall the old version from your computer and install the latest SIMSONN Manager 2.1.1 from the provided link. After connecting the device, if you see a message saying “Version too old, not supported” or Simsonn Flasher mode, go to Settings → Update → Manual Firmware Update → pedals-firmware-plus.sfu to update the firmware. Once the update is complete, make sure to recalibrate the pedals, as they will not function properly in games without calibration.        https://drive.google.com/file/d/1BAdSWa1bxmbPksj9Hlzuo8bl7_bM8ixr/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T10:11:03Z",
+      "updated_at": "2025-10-01T10:11:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009915921,
+      "body_text": "I’m sorry, I have simsonn pro, not plus, so this did not work\r\n\r\nOn Wed, Oct 1, 2025 at 3:11 AM service@simsonn.com ",
+      "user_id": 158005158395,
+      "created_at": "2025-10-04T21:05:50Z",
+      "updated_at": "2025-10-04T21:05:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009937832,
+      "body_text": "Hi Minh-Dan Luong,  You can use FreeJoy to restore the pedals. I will provide you with the necessary recovery files and a detailed step-by-step guide.      After connecting the device, click “Load Config from File” and select the .cfg file I attached. Then click “Write Config to Device” to write the configuration. Finally, click “Read Config from Device” to verify that the settings have been successfully restored.       https://drive.google.com/file/d/1hnHNudj0VhE6xr7ypu-KeEDuVrlVHVg9/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T15:50:50Z",
+      "updated_at": "2025-10-05T15:50:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009947624,
+      "body_text": "I was unable to connect the device\r\n\r\nOn Sun, Oct 5, 2025 at 8:51 AM service@simsonn.com ",
+      "user_id": 158005158395,
+      "created_at": "2025-10-05T20:24:22Z",
+      "updated_at": "2025-10-05T20:24:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009950497,
+      "body_text": "Hi Minh-Dan Luong,  You can use Simsonn Manager 2.1.0 to restore the firmware.  Go to Settings → Update → Manual Firmware Update → pedals → firmware → pedals-plus.sfu.  After the update, the pedals should work normally and allow you to recalibrate them.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T23:31:31Z",
+      "updated_at": "2025-10-05T23:31:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010691181,
+      "body_text": "I get this error message when trying to install 2.1.0\r\n\r\nOn Sun, Oct 5, 2025 at 4:31 PM service@simsonn.com ",
+      "user_id": 158005158395,
+      "created_at": "2025-10-19T04:16:47Z",
+      "updated_at": "2025-10-19T04:16:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010691223,
+      "body_text": "I think something is wrong with control box since none of the software can\r\nconnect with it\r\n\r\nOn Sat, Oct 18, 2025 at 9:16 PM Minh-Dan Luong <minhdanluong@gmail.com>\r\nwrote:\r\n\r\n> I get this error message when trying to install 2.1.0\r\n>\r\n> On Sun, Oct 5, 2025 at 4:31 PM service@simsonn.com ",
+      "user_id": 158005158395,
+      "created_at": "2025-10-19T04:19:04Z",
+      "updated_at": "2025-10-19T04:19:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010714300,
+      "body_text": "Hi Minh-Dan Luong,  We have released SIMSONN Manager 2.1.2. Please download and install this version first, then go to Settings → Update and manually update the firmware by selecting the plus.sfu file. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-20T02:10:02Z",
+      "updated_at": "2025-10-20T02:10:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

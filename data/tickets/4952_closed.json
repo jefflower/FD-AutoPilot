@@ -1,0 +1,24 @@
+{
+  "id": 4952,
+  "subject": "Shipping question",
+  "description_text": "Hello.\r\nI want to buy a pedal baseplate. Can I send it to an address in mainland\r\nChina and will it arrive without any additional processing or charges?\r\n\r\nJust to put this in context, an acquaintance would receive it at that\r\nlocation in China and then bring it to me in his luggage when he returns\r\nfrom his trip.\r\n\r\nRegards.\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-10-16T13:26:10Z",
+  "updated_at": "2025-10-17T01:32:00Z",
+  "requester_id": 158005746245,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010588841,
+      "body_text": "此工单已关闭并合并到工单 4958 中",
+      "user_id": 158000445778,
+      "created_at": "2025-10-17T01:32:00Z",
+      "updated_at": "2025-10-17T01:32:00Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

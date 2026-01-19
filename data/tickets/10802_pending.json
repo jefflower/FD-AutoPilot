@@ -1,0 +1,84 @@
+{
+  "id": 10802,
+  "subject": "",
+  "description_text": "Hello I would like to add the baseplate to my order as a whole package could you please help me in doing so my order is SSN6072 I would like to either cancel and reorder correctly or pay difference instead of having to pay more separately please help\r\n\r\nSent from my iPhone\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-13T15:55:33Z",
+  "updated_at": "2026-01-14T11:58:34Z",
+  "requester_id": 158009051085,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017002022,
+      "body_text": "I would just like to cancel my order and reorder a complete different package. Please help. I didn’t realize and don’t not get everything I want ",
+      "user_id": 158009051085,
+      "created_at": "2026-01-13T16:17:14Z",
+      "updated_at": "2026-01-13T16:17:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158017002152,
+      "body_text": "What the bundle with the baseplate and hydraulic ",
+      "user_id": 158009051085,
+      "created_at": "2026-01-13T16:18:23Z",
+      "updated_at": "2026-01-13T16:18:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158017003330,
+      "body_text": "I am willing to purchase upgrade and baseplate separately if it can be included in same shipping ",
+      "user_id": 158009051085,
+      "created_at": "2026-01-13T16:30:15Z",
+      "updated_at": "2026-01-13T16:30:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158017003843,
+      "body_text": "Please help me get the right bundle please. I want to get the silver 3 pedal set with baseplate and hydraulic ",
+      "user_id": 158009051085,
+      "created_at": "2026-01-13T16:36:10Z",
+      "updated_at": "2026-01-13T16:36:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158017005165,
+      "body_text": "I have bought the new bundle and would like to stop/cancel this order asap thank you",
+      "user_id": 158009051085,
+      "created_at": "2026-01-13T16:48:12Z",
+      "updated_at": "2026-01-13T16:48:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158017078175,
+      "body_text": "Hi Alejandro Martinez,    Okay, we've canceled your order #SSN6072.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-14T07:32:24Z",
+      "updated_at": "2026-01-14T07:32:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017096377,
+      "body_text": "thank you very much I have been charged for the product and funds are not in my account when will this reflect?\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158009051085,
+      "created_at": "2026-01-14T11:56:08Z",
+      "updated_at": "2026-01-14T11:56:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

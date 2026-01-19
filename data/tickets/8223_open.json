@@ -1,0 +1,84 @@
+{
+  "id": 8223,
+  "subject": "Faulty RGB",
+  "description_text": "Hello,\r\n\r\nI have an issue with my Simsonn Pro x Ultra brake pedal. The RGB lights are\r\nnot working. They only flicker and show the incorrect colour after setting\r\nin Simsonn manager.\r\n\r\nI have attached a video showing the issue.\r\n\r\nThanks\r\n\r\n",
+  "status": 2,
+  "priority": 1,
+  "created_at": "2025-12-14T18:21:44Z",
+  "updated_at": "2026-01-13T22:09:35Z",
+  "requester_id": 158007807587,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014620748,
+      "body_text": "Hi James Waygood,  Please provide your order number, contact name, phone number, and shipping address. We will send you replacement LED light assemblies for the left and right sides of the ProX Ultra, which you can install yourself. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T09:49:43Z",
+      "updated_at": "2025-12-17T09:49:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014659214,
+      "body_text": "Hello,\r\n\r\nOrder number: SSN3196.\r\n\r\nJames Waygood\r\n8 Trinity Road\r\nGloucester\r\nGL4 5GB\r\n\r\n07554383706\r\n\r\nOn Wed, 17 Dec 2025 at 09:49, service@simsonn.com ",
+      "user_id": 158007807587,
+      "created_at": "2025-12-17T21:25:14Z",
+      "updated_at": "2025-12-17T21:25:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015028284,
+      "body_text": "Hi James Waygood,    I apologize for not getting back to you sooner. Here is your tracking link.  https://t.17track.net/en#nums=SF6047187420163",
+      "user_id": 158001343601,
+      "created_at": "2025-12-24T08:54:09Z",
+      "updated_at": "2025-12-24T08:54:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015423659,
+      "body_text": "Hello,\r\n\r\nTracking says it’s been delivered but I have not received anything. What\r\naddress did you send them to?\r\n\r\nThanks\r\n\r\nOn Wed, 24 Dec 2025 at 08:54, service@simsonn.com ",
+      "user_id": 158007807587,
+      "created_at": "2026-01-02T20:04:15Z",
+      "updated_at": "2026-01-02T20:04:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016637892,
+      "body_text": "Hello can you tell me what is happening with this please???\r\n\r\n\r\n",
+      "user_id": 158007807587,
+      "created_at": "2026-01-09T23:51:09Z",
+      "updated_at": "2026-01-09T23:51:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016844205,
+      "body_text": "Hello,\r\n\r\nCan you answer me? Tracking says they went to liverpool but the address I\r\nsent you is gloucester.\r\n\r\nPlease reply thanks\r\n\r\n",
+      "user_id": 158007807587,
+      "created_at": "2026-01-12T07:45:25Z",
+      "updated_at": "2026-01-12T07:45:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017039819,
+      "body_text": "Hello,\r\n\r\nCan you tell me where the part was sent to as I have still not received it.\r\n\r\nThanks\r\n\r\n",
+      "user_id": 158007807587,
+      "created_at": "2026-01-13T22:09:35Z",
+      "updated_at": "2026-01-13T22:09:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

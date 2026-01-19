@@ -1,0 +1,13 @@
+{
+  "id": 2887,
+  "subject": "来自simsonn.com的退信",
+  "description_text": "QQ邮箱退信 很抱歉您发送的邮件被退回，以下是该邮件的相关信息： 被退回邮件 主 题：Ticket Received - 邮件未能发送成功 时 间：2025-08-20 08:03:15 无法发送到 10000@qq.com 退信原因 收件人邮件地址（10000@qq.com）不存在，邮件无法送达。 host mx3.qq.com[43.137.222.247] said: 550 Mailbox unavailable or access denied [MOc2JvadpINsYwsXmyFdzZ6CTMoKFEIiFStCsPE1b0hDtaGiHzp2vhXvmQ1MpNPYig== IP: 114.132.65.219]. https://service.mail.qq.com/detail/0/166. (in reply to end of DATA command) 解决方案 请联系你的收件人，重新核实邮箱地址，或发送到其他收信邮箱。 此外，您还可以 点击这里 获取更多关于退信的帮助信息。",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-20T00:03:34Z",
+  "updated_at": "2025-08-20T01:40:42Z",
+  "requester_id": 158001011131,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": []
+}

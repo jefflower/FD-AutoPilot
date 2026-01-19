@@ -1,0 +1,274 @@
+{
+  "id": 7539,
+  "subject": "Faulty throttle",
+  "description_text": "As you can see from the video, the throttle pedal does not register and only works when I use my finger to press down on the load cell. And the load cell is much harder to register than the clutch for some reason, which is why it can't register anything when I try to use the throttle. If possible, can I get replacement parts or a new throttle?\r\n\r\n",
+  "status": 5,
+  "priority": 4,
+  "created_at": "2025-12-06T00:34:48Z",
+  "updated_at": "2025-12-22T11:19:28Z",
+  "requester_id": 158007389916,
+  "responder_id": 158007774664,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013754527,
+      "body_text": "Hi Ethan Nguyen,  You are using the latest version of SIMSONN Manager 2.1.2, correct? Please click “Offset” in the software to reset the initial signal to zero, and then recalibrate the pedals.      Please provide your order number. At the same time, please check whether the throttle pedal’s spring and pressure plate are damaged or have come loose, and verify that the RJ11 connector on the throttle is securely plugged in. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-06T04:45:15Z",
+      "updated_at": "2025-12-06T04:45:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013763074,
+      "body_text": "I'm using the latest software and tried that but now the throttle works but only over halfway through the throttle before it starts working. Also I ordered from the official aliexpress store 8206290101572984\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158007389916,
+      "created_at": "2025-12-06T05:19:16Z",
+      "updated_at": "2025-12-06T05:19:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013765098,
+      "body_text": "Hi Ethan Nguyen,     If there is no damage here, simply setting the “Offset” in the software should resolve the issue. You can also take a photo for me to confirm. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-06T05:27:27Z",
+      "updated_at": "2025-12-06T05:27:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013766156,
+      "body_text": "I don't think there is damage but offset didn't work\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158007389916,
+      "created_at": "2025-12-06T05:31:23Z",
+      "updated_at": "2025-12-06T05:31:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013767154,
+      "body_text": "Hi Ethan Nguyen,  Here’s the procedure: first, connect the pedals to the main control box, then unplug and replug the USB cable. Open the software and make sure you are using SIMSONN Manager 2.1.2, with the pedals showing CPU1:2.0.5 and CPU2:2.0.4. Next, click “Offset” and then recalibrate and test the pedals. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-06T05:35:24Z",
+      "updated_at": "2025-12-06T05:35:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013824961,
+      "body_text": "I replugged into simsonn manager 2.1.2 and cpu1: 2.0.5 cpu1: 2.0.4 and followed your instructions but it does the same thing\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158007389916,
+      "created_at": "2025-12-06T09:13:17Z",
+      "updated_at": "2025-12-06T09:13:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014117698,
+      "body_text": "Hi Ethan Nguyen,     Could you please send a screenshot of the software interface? I need to check what’s happening with the white signal bar of the throttle. In theory, the offset adjustment should be effective; if it’s not, the throttle sensor might be faulty. You can also try swapping the throttle and brake connectors to test whether the issue comes from the main control box or from the pedal itself.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-08T09:29:23Z",
+      "updated_at": "2025-12-08T09:29:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014118154,
+      "body_text": "\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158007389916,
+      "created_at": "2025-12-08T09:45:08Z",
+      "updated_at": "2025-12-08T09:45:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014118155,
+      "body_text": "Also a video of me on the latest 2.1.2 doing full offset and calibration https://youtube.com/shorts/0RNcbM3P05k\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158007389916,
+      "created_at": "2025-12-08T09:45:11Z",
+      "updated_at": "2025-12-08T09:45:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014118237,
+      "body_text": "Ok I swapped the brake and the throttle and it seems like it was the box causing the problem it works fine now\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158007389916,
+      "created_at": "2025-12-08T09:48:29Z",
+      "updated_at": "2025-12-08T09:48:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014119531,
+      "body_text": "Hi Ethan Nguyen,  If that’s the case, the issue might still be that the offset is not set correctly. Please take a screenshot of the following interface for me, and then perform the offset procedure again.       connect the pedals to the main control box, then unplug and replug the USB cable. Open the software and make sure you are using SIMSONN Manager 2.1.2, with the pedals showing CPU1:2.0.5 and CPU2:2.0.4. Next, click “Offset” and then recalibrate and test the pedals.  ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-08T10:40:38Z",
+      "updated_at": "2025-12-08T10:40:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014119652,
+      "body_text": "I followed these instructions and it still doesn't work properly\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158007389916,
+      "created_at": "2025-12-08T10:44:53Z",
+      "updated_at": "2025-12-08T10:44:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014307599,
+      "body_text": "Hi Ethan Nguyen,  Hello, ToDesk does not require an account to use for remote assistance. You only need to provide the ID and verification code.       https://dl.todesk.com/irrigation/ToDesk_4.7.6.3.exe ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T08:07:39Z",
+      "updated_at": "2025-12-11T08:07:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014307902,
+      "body_text": "You want me to install it for remote help?\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158007389916,
+      "created_at": "2025-12-11T08:16:30Z",
+      "updated_at": "2025-12-11T08:16:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014308103,
+      "body_text": "Hi Ethan Nguyen,  Yes, this will quickly resolve your issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T08:22:14Z",
+      "updated_at": "2025-12-11T08:22:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014308247,
+      "body_text": "ToDesk:\r\n设备代码:305 731 283\r\n临时密码:5wkrw9t8\r\n________________________________\r\n",
+      "user_id": 158007389916,
+      "created_at": "2025-12-11T08:26:34Z",
+      "updated_at": "2025-12-11T08:26:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014308632,
+      "body_text": "The spring was in the right place until I tried to touch it for the troubleshooting\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158007389916,
+      "created_at": "2025-12-11T08:38:32Z",
+      "updated_at": "2025-12-11T08:38:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014308988,
+      "body_text": "Hi Ethan Nguyen,  Please provide your contact name, address, phone number, and order number. We will send you a replacement throttle sensor immediately. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T08:47:35Z",
+      "updated_at": "2025-12-11T08:47:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014309048,
+      "body_text": "Name: Ethan Nguyen\r\nAddress: 10 Hodgson Grove, Bentleigh East VIC 3165 Australia\r\nPhone: +61 426 352 763\r\nOrder number (AliExpress): 8206290101572984\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158007389916,
+      "created_at": "2025-12-11T08:48:53Z",
+      "updated_at": "2025-12-11T08:48:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014309182,
+      "body_text": "Hi Ethan Nguyen,     The spring should be installed between the two black screws, is that how you installed it? From the picture you provided, it seems the installation is not correct. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T08:52:58Z",
+      "updated_at": "2025-12-11T08:52:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014309239,
+      "body_text": "Yes it's correct, it was just fallen out from when you told me to press on the spring for troubleshooting. I put it back in afterwards when I swapped the clutch and throttle\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158007389916,
+      "created_at": "2025-12-11T08:55:12Z",
+      "updated_at": "2025-12-11T08:55:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014309685,
+      "body_text": "When will I receive the replacement sensor?\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158007389916,
+      "created_at": "2025-12-11T09:11:21Z",
+      "updated_at": "2025-12-11T09:11:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014505415,
+      "body_text": "Hi Ethan Nguyen,  You need to cancel the order dispute on the AliExpress platform first, and then we will resend the throttle sensor for you.",
+      "user_id": 158007774664,
+      "created_at": "2025-12-15T10:52:00Z",
+      "updated_at": "2025-12-15T10:52:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014614285,
+      "body_text": "Hi Ethan Nguyen,    If your dispute cannot be cancelled, it will be closed after six days as long as you do not return the product. We have already sent you a new sensor.  Your product has been shipped. The logistics number is:YT2535100705487708. You can track it at this website:https://t.17track.net/zh-cn#nums=YT2535100705487708 ",
+      "user_id": 158007774664,
+      "created_at": "2025-12-17T06:11:26Z",
+      "updated_at": "2025-12-17T06:11:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014614609,
+      "body_text": "Yes it can't be cancelled and I've contacted support to try cancel it but they are still getting back to me. I'll wait 6 days and let it cancel\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158007389916,
+      "created_at": "2025-12-17T06:24:31Z",
+      "updated_at": "2025-12-17T06:24:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014873182,
+      "body_text": "你好，Ethan Nguyen，  无需担心，关于超时问题的争议将自动取消。",
+      "user_id": 158007774664,
+      "created_at": "2025-12-22T11:19:16Z",
+      "updated_at": "2025-12-22T11:19:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "id": 7737,
+  "subject": "Grounding help",
+  "description_text": "I got simsonn pro plus pedals and ive dying to try them, but im unable to\r\nget them grounded and its been making the brake pedal jitter i used a usb\r\nisolator i put the pedals in a different port i put the ground cable to\r\nanything i can connect it to, and it still has jitter, cause im thinking of\r\njust returning  sorry and thank you!\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-08T20:22:15Z",
+  "updated_at": "2025-12-11T05:33:31Z",
+  "requester_id": 158007706889,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014166798,
+      "body_text": "Hi A Barr,  If this happens, it indicates that the computer’s grounding is not reliable, possibly because a three-prong plug was not used with a three-prong wall outlet. You can refer to the post below: connect the computer case to the stand, and connect the control box to the metal screws on the pedals. This should resolve the disconnection issue.  https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-12-09T06:13:59Z",
+      "updated_at": "2025-12-09T06:13:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014167790,
+      "body_text": "To make sure i understand it i connect a grounded wire to my stand and\r\nconnect the grounded wire from the mini box to the pedal?\r\n\r\nOn Mon, Dec 8, 2025, 10:14 PM support@simsonn.com ",
+      "user_id": 158007706889,
+      "created_at": "2025-12-09T06:44:44Z",
+      "updated_at": "2025-12-09T06:44:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014168392,
+      "body_text": "Hi A Barr,  ​Use any wire to connect three points: the PC case, the metal screw on the pedal, and the main control box. Three points are sufficient. Note that paint may affect the grounding effectiveness. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-09T07:07:54Z",
+      "updated_at": "2025-12-09T07:07:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014169528,
+      "body_text": "thank you so much!! i connected the copper wire to my pc psu mounting bolt\r\nto the pedal and the grounding wire for the main control box to the same\r\nbolt and extra measure i connected another to my pc case to the wheel stand\r\nand the only jittery bit is kgs but i believe thats normal yea?\r\n\r\n\r\n\r\nOn Mon, Dec 8, 2025 at 11:08 PM support@simsonn.com ",
+      "user_id": 158007706889,
+      "created_at": "2025-12-09T07:53:04Z",
+      "updated_at": "2025-12-09T07:53:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014169997,
+      "body_text": "i also adjusted the deadzone to5 aswell\\\r\n\r\n",
+      "user_id": 158007706889,
+      "created_at": "2025-12-09T08:09:48Z",
+      "updated_at": "2025-12-09T08:09:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014170496,
+      "body_text": "Hi A Barr,  The weight fluctuation is fine. You can go ahead and try it in the game first. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-09T08:26:43Z",
+      "updated_at": "2025-12-09T08:26:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014173672,
+      "body_text": "Thank you so much, im brand new to sim racing and im in love with the\r\npedals thank you so much i thought my day was ruined but you saved it for me\r\n\r\nOn Tue, Dec 9, 2025 at 12:26 AM support@simsonn.com ",
+      "user_id": 158007706889,
+      "created_at": "2025-12-09T09:06:20Z",
+      "updated_at": "2025-12-09T09:06:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

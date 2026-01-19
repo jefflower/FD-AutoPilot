@@ -1,0 +1,54 @@
+{
+  "id": 3781,
+  "subject": "Promo code",
+  "description_text": "Hi wondering if there's any promo codes going at the moment for the 3xpac pro set and controller box?",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-13T08:07:43Z",
+  "updated_at": "2025-09-16T07:03:22Z",
+  "requester_id": 158004499301,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008742686,
+      "body_text": "We’re sorry, because the Vam Pro set has very low margins, so we haven’t set up any discounts for it. ",
+      "user_id": 158001343601,
+      "created_at": "2025-09-15T10:06:11Z",
+      "updated_at": "2025-09-15T10:06:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008792609,
+      "body_text": "Do they work with the moza pedals sr-p lite? ",
+      "user_id": 158004499301,
+      "created_at": "2025-09-16T01:20:49Z",
+      "updated_at": "2025-09-16T01:20:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008793546,
+      "body_text": "Yes, only an additional Plus X control box is required.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-16T02:31:08Z",
+      "updated_at": "2025-09-16T02:31:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008798953,
+      "body_text": "Ok thank you. Just placed an order. ",
+      "user_id": 158004499301,
+      "created_at": "2025-09-16T05:43:14Z",
+      "updated_at": "2025-09-16T05:43:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

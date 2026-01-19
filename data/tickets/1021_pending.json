@@ -1,0 +1,46 @@
+{
+  "id": 1021,
+  "subject": "Need update for order #SSN1891",
+  "description_text": "Hello\r\nPlease send me the update and tracking number for the products ordered\r\non 6/29/2025, I have requested expedited service and made the payment.\r\nKindly check the status of this order as I need these products asap.\r\nkind regards\r\n\r\nSadeeya Zaidi\r\n3614 Amer Way El Dorado hills CA 95762\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-01T00:35:10Z",
+  "updated_at": "2025-07-04T15:21:15Z",
+  "requester_id": 158001853428,
+  "responder_id": 158001343601,
+  "cc_emails": [
+    "dumbnumbbum@protonmail.com"
+  ],
+  "conversations": [
+    {
+      "id": 158004363576,
+      "body_text": "Hi，Sadeeya Z，  The VAM motor, handbrake, and sequential shifter have all been shipped. The pedals are still awaiting arrival and stocking at the U.S. warehouse, which is expected to take a few more days. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T07:19:30Z",
+      "updated_at": "2025-07-02T07:19:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004428476,
+      "body_text": "Hello\r\nFor the products that you have already shipped to my address please send\r\nthe tracking info;\r\nI was charged the extra amount for expedited shipping but it has not been\r\nprocessed as priority.\r\nFor the pedals that are awaiting shipment I would prefer to change the\r\nshipping address  to india .\r\nPlease send me the tracking info for the package that is shipped to my\r\nCalifornia  address.\r\n\r\nOn Wed, Jul 2, 2025 at 12:19 AM service@simsonn.com ",
+      "user_id": 158001853428,
+      "created_at": "2025-07-03T14:37:50Z",
+      "updated_at": "2025-07-03T14:37:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445615,
+      "body_text": "Hi Sadeeya Z,     Sorry for the delay, the latest batch arrived today and we have dispatched it for you and expect it to arrive around the 9th.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-04T15:21:15Z",
+      "updated_at": "2025-07-04T15:21:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

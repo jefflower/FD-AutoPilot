@@ -1,0 +1,144 @@
+{
+  "id": 9934,
+  "subject": "Simsonn plus x Not working ingame",
+  "description_text": "I am experiencing a serious issue with my SIMSONN Plus X pedals, which I\r\nhave not been able to resolve despite extensive troubleshooting.The pedals\r\nare shown as Connected in the SIMSONN software and profiles can be created\r\nand saved. However, the pedals do not output any axis signals to Windows.   In\r\nthe Windows game controller test (joy.cpl → SIMSONN Plus X → Test), no axis\r\nmovement is shown when pressing throttle or brake — even with high force on\r\nthe brake pedal.Because of this, the pedals also do not work in any game.\r\n\r\nPedals are correctly detected in Windows Device Manager as HID devices. SIMSONN\r\nsoftware reinstalled multiple times. New profiles created (no old profiles\r\nloaded). Multiple PC restarts. USB connected directly to motherboard (no\r\nUSB hub). Removed all conflicting software (vJoy, Joystick Gremlin,\r\nSimHub). Steam Input disabled. Game reinstalled\r\n\r\nDespite this, no axis input reaches Windows at all.It appears that the\r\npedals show as connected at firmware/software level, but do not send any\r\ninput data to the operating system.\r\n\r\nKind regards,\r\n\r\nTimo\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-04T15:12:20Z",
+  "updated_at": "2026-01-11T03:21:31Z",
+  "requester_id": 158008897662,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015693169,
+      "body_text": "Also in Pedal v4 Software device is Not detected ",
+      "user_id": 158008897662,
+      "created_at": "2026-01-04T22:20:26Z",
+      "updated_at": "2026-01-04T22:20:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015718723,
+      "body_text": "Hi CuzImTimonti,    Please provide your order number.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-05T10:26:44Z",
+      "updated_at": "2026-01-05T10:26:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015723345,
+      "body_text": " #SSN4881\r\n\r\n\r\nservice@simsonn.com ",
+      "user_id": 158008897662,
+      "created_at": "2026-01-05T11:37:44Z",
+      "updated_at": "2026-01-05T11:37:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016148928,
+      "body_text": "Hi CuzImTimonti,    PlusX pedals must be calibrated using SIMSONN Manager version 2.1.3. Please do not use the older SimConfigPedals V4 software, as it is not compatible with PlusX pedals.  Also, please ignore the Windows game controller test (joy.cpl). This interface is not applicable for validating PlusX pedal signals. All calibration and testing must be performed inside SIMSONN Manager.  If, after calibration, you can see the blue signal bars moving smoothly from 0% to 100% in SIMSONN Manager when pressing the pedals, this confirms that the hardware is functioning correctly. You only need to bind and calibrate the pedals inside the game.  Please let me know which game you are using. If it is a Steam-based racing title (such as Assetto Corsa or Assetto Corsa Competizione), I can guide you step by step through the in-game setup.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T14:36:03Z",
+      "updated_at": "2026-01-07T14:36:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016162621,
+      "body_text": "Yes i have the Manager App. The Pedals are working there, but ingame when i\r\ntry binding it, it just does nothing\r\n\r\nservice@simsonn.com ",
+      "user_id": 158008897662,
+      "created_at": "2026-01-07T16:00:15Z",
+      "updated_at": "2026-01-07T16:00:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016164927,
+      "body_text": "Hi CuzImTimonti,  Which game are you currently using?  Please also send me a screenshot of the in-game control / pedal binding page, so I can help you check whether everything is mapped correctly.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T16:18:01Z",
+      "updated_at": "2026-01-07T16:18:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016167262,
+      "body_text": "Also f1 25. Both via steam. Not working in any game\r\n\r\nservice@simsonn.com ",
+      "user_id": 158008897662,
+      "created_at": "2026-01-07T16:30:37Z",
+      "updated_at": "2026-01-07T16:30:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016250309,
+      "body_text": "Hi CuzImTimonti,      If it still doesn’t work, you can install ToDesk, and I can assist you remotely to check and resolve the issue. No registration is required—just provide the connection ID and the temporary access code. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-08T02:07:16Z",
+      "updated_at": "2026-01-08T02:07:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016342095,
+      "body_text": "No, i always have to put in a mobile number, but i dont have a Chinese one\r\n\r\nservice@simsonn.com ",
+      "user_id": 158008897662,
+      "created_at": "2026-01-08T12:33:50Z",
+      "updated_at": "2026-01-08T12:33:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016342756,
+      "body_text": "I made it. Code: 262 352 740 temporary Code:9qu5xr2q\r\nCuzImTimonti <timo.buschle@gmail.com> schrieb am Do. 8. Jan. 2026 um 13:33:\r\n\r\n> No, i always have to put in a mobile number, but i dont have a Chinese one\r\n>\r\n> service@simsonn.com ",
+      "user_id": 158008897662,
+      "created_at": "2026-01-08T12:37:55Z",
+      "updated_at": "2026-01-08T12:37:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016469168,
+      "body_text": "Hi CuzImTimonti,       Are you available for a remote session right now? ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-09T03:42:53Z",
+      "updated_at": "2026-01-09T03:42:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016495203,
+      "body_text": "You are Answering me at 3/4 am, so its Kind of Hard for me to be awake. I\r\nCan let my pc Stay on if that works.\r\n\r\nservice@simsonn.com ",
+      "user_id": 158008897662,
+      "created_at": "2026-01-09T07:17:56Z",
+      "updated_at": "2026-01-09T07:17:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016768097,
+      "body_text": "Hi CuzImTimonti,      Launch the latest version of SIMSONN Manager 2.1.3.    On the “Plus X” control unit, press and hold the “Upgrade” button.    While holding the button, unplug the USB cable from the PC and then plug it back in. The software should detect the device entering “SIMSONN Flasher update mode”.    In the software go to: Settings → Update → Manual Firmware Update.    In the file selector choose: pedals‑firmware → pedals‑plusx.sfu.    Click “Start Update” and wait until the firmware is completely written. During this process do not disconnect the USB or close the application.    Once the update is finished (you’ll get a success prompt or the unit will reboot), unplug and re‑plug the USB then test the pedal device to confirm everything works correctly.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T03:21:30Z",
+      "updated_at": "2026-01-11T03:21:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

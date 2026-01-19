@@ -1,0 +1,54 @@
+{
+  "id": 7134,
+  "subject": "Delivery issue with order #SSN3827",
+  "description_text": "Hello,\r\nI have a problem with the order #SSN3827. There has been a problem with the\r\ndelivery, stating that the packet was oversize\\overweight and it has been\r\nresended to you (I guess). I have atached two screenshots from the delivery\r\nservice website, where states this problem and the new waybill number,\r\nconfirming that the packet has been received (by you i guess).\r\n\r\nOld waybill: SF6047082678264\r\n\r\nNew waybill: SF3295212713544\r\n\r\nAll of this without any update in the simsonn website.\r\n\r\nI hope you can solve this as soon as possible.\r\n\r\nRegards,\r\nIgnacio.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-01T07:35:30Z",
+  "updated_at": "2025-12-17T02:14:17Z",
+  "requester_id": 158007467531,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013317253,
+      "body_text": "Hi warrendongo5,    We apologize for the inconvenience. The inventory at our German warehouse has been depleted, so we are unable to ship your order via this tax-free channel. We can expedite your shipment using UPS, but customs duties will likely apply. Alternatively, we can wait until around the 10th to ship your order from the German warehouse. Would that be acceptable?",
+      "user_id": 158001343601,
+      "created_at": "2025-12-03T09:44:05Z",
+      "updated_at": "2025-12-03T09:44:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013319371,
+      "body_text": "Hello,\r\nOkay, i would prefer waiting until around the 10th to avoid possible custom\r\ncharges.\r\nI guess the order page will be updated, so i can follow the new delivery.\r\n\r\nThank you,\r\nIgnacio.\r\n\r\nEl mié, 3 dic 2025, 10:44, service@simsonn.com ",
+      "user_id": 158007467531,
+      "created_at": "2025-12-03T10:54:46Z",
+      "updated_at": "2025-12-03T10:54:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013386842,
+      "body_text": "Hi warrendongo5,    Thank you for your reply. We will update the shipping information after dispatch.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-04T12:02:02Z",
+      "updated_at": "2025-12-04T12:02:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014378001,
+      "body_text": "Hello,\r\nAre there any news regarding stock or shipping? From december 21st to 26th\r\ni will not be at home.\r\n\r\nRegards.\r\n\r\nEl jue, 4 dic 2025, 13:02, service@simsonn.com ",
+      "user_id": 158007467531,
+      "created_at": "2025-12-12T09:55:30Z",
+      "updated_at": "2025-12-12T09:55:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

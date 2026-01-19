@@ -1,0 +1,54 @@
+{
+  "id": 6697,
+  "subject": "Order SSN3479",
+  "description_text": "Hi,\r\n\r\nI ordered the pedals on November 14th and paid for express shipping\r\nand have not received any tracking code? (Order ssn3479)\r\n\r\n\r\nT. Kalle\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-25T05:30:15Z",
+  "updated_at": "2025-11-25T11:24:30Z",
+  "requester_id": 158007316904,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012859740,
+      "body_text": "I ordered the pedals on November 14th and paid for express shipping and have not received any tracking code?",
+      "user_id": 158007316904,
+      "created_at": "2025-11-25T05:40:40Z",
+      "updated_at": "2025-11-25T05:40:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158012869792,
+      "body_text": "Hi kalle kolari,    We apologize for the inconvenience. Our German warehouse is currently out of stock, with restocking expected by the 28th. At that time, we will ship your order via DHL and refund the additional shipping fees. Alternatively, we can ship your order from this location using express delivery.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-25T09:17:22Z",
+      "updated_at": "2025-11-25T09:17:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012870332,
+      "body_text": "Nice of you to reply. I assumed the package would come from further away\r\nthan Germany, that's why I chose express delivery. can you send the pedals\r\nquickly from your current location.\r\n\r\n-Kalle\r\n\r\nti 25. marrask. 2025 klo 11.17 service@simsonn.com ",
+      "user_id": 158007316904,
+      "created_at": "2025-11-25T09:40:17Z",
+      "updated_at": "2025-11-25T09:40:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012872583,
+      "body_text": "Hi kalle kolari,    Okay, we've shipped your order and expect it to arrive on the 30th.    https://www.sf-international.com/gb/en/support/querySupport/waybill?No=SF3295920443121",
+      "user_id": 158001343601,
+      "created_at": "2025-11-25T11:24:30Z",
+      "updated_at": "2025-11-25T11:24:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

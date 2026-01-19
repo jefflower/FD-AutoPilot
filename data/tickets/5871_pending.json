@@ -1,0 +1,24 @@
+{
+  "id": 5871,
+  "subject": "Plus X pedals and VAM reactor causing EMI",
+  "description_text": "Hi there\r\n\r\nI purchased a set of Plus X pedals and x2 VAM reactors back in July2025. \r\nWorking really well so far, but the VAM on the brake pedal is causing \r\nunwanted input into the accelerator.\r\n\r\nI read only it could be EMI. Ive used the grounding cable but no luck so \r\nfar. What would be the next step to fix the problem?\r\n\r\nThank you!\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-10T08:26:41Z",
+  "updated_at": "2025-11-11T01:35:32Z",
+  "requester_id": 158006917184,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012093041,
+      "body_text": "Hi Hotmail,    Please take a photo of the brake VAM installation so I can help you check it. Also, I recommend using a wire to:    Connect the PC case to the metal frame;    Connect the main controller box to any metal screw on the pedal.    This can effectively solve the issue. The main cause might be that the wall outlet your PC is plugged into does not have a reliable three-prong ground, leading to unstable grounding.  In addition, you can swap the throttle and brake VAM modules to check whether the brake VAM itself is faulty.   https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-11-11T01:35:32Z",
+      "updated_at": "2025-11-11T01:35:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

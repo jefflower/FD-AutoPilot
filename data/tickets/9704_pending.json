@@ -1,0 +1,24 @@
+{
+  "id": 9704,
+  "subject": "Simsonn Clutch pedal stopped working",
+  "description_text": "\r\nHello and happy new years! I’m just sending a email regarding my clutch pedal. It just stopped working randomly, everything seems to be intact, no wires disconnected, I can press it in. It’s just not getting an input in the software I guess. I haven’t had the pedals for to long and I honestly love them. Wondering if you guys know a fix or the problem! Thanks again!\r\n\r\nHere’s my order number if it helps - SSN1958\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-01T00:57:11Z",
+  "updated_at": "2026-01-01T14:59:58Z",
+  "requester_id": 158008837453,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015365811,
+      "body_text": "Hi Greyson Nye,  If testing the Offset function does not resolve the issue, we will send you a replacement clutch load cell sensor for you to install and test. In addition, please check whether any clutch components are damaged or if the spring is missing. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-01T14:59:55Z",
+      "updated_at": "2026-01-01T14:59:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

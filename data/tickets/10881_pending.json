@@ -1,0 +1,44 @@
+{
+  "id": 10881,
+  "subject": "ORDER #SSN5991 state",
+  "description_text": "Dear Simsonn,\r\n\r\nCan i have update on my order: ORDER #SSN5991 because it hasn't got any\r\nafter 2 working days, and i don't know everything is well!\r\n\r\nThank you for the help and answer!\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-14T08:52:12Z",
+  "updated_at": "2026-01-16T01:42:08Z",
+  "requester_id": 158009063115,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017154740,
+      "body_text": "Hi Dániel Karasi,  We apologize for the delay. Two shipments destined for our German warehouse have been affected by heavy snowfall in Europe, causing road blockages and delivery delays. We will expedite delivery or explore alternative logistics channels to ship your order from China as soon as possible. Compensation will be provided based on the delay after your order is completed. We apologize for the inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T01:51:53Z",
+      "updated_at": "2026-01-15T01:51:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017171383,
+      "body_text": "Dear Simsonn,\r\n\r\nThanks a lot for this information!\r\n\r\nHave a nice day!\r\n\r\nsupport@simsonn.com ",
+      "user_id": 158009063115,
+      "created_at": "2026-01-15T08:36:24Z",
+      "updated_at": "2026-01-15T08:36:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017235105,
+      "body_text": "Hi Dániel Karasi,  You're welcome. Thank you for purchasing our product. Should you have any questions in the future, please feel free to contact us. We will address them promptly.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T01:42:07Z",
+      "updated_at": "2026-01-16T01:42:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

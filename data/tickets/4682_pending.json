@@ -1,0 +1,24 @@
+{
+  "id": 4682,
+  "subject": "peddles wont connect",
+  "description_text": "hello i am having some issues with my pedals not connecting or being\r\ndetected  i have tried  using different  usb ports  with no luck on getting\r\nthem working\r\ni have uninstalled the software and reinstalled and updated the firmware\r\nwith no luck\r\n\r\ni order these pedals off your amazon store on may 4th. i have also attached\r\nsome screen shots showing  eve\r\n\r\n[image: image.png]\r\n\r\n\r\n\r\n\r\n [image: image.png]\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-09T22:53:59Z",
+  "updated_at": "2025-10-10T01:16:15Z",
+  "requester_id": 158005536457,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010185051,
+      "body_text": "Hi scott saliger,  Please uninstall the old version from your computer, then reinstall version 2.1.2 and update the firmware. After the update, the device version should display as CPU1: 2.0.5, CPU2: 2.0.3. If the issue still persists, please feel free to contact me.     Please follow the steps below to start the firmware update process:    Press the upgrade button on the control box.    Reconnect the USB cable.    The software will display a prompt indicating it has entered “Simsonn Flasher Mode.”    Go to Settings → Update → Manual Firmware Update → pedals → firmware → pedals-prox.sfu to update the firmware.    After the update is complete, release the upgrade button.    Finally, test and recalibrate your pedals.          https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-10-10T01:16:15Z",
+      "updated_at": "2025-10-10T01:16:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

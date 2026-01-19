@@ -1,0 +1,24 @@
+{
+  "id": 8590,
+  "subject": "Handbrake product inquiries",
+  "description_text": "Greetings, I bought a stainless steel handbrake a few years ago and recently had a problem with the load cell. Because of this, I purchased a new component, but I didn't pay attention to the connector for the old cell. Right now, I need the electrical diagram information to crimp it correctly.\r\n\r\nCould you also tell me the connector specification? I couldn't find it near where I live, maybe I'll have to order it online.\r\n\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-18T11:24:47Z",
+  "updated_at": "2025-12-21T12:57:22Z",
+  "requester_id": 158007859654,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014841078,
+      "body_text": "Hi Bruno Matos,     Please refer to this RJ11 4P4C connector. The wire color order is: red, white, green, and black.  Most local computer repair shops or PC accessory stores should be able to crimp this type of connector for you.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-21T12:57:22Z",
+      "updated_at": "2025-12-21T12:57:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

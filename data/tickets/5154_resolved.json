@@ -1,0 +1,54 @@
+{
+  "id": 5154,
+  "subject": "Plus X pedals driver error",
+  "description_text": "Hey there. I plugged plus x pedals, and after a short time the pedals stop\r\nresponded. After reloading my PC, I see \"disconnected\" status in simsonn\r\nsoftware, and \"driver error\" on a window devices screen. I have latest\r\nupdate of your software, and can't find how to load drivers manually. Can\r\nyou help me?\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-10-21T21:49:43Z",
+  "updated_at": "2025-10-26T12:27:13Z",
+  "requester_id": 158005956678,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010841697,
+      "body_text": "Hi Олег Загнитко,     Please make sure the pedal’s USB is directly connected to the rear USB 3.0 (blue) port of your computer. Do not use a USB hub.  If the issue persists, please follow these steps:    Press and hold the upgrade button on the control box;    Connect the USB cable — at this point, SIMSONN Manager 2.1.2 will show that the device has entered SIMSONN Flasher Mode;    Go to Settings → Update → Manual Update Firmware → pedals → firmware → pedals-plusx.sfu;    After the update is complete, please test the device again.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-22T02:40:01Z",
+      "updated_at": "2025-10-22T02:40:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010859810,
+      "body_text": "Pressing button with reconnecting USB cable didn't change anything. Link to\r\nmanual update is disabled, and not responded. I tried use older version of\r\nsoftware, but result is the same. I guess that ilbutton is enabled only in\r\ncase with older drivers.\r\nI tried to delete drivers manually using window devices tab, but for some\r\nreason this option is disabled.\r\nHow I can remove drivers?\r\n\r\nср, 22 жовт. 2025 р., 05:40 користувач support@simsonn.com <\r\nsupport@simsonn.com> пише:\r\n\r\n> Hi Олег Загнитко,\r\n>\r\n> Please make sure the pedal’s *USB is directly connected to the rear USB\r\n> 3.0 (blue) port* of your computer.\r\n> Do not use a USB hub.\r\n> If the issue persists, please follow these steps:\r\n>\r\n>    1. *Press and hold the upgrade button* on the control box;\r\n>    2. *Connect the USB cable* —\r\n>    at this point, *SIMSONN Manager 2.1.2* will show that the device has\r\n>    entered *SIMSONN Flasher Mode*;\r\n>    3. Go to *Settings → Update → Manual Update Firmware → pedals →\r\n>    firmware → pedals-plusx.sfu*;\r\n>    4. After the update is complete, please test the device again.\r\n>\r\n>\r\n>\r\n>\r\n>\r\n> ",
+      "user_id": 158005956678,
+      "created_at": "2025-10-22T07:59:23Z",
+      "updated_at": "2025-10-22T07:59:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010891256,
+      "body_text": "Problem solved. Thanks for helping\r\n\r\nср, 22 жовт. 2025 р., 10:58 користувач Олег Загнитко <riftersound@gmail.com>\r\nпише:\r\n\r\n> Pressing button with reconnecting USB cable didn't change anything. Link\r\n> to manual update is disabled, and not responded. I tried use older version\r\n> of software, but result is the same. I guess that ilbutton is enabled only\r\n> in case with older drivers.\r\n> I tried to delete drivers manually using window devices tab, but for some\r\n> reason this option is disabled.\r\n> How I can remove drivers?\r\n>\r\n> ср, 22 жовт. 2025 р., 05:40 користувач support@simsonn.com <\r\n> support@simsonn.com> пише:\r\n>\r\n>> Hi Олег Загнитко,\r\n>>\r\n>> Please make sure the pedal’s *USB is directly connected to the rear USB\r\n>> 3.0 (blue) port* of your computer.\r\n>> Do not use a USB hub.\r\n>> If the issue persists, please follow these steps:\r\n>>\r\n>>    1. *Press and hold the upgrade button* on the control box;\r\n>>    2. *Connect the USB cable* —\r\n>>    at this point, *SIMSONN Manager 2.1.2* will show that the device has\r\n>>    entered *SIMSONN Flasher Mode*;\r\n>>    3. Go to *Settings → Update → Manual Update Firmware → pedals →\r\n>>    firmware → pedals-plusx.sfu*;\r\n>>    4. After the update is complete, please test the device again.\r\n>>\r\n>>\r\n>>\r\n>>\r\n>>\r\n>> ",
+      "user_id": 158005956678,
+      "created_at": "2025-10-22T16:00:42Z",
+      "updated_at": "2025-10-22T16:00:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011110595,
+      "body_text": "",
+      "user_id": 158005956678,
+      "created_at": "2025-10-26T12:27:12Z",
+      "updated_at": "2025-10-26T12:27:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "id": 9236,
+  "subject": "Order #SSN5216",
+  "description_text": "\r\n\r\n\r\n \r\n Hello, Due to an error, I wish to cancel my order #SSN5216 from December 24, 2025. I realized too late that customs fees would be incurred. It has been more than 24 hours and I have not received a response from you. Please proceed with the cancellation of my order. Sincerely, Mr. Xavier Labrosse \r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-26T13:58:17Z",
+  "updated_at": "2026-01-04T10:48:25Z",
+  "requester_id": 158008328277,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015147100,
+      "body_text": "ID 号为 9035 和 9179 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T02:54:38Z",
+      "updated_at": "2025-12-28T02:54:38Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158015147101,
+      "body_text": "合并来自工单9035  \n      主题: Commande n° SSN5216  \n      描述:  Hello, Due to an error, I would like to cancel my order number SSN5216 dated December 24, 2025.  Sincerely, Mr. Xavier Labrosse",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T02:54:39Z",
+      "updated_at": "2025-12-28T02:54:39Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158015147103,
+      "body_text": "合并来自工单9179  \n      主题: Ordre  # SSN5216  \n      描述:  Hello, \n   \n Due to an error, I would like to cancel my order #SSN5216 placed on December 24, 2025. I did not realize that this order would incur customs duties in France. \n   \n Sincerely, \n   \n Mr. Xavier Labrosse",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T02:54:39Z",
+      "updated_at": "2025-12-28T02:54:39Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158015147112,
+      "body_text": "Hi Xavier LABROSSE,  We will soon complete production and ship to our warehouse in Germany, so shipments from Germany to the EU will be tax-free. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T02:55:28Z",
+      "updated_at": "2025-12-28T02:55:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015303809,
+      "body_text": "Hi Labrosse Xavier,    I apologize for not getting back to you sooner. Your package has been shipped via UPS. If any customs duties are required, we will reimburse you for them—no need to worry.  https://www.ups.com/track?loc=en_US&requester=ST&trackNums=1ZJ455510437716527/trackdetails",
+      "user_id": 158001343601,
+      "created_at": "2025-12-31T09:38:31Z",
+      "updated_at": "2025-12-31T09:38:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015321609,
+      "body_text": "\r\n\r\n\r\n \r\n Hello I'm a little surprised. I just received the UPS package with €36.14 in customs fees. The package came directly from China, not Germany. I'm counting on you to reimburse these fees as you offered. Xavier envoyé : 31 décembre 2025 à 10:38 de : \"service@simsonn.com\" ",
+      "user_id": 158008328277,
+      "created_at": "2025-12-31T17:36:57Z",
+      "updated_at": "2025-12-31T17:36:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "id": 1856,
+  "subject": "Sinsonn Shipping Notice #SSN2105",
+  "description_text": "Hello, please provide your address information again. We cannot ship to PO box addresses.",
+  "status": 2,
+  "priority": 4,
+  "created_at": "2025-07-24T08:19:23Z",
+  "updated_at": "2025-09-14T19:24:23Z",
+  "requester_id": 158002312324,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005490628,
+      "body_text": "Hi Johnpeterbecker,    Please reply as soon as possible!",
+      "user_id": 158001343601,
+      "created_at": "2025-07-24T10:54:05Z",
+      "updated_at": "2025-07-24T10:54:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005491125,
+      "body_text": "It is not a PO box. It is a FPO address:\r\n\r\nPSC 901\r\nBox 32\r\nFPO AE 09805\r\n\r\nV/r\r\nJohn\r\n\r\nOn Thu, Jul 24, 2025, 1:54 PM support@simsonn.com ",
+      "user_id": 158002312324,
+      "created_at": "2025-07-24T12:02:50Z",
+      "updated_at": "2025-07-24T12:02:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005514530,
+      "body_text": "Hi Johnpeterbecker,     Can you provide a residential address, as our US warehouse staff say they cannot ship to a military FPO address?",
+      "user_id": 158001343601,
+      "created_at": "2025-07-25T02:12:49Z",
+      "updated_at": "2025-07-25T02:12:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005532895,
+      "body_text": "If you cannot ship to an FPO, then the order needs to be cancelled and\r\nrefunded. I can see about ordering through Amazon who can support delivery\r\nto FPOs.\r\n\r\nThanks.\r\n\r\nV/r\r\nJohn\r\n\r\nOn Fri, Jul 25, 2025 at 5:13 AM support@simsonn.com ",
+      "user_id": 158002312324,
+      "created_at": "2025-07-25T09:34:28Z",
+      "updated_at": "2025-07-25T09:34:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005532905,
+      "body_text": "Hi Johnpeterbecker,    We apologise, but Amazon is unable to deliver to military addresses.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-25T09:36:31Z",
+      "updated_at": "2025-07-25T09:36:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005792285,
+      "body_text": "Hi Johnpeterbecker,    Please provide a shipping address as soon as possible, and we will ship your order from our US warehouse as soon as possible.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-30T03:40:36Z",
+      "updated_at": "2025-07-30T03:40:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008164267,
+      "body_text": "Please ship to 9381 Laser Ln, La Mesa, CA, 91941. Thank you.\r\n\r\nOn Wed, Jul 30, 2025, 6:40 AM support@simsonn.com ",
+      "user_id": 158002312324,
+      "created_at": "2025-09-05T20:34:36Z",
+      "updated_at": "2025-09-05T20:34:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008708472,
+      "body_text": "Could you please deliver to the following address:\r\n\r\n9381 Laser Ln\r\nLa Mesa, CA 91941\r\n\r\n",
+      "user_id": 158002312324,
+      "created_at": "2025-09-14T19:24:23Z",
+      "updated_at": "2025-09-14T19:24:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

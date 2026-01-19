@@ -1,0 +1,124 @@
+{
+  "id": 5370,
+  "subject": "Vam motors problems",
+  "description_text": "Hi! I bought an upgrade kit and vam motors for my Pro Plus pedals from your\r\nofficial store on AliExpress. I will paste here the message I just sent to\r\nthe seller and include a video I just made showing what is going on.\r\n\r\n------------------------------------------------------\r\nHi! I had problems with two of the vam motors last night. I've been waiting\r\nto use them since they arrived, because there were other parts of my setup\r\nthat I had to get delivered and they took a while to get to me. So I only\r\nset them up and used them yesterday. They felt really good and worked\r\nflawlessly for about three hours, and then the one I set to the clutch\r\nbecame very loud and the one on the brakes stopped working. I changed their\r\nconnection on the control box and they would behave the same at wherever\r\ninput they were connected. I really liked the vam system and the pedals and\r\nit was really a bummer that it worked for only that short period of time.\r\nHow can we solve this? It was really expensive to me and I had to save for\r\na long time to get this upgrade to my setup.\r\nMy order number is 8204864367111732.\r\n------------------------------------------------------\r\n\r\nCan you help me whith it?\r\n\r\n VID_20251028_121523614.mp4\r\n<https://drive.google.com/file/d/1QmGRswi2_V3ZZM8GKO8e-jiUzo3C7AUA/view?usp=drive_web>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-28T15:35:52Z",
+  "updated_at": "2025-11-03T06:16:32Z",
+  "requester_id": 158006179057,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011257007,
+      "body_text": "Hi Daniel Boaventura,  Are you using SIMSONN Manager or SIMHUB for telemetry? Also, please select the VAM motor type for testing. From the sound of the motor, it doesn’t seem like a VAM type — it sounds more like VAM Pro. Please go to Settings → Update → Manual Update → Pedals → firmware → pedals-plusx.sfu, then, after the update, select VAM motor type again for testing. Do not use the VAM Pro mode. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-29T02:17:42Z",
+      "updated_at": "2025-10-29T02:17:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011259871,
+      "body_text": "I'm using SIMSONN Manager. I updated it as soon as I installed it. As you\r\ncan see in the video, I had Vam mode selected, not Vam Pro. Let me explain\r\nthe problem again: Motor 3 (clutch) is very loud, even with low force;\r\nMotor 2 (brakes) stopped working completely and Motor 1 (accelerator) is\r\nfine, working strong and quiet. After I removed Motor 2 from the pedal, I\r\nmanaged to make it work briefly by shaking it with my hand when clicking\r\nthe test button. It seems like it could have some internal bad connection.\r\nTo be completely clear: Motor 3 is loud when connected to whatever input on\r\nthe control box, Motor 2 doesn't work when connected to any input and Motor\r\n3 works normally and quietly when connected to whatever input, all of them\r\nusing the fully updated SIMSONN Manager and with Vam Mode selected, as seen\r\nin the video I included in my first message. That makes me believe that the\r\nproblem is really with the motors 3 and 2, and not with a wrong mode\r\nselection in the SIMSONN manager or even the control box.\r\n\r\nI hope we can get to a solution for this problem, because I really liked\r\nthe SIMSONN products that I purchased: the 7+R gear shifter and the Pro\r\nPlus pedals set that I purchased from a store here in Brazil, and the\r\nupgrade kit for the pedals and the Vam system that I bought from the\r\nSIMSONN Official Store on AliExpress, while it worked.\r\n\r\nEm ter., 28 de out. de 2025 às 23:17, service@simsonn.com <\r\nservice@simsonn.com> escreveu:\r\n\r\n> Hi Daniel Boaventura,\r\n>\r\n> Are you using SIMSONN Manager or SIMHUB for telemetry?\r\n> Also, please select the *VAM motor type* for testing.\r\n> From the sound of the motor, it doesn’t seem like a VAM type — it sounds\r\n> more like *VAM Pro*.\r\n> Please go to *Settings → Update → Manual Update → Pedals → firmware →\r\n> pedals-plusx.sfu*,\r\n> then, after the update, select *VAM motor type* again for testing. Do not\r\n> use the VAM Pro mode.\r\n>\r\n>\r\n> On Tue, 28 Oct at 11:35 AM , Daniel Boaventura <\r\n> danielrboaventura@gmail.com> wrote:\r\n> Hi! I bought an upgrade kit and vam motors for my Pro Plus pedals from\r\n> your official store on AliExpress. I will paste here the message I just\r\n> sent to the seller and include a video I just made showing what is going on.\r\n>\r\n> ------------------------------------------------------\r\n> Hi! I had problems with two of the vam motors last night. I've been\r\n> waiting to use them since they arrived, because there were other parts of\r\n> my setup that I had to get delivered and they took a while to get to me. So\r\n> I only set them up and used them yesterday. They felt really good and\r\n> worked flawlessly for about three hours, and then the one I set to the\r\n> clutch became very loud and the one on the brakes stopped working. I\r\n> changed their connection on the control box and they would behave the same\r\n> at wherever input they were connected. I really liked the vam system and\r\n> the pedals and it was really a bummer that it worked for only that short\r\n> period of time. How can we solve this? It was really expensive to me and I\r\n> had to save for a long time to get this upgrade to my setup.\r\n> My order number is 8204864367111732.\r\n> ------------------------------------------------------\r\n>\r\n> Can you help me whith it?\r\n>\r\n>  VID_20251028_121523614.mp4\r\n> <https://drive.google.com/file/d/1QmGRswi2_V3ZZM8GKO8e-jiUzo3C7AUA/view?usp=drive_web>\r\n>\r\n> 5370:4206036\r\n>\r\n\r\n",
+      "user_id": 158006179057,
+      "created_at": "2025-10-29T05:06:48Z",
+      "updated_at": "2025-10-29T05:06:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011260929,
+      "body_text": "Hi Daniel Boaventura,   Please provide your order number, contact person, phone number, and shipping address, and we will resend two VAM units to you. You can also disassemble the two damaged units and send us some photos, so we can better understand what went wrong. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-29T05:44:02Z",
+      "updated_at": "2025-10-29T05:44:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011263821,
+      "body_text": "That's great! Thank you!\r\n\r\nOrder number: 8204864367111732\r\n\r\nContact person: Daniel Boaventura\r\n\r\nPhone number: +55 62 9 8133-3475\r\n\r\nShipping adress: Avenida Tocantins n. 207 apto. 1305 Ed. Rio Sao Francisco,\r\nSetor Central, Goiania - GO, Brazil, CEP 74015-010\r\n\r\nCan you send me instructions to disassemble the motors? I just now tried\r\nremoving the four screws but it did not open it.\r\n\r\n\r\n\r\nEm qua., 29 de out. de 2025, 02:44, service@simsonn.com ",
+      "user_id": 158006179057,
+      "created_at": "2025-10-29T06:06:57Z",
+      "updated_at": "2025-10-29T06:06:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011263910,
+      "body_text": "Hi Daniel Boaventura,  After removing the four screws, you can use some force to split the device into two halves. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-29T06:16:12Z",
+      "updated_at": "2025-10-29T06:16:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011297316,
+      "body_text": "This is Motor 2, which ceased to function completely. I had to insert a\r\nscrewdriver to apply the necessary force and ended up damaging the case. As\r\nI suspected, a bad connection. The black wire snapped out of the motor\r\ncontact.\r\n\r\nI will wait for the two motors that you will send me to arrive to open the\r\nMotor 3 that is making a very loud noise, because I'm using it on a very\r\nlow force on the brakes, so I still have some feeling while, despite the\r\nnoise. I don't want to risk damaging it and losing its functionality.\r\n\r\nEm qua., 29 de out. de 2025, 03:16, service@simsonn.com ",
+      "user_id": 158006179057,
+      "created_at": "2025-10-29T15:14:57Z",
+      "updated_at": "2025-10-29T15:14:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011300552,
+      "body_text": "I removed the glued motor from the bottom carcass and, after further\r\ninspection, I could see that the black wire was not detached from the\r\nmotor. So I proceeded to check if the wiring connection was good and now I\r\nsuspect (since I'm not a technician) that there is a short inside the\r\nmotor. In the videos I'm including below, I used a multimeter to check the\r\ncontinuity and it gave contact on both poles.\r\n VID_20251029_125554378.mp4\r\n<https://drive.google.com/file/d/1FCEf3D0N_n-xX_MOaNRPmCSsJ2buzsAb/view?usp=drive_web>\r\n VID_20251029_125758960.mp4\r\n<https://drive.google.com/file/d/1ov8us10fjo7Si2mOchL_22HacWkVIFGt/view?usp=drive_web>\r\n\r\nEm qua., 29 de out. de 2025 às 12:14, Daniel Boaventura <\r\ndanielrboaventura@gmail.com> escreveu:\r\n\r\n> This is Motor 2, which ceased to function completely. I had to insert a\r\n> screwdriver to apply the necessary force and ended up damaging the case. As\r\n> I suspected, a bad connection. The black wire snapped out of the motor\r\n> contact.\r\n>\r\n> I will wait for the two motors that you will send me to arrive to open the\r\n> Motor 3 that is making a very loud noise, because I'm using it on a very\r\n> low force on the brakes, so I still have some feeling while, despite the\r\n> noise. I don't want to risk damaging it and losing its functionality.\r\n>\r\n> Em qua., 29 de out. de 2025, 03:16, service@simsonn.com <\r\n> service@simsonn.com> escreveu:\r\n>\r\n>> Hi Daniel Boaventura,\r\n>>\r\n>> After *removing the four screws*, you can use some force to split the\r\n>> device into two halves.\r\n>>\r\n>>\r\n>> On Wed, 29 Oct at 2:06 AM , Daniel Boaventura <\r\n>> danielrboaventura@gmail.com> wrote:\r\n>> That's great! Thank you!\r\n>>\r\n>> Order number: 8204864367111732\r\n>>\r\n>> Contact person: Daniel Boaventura\r\n>>\r\n>> Phone number: +55 62 9 8133-3475\r\n>>\r\n>> Shipping adress: Avenida Tocantins n. 207\r\n>> <https://www.google.com/maps/search/Avenida+Tocantins+n.+207?entry=gmail&source=g>\r\n>> apto. 1305 Ed. Rio Sao Francisco, Setor Central, Goiania - GO, Brazil, CEP\r\n>> 74015-010\r\n>>\r\n>> Can you send me instructions to disassemble the motors? I just now tried\r\n>> removing the four screws but it did not open it.\r\n>>\r\n>>\r\n>>\r\n>> Em qua., 29 de out. de 2025, 02:44, service@simsonn.com <\r\n>> service@simsonn.com> escreveu:\r\n>>\r\n>>> Hi Daniel Boaventura,\r\n>>>\r\n>>> Please provide your *order number, contact person, phone number, and\r\n>>> shipping address*, and we will resend *two VAM units* to you.\r\n>>> You can also disassemble the two damaged units and send us some photos,\r\n>>> so we can better understand what went wrong.\r\n>>>\r\n>>>\r\n>>>\r\n>>> On Wed, 29 Oct at 1:06 AM , Daniel Boaventura <\r\n>>> danielrboaventura@gmail.com> wrote:\r\n>>> I'm using SIMSONN Manager. I updated it as soon as I installed it. As\r\n>>> you can see in the video, I had Vam mode selected, not Vam Pro. Let me\r\n>>> explain the problem again: Motor 3 (clutch) is very loud, even with low\r\n>>> force; Motor 2 (brakes) stopped working completely and Motor 1\r\n>>> (accelerator) is fine, working strong and quiet. After I removed Motor 2\r\n>>> from the pedal, I managed to make it work briefly by shaking it with my\r\n>>> hand when clicking the test button. It seems like it could have some\r\n>>> internal bad connection. To be completely clear: Motor 3 is loud when\r\n>>> connected to whatever input on the control box, Motor 2 doesn't work when\r\n>>> connected to any input and Motor 3 works normally and quietly when\r\n>>> connected to whatever input, all of them using the fully updated SIMSONN\r\n>>> Manager and with Vam Mode selected, as seen in the video I included in my\r\n>>> first message. That makes me believe that the problem is really with the\r\n>>> motors 3 and 2, and not with a wrong mode selection in the SIMSONN manager\r\n>>> or even the control box.\r\n>>>\r\n>>> I hope we can get to a solution for this problem, because I really liked\r\n>>> the SIMSONN products that I purchased: the 7+R gear shifter and the Pro\r\n>>> Plus pedals set that I purchased from a store here in Brazil, and the\r\n>>> upgrade kit for the pedals and the Vam system that I bought from the\r\n>>> SIMSONN Official Store on AliExpress, while it worked.\r\n>>>\r\n>>> Em ter., 28 de out. de 2025 às 23:17, service@simsonn.com <\r\n>>> service@simsonn.com> escreveu:\r\n>>>\r\n>>>> Hi Daniel Boaventura,\r\n>>>>\r\n>>>> Are you using SIMSONN Manager or SIMHUB for telemetry?\r\n>>>> Also, please select the *VAM motor type* for testing.\r\n>>>> From the sound of the motor, it doesn’t seem like a VAM type — it\r\n>>>> sounds more like *VAM Pro*.\r\n>>>> Please go to *Settings → Update → Manual Update → Pedals → firmware →\r\n>>>> pedals-plusx.sfu*,\r\n>>>> then, after the update, select *VAM motor type* again for testing. Do\r\n>>>> not use the VAM Pro mode.\r\n>>>>\r\n>>>>\r\n>>>> On Tue, 28 Oct at 11:35 AM , Daniel Boaventura <\r\n>>>> danielrboaventura@gmail.com> wrote:\r\n>>>> Hi! I bought an upgrade kit and vam motors for my Pro Plus pedals from\r\n>>>> your official store on AliExpress. I will paste here the message I just\r\n>>>> sent to the seller and include a video I just made showing what is going on.\r\n>>>>\r\n>>>> ------------------------------------------------------\r\n>>>> Hi! I had problems with two of the vam motors last night. I've been\r\n>>>> waiting to use them since they arrived, because there were other parts of\r\n>>>> my setup that I had to get delivered and they took a while to get to me. So\r\n>>>> I only set them up and used them yesterday. They felt really good and\r\n>>>> worked flawlessly for about three hours, and then the one I set to the\r\n>>>> clutch became very loud and the one on the brakes stopped working. I\r\n>>>> changed their connection on the control box and they would behave the same\r\n>>>> at wherever input they were connected. I really liked the vam system and\r\n>>>> the pedals and it was really a bummer that it worked for only that short\r\n>>>> period of time. How can we solve this? It was really expensive to me and I\r\n>>>> had to save for a long time to get this upgrade to my setup.\r\n>>>> My order number is 8204864367111732.\r\n>>>> ------------------------------------------------------\r\n>>>>\r\n>>>> Can you help me whith it?\r\n>>>>\r\n>>>>  VID_20251028_121523614.mp4\r\n>>>> <https://drive.google.com/file/d/1QmGRswi2_V3ZZM8GKO8e-jiUzo3C7AUA/view?usp=drive_web>\r\n>>>>\r\n>>>> 5370:4206036\r\n>>\r\n>\r\n\r\n",
+      "user_id": 158006179057,
+      "created_at": "2025-10-29T16:03:29Z",
+      "updated_at": "2025-10-29T16:03:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011305712,
+      "body_text": "I'm a little embarrassed by my ignorance lol\r\n\r\nI tested the continuity the same way on the functioning motors and the\r\nresults were the same. My guess is that in brushed motors they are in\r\ncontact in the axle. So for them it's normal this result. In that case, the\r\nreason for this motor to have stopped working is a mystery to me, since it\r\ndon't have any apparent problems. At least that a layman can detect.\r\n\r\nEm qua., 29 de out. de 2025 às 13:03, Daniel Boaventura <\r\ndanielrboaventura@gmail.com> escreveu:\r\n\r\n> I removed the glued motor from the bottom carcass and, after further\r\n> inspection, I could see that the black wire was not detached from the\r\n> motor. So I proceeded to check if the wiring connection was good and now I\r\n> suspect (since I'm not a technician) that there is a short inside the\r\n> motor. In the videos I'm including below, I used a multimeter to check the\r\n> continuity and it gave contact on both poles.\r\n>  VID_20251029_125554378.mp4\r\n> <https://drive.google.com/file/d/1FCEf3D0N_n-xX_MOaNRPmCSsJ2buzsAb/view?usp=drive_web>\r\n>  VID_20251029_125758960.mp4\r\n> <https://drive.google.com/file/d/1ov8us10fjo7Si2mOchL_22HacWkVIFGt/view?usp=drive_web>\r\n>\r\n> Em qua., 29 de out. de 2025 às 12:14, Daniel Boaventura <\r\n> danielrboaventura@gmail.com> escreveu:\r\n>\r\n>> This is Motor 2, which ceased to function completely. I had to insert a\r\n>> screwdriver to apply the necessary force and ended up damaging the case. As\r\n>> I suspected, a bad connection. The black wire snapped out of the motor\r\n>> contact.\r\n>>\r\n>> I will wait for the two motors that you will send me to arrive to open\r\n>> the Motor 3 that is making a very loud noise, because I'm using it on a\r\n>> very low force on the brakes, so I still have some feeling while, despite\r\n>> the noise. I don't want to risk damaging it and losing its functionality.\r\n>>\r\n>> Em qua., 29 de out. de 2025, 03:16, service@simsonn.com <\r\n>> service@simsonn.com> escreveu:\r\n>>\r\n>>> Hi Daniel Boaventura,\r\n>>>\r\n>>> After *removing the four screws*, you can use some force to split the\r\n>>> device into two halves.\r\n>>>\r\n>>>\r\n>>> On Wed, 29 Oct at 2:06 AM , Daniel Boaventura <\r\n>>> danielrboaventura@gmail.com> wrote:\r\n>>> That's great! Thank you!\r\n>>>\r\n>>> Order number: 8204864367111732\r\n>>>\r\n>>> Contact person: Daniel Boaventura\r\n>>>\r\n>>> Phone number: +55 62 9 8133-3475\r\n>>>\r\n>>> Shipping adress: Avenida Tocantins n. 207\r\n>>> <https://www.google.com/maps/search/Avenida+Tocantins+n.+207?entry=gmail&source=g>\r\n>>> apto. 1305 Ed. Rio Sao Francisco, Setor Central, Goiania - GO, Brazil, CEP\r\n>>> 74015-010\r\n>>>\r\n>>> Can you send me instructions to disassemble the motors? I just now tried\r\n>>> removing the four screws but it did not open it.\r\n>>>\r\n>>>\r\n>>>\r\n>>> Em qua., 29 de out. de 2025, 02:44, service@simsonn.com <\r\n>>> service@simsonn.com> escreveu:\r\n>>>\r\n>>>> Hi Daniel Boaventura,\r\n>>>>\r\n>>>> Please provide your *order number, contact person, phone number, and\r\n>>>> shipping address*, and we will resend *two VAM units* to you.\r\n>>>> You can also disassemble the two damaged units and send us some photos,\r\n>>>> so we can better understand what went wrong.\r\n>>>>\r\n>>>>\r\n>>>>\r\n>>>> On Wed, 29 Oct at 1:06 AM , Daniel Boaventura <\r\n>>>> danielrboaventura@gmail.com> wrote:\r\n>>>> I'm using SIMSONN Manager. I updated it as soon as I installed it. As\r\n>>>> you can see in the video, I had Vam mode selected, not Vam Pro. Let me\r\n>>>> explain the problem again: Motor 3 (clutch) is very loud, even with low\r\n>>>> force; Motor 2 (brakes) stopped working completely and Motor 1\r\n>>>> (accelerator) is fine, working strong and quiet. After I removed Motor 2\r\n>>>> from the pedal, I managed to make it work briefly by shaking it with my\r\n>>>> hand when clicking the test button. It seems like it could have some\r\n>>>> internal bad connection. To be completely clear: Motor 3 is loud when\r\n>>>> connected to whatever input on the control box, Motor 2 doesn't work when\r\n>>>> connected to any input and Motor 3 works normally and quietly when\r\n>>>> connected to whatever input, all of them using the fully updated SIMSONN\r\n>>>> Manager and with Vam Mode selected, as seen in the video I included in my\r\n>>>> first message. That makes me believe that the problem is really with the\r\n>>>> motors 3 and 2, and not with a wrong mode selection in the SIMSONN manager\r\n>>>> or even the control box.\r\n>>>>\r\n>>>> I hope we can get to a solution for this problem, because I really\r\n>>>> liked the SIMSONN products that I purchased: the 7+R gear shifter and the\r\n>>>> Pro Plus pedals set that I purchased from a store here in Brazil, and the\r\n>>>> upgrade kit for the pedals and the Vam system that I bought from the\r\n>>>> SIMSONN Official Store on AliExpress, while it worked.\r\n>>>>\r\n>>>> Em ter., 28 de out. de 2025 às 23:17, service@simsonn.com <\r\n>>>> service@simsonn.com> escreveu:\r\n>>>>\r\n>>>>> Hi Daniel Boaventura,\r\n>>>>>\r\n>>>>> Are you using SIMSONN Manager or SIMHUB for telemetry?\r\n>>>>> Also, please select the *VAM motor type* for testing.\r\n>>>>> From the sound of the motor, it doesn’t seem like a VAM type — it\r\n>>>>> sounds more like *VAM Pro*.\r\n>>>>> Please go to *Settings → Update → Manual Update → Pedals → firmware →\r\n>>>>> pedals-plusx.sfu*,\r\n>>>>> then, after the update, select *VAM motor type* again for testing. Do\r\n>>>>> not use the VAM Pro mode.\r\n>>>>>\r\n>>>>>\r\n>>>>> On Tue, 28 Oct at 11:35 AM , Daniel Boaventura <\r\n>>>>> danielrboaventura@gmail.com> wrote:\r\n>>>>> Hi! I bought an upgrade kit and vam motors for my Pro Plus pedals from\r\n>>>>> your official store on AliExpress. I will paste here the message I just\r\n>>>>> sent to the seller and include a video I just made showing what is going on.\r\n>>>>>\r\n>>>>> ------------------------------------------------------\r\n>>>>> Hi! I had problems with two of the vam motors last night. I've been\r\n>>>>> waiting to use them since they arrived, because there were other parts of\r\n>>>>> my setup that I had to get delivered and they took a while to get to me. So\r\n>>>>> I only set them up and used them yesterday. They felt really good and\r\n>>>>> worked flawlessly for about three hours, and then the one I set to the\r\n>>>>> clutch became very loud and the one on the brakes stopped working. I\r\n>>>>> changed their connection on the control box and they would behave the same\r\n>>>>> at wherever input they were connected. I really liked the vam system and\r\n>>>>> the pedals and it was really a bummer that it worked for only that short\r\n>>>>> period of time. How can we solve this? It was really expensive to me and I\r\n>>>>> had to save for a long time to get this upgrade to my setup.\r\n>>>>> My order number is 8204864367111732.\r\n>>>>> ------------------------------------------------------\r\n>>>>>\r\n>>>>> Can you help me whith it?\r\n>>>>>\r\n>>>>>  VID_20251028_121523614.mp4\r\n>>>>> <https://drive.google.com/file/d/1QmGRswi2_V3ZZM8GKO8e-jiUzo3C7AUA/view?usp=drive_web>\r\n>>>>>\r\n>>>>> 5370:4206036\r\n>>>\r\n>>\r\n\r\n",
+      "user_id": 158006179057,
+      "created_at": "2025-10-29T18:09:53Z",
+      "updated_at": "2025-10-29T18:09:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011603773,
+      "body_text": "Hi Daniel Boaventura,  Okay, please provide the contact name, phone number, delivery address, and order number. I will send you two new VAM motors tomorrow. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-02T02:20:51Z",
+      "updated_at": "2025-11-02T02:20:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011631011,
+      "body_text": "Order number: 8204864367111732\r\n\r\nContact person: Daniel Boaventura\r\n\r\nPhone number: +55 62 9 8133-3475\r\n\r\nShipping adress: Avenida Tocantins n. 207 apto. 1305 Ed. Rio Sao Francisco,\r\nSetor Central, Goiania - GO, Brazil, CEP 74015-010\r\n\r\nEm sáb., 1 de nov. de 2025, 23:21, service@simsonn.com ",
+      "user_id": 158006179057,
+      "created_at": "2025-11-02T21:03:52Z",
+      "updated_at": "2025-11-02T21:03:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011644176,
+      "body_text": "Hi Daniel Boaventura,  Your order has been shipped. The logistics number is:YT2530300704405611. You can track it at this website:https://t.17track.net/zh-cn#nums=YT2530300704405611",
+      "user_id": 158000445778,
+      "created_at": "2025-11-03T06:16:31Z",
+      "updated_at": "2025-11-03T06:16:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

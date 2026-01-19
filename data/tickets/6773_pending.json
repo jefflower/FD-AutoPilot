@@ -1,0 +1,44 @@
+{
+  "id": 6773,
+  "subject": "Subject: Shipping inquiry for Order #SSN3623 - Simsonn Plus X Pedals",
+  "description_text": "Dear Simsonn Support Team,\n\nI am writing to follow up on my recent order, Order #SSN3623, which I placed on November 19th.\n\nI selected express shipping for this order and paid an additional €30 for the expedited service. While the shifter from my order has already arrived, the Simsonn Plus X Racing Simulation Pedal with Haptic Reactor Optional - Plus X P3-H3 / Black / without Baseplate has not been shipped yet.\n\nOn your website, the status for the pedals is currently marked as \"confirmed.\"\n\nCould you please provide an update on when I can expect the pedals to be shipped?\n\nThank you for your time and assistance.\n\nBest regards,\n\nJulian Sauter\n\nSent from [Proton Mail](https://proton.me/mail/home) for iOS.\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-26T10:28:38Z",
+  "updated_at": "2025-12-05T11:05:26Z",
+  "requester_id": 158007338329,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012993469,
+      "body_text": "Hi Julian Sauter,  We sincerely apologize for the inconvenience caused by the logistics delay. Our German warehouse is currently out of stock, with restocking expected to be completed by the 28th. At that time, we will ship your order via DHL and refund the additional shipping fees.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-27T06:13:30Z",
+      "updated_at": "2025-11-27T06:13:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013063156,
+      "body_text": "Thank you very much for your Support and Service !",
+      "user_id": 158007338329,
+      "created_at": "2025-11-28T14:26:53Z",
+      "updated_at": "2025-11-28T14:26:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158013063157,
+      "body_text": "Thank you very much for your Support and Service !",
+      "user_id": 158007338329,
+      "created_at": "2025-11-28T14:26:55Z",
+      "updated_at": "2025-11-28T14:26:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    }
+  ]
+}

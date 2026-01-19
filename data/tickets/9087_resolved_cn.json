@@ -1,0 +1,55 @@
+{
+  "id": 9087,
+  "subject": "帮助",
+  "description_text": "你好，\n我不小心让我的 Simsonn 踏板进入了固件恢复模式，现在它们卡在等待固件文件的状态。\n\n我用的是银色的 plus X 踏板，控制器盒应该是旧款的。\n\n您能把正确的固件文件和刷写说明发给我吗？\n\n谢谢你。",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-24T13:43:11Z",
+  "updated_at": "2025-12-30T23:37:07Z",
+  "requester_id": 158008483452,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015057933,
+      "body_text": "嗨 LH GalaxY，请提供您的订单号并为踏板和控制盒拍照以便我们核实。另外，这里是 PlusX 的升级流程。 请按照以下步骤操作： 按住 PlusX 主控制器上的升级按钮，然后重新连接 USB 数据线。 打开 SIMSONN Manager 2.1.0 并检查是否已进入恢复模式。 如果检测到恢复模式，请转到“设置”→“更新”→“手动更新固件”→“pedals”→“firmware”→“pedals-plusx.sfu”。 更新完成后，测试设备看是否已成功恢复。 如果您使用的是旧版 1.7.1 版本的主控制盒，您可以选择使用 plus.sfu 固件进行升级。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-25T03:40:27Z",
+      "updated_at": "2025-12-25T03:40:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015071193,
+      "body_text": "这是我的踏板和盒子的照片",
+      "user_id": 158008483452,
+      "created_at": "2025-12-25T14:33:50Z",
+      "updated_at": "2025-12-25T14:33:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015166321,
+      "body_text": "嗨 LH GalaxY，只有固件版本为 1.7.1 的踏板才与 SIMSONN Manager 2.1.2 兼容。如果软件提示固件版本过旧，请前往“设置”→“更新”→“手动固件更新”→“pedals-firmware”→“pedals-plus.sfu”进行更新。如果您的踏板运行的是 1.7.0 版本，则不支持最新的软件。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T15:50:04Z",
+      "updated_at": "2025-12-28T15:50:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015287526,
+      "body_text": "谢谢你的帮助！问题解决了！",
+      "user_id": 158008483452,
+      "created_at": "2025-12-30T23:36:06Z",
+      "updated_at": "2025-12-30T23:36:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

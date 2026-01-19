@@ -1,0 +1,34 @@
+{
+  "id": 2324,
+  "subject": "CABLE PROBLEME GT2",
+  "description_text": "\r\n\r\n\r\n \r\n Hello, I am a customer of yours and have a GT2 hub and Pro X pedals. I am very satisfied with my equipment, and I plan to get an H and sequential gearbox soon. However, I have a problem with the cable that connects my steering wheel to the PC. I can therefore no longer use my equipment. I would like you to inform me about the cable and give me a reference so that I can order quickly. I would like to point out that this request has already been made to you via WhatsApp, and I have not received a response. So please help me. Thank you. \r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-05T11:50:54Z",
+  "updated_at": "2025-08-06T10:51:19Z",
+  "requester_id": 158002632564,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006263020,
+      "body_text": "Hi Dominique CASTEL,   What issue are you experiencing with the GT2 steering wheel cable? Please provide a photo, and we can arrange to send you a new one free of charge. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-05T12:32:45Z",
+      "updated_at": "2025-08-05T12:32:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006284172,
+      "body_text": "\r\n\r\n\r\n \r\n I think the wires in the cable are becoming unsoldered. As a result, they are no longer transmitting information. envoyé : 5 août 2025 à 14:32 de : \"service@simsonn.com\" ",
+      "user_id": 158002632564,
+      "created_at": "2025-08-05T14:30:23Z",
+      "updated_at": "2025-08-05T14:30:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

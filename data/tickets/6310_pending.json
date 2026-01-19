@@ -1,0 +1,24 @@
+{
+  "id": 6310,
+  "subject": "",
+  "description_text": "Greetings, I have an issue with my SIMSONN Plus (Load cell date 01/01/2024)\r\npedals. I tried every single version of the SIMSONN manager, none of them\r\nworked. All of them showed this exact thing when I went into the \"Devices\"\r\ntab .\r\n[image: image.png]\r\n\r\nI've tried to manually install firmware, it says it has missing files.\r\nNothing worked, please, can you send the file so I could manually update\r\nthe SIMSONN Manager so it detects my pedals?\r\nMuch appreciated\r\nNazarii\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-18T19:48:13Z",
+  "updated_at": "2025-11-22T03:42:18Z",
+  "requester_id": 158007167000,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012739150,
+      "body_text": "Hi Назарий К,  You can test and restore using Freejoy 1.7.0. If it is version 1.7.1, you can update the pedal firmware in Simsonn Manager via Settings → Update → Manual Firmware Update → Pedals → firmware → pedals-plus.sfu.            https://drive.google.com/file/d/1hnHNudj0VhE6xr7ypu-KeEDuVrlVHVg9/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-11-22T03:42:18Z",
+      "updated_at": "2025-11-22T03:42:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

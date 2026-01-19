@@ -1,0 +1,24 @@
+{
+  "id": 526,
+  "subject": "Where is my order? SSN#1693",
+  "description_text": "\r\nHi\r\nI placed an order for some products a little while ago, can you tell me when the order will be shipped please?\r\nOrder Number 1693\r\nRegards Andrew Lawrence \r\n\r\nSent from Yahoo Mail for iPhone\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-17T11:20:42Z",
+  "updated_at": "2025-06-22T03:12:10Z",
+  "requester_id": 158001612738,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003679712,
+      "body_text": "Hi Andy Lawrence, Here is the latest tracking information. Please have a look. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T03:12:10Z",
+      "updated_at": "2025-06-22T03:12:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

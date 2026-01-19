@@ -1,0 +1,34 @@
+{
+  "id": 4920,
+  "subject": "Poor shipping time",
+  "description_text": "Dear Simsonn,\r\n\r\nI paid $29.90 for express shipping on order #SSN2791 Tracking\r\nNumber SF6045959453583 on september 30th. This order took 8 days to deliver\r\nhalf the package which was already more than the estimated time. Now the\r\nsecond half of my order still has not left china as of october 15th. This\r\nis a total of 16 days with no end in sight. I'm very unhappy with this as I\r\nwas quoted 2-3 days processing time and approximately 4-6 day shipping.\r\nThis is in my opinion unacceptable and I would like a full $29.90 refund\r\nfor my shipping fees as my expected service has not been fulfilled.\r\n\r\nRyder Camp\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-15T20:51:58Z",
+  "updated_at": "2025-11-05T10:36:10Z",
+  "requester_id": 158005724953,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010544446,
+      "body_text": "Hi Ryder Camp,    We sincerely apologise for the inconvenience caused. Due to our eight-day holiday period in early October, your order was dispatched from China on the 9th. We shall assess the duration of the delay upon delivery and provide appropriate compensation accordingly.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-16T07:04:55Z",
+      "updated_at": "2025-10-16T07:04:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011684904,
+      "body_text": "So you're saying I'll get compensated now that it's been delivered? I still\r\nthink a refund for the express shipping is warranted since it wasn't\r\ndelivered in the quoted time, regardless of the holiday. Your shipping\r\ninformation tab on your website states Express Shipping as 3-7 business\r\ndays with 1-2 day production time, this adds up to a maximum allowed time\r\nof 9 days after ordering for it to be delivered. I ordered on September\r\n30th and received on October 21. Not counting the day I ordered it took 21\r\ndays for my order to arrive. 21 minus the 8 day holiday leaves 13 days\r\nworth of time in shipping.\r\n\r\nRyder Camp\r\n\r\nOn Thu, Oct 16, 2025 at 12:05 AM service@simsonn.com ",
+      "user_id": 158005724953,
+      "created_at": "2025-11-03T20:03:01Z",
+      "updated_at": "2025-11-03T20:03:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

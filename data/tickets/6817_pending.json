@@ -1,0 +1,54 @@
+{
+  "id": 6817,
+  "subject": "Simsonn Plus X pedals activate very slowly",
+  "description_text": "Hi\r\n\r\nI just received my Simsonn Plux X pedals, and downloaded simsonn manager 2.1.2. For what ever reason it takes about 15 minutes from launch to pedas activate. Seems very odd.\r\n\r\nI attached log file to message, I hope you can pass this along to developers so they can fix issue and release an update.\r\n\r\nThank you for good pedals, software needs bit work still.\r\n\r\n--\r\nJyri Turkia\r\njyriturkia@outlook.com\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-26T20:06:53Z",
+  "updated_at": "2025-12-01T02:15:13Z",
+  "requester_id": 158007346838,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012983602,
+      "body_text": "Hi Jyri Turkia,    Thank you for your feedback. I will forward the logs to our developers for review and will get back to you once we have an update.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T23:17:28Z",
+      "updated_at": "2025-11-26T23:17:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013037946,
+      "body_text": "Hi Jyri Turkia,  We checked the software logs and found that it takes about 15 seconds from launch to operation, not 15 minutes. If possible, could you record a video for us to check and share the link via Google Drive, making sure the access permissions are set? ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-28T04:00:41Z",
+      "updated_at": "2025-11-28T04:00:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013079069,
+      "body_text": "Hello,\r\n\r\nI disagree strongly on 15 seconds, but as you reguested, I did record a video for you.\r\nhttps://drive.google.com/file/d/1HdwX8409G8ztwnlmHF41fHvU9Vz5W1hV/view?usp=drive_link\r\nI recorded video from my display so it's ultrawide resolution. I suggest you to download file instead of open it in browser so you can actually see properly.\r\nAs you can see from video, it indeed takes A LONG TIME for pedals to start working.\r\nI also attached the logfile for today.\r\n\r\nI hope this helps you to find the issue.\r\n\r\n--\r\nJyri Turkia\r\njyriturkia@outlook.com\r\n________________________________\r\n",
+      "user_id": 158007346838,
+      "created_at": "2025-11-28T19:08:28Z",
+      "updated_at": "2025-11-28T19:08:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013154786,
+      "body_text": "Hi Jyri Turkia,  Thank you for your help. I have submitted the software to check the issue, and I will notify you immediately once there is any update. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-01T02:15:13Z",
+      "updated_at": "2025-12-01T02:15:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "id": 2404,
+  "subject": "Expensive customs",
+  "description_text": "Hello,\r\n\r\nMy order seems to arrive tomorrow via UPS.\r\nThe additions cost i almost 50% of the valde or goods 932SEK. Is everyrhing correct on the documentations or have you set A to high value on the package or something?\r\n\r\n\r\n\r\nBest Regards// Mikael Palmqvist\r\n\r\nSkickat från Outlook för iOS<https://aka.ms/o0ukef>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-07T05:07:58Z",
+  "updated_at": "2025-08-12T01:38:24Z",
+  "requester_id": 158002773002,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006471138,
+      "body_text": "Hi Mikael Palmqvist,    Please send us the UPS invoice so we can confirm it for you.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-07T09:31:35Z",
+      "updated_at": "2025-08-07T09:31:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006471546,
+      "body_text": "I received the following response from them:\r\n\r\nUPS Tracking Number: 1Z144AW70425518813\r\n\r\nThe charges for your shipment are as follows:\r\nChemical Tax: 548 SEK\r\nVAT: Calculated based on 787.82 SEK (value of goods, customs, shipping, and import within the EU) at 25%, which is 196 SEK.\r\nUPS Handling Fee: 150 SEK + 25% VAT\r\n\r\nTotal: 932 SEK\r\n\r\nSkickat från Outlook för iOS<https://aka.ms/o0ukef>\r\n________________________________\r\nFrån: service@simsonn.com ",
+      "user_id": 158002773002,
+      "created_at": "2025-08-07T09:58:16Z",
+      "updated_at": "2025-08-07T09:58:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006475235,
+      "body_text": "Hi Mikael Palmqvist,    Thank you for your information. The chemical tax is likely due to the hydraulic rod included in the product, which is a special tax in Sweden. This is the first time we have encountered this issue, and we will optimize our shipping plan. We apologize for the inconvenience and will compensate you with $50.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-07T10:26:41Z",
+      "updated_at": "2025-08-07T10:26:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006480048,
+      "body_text": "Thank you so much and i also think its a quite unreasonable amount to charge by our state and customs :(, your support is Quick and appreciated!\r\n\r\nBest regards Mikael\r\n\r\nSkickat från Outlook för iOS<https://aka.ms/o0ukef>\r\n________________________________\r\nFrån: service@simsonn.com ",
+      "user_id": 158002773002,
+      "created_at": "2025-08-07T11:18:03Z",
+      "updated_at": "2025-08-07T11:18:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006480066,
+      "body_text": "Will it go through PayPal?\r\n\r\nSkickat från Outlook för iOS<https://aka.ms/o0ukef>\r\n________________________________\r\nFrån: Mikael Palmqvist <micke_palmqvist@hotmail.com>\r\nSkickat: Thursday, August 7, 2025 1:17:49 PM\r\nTill: service@simsonn.com ",
+      "user_id": 158002773002,
+      "created_at": "2025-08-07T11:18:55Z",
+      "updated_at": "2025-08-07T11:18:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006513473,
+      "body_text": "Hi Mikael Palmqvist,    We have refunded your money. Please check your account.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-08T01:53:44Z",
+      "updated_at": "2025-08-08T01:53:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006516411,
+      "body_text": "Hello,\r\n\r\nThe transaction is visual in PayPal.\r\nThank you so much!\r\nThe UPS seems to deliver already today so im exited to unbox ✅\r\n\r\nBest Regards // Mikael & Alwin\r\n\r\nSkickat från Outlook för iOS<https://aka.ms/o0ukef>\r\n________________________________\r\nFrån: service@simsonn.com ",
+      "user_id": 158002773002,
+      "created_at": "2025-08-08T06:57:57Z",
+      "updated_at": "2025-08-08T06:57:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006696409,
+      "body_text": "Hello!\r\n\r\nThe package came friday, fast and perfekt ! There is also money back received through PayPal ✅\r\n\r\nI hope that theese small miss alignment and damage to the throttle cable wont cause any issues once i start assembling and test them soon.\r\n\r\nOtherwise i might need a sparepart?\r\n\r\nBest Regards // Mikael\r\n\r\nSkickat från Outlook för iOS<https://aka.ms/o0ukef>\r\n________________________________\r\nFrån: Mikael Palmqvist <micke_palmqvist@hotmail.com>\r\nSkickat: Friday, August 8, 2025 8:57:43 AM\r\nTill: service@simsonn.com ",
+      "user_id": 158002773002,
+      "created_at": "2025-08-11T13:58:05Z",
+      "updated_at": "2025-08-11T13:58:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006724168,
+      "body_text": "Hi Mikael Palmqvist,    This may have been damaged by the footrest during transport, but it appears to be in good condition. If you encounter any issues, please contact us at any time.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-12T01:38:24Z",
+      "updated_at": "2025-08-12T01:38:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

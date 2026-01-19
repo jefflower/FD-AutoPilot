@@ -1,0 +1,65 @@
+{
+  "id": 6317,
+  "subject": "Order #SSN3022",
+  "description_text": "Hello, good evening, after updating my Simsonn Plus X Pedals, the accelerator and clutch, even when pressed to the maximum,just goes to 39%, does not go to 100% anymore.\n\nCan you help me please? Thank you.",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-11-18T23:23:44Z",
+  "updated_at": "2025-11-19T03:07:41Z",
+  "requester_id": 158007169231,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012557438,
+      "body_text": "Hi Sneky,    After replacing the hardware, you must recalibrate. You can click here and then press the pedal to recalibrate.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-19T02:21:31Z",
+      "updated_at": "2025-11-19T02:21:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012557815,
+      "body_text": "Hello,\n\nI didn't replace my hardware, it was the firmware update on the app.\nrecalibrating isn't working to fix.\n\n\nsupport @simsonn.com ",
+      "user_id": 158007169231,
+      "created_at": "2025-11-19T02:45:08Z",
+      "updated_at": "2025-11-19T02:45:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012558076,
+      "body_text": "Hi Sneky,     You can download the latest SIMSONN Manager 2.1.2 using the link below. Then, follow the steps below to enter the firmware update process:    Press and hold the upgrade button on the PlusX controller box, then reconnect the USB. The software will enter SIMSONN Flasher Mode;    Go to Settings → Update → Manual Firmware Update → pedals → firmware → pedals-plusx.sfu to start the firmware update;    After the firmware update is completed, release the upgrade button;    Finally, test the pedal and perform a calibration.         https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-11-19T03:02:21Z",
+      "updated_at": "2025-11-19T03:02:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012558080,
+      "body_text": "I redid the calibration after restarting the PC and now it's working.\n\nThank you.",
+      "user_id": 158007169231,
+      "created_at": "2025-11-19T03:02:40Z",
+      "updated_at": "2025-11-19T03:02:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012558173,
+      "body_text": "",
+      "user_id": 158007169231,
+      "created_at": "2025-11-19T03:07:40Z",
+      "updated_at": "2025-11-19T03:07:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

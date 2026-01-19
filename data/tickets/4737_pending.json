@@ -1,0 +1,24 @@
+{
+  "id": 4737,
+  "subject": "Inquiry on Delivery Status",
+  "description_text": "Hello Sir/Maam,\r\n\r\nI would like to inquire on the current status of an item that I've\r\npurchased with your establishment.\r\n\r\nOrder Number : #SSN2805\r\nConfirmed Date: 1 October 2025\r\nItem: Green Elastomers\r\n\r\nThe status has remained unchanged despite passing 10 days, therefore I\r\nwould like to know if my order is being processed or not.\r\n\r\nThank you for your assistance.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-10-10T18:51:16Z",
+  "updated_at": "2025-10-11T08:45:27Z",
+  "requester_id": 158005550271,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010257481,
+      "body_text": "Hi Ammar Haziq,  We sincerely apologize for the delay in shipping your order. We have just concluded our 8-day holiday. Here is your tracking link:  https://t.17track.net/en#nums=SF6045961518312",
+      "user_id": 158001343601,
+      "created_at": "2025-10-11T08:45:27Z",
+      "updated_at": "2025-10-11T08:45:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

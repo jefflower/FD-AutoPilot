@@ -1,0 +1,65 @@
+{
+  "id": 1460,
+  "subject": "Pro Plus Pedals not recognised",
+  "description_text": "Hi,\n\nI have a set of Pro Plus pedals.\n\nFor some reason the pedals are not recognised in freejoy or simsonn\nmanager, only in the simpedals config v4. I looked at resetting the\nfirmware or downloading the drivers but the links from the product pages on\nyour website that go to download.simsonn.com seem to be broken.\n\nAny help would be appreciated.\n\nMany thanks,\nRees",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-07-11T18:33:03Z",
+  "updated_at": "2025-07-12T11:03:52Z",
+  "requester_id": 158002085504,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004638739,
+      "body_text": "Hi，Rees Varney，  Please download the latest calibration software, SIMSONN Manager version 2.0.8. For the Pro Plus, go to the update interface and select “Manual Firmware Update,” then navigate to the pedals-firmware folder → pedals folder, and select the plus.sfu file to proceed with the update.    https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-07-12T06:46:40Z",
+      "updated_at": "2025-07-12T06:46:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004647133,
+      "body_text": "Hi,\n\nI tried the mentioned manager but it doesn't detect my pedals, and provides\nno manual firmware update option (I have tried clicking the manual update\nlink inside the settings -> update section but it does not do/ open\nanything).\n\nIs the pedals firmware downloaded with the manager, and if so where is that\nfolder on my PC? I am wondering if maybe I can use the flasher tool from\nthe simpedals config v4 to update the firmware in case it is too old to be\ndetected by the simsonn manager.\n\nMany thanks,\nRees\n\nOn Sat, Jul 12, 2025 at 7:46 AM service @simsonn.com ",
+      "user_id": 158002085504,
+      "created_at": "2025-07-12T09:15:11Z",
+      "updated_at": "2025-07-12T09:15:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004649221,
+      "body_text": "Nevermind, I reopened the app after leaving it in the background for 30\nminutes and suddenly they were there?\n\nI guess this is maybe linked to why the sim pedals config takes a long time\nto open if it can't detect the pedals for a while.",
+      "user_id": 158002085504,
+      "created_at": "2025-07-12T09:29:41Z",
+      "updated_at": "2025-07-12T09:29:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004655701,
+      "body_text": "Hi Rees Varney,     Has the upgrade been successfully completed now?",
+      "user_id": 158000445778,
+      "created_at": "2025-07-12T10:33:35Z",
+      "updated_at": "2025-07-12T10:33:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004657383,
+      "body_text": "Yes thanks!\n\nOn Sat, 12 Jul 2025 at 11:33, service @simsonn.com",
+      "user_id": 158002085504,
+      "created_at": "2025-07-12T11:01:24Z",
+      "updated_at": "2025-07-12T11:01:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

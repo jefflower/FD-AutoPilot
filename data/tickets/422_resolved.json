@@ -1,0 +1,164 @@
+{
+  "id": 422,
+  "subject": "Haptics VAM not working",
+  "description_text": "Hey, \r\n \r\n my recently purchased VAM 3-pack haptics with an included psu just arrived today. \r\n Unfortunately i cannot get them powered up. \r\n I do own the Pro X pedalset. \r\n \r\n First issue: in the parcel was no EU/Germany Plug included, meaning the included cannot be used by me without an Adapter or a different cable. \r\n \r\n Second issue: Even using a multiple different cables (from the wallsocket into the poweradapter) they do not show as power connected in the simsonn manager software. \r\n I tried all 3 separately, in all 3 available ports but to no avail. \r\n The poweradapter is delivering power, as it is powering the LED strips on the pedals. \r\n I downloaded the newest firmware version, which is 2.0.8 and i manually updated the firmware of the pro x controlbox to the pro x ultra version. \r\n So i do see the haptic interface in the software, but cannot get the installed haptics powered. \r\n \r\n Third issue: While installing the haptics on my throttle-pedal i noticed, that i cannot use the same bracket as i did on the brake, the frame is narrowing down too much at the top, making it physically impossible to fit the bracket into the space in between. \r\n What i did do is use the clutch bracket, that works, but has me wondering if i did something wrong or if the frame has been overtightened in the factory? \r\n \r\n So what can i do to make this work? The VAM modules are installed on the pedals, but i cannot use them as of now. Is there some new software or firmware i need to install? Please let me know how to proceed. \r\n \r\n Best Regards, \r\n \r\n Manuel \r\n\r\n",
+  "status": 4,
+  "priority": 3,
+  "created_at": "2025-06-13T15:03:32Z",
+  "updated_at": "2025-06-14T15:29:02Z",
+  "requester_id": 158001490660,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003040909,
+      "body_text": "Hi，Manuel Hartwich，     The ProX cannot be upgraded to the ProX Ultra firmware—they are not compatible. The ProX control unit does not support power plug-in detection, so unlike the Ultra, it does not display a power connection prompt.  I will provide you with the correct firmware for the ProX. Please go ahead and perform the upgrade.  If you're unable to do it yourself, you can install Todesk and I’ll assist you remotely with the upgrade.  Additionally, I’ve included installation photos of the ProX for your reference.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-14T01:25:26Z",
+      "updated_at": "2025-06-14T01:25:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003075941,
+      "body_text": "Hey, \r\n \r\n Thank you for the information, that is helpful. \r\n Unfortunately i cannot install the provided firmware as i always get the error shown in the attached picture. \r\n \r\n \r\n \r\n Gesendet: Samstag, 14. Juni 2025 um 03:25So my guess is since i have upgraded the controlbox to the ultra version i cannot \"downgrade\" it again so the prox version of it. Is there a way to factory reset the controlbox or any other way to install this? Seems like there is a failsafe for downgrading, but not for upgrading. \r\n \r\n \r\n ",
+      "user_id": 158001490660,
+      "created_at": "2025-06-14T07:59:28Z",
+      "updated_at": "2025-06-14T07:59:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003082221,
+      "body_text": "Hi，Manuel Hartwich，  Please press the upgrade button on the main controller, then reconnect the USB cable. The device will enter recovery mode, and you can then try manually updating it using the .sfu firmware file I provided. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-14T08:40:21Z",
+      "updated_at": "2025-06-14T08:40:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003090044,
+      "body_text": "Hey, \r\n \r\n Thank you, the firmware recovery was successfully done and i am now on the provided prox firmware. \r\n Unfortunately the VAM motors still dont vibrate when i press the Vibration button or from in-game feedback while forcing tc/abs engagement. \r\n The green power-led on the psu is lighting up. \r\n I have tried all 3 motors in all 3 ports on the controlbox and i get nothing. \r\n \r\n Any ideas? \r\n Thank you for the help, i appreciate the quick responses very much. \r\n \r\n \r\n Gesendet: Samstag, 14. Juni 2025 um 10:40 \r\n ",
+      "user_id": 158001490660,
+      "created_at": "2025-06-14T09:47:01Z",
+      "updated_at": "2025-06-14T09:47:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003092133,
+      "body_text": "Hi Manuel Hartwich,  Please take a photo of your motor settings screen so I can check it. Also, which game are you using? I can provide you with a test version of SimHub if needed.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-14T10:04:05Z",
+      "updated_at": "2025-06-14T10:04:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003094389,
+      "body_text": "Hey, \r\n \r\n see picture attached. Motor 1 is attached to the throttle, Motor 2 to the brake. \r\n I am using Le Mans Ultimate. \r\n \r\n I would very much like the test-version for simhub, maybe that helps. \r\n \r\n \r\n \r\n \r\n Gesendet: Samstag, 14. Juni 2025 um 12:04 \r\n ",
+      "user_id": 158001490660,
+      "created_at": "2025-06-14T10:15:59Z",
+      "updated_at": "2025-06-14T10:15:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003095895,
+      "body_text": "Hi Manuel Hartwich,     We haven’t added support for LMU yet, but we currently support 9 games and are continuously expanding. Our goal is to support up to 33 games in the near future.  Of course, SimHub already supports over 100 racing games, but we still need some time for further testing on our side.  Here is the download link for the SimHub test version. Please note that this link and file are for your personal use only, as it’s still under testing and should not be shared with others.         https://drive.google.com/file/d/1QrSbAvCC5iyx9XgdRgSQV-hWpmDGkujc/view",
+      "user_id": 158000445778,
+      "created_at": "2025-06-14T10:27:00Z",
+      "updated_at": "2025-06-14T10:27:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003096873,
+      "body_text": "Hey, \r\n \r\n Thanks for the link! Im gonna give that a try and see if i get it working. \r\n Is there a list of supported games somewhere? I do own more games i can use them in, LMU is just my go-to sim. \r\n \r\n Awesome customer support btw! I love the quick replies \r\n \r\n \r\n Gesendet: Samstag, 14. Juni 2025 um 12:27 \r\n ",
+      "user_id": 158001490660,
+      "created_at": "2025-06-14T10:31:49Z",
+      "updated_at": "2025-06-14T10:31:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003101856,
+      "body_text": "Hi Manuel Hartwich,     Currently, we support the following games: Assetto Corsa (AC), Assetto Corsa Competizione (ACC), rFactor 2 (RF2), the F1 series (2020 to 2025), Automobilista 2 (AMS2), Euro Truck Simulator 2 (ETS2), and DiRT Rally 2.  Please note that lock-up and slip effects in AMS2 are still under testing and are not yet supported.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-14T11:01:52Z",
+      "updated_at": "2025-06-14T11:01:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003103566,
+      "body_text": "Hey, \r\n \r\n So i am trying to get the vam to work via simhub and it does not. \r\n they show as connected and the abs active test also shows the graph moving when i press the test button, but there simply is no vibration no matter what i change. \r\n \r\n \r\n \r\n At this point i just dont know what to try anymore. Note: it does not show up in shakeit motors. \r\n \r\n Is the included psu capable of transforming the german electricity, which is 50hz 230v, to whatever it needs? the writing on the psu says it does and the power led is indeed lighting up, but at this point i cant think of any other issue besides the actual control box. \r\n \r\n So no matter which setting i try, there is no vibration on any motor. \r\n \r\n \r\n \r\n Gesendet: Samstag, 14. Juni 2025 um 13:01 \r\n ",
+      "user_id": 158001490660,
+      "created_at": "2025-06-14T11:35:04Z",
+      "updated_at": "2025-06-14T11:35:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003103737,
+      "body_text": "Hi Manuel Hartwich,  Could you please install the Todesk tool? It doesn’t require registration—just provide the ID and temporary password, and I can assist you remotely to check the issue.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-14T12:07:11Z",
+      "updated_at": "2025-06-14T12:07:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003104436,
+      "body_text": "Hi Manuel Hartwich,  I just ran a quick test and realized that the prox.sfu firmware I previously provided was the wrong version—my apologies for the confusion. Please use the newly compiled version I just sent. I’ve tested it on the ProX board, and the vibration function is working correctly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-14T13:55:15Z",
+      "updated_at": "2025-06-14T13:55:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003104904,
+      "body_text": "Hey, i did install the tool. \r\n I dont know your available hours, but ill be online for the next couple. \r\n ToDesk: device ID:730 770 525 Temporary password:0qqbwjv8 \r\n \r\n Let me know if that time works for you, otherwise let me know when you are available and i try to find a time where it works for both of us. \r\n \r\n \r\n Gesendet: Samstag, 14. Juni 2025 um 14:07 \r\n ",
+      "user_id": 158001490660,
+      "created_at": "2025-06-14T14:53:18Z",
+      "updated_at": "2025-06-14T14:53:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003104938,
+      "body_text": "Thank you so much for the new firmware! it works! \r\n Updated the firmware and i can confirm it does work, great stuff, so happy right now! \r\n \r\n Thank you for all the quick responses! \r\n \r\n \r\n Gesendet: Samstag, 14. Juni 2025 um 15:55 \r\n ",
+      "user_id": 158001490660,
+      "created_at": "2025-06-14T14:57:23Z",
+      "updated_at": "2025-06-14T14:57:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003105190,
+      "body_text": "Top notch customer service, very quick replies, understood the issue and provided various ways to try to overcome it, extremely satisfied is on point for my experience, thanks a lot",
+      "user_id": 158001490660,
+      "created_at": "2025-06-14T15:29:02Z",
+      "updated_at": "2025-06-14T15:29:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ]
+}

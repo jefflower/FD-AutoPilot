@@ -1,0 +1,64 @@
+{
+  "id": 6999,
+  "subject": "Enquiry regarding Pro Plus X Baseplate",
+  "description_text": "Hi SIMSONN,\r\nI recently took delivery of the Pro Plus X pedals with the baseplate, and\r\nfound that the Baseplate was scratched with paint removed in some areas -\r\nsee photos attached.\r\n\r\nI am seeking a refund or replacement baseplate, as for a product of this\r\ncategory, the manufacturing and resilience of materials is not acceptable.\r\n\r\nThank you!\r\n*LD Computer Consulting*\r\n*Mobile: *0490196928 *Email: *liamdaviesconsulting@gmail.com\r\n*ABN: *20912747092\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-11-29T00:59:15Z",
+  "updated_at": "2025-12-10T06:26:43Z",
+  "requester_id": 158007410094,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013158103,
+      "body_text": "Hi Liam Davies, We sincerely apologize for this issue. We have already started investigating which part of the warehouse process may have caused this. In theory, such a large scratch should not have been shipped. Please provide your order number so we can check and resolve it for you. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-01T05:38:51Z",
+      "updated_at": "2025-12-01T05:38:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013352368,
+      "body_text": "Hi Simsonn, my order number is SSN3527.\r\nThanks.\r\n\r\n*LD Computer Consulting*\r\n*Mobile: *0490196928 *Email: *liamdaviesconsulting@gmail.com\r\n*ABN: *20912747092\r\n\r\n",
+      "user_id": 158007410094,
+      "created_at": "2025-12-03T20:05:15Z",
+      "updated_at": "2025-12-03T20:05:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014178944,
+      "body_text": "Hi Liam Davies,    We apologize for the delayed response. We will issue a $20 refund as compensation. Is that acceptable?",
+      "user_id": 158001343601,
+      "created_at": "2025-12-09T11:27:38Z",
+      "updated_at": "2025-12-09T11:27:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014206497,
+      "body_text": "Yes, that's fine, thank you.\r\n\r\n*LD Computer Consulting*\r\n*Mobile: *0490196928 *Email: *liamdaviesconsulting@gmail.com\r\n*ABN: *20912747092\r\n\r\n",
+      "user_id": 158007410094,
+      "created_at": "2025-12-09T17:31:18Z",
+      "updated_at": "2025-12-09T17:31:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014237260,
+      "body_text": "Hi Liam Davies,  We have processed your refund. We apologize for any inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-10T06:26:42Z",
+      "updated_at": "2025-12-10T06:26:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

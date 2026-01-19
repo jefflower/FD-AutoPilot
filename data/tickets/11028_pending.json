@@ -1,0 +1,44 @@
+{
+  "id": 11028,
+  "subject": "Return",
+  "description_text": "Order # SSN5863\r\n\r\nI received the product today. Installed them and was immediately\r\ndisappointed with the product. The resistance felt very grindy for lack of\r\na better word and I actually had to alter my aluminum profile rig in order\r\nfor them to fit.\r\n\r\nI will return everything as it came. If you could please send a return\r\nlabel I’d appreciate it.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-16T03:35:17Z",
+  "updated_at": "2026-01-17T07:25:17Z",
+  "requester_id": 158009170811,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017311715,
+      "body_text": "Hi Jordan Jones,    If the brake feels too stiff with the red damper, you can remove the 10mm travel limiter/spacer inside the black brake spring. This will increase the brake travel and make the pedal feel easier to control.  Also, during normal use, you don’t need to press the brake all the way to the bottom every time. Simply recalibrate the pedals in SIMSONN Manager and follow the calibration process, pressing the pedal with a comfortable, reasonable force. After calibration, you should be able to achieve effective braking with normal pedal pressure.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-17T03:54:33Z",
+      "updated_at": "2026-01-17T03:54:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017315056,
+      "body_text": "I already packed them back into the box. They didn’t even fit on my rig\r\nproperly either. I had to drill holes in my sim rig and even then it still\r\nwasn’t a great fit. I would prefer a return so I can just stick with what I\r\noriginally had.\r\n\r\nOn Fri, Jan 16, 2026 at 9:54 PM service@simsonn.com ",
+      "user_id": 158009170811,
+      "created_at": "2026-01-17T05:54:01Z",
+      "updated_at": "2026-01-17T05:54:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017318497,
+      "body_text": "Hi Jordan Jones,    You can try this white elastomer.  https://www.instagram.com/p/DO-08hIjI-0/  https://www.simsonn.com/products/elastomer?variant=50362386710842",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T07:25:17Z",
+      "updated_at": "2026-01-17T07:25:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

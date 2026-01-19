@@ -1,0 +1,115 @@
+{
+  "id": 3128,
+  "subject": "Simsonn 售后服务咨询",
+  "description_text": "您好，您遇到了什么问题？请提供照片或视频。如果控制盒损坏，我们将免费为您更换。请放心。",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-08-26T10:22:24Z",
+  "updated_at": "2025-09-03T04:21:34Z",
+  "requester_id": 158003606214,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007586523,
+      "body_text": "您好。我插上了新的控制盒，因为我踏板的那个没有触觉反馈马达选项。当我插上它时，软件显示已断开连接。当我连接回踏板自带的原始控制盒时，它工作正常。我附上了一个视频以作说明。\n\n发自我的iPhone",
+      "user_id": 158003606214,
+      "created_at": "2025-08-26T22:18:08Z",
+      "updated_at": "2025-08-26T22:18:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007590707,
+      "body_text": "您好 Codythompson90，新的 PlusX 控制盒需要更高更稳定的电源。请将其连接到电脑背面的 USB 3.0 端口（蓝色），或者使用带有独立电源的 USB 集线器。如果问题仍然存在，请从 Google 下载 VKB JoyTester 工具，检查我们的 SIMSONN 设备，并截图给我确认。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-27T04:03:49Z",
+      "updated_at": "2025-08-27T04:03:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007797373,
+      "body_text": "我把它插在一个有独立电源的 sabrent usb 3.0 扩展坞上。当我插上它并加载 VKB joytester 时，它什么也显示不出来，simsonn 程序中也什么都没有。\n\n2025年8月26日星期二晚上11:04，来自 service@simsonn.com",
+      "user_id": 158003606214,
+      "created_at": "2025-08-29T22:13:49Z",
+      "updated_at": "2025-08-29T22:13:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007802845,
+      "body_text": "您好 Codythompson90，请按照以下步骤操作：按住 PlusX 主控制器上的升级按钮，然后重新连接 USB 线。打开 SIMSONN Manager 2.1.0 并检查是否已进入恢复模式。如果检测到恢复模式，请前往“设置”→“更新”→“手动更新固件”→“踏板”→“固件”→“pedals-plusx.sfu”。更新完成后，测试设备看是否已成功恢复。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-30T03:54:24Z",
+      "updated_at": "2025-08-30T03:54:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007876840,
+      "body_text": "按照这些步骤操作后，simsonn manager 显示如下。\n\n2025年8月29日星期五晚上10:54，来自 service@simsonn.com",
+      "user_id": 158003606214,
+      "created_at": "2025-08-31T23:03:36Z",
+      "updated_at": "2025-08-31T23:03:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007877959,
+      "body_text": "您好 Codythompson90，您现在可以安装 Todesk 工具吗？我目前有空，可以远程检查并更新您的设备。Todesk 不需要注册——如果您看到注册提示，只需点击右上角的“X”即可关闭。安装后，请提供您的 ID 和临时代码，我们可以开始远程支持。整个过程只需几分钟，并且对您的电脑没有风险，请放心。https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-09-01T01:04:21Z",
+      "updated_at": "2025-09-01T01:04:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007900176,
+      "body_text": "除了远程桌面到我的电脑，还有其他选择吗？我远程桌面感觉不安全。发自我的iPhone",
+      "user_id": 158003606214,
+      "created_at": "2025-09-01T12:48:07Z",
+      "updated_at": "2025-09-01T12:48:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007907564,
+      "body_text": "您好 Codythompson90，请确认您的控制盒是 Pro X 还是 Pro X Ultra，因为它们使用不同的固件。确认后，请尝试再次更新固件。如果设备仍然无法连接，我怀疑可能是您的 USB 端口有问题，或者您可以尝试使用带电源的 USB 设备以稳定供电。此外，请检查踏板灯是否正常工作，您也可以拍张照片发给我以供核实。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-01T14:52:57Z",
+      "updated_at": "2025-09-01T14:52:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007949298,
+      "body_text": "重新下载了最新版软件后，它们工作正常了，那是我的失误。感谢您花费时间帮助我解决这个问题。这些踏板非常棒。发自我的iPhone",
+      "user_id": 158003606214,
+      "created_at": "2025-09-02T10:19:50Z",
+      "updated_at": "2025-09-02T10:19:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008000402,
+      "body_text": "您好 Codythompson90，太好了，很高兴听到您的问题已经解决了。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-03T04:21:33Z",
+      "updated_at": "2025-09-03T04:21:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

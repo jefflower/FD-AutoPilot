@@ -1,0 +1,24 @@
+{
+  "id": 5712,
+  "subject": "SMS notification not working",
+  "description_text": "Hello, on 3 november, around 10:45 EEST I ordered Simsonn Plus X Racing\r\nSimulation Pedal and I put my phone number. Unfortunately I didn't saved my\r\norder number and I did not get any SMS notification. Can you update me on\r\nthe order status? The phone number is: +40726089176\r\nI can provide the payment details if needed\r\n\r\nHave a great day,\r\n-- \r\n\r\n*Răzvan Dorcioman*\r\n*+40 726 089 176*\r\n*razvan.dorcioman98@gmail.com <razvan.dorcioman98@gmail.com>*\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-06T08:47:17Z",
+  "updated_at": "2025-11-06T08:50:32Z",
+  "requester_id": 158006697681,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011854263,
+      "body_text": "Hi Razvan Dorcioman,    Your order has been shipped. Here is your tracking link.  https://www.dhl.com/us-en/home/tracking.html?tracking-id=CE326630143DE https://www.yuntrack.com/parcelTracking?id=YT2530800703911600",
+      "user_id": 158001343601,
+      "created_at": "2025-11-06T08:50:32Z",
+      "updated_at": "2025-11-06T08:50:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

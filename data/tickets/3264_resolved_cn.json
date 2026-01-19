@@ -1,0 +1,215 @@
+{
+  "id": 3264,
+  "subject": "订单 #SSN1571, Simsonn VAM Pro 线性马达不工作",
+  "description_text": "你好，\n\n我为我的 simsonn pro x 踏板订购了 VAM pro 线性马达（两个）。\n\n我将它们连接到踏板的外部盒子，并连接了电源（这次发货没有收到任何电源线）。\n\n你们的软件显示状态为已连接，但我在测试时马达没有任何反应，只有寂静！\n\n我的问题出在哪里？\n\n提前致谢，\n\nEitan lael",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-08-29T21:46:54Z",
+  "updated_at": "2025-09-07T02:56:02Z",
+  "requester_id": 158000955737,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003679567,
+      "body_text": "你好 EITAN LAEL，是的，我们也希望一切能尽快结束，让大家都能恢复正常生活。我们会密切关注最新进展，以确保您的订单得到及时处理，并随时向您通报最新情况。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T01:52:04Z",
+      "updated_at": "2025-06-22T01:52:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003679911,
+      "body_text": "太好了，非常感谢。\n\n在2025年6月22日星期日凌晨4:52，service @simsonn.com",
+      "user_id": 158000955737,
+      "created_at": "2025-06-22T07:19:55Z",
+      "updated_at": "2025-06-22T07:19:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004214162,
+      "body_text": "你好 simpsonn，\n\n既然战争已经结束，你们能试着发送我的订单 #SSN1571 吗？\n\n谢谢，\nEitan\n\n在2025年6月22日星期日凌晨4:52，service @simsonn.com",
+      "user_id": 158000955737,
+      "created_at": "2025-06-27T12:58:03Z",
+      "updated_at": "2025-06-27T12:58:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004356339,
+      "body_text": "你好 EITAN LAEL，我们正在联系更多的物流供应商以寻找可行的运输方案。目前有一家可以发货，但价格我们无法接受，我们将等待他的更新。",
+      "user_id": 158001343601,
+      "created_at": "2025-07-01T11:07:19Z",
+      "updated_at": "2025-07-01T11:07:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007802442,
+      "body_text": "你好 EITAN LAEL，请确保您的 SIMSONN Manager 已更新至 2.1.0 版本。然后请按以下步骤操作： 打开软件，进入“设置”→“更新”，然后点击“检查更新”。 检查 ProX 固件是否可以更新到 2.0.3 版本。 如果没有自动更新，请使用“手动更新”：路径：设置 → 更新 → 手动更新固件 → pedals → firmware → pedals-prox.sfu。 更新后，请再次测试。 如果问题仍然存在，请尝试重新连接 USB 和电源线，然后再次测试。 如果仍然无效，请将软件界面截图发给我，以便我为您进一步核查。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-30T03:34:39Z",
+      "updated_at": "2025-08-30T03:34:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007806706,
+      "body_text": "你好，\n\n当我尝试执行第3步时，在截图中显示的位置只有这些文件：\n[图片：image.png]\n\n我没有一个名为“*pedals-prox.sfu*”的文件\n\n*我的踏板固件版本是：*\n[图片：image.png]\n\n所以第3步无法完成……\n\n另外，当我检查更新时，软件会写\n“已是最新版本”\n\nEitan\n\n在2025年8月30日星期六早上6:34，service @simsonn.com",
+      "user_id": 158000955737,
+      "created_at": "2025-08-30T07:08:48Z",
+      "updated_at": "2025-08-30T07:08:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007877876,
+      "body_text": "你好 EITAN LAEL，请选择 prox.sfu 文件进行升级。升级完成后，请先重新连接 USB 数据线，然后再插入电机电源。最后，请确认版本号显示为：CPU1: 2.0.3, CPU2: 2.0.2。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-01T01:00:44Z",
+      "updated_at": "2025-09-01T01:00:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007908540,
+      "body_text": "你好，\n\n我完成了以上所有步骤，但版本仍然是 *CPU1: 2.0.2, CPU2: 2.0.0*\n\n*VAM 的力反馈不工作*\n\n*我该怎么办？*\n\n*谢谢，*\n*Eitan*\n\n在2025年9月1日星期一早上4:00，service @simsonn.com",
+      "user_id": 158000955737,
+      "created_at": "2025-09-01T15:36:27Z",
+      "updated_at": "2025-09-01T15:36:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007989816,
+      "body_text": "你们有什么解决方案吗？\n\n请回复\n\nEitan",
+      "user_id": 158000955737,
+      "created_at": "2025-09-02T19:27:23Z",
+      "updated_at": "2025-09-02T19:27:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008004789,
+      "body_text": "你好 EITAN LAEL，您现在可以安装 Todesk 工具吗？我正好有空，可以远程为您检查和更新您的设备。Todesk 不需要注册 — 如果您看到注册提示，只需点击右上角的“X”即可关闭。安装后，请向我提供 ID 和临时代码，我将能够远程协助您。 https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-09-03T04:40:21Z",
+      "updated_at": "2025-09-03T04:40:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008006559,
+      "body_text": "我会在第二天早上（当地时间）联系您，我现在在上班，不在电脑前\n\nEitan\n\n在2025年9月3日星期三早上7:40，service @simsonn.com",
+      "user_id": 158000955737,
+      "created_at": "2025-09-03T06:50:20Z",
+      "updated_at": "2025-09-03T06:50:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008007076,
+      "body_text": "你好 EITAN LAEL，请告知我们您的时区或城市，以及您当地最方便的时间，以便我能安排一个合适的时间来解决您的问题。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-03T07:04:27Z",
+      "updated_at": "2025-09-03T07:04:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008011894,
+      "body_text": "城市：特拉维夫，以色列 gmt+2\n\n当地时间 早上7:00\n\n在2025年9月3日星期三上午10:04，service @simsonn.com",
+      "user_id": 158000955737,
+      "created_at": "2025-09-03T07:37:03Z",
+      "updated_at": "2025-09-03T07:37:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008020694,
+      "body_text": "你好 EITAN LAEL，好的，那我们定在9月4日中午12:00（中国时间）。我会准时在线的。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-03T09:54:31Z",
+      "updated_at": "2025-09-03T09:54:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008056563,
+      "body_text": "你好，\n\n设备ID：993 335 301\n临时密码：w4pgm65d\n\neitan\n\n在2025年9月3日星期三下午12:54，service @simsonn.com",
+      "user_id": 158000955737,
+      "created_at": "2025-09-04T03:59:15Z",
+      "updated_at": "2025-09-04T03:59:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008104169,
+      "body_text": "你好客服，\n\n不，我们的 VAM Pro 遇到了新问题：\n\n1. Simpsson Manager 打不开，有一个中文的错误弹窗\n[图片：image.png]\n\n2. VAM 引擎不会停止工作。它们在电脑开启时工作，在电脑关闭时也工作。一直如此。只有当我拔掉电源时，它们才会停止工作。\n\n谢谢，\nEitan\n\n\n在2025年9月4日星期四早上7:25，service @simsonn.com",
+      "user_id": 158000955737,
+      "created_at": "2025-09-04T16:14:19Z",
+      "updated_at": "2025-09-04T16:14:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008113201,
+      "body_text": "现在它也回到了以前的版本。没有新版本的 exe 文件\n\nEitan",
+      "user_id": 158000955737,
+      "created_at": "2025-09-04T17:02:26Z",
+      "updated_at": "2025-09-04T17:02:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008120084,
+      "body_text": "你好，\n\n在检查并更换了正确的管理器快捷方式后，软件和硬件都运行正常了！\n\n请忽略我发给您的上一封邮件，并关闭工单\n\n谢谢，\nEitan",
+      "user_id": 158000955737,
+      "created_at": "2025-09-04T19:52:02Z",
+      "updated_at": "2025-09-04T19:52:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201094,
+      "body_text": "ID 为 607 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T02:55:47Z",
+      "updated_at": "2025-09-07T02:55:47Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158008201095,
+      "body_text": "合并来自工单607\n      主题：回复：Simsonn 订单发货确认\n      描述：感谢您的回复。\n 我也希望这场战争能在不久的将来结束\n\n Eitan\n\n\n בתאריך יום ה׳, 19 ביוני 2025, 13:53, מאת SIMSONN ‏<service @simsonn.com>:\n\n\n\n  \n  \n  \n  \n  \n\n\n\n    \n    \n      \n\n         \n          \n  \n\n     \n      \n\n        \n          \n\n             \n\n              \n                \n\n                   \n                       \n                        SIMSONN\n                       \n                   \n\n                \n              \n\n\n             \n          \n        \n\n\n      \n     \n  \n\n\n\n          \n  \n\n     \n      \n        \n          \n\n             \n              \n             你好，您的订单包裹已准备好，但由于战争原因，暂时没有从中国到以色列的物流渠道。我们将在物流恢复后为您发货。保护好自己，祝您一切顺利，我的朋友。\n\n             \n          \n        \n\n      \n     \n  \n\n\n          \n  \n\n     \n      \n        \n          \n\n             \n              \n               如果您有任何问题，请回复此邮件或通过 service @simsonn.com 与我们联系",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T02:55:47Z",
+      "updated_at": "2025-09-07T02:55:47Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ],
+  "available_langs": []
+}

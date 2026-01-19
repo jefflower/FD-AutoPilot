@@ -1,0 +1,64 @@
+{
+  "id": 8157,
+  "subject": "",
+  "description_text": "Hi, i own i throttle simucube pedal (no avrive) , is possible to apply it\r\non?\r\nThanks\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-13T14:30:54Z",
+  "updated_at": "2025-12-19T09:07:31Z",
+  "requester_id": 158007796067,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014471870,
+      "body_text": "Hi Simone Buttafuoco,  Could you please take photos of the throttle pedal and its connector? I will help check them. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-14T02:54:12Z",
+      "updated_at": "2025-12-14T02:54:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014570468,
+      "body_text": "Simucube (no active)\r\nThank you very much\r\n\r\nIl Dom 14 Dic 2025, 03:54 support@simsonn.com ",
+      "user_id": 158007796067,
+      "created_at": "2025-12-16T13:26:01Z",
+      "updated_at": "2025-12-16T13:26:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014621357,
+      "body_text": "Hi Simone Buttafuoco,  Is the Simcube connector an RJ11 4P4C plug? If so, please also provide a photo to confirm the wiring order and color sequence. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T10:10:47Z",
+      "updated_at": "2025-12-17T10:10:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014642679,
+      "body_text": "Il Mer 17 Dic 2025, 11:10 support@simsonn.com ",
+      "user_id": 158007796067,
+      "created_at": "2025-12-17T17:12:02Z",
+      "updated_at": "2025-12-17T17:12:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014749051,
+      "body_text": "Hi Simone Buttafuoco,  This likely cannot be connected, as the Simucube has 6 wires, but we only have 4. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-19T09:07:30Z",
+      "updated_at": "2025-12-19T09:07:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

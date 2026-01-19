@@ -1,0 +1,24 @@
+{
+  "id": 2440,
+  "subject": "VAM feedback issues",
+  "description_text": "vam motors seem to function properly within simsonn manager, but no output in game. Switched to simhub and they work in game but turn on and off every 2-3 seconds even at 10% power output. Any assistance would be appreciated, thank you.\r\n\r\nGet Outlook for iOS<https://aka.ms/o0ukef>\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-08-07T23:31:54Z",
+  "updated_at": "2025-08-09T14:58:53Z",
+  "requester_id": 158002806240,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006513829,
+      "body_text": "Issue fixed, i had both simsonn manager and simhub open. Thanks and have a great day, love the products!\r\n\r\nGet Outlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158002806240,
+      "created_at": "2025-08-08T02:29:48Z",
+      "updated_at": "2025-08-08T02:29:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

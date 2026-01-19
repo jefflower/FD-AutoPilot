@@ -1,0 +1,34 @@
+{
+  "id": 10079,
+  "subject": "a problem with the shifter",
+  "description_text": "Hello from Greece,\r\n I am the owner of the SIMSONN PC 6+R H Gear Shifter for a year now.\r\n(purchase date 6 Jan 2025).\r\nUnfortunately last night i was not able to use the 2nd and 6th gear.  To be\r\nprecise, i cannot use the 2nd gear at all, but i can use the 6th gear if i\r\nuse a lot of force.\r\n Can you please help me to solve this problem?\r\n\r\nthank you\r\n\r\n\r\n-- \r\n*Michalis Catinas*\r\nFilm-maker / Designer\r\n\r\n*www.reeldrone.gr* <http://www.reeldrone.gr>\r\n\r\n+30 6944 8184 96\r\nKokkari - Samos, 83100, Greece\r\n\r\n<http://www.reeldrone.gr/>\r\n[image: www.reeldrone.gr] <http://www.reeldrone.gr>\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-06T10:23:15Z",
+  "updated_at": "2026-01-07T15:27:06Z",
+  "requester_id": 158008950815,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016069946,
+      "body_text": "Hi Michalis Catinas,  Could you please provide a video and share it with us via Google Drive, making sure the link access is set to viewable, so we can further review the issue? ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T06:04:01Z",
+      "updated_at": "2026-01-07T06:04:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016072976,
+      "body_text": "So sorry, i made a mistake:\r\nI mounted the shifter on my rig with taller screws than i should, and that\r\ncreated the problem.\r\n I fixed it by using the shorter screws that you provided in the box.\r\n\r\nThank you for the quick reply and my apologies for taking up your time.\r\nCheers from Greece!\r\n\r\n\r\n\r\n*Michalis Catinas*\r\nFilm-maker / Designer\r\n\r\n*www.reeldrone.gr* <http://www.reeldrone.gr>\r\n\r\n+30 6944 8184 96\r\nKokkari - Samos, 83100, Greece\r\n\r\n<http://www.reeldrone.gr/>\r\n[image: www.reeldrone.gr] <http://www.reeldrone.gr>\r\n\r\n\r\n",
+      "user_id": 158008950815,
+      "created_at": "2026-01-07T06:22:15Z",
+      "updated_at": "2026-01-07T06:22:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "id": 909,
+  "subject": "VAM compatibility with other pedals",
+  "description_text": "Hi!\r\nI have Simjack UT pedals and I really would like to install VAM. Is your\r\ncontrol box compatible with these pedals? Is it even possible to make it\r\nwork on my pedals?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-27T09:18:39Z",
+  "updated_at": "2025-06-27T11:19:48Z",
+  "requester_id": 158001831403,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004190280,
+      "body_text": "Hi Paweł Be,  You can purchase our PlusX controller box, a dedicated 24V power supply, and the VAM Pro motor to enable the vibration feedback feature. Here is the link:       https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor",
+      "user_id": 158000445778,
+      "created_at": "2025-06-27T10:31:00Z",
+      "updated_at": "2025-06-27T10:31:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004191483,
+      "body_text": "Alright, but:\r\n1. Can I connect Simjack UT pedals to this control box or do I have to use\r\nyour control box as a separate controller for VAM?\r\n\r\n2. Can those VAMs be mounted on Simjack UT without custom adapters?\r\n\r\n",
+      "user_id": 158001831403,
+      "created_at": "2025-06-27T10:34:06Z",
+      "updated_at": "2025-06-27T10:34:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004192867,
+      "body_text": "Hi，Paweł Be， You can connect the pedals to our controller and use them with our VAM Pro, or leave the pedals disconnected and connect the controller directly to the motor for standalone use. Please note that the SimJack controller cannot independently support our VAM. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-27T10:37:02Z",
+      "updated_at": "2025-06-27T10:37:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004199508,
+      "body_text": "Alright, thanks. What about mounting holes? Can VAMs be screwed in to\r\nSimjack UT's without custom adapters?\r\n\r\n",
+      "user_id": 158001831403,
+      "created_at": "2025-06-27T10:58:17Z",
+      "updated_at": "2025-06-27T10:58:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004205999,
+      "body_text": "Hi Paweł Be, You can give it a try—the structures are quite similar. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-27T11:19:48Z",
+      "updated_at": "2025-06-27T11:19:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

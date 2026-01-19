@@ -1,0 +1,54 @@
+{
+  "id": 9328,
+  "subject": "Simsonn haptic motor.",
+  "description_text": "Hello! I got a Simsonn vam pro haptic 2 pack. They worked great but after a day the brake haptic is extremely weak, to the point I can’t feel it. I have tried checking all the settings and even plugged that motor into a different motor slot, it seems isolated to that motor. Is there any way to fix this?\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-27T23:29:36Z",
+  "updated_at": "2025-12-28T04:39:43Z",
+  "requester_id": 158008797484,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015146057,
+      "body_text": "Hi Brigham Cooper,  Please provide your order number so I can check the details for you. Also, could you please help us open the motor and check whether the washer has shifted from its original position? If necessary, we can send you a brand new VAM Pro as a replacement. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T01:25:13Z",
+      "updated_at": "2025-12-28T01:25:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015147588,
+      "body_text": "SSN4320 is the order number, I took it apart but nothing appears to be obviously wrong. \r\n\r\n> ",
+      "user_id": 158008797484,
+      "created_at": "2025-12-28T03:38:26Z",
+      "updated_at": "2025-12-28T03:38:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015147646,
+      "body_text": "Weird, after reassembling it works perfectly now! I’ll let you know if it happens again over the next few days. Thank you!\r\n\r\n> ",
+      "user_id": 158008797484,
+      "created_at": "2025-12-28T03:48:09Z",
+      "updated_at": "2025-12-28T03:48:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015148013,
+      "body_text": "Hi Brigham Cooper,  Okay, feel free to contact me if you have any issues. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T04:39:43Z",
+      "updated_at": "2025-12-28T04:39:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

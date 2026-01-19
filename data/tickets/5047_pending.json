@@ -1,0 +1,44 @@
+{
+  "id": 5047,
+  "subject": "VAM Rumble Richard Burns Rally",
+  "description_text": "Hello!\r\n\r\nI’m facing a problem - the vibration motors VAM rumble are not working in Richard Burns Rally.\r\nI was able to find a guide or documentation.\r\nPlease, help me with the solution.\r\n\r\nС уважением,\r\nМельников Сергей\r\nЗаместитель директора-руководитель направления\r\nТС \"Технопарк\"\r\nг. Москва ТРК \"Капитолий Севастопольский\"\r\nтел. +74957555777 доб. 3602\r\nмоб. +79177861096",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-19T13:19:15Z",
+  "updated_at": "2025-10-29T02:44:25Z",
+  "requester_id": 158005854697,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010713691,
+      "body_text": "Hi Мельников Сергей Витальевич,     Our SIMSONN Manager 2.1.2 currently supports telemetry for the games listed below. If you need compatibility with more titles, please download the latest version of SimHub, which supports over 100 games and has official integration with our pedals. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-20T01:30:00Z",
+      "updated_at": "2025-10-20T01:30:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011228748,
+      "body_text": "Hi!\r\n\r\n\r\nI have a new problem: the vibration motors freeze at random moments in any game or application. The only solution is a complete power reconnection and a reboot of the computer. Updating the firmware didn't solve the problem. The vibration motors are only slightly active—up to 60%. The problem occurs after about 20-40 minutes of use. I've attached a video. Please, help me.\r\n\r\n\r\nС уважением,\r\nМельников Сергей\r\nЗаместитель директора-руководитель направления\r\nТС \"Технопарк\"\r\nг. Москва ТРК \"Капитолий Севастопольский\"\r\nтел. +74957555777 доб. 3602\r\nмоб. +79177861096\r\n[1720540590147]\r\n________________________________\r\nОт: service@simsonn.com ",
+      "user_id": 158005854697,
+      "created_at": "2025-10-28T14:35:37Z",
+      "updated_at": "2025-10-28T14:35:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011257273,
+      "body_text": "Hi Мельников Сергей Витальевич,  Please make sure the pedal’s USB cable is connected directly to the USB 3.0 (blue) port on the back of your computer. Do not use a USB hub, as unstable power may cause disconnections and prevent the stop command from reaching the controller, resulting in the motor continuing to vibrate and failing to stop. Also, please ensure you are using the VAM mode, not the VAM Pro mode. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-29T02:44:25Z",
+      "updated_at": "2025-10-29T02:44:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

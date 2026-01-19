@@ -1,0 +1,94 @@
+{
+  "id": 2003,
+  "subject": "Pro X Ultra pedal　について",
+  "description_text": "ブレーキのストローク量を増やすには、どういう調整をすればいいですか？\r\nまた、工場出荷時より柔らかくすることは可能ですか？\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-28T06:56:27Z",
+  "updated_at": "2025-08-29T00:51:25Z",
+  "requester_id": 158001685303,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005780324,
+      "body_text": "Hi，gtr zeon，      現在のダンパーの取り付け状態を写真で撮って送っていただけますか？ 40kg の力でキャリブレーションしても、まだ硬く感じますか？ 当社の標準ダンパーは 60HA で、すでに最も軽い仕様です。 しかし現在、30HA のホワイトダンパー を特注しており、近いうちに当社ウェブサイトで単品販売できる予定です。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-29T15:27:18Z",
+      "updated_at": "2025-07-29T15:27:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006224356,
+      "body_text": "一般車のブレーキの踏み具合を目指しているので、かなり硬く感じます。\r\n30HAのエラストマーはいつ入荷しますか？\r\nエラストマーの最後にスプリングがありますが、長さが倍くらいでもう少し柔らかいスプリングがあれば\r\nかなりいいセッティングができそうな気がします。\r\nスプリングも在庫ありますか？\r\n\r\n\r\n2025年7月30日(水) 0:27 support@simsonn.com ",
+      "user_id": 158001685303,
+      "created_at": "2025-08-04T13:36:09Z",
+      "updated_at": "2025-08-04T13:36:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006277503,
+      "body_text": "Hi gtr zeon,     Our brake spring incorporates a 10 mm travel-limiting spacer, designed primarily to simulate the brake travel of Formula 1 cars.    With the spacer installed, it delivers the short-travel feel typical of F1 braking.    With the spacer removed, the brake pedal travel is increased, making it better suited for rally racing.    Specifications:    Spring length: 16.5 mm    Spacer thickness: 10 mm    Effective travel with spacer: (16.5−10)÷2=3.25 mm(16.5 - 10) ÷ 2 = 3.25\\text{ mm}(16.5−10)÷2=3.25 mm   Effective travel without spacer: 16.5÷2=8.25 mm16.5 ÷ 2 = 8.25\\text{ mm}16.5÷2=8.25 mm   Removing the spacer significantly increases the spring’s working travel, providing a softer pedal feel that is more suitable for prolonged braking and the varied conditions of rally racing.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-05T13:34:59Z",
+      "updated_at": "2025-08-05T13:34:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007050601,
+      "body_text": "30HAのエラストマーはいつごろ入荷しますか？\r\n\r\n2025年8月5日(火) 22:35 support@simsonn.com ",
+      "user_id": 158001685303,
+      "created_at": "2025-08-18T01:53:40Z",
+      "updated_at": "2025-08-18T01:53:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007051129,
+      "body_text": "Hi gtr zeon,  The supplier is expected to ship on Wednesday this week, and the products should be on the shelves by Friday, ready for sale. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-18T02:37:45Z",
+      "updated_at": "2025-08-18T02:37:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007074189,
+      "body_text": "了解しました！\r\nAliexpressのオフィシャルショップでも販売はされますか？\r\n\r\n2025年8月18日(月) 11:38 support@simsonn.com ",
+      "user_id": 158001685303,
+      "created_at": "2025-08-18T10:51:09Z",
+      "updated_at": "2025-08-18T10:51:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007683775,
+      "body_text": "simsonnの公式ホームページを見ましたが、まだ白のエラストマー（30HA）がSoldOutになっています。\r\nもう売り切れましたか？\r\n\r\n2025年8月18日(月) 19:50 gtr zeon <zeon.gtr@gmail.com>:\r\n\r\n> 了解しました！\r\n> Aliexpressのオフィシャルショップでも販売はされますか？\r\n>\r\n> 2025年8月18日(月) 11:38 support@simsonn.com ",
+      "user_id": 158001685303,
+      "created_at": "2025-08-28T04:32:02Z",
+      "updated_at": "2025-08-28T04:32:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007733837,
+      "body_text": "Hi gtr zeon,  The new stock has arrived, and our design team is currently working on product photos and the detail page. It will be available very soon. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-29T00:51:24Z",
+      "updated_at": "2025-08-29T00:51:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

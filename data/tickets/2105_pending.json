@@ -1,0 +1,44 @@
+{
+  "id": 2105,
+  "subject": "Refund request, feedback Order# 266853010501025577",
+  "description_text": "Hello, I would like to request a refund. The throttle came no working\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-30T12:15:31Z",
+  "updated_at": "2025-08-05T13:08:18Z",
+  "requester_id": 158002430270,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005862542,
+      "body_text": "Hi Duy Pham,    Please check whether the plastic part here has broken due to the travel adjustment of the blue limiter being set too short, causing it to hit the plastic piece. If it has broken, the throttle will not produce any pressure signal. We can send you a new throttle assembly or provide the replacement parts for you to install.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-30T22:54:19Z",
+      "updated_at": "2025-07-30T22:54:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006169762,
+      "body_text": "Hello, I have checked the plastic piece and it is not broken. Please see\r\npictures attached.\r\n\r\nI just want to return and refund. I understand shipping costs are high, I\r\ndon’t need a full refund.\r\n\r\nSince the shipping cost was originally $26. Please take refund me $92\r\ninstead of the full $116.\r\n\r\n\r\n\r\nOn Wed, Jul 30, 2025 at 6:54 PM support@simsonn.com ",
+      "user_id": 158002430270,
+      "created_at": "2025-08-04T03:11:28Z",
+      "updated_at": "2025-08-04T03:11:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006271208,
+      "body_text": "Hi Duy Pham,  This part should not be damaged. You can use the Offset function in SIMSONN Manager to calibrate the initial dead zone percentage. It’s likely due to structural adjustments, which require recalibrating the Offset value. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-05T13:08:18Z",
+      "updated_at": "2025-08-05T13:08:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

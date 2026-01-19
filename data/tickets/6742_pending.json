@@ -1,0 +1,44 @@
+{
+  "id": 6742,
+  "subject": "Question",
+  "description_text": "I want to know if the Plus X P2-H2 comes with a plate that you mount the\r\npedals to. I see there is a baseplate option but I'm unsure if that's just\r\nfor the raised heel rest. If I select no baseplate will I only get the\r\npedals and nothing to mount them to?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-25T23:16:05Z",
+  "updated_at": "2025-11-27T06:17:57Z",
+  "requester_id": 158007331382,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012938415,
+      "body_text": "Hi Brayden,    Thank you for reaching out to us.  To answer your question, the Plus X P2-H2 does not come with a baseplate for mounting the pedals included by default. The baseplate is an additional optional accessory that can be purchased separately. If you do not select the baseplate option, you will only receive the pedals without a mounting base.  If you would like to add the baseplate to your order, please let us know, and we’ll be happy to assist you with that.  Thank you for your understanding. If you have any more questions, feel free to ask!",
+      "user_id": 158001343601,
+      "created_at": "2025-11-26T09:12:33Z",
+      "updated_at": "2025-11-26T09:12:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012950898,
+      "body_text": "Thanks for the info. If i purchase the baseplate i want to know if these pedals would be suitable to use on the floor without a cockpit? I’m worried that when using the pedals my chair will slide back. Would you have any idea if this is suitable for floor use?\r\n\r\n> ",
+      "user_id": 158007331382,
+      "created_at": "2025-11-26T14:30:53Z",
+      "updated_at": "2025-11-26T14:30:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012993548,
+      "body_text": "Hi Brayden,    These pedals perform better when secured in place, as the pressure-sensing pedals require a wider range of force. If left unsecured, they may lift up when pressed, compromising the experience.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-27T06:17:57Z",
+      "updated_at": "2025-11-27T06:17:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

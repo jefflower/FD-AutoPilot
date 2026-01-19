@@ -1,0 +1,45 @@
+{
+  "id": 468,
+  "subject": "订单号 #SSN1670",
+  "description_text": "我想知道我的订单出了什么问题，上面说3-7天就能到，但现在已经8天了，而且物流跟踪显示还没有发货。",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-06-15T15:52:29Z",
+  "updated_at": "2025-06-18T18:47:41Z",
+  "requester_id": 158001547879,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003225437,
+      "body_text": "你好，克里斯·洛根，你的订单已经发货。这是跟踪信息。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-16T02:39:49Z",
+      "updated_at": "2025-06-16T02:39:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003364082,
+      "body_text": "哦，原来网站上没显示，好吧。谢谢你告诉我。",
+      "user_id": 158001547879,
+      "created_at": "2025-06-17T10:38:31Z",
+      "updated_at": "2025-06-17T10:38:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003473533,
+      "body_text": "",
+      "user_id": 158001547879,
+      "created_at": "2025-06-18T18:47:41Z",
+      "updated_at": "2025-06-18T18:47:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

@@ -1,0 +1,24 @@
+{
+  "id": 486,
+  "subject": "Haptic Motors for Simsonn pro",
+  "description_text": "Hello!\r\n\r\nI have the Simsonn pro pedal set, is it possible to get the simsonn pro \r\nx or plus x controllerbox for this pedals and run them to adapt the \r\nhaptic VAM system on them?\r\nMy controller box dont have plugs for the haptic motors.\r\n\r\nKing regards\r\nJürgen Mitterdorfer\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-16T07:42:03Z",
+  "updated_at": "2025-06-16T10:08:58Z",
+  "requester_id": 158000959032,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003252667,
+      "body_text": "Hi Jürgen Mitterdorfer,  Yes, you’ll need to purchase the PlusX control box, a dedicated 24V power supply, and either the VAM or VAM Pro motor, as the older versions of the control box were not designed with motor support interfaces.      https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor",
+      "user_id": 158000445778,
+      "created_at": "2025-06-16T10:08:58Z",
+      "updated_at": "2025-06-16T10:08:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

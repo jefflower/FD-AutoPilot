@@ -1,0 +1,55 @@
+{
+  "id": 5154,
+  "subject": "Plus X pedals driver error",
+  "description_text": "Hey there. I plugged plus x pedals, and after a short time the pedals stop responded. After reloading my PC, I see \"disconnected\" status in simsonn software, and \"driver error\" on a window devices screen. I have latest update of your software, and can't find how to load drivers manually. Can you help me?",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-10-21T21:49:43Z",
+  "updated_at": "2025-10-26T12:27:13Z",
+  "requester_id": 158005956678,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010841697,
+      "body_text": "Hi Олег Загнитко,     Please make sure the pedal’s USB is directly connected to the rear USB 3.0 (blue) port of your computer. Do not use a USB hub.  If the issue persists, please follow these steps:    Press and hold the upgrade button on the control box;    Connect the USB cable — at this point, SIMSONN Manager 2.1.2 will show that the device has entered SIMSONN Flasher Mode;    Go to Settings → Update → Manual Update Firmware → pedals → firmware → pedals-plusx.sfu;    After the update is complete, please test the device again.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-22T02:40:01Z",
+      "updated_at": "2025-10-22T02:40:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010859810,
+      "body_text": "Pressing button with reconnecting USB cable didn't change anything. Link to manual update is disabled, and not responded. I tried use older version of software, but result is the same. I guess that ilbutton is enabled only in case with older drivers.\nI tried to delete drivers manually using window devices tab, but for some reason this option is disabled.\nHow I can remove drivers?\n\nWed, 22 Oct. 2025, 05:40 user support @simsonn.com <support @simsonn.com> wrote:\n\n> Hi Олег Загнитко,\n>\n> Please make sure the pedal’s *USB is directly connected to the rear USB\n> 3.0 (blue) port* of your computer.\n> Do not use a USB hub.\n> If the issue persists, please follow these steps:\n>\n>    1. *Press and hold the upgrade button* on the control box;\n>    2. *Connect the USB cable* —\n>    at this point, *SIMSONN Manager 2.1.2* will show that the device has\n>    entered *SIMSONN Flasher Mode*;\n>    3. Go to *Settings → Update → Manual Update Firmware → pedals →\n>    firmware → pedals-plusx.sfu*;\n>    4. After the update is complete, please test the device again.",
+      "user_id": 158005956678,
+      "created_at": "2025-10-22T07:59:23Z",
+      "updated_at": "2025-10-22T07:59:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010891256,
+      "body_text": "Problem solved. Thanks for helping\n\nWed, 22 Oct. 2025, 10:58 user Олег Загнитко <riftersound @gmail.com> wrote:\n\n> Pressing button with reconnecting USB cable didn't change anything. Link\n> to manual update is disabled, and not responded. I tried use older version\n> of software, but result is the same. I guess that ilbutton is enabled only\n> in case with older drivers.\n> I tried to delete drivers manually using window devices tab, but for some\n> reason this option is disabled.\n> How I can remove drivers?\n>\n> Wed, 22 Oct. 2025, 05:40 user support @simsonn.com <support @simsonn.com> wrote:\n>\n>> Hi Олег Загнитко,\n>>\n>> Please make sure the pedal’s *USB is directly connected to the rear USB\n>> 3.0 (blue) port* of your computer.\n>> Do not use a USB hub.\n>> If the issue persists, please follow these steps:\n>>\n>>    1. *Press and hold the upgrade button* on the control box;\n>>    2. *Connect the USB cable* —\n>>    at this point, *SIMSONN Manager 2.1.2* will show that the device has\n>>    entered *SIMSONN Flasher Mode*;\n>>    3. Go to *Settings → Update → Manual Update Firmware → pedals →\n>>    firmware → pedals-plusx.sfu*;\n>>    4. After the update is complete, please test the device again.",
+      "user_id": 158005956678,
+      "created_at": "2025-10-22T16:00:42Z",
+      "updated_at": "2025-10-22T16:00:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011110595,
+      "body_text": "",
+      "user_id": 158005956678,
+      "created_at": "2025-10-26T12:27:12Z",
+      "updated_at": "2025-10-26T12:27:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

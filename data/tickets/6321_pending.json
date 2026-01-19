@@ -1,0 +1,64 @@
+{
+  "id": 6321,
+  "subject": "P1 wheel",
+  "description_text": "Will the p1 I think it’s called work with a moza r9v3 ? Is a mag link or\r\nwhat would I have to modify it at all\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-19T02:12:14Z",
+  "updated_at": "2025-11-19T03:08:30Z",
+  "requester_id": 158007170376,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012557486,
+      "body_text": "Hi shaun ramsey,    Which product are you enquiring about? Is it this steering wheel? Would you kindly provide a photograph?",
+      "user_id": 158001343601,
+      "created_at": "2025-11-19T02:24:47Z",
+      "updated_at": "2025-11-19T02:24:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012557508,
+      "body_text": "Yes, that's it.\r\n\r\nOn Tue, Nov 18, 2025 at 8:24 PM service@simsonn.com ",
+      "user_id": 158007170376,
+      "created_at": "2025-11-19T02:25:52Z",
+      "updated_at": "2025-11-19T02:25:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012557652,
+      "body_text": "Hi shaun ramsey,  This steering wheel features a universal 70mm bolt pattern. You may wish to verify whether your Moza R9v3 is compatible with this bolt pattern.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-19T02:34:05Z",
+      "updated_at": "2025-11-19T02:34:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012558054,
+      "body_text": "That’s fine but I’m worried about connecting it . Does it have a mag link\r\nfor usb\r\n\r\nOn Tue, Nov 18, 2025 at 8:34 PM service@simsonn.com ",
+      "user_id": 158007170376,
+      "created_at": "2025-11-19T03:01:23Z",
+      "updated_at": "2025-11-19T03:01:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012558184,
+      "body_text": "Hi shaun ramsey,    This steering wheel features a USB connection at one end and an aviation plug at the other, with no magnetic attachment support.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-19T03:08:30Z",
+      "updated_at": "2025-11-19T03:08:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

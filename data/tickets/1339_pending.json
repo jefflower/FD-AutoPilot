@@ -1,0 +1,44 @@
+{
+  "id": 1339,
+  "subject": "Haptic sensors for pedals",
+  "description_text": "\r\nHi,\r\n\r\nI ordered the Simsonn Pro X Ultra Sim Racing Pedals with Haptic reactors (Order #SSN1796).  First off great pedals, love them.  I received the haptics yesterday,  and there are only two in the box.  I thought I would get a reactor for each pedal, not just gas and brake.\r\n\r\nThanks,\r\nAndrew Swalheim EA\r\nandrew@drewstaxplus.com<mailto:andrew@drewstaxplus.com>\r\n608-423-3737\r\n[cid:image001.png@01DBEFE5.F53CE6C0]\r\n________________________________\r\nCONFIDENTIALITY NOTICE: This electronic mail transmission and any accompanying documents contain information belonging to the sender which may be confidential and legally privileged. This information is only for the use of the individual or entity to whom this electronic mail transmission was intended. If you are not the intended recipient, any disclosure, copying, distribution, or action taken in reliance on the contents of the information contained in this transmission is strictly prohibited. If you have received this transmission in error, please immediately contact the sender and delete the message. Thank you.\r\n\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-07-08T13:47:15Z",
+  "updated_at": "2025-07-08T15:12:06Z",
+  "requester_id": 158001949280,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004475410,
+      "body_text": "Hi Andrew Swalheim,    You only received two, correct? We will arrange to send you a complete set including the motor and the mounting bracket.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-08T14:35:21Z",
+      "updated_at": "2025-07-08T14:35:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004475659,
+      "body_text": "Hi yes,  I only received two haptic motors.\r\n\r\n",
+      "user_id": 158001949280,
+      "created_at": "2025-07-08T14:36:41Z",
+      "updated_at": "2025-07-08T14:36:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004478772,
+      "body_text": "Hi Andrew Swalheim,  No worries — it seems our warehouse shipped the wrong item. We’ll send you the correct one tomorrow and provide the tracking number as soon as possible.       Additionally, you can go to the update interface and select \"Manual Firmware Update\", then navigate to the pedals-firmware folder → pedals folder, and select the proxultra.sfu file to perform a temporary update. This can help resolve the game binding issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-08T15:12:05Z",
+      "updated_at": "2025-07-08T15:12:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

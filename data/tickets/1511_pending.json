@@ -1,0 +1,74 @@
+{
+  "id": 1511,
+  "subject": "Simsonn plus x",
+  "description_text": "I recently bought your pedals and it seems like the axis for the brake is inverted. I can’t figure out how to invert it in your software or in iracing. I would appreciate some help.\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-13T23:52:23Z",
+  "updated_at": "2025-07-16T03:44:19Z",
+  "requester_id": 158001871379,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004774978,
+      "body_text": "Hi Connor Lyon,    Please use the Offset function to reset the pedals to zero, then test again.  If the issue persists, please provide a video so we can help you verify and resolve it.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-14T03:45:52Z",
+      "updated_at": "2025-07-14T03:45:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004833753,
+      "body_text": "\r\nIt only registers when I let off.\r\n\r\n> ",
+      "user_id": 158001871379,
+      "created_at": "2025-07-14T18:35:57Z",
+      "updated_at": "2025-07-14T18:35:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004836531,
+      "body_text": "Can I get some help?\r\n> ",
+      "user_id": 158001871379,
+      "created_at": "2025-07-14T22:20:47Z",
+      "updated_at": "2025-07-14T22:20:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004837540,
+      "body_text": "Hi Connor Lyon,  What racing rig are you using? Could you please send us some photos of how the brake pedal is mounted? I suspect that the brake pedal's pressure sensor might be pressed directly against something, preventing it from moving properly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-15T00:22:37Z",
+      "updated_at": "2025-07-15T00:22:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004898604,
+      "body_text": " This is how it’s attached \r\n\r\n> ",
+      "user_id": 158001871379,
+      "created_at": "2025-07-15T19:07:19Z",
+      "updated_at": "2025-07-15T19:07:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004922549,
+      "body_text": "Hi Connor Lyon,     I've seen your setup with the Playseat Challenge X. Please pay close attention to the rectangular area in the middle — make sure it doesn't come into contact with the brake pressure sensor or interfere with its vertical movement.  You can resolve the issue by simply shifting the entire pedal assembly slightly backward.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T03:44:19Z",
+      "updated_at": "2025-07-16T03:44:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

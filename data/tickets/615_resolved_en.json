@@ -1,0 +1,65 @@
+{
+  "id": 615,
+  "subject": "About the pedals",
+  "description_text": "I purchased the Simsonn Pro X Ultra Sim Racing Pedals, and when I try to configure them in the game Assetto Corsa, the accelerator and clutch are recognized normally, but an issue occurred where only the brake cannot be recognized.\n\nThe pedals only have three outputs:\n1. Accelerator\n2. Brake\n3. Clutch\n\nHowever, in Assetto Corsa, a mysterious fourth signal is being recognized as the brake, and the actual second output signal for the brake cannot be recognized.\n*Note: In Assetto Corsa, when I press the brake, it is recognized as the second output signal. However, when I start the brake configuration, it gets recognized by the mysterious fourth output signal.\n\nIn the Simsonn Manager, all three pedals are recognized correctly.\n\nIs it not possible to stop this mysterious fourth output signal?",
+  "status": 4,
+  "priority": 4,
+  "created_at": "2025-06-19T23:51:54Z",
+  "updated_at": "2025-06-29T01:20:14Z",
+  "requester_id": 158001685303,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003557223,
+      "body_text": "I can't log in.\nI don't know my password.",
+      "user_id": 158001685303,
+      "created_at": "2025-06-20T04:29:45Z",
+      "updated_at": "2025-06-20T04:29:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003677705,
+      "body_text": "Hi gtr zeon, Have your pedals been calibrated correctly? Could you please record a video of you testing them from 0% to 100% in the Simsonn Manager 2.0.8 software? If they are being bound to the wrong axis in the game, please provide a video of the binding procedure, and we will assist you promptly.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-21T16:35:11Z",
+      "updated_at": "2025-06-21T16:35:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004221942,
+      "body_text": "Please watch this video. You should be able to see that I cannot configure the Simsonn pedals in Assetto Corsa. What is the 4th signal? Please provide a solution.",
+      "user_id": 158001685303,
+      "created_at": "2025-06-29T00:30:45Z",
+      "updated_at": "2025-06-29T00:30:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004221957,
+      "body_text": "Hi gtr zeon, Please go to the 'Settings -> Update' screen, click on 'Manual Firmware Update,' navigate to the pedals-firmware folder, then the pedals folder, and select the proxultra.sfu file to update. This firmware will disable the fourth axis.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-29T00:59:48Z",
+      "updated_at": "2025-06-29T00:59:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004221971,
+      "body_text": "Thank you! It's working correctly now after the firmware update!",
+      "user_id": 158001685303,
+      "created_at": "2025-06-29T01:13:23Z",
+      "updated_at": "2025-06-29T01:13:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

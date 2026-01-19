@@ -1,0 +1,64 @@
+{
+  "id": 1625,
+  "subject": "Order #SSN2042 cancellation",
+  "description_text": "Hello,\r\n\r\nCan you please cancel my order I do not mean to get this particular model.\r\n100% accident. I apologize. Thank you for your time\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-17T06:58:23Z",
+  "updated_at": "2025-07-24T02:38:28Z",
+  "requester_id": 158002176784,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005127235,
+      "body_text": "Hi Fklauer,    Hi, which model you need, we can modify it for you directly, please don't worry.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-17T07:43:11Z",
+      "updated_at": "2025-07-17T07:43:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005144440,
+      "body_text": "Hi Fklauer, which model you need, we can modify it for you directly. ",
+      "user_id": 158001343601,
+      "created_at": "2025-07-18T01:40:38Z",
+      "updated_at": "2025-07-18T01:40:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005246780,
+      "body_text": "Hi Fklauer,    Due to the long time no message reply, we will upgrade to the latest Plus X pedal and ship it for you for free, thank you for your understanding.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-21T02:54:02Z",
+      "updated_at": "2025-07-21T02:54:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005481178,
+      "body_text": "I apologize for not responding, unfortunately your replies went to my spam\r\nfolder, I thought I never received a reply this whole time!\r\n\r\nI was planning on changing to the Plus X or Pro X so it sounds like it\r\nworked out. Will the upgrade be silver and come with the base plate like my\r\noriginal order? Also, what would the haptic upgrade cost?\r\n\r\nSorry again for not responding and thank you for your time and upgrade!!!!!\r\n\r\nOn Sun, Jul 20, 2025 at 9:54 PM service@simsonn.com ",
+      "user_id": 158002176784,
+      "created_at": "2025-07-23T17:59:52Z",
+      "updated_at": "2025-07-23T17:59:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005487455,
+      "body_text": "Hi Fklauer,     The Pro Plus you ordered does not include a base plate, so the upgraded PlusX version also does not come with one. Here is the link to the VAM Pro, please check it.   https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor?variant=51351053500730",
+      "user_id": 158000445778,
+      "created_at": "2025-07-24T02:38:27Z",
+      "updated_at": "2025-07-24T02:38:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

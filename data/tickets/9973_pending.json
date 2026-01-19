@@ -1,0 +1,74 @@
+{
+  "id": 9973,
+  "subject": "Info order SSN5606",
+  "description_text": "Good morning,\r\nOn January 1st, I purchased the new HS Pro shifter on your website, but I\r\nhaven't received any updates on the shipping. Could I have more information\r\nabout this? Thanks.\r\n\r\n\r\nAndrea\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2026-01-05T08:28:59Z",
+  "updated_at": "2026-01-16T03:08:09Z",
+  "requester_id": 158007253072,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016109603,
+      "body_text": "Hi Andrea Pasotti,  Due to a few days off during the New Year holiday, emails were accumulated, which caused a delay in our response. We sincerely apologize for this. We are currently working overtime to produce the HS Pro, and we will arrange shipment for you as soon as possible. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T10:21:04Z",
+      "updated_at": "2026-01-07T10:21:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016117727,
+      "body_text": "Good morning and thank you for your feedback. Is it possible to know the\r\napproximate shipping date?\r\n\r\nThank you.\r\n\r\nIl Mer 7 Gen 2026, 11:21 service@simsonn.com ",
+      "user_id": 158007253072,
+      "created_at": "2026-01-07T11:12:57Z",
+      "updated_at": "2026-01-07T11:12:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016898658,
+      "body_text": "Good morning,\r\nI'm checking the tracking number you provided, but the shipment hasn't been\r\nshipped yet. Would it be possible to get an update?\r\n\r\nThanks.\r\n\r\nIl Mer 7 Gen 2026, 12:12 Andrea Pasotti <pasotti85@gmail.com> ha scritto:\r\n\r\n> Good morning and thank you for your feedback. Is it possible to know the\r\n> approximate shipping date?\r\n>\r\n> Thank you.\r\n>\r\n> Il Mer 7 Gen 2026, 11:21 service@simsonn.com ",
+      "user_id": 158007253072,
+      "created_at": "2026-01-12T20:17:19Z",
+      "updated_at": "2026-01-12T20:17:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017171131,
+      "body_text": "Hi Andrea Pasotti,  Your package is currently in transit and is expected to arrive within the next few days. Below is your tracking link:  https://t.17track.net/en#nums=SF6047224439383",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T08:30:30Z",
+      "updated_at": "2026-01-15T08:30:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017171245,
+      "body_text": "Buongiorno,\r\nGrazie per il feedback!\r\n\r\nOttimo servizio clienti.\r\n\r\n\r\n\r\nIl Gio 15 Gen 2026, 09:30 service@simsonn.com ",
+      "user_id": 158007253072,
+      "created_at": "2026-01-15T08:32:33Z",
+      "updated_at": "2026-01-15T08:32:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017237198,
+      "body_text": "Hi Andrea Pasotti,  You're welcome. Thank you for purchasing our product. Should you have any questions in the future, please feel free to contact us. We will address them promptly.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T03:08:09Z",
+      "updated_at": "2026-01-16T03:08:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

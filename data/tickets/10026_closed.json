@@ -1,0 +1,24 @@
+{
+  "id": 10026,
+  "subject": "Request update on haptic motors",
+  "description_text": "Someone was supposed to let me know what's up with the 3 haptic motors and\r\n2 mounts that weren't delivered.\r\n\r\nThanks,\r\nNicholas Adamicki\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2026-01-05T20:34:45Z",
+  "updated_at": "2026-01-07T06:56:51Z",
+  "requester_id": 158008836828,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016079054,
+      "body_text": "此工单已关闭并合并到工单 9701 中",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T06:56:51Z",
+      "updated_at": "2026-01-07T06:56:51Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": 4686,
+  "subject": "Simsonn Pro X 问题",
+  "description_text": "晚上好。我最近在四月份购买了一套贵公司的 Simsonn Pro X 踏板。直到今晚之前，我一直使用正常，没有任何问题。我的电脑可以识别踏板，游戏也能检测到除离合踏板以外的其他踏板输入。但遗憾的是，软件显示踏板已断开连接。踏板上的 LED 灯仍然亮着，所以我不太确定具体是什么问题。非常感谢您的帮助。",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-10-10T01:05:59Z",
+  "updated_at": "2025-10-10T07:32:04Z",
+  "requester_id": 158005537565,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010184984,
+      "body_text": "您好，Barry Acker， 请您从电脑上卸载旧版本，然后重新安装2.1.2版本并更新固件。更新后，设备版本应显示为CPU1: 2.0.5，CPU2: 2.0.3。如果问题仍然存在，请随时与我联系。 请按照以下步骤开始固件更新过程： 1. 按下控制盒上的升级按钮。 2. 重新连接USB线。 3. 软件将显示提示，表明已进入“Simsonn Flasher Mode”。 4. 转到“设置”→“更新”→“手动固件更新”→“pedals”→“firmware”→“pedals-prox.sfu”以更新固件。 5. 更新完成后，松开升级按钮。 6. 最后，测试并重新校准您的踏板。 下载链接：https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-10-10T01:10:45Z",
+      "updated_at": "2025-10-10T01:10:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010185507,
+      "body_text": "那解决了问题，非常感谢！！！如果我非要说的话，响应时间太棒了！发自我的 iPhone",
+      "user_id": 158005537565,
+      "created_at": "2025-10-10T01:46:57Z",
+      "updated_at": "2025-10-10T01:46:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

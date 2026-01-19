@@ -1,0 +1,24 @@
+{
+  "id": 363,
+  "subject": "haptics order",
+  "description_text": "hello\r\n\r\nI've made an order for the haptics #ssn1638\r\n\r\nand payed for the express shipping, but after 8days  still no news about\r\nthe order, still showing the order confirmation and nothing more.\r\n\r\nI would appreciate  knowing  if everything is alright or what is happening.\r\n\r\nThanks in advance.\r\nbest regards.\r\nJil\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-12T03:00:41Z",
+  "updated_at": "2025-06-12T03:57:57Z",
+  "requester_id": 158001454641,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002946515,
+      "body_text": "Hi Jil Cainessa,  Due to delays in the surface finishing of the VAM Pro housing, the first batch of orders is expected to begin shipping between June 16th and 18th. International express shipping will be used, ensuring fast delivery.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-12T03:57:57Z",
+      "updated_at": "2025-06-12T03:57:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

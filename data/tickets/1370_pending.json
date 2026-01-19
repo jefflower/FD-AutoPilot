@@ -1,0 +1,24 @@
+{
+  "id": 1370,
+  "subject": "High toll costs",
+  "description_text": "Hello,\r\nI recently bought a set of pedals and paid for express shipping. Now i have\r\nrecieeved an email from ups that i have to pay around 70€ extra to recieve\r\nmy package. It was never stated on your website that orders are subject to\r\nimport fees.\r\n\r\nKind regards,\r\nNils Meinow\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-09T09:47:42Z",
+  "updated_at": "2025-07-10T03:48:37Z",
+  "requester_id": 158001971593,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004500220,
+      "body_text": "Hi Nils Meinow,     Since our prices do not include customs duties by default, we will ship from the EU (Germany) warehouse if stock is available there; otherwise, the order will be shipped from China. That said, even with potential import duties, our products remain an excellent value for money.      https://www.simsonn.com/tools/faq",
+      "user_id": 158000445778,
+      "created_at": "2025-07-10T03:48:37Z",
+      "updated_at": "2025-07-10T03:48:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "id": 6509,
+  "subject": "Missing Baseplate for Simsonn Pro X Ultra",
+  "description_text": "Hi,\r\n\r\nI ordered the Simsonn Pro X Ultra and I’m missing the Haptics, haptic\r\nmounts and the Baseplate and I’ve only received the pedals.\r\n\r\nIt says my order has been completed and shipped on the shop app as well.\r\n\r\nOrder number:\r\nSSN3483\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-21T18:44:57Z",
+  "updated_at": "2025-12-05T11:21:40Z",
+  "requester_id": 158007236697,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012732471,
+      "body_text": "I only received the pedals and I don’t see any shipments on the way or tracking numbers left.     I’m missing the haptics, vertical haptic mounts and the pedal base plate.",
+      "user_id": 158007236697,
+      "created_at": "2025-11-21T22:01:59Z",
+      "updated_at": "2025-11-21T22:01:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158012802263,
+      "body_text": "Hi Daminick Cavan,    We apologize for the inconvenience. The Pro X Ultra base plate is currently out of stock at our US warehouse. New inventory will arrive tomorrow, and we will ship your order within the next two days. Additionally, here is the Haptics tracking link for your shipment, which is expected to arrive within the next two days.  https://t.17track.net/en#nums=SF6047053208813",
+      "user_id": 158001343601,
+      "created_at": "2025-11-24T08:35:56Z",
+      "updated_at": "2025-11-24T08:35:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012831769,
+      "body_text": "Is this including the vertical haptic mounts as well? I saw on a post from\r\nSimsonn when ordering the pedals leave a note in the order to have vertical\r\nhaptic mounts instead of the horizontal.\r\n\r\nThanks\r\n\r\nOn Mon, Nov 24, 2025 at 2:36 AM service@simsonn.com ",
+      "user_id": 158007236697,
+      "created_at": "2025-11-24T16:36:02Z",
+      "updated_at": "2025-11-24T16:36:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013003362,
+      "body_text": "Hi Daminick Cavan,    Yes, we have sent you the U-shaped mounting bracket. Additionally, the base plate will require our US warehouse staff to resume operations after the Thanksgiving holiday and weekend before it can be shipped. We apologize for any inconvenience this may cause!",
+      "user_id": 158001343601,
+      "created_at": "2025-11-27T11:05:18Z",
+      "updated_at": "2025-11-27T11:05:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013034928,
+      "body_text": "Thanks. When can I expect the baseplate to arrive next week? Currently fly\r\npedals aren’t usable\r\n\r\nOn Thu, Nov 27, 2025 at 5:05 AM service@simsonn.com ",
+      "user_id": 158007236697,
+      "created_at": "2025-11-28T00:59:36Z",
+      "updated_at": "2025-11-28T00:59:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013492969,
+      "body_text": "Hi Daminick Cavan,    I apologize for not getting back to you sooner. Here is your shipping tracking link.  https://www.fedex.com/wtrk/track/?trknbr=396277267886",
+      "user_id": 158001343601,
+      "created_at": "2025-12-05T11:21:40Z",
+      "updated_at": "2025-12-05T11:21:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

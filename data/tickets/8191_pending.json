@@ -1,0 +1,24 @@
+{
+  "id": 8191,
+  "subject": "Re: VAM PRO",
+  "description_text": "Le sam. 13 déc. 2025, 16:02, Minkay <minkay.mv@gmail.com> a écrit :\r\n\r\n> HELLO\r\n> I have a problem with the vam pro, they are not detected by the software,\r\n> i have no problem with my pedals. I can used it with simhub but nothing in\r\n> your software\r\n>\r\n> everything is wired\r\n>\r\n> Can you help me\r\n>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-14T07:59:50Z",
+  "updated_at": "2025-12-17T09:59:53Z",
+  "requester_id": 158002388807,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014621037,
+      "body_text": "Hi Minkay,  If the VAM Pro works when you click the “Vibration Test” in our SIMSONN Manager 2.1.2, it means the connections are fine. May I ask which game you are using? Currently, our official support covers about a dozen games, but with SimHub integration, over 100 games are supported. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T09:59:53Z",
+      "updated_at": "2025-12-17T09:59:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

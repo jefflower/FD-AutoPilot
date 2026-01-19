@@ -1,0 +1,114 @@
+{
+  "id": 8347,
+  "subject": "Order #SSN3940 Returned To Sender?",
+  "description_text": "I have not received a response in almost a week now. I don’t know what was wrong with my address but I saw the package was returned to sender. What do I do now? I tried to contact FedEx several times and they said to contact the sender even though I provided them my address. \r\nSent from my iPhone\r\n",
+  "status": 2,
+  "priority": 4,
+  "created_at": "2025-12-15T21:55:04Z",
+  "updated_at": "2026-01-07T16:06:30Z",
+  "requester_id": 158007477779,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014617693,
+      "body_text": "Hi Clayton Hamm,    We apologize for the delayed response. Please provide your correct address. If the carrier is unable to reschedule delivery, we will arrange for a replacement shipment.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-17T08:13:21Z",
+      "updated_at": "2025-12-17T08:13:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014640813,
+      "body_text": "I had 5400 tesson ridge apt 1107 St. Louis, MO 63128. But try 5440 Tesson\r\nRdg Apt 1107 or 5400 Tesson Rise Dr Apt 1107 St. Louis, MO 63128\r\n\r\nOn Wed, Dec 17, 2025 at 02:13 service@simsonn.com ",
+      "user_id": 158007477779,
+      "created_at": "2025-12-17T16:44:00Z",
+      "updated_at": "2025-12-17T16:44:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014683464,
+      "body_text": "Hi Clayton Hamm,    Okay, the Black Plus X model is currently out of stock at our US warehouse. We'll need to wait for your package to be returned and restocked before we can ship it to you. Alternatively, we can switch your order to the Silver version instead. Is that acceptable?",
+      "user_id": 158001343601,
+      "created_at": "2025-12-18T10:31:07Z",
+      "updated_at": "2025-12-18T10:31:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014704616,
+      "body_text": "Hello, that would work for me. Isn’t silver a little cheaper as well?\r\n\r\nOn Thu, Dec 18, 2025 at 04:31 service@simsonn.com ",
+      "user_id": 158007477779,
+      "created_at": "2025-12-18T16:27:28Z",
+      "updated_at": "2025-12-18T16:27:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014730418,
+      "body_text": "Or if those addresses don’t work is it possible to just send to my nearest\r\nFedEx store?\r\n5458 S Lindbergh Blvd\r\nSaint Louis, MO 63123\r\nUnited States\r\n\r\nI just got something from FedEx in the mail today using this address as\r\nwell: 5400 Tesson Ridge APT 1107 Saint Louis, MO 63128.\r\n\r\n",
+      "user_id": 158007477779,
+      "created_at": "2025-12-18T23:17:40Z",
+      "updated_at": "2025-12-18T23:17:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014746925,
+      "body_text": "Hi Clayton Hamm,    Alright, thank you for your information. We will ship to this address for you.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-19T07:47:45Z",
+      "updated_at": "2025-12-19T07:47:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014816576,
+      "body_text": "Thank you.\r\n\r\nOn Fri, Dec 19, 2025 at 01:48 service@simsonn.com ",
+      "user_id": 158007477779,
+      "created_at": "2025-12-20T17:05:26Z",
+      "updated_at": "2025-12-20T17:05:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014863019,
+      "body_text": "Hi Clayton Hamm,  Here is your shipping tracking link.  https://www.fedex.com.cn/fedextrack/?trknbr=887258799514&trkqual=12029~887258799514~FDEG",
+      "user_id": 158001343601,
+      "created_at": "2025-12-22T08:02:00Z",
+      "updated_at": "2025-12-22T08:02:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015277131,
+      "body_text": "Hello,\r\n\r\nI received my pedals today and I’m working on putting them together for the\r\nhaptics. I believe I am missing the accessory list on the packaging. I had\r\nto go and get the correct socket from ace hardware to get off the original\r\nbolts in step one, and I realized that the bolts I have for step two do not\r\nfit and I don’t have the right sized keys? I’m not sure if what I was sent\r\nis too large but nothing will fit in the plate.\r\n\r\nOn Mon, Dec 22, 2025 at 02:02 service@simsonn.com ",
+      "user_id": 158007477779,
+      "created_at": "2025-12-30T20:12:48Z",
+      "updated_at": "2025-12-30T20:12:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016163356,
+      "body_text": "Hi Clayton Hamm,  Were the VAM Pro mounting screws missing from your shipment? Did you not receive the nylon screws and nylon washers as well? ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T16:06:28Z",
+      "updated_at": "2026-01-07T16:06:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

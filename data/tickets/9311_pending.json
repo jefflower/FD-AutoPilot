@@ -1,0 +1,24 @@
+{
+  "id": 9311,
+  "subject": "Ultra Pro RGB Pedals Connection issue",
+  "description_text": "I purchased these from your website about 2 months ago, and finally got to\r\ninstall them with my new rig. Unfortunately, the pedals continuously\r\ndisconnect and I have to manually update them to allow for reconnection\r\nevery session. The software manager routinely loses connection or says\r\nFlashers. The power insert also sparks everytime I plug it in. The VRAM\r\nworks well but I feel that this is the issue with the connection. So far\r\nI’ve been pretty displeased with this purchase as I can’t run a session\r\nlonger than 30 minutes. Please advise.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-27T18:11:31Z",
+  "updated_at": "2025-12-28T02:06:05Z",
+  "requester_id": 158008794662,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015146503,
+      "body_text": "Hi Lucas Nevins,  If this happens, it indicates that the computer’s grounding is not reliable, possibly because a three-prong plug was not used with a three-prong wall outlet. You can refer to the post below: connect the computer case to the stand, and connect the control box to the metal screws on the pedals. This should resolve the disconnection issue.  https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding  ​   Additionally, the vibration motor requires an independent power supply. You can secure the power cable with a cable tie. Sparks may appear, which is normal as the motor’s internal capacitor charges. Since it operates at 24V, there is no danger, and it will not damage the control box. As long as proper grounding is followed, any disconnection issues will be resolved. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T02:06:05Z",
+      "updated_at": "2025-12-28T02:06:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 5209,
+  "subject": "Plus X pedals",
+  "description_text": "Hi again, regarding the pedals: I was wondering if you have addressed the quality concerns in this video: https://www.youtube.com/watch?v=QbJU6qsYM9I\r\n\r\n14:56 - loose collar which leads to lateral pedal play\r\n15:18 - misaligned load cell\r\n\r\nBest regards,\r\nTrygve\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-23T10:41:32Z",
+  "updated_at": "2025-10-24T01:29:54Z",
+  "requester_id": 158005927536,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010985167,
+      "body_text": "Hi，Trygve Thom，     Hello, we have made improvements to the center spacer based on user feedback, adding additional washers to eliminate the assembly gap.  As for the sensor offset, it is caused by installation tolerances. We have instructed the production team to make improvements and have designed a dedicated jig to assist in correcting alignment during assembly.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-24T01:29:02Z",
+      "updated_at": "2025-10-24T01:29:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 430,
+  "subject": "SSN1652",
+  "description_text": "Hi,\r\nJust wondering what the hold up is with shipping my order (#SSN1652)\r\n\r\nThanks,\r\nCallum\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-14T00:47:08Z",
+  "updated_at": "2025-06-14T01:02:02Z",
+  "requester_id": 158001503947,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003040684,
+      "body_text": "Hi Callum Adams, Due to delays in the surface finishing of the VAM Pro housing, the first batch of orders is expected to begin shipping between June 16th and 18th. International express shipping will be used, ensuring fast delivery.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-14T01:02:02Z",
+      "updated_at": "2025-06-14T01:02:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

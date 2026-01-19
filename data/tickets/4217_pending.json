@@ -1,0 +1,54 @@
+{
+  "id": 4217,
+  "subject": "Hendabrake Issue Box Connector",
+  "description_text": "Hello Simsonn Store,\r\n\r\nI have a problem with the USB port on the handbrake; it keeps coming out of\r\nits socket (check picture). it's starting to fall apart..\r\n\r\nCould you send me a new one, just the square connector ?\r\n\r\nThanks you\r\n\r\nBest regards,\r\nPaul (From France)\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-28T12:21:32Z",
+  "updated_at": "2025-10-03T10:52:21Z",
+  "requester_id": 158005126371,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009625101,
+      "body_text": "您好，请问您的订单号是多少？",
+      "user_id": 158001343601,
+      "created_at": "2025-09-29T10:58:08Z",
+      "updated_at": "2025-09-29T10:58:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009625216,
+      "body_text": "Hello,\r\n\r\nThis is the order number : 3058633341911303\r\n\r\nThanks\r\n\r\nLe lun. 29 sept. 2025, 12:58, service@simsonn.com ",
+      "user_id": 158005126371,
+      "created_at": "2025-09-29T11:07:36Z",
+      "updated_at": "2025-09-29T11:07:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009832358,
+      "body_text": "Hello,  Any news ? Thanks",
+      "user_id": 158005126371,
+      "created_at": "2025-10-03T08:07:25Z",
+      "updated_at": "2025-10-03T08:07:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158009836061,
+      "body_text": "Hi Paul Chalumeau,    You may try securing the USB cable at the connector with a zip tie to prevent movement and see if this resolves the issue.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-03T10:52:20Z",
+      "updated_at": "2025-10-03T10:52:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

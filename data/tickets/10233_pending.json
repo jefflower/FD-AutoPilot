@@ -1,0 +1,44 @@
+{
+  "id": 10233,
+  "subject": "Order #SSN5295",
+  "description_text": "Hello , I’m Kristiyan from Bulgaria.\r\nThis email is about my order #SSN5295 from 26.12.25.\r\n\r\nSo I’m kinda confused about what exactly is going on with my order.\r\nOn 30.12.25 you guys send me an email with information saying that you send\r\nme only the haptic motors and you provided tracking number so I can follow\r\nthe shipment.\r\nI was confused back then why you guys sending me the haptic motors only so\r\nI emailed you to ask for information.\r\nSo in our previous email communication you guys told me that haptic motors\r\nand pedals will be shipped separately.\r\nToday I got a message with confirmation that my order is delivered.\r\nSo I took it like 1 hours ago and immediately after I saw the package if\r\nwas confused because the package was very small.\r\nSo I opened that package and in there was only two brackets ( I guess for\r\nthe haptic motors ) and nothing else.\r\nSo I don’t know what’s rly happening…\r\nIn Simsonn site the information saying that haptic motors are been shipped\r\nbut the only thing I received was those two brackets.\r\nAnother thing is that I still don’t have any information about the pedals\r\nand when exactly they will be shipped.\r\nCan you guys explain what exactly is going on and clarify the shipping\r\nprocess?\r\n\r\nThank you for your time.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-07T16:55:58Z",
+  "updated_at": "2026-01-16T09:13:55Z",
+  "requester_id": 158008819530,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016970668,
+      "body_text": "We apologize for the delay. Two shipments destined for our German warehouse have been affected by heavy snowfall in Europe, causing road blockages and delivery delays. We will expedite delivery or explore alternative logistics channels to ship your order from China as soon as possible.  Compensation will be provided based on the delay after your order is completed. We apologize for the inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-13T11:36:06Z",
+      "updated_at": "2026-01-13T11:36:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016979734,
+      "body_text": "Can you guys give me and estimate time for delivery?\r\nDon’t get me wrong I’m not in a rush,I just want to know the process and\r\nthe time it will take.\r\nBecause last time we talked you told me haptic motors and pedals will be\r\nare shipped separately.\r\nFrom what I understand motors will be shipped from China and pedals will be\r\nshipped from Europe but the only thing that was delivered was those\r\nbrackets for haptic motors.\r\n\r\nНа вт, 13.01.2026 г., 13:36 service@simsonn.com ",
+      "user_id": 158008819530,
+      "created_at": "2026-01-13T12:46:41Z",
+      "updated_at": "2026-01-13T12:46:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017251356,
+      "body_text": "Hi 20v Wagon,      Here's the link for your haptics. The pedal will need to arrive from Germany before we can ship it to you. We expect it around the 22nd.  https://t.17track.net/en#nums=YT2601600705199863",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T09:13:55Z",
+      "updated_at": "2026-01-16T09:13:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

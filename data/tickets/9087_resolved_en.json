@@ -1,0 +1,55 @@
+{
+  "id": 9087,
+  "subject": "Help",
+  "description_text": "Hi,\nI accidentally entered firmware recovery mode on my Simsonn pedals and now\nthey are stuck waiting for a firmware file.\n\nI've got the silver plus X pedals with what i believe is the older style\ncontroller box\n\nCould you please send me the correct firmware file and flashing\ninstructions?\n\nThank you.",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-24T13:43:11Z",
+  "updated_at": "2025-12-30T23:37:07Z",
+  "requester_id": 158008483452,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015057933,
+      "body_text": "Hi LH GalaxY,  Please provide your order number and take photos of the pedals and control box for us to verify. Additionally, here is the upgrade process for PlusX.      Please follow the steps below:    Press and hold the upgrade button on the PlusX main controller, then reconnect the USB cable.    Open SIMSONN Manager 2.1.0 and check if it has entered recovery mode.    If recovery mode is detected, go to Settings → Update → Manual Update Firmware → pedals → firmware → pedals-plusx.sfu.    After the update is complete, test the device to see if it has been restored successfully.     ​If you are using the older 1.7.1 version of the main control box, you can choose to upgrade using the plus.sfu firmware.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-25T03:40:27Z",
+      "updated_at": "2025-12-25T03:40:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015071193,
+      "body_text": "Here is a picture of my pedals and box\n\nOn Thu, 25 Dec 2025 at 04:40, service @simsonn.com",
+      "user_id": 158008483452,
+      "created_at": "2025-12-25T14:33:50Z",
+      "updated_at": "2025-12-25T14:33:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015166321,
+      "body_text": "Hi LH GalaxY,  Only pedals with firmware version 1.7.1 are compatible with SIMSONN Manager 2.1.2. If the software indicates that the firmware is too old, please go to Settings → Update → Manual Firmware Update → pedals-firmware → pedals-plus.sfu to update it. If your pedals are running version 1.7.0, they do not support the latest software. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T15:50:04Z",
+      "updated_at": "2025-12-28T15:50:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015287526,
+      "body_text": "Thank you for your help! That fixed it!\n\nOn Sun, 28 Dec 2025 at 16:50, service @simsonn.com",
+      "user_id": 158008483452,
+      "created_at": "2025-12-30T23:36:06Z",
+      "updated_at": "2025-12-30T23:36:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

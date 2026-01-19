@@ -1,0 +1,174 @@
+{
+  "id": 2580,
+  "subject": "Re: Re: Vam Pro issue - haptic effects sometimes stay on for several seconds longer than intended.",
+  "description_text": "Hi there,\r\nApologies for the delay in replying, I was away for a few days.\r\nI have tested the steps you recommended, and they do work, but only for a short time. I’ve been testing this each day, and by the following day the same issue returns. If I repeat the update process, it works again temporarily.\r\nEach time I do this, I also have to reconfigure the pedals and the game settings, which as you can imagine is not ideal.\r\nPlease let me know if there is a more permanent fix for this issue.\r\nBest regards,\r\nRyan\r\n\r\n________________________________\r\nFrom: support@simsonn.com <support@simsonn.com>\r\nSent: Tuesday, August 05, 2025 14:12\r\nTo: ryanoceros92@hotmail.co.uk <ryanoceros92@hotmail.co.uk>\r\nSubject: Re: Re: Vam Pro issue - haptic effects sometimes stay on for several seconds longer than intended.\r\n\r\nHi Ryan Burns,\r\n\r\nI recommend uninstalling SIMSONN Manager from your computer and downloading the 2.1.0 version from our official website for installation.\r\nThen update the firmware with proxultra.sfu.\r\nThis issue may have been caused by the stop command from the main chip to the secondary chip being lost, preventing it from stopping in time. The new software version should have fixed this problem.\r\nIn our tests, we clicked dozens of times, and the issue did not reoccur.\r\nPlease follow this path for the manual update: Settings → Update → Manual Firmware Update → pedals → firmware → proxultra.sfu, and then test again.\r\n\r\nhttps://www.simsonn.com/pages/download\r\nOn Fri, 1 Aug at 8:58 AM , Ryan Burns <ryanoceros92@hotmail.co.uk> wrote:\r\nHi there,\r\nI’m able to replicate the issue even with no games running and only the Simsonn software open. Nothing else is plugged into my PC during testing.\r\nGiven this, I don’t believe the issue is related to the game or my wheelbase.\r\nI’ve attached a video showing a test I ran where I repeatedly clicked the vibrate button. In the video, you can hear it working normally for the first two clicks, but on the third click, the vibration gets stuck and continues.\r\nPlease let me know what you recommend next.\r\nBest regards,\r\nRyan\r\n\r\n________________________________\r\nFrom: support@simsonn.com <support@simsonn.com>\r\nSent: Friday, August 01, 2025 13:48\r\nTo: ryanoceros92@hotmail.co.uk <ryanoceros92@hotmail.co.uk>\r\nSubject: Re: Re: Vam Pro issue - haptic effects sometimes stay on for several seconds longer than intended.\r\n\r\nHi Ryan Burns,\r\n  Is the game experiencing intermittent interruptions? Please try testing with the wheelbase power turned off to see if the interruptions still occur.\r\n\r\n\r\nOn Fri, 1 Aug at 6:55 AM , Ryan Burns <ryanoceros92@hotmail.co.uk> wrote:\r\nHi there,\r\nI’ve checked the VKB tool and can see that only the X, Y, and Z axis data is showing. However, I’m still experiencing the issue with the effects getting stuck.\r\nIt seems to be happening less frequently now, and the vibrations don’t last as long as before, but the problem is still occurring intermittently.\r\nPlease let me know what the next steps should be.\r\nBest regards,\r\nRyan\r\n\r\n________________________________\r\n\r\nFrom: support@simsonn.com <support@simsonn.com>\r\nSent: Friday, August 01, 2025 11:48\r\nTo: ryanoceros92@hotmail.co.uk <ryanoceros92@hotmail.co.uk>\r\nSubject: Re: Re: Vam Pro issue - haptic effects sometimes stay on for several seconds longer than intended.\r\n\r\nHi Ryan Burns,\r\n\r\nPlease check with the VKB tool. If only the X, Y, and Z axes have data, it means the pedals are working normally. What issue are you currently experiencing?\r\n\r\n\r\nOn Fri, 1 Aug at 5:10 AM , Ryan Burns <ryanoceros92@hotmail.co.uk> wrote:\r\nHello,\r\n\r\nThank you for your help yesterday, the haptics worked great all evening.\r\n\r\nHowever this morning they are getting stuck again, it does not seem to be as bad as it was before but the issue is back.\r\n\r\nIs there anything I can do to stop this happening?\r\n\r\nThank you\r\nRyan.\r\n\r\n________________________________\r\n\r\nFrom: support@simsonn.com <support@simsonn.com>\r\nSent: 31 July 2025 09:32\r\nTo: ryanoceros92@hotmail.co.uk <ryanoceros92@hotmail.co.uk>\r\nSubject: Re: Re: Vam Pro issue - haptic effects sometimes stay on for several seconds longer than intended.\r\n\r\nHi Ryan Burns,\r\n\r\nAre you available now for me to remotely check your configuration and computer environment?\r\nPlease install the Todesk software first.\r\nNo registration is required, just provide the ID and temporary password.\r\n\r\nhttps://dl.todesk.com/windows/ToDesk_Setup.exe\r\n\r\n[https://attachment.freshdesk.com/inline/attachment]\r\nOn Thu, 31 Jul at 4:27 AM , Ryan Burns <ryanoceros92@hotmail.co.uk> wrote:\r\nHi there,\r\n\r\nMine shows the same as the image you sent.\r\n\r\n[https://attachment.freshdesk.com/inline/attachment]\r\n[https://attachment.freshdesk.com/inline/attachment]\r\n\r\nThe update checker says I am on the latest version.\r\n\r\n\r\n[https://attachment.freshdesk.com/inline/attachment]\r\n\r\nThanks\r\nRyan\r\n________________________________\r\nFrom: support@simsonn.com <support@simsonn.com>\r\nSent: Thursday, July 31, 2025 09:12\r\nTo: ryanoceros92@hotmail.co.uk <ryanoceros92@hotmail.co.uk>\r\nSubject: Re: Re: Vam Pro issue - haptic effects sometimes stay on for several seconds longer than intended.\r\n\r\nHi Ryan Burns,\r\n\r\nThen there should be no EMI issue.\r\nAre your software interfaces the same in both versions?\r\n\r\n[https://attachment.freshdesk.com/inline/attachment]\r\n\r\nOn Thu, 31 Jul at 3:42 AM , Ryan Burns <ryanoceros92@hotmail.co.uk> wrote:\r\nHi there,\r\nThank you for the detailed response.\r\nI have confirmed that I am using the latest version of the Simsonn software, and my firmware is up to date. My PC has six USB 3.0 ports on the rear motherboard panel, and I have tested all of them directly with the pedal’s USB cable. Unfortunately, the issue still occurs regardless of which port is used.\r\nI live in the UK, and my PC is powered through a grounded three-prong plug. According to your website, the control box is shielded, so EMI should not be a significant concern in this case.\r\nMy wheelbase is a Thrustmaster T300, and it is connected to the PC via its own USB cable.\r\nI tested the issue again today. Within the Simsonn software, under the pedal feedback settings, there is a \"vibrate\" button to test the motor. At first, it works correctly with a short vibration. However, after a few presses, the motor gets stuck and continues to vibrate until I manually click the button again. This behaviour closely matches what I’m experiencing in-game, where effects occasionally get stuck and do not stop as expected.\r\nPlease let me know if there are any additional steps I should try.\r\nKind regards,\r\nRyan\r\n\r\n\r\n\r\n________________________________\r\nFrom: support@simsonn.com <support@simsonn.com>\r\nSent: Thursday, July 31, 2025 01:02\r\nTo: ryanoceros92@hotmail.co.uk <ryanoceros92@hotmail.co.uk>\r\nSubject: Re: Re: Vam Pro issue - haptic effects sometimes stay on for several seconds longer than intended.\r\n\r\nHi Ryan Burns,\r\n\r\nFirst, please upgrade to the latest 2.1.0 software version and ensure your firmware is 2.0.2.\r\nNext, make sure the pedal’s USB cable is connected directly to the rear USB 3.0 port of your PC instead of using a USB hub, to avoid power supply issues or unstable connections.\r\nAdditionally, please let us know the brand of your wheelbase and check if your PC is properly grounded, as poor grounding may cause EMI interference issues.\r\n\r\nTo address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability:\r\n    1.    Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding.\r\n    2.    Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive.\r\n    3.    Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup.\r\n    4.    Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible.\r\n    5.    Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs.\r\n    6.    Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference.\r\n    7.    Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements.\r\n    8.    Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources.\r\n\r\nhttps://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting\r\nhttps://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding\r\nhttps://www.youtube.com/watch?v=LciAFDFWJ1w  <https://www.youtube.com/watch?v=LciAFDFWJ1w%C2%A0%C2%A0>\r\n\r\n[https://attachment.freshdesk.com/inline/attachment]\r\n\r\n\r\n\r\nOn Wed, 30 Jul at 5:53 AM , Ryan Burns <ryanoceros92@hotmail.co.uk> wrote:\r\nHi there,\r\n\r\nHave you been able to review my previous email?\r\n\r\nI wanted to update you that the same issues are present with the Vam Pros in the Simsonn software, even with no game input just simply pressing the vibration button to test the motors sometimes gets stuck on and instead of a quick buz it carries on until I click it again and it stops.\r\n\r\nCurrently the haptics are useless because of these issues. Your help is appreciated.\r\n\r\nKind regards,\r\nRyan.\r\n\r\n________________________________\r\nFrom: Ryan Burns <ryanoceros92@hotmail.co.uk>\r\nSent: 29 July 2025 17:44\r\nTo: support@simsonn.com <support@simsonn.com>\r\nSubject: Vam Pro issue - haptic effects sometimes stay on for several seconds longer than intended.\r\n\r\nHi there,\r\nI recently purchased the Pro X Ultimate pedals along with the Vam Pro haptic accessories. I've set everything up, and while the hardware appears to be working correctly, I'm encountering an issue with the Vam Pro effects in SimHub.\r\nWhen testing, the haptic effects sometimes stay on for several seconds longer than intended. For example, I tested the gear change effect, which is supposed to produce an 80ms pulse. However, it occasionally continues vibrating for 2-3 seconds. This issue seems to happen across multiple effects not just gear change.\r\nThe problem becomes more noticeable when using multiple effects at once, as one effect tends to get stuck in each corner, making the overall feedback inaccurate and distracting.\r\nI’ve recorded a video showing this behaviour, please let me know if you’d like me to send it.\r\nAny help resolving this issue would be greatly appreciated.\r\nKind regards,\r\nRyan\r\n\r\n\r\n\r\n2101:4206036\r\n2101:4206036\r\n2101:4206036\r\n2101:4206036\r\n2101:4206036\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-08-12T09:12:07Z",
+  "updated_at": "2025-08-20T14:26:19Z",
+  "requester_id": 158002429793,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006782940,
+      "body_text": "Hi Ryan Burns,    If the issue persists, we recommend installing Todesk (no registration required). Simply provide your ID and temporary access code, and we can schedule a time to assist you remotely.     https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-08-13T03:11:33Z",
+      "updated_at": "2025-08-13T03:11:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006791331,
+      "body_text": "Hi there,\r\nWe already tried a ToDesk remote access session previously, and the issue persisted afterwards. Could you let me know if you plan to take a different approach this time, or check something new during the session?\r\nBest regards,\r\nRyan\r\n\r\n\r\n________________________________\r\n",
+      "user_id": 158002429793,
+      "created_at": "2025-08-13T08:30:22Z",
+      "updated_at": "2025-08-13T08:30:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006791712,
+      "body_text": "Hi Ryan Burns,    Please use the VKB tool to check the pedal signal output. For example, press the throttle pedal halfway and keep your foot still so that the throttle signal remains as a stable straight line. Then, quickly turn the T300 steering wheel left and right. Observe the throttle signal:    If the throttle signal fluctuates in sync, it indicates EMI interference from the base is not isolated.    If the throttle signal remains a stable straight line, it means the pedals are not affected by interference.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-13T09:35:23Z",
+      "updated_at": "2025-08-13T09:35:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006802768,
+      "body_text": "Hi there,\r\nThanks for the reply. I have tested this and do not believe the T300 is causing interference. I have attached an image showing me holding the throttle in the VKB tool while turning the wheel 90 degrees in each direction, and the signal does not appear to fluctuate in sync with the wheel movements.\r\nAdditionally, I can reproduce this issue with only the pedals plugged into my PC and no other external devices connected.\r\nBest regards,\r\nRyan\r\n\r\n________________________________\r\n",
+      "user_id": 158002429793,
+      "created_at": "2025-08-13T14:23:56Z",
+      "updated_at": "2025-08-13T14:23:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006889997,
+      "body_text": "Hi Ryan Burns,    Please provide the EMI checklist and indicate which items you have checked and completed, along with some installation photos so I can assist in confirming. In theory, there should be no issues, as iRacing experts have tested extensively in our environment for several hours, and we conduct daily tests without any disconnections.  I believe that if there is no interference, the issue may be caused by insufficient USB power from the computer. Please use the blue USB 3.0 ports on the back of your PC directly and avoid using USB hubs, especially when multiple devices are connected to a single hub, as this can lead to insufficient power. Since your case is very rare, our preliminary assessment is that the computer’s USB port may not be very stable.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-15T02:56:48Z",
+      "updated_at": "2025-08-15T02:56:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006898986,
+      "body_text": "Hi there,\r\nI am not familiar with what you mean by an EMI checklist. In my testing, I have only the pedals, Ethernet, power, and DisplayPort cables plugged into the back of my PC.\r\nThe PC has seven USB 3.0 ports, and the issue occurs on all of them.\r\nIn the attached video, I show my PC, the pedals, and then the Simsonn software. In the first attempt, the brake VAM Pro experiences the issue, and I have to manually click to stop the vibration.\r\nBest regards,\r\nRyan\r\n\r\n________________________________\r\n",
+      "user_id": 158002429793,
+      "created_at": "2025-08-15T08:14:59Z",
+      "updated_at": "2025-08-15T08:14:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006898988,
+      "body_text": "Hi there,\r\n\r\nThis is a continuation of the test where you can see the issue happen with the throttle VAM Pro also.\r\n\r\nBest regards\r\nRyan\r\n________________________________\r\n",
+      "user_id": 158002429793,
+      "created_at": "2025-08-15T08:15:56Z",
+      "updated_at": "2025-08-15T08:15:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006978409,
+      "body_text": "Hi Ryan Burns,      Please share the video with us via a Google Drive link, as we were unable to open the two videos you previously sent. Thank you! Regarding the EMI checklist, the main issue is that your PC and wheelbase are not properly grounded, causing EMI interference with the pedals and motors. Other customers have resolved similar issues by following this checklist. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-17T04:36:15Z",
+      "updated_at": "2025-08-17T04:36:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007006458,
+      "body_text": "Hi there,\r\n\r\nPlease see the below links for the videos.\r\nhttps://drive.google.com/file/d/1uAC-vTtSxQRg3TdO8aN4CB-gjKdF6q0C/view?usp=sharing\r\nhttps://drive.google.com/file/d/1OBfp5AizeGv9ONH6s3o79dUtA8BhLNyP/view?usp=sharing\r\n\r\nThanks for clarifying. As I live in the UK, my PC is connected through a standard three-pin plug, so the system is grounded through the mains supply. Because of that, I would not expect EMI from the PC itself.\r\nAre you suggesting that the issue could instead come from the wheelbase not being grounded directly? If so, could you please confirm the best way to ground the T300 wheelbase so I can test this properly?\r\nI should also mention that I am able to reproduce the issue even with only the pedals connected to the PC and the wheelbase completely unplugged from the PC and mains power.\r\nBest regards,\r\nRyan\r\n\r\n\r\n________________________________\r\n",
+      "user_id": 158002429793,
+      "created_at": "2025-08-17T11:25:53Z",
+      "updated_at": "2025-08-17T11:25:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007051032,
+      "body_text": "Hi Ryan Burns,  I have requested access to view your Google Drive. Could you please approve it so that I can check and provide a solution? ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-18T02:29:25Z",
+      "updated_at": "2025-08-18T02:29:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007087582,
+      "body_text": "Hi there,\r\n\r\nApologies, I have granted access to them now.\r\n\r\nPlease let me know if there is anything else you need.\r\n\r\nBest regards\r\nRyan\r\n\r\n\r\n________________________________\r\n",
+      "user_id": 158002429793,
+      "created_at": "2025-08-18T14:34:23Z",
+      "updated_at": "2025-08-18T14:34:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007112581,
+      "body_text": "Hi Ryan Burns,  We can use Todesk to remotely check your device to see if there is any possibility of hardware damage. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-19T04:48:46Z",
+      "updated_at": "2025-08-19T04:48:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007113136,
+      "body_text": "Hi Ryan Burns,  Please first update the software to SIMSONN Manager 2.1.0. Then, in the \"Settings - Update\" section, click \"Manual Firmware Update\", navigate to the pedals-firmware folder → pedals folder, and select the proxultra.sfu file to update. After the update is complete, please test again. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-19T05:31:28Z",
+      "updated_at": "2025-08-19T05:31:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007124321,
+      "body_text": "Hi there,\r\nThanks for the advice. I have been following this process since the first time you recommended it. Each time I update the software and firmware, it does resolve the issue temporarily, but only for a few hours before the problem comes back.\r\nI will do some further testing today and let you know the results.\r\nBest regards,\r\nRyan\r\n\r\n________________________________\r\n",
+      "user_id": 158002429793,
+      "created_at": "2025-08-19T10:03:20Z",
+      "updated_at": "2025-08-19T10:03:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007184956,
+      "body_text": "Hi there,\r\nI’ve done some further testing. Without removing or changing anything in my setup, the issue can be temporarily fixed by uninstalling and reinstalling Simsonn Manager, then manually updating the firmware. After doing this, the haptics work normally for a few hours while I play.\r\nHowever, after turning everything off overnight and starting up the next day, the issue returns during testing. If I repeat the manual firmware update, the haptics work again for a while, but the problem eventually comes back.\r\nFrom my understanding, if this were caused by EMI, reinstalling the software and reapplying the firmware would not resolve the problem, even temporarily. Since the update process restores correct behaviour for a time, it seems more likely that the issue is related to the software or firmware rather than interference.\r\nBest regards,\r\nRyan\r\n\r\n\r\n________________________________\r\n",
+      "user_id": 158002429793,
+      "created_at": "2025-08-20T08:18:45Z",
+      "updated_at": "2025-08-20T08:18:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007215630,
+      "body_text": "Hi Ryan Burns,  Please use the test version 2.1.1, click Revert → Save, and then recalibrate and test again. If the issue persists, you may try refreshing the firmware manually: go to Settings → Update → Manual Firmware Update → pedals-firmware-proxultra.sfu to upgrade. For now, please avoid using version 2.1.0—we will release an online update soon.      https://drive.google.com/file/d/1UPkeOHREyALtCtNmL87a2WnUDZV0Gx_b/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-08-20T14:26:18Z",
+      "updated_at": "2025-08-20T14:26:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "id": 4356,
+  "subject": "Return",
+  "description_text": "To whom it may concern,\r\n\r\nI received order #SSN2568 on September 15th. I've had the pedals mounted to\r\na rig, and for the past week I have not been able to calibrate the pedals\r\nto iRacing. Even without a wheel base setup, the calibration bar on iRacing\r\nis all over the place. These pedals worked fine for about a week, now they\r\nwon't barely even work on F1 25. If possible I'd like to return the pedals\r\nand receive a refund please. I was really looking forward to these pedals,\r\nbut I've had nothing but bad luck with them. I apologize for the\r\ninconvenience in this matter. I hope we can get this resolved as soon as\r\npossible. Thank you for your time.\r\n\r\nSincerely,\r\n\r\nKevin Pawlaczyk\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-03T00:38:25Z",
+  "updated_at": "2025-10-04T02:33:53Z",
+  "requester_id": 158004500090,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009823978,
+      "body_text": "Hi Kevin Pawlaczyk,  Please use version 2.1.1 of the software. In the interface, click “Restore”, then click “Save”, and finally re-plug the USB. This will disable the fourth axis (RX).      https://drive.google.com/file/d/1BAdSWa1bxmbPksj9Hlzuo8bl7_bM8ixr/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-10-03T02:13:19Z",
+      "updated_at": "2025-10-03T02:13:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009836323,
+      "body_text": "I have done every troubleshooting step. I would like to return these\r\npedals. I'm not happy with this purchase.\r\n\r\nOn Thu, Oct 2, 2025, 10:13 PM service@simsonn.com ",
+      "user_id": 158004500090,
+      "created_at": "2025-10-03T11:11:07Z",
+      "updated_at": "2025-10-03T11:11:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009876400,
+      "body_text": "Hi Kevin Pawlaczyk,    After performing this operation, the RX axis has already been disabled, so it will work normally in both iRacing and F1 2025. This issue is simply a software bug, and the operation you performed is the fix for it. If you continue to experience problems, please provide us with a video so we can investigate further. Please note that this situation does not fall under our refund policy.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-04T01:38:13Z",
+      "updated_at": "2025-10-04T01:38:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009876536,
+      "body_text": "This is unacceptable. Your troubleshooting tips rendered useless. I'm\r\nreporting this company to the BBB and FTC. These pedals have a hardware\r\nmalfunction within them. I'm not happy with them, and frankly I'm not happy\r\nwith your service. Either send me a return label and a full refund or this\r\nwill go further than it has to go.\r\n\r\nOn Fri, Oct 3, 2025, 9:38 PM service@simsonn.com ",
+      "user_id": 158004500090,
+      "created_at": "2025-10-04T01:55:06Z",
+      "updated_at": "2025-10-04T01:55:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009876585,
+      "body_text": "Hi Kevin Pawlaczyk,    This is not a hardware fault of the product. Since you have not provided a video demonstrating that the issue still exists, we are unable to offer further support. Please provide a video so that we can review and investigate the problem.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-04T01:59:48Z",
+      "updated_at": "2025-10-04T01:59:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009876652,
+      "body_text": "Here's your video. This is without a wheel base even connected to my rig.\r\nYour pedals ARE NOT WORKING!!!!!!\r\n\r\nOn Fri, Oct 3, 2025, 10:00 PM service@simsonn.com \nAttachment(s) that exceed the 20 MB limit have been dropped. Please reach out to the sender.",
+      "user_id": 158004500090,
+      "created_at": "2025-10-04T02:06:45Z",
+      "updated_at": "2025-10-04T02:06:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009876682,
+      "body_text": "Hi Kevin Pawlaczyk,    Your video file exceeds 20MB, so I am unable to view it directly. Please upload it to Google Drive and share the link with us, making sure the appropriate access permissions are set. Once I have reviewed your video, I will get back to you promptly.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-04T02:09:46Z",
+      "updated_at": "2025-10-04T02:09:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009876703,
+      "body_text": "Thse pedals also lose calibration randomly, my throttle goes to basically\r\nnothing, and my lap times go to the trash. The brakes are NOT responsive at\r\nall. I want to return these NOW. Either way, these will be shipped back to\r\nthe originating address in which they were shipped.\r\n\r\nOn Fri, Oct 3, 2025, 10:05 PM Kevin Pawlaczyk <kevin.pawlaczyk@gmail.com>\r\nwrote:\r\n\r\n> Here's your video. This is without a wheel base even connected to my rig.\r\n> Your pedals ARE NOT WORKING!!!!!!\r\n>\r\n> On Fri, Oct 3, 2025, 10:00 PM service@simsonn.com ",
+      "user_id": 158004500090,
+      "created_at": "2025-10-04T02:11:36Z",
+      "updated_at": "2025-10-04T02:11:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009876716,
+      "body_text": "Well, that's just too damn bad you can't view the video. Get a better\r\nsystem to view it.\r\n\r\nOn Fri, Oct 3, 2025, 10:11 PM Kevin Pawlaczyk <kevin.pawlaczyk@gmail.com>\r\nwrote:\r\n\r\n> Thse pedals also lose calibration randomly, my throttle goes to basically\r\n> nothing, and my lap times go to the trash. The brakes are NOT responsive at\r\n> all. I want to return these NOW. Either way, these will be shipped back to\r\n> the originating address in which they were shipped.\r\n>\r\n> On Fri, Oct 3, 2025, 10:05 PM Kevin Pawlaczyk <kevin.pawlaczyk@gmail.com>\r\n> wrote:\r\n>\r\n>> Here's your video. This is without a wheel base even connected to my rig.\r\n>> Your pedals ARE NOT WORKING!!!!!!\r\n>>\r\n>> On Fri, Oct 3, 2025, 10:00 PM service@simsonn.com ",
+      "user_id": 158004500090,
+      "created_at": "2025-10-04T02:13:02Z",
+      "updated_at": "2025-10-04T02:13:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009876771,
+      "body_text": "Hi Kevin Pawlaczyk,    I was driving just now, so I apologize if my previous reply wasn’t very thorough.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-04T02:19:22Z",
+      "updated_at": "2025-10-04T02:19:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009876790,
+      "body_text": "Don't worry about it. I've already given your company a one star review on\r\nthe website and am in process of reaching out to the FTC. Best of luck to\r\nyou.\r\n\r\nOn Fri, Oct 3, 2025, 10:19 PM service@simsonn.com ",
+      "user_id": 158004500090,
+      "created_at": "2025-10-04T02:22:39Z",
+      "updated_at": "2025-10-04T02:22:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009876796,
+      "body_text": "Hi Kevin Pawlaczyk,    We are currently on the National Day holiday, but we are still working overtime and have been responding to you promptly to help resolve the issue. In fact, this issue can be resolved quickly, yet you chose to file multiple complaints instead of communicating with us directly for a quick solution, which leaves us quite puzzled.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-04T02:23:25Z",
+      "updated_at": "2025-10-04T02:23:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009876906,
+      "body_text": "Hi Kevin Pawlaczyk,    If updating to version 2.1.1 does not resolve the issue, I suspect that version 2.1.0 might still be running at the same time. Please uninstall version 2.1.0 first, then install version 2.1.1 from the download link. After installation, click Revert, then Save, and recalibrate the pedals. This will allow you to bind them correctly in F1 2025. Please also note that iRacing requires an additional recalibration in the game settings.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-04T02:33:53Z",
+      "updated_at": "2025-10-04T02:33:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

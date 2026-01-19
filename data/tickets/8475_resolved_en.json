@@ -1,0 +1,25 @@
+{
+  "id": 8475,
+  "subject": "Order No. SF6047111321054",
+  "description_text": "Dear Customer,\n\nHello!\n\nI am a customer service representative from SF International E-commerce. This email is to inform your company about the status of a related package, specifically: Order No. SF6047111321054. The customs feedback indicates that the submitted order screenshot is completely inconsistent with the original declaration information. Please confirm if the correct order screenshot has been provided.\n\nWe look forward to your reply and wish you a pleasant life!\n\nIf you have any questions, please feel free to contact QQ 800013683 or email iecomcs@sf-express.com. Thank you!\nSF Express\nInternational Customer Service Center\nQQ_800013683\nhttps://www.sf-international.com",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-17T05:38:43Z",
+  "updated_at": "2025-12-17T06:18:26Z",
+  "requester_id": 158002294708,
+  "responder_id": 158007774664,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014614452,
+      "body_text": "SF6047111321054 The screenshot provided is the correct order information, please verify again. Recipient name: Masahiro Nata. Address (buyer's order language): Takanoomachi 634-5 E, Tsu City, Mie Prefecture, Japan, 5142221. Detailed address: Takanoomachi 634-5 E, Tsu shi, Mie ken, Japan, 5142221. Postal code: 5142221. Contact email: mod7405-bikeshop@yahoo.co.jp. Contact phone: +81 08036450106",
+      "user_id": 158007774664,
+      "created_at": "2025-12-17T06:18:19Z",
+      "updated_at": "2025-12-17T06:18:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

@@ -1,0 +1,24 @@
+{
+  "id": 3045,
+  "subject": "Throttle Damper - Broken?",
+  "description_text": "﻿Hi,\r\n\r\nI recently bought Simsonn Pro X Ultra pedals and got in touch with your support team via Amazon.\r\n\r\nI have a minor issue with the throttle pedal, the damper seems to make quite a loud and strange noise, and unless the spring is put under some tension, it doesn’t bring the pedal back fully to its original position when pressed.\r\n\r\nHere’s a quick video demonstrating the noise the damper makes, can you advise how this, as well as the damper functionality can be fixed? \r\n\r\nThe only solution so far is to have the pedal quite stiff, but I feel it is very unnatural in this mode due to the issue.\r\n\r\nI would really appreciate any help with this.\r\n\r\nMany thanks,\r\nMateusz\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-23T19:01:05Z",
+  "updated_at": "2025-08-25T02:46:28Z",
+  "requester_id": 158003510177,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007440626,
+      "body_text": "Hi Mateuszpartyka,  Hello, I noticed the hydraulic sound you mentioned from the throttle pedal. This is completely normal and is caused by the liquid moving back and forth inside the hydraulic damper, with a design principle identical to that of real cars. Our pedals have been upgraded to a full hydraulic damper structure, whose main function is to provide cushioning and damping. Unlike gas springs, a hydraulic damper does not generate an automatic rebound force — this design prevents any damage or unnecessary increase to the spring’s natural resistance. In contrast to cheap gas springs, which are not truly hydraulic and simply rely on two springs stacked together, our hydraulic damper provides much more effective vibration reduction and ensures stable signal performance. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-25T02:46:28Z",
+      "updated_at": "2025-08-25T02:46:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

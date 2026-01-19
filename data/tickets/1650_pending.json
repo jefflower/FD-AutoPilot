@@ -1,0 +1,24 @@
+{
+  "id": 1650,
+  "subject": "Package Tracking",
+  "description_text": "Hey Simsonn, I had ordered some Pedals through your website, but when they were ordered, I did not have an account. I entered in this email, \"mseanleech@vt.edu\" but never got a order confirmation. I don't know if it was a typo or a problem on your side. I later created an account with the said email and received the account t confirmation code emails just fine. I do have the bank statements saying the order went through, I ordered it July 14th with express shipping and would just like to track the package! Is there any way I can do that? ",
+  "status": 3,
+  "priority": 2,
+  "created_at": "2025-07-17T19:13:10Z",
+  "updated_at": "2025-07-18T03:26:51Z",
+  "requester_id": 158002195330,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005145000,
+      "body_text": "Hi Michael leech,    You didn't fill out an email address, I've added this current one for you, but can't resend you a shipping notification, you can track it through this link.  https://www.fedex.com/wtrk/track/?trknbr=882782534426",
+      "user_id": 158001343601,
+      "created_at": "2025-07-18T03:26:51Z",
+      "updated_at": "2025-07-18T03:26:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

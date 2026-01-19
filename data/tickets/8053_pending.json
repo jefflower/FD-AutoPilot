@@ -1,0 +1,24 @@
+{
+  "id": 8053,
+  "subject": "Simson Pro X Ultra",
+  "description_text": "Bonjour\r\n\r\nj'essaye d'installer les haptic pro et je reste bloqué sur cette fenêtre pouvez-vous m'aider svp ?\r\n\r\nMerci\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-12T07:11:21Z",
+  "updated_at": "2025-12-14T02:36:11Z",
+  "requester_id": 158007775073,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014471674,
+      "body_text": "Hi PELLEGRINI Herve,  You can pop up the upgrade button on the control box and then reconnect the USB. This will allow the device to enter normal working mode. In SIMSONN Flasher, when the triangle indicator appears, hovering your mouse over it will also display the prompt. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-14T02:36:11Z",
+      "updated_at": "2025-12-14T02:36:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 4934,
+  "subject": "Order SSN2105",
+  "description_text": "Simsonn,\r\n\r\nI never recieved my order,\r\nSSN2105. Could it please be delivered to the following address:\r\n\r\n9381 Laser Ln\r\nLa Mesa, CA 91941\r\n\r\nThank you.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-16T07:46:30Z",
+  "updated_at": "2025-10-16T07:49:15Z",
+  "requester_id": 158002312324,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010548485,
+      "body_text": "Hi Johnpeterbecker,    Okay, we will arrange for your shipment immediately.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-16T07:49:15Z",
+      "updated_at": "2025-10-16T07:49:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

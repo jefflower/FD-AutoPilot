@@ -1,0 +1,44 @@
+{
+  "id": 4333,
+  "subject": "Pedals",
+  "description_text": "Hi,\r\n\r\nCan I use your Pro X Ultra Sim Racing Pedal with Haptic Reactor with my\r\nFanatec CSL DD pro base?\r\n\r\nRegards,\r\nTautvydas Tavoras\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-02T10:48:59Z",
+  "updated_at": "2025-10-10T08:42:28Z",
+  "requester_id": 158005271141,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009824311,
+      "body_text": "Hi Tautvydas Tavoras,  Yes, it works. This is how we use it in our testing environment, and many of our customers are also using it in the same way. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-03T02:29:31Z",
+      "updated_at": "2025-10-03T02:29:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009826342,
+      "body_text": "Do you have any discount codes?\r\n\r\nRegards,\r\nTautvydas Tavoras\r\n\r\n\r\nOn Fri, 3 Oct 2025 at 05:29, service@simsonn.com ",
+      "user_id": 158005271141,
+      "created_at": "2025-10-03T04:31:59Z",
+      "updated_at": "2025-10-03T04:31:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010198495,
+      "body_text": "Hi Tautvydas Tavoras,    Sorry for the delayed response—we just wrapped up our 8-day holiday break. You can use this $35 store celebration discount: CNFRCS  Note: Valid on orders over $199.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-10T08:42:28Z",
+      "updated_at": "2025-10-10T08:42:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

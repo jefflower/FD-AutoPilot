@@ -1,0 +1,24 @@
+{
+  "id": 7443,
+  "subject": "Incorrect contact information email on order",
+  "description_text": "Hi Team,\r\n\r\nI ordered a set of Pedals\r\nMy order number is: #SSN4369\r\n\r\nI’ve no issues with the order however I did use the incorrect contact\r\ninformation. I accidentally used rhys@gmail.com instead of my email\r\nrhysmg@gmail.com\r\n\r\nPlease see screenshot below of the contact information on the order number\r\nabove.\r\n\r\n\r\n\r\nIs it possible to have this corrected, I understand it is my mistake. If\r\nyou can’t updated it from your side could you forward the confirmation\r\nemail to my email above rhysmg@gmail.com ?\r\n\r\nLooking forward to hearing from you\r\n\r\nKind regards\r\nRhys\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-04T20:44:03Z",
+  "updated_at": "2025-12-05T02:25:56Z",
+  "requester_id": 158007650947,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013428582,
+      "body_text": "Hi rhys mc grath,    Okay, we've updated your email address and resent the order confirmation.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-05T02:25:52Z",
+      "updated_at": "2025-12-05T02:25:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": 798,
+  "subject": "how to settup pedals",
+  "description_text": "I have installed my pedals and don know how to set then up and they show up in game but are this 4 axis that keeps showing un and taking over stuck at 50% but the throttles is axis 1 break at axes 3 clutch at axis 3 and a random 4 axis that keeps popping p and taking over\r\nPicture 1 is me being fast enough and getting the pedals to connect\r\npicture 2 is what happens es when truy and add the petals it even worse on le mans ultimate cause every keybine turns ito axis 4\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-06-25T01:05:59Z",
+  "updated_at": "2025-06-25T02:43:12Z",
+  "requester_id": 158001568581,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003833395,
+      "body_text": "Hi MrBot 222,     You can go to the update interface and select “Manual Firmware Update”, then navigate to the pedals-firmware folder → pedals folder, and select the proxultra.sfu file to see if it resolves the issue.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-25T01:15:18Z",
+      "updated_at": "2025-06-25T01:15:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003833481,
+      "body_text": "What version of the app sould I use\r\n\r\nOn Tue, Jun 24, 2025 at 8:15 PM support@simsonn.com ",
+      "user_id": 158001568581,
+      "created_at": "2025-06-25T01:50:47Z",
+      "updated_at": "2025-06-25T01:50:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003833543,
+      "body_text": "Hi MrBot 222,  You can download version 2.0.8 of the software. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-25T02:25:01Z",
+      "updated_at": "2025-06-25T02:25:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

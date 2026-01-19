@@ -1,0 +1,95 @@
+{
+  "id": 10140,
+  "subject": "Pro 无法工作",
+  "description_text": "您好，我的 Pro 已经用了一年，到目前为止一直都很好用，但突然间在任何游戏中都无法识别，不过 Simsonn 软件可以检测到它们，请问您有什么办法可以帮忙吗？Stephen Elward 您好，我的 Pro 已经用了一年，到目前为止一直都很好用，但突然间在任何游戏中都无法识别，不过 Simsonn 软件可以检测到它们，请问您有什么办法可以帮忙吗？发自我的 iPhone",
+  "status": 4,
+  "priority": 4,
+  "created_at": "2026-01-06T21:57:42Z",
+  "updated_at": "2026-01-09T03:21:15Z",
+  "requester_id": 158008959538,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016063715,
+      "body_text": "Hi Stephen Elward, 如果您的踏板是 1.7.1 版本，您可以使用以下链接下载最新的 SIMSONN Manager 2.1.2。然后，按照以下步骤更新固件：如果软件提示版本过旧，请进入设置 → 更新 → 手动固件更新 → 踏板 → 固件 → pedals-proxultra.sfu 开始固件更新；固件更新完成后，松开升级按钮；最后，测试踏板并进行校准。此外，请确保您的电脑已正确接地。https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T05:17:52Z",
+      "updated_at": "2026-01-07T05:17:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016087661,
+      "body_text": "伙计您好，谢谢您的回复。如果我尝试更新到 *proxultra.sfu*，它提示我需要联系管理员。2026 年 1 月 7 日星期三 05:18，support@simsonn.com",
+      "user_id": 158008959538,
+      "created_at": "2026-01-07T07:55:06Z",
+      "updated_at": "2026-01-07T07:55:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016144701,
+      "body_text": "Hi Stephen Elward, 执行固件更新时，请选择 plus.sfu。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T14:09:05Z",
+      "updated_at": "2026-01-07T14:09:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016159116,
+      "body_text": "是的，我试过了，它显示已连接，但在任何游戏中都无法注册。2026 年 1 月 7 日星期三 14:09，support@simsonn.com",
+      "user_id": 158008959538,
+      "created_at": "2026-01-07T15:39:23Z",
+      "updated_at": "2026-01-07T15:39:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016159810,
+      "body_text": "Hi Stephen Elward, 在 SIMSONN Manager 2.1.3 中，校准踏板后，请检查当您踩下踏板时蓝色进度条是否从 0% 正常移动到 100%。如果是，这表明踏板本身工作正常，可以在游戏中正确绑定和使用。请问您目前使用的是什么游戏？https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T15:43:29Z",
+      "updated_at": "2026-01-07T15:43:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016180570,
+      "body_text": "F125、赛车房、ACC 和勒芒，我明天回家后会检查。我感到很沮丧，因为我非常喜欢您的产品，事实上我甚至说服了一些和我一起比赛的人购买，所以等我回家后会检查并回复您。2026 年 1 月 7 日星期三 15:43，support@simsonn.com",
+      "user_id": 158008959538,
+      "created_at": "2026-01-07T17:57:51Z",
+      "updated_at": "2026-01-07T17:57:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016243333,
+      "body_text": "Hi Stephen Elward, 如果仍然无法工作，您可以安装 ToDesk，我可以远程协助您检查并解决问题。无需注册，只需提供连接 ID 和临时访问代码即可。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-08T01:35:33Z",
+      "updated_at": "2026-01-08T01:35:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016438094,
+      "body_text": "您好，感谢您所有的帮助，我查了一下，原来是 USB 驱动程序出了问题，非常感谢您，我非常喜欢您的产品，请保重。2026 年 1 月 8 日星期四 01:35，support@simsonn.com",
+      "user_id": 158008959538,
+      "created_at": "2026-01-08T23:06:14Z",
+      "updated_at": "2026-01-08T23:06:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

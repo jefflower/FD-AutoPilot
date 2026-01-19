@@ -1,0 +1,74 @@
+{
+  "id": 1880,
+  "subject": "Order addon",
+  "description_text": "Hello i made an order. Can i add Green sprung to my order? My oreder number\r\nis #SSN2113\r\n\r\n https://www.simsonn.com/products/sprung\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-24T20:21:38Z",
+  "updated_at": "2025-07-28T07:16:23Z",
+  "requester_id": 158002320728,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005511180,
+      "body_text": "Hi Ростислав Сидорук,   We will provide you with an additional green spring free of charge. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-25T01:42:42Z",
+      "updated_at": "2025-07-25T01:42:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005533031,
+      "body_text": "Hi Ростислав Сидорук,    We apologise, but due to the ongoing conflict in Ukraine, the shipping cost to Ukraine is $144, which is unaffordable for us. We require you to cover the shipping cost of $44. We hope you understand.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-25T10:04:17Z",
+      "updated_at": "2025-07-25T10:04:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005533127,
+      "body_text": "Hi, ok i will pay 44$. How can i do it?\r\n\r\nпт, 25 лип. 2025 р. о 1:04 пп support@simsonn.com ",
+      "user_id": 158002320728,
+      "created_at": "2025-07-25T10:16:11Z",
+      "updated_at": "2025-07-25T10:16:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005533181,
+      "body_text": "Hi Ростислав Сидорук,     Thank you for your understanding. You can click on the link to make your payment. https://www.simsonn.com/products/difference-2",
+      "user_id": 158001343601,
+      "created_at": "2025-07-25T10:23:46Z",
+      "updated_at": "2025-07-25T10:23:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005533485,
+      "body_text": "I made a payment. Order #SSN2122\r\n\r\nпт, 25 лип. 2025 р. о 13:23 support@simsonn.com ",
+      "user_id": 158002320728,
+      "created_at": "2025-07-25T11:07:39Z",
+      "updated_at": "2025-07-25T11:07:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005701927,
+      "body_text": "Hi Ростислав Сидорук,    Okay, we have shipped your order.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-28T07:16:20Z",
+      "updated_at": "2025-07-28T07:16:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

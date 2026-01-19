@@ -1,0 +1,46 @@
+{
+  "id": 10305,
+  "subject": "Question",
+  "description_text": "\r\nHello,\r\n\r\n                I am just wondering if you have an amazon store? I had made a purchase off of it and I want to make sure it is actually you. It has been two weeks and I havnt seen a package nore has it moved by the tracking that I was given for the supposed order.\r\n\r\n\r\nThanks,\r\n\r\nBill\r\n\r\nCONFIDENTIALITY NOTICE: This message, including attachments, is confidential and may be privileged. If you are not an intended recipient, please notify the sender then delete and destroy the original message and all copies. You should not copy, forward and/or disclose this message, in whole or in part, without permission of the sender. Thank you.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-08T12:48:22Z",
+  "updated_at": "2026-01-12T09:48:03Z",
+  "requester_id": 158008981616,
+  "responder_id": 158007774607,
+  "cc_emails": [
+    "b.stickley35@gmail.com"
+  ],
+  "conversations": [
+    {
+      "id": 158016460972,
+      "body_text": "Hi Stickley, Bill,  Please provide the order number starting with SSN, and we’ll help you check the shipping status. No worries. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-09T02:30:41Z",
+      "updated_at": "2026-01-09T02:30:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016525586,
+      "body_text": "I don’t see a number staring with SSN. The order number is 114-2761105-6515419\r\n\r\n\r\nBill Stickley\r\nMIDWEST FINISHING SYSTEMS, INC.\r\n55770 Evergreen Plaza Drive\r\nMishawaka, IN  46545-7245\r\nOffice: (574) 257-0099  Ext: 105\r\nDirect:  (574) 338-3324\r\nFax:  (574) 256-1098\r\nBStickley@midwestfinishing.com\r\n\r\n\r\n",
+      "user_id": 158008981616,
+      "created_at": "2026-01-09T11:01:27Z",
+      "updated_at": "2026-01-09T11:01:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016850254,
+      "body_text": "客户购买的蓝电机，未发出，亚马逊后台已回复",
+      "user_id": 158007774607,
+      "created_at": "2026-01-12T09:47:59Z",
+      "updated_at": "2026-01-12T09:47:59Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

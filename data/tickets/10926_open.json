@@ -1,0 +1,35 @@
+{
+  "id": 10926,
+  "subject": "Faulty RGB Pro X Pedals",
+  "description_text": "Hello,\r\n\r\nI have faulty RGB on my Simsonn Pro X Ultra brake pedal. It is flickering and displaying wrong colour on pedal no matter what setting is showing on simsonn manager.\r\n\r\n\r\n\r\nSent from my iPhone\r\n",
+  "status": 2,
+  "priority": 1,
+  "created_at": "2026-01-14T22:42:56Z",
+  "updated_at": "2026-01-17T10:26:33Z",
+  "requester_id": 158009078775,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017235194,
+      "body_text": "Hi J Waygood,  If the LED still does not display correctly after you plug the brake pedal into the throttle port, it’s likely that the LED module was damaged by impact during shipping. We can send you replacement left and right LED assemblies for the brake pedal for you to replace. Please provide your order number and the recipient name, phone number, and shipping address, so we can arrange the replacement shipment as soon as possible. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-16T01:47:36Z",
+      "updated_at": "2026-01-16T01:47:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017323697,
+      "body_text": "Hello,\r\n\r\nI believe it is the faulty RGB lights.\r\n\r\nI have attached my invoice.\r\n\r\nPlease can you send to this address as I no longer live at the old address:\r\n\r\nJames Waygood\r\n8 Trinity Road\r\nGloucester\r\nGL4 5GB\r\n\r\n\r\n\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158009078775,
+      "created_at": "2026-01-17T10:26:33Z",
+      "updated_at": "2026-01-17T10:26:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

@@ -1,0 +1,24 @@
+{
+  "id": 1491,
+  "subject": "Haptic motors",
+  "description_text": "The motors are not working in iRacing and I read on the comments that there is a beta version for sim hub your sending out\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-12T20:50:14Z",
+  "updated_at": "2025-07-13T00:55:32Z",
+  "requester_id": 158002101803,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004724571,
+      "body_text": "Hi Connor Smith,  SIMHUB has officially released version 9.9.3 with support for SIMSONN devices. If you're using a VAM motor, we recommend setting the intensity to 50%, with a maximum of 70% to avoid potential motor damage. VAM Pro is not subject to this limitation. If you're using the ProX control board, please manually update the firmware using the prox.sfu file first. You can download the latest version from the official SIMHUB website. Currently, we support 8 games, and the upcoming version 2.0.9 will include support for the following additional titles. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-13T00:55:32Z",
+      "updated_at": "2025-07-13T00:55:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

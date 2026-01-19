@@ -1,0 +1,45 @@
+{
+  "id": 5561,
+  "subject": "Throttle input not registering",
+  "description_text": "Hello,\n\nI recently received a set of Pro Plus throttle and brake. The throttle was\nworking fine until I attempted to reverse the mounting feet to angle the\npeddle further back.\n\nWhen reassembling, a small silver spring fell out of the bottom of the\npeddle and now the throttle will not register an input in the software.\n\nI am unable to get the peddle back together with the silver spring in place\nand need help reassembling the peddle correctly.\n\nDo you have any videos/tutorials/diagrams on how to properly reassemble the\npeddle?\n\nThank you,\nColton",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-11-03T00:47:29Z",
+  "updated_at": "2025-11-03T13:44:41Z",
+  "requester_id": 158006325958,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011634809,
+      "body_text": "Hi Colton Barnes,  You can use a small screwdriver to press the spring into the correct position easily.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-03T01:04:26Z",
+      "updated_at": "2025-11-03T01:04:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011635719,
+      "body_text": "That worked perfectly, all fixed now. Thank you very much!",
+      "user_id": 158006325958,
+      "created_at": "2025-11-03T01:55:17Z",
+      "updated_at": "2025-11-03T01:55:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011658640,
+      "body_text": "",
+      "user_id": 158006325958,
+      "created_at": "2025-11-03T13:44:40Z",
+      "updated_at": "2025-11-03T13:44:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

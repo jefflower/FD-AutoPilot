@@ -1,0 +1,114 @@
+{
+  "id": 1482,
+  "subject": "Haptics in Iracing",
+  "description_text": "Hello\r\nI bought the van pro haptics for my pro x pedals.  I can get them to work\r\nin the software manager but can’t get them to work in Iracing.  I have the\r\noption selected to vibrate pedals on.  Is there something else?\r\n\r\nBrian Pinnow\r\n608 769 8354\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-12T14:16:52Z",
+  "updated_at": "2025-07-16T05:44:16Z",
+  "requester_id": 158001626072,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004685314,
+      "body_text": "Hi Brian Pinnow,     Currently, you can use SimHub version 9.9.3. Our SIMSONN Manager will officially support iRacing in version 2.0.9.  Please note that some games (such as iRacing) do not provide direct ABS or TC (traction control) data — SimHub uses calculations to simulate these effects.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-12T14:24:43Z",
+      "updated_at": "2025-07-12T14:24:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004685626,
+      "body_text": "I have simhub 9.9.3 but don’t see Simsonn listed for motors\r\n\r\n\r\nBrian Pinnow\r\n608 769 8354\r\n\r\n\r\nOn Sat, Jul 12, 2025 at 9:25 AM support@simsonn.com ",
+      "user_id": 158001626072,
+      "created_at": "2025-07-12T14:28:54Z",
+      "updated_at": "2025-07-12T14:28:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004687682,
+      "body_text": "Hi Brian Pinnow,  Please add the SIMSONN device in the Device interface. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-12T14:45:53Z",
+      "updated_at": "2025-07-12T14:45:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004689362,
+      "body_text": "Thank you\r\n\r\nBrian Pinnow\r\n608 769 8354\r\n\r\n\r\nOn Sat, Jul 12, 2025 at 9:46 AM support@simsonn.com ",
+      "user_id": 158001626072,
+      "created_at": "2025-07-12T15:05:14Z",
+      "updated_at": "2025-07-12T15:05:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004715528,
+      "body_text": "Also is there a way to get another 1 way hydrolic rod for my Pro x\r\nthrottle?  I had to remove it because it wouldn’t press all the way.\r\n\r\nBrian Pinnow\r\n608 769 8354\r\n\r\n\r\nOn Sat, Jul 12, 2025 at 9:46 AM support@simsonn.com ",
+      "user_id": 158001626072,
+      "created_at": "2025-07-12T22:01:30Z",
+      "updated_at": "2025-07-12T22:01:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004722601,
+      "body_text": "Hi Brian Pinnow,   Please provide your order number, shipping address, and contact person. I will arrange to send you a replacement unidirectional hydraulic rod on Monday. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-13T00:17:09Z",
+      "updated_at": "2025-07-13T00:17:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004723281,
+      "body_text": "Thank You\r\nAttached is my receipt from amazon.\r\n\r\nBrian Pinnow\r\nN7169 Bice Ave\r\nHolmen, WI 54636 USA\r\n\r\nBrian Pinnow\r\n769-8354\r\n\r\n\r\nOn Sat, Jul 12, 2025 at 7:17 PM support@simsonn.com ",
+      "user_id": 158001626072,
+      "created_at": "2025-07-13T00:30:26Z",
+      "updated_at": "2025-07-13T00:30:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004855841,
+      "body_text": "亚马逊的",
+      "user_id": 158001343601,
+      "created_at": "2025-07-15T09:12:29Z",
+      "updated_at": "2025-07-15T09:12:29Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004938083,
+      "body_text": "Hi Brian Pinnow,  I’ve already forwarded your information to our sales team, and they will handle it for you today. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T04:52:10Z",
+      "updated_at": "2025-07-16T04:52:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004942916,
+      "body_text": "Hi Brian Pinnow,  Hi, Here is the tracking number of the 1 way hydrolic rod JSEGJ1652828627YQ, you can track it via https://www.js-exp.com/EN/index.php?page=19",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T05:44:16Z",
+      "updated_at": "2025-07-16T05:44:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

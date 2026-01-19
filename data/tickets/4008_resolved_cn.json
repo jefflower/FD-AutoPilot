@@ -1,0 +1,265 @@
+{
+  "id": 4008,
+  "subject": "订单 SSN2577 - 踏板控制器",
+  "description_text": "Simsonn，你好，\n\n我最近收到了我的踏板和VAM电机。踏板工作正常，我也能配置它们。但是，Simsonn Manager检测不到电机。当我把电机插入控制器时，有爆裂声和电路烧焦的气味。我认为控制器短路了。\n\n你们能给我寄一个替换的控制器吗？\n\n谢谢，\nBen",
+  "status": 4,
+  "priority": 4,
+  "created_at": "2025-09-21T04:24:02Z",
+  "updated_at": "2025-10-12T13:36:19Z",
+  "requester_id": 158004739478,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009021795,
+      "body_text": "嗨 Ben Smith， 你好，请你提供一下踏板的照片和订单号吗？这样我们才能判断是VAM的问题还是控制盒的问题，确认后我们会为你安排更换。请放心，我们每一台设备在发货前都经过了严格的测试，这种情况非常罕见。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-21T10:24:17Z",
+      "updated_at": "2025-09-21T10:24:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009074978,
+      "body_text": "当然可以\n\n2025年9月21日星期日，上午5:24，service @simsonn.com",
+      "user_id": 158004739478,
+      "created_at": "2025-09-21T22:57:20Z",
+      "updated_at": "2025-09-21T22:57:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009236225,
+      "body_text": "嗨 Ben Smith， 你的PlusX控制器在不接电机电源的情况下能正常工作吗？我想确认下是VAM Pro的问题还是PlusX控制器的问题。24V电源接上PlusX控制盒时看到火花是正常的，因为电机电容在充电。由于用的是24V安全电压，没有风险，也不会损坏控制盒。请重新连接USB，然后接上24V电源，在SIMSONN Manager界面看下电源是否显示连接。另外，点击“Vibration”按钮看下VAM Pro是否正常震动。你也可以用SimHub 9.9.3以上版本来遥测我们的电机。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-24T15:21:01Z",
+      "updated_at": "2025-09-24T15:21:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009243148,
+      "body_text": "我有两个电机都检测不到。踏板似乎可以通过控制器正常工作，但我无法校准它们。\n\n2025年9月24日星期三，上午10:21，service @simsonn.com",
+      "user_id": 158004739478,
+      "created_at": "2025-09-24T17:11:04Z",
+      "updated_at": "2025-09-24T17:11:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009244107,
+      "body_text": "谢谢。\n\n我可以用 simhub 校准电机。但是我仍然无法校准踏板。我从网站上安装了 Simsonn Manager 后，可以打开应用程序。但是，我收到了一个提示，说我可能在运行盗版软件，因此无法校准踏板。",
+      "user_id": 158004739478,
+      "created_at": "2025-09-24T17:29:08Z",
+      "updated_at": "2025-09-24T17:29:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009257825,
+      "body_text": "嗨 Ben Smith，     请使用 SIMSONN Manager 2.1.1 来适配这块新板子，因为它允许你设置 VAM 类型。请务必先卸载电脑上的 2.1.0 版本，以免打开软件时发生冲突。然后，在 2.1.1 版本中，进入“设置”→“更新”→“手动固件更新”→“踏板”，并选择我附加的 plusx.sfu 文件。更新后，请重新测试振动功能。       https://drive.google.com/file/d/1aX1xWqdWBx5tM-Mzmgxk0FIUBqTixmnM/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-09-25T00:43:39Z",
+      "updated_at": "2025-09-25T00:43:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009304975,
+      "body_text": "好的。我已经下载了文件并按照说明操作。但是，手动更新就卡在 0%。我附上了一张截图：\n\n[图片: image.png]\n\n2025年9月24日星期三，下午7:43，service @simsonn.com",
+      "user_id": 158004739478,
+      "created_at": "2025-09-25T17:50:01Z",
+      "updated_at": "2025-09-25T17:50:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009319456,
+      "body_text": "又试了一次，我成功更新了固件。但是，我还是无法校准踏板。它们显示已断开连接：\n\n[图片: image.png]",
+      "user_id": 158004739478,
+      "created_at": "2025-09-26T01:33:51Z",
+      "updated_at": "2025-09-26T01:33:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009360711,
+      "body_text": "嗨 Ben Smith，  你能安装一下 ToDesk 软件吗？我可以通过远程协助为你检查问题。     https://www.todesk.com/download.html",
+      "user_id": 158000445778,
+      "created_at": "2025-09-27T02:35:07Z",
+      "updated_at": "2025-09-27T02:35:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009653092,
+      "body_text": "好的。我已经安装了软件。请告诉我如何继续。\n\n2025年9月26日星期五，下午9:35，service @simsonn.com",
+      "user_id": 158004739478,
+      "created_at": "2025-09-29T19:29:14Z",
+      "updated_at": "2025-09-29T19:29:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009730116,
+      "body_text": "嗨 Ben Smith，     你在哪个城市？我可以根据你的时区协调，安排一个合适的时间进行远程支持。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T11:15:48Z",
+      "updated_at": "2025-10-01T11:15:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009730536,
+      "body_text": "嗨 Ben Smith，     很抱歉，请改用此链接。      https://drive.google.com/file/d/1BAdSWa1bxmbPksj9Hlzuo8bl7_bM8ixr/view?usp=drivesdk",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T11:42:59Z",
+      "updated_at": "2025-10-01T11:42:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009731204,
+      "body_text": "我在美国中部时区。你们可以在美国中部时间下午5点到午夜之间进行远程操作吗？\n\n2025年10月1日星期三，上午6:16，service @simsonn.com",
+      "user_id": 158004739478,
+      "created_at": "2025-10-01T12:13:29Z",
+      "updated_at": "2025-10-01T12:13:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009731252,
+      "body_text": "嗨 Ben Smith，     可以，但我只能在10月3日（中国时间）提供远程支持，因为我们目前正在国庆假期（10月1日–8日）。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T12:15:34Z",
+      "updated_at": "2025-10-01T12:15:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009733321,
+      "body_text": "好的。你能发给我远程应用程序的说明吗？我不熟悉它，也不知道如何登录\n\n2025年10月1日星期三，上午7:15，service @simsonn.com",
+      "user_id": 158004739478,
+      "created_at": "2025-10-01T13:28:34Z",
+      "updated_at": "2025-10-01T13:28:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009739803,
+      "body_text": "嗨 Ben Smith，    它不需要注册。如果提示你登录，只需点击右上角的关闭按钮即可进入界面。进入后，你可以复制ID和验证码发给我。不过，我现在手头没有电脑，暂时无法操作。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T14:40:56Z",
+      "updated_at": "2025-10-01T14:40:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009912125,
+      "body_text": "你今天有空吗？\n\n2025年10月1日星期三，上午9:41，service @simsonn.com",
+      "user_id": 158004739478,
+      "created_at": "2025-10-04T18:21:43Z",
+      "updated_at": "2025-10-04T18:21:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009937872,
+      "body_text": "嗨 Ben Smith，     请卸载你电脑上的旧版本，然后重新安装 2.1.2 版本并更新固件。更新后，设备版本应显示为 CPU1: 2.0.5, CPU2: 2.0.3。如果问题仍然存在，请随时与我联系。  https://drive.google.com/file/d/1PZwHUqhhmJw0IBGDO8mGONPbrICJU3z1/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T15:54:49Z",
+      "updated_at": "2025-10-05T15:54:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010034582,
+      "body_text": "我试了新版本，踏板还是检测不到。\n\n[图片: image.png]\n\n\n\n2025年10月5日星期日，上午10:55，service @simsonn.com",
+      "user_id": 158004739478,
+      "created_at": "2025-10-07T17:01:02Z",
+      "updated_at": "2025-10-07T17:01:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010141227,
+      "body_text": "嗨 Ben Smith，  你的 USB 是不是直接插在电脑背面的蓝色 USB 3.0 端口上？请避免使用 USB 集线器。然后，按照以下步骤再次更新固件。    请按以下步骤操作：    按住 PlusX 主控制器上的升级按钮，然后重新连接 USB 数据线。    打开 SIMSONN Manager 2.1.2，检查是否已进入恢复模式。    如果检测到恢复模式，请进入“设置”→“更新”→“手动更新固件”→“踏板”→“固件”→ pedals-plusx.sfu。    更新完成后，测试设备看是否已成功恢复。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-09T09:45:23Z",
+      "updated_at": "2025-10-09T09:45:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010164156,
+      "body_text": "是的，是直接插的。触觉反馈通过 SimHub 工作正常，所以看起来电脑通过 USB 通信是正常的。但是，自从上次固件更新后，踏板就完全不工作了。我认为控制器有故障。\n\n2025年10月9日星期四，上午4:45，service @simsonn.com",
+      "user_id": 158004739478,
+      "created_at": "2025-10-09T16:20:52Z",
+      "updated_at": "2025-10-09T16:20:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010197706,
+      "body_text": "嗨 Ben Smith，  请按照固件更新流程再操作一遍——这应该能解决问题。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-10T07:37:07Z",
+      "updated_at": "2025-10-10T07:37:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010291009,
+      "body_text": "谢谢。\n\n我按照你的指示进入了恢复模式。然后我成功应用了固件更新。Simsonn Manager 显示进度条达到 100%，然后报告固件应用成功。但是，Windows 随后报告无法与 USB 设备通信。我下面附上了设备管理器的截图。\n而且，固件更新应用后，Simsonn Manager 再次显示设备已断开连接。\n\n[图片: image.png]\n\n2025年10月10日星期五，上午2:37，service @simsonn.com",
+      "user_id": 158004739478,
+      "created_at": "2025-10-11T19:27:28Z",
+      "updated_at": "2025-10-11T19:27:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010291250,
+      "body_text": "在关闭电源、重新开启并重新连接我的踏板后，我现在可以校准它们了！非常感谢你的帮助！",
+      "user_id": 158004739478,
+      "created_at": "2025-10-11T19:38:40Z",
+      "updated_at": "2025-10-11T19:38:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010322205,
+      "body_text": "",
+      "user_id": 158004739478,
+      "created_at": "2025-10-12T13:36:18Z",
+      "updated_at": "2025-10-12T13:36:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

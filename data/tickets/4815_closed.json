@@ -1,0 +1,44 @@
+{
+  "id": 4815,
+  "subject": "SSN2784",
+  "description_text": "My order SSN2784 send ? Thank you Pezzotti Cristian\r\n\r\n",
+  "status": 5,
+  "priority": 4,
+  "created_at": "2025-10-13T07:56:35Z",
+  "updated_at": "2025-10-14T06:42:55Z",
+  "requester_id": 158005269574,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010343473,
+      "body_text": "Hi Cristian Pezzotti,    We apologize for the delay. To avoid customs duties, we are awaiting restocking from our German warehouse and expect to ship your order via DHL Express within the next two days.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-13T08:56:28Z",
+      "updated_at": "2025-10-13T08:56:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010343553,
+      "body_text": "Ok, thank you .Could you estimate if the delivery will be around Thursday\r\nor Friday?\r\n\r\nIl lun 13 ott 2025, 10:56 support@simsonn.com ",
+      "user_id": 158005269574,
+      "created_at": "2025-10-13T09:01:25Z",
+      "updated_at": "2025-10-13T09:01:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010386917,
+      "body_text": "",
+      "user_id": 158005269574,
+      "created_at": "2025-10-14T06:42:54Z",
+      "updated_at": "2025-10-14T06:42:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ]
+}

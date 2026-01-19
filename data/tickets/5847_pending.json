@@ -1,0 +1,54 @@
+{
+  "id": 5847,
+  "subject": "Interference with pedals",
+  "description_text": " I'm I'm getting a lot of interference in the gas pedal see video\r\n\r\nYahoo Mail: Search, Organize, Conquer\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-09T19:30:44Z",
+  "updated_at": "2025-11-11T01:47:16Z",
+  "requester_id": 158005105639,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012021541,
+      "body_text": "Hi chris knoch,  The video you uploaded cannot be opened. Please upload it to Google Drive, set the access permission to “Anyone with the link can view”, and then share the link with us. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-10T01:21:24Z",
+      "updated_at": "2025-11-10T01:21:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012022742,
+      "body_text": "\r\n\r\nYahoo Mail: Search, Organize, Conquer \r\n \r\n  ",
+      "user_id": 158005105639,
+      "created_at": "2025-11-10T02:17:36Z",
+      "updated_at": "2025-11-10T02:17:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012022759,
+      "body_text": "I don't have Google drive. Im getting interference with the throttle channel. how do I ground it? Thanks!\r\n\r\nYahoo Mail: Search, Organize, Conquer \r\n \r\n  ",
+      "user_id": 158005105639,
+      "created_at": "2025-11-10T02:18:38Z",
+      "updated_at": "2025-11-10T02:18:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012093264,
+      "body_text": "Hi chris knoch,  We’re currently unable to open the video you sent. Please try sending it again, or alternatively, provide a few clear photos showing the interference issue, so we can help you identify the problem more accurately. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-11T01:47:15Z",
+      "updated_at": "2025-11-11T01:47:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

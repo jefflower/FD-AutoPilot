@@ -1,0 +1,24 @@
+{
+  "id": 4570,
+  "subject": "Order SSN2795",
+  "description_text": "Hi Simsonn,\r\n\r\nI placed an order about a week ago and it still says it’s being prepared for shipment?\r\nThis has been the same since the 1st of this month. \r\nIs there any progress on my order?\r\nHope to hear from you soon,\r\n\r\nWilliam Harding\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-08T02:55:49Z",
+  "updated_at": "2025-10-09T09:01:57Z",
+  "requester_id": 158005504264,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010134986,
+      "body_text": "Hi william harding,    We apologize for the delayed response; we've just returned from our 8-day holiday. Your order has been shipped, and here is your tracking link:  https://t.17track.net/en#nums=SF6045959453704",
+      "user_id": 158001343601,
+      "created_at": "2025-10-09T09:01:57Z",
+      "updated_at": "2025-10-09T09:01:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

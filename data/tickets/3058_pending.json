@@ -1,0 +1,24 @@
+{
+  "id": 3058,
+  "subject": "Faulty gas/hydraulic piston. Amazon Order 10 Aug 2025",
+  "description_text": "Hello, I've attached details as requested.\n\nAs mentioned it makes a swishy sound, doesn't dampening on return and has a stick point. The sticking happens intermittently and it's difficult to replicate in this video.\n\nSent with [Proton Mail](https://proton.me/mail/home) secure email.\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-24T10:23:30Z",
+  "updated_at": "2025-08-25T02:34:16Z",
+  "requester_id": 158003536180,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007440476,
+      "body_text": "Hi mordiae,  The video you provided appears to be incomplete — currently, only an image is visible, and the video cannot be played properly. Please upload the video to Google Drive, enable access permissions, and share the link with us so our engineers can review it. Additionally, please note that the throttle damping is designed to be one-directional, so there is no damping on the return stroke. Our hydraulic rods are filled with liquid, unlike cheap gas springs that use compressed gas, so a certain level of fluid movement sound is normal. If you are testing it by hand, please ensure the cylinder is kept upright. Rest assured, every hydraulic rod is thoroughly tested before shipping. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-25T02:31:11Z",
+      "updated_at": "2025-08-25T02:31:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

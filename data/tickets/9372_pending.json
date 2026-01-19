@@ -1,0 +1,44 @@
+{
+  "id": 9372,
+  "subject": "Returning Order #SSN4281",
+  "description_text": "Hello,\r\nI would like to return the items in this order due to discovering they are\r\nincompatible with the sim rig.\r\nAll items have original packaging.\r\nThe items were received on 10th and the18th december.\r\n\r\nIf any further information is required please let me know.\r\n\r\nKind regards\r\n\r\nConnor Mitchell\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-28T14:29:28Z",
+  "updated_at": "2026-01-15T09:49:33Z",
+  "requester_id": 158008800756,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015303001,
+      "body_text": "Hi Connor Mitchell,    Alright, you can return the package to our German warehouse. We will process your refund after receiving and inspecting it. Please ensure the packaging is intact and the product shows no signs of use, otherwise the return request will not be approved. Happy New Year!  Gubitz GmbH(LeiXuan A211) Hüttenkamp 12 Neumünster,Schleswig-Holstein   24536 +49 17622233089",
+      "user_id": 158001343601,
+      "created_at": "2025-12-31T08:56:04Z",
+      "updated_at": "2025-12-31T08:56:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015679172,
+      "body_text": "Hello,\r\nThankyou for your reply. Do I need a return label so it can be identified\r\nby which order it is when it has been delivered?\r\n\r\nKind regards\r\n\r\nOn Wed, 31 Dec 2025, 8:56 am service@simsonn.com, ",
+      "user_id": 158008800756,
+      "created_at": "2026-01-04T19:21:39Z",
+      "updated_at": "2026-01-04T19:21:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017174467,
+      "body_text": "Hi Connor Mitchell,     You will need to ship the package yourself and provide us with the tracking number after it has been shipped.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T09:49:32Z",
+      "updated_at": "2026-01-15T09:49:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

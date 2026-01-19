@@ -1,0 +1,45 @@
+{
+  "id": 11042,
+  "subject": "Order #SSN5743",
+  "description_text": "Hello Simpsonn Team,\n\nI hope you’re doing well. I’m reaching out regarding an order I placed on January 4th (Order #SSN5743). I received a tracking number, but unfortunately it doesn’t appear to be working, and I haven’t seen any delivery updates yet. As of today, January 15th, the package still hasn’t arrived.\n\nI completely understand that shipping delays can happen, especially this time of year. I just wanted to kindly check in to see if there might be an updated tracking number, shipping status, or any additional information you could share.\n\nThank you for your time and assistance.\n\n\nSincerely,\nMario J. Portuondo\nPresident\nMP General, Inc.\nCCC1331298\n13860 Wellington Trace, 38-212\nWellington, FL 33414\n(561) 379-2341\nwww.mpgeneralinc.com\nDISCLAIMER: The information contained in this e-mail belongs to MP General, Inc. and may be priviledged, confidential and protected by state and federal law from disclosure. If you are not the intended recipient of this e-mail, you are hereby notified that any dissemination, distribution and/or duplication of this message, in total or in part, is strictly prohibited. If you have received this communication in error, please notify the sender immediately by calling at (561) 379-2341 and delete all copies.",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-16T04:56:14Z",
+  "updated_at": "2026-01-17T10:40:01Z",
+  "requester_id": 158009201564,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017318459,
+      "body_text": "Hi MP General, Inc.,  Your order has been shipped in two separate packages.  1,We apologize for the inconvenience. The Pro X pedals are currently out of stock at our US warehouse. We have urgently arranged an air shipment and expect to ship your order on the 22nd, with delivery estimated around the 25th.  2,The other package was out of stock for two weeks due to a product upgrade. The upgrade is now complete, and we will ship it to you within the next few days. We sincerely apologize for any inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T07:21:31Z",
+      "updated_at": "2026-01-17T07:21:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017322161,
+      "body_text": "Awesome, no problem at all. Thank you for the update!\n\nSincerely,\nMario J. Portuondo\nPresident\nMP General, Inc.\nCCC1331298\n13860 Wellington Trace, 38-212\nWellington, FL 33414\n(561) 379-2341\nwww.mpgeneralinc.com\nDISCLAIMER: The information contained in this e-mail belongs to MP General, Inc. and may be priviledged, confidential and protected by state and federal law from disclosure. If you are not the intended recipient of this e-mail, you are hereby notified that any dissemination, distribution and/or duplication of this message, in total or in part, is strictly prohibited. If you have received this communication in error, please notify the sender immediately by calling at (561) 379-2341 and delete all copies.",
+      "user_id": 158009201564,
+      "created_at": "2026-01-17T09:38:55Z",
+      "updated_at": "2026-01-17T09:38:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017323856,
+      "body_text": "Hi MP General, Inc.,  You're welcome. Thank you for purchasing our product. Should you have any questions in the future, please feel free to contact us. We will address them promptly.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T10:40:01Z",
+      "updated_at": "2026-01-17T10:40:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

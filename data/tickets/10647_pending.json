@@ -1,0 +1,34 @@
+{
+  "id": 10647,
+  "subject": "Delivery issue",
+  "description_text": "Hello,\r\nI placed my order #SSN5036 almost 30 days ago.\r\nI also paid for faster delivery, between 5-12 days but I still did\r\nnot receive it. Can I get any updates on this please?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-12T10:58:48Z",
+  "updated_at": "2026-01-17T02:29:41Z",
+  "requester_id": 158009031726,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017173537,
+      "body_text": "Hello\r\nIs anyone answering or checking this?\r\n\r\n",
+      "user_id": 158009031726,
+      "created_at": "2026-01-15T09:36:18Z",
+      "updated_at": "2026-01-15T09:36:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017310406,
+      "body_text": "Hi Alin,  We sincerely apologize for any inconvenience caused. Due to the New Year holiday and the subsequent surge in orders, a significant backlog of unprocessed emails has resulted in delayed responses. We extend our deepest apologies once again.  Our German warehouse has informed us that DHL is still investigating the matter, and a shipment destined for Romania has been held up. We will urge them to provide updates promptly or arrange for a replacement shipment.  We have already refunded the additional shipping fees you paid through the platform. Please check your account.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T02:29:41Z",
+      "updated_at": "2026-01-17T02:29:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

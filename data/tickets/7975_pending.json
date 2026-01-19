@@ -1,0 +1,34 @@
+{
+  "id": 7975,
+  "subject": "Inquiry – European Power Cable & SimJack Compatibility for VAM Pro Set",
+  "description_text": "\r\nHello,\r\n\r\n\r\n\r\nI am interested in purchasing the VAM Pro Set (3 haptic reactors) from your website.\r\n\r\nHowever, I noticed that the included power supply appears to have a plug that is not compatible with European (French) outlets.\r\n\r\n\r\n\r\nCould you please confirm:\r\n\r\n\r\n\r\nIf you offer a European version (EU/FR plug) of the power supply, or if it can be purchased separately?\r\nWhether the VAM haptic motors are compatible with the SimJack pedals, or if a special configuration is required to make them work together.\r\n\r\n\r\n\r\n\r\nThank you in advance for your help and reply.\r\n\r\nBest regards.\r\n\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-11T11:25:59Z",
+  "updated_at": "2025-12-11T12:09:17Z",
+  "requester_id": 158007755094,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014317150,
+      "body_text": "Hi jules français,    We will provide the appropriate plug for your country. You can purchase the power supply separately, and we will also include the plug. Haptics can be used with other pedals; simply use our control box.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-11T12:08:20Z",
+      "updated_at": "2025-12-11T12:08:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014317171,
+      "body_text": "Hi jules français,    Link to purchase the power supply separately  https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor?variant=51351007297850",
+      "user_id": 158001343601,
+      "created_at": "2025-12-11T12:09:17Z",
+      "updated_at": "2025-12-11T12:09:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 7577,
+  "subject": "Order #SSN4353 The baseplate is missing and the brake pedal is making loud noises.",
+  "description_text": "Hello, my pedals from order #SSN4353 are missing the baseplate completely, and the brake pedal makes a very loud noise. It sounds like metal is hitting metal, coming from the damper. Is this normal? If so, I would like to cancel the purchase. Alternatively, I would like a new set of pedals where the brake pedal doesn't make this noise.\r\n\r\nSincerely, Sven Hoffmann\r\n\r\n\r\nVon meinem/meiner Galaxy gesendet\r\n\r\n\r\n",
+  "status": 5,
+  "priority": 4,
+  "created_at": "2025-12-06T17:53:09Z",
+  "updated_at": "2026-01-07T07:59:13Z",
+  "requester_id": 158007676396,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016088943,
+      "body_text": "此工单已关闭并合并到工单 9987 中",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T07:59:13Z",
+      "updated_at": "2026-01-07T07:59:13Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "id": 6719,
+  "subject": "Problemi conessione",
+  "description_text": "Salve ho una pedaliera sim racing pro pedals , ho formattato il PC adesso\r\nquando l 'ho ricollegata alla centralina e messo l USB nel PC mi dice USB\r\ninterrotto errore 43 come potrei risolvere?\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-11-25T14:54:02Z",
+  "updated_at": "2025-12-01T02:27:42Z",
+  "requester_id": 158007322729,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012941851,
+      "body_text": "Hi Mohamed Zouari,  Please provide your order information and the pedal model you purchased. Also, note that the pedals need to be connected to a USB 3.0 port on the back of your PC and should not be used through a USB hub. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T11:09:55Z",
+      "updated_at": "2025-11-26T11:09:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012942068,
+      "body_text": "Sono pro pedals ordinato da Achille clemente\r\n\r\nIl mer 26 nov 2025, 12:10 support@simsonn.com ",
+      "user_id": 158007322729,
+      "created_at": "2025-11-26T11:13:58Z",
+      "updated_at": "2025-11-26T11:13:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012942988,
+      "body_text": "Hi Mohamed Zouari,  Please provide photos or a video to illustrate the issue, or share the purchase link, so we can better help you identify the problem. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T11:37:10Z",
+      "updated_at": "2025-11-26T11:37:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012943501,
+      "body_text": "Il mer 26 nov 2025, 12:37 support@simsonn.com ",
+      "user_id": 158007322729,
+      "created_at": "2025-11-26T11:49:39Z",
+      "updated_at": "2025-11-26T11:49:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012943735,
+      "body_text": "Hi Mohamed Zouari,  You can try using a different computer or a USB hub with independent power. This seems to be a compatibility issue with the older version. If it can be recognized on another computer, we can update its firmware through SIMSONN Manager to make it compatible with all systems. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T11:58:36Z",
+      "updated_at": "2025-11-26T11:58:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012943819,
+      "body_text": "Ma il problema è che Windows non lo riconosce quindi anche aggiornando il\r\nfirmware non farei nulla\r\n\r\nIl mer 26 nov 2025, 12:59 support@simsonn.com ",
+      "user_id": 158007322729,
+      "created_at": "2025-11-26T12:01:49Z",
+      "updated_at": "2025-11-26T12:01:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012943867,
+      "body_text": "Hi Mohamed Zouari,    I understand. Most computers can support it, but the issue may be related to differences between Windows 10 and Windows 11. Trying another computer or using a USB hub with independent power may help resolve the problem.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T12:04:10Z",
+      "updated_at": "2025-11-26T12:04:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012943981,
+      "body_text": "Ok, potrei provare anche ad aggiornare a Windows 11? Visto che ho ancora il\r\n10?\r\n\r\nIl mer 26 nov 2025, 13:04 support@simsonn.com ",
+      "user_id": 158007322729,
+      "created_at": "2025-11-26T12:07:22Z",
+      "updated_at": "2025-11-26T12:07:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012944350,
+      "body_text": "Hi Mohamed Zouari,  We’re not certain. The upgrade might take some time and may not necessarily resolve the issue or provide support. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T12:18:02Z",
+      "updated_at": "2025-11-26T12:18:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012944396,
+      "body_text": "Vedremo allora con le vostre indicazioni grazie e buon lavoro\r\n\r\nIl mer 26 nov 2025, 13:18 support@simsonn.com ",
+      "user_id": 158007322729,
+      "created_at": "2025-11-26T12:19:34Z",
+      "updated_at": "2025-11-26T12:19:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013055387,
+      "body_text": "Salve non ho risolto il problema , ho provato con un hub USB e con un altro\r\nPC , è andata la centralina\r\n\r\n\r\n\r\nIl mer 26 nov 2025, 13:19 Mohamed Zouari <mohamedzouari992@gmail.com> ha\r\nscritto:\r\n\r\n> Vedremo allora con le vostre indicazioni grazie e buon lavoro\r\n>\r\n> Il mer 26 nov 2025, 13:18 support@simsonn.com ",
+      "user_id": 158007322729,
+      "created_at": "2025-11-28T11:21:34Z",
+      "updated_at": "2025-11-28T11:21:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013155020,
+      "body_text": "Hi Mohamed Zouari,  If your computer cannot operate properly, but the pedals work on a USB hub or another computer, please use the USB hub and follow the steps below to update the pedal firmware. This should resolve the issue.            First, please ensure you are using SIMSONN Manager 2.1.2. Also, connect only one SIMSONN control box at a time—do not connect multiple units simultaneously.    For Pro series control boxes: If the version is 1.7.1, you can update the firmware via: Settings → Update → Manual Firmware Update → pedals-firmware → pedals-plus.sfu (This method does not apply to 1.7.0 control boxes.)    For PlusX pedals: Only the plusx.sfu firmware can be used for updates.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-01T02:27:41Z",
+      "updated_at": "2025-12-01T02:27:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

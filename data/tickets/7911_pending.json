@@ -1,0 +1,64 @@
+{
+  "id": 7911,
+  "subject": "Order #ssn4102",
+  "description_text": "hello\r\n i am getting concerned about my order #ssn4102 and how its not been fulfilled yet. \r\n \r\nThank you kindly. \r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-10T17:57:06Z",
+  "updated_at": "2025-12-23T11:49:44Z",
+  "requester_id": 158007684772,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014297527,
+      "body_text": "ID 号为 7601 和 7825 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T01:31:29Z",
+      "updated_at": "2025-12-11T01:31:29Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014297528,
+      "body_text": "合并来自工单7601  \n      主题: Order# SSN4102  \n      描述:  Hello I just wanted to reach out to see when my order would be shipping as some time has passed since I ordered my pedals.  Thank you kindly",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T01:31:29Z",
+      "updated_at": "2025-12-11T01:31:29Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014297530,
+      "body_text": "合并来自工单7825  \n      主题: order#SSN4102  \n      描述:  hello  i am getting concerned about my order and how its not been fulfilled yet. #SSN4102\n \n   \n thank you kindly",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T01:31:30Z",
+      "updated_at": "2025-12-11T01:31:30Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014297634,
+      "body_text": "Hi Tk Hacker,  We apologize for the shortage during the Black Friday peak season due to limited stock in our US warehouse. I have confirmed with our operations team that a batch of goods has been shipped to the US warehouse via air freight. We will arrange your shipment as soon as possible. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T01:34:28Z",
+      "updated_at": "2025-12-11T01:34:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014299584,
+      "body_text": "thank you so much for the update I was just getting a bit worried completely understand! \r\n\r\n> ",
+      "user_id": 158007684772,
+      "created_at": "2025-12-11T03:37:27Z",
+      "updated_at": "2025-12-11T03:37:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

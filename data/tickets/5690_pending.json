@@ -1,0 +1,34 @@
+{
+  "id": 5690,
+  "subject": "Brake pedal cable",
+  "description_text": "Hello hope you are well, I am just contacting regarding a cable coming from\r\nmy brake pedal I can't see where it plugs in. It is only coming from the\r\nbrake pedal. Any advice? I have attached the image of the cable\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-05T20:17:38Z",
+  "updated_at": "2025-11-06T03:39:06Z",
+  "requester_id": 158006651060,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011834854,
+      "body_text": "Forgot to say that the pedal model is the simsonn pro X ultimates\r\n\r\n",
+      "user_id": 158006651060,
+      "created_at": "2025-11-05T20:17:49Z",
+      "updated_at": "2025-11-05T20:17:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011847878,
+      "body_text": "Hi Aidan,    This is the plug that connects to the baseplate rgb light strip. If you haven't purchased the base plate, you can temporarily remove it.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-06T03:39:06Z",
+      "updated_at": "2025-11-06T03:39:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "id": 4554,
+  "subject": "Fwd: Throttle not working anymore",
+  "description_text": "Bonjour,\r\n\r\ndepuis aujourd'hui la pédale d'accéleration ne fonctionne plus. Les autres\r\nfonctionnent correctement, ainsi que les VAM. J'ai essayé de tout mettre à\r\njour, de tout débrancher et rebrancher, de relancer le PC, mais elle ne\r\nmarche toujours pas.\r\n\r\nPouvez-vous m'aider ?\r\n\r\nMerci,\r\n\r\n---\r\n\r\nHello,\r\n\r\nSince today, the throttle pedal has stopped working. The other pedals are\r\nfine, as well as VAMs. I tried updating everything, unplugging and\r\nreconnecting all cables, restarting the computer, but it still doesn’t work.\r\n\r\nCould you please help me?\r\n\r\nThanks,\r\n\r\nPierre Fiorelli\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-07T15:26:59Z",
+  "updated_at": "2025-10-10T07:31:12Z",
+  "requester_id": 158005488952,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010027871,
+      "body_text": "Hi Pierre Fiorelli,     Please check whether the plastic component on the throttle pedal is damaged. If it’s intact, click “Offset” in the software and set the initial pedal percentage to zero in the pop-up window. After that, perform a recalibration. If the issue persists, try swapping the throttle and clutch connectors to determine whether the problem is with the throttle pedal itself or the throttle port on the main controller. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-07T15:34:32Z",
+      "updated_at": "2025-10-07T15:34:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010028540,
+      "body_text": "thanks for your answer.\r\n\r\nI checked the plastic component and it seems ok. I tried to set the offset\r\nbut the result is the same. And at least, I swapped the clutch and the\r\nthrottle. The clutch pedal is working fine (I can see the throttle position\r\nmoving), but not the throttle pedal (the clutch position doesn't change).\r\nnevertheless, there is a spark when I plug the main controller, not sure\r\nit's normal (check the video)\r\n\r\nthanks\r\n\r\nLe mar. 7 oct. 2025 à 17:34, service@simsonn.com ",
+      "user_id": 158005488952,
+      "created_at": "2025-10-07T15:53:55Z",
+      "updated_at": "2025-10-07T15:53:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010028894,
+      "body_text": "Hi Pierre Fiorelli,    Please uninstall the old version on your computer, then reinstall version 2.1.2 and update the firmware.  After the update, the device version should display as CPU1: 2.0.5, CPU2: 2.0.3.  If the issue is still not resolved, please feel free to contact me.  https://drive.google.com/file/d/1PZwHUqhhmJw0IBGDO8mGONPbrICJU3z1/view?usp=drivesdk",
+      "user_id": 158000445778,
+      "created_at": "2025-10-07T16:04:16Z",
+      "updated_at": "2025-10-07T16:04:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010029134,
+      "body_text": "Unfortunately it did not work\r\n\r\nLe mar. 7 oct. 2025 à 18:04, service@simsonn.com ",
+      "user_id": 158005488952,
+      "created_at": "2025-10-07T16:10:23Z",
+      "updated_at": "2025-10-07T16:10:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010135022,
+      "body_text": "Hi Pierre Fiorelli,  Please provide your order number, contact name, phone number, and shipping address, so we can send you a new throttle sensor as a replacement. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-09T09:05:21Z",
+      "updated_at": "2025-10-09T09:05:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010159344,
+      "body_text": "Thank you very much !\r\n\r\nhere they are:\r\norder number (aliexpress): *3057893654049585*\r\ncontact name: *Pierre Fiorelli*\r\nphone number: *+33628063657*\r\nshipping address:\r\n\r\n\r\n\r\n*Pierre Fiorelli5 rue des Caudreleux59960 Neuville-en-FerrainFRANCE*\r\n\r\nDo I have to send you back the old sensor ?\r\n\r\nLe jeu. 9 oct. 2025 à 11:05, service@simsonn.com ",
+      "user_id": 158005488952,
+      "created_at": "2025-10-09T15:24:29Z",
+      "updated_at": "2025-10-09T15:24:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010197639,
+      "body_text": "Hi Pierre Fiorelli,  Your order has been shipped. The logistics number is:YT2528300705011578. You can track it at this website https://www.17track.net/zh-cn. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-10T07:31:11Z",
+      "updated_at": "2025-10-10T07:31:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

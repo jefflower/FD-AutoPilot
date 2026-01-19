@@ -1,0 +1,34 @@
+{
+  "id": 4266,
+  "subject": "Calibration Settings Not Saving – Simsonn Plus X Pedals",
+  "description_text": "Hello Simsonn Support,\r\n\r\nI recently purchased a set of *Simsonn Plus X pedals* and I am experiencing\r\nissues with calibration using *Simsonn Manager 2.1*.\r\n\r\n   -\r\n\r\n   CPU1 firmware: v2.0.2\r\n   -\r\n\r\n   CPU2 firmware: v2.0.0\r\n\r\nThe problem I’m facing:\r\n\r\n   -\r\n\r\n   After completing calibration, when I set values such as *elastomers,\r\n   maximum force, or deadzones*, they reset every time I click *Save*.\r\n   -\r\n\r\n   The values are not written to the pedals, so in iRacing the game still\r\n   expects the original calibration (around 45 kg brake force), even if I set\r\n   maximum force to 20 kg.\r\n   -\r\n\r\n   Deadzones are also not being applied.\r\n\r\nI have tried the following without success:\r\n\r\n   -\r\n\r\n   Running Simsonn Manager as Administrator\r\n   -\r\n\r\n   Using different USB ports (directly on the motherboard)\r\n   -\r\n\r\n   Reinstalling Simsonn Manager\r\n\r\nCould you please advise me on how to resolve this issue? Should both CPUs\r\nbe updated to the same firmware version, or is there another step I am\r\nmissing to ensure that calibration values are saved correctly?\r\n\r\nThank you for your assistance,\r\nCosmin\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-09-30T08:23:43Z",
+  "updated_at": "2025-10-01T15:06:50Z",
+  "requester_id": 158005188255,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009724832,
+      "body_text": "I would like to add some additional details regarding my troubleshooting attempts:    I also tested with Simsonn Manager 2.0.9, but the issue is the same — calibration values (elastomers, maximum force, deadzones) reset after saving and are not applied to the pedals.    I tried using SimPedalsConfig V3.5, V4, and FreeJoy, but in all cases the pedals are not recognized by the software at all.",
+      "user_id": 158005188255,
+      "created_at": "2025-10-01T08:57:29Z",
+      "updated_at": "2025-10-01T08:57:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158009730717,
+      "body_text": "Hi Cosmin Stefanescu,     Please uninstall the old version of the software from your PC and install the new 2.1.1 version from the link.  Also, please note that iRacing requires an additional re-calibration, as it does not automatically apply the preset values of the pedals, which is a particular characteristic of this game.      https://drive.google.com/file/d/1BAdSWa1bxmbPksj9Hlzuo8bl7_bM8ixr/view?usp=drivesdk",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T11:49:46Z",
+      "updated_at": "2025-10-01T11:49:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

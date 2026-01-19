@@ -1,0 +1,44 @@
+{
+  "id": 10227,
+  "subject": "Information about order SSN5659",
+  "description_text": "Hello,\r\nI have made an order last Friday but i still cant see if the order is processed.\r\nThanks\r\n\r\nSent from my iPhone\r\n",
+  "status": 5,
+  "priority": 4,
+  "created_at": "2026-01-07T15:39:11Z",
+  "updated_at": "2026-01-12T13:20:34Z",
+  "requester_id": 158008968457,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016413613,
+      "body_text": "Hello?",
+      "user_id": 158008968457,
+      "created_at": "2026-01-08T19:32:04Z",
+      "updated_at": "2026-01-08T19:32:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158016576569,
+      "body_text": "Can I please get some new information on this issue? because it has already been 7 days without any update....",
+      "user_id": 158008968457,
+      "created_at": "2026-01-09T16:26:21Z",
+      "updated_at": "2026-01-09T16:26:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158016862560,
+      "body_text": "5 days with no reply",
+      "user_id": 158008968457,
+      "created_at": "2026-01-12T13:20:34Z",
+      "updated_at": "2026-01-12T13:20:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ]
+}

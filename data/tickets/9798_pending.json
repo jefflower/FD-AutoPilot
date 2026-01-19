@@ -1,0 +1,44 @@
+{
+  "id": 9798,
+  "subject": "Flickering on brake pedal while haptic motors are running",
+  "description_text": "Hello,\r\n\r\nFirst of all I want to add that I used the cable included to ground the\r\npedals. I tested by attaching it to the box and then to the throttle and\r\nbrake pedal with the same results.\r\nI made 2 videos where I tried to explain the best I can what is happening:\r\n video of brake1.mp4\r\n<https://drive.google.com/file/d/19gmgvNthkZuP5Wjenu9VnAyEsd5w5U_p/view?usp=drive_web>\r\n video of brake2.mp4\r\n<https://drive.google.com/file/d/1-JiZEy5JmwERFZisK5MpHLHJIlY7gU0T/view?usp=drive_web>\r\nSo the issue is as follows, whenever the haptic motor is running (both the\r\nbrake and the throttle one) the brake pedal position changes by a few\r\npercent. This is not due to vibration since I tested with it at 10% and and\r\n100% and I got the same result.\r\nIt's more visible in the second video I attached where I tried to hold the\r\nbrake at 40% and while the haptic motor is running (using the test vibrate\r\nfrom the software) you can notice the brake pedal spiking to 45-46%. This\r\nis without me changing the pressure.\r\nIn the first video it's also visible that without any pressure applied to\r\nthe brake when I run the vibration test for the motor there is a pressure\r\nof a few kilograms on the pedal\r\nIs is possible to help on this please as currently I can't run them in game\r\nsince it changes my brake a bit too much and it makes it very inconsistent.\r\nThis is also a screenshot from telemetry how the brake trace is looking:\r\n[image: image.png]\r\nThank you!\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-02T12:40:39Z",
+  "updated_at": "2026-01-07T14:48:24Z",
+  "requester_id": 158007760068,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015543942,
+      "body_text": "Hi Ghitulescu. andrei,  We recommend installing the VAM Pro using nylon screws and nylon spacers. This helps electrically isolate the VAM Pro from the motor bracket, effectively preventing motor interference with the pedals. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-04T01:03:16Z",
+      "updated_at": "2026-01-04T01:03:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015678034,
+      "body_text": "Thanks, I've ordered some and will try.\r\nIn the meantime is there something else that I can try or is this the only\r\noption that I have?\r\n\r\nAnd another question, are any of the included screws and spacers nylon or\r\nare they all metal?\r\n\r\nOn Sun, Jan 4, 2026 at 3:03 AM service@simsonn.com ",
+      "user_id": 158007760068,
+      "created_at": "2026-01-04T18:40:58Z",
+      "updated_at": "2026-01-04T18:40:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016150787,
+      "body_text": "Hi Ghitulescu. andrei,    Please use a wire to connect a screw on the PC case chassis to a screw on the controller box, and then check whether this improves or resolves the issue.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T14:48:23Z",
+      "updated_at": "2026-01-07T14:48:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

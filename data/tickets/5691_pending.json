@@ -1,0 +1,44 @@
+{
+  "id": 5691,
+  "subject": "Shipping",
+  "description_text": "Hello,\r\n\r\nI was digging through your website and I couldn't find one thing, do you\r\nonly ship from China, or do you have another warehouse in EU? I'm asking so\r\nI know what to expect about taxes and customs. Also about the power plug,\r\ndoes the product come with one that is supported in Europe?\r\n\r\nSorry for all the questions and I hope you have a wonderful day!\r\n\r\nKind Regards,\r\nNik Terkaj\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-05T21:44:08Z",
+  "updated_at": "2025-11-06T06:49:05Z",
+  "requester_id": 158006655049,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011839878,
+      "body_text": "I realised that power probably comes from USB cable and the Heptic Reactor\r\ndoesn't have EU plug, based off the photos. I also found about the\r\nshippment to EU on your website and it probably means that you only ship\r\nfrom China  right?\r\n\r\nIf this is correct, no need to answer the first e-mail, I value your time,\r\nthank you very much.\r\n\r\nKind Regards,\r\nNik Terkaj\r\n\r\n",
+      "user_id": 158006655049,
+      "created_at": "2025-11-05T22:24:50Z",
+      "updated_at": "2025-11-05T22:24:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011847711,
+      "body_text": "Hi Nik Terkaj,    We ship from our German warehouse with no taxes or fees. Additionally, we provide a power plug adapter free of charge based on your shipping location.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-06T03:34:04Z",
+      "updated_at": "2025-11-06T03:34:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011851334,
+      "body_text": "Hello,\r\n\r\nthank you very much.\r\n\r\nBest of luck to you,\r\nNik Terkaj\r\n\r\n",
+      "user_id": 158006655049,
+      "created_at": "2025-11-06T06:18:40Z",
+      "updated_at": "2025-11-06T06:18:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

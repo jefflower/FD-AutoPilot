@@ -1,0 +1,44 @@
+{
+  "id": 328,
+  "subject": "Order Number SSN1696",
+  "description_text": "Hello! I was hoping to change the shipping to express. I haven’t seen the\r\norder be fulfilled and was hoping there was an update!\r\n\r\nBest\r\n\r\nBlair\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-06-10T19:05:43Z",
+  "updated_at": "2025-06-12T10:03:54Z",
+  "requester_id": 158001388942,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002907498,
+      "body_text": "你好，布莱尔·亚历山大，  好的，我们的运营团队将与您联系，了解如何进行更新。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-11T02:59:12Z",
+      "updated_at": "2025-06-11T02:59:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002930621,
+      "body_text": "Hi Blair Alexander,     Hello, your parcel has been sent out, tomorrow will update the international logistics number for you, is expected to be around the 15th for your delivery.",
+      "user_id": 158001343601,
+      "created_at": "2025-06-11T10:11:23Z",
+      "updated_at": "2025-06-11T10:11:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002931735,
+      "body_text": "Okay great!\r\n\r\nThanks for the update and awesome service\r\n\r\nOn Wed 11 Jun 2025 at 10:11, service@simsonn.com ",
+      "user_id": 158001388942,
+      "created_at": "2025-06-11T11:51:41Z",
+      "updated_at": "2025-06-11T11:51:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

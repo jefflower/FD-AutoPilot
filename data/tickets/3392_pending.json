@@ -1,0 +1,13 @@
+{
+  "id": 3392,
+  "subject": "来自simsonn.com的退信",
+  "description_text": "QQ邮箱退信 很抱歉您发送的邮件被退回，以下是该邮件的相关信息： 被退回邮件 主 题：3028619821687430 freejoy debug 时 间：2025-09-02 17:48:52 无法发送到 fabianiglsal@gmail.com 退信原因 你的邮件被收件人（fabianiglsal@gmail.com）所在服务商判为垃圾邮件，对方不予接收。 host gmail-smtp-in.l.google.com[173.194.203.27] said: 552-5.7.0 This message was blocked because its content presents a potential security issue. To review our message content and attachment content guidelines, go to https://support.google.com/mail/?p=BlockedMessage 41be03b00d2f7-b4cd28aea19si7859273a12.467 - gsmtp (in reply to end of DATA command) 解决方案 请避免你的邮件含有广告，欺诈，政治类信息，以及携带病毒。 如你的邮件正常但仍被判为垃圾邮件，请向我们反馈。 此外，您还可以 点击这里 获取更多关于退信的帮助信息。",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-02T10:28:33Z",
+  "updated_at": "2025-09-02T10:30:33Z",
+  "requester_id": 158001011131,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": []
+}

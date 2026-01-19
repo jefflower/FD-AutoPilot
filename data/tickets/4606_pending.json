@@ -1,0 +1,134 @@
+{
+  "id": 4606,
+  "subject": "Brake Pedal not working correctly",
+  "description_text": "Hello,\r\n\r\nI recently purchased your Plus X pedals and they seem to have developed a\r\nfault, the brake pedal no longer registers any input, the accelerator and\r\nclutch are fine but the brake will not register.\r\n\r\nI have made sure all the cables are plugged in and I have tried different\r\nUSB ports on my PC but still nothing.\r\n\r\nPlease can you advise.\r\n\r\nKind regards\r\n\r\nSam.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-10-08T14:55:24Z",
+  "updated_at": "2025-10-23T03:43:13Z",
+  "requester_id": 158005507838,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010134787,
+      "body_text": "Hi Sam Burnett,  Have you adjusted the brake damping? If so, please click the “Offset” button in the software, then re-set the initial pedal position in the pop-up window. After that, recalibrate and test the pedal again. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-09T08:47:53Z",
+      "updated_at": "2025-10-09T08:47:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010150915,
+      "body_text": "Hi,\r\n\r\nJust tried that just now and it still won't read the brake pedal inputs.\r\n\r\nI have been using these pedals for 2 weeks or so with no issue but\r\nyesterday it disconnected a couple of times and then went back to normal,\r\nit was registering inputs but they were not consistent or accurate and now\r\nit will not register any input from the brake.\r\n\r\nThe pedals have been connected to the ground wire on the control box so it\r\nshouldn't be EMI.\r\n\r\nWould this be a brake pedal problem or a problem with the control box?\r\n\r\nThanks.\r\n\r\nOn Thu, Oct 9, 2025 at 9:48 AM service@simsonn.com ",
+      "user_id": 158005507838,
+      "created_at": "2025-10-09T12:59:57Z",
+      "updated_at": "2025-10-09T12:59:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010151047,
+      "body_text": "Hi Sam Burnett,    I will send you a replacement brake sensor tomorrow to resolve this issue.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-09T13:04:28Z",
+      "updated_at": "2025-10-09T13:04:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010151192,
+      "body_text": "Hi,\r\n\r\nThat's perfect thanks,\r\n\r\nHow does one fit a brake pedal sensor?\r\n\r\nCan I also confirm you have the right address?\r\n\r\n2 Bracara Road\r\nInverness, Scotland\r\nIV26FN\r\n\r\nAlso how long will shipping take?\r\n\r\nCheers.\r\n\r\n\r\nOn Thu, Oct 9, 2025 at 2:04 PM service@simsonn.com ",
+      "user_id": 158005507838,
+      "created_at": "2025-10-09T13:09:19Z",
+      "updated_at": "2025-10-09T13:09:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010151245,
+      "body_text": "Hi Sam Burnett,    We will provide a video tutorial showing how to replace the brake sensor.  In addition, please send me your contact name, phone number, address, and order number.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-09T13:11:03Z",
+      "updated_at": "2025-10-09T13:11:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010151254,
+      "body_text": "补发刹车传感器",
+      "user_id": 158000445778,
+      "created_at": "2025-10-09T13:11:18Z",
+      "updated_at": "2025-10-09T13:11:18Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158010151457,
+      "body_text": "Hi,\r\n\r\nDetails are as follows\r\nSam Burnett\r\n\r\n07484 872688\r\n\r\n2 Bracara Road\r\nInverness, Scotland\r\nIV26FN\r\n\r\nOrder number should be:\r\n#SSN2565\r\n\r\nHow long roughly will shipping take?\r\n\r\nThanks\r\n\r\nOn Thu, Oct 9, 2025 at 2:11 PM service@simsonn.com ",
+      "user_id": 158005507838,
+      "created_at": "2025-10-09T13:17:27Z",
+      "updated_at": "2025-10-09T13:17:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010192527,
+      "body_text": "Hi Sam Burnett,    We have shipped your order. Here is your tracking link. It is expected to arrive around the 17th.   https://t.17track.net/en#nums=SF6045962325779",
+      "user_id": 158001343601,
+      "created_at": "2025-10-10T06:14:46Z",
+      "updated_at": "2025-10-10T06:14:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010733349,
+      "body_text": "Hi,\r\n\r\nThat's it arrived. Can you please send me instructions on how to fit it?\r\n\r\nOn Fri, Oct 10, 2025 at 7:15 AM service@simsonn.com ",
+      "user_id": 158005507838,
+      "created_at": "2025-10-20T12:28:04Z",
+      "updated_at": "2025-10-20T12:28:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010803566,
+      "body_text": "Hello,\r\n\r\nCan you please send me the instructions? They are not on the website.\r\n\r\n",
+      "user_id": 158005507838,
+      "created_at": "2025-10-21T13:25:59Z",
+      "updated_at": "2025-10-21T13:25:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010867508,
+      "body_text": "Hi Sam Burnett,    I'm terribly sorry for the delay in replying. I shall locate the video on my work computer tomorrow when I'm in the office and send it to you.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-22T10:39:29Z",
+      "updated_at": "2025-10-22T10:39:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010923910,
+      "body_text": "https://drive.google.com/drive/folders/1q-SrDBxgAFyUeL54IC6biaujLznR9Aw6",
+      "user_id": 158001343601,
+      "created_at": "2025-10-23T03:43:13Z",
+      "updated_at": "2025-10-23T03:43:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

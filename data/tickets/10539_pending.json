@@ -1,0 +1,24 @@
+{
+  "id": 10539,
+  "subject": "RE: SSN5587",
+  "description_text": "Hi there,\r\ncould you please update me on the second part of the shipping? It's a\r\ndifferent courier and it looks like it still has to be picked up.\r\n\r\nBest,\r\nL\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-11T00:51:01Z",
+  "updated_at": "2026-01-11T04:36:39Z",
+  "requester_id": 158009020152,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016772332,
+      "body_text": "Hi Lorenzo Iovino,  Due to a temporary stock shortage of the VAM Pro, it will be shipped in the next few days. We sincerely apologize that, as a result, the tracking information has not been updated yet, and we appreciate your understanding and patience. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T04:36:39Z",
+      "updated_at": "2026-01-11T04:36:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

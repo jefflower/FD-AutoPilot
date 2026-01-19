@@ -1,0 +1,34 @@
+{
+  "id": 8148,
+  "subject": "A question about order #SSN4311",
+  "description_text": "Hello, I bought the Simsonn Plus X pedals on the 2nd of December. Your site\r\nsaid it takes about 2 days, and they still haven't been sent. Can i get an\r\napprox. time when they'll get shipped?\r\nI'd be thankful if i got them few days before christmas as they were meant\r\nas a present.\r\nThank you.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-13T11:43:49Z",
+  "updated_at": "2025-12-23T00:16:49Z",
+  "requester_id": 158007661893,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014502969,
+      "body_text": "Hi Marblelake,    We'll ship your order quickly via UPS, with delivery expected on the 21st. No need to worry.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-15T09:28:16Z",
+      "updated_at": "2025-12-15T09:28:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014507895,
+      "body_text": "okay, thank you!\r\n\r\nOn Mon, 15 Dec 2025 at 10:28, service@simsonn.com ",
+      "user_id": 158007661893,
+      "created_at": "2025-12-15T12:08:42Z",
+      "updated_at": "2025-12-15T12:08:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

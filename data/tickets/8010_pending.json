@@ -1,0 +1,84 @@
+{
+  "id": 8010,
+  "subject": "Return of goods",
+  "description_text": "To whom it may concern.\r\n\r\nI am requesting details for how to return the items that I recently\r\npurchased.\r\nMy apologies, however it was bought as a present that is no longer needed.\r\nSorry for the inconvenience.\r\nI look forward to hearing from you and thankyou for your time.\r\n\r\nYours sincerely\r\nDave Pears.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-11T17:53:04Z",
+  "updated_at": "2025-12-24T10:20:42Z",
+  "requester_id": 158007760184,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014381102,
+      "body_text": "Hi Dave Pears,    May I have your order number, please?",
+      "user_id": 158001343601,
+      "created_at": "2025-12-12T11:49:27Z",
+      "updated_at": "2025-12-12T11:49:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014400214,
+      "body_text": "I believe this to be the order number.\r\n#SSN4208\r\n\r\nName.  jenna vigo\r\n\r\n",
+      "user_id": 158007760184,
+      "created_at": "2025-12-12T16:16:42Z",
+      "updated_at": "2025-12-12T16:16:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015017280,
+      "body_text": "Hi Dave Pears,    I apologize for not getting back to you sooner. I see your three packages have been delivered—did you receive them?  Only the new shifter hasn't shipped yet. Would you like to cancel it?",
+      "user_id": 158001343601,
+      "created_at": "2025-12-24T04:04:34Z",
+      "updated_at": "2025-12-24T04:04:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015027133,
+      "body_text": "Good morning.\r\n\r\nThat's correct, I have three panels to return and the gearstick to cancel\r\nplease.\r\n\r\nThank you for your time.\r\n\r\nDave.\r\n\r\n",
+      "user_id": 158007760184,
+      "created_at": "2025-12-24T08:12:52Z",
+      "updated_at": "2025-12-24T08:12:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015028879,
+      "body_text": "Hi Dave Pears,    We apologize for any inconvenience this may cause. For products that have already been shipped, we are unable to cancel your order.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-24T09:21:48Z",
+      "updated_at": "2025-12-24T09:21:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015028965,
+      "body_text": "Good morning\r\nHow do I sort  out returns for the items that are here.\r\n\r\nThanks\r\n\r\n",
+      "user_id": 158007760184,
+      "created_at": "2025-12-24T09:26:20Z",
+      "updated_at": "2025-12-24T09:26:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015029033,
+      "body_text": "Good morning.\r\n\r\nI was under the impression before ordering that if I wished to return them\r\nwithin twenty-eight days then a return label would be issued for me to\r\nprint and return to you.\r\n\r\nThanks\r\nDave\r\n\r\n",
+      "user_id": 158007760184,
+      "created_at": "2025-12-24T09:29:40Z",
+      "updated_at": "2025-12-24T09:29:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

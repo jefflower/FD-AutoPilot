@@ -1,0 +1,44 @@
+{
+  "id": 10657,
+  "subject": "VAM",
+  "description_text": "I want to purchase 3xVAM for 3rd party pedals (logitech)\r\n\r\nWhich control box do I need to buy?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-12T12:39:57Z",
+  "updated_at": "2026-01-17T01:45:44Z",
+  "requester_id": 158009032612,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017161475,
+      "body_text": "Hi Jay,  Only one Plus X control box is required. However, please note that you may need to print the mounting bracket yourself.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T03:52:29Z",
+      "updated_at": "2026-01-15T03:52:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017189920,
+      "body_text": "Thank you for the clarification. I have 3D printer so no issue.\r\n\r\nWill order next week, thanks again\r\n\r\nOn Thu, Jan 15, 2026 at 3:52 AM service@simsonn.com ",
+      "user_id": 158009032612,
+      "created_at": "2026-01-15T13:25:52Z",
+      "updated_at": "2026-01-15T13:25:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017309260,
+      "body_text": "Hi Jay,  You're welcome. Thank you for purchasing our product. Should you have any questions in the future, please feel free to contact us. We will address them promptly.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T01:45:43Z",
+      "updated_at": "2026-01-17T01:45:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

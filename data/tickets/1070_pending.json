@@ -1,0 +1,24 @@
+{
+  "id": 1070,
+  "subject": "Bestellung",
+  "description_text": "Hallo ich warte jetzt schon mehr als 3 Wochen auf mein bestellung #SSN1579 Das sind Pedale mit haptischen Motor. Finde das schon echt frech das es so lange dauert und leider kann ich euch nicht weiter empfehlen damit ihr mehr Käufer bekommt, denn keiner möchte 3 oder 4 Wochen auf seine Ware warten.\r\n\r\nGesendet mit der GMX Mail App\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-07-01T14:46:57Z",
+  "updated_at": "2025-07-02T09:56:35Z",
+  "requester_id": 158001700116,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004370802,
+      "body_text": "Hi Warframe76,     We apologize for the logistical anomaly with your Pro X Ultra pedal, we will look into it for you as soon as possible.  Also, have you received your VAM Pro yet?",
+      "user_id": 158001343601,
+      "created_at": "2025-07-02T09:56:35Z",
+      "updated_at": "2025-07-02T09:56:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

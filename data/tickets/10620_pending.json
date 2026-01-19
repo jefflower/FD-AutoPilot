@@ -1,0 +1,44 @@
+{
+  "id": 10620,
+  "subject": "Lukas Kavakcioglu",
+  "description_text": "Hi ich habe eure vibratiosmotoren beobachtet, kann ich sie per PC mit der\r\nPS5 betreiben? Und wenn ja welches set muss ich für pedal Gas und bremsen\r\nund sitzgestell Vibration wählen ?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-12T07:14:20Z",
+  "updated_at": "2026-01-15T02:02:36Z",
+  "requester_id": 158009029955,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016845881,
+      "body_text": "Hi Lukas Kavakciolo,  It works on PC, but not on PS5. On PC, you can install our SIMSONN Manager software or SimHub. To enable vibration feedback, please use a PlusX control box + VAM Pro motor + power supply. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-12T08:26:02Z",
+      "updated_at": "2026-01-12T08:26:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016849020,
+      "body_text": "Also ich verstehe richtig, es gibt doch dib Konkurrenz Produkte von 3drap\r\ndenen ihr System funktioniert mit der ps5 aber mann muss sie über ein pc\r\nlaufen lassen, geht das auch bei euch oder wie soll ich das verstehen\r\n\r\nsupport@simsonn.com ",
+      "user_id": 158009029955,
+      "created_at": "2026-01-12T09:30:16Z",
+      "updated_at": "2026-01-12T09:30:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017155316,
+      "body_text": "Hi Lukas Kavakciolo,  Sure. Please send me the product link(s) (purchase link, official page, or any manual/screenshots if available). We’ll review their solution and evaluate a similar implementation and compatibility approach. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-15T02:02:35Z",
+      "updated_at": "2026-01-15T02:02:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

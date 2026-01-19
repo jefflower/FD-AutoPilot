@@ -1,0 +1,24 @@
+{
+  "id": 5396,
+  "subject": "Order SSN3061",
+  "description_text": "Hi,\n\nI placed an order on 23rd October which I am still waiting to arrive. I've had 2 tracking numbers from 'SF'\n\nSF6045986860972\nSF6045986860945\n\nBoth of them cannot be found on SF website.\n\nI also had 1 tracking number from 'Evri' which came on 24th October. This has been stuck ever since and not changed. I have also reached out for further support from Evri.\n\nH01SRA0034612475\n\nI would appreciate any assistance if possible,\n\nThank you,\nMaxim Zotov\nhttps://proton.me/mail/home\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-29T08:29:13Z",
+  "updated_at": "2025-10-29T10:31:13Z",
+  "requester_id": 158006186445,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011278620,
+      "body_text": "Hi RIPSAW,    We apologize for any inconvenience caused. Here is your logistics tracking link:  https://t.17track.net/en#nums=SF6045986860972,SF6045986860945",
+      "user_id": 158001343601,
+      "created_at": "2025-10-29T10:31:13Z",
+      "updated_at": "2025-10-29T10:31:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

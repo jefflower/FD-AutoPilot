@@ -1,0 +1,44 @@
+{
+  "id": 8034,
+  "subject": "Simsonn Pro X Ultra - Throttle Issue",
+  "description_text": "Hello,\r\n\r\nI'm having issues with my Simsonn Pro X Ultra throttle pedal. Even when I'm\r\nnot pressing it at all, it's registering shaky/forced input in the\r\nsoftware.\r\n\r\nWhat I've already tried:\r\n\r\n   -\r\n\r\n   Full recalibration multiple times\r\n   -\r\n\r\n   Adjusted dead zone settings (no improvement)\r\n   -\r\n\r\n   Different USB ports\r\n   -\r\n\r\n   The issue shows up in the device software itself, not just in-game\r\n\r\nThe pedal physically returns to resting position fine, but the sensor seems\r\nto be picking up phantom inputs or noise. It's making it impossible to\r\ndrive smoothly.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-12T01:29:46Z",
+  "updated_at": "2025-12-14T03:05:38Z",
+  "requester_id": 158007320865,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014417832,
+      "body_text": "Video of the new issue\r\n\r\n",
+      "user_id": 158007320865,
+      "created_at": "2025-12-12T20:51:54Z",
+      "updated_at": "2025-12-12T20:51:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014441452,
+      "body_text": "Video of the new issue\r\n\r\n",
+      "user_id": 158007320865,
+      "created_at": "2025-12-13T09:10:17Z",
+      "updated_at": "2025-12-13T09:10:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014471987,
+      "body_text": "Hi Net Kek，  如果出现这种情况，则表明计算机接地不良，可能是因为三孔插头未与三孔墙壁插座匹配。您可以参考以下帖子：将计算机机箱连接到支架上，并将控制盒连接到踏板上的金属螺丝上。这应该可以解决断连问题。https ://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-12-14T03:05:38Z",
+      "updated_at": "2025-12-14T03:05:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

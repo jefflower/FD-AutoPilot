@@ -1,0 +1,24 @@
+{
+  "id": 10003,
+  "subject": "SSN5658",
+  "description_text": "Necesito saber si el pago impacto de forma positiva, no registro\r\nconfirmacion de compra.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-05T15:06:01Z",
+  "updated_at": "2026-01-07T07:44:25Z",
+  "requester_id": 158007188380,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016085065,
+      "body_text": "Hi Franco Priolo,  We have received your order and confirmed the payment, and we will arrange shipment shortly. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T07:41:36Z",
+      "updated_at": "2026-01-07T07:41:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 3009,
+  "subject": "Re: Hanging VAM Pro with my Pro X Ultra control box",
+  "description_text": "My order command is  3058686100447639 (Ali Express).\r\n\r\nRegards\r\n\r\nOn Fri, Aug 22, 2025 at 11:48 PM Becbec <cyrilbec@gmail.com> wrote:\r\n\r\n> Hello Simsonn Support Team,\r\n>\r\n> I recently received my *Simsonn Pro X Ultra pedals* (working perfectly)\r\n> and *two VAM Pro linear motors*. Both motors are functioning correctly\r\n> and respond to activation commands. However, I am encountering a *recurring\r\n> issue* that seems software-related.\r\n>\r\n> Here are the details of my setup and the problem:\r\n>\r\n> *Setup:*\r\n>\r\n>    -\r\n>\r\n>    Only the *Control Box* and a single *VAM Pro linear motor* connected.\r\n>    -\r\n>\r\n>    *No pedals or DD base connected.*\r\n>    -\r\n>\r\n>    *Power supply* provided with the VAM Pro.\r\n>    -\r\n>\r\n>    *USB connection*: Control Box → PC, directly (no hub).\r\n>    -\r\n>\r\n>    *PC tested*: Laptop on battery only (not connected to mains).\r\n>    -\r\n>\r\n>    *Firmware version*: 21/07/2025 (latest release).\r\n>    -\r\n>\r\n>    Software tested: *Simsonn Manager* and *SimHub*.\r\n>\r\n> *Problem:*\r\n>\r\n>    -\r\n>\r\n>    When testing a vibration (e.g., 1-second pulse in SimHub), the motor\r\n>    sometimes stays *permanently activated* instead of stopping at the end\r\n>    of the signal.\r\n>    -\r\n>\r\n>    The signal is correctly shown as finished in SimHub, but the motor\r\n>    remains running until the next vibration command is sent.\r\n>    -\r\n>\r\n>    This occurs *randomly*, approximately every 5–20 tests, and happens\r\n>    with *both motors*.\r\n>    -\r\n>\r\n>    The issue persists on *different PCs*, with *USB direct*, and with *all\r\n>    other devices disconnected*, including pedals and DD base.\r\n>\r\n> *Tests already performed:*\r\n>\r\n>    -\r\n>\r\n>    USB cable replaced with a short, shielded cable.\r\n>    -\r\n>\r\n>    Reflashed the firmware (latest version).\r\n>    -\r\n>\r\n>    Tested with *Simsonn Manager only*, and *SimHub only*.\r\n>    -\r\n>\r\n>    Tested on multiple PCs.\r\n>    -\r\n>\r\n>    Verified motors function correctly in normal operation when the issue\r\n>    does not occur.\r\n>    -\r\n>\r\n>    Confirmed the issue occurs *without any grounding or external\r\n>    interference*, as tests were done on a laptop running on battery only.\r\n>\r\n> *Observation:*\r\n>\r\n>    -\r\n>\r\n>    The problem seems to be *internal to the Control Box*.\r\n>    -\r\n>\r\n>    The motor receives the “on” command correctly, but sometimes the “off”\r\n>    command is not executed.\r\n>    -\r\n>\r\n>    The motor always stops after the next command, which indicates the USB\r\n>    communication itself is not lost.\r\n>\r\n> *Request:*\r\n>\r\n>    -\r\n>\r\n>    Could you please confirm whether this is a known firmware issue?\r\n>    -\r\n>\r\n>    Is there a beta or alternative firmware build that addresses this\r\n>    behavior?\r\n>    -\r\n>\r\n>    Should I consider an exchange if this is identified as a control box\r\n>    defect?\r\n>\r\n> I can provide a *video recording* showing the motor staying activated\r\n> during a 1-second test pulse if needed.\r\n>\r\n> Thank you very much for your support. I look forward to your guidance to\r\n> resolve this issue.\r\n>\r\n> Best regards,\r\n>\r\n> Cyril Beccavin\r\n>\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-08-23T00:11:21Z",
+  "updated_at": "2025-08-25T04:05:51Z",
+  "requester_id": 158003493268,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007444252,
+      "body_text": "Hi Becbec,     Thank you for your detailed feedback. Please first test with the 2.1.1 version from this link: go to Settings → Update → Manual Firmware Update → pedals-firmware-pedals-proxultra.sfu, and then run the test again.  Additionally, for the brake pedal’s VAM, we recommend using nylon screws and washers, as this can effectively reduce VAM Pro interference on the pedal signal. For the control box, you may also try connecting a wire to any screw on the pedal, but please note that metal materials may affect the connection quality.  If the issue still persists, we will immediately report it to our software development team, have them check and fix the bug as soon as possible, and provide you with an updated version for upgrade at the earliest opportunity.    https://drive.google.com/file/d/1UPkeOHREyALtCtNmL87a2WnUDZV0Gx_b/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-08-25T04:05:51Z",
+      "updated_at": "2025-08-25T04:05:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

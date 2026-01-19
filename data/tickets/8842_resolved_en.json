@@ -1,0 +1,25 @@
+{
+  "id": 8842,
+  "subject": "Amazon order still not shipped",
+  "description_text": "Hi, I did a purchase of a pedal set and a shifter on December 15th.\nUntil now, the items were not shipped and delivery date was moved to December 31st.\n\nI am leaving us on December 29th.\nShould I cancel the order?\n\nOrder number: 111-0459836-2471424\n\nTod\nRafael Palacio",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-22T03:08:22Z",
+  "updated_at": "2025-12-22T12:31:32Z",
+  "requester_id": 158008233739,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014879698,
+      "body_text": "Hi Rafael Palacio, OK, We will cancel it.",
+      "user_id": 158007774607,
+      "created_at": "2025-12-22T12:31:26Z",
+      "updated_at": "2025-12-22T12:31:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

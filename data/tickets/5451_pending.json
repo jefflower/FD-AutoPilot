@@ -1,0 +1,24 @@
+{
+  "id": 5451,
+  "subject": "Missing items",
+  "description_text": "Hello i ordered the base plate with my for my pedals & they werent included in my order that arrived today \r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-30T16:44:06Z",
+  "updated_at": "2025-10-31T04:02:51Z",
+  "requester_id": 158006226955,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011375753,
+      "body_text": "Hi Javier Tellez,      This is your logistics tracking link.  https://www.fedex.com/wtrk/track/?trknbr=394835236119",
+      "user_id": 158001343601,
+      "created_at": "2025-10-31T04:02:51Z",
+      "updated_at": "2025-10-31T04:02:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 10194,
+  "subject": "HS Pro Shifter Setup Issues",
+  "description_text": "Goodmorning,\r\n\r\nI’ve just received my HS Pro Shifter but I’m having some setup issues! I’ve Downloaded the latest version of the Simsonn Manager (2.1.2) however the little tab for “Gear Shift” doesn’t come up at all unlike in the photos on the website.\r\nI’ve plugged the shifter in and it lights up, the two buttons work and 3rd and 4th work. Therefore I can use the sequential panel but I’m not sure what I’m doing wrong to get it to work as a H Pattern.\r\nIs there anything I’m missing which is causing this problem or is it possible that I need a newer version of the Manager App that isn’t out yet? Reason I say this is under the Managwr versions on the support page it doesn’t include the HS Pro.\r\nLet me know the next steps I could take! I look forward to your response\r\n\r\nMany thanks\r\nDan Bloxham\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-07T08:42:52Z",
+  "updated_at": "2026-01-07T08:51:18Z",
+  "requester_id": 158007830941,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016098101,
+      "body_text": "Hi danielbloxham@sky. com,  We will release a new software version today, which will officially add support for the HS Pro calibration page. Please update the software and try it out. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T08:51:08Z",
+      "updated_at": "2026-01-07T08:51:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

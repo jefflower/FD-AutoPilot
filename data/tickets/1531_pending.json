@@ -1,0 +1,44 @@
+{
+  "id": 1531,
+  "subject": "ORder SSN1930",
+  "description_text": "Hi,\r\n\r\nMy pedals arrived on Friday 11th July, along with my cockpit and other equipment, after 3 days of setting up the rig, I was test driving in iracing with the pedals and haptics. After a few laps, I heard the USB disconnect and the pedals stopped working.\r\n\r\nThe control box was incredibly hot and when I tried to unplug everything and plug it back in I got lots of sparks when plugging the power cable back into the control box. Without the power cable I can get the throttle to work, but the brake doesnt work at all, even the LED lighting doesn't light up.\r\n\r\nI'm obviously gutted by this as my new sim rig is now unusable.\r\n\r\nWhat are my options now, I think I want to ask for a refund as having sparks coming out of my pedal control box on the first 2 days of using them doesn't fill me with confidence for the long term.\r\n\r\nIf you can come back to me ASAP as I'm desperate to get this resolved so I can start racing.\r\n\r\nThanks,\r\nHarry Cook\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-07-14T20:56:34Z",
+  "updated_at": "2025-07-16T03:06:00Z",
+  "requester_id": 158002124060,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004837393,
+      "body_text": "Hi Harry Cook,     Seeing a spark when plugging in the power cable is actually normal. It’s caused by the capacitors in the motor charging/discharging instantly. The 24V voltage is safe and does not indicate any damage to the device.  This issue may be due to unstable USB power. Please avoid using USB hubs and instead connect the USB cable directly to a USB 3.0 port on the back of your PC.  Regarding the brake pedal not working, you can try swapping the connectors of the brake and throttle to see if there is any data input. If it turns out the control box is indeed faulty (e.g. the LED does not light up), we can offer you a free replacement.  If only the brake pedal is not working, it might be a configuration issue. Please send us a short video, and we’d be happy to provide remote support to help you troubleshoot the issue.  We’ve not encountered any control box failures during internal testing, so we’d like to confirm the situation and resolve it for you as soon as possible.  Thank you!",
+      "user_id": 158000445778,
+      "created_at": "2025-07-15T00:08:30Z",
+      "updated_at": "2025-07-15T00:08:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004880068,
+      "body_text": "Thank you for the reply. That's a relief that the sparking is normal. I seem to have them working ok again now but the cable connecting pedals to control box can make them disconnect if the angle changes at all. I have also got a lead coming out of the front of the pedal that I'm not sure if it should be connected picture attached. I will update if I get more issues ",
+      "user_id": 158002124060,
+      "created_at": "2025-07-15T15:58:28Z",
+      "updated_at": "2025-07-15T15:58:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004920623,
+      "body_text": "Hi Harry Cook,     The wire you photographed is used to connect to the heel stop plate. From the photo you provided, it appears the image may be incomplete. This wire should connect from the bottom of the brake pedal to the side of the heel stop plate, and it is used to power the lighting effect on the plate.  If you encounter any other issues during installation or use, feel free to reach out — I’m always here to help.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T03:05:59Z",
+      "updated_at": "2025-07-16T03:05:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "id": 9521,
+  "subject": "My order haven’t received it",
+  "description_text": "",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-30T04:36:50Z",
+  "updated_at": "2026-01-08T09:54:03Z",
+  "requester_id": 158008816977,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015235507,
+      "body_text": "I haven’t had any more information about my order either and cant receive any tracking information ",
+      "user_id": 158008816977,
+      "created_at": "2025-12-30T04:43:58Z",
+      "updated_at": "2025-12-30T04:43:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015291262,
+      "body_text": "Hi jasmine sorrell,  Please provide the order date, contact name, country, and order amount, and I will help you find the order number. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T02:51:40Z",
+      "updated_at": "2025-12-31T02:51:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015302464,
+      "body_text": "20th of December I ordered it and it should be under my name which is\r\nJasmine sorrell . Country is United Kingdom address it should be delivered\r\nto is 34 lovetofts drive Ip15jz\r\n\r\nOn Wed, 31 Dec 2025 at 02:51, service@simsonn.com ",
+      "user_id": 158008816977,
+      "created_at": "2025-12-31T08:20:54Z",
+      "updated_at": "2025-12-31T08:20:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015302973,
+      "body_text": "The order amount was £120 i think\r\n\r\nOn Wed, 31 Dec 2025 at 08:20, jasmine sorrell <jasminesorrell4@gmail.com>\r\nwrote:\r\n\r\n> 20th of December I ordered it and it should be under my name which is\r\n> Jasmine sorrell . Country is United Kingdom address it should be delivered\r\n> to is 34 lovetofts drive Ip15jz\r\n>\r\n> On Wed, 31 Dec 2025 at 02:51, service@simsonn.com ",
+      "user_id": 158008816977,
+      "created_at": "2025-12-31T08:53:46Z",
+      "updated_at": "2025-12-31T08:53:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015390341,
+      "body_text": "When will I hear back about my order as I’m getting concerned I am not going to receive it it’s a lot of money to lose the item it was for a Christmas present for my partner ",
+      "user_id": 158008816977,
+      "created_at": "2026-01-02T12:02:04Z",
+      "updated_at": "2026-01-02T12:02:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158016252241,
+      "body_text": "Hi jasmine sorrell,  I can see that your order has been marked as delivered. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-08T02:16:46Z",
+      "updated_at": "2026-01-08T02:16:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016309457,
+      "body_text": "Yes, I have received it.\r\n\r\nOn Thu, 8 Jan 2026 at 02:16, service@simsonn.com ",
+      "user_id": 158008816977,
+      "created_at": "2026-01-08T09:02:34Z",
+      "updated_at": "2026-01-08T09:02:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

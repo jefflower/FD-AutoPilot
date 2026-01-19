@@ -1,0 +1,114 @@
+{
+  "id": 783,
+  "subject": "Pedals upgrade",
+  "description_text": "Hello,\r\n\r\nI have a set of Simsonn Pro Pedal Plus and I want to upgrade the control\r\nbox's software in order to use it in Simsonn Manager.\r\nThe pedals are recognised in the Simsonn Manager app but it says: ,, THE\r\nVERSION IS TOO OLD TO USE\".\r\n\r\nI did find on reddit this post  :\r\n\r\n\r\n  *The SIMSONN MANAGER can be used to upgrade the firmware of the Simsonn\r\nPro Pedal Control Box to version 1.8.0. The Pro Pedals can then be\r\ncalibrated normally using the SIMSONN MANAGER calibration software. Manual\r\nupgrade steps:*\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n*1.Download the SIMSONN MANAGER software and make sure it is the latest\r\nversion 2.0.6 (shown in the bottom right corner). Below are links to the\r\nsoftware and software calibration videos:\r\nhttp://download.simsonn.com/simsonnmanager\r\n<http://download.simsonn.com/simsonnmanager> Then, press the ‘Upgrade\r\nButton’ on the Master Box to enter upgrade mode.2.Reconnect USB: Unplug the\r\ncurrent USB cable and reconnect the USB cable to ensure that the device has\r\nbeen properly reconnected and the pedal enters upgrade mode.3.Manually\r\nupgrade the firmware: Find the SIMSONN Manager\\env\\firmware\\pedal folder\r\nfrom the software storage directory, locate the corresponding firmware\r\nfile, and start the upgrade.4.Wait for the upgrade to complete and please\r\nNote: during the upgrade process, don't disconnect, turn off the power or\r\nexit the programme, otherwise the control box will not work! In the case of\r\nPro X pedals, the LEDs on the pedals will turn off, indicating that the\r\nlight upgrade is in progress.5.When the upgrade is complete, manually\r\nrelease the upgrade button on the control box.*\r\n*6.To return to normal operating mode: Finally, unplug and reconnect\r\n  *\r\n\r\nYou do mention to ..press the* ‘Upgrade Button’'* on the Master Box to\r\nenter upgrade mode'' . Can you please point me to where is this button\r\nlocated? I have the control box attached in the picture.\r\n\r\n* I also did find a tab in the app ( SETTINGS - UPDATE- MANUAL UPDATE,\r\nPEDAL than I did select the pedals folder and the version ,, plus 1.8.0.).\r\nAfter I select the verios, a bar starts and says upgrading but it does\r\nnothing. Only disconnects my pedals from PC and I have to recconect them in\r\norder to work and again it says ,, THE VERSION IS TOO OLD TO USE\".\r\n\r\nCan you please help me a bit on how to upgrade the software? Thanks!\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-06-24T14:21:52Z",
+  "updated_at": "2025-06-28T12:14:00Z",
+  "requester_id": 158001757417,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003811872,
+      "body_text": "Hi Albert Stoicescu,    Please check the old version of the software—version 1703 cannot be upgraded, but version 1713 can be.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-24T14:49:13Z",
+      "updated_at": "2025-06-24T14:49:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003812187,
+      "body_text": "So if my control box has version 1703 it cannot be upgraded? How do I check\r\nwich version I have ? The pedals were bought in October 2024.\r\n\r\nOn Tue, 24 Jun 2025 at 17:49, support@simsonn.com ",
+      "user_id": 158001757417,
+      "created_at": "2025-06-24T14:52:48Z",
+      "updated_at": "2025-06-24T14:52:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003834999,
+      "body_text": "Hi Albert Stoicescu, You can download SimConfigPedals V4 from our official website to check the device version. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-25T08:01:21Z",
+      "updated_at": "2025-06-25T08:01:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004184717,
+      "body_text": "Hello. I did check and the control box *software* is *1713. *What are the\r\nnext steps to upgrade to the new version to use the Simsonn Manager app?\r\n\r\nOn Wed, Jun 25, 2025 at 11:01 AM support@simsonn.com ",
+      "user_id": 158001757417,
+      "created_at": "2025-06-27T10:13:03Z",
+      "updated_at": "2025-06-27T10:13:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004215251,
+      "body_text": "Hi Albert Stoicescu,   Have you successfully completed the upgrade? Please share a screenshot of the software so I can check. If SIMSONN Manager 2.0.8 shows “SIMSONN Plus” as connected, that means the upgrade was successful. You can then proceed to calibrate the pedals, set the minimum and maximum deadzones, and bind the pedals in your game to start playing. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-27T15:20:46Z",
+      "updated_at": "2025-06-27T15:20:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004219840,
+      "body_text": "Hello, I asked you have to perform the update because I did not manage to\r\nmake it. The Simsonn Manager show Pedals are connected but the version is\r\ntoo old( picture 1), then I press  settings, update, manual update, select\r\npedals and the version 1.8.0, and instantly say UPGRADE COMPLETE but it is\r\nnot happening the update.\r\n\r\nOn Fri, Jun 27, 2025 at 6:20 PM support@simsonn.com ",
+      "user_id": 158001757417,
+      "created_at": "2025-06-28T10:34:08Z",
+      "updated_at": "2025-06-28T10:34:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004219888,
+      "body_text": "Hi Albert Stoicescu,    Could you please install the Todesk remote tool? I can assist you remotely to resolve the issue—would that work for you?",
+      "user_id": 158000445778,
+      "created_at": "2025-06-28T10:57:01Z",
+      "updated_at": "2025-06-28T10:57:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004219906,
+      "body_text": "ToDesk:\r\ndevice ID:464 020 794\r\nTemporary password:5jcepwg3\r\n\r\nOn Sat, Jun 28, 2025 at 1:57 PM support@simsonn.com ",
+      "user_id": 158001757417,
+      "created_at": "2025-06-28T11:00:09Z",
+      "updated_at": "2025-06-28T11:00:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004219984,
+      "body_text": "Hi Albert Stoicescu,    Please wait for about half an hour—I’m currently having some network issues. Is that okay?",
+      "user_id": 158000445778,
+      "created_at": "2025-06-28T11:21:53Z",
+      "updated_at": "2025-06-28T11:21:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004219987,
+      "body_text": "Yes I will leave the pc open anyway. I might be here. you can enter anytime\r\nyou want\r\n\r\nOn Sat, Jun 28, 2025 at 2:22 PM support@simsonn.com ",
+      "user_id": 158001757417,
+      "created_at": "2025-06-28T11:24:04Z",
+      "updated_at": "2025-06-28T11:24:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

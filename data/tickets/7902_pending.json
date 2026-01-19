@@ -1,0 +1,54 @@
+{
+  "id": 7902,
+  "subject": "Erreur d’adresse sur la commande",
+  "description_text": "Bonsoir je viens de passée commande et je viens de remarquer que je me suis\r\ntrompé d’adresse serait-il possible de le changer ?\r\nNuméro de commande #\r\nSSN4644\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-10T16:20:18Z",
+  "updated_at": "2025-12-16T11:39:53Z",
+  "requester_id": 158007743668,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014298125,
+      "body_text": "Hi kaan ts,    Veuillez nous fournir votre adresse correcte dès que possible ; nous la modifierons pour vous. Il n'y a pas lieu de s'inquiéter.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-11T02:01:20Z",
+      "updated_at": "2025-12-11T02:01:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014300262,
+      "body_text": "Voici mon adresse.\r\n5 Rue Principale, Harthouse 67500.\r\n\r\nLe jeu. 11 déc. 2025 à 03:01, service@simsonn.com ",
+      "user_id": 158007743668,
+      "created_at": "2025-12-11T04:33:05Z",
+      "updated_at": "2025-12-11T04:33:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014360395,
+      "body_text": "Hi kaan ts,    We've already corrected the address for you, don't worry.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-12T02:01:49Z",
+      "updated_at": "2025-12-12T02:01:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014363513,
+      "body_text": "Parfait merci de votre retour c’est super\r\n\r\nLe ven. 12 déc. 2025 à 03:02, service@simsonn.com ",
+      "user_id": 158007743668,
+      "created_at": "2025-12-12T05:30:17Z",
+      "updated_at": "2025-12-12T05:30:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

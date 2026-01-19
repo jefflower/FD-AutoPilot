@@ -1,0 +1,34 @@
+{
+  "id": 1389,
+  "subject": "Plus x pedals manual",
+  "description_text": "Hello\r\n\r\nYour website's link to manual download leads to 404 page. I lost my paper\r\nmanual and would like to have digital version for plus x pedals, thank you.\r\n\r\nNiilo Väisänen\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-09T20:10:24Z",
+  "updated_at": "2025-07-10T03:31:44Z",
+  "requester_id": 158001980807,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004497260,
+      "body_text": "Hi Niilo Väisänen,  https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-07-09T22:23:05Z",
+      "updated_at": "2025-07-09T22:23:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004500166,
+      "body_text": "Hi Niilo Väisänen,     Here is the updated download link — please check it.  https://www.simsonn.com/pages/simsonn-product-manuals",
+      "user_id": 158000445778,
+      "created_at": "2025-07-10T03:31:44Z",
+      "updated_at": "2025-07-10T03:31:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

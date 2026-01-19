@@ -1,0 +1,65 @@
+{
+  "id": 615,
+  "subject": "关于踏板问题",
+  "description_text": "我购买了 Simsonn Pro X Ultra Sim 赛车踏板。\n在《神力科莎》游戏中设置踏板时，\n油门和离合器都能正常识别，\n但刹车却无法识别。\n\n踏板只有以下三种输出：\n1. 油门\n2. 刹车\n3. 离合器\n但是，《神力科莎》却将第四个神秘信号识别为刹车，\n导致本来应该识别为刹车的第二个输出信号无法识别。\n※在《神力科莎》中，踩下刹车时，确实识别为第二个输出信号。\n然而，一旦开始设置刹车，就会识别为神秘的第四个输出信号。\n\n在 Simsonn Manager 中，三个踏板都能正常识别。\n\n请问是否可以禁用神秘的第四个输出信号？",
+  "status": 4,
+  "priority": 4,
+  "created_at": "2025-06-19T23:51:54Z",
+  "updated_at": "2025-06-29T01:20:14Z",
+  "requester_id": 158001685303,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003557223,
+      "body_text": "无法登录。\n忘记密码了。\n\n2025年6月20日(周五) 8:57 support@simsonn.com",
+      "user_id": 158001685303,
+      "created_at": "2025-06-20T04:29:45Z",
+      "updated_at": "2025-06-20T04:29:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003677705,
+      "body_text": "您好 gtr zeon,\n您的踏板是否已正常校准？\n您能否用 Simsonn Manager 2.0.8 软件录制一段从 0% 踩到底到 100% 的测试视频？\n如果在游戏内绑定了错误的轴，请提供绑定过程的视频，以便我们尽快为您提供支持。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-21T16:35:11Z",
+      "updated_at": "2025-06-21T16:35:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004221942,
+      "body_text": "请看这个视频。\n您应该能看到 Simsonn 踏板无法在《神力科莎》中设置。\n第四个信号是什么？\n请帮忙解决",
+      "user_id": 158001685303,
+      "created_at": "2025-06-29T00:30:45Z",
+      "updated_at": "2025-06-29T00:30:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004221957,
+      "body_text": "您好 gtr zeon,\n请在“设置 → 更新”画面点击“手动固件更新”，然后依次进入 pedals-firmware 文件夹 → pedals 文件夹，选择 proxultra.sfu 文件进行更新。此固件将禁用第四轴。\n\n2025年6月22日(周日) 1:35 support@simsonn.com",
+      "user_id": 158000445778,
+      "created_at": "2025-06-29T00:59:48Z",
+      "updated_at": "2025-06-29T00:59:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004221971,
+      "body_text": "谢谢！\n固件更新后已正常工作！\n\n2025年6月29日(周日) 10:00 support@simsonn.com",
+      "user_id": 158001685303,
+      "created_at": "2025-06-29T01:13:23Z",
+      "updated_at": "2025-06-29T01:13:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

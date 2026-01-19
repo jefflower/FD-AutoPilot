@@ -1,0 +1,44 @@
+{
+  "id": 4084,
+  "subject": "Order shipment",
+  "description_text": "Hello,\r\nCan you tell me when Order #SSN2666 will be delivered at my home?\r\nThank you in advance.\r\n\r\nGreets,\r\n\r\nErik van Empelen\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-24T06:21:16Z",
+  "updated_at": "2025-09-24T09:15:57Z",
+  "requester_id": 158004843508,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009215241,
+      "body_text": "Hi Erik van Empelen,     We sincerely apologise for the delay caused. We have noted that the logistics of your parcel appear to have stalled, and we shall immediately investigate the cause. https://www.dhl.de/en/privatkunden/pakete-empfangen/verfolgen.html?piececode=CE326624655DE&cid=c_dhl_2502061_2353",
+      "user_id": 158001343601,
+      "created_at": "2025-09-24T08:12:25Z",
+      "updated_at": "2025-09-24T08:12:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009215894,
+      "body_text": "Hello,\r\n\r\nThank you for your response.\r\nI had noticed the same issue when i opened the dhl.de site.\r\nI hope you can help me get it delivered at my home.\r\n\r\nGreetz,\r\n\r\nErik van Empelen\r\n\r\nOp 24 sep 2025 om 10:12 heeft service@simsonn.com het volgende geschreven:\r\n\r\n﻿\r\nHi Erik van Empelen,\r\n\r\nWe sincerely apologise for the delay caused. We have noted that the logistics of your parcel appear to have stalled, and we shall immediately investigate the cause.\r\nhttps://www.dhl.de/en/privatkunden/pakete-empfangen/verfolgen.html?piececode=CE326624655DE&cid=c_dhl_2502061_2353\r\n\r\n\r\n",
+      "user_id": 158004843508,
+      "created_at": "2025-09-24T08:43:06Z",
+      "updated_at": "2025-09-24T08:43:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009216611,
+      "body_text": "Alright, we have contacted DHL to inquire and expedite the matter.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-24T09:15:56Z",
+      "updated_at": "2025-09-24T09:15:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

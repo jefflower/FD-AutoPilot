@@ -1,0 +1,74 @@
+{
+  "id": 3347,
+  "subject": "Throtle pedal not feeling smooth",
+  "description_text": "Hello, my throtle pedal is not feeling totaly smooth and i dont know if its\r\ndue to a setting or the dampers, can i send a video?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-01T09:43:11Z",
+  "updated_at": "2025-09-03T09:49:54Z",
+  "requester_id": 158002874453,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007892136,
+      "body_text": "Okay, please send us a video clip and we shall resolve this matter for you.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-01T10:48:19Z",
+      "updated_at": "2025-09-01T10:48:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007892186,
+      "body_text": "I send link from google drive:\r\nhttps://drive.google.com/file/d/1BOhKXoWMR-0PusTM8CWmoDfPqsqZ1a3J/view?usp=drivesdk\r\n\r\nA segunda, 1/09/2025, 11:48, service@simsonn.com ",
+      "user_id": 158002874453,
+      "created_at": "2025-09-01T10:54:35Z",
+      "updated_at": "2025-09-01T10:54:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007907983,
+      "body_text": "Hi Osvaldo Sousa,    lubricant to the plastic moving parts of the throttle. Also, please note that our hydraulic rod is not a cheap gas spring — it is a true hydraulic structure filled with liquid. Therefore, you may hear the sound of fluid movement during operation, which is completely normal.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-01T14:56:10Z",
+      "updated_at": "2025-09-01T14:56:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007933543,
+      "body_text": "Thank you! I have already aplied ptfe on throtle, i think i have to mess\r\nwith some settings on the pedal, what is the recomended travel distance?\r\n\r\nA segunda, 1/09/2025, 15:56, service@simsonn.com ",
+      "user_id": 158002874453,
+      "created_at": "2025-09-02T07:50:49Z",
+      "updated_at": "2025-09-02T07:50:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008004038,
+      "body_text": "Hi Osvaldo Sousa,  ​We recommend adjusting the throttle travel to 50%, then pressing the throttle to test while carefully checking if the blue limiter makes contact with the non-metallic plate of the small spring. If there is no contact, you can securely fix the blue limiter in place. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-03T04:33:49Z",
+      "updated_at": "2025-09-03T04:33:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008009387,
+      "body_text": "Thank you, i will try it at 50% and see how it feels!!!\r\n\r\nA quarta, 3/09/2025, 05:34, service@simsonn.com ",
+      "user_id": 158002874453,
+      "created_at": "2025-09-03T07:26:29Z",
+      "updated_at": "2025-09-03T07:26:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

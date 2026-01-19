@@ -1,0 +1,44 @@
+{
+  "id": 919,
+  "subject": "Pedal Missing Hydraulic Damper",
+  "description_text": "Good morning,\r\n\r\nI just received my pedals and everything looks great except the throttle is missing the hydraulic damper. I would prefer to not have to send everything back since it is already installed on my rig so if you could send a throttle hydraulic module I could install it and that would be greatly appreciated. The invoice is below.\r\n\r\n\r\n\r\nNicholas Williams\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-27T12:55:29Z",
+  "updated_at": "2025-06-30T05:53:24Z",
+  "requester_id": 158001831677,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004214970,
+      "body_text": "Hi Nicholas Williams,  Could you please provide a photo of the throttle pedal? We’ll verify it and arrange a replacement for you. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-27T14:59:00Z",
+      "updated_at": "2025-06-27T14:59:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004217550,
+      "body_text": "\r\nNicholas Williams\r\n\r\n> ",
+      "user_id": 158001831677,
+      "created_at": "2025-06-27T20:17:22Z",
+      "updated_at": "2025-06-27T20:17:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004224812,
+      "body_text": "Hi Nicholas Williams,  Hi, I am sorry for the inconvenience caused. We have shipped a new hydraulic damper for you, here is your tracking number: JSEXV3061681346YQ, the shipping carrier is JSEXPRESS.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-30T05:53:23Z",
+      "updated_at": "2025-06-30T05:53:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

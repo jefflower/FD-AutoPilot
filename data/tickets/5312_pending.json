@@ -1,0 +1,24 @@
+{
+  "id": 5312,
+  "subject": "Order #SSN3055",
+  "description_text": "Hi\r\n\r\nI am trying to get accurate tracking for my order. Your site says it is at the airport and was updated last week.\r\n\r\nThe last mile tracking just shows that the order is created.\r\n\r\nI just would like to know when I should expect to see these haptic motors arrive.\r\n\r\nThank you.\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-27T03:01:56Z",
+  "updated_at": "2025-10-27T09:02:36Z",
+  "requester_id": 158005969822,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011144407,
+      "body_text": "Hi Martin Judd,    We apologise for any inconvenience caused. Your parcel's tracking information currently shows normal progress. The courier has advised that recent high volumes have resulted in some delays. Your parcel is expected to arrive around the 3rd.  https://t.17track.net/en#nums=YT2529500704254124",
+      "user_id": 158001343601,
+      "created_at": "2025-10-27T09:02:36Z",
+      "updated_at": "2025-10-27T09:02:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

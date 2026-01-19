@@ -1,0 +1,44 @@
+{
+  "id": 2223,
+  "subject": "Simsonn Order Confirmation #SSN2209",
+  "description_text": "Hello, the shipping cost for the Plus X black baseplate you purchased to Argentina is too expensive, amounting to 604 RMB, which is equivalent to 84 USD. The product cost is 40 USD, so we need you to cover 20 USD of the shipping cost. Is that acceptable to you?",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-02T09:38:48Z",
+  "updated_at": "2025-08-04T02:19:21Z",
+  "requester_id": 158002530709,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006097078,
+      "body_text": "Hello, okay I will pay the extra $20 but why don't they show it on the page\r\nwhen I checkout, if my address is already there.\r\n\r\n\r\nEl El sáb, 2 ago 2025 a la(s) 6:39 a. m., service@simsonn.com <\r\nservice@simsonn.com> escribió:\r\n\r\n> Hello, the shipping cost for the Plus X black baseplate you purchased to\r\n> Argentina is too expensive, amounting to 604 RMB, which is equivalent to 84\r\n> USD. The product cost is 40 USD, so we need you to cover 20 USD of the\r\n> shipping cost. Is that acceptable to you?\r\n>\r\n> 2223:4206036\r\n>\r\n\r\n",
+      "user_id": 158002530709,
+      "created_at": "2025-08-02T11:17:08Z",
+      "updated_at": "2025-08-02T11:17:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006168667,
+      "body_text": "Hi Mmanino9,    Sorry, our shipping system isn't super accurate. You shouldn't have seen the Economy Shipping option for this pedal accessory. We'll fix it. Thanks for understanding. We'll ship it out first, and you can click the link to pay.    https://www.simsonn.com/products/difference-2",
+      "user_id": 158001343601,
+      "created_at": "2025-08-04T01:55:09Z",
+      "updated_at": "2025-08-04T01:55:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006168735,
+      "body_text": "It's ok no problem, I already made the payment, I'm waiting for the base of\r\nthe pedals !!!!\r\n\r\nThank you!\r\n\r\n\r\nEl El dom, 3 ago 2025 a la(s) 10:55 p. m., service@simsonn.com <\r\nservice@simsonn.com> escribió:\r\n\r\n> Hi Mmanino9,\r\n>\r\n> Sorry, our shipping system isn't super accurate. You shouldn't have seen\r\n> the Economy Shipping option for this pedal accessory. We'll fix it. Thanks\r\n> for understanding. We'll ship it out first, and you can click the link to\r\n> pay.\r\n> https://www.simsonn.com/products/difference-2\r\n>\r\n> ",
+      "user_id": 158002530709,
+      "created_at": "2025-08-04T01:58:30Z",
+      "updated_at": "2025-08-04T01:58:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

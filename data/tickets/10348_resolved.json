@@ -1,0 +1,64 @@
+{
+  "id": 10348,
+  "subject": "Order #SSN5499",
+  "description_text": "Good afternoon,\nI bought a 2 pedal set from you and just received them this past Tuesday. Everything looked great until I tried to actually use the pedals with my Fanatec GT DD wheelbase. When your pedals are plugged in, the wheelbase shuts off and becomes unusable. Over the last few days I have tried numerous ways to solve this issue but the wheelbase still shuts off. If I disconnect your pedals and reconnect the Fanatec pedals, the wheelbase turns right back on and is useable as normal. I would like to know what the solution to this problem is. Thank you for your time.\n\nBruce Ellingwood\n406 561 1860\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-08T22:02:18Z",
+  "updated_at": "2026-01-11T01:26:27Z",
+  "requester_id": 158008989766,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016452212,
+      "body_text": "Hi Bear,  To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability:     1.    Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding.     2.    Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive.     3.    Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup.     4.    Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible.     5.    Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs.     6.    Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference.     7.    Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements.     8.    Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources.     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2026-01-09T01:11:24Z",
+      "updated_at": "2026-01-09T01:11:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016452544,
+      "body_text": "I have done all of that. Still a no go. What next?\n\nBruce Ellingwood\n\n406 561 1860\n\n-------- Original Message --------\n",
+      "user_id": 158008989766,
+      "created_at": "2026-01-09T01:14:12Z",
+      "updated_at": "2026-01-09T01:14:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016462119,
+      "body_text": "My apologies, i had to order a usb isolator and it will be here Monday. I will report back. Thank you\n\nBear Woods 406 561 1860\n\n-------- Original Message --------\n",
+      "user_id": 158008989766,
+      "created_at": "2026-01-09T02:40:26Z",
+      "updated_at": "2026-01-09T02:40:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016751434,
+      "body_text": "Received the usb isolator early so managed to test it all today. Works fantastic. The pedals are great. Way more than what i expected. Thank you again and my apologies for my lack of knowledge and false alarm.\n\nBear Woods 406 561 1860\n\n-------- Original Message --------\n",
+      "user_id": 158008989766,
+      "created_at": "2026-01-10T21:54:54Z",
+      "updated_at": "2026-01-10T21:54:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016762418,
+      "body_text": "Hi Bear,  We’re glad to hear that your issue has been resolved. If you have any further questions or encounter any issues during use, please feel free to contact us at any time. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T01:26:26Z",
+      "updated_at": "2026-01-11T01:26:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

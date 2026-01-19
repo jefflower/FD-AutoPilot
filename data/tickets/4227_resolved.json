@@ -1,0 +1,34 @@
+{
+  "id": 4227,
+  "subject": "GT2 Plate right knob function selector not working",
+  "description_text": "Hi,\r\n\r\nI bought the simsonn gt2 wheel (cnc aluminum) about a month ago, im not\r\nlooking for a return / refund, but i wanted to get some technical support\r\nfor troubleshooting this product. as stated in the subject line, the right\r\nknob on my simsonn gt2 button box is not working at all, windows does not\r\nregister any inputs at all when i rotate it.\r\n\r\nQuestion 1: does the firmware support DFU? if so, how can i access it in\r\norder to flash the firmware to further troubleshoot?\r\n\r\nQuestion 2: is the STM32 board model STM32F103C8T6? if so, great, but if\r\nnot, which model is it?\r\n\r\nQuestion 3: is it possible that the rotary switch is just disconnected? if\r\nso, could you please details which connectors go where, so i may open it\r\nand fix myself?\r\n\r\nI hope this can be fixed.\r\n\r\nThank you kindly,\r\nArthur\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-09-29T04:04:00Z",
+  "updated_at": "2025-10-02T04:02:06Z",
+  "requester_id": 158005149780,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009726343,
+      "body_text": "你好，Arthur Pinel，     The knob is not damaged. The 12-position knob on the right is used to control the functionality of the left knob. For example, when the left knob is rotated left or right, it corresponds to button 17 and button 18. However, if the right knob is rotated first, the output of the left knob will switch to button 19 and button 20. Please note that this feature needs to be tested in-game, as Windows can only display the first 32 buttons, while the game itself can correctly recognize and display all 40 buttons.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T10:26:50Z",
+      "updated_at": "2025-10-01T10:26:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009760883,
+      "body_text": "I figured it out shortly after I sent the email, sorry for the trouble. Thank you!\r\n\r\n> ",
+      "user_id": 158005149780,
+      "created_at": "2025-10-01T22:06:52Z",
+      "updated_at": "2025-10-01T22:06:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

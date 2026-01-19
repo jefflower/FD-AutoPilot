@@ -1,0 +1,25 @@
+{
+  "id": 9468,
+  "subject": "Customs",
+  "description_text": "Good day, I ordered something from you on AliExpress, the tracking number is 1ZJ455510432292566. According to UPS, the package was held up at customs and will not be forwarded because information is missing. I wanted to ask if anyone has contacted you or if you know more about it.",
+  "status": 4,
+  "priority": 3,
+  "created_at": "2025-12-29T15:24:25Z",
+  "updated_at": "2025-12-30T08:51:43Z",
+  "requester_id": 158008809323,
+  "responder_id": 158007774664,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015242679,
+      "body_text": "Hi Nikez, An invoice has been provided to you in the buyer's session; you can try it.",
+      "user_id": 158007774664,
+      "created_at": "2025-12-30T08:51:37Z",
+      "updated_at": "2025-12-30T08:51:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

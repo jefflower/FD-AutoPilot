@@ -1,0 +1,154 @@
+{
+  "id": 1750,
+  "subject": "Order #SSN1642",
+  "description_text": "Hi\r\n\r\nI ordered above, 2x VAM PRO, 1x VAM.\r\n\r\nI encountered multiple issues:\r\n\r\nA) 2 VAM PROs - one works to 50% of power of the other. Tried different\r\nsockets in the control box, mounting them on different pedals, still the\r\nsame . 1 is powerful, other mellow\r\n- I have huge delay using them with simhub\r\n\\- motors vibrate randomly sometimes and freeze for significant about of\r\ntime. Please look into below video. It's insane. Game is paused, I\r\ndisconnected them becaus couldn't stand it anymore. Even after\r\ndisconnecting/reconnecting issue persist\r\n\r\nhttps://youtube.com/shorts/FumauE-fask?si=s_AnPA30Kdgjf1Lp\r\n\r\n\r\nI basically switched them off for now  it's just distraction as they start\r\nrandomly at times and don't want to switch off (doesn't matter wheter used\r\nwith yours software or simhub)\r\n\r\nB) I didnt receive any screws for mounting them. Had to use screws I bought\r\nwith my Simagic HPR but dint have enough of them. My VAM module for clutch\r\nstill laying around unninstalled as I have no screws to install it\r\n\r\nC) with motors I also got PRO X ULTRA control box. I need to recalibrate\r\npedals daily because inputs change randomly (never happened with my\r\noriginal PRO X control box). For instance - I'm driving and suddenly\r\nthrottle input goes only to 70% after 15 minutes of racing.\r\n\r\nLooking forward to your reply.\r\n\r\nRegards\r\nPawel Pekala\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-07-21T20:49:23Z",
+  "updated_at": "2025-08-20T05:51:55Z",
+  "requester_id": 158000954826,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005290522,
+      "body_text": "Hi Paul Pekala,    I’ve reviewed the issues you reported. Apart from one motor possibly having lower power due to a hardware issue, I believe the other problems may be caused by EMI (electromagnetic interference) from your racing base, or your PC not being properly grounded. Several other customers experienced similar issues, and they were all resolved once proper grounding was implemented.  You can download and install the Todesk remote support tool (no registration required). I’d be happy to remotely inspect your setup and check for configuration or interference issues with you observing.     If the software prompts you to register an account, simply click the close button in the upper right corner to skip it and enter the main interface. Then, please provide me with your ID and temporary password, and I will assist you remotely.     https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-07-22T01:46:33Z",
+      "updated_at": "2025-07-22T01:46:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005291944,
+      "body_text": "Hi\r\n\r\nI'll try that later today and let you know about the outcome. Thank you for\r\nyour quick response.\r\n\r\nHow about the missing screws? I got no screws with my 2xVAM PRO, 1xVAM\r\nmotors. I think somebody forgot to add them (there was no packaging with it\r\nactually).\r\n\r\nRegards\r\nPawel\r\n\r\nOn Tue, Jul 22, 2025 at 3:46 AM support@simsonn.com ",
+      "user_id": 158000954826,
+      "created_at": "2025-07-22T05:40:30Z",
+      "updated_at": "2025-07-22T05:40:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005355116,
+      "body_text": "Hi Paul Pekala,  We will send you a complete set of screws and tools for all three motors today. We will provide the tracking number later, so please keep an eye out for it. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-23T02:37:56Z",
+      "updated_at": "2025-07-23T02:37:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005355624,
+      "body_text": "Thank you.\r\n\r\nAnd the motor that works weaker than the other?\r\n\r\n\r\nOn Wed, Jul 23, 2025, 4:38 AM support@simsonn.com ",
+      "user_id": 158000954826,
+      "created_at": "2025-07-23T04:14:19Z",
+      "updated_at": "2025-07-23T04:14:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005355701,
+      "body_text": "Hi Paul Pekala,  VAM Pro delivers stronger vibration intensity and supports higher frequencies. In comparison, the standard VAM stops increasing in vibration effect once the frequency exceeds around 20Hz. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-23T04:29:56Z",
+      "updated_at": "2025-07-23T04:29:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005490841,
+      "body_text": "Man aim not an idiot.\r\n\r\nPLEASE READ THE MESSAGES CAREFULLY!!!\r\n\r\nI have 2xVAM PRO, one of which works to maybe 50% of the other.\r\n\r\nREAD THE MESSAGES AS I DONT HAVE TINE FOR THIS SH*T AGAIN (I have to send\r\n30 messages last time to get my shifter replacement).\r\n\r\nPlease answet on 2 below question (both of them)\r\n\r\n1. What about 1 of my 2 VAM PROs that doesn't work to full power?!\r\n2. When are you available to check my computer once I install mentioned\r\nabove app.\r\n\r\nIf you fail to reply to both I'm reporting it to PayPal requesting my money\r\nback as you clearly don't want to accept any responsibility (again!)\r\n\r\nRegards\r\nPawel\r\n\r\n\r\n\r\nOn Wed, Jul 23, 2025, 6:30 AM support@simsonn.com ",
+      "user_id": 158000954826,
+      "created_at": "2025-07-24T11:24:12Z",
+      "updated_at": "2025-07-24T11:24:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005551181,
+      "body_text": "您好，Paul Pekala，  我不确定我是否表达清楚了。如果 VAM Pro 有问题，我们会直接给您寄送替换品，不会有任何问题。 但是，对于 EMI 干扰问题，您需要按照我们的建议自行排除故障。      为解决 EMI（电磁干扰）问题，请按照以下步骤提高设备稳定性和 USB 连接可靠性：     1.    确保正确接地：确保计算机连接到具有可靠接地的三孔插座。两孔插头不提供接地。2      .    控制盒接地：使用绿色屏蔽线将控制盒的金属外壳（例如铜柱或螺丝）连接到踏板上的任何金属螺丝。确保接触点无油漆且导电。3      .    底座接地（例如，Fanatec / MOZA）：建议将底座的金属部分连接到 PC 机箱或外部地面以释放静电积聚。4      .    避开高干扰区域：将 USB 电缆远离高压电源线或适配器；尽可能单独布线。5      .    使用直接 USB 连接：将设备直接连接到 PC 上的后置 USB 3.0 端口，而不要使用无电源或低质量的 USB 集线器。     6.    使用带铁氧体磁芯的 USB 线缆：如有需要，请更换为带铁氧体磁珠的高质量 USB 线缆，以减少高频干扰。7      .    保持软件和固件更新：确保 SIMSONN 管理器和固件更新到最新版本，因为某些更新包含 EMI 处理改进。8      .    使用 USB 隔离器：如果上述方法无法解决问题，建议使用 USB 隔离器。它可以物理隔离 USB 电源线和数据线，有效地保护控制设备免受 EMI 源的影响。     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting  https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-07-26T04:32:18Z",
+      "updated_at": "2025-07-26T04:32:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005551187,
+      "body_text": "Hi Paul Pekala,  I’m not sure if I made myself clear. If there is an issue with the VAM Pro, we will directly send you a replacement without any problem. However, for the EMI interference issue, you will need to troubleshoot it yourself following our recommendations.      To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability:     1.    Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding.     2.    Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive.     3.    Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup.     4.    Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible.     5.    Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs.     6.    Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference.     7.    Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements.     8.    Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources.     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding     https://www.youtube.com/watch?v=LciAFDFWJ1w ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-26T04:33:53Z",
+      "updated_at": "2025-07-26T04:33:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006157162,
+      "body_text": "Hello\r\n\r\nDid you send the set of screws smd replacement of the VAM PRO motor already?\r\n\r\nI didnt receive any confirmation\r\n\r\nThank you for confirming\r\n\r\nRegards\r\nPawel\r\n\r\nOn Thu, Jul 24, 2025, 1:23 PM Paul Pekala <pawel.pekala1985@gmail.com>\r\nwrote:\r\n\r\n> Man aim not an idiot.\r\n>\r\n> PLEASE READ THE MESSAGES CAREFULLY!!!\r\n>\r\n> I have 2xVAM PRO, one of which works to maybe 50% of the other.\r\n>\r\n> READ THE MESSAGES AS I DONT HAVE TINE FOR THIS SH*T AGAIN (I have to send\r\n> 30 messages last time to get my shifter replacement).\r\n>\r\n> Please answet on 2 below question (both of them)\r\n>\r\n> 1. What about 1 of my 2 VAM PROs that doesn't work to full power?!\r\n> 2. When are you available to check my computer once I install mentioned\r\n> above app.\r\n>\r\n> If you fail to reply to both I'm reporting it to PayPal requesting my\r\n> money back as you clearly don't want to accept any responsibility (again!)\r\n>\r\n> Regards\r\n> Pawel\r\n>\r\n>\r\n>\r\n> On Wed, Jul 23, 2025, 6:30 AM support@simsonn.com ",
+      "user_id": 158000954826,
+      "created_at": "2025-08-03T15:12:04Z",
+      "updated_at": "2025-08-03T15:12:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006242626,
+      "body_text": "Hello, can you reply on above?\r\n\r\n",
+      "user_id": 158000954826,
+      "created_at": "2025-08-05T09:15:52Z",
+      "updated_at": "2025-08-05T09:15:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006354157,
+      "body_text": "Hi Paul Pekala,  ​  We apologize for not responding to you in a timely manner. Our support staff is on leave, but I will arrange for a replacement shipment for you: a Pro X Ultra control box and all haptic accessories, aand I will also give you a Vam Pro as compensation, which will resolve all of your issues. Here is your logistics tracking link:  https://t.17track.net/en#nums=SF6045842659511",
+      "user_id": 158001343601,
+      "created_at": "2025-08-06T10:37:23Z",
+      "updated_at": "2025-08-06T10:37:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007119995,
+      "body_text": "Hello, your parcel delivery has failed. Please contact DHL to collect it yourself. Here is your tracking number: 00340434756660696632.  Phone number: +49 228 4333112  https://t.17track.net/en#nums=00340434756660696632",
+      "user_id": 158001343601,
+      "created_at": "2025-08-19T09:17:34Z",
+      "updated_at": "2025-08-19T09:17:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007120579,
+      "body_text": "I will once Imback in country\r\n\r\nThank you for the information\r\n\r\nBest regards\r\nPawel\r\n\r\nOn Tue, Aug 19, 2025, 11:17 AM support@simsonn.com ",
+      "user_id": 158000954826,
+      "created_at": "2025-08-19T09:34:51Z",
+      "updated_at": "2025-08-19T09:34:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007175498,
+      "body_text": "Okay, we look forward to hearing good news from you. We recommend that you contact them first to arrange a delivery time to avoid the goods being returned.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-20T05:51:55Z",
+      "updated_at": "2025-08-20T05:51:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

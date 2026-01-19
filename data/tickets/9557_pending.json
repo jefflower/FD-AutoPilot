@@ -1,0 +1,64 @@
+{
+  "id": 9557,
+  "subject": "Issue",
+  "description_text": "Hello \r\nMy order =SSN5029 its still not deliver\r\nToday i check the tracker and surprise…..the order was in Budapest and now its back in China … Why???\r\nFrom 1 January i need to pay 50 euro extra for all the pack from China \r\nI realy don’t like this\r\nI also atach the screenshot’S\r\nVlad-Ionut Ilea\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-30T10:05:05Z",
+  "updated_at": "2025-12-31T07:10:34Z",
+  "requester_id": 158008818713,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015246298,
+      "body_text": "Hi ilea vlad,     I see that your package has cleared customs. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T10:31:14Z",
+      "updated_at": "2025-12-30T10:31:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015246301,
+      "body_text": "ID 为 9558 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T10:31:16Z",
+      "updated_at": "2025-12-30T10:31:16Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158015246302,
+      "body_text": "合并来自工单9558  \n      主题: Issue  \n      描述:  Hello My order =SSN5029 its still not deliver Today i check the tracker and surprise…..the order was in Budapest and now its back in China … Why??? From 1 January i need to pay 50 euro extra for all the pack from China I realy don’t like this I also atach the screenshot’S Vlad-Ionut Ilea",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T10:31:16Z",
+      "updated_at": "2025-12-30T10:31:16Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158015246423,
+      "body_text": "In my tracker its back to China \r\nAnd Tatabanya its also in Hungary \r\n\r\nVlad-Ionut Ilea\r\n\r\n> Pe 30 dec. 2025, la 12:31, support@simsonn.com a scris:\r\n> \r\n> ﻿\r\n> Hi ilea vlad,\r\n> \r\n> I see that your package has cleared customs. \r\n> \r\n> \r\n> \r\n> ",
+      "user_id": 158008818713,
+      "created_at": "2025-12-30T10:36:52Z",
+      "updated_at": "2025-12-30T10:36:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015299204,
+      "body_text": "Hi ilea vlad,    Your package is being updated normally, so there's no need to worry.  https://t.17track.net/en#nums=YT2535300704637408",
+      "user_id": 158001343601,
+      "created_at": "2025-12-31T07:10:31Z",
+      "updated_at": "2025-12-31T07:10:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

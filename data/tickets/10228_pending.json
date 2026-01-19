@@ -1,0 +1,44 @@
+{
+  "id": 10228,
+  "subject": "Request to reinstate discount for incomplete purchase",
+  "description_text": "Dear Simmson Team,\r\n\r\nDuring the Christmas holiday period, I attempted to purchase one of your\r\nproducts while a promotional discount was available. Unfortunately, due to\r\nan issue with my bank, I was unable to complete the payment process.\r\n\r\nI am now interested in finalizing the purchase; however, the discount is no\r\nlonger active.\r\nI am therefore writing to kindly ask whether it would be possible to apply\r\nthe same discount to this purchase, considering that the issue was beyond\r\nmy control.\r\n\r\nThank you very much for your time and availability. I look forward to your\r\nkind response.\r\n\r\nBest regards,\r\nMatteo\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-07T16:30:58Z",
+  "updated_at": "2026-01-17T03:05:27Z",
+  "requester_id": 158008969419,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017251000,
+      "body_text": "Hi Matteo Servalli,  I apologize for the delayed response.  I see your order has already been discounted. Is there anything else I can assist you with? Should you have any further questions, please feel free to contact us. We will respond promptly.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T09:03:31Z",
+      "updated_at": "2026-01-16T09:03:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017251104,
+      "body_text": "No, thank you. I noticed that your coupon was still valid even though the\r\nexpiration date had passed.\r\n\r\nIl giorno ven 16 gen 2026 alle ore 10:03 support@simsonn.com <\r\nsupport@simsonn.com> ha scritto:\r\n\r\n> Hi Matteo Servalli,\r\n>\r\n> I apologize for the delayed response.\r\n> I see your order has already been discounted. Is there anything else I can\r\n> assist you with? Should you have any further questions, please feel free to\r\n> contact us. We will respond promptly.\r\n>\r\n>\r\n>\r\n> On Thu, 8 Jan at 12:30 AM , Matteo Servalli <servalli.matteolm@gmail.com>\r\n> wrote:\r\n> Dear Simmson Team,\r\n> During the Christmas holiday period, I attempted to purchase one of your\r\n> products while a promotional discount was available. Unfortunately, due to\r\n> an issue with my bank, I was unable to complete the payment process.\r\n> I am now interested in finalizing the purchase; however, the discount is\r\n> no longer active.\r\n> I am therefore writing to kindly ask whether it would be possible to apply\r\n> the same discount to this purchase, considering that the issue was beyond\r\n> my control.\r\n> Thank you very much for your time and availability. I look forward to your\r\n> kind response.\r\n> Best regards,\r\n> Matteo\r\n>\r\n> 10228:4206036\r\n>\r\n\r\n",
+      "user_id": 158008969419,
+      "created_at": "2026-01-16T09:06:33Z",
+      "updated_at": "2026-01-16T09:06:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017311035,
+      "body_text": "Hi Matteo Servalli,  Thank you for purchasing our product. Should you have any questions in the future, please feel free to contact us. We will address them promptly.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T03:05:27Z",
+      "updated_at": "2026-01-17T03:05:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

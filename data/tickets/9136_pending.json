@@ -1,0 +1,74 @@
+{
+  "id": 9136,
+  "subject": "Order #SSN4310",
+  "description_text": "Hello! I'm still waiting for the packages. Somehow it says on the tracking page it's been delivered but I didn't receive anything yet. I hope they are holding it and deliver both packages at once. I can not even contact the deliverer because the app doesn't work on my phone and I've not found a email address on the site. Maybe you can look into it? Kind regards Dennis",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-25T08:08:48Z",
+  "updated_at": "2026-01-15T11:00:28Z",
+  "requester_id": 158008601948,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015305003,
+      "body_text": "Hi JD foto,      I apologize for not replying to you promptly. Please verify your address, as it appears to be missing a house number:  Dennis De Martin  Via Unterdorf  39040 Aica BZ  Italy  +39 393 762 2184",
+      "user_id": 158001343601,
+      "created_at": "2025-12-31T10:01:29Z",
+      "updated_at": "2025-12-31T10:01:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015368057,
+      "body_text": "Hello,\r\n\r\nthank you for your reply. My house number is 4a, the rest of the address is correct.\r\n\r\nKind regards,\r\nDennis De Martin\r\n________________________________\r\n",
+      "user_id": 158008601948,
+      "created_at": "2026-01-01T16:26:06Z",
+      "updated_at": "2026-01-01T16:26:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015624290,
+      "body_text": "Hi JD foto,    I see the first package has been delivered, while the second one was returned due to a failed delivery attempt. Please ask your neighbors to look for the first package. For the second package, we'll contact the courier to see if we can arrange a redelivery.  https://t.17track.net/en#nums=SF6047119767733,SF6047119767779  This is the local logistics for the second package.  https://www.poste.it/cerca-nel-sito/?search=5P65D70190351",
+      "user_id": 158001343601,
+      "created_at": "2026-01-04T11:05:29Z",
+      "updated_at": "2026-01-04T11:05:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016095488,
+      "body_text": "Hello,\r\n\r\nI will ask around! Do you provide me a tracking link with the second package?\r\n\r\nKind regards,\r\nDennis\r\n________________________________\r\n",
+      "user_id": 158008601948,
+      "created_at": "2026-01-07T08:36:35Z",
+      "updated_at": "2026-01-07T08:36:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016846910,
+      "body_text": "Hello,\r\n\r\nI found the first package! It got delivered to a condo,\r\nthey opened the package and left it on the stair cases.\r\nNow i don't know if something is missing, I will double\r\ncheck as soon as I return from my work trip.\r\n\r\nMeanwhile is there an update with the second delivery?\r\n\r\nKind Regards,\r\nDennis\r\n________________________________\r\n",
+      "user_id": 158008601948,
+      "created_at": "2026-01-12T08:56:11Z",
+      "updated_at": "2026-01-12T08:56:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017178562,
+      "body_text": "Hi JD foto,    We are confirming whether the second package can be redelivered.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T11:00:28Z",
+      "updated_at": "2026-01-15T11:00:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

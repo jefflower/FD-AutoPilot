@@ -1,0 +1,25 @@
+{
+  "id": 8332,
+  "subject": "My order status... SSN4637",
+  "description_text": "Hi! I ordered 5 days ago from you ( SSN4637 ), and I have no news, and it was an express shipment...\nI received the info about being cancelled, and now I have tracking ( SF3269866672416 ), but it's not active. What's going on?\n\nThanks,\n\n*Jorge De Silva - Photography & Filmmaking*\n\n\nwww.jorgedesilva.com\nwww.instagram.com/itsjorgedesilva\nwww.instagram.com/surrealsuki_\nwww.instagram.com/reezfilms\nhttps://www.youtube.com/channel/UC_wR8V-x6-jr0q6vWrq9dxg\nhttp://www.imdb.com/name/nm1843499/\njorge @capabilities/default.json <jorgedesilvaofficial @gmail.com>orgedesilva.com\n+41 (0) 78 841 05 11",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-15T18:41:29Z",
+  "updated_at": "2025-12-22T12:40:50Z",
+  "requester_id": 158007822425,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014880097,
+      "body_text": "Hi Jorge De Silva, Your tracking number is 1ZJ455510425475417, which shows that the package has been signed for.",
+      "user_id": 158007774664,
+      "created_at": "2025-12-22T12:40:45Z",
+      "updated_at": "2025-12-22T12:40:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

@@ -1,0 +1,24 @@
+{
+  "id": 5055,
+  "subject": "Order #SSN2777 - Plus X Throttle feels slow and does not return to 0",
+  "description_text": "Hello,\r\n\r\nThe throttle in my set of pedals feels slow to respond when you remove\r\npressure. It also shows as only returning to 11-14%.\r\n\r\nI have added a dead zone of 5/6 but the pedal still shows as 6% pressed\r\nwith no pressure.\r\n\r\nI have tried the weaker spring but the pedal still feels slow to return to\r\nposition and does not return to 0 even with dead zone.\r\n\r\nI can return the pedal to 0 if I pull the pedal back with my hand.\r\n\r\nThis does not seem correct to me and I'd welcome your help in resolving\r\nthis issue.\r\n\r\nThank you,\r\nAndrew\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-19T16:14:28Z",
+  "updated_at": "2025-10-20T01:39:38Z",
+  "requester_id": 158005855398,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010713864,
+      "body_text": "Hi Andrew,  Please provide your order number. Next, adjust the black preload nut on the throttle spring to apply sufficient tension so that the pedal can return smoothly to its neutral position. After that, reconnect the USB cable of the pedals, click “Offset” in the software interface to reset the initial signal of the pedal, and then perform a new calibration test. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-20T01:39:38Z",
+      "updated_at": "2025-10-20T01:39:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

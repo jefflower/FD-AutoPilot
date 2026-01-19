@@ -1,0 +1,44 @@
+{
+  "id": 10218,
+  "subject": "Delivery status",
+  "description_text": "Dear Simsonn Support Team,\r\n\r\nI am writing to inquire about the status of my shipment, tracking number\r\nSF6047197541318.\r\n\r\nI have not seen any recent updates regarding its location or estimated\r\ndelivery time, and I would appreciate it if you could provide me with the\r\ncurrent status and any relevant information.\r\n\r\nThank you for your time and assistance.\r\n\r\nBest regards,\r\nEnrico\r\n\r\nEnrico Truglio\r\n\r\nMobile. 340-6145682\r\ne-mail. enrico1090@gmail.com\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-07T12:58:17Z",
+  "updated_at": "2026-01-08T09:26:22Z",
+  "requester_id": 158008965864,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016162243,
+      "body_text": "Hi Enrico Truglio,  Please provide your order number, and I will help you check it. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T15:57:55Z",
+      "updated_at": "2026-01-07T15:57:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016162802,
+      "body_text": "Il numero ordine è\r\nSSN5194\r\n\r\nEnrico Truglio\r\n\r\nMobile. 340-6145682\r\ne-mail. enrico1090@gmail.com\r\n\r\nIl Mer 7 Gen 2026, 16:58 support@simsonn.com ",
+      "user_id": 158008965864,
+      "created_at": "2026-01-07T16:01:40Z",
+      "updated_at": "2026-01-07T16:01:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016312497,
+      "body_text": "Hi Enrico Truglio,    Sorry for the delayed response—we just returned from vacation. Here's your shipping tracking link. The haptics have been out of stock for nearly two weeks due to overwhelming demand, but we'll ship yours within the next couple of days. We've included the U-shaped bracket for you, so no need to worry.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-08T09:26:21Z",
+      "updated_at": "2026-01-08T09:26:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

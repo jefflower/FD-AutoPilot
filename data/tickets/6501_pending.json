@@ -1,0 +1,24 @@
+{
+  "id": 6501,
+  "subject": "Order #SSN3443",
+  "description_text": "Dear Simsonn-team, today i recived the package with the haptic motors. In my order menu the pedals are still not shipped. When will the pedals be shipped? I am looking forward to my new pedals. I Look forward to your response. Order number #SSN3443 Sincerely Christian -- Gesendet mit der WEB.DE Mail App \r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-21T16:55:07Z",
+  "updated_at": "2025-11-24T08:40:00Z",
+  "requester_id": 158007231924,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012802362,
+      "body_text": "Hi Christian Ruf,    We apologize for the inconvenience caused. We have already reshipped your order. Here is your tracking link:  https://t.17track.net/en#nums=SF6047072609044",
+      "user_id": 158001343601,
+      "created_at": "2025-11-24T08:40:00Z",
+      "updated_at": "2025-11-24T08:40:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

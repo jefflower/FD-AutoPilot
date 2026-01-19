@@ -1,0 +1,574 @@
+{
+  "id": 4247,
+  "subject": "Request for Refund – Pedals Not Working Properly",
+  "description_text": "Hello,\r\n\r\nI am opening a new request because I did not receive any reply to my\r\nprevious message. I want to make it clear that I am requesting a refund for\r\nmy pedals. Since the beginning, I have had constant problems: the pedals\r\ndisconnect randomly, sometimes they stop responding completely in the\r\nmiddle of a race, and they are overall unreliable.\r\n\r\nI already tried all suggested troubleshooting steps, but the problems\r\nremain. Because of this, I cannot use the pedals anymore. I therefore\r\nrequest a full refund. Please also confirm that the baseplate delivery,\r\nwhich has not arrived yet, will be cancelled so that I will not be charged\r\nfor it.\r\n\r\nBest regards,\r\nTamino Hilkenbach\r\nOrder #SSN2717\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-09-29T16:02:33Z",
+  "updated_at": "2025-10-17T07:25:46Z",
+  "requester_id": 158004553225,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008803766,
+      "body_text": "Please don't worry, when purchasing from our official website, the checkout price is your final price.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-16T08:03:36Z",
+      "updated_at": "2025-09-16T08:03:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008909838,
+      "body_text": "Are you Sure?\r\nBecause I am living in Germany and the product worth is over 270€ or 320\r\nDollars\r\n\r\nsupport@simsonn.com ",
+      "user_id": 158004553225,
+      "created_at": "2025-09-18T08:46:54Z",
+      "updated_at": "2025-09-18T08:46:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008933437,
+      "body_text": "Hi Tamino,    Yes, we will be shipping from our German warehouse. However, certain products are currently out of stock at our German warehouse; both the Pro X Ultra pedal and Plus X black baseplate are unavailable at present, but stock will be replenished next week.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-19T02:06:46Z",
+      "updated_at": "2025-09-19T02:06:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008943385,
+      "body_text": "But I can't be Sure, when I am ordering that it will be send from Germany?\r\n\r\nsupport@simsonn.com ",
+      "user_id": 158004553225,
+      "created_at": "2025-09-19T15:12:17Z",
+      "updated_at": "2025-09-19T15:12:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009100356,
+      "body_text": "Hello, we ship from our German warehouse by default, though you may specify otherwise in your order notes. Our German warehouse restocking has now been completed, so you may proceed with your order with confidence. You may use this discount code: FFLV20  https://www.simsonn.com/products/simsonn-plus-x-pedals",
+      "user_id": 158001343601,
+      "created_at": "2025-09-22T10:43:02Z",
+      "updated_at": "2025-09-22T10:43:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009189254,
+      "body_text": "Hello,\r\n\r\nme again, do I have warranty on the product?\r\n\r\nsupport@simsonn.com ",
+      "user_id": 158004553225,
+      "created_at": "2025-09-23T18:27:43Z",
+      "updated_at": "2025-09-23T18:27:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009216375,
+      "body_text": "Hi Tamino,    Of course, purchases made on the official website come with a two-year warranty.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-24T09:05:04Z",
+      "updated_at": "2025-09-24T09:05:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009279538,
+      "body_text": "Hello,\r\n\r\nI ordered a product from your website.\r\nHow long does it approximately take to be shipped out ?\r\n\r\nOrder Nr.#SSN2717\r\n\r\nKind regards\r\nTamino\r\n\r\n\r\nsupport@simsonn.com ",
+      "user_id": 158004553225,
+      "created_at": "2025-09-25T09:32:44Z",
+      "updated_at": "2025-09-25T09:32:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009280688,
+      "body_text": "Hello, we have shipped the pedals for you. Here is your tracking link:  https://t.17track.net/en#nums=00340434776544029431  However, the base plate for the pedals has not been shipped yet, as it is currently out of stock at our German warehouse.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-25T10:33:42Z",
+      "updated_at": "2025-09-25T10:33:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009280823,
+      "body_text": "Thank you!\r\n\r\nHow long does it take to be in stock again ?\r\n\r\nsupport@simsonn.com ",
+      "user_id": 158004553225,
+      "created_at": "2025-09-25T10:40:59Z",
+      "updated_at": "2025-09-25T10:40:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009295493,
+      "body_text": "Because i cant use the pedals without the baesplate\r\n\r\nTamino <taminohilk@gmail.com> schrieb am Do., 25. Sept. 2025, 12:40:\r\n\r\n> Thank you!\r\n>\r\n> How long does it take to be in stock again ?\r\n>\r\n> support@simsonn.com ",
+      "user_id": 158004553225,
+      "created_at": "2025-09-25T14:09:07Z",
+      "updated_at": "2025-09-25T14:09:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009303609,
+      "body_text": "I received my pedals today. Before using them for the first time, I\r\nperformed an update as instructed in the manual. The update does not stop,\r\nand \"simsonn flasher\" is displayed continuously, preventing me from\r\ncalibrating or performing other actions. I believe they are defective.\r\n\r\n",
+      "user_id": 158004553225,
+      "created_at": "2025-09-25T17:16:51Z",
+      "updated_at": "2025-09-25T17:16:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009309613,
+      "body_text": "It works again I changed the support port and it worked again. The only\r\nproblem is that it still shows a bit of input even when I'm not even\r\npressing the pedal. I think it's because of the dead zone\r\n\r\nTamino <taminohilk@gmail.com> schrieb am Do., 25. Sept. 2025, 19:16:\r\n\r\n> I received my pedals today. Before using them for the first time, I\r\n> performed an update as instructed in the manual. The update does not stop,\r\n> and \"simsonn flasher\" is displayed continuously, preventing me from\r\n> calibrating or performing other actions. I believe they are defective.\r\n>\r\n> ",
+      "user_id": 158004553225,
+      "created_at": "2025-09-25T19:59:59Z",
+      "updated_at": "2025-09-25T19:59:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009332954,
+      "body_text": "Hi Tamino,    We apologize, but our Pro X Ultra base plates from Germany are currently out of stock. The latest shipment did not include base plates. We will ship your order from China, and we will cover any customs duties incurred.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-26T10:57:30Z",
+      "updated_at": "2025-09-26T10:57:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009360640,
+      "body_text": "Hi Tamino,  If you are using a ProX or ProX Ultra, please release the upgrade button on the main controller, then reconnect the USB to test again. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-27T02:27:07Z",
+      "updated_at": "2025-09-27T02:27:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009378735,
+      "body_text": "Now I have the problem that I show in the video. So i can not bind the\r\npedals\r\n\r\nsupport@simsonn.com ",
+      "user_id": 158004553225,
+      "created_at": "2025-09-27T08:23:20Z",
+      "updated_at": "2025-09-27T08:23:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009411063,
+      "body_text": "Dear Simsonn Team,\r\n\r\nI am writing to request a return and full refund for the Simsonn pedals I\r\npurchased from you. Despite multiple attempts to resolve the issues, the\r\npedals continue to experience significant functional problems.\r\n\r\nThey frequently fail to respond consistently to input, sometimes freeze\r\nentirely, and the readings fluctuate unpredictably. This makes it\r\nimpossible to use them reliably. While I was able to temporarily fix some\r\nissues, new problems keep arising, and the pedals never operate in a stable\r\nor consistent manner.\r\n\r\nDue to these ongoing and persistent issues, I am unable to use the pedals\r\nas intended and therefore must return them. I kindly request a full refund\r\nof the purchase price. Please advise me on the steps to complete the return\r\nprocess.\r\n\r\nThank you very much for your assistance.\r\n\r\nSincerely,\r\nTamino Hilkenbach\r\nOrder #SSN2717\r\n\r\n\r\nsupport@simsonn.com ",
+      "user_id": 158004553225,
+      "created_at": "2025-09-27T10:33:02Z",
+      "updated_at": "2025-09-27T10:33:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009425166,
+      "body_text": "Hi Tamino,     Please use the SIMSONN Manager 2.1.1 download link. We will release an updated version very soon.  In version 2.1.1, follow these steps:    Click Revert    Then click Save    Replug the USB cable    This will disable the Rx axis input that was previously reserved for the brake. That interface has now been removed. If Rx is not disabled in the software, it may interfere with the pedal operation.  Once you follow these steps, you should be able to bind and use the pedals normally.         https://drive.google.com/file/d/1BAdSWa1bxmbPksj9Hlzuo8bl7_bM8ixr/view",
+      "user_id": 158000445778,
+      "created_at": "2025-09-27T12:35:35Z",
+      "updated_at": "2025-09-27T12:35:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009525500,
+      "body_text": "Dear Simsonn Support,\r\n\r\nthank you very much for providing me with the updated Simsonn Manager\r\n2.1.1. Following your instructions has indeed helped to fix some of the\r\nearlier problems. Unfortunately, I am still facing serious issues with the\r\npedals. During races, the pedals sometimes stop responding completely, and\r\nthey only start working again after I unplug and replug the USB cable. In\r\nother cases, they suddenly do not react for one or two seconds before\r\nfunctioning again. These kinds of connection and responsiveness problems\r\nare very critical in racing, because the pedals need to work consistently\r\nand without interruption at all times.\r\n\r\nI would appreciate your support in finding a solution to these ongoing\r\nissues, since they make it extremely difficult to rely on the pedals in\r\ncompetitive conditions.\r\n\r\nBest regards,\r\nTamino\r\n\r\n\r\n\r\n\r\nsupport@simsonn.com ",
+      "user_id": 158004553225,
+      "created_at": "2025-09-28T05:54:28Z",
+      "updated_at": "2025-09-28T05:54:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009535800,
+      "body_text": "Dear Simsonn Support,\r\n\r\nthank you for your previous assistance. Unfortunately, after further\r\ntesting, I continue to experience major issues with the pedals. They\r\nconstantly suffer from connection problems, forcing me to unplug and replug\r\nthe USB cable almost every time I use them. In addition, the pedals show\r\nnoticeable input delay, which makes precise driving nearly impossible.\r\n\r\nBecause these problems occur repeatedly and make the pedals unusable for\r\nracing, I kindly request to return the pedals and receive a refund.\r\n\r\nFurthermore, I was informed that the baseplate is still being shipped from\r\nChina, since it was not available in Germany at the time of my order. If I\r\nreturn the pedals, I would also like to cancel the shipment of the\r\nbaseplate. Please confirm that the baseplate delivery will be cancelled and\r\nthat I will not be charged for it.\r\n\r\nPlease let me know the next steps to proceed with the return and\r\ncancellation.\r\n\r\nBest regards,\r\nTamino\r\n\r\nTamino <taminohilk@gmail.com> schrieb am So., 28. Sept. 2025, 07:54:\r\n\r\n> Dear Simsonn Support,\r\n>\r\n> thank you very much for providing me with the updated Simsonn Manager\r\n> 2.1.1. Following your instructions has indeed helped to fix some of the\r\n> earlier problems. Unfortunately, I am still facing serious issues with the\r\n> pedals. During races, the pedals sometimes stop responding completely, and\r\n> they only start working again after I unplug and replug the USB cable. In\r\n> other cases, they suddenly do not react for one or two seconds before\r\n> functioning again. These kinds of connection and responsiveness problems\r\n> are very critical in racing, because the pedals need to work consistently\r\n> and without interruption at all times.\r\n>\r\n> I would appreciate your support in finding a solution to these ongoing\r\n> issues, since they make it extremely difficult to rely on the pedals in\r\n> competitive conditions.\r\n>\r\n> Best regards,\r\n> Tamino\r\n>\r\n>\r\n>\r\n>\r\n> support@simsonn.com ",
+      "user_id": 158004553225,
+      "created_at": "2025-09-28T08:12:28Z",
+      "updated_at": "2025-09-28T08:12:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009553944,
+      "body_text": "Order #SSN2717\r\n\r\nTamino <taminohilk@gmail.com> schrieb am So., 28. Sept. 2025, 10:12:\r\n\r\n> Dear Simsonn Support,\r\n>\r\n> thank you for your previous assistance. Unfortunately, after further\r\n> testing, I continue to experience major issues with the pedals. They\r\n> constantly suffer from connection problems, forcing me to unplug and replug\r\n> the USB cable almost every time I use them. In addition, the pedals show\r\n> noticeable input delay, which makes precise driving nearly impossible.\r\n>\r\n> Because these problems occur repeatedly and make the pedals unusable for\r\n> racing, I kindly request to return the pedals and receive a refund.\r\n>\r\n> Furthermore, I was informed that the baseplate is still being shipped from\r\n> China, since it was not available in Germany at the time of my order. If I\r\n> return the pedals, I would also like to cancel the shipment of the\r\n> baseplate. Please confirm that the baseplate delivery will be cancelled and\r\n> that I will not be charged for it.\r\n>\r\n> Please let me know the next steps to proceed with the return and\r\n> cancellation.\r\n>\r\n> Best regards,\r\n> Tamino\r\n>\r\n> Tamino <taminohilk@gmail.com> schrieb am So., 28. Sept. 2025, 07:54:\r\n>\r\n>> Dear Simsonn Support,\r\n>>\r\n>> thank you very much for providing me with the updated Simsonn Manager\r\n>> 2.1.1. Following your instructions has indeed helped to fix some of the\r\n>> earlier problems. Unfortunately, I am still facing serious issues with the\r\n>> pedals. During races, the pedals sometimes stop responding completely, and\r\n>> they only start working again after I unplug and replug the USB cable. In\r\n>> other cases, they suddenly do not react for one or two seconds before\r\n>> functioning again. These kinds of connection and responsiveness problems\r\n>> are very critical in racing, because the pedals need to work consistently\r\n>> and without interruption at all times.\r\n>>\r\n>> I would appreciate your support in finding a solution to these ongoing\r\n>> issues, since they make it extremely difficult to rely on the pedals in\r\n>> competitive conditions.\r\n>>\r\n>> Best regards,\r\n>> Tamino\r\n>>\r\n>>\r\n>>\r\n>>\r\n>> support@simsonn.com ",
+      "user_id": 158004553225,
+      "created_at": "2025-09-28T09:58:10Z",
+      "updated_at": "2025-09-28T09:58:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009569162,
+      "body_text": "Hi Tamino,   If you experience frequent USB disconnections, it's very likely that the USB port cannot provide sufficient voltage and current for the ProX Ultra lighting system.  Here’s what you can do:    Plug the pedals directly into a USB 3.0 port (blue port) on the back of your PC instead of using a USB hub.    Try turning off all lighting effects. If the disconnection issue disappears, it confirms that the problem is caused by insufficient USB power supply.    Please note:    The ProX Ultra LED strips require around 400-800mA in total, while a typical USB 2.0 port only supplies up to 500mA, which is insufficient.       only supplies up to 500mA, which is insufficient.  The issue is even more likely to occur if multiple devices are connected to the same USB hub.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-28T12:35:30Z",
+      "updated_at": "2025-09-28T12:35:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009569178,
+      "body_text": "ID 为 3848 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-28T12:37:33Z",
+      "updated_at": "2025-09-28T12:37:33Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158009569179,
+      "body_text": "合并来自工单3848  \n      主题: Shipment Question  \n      描述:  Hello,  I have a question. Do I have to pay tax or any other costs on top of the total price, e.g., customs duties, etc.? \n Best regards \n Tamino",
+      "user_id": 158000445778,
+      "created_at": "2025-09-28T12:37:33Z",
+      "updated_at": "2025-09-28T12:37:33Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158009569353,
+      "body_text": "Hello,\r\n\r\nthank you for your explanation about the possible USB power issue. I\r\nunderstand your point, and I already tried everything you suggested. I\r\nconnected the pedals directly to different USB 3.0 ports on the back of my\r\nPC, I tested them both with and without the lighting effects enabled, and I\r\nalso made sure that no other devices were connected to the same hub.\r\nUnfortunately, none of this solved the problem.\r\n\r\nThe truth is that I have had constant problems with these pedals since the\r\nbeginning. They keep disconnecting, sometimes they do not respond at all,\r\nand even when they do work, they often stop responding for a few seconds\r\nduring a race. I tried many times to fix these issues, but they continue to\r\nhappen, and this makes the pedals completely unreliable and unusable for\r\nracing.\r\n\r\nBecause of all these problems and the fact that nothing really fixes them,\r\nI have decided that I want to return the pedals and request a full refund.\r\nPlease also confirm that the baseplate delivery, which has not yet arrived,\r\nwill be cancelled so that I will not be charged for it.\r\n\r\nBest regards,\r\nTamino\r\n\r\n\r\nsupport@simsonn.com ",
+      "user_id": 158004553225,
+      "created_at": "2025-09-28T12:45:10Z",
+      "updated_at": "2025-09-28T12:45:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009621318,
+      "body_text": "Hello,\r\n\r\nI really want a refund now.\r\n\r\nBest regards,\r\nTamino\r\n\r\n\r\nTamino <taminohilk@gmail.com> schrieb am So., 28. Sept. 2025, 14:44:\r\n\r\n> Hello,\r\n>\r\n> thank you for your explanation about the possible USB power issue. I\r\n> understand your point, and I already tried everything you suggested. I\r\n> connected the pedals directly to different USB 3.0 ports on the back of my\r\n> PC, I tested them both with and without the lighting effects enabled, and I\r\n> also made sure that no other devices were connected to the same hub.\r\n> Unfortunately, none of this solved the problem.\r\n>\r\n> The truth is that I have had constant problems with these pedals since the\r\n> beginning. They keep disconnecting, sometimes they do not respond at all,\r\n> and even when they do work, they often stop responding for a few seconds\r\n> during a race. I tried many times to fix these issues, but they continue to\r\n> happen, and this makes the pedals completely unreliable and unusable for\r\n> racing.\r\n>\r\n> Because of all these problems and the fact that nothing really fixes them,\r\n> I have decided that I want to return the pedals and request a full refund.\r\n> Please also confirm that the baseplate delivery, which has not yet arrived,\r\n> will be cancelled so that I will not be charged for it.\r\n>\r\n> Best regards,\r\n> Tamino\r\n>\r\n>\r\n> support@simsonn.com ",
+      "user_id": 158004553225,
+      "created_at": "2025-09-29T07:48:32Z",
+      "updated_at": "2025-09-29T07:48:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009633250,
+      "body_text": "What are the steps I have to do now ?\r\n\r\nTamino <taminohilk@gmail.com> schrieb am Mo., 29. Sept. 2025, 09:48:\r\n\r\n> Hello,\r\n>\r\n> I really want a refund now.\r\n>\r\n> Best regards,\r\n> Tamino\r\n>\r\n>\r\n> Tamino <taminohilk@gmail.com> schrieb am So., 28. Sept. 2025, 14:44:\r\n>\r\n>> Hello,\r\n>>\r\n>> thank you for your explanation about the possible USB power issue. I\r\n>> understand your point, and I already tried everything you suggested. I\r\n>> connected the pedals directly to different USB 3.0 ports on the back of my\r\n>> PC, I tested them both with and without the lighting effects enabled, and I\r\n>> also made sure that no other devices were connected to the same hub.\r\n>> Unfortunately, none of this solved the problem.\r\n>>\r\n>> The truth is that I have had constant problems with these pedals since\r\n>> the beginning. They keep disconnecting, sometimes they do not respond at\r\n>> all, and even when they do work, they often stop responding for a few\r\n>> seconds during a race. I tried many times to fix these issues, but they\r\n>> continue to happen, and this makes the pedals completely unreliable and\r\n>> unusable for racing.\r\n>>\r\n>> Because of all these problems and the fact that nothing really fixes\r\n>> them, I have decided that I want to return the pedals and request a full\r\n>> refund. Please also confirm that the baseplate delivery, which has not yet\r\n>> arrived, will be cancelled so that I will not be charged for it.\r\n>>\r\n>> Best regards,\r\n>> Tamino\r\n>>\r\n>>\r\n>> support@simsonn.com ",
+      "user_id": 158004553225,
+      "created_at": "2025-09-29T14:33:32Z",
+      "updated_at": "2025-09-29T14:33:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009665912,
+      "body_text": "合并来自工单4125  \n      主题: pedals does not work  \n      描述:  \nHello, \n \n \n \n \nI just wanted to update my pedals after the first use, but then It was like stuck in update mode.Look at the picture in the email.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-30T04:17:16Z",
+      "updated_at": "2025-09-30T04:17:16Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158009665911,
+      "body_text": "ID 为 4125 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-30T04:17:16Z",
+      "updated_at": "2025-09-30T04:17:16Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158009676214,
+      "body_text": "Hello?\r\n\r\nTamino <taminohilk@gmail.com> schrieb am Mo., 29. Sept. 2025, 16:33:\r\n\r\n> What are the steps I have to do now ?\r\n>\r\n> Tamino <taminohilk@gmail.com> schrieb am Mo., 29. Sept. 2025, 09:48:\r\n>\r\n>> Hello,\r\n>>\r\n>> I really want a refund now.\r\n>>\r\n>> Best regards,\r\n>> Tamino\r\n>>\r\n>>\r\n>> Tamino <taminohilk@gmail.com> schrieb am So., 28. Sept. 2025, 14:44:\r\n>>\r\n>>> Hello,\r\n>>>\r\n>>> thank you for your explanation about the possible USB power issue. I\r\n>>> understand your point, and I already tried everything you suggested. I\r\n>>> connected the pedals directly to different USB 3.0 ports on the back of my\r\n>>> PC, I tested them both with and without the lighting effects enabled, and I\r\n>>> also made sure that no other devices were connected to the same hub.\r\n>>> Unfortunately, none of this solved the problem.\r\n>>>\r\n>>> The truth is that I have had constant problems with these pedals since\r\n>>> the beginning. They keep disconnecting, sometimes they do not respond at\r\n>>> all, and even when they do work, they often stop responding for a few\r\n>>> seconds during a race. I tried many times to fix these issues, but they\r\n>>> continue to happen, and this makes the pedals completely unreliable and\r\n>>> unusable for racing.\r\n>>>\r\n>>> Because of all these problems and the fact that nothing really fixes\r\n>>> them, I have decided that I want to return the pedals and request a full\r\n>>> refund. Please also confirm that the baseplate delivery, which has not yet\r\n>>> arrived, will be cancelled so that I will not be charged for it.\r\n>>>\r\n>>> Best regards,\r\n>>> Tamino\r\n>>>\r\n>>>\r\n>>> support@simsonn.com ",
+      "user_id": 158004553225,
+      "created_at": "2025-09-30T09:53:29Z",
+      "updated_at": "2025-09-30T09:53:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009725919,
+      "body_text": "ID 为 4269 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T09:57:20Z",
+      "updated_at": "2025-10-01T09:57:20Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158009725921,
+      "body_text": "合并来自工单4269  \n      主题: Refund Request – New Case  \n      描述:  Hello,   \n I am opening a new case because I did not receive any reply before. I want a full refund for my pedals, as they keep disconnecting and are not usable. Please also cancel the baseplate delivery, since it has not arrived yet. \n   \n Best regards, \n Tamino Hilkenbach  \n Order #SSN2717",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T09:57:20Z",
+      "updated_at": "2025-10-01T09:57:20Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158009725983,
+      "body_text": "Hi Tamino,  Regarding the disconnection issue you encountered, we will send you a replacement control box free of charge. Unless your PC's USB 3.0 port is experiencing power issues, such frequent disconnections are unlikely to occur. We have not received similar feedback from other customers, so it’s likely a hardware fault. As China’s National Holiday runs from October 1st to 8th, we will arrange the shipment as soon as we return to work. Additionally, we will provide you with an updated firmware. If the control box is not physically damaged, this new firmware may help resolve the issue in advance. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T10:01:16Z",
+      "updated_at": "2025-10-01T10:01:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009726233,
+      "body_text": "Hello,\r\n\r\nthank you for your reply. However, I do not want a replacement control box\r\nor new firmware. I want to return the pedals and get a full refund.\r\n\r\nEven if the disconnection issue could be fixed, I have had too many\r\nproblems with these pedals already. I am not satisfied with the product,\r\nand according to the 30-day return policy after purchase, I want to\r\nexercise my right to return them.\r\n\r\nPlease confirm the return process and refund, and also cancel the baseplate\r\ndelivery since it has not arrived yet.\r\n\r\nBest regards,\r\nTamino Hilkenbach\r\n\r\n\r\n\r\n\r\nsupport@simsonn.com ",
+      "user_id": 158004553225,
+      "created_at": "2025-10-01T10:18:46Z",
+      "updated_at": "2025-10-01T10:18:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009730056,
+      "body_text": "Hi Tamino,    This does not fall under our return policy, as such connection issues are usually caused by insufficient power supply from the PC’s USB port.  Moreover, the pedals are passive USB devices and cannot actively disconnect on their own.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T11:12:48Z",
+      "updated_at": "2025-10-01T11:12:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009730151,
+      "body_text": "Hello,\r\n\r\nI have read your reply, but I want to make it absolutely clear: I am\r\nexercising my legal right of withdrawal within the return period. According\r\nto EU consumer law, I can return the pedals without giving any reason.\r\n\r\nTherefore, I do not accept a replacement control box or further\r\ntroubleshooting. I want to return the pedals and receive a full refund.\r\nPlease also cancel the baseplate delivery, as it has not yet arrived and\r\nshould not be charged.\r\n\r\nKindly confirm the return procedure immediately.\r\n\r\nBest regards,\r\nTamino\r\n\r\n\r\n\r\n\r\nsupport@simsonn.com ",
+      "user_id": 158004553225,
+      "created_at": "2025-10-01T11:18:15Z",
+      "updated_at": "2025-10-01T11:18:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009730237,
+      "body_text": "Hi Tamino,    I’m not entirely sure whether your pedals were shipped from our EU warehouse or from China. However, if you choose to return them, the high international shipping costs would far exceed the value of the pedals themselves, which means they could only be scrapped locally. Our pedals are produced with very low profit margins, and our goal has always been to provide the best possible value for money.     From our experience, this issue is not necessarily caused by the pedals themselves. If there truly were frequent disconnection problems, our after-sales team would have already identified and fixed them. In fact, we have encountered many similar cases, and almost all of them were due to insufficient USB power supply from the customer’s PC. With some adjustments—such as switching to a rear USB 3.0 port or using a powered USB hub—the issue is usually resolved.     We sincerely hope to work with you to troubleshoot and solve this issue, rather than going through the return process, which would cause us significant losses and unnecessary inconvenience for you as well.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T11:25:55Z",
+      "updated_at": "2025-10-01T11:25:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009730283,
+      "body_text": "thank you for your reply. However, my pedals were shipped from your\r\nGermany/EU warehouse, not from China.\r\nTherefore, EU consumer law applies, which gives me the right to return the\r\nproduct within 14 days without giving a reason.\r\n\r\nI kindly ask you again to initiate the return process immediately and\r\nprovide me with the return label.\r\nPlease confirm this as soon as possible.\r\n\r\nBest regards,\r\nTamino\r\n\r\n\r\nsupport@simsonn.com ",
+      "user_id": 158004553225,
+      "created_at": "2025-10-01T11:28:54Z",
+      "updated_at": "2025-10-01T11:28:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009730333,
+      "body_text": "Hi Tamino,    If the pedals are returned from the EU to Germany, the shipping cost would far exceed the actual value of the pedals. Therefore, we would not choose to have them sent back but rather dispose of them locally.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T11:32:33Z",
+      "updated_at": "2025-10-01T11:32:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009731023,
+      "body_text": "But I am living in Germany. So shipping would not be a problem.\r\nsupport@simsonn.com ",
+      "user_id": 158004553225,
+      "created_at": "2025-10-01T12:05:33Z",
+      "updated_at": "2025-10-01T12:05:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009738309,
+      "body_text": "How does this work now ?\r\n\r\nTamino <taminohilk@gmail.com> schrieb am Mi., 1. Okt. 2025, 14:05:\r\n\r\n> But I am living in Germany. So shipping would not be a problem.\r\n> support@simsonn.com ",
+      "user_id": 158004553225,
+      "created_at": "2025-10-01T14:01:55Z",
+      "updated_at": "2025-10-01T14:01:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009739681,
+      "body_text": "as already mentioned, my pedals were shipped from your Germany/EU warehouse\r\nand I also live in Germany.\r\nTherefore, the return shipping is domestic within Germany/EU and will not\r\ncause high international shipping costs.\r\n\r\nI remind you again that, under EU consumer law, I have the right to return\r\nthe product within 14 days without giving a reason.\r\nPlease send me the return instructions and the return label immediately.\r\n\r\nBest regards,\r\nTamino\r\n\r\n\r\n\r\n\r\nTamino <taminohilk@gmail.com> schrieb am Mi., 1. Okt. 2025, 16:01:\r\n\r\n> How does this work now ?\r\n>\r\n> Tamino <taminohilk@gmail.com> schrieb am Mi., 1. Okt. 2025, 14:05:\r\n>\r\n>> But I am living in Germany. So shipping would not be a problem.\r\n>> support@simsonn.com ",
+      "user_id": 158004553225,
+      "created_at": "2025-10-01T14:36:44Z",
+      "updated_at": "2025-10-01T14:36:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009743285,
+      "body_text": "Hello,\r\n\r\nI am very disappointed with your support. When I had technical problems\r\nwith the pedals, I received quick replies. But now that I am clearly asking\r\nfor a refund, I have been ignored for 3 days with no answer at all. This is\r\nunacceptable.\r\n\r\nI have had nothing but problems with these pedals from the beginning, and I\r\nhave already made it clear that I want to return them and get a refund. If\r\nyou do not reply within the next 3 days, I will escalate this case through\r\nmy payment provider and take further steps. Also Shipping would not be a\r\nproblem because it was shipped from the German warehouse and I am living in\r\nGermany.\r\n\r\nI expect a clear confirmation of my refund and the cancellation of the\r\nbaseplate delivery immediately.\r\n\r\nBest regards,\r\nTamino Hilkenbach\r\nOrder #SSN2717\r\n\r\nsupport@simsonn.com ",
+      "user_id": 158004553225,
+      "created_at": "2025-10-01T15:39:22Z",
+      "updated_at": "2025-10-01T15:39:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009771575,
+      "body_text": "So do you provide me with a label ?\r\n\r\nTamino <taminohilk@gmail.com> schrieb am Mi., 1. Okt. 2025, 16:36:\r\n\r\n> as already mentioned, my pedals were shipped from your Germany/EU\r\n> warehouse and I also live in Germany.\r\n> Therefore, the return shipping is domestic within Germany/EU and will not\r\n> cause high international shipping costs.\r\n>\r\n> I remind you again that, under EU consumer law, I have the right to return\r\n> the product within 14 days without giving a reason.\r\n> Please send me the return instructions and the return label immediately.\r\n>\r\n> Best regards,\r\n> Tamino\r\n>\r\n>\r\n>\r\n>\r\n> Tamino <taminohilk@gmail.com> schrieb am Mi., 1. Okt. 2025, 16:01:\r\n>\r\n>> How does this work now ?\r\n>>\r\n>> Tamino <taminohilk@gmail.com> schrieb am Mi., 1. Okt. 2025, 14:05:\r\n>>\r\n>>> But I am living in Germany. So shipping would not be a problem.\r\n>>> support@simsonn.com ",
+      "user_id": 158004553225,
+      "created_at": "2025-10-02T07:18:59Z",
+      "updated_at": "2025-10-02T07:18:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009811387,
+      "body_text": "I need the return adress!!\r\n\r\nTamino <taminohilk@gmail.com> schrieb am Do., 2. Okt. 2025, 09:18:\r\n\r\n> So do you provide me with a label ?\r\n>\r\n> Tamino <taminohilk@gmail.com> schrieb am Mi., 1. Okt. 2025, 16:36:\r\n>\r\n>> as already mentioned, my pedals were shipped from your Germany/EU\r\n>> warehouse and I also live in Germany.\r\n>> Therefore, the return shipping is domestic within Germany/EU and will not\r\n>> cause high international shipping costs.\r\n>>\r\n>> I remind you again that, under EU consumer law, I have the right to\r\n>> return the product within 14 days without giving a reason.\r\n>> Please send me the return instructions and the return label immediately.\r\n>>\r\n>> Best regards,\r\n>> Tamino\r\n>>\r\n>>\r\n>>\r\n>>\r\n>> Tamino <taminohilk@gmail.com> schrieb am Mi., 1. Okt. 2025, 16:01:\r\n>>\r\n>>> How does this work now ?\r\n>>>\r\n>>> Tamino <taminohilk@gmail.com> schrieb am Mi., 1. Okt. 2025, 14:05:\r\n>>>\r\n>>>> But I am living in Germany. So shipping would not be a problem.\r\n>>>> support@simsonn.com ",
+      "user_id": 158004553225,
+      "created_at": "2025-10-02T19:10:00Z",
+      "updated_at": "2025-10-02T19:10:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010126335,
+      "body_text": "Hi Tamino,    We apologize for the delayed response; we've just concluded our 8-day holiday. If you're unwilling to coordinate with our support team for adjustments, we can process your return request. Additionally, we've noted you initiated a chargeback. Please cancel this first, and once canceled, we'll contact our German warehouse to create a return label for you. Thank you for your understanding.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-09T03:58:33Z",
+      "updated_at": "2025-10-09T03:58:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010126937,
+      "body_text": "Hi,\r\n\r\nthank you for your reply. I’m glad to hear that you can process my return\r\nrequest.\r\nI will cancel the chargeback as soon as I have the confirmation that the\r\nreturn process has officially started and that I will receive a return\r\nlabel from your German warehouse.\r\n\r\nOnce I have that confirmation, I will proceed immediately.\r\n\r\nBest regards,\r\nTamino\r\n\r\n\r\n\r\n\r\n\r\nsupport@simsonn.com ",
+      "user_id": 158004553225,
+      "created_at": "2025-10-09T05:07:18Z",
+      "updated_at": "2025-10-09T05:07:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010127044,
+      "body_text": "Or the shipping adress for my safety\r\n\r\nTamino <taminohilk@gmail.com> schrieb am Do., 9. Okt. 2025, 07:06:\r\n\r\n> Hi,\r\n>\r\n> thank you for your reply. I’m glad to hear that you can process my return\r\n> request.\r\n> I will cancel the chargeback as soon as I have the confirmation that the\r\n> return process has officially started and that I will receive a return\r\n> label from your German warehouse.\r\n>\r\n> Once I have that confirmation, I will proceed immediately.\r\n>\r\n> Best regards,\r\n> Tamino\r\n>\r\n>\r\n>\r\n>\r\n>\r\n> support@simsonn.com ",
+      "user_id": 158004553225,
+      "created_at": "2025-10-09T05:18:41Z",
+      "updated_at": "2025-10-09T05:18:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010135235,
+      "body_text": "Does this work, this way ?\r\n\r\nTamino <taminohilk@gmail.com> schrieb am Do., 9. Okt. 2025, 07:10:\r\n\r\n> Or the shipping adress for my safety\r\n>\r\n> Tamino <taminohilk@gmail.com> schrieb am Do., 9. Okt. 2025, 07:06:\r\n>\r\n>> Hi,\r\n>>\r\n>> thank you for your reply. I’m glad to hear that you can process my return\r\n>> request.\r\n>> I will cancel the chargeback as soon as I have the confirmation that the\r\n>> return process has officially started and that I will receive a return\r\n>> label from your German warehouse.\r\n>>\r\n>> Once I have that confirmation, I will proceed immediately.\r\n>>\r\n>> Best regards,\r\n>> Tamino\r\n>>\r\n>>\r\n>>\r\n>>\r\n>>\r\n>> support@simsonn.com ",
+      "user_id": 158004553225,
+      "created_at": "2025-10-09T09:19:45Z",
+      "updated_at": "2025-10-09T09:19:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010197565,
+      "body_text": "The problem is that I can't be sure you'll respond when I close the case\r\nbecause you're not even responding to me now.\r\n\r\nTamino <taminohilk@gmail.com> schrieb am Do., 9. Okt. 2025, 11:19:\r\n\r\n> Does this work, this way ?\r\n>\r\n> Tamino <taminohilk@gmail.com> schrieb am Do., 9. Okt. 2025, 07:10:\r\n>\r\n>> Or the shipping adress for my safety\r\n>>\r\n>> Tamino <taminohilk@gmail.com> schrieb am Do., 9. Okt. 2025, 07:06:\r\n>>\r\n>>> Hi,\r\n>>>\r\n>>> thank you for your reply. I’m glad to hear that you can process my\r\n>>> return request.\r\n>>> I will cancel the chargeback as soon as I have the confirmation that the\r\n>>> return process has officially started and that I will receive a return\r\n>>> label from your German warehouse.\r\n>>>\r\n>>> Once I have that confirmation, I will proceed immediately.\r\n>>>\r\n>>> Best regards,\r\n>>> Tamino\r\n>>>\r\n>>>\r\n>>>\r\n>>>\r\n>>>\r\n>>> support@simsonn.com ",
+      "user_id": 158004553225,
+      "created_at": "2025-10-10T07:24:59Z",
+      "updated_at": "2025-10-10T07:24:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010255766,
+      "body_text": "对于由此造成的不便，我们深表歉意。由于邮件堆积，我们未能及时回复您。我们现已创建您的退货订单，但由于我们德国仓库周末关闭，我们将于下周一提供您的退货标签。请您在此期间取消争议。谢谢。",
+      "user_id": 158001343601,
+      "created_at": "2025-10-11T08:10:58Z",
+      "updated_at": "2025-10-11T08:10:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010255775,
+      "body_text": "Hi Tamino,    We sincerely apologise for the inconvenience caused. Due to an accumulation of emails, we were unable to respond to you promptly. We have now created your return order, but as our German warehouse is closed over the weekend, we will be able to provide your return label next Monday. We kindly request that you cancel the dispute in the meantime. Thank you.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-11T08:11:58Z",
+      "updated_at": "2025-10-11T08:11:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010335724,
+      "body_text": "Hello, this is your DHL return label.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-13T03:35:27Z",
+      "updated_at": "2025-10-13T03:35:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010428383,
+      "body_text": "The return shipment has arrived.\r\n\r\nsupport@simsonn.com ",
+      "user_id": 158004553225,
+      "created_at": "2025-10-14T14:53:22Z",
+      "updated_at": "2025-10-14T14:53:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010556930,
+      "body_text": "Is the case closed now ? Because I have got the money from Paypal.\r\n\r\nTamino <taminohilk@gmail.com> schrieb am Di., 14. Okt. 2025, 16:52:\r\n\r\n> The return shipment has arrived.\r\n>\r\n> support@simsonn.com ",
+      "user_id": 158004553225,
+      "created_at": "2025-10-16T10:10:30Z",
+      "updated_at": "2025-10-16T10:10:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010604471,
+      "body_text": "And again I will not get a reply\r\n\r\nTamino <taminohilk@gmail.com> schrieb am Do., 16. Okt. 2025, 12:10:\r\n\r\n> Is the case closed now ? Because I have got the money from Paypal.\r\n>\r\n> Tamino <taminohilk@gmail.com> schrieb am Di., 14. Okt. 2025, 16:52:\r\n>\r\n>> The return shipment has arrived.\r\n>>\r\n>> support@simsonn.com ",
+      "user_id": 158004553225,
+      "created_at": "2025-10-17T07:25:46Z",
+      "updated_at": "2025-10-17T07:25:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

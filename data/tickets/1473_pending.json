@@ -1,0 +1,44 @@
+{
+  "id": 1473,
+  "subject": "order #SSN1856",
+  "description_text": "My parcel appears to be stuck in Transit, It hasn't moved in 2 weeks.        https://www.yuntrack.com/parcelTracking?id=YT2517800704493605",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-07-12T07:32:02Z",
+  "updated_at": "2025-07-15T10:34:14Z",
+  "requester_id": 158001981537,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004643191,
+      "body_text": "Hi John Gordon,  We will promptly contact YunExpress to check if there’s any issue with the shipment. Once we receive a response, we’ll provide you with a solution as soon as possible. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-12T08:13:22Z",
+      "updated_at": "2025-07-12T08:13:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004773646,
+      "body_text": "Hey,\r\n\r\nDid you hear back from the courier? Still hasn't moved from the 30th of june.\r\n\r\n\r\n________________________________\r\n",
+      "user_id": 158001981537,
+      "created_at": "2025-07-13T23:48:49Z",
+      "updated_at": "2025-07-13T23:48:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004856705,
+      "body_text": "Hi John Gordon,     Your parcel was returned to the logistics provider due to charged, we have asked the logistics provider to change the order and resend it, this is your new logistics order number. YT2519600706227227",
+      "user_id": 158001343601,
+      "created_at": "2025-07-15T10:34:13Z",
+      "updated_at": "2025-07-15T10:34:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

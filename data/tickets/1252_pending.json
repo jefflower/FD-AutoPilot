@@ -1,0 +1,24 @@
+{
+  "id": 1252,
+  "subject": "SIMSONN PC USB 7+R H Simulator Gear Shifter firmware issue",
+  "description_text": "Hello I have the following product from yourselves  (  SIMSONN PC USB 7+R H Simulator Gear Shifter )\r\nBut I think the firmware has messed up, its only registering the following gears ( in game and in control panel )  - 1/3/4 and nothing else.\r\n\r\nI have tried using FreeJoy Configurator<https://github.com/FreeJoy-Team/FreeJoyConfiguratorQt> but had no luck fixing the issue.\r\nBy any chance you have a pre made firmware file I could use to reflash it.\r\n\r\nAny help would be appreciated\r\nKind regards\r\nMatt\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-06T00:05:59Z",
+  "updated_at": "2025-07-07T03:49:39Z",
+  "requester_id": 158001903232,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004453002,
+      "body_text": "Hi Matt Phyall, Please send a screenshot of the FreeJoy device connection interface. I can provide a recovery file to help restore it — no worries, we’ll help you fix it. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T03:49:39Z",
+      "updated_at": "2025-07-07T03:49:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

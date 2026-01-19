@@ -1,0 +1,244 @@
+{
+  "id": 1448,
+  "subject": "throttle/break pedals always registering input",
+  "description_text": "Hi! I recently had remote support for you guys which was great so thank\r\nyou. The problem was not fixed tho. Both throttle/break pedals keep\r\nregistering input 4-5%.\r\nAll software is up to date. Pedal look fine.\r\nI just bought upgrades for these pedals (not installed yet) and need them\r\nto work properly.\r\nI need help.\r\n\r\nThanks.\r\n\r\n\r\nRaymon Krause\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-07-11T12:15:04Z",
+  "updated_at": "2025-07-15T03:49:37Z",
+  "requester_id": 158001874204,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004374275,
+      "body_text": "Hi Raymon Krause,    In SIMSONN Manager 2.0.8, go to the update section and click on “Manual Firmware Update.” Then navigate to the pedals-firmware folder, open the pedals subfolder, and select the plus.sfu file to update the firmware.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T14:17:45Z",
+      "updated_at": "2025-07-02T14:17:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004374277,
+      "body_text": "Hi Raymon Krause,  https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T14:18:03Z",
+      "updated_at": "2025-07-02T14:18:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004423384,
+      "body_text": "Thanks for your message. It got way worse now! Software says pedals are\r\ndisconnected. When its not. Tried different usb ports and uninstalled and\r\nreinstalled software to no success.\r\n\r\n\r\nRaymon Krause\r\n\r\n\r\nOn Thu, 3 Jul 2025 at 12:18 am, service@simsonn.com ",
+      "user_id": 158001874204,
+      "created_at": "2025-07-03T11:08:45Z",
+      "updated_at": "2025-07-03T11:08:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004423386,
+      "body_text": "Dr Raymon Krause\r\n\r\n\r\nOn Thu, 3 Jul 2025 at 9:08 pm, Raymon Krause <krause.raymon@gmail.com>\r\nwrote:\r\n\r\n> Thanks for your message. It got way worse now! Software says pedals are\r\n> disconnected. When its not. Tried different usb ports and uninstalled and\r\n> reinstalled software to no success.\r\n>\r\n>\r\n> Raymon Krause\r\n>\r\n>\r\n> On Thu, 3 Jul 2025 at 12:18 am, service@simsonn.com ",
+      "user_id": 158001874204,
+      "created_at": "2025-07-03T11:09:40Z",
+      "updated_at": "2025-07-03T11:09:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004442904,
+      "body_text": "Do you think I need a new cord or a new box that connects it all?\r\n\r\nThanks\r\n\r\nDr Raymon Krause\r\n\r\n\r\nOn Thu, 3 Jul 2025 at 9:09 pm, Raymon Krause <krause.raymon@gmail.com>\r\nwrote:\r\n\r\n>\r\n>\r\n> Dr Raymon Krause\r\n>\r\n>\r\n> On Thu, 3 Jul 2025 at 9:08 pm, Raymon Krause <krause.raymon@gmail.com>\r\n> wrote:\r\n>\r\n>> Thanks for your message. It got way worse now! Software says pedals are\r\n>> disconnected. When its not. Tried different usb ports and uninstalled and\r\n>> reinstalled software to no success.\r\n>>\r\n>>\r\n>> Raymon Krause\r\n>>\r\n>>\r\n>> On Thu, 3 Jul 2025 at 12:18 am, service@simsonn.com ",
+      "user_id": 158001874204,
+      "created_at": "2025-07-03T23:02:09Z",
+      "updated_at": "2025-07-03T23:02:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445037,
+      "body_text": "Hi Raymon Krause,  Please use a toothpick or screwdriver to press and hold the small button inside the hole on the side of the control box, then reconnect the USB cable. The software should enter recovery mode. Next, go to Settings → Update → Manual Firmware Update → Pedals → Firmware → Pedals → plusX.sfu and try updating the firmware manually. If the issue persists, we recommend installing Todesk (no registration required). Simply provide your ID and temporary access code, and we can schedule a time to assist you remotely. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-04T13:08:00Z",
+      "updated_at": "2025-07-04T13:08:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445311,
+      "body_text": "Hi Raymon Krause, Is your pedal the ProX model? If so, you should use the prox.sfu file for the firmware update. Please press and hold the update button on the control box, then reconnect the USB cable — this will put the device into recovery mode. To ensure the correct update procedure, feel free to send photos of your pedal and controller. I’ll help you verify the version and guide you through the update. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-04T14:08:17Z",
+      "updated_at": "2025-07-04T14:08:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004446987,
+      "body_text": "Hello! Thanks you for your help and great support. It does not work though.\r\nI tried several times. I cannot even use the Simsonn manager interface or\r\nclick the manual download button.\r\n\r\nDetails for todesk\r\nToDesk:\r\ndevice ID:396 012 356\r\nTemporary password: vsq263ib\r\n\r\nLet me know when you team can do it, I believe I need to leave the PC on...\r\nsleeping is okay?\r\n\r\nMany Thanks\r\n\r\nOn Fri, Jul 4, 2025 at 11:08 PM support@simsonn.com ",
+      "user_id": 158001874204,
+      "created_at": "2025-07-04T22:46:41Z",
+      "updated_at": "2025-07-04T22:46:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447077,
+      "body_text": "Hi Raymon Krause,  I was about to start the remote session, but it seems your computer has been shut down. Please let me know your location (country and city) and a convenient time for you, so I can arrange the remote support accordingly. Based on the issue, I suspect the USB driver may have been altered or corrupted. You might also want to test the device on a different computer to see if it works properly there. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-05T00:05:30Z",
+      "updated_at": "2025-07-05T00:05:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447082,
+      "body_text": "Hi! I will be home in 30mins. I do not have another pc to test, only a mac.\r\nI am in Australia Brisbane\r\n\r\nDr Raymon Krause\r\n\r\n\r\nOn Sat, 5 Jul 2025 at 10:05 am, support@simsonn.com ",
+      "user_id": 158001874204,
+      "created_at": "2025-07-05T00:10:35Z",
+      "updated_at": "2025-07-05T00:10:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447105,
+      "body_text": "ToDesk:\r\ndevice ID:396 012 356\r\nTemporary password: ec725fd0\r\n\r\n\r\nComputer is on! Thanks\r\n\r\nOn Sat, Jul 5, 2025 at 10:10 AM Raymon Krause <krause.raymon@gmail.com>\r\nwrote:\r\n\r\n> Hi! I will be home in 30mins. I do not have another pc to test, only a\r\n> mac.\r\n> I am in Australia Brisbane\r\n>\r\n> Dr Raymon Krause\r\n>\r\n>\r\n> On Sat, 5 Jul 2025 at 10:05 am, support@simsonn.com ",
+      "user_id": 158001874204,
+      "created_at": "2025-07-05T00:22:26Z",
+      "updated_at": "2025-07-05T00:22:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447175,
+      "body_text": "Sorry password changed again\r\n\r\nToDesk:\r\ndevice ID:396 012 356\r\nTemporary password:5ii14e79\r\n\r\nOn Sat, Jul 5, 2025 at 10:05 AM support@simsonn.com ",
+      "user_id": 158001874204,
+      "created_at": "2025-07-05T01:23:15Z",
+      "updated_at": "2025-07-05T01:23:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447185,
+      "body_text": "Hi Raymon Krause,  My computer is locked. Could you please help me unlock it? ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-05T01:49:30Z",
+      "updated_at": "2025-07-05T01:49:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447186,
+      "body_text": "Done\r\n\r\nDr Raymon Krause\r\n\r\n\r\nOn Sat, 5 Jul 2025 at 11:49 am, support@simsonn.com ",
+      "user_id": 158001874204,
+      "created_at": "2025-07-05T01:50:35Z",
+      "updated_at": "2025-07-05T01:50:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004639330,
+      "body_text": "Hi，Raymon Krause，  We can schedule a time for a remote session. When will you be available in a few hours? I’ll assist you in resolving the issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-12T06:57:27Z",
+      "updated_at": "2025-07-12T06:57:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004639332,
+      "body_text": "ID 号为 1113 和 1212 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-12T06:57:46Z",
+      "updated_at": "2025-07-12T06:57:46Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004639333,
+      "body_text": "合并来自工单1113  \n      主题: Pedals malfunction?  \n      描述:  Hi! I am Raymon, I bought Simsonn pedals about 2 months ago - I am a casual sim driver, so do not even use them too much. Still, recently both the Throttle and brake pedals seem to be always active 5% to 20% even when not used at all. I tried everything from my end and could not fix it. This is affecting driving. I need support to fix this.  I don't have a clutch and have the latest software that was re-installed.   \n Many Thanks \n   \n Raymon",
+      "user_id": 158000445778,
+      "created_at": "2025-07-12T06:57:46Z",
+      "updated_at": "2025-07-12T06:57:46Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004639335,
+      "body_text": "合并来自工单1212  \n      主题: Fwd: Pedals malfunction?  \n      描述:   \n   \n Hello! I recently, 2 months ago, bought  Simsonn Plus X Pedals. It worked fine till 2 days ago. Software now says pedals are disconnected. When its not. Tried different usb ports and uninstalled and reinstalled software to no success.  \n See image below  Do you think I need a new pedal box that connects it all?   Thanks  \n   Raymon Krause",
+      "user_id": 158000445778,
+      "created_at": "2025-07-12T06:57:47Z",
+      "updated_at": "2025-07-12T06:57:47Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004641703,
+      "body_text": "你好，Raymon Krause，  请按下PlusX 控制盒上的升级按钮，然后重新连接 USB。打开SIMSONN Manager 2.0.8，控制盒将进入恢复模式。然后前往“设置”→“更新”→“手动固件更新”→“踏板”，选择我发送给您的新固件文件完成更新。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-12T07:43:54Z",
+      "updated_at": "2025-07-12T07:43:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004641784,
+      "body_text": "Hi Raymon Krause,  Please press the upgrade button on the PlusX control box, then reconnect the USB. Open SIMSONN Manager 2.0.8, and the control box will enter recovery mode. Then go to Settings → Update → Manual Firmware Update → Pedals, and select the new firmware file I sent you to complete the update. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-12T07:45:05Z",
+      "updated_at": "2025-07-12T07:45:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004838490,
+      "body_text": "Hi! I am free today! For remote session! All of these steps mentioned on\r\nthe last email have been done already by one of yours remotely. No\r\nimprovement. Also they have been calibrated many times. We need to come up\r\nwith a different solution.\r\n\r\nDr Raymon Krause\r\n\r\n\r\nOn Sat, 12 Jul 2025 at 5:45 pm, support@simsonn.com ",
+      "user_id": 158001874204,
+      "created_at": "2025-07-15T02:31:12Z",
+      "updated_at": "2025-07-15T02:31:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004838673,
+      "body_text": "Hi Raymon Krause,  Do you have time now? I can assist you remotely to check and resolve the issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-15T02:49:11Z",
+      "updated_at": "2025-07-15T02:49:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004842450,
+      "body_text": "sure\r\n\r\nToDesk:\r\ndevice ID:396 012 356\r\nTemporary password: bew34kif\r\n\r\nThanks\r\n\r\n\r\nOn Tue, Jul 15, 2025 at 12:49 PM support@simsonn.com ",
+      "user_id": 158001874204,
+      "created_at": "2025-07-15T03:16:43Z",
+      "updated_at": "2025-07-15T03:16:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

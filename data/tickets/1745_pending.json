@@ -1,0 +1,124 @@
+{
+  "id": 1745,
+  "subject": "vam pro - LMU",
+  "description_text": "I bought a VAM pro to be able to play LMU. In the tab (as in the\r\nscreenshot), you can see what works and what doesn't... As you probably\r\nknow, nothing works in LMU... I don't want to use SimHub...\r\nWHAT DO I HAVE TO DO TO MAKE THE HAPTICS WORKS IN LMU WITHOUT THIRD-PARTY\r\nPROGRAMS?\r\n\r\n[image: image.png]\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-07-21T15:14:16Z",
+  "updated_at": "2025-07-31T05:45:06Z",
+  "requester_id": 158001904332,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005290597,
+      "body_text": "Hi，konrad.mazurkiewicz1@gmail.com，  Please update the software to version 2.0.9 in the settings first. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-22T01:55:48Z",
+      "updated_at": "2025-07-22T01:55:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005290673,
+      "body_text": "Hi konrad. mazurkiewicz1@gmail. com,",
+      "user_id": 158000445778,
+      "created_at": "2025-07-22T02:04:49Z",
+      "updated_at": "2025-07-22T02:04:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005292517,
+      "body_text": "Hi\r\nI did update,green sign in left corner says Lmu telemetry is working, but\r\nvams are not working in game :(\r\nPlz help\r\n\r\nW dniu wt., 22 lip 2025 o 04:05 service@simsonn.com ",
+      "user_id": 158001904332,
+      "created_at": "2025-07-22T06:23:56Z",
+      "updated_at": "2025-07-22T06:23:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005311741,
+      "body_text": "[image: image.png]\r\n\r\nzero haptics in the game...\r\n\r\nwt., 22 lip 2025 o 08:23 Konrad M <konrad.mazurkiewicz1@gmail.com>\r\nnapisał(a):\r\n\r\n> Hi\r\n> I did update,green sign in left corner says Lmu telemetry is working, but\r\n> vams are not working in game :(\r\n> Plz help\r\n>\r\n> W dniu wt., 22 lip 2025 o 04:05 service@simsonn.com ",
+      "user_id": 158001904332,
+      "created_at": "2025-07-22T10:20:13Z",
+      "updated_at": "2025-07-22T10:20:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005315816,
+      "body_text": "RPM - is working\r\nSPEED - is working\r\nABS - kinda, its activating abow 15% break, its not abs signal is breaking\r\nsignal...\r\n\r\nrest of telemetry is not working...\r\n\r\nwt., 22 lip 2025 o 12:19 Konrad M <konrad.mazurkiewicz1@gmail.com>\r\nnapisał(a):\r\n\r\n> [image: image.png]\r\n>\r\n> zero haptics in the game...\r\n>\r\n> wt., 22 lip 2025 o 08:23 Konrad M <konrad.mazurkiewicz1@gmail.com>\r\n> napisał(a):\r\n>\r\n>> Hi\r\n>> I did update,green sign in left corner says Lmu telemetry is working, but\r\n>> vams are not working in game :(\r\n>> Plz help\r\n>>\r\n>> W dniu wt., 22 lip 2025 o 04:05 service@simsonn.com ",
+      "user_id": 158001904332,
+      "created_at": "2025-07-22T10:40:57Z",
+      "updated_at": "2025-07-22T10:40:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005316850,
+      "body_text": "at least simhub works after the update...\r\n\r\nwt., 22 lip 2025 o 12:40 Konrad M <konrad.mazurkiewicz1@gmail.com>\r\nnapisał(a):\r\n\r\n> RPM - is working\r\n> SPEED - is working\r\n> ABS - kinda, its activating abow 15% break, its not abs signal is breaking\r\n> signal...\r\n>\r\n> rest of telemetry is not working...\r\n>\r\n> wt., 22 lip 2025 o 12:19 Konrad M <konrad.mazurkiewicz1@gmail.com>\r\n> napisał(a):\r\n>\r\n>> [image: image.png]\r\n>>\r\n>> zero haptics in the game...\r\n>>\r\n>> wt., 22 lip 2025 o 08:23 Konrad M <konrad.mazurkiewicz1@gmail.com>\r\n>> napisał(a):\r\n>>\r\n>>> Hi\r\n>>> I did update,green sign in left corner says Lmu telemetry is working,\r\n>>> but vams are not working in game :(\r\n>>> Plz help\r\n>>>\r\n>>> W dniu wt., 22 lip 2025 o 04:05 service@simsonn.com ",
+      "user_id": 158001904332,
+      "created_at": "2025-07-22T12:02:38Z",
+      "updated_at": "2025-07-22T12:02:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005427982,
+      "body_text": "Hi konrad. mazurkiewicz1@gmail. com,    I’ve already informed our software engineers to work on the fix.  Could you please specify which telemetry feature you need? Is it one that SimHub already supports but we currently don’t? We will prioritize adding support for such features.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-23T11:02:27Z",
+      "updated_at": "2025-07-23T11:02:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005711386,
+      "body_text": "Every option I choose in simhub on the gas pedal on the engine causes the\r\nbrake to be automatically activated, wtf!? how can I deal with it?\r\n\r\n\r\nW dniu śr., 23 lip 2025 o 13:02 service@simsonn.com ",
+      "user_id": 158001904332,
+      "created_at": "2025-07-28T08:03:59Z",
+      "updated_at": "2025-07-28T08:03:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005780741,
+      "body_text": "Hi konrad. mazurkiewicz1@gmail. com,       Please take a photo of your brake pedal installation. In most cases, the bracket or other parts may be touching the brake sensor, causing it to shift significantly when vibrations occur and resulting in signal fluctuations. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-29T15:43:33Z",
+      "updated_at": "2025-07-29T15:43:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005780862,
+      "body_text": "Yes of course and the vibrations from the engine mounted on the brake pedal\r\nhave no effect on it at all, only the vibrations from the gas pedal are\r\ntransferred,\r\nno kidding...\r\n\r\n\r\n\r\n\r\nW dniu wt., 29 lip 2025 o 17:44 service@simsonn.com ",
+      "user_id": 158001904332,
+      "created_at": "2025-07-29T15:48:55Z",
+      "updated_at": "2025-07-29T15:48:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005869563,
+      "body_text": "Hi konrad. mazurkiewicz1@gmail. com,     I think the throttle’s preload force is too light, which may cause vibration to interfere with the signal. You can try increasing the throttle’s preload force. Also, make sure the throttle sensor wire does not touch the bottom metal sensor, as that could transmit vibrations to the silver metal sensor. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-31T05:45:05Z",
+      "updated_at": "2025-07-31T05:45:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 5378,
+  "subject": "Simsonn Plus X Racing pedals",
+  "description_text": "Good evening,\r\n\r\nI have recently purchased a set of the plus x racing pedals and the brake\r\npedal appears to not be working fully as intended,  if apply a little\r\namount of pressure it maxes out but as soon as i exert any further pressure\r\nit starts jumping from 0-100, i have recalibrated the pedal numerous times\r\nand it appears to make no difference, please could you advise on what we\r\ncan do to rectify this issue\r\n\r\nMany thanks\r\nFreddie Marlow\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-28T22:38:48Z",
+  "updated_at": "2025-10-29T02:53:11Z",
+  "requester_id": 158006183451,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011257372,
+      "body_text": "Hi Freddie Marlow,    Please update SIMSONN Manager to v2.1.2 in the settings, and then perform the firmware update. After the update, the firmware versions should be: CPU1: 2.0.5  CPU2: 2.0.4  Next, click “Offset Zero” to clear the white signal offset of the pedals, and then redo the pedal calibration and testing.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-29T02:53:11Z",
+      "updated_at": "2025-10-29T02:53:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

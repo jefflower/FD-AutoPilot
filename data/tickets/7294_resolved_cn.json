@@ -1,0 +1,35 @@
+{
+  "id": 7294,
+  "subject": "Simsonn Pro 踏板与 Plus X 控制盒在游戏中无法识别",
+  "description_text": "我的踏板在游戏中无法识别为绑定选项，踩下踏板时也没有响应。\n为了与我的 Simsonn Pro 踏板配合使用，我购买了 Plus X 控制盒、电源和 2 个 VAM Pro 线性电机，并于 2025 年 11 月 22 日收到。下载并安装 Simsonn Manager 2.1.2 后，我的踏板和 VAM Pro 电机在 Simsonn Manager 中校准并正常工作，它们也显示在 Windows USB 游戏控制器面板中，但没有测试选项。但当我尝试在 Assetto Corsa 和 Assetto Corsa Competizione 中分配踏板时，它们没有显示，踩下踏板也没有响应。\n感谢您在此事上的协助。\n此致，\nJames",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-02T23:40:09Z",
+  "updated_at": "2025-12-08T09:36:46Z",
+  "requester_id": 158007505605,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013803311,
+      "body_text": "您好，James jones，AC 和 ACC 都是流行的赛车游戏，支持绑定您的踏板。在 SIMSONN Manager 中测试踏板时，所有三个踏板的蓝色进度条是否显示完整的 0%–100% 行程范围？",
+      "user_id": 158000445778,
+      "created_at": "2025-12-06T07:49:38Z",
+      "updated_at": "2025-12-06T07:49:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014085499,
+      "body_text": "我断开了控制器上的踏板和电源适配器。重新连接所有设备后，踏板在游戏中被识别并正常工作。",
+      "user_id": 158007505605,
+      "created_at": "2025-12-07T06:24:38Z",
+      "updated_at": "2025-12-07T06:24:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

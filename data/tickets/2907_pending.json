@@ -1,0 +1,24 @@
+{
+  "id": 2907,
+  "subject": "Brake Pedals",
+  "description_text": "Hi\r\nI purchased \"Simsonn Plus Pedal Upgrade Racing Simulator Professional\r\nPedals\" from the official website and i'm using it to simulate road driving\r\nnot racing, so the brake pedals are hard to push and have short travel in\r\nconstant to real road cars.\r\nSo, is the soft White elastomer with 30HA available? or do you have another\r\nidea?\r\n\r\nAlso there is noise \"vibration\"  interference in my brake pedal even if I\r\ngrounding it and turn off my steering wheel base.\r\n\r\n\r\nthe box type that i have:\r\n[image: Screenshot 2025-08-20 132726.png]\r\n\r\n\r\n\r\nLooking forward to hearing from you\r\n\r\nThanks\r\n\r\nMohamed Seyam\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-20T10:32:24Z",
+  "updated_at": "2025-08-20T13:37:18Z",
+  "requester_id": 158003372663,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007214575,
+      "body_text": "Hi M. Seyam,  You may try removing the 10mm spacer inside the black brake spring, which will restore the full travel of the spring. In addition, we recommend enabling the offset function to recalibrate the pedal, and then set the deadzone to around 5%. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-20T13:37:18Z",
+      "updated_at": "2025-08-20T13:37:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

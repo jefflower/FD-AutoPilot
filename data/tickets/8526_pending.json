@@ -1,0 +1,94 @@
+{
+  "id": 8526,
+  "subject": "commande n°SSN3956",
+  "description_text": "Bonjour je vous contacte car j' ai recu mon pédalier simsonn plus x mais\r\ncelui a un souci. La pedale d accelerateur ne réagit pas reste a 0% mais en\r\nactionnant et la pedale d embrayage reste tout le temps a 38% même sans\r\nactionner la pedale. que faire le renvoyer ou si vous envoyez des capteurs\r\npour les changer. En attente d' une réponse de votre part .Cordialement\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-17T16:33:07Z",
+  "updated_at": "2026-01-04T11:32:22Z",
+  "requester_id": 158007849377,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014827615,
+      "body_text": "Hi Patrice BAROS,    Could you please take a photo of the Simsonn Manager interface for me? In it, you can adjust the offset to set the white signal percentage to 0%, particularly after modifying the mechanical structure and spring damping. After making these adjustments, please recalibrate.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-21T04:05:21Z",
+      "updated_at": "2025-12-21T04:05:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014893482,
+      "body_text": "[image: téléchargement.jpg][image: téléchargement (1).jpg]\r\n\r\nBonjour je vous envoie les photos demandées premiere photo  apres avoir\r\ncalibrer le pédalier sans actionner les pédales et la deuxieme photo pédale\r\nd embrayage et d accélérateur actionner. Du coup le capteur d' embrayage ne\r\nfonctionne pas correctement et le capteur  d'accélérateur ne réagit pas du\r\ntout.Veuillez faire le nécessaire car j ai payé 220 euros pour un pédalier\r\nqui ne fonctionne pas.Cordialement\r\n\r\nLe dim. 21 déc. 2025 à 05:05, service@simsonn.com ",
+      "user_id": 158007849377,
+      "created_at": "2025-12-22T15:50:37Z",
+      "updated_at": "2025-12-22T15:50:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014894074,
+      "body_text": "Hi Patrice BAROS,     Did you click Offset Reset to zero the pedal so that the white signal stays around 0% when the pedal is not pressed, and then recalibrate the pedal? The blue signal should follow the pedal input from 0% to 100%.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-22T15:57:31Z",
+      "updated_at": "2025-12-22T15:57:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014932580,
+      "body_text": "bonjour tout ça a déjà été fait . Le problème vient des capteurs de\r\npression.faut trouver une solution soit me changer le pédalier complet ou\r\nm' envoyer des capteurs pour la pedale d accelerateur et d'\r\nembrayage .cordialement\r\n\r\nLe lun. 22 déc. 2025 à 16:57, service@simsonn.com ",
+      "user_id": 158007849377,
+      "created_at": "2025-12-22T19:18:46Z",
+      "updated_at": "2025-12-22T19:18:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015022369,
+      "body_text": "Hi Patrice BAROS,  Please provide your order number, contact person, phone number, and shipping address. I will send you 2 replacement pressure sensors, one for the throttle and one for the clutch. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-24T06:25:44Z",
+      "updated_at": "2025-12-24T06:25:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015034516,
+      "body_text": "Bonjour je vous remercie pour votre demarche de me renvoyer 2 capteurs. le\r\nnuméro de commande n° SSN3956 .  Le nom de la personne à contacter est\r\nMonsieur Baros Patrice.  le numéro de téléphone  07 69  26 91 16 et l'\r\nadresse 16 rue René Cassin 33390 Blaye France.J attend de réceptionner le\r\ncolis pour pouvoir me servir de mon pédalier. cordialement\r\n\r\nLe mer. 24 déc. 2025 à 07:25, service@simsonn.com ",
+      "user_id": 158007849377,
+      "created_at": "2025-12-24T13:20:35Z",
+      "updated_at": "2025-12-24T13:20:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015393656,
+      "body_text": "Bonjour je viens par ce mail voir ou en été l' expédition de mes capteurs\r\nque vous devez n envoyer.Cordialement\r\n\r\nLe mer. 24 déc. 2025 à 14:20, Patrice BAROS <baros.patrice@gmail.com> a\r\nécrit :\r\n\r\n> Bonjour je vous remercie pour votre demarche de me renvoyer 2 capteurs. le\r\n> numéro de commande n° SSN3956 .  Le nom de la personne à contacter est\r\n> Monsieur Baros Patrice.  le numéro de téléphone  07 69  26 91 16 et l'\r\n> adresse 16 rue René Cassin 33390 Blaye France.J attend de réceptionner le\r\n> colis pour pouvoir me servir de mon pédalier. cordialement\r\n>\r\n> Le mer. 24 déc. 2025 à 07:25, service@simsonn.com ",
+      "user_id": 158007849377,
+      "created_at": "2026-01-02T13:12:48Z",
+      "updated_at": "2026-01-02T13:12:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015627471,
+      "body_text": "Hi Patrice BAROS,    We apologize for the delay in addressing your request. Here is your logistics tracking link.  https://t.17track.net/en#nums=SF6047219387016",
+      "user_id": 158001343601,
+      "created_at": "2026-01-04T11:32:21Z",
+      "updated_at": "2026-01-04T11:32:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "id": 370,
+  "subject": "Order #SSN1545",
+  "description_text": "Good day,\r\n\r\nI hope you are well.\r\n\r\nI would like to query the status of my order. \r\nOrder #SSN1545\r\n\r\nThe order was placed on the 28th of May and it was said that dispatch would be on the 10th of June. Is there any update on when this will happen as it’s now past.\r\n\r\nKind regards,\r\n\r\nSent from my iPhone\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-06-12T09:15:02Z",
+  "updated_at": "2025-06-25T14:14:33Z",
+  "requester_id": 158001455903,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002993110,
+      "body_text": "Hi David Cabeleira,  Due to delays in the surface finishing of the VAM Pro housing, the first batch of orders is expected to begin shipping between June 16th and 18th. International express shipping will be used, ensuring fast delivery.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-12T10:20:18Z",
+      "updated_at": "2025-06-12T10:20:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003814843,
+      "body_text": "Hi,\r\n\r\nThanks for all the support.\r\n\r\nThe motors have finally arrived. They have been installed and calibrated etc. testing works in Simsonn manager all good.\r\n\r\nWhen I load up leman ultimate however there is no feedback? Please can you help.\r\n\r\nKind regards.\r\n\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158001455903,
+      "created_at": "2025-06-24T15:23:53Z",
+      "updated_at": "2025-06-24T15:23:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003817233,
+      "body_text": "So Simsonn manager said there was a firmware update. During which it said completed and now nothing works??!! I just get this message when I connect the usb cable? Tried restarting, tried changing usb ports and nothing.\r\n\r\n\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158001455903,
+      "created_at": "2025-06-24T15:51:56Z",
+      "updated_at": "2025-06-24T15:51:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003832912,
+      "body_text": "Hi David Cabeleira,    I checked your screenshot, and it seems the update failed. Could you please install Todesk? You don’t need to register—just provide the ID and temporary password, and I can help you fix the issue within a few minutes.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-24T23:20:13Z",
+      "updated_at": "2025-06-24T23:20:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003832974,
+      "body_text": "Hi David Cabeleira,    By the way, are you currently using the latest version of Simsonn Manager, version 2.0.8? Could you please send me a screenshot to confirm? Also, is your pedal model the PlusX?",
+      "user_id": 158000445778,
+      "created_at": "2025-06-24T23:28:46Z",
+      "updated_at": "2025-06-24T23:28:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003834017,
+      "body_text": "Hi,\r\n\r\nThanks for the reply.\r\n\r\nSo after extensive trial and error, here’s the issue.\r\n\r\nI have the pro x pedal set. Simsonn manager 2.0.8 when installed works fine. There is however a pedal update for the pro x and when updating the pedals it crashes mid update causing the pedals to remain in flasher mode.\r\n\r\nI fixed this by downloading the firmware file from Simsonn manager 2.0.7 and manually updating it to that.\r\n\r\nSeems 2.0.8 has an issue somewhere.\r\nNow after getting the pedals working again I have tried everything to get the haptic motors working in game (leman ultimate) I set them up in Simsonn manager did a vibration test and they are working. I set up a path to the game on Simsonn manager, run the game through Simsonn manager but they don’t produce any feedback whatsoever.\r\n\r\nKind regards,\r\n\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158001455903,
+      "created_at": "2025-06-25T05:20:39Z",
+      "updated_at": "2025-06-25T05:20:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003835350,
+      "body_text": "Hi David Cabeleira,  ​We currently support 10 racing games, and telemetry support for iRacing will be completed this week. You can use SIMHUB, as we’ve already integrated with it. SIMHUB supports up to 100 racing titles, covering nearly all major games. I can provide you with an internal version for now, as the official SIMHUB update will be released a bit later.      https://drive.google.com/file/d/1QrSbAvCC5iyx9XgdRgSQV-hWpmDGkujc/view?usp=sharing",
+      "user_id": 158000445778,
+      "created_at": "2025-06-25T08:30:39Z",
+      "updated_at": "2025-06-25T08:30:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003835400,
+      "body_text": "Thank you for that.\r\n\r\nI will give it a try. Will you also get back to me on the pedal update crashing too please? Don’t know if it’s an isolated issue on my end or an issue with the update file in general. But any help will be greatly appreciated.\r\n\r\nI spoke with SimHub yesterday and I believe that they are working with yourselves to resolve a disconnect issue your facing so will try your attached one and will wait for the full simhub release.\r\n\r\nKind regard,\r\n\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158001455903,
+      "created_at": "2025-06-25T08:49:00Z",
+      "updated_at": "2025-06-25T08:49:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003837418,
+      "body_text": "Hi David Cabeleira,    Yes, we are currently working with the SimHub team through remote collaboration. To ensure smooth debugging, we have already shipped the hardware to the SimHub lead developer so they can test it more conveniently. Could you please provide us with a video showing the software crash? Our developers have not been able to reproduce the issue on their end, so we are unable to resolve it without more detailed information. Thank you very much for your support and cooperation!",
+      "user_id": 158000445778,
+      "created_at": "2025-06-25T14:14:32Z",
+      "updated_at": "2025-06-25T14:14:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

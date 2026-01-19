@@ -1,0 +1,44 @@
+{
+  "id": 2230,
+  "subject": "Feature Suggestion: Resettable Max Pressure Readout",
+  "description_text": "Hi,\r\n\r\nIt would be really useful if, next to the current brake pressure readout in\r\nthe Simsonn Manager (and ideally also for throttle and clutch), you\r\nincluded a resettable “max pressure/input” value.\r\n\r\nThis would allow us to do a few laps and see the peak pressure actually hit\r\nduring driving, rather than trying to guess what we think we’re doing in\r\nthe menu or under test conditions. Perfect for fine-tuning the “Max Force”\r\nvalue or catching under/overbraking without needing to dig through\r\ntelemetry.\r\n\r\nSimple button to reset max value, ideally per pedal.\r\n\r\nThanks – keep up the great work!\r\n.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-02T13:54:44Z",
+  "updated_at": "2025-08-05T12:55:53Z",
+  "requester_id": 158002429769,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006127946,
+      "body_text": "Hi Lindell Harry,  Could you please provide some reference telemetry data? This would help us better understand the actual usage scenarios and optimize our solution accordingly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-03T06:05:02Z",
+      "updated_at": "2025-08-03T06:05:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006129081,
+      "body_text": "Hi ,\r\n\r\nPlease see a rough mockup shown below this should record the max brake\r\npressure recorded since the last reset\r\n\r\n\r\n\r\n\r\n\r\nOn Sun, 3 Aug 2025, 7:05 am service@simsonn.com, ",
+      "user_id": 158002429769,
+      "created_at": "2025-08-03T08:16:52Z",
+      "updated_at": "2025-08-03T08:16:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006266985,
+      "body_text": "Hi Lindell Harry,  I have already forwarded the relevant information to the R&D department for evaluation and improvement. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-05T12:55:52Z",
+      "updated_at": "2025-08-05T12:55:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

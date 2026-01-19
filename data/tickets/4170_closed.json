@@ -1,0 +1,24 @@
+{
+  "id": 4170,
+  "subject": "Vam help",
+  "description_text": "My VAMs are being odd. I hooked them up, changed a couple settings so it\r\nwould vibrate with engine rpms and speed, and feel the lockup on the\r\nbrakes. But as soon as I fire up iracing they just vibrate one speed, one\r\ntone, no increase with rpm, no brake shake with lockup. The throttle was\r\njust one note, solid. It wouldn't quit even when I exited the program. I\r\nhad to unplug it to make it stop. Now it says power disconnected but its\r\nnot. Any ideas??\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-09-27T02:56:56Z",
+  "updated_at": "2025-10-01T09:53:11Z",
+  "requester_id": 158005049076,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009725864,
+      "body_text": "此工单已关闭并合并到工单 4278 中",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T09:53:11Z",
+      "updated_at": "2025-10-01T09:53:11Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

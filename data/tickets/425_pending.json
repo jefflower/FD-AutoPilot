@@ -1,0 +1,74 @@
+{
+  "id": 425,
+  "subject": "Haptic reactor",
+  "description_text": "Hello, Will there be a power supply for Germany? Will the haptics fit on the old pro plus pedals? -- Gesendet mit der WEB.DE Mail App \r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-13T19:23:02Z",
+  "updated_at": "2025-06-14T15:25:15Z",
+  "requester_id": 158001175260,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003040839,
+      "body_text": "你好，Dennis Hamzic，  我们提供欧盟标准电源——只需在订单中注明“德国电源”即可。 要升级到 Pro Plus，您需要购买 PlusX 控制单元、独立的 24V 电源以及 VAM 或 VAM Pro 电机。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-14T01:15:33Z",
+      "updated_at": "2025-06-14T01:15:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003072095,
+      "body_text": "Can you please answer in English? -- Gesendet mit der WEB.DE Mail App Am 14.06.25, 03:15 schrieb \"support@simsonn.com\" ",
+      "user_id": 158001175260,
+      "created_at": "2025-06-14T07:28:35Z",
+      "updated_at": "2025-06-14T07:28:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003104112,
+      "body_text": "Hello Dennis Hamzic,  We provide EU standard power supplies—just make sure to mention \"German power supply\" in your order.  To upgrade to the Pro Plus, you’ll need to purchase the PlusX control unit, a dedicated 24V power supply, and either the VAM or VAM Pro motor.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-14T13:00:45Z",
+      "updated_at": "2025-06-14T13:00:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003104425,
+      "body_text": "Hello, Thanks but the holding brackets on the pedals will work? -- Gesendet mit der WEB.DE Mail App Am 14.06.25, 15:00 schrieb \"support@simsonn.com\" ",
+      "user_id": 158001175260,
+      "created_at": "2025-06-14T13:53:05Z",
+      "updated_at": "2025-06-14T13:53:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003104460,
+      "body_text": "Hi Dennis Hamzic,  It is supported. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-14T13:59:51Z",
+      "updated_at": "2025-06-14T13:59:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003104756,
+      "body_text": "Hello, Thanks. -- Gesendet mit der WEB.DE Mail App Am 14.06.25, 16:00 schrieb \"support@simsonn.com\" ",
+      "user_id": 158001175260,
+      "created_at": "2025-06-14T14:33:18Z",
+      "updated_at": "2025-06-14T14:33:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

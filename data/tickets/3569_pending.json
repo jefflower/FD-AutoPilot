@@ -1,0 +1,64 @@
+{
+  "id": 3569,
+  "subject": "Reoccurring slack in pedal sideways",
+  "description_text": "Goodday,     When I received my pedals I made an observation (which I mentioned in previous contact), about sideways play in the throttle and clutch pedals.     The play in the clutch is the same because I don't use it that much. But the throttle has more and more play...  I sent a video of it.     Please help.     Kind regards  Raymond YouTube video of problem",
+  "status": 3,
+  "priority": 2,
+  "created_at": "2025-09-06T20:34:51Z",
+  "updated_at": "2025-09-10T00:23:52Z",
+  "requester_id": 158001710346,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008200692,
+      "body_text": "Hi Raymond van de Ven,  If you did not purchase the VAM Pro motor, our pedal set does not include a power adapter. This is because the pedals can be fully powered through a USB 3.0 port alone, without requiring an additional power supply. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T02:10:13Z",
+      "updated_at": "2025-09-07T02:10:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008225946,
+      "body_text": "I did not mention the power of any sorts, maybe answer for other ticket? I have lateral play in the pedals. It is loose.",
+      "user_id": 158001710346,
+      "created_at": "2025-09-07T15:43:57Z",
+      "updated_at": "2025-09-07T15:43:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158008233749,
+      "body_text": "Hi Raymond van de Ven,    We sincerely apologize for sending the wrong email earlier.  Regarding the issue you mentioned, could you please provide a short video and some detailed photos to help us better understand the situation?  Once we review the materials, we’ll analyze and get back to you with a solution as soon as possible. Thank you for your understanding and support!",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T23:11:47Z",
+      "updated_at": "2025-09-07T23:11:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008238813,
+      "body_text": "I already linked a video of the problem. But again:  https://youtube.com/shorts/K9OT2xxnNug?si=Rs7TcRqkHmK7_oDv",
+      "user_id": 158001710346,
+      "created_at": "2025-09-08T05:53:52Z",
+      "updated_at": "2025-09-08T05:53:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158008347031,
+      "body_text": "Hi Raymond van de Ven,    I’ve forwarded your video to our factory team today for further inspection. The PlusX controller is designed with bushing sleeves for lateral isolation, and theoretically, it should not develop increasing lateral play over time — the fit is engineered with tight tolerance.  You can try using an M6 hex wrench to tighten the screws on both sides of the throttle. This should effectively eliminate any lateral gap caused by loose screws.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-10T00:23:51Z",
+      "updated_at": "2025-09-10T00:23:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

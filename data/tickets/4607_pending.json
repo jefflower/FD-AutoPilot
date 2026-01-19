@@ -1,0 +1,24 @@
+{
+  "id": 4607,
+  "subject": "Order made but not shipped",
+  "description_text": "Hello,\r\n\r\nI placed an order #SSN2865 for over 48h ago, payment was confirmed but\r\nuntil now, no shipping or news or any other communication.\r\n\r\nPlus, I sent emails on 29 September and many after that and got no reply\r\n(previously I got an offer from you for a 12% discount or more. After no\r\nreply, I used a 10% discount offer I received from you in an automatic\r\nemail).\r\n\r\nI'm getting concerned about my purchase and would like some information\r\nregarding my order.\r\n\r\nBest regards,\r\nJoão Oliveira\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-08T15:19:58Z",
+  "updated_at": "2025-10-09T09:08:00Z",
+  "requester_id": 158003435494,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010135054,
+      "body_text": "Hi Joao Oliveira,    We apologize for the delayed response—we've just returned from our 8-day holiday. Our Plus X P2-H2 is currently out of stock at our German warehouse. We'll ship your order once the warehouse restocks in a couple of days. Thank you for your support and patience!",
+      "user_id": 158001343601,
+      "created_at": "2025-10-09T09:08:00Z",
+      "updated_at": "2025-10-09T09:08:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 1569,
+  "subject": "Issues with Aliexpress Order ID: 8201683689661240",
+  "description_text": "Hi,\r\n\r\nI purchased the 3 pedal plus x set with haptics from you on AliExpress but\r\nI'm having a problem with them. None of the pedal inputs are being\r\nrecognized by any program besides Simsonn Manager. I've tried using\r\ndifferent USB cables, plugging them into different outlets and usb ports,\r\nand turning my computer on and off many times but nothing has helped. If\r\npossible could the issue be with the control box I have (it's the newest\r\none with haptic support)?\r\n\r\nRegards,\r\n\r\nMarcus\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-07-15T19:50:56Z",
+  "updated_at": "2025-12-18T09:50:25Z",
+  "requester_id": 158002147628,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004918255,
+      "body_text": "Hi Marcus Chin,  Please provide a video so we can check the issue. You can also use the VKB tool to run a test for further diagnostics. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T02:30:16Z",
+      "updated_at": "2025-07-16T02:30:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

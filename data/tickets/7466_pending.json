@@ -1,0 +1,24 @@
+{
+  "id": 7466,
+  "subject": "Question",
+  "description_text": "I took this pedal off to adjust something and then I just suddenly noticed\r\nthis cable sticking out the front of the brake. What is this I don't\r\nremember it when I got it and I fear that I unplug something on accident\r\nthat I shouldn't have\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-05T05:44:41Z",
+  "updated_at": "2025-12-05T06:38:07Z",
+  "requester_id": 158007655885,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013448819,
+      "body_text": "Hi Todd Alcott,    This connector links to the light strip module on the base plate. If you haven't purchased the base plate, you won't need to use this cable.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-05T06:38:07Z",
+      "updated_at": "2025-12-05T06:38:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "id": 2480,
+  "subject": "Pro X Pedal Upgrade",
+  "description_text": "Hello!\r\n\r\nI bought Simsonn Pro X pedals Upgrade from you, via AliExpress on April 22nd. They are less than 4 months old and my loadcell seems to have given up. More often than not, when I depress the brake pedal it might work, it might not. Sometimes when it works, the brake input is fluctuating very much and other times when it works, it just suddenly stops providing input ergo I \"release\" the brake when I'm not intending to. Since this problem only exists on the loadcell brake pedal, I would assume it's the loadcell itself that is the issue. Can you help me out?\r\n\r\n\r\nKind regards,\r\nJoakim\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-08-08T17:16:56Z",
+  "updated_at": "2025-12-18T10:24:55Z",
+  "requester_id": 158001342279,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006597600,
+      "body_text": "Hi Joakim Linné,     Please first update SIMSONN Manager to version 2.1.0, and then upgrade the ProX firmware to versions 2.0.3 and 2.0.2. Next, use the Offset function to reset the percentage to zero, then calibrate the pedals and test them. If the issue still persists, please provide a video so we can investigate further.    https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-08-09T14:37:24Z",
+      "updated_at": "2025-08-09T14:37:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006809447,
+      "body_text": "Hello, well that works for some days, in a race today my brake pedal just stop working for a second and then it comes back on, its hard to provide you with a video, beacuse its not happening all the time\r\n________________________________\r\nFrån: service@simsonn.com ",
+      "user_id": 158001342279,
+      "created_at": "2025-08-13T16:35:50Z",
+      "updated_at": "2025-08-13T16:35:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006890191,
+      "body_text": "Hi Joakim Linné,  This issue is usually caused by unstable USB power. Please connect the USB directly to the blue USB 3.0 port on the back of your computer, and avoid using a USB hub. When multiple devices share a single USB hub, it can lead to insufficient power, instability, or hardware issues.      Additionally, please check the USB power-saving or sleep mode settings.    https://www.youtube.com/watch?v=LciAFDFWJ1w   ​",
+      "user_id": 158000445778,
+      "created_at": "2025-08-15T03:07:45Z",
+      "updated_at": "2025-08-15T03:07:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007301015,
+      "body_text": "[https://res.public.onecdn.static.microsoft/assets/mail/file-icon/png/video_16x16.png]iRacing Motorsport Simulator 2025.08.21 - 16.16.17.03.mp4<https://1drv.ms/v/c/360e50a906699d70/EXEmpDXotEFMks85_XMH6pUBLb5iXZiDwnaO-Nml8g9PUQ>\r\n\r\ntoday it happens again, when i drove a race, i wanted to Brake but it dosent work and then it just jumps on, i have done everything you said to me so far\r\n\r\n\r\n(throttle and clutch works totaly fine)\r\n________________________________\r\nFrån: service@simsonn.com ",
+      "user_id": 158001342279,
+      "created_at": "2025-08-21T14:23:12Z",
+      "updated_at": "2025-08-21T14:23:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007324992,
+      "body_text": "Hi Joakim Linné,  Do you mean that the brake pedal suddenly loses signal and stops responding, while the throttle and clutch still work normally? If so, we will send you a new brake sensor for testing once you receive it. However, if the brake signal interruption occurs together with the throttle and clutch also not responding, then it is most likely a USB power issue. Please make sure to use the blue USB 3.0 port on the back of your PC or a powered USB hub. In addition, we recommend securing the USB connection on the control box with a cable tie to prevent disconnection due to movement. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-22T04:21:29Z",
+      "updated_at": "2025-08-22T04:21:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007325283,
+      "body_text": "Hello.\r\n\r\nYeh, i can run a qualification without any problems and sometimes couple of race without problems, and then the brake wont work for a second and then it got signal again.\r\n\r\nHere is where i put the usb cable in <https://1drv.ms/i/c/360e50a906699d70/EWda6Oc_UMFEv4COYPJr9NwBqLinffPQE77tYY_hOZwu8A>\r\n[https://swedencentral1-mediap.svc.ms/transform/thumbnail?provider=spo&farmid=190952&inputFormat=jpg&cs=NWQ2NjE5NTAtMzQ3NS00MWNkLWEyYzMtZDY3MWEzMTYyYmMxfFNQTw&docid=https%3A%2F%2Fmy.microsoftpersonalcontent.com%2F_api%2Fv2.0%2Fdrives%2Fb!ov5QGSZ9a0aE9XbSk831M4uLVHZLi_lChmEvuNpK7GuvhjtuVZgNSa23b8PaROCB%2Fitems%2F01C35NG3LHLLUOOP2QYFCL7AEOMDZGX5G4%3Ftempauth%3Dv1e.eyJzaXRlaWQiOiIxOTUwZmVhMi03ZDI2LTQ2NmItODRmNS03NmQyOTNjZGY1MzMiLCJhcHBpZCI6IjVkNjYxOTUwLTM0NzUtNDFjZC1hMmMzLWQ2NzFhMzE2MmJjMSIsImF1ZCI6IjAwMDAwMDAzLTAwMDAtMGZmMS1jZTAwLTAwMDAwMDAwMDAwMC9teS5taWNyb3NvZnRwZXJzb25hbGNvbnRlbnQuY29tQDkxODgwNDBkLTZjNjctNGM1Yi1iMTEyLTM2YTMwNGI2NmRhZCIsImV4cCI6IjE3NTU4NTMyMDAifQ.mpaiOTqqlKwDbD8WTj9c-xhcih1Vgzrp6BNsnwpNilLBfSJ-xNKXiXyYW5cdqNM95R2wvdoPijf5jTFXTT8xnfb7ayVxm0DE4BiE6g3FDBaig7973IAfOhNz6AEjcVfdUSmk5aXbuN0M7viD5f6rL4gmpuXlGaOZBh3i2Rz1burLNuP36EdcGLWSc-fzY606nAA0rfLtAs1xjVipivHzH-JIrEgujDgAzLYdBPuQUh33qLtk6ma883N8KiqSyxwscjuJ0oQATrnV8lMNiCBBp4_8iTjfPiaUYtNSguchALU4iaVjIgWY4pDLnAxR64Ooo8NqDexAn2wsCX8XewPy4uCTMGo7S2Dj6f8QsP-2oHQGSYOQoCM9IevScLHtKluUjOKo973OA5oy1O9jJBv8uRSBRUIFxAlAGEPB5tSLgS4iLiz4wwBEG8HYfoCIs2Tl.WlZ4gB7uE-Sq4kAq4qB9uBXifOBb8eXM_ULT0DLHFxI%26version%3DPublished&width=176&height=176&cb=63891434619]\r\n[https://res-1.cdn.office.net/assets/mail/file-icon/png/cloud_blue_16x16.png]20250822_063329.jpg\r\n________________________________\r\nFrån: service@simsonn.com ",
+      "user_id": 158001342279,
+      "created_at": "2025-08-22T04:45:31Z",
+      "updated_at": "2025-08-22T04:45:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007325308,
+      "body_text": "Hi Joakim Linné,  Please provide your order number, and we will send you a replacement brake sensor for testing. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-22T04:47:54Z",
+      "updated_at": "2025-08-22T04:47:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007325348,
+      "body_text": "<https://1drv.ms/i/c/360e50a906699d70/ERo0RR-XXSNDmSypmmcIq80BPFLyTndow4RrQM4_iNb6RQ>\r\n[https://swedencentral1-mediap.svc.ms/transform/thumbnail?provider=spo&farmid=190952&inputFormat=png&cs=NWQ2NjE5NTAtMzQ3NS00MWNkLWEyYzMtZDY3MWEzMTYyYmMxfFNQTw&docid=https%3A%2F%2Fmy.microsoftpersonalcontent.com%2F_api%2Fv2.0%2Fdrives%2Fb!ov5QGSZ9a0aE9XbSk831M4uLVHZLi_lChmEvuNpK7GuvhjtuVZgNSa23b8PaROCB%2Fitems%2F01C35NG3I2GRCR7F25ENBZSLFJTJTQRK6N%3Ftempauth%3Dv1e.eyJzaXRlaWQiOiIxOTUwZmVhMi03ZDI2LTQ2NmItODRmNS03NmQyOTNjZGY1MzMiLCJhcHBpZCI6IjVkNjYxOTUwLTM0NzUtNDFjZC1hMmMzLWQ2NzFhMzE2MmJjMSIsImF1ZCI6IjAwMDAwMDAzLTAwMDAtMGZmMS1jZTAwLTAwMDAwMDAwMDAwMC9teS5taWNyb3NvZnRwZXJzb25hbGNvbnRlbnQuY29tQDkxODgwNDBkLTZjNjctNGM1Yi1iMTEyLTM2YTMwNGI2NmRhZCIsImV4cCI6IjE3NTU4NTMyMDAifQ.AacOIL2MvpD_p0UAZ2R3zKi3oY_SNQocJQ7W_QUzxyeYomr6wCruNr5pBhfAGYc5zDOL3eUERj-CQsWn288TVhlKg9H1e3l47xGH8-DdNsr-ceKvIXoBdjP--AQ8McNUqsdhGHeaRluIsBhLQqEX8bXOw3u6Zw9rucXt6LqgHmcrFvxVd7m73iT4FQw1M5hHAWX8XG9B_MIJu9ZQBKSoyKuxvKuXYq0ZQxlYik5yLYc5E7nUonCwBnUVL9mKR4a93NCE8lolfJ4153gh30WvEae1wiuFrHWHpPKbWnpPecU7H-7EA-IdhXa2vdyGz6j9bnVKPnKx-5N-bl9mJN8z_FJJu1_hWNMCULz3Z5PJdM5FaEszewXSkKNCR9DjR5mZMh9if8P6wBDOYxLIMiqTK04zsy30F-QEynEzak7v6EZenbLDrHXnFoLZm_U1S8Qt.9AoG0z9Csf2eg7UYAbiMtxTh2duPZvobnf6zmHJXoMI%26version%3DPublished&width=176&height=176&cb=63891435024]\r\n[https://res.public.onecdn.static.microsoft/assets/mail/file-icon/png/cloud_blue_16x16.png]Skärmbild 2025-08-22 065048.png\r\n________________________________\r\nFrån: service@simsonn.com ",
+      "user_id": 158001342279,
+      "created_at": "2025-08-22T04:50:43Z",
+      "updated_at": "2025-08-22T04:50:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007331581,
+      "body_text": "Hi Joakim Linné,  Could you please copy the text and send it to us directly? We are unable to open the OneDrive link on our side, so we can’t view the images. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-22T06:12:33Z",
+      "updated_at": "2025-08-22T06:12:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007337665,
+      "body_text": "3053234937523722\r\n________________________________\r\nFrån: service@simsonn.com ",
+      "user_id": 158001342279,
+      "created_at": "2025-08-22T11:05:15Z",
+      "updated_at": "2025-08-22T11:05:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007451366,
+      "body_text": "你好，Joachim Linnaeus，  截图中的地址无法打开。虽然我能看到 AliExpress 订单号，但无法检索到详细的地址信息。请提供您的联系人姓名、电话、地址和邮箱地址的文字版本，我们将在今天或明天为您安排重新发货。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-25T04:52:10Z",
+      "updated_at": "2025-08-25T04:52:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007451380,
+      "body_text": "Joakim Linné\r\n+46768132982\r\nCentrumplan 4A LGH 1201\r\n33331 Smålandsstenar\r\n\r\nJocke_6664@hotmail.com\r\n\r\n\r\nSkickat från Outlook för Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158001342279,
+      "created_at": "2025-08-25T04:57:10Z",
+      "updated_at": "2025-08-25T04:57:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007546985,
+      "body_text": "Hi Joakim Linné,  Dear, your order has been shipped. The logistics number is:YT2523700705362993. You can track it at this website https://www.17track.net/zh-cn. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-26T01:58:09Z",
+      "updated_at": "2025-08-26T01:58:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008166297,
+      "body_text": "Hi\r\n\r\nSo the new loadcell works good\r\n\r\nBut now i have another problem, Axle 1, 2 and 3 works fine, (Throttle, Brake and Clutch) but i dont know what Axle 4 is?\r\n\r\ni have tried 2 diffrent cables to the controllbox  and its the same problem\r\n________________________________\r\nFrån: service@simsonn.com \nAttachment(s) that exceed the 20 MB limit have been dropped. Please reach out to the sender.",
+      "user_id": 158001342279,
+      "created_at": "2025-09-05T22:36:04Z",
+      "updated_at": "2025-09-05T22:36:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201298,
+      "body_text": "Hi Joakim Linné,     You can also try using SIMSONN Manager 2.1.1. In the software interface, click the “Restore” button, then click “Save”. After that, reinsert the USB and test whether the RX axis has been successfully disabled.    https://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T03:18:55Z",
+      "updated_at": "2025-09-07T03:18:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

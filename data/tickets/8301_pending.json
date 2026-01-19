@@ -1,0 +1,24 @@
+{
+  "id": 8301,
+  "subject": "Checkout",
+  "description_text": " I’m checking out to Latvia (EU). My order value after discount is under\r\n€150, but at checkout VAT is not shown and it says “final tax will be\r\nconfirmed by email”.\r\nCan you confirm if this order will be shipped under *IOSS* (VAT collected\r\nat checkout), so I will *not* pay VAT on delivery?\r\nIf not IOSS, is it shipped *DDP* or *DAP*?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-15T13:34:23Z",
+  "updated_at": "2025-12-19T09:29:58Z",
+  "requester_id": 158007815079,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014750121,
+      "body_text": "Hi Maris Benfelds,    Please don't worry—we provide IOSS customs clearance, so you won't have to pay any additional taxes or fees upon receiving your order.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-19T09:29:58Z",
+      "updated_at": "2025-12-19T09:29:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

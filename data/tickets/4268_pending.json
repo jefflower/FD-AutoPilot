@@ -1,0 +1,124 @@
+{
+  "id": 4268,
+  "subject": "EMI issue with vam pro and Simpson pro plus",
+  "description_text": "Hi,\r\n\r\nI have a problem with my pedals. I use the van pro haptics but the break\r\nand throttle pickup up a signal every time the motors are activated. I\r\nalready connected the grounding wire to the break which made it a little\r\nbetter but it's not solved.\r\n\r\nWithout grounding wire and haptics at 30% - break will jump to 60-70% with\r\ngrounding wire still to 30%.\r\n\r\nIs there anything I can do? I got the black ones is the grounding not\r\nworking properly because of the color?\r\n\r\nI'm very happy with the pedals but can't use the haptics as is ATM.\r\n\r\nAny quick fixes would be appreciated.\r\n\r\nKind regards,\r\nRoman\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-30T09:20:50Z",
+  "updated_at": "2025-10-10T07:30:51Z",
+  "requester_id": 158005190485,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009730639,
+      "body_text": "Hi Roman Seibt,     You can refer to this post for a solution: by using nylon screws and nylon washers to isolate the VAM Pro from the mounting bracket, the issue can be effectively resolved.      https://www.reddit.com/r/simracing/comments/1n291hi/solution_for_simsonn_vam_pro_emi_issues/",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T11:46:59Z",
+      "updated_at": "2025-10-01T11:46:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009731158,
+      "body_text": "Is there an easy way to source those screws and washers? I have no idea\r\nwhere to get those.\r\n\r\nservice@simsonn.com ",
+      "user_id": 158005190485,
+      "created_at": "2025-10-01T12:11:40Z",
+      "updated_at": "2025-10-01T12:11:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009731207,
+      "body_text": "Hi Roman Seibt,    Please provide your shipping address, phone number, and contact person, and we will send you a set after we return to work on October 9th.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T12:13:36Z",
+      "updated_at": "2025-10-01T12:13:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009731295,
+      "body_text": "Wow thanks a lot for the great support.\r\n\r\nThis is my shipping address\r\n\r\nRoman Seibt\r\nDanzier Straße 109\r\n51063 Köln\r\nGermany\r\n\r\n0179/6163995\r\n\r\ncontact person is me Roman Seibt\r\n\r\n\r\n\r\nservice@simsonn.com ",
+      "user_id": 158005190485,
+      "created_at": "2025-10-01T12:17:45Z",
+      "updated_at": "2025-10-01T12:17:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010133043,
+      "body_text": "Hi Roman Seibt,    We apologize for bothering you again, but we need your order number.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-09T06:39:44Z",
+      "updated_at": "2025-10-09T06:39:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010135020,
+      "body_text": "Hi,\r\n\r\nThe order number is 3058065344580882 I ordered from Ali Express but to a\r\ngood friend of mine because I wasn't in the country back then.\r\n\r\nShipping address back then was\r\n\r\n74235 erlenbach,\r\nSchießmauerweg 1\r\nDennis hamzic\r\n\r\nI'd still like get it send to my house in Cologne if possible.\r\n\r\nKind Regards,\r\nRoman\r\n\r\nservice@simsonn.com ",
+      "user_id": 158005190485,
+      "created_at": "2025-10-09T09:05:09Z",
+      "updated_at": "2025-10-09T09:05:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010142294,
+      "body_text": "Hi Roman Seibt, We will send you a replacement set of nylon screws and washers to this address.      Roman Seibt  Danzier Straße 109  51063 Köln   Germany      0179/6163995 ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-09T10:47:59Z",
+      "updated_at": "2025-10-09T10:47:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010142490,
+      "body_text": "Thank you for the support :)\r\n\r\nservice@simsonn.com ",
+      "user_id": 158005190485,
+      "created_at": "2025-10-09T10:57:25Z",
+      "updated_at": "2025-10-09T10:57:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010142540,
+      "body_text": "Not sure if we talked about it but I have the vam pro on throttle and\r\nbrakes so I need two sets\r\n\r\nRoman Seibt <romanseibt@gmail.com> schrieb am Do., 9. Okt. 2025, 12:57:\r\n\r\n> Thank you for the support :)\r\n>\r\n> service@simsonn.com ",
+      "user_id": 158005190485,
+      "created_at": "2025-10-09T10:59:35Z",
+      "updated_at": "2025-10-09T10:59:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010142992,
+      "body_text": "Hi Roman Seibt,  By default, each set includes 3 motors.  By default, each set includes 3 motors.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-09T11:18:51Z",
+      "updated_at": "2025-10-09T11:18:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010197635,
+      "body_text": "Hi Roman Seibt,  Your order has been shipped. The logistics number is:YT2528300705173840. You can track it at this website https://www.17track.net/zh-cn. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-10T07:30:51Z",
+      "updated_at": "2025-10-10T07:30:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

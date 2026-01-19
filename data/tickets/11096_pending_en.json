@@ -1,0 +1,25 @@
+{
+  "id": 11096,
+  "subject": "Order SSN5972 delivery indication",
+  "description_text": "Hello,\n\nSo you have an indication on when the different parts on order SSN5972 will be sent and about the delivery time after sending?\n\nThank you\nbest regards,\nMartin",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-16T19:47:30Z",
+  "updated_at": "2026-01-17T06:43:35Z",
+  "requester_id": 158009305822,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017317209,
+      "body_text": "Hi Martin van Ekelenburg,     Your order has been shipped in two separate packages.  One package destined for our German warehouse has been delayed due to road closures caused by severe snowstorms in Europe. We are expediting delivery or exploring alternative logistics channels to ship from China as soon as possible.  The other package was out of stock for two weeks due to product upgrades. The upgrades are now complete, and we will ship your order within the next few days.  Upon order completion, we will provide compensation based on the duration of the delay. We sincerely apologize for any inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T06:43:35Z",
+      "updated_at": "2026-01-17T06:43:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

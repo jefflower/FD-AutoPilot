@@ -1,0 +1,64 @@
+{
+  "id": 5752,
+  "subject": "Pro x ultra brake pedal assistance help",
+  "description_text": "Hi,\r\n\r\nRegarding the Hydraulic Rod Resistance adjuster on the brake pedal.\r\n\r\nIs this adjuster meant to keep spinning continuously past 8 or 0 in both\r\ndirections?\r\n\r\nEg if I keep turning it past 8 many times will it get stronger and stronger\r\n?\r\n\r\nImran\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-06T23:34:06Z",
+  "updated_at": "2025-11-09T04:15:53Z",
+  "requester_id": 158006741199,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011907297,
+      "body_text": "Hi Imran,      No, it only has 8 gears and won't tighten like a screw.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-07T02:17:58Z",
+      "updated_at": "2025-11-07T02:17:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011907533,
+      "body_text": "Thanks for the info! Just to check,\r\n\r\nif I’ve turned it past 8 a few times because I thought that’s how it\r\nworked, do I need to turn it the other way a few times to fix it?\r\n\r\nImran\r\n\r\n\r\n\r\nOn Fri, 7 Nov 2025 at 02:18, service@simsonn.com ",
+      "user_id": 158006741199,
+      "created_at": "2025-11-07T02:30:29Z",
+      "updated_at": "2025-11-07T02:30:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011916562,
+      "body_text": "Hi Imran,     If you feel that the clutch pedal’s return force is too light, you can replace the spring with the blue or red clutch spring included in the accessory kit.  These springs provide stronger resistance to overcome the dual-direction damping of the hydraulic damper.     We don’t use gas springs, because in essence, a gas spring behaves like two springs stacked together, which doesn’t provide a realistic clutch feel.  In fact, using our yellow, blue, or red mechanical springs alone is sufficient.  The hydraulic damper in our system is designed to absorb the force during both pressing and release, offering a realistic hydraulic sensation, smoother motion, and improved pedal travel stability and muscle memory.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-07T10:48:44Z",
+      "updated_at": "2025-11-07T10:48:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011961798,
+      "body_text": "Thank you,\r\n\r\nWhere do I plug in the RGB cable?\r\n\r\nOn Fri, 7 Nov 2025 at 10:49, service@simsonn.com ",
+      "user_id": 158006741199,
+      "created_at": "2025-11-08T03:19:44Z",
+      "updated_at": "2025-11-08T03:19:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011984856,
+      "body_text": "Hi Imran,     Hello, you just need to plug the RGB extension cable from the brake pedal into the Signal_IN port of the LED strip. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-09T04:15:53Z",
+      "updated_at": "2025-11-09T04:15:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

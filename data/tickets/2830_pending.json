@@ -1,0 +1,44 @@
+{
+  "id": 2830,
+  "subject": "Plus X pedals keep disconnecting",
+  "description_text": "Hello i have had the Plux X pedals for a few weeks now and they have \r\nsuddenly stopped working.\r\n\r\nFirst off they would disconnect occasionally and now they dont connect \r\nat all in Simsonn manager 2.1.0\r\n\r\nI have tried other usb ports on my pc and none work.\r\n\r\nThankyou.\r\n\r\n\r\n-- \r\nThis email has been checked for viruses by Avast antivirus software.\r\nwww.avast.com\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-18T14:42:49Z",
+  "updated_at": "2025-08-19T05:50:23Z",
+  "requester_id": 158003283299,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007112015,
+      "body_text": "Hi Andy Hardy,  Please try to recover the PlusX pedals: press and hold the recovery button on the controller, then reconnect the USB. SIMSONN Manager 2.1.0 should enter recovery mode. Then go to “Settings → Update → Manual Firmware Update” and select the pedals-firmware-plusx.sfu file to update. After updating, check the connection. If it still doesn’t work, connect the USB directly to a USB 3.0 port on the back of the PC and avoid using an unpowered USB hub, as unstable power can cause disconnections. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-19T04:24:10Z",
+      "updated_at": "2025-08-19T04:24:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007113189,
+      "body_text": "That seems to have worked so far i have offloaded most peripherals to \r\npowered usb hub, pedals and wheelbase direct connect to mainboard.\r\n\r\nExcept in lmu throttle is mapped same as turn right in lmu settings X+ \r\nand X+\r\n\r\n",
+      "user_id": 158003283299,
+      "created_at": "2025-08-19T05:35:58Z",
+      "updated_at": "2025-08-19T05:35:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007113383,
+      "body_text": "Hi Andy Hardy,  We also have an LMU in our testing environment, and game testing shows everything works normally without any issues. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-19T05:50:22Z",
+      "updated_at": "2025-08-19T05:50:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

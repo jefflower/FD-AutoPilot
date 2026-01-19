@@ -1,0 +1,34 @@
+{
+  "id": 4098,
+  "subject": "HELP DISCOUNT CODE",
+  "description_text": "HI JUST SINED UP TODAY FOR NEW USER ACCOUNT AND DID NOT GET 20$ DISCOUNT PLEASE HELP THANKS\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-24T17:28:43Z",
+  "updated_at": "2025-09-25T01:44:37Z",
+  "requester_id": 158004941305,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009250480,
+      "body_text": "Until when does to sale end on your site. Im trying to make it before the sale ends",
+      "user_id": 158004941305,
+      "created_at": "2025-09-24T20:25:03Z",
+      "updated_at": "2025-09-24T20:25:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158009258982,
+      "body_text": "Hello, simply enter FFLV20 at checkout to enjoy a $20 discount. Please note that the discount applies to orders totaling $199 or more.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-25T01:44:37Z",
+      "updated_at": "2025-09-25T01:44:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

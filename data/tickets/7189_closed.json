@@ -1,0 +1,24 @@
+{
+  "id": 7189,
+  "subject": "annulation",
+  "description_text": " Bonjour pouvez vous annuler la commande s' il vous plais\r\n<https://account.simsonn.com/orders> #SSN4200\r\nMerci\r\nBLACHE JEREMY\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-12-01T17:26:44Z",
+  "updated_at": "2025-12-31T02:23:38Z",
+  "requester_id": 158007451673,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015213001,
+      "body_text": "Bonjour,  Je vous ai envoyé plusieurs e-mails restés sans réponse de votre part.  J’avais tenté d’annuler ma commande avant son expédition, mais n’ayant reçu aucun retour, celle-ci a tout de même été envoyée. Je trouve cela peu professionnel.  Je souhaite donc procéder au retour de ma commande. Vous avez normalement reçu un e-mail de Mondial Relay afin de choisir un point de retrait.     Cordialement,     BLACHE JEREMY",
+      "user_id": 158007451673,
+      "created_at": "2025-12-29T17:56:11Z",
+      "updated_at": "2025-12-29T17:56:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    }
+  ]
+}

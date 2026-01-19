@@ -1,0 +1,24 @@
+{
+  "id": 4244,
+  "subject": "PRO X Pedal Control Box upgrade firmware for VAM PRO Haptics",
+  "description_text": "Hello,\r\n\r\nI have a set of PRO X pedals I purchased earlier this year.  I have\r\nupgraded them with your new VAM Pro haptic reactors.\r\n\r\nFrom what I have read, all I have to do is update the firmware on the ProX\r\ncontrol box.  I don't see anything within the Simsonn Manager software to\r\nperform this firmware update.  Nor do I see anything on your website with\r\ninstructions on this.\r\n\r\nI cannot get the haptic reactors to function, none of the three\r\ncurrently function.  So, I assume my control box is still not updated\r\nproperly.\r\n\r\nDo you have an instruction guide on how to perform this update?  Or do I\r\nhave to purchase a new control box?\r\n\r\nThank you!\r\n\r\nJeff Miller\r\njm112583@gmail.com\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-29T14:08:45Z",
+  "updated_at": "2025-10-01T10:13:24Z",
+  "requester_id": 158005154531,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009726164,
+      "body_text": "Hi Jeff Miller,     Please uninstall the old version of the software from your PC and install the attached version 2.1.1. In the software, go to Settings → Update → Manual Firmware Update, then select the file pedals-firmware-pedals-prox.sfu. Once the update is complete, the VAM Pro will work properly.   https://drive.google.com/file/d/1BAdSWa1bxmbPksj9Hlzuo8bl7_bM8ixr/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T10:13:24Z",
+      "updated_at": "2025-10-01T10:13:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

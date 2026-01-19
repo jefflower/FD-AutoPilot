@@ -1,0 +1,164 @@
+{
+  "id": 2683,
+  "subject": "VAM et logiciel  SIMSONN MANAGER",
+  "description_text": "Good morning,  I bought the Pro X Ultra crankset (top) as well as the Vams.  When I play with my thrusmaster T598 base the Simsonn manager software crashes whether I use it with or without simhub.  I updated the manager software, I tried different USB 3.0 ports; 3.1 on the PC, powered HUB 3.1 but nothing worked after 5 minutes a Vam vibrates without stopping. I even tried turning on the base, the brake in different orders nothing worked.  what should i do please      Best regards,     你好，  我购买了 Pro X Ultra 踏板（顶配）以及 VAM 模块。  当我使用 Thrustmaster T598 基座进行游戏时，无论是否使用 SimHub，Simsonn Manager 软件都会崩溃。  我已经更新了 Manager 软件，尝试了电脑上的不同 USB 接口（3.0 和 3.1），甚至使用了带电源的 3.1 HUB，但都没有效果。大约五分钟后，其中一个 VAM 开始震动并且无法停止。我甚至尝试以不同顺序打开基座和刹车，但仍然无效。  请问我该怎么办？  此致敬礼  desolé s'il y a des erreurs dans le texte en chinois",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-08-14T13:21:51Z",
+  "updated_at": "2025-09-07T03:16:31Z",
+  "requester_id": 158002901726,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006889526,
+      "body_text": "Hi Jamal LAABBASSI,  This issue is caused by EMI interference from the wheelbase. Please follow the steps below to troubleshoot and resolve it. Most customers with similar setups (such as Fanatec, MOZA, and T500 users) have resolved the problem using this method.      To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability:     1.    Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding.     2.    Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive.     3.    Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup.     4.    Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible.     5.    Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs.     6.    Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference.     7.    Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements.     8.    Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources.     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-08-15T02:18:56Z",
+      "updated_at": "2025-08-15T02:18:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006889801,
+      "body_text": "Hi Jamal LAABBASSI,  This issue is caused by EMI interference from the wheelbase. Please follow the steps below to troubleshoot and resolve it. Most customers with similar setups (such as Fanatec, MOZA, and T500 users) have resolved the problem using this method.      To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability:     1.    Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding.     2.    Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive.     3.    Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup.     4.    Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible.     5.    Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs.     6.    Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference.     7.    Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements.     8.    Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources.     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-08-15T02:38:33Z",
+      "updated_at": "2025-08-15T02:38:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006899021,
+      "body_text": "Bonjour,\r\n\r\n\r\nEnvoyé de mon mobile\r\nEnvoyé à partir de Outlook pour Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158002901726,
+      "created_at": "2025-08-15T08:26:11Z",
+      "updated_at": "2025-08-15T08:26:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006899169,
+      "body_text": "Bonjour,\r\n\r\nJ'ai le boîtier du pedalier pro X ultra, il n'y a pas de visé et de fils vert pour une mise à la masse.\r\nVous me conseiller de tout mettre à la masse mais pourquoi votre nouveau boîtier n'a pas une alimentation avec mise à la masse. Cela résoudrait ce problème et vous auriez un produit plus stable.\r\n\r\nJe vais essayer des isolateurs ( mon pc est neuf avec une carte mere Z790 et un Bloc d’Alimentation Gigabyte UD1000GM 1000W)\r\n\r\n\r\nEnvoyé de mon mobile\r\nEnvoyé à partir de Outlook pour Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158002901726,
+      "created_at": "2025-08-15T08:50:29Z",
+      "updated_at": "2025-08-15T08:50:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006978101,
+      "body_text": "Hi Jamal LAABBASSI,  The ProX Ultra does not require grounding; grounding is only applicable for the Plus X. Generally, any issues encountered by customers can be resolved by following the above procedure. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-17T04:07:20Z",
+      "updated_at": "2025-08-17T04:07:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006978119,
+      "body_text": "ID 为 2629 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-17T04:09:26Z",
+      "updated_at": "2025-08-17T04:09:26Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158006978120,
+      "body_text": "合并来自工单2629  \n      主题: Pro x ultra  \n      描述:  \nBonjour, \n \n \n \n \nJ'ai un problème de stabilité sur le vam, il se déconnecte ou reste bloqué sur une vibration. \n \nPour info, j'ai essayé avec votre logiciel et simhub. \n \nJ'ai constaté que la première info c'est l'effet gear qui fonctionne mal sur les deux logiciel. \n \n \n \n \nLes deux logiciel sont à jour \n \nPédalier simsonn pro x ultra \n \nBase thrustmaster T598 \n \n \n \n \nCordialement  \n \n \n \n \nEnvoyé de mon mobile \nEnvoyé à partir de Outlook pour Android",
+      "user_id": 158000445778,
+      "created_at": "2025-08-17T04:09:26Z",
+      "updated_at": "2025-08-17T04:09:26Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158007316787,
+      "body_text": "Bonsoir,\r\n\r\nJ'ai résolu le problème en ajoutant une carte pcie usb 3.0 ;\r\nMais j'ai un des moteurs qu'a du jeu à l'intérieur de la coque, les autres ne font pas le bruit.\r\nJe vois avec vous ou Amazon pour le SAV.\r\n\r\nBien cordialement\r\n\r\n\r\n________________________________\r\nDe : support@simsonn.com ",
+      "user_id": 158002901726,
+      "created_at": "2025-08-21T20:39:08Z",
+      "updated_at": "2025-08-21T20:39:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007324920,
+      "body_text": "Hi Jamal LAABBASSI,  Could you please send us a photo showing which VAM unit it is? We will verify it first. If interference issues are ruled out, we will provide after-sales support and send you a replacement unit. At the same time, please provide your Amazon order number for verification. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-22T04:15:24Z",
+      "updated_at": "2025-08-22T04:15:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007336825,
+      "body_text": "[Image]\r\n\r\nCi joint les documents demandés.\r\n\r\nBien cordialement\r\n\r\nEnvoyé de mon mobile\r\nEnvoyé à partir de Outlook pour Android<https://aka.ms/AAb9ysg>\r\n\r\n",
+      "user_id": 158002901726,
+      "created_at": "2025-08-22T09:32:22Z",
+      "updated_at": "2025-08-22T09:32:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007451237,
+      "body_text": "Hi Jamal LAABBASSI,  Alright, I have informed our Amazon operations team, and a new VAM motor will be reshipped to you today. Please pay attention to the force level indicated in the software, as excessive force is the main cause of VAM damage. If you require higher force, we recommend considering the VAM Pro motor. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-25T04:43:33Z",
+      "updated_at": "2025-08-25T04:43:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007548133,
+      "body_text": "Hi Jamal LAABBASSI,  Here is the tracking number: YT2523700705596111. You can track it via https://www.yunexpress.com/.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-26T03:25:52Z",
+      "updated_at": "2025-08-26T03:25:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008015565,
+      "body_text": "Bonjour,\r\nJe n'ai pas de retour d'information (qui,quand,comment) pour recevoir le remplacement du vam défectueux. Pour info j'ai, choisi les vam car il font pas de bruit et qu'on ressent la vibration. Il son top.\r\n\r\nA bientôt\r\n\r\nBien cordialement\r\n\r\nEnvoyé de mon mobile\r\nEnvoyé à partir de Outlook pour Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158002901726,
+      "created_at": "2025-09-03T08:14:34Z",
+      "updated_at": "2025-09-03T08:14:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201223,
+      "body_text": "Hi Jamal LAABBASSI,  I’ve already informed our operations team to check the shipping progress, and we’ll get back to you with an update shortly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T03:09:29Z",
+      "updated_at": "2025-09-07T03:09:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201287,
+      "body_text": "Hi Jamal LAABBASSI,     Please track it via this link:https://t.17track.net/zh-cn#nums=YT2523700705596111, your package has been delivered on 2025-09-03 ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T03:16:31Z",
+      "updated_at": "2025-09-07T03:16:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

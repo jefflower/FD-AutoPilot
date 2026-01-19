@@ -1,0 +1,25 @@
+{
+  "id": 11085,
+  "subject": "兼容性",
+  "description_text": "您好！\n\n您的产品兼容PS5吗？\n\n谢谢，\n\n马丁·哈梅尔\noutbacktaz@hotmail.com",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-16T13:51:56Z",
+  "updated_at": "2026-01-17T03:47:57Z",
+  "requester_id": 158009300023,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017311611,
+      "body_text": "您好，马丁·哈梅尔，抱歉，我们的产品目前不兼容PS5。它们主要为PC（Windows）使用而设计。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-17T03:47:57Z",
+      "updated_at": "2026-01-17T03:47:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

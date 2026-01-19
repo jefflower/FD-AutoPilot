@@ -1,0 +1,44 @@
+{
+  "id": 687,
+  "subject": "Recent order",
+  "description_text": "Hello,\r\n I placed an order today for a set of your wheels and I haven't recieved a confirmation or a tracking number. I have a screenshot of the confirmation in the website but I had closed the tab. I just want to confirm that the order is placed. Thank you \r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-06-21T17:15:46Z",
+  "updated_at": "2025-07-01T10:56:32Z",
+  "requester_id": 158001701978,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003679728,
+      "body_text": "Hi Maxwell Newman,  I’ve just located your order based on the payment amount—order number #SSN1810. The shipping address is in the United States, and the payment has been completed. We will begin processing the shipment on Monday. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T03:22:59Z",
+      "updated_at": "2025-06-22T03:22:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003844655,
+      "body_text": "Awesome thank you! I still have not received a tracking number for my\r\norder? Or any confirmation of it as well? I know I have the order number\r\njust wanting to confirm. Thank you.\r\n\r\nMax Newman\r\n\r\nOn Sat, Jun 21, 2025 at 8:23 PM support@simsonn.com ",
+      "user_id": 158001701978,
+      "created_at": "2025-06-26T03:24:45Z",
+      "updated_at": "2025-06-26T03:24:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004356229,
+      "body_text": "Hi Maxwell Newman,     You didn't receive a shipping notification because you didn't fill in your email address, your package has been shipped from China. It has arrived in the US, UPS will pick it up after the customs clearance is completed, there will be a logistics update at that time, it is expected to be delivered around the 6th. https://t.17track.net/en#nums=1ZX6190C0300138505",
+      "user_id": 158001343601,
+      "created_at": "2025-07-01T10:56:31Z",
+      "updated_at": "2025-07-01T10:56:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "id": 10360,
+  "subject": "Throttle not working",
+  "description_text": "Hello I am trying to set up my pedals and the throttle does not register\r\nany input on the app, I have already tried offsetting and calibrating\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-09T01:58:28Z",
+  "updated_at": "2026-01-14T08:21:15Z",
+  "requester_id": 158008997262,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016460379,
+      "body_text": "Hi LaFame,  Please provide your order number. Also, check and share photos of the sensor position, and confirm whether the spring is missing or the pressure plate is damaged. Additionally, please send a screenshot of the Offset popup in SIMSONN Manager so I can review it. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-09T02:25:54Z",
+      "updated_at": "2026-01-09T02:25:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016461998,
+      "body_text": "My order on amazon is Order # 111-1397968-4301854\r\n\r\n\r\nOn Thu, Jan 8, 2026 at 6:26 PM service@simsonn.com ",
+      "user_id": 158008997262,
+      "created_at": "2026-01-09T02:39:27Z",
+      "updated_at": "2026-01-09T02:39:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016463306,
+      "body_text": "[image: image.png]\r\n\r\n",
+      "user_id": 158008997262,
+      "created_at": "2026-01-09T02:50:08Z",
+      "updated_at": "2026-01-09T02:50:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016465283,
+      "body_text": "Hi，LaFame，     When you click Offset here, do you still see no throttle signal?  Please try swapping the throttle and clutch pedals to check whether the issue is with the throttle pedal itself or the throttle input on the controller. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-09T03:09:19Z",
+      "updated_at": "2026-01-09T03:09:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016465558,
+      "body_text": "[image: image.png]\r\n\r\nOn Thu, Jan 8, 2026 at 7:09 PM service@simsonn.com ",
+      "user_id": 158008997262,
+      "created_at": "2026-01-09T03:11:30Z",
+      "updated_at": "2026-01-09T03:11:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016465562,
+      "body_text": "This is what it shows when I click offset\r\n\r\n",
+      "user_id": 158008997262,
+      "created_at": "2026-01-09T03:11:36Z",
+      "updated_at": "2026-01-09T03:11:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016465892,
+      "body_text": "I switched the cable to the clutch and it still doesn't show any input.\r\n\r\n",
+      "user_id": 158008997262,
+      "created_at": "2026-01-09T03:14:20Z",
+      "updated_at": "2026-01-09T03:14:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016466630,
+      "body_text": "Hi LaFame,  Please provide your contact name, address, and phone number, and we will send you a replacement throttle pressure sensor for installation. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-09T03:20:21Z",
+      "updated_at": "2026-01-09T03:20:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016466860,
+      "body_text": "Emmanuel Ibarra\r\n355 E Linden Ave, Reedley, CA 93654\r\n5597364213\r\n\r\nOn Thu, Jan 8, 2026 at 7:20 PM service@simsonn.com ",
+      "user_id": 158008997262,
+      "created_at": "2026-01-09T03:22:06Z",
+      "updated_at": "2026-01-09T03:22:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016466976,
+      "body_text": "How soon would I be getting the part?\r\n\r\n",
+      "user_id": 158008997262,
+      "created_at": "2026-01-09T03:23:36Z",
+      "updated_at": "2026-01-09T03:23:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016521897,
+      "body_text": "Hi LaFame,  We will send you a replacement as soon as possible.",
+      "user_id": 158007774607,
+      "created_at": "2026-01-09T10:34:16Z",
+      "updated_at": "2026-01-09T10:34:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016619032,
+      "body_text": "Can you please provide tracking number?\r\n\r\nOn Fri, Jan 9, 2026 at 2:34 AM service@simsonn.com ",
+      "user_id": 158008997262,
+      "created_at": "2026-01-09T21:20:07Z",
+      "updated_at": "2026-01-09T21:20:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016692145,
+      "body_text": "Hi LaFame,  Hello, we have sent you a new replacement part. Here is the tracking number: SF6047232994902. You can track it via https://www.sf-international.com/cn/en/support/querySupport/waybill",
+      "user_id": 158007774607,
+      "created_at": "2026-01-10T08:35:45Z",
+      "updated_at": "2026-01-10T08:35:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016895116,
+      "body_text": "Hello I'd like to cancel my order, you are sending me a replacement part\r\nthat is going to take 27 days to arrive rather than sending a new set\r\nquickly? It doesn't make sense considering I can return these and order\r\nanother pair from amazon.\r\n\r\nOn Sat, Jan 10, 2026 at 12:36 AM service@simsonn.com ",
+      "user_id": 158008997262,
+      "created_at": "2026-01-12T19:34:42Z",
+      "updated_at": "2026-01-12T19:34:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016895608,
+      "body_text": "I do not want to wait that long to have to replace a part on a brand new\r\nitem that I just purchased, I am willing to keep the pedals but I would\r\nlike an exchange instead. That is a ridiculous wait for a brand new item.\r\n\r\n",
+      "user_id": 158008997262,
+      "created_at": "2026-01-12T19:40:08Z",
+      "updated_at": "2026-01-12T19:40:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017081587,
+      "body_text": "Hi LaFame,  The package will take 7-14 days to deliver. ",
+      "user_id": 158007774607,
+      "created_at": "2026-01-14T08:20:27Z",
+      "updated_at": "2026-01-14T08:20:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017081624,
+      "body_text": "Hi LaFame,",
+      "user_id": 158007774607,
+      "created_at": "2026-01-14T08:21:15Z",
+      "updated_at": "2026-01-14T08:21:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "id": 6457,
+  "subject": "Missing part",
+  "description_text": "Good evening,     I received my order on 11/17/2025, but my pedal control box is missing from the package. Please let me know how soon this matter can be resolved?",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-20T23:42:14Z",
+  "updated_at": "2025-12-05T11:28:36Z",
+  "requester_id": 158007211535,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012676908,
+      "body_text": "Hi WKIS Killa,    Please provide your order number, and we will look into it for you. Don't worry.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-21T02:21:05Z",
+      "updated_at": "2025-11-21T02:21:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012676969,
+      "body_text": "My order number is\r\nORDER #SSN3245\r\n\r\n\r\nOn Thu, Nov 20, 2025 at 9:21 PM support@simsonn.com ",
+      "user_id": 158007211535,
+      "created_at": "2025-11-21T02:24:06Z",
+      "updated_at": "2025-11-21T02:24:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012677334,
+      "body_text": "Is it possible for the missing pedal control box  to be expedited within the next few days?",
+      "user_id": 158007211535,
+      "created_at": "2025-11-21T02:45:13Z",
+      "updated_at": "2025-11-21T02:45:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158012694073,
+      "body_text": "Hi WKIS Killa,    We apologize for the inconvenience and will confirm and resend your order as soon as possible.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-21T10:51:19Z",
+      "updated_at": "2025-11-21T10:51:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012771014,
+      "body_text": "Any update on this? I just want to confirm if it will be expedited? I\r\ndidn’t receive any shipping details\r\n\r\nOn Fri, Nov 21, 2025 at 5:51 AM support@simsonn.com ",
+      "user_id": 158007211535,
+      "created_at": "2025-11-23T04:46:02Z",
+      "updated_at": "2025-11-23T04:46:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012803252,
+      "body_text": "Hi WKIS Killa,    Here is your logistics tracking link.  https://t.17track.net/en#nums=SF6047080365792",
+      "user_id": 158001343601,
+      "created_at": "2025-11-24T08:51:08Z",
+      "updated_at": "2025-11-24T08:51:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013243051,
+      "body_text": "Hi this tracking label isn’t working and I have no updates on the shipment\r\n\r\nOn Mon, Nov 24, 2025 at 3:51 AM support@simsonn.com ",
+      "user_id": 158007211535,
+      "created_at": "2025-12-02T04:40:12Z",
+      "updated_at": "2025-12-02T04:40:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013494352,
+      "body_text": "Hi WKIS Killa,    I apologize for not getting back to you sooner. I see the package has been delivered.  https://t.17track.net/en#nums=SF6047080365792",
+      "user_id": 158001343601,
+      "created_at": "2025-12-05T11:28:36Z",
+      "updated_at": "2025-12-05T11:28:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

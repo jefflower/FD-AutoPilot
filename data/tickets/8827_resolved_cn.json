@@ -1,0 +1,25 @@
+{
+  "id": 8827,
+  "subject": "订购踏板",
+  "description_text": "嘿，\n我打算从你们的网站 simpson.com 订购一些踏板，\n但我担心安全问题/被骗钱，\n没有看到很多关于这个网站/从那里订购的人的评论。\n你能以任何方式让我放心吗？如果出了问题我会拿回我的钱吗？\n谢谢，\nK",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-21T19:37:58Z",
+  "updated_at": "2025-12-22T12:07:54Z",
+  "requester_id": 158008214808,
+  "responder_id": 158007774669,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014877548,
+      "body_text": "你好，Kristers Pulle 你好，请随意购买。我们不会骗取你的钱。我们有很多客户，我们是值得信赖的。",
+      "user_id": 158007774669,
+      "created_at": "2025-12-22T12:07:51Z",
+      "updated_at": "2025-12-22T12:07:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

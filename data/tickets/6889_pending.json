@@ -1,0 +1,24 @@
+{
+  "id": 6889,
+  "subject": "Fwd: Delivery question, ORDER #SSN3484",
+  "description_text": "Hi,\r\n\r\nIts been two weeks now. And no information yet about my order. I havent had\r\nany answers even. Its express shipping then why is it coming like a month.\r\n\r\nBest regards,\r\nLarsen-Klaus Tammepuu\r\n\r\n\r\n\r\n---------- Forwarded message ---------\r\nFrom: Larsen-Klaus Tammepuu <larsen.tammepuu@gmail.com>\r\nDate: Wed, 19. Nov 2025 at 21:26\r\nSubject: Delivery question, ORDER #SSN3484\r\nTo: <service@simsonn.com>\r\n\r\n\r\nHello,\r\n\r\nWhy my order still havent been sent already?\r\nOr it is but the tracker is just not live.\r\n\r\nThanks,\r\nLarsen-Klaus Tammepuu\r\n\r\n",
+  "status": 3,
+  "priority": 2,
+  "created_at": "2025-11-27T16:53:28Z",
+  "updated_at": "2025-12-05T10:38:25Z",
+  "requester_id": 158007179181,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013484805,
+      "body_text": "Hi Larsen-Klaus Tammepuu,    I apologize for not getting back to you sooner. Here is your shipping tracking link.  https://www.dhl.de/en/privatkunden/pakete-empfangen/verfolgen.html?piececode=CE326634701DE&cid=c_dhl_2502061_2353",
+      "user_id": 158001343601,
+      "created_at": "2025-12-05T10:38:25Z",
+      "updated_at": "2025-12-05T10:38:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

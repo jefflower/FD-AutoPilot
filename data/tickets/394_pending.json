@@ -1,0 +1,44 @@
+{
+  "id": 394,
+  "subject": "SSN1567 status",
+  "description_text": "Hi, I am checking in on the shipping status of this item, order SSN1567. It\r\nhas been 2 weeks since I purchased the pedal plate and it is still being\r\nprepared for shipping. Just wanting to make sure the order hasn't been\r\nmissed and hoping it can be sent relatively soon.\r\n\r\nThank you,\r\nBradley Tidwell\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-06-12T23:35:29Z",
+  "updated_at": "2025-06-14T03:57:10Z",
+  "requester_id": 158001472762,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003003319,
+      "body_text": "Hi Bradley Tidwell,  I noticed that the baseplate order you placed on May 30th hasn't been shipped yet. I’ll immediately contact our operations team to confirm whether it has been dispatched — the tracking number might have been missed.      #SSN1573  I noticed that the baseplate order you placed on May 30th hasn't been shipped yet. I’ll immediately contact our operations team to confirm whether it has been dispatched — the tracking number might have been missed. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-13T03:56:09Z",
+      "updated_at": "2025-06-13T03:56:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003003363,
+      "body_text": "Hi Bradley Tidwell,  Hello, apologies for the earlier mistake. You did not order a voice coil motor — your order is for a PlusX baseplate. The baseplate is expected to arrive at our U.S. warehouse in the next few days, and we will ship it to you as soon as it arrives. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-13T04:00:02Z",
+      "updated_at": "2025-06-13T04:00:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003037227,
+      "body_text": "Thank you for the quick reply and update.\r\n\r\nI appreciate it and look forward to its arrival.\r\n\r\nThank you,\r\nBradley Tidwell\r\n\r\nOn Thu, Jun 12, 2025 at 9:00 PM service@simsonn.com ",
+      "user_id": 158001472762,
+      "created_at": "2025-06-13T18:13:01Z",
+      "updated_at": "2025-06-13T18:13:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

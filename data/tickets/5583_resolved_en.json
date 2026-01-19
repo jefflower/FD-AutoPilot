@@ -1,0 +1,85 @@
+{
+  "id": 5583,
+  "subject": "Simsonn Plus X brake problem",
+  "description_text": "Hello, recently i bought the Simsonn Plus X pedals ( all 3 of them ) and i have problem with the brake inputs . It cannot read the correct inputs and i cannot calibrate it either .\nLooking forward to hearing from you soon\nKostas Kordatos\n\n\nSent from Outlook for Android",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-11-03T17:17:57Z",
+  "updated_at": "2025-11-09T07:46:25Z",
+  "requester_id": 158006368893,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011769322,
+      "body_text": "Hi Kostas Kordatos,  Please use the Offset function to zero the white initial signal of the pedal. Also, provide a photo of the brake pedal installation, and I will assist you in checking it.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-05T05:35:55Z",
+      "updated_at": "2025-11-05T05:35:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011824391,
+      "body_text": "I tried  the offset but nothing changed, the values are weird\nThrottle 1888\nBrake 774\nClutch 1910\n\nThrottle and clutch work perfectly.\n  I attach the photos of the installation of the brake and the control box in my rig.\n\nWheel drive is Fanatec csl dd  8nm , if it matters .\nLooking forward for your quick response\n\nSent from Outlook for Android",
+      "user_id": 158006368893,
+      "created_at": "2025-11-05T17:09:29Z",
+      "updated_at": "2025-11-05T17:09:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011902872,
+      "body_text": "Hey guys, i need to solve this asap please , any news regarding my problem ??\n\nSent from Outlook for Android",
+      "user_id": 158006368893,
+      "created_at": "2025-11-06T23:07:10Z",
+      "updated_at": "2025-11-06T23:07:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011914556,
+      "body_text": "Hi Kostas Kordatos,    Hello, your racing bracket is obstructing the movement of the brake sensor, causing the brake pedal to be unresponsive. Please adjust the installation accordingly.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-07T09:03:25Z",
+      "updated_at": "2025-11-07T09:03:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011914564,
+      "body_text": "Hi Kostas Kordatos,     Hello, your racing bracket is obstructing the movement of the brake sensor, causing the brake pedal to be unresponsive. Please adjust the installation accordingly.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-07T09:04:06Z",
+      "updated_at": "2025-11-07T09:04:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011955208,
+      "body_text": "Thanks a lot guys for the response! Luckily it was exactly what  you said , everything works perfectly fine now ! Appreciated, cheers\n\nSent from Outlook for Android",
+      "user_id": 158006368893,
+      "created_at": "2025-11-07T22:21:41Z",
+      "updated_at": "2025-11-07T22:21:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011986950,
+      "body_text": "Very good understanding of the situation and instant problem solving answers.",
+      "user_id": 158006368893,
+      "created_at": "2025-11-09T07:46:24Z",
+      "updated_at": "2025-11-09T07:46:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

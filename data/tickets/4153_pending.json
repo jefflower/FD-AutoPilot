@@ -1,0 +1,24 @@
+{
+  "id": 4153,
+  "subject": "Simsonn pro x axe 4",
+  "description_text": "Bonjour j'ai souci avec mes pédales simsonn pro X sur Assetto corsa il me donne un axe 4 alors que j'ai que axe 1 axe 2 axe 3 merci de votre réponse\r\n\r\nEnvoyé à partir de Outlook pour iOS<https://aka.ms/o0ukef>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-26T11:54:23Z",
+  "updated_at": "2025-09-27T01:33:08Z",
+  "requester_id": 158002229373,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009360128,
+      "body_text": "Hello, please first use version 2.1.1 of the software. On the interface, click “Restore,” then click “Save,” and finally reinsert the USB. This will disable the fourth axis (RX).  https://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=drive_link",
+      "user_id": 158001343601,
+      "created_at": "2025-09-27T01:33:08Z",
+      "updated_at": "2025-09-27T01:33:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

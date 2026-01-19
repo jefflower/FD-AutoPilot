@@ -1,0 +1,54 @@
+{
+  "id": 8928,
+  "subject": "Order #SSN4704 Loadcell issue",
+  "description_text": "Hi team,\r\n\r\nI ordered my pedals on Dec 11 with express shipping but was delivered after\r\n11 days (today) and now I just set it up and plugged it in the computer and\r\nthe load cell seems to have issues\r\nIt’s very frustrating when the delivery gets delayed even after paying for\r\nexpress delivery (Note: it’s not UPS fault for the delay the item itself\r\nwas dispatched only after 7th day) and now the pedals are faulty.\r\nNot sure why I have spend £200 for\r\n\r\nEven without touching the pedal there is load being applied in the pedal\r\nI double checked and nothing is touching or not even near the pedal\r\n\r\nWhat do I do now ?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-22T22:18:27Z",
+  "updated_at": "2025-12-24T06:00:16Z",
+  "requester_id": 158007808080,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014943935,
+      "body_text": "It’s getting worse and worse\r\n\r\n",
+      "user_id": 158007808080,
+      "created_at": "2025-12-22T22:29:03Z",
+      "updated_at": "2025-12-22T22:29:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014945483,
+      "body_text": "Hi NIJOHN JM,    You can set the Offset, which will reset the pedal’s initial signal to 0%. After setting the offset, please recalibrate the pedal. The blue signal is the one used by the game, and a dead zone can be configured for it.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-22T22:59:53Z",
+      "updated_at": "2025-12-22T22:59:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015017735,
+      "body_text": "This is the maximum force I am gonna put and I want my pedal to range from\r\n0 to 100 inbetween this point\r\nHow do I set that\r\n\r\nI have attached a video please check\r\n\r\nOn Mon, 22 Dec 2025 at 23:00, service@simsonn.com ",
+      "user_id": 158007808080,
+      "created_at": "2025-12-24T04:38:45Z",
+      "updated_at": "2025-12-24T04:38:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015020364,
+      "body_text": "Hi NIJOHN JM,     Please use the Calibrate button shown in the screenshot to calibrate the pedal signal. After calibration, you will be able to press the pedal from 0% to 100%. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-24T06:00:15Z",
+      "updated_at": "2025-12-24T06:00:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

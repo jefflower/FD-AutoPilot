@@ -1,0 +1,35 @@
+{
+  "id": 11067,
+  "subject": "Vam (Pro) 触觉反馈对第三方产品的支持",
+  "description_text": "嘿，\n我想问一下 “Simsonn VAM Pro 线性马达” 和 “Simsonn Plus X 踏板控制盒” 是否与 Moza R5 基座和 SR-P Lite 踏板兼容。也就是说，如果我想使用你们的产品，它们能否在没有任何 Simsonn 踏板的情况下独立运行？我需要将 Moza 踏板连接到控制单元吗？还是说，即使不将踏板连接到控制单元，马达和控制单元也能正常工作并提供正确的反馈？\n\n诚挚的，\n\nM.K",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-16T10:28:41Z",
+  "updated_at": "2026-01-17T07:05:35Z",
+  "requester_id": 158009288335,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017259716,
+      "body_text": "您好 Mikolaj Kadluczka，是的，它们是兼容的。您只需要一个新的 Plus X 控制盒。但安装支架可能不兼容。",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T11:56:39Z",
+      "updated_at": "2026-01-16T11:56:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017262672,
+      "body_text": "如果我理解正确的话，我需要马达、一个电源和一个控制单元？Moza 踏板的连接保留在基座上，我只需将 VAM 马达连接到控制单元，然后将其插入电脑？反馈是如何工作的，马达是从游戏中获得反馈，还是直接从连接的踏板获得反馈？如果我想购买 VAM Pro 马达，它们是与 Plus X 控制单元一起工作，还是只与 Pro X Ultra 控制单元一起工作。\n我应该使用什么软件来校准马达，Simsonn 软件还是 Simhub 更适合独立使用（没有任何其他 Simsonn 外围设备）？它们需要游戏支持吗，还是无论什么游戏都能用？\n安装是我最不担心的问题，现在可以轻松地 3D 打印这种东西。\n我的最后一个问题是关于 VAM 马达和 VAM Pro 之间的区别？这两种马达有什么不同？",
+      "user_id": 158009288335,
+      "created_at": "2026-01-16T12:39:49Z",
+      "updated_at": "2026-01-16T12:39:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

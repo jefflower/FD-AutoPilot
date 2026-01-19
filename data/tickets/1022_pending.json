@@ -1,0 +1,24 @@
+{
+  "id": 1022,
+  "subject": "Order SSN1772 tracking",
+  "description_text": "Hi Simsonn,\r\n\r\nI received a dispatch notification on the 18th of June but the tracking\r\npage have no information on the package.\r\n\r\n\r\n\r\nCan you please provide an update?\r\n\r\nRegards,\r\nKelly\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-01T02:12:29Z",
+  "updated_at": "2025-07-02T07:07:48Z",
+  "requester_id": 158001853597,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004363545,
+      "body_text": "Hi Kelly W,     Here is the latest tracking information. We sincerely apologize for the delay in your order, which was caused by a shortage of components from our supplier. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T07:07:48Z",
+      "updated_at": "2025-07-02T07:07:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

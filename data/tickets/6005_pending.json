@@ -1,0 +1,74 @@
+{
+  "id": 6005,
+  "subject": "Missing parts in order",
+  "description_text": "Hello, I didn't received extra Simsonn Pro Pedals and Pro Plus Pedals\r\nUpgrade Kit × 1 that I ordered in a shipment from order #SSN334 but i paid\r\nfor it anyway. You will send missing part of the order soon without\r\ncharging me for another shipping?\r\nThank you from above.\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-11-12T15:58:39Z",
+  "updated_at": "2025-11-18T08:02:04Z",
+  "requester_id": 158006967941,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012303222,
+      "body_text": "Hi Kamil Kuciński,      I notice that the missing item is the Plus X upgrade kit, while you purchased our latest Plus X pedal. This upgrade kit is designed for use with older pedal models.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-14T07:30:12Z",
+      "updated_at": "2025-11-14T07:30:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012322699,
+      "body_text": "If you don't want to send this set just give me my money back because I\r\npaid for it and didn't received that. I want this set because i ordered it\r\nfor my friend not me and I don't know what to tell him.\r\n\r\npt., 14 lis 2025, 08:30 użytkownik service@simsonn.com ",
+      "user_id": 158006967941,
+      "created_at": "2025-11-14T16:05:25Z",
+      "updated_at": "2025-11-14T16:05:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012400547,
+      "body_text": "Hi Kamil Kuciński,  Please provide the complete order number so we can check for you. What we mean is, if you purchased the latest PlusX pedal, you do not need the upgrade kit for older pedal versions, and we can refund the cost of that kit to you. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-16T03:27:45Z",
+      "updated_at": "2025-11-16T03:27:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012411264,
+      "body_text": "I know this kit don't fit to pedals that i ordered. I just want to get that\r\nupgrade kit for my friend that has different pedals than mine. So I insist\r\nto send me this upgrade set.\r\nThank you.\r\n\r\nniedz., 16 lis 2025 o 04:28 service@simsonn.com ",
+      "user_id": 158006967941,
+      "created_at": "2025-11-16T11:29:46Z",
+      "updated_at": "2025-11-16T11:29:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012411265,
+      "body_text": "[image: image.png]\r\n\r\nniedz., 16 lis 2025 o 12:29 Kamil Kuciński <kamil.kucinski75@gmail.com>\r\nnapisał(a):\r\n\r\n> I know this kit don't fit to pedals that i ordered. I just want to get\r\n> that upgrade kit for my friend that has different pedals than mine. So I\r\n> insist to send me this upgrade set.\r\n> Thank you.\r\n>\r\n> niedz., 16 lis 2025 o 04:28 service@simsonn.com ",
+      "user_id": 158006967941,
+      "created_at": "2025-11-16T11:30:24Z",
+      "updated_at": "2025-11-16T11:30:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012504766,
+      "body_text": "Hi Kamil Kuciński,    Your parcel has been dispatched and is expected to arrive around the 25th. We apologise for any delay and inconvenience caused.  https://t.17track.net/en#nums=YT2532200706936431",
+      "user_id": 158001343601,
+      "created_at": "2025-11-18T08:02:03Z",
+      "updated_at": "2025-11-18T08:02:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": 8629,
+  "subject": "底板",
+  "description_text": "你好，\n我几周前从 Simsonn 订购了 Ultra 踏板，但没有订购底板。现在看来，单独购买底板比捆绑销售时贵。有没有可能打折？\n谢谢\nTom\n\n发自 Outlook for Android<https://aka.ms/AAb9ysg>",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-18T18:08:42Z",
+  "updated_at": "2025-12-22T08:52:37Z",
+  "requester_id": 158007658486,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014744082,
+      "body_text": "你好 T B，很抱歉，单独运输底板的成本比随踏板一起运输高得多。请告知您的国家，我们将看看是否能为您提供更优惠的价格。",
+      "user_id": 158001343601,
+      "created_at": "2025-12-19T07:02:46Z",
+      "updated_at": "2025-12-19T07:02:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014744190,
+      "body_text": "你好，我也在亚马逊上给您发了消息。我来自英国。谢谢\n\n发自 Outlook for Android<https://aka.ms/AAb9ysg>\n________________________________",
+      "user_id": 158007658486,
+      "created_at": "2025-12-19T07:07:31Z",
+      "updated_at": "2025-12-19T07:07:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014866622,
+      "body_text": "",
+      "user_id": 158007658486,
+      "created_at": "2025-12-22T08:52:36Z",
+      "updated_at": "2025-12-22T08:52:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

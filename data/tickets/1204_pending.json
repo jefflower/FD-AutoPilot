@@ -1,0 +1,24 @@
+{
+  "id": 1204,
+  "subject": "Request Product",
+  "description_text": "Dear Simsonn Team\r\n\r\nI hope this message finds you well.\r\n\r\nI am currently preparing a video feature about your product for my audience in Switzerland. As part of this project, I would like to purchase your product.\r\n\r\nTo support this initiative, I would kindly like to ask if you could provide a 20% discount voucher for the purchase. The video will highlight the product’s features and benefits, and I will make sure to credit your brand appropriately.\r\n\r\nPlease let me know if this would be possible.\r\n\r\nThank you very much for your time and consideration. I look forward to your response.\r\n\r\nBest regards,\r\nAlmir Hismani\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-04T08:07:22Z",
+  "updated_at": "2025-07-04T13:21:48Z",
+  "requester_id": 158001891759,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004445083,
+      "body_text": "Hi,     You can use this 15% discount first: SN15   We can apply up to 20% off for you after your video is posted.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-04T13:21:48Z",
+      "updated_at": "2025-07-04T13:21:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

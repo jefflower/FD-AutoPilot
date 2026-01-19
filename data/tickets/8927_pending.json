@@ -1,0 +1,44 @@
+{
+  "id": 8927,
+  "subject": "Status of #SSN4441",
+  "description_text": "Hello,\r\n\r\nI ordered the new shifter on December 5th. It said it would be shipped\r\nstarting December 15th. Then it changed to December 19th on product page\r\nbut I wasn't noticed. Now it is December 22nd and it's still not shipped.\r\n\r\nWhat is the status?\r\n\r\n/Martin\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-22T22:00:09Z",
+  "updated_at": "2025-12-28T04:32:26Z",
+  "requester_id": 158008313074,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014947216,
+      "body_text": "Hi Martin Fredriksson,    The 2-in-1 shifter will start shipping from today. There has been a slight adjustment to the delivery schedule due to changes in some components.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-22T23:45:01Z",
+      "updated_at": "2025-12-22T23:45:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015070292,
+      "body_text": "Thanks for the update. But it seems still it has not shipped three days\r\nlater?\r\n\r\nKind regards\r\n\r\n",
+      "user_id": 158008313074,
+      "created_at": "2025-12-25T13:23:26Z",
+      "updated_at": "2025-12-25T13:23:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015147980,
+      "body_text": "Hi Martin Fredriksson,      Latest production update: The HS Pro shifter will be shipped on December 29. The schedule was slightly delayed due to issues with components before shipment. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T04:32:25Z",
+      "updated_at": "2025-12-28T04:32:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

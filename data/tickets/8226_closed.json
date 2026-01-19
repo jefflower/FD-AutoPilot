@@ -1,0 +1,24 @@
+{
+  "id": 8226,
+  "subject": "#SSN4704 order updates reg",
+  "description_text": "#SSN4704 is my order number\r\nMobile 07384090285\r\nI have placed my order on 11 Dec 2025\r\nI have literally no no updates since\r\nI have paid extra to get my order within a week(3 -7 days is what was\r\nmentioned)\r\nKindly update one the order status\r\nAll I can see is “unfulfilled”\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-12-14T19:23:06Z",
+  "updated_at": "2025-12-21T02:38:54Z",
+  "requester_id": 158007808080,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014826016,
+      "body_text": "此工单已关闭并合并到工单 8671 中",
+      "user_id": 158000445778,
+      "created_at": "2025-12-21T02:38:54Z",
+      "updated_at": "2025-12-21T02:38:54Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

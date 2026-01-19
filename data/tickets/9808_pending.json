@@ -1,0 +1,24 @@
+{
+  "id": 9808,
+  "subject": "URGENT - Refund Still Not Received - Order #SSN3936",
+  "description_text": "Hello,\n\nI am writing to express my frustration regarding my refund for order #SSN3936.\n\nOn December 24th, you informed me that the refund would be processed \"immediately upon returning on the 28th.\" It is now January 2nd, and I have still not received my €376.02.\n\nTo summarize the timeline:\n- December 6th: I shipped the items back via Bpost\n- Mid-December: You confirmed receipt and inspection\n- December 24th: You promised to process the refund on December 28th\n- January 2nd: Still no refund\n\nUnder EU Consumer Rights Directive 2011/83/EU, refunds must be issued within 14 days of receiving returned goods. You have now exceeded this legal deadline by approximately three weeks.\n\nI am giving you until Friday, January 10th, to process my refund in full. If I do not receive it by then, I will:\n1. File an official complaint with the European Consumer Centre Belgium (ECC)\n2. Initiate a chargeback through my payment provider\n3. Leave public reviews detailing this experience\n\nPlease confirm receipt of this email and provide a concrete refund date within 48 hours.\n\nRegards,\nYouness Rami.\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-02T14:44:13Z",
+  "updated_at": "2026-01-04T09:24:05Z",
+  "requester_id": 158007501451,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015610902,
+      "body_text": "Hi Younessrami,    We apologize for the inconvenience caused. Your refund has been processed. Please check your account.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-04T09:24:05Z",
+      "updated_at": "2026-01-04T09:24:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

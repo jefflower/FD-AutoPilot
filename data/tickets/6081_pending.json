@@ -1,0 +1,64 @@
+{
+  "id": 6081,
+  "subject": "Questions/Doubts",
+  "description_text": "Hello, I've been eyeing your products for a couple months now since Black\r\nFriday is coming up. Being 100% honest I'm between y'all (Plus X model,\r\nnewest one) and Simagic P1000's. Reading/watching reviews I've seen your\r\ncustomer service is awesome which is a super plus.\r\n\r\nI'm located in Puerto Rico so I wanted to ask what are typical delivery\r\ntimes and shipping costs?\r\nI'm guessing the warranty covers me, so if something needs servicing or\r\nparts I'm good, correct?\r\n\r\nThanks,\r\nGabriel\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-11-14T03:31:38Z",
+  "updated_at": "2025-11-17T03:39:22Z",
+  "requester_id": 158007041265,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012297729,
+      "body_text": "Hi Gabriel Hernandez,     Yes, the warranty remains valid. Purchases made on the official website come with a two-year warranty. However, shipping to Puerto Rico will incur additional shipping fees. Based on the previous address, the estimated cost is around $35 USD. Please send me your address information and the specific product you need, and I will look into the exact amount required for you.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-14T03:48:21Z",
+      "updated_at": "2025-11-14T03:48:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012298335,
+      "body_text": "Address is:\r\nGabriel Hernandez\r\nB7 Calle A Villa Rosa 2\r\nGuayama, Puerto Rico\r\n00784\r\n\r\nImage attached of the product. Didn't see a clutch mount option for\r\nhaptics, if there is one I would like to add it.\r\n\r\nOn Thu, Nov 13, 2025 at 11:48 PM service@simsonn.com ",
+      "user_id": 158007041265,
+      "created_at": "2025-11-14T04:11:58Z",
+      "updated_at": "2025-11-14T04:11:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012300805,
+      "body_text": "Hi Gabriel Hernandez,    The new U-shaped mounting brackets are currently out of stock in our US warehouse and can only be shipped from China. If you require them, an additional $39 shipping fee will apply. If not required, the cost remains $30.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-14T05:48:15Z",
+      "updated_at": "2025-11-14T05:48:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012309010,
+      "body_text": "Is there a way to mount the motors to the pedals without the u-shaped ones?\r\nI just want to be abñe to mount all 3 of them. If they are neccesary no\r\nproblem.\r\n\r\nOn Fri, Nov 14, 2025, 1:48 AM service@simsonn.com ",
+      "user_id": 158007041265,
+      "created_at": "2025-11-14T12:41:34Z",
+      "updated_at": "2025-11-14T12:41:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012428677,
+      "body_text": "Hi Gabriel Hernandez,    Certainly. The kit includes the original mount, which can be used as normal.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-17T03:39:21Z",
+      "updated_at": "2025-11-17T03:39:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

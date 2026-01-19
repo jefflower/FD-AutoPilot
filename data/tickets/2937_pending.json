@@ -1,0 +1,24 @@
+{
+  "id": 2937,
+  "subject": "Faulty Brake pedal sensor Order #SSN2051",
+  "description_text": "I have received the Plus X Racing Simulator Pedal and Vam Pro, Order #SSN2051 .     The pedals work great unit I attached the VAM Pro motors. When either the throttle or brake VAM motor vibrates, the car stops in the game, even the brake pedal is not pressed. I removed the VAM motors, and the brake pedal worked fine. I then remove the brake pedal from the baseplate and turn it upside down. I put the VAM on top of the white sensor block, see attached Photo1.  When the VAM motor is activated, the sensor sends out a braking signal to the Simsonn Manager or Simhub app, see Photo2. I would think the brake sensor somehow short-circuited when it is being shaken. Could I return and exchange the brake pedal, or can you just send out a brake sensor (Photo3) for me to fix the problem, please? Many thanks",
+  "status": 3,
+  "priority": 2,
+  "created_at": "2025-08-21T10:27:49Z",
+  "updated_at": "2025-08-22T03:59:46Z",
+  "requester_id": 158002820854,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007324745,
+      "body_text": "Hi Chi-Wing Liu,  The quickest replacement solution is to use nylon screws and nylon washers of the same specification (non-metal material) instead of the provided metal screws. The screw specification is M4×8mm, and the washer has an M4 inner diameter. This ensures proper electrical isolation between the bracket and the VAM Pro motor. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-22T03:59:38Z",
+      "updated_at": "2025-08-22T03:59:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "id": 688,
+  "subject": "Impossible à se connecter pour calibration / Plus X",
+  "description_text": "Bonjour\r\n\r\nJe n’arrive pas à connecter mon nouveau pédalier Simsonn Plus X\r\nIl ne reconnaît pas le pédalier\r\nMa version actuel est la 2.0.8\r\nPouvez vous m’aider ? Merci d’avance\r\n\r\n[image0.jpeg]\r\n\r\n[image1.jpeg]\r\n\r\nEnvoyé de mon iPhone\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-06-21T17:43:38Z",
+  "updated_at": "2025-06-22T12:41:23Z",
+  "requester_id": 158001702318,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003679512,
+      "body_text": "Hi 123 123,     May I ask which country you are from? I noticed that there may be a compatibility display issue with version 2.0.8 on your side. Please try downloading and testing with version 2.0.7 instead.  Also, please check if the upgrade button on your controller box has been pressed down. If so, release it, reconnect the USB, and then check if everything works correctly with version 2.0.7.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T01:32:49Z",
+      "updated_at": "2025-06-22T01:32:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003679884,
+      "body_text": "Je suis en France, quand j’essaye de désinstaller la version 2.0.8 et que je télécharge la version 2.0.7 c’est la version 2.0.8 qui s’affiche, pourquoi ? \r\n\r\nEnvoyé de mon iPhone\r\n\r\n> Le 22 juin 2025 à 03:33, support@simsonn.com a écrit :\r\n> \r\n> May I ask which country you are from? I noticed that there may be a compatibility display issue with version 2.0.8 on your side. Please try downloading and testing with version 2.0.7 instead.\r\n> Also, please check if the upgrade button on your controller box has been pressed down. If so, release it, reconnect the USB, and then check if everything works correctly with version 2.0.7.\r\n",
+      "user_id": 158001702318,
+      "created_at": "2025-06-22T06:52:12Z",
+      "updated_at": "2025-06-22T06:52:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003679893,
+      "body_text": "Hi     Have you completely uninstalled version 2.0.8?",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T07:04:14Z",
+      "updated_at": "2025-06-22T07:04:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003680174,
+      "body_text": "Hi 123 123,    Would you mind installing the remote tool Todesk? It doesn’t require registration — just provide the ID and temporary password, and I can remotely assist you with checking and resolving the issue.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T12:41:23Z",
+      "updated_at": "2025-06-22T12:41:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

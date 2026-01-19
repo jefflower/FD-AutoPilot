@@ -1,0 +1,24 @@
+{
+  "id": 6958,
+  "subject": "Issue with pedals ingame",
+  "description_text": "Hello,\r\n\r\nI’m reaching out because I’m having ongoing issues with my Simsonn pedals\r\nnot being detected correctly in games after some driver problems.\r\n\r\nInitially, the pedals were working, but after trying to reinstall or adjust\r\ndrivers, they stopped showing up in my sim (F1 25) and were not appearing\r\ncorrectly in Windows Game Controllers. I was eventually able to get the\r\nfirmware reinstalled and the pedals are now visible in the Simsonn software\r\nagain and responding normally there, but they are still not appearing as\r\nusable inputs in games.\r\n\r\nHere are the troubleshooting steps I’ve already attempted:\r\n\r\n   -\r\n\r\n   Verified the pedals show up in *Device Manager* under USB devices.\r\n   -\r\n\r\n   Checked driver status and attempted reinstall/update.\r\n   -\r\n\r\n   Tried connecting the pedals directly to the motherboard USB ports and\r\n   also through a powered USB hub (the cable will not reach the PC otherwise).\r\n   -\r\n\r\n   Reinstalled firmware using the supplied tool.\r\n   -\r\n\r\n   Restarted the PC multiple times after each change.\r\n   -\r\n\r\n   Checked Windows Game Controllers (joy.cpl), but the pedals do not show\r\n   up as a calibratable device there.\r\n   -\r\n\r\n   Confirmed that the Simsonn software detects the pedals correctly and\r\n   shows full input movement.\r\n\r\nThe issue now is that even though the pedals work inside your software,\r\nWindows and my racing sims do not recognize them as a game controller/input\r\ndevice.\r\n\r\nCould you please advise on the next steps or provide guidance on how to\r\nfully reinstall/reset the drivers so that Windows can properly detect the\r\npedals again?\r\n\r\nThank you for your help — I really enjoy the pedals and just want to get\r\nthem working correctly again.\r\n\r\nBest regards,\r\nChristian Lowery\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-28T13:39:55Z",
+  "updated_at": "2025-12-01T05:54:44Z",
+  "requester_id": 158007392058,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013158365,
+      "body_text": "你好，克里斯蒂安·洛厄里，     Hello, here is the setup guide for using the SIMSONN Plus X pedals in F1 25:    First time entering the game    You may see a message:   NO PRESET CONTROL SCHEME FOR DEVICE(S) SIMSONN Plus X Please customise your controls in the Settings Menu...     Click Okay to continue.      Bind controls and save a new scheme    Go to Settings → Controls to bind pedals and buttons.    When exiting, select Save as new Control Scheme, give it a name (e.g., SIMSONN), and click Save.      Manage and switch control schemes    Main Menu → Settings → Controls → Control Scheme List    Your SIMSONN scheme will appear; you can select it directly for future use.       ? Note: If you delete the scheme without backup, you will need to repeat the binding and saving process.     After completing these steps, your pedals will work properly in the game, providing a realistic driving experience.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-01T05:54:31Z",
+      "updated_at": "2025-12-01T05:54:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

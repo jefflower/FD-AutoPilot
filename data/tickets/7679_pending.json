@@ -1,0 +1,24 @@
+{
+  "id": 7679,
+  "subject": "Simsonn VAM Pro Linear Motor",
+  "description_text": "Hello,\r\nCan you tell me if the it is possible to adapt the Simsonn Vam Pro  on the\r\nlogitech RS Pedals ?\r\nMeilleures salutations.\r\nColas Patrice.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-08T10:32:03Z",
+  "updated_at": "2025-12-08T11:00:30Z",
+  "requester_id": 158007695768,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014120074,
+      "body_text": "Hi Patrice COLAS,    Thank you for your question — yes, in theory, Simsonn's VAM Pro Haptic system can be used with any pedal set, including Logitech RS Pedals. The only requirement is using Simsonn's control box (Plus X Control Box) to connect and drive the haptic functionality.  However, we currently do not offer official mounting brackets for non-Simsonn pedals (such as Logitech RS).",
+      "user_id": 158001343601,
+      "created_at": "2025-12-08T11:00:30Z",
+      "updated_at": "2025-12-08T11:00:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

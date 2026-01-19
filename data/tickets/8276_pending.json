@@ -1,0 +1,34 @@
+{
+  "id": 8276,
+  "subject": "SSN4741",
+  "description_text": "Hello,\r\n\r\nJust to make sure - this order includes express shipping and still has not\r\nbeen sent. Is this okay? In my opinion we are running of time.\r\n\r\nKind regards,\r\nRobert Olszewski\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-15T09:34:07Z",
+  "updated_at": "2025-12-15T10:41:09Z",
+  "requester_id": 158007813367,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014503231,
+      "body_text": "Hi mBoBBy,    We sincerely apologise for any inconvenience caused. As the item is currently out of stock at our German warehouse, we shall arrange an urgent dispatch via UPS for you. Delivery is expected to arrive on the 20th.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-15T09:35:19Z",
+      "updated_at": "2025-12-15T09:35:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014503350,
+      "body_text": "Thank you for fast reply and your help on this,\r\n\r\nHave a good day,\r\nRobert\r\n\r\npon., 15 gru 2025 o 10:35 service@simsonn.com ",
+      "user_id": 158007813367,
+      "created_at": "2025-12-15T09:39:05Z",
+      "updated_at": "2025-12-15T09:39:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

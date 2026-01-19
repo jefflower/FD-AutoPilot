@@ -1,0 +1,84 @@
+{
+  "id": 353,
+  "subject": "Request to Add Items to Existing Order #SSN1609",
+  "description_text": "Dear Simsonn Team,\r\n\r\nI recently received the Plus X from my order and am very happy with it, \r\nthank you!\r\n\r\nSince the VAM Pro's haven't been shipped yet, I wanted to ask if it's \r\npossible to add a set of 30HA white elastomers and a yellow spring to \r\nthe same shipment. This way, they could be delivered together, and we \r\ncould potentially save on shipping costs.\r\n\r\nThank you in advance, and I look forward to your reply.\r\n\r\nKind regards,\r\nChris\r\n-- \r\nNextgen Computing GmbH | nextgen.ch\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-06-11T17:30:30Z",
+  "updated_at": "2025-06-16T07:00:52Z",
+  "requester_id": 158001422770,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002945691,
+      "body_text": "Hi，Christian Strässle，  当然，我会让我们的运营团队联系您，看看是否可以合并订单并避免支付两次运费。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-12T01:33:20Z",
+      "updated_at": "2025-06-12T01:33:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002996667,
+      "body_text": "Thank you for the quick response. I’m looking forward to hearing from \r\nthe operations team.\r\n\r\n谢谢您的快速回复，期待运营团队的消息。\r\n\r\nCheers,\r\nChris\r\n\r\n",
+      "user_id": 158001422770,
+      "created_at": "2025-06-12T18:15:57Z",
+      "updated_at": "2025-06-12T18:15:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003015374,
+      "body_text": "Hi Christian Strässle,     You can pay by clicking on this link and we'll add these two products to your order.",
+      "user_id": 158001343601,
+      "created_at": "2025-06-13T09:29:28Z",
+      "updated_at": "2025-06-13T09:29:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003041131,
+      "body_text": "Hi,\r\n\r\nThere was no link in the mail below.\r\n\r\nCheers,\r\nChris\r\n\r\n",
+      "user_id": 158001422770,
+      "created_at": "2025-06-14T01:56:25Z",
+      "updated_at": "2025-06-14T01:56:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003227781,
+      "body_text": "Hi Christian Strässle,      Sorry！ https://www.simsonn.com/products/difference",
+      "user_id": 158001343601,
+      "created_at": "2025-06-16T06:17:04Z",
+      "updated_at": "2025-06-16T06:17:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003228069,
+      "body_text": "No problem. I just payed.\r\nIs there any estimate when the VAM Pros are ready to ship?\r\n\r\nThank you very much.\r\n\r\nCheers,\r\nChris\r\n\r\n\r\n",
+      "user_id": 158001422770,
+      "created_at": "2025-06-16T06:51:25Z",
+      "updated_at": "2025-06-16T06:51:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003228205,
+      "body_text": "Hi Christian Strässle,    VAM Pro is being shipped today and will be all sent out in the next two days!",
+      "user_id": 158001343601,
+      "created_at": "2025-06-16T07:00:51Z",
+      "updated_at": "2025-06-16T07:00:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

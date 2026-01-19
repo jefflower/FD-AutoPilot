@@ -1,0 +1,54 @@
+{
+  "id": 8094,
+  "subject": "Order #SSN4087 Blaschke Luca",
+  "description_text": "Guten Tag,\r\nIch würde mich gerne um den Status der Order #SSN4087 erkundigen.\r\nDie VAM Pro habe ich heute bereits bekommen. Die Pedale lassen noch auf sich warten. Bitte um Update.\r\n\r\nMit freundlichen Grüßen \r\nLuca Blaschke\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-12T17:27:05Z",
+  "updated_at": "2026-01-05T11:20:33Z",
+  "requester_id": 158007785921,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014880679,
+      "body_text": "We have arranged a replacement shipment for the missing item immediately. You will receive the new tracking information as soon as it ships. ",
+      "user_id": 158001343601,
+      "created_at": "2025-12-22T12:52:51Z",
+      "updated_at": "2025-12-22T12:52:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015259028,
+      "body_text": "Hallo, can i get the New tracking? I dort become it. Is ist for Pedals and Baseplate? Am 22.12.25, 13:53 schrieb \"service@simsonn.com\" ",
+      "user_id": 158007785921,
+      "created_at": "2025-12-30T15:21:10Z",
+      "updated_at": "2025-12-30T15:21:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015259033,
+      "body_text": "Hallo, can i get the New tracking? I dort become it. Is ist for Pedals and Baseplate? Am 22.12.25, 13:53 schrieb \"service@simsonn.com\" ",
+      "user_id": 158007785921,
+      "created_at": "2025-12-30T15:21:15Z",
+      "updated_at": "2025-12-30T15:21:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015722653,
+      "body_text": "Hi Luca Blaschke,    Here is your replacement link. We apologize for not updating it for you in a timely manner. Did you receive it?  https://t.17track.net/en#nums=SF6047195971567",
+      "user_id": 158001343601,
+      "created_at": "2026-01-05T11:20:32Z",
+      "updated_at": "2026-01-05T11:20:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

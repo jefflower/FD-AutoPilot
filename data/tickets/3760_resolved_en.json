@@ -1,0 +1,35 @@
+{
+  "id": 3760,
+  "subject": "Disconnected Message",
+  "description_text": "Hello,\n\nI have the Pro X pedals and control box. It has worked well for me.\nHowever, now my pedals do not work at all.\n\nIn the Simsonn Manager it states that the pedals are disconnected. However\nthey are connected. Nothing has changed. I have tried a new power supply,\nnew USB cable and still I get the same message. The lights on the pedals\nand foot rest turn on, so I know it’s getting power.\n\nI’ve tried to update the software however it says I have the latest\nversion.\n\nPlease advise on what to do here.\nAlmost $300 pedals and less than a year later they are inoperable.\n\nPlease let me know how to fix this!\nThank you!",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-09-12T15:39:52Z",
+  "updated_at": "2025-09-15T00:15:31Z",
+  "requester_id": 158004476896,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008615270,
+      "body_text": "Hi Shanon Murphy,  Please press the upgrade button on the control box, then reinsert the USB cable. The software will automatically enter recovery mode. Next, go to Settings → Update → Manual Firmware Update → pedals-firmware → pedals-prox.sfu to complete the firmware update, and then test it again. Additionally, please do not use a USB hub. Make sure to connect the control box directly to the USB 3.0 blue port on the back of your PC for stable power and reliable data transfer. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-13T01:12:32Z",
+      "updated_at": "2025-09-13T01:12:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008664915,
+      "body_text": "Thank you! That has seemed to have worked so far.\n\nOn Fri, Sep 12, 2025 at 8:12 PM support @simsonn.com",
+      "user_id": 158004476896,
+      "created_at": "2025-09-13T22:13:41Z",
+      "updated_at": "2025-09-13T22:13:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

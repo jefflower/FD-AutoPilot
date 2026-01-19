@@ -1,0 +1,34 @@
+{
+  "id": 6566,
+  "subject": "Order #SSN3723",
+  "description_text": "To whom concerned.\r\n\r\nI believe I have ordered\r\n\r\nSimsonn VAM Pro Linear Motor - the Pedals Haptic Reactor for Vibration\r\nFeedback × 1\r\n\r\nDo they come with mounting plates? Or did I have to buy them separately\r\n\r\nJoshua fostet\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-22T22:39:00Z",
+  "updated_at": "2025-11-24T07:47:52Z",
+  "requester_id": 158007263103,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012799334,
+      "body_text": "Hi Joshua Foster,  For the vibration motor, we include a motor bracket by default. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-24T07:47:34Z",
+      "updated_at": "2025-11-24T07:47:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012799338,
+      "body_text": "Hi Joshua Foster,    They come with mounting brackets, but if you need new ones, you can purchase them at this link.  https://www.simsonn.com/products/simsonn-haptic-reactor-mounting-brackets",
+      "user_id": 158001343601,
+      "created_at": "2025-11-24T07:47:52Z",
+      "updated_at": "2025-11-24T07:47:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

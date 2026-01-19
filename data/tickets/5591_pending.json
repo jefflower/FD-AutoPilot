@@ -1,0 +1,24 @@
+{
+  "id": 5591,
+  "subject": "Order number SSN3211",
+  "description_text": "Any way to cancel this order? I didn't know the haptic motors were going to\r\ncome with the extra plate.\r\n\r\n\r\nThanks\r\nPiero Ramos\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-03T20:20:22Z",
+  "updated_at": "2025-11-04T03:00:05Z",
+  "requester_id": 158006377019,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011700525,
+      "body_text": "Hi Piero Ramos,    We regret to inform you that your package has already been shipped and we are unable to cancel it for you. We sincerely apologize for any inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-04T03:00:05Z",
+      "updated_at": "2025-11-04T03:00:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

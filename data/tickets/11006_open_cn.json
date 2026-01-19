@@ -1,0 +1,35 @@
+{
+  "id": 11006,
+  "subject": "订单 #SSN5509",
+  "description_text": "您好，我于12月29日订购了您的产品，但至今尚未送达。物流追踪显示包裹自1月7日起一直在里斯本，至今我没有收到任何进一步的信息。我已经联系了承运商，他们让我直接联系卖家。谢谢。",
+  "status": 2,
+  "priority": 1,
+  "created_at": "2026-01-15T17:58:25Z",
+  "updated_at": "2026-01-17T11:48:30Z",
+  "requester_id": 158009127688,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017319096,
+      "body_text": "您好，Francisco Freitas，非常抱歉回复延迟。我已经确认您的包裹已送达。您收到了吗？https://t.17track.net/en#nums=CE326639006DE",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T08:15:53Z",
+      "updated_at": "2026-01-17T08:15:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017326569,
+      "body_text": "是的，谢谢。",
+      "user_id": 158009127688,
+      "created_at": "2026-01-17T11:48:30Z",
+      "updated_at": "2026-01-17T11:48:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

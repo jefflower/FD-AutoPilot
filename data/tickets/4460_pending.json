@@ -1,0 +1,134 @@
+{
+  "id": 4460,
+  "subject": "level of filtering",
+  "description_text": "Bonjour sa sert a quoi l option level filtering sur votre logiciel simsonn manager ? merci\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-05T08:43:12Z",
+  "updated_at": "2025-10-07T05:49:23Z",
+  "requester_id": 158005406813,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009938027,
+      "body_text": "Hi ouasmina abderrahaman,     It is used to make the pedal signal smoother and more linear. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T16:08:15Z",
+      "updated_at": "2025-10-05T16:08:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009940020,
+      "body_text": "je le mes sur combien 2 ou plus ?\r\n\r\n\r\n________________________________\r\nDe: service@simsonn.com ",
+      "user_id": 158005406813,
+      "created_at": "2025-10-05T16:25:46Z",
+      "updated_at": "2025-10-05T16:25:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009940754,
+      "body_text": "Hi ouasmina abderrahaman,  If there are no specific requirements for the signal, you can keep it at 2 without making any changes. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T16:27:45Z",
+      "updated_at": "2025-10-05T16:27:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009944197,
+      "body_text": "Dites c est la dernière version du firmware de mes simsonn pro ?\r\n________________________________\r\nDe : service@simsonn.com ",
+      "user_id": 158005406813,
+      "created_at": "2025-10-05T18:12:27Z",
+      "updated_at": "2025-10-05T18:12:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009950376,
+      "body_text": "Hi ouasmina abderrahaman,    Yes, the latest firmware version for the Pro model is 1.8.0.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T23:19:30Z",
+      "updated_at": "2025-10-05T23:19:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009958678,
+      "body_text": "OK. et je peut y installer 'le boîtier avec sorti pour mettre vos motor haptic sur mon simsson pro ? Le 6 oct. 2025 01:19, service@simsonn.com a écrit : \r\n Hi ouasmina abderrahaman, \r\n \r\n Yes, the latest firmware version for the Pro model is 1.8.0. \r\n \r\n \r\n Activé Dim, 5 Oct. à 2:12 H , ouasmina abderrahaman <kheops1971@hotmail.fr> a écrit: Dites c est la dernière version du firmware de mes simsonn pro ? \r\n \r\n \r\n \r\nDe : service@simsonn.com ",
+      "user_id": 158005406813,
+      "created_at": "2025-10-06T05:29:07Z",
+      "updated_at": "2025-10-06T05:29:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009959009,
+      "body_text": "Hi ouasmina abderrahaman,    You’ll need to purchase a PlusX control box, which supports our haptic feedback motors.     https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor?variant=51351053533498",
+      "user_id": 158000445778,
+      "created_at": "2025-10-06T06:04:14Z",
+      "updated_at": "2025-10-06T06:04:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009960140,
+      "body_text": "Bonjour. J ai déjà ce contrôleur . Mais êtes vous sur que mes pedal simsson pro sont compatibles ? Le 6 oct. 2025 08:04, service@simsonn.com a écrit : \r\n Hi ouasmina abderrahaman, \r\n \r\n You’ll need to purchase a PlusX control box, which supports our haptic feedback motors. \r\n \r\n https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor?variant=51351053533498 \r\n \r\n Activé Lun, 6 Oct. à 1:29 H , ouasmina abderrahaman <kheops1971@hotmail.fr> a écrit: OK. et je peut y installer 'le boîtier avec sorti pour mettre vos motor haptic sur mon simsson pro ? \r\n \r\n Le 6 oct. 2025 01:19, service@simsonn.com a écrit : \r\n Hi ouasmina abderrahaman, \r\n \r\n Yes, the latest firmware version for the Pro model is 1.8.0. \r\n \r\n \r\n Activé Dim, 5 Oct. à 2:12 H , ouasmina abderrahaman <kheops1971@hotmail.fr> a écrit: Dites c est la dernière version du firmware de mes simsonn pro ? \r\n \r\n \r\n \r\nDe : service@simsonn.com ",
+      "user_id": 158005406813,
+      "created_at": "2025-10-06T07:10:24Z",
+      "updated_at": "2025-10-06T07:10:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009960853,
+      "body_text": "Hi ouasmina abderrahaman,    It’s compatible. You can test it first, or connect the PlusX control box with your Simsonn Pro pedals, then send me a screenshot of the software interface so I can check it for you.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-06T07:50:20Z",
+      "updated_at": "2025-10-06T07:50:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009963585,
+      "body_text": "Bon ça ne marche pas ! Dès que j'allume la base fanatec cdl dd8 nm les pédale dysfonction direct ! Pourtant j ai mis le boitier a[https://res-1.cdn.office.net/assets/mail/file-icon/png/video_16x16.png]test 1.mp4<https://1drv.ms/v/c/3cd2cd3f8df132f7/EVvZJDvBMkFDsQmPw3zIPfoBOTXsj79dCI7x3m65x9M1Pw> la masse avec votre fils de masse vert ! voir vidéo et photo\r\n________________________________\r\nDe : service@simsonn.com ",
+      "user_id": 158005406813,
+      "created_at": "2025-10-06T10:22:58Z",
+      "updated_at": "2025-10-06T10:22:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009964075,
+      "body_text": "Hi ouasmina abderrahaman,    We also have a Fanatec CSL DD 8Nm base in our test environment, and it works properly here.  Please use the green grounding wire to connect the control box to any metal screw on the pedal.  I’ll send you a detailed checklist to help resolve the interference issue.  Also, please upload your video to Google Drive and make sure the access permission is enabled so we can review it.  To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability:      1.    Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding.      2.    Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive.      3.    Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup.      4.    Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible.      5.    Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs.      6.    Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference.      7.    Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements.      8.    Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-06T10:50:44Z",
+      "updated_at": "2025-10-06T10:50:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009999773,
+      "body_text": "Bon je vais laissé tombé votre système ! j avais un simagic p1000 avec motor  et jamais je n est fait ce que vous me dites ! trop de galère et de fils bref dommage !\r\n________________________________\r\nDe : service@simsonn.com ",
+      "user_id": 158005406813,
+      "created_at": "2025-10-07T05:42:45Z",
+      "updated_at": "2025-10-07T05:42:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

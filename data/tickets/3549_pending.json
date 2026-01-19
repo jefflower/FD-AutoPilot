@@ -1,0 +1,36 @@
+{
+  "id": 3549,
+  "subject": "New review (1★) of Simsonn Plus X Racing Simulation Pedal with Haptic Reactor Optional (from Jamey C.)",
+  "description_text": "Rating: 1 | Review Text: Before I bought them I was told that they work with F1 25. Now that I have them, I cannot get them to work and when I ask others for support help many of them are telling me they are not compatible with F1 25. ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ This review was automatically published.Learn more You have a new 1-star review of Simsonn Plus X Racing Simulation Pedal with Haptic Reactor Optional from Jamey Conrad jamey.conrad@gmail.com Jamey Conrad Display name: Jamey C. Before I bought them I was told that they work with F1 25. Now that I have them, I cannot get them to work and when I ask others for support help many of them are telling me they are not compatible with F1 25. View, Reply or Share Unpublish review This email is sent for 0a6bb1.myshopify.com Unsubscribe \r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-09-06T04:53:34Z",
+  "updated_at": "2025-09-07T03:25:30Z",
+  "requester_id": 158000954852,
+  "responder_id": 158000445778,
+  "cc_emails": [
+    "jamey.conrad@gmail.com"
+  ],
+  "conversations": [
+    {
+      "id": 158008200118,
+      "body_text": "Hi Loox,  In our test environment, F1 2025 runs smoothly without any issues, and I can provide photos for your reference. Could you please describe the specific problem you encountered and share the link where you saw information about F1 2025 being incompatible, as well as details of your own incompatibility issue? We will review the information to identify any possible configuration issues and provide a solution on our official website to help resolve the problem. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T01:13:30Z",
+      "updated_at": "2025-09-07T01:13:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201352,
+      "body_text": "Hi Loox,    Because the RX axis on our previous handbrake was not disabled, it may cause F1 2025 to fail to bind correctly. You can try fixing this issue using SIMSONN Manager 2.1.1:    Open the SIMSONN Manager 2.1.1 software.    In the interface, click the “Restore” button.    Then click the “Save” button.    Reinsert the USB cable.    Finally, test to confirm if the RX axis has been successfully disabled.     https://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T03:25:30Z",
+      "updated_at": "2025-09-07T03:25:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

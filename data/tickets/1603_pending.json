@@ -1,0 +1,44 @@
+{
+  "id": 1603,
+  "subject": "Order tracking SF Express tracking number: SF3190226593359",
+  "description_text": "Hello\r\n\r\nI have been trying to check my Order #SSN1919 for several days, but I can't find out where my parcel is with the tracking number (SF Express tracking number: SF3190226593359<https://www.simsonn.com/_t/c/v3/AAC8DETODCK7eccK86C7poGObblVf5TrGpl2q4ChGgvW6sSxahV1bkLF0SajGg4UZeC4umcuRozF6uDlQ8MTBupMXzkFy3p2Y_qtkRA52u2x-yCQDmvbVcML-iamB4J5bg_et8gn8kisOH6i9yCVTX64XliZxCtzFqRDtxvw1hU63HvcCxehwJwM70zT2PelHoHxxtn5xAgtjGncqHpjRG80WA2uu10Sqf2qb_pt9J5L342gIkwJkoaN5kocHC7uPbVCCrUzaQPSTJ32vUQH30nbCeprcGmo7DqGu1qjU-waeCRIoDrikrA_3dGEJNL_iALWYrSTo1AuiLyqrIP15Y-Uo8A2j0wdqCM=>) on the page that checks the shipment.\r\nCan you please check as soon as possible where the parcel is and why it is not being shown to me. The order has now been placed for 7 days.\r\nbest regards\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-16T14:02:38Z",
+  "updated_at": "2025-07-17T05:51:07Z",
+  "requester_id": 158001891759,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005094104,
+      "body_text": "Hi, I'm very sorry, there is indeed no tracking information for your parcel, we asked the logistics company and they said it was not solicited, but the outbound record from our warehouse does show that it has been solicited, and your parcel may have been lost by the courier. We will immediately send you a replacement, and then go to let the logistics company to investigate, I'm sorry for the delay!",
+      "user_id": 158001343601,
+      "created_at": "2025-07-17T04:38:44Z",
+      "updated_at": "2025-07-17T04:38:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005097956,
+      "body_text": "Hello\r\n\r\nThanks for checking, but I've been waiting for almost three weeks now, and you stated a one-week delivery time, which I paid for. How long will it take for you to ship the new ones? I urgently need the pedals because I'm participating in a tournament soon.\r\n\r\nI would now like to expect some kind of concession from you, or at least express delivery rather than standard delivery.\r\n\r\nBest regards\r\nAlmir\r\n\r\nAm 17.07.2025 um 06:38 schrieb service@simsonn.com:\r\n\r\n﻿\r\nHi, I'm very sorry, there is indeed no tracking information for your parcel, we asked the logistics company and they said it was not solicited, but the outbound record from our warehouse does show that it has been solicited, and your parcel may have been lost by the courier. We will immediately send you a replacement, and then go to let the logistics company to investigate, I'm sorry for the delay!\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+      "user_id": 158001891759,
+      "created_at": "2025-07-17T05:00:56Z",
+      "updated_at": "2025-07-17T05:00:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005106960,
+      "body_text": "Of course, we will use UPS express delivery for you, expected to arrive on the 21st, this is your logistics single number: 1ZJ455510427259639",
+      "user_id": 158001343601,
+      "created_at": "2025-07-17T05:51:07Z",
+      "updated_at": "2025-07-17T05:51:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "id": 538,
+  "subject": "Software Help!!!!!!!!",
+  "description_text": "Hello,\r\n\r\nSo I installed the Simsonn software and it worked normally until it didn't.\r\nThe message came out on my screen that I may be a victim of pirated\r\nsoftware.\r\nI tried everything but nothing worked...\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-06-17T16:32:56Z",
+  "updated_at": "2025-06-19T05:32:13Z",
+  "requester_id": 158001623026,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003384333,
+      "body_text": "Hi Kole,  Please install Todesk — no registration is required. After installation, just share your ID and temporary verification code with me. I’ll remotely help you update the certificate; it will only take about 1–2 minutes. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-18T07:02:14Z",
+      "updated_at": "2025-06-18T07:02:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003462175,
+      "body_text": "where can i find my id and the code?",
+      "user_id": 158001623026,
+      "created_at": "2025-06-18T14:44:28Z",
+      "updated_at": "2025-06-18T14:44:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158003478840,
+      "body_text": "Hi Kole,  Are you online right now? ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-19T03:06:57Z",
+      "updated_at": "2025-06-19T03:06:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003479022,
+      "body_text": "Hi Kole,",
+      "user_id": 158000445778,
+      "created_at": "2025-06-19T03:25:03Z",
+      "updated_at": "2025-06-19T03:25:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003482799,
+      "body_text": "ToDesk:  device ID:878 999 168  Temporary password:0ehy1tt6",
+      "user_id": 158001623026,
+      "created_at": "2025-06-19T04:49:24Z",
+      "updated_at": "2025-06-19T04:49:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158003486797,
+      "body_text": "I'm not home but my pc is on so you can do your thing. Thank you.",
+      "user_id": 158001623026,
+      "created_at": "2025-06-19T05:03:28Z",
+      "updated_at": "2025-06-19T05:03:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158003491596,
+      "body_text": "Hi Kole,  Please try unplugging and reconnecting the USB cable. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-19T05:24:34Z",
+      "updated_at": "2025-06-19T05:24:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003492904,
+      "body_text": "Hi Kole,  The issue has been resolved. We sincerely apologize for any inconvenience caused. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-19T05:32:13Z",
+      "updated_at": "2025-06-19T05:32:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

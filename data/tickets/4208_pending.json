@@ -1,0 +1,44 @@
+{
+  "id": 4208,
+  "subject": "Pedals issue",
+  "description_text": "Good evening,\r\n\r\nI received my pedals and when I download the app to calibrate, it kept showing that my brake is at 50% even though i didn't apply ơn the pedal and my throttle is only going to 30% max.\r\n\r\nWhat should I do?\r\n\r\nKevin Tran\r\nSent from my iPhone\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-28T09:11:10Z",
+  "updated_at": "2025-10-01T10:29:35Z",
+  "requester_id": 158005120871,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009568768,
+      "body_text": "Hi Zayne Jaan Tran,   Please set the Offset feature first to adjust the white signal to the 0% initial position. After that, recalibrate the pedals. Once done, the blue game progress bar will correctly reach 100% when you press the pedal. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-28T12:21:59Z",
+      "updated_at": "2025-09-28T12:21:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009571311,
+      "body_text": "I just did that, seems like it sort of fix the problem, but when I press either pedals down for the blue bar to reach 100%, the white line inside the blue bar only go to about 30%, is that a problem?\r\n\r\n> ",
+      "user_id": 158005120871,
+      "created_at": "2025-09-28T13:23:24Z",
+      "updated_at": "2025-09-28T13:23:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009726371,
+      "body_text": "Hi Zayne Jaan Tran,    You need to calibrate the pedals following the instructions in the manual. After calibration, the blue pedal can be pressed smoothly from 0% to 100%.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T10:29:34Z",
+      "updated_at": "2025-10-01T10:29:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

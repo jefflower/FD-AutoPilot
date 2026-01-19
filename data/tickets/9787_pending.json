@@ -1,0 +1,24 @@
+{
+  "id": 9787,
+  "subject": "Demande d'informatio",
+  "description_text": "\r\n\r\n\r\n \r\n Bonjour Concernant le Simsonn Racing Simulator, sélecteur de vitesse séquentiel. Comment est raccordé ce levier de vitesse,je ne vois pas de prise USB ou autre. Pas de câblage ? Envoyé depuis l'application Mail Orange \r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-02T10:24:47Z",
+  "updated_at": "2026-01-07T09:17:12Z",
+  "requester_id": 158008846622,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016101542,
+      "body_text": "Hi Thierry DIDIERLAURENT,     Have you checked the package to confirm whether a USB data cable is included? A USB data cable is required for proper operation. Additionally, we will release a software update today that adds support for HS Pro calibration. Please note that SIMSONN Manager 2.1.2 does not support this feature.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T09:17:12Z",
+      "updated_at": "2026-01-07T09:17:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

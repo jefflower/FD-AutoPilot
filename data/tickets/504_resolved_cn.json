@@ -1,0 +1,45 @@
+{
+  "id": 504,
+  "subject": "设备连接问题",
+  "description_text": "您好，我正在比赛中，电脑突然出了问题。屏幕变黑，我不得不重启。重启后，踏板就不工作了。在校准模式下，它们无法识别已连接。在电脑的设备管理器中，出现一个关于USB设备的错误消息。我已经更换了输入端口，重启了电脑，并尝试修复错误，但都无效。您能帮我找到解决方案吗？",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-06-16T17:40:59Z",
+  "updated_at": "2025-06-19T04:16:48Z",
+  "requester_id": 158001588036,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003299318,
+      "body_text": "您好，Rafael Santos，请问您的踏板型号是什么？另外，请提供设备管理器中的错误消息以及软件界面的截图。我将尽快协助您解决问题。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-17T01:22:42Z",
+      "updated_at": "2025-06-17T01:22:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003375990,
+      "body_text": "您好朋友，谢谢您的回复。我现在打开了台式机，准备获取您要求的信息，结果一切又恢复正常了……我很高兴问题似乎解决了，但我吓了一大跳，因为我不知道问题出在哪里，现在我仍然不知道，但一切看起来都很好。我感谢 Simsonn 团队的准时响应，他们在我需要帮助时总是能提供帮助。非常感谢。2025年6月16日星期一，14:46，service@simsonn.com",
+      "user_id": 158001588036,
+      "created_at": "2025-06-18T02:00:24Z",
+      "updated_at": "2025-06-18T02:00:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003479439,
+      "body_text": "你好，Rafael Santos，我们很高兴听到您的问题已得到解决！",
+      "user_id": 158000445778,
+      "created_at": "2025-06-19T04:16:48Z",
+      "updated_at": "2025-06-19T04:16:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

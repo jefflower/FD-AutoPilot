@@ -1,0 +1,34 @@
+{
+  "id": 10044,
+  "subject": "order #ssn5261",
+  "description_text": "Hey just wanted to check on the status of my order I can’t seem to get a response through my original email so I emailed through this one what is the estimated shipping time ",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-06T00:23:27Z",
+  "updated_at": "2026-01-08T10:02:29Z",
+  "requester_id": 158008893752,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015875144,
+      "body_text": "Hi Zach Birnbaum,    Here are the tracking links for your two packages.  https://www.dhl.de/en/privatkunden/pakete-empfangen/verfolgen.html?piececode=CE326638371DE&cid=c_dhl_2502061_2353  https://t.17track.net/en#nums=SF6047201468573",
+      "user_id": 158001343601,
+      "created_at": "2026-01-06T08:06:43Z",
+      "updated_at": "2026-01-06T08:06:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015882026,
+      "body_text": "Oops ? gave you the wrong order # it’s ssn5251\r\n\r\nZach Birnbaum B.S, CPT, CES\r\nCell:(804)986-9511\r\nInsta@zach_birnbaum\r\n\r\n\r\nOn Tue, Jan 6, 2026 at 3:06 AM support@simsonn.com ",
+      "user_id": 158008893752,
+      "created_at": "2026-01-06T09:09:24Z",
+      "updated_at": "2026-01-06T09:09:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

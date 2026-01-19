@@ -1,0 +1,44 @@
+{
+  "id": 7390,
+  "subject": "Vam motors not working",
+  "description_text": "Hey,\r\n\r\nI have recently purchased a set of plus x pedals along with the vam motors.\r\nHowever, after installing the vam motors, they just seemingly disconnected\r\nand didn't want to reconnect neither work at all. I have tried unplugging\r\nthe cables and putting them back, swapping the motors and installing\r\nsimhub(recommended by someone online).\r\n\r\nI just can't find a solution.\r\n\r\nThanks\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-04T06:42:08Z",
+  "updated_at": "2025-12-04T08:35:19Z",
+  "requester_id": 158007527052,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013371745,
+      "body_text": "Hi Chaz Knights,    First, please check whether your VAM motor is connected to the 24V external power supply. Also verify that the pedals are connected properly. If the pedals are also not detected, you can manually update the firmware.  Press and hold the upgrade button on the control box, then reconnect the USB cable. SIMSONN Manager should then display that the pedals have entered Recovery Mode. Next, go to: Settings → Update → Manual Firmware Update → pedals → firmware → pedals-plusx.sfu  After the update is complete, please test the VAM motor again to see if it works normally.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T06:46:57Z",
+      "updated_at": "2025-12-04T06:46:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013374548,
+      "body_text": "No luck. I tried those instructions and the vam motors still wouldn't work.\r\nAlthough, I don't know if I got the pedals into recovery mode even though I\r\nheld the upgrade button for ten seconds. It didn't say anything about being\r\nin recovery mode.\r\n\r\nOn Thu, Dec 4, 2025, 5:17 PM service@simsonn.com ",
+      "user_id": 158007527052,
+      "created_at": "2025-12-04T07:04:29Z",
+      "updated_at": "2025-12-04T07:04:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013378456,
+      "body_text": "Hi Chaz Knights,  Open the SIMSONN Manager software, then press and hold the upgrade button on the control box while reconnecting the USB cable. The system will enter upgrade mode, and SIMSONN Manager will show that it has entered SIMSONN Flasher mode. You can then manually update the firmware. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T08:35:18Z",
+      "updated_at": "2025-12-04T08:35:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

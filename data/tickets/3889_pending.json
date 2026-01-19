@@ -1,0 +1,44 @@
+{
+  "id": 3889,
+  "subject": "Pro X Ultra Pedals",
+  "description_text": "Hey guys, I somewhat recently received my pro x ultra pedals and they have been great. However the clutch since I set them up will sometimes randomly just not work, the rgb still works but there is no input and I’ll have to unplug the clutch itself and plug it back into the control box a few times before it will finally work. The last few days it will just randomly work and not work no matter what I do and last night it just stopped working all together \r\nSent from my iPhone\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-17T04:21:32Z",
+  "updated_at": "2025-09-17T12:35:55Z",
+  "requester_id": 158004596790,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008845927,
+      "body_text": "Hi Tyler Paidel,  After connecting all three pedals, please unplug and re-insert the USB. Then, in the Simsonn Manager interface, click Offset to reset the offset and calibrate the pedals for testing. If the issue persists, try swapping the throttle and clutch connections to see if they work properly. This will help determine whether the problem lies with the clutch pedal itself or with the clutch port on the controller. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-17T07:45:20Z",
+      "updated_at": "2025-09-17T07:45:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008861696,
+      "body_text": "Thank you for the fast response, I did everything you asked got a video of it all if needed. If I swap the throttle and clutch they both register and work straight away but if I swap them back the clutch pedal stops registering again or if it does register it will cut in and out. I also noticed on the app the brake will register like 0.1-0.6 kg without me touching it so thinking the control box may be broken. Don’t know why the clutch works as a throttle for what I tested it but as soon as it goes back to the clutch it stops working yet the throttle works as a clutch no worries \r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158004596790,
+      "created_at": "2025-09-17T12:22:36Z",
+      "updated_at": "2025-09-17T12:22:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008861997,
+      "body_text": "Hi Tyler Paidel,    This is normal behavior during braking. A high-precision pressure sensor will not output a perfect zero value, even when at rest. Simply set a 5% minimum dead zone, and it will no longer send that signal to the game.  Please make sure that all three pedals are connected correctly, then reinsert the USB. After that, click Offset. If the Offset setup window does not appear, try clicking multiple times. Once the Offset is properly configured, the clutch will function correctly.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-17T12:35:54Z",
+      "updated_at": "2025-09-17T12:35:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

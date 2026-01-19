@@ -1,0 +1,54 @@
+{
+  "id": 8679,
+  "subject": "Ordine",
+  "description_text": "Salve, a che punto è la spedizione che non riesco a vedere il suo stato\r\nNunero ordine #SSN4854\r\n\r\nORDER #SSN4854\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-19T11:59:38Z",
+  "updated_at": "2026-01-14T06:45:25Z",
+  "requester_id": 158008150841,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014863537,
+      "body_text": "Hi Francesco Mastrangelo,    I apologize for the delayed response. Here is your shipping tracking link. I noticed the order from the Haptics warehouse hasn't been shipped yet. We'll look into it and ship it out as soon as possible.  https://t.17track.net/en#nums=JSELS1514386037YQ,JSELW1584819818YQ",
+      "user_id": 158001343601,
+      "created_at": "2025-12-22T08:18:29Z",
+      "updated_at": "2025-12-22T08:18:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015504248,
+      "body_text": "Salve il mio ordine non è ancora arrivato a che punto è? Quanto bisogna\r\nancora aspettare?\r\n\r\n\r\n\r\nIl giorno lun 22 dic 2025 alle 09:18 service@simsonn.com <\r\nservice@simsonn.com> ha scritto:\r\n\r\n> Hi Francesco Mastrangelo,\r\n>\r\n> I apologize for the delayed response. Here is your shipping tracking link.\r\n> I noticed the order from the Haptics warehouse hasn't been shipped yet.\r\n> We'll look into it and ship it out as soon as possible.\r\n> https://t.17track.net/en#nums=JSELS1514386037YQ,JSELW1584819818YQ\r\n>\r\n> Il Ven, 19 Dic alle 7:59 PM , Francesco Mastrangelo <\r\n> fmastrangelo04@gmail.com> ha scritto:\r\n> Salve, a che punto è la spedizione che non riesco a vedere il suo stato\r\n> Nunero ordine #SSN4854\r\n>\r\n> ORDER #SSN4854\r\n>\r\n> 8679:4206036\r\n>\r\n\r\n",
+      "user_id": 158008150841,
+      "created_at": "2026-01-03T18:22:23Z",
+      "updated_at": "2026-01-03T18:22:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015626435,
+      "body_text": "Hi Francesco Mastrangelo,    The first package is expected to arrive within the next couple of days, while the other is expected to arrive around the 8th.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-04T11:23:30Z",
+      "updated_at": "2026-01-04T11:23:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016948197,
+      "body_text": "Salve, vi contatto per dirvi che un pacco è stato consegnato, ho ricevuto i\r\nmotorini da mettere dietro ai pedali, pedana quando arriva, è dal 29 che è\r\nin transito\r\n\r\nIl giorno dom 4 gen 2026 alle 12:23 service@simsonn.com ",
+      "user_id": 158008150841,
+      "created_at": "2026-01-13T08:25:09Z",
+      "updated_at": "2026-01-13T08:25:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

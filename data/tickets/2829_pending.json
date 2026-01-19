@@ -1,0 +1,164 @@
+{
+  "id": 2829,
+  "subject": "Pedal shakers",
+  "description_text": "Good morning I am having a problem with the throttle shaker I couldn’t get\r\nit to stop vibrating when game was shut down in less I unplugged it the\r\nshaker was really strong and now it’s very weak I have only had them a few\r\ndays I set them up and I’m thinking something is wrong please help\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-18T13:57:09Z",
+  "updated_at": "2025-08-27T03:38:01Z",
+  "requester_id": 158003282896,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007112135,
+      "body_text": "Hi Gary Douglas,    Please provide your order number and a photo showing the installation. Also, confirm whether the software version is SIMSONN Manager 2.1.0. Regarding VAM force, it is not recommended to set it too high. We limit the maximum force based on the type of pedals to prevent damage to the VAM, while VAM Pro has no such limitation.  If the vibration does not stop, it may be caused by unstable USB power or EMI interference from the wheelbase, which can prevent the stop signal from reaching the motor. Please let us know your wheelbase brand, and we will provide a specific solution.     This issue is caused by EMI interference from the wheelbase. Please follow the steps below to troubleshoot and resolve it. Most customers with similar setups (such as Fanatec, MOZA, and T500 users) have resolved the problem using this method.     To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability:     1.    Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding.     2.    Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive.     3.    Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup.     4.    Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible.     5.    Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs.     6.    Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference.     7.    Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements.     8.    Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources.     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-08-19T04:28:08Z",
+      "updated_at": "2025-08-19T04:28:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007210125,
+      "body_text": "I am using the latest up dated software and all shakers set to less then 70\r\n% strength and the control box is plugged into a usb 3.0 and is plugged in\r\nto a surge protector that is 3 prong and grounded\r\n\r\nOn Tue, Aug 19, 2025 at 12:28 AM service@simsonn.com ",
+      "user_id": 158003282896,
+      "created_at": "2025-08-20T13:10:19Z",
+      "updated_at": "2025-08-20T13:10:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007215394,
+      "body_text": "Hi Gary Douglas,    Please ensure that the firmware is updated to the latest version. Then, go to “Settings → Update” and click “Manual Firmware Update”. Navigate to the pedals-firmware folder → pedals folder → and select the plusx.sfu file to perform the update.  After the update, run a test to check whether the issue occurs with just one motor showing reduced vibration strength, or if all three motors are affected. We recommend setting the vibration frequency between 10Hz–30Hz.  If stronger vibration intensity is required, you may consider upgrading to VAM Pro motors, as they are designed to deliver significantly higher vibration force.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-20T14:16:31Z",
+      "updated_at": "2025-08-20T14:16:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007233135,
+      "body_text": "I am running the newest firmware with the same issue the shaker on the\r\nthrottle is still very weak no matter the setting and doesn’t shut off when\r\ngame stops can I get a replacement I have plugged it into another  input\r\nwith the same results is there a chance the control box is bad also\r\n\r\nOn Wed, Aug 20, 2025 at 10:16 AM service@simsonn.com ",
+      "user_id": 158003282896,
+      "created_at": "2025-08-20T16:34:15Z",
+      "updated_at": "2025-08-20T16:34:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007249826,
+      "body_text": "你好，Gary Douglas，  Could you please install Todesk? I’d like to remotely check whether the control box needs to be replaced. In most cases, it’s unlikely that the controller is damaged — it’s more common for the VAM motor to fail if the vibration strength is set too high. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-21T03:02:29Z",
+      "updated_at": "2025-08-21T03:02:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007301530,
+      "body_text": "Ok all installed\r\n\r\nOn Wed, Aug 20, 2025 at 11:02 PM service@simsonn.com ",
+      "user_id": 158003282896,
+      "created_at": "2025-08-21T14:45:31Z",
+      "updated_at": "2025-08-21T14:45:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007304748,
+      "body_text": "I took the shaker off the clutch and it stopped when game ended I believe I\r\njust got  a bad I’m using the factory settings I would just like the shaker\r\nreplaced please\r\n\r\nOn Thu, Aug 21, 2025 at 10:45 AM Gary Douglas <ghostgary1332@gmail.com>\r\nwrote:\r\n\r\n> Ok all installed\r\n>\r\n> On Wed, Aug 20, 2025 at 11:02 PM service@simsonn.com ",
+      "user_id": 158003282896,
+      "created_at": "2025-08-21T15:30:58Z",
+      "updated_at": "2025-08-21T15:30:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007324834,
+      "body_text": "Hi Gary Douglas,  Are all three of your shakers really not working? It’s quite unusual for all of them to fail at the same time, could you please double-check for us? ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-22T04:07:57Z",
+      "updated_at": "2025-08-22T04:07:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007336406,
+      "body_text": "No it’s just the one not working the other two work fine. i just need the\r\none shaker replaced. I never said it was all three just the one on the\r\nthrottle. Can I have a replacement please?\r\n\r\nOn Fri, Aug 22, 2025 at 12:08 AM service@simsonn.com ",
+      "user_id": 158003282896,
+      "created_at": "2025-08-22T08:16:23Z",
+      "updated_at": "2025-08-22T08:16:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007389792,
+      "body_text": "Can I please  just have the one shaker replaced there must be a warranty on\r\nthe shaker of it was faulty please respond asap\r\n\r\nOn Fri, Aug 22, 2025 at 4:15 AM Gary Douglas <ghostgary1332@gmail.com>\r\nwrote:\r\n\r\n> No it’s just the one not working the other two work fine. i just need the\r\n> one shaker replaced. I never said it was all three just the one on the\r\n> throttle. Can I have a replacement please?\r\n>\r\n> On Fri, Aug 22, 2025 at 12:08 AM service@simsonn.com ",
+      "user_id": 158003282896,
+      "created_at": "2025-08-23T14:26:28Z",
+      "updated_at": "2025-08-23T14:26:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007429688,
+      "body_text": "So I’m just going to be ghosted when I ask for replacement of a faulty part\r\n\r\nOn Sat, Aug 23, 2025 at 10:26 AM Gary Douglas <ghostgary1332@gmail.com>\r\nwrote:\r\n\r\n> Can I please  just have the one shaker replaced there must be a warranty\r\n> on the shaker of it was faulty please respond asap\r\n>\r\n> On Fri, Aug 22, 2025 at 4:15 AM Gary Douglas <ghostgary1332@gmail.com>\r\n> wrote:\r\n>\r\n>> No it’s just the one not working the other two work fine. i just need the\r\n>> one shaker replaced. I never said it was all three just the one on the\r\n>> throttle. Can I have a replacement please?\r\n>>\r\n>> On Fri, Aug 22, 2025 at 12:08 AM service@simsonn.com ",
+      "user_id": 158003282896,
+      "created_at": "2025-08-24T13:52:56Z",
+      "updated_at": "2025-08-24T13:52:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007448647,
+      "body_text": "你好，Gary Douglas，  您好，请放心。由于周末休息，我们将安排今天给您寄送替换的 VAM 电机。请提供您的联系人姓名、电话号码和地址，我们将尽快将追踪号码告知您。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-25T04:37:44Z",
+      "updated_at": "2025-08-25T04:37:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007469356,
+      "body_text": "Gary Douglas\r\n315-898-3499\r\n56 Davis st apt7, Phoenix NY 13135\r\nThank you have a great day\r\nOn Mon, Aug 25, 2025 at 12:37 AM service@simsonn.com ",
+      "user_id": 158003282896,
+      "created_at": "2025-08-25T09:31:45Z",
+      "updated_at": "2025-08-25T09:31:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007548127,
+      "body_text": "Hi Gary Douglas,  Here is the tracking number: JSEHY2545729363YQ. You can track it via https://www.js-exp.com/EN/index.php?page=19. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-26T03:25:14Z",
+      "updated_at": "2025-08-26T03:25:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007555460,
+      "body_text": "Awesome, thank you so much!\r\n\r\nOn Mon, Aug 25, 2025 at 11:25 PM service@simsonn.com ",
+      "user_id": 158003282896,
+      "created_at": "2025-08-26T10:38:55Z",
+      "updated_at": "2025-08-26T10:38:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": 11040,
+  "subject": "离合器问题",
+  "description_text": "您好，我更新了我的pro x踏板固件，现在我的离合器出现故障，死区几乎达到了15%，但这太灵敏了，它到处乱跳，我该怎么办？",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-16T04:25:14Z",
+  "updated_at": "2026-01-16T11:25:27Z",
+  "requester_id": 158009188479,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017258766,
+      "body_text": "您好，Danilo Rodezno，感谢您的反馈。我们查看了您上传的视频，但它似乎不完整，所以我们无法正常打开进行分析。请您将视频上传到Google Drive，将分享权限设置为“任何拥有链接的人都可以查看（查看者）”，然后将分享链接发送给我们好吗？收到后，我们将立即进行审查。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-16T11:25:27Z",
+      "updated_at": "2026-01-16T11:25:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

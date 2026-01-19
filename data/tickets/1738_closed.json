@@ -1,0 +1,24 @@
+{
+  "id": 1738,
+  "subject": "Problema pedi pro",
+  "description_text": "Buongiorno, ho un problema con i pedali che ho acquistato su AliExpress due\r\nsettimane fa\r\n\r\nIn pratica la regolazione gira a vuoto e non regola nulla\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-07-21T09:38:41Z",
+  "updated_at": "2025-12-18T09:57:55Z",
+  "requester_id": 158002254319,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005290740,
+      "body_text": "Hi Mattia Scuderi,     This is the light resistance version, and it supports 360-degree free rotation. You mentioned there's an issue—have you tested whether there's a difference in resistance between level 1 and level 8? Generally, this component is not prone to failure. Please also note that proper damping adjustment requires combining it with the red, yellow, and blue elastomers.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-22T02:16:24Z",
+      "updated_at": "2025-07-22T02:16:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

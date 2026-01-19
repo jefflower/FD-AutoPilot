@@ -1,0 +1,35 @@
+{
+  "id": 2795,
+  "subject": "VAM PRO 模块导致意外刹车输入问题",
+  "description_text": "尊敬的 Simsonn 团队：\n\n我使用您的 *Simsonn Ultra Pro 踏板以及 VAM PRO 模块（刹车和油门）*已经几周了，我想报告一个 VAM PRO 模块的问题。\n\n在像 *Assetto Corsa*、*Le Mans Ultimate*（可能还有其他）这样的游戏中，当触觉反馈激活时，这些模块会导致意外的 *部分刹车激活*（5-15%）。例如：\n\n   -\n\n   如果 *油门踏板的模块* 设置为 *换挡反馈*，则刹车踏板（其模块处于 *禁用状态*）在换挡时仍会记录输入（5-15%）。\n   -\n\n   如果反馈与 *速度或转速* 绑定，刹车输入会持续波动（5-15%，取决于模块强度），导致游戏中的刹车滑块跳动异常。\n\n无论哪个踏板的模块激活，此问题都会持续存在。您能告诉我如何解决它吗？\n\n感谢您的支持！\n\n此致，\n\nAndrey",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-08-17T16:10:45Z",
+  "updated_at": "2025-08-19T04:37:14Z",
+  "requester_id": 158003256268,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007050868,
+      "body_text": "嗨 Andrey V，这个问题是由方向盘底座的电磁干扰（EMI）引起的。请按照以下步骤进行故障排除和解决。大多数使用类似设置（如 Fanatec、MOZA 和 T500 用户）的客户都已通过此方法解决了问题。\n\n为解决 EMI（电磁干扰）问题，请按照以下步骤提高设备稳定性和 USB 连接可靠性：\n\n1.  确保正确接地：确保计算机连接到有可靠接地的三孔插座。两孔插头不提供接地。\n2.  控制箱接地：使用绿色屏蔽线将控制箱的金属外壳（如铜柱或螺丝）连接到踏板上的任何金属螺丝。确保接触点无油漆且导电。\n3.  底座接地（例如 Fanatec / MOZA）：建议将底座的金属部分连接到电脑机箱或外部接地以释放静电。\n4.  避免高干扰区域：使 USB 线缆远离高压电源线或适配器；在可能的情况下，单独布线。\n5.  使用直连 USB：将设备直接连接到电脑后部的 USB 3.0 端口，而不是使用无源或低质量的 USB 集线器。\n6.  使用带铁氧体磁芯的 USB 线缆：如果需要，改用带铁氧体磁珠的高质量 USB 线缆，以减少高频干扰。\n7.  保持软件和固件更新：确保 SIMSONN Manager 和固件更新到最新版本，因为某些更新包含 EMI 处理改进。\n8.  使用 USB 隔离器：如果上述方法无法解决问题，建议使用 USB 隔离器。它物理隔离了 USB 电源和数据线，有效屏蔽了控制设备免受 EMI 来源的影响。\n\nhttps://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting\nhttps://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-08-18T02:14:49Z",
+      "updated_at": "2025-08-18T02:14:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007097102,
+      "body_text": "嗨！是的，按照故障排除步骤的第 2 点建议，通过将控制箱接地到踏板，问题已解决。感谢您的支持。祝您持续成功！",
+      "user_id": 158003256268,
+      "created_at": "2025-08-18T17:15:47Z",
+      "updated_at": "2025-08-18T17:15:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    }
+  ],
+  "available_langs": []
+}

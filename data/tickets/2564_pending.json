@@ -1,0 +1,44 @@
+{
+  "id": 2564,
+  "subject": "Pro x, pro x ultra, plus x",
+  "description_text": "\r\nHello,\r\n\r\n\r\n\r\nI’m a bit unclear about the product lineup. From what I understand, the Plus X appears to be an updated model, while the Pro X is older. Could you clarify:\r\n\r\n\r\n\r\nIs the Pro X Ultra an updated version intended to incorporate some of the Plus X improvements, or does it still feature the extra spring on the back of the brake pedal along with the 90HA elastomer?\r\nIf the Pro X Ultra uses the Plus X elastomer, is it just as easy to change out as in the Plus X update? Or does it require an additional step, such as removing the hydraulic shaft?\r\nAre the hydraulic shocks truly hydraulic, or are they gas?\r\n\r\n\r\n\r\n\r\nThank you for your time and assistance. trying to decide between plus x and pro x ultra. \r\n\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-11T18:09:06Z",
+  "updated_at": "2025-09-01T00:54:11Z",
+  "requester_id": 158002942848,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006724366,
+      "body_text": "Hi Cody Jones,    Pro X Ultra is an improved version of Pro X, upgraded at the same time as Plus X, so the upgrades are similar. Pro X Ultra uses the same elastomer as Plus X, but due to structural limitations, replacement is more complicated than with the Plus X version.  Finally, our new hydraulic shock absorbers all use genuine hydraulic systems.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-12T01:56:39Z",
+      "updated_at": "2025-08-12T01:56:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007863342,
+      "body_text": "good day I purchased the Pro X pedals, I have enjoyed them so far. However they will not map on Farming simulator 25. I was wondering if this could be firmware or a driver issue that may need to be updated. I have tried everything I can think of. The game recognizes them by name, but it is unable to see the axis movement which makes it impossible to map. I downloaded the simsonn manager and they show and work fine and they work on other games. \r\n\r\nIs this a game you would be able to finalize support for? Or do you ha e any recommendations to make them work is Farming simulator 25.\r\n\r\nThanks\r\n\r\n> ",
+      "user_id": 158002942848,
+      "created_at": "2025-08-31T05:25:00Z",
+      "updated_at": "2025-08-31T05:25:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007877785,
+      "body_text": "Hi Cody Jones, We will test this game today to check whether it is supported. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-01T00:54:04Z",
+      "updated_at": "2025-09-01T00:54:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

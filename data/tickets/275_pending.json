@@ -1,0 +1,44 @@
+{
+  "id": 275,
+  "subject": "Order #SSN1553 shipping delay?",
+  "description_text": "Dear Simsonn support,\r\n\r\nI placed an order (#SSN1553) for haptic feedback rumble motor, control box\r\nand power supply on the 28th of May, and I've yet to receive any shipping\r\nupdates or confirmation. I find it unusual that an online order would take\r\nmore than around two weeks to ship. Can you please advise when I can expect\r\nthe order to ship/arrive?\r\n\r\nbest,\r\nCristian\r\n\r\n\r\n Cristian Sanz-Laria\r\n\r\n Title 24 Energy Consultant\r\n\r\n (818) 438-0671\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-08T13:19:46Z",
+  "updated_at": "2025-06-20T10:35:39Z",
+  "requester_id": 158001341785,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002841351,
+      "body_text": "你好，Cristian Sanz，  由于 VAM Pro 外壳表面处理延迟，原定于 6 月 10 日发货的 VAM Pro 外壳已推迟至预计 6 月 16 日至 18 日之间。对于由此造成的不便，我们深表歉意。我们正在积极联系外壳供应商，以便按照修改后的时间表加快发货速度。由于采用国际快递，预计运输时间会相对较快。感谢您的理解。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-09T03:52:33Z",
+      "updated_at": "2025-06-09T03:52:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003501893,
+      "body_text": "Hi,\r\nIt's now June 19th and I have received no shipping updates. Do you have a\r\nnew estimate for shipping?\r\n\r\n\r\n Cristian Sanz-Laria\r\n\r\n Title 24 Energy Consultant\r\n\r\n (818) 438-0671\r\n\r\n\r\n\r\nOn Sun, Jun 8, 2025 at 11:52 PM service@simsonn.com ",
+      "user_id": 158001341785,
+      "created_at": "2025-06-19T06:21:55Z",
+      "updated_at": "2025-06-19T06:21:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003588880,
+      "body_text": "Hi Cristian Sanz,  Yes, your order was shipped yesterday, but due to the cumbersome customs clearance now, they may take around the 28th to arrive .",
+      "user_id": 158001343601,
+      "created_at": "2025-06-20T10:35:38Z",
+      "updated_at": "2025-06-20T10:35:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

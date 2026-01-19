@@ -1,0 +1,54 @@
+{
+  "id": 9826,
+  "subject": "Information request",
+  "description_text": "Dear Sirs,\r\n\r\nCould you please send me a diagram with the measurements of the base plate and where I can see the exact dimensions of the drilling? I am interested in a pedal set including the base plate to mount on my rig (Playseat Challenge X) and I want to verify if the drilling is supported by your product.\r\n\r\nThank you very much,\r\n\r\nMario Pires\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-02T18:54:21Z",
+  "updated_at": "2026-01-17T05:17:37Z",
+  "requester_id": 158008877769,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015543423,
+      "body_text": "Hi Mario Pires,     We already have some customers using this mounting bracket, and it has been working normally for them. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-04T00:58:25Z",
+      "updated_at": "2026-01-04T00:58:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015818247,
+      "body_text": "Thank you for your reply, but the cockpit I'm referring to is the Challenge X, which has a different mount than the standard Playseat in the photo. My mount has the same holes used by some Logitech and Thrustmaster pedals.\r\nI use the Thrustmaster T-LCM, applied directly with 4 screws. The spacing between the holes is: Horizontal = 235 mm : Vertical = 220 mm.\r\n\r\nMy question is whether your base includes these holes, or if not, if you can provide it with these additional holes.\r\n\r\nRegards,\r\nMario Pires\r\n\r\n________________________________\r\nDe: service@simsonn.com ",
+      "user_id": 158008877769,
+      "created_at": "2026-01-05T23:31:34Z",
+      "updated_at": "2026-01-05T23:31:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016470243,
+      "body_text": "Hi Mario Pires, Could you please send me a photo of the bracket? We’d like to check it, as we don’t currently have this bracket model. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-09T03:51:57Z",
+      "updated_at": "2026-01-09T03:51:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016526643,
+      "body_text": "\r\nHi,\r\nI have attached a diagram from the assembly manual with the necessary measurements (these correspond to the bases of some Logitech and Thrustmaster pedals - T-LCM).\r\n________________________________\r\nDe: service@simsonn.com ",
+      "user_id": 158008877769,
+      "created_at": "2026-01-09T11:08:25Z",
+      "updated_at": "2026-01-09T11:08:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

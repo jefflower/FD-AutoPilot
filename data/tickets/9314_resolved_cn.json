@@ -1,0 +1,95 @@
+{
+  "id": 9314,
+  "subject": "退货订单号：280324578501029155",
+  "description_text": "您好，我与一位客服人员沟通过，他们让我给您发邮件。我想退回simson变速器，它在挂5档和6档时出现了很多换档问题。我在收到后一个月内联系了您，并且是通过阿里巴巴购买的。这里有一个视频。\n\n请告诉我如何进行退货，谢谢。\n哈桑",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-27T18:23:02Z",
+  "updated_at": "2026-01-09T08:00:40Z",
+  "requester_id": 158008794835,
+  "responder_id": 158007774664,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015188774,
+      "body_text": "哈桑·马吉德您好，请提供您的订单号，以便我们为您查询。如果是退货退款，您可以直接申请订单售后服务。",
+      "user_id": 158007774664,
+      "created_at": "2025-12-29T09:55:12Z",
+      "updated_at": "2025-12-29T09:55:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015193916,
+      "body_text": "您好，这是我的订单号 280324578501029155\n\n谢谢\n\n2025年12月29日星期一，凌晨4:55 support @simsonn.com",
+      "user_id": 158008794835,
+      "created_at": "2025-12-29T12:04:36Z",
+      "updated_at": "2025-12-29T12:04:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015241955,
+      "body_text": "哈桑·马吉德您好，抱歉，我们找不到您的订单号。请提供您的订单页面的截图。",
+      "user_id": 158007774664,
+      "created_at": "2025-12-30T08:22:20Z",
+      "updated_at": "2025-12-30T08:22:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015250492,
+      "body_text": "2025年12月30日星期二，凌晨3:22 support @simsonn.com",
+      "user_id": 158008794835,
+      "created_at": "2025-12-30T11:58:46Z",
+      "updated_at": "2025-12-30T11:58:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015833024,
+      "body_text": "你好\n\n我还没有收到后续回复，我发了截图\n\n2025年12月30日星期二，凌晨3:22 support @simsonn.com",
+      "user_id": 158008794835,
+      "created_at": "2026-01-06T02:23:51Z",
+      "updated_at": "2026-01-06T02:23:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016158389,
+      "body_text": "哈桑·马吉德您好，请您检查一下底部的安装螺丝是否过长，导致其阻碍了变速器的运动？",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T15:34:53Z",
+      "updated_at": "2026-01-07T15:34:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016248914,
+      "body_text": "是的，我检查过了。我想退货。请告诉我如何操作。\n\n谢谢\n\n2026年1月7日星期三，上午10:35 support @simsonn.com",
+      "user_id": 158008794835,
+      "created_at": "2026-01-08T02:00:07Z",
+      "updated_at": "2026-01-08T02:00:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016499827,
+      "body_text": "哈桑·马吉德您好，会有同事联系您。",
+      "user_id": 158007774664,
+      "created_at": "2026-01-09T08:00:30Z",
+      "updated_at": "2026-01-09T08:00:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

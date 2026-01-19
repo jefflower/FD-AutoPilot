@@ -1,0 +1,25 @@
+{
+  "id": 11120,
+  "subject": "Re: Order #SSN6038 confirmed",
+  "description_text": "Where will it be shipped from? I'm located in Europe, it would be nice to have it shipped from Europe to avoid VAT.",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-17T08:15:35Z",
+  "updated_at": "2026-01-17T08:18:52Z",
+  "requester_id": 158009343739,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017319136,
+      "body_text": "Hi Evaldas P,    Yes, we will ship your order from our German warehouse. However, two shipments destined for the German warehouse have been delayed due to heavy snowfall across Europe, which has caused road blockages and snow accumulation. We will expedite the delivery to the warehouse as soon as possible. We expect to ship your order on the 22nd.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T08:18:52Z",
+      "updated_at": "2026-01-17T08:18:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

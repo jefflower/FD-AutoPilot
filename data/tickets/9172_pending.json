@@ -1,0 +1,46 @@
+{
+  "id": 9172,
+  "subject": "Fw: Item from Amazon order not delivered",
+  "description_text": "@service@simsonn.com<mailto:service@simsonn.com> -\r\n\r\nForwarding and re-attaching attachments as had typo in email address.\r\n\r\nPlease see below\r\n\r\n________________________________\r\nFrom: _Robert Herrera <rwherr@hotmail.com>\r\nSent: Thursday, December 25, 2025 12:59 PM\r\nTo: service@simmson.com <service@simmson.com>\r\nCc: cs-reply@amazon.com <cs-reply@amazon.com>; cs-escalations@amazon.com <cs-escalations@amazon.com>\r\nSubject: Item from Amazon order not delivered\r\n\r\nHello,\r\n\r\nOn December 6th I ordered the Pro X Ultra baseplate from your store on Amazon (Order # 112-1717115-1625055).\r\n\r\nThe tracking number on the order (SF6047152933126) says it was delivered yesterday but I never received it and it seems when looking at the tracking history, the item for that tracking number was delivered to an address in Costa Mesa, California US and not my address in Lakeland, Florida US.\r\n\r\nI'm not sure if there was a mistake with the tracking number, but I have not received the item that I paid for yet.\r\n\r\nI have attached some screenshots of the order, the tracking details, and of my chat with SF Express shipper, as well as proof of delivery from the courier, SwiftX, which was given to me by the SF Express agent.\r\n\r\nI would appreciate receiving the item I ordered as soon as possible.\r\n\r\nThank you for your time and for looking into this issue.\r\n\r\nRegards,\r\nRobert Herrera\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-25T21:18:45Z",
+  "updated_at": "2025-12-29T08:57:16Z",
+  "requester_id": 158008705008,
+  "responder_id": 158007774607,
+  "cc_emails": [
+    "crs-replies@amazon.com"
+  ],
+  "conversations": [
+    {
+      "id": 158015109564,
+      "body_text": "I cannot access the ticket to add additional comments or to check status.\r\n\r\nWhen I click the link, it says I have to be logged in.\r\n\r\nWhen I try to register with my email, it says \"email has already been taken\".\r\n\r\nWhen I try to reset my password (since I don't recall ever registering and the password I try says it doesn't match) it says \"you are not authorized to access this portal. Kindly contact your help desk administrator\"\r\n\r\n\r\n________________________________\r\n",
+      "user_id": 158008705008,
+      "created_at": "2025-12-26T18:05:19Z",
+      "updated_at": "2025-12-26T18:05:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015130534,
+      "body_text": "Hi _Robert Herrera,     Hi, I am sorry for it. We have reshipped a new package to you from our US warehouse, here is the tracking number: 1ZJ201H40328461685, the shipping carrier is UPS, you can track it via https://www.ups.com/track.",
+      "user_id": 158007774607,
+      "created_at": "2025-12-27T09:05:14Z",
+      "updated_at": "2025-12-27T09:05:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015152953,
+      "body_text": "Thank you. I will be keeping a close eye on it.\r\n\r\nRegards,\r\nRobert\r\n\r\n________________________________\r\n",
+      "user_id": 158008705008,
+      "created_at": "2025-12-28T07:20:20Z",
+      "updated_at": "2025-12-28T07:20:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

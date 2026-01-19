@@ -1,0 +1,24 @@
+{
+  "id": 9389,
+  "subject": "Business invoice",
+  "description_text": "Hello,\r\n\r\nI would like to purchase a few things to my VR Arcade simracing section. I\r\nam gonna need an invoice issued on my business name so I could include the\r\npurchase in my company expenses. Should I place an order using shopping\r\ncart on your site or do you have different way for business clients ?\r\n\r\nAlso I could be interested in selling your gear here in Poland. Would be\r\nhappy to have a look on your wholesale offer.\r\n\r\nKind regards\r\nPiotr Grajek\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-28T19:46:56Z",
+  "updated_at": "2025-12-30T08:48:39Z",
+  "requester_id": 158008802596,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015242619,
+      "body_text": "Hi Piotr Grajek,  Customers in Poland can place orders directly through our Polish distributor, and the products will be shipped locally from Poland  https:/fmic.pl/elektronika/simracing?product_brand=Simsonn",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T08:48:39Z",
+      "updated_at": "2025-12-30T08:48:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

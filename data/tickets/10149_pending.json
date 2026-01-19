@@ -1,0 +1,24 @@
+{
+  "id": 10149,
+  "subject": "Order SSN 5259",
+  "description_text": "Hi,\r\n\r\nI received the order but it doesn’t include the Vam Pro linear motor and\r\nmounting brackets for Brake and Gas pedals.\r\n\r\nMissing items ; 2x vam pro linear motors and 2x mounting brackets for brake\r\nand gas\r\n\r\nSee below pics\r\n\r\nThanks\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-06T23:30:17Z",
+  "updated_at": "2026-01-08T09:36:13Z",
+  "requester_id": 158008895420,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016313895,
+      "body_text": "Hi Parth Patel,    We apologize for the delayed response; we've just returned from our holiday break. Here is your shipping tracking link. The product you purchased has been out of stock for nearly two weeks due to overwhelming demand. We will ship it to you within the next couple of days.    https://t.17track.net/en#nums=SF6047201468564",
+      "user_id": 158001343601,
+      "created_at": "2026-01-08T09:36:13Z",
+      "updated_at": "2026-01-08T09:36:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

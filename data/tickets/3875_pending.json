@@ -1,0 +1,54 @@
+{
+  "id": 3875,
+  "subject": "Problem with vam motor",
+  "description_text": "My order Number is SSN2484\r\nI ordered 3 vam motors and it arrived few days ago. One of the motors started doing loud noises and getting hotter than the others. I think its something wrong with it. Can i have a replacement or something? Thanks in advance\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-09-16T18:47:10Z",
+  "updated_at": "2025-09-17T10:58:07Z",
+  "requester_id": 158004533952,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008837075,
+      "body_text": "Hi Adrià Zayas,  Please provide your contact name, address, and phone number so that we can arrange a replacement for you. Alternatively, you may open the unit and send us photos, which will help us check and identify the specific fault. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-17T01:05:04Z",
+      "updated_at": "2025-09-17T01:05:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008845585,
+      "body_text": "Hi\r\nName: Adria Zayas Fandos\r\nAddress: Escorial 8, 4to 2da Escalera B. 08025 Barcelona, Spain.\r\nPhone Number: 655091951\r\nOn the other hand, i would gladly open the device and take photos, but I dont have the right tool for it.\r\n\r\n\r\n> El 17 sept 2025, a las 3:05, service@simsonn.com escribió:\r\n> \r\n> ﻿\r\n> Hi Adrià Zayas,\r\n> \r\n> Please provide your contact name, address, and phone number so that we can arrange a replacement for you. Alternatively, you may open the unit and send us photos, which will help us check and identify the specific fault. \r\n> \r\n> \r\n> ",
+      "user_id": 158004533952,
+      "created_at": "2025-09-17T07:10:45Z",
+      "updated_at": "2025-09-17T07:10:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008845724,
+      "body_text": "> ﻿Hi\r\n> Name: Adria Zayas Fandos\r\n> Address: Escorial 8, 4to 2da Escalera B. 08025 Barcelona, Spain.\r\n> Phone Number: 655091951\r\n> On the other hand, i would gladly open the device and take photos, but I dont have the right tool for it.\r\n> \r\n> \r\n>>> El 17 sept 2025, a las 3:05, service@simsonn.com escribió:\r\n>>> \r\n>> ﻿\r\n>> Hi Adrià Zayas,\r\n>> \r\n>> Please provide your contact name, address, and phone number so that we can arrange a replacement for you. Alternatively, you may open the unit and send us photos, which will help us check and identify the specific fault. \r\n>> \r\n>> \r\n>> ",
+      "user_id": 158004533952,
+      "created_at": "2025-09-17T07:27:33Z",
+      "updated_at": "2025-09-17T07:27:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008855903,
+      "body_text": "Hi Adrià Zayas,    Okay, we've sent you two Vams again. Here's your logistics tracking link.  https://t.17track.net/en#nums=YT2526000705999424",
+      "user_id": 158001343601,
+      "created_at": "2025-09-17T10:58:06Z",
+      "updated_at": "2025-09-17T10:58:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

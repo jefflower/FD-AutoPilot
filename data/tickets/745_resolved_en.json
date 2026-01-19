@@ -1,0 +1,45 @@
+{
+  "id": 745,
+  "subject": "Iracing matching issues",
+  "description_text": "Hello guys, I have a little problems with the Plus X pedals, Iracing recognize the brake pedals perfectly but nothing for the gas pedal, the gas pedal working perfectly on the simsonn manager, but impossible to recognize it and then calibrate it on Iracing. Any suggestions or idea to help me ? Thanks",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-06-23T20:46:11Z",
+  "updated_at": "2025-07-07T07:48:00Z",
+  "requester_id": 158001750559,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003741517,
+      "body_text": "Hi adrian michau,  Have you completed the pedal calibration? To help us diagnose the issue, could you please provide a video showing all three pedals being pressed from 0% to 100% as displayed in the software? Additionally, please include a video of the key binding screen in iRacing. Thank you!",
+      "user_id": 158000445778,
+      "created_at": "2025-06-24T02:10:11Z",
+      "updated_at": "2025-06-24T02:10:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004454322,
+      "body_text": "Ticket with ID 1239 has been merged into this ticket.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T07:48:00Z",
+      "updated_at": "2025-07-07T07:48:00Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004454323,
+      "body_text": "Merged from ticket 1239\n      Subject: Re: Reminder: Order #SSN1690, how did it go?\n      Description:  Sorry about the late answer, the issue was nothing just a computer restart and everything is fine, the pedals are perfect, really happy about my purchase thanks a lot \n\n On Sat. Jul 5, 2025, 14:18, SIMSONN <no-reply @loox.io> wrote:",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T07:48:00Z",
+      "updated_at": "2025-07-07T07:48:00Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ],
+  "available_langs": []
+}

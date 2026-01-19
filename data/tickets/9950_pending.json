@@ -1,0 +1,64 @@
+{
+  "id": 9950,
+  "subject": "incomplete order shipped: ssn 5048",
+  "description_text": "hi,\ni purchased a 2 pedal set of pro x ultras with vam pro haptics, and the brake haptic bracket is missing.\nit came with clutch(for some unknown reason) and throttle brackets ,but not brake bracket\nplease advise\nregards toby\n\nSent with [Proton Mail](https://proton.me/mail/home) secure email.\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-05T00:38:15Z",
+  "updated_at": "2026-01-16T04:07:36Z",
+  "requester_id": 158008815680,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016330923,
+      "body_text": "Hi raoulduked,     Please provide a photo showing what you received, and we'll resend it for you. No need to worry.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-08T11:18:35Z",
+      "updated_at": "2026-01-08T11:18:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016436610,
+      "body_text": "hi\ni received 1 clutch bracket and 1 throttle bracket.i ordered the u shaped brackets and assumed i would get the original brackets and the u shape ones as well .was i wrong?\nthank you.\nialready fitted the throttle bracket.see photos\nkind regards,toby\n\nSent with [Proton Mail](https://proton.me/mail/home) secure email.\n\n",
+      "user_id": 158008815680,
+      "created_at": "2026-01-08T22:37:32Z",
+      "updated_at": "2026-01-08T22:37:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017165595,
+      "body_text": "Hi raoulduked,     We apologize for the delay in addressing your inquiry. The package contained only the air intake door step mounting bracket—did it not include the brake mounting bracket?  Please confirm as soon as possible, and we will promptly arrange for a replacement shipment.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T06:45:17Z",
+      "updated_at": "2026-01-15T06:45:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017230018,
+      "body_text": "hi.\ni dont know what an air intake door mounting bracket is.\ni ordered the extra u shaped bracket set for $12 aud but\ni didnt receive any brake brackets at all.i didnt receive the original upright brackets\ni only got a clutch bracket (that i dont need)and the throttle u shaped bracket.\ni hope this clarifies.\nto sum up;\ni missing both the veritical(upright) and horizontal mounted brake brackets and the upright throttle bracket.\nkind regards ,raoulduked\n\nSent with [Proton Mail](https://proton.me/mail/home) secure email.\n\n",
+      "user_id": 158008815680,
+      "created_at": "2026-01-15T22:59:48Z",
+      "updated_at": "2026-01-15T22:59:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017238519,
+      "body_text": "Hi raoulduked,    Here is your replacement link.  https://t.17track.net/en#nums=SF6047245167371",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T04:07:35Z",
+      "updated_at": "2026-01-16T04:07:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

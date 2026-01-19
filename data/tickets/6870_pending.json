@@ -1,0 +1,44 @@
+{
+  "id": 6870,
+  "subject": "Change order #SSN3809",
+  "description_text": "Good morning\r\n\r\nWhile making my order on Monday I made a few mistakes\r\nIs it possible to change my order to the one in the image bellow and I can\r\npay the difference?\r\n[image: image.png]\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-27T11:12:23Z",
+  "updated_at": "2025-12-05T10:58:07Z",
+  "requester_id": 158007361710,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013003821,
+      "body_text": "Hi Goncalo Costa,     Alright, please click the link to pay the difference.  https://www.simsonn.com/products/difference-2",
+      "user_id": 158001343601,
+      "created_at": "2025-11-27T11:24:11Z",
+      "updated_at": "2025-11-27T11:24:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013004211,
+      "body_text": "Thank you for your timely answer.\r\nI made the payment with the link you sent.\r\nWhat is the leadtime for the product to ship?\r\n\r\n",
+      "user_id": 158007361710,
+      "created_at": "2025-11-27T11:40:47Z",
+      "updated_at": "2025-11-27T11:40:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013004441,
+      "body_text": "I'm so sorry for bother you again, but again I made a mistake.\r\n\r\nThe product I want is the Pro X Ultra. Please update the order with image\r\nbellow considering I already payed for the second correction.\r\nI promise this is the last time I bother you with order changes.\r\n[image: image.png]\r\n\r\nservice@simsonn.com ",
+      "user_id": 158007361710,
+      "created_at": "2025-11-27T11:53:09Z",
+      "updated_at": "2025-11-27T11:53:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

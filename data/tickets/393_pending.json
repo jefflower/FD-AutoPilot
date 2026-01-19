@@ -1,0 +1,64 @@
+{
+  "id": 393,
+  "subject": "Return order number SSN1504",
+  "description_text": "Order number: SSN1504\r\n\r\nGood afternoon\r\n\r\nI have sent you an email to say I wish to return my order, but I haven’t heard anything back from you or received any return labels.\r\n\r\nI haven’t opened the parcel and it is still sealed and unused.\r\n\r\nPlease can you send me the return label as soon as possible to my home address.\r\n\r\nJack Bintcliffe\r\nCrowham House\r\n4 Church Street\r\nMasham\r\nHG4 4DR\r\n\r\nPlease confirm that you have received this email and that the return labels are being sent.\r\n\r\nMany thanks\r\n\r\nJack \r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-12T21:04:18Z",
+  "updated_at": "2025-06-17T10:50:48Z",
+  "requester_id": 158001468477,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003015250,
+      "body_text": "Hi Ms Bintcliffe,    Do you have any problems with the product you received, we can fix it for you.",
+      "user_id": 158001343601,
+      "created_at": "2025-06-13T09:10:11Z",
+      "updated_at": "2025-06-13T09:10:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003015286,
+      "body_text": "Thank you for the email.\r\nThere is no problem with the item, I haven’t even opened it or used it.\r\nIt is still wrapped in the box it came in unopened.\r\nI have just got a job offer to move abroad, so I will not be needing it now, this is why I wish to return it.\r\nPlease can you advise on the return and send a label for a full refund.\r\n\r\nMany thanks\r\n\r\nJack\r\n\r\n\r\n",
+      "user_id": 158001468477,
+      "created_at": "2025-06-13T09:17:00Z",
+      "updated_at": "2025-06-13T09:17:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003015614,
+      "body_text": "Hi Ms Bintcliffe,   Sorry, after the order has been dispatched and the product is not faulty we are unable to start the returns process for you, sincere apologies! ",
+      "user_id": 158001343601,
+      "created_at": "2025-06-13T10:01:13Z",
+      "updated_at": "2025-06-13T10:01:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003015657,
+      "body_text": "Hi Ms Bintcliffe,     We understand your situation very well, but we can't afford the shipping costs of sending and returning the product, so our return policy clearly shows the conditions necessary for a return. If you must return it, you may be required to cover the shipping costs. Thank you for your understanding and sorry we can't help you, sincere apologies !",
+      "user_id": 158001343601,
+      "created_at": "2025-06-13T10:05:39Z",
+      "updated_at": "2025-06-13T10:05:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003022198,
+      "body_text": "Good afternoon\r\n\r\nThank you for coming back to me.\r\n\r\nI am not sure if you now the UK law when selling an item as online, classed as a distance seller, but you have to accept a return if within 14 days of when it arrived.\r\n\r\nPlease see the link below on the UK law.\r\n<https://www.gov.uk/accepting-returns-and-giving-refunds>\r\n[173B3BF6-4D35-4846-B5AD-753A6AC7C2C9]\r\nAccepting returns and giving refunds: the law<https://www.gov.uk/accepting-returns-and-giving-refunds>\r\nwww.gov.uk<https://www.gov.uk/accepting-returns-and-giving-refunds>\r\n[image0.png]\r\n\r\n",
+      "user_id": 158001468477,
+      "created_at": "2025-06-13T12:30:35Z",
+      "updated_at": "2025-06-13T12:30:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

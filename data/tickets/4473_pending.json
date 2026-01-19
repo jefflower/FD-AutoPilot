@@ -1,0 +1,24 @@
+{
+  "id": 4473,
+  "subject": "Product Question, Ground Wire",
+  "description_text": "Hi,\r\n\r\nI have recently purchased and received the Plus X Pedal set and VAM Pro\r\nmodules. I am trying to install the grounding wire to the control box,\r\nhowever, it seems the rivet where the arrow points to is installed too\r\ntightly to the box, and I cannot slot the ground wire tab under it. What is\r\nthe solution from here? Can I install it some other way? I was not provided\r\nwith a tool that is compatible with the head on that rivet/bolt, I cannot\r\nmake it looser.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-05T18:32:25Z",
+  "updated_at": "2025-10-05T23:58:17Z",
+  "requester_id": 158003936949,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009950985,
+      "body_text": "Hi Smithies Smith,     You can use an Allen wrench to loosen the screw. Other positions can also be used for grounding, but make sure to scrape off a small area of the black oxide layer, otherwise the grounding connection may not be effective.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T23:58:17Z",
+      "updated_at": "2025-10-05T23:58:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

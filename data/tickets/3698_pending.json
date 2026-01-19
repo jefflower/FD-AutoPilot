@@ -1,0 +1,204 @@
+{
+  "id": 3698,
+  "subject": "Issues with pedals and vam pro",
+  "description_text": "Hello,\r\n\r\nIm folowing up on our conversation through amazon for order number:\r\n 701-7115180-5540227.\r\n\r\nTo re-iterate the problem, i have simsonn plus x pedals and I just got the\r\nvan pro-s. The issue that I’m having is that when the vibration is\r\nhappening I get the brake loadcell to react and detect brake pressure while\r\nI’m not touching the brakes. I have done testing to see if this is an EMI\r\nissue and it doesn’t seem to be but maybe a loadcell issue? I have tested\r\nthe resistance of the different components with a multimeter and I don’t\r\nsee any resistance. Also I have grounded the control box to the brake or\r\nthe throttle pedal with no results since I don’t think it’s an EMI issue.\r\n\r\nHere is a video showing the problem:\r\nhttps://we.tl/t-m8Z6d9evKJ\r\n\r\nI’m also attaching a few pictures to show the setup.\r\n\r\nThe power is grounded with the 3 prong connection, everything else is\r\ngrounded, I’m plugging the usb directly to the usb3.1 port on the computer,\r\nno hubs, software is latest 2.1 i believe, and I isolated the vams from the\r\nbracket with the red washers. So I followed all the instructions from our\r\nconversation on Amazon. Please let me know what the issue is.\r\n\r\nThank you!\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-09-10T18:47:56Z",
+  "updated_at": "2025-09-17T08:00:41Z",
+  "requester_id": 158004402739,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008510316,
+      "body_text": "Hello,\r\n\r\nIn my first email I have already told you that the red spacers are\r\ninstalled and I’m still having the issue.\r\n\r\nOne thing that I noticed is that when I do a test of vam pros, the throttle\r\none sound quieter than the brake one, the brake vibration and sound is\r\nlouder and stronger.\r\n\r\nPlease let me know what other solutions you have.\r\n\r\nThanks\r\n\r\nOn Thu, Sep 11, 2025 at 3:55 AM support@simsonn.com ",
+      "user_id": 158004402739,
+      "created_at": "2025-09-11T11:15:32Z",
+      "updated_at": "2025-09-11T11:15:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008530473,
+      "body_text": "Hi Nemanja Stavrić,     Please refer to the steps in this link to resolve the issue. If the problem persists, kindly provide a video so we can better assist you with troubleshooting.      https://www.reddit.com/r/simracing/comments/1n291hi/solution_for_simsonn_vam_pro_emi_issues/",
+      "user_id": 158000445778,
+      "created_at": "2025-09-11T15:01:18Z",
+      "updated_at": "2025-09-11T15:01:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008559755,
+      "body_text": "Hello,\r\n\r\nYou have now provided the same link with the same description multiple\r\ntimes. THIS DOES NOT WORK FOR ME! Please understand this. I have done\r\neverything described , with grounding, with spacers, with everything,\r\nsimhub and simsonn manager are not running at the same time. I have tested\r\nresistance with multimeter. I have also sent you a video showing this\r\nissue, it shows the brake pressure going crazy in simsonn manager, it also\r\nshows the red bar in iracing flickering. It always hold pressure of 5-10%.\r\nAlways, i never get zero percent brake. I have calibrated my pedals many\r\ntimes in simsonn manager and also in iracing. The steps you are providing\r\nDO NOT solve this problem. If you have any other solutions to this im ready\r\nto listen, otherwise this is a broken unit and it should be replaced or i\r\nshould get a refund.\r\n\r\nPlease let me know what is your decision.\r\n\r\nThank you!\r\n\r\nOn Thu, Sep 11, 2025 at 11:01 AM support@simsonn.com ",
+      "user_id": 158004402739,
+      "created_at": "2025-09-12T02:14:46Z",
+      "updated_at": "2025-09-12T02:14:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008561841,
+      "body_text": "Hi Nemanja Stavrić,    If it is confirmed to be a hardware issue, we usually provide a free replacement. However, we need to confirm the cause of the problem first. Would you be available now for us to assist you remotely?  Please install ToDesk software — no registration is required. If a registration window pops up, simply click the close button at the top right corner. Then, please share the ID and temporary verification code with us. We will remotely assist you in checking and testing the device, which will allow us to resolve the issue more quickly.       https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-09-12T04:29:17Z",
+      "updated_at": "2025-09-12T04:29:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008584009,
+      "body_text": "Yes no problem\r\n\r\nToDesk:\r\ndevice ID:443 552 460\r\nTemporary password:k01r277z\r\n\r\nOn Fri, Sep 12, 2025 at 12:29 AM support@simsonn.com ",
+      "user_id": 158004402739,
+      "created_at": "2025-09-12T13:01:34Z",
+      "updated_at": "2025-09-12T13:01:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008584756,
+      "body_text": "Hi Nemanja Stavrić,    I’m still driving, please wait for about half an hour! I’ll take care of it remotely once I get home.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-12T13:27:59Z",
+      "updated_at": "2025-09-12T13:27:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008585110,
+      "body_text": "No problem, let me know when you are available\r\n\r\nOn Fri, Sep 12, 2025 at 9:28 AM support@simsonn.com ",
+      "user_id": 158004402739,
+      "created_at": "2025-09-12T13:38:04Z",
+      "updated_at": "2025-09-12T13:38:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008590462,
+      "body_text": "Had to reboot, here are new connection information\r\n\r\nToDesk:\r\ndevice ID:443 552 460\r\nTemporary password:k01r277z\r\n\r\n",
+      "user_id": 158004402739,
+      "created_at": "2025-09-12T14:32:56Z",
+      "updated_at": "2025-09-12T14:32:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008595700,
+      "body_text": "Hello, is this happening now?\r\n\r\nOn Fri, Sep 12, 2025 at 10:32 AM Nemanja Stavrić <darknemos@gmail.com>\r\nwrote:\r\n\r\n> Had to reboot, here are new connection information\r\n>\r\n> ToDesk:\r\n> device ID:443 552 460\r\n> Temporary password:k01r277z\r\n>\r\n> On Fri, Sep 12, 2025 at 9:37 AM Nemanja Stavrić <darknemos@gmail.com>\r\n> wrote:\r\n>\r\n>> No problem, let me know when you are available\r\n>>\r\n>> On Fri, Sep 12, 2025 at 9:28 AM support@simsonn.com ",
+      "user_id": 158004402739,
+      "created_at": "2025-09-12T15:22:33Z",
+      "updated_at": "2025-09-12T15:22:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008610822,
+      "body_text": "I dont know what happened today but i found a good way to showcase this\r\nproblem.\r\n\r\nPlease take a look at this video\r\n\r\nhttps://www.youtube.com/watch?v=6Dhuymm7z_E\r\n\r\nOn Fri, Sep 12, 2025 at 11:22 AM Nemanja Stavrić <darknemos@gmail.com>\r\nwrote:\r\n\r\n> Hello, is this happening now?\r\n>\r\n> On Fri, Sep 12, 2025 at 10:32 AM Nemanja Stavrić <darknemos@gmail.com>\r\n> wrote:\r\n>\r\n>> Had to reboot, here are new connection information\r\n>>\r\n>> ToDesk:\r\n>> device ID:443 552 460\r\n>> Temporary password:k01r277z\r\n>>\r\n>> On Fri, Sep 12, 2025 at 9:37 AM Nemanja Stavrić <darknemos@gmail.com>\r\n>> wrote:\r\n>>\r\n>>> No problem, let me know when you are available\r\n>>>\r\n>>> On Fri, Sep 12, 2025 at 9:28 AM support@simsonn.com ",
+      "user_id": 158004402739,
+      "created_at": "2025-09-12T20:53:16Z",
+      "updated_at": "2025-09-12T20:53:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008611124,
+      "body_text": "In case you dont have access to youtube here is wetransfer link\r\n\r\nhttps://we.tl/t-VKEsSFCAjT\r\n\r\n",
+      "user_id": 158004402739,
+      "created_at": "2025-09-12T21:07:31Z",
+      "updated_at": "2025-09-12T21:07:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008615354,
+      "body_text": "Hi Nemanja Stavrić,  Are you online now? Sorry—I went to dinner last night and it slipped my mind; I only remembered this morning. What time works for you today? I can adapt to your schedule. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-13T01:23:26Z",
+      "updated_at": "2025-09-13T01:23:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008616234,
+      "body_text": "It’s late at night in Canada. I’m in EST time zone. Maybe tomorrow morning.\r\nPlease take a look at the video I sent over today\r\n\r\nOn Fri, Sep 12, 2025 at 9:23 PM support@simsonn.com ",
+      "user_id": 158004402739,
+      "created_at": "2025-09-13T02:54:38Z",
+      "updated_at": "2025-09-13T02:54:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008634040,
+      "body_text": "Hello, I can login now if you are around. Have you seen the video I sent\r\nover?\r\n\r\nOn Fri, Sep 12, 2025 at 10:54 PM Nemanja Stavrić <darknemos@gmail.com>\r\nwrote:\r\n\r\n> It’s late at night in Canada. I’m in EST time zone. Maybe tomorrow\r\n> morning. Please take a look at the video I sent over today\r\n>\r\n> On Fri, Sep 12, 2025 at 9:23 PM support@simsonn.com ",
+      "user_id": 158004402739,
+      "created_at": "2025-09-13T12:54:51Z",
+      "updated_at": "2025-09-13T12:54:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008745783,
+      "body_text": "Hello, I have sent a video YouTube link and WeTransfer link clearly showing\r\nthe issue with the brake pedal. Did you look at my the video??\r\n\r\nPlease let me know.\r\nThanks\r\n\r\n",
+      "user_id": 158004402739,
+      "created_at": "2025-09-15T10:25:59Z",
+      "updated_at": "2025-09-15T10:25:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008813360,
+      "body_text": "Hello? Are you getting my emails at all???\r\n\r\n",
+      "user_id": 158004402739,
+      "created_at": "2025-09-16T10:43:16Z",
+      "updated_at": "2025-09-16T10:43:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008838355,
+      "body_text": "Hi Nemanja Stavrić,  Are you available today? It’s currently 10:25 AM, and I’ll be available until 6:00 PM to handle this matter. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-17T02:26:40Z",
+      "updated_at": "2025-09-17T02:26:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008839445,
+      "body_text": "Your time zones have 12h difference. It’s late at night here in Canada. Are\r\nyou working in the North America time zone ever? Is your working day 10am\r\nto 6pm? I can do 10am (which is 10pm for me) next week. Also you never\r\nreplied to me if you looked at my last video. I asked 3 or 4 times already.\r\nThe video recording of simsonn manager showing the issues? I don’t think\r\nany configuration can solve this problem as it’s hardware problem on the\r\nbrake pedal.\r\n\r\nOn Tue, Sep 16, 2025 at 10:26 PM support@simsonn.com ",
+      "user_id": 158004402739,
+      "created_at": "2025-09-17T03:45:28Z",
+      "updated_at": "2025-09-17T03:45:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008846099,
+      "body_text": "Hi Nemanja Stavrić,  I’ve reviewed the video you provided, and it’s confirmed that when the vibration intensity exceeds 50%, significant electromagnetic interference occurs, which affects the stability of the brake signal. Using nylon screws and nylon washers for electrical insulation during installation can effectively solve this issue. We recommend replacing metal screws with nylon ones to prevent vibration-induced current from interfering with the signal through metal conduction paths. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-17T08:00:40Z",
+      "updated_at": "2025-09-17T08:00:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

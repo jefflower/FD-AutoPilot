@@ -1,0 +1,64 @@
+{
+  "id": 4197,
+  "subject": "Brake not Being Detected for Calibration",
+  "description_text": "Hello,\r\n\r\nI worked on a few adjustments today (pedal height, positioning on base board, pedal angle, brake pedal distance and elastometers etc.) and had many parts adjusted.  When I put everything back together I went into Simsonn manager and attempted to calibrate.  Everything showed connected but the brake did not register at all in calibration - only the throttle and my VAM Pros.\r\n\r\nI'm afraid something with the brake got bumped or moved and now it's not connecting.\r\n\r\nI have the Plus X (brake and throttle ) with the VAM Pro's.  I just received them about 10 days ago and have been enjoying them greatly until this issue.\r\n\r\nPlease advice what I need to do.\r\n\r\nThanks in advance for any help you can provide ~Michael Langert\r\n612-386-9636\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-09-28T00:32:11Z",
+  "updated_at": "2025-09-28T12:23:23Z",
+  "requester_id": 158004761775,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009235813,
+      "body_text": "Hi Michael Langert,      1. Pedal Adjustment and Force    You can remove the 10mm limit spacer inside the brake black spring to make the pedal softer.    For stronger resistance, use the corresponding colored damping springs, such as yellow or blue.      2. Firmware and Telemetry Optimization    We will soon release version 2.1.1, which optimizes telemetry data.    You can also use SimHub version 9.9.3 or above, which supports over 100 racing games, and our devices are fully compatible with SimHub.      3. Power Spark Explanation    Sparks when plugging in the power are normal, caused by the three capacitors of the motor charging.    The system uses a safe 24V voltage, which will not damage the mainboard and poses no safety risk.    You can use it with confidence, and plugging/unplugging is infrequent.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-24T15:08:31Z",
+      "updated_at": "2025-09-24T15:08:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009235906,
+      "body_text": "Thanks for your reply….. am enjoying my new pedal and VAM Pros very much.\r\n\r\nRegards ~Michael\r\n\r\nGet Outlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158004761775,
+      "created_at": "2025-09-24T15:11:35Z",
+      "updated_at": "2025-09-24T15:11:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009524145,
+      "body_text": "Hello…..\r\n\r\nThanks for the quick response.\r\n\r\n I’m pleased to report that I disassembled and re-assembled the affected parts and was able to get the brake pedal working.\r\n\r\nEverything seems to be working as expected now so you can close out my ticket.\r\n\r\nThank you ~Michael Langert\r\n\r\nGet Outlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158004761775,
+      "created_at": "2025-09-28T04:11:37Z",
+      "updated_at": "2025-09-28T04:11:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009568849,
+      "body_text": "ID 为 4026 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-28T12:23:17Z",
+      "updated_at": "2025-09-28T12:23:17Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158009568850,
+      "body_text": "合并来自工单4026  \n      主题: Assorted Plus X Questions/Issues  \n      描述:  \n Hello, \n \n \n  \n   \n \n I recently purchased the Plus X pedals (2 pedals – brake and throttle) along with 2 VAM Pro Haptic Motors.  I have a couple of questions/concerns I hope you can help me with.\n \n \n \n  \n   \n \n \n The brake pedal is “EXTREMELY” hard to push and is very resistant.  When calibrating it in Simsonn Manager, my normal push only registers 41 kg of maximum\n force with the softest elastomer standard setup.  This seems very light for a pedal that can go up to 200 kg.  Is this normal and does it necessarily indicate a problem with the load cell?  \n My VAM Pros show up fine and I can change the settings and test the vibration fine in Simsonn Manager.  However, they don’t seem to be working or vibrating\n at all in the F1 25 game.  I’m not sure how to address that.   \n My control box for the VAM Pro’s “sparks” when I plug in the power cord.  This is very concerning ……what should I do about it? \n  \n \n  \nThanks in advance for your help and reply.  I’m excited to address these issues and use my new Plus X pedals! \n \n \n  \n   \n \n Warm Regards ~Michael Langert \n \n \n 612-386-9636 (U.S.A.)",
+      "user_id": 158000445778,
+      "created_at": "2025-09-28T12:23:17Z",
+      "updated_at": "2025-09-28T12:23:17Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

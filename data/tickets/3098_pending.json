@@ -1,0 +1,54 @@
+{
+  "id": 3098,
+  "subject": "Order #SSN2425",
+  "description_text": "Hello, on August 22nd I placed an order for some PRO X ULTRA pedals.\r\nI received an order confirmation email with the number #SSN2425.\r\nDo I need to do anything else? What is the estimated time for shipping?\r\nRegards!!!\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-08-25T19:19:19Z",
+  "updated_at": "2025-08-27T07:38:41Z",
+  "requester_id": 158003580987,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007547456,
+      "body_text": "Hello, due to the war, Israel has limited shipping channels. We are currently looking for a suitable channel. The lowest price is currently 950 RMB, which is equivalent to 132.84 USD, via FedEx or DHL express, with delivery in 3-7 days. If you are in a hurry, we can arrange for this shipping channel, but you will need to cover the 29 USD shipping fee. Is that acceptable?",
+      "user_id": 158001343601,
+      "created_at": "2025-08-26T02:34:16Z",
+      "updated_at": "2025-08-26T02:34:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007548490,
+      "body_text": "Hi, I'm fine if it's just that amount.\r\nHow do I pay?\r\n________________________________\r\nDe: service@simsonn.com ",
+      "user_id": 158003580987,
+      "created_at": "2025-08-26T03:57:52Z",
+      "updated_at": "2025-08-26T03:57:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007548501,
+      "body_text": "Hi Nicolas Bonvicini,    Okay, thank you for your understanding. We will ship your order as soon as possible. You can click on this link to make payment.  https://www.simsonn.com/products/difference-2",
+      "user_id": 158001343601,
+      "created_at": "2025-08-26T04:00:00Z",
+      "updated_at": "2025-08-26T04:00:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007548524,
+      "body_text": "Perfect, I've already made the payment.\r\nI'm waiting for the tracking number, thank you very much.\r\nBest regards!!\r\n________________________________\r\nDe: service@simsonn.com ",
+      "user_id": 158003580987,
+      "created_at": "2025-08-26T04:04:03Z",
+      "updated_at": "2025-08-26T04:04:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

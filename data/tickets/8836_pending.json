@@ -1,0 +1,174 @@
+{
+  "id": 8836,
+  "subject": "Faulty Rumble Motor (VAM) Purchased via Amazon",
+  "description_text": "Dear Simsonn Support Team,\r\n\r\nI recently purchased a set of your rumble motors (VAM) through Amazon. One of the motors has unfortunately stopped working after a short period of use.\r\n\r\nBoth units worked initially, but one is now completely unresponsive, while the other continues to function normally. I have checked all wiring, connections, and settings to rule out installation or configuration issues.\r\n\r\nPlease advise on the appropriate next steps for warranty support or replacement. I can provide the Amazon order number, photos, or a video demonstrating the issue if needed.\r\n\r\nThank you for your assistance. I look forward to your response.\r\n\r\n\r\n\r\n\r\nRegards,\r\nShannon Dottin\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-12-22T00:01:49Z",
+  "updated_at": "2026-01-17T07:21:18Z",
+  "requester_id": 158008217286,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014879984,
+      "body_text": "Hi Shannon Dottin,  Could you please provide a video? Please send it to me via Google Drive and make sure the access permission is set to view. Additionally, please provide a screenshot of the vibration motor configuration screen. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-22T12:37:33Z",
+      "updated_at": "2025-12-22T12:37:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014895311,
+      "body_text": "Good Day, Please see requested information below. Also, I would have tried the various motors in different ports on controller box. Can confirm the various ports and other motors function. Simsonn Haptic Issue – Google Drive drive.google.com Regards, Shannon Dottin ",
+      "user_id": 158008217286,
+      "created_at": "2025-12-22T16:15:52Z",
+      "updated_at": "2025-12-22T16:15:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014953456,
+      "body_text": "Hi Shannon Dottin,  You purchased the VAM motor, not the VAM Pro. Therefore, you should not use VAM Pro mode. Using an incorrect mode can quickly damage the VAM motor, especially when long-duration telemetry-based vibration effects are enabled, such as RPM or speed-related effects, which may cause overload and motor failure. Please make sure the correct mode is selected. There should be a clear indication on the mode selection button. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-23T03:56:51Z",
+      "updated_at": "2025-12-23T03:56:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014968534,
+      "body_text": "Where is this place information clearly stated prior to usage? S the motor covered for replacement?\r\n\r\nRegards,\r\nShannon Dottin\r\n\r\n> ",
+      "user_id": 158008217286,
+      "created_at": "2025-12-23T10:40:04Z",
+      "updated_at": "2025-12-23T10:40:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015130553,
+      "body_text": "Hi Shannon Dottin,  ​Could you please provide your order numer and youyr shipping address? We will ship a replacement to you.",
+      "user_id": 158007774607,
+      "created_at": "2025-12-27T09:07:31Z",
+      "updated_at": "2025-12-27T09:07:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015132069,
+      "body_text": "Good Day,\r\n\r\nThank you very much. \r\nOrder no.:  114-4614593-9780221\r\n\r\nAddress:\r\n8 Cane Vale, Crescent 1\r\nChrist Church\r\nOistins\r\nBarbados\r\n\r\nRegards,\r\nShannon Dottin\r\n\r\n> ",
+      "user_id": 158008217286,
+      "created_at": "2025-12-27T11:03:21Z",
+      "updated_at": "2025-12-27T11:03:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015183645,
+      "body_text": "Hi Shannon Dottin,  We are still missing your city, state, and zip code.",
+      "user_id": 158007774607,
+      "created_at": "2025-12-29T08:39:33Z",
+      "updated_at": "2025-12-29T08:39:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015203299,
+      "body_text": "Good Day,\r\n\r\nPlease see information below:\r\n\r\nName: Shannon Dottin\r\nStreet Address: 8 Cane Vale, Crescent 1\r\nCity: Bridgetown\r\nParish/Region: Christ Church\r\nCountry: Barbados\r\nZIP/Postal Code: BB17155\r\nPhone: +1 246 831 2409\r\n\r\nKindly let me know if any other information is required. Can I also be alerted to when item is sent and tracking information?\r\n\r\nRegards,\r\nShannon Dottin\r\n\r\n> ",
+      "user_id": 158008217286,
+      "created_at": "2025-12-29T15:32:22Z",
+      "updated_at": "2025-12-29T15:32:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015231009,
+      "body_text": "Another motor is starting to fail. The force is significantly weaker.\r\n\r\n",
+      "user_id": 158008217286,
+      "created_at": "2025-12-30T00:09:00Z",
+      "updated_at": "2025-12-30T00:09:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015245573,
+      "body_text": "Hi Shannon Dottin,  OK, we will ship them to you.   The damage to the VAM motors may be caused by excessive travel and continuous rotation under Speed mode. We recommend setting a reasonable speed range and reducing the vibration intensity—ideally around 50%, and no more than 70%. Also, try to avoid prolonged continuous operation to extend the motor’s lifespan. ",
+      "user_id": 158007774607,
+      "created_at": "2025-12-30T10:00:46Z",
+      "updated_at": "2025-12-30T10:00:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015940115,
+      "body_text": "Hey, following up on this replacement. Any updates? Regards, Shannon Dottin ",
+      "user_id": 158008217286,
+      "created_at": "2026-01-06T14:50:46Z",
+      "updated_at": "2026-01-06T14:50:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016100688,
+      "body_text": "Hi Shannon Dottin,  Here is your new tracking number: JSELT3182029331YQ    (ships from China warehouse, the shipping carrier is JSEXPRESS, you can track it via https://www.17track.net/en)",
+      "user_id": 158007774607,
+      "created_at": "2026-01-07T09:10:04Z",
+      "updated_at": "2026-01-07T09:10:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017195964,
+      "body_text": "Good Day, The provided link does not open to a useable link. Please see screenshot below. Also, in checking alternatively it seems the item hasn't been shipped? Kindly confirm accuracy of information provided and status. Regards, Shannon Dottin ",
+      "user_id": 158008217286,
+      "created_at": "2026-01-15T14:35:47Z",
+      "updated_at": "2026-01-15T14:35:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017237767,
+      "body_text": "Hi Shannon Dottin,  The logistics company has informed us that your address is undeliverable. Could you please provide an alternative address in the United States?",
+      "user_id": 158007774607,
+      "created_at": "2026-01-16T03:30:59Z",
+      "updated_at": "2026-01-16T03:30:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017259217,
+      "body_text": "Good Day, Wow...couldn't this been spotted on initial submission of address? Kindly use updated address below. Name: BGI-54821 Shannon Dottin Address: 1 Aeropost Way City: Miami State: Florida Zip: 33206-3206 Number: (786) 322-2032 Regards, Shannon Dottin ",
+      "user_id": 158008217286,
+      "created_at": "2026-01-16T11:41:03Z",
+      "updated_at": "2026-01-16T11:41:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017318456,
+      "body_text": "Hi Shannon Dottin,  ​Thanks for your address. We will ship it when we are back to work next week.",
+      "user_id": 158007774607,
+      "created_at": "2026-01-17T07:21:15Z",
+      "updated_at": "2026-01-17T07:21:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 3723,
+  "subject": "gam path",
+  "description_text": "It wont let me set game path. it says game not found why\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-11T15:50:26Z",
+  "updated_at": "2025-09-12T04:21:16Z",
+  "requester_id": 158004292007,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008561699,
+      "body_text": "Hi Tony Wolski,  Which game are you using? For games installed via Steam, they are usually automatically detected and can be launched directly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-12T04:21:16Z",
+      "updated_at": "2025-09-12T04:21:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

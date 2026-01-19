@@ -1,0 +1,74 @@
+{
+  "id": 4527,
+  "subject": "Order Order #SSN2797",
+  "description_text": "How can i follow the package ? ?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-07T06:26:08Z",
+  "updated_at": "2025-10-11T10:33:44Z",
+  "requester_id": 158005481749,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010141308,
+      "body_text": "Hi rene hermansen,    We apologize for the delayed response; we've just returned from our 8-day holiday. Your order has been shipped, and here is your tracking link:  https://www.dhl.com/us-en/home/tracking.html?tracking-id=CE326626798DE",
+      "user_id": 158001343601,
+      "created_at": "2025-10-09T09:51:01Z",
+      "updated_at": "2025-10-09T09:51:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010142473,
+      "body_text": "That's great, thank you very much.  ?\r\n\r\ntors. 9. okt. 2025, 11.51 skrev service@simsonn.com ",
+      "user_id": 158005481749,
+      "created_at": "2025-10-09T10:56:39Z",
+      "updated_at": "2025-10-09T10:56:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010164063,
+      "body_text": "Hii i ordered with a base plate but no base plate was in the box?\r\n\r\ntirs. 7. okt. 2025, 08.31 skrev service@simsonn.com ",
+      "user_id": 158005481749,
+      "created_at": "2025-10-09T16:17:48Z",
+      "updated_at": "2025-10-09T16:17:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010164271,
+      "body_text": "Hii the base plate is missing from my order ?\r\n\r\ntors. 9. okt. 2025, 12.56 skrev rene hermansen <renehermansen22@gmail.com>:\r\n\r\n> That's great, thank you very much.  ?\r\n>\r\n> tors. 9. okt. 2025, 11.51 skrev service@simsonn.com ",
+      "user_id": 158005481749,
+      "created_at": "2025-10-09T16:24:04Z",
+      "updated_at": "2025-10-09T16:24:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010198368,
+      "body_text": "Hi rene hermansen,  We apologize for the inconvenience. Our Pro X Ultra baseplate is currently out of stock at our German warehouse, so we've shipped the pedal to you first. We can send your baseplate via UPS, but customs duties may apply. Alternatively, we can reship it once our German warehouse restocks in next two days.  ",
+      "user_id": 158001343601,
+      "created_at": "2025-10-10T08:32:29Z",
+      "updated_at": "2025-10-10T08:32:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010217169,
+      "body_text": "Ill just wait for the restock ?\r\n\r\nfre. 10. okt. 2025, 10.32 skrev service@simsonn.com ",
+      "user_id": 158005481749,
+      "created_at": "2025-10-10T14:16:57Z",
+      "updated_at": "2025-10-10T14:16:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

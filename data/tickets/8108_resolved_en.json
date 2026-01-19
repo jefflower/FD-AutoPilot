@@ -1,0 +1,65 @@
+{
+  "id": 8108,
+  "subject": "Fwd: Simsonn Racing Simulator Pressure Handbrake",
+  "description_text": "Hello, I purchased this and cannot get my Windows 11 PC to recognize it.\n\nI get this error about unknown usb device, please see attached image.\n\nThere is a white led on when plugged into to usb port on my pc.\n\nCan you please assist me? \n\nThank you,\n\nLee\n\nSent from my iPhone\n> ",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-12T21:01:23Z",
+  "updated_at": "2025-12-13T06:48:54Z",
+  "requester_id": 158007789598,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014427485,
+      "body_text": "Hi Lee Hua, Please try connecting the device to a rear USB 3.0 (blue) port on your computer, or use a USB hub with its own external power supply. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-13T03:03:09Z",
+      "updated_at": "2025-12-13T03:03:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014427882,
+      "body_text": "Thank you!\n\nRear usb 3.0 blue port fixed the issue. I had it in a usb 2.0 black port and tried 2 other usb 2.0 ports which didn’t work.\n\nSent from my iPhone\n\n> ",
+      "user_id": 158007789598,
+      "created_at": "2025-12-13T03:33:49Z",
+      "updated_at": "2025-12-13T03:33:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014432343,
+      "body_text": "Ticket with ID 8107 has been merged into this ticket.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-13T05:37:50Z",
+      "updated_at": "2025-12-13T05:37:50Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014432344,
+      "body_text": "Merged from ticket 8107\n      Subject: Simsonn Racing Simulator Pressure Handbrake\n      Description:  Hello, I purchased this and cannot get my Windows 11 PC to recognize it. \n   \n I get this error: \n   \n  \n   \n There is a white led on when plugged into to usb port on my pc: \n   \n   \n \n   \n Can you please assist me? \n   \n Thank you, \n   \n Lee \n   \n  Sent from my iPhone",
+      "user_id": 158000445778,
+      "created_at": "2025-12-13T05:37:50Z",
+      "updated_at": "2025-12-13T05:37:50Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014436650,
+      "body_text": "",
+      "user_id": 158007789598,
+      "created_at": "2025-12-13T06:48:53Z",
+      "updated_at": "2025-12-13T06:48:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

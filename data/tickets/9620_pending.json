@@ -1,0 +1,54 @@
+{
+  "id": 9620,
+  "subject": "baseplate.",
+  "description_text": "Hi, I recently bought a pro x ultra and  didn’t notice I buy without the base plate.\r\nCan I re purchase the ultra base plate?\r\n\r\nAlso the carbon fiber heel plate it’s come with rise up tube and screws?\r\nThanks.\r\n\r\n",
+  "status": 3,
+  "priority": 2,
+  "created_at": "2025-12-31T03:00:47Z",
+  "updated_at": "2026-01-04T10:55:47Z",
+  "requester_id": 158008329421,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015291473,
+      "body_text": "Hi Mklee,  Here is the purchase link for the ProX Ultra base plate separately.        https://www.simsonn.com/products/simsonn-racing-pedal-pro-x-with-heel-plate?variant=50475339645242 ​",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T03:06:09Z",
+      "updated_at": "2025-12-31T03:06:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015291544,
+      "body_text": "is the carbon fiber heel plate come with the rise up and screw or just the plate?",
+      "user_id": 158008329421,
+      "created_at": "2025-12-31T03:11:36Z",
+      "updated_at": "2025-12-31T03:11:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015291664,
+      "body_text": "Hi Mklee,  Included. If you haven’t received it, we will send it to you as a replacement. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T03:20:40Z",
+      "updated_at": "2025-12-31T03:20:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015623234,
+      "body_text": "Hi Mklee,    Yes, the carbon fiber heel plate is included, along with all mounting hardware.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-04T10:55:47Z",
+      "updated_at": "2026-01-04T10:55:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

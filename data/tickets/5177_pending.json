@@ -1,0 +1,44 @@
+{
+  "id": 5177,
+  "subject": "Bought aliexpress vam pro",
+  "description_text": "Hello, i think im missing a cable in the box. I read online that i should\r\nground them because i have EMI problems (cannot calibrate now, unreliable\r\nsignal). I did not recive the cable. Or is it a faulty unit?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-22T14:48:05Z",
+  "updated_at": "2025-10-23T10:38:01Z",
+  "requester_id": 158005979471,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010918085,
+      "body_text": "Hi Jan Jozef Sag,     Could you please provide your order number and let me know which pedal model you’re using?  If you mount the main control box onto the metal pedal frame, it can also help reduce EMI (electromagnetic interference). However, please note that painted surfaces may affect grounding, so make sure the grounding point contacts bare metal.  Additionally, the VAM Pro package should include nylon screws and spacers. You can use them to electrically isolate the motor from the bracket, which effectively reduces vibration and interference. I can send you a reference link to show the recommended installation method.         https://www.reddit.com/r/simracing/comments/1n291hi/solution_for_simsonn_vam_pro_emi_issues/",
+      "user_id": 158000445778,
+      "created_at": "2025-10-23T02:02:03Z",
+      "updated_at": "2025-10-23T02:02:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010923818,
+      "body_text": "3061634604410903 is the order id.\r\n\r\nI have the metallic pro plus onced but i am unable to mount the control box\r\non the pedals and unfortunately everything else is painted. Yes i would\r\nlove the manual to see\r\n\r\nDen tors 23 okt. 2025 04:02service@simsonn.com ",
+      "user_id": 158005979471,
+      "created_at": "2025-10-23T03:34:05Z",
+      "updated_at": "2025-10-23T03:34:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010938015,
+      "body_text": "Hi Jan Jozef Sag,  Please provide your contact name, phone number, and shipping address. We will send you a green grounding wire as a replacement. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-23T10:38:00Z",
+      "updated_at": "2025-10-23T10:38:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

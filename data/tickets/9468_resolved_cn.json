@@ -1,0 +1,25 @@
+{
+  "id": 9468,
+  "subject": "海关",
+  "description_text": "您好\n我在速卖通上向您订购了一些商品，这是追踪号码 1ZJ455510432292566\n根据 UPS，包裹被海关扣留，并且不会继续寄送，因为缺少信息。我想问一下是否有人已经联系过您，或者您是否知道更多信息",
+  "status": 4,
+  "priority": 3,
+  "created_at": "2025-12-29T15:24:25Z",
+  "updated_at": "2025-12-30T08:51:43Z",
+  "requester_id": 158008809323,
+  "responder_id": 158007774664,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015242679,
+      "body_text": "你好 Nikez, 在买家会话中已向您提供发票；您可以尝试一下。",
+      "user_id": 158007774664,
+      "created_at": "2025-12-30T08:51:37Z",
+      "updated_at": "2025-12-30T08:51:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

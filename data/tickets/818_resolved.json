@@ -1,0 +1,64 @@
+{
+  "id": 818,
+  "subject": "Shipping",
+  "description_text": "Hi how are you ? Do you ship to Australia? How much is shipping ?\r\nThank you Greg\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-06-25T09:44:33Z",
+  "updated_at": "2025-07-10T11:15:39Z",
+  "requester_id": 158001773286,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003845261,
+      "body_text": "Hi G B,  We can ship to Australia with a base shipping cost of $9.90 and free delivery on orders over $299.",
+      "user_id": 158001343601,
+      "created_at": "2025-06-26T07:24:17Z",
+      "updated_at": "2025-06-26T07:24:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004137065,
+      "body_text": "Hi I ordered the Pro X ultra slim pedals and baseplate from Aliexpress.com how long will shipping take ? The order hasn't changed status in nearly 48 hours.. Thanks\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158001773286,
+      "created_at": "2025-06-27T07:45:04Z",
+      "updated_at": "2025-06-27T07:45:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004197234,
+      "body_text": "Hi G B,     Pello, please provide us with your order number and we will check it for you.",
+      "user_id": 158001343601,
+      "created_at": "2025-06-27T10:51:16Z",
+      "updated_at": "2025-06-27T10:51:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004199755,
+      "body_text": "Order ID 8201776481890899\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158001773286,
+      "created_at": "2025-06-27T10:58:52Z",
+      "updated_at": "2025-06-27T10:58:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004224030,
+      "body_text": "Still looking at order that hasn't moved in 4 days\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158001773286,
+      "created_at": "2025-06-30T00:44:37Z",
+      "updated_at": "2025-06-30T00:44:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

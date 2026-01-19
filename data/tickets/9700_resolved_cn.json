@@ -1,0 +1,65 @@
+{
+  "id": 9700,
+  "subject": "订单 3064916539317473 速卖通",
+  "description_text": "您好。我的白色弹性体套件缺少小尺寸。有 1 个大尺寸和 2 个中等尺寸。",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-31T22:11:38Z",
+  "updated_at": "2026-01-09T05:49:58Z",
+  "requester_id": 158007504090,
+  "responder_id": 158007774664,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015366526,
+      "body_text": "您好 Hugo Sánchez，您能拍一张您收到的产品照片吗？我将帮助您核实。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-01T15:26:15Z",
+      "updated_at": "2026-01-01T15:26:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015785512,
+      "body_text": "通过 Outlook for Android 发送<https://aka.ms/AAb9ysg>",
+      "user_id": 158007504090,
+      "created_at": "2026-01-05T19:49:58Z",
+      "updated_at": "2026-01-05T19:49:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016289924,
+      "body_text": "您好 Hugo Sánchez，您的产品已发货。物流单号是：YT2600500704696581。您可以在此网站跟踪：https://t.17track.net/zh-cn#nums=YT2600500704696581",
+      "user_id": 158007774664,
+      "created_at": "2026-01-08T06:55:25Z",
+      "updated_at": "2026-01-08T06:55:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016349716,
+      "body_text": "好的，谢谢。你们有比 Plus X 踏板原装弹簧更软的弹簧吗？即使使用白色弹性体，刹车踏板的初始部分仍然太硬。",
+      "user_id": 158007504090,
+      "created_at": "2026-01-08T13:31:00Z",
+      "updated_at": "2026-01-08T13:31:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016484899,
+      "body_text": "您好 Hugo Sánchez，抱歉，我们的白色减震器已经是现有最软的了。",
+      "user_id": 158007774664,
+      "created_at": "2026-01-09T05:49:43Z",
+      "updated_at": "2026-01-09T05:49:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

@@ -1,0 +1,54 @@
+{
+  "id": 4881,
+  "subject": "Ref order number SSN2957",
+  "description_text": "Hello, \r\nI have just ordered some of your pedals after watching great reviews and look forward to replacing my faulty Simagic P1000 pedals that have been a lot of trouble. \r\n\r\nA question. \r\nYour haptics look the same mounting pattern as my current Simagic P-HPR ones. \r\n\r\nCan you please send me some brackets so that I can mount my two existing Simagic haptics to your pedals? \r\n\r\nI’m excited to try these pedals. Handbrake and shifter next!! \r\n\r\nBest Regards,\r\nStewart Sanderson\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-14T15:41:33Z",
+  "updated_at": "2025-10-16T07:23:32Z",
+  "requester_id": 158005680867,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010477886,
+      "body_text": "Hi Stewart Sanderson,    I must apologise for the delay in responding to your email. Your order has already been dispatched, and we are unable to add any further items at this stage. We sincerely apologise!",
+      "user_id": 158001343601,
+      "created_at": "2025-10-15T08:30:53Z",
+      "updated_at": "2025-10-15T08:30:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010478531,
+      "body_text": "Hi,\r\nNo need to apologise. \r\nCan you confirm the haptics have the same mounting pattern?\r\n\r\nI would like to figure out how to mount the and obtain bracket before they arrive. \r\n\r\nDo you have any good images of how to mount them?\r\n\r\nBest Regards,\r\nStewart Sanderson\r\n\r\n\r\n> ",
+      "user_id": 158005680867,
+      "created_at": "2025-10-15T09:16:55Z",
+      "updated_at": "2025-10-15T09:16:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010478928,
+      "body_text": "Hi Stewart Sanderson,  Thank you for your understanding. The installation method appears to be somewhat different. You may wish to look online for guidance on fitting the Simagic P-HPR to Simson pedals. I recall seeing a relevant video on YouTube previously.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-15T09:39:48Z",
+      "updated_at": "2025-10-15T09:39:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010480202,
+      "body_text": "Really?\r\nOk thanks. Will take a look. \r\n\r\nBest Regards,\r\nStewart Sanderson\r\n\r\n\r\n> ",
+      "user_id": 158005680867,
+      "created_at": "2025-10-15T10:40:00Z",
+      "updated_at": "2025-10-15T10:40:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

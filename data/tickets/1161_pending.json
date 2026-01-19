@@ -1,0 +1,64 @@
+{
+  "id": 1161,
+  "subject": "help needed",
+  "description_text": "Hello,\r\n\r\ni'm interested in purchasing a set of your pedals but im unsure as what to\r\nget as there are a few options available, I live in Canada and cannot get\r\nto physically buy them from a store where i would have had the option to\r\nsee them and configure as i see fit, can i speak with someone who can guide\r\nand answer a few questions for me\r\n\r\nthis is my email - number to be reached is 1 514 804 6420\r\n\r\nthanks in advance\r\n\r\nAndre Robinosn\r\nDirector - Turn1 Sim Racing Lounge (Canada)\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-03T16:47:53Z",
+  "updated_at": "2025-07-04T14:20:24Z",
+  "requester_id": 158001887322,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004445177,
+      "body_text": "Hi Andre Robinson, You can consider purchasing the PlusX pedals, which are our latest model. If you're not particularly interested in lighting effects, there's no need to choose the ProX Ultra, which includes RGB lighting. You can also purchase the VAM Pro motor, and use it together with our SIMSONN Manager software or SIMHUB 9.9.3 for in-game telemetry. The overall experience is excellent. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-04T13:41:13Z",
+      "updated_at": "2025-07-04T13:41:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445198,
+      "body_text": "I live in ontario Canada, would I have to pay customs duty and or brokerage\r\nfees?\r\n\r\nOn Fri, Jul 4, 2025, 9:41 a.m. service@simsonn.com ",
+      "user_id": 158001887322,
+      "created_at": "2025-07-04T13:44:09Z",
+      "updated_at": "2025-07-04T13:44:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445276,
+      "body_text": "Hi Andre Robinson,    The probability is that there is no tax, but if you incur customs duties, you will need to work with the logistics company to pay for them.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-04T14:03:14Z",
+      "updated_at": "2025-07-04T14:03:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445292,
+      "body_text": "Who do you ship with?\r\n\r\nOn Fri, Jul 4, 2025, 10:03 a.m. service@simsonn.com ",
+      "user_id": 158001887322,
+      "created_at": "2025-07-04T14:05:21Z",
+      "updated_at": "2025-07-04T14:05:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445367,
+      "body_text": "Hi Andre Robinson,  We generally use UPS or other courier services for shipping. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-04T14:17:40Z",
+      "updated_at": "2025-07-04T14:17:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

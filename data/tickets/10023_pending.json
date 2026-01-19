@@ -1,0 +1,44 @@
+{
+  "id": 10023,
+  "subject": "Shipping state Order #SSN5277",
+  "description_text": "Hi there, refered to my purchase there is the shipping with reference: SF6047201468670 when i try to get an actual state it says, that there is no shipping item in the system. Could you Please help me and send me the actual state of shipping? Thanks and regards Sebastian",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-05T19:43:11Z",
+  "updated_at": "2026-01-08T11:06:34Z",
+  "requester_id": 158008943241,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016084258,
+      "body_text": "Hello, Is there any update for me??? Greetings Sebastian Am 05.01.2026 um 20:48 schrieb service@simsonn.com: ﻿ \r\n \r\n Hi Sebastian Weidlich We would like to acknowledge that we have received your request and a ticket has been created. A support representative will be reviewing your request and will send you a personal response.(usually within 24 hours). To view the status of the ticket or add comments, please visit https://simsonn.freshdesk.com/helpdesk/tickets/10023?follow=email Thank you for your patience. View ticket If the button doesn't work, copy-paste this URL in your browser's address bar: https://simsonn.freshdesk.com/helpdesk/tickets/10023?follow=email Regards, Support Center Support Team \r\n\r\n\r\n\r\n\r\n\r\n \r\n \r\n\r\n\r\n\r\n\r\n10023:4206036\r\n\r\n",
+      "user_id": 158008943241,
+      "created_at": "2026-01-07T07:35:41Z",
+      "updated_at": "2026-01-07T07:35:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016326453,
+      "body_text": "Hi Sebastian Weidlich,    We apologize for the delayed response—we've just returned from vacation. Here is your shipping tracking link. The product you purchased has been out of stock for nearly two weeks due to overwhelming demand. We will ship it to you within the next couple of days.  https://t.17track.net/en#nums=SF6047201468670    The pedal has been delivered. Did you receive it?    https://www.dhl.de/en/privatkunden/pakete-empfangen/verfolgen.html?piececode=00340434776544042188&cid=c_dhl_2502061_2353",
+      "user_id": 158001343601,
+      "created_at": "2026-01-08T10:42:14Z",
+      "updated_at": "2026-01-08T10:42:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016327023,
+      "body_text": "Hi, Thanks for the info. Yes - the pedal is already here. Greetings Sebastian Am 08.01.2026 um 11:42 schrieb service@simsonn.com: ﻿ \r\n \r\n Hi Sebastian Weidlich, \r\n \r\n We apologize for the delayed response—we've just returned from vacation. Here is your shipping tracking link. The product you purchased has been out of stock for nearly two weeks due to overwhelming demand. We will ship it to you within the next couple of days. \r\n https://t.17track.net/en#nums=SF6047201468670 \r\n The pedal has been delivered. Did you receive it? \r\n https://www.dhl.de/en/privatkunden/pakete-empfangen/verfolgen.html?piececode=00340434776544042188&cid=c_dhl_2502061_2353 \r\n \r\n \r\n On\r\n Wed, 7 Jan at 3:35 PM\r\n , Sebastian Weidlich <sebastian.weidlich@gmx.de> wrote:\r\n \r\n Hello, \r\n \r\n Is there any update for me??? \r\n \r\n Greetings \r\n Sebastian \r\n \r\n Am 05.01.2026 um 20:48 schrieb service@simsonn.com: \r\n \r\n \r\n ﻿ \r\n \r\n \r\n Hi Sebastian Weidlich \r\n We would like to acknowledge that we have received your request and a ticket has been created. A support representative will be reviewing your request and will send you a personal response.(usually within 24 hours). To view the status of the ticket or add comments, please visit https://simsonn.freshdesk.com/helpdesk/tickets/10023?follow=email Thank you for your patience. \r\n \r\n View ticket \r\n \r\nIf the button doesn't work, copy-paste this URL in your browser's address bar: https://simsonn.freshdesk.com/helpdesk/tickets/10023?follow=email\r\n \r\n \r\n Regards, Support Center Support Team \r\n \r\n\r\n\r\n\r\n\r\n\r\n \r\n \r\n\r\n\r\n\r\n\r\n\r\n\r\n \r\n \r\n \r\n \r\n \r\n \r\n\r\n\r\n \r\n\r\n\r\n\r\n\r\n\r\n\r\n10023:4206036\r\n\r\n",
+      "user_id": 158008943241,
+      "created_at": "2026-01-08T10:46:47Z",
+      "updated_at": "2026-01-08T10:46:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

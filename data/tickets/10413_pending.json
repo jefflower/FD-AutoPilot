@@ -1,0 +1,24 @@
+{
+  "id": 10413,
+  "subject": "Partially relieved order #SSN5002",
+  "description_text": "Hello. I am writing you to see what the status is for my pedal haptics I\r\nordered #SSN5002. I did get the pedals, which I am very happy with, but I\r\ndid not fet the haptic motors. If you could get back with me ASAP on the\r\nstatus of these item I would greatly appreciate it.\r\n\r\nThank you,\r\nBrian\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-09T12:20:05Z",
+  "updated_at": "2026-01-10T03:07:26Z",
+  "requester_id": 158009000570,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016653079,
+      "body_text": "Hi Wargraven Builds,     Here is the shipping tracking information for your motor. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-10T03:07:26Z",
+      "updated_at": "2026-01-10T03:07:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

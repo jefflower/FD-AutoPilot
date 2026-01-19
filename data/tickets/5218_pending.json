@@ -1,0 +1,24 @@
+{
+  "id": 5218,
+  "subject": "VAM motor issues.",
+  "description_text": "Hello, I'm writing because I have an issue with my VAM motors. I recently\r\npurchased a two motor kit. Everything went well. The install the\r\ncalibration and adjustments. I calibrated them through Simmson manage and\r\nthen adjusted through simhub. I ran a few races on LMU and ACC which worked\r\nabsolutely great. The rumble was great, very strong. The next day I went to\r\ndo the same and there was no rumble. I went through everything again.\r\nUninstalled, reinstalled , recalibrated and readjusted everything. There is\r\nlittle to no vibration now. The control box is grounded properly to the\r\nbrake pedal and everything. I've exhausted all options. I'm not sure what\r\nto do, and honestly kinda disappointed. Im hoping something can be done to\r\nresolve this issue. I look forward to hearing from you. My order number was\r\n*#SSN2431*\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-23T14:54:23Z",
+  "updated_at": "2025-10-24T01:23:43Z",
+  "requester_id": 158004143302,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010985109,
+      "body_text": "Hi Mike Kane,    Please uninstall the old version of SIMSONN Manager from your computer and download the latest SIMSONN Manager 2.1.2 from our official website. Go to Settings → Update → Check for Updates to update the firmware to version 2.0.5. Make sure that CPU1 is 2.0.5 and CPU2 is 2.0.4, then test again.  For the VAM motors, make sure to select VAM mode, otherwise the motor may overheat and become damaged. Also, ensure that the pedal’s USB cable is connected directly to the rear USB 3.0 (blue) port on your PC, and avoid using USB hubs.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-24T01:23:43Z",
+      "updated_at": "2025-10-24T01:23:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

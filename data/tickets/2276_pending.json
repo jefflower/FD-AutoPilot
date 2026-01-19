@@ -1,0 +1,44 @@
+{
+  "id": 2276,
+  "subject": "Simsonn Racing Simulator Pro Plus",
+  "description_text": "Hallo,\r\n\r\n \r\n\r\nnach Suche einer neuen Pedale bin ich auf ihre Hardware gestoßen. \r\n\r\nDa die Meinung im Internet ihre Pedalen als sehr gut betrachtet wollte ich\r\nwollte mich erkundigen ob diese Pedale auch mit Linux funktioniert? \r\n\r\nGibt es einen Linux Treiber und ist die Software auch für Linux zu haben?\r\n\r\nIch wechsele in naher Zukunft von Windows auf Linux und möchte mich auch\r\ndort mit Sim Racing beschäftigen.\r\n\r\n \r\n\r\nVielen Dank.\r\n\r\n \r\n\r\n \r\n\r\nMit freundlichen Grüßen\r\n\r\n \r\n\r\nStephan Sönksen\r\n\r\n \r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-04T13:28:22Z",
+  "updated_at": "2025-08-06T14:16:13Z",
+  "requester_id": 158002600786,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006264636,
+      "body_text": "Hi Socke-rd,  Our pedals are HID devices and, in theory, should be supported by Linux. However, they have not yet been fully tested. Could you please provide your Linux version and the racing games you are using? We will run some tests accordingly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-05T12:48:44Z",
+      "updated_at": "2025-08-05T12:48:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006285774,
+      "body_text": "Hallo,\r\n\r\nich werde spätestens im Oktober von Win 10 auf Linux wechseln wenn der Support eingestellt wird. Ich denke mal das dieses für euch auch interessant wird weil nach meiner Meinung viele zu Linux wechseln werden. Win 11 ist nicht sehr beliebt. Jedenfalls weiß ich das viele von meinem Bekanntenkreis wechseln werden. \r\n\r\nIch werde entweder zu Linux Mint wechseln oder zu Nobara. Das ist allerdings noch nicht 100%ig. \r\n\r\nMeine Racing Spiele sind derzeit Assetto Corsa, ACC und Le Mans Ultimate. \r\n\r\n \r\n\r\nGruß Stephan \r\n\r\n \r\n\r\n",
+      "user_id": 158002600786,
+      "created_at": "2025-08-05T14:51:12Z",
+      "updated_at": "2025-08-05T14:51:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006404144,
+      "body_text": "Hi Socke-rd,   Please send us your Linux version details. There are many different Linux distributions, and we need to test it first. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-06T14:16:12Z",
+      "updated_at": "2025-08-06T14:16:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

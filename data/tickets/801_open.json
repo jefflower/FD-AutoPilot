@@ -1,0 +1,94 @@
+{
+  "id": 801,
+  "subject": "Return Request - Order #SSN1525",
+  "description_text": "Hello,\r\n\r\nI am requesting a return for all items in order #SSN1525\r\n\r\n\r\n  *\r\nPlus X P3-H3 / Black / Baseplate\r\n  *\r\nElastomer White\r\n  *\r\nElastomer Red\r\n\r\nAll of the items are unopened and unused, in their original box.\r\n\r\nPlease provide instructions to complete the return.  Thanks.\r\n\r\nRegards,\r\nAngelo Bovino\r\n\r\n\r\n",
+  "status": 2,
+  "priority": 4,
+  "created_at": "2025-06-25T02:57:42Z",
+  "updated_at": "2025-07-14T14:30:26Z",
+  "requester_id": 158000955627,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003835672,
+      "body_text": "Hi Angelo Bovino,     Did you receive any defective products, please ask why you want to return them. If there are any problems, we can help you to solve them.",
+      "user_id": 158001343601,
+      "created_at": "2025-06-25T10:07:31Z",
+      "updated_at": "2025-06-25T10:07:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003835799,
+      "body_text": "The product is not defective, the boxes are unopened and sealed in the original packaging.\r\n\r\nI want to return them because I no longer want them\r\n\r\nRegards,\r\nAngelo Bovino\r\n\r\n",
+      "user_id": 158000955627,
+      "created_at": "2025-06-25T10:34:41Z",
+      "updated_at": "2025-06-25T10:34:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003835817,
+      "body_text": "Hi Angelo Bovino,      Sorry, we are unable to accept returns if the product is not defective as we cannot accept the high shipping costs for sending and returning the goods. That's why we clearly state this in our return policy. I'm sorry for not being able to help you.",
+      "user_id": 158001343601,
+      "created_at": "2025-06-25T10:38:27Z",
+      "updated_at": "2025-06-25T10:38:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003835957,
+      "body_text": "I am ok with paying the return shipping\r\n\r\nRegards,\r\nAngelo Bovino\r\n\r\n",
+      "user_id": 158000955627,
+      "created_at": "2025-06-25T11:11:27Z",
+      "updated_at": "2025-06-25T11:11:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003844754,
+      "body_text": "Hi Angelo Bovino,    Ok, you can return the parcel to our US warehouse, the cost will be lower, please provide us with the logistics number after the parcel is shipped.  CAMZ Chino Warehouse (System Code: CAMZ)   Contact: Greg -MZ(1330006)   Phone: 480 387 3114   ADD: 14210 Telephone Ave, Chino, CA 91710 USA,Dock 4-10",
+      "user_id": 158001343601,
+      "created_at": "2025-06-26T04:05:21Z",
+      "updated_at": "2025-06-26T04:05:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004359458,
+      "body_text": "Hello, the tracking number for the return is\r\n\r\n1Z3B51YT0306169622\r\n\r\nRegards,\r\nAngelo Bovino\r\n\r\n",
+      "user_id": 158000955627,
+      "created_at": "2025-07-01T16:54:38Z",
+      "updated_at": "2025-07-01T16:54:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004371163,
+      "body_text": "Hi Angelo Bovino,    Okay, we'll refund you once we've received the item in our warehouse and checked it for accuracy.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-02T10:25:56Z",
+      "updated_at": "2025-07-02T10:25:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004806806,
+      "body_text": "Hello,\r\n\r\nI am following up on my return request. UPS tracking shows the package was delivered on Tuesday July 8th.\r\n\r\nDo you have any updates? Thanks\r\n\r\nRegards,\r\nAngelo Bovino\r\n\r\n",
+      "user_id": 158000955627,
+      "created_at": "2025-07-14T13:44:53Z",
+      "updated_at": "2025-07-14T13:44:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

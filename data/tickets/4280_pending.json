@@ -1,0 +1,234 @@
+{
+  "id": 4280,
+  "subject": "Simsonn pro x ultra not working correct",
+  "description_text": "Dear Support Team,\r\n\r\nI have been using my Simsonn pedals for a few days now, but they are not\r\nworking as they should.\r\nWhenever I try to configure the pedals in a game, one of the sensors keeps\r\nflickering.\r\nWhen I check in the Game Controller Settings, I notice that the X rotation\r\nis constantly fluctuating.\r\nCould you please advise me on how to resolve this issue?\r\n\r\nKind regards,\r\nChess Goudberg\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-09-30T14:37:47Z",
+  "updated_at": "2025-10-10T09:11:57Z",
+  "requester_id": 158005198449,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009725838,
+      "body_text": "Hi Chess Goudberg,     You can also try using SIMSONN Manager 2.1.1. In the software interface, click the “Restore” button, then click “Save”. After that, reinsert the USB and test whether the RX axis has been successfully disabled.      Additionally, for the white raw signal, you can use the Offset function to zero it out and set a 5% deadzone. This will not affect the blue signal, which is the one used by the game.   https://drive.google.com/file/d/1BAdSWa1bxmbPksj9Hlzuo8bl7_bM8ixr/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T09:51:24Z",
+      "updated_at": "2025-10-01T09:51:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009746464,
+      "body_text": "Dear Support Team,\r\n\r\nThe issue with the RX axis has been resolved, but now the LED lighting and\r\nthe three haptic motors are no longer working.\r\nCould you please advise me on how to resolve this issue?\r\n\r\nKind regards,\r\nChess Goudberg\r\n\r\n\r\nOp wo 1 okt 2025, 11:51 schreef service@simsonn.com ",
+      "user_id": 158005198449,
+      "created_at": "2025-10-01T16:19:48Z",
+      "updated_at": "2025-10-01T16:19:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009767349,
+      "body_text": "Hi Chess Goudberg,    Please send me a full screenshot of the pedal vibration test interface in Simsonn Manager 2.1.1 so I can check whether a firmware update is required. Also, please note that the pedal’s USB should not be connected through a hub — it must be plugged directly into a USB 3.0 (blue) port on the back of your PC to ensure stable operation. You may also provide a video via Google Drive to demonstrate the issue, and we will assist you in restoring it, so no need to worry. Please make sure the video access permission is set to viewable.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-02T04:06:24Z",
+      "updated_at": "2025-10-02T04:06:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009776520,
+      "body_text": "Dear Support team,\r\n\r\nAs requested, I am sending you the screenshot of the Simsonn manager 2.1.1.\r\nThe USB is directly connected to the computer through a USB 3.0 port.\r\n\r\nKind regards,\r\nCess Goudberg\r\n\r\nOp do 2 okt 2025 om 06:06 schreef service@simsonn.com ",
+      "user_id": 158005198449,
+      "created_at": "2025-10-02T09:28:13Z",
+      "updated_at": "2025-10-02T09:28:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009777029,
+      "body_text": "Hi Chess Goudberg,    In the software, go to:  Settings → Update → Manual Firmware Update → pedals → firmware → pedals-proxultra-old.sfu  to complete the firmware update.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-02T09:58:36Z",
+      "updated_at": "2025-10-02T09:58:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009974978,
+      "body_text": "Dear Support Team,\r\n\r\nIt worked! Thank you!\r\n\r\nHowever, I’m now experiencing another issue with the VAM and VAM Pro haptic\r\nmotors.\r\nAs you can see in the video, sometimes when SimHub shows a spike, the motor\r\ndoesn’t react. Other times, when the spike is over, the motor keeps\r\nvibrating.\r\n\r\nThis also happens in-game — the motors sometimes continue vibrating even\r\nafter I stop driving.\r\n\r\nCould you please advise me on how to resolve this issue?\r\n\r\n\r\nKind regards,\r\nChess Goudberg\r\n\r\nOp do 2 okt 2025 om 11:58 schreef service@simsonn.com \nAttachment(s) that exceed the 20 MB limit have been dropped. Please reach out to the sender.",
+      "user_id": 158005198449,
+      "created_at": "2025-10-06T16:41:01Z",
+      "updated_at": "2025-10-06T16:41:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009992508,
+      "body_text": "Hi Chess Goudberg,    Please uninstall the old version on your computer, then reinstall version 2.1.2 and update the firmware.  After the update, the device version should display as CPU1: 2.0.5, CPU2: 2.0.3.  If the issue is still not resolved, please feel free to contact me.  https://drive.google.com/file/d/1PZwHUqhhmJw0IBGDO8mGONPbrICJU3z1/view?usp=drivesdk",
+      "user_id": 158000445778,
+      "created_at": "2025-10-06T23:17:35Z",
+      "updated_at": "2025-10-06T23:17:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010007397,
+      "body_text": "Dear support team,\r\n\r\nUnfortunately, it didn’t solve the problem.\r\n\r\nKind regards,\r\nChess Goudberg\r\n\r\nOp di 7 okt 2025, 01:17 schreef service@simsonn.com ",
+      "user_id": 158005198449,
+      "created_at": "2025-10-07T09:39:52Z",
+      "updated_at": "2025-10-07T09:39:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010007440,
+      "body_text": "[image: Simsonn manager 2.1.2 CPU1 v2.0.5 CPU2 v2.0.3 screenshot.jpg]\r\n\r\nOp di 7 okt 2025 om 11:39 schreef Chess Goudberg <c.goudberg@gmail.com>:\r\n\r\n> Dear support team,\r\n>\r\n> Unfortunately, it didn’t solve the problem.\r\n>\r\n> Kind regards,\r\n> Chess Goudberg\r\n>\r\n> Op di 7 okt 2025, 01:17 schreef service@simsonn.com ",
+      "user_id": 158005198449,
+      "created_at": "2025-10-07T09:42:47Z",
+      "updated_at": "2025-10-07T09:42:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010007459,
+      "body_text": "Hi Chess Goudberg,  you can download the VKB JoyTester tool from the link below to see whether the RX axis is still active.      https://www.vkbcontrollers.com/pages/downloads",
+      "user_id": 158000445778,
+      "created_at": "2025-10-07T09:44:10Z",
+      "updated_at": "2025-10-07T09:44:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010007556,
+      "body_text": "[image: Schermafbeelding 2025-10-07 114747.png]\r\n\r\nLooks like it`s deactivated.\r\n\r\nOp di 7 okt 2025 om 11:44 schreef service@simsonn.com ",
+      "user_id": 158005198449,
+      "created_at": "2025-10-07T09:50:43Z",
+      "updated_at": "2025-10-07T09:50:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010007903,
+      "body_text": "Hi Chess Goudberg,    That should be fine now. Please try to bind it again.  If the issue persists, please record a video and send it to me via Google Drive, making sure to grant access permission so I can review it.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-07T10:07:23Z",
+      "updated_at": "2025-10-07T10:07:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010024700,
+      "body_text": "Dear Support Team,\r\n\r\nThe issue with the RX axis has already been resolved. However, I’m now\r\nexperiencing problems with the VAM and VAM Pro motors. As shown in the\r\nvideo, when I’m racing and hit a curb, the motors keep vibrating for the\r\nentire race.\r\n\r\nAdditionally, when I test them in Simsonn Manager or SimHub, their behavior\r\nseems inaccurate — sometimes they trigger correctly when I press the test\r\nbutton, but other times they stay active continuously.\r\n\r\nCould you please help me identify what might be causing this issue?\r\n\r\nBest regards,\r\nChess Goudberg\r\n\r\nOp di 7 okt 2025 om 12:07 schreef service@simsonn.com ",
+      "user_id": 158005198449,
+      "created_at": "2025-10-07T14:06:23Z",
+      "updated_at": "2025-10-07T14:06:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010026527,
+      "body_text": "Hi Chess Goudberg,  Could you please tell me which game you’re using and which telemetry options are enabled? Also, please make sure the device is plugged directly into the rear USB 3.0 (blue) port of your PC. Note that SimHub and Simsonn Manager cannot be opened at the same time, as this will cause conflicts and unstable vibration or signal behavior. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-07T14:52:40Z",
+      "updated_at": "2025-10-07T14:52:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010026745,
+      "body_text": "Hi Chess Goudberg,     I just ran a test without launching iRacing and directly tested the VAM Pro on the brake port. The ABS effect triggered vibrations over a hundred times continuously, and there were no stoppage or abnormal issues during the entire test. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-07T14:59:00Z",
+      "updated_at": "2025-10-07T14:59:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010027173,
+      "body_text": "Hi Chess Goudberg,     This was just my temporary testing method, and the environment is the same as yours. Even after clicking more than 100 times, the vibration did not fail to stop. I believe the issue might be related to USB connection or insufficient power supply, which may prevent the “stop” command from being successfully sent to the ProX Ultra controller.   https://drive.google.com/file/d/1GwM4PeMUvTPuKNcgp1hE5cOv97XJOLYG/view?usp=sharing",
+      "user_id": 158000445778,
+      "created_at": "2025-10-07T15:13:28Z",
+      "updated_at": "2025-10-07T15:13:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010044729,
+      "body_text": "Dear Support Team,\r\n\r\nI am currently playing iRacing and using telemetry features such as Road\r\nRumble, ABS, and Gear Shift. The device is connected via a rear USB 3.0\r\n(blue) port on my PC.\r\n\r\nI’m running SimHub, but I experience the same issue when using Simsonn\r\nManager 2.1.2. Could you please advise how to resolve a possible USB\r\nconnection or insufficient power supply problem?\r\n\r\nI noticed in your demo video that your setup works perfectly, but\r\nunfortunately, mine does not function the same way.\r\n\r\n\r\n\r\n\r\nOp di 7 okt 2025 om 17:13 schreef service@simsonn.com ",
+      "user_id": 158005198449,
+      "created_at": "2025-10-07T23:01:06Z",
+      "updated_at": "2025-10-07T23:01:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010141979,
+      "body_text": "Hi Chess Goudberg,  ​Please disconnect the VAM and test using only the VAM Pro to see whether the issue of continuous vibration still occurs. If the problem persists, we can send you a replacement main controller. Kindly provide your contact name, phone number, shipping address, and order number so that we can proceed with the replacement promptly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-09T10:33:28Z",
+      "updated_at": "2025-10-09T10:33:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010151026,
+      "body_text": "Dear Support Team,\r\n\r\nI have disconnected both VAM units from the main controller, but the issue\r\nof continuous vibration still persists.\r\n\r\nThank you in advance for your assistance.\r\n\r\nKind regards,\r\nChess Goudberg\r\n+31 686422467\r\nSpinet 98\r\n3068 LX Rotterdam\r\nOrder #SSN2674\r\n\r\nOp do 9 okt 2025, 12:33 schreef service@simsonn.com ",
+      "user_id": 158005198449,
+      "created_at": "2025-10-09T13:03:35Z",
+      "updated_at": "2025-10-09T13:03:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010151080,
+      "body_text": "Hi Chess Goudberg,    I will send you a new control box tomorrow to resolve the issue.  Please provide your shipping information.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-09T13:05:48Z",
+      "updated_at": "2025-10-09T13:05:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010151347,
+      "body_text": "Dear support team,\r\n\r\nAs requested, I am sending you the shipping information.\r\n\r\n\r\nContact name: Chess Goudberg\r\nPhone number: +31 686422467\r\nStreet name: Spinet 98\r\nCity: Rotterdam\r\nZip code: 3068 LX\r\nOrder number: #SSN2674\r\n\r\nKind regards,\r\nChess Goudberg\r\n\r\nOp do 9 okt 2025, 15:05 schreef service@simsonn.com ",
+      "user_id": 158005198449,
+      "created_at": "2025-10-09T13:14:52Z",
+      "updated_at": "2025-10-09T13:14:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010198808,
+      "body_text": "Hi Chess Goudberg,     Okay, we've reshipped it for you. Here's your tracking link: https://t.17track.net/en#nums=SF6045962666472",
+      "user_id": 158001343601,
+      "created_at": "2025-10-10T09:11:57Z",
+      "updated_at": "2025-10-10T09:11:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

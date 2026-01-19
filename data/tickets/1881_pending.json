@@ -1,0 +1,44 @@
+{
+  "id": 1881,
+  "subject": "Simsonn pro x ultra base plate",
+  "description_text": "Hello,\r\n\r\nI hope this finds you well.  I just received the simsonn pro x ultra with\r\nthe heel plate and base plate. I install on my rig and notice the base\r\nplate flexes when using the brake pedal.  The front part of pedal pulls the\r\nplate upwards.  I took a short video which I upload here.\r\nhttps://youtube.com/shorts/mfBWwtOesQU?si=yJBF7ZkEQKB-L3oz\r\n\r\nLet me know if you need me to send video other way.\r\n\r\nI believe the thickness of base plate is too thin for the brake pressure\r\nand bends easily. Please advise if there is any way to fix this. Thank you\r\nfor your help.\r\n\r\nChris\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-24T20:37:54Z",
+  "updated_at": "2025-08-10T05:18:13Z",
+  "requester_id": 158002321282,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005511833,
+      "body_text": "Hi ProHitman21,     There are multiple screw holes designed at the bottom. Please try installing two additional screws in the areas marked with the red circles. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-25T01:49:26Z",
+      "updated_at": "2025-07-25T01:49:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006624912,
+      "body_text": "Hi,\r\n\r\nI was able to mount the pedals directly without the base plate.\r\n\r\nI am trying to setup the pedals and my wheel in iracing but the position\r\nkeeps moving around and preventing setup.  I did the calibration on simsonn\r\nmanager v 2.1.0 and it was successful. I also tried adding ferrite clamps\r\nto everything and connecting pedals directly to pc but I still have the\r\njittery inputs. Can you please advise if this is grounding or emi issue in\r\npedals? I also tried isolating the control box with no change.\r\n\r\nPlease check the short video showing the jittery input.\r\n\r\nhttps://youtube.com/shorts/CZPW6QSUvO0?si=ogPPKMcVCunZpJ-0\r\n\r\nThank you for your help.\r\n\r\n\r\nOn Thu, Jul 24, 2025, 6:49 PM service@simsonn.com ",
+      "user_id": 158002321282,
+      "created_at": "2025-08-10T05:00:32Z",
+      "updated_at": "2025-08-10T05:00:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006625898,
+      "body_text": "Hi ProHitman21,  In the “Settings - Update” section, click “Manual Firmware Update,” then navigate to the pedals-firmware folder → pedals folder → and select the proxultra.sfu file to update. This firmware will disable the 4th axis.      Using the VKB tool, if the Rx axis is not visible, it means the issue has been resolved. Normally, only the X, Y, and Z axes should be present. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T05:18:13Z",
+      "updated_at": "2025-08-10T05:18:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

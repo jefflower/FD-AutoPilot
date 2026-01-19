@@ -1,0 +1,124 @@
+{
+  "id": 3072,
+  "subject": "Order #SSN2176: faulty shifter",
+  "description_text": "Hi,\r\n\r\nI've been user my SQ Shifter for a couple of weeks and it started to get\r\nstuck when returning from downshifts. It remains in the forwards position\r\n(-) and won't return. I tried adjusting the force with the instructed\r\nscrews, but got no response.\r\n\r\nI would like to proceed with a return and reimbursement. Please advise on\r\nnext steps.\r\n\r\nBest,\r\nEsteban\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-08-24T22:55:08Z",
+  "updated_at": "2025-09-10T06:29:28Z",
+  "requester_id": 158003550783,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007440427,
+      "body_text": "Hi Esteban Araya,  Please provide your order number and upload a video of the issue via Google Drive so that our engineers can assist you more accurately in troubleshooting. A simple and effective method is to loosen the screw securing the ball, remove it, then reinstall it and test again. This will help us confirm the problem more quickly and provide you with an effective solution.      Please note, it’s the red screw. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-25T02:26:25Z",
+      "updated_at": "2025-08-25T02:26:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007533507,
+      "body_text": "Hi,\r\n\r\nThanks for getting back to me! I've uploaded a video of the issue here:\r\nhttps://drive.google.com/file/d/1aMTcZ-G6YQ6qaCOxerUSJ-tBeAXyxp7_/view?usp=sharing\r\n\r\nI've tried multiple times to reinstall the screws and it hasn't fixed the\r\nissue. I'm able to change the tension, but the shifter never returns to the\r\nmiddle when I downshift.\r\n\r\nHow can we proceed with a return and reimbursement given that the unit is\r\nfaulty within the first thirty days?\r\n\r\nBest,\r\nEsteban\r\n\r\nOn Sun, Aug 24, 2025 at 10:26 PM service@simsonn.com ",
+      "user_id": 158003550783,
+      "created_at": "2025-08-25T18:37:09Z",
+      "updated_at": "2025-08-25T18:37:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007547653,
+      "body_text": "Hi Esteban Araya,  This issue should be resolved simply by applying some lubricant to the ball position. The device also requires regular lubrication and maintenance. I have also shared the video with our production team so they can determine whether it is an actual product issue or just a matter of lubrication. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-26T02:47:07Z",
+      "updated_at": "2025-08-26T02:47:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007578498,
+      "body_text": "Hi,\r\n\r\nCan you please clarify what the \"ball\" component is? I've had the device\r\nfor less than a month and have driven with it maybe 5 times; I'm not\r\nexpecting to perform maintenance this early. I'm not satisfied with the\r\nquality of the product and would like to receive a refund.\r\n\r\nBest,\r\nEsteban\r\n\r\nOn Mon, Aug 25, 2025 at 10:47 PM service@simsonn.com ",
+      "user_id": 158003550783,
+      "created_at": "2025-08-26T17:27:38Z",
+      "updated_at": "2025-08-26T17:27:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007584075,
+      "body_text": "Hello,\r\n\r\nI found the ball component you mentioned and lubricated it. There was no\r\ndifference.\r\n\r\nWhat I did find is that spring is cracked as you can see in the pictures.\r\nThis is causing the shifter to not return to its original position. This is\r\nnot an issue I am able to fix on my own.\r\n\r\nI really liked the shifter while it was working, but unfortunately the\r\nquality is not sufficient. Again, let's please proceed with a refund.\r\n\r\nBest,\r\nEsteban\r\n\r\n[image: IMG_2945.jpg]\r\n[image: IMG_2943.jpg]\r\n\r\nOn Tue, Aug 26, 2025 at 1:27 PM Esteban Araya <portu12esteban@gmail.com>\r\nwrote:\r\n\r\n> Hi,\r\n>\r\n> Can you please clarify what the \"ball\" component is? I've had the device\r\n> for less than a month and have driven with it maybe 5 times; I'm not\r\n> expecting to perform maintenance this early. I'm not satisfied with the\r\n> quality of the product and would like to receive a refund.\r\n>\r\n> Best,\r\n> Esteban\r\n>\r\n> On Mon, Aug 25, 2025 at 10:47 PM service@simsonn.com ",
+      "user_id": 158003550783,
+      "created_at": "2025-08-26T20:35:06Z",
+      "updated_at": "2025-08-26T20:35:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007594809,
+      "body_text": "Hi Esteban Araya,    We sincerely apologize for the inconvenience caused. Due to an oversight in our warehouse quality control, some of these springs did indeed fail to meet our standards. We will reship three new springs to you and issue a $25 refund as compensation. Would you accept this offer?",
+      "user_id": 158001343601,
+      "created_at": "2025-08-27T07:32:16Z",
+      "updated_at": "2025-08-27T07:32:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007671452,
+      "body_text": "Hi!\r\n\r\nI really appreciate it, but I prefer a refund at this point. I don't feel\r\nsatisfied with a product that breaks so quickly.\r\n\r\nBest,\r\nEsteban\r\n\r\nOn Wed, Aug 27, 2025 at 3:32 AM service@simsonn.com ",
+      "user_id": 158003550783,
+      "created_at": "2025-08-27T21:12:20Z",
+      "updated_at": "2025-08-27T21:12:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007944490,
+      "body_text": "Hello, we have changed our screw supplier and resolved the issue, so please do not worry. Should you no longer require the SQ Pro Sequential Shifter, we will be happy to issue a refund. Please let me know your preference.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-02T09:15:34Z",
+      "updated_at": "2025-09-02T09:15:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007959025,
+      "body_text": "Thanks for your email! I would like to proceed with a refund.\r\n\r\nOn Tue, Sep 2, 2025 at 5:15 AM service@simsonn.com ",
+      "user_id": 158003550783,
+      "created_at": "2025-09-02T12:51:22Z",
+      "updated_at": "2025-09-02T12:51:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008005863,
+      "body_text": "Hello, I encountered an issue while processing your refund. The system indicates that you have initiated a dispute, and under these circumstances, we are unable to complete the refund. Kindly cancel the dispute first, and we shall process your refund immediately.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-03T06:10:18Z",
+      "updated_at": "2025-09-03T06:10:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008325345,
+      "body_text": "Hi, as the dispute has been resolved, I believe that I can't take this\r\naction directly and its something you have to resolve with the payment\r\nprocessor.\r\n\r\nOn Tue, Sep 9, 2025 at 4:39 AM service@simsonn.com ",
+      "user_id": 158003550783,
+      "created_at": "2025-09-09T13:53:49Z",
+      "updated_at": "2025-09-09T13:53:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

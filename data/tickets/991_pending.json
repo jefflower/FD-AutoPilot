@@ -1,0 +1,44 @@
+{
+  "id": 991,
+  "subject": "Updates on order #SSN1807",
+  "description_text": "Good afternoon,\r\n\r\nI ordered from Simsson and am still waiting for updates on the shipment.\r\nPlease let me know what's going on with the shifter and wheel.\r\n\r\n\r\n\r\nBest regards,\r\n\r\nKokou Donald Daglo MBA, PMP, CISM, CFCM\r\nAlexandria, VA 22302\r\n813.570.2398\r\n\r\n*kokoudaglo@gmail.com <kokoudaglo@gmail.com>*\r\n\r\n*donalddaglo@gmail.com <donalddaglo@gmail.com>*\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-06-30T03:53:58Z",
+  "updated_at": "2025-07-01T06:30:07Z",
+  "requester_id": 158001839376,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004305248,
+      "body_text": "Hi Donald Daglo,    Here's a link to your logistics tracking, the first package is expected to arrive on the 1st and the other is expected to arrive around the 5th.  https://t.17track.net/en#nums=882217460043,JSEXU2381207029YQ",
+      "user_id": 158001343601,
+      "created_at": "2025-06-30T10:53:00Z",
+      "updated_at": "2025-06-30T10:53:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004345902,
+      "body_text": "Thank you for the update, but why is the wheel being sent from China? I was\r\nunder the impression that I'd receive both items at once, but I saw\r\nmultiple cancellations of the shipment for the order, and now I'm only\r\ngetting one link from China. I don't understand why you will cancel the\r\nshipment after sending the tracking number twice and then sending one from\r\nChina, which will take even longer to arrive. This makes zero sense at all.\r\nIf I had known it would be this, I would have just ordered one from China\r\nmyself.\r\n\r\n\r\n\r\nBest regards,\r\n\r\nKokou Donald Daglo MBA, PMP, CISM, CFCM\r\nAlexandria, VA 22302\r\n813.570.2398\r\n\r\n*kokoudaglo@gmail.com <kokoudaglo@gmail.com>*\r\n\r\n*donalddaglo@gmail.com <donalddaglo@gmail.com>*\r\n\r\n\r\n\r\nOn Mon, Jun 30, 2025 at 6:53 AM service@simsonn.com ",
+      "user_id": 158001839376,
+      "created_at": "2025-06-30T17:00:26Z",
+      "updated_at": "2025-06-30T17:00:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004353533,
+      "body_text": "Hi Donald Daglo,     Sorry, the steering wheel is out of stock at our US warehouse, and in order to get it to you in time, we have chosen to ship it from China for you.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-01T06:30:06Z",
+      "updated_at": "2025-07-01T06:30:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 7334,
+  "subject": "Re: Order #SSN4301",
+  "description_text": "Thought that might have been the case! Thanks for sending the tracking information. Can I ask where its coming from and the expected delivery date? \r\n\r\nKind regards\r\nNick Allitt\r\n\r\n\r\n\r\n> On 2 Dec 2025, at 15:47, General and sales enquiries <service@simsonn.com> wrote:\r\n> \r\n> ﻿\r\n> Don't worry, you haven't received an order confirmation because you didn't fill in your email address. We've added this email address for you, and we'll send you a shipping notification tomorrow.\r\n> \r\n> \r\n> \r\n> On Tue, Dec 2, 2025 23:43 PM Nicholas Allitt<nickallitt@icloud.com> wrote:\r\n> Hi,\r\n> \r\n> Placed an order this morning but haven’t received and email.\r\n> \r\n> Just wanted to know if its actually in stock and when I should expect the dispatched and tracking information.\r\n> \r\n> Can’t wait to use this wheel ha!\r\n> \r\n> Kind regards\r\n> Nick\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-03T11:25:55Z",
+  "updated_at": "2025-12-03T11:31:24Z",
+  "requester_id": 158007497198,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013320333,
+      "body_text": "Hi Nicholas Allitt,  Your package is expected to arrive around the 9th.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-03T11:31:24Z",
+      "updated_at": "2025-12-03T11:31:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

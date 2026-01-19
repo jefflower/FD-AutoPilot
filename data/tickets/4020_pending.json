@@ -1,0 +1,94 @@
+{
+  "id": 4020,
+  "subject": "Pedal Control Box",
+  "description_text": "Good Morning,\r\n\r\nI recently purchased a new pedal box for the pro x ultra, as my last one\r\nstopped reading the position of the pedals accurately. When the new one\r\narrived I got it installed and it fixed the problem. I purchased the new\r\nbox on August 26th, the box started giving me issues yesterday and it's the\r\nsame problems as the old box. I was wondering if the box falls under\r\nwarranty. I was also wondering if this is a common issue? Order number is\r\nSSN2452. Any help is greatly appreciated!\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-21T17:22:28Z",
+  "updated_at": "2025-09-27T02:36:30Z",
+  "requester_id": 158003607773,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007594836,
+      "body_text": "Hi Chris Romero,    Since you did not provide an email address, you did not receive the shipping notification. Here is your logistics tracking link.  https://t.17track.net/en#nums=SF6045874990142",
+      "user_id": 158001343601,
+      "created_at": "2025-08-27T07:35:25Z",
+      "updated_at": "2025-08-27T07:35:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009235886,
+      "body_text": "ID 为 3138 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-24T15:10:52Z",
+      "updated_at": "2025-09-24T15:10:52Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158009235887,
+      "body_text": "合并来自工单3138  \n      主题: Order Confirmation  \n      描述:  Hello,  \n I recently purchased the control box on Sunday. I haven’t seen any updates or received an order confirmation yet. It is for Chris Romero, going to 1006 N Murray Blvd Colorado Springs Co. I was just wanting to see if I could get an update?",
+      "user_id": 158000445778,
+      "created_at": "2025-09-24T15:10:53Z",
+      "updated_at": "2025-09-24T15:10:53Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158009235903,
+      "body_text": "Hi Chris Romero,    Please make sure your SIMSONN Manager is updated to version 2.1.0. Then follow the steps below:    Open the software and go to Settings → Update, then click Check for Updates.    Check if the ProX firmware can be updated to version 2.0.3.    If no automatic update is available, please use Manual Update: Path: Settings → Update → Manual Update Firmware → pedals → firmware → pedals-prox.sfu.    After the update, please test again.    If the issue persists, try reconnecting the USB and power cable, then test again.    If it still doesn’t work, please send me a screenshot of the software interface so I can check further for you.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-24T15:11:31Z",
+      "updated_at": "2025-09-24T15:11:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009258803,
+      "body_text": "Hello,\r\n\r\nThe software is updated to 2.1.0. There is no auto update so I try the\r\nmanual update and when I click on the  prox.sfu it says “the file is not an\r\nupgrade file for the pedal”\r\n\r\nOn Wed, Sep 24, 2025 at 9:11 AM service@simsonn.com ",
+      "user_id": 158003607773,
+      "created_at": "2025-09-25T01:31:38Z",
+      "updated_at": "2025-09-25T01:31:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009258863,
+      "body_text": "Hi Chris Romero,    You can try selecting proxultra.sfu.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-25T01:36:38Z",
+      "updated_at": "2025-09-25T01:36:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009313432,
+      "body_text": "That worked, I appreciate it! Just out of curiosity, should that fix the\r\nproblem from here on out. Or will I need to do that again in the future?\r\n\r\nOn Wed, Sep 24, 2025 at 7:36 PM service@simsonn.com ",
+      "user_id": 158003607773,
+      "created_at": "2025-09-25T22:00:18Z",
+      "updated_at": "2025-09-25T22:00:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009360720,
+      "body_text": "Hi Chris Romero, You can continue to use it for now. If you encounter this issue again, it indicates that it is a software bug. We will quickly identify the cause and fix it. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-27T02:36:30Z",
+      "updated_at": "2025-09-27T02:36:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": 9471,
+  "subject": "回复：提醒：订单 #SSN4457，进展如何？",
+  "description_text": "你好，踏板还没有到，请问有可以追踪的运单号吗？",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-29T15:42:05Z",
+  "updated_at": "2026-01-07T06:33:32Z",
+  "requester_id": 158007670996,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015486610,
+      "body_text": "你好，关于踏板有什么新消息吗？",
+      "user_id": 158007670996,
+      "created_at": "2026-01-03T15:06:00Z",
+      "updated_at": "2026-01-03T15:06:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015743585,
+      "body_text": "我今天收到踏板了，但是没有底座",
+      "user_id": 158007670996,
+      "created_at": "2026-01-05T14:40:31Z",
+      "updated_at": "2026-01-05T14:40:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015752623,
+      "body_text": "我可以申请退还底座的差价吗？",
+      "user_id": 158007670996,
+      "created_at": "2026-01-05T16:23:30Z",
+      "updated_at": "2026-01-05T16:23:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

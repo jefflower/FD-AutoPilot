@@ -1,0 +1,44 @@
+{
+  "id": 3012,
+  "subject": "A faulty screw for baseplate that came with the Simsonn Pro X Ultra Sim Racing Pedal with Haptic Reactor",
+  "description_text": "Hi simsonns support, I recently received a order for the simsonns pro x ultra racing pedal and also the baseplate that i got with that. There is a component that came with the baseplate which is meant to have it connect wirh the elevated heel rest but one of the 4 seems to not fit any screws. I'll attach a picture of the component I am describing but after trying multiple screws, and even the ones that worked on the other 3 parts, there's nothing that i can do. It didn't come with any extra so I can't install the elevated heightening plate until I get a replacement.  Do I have to wait for a replacement to be shipped or is there a way that I can purchase it in person somewhere so that I don't have to wait so long for one tiny component to be shipped? And yes, tried every possible method of trying to attach the screws into the component but it would be stuck halfway through and required a wrench and a lot of force to get it back out. ",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-08-23T03:58:26Z",
+  "updated_at": "2025-08-27T03:54:53Z",
+  "requester_id": 158003104357,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007440989,
+      "body_text": "Hi SiMing Lin,  Could you please provide your order number and let me know which country you are located in? I will check if Amazon has the replacement parts available. If not, I will arrange a reshipment for you today. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-25T03:24:38Z",
+      "updated_at": "2025-08-25T03:24:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007510967,
+      "body_text": "Hi, I am located in the United States, MA, zip code 02461. Order number is\r\n#SSN2316.\r\n\r\nOn Sun, Aug 24, 2025 at 11:24 PM support@simsonn.com ",
+      "user_id": 158003104357,
+      "created_at": "2025-08-25T14:31:20Z",
+      "updated_at": "2025-08-25T14:31:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007590642,
+      "body_text": "Okay, we've already reshipped two parts for you. Here's your tracking link.  https://t.17track.net/en#nums=SF6045876988488",
+      "user_id": 158001343601,
+      "created_at": "2025-08-27T03:54:52Z",
+      "updated_at": "2025-08-27T03:54:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

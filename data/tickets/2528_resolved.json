@@ -1,0 +1,44 @@
+{
+  "id": 2528,
+  "subject": "simsonn pro x",
+  "description_text": "bonjour,\r\n\r\nJ'ai un problème sur le contrôleur Windows l'axe de rotation X bouge tout le temps ce qui génère un bouton sur les jeux.\r\nComment puis je supprimer cet axe\r\n\r\nbien cordialement\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-08-10T10:23:59Z",
+  "updated_at": "2025-08-10T13:01:56Z",
+  "requester_id": 158002901726,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006647756,
+      "body_text": "Hi Jamal LAABBASSI,    Are you using ProX Ultra or PlusX? Please confirm that your Simsonn Manager version is 2.1.0, then go to Settings → Update → Manual Firmware Update → pedals → firmware, and select the corresponding .sfu firmware to update.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T11:09:51Z",
+      "updated_at": "2025-08-10T11:09:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006651988,
+      "body_text": "Merci de votre aide.\r\n\r\nVotre produit est top\r\n\r\nEnvoyé de mon mobile\r\nEnvoyé à partir de Outlook pour Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158002901726,
+      "created_at": "2025-08-10T11:46:16Z",
+      "updated_at": "2025-08-10T11:46:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006652521,
+      "body_text": "RAPIDE ET EFFICACE MERCI",
+      "user_id": 158002901726,
+      "created_at": "2025-08-10T13:01:55Z",
+      "updated_at": "2025-08-10T13:01:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ]
+}

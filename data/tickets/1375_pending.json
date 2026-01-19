@@ -1,0 +1,24 @@
+{
+  "id": 1375,
+  "subject": "long shipping time",
+  "description_text": "﻿\r\n﻿Hi i last week i ordered a pair of plus x pedals and the shipping hasnt updated and for the last 6 or so days its been stuck on “shipping label created” im wondering if you guys haven’t sent it out or if something is causing a delay.\r\ntracking number:\r\norder number: #SSN1918\r\n\r\nthank you for your time\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-09T11:26:07Z",
+  "updated_at": "2025-07-10T06:32:26Z",
+  "requester_id": 158001972814,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004500912,
+      "body_text": "Hi Kaleb Aguilar,  We pushed our US warehouse staff again, they feedback that it has been shipped on Monday, but there is a delay in updating due to the recent busy logistics, it should be delivered for you in the next two days, please don't worry.  ",
+      "user_id": 158001343601,
+      "created_at": "2025-07-10T06:32:26Z",
+      "updated_at": "2025-07-10T06:32:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

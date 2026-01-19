@@ -1,0 +1,44 @@
+{
+  "id": 10628,
+  "subject": "following the order problem :",
+  "description_text": "Order number: #SSN5577\r\nHello, I'm replying to the first email I sent you in French. I called UPS\r\nusing the tracking number you sent me:  1ZJ455510439174850. I called UPS to\r\nfind out more, and apparently this package isn't meant for me. The label\r\ndoesn't have the correct address, which is 30 Traverse Pierre Abondance 13011\r\nMarseille, France .and my first name: Pommier Gregory wasn't there.\r\n\r\nFurthermore, I've already prepaid the customs fees related to the import of\r\n330.20 DKK, converted to €46.04, for a package that isn't mine, even though\r\nit's the correct tracking number you provided. I contacted UPS, and they\r\ntold me that you are responsible for paying any further fees related to my\r\npackage, if applicable.\r\n\r\nI assume that you, the supplier, have the correct tracking number for the\r\norder: and if there is a customs tax to pay, it is up to you to pay it.\r\n\r\n[image: image.png]\r\n[image: image.png]\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-12T08:40:44Z",
+  "updated_at": "2026-01-12T10:40:20Z",
+  "requester_id": 158009030863,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016853182,
+      "body_text": "We apologize for the inconvenience caused. Our staff sent you an incorrect tracking link. Here is your correct link. Please provide your payment invoice, and we will refund the amount you paid.  https://www.ups.com/track?loc=en_US&requester=ST&trackNums=1ZJ455510400017299/trackdetails",
+      "user_id": 158001343601,
+      "created_at": "2026-01-12T10:29:48Z",
+      "updated_at": "2026-01-12T10:29:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016854206,
+      "body_text": "Thank you for updating the tracking and for your prompt reply.\r\nHere is my invoice:\r\n\r\nLe lun. 12 janv. 2026 à 11:30, service@simsonn.com ",
+      "user_id": 158009030863,
+      "created_at": "2026-01-12T10:34:37Z",
+      "updated_at": "2026-01-12T10:34:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016854427,
+      "body_text": "Hi Grégory,    Okay, I've processed your refund.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-12T10:40:19Z",
+      "updated_at": "2026-01-12T10:40:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

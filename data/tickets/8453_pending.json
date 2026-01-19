@@ -1,0 +1,24 @@
+{
+  "id": 8453,
+  "subject": "Region missing during checkout",
+  "description_text": "Hello,\r\nI have a question regarding the checkout process. While attempting to\r\ncomplete my purchase, I was unable to find Poland in the list of available\r\ncountries. Could you please clarify whether this is a technical issue on\r\nthe website, or if shipping to Poland is unavailable?\r\nBest regards,\r\nKacper Langa\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-16T23:05:38Z",
+  "updated_at": "2025-12-17T06:29:30Z",
+  "requester_id": 158007840579,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014614770,
+      "body_text": "Hi Kacper Langa,     This is our Polish agent's website where you can make purchases.  https://fmic.pl/elektronika/simracing?product_brand=Simsonn",
+      "user_id": 158001343601,
+      "created_at": "2025-12-17T06:29:30Z",
+      "updated_at": "2025-12-17T06:29:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

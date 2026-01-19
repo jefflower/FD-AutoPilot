@@ -1,0 +1,135 @@
+{
+  "id": 3094,
+  "subject": "Order #SSN2407",
+  "description_text": "Hello Simsonn-Support, \n\ncan you give me an update about my order (#SSN2407)? \n\nI ordered 6 days ago with Express Shipping but I still haven't received any information about my order. \nWhy do I pay 20$ more for Express Shipping if I dont get any information about my order after almost an entire week. \nThis is unacceptable.",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-08-25T13:24:30Z",
+  "updated_at": "2025-09-07T03:05:59Z",
+  "requester_id": 158003568589,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007546587,
+      "body_text": "Hi Justin_podeszwa,    We apologise for the delay. Our German warehouse is currently out of stock, and the new shipment was expected to arrive last week, so we have been waiting to ship your order from the German warehouse. However, there has been a delay in logistics, and the shipment is now expected to arrive on Wednesday. We will send it to you via DHL, and it should arrive soon. Thank you for your understanding.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-26T01:30:10Z",
+      "updated_at": "2025-08-26T01:30:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007742106,
+      "body_text": "Hello Support, \n\nnow another 4 days have gone by. \nIs there any way for a discount on my order? \nBecause it is totaly unacceptable that I paid 30$!!!!! for express shipping and after 10 days still nothing has happened. \n\nIf a discount is not possible I am giving you time until Tuesday to get the item sent to me, otherwise I want a full refund.",
+      "user_id": 158003568589,
+      "created_at": "2025-08-29T08:53:08Z",
+      "updated_at": "2025-08-29T08:53:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007742712,
+      "body_text": "Hello, we're currently waiting for our German warehouse to restock before shipping your order. No worries, we'll apply the discount for you. Additionally, if you're in a hurry, we can ship from China via UPS Express, though customs duties may apply. Alternatively, you can upgrade to the 3-pedal set at the discounted price, and we'll ship immediately from our German warehouse. The price difference is $53, but you'll only need to pay $30. Please let me know your choice as soon as possible.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-29T09:00:22Z",
+      "updated_at": "2025-08-29T09:00:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007746489,
+      "body_text": "Would it be possible to get the 3 pedal set without the baseplate for the same or even lower price or is that not an option?",
+      "user_id": 158003568589,
+      "created_at": "2025-08-29T09:44:30Z",
+      "updated_at": "2025-08-29T09:44:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007746525,
+      "body_text": "Sure, we can exchange it for a Plus X P3-H3 / Black / without Baseplate and issue you a $20 refund.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-29T09:49:32Z",
+      "updated_at": "2025-08-29T09:49:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007746541,
+      "body_text": "Great, then lets do that. Thanks for the quick response",
+      "user_id": 158003568589,
+      "created_at": "2025-08-29T09:51:55Z",
+      "updated_at": "2025-08-29T09:51:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007746571,
+      "body_text": "Okay, we've arranged for your shipment to be dispatched. Thank you for your understanding. Have fun!",
+      "user_id": 158001343601,
+      "created_at": "2025-08-29T09:56:53Z",
+      "updated_at": "2025-08-29T09:56:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007958942,
+      "body_text": "Hello Support, \n\nthe pedals were delivered today, but unfortunately I am experiencing severe EMI issues. It only affects the brake pedal when using my Simagic Alpha Evo Sport wheel base. The stronger the force feedback from the wheel, the more unintended brake input I get. \n\nThere was a ground wire included in the box, and I can see where it should be connected on the control box. \nHowever: \n\nThere is no tool included to loosen the screw on the control box, so I cannot attach the wire. \nI do not know where the other end of the ground wire should be connected. \nI could not find any information about this in the manual. \n\nCould you please advise me on how to properly ground the system and resolve this issue?",
+      "user_id": 158003568589,
+      "created_at": "2025-09-02T12:47:35Z",
+      "updated_at": "2025-09-02T12:47:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008000687,
+      "body_text": "Hi Justin_podeszwa,  This issue is caused by EMI interference from the wheelbase. Please follow the steps below to troubleshoot and resolve it. Most customers with similar setups (such as Fanatec, MOZA, and T500 users) have resolved the problem using this method.     To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability: \n1. Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding. \n2. Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive. \n3. Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup. \n4. Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible. \n5. Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs. \n6. Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference. \n7. Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements. \n8. Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-03T04:25:18Z",
+      "updated_at": "2025-09-03T04:25:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008093053,
+      "body_text": "Hello Support, thanks that helped. Im having one other question. I tried to increase the pedal travel on the throttle. But after adjusting the limiter, the travel has barely changed and now even if i completely press on the throttle I dont even reach the limiter. I sent some pictures in the mail.",
+      "user_id": 158003568589,
+      "created_at": "2025-09-04T14:28:44Z",
+      "updated_at": "2025-09-04T14:28:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008126014,
+      "body_text": "Hello, Justin_podeszwa, Please take a photo of the spring in its fully compressed state when the pedal is fully pressed, and send it to me so I can analyze it for you.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-05T01:20:31Z",
+      "updated_at": "2025-09-05T01:20:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008162015,
+      "body_text": "Hello support, the pedal already is fully pressed.",
+      "user_id": 158003568589,
+      "created_at": "2025-09-05T19:46:19Z",
+      "updated_at": "2025-09-05T19:46:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

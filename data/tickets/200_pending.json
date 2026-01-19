@@ -1,0 +1,434 @@
+{
+  "id": 200,
+  "subject": "Re: SimHub \"subject: Apply for vibration module port authorization for the company's products.\"",
+  "description_text": "Hi Devin,\r\n\r\nPlease find a beta, for haptics motors,\r\n SimHub.9.08.5b1_Simsonn.zip\r\n<https://drive.google.com/file/d/1pvgV7Mw4OuHImICL29m-sZqXMamacvjf/view?usp=drive_web>\r\n\r\nI would still have 2 questions for now,\r\n- Can you provide the exact pedals report format  ?  One of the features\r\ndoes read it to use it as an effect blocking feature against ralling when\r\npedals are not pressed.\r\n- Does your controller shows a unique HID serial number ?\r\n\r\nConcerning the leds I've not implemented them yet. Since simhub is meant to\r\ndrive more rich led strands and just not 3 or 4 colors the engine is not\r\nadapted to this, I will delay it until users explicitly ask for it.\r\nCurrently nobody ever asked it neither for your \"competitors\", So I bet\r\nit's not really what users expect from pedals.\r\n\r\nLet me know !\r\n\r\nBest regards,\r\nNicolas Guilbert\r\n\r\n\r\n\r\nOn Wed, Jun 4, 2025 at 5:58 AM support <support@simsonn.com> wrote:\r\n\r\n> Dear SimHub Team,\r\n>\r\n>\r\n> Our pedal sales have been performing quite well. Since the release of our\r\n> new motor, we’ve already received many customer orders. We’re eager to\r\n> integrate SimHub support as soon as possible.\r\n>\r\n>\r\n> Here is our website:\r\n>\r\n> www.simsonn.com\r\n> ​SIMSONN CEO\r\n>\r\n> Devin Tao\r\n> ---- Replied Message ----\r\n> From support@simsonn.com<support@simsonn.com> <support@simsonn.com>\r\n> Date 05/29/2025 19:02\r\n> To Nicolas Guilbert<contact@simhubdash.com> <contact@simhubdash.com>\r\n> Cc support@simsonn.com<support@simsonn.com> <support@simsonn.com>\r\n> Subject Re: Re: SimHub \"subject: Apply for vibration module port\r\n> authorization for the company's products.\"\r\n>\r\n> Dear SimHub Team,\r\n>\r\n>\r\n> We are currently seeking support to integrate our pedal products with\r\n> SimHub for both vibration and lighting telemetry feedback. Our HID protocol\r\n> is complete and has passed validation in our own software, *SIMSONN\r\n> Manager*.\r\n>\r\n> We have three pedal models that require SimHub integration:\r\n>\r\n>\r\n>    - *Plus X* (VID: DDFD, PID: 6011)\r\n>    - *Pro X*  (VID: DDFD, PID: 5008)\r\n>    - *Pro X Ultra* (VID: DDFD, PID: 6012)\r\n>\r\n>\r\n>\r\n> In addition, we also offer two types of vibration motors:\r\n>\r\n>\r\n>    - *VAM*: A rotational vibration motor\r\n>    - *VAM Pro*: A linear vibration motor\r\n>\r\n>                These motors share the same HID protocol.\r\n>\r\n> Among them, the *Pro X* and *Pro X Ultra* also feature\r\n> telemetry-controlled RGB lighting (for throttle, brake, clutch, and damper\r\n> pedals), which we hope can be supported alongside vibration.\r\n> ------------------------------\r\n>\r\n> *Summary of Telemetry Features per Model:*\r\n>\r\n> *Plus X*\r\n>\r\n>\r\n>    - Vibration Feedback: VAM and VAM Pro\r\n>\r\n> *Pro X & Pro X Ultra*\r\n>\r\n>\r\n>    - Vibration Feedback: VAM and VAM Pro\r\n>    - Lighting Feedback: Throttle, Brake, Clutch, and Damper Pedal LEDs\r\n>\r\n>\r\n>\r\n>\r\n>\r\n>\r\n>\r\n> I have also attached several screenshots for your reference, including how\r\n> the devices are displayed within *SimHub*, as well as corresponding\r\n> interfaces from our *SIMSONN Manager* software that demonstrate the\r\n> vibration and lighting telemetry features.\r\n>\r\n>\r\n> Please let us know how we can collaborate on integrating support for these\r\n> devices into SimHub. We are open to providing hardware samples or test\r\n> tools if needed to facilitate development.\r\n>\r\n> Best regards,\r\n>\r\n>\r\n> SIMSONN  CEO Devin\r\n> Email: [support@simsonn.com]\r\n> Website: [www.simsonn.com]\r\n>\r\n>\r\n> ------------------------------\r\n> support@simsonn.com\r\n>\r\n>\r\n> *From:* Nicolas Guilbert <contact@simhubdash.com>\r\n> *Date:* 2025-02-10 21:32\r\n> *To:* support@simsonn.com\r\n> *Subject:* Re: Re: SimHub \"subject: Apply for vibration module port\r\n> authorization for the company's products.\"\r\n> Hi !\r\n>\r\n> Here are my  responses;\r\n> 1 / It's just an example of hid report, but yes in the case of HPRs that's\r\n> how it's built.\r\n> 2 / I read it to \"block\" effects in case the pedal is not pressed (to\r\n> reduce rattling), but adding static effects only based on pedals depressed\r\n> stats is planned.\r\n> 3 / I give a lot of care not making Simhub mandatory against\r\n> \"manufacturers\" software, so all the hardware control can be enabled or\r\n> disabled. In this particular case, if it's disabled Simhub won't send\r\n> instructions to the pedals and give complete control to the SimPro software.\r\n>\r\n> Best regards,\r\n> Nicolas Guilbert\r\n>\r\n>\r\n>\r\n> On Mon, Feb 10, 2025 at 2:15 PM support@simsonn.com <support@simsonn.com>\r\n> wrote:\r\n>\r\n>> Dear SIMHUB Team,\r\n>>\r\n>>\r\n>> Thank you for your response. I have three more questions I'd like to ask.\r\n>>\r\n>>\r\n>> Question1： The HID protocol is as follows, right?\r\n>>\r\n>>\r\n>> byte 0: Report ID\r\n>>\r\n>> byte 1: Motor 1 gain (range: 0 to 100)\r\n>>\r\n>> byte 2: Motor 1 frequency (range: 10 to 50 Hz)\r\n>>\r\n>> byte 3: Motor 2 gain (range: 0 to 100)\r\n>>\r\n>> byte 4: Motor 2 frequency (range: 10 to 50 Hz)\r\n>>\r\n>> byte 5: Motor 3 gain (range: 0 to 100)\r\n>>\r\n>> byte 6: Motor 3 frequency (range: 10 to 50 Hz)\r\n>>\r\n>>\r\n>> Question2： Does SimHub read the pedal depression state of Simagic in\r\n>> order to set certain trigger points during the depression process? For\r\n>> example, generating vibration feedback when the pedal reaches 50%.\r\n>>\r\n>>\r\n>> Question3： I also saw some switches in the SimHub software. What are\r\n>> their uses?\r\n>>\r\n>>\r\n>>\r\n>> Best regards,\r\n>> SIMSONN\r\n>>\r\n>> ------------------------------\r\n>> support@simsonn.com\r\n>>\r\n>>\r\n>> *From:* Nicolas Guilbert <contact@simhubdash.com>\r\n>> *Date:* 2025-02-08 22:08\r\n>> *To:* support <support@simsonn.com>\r\n>> *Subject:* Re: SimHub \"subject: Apply for vibration module port\r\n>> authorization for the company's products.\"\r\n>> Hi\r\n>>\r\n>> Actually there is no forwarding specific to p2000, but there is the\r\n>> possibility to use an external axis instead of the original controller axis\r\n>> to detect pedals pressed state.  This is very specific to Simagic which\r\n>> sells the same controller on their pedals or as a separate upgrade often\r\n>> used standalone.\r\n>>\r\n>> Concerning the HID format it's extremely simple it's just a basic HID\r\n>> report with 7 bytes (2 per pedals + one report id) as following\r\n>> byte 0 : report id\r\n>> byte 1 : motor 1 gain ( 0 to 100),\r\n>> byte 2 : motor 1 frequency (10 to 50 hz)\r\n>> byte 3 : motor 1 gain ( 0 to 100),\r\n>> byte 4 : motor 1 frequency (10 to 50 hz)\r\n>> byte 5 : motor 1 gain ( 0 to 100),\r\n>> byte 6 : motor 1 frequency (10 to 50 hz)\r\n>>\r\n>> Best regards,\r\n>>\r\n>> Nicolas Guilbert, Simhub\r\n>>\r\n>>\r\n>>\r\n>> Le sam. 8 févr. 2025 à 12:46, support <support@simsonn.com> a écrit :\r\n>>\r\n>>> Dear SimHub Team,\r\n>>>\r\n>>> Thank you for your detailed response.\r\n>>>\r\n>>> We will test both types of motors and ensure compatibility.\r\n>>>\r\n>>> I noticed a forwarding switch for Simagic P2000 pedals in SimHub. Does\r\n>>> this switch forward game telemetry data to a specific port for external\r\n>>> devices to receive and process?\r\n>>>\r\n>>> Additionally, could you share the process and data structure for\r\n>>> controlling Simagic pedal motors via SimHub? This would greatly assist our\r\n>>> development.\r\n>>>\r\n>>> Thank you for your support!\r\n>>>\r\n>>> Best regards,\r\n>>> SIMSONN\r\n>>> ---- Replied Message ----\r\n>>> From Nicolas Guilbert<nicolas.gbt@gmail.com> <nicolas.gbt@gmail.com>\r\n>>> Date 01/21/2025 16:29\r\n>>> To support@simsonn.com<support@simsonn.com> <support@simsonn.com>\r\n>>> Subject Re: SimHub \"subject:Apply for vibration module port\r\n>>> authorization for the company's products.\"\r\n>>> Hi !\r\n>>>\r\n>>> Thanks for your message.\r\n>>>\r\n>>> Overall currently the main Simhub goal is to offer any relevant features\r\n>>> to the users and gain extra users from more supported products.In this\r\n>>> spirit products integration is not paid.\r\n>>>\r\n>>> Regarding your statement about seeking authorization for the vibration\r\n>>> module ports, I’d like to clarify:\r\n>>> I don’t provide firmware code, that remains entirely your\r\n>>> responsibility. In SimHub’s integration context, all effects computations\r\n>>> and aggregations are handled within SimHub. The control board for the\r\n>>> pedals only needs to receive the haptics commands (gain and/or\r\n>>> frequencies), typically via an HID protocol you would provide.\r\n>>>\r\n>>> Integrating products like haptic motors is generally straightforward.\r\n>>> SimHub computes the final haptics values, and the control board drives the\r\n>>> motors accordingly.\r\n>>>\r\n>>> Currently, SimHub supports two engines depending on hardware\r\n>>> capabilities:\r\n>>>\r\n>>>    - Basic Motors (e.g., vibration motors): Transmit only a simple gain\r\n>>>    value per motor to the control board.\r\n>>>    - Haptic Motors (e.g., Simagic HPR): Transmit both gain and\r\n>>>    frequency values per motor to the control board.\r\n>>>\r\n>>> Best regards,\r\n>>> Nicolas Guilbert\r\n>>> SimHub\r\n>>>\r\n>>>\r\n>>>\r\n>>>\r\n>>>\r\n>>>\r\n>>>\r\n>>>\r\n>>>\r\n>>> Le sam. 18 janv. 2025 à 07:20, <contact@simhubdash.com> a écrit :\r\n>>>\r\n>>>> From: Allan <support@simsonn.com>\r\n>>>> Alternative email : <>\r\n>>>> Subject: subject:Apply for vibration module port authorization for the\r\n>>>> company's products.\r\n>>>>\r\n>>>> Message Body:\r\n>>>> Dear SIMHUB Team,\r\n>>>> I hope this message finds you well. My name is Allan, and I am the\r\n>>>> product design lead for the SIMSONN brand. SIMSONN, a subsidiary of\r\n>>>> Hunan Leixuan Information Technology Co., Ltd., is based in Hunan\r\n>>>> Province, China, and is dedicated to providing high-quality and\r\n>>>> cost-effective products for sim racing enthusiasts.\r\n>>>> Our R&D team has developed a new pedal set, the Pro X, which has been\r\n>>>> crafted with high-quality alloy steel and excellent workmanship. It\r\n>>>> features a 200KG high-precision pressure sensor, a 16-bit resolution\r\n>>>> synchronous sampling ADC chip, two MCUs, and RGB lighting effects. The\r\n>>>> Pro X pedal set is already on the market and has received widespread\r\n>>>> praise and positive feedback. To further enhance the gaming experience\r\n>>>> for players, we are planning to integrate three vibration modules into\r\n>>>> the product.\r\n>>>> The purpose of contacting your company is to seek authorization for\r\n>>>> the vibration module ports for this product, similar to what SIMAGIC\r\n>>>> has implemented in their P1000, P2000, and P500 pedal sets. Our R&D\r\n>>>> team has already reserved 9-12V DC power supply support and three\r\n>>>> vibration module interfaces on the Pro X’s main control box.\r\n>>>> We would like to understand the authorization process, timeline, and\r\n>>>> associated costs. We look forward to your response!\r\n>>>> Best regards,\r\n>>>> Allan\r\n>>>> Product Design Lead, SIMSONN\r\n>>>>\r\n>>>> --\r\n>>>> This e-mail was sent from a contact form on SimHub (\r\n>>>> https://www.simhubdash.com)\r\n>>>>\r\n>>>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-05T13:23:39Z",
+  "updated_at": "2025-08-13T04:59:22Z",
+  "requester_id": 158001249055,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002538676,
+      "body_text": "Hi Nicolas Guilbert,    Thank you for your quick response and for providing the test package. I just performed the testing and found three issues:    Upon initially connecting our device, it would disconnect and reconnect every few seconds, showing \"Connected\" again. During this time, each click on the motor channel test would also trigger a disconnection and reconnection. However, after I switched and replugged the device, the issue did not reoccur.    The telemetry command is missing a letter — the correct spelling is telemtry, but in SimHub it was tested as telmtry, missing an \"e\". This causes the main controller to fail in recognizing the command. Please kindly correct it.    We would like the motor IDs to follow this mapping: throttle = 0, brake = 1, clutch = 2. This matches our software interface and the physical installation order of the motors on the controller.    In response to the two questions you raised:    Each of our devices has a unique HID serial number — they are not fixed across devices. For example, each PlusX controller has a different HID serial number, and this also applies to ProX and ProX Ultra.    The report data I provided under Report ID 1 is for in-game usage. There is also a Report ID 2, which is used when the configuration software starts. If you plan to use data from Report ID 1, please ensure it is properly filtered and read only from Report ID 1.    Additionally, we’ve sold a large number of pedals, and calibration status varies between older and newer models. Before calibration, the value might range from 0% to 50% or more; after calibration, it typically falls between 0% and 2%. Our software also offers dead zone settings between 0% and 15% for both minimum and maximum values — this should be similar to other pedals in the industry. If you're planning to read Report ID 1 to determine pedal actuation and percentage, please take this into account. That said, you might already have a more advanced handling mechanism in place.     ​The HID game data format is as follows: 1 byte Report ID + 2 bytes Throttle + 2 bytes Brake + 2 bytes Clutch. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-06T02:10:49Z",
+      "updated_at": "2025-06-06T02:10:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002540262,
+      "body_text": "Hi Nicolas Guilbert,  We have also tested the vibration effect by sending commands via SimHub, and the experience was excellent. However, to ensure system stability and compatibility, the command format still needs to be corrected as mentioned in our previous email. The correct command is: telemtry. In addition, we have shipped a large quantity of products to our overseas warehouses, and global distribution will follow. We would also like to propose updating the name of our pedal devices to: Simsonn Vibration Auxiliary Module (Plus X / Pro X / Pro X Ultra). Thank you for your continued support!     SIMSONN  CEO Devin Email: [support@simsonn.com] Website: [www.simsonn.com] ​",
+      "user_id": 158000445778,
+      "created_at": "2025-06-06T04:18:55Z",
+      "updated_at": "2025-06-06T04:18:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002542570,
+      "body_text": "Hi Devin,\r\n\r\nI've fixed the telemetry issue, sorry for that, I was so focused on the\r\nmissing \"e\" which was missing, that I removed two.\r\n SimHub.9.08.5b2_Simsonn.zip\r\n<https://drive.google.com/file/d/1wCpmXR_nUDT3biMSxT9WBALQLsHNoiHN/view?usp=drive_web>\r\n\r\nRegarding the name, it feels a bit long and does not fit very well. If\r\nsomehow it could be more compact it would be better.\r\n\r\nIn terms of \"initial connection\" crash, could you confirm that the pedals\r\nappear as a single HID device, if there would be two that could explain\r\nthat simhub picks the wrong one and after a complete unplug replug the\r\ncorrect one could be picked.\r\nIn all cases could you join the log files available in C:\\Program Files\r\n(x86)\\SimHub\\logs so I can inspect them ?\r\n\r\nFinally about the calibration, It's only meant to be a \"pressure\" sensing,\r\njust a threshold in order to block effects when not pressed, since it's\r\nonly a threshold the full pedal calibration iinformations are not needed :\r\n\r\n [image: image.png]\r\n\r\nBest regards,\r\nNicolas Guilbert\r\n\r\n\r\n\r\nOn Fri, Jun 6, 2025 at 6:19 AM support@simsonn.com ",
+      "user_id": 158001249055,
+      "created_at": "2025-06-06T07:44:18Z",
+      "updated_at": "2025-06-06T07:44:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002554228,
+      "body_text": "你好，Nicolas Guilbert，     This name is a bit shorter: Simsonn VAM / VAM Pro (Plus X / Pro X / Pro X Ultra).   Attached are all the logs from the first version. Please have a look.   I’ll test the second version you provided later. Thank you for your prompt response!     SIMSONN  CEO Devin Email: [support@simsonn.com] Website: [www.simsonn.com] ​ ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-06T08:46:58Z",
+      "updated_at": "2025-06-06T08:46:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002554260,
+      "body_text": "Hi Nicolas Guilbert,  The motor mapping for throttle, brake, and clutch still needs to be corrected. As I mentioned in my previous email, SimHub sends motor ID 0 for the clutch, but in our setup, motor 0 actually corresponds to the throttle. The correct motor assignment should be: Clutch → Motor 2 Brake → Motor 1 Throttle → Motor 0 Thank you for your support!      SIMSONN  CEO Devin Email: [support@simsonn.com] Website: [www.simsonn.com] ​  ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-06T08:59:41Z",
+      "updated_at": "2025-06-06T08:59:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002561210,
+      "body_text": "Hi\r\n\r\nThanks I did check the log files and it looks like the HID interface is not\r\nstable,\r\n\r\nI can see various errors, ;  System.IO.IOException: Can't write to this\r\ndevice, System.IO.IOException: Operation failed early\r\n, System.TimeoutException: Operation timed out\r\nIt looks like it's very sensitive. Since I'm strictly checking any\r\ncommunication errors over HID, could have this gone unseen in your app, or\r\njust simhub being too fast to send data ? I've already been facing such\r\ncases in the past, where the controller HID communication was unreliable,\r\nbut just the other apps \"accepting errors\", while I strictly consider any\r\nerrors as critical and throw a disconnect.\r\n\r\nDo you have an USB profiler to check the messages ? I double checked I\r\ncould not spot any protocol errors (except the \"telmtry\" now fixed).\r\nJust in case I've now logged how many HID interfaces I've found attached to\r\nthe found HID device, if somehow it's just picking a wrong HID interface\r\nwthat could explain all.\r\n\r\nAbout the axis and names I've now fixed them.\r\n\r\n SimHub.9.08.5b3_Simsonn.zip\r\n<https://drive.google.com/file/d/1q9rxPirjNQYw9BDB65dGtnQmlLErZwAX/view?usp=drive_web>\r\n\r\nLet me know,\r\n\r\n\r\n\r\nBest regards,\r\nNicolas Guilbert\r\n\r\n\r\n\r\nOn Fri, Jun 6, 2025 at 10:47 AM support@simsonn.com ",
+      "user_id": 158001249055,
+      "created_at": "2025-06-06T09:50:23Z",
+      "updated_at": "2025-06-06T09:50:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002577665,
+      "body_text": "Hi Nicolas Guilbert,   I just performed a test on the Ultra mainboard. After plugging it in and adding the device in SimHub, I selected the device's serial number and it showed as successfully connected. Only one pedal device was plugged in. However, when I clicked \"Test,\" the connection immediately dropped. At that point, I used our own software to test the vibration function—it worked perfectly, with no issues at all. I then restarted SimHub, but the problem remained. After unplugging and reconnecting the pedal’s USB, SimHub successfully recognized the device again. The vibration test worked normally, and the connection stayed stable. However, the issue with connection failure in SimHub keeps occurring. Our software always shows the device is functioning normally and never disconnected. We also ran a full set of USB 2.0 protocol tests—all tests passed without issue. I've attached the test report and SimHub log files for your review. Thank you for your assistance! ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-06T11:01:53Z",
+      "updated_at": "2025-06-06T11:01:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002579383,
+      "body_text": "Hi !\r\n\r\nThanks for the logs, I can confirm you are exposing two HID interfaces.\r\n\r\nFound 2 HID interfaces for vendorID: 0xDDFD, productID: 0x6012\r\nThat's clearly the issue, it's likely to be the wrong one to be picked\r\nin order of windows appearance, do you have the descriptors for each\r\none, or a recognition pattern (usage, report length ...) so I can\r\nimplement it and pick the right one ?\r\n\r\nIn a tool like usb tree view it will probably show multiple HID\r\ninterfaces in the same single USB device  like in this example,\r\n[image: image.png]\r\nNicolas\r\n\r\n\r\n\r\nBest regards,\r\nNicolas Guilbert\r\n\r\n\r\n\r\nOn Fri, Jun 6, 2025 at 1:02 PM support@simsonn.com ",
+      "user_id": 158001249055,
+      "created_at": "2025-06-06T11:09:09Z",
+      "updated_at": "2025-06-06T11:09:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002586363,
+      "body_text": "Hi Nicolas Guilbert,     My pedal device indeed has two HID interfaces:    The first interface (shown as mi_00 in the first image) is used to send Report ID 1 for game data. This interface is always active, so you can rely on it to consistently receive gameplay input.    The second interface (shown as mi_01 in the second image) is used for Report ID 2, which is intended for calibration with our configuration software. This interface only transmits or receives data when the software is running — otherwise, it remains idle.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-06T11:47:07Z",
+      "updated_at": "2025-06-06T11:47:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002587162,
+      "body_text": "Hi Nicolas Guilbert,  One more thing: use mi_00 for device identification, but telemetry data should be sent via mi_01, as mi_00 is only used for game data output. mi_01 is intended for calibration data required by the software and can also receive telemetry data. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-06T11:50:54Z",
+      "updated_at": "2025-06-06T11:50:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002589188,
+      "body_text": "Hi Nicolas Guilbert,     Hi, I just spoke with our R&D team — SimHub should be connecting to and recognizing mi_01, not mi_00. What I wrote in the previous email was incorrect. I’ll continue testing on my end, since this is our first integration. Thanks for your patience and support!",
+      "user_id": 158000445778,
+      "created_at": "2025-06-06T11:59:51Z",
+      "updated_at": "2025-06-06T11:59:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002638348,
+      "body_text": "Thanks,\r\n\r\nso my intuition was correct, usually I don't use hardware id as I think\r\nit's not most reliable way,  but with no additional informations, I did it,\r\nit will filter on MI_01 as you said\r\n SimHub.9.08.5b4_Simsonn.zip\r\n<https://drive.google.com/file/d/172b46hOW18XOyOetnN44OHnO17nQrciY/view?usp=drive_web>\r\n\r\nLet me know,\r\n\r\nBest regards,\r\nNicolas Guilbert\r\n\r\n\r\n\r\nOn Fri, Jun 6, 2025 at 1:59 PM support@simsonn.com ",
+      "user_id": 158001249055,
+      "created_at": "2025-06-06T15:55:59Z",
+      "updated_at": "2025-06-06T15:55:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002645680,
+      "body_text": "Hi，Nicolas Guilbert，     I just tested the SimHub.9.08.5b4_Simsonn.zip version via the Device panel in SimHub.  Test setup:    PlusX and ProX Ultra controllers;    VAM Pro linear vibration motors;    Vibration tested on all three channels: throttle, brake, and clutch.    Test results:    SimHub successfully and stably connects to the mi_01 interface;    Even after restarting SimHub or reconnecting the controller box, the connection remains stable;    All vibration effects worked as expected with no issues.    Many thanks for your great support and assistance!     Additionally, I have a few more questions I’d like to ask:    While SimHub is running, if I manually unplug our USB device, I can see a device lost error in the SimHub logs. However, if I don’t unplug the device during operation, no error messages appear at all. Does this behavior confirm that our mi_01 interface setup is functioning properly?    You previously mentioned that using the hardware ID to match mi_01 is quite unreliable. Could you kindly provide a few typical examples of when or how it might fail? That would help us better understand and improve our firmware design.    I have completed vibration testing in the SimHub Device tab, and all effects are working correctly. However, I haven’t been able to test telemetry-based effects yet. Am I required to also add our SIMSONN device as an output channel under the ShakeIt Motors section to get telemetry working properly?    Regarding the HID data format on mi_01, I haven’t provided that to you yet. Currently, here is how it's designed: When our SIMSONN Manager software is running, it sends a Report ID 2 + 0x90 command every 5 seconds via mi_01. This triggers our controller to begin sending continuous Report ID 2 packets, which contain both raw (pre-calibration) and calibrated game values. These transmissions last for 30 seconds. If the manager software is closed, the report stream stops after 30 seconds. Meanwhile, mi_00 (Report ID 1) continues sending game data uninterrupted. Based on this, we assume that your “Block effects when not pressed” feature using “Use native controller input” is referencing data from mi_00 — is that correct?    Lastly, I have a more general question:  We plan to implement an automatic game detection and quick launch feature inside SIMSONN Manager. The goal is to detect installed sim racing games without requiring the user to manually select or input the path — and also without us pre-installing hundreds of games. Do you know if there's a common approach (e.g., via registry, Steam/UPlay/EA paths, or system scans) to identify installed racing games and locate their .exe files automatically? Many users struggle to find the correct path themselves, and we’d like to make the process as smooth as possible. If this is outside of your scope, no problem at all!  Thank you again for your great support — we’ll be promoting the SimHub integration actively through our software and website, and we look forward to helping expand the SimHub community together.     This is a proprietary HID heartbeat command used by our SIMSONN Manager to maintain active communication with the device.  （OUT）        This is the data structure used by the controller to respond to the host via Report ID 2.  (IN)",
+      "user_id": 158000445778,
+      "created_at": "2025-06-06T23:26:05Z",
+      "updated_at": "2025-06-06T23:26:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002727366,
+      "body_text": "Hi !\r\n\r\nHere are my replies:\r\n\r\n1. Yes, every errors are logged, a device unplug has no difference with a\r\ndevice usb failure, considering the wide number of usb issues (emi, bad usb\r\ncable ...) I have to troubleshoot, all those informations are critical to\r\nknow what is happening. So yes when you unplug the device you'll see two\r\nerrors, one about the game controller being lost, and one about the hid\r\ninterface for motor control being lost.\r\n\r\n2. The Hardware id is not necessary deterministic, the descriptor embeds\r\nusage pages and usage which are meant for the identification. When relying\r\non the mi_0 or mi_1 identification you are relying on the windows\r\nidentification order and/or the descriptor interfaces declaration order. If\r\nyou want to add later a keyboard interface or another custom interface,\r\nthose could suddenly get reordered or renumbered. If the interface is\r\nidentified by a specific usage page and usage number, then no matter what\r\ncan be done on the device descriptors the interface can still be identified.\r\n\r\n3. That's really weird I'll check on Monday, this specific interface has\r\nstill not been deployed for many devices, and I might have missed something\r\nwhen I adapted it to work with your pedals. The shake it interface is\r\nunrelated now, everything you need is bundled inside the \"device\r\ninterface\". Can I ask which game and did you see it as connected inside\r\nSimhub (no UDP conflicts for instance)\r\n\r\n4. Good point, since it's two interfaces I would need to open both. I was\r\noriginally expecting it to be only one interface, and I didn't challenged\r\nit again when you told me there were two. I need to adapt it. For the same\r\nreason as #1 if you can provide the exact usage page and usage id that\r\nwould allow me to identify it in a future proof way without relying on\r\nwindows numbering.\r\n\r\n\r\nConcerning the game detection, it’s something I’ve built the hard way,\r\ngoing through Steam and other libraries with added heuristics over time.\r\nIt’s become a part of SimHub’s core value, so it’s not something I can\r\nreally share outside the project.\r\nThanks for your understanding!\r\n\r\n\r\nBest regards,\r\nNicolas Guilbert\r\n\r\n\r\nLe sam. 7 juin 2025, 01:26, support@simsonn.com ",
+      "user_id": 158001249055,
+      "created_at": "2025-06-08T06:32:47Z",
+      "updated_at": "2025-06-08T06:32:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002841534,
+      "body_text": "Hi，Nicolas，     ​I tested with Assetto Corsa. In the game, I can see the ABS and TC indicators flashing from gray to red, and in SimHub, I can see the waveform on the corresponding channels, with the status showing \"Running\".  However, the motor doesn't move. For example, when I click the \"Test\" button next to \"TC Active\", there's no vibration response.  But in the \"Hardware Settings\" tab, the vibration test works fine and the motor responds normally. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-09T05:26:05Z",
+      "updated_at": "2025-06-09T05:26:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002899491,
+      "body_text": "Hi Nicolas,    Is there any software update available?",
+      "user_id": 158000445778,
+      "created_at": "2025-06-10T15:09:14Z",
+      "updated_at": "2025-06-10T15:09:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002899517,
+      "body_text": "Hi !\r\n\r\nI did check the output, except it's much more \"subtle\" than a manual test,\r\nI get the expected frequencies and gains,\r\n\r\n[image: image.png]\r\n\r\nSince manual test works we could eventually focus on high velocity updates\r\nand sensitivity ?\r\n\r\nSimhub effects are updated every 16ms and send the motors update when it's\r\nchanging. The effects are also much more subtle than with manual testing\r\nwhich just sends a \"100%\" signal. Live signals are usually around 5 ~ 10%\r\nof the output for  \"background\" effects and updating almost at every frame\r\neither frequency or gain. Could you tell me if there is a minimum gain\r\nbefore they start, or if there is a minimum delay between two motors update\r\ncommands ? The TC active \"signal\" you've shown is strong and should skip\r\nmost sensitivity issues, so my guess would be more about the controller\r\nignoring or missing fast updates ?\r\n\r\nIs there anything I can do to help troubleshoot it? Could you eventually\r\nconfirm the data is correctly received on the hardware side. I'm blind\r\nwithout the hardware, I can either log all the HID packets being sent with\r\nthe exact timing, add some delays between updates if that could be a\r\nculprit.\r\n\r\nConcerning the pedals position I did the change to read it from the mi_00\r\ninterface. That should make the \"axis blocking\" feature work, but it does\r\nnot explain the issue about \"live\" effects not working\r\n SimHub.9.08.5b5_Simsonn.zip\r\n<https://drive.google.com/file/d/1a4Ja7YZHr-GrHJhTsXCig7L9SZraS32K/view?usp=drive_web>\r\n\r\n\r\nBest regards,\r\nNicolas Guilbert\r\n\r\n\r\n\r\nOn Mon, Jun 9, 2025 at 7:26 AM support@simsonn.com ",
+      "user_id": 158001249055,
+      "created_at": "2025-06-10T15:13:45Z",
+      "updated_at": "2025-06-10T15:13:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002906435,
+      "body_text": "Hi，Nicolas Guilbert，  ​   The recent b5 update has caused the device to fail to connect properly with SimHub. I’ve confirmed that the mi_00 interface is continuously sending HID data (such as report ID 1 for game input), but SimHub actually uses the mi_01 interface for connection and control commands. The previous b4 version worked without any issues.                    From what I see on this screen, the SIMSONN section should appear even without any devices connected. I’ve noticed that Simagic’s section always shows up automatically after a fresh installation, but our SIMSONN section has never appeared.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-11T01:51:17Z",
+      "updated_at": "2025-06-11T01:51:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003050452,
+      "body_text": "Hi !\r\n\r\nSorry for the late reply, I made you another version skipping the pedals\r\n(axis) interface if not found, and adding more logs to understand where it\r\nfails.\r\n\r\nConcerning the effects when the game is running, could you spot any issues\r\nabout HID data when the game is running (data coming too fast, or gain too\r\n\"subtle\" ?) I checked numerous times, and that's the only explanation I can\r\nsee for now\r\n SimHub.9.08.5b6_Simsonn.zip\r\n<https://drive.google.com/file/d/1QrSbAvCC5iyx9XgdRgSQV-hWpmDGkujc/view?usp=drive_web>\r\n\r\n\r\nBest regards,\r\nNicolas Guilbert\r\n\r\n\r\n\r\nOn Fri, Jun 13, 2025 at 6:38 AM support@simsonn.com ",
+      "user_id": 158001249055,
+      "created_at": "2025-06-14T05:30:26Z",
+      "updated_at": "2025-06-14T05:30:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003089381,
+      "body_text": "Hi，Nicolas Guilbert，  Thank you for your quick support!  I’ve just tested Assetto Corsa using all three controller boards—ProX, ProX Ultra, and PlusX. Everything is working well, and the TC indicator in the game is perfectly synced with the motor vibration response.  I also noticed that SimHub continuously sends \"motor stop\" commands. I assume this is intended to prevent bugs that could cause long-term unintended vibration—am I right? I’ve attached the log from earlier; it includes some USB reconnects and switching over to our SIMSONN Manager software.  So far, the b6 version seems stable. Although our SIMSONN brand name doesn’t show up in blue under the ShakeIt Motors – Motors Output section in SimHub, I assume that’s not an issue, correct?  I’ll schedule a more thorough test on Monday, focusing specifically on vibration feedback through SimHub to ensure everything works as expected. If all goes well, we’ll evaluate whether it’s ready for official release.                  ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-14T09:38:42Z",
+      "updated_at": "2025-06-14T09:38:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003099434,
+      "body_text": "Thanks for the log, now I see exactly what was wrong about locating the\r\npedals hid device. I'll fix it quickly.\r\n\r\nConcerning shakeit, indeed for dedicated devices I'm now offering a full\r\ndedicated control panel instead of grouping them all in shake it motors.\r\nThe previous listed devices are only here for legacy reasons. The final\r\ngoal is to only offer proper dedicated \"device\" panels for devices like\r\nyours, including all the specificities like frequency, pedal pressed\r\ndetection...\r\n\r\nConcerning the 0 being sent back regularly indeed I use it as a keep alive\r\nsignal, it's to be sure if a message is lost it will still end stopping the\r\nmotors. That's also the opportunity to catch any usb issues and disconnect\r\nin case it's unstable and communication unreliable, instead of waiting to\r\nbe in game to discover those instabilities.\r\n\r\n\r\nBest regards,\r\nNicolas Guilbert\r\n\r\n\r\nLe sam. 14 juin 2025, 11:39, support@simsonn.com ",
+      "user_id": 158001249055,
+      "created_at": "2025-06-14T10:49:34Z",
+      "updated_at": "2025-06-14T10:49:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003301312,
+      "body_text": "Hi !\r\n\r\nThanks again for the logs, I've been able to understand the root issue\r\nand replace my workaround with a proper solution,\r\n\r\nCompared to the previous one you should not see any changes, but in case\r\nmultiples pedals controllers are connected it will attach properly the the\r\nHID controller interface tied to the motors being controlled\r\n SimHub.9.08.5b7_Simsonn.zip\r\n<https://drive.google.com/file/d/1LaWboH_Z1Q7JGRsAJg_BFFqX36VR9TyJ/view?usp=drive_web>\r\n\r\nLet me know,\r\n\r\nBest regards,\r\nNicolas Guilbert\r\n\r\n\r\n\r\nOn Sat, Jun 14, 2025 at 12:49 PM Nicolas Guilbert <contact@simhubdash.com>\r\nwrote:\r\n\r\n> Thanks for the log, now I see exactly what was wrong about locating the\r\n> pedals hid device. I'll fix it quickly.\r\n>\r\n> Concerning shakeit, indeed for dedicated devices I'm now offering a full\r\n> dedicated control panel instead of grouping them all in shake it motors.\r\n> The previous listed devices are only here for legacy reasons. The final\r\n> goal is to only offer proper dedicated \"device\" panels for devices like\r\n> yours, including all the specificities like frequency, pedal pressed\r\n> detection...\r\n>\r\n> Concerning the 0 being sent back regularly indeed I use it as a keep alive\r\n> signal, it's to be sure if a message is lost it will still end stopping the\r\n> motors. That's also the opportunity to catch any usb issues and disconnect\r\n> in case it's unstable and communication unreliable, instead of waiting to\r\n> be in game to discover those instabilities.\r\n>\r\n>\r\n> Best regards,\r\n> Nicolas Guilbert\r\n>\r\n>\r\n> Le sam. 14 juin 2025, 11:39, support@simsonn.com ",
+      "user_id": 158001249055,
+      "created_at": "2025-06-17T04:17:01Z",
+      "updated_at": "2025-06-17T04:17:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003301913,
+      "body_text": "Hi Nicolas     Thank you very much for your strong support! I’ll test the latest b7 version you provided, and if everything works well, how soon do you expect to officially release the new version? ,",
+      "user_id": 158000445778,
+      "created_at": "2025-06-17T05:14:56Z",
+      "updated_at": "2025-06-17T05:14:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003365961,
+      "body_text": "Hi Nicolas,  We just encountered an issue while testing the b7 version: SimHub can only recognize the ProX device, while the PlusX and ProX Ultra cannot connect successfully. A similar issue occurred once in the b6 version, but after switching between several devices, they eventually connected properly. However, in the b7 version, no matter how we switch between devices, the PlusX and ProX Ultra consistently fail to connect. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-17T12:14:23Z",
+      "updated_at": "2025-06-17T12:14:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003366443,
+      "body_text": "Hi Nicolas，     I just uninstalled the b7 version and reinstalled b6. All three devices can now connect successfully. However, I noticed something: the progress bar for the PlusX is not fully filled, although it can still move; the other two devices have full progress bars, but they are static and do not respond to input. I've attached screenshots of all three devices under the b6 version, along with the log file for reference.      ​",
+      "user_id": 158000445778,
+      "created_at": "2025-06-17T13:05:12Z",
+      "updated_at": "2025-06-17T13:05:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003678176,
+      "body_text": "Hi !\r\n\r\nI did a check and the pedals seem to crash every time it connects.\r\n\r\nI can see the pedals being correctly recognised everytime :\r\n\r\n[2025-06-17 20:44:40,738] INFO - Found HID interface:\r\n\\\\?\\hid#vid_ddfd&pid_5008&mi_00#8&38bca552&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}\r\n- 6D7350745480\r\n[2025-06-17 20:44:40,738] INFO - Found HID interface:\r\n\\\\?\\hid#vid_ddfd&pid_5008&mi_01#8&142e05b&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}\r\n- 6D7350745480\r\n\r\nbut once it connects the pedals just crashes (the directinput controller is\r\nalso losing track of it :\r\nJoystickManager : Error during connection to SIMSONN_PlusX\r\nSystem.Exception: JoystickManager : Error during controller connection\r\n\r\nCan you confirm mi_00 is the controller and mi_01 is the motors ? It's very\r\nstrange that it fails only for this model, is there any specificity I\r\nshould know which could explain how it would behave differently?\r\n\r\n\r\nBest regards,\r\nNicolas Guilbert\r\n\r\n\r\n\r\nOn Tue, Jun 17, 2025 at 3:05 PM support@simsonn.com ",
+      "user_id": 158001249055,
+      "created_at": "2025-06-21T19:01:51Z",
+      "updated_at": "2025-06-21T19:01:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003679477,
+      "body_text": "Hi Nicolas,  There may have been some misunderstanding in my previous explanation. In fact, both SimHub and our SIMSONN Manager should only need to connect to and interact with mi_01, without handling mi_00—just like how it worked in the SimHub b6 version. Could you take a look at the b6 version's code and see what’s different compared to the current one? ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T01:16:51Z",
+      "updated_at": "2025-06-22T01:16:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003736241,
+      "body_text": "Hi,\r\n\r\nI compared both versions, the only difference (as I remembered it) is that\r\nI was now using the serial number to properly \"match\" between mi_00 and\r\nmi_01 of the same device, after some digging into the HID library I'm using\r\nI found that everytime I'm reading the serial number it is probably asking\r\nit to the device through USB (it's not cached) and that's maybe why using\r\nthe serial number adds to the \"USB stress\" which could lead to this device\r\ncrash. It needs a bit more rework on my end to be able to ask it only once.\r\nI'll try to do it tomorrow and send you another beta, fingers crossed !\r\n\r\nNicolas\r\n\r\n\r\n\r\nOn Sun, Jun 22, 2025 at 3:17 AM support@simsonn.com ",
+      "user_id": 158001249055,
+      "created_at": "2025-06-23T17:45:50Z",
+      "updated_at": "2025-06-23T17:45:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003830123,
+      "body_text": "Hi !\r\n\r\nI compared the two versions again just to be sure, I can confirm the single\r\nchange was about serial number matching and the related higher HID serial\r\nnumber requests to the devices, i've cached it so it only asks once per\r\nscan for every HID interface.\r\nI hope this was it.\r\n SimHub.9.09.0b1_Simsonn.zip\r\n<https://drive.google.com/file/d/1ZlcV2vbpbaZkzbxAwVxbWTcQTjT-OVNX/view?usp=drive_web>\r\n\r\nJust in case, here is my address,\r\n\r\nNicolas Guilbert\r\n4 allée de l’étang,\r\n59250 Halluin\r\nFrance\r\n\r\n\r\nNicolas\r\n\r\n\r\n\r\n",
+      "user_id": 158001249055,
+      "created_at": "2025-06-24T18:31:33Z",
+      "updated_at": "2025-06-24T18:31:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003833742,
+      "body_text": "Hi Nicolas,  I just tested:    B8 version: The device serial number is displayed, but it cannot connect.    B9 version: The serial number is not displayed, so it also cannot connect.    I've attached the full log files from all three boards. Please help check them.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-25T03:25:15Z",
+      "updated_at": "2025-06-25T03:25:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003835352,
+      "body_text": "Hi Nicolas Guilbert,  ​To be on the safe side, I’ve sent you 3 main controllers and a USB data cable via UPS. The tracking number is: 1ZJ455510417027050. Looking forward to a successful collaboration — thank you for your support! ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-25T08:32:59Z",
+      "updated_at": "2025-06-25T08:32:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003835381,
+      "body_text": "Thanks,\r\n\r\nI think I'll remove the support for multiple controllers at once, since\r\nthey are bundled with pedals the benefit of configuring many is low.\r\n\r\nLooking at the log I feel like the serial number retrieval is what causes\r\nall those struggles, but that's also the only way to get the pedals and the\r\ncontroller back together when many of them are plugged into the computer.\r\nAll the last failures came since I added the serial number matching, I'm\r\nnow 99% sure this is the culprit. Unfortunately reading the serial number\r\nis not passive and requests it to the board through USB and I feel the\r\nweakness is here.\r\n\r\nAs long it's not meant to be sold as an haptic kit like simagic does it\r\nwill be fine with this restriction. What do you think? At worst we can\r\ninvestigate later why the serial number crashed.\r\nWe can maybe go forward, with a simpler \"1 pedal set  at once limit\" (not\r\nusing the serial number anymore), and investigate properly later the serial\r\nissue when I'll get the hardware in hands.\r\n\r\nLet me know,\r\n\r\nBest regards,\r\nNicolas Guilbert\r\n\r\n\r\n\r\nOn Wed, Jun 25, 2025 at 10:33 AM support@simsonn.com ",
+      "user_id": 158001249055,
+      "created_at": "2025-06-25T08:43:22Z",
+      "updated_at": "2025-06-25T08:43:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003840673,
+      "body_text": "Hi Devin,\r\n\r\nHere is a version where I completely removed any multiple controller\r\nsupport, not requesting anymore the serial number which I feel was still\r\nthe culprit.\r\n SimHub.9.09.2b1_Simsonn.zip\r\n<https://drive.google.com/file/d/1rYPU0DI8duFCwxzT8c3OSeB2pxj5KWlY/view?usp=drive_web>\r\n\r\nLet me know if it finally works !\r\n\r\nBest regards,\r\nNicolas Guilbert\r\n\r\n\r\n\r\nOn Wed, Jun 25, 2025 at 10:42 AM Nicolas Guilbert <contact@simhubdash.com>\r\nwrote:\r\n\r\n> Thanks,\r\n>\r\n> I think I'll remove the support for multiple controllers at once, since\r\n> they are bundled with pedals the benefit of configuring many is low.\r\n>\r\n> Looking at the log I feel like the serial number retrieval is what causes\r\n> all those struggles, but that's also the only way to get the pedals and the\r\n> controller back together when many of them are plugged into the computer.\r\n> All the last failures came since I added the serial number matching, I'm\r\n> now 99% sure this is the culprit. Unfortunately reading the serial number\r\n> is not passive and requests it to the board through USB and I feel the\r\n> weakness is here.\r\n>\r\n> As long it's not meant to be sold as an haptic kit like simagic does it\r\n> will be fine with this restriction. What do you think? At worst we can\r\n> investigate later why the serial number crashed.\r\n> We can maybe go forward, with a simpler \"1 pedal set  at once limit\" (not\r\n> using the serial number anymore), and investigate properly later the serial\r\n> issue when I'll get the hardware in hands.\r\n>\r\n> Let me know,\r\n>\r\n> Best regards,\r\n> Nicolas Guilbert\r\n>\r\n>\r\n>\r\n> On Wed, Jun 25, 2025 at 10:33 AM support@simsonn.com ",
+      "user_id": 158001249055,
+      "created_at": "2025-06-25T19:28:00Z",
+      "updated_at": "2025-06-25T19:28:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003845598,
+      "body_text": "Hi Nicolas,     Thank you for providing this version for me to test!  I’ve just plugged in both the ProX Ultra and PlusX, but the serial number selection no longer appears in the SimHub interface, and the connection status in the top right corner stays as “Disconnected.” If it’s convenient for you, feel free to compile a small piece of test code for device connection—I’d be happy to help you debug. I have some experience with C# development and can assist in troubleshooting the issue.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-26T09:01:21Z",
+      "updated_at": "2025-06-26T09:01:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004170178,
+      "body_text": "Hi Devin,\r\n\r\nI finally figured out why things weren’t working, even without the serial\r\nnumber. It turns out I had some mocking code in place for the pedals to\r\nsimulate hardware I don’t have on hand. I had made quite a few changes to\r\nsimulate serial number retrieval for matching the pedals and motors, and\r\nthat ended up mixing simulated data with the physical device list.\r\n\r\nI’m really sorry for the confusion and the time this ended up wasting. I\r\ntruly appreciate your patience\r\nFingers crossed it’s finally resolved now!\r\n SimHub.9.09.2b2_Simsonn.zip\r\n<https://drive.google.com/file/d/1p5kEGqiBUoGbt3qYI03tZ0NQ1VuhzOgv/view?usp=drive_web>\r\n\r\nBest regards,\r\nNicolas Guilbert\r\n\r\n\r\n\r\nOn Thu, Jun 26, 2025 at 11:01 AM support@simsonn.com ",
+      "user_id": 158001249055,
+      "created_at": "2025-06-27T09:29:57Z",
+      "updated_at": "2025-06-27T09:29:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004215292,
+      "body_text": "Hi，Nicolas，  非常感谢您一直以来的帮助，帮助我们解决问题。明天上班后我会测试最新版本，并及时反馈您的反馈。再次感谢您的支持！ ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-27T15:26:07Z",
+      "updated_at": "2025-06-27T15:26:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004219166,
+      "body_text": "Hi Nicolas,  Good news! I just tested the ProX, ProX Ultra, and PlusX controllers with both VAM and VAM Pro motors. Vibration and channel tests worked perfectly, and the connection was very stable. I’ve also provided the full logs for your review. If everything looks good on your end, you may go ahead and announce the official SIMHUB update. Thank you for your continued efforts in modifying and improving the software — we’ve finally achieved full SIMHUB support. Great working with you! ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-28T06:18:45Z",
+      "updated_at": "2025-06-28T06:18:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004256873,
+      "body_text": "Hi !\r\n\r\nAmazing news right on time before holidays, I'll release it this week.\r\n\r\nBest regards,\r\nNicolas Guilbert\r\n\r\n\r\n\r\nOn Sat, Jun 28, 2025 at 8:18 AM support@simsonn.com ",
+      "user_id": 158001249055,
+      "created_at": "2025-06-30T08:11:34Z",
+      "updated_at": "2025-06-30T08:11:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005863629,
+      "body_text": "Hi Nicolas Guilbert,   Our customer reported that when using SIMSONN Manager telemetry, the device does not disconnect, but when using SimHub 9.9.3, disconnections occur. The customer has provided a log file for review. Could you please check if there are any issues? ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-31T00:23:00Z",
+      "updated_at": "2025-07-31T00:23:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006625884,
+      "body_text": "Hi !\r\n\r\nSorry for the lates replay,\r\n\r\nI checked and indeed it does not seem \"structural\" but a punctual write\r\ntimeout, In simhub I'm using a library enforcing checks to guarantee no\r\ntimeouts or write errors would go unseen.  But I know it can be \"missed\"\r\nquite easily by some other ways of writing data. I'll check if can give it\r\nsome kind of \"first chance\" . Seeing the logs there's one write error every\r\nfew minutes. It could be simply a bad hub or a bad cable.\r\n\r\n\r\n\r\n\r\nBest regards,\r\nNicolas Guilbert\r\n\r\n\r\n\r\n",
+      "user_id": 158001249055,
+      "created_at": "2025-08-10T05:14:55Z",
+      "updated_at": "2025-08-10T05:14:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006626162,
+      "body_text": "Hi Nicolas Guilbert,  I have contacted the customer to confirm whether he was running both programs at the same time, which may have caused the conflict. Since he hasn’t contacted us for 10 days, I assume the issue might already be resolved. Thank you for your reply. After adding support for SIMSONN pedals, has there been a noticeable increase in SIMHUB users and downloads? ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T05:40:46Z",
+      "updated_at": "2025-08-10T05:40:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006787499,
+      "body_text": "Hi !\r\n\r\nHappy to hear it’s not a widespread issue. I haven’t received any similar\r\nreports on my end, so I can confirm it seems to be a very rare case.\r\n\r\nRegarding downloads and user growth, we’re currently in a quiet period due\r\nto summer, so it’s hard to see a noticeable impact. That said, SimHub now\r\nsupports more than 100 peripherals, each one contributes, but none alone\r\ncan drive a significant change.\r\nBest regards,\r\nNicolas Guilbert\r\n\r\n\r\n\r\nOn Sun, Aug 10, 2025 at 7:40 AM support@simsonn.com ",
+      "user_id": 158001249055,
+      "created_at": "2025-08-13T04:49:16Z",
+      "updated_at": "2025-08-13T04:49:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

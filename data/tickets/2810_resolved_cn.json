@@ -1,0 +1,35 @@
+{
+  "id": 2810,
+  "subject": "Simson Plus X 油门踏板异响问题",
+  "description_text": "您好，\n\n我的油门踏板在踩下时有液体般的声音，能帮我看看吗？\n踏板工作正常，但这个声音让我很困惑，听起来像里面有液体。踏板买了一个月。请查看随附视频。\n\n通过速卖通购买。已查看照片。\n\n谢谢",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-08-18T01:31:20Z",
+  "updated_at": "2025-08-18T02:16:14Z",
+  "requester_id": 158003275675,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007050839,
+      "body_text": "你好，Willbert Oanes，您听到的液体声音是完全正常的，因为这是我们升级后的纯液压阻尼器，而不是廉价的压缩气体弹簧。这个声音是完全正常的，无需担心。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-18T02:11:18Z",
+      "updated_at": "2025-08-18T02:11:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007050858,
+      "body_text": "您好，\n\n感谢您的快速回复！我也咨询了模拟赛车群里的一些人，他们也说这是正常的。再次感谢。\n\n此致，\n\nWillbert\n\n2025年8月18日星期一上午10:11，来自 service@simsonn.com",
+      "user_id": 158003275675,
+      "created_at": "2025-08-18T02:13:36Z",
+      "updated_at": "2025-08-18T02:13:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

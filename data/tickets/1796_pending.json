@@ -1,0 +1,64 @@
+{
+  "id": 1796,
+  "subject": "Faulty Throttle Pedal (order no. SSN1776)",
+  "description_text": "Good afternoon,\r\n\r\nI am reaching out regarding my throttle simsonn pro x ultra pedal which\r\nseems to be faulty, it is recognized by the Simsonn software (which has\r\nbeen updated) but does not detect any pedal input. I checked to see if it\r\nwas an EMI issue, it is not. I also disconnected everything and reconnected\r\nit, still doesn’t work. Finally, I swapped the connection of the throttle\r\nand clutch to the box to see if the box was the issue, but when I connect\r\nmy throttle to the clutch, the clutch’s input is not recognized. Likewise,\r\nwith the clutch connected tit the throttle position, the clutch is\r\nrecognized as a throttle. I want to see what we can do to resolve this, can\r\nI be sent a replacement throttle pedal? These pedals are less than a month\r\nold, and they have not gotten much use.\r\n\r\nThank you,\r\nLuis D Prieto\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-07-22T18:25:53Z",
+  "updated_at": "2025-07-23T07:00:10Z",
+  "requester_id": 158001833184,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005355324,
+      "body_text": "Hi Luis Prieto,  Please check if the throttle pressure plate has broken due to the travel being adjusted too short. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-23T03:17:38Z",
+      "updated_at": "2025-07-23T03:17:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005355332,
+      "body_text": "Hello,\r\n\r\nI just checked, and it is exactly that.\r\n\r\nIs there any way that I could be shipped a replacement plate? Is it\r\nreplaceable?\r\n\r\nThank you for the quick and amazing customer service.\r\n\r\n",
+      "user_id": 158001833184,
+      "created_at": "2025-07-23T03:20:11Z",
+      "updated_at": "2025-07-23T03:20:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005355356,
+      "body_text": "Hi Luis Prieto,  Replacing this part requires some hands-on skills. Would you be comfortable doing it yourself? We can provide a tutorial video, the improved replacement part, and the necessary wrench tools. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-23T03:24:52Z",
+      "updated_at": "2025-07-23T03:24:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005355853,
+      "body_text": "Yes, I’m fairly handy. I can replace it myself. I appreciate it!\r\n\r\n",
+      "user_id": 158001833184,
+      "created_at": "2025-07-23T04:55:32Z",
+      "updated_at": "2025-07-23T04:55:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005379129,
+      "body_text": "Hi Luis Prieto,    Okay, we've reissued it for you and wish you all the best!",
+      "user_id": 158001343601,
+      "created_at": "2025-07-23T07:00:10Z",
+      "updated_at": "2025-07-23T07:00:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

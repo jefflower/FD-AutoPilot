@@ -1,0 +1,154 @@
+{
+  "id": 1653,
+  "subject": "Support Request - Amazon #CA56CIDKKVI",
+  "description_text": "Dear Simsonn Support,\r\n\r\nI am writing to request assistance with my Simsonn Plus X pedals and Haptic\r\nReactor. They are no longer detected by either the Simsonn Manager\r\napplication or my computer, despite being properly connected. I have also\r\nrestarted my computer, but the issue persists.\r\n\r\nCould you please provide guidance or troubleshooting steps to resolve this\r\nissue?\r\n\r\nI bought them on Amazon, here is my invoice attached\r\n\r\nThank you for your time and help.\r\n\r\nSincerely,\r\n\r\n*Pierre-Étienne Laporte*\r\n*450-775-9246 | laportepe@gmail.com <laportepe@gmail.com>*\r\nhttps://www.linkedin.com/in/pierre-etienne-laporte/\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-07-17T23:32:18Z",
+  "updated_at": "2025-12-29T08:08:02Z",
+  "requester_id": 158002199032,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005143699,
+      "body_text": "Hi Pierre-Étienne Laporte,    First, please go to Settings → Update in the software and upgrade to version 2.0.9.  Then follow the steps below to manually update the PlusX firmware:      1.    Press and hold the upgrade button on the PlusX control box;      2.    Plug in the USB while holding the button — the device will enter recovery mode. Then release the button;      3.    Open SIMSONN Manager, go to Settings → Update → Manual Firmware Update,  and select the plusx.sfu file I sent you to complete the update.      Additionally, please download VKB Joy Tester and check whether our device is recognized.  https://www.vkbcontrollers.com/pages/downloads",
+      "user_id": 158000445778,
+      "created_at": "2025-07-17T23:52:01Z",
+      "updated_at": "2025-07-17T23:52:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005143711,
+      "body_text": "Hi Pierre-Étienne Laporte,      Make sure to connect the USB cable directly to a USB 3.0 port on the back of your PC, not through a USB hub, as hubs can cause unstable power or data transmission.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-17T23:53:46Z",
+      "updated_at": "2025-07-17T23:53:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005143839,
+      "body_text": "Ok I disconnected also some other USB devices. Seems like there was a\r\nconflict. Now it's ok but I have another issue.\r\n\r\nOn le Mans ultimate the motor of the haptics are not working properly. They\r\nwork but when I drive they don't send signal at the right moment. They\r\ndon't activate when the ABS is triggering in the game. They seems delayed.\r\n\r\nCan you help with that as well?\r\n\r\n*Pierre-Étienne Laporte*\r\n*450-775-9246 | laportepe@gmail.com <laportepe@gmail.com>*\r\nhttps://www.linkedin.com/in/pierre-etienne-laporte/\r\n\r\n",
+      "user_id": 158002199032,
+      "created_at": "2025-07-18T00:11:10Z",
+      "updated_at": "2025-07-18T00:11:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005143878,
+      "body_text": "Hi Pierre-Étienne Laporte,     It’s generally not recommended to use a USB hub, as it may cause unstable connections. Please connect the device directly to a USB 3.0 port on the back of your PC, and keep the USB cable away from power cables to reduce interference.     Please update the software to version 2.0.9 in the settings, and update the PlusX firmware to version 2.0.2. Then test LMU again.  If the issue with LMU still persists, please let me know, and I will arrange for it to be fixed.     Additionally, SIMHUB version 9.9.3 also supports our pedals, so you can use that as well for testing.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-18T00:16:26Z",
+      "updated_at": "2025-07-18T00:16:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005143891,
+      "body_text": "Ok, thank you for your help.\r\n\r\nI will try that tomorrow and get back to you. Need to go\r\n\r\nYou are very quick I appreciate a lot\r\n\r\n*Pierre-Étienne Laporte*\r\n*450-775-9246 | laportepe@gmail.com <laportepe@gmail.com>*\r\nhttps://www.linkedin.com/in/pierre-etienne-laporte/\r\n\r\n",
+      "user_id": 158002199032,
+      "created_at": "2025-07-18T00:18:29Z",
+      "updated_at": "2025-07-18T00:18:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005160619,
+      "body_text": "Hello\r\n\r\nJust tried de SImhub app and it works perfectly fine now\r\n\r\nThank you very much for your help\r\n\r\n*Pierre-Étienne Laporte*\r\n*450-775-9246 | laportepe@gmail.com <laportepe@gmail.com>*\r\nhttps://www.linkedin.com/in/pierre-etienne-laporte/\r\n\r\n\r\nLe jeu. 17 juill. 2025, à 20 h 18, Pierre-Étienne Laporte <\r\nlaportepe@gmail.com> a écrit :\r\n\r\n> Ok, thank you for your help.\r\n>\r\n> I will try that tomorrow and get back to you. Need to go\r\n>\r\n> You are very quick I appreciate a lot\r\n>\r\n> *Pierre-Étienne Laporte*\r\n> *450-775-9246 | laportepe@gmail.com <laportepe@gmail.com>*\r\n> https://www.linkedin.com/in/pierre-etienne-laporte/\r\n>\r\n> On Thu, Jul 17, 2025, 20:16 support@simsonn.com ",
+      "user_id": 158002199032,
+      "created_at": "2025-07-19T02:05:24Z",
+      "updated_at": "2025-07-19T02:05:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005182475,
+      "body_text": "",
+      "user_id": 158002199032,
+      "created_at": "2025-07-19T12:33:49Z",
+      "updated_at": "2025-07-19T12:33:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    },
+    {
+      "id": 158014471003,
+      "body_text": "Hello,\r\n\r\nI would like to open another Ticket with you,\r\n\r\nI bought a new cockpit and installed my simpson plus-x on the new cockpit.\r\n\r\nI was having issues with the brake pedal not working properly since my\r\ninput was delayed and not very consistent.\r\n\r\nI unplug everything and tried moving away the control module but it didn't\r\nwork.\r\n\r\nI unplugged the ground cable to plug it back and now my computer\r\nisnt recognizing it.\r\n\r\nI uninstalled simsonn manager and reinstalled it and doesn't work either.\r\nPlease help me solve this cause it was working very well before and I like\r\nthem a lot.\r\n\r\nThank you\r\n\r\n*Pierre-Étienne Laporte*\r\n*450-775-9246 | laportepe@gmail.com <laportepe@gmail.com>*\r\nhttps://www.linkedin.com/in/pierre-etienne-laporte/\r\n\r\n\r\nLe ven. 18 juill. 2025, à 22 h 04, Pierre-Étienne Laporte <\r\nlaportepe@gmail.com> a écrit :\r\n\r\n> Hello\r\n>\r\n> Just tried de SImhub app and it works perfectly fine now\r\n>\r\n> Thank you very much for your help\r\n>\r\n> *Pierre-Étienne Laporte*\r\n> *450-775-9246 | laportepe@gmail.com <laportepe@gmail.com>*\r\n> https://www.linkedin.com/in/pierre-etienne-laporte/\r\n>\r\n>\r\n> Le jeu. 17 juill. 2025, à 20 h 18, Pierre-Étienne Laporte <\r\n> laportepe@gmail.com> a écrit :\r\n>\r\n>> Ok, thank you for your help.\r\n>>\r\n>> I will try that tomorrow and get back to you. Need to go\r\n>>\r\n>> You are very quick I appreciate a lot\r\n>>\r\n>> *Pierre-Étienne Laporte*\r\n>> *450-775-9246 | laportepe@gmail.com <laportepe@gmail.com>*\r\n>> https://www.linkedin.com/in/pierre-etienne-laporte/\r\n>>\r\n>> On Thu, Jul 17, 2025, 20:16 support@simsonn.com ",
+      "user_id": 158002199032,
+      "created_at": "2025-12-14T01:37:46Z",
+      "updated_at": "2025-12-14T01:37:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014472424,
+      "body_text": "Hi Pierre-Étienne Laporte,  If this happens, it indicates that the computer’s grounding is not reliable, possibly because a three-prong plug was not used with a three-prong wall outlet. You can refer to the post below: connect the computer case to the stand, and connect the control box to the metal screws on the pedals. This should resolve the disconnection issue.  https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-12-14T03:50:51Z",
+      "updated_at": "2025-12-14T03:50:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014953861,
+      "body_text": "Hello,\r\n\r\nJust replying to you cause my pedals are causing me a lot of problems and\r\nI'm very unsatisfied.\r\n\r\nI'm out of solutions and I would like to get new pedals kit or I'm gonna\r\nbuy other brand and leave you bad reviews. Never experience such pain to\r\nget something to work and my friends who has 7+ years in the sim racing\r\nindustry cant help me troubleshoot.\r\n\r\nHelp me\r\n\r\n*Pierre-Étienne Laporte*\r\n*450-775-9246 | laportepe@gmail.com <laportepe@gmail.com>*\r\nhttps://www.linkedin.com/in/pierre-etienne-laporte/\r\n\r\n\r\nLe sam. 13 déc. 2025, à 22 h 51, support@simsonn.com ",
+      "user_id": 158002199032,
+      "created_at": "2025-12-23T04:27:14Z",
+      "updated_at": "2025-12-23T04:27:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015166779,
+      "body_text": "Hi Pierre-Étienne Laporte,   Please provide your order number, contact name, phone number, and shipping address, and we will send you a replacement control box. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T16:15:37Z",
+      "updated_at": "2025-12-28T16:15:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015166857,
+      "body_text": "Hi Pierre-Étienne Laporte,  If you notice a delayed signal, it is likely caused by adjustments to the mechanical structure. You need to press the offset button to zero the initial pedal signal to 0%, which corresponds to the white progress bar. This ensures the pedal outputs a signal immediately when pressed, rather than only after being pressed partway. This is not a product defect. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T16:17:46Z",
+      "updated_at": "2025-12-28T16:17:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015176233,
+      "body_text": "Hello\r\n\r\nPlease find in attachment the invoice from amazon\r\n\r\nMy phone # in signature.\r\n\r\nMy pedals aren't recognized anymore by my pc and I don't use a USB hub if\r\nyou were wondering. Tried pressing reset button with plugging USB at the\r\nsame time and it doesn't work anymore. I'm really out of solutions and\r\nthink this is a control box issue.\r\n\r\nThank you for providing a new one at the same address of the invoice\r\nattached.\r\n\r\n\r\nPierre-Étienne Laporte\r\n67 Rue Ashby, Marieville, QC J3M 1P2, Canada\r\n450-775-9246\r\nOrder # 701-2178439-1140213\r\n\r\n*Pierre-Étienne Laporte*\r\n*450-775-9246 | laportepe@gmail.com <laportepe@gmail.com>*\r\nhttps://www.linkedin.com/in/pierre-etienne-laporte/\r\n\r\n",
+      "user_id": 158002199032,
+      "created_at": "2025-12-29T03:46:47Z",
+      "updated_at": "2025-12-29T03:46:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015182817,
+      "body_text": "Hi Pierre-Étienne Laporte,  OK, WE WILL SHIP IT ASAP",
+      "user_id": 158007774607,
+      "created_at": "2025-12-29T08:08:02Z",
+      "updated_at": "2025-12-29T08:08:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

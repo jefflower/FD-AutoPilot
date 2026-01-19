@@ -1,0 +1,55 @@
+{
+  "id": 8224,
+  "subject": "设备突然未被检测到。",
+  "description_text": "您好，我于2025年6月26日从亚马逊购买了SQ Pro序列器和HB Pro。直到今天早上，它一直运行完美，但现在它无法被检测到，并且LED灯显示为白色，而不是我之前为SQ Pro和HB Pro设置的静态红色。Simsonn Manager 可以识别我的 VAM Pro 触觉反应器和 HB Pro，但 SQ Pro 却无法被检测到，这个问题从新设备开始就存在。我已经通过与 HB Pro 交换 USB 线缆进行了测试，问题依然存在，排除了 USB 线缆是原因的可能性，这个问题出在 SQ Pro 设备本身。现在这还不到六个月，你如何能协助我解决这个问题？我已附上亚马逊的PDF格式发票，其中详细列出了我的购买信息，以及SIMSONN Manager的屏幕截图。感谢您的协助 [cid:fd5ab9ad-1db0-4d65-9634-1bc0c230bc5b]",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-14T18:49:06Z",
+  "updated_at": "2025-12-19T12:09:41Z",
+  "requester_id": 158007807790,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014588426,
+      "body_text": "您好，我无法查看我的工单状态，我想知道当前状态。我仍在等待关于我的SQ Pro故障的解决方案的回复。此致，特德·尼科尔",
+      "user_id": 158007807790,
+      "created_at": "2025-12-16T17:57:49Z",
+      "updated_at": "2025-12-16T17:57:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014620633,
+      "body_text": "您好，特德·尼科尔，在手刹的前下方位置（箭头所示），有一个恢复按钮。请用牙签轻拨到另一侧，然后重新连接USB线。设备将进入恢复模式。接下来，在软件中进入设置 → 更新 → 手动固件更新 → seq-firmware → gear-sqpro.sfu，完成更新，然后运行测试。升级完成后，请确保将恢复按钮拨回原始位置。您也可以使用 VKB 工具检查设备连接状态。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T09:46:29Z",
+      "updated_at": "2025-12-17T09:46:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014630422,
+      "body_text": "早上好，非常感谢您的帮助。我很高兴地告诉您，我的SQ Pro已恢复并完美运行。非常感谢您的出色支持，我是一位非常高兴和满意的客户。此致，特德·尼科尔",
+      "user_id": 158007807790,
+      "created_at": "2025-12-17T14:07:40Z",
+      "updated_at": "2025-12-17T14:07:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014756150,
+      "body_text": "非常快速地解决了重新安装固件的问题，在几分钟内恢复了我的 SQ Pro。",
+      "user_id": 158007807790,
+      "created_at": "2025-12-19T12:09:40Z",
+      "updated_at": "2025-12-19T12:09:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

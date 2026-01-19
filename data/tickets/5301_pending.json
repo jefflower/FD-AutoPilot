@@ -1,0 +1,64 @@
+{
+  "id": 5301,
+  "subject": "Van Pro haptics and simhub",
+  "description_text": "Hello\r\n\r\nMy van pro haptics keep disconnecting from sinhub.  I have to restart my\r\ncomputer to get them to reconnect.   Once they disconnect that haptics stay\r\non (vibrate) in whatever position they were in until the computer is\r\nrestarted and connect back to sim hub.  Even when the computer is off they\r\nwill still vibrate.   I'm running simhub 9.10.3 and simsonn manager 2.1.0.\r\nI have had the haptics for a few months and it just started doing this.\r\n\r\nThanks\r\nBrian Pinnow\r\n769-8354\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-26T21:31:29Z",
+  "updated_at": "2025-11-09T04:48:23Z",
+  "requester_id": 158001626072,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011127049,
+      "body_text": "Hi Brian Pinnow,    Hello, please connect the pedal’s USB cable directly to the USB 3.0 (blue) port on the back of your computer. Do not use a USB hub, and then test it again.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-26T23:41:56Z",
+      "updated_at": "2025-10-26T23:41:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011635096,
+      "body_text": "I have them in a USB 3 and they still do it.\r\n\r\nBrian Pinnow\r\n608 769 8354\r\n\r\n\r\nOn Sun, Oct 26, 2025 at 6:42 PM service@simsonn.com ",
+      "user_id": 158001626072,
+      "created_at": "2025-11-03T01:21:12Z",
+      "updated_at": "2025-11-03T01:21:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011769567,
+      "body_text": "Hi Brian Pinnow,   May I ask if you are using the PlusX or ProX Ultra controller? If your computer cannot safely connect to the household ground via a three-prong plug, you can prepare an additional wire to connect one end of the controller casing to the computer case and the other end to the pedal’s metal screw. Please note that paint may affect the connection. This should resolve the issue.      https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-11-05T05:54:50Z",
+      "updated_at": "2025-11-05T05:54:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011800942,
+      "body_text": "It is a pro x ultra.    I’m confused on the grounding.  You are saying to\r\nconnect to 3 points?  Controller, computer, and pedals?  Would I need 2\r\nwires to do this?\r\n\r\n\r\nBrian Pinnow\r\n608 769 8354\r\n\r\n\r\nOn Tue, Nov 4, 2025 at 11:55 PM service@simsonn.com ",
+      "user_id": 158001626072,
+      "created_at": "2025-11-05T11:38:32Z",
+      "updated_at": "2025-11-05T11:38:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011985231,
+      "body_text": "Hi Brian Pinnow,  Yes, it requires two wires. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-09T04:48:22Z",
+      "updated_at": "2025-11-09T04:48:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

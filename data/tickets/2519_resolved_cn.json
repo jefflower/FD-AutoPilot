@@ -1,0 +1,65 @@
+{
+  "id": 2519,
+  "subject": "Simsonn pro x ultra 无法工作",
+  "description_text": "您好，我的新购Simsonn pro x ultra踏板遇到了问题。我安装了Simsonn管理器软件进行校准，之后尝试在《勒芒终极赛》中测试，但设备没有工作，尽管游戏检测到了它。我尝试重新校准，但结果一样。我也在《神力科莎：竞技版》中试过，结果仍然相同。另外补充一点信息，我的方向盘基座是Thrustmaster t598。我是否遗漏了什么？希望您能帮助我。",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-08-10T02:37:43Z",
+  "updated_at": "2025-08-10T05:45:08Z",
+  "requester_id": 158002899069,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006615390,
+      "body_text": "您好，kurt laina，请首先将软件更新到SIMSONN Manager 2.1.0。然后，在“设置 - 更新”部分，点击“手动固件更新”，导航到pedals-firmware文件夹 → pedals文件夹，选择proxultra.sfu文件进行更新。更新完成后，请再次测试。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T02:53:02Z",
+      "updated_at": "2025-08-10T02:53:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006624192,
+      "body_text": "很不幸，它仍然无法工作，我已经按照您的指示操作了，但问题依旧。我现在很沮丧。\n2025年8月10日星期日 下午2:53 service@simsonn.com 发送",
+      "user_id": 158002899069,
+      "created_at": "2025-08-10T04:57:15Z",
+      "updated_at": "2025-08-10T04:57:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006625023,
+      "body_text": "您好，kurt laina，您可以下载Todesk工具（无需注册）。安装后，请提供您的ID和临时密码，我将远程协助您。https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T05:01:08Z",
+      "updated_at": "2025-08-10T05:01:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006625914,
+      "body_text": "ToDesk：设备代码:834 229 716 临时密码:7svmyxg3\n2025年8月10日星期日 下午5:01 service@simsonn.com 发送",
+      "user_id": 158002899069,
+      "created_at": "2025-08-10T05:21:16Z",
+      "updated_at": "2025-08-10T05:21:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006627812,
+      "body_text": "",
+      "user_id": 158002899069,
+      "created_at": "2025-08-10T05:45:08Z",
+      "updated_at": "2025-08-10T05:45:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

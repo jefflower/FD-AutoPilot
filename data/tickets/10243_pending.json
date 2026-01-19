@@ -1,0 +1,94 @@
+{
+  "id": 10243,
+  "subject": "Order never shipped",
+  "description_text": "SSN5134\r\n$138.90\r\nTalen Schaffer\r\nUnited States\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2026-01-07T20:23:39Z",
+  "updated_at": "2026-01-09T02:18:13Z",
+  "requester_id": 158008800393,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015290600,
+      "body_text": "Hi talen schaffer,  Please provide your order number, amount, contact name, and country. I will help you check the order and follow up on the shipping information. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T02:10:01Z",
+      "updated_at": "2025-12-31T02:10:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015290667,
+      "body_text": "SSN5134\r\n$138.90\r\nTalen Schaffer\r\nUnited States\r\n\r\nOn Tue, Dec 30, 2025 at 21:10 support@simsonn.com ",
+      "user_id": 158008800393,
+      "created_at": "2025-12-31T02:13:43Z",
+      "updated_at": "2025-12-31T02:13:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015291693,
+      "body_text": "Hi talen schaffer,  HS Pro has returned to normal production and is expected to start shipping within the next couple of days. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T03:22:22Z",
+      "updated_at": "2025-12-31T03:22:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015681600,
+      "body_text": "Still no update",
+      "user_id": 158008800393,
+      "created_at": "2026-01-04T19:48:20Z",
+      "updated_at": "2026-01-04T19:48:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015681751,
+      "body_text": "still No update\r\n\r\n> 9601:4206036\r\n>\r\n\r\n",
+      "user_id": 158008800393,
+      "created_at": "2026-01-04T19:50:11Z",
+      "updated_at": "2026-01-04T19:50:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016459180,
+      "body_text": "ID 为 9601 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-09T02:15:51Z",
+      "updated_at": "2026-01-09T02:15:51Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016459182,
+      "body_text": "合并来自工单9601  \n      主题: Missing package  \n      描述:  Ordered on the 21st of December and haven’t gotten an update since.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-09T02:15:51Z",
+      "updated_at": "2026-01-09T02:15:51Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016459552,
+      "body_text": "Hi talen schaffer,     I’ve seen your 1-star review. Please download the latest SIMSONN Manager 2.1.3, select 7R mode, and recalibrate all gears. During calibration, please shift through the gears in the following order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → R. Once calibration is completed successfully, the device should work properly and allow normal mode switching.        Please uninstall SIMSONN Manager version 2.1.2 from your computer first, then download and install SIMSONN Manager version 2.1.3 from our official website.  SIMSONN Manager 2.1.3 includes optimizations for the vibration function. Please test again using this version.  https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2026-01-09T02:18:13Z",
+      "updated_at": "2026-01-09T02:18:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

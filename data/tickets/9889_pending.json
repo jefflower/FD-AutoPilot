@@ -1,0 +1,24 @@
+{
+  "id": 9889,
+  "subject": "Order SSN4929",
+  "description_text": "Hey All,\r\nThis other was placed on Dec 16 along with another order (SSN4941) and paid\r\nfor express shipping for both.\r\nSSN4941 - DELIVERED a week ago\r\nSSN4929 - still has not been delivered\r\nI'd like a refund of my express shipping charges as this is unacceptable.\r\nThis is a Christmas gift and it's over a week late.\r\n\r\nWhere is my order?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-03T20:17:03Z",
+  "updated_at": "2026-01-07T09:09:08Z",
+  "requester_id": 158008892496,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016100567,
+      "body_text": "Hi Josh Messer,     The tracking information shows that the package has been delivered and signed for. Below is the tracking history. Due to the peak season, some delays in shipping may occur. Thank you for your understanding.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T09:09:08Z",
+      "updated_at": "2026-01-07T09:09:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

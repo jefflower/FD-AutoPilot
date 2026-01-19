@@ -1,0 +1,54 @@
+{
+  "id": 3938,
+  "subject": "",
+  "description_text": "Hello. I bought a pedal from you. But now it doesn't receive a signal\r\nanymore. It seems like the circuit is broken. Do you sell the circuit\r\nseparately?\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-09-18T11:04:22Z",
+  "updated_at": "2025-09-19T08:42:32Z",
+  "requester_id": 158004634578,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008933191,
+      "body_text": "Hi Thiên Phạm Nguyễn Trung,  Please uninstall the old version from your computer and install the latest SIMSONN Manager 2.1.1 from the provided link. After connecting the device, if you see a message saying “Version too old, not supported” or Simsonn Flasher mode, go to Settings → Update → Manual Firmware Update → pedals-firmware-plus.sfu to update the firmware. Once the update is complete, make sure to recalibrate the pedals, as they will not function properly in games without calibration.      https://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-09-19T01:41:54Z",
+      "updated_at": "2025-09-19T01:41:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008934093,
+      "body_text": "Hello admin. I downloaded the simsonn version and plugged it in but it\r\nstill doesn't work. The pedal says disconnected.\r\n\r\n\r\nVào Th 6, 19 thg 9, 2025 lúc 08:42 service@simsonn.com ",
+      "user_id": 158004634578,
+      "created_at": "2025-09-19T03:35:23Z",
+      "updated_at": "2025-09-19T03:35:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008934122,
+      "body_text": "I tried here also no response to gas pedal and clutch\r\n\r\n\r\nVào Th 6, 19 thg 9, 2025 lúc 10:34 Thiên Phạm Nguyễn Trung <\r\nphamnguyentrungthien2107@gmail.com> đã viết:\r\n\r\n> Hello admin. I downloaded the simsonn version and plugged it in but it\r\n> still doesn't work. The pedal says disconnected.\r\n>\r\n>\r\n> Vào Th 6, 19 thg 9, 2025 lúc 08:42 service@simsonn.com <\r\n> service@simsonn.com> đã viết:\r\n>\r\n>> Hi Thiên Phạm Nguyễn Trung,\r\n>>\r\n>> Please uninstall the old version from your computer and install the\r\n>> latest *SIMSONN Manager 2.1.1* from the provided link.\r\n>> After connecting the device, if you see a message saying *“Version too\r\n>> old, not supported”* or *Simsonn Flasher mode*, go to *Settings → Update\r\n>> → Manual Firmware Update → pedals-firmware-plus.sfu* to update the\r\n>> firmware.\r\n>> Once the update is complete, make sure to *recalibrate the pedals*, as\r\n>> they will not function properly in games without calibration.\r\n>>\r\n>>\r\n>> https://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=drive_link\r\n>>\r\n>> On Thu, 18 Sep at 7:04 AM , Thiên Phạm Nguyễn Trung <\r\n>> phamnguyentrungthien2107@gmail.com> wrote:\r\n>> Hello. I bought a pedal from you. But now it doesn't receive a signal\r\n>> anymore. It seems like the circuit is broken. Do you sell the circuit\r\n>> separately?\r\n>>\r\n>> 3938:4206036\r\n>>\r\n>\r\n\r\n",
+      "user_id": 158004634578,
+      "created_at": "2025-09-19T03:38:04Z",
+      "updated_at": "2025-09-19T03:38:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008936769,
+      "body_text": "Hi Thiên Phạm Nguyễn Trung,  The control box of your pedals is version 1.7.0, which does not support upgrading to SIMSONN Manager. You can only use the SimConfigPedals v3.5 software for configuration and operation.          https://www.simsonn.com/pages/download  ​   You can also download FreeJoy 1.7.0 and use the recovery file to restore the pedals.   ​   https://drive.google.com/file/d/1hnHNudj0VhE6xr7ypu-KeEDuVrlVHVg9/view?usp=drive_link  ​   ​   If you are not comfortable performing the operation yourself, you can install the ToDesk software. Registration is not required — if it prompts you to register, simply click the close button in the upper-right corner to skip.  Once installed, please provide us with your ID and temporary password, and let us know a convenient time in your local city. We will then remotely assist you with the inspection and recovery.   ​   https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-09-19T08:42:31Z",
+      "updated_at": "2025-09-19T08:42:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

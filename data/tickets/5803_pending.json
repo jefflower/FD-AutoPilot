@@ -1,0 +1,24 @@
+{
+  "id": 5803,
+  "subject": "Shipping inquiry",
+  "description_text": "Hello Simsonn,\r\n\r\nI am living in Bulgaria and I want to make an order from your website for\r\nthe Plus X pedals set.\r\n\r\nMy question is: Will the pedals be sent from your European warehouse and\r\nthus prevent any import taxes?\r\n\r\nKind regards,\r\nTihomir Yakovov\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-08T00:53:45Z",
+  "updated_at": "2025-11-09T03:51:08Z",
+  "requester_id": 158006803581,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011984591,
+      "body_text": "Hi Tihomir Yakovov,  Yes, for orders within the EU, the PlusX may be shipped from Germany. You can also add a note to your order requesting shipment from Germany. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-09T03:51:08Z",
+      "updated_at": "2025-11-09T03:51:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

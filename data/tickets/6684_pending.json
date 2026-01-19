@@ -1,0 +1,64 @@
+{
+  "id": 6684,
+  "subject": "info about my order",
+  "description_text": "Good day i recently have purchased a pedal set in your store (last week), i\r\nhave received a confirmation on the web and the following number #1VXWNM8XT\r\n, but have not received any  information about the shipping or the tracking\r\nnumber.\r\n\r\nCould you please provide any additional information?\r\n\r\n-- \r\nUn Saludo\r\nAlejandro Betancort\r\n\r\n<https://www.avast.com/sig-email?utm_medium=email&utm_source=link&utm_campaign=sig-email&utm_content=webmail>\r\nLibre\r\nde virus.www.avast.com\r\n<https://www.avast.com/sig-email?utm_medium=email&utm_source=link&utm_campaign=sig-email&utm_content=webmail>\r\n<#DAB4FAD8-2DD7-40BB-A1B8-4E2AA1F9FDF2>\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-11-24T22:10:30Z",
+  "updated_at": "2025-12-17T11:27:16Z",
+  "requester_id": 158007307916,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012856442,
+      "body_text": "Hi Alejandro Betancort,    We apologize for the inconvenience. Our German warehouse is currently out of stock, with restocking expected by the 27th. At that time, we will ship your order via DHL and refund the additional shipping charges.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-25T02:08:22Z",
+      "updated_at": "2025-11-25T02:08:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013265768,
+      "body_text": "Good day, Any updated news related to my order?\r\n\r\nBest regards,\r\n\r\nAlejandro Betancort\r\n\r\nEl mar, 25 nov 2025 a las 2:08, support@simsonn.com (",
+      "user_id": 158007307916,
+      "created_at": "2025-12-02T12:51:05Z",
+      "updated_at": "2025-12-02T12:51:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013369286,
+      "body_text": "Hi Alejandro Betancort,    We apologise for the inconvenience caused. Our German warehouse is unable to dispatch to your postcode. We shall arrange for the goods to be re-sent via an alternative channel, though there is a possibility customs duties may be payable.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-04T06:07:38Z",
+      "updated_at": "2025-12-04T06:07:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014504367,
+      "body_text": "Good day,\r\n\r\nDo you have any news about my order? when it will be dispatched?  It’s been\r\nalmost a month and I still haven’t received any updates about the shipment.\r\n\r\nEl jue, 4 dic 2025 a las 6:07, support@simsonn.com (",
+      "user_id": 158007307916,
+      "created_at": "2025-12-15T10:15:02Z",
+      "updated_at": "2025-12-15T10:15:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014623555,
+      "body_text": "Hi Alejandro Betancort,    We apologize for the delayed response. Your order has been shipped via UPS and is expected to arrive on the 23rd. Please note that customs duties may apply.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-17T11:27:15Z",
+      "updated_at": "2025-12-17T11:27:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

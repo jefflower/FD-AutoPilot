@@ -1,0 +1,24 @@
+{
+  "id": 7772,
+  "subject": "Commission Payment Delay",
+  "description_text": "Hello!\r\n\r\nI am an ambassador in your program and I have one completed order made\r\nalmost 2 months ago.\r\nAccording to your rules, commissions are calculated monthly, but I still\r\nhave not received any payment.\r\n\r\nI have read your policy carefully, and I belong to the V3 level based on my\r\nfollower count (97,000).\r\nHowever, the system shows a 6% commission, which does not match the V3 rate.\r\n\r\nPlease check:\r\n1. Why the payment for my order has still not been processed after almost 2\r\nmonths.\r\n2. Whether my ambassador level is set correctly.\r\n3. When I can expect my commission payout.\r\n*Best regards,*\r\n* Alex*\r\n? *YouTube Creator – Nixon Game World*\r\n\r\n? YouTube: https://www.youtube.com/@nixon_game\r\n? Instagram: https://www.instagram.com/nixon_game\r\n? TikTok: https://www.tiktok.com/@nixongameworld\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-09T09:24:12Z",
+  "updated_at": "2025-12-09T09:32:57Z",
+  "requester_id": 158005406976,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014175704,
+      "body_text": "Hi Nixon,    Okay, we've adjusted your commission rate.  Additionally, please note that the monthly commission payment threshold is $60 (if this month's threshold is not met, the amount will be carried over to the next month and combined with subsequent commissions for payment).",
+      "user_id": 158001343601,
+      "created_at": "2025-12-09T09:32:50Z",
+      "updated_at": "2025-12-09T09:32:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

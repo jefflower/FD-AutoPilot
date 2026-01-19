@@ -1,0 +1,95 @@
+{
+  "id": 9314,
+  "subject": "return order number: 280324578501029155",
+  "description_text": "Hi, I spoke to an agent and was told to email you. I would like to return the Simson shifter. It had a lot of issues, missing shifts in gear 5 and 6. I reached out within a month of receiving it and bought it through Alibaba. Here is a video.\nPlease let me know how to conduct the return.\nThank you,\nHassan",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-27T18:23:02Z",
+  "updated_at": "2026-01-09T08:00:40Z",
+  "requester_id": 158008794835,
+  "responder_id": 158007774664,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015188774,
+      "body_text": "Hi Hassan Majid, Please provide your order number so we can check for you. If it's a return and refund, you can directly apply for after-sales service for the order.",
+      "user_id": 158007774664,
+      "created_at": "2025-12-29T09:55:12Z",
+      "updated_at": "2025-12-29T09:55:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015193916,
+      "body_text": "Hi, this is my order number 280324578501029155\nThanks\nOn Mon, Dec 29, 2025, 4:55 AM support@simsonn.com",
+      "user_id": 158008794835,
+      "created_at": "2025-12-29T12:04:36Z",
+      "updated_at": "2025-12-29T12:04:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015241955,
+      "body_text": "Hi Hassan Majid, We're sorry, we couldn't find your order number. Please provide a screenshot of your order page.",
+      "user_id": 158007774664,
+      "created_at": "2025-12-30T08:22:20Z",
+      "updated_at": "2025-12-30T08:22:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015250492,
+      "body_text": "On Tue, Dec 30, 2025, 3:22 AM support@simsonn.com",
+      "user_id": 158008794835,
+      "created_at": "2025-12-30T11:58:46Z",
+      "updated_at": "2025-12-30T11:58:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015833024,
+      "body_text": "Hi\nI haven't received a follow-up. I sent screenshots.\nOn Tue, Dec 30, 2025, 3:22 AM support@simsonn.com",
+      "user_id": 158008794835,
+      "created_at": "2026-01-06T02:23:51Z",
+      "updated_at": "2026-01-06T02:23:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016158389,
+      "body_text": "Hi Hassan Majid, Could you please check whether the bottom mounting screws are too long, causing them to block the movement of the shifter?",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T15:34:53Z",
+      "updated_at": "2026-01-07T15:34:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016248914,
+      "body_text": "Yes, I've checked. I'd like to return this, please. Let me know how to proceed.\nThank you\nOn Wed, Jan 7, 2026, 10:35 AM support@simsonn.com",
+      "user_id": 158008794835,
+      "created_at": "2026-01-08T02:00:07Z",
+      "updated_at": "2026-01-08T02:00:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016499827,
+      "body_text": "Hi Hassan Majid, A colleague will contact you.",
+      "user_id": 158007774664,
+      "created_at": "2026-01-09T08:00:30Z",
+      "updated_at": "2026-01-09T08:00:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

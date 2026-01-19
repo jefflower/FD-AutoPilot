@@ -1,0 +1,24 @@
+{
+  "id": 9970,
+  "subject": "Delivery attempt failed",
+  "description_text": "Dear simsonn team,\r\n\r\nOrder number:SSN3826\r\nTracking Number: ALS01273455339\r\nMy package is stuck in germany and i got an undelivered message on the\r\ntracking number, please fix this as soon as possible.i have also attached a\r\npicture\r\n\r\n\r\n\r\n\r\nTibos\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-05T07:09:06Z",
+  "updated_at": "2026-01-05T10:36:22Z",
+  "requester_id": 158008930163,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015719045,
+      "body_text": "Hi Cooldude Dude, ​  This is your DPD tracking number. Please contact DPD to arrange pickup: 84150004825045.   We apologize for any inconvenience caused",
+      "user_id": 158001343601,
+      "created_at": "2026-01-05T10:36:22Z",
+      "updated_at": "2026-01-05T10:36:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

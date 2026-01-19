@@ -1,0 +1,74 @@
+{
+  "id": 476,
+  "subject": "order unfulfilled",
+  "description_text": "I am just wonder how long it takes form my order date for it to be shiped out\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-06-16T01:27:40Z",
+  "updated_at": "2025-06-17T02:09:35Z",
+  "requester_id": 158001568581,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003225255,
+      "body_text": "Hi，MrBot 222，     Could you please provide your order number? I’ll help you check the details. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-16T02:25:04Z",
+      "updated_at": "2025-06-16T02:25:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003225603,
+      "body_text": "The order number is 1674\r\n\r\nOn Sun, Jun 15, 2025 at 9:25 PM support@simsonn.com ",
+      "user_id": 158001568581,
+      "created_at": "2025-06-16T02:56:04Z",
+      "updated_at": "2025-06-16T02:56:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003225666,
+      "body_text": "Hi MrBot 222,  Hello, my sincere apologies. I see that your order was placed quite a while ago, on June 6th. I’ll immediately check with our operations team to see if the delay was caused by stock not yet arriving at our US warehouse. I’ll get back to you with an update this afternoon. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-16T03:02:04Z",
+      "updated_at": "2025-06-16T03:02:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003226039,
+      "body_text": "Ok, thank you.\r\n\r\nOn Sun, Jun 15, 2025 at 10:02 PM support@simsonn.com ",
+      "user_id": 158001568581,
+      "created_at": "2025-06-16T03:33:01Z",
+      "updated_at": "2025-06-16T03:33:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003259490,
+      "body_text": "Hi MrBot 222,  We have just confirmed that the Pro X Ultra you purchased is currently out of stock at our US warehouse.We expect new stock to arrive soon, so we are in no rush to ship the baseplate from China for you, and we will arrange to ship the baseplate to you as soon as we receive it in our warehouse.Thank you for your understanding and patience. Sorry for the delay caused! The goods will be in stock tomorrow and dispatched on Wednesday and are expected to arrive for you around the 21st.",
+      "user_id": 158001343601,
+      "created_at": "2025-06-16T10:49:53Z",
+      "updated_at": "2025-06-16T10:49:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003289258,
+      "body_text": "No problem, thank you for the update.\r\n\r\nOn Mon, Jun 16, 2025 at 5:50 AM support@simsonn.com ",
+      "user_id": 158001568581,
+      "created_at": "2025-06-16T13:23:42Z",
+      "updated_at": "2025-06-16T13:23:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "id": 1084,
+  "subject": "Pedals",
+  "description_text": "I ordered PLUS X-Silver-P3-H3-Plate from Amazon and it came without the base plate.\r\nSent from my iPhone\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-07-02T00:12:26Z",
+  "updated_at": "2025-07-02T07:05:11Z",
+  "requester_id": 158001871379,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004362718,
+      "body_text": "Hi Connor Lyon,  Could you please provide your order number? The silver base plate is currently out of stock at our overseas warehouse, but I will ask our operations team to handle it for you as soon as possible. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T01:27:51Z",
+      "updated_at": "2025-07-02T01:27:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004363230,
+      "body_text": "111-4053319-9337038\r\n\r\n> ",
+      "user_id": 158001871379,
+      "created_at": "2025-07-02T05:06:36Z",
+      "updated_at": "2025-07-02T05:06:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004363329,
+      "body_text": "Hi Connor Lyon,  Hi, I am sorry for the inconvenience caused. It seems that our warehouse missed it. We will reship the plate to you from our US warehouse ASAP. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T05:59:18Z",
+      "updated_at": "2025-07-02T05:59:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004363383,
+      "body_text": "Thanks. How long will it take?\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158001871379,
+      "created_at": "2025-07-02T06:13:23Z",
+      "updated_at": "2025-07-02T06:13:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004363537,
+      "body_text": "Hi Connor Lyon,  We will send it to you by UPS or FedEx on Friday, and it is estimated to take 5-7 days to ship. This product won't arrive at the US warehouse until Friday",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T07:05:11Z",
+      "updated_at": "2025-07-02T07:05:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

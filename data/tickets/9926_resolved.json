@@ -1,0 +1,34 @@
+{
+  "id": 9926,
+  "subject": "Re: Pro X brake pedal not working",
+  "description_text": "Hi again,\r\n\r\nSorry, I don't think the brake is broken but I am having calibration issues when I changed the elastomers for the white soft ones . I'll let you know if I still have issues.\r\n\r\nRegards\r\nYouseph\r\n________________________________\r\nFrom: Stos El-Marazki <allincoup@hotmail.com>\r\nSent: 03 January 2026 17:11\r\nTo: service@simsonn.com <service@simsonn.com>\r\nSubject: Pro X brake pedal not working\r\n\r\nHi Simonn,\r\n\r\nI recently purchased some Pro X ultra pedals and set them up but the brake pedal is not working. It has lights but nothing happens in simsonn manager when I press the brake. Both Clutch and throttle are working.\r\n\r\nI have tried plugging the brake into the clutch and throttle ports on the control box and still not working.\r\n\r\nI hope you can help me soon. My purchase is detailed below.\r\n\r\n[cid:90ce78f3-142f-41e7-8516-d8e3473819da]\r\n\r\nRegards\r\nYouseph\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-04T10:49:26Z",
+  "updated_at": "2026-01-07T14:40:21Z",
+  "requester_id": 158008896847,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016105345,
+      "body_text": "Hi Stos El-Marazki,    If you have adjusted the brake’s mechanical structure or damping, please click the Offset button in the software and follow the on-screen steps to reset the initial pressure signal (ensure the white bar returns to 0%), then recalibrate the pedal.  If the issue persists, please record a video and share it with us via Google Drive, making sure the link access is set to viewable, so we can further analyze and assist you.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T09:48:16Z",
+      "updated_at": "2026-01-07T09:48:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016134572,
+      "body_text": "Hi Simsonn,\r\n\r\nThank you! The offset button solved my issues.\r\n\r\nMany thanks for your help!\r\n\r\nRegards\r\n\r\n________________________________\r\n",
+      "user_id": 158008896847,
+      "created_at": "2026-01-07T13:00:42Z",
+      "updated_at": "2026-01-07T13:00:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

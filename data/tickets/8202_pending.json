@@ -1,0 +1,44 @@
+{
+  "id": 8202,
+  "subject": "Connectivity issue",
+  "description_text": "Hey, I have your pro plus pedals I purchased in 2024.  After I boot my pc I\r\nneed to unplug the power supply for the pedals and plug it back in every\r\ntime in order for them to work. Once I would do that they're fine for the\r\nremainder of the session.   Now it isnt recognized by my pc at all. The\r\nground wire is connected.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-14T10:30:13Z",
+  "updated_at": "2025-12-18T08:41:20Z",
+  "requester_id": 158007804371,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014563698,
+      "body_text": "Hi Curtis Anderson,  Please follow the steps below:  Press and hold the upgrade button on the PlusX main controller, then reconnect the USB cable.  Open SIMSONN Manager 2.1.2 and check if it has entered recovery mode.  If recovery mode is detected, go to Settings → Update → Manual Update Firmware → pedals → firmware → pedals-plusx.sfu.  After the update is complete, test the device to see if it has been restored successfully.",
+      "user_id": 158007774607,
+      "created_at": "2025-12-16T10:06:18Z",
+      "updated_at": "2025-12-16T10:06:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014612187,
+      "body_text": "I have the old pedal box with no upgrade button,  but I was able to get\r\nthem connected to the software with the plus.sfu file.  The other files\r\ndidnt work.  It says simsonn plus v1.8.0.  However they dont work in any\r\ngames.\r\n\r\nOn Tue, Dec 16, 2025, 4:06 AM service@simsonn.com ",
+      "user_id": 158007804371,
+      "created_at": "2025-12-17T03:58:00Z",
+      "updated_at": "2025-12-17T03:58:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014678754,
+      "body_text": "Hi Curtis Anderson,  A new PLUS X control box may solve your problem. ",
+      "user_id": 158007774607,
+      "created_at": "2025-12-18T08:41:13Z",
+      "updated_at": "2025-12-18T08:41:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": 7602,
+  "subject": "Handbrake Calibration",
+  "description_text": "Hi i bought ono of yuors handbrake Simsonn Racing Simulator Pressure Handbrake – Precision Control for Ultimate Sim Racing – SIMSONN   https://www.simsonn.com/products/simsonn-racing-simulator-pressure-handbrake\n\nThe problem is that is impossible to calibrate,I would like to know if there are any drives to install or if the product is defective and needs to be returned to the seller\n\nThanks.",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-07T08:30:19Z",
+  "updated_at": "2025-12-11T07:46:08Z",
+  "requester_id": 158007684774,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014119889,
+      "body_text": "Hi LicinioAngelini @libero. it,    Please download and open this software, which will show that the handbrake is connected. Click \"Read Config from Device\" to enter the Axis interface to calibrate the pedals. Click \"Start Calibration,\" pull the handbrake a few times with normal force, then click \"Stop Calibration.\" Next, click \"Write Config to Device.\" After this, test whether the progress bar can reach 100%. Once confirmed, you can enter the game and bind the pedals.             https://drive.google.com/file/d/1hnHNudj0VhE6xr7ypu-KeEDuVrlVHVg9/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-12-08T10:52:24Z",
+      "updated_at": "2025-12-08T10:52:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014147719,
+      "body_text": "Perfect thanks",
+      "user_id": 158007684774,
+      "created_at": "2025-12-08T19:33:28Z",
+      "updated_at": "2025-12-08T19:33:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

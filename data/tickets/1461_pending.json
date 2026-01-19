@@ -1,0 +1,44 @@
+{
+  "id": 1461,
+  "subject": "Vam Pro Motor Iracing setup",
+  "description_text": "Hello\r\n\r\nI just rectified my VAM Pro Haptic Motors.  I mounted them and set them up\r\nin the Simsonn software. but i can't work out how i make the ABS function\r\nwork in Iracning. I just don't get feedback.\r\n\r\nhow do i set them up?\r\n\r\nKind Regards\r\n\r\nGian\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-11T19:41:44Z",
+  "updated_at": "2025-07-12T10:57:43Z",
+  "requester_id": 158002086644,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004638647,
+      "body_text": "Hi Gian Guggi,  The iRacing telemetry interface does not natively provide ABS or TC (traction control) flags. However, you can use SIMHUB version 9.9.3, which already supports our pedals and can calculate and infer these telemetry flags through its internal logic. We will also include support for these indicators in our upcoming version 2.0.9 release. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-12T06:44:53Z",
+      "updated_at": "2025-07-12T06:44:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004656630,
+      "body_text": "Hi Thank you.\r\n\r\nI figured that out yesterday. They work great now. I wast just not sure if\r\nyou can do that directly over your own software.\r\n\r\nThx for the help\r\n\r\nOn Sat, 12 Jul 2025 at 08:45, support@simsonn.com ",
+      "user_id": 158002086644,
+      "created_at": "2025-07-12T10:51:11Z",
+      "updated_at": "2025-07-12T10:51:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004656942,
+      "body_text": "Hi Gian Guggi,    Version 2.0.9 is scheduled to be released next Monday or Tuesday. Development is complete, and it’s currently in the testing phase. The new version will include support for the relevant features.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-12T10:57:38Z",
+      "updated_at": "2025-07-12T10:57:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

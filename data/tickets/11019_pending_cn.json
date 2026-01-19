@@ -1,0 +1,55 @@
+{
+  "id": 11019,
+  "subject": "刹车踏板问题",
+  "description_text": "你好\n\n我的刹车踏板出了问题，我担心踏板会失灵。\n\n我看到很多金色的碎片，我认为它们来自附件图片中显示的垫圈。\n\n我觉得这不正常，我一直在定期喷洒触点清洁剂。\n\n请问能帮帮我吗？\n\n\n\n发自我的 iPhone",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-15T22:35:57Z",
+  "updated_at": "2026-01-17T04:37:25Z",
+  "requester_id": 158009132578,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017234722,
+      "body_text": "你好，Sabre Sim 赛车手，这看起来像是止推轴承的黄铜/铜碎屑。你可以拆下轴承并清洁，然后重新安装并再次测试。如果轴承磨损或损坏，请告诉我们——我们会给你寄送一个替换零件。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-16T01:28:40Z",
+      "updated_at": "2026-01-16T01:28:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017261811,
+      "body_text": "抱歉忘记附上图片\n发自我的 iPhone",
+      "user_id": 158009132578,
+      "created_at": "2026-01-16T12:25:40Z",
+      "updated_at": "2026-01-16T12:25:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017261948,
+      "body_text": "你好，请看下面，轴承已损坏，如下图所示\n\n请问能给我一个替换件吗？\n\n我的地址是\nMATTHEW WRIGHT\n4 Quayside\nBrownhills\nWalsall\nWS8 6EU\n\n此致\nMatthew\n\n发自我的 iPhone",
+      "user_id": 158009132578,
+      "created_at": "2026-01-16T12:26:03Z",
+      "updated_at": "2026-01-16T12:26:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017312555,
+      "body_text": "你好，Sabre Sim 赛车手，请提供您的订单号、收件人姓名、电话号码和收货地址，我将为您安排寄送两个止推轴承的替换件。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-17T04:37:25Z",
+      "updated_at": "2026-01-17T04:37:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

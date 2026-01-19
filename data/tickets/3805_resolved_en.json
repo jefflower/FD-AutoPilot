@@ -1,0 +1,95 @@
+{
+  "id": 3805,
+  "subject": "Simsonn manager software problems",
+  "description_text": "Hello. I have Simsonn Plus X pedals and I downloaded the software, but it seems to be missing icons and text. Because of this, it doesn't let me change curves or anything.",
+  "status": 4,
+  "priority": 3,
+  "created_at": "2025-09-14T09:25:05Z",
+  "updated_at": "2025-09-17T09:42:12Z",
+  "requester_id": 158004528099,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008716983,
+      "body_text": "Hi Robin Ratsep, Please confirm that you have downloaded version 2.1.0. You can locate the log folder in the software installation directory, compress it, and send it to us for inspection. Additionally, please provide your country, your computer’s OS version, and language settings. Meanwhile, uninstall the current version and try installing version 2.1.1 using the link I provided.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-15T00:13:35Z",
+      "updated_at": "2025-09-15T00:13:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008813407,
+      "body_text": "Yes, I have 2.1.0. I am in Estonia and have Windows 10. The language is English.",
+      "user_id": 158004528099,
+      "created_at": "2025-09-16T10:47:22Z",
+      "updated_at": "2025-09-16T10:47:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008813431,
+      "body_text": "I tried 2.1.1 but the same problem occurred, and it doesn't recognize pedal inputs, but the pedals work. Also, when I download it, Windows gives me a warning that it's not a commonly downloaded file, but I can press 'download anyway' and 'open anyway'.",
+      "user_id": 158004528099,
+      "created_at": "2025-09-16T10:50:22Z",
+      "updated_at": "2025-09-16T10:50:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008846033,
+      "body_text": "Hi Robin Ratsep, Please compress the installation directory of Simsonn Manager from your C drive and send it to me. Once I review the logs, I will be able to quickly identify and resolve the issue. Alternatively, you can install the ToDesk tool, and I can check it remotely for you — the fix usually takes only a short time. Normally, users in other regions do not encounter this issue. Please install the ToDesk software. No registration is required, and if it prompts you to register, simply close the window.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-17T07:55:28Z",
+      "updated_at": "2025-09-17T07:55:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008846576,
+      "body_text": "It does not let me zip this file, but I downloaded ToDesk.",
+      "user_id": 158004528099,
+      "created_at": "2025-09-17T08:04:21Z",
+      "updated_at": "2025-09-17T08:04:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008847499,
+      "body_text": "SIMSONN Manager.rar",
+      "user_id": 158004528099,
+      "created_at": "2025-09-17T08:06:13Z",
+      "updated_at": "2025-09-17T08:06:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008851185,
+      "body_text": "Hi Robin Ratsep, Our engineer has just reviewed the logs you provided. Please locate the Simsonn Manager 'S' icon on the bottom-left of your desktop, right-click to exit the program, and then launch the new 2.1.1 software. If you are not sure how to do this, you can first uninstall the 2.1.0 version from your computer, then install and open the new 2.1.1 version for testing.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-17T09:13:49Z",
+      "updated_at": "2025-09-17T09:13:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008851409,
+      "body_text": "For now, this seemed to work. Huge thanks for it :)",
+      "user_id": 158004528099,
+      "created_at": "2025-09-17T09:31:09Z",
+      "updated_at": "2025-09-17T09:31:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

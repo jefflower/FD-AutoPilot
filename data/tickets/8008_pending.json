@@ -1,0 +1,54 @@
+{
+  "id": 8008,
+  "subject": "Order delivery",
+  "description_text": "Hello, I have a question about my order, Orders Order #SSN4390 Any idea when it will be shipped? And a second question regarding the haptic mounting, I saw on facebook that you added a new horizontal mount for them, will they be automatically added to my order or I need to order them separately? Thank you. Order orderOrder #SSN4390",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-11T17:47:27Z",
+  "updated_at": "2025-12-24T04:02:44Z",
+  "requester_id": 158007760068,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014381480,
+      "body_text": "Hi Ghitulescu. andrei,    Your order includes this new U-shaped bracket. We have already shipped part of your order, and the remainder will be dispatched next week once it arrives at our German warehouse.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-12T12:04:26Z",
+      "updated_at": "2025-12-12T12:04:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014387546,
+      "body_text": "That's great, thank you very much.\r\n\r\nOn Fri, 12 Dec 2025 at 14:04, service@simsonn.com ",
+      "user_id": 158007760068,
+      "created_at": "2025-12-12T13:26:15Z",
+      "updated_at": "2025-12-12T13:26:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014803735,
+      "body_text": "Hello, any updates on the order? I haven’t received anything yet.\r\nI’m also wondering about order\r\n#SSN4355 which has the pre order of the new shifter, will it be shipped\r\nsoon?\r\nThank you.\r\n\r\nOn Fri, 12 Dec 2025 at 14:04, service@simsonn.com ",
+      "user_id": 158007760068,
+      "created_at": "2025-12-20T08:20:24Z",
+      "updated_at": "2025-12-20T08:20:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015017241,
+      "body_text": "Hi Ghitulescu. andrei,    Yes, the new shifter orders will be dispatched throughout this week.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-24T04:02:44Z",
+      "updated_at": "2025-12-24T04:02:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

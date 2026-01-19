@@ -1,0 +1,55 @@
+{
+  "id": 1091,
+  "subject": "Foto Arttur",
+  "description_text": "artturpauloo @gmail.com",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-07-02T04:01:06Z",
+  "updated_at": "2025-07-02T04:48:02Z",
+  "requester_id": 158001661531,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004363132,
+      "body_text": "您好，Arttur Paulo，看起来版本1.7.0的配置文件被错误修改了。我将向您发送一个恢复用的.cfg文件。请按照以下步骤操作：点击“从文件加载配置”并选择我发给您的.cfg文件。然后点击“写入配置到设备”将设置上传到您的设备。重要提示：在进行任何更改之前，请务必点击“从设备读取配置”。否则，软件可能会用您电脑上的默认配置覆盖您设备中的正确设置。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T04:06:28Z",
+      "updated_at": "2025-07-02T04:06:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004363146,
+      "body_text": "成功了。我该如何校准踏板？\n\nartturpauloo @gmail.com\n\n2025年7月2日星期三，凌晨01:06，support @simsonn.com <support @simsonn.com> 写道：\n\n> 您好，Arttur Paulo，\n>\n> 看起来版本1.7.0的配置文件被错误修改了。我将向您发送一个恢复用的.cfg文件。\n> 请按照以下步骤操作：\n>\n>    1. 点击 *“从文件加载配置”* 并选择我发给您的.cfg文件。\n>    2. 然后点击 *“写入配置到设备”* 将设置上传到您的设备。\n>\n> *重要提示：* 在进行任何更改之前，请务必点击 *“从设备读取配置”*。\n> 否则，软件可能会用您电脑上的默认配置覆盖您设备中的正确设置。",
+      "user_id": 158001661531,
+      "created_at": "2025-07-02T04:17:06Z",
+      "updated_at": "2025-07-02T04:17:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004363157,
+      "body_text": "您好，Arttur Paulo，在Freejoy轴界面中，点击X、Y和Z轴旁边的“校准”按钮。然后按每个踏板三次。之后，点击“停止校准”，然后点击“写入配置到设备”将设置保存到您的设备。您还可以调整“最小值”和“最大值”来设置死区，或者直接在游戏中配置它们。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T04:20:55Z",
+      "updated_at": "2025-07-02T04:20:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004363178,
+      "body_text": "一切都顺利吗？\n非常感谢！！！\n\nartturpauloo @gmail.com\n\n2025年7月2日星期三，凌晨01:21，support @simsonn.com <support @simsonn.com> 写道：\n\n> 您好，Arttur Paulo，\n>\n> 在Freejoy轴界面中，点击X、Y和Z轴旁边的“校准”按钮。\n> 然后按每个踏板三次。\n> 之后，点击“停止校准”，然后点击“写入配置到设备”将设置保存到您的设备。\n> 您还可以调整“最小值”和“最大值”来设置死区，或者直接在游戏中配置它们。",
+      "user_id": 158001661531,
+      "created_at": "2025-07-02T04:31:51Z",
+      "updated_at": "2025-07-02T04:31:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

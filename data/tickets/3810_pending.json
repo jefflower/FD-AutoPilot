@@ -1,0 +1,34 @@
+{
+  "id": 3810,
+  "subject": "Problem with vam motor order SSN2484",
+  "description_text": "Hi, I ordered 3 vam motors and it arrived few days ago. One of the motors started doing loud noises and getting hotter than the others. I think its something wrong with it. Can i have a replacement or something? Thanks in advance\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-14T13:28:26Z",
+  "updated_at": "2025-09-17T10:54:44Z",
+  "requester_id": 158004533952,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008717278,
+      "body_text": "Hi Adrià Zayas,    Please provide your order number. We can assist you in disassembling the noisy motor to identify the cause, and then send you a replacement motor.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-15T00:22:55Z",
+      "updated_at": "2025-09-15T00:22:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008721296,
+      "body_text": "Hi, my order number is SSN2484\r\n\r\n> El 15 sept 2025, a las 2:23, service@simsonn.com escribió:\r\n> \r\n> ﻿\r\n> Hi Adrià Zayas,\r\n> \r\n> Please provide your order number. We can assist you in disassembling the noisy motor to identify the cause, and then send you a replacement motor.\r\n> \r\n> \r\n> ",
+      "user_id": 158004533952,
+      "created_at": "2025-09-15T05:49:03Z",
+      "updated_at": "2025-09-15T05:49:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

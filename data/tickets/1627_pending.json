@@ -1,0 +1,94 @@
+{
+  "id": 1627,
+  "subject": "Problem with my pro plus x and vam pro",
+  "description_text": "Good morning,I have just installed vam pro on my pro plus x pedal board, I\r\nhave configured correctly on simhub and in the Simsonn software, when I\r\nlaunch My game Le Mans Ultimate And as I accelerate, I see that it brakes\r\nat the same time.I connected the pedal board directly to the PC with the\r\nAnti-interference USB key supplied with the pedal board. My steering wheel\r\nbase is a Thrustmaster T818\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-07-17T07:48:59Z",
+  "updated_at": "2025-07-19T07:45:27Z",
+  "requester_id": 158002177359,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005132664,
+      "body_text": "Hi timothée Faucheux,  Anti-interference Solutions: 1. Ensure your PC is properly grounded through a functional household ground line Some wall outlets only have two wires and lack a ground wire. This not only poses a safety risk but also prevents devices like Fanatec from discharging electromagnetic interference (EMI) effectively. 2. Use a wire to connect the metal housing of your wheel stand or base to the metal case of your PC This creates a shielding path that significantly improves the overall EMI resistance. 3. Connect a green shielded wire from the metal casing of the pedal control box to any metal screw on the pedal This ensures a solid electrical connection between the control box and the pedal to reduce signal drift and noise. 4. Use a USB isolator If interference persists, consider using a USB isolator to further block EMI transmission paths. ⚠ Note: Make sure all connection points are on bare metal surfaces. Painted or oxidized areas can result in poor grounding, reducing the effectiveness of the shielding.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-17T08:15:35Z",
+      "updated_at": "2025-07-17T08:15:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005143247,
+      "body_text": "Good morning,I tried to do what you told me in your email, when I turned\r\nthe PC back on the Simsonn application no longer recognized my pedals. In\r\nmy PC control panel it tells me That there's a pilot error with the Simson.\r\nI don't know what to do anymore.\r\n\r\nLe jeu. 17 juil. 2025, 10:15, service@simsonn.com ",
+      "user_id": 158002177359,
+      "created_at": "2025-07-17T22:45:33Z",
+      "updated_at": "2025-07-17T22:45:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005143298,
+      "body_text": "Hi timothée Faucheux,    First, please go to Settings → Update in the software and upgrade to version 2.0.9.  Then follow the steps below to manually update the PlusX firmware:      Press and hold the upgrade button on the PlusX control box;  Plug in the USB while holding the button — the device will enter recovery mode. Then release the button;  Open SIMSONN Manager, go to Settings → Update → Manual Firmware Update, and select the plusx.sfu file I sent you to complete the update.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-17T22:53:11Z",
+      "updated_at": "2025-07-17T22:53:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005155533,
+      "body_text": "Hi,I followed your procedure sent in the previous email. I updated\r\neverything and despite that now I can no longer use the pedals at all in\r\nany car games. I tried unplugging the key and plugging it back in, but\r\nnothing worked. However, as soon as I unplug the VAM Pro, it works, so I\r\nthink I'll give you feedback on these articles because it really does\r\neverything. Crash I have provided you with photos in attachments, first\r\nwith everything connected we see that it does not work and then the vam pro\r\ndisconnected and it works\r\n\r\nLe ven. 18 juil. 2025, 00:53, service@simsonn.com ",
+      "user_id": 158002177359,
+      "created_at": "2025-07-18T21:46:05Z",
+      "updated_at": "2025-07-18T21:46:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005162425,
+      "body_text": "Hi timothée Faucheux,    Is your computer power plug a 3-prong or a 2-prong type? Also, is the green shielding wire from the PlusX controller connected to any metal screw on the pedal? Please note that painted surfaces may affect the grounding effectiveness.  Alternatively, you can install the ToDesk remote tool. No registration is needed—if prompted to register, simply click the “X” button in the top-right corner to skip it. Then provide your ID and temporary password, and I’ll assist you remotely to check the issue.     Additionally, did you purchase a USB isolator? All our control units and motors are thoroughly tested before shipment, and they typically do not get damaged under normal conditions. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-19T07:09:48Z",
+      "updated_at": "2025-07-19T07:09:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005162444,
+      "body_text": "Hello, My computer has a 3-pin plug. I connected the green cable from the\r\ngreen control box to a screw on the bottom bracket that goes on the\r\nunpainted bracket. I installed the insulator that is The pedalboard comes\r\nwith the USB stick with the red dot you see in one of the pictures. I can\r\ntry the software method like you told me.\r\n\r\nLe sam. 19 juil. 2025, 09:09, service@simsonn.com ",
+      "user_id": 158002177359,
+      "created_at": "2025-07-19T07:15:49Z",
+      "updated_at": "2025-07-19T07:15:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005162517,
+      "body_text": "Hi timothée Faucheux,  Please download the ToDesk remote tool from the link below. I’ll assist you remotely to check the issue:      https://dl.todesk.com/windows/ToDesk_Setup.exe ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-19T07:32:45Z",
+      "updated_at": "2025-07-19T07:32:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005162551,
+      "body_text": "Hi timothée Faucheux,    It's Saturday evening here in China, and I'm about to finish work. Let's schedule another time for remote support—please let me know roughly how many hours from now you'll be available, and I’ll see if that time works on my end.  In most cases, if there's no hardware damage, the issue is usually caused by interference from the wheelbase. The solution likely lies in the suggestions we've discussed earlier.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-19T07:45:27Z",
+      "updated_at": "2025-07-19T07:45:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

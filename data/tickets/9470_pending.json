@@ -1,0 +1,64 @@
+{
+  "id": 9470,
+  "subject": "Parts are missing ORDER SSN4647",
+  "description_text": "\r\n\r\n> ﻿Hello, now i am very angry. First it is out of stock and i had to wait after Christmas before they arrived and now you have send half of the order( see picture order.png)\r\n> \r\n> I also orded\r\n> \r\n> 1 × Simsonn VAM Pro Linear Motor - the Pedals Haptic Reactor for Vibration Feedback  VAM Pro Set (2 pac/includes power supply) => missing in the parcel\r\n> 1 X Mounting BracketU-Shaped Mounting Bracket for Brake, U-Shaped Mounting Bracket for Throttle | €6.76 => missing in the parcel\r\n> \r\n> \r\n> \r\n> See picture parcel.jpg\r\n> \r\n> \r\n> So far, everything has gone wrong with this order. I am not thrilled with your service. I hope you will send me the missing parts as quickly as possible and with the highest priority.\r\n> If not i will refund the money from VISA.\r\n> Now it is you turn to solve this Problem\r\n> \r\n> Regards\r\n> \r\n> ZECHES Laurent\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-29T15:40:58Z",
+  "updated_at": "2025-12-31T08:34:27Z",
+  "requester_id": 158007745688,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015299467,
+      "body_text": "Hi Laurent Zeches,    This is another logistics tracking update for you. We did indeed omit the lhaptics shipment. We will resend it to you as soon as possible and provide compensation. We sincerely apologize for the inconvenience.  https://t.17track.net/en#nums=YT2534900709146536",
+      "user_id": 158001343601,
+      "created_at": "2025-12-31T07:24:45Z",
+      "updated_at": "2025-12-31T07:24:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015299510,
+      "body_text": "Hello, ok when will you sned the parcel? And will i get also an tracking number?\r\n\r\nRegards\r\n\r\nZeches Laurent \r\nVon meinem iPhone gesendet\r\n\r\n> Am 31.12.2025 um 08:24 schrieb support@simsonn.com:\r\n> \r\n> ﻿\r\n> Hi Laurent Zeches,\r\n> \r\n> This is another logistics tracking update for you. We did indeed omit the lhaptics shipment. We will resend it to you as soon as possible and provide compensation. We sincerely apologize for the inconvenience.\r\n> https://t.17track.net/en#nums=YT2534900709146536\r\n> ",
+      "user_id": 158007745688,
+      "created_at": "2025-12-31T07:27:48Z",
+      "updated_at": "2025-12-31T07:27:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015299756,
+      "body_text": "Hi Laurent Zeches,    Here is your replacement shipment tracking information. However, it will likely not ship until next Monday, as our main warehouse is also out of stock on the haptics. This item is extremely popular, and we sincerely apologize for the inconvenience. We will prioritize your shipment.  https://t.17track.net/en#nums=SF6047211491035",
+      "user_id": 158001343601,
+      "created_at": "2025-12-31T07:42:38Z",
+      "updated_at": "2025-12-31T07:42:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015299787,
+      "body_text": "Hi ok thanks.\r\nThe two mounting brackets are still included?\r\n\r\nRegards\r\n\r\nZeches Laurent\r\nVon meinem iPhone gesendet\r\n\r\n> Am 31.12.2025 um 08:43 schrieb support@simsonn.com:\r\n> \r\n> ﻿\r\n> Hi Laurent Zeches,\r\n> \r\n> Here is your replacement shipment tracking information. However, it will likely not ship until next Monday, as our main warehouse is also out of stock on the haptics. This item is extremely popular, and we sincerely apologize for the inconvenience. We will prioritize your shipment.\r\n> https://t.17track.net/en#nums=SF6047211491035\r\n> \r\n> ",
+      "user_id": 158007745688,
+      "created_at": "2025-12-31T07:45:47Z",
+      "updated_at": "2025-12-31T07:45:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015302714,
+      "body_text": "Hi Laurent Zeches,    Yes, please don't worry. Happy New Year!",
+      "user_id": 158001343601,
+      "created_at": "2025-12-31T08:34:26Z",
+      "updated_at": "2025-12-31T08:34:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

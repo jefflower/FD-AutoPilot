@@ -1,0 +1,64 @@
+{
+  "id": 9832,
+  "subject": "Order # 114-6983051-3723410",
+  "description_text": "Good afternoon,\r\n\r\nI ordered the SIMSONN PRO X Ultra Sim Racing Pedals that includes the\r\nheightening and heel plates. I made my purchase on Amazon. I received the\r\nordered today and I am missing the both the heightening plate and the heel\r\nplate. Is it possible to have those parts sent to me?\r\n\r\nHere is the tracking number as well, 887419080434\r\n\r\nI have attached pictures to show what I received.\r\n\r\nBest regards,\r\nTiffany Flowers\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-02T20:37:35Z",
+  "updated_at": "2026-01-08T10:02:17Z",
+  "requester_id": 158008879202,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015432077,
+      "body_text": "In total I'm missing 3 parts; base plate, RBG heel plate, and heightening plate",
+      "user_id": 158008879202,
+      "created_at": "2026-01-02T20:47:43Z",
+      "updated_at": "2026-01-02T20:47:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015591861,
+      "body_text": "Hi Tiffany,  The tracking number for the base plate is 1ZJ201H40323093305 ; the shipping carrier is UPS, and you can track it via https://www.ups.com/track.",
+      "user_id": 158007774607,
+      "created_at": "2026-01-04T06:37:51Z",
+      "updated_at": "2026-01-04T06:37:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016045382,
+      "body_text": "I received the base plate, heel plate, and heightening plate, however I did\r\nnot receive the wiring for the heel plate to plug the lights in. Could you\r\nplease send that to me and Ill have the completed order. Thank you.\r\n\r\nOn Sun, Jan 4, 2026, 12:38 AM support@simsonn.com ",
+      "user_id": 158008879202,
+      "created_at": "2026-01-07T03:08:32Z",
+      "updated_at": "2026-01-07T03:08:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016100896,
+      "body_text": "Hi Tiffany,  Could you please check the brake pedal? The brake pedal has two wires, one of which is used to connect to the RGB light strip",
+      "user_id": 158007774607,
+      "created_at": "2026-01-07T09:11:52Z",
+      "updated_at": "2026-01-07T09:11:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016182504,
+      "body_text": "Hello, I found it last night. Everything is all set now. Thank you so much\r\nfor such amazing customer service.\r\n\r\nOn Wed, Jan 7, 2026, 3:12 AM support@simsonn.com ",
+      "user_id": 158008879202,
+      "created_at": "2026-01-07T18:11:30Z",
+      "updated_at": "2026-01-07T18:11:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

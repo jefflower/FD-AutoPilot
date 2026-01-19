@@ -1,0 +1,94 @@
+{
+  "id": 265,
+  "subject": "Missing part",
+  "description_text": "Hello,\r\n\r\nI placed an order for for the following part: Black P3-H3-Plate, and I just\r\nreceived the package without the plate. The package was labeled Pro Plus\r\nP3-H3. Below is an image of the label on the box, and below that is the\r\norder confirmation from Amazon.  A resolution to this is appreciated.\r\n[image: image.png]\r\n\r\n[image: image.png]\r\nThank You,\r\n\r\nBrad Fournier\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-07T17:58:12Z",
+  "updated_at": "2025-06-27T06:00:42Z",
+  "requester_id": 158001327372,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002841392,
+      "body_text": "你好，Bradley Fournier，    感谢您的留言。我们已通知亚马逊运营团队进行调查，他们报告称该底板在美国仓库缺货。替换产品将于两天内寄给您。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-09T04:07:08Z",
+      "updated_at": "2025-06-09T04:07:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002841395,
+      "body_text": "Hi Bradley Fournier,    Thank you for your message. We have informed our Amazon operations team to investigate, and they reported that the baseplate is out of stock at the US warehouse. The replacement will be shipped to you within the next two days.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-09T04:07:34Z",
+      "updated_at": "2025-06-09T04:07:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003291823,
+      "body_text": "Hello, I would like an update if that is possible. I have not received any\r\nreplacement, and I am unsure if that was processed.  Thank you.\r\n\r\nOn Sun, Jun 8, 2025, 11:07 PM service@simsonn.com ",
+      "user_id": 158001327372,
+      "created_at": "2025-06-16T15:22:36Z",
+      "updated_at": "2025-06-16T15:22:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003307454,
+      "body_text": "Hi Bradley Fournier, We checked your package and found that your package may be lost. We are sorry for the inconvenience. We will be glad to reship a new plate to you. Is it OK? We didn't expect this kind of mistake to happen. China is in the graduation season right now, so we recently had a group of interns come to our company, and they are not very familiar with the business. To express our apologies, we are willing to refund you $15 as compensation. Is that okay with you? Once again, I apologize for the inconvenience this mistake has caused you.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-17T06:21:10Z",
+      "updated_at": "2025-06-17T06:21:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003364624,
+      "body_text": "I would just like the plate please, I am happy with your product, but I\r\ncan't use it comfortably without the plate.\r\n\r\nOn Tue, Jun 17, 2025, 1:21 AM service@simsonn.com ",
+      "user_id": 158001327372,
+      "created_at": "2025-06-17T10:41:47Z",
+      "updated_at": "2025-06-17T10:41:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003679606,
+      "body_text": "Hello, can I please have status on the missing plate? It has been weeks that I have been without a part that I purchased. ",
+      "user_id": 158001327372,
+      "created_at": "2025-06-22T02:14:47Z",
+      "updated_at": "2025-06-22T02:14:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158003837349,
+      "body_text": "Hi Bradley Fournier,    We will contact our sales team tomorrow to check if there is a tracking number for the replacement shipment.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-25T14:06:57Z",
+      "updated_at": "2025-06-25T14:06:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004101313,
+      "body_text": "Hi Bradley Fournier,  Hi, I am sorry for the late response. We have shipped the plate from our US warehouse today. The items just arrived at the US warehouse today. Here is your tracking number: 9234690383093300082747, the shipping carrier is USPS",
+      "user_id": 158000445778,
+      "created_at": "2025-06-27T06:00:42Z",
+      "updated_at": "2025-06-27T06:00:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

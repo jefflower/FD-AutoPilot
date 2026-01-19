@@ -1,0 +1,35 @@
+{
+  "id": 3031,
+  "subject": "Simsonn Software",
+  "description_text": "Hi There, Today i turned my computer on after installing the Simsonn software Yesterday, and for some reason the language has changed to chinese and im unable to change it back to english.. I tried reinstalling the software and it is still not in english and am unsure what to do, The software also is in dark mode and is hard to even try and read anything that is on the screen",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-08-23T09:19:47Z",
+  "updated_at": "2025-08-25T03:52:51Z",
+  "requester_id": 158002979868,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007440906,
+      "body_text": "Hi, Ty Saville,     Are you able to enter this interface to make the changes? ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-25T03:08:59Z",
+      "updated_at": "2025-08-25T03:08:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007441035,
+      "body_text": "It ended up fixing itself\n\nOn Mon, 25 Aug 2025, 1:09 pm service @simsonn.com,",
+      "user_id": 158002979868,
+      "created_at": "2025-08-25T03:37:43Z",
+      "updated_at": "2025-08-25T03:37:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

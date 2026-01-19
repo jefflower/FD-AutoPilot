@@ -1,0 +1,184 @@
+{
+  "id": 2875,
+  "subject": "Support for haptics motor",
+  "description_text": "Hi Team,\r\n\r\nI bought a couple of haptics motors, and when I test them they have\r\na different sound, where one is very loud compared to the other, please see\r\nthe attached video.\r\n\r\nThe sound matches if I turn the loud motor upside down.\r\n\r\nAny ideas?\r\n\r\nThank you,\r\nmks\r\nmobile +49 1522 795 4579\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-08-19T14:43:48Z",
+  "updated_at": "2025-08-26T03:23:29Z",
+  "requester_id": 158003047230,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007214839,
+      "body_text": "Hi Michele Salcuni,  Please provide your order number and a photo of the motor installed on the pedals so that we can verify the issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-20T13:51:53Z",
+      "updated_at": "2025-08-20T13:51:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007214966,
+      "body_text": "The Order #SSN2259,\r\n\r\nAbout the picture you're asking for, I sent a video and the noise is there\r\neven without having the haptic mounted, this clarify that the noise is not\r\nrelated to the way how it has been mounted on the pedal.\r\n\r\nPlease let me know if you need anything else from me.\r\n\r\nBest regards,\r\nmks\r\nmobile +49 1522 795 4579\r\n\r\n",
+      "user_id": 158003047230,
+      "created_at": "2025-08-20T13:57:44Z",
+      "updated_at": "2025-08-20T13:57:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007215203,
+      "body_text": "Hi Michele Salcuni,   Does using the 30Hz vibration frequency affect your experience? The inconsistency in sound may be caused by slight differences in washer sizes during assembly, and we are working on improvements. Please mainly check whether the vibration effect meets your expectations. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-20T14:08:25Z",
+      "updated_at": "2025-08-20T14:08:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007215327,
+      "body_text": "I tried many frequencies, and basically I feel the internal motor to hit\r\nthe metal all the time during the use of it.\r\nThis is covering the effect of the other motor that, so far is working fine.\r\n\r\nAnyway in the vertical position the metal hit is always there, it stops if\r\nI put is upsidedown.\r\n\r\nHow can I fix it? Are you going to send me the new washers or I need to\r\nsend the haptic back to you?\r\n\r\nThank you for your help.\r\n\r\nBest regards,\r\nmks\r\nmobile +49 1522 795 4579\r\n\r\n",
+      "user_id": 158003047230,
+      "created_at": "2025-08-20T14:14:00Z",
+      "updated_at": "2025-08-20T14:14:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007215545,
+      "body_text": "Hi Michele Salcuni,  Do you have any M3 hex socket screws available? Please try opening the top cover of the motor—you should see a moving counterweight inside. It is likely that the original M3×10 screws are too long, causing the metallic knocking sound. Replacing them with two M3×8 screws should solve the issue. After opening it, please take a photo and send it to me, and I will point out the exact location for you. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-20T14:22:46Z",
+      "updated_at": "2025-08-20T14:22:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007215725,
+      "body_text": "Hi Michele,\r\n\r\nI can definitely try replacing the screws myself. Would it be possible for\r\nyou to provide a diagram of the haptic motor's internal mechanics?\r\n\r\nI believe it would be faster and easier for me to address the issue by\r\nopening it up and checking for the correct screw directly, rather than\r\nexchanging photos and waiting for further instructions.\r\n\r\nRegards,\r\nmks\r\nmobile +49 1522 795 4579\r\n\r\n",
+      "user_id": 158003047230,
+      "created_at": "2025-08-20T14:30:07Z",
+      "updated_at": "2025-08-20T14:30:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007216043,
+      "body_text": "Hi Michele Salcuni,     You can open the top cover and gently take the motor out without worrying about causing any damage. On the part indicated by the arrow, there is a stainless steel counterweight fixed in place, but the screws are too long, which may cause internal collisions. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-20T14:41:31Z",
+      "updated_at": "2025-08-20T14:41:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007216547,
+      "body_text": "Hi [Recipient Name],\r\n\r\nThank you for the information. I see three arrows pointing to five holes.\r\nCould you please confirm if I need to check whether the screw heads are\r\nflush with the motor surface?\r\n\r\nBest regards,\r\nMichele\r\n\r\nmks\r\nmobile +49 1522 795 4579\r\n\r\n",
+      "user_id": 158003047230,
+      "created_at": "2025-08-20T15:01:32Z",
+      "updated_at": "2025-08-20T15:01:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007216808,
+      "body_text": "Hi Michele Salcuni,   Since it’s nighttime, I don’t have suitable photos at the moment. Please ignore the middle arrow; the issue is with the screws on both sides—their locking direction is hitting another part of the voice coil motor because the screws are too long. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-20T15:04:18Z",
+      "updated_at": "2025-08-20T15:04:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007216974,
+      "body_text": "Hi [Recipient Name],\r\n\r\nThanks for the information. I'll proceed with opening the motor and\r\nchecking the screws as you suggested. I estimate it will take me about 15\r\nminutes to do this.\r\n\r\nI'll let you know what I find.\r\n\r\nBest regards,\r\nmks\r\nmobile +49 1522 795 4579\r\n\r\n",
+      "user_id": 158003047230,
+      "created_at": "2025-08-20T15:06:40Z",
+      "updated_at": "2025-08-20T15:06:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007222301,
+      "body_text": "Hi there,\r\nI see the 2 screw signs on the base of the motor I guess I need to remove\r\nand replace them, right?\r\n\r\nWhat kind of grease do you use?\r\n\r\nRegards,\r\nmks\r\nmobile +49 1522 795 4579\r\n\r\n",
+      "user_id": 158003047230,
+      "created_at": "2025-08-20T15:21:30Z",
+      "updated_at": "2025-08-20T15:21:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007225025,
+      "body_text": "Hi Michele Salcuni,  Great job! Your photos are very clear. The issue is indeed caused by these two screws being too long, which leads to the collision. We are using general-purpose grease. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-20T15:31:27Z",
+      "updated_at": "2025-08-20T15:31:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007244949,
+      "body_text": "Hi there,\r\n\r\nI've made some progress on the motor issue and wanted to provide an update,\r\nalong with attached pictures for reference.\r\n\r\nI trimmed 2mm from the screws and confirmed they were no longer protruding\r\nfrom the thread. I also addressed the damage caused by the longer screws\r\nand reassembled everything. However, the noise persisted.\r\n\r\nUpon further inspection, I discovered a third screw that was also causing\r\ncontact from the other side. After trimming this screw as well and\r\nreassembling the motor, the noise finally stopped.\r\n\r\nI also noticed what appears to be excessive torque used to tighten the top\r\nand bottom of the motor, as there were metal residues that I had to clean\r\nfrom all the screws before reassembly. Additionally, the rings at the\r\nbottom of the motor seem to have different external dimensions, which I'm\r\nnot sure is intentional.\r\n\r\nOverall, I had to troubleshoot, fix, and maintain what is essentially a new\r\nmotor, which wasn't ideal.\r\n\r\nRegards,\r\nMichele\r\n\r\n\r\n\r\nmks\r\nmobile +49 1522 795 4579\r\n\r\n",
+      "user_id": 158003047230,
+      "created_at": "2025-08-20T21:52:35Z",
+      "updated_at": "2025-08-20T21:52:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007246789,
+      "body_text": "Hi Michele Salcuni,    We will provide you with a compensation of 10 USD. Regarding the washer design, there are a total of five pieces: three with a 28mm diameter and 1.0mm wire thickness, and two with a 1.5mm wire thickness. This is why they may appear slightly different.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-20T23:39:12Z",
+      "updated_at": "2025-08-20T23:39:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007336584,
+      "body_text": "Hi there,\r\n\r\nThank you for providing the details about the washers. I appreciate the\r\nquality of the materials in your products; perhaps a bit more control\r\nduring assembly would be beneficial.\r\n\r\nRegarding the issue, I was able to fix the problem and do not require the\r\n$10 voucher you offered, but I appreciate the gesture.\r\n\r\nI truly value your support and your company's commitment to producing good\r\nproducts. I understand the effort involved in your work, and I'm glad we\r\ncould resolve this issue amicably.\r\n\r\nThank you again for your help, and best of luck with your new premium pedal\r\nset!\r\n\r\nTake care,\r\nmks\r\nmobile +49 1522 795 4579\r\n\r\n",
+      "user_id": 158003047230,
+      "created_at": "2025-08-22T08:48:05Z",
+      "updated_at": "2025-08-22T08:48:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007448081,
+      "body_text": "Hi Michele Salcuni,   Thank you for your understanding and support. Since our establishment in 2021, we have been carefully listening to valuable customer feedback, studying the market, and striving to deliver the most professional products at very competitive prices. At the same time, we continue to improve our service and production quality control. We have already informed the factory to replace all VAM Pro screws, and for customers who experienced vibration issues, we have proactively reached out to provide solutions. Once again, we truly appreciate your understanding and support — your feedback is extremely valuable to us, as not every customer has the same level of professional knowledge and insight as you do. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-25T04:28:48Z",
+      "updated_at": "2025-08-25T04:28:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007541068,
+      "body_text": "Hi Michele Salcuni,\r\n\r\nI'm happy to help and wish you all the best. I look forward to your next\r\nproduct launch!\r\n\r\nTake care,\r\nmks\r\nmobile +49 1522 795 4579\r\n\r\n",
+      "user_id": 158003047230,
+      "created_at": "2025-08-25T20:57:18Z",
+      "updated_at": "2025-08-25T20:57:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

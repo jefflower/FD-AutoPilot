@@ -1,0 +1,44 @@
+{
+  "id": 681,
+  "subject": "Pro plus brake",
+  "description_text": "Hello, can I set up somehow the force of the brake in kg not this numbers \r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-21T15:18:20Z",
+  "updated_at": "2025-06-23T04:18:41Z",
+  "requester_id": 158001560913,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003677546,
+      "body_text": "Hi SpiXiQ,    We are still testing the Pro Plus. It will take a bit more time, but support will be released as soon as it's ready.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-21T15:27:47Z",
+      "updated_at": "2025-06-21T15:27:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003678010,
+      "body_text": "So pro plus will have kg set of force?\r\n\r\nOn Sat, Jun 21, 2025 at 17:27 support@simsonn.com ",
+      "user_id": 158001560913,
+      "created_at": "2025-06-21T18:14:24Z",
+      "updated_at": "2025-06-21T18:14:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003683471,
+      "body_text": "你好，SpiXiQ，  我们正在积极测试，一旦一切确认无误，我们将尽快发布支持。敬请期待！ ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-23T04:18:41Z",
+      "updated_at": "2025-06-23T04:18:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

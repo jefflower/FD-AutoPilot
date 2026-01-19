@@ -1,0 +1,24 @@
+{
+  "id": 8558,
+  "subject": "Order SSN4226 Missing Items From Shipment and Incorrect Item Recieved",
+  "description_text": "Hello!\r\n\r\nMy recent shipment is missing some items. \r\nI purchased\r\n1x Black Plus X Pedals with Baseplate\r\n2x VAM PRO Haptics with Power Supply\r\n1x Simsonn Hall Handbrake \r\n\r\nWaybill SF6047110524783 arrived today but only the VAM PRO Haptics were delivered. The Simsonn Hall Handbrake was not included in the shipment. Can you check to see if the handbrake was successfully shipped? I would expect a second tracking number for this item. \r\n\r\nSecondly, the Plus X pedals that were delivered were not the black color that was ordered. The items delivered were silver instead.  I would like to arrange an exchange of this item for the correct color. \r\n\r\nPlease let me know what you find about the missing items.\r\n\r\nThank you, \r\nTyler  :)\r\n",
+  "status": 5,
+  "priority": 4,
+  "created_at": "2025-12-18T05:44:58Z",
+  "updated_at": "2025-12-30T10:59:00Z",
+  "requester_id": 158007671098,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015248221,
+      "body_text": "此工单已关闭并合并到工单 9467 中",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T10:59:00Z",
+      "updated_at": "2025-12-30T10:59:00Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

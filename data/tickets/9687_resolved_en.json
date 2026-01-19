@@ -1,0 +1,35 @@
+{
+  "id": 9687,
+  "subject": "My order seems lost",
+  "description_text": "I ordered a set of pedals on 12/22. Order number #SSN5169. FedEx shows them on the way and was showing up until yesterday that they should have been delivered yesterday, tracking number 887361383064<https://www.fedex.com/fedextrack/?trknbr=887361383064>. Now I get the message:\n\n\"Your package is still on the way and we're actively working to get you a new delivery date.\"\n\nAccording to the tracking it appears they made it as far as the Arcadia CA center and then there is no tracking after that.\n\nCan you please check into this and let me know where they are and when they are expected to be delivered.\n\nThanks.\n\nCordially,\n\nMitch Wildman\nMitchell L Wildman, LLC\n561-632-8786",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-31T17:23:14Z",
+  "updated_at": "2026-01-08T01:36:59Z",
+  "requester_id": 158008833536,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015338554,
+      "body_text": "I am having issue with getting into the portal to see this ticket\n\nCordially,\n\nMitch Wildman\nMitchell L Wildman, LLC\n561-632-8786",
+      "user_id": 158008833536,
+      "created_at": "2025-12-31T20:44:18Z",
+      "updated_at": "2025-12-31T20:44:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015366460,
+      "body_text": "Hi Mitchell Wildman, Please don’t worry. We will check and get back to you. Since it is currently the holiday period, we will respond to you on January 4th.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-01T15:24:01Z",
+      "updated_at": "2026-01-01T15:24:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

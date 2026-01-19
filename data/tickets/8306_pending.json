@@ -1,0 +1,24 @@
+{
+  "id": 8306,
+  "subject": "Order #SSN4599",
+  "description_text": "Hello Simsonn,\r\n\r\nI ordered two products from you six days ago and I just wanted to know if you could tell me when do you think that my order is going to be fully shipped.\r\nThe plus X pedals have been labeled for shipping but they are yet to be shipped and the HS pro shifter is still on standby for shipping.\r\nCan you tell me when you think my orders are going to be shipped and when they should arrive to local transporters in my country, France.\r\nThank you,\r\nKind regards,\r\nJules Pelletier\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-15T14:24:54Z",
+  "updated_at": "2025-12-22T12:27:12Z",
+  "requester_id": 158007817958,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014879504,
+      "body_text": "Hi Jules Pelletier,  Sorry, the pedals have already been shipped, and the HS PRO is expected to ship within a week.",
+      "user_id": 158007774664,
+      "created_at": "2025-12-22T12:26:45Z",
+      "updated_at": "2025-12-22T12:26:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

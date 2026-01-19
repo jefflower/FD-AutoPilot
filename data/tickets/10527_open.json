@@ -1,0 +1,44 @@
+{
+  "id": 10527,
+  "subject": "ORDER #SSN5766",
+  "description_text": "Dear Simsonn,\r\n\r\nAbout a week ago I ordered a plus X pedal set with order #SNN5766. However, I never received the corresponding shipment information.\r\n\r\nCould you place confirm that the order is on it’s way?\r\n\r\nBest regards,\r\n\r\nMirko\r\n",
+  "status": 2,
+  "priority": 3,
+  "created_at": "2026-01-10T19:01:40Z",
+  "updated_at": "2026-01-16T19:44:25Z",
+  "requester_id": 158009017591,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017088672,
+      "body_text": "Dear Simsonn,\r\n\r\nAlthough I understand you are likely very busy, a reply would be much\r\nappreciated. Is my order being processed or not?\r\n\r\nBest regards,\r\n\r\nMirko\r\n\r\nOp za 10 jan 2026 om 20:01 schreef Mirko Sitter <mirkositter@gmail.com>:\r\n\r\n> Dear Simsonn,\r\n>\r\n> About a week ago I ordered a plus X pedal set with order #SNN5766.\r\n> However, I never received the corresponding shipment information.\r\n>\r\n> Could you place confirm that the order is on it’s way?\r\n>\r\n> Best regards,\r\n>\r\n> Mirko\r\n\r\n",
+      "user_id": 158009017591,
+      "created_at": "2026-01-14T10:03:10Z",
+      "updated_at": "2026-01-14T10:03:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017164397,
+      "body_text": "Hi Mirko Sitter,       We apologize for the delay. Two shipments destined for our German warehouse have been affected by heavy snowfall in Europe, causing road blockages and delivery delays. We will expedite delivery or explore alternative logistics channels to ship your order from China as soon as possible. Compensation will be provided based on the delay after your order is completed. We apologize for the inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T06:19:26Z",
+      "updated_at": "2026-01-15T06:19:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017284229,
+      "body_text": "Dear Simsonn,\r\n\r\nThank you for your reply; much appreciated. I am looking forward to your\r\nupdate on the expected shipping date. To be honest, it is still a bit\r\ndisappointing to know that there never was a possibility to receive the\r\norder in due time.\r\n\r\nTo help future customers (and possibly your company), I would like to make\r\na suggestion: Once the the stock in a certain warehouse is out, place an\r\nanouncement on your website. Even a banner would do: As such you are not\r\nconducting false advertisement and place realistic expectations at your\r\ncustomers.\r\n\r\nIf there is an unforeseen event that prevents shipping on time, simply send\r\nan e-mail pro-actively. My situation, in which I needed to request the\r\nstatus of my order twice before getting an answer, simply should not happen\r\nfor a paying customer. This is not additional service: this is the bare\r\nminimum in any transaction. I am sure that if you, or any employee within\r\nyour company, pays his/her own money for something they would also expect\r\nthis simple gesture.\r\n\r\nBest regards,\r\n\r\nMirko\r\n\r\nOp do 15 jan 2026 om 07:19 schreef service@simsonn.com <service@simsonn.com\r\n>:\r\n\r\n> Hi Mirko Sitter,\r\n>\r\n>\r\n> We apologize for the delay. Two shipments destined for our German\r\n> warehouse have been affected by heavy snowfall in Europe, causing road\r\n> blockages and delivery delays. We will expedite delivery or explore\r\n> alternative logistics channels to ship your order from China as soon as\r\n> possible.\r\n> Compensation will be provided based on the delay after your order is\r\n> completed. We apologize for the inconvenience caused.\r\n>\r\n> ",
+      "user_id": 158009017591,
+      "created_at": "2026-01-16T18:28:51Z",
+      "updated_at": "2026-01-16T18:28:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

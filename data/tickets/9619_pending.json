@@ -1,0 +1,54 @@
+{
+  "id": 9619,
+  "subject": "Package inquiry",
+  "description_text": "Hi I’m just wanting to know why my order has not arrived as on your website\r\nit dates upto 15 days for delivery it has been 16 days already and I still\r\nhave not received the item. When I look at the tracking it says it’s still\r\nin china.\r\n\r\nPlease update asap.\r\n\r\nKind regards,\r\nEthan Boehm - Director\r\n\r\n\r\n*Web: *   adelaideconcretesolutions.com.au\r\n<http://www.adelaideconcretesolutions.com.au/>\r\n*Ph:  *     0411 554 249\r\n*Office: *1/14 Bruce Ave\r\n             Marleston SA 5033\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-31T03:00:17Z",
+  "updated_at": "2026-01-07T10:00:29Z",
+  "requester_id": 158008829148,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015291401,
+      "body_text": "Order number\r\nORDER #SSN4858\r\n\r\n\r\nKind regards,\r\nEthan Boehm - Director\r\n\r\n\r\n*Web: *   adelaideconcretesolutions.com.au\r\n<http://www.adelaideconcretesolutions.com.au/>\r\n*Ph:  *     0411 554 249\r\n*Office: *1/14 Bruce Ave\r\n             Marleston SA 5033\r\n\r\n\r\n",
+      "user_id": 158008829148,
+      "created_at": "2025-12-31T03:00:49Z",
+      "updated_at": "2025-12-31T03:00:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015291413,
+      "body_text": "Hi Ethan Boehm,  Please provide your order number, and I will check the shipping status for you. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T03:01:40Z",
+      "updated_at": "2025-12-31T03:01:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015375894,
+      "body_text": "ORDER #SSN4858\r\n\r\n\r\nKind regards,\r\nEthan Boehm - Director\r\n\r\n\r\n*Web: *   adelaideconcretesolutions.com.au\r\n<http://www.adelaideconcretesolutions.com.au/>\r\n*Ph:  *     0411 554 249\r\n*Office: *1/14 Bruce Ave\r\n             Marleston SA 5033\r\n\r\n\r\nOn Wed, 31 Dec 2025 at 1:31 pm, service@simsonn.com ",
+      "user_id": 158008829148,
+      "created_at": "2026-01-02T01:27:24Z",
+      "updated_at": "2026-01-02T01:27:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015470307,
+      "body_text": "Oder number  #ssn4858\r\nORDER #SSN4858\r\n\r\n\r\nKind regards,\r\nEthan Boehm - Director\r\n\r\n\r\n*Web: *   adelaideconcretesolutions.com.au\r\n<http://www.adelaideconcretesolutions.com.au/>\r\n*Ph:  *     0411 554 249\r\n*Office: *1/14 Bruce Ave\r\n             Marleston SA 5033\r\n\r\n\r\n",
+      "user_id": 158008829148,
+      "created_at": "2026-01-03T07:30:05Z",
+      "updated_at": "2026-01-03T07:30:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

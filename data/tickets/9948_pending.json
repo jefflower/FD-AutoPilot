@@ -1,0 +1,174 @@
+{
+  "id": 9948,
+  "subject": "vam pro and plus x controller",
+  "description_text": "this unit is absolutely appalling, it messes with all of my other usb devices when connected, randomly disconnects my wheel and shifter, and when actually using the haptics it randomly disconnects constantly, i have tried multiple mounting positions, usb cables and grounded it to multiple places. i've never seen anything so bad in my life.\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-05T00:16:37Z",
+  "updated_at": "2026-01-17T09:59:34Z",
+  "requester_id": 158007758321,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014381785,
+      "body_text": "Hi Bob Jimola,    All you need is an additional Plus X control.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-12T12:14:29Z",
+      "updated_at": "2025-12-12T12:14:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016073158,
+      "body_text": "Hi Bob Jimola,  you can use the provided nylon screws and nylon washers to install the VAM Pro motor, electrically isolating the motor from the bracket. This way, it will not affect the input signals. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T06:24:00Z",
+      "updated_at": "2026-01-07T06:24:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016073186,
+      "body_text": "ID 号为 7999 和 10042 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T06:24:14Z",
+      "updated_at": "2026-01-07T06:24:14Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016073188,
+      "body_text": "合并来自工单7999  \n      主题: What control box?  \n      描述:  If i was to order a set of VAM Pro haptics and a control box for my Simjack Pro pedals what control box would i need to buy?",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T06:24:14Z",
+      "updated_at": "2026-01-07T06:24:14Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016073193,
+      "body_text": "合并来自工单10042  \n      主题: refund  \n      描述:  i want a refund this product is e-waste.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T06:24:15Z",
+      "updated_at": "2026-01-07T06:24:15Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016110982,
+      "body_text": "i already did this, i want a refund. how am i supposed to use something when it takes my other usb devices out everytime i plug it into my pc.\n",
+      "user_id": 158007758321,
+      "created_at": "2026-01-07T10:32:58Z",
+      "updated_at": "2026-01-07T10:32:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016148132,
+      "body_text": "Hi Bob Jimola,      Could you please confirm that the pedals are connected directly to a rear motherboard USB 3.0 (blue) port, and that you are not using a USB hub? When multiple devices are connected through a hub, power instability may occur, which can cause other USB devices to disconnect.  In addition, our controller box is CE EMI certified and is designed not to interfere with other USB devices.  To help us further diagnose the issue, please record a short video demonstrating the problem and share it with us via Google Drive, making sure the link is set to view access. Our engineers will review the video and provide you with a solution.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T14:30:58Z",
+      "updated_at": "2026-01-07T14:30:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016150780,
+      "body_text": "i have connected it through 2 hubs (one powered and one not) and rear panel, if i connect to the hub it only takes devices on the hub out, if i connect it to the rear panel it takes all my devices out. i will not be plugging this crap back into my pc and i will not be recording a video. i want a refund. if you do not continue with a refund/return i will escalate it with paypal.\n\n",
+      "user_id": 158007758321,
+      "created_at": "2026-01-07T14:48:17Z",
+      "updated_at": "2026-01-07T14:48:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016152667,
+      "body_text": "Hi Bob Jimola,     Could you please confirm whether you are using our pedals with the controller? If the controller is connected to other brands or non-compatible pedals, it may cause damage to our controller.  Please note that every controller is fully tested with our own pedals before shipment, and only shipped after all functions are confirmed to be working properly.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T14:59:46Z",
+      "updated_at": "2026-01-07T14:59:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016354429,
+      "body_text": "for the first 2 hours trying to get it to work i only had the motors plugged into it, the only way i managed to keep all my usb devices connected whilst it was plugged in was having the simsonn crap plugged into its own usb hub but it would disconnect every 30 seconds or so. i tried plugging my sim jack pedals into it as i didn't know if i had to have pedals plugged into it for it to work (all of the chinese knockoffs use the same loadcells so don't pretend its that) and all it did was make my pedals unusable when plugged into your box. the longest they have stayed connected was to load into a game right after i plugged them in and i got 1 and a half laps before my pedals disconnected. i have tried multiple ways of grounding including grounding it straight into the earth of a plug into the wall, that was when it worked enough for a lap. i have tried 4 different usb cables 3 different hubs and almost every usb port on my pc, even connected them to my laptop to see if it did the same (it did) also mounted them with 3d printed brackets and someone on discord said they had problems with your metal mounts, did not change anything. after removing all of your crap from my rig and putting it back in the box everything on my pc is fine. the one single point of failure is YOUR control box. i want a refund and i don't want this e-waste in my house anymore.\n",
+      "user_id": 158007758321,
+      "created_at": "2026-01-08T13:48:39Z",
+      "updated_at": "2026-01-08T13:48:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016467778,
+      "body_text": "Hi Bob Jimola,     You can install the VAM Pro motor using nylon screws and nylon washers to isolate potential electrical interference. Based on the product design and testing, it’s not possible for the product to exhibit so many issues simultaneously—unless the problem was caused by incorrect sensor wiring order during installation.  Please note that different sensors may use different pin orders, typically including GND, 5V, S+, and S-. If the wiring order is incorrect or mismatched, it can damage the control board, which may lead to abnormal behavior.         You can refer to the post below and connect the three metal screws on the PC case, control box, and pedals, which should resolve the disconnection issue.  https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2026-01-09T03:30:18Z",
+      "updated_at": "2026-01-09T03:30:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017303723,
+      "body_text": "still waiting for the refund/return. you keep telling me to do stuff i have already tried, i have no intention of plugging your rubbish back into my pc. i have bought simagic haptics instead, work perfectly out of the box. your product is absolutely terrible and probably dangerous. if you do not proceed with a refund i will escalate this with paypal and shopify.\n",
+      "user_id": 158007758321,
+      "created_at": "2026-01-16T23:08:22Z",
+      "updated_at": "2026-01-16T23:08:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017312855,
+      "body_text": "你好，鲍勃·吉莫拉，  这并非我们产品本身的问题。由于每位客户的设备配置各不相同（例如接地质量、电源条件、USB 连接等），一些基本的接地和正确的电源/连接操作通常是必要的——这是常见且理所当然的。 此外，您使用的效果器并非我们的产品，而是其他品牌的。在这种情况下，一开始就指责我们的产品并使用侮辱性语言是我们不能接受的。 我们仍然愿意帮助您排查故障并提供建议，但我们希望沟通时保持尊重和理性。如果您能提供更多关于您的设备配置和接线/连接方式的详细信息，我们将尽力帮助您找到问题的根本原因。 ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-17T05:03:09Z",
+      "updated_at": "2026-01-17T05:03:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017317608,
+      "body_text": "thanks for sending that in chinese, thats great...\n\n",
+      "user_id": 158007758321,
+      "created_at": "2026-01-17T06:45:22Z",
+      "updated_at": "2026-01-17T06:45:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017318119,
+      "body_text": "i will once again state that i want a refund/return. i am not plugging your product back into my pc again. i want my money back, i have already done every single step you have sent.\n\n",
+      "user_id": 158007758321,
+      "created_at": "2026-01-17T06:55:51Z",
+      "updated_at": "2026-01-17T06:55:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017322471,
+      "body_text": "Hi Bob Jimola,  I'm very sorry. I'll send it to you again in English.  This is not an issue with our product itself. Since each customer's device configuration varies (such as grounding quality, power supply conditions, USB connections, etc.), some basic grounding and proper power supply/connection operations are usually necessary – this is common and taken for granted.  Furthermore, the effect pedal you are using is not our product but from another brand. In such cases, it is unacceptable for you to accuse our product and use insulting language from the start.  We are still willing to help you troubleshoot and provide suggestions, but we hope that communication will be conducted with respect and rationality. If you can provide more detailed information about your device configuration and wiring/connection methods, we will do our best to help you find the root cause of the problem.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T09:59:34Z",
+      "updated_at": "2026-01-17T09:59:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

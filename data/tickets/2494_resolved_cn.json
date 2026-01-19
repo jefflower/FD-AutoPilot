@@ -1,0 +1,115 @@
+{
+  "id": 2494,
+  "subject": "恢复",
+  "description_text": "您好，\n\n我有一套未升级的Pro Plus踏板套装，我需要一个恢复文件，因为它们目前无法正常工作。我曾尝试将它们更新到v1.8.0版本，以使其与新的Simsonn Manager 2.1.0兼容。\n您能帮我解决这个问题吗？",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-08-09T08:18:17Z",
+  "updated_at": "2025-08-11T00:46:07Z",
+  "requester_id": 158002874181,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006597471,
+      "body_text": "您好，Justin Groh，请检查您的Pro Plus的购买日期，并确认版本是1.7.1。如果是，您可以通过SIMSONN Manager 2.1.0手动更新固件。\n进入“设置”→“更新”→“手动固件更新”→“选择踏板”→选择文件plus.sfu进行升级。\nhttps://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-08-09T14:25:45Z",
+      "updated_at": "2025-08-09T14:25:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006608556,
+      "body_text": "您好，\n\n我于2024年7月16日订购了踏板，所以它们有点旧了。\n\n> 2025年8月9日16:25，service@simsonn.com 写道：\n> \n> ﻿\n> 您好，Justin Groh，\n> \n> 请检查您的Pro Plus的购买日期，并确认版本是1.7.1。如果是，您可以通过SIMSONN Manager 2.1.0手动更新固件。\n> \n> 进入“设置”→“更新”→“手动固件更新”→“选择踏板”→选择文件plus.sfu进行升级。\n> \n> https://www.simsonn.com/pages/download\n> \n> \n> \n",
+      "user_id": 158002874181,
+      "created_at": "2025-08-09T18:30:58Z",
+      "updated_at": "2025-08-09T18:30:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006615451,
+      "body_text": "您好，Justin Groh，您可以先按照我的建议尝试升级。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T03:01:07Z",
+      "updated_at": "2025-08-10T03:01:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006638176,
+      "body_text": "我已经尝试过了，我需要刷新控制盒，因为它已经处于Simsonn刷机模式。我在这封电子邮件下方给您链接了一个视频，也许会有帮助。\n\n\n2025年8月10日05:01，service@simsonn.com 写道：\n\n﻿\n您好，Justin Groh，\n\n您可以先按照我的建议尝试升级。\n\n\n\n附件超过20 MB限制已被删除。请联系发件人。",
+      "user_id": 158002874181,
+      "created_at": "2025-08-10T08:41:32Z",
+      "updated_at": "2025-08-10T08:41:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006638244,
+      "body_text": "您好，Justin Groh，请通过Google Drive发送给我。超过20MB的文件会被系统自动删除，所以我现在看不到附件。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T09:05:28Z",
+      "updated_at": "2025-08-10T09:05:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006638265,
+      "body_text": "试试这个，它更好，数据量更小\n\n2025年8月10日星期日11:05，service@simsonn.com 写道：\n\n> 您好，Justin Groh，\n>\n> 请通过Google Drive发送给我。超过20MB的文件会被系统自动删除，所以我现在看不到附件。\n>\n>\n> \n",
+      "user_id": 158002874181,
+      "created_at": "2025-08-10T09:13:18Z",
+      "updated_at": "2025-08-10T09:13:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006650268,
+      "body_text": "您好，Justin Groh，您可能在上传完成前发送了，所以我无法打开它。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T11:18:58Z",
+      "updated_at": "2025-08-10T11:18:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006651915,
+      "body_text": "那我会尝试截图，也许会奏效\n\n2025年8月10日星期日13:26，Justin Groh 写道：\n\n> 现在应该可以了\n>\n> 2025年8月10日星期日13:19，service@simsonn.com 写道：\n>\n>> 您好，Justin Groh，\n>>\n>> 您可能在上传完成前发送了，所以我无法打开它。\n>>\n>>\n>> \n",
+      "user_id": 158002874181,
+      "created_at": "2025-08-10T11:42:24Z",
+      "updated_at": "2025-08-10T11:42:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006652523,
+      "body_text": "您好，Justin Groh，请安装Todesk软件。无需注册——如果提示注册，只需点击右上角的关闭按钮。然后提供ID和临时密码，我就可以远程协助您解决这个问题了。\nhttps://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T13:02:13Z",
+      "updated_at": "2025-08-10T13:02:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006660440,
+      "body_text": "我实际上已经搞定了，它又可以工作了！感谢您的协助。此致，Justin 2025年8月10日15:02 service@simsonn.com 写道：\n\n您好，Justin Groh，请安装Todesk软件。无需注册——如果提示注册，只需点击右上角的关闭按钮。然后提供ID和临时密码，我就可以远程协助您解决这个问题了。\n\n\nhttps://dl.todesk.com/windows/ToDesk_Setup.exe\n\n\n\n\n\n2025年8月10日星期日 上午7:42，Justin Groh <grohjustin05@gmail.com> 写道：\n我再试试截图，也许能行\n\n2025年8月10日星期日13:26，Justin Groh <grohjustin05@gmail.com> 写道：\n\n\n现在应该可以了\n\n2025年8月10日星期日13:19，service@simsonn.com 写道：",
+      "user_id": 158002874181,
+      "created_at": "2025-08-10T19:38:47Z",
+      "updated_at": "2025-08-10T19:38:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

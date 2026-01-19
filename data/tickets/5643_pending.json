@@ -1,0 +1,24 @@
+{
+  "id": 5643,
+  "subject": "Pro X Ultra Control Box / Plus X control box",
+  "description_text": "Hi everyone,\r\n\r\nCould you please tell me if the Pro X Ultra Control Box would offer any technical advantages due to its superior chip? And if so, what are they? I assume that if I switch to compatible RJ connectors, this box can also be used with other pedals. Thanks in advance. Best regards from Germany\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-04T20:04:05Z",
+  "updated_at": "2025-11-05T06:08:00Z",
+  "requester_id": 158006563417,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011769757,
+      "body_text": "Hi Karl Heinz,  Compared to the PlusX, the Pro X Ultra features 16-bit resolution sampling and supports simultaneous acquisition on three channels instead of polling. The PlusX uses 12-bit resolution with three-channel polling. The Pro X Ultra also supports RGB lighting and uses differential signaling for stronger anti-interference performance. However, it is only compatible with Pro X Ultra pedals and cannot be used with PlusX pedals. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-05T06:08:00Z",
+      "updated_at": "2025-11-05T06:08:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

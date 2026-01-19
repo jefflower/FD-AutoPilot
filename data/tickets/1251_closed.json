@@ -1,0 +1,154 @@
+{
+  "id": 1251,
+  "subject": "Order from Amazon never received",
+  "description_text": "Hello,\r\n\r\nI ordered some pedals and vibration motors from your store on Amazon and received the pedals but never received the vibration motors. Amazon seems to not be able to do anything about it other than give me a refund. I have not had them give me a refund yet so I could talk directly to you and see if you will send a set of vibration motors. Below is a screen shot of the order details.\r\n\r\n\r\n\r\n\r\nIf possible please send a set of vibration motors. I was really looking forward to using them so I’d rather have the motors than the refund. \r\n\r\nThank you in advance for your swift resolution of this matter.\r\n\r\nSincerely,\r\nMichael Hodges\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-07-05T23:52:25Z",
+  "updated_at": "2025-12-18T09:40:24Z",
+  "requester_id": 158001903205,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004453029,
+      "body_text": "Hi Michael,  Our company has been relocating to a new address over the past couple of days, which caused a delay in shipping. We will ship out all your items today. We sincerely apologize for the inconvenience and appreciate your understanding. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T03:55:57Z",
+      "updated_at": "2025-07-07T03:55:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004484834,
+      "body_text": "Thank you for your quick response! I look forward to using your product. And thank you for shipping them out. I will await their arrival. Good luck on the relocation!\r\n\r\n\r\nSincerely,\r\nMichael Hodges\r\n\r\n> ",
+      "user_id": 158001903205,
+      "created_at": "2025-07-09T01:32:08Z",
+      "updated_at": "2025-07-09T01:32:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004642617,
+      "body_text": "Hi Michael,  The tracking number for your haptic reactor is JSEXQ2334174297YQ, the shipping carrier is JSEXPRESS, you can track it via https://www.js-exp.com/EN/index.php?page=19, it will deliver about a week later",
+      "user_id": 158000445778,
+      "created_at": "2025-07-12T08:02:04Z",
+      "updated_at": "2025-07-12T08:02:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004692948,
+      "body_text": "Excellent! Thank you very much!\r\n\r\nSincerely,\r\nMichael Hodges\r\n\r\n> ",
+      "user_id": 158001903205,
+      "created_at": "2025-07-12T16:14:50Z",
+      "updated_at": "2025-07-12T16:14:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005246898,
+      "body_text": "Hello again, I have received the motors, but I have been having issues with your software. The motors are not reacting as they should. And when I originally downloaded your software and set everything up the pedals stopped working. I redownloaded the software and got the pedals working again but the motors are still not reacting as they should. For example, even when I exit the game the one motor just keeps running and in game of the motors does nothing, but it does vibrate when I test it in your software. It was advertised as being compatible with SimHub but I have not been able to find any instructions on how to do that. Would you be able to provide some documentation on how to set them up with SimHub? Sincerely, Michael Hodges ",
+      "user_id": 158001903205,
+      "created_at": "2025-07-21T03:10:05Z",
+      "updated_at": "2025-07-21T03:10:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005290905,
+      "body_text": "Hi Michael,     Please go to Settings → Update and click Update to upgrade the software to version 2.0.9. Then, in the same interface, click Manual Firmware Update, navigate to the pedals-firmware folder → pedals folder, and select the prox.sfu file to update the firmware. Once the update is complete, please run the test again.       Additionally, due to the design of the control board, setting the force level to 50% already reaches the maximum load that the VAM motor can handle. Therefore, please do not set the force level above 50%–70% in SIMHUB, as it may damage the VAM motor. Make sure to download the latest version of SIMHUB (9.9.3). In the Device tab, add our SIMSONN device. Once connected, you'll see the status in the top right corner, and you can begin testing. I've also attached the telemetry-supported game list from version 2.0.9 for your reference. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-22T02:48:48Z",
+      "updated_at": "2025-07-22T02:48:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005290915,
+      "body_text": "Hi Michael,  There was a mistake in the previous message: When updating the firmware, please make sure to select the plusx.sfu file, not the prox.sfu file. Thank you for your understanding and cooperation! ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-22T02:50:10Z",
+      "updated_at": "2025-07-22T02:50:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005618986,
+      "body_text": "Hello again,\r\n\r\nI am still having some issues. I just got everything calibrated well and then all of a sudden it stopped working. I've been having trouble keeping the calibration or something. I think its a software issue. Any ideas as to what could be wrong? It was all working really well for a couple of laps and then went to crap.\r\n________________________________\r\n",
+      "user_id": 158001903205,
+      "created_at": "2025-07-26T19:14:16Z",
+      "updated_at": "2025-07-26T19:14:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005619022,
+      "body_text": "Well now I did the update to the simsonn manager software and it's doing a disappearing act (see screenshot below). What could be going on?\r\n[cid:3a186450-bec0-44cd-9fab-1ca4d78617b2]\r\n\r\n________________________________\r\n",
+      "user_id": 158001903205,
+      "created_at": "2025-07-26T19:22:16Z",
+      "updated_at": "2025-07-26T19:22:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005654799,
+      "body_text": "Hi Michael,  Which country are you from? Please reopen the software, take a screenshot of the entire interface, and also provide the log file. Thank you.           Alternatively, you can directly download the .exe file for installation.      https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-07-28T02:04:12Z",
+      "updated_at": "2025-07-28T02:04:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005790146,
+      "body_text": "I am from the United States. Here is a screenshot of the UI\r\n\r\n[cid:62990795-8c5d-4ee5-a0f5-d576309ce9ef]\r\n\r\n\r\nI was able to get it working again by just uninstalling and reinstalling the software, but I've had to do that a few times now. I thought the first time was just a fluke but its happened several times now. Its all working now, but I hope I won't have to reinstall the software each time I want to use the pedals. When they work they work great and I love them, but hopefully the software issues can be resolved.\r\n\r\n\r\nAttached are the log files as well. Please let me know if you need anything else.\r\n\r\n\r\n\r\n________________________________\r\n",
+      "user_id": 158001903205,
+      "created_at": "2025-07-30T00:18:33Z",
+      "updated_at": "2025-07-30T00:18:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005790545,
+      "body_text": "Hi Michael,    Please also take a screenshot of the pedal interface in Device. Thank you!",
+      "user_id": 158000445778,
+      "created_at": "2025-07-30T00:57:03Z",
+      "updated_at": "2025-07-30T00:57:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005869430,
+      "body_text": "Hi Michael,   Please uninstall SIMSONN Manager and delete its installation directory, then download and install SIMSONN Manager 2.1.0 from the official website. After doing so, does the incomplete display issue still occur?   https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-07-31T05:35:54Z",
+      "updated_at": "2025-07-31T05:35:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006945002,
+      "body_text": "Hello,\r\n\r\nSorry for the long await reply, I haven't had a chance to try it till today. It seems that everything works appropriately now and I don't get the visual issues I was before. Thank you so much for your help! I am really enjoying the pedals!\r\n________________________________\r\n",
+      "user_id": 158001903205,
+      "created_at": "2025-08-15T22:25:11Z",
+      "updated_at": "2025-08-15T22:25:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

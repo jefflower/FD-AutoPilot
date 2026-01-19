@@ -1,0 +1,24 @@
+{
+  "id": 7567,
+  "subject": "Order #SSN3790 - Missing Item",
+  "description_text": "Hi,\r\n\r\nI have recently received my package for Order #SSN3790 however I seem to be missing the Plus X Pedal Control Box.\r\nPlease see photo attached of the package received.\r\n\r\nYour help in resolving this matter quickly would be greatly appreciated.\r\n\r\nMany thanks,\r\nSam Cooper.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-06T13:59:56Z",
+  "updated_at": "2025-12-18T10:40:11Z",
+  "requester_id": 158007674183,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014683775,
+      "body_text": "Hi Sam Cooper,    We apologize for the delayed response! We have arranged for a replacement shipment. Please cancel your chargeback as soon as possible. Here is your tracking link:  https://t.17track.net/en#nums=SF6047184830356  We apologize for any inconvenience caused!",
+      "user_id": 158001343601,
+      "created_at": "2025-12-18T10:40:11Z",
+      "updated_at": "2025-12-18T10:40:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

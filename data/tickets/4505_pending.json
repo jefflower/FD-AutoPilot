@@ -1,0 +1,64 @@
+{
+  "id": 4505,
+  "subject": "Refund the order",
+  "description_text": "I accidentally ordered a set of pedals and i didnt mean to, please refund\r\nthe purchase immediately. Thanks\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-06T18:00:59Z",
+  "updated_at": "2025-10-09T07:55:43Z",
+  "requester_id": 158005440745,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010003212,
+      "body_text": "Hi Simon Berger,    We apologize, but we have already shipped your order from our German warehouse and are unable to cancel it. We will issue a $20 refund as compensation. Would you like to proceed?",
+      "user_id": 158001343601,
+      "created_at": "2025-10-07T08:28:56Z",
+      "updated_at": "2025-10-07T08:28:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010007025,
+      "body_text": "Hi,\r\nThank you for your reply. I requested the cancellation before the order was\r\nshipped, so I will refuse delivery once it arrives.\r\nPlease process a full refund aswell as shipping cost once the package\r\nreturns to your warehouse.\r\nI appreciate your understanding.\r\n\r\nKind regards,\r\nSimon Berger\r\n\r\n\r\nservice@simsonn.com ",
+      "user_id": 158005440745,
+      "created_at": "2025-10-07T09:16:51Z",
+      "updated_at": "2025-10-07T09:16:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010012356,
+      "body_text": "Dear Simonns Team,\r\n\r\n\r\nI am contacting you regarding my recent order\r\n#SSN2868\r\nwhich is currently marked as “confirmed” but not shipped. I requested a\r\ncancellation earlier, but my request was refused on the basis that the\r\norder is “already shipping.”\r\n\r\n\r\nUnder EU consumer protection law (Directive 2011/83/EU on consumer rights),\r\nI am exercising my right of withdrawal, which allows me to cancel any\r\nonline order within 14 days of receiving the goods — regardless of shipping\r\nstatus. Since the item has not yet been delivered, my cancellation is fully\r\nvalid and must be accepted.\r\n\r\n\r\nPlease confirm the cancellation of my order and issue a full refund to my\r\noriginal payment method.\r\n\r\nIf you have already created a shipment label, please note that this does\r\nnot void my right of withdrawal unless the item has physically been handed\r\nto the carrier.\r\n\r\n\r\nThank you for confirming the cancellation and refund within the next 24\r\nhours.\r\n\r\n\r\nKind regards,\r\n\r\nSimon Berger\r\n\r\nsimonbergeer2@gmail.com\r\n\r\n\r\n\r\nservice@simsonn.com ",
+      "user_id": 158005440745,
+      "created_at": "2025-10-07T11:04:26Z",
+      "updated_at": "2025-10-07T11:04:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010018063,
+      "body_text": "ID 为 4534 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-07T12:28:49Z",
+      "updated_at": "2025-10-07T12:28:49Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158010018064,
+      "body_text": "合并来自工单4534  \n      主题: Purchase cancellation  \n      描述:  \nI accidentally ordered a set of pedals and i didnt mean to, please refund the purchase immediately. Thanks. \n \n   \n I already wrote a email but on a different gmail \n This is the same email as the order",
+      "user_id": 158000445778,
+      "created_at": "2025-10-07T12:28:50Z",
+      "updated_at": "2025-10-07T12:28:50Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

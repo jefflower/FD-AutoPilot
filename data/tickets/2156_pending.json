@@ -1,0 +1,54 @@
+{
+  "id": 2156,
+  "subject": "Plus X pedals",
+  "description_text": "The problem is with software. When I adjust the deadzone, the raw input in\r\nWindows doesn't match with input in software[image: image.png]\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-31T18:31:57Z",
+  "updated_at": "2025-08-05T13:06:03Z",
+  "requester_id": 158002475829,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005918622,
+      "body_text": "Hi Maslena Dude,  Please calibrate the pedals first before adjusting the dead zone. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-31T23:43:52Z",
+      "updated_at": "2025-07-31T23:43:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006015749,
+      "body_text": "I calibrated the pedals first thing. I also clicked the offset button and\r\ndone it, but the deadzone doesn't match anyway. Somehow it changes, but\r\ndoesn't exactly match\r\n\r\nпт, 1 авг. 2025 г., 02:44 support@simsonn.com ",
+      "user_id": 158002475829,
+      "created_at": "2025-08-01T12:18:33Z",
+      "updated_at": "2025-08-01T12:18:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006018222,
+      "body_text": "Hi Maslena Dude,    For now, please set it to 5% individually and calibrate the pedals for testing. We will release version 2.1.1 in the next couple of days to optimize this issue.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-01T12:45:42Z",
+      "updated_at": "2025-08-01T12:45:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006035575,
+      "body_text": "Ok, thank you.\r\n\r\nпт, 1 авг. 2025 г., 15:45 support@simsonn.com ",
+      "user_id": 158002475829,
+      "created_at": "2025-08-02T02:42:38Z",
+      "updated_at": "2025-08-02T02:42:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": 1103,
+  "subject": "Not working box urgent",
+  "description_text": "Hi i belive the box is broken, i have tried multiple computers and this is\nwhat i get from all.",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-07-02T09:45:19Z",
+  "updated_at": "2025-07-02T14:28:16Z",
+  "requester_id": 158001873282,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004374245,
+      "body_text": "Hi Arhaam Rahaman, In the “Settings - Update” section, click “Manual Firmware Update,” then navigate to the pedals-firmware folder → pedals folder → and select the proxultra.sfu file to update. This firmware will disable the 4th axis.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T14:15:03Z",
+      "updated_at": "2025-07-02T14:15:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004374319,
+      "body_text": "Hi Thank you, its now worked.",
+      "user_id": 158001873282,
+      "created_at": "2025-07-02T14:22:03Z",
+      "updated_at": "2025-07-02T14:22:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

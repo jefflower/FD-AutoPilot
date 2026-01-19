@@ -1,0 +1,24 @@
+{
+  "id": 5415,
+  "subject": "Order",
+  "description_text": "Hi just ordered a pedal set order number: POP7MWPLG   I would like to know\r\nif it comes with the the shaker mounting bracket or if I need to order it\r\nThanks\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-10-29T17:18:58Z",
+  "updated_at": "2025-12-21T02:32:05Z",
+  "requester_id": 158006210767,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014825921,
+      "body_text": "此工单已关闭并合并到工单 8767 中",
+      "user_id": 158000445778,
+      "created_at": "2025-12-21T02:32:05Z",
+      "updated_at": "2025-12-21T02:32:05Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

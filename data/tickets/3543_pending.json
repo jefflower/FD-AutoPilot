@@ -1,0 +1,114 @@
+{
+  "id": 3543,
+  "subject": "Plus X pedals",
+  "description_text": "I just installed the plus x pedals and I love them, however, do they not work with F1 ‘25??? They work with literally every other F1 year. I don’t want to, but I am going to have to take them off and return them if we can’t figure out how to make them work.  I already have the return from Amazon but I love how they fit in my rig and love the flexibility of the plus x pedals.  Please let me know if there is a way to make them work right away otherwise I have to start tearing my rig apart and I need to order the Moza crp2 pedals.  \r\n\r\nThanks so much for your help. I really hope you can give me a solution and very very soon because my rig is worthless right now.  I race in F1 25 leagues with my son and right now I can’t do anything.  \r\n\r\nThank you again! \r\nJamey Conrad\r\n14002 Hillsborough Drive\r\nOmaha, NE 68164\r\n(402) 350-1239\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-09-06T02:39:13Z",
+  "updated_at": "2025-09-10T00:30:51Z",
+  "requester_id": 158004204941,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008200435,
+      "body_text": "Hi Jamey Conrad,  In our test environment, F1 2025 runs without any issues. I can provide photos for your reference. Could you please let me know what specific issue you are experiencing? Is it that you’re unable to complete the binding process? If possible, please share a video so that I can assist you in resolving the problem.     You can also try using SIMSONN Manager 2.1.1. In the software interface, click the “Revert” button, then click “Save”. After that, reinsert the USB and test whether the F1 2025 binding and calibration work correctly.       https://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T01:42:16Z",
+      "updated_at": "2025-09-07T01:42:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201304,
+      "body_text": "Thanks so much for the information! \r\n\r\nYes, I was having trouble binding but now I have a virus because I was searching for a solution so I will have to have that taken care of and then I can hopefully finish working with you on it. \r\n\r\nWhich version should I be using? I think that was part of my problem. \r\n\r\nShould I use v4 and if it doesn’t work try to revert back to 2.1.1?\r\n\r\nThanks again for all of your help!! I can’t wait to use them. \r\n\r\n> ",
+      "user_id": 158004204941,
+      "created_at": "2025-09-07T03:19:43Z",
+      "updated_at": "2025-09-07T03:19:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201331,
+      "body_text": "Hi Jamey Conrad,     Because the RX axis on our previous handbrake was not disabled, it may cause F1 2025 to fail to bind correctly. You can try fixing this issue using SIMSONN Manager 2.1.1:    Open the SIMSONN Manager 2.1.1 software.    In the interface, click the “Restore” button.    Then click the “Save” button.    Reinsert the USB cable.    Finally, test to confirm if the RX axis has been successfully disabled.           https://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T03:24:14Z",
+      "updated_at": "2025-09-07T03:24:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201599,
+      "body_text": "Sounds great, as soon as I get rid of the virus and have it up and running again, I will keep you posted on my progress.  \r\n\r\nThanks so much for your help!\r\n\r\n> ",
+      "user_id": 158004204941,
+      "created_at": "2025-09-07T03:55:12Z",
+      "updated_at": "2025-09-07T03:55:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201614,
+      "body_text": "Also, today I completely removed everything so when I get it cleaned up I will be able to start from scratch with a fresh launch of the pedals.  That’s why I was curious which version you think I should use.   \r\n\r\nThanks again!!\r\n\r\n> ",
+      "user_id": 158004204941,
+      "created_at": "2025-09-07T03:57:28Z",
+      "updated_at": "2025-09-07T03:57:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201651,
+      "body_text": "Hi Jamey Conrad,    Please use the SIMSONN Manager 2.1.1 version from the link I provided. The V4 version is designed specifically for Pro Plus, while 2.1.1 is our latest release with a newly designed interface and features.  PlusX does not need to use the V4 version, and it is not compatible with V4. So make sure to use 2.1.1 for all operations and management.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T04:04:33Z",
+      "updated_at": "2025-09-07T04:04:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201711,
+      "body_text": "Perfect, great to know.  I will do so and let you know how it goes. \r\n\r\n> ",
+      "user_id": 158004204941,
+      "created_at": "2025-09-07T04:16:40Z",
+      "updated_at": "2025-09-07T04:16:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008263599,
+      "body_text": "I am buying a new gaming computer today so just to be clear, what is the\r\nexact process for downloading and calibrating the Plus X pedals?\r\n\r\nDo I plug in the usb and then download Simsonn Manager 2.1.1 or do I\r\nperform the download first and then plug in the usb? I just don't want to\r\nmess things up on my new system.\r\n\r\nThank you!\r\nJamey\r\n\r\n",
+      "user_id": 158004204941,
+      "created_at": "2025-09-08T13:02:38Z",
+      "updated_at": "2025-09-08T13:02:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008298163,
+      "body_text": "Also, do I need to have Simsonn Manager 2.1.1 open while I am trying to bind F1 25 or do I just set the pedals up independently and then I can go into the game and bind everything after I close out of Simsonn Manager 2.1.1 ",
+      "user_id": 158004204941,
+      "created_at": "2025-09-09T03:32:29Z",
+      "updated_at": "2025-09-09T03:32:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008347106,
+      "body_text": "Hi Jamey Conrad,  Here’s the general setup and calibration process:  1. Install the Pedals:  Securely mount the pedals to your sim racing rig to ensure solid placement.  2. Connect the Cables:    Plug the pedal cables into the control box.    Then connect the control box's USB cable to a USB 3.0 blue port on the back of your PC. ⚠️ Avoid USB hubs or front panel ports for best stability.    3. Launch the Software:  Open the SIMSONN Manager 2.1.1 software.  4. Revert and Save Settings:  Click the following buttons in the software:    Revert    Then Save    This disables the outdated Rx axis reserved for the brake pedal in older versions.  5. Calibrate the Pedals:  Click Calibration and follow the steps:    Press each of the three pedals (throttle, brake, clutch) with normal force;    Make sure the signal bars move accordingly;    Click Save.    ✅ After calibration, check that the blue progress bar reaches from 0% to 100% — this confirms success.  6. Bind in Game:  Finally, restart F1 2025, go into settings, and bind your pedals in-game to start racing.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-10T00:30:51Z",
+      "updated_at": "2025-09-10T00:30:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

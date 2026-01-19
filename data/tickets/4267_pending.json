@@ -1,0 +1,174 @@
+{
+  "id": 4267,
+  "subject": "purchase no confirmation",
+  "description_text": "I have made the payment, it has been accepted, but I have not received\r\nconfirmation or an email.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-09-30T08:55:35Z",
+  "updated_at": "2025-10-15T10:08:00Z",
+  "requester_id": 158005189583,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009730895,
+      "body_text": "Hi Libe Matesanz García,     Please provide me with the purchase date and amount, and I will help you look up the order number.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T11:58:06Z",
+      "updated_at": "2025-10-01T11:58:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009756523,
+      "body_text": "Tarjeta operante  4540593020250109  29/09/2025 10:15:33   Importe  72,12$",
+      "user_id": 158005189583,
+      "created_at": "2025-10-01T19:53:39Z",
+      "updated_at": "2025-10-01T19:53:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158009756567,
+      "body_text": "",
+      "user_id": 158005189583,
+      "created_at": "2025-10-01T19:54:42Z",
+      "updated_at": "2025-10-01T19:54:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158009766977,
+      "body_text": "Hi Libe Matesanz García,    Do you have the purchase date, contact person, and address? I can help you check the order.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-02T03:41:52Z",
+      "updated_at": "2025-10-02T03:41:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009835274,
+      "body_text": "Yes, was me.  Libe Matesanz García - libematesanz@gmail.com  Adress:  La Zurriola nº16   San Sebastián   Gipuzkoa   Spain",
+      "user_id": 158005189583,
+      "created_at": "2025-10-03T09:43:25Z",
+      "updated_at": "2025-10-03T09:43:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158009835362,
+      "body_text": "",
+      "user_id": 158005189583,
+      "created_at": "2025-10-03T09:45:37Z",
+      "updated_at": "2025-10-03T09:45:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158009836028,
+      "body_text": "Hi Libe Matesanz García,     Your order number is SSN2771, and it has already been shipped. Below is your tracking number for reference.    SF Express • SF6045943382979",
+      "user_id": 158000445778,
+      "created_at": "2025-10-03T10:49:14Z",
+      "updated_at": "2025-10-03T10:49:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009915667,
+      "body_text": "Thnxs",
+      "user_id": 158005189583,
+      "created_at": "2025-10-04T20:44:41Z",
+      "updated_at": "2025-10-04T20:44:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010346796,
+      "body_text": "Hi  I bought PLUS X PEDAL CONTROL BOX + 1 VAM (without power suply), but they sent me 1 VAM with power suply and without PLUS X PEDAL CONTROL BOX !!??",
+      "user_id": 158005189583,
+      "created_at": "2025-10-13T12:48:13Z",
+      "updated_at": "2025-10-13T12:48:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010349939,
+      "body_text": "",
+      "user_id": 158005189583,
+      "created_at": "2025-10-13T13:21:19Z",
+      "updated_at": "2025-10-13T13:21:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010350065,
+      "body_text": "",
+      "user_id": 158005189583,
+      "created_at": "2025-10-13T13:24:44Z",
+      "updated_at": "2025-10-13T13:24:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010350177,
+      "body_text": "I'm sure I didn’t include the power supply, and I don’t remember which rates were applied… Do you have a copy of the order? I never received one.",
+      "user_id": 158005189583,
+      "created_at": "2025-10-13T13:28:01Z",
+      "updated_at": "2025-10-13T13:28:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010350347,
+      "body_text": "",
+      "user_id": 158005189583,
+      "created_at": "2025-10-13T13:34:08Z",
+      "updated_at": "2025-10-13T13:34:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010350424,
+      "body_text": "No combination matches the final price.",
+      "user_id": 158005189583,
+      "created_at": "2025-10-13T13:36:54Z",
+      "updated_at": "2025-10-13T13:36:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010350458,
+      "body_text": "I bought PLUS X PEDAL CONTROL BOX + 1 VAM (without power suply) and 1 MOUNTING BRAKET",
+      "user_id": 158005189583,
+      "created_at": "2025-10-13T13:38:08Z",
+      "updated_at": "2025-10-13T13:38:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010350544,
+      "body_text": "Do you have a copy of the order?  Can you attach with my acount in the main web?  ",
+      "user_id": 158005189583,
+      "created_at": "2025-10-13T13:41:02Z",
+      "updated_at": "2025-10-13T13:41:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    }
+  ]
+}

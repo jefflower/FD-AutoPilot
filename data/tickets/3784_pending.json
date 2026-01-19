@@ -1,0 +1,24 @@
+{
+  "id": 3784,
+  "subject": "Shipment",
+  "description_text": "From which country does your product ship from?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-13T09:55:05Z",
+  "updated_at": "2025-09-13T10:25:24Z",
+  "requester_id": 158004499747,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008632932,
+      "body_text": "Hi Panagiotis Zeppos,  We will arrange shipments from China, the United States, or Germany, depending on the customer’s order and the product. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-13T10:25:24Z",
+      "updated_at": "2025-09-13T10:25:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

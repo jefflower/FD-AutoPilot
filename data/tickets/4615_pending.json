@@ -1,0 +1,104 @@
+{
+  "id": 4615,
+  "subject": "Support with Pro X Ultra",
+  "description_text": "Hi,\r\n\r\nI’m experiencing an issue with my new Simsonn Pro X Ultra pedals, where I can only get ~23kg of pressure in Simsonn manager despite pressing as hard as I can.\r\n\r\nI tried running through some diagnostics with GPT, my short conversation might help you to see what the issue could be. Could I have a faulty load cell?\r\n\r\nhttps://chatgpt.com/share/68e6c159-4544-800e-b351-5b7e2a5e80bc\r\n\r\nAny help would be greatly appreciated.\r\n\r\nThanks,\r\nAdam\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-10-08T19:57:58Z",
+  "updated_at": "2025-10-16T10:24:23Z",
+  "requester_id": 158005511942,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010118579,
+      "body_text": "I’d like to add if I press the pedals super hard the ADC jumps straight from 27k to 65k immediately \r\n\r\nThanks,\r\nAdam\r\n\r\n> ",
+      "user_id": 158005511942,
+      "created_at": "2025-10-08T20:18:53Z",
+      "updated_at": "2025-10-08T20:18:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010134151,
+      "body_text": "Hi Adam Shelton,  Are you using the red damper? Please provide your order number and upload a demonstration video via Google Drive (make sure to grant access permission). Once we review it, we’ll analyze the issue and offer you a solution. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-09T07:58:43Z",
+      "updated_at": "2025-10-09T07:58:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010180961,
+      "body_text": "Hi,\r\n\r\nYes I’m using the red polymers if that’s what you mean?\r\n\r\nHere’s a video:\r\n\r\nhttps://youtu.be/3ibyX2KlIXQ\r\n\r\nHope this helps!\r\n\r\nAdam\r\n\r\n> ",
+      "user_id": 158005511942,
+      "created_at": "2025-10-09T21:10:04Z",
+      "updated_at": "2025-10-09T21:10:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010185429,
+      "body_text": "Hi Adam Shelton,  Could you please open the control box and help me check the marking on one resistor? I’d like to confirm whether the wrong version was sent, which might be affecting the signal amplification and causing an incorrect kg display in the software — though it won’t affect actual performance. I’ll provide you with a reference photo for comparison.      If the resistor inside the red box is marked 473, we will send you a new control box as a replacement. Alternatively, you can send me a clear photo so I can confirm it for you. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-10T01:42:35Z",
+      "updated_at": "2025-10-10T01:42:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010494887,
+      "body_text": "Hi,\r\n\r\nThe resistor is marked 473:\r\n\r\n\r\n> ",
+      "user_id": 158005511942,
+      "created_at": "2025-10-15T13:10:23Z",
+      "updated_at": "2025-10-15T13:10:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010535462,
+      "body_text": "Hi Adam Shelton,  Please provide your order number, contact name, phone number, and shipping address, and we’ll send you a new control box. Your current control box can still be used, but since its signal is not amplified, the displayed weight (kg) and model readings will appear smaller. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-16T06:17:56Z",
+      "updated_at": "2025-10-16T06:17:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010548417,
+      "body_text": "Hi,\r\n\r\nThat’s great thank you.\r\n\r\nOrder number: #SSN2230\r\n\r\nContact number: +447585110811\r\n\r\nAdam Shelton\r\n40 Barrington Avenue\r\nHull\r\nEast Yorkshire\r\nHU5 4BD\r\nUnited Kingdom\r\n\r\n\r\nThanks,\r\nAdam\r\n\r\n> ",
+      "user_id": 158005511942,
+      "created_at": "2025-10-16T07:44:50Z",
+      "updated_at": "2025-10-16T07:44:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010552989,
+      "body_text": "Hi Adam Shelton,    We have arranged a replacement for you. Here is your tracking link:  https://t.17track.net/en#nums=SF6045974991866",
+      "user_id": 158001343601,
+      "created_at": "2025-10-16T09:39:38Z",
+      "updated_at": "2025-10-16T09:39:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010554330,
+      "body_text": "Awesome thank you! ",
+      "user_id": 158005511942,
+      "created_at": "2025-10-16T09:49:52Z",
+      "updated_at": "2025-10-16T09:49:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

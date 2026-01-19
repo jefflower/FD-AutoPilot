@@ -1,0 +1,55 @@
+{
+  "id": 8491,
+  "subject": "关于购买的疑问",
+  "description_text": "#SSN3453 您好，这是我的订单。其中一部分我已经收到，但另一部分仍在等待中。请问一切都顺利吗？我看到上次状态更新是12月7日，之后就没有其他信息了。",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-17T08:45:03Z",
+  "updated_at": "2025-12-22T12:43:48Z",
+  "requester_id": 158007280224,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014618935,
+      "body_text": "您好 Nika Nika，对于给您带来的不便我们深表歉意。您的追踪链接已停止更新。我们将代表您联系承运商进行调查。https://t.17track.net/en#nums=YT2532801900302823",
+      "user_id": 158001343601,
+      "created_at": "2025-12-17T08:50:41Z",
+      "updated_at": "2025-12-17T08:50:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014620813,
+      "body_text": "感谢您的回复。我会等待。",
+      "user_id": 158007280224,
+      "created_at": "2025-12-17T09:51:49Z",
+      "updated_at": "2025-12-17T09:51:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014873215,
+      "body_text": "您好 Nika Nika，这是另一个追踪号码：YWUA00000000309992NGUS。您可以通过 https://www.17track.net/en 进行追踪。您的包裹已于2025年12月8日送达。",
+      "user_id": 158007774607,
+      "created_at": "2025-12-22T11:20:30Z",
+      "updated_at": "2025-12-22T11:20:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014875178,
+      "body_text": "是的，我已经收到了。谢谢。",
+      "user_id": 158007280224,
+      "created_at": "2025-12-22T11:48:43Z",
+      "updated_at": "2025-12-22T11:48:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

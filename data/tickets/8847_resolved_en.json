@@ -1,0 +1,25 @@
+{
+  "id": 8847,
+  "subject": "Order SSN4647",
+  "description_text": "Hi, so can you give me the new tracking number please.\n\nRegards\nLaurent Zeches",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-22T06:39:01Z",
+  "updated_at": "2025-12-22T11:46:38Z",
+  "requester_id": 158007745688,
+  "responder_id": 158007774669,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014875099,
+      "body_text": "Hello, Laurent Zeches, YT2534900709146536 This is the new tracking number. We apologize for any inconvenience caused.",
+      "user_id": 158007774669,
+      "created_at": "2025-12-22T11:46:18Z",
+      "updated_at": "2025-12-22T11:46:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

@@ -1,0 +1,25 @@
+{
+  "id": 11047,
+  "subject": "order not shiping",
+  "description_text": "Dear, I'm interested in what's happening with my order. I ordered pedals on 12/25/2025 and when I go to your link it only says confirmed and not sent, the order number is SSN5275",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-16T07:09:46Z",
+  "updated_at": "2026-01-17T09:33:56Z",
+  "requester_id": 158009239927,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017322097,
+      "body_text": "Hi Marko Krsmanovic,    We apologize for the delay in shipping your order. Here is your tracking link.  https://t.17track.net/en#nums=ALS01360071879",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T09:33:56Z",
+      "updated_at": "2026-01-17T09:33:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

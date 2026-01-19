@@ -1,0 +1,64 @@
+{
+  "id": 9526,
+  "subject": "Pedal order no confirmation",
+  "description_text": "Hi there,\r\n\r\nMy son placed an order on Christmas Day, and has not received an order\r\nconfirmation as he had some confusion as to what email was used. I have\r\nattached the transaction from his account, can you please send details?\r\n\r\nMany thanks,\r\n\r\nLisa Baker, son name is Lachlan Baker. Western Australia\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-30T05:42:20Z",
+  "updated_at": "2025-12-30T08:44:19Z",
+  "requester_id": 158008817391,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015240189,
+      "body_text": "Our address is 41 Elvire Street Watermans Bay WA 6020. He is quite stressed as he used his Christmas Present money to purchase but in his excitement has made an error",
+      "user_id": 158008817391,
+      "created_at": "2025-12-30T07:02:14Z",
+      "updated_at": "2025-12-30T07:02:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015241635,
+      "body_text": "Hi Lisa Baker,  No need to worry, we are currently checking the order. Generally, successfully placed orders are shipped in sequence. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T08:12:50Z",
+      "updated_at": "2025-12-30T08:12:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015241714,
+      "body_text": "Hi Lisa Baker,     Your order has been shipped. The order number is SSN5265, and below is the tracking information. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T08:14:55Z",
+      "updated_at": "2025-12-30T08:14:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015241793,
+      "body_text": "Thankyou.\r\nCan you please re send the order confirmation to this email address and the\r\ntracking link we need to follow?\r\nThankyou!\r\n\r\n\r\nOn Tue, 30 Dec 2025 at 4:15 pm, service@simsonn.com ",
+      "user_id": 158008817391,
+      "created_at": "2025-12-30T08:16:50Z",
+      "updated_at": "2025-12-30T08:16:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015242520,
+      "body_text": "Hi Lisa Baker,  This system cannot resend emails. You can track the shipment directly using the tracking number. If you have any questions, feel free to contact us by email. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T08:44:19Z",
+      "updated_at": "2025-12-30T08:44:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

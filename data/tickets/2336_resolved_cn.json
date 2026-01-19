@@ -1,0 +1,75 @@
+{
+  "id": 2336,
+  "subject": "踏板触觉",
+  "description_text": "嗨，大家好，我的踏板组和踏板触觉模块都已送达。目前还在等踏板底板，但已在派送途中。我尝试在 iRacing 中让 VAM 触觉反馈起作用，但至今未成功。它们在 Simsonn 应用程序中显示为已连接，并且可以测试震动，但在游戏中我感觉不到它们。有什么建议吗？提前感谢。戴夫",
+  "status": 4,
+  "priority": 4,
+  "created_at": "2025-08-05T15:23:22Z",
+  "updated_at": "2025-09-28T12:40:00Z",
+  "requester_id": 158002312686,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006303039,
+      "body_text": "嗨，Dave Kleinrensink，请确认您正在使用 SIMSONN Manager 2.1.0 版本，并且遥测功能已正确配置。您也可以使用 SimHub 9.9.3 进行遥测。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-06T01:07:13Z",
+      "updated_at": "2025-08-06T01:07:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007069301,
+      "body_text": "喂，我一直在尝试优化触觉反馈，所以现在我将 SimHub 与 iRacing 结合使用。我应该如何处理 Simsonn Manager 中的触觉设置？因为它们在那里显示，但我已经在 SimHub 中为 iRacing 配置了它们。我是否应该在 Simsonn Manager 中以某种方式断开它们？还是将其保持在最大强度？祝好，戴夫。发自 2025年8月6日星期三 03:07 support @simsonn.com 的来信",
+      "user_id": 158002312686,
+      "created_at": "2025-08-18T08:52:52Z",
+      "updated_at": "2025-08-18T08:52:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007215686,
+      "body_text": "嗨，Dave Kleinrensink，请告诉我们您在 iRacing 中需要哪些遥测数据。此外，使用 SimHub 时，请确保将最大强度保持在 50%–70% 之间，否则可能会损坏 VAM。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-20T14:28:41Z",
+      "updated_at": "2025-08-20T14:28:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007215815,
+      "body_text": "好的，太完美了，会保持在 60%。我只想在刹车踏板上感受到车轮抱死和 ABS，在油门踏板上感受到车轮打滑。就是这样。它确实有效，但我也能感觉到其他东西，比如路面和颠簸（非常轻微），尽管我已经把所有其他效果都关掉了。发自 2025年8月20日星期三 16:28 support @simsonn.com 的来信",
+      "user_id": 158002312686,
+      "created_at": "2025-08-20T14:33:16Z",
+      "updated_at": "2025-08-20T14:33:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009362813,
+      "body_text": "嗨，Dave Kleinrensink，您好，您能确认一下您的踏板是 PlusX、ProX 还是 ProX Ultra 吗？一旦我知道了正确的型号，我将向您发送相应的更新。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-27T05:46:58Z",
+      "updated_at": "2025-09-27T05:46:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009378836,
+      "body_text": "我 8 月 20 号发的邮件，你 9 月 27 号才回复。谢谢，但我已经受够了。发自 2025年9月27日星期六 07:47 support @simsonn.com 的来信",
+      "user_id": 158002312686,
+      "created_at": "2025-09-27T08:33:27Z",
+      "updated_at": "2025-09-27T08:33:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

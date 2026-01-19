@@ -1,0 +1,34 @@
+{
+  "id": 9479,
+  "subject": "Missing parts",
+  "description_text": "Hello, I recently ordered the simsonn\r\nPlus X Black P2-H2-Plate off of amazon, but it arrived without the\r\nbaseplate, upon reaching out to your customer  service on Amazon, I was met\r\nwith a unhelpful response of someone telling me because they didn’t see the\r\nbaseplate in the picture on their end, they can’t help me (even though the\r\nbaseplate is very much there). Attached are my order, all that I recurved,\r\nthe customer service response, and someone who had a similar problem.\r\nPlease help, thank you.\r\n\r\n",
+  "status": 4,
+  "priority": 3,
+  "created_at": "2025-12-29T17:08:43Z",
+  "updated_at": "2026-01-04T06:27:09Z",
+  "requester_id": 158008810785,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015306646,
+      "body_text": "Hi Lukas Safko,  1ZJ201H40306155833  I am very sorry for any inconvenience caused. We have reshipped a new package to you from our US warehouse, here is the tracking number: 1ZJ201H40306155833, the shipping carrier is UPS, you can track it via https://www.ups.com/track. We just checked your order; there might be a problem with Amazon's image system. The image on your order page shows P2-H2 without the baseplate.",
+      "user_id": 158007774607,
+      "created_at": "2025-12-31T10:15:12Z",
+      "updated_at": "2025-12-31T10:15:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015312578,
+      "body_text": "Ok, thank you for your help.\r\n\r\nOn Wed, Dec 31, 2025 at 5:15 AM service@simsonn.com ",
+      "user_id": 158008810785,
+      "created_at": "2025-12-31T13:42:15Z",
+      "updated_at": "2025-12-31T13:42:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

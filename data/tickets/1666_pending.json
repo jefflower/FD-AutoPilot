@@ -1,0 +1,24 @@
+{
+  "id": 1666,
+  "subject": "SPRO-P2-H2 and VAM Pro Linear Motor",
+  "description_text": " Hi.\r\nI am the owner of the SPRO-P2-H2, and I would like to know if the\r\ncontroller of the PRO X is compatible in order to use the VAM Pro Linear\r\nMotor.\r\nThank you.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-18T09:04:16Z",
+  "updated_at": "2025-07-18T09:31:06Z",
+  "requester_id": 158002206291,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005146655,
+      "body_text": "Hi Eduardo Odriozola,    Of course you can, but you need to buy an additional control box for Plus X.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-18T09:31:06Z",
+      "updated_at": "2025-07-18T09:31:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

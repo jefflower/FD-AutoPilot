@@ -1,0 +1,37 @@
+{
+  "id": 10833,
+  "subject": "PRODUCT TECHNICAL SUPPORT TEAM -",
+  "description_text": "Simsonn,\r\n\r\nYour products are now getting quite popular!\r\nWe are now manufacturing quite a few products to support your customers.\r\n\r\nI'm reaching out to you today to request assistance - The schematics you\r\nhave online don't detail the missing measurement we require to finalise the\r\npart for our customer using your Pressure Handbrake.\r\n\r\nPlease see the attached file guys.\r\nCan you provide me the missing measure - What is the distance, centre to\r\ncentre of the mounting slots,  in millimeters.\r\n\r\nMuch appreciated.\r\n\r\nWarmest regards,\r\n\r\nMark @ Lowdown Shifter\r\n\r\n.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-13T21:56:14Z",
+  "updated_at": "2026-01-15T01:21:48Z",
+  "requester_id": 158003141067,
+  "responder_id": 158000445778,
+  "cc_emails": [
+    "ristomattheas.maiorov@techno.ee",
+    "ristomattheas.maiorov@tptlive.ee"
+  ],
+  "conversations": [
+    {
+      "id": 158017052375,
+      "body_text": "Hi Mark Fryer,  I measured the center-to-center hole spacing and it is 61 mm. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-14T01:17:01Z",
+      "updated_at": "2026-01-14T01:17:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017055011,
+      "body_text": "Hi,\r\n\r\nThank you for this. Much appreciated.\r\n\r\nWe can now manufacture the product.\r\n\r\nKeep doing great things!\r\n\r\nSpeak soon.\r\n\r\nWarmest regards,\r\n\r\nMark @ Lowdown Shifter\r\n\r\n.\r\n\r\n\r\n\r\nOn Wed, Jan 14, 2026 at 1:17 AM service@simsonn.com ",
+      "user_id": 158003141067,
+      "created_at": "2026-01-14T02:06:33Z",
+      "updated_at": "2026-01-14T02:06:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

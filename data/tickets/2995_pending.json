@@ -1,0 +1,74 @@
+{
+  "id": 2995,
+  "subject": "item inquiry",
+  "description_text": "Good morning, my son bought Pro pedals from you. I wanted to ask what I\r\nneed to do to make the brake pedal less stiff? Can you help me?\r\n\r\nPozdrawiam,\r\nmet vriendelijk groet,\r\ngreetings,\r\nDawid Zygmunt.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-22T12:29:27Z",
+  "updated_at": "2025-08-27T03:37:23Z",
+  "requester_id": 158003469226,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007340042,
+      "body_text": "I forgot to add a photo\r\n\r\n\r\n\r\nPozdrawiam,\r\nmet vriendelijk groet,\r\ngreetings,\r\nDawid Zygmunt.\r\n\r\npt., 22 sie 2025, 14:29 użytkownik service@simsonn.com ",
+      "user_id": 158003469226,
+      "created_at": "2025-08-22T12:34:15Z",
+      "updated_at": "2025-08-22T12:34:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007444677,
+      "body_text": "Hi Dawid Zygmunt,     Please try removing the 10mm limiter spacer from the brake spring and test again. This spacer is mainly intended for short-travel F1 setups, but for rally use it is recommended to remove it. Additionally, in the coming days we will be releasing a white damper (hardness 30HA), which is softer compared to the current red damper (60HA). If you feel it is still too stiff for children, the white damper would be a suitable option. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-25T04:17:52Z",
+      "updated_at": "2025-08-25T04:17:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007451330,
+      "body_text": "super, thank you for the tip, and how to configure it later in the\r\napplication, so that the brake pedal works in the game in its entire, then\r\nlarger range?\r\n\r\nPozdrawiam,\r\nmet vriendelijk groet,\r\ngreetings,\r\nDawid Zygmunt.\r\n\r\npon., 25 sie 2025, 06:18 użytkownik service@simsonn.com ",
+      "user_id": 158003469226,
+      "created_at": "2025-08-25T04:45:24Z",
+      "updated_at": "2025-08-25T04:45:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007548057,
+      "body_text": "Hi Dawid Zygmunt,     You can refer to the user manual and perform a simple calibration for the pedals, which will allow them to output 100% force when fully pressed. In the SIMSONN Manager interface, there is a “Calibrate” button where you can complete the calibration. You can also set the dead zone as needed. Please give it a try. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-26T03:19:28Z",
+      "updated_at": "2025-08-26T03:19:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007549468,
+      "body_text": "Is it possible to set the pedal so that it starts working at the initial\r\nstage of pressure? Currently, during calibration, the pedal only responds\r\nafter 30% of pressure?\r\n\r\nPozdrawiam,\r\nmet vriendelijk groet,\r\ngreetings,\r\nDawid Zygmunt.\r\n\r\nwt., 26 sie 2025, 05:19 użytkownik service@simsonn.com ",
+      "user_id": 158003469226,
+      "created_at": "2025-08-26T06:10:48Z",
+      "updated_at": "2025-08-26T06:10:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007590522,
+      "body_text": "Hi Dawid Zygmunt,  If you adjust the structure of the pedal, such as changing the damper or washers, please use the Offset function in the software interface to shift the initial signal position. This will ensure the signal starts outputting from 0%. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-27T03:37:21Z",
+      "updated_at": "2025-08-27T03:37:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

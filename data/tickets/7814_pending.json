@@ -1,0 +1,104 @@
+{
+  "id": 7814,
+  "subject": "请问我的油门这样正常吗",
+  "description_text": "你好 我刚刚安装好这个踏板 感觉油门踩下去和松起来的时候（特别是松起来的时候）感觉液压杆卡卡的 整个行程不是很丝滑 这个正常吗 我问了淘宝客服没有回复\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-09T19:42:43Z",
+  "updated_at": "2025-12-14T03:19:53Z",
+  "requester_id": 158007712613,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014224629,
+      "body_text": "Hi matt wu,    再联系淘宝客户更换一根液压试试。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-09T23:21:12Z",
+      "updated_at": "2025-12-09T23:21:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014224663,
+      "body_text": "可是我是在官网买的诶 我在英国\r\n\r\nOn Tue, 9 Dec 2025 at 23:21, support@simsonn.com ",
+      "user_id": 158007712613,
+      "created_at": "2025-12-09T23:22:25Z",
+      "updated_at": "2025-12-09T23:22:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014225337,
+      "body_text": "Hi matt wu,  Please try applying some lubricant to the hydraulic rod first to see if this resolves the issue. May I know when you placed the order? Please provide the order number as well. If the issue persists, we can send you a replacement one-way hydraulic rod for the throttle. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-09T23:44:18Z",
+      "updated_at": "2025-12-09T23:44:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014225405,
+      "body_text": "请问怎么上润滑油 有教程吗\r\n\r\nOn Tue, 9 Dec 2025 at 23:44, support@simsonn.com ",
+      "user_id": 158007712613,
+      "created_at": "2025-12-09T23:46:35Z",
+      "updated_at": "2025-12-09T23:46:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014225440,
+      "body_text": "Hi matt wu,  说明书中有详细的操作指导，另外您也可以在液压杆的金属杆部分喷一点润滑油。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-09T23:47:50Z",
+      "updated_at": "2025-12-09T23:47:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014225478,
+      "body_text": "ok 如果不行的话我再联系 到时候附上我的订单号\r\n\r\nOn Tue, 9 Dec 2025 at 23:48, support@simsonn.com ",
+      "user_id": 158007712613,
+      "created_at": "2025-12-09T23:49:06Z",
+      "updated_at": "2025-12-09T23:49:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014225514,
+      "body_text": "Hi matt wu,  好的，没问题",
+      "user_id": 158000445778,
+      "created_at": "2025-12-09T23:50:14Z",
+      "updated_at": "2025-12-09T23:50:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014354268,
+      "body_text": "你好 这样的问题还是存在 涂了润滑油之后还是这样 我的订单号是SSN4039\r\n\r\nOn Tue, 9 Dec 2025 at 23:50, support@simsonn.com ",
+      "user_id": 158007712613,
+      "created_at": "2025-12-11T22:06:14Z",
+      "updated_at": "2025-12-11T22:06:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014472138,
+      "body_text": "Hi matt wu,  Please provide your contact name, phone number, and shipping address, and we will send you a new throttle one-way hydraulic rod. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-14T03:19:53Z",
+      "updated_at": "2025-12-14T03:19:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

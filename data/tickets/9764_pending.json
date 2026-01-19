@@ -1,0 +1,44 @@
+{
+  "id": 9764,
+  "subject": "Clutch pedal noise",
+  "description_text": "Hello,\r\n i recently got your Plus X pedals, i love them, but my clutch is making\r\nweird noise when using.\r\nI tried to lubricate every moving part i could but nothing helpen. I\r\nattached video of that squaking sound, i dont really know where its coming\r\nfrom.\r\nThanks for any upcoming help.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-02T02:27:31Z",
+  "updated_at": "2026-01-04T01:23:50Z",
+  "requester_id": 158008844426,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015377773,
+      "body_text": "Hi Tomáš Skovajsa,  Please rotate the yellow spring slightly; it may be catching on the left steel plate after compression. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-02T03:29:33Z",
+      "updated_at": "2026-01-02T03:29:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015401202,
+      "body_text": "Hello, that didn't helped. It starts to make noise just as the back part\r\nstarts tilting upwards. Attaching another video so you see and hear it\r\nbetter.\r\n\r\npá 2. 1. 2026 v 4:29 odesílatel support@simsonn.com ",
+      "user_id": 158008844426,
+      "created_at": "2026-01-02T15:31:11Z",
+      "updated_at": "2026-01-02T15:31:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015546063,
+      "body_text": "Hi Tomáš Skovajsa,     You can apply lubrication maintenance to these areas; some recommended lubrication points are also mentioned in the manual. Please check these points first, as any noise usually comes from one of these areas. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-04T01:23:49Z",
+      "updated_at": "2026-01-04T01:23:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

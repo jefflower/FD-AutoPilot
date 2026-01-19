@@ -1,0 +1,74 @@
+{
+  "id": 10892,
+  "subject": "order #SSN5728",
+  "description_text": "Hi\r\n\r\n\r\n\r\n                                I’ve received my QRs but it looks like one\r\nof them wasn’t machined correctly.\r\n\r\n\r\n\r\n                                As you can see from the pictures, one of\r\nthem doesn’t have threads in all of the holes so doesn’t fit on one of my\r\nwheels.\r\n\r\n\r\n\r\n                                Would you be able to arrange a replacement\r\nand if you require me to return the faulty one can you please send a\r\npre-paid label.\r\n\r\n\r\n\r\nThanks\r\n\r\n\r\n\r\nMark\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-14T11:21:18Z",
+  "updated_at": "2026-01-17T02:19:23Z",
+  "requester_id": 158008847492,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017196837,
+      "body_text": "Hi     Can I please have an update on this ASAP as I'm waiting to install my 3rd wheel.     Thanks     Mark",
+      "user_id": 158008847492,
+      "created_at": "2026-01-15T14:50:42Z",
+      "updated_at": "2026-01-15T14:50:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158017254516,
+      "body_text": "Hi any chance of a response to this please? ",
+      "user_id": 158008847492,
+      "created_at": "2026-01-16T10:26:34Z",
+      "updated_at": "2026-01-16T10:26:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158017256256,
+      "body_text": "Hi Mark Rivers,    We apologize for the delayed response. We have arranged for a replacement shipment to be sent to you. Here is your tracking link:    https://t.17track.net/en#nums=SF6047246176622",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T11:00:59Z",
+      "updated_at": "2026-01-16T11:00:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017258565,
+      "body_text": "Hi, thank you for the response. How do I go about returning the faulty item? Thanks Mark",
+      "user_id": 158008847492,
+      "created_at": "2026-01-16T11:19:23Z",
+      "updated_at": "2026-01-16T11:19:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158017259080,
+      "body_text": "Hi Mark Rivers,    No need to return it,  Have fun!",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T11:36:02Z",
+      "updated_at": "2026-01-16T11:36:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017259881,
+      "body_text": "Thank you for confirming! ",
+      "user_id": 158008847492,
+      "created_at": "2026-01-16T12:02:19Z",
+      "updated_at": "2026-01-16T12:02:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    }
+  ]
+}

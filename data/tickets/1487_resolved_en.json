@@ -1,0 +1,45 @@
+{
+  "id": 1487,
+  "subject": "Order ID: 3039453337647512 / Aliexpress / Break issues",
+  "description_text": "Hello Simsonn im having some issues with Order ID: 3039453337647512 if I press the break pedal it seems to sometimes disconnect USB. I have tried with a different Box, Cable, PC and different wheelbase alltogether, Latest firmware and the one below experiences same issue, ground is connected. Is it a defective unit? If so will you guys replace it? Heavily discount a new one?\n\nKind Regards\nMarkus",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-07-12T17:59:08Z",
+  "updated_at": "2025-07-16T05:48:54Z",
+  "requester_id": 158002099212,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004725113,
+      "body_text": "Hi Markus Andersson,  This issue may be caused by insufficient USB power supply. We recommend avoiding USB hubs and instead connecting the device directly to a USB 3.0 port on the back of your PC. Additionally, you may try updating to the latest firmware, although we are currently unsure whether your control box supports the upgrade. Please refer to the download link and update instructions below:      In SIMSONN Manager 2.0.8, go to the update section and click on “Manual Firmware Update.” Then navigate to the pedals-firmware folder, open the pedals subfolder, and select the plus.sfu file to update the firmware.      https://www.simsonn.com/pages/download     You may also consider upgrading to the latest PlusX control box. It supports the newest VAM Pro haptic motor and is compatible with our upgraded hydraulic and damping systems for an enhanced experience.      https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor?variant=51351053533498     https://www.simsonn.com/products/plus-ultra-upgrade-kit",
+      "user_id": 158000445778,
+      "created_at": "2025-07-13T01:05:33Z",
+      "updated_at": "2025-07-13T01:05:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004777845,
+      "body_text": "I'm on latest firmware, its connected directly to PC tried 3.0 and 2.0. Also as said before it's only the break behaving like this and I don't have the issue with the throttle.\n\nIgnore the haptics from simagic as I have tried without them attached aswell, you guys hadnt released yours yet.",
+      "user_id": 158002099212,
+      "created_at": "2025-07-14T08:52:33Z",
+      "updated_at": "2025-07-14T08:52:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004936812,
+      "body_text": "Hi Markus Andersson,  Please provide a screenshot from either the Freejoy or SimConfigPedal software, along with a video demonstrating the issue. Based on your information, we will evaluate whether replacement parts are needed for your setup.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T04:46:48Z",
+      "updated_at": "2025-07-16T04:46:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

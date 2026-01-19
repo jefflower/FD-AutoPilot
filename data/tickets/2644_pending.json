@@ -1,0 +1,44 @@
+{
+  "id": 2644,
+  "subject": "Carbon fibre steering wheel hub",
+  "description_text": "Hi\r\nI am interested in the carbon fibre steering hub. \r\nIn the specifications, it says that it’s compatible with a logitech G29. Does that mean you can unscrew the wheel of the Logitech and attach the carbon fibre steering hub to the wheel and plug it back into the Logitech base?\r\n\r\nThanks for your time!\r\nDerek\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-13T18:41:33Z",
+  "updated_at": "2025-08-14T05:48:30Z",
+  "requester_id": 158003027629,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006825828,
+      "body_text": "Hi Derek Moc,    Our quick-release hole spacing is 70 mm, which is compatible with G29.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-14T02:39:04Z",
+      "updated_at": "2025-08-14T02:39:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006829570,
+      "body_text": "Do the buttons work on the carbon fibre steering wheel hub? How do you connect the electronics of the wheel hub to the Logitech G29 base?\r\n\r\n\r\n\r\n> ",
+      "user_id": 158003027629,
+      "created_at": "2025-08-14T05:42:38Z",
+      "updated_at": "2025-08-14T05:42:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006829658,
+      "body_text": "Hi Derek Moc,    It can certainly be used normally, and many of our customers use it in this way.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-14T05:48:29Z",
+      "updated_at": "2025-08-14T05:48:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

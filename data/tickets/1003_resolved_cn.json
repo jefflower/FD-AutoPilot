@@ -1,0 +1,65 @@
+{
+  "id": 1003,
+  "subject": "VAM Pro 无法工作",
+  "description_text": "你好。我刚把新的 VAM pro 安装到我的 PRo X 踏板上，但它们不工作。当我点击震动或想在 SimHub 中测试时，电机没有收到信号。我是不是做错了什么？我的所有连接都是正确的，SimHub 也识别出了设备。\n\n发自我的 iPhone",
+  "status": 4,
+  "priority": 3,
+  "created_at": "2025-06-30T13:08:31Z",
+  "updated_at": "2025-07-02T06:01:32Z",
+  "requester_id": 158001840300,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004353491,
+      "body_text": "你好，Alex。pelea，我们的软件目前支持10款游戏。请问您现在使用的是哪款游戏？我们正在持续努力为更多游戏添加遥测支持。与此同时，您可以使用我提供的SimHub内部版本。官方版本仍在测试中，可能还需要一些时间。 https://drive.google.com/file/d/1QrSbAvCC5iyx9XgdRgSQV-hWpmDGkujc/view?usp=sharing",
+      "user_id": 158000445778,
+      "created_at": "2025-07-01T06:26:57Z",
+      "updated_at": "2025-07-01T06:26:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004353605,
+      "body_text": "我会尝试这个 SimHub 版本。我在 Iracing 中试过，但当我点击‘振动’按钮时，它们在 Simsonn 软件中也无法工作。",
+      "user_id": 158001840300,
+      "created_at": "2025-07-01T06:34:59Z",
+      "updated_at": "2025-07-01T06:34:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004362791,
+      "body_text": "你好 Alex. pelea，你购买了 24V 独立电源了吗？另外，请按照以下步骤更新 ProX 固件。在“设置 - 更新”部分，点击“手动固件更新”，然后导航到 pedals-firmware 文件夹 → pedals 文件夹 → 并选择 prox.sfu。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T01:47:16Z",
+      "updated_at": "2025-07-02T01:47:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004363207,
+      "body_text": "谢谢。我用测试版 SimHub 把它弄好了。\n发自我的 iPhone",
+      "user_id": 158001840300,
+      "created_at": "2025-07-02T04:45:35Z",
+      "updated_at": "2025-07-02T04:45:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004363339,
+      "body_text": "您好，Alex。pelea，SIMHUB官方网站已发布9.9.3版本。这是官方稳定版，您现在可以下载并使用它。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T06:01:32Z",
+      "updated_at": "2025-07-02T06:01:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

@@ -1,0 +1,44 @@
+{
+  "id": 5615,
+  "subject": "Pro Pedals software",
+  "description_text": "Hello,\r\n\r\nI have the old Simsonn Pro Pedals. Could you tell me which is the latest\r\nsoftware that I can use? Can I use v.4 with them?\r\n\r\nRegards,\r\nRossen Kovachev\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-04T09:30:34Z",
+  "updated_at": "2025-11-05T06:01:20Z",
+  "requester_id": 158006493128,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011769343,
+      "body_text": "Hi Росен Ковачев,  Could you please provide your order number and purchase date? I can help you verify it. You can also download different versions from our official website.      https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-11-05T05:37:09Z",
+      "updated_at": "2025-11-05T05:37:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011769604,
+      "body_text": "Hello,\r\n\r\nThe pedals are the old Pro Pedals that a friend of mine bought long time\r\nago via AliExpress. I am using SimPedalsConfig v3 currently and my question\r\nis are they compatible with both v3.5 and v4?\r\n\r\nRegards,\r\nRossen Kovachev\r\n\r\nНа ср, 5.11.2025 г. в 7:37 service@simsonn.com ",
+      "user_id": 158006493128,
+      "created_at": "2025-11-05T05:57:33Z",
+      "updated_at": "2025-11-05T05:57:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011769654,
+      "body_text": "Hi Росен Ковачев,  If you are using the V3 version, which shows 1.7.0, it cannot be upgraded to the latest SIMSONN Manager 2.1.2, as the upgrade requires the previous version to be 1.7.1. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-05T06:01:19Z",
+      "updated_at": "2025-11-05T06:01:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

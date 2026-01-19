@@ -1,0 +1,65 @@
+{
+  "id": 1003,
+  "subject": "VAM Pro not working",
+  "description_text": "Hi. I just installed my new VAM pro on my PRo X pedals and they are not working. When I click Vibration or if I want to test in SimHub there is no signal going to the motors. Am I doing something wrong? All my connections are correct and Sim Hub recognized the device\n\nSent from my iPhone",
+  "status": 4,
+  "priority": 3,
+  "created_at": "2025-06-30T13:08:31Z",
+  "updated_at": "2025-07-02T06:01:32Z",
+  "requester_id": 158001840300,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004353491,
+      "body_text": "Hi Alex. pelea, Our software currently supports 10 games. May I ask which game you are using now? We are continuously working to add telemetry support for more titles. In the meantime, you can use the internal version of SimHub that I’ve provided. The official release is still undergoing testing and may take a bit more time. https://drive.google.com/file/d/1QrSbAvCC5iyx9XgdRgSQV-hWpmDGkujc/view?usp=sharing",
+      "user_id": 158000445778,
+      "created_at": "2025-07-01T06:26:57Z",
+      "updated_at": "2025-07-01T06:26:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004353605,
+      "body_text": "Will try this SimHub version. I tried in Iracing but they don’t work in the Simsonn software either when I click the Vibrate button",
+      "user_id": 158001840300,
+      "created_at": "2025-07-01T06:34:59Z",
+      "updated_at": "2025-07-01T06:34:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004362791,
+      "body_text": "Hi Alex. pelea, Did you purchase the 24V independent power supply? Also, please follow the steps below to update the ProX firmware. In the “Settings - Update” section, click “Manual Firmware Update,” then navigate to the pedals-firmware folder → pedals folder → and select the prox.sfu",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T01:47:16Z",
+      "updated_at": "2025-07-02T01:47:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004363207,
+      "body_text": "Thank you. I got it working with the beta SimHub\nSent from my iPhone",
+      "user_id": 158001840300,
+      "created_at": "2025-07-02T04:45:35Z",
+      "updated_at": "2025-07-02T04:45:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004363339,
+      "body_text": "Hi Alex. pelea, The official SIMHUB website has released version 9.9.3. This is the official stable release, and you can now download and use it.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T06:01:32Z",
+      "updated_at": "2025-07-02T06:01:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

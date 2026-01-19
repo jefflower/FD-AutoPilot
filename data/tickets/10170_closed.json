@@ -1,0 +1,24 @@
+{
+  "id": 10170,
+  "subject": "HS PRO shifter",
+  "description_text": "Issue with HS Pro shifter not showing on simsonn manager. Cannot calibrate\r\nshifter. Only gears 3 and 4 seems to work. Not sure if it is stuck on\r\nsequential mode\r\n[image: Screenshot 2026-01-06 223610.png]\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2026-01-07T03:55:33Z",
+  "updated_at": "2026-01-07T04:57:48Z",
+  "requester_id": 158008794835,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016059385,
+      "body_text": "此工单已关闭并合并到工单 10167 中",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T04:57:48Z",
+      "updated_at": "2026-01-07T04:57:48Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

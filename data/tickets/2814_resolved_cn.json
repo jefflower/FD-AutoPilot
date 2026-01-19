@@ -1,0 +1,85 @@
+{
+  "id": 2814,
+  "subject": "Pro 脚踏板的超强电磁干扰",
+  "description_text": "我怀疑我的脚踏板可能有电磁干扰问题，脚踏板似乎有微弱但持续的读数。调整死区似乎没有帮助，有什么办法可以解决吗？\n\n通过 iOS 版 Outlook 获取<https://aka.ms/o0ukef>",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-08-18T03:18:15Z",
+  "updated_at": "2025-08-20T14:24:22Z",
+  "requester_id": 158002806240,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007051526,
+      "body_text": "通过 iOS 版 Outlook 获取<https://aka.ms/o0ukef>\n________________________________",
+      "user_id": 158002806240,
+      "created_at": "2025-08-18T03:20:13Z",
+      "updated_at": "2025-08-18T03:20:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007081401,
+      "body_text": "您好 Scott Krause，您可以先设置偏移量，然后再次进行校准测试。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-18T12:39:16Z",
+      "updated_at": "2025-08-18T12:39:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007099024,
+      "body_text": "好多了，但没有完全消除，油门和离合器仍然有点干扰\n\n通过 iOS 版 Outlook 获取<https://aka.ms/o0ukef>\n________________________________",
+      "user_id": 158002806240,
+      "created_at": "2025-08-18T18:14:28Z",
+      "updated_at": "2025-08-18T18:14:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007112308,
+      "body_text": "您好 Scott Krause，此问题是由方向盘底座的电磁干扰引起的。请按照以下步骤进行故障排除和解决。大多数具有类似设置的客户（例如 Fanatec、MOZA 和 T500 用户）都已使用此方法解决了问题。为了解决 EMI（电磁干扰）问题，请按照以下步骤提高设备稳定性和 USB 连接可靠性： 1. 确保正确接地：确保计算机连接到具有可靠接地的三孔插座。两孔插头不提供接地。 2. 控制盒接地：使用绿色屏蔽线将控制盒的金属外壳（例如铜柱或螺丝）连接到踏板上的任何金属螺丝。确保接触点无油漆且导电。 3. 底座接地（例如 Fanatec / MOZA）：建议将底座的金属部分连接到电脑机箱或外部接地以释放静电。 4. 避免高干扰区域：使 USB 电缆远离高压电源线或适配器；如果可能，将电缆单独布线。 5. 使用直接 USB 连接：将设备直接连接到电脑背面的 USB 3.0 端口，而不是使用未供电或低质量的 USB 集线器。 6. 使用带铁氧体磁芯的 USB 电缆：如果需要，请改用带铁氧体磁珠的高质量 USB 电缆以减少高频干扰。 7. 保持软件和固件更新：确保 SIMSONN Manager 和固件更新到最新版本，因为某些更新包含 EMI 处理改进。 8. 使用 USB 隔离器：如果上述方法无法解决问题，建议使用 USB 隔离器。它物理隔离了 USB 电源和数据线，有效屏蔽了控制设备免受 EMI 源的影响。 https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-08-19T04:34:30Z",
+      "updated_at": "2025-08-19T04:34:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007112927,
+      "body_text": "我将从这些步骤开始，但我有一个问题，将地线连接到控制盒的最佳方式是什么？我看到整个盒子内部都涂了漆，所以我的顾虑是，我是否只需要刮掉一些油漆，然后简单地将盒子本身接地，还是最好将地线焊接到实际电路板上。\n\n我曾预料到这一点，并且已经确保我的框架已接地并为此步骤做好了准备，我只是想以我能达到的最佳连续性连接地线。\n\n通过 iOS 版 Outlook 获取<https://aka.ms/o0ukef>\n________________________________",
+      "user_id": 158002806240,
+      "created_at": "2025-08-19T05:13:41Z",
+      "updated_at": "2025-08-19T05:13:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007114109,
+      "body_text": "您好 Scott Krause，ProX Ultra 无需连接到主控制器；此设置仅适用于 PlusX 脚踏板。这有助于排除其他潜在问题。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-19T06:41:18Z",
+      "updated_at": "2025-08-19T06:41:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007160983,
+      "body_text": "我把盒子接地到脚踏板了，一切正常。谢谢！\n\n通过 iOS 版 Outlook 获取<https://aka.ms/o0ukef>\n________________________________",
+      "user_id": 158002806240,
+      "created_at": "2025-08-19T17:13:27Z",
+      "updated_at": "2025-08-19T17:13:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

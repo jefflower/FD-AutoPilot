@@ -1,0 +1,34 @@
+{
+  "id": 11086,
+  "subject": "France",
+  "description_text": "Bonjour,\r\n\r\nJ'essaie de commander votre pédalier PLUS X P3-H3 chez Amazon mais ils semblent bloquer la commande.\r\nJe ne peux que passer par Amazon car ce sont des chèques  cadeaux que je dois utiliser.\r\n\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-16T14:29:04Z",
+  "updated_at": "2026-01-17T07:41:37Z",
+  "requester_id": 158009300525,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017318670,
+      "body_text": "Hi Aureltouch orl,  Vous pouvez essayer d'acheter d'abord le P2-H2, puis d'acheter l'embrayage séparément.",
+      "user_id": 158007774607,
+      "created_at": "2026-01-17T07:38:27Z",
+      "updated_at": "2026-01-17T07:38:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017318697,
+      "body_text": "Je ne trouve pas l'embrayage sur Amazon\r\n\r\n________________________________\r\n",
+      "user_id": 158009300525,
+      "created_at": "2026-01-17T07:40:49Z",
+      "updated_at": "2026-01-17T07:40:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

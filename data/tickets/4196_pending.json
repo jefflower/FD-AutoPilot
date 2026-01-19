@@ -1,0 +1,124 @@
+{
+  "id": 4196,
+  "subject": "Haptic Reactor",
+  "description_text": "Hi there,\r\n\r\nI have your pedals and the pro haptic reactors, and I’m having an issue where the reactors start “buzzing” while playing and basically disconnect. Sometimes they just vibrate loudly as well, and have the same disconnection issue until they’re unplugged and plugged back in. Hopefully you know what the issue is, thanks!\r\n\r\nNathan\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-27T23:21:06Z",
+  "updated_at": "2025-11-25T05:20:43Z",
+  "requester_id": 158005114562,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009568971,
+      "body_text": "Hi Nathan Smith,  Please connect the device to the rear USB 3.0 (blue port) of your computer and avoid using any USB hubs. If the issue persists, please share a video to help us diagnose the problem. Additionally, the device is compatible with SimHub version 9.9.3 and above. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-28T12:25:41Z",
+      "updated_at": "2025-09-28T12:25:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009661357,
+      "body_text": "I did what you recommended and the issue persists, it is fine for 1 or 2 laps and then goes out. When it “stops working” it either becomes a low almost inaudible hum from the motors or a loud violent shake like I’m going over the track limits. Pulling the power and connection plug resets it and it becomes fine for another 2 minutes and then the cycle repeats— very frustrating. Any help would be appreciated!\r\n\r\nN Smith\r\n\r\n> ",
+      "user_id": 158005114562,
+      "created_at": "2025-09-30T00:01:50Z",
+      "updated_at": "2025-09-30T00:01:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009729888,
+      "body_text": "Hi Nathan Smith,    Could you please provide me with your pedal model and order number? I will check it for you and update the firmware accordingly.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T11:03:30Z",
+      "updated_at": "2025-10-01T11:03:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009742429,
+      "body_text": "I ordered it through Amazon, but the model is the VAM pro. Where would I find the model number on the unit itself?\r\n\r\n> ",
+      "user_id": 158005114562,
+      "created_at": "2025-10-01T15:15:06Z",
+      "updated_at": "2025-10-01T15:15:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009742502,
+      "body_text": "Hi Nathan Smith,    Could you please provide a screenshot of your pedal order? That will allow me to identify the exact model.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T15:17:24Z",
+      "updated_at": "2025-10-01T15:17:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009743559,
+      "body_text": "This is what I got, because it looks like the product was taken down: the Pro X haptics. \r\n\r\n> ",
+      "user_id": 158005114562,
+      "created_at": "2025-10-01T15:47:55Z",
+      "updated_at": "2025-10-01T15:47:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009937856,
+      "body_text": "Hi Nathan Smith,  Please uninstall the old version on your computer, then reinstall version 2.1.2 and update the firmware. After the update, the device version should display as CPU1: 2.0.5, CPU2: 2.0.3. If the issue persists, please feel free to contact me.      https://drive.google.com/file/d/1PZwHUqhhmJw0IBGDO8mGONPbrICJU3z1/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T15:53:08Z",
+      "updated_at": "2025-10-05T15:53:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012427747,
+      "body_text": "I did this and it is still dropping out of connection and vibrating incorrectly or not at all until I physically unplug both pedal plugs and plug them back in. Very frustrating for my whole sim setup! I hope there’s a fix.\r\n\r\n-Nathan\r\n\r\n> ",
+      "user_id": 158005114562,
+      "created_at": "2025-11-17T02:32:20Z",
+      "updated_at": "2025-11-17T02:32:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012559387,
+      "body_text": "Hi Nathan Smith,  First, uninstall the old version on your PC and launch the latest SIMSONN Manager 2.1.2, as we may have released updates.  On the “Plus X” control unit, press and hold the “Upgrade” button.  While holding the button, unplug the USB cable from the PC, then plug it back in. The software should detect that the device has entered “SIMSONN Flasher update mode.”  In the software, go to: Settings → Update → Manual Firmware Update  In the file selector, choose: pedals‑firmware → pedals‑plusx.sfu  Click “Start Update” and wait until the firmware is completely written. Do not disconnect the USB or close the application during this process.  Once the update is finished (you’ll see a success prompt or the unit will automatically reboot), unplug and re‑plug the USB cable, then test the pedal device to confirm all functions are working properly.  Additionally, if the vibration does not stop, it indicates a signal interruption. Even when using a USB 3.0 port, you can resolve this by: connecting the PC case to the pedal’s metal screws and connecting the control box to the pedal’s metal screws. This should fix the issue.     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding   https://www.reddit.com/r/simracing/comments/1n291hi/solution_for_simsonn_vam_pro_emi_issues/",
+      "user_id": 158000445778,
+      "created_at": "2025-11-19T04:52:33Z",
+      "updated_at": "2025-11-19T04:52:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012737174,
+      "body_text": "\r\n\r\n\r\nSo here I am again, I think I’d just like a refund at this point. I’ve done everything you’ve asked and I wish they worked but they just don’t. I followed your instructions from both of your last emails and it still cuts out on me, ridiculous and makes me not enjoy racing on the rest of my expensive sim. I can send this unit to you to test but at this point I think it’s just a faulty product and I’d like my money back, it legit has never worked. \r\n\r\n-N Smith\r\n\r\n> ",
+      "user_id": 158005114562,
+      "created_at": "2025-11-22T01:20:34Z",
+      "updated_at": "2025-11-22T01:20:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012859455,
+      "body_text": "Hi Nathan Smith,     I’ve reviewed your video and did not notice any faults. Here’s a new solution:  If this issue occurs, it usually indicates that the PC grounding is unreliable, possibly because a three-prong plug was not used in a wall socket.  You can follow this approach:    Connect the PC case to the metal screws on the stand or pedals;    Also connect the control box to the metal screws on the pedals.    This should effectively resolve the disconnection problem.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-25T05:20:43Z",
+      "updated_at": "2025-11-25T05:20:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

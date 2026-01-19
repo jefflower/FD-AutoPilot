@@ -1,0 +1,144 @@
+{
+  "id": 512,
+  "subject": "Re: Re: SIMSONN CANBus Protocol",
+  "description_text": "Hi there, did you add this yet?\r\n\r\n\r\nWarm and Kind Regards,\r\n\r\n*Pravin Bajwa*\r\nDIRECTOR / TECHNICAL\r\n\r\n\r\n*@airflx <https://www.instagram.com/airflx/>*\r\n*02 7255 5152*\r\n*www.airflx.com.au <http://www.airflx.com.au/>*\r\n\r\n\r\nOn Tue, Apr 8, 2025 at 12:09 PM AirFlex Suspension <contact@airflx.com.au>\r\nwrote:\r\n\r\n> It's quite easy to implement with this STM32 microcontroller - if you can\r\n> apply those above changes I can do some testing for you and provide\r\n> feedback immediately\r\n> Warm and Kind Regards,\r\n>\r\n> *Pravin Bajwa*\r\n> DIRECTOR / TECHNICAL\r\n>\r\n>\r\n> *@airflx <https://www.instagram.com/airflx/>*\r\n> *02 7255 5152*\r\n> *www.airflx.com.au <http://www.airflx.com.au/>*\r\n>\r\n>\r\n> On Tue, Apr 8, 2025 at 12:03 PM General and sales enquiries <\r\n> service@simsonn.com> wrote:\r\n>\r\n>> Hi,\r\n>> We haven't started this part of the code yet, we just reserved space, so\r\n>> we don't have any data yet\r\n>> ------------------------------\r\n>> service@simsonn.com\r\n>>\r\n>>\r\n>> *From:* AirFlex Suspension <contact@airflx.com.au>\r\n>> *Date:* 2025-04-08 08:51\r\n>> *To:* General and sales enquiries <service@simsonn.com>\r\n>> *Subject:* Re: Re: SIMSONN CANBus Protocol\r\n>> Thanks, there is no data on these pins. we should use 500KB bitrate,\r\n>> 0x197 byte 2, 0x5E as shift down, 0x6E as shift up\r\n>> 0x202 can include backlight level data (0x00-0xFF)\r\n>> 0x3FD byte 2, 0x20 should be S1 button, 0x80 should be S2 button\r\n>>\r\n>> Warm and Kind Regards,\r\n>>\r\n>> *Pravin Bajwa*\r\n>> DIRECTOR / TECHNICAL\r\n>>\r\n>>\r\n>> *@airflx <https://www.instagram.com/airflx/>*\r\n>> *02 7255 5152*\r\n>> *www.airflx.com.au <http://www.airflx.com.au/>*\r\n>>\r\n>>\r\n>> On Mon, Apr 7, 2025 at 7:40 PM General and sales enquiries <\r\n>> service@simsonn.com> wrote:\r\n>>\r\n>>> Hello, please check if you need this\r\n>>> ------------------------------\r\n>>> service@simsonn.com\r\n>>>\r\n>>>\r\n>>> *From:* AirFlex Suspension <contact@airflx.com.au>\r\n>>> *Date:* 2025-04-07 14:36\r\n>>> *To:* General and sales enquiries <service@simsonn.com>\r\n>>> *Subject:* Re: Re: SIMSONN CANBus Protocol\r\n>>> I dont need the DATA Format, please read my email  - I just need the\r\n>>> pinout or diagram of the connector\r\n>>> Warm and Kind Regards,\r\n>>>\r\n>>> *Pravin Bajwa*\r\n>>> DIRECTOR / TECHNICAL\r\n>>>\r\n>>>\r\n>>> *@airflx <https://www.instagram.com/airflx/>*\r\n>>> *02 7255 5152*\r\n>>> *www.airflx.com.au <http://www.airflx.com.au/>*\r\n>>>\r\n>>>\r\n>>> On Mon, Apr 7, 2025 at 3:09 PM General and sales enquiries <\r\n>>> service@simsonn.com> wrote:\r\n>>>\r\n>>>> Hello, do you have any information on CAN data format? Please provide\r\n>>>> it to us, and I will arrange for technicians to develop the corresponding\r\n>>>> code version according to your requirements. At present, the development of\r\n>>>> this part of the code has not yet started. The information you provide will\r\n>>>> greatly speed up the development process.\r\n>>>>\r\n>>>> ------------------------------\r\n>>>> service@simsonn.com\r\n>>>>\r\n>>>>\r\n>>>> *From:* AirFlex Suspension <contact@airflx.com.au>\r\n>>>> *Date:* 2025-04-07 11:40\r\n>>>> *To:* General and sales enquiries <service@simsonn.com>\r\n>>>> *Subject:* Re: Re: SIMSONN CANBus Protocol\r\n>>>> We are using multiple devices - installation in over 100 cars, we\r\n>>>> simply just need the hardware pinout. Not the CAN code.\r\n>>>>\r\n>>>> Warm and Kind Regards,\r\n>>>>\r\n>>>> *Pravin Bajwa*\r\n>>>> DIRECTOR / TECHNICAL\r\n>>>>\r\n>>>>\r\n>>>> *@airflx <https://www.instagram.com/airflx/>*\r\n>>>> *02 7255 5152*\r\n>>>> *www.airflx.com.au <http://www.airflx.com.au/>*\r\n>>>>\r\n>>>>\r\n>>>> On Mon, Apr 7, 2025 at 1:31 PM General and sales enquiries <\r\n>>>> service@simsonn.com> wrote:\r\n>>>>\r\n>>>>> Hello, the CAN code has not been updated yet. Could you please tell us\r\n>>>>> the specific scale of the project: is it only a single device, or multiple\r\n>>>>> devices are used at the same time? If your requirements are more complex,\r\n>>>>> or the number of devices is large, we can give priority to the development\r\n>>>>> of the CAN interface.\r\n>>>>>\r\n>>>>> ------------------------------\r\n>>>>> service@simsonn.com\r\n>>>>>\r\n>>>>>\r\n>>>>> *From:* AirFlex Suspension <contact@airflx.com.au>\r\n>>>>> *Date:* 2025-04-07 10:59\r\n>>>>> *To:* General and sales enquiries <service@simsonn.com>\r\n>>>>> *Subject:* Re: SIMSONN CANBus Protocol\r\n>>>>> I don’t need the update\r\n>>>>>\r\n>>>>> I just need the pinout of the connector to know which wires to connect\r\n>>>>> my CANBUS to. Please\r\n>>>>>\r\n>>>>> *Warm and Kind Regards, *\r\n>>>>>\r\n>>>>> *-*\r\n>>>>> *Pravin Bajwa*\r\n>>>>> DIRECTOR / TECHNICAL\r\n>>>>>\r\n>>>>>\r\n>>>>> *@airflx <https://www.instagram.com/airflx/>*\r\n>>>>> *www.airflx.com.au <http://www.airflx.com.au/>*\r\n>>>>>\r\n>>>>> On 7 Apr 2025, at 12:56 pm, General and sales enquiries <\r\n>>>>> service@simsonn.com> wrote:\r\n>>>>>\r\n>>>>> ﻿\r\n>>>>> Hi，\r\n>>>>>\r\n>>>>> We are very sorry for the inconvenience caused to you. We understand\r\n>>>>> your needs. There is no update yet. We will inform you as soon as the\r\n>>>>> update is available.\r\n>>>>>\r\n>>>>> ------------------------------\r\n>>>>> service@simsonn.com\r\n>>>>>\r\n>>>>>\r\n>>>>> *From:* AirFlex Suspension <contact@airflx.com.au>\r\n>>>>> *Date:* 2025-04-04 10:38\r\n>>>>> *To:* General and sales enquiries <service@simsonn.com>\r\n>>>>> *Subject:* Re: SIMSONN CANBus Protocol\r\n>>>>> Ok, can you please tell me which pins are used on the port for CAN? I\r\n>>>>> can make the protocol myself\r\n>>>>>\r\n>>>>> Warm and Kind Regards,\r\n>>>>>\r\n>>>>> *Pravin Bajwa*\r\n>>>>> DIRECTOR / TECHNICAL\r\n>>>>>\r\n>>>>>\r\n>>>>> *@airflx <https://www.instagram.com/airflx/>*\r\n>>>>> *02 7255 5152*\r\n>>>>> *www.airflx.com.au <http://www.airflx.com.au/>*\r\n>>>>>\r\n>>>>>\r\n>>>>> On Thu, Mar 27, 2025 at 1:00 PM General and sales enquiries <\r\n>>>>> service@simsonn.com> wrote:\r\n>>>>>\r\n>>>>>> Hi，\r\n>>>>>> Thank you very much for your support, our CAN is not updated yet!\r\n>>>>>>\r\n>>>>>> ------------------------------\r\n>>>>>> service@simsonn.com\r\n>>>>>>\r\n>>>>>>\r\n>>>>>> *From:* AirFlex Suspension <contact@airflx.com.au>\r\n>>>>>> *Date:* 2025-03-26 11:45\r\n>>>>>> *To:* service <service@simsonn.com>\r\n>>>>>> *Subject:* SIMSONN CANBus Protocol\r\n>>>>>> Hello there,\r\n>>>>>>\r\n>>>>>> We recently purchased some SQ Pro shifters to use in real cars for\r\n>>>>>> sequential shifter actuation and we are integrating them to use with our\r\n>>>>>> engine management system\r\n>>>>>>\r\n>>>>>> I understand your peripherals use CAN protocol in the transmit port\r\n>>>>>> over RJ45, could you let us know the frames and data information so we can\r\n>>>>>> integrate it?\r\n>>>>>>\r\n>>>>>> *Warm and Kind Regards, *\r\n>>>>>>\r\n>>>>>> *-*\r\n>>>>>> *Pravin Bajwa*\r\n>>>>>> DIRECTOR / TECHNICAL\r\n>>>>>>\r\n>>>>>>\r\n>>>>>> *@airflx <https://www.instagram.com/airflx/>*\r\n>>>>>> *www.airflx.com.au <http://www.airflx.com.au/>*\r\n>>>>>>\r\n>>>>>>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-17T03:07:03Z",
+  "updated_at": "2025-07-29T15:58:01Z",
+  "requester_id": 158001607249,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003301053,
+      "body_text": "Hi AirFlex Suspension,  Not at the moment, as this was specifically designed for our own base. Given the relatively small demand, we haven’t initiated development for this yet. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-17T03:52:51Z",
+      "updated_at": "2025-06-17T03:52:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003323641,
+      "body_text": "Does it work with the base? If so then the CANBUS is functional, I just need to know the addresses Warm and Kind Regards, - Pravin Bajwa DIRECTOR / TECHNICAL @airflx www.airflx.com.au ",
+      "user_id": 158001607249,
+      "created_at": "2025-06-17T07:25:09Z",
+      "updated_at": "2025-06-17T07:25:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003852445,
+      "body_text": "Can you please tell me the CANBUS bitrate and addresses for the base?\r\n\r\nWarm and Kind Regards,\r\n\r\n*Pravin Bajwa*\r\nDIRECTOR / TECHNICAL\r\n\r\n\r\n*@airflx <https://www.instagram.com/airflx/>*\r\n*02 7255 5152*\r\n*www.airflx.com.au <http://www.airflx.com.au/>*\r\n\r\n\r\nOn Tue, Jun 17, 2025 at 5:24 PM AirFlex Suspension <contact@airflx.com.au>\r\nwrote:\r\n\r\n> Does it work with the base?\r\n>\r\n> If so then the CANBUS is functional, I just need to know the addresses\r\n>\r\n> *Warm and Kind Regards, *\r\n>\r\n> *-*\r\n> *Pravin Bajwa*\r\n> DIRECTOR / TECHNICAL\r\n>\r\n>\r\n> *@airflx <https://www.instagram.com/airflx/>*\r\n> *www.airflx.com.au <http://www.airflx.com.au/>*\r\n>\r\n> ",
+      "user_id": 158001607249,
+      "created_at": "2025-06-26T10:37:35Z",
+      "updated_at": "2025-06-26T10:37:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004349217,
+      "body_text": "Can you please tell me the CANBUS bitrate and addresses for the base?\r\n\r\nWarm and Kind Regards,\r\n\r\n*Pravin Bajwa*\r\nDIRECTOR / TECHNICAL\r\n\r\n\r\n*@airflx <https://www.instagram.com/airflx/>*\r\n*02 7255 5152*\r\n*www.airflx.com.au <http://www.airflx.com.au/>*\r\n\r\n\r\nOn Thu, Jun 26, 2025 at 8:37 PM AirFlex Suspension <contact@airflx.com.au>\r\nwrote:\r\n\r\n> Can you please tell me the CANBUS bitrate and addresses for the base?\r\n>\r\n> Warm and Kind Regards,\r\n>\r\n> *Pravin Bajwa*\r\n> DIRECTOR / TECHNICAL\r\n>\r\n>\r\n> *@airflx <https://www.instagram.com/airflx/>*\r\n> *02 7255 5152*\r\n> *www.airflx.com.au <http://www.airflx.com.au/>*\r\n>\r\n>\r\n> On Tue, Jun 17, 2025 at 5:24 PM AirFlex Suspension <contact@airflx.com.au>\r\n> wrote:\r\n>\r\n>> Does it work with the base?\r\n>>\r\n>> If so then the CANBUS is functional, I just need to know the addresses\r\n>>\r\n>> *Warm and Kind Regards, *\r\n>>\r\n>> *-*\r\n>> *Pravin Bajwa*\r\n>> DIRECTOR / TECHNICAL\r\n>>\r\n>>\r\n>> *@airflx <https://www.instagram.com/airflx/>*\r\n>> *www.airflx.com.au <http://www.airflx.com.au/>*\r\n>>\r\n>> ",
+      "user_id": 158001607249,
+      "created_at": "2025-07-01T00:15:44Z",
+      "updated_at": "2025-07-01T00:15:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004478757,
+      "body_text": "Hello?\r\n\r\nWarm and Kind Regards,\r\n\r\n*Pravin Bajwa*\r\nDIRECTOR / TECHNICAL\r\n\r\n\r\n*@airflx <https://www.instagram.com/airflx/>*\r\n*02 7255 5152*\r\n*www.airflx.com.au <http://www.airflx.com.au/>*\r\n\r\n\r\nOn Tue, Jul 1, 2025 at 10:15 AM AirFlex Suspension <contact@airflx.com.au>\r\nwrote:\r\n\r\n> Can you please tell me the CANBUS bitrate and addresses for the base?\r\n>\r\n> Warm and Kind Regards,\r\n>\r\n> *Pravin Bajwa*\r\n> DIRECTOR / TECHNICAL\r\n>\r\n>\r\n> *@airflx <https://www.instagram.com/airflx/>*\r\n> *02 7255 5152*\r\n> *www.airflx.com.au <http://www.airflx.com.au/>*\r\n>\r\n>\r\n> On Thu, Jun 26, 2025 at 8:37 PM AirFlex Suspension <contact@airflx.com.au>\r\n> wrote:\r\n>\r\n>> Can you please tell me the CANBUS bitrate and addresses for the base?\r\n>>\r\n>> Warm and Kind Regards,\r\n>>\r\n>> *Pravin Bajwa*\r\n>> DIRECTOR / TECHNICAL\r\n>>\r\n>>\r\n>> *@airflx <https://www.instagram.com/airflx/>*\r\n>> *02 7255 5152*\r\n>> *www.airflx.com.au <http://www.airflx.com.au/>*\r\n>>\r\n>>\r\n>> On Tue, Jun 17, 2025 at 5:24 PM AirFlex Suspension <contact@airflx.com.au>\r\n>> wrote:\r\n>>\r\n>>> Does it work with the base?\r\n>>>\r\n>>> If so then the CANBUS is functional, I just need to know the addresses\r\n>>>\r\n>>> *Warm and Kind Regards, *\r\n>>>\r\n>>> *-*\r\n>>> *Pravin Bajwa*\r\n>>> DIRECTOR / TECHNICAL\r\n>>>\r\n>>>\r\n>>> *@airflx <https://www.instagram.com/airflx/>*\r\n>>> *www.airflx.com.au <http://www.airflx.com.au/>*\r\n>>>\r\n>>> ",
+      "user_id": 158001607249,
+      "created_at": "2025-07-08T15:10:00Z",
+      "updated_at": "2025-07-08T15:10:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004774931,
+      "body_text": "Hello - I will need a refund and return label as this item is not as\r\nadvertised\r\n\r\nWarm and Kind Regards,\r\n\r\n*Pravin Bajwa*\r\nDIRECTOR / TECHNICAL\r\n\r\n\r\n*@airflx <https://www.instagram.com/airflx/>*\r\n*02 7255 5152*\r\n*www.airflx.com.au <http://www.airflx.com.au/>*\r\n\r\n\r\nOn Wed, Jul 9, 2025 at 1:09 AM AirFlex Australia <contact@airflx.com.au>\r\nwrote:\r\n\r\n> Hello?\r\n>\r\n> Warm and Kind Regards,\r\n>\r\n> *Pravin Bajwa*\r\n> DIRECTOR / TECHNICAL\r\n>\r\n>\r\n> *@airflx <https://www.instagram.com/airflx/>*\r\n> *02 7255 5152*\r\n> *www.airflx.com.au <http://www.airflx.com.au/>*\r\n>\r\n>\r\n> On Tue, Jul 1, 2025 at 10:15 AM AirFlex Suspension <contact@airflx.com.au>\r\n> wrote:\r\n>\r\n>> Can you please tell me the CANBUS bitrate and addresses for the base?\r\n>>\r\n>> Warm and Kind Regards,\r\n>>\r\n>> *Pravin Bajwa*\r\n>> DIRECTOR / TECHNICAL\r\n>>\r\n>>\r\n>> *@airflx <https://www.instagram.com/airflx/>*\r\n>> *02 7255 5152*\r\n>> *www.airflx.com.au <http://www.airflx.com.au/>*\r\n>>\r\n>>\r\n>> On Thu, Jun 26, 2025 at 8:37 PM AirFlex Suspension <contact@airflx.com.au>\r\n>> wrote:\r\n>>\r\n>>> Can you please tell me the CANBUS bitrate and addresses for the base?\r\n>>>\r\n>>> Warm and Kind Regards,\r\n>>>\r\n>>> *Pravin Bajwa*\r\n>>> DIRECTOR / TECHNICAL\r\n>>>\r\n>>>\r\n>>> *@airflx <https://www.instagram.com/airflx/>*\r\n>>> *02 7255 5152*\r\n>>> *www.airflx.com.au <http://www.airflx.com.au/>*\r\n>>>\r\n>>>\r\n>>> On Tue, Jun 17, 2025 at 5:24 PM AirFlex Suspension <\r\n>>> contact@airflx.com.au> wrote:\r\n>>>\r\n>>>> Does it work with the base?\r\n>>>>\r\n>>>> If so then the CANBUS is functional, I just need to know the addresses\r\n>>>>\r\n>>>> *Warm and Kind Regards, *\r\n>>>>\r\n>>>> *-*\r\n>>>> *Pravin Bajwa*\r\n>>>> DIRECTOR / TECHNICAL\r\n>>>>\r\n>>>>\r\n>>>> *@airflx <https://www.instagram.com/airflx/>*\r\n>>>> *www.airflx.com.au <http://www.airflx.com.au/>*\r\n>>>>\r\n>>>> ",
+      "user_id": 158001607249,
+      "created_at": "2025-07-14T03:31:33Z",
+      "updated_at": "2025-07-14T03:31:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004943019,
+      "body_text": "Hi AirFlex Suspension,  Could you please let us know which part of the product you believe does not match the advertisement? We’ll review it carefully and address it as soon as possible. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T06:05:13Z",
+      "updated_at": "2025-07-16T06:05:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004943578,
+      "body_text": "You are ignoring all of my emails.\r\n\r\nWarm and Kind Regards,\r\n\r\n*Pravin Bajwa*\r\nDIRECTOR / TECHNICAL\r\n\r\n\r\n*@airflx <https://www.instagram.com/airflx/>*\r\n*02 7255 5152*\r\n*www.airflx.com.au <http://www.airflx.com.au/>*\r\n\r\n\r\nOn Wed, Jul 16, 2025 at 4:05 PM service@simsonn.com ",
+      "user_id": 158001607249,
+      "created_at": "2025-07-16T08:11:59Z",
+      "updated_at": "2025-07-16T08:11:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004944504,
+      "body_text": "Hi AirFlex Suspension,  This interface was specifically designed for our own wheelbase and is not currently open for external use. Developing a standalone version for other devices would require significant time for development and testing, and we hope for your understanding. However, if you have a bulk customization request, we can initiate a dedicated project and assign developers to support and maintain the code accordingly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T10:10:44Z",
+      "updated_at": "2025-07-16T10:10:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004944701,
+      "body_text": "We already have purchased bulk units. We are not asking for any thing in\r\nspecific or any custom work. Simply the CAN speed and data format.\r\n\r\nWarm and Kind Regards,\r\n\r\n*Pravin Bajwa*\r\nDIRECTOR / TECHNICAL\r\n\r\n\r\n*@airflx <https://www.instagram.com/airflx/>*\r\n*02 7255 5152*\r\n*www.airflx.com.au <http://www.airflx.com.au/>*\r\n\r\n\r\nOn Wed, Jul 16, 2025 at 8:10 PM service@simsonn.com ",
+      "user_id": 158001607249,
+      "created_at": "2025-07-16T10:30:53Z",
+      "updated_at": "2025-07-16T10:30:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005063774,
+      "body_text": "Hi AirFlex Suspension,  May I ask which platform you placed your bulk order on? Please provide the order number so I can follow up with the relevant team for assistance. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-17T01:52:55Z",
+      "updated_at": "2025-07-17T01:52:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005759444,
+      "body_text": "Please either provide a refund or provide the information requested. Your\r\nproduct was advertised with CANBUS compatibility - we just need to know the\r\ninformation of compatibility so we can make our host device communicate\r\nwith it\r\n\r\nWarm and Kind Regards,\r\n\r\n*Pravin Bajwa*\r\nDIRECTOR / TECHNICAL\r\n\r\n\r\n*@airflx <https://www.instagram.com/airflx/>*\r\n*02 7255 5152*\r\n*www.airflx.com.au <http://www.airflx.com.au/>*\r\n\r\n\r\nOn Thu, Jul 17, 2025 at 11:53 AM service@simsonn.com ",
+      "user_id": 158001607249,
+      "created_at": "2025-07-29T05:27:45Z",
+      "updated_at": "2025-07-29T05:27:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005781091,
+      "body_text": "Hi AirFlex Suspension,  We have not promoted the CAN BUS feature, as it is reserved for our future proprietary wheelbase and has not yet been upgraded. Therefore, we are unable to provide software support for this interface at the moment. As a simulator user, this will not affect your normal usage, but we currently do not support secondary development. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-29T15:58:00Z",
+      "updated_at": "2025-07-29T15:58:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

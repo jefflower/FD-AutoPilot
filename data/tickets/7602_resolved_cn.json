@@ -1,0 +1,35 @@
+{
+  "id": 7602,
+  "subject": "手刹校准",
+  "description_text": "你好，我购买了你们的一个手刹 Simsonn 赛车模拟器压力手刹 – 为极致模拟赛车提供精准控制 – SIMSONN https://www.simsonn.com/products/simsonn-racing-simulator-pressure-handbrake\n\n问题是无法校准，我想知道是否有任何驱动程序可以安装，或者产品是否有缺陷需要退还给卖家。\n\n谢谢。",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-07T08:30:19Z",
+  "updated_at": "2025-12-11T07:46:08Z",
+  "requester_id": 158007684774,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014119889,
+      "body_text": "你好 LicinioAngelini @libero. it，请下载并打开此软件，它会显示手刹已连接。点击“从设备读取配置”进入轴界面校准踏板。点击“开始校准”，以正常力度拉动几次手刹，然后点击“停止校准”。接下来，点击“写入配置到设备”。之后，测试进度条是否能达到100%。确认后，您可以进入游戏并绑定踏板。 https://drive.google.com/file/d/1hnHNudj0VhE6xr7ypu-KeEDuVrlVHVg9/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-12-08T10:52:24Z",
+      "updated_at": "2025-12-08T10:52:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014147719,
+      "body_text": "完美，谢谢\n\n> 2025年12月8日 11:52 CET service @simsonn.com",
+      "user_id": 158007684774,
+      "created_at": "2025-12-08T19:33:28Z",
+      "updated_at": "2025-12-08T19:33:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

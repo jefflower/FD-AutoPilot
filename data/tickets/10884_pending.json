@@ -1,0 +1,24 @@
+{
+  "id": 10884,
+  "subject": "Order #SSN5515",
+  "description_text": "Hi,\r\n\r\nwhy aren't the Pedals shipped yet?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-14T09:18:22Z",
+  "updated_at": "2026-01-15T01:48:42Z",
+  "requester_id": 158008815637,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017154656,
+      "body_text": "Hi Peter Bernhard,  We apologize for the delay. Two shipments destined for our German warehouse have been affected by heavy snowfall in Europe, causing road blockages and delivery delays. We will expedite delivery or explore alternative logistics channels to ship your order from China as soon as possible. Compensation will be provided based on the delay after your order is completed. We apologize for the inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T01:48:42Z",
+      "updated_at": "2026-01-15T01:48:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

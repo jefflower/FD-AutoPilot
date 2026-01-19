@@ -1,0 +1,144 @@
+{
+  "id": 5648,
+  "subject": "pedal calibration not working",
+  "description_text": "Hy there,\r\n\r\nI just received my pedals and am struggling to get them working. in the\r\ncalibration tool it says device disconnected, in simsonn manager the\r\nthrottle reads 0 input when fully pressed and i cant use them in any game.\r\n\r\nIf there is any way you can get back to me so i can fix this i would\r\ngreatly appreciate that! Is there anyone that can help me set the pedals up\r\nto work?\r\n\r\nbest regards,\r\nJordy D.W.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-11-05T01:42:07Z",
+  "updated_at": "2025-11-09T04:36:57Z",
+  "requester_id": 158006184517,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011765195,
+      "body_text": "Hi Jordy De Wit,   Please provide your order number, a screenshot of the pedal interface in SIMSONN Manager, and a photo of your installation. I’ll help you check which part may not be set up correctly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-05T01:46:41Z",
+      "updated_at": "2025-11-05T01:46:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011765321,
+      "body_text": "On Wed, 5 Nov 2025 at 02:46, service@simsonn.com ",
+      "user_id": 158006184517,
+      "created_at": "2025-11-05T01:53:25Z",
+      "updated_at": "2025-11-05T01:53:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011765340,
+      "body_text": "My original ordernumber is SSN3124.\r\n\r\n",
+      "user_id": 158006184517,
+      "created_at": "2025-11-05T01:54:51Z",
+      "updated_at": "2025-11-05T01:54:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011765441,
+      "body_text": "Hi Jordy De Wit,  From the video you provided, the throttle appears to be working normally. Could you please clarify where the issue occurs? Is it related to the game? Which game specifically? ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-05T02:00:00Z",
+      "updated_at": "2025-11-05T02:00:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011765487,
+      "body_text": "when fully pressed it reads 0 input. I havn't been able to map the pedals\r\nin any game so far.\r\n\r\n\r\n\r\nOp wo 5 nov 2025 om 03:00 schreef service@simsonn.com ",
+      "user_id": 158006184517,
+      "created_at": "2025-11-05T02:01:54Z",
+      "updated_at": "2025-11-05T02:01:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011765920,
+      "body_text": "If needed im willing to allow remote acces in order to fix the issues.\r\n\r\nbest regards,\r\nJordy\r\n\r\nOp wo 5 nov 2025 om 03:01 schreef Jordy De Wit <jordy.de.wit3@gmail.com>:\r\n\r\n> when fully pressed it reads 0 input. I havn't been able to map the pedals\r\n> in any game so far.\r\n>\r\n>\r\n>\r\n> Op wo 5 nov 2025 om 03:00 schreef service@simsonn.com <service@simsonn.com\r\n> >:\r\n>\r\n>> Hi Jordy De Wit,\r\n>>\r\n>> From the video you provided, the throttle appears to be working normally.\r\n>> Could you please clarify where the issue occurs? Is it related to the game?\r\n>> Which game specifically?\r\n>>\r\n>>\r\n>> ",
+      "user_id": 158006184517,
+      "created_at": "2025-11-05T02:23:07Z",
+      "updated_at": "2025-11-05T02:23:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011766710,
+      "body_text": "I also tried to calibrate with the simsonn pedal V4 calibration tool but\r\nhere i says device disconnected. [image: image.png]\r\n\r\n\r\nOp wo 5 nov 2025 om 03:22 schreef Jordy De Wit <jordy.de.wit3@gmail.com>:\r\n\r\n> If needed im willing to allow remote acces in order to fix the issues.\r\n>\r\n> best regards,\r\n> Jordy\r\n>\r\n> Op wo 5 nov 2025 om 03:01 schreef Jordy De Wit <jordy.de.wit3@gmail.com>:\r\n>\r\n>> when fully pressed it reads 0 input. I havn't been able to map the pedals\r\n>> in any game so far.\r\n>>\r\n>>\r\n>>\r\n>> Op wo 5 nov 2025 om 03:00 schreef service@simsonn.com <\r\n>> service@simsonn.com>:\r\n>>\r\n>>> Hi Jordy De Wit,\r\n>>>\r\n>>> From the video you provided, the throttle appears to be working\r\n>>> normally. Could you please clarify where the issue occurs? Is it related to\r\n>>> the game? Which game specifically?\r\n>>>\r\n>>>\r\n>>> On Tue, 4 Nov at 8:54 PM , Jordy De Wit <jordy.de.wit3@gmail.com>\r\n>>> wrote:\r\n>>> My original ordernumber is SSN3124.\r\n>>>\r\n>>> On Wed, 5 Nov 2025 at 02:52, Jordy De Wit <jordy.de.wit3@gmail.com>\r\n>>> wrote:\r\n>>>\r\n>>>>\r\n>>>>\r\n>>>> On Wed, 5 Nov 2025 at 02:46, service@simsonn.com ",
+      "user_id": 158006184517,
+      "created_at": "2025-11-05T03:01:38Z",
+      "updated_at": "2025-11-05T03:01:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011769311,
+      "body_text": "Hi Jordy De Wit, Do you have time for a remote session now? You will need to install Todesk. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-05T05:34:41Z",
+      "updated_at": "2025-11-05T05:34:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011806705,
+      "body_text": "My apologies, i was in bed by then. You can e-mail me as soon as you have\r\ntime for a remote session.\r\n\r\nBest regards,\r\nJordy\r\n\r\nOn Wed, 5 Nov 2025 at 06:34, service@simsonn.com ",
+      "user_id": 158006184517,
+      "created_at": "2025-11-05T13:33:41Z",
+      "updated_at": "2025-11-05T13:33:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011842945,
+      "body_text": "I have installed todesk and am waiting for your availabillity.\r\n\r\nRegards,\r\nJordy\r\n\r\n",
+      "user_id": 158006184517,
+      "created_at": "2025-11-06T00:03:43Z",
+      "updated_at": "2025-11-06T00:03:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011845536,
+      "body_text": "Apoligies, is there an estimet as to when we could look into a remote\r\nsession to fix the issues?\r\n\r\n",
+      "user_id": 158006184517,
+      "created_at": "2025-11-06T01:59:08Z",
+      "updated_at": "2025-11-06T01:59:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011914532,
+      "body_text": "Hi Jordy De Wit,    We apologize, but our engineer is currently addressing a critical issue. We will have him contact you as soon as possible to resolve the matter.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-07T09:01:54Z",
+      "updated_at": "2025-11-07T09:01:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011985104,
+      "body_text": "Hi Jordy De Wit,       Launch the latest version of SIMSONN Manager 2.1.2.    On the “Plus X” control unit, press and hold the “Upgrade” button.    While holding the button, unplug the USB cable from the PC and then plug it back in. The software should detect the device entering “SIMSONN Flasher update mode”.    In the software go to: Settings → Update → Manual Firmware Update.    In the file selector choose: pedals‑firmware → pedals‑plusx.sfu.    Click “Start Update” and wait until the firmware is completely written. During this process do not disconnect the USB or close the application.    Once the update is finished (you’ll get a success prompt or the unit will reboot), unplug and re‑plug the USB then test the pedal device to confirm everything works correctly.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-09T04:36:57Z",
+      "updated_at": "2025-11-09T04:36:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

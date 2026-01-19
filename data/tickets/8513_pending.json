@@ -1,0 +1,94 @@
+{
+  "id": 8513,
+  "subject": "Orders Order #SSN3650",
+  "description_text": "Hello,\r\n\r\nAfter a month I've received the pedals and to my disappointment and\r\ndisillusionment with the brand, you have not included the baseplate.\r\n\r\nHow much longer will I have to wait to get the baseplate now?\r\n\r\nLooking forward to your response.\r\nJuan\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-17T13:34:04Z",
+  "updated_at": "2026-01-05T11:01:03Z",
+  "requester_id": 158006304264,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014757052,
+      "body_text": "Hello,      Please put the shipment of the missing baseplate on hold, as I might request a refund.  I will let you know asap.      Thank you.",
+      "user_id": 158006304264,
+      "created_at": "2025-12-19T12:21:24Z",
+      "updated_at": "2025-12-19T12:21:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158014841130,
+      "body_text": "Hello,     I've already found a way to fix the pedals to my cockpit, so I don't need the baseplate anymore. Could you please refund me it's cost?      Find attached the package labels so you can make your investigations about the baseplate not being included.     Thank you.  Juan",
+      "user_id": 158006304264,
+      "created_at": "2025-12-21T13:01:41Z",
+      "updated_at": "2025-12-21T13:01:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015030327,
+      "body_text": "Hi Juan Manuel Peric,    We apologize, but your order has already been shipped. We are requesting an intercept.  https://t.17track.net/en#nums=JSELA1702830169YQ         Merry Christmas!",
+      "user_id": 158001343601,
+      "created_at": "2025-12-24T10:28:54Z",
+      "updated_at": "2025-12-24T10:28:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015033695,
+      "body_text": "Yes, please intercept it, I don't want it.\r\n\r\nThank you\r\n\r\nEl mié, 24 dic 2025, 11:29, service@simsonn.com ",
+      "user_id": 158006304264,
+      "created_at": "2025-12-24T13:09:29Z",
+      "updated_at": "2025-12-24T13:09:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015181852,
+      "body_text": "Good morning,     The package is in customs clearance status. It would be better for you to intercept it as I don't need it anymore. I had to spend money on a metal plate, a steel drill bit and screws of all kinds to be able to fix the pedals.      How long will it take to process the refund of the missing baseplate?     Thank you. ",
+      "user_id": 158006304264,
+      "created_at": "2025-12-29T07:21:04Z",
+      "updated_at": "2025-12-29T07:21:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015627713,
+      "body_text": "Hi Juan Manuel Peric,    We regret to inform you that the package cannot be intercepted. You may return it to our German warehouse upon receipt. We will process your refund after receiving and inspecting the item. Please ensure the packaging remains intact and the product shows no signs of use; otherwise, the return request will not be approved.  Gubitz GmbH (LeiXuan A211)  Hüttenkamp 12  Neumünster, Schleswig-Holstein 24536  +49 17622233089",
+      "user_id": 158001343601,
+      "created_at": "2026-01-04T11:34:36Z",
+      "updated_at": "2026-01-04T11:34:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015628988,
+      "body_text": "Hello,      Is there a return label inside the package? Or would I have to pay for the Spain to Germany return shipment?      Thank you ",
+      "user_id": 158006304264,
+      "created_at": "2026-01-04T11:46:53Z",
+      "updated_at": "2026-01-04T11:46:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015721913,
+      "body_text": "Hi Juan Manuel Peric,    Yes, you will be responsible for the return shipping costs. Thank you for your understanding.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-05T11:01:03Z",
+      "updated_at": "2026-01-05T11:01:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

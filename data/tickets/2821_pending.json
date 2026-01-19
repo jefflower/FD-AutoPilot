@@ -1,0 +1,34 @@
+{
+  "id": 2821,
+  "subject": "Simsonn Order Confirmation #SSN2376",
+  "description_text": "Hello, please confirm your address information and whether you need to add a building number.  Paul Luen  Lucava  Xanadu  Kidd Lane, Welton  Xanadu, Kidd Lane, Welton, Brough, Yorkshire  HU15 1PH  United Kingdom  +44 7980 613293",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-08-18T09:54:46Z",
+  "updated_at": "2025-08-22T07:20:18Z",
+  "requester_id": 158003281502,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007175508,
+      "body_text": "Hello, please confirm your address information and whether you need to add a building number.  Paul Luen  Lucava  Xanadu  Kidd Lane, Welton  Xanadu, Kidd Lane, Welton, Brough, Yorkshire  HU15 1PH  United Kingdom  +44 7980 613293",
+      "user_id": 158001343601,
+      "created_at": "2025-08-20T05:54:06Z",
+      "updated_at": "2025-08-20T05:54:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007334530,
+      "body_text": "Hello, as you have not responded for a long time, we will ship the goods to the address you provided. If there are any logistics issues, you will need to contact the logistics company yourself to resolve them.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-22T07:20:18Z",
+      "updated_at": "2025-08-22T07:20:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

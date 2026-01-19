@@ -1,0 +1,24 @@
+{
+  "id": 3750,
+  "subject": "Broken Cable",
+  "description_text": "Hello,\r\n\r\nMy cable of the Simsonn Pro pedal is broken and I need to replace it. It's\r\nthe cable coming from the throttle pedal.\r\nDo you sell those as a replacement or do I need to solder it myself? If so\r\ncan you give me a wiring plan for this cable?\r\n\r\n\r\nBest,\r\n\r\nNic\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-12T08:15:33Z",
+  "updated_at": "2025-09-12T12:39:54Z",
+  "requester_id": 158004472658,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008583419,
+      "body_text": "Hi Nic Heese,  Could you please take a photo and send it to me so I can check exactly where it is broken? ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-12T12:39:54Z",
+      "updated_at": "2025-09-12T12:39:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

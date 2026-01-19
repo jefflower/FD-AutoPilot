@@ -1,0 +1,44 @@
+{
+  "id": 10803,
+  "subject": "order never confirmed",
+  "description_text": "hey just reaching out in regards to a order i was charged for on jan 7\r\naround 12pm that i never received any kind of confirmation of my order\r\nbeing received by you guys. My name is Kobe stadel and the order should be\r\ngoing to manhattan ks.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-13T16:55:47Z",
+  "updated_at": "2026-01-15T02:39:57Z",
+  "requester_id": 158009026679,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017077993,
+      "body_text": "Hi Kobe Stadel,     Since you did not provide an email address, you did not receive the order confirmation and shipping notification. Below is your logistics tracking link.   https://t.17track.net/en#nums=SF6047231332868,SF6047231332877",
+      "user_id": 158001343601,
+      "created_at": "2026-01-14T07:27:22Z",
+      "updated_at": "2026-01-14T07:27:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017109782,
+      "body_text": "Didn’t realize I hadn’t put an email on there, I appreciate it!!\r\n\r\nOn Wed, Jan 14, 2026 at 1:27 AM service@simsonn.com ",
+      "user_id": 158009026679,
+      "created_at": "2026-01-14T14:51:55Z",
+      "updated_at": "2026-01-14T14:51:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017157769,
+      "body_text": "Hi Kobe Stadel,     Thank you for your purchase. You're welcome.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T02:39:56Z",
+      "updated_at": "2026-01-15T02:39:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

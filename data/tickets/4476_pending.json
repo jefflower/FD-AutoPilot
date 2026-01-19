@@ -1,0 +1,44 @@
+{
+  "id": 4476,
+  "subject": "Help",
+  "description_text": "Hello, can you help me with my problem? I have the simsonn new pro x ultra\r\npedals. I don't know what happened, but suddenly, after turning on my\r\ncomputer, my pedals stopped being recognized by the simsonn manager\r\nprogram, and the rgb lighting on the pedals only shows white. However, the\r\nsystem still identifies the connected device as the simsonn pro x.\r\nAdditionally, none of the games recognize the presence of the connected\r\npedals.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-05T20:18:32Z",
+  "updated_at": "2025-10-06T23:15:22Z",
+  "requester_id": 158005414295,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009950924,
+      "body_text": "Hi Apupenizator,     Please uninstall the old version on your computer, then reinstall version 2.1.2 and update the firmware.  Please follow the steps below to start the firmware update process:      Press the upgrade button on the control box.  Reconnect the USB cable.  The software will display a prompt indicating it has entered “Simsonn Flasher Mode.”  Go to Settings → Update → Manual Firmware Update → pedals → firmware → pedals-prox.sfu to update the firmware.  After the update is complete, release the upgrade button.  Finally, test and recalibrate your pedals.       After the update, the device version should display as CPU1: 2.0.5, CPU2: 2.0.3. If the issue persists, please feel free to contact me. Also, I’ve already forwarded your log file to the SimHubteam for further analysis.     https://drive.google.com/file/d/1PZwHUqhhmJw0IBGDO8mGONPbrICJU3z1/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T23:55:08Z",
+      "updated_at": "2025-10-05T23:55:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009981060,
+      "body_text": "it worked, thank you! Only the device version is displayed as CPU1: 2.0.3, CPU2: 2.0.2",
+      "user_id": 158005414295,
+      "created_at": "2025-10-06T18:15:57Z",
+      "updated_at": "2025-10-06T18:15:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158009992453,
+      "body_text": "Hi Apupenizator,    In the Settings → Update section, you should see a prompt to update the firmware.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-06T23:15:22Z",
+      "updated_at": "2025-10-06T23:15:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

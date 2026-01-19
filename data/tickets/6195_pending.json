@@ -1,0 +1,24 @@
+{
+  "id": 6195,
+  "subject": "Current black friday promo",
+  "description_text": "Hi team,\r\n\r\nCan you please advise what the current promotion on your p2 and h2 is?\r\n\r\nI attempted to use the \"BLACK45\" code advised and it didnt work.\r\n\r\nBR!\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-16T00:07:48Z",
+  "updated_at": "2025-11-17T08:16:40Z",
+  "requester_id": 158007127272,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012441506,
+      "body_text": "Hi Bozhidar Tomov,    Please note this discount for $45 off orders over $199.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-17T08:16:40Z",
+      "updated_at": "2025-11-17T08:16:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

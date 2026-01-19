@@ -1,0 +1,24 @@
+{
+  "id": 6518,
+  "subject": "Received wrong product",
+  "description_text": "Hello, We ordered the below \r\n\r\nBut received the black plus x p3-h3.  How can we get the correct product asap?\r\n\r\n\r\nSent from Yahoo Mail for iPhone\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-11-22T01:12:08Z",
+  "updated_at": "2026-01-07T10:02:23Z",
+  "requester_id": 158007181216,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016107104,
+      "body_text": "此工单已关闭并合并到工单 9901 中",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T10:02:23Z",
+      "updated_at": "2026-01-07T10:02:23Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

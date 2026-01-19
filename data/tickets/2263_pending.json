@@ -1,0 +1,74 @@
+{
+  "id": 2263,
+  "subject": "Pro X control box",
+  "description_text": "Hello,\r\n\r\nI just got the vam kit from your website for pedals purchased on Amazon. \r\n\r\nAmazon order: 112-1949127-3452258\r\nSimsonn order: SSN2079\r\n\r\nWhen I plug the power supply in the power port arcs, it’s fine after. Is that a defect or normal?\r\n\r\nThe box is grounded to the pedal base and I also tried my pc.\r\n\r\nBest,\r\n\r\nGreg\r\n\r\n\r\nSent from my iPhone\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-04T06:22:29Z",
+  "updated_at": "2025-08-09T15:24:05Z",
+  "requester_id": 158002598444,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006240922,
+      "body_text": "Hi Gregory Parsons,    This is normal and can be used as usual. We recently added a capacitor module to the control box to solve this problem.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-05T06:42:44Z",
+      "updated_at": "2025-08-05T06:42:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006296176,
+      "body_text": "Ok thank you.\r\n\r\nIs the capacitor model a new unit?\r\n",
+      "user_id": 158002598444,
+      "created_at": "2025-08-05T18:48:28Z",
+      "updated_at": "2025-08-05T18:48:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006303111,
+      "body_text": "Hi Gregory Parsons,  You’re referring to the spark, correct? This is normal and happens when charging the capacitors. It’s only 24V, so it’s not dangerous and won’t damage the mainboard. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-06T01:12:48Z",
+      "updated_at": "2025-08-06T01:12:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006303168,
+      "body_text": "Was inquiring as it was said a capacitor was added recently to solve this problem. Is my unit an old design?\r\n\r\nGenerally, ill keep an eye on it. It shouldn’t be a big problem if I keep it connected, or plug the control box side first.\r\n\r\nThanks,\r\n\r\nGreg\r\n",
+      "user_id": 158002598444,
+      "created_at": "2025-08-06T01:16:31Z",
+      "updated_at": "2025-08-06T01:16:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006402877,
+      "body_text": "Hi Gregory Parsons, Although there’s no functional issue, many customers care about these details, so we had to optimize it. It is still in the testing phase and has not yet been released as an update. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-06T14:06:30Z",
+      "updated_at": "2025-08-06T14:06:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006437065,
+      "body_text": "Ok thank you, I may pick one up when it’s released. Will keep an eye out.\r\n\r\nThanks!\r\n",
+      "user_id": 158002598444,
+      "created_at": "2025-08-06T19:14:23Z",
+      "updated_at": "2025-08-06T19:14:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

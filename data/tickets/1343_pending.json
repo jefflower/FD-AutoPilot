@@ -1,0 +1,74 @@
+{
+  "id": 1343,
+  "subject": "",
+  "description_text": "Hi,\r\n\r\nI have these Simmson pedals I ordered off Amazon back in March of last\r\nyear. They were the older model with the older control box.\r\n\r\n\r\nThey use the original control box and only calibrate with the original\r\nsoftware and freejoy\r\n\r\nIs there a way to upgrade this or do I need a new control box to use the\r\nnew software\r\n.\r\n\r\n\r\nAlso if I bought a new control box so I could use your haptics. Would it be\r\ncompatible\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-08T16:38:14Z",
+  "updated_at": "2025-07-12T08:08:41Z",
+  "requester_id": 158001955219,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004479772,
+      "body_text": "Also, great pedals. I have 3 of my friends on them and recommend them to\r\neveryone in our race league every chance I get!!\r\n\r\n",
+      "user_id": 158001955219,
+      "created_at": "2025-07-08T16:39:35Z",
+      "updated_at": "2025-07-08T16:39:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004486139,
+      "body_text": "Hi Nathan Brown,  For the Pro Plus, you can update directly by going to the update interface → Manual Firmware Update → navigate to the \"pedals-firmware\" folder → then the \"pedals\" folder → and select the \"plus.sfu\" file.       https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-07-09T05:56:17Z",
+      "updated_at": "2025-07-09T05:56:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004492284,
+      "body_text": "[image: image.png]\r\n\r\nOn the V4, it says to use 3.5. I'm on a FW 1.7 apparently.\r\n\r\nOn Wed, Jul 9, 2025 at 1:56 AM service@simsonn.com ",
+      "user_id": 158001955219,
+      "created_at": "2025-07-09T14:59:01Z",
+      "updated_at": "2025-07-09T14:59:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004500259,
+      "body_text": "Hi Nathan Brown,  Your control box version is too old to support the latest SIMSONN Manager. We recommend upgrading to the latest PlusX control box, which also supports vibration feedback motors. There is also an upgrade kit available for the pedals to further enhance your overall experience.      https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor?variant=51351053533498     https://www.simsonn.com/products/plus-ultra-upgrade-kit",
+      "user_id": 158000445778,
+      "created_at": "2025-07-10T03:58:47Z",
+      "updated_at": "2025-07-10T03:58:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004500285,
+      "body_text": "That's what I figured. I just purchased a control box off Amazon today.\r\nAlong with haptics. I already have bsts thru SimHub but I'm excited about\r\nyour haptics and seeing how well that works.\r\n\r\n You guys do amazing work. I can't believe how much you have grown since I\r\nbought your pedals back in March of 2024. Can't wait to buy a wheelbase.\r\n\r\nYou guys also already sent me that similar upgrade kit free of charge last\r\nyear.\r\n\r\n\r\nAppreciate the quick response and confirming what I kind of figured.\r\n\r\nOn Wed, Jul 9, 2025, 11:58 PM service@simsonn.com ",
+      "user_id": 158001955219,
+      "created_at": "2025-07-10T04:08:33Z",
+      "updated_at": "2025-07-10T04:08:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004642972,
+      "body_text": "Hi Nathan Brown,  Thank you so much for your kind words and support! At SIMSONN, we've made it our mission to create high-performance, cost-effective products for sim racing enthusiasts. With your support, we’re able to grow, improve, and continue pursuing excellence. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-12T08:08:40Z",
+      "updated_at": "2025-07-12T08:08:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

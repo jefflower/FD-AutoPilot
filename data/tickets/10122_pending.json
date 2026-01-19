@@ -1,0 +1,24 @@
+{
+  "id": 10122,
+  "subject": "Are you shipping to Turkiye ?",
+  "description_text": "Hi,\r\n\r\nI am interested in purchasing products from your website. However, due to regulations and customs procedures, I have some concerns regarding international shipments.\r\n\r\n\r\n\r\nCould you please confirm whether you currently ship orders to Turkey?\r\n\r\nIf so, I would also appreciate any information about potential restrictions, customs requirements, or additional fees that customers in Turkey should be aware of.\r\n\r\n\r\n\r\nThank you very much for your time and support. I look forward to your response.\r\n\r\n\r\n\r\nKind regards,\r\n\r\nHakan\r\n\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-06T18:23:29Z",
+  "updated_at": "2026-01-15T07:49:34Z",
+  "requester_id": 158008956386,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017168923,
+      "body_text": "Hi M. Hakan Yesilyurt,     We apologize for the delayed response. Our logistics can ship to Turkey, but customs may impose additional fees, which we cannot guarantee.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T07:49:34Z",
+      "updated_at": "2026-01-15T07:49:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

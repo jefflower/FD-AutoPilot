@@ -1,0 +1,24 @@
+{
+  "id": 9447,
+  "subject": "Plus x pedals",
+  "description_text": "Hi There\r\n\r\nReceived my plus x pedals today ,got them setup and was tuning them for a\r\nfew hours all was good ,fired the software back up  and it was very laggy\r\nand then it disconnected i have been unable to get a connection to the\r\npedals ,i have used another USB cord that i had lying around and still\r\ncouldnt get a connection ,there is a light on in the control box so it has\r\npower\r\n\r\nRegards\r\nDave\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-29T10:32:59Z",
+  "updated_at": "2025-12-30T11:10:56Z",
+  "requester_id": 158008806718,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015248474,
+      "body_text": "Hi David Martin,  Launch the latest version of SIMSONN Manager 2.1.2. On the “Plus X” control unit, press and hold the “Upgrade” button. While holding the button, unplug the USB cable from the PC and then plug it back in. The software should detect the device entering “SIMSONN Flasher update mode”. In the software go to: Settings → Update → Manual Firmware Update. In the file selector choose: pedals‑firmware → pedals‑plusx.sfu. Click “Start Update” and wait until the firmware is completely written. During this process do not disconnect the USB or close the application. Once the update is finished (you’ll get a success prompt or the unit will reboot), unplug and re‑plug the USB then test the pedal device to confirm everything works correctly.      If this happens, it indicates that the computer’s grounding is not reliable, possibly because a three-prong plug was not used with a three-prong wall outlet. You can refer to the post below: connect the computer case to the stand, and connect the control box to the metal screws on the pedals. This should resolve the disconnection issue.  https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T11:10:56Z",
+      "updated_at": "2025-12-30T11:10:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

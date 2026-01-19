@@ -1,0 +1,24 @@
+{
+  "id": 2604,
+  "subject": "Pedal axis values keep jumping ",
+  "description_text": "Can’t calibrate Pedals in iRacing because the input values keep jumping all over the place and registering a value with zero input ",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-08-12T19:48:15Z",
+  "updated_at": "2025-08-13T00:01:03Z",
+  "requester_id": 158002990653,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006779826,
+      "body_text": "Hi Chance Lyon,    If it is a ProX Ultra pedal,  In the “Settings - Update” section, click “Manual Firmware Update,” then navigate to the pedals-firmware folder → pedals folder → and select the proxultra.sfu file to update. This firmware will disable the 4th axis.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-13T00:01:01Z",
+      "updated_at": "2025-08-13T00:01:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

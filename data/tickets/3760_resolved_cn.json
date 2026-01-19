@@ -1,0 +1,35 @@
+{
+  "id": 3760,
+  "subject": "设备未连接",
+  "description_text": "你好，\n我有一套 Pro X 脚踏板和控制盒。之前使用一直很好。\n然而，现在我的脚踏板完全不工作了。\n在 Simsonn Manager 中显示脚踏板已断开连接。但实际上它们是连接着的。没有任何东西发生变化。我尝试了新的电源适配器、新的 USB 线，但仍然收到相同的消息。脚踏板和搁脚板上的指示灯都亮着，所以我知道它有通电。\n我尝试更新软件，但它显示已经是最新版本。\n请告诉我该怎么做。\n将近 300 美元的脚踏板，不到一年就不能用了。\n请告诉我如何解决这个问题！\n谢谢！",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-09-12T15:39:52Z",
+  "updated_at": "2025-09-15T00:15:31Z",
+  "requester_id": 158004476896,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008615270,
+      "body_text": "你好 Shanon Murphy，请按住控制盒上的升级按钮，然后重新插入 USB 连接线。软件将自动进入恢复模式。接下来，请进入“设置”→“更新”→“手动固件更新”→“pedals-firmware”→“pedals-prox.sfu”完成固件更新，然后再次测试。另外，请不要使用 USB 集线器。请确保将控制盒直接连接到您电脑背面蓝色的 USB 3.0 端口，以获得稳定的电源和可靠的数据传输。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-13T01:12:32Z",
+      "updated_at": "2025-09-13T01:12:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008664915,
+      "body_text": "谢谢！目前看来已经解决了。于 2025 年 9 月 12 日星期五 晚上 8:12 support @simsonn.com",
+      "user_id": 158004476896,
+      "created_at": "2025-09-13T22:13:41Z",
+      "updated_at": "2025-09-13T22:13:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

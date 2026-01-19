@@ -1,0 +1,194 @@
+{
+  "id": 3220,
+  "subject": "",
+  "description_text": "Hello so I recently bought ur plus x pedals and vam motors\r\nI don't know what's wrong with them but for the first 5 mins everything is\r\nworking as it should then suddenly the throttle motor stops working not\r\ntotally but it viberates so little u cant even feel it, I have checked sim\r\nmanager and power is connected I can select that motor specifically but no\r\nviberation. Changed the motor because i had 3 but only 2 pedals and worked\r\nagain for 5 mins them stopped\r\n\r\nI have grounded the box to the pedal like I was told to do . The other\r\nmotor for the brake is working like it should . I would really like some\r\nhelp with this. Either get them working or return the 2 motors that armt\r\nworking now and replace with the linar motors as maybe these motors are\r\njust trash I don't know but pls help me i looked forward to buying these\r\nfrom u guys and planned on buying more products if these worked but as off\r\nnow this isn't good\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-08-28T20:02:44Z",
+  "updated_at": "2025-09-16T02:28:52Z",
+  "requester_id": 158003341122,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007733291,
+      "body_text": "Hi jim skeoch, Could you please provide your order number first? I would also like to confirm whether the telemetry mode you used when the throttle motor was damaged was continuous telemetry. Please note that the VAM must be configured with the maximum force according to the software prompt; otherwise, it may get damaged due to excessive force. We can arrange to send you a replacement VAM. At the same time, please let me know which telemetry mode was applied to the throttle. Rest assured, this is not a quality issue with the product—it was caused by excessive force settings without proper limitation. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-29T00:29:29Z",
+      "updated_at": "2025-08-29T00:29:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007733883,
+      "body_text": "Order number 701-7413729-2407461\r\nI had the setting where it started at when I downloaded the simsonn\r\nsoftware and have attached it as i only used it fir 5 mins before failure\r\nand have attached a picture of it\r\nAddress is as followed\r\nJames skeoch\r\n307-4103 crosland plc\r\nDuncan bc\r\nCanada\r\nV9l 0j7\r\n and its 2 motors that failed not 1\r\nI connected 2 and they both died the same thing . I'm not trying to argue\r\nwith u but all I've done is start the software select speed and played the\r\ngame and it stopped working then installed 2nd motor and same thing.\r\n\r\n\r\n\r\n  Again appreciate the help and yes pls send  new motors with a tracking\r\nnumber would be much appreciated.\r\nAlso so this doesn't happen again where exactly should I have these\r\nsettings for my throttle? That way I don't end up in another situation\r\nwhere they fail pls\r\n\r\nOn Thu, Aug 28, 2025, 5:29 PM service@simsonn.com ",
+      "user_id": 158003341122,
+      "created_at": "2025-08-29T00:57:06Z",
+      "updated_at": "2025-08-29T00:57:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007733913,
+      "body_text": "Hi jim skeoch,  We will send you two replacement VAM units today. The damage was caused by using the Speed continuous telemetry mode, which should be avoided. If you require this type of functionality, we recommend using the VAM Pro motor instead. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-29T01:00:25Z",
+      "updated_at": "2025-08-29T01:00:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007733960,
+      "body_text": "Ohhh i get what u mean now I apologize for misunderstanding\r\nand thankyou\r\nSo i shouldn't use any settings that makes the motor run continuously but\r\nif i buy the other motors I can correct?\r\n\r\nOn Thu, Aug 28, 2025, 6:00 PM service@simsonn.com ",
+      "user_id": 158003341122,
+      "created_at": "2025-08-29T01:04:01Z",
+      "updated_at": "2025-08-29T01:04:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007733967,
+      "body_text": "Pls semd me a tracking number as well if there is one thankyou\r\n\r\nOn Thu, Aug 28, 2025, 6:00 PM service@simsonn.com ",
+      "user_id": 158003341122,
+      "created_at": "2025-08-29T01:04:37Z",
+      "updated_at": "2025-08-29T01:04:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007734025,
+      "body_text": "Hi jim skeoch,    The VAM motor type is not designed for continuous long-term operation, whereas the VAM Pro with a linear motor does not have this issue. However, in telemetry, most of the signals are commonly used for ABS and TC, while speed data is used less frequently and may even interfere with ABS/TC detection. We will provide you with the tracking number today.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-29T01:09:35Z",
+      "updated_at": "2025-08-29T01:09:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007734052,
+      "body_text": "Thankyou\r\n\r\nOn Thu, Aug 28, 2025, 6:09 PM service@simsonn.com ",
+      "user_id": 158003341122,
+      "created_at": "2025-08-29T01:13:02Z",
+      "updated_at": "2025-08-29T01:13:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007735412,
+      "body_text": "Hi jim skeoch,  Here is the tracking number: YT2524100702380347. You can track it via https://www.yunexpress.com/.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-29T02:46:59Z",
+      "updated_at": "2025-08-29T02:46:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008088979,
+      "body_text": "Yes I recieved ur last email . now the brake has failed doing the exact\r\nsame thing .. i understand that the vam motor can't handle continuous\r\ntelemtry but the brake has and always been on abs and I insured it was\r\nbelow 25hz like what the software recommended I will say the pedals\r\nthemselves are awesome and we're super easy to setup and work incredibly\r\nwell for there price\r\nMaybe could it be the control box? I do have it grounded to my rig . Being\r\nhonest this has been a terrible experience getting super excited to use\r\nsomething I saved up for just to have parts start failing and again yes OK\r\nI get that vam motors can't do continuous teletry but iam telling u again\r\nthe brake was not running continuous and now the same problem .\r\n\r\nOn Wed, Sep 3, 2025, 7:48 PM General and sales enquiries <\r\nservice@simsonn.com> wrote:\r\n\r\n> Hi jim,\r\n>\r\n> We have shipped 2 new VAM motor to you on 2025-8-29. Here is the tracking\r\n> number: YT2524100702380347. You can track it via\r\n> https://www.yunexpress.com/.\r\n>\r\n> ------------------------------\r\n> service@simsonn.com\r\n>\r\n>\r\n> *",
+      "user_id": 158003341122,
+      "created_at": "2025-09-04T13:52:50Z",
+      "updated_at": "2025-09-04T13:52:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008201172,
+      "body_text": "Hi jim skeoch,  What issue are you experiencing with your brake? Please share a video along with some detailed installation photos, so we can better understand the situation and help you resolve it quickly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T03:02:59Z",
+      "updated_at": "2025-09-07T03:02:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008225712,
+      "body_text": "It's the same issue I had with the throttle , u guys said the throttle\r\nmotor went because i had it on continous telemtry but the brake vam motor\r\nhas been only on abs since I recieved the motors ,  I'm just gonna go with\r\neither ur linear motors or simagics but  havnt decided yet as these motors\r\nhavnt met my expectations in anyway\r\nAnd I'm worried the linears will do the same thing.\r\nI have the box grounded the cables I the right spots the updated software\r\nand motors installed correctly as I have checked this multiple times along\r\nwith watching videos . I dont use simhub, i use ur software as that is the\r\nprogram designed for the motors .\r\nI apologize if I sound upset and confrontational but this is upsetting to\r\nme as racing is a huge part of my life and I've spent over 7k on my rig and\r\nthis was one of the things I was really looking forward to and even planned\r\non making a video on them and the pedals as I have with other sim racing\r\ngear I have bought but that doesn't matter anyways a im not making a video\r\non something that doesn't work for me as im trying to show people the\r\npositives of sim racing and the gear u can get to make it more immersive.\r\nHopfully the linear motors no matter the brand end up working the way i\r\nexpect otherwise I'll make the move to audio pucks and gi from there\r\n\r\n\r\nOn Sat, Sep 6, 2025, 8:03 PM service@simsonn.com ",
+      "user_id": 158003341122,
+      "created_at": "2025-09-07T15:06:33Z",
+      "updated_at": "2025-09-07T15:06:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008233955,
+      "body_text": "Hi jim skeoch,    We’re truly sorry to hear about the issues you’ve experienced with the VAM motor.     To clarify, the VAM is a rotary motor, and when used for vibration effects like ABS or traction control, it operates in a start-stop pattern — which it’s not inherently designed for. Over time, this type of operation can cause premature wear or failure. While VAM is a more affordable entry-level option and remains popular, under the same quality control standards, we’ve found that VAM Pro performs far better with extremely low failure rates and delivers significantly stronger, more reliable force feedback.     Because of this, we are currently evaluating whether to discontinue the VAM and keep only the VAM Pro, similar to Simagic’s product strategy.     If you’d like, we’d be happy to offer you a refund for the VAM, so you can place a new order for the VAM Pro. It’s designed to handle these vibration effects much better, and in our tests and customer feedback, it even outperforms Simagic’s alternatives in terms of strength, responsiveness, and durability.     We sincerely hope you’ll give our upgraded version a chance. If you decide to proceed, please let us know — we’ll be glad to assist with a special discount or dedicated support.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-07T23:26:04Z",
+      "updated_at": "2025-09-07T23:26:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008234298,
+      "body_text": "Thankyou for that and its muchly appreciated if u would like to give me a\r\nspecial discount for the vam pros I will order them as I think I will be\r\nhappier with those and get what I was expecting. I wanted to stay with ur\r\ncompany and thats why i reached out to begin with so again the special\r\ndiscount is appreciated . so how will this work will u send me a code to\r\norder on ur site? Or do I plc the order direct with u or call in? I'm ready\r\nto plc my order as soon as possible ?\r\n\r\nOn Sun, Sep 7, 2025, 4:26 PM service@simsonn.com ",
+      "user_id": 158003341122,
+      "created_at": "2025-09-07T23:59:18Z",
+      "updated_at": "2025-09-07T23:59:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008348699,
+      "body_text": "Hello, we have created an exclusive discount code for you, entitling you to an 8% discount: Jim08  https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor?variant=51351053467962",
+      "user_id": 158001343601,
+      "created_at": "2025-09-10T02:12:24Z",
+      "updated_at": "2025-09-10T02:12:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008350719,
+      "body_text": "So per ur last email ur refunding me for my vams and a 8 percent discount?\r\n Wouldn't it be easier to just discount me the costs of the vam motors from\r\nthe cost of the vam pros? That way there is no need for a refund? Let me\r\nknow if we can do that and if not when should I expect the refund\r\n\r\nOn Tue, Sep 9, 2025, 7:12 PM service@simsonn.com ",
+      "user_id": 158003341122,
+      "created_at": "2025-09-10T04:35:42Z",
+      "updated_at": "2025-09-10T04:35:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008395202,
+      "body_text": "the email says u are issuing my refund so I can buy the vam pros not buying\r\nthe vam pros and then getting the refund as u wanted me to try urs instead\r\nof me going with simagic so I would perfer a discount of the cost of the\r\nvams at the time of purchase of the vam pros instead of waiting 3 weeks to\r\nget a refund them purchasing them. I dont want to buy them till i get the\r\nrefund either in a discount for the cost or refund to my credit card . Im\r\nsorry I'm not trying to make it difficult by any means and appreciate what\r\nu guys are doing for me . I just think a discount of the vam price would\r\ninsure I buy the vam pros versus the money going on my card and something\r\nelse eating it up lol\r\nIf a discount for the price of the vams was given i can go on ur site and\r\npurchase them today where if it refunded to my card I have to wait till the\r\nrefund comes . 2 to 3 weeks then place order which takes 2 to 3 weeks .\r\nMeaning I won't have the motors for what could be 2 months and that is\r\nwayyyy to long to wait in my opinion\r\nSo can I please just get a discount for the cost of the vams so I can\r\npurchase the vam pros today?\r\n\r\nOn Wed, Sep 10, 2025, 12:42 AM General and sales enquiries <\r\nservice@simsonn.com> wrote:\r\n\r\n> C'est bon. Vous pouvez l'acheter sur Amazon et nous communiquer votre\r\n> numéro de commande ; nous vous rembourserons les moteurs VAM.\r\n>\r\n> ------------------------------\r\n> service@simsonn.com\r\n>\r\n>\r\n> *",
+      "user_id": 158003341122,
+      "created_at": "2025-09-10T14:28:33Z",
+      "updated_at": "2025-09-10T14:28:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008668432,
+      "body_text": "Iam reaching out again as i having got a answer as to wether u will he\r\nrefunding me for the vams or if i can just get a credit for them and\r\npurchase the vam pros. As per last emails u said u wouod refund me for the\r\nvams . I have expressed that I would perfer a credit towards the vam pros\r\nin the form of a discount for the cost of the regular vams instead of a\r\nfull refund if this can't be done then I will take the refund for the vams\r\nI stead but I would like a answer pls on what is happening\r\n\r\n",
+      "user_id": 158003341122,
+      "created_at": "2025-09-14T02:38:38Z",
+      "updated_at": "2025-09-14T02:38:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008767938,
+      "body_text": "Great thanks I will proceed with ordering the vam pros once I recieve it\r\n\r\nOn Mon, Sep 15, 2025, 3:01 AM General and sales enquiries <\r\nservice@simsonn.com> wrote:\r\n\r\n> Hi the refund of the VAM MOTORS has been issued to your Amaozn account,\r\n> you can check it.\r\n>\r\n> ------------------------------\r\n> service@simsonn.com\r\n>\r\n>\r\n> *",
+      "user_id": 158003341122,
+      "created_at": "2025-09-15T15:57:29Z",
+      "updated_at": "2025-09-15T15:57:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

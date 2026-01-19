@@ -1,0 +1,34 @@
+{
+  "id": 1567,
+  "subject": "Control box issue",
+  "description_text": "Order #SSN1933\r\n\r\nI recently received and set up my pedals. When the AC power adapter plugs\r\ninto the control box there is a visible spark that comes from the input on\r\nthe control box. The connection is also very loose and there is a lot of\r\nplay in the cable. The pedals seem to work fine but I am concerned about\r\nthe safety of the control box.\r\n\r\nI also only received one of the yellow springs that I ordered instead of 2.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-07-15T16:34:19Z",
+  "updated_at": "2025-07-16T05:54:20Z",
+  "requester_id": 158001923591,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004918277,
+      "body_text": "Hi Andrew K,  Sparks are normal — the motor’s capacitor needs to charge when the power is connected. This will not damage the control board, and the voltage is only 24V, so there’s no need to worry. Our power supplies are custom-made by certified manufacturers and have passed multiple safety certifications. Is your power plug US standard? Normally, the power unit stays steady on the floor, or you can use zip ties to secure it in place.       You're missing one spring — I’ll ask our sales team to take care of it for you as soon as possible. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T02:34:07Z",
+      "updated_at": "2025-07-16T02:34:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004942947,
+      "body_text": "Hi Andrew K,    We did miss a yellow spring, we can refund you or send you a replacement, please let me know what your options are.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-16T05:54:20Z",
+      "updated_at": "2025-07-16T05:54:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

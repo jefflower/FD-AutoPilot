@@ -1,0 +1,44 @@
+{
+  "id": 6049,
+  "subject": "Problems with Hydraulic Dampers on throttle pedal",
+  "description_text": "Hey,  i have problems with my Hydraulic damper on the throttle pedal. its jamming and is unconsisten at best. i can fully compress it without have any problems at all and it will never return to original position.     and it has a scraping sound and feeling inside when compressing.     And im worried more is going to fail if one is?     //Emanuel",
+  "status": 3,
+  "priority": 2,
+  "created_at": "2025-11-13T14:28:28Z",
+  "updated_at": "2025-11-17T11:45:44Z",
+  "requester_id": 158005406478,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012296524,
+      "body_text": "Hi Emanuel Eriksson,  I've noticed that your hydraulic rod does indeed have an issue. You can remove it for now without affecting usage. We'll send you a replacement rod, don't worry.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-14T03:11:06Z",
+      "updated_at": "2025-11-14T03:11:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012419552,
+      "body_text": "oh thanks! that sounds great! :) will you update me with a tracking id for the package? or how iwll it be sent?",
+      "user_id": 158005406478,
+      "created_at": "2025-11-16T17:09:27Z",
+      "updated_at": "2025-11-16T17:09:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158012448980,
+      "body_text": "Hi Emanuel Eriksson,    Here is your logistics tracking link.  https://t.17track.net/en#nums=SF6047050072281",
+      "user_id": 158001343601,
+      "created_at": "2025-11-17T11:45:44Z",
+      "updated_at": "2025-11-17T11:45:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

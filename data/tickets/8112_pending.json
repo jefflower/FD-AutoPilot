@@ -1,0 +1,24 @@
+{
+  "id": 8112,
+  "subject": "",
+  "description_text": "Hello,\r\n\r\nI have Simsonn Pro Plus pedals.\r\nSimsonn Manager shows \"OLD VERSION\" and all options are locked.\r\n\r\nOn download page I only see SimPedalsConfig_V4 (dll files), no firmware\r\n(.bin).\r\n\r\nPlease send me the correct Pro Plus pedal firmware (.bin) for update.\r\n\r\nThank you.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-12T22:01:56Z",
+  "updated_at": "2025-12-13T02:59:53Z",
+  "requester_id": 158007790416,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014427445,
+      "body_text": "Hi Nikola Stojanović,  Only pedals with firmware version 1.7.1 are compatible with SIMSONN Manager 2.1.2. If the software indicates that the firmware is too old, please go to Settings → Update → Manual Firmware Update → pedals-firmware → pedals-plus.sfu to update it. If your pedals are running version 1.7.0, they do not support the latest software. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-13T02:59:53Z",
+      "updated_at": "2025-12-13T02:59:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

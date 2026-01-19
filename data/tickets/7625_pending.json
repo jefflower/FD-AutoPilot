@@ -1,0 +1,44 @@
+{
+  "id": 7625,
+  "subject": "Pedals not recognized",
+  "description_text": "I received my Plus X pedals yesterday and when I connected them, I was able to see them in the Simsonn manager app and I was able to calibrate them in Le Mans Ultimate, but they aren’t even seen as being connected in iRacing. The game is listed as supported, and I can launch the game from the Manager app, but they are unusable in game.\r\nIs there anything else I can do to get them connected?  Currently, the pedals are connected directly to my PC and not through a hub.\r\n\r\nMichael Shreve\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-07T15:02:15Z",
+  "updated_at": "2025-12-10T06:10:25Z",
+  "requester_id": 158007686261,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014119749,
+      "body_text": "Hi Michael Shreve,    iRacing can recognize the pedals. You just need to recalibrate and bind the pedals in the iRacing settings.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-08T10:48:19Z",
+      "updated_at": "2025-12-08T10:48:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014160697,
+      "body_text": "I can't recalibrate them because when the pedals are plugged into my PC, they don't show up in iRacing to calibrate them.  It's like they're not even plugged in, even though they work in other games I've tried.\r\n\r\nMichael Shreve\r\n________________________________\r\n",
+      "user_id": 158007686261,
+      "created_at": "2025-12-09T00:34:30Z",
+      "updated_at": "2025-12-09T00:34:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014232419,
+      "body_text": "Hi Michael Shreve,  Our engineers have recorded a binding demonstration video for iRacing. Please check whether everything works correctly in your SIMSONN Manager software. You may also send me a screenshot for verification. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-10T06:10:24Z",
+      "updated_at": "2025-12-10T06:10:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

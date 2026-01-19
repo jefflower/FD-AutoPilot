@@ -1,0 +1,44 @@
+{
+  "id": 10460,
+  "subject": "Order #SSN5726",
+  "description_text": "Hello,\r\n\r\nI am writing to ask for an update regarding my order, as I have not yet\r\nreceived any shipping confirmation or tracking number.\r\n\r\n*Order details:*\r\nOrder number: SSN5726\r\nOrder date: January 4, 2026\r\nName: Nikos Xalkias\r\nEmail: nikosxalkias522@gmail.com\r\nShipping country: Greece\r\nPayment method: Card\r\n\r\nIt has now been *6 days since I placed the order*. I would also like to\r\npoint out that I *paid extra for faster shipping*, which is why I am\r\nconcerned about the lack of updates so far.\r\n\r\nCould you please let me know:\r\n\r\n   -\r\n\r\n   The current status of my order\r\n   -\r\n\r\n   Whether it has been shipped\r\n   -\r\n\r\n   The tracking number (if available)\r\n   -\r\n\r\n   An estimated delivery date\r\n\r\nIf you need any additional information from me, please let me know.\r\n\r\nThank you in advance for your assistance. I look forward to your reply.\r\n\r\nKind regards,\r\nNikos Xalkias\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-10T02:13:40Z",
+  "updated_at": "2026-01-17T07:07:12Z",
+  "requester_id": 158009011992,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016836609,
+      "body_text": "someone answer me ??",
+      "user_id": 158009011992,
+      "created_at": "2026-01-12T03:50:40Z",
+      "updated_at": "2026-01-12T03:50:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158016927329,
+      "body_text": "Hello,  I placed an order on January 4th through your website and completed full payment, but I have not received any tracking number and no response to my previous emails.  At this point, the order appears not to have been shipped.  Please provide a valid tracking number within 48 hours of this email.  If I do not receive a response or tracking number within this timeframe, I will proceed with a PayPal/card chargeback for non-delivery of goods.  I hope this can be resolved immediately.  Regards, Nikos Xalkias",
+      "user_id": 158009011992,
+      "created_at": "2026-01-13T03:29:01Z",
+      "updated_at": "2026-01-13T03:29:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158017312266,
+      "body_text": "Update please",
+      "user_id": 158009011992,
+      "created_at": "2026-01-17T04:21:46Z",
+      "updated_at": "2026-01-17T04:21:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    }
+  ]
+}

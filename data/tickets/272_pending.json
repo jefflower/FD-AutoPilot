@@ -1,0 +1,64 @@
+{
+  "id": 272,
+  "subject": "Re:",
+  "description_text": "This  is my order number and tracking number.  My order still has not\r\narrived.\r\nRegards Matt\r\n\r\nOn Wed, 4 Jun 2025, 04:36 General and sales enquiries, <service@simsonn.com>\r\nwrote:\r\n\r\n> Sorry for the late response.\r\n> can you help with the order number?\r\n>\r\n> ------------------------------\r\n> service@simsonn.com\r\n>\r\n>\r\n> *From:* Matt Epps <mattepps1978@gmail.com>\r\n> *Date:* 2025-05-31 01:54\r\n> *To:* service <service@simsonn.com>\r\n> *Subject:*\r\n> Hi my parcel from you has been attempted for delivery and I was not at\r\n> home. The status has changed to cached with no further delivery date. Would\r\n> it be possible for further information.\r\n> Regards matt\r\n>\r\n>\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-06-08T08:31:48Z",
+  "updated_at": "2025-06-13T02:58:10Z",
+  "requester_id": 158001341293,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002841374,
+      "body_text": "Hi Matt Epps,  We have contacted the logistics team to arrange for re-delivery. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-09T04:00:11Z",
+      "updated_at": "2025-06-09T04:00:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002940183,
+      "body_text": "Any update on this? As this has been a month since I made the order and\r\npaid for it .\r\n\r\nRegards matt\r\n\r\n",
+      "user_id": 158001341293,
+      "created_at": "2025-06-11T18:23:02Z",
+      "updated_at": "2025-06-11T18:23:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002993175,
+      "body_text": "Hi Matt Epps,     Sorry for the delay, we have already reminded the logistics provider on the 3rd . We sent you a message to try to contact the logistics provider for redelivery, did you receive this email? We are urging the logistics provider to arrange a redelivery for you as soon as possible, sorry again for the delay!",
+      "user_id": 158001343601,
+      "created_at": "2025-06-12T10:42:26Z",
+      "updated_at": "2025-06-12T10:42:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002996325,
+      "body_text": "Hi. Yes I received your earlier email. But it's been 9 days since them and\r\nI still received my package.\r\n\r\nRegards matt\r\n\r\n\r\n",
+      "user_id": 158001341293,
+      "created_at": "2025-06-12T17:45:21Z",
+      "updated_at": "2025-06-12T17:45:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003002705,
+      "body_text": "Hi Matt Epps,    This is the logistics company gave us a reply, please try to contact the local post office for self-collection, or ask them to re-delivery, I'm sorry to bring you trouble!     JSEEM1548612245YQ When delivery can not contact the recipient, delivery failure, the parcel is displayed in the post office Not returned, it is recommended that the recipient contact the local post office as soon as possible to pick up, royalmail reference contact 03456000606/ 08457950950/ 03457740740, the official website http://www. royalmail.com/",
+      "user_id": 158001343601,
+      "created_at": "2025-06-13T02:58:09Z",
+      "updated_at": "2025-06-13T02:58:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

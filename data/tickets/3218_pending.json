@@ -1,0 +1,24 @@
+{
+  "id": 3218,
+  "subject": "Simsonn Plus X Pedal ISSUES",
+  "description_text": "Hi. I am having some major issues with my set of pedals. I purchased them\r\non amazon from your storefront there.\r\n\r\nHere is what is happening and some stuff I've done to try and trouble shoot\r\nit.\r\n\r\nI have a Simmagic Alpha Evo 12nm Wheelbase, The Simsonn Plus X Pedals from\r\nyou, and a Next level racing lite 2.0\r\n\r\n\r\nOn the pedal software, my throttle seems fine and detects input, but my\r\nbrake absolutely does not. It's either on 100% full force in the software\r\nwithout me touching it, or when I go to offset and click it, it goes back\r\nto 0 and wont move no matter how hard I press it. However when I DO press\r\nit, the force registers from 0.00kg to 0.4kg or something so it DOES seem\r\nto detect it but not in its full and capable way. If I go to calibrate, the\r\nnumbers for all 3 pedals are constantly moving without any input. The\r\nnumber will again go up when I press the brake, but very very slightly and\r\nit doesn't register on the sliding scale bar.\r\n\r\nI have tried quite a few trouble shooting steps and additional purchases to\r\nno avail. I have tried a shielded USB cable,a USB Isolator.  a powered USB\r\nHub, Grounding the simson control box to the brake pedal/rig and none of\r\nthese options helped me at all.\r\n\r\nI truly thought it was EMI issues from my wheelbase, but I completely\r\nunplugged the connections to the wheelbase and unplugged the power to it\r\nfrom my outlet and the issues from the pedals still persist so I'm pretty\r\nconfident with that completely unplugged, it is not the wheelbase issues.\r\n\r\nAny help would be GREATLY appreciated because I truly am at my wits end\r\ntrying to get these to work so I can continue racing\r\n\r\nThank you\r\n\r\n- Tim\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-28T19:43:57Z",
+  "updated_at": "2025-08-29T00:37:18Z",
+  "requester_id": 158003748294,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007733423,
+      "body_text": "Hi Tim Lewis,    Could you please provide a photo of the brake sensor from the front so I can check whether there is any installation error? The brake pressure sensor must not be in contact with or blocked by anything during operation. From your description, it seems that the wall, bracket, or control box might be interfering with the sensor’s movement, which could prevent it from outputting data correctly. You may also try removing the brake pedal and testing the pressure data separately to rule out installation issues.  Additionally, please note that all three sensors are high-precision pressure sensors. Minor fluctuations in the single, tens, or even hundreds digits are normal and will not affect gameplay. To avoid any possible interference, you can also configure about a 5% dead zone in the software. Another option is to connect the green ground wire between the brake and the main control box. Please ensure proper metal-to-metal contact, as paint on the surface may affect grounding effectiveness.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-29T00:37:18Z",
+      "updated_at": "2025-08-29T00:37:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

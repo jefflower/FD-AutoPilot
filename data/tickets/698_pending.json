@@ -1,0 +1,74 @@
+{
+  "id": 698,
+  "subject": "Grounding issue",
+  "description_text": "Pedals are jumping like crazy, how do i ground them to my rig ? Didnt come\r\nwith a ground cable\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-22T05:29:38Z",
+  "updated_at": "2025-06-22T06:40:44Z",
+  "requester_id": 158001709617,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003679837,
+      "body_text": "Hi Luke Maguire,     Which model of the pedal are you using? If possible, could you provide a video?  In general, if you are using a Fanatec or Simagic base, there might be electromagnetic interference. We recommend ensuring that your PC or base is properly grounded to your home’s electrical ground. Alternatively, you can also mount the control box securely to a metal bracket near the pedals to help reduce interference.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T05:34:45Z",
+      "updated_at": "2025-06-22T05:34:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003679842,
+      "body_text": "Im using simagic\r\n\r\nOn Sun 22 Jun 2025 at 15:35, support@simsonn.com ",
+      "user_id": 158001709617,
+      "created_at": "2025-06-22T05:46:29Z",
+      "updated_at": "2025-06-22T05:46:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003679845,
+      "body_text": "Hi Luke Maguire,    Are the power plugs for your PC and base three-pronged? If your home power outlets are also three-pronged, they should generally provide good grounding, which helps reduce interference.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T05:53:45Z",
+      "updated_at": "2025-06-22T05:53:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003679875,
+      "body_text": "They are 3 pronged so there shouldn’t be an issue\r\n\r\nOn Sun 22 Jun 2025 at 15:53, support@simsonn.com ",
+      "user_id": 158001709617,
+      "created_at": "2025-06-22T06:32:46Z",
+      "updated_at": "2025-06-22T06:32:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003679876,
+      "body_text": "If i get some earth cable and attached to pedals where would be best to\r\nground it ?\r\n\r\n",
+      "user_id": 158001709617,
+      "created_at": "2025-06-22T06:34:13Z",
+      "updated_at": "2025-06-22T06:34:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003679879,
+      "body_text": "Hi Luke Maguire,    The silver long coupling nut on the pedal can be connected to the brass standoff on the control box with a wire to provide grounding.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T06:40:43Z",
+      "updated_at": "2025-06-22T06:40:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

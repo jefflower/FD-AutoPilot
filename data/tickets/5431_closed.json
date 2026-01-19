@@ -1,0 +1,24 @@
+{
+  "id": 5431,
+  "subject": "SSN2833",
+  "description_text": "This order has been in Miami for 2 weeks and there's no update. Where is my shipment? If you can't find it, I need a refund. I've been in contact with customer support and this is ridiculous. I haven't heard anything.",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-10-30T06:28:32Z",
+  "updated_at": "2025-12-04T07:01:49Z",
+  "requester_id": 158001655329,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013374372,
+      "body_text": "此工单已关闭并合并到工单 7248 中",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T07:01:49Z",
+      "updated_at": "2025-12-04T07:01:49Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

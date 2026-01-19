@@ -1,0 +1,13 @@
+{
+  "id": 2903,
+  "subject": "来自simsonn.com的退信",
+  "description_text": "QQ邮箱退信 很抱歉您发送的邮件被退回，以下是该邮件的相关信息： 被退回邮件 主 题：AliExpress order：3059372994069544 时 间：2025-08-20 16:02:50 无法发送到 es3554753144pwbae@aliexpress.com 退信原因 收件人邮件地址（es3554753144pwbae@aliexpress.com）不存在，邮件无法送达。 host mx2.mail.aliyun.com[106.11.232.89] said: 554 RCPT (es3554753144pwbae@aliexpress.com) dosn't exist (in reply to RCPT TO command) 解决方案 请联系你的收件人，重新核实邮箱地址，或发送到其他收信邮箱。 此外，您还可以 点击这里 获取更多关于退信的帮助信息。",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-20T08:03:03Z",
+  "updated_at": "2025-08-20T08:04:14Z",
+  "requester_id": 158001011131,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": []
+}

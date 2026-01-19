@@ -1,0 +1,34 @@
+{
+  "id": 4624,
+  "subject": "Pedals",
+  "description_text": "Hi, I was setting my Sim rig back up and tried to recalibrate my Simsonn\r\nPlus X\r\npedals but I saw that there is new software and I have no idea where to\r\nupdate my pedals. I tried to manually update but it's still not reading.\r\nIts saying that it's an old version. I get taken to an error page when I\r\ntry to download driver software.\r\n\r\nI checked Amazon and it seems like there was a big upgrade to the pedals\r\nand the controller from when I bought it back in February of this year.\r\n\r\nI am probably asking for too much but is it possible to be sent replacement\r\npedals? Or a legit file where I can download and update the pedals?\r\n\r\nThanks for your help\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-09T03:42:36Z",
+  "updated_at": "2025-10-10T14:08:08Z",
+  "requester_id": 158005514555,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010215955,
+      "body_text": "Here you go. I wasn't aware that I had to get another box to use the\r\nsoftware.\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+      "user_id": 158005514555,
+      "created_at": "2025-10-10T14:04:07Z",
+      "updated_at": "2025-10-10T14:04:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010216937,
+      "body_text": "Hi Kyle Kong,    You can use Simsonn Manager 2.1.0 to restore the firmware.  Go to Settings → Update → Manual Firmware Update → pedals → firmware → pedals-plus.sfu.  After the update, the pedals should work normally and allow you to recalibrate them.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-10T14:08:08Z",
+      "updated_at": "2025-10-10T14:08:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

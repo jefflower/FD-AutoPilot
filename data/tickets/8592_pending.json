@@ -1,0 +1,54 @@
+{
+  "id": 8592,
+  "subject": "Bestellung #SSN4492",
+  "description_text": "Hallo zusammen,      wollte mich mal erkundigen, wann ich mit meiner Bestellung  Bestellung #SSN4492 rechnen kann.  Habe noch keine versand bestätigung und keine tracking Nummer     Bestellung vom 07.12.2025        VG Marcel",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-18T11:31:09Z",
+  "updated_at": "2026-01-04T11:27:46Z",
+  "requester_id": 158007833977,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014748040,
+      "body_text": "Hi Marcel Lange,    Your order was originally scheduled to ship from our German warehouse, but due to shipping delays, the goods arrived later than expected. They will now ship next Monday. We will issue a $30 refund as compensation. We sincerely apologize for the inconvenience caused!",
+      "user_id": 158001343601,
+      "created_at": "2025-12-19T08:33:15Z",
+      "updated_at": "2025-12-19T08:33:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014962126,
+      "body_text": "Hi Marcel Lange,    We apologize for the delay. Your order has been shipped, and we've sent you a shipping notification. It should arrive within the next couple of days. I noticed you initiated a chargeback. Please remember to cancel it once you receive your order.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-23T08:34:45Z",
+      "updated_at": "2025-12-23T08:34:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014974383,
+      "body_text": "\r\n\r\n \r\n \r\n \r\n \r\n Hallo, Ok, vielen Dank. Den Fall habe ich storniert bei Paypal. Sie haben mir gesagt also Entschuldigung bekomme 30€ zurück erstattet, bekomme ich die bei Paypal oder als Gutschein ? Gruß Marcel Gesendet mit der mobilen Mail App Am 23.12.25 um 09:35 schrieb support@simsonn.com\r\n \r\n \r\n \r\n \r\n ",
+      "user_id": 158007833977,
+      "created_at": "2025-12-23T12:34:01Z",
+      "updated_at": "2025-12-23T12:34:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015626922,
+      "body_text": "Hi Marcel Lange,    Okay, we've refunded you $30.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-04T11:27:46Z",
+      "updated_at": "2026-01-04T11:27:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

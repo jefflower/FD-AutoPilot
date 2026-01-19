@@ -1,0 +1,24 @@
+{
+  "id": 1313,
+  "subject": "Amazon order #112-9023537-6371421 not received",
+  "description_text": "Hello,\r\n  I ordered Simsonn Pro-X Ultra pedals and VAM Pro haptic motors.  They both had the same tracking number (FedEX 882343912056).  I received the pedals Wednesday but the motors were not in the box.  It says that Amazon.com is handling your customer service so I tried to chat and talk to them on the phone about this issue and they could not find the missing haptic motors or provide me with a refund.  They said I had to contact the seller.  \r\n\r\nCan you please look into what happened or send me out a replacement VAM pro haptic motor 3 pc?\r\n\r\nAttached is a copy of my order from Amazon.com\r\n\r\n\r\n\r\n\r\n\r\nThank you,\r\n\r\n- Jason Purdie\r\n  206-351-4847\r\n  Jason.Purdie@icloud.com\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-07T15:19:19Z",
+  "updated_at": "2025-07-10T03:51:56Z",
+  "requester_id": 158001925437,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004471139,
+      "body_text": "Hi Jason Purdie, Here is your tracking number of the haptic reactor: JSEGT0460328033YQ, the shipping carrier is JSEXPRESS",
+      "user_id": 158000445778,
+      "created_at": "2025-07-08T06:22:11Z",
+      "updated_at": "2025-07-08T06:22:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

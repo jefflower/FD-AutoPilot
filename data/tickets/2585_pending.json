@@ -1,0 +1,64 @@
+{
+  "id": 2585,
+  "subject": "Plus X P2-H2 - Cost in the uk",
+  "description_text": "Hello,\r\n\r\nI am lookign at the  Plus X P2-H, but am really confused at the cost. I\r\nthought yourwebsite was a normal one with a delivered cost but it talks\r\nabout taxes/customs. Do you know how much this will cost from the UK\r\nplease? If it adds too much on it might be out of my budget?\r\n\r\nThank you\r\n\r\nJames\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-12T10:00:18Z",
+  "updated_at": "2025-08-15T01:55:26Z",
+  "requester_id": 158002979365,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006738098,
+      "body_text": "Hi James,    Our products are shipped to the UK without any additional taxes or fees for customers, so please do not worry.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-12T10:03:11Z",
+      "updated_at": "2025-08-12T10:03:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006750374,
+      "body_text": "Great thank you.\r\n\r\nhttps://www.simsonn.com/products/simsonn-racing-pedal-pro-x-with-heel-plate?variant=50434623537466\r\nIf I order the above and chose the haptic set, does this include everything\r\nneeded? Like mounts, power, etc?\r\n\r\nThank you\r\n\r\nJames\r\n\r\nOn Tue, 12 Aug 2025 at 11:03, support@simsonn.com ",
+      "user_id": 158002979365,
+      "created_at": "2025-08-12T13:18:56Z",
+      "updated_at": "2025-08-12T13:18:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006780009,
+      "body_text": "Hi James,     If you select the option that includes the VAM Pro, it will come with the motor bracket and a standalone power supply.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-13T00:11:53Z",
+      "updated_at": "2025-08-13T00:11:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006864833,
+      "body_text": "So I think i've narrowed my choice down to the Plus X.\r\nhttps://www.simsonn.com/products/simsonn-pro-plus-x-pedals?variant=51288365171002\r\n\r\nI have to admit the naming is confusing to follow, so hopefully on the\r\nright track using what I can work out from the website and the helpful\r\nposter on reddit.\r\n\r\nWhat is the difference in the control box between the Plus X and the Pro X\r\nultra? They are different shapes?\r\n\r\nDo both the control boxes give full functionality for Hapitc reactors - AM\r\nPro Linear Motor?\r\n\r\nThank you\r\n\r\nOn Wed, 13 Aug 2025 at 01:12, support@simsonn.com ",
+      "user_id": 158002979365,
+      "created_at": "2025-08-14T14:36:23Z",
+      "updated_at": "2025-08-14T14:36:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006889250,
+      "body_text": "Hi James,  The Pro X Ultra control box has more control units than the Plus X control box, and its electronic components are more sophisticated, but its advantages can only be realized when using the Pro X Ultra. For the Plus X, the main control box included with the purchase of the pedal is perfect!",
+      "user_id": 158001343601,
+      "created_at": "2025-08-15T01:55:26Z",
+      "updated_at": "2025-08-15T01:55:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

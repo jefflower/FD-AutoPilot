@@ -1,0 +1,24 @@
+{
+  "id": 5820,
+  "subject": "Simsonn Pro Pedals PROBLEM HELP",
+  "description_text": "Hi,\r\nI accidentaly clicked a flash button in pedals v4 software, because it was\r\nin chinese language, not in english... i need a .bin file I think. I have a\r\ncompetition in a few days and i need properly working pedals... Please help\r\nme...\r\nThanks a lot,\r\nDamian\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-08T14:00:20Z",
+  "updated_at": "2025-11-09T03:27:26Z",
+  "requester_id": 158006826181,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011984284,
+      "body_text": "Hi Czerosek,  After reconnecting the USB, is it still not working? For V4 pedals, you can upgrade to SIMSONN Manager 2.1.2. If you see a message saying “firmware too old,” go to Settings → Update → Manual Firmware Update → Pedals → firmware → pedals-plus.sfu to complete the update.      https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-11-09T03:27:26Z",
+      "updated_at": "2025-11-09T03:27:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

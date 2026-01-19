@@ -1,0 +1,24 @@
+{
+  "id": 3816,
+  "subject": "Order SSN2069",
+  "description_text": "Hi,\r\n\r\nOne of the VAM motors has stopped working from order SSN2069. I tried\r\nswapping out the control box and used a different motor to verify it's not\r\nan issue with the control box. Can you provide troubleshooting or a\r\nreplacement?\r\n\r\nThanks,\r\nGreg Helms\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-14T19:40:47Z",
+  "updated_at": "2025-09-16T07:44:27Z",
+  "requester_id": 158002806049,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008803612,
+      "body_text": "Hi Greg Helms,  We apologize for the inconvenience, we will reissue you two VAMs.  https://t.17track.net/en#nums=JSEIZ1649069217YQ",
+      "user_id": 158001343601,
+      "created_at": "2025-09-16T07:44:27Z",
+      "updated_at": "2025-09-16T07:44:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

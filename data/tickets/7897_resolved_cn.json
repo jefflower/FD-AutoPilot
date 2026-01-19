@@ -1,0 +1,45 @@
+{
+  "id": 7897,
+  "subject": "Pit House 问题",
+  "description_text": "您好，我向您发送此消息，因为我在 pit house 上遇到了一个小问题。\n我启动电脑然后启动 LMU 游戏，但我必须启动 Simsson pit house 并重新加载设置才能让它正常工作，而以前我不需要这样做。\n\n诚挚的，\nDavid Forestier 先生",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-10T13:53:58Z",
+  "updated_at": "2025-12-17T04:18:19Z",
+  "requester_id": 158004246291,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014302548,
+      "body_text": "嗨 David Forestier,    请按照以下步骤操作：    按住 PlusX 主控制器上的升级按钮，然后重新连接USB数据线。    打开 SIMSONN Manager 2.1.0 并检查它是否已进入恢复模式。    如果检测到恢复模式，请转到 设置 → 更新 → 手动更新固件 → pedals → firmware → pedals-plusx.sfu。    更新完成后，测试设备看是否已成功恢复。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T07:02:45Z",
+      "updated_at": "2025-12-11T07:02:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014508689,
+      "body_text": "您好，我来给您反馈，我已经按照您发给我的操作步骤执行了，这解决了我的问题。\n再次感谢您的快速响应和简单明了的解释。\n\n祝整个团队一切顺利，最重要的是，祝大家度过一个愉快的年终假期。\n\n诚挚的，\nDavid Forestier 先生\n\n周四 2025年12月11日, 08:02, service @simsonn.com",
+      "user_id": 158004246291,
+      "created_at": "2025-12-15T12:28:51Z",
+      "updated_at": "2025-12-15T12:28:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014612450,
+      "body_text": "",
+      "user_id": 158004246291,
+      "created_at": "2025-12-17T04:18:19Z",
+      "updated_at": "2025-12-17T04:18:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

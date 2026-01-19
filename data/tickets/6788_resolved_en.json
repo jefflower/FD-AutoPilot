@@ -1,0 +1,28 @@
+{
+  "id": 6788,
+  "subject": "Re: Faulty brake pedal",
+  "description_text": "I can't see anything obvious blocking the brake sensor, but maybe you know the mechanism better than I. Sent from my iPhone Steve Spencer <steven.spencer @iki.fi> wrote on Nov 26, 2025 at 2:52 PM: Hi! Here are some photos of the brake assembly: On Nov 26, 2025 at 2:43 PM support @simsonn.com (support @simsonn.com) wrote: Hi Steve Spencer, Please check if there is a bracket in front of your brake pedal blocking the movement of the brake sensor. You can take a photo and send it to me for confirmation. On Wed, Nov 26 at 7:34 AM, Steve Spencer <steven.spencer @iki.fi> wrote: Thanks for the advice. I just took delivery of the pedals a couple of days ago and they have not been reconfigured. They are in the condition that they arrived from the factory. I tried several times to reset the offset. The problem still remains, i.e., full depression of the brake pedal produces only a small signal and once recalibrated the signal is very erratic. This makes it unusable because the brake pressure does not correlate to the strength of the signal received and it's impossible to achieve 100% braking. I've attached a video showing what happens. Please advise on next steps. On Nov 26, 2025 at 1:35 PM support @simsonn.com (support @simsonn.com) wrote: Hi Steve Spencer, If this is the case, it means the pedal’s mechanical structure has been adjusted. Please click Offset in the software to reset the pedal signal to zero; the white signal will then start from 0%. After recalibrating the pedal, the blue signal will correctly range from 0% to 100%. On Tue, Nov 25 at 10:23 AM, Steve Spencer <solidm @gmail.com> wrote: Hi, As requested, here is a video showing the behaviour: Pressing the brake produces only a very small and erratic value in the Simsonn app and calibration. Steven Spencer 028-1754586-7574715",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-11-26T14:00:37Z",
+  "updated_at": "2025-11-26T23:12:58Z",
+  "requester_id": 158007323105,
+  "responder_id": 158000445778,
+  "cc_emails": [
+    "steven.spencer@iki.fi",
+    "support@simsonn.com"
+  ],
+  "conversations": [
+    {
+      "id": 158012955887,
+      "body_text": "Yes, that was the problem! The bracket was making contact with the mounting equipment which restricted movement. I remounted the pedal and it now works perfectly! Thank you for your help and have an excellent day! Best regards Steven Spencer. Sent from my iPhone Steve Spencer <solidm @gmail.com> wrote on Nov 26, 2025 at 4:00 PM: I can't see anything obvious blocking the brake sensor, but maybe you know the mechanism better than I. Sent from my iPhone Steve Spencer <steven.spencer @iki.fi> wrote on Nov 26, 2025 at 2:52 PM: Hi! Here are some photos of the brake assembly: On Nov 26, 2025 at 2:43 PM support @simsonn.com (support @simsonn.com) wrote: Hi Steve Spencer, Please check if there is a bracket in front of your brake pedal blocking the movement of the brake sensor. You can take a photo and send it to me for confirmation. On Wed, Nov 26 at 7:34 AM, Steve Spencer <steven.spencer @iki.fi> wrote: Thanks for the advice. I just took delivery of the pedals a couple of days ago and they have not been reconfigured. They are in the condition that they arrived from the factory. I tried several times to reset the offset. The problem still remains, i.e., full depression of the brake pedal produces only a small signal and once recalibrated the signal is very erratic. This makes it unusable because the brake pressure does not correlate to the strength of the signal received and it's impossible to achieve 100% braking. I've attached a video showing what happens. Please advise on next steps. On Nov 26, 2025 at 1:35 PM support @simsonn.com (support @simsonn.com) wrote: Hi Steve Spencer, If this is the case, it means the pedal’s mechanical structure has been adjusted. Please click Offset in the software to reset the pedal signal to zero; the white signal will then start from 0%. After recalibrating the pedal, the blue signal will correctly range from 0% to 100%. On Tue, Nov 25 at 10:23 AM, Steve Spencer <solidm @gmail.com> wrote: Hi, As requested, here is a video showing the behaviour: Pressing the brake produces only a very small and erratic value in the Simsonn app and calibration. Steven Spencer 028-1754586-7574715",
+      "user_id": 158007323105,
+      "created_at": "2025-11-26T15:47:49Z",
+      "updated_at": "2025-11-26T15:47:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

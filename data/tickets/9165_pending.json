@@ -1,0 +1,24 @@
+{
+  "id": 9165,
+  "subject": "Vam pro",
+  "description_text": "I ordered VAM pro whole pack. Power suply does not fit europe outlets. How\r\nto fix this?\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-25T18:18:51Z",
+  "updated_at": "2025-12-28T03:17:27Z",
+  "requester_id": 158007337012,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015147359,
+      "body_text": "Hi Ante,  Please take a photo so I can check whether the power plug has been shipped. Do you need the EU standard plug? Also, please provide the order number. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T03:17:27Z",
+      "updated_at": "2025-12-28T03:17:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

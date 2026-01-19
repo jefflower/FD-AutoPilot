@@ -1,0 +1,24 @@
+{
+  "id": 7032,
+  "subject": "Shipping",
+  "description_text": "Good day,\r\n\r\nExcuse me for my hard English, do you have shipping to Republic of\r\nKazakhstan, Almaty city?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-29T14:57:14Z",
+  "updated_at": "2025-11-30T01:01:30Z",
+  "requester_id": 158007419973,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013124741,
+      "body_text": "Hi Санжар Асылбекулы,    Sure, you can place an order on the official website. https://www.simsonn.com/products/simsonn-plus-x-pedals",
+      "user_id": 158001343601,
+      "created_at": "2025-11-30T01:01:30Z",
+      "updated_at": "2025-11-30T01:01:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

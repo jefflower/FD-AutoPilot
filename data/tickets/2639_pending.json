@@ -1,0 +1,24 @@
+{
+  "id": 2639,
+  "subject": "VAM Pro",
+  "description_text": "Hello,\r\n\r\nI have two VAM Pro haptics on my Pro X (with Ultra control box). One on the\r\nbrake and one on the throttle.\r\n\r\nI’m not getting the traction loss signal on the throttle when I lose\r\ntraction. I’m using them through Simhub. Is there anything I can try to get\r\nthe throttle haptic to work?\r\n\r\nMike Jones\r\n302-632-7045\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-13T14:29:41Z",
+  "updated_at": "2025-08-15T02:37:05Z",
+  "requester_id": 158001494617,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006889784,
+      "body_text": "Hi Mike Jones,  First, please make sure you are using SIMSONN Manager 2.1.0 and that the Ultra control board firmware is up to date. You can verify this by going to Settings → Update and clicking “Update,” which will update both the software and the firmware. Next, test the VAM Pro motors for both the throttle and brake in the vibration feedback test to ensure they are working normally. If you plan to use SimHub, please close SIMSONN Manager first, then open SimHub 9.9.3, test both motors there, and enable the TC and ABS indicators for testing. If the issue persists, please contact me. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-15T02:37:05Z",
+      "updated_at": "2025-08-15T02:37:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

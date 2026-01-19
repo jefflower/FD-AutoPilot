@@ -1,0 +1,24 @@
+{
+  "id": 10370,
+  "subject": "SSN4826",
+  "description_text": "Hello. Haven't got that plate and haptic motor yet. Do you think it's still\r\ncoming or lost in post? JSELL1564015860YQ\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-09T05:45:27Z",
+  "updated_at": "2026-01-12T11:42:28Z",
+  "requester_id": 158008817390,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016856573,
+      "body_text": "Hi Mikko Paavilainen,    I've noticed the logistics have stalled. We'll look into it for you immediately.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-12T11:42:28Z",
+      "updated_at": "2026-01-12T11:42:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

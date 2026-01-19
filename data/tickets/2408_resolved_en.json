@@ -1,0 +1,375 @@
+{
+  "id": 2408,
+  "subject": "Pedal inputs erratic",
+  "description_text": "Hello I have a set of simsonn pro plus pedals I got from a friend as a gift. Im having an issue when trying to calibrate them and reaching out to see if there is a fix. The problem im having is the inputs are jumping around without even touching the pedals at all making then impossible to calibrate. I tried grounding the control box and pedals themselves to a plug on the wall but that didn't seem to help at all. Is there an issue with the control box itself?",
+  "status": 4,
+  "priority": 2,
+  "created_at": "2025-08-07T07:32:59Z",
+  "updated_at": "2025-08-10T13:56:19Z",
+  "requester_id": 158002784206,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006598795,
+      "body_text": "Hi jesse sturgill,   Please provide photos of the pedal and controller installation, and let us know the brand of your wheelbase. You can also share a video via Google Drive, and we will analyze all the information to provide you with a solution.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-09T15:01:17Z",
+      "updated_at": "2025-08-09T15:01:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006608545,
+      "body_text": "Thanks for the reply. I havent fully installed the pedals onto my chassis yet because I wanted to test that they work first. I have a thrustmaster t818 wheelbase but even when that is turned off and unplugged the pedals still shows random inputs. It will show the random erratic inputs on the x rotation axis even with the pedals unplugged from the controller.",
+      "user_id": 158002784206,
+      "created_at": "2025-08-09T18:30:01Z",
+      "updated_at": "2025-08-09T18:30:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006615577,
+      "body_text": "Hi jesse sturgill,  Please connect the green wire from the control box to any metal screw on the pedal, but note that paint may affect the grounding effectiveness. You can also try upgrading to SIMSONN Manager 2.1.0. Here’s how to update:      Go to Settings → Update → Manual Firmware Update → Select Pedals → Choose the file plus.sfu to upgrade.      https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T03:10:46Z",
+      "updated_at": "2025-08-10T03:10:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006615629,
+      "body_text": "My control box doesnt have a green wire coming out of it. I have tried to attach a wire under one the control boxe's screws to the pedals and it didnt make a difference. I have updated the sim pedals in the simsonn manager and it did not help either. In the simsonn manager it shows the brake pedal moving up and down on it own",
+      "user_id": 158002784206,
+      "created_at": "2025-08-10T03:17:36Z",
+      "updated_at": "2025-08-10T03:17:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006615666,
+      "body_text": "Hi jesse sturgill,  Please upload and share a video via Google Drive to illustrate the issue, as we cannot accurately analyze and resolve the problem based on text description alone.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T03:21:10Z",
+      "updated_at": "2025-08-10T03:21:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006616962,
+      "body_text": "https://drive.google.com/file/d/1s03FOZBf47USlwn2kPLGMhKWc3LUYR4Y/view?usp=drivesdk\nHere's a link  showing the inputs happening on their own with the controller sitting directly on the pedals",
+      "user_id": 158002784206,
+      "created_at": "2025-08-10T03:58:28Z",
+      "updated_at": "2025-08-10T03:58:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006619877,
+      "body_text": "Hi jesse sturgill,  Access to your video requires authorization. Please grant permission for us to view it.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T04:23:43Z",
+      "updated_at": "2025-08-10T04:23:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006622330,
+      "body_text": "Hi jesse sturgill,  This level of numerical fluctuation is normal. Whether the pressure sensor is rated for 1–20 kg or 1–200 kg, when recognized in the 0–65536 range, it is impossible for the reading to remain perfectly static. A high-precision pressure sensor is not an angle sensor — any slight movement or vibration will cause the value to change. However, when this variation is scaled to the 1–100% range, it will not affect your actual pedal operation in the game. Additionally, please do not place the control box on the pedals. In practice, we only use the X, Y, and Z axes; all other axes can be ignored.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T04:37:02Z",
+      "updated_at": "2025-08-10T04:37:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006625540,
+      "body_text": "Ok I tried calibration and starting a game but in assetto corsa and BeamNG it showing the gas and brake both being pressed. In the simsonn manager it shows white bars all the time on the sliders l. How can I properly calibrate them?",
+      "user_id": 158002784206,
+      "created_at": "2025-08-10T05:05:00Z",
+      "updated_at": "2025-08-10T05:05:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006625888,
+      "body_text": "Hi jesse sturgill,  The white bar represents the raw data and can be ignored; just make sure the blue game data bar can go from 0% to 100% when fully pressed. After calibration, please rebind the button or pedal in the game.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T05:15:28Z",
+      "updated_at": "2025-08-10T05:15:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006628048,
+      "body_text": "Ok im still having trouble making them work in assetto corsa they are recognized in the controls setting but will not work at all in game",
+      "user_id": 158002784206,
+      "created_at": "2025-08-10T05:52:12Z",
+      "updated_at": "2025-08-10T05:52:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006628055,
+      "body_text": "Hi jesse sturgill,    you can download the Todesk tool (no registration required). Once installed, please provide your ID and temporary password, and I’ll assist you remotely.     https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T05:55:27Z",
+      "updated_at": "2025-08-10T05:55:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006631115,
+      "body_text": "Ok device ID is 262 561 734\nPassword is ems4zx8h",
+      "user_id": 158002784206,
+      "created_at": "2025-08-10T06:12:28Z",
+      "updated_at": "2025-08-10T06:12:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006631209,
+      "body_text": "Picture of pedals and controller",
+      "user_id": 158002784206,
+      "created_at": "2025-08-10T06:41:54Z",
+      "updated_at": "2025-08-10T06:41:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006633614,
+      "body_text": "Hi jesse sturgill,",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T07:03:42Z",
+      "updated_at": "2025-08-10T07:03:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006633631,
+      "body_text": "Here is with no cable touching brake",
+      "user_id": 158002784206,
+      "created_at": "2025-08-10T07:07:56Z",
+      "updated_at": "2025-08-10T07:07:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006633650,
+      "body_text": "Hi jesse sturgill,     The brake’s black preload nut needs to apply sufficient preload to the damper; otherwise, the brake will not reset properly.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T07:11:32Z",
+      "updated_at": "2025-08-10T07:11:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006633659,
+      "body_text": "Hi jesse sturgill,  Please email us your contact name, phone number, and address, and we will send you a replacement brake pressure sensor. Also, please provide a photo showing where the brake cable is broken.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T07:14:43Z",
+      "updated_at": "2025-08-10T07:14:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006633665,
+      "body_text": "Cable just pulled out from the end of the connector \nName: Jesse Sturgill Number: 520-404-7008Address: 700 W Southern Ave,  Apache Junction, AZ 85120, United States of America",
+      "user_id": 158002784206,
+      "created_at": "2025-08-10T07:17:39Z",
+      "updated_at": "2025-08-10T07:17:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006633669,
+      "body_text": "Hi jesse sturgill,  You can try taking the brake’s RJ11 4P4C connector to a nearby computer store to have a new one crimped, following the same wiring order as the accelerator and clutch. This should restore functionality. In addition, please plug the clutch directly into the brake port and test whether the accelerator and brake control box work normally, then check in the VKB tool.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T07:20:39Z",
+      "updated_at": "2025-08-10T07:20:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006641295,
+      "body_text": "Hello I wanted to let you know i was able to get my brake pedal repaired and it works again. Although now the brake and throttle register around 50% with no input",
+      "user_id": 158002784206,
+      "created_at": "2025-08-10T09:50:28Z",
+      "updated_at": "2025-08-10T09:50:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006646945,
+      "body_text": "Hi jesse sturgill,     Please take a screenshot of your manual calibration video and send me a video link via Google Drive.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T11:06:44Z",
+      "updated_at": "2025-08-10T11:06:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006651672,
+      "body_text": "https://drive.google.com/file/d/1fgEGrlJP_m1Oy_WPo-788kvYcW3_bGGq/view?usp=drivesdk\nHere is the calibration video",
+      "user_id": 158002784206,
+      "created_at": "2025-08-10T11:32:03Z",
+      "updated_at": "2025-08-10T11:32:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006651740,
+      "body_text": "Hi jesse sturgill,    I need your permission in order to view the file.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T11:34:00Z",
+      "updated_at": "2025-08-10T11:34:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006651759,
+      "body_text": "They work good on BeamNG and CarX Drift but im still unable to get then to work on Assetto Corsa",
+      "user_id": 158002784206,
+      "created_at": "2025-08-10T11:34:27Z",
+      "updated_at": "2025-08-10T11:34:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006651819,
+      "body_text": "You should be able to view now",
+      "user_id": 158002784206,
+      "created_at": "2025-08-10T11:36:07Z",
+      "updated_at": "2025-08-10T11:36:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006651864,
+      "body_text": "Hi jesse sturgill,    Please check with the VKB tool — pressing only the throttle should not trigger the brake input, and pressing the brake should not trigger the throttle input. Please confirm this, and you may also send me a photo.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T11:38:17Z",
+      "updated_at": "2025-08-10T11:38:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006651865,
+      "body_text": "Hi jesse sturgill,    Please check with the VKB tool — pressing only the throttle should not trigger the brake input, and pressing the brake should not trigger the throttle input. Please confirm this, and you may also send me a photo.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T11:39:08Z",
+      "updated_at": "2025-08-10T11:39:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006651927,
+      "body_text": "The throttle no longer activates the brake on VKB and the brake does not activate the throttle. I will send a video",
+      "user_id": 158002784206,
+      "created_at": "2025-08-10T11:42:55Z",
+      "updated_at": "2025-08-10T11:42:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006651955,
+      "body_text": "https://drive.google.com/file/d/1TiWE0xnlJRaGpUeVVf0gK4FMpl-5Tdpb/view?usp=drivesdk\nPedals after repair on VKB",
+      "user_id": 158002784206,
+      "created_at": "2025-08-10T11:44:32Z",
+      "updated_at": "2025-08-10T11:44:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006652312,
+      "body_text": "Hi jesse sturgill,  I need your permission in order to view the file.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T12:06:32Z",
+      "updated_at": "2025-08-10T12:06:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006652349,
+      "body_text": "Hi jesse sturgill,    The pedal signal is now normal, but the RX axis still appears. Please select the plus.sfu file on your desktop and manually update the firmware again.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T12:09:34Z",
+      "updated_at": "2025-08-10T12:09:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006652462,
+      "body_text": "Ok update was installed from the desktop plus.sfu file and the rx signal is now stable. They still work in carx and beamng but I cant get them to work in assetto corsa at all",
+      "user_id": 158002784206,
+      "created_at": "2025-08-10T12:41:56Z",
+      "updated_at": "2025-08-10T12:41:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006652495,
+      "body_text": "Hi jesse sturgill,   Please provide your Todesk ID and temporary verification code so I can check for you.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-10T12:53:54Z",
+      "updated_at": "2025-08-10T12:53:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006652507,
+      "body_text": "Id: 262 561 734Password: i6n7ecj7",
+      "user_id": 158002784206,
+      "created_at": "2025-08-10T12:58:53Z",
+      "updated_at": "2025-08-10T12:58:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006654567,
+      "body_text": "",
+      "user_id": 158002784206,
+      "created_at": "2025-08-10T13:56:19Z",
+      "updated_at": "2025-08-10T13:56:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

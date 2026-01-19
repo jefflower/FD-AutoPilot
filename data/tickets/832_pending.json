@@ -1,0 +1,54 @@
+{
+  "id": 832,
+  "subject": "Pedal mechanical adjustment",
+  "description_text": "Hello!\r\n\r\nI just got my new pedals in, and I am trying to adjust them mechanically\r\nbut I can't find any resources to help. I don't know the differences in the\r\nsprings or blocks or even how to change any of them out. Can you send me a\r\nlink or some kind of document with some info or instructions?\r\n\r\n-- \r\nHayden Cherry\r\nInternet Kid\r\nBranded Media Co.\r\n  417.793.6735 <4177936735>\r\n  Little Rock, Arkansas\r\n<https://www.instagram.com/brandedmediaco/>\r\n<https://www.facebook.com/brandedmediaco/>\r\n<https://www.linkedin.com/company/branded-media-co>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-25T17:46:01Z",
+  "updated_at": "2025-06-26T23:51:44Z",
+  "requester_id": 158001784139,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003845684,
+      "body_text": "你好，Hayden Cherry，  您购买的是哪种型号的踏板？我会根据您的具体型号给您发送相应的用户手册。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-26T09:34:38Z",
+      "updated_at": "2025-06-26T09:34:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003923775,
+      "body_text": "I got the HE load cell pedals\r\n\r\nOn Thu, Jun 26, 2025 at 4:34 AM service@simsonn.com ",
+      "user_id": 158001784139,
+      "created_at": "2025-06-26T17:35:41Z",
+      "updated_at": "2025-06-26T17:35:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003923879,
+      "body_text": "Also, the software I downloaded from the website, 2.0.6 says my pedals are\r\ntoo old to use\r\n\r\nOn Thu, Jun 26, 2025 at 12:35 PM Hayden Cherry <hayden@brandedmediaco.com>\r\nwrote:\r\n\r\n> I got the HE load cell pedals\r\n>\r\n> On Thu, Jun 26, 2025 at 4:34 AM service@simsonn.com ",
+      "user_id": 158001784139,
+      "created_at": "2025-06-26T17:51:53Z",
+      "updated_at": "2025-06-26T17:51:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004042227,
+      "body_text": "Hi Hayden Cherry,     Please check if there is a button on the control box that can be pressed. If there is, press and hold the button while reconnecting the USB cable to enter recovery mode.  If there’s no button, you can go directly to the firmware update section in Simsonn Manager and manually select the plus.dfu or v1.8.0.sfu file from the pedals folder to perform the update.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-26T23:51:43Z",
+      "updated_at": "2025-06-26T23:51:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

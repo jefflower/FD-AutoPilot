@@ -1,0 +1,35 @@
+{
+  "id": 9370,
+  "subject": "Pedals Plus X",
+  "description_text": "Hi, I bought the throttle and brake pedals. When I run the manager the pedals are OK and they work, but when I start a game (like rfactor2 or Le Mans Ultimate) the pedals still don't work, the game doesn't see them...how can I fix this?",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-28T14:06:30Z",
+  "updated_at": "2025-12-30T09:05:50Z",
+  "requester_id": 158008800673,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015165889,
+      "body_text": "Hi Nicola Santi, Both of these games are supported. Please send me a screenshot of the in-game settings so I can check and better understand the issue.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T15:20:42Z",
+      "updated_at": "2025-12-28T15:20:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015183034,
+      "body_text": "Solved! I updated the firmware manually and then calibrated the pedals and now they work! Thanks however for the support!",
+      "user_id": 158008800673,
+      "created_at": "2025-12-29T08:16:07Z",
+      "updated_at": "2025-12-29T08:16:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    }
+  ],
+  "available_langs": []
+}

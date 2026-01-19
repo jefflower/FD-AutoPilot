@@ -1,0 +1,54 @@
+{
+  "id": 156,
+  "subject": "Контент Менеджер 2025-06-04 14-05-18.mp4, IMG20250604135104.jpg, IMG20250604135128.jpg и ещё 2 файла",
+  "description_text": "\nGood day, dear Simson product developers. I was very interested and purchased your products, namely: pedals, steering wheel and sequential gearbox. Of all the products, the sequential has the fewest questions so far.\n\n1. I use a homemade direct drive base made on the basis of a motor from a gyro scooter. I switched to a more powerful motor (15 Nm) and ran into problems.\n\n2. The first problem is that there are interferences and random triggerings on the pedals and steering wheel. Namely: at the moment when the steering wheel is turned, the signal to lower the gear began to trigger from the steering wheel controller. I managed to overcome this problem by installing a 0.1 μF capacitor. I soldered it directly to the limit switch, because I did not want to disassemble the steering wheel a second time. Since the steering wheel was disassembled before and the back panel was glued with aluminum tape in order to reduce interference, but this did not give a result.\n\n3. When I disassembled the steering wheel (and I bought the carbon version), I saw that there were no threads anywhere and the screws were tightened only once and for all, considering that your body is printed on a 3D printer, it would be nice to print the threads or install fused inserts. I agree that there is no need to disassemble/assemble the steering wheel often and a lot, but still, there is a chance that it will not be assembled a second time.\n\n4. Due to the lack of threads and the fact that the screws are simply tightened into the holes, then after the first weeks of not very long use, the gearshift lever on the steering wheel has already loosened and since there is no thread there, I have no way to somehow tighten it and fix it easily and quickly. I understand that carbon is used there, but I think you can find a solution to this problem to improve your product.\n\nAll files confirming my words are attached in this message. I don't ask for anything, except maybe some feedback, I just want you to improve your product and other users to encounter as few problems as possible and get as much pleasure from using them as possible.\n \n--\nEugene Malahov\n\nК этому письму приложены ссылки на следующие файлы:\n\n1. VID20250604135246.mp4 (60.4 Мб)\n2. IMG20250601112110.jpg (9.8 Мб)\n\nСсылка для скачивания файлов: https://cloud.mail.ru/stock/4Hy6AgqiWFt7rLWu2uUtKDPu\n\nФайлы будут храниться до 01.12.2025\r\n\nAttachment(s) that exceed the 20 MB limit have been dropped. Please reach out to the sender.",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-06-04T11:43:19Z",
+  "updated_at": "2025-06-05T04:42:02Z",
+  "requester_id": 158001214417,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002391726,
+      "body_text": "Hi Евгений Малахов,    Спасибо за ваш отзыв. Нам очень важна такая информация, и завтра мы внимательно изучим описанную вами проблему. Возможно, она вызвана внешними электромагнитными помехами. Подскажите, пожалуйста, вы приобрели педали Pro Plus?  Также рекомендуем надёжно заземлить электродвигатель, компьютер или металлическую стойку — это поможет стабилизировать «землю» всей конструкции. Обычно самодельные основания могут передавать на стойку помехи от других устройств.  В настоящее время мы обновляем контроллер педалей, чтобы он был более устойчив к таким помехам при работе двигателя. Мы будем держать вас в курсе последних новостей и обновлений.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-04T12:02:13Z",
+      "updated_at": "2025-06-04T12:02:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002422020,
+      "body_text": "\nНе ожидал такого оперативного ответа, очень приятно. \nДа, я пользуюсь педалями Pro Plus и вы, скорее всего, правы: дело в электромагнитных помехах, я более чем уверен, что это так. Раньше я использовал менее мощную версию мотора и полностью герметичную, а в этой версии решил сделать отверстия для вентиляции, что тоже, полагаю, повлияло на усиление влияния помех. Обязательно воспользуюсь вашим советом по заземлению и постараюсь сообщить о результатах этого действия.\n \n \n--\nЕвгений Малахов\nОтправлено из Почты  Mail\n \n  \n>Среда, 4 июня 2025, 15:02 +03:00 от service@simsonn.com ",
+      "user_id": 158001214417,
+      "created_at": "2025-06-04T15:31:03Z",
+      "updated_at": "2025-06-04T15:31:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002422168,
+      "body_text": "\nИзвиняюсь, снял руль, более подробно изучил в чем причина чрезмерного хода рычага КПП, оказалось открутилась анодированная рейка, которая стягивает 2 половинки карбоновых деталей, с резьбой все в порядке, подтянул, люфт ушел. Возможно стоит добавить фиксатор резьбы, в дальнейшем посмотрю как поведет себя этот узел, т. к. с другой стороны тоже начался процесс самооткручивания от нажатия.\n \n \n--\nЕвгений Малахов\nОтправлено из Почты  Mail\n \n  \n>Среда, 4 июня 2025, 18:27 +03:00 от Евгений Малахов <malahov_eugene@mail.ru>:\n> \n>Не ожидал такого оперативного ответа, очень приятно. \n>Да, я пользуюсь педалями Pro Plus и вы, скорее всего, правы: дело в электромагнитных помехах, я более чем уверен, что это так. Раньше я использовал менее мощную версию мотора и полностью герметичную, а в этой версии решил сделать отверстия для вентиляции, что тоже, полагаю, повлияло на усиление влияния помех. Обязательно воспользуюсь вашим советом по заземлению и постараюсь сообщить о результатах этого действия.\n> \n> \n>--\n>Евгений Малахов\n>Отправлено из Почты  Mail\n> \n> \n>>Среда, 4 июня 2025, 15:02 +03:00 от  service@simsonn.com < service@simsonn.com >:\n>> \n>>Hi Евгений Малахов,\n>> \n>>Спасибо за ваш отзыв. Нам очень важна такая информация, и завтра мы внимательно изучим описанную вами проблему. Возможно, она вызвана внешними электромагнитными помехами. Подскажите, пожалуйста, вы приобрели педали Pro Plus?\n>>Также рекомендуем надёжно заземлить электродвигатель, компьютер или металлическую стойку — это поможет стабилизировать «землю» всей конструкции. Обычно самодельные основания могут передавать на стойку помехи от других устройств.\n>>В настоящее время мы обновляем контроллер педалей, чтобы он был более устойчив к таким помехам при работе двигателя. Мы будем держать вас в курсе последних новостей и обновлений.\n>>\n>> \n>> \n>>>",
+      "user_id": 158001214417,
+      "created_at": "2025-06-04T15:53:31Z",
+      "updated_at": "2025-06-04T15:53:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002430947,
+      "body_text": "Hi Евгений Малахов,  Помехи от двигателя могут исходить от корпуса и USB-кабеля, которые создают взаимные наводки между основанием, компьютером и стойкой. Заземление — это очень хорошее решение этой проблемы. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-05T04:42:01Z",
+      "updated_at": "2025-06-05T04:42:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

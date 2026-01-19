@@ -1,0 +1,24 @@
+{
+  "id": 6835,
+  "subject": "Refund on power supply (SSN3916)",
+  "description_text": "Hello, I am Matthew Yang who just purchased my pedals with haptic motors.\r\nAs I didn’t know that I need to purchase the power supply separately, and I\r\nlater noticed, so I put in an order for the power supply separately. Now\r\nthat I received an email that I could have just clicked the link to add the\r\npower supply, which I did, I would like to cancel my order on the power\r\nsupply which is order number\r\nSSN3916.\r\nCan you please cancel the order and issue me a refund? Thank you.\r\n\r\nSincerely, Matthew Yang\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-27T02:42:50Z",
+  "updated_at": "2025-11-27T02:51:15Z",
+  "requester_id": 158007356551,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012988710,
+      "body_text": "Hi Matthew Yang,    Alright, we'll cancel it for you and issue a refund.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-27T02:51:15Z",
+      "updated_at": "2025-11-27T02:51:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

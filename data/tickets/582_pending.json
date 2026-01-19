@@ -1,0 +1,104 @@
+{
+  "id": 582,
+  "subject": "firmware",
+  "description_text": "please send firmware for simpson pro pedals.\r\n\r\nI need the recovery firmware\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-06-18T18:38:34Z",
+  "updated_at": "2025-06-19T04:09:29Z",
+  "requester_id": 158001546012,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003225460,
+      "body_text": "Hi Robbie Coe,  Please provide a screenshot of the software interface, a screenshot from the VKB tool, and a photo of your pedal. I’ll help you troubleshoot and resolve the issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-16T02:42:18Z",
+      "updated_at": "2025-06-16T02:42:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003295919,
+      "body_text": "The usb will not connect to the pc to do this testing ",
+      "user_id": 158001546012,
+      "created_at": "2025-06-16T20:30:41Z",
+      "updated_at": "2025-06-16T20:30:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158003300637,
+      "body_text": "Hi Robbie Coe,  Is there an upgrade button on the controller? If so, I can assist you with the software update. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-17T03:15:24Z",
+      "updated_at": "2025-06-17T03:15:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003372913,
+      "body_text": "there is no upgrade button",
+      "user_id": 158001546012,
+      "created_at": "2025-06-17T20:24:23Z",
+      "updated_at": "2025-06-17T20:24:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158003473221,
+      "body_text": "Can you give me the firmware for the simsonn pro pedals board please.",
+      "user_id": 158001546012,
+      "created_at": "2025-06-18T18:29:21Z",
+      "updated_at": "2025-06-18T18:29:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158003479407,
+      "body_text": "Hi Robbie Coe,    Which version of the pedal are you using? Please download version 2.0.8 of Simsonn Manager from our official website, then go to the firmware update section and manually select the appropriate firmware file from the pedals folder.     https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-06-19T04:07:30Z",
+      "updated_at": "2025-06-19T04:07:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003479408,
+      "body_text": "ID 为 465 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-19T04:08:35Z",
+      "updated_at": "2025-06-19T04:08:35Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158003479409,
+      "body_text": "合并来自工单465  \n      主题: bricked STM32 board.  \n      描述:  Hi there,   \n I have the simsonn pro pedals. I accidentally pressed the flash firmware button on the config software and now the PC will not recognise the board. \n   \n could you advise me on what to do? \n   \n Maybe even the process for getting a new board. \n   \n Thanks, \n Robbie Coe",
+      "user_id": 158000445778,
+      "created_at": "2025-06-19T04:08:35Z",
+      "updated_at": "2025-06-19T04:08:35Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158003479414,
+      "body_text": "Hi Robbie Coe, You just need to select the plus.sfu firmware file from the pedals folder to complete the update. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-19T04:09:29Z",
+      "updated_at": "2025-06-19T04:09:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

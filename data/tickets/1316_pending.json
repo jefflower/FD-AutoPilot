@@ -1,0 +1,34 @@
+{
+  "id": 1316,
+  "subject": "HELP MY PACKAGE WAS NOT DELIVERED ! I received something totally unrelated that I ordered afterwards !!!",
+  "description_text": "HELP MY PACKAGE WAS NOT DELIVERED ! I received something totally unrelated that I ordered afterwards !!!\r\nThis transaction has been terrible\r\n\r\nSent from my iPhone\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-07-07T17:59:17Z",
+  "updated_at": "2025-07-08T10:42:05Z",
+  "requester_id": 158001724631,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004463269,
+      "body_text": "Hi Marquise Bethea,  Please don’t worry — we will take care of everything for you. Kindly provide your order number and let us know which platform you placed the order on. Also, please send us photos of all the items you received, and we will quickly verify and arrange a replacement if needed. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-08T00:27:32Z",
+      "updated_at": "2025-07-08T00:27:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004472351,
+      "body_text": "Hi Marquise Bethea,    P​lease take a photo of the product you received, we will check and solve the problem for you as soon as possible.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-08T10:42:05Z",
+      "updated_at": "2025-07-08T10:42:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

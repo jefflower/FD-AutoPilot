@@ -1,0 +1,95 @@
+{
+  "id": 10448,
+  "subject": "信息",
+  "description_text": "早上好。\n\n我最近购买了你们带有触觉马达的 Plus X 踏板。这是一款很棒的产品，我对你们的软件和 SimHub 都非常满意。我遇到的唯一问题是马达在《勒芒终极版》（Le Mans Ultimate）中无法工作。我尝试了各种方法，也使用了两款软件，但就是无法让它们工作。然而，在其他模拟器中，我没有遇到任何问题。肯定是我哪里操作不当，恳请你们帮助解决这个问题。\n\n在此先表示感谢。\n\n此致，\nSimone Ricci",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-09T22:30:27Z",
+  "updated_at": "2026-01-13T02:38:13Z",
+  "requester_id": 158009009422,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016677782,
+      "body_text": "你好，Simone Ricci\n\n我们的 SIMSONN Manager 目前支持这些游戏，而 SimHub 本身支持超过100款游戏。您能告诉我您在 LMU 中遇到的具体问题是什么吗？是没有振动反馈，还是其他问题？这样我才能更准确地帮助您进行故障排除。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-10T07:07:18Z",
+      "updated_at": "2026-01-10T07:07:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016691247,
+      "body_text": "早上好\n\n我遇到的问题是完全没有触觉反馈，就好像引擎关闭或断开连接一样。这只在 LMU 中出现，因为在我拥有的其他游戏中它们都能完美工作。\n\n谢谢\n\n发自 iPhone\n\n在 2026年1月10日，08:07，service @simsonn.com 写道：\n\n﻿\n你好，Simone Ricci\n\n我们的 SIMSONN Manager 目前支持这些游戏，而 SimHub 本身支持超过100款游戏。\n 您能告诉我您在 LMU 中遇到的具体问题是什么吗？是没有振动反馈，还是其他问题？这样我才能更准确地帮助您进行故障排除。\n\n\n\n\n[https://attachment.freshdesk.com/inline/attachment?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTU4MDA1OTc2NDYyLCJkb21haW4iOiJzaW1zb25uLmZyZXNoZGVzay5jb20iLCJhY2NvdW50X2lkIjo0MjA2MDM2fQ.LobGfH6F0Y4xbJpVqCOCnimRJfM3vbBKIyHLoijbQcU]",
+      "user_id": 158009009422,
+      "created_at": "2026-01-10T08:25:56Z",
+      "updated_at": "2026-01-10T08:25:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016762491,
+      "body_text": "你好 Simone Ricci，\n\n您能确认一下您使用的 SIMSONN Manager 版本是否为 2.1.3 吗？另外，控制器固件版本是否为 CPU1: 2.0.6 和 CPU2: 2.0.4？",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T01:28:06Z",
+      "updated_at": "2026-01-11T01:28:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016766361,
+      "body_text": "你好 Simone Ricci，\n\n当您运行 LMU 时，请检查 SIMSONN Manager 左下角是否显示“遥测已连接”。请截图发送给我，我会转发给我们的工程师进行进一步调查。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T02:52:28Z",
+      "updated_at": "2026-01-11T02:52:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016807805,
+      "body_text": "早上好\n\n软件和固件都已更新，但当我启动 LMU 时，遥测显示为断开连接，[image0.jpeg][image1.jpeg][image2.jpeg]\n发自 iPhone\n\n在 2026年1月11日，03:52，service @simsonn.com 写道：\n\n﻿\n你好 Simone Ricci，\n\n当您运行 LMU 时，请检查 SIMSONN Manager 左下角是否显示“遥测已连接”。\n请截图发送给我，我会转发给我们的工程师进行进一步调查。\n\n\n",
+      "user_id": 158009009422,
+      "created_at": "2026-01-11T11:36:37Z",
+      "updated_at": "2026-01-11T11:36:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016807992,
+      "body_text": "早上好\n\n软件和固件都已更新，但当我启动 LMU 时，遥测显示为断开连接，\n[image0.jpeg][image1.jpeg][image2.jpeg]\n发自 iPhone\n\n在 2026年1月11日，03:52，service @simsonn.com 写道：\n\n﻿\n你好 Simone Ricci，\n\n当您运行 LMU 时，请检查 SIMSONN Manager 左下角是否显示“遥测已连接”。\n请截图发送给我，我会转发给我们的工程师进行进一步调查。\n\n\n",
+      "user_id": 158009009422,
+      "created_at": "2026-01-11T11:39:53Z",
+      "updated_at": "2026-01-11T11:39:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016835952,
+      "body_text": "你好 Simone Ricci，\n\n如果 LMU 无法正常工作，通常是因为某些所需文件没有正确复制到游戏目录中。请先从您的电脑上卸载旧版本，然后下载并安装 SIMSONN Manager 2.1.3 版本，安装后再次测试。\n如果问题仍然存在，请手动将所需文件复制到游戏目录中，然后重新打开软件再次测试。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-12T03:17:26Z",
+      "updated_at": "2026-01-12T03:17:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016851147,
+      "body_text": "早上好，这些文件在我的电脑上不存在，我通过重新安装 RFactor 2 解决了问题，现在它们可以完美工作了。\n\n非常感谢\n\n此致\n\n\n发自 iPhone\n\n在 2026年1月12日，04:17，service @simsonn.com 写道：\n\n﻿\n你好 Simone Ricci，\n\n如果 LMU 无法正常工作，通常是因为某些所需文件没有正确复制到游戏目录中。\n请先从您的电脑上卸载旧版本，然后下载并安装 SIMSONN Manager 2.1.3 版本，安装后再次测试。\n如果问题仍然存在，请手动将所需文件复制到游戏目录中，然后重新打开软件再次测试。\n\n\n[https://attachment.freshdesk.com/inline/attachment?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTU4MDA2MDAwMDUzLCJkb21haW4iOiJzaW1zb25uLmZyZXNoZGVzay5jb20iLCJhY2NvdW50X2lkIjo0MjA2MDM2fQ.dfg1bVpaRpVTBGRyCV7TKA17qMcmZnQw9ZeNHBLbVyw]\n\n[https://attachment.freshdesk.com/inline/attachment?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTU4MDA2MDAwMDU1LCJkb21haW4iOiJzaW1zb25uLmZyZXNoZGVzay5jb20iLCJhY2NvdW50X2lkIjo0MjA2MDM2fQ.fVB4oNLIKjZy3YJDh-zw5-gT5R_Mfc7zdi_FCdE_x2E]",
+      "user_id": 158009009422,
+      "created_at": "2026-01-12T10:14:53Z",
+      "updated_at": "2026-01-12T10:14:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

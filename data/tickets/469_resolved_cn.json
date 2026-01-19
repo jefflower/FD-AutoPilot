@@ -1,0 +1,35 @@
+{
+  "id": 469,
+  "subject": "Sim踏板配置中的自定义曲线",
+  "description_text": "您好，\n\n我于2024年9月购买了一套Simsonn Pro踏板，并一直使用Sim Pedals Config V4.1软件配置设置。我非常喜欢这个产品，它运行得很好！\n\n我想知道是否可以自定义曲线配置文件，目前我只能选择预设：线性、指数等。\n我希望能够微调曲线以适应我的刹车风格，当我将鼠标悬停在曲线上时，曲线上的各个点会被高亮显示，但我无法移动它们的位置。\n\n这是否是该软件不具备的功能？如果是这样，是否可以更新软件来实现此功能？\n\n感谢您的 esclarecimentos，\nLucas",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-06-15T16:19:26Z",
+  "updated_at": "2025-06-17T03:04:19Z",
+  "requester_id": 158001548474,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003225408,
+      "body_text": "您好 LG，您可以升级到我们最新的软件，SIMSONN Manager 2.0.8版本。启动软件后，进入设置菜单，通过选择 firmware-pedals-plus.sfu 文件手动更新固件。升级完成后，您将能够在新版软件中访问新的配置功能。 https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-06-16T02:37:58Z",
+      "updated_at": "2025-06-16T02:37:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003239685,
+      "body_text": "太棒了，谢谢您的帮助！这正是我需要的。\n\n2025年6月16日周一 02:38，support @simsonn.com 写道：",
+      "user_id": 158001548474,
+      "created_at": "2025-06-16T09:14:27Z",
+      "updated_at": "2025-06-16T09:14:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

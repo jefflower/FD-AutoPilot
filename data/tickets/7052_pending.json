@@ -1,0 +1,114 @@
+{
+  "id": 7052,
+  "subject": "VAM motor support",
+  "description_text": "Hello,\r\n\r\nI’ve purchased 3 motors + controller from you guys through Amazon a couple\r\nof months ago. My motors suddenly stopped working after 1 month. I thought\r\nthe controller had given out since all three stopped at the same time, so I\r\nwent ahead and purchased a new controller.\r\n\r\nHowever, after receiving and testing I still have the same issue. So I\r\nthink my problem is the motor instead. What’s the best route to get these\r\nreplaced? I’m in Canada.\r\n\r\nThank you,\r\n\r\nGuilherme D. Martins\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-29T19:08:38Z",
+  "updated_at": "2025-12-23T10:52:51Z",
+  "requester_id": 158007424026,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013157721,
+      "body_text": "Hi Guilherme Dias Martins,  You can take a screenshot of the software for me and also a photo of the installation. Please make sure you are using SIMSONN Manager 2.1.2; in the vibration interface, the power should show as connected. But if testing the vibration has no response, try connecting each VAM motor individually for testing. In theory, it’s impossible for all three VAMs to be damaged at the same time. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-01T05:15:39Z",
+      "updated_at": "2025-12-01T05:15:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013158471,
+      "body_text": "Hello,\r\n\r\nThanks for the response. Please see the requested pictures attached. I have\r\nswitched motor connections and tested them individually. Two don’t work at\r\nall and one has a very weak actuation, almost not perceivable.\r\n\r\nThanks again,\r\n\r\nLe dim. 30 nov. 2025 à 21:15, service@simsonn.com ",
+      "user_id": 158007424026,
+      "created_at": "2025-12-01T06:03:57Z",
+      "updated_at": "2025-12-01T06:03:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013158538,
+      "body_text": "Sorry, forgot to attach the pictures.\r\n\r\nThanks,\r\n\r\nLe dim. 30 nov. 2025 à 22:03, Guilherme Dias Martins <guigs2202@gmail.com>\r\na écrit :\r\n\r\n> Hello,\r\n>\r\n> Thanks for the response. Please see the requested pictures attached. I\r\n> have switched motor connections and tested them individually. Two don’t\r\n> work at all and one has a very weak actuation, almost not perceivable.\r\n>\r\n> Thanks again,\r\n>\r\n> Le dim. 30 nov. 2025 à 21:15, service@simsonn.com ",
+      "user_id": 158007424026,
+      "created_at": "2025-12-01T06:05:21Z",
+      "updated_at": "2025-12-01T06:05:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013158679,
+      "body_text": "Hi Guilherme Dias Martins, I have reviewed the situation. You should not use the VAM Pro mode to control VAM motors, as this can directly damage them. Please operate them in VAM mode instead. Additionally, please provide your order number, shipping address, contact name, and phone number, and we will send you a replacement set of 3 VAM motors. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-01T06:09:40Z",
+      "updated_at": "2025-12-01T06:09:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013159137,
+      "body_text": "Hello,\r\n\r\nThanks for the support. I’ll make sure that’s changed on the software.\r\nAlso, is the use of Simhub a problem for these motors?\r\n\r\nPlease see requested info below:\r\n\r\nOrder number: 702-3576339-3335439\r\nGuilherme Dias Martins\r\n210-803 Village Drive\r\nPort Coquitlam, British Columbia V3B 0P9\r\nCanada\r\n+1 (709) 697-9829\r\n\r\nThank you,\r\n\r\nGuilherme D. Martins\r\n\r\nLe dim. 30 nov. 2025 à 22:09, service@simsonn.com ",
+      "user_id": 158007424026,
+      "created_at": "2025-12-01T06:29:29Z",
+      "updated_at": "2025-12-01T06:29:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013775019,
+      "body_text": "Hi Guilherme Dias Martins,  First, set the correct mode for the motors in SIMSONN Manager and test the vibration. After that, you can close the software, as it saves the motor mode for each port to the pedal’s main control box. When you open SimHub later, it will automatically use the previously configured motor modes. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-06T06:05:27Z",
+      "updated_at": "2025-12-06T06:05:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013932561,
+      "body_text": "Hello,\r\n\r\nThanks for explaining. I get how it works now.\r\n\r\nThanks for the support.\r\n\r\nBest,\r\n\r\nLe ven. 5 déc. 2025 à 22:05, service@simsonn.com ",
+      "user_id": 158007424026,
+      "created_at": "2025-12-06T16:06:34Z",
+      "updated_at": "2025-12-06T16:06:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014679834,
+      "body_text": "Hi Guilherme Dias Martins,  Sorry for late response, we will ship 3 replacement to you ASAP. ",
+      "user_id": 158007774607,
+      "created_at": "2025-12-18T09:20:08Z",
+      "updated_at": "2025-12-18T09:20:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014709470,
+      "body_text": "Hello,\r\n\r\nNo problem. Is it possible to ship it to a different address? I’m moving to\r\na different place on the 29th of December, so I’m not sure if there will be\r\nenough time.\r\n\r\nThe new address is:\r\n\r\n214-750 Robinson St, Coquitlam, BC\r\nV3J 0P5, Canada.\r\n\r\nLet me know if that’s possible.\r\n\r\nThank you,\r\n\r\nLe jeu. 18 déc. 2025 à 01:20, service@simsonn.com ",
+      "user_id": 158007424026,
+      "created_at": "2025-12-18T17:34:54Z",
+      "updated_at": "2025-12-18T17:34:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014864196,
+      "body_text": "IHi Guilherme Dias Martins,  ​OK, WE WILL SHIP THEM TO YOUR NEW ADDRESS.",
+      "user_id": 158007774607,
+      "created_at": "2025-12-22T08:39:29Z",
+      "updated_at": "2025-12-22T08:39:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 2287,
+  "subject": "Power supply request",
+  "description_text": "Hi!\r\n\r\nI'm interested in the VAM PRO Linear Motor, but on the pictures the power\r\nsupply is US plug. Can I order it with UK plug?\r\n\r\nBest regards,\r\n\r\nDavid Szabo\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-04T17:48:32Z",
+  "updated_at": "2025-08-05T06:47:36Z",
+  "requester_id": 158002605126,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006240950,
+      "body_text": "Hi David Szabo,    Don't worry, we will provide you with a power plug adapter for your country.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-05T06:47:36Z",
+      "updated_at": "2025-08-05T06:47:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

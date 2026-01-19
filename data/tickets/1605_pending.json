@@ -1,0 +1,44 @@
+{
+  "id": 1605,
+  "subject": "Amazon Order",
+  "description_text": "I have an amazon order:containin haptic pedal motors and a control box. I\r\nreceived the haptic pedal motors but no control box. I realize they may\r\ncome separately, the issue is I have no way to track the control box thru\r\namazon. Can you guys get back to me with tracking for the control box?\r\n\r\n113-0356996-4793810\r\n\r\n[image: image.png]\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-16T14:27:01Z",
+  "updated_at": "2025-07-17T23:07:19Z",
+  "requester_id": 158001955219,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005133491,
+      "body_text": "Hi Nathan Brown,  The tracking number for the control box is: JSEGK0926080622YQ (ships from China warehouse, the shipping carrier is JSEXPRESS, you can track it via https://www.js-exp.com/EN/index.php?page=19)",
+      "user_id": 158000445778,
+      "created_at": "2025-07-17T08:24:46Z",
+      "updated_at": "2025-07-17T08:24:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005134925,
+      "body_text": "That tracking number or website doesn't seem to work. The page doesn't\r\nactually update with a status. After clicking 'query', nothing happens.\r\nI've tried from other browsers.\r\n\r\nIf you could just get me an ETA, that would be great!\r\n\r\n[image: image.png]\r\n\r\nOn Thu, Jul 17, 2025 at 4:24 AM service@simsonn.com ",
+      "user_id": 158001955219,
+      "created_at": "2025-07-17T11:45:43Z",
+      "updated_at": "2025-07-17T11:45:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005143373,
+      "body_text": "Hi Nathan Brown,    As soon as our operations team prints the shipping label, I provide it to you right away. However, it usually takes one to two days for the logistics company to pick up the package and update the tracking information.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-17T23:07:19Z",
+      "updated_at": "2025-07-17T23:07:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

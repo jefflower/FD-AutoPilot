@@ -1,0 +1,35 @@
+{
+  "id": 9926,
+  "subject": "回复：Pro X 刹车踏板故障",
+  "description_text": "嗨，再次抱歉，\n\n我不认为刹车坏了，但我更换了白色软弹性体后出现了校准问题。如果仍然有问题，我会通知您。\n\n此致\nYouseph\n________________________________\n发件人：Stos El-Marazki <allincoup @hotmail.com>\n发送时间：2026年1月3日 17:11\n收件人：service @simsonn.com <service @simsonn.com>\n主题：Pro X 刹车踏板故障\n\n嗨 Simonn，\n\n我最近购买了一些 Pro X 超级踏板并进行了设置，但刹车踏板不工作。它有灯亮，但当我踩下刹车时，Simsonn 管理器中没有任何反应。离合器和油门都正常工作。\n\n我尝试将刹车插入控制箱上的离合器和油门端口，但仍然不工作。\n\n希望您能尽快帮助我。我的购买详情如下。\n\n[cid:90ce78f3-142f-41e7-8516-d8e3473819da]\n\n此致\nYouseph",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-04T10:49:26Z",
+  "updated_at": "2026-01-07T14:40:21Z",
+  "requester_id": 158008896847,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016105345,
+      "body_text": "您好 Stos El-Marazki，如果您调整了刹车的机械结构或阻尼，请点击软件中的“偏移”按钮，并按照屏幕上的步骤重置初始压力信号（确保白条返回0%），然后重新校准踏板。如果问题仍然存在，请录制一段视频并通过 Google Drive 分享给我们，请确保链接访问权限设置为可查看，以便我们进一步分析和协助您。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T09:48:16Z",
+      "updated_at": "2026-01-07T09:48:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016134572,
+      "body_text": "您好 Simsonn，谢谢！“偏移”按钮解决了我的问题。非常感谢您的帮助！此致",
+      "user_id": 158008896847,
+      "created_at": "2026-01-07T13:00:42Z",
+      "updated_at": "2026-01-07T13:00:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

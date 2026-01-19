@@ -1,0 +1,44 @@
+{
+  "id": 4872,
+  "subject": "",
+  "description_text": "Hi are your wheels usb to use on and wheelbase Sent from my Galaxy\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-14T12:43:05Z",
+  "updated_at": "2025-10-16T05:41:38Z",
+  "requester_id": 158005679155,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010478100,
+      "body_text": "Hi, this is the functionality and compatible wheelbase of our steering wheel.   Two Magnetic paddle shifters  2-way switches  Six LED Buttons  Right Knob: Function selector 12-position rotary switch  Left Knob: Function selector size adjustment key,12-position adjustment knob (2x12 inputs), adjusts the size of the right function key  Compatible with Logitech G29 G27; Compatible with Thrustmaster T300RS/GT T500; Compatible with Fanatec Racing steering wheel  Suitable for equipment: PC",
+      "user_id": 158001343601,
+      "created_at": "2025-10-15T08:44:38Z",
+      "updated_at": "2025-10-15T08:44:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010497026,
+      "body_text": "My wheelbase is the VRS dfp Sent from my Galaxy\n-------- Original message --------",
+      "user_id": 158005679155,
+      "created_at": "2025-10-15T14:03:58Z",
+      "updated_at": "2025-10-15T14:03:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010535019,
+      "body_text": "Hi Revz247,  Our quick-release mounting pattern is 70 mm. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-16T05:41:38Z",
+      "updated_at": "2025-10-16T05:41:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

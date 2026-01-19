@@ -1,0 +1,24 @@
+{
+  "id": 9237,
+  "subject": "Order #SSN4403",
+  "description_text": "Hi\n\nI am just wondering whats happening with\nOrder #SSN4403?\n\nLast update where 5:e december with\n\nOne item in your order is on the way.\n\nNow I have gotten two emails about how it went and how the product worked but it hasn't been delivered yet.\n\nThere is no update at all when you use the tracking number.\nIt only says \"The following waybills have not been collected or have been shipped for more than 3 months:SF6047131081183\"\n\nBest regards\nMartin\n\nSent from [Proton Mail](https://proton.me/mail/home) for Android.\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-26T14:24:17Z",
+  "updated_at": "2025-12-28T02:54:20Z",
+  "requester_id": 158008773189,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015147096,
+      "body_text": "Hi Martin. arman,   Latest production update: The HS Pro shifter will be shipped on December 29. The schedule was slightly delayed due to issues with components before shipment.       SF Express • SF6047197778228",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T02:54:20Z",
+      "updated_at": "2025-12-28T02:54:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

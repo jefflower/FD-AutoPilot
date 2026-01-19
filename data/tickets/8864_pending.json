@@ -1,0 +1,13 @@
+{
+  "id": 8864,
+  "subject": "来自simsonn.com的退信",
+  "description_text": "QQ邮箱退信 很抱歉您发送的邮件被退回，以下是该邮件的相关信息： 被退回邮件 主 题：Ticket Received - ?Ihre Andre Pereira Sendung kommt heute 时 间：2025-12-22 16:55:58 无法发送到 noreply@dhl.de 退信原因 请参考收件人服务器返回的退信提示。 host dhl-com.fortimailcloud.com[154.52.13.119] said: 554 5.7.1 Access denied (in reply to RCPT TO command) 解决方案 请联系您的收件人（noreply@dhl.de）或其所在服务商了解退信原因。 此外，您还可以 点击这里 获取更多关于退信的帮助信息。",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-22T08:56:19Z",
+  "updated_at": "2025-12-22T11:05:18Z",
+  "requester_id": 158001011131,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": []
+}

@@ -1,0 +1,44 @@
+{
+  "id": 5941,
+  "subject": "Warranty issue",
+  "description_text": "Dear Sir or Madam,\r\n\r\nI have a problem with my newly purchased Simsonn Pedals (see attachmend \r\nfor receipt). The hydraulic rod from the throttle pedal lost it's \r\npressure and the liquid is all over the board. Can you provide me with a \r\nspare? I've attached a video for clarification.\r\n\r\nThank you and dear regards!\r\n\r\nArndt-Xavier\r\n\r\nVideo: \r\nhttps://www.dropbox.com/scl/fi/3fif3hk36d9nebyukbkl6/IMG_1170.MOV?rlkey=2fpiixdare7ckihz8e2scq68o&dl=0\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-11-11T14:04:53Z",
+  "updated_at": "2025-11-24T10:19:01Z",
+  "requester_id": 158006943435,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012123794,
+      "body_text": "Hi Arndt Küsel,  It’s possible that excessive dust caused the seal ring to get damaged. Please provide your contact name, phone number, and address, and we’ll send you a replacement throttle single-acting hydraulic rod. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-11T14:25:40Z",
+      "updated_at": "2025-11-11T14:25:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012201723,
+      "body_text": "Dear Sir or Madam,\r\n\r\nthank you very much for your help, I will see what could have \r\ncontributed to this problem. Thank you very much for your help with the \r\nspare part. Here are the contact details:\r\n\r\nArndt Equiano\r\nDresdener Strasse 10\r\n59269 Beckum\r\n\r\nPhone: +491744058080\r\n\r\nDear regards,\r\n\r\nEquiano\r\n\r\n\r\nAm 11.11.25 um 15:25 schrieb service@simsonn.com:\r\n> Hi Arndt Küsel,\r\n>\r\n> It’s possible that excessive dust caused the seal ring to get damaged. \r\n> Please provide your contact name, phone number, and address, and we’ll \r\n> send you a replacement throttle single-acting hydraulic rod.\r\n>\r\n>\r\n>     On Tue, 11 Nov at 9:04 AM , Arndt Küsel <arndt.kuesel@yahoo.de>\r\n>     wrote:\r\n>     Dear Sir or Madam,\r\n>\r\n>     I have a problem with my newly purchased Simsonn Pedals (see\r\n>     attachmend\r\n>     for receipt). The hydraulic rod from the throttle pedal lost it's\r\n>     pressure and the liquid is all over the board. Can you provide me\r\n>     with a\r\n>     spare? I've attached a video for clarification.\r\n>\r\n>     Thank you and dear regards!\r\n>\r\n>     Arndt-Xavier\r\n>\r\n>     Video:\r\n>     https://www.dropbox.com/scl/fi/3fif3hk36d9nebyukbkl6/IMG_1170.MOV?rlkey=2fpiixdare7ckihz8e2scq68o&dl=0\r\n>     <https://www.dropbox.com/scl/fi/3fif3hk36d9nebyukbkl6/IMG_1170.MOV?rlkey=2fpiixdare7ckihz8e2scq68o&dl=0>\r\n>\r\n>\r\n> 5941:4206036\r\n",
+      "user_id": 158006943435,
+      "created_at": "2025-11-12T18:29:21Z",
+      "updated_at": "2025-11-12T18:29:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012805523,
+      "body_text": "Hi Arndt Küsel,  Here is the tracking number : YT2532800711914396. You can track it via https://www.yunexpress.com/",
+      "user_id": 158000445778,
+      "created_at": "2025-11-24T10:19:00Z",
+      "updated_at": "2025-11-24T10:19:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

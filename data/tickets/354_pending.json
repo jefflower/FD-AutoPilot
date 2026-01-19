@@ -1,0 +1,74 @@
+{
+  "id": 354,
+  "subject": "Looking for packages and ups is useless",
+  "description_text": "\r\nSent from my iPhone\r\nHi, I had ordered a pedal set from you guys and it came very quickly and I’m very happy with them. However, I didn’t have the correct mounting brackets for it on my rig so I had to order the plate. It says it was delivered today but I don’t have it and I can’t get anything with ups. Their customer service is non existent. I’m really excited to try these pedals out but unfortunately I keep having to delay it because of this shipping issue. The order number is 1zj455510437228046. I’m sure there’s not alot you can do but any information could be useful. Thanks for anything you might be able to help with. Have a wonderful day \r\n-kody\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-06-11T18:15:03Z",
+  "updated_at": "2025-06-18T09:59:04Z",
+  "requester_id": 158001422981,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002945688,
+      "body_text": "Hi，Kody Foster，  请提供您的订单号。我们会尽快帮您核实并尽快回复您。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-12T01:30:50Z",
+      "updated_at": "2025-06-12T01:30:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002945729,
+      "body_text": "Hi，Kody Foster，  Could you please provide the order numbers for the pedals and the baseplate? I’ll help you check the details of your orders. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-12T01:55:13Z",
+      "updated_at": "2025-06-12T01:55:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002994291,
+      "body_text": "111-76253090628239\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158001422981,
+      "created_at": "2025-06-12T14:58:51Z",
+      "updated_at": "2025-06-12T14:58:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003013676,
+      "body_text": "Hi Kody Foster, Hello, we checked your package and found that it may be lost. We apologize for the inconvenience. Due to the recent unrest in the United States, our goods are stuck at the port and cannot reach our overseas warehouse. Therefore, this product is currently out of stock in our overseas warehouse and will not arrive until around June 18. We will send you a replacement set when the product arrives at the overseas warehouse.  ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-13T05:23:16Z",
+      "updated_at": "2025-06-13T05:23:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003378349,
+      "body_text": "Hey, I was just checking in. I never received it so it must definitely be lost. Is there any update on the new order? At the moment I don’t have a clutch lol. I can only mount the break and throttle lol. Love them both btw! Really happy with the product so far. \r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158001422981,
+      "created_at": "2025-06-18T05:35:24Z",
+      "updated_at": "2025-06-18T05:35:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003415423,
+      "body_text": "Hi Kody Foster,  We have notified the US warehouse to prepare your package. Due to the recent raids by the U.S. Immigration and Customs Enforcement (ICE) in Los Angeles against illegal immigrants, our Chinese colleagues in the U.S. warehouse are unable to work normally. This may cause a delay in the logistics of your package. We apologize for the inconvenience. We will update you with the shipping information tomorrow.  ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-18T09:59:02Z",
+      "updated_at": "2025-06-18T09:59:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

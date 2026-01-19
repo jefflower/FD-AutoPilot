@@ -1,0 +1,44 @@
+{
+  "id": 1436,
+  "subject": "VAM Pro Issues",
+  "description_text": "I just bought the vam pro haptics and I can't get it to work with iracing.\r\nThe vibrate test works but it's not making any vibrations when I'm in\r\niracing. I tried disabling and enabling iracings pedal support but it\r\ndidn't work. Do you have any suggestions?\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-07-11T02:21:53Z",
+  "updated_at": "2025-07-12T11:05:59Z",
+  "requester_id": 158002068684,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004570286,
+      "body_text": "For additional information. I'm also having an issue with the throttle. The simsonn software recognizes the throttle when it's plugged into the throttle port but iracing doesn't. When I plug the throttle into the clutch both simsonn software and iRacing recognize it. I would really like to get the vam pro working",
+      "user_id": 158002068684,
+      "created_at": "2025-07-11T12:29:35Z",
+      "updated_at": "2025-07-11T12:29:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158004640063,
+      "body_text": "你好，Marcello De Lio，  请提供您的订单号和踏板组型号。 目前，您可以使用 SIMHUB 9.9.3 版本。我们的 SIMSONN Manager 将在 2.0.9 版本中正式支持 iRacing。 请注意，某些游戏（例如 iRacing）不提供直接的 ABS 或 TC（牵引力控制）数据——SIMHUB 使用计算来模拟这些效果。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-12T07:11:29Z",
+      "updated_at": "2025-07-12T07:11:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004659022,
+      "body_text": "Hi Marcello De Lio,    Please provide your order number and pedal set model.  Currently, you can use SimHub version 9.9.3. Our SIMSONN Manager will officially support iRacing in version 2.0.9.     Please note that some games (such as iRacing) do not provide direct ABS or TC (traction control) data — SimHub uses calculations to simulate these effects.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-12T11:05:59Z",
+      "updated_at": "2025-07-12T11:05:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "id": 1808,
+  "subject": "New review (4★) of Simsonn VAM Pro Linear Motor - the Pedals Haptic Reactor for Vibration Feedback (from Wayne S.)",
+  "description_text": "Rating: 4 | Review Text: I thought it would be worth an update - the hardware is very nice and to date, very reliable, they do look like a quality piece of kit, the 4 stars is for the hardware alone, the kit does not come with a USB cable, so remember to grab one if you don't already have one.\r\nThe packaging is good so they travel safe.\r\nMake sure you are going to use Simhub with these as the software from Simsonn just doesn't shine at all, it's possibly great for pedal adjustment but I cannot comment as I have VRS Pedals but the haptics for my chosen sim, iRacing are basically non functional, you'll get 1 or 2 functions firing to a degree but it's a work in progress I think, either way Simhub is the way to go right now. Unfortunately I've not got a nice setup yet but still playing with it to get it running nicely, a present it's just muddling info coming through the pedal, delays and lagging after the effect should stop, I'll work it out. Overall I'd say they are worth getting but be prepared to tinker about, a lot! Simsonn are nice people to deal with and do their best to help via support, they are nice to deal with. I'm happy with my purchase and think in time, these will be great. ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ This review was automatically published.Learn more Very Nice! You have a new 4-star review of Simsonn VAM Pro Linear Motor - the Pedals Haptic Reactor for Vibration Feedback from Wayne Shephard wayneshephard72@gmail.com Wayne Shephard Display name: Wayne S. I thought it would be worth an update - the hardware is very nice and to date, very reliable, they do look like a quality piece of kit, the 4 stars is for the hardware alone, the kit does not come with a USB cable, so remember to grab one if you don't already have one.\r\nThe packaging is good so they travel safe.\r\nMake sure you are going to use Simhub with these as the software from Simsonn just doesn't shine at all, it's possibly great for pedal adjustment but I cannot comment as I have VRS Pedals but the haptics for my chosen sim, iRacing are basically non functional, you'll get 1 or 2 functions firing to a degree but it's a work in progress I think, either way Simhub is the way to go right now. Unfortunately I've not got a nice setup yet but still playing with it to get it running nicely, a present it's just muddling info coming through the pedal, delays and lagging after the effect should stop, I'll work it out. Overall I'd say they are worth getting but be prepared to tinker about, a lot! Simsonn are nice people to deal with and do their best to help via support, they are nice to deal with. I'm happy with my purchase and think in time, these will be great. View, Reply or Share Customize for social Unpublish review This email is sent for 0a6bb1.myshopify.com Unsubscribe \r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-23T01:48:21Z",
+  "updated_at": "2025-07-23T10:59:58Z",
+  "requester_id": 158000954852,
+  "responder_id": 158000445778,
+  "cc_emails": [
+    "wayneshephard72@gmail.com",
+    "no-reply@loox.io"
+  ],
+  "conversations": [
+    {
+      "id": 158005355161,
+      "body_text": "Hi Wayne Shephard ,     We have received your feedback. Are you currently using SIMSONN Manager version 2.0.9? Also, does the software prompt any firmware updates? Please ensure you are using the latest version.  Regarding iRacing telemetry support — the game itself does not provide native ABS and TC telemetry data. SIMHUB calculates these values based on other parameters. In contrast, games like ACC offer direct telemetry data for ABS and TC.  As for the vibration stop function, this issue should have been resolved in the latest version. We've adopted a mechanism similar to SIMHUB, where a stop command is sent at regular intervals after 5 seconds of inactivity to prevent unexpected vibration due to USB instability or missed stop signals.  I will also send you a list of telemetry-supported games in version 2.0.9 for your reference.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-23T02:46:18Z",
+      "updated_at": "2025-07-23T02:46:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005355196,
+      "body_text": "Hi folks, you're so quick to respond! Wow.\r\nI just loaded up the Manager software and looked in settings, and yes, it's offered a firmware update, just doing it now, will let you know if that gives some good results.\r\n\r\nKing regards,\r\nWayne\r\n\r\nSent from Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158001872512,
+      "created_at": "2025-07-23T02:53:00Z",
+      "updated_at": "2025-07-23T02:53:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005355303,
+      "body_text": "Hi folks,\r\n            I just updated the firmware and running on 2.09 software in\r\niRacing, the VAM Pro's have some motion, gearshift, clutch and speed give\r\nsome sort of vibration, none of which I will be needing.\r\nThe wheel slip and lock functions do nothing, that may be expected due to\r\niRacing outputs?\r\nI have purchased these to emulate loss of grip in some format, so I think\r\nSimhub is the only way that will be effective.\r\nGreat to have updated the firmware though.\r\nI'm guessing your software may be of use in other sims more so than in\r\niRacing.\r\nI'll keep trying with Simhub to get what I'm after, I understand these are\r\nnew items of hardware, so there will be some teething and testing to get\r\nthem right.\r\nHopefully in a week or so I get them dialled in.\r\n\r\nThanks for responding so quickly, I hope you see my review as purely\r\nconstructive :)\r\n\r\nKind regards,\r\nWayne\r\n\r\nOn Wed, Jul 23, 2025 at 12:52 PM Wayne Shephard <wayneshephard72@gmail.com>\r\nwrote:\r\n\r\n> Hi folks, you're so quick to respond! Wow.\r\n> I just loaded up the Manager software and looked in settings, and yes,\r\n> it's offered a firmware update, just doing it now, will let you know if\r\n> that gives some good results.\r\n>\r\n> King regards,\r\n> Wayne\r\n>\r\n> Sent from Outlook for Android <https://aka.ms/AAb9ysg>\r\n> ------------------------------\r\n> *",
+      "user_id": 158001872512,
+      "created_at": "2025-07-23T03:13:18Z",
+      "updated_at": "2025-07-23T03:13:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005355348,
+      "body_text": "Hi Loox,  I've forwarded your issue regarding the \"wheel slip\" and \"lock\" functions not working to our software team. They will run tests and investigate the cause, and we'll get back to you with an update as soon as possible. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-23T03:22:46Z",
+      "updated_at": "2025-07-23T03:22:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005355357,
+      "body_text": "Thankyou, I'll be interested to see what they have to say, all very new and interesting hardware.\r\n\r\nCheers,\r\nWayne\r\n\r\nSent from Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158001872512,
+      "created_at": "2025-07-23T03:25:05Z",
+      "updated_at": "2025-07-23T03:25:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

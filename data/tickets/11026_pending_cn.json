@@ -1,0 +1,25 @@
+{
+  "id": 11026,
+  "subject": "订单更新",
+  "description_text": "早上好，\n\n我想了解我的订单最新情况，它发货了吗？订单号是SSN6078。\n\n谢谢，\n\n布雷克·约翰斯顿。",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-16T02:42:58Z",
+  "updated_at": "2026-01-17T07:27:19Z",
+  "requester_id": 158009157444,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017318518,
+      "body_text": "您好，Noname Johnno，您的订单已分两个包裹发货，两者均已寄出。您可以通过以下链接追踪您的物流信息：https://t.17track.net/en#nums=SF6047240581809,YT2601400705728260",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T07:27:19Z",
+      "updated_at": "2026-01-17T07:27:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

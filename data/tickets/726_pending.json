@@ -1,0 +1,64 @@
+{
+  "id": 726,
+  "subject": "Pro Clutch",
+  "description_text": "Hello,\r\nI currently have a set of Simsonn Pro pedals with gas and brake and want to\r\npurchase a clutch pedal to add. Is this possible? I see the Pro X clutch\r\npedal but I’m unsure if it is compatible with my current set up. Please let\r\nme know what I can do. Thank you\r\n\r\nSean\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-06-23T05:04:49Z",
+  "updated_at": "2025-06-24T03:54:07Z",
+  "requester_id": 158001721643,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003683650,
+      "body_text": "Hi Sean Symes,    The ProX clutch is not compatible with the Pro Plus. You will need to purchase the clutch designed for the Pro Plus upgrade kit.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-23T05:14:16Z",
+      "updated_at": "2025-06-23T05:14:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003683655,
+      "body_text": "Can you please direct me to where they are being sold? They are no longer\r\navailable on Amazon and I’m not seeing them on your website. Thanks again\r\n\r\n\r\nOn Mon, Jun 23, 2025 at 1:14 AM service@simsonn.com ",
+      "user_id": 158001721643,
+      "created_at": "2025-06-23T05:17:07Z",
+      "updated_at": "2025-06-23T05:17:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003684218,
+      "body_text": "Hi Sean Symes,     We've just put this product on the shelf for you. https://www.simsonn.com/products/simsonn-prox-ultra-pedal-clutch-and-control-box",
+      "user_id": 158001343601,
+      "created_at": "2025-06-23T09:03:08Z",
+      "updated_at": "2025-06-23T09:03:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003690605,
+      "body_text": "I asked in my original email if the Pro X was compatible with my Pro Pedals\r\nand was told no. The link I was given is for the Pro X clutch. I want to be\r\ncertain I get the right product. Can you verify what I should do? Thank you\r\n\r\nOn Mon, Jun 23, 2025 at 5:03 AM service@simsonn.com ",
+      "user_id": 158001721643,
+      "created_at": "2025-06-23T12:09:27Z",
+      "updated_at": "2025-06-23T12:09:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003742144,
+      "body_text": "Hi Sean Symes,    Sorry I didn't fully understand your needs before, it's true that the Pro X can't be shared with the Pro pedals, but the Plus X is an upgraded version of the Pro pedals so it can be used with the Pro pedals, but in the meantime it's a better option to buy a new Plus X control box. Here's a link to the Plus X clutch:  https://www.simsonn.com/products/simsonn-racing-simulator-pedal-black",
+      "user_id": 158001343601,
+      "created_at": "2025-06-24T03:54:06Z",
+      "updated_at": "2025-06-24T03:54:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

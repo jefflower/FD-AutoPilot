@@ -1,0 +1,24 @@
+{
+  "id": 7914,
+  "subject": "Order #SSN4647",
+  "description_text": "Hello just to be sure the two mouting braket was selected but not listed in the detail of the order. Can you confirm me please that the mounting braket for brake and throttle are included? Order is #SSN4647\r\n\r\nRegards\r\n\r\nLaurent Zeches\r\nVon meinem iPhone gesendet\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-10T18:19:07Z",
+  "updated_at": "2025-12-11T12:28:16Z",
+  "requester_id": 158007745688,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014317707,
+      "body_text": "Hi Laurent Zeches,    These are included in your order, so no need to worry.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-11T12:28:16Z",
+      "updated_at": "2025-12-11T12:28:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": 9990,
+  "subject": "Lost order number",
+  "description_text": "Good morning/afternoon,\r\n\r\nI purchased a set of Plus X p3-h3 pedals on the 2nd January, however I\r\nhaven't been emailed or messaged an order number and I am writing to see if\r\nyou may provide me with one please.\r\n\r\nMy name is Dan Brownson, my address is 96 river leys, Swindon village,\r\nCheltenham, GL519SA. The purchase was £252, and is showing in my Barclays\r\nbank statement as 2nd January 2025.\r\n\r\nIf you could please assist with this I would appreciate it please.\r\n\r\nKind regards,\r\n\r\nDan.\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2026-01-05T12:18:29Z",
+  "updated_at": "2026-01-15T08:26:38Z",
+  "requester_id": 158008934271,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016088646,
+      "body_text": "Hi Dan Brownson,  I’ve located your order number as SSN5677. We will arrange shipment shortly, so please don’t worry. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T07:58:17Z",
+      "updated_at": "2026-01-07T07:58:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016341279,
+      "body_text": "How long does it take to ship these please?\r\n\r\nI ordered them 6 days ago and they still haven't been dispatched. When I\r\npaid for express delivery, I was expecting them to arrive within 3-7days,\r\nyet they haven't even been dispatched yet?\r\n\r\nCan you please be honest with me about why there is such a delay so I am\r\nnot just sat here wondering what is happening with the £252 I have just\r\nspent?\r\n\r\nThank you,\r\n\r\nDan\r\n\r\n",
+      "user_id": 158008934271,
+      "created_at": "2026-01-08T12:26:19Z",
+      "updated_at": "2026-01-08T12:26:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017171011,
+      "body_text": "Hi Dan Brownson,  I apologize for not responding to you promptly. I see your package has been delivered. Have you received it?",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T08:26:38Z",
+      "updated_at": "2026-01-15T08:26:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": 2499,
+  "subject": "Simsonn VAM Pro Linear Motor",
+  "description_text": "Hi there,\r\n\r\nI have the Sinsonn Pro Pedal set perched from Amazon May 2024.\r\nI am looking to buy The VAM Pro Linear motor but I am unsure which control\r\nbox I need?\r\nWill both of them work or do I need a specific one?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-09T10:48:05Z",
+  "updated_at": "2025-08-11T02:17:44Z",
+  "requester_id": 158002875217,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006597438,
+      "body_text": "Hi Derek Ofori-Atta,  You only need to purchase the PlusX control box.        https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor?variant=51351053533498",
+      "user_id": 158000445778,
+      "created_at": "2025-08-09T14:22:55Z",
+      "updated_at": "2025-08-09T14:22:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006597696,
+      "body_text": "That's great, thank you very much.\r\n\r\n",
+      "user_id": 158002875217,
+      "created_at": "2025-08-09T14:48:57Z",
+      "updated_at": "2025-08-09T14:48:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

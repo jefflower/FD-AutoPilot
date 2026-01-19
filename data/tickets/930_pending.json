@@ -1,0 +1,34 @@
+{
+  "id": 930,
+  "subject": "Did not receive baseplate",
+  "description_text": "Hello,\r\n\r\nAs the subject line says I received my pedals but did not receive the baseplate that was supposed to be apart of my order. Below is the information from Amazon for my order:\r\nOrder Placed: June 21, 2025\r\nAmazon.com order number: 111-7916989-8035414\r\nOrder Total: $310.68\r\n\r\nThanks\r\nAnthony Camacho\r\nSent from my iPhone\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-27T20:01:52Z",
+  "updated_at": "2025-07-02T07:30:13Z",
+  "requester_id": 158001833003,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004224810,
+      "body_text": "Hi Anthony Camacho,  Hi, I am sorry for the inconvenience caused. We have reshipped a new plate for you from US warehouse, here is your tracking number: 1ZH912Y00320139464, the shipping carrier is UPS.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-30T05:53:05Z",
+      "updated_at": "2025-06-30T05:53:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004342414,
+      "body_text": "Great thank you!\r\n\r\nAnthony\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158001833003,
+      "created_at": "2025-06-30T14:36:19Z",
+      "updated_at": "2025-06-30T14:36:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

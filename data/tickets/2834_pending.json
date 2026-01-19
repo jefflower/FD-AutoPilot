@@ -1,0 +1,114 @@
+{
+  "id": 2834,
+  "subject": "Simsonn Pro X Ultra Sim Racing Pedal Fault and refund inquiry",
+  "description_text": "I had a set of your \"simpson pro x ultra pedals\" and I have found after\r\nmounting them and calibrating them that they are not working properly. I\r\ndid make a modification to the bottom plate but havent once altered the\r\npedals or electronics in any way.\r\nThey have been calibrated but the throttle and braking is jumpy and\r\ninconsistent. I have tried multiple software versions and tried multiple\r\nUSB ports to try and get this to work.\r\nThe Image attached includes a set of red lines displaying the side and\r\napproximate shape that the bottom plate has been cut.\r\n\r\nI would like to know if it's possible to get a refund for them as they are\r\nnot up to standard and not as described.\r\n[image: image.png]\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-08-18T16:32:04Z",
+  "updated_at": "2025-08-22T10:15:29Z",
+  "requester_id": 158003284034,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007096001,
+      "body_text": "I really would like to get this resolved and get a full refund as I think the fact that they cost so much and are not up to teh descibed standard is unaceptable.",
+      "user_id": 158003284034,
+      "created_at": "2025-08-18T16:35:05Z",
+      "updated_at": "2025-08-18T16:35:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158007096231,
+      "body_text": "the big issue is its jumping the percentage of throttle and brake input with a delayed response. what I mean by this is.....      The input does not rise smoothly from 0% to 100%.    Instead, the signal jumps immediately from ~1% to ~70%, then takes several seconds to register movement, and only after another delay reaches 100%.    This makes them unusable in-game, as braking and throttle control are completely inconsistent.",
+      "user_id": 158003284034,
+      "created_at": "2025-08-18T16:46:27Z",
+      "updated_at": "2025-08-18T16:46:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158007096245,
+      "body_text": "They were callibated multiple times but still have the same issue",
+      "user_id": 158003284034,
+      "created_at": "2025-08-18T16:47:19Z",
+      "updated_at": "2025-08-18T16:47:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158007097144,
+      "body_text": "An update….  I managed to get the game to pick them up but the software just isn’t working properly and I have a feeling it could be the fact the loadcell sensor is faulty ",
+      "user_id": 158003284034,
+      "created_at": "2025-08-18T17:16:25Z",
+      "updated_at": "2025-08-18T17:16:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158007097249,
+      "body_text": "After calibrating everything ingame and on the simsonn software my throttle won’t go below this amount and the beak won’t go above this amount ",
+      "user_id": 158003284034,
+      "created_at": "2025-08-18T17:18:54Z",
+      "updated_at": "2025-08-18T17:18:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158007097346,
+      "body_text": "I’ve also just had it randomly disconnect while I’m trying to fix these issues and hadn’t even touched anything remotely to do with the cables ",
+      "user_id": 158003284034,
+      "created_at": "2025-08-18T17:22:20Z",
+      "updated_at": "2025-08-18T17:22:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158007111972,
+      "body_text": "Hi Scott Forrester,  First, please set the offset to adjust the pedal signal to 0%, then recalibrate the pedal. After that, consider issues caused by unstable USB power and interference from Fanatec or Moza bases. The specific solutions are as follows.      This issue is caused by EMI interference from the wheelbase. Please follow the steps below to troubleshoot and resolve it. Most customers with similar setups (such as Fanatec, MOZA, and T500 users) have resolved the problem using this method.     To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability:     1.    Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding.     2.    Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive.     3.    Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup.     4.    Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible.     5.    Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs.     6.    Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference.     7.    Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements.     8.    Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-19T04:20:39Z",
+      "updated_at": "2025-08-19T04:20:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007131477,
+      "body_text": "Hi thanks for getting back to me.\r\nI am not happy with the fact that I have to go through all these trouble\r\nsolving problems when it is advertised as plug and playas you can see with\r\nthe attached screenshot.\r\nSecondly it is advertised to be strong and robust which it isn't true as\r\neven with my feet just resting on it make it flex and I know that after a\r\nwhile this will cause it to break.\r\nBecause of this I am looking for options on a refund for this not as\r\ndescribed and faulty pedal set\r\n[image: bd7bb216-3123-4477-ae3a-a7536d62ffd1.png]\r\n\r\n[image: WhatsApp Image 2025-08-19 at 12.51.37_2906e751.jpg]\r\n\r\nOn Tue, 19 Aug 2025 at 05:20, service@simsonn.com ",
+      "user_id": 158003284034,
+      "created_at": "2025-08-19T11:59:06Z",
+      "updated_at": "2025-08-19T11:59:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007215297,
+      "body_text": "你好，Scott Forrester，  关于您提到的弯曲问题，能否提供一张照片以便确认？我们的踏板都经过了严格的测试。这个问题可能与您的电脑设置不同有关，因为不同家庭的接地情况不同，而且电子设备需要稳定的环境。按照故障排除流程，通常可以解决问题——其他客户也用同样的方法解决了这个问题。 或者，您可以安装Todesk，我可以远程协助您。只需提供您的身份证件和临时密码，我们就可以安排合适的时间。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-20T14:12:59Z",
+      "updated_at": "2025-08-20T14:12:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007242542,
+      "body_text": "Hi, Im just looking for a full refund now as these truly are not as\r\ndescribed.\r\nplease can you tell me how I can go around doing this.\r\n\r\nOn Wed, 20 Aug 2025 at 15:13, service@simsonn.com ",
+      "user_id": 158003284034,
+      "created_at": "2025-08-20T20:06:25Z",
+      "updated_at": "2025-08-20T20:06:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

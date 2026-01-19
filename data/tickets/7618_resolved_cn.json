@@ -1,0 +1,75 @@
+{
+  "id": 7618,
+  "subject": "Pro plus xpedals",
+  "description_text": "你好，我刚收到通过全球速卖通从你们那里购买的3踏板套装，但随附的是用于将踏板固定在底板上的普通螺母，而不是适合插槽、便于轻松调节的T形螺母。使用随附的硬件移动踏板需要我拆掉一半的方向盘支架。请问可以给我寄一些T形螺母吗？其次，您能告诉我haptica（触觉反馈系统）何时会为《神力科莎：拉力》进行配置吗？此致 Sean Kukula",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-07T13:28:04Z",
+  "updated_at": "2025-12-14T03:27:17Z",
+  "requester_id": 158007685769,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014120114,
+      "body_text": "你好，Sean，《神力科莎：拉力》与最新版本的SimHub兼容。您可以拍张照片——这些标准螺母通常在当地就能买到。如果我们邮寄的话，运费会很高，而且需要很长时间。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-08T11:02:40Z",
+      "updated_at": "2025-12-08T11:02:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014121428,
+      "body_text": "感谢您的快速回复，我在那款游戏上使用Sim Hub仍然没有成功，但在其他一些游戏上可以，所以我需要进一步研究一下。\nM6 T型螺母是行业标准尺寸吗？如果是的话，我可以在当地找到一些。\n最后，您能告诉我为底板上的脚跟托提供的M6支撑柱的长度吗？我希望能买一些更高的，但我现在出差在外，无法测量。\n\n再次感谢\nSean Kukula\n________________________________",
+      "user_id": 158007685769,
+      "created_at": "2025-12-08T11:44:26Z",
+      "updated_at": "2025-12-08T11:44:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014301431,
+      "body_text": "你好，Sean，M6 T型螺母是标准件，很容易购买。支撑柱的长度通常为30-40毫米。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T06:12:28Z",
+      "updated_at": "2025-12-11T06:12:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014306758,
+      "body_text": "你好，Sean，游戏《神力科莎：拉力》刚刚发布，所以SimHub可能还不支持它。但是，我们的踏板是完全兼容的，可以毫无问题地使用。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T07:36:19Z",
+      "updated_at": "2025-12-11T07:36:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014306986,
+      "body_text": "你好，Sean，",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T07:43:13Z",
+      "updated_at": "2025-12-11T07:43:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014310637,
+      "body_text": "再次感谢您的回复，我已经通过Simhub让VAM触觉反馈正常工作，并找到了一些我希望是正确规格的T型螺母，我正在等待一些新的更高的支撑柱和更软的白色弹性体到货，然后一切就都好了。\n此致\n________________________________",
+      "user_id": 158007685769,
+      "created_at": "2025-12-11T09:45:51Z",
+      "updated_at": "2025-12-11T09:45:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

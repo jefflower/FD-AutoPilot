@@ -1,0 +1,24 @@
+{
+  "id": 638,
+  "subject": "Pro Pedals Input",
+  "description_text": "Good Morning.\r\n\r\nI have just set up my Simsonn pro pedals and when going into a calibration\r\ntool it shows that there is an input when nothing is being pressed.\r\n\r\nPlease see the attached short video to show what I mean.\r\n\r\nHow can I overcome this?\r\n\r\nBest Regards\r\n\r\nBarry\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-06-20T06:23:54Z",
+  "updated_at": "2025-06-21T16:23:53Z",
+  "requester_id": 158001687905,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003677685,
+      "body_text": "Hi，Barry McGuigan，  https://www.simsonn.com/pages/download     Please download SIMSONN Manager 2.0.8 and manually update the firmware by selecting the plus.sfu file from the directory. If the issue persists, we can schedule a session in about 9 hours. You just need to install the Todesk remote tool (no registration required) and provide the ID and temporary password. I’ll assist you remotely to resolve the issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-21T16:23:53Z",
+      "updated_at": "2025-06-21T16:23:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

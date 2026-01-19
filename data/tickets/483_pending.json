@@ -1,0 +1,24 @@
+{
+  "id": 483,
+  "subject": "Order #SSN1554",
+  "description_text": "Dear Team.\r\n\r\nI would like to know when my order #SSN1554 will be shipped? Because\r\naccording your communication and the website it's writed \"10th June\" for\r\nthe lunch of VAM.\r\n\r\nJuste a reminder to be careful, because for my last order the address you\r\nused is not the address I wrote, thanks to UPS I changed the address to the\r\nright one.\r\n\r\nThanks for your futur answer.\r\n\r\nBests regards.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-16T05:01:56Z",
+  "updated_at": "2025-06-16T06:52:26Z",
+  "requester_id": 158001575574,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003228078,
+      "body_text": "Hi Romain Roussel,  The shipment of the VAM Pro motor was delayed due to a holdup with the motor housing. The housings have arrived today, and we will be shipping your order between June 16th and 18th. Thank you for your understanding and support! ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-16T06:52:26Z",
+      "updated_at": "2025-06-16T06:52:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

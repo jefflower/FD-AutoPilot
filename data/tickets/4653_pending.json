@@ -1,0 +1,44 @@
+{
+  "id": 4653,
+  "subject": "Simsonn Pro Plus P2 – Device not recognized in Config or F1 25",
+  "description_text": "Hello Simsonn Team,\r\n\r\n\r\nI own a Simsonn Pro Plus P2 (two-pedal version, throttle + brake) currently\r\nrunning firmware v1.8.0.\r\n\r\n\r\nAfter the last firmware update, the device stopped being properly\r\nrecognized by your configuration tools and some racing titles.\r\n\r\n\r\nHere’s what happens:\r\n\r\n\r\n   -\r\n\r\n   In Windows Game Controllers (joy.cpl), both X (throttle) and Y (brake)\r\n   axes move correctly.\r\n\r\n   -\r\n\r\n   In SimPedals Config V4 and V3.5, the pedal shows as “Device\r\n   Disconnected.”\r\n\r\n   -\r\n\r\n   In SimHub (Control Mapper) and vJoy, the device appears as connected but\r\n   does not output any input movement.\r\n\r\n   -\r\n\r\n   In F1 25, the game detects the “Simsonn Plus” controller but does not\r\n   allow mapping the throttle or brake axes.\r\n\r\n\r\n\r\nIt seems the firmware may be stuck in a partial HID communication mode,\r\nwhich prevents third-party software and your Config tools from reading axis\r\ndata.\r\n\r\n\r\nCould you please send me the correct .hex firmware file for the Simsonn Pro\r\nPlus P2 and the detailed instructions to perform a full firmware reinstall\r\n/ reset?\r\n\r\n\r\nDevice: Simsonn Pro Plus P2\r\n\r\nCurrent Firmware: 1.8.0\r\n\r\nIssue: Not recognized by SimPedals Config or F1 25 / SimHub not reading\r\ninputs\r\n\r\n\r\nThank you very much for your help and support.\r\n\r\n\r\nBest regards,\r\n\r\nLuís Otávio Marçal\r\n\r\n(Blumenau – Brazil)\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-09T12:59:46Z",
+  "updated_at": "2025-10-09T13:23:05Z",
+  "requester_id": 158005520867,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010151334,
+      "body_text": "Hi Luis Otávio Marçal,     You can refer to this post — it confirms that the feature is supported.     https://www.reddit.com/r/simracing/comments/1nj93bq/simsonn_plus_x_pedals_setup_guide_in_f1_25/",
+      "user_id": 158000445778,
+      "created_at": "2025-10-09T13:14:17Z",
+      "updated_at": "2025-10-09T13:14:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010151560,
+      "body_text": "Hello Simsonn Team,\r\n\r\n\r\nThank you very much for your quick reply and for sending me the Reddit post\r\nabout configuring the pedals in F1 25.\r\n\r\n\r\nI have followed that guide completely, but unfortunately the issue I’m\r\nexperiencing is different.\r\n\r\nThe problem is that the pedals do not send any input movement to the game\r\nor to any third-party software.\r\n\r\n\r\nHere’s a detailed summary:\r\n\r\n\r\n   -\r\n\r\n   The device appears correctly in Windows Game Controllers (joy.cpl) and\r\n   both X (throttle) and Y (brake) axes move there.\r\n\r\n   -\r\n\r\n   However, in SimPedals Config (both V4 and V3.5), the device shows as\r\n   “Device Disconnected.”\r\n\r\n   -\r\n\r\n   In SimHub (Control Mapper) and vJoy, the Simsonn Plus P2 is detected but\r\n   the pedal movement does not register.\r\n\r\n   -\r\n\r\n   In F1 25, the game lists the “Simsonn Plus” device, but the throttle and\r\n   brake cannot be assigned at all.\r\n\r\n\r\n\r\nThe hardware itself works perfectly in iRacing, so the issue seems related\r\nto firmware communication (HID mode) rather than the physical device.\r\n\r\n\r\nCould you please send me the correct .hex firmware file and the\r\ninstructions for a full firmware reinstall/reset for the Simsonn Pro Plus\r\nP2?\r\n\r\nI believe that performing a clean firmware flash in HID-only mode might\r\nsolve this behavior.\r\n\r\n\r\nThank you again for your help and support.\r\n\r\n\r\nBest regards,\r\n\r\nLuís Otávio Marçal\r\n\r\n(Blumenau – Brazil)\r\n\r\n\r\n\r\nEm qui., 9 de out. de 2025 às 10:14, service@simsonn.com <\r\nservice@simsonn.com> escreveu:\r\n\r\n> Hi Luis Otávio Marçal,\r\n>\r\n> You can refer to this post — it confirms that the feature is supported.\r\n>\r\n>\r\n> https://www.reddit.com/r/simracing/comments/1nj93bq/simsonn_plus_x_pedals_setup_guide_in_f1_25/\r\n>\r\n> On Thu, 9 Oct at 8:59 AM , Luis Otávio Marçal <tavinhomarcal@gmail.com>\r\n> wrote:\r\n>\r\n> Hello Simsonn Team,\r\n>\r\n>\r\n> I own a Simsonn Pro Plus P2 (two-pedal version, throttle + brake)\r\n> currently running firmware v1.8.0.\r\n>\r\n>\r\n> After the last firmware update, the device stopped being properly\r\n> recognized by your configuration tools and some racing titles.\r\n>\r\n>\r\n> Here’s what happens:\r\n>\r\n>\r\n>\r\n>    -\r\n>\r\n>    In Windows Game Controllers (joy.cpl), both X (throttle) and Y (brake)\r\n>    axes move correctly.\r\n>\r\n>    -\r\n>\r\n>    In SimPedals Config V4 and V3.5, the pedal shows as “Device\r\n>    Disconnected.”\r\n>\r\n>    -\r\n>\r\n>    In SimHub (Control Mapper) and vJoy, the device appears as connected\r\n>    but does not output any input movement.\r\n>\r\n>    -\r\n>\r\n>    In F1 25, the game detects the “Simsonn Plus” controller but does not\r\n>    allow mapping the throttle or brake axes.\r\n>\r\n>\r\n>\r\n>\r\n> It seems the firmware may be stuck in a partial HID communication mode,\r\n> which prevents third-party software and your Config tools from reading axis\r\n> data.\r\n>\r\n>\r\n> Could you please send me the correct .hex firmware file for the Simsonn\r\n> Pro Plus P2 and the detailed instructions to perform a full firmware\r\n> reinstall / reset?\r\n>\r\n>\r\n> Device: Simsonn Pro Plus P2\r\n>\r\n> Current Firmware: 1.8.0\r\n>\r\n> Issue: Not recognized by SimPedals Config or F1 25 / SimHub not reading\r\n> inputs\r\n>\r\n>\r\n> Thank you very much for your help and support.\r\n>\r\n>\r\n> Best regards,\r\n>\r\n> Luís Otávio Marçal\r\n>\r\n> (Blumenau – Brazil)\r\n>\r\n> 4653:4206036\r\n>\r\n\r\n",
+      "user_id": 158005520867,
+      "created_at": "2025-10-09T13:21:03Z",
+      "updated_at": "2025-10-09T13:21:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010151607,
+      "body_text": "Hi Luis Otávio Marçal,    You can use Simsonn Manager 2.1.0 to restore the firmware.  Go to Settings → Update → Manual Firmware Update → pedals → firmware → pedals-plus.sfu.  After the update, the pedals should work normally and allow you to recalibrate them.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-09T13:23:04Z",
+      "updated_at": "2025-10-09T13:23:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

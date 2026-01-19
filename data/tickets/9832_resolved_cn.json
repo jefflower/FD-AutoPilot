@@ -1,0 +1,65 @@
+{
+  "id": 9832,
+  "subject": "订单号：114-6983051-3723410",
+  "description_text": "下午好，\n\n我订购了 SIMSONN PRO X Ultra Sim 赛车踏板，其中包括增高板和脚跟板。我是在亚马逊购买的。我今天收到了订单，但是缺少增高板和脚跟板。请问是否可以把这些部件寄给我？\n\n这是追踪号码：887419080434\n\n我附上了照片来展示我收到的物品。\n\n此致，\n蒂芙尼·弗劳尔斯",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-02T20:37:35Z",
+  "updated_at": "2026-01-08T10:02:17Z",
+  "requester_id": 158008879202,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015432077,
+      "body_text": "我总共缺少3个部件；底板、RBG脚跟板和增高板",
+      "user_id": 158008879202,
+      "created_at": "2026-01-02T20:47:43Z",
+      "updated_at": "2026-01-02T20:47:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015591861,
+      "body_text": "嗨，蒂芙尼，底板的追踪号码是 1ZJ201H40323093305；承运商是 UPS，您可以通过 https://www.ups.com/track 进行追踪。",
+      "user_id": 158007774607,
+      "created_at": "2026-01-04T06:37:51Z",
+      "updated_at": "2026-01-04T06:37:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016045382,
+      "body_text": "我收到了底板、脚跟板和增高板，但是我没有收到脚跟板的接线，用来连接灯。请您把线寄给我，这样我的订单就完整了。谢谢。\n\n在2026年1月4日星期日凌晨12:38，support@simsonn.com 写道：",
+      "user_id": 158008879202,
+      "created_at": "2026-01-07T03:08:32Z",
+      "updated_at": "2026-01-07T03:08:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016100896,
+      "body_text": "嗨，蒂芙尼，请您检查一下刹车踏板？刹车踏板有两根线，其中一根是用来连接RGB灯带的。",
+      "user_id": 158007774607,
+      "created_at": "2026-01-07T09:11:52Z",
+      "updated_at": "2026-01-07T09:11:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016182504,
+      "body_text": "你好，我昨晚找到了。现在一切都准备好了。非常感谢你们提供如此出色的客户服务。\n\n在2026年1月7日星期三凌晨3:12，support@simsonn.com 写道：",
+      "user_id": 158008879202,
+      "created_at": "2026-01-07T18:11:30Z",
+      "updated_at": "2026-01-07T18:11:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

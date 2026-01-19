@@ -1,0 +1,24 @@
+{
+  "id": 10733,
+  "subject": "Shippemnt",
+  "description_text": "Hi, i want to know more information on my order itens bem 1 week+ and wasnt\r\nshipped yet could u send it as soon as possible thanks. Order #SSN5718\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-13T00:43:44Z",
+  "updated_at": "2026-01-14T08:42:02Z",
+  "requester_id": 158009042603,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017083748,
+      "body_text": "Hi PixeL,       Due to demand far exceeding expectations, this item has been out of stock for nearly two weeks. We will arrange shipment within the next two days and sincerely apologize for the delay.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-14T08:42:02Z",
+      "updated_at": "2026-01-14T08:42:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

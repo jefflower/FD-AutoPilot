@@ -1,0 +1,44 @@
+{
+  "id": 1411,
+  "subject": "Fwd: Issue with Pro Plus Pedals",
+  "description_text": "Reminder, my inquiry is unanswered till now.\r\n\r\n\r\n---------- Weitergeleitete Nachricht ----------\r\nVon: ahellmich@gmx.net\r\nDatum: 7. Juli 2025, 22:48 +0200\r\nAn: service@simsonn.com\r\nBetreff: Issue with Pro Plus Pedals\r\n\r\n> Hello,\r\n>\r\n> I have a serious issue with my recently purchased Pro Plus pedals. Today the second  time the hydraulic damper of the throttle got out of it‘s lower mounting. First time I fixed it by myself, but obviously there is a recurring problem.\r\n>\r\n> Respective order no is #SSN1898.\r\n>\r\n> Best regards\r\n> Andreas\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-10T08:27:29Z",
+  "updated_at": "2025-07-10T23:11:42Z",
+  "requester_id": 158002014642,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004502128,
+      "body_text": "Hi Ahellmich,  Please provide a few clear photos so we can confirm the issue. Thank you for your cooperation! ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-10T10:57:06Z",
+      "updated_at": "2025-07-10T10:57:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004503443,
+      "body_text": "As you can see, the rod has slipped out of its mount. Trying to reattach it doesn't help, as the thread apparently can no longer hold the rod.\r\n\r\nRegards\r\nAndreas\r\nAm 10. Juli 2025, 12:57 +0200 schrieb service@simsonn.com ",
+      "user_id": 158002014642,
+      "created_at": "2025-07-10T13:52:15Z",
+      "updated_at": "2025-07-10T13:52:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004527734,
+      "body_text": "Hi Ahellmich,    We will send you a new one-way hydraulic rod today. Before the new rod arrives, you can remove the current one, hold the rod with pliers, and manually tighten the white cap on the other end",
+      "user_id": 158000445778,
+      "created_at": "2025-07-10T23:11:42Z",
+      "updated_at": "2025-07-10T23:11:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

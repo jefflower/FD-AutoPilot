@@ -1,0 +1,34 @@
+{
+  "id": 4081,
+  "subject": "Incorrect shipping label",
+  "description_text": "Hello,\r\n\r\n\r\nI received an email stating that my order SSN2700 has been shipped.\r\nHowever, when I attempt to track the package, I am redirected to the FedEx\r\nwebsite where it reports that the shipping label is incorrect.\r\n\r\n\r\nCould you please verify the shipment details and provide an updated\r\ntracking number? I’ve attached a screenshot of what I see when I try to\r\ntrack it on FedEx.\r\n\r\n\r\nThank you for your assistance.\r\n\r\n\r\nBest regards\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-24T05:11:13Z",
+  "updated_at": "2025-09-25T02:20:18Z",
+  "requester_id": 158004840604,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009215306,
+      "body_text": "Hi Zeke Weaver,     Sorry, this is your correct logistics tracking link. https://t.17track.net/en#nums=GF6678297804272",
+      "user_id": 158001343601,
+      "created_at": "2025-09-24T08:16:03Z",
+      "updated_at": "2025-09-24T08:16:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009229173,
+      "body_text": "Thank you for the clarification.\r\n\r\nOn Wed, Sep 24, 2025 at 3:16 AM service@simsonn.com ",
+      "user_id": 158004840604,
+      "created_at": "2025-09-24T12:39:06Z",
+      "updated_at": "2025-09-24T12:39:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

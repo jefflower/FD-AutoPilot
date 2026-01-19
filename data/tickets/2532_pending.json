@@ -1,0 +1,64 @@
+{
+  "id": 2532,
+  "subject": "VAM Pro mounting into throttle",
+  "description_text": "Hi-\r\nI just received the VAM pro Haptics. However, when I try mountains with the\r\nthrottle, there’s a plate on the back of the throttle, preventing the\r\nsecond screw from threading through, It’s like the hole is out of\r\nalignment.\r\n\r\nHow do you recommend I get the second screw throw through? Does this back\r\npanel need to come off too? If so, how?\r\n\r\nI’ve attached pictures for you.\r\n\r\nThanks,\r\nNick\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-10T17:29:21Z",
+  "updated_at": "2025-08-13T00:04:43Z",
+  "requester_id": 158002396951,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006664032,
+      "body_text": "Hi Nick Dodson,  Is one of the two screws not long enough, or is one of them misaligned? ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-11T00:44:29Z",
+      "updated_at": "2025-08-11T00:44:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006664251,
+      "body_text": "One of them is misaligned due to the black plate that is located in the\r\nupper throttle part. In that black plate, there are two holes. Only one is\r\nusable and aligns with one hole on the pedal itself. There’s no way to put\r\nthe 2nd bolt through the pedal plate in the black plate as well.\r\n\r\nOn Sun, Aug 10, 2025 at 7:44 PM service@simsonn.com ",
+      "user_id": 158002396951,
+      "created_at": "2025-08-11T01:04:55Z",
+      "updated_at": "2025-08-11T01:04:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006664672,
+      "body_text": "Hi Nick Dodson,    You can try installing it this way.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-11T01:41:50Z",
+      "updated_at": "2025-08-11T01:41:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006779133,
+      "body_text": "Hello-\r\nThank you for the help. So it's OK to have just 1 bolt installed to support\r\nthe VAM Pro bracket? It seems sturdy enough, nut just wanted to make sure.\r\n\r\nThanks,\r\nNick\r\n\r\nOn Sun, Aug 10, 2025 at 8:42 PM service@simsonn.com ",
+      "user_id": 158002396951,
+      "created_at": "2025-08-12T23:14:12Z",
+      "updated_at": "2025-08-12T23:14:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006779895,
+      "body_text": "Hi Nick Dodson,    The throttle design requires only one screw to secure the VAM, which is sufficient and poses no issues.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-13T00:04:42Z",
+      "updated_at": "2025-08-13T00:04:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

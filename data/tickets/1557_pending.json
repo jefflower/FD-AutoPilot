@@ -1,0 +1,54 @@
+{
+  "id": 1557,
+  "subject": "Additional fees",
+  "description_text": "Hi, on the 11th of July I order pedals from your company and I paid 30 $\r\nfor shipping, today I've got a mail from ups that I have to pay additional\r\n261.26 PLN that equals to 71 USD. I thought that it's final price, and now\r\nI'm quite surprised, can you tell me where that price came from?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-15T11:32:02Z",
+  "updated_at": "2025-07-17T08:47:06Z",
+  "requester_id": 158002139798,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004921232,
+      "body_text": "Hi Noshi, the charges sent to you by UPS should be the tariff charges incurred, you can send us the billing details to take a look.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-16T03:08:35Z",
+      "updated_at": "2025-07-16T03:08:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004943870,
+      "body_text": "śr., 16 lip 2025 o 05:08 service@simsonn.com ",
+      "user_id": 158002139798,
+      "created_at": "2025-07-16T08:44:38Z",
+      "updated_at": "2025-07-16T08:44:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004943885,
+      "body_text": "I've already paid and I cant get back to page with specified cost for each\r\ntax\r\n\r\nśr., 16 lip 2025 o 05:08 service@simsonn.com ",
+      "user_id": 158002139798,
+      "created_at": "2025-07-16T08:46:28Z",
+      "updated_at": "2025-07-16T08:46:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005133630,
+      "body_text": "Hi Noshi,  Yes, the picture shows that the cost is the duty plus the UPS handling fee.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-17T08:47:06Z",
+      "updated_at": "2025-07-17T08:47:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

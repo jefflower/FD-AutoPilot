@@ -1,0 +1,24 @@
+{
+  "id": 6573,
+  "subject": "Brake pedal malfunction",
+  "description_text": "Hi,\r\n\r\nI purchased the ProX Ultra package from you about five months ago.\r\nRecently, the brake pedal has developed a fault: if I press the brake pedal\r\nmore than halfway down, the braking force continuously decreases even when\r\nI maintain the same pressure with my foot, making it impossible for me to\r\ncontinue driving.\r\n\r\n\r\nBest,\r\n\r\nAndrew\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-23T06:33:20Z",
+  "updated_at": "2025-11-24T07:46:46Z",
+  "requester_id": 158007270530,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012799317,
+      "body_text": "Hi N 486,     Please first check whether the brake pedal’s damping mechanism is installed correctly and whether any slipping might have caused the pressure to be released. You may also send me a photo of the side of the brake pedal or a screenshot of your order, and I can help verify the issue. In addition, you can try updating the firmware to see if that resolves the problem.      ProX / ProX Ultra Pedal Firmware Update Procedure:    Press and hold the Upgrade button on the control box;    Reconnect the USB cable;    The software will indicate that the device has entered “Simsonn Flasher mode”;    In the software, go to: Settings → Update → Manual Firmware Update → pedals → firmware → pedals-proxultra.sfu (If it’s a ProX pedal, select pedals-proxultra.sfu)    Start the firmware update, and once it is complete, release the Upgrade button;    Finally, retest and calibrate the pedals.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-24T07:46:46Z",
+      "updated_at": "2025-11-24T07:46:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

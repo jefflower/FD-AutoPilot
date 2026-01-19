@@ -1,0 +1,44 @@
+{
+  "id": 9334,
+  "subject": "Brake pedal upgrade kit",
+  "description_text": "I recently received the upgrade kit for my brake pedal as I bought one of\r\nthe earlier versions of your pedals, the new hydraulic fits in but I’m\r\nhaving a problem with the brake shaft it self. I can fit all 3 of the\r\nelastomers in, I tried to troubleshoot and realized that the joint\r\nconnecting to the pedal arm is different from the newer pedals and also see\r\nthat there is an included updated one in the pack. I cannot seam to figure\r\nout how to take the joint off to put on the new joint.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-28T00:43:05Z",
+  "updated_at": "2025-12-28T04:38:33Z",
+  "requester_id": 158008797763,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015146011,
+      "body_text": "Hi Thomas Momma,  Simply remove the M6 screws at these two positions on the brake pedal to take off the rod and replace the rod end. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T01:20:26Z",
+      "updated_at": "2025-12-28T01:20:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015146038,
+      "body_text": "I have done that but the rod end no matter how hard I try to twist or pull\r\noff will not come off the rod end, is there any specific way I need to get\r\nthe rod end to loosen?\r\n\r\nOn Sat, Dec 27, 2025 at 8:20 PM service@simsonn.com ",
+      "user_id": 158008797763,
+      "created_at": "2025-12-28T01:23:00Z",
+      "updated_at": "2025-12-28T01:23:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015148010,
+      "body_text": "Hi Thomas Momma,  First, tighten the screws on both sides, then loosen the screws on one side. It’s possible that a slight rotation in the middle is making it difficult to remove. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T04:38:33Z",
+      "updated_at": "2025-12-28T04:38:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

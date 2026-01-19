@@ -1,0 +1,44 @@
+{
+  "id": 4553,
+  "subject": "Can't find my order",
+  "description_text": "Hi I purchased a hand brake last week from your website and am trying to\r\nfind an order update but I'm unable to find my order at all under my email\r\nor phone number. I can see that the order went through on my bank account\r\ntho. I also can't find an email confirmation of the order. Can someone help\r\nme find my order please?\r\nEmail: krjames226@gmail.com\r\nPhone number: 8505444055\r\nI have attached a screenshot of the order from my bank account too.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-07T14:36:35Z",
+  "updated_at": "2025-10-14T06:55:30Z",
+  "requester_id": 158005488378,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010027755,
+      "body_text": "Hi Kara James,  Your order number is SSN2827. As we are currently on the National Day holiday, shipping will begin on October 9th. Thank you for your understanding and patience. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-07T15:30:27Z",
+      "updated_at": "2025-10-07T15:30:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010370632,
+      "body_text": "I was wondering if there was an update on this order? SSN2827\r\n\r\nOn Tue, Oct 7, 2025, 10:30 AM support@simsonn.com ",
+      "user_id": 158005488378,
+      "created_at": "2025-10-13T19:10:16Z",
+      "updated_at": "2025-10-13T19:10:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010387179,
+      "body_text": "Hi Kara James,    As you did not provide an email address, you did not receive the delivery notification. We have now added this email address for you. Here is your delivery tracking link:  https://t.17track.net/en#nums=SF6045959598053",
+      "user_id": 158001343601,
+      "created_at": "2025-10-14T06:55:30Z",
+      "updated_at": "2025-10-14T06:55:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

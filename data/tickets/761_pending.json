@@ -1,0 +1,54 @@
+{
+  "id": 761,
+  "subject": "Does the VAM PRO work with other pedals?",
+  "description_text": "So I’ve been eyeing the Simsonn Vam Pro’s however I’ve found little to not reviews and I was wondering, if I had a proper adapter, I have Thrustmaster T-LCM’s would the motors still pair and work with software? I understand I need to buy the control box, I just don’t have the money for a fully pedal upgrade at the moment, however once again you guys have one of the best prices so when I can you guys are going to what I upgrade to, however right now’s not the time for me, but the haptics are decently cheap, I don’t really want to buy Simagic definitely not Simnet. And if they don’t currently work standalone any plans for the future? I’m willing to wait as still very little reviews and no mounts even, however I know I could Jerry rig it on to fit even without. Anyways thank you for your time.\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-24T06:27:35Z",
+  "updated_at": "2025-06-26T09:43:25Z",
+  "requester_id": 158001755430,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003793851,
+      "body_text": "Hi Gamingmyck,     Your pedals can be installed and used without any issues. You’ll just need a 3D-printed mounting bracket designed to match the mounting holes of our motor.  To complete the setup, you’ll need to purchase the PlusX controller, the VAM Pro motor, and a 24V power supply.  For telemetry and vibration feedback, you can use either our SIMSONN Manager software or SimHub — both are fully compatible.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-24T11:13:00Z",
+      "updated_at": "2025-06-24T11:13:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003835568,
+      "body_text": "Thank you so much for the response, 1 last thing, instead of the PlusX\r\nwould I be able to use the ProX Ultra control box that way 6 months or so\r\ndown the line when I do grads I don’t have to buy a control box again, or\r\ndoes the ProX Ultra control box need your directed pedals for full\r\nfunctionality?\r\n\r\nOn Tue, Jun 24, 2025 at 7:13 AM support@simsonn.com ",
+      "user_id": 158001755430,
+      "created_at": "2025-06-25T09:44:19Z",
+      "updated_at": "2025-06-25T09:44:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003835569,
+      "body_text": "?\r\n\r\nXxmyckxX reacted via Gmail\r\n<https://www.google.com/gmail/about/?utm_source=gmail-in-product&utm_medium=et&utm_campaign=emojireactionemail#app>\r\n\r\n",
+      "user_id": 158001755430,
+      "created_at": "2025-06-25T09:44:23Z",
+      "updated_at": "2025-06-25T09:44:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003845707,
+      "body_text": "Hi Gamingmyck,  If you don’t plan to connect the ProX Ultra pedals, you can simply purchase the ProX Ultra controller board, motor, and power supply separately. Both our SIMSONN Manager and SimHub fully support telemetry for this setup. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-26T09:43:24Z",
+      "updated_at": "2025-06-26T09:43:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

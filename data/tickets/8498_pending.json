@@ -1,0 +1,24 @@
+{
+  "id": 8498,
+  "subject": "Order #SSN4188",
+  "description_text": "Hello Simsonn team,\r\n\r\nI hope you are doing well.\r\n\r\nI recently ordered your new *HS Pro Shifter H/SQ Dual Mode Racing Simulator\r\nShifter*.\r\nAccording to the information on your website, shipments were supposed to\r\nstart on *December 15th*, but as of today (December 17th), I haven’t\r\nreceived any update yet.\r\n\r\nI just wanted to check in to see if you could share any information\r\nregarding the status of my order and the expected shipping timeline.\r\n\r\nThank you in advance for your help.\r\n\r\nBest regards,\r\n*Arnaud*\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-17T09:59:26Z",
+  "updated_at": "2025-12-23T05:52:39Z",
+  "requester_id": 158007845059,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014874580,
+      "body_text": "Hi Arnaud,     We will send HS Pro out this week.",
+      "user_id": 158007774607,
+      "created_at": "2025-12-22T11:29:44Z",
+      "updated_at": "2025-12-22T11:29:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

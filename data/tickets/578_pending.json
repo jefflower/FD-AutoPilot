@@ -1,0 +1,24 @@
+{
+  "id": 578,
+  "subject": "Missing Shipment Confirmation",
+  "description_text": "Dear Simsonn,\r\nI'm writing to notify you that I still haven't received any emails from you\r\nconfirming the shipment of my order (order #SSN1703), which I purchased\r\nnine days ago, on June 9, 2025.\r\nI would appreciate it if you would kindly confirm that you actually\r\nreceived my order and possibly when you are planning to send it.\r\nBest regards\r\nAndrea Perfetto\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-06-18T14:46:32Z",
+  "updated_at": "2025-06-19T04:14:38Z",
+  "requester_id": 158001647545,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003479431,
+      "body_text": "Hi Andrea Perfetto,  We will immediately look into it to check whether the tracking number was not entered. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-19T04:14:38Z",
+      "updated_at": "2025-06-19T04:14:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 8534,
+  "subject": "Order #SSN4134 delivered without baseplate",
+  "description_text": "Hello,\r\n\r\nI ordered a Simsonn Pro X Ultra (#SSN4134) with baseplate that was\r\ndelivered without it.\r\n\r\nI'm waiting for this a long time ago and now I can't use it.\r\n\r\nI demand a quick resolution for this situation.\r\n\r\nThanks in advance,\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nCom os melhores cumprimentos,\r\n\r\n\r\n\r\n*Álvaro José Silva *\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-17T19:09:05Z",
+  "updated_at": "2025-12-19T08:35:24Z",
+  "requester_id": 158007820892,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014748113,
+      "body_text": "Hi Álvaro José Silva,        Your base plate was originally scheduled for shipment from our German warehouse, but due to transportation issues, the goods arrived at the warehouse later than expected. Our shipment from China was returned, and we have since reshipped it. We sincerely apologize for the inconvenience caused. Here is the tracking link for your base plate:  https://t.17track.net/en#nums=JSELX1705727964YQ",
+      "user_id": 158001343601,
+      "created_at": "2025-12-19T08:35:24Z",
+      "updated_at": "2025-12-19T08:35:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

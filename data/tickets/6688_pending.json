@@ -1,0 +1,34 @@
+{
+  "id": 6688,
+  "subject": "Order Information Request",
+  "description_text": "Hello, i placed an order for the Simsonn Pro X Ultras on 11/22/25. I never\r\ngot an order confirmation emailed or texted to me though my credit card has\r\nbeen charged. I also paid extra for express shipping (2-5) days. I do not\r\nhave a order # or tracking # for the order. However the name and number on\r\nthe order is Ryan Woods and the phone number is 209-404-1469. Id appreciate\r\nany update with my order and when i can expect to have it shipped and\r\ndelivered. Thank you\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-24T23:32:27Z",
+  "updated_at": "2025-11-25T02:19:27Z",
+  "requester_id": 158007310052,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012856420,
+      "body_text": "Hi Ryan Woods,     I noticed you didn't provide an email address, so you didn't receive the order confirmation and shipping notification. Here are your two logistics tracking links.  https://www.fedex.com/fedextrack/?trknbr=395683999630&trkqual=12029~395683999630~FDEG https://t.17track.net/zh-cn#nums=SF6047079989331",
+      "user_id": 158001343601,
+      "created_at": "2025-11-25T02:07:34Z",
+      "updated_at": "2025-11-25T02:07:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012856525,
+      "body_text": "Thank you, i appreciate it\r\n\r\nOn Mon, Nov 24, 2025 at 6:07 PM service@simsonn.com ",
+      "user_id": 158007310052,
+      "created_at": "2025-11-25T02:13:00Z",
+      "updated_at": "2025-11-25T02:13:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

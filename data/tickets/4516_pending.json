@@ -1,0 +1,274 @@
+{
+  "id": 4516,
+  "subject": "Simsonn Software Freezing",
+  "description_text": "Hello, I had an issue come up where randomly during my driving sessions my\r\npedal inputs will freeze temporarily. It doesn’t happen often but I’ve had\r\nmultiple race ending incidents because of it. It only started when I began\r\nusing the Simsonn Manager Software instead of a 3rd party such as Freejoy.\r\nI’ll be on the brake at my braking point but it’ll still say i’m on the gas\r\nuntil my pedal inputs catch up around a second later. Is there anything I\r\ncan do about this?\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-10-07T02:58:20Z",
+  "updated_at": "2025-10-24T04:07:24Z",
+  "requester_id": 158003627741,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010007080,
+      "body_text": "Hi Brenden Moennig,    Please provide your order number and pedal model, along with a screenshot of the software interface. This will help me better understand the issue and assist you in resolving it as soon as possible.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-07T09:19:40Z",
+      "updated_at": "2025-10-07T09:19:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010712061,
+      "body_text": "This video captures my issue perfectly. I brake at the 100 meter board but\r\nit doesn’t register until my turn in point where my throttle input quits\r\nfreezing and the brake registers. I have pro X pedals. I cannot race\r\ncompetitively until this is resolved i’m unsure what to do\r\n\r\nOn Tue, Oct 7, 2025 at 4:19 AM service@simsonn.com ",
+      "user_id": 158003627741,
+      "created_at": "2025-10-19T21:54:49Z",
+      "updated_at": "2025-10-19T21:54:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010714273,
+      "body_text": "Hi Brenden Moennig,  Please provide your order number. For the ProX pedals, please ensure that your PC supplies sufficient USB power. Make sure the USB cable is plugged directly into a rear USB 3.0 (blue) port, and avoid using a USB hub, to ensure stable power and communication. Also, please update your software to SIMSONN Manager version 2.1.2 and the firmware to version 2.0.5 before testing again. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-20T02:08:22Z",
+      "updated_at": "2025-10-20T02:08:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010778224,
+      "body_text": "I don’t have an order number as they were purchased with a seperate email\r\nmore than a year ago. I updated the firmware and software, and now my\r\npedals are having the same issue where they aren’t connecting at all. I’ve\r\ntried pressing the upgrade button while plugging in the power cord and\r\nnothing happens.\r\n\r\nOn Sun, Oct 19, 2025 at 9:08 PM service@simsonn.com ",
+      "user_id": 158003627741,
+      "created_at": "2025-10-21T01:01:00Z",
+      "updated_at": "2025-10-21T01:01:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010843082,
+      "body_text": "Hi Brenden Moennig,  ​Could you please install the Todesk tool now? I happen to be available and can remotely check and update your device for you. Todesk does not require registration — if you see a registration prompt, simply click the “X” in the top-right corner to close it. Once installed, please provide me with the ID and temporary code, and I will be able to assist you remotely. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-22T03:31:21Z",
+      "updated_at": "2025-10-22T03:31:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010843161,
+      "body_text": "Device ID: 586-849-418\r\npassword:yyu34e9\r\n\r\nOn Tue, Oct 21, 2025 at 10:31 PM service@simsonn.com ",
+      "user_id": 158003627741,
+      "created_at": "2025-10-22T03:35:46Z",
+      "updated_at": "2025-10-22T03:35:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010843392,
+      "body_text": "Hi Brenden Moennig,  The verification code you provided is incorrect. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-22T03:45:16Z",
+      "updated_at": "2025-10-22T03:45:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010843409,
+      "body_text": "the new one is 69k2z5q0\r\n\r\nOn Tue, Oct 21, 2025 at 10:45 PM service@simsonn.com ",
+      "user_id": 158003627741,
+      "created_at": "2025-10-22T03:46:34Z",
+      "updated_at": "2025-10-22T03:46:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010847136,
+      "body_text": "Hi Brenden Moennig,  Are you still online? ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-22T04:51:56Z",
+      "updated_at": "2025-10-22T04:51:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010847140,
+      "body_text": "yup! thank you for the assistance outside of service hours by the way!\r\n\r\nOn Tue, Oct 21, 2025 at 11:52 PM service@simsonn.com ",
+      "user_id": 158003627741,
+      "created_at": "2025-10-22T04:53:14Z",
+      "updated_at": "2025-10-22T04:53:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010847174,
+      "body_text": "Hi Brenden Moennig,  Please log in. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-22T04:56:41Z",
+      "updated_at": "2025-10-22T04:56:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010847186,
+      "body_text": "did it work for you?\r\n\r\nOn Tue, Oct 21, 2025 at 11:56 PM service@simsonn.com ",
+      "user_id": 158003627741,
+      "created_at": "2025-10-22T04:57:58Z",
+      "updated_at": "2025-10-22T04:57:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010851155,
+      "body_text": "If I provide you with an order number from my pedal control box order will\r\nyou guys send a new one for replacement?\r\n\r\nOn Tue, Oct 21, 2025 at 11:57 PM Brenden Moennig <bdmoennig@gmail.com>\r\nwrote:\r\n\r\n> did it work for you?\r\n>\r\n> On Tue, Oct 21, 2025 at 11:56 PM service@simsonn.com ",
+      "user_id": 158003627741,
+      "created_at": "2025-10-22T05:41:56Z",
+      "updated_at": "2025-10-22T05:41:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010851262,
+      "body_text": "Hi Brenden Moennig,  Hello, if your product is beyond the one-year warranty period, you will need to purchase our spare parts to resolve the issue. However, please rest assured that our support service will continue to assist and follow up with you. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-22T05:46:17Z",
+      "updated_at": "2025-10-22T05:46:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010851296,
+      "body_text": "The order number is SSN2602. Should I make a new request ticket with all\r\nthis information or can you take care of it? The box was only purchased a\r\nmonth or so ago.\r\n\r\nOn Wed, Oct 22, 2025 at 12:46 AM service@simsonn.com ",
+      "user_id": 158003627741,
+      "created_at": "2025-10-22T05:48:57Z",
+      "updated_at": "2025-10-22T05:48:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010855582,
+      "body_text": "Hi Brenden Moennig,    I misunderstood earlier — if you are using the latest version of the PlusX control box, please follow the steps below to update the firmware again:    Press and hold the upgrade button on the control box;    Connect the USB cable; at this point, SIMSONN Manager 2.1.2 will show that the device has entered SIMSONN Flasher Mode;    Go to Settings → Update → Manual Update Firmware → pedals → firmware → pedals-plusx.sfu;    Once the update is complete, please test the device again.    Additionally, please use a green wire to connect the control box to a metal screw on the pedal. Make sure there is no paint covering the contact point, as paint can affect conductivity.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-22T06:22:24Z",
+      "updated_at": "2025-10-22T06:22:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010901576,
+      "body_text": "I tried holding the upgrade button several times while pugging in the usb\r\nto the control box and my pedals are still unresponsive. I can almost\r\ngaruntee my control box is faulty at this point. Is there anything you can\r\ndo about this or am I forced to look elsewhere?\r\n\r\nOn Wed, Oct 22, 2025 at 1:22 AM service@simsonn.com ",
+      "user_id": 158003627741,
+      "created_at": "2025-10-22T17:54:14Z",
+      "updated_at": "2025-10-22T17:54:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010923127,
+      "body_text": "Hi Brenden Moennig,  Are you available for a remote session now? I can guide you to enter recovery mode, and then I’ll help you perform the update. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-23T02:51:25Z",
+      "updated_at": "2025-10-23T02:51:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010924560,
+      "body_text": "sure thing\r\n\r\nOn Wed, Oct 22, 2025 at 9:51 PM service@simsonn.com ",
+      "user_id": 158003627741,
+      "created_at": "2025-10-23T04:28:47Z",
+      "updated_at": "2025-10-23T04:28:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010924602,
+      "body_text": "device id: 586 849 418\r\npassword: wkr5pxf4\r\n\r\nOn Wed, Oct 22, 2025 at 11:28 PM Brenden Moennig <bdmoennig@gmail.com>\r\nwrote:\r\n\r\n> sure thing\r\n>\r\n> On Wed, Oct 22, 2025 at 9:51 PM service@simsonn.com ",
+      "user_id": 158003627741,
+      "created_at": "2025-10-23T04:31:54Z",
+      "updated_at": "2025-10-23T04:31:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010924728,
+      "body_text": "I have the entire day free tomorrow and it’s almost midnight here. Is there\r\na way you could assist me tomorrow earlier in the day?\r\n\r\nOn Wed, Oct 22, 2025 at 11:31 PM Brenden Moennig <bdmoennig@gmail.com>\r\nwrote:\r\n\r\n> device id: 586 849 418\r\n> password: wkr5pxf4\r\n>\r\n> On Wed, Oct 22, 2025 at 11:28 PM Brenden Moennig <bdmoennig@gmail.com>\r\n> wrote:\r\n>\r\n>> sure thing\r\n>>\r\n>> On Wed, Oct 22, 2025 at 9:51 PM service@simsonn.com ",
+      "user_id": 158003627741,
+      "created_at": "2025-10-23T04:41:56Z",
+      "updated_at": "2025-10-23T04:41:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010939915,
+      "body_text": "Hi Brenden Moennig,   Please let me know what time you’ll be available tomorrow, and I’ll be online as well to help you resolve the issue together. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-23T10:51:03Z",
+      "updated_at": "2025-10-23T10:51:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010967680,
+      "body_text": "I’m avalible for the next couple hours if it works for you. My device id\r\nis: 586-849-418\r\npassword: q0phtsc9\r\n\r\nplease email me back when your logged in and i’ll be there to assist with\r\nanything you need. thank you!\r\n\r\nOn Thu, Oct 23, 2025 at 5:51 AM service@simsonn.com ",
+      "user_id": 158003627741,
+      "created_at": "2025-10-23T17:10:20Z",
+      "updated_at": "2025-10-23T17:10:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010985217,
+      "body_text": "Hi Brenden Moennig,  I’m at work now — are you online? ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-24T01:31:02Z",
+      "updated_at": "2025-10-24T01:31:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010986503,
+      "body_text": "I’ve removed the pedals from my rig and reinstalled my old fanatec ones.\r\nI’ve simply grown impatient of the constant issues and bugs and have\r\ndecided to look elsewhere. I appreciate your help in the matter. Have a\r\ngood night.\r\n\r\nOn Thu, Oct 23, 2025 at 8:31 PM service@simsonn.com ",
+      "user_id": 158003627741,
+      "created_at": "2025-10-24T03:02:19Z",
+      "updated_at": "2025-10-24T03:02:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010987252,
+      "body_text": "Hi Brenden Moennig,    I haven’t received the pedal and control box photos from you yet. Earlier, you mentioned using FreeJoy, which appears to be a Pro Plus; then you said it was a ProX, and later mentioned that you purchased PlusX pedals.  At the moment, I’m unable to confirm your exact model, so the solution I provided earlier may not be entirely applicable.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-24T04:07:24Z",
+      "updated_at": "2025-10-24T04:07:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

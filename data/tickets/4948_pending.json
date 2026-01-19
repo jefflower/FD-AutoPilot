@@ -1,0 +1,44 @@
+{
+  "id": 4948,
+  "subject": "Re: Refund notification",
+  "description_text": "$20USD is not what I paid for shipping! I paid $29.90 USD and that is what\r\nshould be refunded. Clearly you have sent economy because a discount code\r\nwas used as that equates to your company not reducing revenue! Refund $9.90\r\nimmediately\r\n\r\nBlake Weston\r\n\r\nOn Thu, 16 Oct 2025, 5:20 pm SIMSONN, <service@simsonn.com> wrote:\r\n\r\n> SIMSONN\r\n> <https://www.simsonn.com/_t/c/v3/AADd2pz3O-5UtXLJHAz1Zp6wO_SvFPMy1f3G9G73OCEjX4mP23tJVzddL5hqtjqAcToQHkYyDoPqCWHE_TQwyGeksq8C5BrzadYhXRLmS0Ro8EF1MwwwR_mw0IIniiU51aJYx5EVW81oWItnZTOlzp_OQxws_ZsRXIGjTv9i_Fq3P-8sv2KvIuUuWVQJnbo1z0rBKmnbKg_bYaatd8DWiBoIbHp_aBS8vx4nYawTzG1DsuvvmPEt069MiD_g1CRRNpY1IUz_onFhKZhNhGTX7QDx2L2VcZBSoh8S-Nx2eCpRYov2rNsy3X5g6x4tViU4wuCGyQS-iklLuyGc4_0c>\r\n> Order #SSN2839\r\n> You have received a refund\r\n>\r\n> Total amount refunded: *$20.00 USD*. It may take up to 10 days for this\r\n> refund to appear in your account.\r\n> Order summary\r\n> Simsonn Plus X Racing Simulation Pedal with Haptic Reactor Optional × 1\r\n> Plus X P3-H3 / Silver / without Baseplate\r\n>\r\n> $239.00\r\n>\r\n> Subtotal\r\n> *$239.00*\r\n>\r\n> Order discount\r\n> *-$19.12*\r\n>\r\n> SRC (-$19.12)\r\n>\r\n> Shipping\r\n> *$29.90*\r\n>\r\n> Taxes\r\n> *$0.00*\r\n>\r\n> Total\r\n> *$249.78 USD*\r\n>\r\n> Total paid\r\n> *$229.78 USD*\r\n>\r\n> You saved $19.12\r\n>\r\n> Mastercard (ending in 4222)\r\n> *$249.78*\r\n>\r\n> Refund\r\n> Mastercard\r\n> *-$20.00*\r\n>\r\n> If you have any questions, reply to this email or contact us at\r\n> service@simsonn.com\r\n>\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-10-16T11:38:16Z",
+  "updated_at": "2025-10-17T09:32:25Z",
+  "requester_id": 158005659916,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010611725,
+      "body_text": "I have not received a full refund of the shipping costs! I paid for express as I needed a replacement ASAP and the timeframe of express fit within expected delivery times! The package has clearly been sent on the cheapest slow rate to recoup costs from the discount code. I now do not have a rig I can use due to your misleading operation! Package has now sat in Sydney for two business days without moving!!!!",
+      "user_id": 158005659916,
+      "created_at": "2025-10-17T09:06:09Z",
+      "updated_at": "2025-10-17T09:06:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010612515,
+      "body_text": "Put a manager on this case!",
+      "user_id": 158005659916,
+      "created_at": "2025-10-17T09:29:52Z",
+      "updated_at": "2025-10-17T09:29:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010612536,
+      "body_text": "Okay, we've processed your refund. We're terribly sorry for any inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-17T09:32:25Z",
+      "updated_at": "2025-10-17T09:32:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

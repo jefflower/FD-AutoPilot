@@ -1,0 +1,104 @@
+{
+  "id": 1224,
+  "subject": "Need Help. No Pedal Input",
+  "description_text": "Hello, I installed my new plus x pedals as described in the instructions.\r\nEverything is connected, the PC recognizes the pedals, but the pedal input\r\nisn't recognized. I'm asking for help as soon as possible.\r\n\r\nThank you very much and kind regards,\r\nSimon Sander\r\n\r\n",
+  "status": 5,
+  "priority": 4,
+  "created_at": "2025-07-04T18:48:41Z",
+  "updated_at": "2025-12-18T09:40:23Z",
+  "requester_id": 158001894728,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004447023,
+      "body_text": "Hi Simon Sander,  Could you please provide a video to show the issue you're experiencing? I haven’t fully understood your description yet, and I'm not sure whether your pedals have been successfully calibrated. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-04T23:30:43Z",
+      "updated_at": "2025-07-04T23:30:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447236,
+      "body_text": "Hi, Sure Here is a Video.\r\nThe Problem is, i can Not calibrate the Pedals.\r\n\r\nI can See the Input in Windows \"Game Controller\" so the Pedals are working.\r\n\r\nOnly in the Simsonn Manager IT doesent Work...\r\n\r\n\r\n\r\nservice@simsonn.com ",
+      "user_id": 158001894728,
+      "created_at": "2025-07-05T02:59:44Z",
+      "updated_at": "2025-07-05T02:59:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447286,
+      "body_text": "Hi Simon Sander,    Please connect the pedals to the controller, then unplug and replug the USB. After that, open the SIMSONN Manager 2.0.8 software and click the \"Offset\" button in the top-right corner. Follow the on-screen instructions to complete the process. Once done, please test the pedals again to see if they work correctly.  If the issue persists, we can assist you remotely via Todesk. Todesk does not require registration—just provide your ID and temporary password, and we will help you resolve the problem as soon as possible.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-05T03:47:21Z",
+      "updated_at": "2025-07-05T03:47:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447437,
+      "body_text": "I have done IT. Also doesent Work.\r\nYou can See the Pedal working only in the Program DiView.\r\n\r\nHere is a Screenshot from to desk.\r\n\r\n\r\n\r\nservice@simsonn.com ",
+      "user_id": 158001894728,
+      "created_at": "2025-07-05T06:37:00Z",
+      "updated_at": "2025-07-05T06:37:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447519,
+      "body_text": "Hi Simon Sander,    Please click the close button at the top right to enter the main interface. Once you’re in, kindly send me a screenshot of the ID and temporary access code so I can assist you further.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-05T07:04:43Z",
+      "updated_at": "2025-07-05T07:04:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447523,
+      "body_text": "service@simsonn.com ",
+      "user_id": 158001894728,
+      "created_at": "2025-07-05T07:09:41Z",
+      "updated_at": "2025-07-05T07:09:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447532,
+      "body_text": "Hi Simon Sander,  Your current software version is too old to connect properly. Please update to the latest version and try again.       https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-07-05T07:12:48Z",
+      "updated_at": "2025-07-05T07:12:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447539,
+      "body_text": "service@simsonn.com ",
+      "user_id": 158001894728,
+      "created_at": "2025-07-05T07:16:16Z",
+      "updated_at": "2025-07-05T07:16:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447544,
+      "body_text": "This isnt working for ne, ive tried everything.\r\nSo you have any other Option to Bring IT working?\r\n\r\nOtherwise i try give IT Back to Amazon.\r\n\r\nSimon Sander <simon.sander19@googlemail.com> schrieb am Sa., 5. Juli 2025,\r\n09:15:\r\n\r\n>\r\n>\r\n> service@simsonn.com ",
+      "user_id": 158001894728,
+      "created_at": "2025-07-05T07:21:39Z",
+      "updated_at": "2025-07-05T07:21:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

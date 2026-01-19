@@ -1,0 +1,24 @@
+{
+  "id": 8919,
+  "subject": "Brake pedal optimization",
+  "description_text": "Good morning,\r\n\r\nI would like to know if you could help me optimize my brake pedal?\r\n\r\nWhen I calibrate my brake pedal in the software, I get a maximum pressure\r\nforce of 30kg. Is it better to leave the maximum pressure force as the\r\nvalue in the software?\r\nDo I need to enter 28 kg into the software to reach 100 kg of pressure more\r\nquickly and ensure I always have access to 100%?\r\nOr should I enter a little more in the software (for example 32 kg) so that\r\nI never reach 100%?\r\n\r\nPlease explain.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-22T20:10:30Z",
+  "updated_at": "2025-12-22T23:17:38Z",
+  "requester_id": 158002177359,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014946136,
+      "body_text": "Hi timothée Faucheux,    The purpose of brake calibration is to ensure that each user can operate the brake pedal using a force that feels comfortable to them. Since everyone’s strength is different, whether you set it to 28 kg or 32 kg, the output signal will be essentially the same after calibration, as it will be mapped to the blue signal from 0% to 100% used by the game.  If you would like the brake to require more physical force, this can be achieved by adjusting the blue or yellow damping, rather than simply increasing the calibrated force value.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-22T23:17:28Z",
+      "updated_at": "2025-12-22T23:17:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

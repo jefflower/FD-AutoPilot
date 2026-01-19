@@ -1,0 +1,44 @@
+{
+  "id": 4684,
+  "subject": "Subject: Broken gas pedal wire",
+  "description_text": "*Subject:* Broken gas pedal wire\r\n\r\nHello,\r\n\r\nThe wire connecting the gas pedal snapped, and I was wondering if I can\r\njust buy a replacement wire or if I need a whole new gas pedal\r\n\r\nThanks,\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-09T23:45:26Z",
+  "updated_at": "2025-10-11T02:27:44Z",
+  "requester_id": 158005537048,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010184994,
+      "body_text": "Hi Stewart Mans,  Please provide your address, contact name, phone number, and order number. We’ll send you a new throttle sensor free of charge. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-10T01:11:52Z",
+      "updated_at": "2025-10-10T01:11:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010230336,
+      "body_text": "   - Thomas Stewart\r\n   - 10 kirk court\r\n   golden lake, Ontario K0J 1X0\r\n   - Canada\r\n   -\r\n   Order number\r\n   702-6354999-4382633\r\n   - 3433698179\r\n\r\n\r\nOn Thu, 9 Oct 2025 at 21:12, service@simsonn.com ",
+      "user_id": 158005537048,
+      "created_at": "2025-10-10T18:33:46Z",
+      "updated_at": "2025-10-10T18:33:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010241086,
+      "body_text": "Hi Stewart Mans,  Here is the tracking number : YT2528400702220584. You can track it via https://www.yunexpress.com/.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-11T02:27:44Z",
+      "updated_at": "2025-10-11T02:27:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

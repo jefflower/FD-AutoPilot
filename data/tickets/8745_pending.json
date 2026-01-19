@@ -1,0 +1,54 @@
+{
+  "id": 8745,
+  "subject": "Order #SSN4251 - Stuck at delivery step for more than 10 days",
+  "description_text": "Hi,\r\n\r\nMy parcel has been stuck \"In Transit\" in Liege, Belgium for more than 10\r\ndays (since december 9th). My order number is #SSN4251 with the tracking\r\nlink SF6047114664854\r\n<https://www.sf-express.com/we/ow/chn/en/waybill/waybill-detail/SF6047114664854>\r\n.\r\n\r\nHere is a screenshot of the tracking info as of today:\r\n\r\n[image: image.png]\r\n\r\nCould you please provide me with an update?\r\n\r\nThank you,\r\nVictor Leroux\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-20T12:53:28Z",
+  "updated_at": "2026-01-15T09:37:53Z",
+  "requester_id": 158008199454,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014875165,
+      "body_text": "Hi Victor Leroux,       The shipment is temporarily delayed in transit. We have already contacted the carrier and are waiting for their response.  We will update you as soon as there is any progress. Thank you for your patience.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-22T11:48:19Z",
+      "updated_at": "2025-12-22T11:48:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015185421,
+      "body_text": "Hi,\r\n\r\nYour reply was 7 days ago and my parcel has been stuck for 20 days now. Do\r\nyou have any update on this?\r\n\r\nThank you,\r\nVictor Leroux\r\n\r\nOn Mon, 22 Dec 2025 at 12:48, service@simsonn.com ",
+      "user_id": 158008199454,
+      "created_at": "2025-12-29T09:11:49Z",
+      "updated_at": "2025-12-29T09:11:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017173452,
+      "body_text": "Hi Victor Leroux,    We apologize for the delayed response. We have arranged for a replacement to be sent to you. We sincerely apologize for any inconvenience caused.  https://t.17track.net/en#nums=SF6047243713154",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T09:33:37Z",
+      "updated_at": "2026-01-15T09:33:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017173503,
+      "body_text": "Thank you, I'm now hoping for a speedy delivery.\r\n\r\nRegards,\r\nVictor\r\n\r\nLe jeu. 15 janv. 2026, 10:33, service@simsonn.com ",
+      "user_id": 158008199454,
+      "created_at": "2026-01-15T09:35:15Z",
+      "updated_at": "2026-01-15T09:35:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

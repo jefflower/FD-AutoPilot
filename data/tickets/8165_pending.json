@@ -1,0 +1,34 @@
+{
+  "id": 8165,
+  "subject": "Nur 1 Paket erhalten",
+  "description_text": "Guten Tag, Ich habe heute 1 Paket meiner bestellung ( ORDER #SSN4345 ) erhalten obwohl ich davon ausgegangen bin das alle 2 Pakete unter SF Express SF6047120337698 verschickt werden was wohl nicht der fall ist. Bei den Pedalen die ich bestellt habe sehe ich nur das sie bestätigt sind aber nicht das sie unterwegs sind. ist das so ? oder ist 1 Paket unterwegs verloen worden ? Paypal hat grade bezahlt wie ich gesehen habe, nur dumm das ich nicht alles erhalten habe :( \r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-13T17:27:19Z",
+  "updated_at": "2025-12-15T09:21:12Z",
+  "requester_id": 158007797999,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014489545,
+      "body_text": "Ich kann mich leider dort nicht mit meinener email add ( stefan-hiltenkamp@arcor.de ) einloggen weil ich kein passwort habe. Passwort reset funktioniert auch nicht leider. können sie mir ein passwort einrichten ? oder haben sie noch eine andere idee wie ich direct zum ticket komme ? Am 13.12.2025, 18:27 Uhr schrieb service@simsonn.com ",
+      "user_id": 158007797999,
+      "created_at": "2025-12-14T19:42:06Z",
+      "updated_at": "2025-12-14T19:42:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014502750,
+      "body_text": "Hi Hilti,    We sincerely apologize for any inconvenience caused. Currently, the footboard inventory at our German warehouse is depleted, with restocking expected today. We will ship your order via DHL and refund the additional shipping fees you paid.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-15T09:21:12Z",
+      "updated_at": "2025-12-15T09:21:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

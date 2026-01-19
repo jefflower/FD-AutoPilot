@@ -1,0 +1,74 @@
+{
+  "id": 7596,
+  "subject": "Request for Order Information via Email",
+  "description_text": "Hello,\r\nI would like to request that all information regarding my order be sent to\r\nme via email, including the order details and tracking updates.\r\nMy order number is *#JRWKKU6NK*, and my phone number is *+82 010-3740-8057*.\r\n\r\nThank you.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-07T06:14:55Z",
+  "updated_at": "2025-12-11T07:47:52Z",
+  "requester_id": 158007684255,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014119648,
+      "body_text": "Hi 임동권,    Please provide your order date, time, and name, and I will help you locate the order number.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-08T10:44:46Z",
+      "updated_at": "2025-12-08T10:44:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014119754,
+      "body_text": "Ok.\r\n\r\nI will send you a screenshot of the order screen.\r\n\r\nThank you.\r\n\r\n\r\n\r\n2025년 12월 8일 (월) 오후 7:44, service@simsonn.com ",
+      "user_id": 158007684255,
+      "created_at": "2025-12-08T10:48:26Z",
+      "updated_at": "2025-12-08T10:48:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014119888,
+      "body_text": "Order date and time : 2025.12.07 pm 02:40\r\n\r\nName: Dongkwon Lim\r\n\r\n\r\n2025년 12월 8일 (월) 오후 7:47, 임동권 <limdongkwon@gmail.com>님이 작성:\r\n\r\n> Ok.\r\n>\r\n> I will send you a screenshot of the order screen.\r\n>\r\n> Thank you.\r\n>\r\n>\r\n>\r\n> 2025년 12월 8일 (월) 오후 7:44, service@simsonn.com ",
+      "user_id": 158007684255,
+      "created_at": "2025-12-08T10:52:22Z",
+      "updated_at": "2025-12-08T10:52:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014121990,
+      "body_text": "Hi 임동권,  Sorry, could you please give me the amount? Thank you.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-08T12:05:37Z",
+      "updated_at": "2025-12-08T12:05:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014122210,
+      "body_text": "The payment amount is 159,000 KRW, and it is also indicated in the\r\nattachment I previously sent.\r\n\r\nThank you.\r\n\r\n2025년 12월 8일 (월) 오후 9:05, service@simsonn.com ",
+      "user_id": 158007684255,
+      "created_at": "2025-12-08T12:12:53Z",
+      "updated_at": "2025-12-08T12:12:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014307080,
+      "body_text": "Hi 임동권,  Noted. The new 2-in-1 shifter is expected to be developed and ready for shipment by December 15th. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T07:47:51Z",
+      "updated_at": "2025-12-11T07:47:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

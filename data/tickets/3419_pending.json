@@ -1,0 +1,24 @@
+{
+  "id": 3419,
+  "subject": "Vam and Vam Pro",
+  "description_text": "Hi, is the power supply for the VAM and the VAM Pro the exact same? I have\r\nVAM atm but want to upgrade to Vam Pro because Simhub has integration with\r\nthe vampros and I can't run the vams at higher hz like simhub wants, can\r\nyou tell me if the two power supplies are the same?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-03T04:12:33Z",
+  "updated_at": "2025-09-03T04:19:24Z",
+  "requester_id": 158002190644,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008000385,
+      "body_text": "Hi BadDadGames,  Hello, VAM and VAM Pro use the same power supply model. Additionally, since VAM operates in a “rotate–pause–rotate–pause” motion pattern, its movement frequency is indeed lower than the reciprocating motion frequency of the VAM Pro linear motor. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-03T04:19:24Z",
+      "updated_at": "2025-09-03T04:19:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

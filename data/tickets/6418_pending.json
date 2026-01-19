@@ -1,0 +1,24 @@
+{
+  "id": 6418,
+  "subject": "How long does it take for the package to be sent to transport?",
+  "description_text": "Hi, in the date of 17.11.2025 I purchased my pedals with the order\r\ncod:#SSN3571 and still this time i haven’t received any email about my\r\norder status. I hope that o can receive any status about my pedals. Have a\r\nnice day.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-20T11:00:35Z",
+  "updated_at": "2025-11-20T11:09:34Z",
+  "requester_id": 158007184923,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012633713,
+      "body_text": "Hi Andrei Chitu,    We sincerely apologize for the delay in shipping your order. Our German warehouse is currently out of stock, and we expect to ship your order next week.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-20T11:09:34Z",
+      "updated_at": "2025-11-20T11:09:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

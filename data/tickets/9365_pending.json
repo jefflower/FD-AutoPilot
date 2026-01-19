@@ -1,0 +1,134 @@
+{
+  "id": 9365,
+  "subject": "Incorrect Delivery Address Provided to UPS",
+  "description_text": "Hello,\r\nI have noticed that the delivery address transmitted to UPS is incorrect.\r\nThe correct address appears on my invoice, but in the UPS tracking information only part of the address is correct and the rest is incorrect.\r\nCould you please contact UPS as soon as possible to correct the delivery address before the parcel is delivered?\r\nThank you in advance.\r\nBest regards,\r\nEvan Astier\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-28T12:58:32Z",
+  "updated_at": "2026-01-04T10:49:09Z",
+  "requester_id": 158008800368,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015163046,
+      "body_text": "Yes, but for that price, I think it’s over the line for a mistake like this to happen.",
+      "user_id": 158008800368,
+      "created_at": "2025-12-28T13:09:29Z",
+      "updated_at": "2025-12-28T13:09:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015165946,
+      "body_text": "Hi Evan Astier,  Please provide your order number, and I will check it for you. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T15:24:18Z",
+      "updated_at": "2025-12-28T15:24:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015165968,
+      "body_text": "SSN5271",
+      "user_id": 158008800368,
+      "created_at": "2025-12-28T15:25:36Z",
+      "updated_at": "2025-12-28T15:25:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015190772,
+      "body_text": "?",
+      "user_id": 158008800368,
+      "created_at": "2025-12-29T11:15:31Z",
+      "updated_at": "2025-12-29T11:15:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015194324,
+      "body_text": "Hi Evan Astier,    Please confirm your address  Evan Astier  9 Impasse des Acacias  26800 Montoison  France  +33 7 54 36 03 63",
+      "user_id": 158001343601,
+      "created_at": "2025-12-29T12:22:20Z",
+      "updated_at": "2025-12-29T12:22:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015194421,
+      "body_text": "Yes, this is the correct address.",
+      "user_id": 158008800368,
+      "created_at": "2025-12-29T12:25:58Z",
+      "updated_at": "2025-12-29T12:25:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015241170,
+      "body_text": "Hi Evan Astier,    Alright, we've already notified the logistics provider to make the necessary adjustments. It was their mistake—our order details were entered correctly when we placed the order with them.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-30T07:54:10Z",
+      "updated_at": "2025-12-30T07:54:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015303396,
+      "body_text": "Hello,     This is quite strange, as UPS informed me that the mistake comes from your side regarding the delivery address, and that they are unable to change the delivery point.     As a result, I am unlikely to receive my package. Could you please let me know how to proceed, especially considering the price of the item?     Thank you in advance for your help.",
+      "user_id": 158008800368,
+      "created_at": "2025-12-31T09:21:16Z",
+      "updated_at": "2025-12-31T09:21:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015304813,
+      "body_text": "Hi Evan Astier,    Don't worry, we're contacting the logistics provider to make the necessary adjustments.      Happy New Year!",
+      "user_id": 158001343601,
+      "created_at": "2025-12-31T09:51:31Z",
+      "updated_at": "2025-12-31T09:51:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015394497,
+      "body_text": "Hello,  I would like to inform you that I have just contacted UPS and that the delivery address has finally been corrected.  However, I do not find it acceptable that, considering the price paid, I have had to call every day to fix an error that was not mine. This situation has caused unnecessary inconvenience and loss of time.  In this context, a commercial gesture would be appreciated.  Please ensure that this kind of issue does not happen again.  Kind regards,",
+      "user_id": 158008800368,
+      "created_at": "2026-01-02T13:33:18Z",
+      "updated_at": "2026-01-02T13:33:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015619849,
+      "body_text": "Hi Evan Astier,    We apologize for the inconvenience caused. We have issued a $10 refund as compensation.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-04T10:24:41Z",
+      "updated_at": "2026-01-04T10:24:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015620566,
+      "body_text": "Hello,  Thank you for your commercial gesture following the address issue with my Simson crankset. I have received the €10 refund and would like to sincerely thank you for it.  Kind regards,",
+      "user_id": 158008800368,
+      "created_at": "2026-01-04T10:30:41Z",
+      "updated_at": "2026-01-04T10:30:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    }
+  ]
+}

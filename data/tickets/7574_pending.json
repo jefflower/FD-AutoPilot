@@ -1,0 +1,44 @@
+{
+  "id": 7574,
+  "subject": "Need your help",
+  "description_text": "Hi ,\r\n\r\nI have the pedal Simsoon Pro X , but in the Simsoon Manager I have a trouble with the hactip motor .\r\nUSB connected in green , but Haptic Motor is power disconnected.\r\nDo you know why ?\r\n\r\nThanks \r\n\r\n\r\n\r\nEnvoyé de mon iPhone\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-06T15:59:52Z",
+  "updated_at": "2025-12-14T03:33:23Z",
+  "requester_id": 158001231314,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014120364,
+      "body_text": "Hi Charles Jobin,  Please download the latest version 2.1.2. Then go to: Settings → Update → Manual Firmware Update → Pedals → firmware → pedals-prox.sfu to manually restore the firmware. After that, reconnect the USB and power, and check that the power is properly connected.  Also, be sure to use a USB 3.0 port and avoid using a hub. Unstable power supply may cause connection issues or missing accessories.     https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-12-08T11:11:47Z",
+      "updated_at": "2025-12-08T11:11:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014427343,
+      "body_text": "awesome, thank you \r\n\r\nDo you have a guide to how to setup ABS or something like that .\r\n\r\nNow I just touch the brake and I have vibration.\r\n\r\nI tried a lot of adjustments but , I don’t see the changement on my brake pedal \r\n\r\nThanks a lot , your service is perfect ☺️\r\n\r\n\r\n\r\nEnvoyé de mon iPhone\r\n\r\n> Le 8 déc. 2025 à 06:11, service@simsonn.com a écrit :\r\n> \r\n> ﻿\r\n> Hi Charles Jobin,\r\n> Please download the latest version 2.1.2.\r\n> Then go to: Settings → Update → Manual Firmware Update → Pedals → firmware → pedals-prox.sfu to manually restore the firmware. After that, reconnect the USB and power, and check that the power is properly connected.\r\n> Also, be sure to use a USB 3.0 port and avoid using a hub. Unstable power supply may cause connection issues or missing accessories.\r\n> \r\n> https://www.simsonn.com/pages/download\r\n> \r\n> \r\n> \r\n> \r\n> ",
+      "user_id": 158001231314,
+      "created_at": "2025-12-13T02:49:30Z",
+      "updated_at": "2025-12-13T02:49:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014472266,
+      "body_text": "Hi Charles Jobin,  Regarding ABS telemetry, the number of games we currently support is limited; the list of supported games is provided below. You can also download SimHub, which supports over 100 games, and we have collaborated with them to ensure compatibility with our pedals. If you encounter disconnection issues, you can also refer to the solutions below.              If this happens, it indicates that the computer’s grounding is not reliable, possibly because a three-prong plug was not used with a three-prong wall outlet. You can refer to the post below: connect the computer case to the stand, and connect the control box to the metal screws on the pedals. This should resolve the disconnection issue.  https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-12-14T03:33:22Z",
+      "updated_at": "2025-12-14T03:33:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

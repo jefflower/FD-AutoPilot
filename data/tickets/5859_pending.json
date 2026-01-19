@@ -1,0 +1,24 @@
+{
+  "id": 5859,
+  "subject": "Where is my order?",
+  "description_text": "Hello,\r\n  I received my pedal set, but not the haptic feedback sensors... The \r\ntracking information is giving me a message I don't understand.\r\nCan you help me?\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-10T03:50:06Z",
+  "updated_at": "2025-11-10T06:16:41Z",
+  "requester_id": 158006906821,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012029162,
+      "body_text": "Hi Usdin. henri,    Here's another link for you. It's expected to arrive around the 13th.  https://t.17track.net/en#nums=SF6047028210170",
+      "user_id": 158001343601,
+      "created_at": "2025-11-10T06:16:41Z",
+      "updated_at": "2025-11-10T06:16:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

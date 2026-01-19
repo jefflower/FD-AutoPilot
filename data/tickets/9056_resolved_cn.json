@@ -1,0 +1,135 @@
+{
+  "id": 9056,
+  "subject": "嘿，关于USB手刹",
+  "description_text": "你们卖USB手刹的控制盒吗？我的坏了，电脑识别不了了。",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-24T06:36:47Z",
+  "updated_at": "2025-12-30T11:38:18Z",
+  "requester_id": 158005185367,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015058055,
+      "body_text": "你好 Immanuel Podesta，请下载 FreeJoy 并截图界面给我们检查。我将判断是软件配置问题还是硬件问题。如果是配置问题，可以恢复。 https://drive.google.com/file/d/1hnHNudj0VhE6xr7ypu-KeEDuVrlVHVg9/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-12-25T03:54:15Z",
+      "updated_at": "2025-12-25T03:54:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015081255,
+      "body_text": "于 2025年12月25日星期四, 下午1:54 support @simsonn.com,",
+      "user_id": 158005185367,
+      "created_at": "2025-12-26T02:40:26Z",
+      "updated_at": "2025-12-26T02:40:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015081522,
+      "body_text": "现在可以了，谢谢。所以这意味着是软件错误吗？",
+      "user_id": 158005185367,
+      "created_at": "2025-12-26T03:03:20Z",
+      "updated_at": "2025-12-26T03:03:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015152898,
+      "body_text": "它能工作了，但我无法校准。所以现在只有一半的强度。\n\n于 2025年12月25日星期四, 下午1:54 support @simsonn.com",
+      "user_id": 158005185367,
+      "created_at": "2025-12-28T07:16:40Z",
+      "updated_at": "2025-12-28T07:16:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015166368,
+      "body_text": "你好 Immanuel Podesta，你需要使用 Freejoy 1.7.0，而不是 1.7.1。 https://drive.google.com/file/d/1hnHNudj0VhE6xr7ypu-KeEDuVrlVHVg9/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T15:53:31Z",
+      "updated_at": "2025-12-28T15:53:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015184049,
+      "body_text": "打开了你发的那个，但还是不能配置手刹的全部行程。\n\n这是在手刹拉满的情况下\n\n我重新校准并加载了你发的hb文件。还是一样。",
+      "user_id": 158005185367,
+      "created_at": "2025-12-29T08:55:09Z",
+      "updated_at": "2025-12-29T08:55:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015185704,
+      "body_text": "于 2025年12月29日星期一, 下午6:54 Immanuel Podesta, <immanuelpodesta @gmail.com> 写道：\n\n> 打开了你发的那个，但还是不能配置手刹的全部行程。\n>\n> 这是在手刹拉满的情况下\n>\n> 我重新校准并加载了你发的hb文件。还是一样。\n>\n> 于 2025年12月29日星期一, 上午1:53 support @simsonn.com,\n超过20MB限制的附件已被丢弃。请联系发件人。",
+      "user_id": 158005185367,
+      "created_at": "2025-12-29T09:18:52Z",
+      "updated_at": "2025-12-29T09:18:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015244606,
+      "body_text": "你好 Immanuel Podesta，打开 Freejoy 1.7.0 后，点击一次“从设备读取配置”来配置手刹。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T09:27:33Z",
+      "updated_at": "2025-12-30T09:27:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015244940,
+      "body_text": "还是一样。\n\n于 2025年12月30日星期二, 下午7:27 support @simsonn.com,",
+      "user_id": 158005185367,
+      "created_at": "2025-12-30T09:37:27Z",
+      "updated_at": "2025-12-30T09:37:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015245037,
+      "body_text": "我重置了所有东西，并把你告诉我的所有步骤又做了一遍，现在力度更小了。\n\n于 2025年12月30日星期二, 下午7:27 support @simsonn.com,",
+      "user_id": 158005185367,
+      "created_at": "2025-12-30T09:40:25Z",
+      "updated_at": "2025-12-30T09:40:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015246125,
+      "body_text": "你好 Immanuel Podesta，你只需要校准一次：点击“从设备读取配置”，然后是“轴”，再点击“校准”按钮。用正常力道拉几次手刹，点击“停止校准”，最后点击“写入配置到设备”。之后，测试蓝色进度条是否能达到100%。如果可以，校准就成功了。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T10:24:56Z",
+      "updated_at": "2025-12-30T10:24:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015249466,
+      "body_text": "非常感谢，现在可以了。\n\n于 2025年12月30日星期二, 下午8:25 support @simsonn.com,",
+      "user_id": 158005185367,
+      "created_at": "2025-12-30T11:20:29Z",
+      "updated_at": "2025-12-30T11:20:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

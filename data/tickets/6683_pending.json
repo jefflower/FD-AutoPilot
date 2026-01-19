@@ -1,0 +1,54 @@
+{
+  "id": 6683,
+  "subject": "Order SSN3408 stuck in processing center for 11 days",
+  "description_text": "Hello,\r\n\r\nThis order has been stuck in place in the tracking for over 10 days. Can you look into this and let me known how long do we have to wait before you ship a replacement if it doesn’t move and isn’t delivered?\r\n\r\nThank you,\r\nJuan\r\n\r\nSent from my iPhone\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-24T21:56:10Z",
+  "updated_at": "2025-11-27T08:35:06Z",
+  "requester_id": 158007307574,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012856490,
+      "body_text": "Hi Juan Ignacio Sosa,    This order has been intercepted. Do you have another email address to send us to cancel the order?",
+      "user_id": 158001343601,
+      "created_at": "2025-11-25T02:10:40Z",
+      "updated_at": "2025-11-25T02:10:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012858893,
+      "body_text": "Good evening.\r\n\r\nI’m not sure what you need with my other email address.  You may use juanisosa@gmail.com\r\n\r\nThis order (ssn3408) was intended to replace the wrongly selected  item on Order #SSN3408. The original one doesn’t work with my pedals. I sent an email a couple of weeks ago but received no reply.\r\n\r\nThanks,\r\nJuan\r\n\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158007307574,
+      "created_at": "2025-11-25T04:40:04Z",
+      "updated_at": "2025-11-25T04:40:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012872734,
+      "body_text": "Hi Juan Ignacio Sosa,    We've already processed your shipment. We apologize for any inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-25T11:30:20Z",
+      "updated_at": "2025-11-25T11:30:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012882233,
+      "body_text": "Thank you.\r\n\r\nCan you let me know about the other order: #SSN3408?\r\n\r\nI sent an email to support but never received a response. I need to return it as it didn’t work with my pedals.\r\n\r\n\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158007307574,
+      "created_at": "2025-11-25T13:27:21Z",
+      "updated_at": "2025-11-25T13:27:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

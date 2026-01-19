@@ -1,0 +1,54 @@
+{
+  "id": 10139,
+  "subject": "Urgent",
+  "description_text": "Hello I have had my pros for 1 year and up till now they have been fantastic but all of a sudden they are not recognised in any game but the Simsonn software is picking them up can you help in anyway \r\n\r\nStephen Elward \r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-06T21:53:13Z",
+  "updated_at": "2026-01-07T05:19:21Z",
+  "requester_id": 158008900532,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016063818,
+      "body_text": "ID 号为 9940 和 10041 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T05:18:48Z",
+      "updated_at": "2026-01-07T05:18:48Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016063819,
+      "body_text": "合并来自工单9940  \n      主题: Help  \n      描述:  Helol and greetings from the UK,  i have the plus pedals and f1 25 is not recognising them any help would be appreciated   Steve   Sent from my iPhone",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T05:18:48Z",
+      "updated_at": "2026-01-07T05:18:48Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016063822,
+      "body_text": "合并来自工单10041  \n      主题: Pro pedals  \n      描述:  Hello I have had my pros for 1 year and up till now they have been fantastic but all of a sudden they are not recognised in any game but the Simsonn software is picking them up can you help in anyway   Stephen Elward  Sent from my iPhone",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T05:18:48Z",
+      "updated_at": "2026-01-07T05:18:48Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016063862,
+      "body_text": "Hi Stephen Elward,    If your pedal is version 1.7.1, you can download the latest SIMSONN Manager 2.1.2 using the link below. Then, follow the steps below to update the firmware:    If the software indicates that the version is too old, go to Settings → Update → Manual Firmware Update → pedals → firmware → pedals-proxultra.sfu to start the firmware update;    After the firmware update is completed, release the upgrade button;    Finally, test the pedal and perform a calibration.    Additionally, please ensure that your computer is properly grounded.     https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T05:19:21Z",
+      "updated_at": "2026-01-07T05:19:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

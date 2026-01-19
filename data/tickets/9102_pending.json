@@ -1,0 +1,194 @@
+{
+  "id": 9102,
+  "subject": "Re: Issues with Pro X Ultra Pedals",
+  "description_text": "Kind regards, Adam Shelton - 07585 110811 On 20 Dec 2025, at 12:18, \"support@simsonn.com\" <support@simsonn.com> wrote: Hi Adam Shelton, Please provide your order number, contact name, phone number, and shipping address. We will send you a brand new PlusX Ultra controller box on Monday. In addition, using the USB 3.0 (blue) port on the back of your computer can provide more stable power supply and a more reliable upgrade process. We also recommend connecting the PC case to a screw on the controller box with a wire to ensure proper grounding. If you are willing to allow remote assistance, I can help you troubleshoot and resolve the issue remotely. Please install ToDesk and provide your ID and temporary verification code. On Wed, 17 Dec at 10:19 AM , Adam Shelton <shelton61@icloud.com> wrote: Hi, I’m using UK plugs with metal grounding pins everywhere. I followed the exact steps you described with the manual update, the firmware update seemed to pause at 14% however the message ‘update complete’ appeared. After waiting a long time to confirm the update had either completed or the software crashed, I restarted the computer and the pedals are no longer recognised by Windows. It looks like they are bricked and I have no way of reinstalling the drivers. Honestly I am so frustrated with the software, the pedals are great in their physical form but everything is so janky. What should I do now? Kind regards, Adam Shelton M: 07585 110811 On 17 Dec 2025, at 10:42, support@simsonn.com wrote: Hi Adam Shelton, Please try again: first uninstall the local SIMSONN Manager, then download the latest SIMSONN Manager 2.1.2 from the official website. In the software, go to “Settings → Update → Manual Update” and select pedals‑firmware → pedals‑proxultra.sfu to update the firmware. After updating, test again and make sure the grounding connections are properly established. https://www.simsonn.com/pages/download On Tue, 16 Dec at 3:52 PM , Adam Shelton <shelton61@icloud.com> wrote: Hi, Please get back to me on this, here’s a video of the eratic signals coming out of the clutch: Simsonn pedals issues https://youtu.be/i7o2hR85mz0 Kind regards, Adam Shelton M: 07585 110811 On 11 Dec 2025, at 17:06, Adam Shelton <shelton61@icloud.com> wrote: Hi, I’m struggling with a few issues with my Pro X Ultra pedals: Random dropping out of the VAM pro haptic reactors. The haptic reactors will ‘crash’ and continually vibrate unless I unplug the power and then reinsert the usb cable in that order. The signal from the pedals ‘sticks’ at various inputs making it impossible to drive. When calibrating in iRacing all signals are erratic (bouncing all over the place extremely fast), everything is like this even the wheel and shifter. As soon as I unplug the pedals this stops. So far I have tried: 65w powered USB hub with only the pedals connected Pedals plugged directly into motherboard (2.0, 3.0 and 3.1 ports) New control box from you guys (the resistor was incorrect in the previous one, the above problems are still there) Earthing the rig Earthing the pedals Running with the haptic reactors unplugged Disconnecting all other peripherals aside from pedals Firmware updates Software updates Reinstalling Simsonn Manager Recalibrating pedals PC bios updates Pc chipset updates USB drivers all reinstalled Windows 11 up to date The pc itself is a brand new high end build I have tried everything I have tried above and all three issues are present regardless. The pedals are great when they’re working, but I can only get them working for a few minutes at a time before they stick, or the reactors crash. Any help or suggestions would be greatly appreciated, I’m running out of ideas. My order number is #SSN2230. Kind regards, Adam Shelton M: 07585 110811 8005:4206036\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-24T17:20:19Z",
+  "updated_at": "2025-12-31T10:10:18Z",
+  "requester_id": 158002939443,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006726806,
+      "body_text": "Hi Adam Shelton,     What is your order number? Did you purchase the VAM Pro package that includes a 24V 3A power supply? The VAM Pro requires a dedicated power supply to function properly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-12T04:59:39Z",
+      "updated_at": "2025-08-12T04:59:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014472021,
+      "body_text": "ID 号为 2558 和 8004 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-14T03:08:55Z",
+      "updated_at": "2025-12-14T03:08:55Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014472022,
+      "body_text": "合并来自工单2558  \n      主题: Power Supply for Pedals and Haptic Reactors  \n      描述:  Hi,   I just purchase the Pro X Ultra pedals and Haptic Reactors.  What power supply do I need for the pedals?  Do I need a separate power supply for the haptic reactors and if so, what do I need?  Thanks for your help.  Kind regards, Adam Shelton M: 07585 110811",
+      "user_id": 158000445778,
+      "created_at": "2025-12-14T03:08:55Z",
+      "updated_at": "2025-12-14T03:08:55Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014472024,
+      "body_text": "合并来自工单8004  \n      主题: Help with Pro X Ultra Pedals  \n      描述:  ﻿Hi,  \n   \n I’m struggling with a few issues with my Pro X Ultra pedals: \n \n \n \n \n Random dropping out of the VAM pro haptic reactors. The haptic reactors will ‘crash’ and continually vibrate unless I unplug the power and then reinsert the usb cable in that order. \n The signal from the pedals ‘sticks’ at various inputs making it impossible to drive. \n When calibrating in iRacing all signals are erratic (bouncing all over the place extremely fast), everything is like this even the wheel and shifter. As soon as I unplug the pedals this stops. \n \n \n \n \n So far I have tried: \n \n \n65w powered USB hub with only the pedals connected\n \n \nPedals plugged directly into motherboard (2.0, 3.0 and 3.1 ports)\n \n \nNew control box from you guys (the resistor was incorrect in the previous one, the above problems are still there)\n \n \nEarthing the rig\n \n \nEarthing the pedals\n \n \nRunning with the haptic reactors unplugged\n \n \nDisconnecting all other peripherals aside from pedals\n \n \nFirmware updates\n \n \nSoftware updates\n \n \nReinstalling Simsonn Manager\n \n \nRecalibrating pedals\n \n \nPC bios updates \n \n Pc chipset updates \n \nUSB drivers all reinstalled\n \n \nWindows 11 up to date\n \n \nThe pc itself is a brand new high end build\n \n \n \n \n \n I have tried everything I have tried above and all three issues are present regardless. \n \n \n \n The pedals are great when they’re working, but I can only get them working for a few minutes at a time before they stick, or the reactors crash. \n \n \n \n Any help or suggestions would be greatly appreciated, I’m running out of ideas. \n   \n \nMy order number is #SSN2230. \n   \n Kind regards, Adam Shelton \n M: 07585 110811",
+      "user_id": 158000445778,
+      "created_at": "2025-12-14T03:08:56Z",
+      "updated_at": "2025-12-14T03:08:56Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014472029,
+      "body_text": "Hi Adam Shelton,  If this happens, it indicates that the computer’s grounding is not reliable, possibly because a three-prong plug was not used with a three-prong wall outlet. You can refer to the post below: connect the computer case to the stand, and connect the control box to the metal screws on the pedals. This should resolve the disconnection issue.  https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-12-14T03:09:25Z",
+      "updated_at": "2025-12-14T03:09:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014598637,
+      "body_text": "Hi,\r\n\r\nPlease get back to me on this, here’s a video of the eratic signals coming out of the clutch:\r\n\r\nSimsonn pedals issues\r\nhttps://youtu.be/i7o2hR85mz0\r\n\r\nKind regards,\r\nAdam Shelton\r\nM: 07585 110811\r\n\r\n> ",
+      "user_id": 158002939443,
+      "created_at": "2025-12-16T20:52:10Z",
+      "updated_at": "2025-12-16T20:52:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014622278,
+      "body_text": "Hi Adam Shelton,  Please try again: first uninstall the local SIMSONN Manager, then download the latest SIMSONN Manager 2.1.2 from the official website. In the software, go to “Settings → Update → Manual Update” and select pedals‑firmware → pedals‑proxultra.sfu to update the firmware. After updating, test again and make sure the grounding connections are properly established.      https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T10:42:19Z",
+      "updated_at": "2025-12-17T10:42:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014635253,
+      "body_text": "Hi,\r\n\r\nI’m using UK plugs with metal grounding pins everywhere.\r\n\r\nI followed the exact steps you described with the manual update, the firmware update seemed to pause at 14% however the message ‘update complete’ appeared. After waiting a long time to confirm the update had either completed or the software crashed, I restarted the computer and the pedals are no longer recognised by Windows. It looks like they are bricked and I have no way of reinstalling the drivers. \r\n\r\nHonestly I am so frustrated with the software, the pedals are great in their physical form but everything is so janky.\r\n\r\nWhat should I do now?\r\n\r\nKind regards,\r\nAdam Shelton\r\nM: 07585 110811\r\n\r\n> ",
+      "user_id": 158002939443,
+      "created_at": "2025-12-17T15:19:44Z",
+      "updated_at": "2025-12-17T15:19:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014810094,
+      "body_text": "Hi Adam Shelton,  Please provide your order number, contact name, phone number, and shipping address. We will send you a brand new PlusX Ultra controller box on Monday. In addition, using the USB 3.0 (blue) port on the back of your computer can provide more stable power supply and a more reliable upgrade process. We also recommend connecting the PC case to a screw on the controller box with a wire to ensure proper grounding. If you are willing to allow remote assistance, I can help you troubleshoot and resolve the issue remotely. Please install ToDesk and provide your ID and temporary verification code. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-20T12:18:13Z",
+      "updated_at": "2025-12-20T12:18:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015045041,
+      "body_text": "\r\nKind regards,\r\nAdam Shelton\r\nM: 07585 110811\r\n\r\n> ",
+      "user_id": 158002939443,
+      "created_at": "2025-12-24T17:16:09Z",
+      "updated_at": "2025-12-24T17:16:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015057470,
+      "body_text": "Hi Adam Shelton,  Do you have time now? We’ve just started work here, and it’s 10:48 AM China time. Please let us know your city and which local time works best for you, so we can schedule accordingly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-25T02:49:53Z",
+      "updated_at": "2025-12-25T02:49:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015057472,
+      "body_text": "ID 号为 8005, 9100 和 9101 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-25T02:50:04Z",
+      "updated_at": "2025-12-25T02:50:04Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158015057473,
+      "body_text": "合并来自工单8005  \n      主题: Issues with Pro X Ultra Pedals  \n      描述:  ﻿Hi, \n  \n   \n I’m struggling with a few issues with my Pro X Ultra pedals: \n \n \n \n \n Random dropping out of the VAM pro haptic reactors. The haptic reactors will ‘crash’ and continually vibrate unless I unplug the power and then reinsert the usb cable in that order. \n The signal from the pedals ‘sticks’ at various inputs making it impossible to drive. \n When calibrating in iRacing all signals are erratic (bouncing all over the place extremely fast), everything is like this even the wheel and shifter. As soon as I unplug the pedals this stops. \n \n \n \n \n So far I have tried: \n \n \n65w powered USB hub with only the pedals connected\n \n \nPedals plugged directly into motherboard (2.0, 3.0 and 3.1 ports)\n \n \nNew control box from you guys (the resistor was incorrect in the previous one, the above problems are still there)\n \n \nEarthing the rig\n \n \nEarthing the pedals\n \n \nRunning with the haptic reactors unplugged\n \n \nDisconnecting all other peripherals aside from pedals\n \n \nFirmware updates\n \n \nSoftware updates\n \n \nReinstalling Simsonn Manager\n \n \nRecalibrating pedals\n \n \nPC bios updates \n \n Pc chipset updates \n \nUSB drivers all reinstalled\n \n \nWindows 11 up to date\n \n \nThe pc itself is a brand new high end build\n \n \n \n \n \n I have tried everything I have tried above and all three issues are present regardless. \n \n \n \n The pedals are great when they’re working, but I can only get them working for a few minutes at a time before they stick, or the reactors crash. \n \n \n \n Any help or suggestions would be greatly appreciated, I’m running out of ideas. \n   \n \nMy order number is #SSN2230. \n   \n Kind regards, Adam Shelton \n M: 07585 110811",
+      "user_id": 158000445778,
+      "created_at": "2025-12-25T02:50:04Z",
+      "updated_at": "2025-12-25T02:50:04Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158015057475,
+      "body_text": "合并来自工单9100  \n      主题: Re: Help with Pro X Ultra Pedals  \n      描述:  Hi,  Thank you for getting back to me.  My order number is #SSN2230.  My address is: 40 Barrington Avenue Hull East Yorkshire HU5 4BD  It would be great if you could provide some help via remote assistance, the pedals are always plugged into a USB 3.0 port.  I installed ToDesk but everything is in Chinese and does not even translate into English well, I cannot see how I can make an account to give you access, it’s asking for a Chinese mobile number too. Do you have any user friendly software like Anydesk that works in customer languages?    Kind regards, Adam Shelton M: 07585 110811  > On 11 Dec 2025, at 17:06, Adam Shelton <shelton61@icloud.com> wrote: > My order number is #SSN2230.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-25T02:50:05Z",
+      "updated_at": "2025-12-25T02:50:05Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158015057477,
+      "body_text": "合并来自工单9101  \n      主题: Re: Help with Pro X Ultra Pedals  \n      描述:   Kind regards, Adam Shelton M: 07585 110811  > On 24 Dec 2025, at 17:15, Adam Shelton <shelton61@icloud.com> wrote: >  > ﻿ > Kind regards, > Adam Shelton > M: 07585 110811 >  >> On 24 Dec 2025, at 17:13, Adam Shelton <shelton61@icloud.com> wrote: >>  >> ﻿Hi, >>  >> Thank you for getting back to me. >>  >> My order number is #SSN2230. >>  >> My address is: >> 40 Barrington Avenue >> Hull >> East Yorkshire >> HU5 4BD >>  >> It would be great if you could provide some help via remote assistance, the pedals are always plugged into a USB 3.0 port. >>  >> I installed ToDesk but everything is in Chinese and does not even translate into English well, I cannot see how I can make an account to give you access, it’s asking for a Chinese mobile number too. >> Do you have any user friendly software like Anydesk that works in customer languages? >>  >>  >> Kind regards, >> Adam Shelton >> M: 07585 110811 >>  >>>> On 11 Dec 2025, at 17:06, Adam Shelton <shelton61@icloud.com> wrote: >>> My order number is #SSN2230.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-25T02:50:05Z",
+      "updated_at": "2025-12-25T02:50:05Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158015222091,
+      "body_text": "Hi, Unfortunately I did not have time as it was 2:30am on Christmas Day in the uk. When is the best time for you at a reasonable UK time in the next few weeks? Are you able to send out the replacement control box? Kind regards, Adam Shelton M: 07585 110811 ",
+      "user_id": 158002939443,
+      "created_at": "2025-12-29T20:24:25Z",
+      "updated_at": "2025-12-29T20:24:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015222151,
+      "body_text": "my time zone is GMT Kind regards, Adam Shelton M: 07585 110811 ",
+      "user_id": 158002939443,
+      "created_at": "2025-12-29T20:25:24Z",
+      "updated_at": "2025-12-29T20:25:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015306366,
+      "body_text": "Hi Adam Shelton,    I apologize for not responding to you promptly. Here is your resend link. I will have our engineers resolve this remotely for you as soon as possible. Happy New Year!  https://t.17track.net/en#nums=SF6047211816515",
+      "user_id": 158001343601,
+      "created_at": "2025-12-31T10:10:17Z",
+      "updated_at": "2025-12-31T10:10:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

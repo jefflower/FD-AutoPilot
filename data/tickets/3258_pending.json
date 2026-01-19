@@ -1,0 +1,64 @@
+{
+  "id": 3258,
+  "subject": "Pedals received.",
+  "description_text": "Just wanted to drop a quick email to say thanks for getting my plux x\r\npedals to me as quickly as you did.\r\n\r\nIm very happy woth them and am looking forward to using them on my sim rig.\r\n\r\nThe seem to be of very high quality and im shocked as to how heavy they\r\nare. Very robust.\r\n\r\nIm sure I will be back to take a look at your sequential gear stick at some\r\npoint in the future abd have reccomended your pedal sets to my friends.\r\n\r\nAll the best from the Uk.\r\n\r\nDaniel rodziewicz.\r\n1 Yaxley pl, Stoke-on-Trent ST3 3LJ, UK\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-29T17:46:47Z",
+  "updated_at": "2025-09-09T02:41:17Z",
+  "requester_id": 158003860005,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007801872,
+      "body_text": "Hi Daniel Rodziewicz,    Thank you very much for your kind words! We are delighted to hear that you are satisfied with the quality and durability of the entire product line. Your satisfaction and recommendations mean a great deal to us—we sincerely appreciate your support.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-30T03:11:33Z",
+      "updated_at": "2025-08-30T03:11:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008028978,
+      "body_text": "Good afternoon.\r\n\r\nI received my pedals and motors last week. Thank you.\r\n\r\nUnfortunately one of the motors has failed. Leaking some type of oil and\r\nmaking a very loud rattling noise. Can you please arrange a replacement.\r\n\r\nMr Daniel Rodziewicz\r\n1 Yaxley place\r\nNewstead\r\nStoke on trent\r\nStaffordshire.\r\nSt3 3lj\r\nUk\r\n\r\nDjrodziewicz@gmail.com\r\n07449899511.\r\n\r\nThanks for your help\r\n\r\n\nAttachment(s) that exceed the 20 MB limit have been dropped. Please reach out to the sender.",
+      "user_id": 158003860005,
+      "created_at": "2025-09-03T12:05:05Z",
+      "updated_at": "2025-09-03T12:05:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008044247,
+      "body_text": "Sorry.\r\n\r\nBad news im arlfraid. I now have 2 non working motors.\r\n\r\nHas been fully checked and tried on different Ports on thr box.\r\n\r\nSo 1x leaking bit making a sound and 1x non responsive.\r\n\r\nPlease advise.\r\n\r\nThanks.\r\n\r\nOn Fri, 29 Aug 2025, 18:46 Daniel Rodziewicz, <djrodziewicz@gmail.com>\r\nwrote:\r\n\r\n>\r\n> Just wanted to drop a quick email to say thanks for getting my plux x\r\n> pedals to me as quickly as you did.\r\n>\r\n> Im very happy woth them and am looking forward to using them on my sim rig.\r\n>\r\n> The seem to be of very high quality and im shocked as to how heavy they\r\n> are. Very robust.\r\n>\r\n> Im sure I will be back to take a look at your sequential gear stick at\r\n> some point in the future abd have reccomended your pedal sets to my\r\n> friends.\r\n>\r\n> All the best from the Uk.\r\n>\r\n> Daniel rodziewicz.\r\n> 1 Yaxley pl, Stoke-on-Trent ST3 3LJ, UK\r\n>\r\n\r\n",
+      "user_id": 158003860005,
+      "created_at": "2025-09-03T18:10:49Z",
+      "updated_at": "2025-09-03T18:10:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008057005,
+      "body_text": "你好，Daniel Rodziewicz，    Please make sure you are using SIMSONN Manager version 2.1.0. The vibration strength must be adjusted strictly according to the software settings. In most cases, motor damage occurs because the strength level was set too high. Also, the parameters in SimHub 9.9.3 should be referenced and kept consistent.  Important notes:    Do not use continuous vibration telemetry such as speed or rpm, as these signals may damage the VAM motor.    VAM Pro is not affected, since its motor design allows continuous operation.    By design, the VAM motor cannot operate at continuous high intensity.    Please cross-test the VAM motors. If they are confirmed damaged, we will send you 2 replacement motors. However, it is essential that you always follow the maximum strength limits set in the software to prevent further damage.            In addition, please provide your order number, contact person, phone number, and address so that we can assist you with the next steps. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-04T04:37:26Z",
+      "updated_at": "2025-09-04T04:37:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008099083,
+      "body_text": "Good Afternoon.\r\n\r\nThank you for the speedy reply.\r\n\r\nI have checked the motors against all available ports on the black box and I can confirm that onlyn 1 motor works.\r\n\r\nI have read your instructions and I can confirm the following:\r\n\r\nI followed the Simsonn instruction on the manager that said what hz and % to use. This was then dropped to around 35% all was working fine until it just stopped.\r\n\r\nI can confirm that I hadn't used the clutch pedal motor. It was plugged in and set up but nothing was assigned to it as I don't use the clutch pedal. I only noticed it didn't work when i was testing the motor /black box yesterday.\r\n\r\nYes. All apps are fully updates and lates versions installed.\r\n\r\nMy details are below.\r\n\r\n\r\nOrder #SSN2378\r\nMr Daniel Rodziewicz\r\n1 Yaxley Place\r\nNewstead\r\nStoke on trent\r\nStaffordshire\r\nST3 3LJ\r\nUK\r\n\r\n07449899511\r\n\r\nMany thanks,\r\n\r\n________________________________\r\n",
+      "user_id": 158003860005,
+      "created_at": "2025-09-04T15:38:13Z",
+      "updated_at": "2025-09-04T15:38:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

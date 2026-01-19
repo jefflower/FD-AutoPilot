@@ -1,0 +1,64 @@
+{
+  "id": 8495,
+  "subject": "I can't track my order trough your page what i find in support",
+  "description_text": "Hello. I can't track my order actually i have two orders #SSN4612 and\r\n#SSN4642\r\nI hope you guys can help me!\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-17T09:25:17Z",
+  "updated_at": "2025-12-23T05:52:38Z",
+  "requester_id": 158007725853,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014623532,
+      "body_text": "Hi Josip Cross,    We apologize for the delayed response. Your order has been shipped via UPS and is expected to arrive on the 23rd. Please note that customs duties may apply.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-17T11:26:23Z",
+      "updated_at": "2025-12-17T11:26:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014623827,
+      "body_text": "Hi Josip Cross,    Please disregard the previous email. We can only ship the pedals to Croatia via our German warehouse. We expect to ship them to you after they arrive at the warehouse on Friday.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-17T11:35:45Z",
+      "updated_at": "2025-12-17T11:35:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014624228,
+      "body_text": "Okay thank you for answering. So pedals and reactors will arrive soon but\r\nyou didn't say anything about gearbox. I pre-order new gearbox shifter and\r\nit said it will be avaliable on 15. December it's order number: SSN4642\r\n\r\nsri, 17. pro 2025. 12:35 support@simsonn.com ",
+      "user_id": 158007725853,
+      "created_at": "2025-12-17T11:49:57Z",
+      "updated_at": "2025-12-17T11:49:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014873981,
+      "body_text": "Hi Josip Cross,  The order SSN4612 We expect to ship them to you after they arrive at the warehouse on Friday via our German warehouse, and the order SSN4642  of HS Pro, we will send it out this week.",
+      "user_id": 158007774607,
+      "created_at": "2025-12-22T11:26:55Z",
+      "updated_at": "2025-12-22T11:26:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014875929,
+      "body_text": "That's great, thank you very much.\r\n\r\npon, 22. pro 2025. 12:27 support@simsonn.com ",
+      "user_id": 158007725853,
+      "created_at": "2025-12-22T11:53:16Z",
+      "updated_at": "2025-12-22T11:53:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": 1060,
+  "subject": "Simsonn Pro Pedal with Simsonn Manager 2.0.8",
+  "description_text": "Hi. I want to use the latest software, but it says that the version of my\r\npedals is too old to use.\r\n[image: image.png]\r\n\r\nHow can I fix this?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-01T11:45:06Z",
+  "updated_at": "2025-07-02T14:31:24Z",
+  "requester_id": 158001862149,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004362757,
+      "body_text": "Hi Christian Aldover,  In the “Settings - Update” section, click “Manual Firmware Update,” then navigate to the pedals-firmware folder → pedals folder → and select the plus.sfu file to update. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T01:41:36Z",
+      "updated_at": "2025-07-02T01:41:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004371536,
+      "body_text": "Thank you. The update works. On your website I saw screenshots that show\r\nyou can set the Max Brake force (kg) on the brake pedal, but I don't see\r\nthis in the software. Is there a way to enable this feature?\r\n\r\nOn Tue, Jul 1, 2025, 9:41 PM service@simsonn.com ",
+      "user_id": 158001862149,
+      "created_at": "2025-07-02T12:04:42Z",
+      "updated_at": "2025-07-02T12:04:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004374480,
+      "body_text": "你好，Christian Aldover，  旧版传感器和弹簧与现版有所不同。我们目前正在进行兼容性测试，测试完成并成功后，我们将发布最新版本。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T14:31:24Z",
+      "updated_at": "2025-07-02T14:31:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

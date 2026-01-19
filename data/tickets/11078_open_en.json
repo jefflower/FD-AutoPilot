@@ -1,0 +1,35 @@
+{
+  "id": 11078,
+  "subject": "Haptic pedal problem",
+  "description_text": "Hello,\n\nI received your haptic pedal kit with a VAM PRO and a VAM as a Christmas gift. I spent some time configuring them for LMU and I am very happy with them. But I have a problem with the VAM. During my last session, I felt it was losing power, and today there's nothing, no way to make it work, even though I was careful not to set the vibrations too high and I didn't activate the modes that make it run all the time for fear of wearing it out too much.\nOn the other hand, there is no problem with the VAM Pro; it works correctly.\n\nDo you have a solution to fix the problem? I have been using it for less than a month.\n\nThank you very much and have a good day.",
+  "status": 2,
+  "priority": 4,
+  "created_at": "2026-01-16T12:46:06Z",
+  "updated_at": "2026-01-17T12:29:09Z",
+  "requester_id": 158009299061,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017311744,
+      "body_text": "Hi Guylian Grégoire,    The VAM must be used in VAM mode. Please do not use VAM Pro mode, and we also do not recommend long, continuous vibration telemetry effects such as RPM/engine vibration or speed-based effects, as they may cause overheating or damage.  Please provide your order number and the recipient’s name, phone number, and shipping address, and we will arrange a replacement VAM for you.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-17T03:57:05Z",
+      "updated_at": "2026-01-17T03:57:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017326610,
+      "body_text": "Hello,\n\nI used the VAM mode correctly, but the \"rpm\" indicator was vibrating very slightly; I'm going to disable it completely.\n\nI've attached the order receipt.\n\nThank you, have a good day.",
+      "user_id": 158009299061,
+      "created_at": "2026-01-17T11:52:04Z",
+      "updated_at": "2026-01-17T11:52:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

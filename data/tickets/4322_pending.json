@@ -1,0 +1,24 @@
+{
+  "id": 4322,
+  "subject": "VAM Pro Linear Motor & pro x ultra pedals",
+  "description_text": "Hi,\r\nCan I accurately simulate clutch bite point with the pro x ultra pedals and\r\nthe VAM Pro linear motors? Thanks.\r\nRegards,\r\nTom\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-02T06:45:47Z",
+  "updated_at": "2025-10-02T10:20:23Z",
+  "requester_id": 158005269949,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009779206,
+      "body_text": "Hi Thomas Morrison,    Yes, that’s possible — you can set the clutch bite point.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-02T10:20:23Z",
+      "updated_at": "2025-10-02T10:20:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

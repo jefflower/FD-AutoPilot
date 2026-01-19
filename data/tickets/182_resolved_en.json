@@ -1,0 +1,55 @@
+{
+  "id": 182,
+  "subject": "Re: Re: Re: Re: Order #SSN1467 confirmed",
+  "description_text": "Hi,\n\nWhat is the update on this matter? When can I receive the missing parts?\n\nPlease follow up. I will start warning the online sim racing community about this.",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-06-05T07:22:53Z",
+  "updated_at": "2025-06-15T09:04:16Z",
+  "requester_id": 158001248450,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002457232,
+      "body_text": "Hi Pandu Wirawan, We will follow up immediately — it seems the warehouse staff may have missed the reshipment. I’ll look into it right away and get back to you shortly with the tracking number.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-05T08:28:14Z",
+      "updated_at": "2025-06-05T08:28:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002841280,
+      "body_text": "Hello, Pandu Wirawan, Can you please take a picture of the item received? Since the base consists of three parts - the main base plate, carbon fiber support plate, and limit plate - I'm worried that there might be an error when replacing parts, so I want to confirm.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-09T03:28:46Z",
+      "updated_at": "2025-06-09T03:28:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002841288,
+      "body_text": "Hello, Pandu Wirawan, The replacement has been sent, but we still need you to provide photos for confirmation. YT2515700707002662 https://www.yunexpress.com/.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-09T03:31:41Z",
+      "updated_at": "2025-06-09T03:31:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003105753,
+      "body_text": "I have received the base plate. Picture is attached. Thank you.",
+      "user_id": 158001248450,
+      "created_at": "2025-06-14T16:26:15Z",
+      "updated_at": "2025-06-14T16:26:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

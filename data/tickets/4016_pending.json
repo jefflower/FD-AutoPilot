@@ -1,0 +1,24 @@
+{
+  "id": 4016,
+  "subject": "Re: A shipment from order #SSN2625 is on the way",
+  "description_text": "Dear Support Team, Thank you for your notification that order #SSN2625 has been shipped and for providing the tracking number: 10159941498. However, when checking the status on the CDEK courier service website, it shows that the sender has not yet handed over the parcel to the delivery service. Could you please clarify: 1. The planned date when the order will be handed over to CDEK? 2. The estimated delivery timeframe? Thank you in advance for your assistance! Best regards, Ivan Tkachev   Кому: \"ivan.tkachev1997@yandex.ru\" <ivan.tkachev1997@yandex.ru>; Тема: A shipment from order #SSN2625 is on the way; 06:12, 17 сентября 2025 г., SIMSONN <service@simsonn.com>: SIMSONN Order #SSN2625 Your order is on the way Your order is on the way. Track your shipment to see the delivery status. View your order or Visit our store CDEK tracking number: 10159941498 Items in this shipment Simsonn HB Pro Racing Simulator Handbrake × 1 Extended Simsonn Plus X Racing Simulation Pedal with Haptic Reactor Optional × 1 Plus X P3-H3 / Black / Baseplate SIMSONN PC USB 7+R H Simulator Gear Shifter × 1 7+R If you have any questions, reply to this email or contact us at service@simsonn.com -- Отправлено из мобильного приложения Яндекс Почты",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-21T12:26:04Z",
+  "updated_at": "2025-09-23T03:30:59Z",
+  "requester_id": 158004741021,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009141427,
+      "body_text": "Hello, the parcel will be handed over to CDEK once customs clearance is complete. You may track it using this link for now. The parcel has currently arrived at the customs clearance port and is queuing for clearance. Your tracking number: 10159941498  https://russia.kingtrans.net/WebTrack?action=list",
+      "user_id": 158001343601,
+      "created_at": "2025-09-23T03:30:59Z",
+      "updated_at": "2025-09-23T03:30:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

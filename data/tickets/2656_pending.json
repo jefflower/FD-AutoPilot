@@ -1,0 +1,24 @@
+{
+  "id": 2656,
+  "subject": "ETA",
+  "description_text": "Hi Simsonn,\r\n\r\nMy name is Marco and I’ve recently put an online order through was just wondering what was the eta for the package of SSN2313. \r\n\r\nThanks Marco ",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-13T23:14:01Z",
+  "updated_at": "2025-08-14T01:48:43Z",
+  "requester_id": 158003050132,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006825326,
+      "body_text": "Hi Marco Zanaboni, here is your logistics tracking link. It is expected to arrive around the 21st.    https://t.17track.net/en#nums=SF6045852311346,SF6045852311364",
+      "user_id": 158001343601,
+      "created_at": "2025-08-14T01:48:43Z",
+      "updated_at": "2025-08-14T01:48:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

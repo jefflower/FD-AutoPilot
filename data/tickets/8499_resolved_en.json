@@ -1,0 +1,35 @@
+{
+  "id": 8499,
+  "subject": "UPS Waybill Number: 1ZJ455510404752719 Exception Notice (ERN- Cana Cheng)",
+  "description_text": "Dear UPS customer,\n\nThank you for using UPS services.\n\nBelow is an exception case for your company. Please follow up in a timely manner to assist with customs clearance and delivery. If it is not handled properly by the deadline, all losses will be borne by the sender.\n\nTracking #\tShip From Address \tShip To Address\nException Reason + Possible Resolution\tDeadline\t\n1ZJ455510404752719\t CN\t AT\t The package is undergoing customs clearance in the destination country. Local customs have questioned the value and require proof of payment. Please assist in providing it.\t Dec 30, 2025\t\n\n\nDue to international shipments requiring more processing time, please provide your instructions as soon as possible before 16:00 on the deadline date, so that we can inform overseas to follow up on the corresponding shipment.\n\nIf we do not receive your valid instructions within the processing deadline, according to local actual operating procedures, the package may be automatically returned or destroyed. The related costs incurred will be borne by the sender.\n\nPlease note that goods cannot be transshipped from one country to another.\n\nIf you have any questions about this shipment, please reply directly to this email.\n\nIf you are not responsible for this package, please forward this message to the relevant person.\n\n\n\nKind regards,\n\nCana Cheng\nUPS - China\nCustomer Service Center\nEmail: ernexportcn@ups.com",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-17T10:19:24Z",
+  "updated_at": "2025-12-19T08:06:18Z",
+  "requester_id": 158000958451,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014678359,
+      "body_text": "Hello, proof of payment and invoice have been attached.",
+      "user_id": 158007774607,
+      "created_at": "2025-12-18T08:28:01Z",
+      "updated_at": "2025-12-18T08:28:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014746967,
+      "body_text": "Dear UPS customer,\n\nOkay, the new invoice and proof of value have been provided to the destination country. Please pay attention to the official website for updates.\n\nSpecial reminder: Starting from March 1, 2023, senders shipping non-document goods to or through EU, Switzerland, and Norway must list the 6-digit HS code for each item and the EORI number of the EU consignee on the commercial invoice.\n\n\nEvina Ding\n\nUPS - China\nCustomer Service Center\n\nYou can get quick and convenient information by visiting the \"Help Center\".\n\nYou can download the APP: UPS Mobile to view more shipment information.\n\n\n\n\n--------------- Original Message ---------------",
+      "user_id": 158000958451,
+      "created_at": "2025-12-19T07:49:56Z",
+      "updated_at": "2025-12-19T07:49:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

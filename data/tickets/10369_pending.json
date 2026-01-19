@@ -1,0 +1,64 @@
+{
+  "id": 10369,
+  "subject": "Vam rumble motor",
+  "description_text": "Hi I have recently brought the vam rumble motors, for 2 weeks they worked\r\nperfectly fine and all of a sudden then are showing disconnected and won't\r\nwork. I have reset the box, disconnect and reconnect, reset my pc and\r\nnothing is working\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-09T03:52:32Z",
+  "updated_at": "2026-01-11T01:21:31Z",
+  "requester_id": 158008998169,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016472480,
+      "body_text": "Hi Jai Verma,  Please provide your order number so I can confirm the exact pedal model and then guide you through a firmware recovery, which should resolve the issue. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-09T04:12:57Z",
+      "updated_at": "2026-01-09T04:12:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016515828,
+      "body_text": "Hi I hope this is the right one. I ordered them through ali express this is\r\nthe number: 3064922981392637\r\n\r\n",
+      "user_id": 158008998169,
+      "created_at": "2026-01-09T09:48:00Z",
+      "updated_at": "2026-01-09T09:48:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016649397,
+      "body_text": "Hi Jai Verma,    Please follow the steps below to enter the upgrade process:    Press and hold the upgrade button on the main control box;    Reinsert the USB cable;    The software will prompt that it has entered “Simsonn Flasher Mode”;    Go to Settings → Update → Manual Firmware Update → pedals → firmware → pedals-plusx.sfu to start the firmware update;    After the firmware update is complete, recalibrate the pedals and test them.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-10T02:31:09Z",
+      "updated_at": "2026-01-10T02:31:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016714457,
+      "body_text": "This hasn't worked\r\n\r\n",
+      "user_id": 158008998169,
+      "created_at": "2026-01-10T13:50:21Z",
+      "updated_at": "2026-01-10T13:50:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016762158,
+      "body_text": "Hi Jai Verma,     Please press and hold the upgrade button on the controller box, then reinsert the USB cable, and check whether SIMSONN Manager enters SIMSONN Flasher mode. Could you also confirm whether the firmware update was completed successfully?  If possible, please record a video of the entire update process and share it with us via Google Drive, making sure the access permission is set to “view”, so we can review it and further investigate the issue.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T01:21:31Z",
+      "updated_at": "2026-01-11T01:21:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": 2750,
+  "subject": "Vam Pro",
+  "description_text": "Just received Vam Pro, but Why my vam pro doesn't stop vibrating, and also\r\nmake simsonn software freeze. Already installed software but still happen\r\nlike this.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-16T15:13:25Z",
+  "updated_at": "2025-08-17T03:59:01Z",
+  "requester_id": 158000954970,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006978005,
+      "body_text": "Hi Alfani Gunawan,  This issue is caused by EMI interference from the wheelbase. Please follow the steps below to troubleshoot and resolve it. Most customers with similar setups (such as Fanatec, MOZA, and T500 users) have resolved the problem using this method.     EMI (Electromagnetic Interference) Troubleshooting and Mitigation Guide  To improve device stability and connection reliability, please follow the steps below:  Verify Proper Grounding Ensure the computer uses a three-prong power plug and the wall outlet provides effective grounding. Two-prong plugs cannot achieve proper grounding. If the base does not have a three-prong plug, connect the base’s metal housing to the computer chassis using a wire.  Control Box Grounding Use a green shielded wire to connect the metal housing of the control box (e.g., copper standoffs or screws) to the metal parts of the pedals, ensuring the contact points are free of paint and maintain good metal-to-metal contact.  Base Grounding (e.g., Fanatec CLS DD, MOZA, DIY OSW) Connect the metal parts of the base to the computer chassis or ground wire to release accumulated static electricity.  Avoid Strong Interference Sources Keep USB cables away from high-voltage power lines (e.g., motor drivers, power adapters) and avoid parallel routing; separate the wiring as much as possible.  Brake Sensor Installation Ensure the brake pressure sensor does not touch the bracket, wall, control box, or cables to prevent interference with sensor movement or large signal fluctuations.  Change USB Port Connect the device directly to the rear blue USB 3.0 port of the computer. Avoid unpowered or low-quality USB hubs, which may cause insufficient power and frequent disconnections.  Software and Firmware Updates Make sure SIMSONN Manager and device firmware are up-to-date; some updates include improved EMI protection strategies.  Use a USB Isolator If the above steps do not resolve the issue, consider using a USB isolator to physically isolate interference sources and protect control device stability. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-17T03:58:36Z",
+      "updated_at": "2025-08-17T03:58:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006978019,
+      "body_text": "Hi Alfani Gunawan,  https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-08-17T03:59:01Z",
+      "updated_at": "2025-08-17T03:59:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

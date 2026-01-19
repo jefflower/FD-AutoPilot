@@ -1,0 +1,64 @@
+{
+  "id": 739,
+  "subject": "Order Confirmation",
+  "description_text": "Hello,\r\nI ordered new pedal last night and just wanted to ensure that the order was received, could I also get an estimated time of delivery please?\r\n\r\nMany thanks,\r\nAdam Cowan\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-23T13:39:21Z",
+  "updated_at": "2025-07-01T11:18:34Z",
+  "requester_id": 158001724418,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003741530,
+      "body_text": "Hi DaCowman47,  Could you please provide your order number? I’ll check which product you purchased — we usually arrange shipment promptly after the order is placed. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-24T02:11:52Z",
+      "updated_at": "2025-06-24T02:11:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003784245,
+      "body_text": "Hello,\r\nPlease see below the order number,\r\n\r\n #SSN1820\r\n\r\nThanks,\r\nAdam \r\n\r\n> ",
+      "user_id": 158001724418,
+      "created_at": "2025-06-24T10:03:39Z",
+      "updated_at": "2025-06-24T10:03:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003793854,
+      "body_text": "Hi DaCowman47,    Your package has been shipped, we have sent you a logistic notification, there will be some delay in the update and it is expected to arrive for you on the 2nd.",
+      "user_id": 158001343601,
+      "created_at": "2025-06-24T11:13:02Z",
+      "updated_at": "2025-06-24T11:13:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004356344,
+      "body_text": "Hello,\r\nMy shipment still says it’s awaiting customs clearance on the tracking, can you please inform if this information is true? I got premium shipping and it’s taking very long now.\r\n\r\nThanks,\r\nAdam\r\n\r\n> ",
+      "user_id": 158001724418,
+      "created_at": "2025-07-01T11:08:00Z",
+      "updated_at": "2025-07-01T11:08:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004356398,
+      "body_text": "Hi DaCowman47,     We are sorry to inform you that your package has been returned due to overweight, we will arrange a UPS courier for you immediately, and it is expected to be delivered to you around the 4th. Sincerely apologize!",
+      "user_id": 158001343601,
+      "created_at": "2025-07-01T11:18:33Z",
+      "updated_at": "2025-07-01T11:18:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

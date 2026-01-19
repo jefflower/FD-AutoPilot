@@ -1,0 +1,164 @@
+{
+  "id": 7169,
+  "subject": "Cancel my order",
+  "description_text": "Please cancel my order SSN4001 please send me return information when I\r\nreceive it\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-01T13:20:58Z",
+  "updated_at": "2025-12-22T08:40:41Z",
+  "requester_id": 158007400257,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013257724,
+      "body_text": "We have resumed your shipment after receiving your request not to cancel. May we ask why you wish to cancel again?",
+      "user_id": 158001343601,
+      "created_at": "2025-12-02T10:05:50Z",
+      "updated_at": "2025-12-02T10:05:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013259282,
+      "body_text": "Because I ordered the wrong item sorry for any inconvenience caused\r\n\r\n",
+      "user_id": 158007400257,
+      "created_at": "2025-12-02T11:09:10Z",
+      "updated_at": "2025-12-02T11:09:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013259325,
+      "body_text": "Because I ordered the wrong item sorry for any inconvenience caused order\r\nnumber SSN4001\r\n\r\n",
+      "user_id": 158007400257,
+      "created_at": "2025-12-02T11:10:23Z",
+      "updated_at": "2025-12-02T11:10:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013320569,
+      "body_text": "Hi A Hussain,  We're sorry, your package has already been shipped and cannot be cancelled. You can return it to our German warehouse after receiving it, and we will issue a refund after inspection.  Gubitz GmbH(LeiXuan A211) Hüttenkamp 12 Neumünster,Schleswig-Holstein   24536 +49 17622233089",
+      "user_id": 158001343601,
+      "created_at": "2025-12-03T11:38:37Z",
+      "updated_at": "2025-12-03T11:38:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013667795,
+      "body_text": "How to return items\r\n\r\n",
+      "user_id": 158007400257,
+      "created_at": "2025-12-05T23:15:48Z",
+      "updated_at": "2025-12-05T23:15:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013669826,
+      "body_text": "Return postage label required to return items order number SSN4001\r\n\r\n",
+      "user_id": 158007400257,
+      "created_at": "2025-12-05T23:23:27Z",
+      "updated_at": "2025-12-05T23:23:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014122705,
+      "body_text": "Regarding my return could you please give me a post code and how to send it\r\nback how wood you know it from me you have a depo in uk\r\n\r\n",
+      "user_id": 158007400257,
+      "created_at": "2025-12-08T12:28:53Z",
+      "updated_at": "2025-12-08T12:28:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014176864,
+      "body_text": "Hi A Hussain,    We apologize for the inconvenience. Our UK warehouse is not yet operational, so you can only return your package to our German warehouse at this time.   Gubitz GmbH(LeiXuan A211) Hüttenkamp 12 Neumünster,Schleswig-Holstein   24536 +49 17622233089",
+      "user_id": 158001343601,
+      "created_at": "2025-12-09T10:14:31Z",
+      "updated_at": "2025-12-09T10:14:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014201065,
+      "body_text": "On Tue, 9 Dec 2025, 10:14 service@simsonn.com, <service@simsonn.com> wrote:  \n  \n\n\t \n\n Hi A Hussain,  \n\n \n\n We apologize for the inconvenience. Our UK warehouse is not yet operational, so you can only return your package to our German warehouse at this time. \n\n \n\n \n\nGubitz GmbH(LeiXuan A211) Hüttenkamp 12 Neumünster,Schleswig-Holstein   24536 +49 17622233089  \n\n \n\n \n\n                           \n\n                            On\n\n                            Mon, 8 Dec at  7:28 AM\n\n                            ,  A Hussain <arshedhussainmoto@gmail.com>  wrote:\n\n                             Regarding my return could you please give me a post code and how to send it back how wood you know it from me you have a depo in uk  \n\n    \n\n  \n\n On Fri, 5 Dec 2025, 23:23 A Hussain, <arshedhussainmoto@gmail.com> wrote: \n\n \n\n \n\n Return postage label required to return items order number SSN4001\n\n \n\n  \n\n On Wed, 3 Dec 2025, 11:38 service@simsonn.com, <service@simsonn.com> wrote: \n\n \n\n  \n\n\n\n\t \n\n\n\n Hi A Hussain,  We're sorry, your package has already been shipped and cannot be cancelled. You can return it to our German warehouse after receiving it, and we will issue a refund after inspection. \n\n\n\n Gubitz GmbH(LeiXuan A211) Hüttenkamp 12 Neumünster,Schleswig-Holstein   24536 +49 17622233089  \n\n\n\n \n\n\n\n       \n\n\n\n   \n\n\n\n \n\n\n\n                           \n\n\n\n                            On\n\n\n\n                            Tue, 2 Dec at  6:10 AM\n\n\n\n                            ,  A Hussain <arshedhussainmoto@gmail.com>  wrote:\n\n\n\n                             Because I ordered the wrong item sorry for any inconvenience caused order number SSN4001\n\n\n\n \n\n\n\n    \n\n\n\n  \n\n\n\n On Tue, 2 Dec 2025, 11:08 A Hussain, <arshedhussainmoto@gmail.com> wrote: \n\n\n\n \n\n\n\n \n\n\n\n Because I ordered the wrong item sorry for any inconvenience caused  \n\n\n\n  \n\n\n\n On Tue, 2 Dec 2025, 10:06 service@simsonn.com, <service@simsonn.com> wrote: \n\n\n\n \n\n\n\n  \n\n\n\n\t  We have resumed your shipment after receiving your request not to cancel. May we ask why you wish to cancel again?",
+      "user_id": 158007400257,
+      "created_at": "2025-12-09T16:09:22Z",
+      "updated_at": "2025-12-09T16:09:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014285934,
+      "body_text": "Order number SSN4001 i sent the item back to you i sending you a copy of\r\nthe email i received from them\r\n\r\n",
+      "user_id": 158007400257,
+      "created_at": "2025-12-10T20:08:27Z",
+      "updated_at": "2025-12-10T20:08:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014336368,
+      "body_text": "Return item oder numberSSN4001\r\n\r\n",
+      "user_id": 158007400257,
+      "created_at": "2025-12-11T16:38:38Z",
+      "updated_at": "2025-12-11T16:38:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014378565,
+      "body_text": "Return item order number SSN4001 thay need a payment\r\n\r\n",
+      "user_id": 158007400257,
+      "created_at": "2025-12-12T10:16:38Z",
+      "updated_at": "2025-12-12T10:16:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014494996,
+      "body_text": "Hi A Hussain,    We are unable to open this link. How much does it cost?",
+      "user_id": 158001343601,
+      "created_at": "2025-12-15T03:24:29Z",
+      "updated_at": "2025-12-15T03:24:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014495024,
+      "body_text": "If the cost is reasonable, you may pay it in advance, and we will reimburse you when processing the refund. If the cost is too high, please do not pay it.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-15T03:25:51Z",
+      "updated_at": "2025-12-15T03:25:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014503565,
+      "body_text": "24 pound\r\n\r\n",
+      "user_id": 158007400257,
+      "created_at": "2025-12-15T09:47:30Z",
+      "updated_at": "2025-12-15T09:47:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

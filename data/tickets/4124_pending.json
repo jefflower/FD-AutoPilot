@@ -1,0 +1,24 @@
+{
+  "id": 4124,
+  "subject": "Haptic reactors",
+  "description_text": "\r\nI received a set of VAM Pro haptic reactors in July, they initially worked well, but one by one all of the inputs into the control panel have gone out and made the motors run continuously, even when my PC is off. I have to disconnect the power source to shut them off. Can I please get a new control box to replace my defective one? \r\n\r\nSent from Yahoo Mail for iPhone\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-25T16:27:06Z",
+  "updated_at": "2025-09-27T02:32:22Z",
+  "requester_id": 158004988726,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009360685,
+      "body_text": "Hi michael langley,    Please also consider the possibility of insufficient power supply:    It is recommended to use the rear USB 3.0 port on your computer for power;    Or use a USB hub with independent power supply.    In addition, please provide the pedal model and a video showing the issue, so we can analyze it and offer you a solution.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-27T02:32:22Z",
+      "updated_at": "2025-09-27T02:32:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

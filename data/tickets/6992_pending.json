@@ -1,0 +1,114 @@
+{
+  "id": 6992,
+  "subject": "unable to get pedals working",
+  "description_text": "Early version of Simsonn pedals pro 1.7.0.\r\n\r\nwere working fine for quite a while, now unable to use them in almost all\r\ntitles.\r\n\r\nDownloaded Simsonn Manager latest version and attempted to update firmware,\r\nbut have been unable to do it manually or automatically.\r\n\r\nPlease advise.\r\n\r\nMike aka Sim UK\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-28T22:16:44Z",
+  "updated_at": "2025-12-08T09:59:49Z",
+  "requester_id": 158007406401,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013087923,
+      "body_text": "i understand i need v1.8 for simsonn manager to detect the pedals",
+      "user_id": 158007406401,
+      "created_at": "2025-11-29T00:06:26Z",
+      "updated_at": "2025-11-29T00:06:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158013088166,
+      "body_text": "in addition.  v3.5 crashes with this error...  v4 says wrong firmware and to use 3,5  manager does not see pedals at all.",
+      "user_id": 158007406401,
+      "created_at": "2025-11-29T00:19:13Z",
+      "updated_at": "2025-11-29T00:19:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158013158230,
+      "body_text": "Hi Sim UK,     Please first restore the pedals to factory settings using Freejoy 1.7.0, and then V3.5 should be able to recognize them.   https://drive.google.com/file/d/1hnHNudj0VhE6xr7ypu-KeEDuVrlVHVg9/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-12-01T05:46:40Z",
+      "updated_at": "2025-12-01T05:46:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013161926,
+      "body_text": "OK,\r\n\r\nMany thanks!   Will do.\r\n\r\nWhat then is the process to upgrade the firmware?\r\n\r\nWhich order etc?\r\n\r\nMany thanks indeed,\r\n\r\nM. Aka Sim UK\r\n\r\n",
+      "user_id": 158007406401,
+      "created_at": "2025-12-01T07:16:40Z",
+      "updated_at": "2025-12-01T07:16:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013289707,
+      "body_text": "Hi,\r\n\r\nThank you for your help thus far.\r\n\r\nI have reset the pedals to 1.7.0.\r\n\r\nI still am not getting 100% on the AXIS and have the same error message.\r\n\r\n[image: image.png]\r\n\r\nPlease advise.\r\n\r\nKindest regards,\r\n\r\nM\r\n\r\n",
+      "user_id": 158007406401,
+      "created_at": "2025-12-02T18:55:38Z",
+      "updated_at": "2025-12-02T18:55:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013289805,
+      "body_text": "also,\r\n\r\nZ axis and sliders are noisey.\r\n\r\n[image: image.png]\r\n\r\n",
+      "user_id": 158007406401,
+      "created_at": "2025-12-02T18:57:24Z",
+      "updated_at": "2025-12-02T18:57:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013289827,
+      "body_text": "Z rotation i meant.\r\n\r\n\r\n",
+      "user_id": 158007406401,
+      "created_at": "2025-12-02T18:57:47Z",
+      "updated_at": "2025-12-02T18:57:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013776172,
+      "body_text": "Hi Sim UK,  Please open Freejoy 1.7.0 and click “Read Config from Device.” Then go to “Axis,” keep the X, Y, and Z axes unchanged, and uncheck the Output for the other axes. Finally, click “Write Config to Device,” and these axes will be disabled. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-06T06:09:51Z",
+      "updated_at": "2025-12-06T06:09:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013800315,
+      "body_text": "Many thanks,\r\n\r\nI have done that already, but V3.5 still won't recognise the pedals?\r\n\r\nWould you have a tutorial to explain HOW to upgrade to Version 1.8, so that\r\nI may use the official Simsonn software instead of a third party version?\r\n\r\nMany thanks,\r\n\r\nM\r\n\r\n",
+      "user_id": 158007406401,
+      "created_at": "2025-12-06T07:38:07Z",
+      "updated_at": "2025-12-06T07:38:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014118476,
+      "body_text": "Hi Sim UK,    Please first send me a screenshot of Freejoy so I can confirm the version, and then I will guide you through the upgrade.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-08T09:59:48Z",
+      "updated_at": "2025-12-08T09:59:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

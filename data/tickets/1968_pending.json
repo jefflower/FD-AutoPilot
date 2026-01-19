@@ -1,0 +1,44 @@
+{
+  "id": 1968,
+  "subject": "VAM disconnecting",
+  "description_text": "Hello, I've purchase the pro x pedals and I got the vam to go with it. The\r\npedals are fantastic! The vam is fantastic as well, when it works though.\r\nIt disconnects from simhub every 10 minutes or so and I have to unplug it\r\nor restart my pc to get them to work properly again, but then is keeps\r\nhappening. I even tried running the game through the simsonn software\r\nprovided. I get the same results. Please help as this product has so much\r\npotential! I'm definitely recommending!\r\n\r\nThank you\r\nMike Towell\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-27T02:41:52Z",
+  "updated_at": "2025-07-28T01:44:15Z",
+  "requester_id": 158002359714,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005620357,
+      "body_text": "Hi Michael Towell,    First, please confirm if your software is updated to the latest SIMSONN Manager 2.1.0 and that the pedal firmware is version 2.0.3 or 2.0.2. If everything is up to date, the issue may be related to unstable USB power supply or EMI interference from the wheelbase.  Please connect the pedal’s USB cable directly to the blue USB 3.0 port on the back of your PC instead of using a USB hub to ensure stable power. Additionally, if the wheelbase and PC are using a two-prong power plug, it could result in poor grounding, or the wall socket itself may lack proper grounding. Please refer to the following steps to troubleshoot this issue.         To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability:     1.    Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding.     2.    Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive.     3.    Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup.     4.    Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible.     5.    Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs.     6.    Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference.     7.    Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements.     8.    Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources.     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting   https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding     https://www.youtube.com/watch?v=LciAFDFWJ1w",
+      "user_id": 158000445778,
+      "created_at": "2025-07-27T02:47:40Z",
+      "updated_at": "2025-07-27T02:47:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005648956,
+      "body_text": "so this has not fixed the problem and now my pedals are not even connecting\r\nto my pc, i followed all the steps as told and now i have nothing for my\r\npedals\r\nplease help\r\n\r\nOn Sat, Jul 26, 2025 at 7:47 PM support@simsonn.com ",
+      "user_id": 158002359714,
+      "created_at": "2025-07-27T14:22:53Z",
+      "updated_at": "2025-07-27T14:22:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005653761,
+      "body_text": "Hi Michael Towell,  Please press the upgrade button on the ProX control box, then reconnect the USB cable. This will put the controller into recovery mode. Open SIMSONN Manager 2.1.0, and navigate to: Settings → Update → Manual Firmware Update → Pedals → Firmware → pedals → prox.sfu to manually update the ProX firmware. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-28T01:44:13Z",
+      "updated_at": "2025-07-28T01:44:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

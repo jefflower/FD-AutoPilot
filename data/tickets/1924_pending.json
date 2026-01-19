@@ -1,0 +1,24 @@
+{
+  "id": 1924,
+  "subject": "VAM Pro X Ultra Pedals – Intermittent Disconnect Issue",
+  "description_text": " Dear Simsonn Support,\r\nI'm experiencing an issue with my VAM Pro X Ultra pedals. Every 10–15\r\nminutes during use, the pedals disconnect or the vibration motors get\r\nstuck, requiring me to unplug and reconnect them for functionality to\r\nresume.\r\n\r\nNotably, the issue *does not occur when the pedals are idle*, only during\r\nactive use. The motors seem to continue vibrating after the disconnect, but\r\ninput stops registering until I replug.\r\n\r\nCould you help me identify the cause or suggest a fix?\r\n\r\nBest regards,\r\n-- \r\n*Avi Peretz*\r\nSoftware Developer\r\n(mobile) +972-50-3433997 || (mail) Avishai651@gmail.com\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-25T16:07:28Z",
+  "updated_at": "2025-07-26T03:15:06Z",
+  "requester_id": 158001342905,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005550540,
+      "body_text": "Hi avi peretz,  To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability:     1.    Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding.     2.    Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive.     3.    Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup.     4.    Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible.     5.    Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs.     6.    Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference.     7.    Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements.     8.    Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-26T03:15:06Z",
+      "updated_at": "2025-07-26T03:15:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

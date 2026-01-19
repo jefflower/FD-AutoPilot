@@ -1,0 +1,55 @@
+{
+  "id": 479,
+  "subject": "踏板",
+  "description_text": "Plus X 踏板是否与 Thrustmaster ts-xw 方向盘底座兼容？",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-06-16T02:17:00Z",
+  "updated_at": "2025-06-16T10:09:24Z",
+  "requester_id": 158001570316,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003225247,
+      "body_text": "您好，Diesel Williams，目前我们的踏板只能通过 USB 直接连接到 PC，不兼容其他品牌的方向盘底座。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-16T02:23:53Z",
+      "updated_at": "2025-06-16T02:23:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003226006,
+      "body_text": "那么如果我单独连接它会工作吗？",
+      "user_id": 158001570316,
+      "created_at": "2025-06-16T03:30:29Z",
+      "updated_at": "2025-06-16T03:30:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003226042,
+      "body_text": "您好，Diesel Williams，通过 USB 直接连接到您的 PC 绝对没有问题。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-16T03:33:27Z",
+      "updated_at": "2025-06-16T03:33:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003226558,
+      "body_text": "好的，我会购买的。",
+      "user_id": 158001570316,
+      "created_at": "2025-06-16T04:15:29Z",
+      "updated_at": "2025-06-16T04:15:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

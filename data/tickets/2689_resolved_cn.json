@@ -1,0 +1,95 @@
+{
+  "id": 2689,
+  "subject": "订单 #SSN2251",
+  "description_text": "下午好，\n\n请问您能否确认振动踏板（1 × Simsonn VAM Pro 线性马达 - 用于振动反馈的踏板触觉反应器）是否与踏板在同一批货物中寄出。\n\n我今天收到了包裹，里面只有一个箱子，而且只有踏板。\n\n附上图片。\n\n谢谢，\n凯登",
+  "status": 4,
+  "priority": 3,
+  "created_at": "2025-08-14T18:20:54Z",
+  "updated_at": "2025-08-19T04:42:55Z",
+  "requester_id": 158003119810,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006889332,
+      "body_text": "您好 Kaydenslevin22， 这是您另一个包裹的追踪链接： https://t.17track.net/en#nums=SF6045842274286",
+      "user_id": 158001343601,
+      "created_at": "2025-08-15T02:01:40Z",
+      "updated_at": "2025-08-15T02:01:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007034004,
+      "body_text": "晚上好，\n\n希望您一切都好。\n\n我的踏板有问题，特别是在玩 F1 25 时，刹车踏板要踩到一半才会有反应。\n\n我多次尝试重新校准踏板，但问题没有解决，也查看了 F1 的游戏内设置，同样没有解决问题。\n\n踏板在其他游戏（如 iRacing）中工作正常，但 F1 是我最喜欢玩的游戏，这个问题导致游戏无法进行。\n\n我附上了一个视频来展示这个问题。设置了 LED 灯来显示踏板的压力。\n\n请问有什么方法可以解决这个问题吗？如果实在没办法，我希望安排退货。\n\n谢谢，\n凯登\n\n\n\n发自我的 iPhone\n\n> ",
+      "user_id": 158003119810,
+      "created_at": "2025-08-17T19:57:43Z",
+      "updated_at": "2025-08-17T19:57:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007050946,
+      "body_text": "您好 Kaydenslevin22， 首先，如果您调整了刹车踏板的阻尼，请使用 Offset 功能重新校准踏板。此外，iRacing 可能需要在游戏内重新校准踏板。请检查：如果踏板在其他游戏中工作正常，那么问题就不在 iRacing 本身——我们也在使用 iRacing。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-18T02:21:49Z",
+      "updated_at": "2025-08-18T02:21:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007056594,
+      "body_text": "iRacing 不是问题，踏板在 iRacing 上工作得很好，是 F1 游戏出了问题。它们在 ACC、勒芒终极版上都工作得很好，但我主要玩的游戏是 F1，而这个问题使得只有踏板行程的后半段可用，导致游戏无法进行。\n\n> ",
+      "user_id": 158003119810,
+      "created_at": "2025-08-18T06:10:50Z",
+      "updated_at": "2025-08-18T06:10:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007081659,
+      "body_text": "您好 Kaydenslevin22， 我明天会进行测试，如果遇到同样的问题，我会更新固件来修复它，并尽快发布新版本。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-18T12:50:51Z",
+      "updated_at": "2025-08-18T12:50:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007081754,
+      "body_text": "您好 Kaydenslevin22， 请安装 Todesk 软件。无需注册——如果提示注册，只需点击右上角的关闭按钮。然后提供 ID 和临时密码，我现在就可以远程协助您解决此问题。 在我们的测试环境中，F1 2025 运行没有任何问题。我可以提供照片供您参考。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-18T12:55:01Z",
+      "updated_at": "2025-08-18T12:55:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007087040,
+      "body_text": "我直到英国时间下午 5 点才下班回家。游戏和踏板在游戏上是能用的，我的问题是刹车踏板在踩下一半之前没有任何反应，之后才会在游戏中以最小的刹车压力开始制动。\n \n> ",
+      "user_id": 158003119810,
+      "created_at": "2025-08-18T14:15:46Z",
+      "updated_at": "2025-08-18T14:15:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007102839,
+      "body_text": "你好，我下班回家后又在 F1 上试了一下我的踏板，想再次检查一下所有东西，结果踏板随机地开始正常工作了，从行程一开始就检测到压力，而不是从 50% 的踏板行程开始。\n\n我想这是一个自己解决了的问题，这总是令人惊喜的，我非常感谢您花时间为我排查这个问题，并想对您付出的时间表示感谢。\n\n  \n\n> ",
+      "user_id": 158003119810,
+      "created_at": "2025-08-18T20:01:19Z",
+      "updated_at": "2025-08-18T20:01:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

@@ -1,0 +1,64 @@
+{
+  "id": 5661,
+  "subject": "Brake pedal drop input",
+  "description_text": "Hi,\r\n\r\nSince buying the Simsonn plus x , I have been not been able to drive well.  I found out that my brake input will seopc10-20% if I turn the steering wheel . This is not usable . Please help .\r\n\r\nI am using usb isolator, and grounded my whole rig\r\n\r\nSent from my iPhone\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-05T08:17:33Z",
+  "updated_at": "2025-11-16T03:02:59Z",
+  "requester_id": 158002314672,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011785966,
+      "body_text": "Hi FAibS Yoooooo,  If your computer cannot safely connect to the household ground via a three-prong plug, you can prepare an additional wire to connect one end of the controller casing to the computer case and the other end to the pedal’s metal screw. Please note that paint may affect the connection. This should resolve the issue.      https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-11-05T08:26:00Z",
+      "updated_at": "2025-11-05T08:26:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011887375,
+      "body_text": "Hi support,\r\n\r\nMy setup is already properly grounded. The throttle and clutch is perfect but brake is not smooth and input drops when I turn the wheel\r\nSent from my iPhone\r\n\r\n",
+      "user_id": 158002314672,
+      "created_at": "2025-11-06T17:41:33Z",
+      "updated_at": "2025-11-06T17:41:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011985071,
+      "body_text": "Hi FAibS Yoooooo,  Please use a green wire to connect the grounding screw on the control box to any metal screw on the pedals. This ensures that turning the steering wheel will not affect the signal. Note that paint may affect conductivity. The main issue is that the household grounding is unstable, or the wall outlet does not have a three-prong socket to properly support the grounding requirements of the computer and the base for interference suppression. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-09T04:32:25Z",
+      "updated_at": "2025-11-09T04:32:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012151928,
+      "body_text": "Hi support\r\nI live in Malaysia we have 3 prong outlet that is grounded and checked .\r\n\r\nI already using the grounding cable for the control box it helps a little but does not solve the problem\r\nSent from my iPhone\r\n\r\n",
+      "user_id": 158002314672,
+      "created_at": "2025-11-12T02:37:06Z",
+      "updated_at": "2025-11-12T02:37:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012400241,
+      "body_text": "Hi FAibS Yoooooo,  You can try connecting the computer case to a screw on the controller box using any wire, and also connect any screw on the controller box to the pedal. Please check if this resolves your issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-16T03:02:58Z",
+      "updated_at": "2025-11-16T03:02:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": 7794,
+  "subject": "刹车踏板问题",
+  "description_text": "你好 Simsonn，\n\n我四个月前刚买了这款踏板。直到今天为止，一切都工作正常。我注意到刹车踏板出了一些问题（视频中所示）。我尝试重启和更新软件，但问题依旧存在。我应该怎么做以及如何修复它？\n\n希望能尽快收到您的回复\nWan",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-09T15:28:59Z",
+  "updated_at": "2025-12-11T03:15:20Z",
+  "requester_id": 158004059585,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014224859,
+      "body_text": "你好 nguyen wan， 如果发生这种情况，表明计算机的接地不可靠，可能是因为未使用三孔插头插入三孔墙壁插座。您可以参考下面的帖子：将计算机机箱连接到支架上，并将控制盒连接到踏板上的金属螺丝上。这应该能解决断开连接的问题。 https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-12-09T23:28:29Z",
+      "updated_at": "2025-12-09T23:28:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014298929,
+      "body_text": "你好，\n\n刚按照您的指南操作，问题已经解决了。\n谢谢你\n\n\n\n在 2025年12月10日星期三 06:28，service @simsonn.com <service @simsonn.com> 写道：",
+      "user_id": 158004059585,
+      "created_at": "2025-12-11T02:47:54Z",
+      "updated_at": "2025-12-11T02:47:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014299282,
+      "body_text": "",
+      "user_id": 158004059585,
+      "created_at": "2025-12-11T03:15:18Z",
+      "updated_at": "2025-12-11T03:15:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

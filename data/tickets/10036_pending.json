@@ -1,0 +1,64 @@
+{
+  "id": 10036,
+  "subject": "Order number: SSN5749",
+  "description_text": "Hello,I would like to cancel my order because I want to change the configuration.Order number: SSN5749Order status: confirmed (not shipped)Please cancel the order as soon as possible and confirm the cancellation.Thank you.Damian Potocki\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-05T22:37:34Z",
+  "updated_at": "2026-01-08T10:35:23Z",
+  "requester_id": 158008945670,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016076359,
+      "body_text": "ID 为 10035 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T06:46:50Z",
+      "updated_at": "2026-01-07T06:46:50Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016076360,
+      "body_text": "合并来自工单10035  \n      主题: Order number: SSN5749  \n      描述:  Hello, \n   \n I would like to cancel my order because I want to change the configuration. \n   \n Order number: SSN5749 \n Order status: confirmed (not shipped) \n   \n Please cancel the order as soon as possible and confirm the cancellation. \n   \n Thank you. \n   \n Damian Potocki",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T06:46:50Z",
+      "updated_at": "2026-01-07T06:46:50Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016108290,
+      "body_text": "Hi benekaus,    Sure, how would you like us to modify it? We can make the changes directly and adjust the amount accordingly—refund any overpayment or charge any shortfall.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-07T10:11:00Z",
+      "updated_at": "2026-01-07T10:11:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016110011,
+      "body_text": "Hello and thank you for your response.\r\n\r\nPlease simply cancel this order.\r\nYesterday I placed another one, the correct one ?\r\nThank you and best regards\r\nDamian\r\n\r\n\r\n\r\n________________________________\r\nsupport@simsonn.com ",
+      "user_id": 158008945670,
+      "created_at": "2026-01-07T10:24:51Z",
+      "updated_at": "2026-01-07T10:24:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016325619,
+      "body_text": "Hi benekaus,    Okay, I've processed your refund.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-08T10:35:22Z",
+      "updated_at": "2026-01-08T10:35:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

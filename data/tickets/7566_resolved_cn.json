@@ -1,0 +1,35 @@
+{
+  "id": 7566,
+  "subject": "主题：收到脚踏板不工作",
+  "description_text": "您好，我刚收到脚踏板，但它们不工作；它们在应用程序中注册了，但在任何游戏中都无法使用；现在它们甚至无法在应用程序中注册了。",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-06T13:58:31Z",
+  "updated_at": "2025-12-11T08:00:46Z",
+  "requester_id": 158007511115,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014120454,
+      "body_text": "您好，Earlando James，请提供您的订单号、脚踏板型号以及 Simsonn Manager 2.1.2 软件界面的截图。您可以尝试手动恢复固件。此外，请务必使用 USB 3.0 端口，并避免使用集线器。不稳定的电源可能导致连接问题或配件缺失。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-08T11:14:21Z",
+      "updated_at": "2025-12-08T11:14:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014120596,
+      "body_text": "谢谢，现在完美运行，产品也很棒",
+      "user_id": 158007511115,
+      "created_at": "2025-12-08T11:19:25Z",
+      "updated_at": "2025-12-08T11:19:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

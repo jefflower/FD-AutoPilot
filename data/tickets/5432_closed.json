@@ -1,0 +1,24 @@
+{
+  "id": 5432,
+  "subject": "SSN2833",
+  "description_text": "there has been no updates or information about this order. It's been almost a month. No one has contacted me about these items. I need a refund, the items are lost and haven't been delivered",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-10-30T06:30:43Z",
+  "updated_at": "2025-12-04T07:01:50Z",
+  "requester_id": 158001655329,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013374375,
+      "body_text": "此工单已关闭并合并到工单 7248 中",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T07:01:50Z",
+      "updated_at": "2025-12-04T07:01:50Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

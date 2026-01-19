@@ -1,0 +1,45 @@
+{
+  "id": 4471,
+  "subject": "Simsonn Pro X Pedals stuck in upgrade mode after firmware update failed",
+  "description_text": "Hello Simsonn Team,\n\nmy Pro X Pedals are stuck in “upgrade mode” after the firmware update\nfailed.\nThe Simsonn Manager only shows “The main controller is in upgrade mode” and\ndoes not offer any firmware update anymore.\n\nCould you please send me the correct firmware file for manual flashing or\nprovide a recovery tool?\n\nThank you!\nBest regards,\nPeter",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-10-05T15:03:50Z",
+  "updated_at": "2025-10-05T23:20:55Z",
+  "requester_id": 158005408065,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009937920,
+      "body_text": "Hello, Peter Potrawa,     Please uninstall the old version on your computer, then reinstall version 2.1.2 and update the firmware.  After the update, the device version should display as CPU1: 2.0.5, CPU2: 2.0.3.  If the issue persists, please feel free to contact me.  Also, make sure the upgrade button on the control box has popped up, then reconnect the USB cable.   https://drive.google.com/file/d/1PZwHUqhhmJw0IBGDO8mGONPbrICJU3z1/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T15:58:09Z",
+      "updated_at": "2025-10-05T15:58:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009942090,
+      "body_text": "Hello,\nI have uninstalled the Simsonn Manager and installed the version from your\ndownload link,\nbut I still don’t get any firmware update option.\n\nOn the update page there is a manual update function —\ncould you please just send me the firmware update file (.bin or .hex)\ndirectly,\nso that I can flash it manually?\n\nMy controller is stuck in *Upgrade Mode* after the previous update failed.\n\nThank you very much for your help!",
+      "user_id": 158005408065,
+      "created_at": "2025-10-05T17:13:19Z",
+      "updated_at": "2025-10-05T17:13:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009942205,
+      "body_text": "*Sorry,*\nI just noticed that there was a *Firmware* folder, and I tried the manual\nupdate —\neverything is working again now!\n\nThank you very much for your help! ?",
+      "user_id": 158005408065,
+      "created_at": "2025-10-05T17:28:13Z",
+      "updated_at": "2025-10-05T17:28:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

@@ -1,0 +1,24 @@
+{
+  "id": 10799,
+  "subject": "Dead zone in iracing",
+  "description_text": "Hello I recently purchased Plus X pedals and I have 2 questions.\r\n\r\nFirstly iRacing seems to ignore the Simsonn manager dead zone settings.\r\nCurrently I calibrate my pedals in the Simsonn software and then again in\r\niRacing when I make any changes. Is this the correct process?\r\n\r\nSecondly I notice that the brake pedal input jumps around when calibrating\r\nin the Simsonn software. It is not as severe as I have seen in videos of\r\nEMI issues, and my pedal is grounded but I was curious if this was normal.\r\n\r\nThank you,\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-13T15:21:16Z",
+  "updated_at": "2026-01-14T01:33:37Z",
+  "requester_id": 158006537130,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017053258,
+      "body_text": "Hi Alex Lasher,  iRacing is relatively sensitive with input settings. After calibrating in SIMSONN Manager, you also need to recalibrate the pedals in iRacing and set an appropriate deadzone if needed. Slight jitter/fluctuation is usually caused by poor grounding in the PC environment. This minor fluctuation typically won’t affect driving, ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-14T01:33:37Z",
+      "updated_at": "2026-01-14T01:33:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

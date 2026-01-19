@@ -1,0 +1,54 @@
+{
+  "id": 8222,
+  "subject": "Order with no follow up",
+  "description_text": "Hi, \r\n\r\nI made an order last week and have had no confirmation of the order being placed or any shipping information. Can you please help? \r\n\r\nThanks,\r\nChris Lenton.\r\n\r\nDirector\r\nThames Flame\r\nTel: 07540427315\r\nTel: 020 3189 1414\r\nwww.thamesflame.com\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-14T18:05:01Z",
+  "updated_at": "2025-12-24T08:48:07Z",
+  "requester_id": 158007807433,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014500746,
+      "body_text": "Hi Chris Lenton,    Please provide your order number and we shall look into it for you.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-15T08:16:01Z",
+      "updated_at": "2025-12-15T08:16:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014502540,
+      "body_text": "Sorry, like I say I have not been sent an order number all I have is the transaction number from the payment that was made … Thanks, Chris Lenton. Director Thames Flame Tel: 07540427315 Tel: 020 3189 1414 www.thamesflame.com ",
+      "user_id": 158007807433,
+      "created_at": "2025-12-15T09:14:20Z",
+      "updated_at": "2025-12-15T09:14:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014503370,
+      "body_text": "Hi Chris Lenton,    This is the email address you provided: info@thamesflame.com.   Order confirmations and shipping notifications were sent to this address. We have updated it to your current email address. Here is your tracking link.    https://t.17track.net/en#nums=SF6047135866095",
+      "user_id": 158001343601,
+      "created_at": "2025-12-15T09:39:44Z",
+      "updated_at": "2025-12-15T09:39:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014508541,
+      "body_text": "Ha, whoops, that’s gone to my office ?. Sorry about that thanks very much. Thanks, Chris Lenton. Director Thames Flame Tel: 07540427315 Tel: 020 3189 1414 www.thamesflame.com ",
+      "user_id": 158007807433,
+      "created_at": "2025-12-15T12:24:51Z",
+      "updated_at": "2025-12-15T12:24:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

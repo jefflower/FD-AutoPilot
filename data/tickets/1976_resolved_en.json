@@ -1,0 +1,125 @@
+{
+  "id": 1976,
+  "subject": "Re: SSN1299 - faulty",
+  "description_text": "Hi there.\n\n\nThe problem continues.\n\nThe pc itself recognises the usb driver as simsonn hb pro. But yiur software does not recognise the handbrake at all. Now trying to to calibrate it and im unable due to this.\n\nI have tried ALL of your steps above including directly plugging only the handbrake into the pc. Even going through the extra expense of replacing the powered usb hub.\n\nThis is a problem that has occurred since day one as per the above trail. I managed to get it to recognise one and calibrate but now it wont let me do it again.\n\nI have tried on a separate pc as well with the same issue. The product is broken.\n\nPlease either preferably send me a new one, or refund this one in full including shipping costs.",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-07-27T06:42:30Z",
+  "updated_at": "2025-07-28T03:55:28Z",
+  "requester_id": 158002360650,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005653862,
+      "body_text": "Hi Aaron Francis,  Could you please provide a screenshot of the SIMSONN Manager software connection status? Also, please check the SIMSONN device connection using the VKB tool and send us a screenshot. Rest assured, we will definitely help you resolve this issue.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-28T01:55:52Z",
+      "updated_at": "2025-07-28T01:55:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005657317,
+      "body_text": "Hi There,\n\nit will not allow me to download joy tester from your email.\n\nyou can see the pc recognises the hardware below\n\n[cid:ade8abbe-3bdc-4a71-bb24-b27d2fe93a07]\n\nAnd here is the FreeJoy tool (i believe similar to what you attached) which also doesnt recognise the HB\n[cid:29576cd8-c0de-4845-91e5-0674b57599de]\n\nhere is the screen shot from the manager: it will not even allow me to click the handbrake as its not recognised.\n\n[cid:5f4096fb-59e0-40a7-8c9a-91a91dd7b306]",
+      "user_id": 158002360650,
+      "created_at": "2025-07-28T02:19:34Z",
+      "updated_at": "2025-07-28T02:19:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005658451,
+      "body_text": "Hi Aaron Francis,     Alternatively, I can assist you remotely right now. Please install ToDesk; no registration is required. If a registration prompt appears, simply click the close button in the top right corner. Then, please provide me with your ID and temporary password.   https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-07-28T02:25:15Z",
+      "updated_at": "2025-07-28T02:25:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005663799,
+      "body_text": "ahh its not in english - i believe mandarin - so unable to do any of this.",
+      "user_id": 158002360650,
+      "created_at": "2025-07-28T02:52:45Z",
+      "updated_at": "2025-07-28T02:52:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005664173,
+      "body_text": "[cid:199c2f47-624a-4760-a266-2b519933459d]",
+      "user_id": 158002360650,
+      "created_at": "2025-07-28T02:54:10Z",
+      "updated_at": "2025-07-28T02:54:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005666734,
+      "body_text": "Hi Aaron Francis,  The password has expired, please click Accept Connection.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-28T03:05:59Z",
+      "updated_at": "2025-07-28T03:05:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005667403,
+      "body_text": "Done",
+      "user_id": 158002360650,
+      "created_at": "2025-07-28T03:10:14Z",
+      "updated_at": "2025-07-28T03:10:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005669971,
+      "body_text": "Hi Aaron Francis,  The password has expired, please click Accept Connection.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-28T03:23:44Z",
+      "updated_at": "2025-07-28T03:23:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005670687,
+      "body_text": "?",
+      "user_id": 158002360650,
+      "created_at": "2025-07-28T03:28:47Z",
+      "updated_at": "2025-07-28T03:28:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005670873,
+      "body_text": "[cid:77f7af7a-01d4-4c78-a411-4dd98f6cecd9]",
+      "user_id": 158002360650,
+      "created_at": "2025-07-28T03:29:29Z",
+      "updated_at": "2025-07-28T03:29:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005674488,
+      "body_text": "Hello, Aaron Francis,",
+      "user_id": 158000445778,
+      "created_at": "2025-07-28T03:47:32Z",
+      "updated_at": "2025-07-28T03:47:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

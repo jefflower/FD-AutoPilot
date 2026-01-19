@@ -1,0 +1,24 @@
+{
+  "id": 9708,
+  "subject": "Order #SSN5601",
+  "description_text": "Hello to whom it may concern,\r\n\r\nPlease make sure to send my order to: 40 Radiant Loop, Dayton WA 6055.\r\nAustralia\r\n\r\nIt added a business name of Amano Florals by accident, as I made an order\r\nwith that business before using my shop account.\r\n\r\nKind regards,\r\nSean Pelias\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-01T04:25:36Z",
+  "updated_at": "2026-01-04T09:40:25Z",
+  "requester_id": 158008838267,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015612444,
+      "body_text": "Hi Sean Pelias,    Okay, I've updated the correct address for you.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-04T09:40:25Z",
+      "updated_at": "2026-01-04T09:40:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

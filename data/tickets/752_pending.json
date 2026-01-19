@@ -1,0 +1,24 @@
+{
+  "id": 752,
+  "subject": "Simsonn Manager 2.0.6 Software",
+  "description_text": "I have the Simsonn Pro X pedals and I am using the Simsonn manager 2.0.6\r\nsoftware.\r\nI would like to notify and suggest adding functionality that\r\ncan automatically select and enable a device configuration preset when the\r\nsoftware is opened. Having to Manually select and enable a preset before\r\nplaying is inconvenient. Thank you for your consideration.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-24T01:23:40Z",
+  "updated_at": "2025-06-24T05:38:50Z",
+  "requester_id": 158001753486,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003742665,
+      "body_text": "Hi Danny Rodriguez,  I just described this issue to our software engineer. The software does enable a default preset by default. Could you clarify which preset you're referring to? If possible, please share a video or screenshot to help us better understand your request. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-24T05:38:50Z",
+      "updated_at": "2025-06-24T05:38:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

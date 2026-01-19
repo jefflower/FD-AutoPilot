@@ -1,0 +1,25 @@
+{
+  "id": 11096,
+  "subject": "订单 SSN5972 配送指示",
+  "description_text": "您好，\n\n您能告知订单 SSN5972 的不同部件何时发货以及发货后的配送时间吗？\n\n谢谢\n此致，\nMartin",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-16T19:47:30Z",
+  "updated_at": "2026-01-17T06:43:35Z",
+  "requester_id": 158009305822,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017317209,
+      "body_text": "您好，Martin van Ekelenburg，您的订单已分两个包裹寄出。其中一个包裹原定运往我们的德国仓库，但由于欧洲严重暴风雪造成的道路封闭而延迟。我们正在加急配送或探索替代物流渠道，以便尽快从中国发货。另一个包裹因产品升级而缺货两周。升级现已完成，我们将在未来几天内发货。订单完成后，我们将根据延迟时长提供补偿。对于由此造成的不便，我们深表歉意。",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T06:43:35Z",
+      "updated_at": "2026-01-17T06:43:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

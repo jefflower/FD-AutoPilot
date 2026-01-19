@@ -1,0 +1,54 @@
+{
+  "id": 9050,
+  "subject": "Order #SSN5140",
+  "description_text": "Hello,\r\n\r\nCan you please advise shipping date for order #SSN5140\r\n\r\nKind Regards\r\nJason Hore\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-24T04:26:44Z",
+  "updated_at": "2026-01-16T07:17:54Z",
+  "requester_id": 158008331053,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015147699,
+      "body_text": "Hi Jason Hore,  Latest production update: The HS Pro shifter will be shipped on December 29. The schedule was slightly delayed due to issues with components before shipment. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T03:56:48Z",
+      "updated_at": "2025-12-28T03:56:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015706421,
+      "body_text": "Good afternoon,\r\n\r\nCan you please provide an update on this order and if it has been shipped?\r\n\r\nKind Regards\r\nJason Hore\r\n\r\nOn Sun, Dec 28, 2025 at 1:56 PM service@simsonn.com ",
+      "user_id": 158008331053,
+      "created_at": "2026-01-05T05:40:37Z",
+      "updated_at": "2026-01-05T05:40:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016236360,
+      "body_text": "Good morning,\r\n\r\nCan you please provide an update on this order and if it has been shipped?\r\n\r\nKind Regards\r\nJason Hore\r\n\r\n",
+      "user_id": 158008331053,
+      "created_at": "2026-01-08T00:41:47Z",
+      "updated_at": "2026-01-08T00:41:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017245549,
+      "body_text": "Hi Jason Hore,  I apologize for the delayed response.  Your package was shipped on the 7th and is currently in transit. It will arrive shortly.You can track your shipping information via the following link:  https://t.17track.net/en#nums=SF6047224438351",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T07:17:53Z",
+      "updated_at": "2026-01-16T07:17:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

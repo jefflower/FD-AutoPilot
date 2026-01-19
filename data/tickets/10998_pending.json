@@ -1,0 +1,45 @@
+{
+  "id": 10998,
+  "subject": "Order shipment",
+  "description_text": "Hello,\n\nI ordered some pedals and am looking for an update on it's delivery time. Attached is the receipt for my transaction. Any info would be helpful.\n\nThank you\n\nDan\n\nDaniel O'Brien\n\nSent from [Proton Mail](https://proton.me/mail/home) Android\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-15T15:06:11Z",
+  "updated_at": "2026-01-17T10:40:54Z",
+  "requester_id": 158009124828,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017319301,
+      "body_text": "Hi Danny O'Brien,     Your order has been shipped in two separate packages:  1. The Pro X pedals are currently sold out at our US warehouse. We have urgently arranged air freight and expect shipment on the 22nd, with an estimated delivery date around the 25th.  2. The power supply was delayed for two weeks due to a product upgrade. The upgrade is now complete, and the power supply shipped on the 14th.  We sincerely apologize for any inconvenience this may have caused. Should you have any questions, we will prioritize addressing them for you.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T08:29:21Z",
+      "updated_at": "2026-01-17T08:29:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017319722,
+      "body_text": "Thank you for the update.\n\nDaniel O'Brien\n\nSent from [Proton Mail](https://proton.me/mail/home) Android\n\n-------- Original Message --------\n",
+      "user_id": 158009124828,
+      "created_at": "2026-01-17T09:03:29Z",
+      "updated_at": "2026-01-17T09:03:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017323869,
+      "body_text": "Hi Danny O'Brien,  You're welcome. Thank you for purchasing our product. Should you have any questions in the future, please feel free to contact us. We will address them promptly.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T10:40:53Z",
+      "updated_at": "2026-01-17T10:40:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

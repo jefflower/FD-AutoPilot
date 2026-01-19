@@ -1,0 +1,35 @@
+{
+  "id": 10147,
+  "subject": "回复：订单 #SSN4951，进展如何？",
+  "description_text": "我还没有收到这个包裹，当我查看跟踪信息时，它显示的是中文，日期也很旧。",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-06T23:20:42Z",
+  "updated_at": "2026-01-11T23:56:04Z",
+  "requester_id": 158008960423,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016062450,
+      "body_text": "您好 Christy Belanger，跟踪信息现已更新。请查看跟踪记录以了解最新的运输状态。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T05:13:32Z",
+      "updated_at": "2026-01-07T05:13:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016830518,
+      "body_text": "谢谢您的翻译帮助。我收到了。",
+      "user_id": 158008960423,
+      "created_at": "2026-01-11T21:45:42Z",
+      "updated_at": "2026-01-11T21:45:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

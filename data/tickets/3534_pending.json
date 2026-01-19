@@ -1,0 +1,24 @@
+{
+  "id": 3534,
+  "subject": "order cancellation",
+  "description_text": "Hi, i ordered the wrong pedals by mistake, is it possible to cancel the\r\norder?\r\norder number SSN2555\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-05T17:09:53Z",
+  "updated_at": "2025-09-08T07:20:18Z",
+  "requester_id": 158004194357,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008246365,
+      "body_text": "Sorry, your package has already been shipped. We are unable to cancel or amend your order at this stage.  https://www.sf-express.com/chn/en/waybill/waybill-detail/SF6045895643136",
+      "user_id": 158001343601,
+      "created_at": "2025-09-08T07:20:18Z",
+      "updated_at": "2025-09-08T07:20:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

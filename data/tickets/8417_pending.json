@@ -1,0 +1,64 @@
+{
+  "id": 8417,
+  "subject": "Missing parts to product",
+  "description_text": "Hi. I received my vibration auxiliary module for racing simulator but it doesn't have any of the bits from the accessory list. Please can someone assist with this querie. Without these bolts, etc how am I supposed to build this. Thank you.\r\n\r\nTammy Williams\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-16T13:05:06Z",
+  "updated_at": "2026-01-04T11:40:10Z",
+  "requester_id": 158007832180,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014610197,
+      "body_text": "Hi tammy williams, Please provide your order number and take photos of all the items you have received. We will help you check them one by one and confirm if anything is missing. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T02:20:52Z",
+      "updated_at": "2025-12-17T02:20:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015046019,
+      "body_text": "Order number #SSN4124 The only parts we are missing is the items on the accessory list, such as the bolts and screws and wrenches. Thank you. ",
+      "user_id": 158007832180,
+      "created_at": "2025-12-24T17:40:19Z",
+      "updated_at": "2025-12-24T17:40:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015240999,
+      "body_text": "Hi tammy williams,    We apologize for the delayed response. If you're only missing the haptics installation accessory kit, we'll resend it for you—no need to worry. Please confirm as soon as possible.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-30T07:46:24Z",
+      "updated_at": "2025-12-30T07:46:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015248038,
+      "body_text": "Yes, that is what we are missing. I tried to purchase the screws and bolts locally but can't get the sizes stated. Thank you.\r\n\r\n\r\n\r\nSent from my Galaxy\r\n\r\n\r\n\r\n-------- Original message --------\r\n",
+      "user_id": 158007832180,
+      "created_at": "2025-12-30T10:55:42Z",
+      "updated_at": "2025-12-30T10:55:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015628341,
+      "body_text": "Hi tammy williams,    We apologize for the delay. Here is your logistics tracking link.  https://t.17track.net/en#nums=SF6047219403189",
+      "user_id": 158001343601,
+      "created_at": "2026-01-04T11:40:10Z",
+      "updated_at": "2026-01-04T11:40:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+{
+  "id": 4889,
+  "subject": "Simsonn Plus Brake Pedal - Replacement",
+  "description_text": "Hello,\r\n\r\nCould you please let me know how much a replacement pedal would cost me\r\nwith shipping and handling . My brake pedal strangely has quit functioning\r\nand I do not want to purchase another throttle and clutch pedal.\r\n\r\nThank you,\r\nRyan H.\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-10-15T02:50:34Z",
+  "updated_at": "2025-12-18T10:14:14Z",
+  "requester_id": 158000954883,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158002441524,
+      "body_text": "ID 为 33 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-05T07:38:27Z",
+      "updated_at": "2025-06-05T07:38:27Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158002441528,
+      "body_text": "合并来自工单33  \n      主题: Re: Simsonn Pro Plus Pedals- Software  \n      描述:  Hello, Thank you for your reply, however I already have the latest version 2.0.7 and you can see from my screenshot that it still states the version is too old. Please fix this so I can use the pedals I have purchased from you. \n \n  \n On Sun, Jun 1, 2025 at 1:29 AM General and sales enquiries <service@simsonn.com> wrote: \n \n \n Hello, I'm sorry for not replying to you in time. We are on Dragon Boat Festival holiday. You can click the link to download the latest version 2.0.7 \n https://www.simsonn.com/pages/download \n   \n   \n   \n   \n \n \n ----------Reply to Message---------- \n On Sat, May 31, 2025 07:26 AM Ryan Huestis<ryan.huestis430@gmail.com> wrote: \n \n \n Hello,   \n I have downloaded the software off of your website however it does not let me calibrate my pedals. It states that it is too old (please see screenshot attached). How can I resolve this? there is no other software or any drivers to download.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-05T07:38:28Z",
+      "updated_at": "2025-06-05T07:38:28Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158010314227,
+      "body_text": "Hi Ryan Huestis,    You can restore the firmware using Simsonn Manager 2.1.2.  Navigate to Settings → Update → Manual Firmware Update → pedals → firmware → pedals-plus.sfu.  Once the update is complete, your pedals should function properly again, and you’ll be able to recalibrate them.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-12T11:33:19Z",
+      "updated_at": "2025-10-12T11:33:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010323697,
+      "body_text": "Hello,\r\n\r\nTha issue isnt the software its the physical pedal, its not being detected\r\nwhen plugged in.\r\n\r\nOn Sun, Oct 12, 2025 at 4:33 AM service@simsonn.com ",
+      "user_id": 158000954883,
+      "created_at": "2025-10-12T15:10:34Z",
+      "updated_at": "2025-10-12T15:10:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010476910,
+      "body_text": "Hi Ryan Huestis,    Please provide your order number and a video demonstrating the issue, and we shall have our support team attempt to resolve it for you.  If you require a purchase, you may click this link to buy the clutch pedal and specify that it should be replaced with a brake.  https://www.simsonn.com/products/simsonn-racing-simulator-pedal-black",
+      "user_id": 158001343601,
+      "created_at": "2025-10-15T07:25:53Z",
+      "updated_at": "2025-10-15T07:25:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010589234,
+      "body_text": "Hello,\r\n\r\nI’ve attached a copy of my order for the pedals. After extensive testing,\r\nI’ve determined that the control box appears to be faulty. Could I please\r\nreceive a replacement unit and return the potentially defective one?\r\n\r\nThank you,\r\n\r\nRyan H.\r\n\r\n",
+      "user_id": 158000954883,
+      "created_at": "2025-10-17T01:53:14Z",
+      "updated_at": "2025-10-17T01:53:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010589244,
+      "body_text": "My\r\nOrder #\r\n111-6967964-3376222 via Amazon.com\r\n\r\nOn Thu, Oct 16, 2025 at 6:52 PM Ryan Huestis <ryan.huestis430@gmail.com>\r\nwrote:\r\n\r\n> Hello,\r\n>\r\n> I’ve attached a copy of my order for the pedals. After extensive testing,\r\n> I’ve determined that the control box appears to be faulty. Could I please\r\n> receive a replacement unit and return the potentially defective one?\r\n>\r\n> Thank you,\r\n>\r\n> Ryan H.\r\n>\r\n\r\n",
+      "user_id": 158000954883,
+      "created_at": "2025-10-17T01:53:47Z",
+      "updated_at": "2025-10-17T01:53:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010594858,
+      "body_text": "你好，Ryan Huestis，  You’ve already swapped the throttle and brake connectors and confirmed that the throttle, brake, and clutch pedals themselves are all working properly, so it seems that the control box is faulty, correct? ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-17T03:35:25Z",
+      "updated_at": "2025-10-17T03:35:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010594875,
+      "body_text": "ID 号为 125 和 4772 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-17T03:37:18Z",
+      "updated_at": "2025-10-17T03:37:18Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158010594876,
+      "body_text": "合并来自工单125  \n      主题: Re: Simsonn Pro Plus Pedals- Software  \n      描述:  Hello again, \n   \n Thank you for the detailed instructions. That’s exactly what I needed to resolve my issue and now my pedals are fantastic! \n   \n Thanks again for your help! \n \n  \n On Tue, Jun 3, 2025 at 6:25 AM support <support@simsonn.com> wrote: \n \n \n  Hello, the version you provided is too outdated.   You can manually update the firmware by following these steps:   \n \n   Go to Settings → Update → Manual Firmware Update → Select Pedals → Choose the file plus.sfu to upgrade.   After completing the update, the issue should be resolved. \n ​  \n \n \n ---- 回复的原邮件 ---- \n \n\n 发件人 \n General and sales enquiries<service@simsonn.com> \n\n\n 发送日期 \n 2025年06月03日 19:00 \n\n\n  收件人\n \n 技术支持<support@simsonn.com> \n\n\n 主题 \n 转发：Re: Simsonn Pro Plus Pedals- Software \n\n \n \n \n   \n \n \n   \n \n             ----------转发的邮件信息---------- \n \n \n发件人：Ryan Huestis<ryan.huestis430@gmail.com>\n \n \n日期：2025年6月2日 周一 9:36\n \n \n收件人：General and sales enquiries<service@simsonn.com>\n \n \n主题：Re: Simsonn Pro Plus Pedals- Software\n \n \n   \n   \n \n Hello, Thank you for your reply, however I already have the latest version 2.0.7 and you can see from my screenshot that it still states the version is too old. Please fix this so I can use the pedals I have purchased from you. \n \n  \n On Sun, Jun 1, 2025 at 1:29 AM General and sales enquiries <service@simsonn.com> wrote: \n \n \n Hello, I'm sorry for not replying to you in time. We are on Dragon Boat Festival holiday. You can click the link to download the latest version 2.0.7 \n https://www.simsonn.com/pages/download \n   \n   \n   \n   \n \n \n\n On Sat, May 31, 2025 07:26 AM Ryan Huestis<ryan.huestis430@gmail.com> wrote: \n \n \n Hello,   \n I have downloaded the software off of your website however it does not let me calibrate my pedals. It states that it is too old (please see screenshot attached). How can I resolve this? there is no other software or any drivers to download.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-17T03:37:18Z",
+      "updated_at": "2025-10-17T03:37:18Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158010594878,
+      "body_text": "合并来自工单4772  \n      主题: Simsonn Plus Brake Pedal - Replacement  \n      描述:  Hello,   \n I am not too sure what happened, my brake pedal just died on me. In the software it shows it's continuous at 100%, i have readjusted the cables/wires multiple times but the issue has not been resolved. \n   \n How much would a replacement pedal cost me? I only need 1x Braked pedal as my Throttle and Clutch are working fine. \n   \n \n \n \n   \n Thank you, \n Ryan H.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-17T03:37:19Z",
+      "updated_at": "2025-10-17T03:37:19Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158010597592,
+      "body_text": "Yes, those are correct.\r\n\r\nOn Thu, Oct 16, 2025 at 8:35 PM service@simsonn.com ",
+      "user_id": 158000954883,
+      "created_at": "2025-10-17T04:56:23Z",
+      "updated_at": "2025-10-17T04:56:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010604856,
+      "body_text": "Hi Ryan Huestis,  Here is the tracking number: SF6045976459453. You can track it via https://www.sf-international.com/cn/en/support/querySupport/waybill.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-17T07:54:22Z",
+      "updated_at": "2025-10-17T07:54:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010617068,
+      "body_text": "Thank you very much!\r\n\r\nOn Fri, Oct 17, 2025 at 12:54 AM service@simsonn.com ",
+      "user_id": 158000954883,
+      "created_at": "2025-10-17T13:42:08Z",
+      "updated_at": "2025-10-17T13:42:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

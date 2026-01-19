@@ -1,0 +1,124 @@
+{
+  "id": 1581,
+  "subject": "Request for refund",
+  "description_text": "Hello,\r\nI want to refund this baseplate that just received a few hours ago, it\r\ndoesn’t fit my desk. The order number is\r\n#SSN1960.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-16T01:53:57Z",
+  "updated_at": "2025-08-05T03:46:03Z",
+  "requester_id": 158002150767,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005114730,
+      "body_text": "​  Hi, did you have any problems with the product you received?",
+      "user_id": 158001343601,
+      "created_at": "2025-07-17T06:32:44Z",
+      "updated_at": "2025-07-17T06:32:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005145998,
+      "body_text": "No, but it’s too complicated to install and the pedals too? In the end, I\r\nchanged to different company. So I don’t need this anymore\r\n\r\nOn Wed, Jul 16, 2025 at 11:32 PM service@simsonn.com ",
+      "user_id": 158002150767,
+      "created_at": "2025-07-18T06:28:07Z",
+      "updated_at": "2025-07-18T06:28:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005146304,
+      "body_text": "Hi Dat Tran,    Sorry, the return process requires the conditions in the return policy below to be met, we are unable to make a free return for you if the product is not defective, sincere apologies. If you really need to return it, you can return it to our US warehouse by yourself and we will refund you after inspection by our warehouse staff. This is the warehouse address:   CAMZ Chino Warehouse (System Code: CAMZ)  Contact: Greg -MZ(1330006)  Phone: 480 387 3114  ADD: 14210 Telephone Ave, Chino, CA 91710 USA,Dock 4-10",
+      "user_id": 158001343601,
+      "created_at": "2025-07-18T07:36:53Z",
+      "updated_at": "2025-07-18T07:36:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005157355,
+      "body_text": "Hello, I just dropped off the package at UPS. Here is the tracking number:\r\n1ZC6000D0331141414\r\n\r\nOn Fri, Jul 18, 2025 at 12:37 AM service@simsonn.com ",
+      "user_id": 158002150767,
+      "created_at": "2025-07-18T23:31:35Z",
+      "updated_at": "2025-07-18T23:31:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005165222,
+      "body_text": "Hi Dat Tran,    Ok, we will refund you once we receive and check the item in our warehouse, sorry for the inconvenience.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-19T10:27:51Z",
+      "updated_at": "2025-07-19T10:27:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005539401,
+      "body_text": "Hello,\r\n\r\nThe product has delivered to you 2 days ago, until now, I still haven’t\r\nreceived my refund yet. Here’s the tracking number again:\r\n1ZC6000D0331141414\r\n\r\nOn Sat, Jul 19, 2025 at 3:28 AM service@simsonn.com ",
+      "user_id": 158002150767,
+      "created_at": "2025-07-25T17:31:46Z",
+      "updated_at": "2025-07-25T17:31:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005701709,
+      "body_text": "Hi Dat Tran,    Okay, I will remind the warehouse staff to check and store the goods, and I will refund you tomorrow.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-28T07:14:52Z",
+      "updated_at": "2025-07-28T07:14:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005870645,
+      "body_text": "Hello,\r\nIt’s been more than 2 days, and I still haven’t seen anything\r\n\r\nOn Mon, Jul 28, 2025 at 12:15 AM service@simsonn.com ",
+      "user_id": 158002150767,
+      "created_at": "2025-07-31T06:10:06Z",
+      "updated_at": "2025-07-31T06:10:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005878934,
+      "body_text": "Hi Dat Tran,     We have refunded your money. Please check your account. In addition, after inspection by our US warehouse staff, we have charged you a $10 fee because the pedal you returned was missing parts.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-31T07:44:36Z",
+      "updated_at": "2025-07-31T07:44:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006238673,
+      "body_text": "Hello,\r\nUntil now, I still haven’t received refund.\r\n\r\nOn Thu, Jul 31, 2025 at 12:44 AM service@simsonn.com ",
+      "user_id": 158002150767,
+      "created_at": "2025-08-05T02:01:36Z",
+      "updated_at": "2025-08-05T02:01:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006239548,
+      "body_text": "Hi Dat Tran,  The funds will be refunded to the card you used for payment, which should be this Mastercard with the number 9506. Please check.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-05T03:46:02Z",
+      "updated_at": "2025-08-05T03:46:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

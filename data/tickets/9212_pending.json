@@ -1,0 +1,114 @@
+{
+  "id": 9212,
+  "subject": "Vam Pro Issue",
+  "description_text": "I just installed my new VAM Pros, but there is no vibration coming from\r\nthem. I tested with the vibrate button in the software and it did nothing.\r\nI updated the firmware and it is still not working. Everything is plugged\r\nin correctly and I tried using all the different ports in the control box\r\nand it still doesn't work. Is there a different firmware file you can send\r\nme to see if it works?\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-26T07:07:40Z",
+  "updated_at": "2025-12-28T15:41:41Z",
+  "requester_id": 158007680158,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014120079,
+      "body_text": "Hi Trent Morales,  Please click “Offset” in the software and then recalibrate the pedals. After calibration, the blue signal bar should reach 100%. You can then proceed to bind the controls in the game. Detailed instructions can be found in the user manual. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-08T11:00:46Z",
+      "updated_at": "2025-12-08T11:00:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014156271,
+      "body_text": "I tried this and it just freezes on the offset calibration and doesn't\r\nchange anything. Same thing happened yesterday\r\n\r\nOn Mon, Dec 8, 2025, 6:00 AM support@simsonn.com ",
+      "user_id": 158007680158,
+      "created_at": "2025-12-08T22:29:32Z",
+      "updated_at": "2025-12-08T22:29:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014307189,
+      "body_text": "Hi Trent Morales,  Could you provide us with a video? Please send it via Google Drive and set the appropriate access permissions. If it is an interference issue, please follow the steps below to resolve it: ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T07:53:11Z",
+      "updated_at": "2025-12-11T07:53:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015058278,
+      "body_text": "I figured out how to solve the issue. But now I just installed my VAM Pros\r\nand they are not vibrating. The software vibration test doesn't work, and\r\nit doesn't work on any games or other softwares. How do i fix this?\r\n\r\nOn Thu, Dec 11, 2025, 2:53 AM support@simsonn.com ",
+      "user_id": 158007680158,
+      "created_at": "2025-12-25T04:23:41Z",
+      "updated_at": "2025-12-25T04:23:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015147250,
+      "body_text": "ID 为 7587 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T03:08:12Z",
+      "updated_at": "2025-12-28T03:08:12Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158015147251,
+      "body_text": "合并来自工单7587  \n      主题: Pedal Issue  \n      描述:  Clutch and throttle pedals only register 40% when fully depressed. I reinstalled firmware and software, restarted pc, unplugged plug back in, different usb ports, grounded the box, nothing works. It still only registers 40% ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T03:08:12Z",
+      "updated_at": "2025-12-28T03:08:12Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158015147264,
+      "body_text": "Hi Trent Morales,  Please provide your order number, pedal model, and whether it is connected to an independent power supply using the USB 3.0 blue port. You can try updating the firmware first. Also, please provide screenshots of the SIMSONN Manager 2.1.2 interface and photos of the vibration motor control box installation.      Launch the latest version of SIMSONN Manager 2.1.2. On the “Plus X” control unit, press and hold the “Upgrade” button. While holding the button, unplug the USB cable from the PC and then plug it back in. The software should detect the device entering “SIMSONN Flasher update mode”. In the software go to: Settings → Update → Manual Firmware Update. In the file selector choose: pedals‑firmware → pedals‑plusx.sfu. Click “Start Update” and wait until the firmware is completely written. During this process do not disconnect the USB or close the application. Once the update is finished (you’ll get a success prompt or the unit will reboot), unplug and re‑plug the USB then test the pedal device to confirm everything works correctly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T03:09:22Z",
+      "updated_at": "2025-12-28T03:09:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015147665,
+      "body_text": "Ok I did the steps and they work now. When I am in iRacing, the brake\r\nvibrates when I'm not hitting ABS. I will brake around 40% while the car is\r\nmoving and the brakes will shake like I'm hitting ABS. In the simsonn\r\nsoftware I set only ABS for the feedback. Is there a way to make them shake\r\nonly when ABS is activated?\r\n\r\nOn Sat, Dec 27, 2025, 10:09 PM service@simsonn.com ",
+      "user_id": 158007680158,
+      "created_at": "2025-12-28T03:51:35Z",
+      "updated_at": "2025-12-28T03:51:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015166171,
+      "body_text": "Hi Trent Morales,  You can also download the latest version of SimHub to enable telemetry vibration feedback. Please note that SimHub and SIMSONN Manager should not be opened at the same time to avoid conflicts. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T15:38:32Z",
+      "updated_at": "2025-12-28T15:38:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015166215,
+      "body_text": "Hi Trent Morales,  Please use the included nylon screws and nylon washers to install the motor. This is intended to electrically isolate the motor from the mounting bracket and prevent interference caused by the motor. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T15:41:41Z",
+      "updated_at": "2025-12-28T15:41:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

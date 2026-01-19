@@ -1,0 +1,74 @@
+{
+  "id": 4819,
+  "subject": "#SSN2666",
+  "description_text": "Hello,\r\n\r\nCan you tell me when i get a track and trace number?\r\nAnd when will the pedals arrive?\r\n\r\nThank you\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-10-13T09:01:44Z",
+  "updated_at": "2025-10-17T08:04:58Z",
+  "requester_id": 158004843508,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010343852,
+      "body_text": "We apologize for the inconvenience caused. Your package has been returned, and we will reship it from our German warehouse. However, the German warehouse is currently out of stock and will need a couple of days to restock. Once restocked, we will ship it to you via DHL Express. Please provide your accurate address again. Thank you for your understanding.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-13T09:22:42Z",
+      "updated_at": "2025-10-13T09:22:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010529850,
+      "body_text": "Hello,\r\n\r\nCan you give me a status update regarding my order?\r\n\r\nThank you\r\n\r\n\r\nOp 13 okt 2025 om 11:22 heeft service@simsonn.com het volgende geschreven:\r\n\r\n﻿\r\nWe apologize for the inconvenience caused. Your package has been returned, and we will reship it from our German warehouse. However, the German warehouse is currently out of stock and will need a couple of days to restock. Once restocked, we will ship it to you via DHL Express. Please provide your accurate address again. Thank you for your understanding.\r\n4819:4206036\r\n\r\n",
+      "user_id": 158004843508,
+      "created_at": "2025-10-16T04:52:01Z",
+      "updated_at": "2025-10-16T04:52:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010544774,
+      "body_text": "Hi Erik van Empelen,      We shall arrange for your parcel to be re-shipped via courier. Please verify your address details to prevent the parcel being returned again.  Erik Van Empelen  Celebesstraat 52  5014 BS Tilburg  The Netherlands  +31 6 40893318",
+      "user_id": 158001343601,
+      "created_at": "2025-10-16T07:26:01Z",
+      "updated_at": "2025-10-16T07:26:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010549604,
+      "body_text": "Hello,\r\n\r\nI verify my adress\r\nIt is correct shown in this email\r\n\r\nErik van Empelen\r\nCelebesstraat 52\r\n5014 BS Tilburg\r\n\r\nThank you\r\n\r\nOp 16 okt 2025 om 09:26 heeft service@simsonn.com het volgende geschreven:\r\n\r\n﻿\r\nHi Erik van Empelen,\r\n\r\nWe shall arrange for your parcel to be re-shipped via courier. Please verify your address details to prevent the parcel being returned again.\r\nErik Van Empelen\r\nCelebesstraat 52\r\n5014 BS Tilburg\r\nThe Netherlands\r\n+31 6 40893318\r\n",
+      "user_id": 158004843508,
+      "created_at": "2025-10-16T09:10:25Z",
+      "updated_at": "2025-10-16T09:10:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010553021,
+      "body_text": "Hi Erik van Empelen,    We have arranged for a replacement to be sent to you and have provided a clutch as compensation. We apologise for any inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-16T09:39:52Z",
+      "updated_at": "2025-10-16T09:39:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010557355,
+      "body_text": "Hello,\r\n\r\nThank you so much for your help and reply.\r\nI hope to see the pedals very quickly.\r\n\r\n\r\nOp 16 okt 2025 om 11:40 heeft service@simsonn.com het volgende geschreven:\r\n\r\n﻿\r\nHi Erik van Empelen,\r\n\r\nWe have arranged for a replacement to be sent to you and have provided a clutch as compensation. We apologise for any inconvenience caused.\r\n\r\n\r\n\r\n",
+      "user_id": 158004843508,
+      "created_at": "2025-10-16T10:44:58Z",
+      "updated_at": "2025-10-16T10:44:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

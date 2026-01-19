@@ -1,0 +1,74 @@
+{
+  "id": 3162,
+  "subject": "Pedal Haptic Order",
+  "description_text": "Hello,\r\n           I recently placed an order for 2 haptic motors under the name\r\nBrenden Moennig. The adress is 216 East Prospect, Pierre, South Dakota,\r\n57501. I thought I attached my email to the order but I have no order\r\nconfirmation other than the charge on my card now that I’ve refreshed the\r\npage. When I enter my account email on the Simsonn site, it shows I have no\r\norders. Is there anyway you could provide tracking information for my order\r\nplease?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-27T04:23:08Z",
+  "updated_at": "2025-08-30T03:33:50Z",
+  "requester_id": 158003627741,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007590951,
+      "body_text": "Hi Brenden Moennig,  Don’t worry. Please provide the date and time of your payment, and we may be able to locate your order and then get back to you with the tracking information. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-27T04:56:51Z",
+      "updated_at": "2025-08-27T04:56:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007629462,
+      "body_text": "It was yesterday evening around 11pm\r\n\r\nOn Tue, Aug 26, 2025 at 11:57 PM service@simsonn.com ",
+      "user_id": 158003627741,
+      "created_at": "2025-08-27T13:34:13Z",
+      "updated_at": "2025-08-27T13:34:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007667004,
+      "body_text": "It would be 9/27/25 @ around 11pm\r\n\r\n",
+      "user_id": 158003627741,
+      "created_at": "2025-08-27T20:24:44Z",
+      "updated_at": "2025-08-27T20:24:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007667082,
+      "body_text": "9/26/25 I’m sorry, still 11pm\r\n\r\n",
+      "user_id": 158003627741,
+      "created_at": "2025-08-27T20:25:31Z",
+      "updated_at": "2025-08-27T20:25:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007683113,
+      "body_text": "Hello, your email address was entered incorrectly, causing the order confirmation to fail. We have updated it to the correct address and resent the shipping notification. Please check your inbox.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-28T03:33:29Z",
+      "updated_at": "2025-08-28T03:33:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007777447,
+      "body_text": "That's great, thank you for fixing it I can see my order now. Thank you!!\r\n\r\nOn Wed, Aug 27, 2025 at 10:33 PM service@simsonn.com ",
+      "user_id": 158003627741,
+      "created_at": "2025-08-29T16:29:01Z",
+      "updated_at": "2025-08-29T16:29:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

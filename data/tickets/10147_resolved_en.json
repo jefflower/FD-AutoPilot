@@ -1,0 +1,35 @@
+{
+  "id": 10147,
+  "subject": "Re: Order #SSN4951, how did it go?",
+  "description_text": "I have not received this yet and when I look at the tracking it is in what looks like Chinese with a very old date on it.",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-06T23:20:42Z",
+  "updated_at": "2026-01-11T23:56:04Z",
+  "requester_id": 158008960423,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016062450,
+      "body_text": "Hi Christy Belanger, The tracking information has now been updated. Please check the tracking records to see the latest shipping status.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T05:13:32Z",
+      "updated_at": "2026-01-07T05:13:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016830518,
+      "body_text": "Thank you for the help in translating. I have received it.",
+      "user_id": 158008960423,
+      "created_at": "2026-01-11T21:45:42Z",
+      "updated_at": "2026-01-11T21:45:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

@@ -1,0 +1,44 @@
+{
+  "id": 852,
+  "subject": "Simsonn Pro Plus pedals show DISCONNECTED in manager???",
+  "description_text": "Hi, \r\n \r\nI just mounted my pedals, I first bought the Pro Plus for $179, then I ordered the pedal plate, next I ordered the rumble motors.  After that I also ordered the better insulated control box to plug in the rumble motors and now... Once I mounted the pedals and plugged in the USB cable I still get DISCONNECTED in the Simsonn Manager software. \r\n\r\nThis is really frustrating as I wanted to test them and make a video for them :(\r\n\r\nPlease help.\r\n\r\nEdgar Sanchinelli\r\nFritosportracing.weebly.com\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-26T06:01:05Z",
+  "updated_at": "2025-06-26T23:54:41Z",
+  "requester_id": 158001796395,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003845638,
+      "body_text": "Hi EDGAR SANCHINELLI,    Please install the Todesk software so I can assist you remotely. It’s a secure tool that doesn’t require registration—just provide me with your ID and temporary access code. Let’s schedule a time that works best for you.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-26T09:11:11Z",
+      "updated_at": "2025-06-26T09:11:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003921789,
+      "body_text": "Hi,\r\n\r\nI appreciate the reply, however I work in IT support.  I don’t like that your first step is to remote into my PC.  I got the pedals to work with the old open non-insulated control box and the old software BUT that means I can’t utilize the rumble motors.  I tested the pedals in iRacing.  All I need to know is if they will work with the “new control box and the vibration rumble motors as seen in the picture”\r\n\r\nJust tell me what I need to do for the Simsonn manager to see them as connected.\r\n\r\nI can troubleshoot myself if you can just tell me what I can do for them to work on the NEW control box to be recognized.\r\n\r\nPlease explain what you would do remotely that would benefit me aside from me running firmware upgrades or software?\r\n\r\nThe website clearly shows and state these pedals would work with the newest Simsonn manager.\r\n\r\nThank you \r\n\r\nSent from\r\n\r\nSanchinelli\r\n\r\n\r\n> ",
+      "user_id": 158001796395,
+      "created_at": "2025-06-26T14:00:28Z",
+      "updated_at": "2025-06-26T14:00:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003933184,
+      "body_text": "Hello,\r\n\r\nI would like to apologize for my frustration earlier on.  Working in IT support I should not have reacted that way.  However, I was able to install version 2.0.8 of the Simsonn manager and that one recognized the pedals and VAM motors.  I have now tested them and all looks to be working great.\r\n\r\nI will make a video covering what I did in hopes it helps PRO owners who upgrade the pedals to higher level ones through the upgrade packages you provide.\r\n\r\nHope you have a great day \r\n\r\nFritosportracing.weebly.com\r\n\r\nSent from\r\n\r\nSanchinelli\r\n\r\n\r\n> ",
+      "user_id": 158001796395,
+      "created_at": "2025-06-26T18:58:47Z",
+      "updated_at": "2025-06-26T18:58:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

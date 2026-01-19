@@ -1,0 +1,44 @@
+{
+  "id": 7410,
+  "subject": "Pro x ultra",
+  "description_text": "Hola!!!!\r\n\r\nLos pedales pro x ultra, está incluido la barra delantera de led? O es\r\naparte comprando la base.\r\n\r\nGracias\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-04T12:34:38Z",
+  "updated_at": "2025-12-04T12:50:26Z",
+  "requester_id": 158007539362,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013388035,
+      "body_text": "Hi Jesus Jimenez,     The baseplate includes the led strip module; if the base is not purchased, it is not included, as it requires installation onto the baseplate .",
+      "user_id": 158001343601,
+      "created_at": "2025-12-04T12:37:50Z",
+      "updated_at": "2025-12-04T12:37:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013388182,
+      "body_text": "Se puede adquirir solo la barra delantera? Ya tengo una base que es\r\ncompatible con los pedales.\r\n\r\nEl jue., 4 dic. 2025 13:38, support@simsonn.com ",
+      "user_id": 158007539362,
+      "created_at": "2025-12-04T12:42:05Z",
+      "updated_at": "2025-12-04T12:42:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013388444,
+      "body_text": "Hi Jesus Jimenez,      You may purchase this product and request to replace it with LED strips.  https://www.simsonn.com/products/carbon-fiber-heel-plate-1",
+      "user_id": 158001343601,
+      "created_at": "2025-12-04T12:50:25Z",
+      "updated_at": "2025-12-04T12:50:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": 10536,
+  "subject": "Vam Pro Combination with Simjack UT Pedals and LMU compatibility",
+  "description_text": "Dear Simsonn Team,\r\n\r\ncan i use the Simjack Pedals directly with your Control Box, if yes with\r\nwhat one, Plus X or Pro X control box? And how good is compability of the\r\nVam Pro with Le Mans Ultimate? I want to make them rumble based on ABS and\r\nTC data.\r\n\r\nLooking forward to your reply.\r\n\r\nBest regards\r\n\r\nAlexander\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-10T23:02:07Z",
+  "updated_at": "2026-01-14T02:11:38Z",
+  "requester_id": 158009019435,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016765907,
+      "body_text": "Hi Alexander Hetzel,  By purchasing the PlusX controller box, you will be able to use it with SimJack pedals. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T02:45:14Z",
+      "updated_at": "2026-01-11T02:45:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016831854,
+      "body_text": "Dear simsonn team,\r\n\r\nI am sorry i confused my brand of pedals, i have simruito pedals. can i use\r\nthem with the PlusX Controller Box as well?\r\n\r\nAnd second question, can i mount the Vam to the throttle and the Vam Pro to\r\nthe brake with your included adapters?\r\n\r\nLooking forward to your reply!\r\n\r\nBest regards,\r\n\r\nAlex\r\n\r\nSent with Notion Mail <https://www.notion.so/product/mail>\r\n\r\n",
+      "user_id": 158009019435,
+      "created_at": "2026-01-11T23:18:34Z",
+      "updated_at": "2026-01-11T23:18:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017055271,
+      "body_text": "Hi Alexander Hetzel,  In theory, it is supported, but you need the PlusX control box. Also, both VAM and VAM Pro are compatible with all of our pedal models. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-14T02:11:38Z",
+      "updated_at": "2026-01-14T02:11:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

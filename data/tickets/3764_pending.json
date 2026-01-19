@@ -1,0 +1,114 @@
+{
+  "id": 3764,
+  "subject": "Issues with VAM Pro",
+  "description_text": "Hello,\r\n\r\nI have been using Simsonn pedals and have been very satisfied. I ordered\r\nthe VAM Pro motors, and they arrived today. Unfortunately, after mounting\r\nthem and plugging them in, I can't get them to work.\r\n\r\nI have tried all the steps found on Google (upgrading software, firmware,\r\ngrounding the control box, closing SimHub and/or Simsonn Manager, etc.). I\r\nget zero power whatsoever to the motors, even during SimHub testing.\r\n\r\nI have tried both USB 3.0 and USB 2.0. Any other things I can try?\r\n\r\nThanks!\r\n\r\n*Tim Egorov*\r\n206.349.7996\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-09-12T23:34:32Z",
+  "updated_at": "2025-09-13T10:07:20Z",
+  "requester_id": 158004488280,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008614293,
+      "body_text": "picture of what my Simsonn manager looks like. it will not let me pick VAM Pro",
+      "user_id": 158004488280,
+      "created_at": "2025-09-12T23:56:15Z",
+      "updated_at": "2025-09-12T23:56:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158008615297,
+      "body_text": "Hi Tim E,    Locate the upgrade button on the PlusX controller and hold it down continuously, then reconnect the USB cable. Once Simsonn Manager shows that it has entered firmware upgrade mode, you can release the button.  Next, follow these steps:    In the software, go to Settings → Update → Manual Firmware Update → pedals-firmware → pedals-plusx.sfu.    After the update is completed, connect the USB to the USB 3.0 blue port at the back of your PC, then plug in the power cable.    Test the device again to ensure it is functioning properly.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-13T01:16:36Z",
+      "updated_at": "2025-09-13T01:16:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008615761,
+      "body_text": "Thank you for your prompt response!\r\n\r\nI’m a bit confused by your email. I followed your instructions and\r\nsuccessfully updated the firmware (plusx.sfu). Unfortunately, the pedals\r\nhad to be connected to USB in order to access “manual update” and begin the\r\nprocess.\r\n\r\nAs such, I was not able to follow steps 2 and 3 exactly how you mentioned\r\nbelow. I’m not sure if this confusion is why your advice did not help, but\r\nsadly it did not fix the issue. I still see “Power Disconnect” shown like\r\nit was in my original email.\r\n\r\nAny other suggestions?\r\n\r\n*Tim Egorov*\r\n206.349.7996\r\n\r\n\r\nOn Fri, Sep 12, 2025 at 6:16 PM support@simsonn.com ",
+      "user_id": 158004488280,
+      "created_at": "2025-09-13T02:10:19Z",
+      "updated_at": "2025-09-13T02:10:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008615773,
+      "body_text": "One more thing: if I try a different USB port at this point in the process,\r\nit not only doesn’t recognize the VAM Pros, but also the pedals themselves.\r\nNot sure if that’s helpful, but figured I’d let you know.\r\n\r\nThanks again,\r\n\r\n*Tim Egorov*\r\n206.349.7996\r\n\r\n\r\n",
+      "user_id": 158004488280,
+      "created_at": "2025-09-13T02:12:19Z",
+      "updated_at": "2025-09-13T02:12:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008615893,
+      "body_text": "Hi Tim E,  Please install ToDesk software — no registration is required. If a registration window pops up, simply click the close button at the top right corner. Then, please share the ID and temporary verification code with us. We will remotely assist you in checking and testing the device, which will allow us to resolve the issue more quickly.      https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-09-13T02:26:51Z",
+      "updated_at": "2025-09-13T02:26:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008615951,
+      "body_text": "ToDesk:\r\ndevice ID:582 862 326\r\nTemporary password:zvw6hmu2\r\n\r\n*Tim Egorov*\r\n206.349.7996\r\n\r\n\r\nOn Fri, Sep 12, 2025 at 7:27 PM support@simsonn.com ",
+      "user_id": 158004488280,
+      "created_at": "2025-09-13T02:30:52Z",
+      "updated_at": "2025-09-13T02:30:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008616260,
+      "body_text": "Hi Tim E,  If the issue persists, kindly send me your contact name, phone number, address, and order information via email, and we will arrange to send you a replacement PlusX controller. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-13T02:58:03Z",
+      "updated_at": "2025-09-13T02:58:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008616292,
+      "body_text": "Name: Tim Egorov\r\nPhone number: 206-349-7996\r\nAddress: 1909 Franklin Ave E, #307, Seattle WA 98102\r\nOrder information:\r\nI ordered via Amazon. Order number is 113-9267706-8328222\r\n\r\nThanks!\r\n\r\n*Tim Egorov*\r\n206.349.7996\r\n\r\n\r\nOn Fri, Sep 12, 2025 at 7:58 PM support@simsonn.com ",
+      "user_id": 158004488280,
+      "created_at": "2025-09-13T03:01:36Z",
+      "updated_at": "2025-09-13T03:01:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008616418,
+      "body_text": "Will I happen to get an ETA on the replacement part? Because now my brake\r\npedal only goes to 30% pressure no matter how much I calibrate or mess with\r\nthe settings.\r\n\r\nDon’t mean to be a pain, but now I can’t race at all :(\r\n\r\nThanks again!\r\n\r\n*Tim Egorov*\r\n206.349.7996\r\n\r\n\r\n",
+      "user_id": 158004488280,
+      "created_at": "2025-09-13T03:15:53Z",
+      "updated_at": "2025-09-13T03:15:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008632822,
+      "body_text": "Hi Tim E,  Here is the tracking number: SF6045912070681. You can track it viahttps://www.sf-international.com/cn/en/support/querySupport/waybill ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-13T10:07:20Z",
+      "updated_at": "2025-09-13T10:07:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": 7,
+  "subject": "VAM Pro Question",
+  "description_text": "Hi,\r\n\r\nI’d like to order the VAM Pro haptics, but I want to confirm compatibility.\r\nAside from requiring my own mounting solution, will the haptic system work\r\nwith my fanatec pedals/wheelbase?\r\n\r\nWould I just use the Simsonn control box for the haptic motors? Any\r\nhelp/confirmation would be great, and I will place my order once I’m\r\nconfident they will work for me.\r\n\r\nThank you!\r\n\r\nCam\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-03T23:40:25Z",
+  "updated_at": "2025-06-05T06:59:10Z",
+  "requester_id": 158000954783,
+  "responder_id": null,
+  "cc_emails": [
+    "service@simsonn.com"
+  ],
+  "conversations": [
+    {
+      "id": 158002431988,
+      "body_text": "Hi Cam Kinsman,  It is compatible with Fanatec’s pedal control box, as they use the same connector. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-05T06:35:38Z",
+      "updated_at": "2025-06-05T06:35:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002432057,
+      "body_text": "Thanks, what if I want to use your control box independently? With just the\r\nhaptics connected to it? This would work too right?\r\n\r\nOn Wed, Jun 4, 2025 at 11:35 PM support@simsonn.com ",
+      "user_id": 158000954783,
+      "created_at": "2025-06-05T06:54:03Z",
+      "updated_at": "2025-06-05T06:54:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158002432077,
+      "body_text": "Hi Cam Kinsman,  Yes, that’s possible. You only need to use our control box and motor to receive telemetry data and handle vibration feedback. You may need to order the PlusX control box and a 24V power supply, and please specify whether you need a US, EU, or UK plug. The Fanatec control box will still handle the pedal signal output to the game, and the two systems will not interfere with each other. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-05T06:59:10Z",
+      "updated_at": "2025-06-05T06:59:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

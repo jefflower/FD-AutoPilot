@@ -1,0 +1,115 @@
+{
+  "id": 1258,
+  "subject": "帮助",
+  "description_text": "帮助：踏板在Simsson管理器中未被识别，但在Windows中被识别",
+  "status": 4,
+  "priority": 4,
+  "created_at": "2025-07-06T04:45:24Z",
+  "updated_at": "2025-07-07T11:21:06Z",
+  "requester_id": 158001773286,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004452418,
+      "body_text": "你好，求助",
+      "user_id": 158001773286,
+      "created_at": "2025-07-07T01:28:25Z",
+      "updated_at": "2025-07-07T01:28:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158004452977,
+      "body_text": "你好 G B，请问您购买的是哪款踏板？请使用VKB工具进行快速检查。如果问题与缺少证书有关，我可以通过Todesk远程协助您。无需注册，只需提供您的ID和临时密码。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T03:46:19Z",
+      "updated_at": "2025-07-07T03:46:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004453192,
+      "body_text": "我购买了pro x ultra 踏板，油门、刹车、离合器……我不知道如何使用VKB工具，我不太懂电脑。我也不知道是不是缺少证书。",
+      "user_id": 158001773286,
+      "created_at": "2025-07-07T04:35:08Z",
+      "updated_at": "2025-07-07T04:35:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004453333,
+      "body_text": "你好 G B，请使用我提供的链接下载并安装Todesk。启动软件后，如果您看到注册页面，只需点击右上角的关闭按钮即可进入主界面。进入主界面后，请截取您的ID和临时密码的屏幕截图，然后发送给我。届时我将能够提供远程协助。 https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T04:55:43Z",
+      "updated_at": "2025-07-07T04:55:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004453448,
+      "body_text": "好的，我会尝试下载",
+      "user_id": 158001773286,
+      "created_at": "2025-07-07T05:14:15Z",
+      "updated_at": "2025-07-07T05:14:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004453764,
+      "body_text": "我看不懂中文",
+      "user_id": 158001773286,
+      "created_at": "2025-07-07T06:06:40Z",
+      "updated_at": "2025-07-07T06:06:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004454278,
+      "body_text": "你好 G B，界面上的这两条信息就足够了，谢谢。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T07:39:06Z",
+      "updated_at": "2025-07-07T07:39:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004454428,
+      "body_text": "我只能看到这个号码。我应该尝试下载英文版Todesk吗？",
+      "user_id": 158001773286,
+      "created_at": "2025-07-07T08:08:36Z",
+      "updated_at": "2025-07-07T08:08:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004455312,
+      "body_text": "你好 G B，点击这个按钮，它就会出现。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T10:53:17Z",
+      "updated_at": "2025-07-07T10:53:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004455423,
+      "body_text": "我把踏板连接好了……谢谢你",
+      "user_id": 158001773286,
+      "created_at": "2025-07-07T11:17:29Z",
+      "updated_at": "2025-07-07T11:17:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

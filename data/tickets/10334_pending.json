@@ -1,0 +1,24 @@
+{
+  "id": 10334,
+  "subject": "#SSN5441 order",
+  "description_text": "Hey! hope everything is alright with you!\r\n\r\nI would like to ask about the order that I have placed, so far I can’t see any activity on the items except the small items being fulfilled but tracking number shows nothing specific yet.\r\n\r\nOrder number: #SSN5441\r\n\r\nWould appreciate information on when can the shipping be expected\r\n\r\nHave a good day!\r\nMáté Mozsolics\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2026-01-08T18:50:51Z",
+  "updated_at": "2026-01-17T02:48:16Z",
+  "requester_id": 158008987066,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017310754,
+      "body_text": "Hi Máté Mozsolics,  We sincerely apologize for any inconvenience caused. Due to the New Year holiday and the subsequent surge in orders, a significant backlog of unprocessed emails has resulted in delayed responses. We extend our deepest apologies once again.  Your order was shipped in two separate packages. One package destined for our German warehouse has been delayed due to road closures caused by severe snowstorms in Europe. We are expediting delivery or exploring alternative logistics channels to ship from China as soon as possible.  Once the order is fulfilled, we will provide compensation based on the duration of the delay. We sincerely apologize for any inconvenience caused.  The other package contained products that were recalled due to quality issues, resulting in a two-week stock shortage. The new products have been prepared and shipped on the 13th.  You can track your shipping information via the following link:  https://t.17track.net/en#nums=SF6047207531943  Thank you for purchasing our product. Should you have any questions in the future, please feel free to contact us. We will address them promptly.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T02:48:16Z",
+      "updated_at": "2026-01-17T02:48:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

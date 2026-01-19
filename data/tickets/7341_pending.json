@@ -1,0 +1,54 @@
+{
+  "id": 7341,
+  "subject": "Order #SSN3892 return",
+  "description_text": "Hello\r\n\r\nI would like to return these pedals as we have tried multipule times to try to setup the pedals but nothing changes and it so difficult to move the pedals enough to get the brake to work.\r\nThe 2 step braking does not seem to work at all and cannot be felt in the brake pedal.We have tried to change the elastomers on the brake pedal and little to no difference.We have tried to adjust the hydraulic cylinder on brake pedal and it is not very linear.We have tried in the software and little to no difference.\r\n\r\nI would like to get a refund and have these pedals returned.\r\nThanks \r\n\r\nMark A S Forbes  \r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-03T14:03:53Z",
+  "updated_at": "2025-12-06T05:38:10Z",
+  "requester_id": 158007476935,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013365457,
+      "body_text": "Hi Mark Forbes,     Hello, please refer to the manual for the following steps: first, remove the 10mm limit block inside the brake spring, then install the red damper. Next, click “Offset” in the software to reset the pedal to zero, and then recalibrate the pedal. This will make the pedal feel softer and smoother.  Please note that you need to use the calibration software rather than applying full force to compress the damper. The purpose of calibration is to ensure that the brake pedal functions properly even when using around 15kg of force.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T02:12:03Z",
+      "updated_at": "2025-12-04T02:12:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013375915,
+      "body_text": "Hello\r\nI have taken the 10mm limit block out from inside the brake spring and the red damper were already installed.Carried out the post and calibration and the brake pedal is still takes to much to move.The hydraulic damper is set to 0 and the lowest force in the simsonn manger was set.\r\nI would like to return these pedals as I cannot use them due to to high force required to move the pedal. \r\nThank\r\nMark Forbes\r\nYahoo Mail: Search, organise, conquer \r\n \r\n  ",
+      "user_id": 158007476935,
+      "created_at": "2025-12-04T08:04:33Z",
+      "updated_at": "2025-12-04T08:04:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013457827,
+      "body_text": "Hello\r\nI appreciate the assistance to try to resolve the stiffness of pedals but after trying what you said this had not resolved the issue and I want to return the pedals.\r\nPlease provide the return label so the process can be started. \r\nMany thanksMark Forbes\r\n\r\nYahoo Mail: Search, organise, conquer \r\n \r\n  ",
+      "user_id": 158007476935,
+      "created_at": "2025-12-05T07:27:48Z",
+      "updated_at": "2025-12-05T07:27:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013767845,
+      "body_text": "Hi Mark Forbes, Please specify the exact issue; otherwise, it will not meet the product’s return policy. You can record a video showing the problem and send it to us via Google Drive, making sure the access permissions are properly set. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-06T05:38:09Z",
+      "updated_at": "2025-12-06T05:38:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

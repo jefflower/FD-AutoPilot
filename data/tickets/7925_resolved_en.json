@@ -1,0 +1,35 @@
+{
+  "id": 7925,
+  "subject": "Unable to Register My Pedals – Plus X Pedal Control Box",
+  "description_text": "Hi Simsonn Support Team,\n\nI’m having trouble registering my pedals and would like your assistance.\n\nhttps://www.facebook.com/reel/23910970038552757\n\nI have a similar issue to the one shown in this video (referencing the same\nregistration steps). My setup uses the *Plus X Pedal Control Box*, and I\nfollowed the guidelines the image I attached. However, during the process I\nencountered an error message saying something like *“this is not an update\nfor pedal”*.\n\nAdditional details:\n\n   -\n\n   *SIMSONN Manager version:* 2.1.2\n   -\n\n   The manager can read my pedals without any problem, but I still cannot\n   complete the registration.\n\n   -\n\n   I am using VRAM Pro haptic as well\n\nCould you please advise on how to resolve this issue or let me know if\nthere’s anything else I should try?\n\nThank you for your help!\n\nBest regards,\nFrancis\n\n[image: image.png]",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-10T21:14:32Z",
+  "updated_at": "2025-12-11T05:26:57Z",
+  "requester_id": 158007748595,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014297161,
+      "body_text": "Hi wf choi, You only need to reinstall the firmware. Please follow the procedure and choose the plusx.sfu file to update and restore the system.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T01:16:23Z",
+      "updated_at": "2025-12-11T01:16:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014299417,
+      "body_text": "It work for me, thank you",
+      "user_id": 158007748595,
+      "created_at": "2025-12-11T03:26:10Z",
+      "updated_at": "2025-12-11T03:26:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

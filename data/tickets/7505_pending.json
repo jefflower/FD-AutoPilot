@@ -1,0 +1,66 @@
+{
+  "id": 7505,
+  "subject": "Regarding Order #SSN4245",
+  "description_text": "Hello,\r\n\r\nI've ordered the Plus X pedals order number: #SSN4245\r\nI've yet to get confirmation of shipping in 4 days so was just wondering if the mail might have gotten stuck in my work email folder. (Which I can't see, unfortunately.)\r\n\r\nI've CC:d my private email here.\r\n\r\nPerhaps none have been sent out but just wanted to double check. Obviously, I'm a bit inpatient here and eager to get started with my new pedals. ?\r\n\r\nBest Regards,\r\n\r\n/Richard\r\n\r\nThis email message (including its attachments) is confidential and may contain privileged information and is intended solely for the use of the individual and/or entity to whom it is addressed. If you are not the intended recipient of this e-mail you may not disseminate, distribute or copy this e-mail (including its attachments), or any part thereof. If this e-mail is received in error, please notify the sender immediately by return e-mail and make sure that this e-mail (including its attachments), and all copies thereof, are immediately deleted from your system. Please further note that when you communicate with us via email or visit our website we process your personal data. See our privacy policy for more information about how we process it: https://www.volvogroup.com/en-en/privacy.html\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-05T14:49:26Z",
+  "updated_at": "2025-12-22T12:24:56Z",
+  "requester_id": 158007661993,
+  "responder_id": 158001343601,
+  "cc_emails": [
+    "richardsoderberg@live.se"
+  ],
+  "conversations": [
+    {
+      "id": 158013758297,
+      "body_text": "Hi Richard Söderberg,  Hello, due to the increased volume of orders during Black Friday, there has been a slight delay in shipping. I have seen your order, and please rest assured that we will process and ship it to you as soon as possible. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-06T05:00:06Z",
+      "updated_at": "2025-12-06T05:00:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014684920,
+      "body_text": "Hello,\r\n\r\nThis has gone way to long now without any information.\r\nIf I don't see these pedals in my mailbox by end of the week I will call American Express to refute the order.\r\n\r\nBest Regards,\r\n________________________________\r\nFrån: service@simsonn.com ",
+      "user_id": 158007859525,
+      "created_at": "2025-12-18T11:06:22Z",
+      "updated_at": "2025-12-18T11:06:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014749278,
+      "body_text": "Hi Richard Söderberg,      Your order was originally scheduled to ship from our German warehouse, but due to transportation delays, the goods arrived later than expected. To ensure delivery before Christmas, we've had to arrange UPS express shipping. However, customs duties may apply. Do you need it before Christmas?",
+      "user_id": 158001343601,
+      "created_at": "2025-12-19T09:13:36Z",
+      "updated_at": "2025-12-19T09:13:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014754320,
+      "body_text": "Hello,\r\n\r\nObviously I would prefer to not have issues with customs.\r\n\r\nSo the goods have arrived in Germany then since you are writing in past tense.\r\nSo when can I expect the goods to come from Germany?\r\n\r\n________________________________\r\nFrån: service@simsonn.com ",
+      "user_id": 158007859525,
+      "created_at": "2025-12-19T11:05:20Z",
+      "updated_at": "2025-12-19T11:05:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014879413,
+      "body_text": "Hi Richard Söderberg,    The goods have arrived at the warehouse today. We are currently arranging for them to be shelved and shipped via DHL Express. We will update you with the tracking number within the next couple of days.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-22T12:24:55Z",
+      "updated_at": "2025-12-22T12:24:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

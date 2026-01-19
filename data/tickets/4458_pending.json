@@ -1,0 +1,44 @@
+{
+  "id": 4458,
+  "subject": "Order SSN2812",
+  "description_text": "Hi, \r\nThis order was confirmed on October 2nd, with express shipping. When can I expect delivery?\r\nI look forward to hearing from you.\r\nDavid \r\n\r\nSent from my iPhone\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-05T07:16:08Z",
+  "updated_at": "2025-10-09T10:05:32Z",
+  "requester_id": 158005406610,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010003413,
+      "body_text": "Hi David Koffman,      We apologize for the delay. We are currently on an 8-day holiday break and will ship your order on the 9th. Thank you for your understanding and patience.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-07T08:41:57Z",
+      "updated_at": "2025-10-07T08:41:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010012368,
+      "body_text": "Thanks for the response. \r\nI feel there’s an oversight on your part here and the delay is unfortunate for me because I needed the pedals quickly. \r\nI paid for a 2-3 day delivery. With that in mind please can you refund the express delivery charge?\r\n\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158005406610,
+      "created_at": "2025-10-07T11:05:51Z",
+      "updated_at": "2025-10-07T11:05:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010141511,
+      "body_text": "Hi David Koffman,    Alright, we'll refund the extra shipping charges and continue using express logistics for your shipment. Here's your tracking link: https://www.sf-international.com/gb/en/support/querySupport/waybill?No=SF3283812090148",
+      "user_id": 158001343601,
+      "created_at": "2025-10-09T10:05:32Z",
+      "updated_at": "2025-10-09T10:05:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

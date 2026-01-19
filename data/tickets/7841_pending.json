@@ -1,0 +1,24 @@
+{
+  "id": 7841,
+  "subject": "Full order not delivered",
+  "description_text": "Hello,\r\n\r\nThis is regarding my order SSN3648. I received only the base plate in the mail but not the pedals. Could you please verify if the pedals were shipped, and if so provide the tracking information? If the pedals were not shipped, could you please ship them?\r\n\r\nKind Regards,\r\nVishnu \r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-10T05:09:28Z",
+  "updated_at": "2025-12-18T01:53:15Z",
+  "requester_id": 158007738197,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014432697,
+      "body_text": "Hi Vishnu Vijayan,  The base plate may be out of stock, so we might ship items separately. We will check and get back to you as soon as possible. If the base plate has not been shipped yet, we will send it promptly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-13T06:09:27Z",
+      "updated_at": "2025-12-13T06:09:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

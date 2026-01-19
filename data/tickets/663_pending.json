@@ -1,0 +1,64 @@
+{
+  "id": 663,
+  "subject": "6+R Shifter",
+  "description_text": "Hello,\r\n\r\nCan you tell me how the 6+R shifter mounts? Are there mounting holes in the bottom? If so, what are the dimension of the holes? Can you provide a picture of the bottom of the shifter?\r\n\r\nThanks,\r\n\r\nJeff Sparks\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-21T00:35:19Z",
+  "updated_at": "2025-06-23T04:23:02Z",
+  "requester_id": 158001696991,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003677513,
+      "body_text": "Hi captain. sparks@comcast. net,  Which shifter model did you purchase? Please provide a picture of the shifter and the position of your mounting bracket. The shifter can be fixed by screwing upwards from the bottom plate. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-21T15:15:19Z",
+      "updated_at": "2025-06-21T15:15:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003677602,
+      "body_text": "I have not yet purchased a shifter. I'm considering the 6+R shifter but want to know what options there are for mounting it. I'm asking for a picture of the bottom of the shifter or the dimensions of the holes in the bottom plate.\r\n\r\nThank you.\r\n\r\nJeff Sparks\r\n________________________________\r\n",
+      "user_id": 158001696991,
+      "created_at": "2025-06-21T15:54:56Z",
+      "updated_at": "2025-06-21T15:54:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003679519,
+      "body_text": "Hi captain. sparks@comcast. net,     Here are the bottom view and dimensions of the 6+R shifter. You can refer to the link for more detailed information.       https://www.simsonn.com/products/simsonn-racing-simulator-hexagonal-shifter",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T01:36:15Z",
+      "updated_at": "2025-06-22T01:36:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003680699,
+      "body_text": "Thank you . This is the information that I was looking for. However, the link doesn't tell me what the two silver buttons on the shifter are for.\r\n Can you tell me what they do?\r\nThanks.\r\n\r\n________________________________\r\n",
+      "user_id": 158001696991,
+      "created_at": "2025-06-22T16:10:56Z",
+      "updated_at": "2025-06-22T16:10:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003683493,
+      "body_text": "Hi captain. sparks@comcast. net,  These two buttons are used for high/low gear shifting in American Truck Simulator and Euro Truck Simulator. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-23T04:22:59Z",
+      "updated_at": "2025-06-23T04:22:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

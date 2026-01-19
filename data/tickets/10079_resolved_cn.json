@@ -1,0 +1,35 @@
+{
+  "id": 10079,
+  "subject": "换挡器问题",
+  "description_text": "来自希腊的问候， 我是SIMSONN PC 6+R H变速杆的用户，已使用一年。（购买日期：2025年1月6日）。不幸的是，昨晚我无法使用2档和6档。确切地说，2档完全无法使用，而6档需要很大的力气才能挂上。请问您能帮我解决这个问题吗？谢谢 -- *Michalis Catinas* 电影制作人 / 设计师 *www.reeldrone.gr* <http://www.reeldrone.gr> +30 6944 8184 96 Kokkari - Samos, 83100, Greece <http://www.reeldrone.gr/> [图片: www.reeldrone.gr] <http://www.reeldrone.gr>",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-06T10:23:15Z",
+  "updated_at": "2026-01-07T15:27:06Z",
+  "requester_id": 158008950815,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016069946,
+      "body_text": "嗨，Michalis Catinas，您能提供一个视频并通过Google Drive分享给我们吗？请确保链接设置为可查看，以便我们进一步查看问题。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T06:04:01Z",
+      "updated_at": "2026-01-07T06:04:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016072976,
+      "body_text": "非常抱歉，我犯了个错误： 我用比应该用的更长的螺丝将换挡器安装在我的设备上，这导致了问题。 我通过使用你们在包装盒中提供的较短螺丝解决了这个问题。 感谢您的快速回复，很抱歉占用了您的时间。来自希腊的问候！ *Michalis Catinas* 电影制作人 / 设计师 *www.reeldrone.gr* <http://www.reeldrone.gr> +30 6944 8184 96 Kokkari - Samos, 83100, Greece <http://www.reeldrone.gr/> [图片: www.reeldrone.gr] <http://www.reeldrone.gr>",
+      "user_id": 158008950815,
+      "created_at": "2026-01-07T06:22:15Z",
+      "updated_at": "2026-01-07T06:22:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

@@ -1,0 +1,34 @@
+{
+  "id": 8823,
+  "subject": "Meine Bestellung",
+  "description_text": "Mein Name ist Micha Dreyer wollte fragen wann ich auf meine Bestellung kommt es kann ja nicht so lange dauern bitte um rück antdword \r\n\r\nVon meinem iPhone gesendet\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-21T18:12:52Z",
+  "updated_at": "2025-12-23T01:30:38Z",
+  "requester_id": 158007829709,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014878081,
+      "body_text": "Hi Michael Dreyer,",
+      "user_id": 158007774669,
+      "created_at": "2025-12-22T12:09:56Z",
+      "updated_at": "2025-12-22T12:09:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014878124,
+      "body_text": "你好，迈克尔·德雷尔，  您好，您的货物目前正在进行清关和检查，出现延误属于正常情况，请您耐心等待。检查完成后，物流信息会尽快更新，您的货物将在3天内送达。",
+      "user_id": 158007774669,
+      "created_at": "2025-12-22T12:10:06Z",
+      "updated_at": "2025-12-22T12:10:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

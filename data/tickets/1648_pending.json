@@ -1,0 +1,54 @@
+{
+  "id": 1648,
+  "subject": "VAM Pro Linear Motor",
+  "description_text": "Hello Simsonn Team,\r\n\r\nI recently purchased the *VAM Pro Linear Motor* and would like to use it\r\nwith my *Simsonn Pro Pedals*, which I previously bought through *Amazon*.\r\n\r\nUnfortunately, since the purchase was made via Amazon, I do not have a\r\ndirect Simsonn order number. However, the Amazon product code (ASIN) is:\r\n*B0D7MMSK14*\r\nThe pedals were ordered around: 02.12.2024\r\n\r\nCould you please help me confirm whether I need a *Plus X Control Box* or\r\nany additional components to use the VAM Pro with my current pedals?\r\n\r\nI want to make sure everything is compatible before proceeding.\r\n\r\nThank you in advance for your support!\r\n\r\nBest regards,\r\n\r\nWitold Yasempa\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-17T18:42:17Z",
+  "updated_at": "2025-07-18T06:59:21Z",
+  "requester_id": 158002194556,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005143423,
+      "body_text": "Hi Witek Zasempa,    You will need the PlusX control box to use the vibration motor, as the default Pro Plus controller does not have a motor interface.  Also, could you confirm whether the VAM Pro you purchased includes a dedicated power supply?  https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor?variant=51351053533498",
+      "user_id": 158000445778,
+      "created_at": "2025-07-17T23:14:04Z",
+      "updated_at": "2025-07-17T23:14:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005146036,
+      "body_text": "Hi,\r\n\r\nThank you for your reply.\r\n\r\nYes, I have already ordered the *PlusX Control Box*, and I can confirm that\r\nmy order of the *VAM Pro Linear Motor* also includes the *power supply*.\r\n\r\nMy order number is: *#SSN2024*\r\n\r\nLooking forward to setting everything up — thanks again for your support!\r\n\r\nBest regards,\r\n*Witek Zasempa*\r\n\r\npt., 18 lip 2025 o 01:14 service@simsonn.com ",
+      "user_id": 158002194556,
+      "created_at": "2025-07-18T06:34:28Z",
+      "updated_at": "2025-07-18T06:34:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005146061,
+      "body_text": "Hi Witek Zasempa,  That should be no problem. Once you receive the control box, please perform an Offset factory calibration for the pedals. Since the control box was purchased separately, it doesn’t come with pre-configured calibration values, so a manual calibration is required. Please use the latest version of SIMSONN Manager 2.0.9 for this process. It also supports SIMHUB version 9.9.3.       https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-07-18T06:38:32Z",
+      "updated_at": "2025-07-18T06:38:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005146156,
+      "body_text": "That's great, thank you very much.\r\n\r\npt., 18 lip 2025, 08:38 użytkownik service@simsonn.com ",
+      "user_id": 158002194556,
+      "created_at": "2025-07-18T06:55:38Z",
+      "updated_at": "2025-07-18T06:55:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

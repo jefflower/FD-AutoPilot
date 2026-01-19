@@ -1,0 +1,24 @@
+{
+  "id": 9601,
+  "subject": "Missing package",
+  "description_text": "Ordered on the 21st of December and haven’t gotten an update since.",
+  "status": 5,
+  "priority": 3,
+  "created_at": "2025-12-30T20:36:18Z",
+  "updated_at": "2026-01-09T02:15:51Z",
+  "requester_id": 158008800393,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016459183,
+      "body_text": "此工单已关闭并合并到工单 10243 中",
+      "user_id": 158000445778,
+      "created_at": "2026-01-09T02:15:51Z",
+      "updated_at": "2026-01-09T02:15:51Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

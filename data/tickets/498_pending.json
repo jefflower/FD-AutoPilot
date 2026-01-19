@@ -1,0 +1,24 @@
+{
+  "id": 498,
+  "subject": "Order #SSN1707",
+  "description_text": "Hi\r\n\r\nDo you know when you will be shipping my order? It has been a few days\r\nsince the purchase.\r\n\r\nBrian\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-16T11:52:36Z",
+  "updated_at": "2025-06-17T02:40:52Z",
+  "requester_id": 158001582101,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003300205,
+      "body_text": "Hi UltraViewer10,  Due to a delay in the enclosure delivery from our supplier, which only arrived yesterday, we are now expediting production. Shipments started yesterday, and your order will be dispatched very soon. Thank you for your patience and understanding. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-17T02:40:52Z",
+      "updated_at": "2025-06-17T02:40:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

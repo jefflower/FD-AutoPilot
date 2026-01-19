@@ -1,0 +1,84 @@
+{
+  "id": 2173,
+  "subject": "Dead zone at front of throttle pedal",
+  "description_text": "Hello,\r\n\r\n\r\n\r\nI recently received a replacement throttle pedal from Simsonn (thank you for that), but I’ve noticed there’s a significant deadzone at the beginning of the pedal travel. There’s a fair amount of physical movement before any input is registered in the Simsonn app.\r\n\r\n\r\n\r\nI’ve already set the deadzone to 0 in the software, but the issue remains. I also checked the manual to see if there’s a mechanical adjustment that would allow me to bring the pedal to a more “closed” starting position to help eliminate the gap, but I wasn’t able to find anything.\r\n\r\n\r\n\r\nCould you please advise on how to resolve this?\r\n\r\n\r\n\r\nBest regards,\r\n\r\nWilliam Springer\r\n\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-01T03:32:26Z",
+  "updated_at": "2025-08-05T13:01:25Z",
+  "requester_id": 158002111536,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005995450,
+      "body_text": "Hi William Springer,  Which model of pedals are you using, and what is your order number? You can update the pedal software to version 2.1.0 and update the firmware to the latest version, then use the Offset function to resolve the issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-01T10:38:17Z",
+      "updated_at": "2025-08-01T10:38:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006014069,
+      "body_text": "Hello, I am using the Plus X Pedals. \r\nMy order number from Amazon is pictured below.\r\n\r\nI have updated the firmware and tried using the offset settings, but it didn’t work. I think the issue is that there is nothing physically being registered by the sensor on the pedal for the first bit of travel, which is why I was asking if there was a way to physically bring the pedal to a more closed position. \r\n\r\nThank you,\r\nWilliam Springer\r\n\r\n> ",
+      "user_id": 158002111536,
+      "created_at": "2025-08-01T11:58:20Z",
+      "updated_at": "2025-08-01T11:58:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006014293,
+      "body_text": "Hi William Springer,  Please take a photo to confirm whether this part is broken.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-01T12:01:11Z",
+      "updated_at": "2025-08-01T12:01:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006016238,
+      "body_text": "It does not appear to be.\r\n\r\n\r\nWilliam Springer\r\n\r\n> ",
+      "user_id": 158002111536,
+      "created_at": "2025-08-01T12:24:06Z",
+      "updated_at": "2025-08-01T12:24:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006017680,
+      "body_text": "Hi William Springer,    Please install Todesk so that I can check it for you remotely. Registration is not required; if a registration prompt appears, simply click the close button in the top right corner and provide me with your ID and temporary password.      https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-08-01T12:39:37Z",
+      "updated_at": "2025-08-01T12:39:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006158464,
+      "body_text": "Good afternoon, \r\n\r\nI was actually able to fix it using the offset feature, I was confused because you had to double click it in order to initiate it whereas other features are single click. \r\n\r\nIt’s working well, I have a question while I have you here. Currently the “breaking point” of the clutch is at the very end of the travel (when fully depressed), however my car in real life has the bite point towards the top of the travel (right when pressing the clutch in). Is there a way to arrange/adjust the pedal to have the bite point be towards the front rather than the end?\r\n\r\nThank you again!\r\n\r\n\r\nWilliam Springer\r\n\r\n> ",
+      "user_id": 158002111536,
+      "created_at": "2025-08-03T15:42:48Z",
+      "updated_at": "2025-08-03T15:42:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006268699,
+      "body_text": "Hi William Springer,  The offset actually needs to wait for the controller to return the offset value. If the system experiences lag and fails to receive the data, the prompt window will not appear. We will optimize this. Our apologies for the delayed response as we have been traveling these past few days. Additionally, the bite point needs to be adjusted according to the physical structure instructions in the pedal’s user manual. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-05T13:01:24Z",
+      "updated_at": "2025-08-05T13:01:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

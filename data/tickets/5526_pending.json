@@ -1,0 +1,24 @@
+{
+  "id": 5526,
+  "subject": "language",
+  "description_text": "Having issue with getting the language set to English no matter how many times I try change it stays in chines\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-01T14:34:14Z",
+  "updated_at": "2025-11-02T01:45:12Z",
+  "requester_id": 158006146271,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011603304,
+      "body_text": "Hi curtis mohney,   Please uninstall the old local version and reinstall the latest Simsonn Manager 2.1.2. If the changes don’t take effect, try restarting the software. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-02T01:45:12Z",
+      "updated_at": "2025-11-02T01:45:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

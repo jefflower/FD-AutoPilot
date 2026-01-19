@@ -1,0 +1,134 @@
+{
+  "id": 6454,
+  "subject": "Haptic motors.",
+  "description_text": "I wrote to you a few months ago about my haptics motors not working right.\r\nTried all the tricks you listed. Im now running into an issue where my\r\npedals will not work at all if the motors are plugged in. Also I dont know\r\nwhat kind of support you offer but the front usb ports on pc stopped\r\nworking after I tried to plug it in there.\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-11-20T22:29:07Z",
+  "updated_at": "2025-12-01T02:43:06Z",
+  "requester_id": 158002276781,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012699977,
+      "body_text": "Also just to add the usb a started working again on the front of my pc after a restart but my usb c on the front is completely fried. I got a power surge warning when plugging the controller box into my pc even without the power supply plugged in. ",
+      "user_id": 158002276781,
+      "created_at": "2025-11-21T12:04:59Z",
+      "updated_at": "2025-11-21T12:04:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158012739037,
+      "body_text": "Hi Joseph Bacha,  Is your main controller the PlusX? It usually should not be connected to the front USB ports of the computer case; it needs to be connected to a rear USB 3.0 port on the motherboard for stable operation. Also, if the VAM motor is not connected to the controller, do the pedals on the controller work properly? It seems there might be a short circuit. Please take some photos and send them to me so I can check first. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-22T03:32:58Z",
+      "updated_at": "2025-11-22T03:32:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012746811,
+      "body_text": "Its the pro x ultra box. The newer version. I did unplug the motors. Just\r\nhaven't gotten pictures yet as its in a hard to get to spot. Still getting\r\nunrecognized usb device and power surge warnings. I had to start plugging\r\nit into the front usb because the motors would constantly bug out and get\r\nstuck at 100 % and I had to be able to quickly unplug them. I do not want\r\nto try plugging them into the back usb ports again considering it fried my\r\nfront usb c port.\r\n\r\n",
+      "user_id": 158002276781,
+      "created_at": "2025-11-22T11:08:04Z",
+      "updated_at": "2025-11-22T11:08:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012760831,
+      "body_text": "",
+      "user_id": 158002276781,
+      "created_at": "2025-11-22T15:06:06Z",
+      "updated_at": "2025-11-22T15:06:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158012760833,
+      "body_text": "",
+      "user_id": 158002276781,
+      "created_at": "2025-11-22T15:06:08Z",
+      "updated_at": "2025-11-22T15:06:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158012803184,
+      "body_text": "Hi Joseph Bacha,    If this issue occurs, it indicates that the PC grounding is unreliable, possibly because a three-prong plug is not used in a proper wall socket. You can refer to the following post to connect the PC case to the stand and connect the control unit to the pedal’s metal screws, which should resolve the disconnection issue.  It is recommended to first test without connecting the motors, ensuring that SIMSONN Manager runs smoothly. You can use the VKB JoyTester tool to check for signal interruptions, and then determine whether the issue is with the control unit or the VAM motors.     ​https://www.vkbcontrollers.com/pages/downloads",
+      "user_id": 158000445778,
+      "created_at": "2025-11-24T08:49:16Z",
+      "updated_at": "2025-11-24T08:49:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012806061,
+      "body_text": "I am using three pong outlet and surge protector for my pc and all devices.\r\nIve tried plugging in just the box with nothing connected at all and still\r\nam getting unrecognized usb device. Ive tried front usb, back usb, usb hub,\r\nand my headset stand usb. The control box is not being recognized by my pc\r\nat all. I also have a grounding wire ive connected to the control box and\r\nmy stand. I have also tried screwing the box directly to my stand.\r\n\r\n",
+      "user_id": 158002276781,
+      "created_at": "2025-11-24T10:36:09Z",
+      "updated_at": "2025-11-24T10:36:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012856359,
+      "body_text": "Hi Joseph Bacha,  After trying to download the VKB tool, is it able to recognize our SIMSONN device? Please take a screenshot of the device in VKB JoyTester, so I can check whether an update is needed. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-25T02:04:05Z",
+      "updated_at": "2025-11-25T02:04:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012870641,
+      "body_text": "Its not even detecting the device with the joytester\r\n\r\n",
+      "user_id": 158002276781,
+      "created_at": "2025-11-25T09:49:08Z",
+      "updated_at": "2025-11-25T09:49:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012944491,
+      "body_text": "Hi Joseph Bacha,  Please press and hold the upgrade button on the control box while reconnecting the USB, and check if SIMSONN Manager or VKB can detect the SIMSONN Flasher mode. If it enters recovery mode, we can manually update the firmware for you.            In the software, go to: Settings → Update → Manual Firmware Update → pedals → firmware → pedals-plusx.sfu ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T12:21:28Z",
+      "updated_at": "2025-11-26T12:21:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012982666,
+      "body_text": "I tried doing that for both programs and windows still gives me the usb\r\ndevice has malfunctioned error and neither program is picking it up\r\n\r\n",
+      "user_id": 158002276781,
+      "created_at": "2025-11-26T22:44:36Z",
+      "updated_at": "2025-11-26T22:44:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013155300,
+      "body_text": "Hi Joseph Bacha,     ProX / ProX Ultra Pedal Firmware Update Procedure:    Press and hold the Upgrade button on the control box;    Reconnect the USB cable;    The software will indicate that the device has entered “Simsonn Flasher mode”;    In the software, go to: Settings → Update → Manual Firmware Update → pedals → firmware → pedals-proxultra.sfu (If it’s a ProX pedal, select pedals-prox.sfu)    Start the firmware update, and once it is complete, release the Upgrade button;    Finally, retest and calibrate the pedals.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-01T02:43:06Z",
+      "updated_at": "2025-12-01T02:43:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

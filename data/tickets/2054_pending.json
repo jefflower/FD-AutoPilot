@@ -1,0 +1,24 @@
+{
+  "id": 2054,
+  "subject": "Cancel order",
+  "description_text": "Hi, Is it possible to cancel my order? I would like to change shipping order to another country so I will make another purchase.\r\nWaiting for your response,\r\nThank your very much!\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-29T14:38:20Z",
+  "updated_at": "2025-07-30T02:24:34Z",
+  "requester_id": 158002403086,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005779311,
+      "body_text": "But shipping costs are different, how that is managed?\r\n\r\nEl mar, 29 jul 2025 a las 11:42, General and sales enquiries (<\r\nservice@simsonn.com>) escribió:\r\n\r\n> Hello, we can change the address for you, please let me know the correct\r\n> address as soon as possible.\r\n>\r\n>\r\n>\r\n> ----------Reply to Message----------\r\n> On Tue, Jul 29, 2025 22:38 PM Salvador Panissa<salvadorpanissa@gmail.com>\r\n> wrote:\r\n> Hi, Is it possible to cancel my order? I would like to change shipping\r\n> order to another country so I will make another purchase.\r\n> Waiting for your response,\r\n> Thank your very much!\r\n>\r\n\r\n\r\n-- \r\nSalvador Panissa\r\n\r\n",
+      "user_id": 158002403086,
+      "created_at": "2025-07-29T14:45:18Z",
+      "updated_at": "2025-07-29T14:45:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

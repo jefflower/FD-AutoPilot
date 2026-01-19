@@ -1,0 +1,34 @@
+{
+  "id": 581,
+  "subject": "RE: Order SSN1719…",
+  "description_text": "Greetings,\r\n\r\nI hoe this message finds you well. I’m writing to inquire about the status of the order number above. I was curious if the inclusion of the VAM Haptic Reactor set has delayed processing? I noticed that the VAM Pro set mentioned  a release date of June 16th, with no mention of a release date for the VAM set. I presumed that they were already available.\r\n\r\nPlease advise if the VAM Haptic Reactor set in my order has caused a delay in the processing of my order.\r\n\r\nSincerely,\r\n\r\n\r\nJulio C. Chacon, Jr.\r\nj_c_chacon_jr@hotmail.com\r\n\r\nSent from my iPhone\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-06-18T17:13:14Z",
+  "updated_at": "2025-06-22T03:27:59Z",
+  "requester_id": 158001648254,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003679609,
+      "body_text": "Hi Julio C Chacon,     Your pedals and the VAM motor were shipped separately. Below is the tracking information for the VAM motor—please have a look. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T02:17:40Z",
+      "updated_at": "2025-06-22T02:17:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003679731,
+      "body_text": "Yes, thank you for the follow up. I actually got the shipping notifications the next day after I sent this, but was unable to reply to the zendesk ticket.\r\n\r\nSincerely,\r\nJulio C. Chacon, Jr.\r\nj_c_chacon_jr@hotmail.com\r\n\r\nSent from my iPhone\r\n\r\n",
+      "user_id": 158001648254,
+      "created_at": "2025-06-22T03:27:20Z",
+      "updated_at": "2025-06-22T03:27:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

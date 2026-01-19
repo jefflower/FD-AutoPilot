@@ -1,0 +1,35 @@
+{
+  "id": 1273,
+  "subject": "Order Number #SSN1885",
+  "description_text": "Hi,\n\nI recently received the pedal set which looks fantastic.\n\nI ordered this with the base plate and the haptic reactors.\n\n[image: image.png]\n\n\nI never actually received the haptic reactors for the pedals. I presume\nthere should be one for each pedal and they attach to the back of the\npedal? These were not contained in the shipment I received.\n\nKind Regards,\nR Jones",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-07-06T16:52:00Z",
+  "updated_at": "2025-07-09T06:04:48Z",
+  "requester_id": 158001910267,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004453054,
+      "body_text": "Hi Richard Jones,  I checked your order #1885 and noticed that it doesn’t include a VAM or VAM Pro motor. These motors need to be purchased separately. I’ll provide you with the purchase link.       https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor?variant=51351053500730",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T04:03:52Z",
+      "updated_at": "2025-07-07T04:03:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004459593,
+      "body_text": "Hi,\n\nThanks for the reply, and thanks for the link. I thought this was part of\nthe order but I did not order these separately.\n\nWhat does it mean on my order below - 'with Haptic reactor x '  (what is\nthis haptic reactor)\n\n[image: image.png]\n\nKind Regards,\nRichard ?\n\n\n\nOn Mon, 7 Jul 2025 at 05:04, service @simsonn.com",
+      "user_id": 158001910267,
+      "created_at": "2025-07-07T17:46:38Z",
+      "updated_at": "2025-07-07T17:46:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

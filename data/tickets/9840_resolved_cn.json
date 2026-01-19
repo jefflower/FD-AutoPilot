@@ -1,0 +1,55 @@
+{
+  "id": 9840,
+  "subject": "触觉安装支架",
+  "description_text": "我在你们的Facebook广告上看到你们已经修改了触觉支架，使换能器变为水平而非垂直。我正在考虑从亚马逊订购一套踏板和两个VAM Pro直线电机。如果我从亚马逊订购，触觉装置会配备新的/改进的支架吗？还是亚马逊仍然有旧库存（亚马逊页面上的图片仍然显示旧支架）？\n\n请告诉我。我期待着从我的旧罗技踏板升级。\n\n谢谢，\n斯科特·博德斯",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-02T21:54:24Z",
+  "updated_at": "2026-01-06T03:52:46Z",
+  "requester_id": 158008162796,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015592150,
+      "body_text": "你好，斯科特·博德斯，你想要哪个国家和哪种电机？VAM还是VAM Pro？",
+      "user_id": 158007774607,
+      "created_at": "2026-01-04T06:39:03Z",
+      "updated_at": "2026-01-04T06:39:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015623225,
+      "body_text": "我在美国。我正在看VAM Pro直线电机。",
+      "user_id": 158008162796,
+      "created_at": "2026-01-04T10:55:32Z",
+      "updated_at": "2026-01-04T10:55:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015703277,
+      "body_text": "你好，斯科特·博德斯，请查看此链接：https://www.amazon.com/dp/B0G2M4KRGN?th=1。VAM Pro直线电机目前标准配备最新支架，但VAM仍使用旧支架。",
+      "user_id": 158007774607,
+      "created_at": "2026-01-05T03:28:20Z",
+      "updated_at": "2026-01-05T03:28:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015706038,
+      "body_text": "谢谢。",
+      "user_id": 158008162796,
+      "created_at": "2026-01-05T05:24:54Z",
+      "updated_at": "2026-01-05T05:24:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

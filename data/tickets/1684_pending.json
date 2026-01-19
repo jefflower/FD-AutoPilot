@@ -1,0 +1,44 @@
+{
+  "id": 1684,
+  "subject": "Simsonn VAM Pro Haptic Reactors",
+  "description_text": "Good evening Simsonn Team,\r\n\r\nA few months ago I purchased a 3-pedal set (Simsonn Pro) i believe it is the V2 version of the pedals, and I have to admit I am very content with them.\r\nI wanted to elevate my game by going ahead and adding haptic reactors to them, and I had a few inquiries before I jump the gun.\r\n\r\nWhat is the difference between the Plus X Ultra control box and the standard Plus X control box?\r\nAlso, given I already have a control box for my current simsonn pedals, would I then need and be able to connect the pedals directly to the haptic reactor control box? (Im assuming since the simsonn pedals control box does not have any haptic reactor input connections).\r\n\r\nDo the reactors work appropriately with IRacing, Assetto Corsa Competizione, AND Le Mans Ultimate? Specially the latter one.\r\n\r\nThank you,\r\n\r\nMarcos.\r\n\r\nSent from Outlook for iOS<https://aka.ms/o0ukef>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-18T23:42:56Z",
+  "updated_at": "2025-07-20T00:18:16Z",
+  "requester_id": 158002220734,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005162210,
+      "body_text": "Hi Marcos Garcia,    Since you already have the Pro pedals, you only need to purchase the PlusX control box. Please note that the Pro X Ultra control board is not compatible with your current pedals.  You will also need the VAM Pro motor and a dedicated power supply — I can send you the purchase links for those.  Our SIMSONN Manager 2.0.9 currently supports over 10 major games, including the one you mentioned. For additional titles, you can use SIMHUB 9.9.3, which also supports telemetry output from our pedals.       https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor?variant=51351053500730",
+      "user_id": 158000445778,
+      "created_at": "2025-07-19T06:27:06Z",
+      "updated_at": "2025-07-19T06:27:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005206945,
+      "body_text": "Thank you so much for the quick response. I just placed my order for a set of two reactors plus the PlusX control box mentioned before.\r\n\r\nJust making sure, the power supply cable provided with the set of reactors is sufficient for 2 or 3 of them correct?\r\n\r\nThank you again,\r\n\r\nMarcos.\r\n\r\nSent from Outlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158002220734,
+      "created_at": "2025-07-19T22:21:26Z",
+      "updated_at": "2025-07-19T22:21:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005211524,
+      "body_text": "Hi Marcos Garcia,    The power supply provides up to 3A of current, which is more than enough to support the total current required by three vibration motors. So there’s absolutely no issue.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-20T00:18:16Z",
+      "updated_at": "2025-07-20T00:18:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

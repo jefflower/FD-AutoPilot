@@ -1,0 +1,24 @@
+{
+  "id": 3408,
+  "subject": "Request for Partial Reimbursement – Invoice 3515604",
+  "description_text": "Dear Simsonn Support,\r\n\r\nI recently received and paid invoice #3515604 from Slovak Parcel Service,\r\nwhich included an additional charge of €36.90 beyond the base delivery\r\ncost. Upon review, this amount appears to include a €30.00 cash-on-delivery\r\nfee and applicable VAT.\r\n\r\nAs per your previous message stating that you would reimburse a portion of\r\nany additional taxes or fees, I kindly request confirmation on whether this\r\nqualifies for partial reimbursement.\r\n\r\nPlease find the invoice attached for your reference. Thank you for your\r\nassistance.\r\n\r\nBest regards,\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-02T16:47:26Z",
+  "updated_at": "2025-09-03T02:56:16Z",
+  "requester_id": 158003629210,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158007999148,
+      "body_text": "Okay, we've processed your refund. Thank you for your information.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-03T02:56:16Z",
+      "updated_at": "2025-09-03T02:56:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

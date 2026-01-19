@@ -1,0 +1,134 @@
+{
+  "id": 9848,
+  "subject": "Pro X Pedals Issue",
+  "description_text": "*Dear Simsonn Support Team,*\r\n\r\nI recently purchased a set of Pro X pedals second-hand, and I’ve managed to\r\nget them working properly. However, the previous owner also included three\r\nSimagic P-HPR (Haptic Pedal Reactors). These initially worked for a short\r\ntime but have since stopped functioning.\r\n\r\nHere’s what I’ve done so far:\r\n\r\n   - Updated the Control Box to the latest firmware.\r\n   - Installed and am running the latest version of Simsonn Manager.\r\n   - Verified that the 24V power supply is working and outputting the\r\n   correct voltage.\r\n\r\nAdditional observations:\r\n\r\n   - The Motor 1 port on the Control Box worked fairly consistently at\r\n   first, while ports 2 and 3 did not.\r\n   - At one point, all three ports worked briefly, but now none of them\r\n   respond.\r\n   - Swapping the P-HPR units between ports did not make any difference.\r\n\r\nI suspect the issue may be related to the Control Box. Is there a specific\r\nconnection order (e.g., power first, then USB, or vice versa) that is\r\nimportant for proper operation? Any troubleshooting steps you can provide\r\nwould be greatly appreciated.\r\n\r\nTo assist with identification, I’ve attached:\r\n\r\n   - Photos of the retail box for the pedals.\r\n   - A photo of the Control Box.\r\n   - A screenshot of Simsonn Manager showing the firmware version of the\r\n   Control Box and the software version of Simsonn Manager.\r\n\r\nThank you for your time and support. Please let me know if you need any\r\nadditional information.\r\n\r\nBest regards,\r\n\r\nWill Bann\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-03T00:14:36Z",
+  "updated_at": "2026-01-12T05:38:09Z",
+  "requester_id": 158008881127,
+  "responder_id": 158007774664,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015542414,
+      "body_text": "Hi Will B,     Please uninstall any older versions of the software from your computer and install SIMSONN Manager 2.1.2. Then follow the steps below:    Open the software and go to Settings → Update, then click Check for Updates;    Check whether the ProX firmware can be updated to version 2.0.5;    If no automatic update is prompted, please select Manual Update: Path: Settings → Update → Manual Update Firmware → pedals → firmware → pedals-prox.sfu;    After the update is complete, please test the device again;    If the issue persists, try reconnecting the USB cable and power supply, then test again;    If the problem still remains, please send me a screenshot of the software interface, and I will help you investigate further.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-04T00:48:54Z",
+      "updated_at": "2026-01-04T00:48:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015546050,
+      "body_text": "Hi,\r\n\r\nI followed the steps in your previous email, reinstalling the\r\nSimsonn Manager software, manually updating the firmware and reconnecting\r\nthe USB and power cables and the haptic motors are still not working. I've\r\nattached screenshots from the Simsonn Manager software as requested.\r\n\r\nRegards,\r\n\r\nWill\r\n\r\nOn Sat, 3 Jan 2026 at 19:49, service@simsonn.com ",
+      "user_id": 158008881127,
+      "created_at": "2026-01-04T01:23:38Z",
+      "updated_at": "2026-01-04T01:23:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015546667,
+      "body_text": "Hi Will B,  The ProX controller only supports one-direction control of voice coil motors, while the ProX Ultra supports bidirectional control. You may consider upgrading to the ProX Ultra controller, as it provides significantly stronger motor output compared to the ProX. If you are using Simagic motors, they are theoretically supported as well. At the moment, could you please confirm whether the vibration strength set to 10% is too low, and whether the issue still persists after unplugging and reconnecting the USB and power?      https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor?variant=51399342293306",
+      "user_id": 158000445778,
+      "created_at": "2026-01-04T01:27:06Z",
+      "updated_at": "2026-01-04T01:27:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015553874,
+      "body_text": " Hi,\r\n\r\nI believe I have the newer control box (see attached). I am not getting any\r\nvibration at any percentage. This had been working initially, but now isn't.\r\n\r\n\r\nOn Jan 3, 2026 at 8:27 PM -0500, service@simsonn.com ",
+      "user_id": 158008881127,
+      "created_at": "2026-01-04T02:07:13Z",
+      "updated_at": "2026-01-04T02:07:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015746367,
+      "body_text": "Hi,\r\n\r\nIs there any updates on this? It does seem like the control box is the\r\nissue as it was working initially. Is it possible to get a replacement\r\nunder the warranty?\r\n\r\n\r\nThanks\r\n\r\n",
+      "user_id": 158008881127,
+      "created_at": "2026-01-05T15:10:25Z",
+      "updated_at": "2026-01-05T15:10:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016150162,
+      "body_text": "Hi Will B,  Please provide your pedal order number, and I will check whether it is still within the warranty period. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T14:44:26Z",
+      "updated_at": "2026-01-07T14:44:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016462243,
+      "body_text": "Hi,\r\n\r\nThe original order number from Ali Express is 8199079164321706 (March 9th\r\n2025).\r\n\r\nPlease can you send the replacement control box to my address:\r\n\r\nWill Bann\r\n81 Keeley Ave,\r\nWarwick, RI 02886\r\nUSA\r\n\r\n\r\n\r\nOn Wed, 7 Jan 2026 at 09:44, service@simsonn.com ",
+      "user_id": 158008881127,
+      "created_at": "2026-01-09T02:41:28Z",
+      "updated_at": "2026-01-09T02:41:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016490405,
+      "body_text": "Hi Will B,       We're sorry, but since your order is some time past the deadline, we can no longer find your address information. We would like to ask for your email address and phone number.",
+      "user_id": 158007774664,
+      "created_at": "2026-01-09T06:38:04Z",
+      "updated_at": "2026-01-09T06:38:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016532037,
+      "body_text": "Hi,\r\n\r\nWhat deadline? It's within the 12 month warranty period.\r\n\r\nThe email and phone number used for the order are:\r\n\r\n- Rogerioluiz16icloud@gmail.com\r\n- +1 (978) 872-6016\r\n\r\nI've also attached screenshots of the order from Ali Express.\r\n\r\nOn Fri, 9 Jan 2026 at 01:38, service@simsonn.com ",
+      "user_id": 158008881127,
+      "created_at": "2026-01-09T11:50:38Z",
+      "updated_at": "2026-01-09T11:50:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016669805,
+      "body_text": "Hi Will B,  Your product has been shipped. The logistics number is:JSEAT1014305229YQ. You can track it at this website:https://t.17track.net/zh-cn#nums=JSEAT1014305229YQ ",
+      "user_id": 158007774664,
+      "created_at": "2026-01-10T05:45:24Z",
+      "updated_at": "2026-01-10T05:45:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016704664,
+      "body_text": "Hi,\r\n\r\nJust to confirm, you sent it to the following address?\r\n\r\nWill Bann\r\n81 Keeley Ave,\r\nWarwick, RI 02886\r\nUSA\r\n\r\n\r\nThanks\r\n\r\nOn Sat, 10 Jan 2026 at 00:45, service@simsonn.com ",
+      "user_id": 158008881127,
+      "created_at": "2026-01-10T11:51:45Z",
+      "updated_at": "2026-01-10T11:51:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016838228,
+      "body_text": "Hi Will B,  Yes, it was sent to this address.",
+      "user_id": 158007774664,
+      "created_at": "2026-01-12T05:38:01Z",
+      "updated_at": "2026-01-12T05:38:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

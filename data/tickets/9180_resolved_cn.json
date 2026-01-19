@@ -1,0 +1,65 @@
+{
+  "id": 9180,
+  "subject": "Simsonn VAM Pro 线性马达更新后不再振动",
+  "description_text": "你好，Simsonn 支持团队，\n\n我刚设置好了我的 Simsonn VAM Pro（油门和刹车各一个）。\n测试时工作正常。\n\n将 Simsonn 管理器和踏板固件更新到最新版本后，它就不再振动了。\n\n有什么建议吗？\n\n订单号 #SSN3532\nSimsonn Manager 2.1.2\n踏板：Simsonn PLus X\n\n截图已附上。\n\n[图片: image.png]\n\n谢谢\nBen",
+  "status": 4,
+  "priority": 2,
+  "created_at": "2025-12-25T23:31:45Z",
+  "updated_at": "2025-12-30T10:12:34Z",
+  "requester_id": 158008705512,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015147578,
+      "body_text": "你好，Ben Ryan， 启动最新版本的 SIMSONN Manager 2.1.2。在 “Plus X” 控制单元上，按住 “Upgrade” 按钮。按住按钮的同时，从电脑上拔下 USB 数据线，然后再插回去。软件应该会检测到设备进入 “SIMSONN 烧录器更新模式”。在软件中，进入：设置 → 更新 → 手动固件更新。在文件选择器中，选择：pedals‑firmware → pedals‑plusx.sfu。点击 “开始更新”，等待固件完全写入。在此过程中，请勿断开 USB 或关闭应用程序。更新完成后（您会看到成功提示或设备将重新启动），拔下并重新插入 USB，然后测试踏板设备以确认一切正常。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T03:36:53Z",
+      "updated_at": "2025-12-28T03:36:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015161084,
+      "body_text": "你好，\n\n感谢您的回复，我的触觉反馈回来了。\n\n现在我遇到了一个新问题，只要有任何振动，我的刹车就会有 20% 的输入。\n如果我禁用触觉反馈，我可以在 iRacing 中正常驾驶。\n但一旦我重新启用触觉反馈，就无法驾驶了。\n\n我已将踏板控制盒的地线连接到离合器和刹车上，但问题依旧。\n我使用了 U 型连接器将 VAM PRO 马达安装到了 Plus X 踏板上。\n\n谢谢\n\n发自 2025年12月28日星期日 14:37, service @simsonn.com",
+      "user_id": 158008705512,
+      "created_at": "2025-12-28T11:34:33Z",
+      "updated_at": "2025-12-28T11:34:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015166220,
+      "body_text": "你好，本·瑞安  请使用附带的尼龙螺丝和尼龙垫圈来安装马达。这是为了将马达与安装支架进行电气隔离，以防止马达造成的干扰。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T15:41:49Z",
+      "updated_at": "2025-12-28T15:41:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015172495,
+      "body_text": "全部解决了，非常感谢您的帮助。\n\n发自 2025年12月29日星期一 凌晨 2:42, service @simsonn.com",
+      "user_id": 158008705512,
+      "created_at": "2025-12-28T22:54:26Z",
+      "updated_at": "2025-12-28T22:54:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015245801,
+      "body_text": "",
+      "user_id": 158008705512,
+      "created_at": "2025-12-30T10:12:33Z",
+      "updated_at": "2025-12-30T10:12:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

@@ -1,0 +1,24 @@
+{
+  "id": 8179,
+  "subject": "gt2 plate",
+  "description_text": " hi, I recently bought one of your gt2 plates but there are 3 buttons that\r\ndon't work. I waited a few days to try to solve with some software but\r\nthese three buttons don't have input. Can you help me?\r\n\r\nthanks for your time\r\nbest regards\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-14T00:42:09Z",
+  "updated_at": "2025-12-14T02:42:42Z",
+  "requester_id": 158007801635,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014471735,
+      "body_text": "Hi Mattia Crupi,  The 12-position knob on the lower right of the panel is used to control the function of the left knob. For example, when the left knob is rotated left or right, it corresponds to button 17 and button 18. If the right knob is rotated first, the output of the left knob will switch to button 19 and button 20. Please note that this feature needs to be tested in-game, as Windows can only display the first 32 buttons, while the game can correctly recognize and display all 40 buttons.      If the issue involves other buttons, please take a photo to show the details. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-14T02:42:42Z",
+      "updated_at": "2025-12-14T02:42:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

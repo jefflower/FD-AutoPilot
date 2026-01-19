@@ -1,0 +1,64 @@
+{
+  "id": 8991,
+  "subject": "Simsonn manager High CPU 10-20%",
+  "description_text": "Hi\r\n\r\nCould you please explain why Simsonn manager is using so much CPU?\r\n\r\nIs this normal? How can I disable all the animations and adverts in the\r\napp? I need to make the app as light as possible.\r\n\r\n\r\n[image: 028df64f-2277-4f21-bb1f-569a4df3c50b.png]\r\nPlease advise\r\n\r\nThanks\r\nLindell\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-23T11:58:06Z",
+  "updated_at": "2025-12-28T15:54:59Z",
+  "requester_id": 158002429769,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015058071,
+      "body_text": "Hi Lindell Harry,  Please provide your order number and specify which pedal model you are using, as well as whether you are using a VAM haptic motor. If you are not using a haptic motor, you can close the SIMSONN Manager software after calibration. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-25T03:56:34Z",
+      "updated_at": "2025-12-25T03:56:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015067384,
+      "body_text": "Hi ,\r\n\r\nOrder is for pedals SSN1672 - Plus X pedals, added haptics with order\r\nnumber SSN2194. I use Simhub to control the haptics but this is not ideal?\r\n\r\n\r\nThanks\r\n\r\nLindell\r\n\r\nOn Thu, 25 Dec 2025 at 03:56, service@simsonn.com ",
+      "user_id": 158002429769,
+      "created_at": "2025-12-25T11:49:47Z",
+      "updated_at": "2025-12-25T11:49:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015119218,
+      "body_text": "Hi Lindell Harry,     Our engineers have optimized the performance. Please check whether the CPU usage is still high.    https://drive.google.com/file/d/1C_HvWFW6g-Nw7AXxFZw3NhPT5zjHOjTj/view?usp=drivesdk",
+      "user_id": 158000445778,
+      "created_at": "2025-12-26T22:40:23Z",
+      "updated_at": "2025-12-26T22:40:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015163087,
+      "body_text": "Hi,\r\n\r\nThank you for the update. The performance is much better now, though CPU\r\nusage remains between 0-5% even when the app is minimized. I am still\r\nunclear on what is driving that usage, so I agree it is best to close the\r\nsoftware while gaming since it is not required.\r\n\r\nWhile I have this ticket open, I would like to suggest an improvement\r\nregarding the splash screen. Currently, the \"always on top\" logo appears\r\nfor about 15 seconds every time the app launches. If I need to make a quick\r\nadjustment to my pedals during a race, this prevents me from seeing\r\nanything else on my screen. It would be very helpful if there were an\r\noption to disable the splash screen or have the app launch in the\r\nbackground.\r\n\r\nBest regards,\r\n\r\nLindell\r\n\r\nOn Fri, 26 Dec 2025 at 22:40, service@simsonn.com ",
+      "user_id": 158002429769,
+      "created_at": "2025-12-28T13:13:10Z",
+      "updated_at": "2025-12-28T13:13:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015166402,
+      "body_text": "Hi Lindell Harry,  I will report this issue to the software team for improvement. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T15:54:59Z",
+      "updated_at": "2025-12-28T15:54:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

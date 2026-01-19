@@ -1,0 +1,44 @@
+{
+  "id": 9602,
+  "subject": "consulta",
+  "description_text": "Buenas tardes, estoy interesado en adquirir una pedalera \"\r\nnuevo pedal de celda de carga Simsonn Plus X Simracing con reactor\r\nháptico\" podrían\r\npasarme el costo del envío mediante DHL y tiempo de entrega por favor mi\r\nresidencia es en Argentina. ciudad de Pehuajó en la provincia de Buenos\r\nAires.\r\nGracias.\r\n\r\n-- \r\nRicardo del Arco\r\nSastre 1135\r\n(6450) Pehuajó\r\nBs. As.\r\n02396-15517212\r\nDNI: 14484118\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-30T21:38:10Z",
+  "updated_at": "2026-01-16T08:49:48Z",
+  "requester_id": 158008826801,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015291893,
+      "body_text": "Hi Ricardo del Arco,  We may ship via AliExpress courier, which typically takes about 10–15 days from China. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T03:34:02Z",
+      "updated_at": "2025-12-31T03:34:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016149551,
+      "body_text": "buen día, necesito que sea por intermedio de un courier (preferentemente\r\nDHL) no importa desde donde lo envíen, lo que necesito es certeza del costo\r\ndel envío. Gracias.\r\n\r\nEl mié, 31 dic 2025 a las 0:34, service@simsonn.com (",
+      "user_id": 158008826801,
+      "created_at": "2026-01-07T14:39:54Z",
+      "updated_at": "2026-01-07T14:39:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017250549,
+      "body_text": "Hi Ricardo del Arco,  I apologize for the delayed response.  The shipping fee will be displayed on the page when you place your order.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T08:49:48Z",
+      "updated_at": "2026-01-16T08:49:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

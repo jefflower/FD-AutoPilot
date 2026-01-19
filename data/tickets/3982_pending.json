@@ -1,0 +1,24 @@
+{
+  "id": 3982,
+  "subject": "VAM Pro Brake Issues Phantom Braking",
+  "description_text": "Hi-\r\nI have the Simsonn Plus X Pedals and the VAM Pro connected to the brake and\r\nthrottle. When the VAM vibrates, either on the throttle or the brake, it\r\ncauses the brake to become pressed (Phantom braking) even though I'm not\r\npressing the brake. The throttle is not affected, only the brake. I\r\nhave done the following to try to fix this problem:\r\n1) Ensure the cords (Power and USB and cords from pedals to control box)\r\nare not touching each other.\r\n2) Ground the control box\r\n3) Put on Ferrite cores onto all cords\r\n4) Connected pedals to USB isolation Module\r\n5) Added 15% Deadzone to the brake calibration\r\n6) switch the VAM connections to control box between Motor 1,2 and 3.\r\n\r\nUnfortunately, none of this has worked and I'm stuck as what to do next.\r\nDue to this issue, the VAM are unusable since they cause the brake to\r\nbecome pressed. Is there anything else I can do to help fix this problem.\r\n\r\nI’m using Simsonn Manager 2.1.0. It seems that CPU1 is using version 2.0.2\r\nwhile CPU2 is using version 2.0.0. Im experiencing this in IRacing.\r\n\r\nThanks for any help.\r\nNick\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-19T21:06:07Z",
+  "updated_at": "2025-09-19T23:26:23Z",
+  "requester_id": 158002396951,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008967955,
+      "body_text": "Hi Nick Dodson,     You can refer to this post and replace the metal screws and metal washers on all three VAM Pro motors with nylon screws and nylon washers.  This will effectively isolate the vibration interference and should resolve the issue.        https://www.reddit.com/r/simracing/comments/1n291hi/solution_for_simsonn_vam_pro_emi_issues/",
+      "user_id": 158000445778,
+      "created_at": "2025-09-19T23:26:23Z",
+      "updated_at": "2025-09-19T23:26:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

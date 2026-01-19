@@ -1,0 +1,13 @@
+{
+  "id": 7257,
+  "subject": "来自simsonn.com的退信",
+  "description_text": "QQ邮箱退信 很抱歉您发送的邮件被退回，以下是该邮件的相关信息： 被退回邮件 主 题：Ticket Received - Your Parcel Has Been Shipped 时 间：2025-12-02 23:45:49 无法发送到 gzgjtsz@sfmail.sf-express.com 退信原因 你的邮件被收件人（gzgjtsz@sfmail.sf-express.com）所在服务商判为垃圾邮件，对方不予接收。 host hwgzmx01.sf-express.com[110.41.0.106] said: 550 5.7.1 rcpt is blacklist id=692F10F5.000 (in reply to RCPT TO command) 解决方案 请避免你的邮件含有广告，欺诈，政治类信息，以及携带病毒。 如你的邮件正常但仍被判为垃圾邮件，请向我们反馈。 此外，您还可以 点击这里 获取更多关于退信的帮助信息。",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-02T16:17:03Z",
+  "updated_at": "2025-12-03T01:45:13Z",
+  "requester_id": 158001011131,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": []
+}

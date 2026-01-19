@@ -1,0 +1,124 @@
+{
+  "id": 9030,
+  "subject": "Orders #SSN4334 and #SSN4530",
+  "description_text": "This is now the third time I have contacted your company about starting the return process for order SSN4334 and have yet to receive any response.  I also need to return order #SSN4530 as it has been delivered and since I will be returning the pedals, I no longer have any need for the base.\r\n\r\nAlso I have still yet to receive the rest of order SSN4334 that I paid for three weeks ago.  The tracking number that I was able to track down after being told that there were two separate shipments has shown the exact same status for over a week now.  I have also asked for an update on this before and still haven't received any update as to the status.  I'm at the point of reporting this as a fraudulent purchase to my credit card company if I don't hear anything.  I don't want to do that, but I'm honestly being left no other choice.\r\n\r\nMichael Shreve\r\n16120 35th Park SE\r\nBothell, WA, 98012\r\nmichael.shreve@comcast.net\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-23T22:23:01Z",
+  "updated_at": "2025-12-31T10:28:53Z",
+  "requester_id": 158007682796,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014186954,
+      "body_text": "Good morning. Is there an update on the status of this request? The link below will it give me an update as it says I don’t have access to log in. I’ve already had a response from a support ticket I put in after this one. I’d appreciate a response as soon as possible. Michael Shreve ",
+      "user_id": 158007682796,
+      "created_at": "2025-12-09T13:31:18Z",
+      "updated_at": "2025-12-09T13:31:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014297713,
+      "body_text": "ID 为 7592 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T01:38:36Z",
+      "updated_at": "2025-12-11T01:38:36Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014297714,
+      "body_text": "合并来自工单7592  \n      主题: Order ##SSN4334 not complete  \n      描述:  \nMy order of the Plus X Pedals and VAM Pro Haptic Reactors arrived today, except that the only thing that was in the box was the pedals.  The VAM Pro reactors weren't there and neither were the two U-shaped mounting brackets that were supposed to be in the order\n as well. \n \n \n \n \nI've attached pictures of everything that came in the box. \n \n \n \n \nI would appreciate some assistance as soon as possible. \n \n \n \n \nThank you. \n \n \n \n \n \nMichael Shreve \n \n16120 35th Park SE \n \nBothell, WA, 98012 \n \nmichael.shreve@comcast.net",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T01:38:36Z",
+      "updated_at": "2025-12-11T01:38:36Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158014297759,
+      "body_text": "Hi michael. shreve@comcast. net,  Please let us know what issue you are experiencing with your product, and we will help resolve it. Don’t worry—due to the backlog of emails during Black Friday, responses may be delayed. If you are encountering interference issues, I can provide a solution for you in advance.      If this happens, it indicates that the computer’s grounding is not reliable, possibly because a three-prong plug was not used with a three-prong wall outlet. You can refer to the post below: connect the computer case to the stand, and connect the control box to the metal screws on the pedals. This should resolve the disconnection issue.  https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T01:40:20Z",
+      "updated_at": "2025-12-11T01:40:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014298832,
+      "body_text": "I’ve been able to fix the connection issues by using a USB hub to connect the pedals to the PC. My main issue is that I still have not received any word about the rest of my order that never arrived. I ordered the pedals with haptic motors and brackets, but the motors and brackets haven’t been received yet. And I still haven’t received any word on what’s being done about that. I’m at the point now where I just want to send the pedals back and get a refund. I’ve received multiple responses to my connection ticket, but the ticket I submitted for the missing pieces of the order still hasn’t been addressed and that was submitted before the connection ticket. Michael Shreve ",
+      "user_id": 158007682796,
+      "created_at": "2025-12-11T02:42:14Z",
+      "updated_at": "2025-12-11T02:42:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014299048,
+      "body_text": "Hi michael. shreve@comcast. net,     Your order has been shipped. We noted two separate shipments on the order because these items are not designed to be packaged together. Additionally, due to a shortage of motors in our US warehouse, some items are being shipped directly from China. With air shipping, they should arrive quickly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T02:54:56Z",
+      "updated_at": "2025-12-11T02:54:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014402853,
+      "body_text": "I would like to start the process for returning the pedals and haptic motors once they arrive. Michael Shreve ",
+      "user_id": 158007682796,
+      "created_at": "2025-12-12T16:57:17Z",
+      "updated_at": "2025-12-12T16:57:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014819218,
+      "body_text": "The second part of the order has still not arrived and the tracking status has been the same for five days now. I want to start the refund process for this entire order, and I don’t expect to have to pay for the return shipping. Michael Shreve ",
+      "user_id": 158007682796,
+      "created_at": "2025-12-20T19:17:15Z",
+      "updated_at": "2025-12-20T19:17:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015147747,
+      "body_text": "ID 号为 7899 和 9031 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T04:02:36Z",
+      "updated_at": "2025-12-28T04:02:36Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158015147748,
+      "body_text": "合并来自工单7899  \n      主题: Order SSN4334  \n      描述:  I ordered the Plus X pedals with the haptic motor kits a few weeks ago and the package was delivered last week.  When I opened the box, the pedals and their accessories were there, but there were no haptic motors, as well as the separate U-mounts that I purchased as well. I’ve attached pictures of what was received.  \n I sent an email to service@simsonn.com and got an automated response the next day (Sunday) saying my ticket had been received and that I would be getting a personal response within 24 hours. It has now been three days and I’ve yet to receive any response. \n In the meantime, I’ve got multiple responses on a technical issue, and all of them seem to either ignore or just not understand the issue that I’m having. I’m at the point where I want my money back.  \n The item itself is actually pretty good when I can use it, but the support I’ve received so far has soured me on your company. If I don’t receive some sort of response on my initial request about the missing haptics, I will be sending what I have left back and expecting a full refund as well as having the return shipping cost covered.  \n   \n Thank you for your time and hopefully quick response.  \n   \n  Michael Shreve",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T04:02:36Z",
+      "updated_at": "2025-12-28T04:02:36Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158015147750,
+      "body_text": "合并来自工单9031  \n      主题: Orders #SSN4334 and #SSN4530  \n      描述:  \nThis is now the third time I have contacted your company about starting the return process for order SSN4334 and have yet to receive any response.  I also need to return order #SSN4530 as it has been delivered and since I will be returning the pedals, I no\n longer have any need for the base. \n \n \n \n \nAlso I have still yet to receive the rest of order SSN4334 that I paid for three weeks ago.  The tracking number that I was able to track down after being told that there were two separate shipments has shown the exact same status for over a week now.  I have\n also asked for an update on this before and still haven't received any update as to the status.  I'm at the point of reporting this as a fraudulent purchase to my credit card company if I don't hear anything.  I don't want to do that, but I'm honestly being\n left no other choice. \n \n \n \n \n \nMichael Shreve \n \n16120 35th Park SE \n \nBothell, WA, 98012 \n \nmichael.shreve@comcast.net",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T04:02:36Z",
+      "updated_at": "2025-12-28T04:02:36Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": 11054,
+  "subject": "订单",
+  "description_text": "你好。\n我的脚踏板还没有更新吗？我选择了快递，但只有一个包裹离开了仓库。而且那个包裹还在中国。\n\nssn6013\n\n//罗伯特",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-16T08:24:42Z",
+  "updated_at": "2026-01-16T11:58:34Z",
+  "requester_id": 158008831087,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017251972,
+      "body_text": "嗨，Robert Rasch，很抱歉回复延迟。这是您的运单追踪链接。这款产品已经缺货将近两周了——它太受欢迎了。我们将在接下来的几天内为您发货。对给您造成的不便深表歉意。https://t.17track.net/en#nums=SF6047238966393",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T09:31:48Z",
+      "updated_at": "2026-01-16T09:31:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017254840,
+      "body_text": "这是脚踏板的追踪链接吗？看起来好像只有vam pro？\n\n/罗伯特\n\n2026年1月16日星期五上午10:31，support@simsonn.com 写道",
+      "user_id": 158008831087,
+      "created_at": "2026-01-16T10:36:15Z",
+      "updated_at": "2026-01-16T10:36:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017259769,
+      "body_text": "嗨，Robert Rasch，两批运往我们德国仓库的货物受到了欧洲大雪的影响，导致道路堵塞和交货延迟。我们将尽快加快交货或探索替代物流渠道，从中国发货您的订单。",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T11:58:34Z",
+      "updated_at": "2026-01-16T11:58:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

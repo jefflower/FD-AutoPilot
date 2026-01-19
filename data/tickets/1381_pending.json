@@ -1,0 +1,24 @@
+{
+  "id": 1381,
+  "subject": "Problem with my new pedals",
+  "description_text": "Hello!\r\n\r\nI just received my plus x pedals, tried them once right after plugging them for the first time: it went well, but needed some adjustment. \r\nThen I downloaded both your softwares (simsonn manager and simpedals config) and the problem appeared: none of my 2 pedals responded in those softwares. It says it’s « not detected » in simpedals config \r\nHowever it still works in iracing by simple plug and play, but it’s not really enjoyable since there’s no dead zone and the braking force is set really high. \r\nIs it a common problem which I can easily solve ? Do I have to send my pedals back to you?\r\n\r\nThanks for answering me, have a nice day!\r\n\r\nMathias \r\n\r\nEnvoyé de mon iPhone\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-07-09T16:32:55Z",
+  "updated_at": "2025-07-10T03:59:42Z",
+  "requester_id": 158001978404,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004497237,
+      "body_text": "Hi Mathias Grember,    The PlusX is only compatible with the latest SIMSONN Manager 2.0.8 software and no longer supports calibration with older versions. Please send me a screenshot of the 2.0.8 interface so I can check if there’s any issue.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-09T22:20:53Z",
+      "updated_at": "2025-07-09T22:20:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

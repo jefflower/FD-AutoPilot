@@ -1,0 +1,44 @@
+{
+  "id": 10245,
+  "subject": "Cancel order. Chargeback",
+  "description_text": "Good evening,\r\n\r\nI am emailing again in regards to my order SSN5616.\r\n\r\nI have decided to cancel my order as I have had no response to my last\r\nemail. It is a shame as the pedals look good but if this is how customer\r\nsupport will be I don't want to deal with this if I happened to have any\r\nissues in future. I would like to add it has been 7 days since I placed the\r\norder and only received a confirmation when I placed order and have had no\r\ncontact since.\r\n\r\nI will also be canceling through Klarna as well to make sure I get my money\r\nrefunded in a timely manner.\r\n\r\nIt really is a shame your customer support is so bad as the products you\r\nmake look to be great from the reviews I have seen.\r\n\r\nIf I do not receive any contact by the end of the weekend regarding a\r\nrefund I will be doing a chargeback with my card as well so please sort\r\nthis quickly.\r\n\r\nKind regards,\r\nRufus\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-07T20:53:38Z",
+  "updated_at": "2026-01-13T02:44:46Z",
+  "requester_id": 158008974070,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016832670,
+      "body_text": "Hi Rufus Nesbit,  Hello, we sincerely apologize for not responding to your previous email in a timely manner. Due to a high volume of orders and emails during the peak season, our team experienced delays in processing messages. Please provide your order number, and we will assist you as soon as possible. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-12T00:23:52Z",
+      "updated_at": "2026-01-12T00:23:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016866430,
+      "body_text": "Hi,\r\n\r\nThank you for the response. I have seen that the pedals were dispatched\r\nlast week and are actually in the UK now. I'm guessing delivery will be in\r\nthe next day or so. I won't be proceeding with any cancellations as they\r\nwere dispatched the day after that email.\r\n\r\nI would like to apologise for my previous email as I should of been a bit\r\nmore lenient given the time of year.\r\n\r\nI am looking forward to receiving my pedals and testing them out.\r\n\r\nKind regards,\r\nRufus\r\n\r\n",
+      "user_id": 158008974070,
+      "created_at": "2026-01-12T14:14:26Z",
+      "updated_at": "2026-01-12T14:14:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016925337,
+      "body_text": "Hi Rufus Nesbit,  Thank you for your understanding and support. If you have any questions or issues during use, please feel free to contact us at any time — we’ll handle it as soon as possible. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-13T02:44:45Z",
+      "updated_at": "2026-01-13T02:44:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

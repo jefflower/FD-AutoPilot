@@ -1,0 +1,114 @@
+{
+  "id": 3993,
+  "subject": "Simsonn VAM problems (random vibration sometimes)",
+  "description_text": "Hello,\r\n\r\nI bought 3x VAM haptic motors (normal version, not VAM PRO) from your Aliexpress official store about two weeks ago. I mounted them on a SIMSONN PRO X ULTRA SIM pedal kit also.\r\n\r\nThe pedals work really great, but i have problems with the VAM motors because they are not working correctly.\r\n\r\nThe motors are installed correctly, they work great 70-80% of time and the tests with your software runs great. But at random points, the VAM motors start to vibrate nonstop or just stop working. Even if i close the game, the motors don't stop spinning until i manually disconnect them.\r\n\r\nSometimes it happens with the brake motor, sometimes with the accelerator motor, sometimes does not happen for 10 minutes or sometimes does happen every 30 seconds. Sometimes they start to rumble only with the menu open, sometimes don't.\r\n\r\nI tried multiple games (Asseto Corsa, Asseto Corsa Competizione, Dirt Rally 2.0, IRacing...) and also your latest software and even the SimHub app to run the VAM motors but the problems still persist.\r\n\r\nI also tried all the combinations of effects, frecuencies and gains in every software and game, but nothing works.\r\n\r\n¿You know why this happens? I read in forums that maybe is a problem with EMI interference, but i don't have any USB disconnects, only random vibrations and non-stop rumble sometimes. The pedals work fine 100% of time, the problem is only with the VAM motors.\r\n\r\nI hope you can help me. The pedals and VAM motors are brand new and i use a full cockpit with a MOZA R9 base and SIMSONN PRO ULTRA SIM pedals.\r\n\r\nThanks!\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-09-20T09:10:47Z",
+  "updated_at": "2025-10-05T15:55:24Z",
+  "requester_id": 158004671478,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009021815,
+      "body_text": "Hi Joan Miquel Torrens Juan,  Hello, please wait a little longer. Tomorrow we will provide you with a new version of the software and firmware. Once you update and test it, we can check if this resolves the issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-21T10:29:15Z",
+      "updated_at": "2025-09-21T10:29:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009021908,
+      "body_text": "Hello, Okay, i will wait until tomorrow. Thanks El 21 sept 2025 12:29, service@simsonn.com escribió: \r\n \r\n Hi Joan Miquel Torrens Juan, Hello, please wait a little longer. Tomorrow we will provide you with a new version of the software and firmware. Once you update and test it, we can check if this resolves the issue. \r\n \r\n \r\n \r\n \r\n On \r\n Sat, 20 Sep at 5:10 AM \r\n , Joan Miquel Torrens Juan <torrens.j@hotmail.com> wrote: \r\n \r\nHello, \r\n \r\n \r\n \r\n \r\nI bought 3x VAM haptic motors (normal version, not VAM PRO) from your Aliexpress official store about two weeks ago. I mounted them on a SIMSONN PRO X ULTRA SIM pedal kit also. \r\n \r\n \r\n \r\n \r\nThe pedals work really great, but i have problems with the VAM motors because they are not working correctly. \r\n \r\n \r\n \r\n \r\nThe motors are installed correctly, they work great 70-80% of time and the tests with your software runs great. But at random points, the VAM motors start to vibrate nonstop or just stop working. Even if i close the game, the motors don't stop spinning until \r\n i manually disconnect them. \r\n \r\n \r\n \r\n \r\nSometimes it happens with the brake motor, sometimes with the accelerator motor, sometimes does not happen for 10 minutes or sometimes does happen every 30 seconds. Sometimes they start to rumble only with the menu open, sometimes don't. \r\n \r\n \r\n \r\n \r\nI tried multiple games (Asseto Corsa, Asseto Corsa Competizione, Dirt Rally 2.0, IRacing...) and also your latest software and even the SimHub app to run the VAM motors but the problems still persist. \r\n \r\n \r\n \r\n \r\nI also tried all the combinations of effects, frecuencies and gains in every software and game, but nothing works. \r\n \r\n \r\n \r\n \r\n¿You know why this happens? I read in forums that maybe is a problem with EMI interference, but i don't have any USB disconnects, only random vibrations and non-stop rumble sometimes. The pedals work fine 100% of time, the problem is only with the VAM motors. \r\n \r\n \r\n \r\n \r\nI hope you can help me. The pedals and VAM motors are brand new and i use a full cockpit with a MOZA R9 base and SIMSONN PRO ULTRA SIM pedals. \r\n \r\n \r\n \r\n \r\nThanks! \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n3993:4206036 \r\n \r\n",
+      "user_id": 158004671478,
+      "created_at": "2025-09-21T10:53:57Z",
+      "updated_at": "2025-09-21T10:53:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009185623,
+      "body_text": "Hi!\r\n\r\nIm still waiting for the update file... Do you have it? How do i upgrade?\r\n\r\nThanks\r\n________________________________\r\nDe: service@simsonn.com ",
+      "user_id": 158004671478,
+      "created_at": "2025-09-23T16:44:00Z",
+      "updated_at": "2025-09-23T16:44:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009236399,
+      "body_text": "Hi Joan Miquel Torrens Juan,  Please wait a little longer. The update will be released this week. Since there are some issues we need to resolve together, the new version will be pushed afterward. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-24T15:26:18Z",
+      "updated_at": "2025-09-24T15:26:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009362790,
+      "body_text": "Hi Joan Miquel Torrens Juan,    Please first uninstall SIMSONN Manager 2.1.0 from your computer, and then download and install the 2.1.1 version using the provided link.  Once the installation is complete, go to: Settings → Update → Manual Firmware Update → Select the file pedals-firmware-pedals-proxultra.sfu  After the firmware update is finished, check if the device connects properly. Next, open the Vibration Test interface to test the vibration function, making sure to select the correct motor type. We also recommend updating the telemetry data to ensure everything works correctly.         https://drive.google.com/file/d/1BAdSWa1bxmbPksj9Hlzuo8bl7_bM8ixr/view?usp=sharing ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-27T05:44:45Z",
+      "updated_at": "2025-09-27T05:44:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009581286,
+      "body_text": "Hi,\r\n\r\nI just upgraded the software to version 2.11 and also firmware as you told me. The upgrade went fine, it show 100% complete and the process was succesful.\r\n\r\nBut now IS WORSE than before... Now the software is not detecting the motors at all... It shows as \"power disconnect\" and CPU2 says \"Not connected\"\r\n\r\nI have the power supply connected to the motors and before the upgrade the motors were \"connected\" but now, they are not.\r\n\r\nPlease, help me. The upgrade is worse than before... Now i don't have ANY connection at all...\r\n________________________________\r\nDe: service@simsonn.com ",
+      "user_id": 158004671478,
+      "created_at": "2025-09-28T15:48:14Z",
+      "updated_at": "2025-09-28T15:48:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009581317,
+      "body_text": "This is the software after the upgrade... Now the motors are not detected at all...\r\n________________________________\r\nDe: Joan Miquel Torrens Juan <torrens.j@hotmail.com>\r\nEnviado: domingo, 28 de septiembre de 2025 16:48\r\nPara: service@simsonn.com ",
+      "user_id": 158004671478,
+      "created_at": "2025-09-28T15:51:16Z",
+      "updated_at": "2025-09-28T15:51:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009730152,
+      "body_text": "Hi Joan Miquel Torrens Juan,    Sorry, I previously sent you the wrong version. Please follow the steps below to restore the old version first. After we finish testing and confirm everything is fine, we will then update the latest firmware for you.     In the software, go to:  Settings → Update → Manual Firmware Update → pedals → firmware → pedals-proxultra-old.sfu  to complete the firmware update.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T11:18:18Z",
+      "updated_at": "2025-10-01T11:18:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009752806,
+      "body_text": "What do you mean the file was wrong?? Updating the wrong firmware is a VERY serious mistake on your part.\r\n\r\nI've updated to the pedals-proxultra-old.sfu file as you told me and the motors are still not detected... I have NOTHING.\r\n\r\nAt least before, they were detected, now not even that.\r\n\r\n\r\n  1.\r\nThe firmware update has always been successful 100% with no disconections or any problems (so its not a problem of a faulty upgrade or something like that)\r\n  2.\r\nThe power supply is fine and tested it (the voltage and all is correct).\r\n  3.\r\nThe motors are correctly connected to the control box.\r\n\r\nSince the firmware update you told me about, it no longer detects the motors at all. I can not do anything... No testing, no configuration... i can't do anything\r\n\r\nThe control box is broken since your firmware update with the wrong file. I attached a screen capture of the actual firmware and software for you to see.\r\n\r\nNow... what should I do? I'm in a big problem with the upgrade you told me...\r\n________________________________\r\nDe: service@simsonn.com ",
+      "user_id": 158004671478,
+      "created_at": "2025-10-01T18:28:53Z",
+      "updated_at": "2025-10-01T18:28:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009937880,
+      "body_text": "Hi Joan Miquel Torrens Juan,  Please uninstall the old version on your computer, then reinstall version 2.1.2 and update the firmware. After the update, the device version should display as CPU1: 2.0.5, CPU2: 2.0.3. If the issue persists, please feel free to contact me.      https://drive.google.com/file/d/1PZwHUqhhmJw0IBGDO8mGONPbrICJU3z1/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T15:55:24Z",
+      "updated_at": "2025-10-05T15:55:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

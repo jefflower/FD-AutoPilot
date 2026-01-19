@@ -1,0 +1,75 @@
+{
+  "id": 3849,
+  "subject": "F1 25 游戏支持",
+  "description_text": "你好 Simsonn，我最近购买了 F1 2025 游戏，但我的踏板无法在该游戏中使用。我运行的软件是 simsonn manager 2.1.0。这款游戏有什么解决方案吗？ 发自我的 iPhone",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-09-15T14:38:00Z",
+  "updated_at": "2025-09-17T17:03:12Z",
+  "requester_id": 158004553262,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008792535,
+      "body_text": "嗨 Bart Caethoven，\n\n在我们的测试环境中，F1 2025 运行没有任何问题。因为我们之前手刹上的 RX 轴没有被禁用，这可能会导致 F1 2025 无法正确绑定。您可以尝试使用 SIMSONN Manager 2.1.1 来解决这个问题：\n\n1. 打开 SIMSONN Manager 2.1.1 软件。\n2. 在界面中，点击“恢复”按钮。\n3. 然后点击“保存”按钮。\n4. 重新插入 USB 数据线。\n5. 最后，测试以确认 RX 轴是否已成功禁用。\n\nhttps://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-09-16T01:14:23Z",
+      "updated_at": "2025-09-16T01:14:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008803744,
+      "body_text": "好的，我今天晚些时候会试试。\n\n另外，我看到游戏没有出现在右边的列表中。\n\n每个版本的 F1 游戏都有，只有 25 没有出现。\n\n我的 Asseto Corsa Competizione 没问题，它显示出来了。\n\n\n发自我的 iPhone\n\n\n在 2025年9月16日 03:14，service @simsonn.com 写道：\n\n﻿\n嗨 Bart Caethoven，\n\n在我们的测试环境中，F1 2025 运行没有任何问题。\n因为我们之前手刹上的 RX 轴没有被禁用，\n这可能会导致 F1 2025 无法正确绑定。\n您可以尝试使用 SIMSONN Manager 2.1.1 来解决这个问题：\n打开 SIMSONN Manager 2.1.1 软件。\n在界面中，点击“恢复”按钮。\n然后点击“保存”按钮。\n重新插入 USB 数据线。\n最后，测试以确认 RX 轴是否已成功禁用。\nhttps://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=drive_link <https://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=drive_link%C2%A0>",
+      "user_id": 158004553262,
+      "created_at": "2025-09-16T08:00:41Z",
+      "updated_at": "2025-09-16T08:00:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008837543,
+      "body_text": "嗨 Bart Caethoven，\n\n测试时，请截取 F1 2025 设置界面的屏幕截图，以便我进行比较并检查与我们电脑上的设置有何不同。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-17T01:38:47Z",
+      "updated_at": "2025-09-17T01:38:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008851147,
+      "body_text": "嗨 Bart Caethoven，",
+      "user_id": 158000445778,
+      "created_at": "2025-09-17T09:10:13Z",
+      "updated_at": "2025-09-17T09:10:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008851414,
+      "body_text": "嗨，谢谢！\n这样就可以了。\n\n非常感谢大家的帮助。\n\n\n发自我的 iPhone\n\n\n在 2025年9月17日 11:10，service @simsonn.com 写道：\n\n﻿\n嗨 Bart Caethoven，",
+      "user_id": 158004553262,
+      "created_at": "2025-09-17T09:31:47Z",
+      "updated_at": "2025-09-17T09:31:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008880191,
+      "body_text": "",
+      "user_id": 158004553262,
+      "created_at": "2025-09-17T17:03:11Z",
+      "updated_at": "2025-09-17T17:03:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

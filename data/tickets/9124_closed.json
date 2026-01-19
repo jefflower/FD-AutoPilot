@@ -1,0 +1,24 @@
+{
+  "id": 9124,
+  "subject": "Order",
+  "description_text": "Hey I ordered a set of pedals but never received a confirmation email or a tracking number\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-12-25T03:55:28Z",
+  "updated_at": "2025-12-28T03:55:31Z",
+  "requester_id": 158008549621,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015147691,
+      "body_text": "此工单已关闭并合并到工单 9173 中",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T03:55:31Z",
+      "updated_at": "2025-12-28T03:55:31Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

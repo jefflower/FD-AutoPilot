@@ -1,0 +1,24 @@
+{
+  "id": 6579,
+  "subject": "Repair Help",
+  "description_text": "Hi,\r\n\r\nI purchased the Pro Plus pedals about a half a year ago on Amazon, while it\r\nwas working great, unfortunately, either my cat or something happened that\r\nbroke the connector of the brake pedal. So I was wondering what type of\r\nplug it was and also what kind of tool I need so I can repair it myself.\r\nThank you so much for your help.\r\n\r\nBest,\r\nVu Truong\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-11-23T08:01:31Z",
+  "updated_at": "2025-12-18T10:06:00Z",
+  "requester_id": 158007271774,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012799281,
+      "body_text": "Hi Vu Truong,    It uses a 4P4C connector. If you have access to a local computer repair shop, you can follow the same wiring order as the brake pedal and simply re-crimp a new 4P4C connector to resolve the issue.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-24T07:43:41Z",
+      "updated_at": "2025-11-24T07:43:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

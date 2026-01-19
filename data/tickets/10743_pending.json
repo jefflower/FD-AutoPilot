@@ -1,0 +1,26 @@
+{
+  "id": 10743,
+  "subject": "【账单】雷旋-FB-FromOM-202512",
+  "description_text": "Dear all：\n以下为贵司2025年12月账单明细，请查收～\n如有问题，可随时联系沟通！如无问题，烦请回复邮件确认，感谢~ \nFB-自投：\n账号 名称 结算金额（USD） 524624833925038 SR-GLS-1 33,932.18 总计 33,932.18 \n请尊敬的合作伙伴于收到对帐单后48小时内与我公司完成对帐，如48小时内贵司无反馈对账意见，则我司认为贵司已同意我司对账数据。\n谢谢~\nAM wenna Olive Media Limited\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-13T03:16:58Z",
+  "updated_at": "2026-01-14T06:01:55Z",
+  "requester_id": 158001380717,
+  "responder_id": null,
+  "cc_emails": [
+    "zhangdanchaosongzu@olivemedia.online"
+  ],
+  "conversations": [
+    {
+      "id": 158016936007,
+      "body_text": "Dear， \n附件为12月invoice，请查收。 \n如有问题，请随时联系~ \n打款时可将水单在此邮件上进行回复，感谢您的理解与支持~ \n祝好~\nAM wenna Olive Media Limited\n---- 回复的原邮件 ----\n发件人billing<billing@olivemedia.online>发送日期2026年1月13日 11:16收件人support",
+      "user_id": 158001380717,
+      "created_at": "2026-01-13T06:11:02Z",
+      "updated_at": "2026-01-13T06:11:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

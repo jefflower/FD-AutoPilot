@@ -1,0 +1,24 @@
+{
+  "id": 6229,
+  "subject": "Order #SSN2598",
+  "description_text": "Hello,\r\n\r\nI am following up regarding the return and refund request for my order (#S\r\n*SN2598*). I previously initiated a return and provided the tracking number\r\nas requested. According to the carrier’s tracking information, the return\r\npackage was delivered on *[9-23-2025]* (proof of delivery is attached).\r\n\r\nSince then, I have not received any updates. I reached out again last month\r\nrequesting a status update, but I have not received a response.\r\n\r\nThe return shipment cost me over $100, and I would appreciate an update on\r\nthe status of my refund as soon as possible. Please confirm that the\r\nreturned items have been received and let me know when I can expect the\r\nrefund to be processed.\r\n\r\nThank you,\r\nML\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-16T22:31:51Z",
+  "updated_at": "2025-11-17T07:15:08Z",
+  "requester_id": 158004599869,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012436709,
+      "body_text": "We apologize for the delay in processing your refund. Your refund has now been issued.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-17T07:15:08Z",
+      "updated_at": "2025-11-17T07:15:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

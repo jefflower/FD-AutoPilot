@@ -1,0 +1,64 @@
+{
+  "id": 2206,
+  "subject": "Order #SSN2169 issue",
+  "description_text": "The shipment is stopped at origin for being prohibited\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-01T20:11:11Z",
+  "updated_at": "2025-08-06T10:56:09Z",
+  "requester_id": 158002420294,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006035849,
+      "body_text": "Hi Mohamed ElSedfy,    Shipments to Saudi Arabia carry a certain risk of being returned, as hydraulic rods are prohibited items. However, there is no need to worry, as we will immediately arrange for a reshipment.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-02T03:13:40Z",
+      "updated_at": "2025-08-02T03:13:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006230343,
+      "body_text": "Hi,\r\nAny updates on this?\r\n\r\nOn Sat, 2 Aug 2025 at 6:13 AM service@simsonn.com ",
+      "user_id": 158002420294,
+      "created_at": "2025-08-04T17:22:28Z",
+      "updated_at": "2025-08-04T17:22:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006241193,
+      "body_text": "Hi Mohamed ElSedfy,    This is your new shipping number:  https://t.17track.net/en#nums=ALS01140075892",
+      "user_id": 158001343601,
+      "created_at": "2025-08-05T07:09:34Z",
+      "updated_at": "2025-08-05T07:09:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006284323,
+      "body_text": "You declared it for 50$ or less like the first time, right?\r\n\r\nOn Tue, 5 Aug 2025 at 10:09 AM service@simsonn.com ",
+      "user_id": 158002420294,
+      "created_at": "2025-08-05T14:37:17Z",
+      "updated_at": "2025-08-05T14:37:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006356256,
+      "body_text": "Hi Mohamed ElSedfy，    Yes, the declared amount is $47.9.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-06T10:56:09Z",
+      "updated_at": "2025-08-06T10:56:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

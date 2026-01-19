@@ -1,0 +1,64 @@
+{
+  "id": 7604,
+  "subject": "missing order",
+  "description_text": "Dear Simsonn Team,\r\nI ordered two Simsonn VAM Pro Linear Motors, but only one was delivered.\r\n\r\nOrder #SSN3807\r\nBest regards\r\n\r\nNico Daucher\r\n",
+  "status": 2,
+  "priority": 1,
+  "created_at": "2025-12-07T09:16:49Z",
+  "updated_at": "2026-01-13T09:33:33Z",
+  "requester_id": 158007320782,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014228772,
+      "body_text": "Hi Neyko Racing,    We have reshipped your order. Here is your tracking link.  https://t.17track.net/en#nums=YT2534300708199497",
+      "user_id": 158001343601,
+      "created_at": "2025-12-10T02:05:06Z",
+      "updated_at": "2025-12-10T02:05:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015243971,
+      "body_text": "Where is my order? I‘m waiting for 3 weeks! A mounting plate was not included in the first order, so I cannot use it.\r\n\r\n\r\nGesendet von Yahoo Mail für iPhone\r\n\r\n\r\nAm Mittwoch, Dezember 10, 2025, 3:05 AM schrieb service@simsonn.com ",
+      "user_id": 158007320782,
+      "created_at": "2025-12-30T09:10:16Z",
+      "updated_at": "2025-12-30T09:10:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015722547,
+      "body_text": "Hi Neyko Racing,  I'm sorry for the delayed response. We just returned from vacation and noticed your package has been delivered. Did you not receive it?  https://t.17track.net/en#nums=YT2534300708199497",
+      "user_id": 158001343601,
+      "created_at": "2026-01-05T11:18:04Z",
+      "updated_at": "2026-01-05T11:18:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015722954,
+      "body_text": "Yes but i dont get The mounting plates. I cannot use the item.\r\n\r\nGesendet von Yahoo Mail für iPhone\r\n\r\n\r\nAm Montag, Januar 5, 2026, 12:18 PM schrieb service@simsonn.com ",
+      "user_id": 158007320782,
+      "created_at": "2026-01-05T11:29:03Z",
+      "updated_at": "2026-01-05T11:29:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016955570,
+      "body_text": "I didn't receive any mounting plates. I can't use the haptic motors! The service is very poor; first, I only received half the order and had to wait four weeks for the rest, and then the mounting plates were missing.\r\nGesendet von Yahoo Mail für iPhone\r\n\r\n\r\nAm Montag, Januar 5, 2026, 12:18 PM schrieb service@simsonn.com ",
+      "user_id": 158007320782,
+      "created_at": "2026-01-13T09:33:33Z",
+      "updated_at": "2026-01-13T09:33:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

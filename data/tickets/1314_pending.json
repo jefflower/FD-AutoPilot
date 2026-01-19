@@ -1,0 +1,24 @@
+{
+  "id": 1314,
+  "subject": "never arrived",
+  "description_text": "order SSN1770 was placed 3 weeks ago and still hasn’t arrived. If it’s not here by this week on friday i will dispute the charge, just letting you know.\n\nSent from [Proton Mail](https://proton.me/mail/home) for iOS\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-07T17:20:44Z",
+  "updated_at": "2025-07-09T03:12:02Z",
+  "requester_id": 158001682988,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004485429,
+      "body_text": "Hi Roniportillo232,     Your package delivery failed because the street address was incorrect and the customer could not be reached. Please confirm your address information:   roni portillo   1177 south second street   plainfield NJ 07060  +1 908-548-6501   You can contact this number to arrange for redelivery: +1(800)742-5877   Your logistics tracking number: 1ZX6190C0304902930  ​​",
+      "user_id": 158001343601,
+      "created_at": "2025-07-09T03:12:02Z",
+      "updated_at": "2025-07-09T03:12:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

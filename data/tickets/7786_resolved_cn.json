@@ -1,0 +1,25 @@
+{
+  "id": 7786,
+  "subject": "配送延迟",
+  "description_text": "您好，\n\n我在11月20日下了一个订单，订单号是SSN3679。\n\n我支付了3-7天内的快递服务费用。因为这是一个礼物。然而现在已经是12月9日了。已经过去了19天，没有任何关于何时送达的通知。\n\n看起来我支付了一项未曾收到的服务，所以我希望退款，并且因为这次糟糕的经历，我将不会再在这里购物。\n\n谢谢。",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-09T13:15:31Z",
+  "updated_at": "2025-12-22T12:21:31Z",
+  "requester_id": 158007717368,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014879288,
+      "body_text": "嗨，Javi，您好，很抱歉物流延迟了。我的跟踪信息显示您的订单已经签收。",
+      "user_id": 158007774664,
+      "created_at": "2025-12-22T12:21:22Z",
+      "updated_at": "2025-12-22T12:21:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

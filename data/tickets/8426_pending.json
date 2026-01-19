@@ -1,0 +1,64 @@
+{
+  "id": 8426,
+  "subject": "",
+  "description_text": "order SSN3980 when will i get tracking number ?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-16T15:18:53Z",
+  "updated_at": "2025-12-24T10:06:27Z",
+  "requester_id": 158007662387,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014614199,
+      "body_text": "Hi Anze Novak,    Your pedals have been delivered. Have you received them? The base plate is still out of stock at our German warehouse. We'll restock it within the next couple of days and ship it to you.  https://www.dhl.de/en/privatkunden/pakete-empfangen/verfolgen.html?piececode=CE326635389DE&cid=c_dhl_2502061_2353",
+      "user_id": 158001343601,
+      "created_at": "2025-12-17T06:08:03Z",
+      "updated_at": "2025-12-17T06:08:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014617609,
+      "body_text": "Ok because i got email on friday saying simsonn sent the plate ok\r\n\r\n",
+      "user_id": 158007662387,
+      "created_at": "2025-12-17T08:10:20Z",
+      "updated_at": "2025-12-17T08:10:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014618457,
+      "body_text": "[image: image.png] dont understand why you sent me this if plate is not in\r\nstock i already got pedals\r\n\r\n",
+      "user_id": 158007662387,
+      "created_at": "2025-12-17T08:34:58Z",
+      "updated_at": "2025-12-17T08:34:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014619051,
+      "body_text": "Hi Anze Novak,    The base plates are currently out of stock at our German warehouse. We will complete restocking within the next couple of days and ship your order once they are back in stock.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-17T08:55:22Z",
+      "updated_at": "2025-12-17T08:55:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014619096,
+      "body_text": "Ok, thank you.\r\n\r\nOn Wed, 17 Dec 2025 at 09:55, service@simsonn.com ",
+      "user_id": 158007662387,
+      "created_at": "2025-12-17T08:57:19Z",
+      "updated_at": "2025-12-17T08:57:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

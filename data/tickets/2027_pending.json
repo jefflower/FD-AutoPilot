@@ -1,0 +1,54 @@
+{
+  "id": 2027,
+  "subject": "Simsson Pedals Plus X",
+  "description_text": "Hello good afternoon,\r\n\r\nI am interested for ordering the Plus x pedals. The shipment will be to\r\nMalta, are you aware if I will pay any customs fees?\r\n\r\nI am asking you because depending from where are you sending them, or if\r\nyou have a specific handling.\r\nAlso if such fees can be applied, maybe you ship in other major country\r\nwithout custom fees? As there is a mail service to get it after to Malta,\r\nthank you in advance.\r\n\r\nRegards,\r\nManos Parcharidis\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-28T21:13:29Z",
+  "updated_at": "2025-07-30T10:26:20Z",
+  "requester_id": 158002389044,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005779689,
+      "body_text": "Hi Manos Parcharidis,  We will ship from China; for EU countries, we will ship from our German warehouse, and for the U.S., we will ship from our U.S. warehouse. Please note that customs duties may apply in your country. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-29T15:00:13Z",
+      "updated_at": "2025-07-29T15:00:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005780377,
+      "body_text": "Hello thank you for your reply,\r\n\r\nAs Malta is located in EU most probably you will send it from Germany, and\r\nno custom fees will be applied.\r\n\r\nManos\r\n\r\n",
+      "user_id": 158002389044,
+      "created_at": "2025-07-29T15:29:46Z",
+      "updated_at": "2025-07-29T15:29:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005790551,
+      "body_text": "Hi Manos Parcharidis,    Yes, please also note “Ship from Germany” when placing the order to avoid any mistakes.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-30T00:58:09Z",
+      "updated_at": "2025-07-30T00:58:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005793176,
+      "body_text": "?\r\n\r\nManos reacted via Gmail\r\n<https://www.google.com/gmail/about/?utm_source=gmail-in-product&utm_medium=et&utm_campaign=emojireactionemail#app>\r\n\r\n",
+      "user_id": 158002389044,
+      "created_at": "2025-07-30T05:47:28Z",
+      "updated_at": "2025-07-30T05:47:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

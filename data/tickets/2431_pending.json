@@ -1,0 +1,44 @@
+{
+  "id": 2431,
+  "subject": "SIMSONN PC USB 7+R H Simulator Gear Shifter",
+  "description_text": "hi i was wondering if you can adjust the shifter stiffness because overtime\r\nusing it since i bought the shifter it feels easier to shift with.\r\n\r\nThankyou, John\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-07T20:11:12Z",
+  "updated_at": "2025-08-09T16:14:29Z",
+  "requester_id": 158002800028,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006604724,
+      "body_text": "Hi John L Romenick,  Please provide your order number, and we will check it and offer you a solution. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-09T15:56:43Z",
+      "updated_at": "2025-08-09T15:56:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006604760,
+      "body_text": "702-6072841-3662657 that's the order number off of Amazon\r\n\r\nOn Sat, Aug 9, 2025, 11:56 a.m. service@simsonn.com ",
+      "user_id": 158002800028,
+      "created_at": "2025-08-09T15:59:16Z",
+      "updated_at": "2025-08-09T15:59:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006605022,
+      "body_text": "Hi John L Romenick,    I have checked the Amazon order. Since it is early Sunday morning, I will look into it on Monday and get back to you.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-09T16:14:28Z",
+      "updated_at": "2025-08-09T16:14:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

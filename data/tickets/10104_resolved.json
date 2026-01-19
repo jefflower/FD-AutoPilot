@@ -1,0 +1,44 @@
+{
+  "id": 10104,
+  "subject": "Ali express order 3066665990886870",
+  "description_text": "Hello,\r\nI received my Vam pro motors from your AliExpress store, however the came with the wrong (older) mounting brackets. Couldyou send me the vertical mounting brackets?\r\nKind regards\r\nAlan\r\n\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-06T14:33:47Z",
+  "updated_at": "2026-01-09T07:02:25Z",
+  "requester_id": 158007840668,
+  "responder_id": 158007774664,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016091735,
+      "body_text": "Hi alan coffey,       Yes, please provide your order number.",
+      "user_id": 158007774664,
+      "created_at": "2026-01-07T08:15:48Z",
+      "updated_at": "2026-01-07T08:15:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016348611,
+      "body_text": "It's okay I 3D printed some mounts, you can close the ticket thanks\r\n\r\nSent from Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158007840668,
+      "created_at": "2026-01-08T13:23:22Z",
+      "updated_at": "2026-01-08T13:23:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016493313,
+      "body_text": "Hi alan coffey,  Okay, we're sorry. Please contact us through the buyer chat if you have any further questions.",
+      "user_id": 158007774664,
+      "created_at": "2026-01-09T07:02:10Z",
+      "updated_at": "2026-01-09T07:02:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

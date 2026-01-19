@@ -1,0 +1,54 @@
+{
+  "id": 3670,
+  "subject": "Missing order",
+  "description_text": "Hello \r\nI ordered 2 objects from you and received juste one I saw that the other one was out of stick after buying it thaught maybe that’s why I didn’t get it but niw it is that’s my order number \r\nBy the way yes it’s still saying delivered partially \r\n\r\nSSN2007\r\n\r\nSent from my iPhone\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-09T20:54:19Z",
+  "updated_at": "2025-09-11T07:45:13Z",
+  "requester_id": 158004367984,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008345843,
+      "body_text": "Hi Ramy Boudjadja,  Please provide a photo so we can confirm which part is damaged and whether anything was missing from the shipment. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-09T23:17:01Z",
+      "updated_at": "2025-09-09T23:17:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008352235,
+      "body_text": "Hello, the older model of white elastomer you purchased has been discontinued. We can either issue a refund or send you the newer model of white elastomer. Additionally, what issues have you encountered with the hydraulic damper you purchased?",
+      "user_id": 158001343601,
+      "created_at": "2025-09-10T06:34:26Z",
+      "updated_at": "2025-09-10T06:34:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008450491,
+      "body_text": "I ‘ll take the new one and no there is no problem with the other item it’s juste the elastomer that was missing \r\nThank you \r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158004367984,
+      "created_at": "2025-09-10T20:10:09Z",
+      "updated_at": "2025-09-10T20:10:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008499518,
+      "body_text": "Okay, we've dispatched your order.  https://t.17track.net/en#nums=YT2525400704571441",
+      "user_id": 158001343601,
+      "created_at": "2025-09-11T07:45:12Z",
+      "updated_at": "2025-09-11T07:45:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

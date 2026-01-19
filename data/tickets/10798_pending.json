@@ -1,0 +1,44 @@
+{
+  "id": 10798,
+  "subject": "Order #SSN5845",
+  "description_text": "Hi,\r\n\r\nI've tried to check my order and It says unfulfilled, and I wanted to know\r\nif you need something more from my side to complete the order. Also I would\r\nlike to know when my producto will be delivered.\r\n\r\nThanks.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-13T15:08:35Z",
+  "updated_at": "2026-01-15T02:43:26Z",
+  "requester_id": 158009050454,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017078370,
+      "body_text": "Hi Pablo Pérez,  We apologize for the delay. Two shipments destined for our German warehouse have been affected by heavy snowfall in Europe, causing road blockages and delivery delays. We will expedite delivery or explore alternative logistics channels to ship your order from China as soon as possible. Compensation will be provided based on the delay after your order is completed. We apologize for the inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-14T07:35:49Z",
+      "updated_at": "2026-01-14T07:35:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017088530,
+      "body_text": "Hi,\r\n\r\nThanks for the quick answer. I'm sorry to hear that about the heavy\r\nsnowfalls. I'm Happy to hear that you are trying to find a solution. I\r\nGuess I can follow the status of my order in the web page. So if you need\r\nsomething more from my side let me know.\r\n\r\nThank you very much.\r\n\r\nEl mié, 14 ene 2026, 8:35, support@simsonn.com ",
+      "user_id": 158009050454,
+      "created_at": "2026-01-14T09:58:59Z",
+      "updated_at": "2026-01-14T09:58:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017157996,
+      "body_text": "Hi Pablo Pérez,     Thank you for your understanding. We will update the shipping information once the order is dispatched, and you can track it on our website at that time.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T02:43:26Z",
+      "updated_at": "2026-01-15T02:43:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

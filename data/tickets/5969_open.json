@@ -1,0 +1,94 @@
+{
+  "id": 5969,
+  "subject": "Simsson ebrake",
+  "description_text": "Where is my product I paid for it why is no one responding this is bullshit I want a refund wasting my money on a shitty company",
+  "status": 2,
+  "priority": 4,
+  "created_at": "2025-11-12T06:17:36Z",
+  "updated_at": "2026-01-01T19:34:45Z",
+  "requester_id": 158006959391,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012154968,
+      "body_text": "Hi William Diaz-Santiago,    Please provide your order number so we can look into it for you. Don't worry.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-12T06:33:04Z",
+      "updated_at": "2025-11-12T06:33:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012177059,
+      "body_text": "SSN3201",
+      "user_id": 158006959391,
+      "created_at": "2025-11-12T13:50:05Z",
+      "updated_at": "2025-11-12T13:50:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158012177082,
+      "body_text": "",
+      "user_id": 158006959391,
+      "created_at": "2025-11-12T13:50:28Z",
+      "updated_at": "2025-11-12T13:50:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158012303478,
+      "body_text": "Hi William Diaz-Santiago,    We apologize for the inconvenience caused. We have arranged for a reshipment for you. Here is your tracking link:  https://www.fedex.com/fedextrack/?trknbr=395244345739&trkqual=12029~395244345739~FDEG",
+      "user_id": 158001343601,
+      "created_at": "2025-11-14T07:39:47Z",
+      "updated_at": "2025-11-14T07:39:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015105139,
+      "body_text": "wtf is going on i bought your product and nothing literally going on two months. Yaw took my money. Ticket created almost ten days after I bought it this is bullshit. How do you guys get away with fucking people over",
+      "user_id": 158006959391,
+      "created_at": "2025-12-26T16:22:14Z",
+      "updated_at": "2025-12-26T16:22:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015147561,
+      "body_text": "Hi William Diaz-Santiago,  We have noticed this issue. Not receiving the goods for two months is our mistake and is completely unacceptable. We are urgently investigating to see if it was caused by a logistics loss. Once the issue is resolved, we will provide appropriate compensation. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T03:35:24Z",
+      "updated_at": "2025-12-28T03:35:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015158538,
+      "body_text": "#ssn3201 back in early November yaw took my payment why not honor the sale\r\n what is wrong with your company\r\n\r\nOn Wed, Nov 12, 2025 at 1:33 AM support@simsonn.com ",
+      "user_id": 158006959391,
+      "created_at": "2025-12-28T10:55:00Z",
+      "updated_at": "2025-12-28T10:55:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015371290,
+      "body_text": "Refund please refund please\r\n\r\nOn Sun, Dec 28, 2025 at 5:54 AM William Diaz-Santiago <\r\nwilliamdiazsantiago@gmail.com> wrote:\r\n\r\n> #ssn3201 back in early November yaw took my payment why not honor the sale\r\n>  what is wrong with your company\r\n>\r\n> On Wed, Nov 12, 2025 at 1:33 AM support@simsonn.com ",
+      "user_id": 158006959391,
+      "created_at": "2026-01-01T19:34:45Z",
+      "updated_at": "2026-01-01T19:34:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

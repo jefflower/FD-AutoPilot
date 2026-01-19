@@ -1,0 +1,75 @@
+{
+  "id": 2616,
+  "subject": "Handbrake pro connection issues",
+  "description_text": "Pro Handbrake is shown as connected on pc but not on simsonn manager, was working previously. I did try to in uninstall all drivers with no success, is there a way to do a factory reset on this device? Even after deleting and re installing drivers the LED light remains off which is how I had set it before losing the ability to adjust through simsonn manager.\n\nGet Outlook for iOS<https://aka.ms/o0ukef>",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-08-13T02:29:53Z",
+  "updated_at": "2025-08-13T04:03:28Z",
+  "requester_id": 158002207210,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006782962,
+      "body_text": "Hi scott krause,    If the issue persists, we recommend installing Todesk (no registration required). Simply provide your ID and temporary access code, and we can schedule a time to assist you remotely.         https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-08-13T03:12:27Z",
+      "updated_at": "2025-08-13T03:12:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006783073,
+      "body_text": "I’ll be on my pc if you’ve got time, otherwise I’m happy to schedule\n\nGet Outlook for iOS<https://aka.ms/o0ukef>",
+      "user_id": 158002207210,
+      "created_at": "2025-08-13T03:19:30Z",
+      "updated_at": "2025-08-13T03:19:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006783114,
+      "body_text": "Hi scott krause,   Your current software version is too old, and I’m unable to connect. Please download and install the latest version, then try again.       https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-08-13T03:22:50Z",
+      "updated_at": "2025-08-13T03:22:50Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006783167,
+      "body_text": "Get Outlook for iOS<https://aka.ms/o0ukef>",
+      "user_id": 158002207210,
+      "created_at": "2025-08-13T03:27:43Z",
+      "updated_at": "2025-08-13T03:27:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006783184,
+      "body_text": "Updated, also I lost pedal connection as well\n\nGet Outlook for iOS<https://aka.ms/o0ukef>",
+      "user_id": 158002207210,
+      "created_at": "2025-08-13T03:28:36Z",
+      "updated_at": "2025-08-13T03:28:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006783415,
+      "body_text": "Pulling order info now\n\nGet Outlook for iOS<https://aka.ms/o0ukef>",
+      "user_id": 158002207210,
+      "created_at": "2025-08-13T03:42:47Z",
+      "updated_at": "2025-08-13T03:42:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

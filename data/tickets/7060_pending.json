@@ -1,0 +1,34 @@
+{
+  "id": 7060,
+  "subject": "Customer Enquiry Regarding Import Fees",
+  "description_text": "Hi,\r\n\r\nI live in the UK and I am thinking of buying from your website.\r\n\r\nI wanted to know if I need to pay import duty when placing an order on\r\nyour website, it says you are UK based but other places say it is a\r\nChinese brand hence my confusion.....\r\n\r\nAre the products stocked in the UK and not subject to duty?\r\n\r\nSee screenshot attached of what I would like to purchase.\r\n\r\n\r\n\r\nOn a side note I am using \"black45\" as a discount code, however if you\r\nhave a better one would you be kind enough to send that one over?\r\n\r\nThank you very much for your time and I look forward to hearing from you.\r\n\r\nKind regards\r\n\r\nRobert Hamilton\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-29T23:30:20Z",
+  "updated_at": "2025-12-04T12:18:38Z",
+  "requester_id": 158007431664,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013124653,
+      "body_text": "Hi Rob H,    Yes, there is no duty payable on orders placed in the UK, so please do not worry.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-30T00:55:31Z",
+      "updated_at": "2025-11-30T00:55:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013124771,
+      "body_text": "Thanks for your prompt reply. I am happy to hear this, thank you. I\r\nwill go ahead and place my order now.\r\n\r\nKind regards\r\n\r\nRob.\r\n\r\n",
+      "user_id": 158007431664,
+      "created_at": "2025-11-30T01:03:57Z",
+      "updated_at": "2025-11-30T01:03:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "id": 5213,
+  "subject": "order SSN3069",
+  "description_text": "hi i need to cancel this order i buy the wrong size\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-10-23T12:20:07Z",
+  "updated_at": "2025-10-27T10:14:51Z",
+  "requester_id": 158002064610,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010987068,
+      "body_text": "Hi MIKEYZ VLOGZ,    Okay, what size would you like? We can adjust it for you right away.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-24T03:49:53Z",
+      "updated_at": "2025-10-24T03:49:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011049852,
+      "body_text": "Hi MIKEYZ VLOGZ,    Hello, please reply as soon as possible. We can modify or cancel your order for you.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-25T01:55:48Z",
+      "updated_at": "2025-10-25T01:55:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011050128,
+      "body_text": "its ok just send the 130mm Sent from my Galaxy\n-------- Original message --------",
+      "user_id": 158002064610,
+      "created_at": "2025-10-25T02:12:21Z",
+      "updated_at": "2025-10-25T02:12:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011102312,
+      "body_text": "Ol pls send the 130mm that will be OK ? ",
+      "user_id": 158002064610,
+      "created_at": "2025-10-26T06:31:30Z",
+      "updated_at": "2025-10-26T06:31:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158011148821,
+      "body_text": "Hi MIKEYZ VLOGZ,    Here is your logistics tracking link.  https://t.17track.net/en#nums=SF6045988642946",
+      "user_id": 158001343601,
+      "created_at": "2025-10-27T10:14:51Z",
+      "updated_at": "2025-10-27T10:14:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

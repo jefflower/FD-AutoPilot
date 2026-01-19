@@ -1,0 +1,25 @@
+{
+  "id": 8825,
+  "subject": "踏板触觉反馈设备仍未送达，于12月7日订购",
+  "description_text": "您有什么最新消息吗？这些什么时候能到货？订单号：SSN4509",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-21T18:45:22Z",
+  "updated_at": "2025-12-22T12:14:06Z",
+  "requester_id": 158007798416,
+  "responder_id": 158007774669,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014878685,
+      "body_text": "您好，Peter Apers，887118726681 JSELU0858665875YQ 这是您的追踪号。包裹分两个单独的包裹寄出，请查收。",
+      "user_id": 158007774669,
+      "created_at": "2025-12-22T12:14:03Z",
+      "updated_at": "2025-12-22T12:14:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

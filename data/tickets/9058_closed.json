@@ -1,0 +1,24 @@
+{
+  "id": 9058,
+  "subject": "SSN5209",
+  "description_text": "Placed an order today and you have still not confirmed it. \r\nCan you please let me know what is going on.  \r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-12-24T06:52:40Z",
+  "updated_at": "2025-12-28T02:28:31Z",
+  "requester_id": 158008372253,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015146779,
+      "body_text": "此工单已关闭并合并到工单 9269 中",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T02:28:31Z",
+      "updated_at": "2025-12-28T02:28:31Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

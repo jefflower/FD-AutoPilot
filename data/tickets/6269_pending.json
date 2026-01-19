@@ -1,0 +1,24 @@
+{
+  "id": 6269,
+  "subject": "faulty part",
+  "description_text": " Order #SSN2555i ordered the plus x pedals but im haviing a prooblem where\r\nwindows wont recognise them sometiimes, it throws this error messege at me,\r\nis the control box faulty?[image: image.png]\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-17T21:58:30Z",
+  "updated_at": "2025-11-19T03:18:18Z",
+  "requester_id": 158004194357,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012558328,
+      "body_text": "Hi John Burton,    Please connect the device to the USB 3.0 (blue) port on the back of your PC, and avoid using any USB hubs. Unstable power supply may cause the USB connection to become unreliable or fail to be recognized.  You may also try entering recovery mode and performing the firmware update again to ensure proper operation.     Launch the latest version of SIMSONN Manager 2.1.2. On the “Plus X” control unit, press and hold the “Upgrade” button. While holding the button, unplug the USB cable from the PC and then plug it back in. The software should detect the device entering “SIMSONN Flasher update mode”. In the software go to: Settings → Update → Manual Firmware Update. In the file selector choose: pedals‑firmware → pedals‑plusx.sfu. Click “Start Update” and wait until the firmware is completely written. During this process do not disconnect the USB or close the application. Once the update is finished (you’ll get a success prompt or the unit will reboot), unplug and re‑plug the USB then test the pedal device to confirm everything works correctly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-19T03:18:18Z",
+      "updated_at": "2025-11-19T03:18:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

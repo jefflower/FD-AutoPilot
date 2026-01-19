@@ -1,0 +1,604 @@
+{
+  "id": 4402,
+  "subject": "Returns",
+  "description_text": "Hello,\r\n\r\nI have some products that were broken and I need to return them. I have\r\nbeen communicating with a Simsonn rep for about 2 months now and have been\r\ncompletely ghosted. I am incredibly frustrated that I have two products\r\nthat I cannot use and I just want to return them. I'm sorry if this is\r\nfrustrating for your team, but I am out a significant amount of money for\r\ntwo products that don't function properly. If you can't see my other email\r\nchain then I am happy to cc you into it.\r\n\r\nWeston Fredrickson\r\n\r\n",
+  "status": 3,
+  "priority": 2,
+  "created_at": "2025-10-03T19:25:07Z",
+  "updated_at": "2025-10-04T07:14:26Z",
+  "requester_id": 158002983653,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006781339,
+      "body_text": "Hi Weston Fredrickson,    Okay, thank you for your confirmation. We have already arranged for FedEx to ship your order, which is expected to arrive around the 16th.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-13T01:38:33Z",
+      "updated_at": "2025-08-13T01:38:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007440572,
+      "body_text": "Hi Weston Fredrickson,  It is very unlikely that both devices would fail at the same time; the issue is most likely related to USB power. Please make sure to connect the USB cable directly to the rear USB 3.0 (blue) port of your computer. Do not use a regular USB hub — if you must use one, please ensure it is a powered hub with independent supply. Additionally, please provide photos of your pedal and sequential shifter installation. If the software recognizes the devices but no input is detected, this could be a driver issue. Have you tried testing on another computer? You can also check using the VKB JoyTester tool. If you need to send a video, please ensure the file is fully uploaded before sending; otherwise, I won’t be able to open incomplete attachments. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-25T02:39:59Z",
+      "updated_at": "2025-08-25T02:39:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007441006,
+      "body_text": "I'll attach a video to the end of this email.\r\n\r\nI have just tried using another PC and will get to VKB JoyTester when I get\r\nsome more time. I have the same exact issue with the other computer. I\r\ndownloaded the Simsonn Product Manager from the website with the same\r\nresults unfortunately. As for the driver issue I uninstalled the Product\r\nManager (aside from the couple files that it didn't want to uninstall) and\r\nre-installed the Product Manager which wiped the drivers and reinstalled\r\nthem. All of the cables are routed in a way which they are not pinched at\r\nany point. I've attached two videos, if they do not work please let me know\r\nand I will reupload them. Thanks for your time and help.\r\n IMG_6412.mp4\r\n<https://drive.google.com/file/d/1TrDhyOG0n3lzjP1y_OILAVjHnqx3lvK4/view?usp=drive_web>\r\n\r\nOn Sun, Aug 24, 2025 at 7:40 PM service@simsonn.com \nAttachment(s) that exceed the 20 MB limit have been dropped. Please reach out to the sender.",
+      "user_id": 158002983653,
+      "created_at": "2025-08-25T03:28:28Z",
+      "updated_at": "2025-08-25T03:28:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007441096,
+      "body_text": "Hi，Weston Fredrickson，  ​   Would you be able to install the Todesk tool now? I am currently available and can remotely check and update your device.  Todesk does not require registration — if you see a registration prompt, simply click the “X” in the top-right corner to close it. Once installed, please provide me with the ID and temporary code, and we can begin the remote support. The entire process only takes a few minutes and poses no risk to your computer, so please rest assured.   ​     ​  https://dl.todesk.com/windows/ToDesk_Setup.exe ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-25T03:52:18Z",
+      "updated_at": "2025-08-25T03:52:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007516014,
+      "body_text": "Sorry, I wasn't able to respond last night. I am not comfortable allowing\r\nremote access to my PC. I have already tried updating the product manager\r\nas well.\r\n\r\nOn Sun, Aug 24, 2025 at 8:52 PM service@simsonn.com ",
+      "user_id": 158002983653,
+      "created_at": "2025-08-25T16:34:24Z",
+      "updated_at": "2025-08-25T16:34:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007538199,
+      "body_text": "Would it be possible to just return the items?\r\n\r\nOn Mon, Aug 25, 2025 at 9:33 AM Weston Fredrickson <\r\nwestonfredrickson19@gmail.com> wrote:\r\n\r\n> Sorry, I wasn't able to respond last night. I am not comfortable allowing\r\n> remote access to my PC. I have already tried updating the product manager\r\n> as well.\r\n>\r\n> On Sun, Aug 24, 2025 at 8:52 PM service@simsonn.com ",
+      "user_id": 158002983653,
+      "created_at": "2025-08-25T19:25:51Z",
+      "updated_at": "2025-08-25T19:25:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007547775,
+      "body_text": "Hi Weston Fredrickson,  This does not appear to be an issue with the device itself. Please first use the VKB JoyTester tool to check the device and provide two screenshots. Based on the current information, the device does not seem to be damaged, but we need to further confirm whether it is a USB fault or another cause. Such cases are not covered under the return policy, so our engineers need to verify if it is a hardware failure. In addition, we recommend installing ToDesk. It is very easy to set up, and all operations will be carried out under your full observation. This will allow us to quickly identify the issue and resolve it for you. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-26T02:54:49Z",
+      "updated_at": "2025-08-26T02:54:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007547903,
+      "body_text": "Hi Weston Fredrickson,    I’ve just reviewed your VKB screenshots. Please try updating the firmware separately as follows:    Pedals: Go to Settings → Update → Manual Firmware Update → pedals-firmware → pedals → plusx.sfu to update the pedal firmware.    Sequential Shifter: Go to Settings → Update → Manual Firmware Update → seq-firmware → gear → sqpro.sfu to update the sequential shifter firmware.    If the issue still persists after updating, I will resend you the plusx.sfu and sqpro.sfu firmware files. Rest assured, this problem can definitely be resolved, and I will follow up with you promptly.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-26T03:03:43Z",
+      "updated_at": "2025-08-26T03:03:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007549693,
+      "body_text": "I checked the update section in the Simsonn Product Manager and it said I\r\nneeded to update from Version 2.09 to 2.10, so I did and the Manual Update\r\nbutton is grayed out and will not let me click on it. The Product Manager\r\nsays that I'm up to date. It looks like there is a big time difference so I\r\nwill test different cables again tomorrow. I have already tried swapping\r\ncables but I may have some non Simsonn cables I can try. If this does not\r\nwork I would really like to return both products. It looks like we have a\r\ntimezone difference which is okay. I should be at my PC tomorrow night\r\nwhich I believe is your working hours. Thank you so much for all of the\r\nhelp.\r\n\r\nOn Mon, Aug 25, 2025 at 8:03 PM service@simsonn.com ",
+      "user_id": 158002983653,
+      "created_at": "2025-08-26T06:43:01Z",
+      "updated_at": "2025-08-26T06:43:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007590405,
+      "body_text": "Hi Weston Fredrickson,     Which country are you from? Please let me know the time that works best for you, and I will convert it to China time and be online to assist you. I can adjust to your schedule for the remote session, even outside of my regular working hours. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-27T03:21:07Z",
+      "updated_at": "2025-08-27T03:21:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007664385,
+      "body_text": "You don't have to work outside of your normal schedule for me, it's okay. I\r\nwould really just like to return the items.\r\n\r\nOn Tue, Aug 26, 2025 at 8:21 PM service@simsonn.com ",
+      "user_id": 158002983653,
+      "created_at": "2025-08-27T19:07:36Z",
+      "updated_at": "2025-08-27T19:07:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007678755,
+      "body_text": "Hi Weston Fredrickson,     You only need to update the pedal firmware to restore it.  Please try to recover the PlusX pedals: press and hold the recovery button on the controller, then reconnect the USB. SIMSONN Manager 2.1.0 should automatically enter recovery mode.  Then go to Settings → Update → Manual Firmware Update, and select the pedals-firmware-pedals-plusx.sfu file to update.  After the update is complete, check the connection status.  If it still doesn’t work, please connect the USB cable to a USB 3.0 port on the back of your PC. Avoid using a USB hub without external power, as unstable power supply may cause disconnections.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-27T23:02:20Z",
+      "updated_at": "2025-08-27T23:02:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007678846,
+      "body_text": "Hi Weston Fredrickson,    At the front bottom of the handbrake (indicated by the arrow), there is a small rectangular hole that contains the recovery button. Please use a toothpick to gently push it to the other side, then reconnect the USB cable. The device will enter recovery mode.  Next, go to Settings → Update → Manual Firmware Update → handbrake-firmware → handbrake-hbpro.sfu in the software, and complete the update.  After the upgrade, make sure to switch the recovery button back to its original position. You may also use the VKB tool to check the device connection status.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-27T23:07:02Z",
+      "updated_at": "2025-08-27T23:07:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007685615,
+      "body_text": "I have tried several times to update the firmware for both products. The\r\nmanual update button is not clickable for more, which makes me think that I\r\nam up to date on the firmware. If I am in the return window date I would\r\nlike to return the items please.\r\n\r\nOn Wed, Aug 27, 2025 at 4:07 PM service@simsonn.com ",
+      "user_id": 158002983653,
+      "created_at": "2025-08-28T06:43:21Z",
+      "updated_at": "2025-08-28T06:43:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007733211,
+      "body_text": "Hi Weston Fredrickson,  If you follow the instructions and put the device into recovery mode first, you will definitely be able to click the \"Manual Update\" button. Please make sure to follow the procedure carefully. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-29T00:21:36Z",
+      "updated_at": "2025-08-29T00:21:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007733319,
+      "body_text": "I have already boxed the products up to return. I would like a shipping\r\nlabel please.\r\n\r\nOn Thu, Aug 28, 2025 at 5:21 PM service@simsonn.com ",
+      "user_id": 158002983653,
+      "created_at": "2025-08-29T00:31:53Z",
+      "updated_at": "2025-08-29T00:31:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007733888,
+      "body_text": "Hi Weston Fredrickson,     Could you please provide your order number? In addition, kindly review our return policy. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-29T00:57:40Z",
+      "updated_at": "2025-08-29T00:57:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007734634,
+      "body_text": "These are the order numbers for both items. I will put both boxes into one\r\nbox in order to not ship two items. It looks like I meet the day\r\nrequirement, but I do not have the original box for the pedals. Because\r\nthey worked for a short period of time I threw the box away not thinking\r\nthat I would need to return them. I have packaged them in a manner that\r\nwill ensure they will arrive unharmed. I hope that you will make an\r\nexception that I don't have the original box because I have had so much\r\ntrouble.\r\n\r\nOn Thu, Aug 28, 2025 at 5:57 PM service@simsonn.com ",
+      "user_id": 158002983653,
+      "created_at": "2025-08-29T01:48:12Z",
+      "updated_at": "2025-08-29T01:48:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007750425,
+      "body_text": "Hello, we are here to help you solve any problems you may encounter. However, we are unable to accept returns if the product is not damaged. We have helped many customers resolve the issues they faced, and we kindly ask you to trust us. As compensation, we would like to offer you a $30 refund. Please cooperate with us so we can resolve your problem. Thank you for your understanding! ",
+      "user_id": 158001343601,
+      "created_at": "2025-08-29T10:43:32Z",
+      "updated_at": "2025-08-29T10:43:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007778375,
+      "body_text": "I have already returned all the other items I bought from other brands so\r\nthere is no purpose or reason to continue testing. I think the return\r\npolicy page is very ambiguous and says you can return products if they have\r\nmanufacturer defects but it also says that if the return is for personal\r\nreasons the buyer pays for shipping. This made me believe that I could\r\nreturn the products as I am fine with paying for shipping.\r\n\r\nOn Fri, Aug 29, 2025 at 3:43 AM service@simsonn.com ",
+      "user_id": 158002983653,
+      "created_at": "2025-08-29T16:50:27Z",
+      "updated_at": "2025-08-29T16:50:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007866282,
+      "body_text": "Hello, I would really like to return the items. The shifter had a piece\r\nrattle out of it, I have tried to say that. I want to return both because\r\nyour return policy is not entirely clear. Please consider accepting. My\r\nreturns.\r\n\r\nOn Fri, Aug 29, 2025 at 9:50 AM Weston Fredrickson <\r\nwestonfredrickson19@gmail.com> wrote:\r\n\r\n> I have already returned all the other items I bought from other brands so\r\n> there is no purpose or reason to continue testing. I think the return\r\n> policy page is very ambiguous and says you can return products if they have\r\n> manufacturer defects but it also says that if the return is for personal\r\n> reasons the buyer pays for shipping. This made me believe that I could\r\n> return the products as I am fine with paying for shipping.\r\n>\r\n> On Fri, Aug 29, 2025 at 3:43 AM service@simsonn.com ",
+      "user_id": 158002983653,
+      "created_at": "2025-08-31T06:19:54Z",
+      "updated_at": "2025-08-31T06:19:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007885557,
+      "body_text": "Hi Weston Fredrickson,  You may provide a picture so that we can check what the issue is. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-01T07:43:05Z",
+      "updated_at": "2025-09-01T07:43:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007885558,
+      "body_text": "ID 为 2600 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-01T07:43:05Z",
+      "updated_at": "2025-09-01T07:43:05Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158007885561,
+      "body_text": "合并来自工单2600  \n      主题: Re: Simsonn Order Confirmation #SSN2265  \n      描述:  Please replace it with the black version. What’s the fastest it will be here? \n \n  \n On Mon, Aug 11, 2025 at 3:05 AM SIMSONN <service@simsonn.com> wrote: \n \n \n\n  \n  \n  \n  \n  \n\n\n\n   \n    \n      \n\n         \n          \n  \n\n     \n      \n\n        \n          \n\n             \n\n              \n                \n\n                   \n                       \n                        SIMSONN\n                       \n                   \n\n                \n              \n\n\n             \n          \n        \n\n\n      \n     \n  \n\n\n\n          \n  \n\n     \n      \n        \n          \n\n             \n              \n             Hello, the Plus X P3-H3 / Silver / Baseplate you purchased is currently out of stock in our US warehouse. We had originally planned to ship your order once the goods arrived in the next few days, but due to recent delays in customs clearance in the US, the shipment has been delayed and is now expected to arrive next week. We can either replace it with the Plus X P3-H3 / Black / Baseplate from the US warehouse or ship the silver version you purchased from China, but customs clearance may also be very slow. Please let me know your preference. \n\n             \n          \n        \n\n      \n     \n  \n\n\n          \n  \n\n     \n      \n        \n          \n\n             \n              \n               If you have any questions, reply to this email or contact us at service@simsonn.com",
+      "user_id": 158000445778,
+      "created_at": "2025-09-01T07:43:05Z",
+      "updated_at": "2025-09-01T07:43:05Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158007886760,
+      "body_text": "I have extensively explained what the issue was and do not feel like I need\r\nto re-explain. I just want to return the product.\r\n\r\nOn Mon, Sep 1, 2025 at 12:43 AM service@simsonn.com ",
+      "user_id": 158002983653,
+      "created_at": "2025-09-01T07:49:35Z",
+      "updated_at": "2025-09-01T07:49:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007944534,
+      "body_text": "We are very sorry to hear about this unfortunate situation. We have since changed our screw supplier and resolved the issue. We can arrange for a replacement part to be sent to you. Should you no longer require this, we will gladly issue a refund for the SQ Pro Sequential Shifter. Please let us know your preference.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-02T09:20:38Z",
+      "updated_at": "2025-09-02T09:20:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007990409,
+      "body_text": "I no longer have a use for both Simsonn products I bought as I don't have\r\nany other sim racing gear. I will be returning both the sequential shifter\r\nand the pedals that I have bought. Can you please send me a return label.\r\n\r\nOn Tue, Sep 2, 2025 at 2:20 AM service@simsonn.com ",
+      "user_id": 158002983653,
+      "created_at": "2025-09-02T19:49:31Z",
+      "updated_at": "2025-09-02T19:49:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008005891,
+      "body_text": "Hello, we can process a return for the SQ Pro Sequential Shifter, but not for the pedals. This is because it does not comply with our returns policy, and we are unable to resell them.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-03T06:12:46Z",
+      "updated_at": "2025-09-03T06:12:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008006024,
+      "body_text": "Why do the pedals not comply with the return policy?\r\n\r\nOn Tue, Sep 2, 2025 at 11:12 PM service@simsonn.com ",
+      "user_id": 158002983653,
+      "created_at": "2025-09-03T06:25:30Z",
+      "updated_at": "2025-09-03T06:25:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008006059,
+      "body_text": "Hi Weston Fredrickson,  As there is no outer packaging, we are unable to return the item to our overseas warehouse for inspection and resale. We appreciate your understanding.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-03T06:27:18Z",
+      "updated_at": "2025-09-03T06:27:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008006106,
+      "body_text": "I have the original box, the part I don’t have is the foam. You told me\r\nyour company has got a new screw supplier. I’ve had to tighten every\r\nfastener on the pedals as almost all of them backed out and fell off during\r\ntesting. So I believe that they should be returnable as the shifter is for\r\nthe same reason.\r\n\r\nOn Tue, Sep 2, 2025 at 11:27 PM service@simsonn.com ",
+      "user_id": 158002983653,
+      "created_at": "2025-09-03T06:32:42Z",
+      "updated_at": "2025-09-03T06:32:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008007200,
+      "body_text": "Hi Weston Fredrickson,    The screws themselves are fine, but if you feel they have become stripped due to multiple installations, we can send you a new set of screws.  In addition, our overseas warehouse has strict requirements for incoming packages — the packaging must be complete. If original protective materials, such as pearl cotton, are missing, the warehouse will directly discard the shipment. Please make sure the packaging is intact before sending it.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-03T07:08:26Z",
+      "updated_at": "2025-09-03T07:08:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008008103,
+      "body_text": "I feel like I have received a sub par product and am incredibly\r\ndisappointed that you are not willing to accept a return on a product with\r\nissues. After the screws fell out of the pedals, they stopped working and\r\nwould only work intermittently once put back in.\r\nOn Wed, Sep 3, 2025 at 12:08 AM service@simsonn.com ",
+      "user_id": 158002983653,
+      "created_at": "2025-09-03T07:23:18Z",
+      "updated_at": "2025-09-03T07:23:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008134338,
+      "body_text": "Hello, I would really like to return both products. Please send me a return\r\nshipping label.\r\n\r\nOn Wed, Sep 3, 2025 at 12:22 AM Weston Fredrickson <\r\nwestonfredrickson19@gmail.com> wrote:\r\n\r\n> I feel like I have received a sub par product and am incredibly\r\n> disappointed that you are not willing to accept a return on a product with\r\n> issues. After the screws fell out of the pedals, they stopped working and\r\n> would only work intermittently once put back in.\r\n>\r\n> On Wed, Sep 3, 2025 at 12:08 AM service@simsonn.com ",
+      "user_id": 158002983653,
+      "created_at": "2025-09-05T07:46:02Z",
+      "updated_at": "2025-09-05T07:46:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008230792,
+      "body_text": "Hello, I’ve topped receiving emails from your company in my issue. I want\r\nto return my products that do t function as intended.\r\n\r\nOn Fri, Sep 5, 2025 at 12:45 AM Weston Fredrickson <\r\nwestonfredrickson19@gmail.com> wrote:\r\n\r\n> Hello, I would really like to return both products. Please send me a\r\n> return shipping label.\r\n>\r\n> On Wed, Sep 3, 2025 at 12:22 AM Weston Fredrickson <\r\n> westonfredrickson19@gmail.com> wrote:\r\n>\r\n>> I feel like I have received a sub par product and am incredibly\r\n>> disappointed that you are not willing to accept a return on a product with\r\n>> issues. After the screws fell out of the pedals, they stopped working and\r\n>> would only work intermittently once put back in.\r\n>>\r\n>> On Wed, Sep 3, 2025 at 12:08 AM service@simsonn.com ",
+      "user_id": 158002983653,
+      "created_at": "2025-09-07T18:24:10Z",
+      "updated_at": "2025-09-07T18:24:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008259151,
+      "body_text": "Hi Weston Fredrickson,  Please provide a video so we can confirm the pedal's condition and which screw fell out .",
+      "user_id": 158001343601,
+      "created_at": "2025-09-08T10:53:11Z",
+      "updated_at": "2025-09-08T10:53:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008345658,
+      "body_text": "The accelerator screw and break screw fell off completely. I checked the\r\nclutch and it was very loose. The nut I pointed at had almost backed out\r\nthe entire way when I was checking all the screws and nuts.\r\n\r\nOn Mon, Sep 8, 2025 at 3:53 AM service@simsonn.com ",
+      "user_id": 158002983653,
+      "created_at": "2025-09-09T23:07:22Z",
+      "updated_at": "2025-09-09T23:07:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008358405,
+      "body_text": "Hello, this is not a damage. During installation and adjustment, it is normal for screws to become loose. You may use the tool provided to tighten them. We can arrange a return for your SQ Pro Sequential Shifter.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-10T08:14:48Z",
+      "updated_at": "2025-09-10T08:14:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008495672,
+      "body_text": "I want to return both. A product should not fall apart within hours of use.\r\nNice they fell out it created notable issues.\r\n\r\nOn Wed, Sep 10, 2025 at 1:14 AM service@simsonn.com ",
+      "user_id": 158002983653,
+      "created_at": "2025-09-11T07:08:22Z",
+      "updated_at": "2025-09-11T07:08:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008504351,
+      "body_text": "Hi Weston Fredrickson,    As is well known, our pedals are robust, and this is not the issue at hand. The SQ Pro Sequential Shifter has indeed encountered some problems, and we shall resolve this matter for you. Thank you for your understanding.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-11T10:05:17Z",
+      "updated_at": "2025-09-11T10:05:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008549823,
+      "body_text": "I feel like I have been done wrong by your company. Both products I have\r\nordered from you had significant issues. Enough so that dealing with your\r\nbrand has wasted my time and frankly money. I returned every piece of sim\r\nhardware I bought because everything just sat because your products broke.\r\n$300 dollars for an item that falls apart easily is ridiculous. I want to\r\nreturn both products and receive a full refund. I should not have to fight\r\nfor close to a month over broken products.\r\n\r\nOn Thu, Sep 11, 2025 at 3:05 AM service@simsonn.com ",
+      "user_id": 158002983653,
+      "created_at": "2025-09-11T18:44:51Z",
+      "updated_at": "2025-09-11T18:44:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008715399,
+      "body_text": "I’m emailing again to get a response as I feel I am being ignored. I would\r\nlike a refund on both products.\r\nOn Thu, Sep 11, 2025 at 11:44 AM Weston Fredrickson <\r\nwestonfredrickson19@gmail.com> wrote:\r\n\r\n> I feel like I have been done wrong by your company. Both products I have\r\n> ordered from you had significant issues. Enough so that dealing with your\r\n> brand has wasted my time and frankly money. I returned every piece of sim\r\n> hardware I bought because everything just sat because your products broke.\r\n> $300 dollars for an item that falls apart easily is ridiculous. I want to\r\n> return both products and receive a full refund. I should not have to fight\r\n> for close to a month over broken products.\r\n>\r\n> On Thu, Sep 11, 2025 at 3:05 AM service@simsonn.com ",
+      "user_id": 158002983653,
+      "created_at": "2025-09-14T23:11:43Z",
+      "updated_at": "2025-09-14T23:11:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008740819,
+      "body_text": "Hi Weston Fredrickson,  We’re very sorry, but we can only offer you a refund for the SQ Pro Sequential Shifter. Since the pedals are not damaged, they do not meet the conditions of our return policy. ",
+      "user_id": 158001343601,
+      "created_at": "2025-09-15T09:52:36Z",
+      "updated_at": "2025-09-15T09:52:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008828636,
+      "body_text": "I do not understand why I have to fight with you. By definition, falling\r\napart and not functioning properly is broken. I should not receive a\r\nproduct that immediately falls apart and does not function properly until I\r\nfix it. The product fell apart on me multiple times and did not function\r\nproperly until I realized what was happening. I want to receive a full\r\nrefund on the pedals as well.\r\n\r\nOn Mon, Sep 15, 2025 at 2:52 AM service@simsonn.com ",
+      "user_id": 158002983653,
+      "created_at": "2025-09-16T19:12:21Z",
+      "updated_at": "2025-09-16T19:12:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008855965,
+      "body_text": "In fact, the pedal itself is undamaged, and we cannot discern any issues from the photographs you have provided. Crucially, as the item has been used and the packaging is no longer available, we are unable to repair it or resell it.  Therefore, we can only offer a refund for the SQ Pro Sequential Shifter. Thank you for your understanding.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-17T11:04:33Z",
+      "updated_at": "2025-09-17T11:04:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008896156,
+      "body_text": "I honestly do not understand. Nowhere on your website, on the product\r\nlisting, does it say that you need to constantly maintain the pedals. They\r\nwere literally not functional when screws were falling out and I could not\r\nfigure out why. In the video I provided, the screws are only in there\r\nbecause I had to put them back in. Your listing for the pedals say things\r\nlike \"Triple Craftsmanship Exceptional Quality\", \"Robust and durable\r\nmaterials\", and \"Stable Construction\". I don't know if I just got unlucky\r\nwith my set, but this couldn't be further from the truth. The fact that you\r\nsay it has to be repaired shows that it is not a functional item like the\r\nlisting specifies. I do not understand why I have to fight to get my money\r\nback on a product that continuously falls apart.\r\n\r\nOn Wed, Sep 17, 2025 at 4:04 AM service@simsonn.com ",
+      "user_id": 158002983653,
+      "created_at": "2025-09-17T21:49:46Z",
+      "updated_at": "2025-09-17T21:49:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008980130,
+      "body_text": "I’m severely frustrated with a lack of communication. I want a refund on\r\nboth of my broken products. I should not have to repair an item every\r\nseveral days. Please send me a return shipping label for both items.\r\nOn Wed, Sep 17, 2025 at 2:49 PM Weston Fredrickson <\r\nwestonfredrickson19@gmail.com> wrote:\r\n\r\n> I honestly do not understand. Nowhere on your website, on the product\r\n> listing, does it say that you need to constantly maintain the pedals. They\r\n> were literally not functional when screws were falling out and I could not\r\n> figure out why. In the video I provided, the screws are only in there\r\n> because I had to put them back in. Your listing for the pedals say things\r\n> like \"Triple Craftsmanship Exceptional Quality\", \"Robust and durable\r\n> materials\", and \"Stable Construction\". I don't know if I just got unlucky\r\n> with my set, but this couldn't be further from the truth. The fact that you\r\n> say it has to be repaired shows that it is not a functional item like the\r\n> listing specifies. I do not understand why I have to fight to get my money\r\n> back on a product that continuously falls apart.\r\n>\r\n> On Wed, Sep 17, 2025 at 4:04 AM service@simsonn.com ",
+      "user_id": 158002983653,
+      "created_at": "2025-09-20T07:26:21Z",
+      "updated_at": "2025-09-20T07:26:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009100155,
+      "body_text": "Hello, Loose screws are a normal occurrence after adjusting the pedals; simply tighten them. This applies to all adjustable pedals – you must tighten all screws after adjustment. This has nothing to do with the quality of the pedals. The current issue is that you lack the product packaging. Upon returning it to our US warehouse, we would have to dispose of it. Consequently, we must strictly adhere to our return policy. Unless you can return it to China – which is clearly not a viable option given the exorbitant shipping costs involved.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-22T10:22:30Z",
+      "updated_at": "2025-09-22T10:22:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009201071,
+      "body_text": "I never adjusted the pedals. I got the product, tested it, and pieces\r\nstarted falling apart. I was going to ignore this next part because I\r\ndidn’t need it, but now I’m not going to. When I got the product there was\r\nan empty space in packaging and I was wondering what it was for. I was\r\nguessing it was for springs and dampers, and after looking through the\r\nmanual I realized that it was. At first I assumed you had to buy them\r\nseparately like the plates, but I can’t find anywhere that they are listed.\r\nI have had literally nothing but trouble and want my money back regardless\r\nof missing some of the foam. I’m incredibly upset about how this has ended\r\nup.  From the program not working, to the pedals falling apart, to the\r\nmissing parts. Your product was not as rigid as advertised and I’m very\r\ndisappointed. Please send me the return label for both products.\r\n\r\nOn Mon, Sep 22, 2025 at 3:22 AM service@simsonn.com ",
+      "user_id": 158002983653,
+      "created_at": "2025-09-24T03:29:27Z",
+      "updated_at": "2025-09-24T03:29:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009523983,
+      "body_text": "I’m seriously frustrated with the lack of communication and need a\r\nresolution.\r\n\r\nOn Tue, Sep 23, 2025 at 8:29 PM Weston Fredrickson <\r\nwestonfredrickson19@gmail.com> wrote:\r\n\r\n> I never adjusted the pedals. I got the product, tested it, and pieces\r\n> started falling apart. I was going to ignore this next part because I\r\n> didn’t need it, but now I’m not going to. When I got the product there was\r\n> an empty space in packaging and I was wondering what it was for. I was\r\n> guessing it was for springs and dampers, and after looking through the\r\n> manual I realized that it was. At first I assumed you had to buy them\r\n> separately like the plates, but I can’t find anywhere that they are listed.\r\n> I have had literally nothing but trouble and want my money back regardless\r\n> of missing some of the foam. I’m incredibly upset about how this has ended\r\n> up.  From the program not working, to the pedals falling apart, to the\r\n> missing parts. Your product was not as rigid as advertised and I’m very\r\n> disappointed. Please send me the return label for both products.\r\n>\r\n> On Mon, Sep 22, 2025 at 3:22 AM service@simsonn.com ",
+      "user_id": 158002983653,
+      "created_at": "2025-09-28T03:56:59Z",
+      "updated_at": "2025-09-28T03:56:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009697312,
+      "body_text": "Hello, I would like you to send a return label for the shifter. Ideally I\r\nwould like to return the pedals because I believe them to be faulty but we\r\ncannot reach an agreement on that issue for some reason. The reason why I\r\nbelieve the pedals to be faulty is that after the screws came out and I put\r\nthem back in they did not function properly afterwards. I was also missing\r\ncomponents out of the box when I received the pedals but didn't mention it\r\nbecause I thought I had to buy them like I had to buy the base plate.\r\n\r\nOn Wed, Sep 17, 2025 at 2:49 PM Weston Fredrickson <\r\nwestonfredrickson19@gmail.com> wrote:\r\n\r\n> I honestly do not understand. Nowhere on your website, on the product\r\n> listing, does it say that you need to constantly maintain the pedals. They\r\n> were literally not functional when screws were falling out and I could not\r\n> figure out why. In the video I provided, the screws are only in there\r\n> because I had to put them back in. Your listing for the pedals say things\r\n> like \"Triple Craftsmanship Exceptional Quality\", \"Robust and durable\r\n> materials\", and \"Stable Construction\". I don't know if I just got unlucky\r\n> with my set, but this couldn't be further from the truth. The fact that you\r\n> say it has to be repaired shows that it is not a functional item like the\r\n> listing specifies. I do not understand why I have to fight to get my money\r\n> back on a product that continuously falls apart.\r\n>\r\n> On Wed, Sep 17, 2025 at 4:04 AM service@simsonn.com ",
+      "user_id": 158002983653,
+      "created_at": "2025-09-30T19:58:00Z",
+      "updated_at": "2025-09-30T19:58:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009876249,
+      "body_text": "Hi Weston Fredrickson,    Please install the ToDesk tool so that I can assist you remotely. Registration is not required — if a login window appears, simply close it by clicking the top-right corner. Once installed, please provide me with the ID and verification code, and we can schedule a time for me to connect and resolve the issue for you.  https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-10-04T01:22:28Z",
+      "updated_at": "2025-10-04T01:22:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009876277,
+      "body_text": "ID 为 3055 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-04T01:25:22Z",
+      "updated_at": "2025-10-04T01:25:22Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158009876278,
+      "body_text": "合并来自工单3055  \n      主题: Simsonn Products Not Working  \n      描述:  Hello,   \n I recently ordered some pedals and a sequential shifter from you guys and installed the product manager from your website. Up until yesterday they both worked fine with aero issues, but now they will not function. The product manager pics them up but they show no input when used. I cannot calibrate the pedals and I do not see any input up or down on the sequential shifter. I am at a loss of what to do, I have tried moving usb ports around, removing cords providing power from my metal chassis in order to ground it, uninstalling and updating the product manager, and wiping and reinstalling drivers. I am not sure what my next step would be and I would really appreciate any assistance you can provide to me. Thank you for your time.  \n   \n Weston Fredrickson",
+      "user_id": 158000445778,
+      "created_at": "2025-10-04T01:25:22Z",
+      "updated_at": "2025-10-04T01:25:22Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158009878625,
+      "body_text": "I went through this process so try your support for two months and do not\r\nwant to do it again. The products do not work and are not how they are\r\ndescribed on the website. One item was even missing accessories. I want to\r\nreturn them for a full refund.\r\n\r\nOn Fri, Oct 3, 2025 at 6:22 PM service@simsonn.com ",
+      "user_id": 158002983653,
+      "created_at": "2025-10-04T06:29:38Z",
+      "updated_at": "2025-10-04T06:29:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009878654,
+      "body_text": "Hi Weston Fredrickson,    During the past two months, you have mainly been requesting a refund instead of cooperating with us to identify and resolve the issue.  So far, we still haven’t received the Revery operation video or the recording showing you re-binding the pedals in F1 2025,  which could demonstrate that the binding problem persists even after following the correct steps.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-04T06:35:10Z",
+      "updated_at": "2025-10-04T06:35:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009879600,
+      "body_text": "Hi Weston Fredrickson,    Let’s schedule a time — I can help you resolve the issue within just a few minutes,  so we can avoid any further delays and save your time.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-04T06:44:10Z",
+      "updated_at": "2025-10-04T06:44:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009880311,
+      "body_text": "I don't own F1 2025 and never claimed to. I sent videos and pictures of the\r\nissues I had, the only time I didn't want to try a suggestion you had was\r\nwhen you wanted to remote into my computer, which I am not comfortable\r\nwith. I cooperated for over a month with your support team. I'm sure you\r\ncan see why I have been increasingly frustrated. I followed the steps that\r\nyour support team gave me, so you didn't need to remote into my computer,\r\nand could not fix the issue.\r\n\r\nOn Fri, Oct 3, 2025 at 11:35 PM service@simsonn.com ",
+      "user_id": 158002983653,
+      "created_at": "2025-10-04T06:46:07Z",
+      "updated_at": "2025-10-04T06:46:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009880645,
+      "body_text": "When I couldn't get your products working and couldn't figure out how to\r\nget the returned, I returned absolutely everything else to runa sim-rig. I\r\ndo not any other hardware to run a setup with anymore. I bought everything\r\nspecifically for this and when we couldn't reach an agreement, I returned\r\neverything else because I didn't have the money to continue trying to buy\r\nmore working products.\r\n\r\nOn Fri, Oct 3, 2025 at 11:44 PM service@simsonn.com ",
+      "user_id": 158002983653,
+      "created_at": "2025-10-04T06:47:58Z",
+      "updated_at": "2025-10-04T06:47:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

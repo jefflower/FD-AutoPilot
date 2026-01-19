@@ -1,0 +1,44 @@
+{
+  "id": 487,
+  "subject": "Adjustment in kg /nm in Simsonn Software",
+  "description_text": "Hi Team Simsonn,\r\n\r\ncould you please provide us the opertunity to see the force giving to the pedal in kg or newton?\r\n\r\nIt's annoying that as soon as you change the elastomers, you only pedal with the approximate force from before to configure it. If you could see how much KG you are pedaling, configuration would be much(!) easier.\r\n\r\nThank you very much!\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-06-16T08:21:56Z",
+  "updated_at": "2025-06-16T10:16:38Z",
+  "requester_id": 158001581413,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003251799,
+      "body_text": "Hi Martin Kirfel,  Which version of the pedal are you using? We are currently testing and validating all versions. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-16T10:03:42Z",
+      "updated_at": "2025-06-16T10:03:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003252151,
+      "body_text": "Hi Team Simsonn,\r\n\r\nIm using the Pro Plus pedals with the new elasterics.\r\n\r\nGesendet von Outlook für Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158001581413,
+      "created_at": "2025-06-16T10:05:17Z",
+      "updated_at": "2025-06-16T10:05:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003253978,
+      "body_text": "Hi Martin Kirfel,  We’re still in the debugging phase at the moment. Once a new version is available, I’ll send you the download link right away. It will take some more time for testing to be completed. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-16T10:16:38Z",
+      "updated_at": "2025-06-16T10:16:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

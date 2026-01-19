@@ -1,0 +1,24 @@
+{
+  "id": 7900,
+  "subject": "Regarding shipping",
+  "description_text": "Hello, I was wondering when i can expect the pedals to be shipped? And does\r\nthe 8-12 day shipping time include the time it takes to ship?\r\n\r\nThanks.\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-12-10T15:40:52Z",
+  "updated_at": "2025-12-17T02:16:54Z",
+  "requester_id": 158007743003,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014610121,
+      "body_text": "此工单已关闭并合并到工单 8419 中",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T02:16:54Z",
+      "updated_at": "2025-12-17T02:16:54Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

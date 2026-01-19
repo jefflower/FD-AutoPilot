@@ -1,0 +1,24 @@
+{
+  "id": 6067,
+  "subject": "Simsonn pro x ultra pedals",
+  "description_text": "Hey guys,\r\n\r\nI brought the simsonn pro x ultra pedals and haptics Order #SSN2160 for some reason axis 4 is non stop going, like I have the haptics unplugged and and not pushing any pedals and axis 4 is saying that it is being used/spammed, just wondering what we can do about this, thanks\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-14T01:05:55Z",
+  "updated_at": "2025-11-16T02:17:23Z",
+  "requester_id": 158003157851,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012399688,
+      "body_text": "Hi Luke Paton,    Please uninstall the old version of the software from your computer, then download the latest SIMSONN Manager 2.1.2 using the link below. After that, follow the steps below to enter the firmware update process:    Press the upgrade button on the controller box;    Reconnect the USB cable;    Wait for the software to indicate it has entered “Simsonn Flasher Mode”;    Go to Settings → Update → Manual Firmware Update → pedals → firmware → pedals-proxultra.sfu to start the firmware update;    Once the update is completed, release the upgrade button;    Finally, test and calibrate the pedals.      https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-11-16T02:17:23Z",
+      "updated_at": "2025-11-16T02:17:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

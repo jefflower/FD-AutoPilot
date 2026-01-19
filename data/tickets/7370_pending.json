@@ -1,0 +1,134 @@
+{
+  "id": 7370,
+  "subject": "#SSN4219",
+  "description_text": "Hi is there any update on my order?\r\n#SSN4219\r\n\r\nI'm just waiting to hear if you've cancelled the order or shipped it.\r\nThank you,Brandon Le\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-04T00:46:16Z",
+  "updated_at": "2025-12-04T08:43:36Z",
+  "requester_id": 158007476248,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013363897,
+      "body_text": "Hi Brandon Le,    Due to a delay in the latest restocking at our warehouse, the processing of your order has been affected. We are expediting your shipment, and we kindly ask for a bit more patience. Thank you very much for your understanding and support.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T01:22:28Z",
+      "updated_at": "2025-12-04T01:22:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013363898,
+      "body_text": "ID 为 7180 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T01:22:31Z",
+      "updated_at": "2025-12-04T01:22:31Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158013363899,
+      "body_text": "合并来自工单7180  \n      主题: ORDER #SSN4219  \n      描述:  Hi can you please cancel my order #SSN4219?  I accidentally ordered the pedals without the clutch. I will submit another order for the correct ones.   Thank you, Brandon Le.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-04T01:22:31Z",
+      "updated_at": "2025-12-04T01:22:31Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158013364046,
+      "body_text": "Could you please change it to the one with the clutch instead?\r\n\r\n> ",
+      "user_id": 158007476248,
+      "created_at": "2025-12-04T01:28:19Z",
+      "updated_at": "2025-12-04T01:28:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013364632,
+      "body_text": "Hi Brandon Le,  Your package has already been shipped, and I'm sorry we cannot replace it for you.     https://www.ups.com/track?loc=en_US&requester=ST&trackNums=1ZJ201H40306746203/trackdetails",
+      "user_id": 158001343601,
+      "created_at": "2025-12-04T01:50:53Z",
+      "updated_at": "2025-12-04T01:50:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013365182,
+      "body_text": " I sent an email an hour after I ordered it to cancel the order. Did you guys not receive the email?\r\n    ",
+      "user_id": 158007476248,
+      "created_at": "2025-12-04T02:05:54Z",
+      "updated_at": "2025-12-04T02:05:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013365208,
+      "body_text": " \r\n\r\n   ----- Forwarded Message ----- ",
+      "user_id": 158007476248,
+      "created_at": "2025-12-04T02:06:28Z",
+      "updated_at": "2025-12-04T02:06:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013365836,
+      "body_text": "Hi Brandon Le,    No need to worry—you only need to pay the difference, and we'll ship the clutch to you with no additional shipping charges.    https://www.simsonn.com/products/difference-2",
+      "user_id": 158001343601,
+      "created_at": "2025-12-04T02:21:36Z",
+      "updated_at": "2025-12-04T02:21:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013366061,
+      "body_text": " I've already submitted a new order for the one with the clutch. I'll just return the original one.\r\n    ",
+      "user_id": 158007476248,
+      "created_at": "2025-12-04T02:26:57Z",
+      "updated_at": "2025-12-04T02:26:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013366485,
+      "body_text": " Can I start the return process for Order # #SSN4219.\r\nReason: Shipping error on your part.\r\nThank you,Brandon Le\r\n    ",
+      "user_id": 158007476248,
+      "created_at": "2025-12-04T02:40:24Z",
+      "updated_at": "2025-12-04T02:40:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013367105,
+      "body_text": "Or can you cancel my new order SSN4377\r\n\r\n> ",
+      "user_id": 158007476248,
+      "created_at": "2025-12-04T03:18:36Z",
+      "updated_at": "2025-12-04T03:18:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013378721,
+      "body_text": "Hi Brandon Le,    Alright, we'll cancel your original order #SSN4219 and reship a clutch instead, so you won't need to return it. Is that acceptable?",
+      "user_id": 158001343601,
+      "created_at": "2025-12-04T08:43:35Z",
+      "updated_at": "2025-12-04T08:43:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

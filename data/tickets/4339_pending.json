@@ -1,0 +1,24 @@
+{
+  "id": 4339,
+  "subject": "Support on a recently purchased product.",
+  "description_text": "Hi I am having trouble with getting the Simeon s1 hub working on my\r\ncomputer and others. Although the wheel is seen by applications such as\r\nAssetto corsa or iRacing some of the buttons do not work and also the\r\nhub/wheel does not appear or work with the simsonn manager\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-02T13:58:12Z",
+  "updated_at": "2025-10-03T02:27:22Z",
+  "requester_id": 158005171245,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009824277,
+      "body_text": "Hi Flow,  Are you reporting that the right rotary knob on the wheel is not functioning? In fact, it is designed to switch and control the left rotary knob. Also, please note that Windows can only display up to 32 buttons, while in-game you will be able to access all 40 buttons. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-03T02:27:22Z",
+      "updated_at": "2025-10-03T02:27:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

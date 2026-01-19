@@ -1,0 +1,34 @@
+{
+  "id": 10921,
+  "subject": "VAM Pro Phantom Movemrnts Issue",
+  "description_text": "Hello,\r\n\r\nI recently just got my VAM pro haptic feedback for my plus x pedals.\r\n\r\nI am looking in the software and it seems that the haptics are causing a\r\nlot of phantom movements in the brake pedal. When I have RPM on for example\r\n(see video) and depress the brake it is moving around all over the place.\r\n\r\nI have used the included washers inbetween the haptic mount and the pedal\r\nplate and I have grounded my control box to my brake pedal. I Don’t think\r\nEMI is the issue here.\r\n\r\nAny help would be appreciated!\r\n\r\nThanks,\r\n\r\nTJ\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-14T20:15:17Z",
+  "updated_at": "2026-01-16T02:04:58Z",
+  "requester_id": 158008899204,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017235336,
+      "body_text": "Hi Tim Towner,  We included nylon screws and nylon washers in the package. When installing the VAM Pro, please use them to electrically isolate the VAM Pro from the metal bracket, which helps reduce interference. Additionally, we recommend using a wire to connect the PC chassis/case and the controller box screw/metal housing to a common ground. This usually helps improve or resolve motor interference affecting the pedal signal. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-16T01:53:03Z",
+      "updated_at": "2026-01-16T01:53:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017235359,
+      "body_text": "Thank you, the screws fixed it for me\r\n\r\nOn Thu, Jan 15, 2026 at 19:53 service@simsonn.com ",
+      "user_id": 158008899204,
+      "created_at": "2026-01-16T01:54:05Z",
+      "updated_at": "2026-01-16T01:54:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

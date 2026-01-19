@@ -1,0 +1,24 @@
+{
+  "id": 6591,
+  "subject": "Broken throttle inputs",
+  "description_text": "I just got my pedals in the mail yesterday, got them set up and they were working fine and randomly today while using them the throttle and clutch would randomly only send up to 33-40% input to sims inn manager even though i am pressing them fully down. I changed nothing and i find it hard to believe that they would just randomly break like that, has this happened before?\r\nSent from my iPhone\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-23T16:25:19Z",
+  "updated_at": "2025-11-24T07:39:52Z",
+  "requester_id": 158007277095,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012799228,
+      "body_text": "Hi Curious George,    Please make sure that all pedals are connected to the main control box. Unplug and reconnect the USB cable once, then click “Offset” in the software to reset all pedal signals to zero.  If you have made any mechanical adjustments to the pedals — such as changing the springs, preload, or damper settings — you will need to perform the zero-offset calibration again.",
+      "user_id": 158000445778,
+      "created_at": "2025-11-24T07:39:52Z",
+      "updated_at": "2025-11-24T07:39:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 10761,
+  "subject": "",
+  "description_text": "Hi I keep trying new customers discount code and it doesn't seem to work\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-13T07:49:48Z",
+  "updated_at": "2026-01-14T09:03:15Z",
+  "requester_id": 158009046818,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017085209,
+      "body_text": "Hi Wayne Nicholl,     Please note that the minimum purchase requirement for this discount is $179. Have you reached this amount?",
+      "user_id": 158001343601,
+      "created_at": "2026-01-14T09:03:15Z",
+      "updated_at": "2026-01-14T09:03:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

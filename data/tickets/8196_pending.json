@@ -1,0 +1,24 @@
+{
+  "id": 8196,
+  "subject": "Oreder SSN4435 not been delivered",
+  "description_text": "Good morning\r\n\r\nI placed an order for a pedal board, order SSN4435.\r\n\r\nThis order was shipped on December 5, 2025. I selected express delivery for\r\n€26.95 with 3-7 day delivery. However, as of today (December 15, 2025), my\r\norder has not been delivered.\r\n\r\nThe tracking for order SF6047135865743 has not been updated since December\r\n10, 2025, at 9:00 PM. \"The shipment has arrived at the CN Guangdong\r\nProvince Dongguan International Parcel Distribution Center.\"\r\n\r\nCould you please check and let me know the reason for the delay?\r\n\r\nI remain waiting.\r\n\r\nBest regards.\r\nLorenzo Rubiu\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-14T08:22:22Z",
+  "updated_at": "2025-12-15T08:51:27Z",
+  "requester_id": 158007803895,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014501942,
+      "body_text": "Hi Lorenzo Rubiu1,    Your package was scheduled for delivery on the 19th, but due to overwhelming volume in our shipping channels, it could not be dispatched. We sincerely apologize for the inconvenience caused and will refund the additional shipping fees for you.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-15T08:51:27Z",
+      "updated_at": "2025-12-15T08:51:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

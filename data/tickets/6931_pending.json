@@ -1,0 +1,24 @@
+{
+  "id": 6931,
+  "subject": "Shipping request",
+  "description_text": "\r\nHi, I placed an order today order number #SSN3989 I would be very happy if it would be possible to have the order shipped with dhl express as I’m a courier for them. Best regards Nicolas \r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-28T09:06:57Z",
+  "updated_at": "2025-12-04T12:46:32Z",
+  "requester_id": 158007389742,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013388317,
+      "body_text": "Hi Nico Xenidis,    I'm terribly sorry for the delay in replying. Your parcel has now been dispatched via UPS.  https://t.17track.net/en#nums=1Z144AW70423302871",
+      "user_id": 158001343601,
+      "created_at": "2025-12-04T12:46:32Z",
+      "updated_at": "2025-12-04T12:46:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

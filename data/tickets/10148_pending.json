@@ -1,0 +1,74 @@
+{
+  "id": 10148,
+  "subject": "Never received product?",
+  "description_text": "Hi there I put in a request through your support site with freshdesk I\r\nbelieve was the name and never got a reply it's been about 10 days since\r\nIve put in that request. The money has been withdrawn from the account but\r\nI never got a shipping number or confirmation, Please reply as soon as\r\npossible thank you very much.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-06T23:21:18Z",
+  "updated_at": "2026-01-08T09:38:21Z",
+  "requester_id": 158008797672,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015264750,
+      "body_text": "Hi there just checking up on this as it's been 3 days since I've reported it thank you for your time.",
+      "user_id": 158008797672,
+      "created_at": "2025-12-30T16:54:12Z",
+      "updated_at": "2025-12-30T16:54:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158016061703,
+      "body_text": "ID 为 9332 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T05:10:16Z",
+      "updated_at": "2026-01-07T05:10:16Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016061705,
+      "body_text": "合并来自工单9332  \n      主题: No shipment after being over a week since buying?  \n      描述:  Hi there I purchased the simsonn HS pro and i purchased it on the 13th. I never got a tracking number and it's never arrived. Please respond within a timely manner thank you, the order number is #SSN4809",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T05:10:16Z",
+      "updated_at": "2026-01-07T05:10:16Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016061784,
+      "body_text": "Hi Switch Pro，  Your order has already been shipped. Please keep an eye on the tracking updates for further delivery progress. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T05:10:56Z",
+      "updated_at": "2026-01-07T05:10:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016064122,
+      "body_text": "Hi can you resend the email please as I haven't seen it thank you",
+      "user_id": 158008797672,
+      "created_at": "2026-01-07T05:20:30Z",
+      "updated_at": "2026-01-07T05:20:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158016314277,
+      "body_text": "Hi Switch Pro,    A shipping notification has been sent to the email address you provided.  debbievance382@gmail.com      Here is your tracking link.  https://t.17track.net/en#nums=JSELN2410427533YQ",
+      "user_id": 158001343601,
+      "created_at": "2026-01-08T09:38:21Z",
+      "updated_at": "2026-01-08T09:38:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

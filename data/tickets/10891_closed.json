@@ -1,0 +1,24 @@
+{
+  "id": 10891,
+  "subject": "order #SSN5728",
+  "description_text": "Hi\r\n\r\n\r\n\r\n                                I’ve received my QRs but it looks like one\r\nof them wasn’t machined correctly.\r\n\r\n\r\n\r\n                                As you can see from the pictures, one of\r\nthem doesn’t have threads in all of the holes so doesn’t fit on one of my\r\nwheels.\r\n\r\n\r\n\r\n                                Would you be able to arrange a replacement\r\nand if you require me to return the faulty one can you please send a\r\npre-paid label.\r\n\r\n\r\n\r\nThanks\r\n\r\n\r\n\r\nMark\r\n\r\n",
+  "status": 5,
+  "priority": 3,
+  "created_at": "2026-01-14T11:21:15Z",
+  "updated_at": "2026-01-15T14:51:40Z",
+  "requester_id": 158008847492,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017196901,
+      "body_text": "This was a duplicate",
+      "user_id": 158008847492,
+      "created_at": "2026-01-15T14:51:39Z",
+      "updated_at": "2026-01-15T14:51:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ]
+}

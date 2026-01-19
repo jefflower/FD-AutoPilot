@@ -1,0 +1,44 @@
+{
+  "id": 7792,
+  "subject": "Order confirmation",
+  "description_text": "\r\n\r\n\r\nHello i am just making sure my order went through. i never got an email or text confirmation. \r\n\r\n\r\nSent from Yahoo Mail for iPhone\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-09T15:04:26Z",
+  "updated_at": "2025-12-20T12:20:38Z",
+  "requester_id": 158007718575,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014224973,
+      "body_text": "Hi Preed2014,    We have received your order, SSN4458. We will process it shortly, and shipping is expected to begin on December 15th.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-09T23:32:33Z",
+      "updated_at": "2025-12-09T23:32:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014665904,
+      "body_text": "can you please give me the tracing number for this item\r\n\r\n\r\nSent from Yahoo Mail for iPhone\r\n\r\n\r\n",
+      "user_id": 158007718575,
+      "created_at": "2025-12-17T22:50:38Z",
+      "updated_at": "2025-12-17T22:50:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014810124,
+      "body_text": "Hi Preed2014,  If you ordered the H-pattern and sequential 2-in-1 shifter, the shipment has been delayed and is scheduled to be dispatched on the 20-23th. Thank you for your patience and understanding. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-20T12:20:38Z",
+      "updated_at": "2025-12-20T12:20:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

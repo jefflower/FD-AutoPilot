@@ -1,0 +1,375 @@
+{
+  "id": 4436,
+  "subject": "Re: Reminder: Order #SSN2608, how did it go?",
+  "description_text": "The probes need to be calibrated and software updated every time the PC starts.",
+  "status": 4,
+  "priority": 4,
+  "created_at": "2025-10-04T13:35:33Z",
+  "updated_at": "2025-11-05T06:32:42Z",
+  "requester_id": 158004564748,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008837951,
+      "body_text": "Hello, this is your other package tracking link. It is expected to be delivered to you within the next two days. https://t.17track.net/en#nums=SF6045905553307",
+      "user_id": 158001343601,
+      "created_at": "2025-09-17T02:02:51Z",
+      "updated_at": "2025-09-17T02:02:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008870886,
+      "body_text": "Thank you.",
+      "user_id": 158004564748,
+      "created_at": "2025-09-17T14:56:27Z",
+      "updated_at": "2025-09-17T14:56:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008933113,
+      "body_text": "Hi Alcir Lima de Paula, Do you mean that you would like to check the order and shipping information on our official website, or that you are trying to log in to the SIMSONN Manager 2.1.0 software? If it is the software, please note that the available trial features are currently limited.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-19T01:32:55Z",
+      "updated_at": "2025-09-19T01:32:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008933237,
+      "body_text": "Hi! No, everything is fine with my shipment, all items are here! My question is about logging into the software manager, how can I proceed?",
+      "user_id": 158004564748,
+      "created_at": "2025-09-19T01:46:35Z",
+      "updated_at": "2025-09-19T01:46:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008933261,
+      "body_text": "Hi Alcir Lima de Paula, You don’t need to log in for now, as some of the features after login are still under development. At this stage, logging in is not necessary.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-19T01:49:16Z",
+      "updated_at": "2025-09-19T01:49:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008934427,
+      "body_text": "So how can I calibrate, because the SIM Manager software doesn't recognize my pedal!",
+      "user_id": 158004564748,
+      "created_at": "2025-09-19T04:18:01Z",
+      "updated_at": "2025-09-19T04:18:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008934451,
+      "body_text": "It shows Simsonn Flasher and nothing works.",
+      "user_id": 158004564748,
+      "created_at": "2025-09-19T04:19:55Z",
+      "updated_at": "2025-09-19T04:19:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008934695,
+      "body_text": "SIM Manager isn't working, what should I do?",
+      "user_id": 158004564748,
+      "created_at": "2025-09-19T04:38:23Z",
+      "updated_at": "2025-09-19T04:38:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008935179,
+      "body_text": "I'm trying to recognize the pedal in the iRacing game and can't calibrate it. I've uninstalled and downloaded the software so many times and it's not recognized. I'm trying to update, but it just opens the 2.1.0 application and never goes to 2.1.0.",
+      "user_id": 158004564748,
+      "created_at": "2025-09-19T05:25:51Z",
+      "updated_at": "2025-09-19T05:25:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008935240,
+      "body_text": "Please, I'm trying to make this pedal work, but the SIM Manager app isn't working and can't recognize the pedal.",
+      "user_id": 158004564748,
+      "created_at": "2025-09-19T05:31:49Z",
+      "updated_at": "2025-09-19T05:31:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008935420,
+      "body_text": "The app is still locked. I've deactivated all firewalls! I've never had any problems with apps, only this one isn't working. What do I need to do?",
+      "user_id": 158004564748,
+      "created_at": "2025-09-19T05:56:48Z",
+      "updated_at": "2025-09-19T05:56:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008935431,
+      "body_text": "On Fri, Sep 19, 2025 at 1:56 AM Alcir Lima de Paula <alcirlp2@gmail.com> wrote: The app is still locked. I've deactivated all firewalls! I've never had any problems with apps, only this one isn't working. What do I need to do?",
+      "user_id": 158004564748,
+      "created_at": "2025-09-19T05:58:40Z",
+      "updated_at": "2025-09-19T05:58:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008936609,
+      "body_text": "Hi Alcir Lima de Paula, Please uninstall SIMSONN Manager 2.1.0 from your computer. Could you confirm whether the software cannot be opened at all, or it opens but fails to connect? Then, please download and install the 2.1.1 version from the provided link. If it still shows \"cannot connect,\" press and hold the upgrade button on the control box while reconnecting the USB. The software should indicate that it has entered firmware upgrade mode. If the issue persists, it may be due to insufficient USB power supply. Please connect the USB cable to a rear USB3.0 blue port on your computer and avoid using a USB hub. Once this works, go to: Settings → Update → Manual Firmware Update → Select pedals-firmware-pedals-proxultra.sfu After the update is complete, check whether the connection is normal. https://drive.google.com/file/d/1mS9dS2GyzhRYo81BcmTIOXY1POa6RvST/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-09-19T08:23:48Z",
+      "updated_at": "2025-09-19T08:23:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008936676,
+      "body_text": "Hi Alcir Lima de Paula, When you double-click the program, it should normally open this interface. Could you confirm whether you are seeing an error message, or it simply does not open correctly? Please record a short video showing the issue, upload it to Google Drive, and make sure to grant us access so that we can review it and assist you.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-19T08:31:49Z",
+      "updated_at": "2025-09-19T08:31:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008973465,
+      "body_text": "Tickets with IDs 3872, 3956, and 3967 have been merged into this ticket.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-20T03:23:05Z",
+      "updated_at": "2025-09-20T03:23:05Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158008973466,
+      "body_text": "Merged from ticket 3872 Subject: Didn't arrive haptics Description: Hello, I bought the weights together with the haptics, they didn't arrive together! n° SSN2608",
+      "user_id": 158000445778,
+      "created_at": "2025-09-20T03:23:06Z",
+      "updated_at": "2025-09-20T03:23:06Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158008973468,
+      "body_text": "Merged from ticket 3956 Subject: Login simsonn app Manager Description: Hi, I bought your X Pro pedal and Van Pro a few days ago. How can I create a login with this email?",
+      "user_id": 158000445778,
+      "created_at": "2025-09-20T03:23:06Z",
+      "updated_at": "2025-09-20T03:23:06Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158008973470,
+      "body_text": "Merged from ticket 3967 Subject: Software doesn't recognize Description: Hello, the Pro X Ultra pedal does not work. I installed it and did the initial configuration. After 10 minutes of testing, I turned off the PC to do other things. When I returned, it did not work! The application is blocked! The SIM Manager is not blocked. iRacing does not recognize the pedal, and the SIM Messenger software is blocked, without the possibility of moving or configuring it. I uninstalled it and reinstalled it. I tried this process throughout the day and it did not work. I have a championship on Sunday and I would like to use the Prodigy! I would like to know if you have any explanation and how to make it work?",
+      "user_id": 158000445778,
+      "created_at": "2025-09-20T03:23:07Z",
+      "updated_at": "2025-09-20T03:23:07Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158008973474,
+      "body_text": "Hi Alcir Lima de Paula, I checked the link you provided, but Google Drive requires access permissions, so I’m unable to view it at the moment. If the device shows “Simsonn Flasher” mode, please release the recovery button on the control box and then reinsert the USB cable — it will return to normal mode.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-20T03:24:45Z",
+      "updated_at": "2025-09-20T03:24:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008994864,
+      "body_text": "So it's working through the link you sent for version 2.1.1, okay! Now every time I turn off and on the PC, I have to manually download and reconfigure it.",
+      "user_id": 158004564748,
+      "created_at": "2025-09-20T15:59:36Z",
+      "updated_at": "2025-09-20T15:59:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009021822,
+      "body_text": "Hi Alcir Lima de Paula, Hello, the video you shared is currently not accessible. Could you please adjust the access permissions so that we can view it and assist you in resolving the issue? Hello, please don’t worry. If the issue cannot be resolved, you can install the ToDesk software, and we will assist you remotely to fix it. https://dl.todesk.com/windows/ToDesk_Setup.exe",
+      "user_id": 158000445778,
+      "created_at": "2025-09-21T10:31:24Z",
+      "updated_at": "2025-09-21T10:31:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009025098,
+      "body_text": "That doesn't work. Every time I shut off and turn on the computer, the app doesn't recognize the pedal, so it needs to be updated every time for it to work.",
+      "user_id": 158004564748,
+      "created_at": "2025-09-21T13:15:54Z",
+      "updated_at": "2025-09-21T13:15:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009236528,
+      "body_text": "Hi Alcir Lima de Paula, Hello, the video you shared is currently not accessible. Could you please adjust the access permissions so that we can view it and assist you in resolving the issue? Please set the access permissions for the video on Google Drive, as we are currently unable to view its content. Additionally, if our SIMSONN Manager software fails to open, it may be due to your computer settings. You can try testing it on a different computer, or take a photo of the error screen when opening the software and send it to us. We will help you analyze and resolve the issue.",
+      "user_id": 158000445778,
+      "created_at": "2025-09-24T15:29:58Z",
+      "updated_at": "2025-09-24T15:29:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009753975,
+      "body_text": "The SIMSONN software opens, but the problem is that every time I turn off the computer, I need to update the software and calibrate it every time! How can I solve this problem?",
+      "user_id": 158004564748,
+      "created_at": "2025-10-01T18:49:07Z",
+      "updated_at": "2025-10-01T18:49:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009937889,
+      "body_text": "Ticket with ID 3986 has been merged into this ticket.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T15:55:57Z",
+      "updated_at": "2025-10-05T15:55:57Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158009937890,
+      "body_text": "Merged from ticket 3986 Subject: Item shared with you: \"Desktop 2025.09.19 - 22.02.29.01.mp4\" Description: Alcir Lima de Paula shared an item Alcir Lima de Paula (alcirlp2@gmail.com) has shared the following item: https://drive.google.com/file/d/1eQLrInyEPJAlSHX0dUcTA2-GJo8tLtiq/view?usp=drive_link Hello, I deleted 2.1.0 and downloaded 2.1.1, and I still have the same problem (there is no reset button, but I removed the USB cable and put it back in. It is already in the blue USB port. I have already disabled all firewalls on the PC. When I open the app, it appears like this in the video. I can't click on it in the software and it tells me to remove the USB and put it back in. It stays on Simsonn Flasher and nothing happens! There must be a way. I haven't been able to use it for 3 days. Desktop 2025.09.19 - 22.02.29.01.mp4 This email grants access to this item without logging in. Only forward it to people you trust. Open Does this item look suspicious? Block sender Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA You have received this email because alcirlp2@gmail.com shared a file or folder located in Google Drive with you.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T15:55:58Z",
+      "updated_at": "2025-10-05T15:55:58Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158009937894,
+      "body_text": "Hi Alcir Lima de Paula, Please uninstall the old version on your computer, then reinstall version 2.1.2 and update the firmware. After the update, the device version should display as CPU1: 2.0.5, CPU2: 2.0.3. If the issue persists, please feel free to contact me. https://drive.google.com/file/d/1PZwHUqhhmJw0IBGDO8mGONPbrICJU3z1/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T15:56:34Z",
+      "updated_at": "2025-10-05T15:56:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010116941,
+      "body_text": "My pedal app still needs to update when I start the computer using 2.1.2. Video here: https://drive.google.com/file/d/1AGHvlkNRiWLI7fEIwUY_q-OOTST-1-ZH/view?usp=sharing",
+      "user_id": 158004564748,
+      "created_at": "2025-10-08T19:26:22Z",
+      "updated_at": "2025-10-08T19:26:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010135096,
+      "body_text": "Hi Alcir Lima de Paula, Hello, if your SIMSONN Manager version is 2.1.2 and your pedal firmware is 2.0.5, then everything is correct — no further update is needed. If you still see an update prompt, please take a screenshot or photo and send it to me.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-09T09:11:51Z",
+      "updated_at": "2025-10-09T09:11:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010287647,
+      "body_text": "Hi, good afternoon. I installed 2.1.2, where do I find firmware 2.0.5? The pedal still needs to be calibrated every time I start the computer. Is that normal? Please let me know.",
+      "user_id": 158004564748,
+      "created_at": "2025-10-11T16:08:58Z",
+      "updated_at": "2025-10-11T16:08:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010314352,
+      "body_text": "Hi Alcir Lima de Paula, I didn’t quite understand what you meant. Could you please record a short video to show the issue? Please send it to us via Google Drive and make sure to grant access permission, so we can review it and help you resolve the problem.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-12T11:48:14Z",
+      "updated_at": "2025-10-12T11:48:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010327634,
+      "body_text": "I'd like to know if this is normal. It happens that every time I start my computer and need to update and calibrate the pedal, it always comes up with a different calibration. Here's the video on Google Drive with open permissions! I use 2.1.2. Video Google Drive: https://drive.google.com/file/d/1AGHvlkNRiWLI7fEIwUY_q-OOTST-1-ZH/view?usp=drivesdk",
+      "user_id": 158004564748,
+      "created_at": "2025-10-12T19:16:12Z",
+      "updated_at": "2025-10-12T19:16:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010539344,
+      "body_text": "Hi Alcir Lima de Paula, Please check whether the “upgrade” button on the control box has been pressed down — this could cause the device to enter recovery mode every time it starts. Try releasing the button and reconnecting the USB to see if it works normally.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-16T06:42:55Z",
+      "updated_at": "2025-10-16T06:42:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010684609,
+      "body_text": "Yes, it worked!",
+      "user_id": 158004564748,
+      "created_at": "2025-10-18T19:12:13Z",
+      "updated_at": "2025-10-18T19:12:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010714386,
+      "body_text": "",
+      "user_id": 158004564748,
+      "created_at": "2025-10-20T02:19:22Z",
+      "updated_at": "2025-10-20T02:19:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    },
+    {
+      "id": 158011771313,
+      "body_text": "After support taught me how to reset the control box, everything works wonderfully! Thank you!",
+      "user_id": 158004564748,
+      "created_at": "2025-11-05T06:27:56Z",
+      "updated_at": "2025-11-05T06:27:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

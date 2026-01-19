@@ -1,0 +1,24 @@
+{
+  "id": 641,
+  "subject": "My wheel and pedals are interfering with each other",
+  "description_text": "Hi, I have the Simpson pro plus pedals. And currently, my SIM magic wheel\r\nis interfering with my brake pedal. Every time I turn the wheel, it\r\nactivates my break. And depending on where I have my dead zone set at it\r\ncan register anything from 1 to 2 percent or as high as 60% force on my\r\nbreak. It does not register any pressure on the gas but the white line in\r\ndevice settings does move a small amount. How do I fix this? I have tried\r\ncalibrating multiple times, changing the u s b port and i've also tried\r\nchanging the cable. I've unplugged and plugged the pedals back in, but\r\nnothing I have done so far seems to have made any difference\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-06-20T08:16:15Z",
+  "updated_at": "2025-06-21T16:19:39Z",
+  "requester_id": 158001688178,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003677674,
+      "body_text": "Hi Stephen Huntington,    Have you connected the green ground wire from the controller box to any screw on the pedal? Please make sure it’s properly connected to the metal layer—some paint may need to be removed to ensure a reliable ground connection.  Alternatively, you can connect the pedal mount, PC, or base unit to your household ground. Devices like Simagic and Fanatec bases can generate electrical interference, and if your PC and base are not properly grounded, it may affect the stability of other devices, especially during gameplay.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-21T16:19:39Z",
+      "updated_at": "2025-06-21T16:19:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

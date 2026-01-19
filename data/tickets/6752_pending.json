@@ -1,0 +1,64 @@
+{
+  "id": 6752,
+  "subject": "Simsonn Pedal Haptics Question",
+  "description_text": "Hello,\r\n\r\nDo the currently listed Simsonn Plus X Pedals with Haptics come with the\r\nnew vertical mounting brackets? I would like to order them but want to make\r\nsure I am getting the correct brackets to go along with them.\r\n\r\nThank you\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-26T03:11:50Z",
+  "updated_at": "2025-12-01T02:22:15Z",
+  "requester_id": 158007335430,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012941635,
+      "body_text": "Hi Mark Saba,     Our vibration motors are available in both horizontal and vertical mounting options. You can refer to this accessory or check the specifications on the vibration motor product page.   https://www.simsonn.com/products/simsonn-haptic-reactor-mounting-brackets",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T11:02:30Z",
+      "updated_at": "2025-11-26T11:02:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012953694,
+      "body_text": "Perfect. Thank you for the reply. One last question, hopefully: If ordering\r\nthe pedals from your website, the Plus, not the Pro, will I need to also\r\norder the haptics control box or does each pedal set come with that\r\nstandard. It was not exactly clear from the notes on the product page.\r\n\r\nThank you again for your help!\r\n\r\nOn Wed, Nov 26, 2025 at 6:02 AM support@simsonn.com ",
+      "user_id": 158007335430,
+      "created_at": "2025-11-26T15:20:17Z",
+      "updated_at": "2025-11-26T15:20:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013037999,
+      "body_text": "Hi Mark Saba,  The latest version on our official website is PlusX. Its control box supports vibration feedback interfaces. If you want vibration feedback, you only need to purchase the motor and power supply separately. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-28T04:04:34Z",
+      "updated_at": "2025-11-28T04:04:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013077265,
+      "body_text": "If I have an Aluminum profile rig(Simlab GT1 EVO) with a pedal baseplate\r\nalready, would I require your Simsonn baseplate still, or could I just use\r\nthe Carbon Fiber heel plate. And does the heel plate come with necessary\r\nhardware to mount it in the correct lifted position without your Simsonn\r\nbaseplate?\r\n\r\nOn Thu, Nov 27, 2025 at 11:04 PM support@simsonn.com ",
+      "user_id": 158007335430,
+      "created_at": "2025-11-28T18:20:07Z",
+      "updated_at": "2025-11-28T18:20:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013154897,
+      "body_text": "Hi Mark Saba,  Without the base plate, the riser plate cannot be installed. If you don’t need a riser plate and the pedals can be installed directly, the base plate is not necessary and does not need to be purchased. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-01T02:22:14Z",
+      "updated_at": "2025-12-01T02:22:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

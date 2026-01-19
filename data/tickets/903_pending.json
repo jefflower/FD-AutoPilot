@@ -1,0 +1,44 @@
+{
+  "id": 903,
+  "subject": "vram pro",
+  "description_text": "Bonjour , je possède vos moteurs Vram pro avec le nouveau boitier de communication .  J’utilise le simsonn manager pour la configuration , mais certains jeux ne fonctionne pas ( ex f1 22 ) .  Votre boitier est -il compatible avec simhub et si oui comment le configurer .  Merci",
+  "status": 3,
+  "priority": 2,
+  "created_at": "2025-06-27T07:31:17Z",
+  "updated_at": "2025-06-27T22:58:35Z",
+  "requester_id": 158000955656,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004190516,
+      "body_text": "Hi francis azurtel,  Our software currently supports 10 games. May I ask which game you are using now? We are continuously working to add telemetry support for more titles. In the meantime, you can use the internal version of SimHub that I’ve provided. The official release is still undergoing testing and may take a bit more time.   https://drive.google.com/file/d/1QrSbAvCC5iyx9XgdRgSQV-hWpmDGkujc/view?usp=sharing",
+      "user_id": 158000445778,
+      "created_at": "2025-06-27T10:31:52Z",
+      "updated_at": "2025-06-27T10:31:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004216192,
+      "body_text": "j'utilise f1 22 mais pas de retour ? alors que le jeux est bien dans la base  asseto corsa et competition fonctionnent bien  horizon 5 pas testé  automobilista 2  fonctionne bien     merci de votre retour",
+      "user_id": 158000955656,
+      "created_at": "2025-06-27T17:16:00Z",
+      "updated_at": "2025-06-27T17:16:00Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158004216277,
+      "body_text": "je vous remercie pour la version beta je vous fait du retour ...",
+      "user_id": 158000955656,
+      "created_at": "2025-06-27T17:26:39Z",
+      "updated_at": "2025-06-27T17:26:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    }
+  ]
+}

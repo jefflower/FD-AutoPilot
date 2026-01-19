@@ -1,0 +1,24 @@
+{
+  "id": 8011,
+  "subject": "Amazon Order Not Received",
+  "description_text": " \r\n\r\n \r\n \r\nHello,\r\n \r\n\r\n \r\nI placed an order for PRO X U-P3-H3-1-1 (Pro X Ultra with Baseplate) and it was \"delivered\" through UPS tracking #1ZJ201H40303678364. However, I only received a slim brown box containing the Baseplate, heel plate and LED strip (no pedal hardware). I checked with Amazon and they said to get in touch with UPS. I called UPS and they told me that the item is correctly delivered and that there was only 1 box in the shipment. Their recommendation was to check with the shipper so I am writing today to see if I can still expect the pedals or if I should place another order and seek a refund from Amazon? Please advise, thank you!\r\n \r\n\r\n \r\nOrder summary\r\n \r\nOrder placed\r\n \r\nDecember 3, 2025\r\n \r\nOrder #\r\n \r\n113-7566553-5041835\r\n \r\n\r\n \r\nUPS Tracking\r\n \r\n1ZJ201H40303678364\r\n \r\n\r\n \r\nBest regards,\r\n \r\nJose Pacheco\r\n \r\njosepacheco400@gmail.com\r\n \r\n\r\n \r\n \r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-12-11T18:04:05Z",
+  "updated_at": "2025-12-18T09:40:26Z",
+  "requester_id": 158007760345,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014428083,
+      "body_text": "Hi josepacheco400,   Your order 113-7566553-5041835  from SIMSONN was sent out in 2 packages. The tracking number for the PRO X Ultra Pedals is 886910295097  (ships from US warehouse, the shipping carrier is FedEx, you can track it via https://www.fedex.com/fedextrack ),",
+      "user_id": 158007774607,
+      "created_at": "2025-12-13T03:50:22Z",
+      "updated_at": "2025-12-13T03:50:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

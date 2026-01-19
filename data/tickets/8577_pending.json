@@ -1,0 +1,44 @@
+{
+  "id": 8577,
+  "subject": "order",
+  "description_text": "Hello,\r\n\r\nI havent receved any updates on my order placed on december 5th .\r\n\r\nCould you please tell me what the statu sis.\r\n\r\n \r\n\r\nThank you\r\n\r\n \r\n\r\nJean-Pierre et Michèle DOR\r\n\r\n \r\n\r\n  0664677317\r\n  dor.jean-pierre@orange.fr\r\n\r\n\r\n\r\n \r\n\r\n \r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-18T09:20:17Z",
+  "updated_at": "2025-12-23T05:52:39Z",
+  "requester_id": 158007858931,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014876395,
+      "body_text": "Hi Dor. jean-pierre,  Could you please provide your order number? We will check it. ",
+      "user_id": 158007774607,
+      "created_at": "2025-12-22T11:54:52Z",
+      "updated_at": "2025-12-22T11:54:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014882252,
+      "body_text": "SSN4423\r\n\r\n \r\n\r\nDe : support@simsonn.com ",
+      "user_id": 158007858931,
+      "created_at": "2025-12-22T13:26:49Z",
+      "updated_at": "2025-12-22T13:26:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014948393,
+      "body_text": "Hi Dor. jean-pierre,    The 2-in-1 shifter will start shipping from today. There has been a slight adjustment to the delivery schedule due to changes in some components.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-23T00:21:53Z",
+      "updated_at": "2025-12-23T00:21:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

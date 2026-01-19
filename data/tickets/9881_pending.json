@@ -1,0 +1,104 @@
+{
+  "id": 9881,
+  "subject": "Throttle stopped working",
+  "description_text": "Hi\r\n\r\nDo you know if you sell throttle pedal only because mines suddenly\r\nstopped working, I don't want to buy the entire pedal again as I think\r\nit's the wiring came loose from the throttle pedal. I don't know if my\r\npedals have warranty, but this is my order number. #SSN1707.\r\n\r\nI'm using my clutch pedal as the throttle now,\r\n\r\nBrian Chan\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-03T15:45:24Z",
+  "updated_at": "2026-01-08T11:41:22Z",
+  "requester_id": 158001582101,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015541164,
+      "body_text": "Hi UltraViewer10,  Please take a clear photo of the throttle pedal connector and send it to us for inspection. If the issue cannot be resolved after using the Offset function in the software, we will send you a replacement throttle pressure sensor for installation. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-04T00:35:04Z",
+      "updated_at": "2026-01-04T00:35:04Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015634649,
+      "body_text": "Sorry my bad, here are the pictures.  My phone camera doesn't like zooming\r\nin, so I've tried to take as much as I can.\r\n\r\nIn the software, the throttle has not responded once compared to brake and\r\nclutch pedals, I've tried using the clutch in the throttle port and that\r\nworks.\r\n\r\n\r\n\r\n\r\n\r\n\r\n1000027627.jpg\r\n<https://drive.google.com/file/d/1LO5mLE3UkhGjTGTkJxuCus-VrgrXR14S/view?usp=drivesdk>\r\n\r\n1000027623.jpg\r\n<https://drive.google.com/file/d/1TtgGzctIB3vBKehVe9kNuELK-sXv_lwp/view?usp=drivesdk>\r\n\r\n1000027622.jpg\r\n<https://drive.google.com/file/d/1nsTMMlM6QEwyJtOnLZnKb5igw13TGPWW/view?usp=drivesdk>\r\n\r\n1000027620.jpg\r\n<https://drive.google.com/file/d/1hIpEbZTiLw9WtoITL5VbCSUmnuaELQwt/view?usp=drivesdk>\r\n\r\n1000027618.jpg\r\n<https://drive.google.com/file/d/1g8UPcTRWIVPysxXVtsxL2ViioCrPLc_4/view?usp=drivesdk>\r\n\r\n1000027615.jpg\r\n<https://drive.google.com/file/d/1567tzXSrksQySkUcpL08SpqjiHTmzxNq/view?usp=drivesdk>\r\n\r\n1000027614.jpg\r\n<https://drive.google.com/file/d/1B-4Eru8iKkJRXSXNJhEZiNzZzWwLmfA5/view?usp=drivesdk>\r\n\r\n1000027617.jpg\r\n<https://drive.google.com/file/d/1Ifhz7lCZmOrALPdWYEog4RO5kd1PVmP9/view?usp=drivesdk>\r\n\r\n\r\n\r\n\nAttachment(s) that exceed the 20 MB limit have been dropped. Please reach out to the sender.",
+      "user_id": 158001582101,
+      "created_at": "2026-01-04T12:39:35Z",
+      "updated_at": "2026-01-04T12:39:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015665344,
+      "body_text": "Oh I forgot to mention, I turned on haptics motor, then, the throttle\r\nstopped working completely,\r\n\r\n",
+      "user_id": 158001582101,
+      "created_at": "2026-01-04T16:30:17Z",
+      "updated_at": "2026-01-04T16:30:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015905174,
+      "body_text": "Hello\r\n\r\nAre the pictures I've sent okay?\r\n\r\n",
+      "user_id": 158001582101,
+      "created_at": "2026-01-06T11:24:21Z",
+      "updated_at": "2026-01-06T11:24:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016149513,
+      "body_text": "Hi UltraViewer10,     Please install the VAM Pro motor using nylon screws and nylon washers. This is intended to electrically isolate the VAM Pro motor from the mounting bracket, helping to prevent interference with the pedal signals.  Additionally, after the pedals are connected to the controller, you can click the Offset button in SIMSONN Manager to reset the initial position of the white signal to 0%, then recalibrate and test the pedals.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T14:39:23Z",
+      "updated_at": "2026-01-07T14:39:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016150324,
+      "body_text": "Hi\r\n\r\nI've done the offset settings, and the throttle has 0 response no matter\r\nhow hard I press it\r\n\r\nOn Wed, Jan 7, 2026 at 2:39 PM service@simsonn.com ",
+      "user_id": 158001582101,
+      "created_at": "2026-01-07T14:45:48Z",
+      "updated_at": "2026-01-07T14:45:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016152189,
+      "body_text": "Hi UltraViewer10，    Please provide the contact name, phone number, and shipping address, and I will arrange a replacement shipment for you.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T14:56:58Z",
+      "updated_at": "2026-01-07T14:56:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016153284,
+      "body_text": "Hello\r\n\r\nThe name is Brian Chan\r\nPhone number is 07787017369\r\nAddress: 1 Smith Street, Colne, Lancashire, BB8 0DL, United Kingdom\r\n\r\nThank you\r\n\r\nOn Wed, Jan 7, 2026 at 2:57 PM service@simsonn.com ",
+      "user_id": 158001582101,
+      "created_at": "2026-01-07T15:03:38Z",
+      "updated_at": "2026-01-07T15:03:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016333599,
+      "body_text": "Hi UltraViewer10,    Here is your replacement link.   https://t.17track.net/en#nums=SF6047229449386",
+      "user_id": 158001343601,
+      "created_at": "2026-01-08T11:41:22Z",
+      "updated_at": "2026-01-08T11:41:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

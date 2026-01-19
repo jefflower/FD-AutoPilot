@@ -1,0 +1,84 @@
+{
+  "id": 9378,
+  "subject": "Return Order #SSN4523",
+  "description_text": "Wrong one ordered need the plus x control box \r\nSent from my iPhone\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-28T18:14:49Z",
+  "updated_at": "2026-01-15T04:21:27Z",
+  "requester_id": 158007510946,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015174649,
+      "body_text": "Hi Leon Jones,  I can see that you have already received the ProX Ultra, and at this point it’s a bit too late for us to proceed with a replacement. Perhaps we could make a few adapter cables for you instead to resolve the issue. Would that work for you? ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-29T02:00:25Z",
+      "updated_at": "2025-12-29T02:00:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015195679,
+      "body_text": "Yes please that would be perfect.\r\n your definitely the best sim company out there will be buying from you guys forever. \r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158007510946,
+      "created_at": "2025-12-29T13:05:31Z",
+      "updated_at": "2025-12-29T13:05:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015290485,
+      "body_text": "That be perfect thank you \r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158007510946,
+      "created_at": "2025-12-31T02:03:30Z",
+      "updated_at": "2025-12-31T02:03:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015857182,
+      "body_text": "Any update on the adapters please \r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158007510946,
+      "created_at": "2026-01-06T06:16:52Z",
+      "updated_at": "2026-01-06T06:16:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015857354,
+      "body_text": "Any update on the adapter please \r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158007510946,
+      "created_at": "2026-01-06T06:17:41Z",
+      "updated_at": "2026-01-06T06:17:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016850782,
+      "body_text": "Any update on the adapter please \r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158007510946,
+      "created_at": "2026-01-12T10:04:59Z",
+      "updated_at": "2026-01-12T10:04:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017161992,
+      "body_text": "Hi Leon Jones,     We’ll arrange to send the replacement parts to you today. Once shipped, I’ll share the tracking number with you. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-15T04:21:27Z",
+      "updated_at": "2026-01-15T04:21:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

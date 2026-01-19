@@ -1,0 +1,174 @@
+{
+  "id": 1534,
+  "subject": "Simsonn haptics",
+  "description_text": "Hello I recently purchased the vam haptic reactors and the new box with the motor inputs and everything seemed to be working perfectly as far as the setup went. But when I opened iracing ui, that’s when it all went downhill. I calibrated my pedals and it was perfect. But when I went to calibrate my steering wheel it seems to be picking up the pedals as my steering input also. And my steering is going crazy. I unhooked the motors from the box and hooked my original box back up and everything works perfectly. But with the new box and motors hooked up, it makes my steering go crazy. Help\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-14T23:33:58Z",
+  "updated_at": "2025-07-22T02:57:11Z",
+  "requester_id": 158001623716,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004837322,
+      "body_text": "Hi Purestock38j,  May I ask which model of pedals you purchased? ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-14T23:59:29Z",
+      "updated_at": "2025-07-14T23:59:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004837383,
+      "body_text": "Simsonn pro plus with upgrade \r\n\r\n> ",
+      "user_id": 158001623716,
+      "created_at": "2025-07-15T00:07:11Z",
+      "updated_at": "2025-07-15T00:07:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004837443,
+      "body_text": "Hi Purestock38j,    For the Pro Plus pedals connected to the PlusX control box, please make sure all pedals are properly connected first. Then unplug the USB once and reconnect it. Next, use the Offset function to reset the pedal percentage to zero. After that, perform a full pedal calibration.  Additionally, please update the pedal firmware as follows: Download SIMSONN Manager version 2.0.8, and follow the instructions in the software to complete the firmware update process.     go to Settings → Update → Manual Firmware Update → Pedals → Firmware → Pedals → plusX.sfu and try updating the firmware manually. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-15T00:12:19Z",
+      "updated_at": "2025-07-15T00:12:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004891282,
+      "body_text": "Have done all that and it’s still picking up steering input as pedal input\r\n\r\n> ",
+      "user_id": 158001623716,
+      "created_at": "2025-07-15T18:14:26Z",
+      "updated_at": "2025-07-15T18:14:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004907522,
+      "body_text": "I tried updating the firmware multiple times. Unplugging and replugging multiple times. Tried calibrating pedals multiple times. Now my motors won’t even work. And steering is still registering as brake input. Possible emi issue? If that’s the case do I need the pro box?\r\n\r\n> ",
+      "user_id": 158001623716,
+      "created_at": "2025-07-15T20:02:53Z",
+      "updated_at": "2025-07-15T20:02:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004919190,
+      "body_text": "Hi Purestock38j,  Would you consider installing the Todesk tool? I can assist you remotely to check and resolve the setup issue, which may save you time and effort. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-16T02:58:03Z",
+      "updated_at": "2025-07-16T02:58:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004995599,
+      "body_text": "Yes i can do that. My motors started working again but i still seem to be having the emi issue where the steering wheel is registering as brake input. I changed ground screws on top of the box and it made it a lot better but still has a tiny bit\r\n\r\n> ",
+      "user_id": 158001623716,
+      "created_at": "2025-07-16T19:10:43Z",
+      "updated_at": "2025-07-16T19:10:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005133507,
+      "body_text": "Hi Purestock38j,  Anti-interference Solutions: 1. Ensure your PC is properly grounded through a functional household ground line Some wall outlets only have two wires and lack a ground wire. This not only poses a safety risk but also prevents devices like Fanatec from discharging electromagnetic interference (EMI) effectively. 2.Use a wire to connect the metal housing of your wheel stand or base to the metal case of your PC This creates a shielding path that significantly improves the overall EMI resistance. 3. Connect a green shielded wire from the metal casing of the pedal control box to any metal screw on the pedal This ensures a solid electrical connection between the control box and the pedal to reduce signal drift and noise. 4. Use a USB isolator If interference persists, consider using a USB isolator to further block EMI transmission paths. ⚠ Note: Make sure all connection points are on bare metal surfaces. Painted or oxidized areas can result in poor grounding, reducing the effectiveness of the shielding.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-17T08:27:34Z",
+      "updated_at": "2025-07-17T08:27:34Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005136320,
+      "body_text": "I grounded my old box and it works fine with my pedals. It’s just the new box included with the haptic motors that is giving me issues\r\n\r\n> ",
+      "user_id": 158001623716,
+      "created_at": "2025-07-17T13:53:07Z",
+      "updated_at": "2025-07-17T13:53:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005143353,
+      "body_text": "Hi Purestock38j,    In our testing environment, the new control box and VAM motor do not cause interference with other devices. Most issues are due to electromagnetic interference from the wheelbase, which is often not properly grounded to the household electrical system. Based on practical experience from other users, using a USB isolator can help. Alternatively, you can connect the metal housing of the wheelbase to the PC case to dissipate the interference.  https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting     https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-07-17T23:02:40Z",
+      "updated_at": "2025-07-17T23:02:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005155766,
+      "body_text": "Okay I think I have got them working. But I’m still having one issue. Quite frequently my pedals quit working with this new control box and I have to unplug and replug it. Like pretty often. Is that normal? Like it just loses connection to the pedals and the pedals show not connected until I unplug and replug the box\r\n\r\n> ",
+      "user_id": 158001623716,
+      "created_at": "2025-07-18T21:58:25Z",
+      "updated_at": "2025-07-18T21:58:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005162544,
+      "body_text": "Hi Purestock38j,    There are a few common reasons for disconnection:  First, if your computer uses a 2-prong power plug instead of a 3-prong grounded plug, electromagnetic interference from the wheelbase may not be properly discharged, which can cause instability in connected USB devices.  Second, if you're using a USB hub without independent power supply, please avoid doing so. We recommend connecting the device directly to the blue USB 3.0 port on the back of your PC for stable power and data transmission.  In our testing environment, the PlusX control box and motor remain consistently connected, even after several days of inactivity, without any disconnection issues.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-19T07:42:17Z",
+      "updated_at": "2025-07-19T07:42:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005206095,
+      "body_text": "I understand all of the grounding and electromagnetic interference but I have the original box that come with the pro plus pedals and I have 0 issues out of that box with my current setup. The only issue I’m having is with the new pro x control box.\r\n\r\n> ",
+      "user_id": 158001623716,
+      "created_at": "2025-07-19T19:25:28Z",
+      "updated_at": "2025-07-19T19:25:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005211637,
+      "body_text": "Hi Purestock38j,    Because the new control box integrates both the motor and the power supply, it places certain requirements on the existing setup. This is based on the practical experience we’ve gathered from our current users.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-20T00:45:13Z",
+      "updated_at": "2025-07-20T00:45:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005281446,
+      "body_text": "Okay so I have my wheelbase grounded, the box is grounded to bare metal on my brake pedal. Box is plugged directly in usb 3.0 port and it still is having interference and disconnection issues. What next?\r\n\r\n> ",
+      "user_id": 158001623716,
+      "created_at": "2025-07-21T15:40:38Z",
+      "updated_at": "2025-07-21T15:40:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005290968,
+      "body_text": "Hi Purestock38j,  Please provide a video showing the interference issue, so we can analyze it more accurately. Additionally, please send photos of your computer’s power plug and the grounding method you’re using. These details will help us better understand the situation and offer an effective solution. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-22T02:57:10Z",
+      "updated_at": "2025-07-22T02:57:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

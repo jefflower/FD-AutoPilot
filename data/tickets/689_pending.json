@@ -1,0 +1,44 @@
+{
+  "id": 689,
+  "subject": "Shipping problem",
+  "description_text": "Hi my name is jordan and I placed an order back on June 7th and I got a\r\nconfirmation email and a tracking number. According to FedEx the shipment\r\nwas created then canceled by the sender but I received an email on Friday\r\nJune 13th from Simsonn saying the shipment was on its way. It is now\r\nSaturday June 21st and I have still not received the shipment and it was\r\nsupposed to arrive within 3-7 business days. I would just like some help on\r\nfinding out where the package may be or if it ever got shipped out, it\r\nwould be much appreciated.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-06-21T18:52:43Z",
+  "updated_at": "2025-06-23T09:29:42Z",
+  "requester_id": 158001703338,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003679584,
+      "body_text": "Hi Jordan Hobson,  Please provide your order number so we can check the shipping status for you. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T02:02:33Z",
+      "updated_at": "2025-06-22T02:02:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003680525,
+      "body_text": "Order number is  SSN1686.\r\n\r\nOn Sat, Jun 21, 2025 at 10:02 PM service@simsonn.com ",
+      "user_id": 158001703338,
+      "created_at": "2025-06-22T14:29:37Z",
+      "updated_at": "2025-06-22T14:29:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003684300,
+      "body_text": "Hi Jordan Hobson,    Your logistics single number has been updated and is expected to be delivered in the next two days: 881973614281",
+      "user_id": 158001343601,
+      "created_at": "2025-06-23T09:29:41Z",
+      "updated_at": "2025-06-23T09:29:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

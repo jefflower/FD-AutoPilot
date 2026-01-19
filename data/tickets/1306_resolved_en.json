@@ -1,0 +1,45 @@
+{
+  "id": 1306,
+  "subject": "",
+  "description_text": "-- Sent from the Yandex Mail mobile app",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-07-07T13:26:35Z",
+  "updated_at": "2025-07-12T07:58:28Z",
+  "requester_id": 158001924120,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004463162,
+      "body_text": "Ticket with ID 1305 has been merged into this ticket.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-08T00:18:00Z",
+      "updated_at": "2025-07-08T00:18:00Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004463165,
+      "body_text": "Merged from ticket 1305\n      Subject:   \n      Description:   --  Sent from the Yandex Mail mobile app",
+      "user_id": 158000445778,
+      "created_at": "2025-07-08T00:18:00Z",
+      "updated_at": "2025-07-08T00:18:00Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158004463179,
+      "body_text": "Hi Mikhail Gutarin,  I noticed that you sent two emails, but they were empty. Please feel free to reply with your issue, and we will assist you as soon as possible. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-08T00:19:08Z",
+      "updated_at": "2025-07-08T00:19:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

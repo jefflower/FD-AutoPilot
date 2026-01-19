@@ -1,0 +1,34 @@
+{
+  "id": 3995,
+  "subject": "Item shared with you: \"IMG_9671.MOV\"",
+  "description_text": "I've shared an item with you:\r\n\r\nIMG_9671.MOV\r\nhttps://drive.google.com/file/d/1yhzVWi0f3bFjnYUX-ZL5-pDZYrYP0Gpp/view?usp=sharing&invite=CMfy8IUE&ts=68ce95ce\r\n\r\nIt's not an attachment -- it's stored online. To open this item, just click  \r\nthe link above.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-20T11:54:02Z",
+  "updated_at": "2025-09-24T15:24:24Z",
+  "requester_id": 158004681591,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009021810,
+      "body_text": "Hi Joe S.,  Hello, the video you shared is currently not accessible. Could you please adjust the access permissions so that we can view it and assist you in resolving the issue? ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-21T10:28:00Z",
+      "updated_at": "2025-09-21T10:28:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009236330,
+      "body_text": "Hi Joe S.,  I have watched the video you sent. Could you please provide your previous work order number? The video you sent does not match the previous work order, so I am unable to identify the issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-24T15:24:24Z",
+      "updated_at": "2025-09-24T15:24:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

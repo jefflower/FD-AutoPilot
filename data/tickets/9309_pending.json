@@ -1,0 +1,24 @@
+{
+  "id": 9309,
+  "subject": "Shifter order update",
+  "description_text": "Hi my wife ordered one of your shifters ordered 8th December  order number #ssn4561.\r\n\r\nWe were hoping for a update on when this will be shipped\r\n\r\nRegards\r\nNeil bailey\r\n\r\nSent from Outlook for Android<https://aka.ms/AAb9ysg>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-27T17:44:42Z",
+  "updated_at": "2025-12-31T09:13:36Z",
+  "requester_id": 158008794320,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015303272,
+      "body_text": "Hi neil bailey,    We apologize for the delay. Your package has been shipped and is expected to arrive on the 6th.  https://t.17track.net/en#nums=SF6047209621692",
+      "user_id": 158001343601,
+      "created_at": "2025-12-31T09:13:36Z",
+      "updated_at": "2025-12-31T09:13:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

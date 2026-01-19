@@ -1,0 +1,24 @@
+{
+  "id": 7724,
+  "subject": "Order tracking not updating",
+  "description_text": "Hello so i bought this pedals on Dec 2[cid:888e25d8-fdfa-4268-b8ed-832744bac941]\r\n\r\nAnd the tracking service is not updating yet\r\n[cid:f9e77c80-8fff-4ddc-abe3-a7273ebe8a03]\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-08T18:33:30Z",
+  "updated_at": "2025-12-09T09:43:03Z",
+  "requester_id": 158007705114,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014176035,
+      "body_text": "Hi Mateo Muñoz,    We apologize for any inconvenience caused. Please be advised that there may be delays in recent shipments. We appreciate your understanding. Here is your tracking link:  https://t.17track.net/en#nums=ALS01285443598",
+      "user_id": 158001343601,
+      "created_at": "2025-12-09T09:43:03Z",
+      "updated_at": "2025-12-09T09:43:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

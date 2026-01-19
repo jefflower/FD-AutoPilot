@@ -1,0 +1,84 @@
+{
+  "id": 4318,
+  "subject": "I bought your pedals and they don't work.",
+  "description_text": "Hello, I purchased your pedals on the Ozon marketplace here -\r\nhttps://www.ozon.ru/product/simsonn-new-pro-x-ultra-p2-h2-1-pedali-gonochnogo-simulyatora-dlya-pkg-idravlicheskaya-pedal-1754932771/?from=share_android&perehod=smm_share_button_productpage_link\r\nI waited for about three weeks, and yesterday I connected it, but the gas\r\npedal doesn't work. I tried updating the firmware, uninstalling and\r\nreinstalling the drivers, but nothing helped. I think the sensor is\r\ndefective, and I can't calibrate it because the gas pedal is completely\r\ndead. However, the brake pedal works fine. Additionally, the gas pedal's\r\nlight barely works on the left side, but it doesn't work at all on the\r\nright side. Here are some photos and videos:\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-02T04:28:23Z",
+  "updated_at": "2025-10-05T15:45:12Z",
+  "requester_id": 158005269291,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009779241,
+      "body_text": "Hi Евгений Федотов,    Please check whether the small black spring clip at the throttle’s blue limiter position is damaged. In addition, try swapping the throttle and clutch to confirm. If it is indeed damaged, we will send you a new throttle sensor as a replacement.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-02T10:23:26Z",
+      "updated_at": "2025-10-02T10:23:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009780041,
+      "body_text": "Hello, can you please tell me the pattern where this black spring\r\nretainer is on the blue stopper?\r\n\r\n\r\nчт, 2 окт. 2025 г., 15:23 service@simsonn.com ",
+      "user_id": 158005269291,
+      "created_at": "2025-10-02T11:19:20Z",
+      "updated_at": "2025-10-02T11:19:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009831729,
+      "body_text": "Hi Евгений Федотов,",
+      "user_id": 158000445778,
+      "created_at": "2025-10-03T07:12:16Z",
+      "updated_at": "2025-10-03T07:12:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009861762,
+      "body_text": "Yes, this spring is worth it, but nothing has changed. Sometimes when you\r\npress the brake, 1-2 percent of the gas pressure appears... I tried the\r\nsame thing in the clutch connector... On the marketplace, the seller\r\noffered compensation of 30% of the cost, which is generally ridiculous.\r\nWhat good does it do me if I can't ride the old moz pedals, I sold them. I\r\nwas sure that when I get these I will ride. This sensor itself is not\r\nworking, defective, I think I've tried everything. If I refuse\r\ncompensation, I will have to return them and wait for an unknown amount of\r\ntime...\r\n\r\n\r\n\r\nпт, 3 окт. 2025 г., 12:12 service@simsonn.com ",
+      "user_id": 158005269291,
+      "created_at": "2025-10-03T17:29:21Z",
+      "updated_at": "2025-10-03T17:29:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009876065,
+      "body_text": "Hi Евгений Федотов,    Please first make sure that all pedals are properly connected to the control box, then unplug and reconnect the USB cable. Next, open Simsonn Manager and use the Offset function. A settings window will pop up, allowing you to adjust the initial signal position of the pedals. This function is typically used after replacing the control box or adjusting the pedal spring positions for initial calibration.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-04T01:02:54Z",
+      "updated_at": "2025-10-04T01:02:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009912040,
+      "body_text": "I've done all this already, nothing helps...\r\n\r\n\r\n\r\nсб, 4 окт. 2025 г., 06:03 service@simsonn.com ",
+      "user_id": 158005269291,
+      "created_at": "2025-10-04T18:14:55Z",
+      "updated_at": "2025-10-04T18:14:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009937775,
+      "body_text": "Hi Евгений Федотов,     Please uninstall the old version from your computer first, then reinstall version 2.1.2 and update the firmware. After the update, the device version should display as CPU1: 2.0.5, CPU2: 2.0.3. If the issue still persists, we will send you a replacement sensor.   https://drive.google.com/file/d/1PZwHUqhhmJw0IBGDO8mGONPbrICJU3z1/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T15:45:11Z",
+      "updated_at": "2025-10-05T15:45:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

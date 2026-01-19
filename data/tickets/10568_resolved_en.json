@@ -1,0 +1,115 @@
+{
+  "id": 10568,
+  "subject": "Technical Issue: Vibration Motors sticking/latency - Simsonn Manager 2.1.3 & FW 2.0.6",
+  "description_text": "Dear Simsonn Support Team,\nI am writing to you regarding a persistent technical issue with my Simsonn Vibration Motor kit.\nI have the 3 Pedal Pro X Ultra set with haptic VAM Pro Motors. The pedals work fine. Only the vibration motors are unusable.\nThe Problem: The vibration motors are exhibiting erratic behaviour. Specifically:\n\n1. \"Sticky\" Vibration: The motors frequently continue to vibrate for several seconds after the telemetry effect (e.g., ABS or TC) has already ended in the simulation. They get \"stuck\" in an active state. Also in Simsonn Manager when testing.\n2. Signal Loss: Occasionally, the motors fail to activate entirely despite the game telemetry indicating an active effect. Also in Simsonn Manager when testing.\n\nTroubleshooting Steps Taken: To rule out user error or hardware defects, I have performed the following steps based on your latest documentation:\n\n* Software Update: I have updated the Simsonn Manager to version 2.1.3.\n* Firmware Update: I have successfully flashed the Controller Firmware to version 2.0.6.\n* Cables & Ports: I have tested different USB ports and verified all cable connections.\n* Grounding: I grounded the controller box to the rig. No ground loop.\n* Reddit: I basically tried every tip you find on this thread: https://www.reddit.com/r/SimsonnRacing/comments/1mxsv3j/vam_pro_linear_motor_stays_stuck_after_vibration/\n\nHardware Verification (Crucial): To isolate the issue, I connected the vibration motors directly to a DIY Arduino motor shield setup.\n\n* Result: Under Arduino control, the motors respond instantly and stop instantly. They work perfectly.\n* Conclusion: This confirms that the motors themselves are not defective. The issue lies within the Simsonn Control Box or the signal processing of the Simsonn Manager software/firmware.\n\nSince the update to Manager 2.1.3 and Firmware 2.0.6 did not resolve these signal latency and \"hanging\" issues, I suspect a bug in the current firmware or a fault in the controller hardware.\nPlease let me know how we can proceed. Is there a beta firmware available that addresses signal latency, or do I need a replacement for the control box?\n\nBest regards,\nStefan Boldt",
+  "status": 4,
+  "priority": 4,
+  "created_at": "2026-01-11T13:44:56Z",
+  "updated_at": "2026-01-15T07:15:10Z",
+  "requester_id": 158009022758,
+  "responder_id": 158007774664,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016820937,
+      "body_text": "Hi Stefan Boldt, Please try using a wire to connect the metal chassis of your PC to any screw on the ProX Ultra controller box, establishing a common ground, and then test whether this resolves the issue. If the problem still persists after completing this test, we will arrange to send you a replacement controller box.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T14:31:41Z",
+      "updated_at": "2026-01-11T14:31:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016821062,
+      "body_text": "First, thanks for the fast reply. Much appreciated.\n\nSecond. The ground cable was one of the first thing that I tried. See picture attached.\n\nUnfortunately, it did not help.\n\nThanks\nStefan Boldt",
+      "user_id": 158009022758,
+      "created_at": "2026-01-11T14:44:05Z",
+      "updated_at": "2026-01-11T14:44:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016821153,
+      "body_text": "Hi Stefan Boldt, ​Please remove the screws and open the controller box (there is no need to remove the PCB from the enclosure), then follow the steps below to perform the test. Please note: when the PCB is exposed without enclosure protection, do not place it directly on a metal rig or bracket. We recommend placing a book or another insulating object underneath to prevent any short circuit. At the moment, we are unable to reproduce this “stuck / latency” issue in our internal test environment, so we would appreciate your assistance with the following check. Please do not connect the yellow ground wire to the controller screw. Instead, connect it directly to the GND pin indicated by the red arrow and perform the test. During this process, please make sure to use insulating tape, and ensure that the yellow wire does not touch the adjacent pin headers to prevent any short circuit. If the issue disappears after completing this test, it will help us further identify the root cause. Regardless of the test result, I will arrange to send you a new controller box tomorrow. Thank you very much for your cooperation and support.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T14:54:10Z",
+      "updated_at": "2026-01-11T14:54:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016821174,
+      "body_text": "Hi Stefan Boldt, Open the controller box (remove the PCB from the enclosure)",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T14:55:49Z",
+      "updated_at": "2026-01-11T14:55:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016823161,
+      "body_text": "Unfortunately, it didn't solve the problem. I removed the PCB from the case and grounded it to the GND pin using alligator clips, but I am still seeing the same issue.\n\nIn the Simsonn Manager test, the vibration keeps running even when the progress bar has finished. Also, after running the test a few times, it stops vibrating altogether — I click 'vibrate' and see the progress bar, but nothing happens physically. After waiting a few seconds the motors react again to my tests, but with the issues already discussed.\n\n[cid:9052d60e-ea1c-4257-bbc6-1386a0c759aa]\n\nNow I see why grounding the enclosure has no impact to the PCB. There is no PCB ground connection to the enclosure.\n\nThanks\nStefan\n\n\nStefan Boldt | Schömbsstraße 5B, 63322 Rödermark | Tel: +49 (6074) 2110578 | Mobil: +49 (172) 9404350 | E-Mail: stefan @boldt.it",
+      "user_id": 158009022758,
+      "created_at": "2026-01-11T16:04:09Z",
+      "updated_at": "2026-01-11T16:04:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016846009,
+      "body_text": "Hi Stefan Boldt, Please provide your order number, contact person, phone number, and shipping address by email. We will send you a brand-new ProX Ultra control box to check whether it resolves the issue.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-12T08:28:12Z",
+      "updated_at": "2026-01-12T08:28:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016855089,
+      "body_text": "Hi\n\nAttached you find the receipts with the two orders.\n\nOrder ID 1: 3062873731114159\nOrder ID 2: 3063369111874159\n\nContact person: Stefan Boldt\nPhone number: +49 6074 2110578\nShipping address: Schömbsstraße 5B, 63322 Roedermark - Germany\n\n\nBest regards and thanks\n\nStefan Boldt\n\n\n\nSchömbsstraße 5B, 63322 Rödermark\n\nTel: +49 (6074) 2110578\n\nE-Mail: stefan @boldt.it",
+      "user_id": 158009022758,
+      "created_at": "2026-01-12T10:58:25Z",
+      "updated_at": "2026-01-12T10:58:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017147947,
+      "body_text": "Hi\n\nany update on this topic?\n\nThanks\nStefan\n\n\nStefan Boldt | Schömbsstraße 5B, 63322 Rödermark | Tel: +49 (6074) 2110578 | E-Mail: stefan @boldt.it",
+      "user_id": 158009022758,
+      "created_at": "2026-01-14T22:34:06Z",
+      "updated_at": "2026-01-14T22:34:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017154731,
+      "body_text": "Hi Stefan Boldt, We will send you a replacement control box first to help troubleshoot and resolve the issue as soon as possible. Please confirm/provide your shipping details (name, phone number, and address), and we’ll arrange shipment as soon as possible.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-15T01:51:24Z",
+      "updated_at": "2026-01-15T01:51:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017166475,
+      "body_text": "Hi Stefan Boldt, Your product has been shipped. The logistics number is:JSEAN1518022228YQ. You can track it at this website:https://t.17track.net/zh-cn#nums=JSEAN1518022228YQ",
+      "user_id": 158007774664,
+      "created_at": "2026-01-15T07:15:03Z",
+      "updated_at": "2026-01-15T07:15:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

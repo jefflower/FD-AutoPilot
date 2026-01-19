@@ -1,0 +1,74 @@
+{
+  "id": 2426,
+  "subject": "Order# SSN2267",
+  "description_text": "\r\nHello I placed an order yesterday August 6, 2025 and would like to cancel the order. I cannot do so myself and would like to know how I can proceed?\r\n\r\nSent from Yahoo Mail for iPhone\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-07T15:34:15Z",
+  "updated_at": "2025-08-22T09:51:43Z",
+  "requester_id": 158002792687,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006515970,
+      "body_text": "Hi jeffery Gallimore,    I can cancel it for you. What problem did you encounter? We can modify your order for you.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-08T06:14:02Z",
+      "updated_at": "2025-08-08T06:14:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006562240,
+      "body_text": "Yes I would like it to be modified with adding the “Plus X pedal control box”.  Also can you add this order to my account?\r\n\r\n\r\n\r\nSent from Yahoo Mail for iPhone\r\n\r\n\r\n",
+      "user_id": 158002792687,
+      "created_at": "2025-08-08T16:19:04Z",
+      "updated_at": "2025-08-08T16:19:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006664890,
+      "body_text": "Hi jeffery Gallimore,    You can click on the link to make the payment. We have already added the Plus X control box to your order. Please notify us after payment, and we will ship your order immediately.  https://www.simsonn.com/products/difference",
+      "user_id": 158001343601,
+      "created_at": "2025-08-11T02:06:12Z",
+      "updated_at": "2025-08-11T02:06:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006889791,
+      "body_text": "Hi please cancel this order all together. I no longer need this I place a separate order for something else.\r\n\r\n\r\nSent from Yahoo Mail for iPhone\r\n\r\n\r\n",
+      "user_id": 158002792687,
+      "created_at": "2025-08-15T02:37:37Z",
+      "updated_at": "2025-08-15T02:37:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006951077,
+      "body_text": "Hi jeffery Gallimore,    Okay, if it's a discount coupon or something, we can use it directly for you and recalculate the amount for a refund or additional payment. Are you sure you want to cancel?",
+      "user_id": 158001343601,
+      "created_at": "2025-08-16T06:10:16Z",
+      "updated_at": "2025-08-16T06:10:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006976758,
+      "body_text": " Yes please cancel. \r\n    ",
+      "user_id": 158002792687,
+      "created_at": "2025-08-17T02:23:55Z",
+      "updated_at": "2025-08-17T02:23:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

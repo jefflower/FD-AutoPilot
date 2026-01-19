@@ -1,0 +1,134 @@
+{
+  "id": 8931,
+  "subject": "Simsonn Vamp Pro (3x)/Simson Pedal X Pro Ultra Controllerbox",
+  "description_text": "Dear Sir or Madam,\r\n\r\n \r\n\r\nI purchased the Simson Pro X Ultra pedals on Amazon (February 2025), already\r\nincluding the new Simsonn Controller. The pedals have been working perfectly\r\nsince February.\r\n\r\nNow I have also purchased the Haptic Reactors (1st December) Vam Pro Motors\r\non Amazon and connected them but nothing happens. No matter whether I select\r\ncalibration or the vibration test, there is no response. The Simson Manager\r\nis up to date (Version 2.1.2).\r\n\r\nThe pedals have always been used via USB so far, and there have never been\r\nany problems. Even now, the pedals are still working as they should.\r\n\r\nHowever, I noticed that when I plug the power connector into the Simson\r\ncontroller, you can see a short circuit. Please see the attached video (that\r\nhappens every time when you plug in the connector into the Controller box. I\r\ndo not know whats wrong (damaged Power Supply or Damaged controller box or\r\nall 3 Haptic Motors?)?\r\n\r\n \r\n\r\nThe Simsonn controller had never been operated with a separate power supply\r\nbefore (only via the USB port). Only when I wanted to try out the haptic\r\nreactors.\r\nThe Simsonn Manager showed me a firmware update for CPU1 (or CPU2, I'm not\r\nsure), which I carried out and completed. I believe that the short circuit\r\nonly happened after that. The firmware version was, I think, 6/2025\r\n(sometime in the summer).\r\n\r\n\r\nIt is very disappointing that I have to go through this experience now. I\r\nwas actually looking forward to the Christmas holidays.\r\nHopefully you can help me\r\n\r\n \r\n\r\n \r\n\r\nBest Regards\r\n\r\nChristoph Lahodny\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-22T23:31:43Z",
+  "updated_at": "2026-01-07T15:11:53Z",
+  "requester_id": 158008314254,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014947004,
+      "body_text": "Hi Christoph. lahodny,    It is normal to see sparks when plugging in the 24V independent power supply. This is not a short circuit, but the charging process of the capacitors inside the motors. Since it uses a 24V supply, there are no safety issues, and it will not damage the mainboard—please rest assured.     Additionally, your software has been updated to Simsonn Manager 2.1.2, and the firmware should also be updated to CPU1: 2.0.5, CPU2: 2.0.4 before testing. You can also use SimHub.  If you encounter an issue where the vibration does not stop, please refer to the solution provided below.           If this happens, it indicates that the computer’s grounding is not reliable, possibly because a three-prong plug was not used with a three-prong wall outlet. You can refer to the post below: connect the computer case to the stand, and connect the control box to the metal screws on the pedals. This should resolve the disconnection issue.           https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting     https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-12-22T23:39:17Z",
+      "updated_at": "2025-12-22T23:39:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014947323,
+      "body_text": "I do not have the problem that the motors do not stop working, but rather that they do not start at all! Nothing happens—neither in the Simsonn Manager nor in SimHub.\r\n\r\n \r\n\r\n \r\n\r\n \r\n\r\n \r\n\r\n",
+      "user_id": 158008314254,
+      "created_at": "2025-12-22T23:47:54Z",
+      "updated_at": "2025-12-22T23:47:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014948629,
+      "body_text": "Dear Sir or Madam,\r\n\r\nFirst of all, I would like to point out that I am having a problem logging in to the support ticket website (see screenshots).\r\n\r\nWhen I try to register, I receive an error message stating that the email address is already in use. However, when I try to reset the password using this same email address, I receive an error message saying that I do not have permission to do so.\r\n\r\n \r\n\r\nThe third screenshot shows that my motors are not marked as “Power Connected” at all (right side oft he screenshot, left side is a picture of your homepage). On the product images on your website, this appears differently.\r\n\r\n \r\n\r\nFurthermore, I do NOT have version CPU1 2.0.5 and CPU2 2.0.4 installed, but instead CPU1 2.0.2 and CPU2 2.0.0.\r\n\r\nHowever, when I switch to upgrade mode, no further updates are available.\r\nCould you please provide the firmware files along with instructions on how to manually update the firmware?\r\n\r\n \r\n\r\nBest regards,\r\n\r\n\r\n\r\nChristoph Lahodny\r\n\r\n\r\n\r\n\r\n\r\n \r\n\r\n",
+      "user_id": 158008314254,
+      "created_at": "2025-12-23T00:30:12Z",
+      "updated_at": "2025-12-23T00:30:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014953307,
+      "body_text": "Hi Christoph. lahodny,  Please first uninstall the existing SIMSONN Manager software from your computer. Then visit our official website to download and install the latest version, SIMSONN Manager 2.1.2.exe. After installation, open the software and go to Settings → Update → Check for Updates, then follow the instructions to install the latest version.            https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-12-23T03:49:49Z",
+      "updated_at": "2025-12-23T03:49:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015349267,
+      "body_text": "Dear Sir or Madam,\r\n\r\nThe firmware upgrade was successful, and the haptic motors are now activating.\r\n\r\nHowever, I am still experiencing significant technical issues.\r\nAs soon as the haptic motors are connected and powered, I encounter severe input-related problems. Throttle, brake, and clutch inputs are either not recognized or become stuck. Additionally, the steering input intermittently freezes (the steering wheel physically returns to 0 degrees, but in-game—regardless of the title—the steering remains offset to the left).\r\n\r\nFurthermore, on my Simagic Alpha EVO Pro wheel base, the connected Simagic GT NEO wheel—connected to the PC via the wheel base using USB passthrough and recognized as a USB device—gets disconnected repeatedly.\r\nAll of these issues occur exclusively when the haptic motors are connected and supplied with power.\r\n\r\nI was able to resolve the input and disconnection issues described above.\r\nHowever, the remaining problem is that the haptic motors behave inconsistently: regardless of whether I test them using Simsonn Manager or SimHub, they sometimes do not activate at all (clicking “Test” produces no response). In other cases, a motor becomes “stuck” and continues running for several seconds longer than defined by the test sequence.\r\n\r\nAt this point, I am unsure how to proceed and am considering returning the Vam Pro‘se.\r\n\r\nFor troubleshooting, I have already performed the following measures:\r\n\r\n1.\tGrounded the controller box and connected it to the protective earth of a standard wall outlet (ground only).\r\n2.\tInstalled 3D-printed spacers for the motors to ensure mechanical isolation.\r\n3.\tAdded ferrite cores to all data and power cables of the controller box, as well as to the pedal RJ45 cable.\r\n4.\tGrounded the wheel base.\r\n5.\tGrounded the aluminum rig.\r\n6.\tRemoved the controller box from the aluminum rig and placed it separately on the floor to avoid any mechanical or electrical contact with the rig.\r\n7.\tPhysically separated power cables from data/USB cables.\r\n\r\nThe PC itself is not grounded separately, as it is already grounded through the power supply and its connection to the standard wall outlet.\r\n\r\nDo you have any further technical suggestions or recommendations?\r\n\r\nKind regards,\r\nChristoph\r\n\r\n \r\n\r\n \r\n\r\n",
+      "user_id": 158008314254,
+      "created_at": "2026-01-01T02:49:18Z",
+      "updated_at": "2026-01-01T02:49:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015366952,
+      "body_text": "Hi Christoph. lahodny,  Please uninstall the old version of SIMSONN Manager from your computer, then download and install the latest SIMSONN Manager 2.1.2. Go to Settings → Update → Manual Firmware Update → pedals-firmware → pedals and select the firmware for your pedal model (proxultra.sfu for ProX Ultra, or prox.sfu for other models). After updating, the firmware should display CPU1: 2.0.5 and CPU2: 2.0.4. Please retest the pedal after the update.       https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2026-01-01T15:44:53Z",
+      "updated_at": "2026-01-01T15:44:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015367622,
+      "body_text": "I already did this!\r\nPlease read carefully my E-Mail!l before!!!\r\n\r\nI Upgraded Software and Firmware. the haptics are Working nie, but i\r\nexperience Others Errors.\r\n\r\nBut read carefully the issues i have in the e-mail before!\r\n\r\nPlease come Back to me as Soon as possible.\r\nI really do Not know what i can do anymore\r\n\r\nBest regards\r\n\r\nservice@simsonn.com ",
+      "user_id": 158008314254,
+      "created_at": "2026-01-01T16:14:35Z",
+      "updated_at": "2026-01-01T16:14:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015371166,
+      "body_text": "Dear Sir or Madam,\r\n\r\n\r\nAs described in my previous email, I was able to resolve some issues\r\nrelated to the delay of the steering wheel and pedal inputs. However, I am\r\nstill experiencing the problem that when the haptic motors are\r\ntested—regardless of whether this is done in SimHub or in Simsonm\r\nManager—they sometimes do not work at all or get stuck and run for too long.\r\n\r\nI have tested this scenario multiple times, and the behavior is always the\r\nsame. In addition, I have grounded everything on my rig that can be\r\ngrounded: the wheelbase, the aluminum rig, the pedals, the Simsonn\r\nControllerbox and my PC. The result remains unchanged—during motor testing,\r\nsome inputs are not registered, or the motors get stuck and continue\r\nrunning for too long.\r\n\r\nFurthermore, I have created three YouTube videos showing this issue:\r\n\r\n1st Video Shows one in SimHub\r\nhttps://youtu.be/wf2l6RpeglE?si=ifuXRiIbO7few9Bs\r\n\r\n\r\n2nd one in Simsonn Manager\r\nhttps://youtu.be/hh4s1fSxkz4?si=g74ioyS_vcg0nwf9\r\n\r\n3rd and the last one where I used the Simsonn controller box, took my\r\nlaptop, went to a completely different room (the living room), connected\r\nthe box to power, and connected a motor. The exact same problem occurs\r\nthere as well.\r\nhttps://youtu.be/Gbr-3HgNRMw?si=n7EbjlPZGkgCTzt_\r\n\r\n\r\nTherefore, this is not an EMI issue! IT doesnt Matter which Motor i use or\r\nwhich Motor Input is used-result ist Always the same\r\n\r\nWhat can we do next to proceed further?\r\n\r\nBest regards\r\nChristoph\r\n\r\nChristoph Lahodny <christoph.lahodny@gmail.com> schrieb am Do., 1. Jän.\r\n2026, 17:14:\r\n\r\n> I already did this!\r\n> Please read carefully my E-Mail!l before!!!\r\n>\r\n> I Upgraded Software and Firmware. the haptics are Working nie, but i\r\n> experience Others Errors.\r\n>\r\n> But read carefully the issues i have in the e-mail before!\r\n>\r\n> Please come Back to me as Soon as possible.\r\n> I really do Not know what i can do anymore\r\n>\r\n> Best regards\r\n>\r\n> service@simsonn.com ",
+      "user_id": 158008314254,
+      "created_at": "2026-01-01T19:27:02Z",
+      "updated_at": "2026-01-01T19:27:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015378253,
+      "body_text": "Hi Christoph. lahodny,  Please provide your order number, contact name, phone number, and address. We will send you a new ProX Ultra control box to see if it resolves your issue. The new control box comes with built-in grounding. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-02T04:09:58Z",
+      "updated_at": "2026-01-02T04:09:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015382966,
+      "body_text": "Dear Sir or Madam,\r\n\r\nAs already stated in my first email, I am sending you the Amazon invoice\r\nagain, as this product was purchased via Amazon.\r\n\r\nFurthermore, here is my address:\r\n\r\nChristoph Lahotny,\r\nGeorg-Gindlgasse 1,\r\n2261 Angern an der March\r\nAUSTRIA\r\n\r\nPhone: +4369912160843\r\n\r\nIn addition, I would like to mention that I believe I already do have the\r\nnew control box, judging by the photos I sent you.\r\n\r\nFurthermore, I would like to add that the test was carried out in the\r\nliving room, also with Manually grounding by using  an external wire from\r\nthe Controller Box to the power Outlet (only eures the Gründung cable)\r\nobtained the same result.\r\n\r\nPlease Take a Look at the attached Invoices. Both from Amazon.\r\n\r\nIf you send the New Controllerbox and New Power supply? How Long ist Going\r\nto be to arrive? Its coming from China?\r\n\r\nVam Pro:\r\npayment reference number: 4TVP0PPLRLEPHDIN\r\nSold ",
+      "user_id": 158008314254,
+      "created_at": "2026-01-02T08:17:54Z",
+      "updated_at": "2026-01-02T08:17:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015744903,
+      "body_text": "Dear Sir or Madam,\r\n\r\nIs there any progress in my case?\r\n\r\nBest regards\r\n\r\n\r\nChristoph Lahodny <christoph.lahodny@gmail.com> schrieb am Fr., 2. Jän.\r\n2026, 09:17:\r\n\r\n> Dear Sir or Madam,\r\n>\r\n> As already stated in my first email, I am sending you the Amazon invoice\r\n> again, as this product was purchased via Amazon.\r\n>\r\n> Furthermore, here is my address:\r\n>\r\n> Christoph Lahotny,\r\n> Georg-Gindlgasse 1,\r\n> 2261 Angern an der March\r\n> AUSTRIA\r\n>\r\n> Phone: +4369912160843\r\n>\r\n> In addition, I would like to mention that I believe I already do have the\r\n> new control box, judging by the photos I sent you.\r\n>\r\n> Furthermore, I would like to add that the test was carried out in the\r\n> living room, also with Manually grounding by using  an external wire from\r\n> the Controller Box to the power Outlet (only eures the Gründung cable)\r\n> obtained the same result.\r\n>\r\n> Please Take a Look at the attached Invoices. Both from Amazon.\r\n>\r\n> If you send the New Controllerbox and New Power supply? How Long ist Going\r\n> to be to arrive? Its coming from China?\r\n>\r\n> Vam Pro:\r\n> payment reference number: 4TVP0PPLRLEPHDIN\r\n> Sold ",
+      "user_id": 158008314254,
+      "created_at": "2026-01-05T14:51:51Z",
+      "updated_at": "2026-01-05T14:51:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016154630,
+      "body_text": "Hi Christoph. lahodny,  Please uninstall SIMSONN Manager version 2.1.2 from your computer first, then download and install SIMSONN Manager version 2.1.3 from our official website.  SIMSONN Manager 2.1.3 includes optimizations for the vibration function. Please test again using this version.  https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T15:11:52Z",
+      "updated_at": "2026-01-07T15:11:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

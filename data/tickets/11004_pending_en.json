@@ -1,0 +1,45 @@
+{
+  "id": 11004,
+  "subject": "Order status",
+  "description_text": "Hello, I cannot access the web page you sent the details for. Sent from my iPhone",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-15T17:00:27Z",
+  "updated_at": "2026-01-17T08:20:09Z",
+  "requester_id": 158009047479,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017235714,
+      "body_text": "Hi Jon Serna, We apologize for the delay. Two shipments destined for our German warehouse have been affected by heavy snowfall in Europe, causing road blockages and delivery delays. We will expedite delivery or explore alternative logistics channels to ship your order from China as soon as possible. Compensation will be provided based on the delay after your order is completed. We apologize for the inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T02:07:19Z",
+      "updated_at": "2026-01-16T02:07:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017246070,
+      "body_text": "Ah, okay, perfect, thank you. Regarding the platform you use for support, I received this message. I don't know if it's normal, just in case [image0.png] Sent from my iPhone.",
+      "user_id": 158009047479,
+      "created_at": "2026-01-16T07:36:06Z",
+      "updated_at": "2026-01-16T07:36:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017319152,
+      "body_text": "Hi Jon Serna, Yes, don't worry. This is our ticketing system. You can also contact us directly via email.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T08:20:08Z",
+      "updated_at": "2026-01-17T08:20:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

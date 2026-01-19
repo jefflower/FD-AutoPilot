@@ -1,0 +1,35 @@
+{
+  "id": 2396,
+  "subject": "软件管理器版本 2.1",
+  "description_text": "您好，simsonn 管理软件中的过滤级别是多少？谢谢，Eric Fillion",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-08-07T01:48:27Z",
+  "updated_at": "2025-08-11T00:47:59Z",
+  "requester_id": 158002751383,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006600125,
+      "body_text": "您好 Eric Fillion，默认过滤级别是 2 级。您可以禁用它以提高信号响应速度，尤其是在 iRacing 中。",
+      "user_id": 158000445778,
+      "created_at": "2025-08-09T15:09:05Z",
+      "updated_at": "2025-08-09T15:09:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006661560,
+      "body_text": "好的，谢谢您 Eric Fillion",
+      "user_id": 158002751383,
+      "created_at": "2025-08-10T21:36:12Z",
+      "updated_at": "2025-08-10T21:36:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

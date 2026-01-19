@@ -1,0 +1,34 @@
+{
+  "id": 10544,
+  "subject": "Ultra clutch",
+  "description_text": "I was trying to make some adjustments to my clutch pedal and some washers fell away and I didn’t see where they came from. Do you have an exploded parts diagram available? \r\n\r\nSent from my iPhone\r\n",
+  "status": 2,
+  "priority": 4,
+  "created_at": "2026-01-11T02:44:41Z",
+  "updated_at": "2026-01-14T11:26:45Z",
+  "requester_id": 158009020833,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016765939,
+      "body_text": "Hi Kris Borden,  Please take a photo and send it to me, and I will guide you on how to restore it. The user manual should also include instructions for this. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T02:46:03Z",
+      "updated_at": "2026-01-11T02:46:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017050491,
+      "body_text": "\r\nI just need to know where the washers go on the bar that holds the spring in the pedal as there are 2 different types of washers. \r\n\r\n\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158009020833,
+      "created_at": "2026-01-14T00:40:32Z",
+      "updated_at": "2026-01-14T00:40:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

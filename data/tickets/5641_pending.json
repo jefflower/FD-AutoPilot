@@ -1,0 +1,54 @@
+{
+  "id": 5641,
+  "subject": "Question about SIMSONN Manager app",
+  "description_text": "Hi! I need to know if exist some way to change the window size of the Simsonn Manager app. I use 2 monitors with different size and resolution and when I need to move the window of the app to my second monitor it is too bog and doesn´t fit on my secondary screen. I can´t find any option in the app to change size, maybe you could give me some external solution, Thanks in advance and best regards.\r\n\r\nAlfredo Rosselli\r\n\r\n[https://s-install.avcdn.net/ipm/preview/icons/icon-envelope-tick-round-orange-animated-no-repeat-v1.gif]<https://www.avast.com/sig-email?utm_medium=email&utm_source=link&utm_campaign=sig-email&utm_content=webmail>  Libre de virus.www.avast.com<https://www.avast.com/sig-email?utm_medium=email&utm_source=link&utm_campaign=sig-email&utm_content=webmail>\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-11-04T19:21:44Z",
+  "updated_at": "2025-11-25T05:25:10Z",
+  "requester_id": 158006561364,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011769784,
+      "body_text": "Hi Alfredo Rodriguez Rosselli,  Could you please take photos of your two monitors and display their resolution and scaling settings on the Windows desktop? I will check and test them.” ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-05T06:09:55Z",
+      "updated_at": "2025-11-05T06:09:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011956529,
+      "body_text": "Hi, first at all thanks for your answer.\r\nThe photos asked are attached, just in case you need to know, the main monitor is 32\" 2560x1440 and the other monitor is 24\" 1360x768, both at 100% scale as the minimum required for Windows 10.\r\nI know that is a big difference of resolution between two monitors but the 24\" at 1360x768 is more than enough for a secondary monitor to show data during a sim race. Any other window or info that I require fits ok on that monitor, could be great to have an option to scale the window of Simsonn manager, because even is too big on the main monitor, needing to minimize for acces to other icons or windows.\r\nHope you can help me with some idea of configuration for my case or maybe on future to include some scaling option inside the software. Thanks in advance!\r\n________________________________\r\nDe: service@simsonn.com ",
+      "user_id": 158006561364,
+      "created_at": "2025-11-07T23:07:40Z",
+      "updated_at": "2025-11-07T23:07:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011985155,
+      "body_text": "Hi Alfredo Rodriguez Rosselli,  Alright, I have forwarded your case to our software engineers for review. I will get back to you as soon as there is any update. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-09T04:40:30Z",
+      "updated_at": "2025-11-09T04:40:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012422923,
+      "body_text": "Great! Thanks! Adding a comment that maybe could be useful, If I start the PC WITHOUT turning on monitors and let to complete total start up procedure, with auto startup option enabled for Simsonn Manager, once I turn on the main monitor (AOC CQ32G4VE) the window appears at half size window and in this way is possible to drag fine to my second monitor. Anyway a future option to change size anytime wolud be great to have! Thanks again, best regards.\r\n________________________________\r\nDe: service@simsonn.com ",
+      "user_id": 158006561364,
+      "created_at": "2025-11-16T18:57:14Z",
+      "updated_at": "2025-11-16T18:57:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

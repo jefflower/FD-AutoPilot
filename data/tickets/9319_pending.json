@@ -1,0 +1,94 @@
+{
+  "id": 9319,
+  "subject": "Problems with SQ Pro",
+  "description_text": "Hello. I need your help. I've been using the SQ Pro gearbox for a long time\r\nwithout any problems, but in the last couple of days I've noticed that the\r\ntrigger on the gearbox is always pressed. I disconnected the connector from\r\nthe board inside the gearbox, but nothing changed. Is there a way to fix\r\nthis? The pressed trigger is displayed not only in the Simsonn app, but in\r\nall games as well.\r\n\r\n[image: image.png]\r\n\r\n[image: image.png]\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-27T20:27:37Z",
+  "updated_at": "2026-01-04T10:41:07Z",
+  "requester_id": 158008796142,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015146154,
+      "body_text": "Hi Kobra 34,  Could you please take a clear photo from the main control board side and send it to me? Also, please try reflashing or restoring the firmware to check whether the issue can be resolved.      At the front bottom position of the handbrake (indicated by the arrow), there is a recovery button. Please use a toothpick to gently switch it to the other side, then reconnect the USB cable. The device will enter recovery mode. Next, go to Settings → Update → Manual Firmware Update → seq-firmware → gear-sqpro.sfu in the software, complete the update, and then run a test. After the upgrade, make sure to switch the recovery button back to its original position. You may also use the VKB tool to check the device connection status. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T01:37:13Z",
+      "updated_at": "2025-12-28T01:37:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015172287,
+      "body_text": "I wasn't quite sure what kind of photo was needed, but I hope this one will do. As for the firmware, the firmware itself went well, but unfortunately, it didn't solve the problem.",
+      "user_id": 158008796142,
+      "created_at": "2025-12-28T22:32:56Z",
+      "updated_at": "2025-12-28T22:32:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015172312,
+      "body_text": "",
+      "user_id": 158008796142,
+      "created_at": "2025-12-28T22:34:44Z",
+      "updated_at": "2025-12-28T22:34:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015244169,
+      "body_text": "Hi Kobra 34,      Could you open it and clean it? I feel there is too much dust, which may cause a short circuit on the mainboard. In addition, I recommend restoring the firmware again following the previous procedure. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T09:12:17Z",
+      "updated_at": "2025-12-30T09:12:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015282277,
+      "body_text": "I used a very powerful flashlight to take this photo, which is why the dust is so clearly visible. Dust is a conductor in high humidity, so in my situation, it couldn't cause such problems. But to settle the matter once and for all, I blew compressed air (8 bar) on the board. This is expected; it doesn't matter; there's no result. I disassembled the gearbox, cleaned the board with alcohol, disconnected everything from the board, and re-flashed it for the fifth time, but that didn't help either. Furthermore, all components are protected by varnish, so the dust issue is completely irrelevant. I even recorded a video of how I did it, but the file is unfortunately over 30 MB, so I can't share it with you.",
+      "user_id": 158008796142,
+      "created_at": "2025-12-30T21:38:47Z",
+      "updated_at": "2025-12-30T21:38:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015289802,
+      "body_text": "Hi Kobra 34,  We can send you a brand-new mainboard as a replacement. Would it be convenient for you to replace it manually on your side? Please provide your order number, contact name, phone number, and shipping address so we can arrange the replacement. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T01:30:51Z",
+      "updated_at": "2025-12-31T01:30:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015371253,
+      "body_text": "Yes, of course, I would replace it myself without any problems. Order #SSN1452. Evgeny Malakhov, +375293728587, Belarus, Maladzyechna, st. Mariganova 17, postal code 222304",
+      "user_id": 158008796142,
+      "created_at": "2026-01-01T19:31:38Z",
+      "updated_at": "2026-01-01T19:31:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158015621768,
+      "body_text": "Hi Kobra 34,    This is your logistics tracking link.  https://t.17track.net/en#nums=YT2600401900103979",
+      "user_id": 158001343601,
+      "created_at": "2026-01-04T10:41:07Z",
+      "updated_at": "2026-01-04T10:41:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

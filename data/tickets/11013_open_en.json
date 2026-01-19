@@ -1,0 +1,35 @@
+{
+  "id": 11013,
+  "subject": "Compatibility with Fanatec GT DD PRO",
+  "description_text": "Hello dear Simsonn Team\n\nI have a Fanatec GT DD Pro Wheel Base and play on PC. Are the Simsonn Pro X Ultra Sim Racing Pedals\ncompatible?? I read about EMI errors?? Regards Jan",
+  "status": 2,
+  "priority": 1,
+  "created_at": "2026-01-15T20:43:06Z",
+  "updated_at": "2026-01-17T07:08:11Z",
+  "requester_id": 158009130858,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017311864,
+      "body_text": "Hi Anderas Welzenthal, We also have a Fanatec CSL DD 8Nm in our test setup, and it works well with our pedals. The wheelbase will not interfere with the pedal signal. We recommend using proper grounded 3-prong outlets for both your PC and power strip, with a reliable household earth/ground connection.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-17T04:02:31Z",
+      "updated_at": "2026-01-17T04:02:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017318312,
+      "body_text": "Thanks a lot, and if I buy the Ultra X pedals, do I also need the upgrade kit??? Or are the Ultra X pedals fully equipped??\nRegards Jan",
+      "user_id": 158009130858,
+      "created_at": "2026-01-17T07:08:11Z",
+      "updated_at": "2026-01-17T07:08:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

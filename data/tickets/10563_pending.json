@@ -1,0 +1,34 @@
+{
+  "id": 10563,
+  "subject": "order number SSN5488",
+  "description_text": "I have ordered the sh pro shifter nearly 2 weeks and also purchased express shipping, it was advertised as taking 3-5 buisnees days, it has nearly been 2 weeks and I have still not received the product I would like a refund from the shipping as your false advertisement has made me spend extra money.\r\n\r\nMany thanks, Kaleb\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-11T12:14:25Z",
+  "updated_at": "2026-01-12T10:32:41Z",
+  "requester_id": 158008954468,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016845332,
+      "body_text": "Hi Kaleb Visram,    Your order is expected to arrive within the next couple of days. We apologize for any inconvenience caused.  https://t.17track.net/en#nums=SF6047224439107",
+      "user_id": 158001343601,
+      "created_at": "2026-01-12T08:13:49Z",
+      "updated_at": "2026-01-12T08:13:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016845421,
+      "body_text": "That didn’t change the fact that you false advertisement has made me waste 20 pounds I would like a refund on the delivery.\r\n\r\nSent from Outlook for iOS<https://aka.ms/o0ukef>\r\n________________________________\r\n",
+      "user_id": 158008954468,
+      "created_at": "2026-01-12T08:16:20Z",
+      "updated_at": "2026-01-12T08:16:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

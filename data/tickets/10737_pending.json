@@ -1,0 +1,94 @@
+{
+  "id": 10737,
+  "subject": "Simsonn Brake Cable Issues",
+  "description_text": "Good evening,\r\n\r\nI’ve recently had my Simsonn Plus X throttle and brake set delivered and I have issues with the brake that make it unusable. The throttle is great, but it is difficult to get a telemetry reading from brake pressure and when I do it often is very brief before I lose it again. I’m not sure if it’s the wire or the load cell itself, so I’m willing to do whatever you recommend to get this fixed as soon as realistically possible. \r\n\r\nWhat I do know is that when the signal is very inconsistent, mostly after moving the brake anything but super slowly, I need to mess with cables and restart my PC to regain any telemetry.\r\n\r\nI have a big event coming up, so anything would be greatly appreciated. Thank you so much!\r\n\r\nSincerely,\r\n\r\nJames McIntyre\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-13T01:17:28Z",
+  "updated_at": "2026-01-17T07:21:06Z",
+  "requester_id": 158009043459,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016921643,
+      "body_text": "Hi James M,  Please provide your order number so we can check the details. Also, after any mechanical or damper adjustments, please confirm whether you have used the Offset function to re-zero the initial signal. Additionally, please check whether the RJ11 4P4C connector on the brake pedal is loose. Have you secured the power cable with cable ties to prevent movement or poor contact? ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-13T01:36:01Z",
+      "updated_at": "2026-01-13T01:36:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016923810,
+      "body_text": "Thanks for the quick response! \r\n\r\nMy order number was SSN5338. I made some very minor preload adjustments to check response in telemetry but it made no difference so currently it is about where it was from factory. I did use the offset tool in the manager. It made no noticeable difference on the telemetry issues. \r\n\r\nThe RJ11 feels as good as the throttle one, which works well. I have also tried holding each cable in securely, testing the pedals, and having a friend check telemetry; no difference with or without holding the cables. Thanks again!\r\n\r\n> \r\n> ",
+      "user_id": 158009043459,
+      "created_at": "2026-01-13T02:18:27Z",
+      "updated_at": "2026-01-13T02:18:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016924479,
+      "body_text": "Hi James M,  Please record a video clearly demonstrating and describing the issue, and send it to us via Google Drive. Kindly make sure the sharing permission is set to “Anyone with the link can view”, so we can review it for further analysis. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-13T02:31:49Z",
+      "updated_at": "2026-01-13T02:31:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016926185,
+      "body_text": "In this video, I did my best to demonstrate/replicate the telemetry issues and a way that I’ve been able to get any signal, but couldn’t exactly show the tracking and releasing tendency. It is quite random it seems whether it is just dead, gets zeroed with input, or tracks and loses. It seems I get slightly different responses with different cable angles, so hopefully that’s clear in the video. Let me know if there’s any issue with my organization and permissions on that video as I don’t do this often. Also, if you’d like me to try another solution I’m happy to do and film that too. In the meantime, I’ll try and get a video of that other track and release tendency. \r\n\r\nThe track and release is what I call where it will track pedal position for a little bit then gradually go back to zero without a change in input, or regardless of input. It’s pretty rare and tougher to catch but I’ll work on it. \r\n\r\nThanks!\r\n\r\nhttps://drive.google.com/file/d/1lm_U44Ny98AgxCvPpdFbjZ83FflqKWtW/view?usp=drivesdk\r\n\r\n\r\n> ",
+      "user_id": 158009043459,
+      "created_at": "2026-01-13T03:04:05Z",
+      "updated_at": "2026-01-13T03:04:05Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016934768,
+      "body_text": "Hi James M,  We will first send you a replacement brake pressure sensor to see if it resolves the issue. Also, if possible, you may visit a computer repair shop to re-crimp the brake connector, using the throttle wiring order as a reference. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-13T05:59:12Z",
+      "updated_at": "2026-01-13T05:59:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016935597,
+      "body_text": "Awesome, thank you so much for the quick help! I’ll look into recrimping that connector and will advise if that solves the issue. Thanks again! \r\n\r\n\r\n> ",
+      "user_id": 158009043459,
+      "created_at": "2026-01-13T06:07:57Z",
+      "updated_at": "2026-01-13T06:07:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017234532,
+      "body_text": "Quick thing—Do you know when the package will be shipped and approximately when to expect its delivery? Thank you for all your help!\r\n\r\n> ",
+      "user_id": 158009043459,
+      "created_at": "2026-01-16T01:21:34Z",
+      "updated_at": "2026-01-16T01:21:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017318454,
+      "body_text": "Hi James M,  We sincerely apologize for the inconvenience caused. We will arrange for a replacement to be sent to you on Monday.    It is expected to arrive around the 28th.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-17T07:21:06Z",
+      "updated_at": "2026-01-17T07:21:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

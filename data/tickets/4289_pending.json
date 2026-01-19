@@ -1,0 +1,284 @@
+{
+  "id": 4289,
+  "subject": "Vam",
+  "description_text": "Reference your email of 18/8/25 in which you offered a free Vam to \r\nreplace the faulty control box you supplied. To date [almost 6 weeks \r\nlater] I have not received the replacement or been advised that it ready \r\nto be dispatched. Frankly from a company as respected in the sim racing \r\nindustry as yours this is beyond just dissatisfying. As it stands I have \r\ntwo Vam motors which are useless and a total waste of money. I can only \r\nhope this has been an oversight on your part and look forward to \r\nreceiving the replacement.\r\n\r\nNeville Roberts 1 Navajo St., Wilsonton. Qld .4350 Australia\r\n\r\n\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-01T02:30:01Z",
+  "updated_at": "2025-10-29T07:28:01Z",
+  "requester_id": 158002220760,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005162241,
+      "body_text": "Hi Neville Roberts,  Could you please let us know the model of your pedals? In the haptics settings interface, you can test both the motor and telemetry functions. Please make sure to set the VAM motor intensity according to the software instructions — this applies to SIMHUB as well. Otherwise, there is a risk of damaging the VAM motor. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-19T06:30:10Z",
+      "updated_at": "2025-07-19T06:30:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005211390,
+      "body_text": "Thank you for your quick response. I purchased the pedals through Ali \r\nexpress where they were just listed as Simsonn  pedals without a model \r\nnumber or name. They are silver and appear to be similar to the PlusX \r\nversion.\r\n\r\nThe Vam motors are not attached to the pedals at the moment as I am \r\nunable to find the software shown in your email to configure them. Will \r\nthat automatically show up in v2.09 of Simsonn Manager after the motors \r\nare attached or is there a separate program I have to download?\r\n\r\nThank you again for your assistance.\r\n\r\n",
+      "user_id": 158002220760,
+      "created_at": "2025-07-19T23:28:16Z",
+      "updated_at": "2025-07-19T23:28:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005211475,
+      "body_text": "Hi Neville Roberts,  https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-07-20T00:07:58Z",
+      "updated_at": "2025-07-20T00:07:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006721680,
+      "body_text": "Sorry to take so long to reply but have only just installed them.\r\n\r\nThey are recognized in Simsonn manager and am able to test the \r\nvibration, they are also recognized in the latest Simhub version which \r\ntells me they are connected. I have configured the effects I want but \r\nthe reactors do not show up in Automobalista 2 - the only racing sim I \r\nuse. The Vibration intensity and frequency are set to recommended levels.\r\n\r\n",
+      "user_id": 158002220760,
+      "created_at": "2025-08-11T22:49:16Z",
+      "updated_at": "2025-08-11T22:49:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006726887,
+      "body_text": "Hi Neville Roberts,     Please upgrade to SIMSONN Manager 2.1.0. We support the games listed on the right, while SIMHUB 9.9.3 supports over 100 games. You may refer to this list for comparison. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-12T05:08:43Z",
+      "updated_at": "2025-08-12T05:08:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006779471,
+      "body_text": "I am using v2.1.0 and was able to launch the game using push start in \r\nthe game panel but I still don't get any vibration during AMS2. I have \r\nenabled the effects in the following manner Brake- abs, gear shift and \r\nwheel lock Throttle- speed,wheel slip, rpm and traction control. When I \r\ntest vibration is there but I simply don't feel anything in game.\r\n\r\nI don't understand all the symbols in the game panel apart from \"push \r\nstart\". What do I have to do with Path has set, set path, top this game, \r\nand launch from custom path?\r\n\r\nI also want to run Simhub to use effects other than the ones available \r\nin your program. Is it possible to run  Simhub and Simsonn manager \r\ntogether and if so how do I do it?\r\n\r\nAs always thank you for your assistance.\r\n\r\n",
+      "user_id": 158002220760,
+      "created_at": "2025-08-12T23:38:16Z",
+      "updated_at": "2025-08-12T23:38:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006779870,
+      "body_text": "Hi Neville Roberts,    You can use SimHub 9.9.3 to add the SIMSONN pedals in the device settings, but do not open the SIMSONN Manager software at the same time, as it will cause a conflict.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-13T00:03:16Z",
+      "updated_at": "2025-08-13T00:03:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007050111,
+      "body_text": "Both Simsonn manager and Simhub [I have the latest versions] recognize \r\nthat my Vam reactors are connected but the pedal plugged into motor1 on \r\nthe controller does not vibrate [I've tried both]. I have also unplugged \r\nand reconnected  all leads and tried other usb ports without success.\r\n\r\nThanks again\r\n\r\n",
+      "user_id": 158002220760,
+      "created_at": "2025-08-18T01:11:08Z",
+      "updated_at": "2025-08-18T01:11:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007051110,
+      "body_text": "Hi Neville Roberts,  If Motor #1 does not vibrate, please try swapping it with another motor. If after the swap Motor #1 still doesn’t vibrate, but the motor that was swapped in works normally, this indicates that the issue is not with the main controller port or firmware, but with Motor #1 itself. We can send you a new VAM free of charge. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-18T02:36:15Z",
+      "updated_at": "2025-08-18T02:36:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007051210,
+      "body_text": "I have done what you suggest andotor 1 still doesn't work so please do send another Vam. Thank you ",
+      "user_id": 158002220760,
+      "created_at": "2025-08-18T02:48:47Z",
+      "updated_at": "2025-08-18T02:48:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007107661,
+      "body_text": "I have tried what you suggest but whatever is plugged into motor 1 won't \r\nvibrate so please send me the free Vam you offered. My delivery address \r\nis Neville Roberts 1 Navajo St Wilsonton 4350 Queensland Australia.\r\n\r\nThank you again for your help\r\n\r\n",
+      "user_id": 158002220760,
+      "created_at": "2025-08-18T23:38:36Z",
+      "updated_at": "2025-08-18T23:38:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008898288,
+      "body_text": "Hello again, I have not yet received the free replacement vam you \r\noffered1 month ago. In case it's needed again here's my delivery \r\naddress.  Neville Roberts 1 Navajo Street Wilsonton Queensland 4350 \r\nAustralia. Thank you\r\n\r\n",
+      "user_id": 158002220760,
+      "created_at": "2025-09-17T23:49:07Z",
+      "updated_at": "2025-09-17T23:49:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009725661,
+      "body_text": "合并来自工单1685  \n      主题: Vam software  \n      描述:  I have downloaded Simsonn Manager v2.09 but there does not appear to be  anywhere to configure the vam motors I have purchased to attach to my  Simsonn pedals.  Your help would be much appreciated.  Nev",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T09:37:05Z",
+      "updated_at": "2025-10-01T09:37:05Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158009725660,
+      "body_text": "ID 为 1685 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T09:37:05Z",
+      "updated_at": "2025-10-01T09:37:05Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158009725711,
+      "body_text": "Hi Neville Roberts,  Hello, we sincerely apologize for the oversight. After the National Day holiday, on October 9th, we will arrange this for you right away. Sometimes instructions from customers may get missed by the operations team — thank you for your understanding. Could you please confirm whether you are using the PlusX pedals or the ProX Ultra pedals? We’ve recently released an updated VAM vibration algorithm with significantly improved performance, and we’d be happy to provide you with a test version if you’d like to try it. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-01T09:41:12Z",
+      "updated_at": "2025-10-01T09:41:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009763279,
+      "body_text": "Thank you for your quick reply. I am using the PlusX pedals and would be \r\nhappy to try your updated version but will be happy for you to supply \r\nwhich ever version is most suitable for my pedals.\r\n\r\n",
+      "user_id": 158002220760,
+      "created_at": "2025-10-02T00:13:21Z",
+      "updated_at": "2025-10-02T00:13:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010198680,
+      "body_text": "Hi Neville Roberts,    We apologize for the delayed response; we've just returned from our vacation. We are preparing to resend two VAMs to you. Please provide the order number for your VAM purchase. Thank you.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-10T09:00:17Z",
+      "updated_at": "2025-10-10T09:00:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010239877,
+      "body_text": "I hope you had a pleasant vacation. Sorry but I don't have the order \r\nnumber for my Vam purchase but I do have a receipt for my purchase of \r\nthe controller. The order ID on the receipt is rKVYPdu6JJokjfUHeE3rJ071v \r\nI hope that is sufficient. Thank you.\r\n\r\n",
+      "user_id": 158002220760,
+      "created_at": "2025-10-11T01:07:03Z",
+      "updated_at": "2025-10-11T01:07:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010263291,
+      "body_text": "Hi Neville Roberts,    May I ask which platform you purchased it from?",
+      "user_id": 158001343601,
+      "created_at": "2025-10-11T10:43:19Z",
+      "updated_at": "2025-10-11T10:43:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010293774,
+      "body_text": "Hello again,\r\n\r\nI purchased the 2 motor and power supply Vam package from AliExpress and \r\nthe controller from you. The controller was purchased on the 9th of July \r\nbut because of health issues the system wasn't installed until several \r\nweeks after the controller was purchased.\r\n\r\n\r\n",
+      "user_id": 158002220760,
+      "created_at": "2025-10-11T23:06:52Z",
+      "updated_at": "2025-10-11T23:06:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010313771,
+      "body_text": "Hi Neville Roberts,    It seems that the oversight was on our side.  Please provide your VAM order number, contact name, address, and phone number so that we can send you two replacement units.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-12T11:28:03Z",
+      "updated_at": "2025-10-12T11:28:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010331140,
+      "body_text": "Hello once more,\r\n\r\nMy details as follows, Neville Roberts 1 Navajo St., Wilsonton. \r\nQueensland. 4350 Australia. Telephone 0423 474 917. As previously \r\nmentioned I don't have a VAM order number Thank you.\r\n\r\n",
+      "user_id": 158002220760,
+      "created_at": "2025-10-12T23:39:33Z",
+      "updated_at": "2025-10-12T23:39:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010469481,
+      "body_text": "As requested, I'm trying to send a message to your store via AliExpress \r\nbut cannot get the required captcha to line up and therefore cannot send \r\nthe message. However I have now found the order numbers for both my \r\npedals and the VAM. Pedals 8197595652523810 VAM 8201822971173810 the \r\ncontroller order ID was given in a previous email. I hope this matter \r\ncan now be finally resolved. Once again my delivery details. Neville \r\nRoberts 1 Navajo Street WILSONTON Qld 4350 Phone 0423 474 917. Thank \r\nyou. Neviile Roberts\r\n\r\n",
+      "user_id": 158002220760,
+      "created_at": "2025-10-15T05:26:28Z",
+      "updated_at": "2025-10-15T05:26:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010527684,
+      "body_text": "If you read through all my emails you will see that I bought the \r\ncontroller from you and have already supplied the order id \r\nrKVYPdu6JJokjfUHeE3rJQ71v. The purchase was made on July 9th this year. \r\nAfter installing the motors and controller the motors worked briefly \r\nthen stopped even though they are still recognized by both Simsonn \r\nmanager and Simhub. I followed the instructions given by you after first \r\nreporting the issue but nothing solved the problem, I don't know whether \r\nthe problem is with the controller or the motors. But as you have \r\nalready admitted that something is faulty and offered a replacement can \r\nwe please get this issue resolved. It has gone on far too long. Thank \r\nYou Neville Roberts.\r\n\r\n",
+      "user_id": 158002220760,
+      "created_at": "2025-10-16T02:30:23Z",
+      "updated_at": "2025-10-16T02:30:23Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010527909,
+      "body_text": "If you read all my emails you will see that I purchased the controller \r\nfrom you on the 9th July this year and that I have already supplied you \r\nwith the order ID rKVYPdu6JJokjfUHeE3rJ071v. After installing the motors \r\nand controller the motors worked briefly then stopped although they are \r\nstill recognized by Simsonn Manager and Simhub. I followed all the \r\ninstructions I received from you when I first reported the issue but \r\nnothing solved the problem. I don't know whether it's the motors or the \r\ncontroller which is at fault but as you have already acknowledged that \r\nsomething is faulty and offered a replacement can we please get this \r\nissue resolved. It has gone on far too long. Thsank you. Neville Roberts\r\n\r\n",
+      "user_id": 158002220760,
+      "created_at": "2025-10-16T02:41:26Z",
+      "updated_at": "2025-10-16T02:41:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011127331,
+      "body_text": "Since my last email 11 days ago [to which I have not received a reply] I \r\nhave been able to confirm that 2 of the motors are definitely faulty. My \r\nracing platform doesn't have a clutch so I replaced one of the \r\noriginally installed motors with the spare one and it works perfectly. \r\nThe other two will not vibrate. Could you please confirm that you are \r\nsending me the replacement VAM you originally offered. Thank You Neville \r\nRoberts.\r\n\r\n",
+      "user_id": 158002220760,
+      "created_at": "2025-10-27T00:04:55Z",
+      "updated_at": "2025-10-27T00:04:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011209303,
+      "body_text": "Offer accepted thank you. My delivery details are Neville Roberts 1 \r\nNavajo Street Wilsonton Queensland 4350 Australia phone 0423 474 917\r\n\r\n",
+      "user_id": 158002220760,
+      "created_at": "2025-10-28T09:46:57Z",
+      "updated_at": "2025-10-28T09:46:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

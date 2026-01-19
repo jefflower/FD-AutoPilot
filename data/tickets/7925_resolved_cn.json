@@ -1,0 +1,35 @@
+{
+  "id": 7925,
+  "subject": "无法注册我的踏板 – Plus X 踏板控制盒",
+  "description_text": "您好，Simsonn 支持团队，\n\n我无法注册我的踏板，需要您的帮助。\n\nhttps://www.facebook.com/reel/23910970038552757\n\n我遇到了与此视频中（参考相同的注册步骤）类似的 问题。我的设置使用了 *Plus X 踏板控制盒*，我按照我附带的图片中的指南操作。但是，在此过程中我遇到了一个错误消息，提示类似 *“这不是踏板的更新”*。\n\n附加详细信息：\n\n*   *SIMSONN Manager 版本：* 2.1.2\n*   管理器可以毫无问题地读取我的踏板，但我仍然无法完成注册。\n*   我也正在使用 VRAM Pro 触觉设备\n\n您能告诉我如何解决这个问题，或者我是否应该尝试其他方法？\n\n感谢您的帮助！\n\n此致，\nFrancis\n\n[图片：image.png]",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-10T21:14:32Z",
+  "updated_at": "2025-12-11T05:26:57Z",
+  "requester_id": 158007748595,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014297161,
+      "body_text": "您好，wf choi，您只需要重新安装固件。请按照步骤选择 plusx.sfu 文件进行更新和恢复系统。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T01:16:23Z",
+      "updated_at": "2025-12-11T01:16:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014299417,
+      "body_text": "对我有效，谢谢",
+      "user_id": 158007748595,
+      "created_at": "2025-12-11T03:26:10Z",
+      "updated_at": "2025-12-11T03:26:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

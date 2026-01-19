@@ -1,0 +1,44 @@
+{
+  "id": 9234,
+  "subject": "Order #SSN5320",
+  "description_text": "Hi guys,\r\n\r\nThanks for confirming my order. I have originally ordered black pedals, can\r\nyou please change these to silver?\r\n\r\nThanks you :)\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-26T12:54:01Z",
+  "updated_at": "2026-01-16T08:32:52Z",
+  "requester_id": 158008758889,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015303893,
+      "body_text": "Hi Josh Castle,    We apologize for the delayed response. Your order has already been shipped, and we are unable to make any further modifications.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-31T09:39:10Z",
+      "updated_at": "2025-12-31T09:39:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015855821,
+      "body_text": "Hi guys,\r\n\r\nMy pedals arrived today, however, the haptic motors I’ve ordered haven’t\r\narrived & are unable to track with the given shipping number. Mentioning\r\nit’s expired?\r\n\r\nCan you please resolve, otherwise I’ll demand a refund.\r\n\r\nShipping number for haptic motors: SF6047202971916\r\n\r\nOn Wednesday, December 31, 2025, service@simsonn.com ",
+      "user_id": 158008758889,
+      "created_at": "2026-01-06T06:10:10Z",
+      "updated_at": "2026-01-06T06:10:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017249466,
+      "body_text": "Hi Josh Castle,  Your package is currently in transit and is expected to arrive within the next few days. Below is your tracking link: ​https://t.17track.net/en#nums=SF6047202971916",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T08:32:51Z",
+      "updated_at": "2026-01-16T08:32:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

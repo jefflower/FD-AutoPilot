@@ -1,0 +1,25 @@
+{
+  "id": 10993,
+  "subject": "换档器问题 订单 #SSN4441",
+  "description_text": "您好，\n\n我终于收到了我的换档器，但我遇到了一个问题。\n\n当选择7档（向上）时，SIMSONN管理器中显示选择了R档（向下）。\n\n当选择R档（向下）时，SIMSONN管理器中显示选择了7档（向上）。\n\n这是什么原因？是固件问题还是换档器有故障？\n\n此致，\nMartin",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-15T14:21:16Z",
+  "updated_at": "2026-01-16T01:32:11Z",
+  "requester_id": 158008313074,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017234825,
+      "body_text": "您好，Martin Fredriksson，请卸载您电脑上当前安装的SIMSONN管理器，然后从我们的官方网站下载并安装SIMSONN管理器v2.1.3。（即使您本地版本显示为2.1.3，官方下载版本也已应用了修复。）之后，请重新校准HS Pro。在校准过程中，请忽略屏幕上显示的档位是否正确。只需严格按照校准顺序操作：1 → 2 → 3 → 4 → 5 → 6 → 7 → R。校准完成后，7档和倒档将正确映射。这是我们这边的映射错误，已在官网版本中修复。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-16T01:32:11Z",
+      "updated_at": "2026-01-16T01:32:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

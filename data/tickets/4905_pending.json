@@ -1,0 +1,36 @@
+{
+  "id": 4905,
+  "subject": "Order SSN2828 - Shipping refund",
+  "description_text": "Hi Simsonn team\r\n\r\nI purchased for my son a set of Simsonn Plus X pedals and paid for express shipping. The express shipping would have meant that it should have been delivered yesterday (Tuesday 14th Oct).\r\n\r\nWhen I track the package I can see that it is still in China and looks like it’s not going to arrive any time soon.\r\n\r\nCan you therefore please refund the £23.00 that I paid for express shipping.\r\n\r\nI have attached our order receipt where you can see that we placed the order on October 3rd.\r\n\r\nPlease let me know if you require any further information from me.\r\n\r\nKindest wishes\r\n\r\nCarlos Martos\r\nSenior Manager- Desktop\r\nm: +44 7826 852642\r\np: +44 207 847 8700\r\nw: https://www.mimecast.com\r\nAddress: https://www.mimecast.com/company/contact/\r\n\r\nWork Protected.™\r\n\r\n\r\n\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-15T10:29:05Z",
+  "updated_at": "2025-10-21T10:59:09Z",
+  "requester_id": 158005707764,
+  "responder_id": 158001343601,
+  "cc_emails": [
+    "canemartos@hotmail.com"
+  ],
+  "conversations": [
+    {
+      "id": 158010744753,
+      "body_text": "Hi Simsonn team\r\n\r\nI sent the below email to you last week requesting a refund for my express shipping since the pedals have still not arrived.\r\n\r\nI have had no response from you apart from your automated message saying you will reply normally within 24 hours.\r\n\r\nCould you get back to me please about this.\r\n\r\nKindest wishes\r\n\r\nCarlos Martos\r\nSenior Manager- Desktop\r\nm: +44 7826 852642\r\np: +44 207 847 8700\r\nw: https://www.mimecast.com\r\nAddress: https://www.mimecast.com/company/contact/\r\n\r\nWork Protected.™\r\n\r\n",
+      "user_id": 158005707764,
+      "created_at": "2025-10-20T14:08:16Z",
+      "updated_at": "2025-10-20T14:08:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010795768,
+      "body_text": "Hi Carlos Martos,    We apologise for the inconvenience caused and have refunded the additional delivery charges on your behalf.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-21T10:59:09Z",
+      "updated_at": "2025-10-21T10:59:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

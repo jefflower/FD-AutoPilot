@@ -1,0 +1,44 @@
+{
+  "id": 1412,
+  "subject": "Simsonn Shipping Notification#SSN1963",
+  "description_text": "Hello, I'm sorry to bother you. We are in the process of shipping your order, but there is an issue where the 3 Vam Pro kits you purchased cannot be shipped with the control box for the ProX Ultra because it is too large. Can you please tell us if the pedals you purchased previously were Pro Plus or Pro X. If they were Pro Plus pedal , we can exchange them for Plus X pedal control boxes and refund the price difference so that they can be delivered in one package for you.",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-07-10T08:41:35Z",
+  "updated_at": "2025-07-10T10:32:48Z",
+  "requester_id": 158002016097,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004501564,
+      "body_text": "Hi there, thanks for getting in touch. I have the Simsonn Pro Plus pedals\r\n(H3-P3) currently. I have also attached an image, in case I have the name\r\nwrong.\r\n\r\n\r\n\r\n\r\n",
+      "user_id": 158002016097,
+      "created_at": "2025-07-10T08:52:49Z",
+      "updated_at": "2025-07-10T08:52:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004501586,
+      "body_text": "Hi Jjcmoura,    Ok, thanks for the quick reply, we will replace your control box with a Plus X and refund you the difference, they both work the same, please don't worry.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-10T09:01:30Z",
+      "updated_at": "2025-07-10T09:01:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004501681,
+      "body_text": "Perfect, thanks very much for your help and swift resolution!\r\n\r\n",
+      "user_id": 158002016097,
+      "created_at": "2025-07-10T09:21:40Z",
+      "updated_at": "2025-07-10T09:21:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

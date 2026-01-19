@@ -1,0 +1,24 @@
+{
+  "id": 8813,
+  "subject": "Payment method",
+  "description_text": "I wanna purchase a Gear shifter butI can' t pay by PayPal on checkout but just with credit card.   On your site you state instead that i can use PayPal for my purchase.\r\nCan you help me ?\r\nLuigi Ricci \r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-12-21T14:10:27Z",
+  "updated_at": "2025-12-22T12:27:51Z",
+  "requester_id": 158008211829,
+  "responder_id": 158007774669,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014879554,
+      "body_text": "Hi Luigi R, Hello, you can pay with PayPal.",
+      "user_id": 158007774669,
+      "created_at": "2025-12-22T12:27:48Z",
+      "updated_at": "2025-12-22T12:27:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

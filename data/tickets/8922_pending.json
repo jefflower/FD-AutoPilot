@@ -1,0 +1,64 @@
+{
+  "id": 8922,
+  "subject": "Status on my pedals",
+  "description_text": "My order number is SSN4956 I was wondering the status on it, it says\r\nconfirmed but I was wondering if there was some more info as to if it was\r\nforgotten or back ordered or shortage or whatnot. Any info helps!\r\n\r\nSincerely,\r\nCasey Hulme\r\n513-926-2777\r\ncasey.hulme07@gmail.com\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-22T20:30:33Z",
+  "updated_at": "2026-01-15T10:34:39Z",
+  "requester_id": 158008311806,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014947405,
+      "body_text": "Hi Casey Hulme,    Please provide your order number and a description of the issue, and we will assist you in checking it.",
+      "user_id": 158000445778,
+      "created_at": "2025-12-22T23:50:13Z",
+      "updated_at": "2025-12-22T23:50:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015006217,
+      "body_text": "My order number is SSN4956. The issue is that I placed the order over a\r\nweek ago and there has been no update on its status. Just wondering if it\r\nis backordered or you are out of stock or something else. Thank you\r\n\r\nOn Mon, Dec 22, 2025 at 6:50 PM support@simsonn.com ",
+      "user_id": 158008311806,
+      "created_at": "2025-12-23T21:31:24Z",
+      "updated_at": "2025-12-23T21:31:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015058119,
+      "body_text": "Hi Casey Hulme,  The goods arrived at our warehouse yesterday, and we have shipped your order today via FedEx. Please keep an eye on the tracking information. We sincerely apologize for the delay; due to the peak season, the entire logistics process has experienced some delays. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-25T04:02:10Z",
+      "updated_at": "2025-12-25T04:02:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015058338,
+      "body_text": "Thank you for the update! Hopefully you get everything sorted I know the\r\nholiday season can be a little crazy! Thank you again!\r\n\r\nOn Wed, Dec 24, 2025 at 23:02 support@simsonn.com ",
+      "user_id": 158008311806,
+      "created_at": "2025-12-25T04:31:30Z",
+      "updated_at": "2025-12-25T04:31:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017177653,
+      "body_text": "Hi Casey Hulme,  I apologize for not responding to you promptly. I see your package has been delivered. Have you received it?  https://t.17track.net/en#nums=887406952211",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T10:34:38Z",
+      "updated_at": "2026-01-15T10:34:38Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

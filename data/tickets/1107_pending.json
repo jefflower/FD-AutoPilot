@@ -1,0 +1,44 @@
+{
+  "id": 1107,
+  "subject": "Re: Re: Simsonn Pro X Racing Simulator Professional Pedal",
+  "description_text": "Hello,\r\n\r\nAs you can see on the other mails we have I have a pair of Simsonn pro plus\r\npedals. I would like to know what I need to get in order to get your\r\nhaptics and get them to work. My controller box it's prepared for it?\r\n\r\nThank you ver much,\r\nAlvaro\r\n\r\nEl jue, 27 mar 2025, 8:37 a. m., General and sales enquiries <\r\nservice@simsonn.com> escribió:\r\n\r\n> Hi，\r\n> The time hasn't been set yet.\r\n> ------------------------------\r\n> service@simsonn.com\r\n>\r\n>\r\n> *From:* Alvaro farelo moncayo <alfm96@gmail.com>\r\n> *Date:* 2025-03-27 14:13\r\n> *To:* General and sales enquiries <service@simsonn.com>\r\n> *Subject:* Re: Simsonn Pro X Racing Simulator Professional Pedal\r\n>\r\n> Hello,\r\n>\r\n> When it's the update schedule more or less?\r\n>\r\n> El jue, 27 mar 2025 3:34 a. m., General and sales enquiries <\r\n> service@simsonn.com> escribió:\r\n>\r\n>> Hi，\r\n>> You need to wait for some time, we will update the software, then can\r\n>> support simagic HPR\r\n>>\r\n>> ------------------------------\r\n>> service@simsonn.com\r\n>>\r\n>>\r\n>> *From:* Alvaro farelo moncayo <alfm96@gmail.com>\r\n>> *Date:* 2025-03-27 03:56\r\n>> *To:* service <service@simsonn.com>\r\n>> *Subject:* Simsonn Pro X Racing Simulator Professional Pedal\r\n>> Hello\r\n>>\r\n>> I have a pair of Simsonn Pro X Racing Simulator Professional Pedal and i\r\n>> would like to know if the hub where i connect the pedals is compatible with\r\n>> Simagic HPR haptics. I would connected to the box and powered by a 12v or\r\n>> what should i do? As long as i can see you control box is being is inteded\r\n>> for haptics motors.\r\n>>\r\n>> Thanks for all\r\n>> Alvaro\r\n>>\r\n>>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-02T11:07:36Z",
+  "updated_at": "2025-07-12T08:55:02Z",
+  "requester_id": 158001873873,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004374349,
+      "body_text": "你好，Alvaro Farelo Moncayo，  您需要购买 PlusX 控制器、24V 直流电源和 VAM Pro 电机。如果您已经拥有电机，则无需再次购买。我们的系统目前支持十余款主流赛车游戏，并兼容最新版本的 SIMHUB (9.9.3)，该版本为 100 余款赛车游戏提供遥测支持。            https://www.simsonn.com/products/simsonn-vam-pedals-haptic-reactor",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T14:25:10Z",
+      "updated_at": "2025-07-02T14:25:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004487449,
+      "body_text": "Okey, so i just need to buy haptics no need to buy a controller box? I send\r\nyou a photo of my controller box so pls tell me what I need to buy in order\r\nto make it work.\r\n\r\n\r\nThanks for the help,\r\nAlvaro\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nEl mié, 2 jul 2025, 4:25 p. m., service@simsonn.com ",
+      "user_id": 158001873873,
+      "created_at": "2025-07-09T09:30:34Z",
+      "updated_at": "2025-07-09T09:30:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004645278,
+      "body_text": "Hi Alvaro farelo moncayo,    If you are using the ProX pedals (not the latest ProX Ultra or PlusX), please go to Settings → Update → Manual Firmware Update in the SIMSONN Manager 2.0.8 software. In the PESALS-Firmware/pedals directory, select the prox.sfu file to update the firmware. After the update is complete, your pedals will support the VAM Pro motor.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-12T08:55:01Z",
+      "updated_at": "2025-07-12T08:55:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

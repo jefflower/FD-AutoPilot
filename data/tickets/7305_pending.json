@@ -1,0 +1,24 @@
+{
+  "id": 7305,
+  "subject": "Pedal Interference with Eachother",
+  "description_text": "Hello!\r\n\r\nI recently bought a set of Simsonn Pro Pedals and have been trying to set them up. They both work on their own to an extent, meaning I can fully press the brake or throttle and get a 0-100 response from the pedal, but I have one key problem. When I am actuating the problem, my braking performance reduces, almost linearly, If I am at 100% throttle, pressing the brake pedal will give me almost no response at all, maybe 5-10%. If I am 50% throttle, I might get 50% out of my brake pedal when full pressed down. To be clear, this is not a physical limitation but all within game/software.\r\n\r\nAny ideas? I have attached a picture of my setup. The control box is mounted underneath.\r\n\r\nThanks,\r\n\r\nBen\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-03T03:23:50Z",
+  "updated_at": "2025-12-06T05:39:58Z",
+  "requester_id": 158007507949,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013768335,
+      "body_text": "Hi Ben Kwok,     Please check the pressure sensor component in front of the brake and make sure it is not touching the wooden board. If it cannot move freely, it will not generate a signal. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-06T05:39:58Z",
+      "updated_at": "2025-12-06T05:39:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

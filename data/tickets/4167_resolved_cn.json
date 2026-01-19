@@ -1,0 +1,65 @@
+{
+  "id": 4167,
+  "subject": "Simsonn 管理器",
+  "description_text": "我的踏板本来工作正常，然后我安装了Simsonn管理器，但是没有明确的指导说明要安装哪个版本，接着我安装了可用的更新，现在程序和我的踏板都无法工作。我试图卸载管理器程序，但无法卸载。现在我的踏板完全不工作了。我应该如何卸载这个程序或者如何修复它？",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-09-26T20:57:32Z",
+  "updated_at": "2025-09-29T11:25:53Z",
+  "requester_id": 158001868657,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009360657,
+      "body_text": "嗨 John Zoeller，您能告诉我您踏板的型号吗？这个问题可以通过更新固件来解决。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-27T02:28:30Z",
+      "updated_at": "2025-09-27T02:28:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009424646,
+      "body_text": "我的是2踏板Pro X型号。另外，在我安装更新后，主程序变成了中文，而且只是部分安装，因为主屏幕并不完整。在安装Simsonn管理器之前，踏板工作得很好，我只是希望能为我驾驶的不同赛车做一些微调。",
+      "user_id": 158001868657,
+      "created_at": "2025-09-27T12:01:16Z",
+      "updated_at": "2025-09-27T12:01:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009425133,
+      "body_text": "嗨 John Zoeller，在SIMSONN Manager 2.1.0版本中，您可以将界面切换为英文。请尝试手动更新固件：按住控制盒上的升级按钮，然后重新连接USB线。软件将提示已进入Flash更新模式。请前往“设置”→“更新”→“手动固件更新”→“pedals-firmfirmware”→“pedals-prox.sfu”。更新完成后，请再次测试设备。",
+      "user_id": 158000445778,
+      "created_at": "2025-09-27T12:33:27Z",
+      "updated_at": "2025-09-27T12:33:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009433986,
+      "body_text": "似乎成功了！感谢您的帮助！",
+      "user_id": 158001868657,
+      "created_at": "2025-09-27T14:25:09Z",
+      "updated_at": "2025-09-27T14:25:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009625585,
+      "body_text": "他们明确地告诉了我如何解决我的问题，而且成功了！响应时间也非常快，我很感激。谢谢你",
+      "user_id": 158001868657,
+      "created_at": "2025-09-29T11:25:52Z",
+      "updated_at": "2025-09-29T11:25:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

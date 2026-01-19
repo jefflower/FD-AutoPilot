@@ -1,0 +1,284 @@
+{
+  "id": 879,
+  "subject": "VAM haptics and SimHub",
+  "description_text": "Hi.\r\n\r\nI just received my VAM Pro Pedals Haptic Reactor and accessories today. I've tried running it with SIMSONN manager, so I know they work, but I can't get them to work with SimHub. How is it done?\r\n\r\nOther than that it seems to be a solid product.\r\n\r\nRegards\r\nJesper Lund\r\nHumlebæk Denmark\r\nOrder #SSN1684\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-06-26T16:51:38Z",
+  "updated_at": "2025-10-09T06:16:30Z",
+  "requester_id": 158001798970,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004044002,
+      "body_text": "Hi Jesper L,     We currently support 10 racing games, and telemetry support for iRacing will be completed this week. You can use SIMHUB, as we’ve already integrated with it. SIMHUB supports up to 100 racing titles, covering nearly all major games. I can provide you with an internal version for now, as the official SIMHUB update will be released a bit later.   https://drive.google.com/file/d/1QrSbAvCC5iyx9XgdRgSQV-hWpmDGkujc/view?usp=sharing",
+      "user_id": 158000445778,
+      "created_at": "2025-06-26T23:56:16Z",
+      "updated_at": "2025-06-26T23:56:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004174907,
+      "body_text": "Hi\r\n\r\nThank you very much. Works great.\r\n\r\n________________________________\r\n",
+      "user_id": 158001798970,
+      "created_at": "2025-06-27T09:43:10Z",
+      "updated_at": "2025-06-27T09:43:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004361811,
+      "body_text": "Hi again\r\n\r\nI simply can't get the VAM to work reliably.\r\n\r\nI can get it to connect to SimHub but when in a game it disconnects after less than a minute. The USB cord has to be unplugged and plugged in again, but sometimes that's not even enough and the power have to be disconnected. On that note: when inserting the power plug into the control box it sparks.\r\n\r\nAnother thing is that the VAM often starts humming, even when not having been fed a signal. Often quite violently. The only solution is to pull the power. Just now they started humming without even being connected to the PC, only to the power!\r\n\r\nDo you have any solutions or a roadmap for getting this product working? Perhaps you should have held off the launch a couple of months? At least not have a big picture that says \"perfectly comparable with SIMHUB software\"...\r\n\r\nIf a fix is not available in the immediate future I think I'll have to return the product. Will you kindly supply me with a return address so I can look up how expensive it'll be?\r\n\r\nI get that it's a new product, but one is justified in expecting that the product works to some extent.\r\n\r\nRegards\r\nJesper Lund\r\nDenmark\r\n\r\n________________________________\r\n",
+      "user_id": 158001798970,
+      "created_at": "2025-07-01T22:07:39Z",
+      "updated_at": "2025-07-01T22:07:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004362824,
+      "body_text": "Hi Jesper L,     Please provide your pedal and VAM order details so we can confirm whether you're using the PlusX controller or the ProX Ultra controller.  If you're using SIMHUB for connection, all telemetry-related commands—such as starting or stopping vibration—are sent directly by SIMHUB. I'll send you the latest SIMHUB version for testing. Also, please let us know which game you're currently using.  Important notes:    Make sure to connect the USB cable directly to a USB 3.0 port on the back of your PC, not through a USB hub, as hubs can cause unstable power or data transmission.    If you're using the PlusX controller, please check whether there is a green ground wire. If so, connect it to a screw on the pedal or mounting bracket to ensure proper grounding.     https://drive.google.com/file/d/1p5kEGqiBUoGbt3qYI03tZ0NQ1VuhzOgv/view",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T01:57:06Z",
+      "updated_at": "2025-07-02T01:57:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004362853,
+      "body_text": "Hi Jesper L,     We noticed you mentioned a spark when plugging in the 24V power connector—this is actually normal. The spark occurs because the system needs to charge three internal capacitors, similar to when you plug a power cord into a wall outlet. Since the unit doesn’t have a dedicated power switch, this behavior is expected and is consistent with how Simagic devices work. Please rest assured—this is not an issue.  We’re confident this can be resolved quickly, and we're also working closely with SIMHUB to optimize compatibility and performance.  By the way, could you let us know the brand of your wheelbase? Also, is your PC properly grounded? Good grounding helps ensure overall system stability and reduces interference.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T02:07:17Z",
+      "updated_at": "2025-07-02T02:07:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004363344,
+      "body_text": "Hi Jesper L,  The official SIMHUB website has released version 9.9.3. This is the official stable release, and you can now download and use it. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T06:03:43Z",
+      "updated_at": "2025-07-02T06:03:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004378229,
+      "body_text": "Thank you for your quick reply. Nice that there is an official SimHub version that supports them. I'll try your suggestions tonight or tomorrow. I'll report back if I still can't get them to work reliably.\r\n\r\n________________________________\r\n",
+      "user_id": 158001798970,
+      "created_at": "2025-07-02T17:33:12Z",
+      "updated_at": "2025-07-02T17:33:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004418596,
+      "body_text": "I got them working. Thank you for your support.\r\n\r\nAnother thing: yesterday I placed a VAM in the cart on your website. And this morning (5:50GMT+1) I got an email with an offer of 10% discount if I ordered within 24 hours. I just tried to apply the code sent to me (CART10) and it doesn't work, says it already has been used. Can you send me a new one?\r\n\r\nThanks again.\r\n\r\nJesper\r\n\r\n________________________________\r\n",
+      "user_id": 158001798970,
+      "created_at": "2025-07-02T23:29:36Z",
+      "updated_at": "2025-07-02T23:29:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445657,
+      "body_text": "Hi Jesper L,     May I ask what the amount is, as the threshold for using our discount codes is basically $199. I can even a suitable exclusive discount for you.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-04T15:28:56Z",
+      "updated_at": "2025-07-04T15:28:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004446501,
+      "body_text": "Like 50USD. So a 5$(+ the resulting discount on the VAT) discount, but it gave me a ticking clock. Never mind I'll wait a month before buying my second VAM. Think I'll wait until I've had the one I have for a while. But I would love a discount if I can wait those few weeks before redeeming it.\r\n\r\nI've got my single VAM and my shaker working sorta okay, but a lot of time was spent troubleshooting. Just had my first one-hour session where the haptics didn't freak out and violently hum necessitating pulling the power.\r\nI might end up satisfied with my purchase despite the issues. I got a pair of your pedals too that I much enjoy.\r\n\r\nI've included a screenshot of the email I got from you.\r\n\r\n________________________________\r\n",
+      "user_id": 158001798970,
+      "created_at": "2025-07-04T19:12:28Z",
+      "updated_at": "2025-07-04T19:12:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447061,
+      "body_text": "Hi Jesper L,  As for the discount, feel free to contact us before placing your next order. Our sales team will make a note and apply the discount for you. Also, could you let us know how you managed to solve the vibration issue that previously required power cycling? We'd like to document the root cause to help improve the product experience. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-04T23:57:27Z",
+      "updated_at": "2025-07-04T23:57:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004447638,
+      "body_text": "Great I'll get in touch when I'm ready to order.\r\n\r\nCrisscross grounding, PC-rig-control box, most importantly between the control box and the pedal(s).\r\nDedicated USB cable, no USB hub in sight.\r\nCables away from other energized cables.\r\nOne or more of those things fixed it for me.\r\nFound this guide earlier tonight, wish I had found it while I still were troubleshooting.\r\nhttps://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting\r\nHave had two one-hour sessions with no problems now.\r\nJust talked to a guy on Reddit that had problems too and he just got his working, but in his case the issue was running both SimHub and your software at the same time.\r\n\r\nYour customer support is one of the best I've ever seen. Many many many companies could learn a thing or two. Really helps the brand immensely. Just look at the bad reputation that Fanatec has because of their lackluster support. Keep up the good work.\r\n\r\n________________________________\r\n",
+      "user_id": 158001798970,
+      "created_at": "2025-07-05T08:24:47Z",
+      "updated_at": "2025-07-05T08:24:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004454307,
+      "body_text": "Hi Jesper L,  Thank you very much for your valuable feedback. We will work on strengthening our after-sales support team to resolve customer issues more quickly and efficiently. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T07:45:48Z",
+      "updated_at": "2025-07-07T07:45:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004454507,
+      "body_text": "Hi again.\r\n\r\nOh you took me the wrong way: your customer service and your response times are amazing. One of the best I've encountered. Western companies included.\r\n\r\nAs you can hear I've become very fond of my VAM and my VAM Pro, as I already were with your pedals.\r\n\r\nI've pretty much become your unofficial tech support/ sales person on Reddit. Included pictures of it!\r\n\r\nI need another VAM Pro, they are so much better than the old VAM and I only bought one.\r\n\r\nCan you give me a good offer on a single VAM Pro? Perhaps even a sponsored one (as in free), then I'll certainly keep hyping your products on Reddit!\r\n\r\nBest wishes\r\nJesper Lund\r\n________________________________\r\n",
+      "user_id": 158001798970,
+      "created_at": "2025-07-07T08:26:32Z",
+      "updated_at": "2025-07-07T08:26:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004454912,
+      "body_text": "Hi Jesper L,     Hello, I understand your concern. The regular price for the VAM Pro is $47.9, plus $9.9 for shipping, totaling $57.8 USD. I can offer you a discounted price of $30 USD. Would that be acceptable to you? ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T09:25:03Z",
+      "updated_at": "2025-07-07T09:25:03Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004454936,
+      "body_text": "Hi Jesper L,     If you’re okay with this offer, please proceed with the payment using this link. Thank you so much for your support on Reddit — it really means a lot to us!   https://www.simsonn.com/products/difference-2f",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T09:27:25Z",
+      "updated_at": "2025-07-07T09:27:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004454978,
+      "body_text": "Have ordered and paid. Thank you.\r\n\r\n________________________________\r\n",
+      "user_id": 158001798970,
+      "created_at": "2025-07-07T09:36:45Z",
+      "updated_at": "2025-07-07T09:36:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004454998,
+      "body_text": "Hi Jesper L,  We’ve received your payment. Regarding the motor mount — did you mean the clutch mount? ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T09:41:52Z",
+      "updated_at": "2025-07-07T09:41:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004455106,
+      "body_text": "Motor mount? I'm not clear on what we're talking about. I don't have any questions, so if it's not you asking me, you don't need to answer.\r\n\r\nHave a nice day and I look forward to getting my VAM\r\n\r\n________________________________\r\n",
+      "user_id": 158001798970,
+      "created_at": "2025-07-07T10:06:10Z",
+      "updated_at": "2025-07-07T10:06:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004455171,
+      "body_text": "Hi Jesper L,  Your order will be shipped out tomorrow. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-07T10:16:37Z",
+      "updated_at": "2025-07-07T10:16:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004485971,
+      "body_text": "Hi again.\r\n\r\nI've designed a mount for your new VAM Pro haptic reactors so they sit perpendicular to the face of the pedal, like SiMagic's do.\r\nFour M5 threaded inserts and two M5 recessed screws, one 25mm and one 30mm are needed.\r\n[https://makerworld.bblmw.com/makerworld/model/DSM00000001589395/design/2025-07-09_2cb5a959025458.png]<https://makerworld.com/en/models/1589395-mount-for-simsonn-vam-pro>\r\nMount for Simsonn VAM Pro by user_2116385517 MakerWorld: Download Free 3D Models<https://makerworld.com/en/models/1589395-mount-for-simsonn-vam-pro>\r\nBracket to mount Simsonn&#39;s new VAM Pro haptic reactors perpendicular to the faceplate. Needs 4 x M5 threaded inserts that is installed from the side that the VAM is mounted on. Longer M5 screws are needed, 25mm and 30mm.\r\nmakerworld.com\r\nFeel free to point customers to the Makerworld post, it's under creative commons so it can be printed, but not copied.\r\nhttps://makerworld.com/en/models/1589395-mount-for-simsonn-vam-pro\r\n\r\nBest wishes\r\n    Jesper Lund\r\n<https://1drv.ms/i/c/91326de3bc00e9fc/Ef04Jv-g_rtAnSvrVk3yngoBiFms8xwJycqPJRNao2WP1Q>\r\n[https://northeurope1-mediap.svc.ms/transform/thumbnail?provider=spo&farmid=189377&inputFormat=jpg&cs=OTE5OWJmMjAtYTEzZi00MTA3LTg1ZGMtMDIxMTQ3ODdlZjQ4fFNQTw&docid=https%3A%2F%2Fmy.microsoftpersonalcontent.com%2F_api%2Fv2.0%2Fdrives%2Fb!qei0OKoC7ECmFSIWudKr9LQlAEOx6NNPiFIS37j0DdO1LajOCR4yTaYziGviOYg6%2Fitems%2F0125VT3C75HATP7IH6XNAJ2K7LKZG7FHQK%3Ftempauth%3Dv1e.eyJzaXRlaWQiOiIzOGI0ZThhOS0wMmFhLTQwZWMtYTYxNS0yMjE2YjlkMmFiZjQiLCJhcHBpZCI6IjkxOTliZjIwLWExM2YtNDEwNy04NWRjLTAyMTE0Nzg3ZWY0OCIsImF1ZCI6IjAwMDAwMDAzLTAwMDAtMGZmMS1jZTAwLTAwMDAwMDAwMDAwMC9teS5taWNyb3NvZnRwZXJzb25hbGNvbnRlbnQuY29tQDkxODgwNDBkLTZjNjctNGM1Yi1iMTEyLTM2YTMwNGI2NmRhZCIsImV4cCI6IjE3NTIwNTE2MDAifQ.wZLo7mHhXCmvNUAi_U0pvXBpsALnhUzQfrUyndF4sqyqBI57ew0XnGXFKOmtGD_1BhqGKUeENkZrpNHGRkV1VZCEcYpRxthjyPAchYxPDWUvZiU8Ef7uOFHr6SloD9HUso0lJCQfvZgkvHdf_k8ECzdNqZNyFsIycsJuO72rCDoWEd6Yw6yCmmTLNB9kyoauuGVSvgVP8XpcWZumj9poHuIi4Vf9zB1KZSf6SsJhl6QfnXxBaE09V370m3pw0aFSTmrD6nAjp0Hz0WveQdCtnRl4FtzJkkmHf60SYG4bltuOlZk0y9b8rxD6vOrOL2Y-XHaHOpSxNe8I4VPCfO30ZDdoNS1aMz3ho5wcDi6IGEcGr2TbKNEKXv3XjMTCdPoXy7UuiGHkLVDE-pV8APR5D7bvbMX4QiSoXfegmOqBPX3VHKAzvvYPAcUF4G6YDqA3.N9Um9CC97eDWJqGiu8c0XnqWz9HjMyWBScztRQuz5yA%26version%3DPublished&width=176&height=176&cb=63887635200]\r\n[https://res-1.cdn.office.net/assets/mail/file-icon/png/cloud_blue_16x16.png]IMG_20250709_070713.jpg\r\n<https://1drv.ms/i/c/91326de3bc00e9fc/EVhdcoS7B95LtzHeBvdA8SkBIp9FywebvNd_Emwu2OmWLg>\r\n[https://northeurope1-mediap.svc.ms/transform/thumbnail?provider=spo&farmid=189377&inputFormat=jpg&cs=OTE5OWJmMjAtYTEzZi00MTA3LTg1ZGMtMDIxMTQ3ODdlZjQ4fFNQTw&docid=https%3A%2F%2Fmy.microsoftpersonalcontent.com%2F_api%2Fv2.0%2Fdrives%2Fb!qei0OKoC7ECmFSIWudKr9LQlAEOx6NNPiFIS37j0DdO1LajOCR4yTaYziGviOYg6%2Fitems%2F0125VT3C2YLVZIJOYH3ZF3OMO6A33UB4JJ%3Ftempauth%3Dv1e.eyJzaXRlaWQiOiIzOGI0ZThhOS0wMmFhLTQwZWMtYTYxNS0yMjE2YjlkMmFiZjQiLCJhcHBpZCI6IjkxOTliZjIwLWExM2YtNDEwNy04NWRjLTAyMTE0Nzg3ZWY0OCIsImF1ZCI6IjAwMDAwMDAzLTAwMDAtMGZmMS1jZTAwLTAwMDAwMDAwMDAwMC9teS5taWNyb3NvZnRwZXJzb25hbGNvbnRlbnQuY29tQDkxODgwNDBkLTZjNjctNGM1Yi1iMTEyLTM2YTMwNGI2NmRhZCIsImV4cCI6IjE3NTIwNTE2MDAifQ.GlKUvlPSVkFB1uKl6WIRW4nHPZhO-gfs3ew9Smuvn8Z0eI6XhiKxOcffHQtdzcR3MBStM2oNdAPrjCXBYHiVP_1b6SF73hr7JFZUIFBCDIPWptN0dpoUTwPrUyp5xAofxmr8rsIgHBxWJYLh4FvaZRVzUGWZWeinDUGutiwM0IKcO77ow2MY_1D82oHsxLaWLmY59MWLoSRnCMqMOZb5lxLL-dtcrkSNeeWIcLhHddal6GQpph_cGEHeXzrkyYIshDaA56UKbUQmMlcQ9Vcbo0lbW_5i7CVyki3kYwN68LbKCwXP1KjQXDmI-hAiVeyZyw-4XqnnBrFhuJbP4VNkdaNbVPqqppeWoefZNH1pFFNtvPE2OtA-bEM65Vk2d8IbJa2wD6hrVlKSxpVJJNwjfoLfu5PAKel23GGWYvsr87BooqCIYzim_0wMfhVdUZOR.sFxz0mziRjbERmWuYJJYUMgfD4u4OtbJ0dB5-o-bMpw%26version%3DPublished&width=176&height=176&cb=63887635203]\r\n[https://res.public.onecdn.static.microsoft/assets/mail/file-icon/png/cloud_blue_16x16.png]IMG_20250709_062351.jpg\r\n________________________________\r\n",
+      "user_id": 158001798970,
+      "created_at": "2025-07-09T05:22:27Z",
+      "updated_at": "2025-07-09T05:22:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004486208,
+      "body_text": "Hi Jesper L,  Good job bro. Your other Vam Pro has shipped, here's your logistics tracking link: https://t.17track.net/en#nums=YT251890070370794",
+      "user_id": 158001343601,
+      "created_at": "2025-07-09T06:09:33Z",
+      "updated_at": "2025-07-09T06:09:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004486428,
+      "body_text": "Thank you and thank you\r\n\r\n________________________________\r\n",
+      "user_id": 158001798970,
+      "created_at": "2025-07-09T06:50:22Z",
+      "updated_at": "2025-07-09T06:50:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004500278,
+      "body_text": "Hi Jesper L,  We’re about to release SIMSONN Manager version 2.0.9, which will include native support for the following games. In addition, the official SimHub 9.9.3 version has been released and now offers full support for SIMSONN ProX, ProX Ultra, and PlusX pedals. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-10T04:04:54Z",
+      "updated_at": "2025-07-10T04:04:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009942025,
+      "body_text": "Hi Jesper L, I noticed that the 3D-printed mount you shared has been taken down. Did you encounter any issues with it? Many customers have been asking about this model recently.      https://makerworld.com/zh/models/1589395-mount-for-simsonn-vam-pro",
+      "user_id": 158000445778,
+      "created_at": "2025-10-05T17:05:30Z",
+      "updated_at": "2025-10-05T17:05:30Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009970439,
+      "body_text": "Hi.\r\n\r\nYeah I took down the design because a couple of guys had trouble pressing in those inserts and mounting it.\r\nBut there's actually a guy that has made what I think is a superior design to mine. More instructions, easier to mount, even a YT video. But it's listed as fitting the Simagic haptic reactors, which apparently fits your products just as well.\r\n\r\nI don't know if the guy that made the design is the same as the guy who made the video and the reddit post.\r\nhttps://www.reddit.com/r/SimsonnRacing/comments/1nu0cn0/comparison_of_vam_pros_with_3d_printed_mount/\r\nhttps://www.thingiverse.com/thing:6905682\r\nhttps://www.youtube.com/watch?v=g1Bx8SV0KpQ&t=65s\r\n________________________\r\nNow I got a hold of you I have a question: Is it possible to have two Simsonn control boxes show up in the SimHub menu?\r\n\r\nI.e. can you control 6 VAM Pros through SimHub by hooking up 2 control boxes, or does SimHub only allow for one USB haptic controller?\r\n\r\nBW Jesper\r\n________________________________\r\n",
+      "user_id": 158001798970,
+      "created_at": "2025-10-06T14:39:40Z",
+      "updated_at": "2025-10-06T14:39:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010132695,
+      "body_text": "Hi Jesper L,    Thank you for the information! We are also working on a more universal design solution. Since the clutch installation method cannot yet be standardized, we are still exploring a better approach to make it compatible with horizontal mounting brackets. In addition, SimHub currently does not support running two main controllers with six VAM Pro units simultaneously, which may lead to conflicts.",
+      "user_id": 158000445778,
+      "created_at": "2025-10-09T06:16:29Z",
+      "updated_at": "2025-10-09T06:16:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

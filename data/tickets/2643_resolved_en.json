@@ -1,0 +1,45 @@
+{
+  "id": 2643,
+  "subject": "Simsonn Pro x racing pedal disconnect status",
+  "description_text": "Hi Service,\n\nMy original order is sn1336 from 14 apr 2025\n\nMy pedal moved to the status of \"Disconnect\" two days ago, I disconnected the USB from Hub and connected directly to the computer via USB3, restarted the Simsson software and upgraded to version 2.1.0 but still the status is the same. I also connected the BOX with a wire of ground to the frame of the simulator base but the results are the same\n\nI suddenly can't use the pedals.....why??\n\nPlease help,\n\nThanks,\nEitan lael",
+  "status": 4,
+  "priority": 3,
+  "created_at": "2025-08-13T18:09:49Z",
+  "updated_at": "2025-08-17T05:15:02Z",
+  "requester_id": 158000955737,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006889706,
+      "body_text": "Hi EITAN LAEL, Please try manually updating the pedal firmware: Press the upgrade button on the main controller board, then reconnect the USB cable. The SIMSONN Manager 2.1.0 software will automatically enter recovery mode. In the software, go to Settings → Update → Manual Firmware Update → pedals → firmware-prox.sfu to update. After the update is complete, test the pedals again. If the issue still persists, please download ToDesk (no registration required), provide us with the temporary ID and password, and we can schedule a time to remotely assist you in resolving the problem.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-15T02:30:56Z",
+      "updated_at": "2025-08-15T02:30:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006894487,
+      "body_text": "Thanks, It works\n\nEitan\n\nOn Fri, Aug 15, 2025 at 5:31 AM service @simsonn.com",
+      "user_id": 158000955737,
+      "created_at": "2025-08-15T05:59:03Z",
+      "updated_at": "2025-08-15T05:59:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006978531,
+      "body_text": "",
+      "user_id": 158000955737,
+      "created_at": "2025-08-17T05:15:01Z",
+      "updated_at": "2025-08-17T05:15:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    }
+  ],
+  "available_langs": []
+}

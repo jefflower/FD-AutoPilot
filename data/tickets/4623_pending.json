@@ -1,0 +1,74 @@
+{
+  "id": 4623,
+  "subject": "I placed an order for pedals but didnt receive an email on anything",
+  "description_text": "Hey guys I placed an order about half hour ago for Plus X pedals P3-H3 in\r\nblack, to address 102 Greenwood St. P.O. Box 360 Marystown NL Canada A0E\r\n1K0. With a royal bank credit card name DARLENE BENNETT and entered the\r\nemail shanebennettdoterra@gmail.com for my updates but I havent recieved\r\nanything at all in regards to my order... can you guys please send me the\r\ncorrect information I need like my receipt, tracking number and other\r\ndetails please\r\n\r\nThanks\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-10-09T03:22:06Z",
+  "updated_at": "2025-10-11T03:09:00Z",
+  "requester_id": 158005514463,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010134117,
+      "body_text": "Hi Shane Bennett,  Please provide the order date and amount so I can help you check the order. Also, could you confirm whether you entered an email address when placing the order? ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-09T07:54:45Z",
+      "updated_at": "2025-10-09T07:54:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010167898,
+      "body_text": "we did enter an email, the email we entered was this one but I think we may\r\nhave entered it after the order was processed and the email didn’t go\r\nthrough with the order, we had some trouble entering the shipping address\r\nand when we re-entered the information I think the email may have been\r\nmissing from the form didn’t go through, the order was placed October 8th,\r\nfor a total of 243.90 USD before shipping and with shipping a grand total\r\nof 234.29 USD with an order confirmation number of #ssn2886, and a phone\r\nnumber attached of (709) 567-9433…. Can you please send the receipt and the\r\ntracking number for the order please\r\n\r\nOn Thu, Oct 9, 2025 at 5:25 AM service@simsonn.com ",
+      "user_id": 158005514463,
+      "created_at": "2025-10-09T17:37:20Z",
+      "updated_at": "2025-10-09T17:37:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010185337,
+      "body_text": "Hi Shane Bennett,  As October 1st to 8th was the National Day holiday, we will ship your order today and provide you with the tracking number once it has been dispatched. ",
+      "user_id": 158000445778,
+      "created_at": "2025-10-10T01:36:06Z",
+      "updated_at": "2025-10-10T01:36:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010187162,
+      "body_text": "Hi Shane Bennett,    We sincerely apologize for the delay in shipping your order. We have just concluded our 8-day holiday. We encountered an issue while attempting to ship via UPS, as UPS does not support delivery to P.O. Box addresses. Could you please provide us with your residential address?",
+      "user_id": 158001343601,
+      "created_at": "2025-10-10T03:52:25Z",
+      "updated_at": "2025-10-10T03:52:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010231199,
+      "body_text": "I’m in Canada isn’t UPS United States postal service??? I also put my\r\nresidential address on the address also here it is again…. Maybe there was\r\nan issue with me entering the town I live in and not the exact part of town\r\ncause a lot of our mail comes labeled as Creston and not Marystown from\r\nsome reason….\r\nThe postal code just to make sure u don’t make an error I have had happen\r\nto me from private mail is zeros not O’s so a0e 1k0\r\n I just grabbed an old package box I got from courier and the address on it\r\nis as follows\r\n\r\nShane Bennett\r\n102 Greenwood St.\r\nCreston, NL\r\nCANADA\r\nA0E 1K0\r\n\r\nLet’s get these pedals posted cause I have heard great things about them!!!\r\nThanks guys!\r\n\r\nShane\r\n\r\n\r\n\r\n\r\n\r\nOn Fri, Oct 10, 2025 at 1:22 AM service@simsonn.com ",
+      "user_id": 158005514463,
+      "created_at": "2025-10-10T18:54:03Z",
+      "updated_at": "2025-10-10T18:54:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010241621,
+      "body_text": "Hi Shane Bennett,    Thank you for your prompt confirmation. Here is your logistics tracking link:  https://t.17track.net/en#nums=1ZJ455510427234307",
+      "user_id": 158001343601,
+      "created_at": "2025-10-11T03:09:00Z",
+      "updated_at": "2025-10-11T03:09:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

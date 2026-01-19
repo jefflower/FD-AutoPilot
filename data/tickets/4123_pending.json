@@ -1,0 +1,44 @@
+{
+  "id": 4123,
+  "subject": "Sim racing clutch pedal",
+  "description_text": "Hello!\r\nIn November 2023 I purchased the Pro Pedal set (throttle and brake) and now\r\nI would like to add a clutch pedal, but want to make sure I get a clutch\r\npedal assembly that is compatible with the pedal setup that I have. Can you\r\nhelp me choose the correct one?\r\nThank you\r\nJohn\r\n\r\n1625 N. Lincoln Ave Loveland, Co 80538\r\n(970) 667-5400\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-09-25T15:09:54Z",
+  "updated_at": "2025-09-27T03:32:59Z",
+  "requester_id": 158004984831,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158009327490,
+      "body_text": "Hi John Schneible, you can purchase this Plus X clutch, and you will also need to purchase a Plus X control box. https://www.simsonn.com/products/simsonn-racing-simulator-pedal-black",
+      "user_id": 158001343601,
+      "created_at": "2025-09-26T09:28:09Z",
+      "updated_at": "2025-09-26T09:28:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009337678,
+      "body_text": "My existing control box has a spot for a clutch pedal, can I use that with\r\nthe Plus X pedal? Or will I need 2 control boxes now?\r\n\r\n\r\n1625 N. Lincoln Ave Loveland, Co 80538\r\n(970) 667-5400\r\n\r\nOn Fri, Sep 26, 2025, 3:28 AM support@simsonn.com ",
+      "user_id": 158004984831,
+      "created_at": "2025-09-26T14:08:56Z",
+      "updated_at": "2025-09-26T14:08:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009361221,
+      "body_text": "Hi John Schneible,  Your old control box is also compatible with the PlusX clutch, but we recommend upgrading to a PlusX control box. It supports the latest version of SIMSONN Manager and the vibration telemetry interface, offering more features and a better overall experience. ",
+      "user_id": 158000445778,
+      "created_at": "2025-09-27T03:32:59Z",
+      "updated_at": "2025-09-27T03:32:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

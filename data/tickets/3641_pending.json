@@ -1,0 +1,94 @@
+{
+  "id": 3641,
+  "subject": "Order Status Inquiry – ORDER #SSN2527",
+  "description_text": "Hello,\r\n\r\n\r\n\r\nI placed an order on your website (ORDER #SSN2527), but I have not received any updates regarding its delivery. Could you please let me know the current status?\r\n\r\n\r\nDylan Lenoble\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-09-09T05:22:20Z",
+  "updated_at": "2025-09-24T06:08:40Z",
+  "requester_id": 158004298490,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158008303747,
+      "body_text": "Hi Dylan Lenoble,  We have sent you a shipping notification, please check it, this is your logistics tracking link.  https://www.sf-express.com/chn/en/waybill/waybill-detail/SF3230887727017",
+      "user_id": 158001343601,
+      "created_at": "2025-09-09T06:22:06Z",
+      "updated_at": "2025-09-09T06:22:06Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008578484,
+      "body_text": "Hello,\r\n\r\nOn my package tracking it says “delivered” on September 11th.\r\n\r\nSince then, there haven’t been any updates about it. Could you please give me more information?\r\n\r\nThanks \r\n\r\nDylan Lenoble\r\n\r\n> Le 9 sept. 2025 à 08:22, service@simsonn.com a écrit :\r\n> \r\n> ﻿\r\n> Hi Dylan Lenoble,\r\n> \r\n> We have sent you a shipping notification, please check it, this is your logistics tracking link.\r\n> https://www.sf-express.com/chn/en/waybill/waybill-detail/SF3230887727017\r\n> \r\n> \r\n> ",
+      "user_id": 158004298490,
+      "created_at": "2025-09-12T11:11:56Z",
+      "updated_at": "2025-09-12T11:11:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008743460,
+      "body_text": "Hi Dylan Lenoble, the tracking information shows that the package has already been delivered. Could you please check if you’ve received it? If not, kindly ask around with anyone who might have accepted the package on your behalf. ",
+      "user_id": 158001343601,
+      "created_at": "2025-09-15T10:15:12Z",
+      "updated_at": "2025-09-15T10:15:12Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008745596,
+      "body_text": "Hello \r\n\r\nI have not received the parcel. According to your tracking information, it never even arrived in France. Could you please confirm the address to which it was supposed to be delivered?\r\n\r\n\r\n\r\n\r\n> Le 15 sept. 2025 à 12:15, service@simsonn.com a écrit :\r\n> \r\n> ﻿\r\n> Hi Dylan Lenoble, the tracking information shows that the package has already been delivered. Could you please check if you’ve received it? If not, kindly ask around with anyone who might have accepted the package on your behalf. \r\n> \r\n> \r\n> ",
+      "user_id": 158004298490,
+      "created_at": "2025-09-15T10:22:31Z",
+      "updated_at": "2025-09-15T10:22:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008745874,
+      "body_text": "We’re very sorry — I’ve noticed there is indeed an issue with the delivery. We will investigate this matter immediately for you. ",
+      "user_id": 158001343601,
+      "created_at": "2025-09-15T10:33:13Z",
+      "updated_at": "2025-09-15T10:33:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008801770,
+      "body_text": "Hello,\r\n\r\nHow is your investigation going?\r\n\r\n\r\nDylan Lenoble \r\n\r\n> Le 15 sept. 2025 à 12:33, service@simsonn.com a écrit :\r\n> \r\n> ﻿\r\n> We’re very sorry — I’ve noticed there is indeed an issue with the delivery. We will investigate this matter immediately for you. \r\n> 3641:4206036\r\n\r\n",
+      "user_id": 158004298490,
+      "created_at": "2025-09-16T05:51:07Z",
+      "updated_at": "2025-09-16T05:51:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008803063,
+      "body_text": "Hi Dylan Lenoble,    Your parcel has been returned due to customs clearance issues. We have arranged an urgent redelivery via UPS Express, with estimated delivery around the 19th.  https://t.17track.net/en#nums=1ZJ455510415540936",
+      "user_id": 158001343601,
+      "created_at": "2025-09-16T07:00:58Z",
+      "updated_at": "2025-09-16T07:00:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158009208362,
+      "body_text": "Hi Dylan Lenoble,    I note your parcel has been delivered. How was your experience? Should you encounter any issues, please do not hesitate to contact us. Incidentally, the chargeback you initiated will be submitted today. If there are no issues, please cancel it.",
+      "user_id": 158001343601,
+      "created_at": "2025-09-24T06:08:35Z",
+      "updated_at": "2025-09-24T06:08:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

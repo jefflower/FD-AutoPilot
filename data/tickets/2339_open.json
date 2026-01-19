@@ -1,0 +1,94 @@
+{
+  "id": 2339,
+  "subject": "Order cancelation.",
+  "description_text": "Hi can I cancel this order? I'd like to replace the order with the base\r\nplate.\r\n\r\n",
+  "status": 2,
+  "priority": 1,
+  "created_at": "2025-08-05T18:43:35Z",
+  "updated_at": "2025-09-12T13:59:16Z",
+  "requester_id": 158002653101,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006304493,
+      "body_text": "I attached a screenshot of the correct part id like. I'd like to be able to\r\nstill use that discount code.\r\n\r\nOn Tue, Aug 5, 2025, 6:07 PM General and sales enquiries <\r\nservice@simsonn.com> wrote:\r\n\r\n> Hello, we can modify your order for you, please let me know the product\r\n> model and specifications you want.\r\n>\r\n>\r\n>\r\n> ----------Reply to Message----------\r\n> ",
+      "user_id": 158002653101,
+      "created_at": "2025-08-06T02:58:15Z",
+      "updated_at": "2025-08-06T02:58:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006304623,
+      "body_text": "Hi Justin Guerra,    Okay, we have already notified our warehouse to change your order. You can click on the link to pay the difference.  https://www.simsonn.com/products/difference-2",
+      "user_id": 158001343601,
+      "created_at": "2025-08-06T03:08:05Z",
+      "updated_at": "2025-08-06T03:08:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006345407,
+      "body_text": "Ok great thank you i just paid the difference.\r\n\r\nOn Tue, Aug 5, 2025, 8:08 PM service@simsonn.com ",
+      "user_id": 158002653101,
+      "created_at": "2025-08-06T09:13:13Z",
+      "updated_at": "2025-08-06T09:13:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006352834,
+      "body_text": "Hi Justin Guerra,         Okay, we have shipped Plus X P3-H3/Black/with Baseplate from our warehouse in the United States.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-06T09:34:25Z",
+      "updated_at": "2025-08-06T09:34:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006353251,
+      "body_text": "Awesome thank you. I didn just get a confirmation that the order if fully\r\nfulfilled. How ever its still showing thw regular plus pedals and not the\r\nplus x. Does that email portion for the order not update? I just want to\r\nmake sure the right pedals get sent.\r\n\r\nOn Wed, Aug 6, 2025, 2:34 AM service@simsonn.com ",
+      "user_id": 158002653101,
+      "created_at": "2025-08-06T09:41:01Z",
+      "updated_at": "2025-08-06T09:41:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006353261,
+      "body_text": "Hi Justin Guerra,    Please don't worry, the backend page will not change, but the goods sent to you from our warehouse are correct.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-06T09:42:21Z",
+      "updated_at": "2025-08-06T09:42:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006353279,
+      "body_text": "Awesome much appreciated! Than you!\r\n\r\nOn Wed, Aug 6, 2025, 2:42 AM service@simsonn.com ",
+      "user_id": 158002653101,
+      "created_at": "2025-08-06T09:43:38Z",
+      "updated_at": "2025-08-06T09:43:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158008344023,
+      "body_text": "Hi is there any way to get the discount code on the linear 3 pack haptics\r\npack?\r\n\r\n",
+      "user_id": 158002653101,
+      "created_at": "2025-09-09T21:42:14Z",
+      "updated_at": "2025-09-09T21:42:14Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

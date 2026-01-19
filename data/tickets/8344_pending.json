@@ -1,0 +1,54 @@
+{
+  "id": 8344,
+  "subject": "Order #SSN4838",
+  "description_text": "Hello,\r\n\r\nI hope you are doing well.\r\nI am writing to ask for an update on the status of my order #SSN4838.\r\n\r\nCould you please let me know the current status and, if available, the\r\nexpected delivery date?\r\n\r\nThank you in advance for your help.\r\nKind regards,\r\nVitor\r\n\r\nCumprimentos,\r\nVítor Teixeira\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-15T21:35:02Z",
+  "updated_at": "2025-12-24T09:11:14Z",
+  "requester_id": 158007824997,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014610703,
+      "body_text": "Hi Vitor Teixeira,  We apologize for the delay in shipping to our partner. The original estimated date was the 15th, but it has now been adjusted to the 20th. Rest assured, all products are ready and will be shipped as soon as they pass quality inspection. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T02:46:42Z",
+      "updated_at": "2025-12-17T02:46:42Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014708488,
+      "body_text": "No problem, thank you for the update.\r\n\r\nCumprimentos,\r\nVítor Teixeira\r\n\r\nA quarta, 17/12/2025, 02:46, service@simsonn.com ",
+      "user_id": 158007824997,
+      "created_at": "2025-12-18T17:19:58Z",
+      "updated_at": "2025-12-18T17:19:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014976581,
+      "body_text": "Dear Customer Service Team,\r\n\r\nI hope this email finds you well.\r\nI am writing to request an update regarding my order #SSN4838. I was\r\npreviously informed that it would be shipped on December 20th, but I have\r\nnot yet received a shipping confirmation or tracking number.\r\nCould you please check the status of my order and let me know when I can\r\nexpect it to arrive?\r\nThank you for your assistance. I look forward to hearing from you.\r\n\r\nBest regards,\r\nVitor Teixeira\r\n\r\nVitor Teixeira <vitor.css@gmail.com> escreveu (quinta, 18/12/2025 à(s)\r\n17:19):\r\n\r\n> No problem, thank you for the update.\r\n>\r\n> Cumprimentos,\r\n> Vítor Teixeira\r\n>\r\n> A quarta, 17/12/2025, 02:46, service@simsonn.com ",
+      "user_id": 158007824997,
+      "created_at": "2025-12-23T13:27:08Z",
+      "updated_at": "2025-12-23T13:27:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015028648,
+      "body_text": "Hi Vitor Teixeira,    Apologies, the new shifter orders will be dispatched throughout this week.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-24T09:11:14Z",
+      "updated_at": "2025-12-24T09:11:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

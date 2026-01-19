@@ -1,0 +1,34 @@
+{
+  "id": 8315,
+  "subject": "Order #SSN4134 not delivered and no info",
+  "description_text": "Hello,\r\n\r\nI ordered a simsonn pedals Simsonn Pro X Ultra (#SSN4134) that should have\r\nbeen delivered on Monday the 9th of December by DHL and wasn't.\r\nIn the tracking number (CE326635225DE) says it's in Lisbon since 9th\r\nDecember and no more information.\r\n\r\nI tried to call the DHL phone numbers and sent and message through their\r\nwebsite and no answer.\r\n\r\nI would appreciate your help in the matter because I'm having a very\r\nunpleasant experience with this buying.\r\n\r\nBest regards,\r\n\r\n\r\n\r\nCom os melhores cumprimentos,\r\n\r\n\r\n\r\n*Álvaro José Silva *\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-15T16:59:28Z",
+  "updated_at": "2025-12-22T13:06:53Z",
+  "requester_id": 158007820892,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014651561,
+      "body_text": "Arrived today without the baseplate. Opened a new ticket",
+      "user_id": 158007820892,
+      "created_at": "2025-12-17T19:28:10Z",
+      "updated_at": "2025-12-17T19:28:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158014881337,
+      "body_text": "Hi Álvaro José Silva,             Hello, the base plate tracking number is JSELX1705727964YQ. You can track it here: https://t.17track.net/zh-cn#nums=JSELX1705727964YQ",
+      "user_id": 158007774664,
+      "created_at": "2025-12-22T13:06:48Z",
+      "updated_at": "2025-12-22T13:06:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "id": 1918,
+  "subject": "Simson plus x",
+  "description_text": "Hello, I ordered the plus x via alieexpress. They arrived today. Sadly they dont get recognized. The hydraulic rod at the gas is definitely loud and some screws wernt tight. Best regards Dennis -- Gesendet mit der WEB.DE Mail App \r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-25T14:07:58Z",
+  "updated_at": "2025-07-30T23:12:56Z",
+  "requester_id": 158002335246,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005550546,
+      "body_text": "Hi Dennis Hamzic,  Could you please provide a video? We will assist you in resolving the issue as quickly as possible. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-26T03:16:33Z",
+      "updated_at": "2025-07-26T03:16:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005584229,
+      "body_text": "Hello, I cant provide a Video, the file is to big via mail. I use newest windows tried active usb hub, tried different ports. They just don't get recognized. Best regards Dennis Hamzic -- Gesendet mit der WEB.DE Mail App Am 26.07.25, 05:16 schrieb \"service@simsonn.com\" ",
+      "user_id": 158002335246,
+      "created_at": "2025-07-26T09:39:09Z",
+      "updated_at": "2025-07-26T09:39:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005584307,
+      "body_text": "Hi Dennis Hamzic,    Could you please provide a screenshot of the connection status in Simsonn Manager 2.0.9? If possible, you may also upload the video to Google Drive and share it with me for review.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-26T09:52:02Z",
+      "updated_at": "2025-07-26T09:52:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005584390,
+      "body_text": "Hello, Here the pictures. -- Gesendet mit der WEB.DE Mail App Am 26.07.25, 11:52 schrieb \"service@simsonn.com\" ",
+      "user_id": 158002335246,
+      "created_at": "2025-07-26T10:03:47Z",
+      "updated_at": "2025-07-26T10:03:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005584400,
+      "body_text": "Hi Dennis Hamzic,     Please download the VKB Joy Tester tool and check if it detects and displays our Simsonn device.      https://www.vkbcontrollers.com/pages/downloads",
+      "user_id": 158000445778,
+      "created_at": "2025-07-26T10:06:13Z",
+      "updated_at": "2025-07-26T10:06:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005584446,
+      "body_text": "Here -- Gesendet mit der WEB.DE Mail App Am 26.07.25, 12:06 schrieb \"service@simsonn.com\" ",
+      "user_id": 158002335246,
+      "created_at": "2025-07-26T10:14:37Z",
+      "updated_at": "2025-07-26T10:14:37Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005584479,
+      "body_text": "Hi Dennis Hamzic,    Is the indicator light inside the control box on?      If the light is on but the device is not detected, it is likely a USB power supply issue. Please connect it directly to the blue USB 3.0 port on the back of your PC, avoid using a USB hub, or try another computer for testing.  If the light is off, it may indicate a damaged data cable or a faulty control box.         All our products are tested and pedals are calibrated before leaving the factory, so it’s unlikely that the control box is faulty. If it is indeed defective, we will send you a replacement control box next Monday. Please don’t worry.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-26T10:21:31Z",
+      "updated_at": "2025-07-26T10:21:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005584486,
+      "body_text": "Hello, I cant see a light on, i tried different ports. Best regards Dennis -- Gesendet mit der WEB.DE Mail App Am 26.07.25, 12:21 schrieb \"service@simsonn.com\" ",
+      "user_id": 158002335246,
+      "created_at": "2025-07-26T10:23:58Z",
+      "updated_at": "2025-07-26T10:23:58Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005584513,
+      "body_text": "Also, why is the hydraulic rod from the gas so loud? -- Gesendet mit der WEB.DE Mail App Am 26.07.25, 12:21 schrieb \"service@simsonn.com\" ",
+      "user_id": 158002335246,
+      "created_at": "2025-07-26T10:32:41Z",
+      "updated_at": "2025-07-26T10:32:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005584536,
+      "body_text": "Hi Dennis Hamzic,    We will send you a replacement data cable and control box on Monday. However, you may try using a different computer first. So far, we have never encountered a case where the indicator light did not turn on due to a hardware issue.  The sound you hear is normal, as there is fluid inside the hydraulic rod. However, if you prefer, we can replace it with a new one for you.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-26T10:37:58Z",
+      "updated_at": "2025-07-26T10:37:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005584544,
+      "body_text": "Hi Dennis Hamzic,    The throttle pedal uses a single-acting hydraulic rod, while both the brake and clutch pedals use double-acting hydraulic rods.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-26T10:39:19Z",
+      "updated_at": "2025-07-26T10:39:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005585009,
+      "body_text": "Hello, I now that there is a fluid inside, but the sound sound likes there is not enough inside. A new rod would be a good try. I also tried it on a different computer, same result. I dont know if maybe just the led doesn't work oder something else is the problem. I also tried to use the controller box of the simsonn pro plus, which definitely works. Same result -- Gesendet mit der WEB.DE Mail App Am 26.07.25, 12:38 schrieb \"service@simsonn.com\" ",
+      "user_id": 158002335246,
+      "created_at": "2025-07-26T10:46:59Z",
+      "updated_at": "2025-07-26T10:46:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005590007,
+      "body_text": "Hi Dennis Hamzic,    Alright, which pedal’s hydraulic rod do you need? They are different from each other.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-26T11:08:39Z",
+      "updated_at": "2025-07-26T11:08:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005595980,
+      "body_text": "Hello, I only need the one for the Gas. The brake is silent. The clutch also makes a noise but not that loud. If u want u can the rod for the clutch but thats not super necessary. Because it feels way smother while pressing in then the gas. Also this does not sound that empty as the gas rod. A comparison audio of what the normal sound is would be nice. Also i still dont know if the controller box is the issue because, with the old box the pedals still dont get recognized. Best regards Dennis Hamzic -- Gesendet mit der WEB.DE Mail App Am 26.07.25, 13:08 schrieb \"service@simsonn.com\" ",
+      "user_id": 158002335246,
+      "created_at": "2025-07-26T11:38:22Z",
+      "updated_at": "2025-07-26T11:38:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005618167,
+      "body_text": "PS. Do you have my address? Best regards Dennis Hamzic -- Gesendet mit der WEB.DE Mail App Am 26.07.25, 13:08 schrieb \"service@simsonn.com\" ",
+      "user_id": 158002335246,
+      "created_at": "2025-07-26T16:35:15Z",
+      "updated_at": "2025-07-26T16:35:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005620311,
+      "body_text": "Hi Dennis Hamzic,  Could you please provide your shipping address, contact person, and phone number? ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-27T02:33:36Z",
+      "updated_at": "2025-07-27T02:33:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005620318,
+      "body_text": "Hello, 74235 Erlenbach Schießmauerweg 1 Dennis Hamzic 017660808772 Best regards Dennis -- Gesendet mit der WEB.DE Mail App Am 27.07.25, 04:33 schrieb \"service@simsonn.com\" ",
+      "user_id": 158002335246,
+      "created_at": "2025-07-27T02:36:24Z",
+      "updated_at": "2025-07-27T02:36:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005650433,
+      "body_text": "PS. I wanted to set up the other elastomeres so that i can start when the replacement parts arrive. Is it normal that the brake rod just holds the pedal. See in the picture i dont touch the pedal and it just stays. Best regards Dennis Hamzic -- Gesendet mit der WEB.DE Mail App Am 27.07.25, 04:33 schrieb \"service@simsonn.com\" ",
+      "user_id": 158002335246,
+      "created_at": "2025-07-27T17:44:43Z",
+      "updated_at": "2025-07-27T17:44:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005862788,
+      "body_text": "Hi Dennis Hamzic,    You can slightly loosen the screws on both ends of the damper rod so that the rod can return to its resting position automatically.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-30T23:12:55Z",
+      "updated_at": "2025-07-30T23:12:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

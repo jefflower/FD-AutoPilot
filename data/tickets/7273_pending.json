@@ -1,0 +1,24 @@
+{
+  "id": 7273,
+  "subject": "Delivery update",
+  "description_text": "Hi, \r\n\r\nJust wondering why my order has gone from China to America, when I live in England (United Kingdom) Please let me know. \r\n\r\nThanks,\r\nPhilip. \r\n\r\nSent from my iPhone\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-02T18:37:06Z",
+  "updated_at": "2025-12-03T11:23:29Z",
+  "requester_id": 158007500802,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158013320126,
+      "body_text": "Hi Philip Andrews,     This is your logistics tracking link, and it is correct. https://t.17track.net/en#nums=SF6047079990508",
+      "user_id": 158001343601,
+      "created_at": "2025-12-03T11:23:29Z",
+      "updated_at": "2025-12-03T11:23:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

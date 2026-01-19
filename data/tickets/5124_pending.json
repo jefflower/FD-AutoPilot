@@ -1,0 +1,34 @@
+{
+  "id": 5124,
+  "subject": "Extremely late package",
+  "description_text": "Hello,\r\n\r\nI have emailed multiple times now. Still with no progress being made. I have asked where my package is and was given a delivery date of 5 days ago. I still haven’t received my package. I was told that I will be getting a refund for my shipping costs and am still to hear back from or receive this. \r\n\r\nI would like to know where my package is. When it will be delivered. And when I will get my refund for my shipping costs as the express shipping has not been met in any way. \r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-21T10:06:22Z",
+  "updated_at": "2025-10-21T10:27:33Z",
+  "requester_id": 158005636886,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010795268,
+      "body_text": "Hi Matthew Woodward,    We apologise for the inconvenience, but we have refunded the additional express delivery charge. Please check your account. Your parcel is expected to arrive within the next couple of days.  https://t.17track.net/en#nums=SF6045960045061",
+      "user_id": 158001343601,
+      "created_at": "2025-10-21T10:16:35Z",
+      "updated_at": "2025-10-21T10:16:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010795291,
+      "body_text": "Hello\r\n\r\nI haven’t received any refund.  And the package hasn’t moved in 4 days\r\naccording to your tracking.\r\n\r\nOn Tue, 21 Oct 2025 at 11:16, service@simsonn.com ",
+      "user_id": 158005636886,
+      "created_at": "2025-10-21T10:18:34Z",
+      "updated_at": "2025-10-21T10:18:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

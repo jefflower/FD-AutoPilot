@@ -1,0 +1,44 @@
+{
+  "id": 4646,
+  "subject": "Order #SSN2858: wrong item.",
+  "description_text": "Hello Simson Team,\r\nI received my order #SSN2858 today.\r\n\r\nUnfortunately, when unpacking the box, I noticed that it’s the wrong item. I received the Simson Pro X with two pedals and with out the baseplate(see the picture), but I ordered the Newest Simsonn Pedal Pro X Ultra-PH2-H2 with Haptics and RGB Feedback and with baseplate.\r\nWas this the wrong delivery?\r\nThank you in advance. \r\nGoodbye, \r\nKamil Schütz \r\nYahoo Mail: Suchen, organisieren, erobern\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-09T11:36:09Z",
+  "updated_at": "2025-10-10T03:57:23Z",
+  "requester_id": 158005520348,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010145791,
+      "body_text": "Hi kasch147,    Our Pro X Ultra baseplate are currently out of stock at our German warehouse. Therefore, we have shipped the pedals to you first and will resend the baseplate once inventory is replenished in a couple of days. We sincerely apologize for any inconvenience this may cause.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-09T11:39:26Z",
+      "updated_at": "2025-10-09T11:39:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010149485,
+      "body_text": "Hi Simsonn Team,\r\nok, thank you. \r\nJust to confirm, will the replacement baseplate come with haptics like the Nevest Ultra X version?\r\nBest regards\r\nKamil\r\n\r\nYahoo Mail: Suchen, organisieren, erobern \r\n \r\n  Am Do., Okt. 9, 2025 at 13:39 schrieb service@simsonn.com",
+      "user_id": 158005520348,
+      "created_at": "2025-10-09T12:06:08Z",
+      "updated_at": "2025-10-09T12:06:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010187200,
+      "body_text": "Hi kasch147,    Thank you for your understanding. They will be shipped separately. Here is your Haptics logistics link:  https://t.17track.net/en#nums=SF6045959981227",
+      "user_id": 158001343601,
+      "created_at": "2025-10-10T03:57:22Z",
+      "updated_at": "2025-10-10T03:57:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

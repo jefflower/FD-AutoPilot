@@ -1,0 +1,54 @@
+{
+  "id": 7668,
+  "subject": "commande :SF3295149093814",
+  "description_text": "bonjour ,\r\nj ai fait une commande chez vous ,j' ai reçue Simsonn VAM Pro Linear Motor\r\n- the Pedals Haptic Reactor for Vibration Feedback , mais je n ais pas\r\nrecue Simsonn Pro X Ultra Sim Racing Pedal with Haptic Reactor Optional\r\nPro X Ultra-P3-H3 / without Baseplateet j ai du payer 61.22 EUR de frais de\r\ndouane , pouvez vous m expliquer les raisons merci cdlt\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-08T08:52:42Z",
+  "updated_at": "2025-12-08T10:24:25Z",
+  "requester_id": 158007694174,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014117783,
+      "body_text": "Hi jacky romeuf,  We apologize, but the product is currently out of stock at our German warehouse. We have shipped it to you separately. Here is your tracking link:  https://www.sf-international.com/gb/en/support/querySupport/waybill?No=SF3295149093814",
+      "user_id": 158001343601,
+      "created_at": "2025-12-08T09:32:09Z",
+      "updated_at": "2025-12-08T09:32:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014118368,
+      "body_text": "et pour les frais de douane ? ont fait comment\r\nmerci\r\ncdlt\r\n\r\nLe lun. 8 déc. 2025 à 10:32, service@simsonn.com ",
+      "user_id": 158007694174,
+      "created_at": "2025-12-08T09:54:51Z",
+      "updated_at": "2025-12-08T09:54:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014118790,
+      "body_text": "Hi jacky romeuf,    We apologize, but the pedals are currently out of stock at our German warehouse. Shipping from China will incur customs duties. Please provide your invoice after payment, and we will reimburse you for a portion of the duties.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-08T10:12:41Z",
+      "updated_at": "2025-12-08T10:12:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014119023,
+      "body_text": "je vous remercie pour ce geste commercial\r\nmerci\r\ncdlt\r\n\r\nLe lun. 8 déc. 2025 à 11:12, service@simsonn.com ",
+      "user_id": 158007694174,
+      "created_at": "2025-12-08T10:22:02Z",
+      "updated_at": "2025-12-08T10:22:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

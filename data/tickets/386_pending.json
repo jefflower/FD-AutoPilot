@@ -1,0 +1,44 @@
+{
+  "id": 386,
+  "subject": "Simsonn",
+  "description_text": "Hallo what the status on the sending. it’s 9 Days sins i order\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-06-12T16:07:21Z",
+  "updated_at": "2025-06-16T03:42:55Z",
+  "requester_id": 158001458224,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003003461,
+      "body_text": "Hi Boas Lysgaard,  Hello, could you please provide your order number? Normally, orders are shipped very quickly — usually within 1–2 days. If your order includes a VAM Pro motor, we sincerely apologize for the delay, which was caused by our supplier. Please see the detailed information below.      Due to delays in the surface finishing of the VAM Pro housing, the first batch of orders is expected to begin shipping between June 16th and 18th. International express shipping will be used, ensuring fast delivery.",
+      "user_id": 158000445778,
+      "created_at": "2025-06-13T04:10:10Z",
+      "updated_at": "2025-06-13T04:10:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003196270,
+      "body_text": "Hallo again.\r\n\r\nThe ordernumber is #SSN1648\r\nThere shouldn’t be any wam pro in my delivery.\r\nI have attached my invoice and tracking list aswell.\r\nI hope for short handling, and soon delivery.\r\n\r\nBest regards\r\n\r\nBoas Lysgaard.\r\n\r\n\r\n\r\nfre. 13. jun. 2025 kl. 06.10 skrev service@simsonn.com <service@simsonn.com\r\n>:\r\n\r\n> Hi Boas Lysgaard,\r\n>\r\n> Hello, could you please provide your order number? Normally, orders are\r\n> shipped very quickly — usually within 1–2 days. If your order includes a\r\n> VAM Pro motor, we sincerely apologize for the delay, which was caused by\r\n> our supplier. Please see the detailed information below.\r\n>\r\n> Due to delays in the surface finishing of the VAM Pro housing, the first\r\n> batch of orders is expected to begin shipping between June 16th and 18th.\r\n> International express shipping will be used, ensuring fast delivery.\r\n>\r\n>\r\n> On Thu, 12 Jun at 12:07 PM , Boas Lysgaard <boaslysgaard@gmail.com>\r\n> wrote:\r\n> Hallo what the status on the sending. it’s 9 Days sins i order\r\n>\r\n> 386:4206036\r\n>\r\n\r\n",
+      "user_id": 158001458224,
+      "created_at": "2025-06-15T13:46:50Z",
+      "updated_at": "2025-06-15T13:46:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003226191,
+      "body_text": "Hi Boas Lysgaard,     Your order has been shipped. Here is the tracking information. ",
+      "user_id": 158000445778,
+      "created_at": "2025-06-16T03:42:54Z",
+      "updated_at": "2025-06-16T03:42:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

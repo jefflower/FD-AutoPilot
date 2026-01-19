@@ -1,0 +1,24 @@
+{
+  "id": 6668,
+  "subject": "Order number SSN3387",
+  "description_text": "Hi, I received the pedals but not the optical motors, they were delivered\r\non the 21st but I have no further news\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-24T17:14:25Z",
+  "updated_at": "2025-11-25T02:45:18Z",
+  "requester_id": 158007300685,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012857209,
+      "body_text": "Hi Mirko Sabbatini,      Here is your Haptics logistics tracking link:  https://t.17track.net/en#nums=SF6047042103183",
+      "user_id": 158001343601,
+      "created_at": "2025-11-25T02:45:18Z",
+      "updated_at": "2025-11-25T02:45:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "id": 2241,
+  "subject": "Issue with pedals",
+  "description_text": "Hi there,\r\n\r\nI have purchased the pro X ultra and I'm having lots of trouble getting\r\nthem to work.\r\n\r\nI have calibrated the pedal within the software and everything works fone\r\nhowever when try in some games they don't work at all.\r\n\r\nI can see them recognise by the game like Le mans ultimate but can't\r\ncalibrate them and can't assign them to throttle and brake, same with\r\nautomobilista 2 they are recognised but don't work, with assetto Corsa evo\r\nthey work however I needed to invert the axis.\r\n\r\nI've purchased them from someone and we're new not sure if they had some\r\nissues and that's why he sold them, could you please help me with this?\r\n\r\nKind regards,\r\n\r\nChristian\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-08-03T06:24:45Z",
+  "updated_at": "2025-08-22T04:35:16Z",
+  "requester_id": 158002150667,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006224372,
+      "body_text": "This is the proof of purchase provided, the product still under warranty",
+      "user_id": 158002150667,
+      "created_at": "2025-08-04T13:36:57Z",
+      "updated_at": "2025-08-04T13:36:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158006239591,
+      "body_text": "Why no one is replying?",
+      "user_id": 158002150667,
+      "created_at": "2025-08-05T03:52:57Z",
+      "updated_at": "2025-08-05T03:52:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158006240874,
+      "body_text": "Hi Christian Colognesi,    I will contact our support staff immediately to troubleshoot the problem for you.",
+      "user_id": 158001343601,
+      "created_at": "2025-08-05T06:35:29Z",
+      "updated_at": "2025-08-05T06:35:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006445957,
+      "body_text": "Still nothing? what customer service is this? 3 days no reply? how bad! I have also purchased the plate for those pedals and I'll make sure to leave a bad review! No customer service whatsoever",
+      "user_id": 158002150667,
+      "created_at": "2025-08-07T03:23:25Z",
+      "updated_at": "2025-08-07T03:23:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158006600207,
+      "body_text": "Hi Christian Colognesi,  Hello, I haven’t been at the company these past few days. Please first update SIMSONN Manager to version 2.1.0, then upgrade the firmware of your Pro X Ultra. You can use the VKB tool to check if there is any Rx axis output. After the update, only X, Y, and Z axes should be present. Please send us a screenshot of the SIMSONN device as detected by the VKB tool so we can verify. Here’s the manual update process:      In the “Settings - Update” section, click “Manual Firmware Update,” then navigate to the pedals-firmware folder → pedals folder → and select the proxultra.sfu file to update. This firmware will disable the 4th axis.",
+      "user_id": 158000445778,
+      "created_at": "2025-08-09T15:23:52Z",
+      "updated_at": "2025-08-09T15:23:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006796204,
+      "body_text": "Hi there,\r\n\r\nThank you for your reply, I already updated the software to the\r\nlatest version however I repeated the update manually as suggested.\r\n\r\nIt appear that the pedals have improved and now can be calibrated with\r\nautomobilista 2 which wouldn't allowed me to do before however I'm still\r\nhaving issues with LMU, they work fine with iRacing.\r\n\r\nI have attached a video of the test showing the correct axis however there\r\nis input without me pressing any pedals.\r\n\r\n\r\n\r\n",
+      "user_id": 158002150667,
+      "created_at": "2025-08-13T11:36:54Z",
+      "updated_at": "2025-08-13T11:36:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006890323,
+      "body_text": "Hi Christian Colognesi,  If you are experiencing issues with the LMU, please provide a video for us to check. We also have an LMU on hand, and it works normally. Additionally, the brake has a 16-bit resolution, ranging from -32767 to 32767, with a total of 65536 PPR. Minor changes in the tens or hundreds are normal. You can set an offset to bring it near 0, but there’s no need to aim for absolute 0, as a deadzone can be configured. The sensor is highly precise, and any slight vibration can cause data fluctuations; such minor changes will not affect gameplay. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-15T03:25:55Z",
+      "updated_at": "2025-08-15T03:25:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007292795,
+      "body_text": "Hi,\r\n\r\nI'll test them once I can have access to them as we are in the middle of a\r\nhouse renovation.\r\n\r\nWhat I have noticed is that to calibrate the pedals and wheel (moza) I had\r\nto disconnect both and reconnect one by one to calibrate them, happened\r\nwith iRacing and assetto Corsa evo, they are plugged separately with USB\r\n3.0 not hub, could it be that the pedals box need the earth cable wired? I\r\ndon't have one but I guess shouldn't be a problem finding one, I'm also\r\nplanning to get the clutch and the haptic reactor pro, should this cause\r\nmore problems?\r\n\r\n",
+      "user_id": 158002150667,
+      "created_at": "2025-08-21T11:59:06Z",
+      "updated_at": "2025-08-21T11:59:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007325158,
+      "body_text": "Hi Christian Colognesi,  Normally, calibrating our pedals does not require disconnecting the Moza base. If you need to disconnect it, it may indicate external interference. To prevent this, please make sure both the Moza base and your PC are properly grounded. We recommend using a three-prong wall socket with a reliable ground connection, as this can eliminate many unexpected interference issues. In addition, the Pro X Ultra does not require a dedicated ground wire. If needed, you can simply connect the control box to any screw on the pedal with a wire to improve stability.      In addition, we’ve prepared some steps to help you resolve minor interference issues.      To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability:     1.    Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding.     2.    Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive.     3.    Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup.     4.    Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible.     5.    Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs.     6.    Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference.     7.    Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements.     8.    Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources.     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-08-22T04:35:16Z",
+      "updated_at": "2025-08-22T04:35:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

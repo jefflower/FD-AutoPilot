@@ -1,0 +1,24 @@
+{
+  "id": 6006,
+  "subject": "Order",
+  "description_text": "So why does this still say maintenance supervisor? And still have the address going to greenway and not the billing address? What’s it gonna take to get this correct ? Send to Jeff 8639 west meadow DR peoria az 85382       \r\n\r\n\r\nFrom Jeff Gibson\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-12T16:32:27Z",
+  "updated_at": "2025-11-13T02:36:13Z",
+  "requester_id": 158004921668,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012217459,
+      "body_text": "Hi Jeff Gibson,    Please don't worry—we did indeed ship to the billing address, but the order information in our backend was not updated.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-13T02:36:13Z",
+      "updated_at": "2025-11-13T02:36:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

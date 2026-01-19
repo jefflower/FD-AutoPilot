@@ -1,0 +1,94 @@
+{
+  "id": 5808,
+  "subject": "Re: Issue with pedals",
+  "description_text": "Hi there,\r\n\r\nI have purchased the haptic motors VAM pro for all 3 pedals and I noticed\r\nthat the bracket is different for 1 of the pedals so the motors are\r\npositioned 2 horizontally and 1 vertically, is that correct? I also noticed\r\nthat now they are plugged to a power supply. The led light is always on and\r\ncannot be turned off unless unplugged which is very inconvenient, any way\r\naround this?\r\n\r\nLastly I've tried for 10 minutes or so and maybe they were set a bit too\r\nhigh and vibrate too much but nearly all the screws came undone, is\r\nthat normal?\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-08T03:53:13Z",
+  "updated_at": "2025-11-11T04:54:13Z",
+  "requester_id": 158002150667,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011984560,
+      "body_text": "Hi Christian Colognesi,  You can refer to our manual for installation. The clutch should be installed horizontally, and the vibration strength does not need to be set too high. Please also make sure that the pedal screws are properly tightened. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-09T03:48:57Z",
+      "updated_at": "2025-11-09T03:48:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011997677,
+      "body_text": "There was not manual with the package and you have not address the led\r\nlight issue which it cannot be turned off unless i unplug the power.\r\n\r\nOn Sun, 9 Nov 2025 at 14:49, service@simsonn.com ",
+      "user_id": 158002150667,
+      "created_at": "2025-11-09T12:34:26Z",
+      "updated_at": "2025-11-09T12:34:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012093952,
+      "body_text": "Hi Christian Colognesi,  Are you unable to turn off the LED? Do you mean the LED stays on after the computer is shut down, or that the LED cannot be turned off through the software? ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-11T02:24:53Z",
+      "updated_at": "2025-11-11T02:24:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012093983,
+      "body_text": "Hi Christian Colognesi,     Please refer to this installation.      Please refer to this installation. If you encounter vibration or EMI issues, you can use nylon screws. See this post for reference.      https://www.reddit.com/r/simracing/comments/1n291hi/solution_for_simsonn_vam_pro_emi_issues/     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-11-11T02:27:20Z",
+      "updated_at": "2025-11-11T02:27:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012094036,
+      "body_text": "The LED stays on after the pc has shut down\r\n\r\nOn Tue, 11 Nov 2025 at 13:25, service@simsonn.com ",
+      "user_id": 158002150667,
+      "created_at": "2025-11-11T02:30:39Z",
+      "updated_at": "2025-11-11T02:30:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012094508,
+      "body_text": "Hi Christian Colognesi,  This is normal. Many computer USB ports still provide power even after the PC is turned off. As a result, the pedals remain lit because they cannot detect that the computer has shut down. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-11T03:01:20Z",
+      "updated_at": "2025-11-11T03:01:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012095956,
+      "body_text": "Hi,\r\n\r\nNo that's not the case, before installing the haptic reactors I was\r\nswitching off the pedals through the usb hub but now this is not possible\r\nas they are connected to the power point and cannot be turned off unless I\r\nunplug them which is not really possible to the limited access to the plug,\r\nI can leave them on I don't mind but will it cause issues?\r\n\r\nOn Tue, 11 Nov 2025 at 14:01, service@simsonn.com ",
+      "user_id": 158002150667,
+      "created_at": "2025-11-11T04:50:18Z",
+      "updated_at": "2025-11-11T04:50:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012095998,
+      "body_text": "Hi Christian Colognesi,  If you are using haptic devices, the 24V power from our haptic motors also supplies the control box. Therefore, when turning off the system, you can unplug the 24V power connector. Also, having the pedals constantly lit will not damage the control box. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-11T04:54:13Z",
+      "updated_at": "2025-11-11T04:54:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

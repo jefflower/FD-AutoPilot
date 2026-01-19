@@ -1,0 +1,24 @@
+{
+  "id": 1748,
+  "subject": "Order #SSN1985",
+  "description_text": "Hello,\r\n\r\nI've made my order almost 2 weeks ago and still no updates regarding it's\r\ndelivery. About a week ago i've received notification that it was shipped,\r\nbut both provided tracking numbers show that nothing is shipping.\r\n\r\nALS01118259156 shows that package was returned to sender\r\nALS01116072164 shows that this tracking number has expired 96 days ago\r\n\r\nPlease investigate where my order is and when i will get it as i've\r\npaid for expedited shipping.\r\n\r\nThanks\r\nSergei\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-21T19:46:33Z",
+  "updated_at": "2025-07-22T06:50:54Z",
+  "requester_id": 158002262566,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005296148,
+      "body_text": "Hi Sergey T.,     We are very sorry that your first package was returned due to special reasons. We will arrange re-delivery for you immediately. This is the logistics tracking link for your second package, which is already in customs clearance.   ALS01116072164 =JTE300318989939   https://www.sypost.net/search?orderNo=JTE300318989939 ",
+      "user_id": 158001343601,
+      "created_at": "2025-07-22T06:50:54Z",
+      "updated_at": "2025-07-22T06:50:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

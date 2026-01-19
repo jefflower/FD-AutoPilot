@@ -1,0 +1,54 @@
+{
+  "id": 9037,
+  "subject": "COMMANDE DU 09/12 Pas reçue",
+  "description_text": "Bonsoir, Ma commande n'est jamais parvenue à destination comme cela est écrit sur votre plate-forme de suivi. Ce sont des mensonges et je demande à être remboursé immédiatement !",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-23T23:39:22Z",
+  "updated_at": "2026-01-05T09:49:51Z",
+  "requester_id": 158008328578,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015147725,
+      "body_text": "Hi SABRINA GHANEME,  Could you please provide your order number? I can check the issue for you, as it seems unusual that it hasn’t arrived after such a long time. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T04:00:20Z",
+      "updated_at": "2025-12-28T04:00:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015306707,
+      "body_text": "Hi SABRINA GHANEME,    We sincerely apologize for the delay in shipping your order. Due to a logistics issue, we will either expedite your shipment via UPS or issue a refund. We deeply regret any inconvenience this may have caused.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-31T10:19:29Z",
+      "updated_at": "2025-12-31T10:19:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015717364,
+      "body_text": "Hi SABRINA GHANEME,    I've noticed the package hasn't been delivered yet. It's highly likely it's been lost. We'll arrange for a replacement shipment as soon as possible. Here's your tracking information.  https://t.17track.net/en#nums=SF6047222108358",
+      "user_id": 158001343601,
+      "created_at": "2026-01-05T09:47:44Z",
+      "updated_at": "2026-01-05T09:47:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015717437,
+      "body_text": "I apologize for the interruption; please disregard my previous email.  I noticed your order has been delivered. May I ask if you have received it?  https://www.ups.com/track?loc=en_US&requester=ST&trackNums=1ZJ455510409625124/trackdetails",
+      "user_id": 158001343601,
+      "created_at": "2026-01-05T09:49:51Z",
+      "updated_at": "2026-01-05T09:49:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

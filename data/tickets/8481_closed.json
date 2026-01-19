@@ -1,0 +1,24 @@
+{
+  "id": 8481,
+  "subject": "Order number 098224P248757 Tracking",
+  "description_text": "Hello,\r\n\r\n I purchased some pedals and a haptic mount from you on Dec 13th. I only received tracking for the mount, not the pedals. I'm not in a hurry, I just wanted to ask if you could help me with an approximate delivery time. I'm excited about these pedals. \r\n\r\nHave a nice day.\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-12-17T06:16:16Z",
+  "updated_at": "2026-01-07T14:14:07Z",
+  "requester_id": 158007843963,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016145492,
+      "body_text": "此工单已关闭并合并到工单 10014 中",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T14:14:07Z",
+      "updated_at": "2026-01-07T14:14:07Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "id": 9252,
+  "subject": "Envío",
+  "description_text": "Buenas tardes, el envío no se a renovado desde el día 23 es normal que no\r\nse mueva, a habido algún problema con el envío?\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-26T18:55:32Z",
+  "updated_at": "2025-12-31T09:36:43Z",
+  "requester_id": 158008304269,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014873677,
+      "body_text": "Hi Izan Castillo,    Your order was originally scheduled for shipment from our German warehouse, but due to transportation delays, the goods arrived later than expected. They have now arrived at the warehouse, and we are processing them for storage and arranging DHL express shipping. We will update you with the tracking number tomorrow.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-22T11:25:39Z",
+      "updated_at": "2025-12-22T11:25:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014874457,
+      "body_text": "Perfecto muchas gracias, espero ansioso el pedido, un saludo.\r\n\r\n> 8871:4206036\r\n>\r\n\r\n",
+      "user_id": 158008304269,
+      "created_at": "2025-12-22T11:28:52Z",
+      "updated_at": "2025-12-22T11:28:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015146914,
+      "body_text": "ID 为 8871 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T02:40:04Z",
+      "updated_at": "2025-12-28T02:40:04Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158015146915,
+      "body_text": "合并来自工单8871  \n      主题: Pedales  \n      描述:  Hola buenos días el día 17 hice un pedido en vuestra web, y me gustaría saber qué día llegará el pedido o cómo puedo saber su localización gracias. \n El código del pedido es: \n  #SSN4982",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T02:40:04Z",
+      "updated_at": "2025-12-28T02:40:04Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158015188762,
+      "body_text": "Hola buenos días, desde el día 17 de diciembre que no se me actualiza el\r\nenvío me sigue diciendo que está en Alemania y ya a pasado el plazo de 9\r\ndías de envío, a sucedido algún problema? Cuando me llegaran?\r\n\r\n>\r\n> 9252:4206036\r\n>\r\n\r\n",
+      "user_id": 158008304269,
+      "created_at": "2025-12-29T09:54:51Z",
+      "updated_at": "2025-12-29T09:54:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015210035,
+      "body_text": "Hola buenas, se sabe algo de mi envío? Ya que ha pasado el plazo de 9 días\r\nde envío, gracias\r\n\r\n",
+      "user_id": 158008304269,
+      "created_at": "2025-12-29T17:11:51Z",
+      "updated_at": "2025-12-29T17:11:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015303659,
+      "body_text": "Hi Izan Castillo,    Your order has been shipped. We apologize for not updating you in a timely manner. Happy New Year!  CE326637504DE",
+      "user_id": 158001343601,
+      "created_at": "2025-12-31T09:36:43Z",
+      "updated_at": "2025-12-31T09:36:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

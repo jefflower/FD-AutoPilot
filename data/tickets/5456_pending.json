@@ -1,0 +1,44 @@
+{
+  "id": 5456,
+  "subject": "Possible order",
+  "description_text": "Dear sirs,\r\nI am thinking about buying a new pedal set. I read many positive reviews\r\nabout your products.\r\nI am not sure if it will be Plus X or Pro X. Probably with Vam pro\r\n\r\nI have two questions.\r\nCan you tell me if the next sim racing games are compatible with your\r\npedals. F1 24, F1 25, Automobilista 2, Assetto corsa EVO, LM Ultimate and\r\nEA Sports WRC.\r\nAnd second, do you ship from Europe because of tax and custom regulations?\r\n\r\nRegards, Davor Fabijanic\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-10-30T22:57:05Z",
+  "updated_at": "2025-11-02T07:25:57Z",
+  "requester_id": 158006231082,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011373661,
+      "body_text": "Hi Davor Fabijanic,      Our pedals are compatible with these games. For EU orders, we ship from our German warehouse, so there's no need to worry about customs duties.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-31T01:30:18Z",
+      "updated_at": "2025-10-31T01:30:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011409992,
+      "body_text": "Hello,\r\nthank you for the really fast response.\r\nI received an offer from you with a 10% discount. Well it is nice, but I\r\nhave to ask you, are you planning a Black Friday sale?\r\n\r\nIn case I order pedals with VAM pro is it possible to ask for Haptic\r\nReactor Mounting Brackets for clutch instead of bracket for brake and\r\nthrottle?\r\n\r\nRegards, Davor\r\n\r\nOn Fri, Oct 31, 2025 at 2:30 AM service@simsonn.com ",
+      "user_id": 158006231082,
+      "created_at": "2025-10-31T12:41:20Z",
+      "updated_at": "2025-10-31T12:41:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158011605420,
+      "body_text": "Hi Davor Fabijanic,  Yes, you can use this $45 Black Friday discount coupon with the promo code Black45.   Additionally, you can request a replacement mounting bracket in the order notes.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-02T07:25:57Z",
+      "updated_at": "2025-11-02T07:25:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

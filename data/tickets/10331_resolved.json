@@ -1,0 +1,34 @@
+{
+  "id": 10331,
+  "subject": "S1 steering wheel",
+  "description_text": "I was interested in your S1 wheel and button box. But I have a couple of questions. What is the diameter of the wheel? Does this use the standard 6x70mm bolt pattern so that I can attach it to my existing VRS quick release?\r\n\r\nSent from my iPhone\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-08T17:34:32Z",
+  "updated_at": "2026-01-09T03:09:26Z",
+  "requester_id": 158008985811,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016453314,
+      "body_text": "Hi Tim Coates,  Our steering wheel is 13 inches, and the quick release uses a 6×70 mm bolt pattern—that’s correct. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-09T01:21:25Z",
+      "updated_at": "2026-01-09T01:21:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016455380,
+      "body_text": "Thank you for the quick response.\r\n\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158008985811,
+      "created_at": "2026-01-09T01:40:47Z",
+      "updated_at": "2026-01-09T01:40:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

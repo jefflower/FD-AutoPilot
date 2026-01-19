@@ -1,0 +1,24 @@
+{
+  "id": 1486,
+  "subject": "Says delivered, but I didn't receive",
+  "description_text": "Is there a number I can call?\r\n\r\nI need some help\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-07-12T17:37:42Z",
+  "updated_at": "2025-07-14T07:30:41Z",
+  "requester_id": 158001928168,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004776150,
+      "body_text": "Hi Luiz Fernando Borges,  Sorry, we filled in the wrong logistics number, your package has been delivered, please check your front door. We apologize for the inconvenience! https://www.fedex.com/fedextrack/?trknbr=882556886381&trkqual=12029~882556886381~FDEG  ",
+      "user_id": 158001343601,
+      "created_at": "2025-07-14T07:30:41Z",
+      "updated_at": "2025-07-14T07:30:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

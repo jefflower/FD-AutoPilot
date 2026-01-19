@@ -1,0 +1,34 @@
+{
+  "id": 1153,
+  "subject": "Order status",
+  "description_text": "Hello,\r\n\r\nCan you please advise the status of my order  #SSN1834? \r\nIt has been in labor creation for a week and I paid for expedited shipping. When do you think it will be delivered? \r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-03T14:09:10Z",
+  "updated_at": "2025-07-04T14:47:05Z",
+  "requester_id": 158001886224,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004445298,
+      "body_text": "Hi Thomas Kirk,     Sorry for the inconvenience, as we are out of stock in our US warehouse, the latest batch has arrived today and we have shipped it out for you and expect it to arrive around the 9th. We will refund you the extra shipping cost, sincere apologies!",
+      "user_id": 158001343601,
+      "created_at": "2025-07-04T14:05:48Z",
+      "updated_at": "2025-07-04T14:05:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004445356,
+      "body_text": "No problem, thank you for the update.\r\n\r\nOn Fri, Jul 4, 2025 at 7:06 AM support@simsonn.com ",
+      "user_id": 158001886224,
+      "created_at": "2025-07-04T14:16:18Z",
+      "updated_at": "2025-07-04T14:16:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

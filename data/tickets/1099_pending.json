@@ -1,0 +1,74 @@
+{
+  "id": 1099,
+  "subject": "Help urgent",
+  "description_text": "Hi I have got my pedals today and it does not get detected in the pedals\r\nconfig nor does it get detected in a game? What can i do please help me\r\nasap\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-07-02T08:11:19Z",
+  "updated_at": "2025-07-16T06:10:42Z",
+  "requester_id": 158001873282,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004366673,
+      "body_text": "Hi Arhaam Rahaman,    Please provide your order details. Has your pedal been successfully calibrated? If possible, please share some test videos so we can better assist you in troubleshooting.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T08:21:08Z",
+      "updated_at": "2025-07-02T08:21:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004366899,
+      "body_text": "Hi So in the simson manager it looks okay, but when i am in any game it is\r\nnot working like jumping around so as in the usb controller on windows.\r\n\r\nOn Wed, 2 Jul 2025 at 6:21 PM, support@simsonn.com ",
+      "user_id": 158001873282,
+      "created_at": "2025-07-02T08:30:31Z",
+      "updated_at": "2025-07-02T08:30:31Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004367775,
+      "body_text": "Hi so the simson manager is not overridiing the usb game controllers or\r\ncommunicating properly to transmit thr input data. Is there any driver or\r\nanything?\r\n\r\nOn Wed, 2 Jul 2025 at 6:30 PM, Arhaam Rahaman <arhaamrahaman@gmail.com>\r\nwrote:\r\n\r\n> Hi So in the simson manager it looks okay, but when i am in any game it is\r\n> not working like jumping around so as in the usb controller on windows.\r\n>\r\n> On Wed, 2 Jul 2025 at 6:21 PM, support@simsonn.com ",
+      "user_id": 158001873282,
+      "created_at": "2025-07-02T08:55:08Z",
+      "updated_at": "2025-07-02T08:55:08Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004367846,
+      "body_text": "Hi Arhaam Rahaman,    请提供一下您的踏板型号，方便我们为您提供更准确的支持。",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T08:56:26Z",
+      "updated_at": "2025-07-02T08:56:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004368246,
+      "body_text": "The sim pedals config also not detecting this\r\n\r\nOn Wed, 2 Jul 2025 at 6:54 PM, Arhaam Rahaman <arhaamrahaman@gmail.com>\r\nwrote:\r\n\r\n> Hi so the simson manager is not overridiing the usb game controllers or\r\n> communicating properly to transmit thr input data. Is there any driver or\r\n> anything?\r\n>\r\n> On Wed, 2 Jul 2025 at 6:30 PM, Arhaam Rahaman <arhaamrahaman@gmail.com>\r\n> wrote:\r\n>\r\n>> Hi So in the simson manager it looks okay, but when i am in any game it\r\n>> is not working like jumping around so as in the usb controller on windows.\r\n>>\r\n>> On Wed, 2 Jul 2025 at 6:21 PM, support@simsonn.com ",
+      "user_id": 158001873282,
+      "created_at": "2025-07-02T09:00:28Z",
+      "updated_at": "2025-07-02T09:00:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004374455,
+      "body_text": "你好，Arham Rahman，  不用担心——只需提供您的订单号，我就会帮您查看。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-02T14:29:16Z",
+      "updated_at": "2025-07-02T14:29:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

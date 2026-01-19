@@ -1,0 +1,24 @@
+{
+  "id": 8626,
+  "subject": "Order #SSN3903",
+  "description_text": "Dear Sir/Madam, I'm having the following problem with the box. Everything\r\nwas working fine yesterday. Today, when I turned on my PC, it suddenly told\r\nme I was in the flash menu. So I unplugged the USB, pressed the button,\r\nplugged the USB back in, and it still said it was in flasher mode. I\r\nunplugged it for two minutes and restarted my PC. I've tried everything,\r\nbut it just won't work with this box anymore! What can we do?\r\n\r\nOrder#SSN3903\r\n\r\nmfg\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-18T17:33:29Z",
+  "updated_at": "2025-12-22T13:00:26Z",
+  "requester_id": 158007657658,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014880993,
+      "body_text": "你好，Philipp Bachmann，  如果您使用的是 ProX Ultra 脚踏板，请按下并松开控制盒上的 升级按钮，然后重新连接 USB 线。脚踏板将进入工作模式。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-22T13:00:26Z",
+      "updated_at": "2025-12-22T13:00:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

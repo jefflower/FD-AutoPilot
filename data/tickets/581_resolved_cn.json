@@ -1,0 +1,35 @@
+{
+  "id": 581,
+  "subject": "回复：订单 SSN1719…",
+  "description_text": "您好，\n\n希望您一切安好。我写这封邮件是为了查询上述订单的状态。我很好奇是否因为包含了VAM触觉反应器套装而导致了处理延迟？我注意到VAM Pro套装提到了6月16日的发布日期，但没有提及VAM套装的发布日期。我原以为它们已经上市了。\n\n请告知我的订单中的VAM触觉反应器套装是否导致了我的订单处理延迟。\n\n此致，\n\n\nJulio C. Chacon, Jr.\nj_c_chacon_jr@hotmail.com\n\n发自我的iPhone",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-06-18T17:13:14Z",
+  "updated_at": "2025-06-22T03:27:59Z",
+  "requester_id": 158001648254,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158003679609,
+      "body_text": "您好，Julio C Chacon，您的踏板和VAM电机已分开运送。以下是VAM电机的追踪信息——请查阅。",
+      "user_id": 158000445778,
+      "created_at": "2025-06-22T02:17:40Z",
+      "updated_at": "2025-06-22T02:17:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158003679731,
+      "body_text": "是的，感谢您的跟进。实际上，我在发送此邮件的第二天就收到了发货通知，但未能回复Zendesk工单。\n\n此致，\nJulio C. Chacon, Jr.\nj_c_chacon_jr@hotmail.com\n\n发自我的iPhone",
+      "user_id": 158001648254,
+      "created_at": "2025-06-22T03:27:20Z",
+      "updated_at": "2025-06-22T03:27:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

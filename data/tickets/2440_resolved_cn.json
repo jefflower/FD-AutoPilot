@@ -1,0 +1,25 @@
+{
+  "id": 2440,
+  "subject": "VAM 反馈问题",
+  "description_text": "VAM 电机在 simsonn manager 中似乎运行正常，但在游戏中没有输出。切换到 simhub 后，它们在游戏中可以工作，但即使在 10% 的功率输出下也会每 2-3 秒开关一次。任何帮助都将不胜感激，谢谢。\n\n通过 iOS 版 Outlook 发送<https://aka.ms/o0ukef>",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2025-08-07T23:31:54Z",
+  "updated_at": "2025-08-09T14:58:53Z",
+  "requester_id": 158002806240,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158006513829,
+      "body_text": "问题已解决，我同时打开了 simsonn manager 和 simhub。谢谢，祝您有美好的一天，我喜欢这些产品！\n\n通过 iOS 版 Outlook 发送<https://aka.ms/o0ukef>\n________________________________",
+      "user_id": 158002806240,
+      "created_at": "2025-08-08T02:29:48Z",
+      "updated_at": "2025-08-08T02:29:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

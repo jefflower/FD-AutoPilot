@@ -1,0 +1,44 @@
+{
+  "id": 6710,
+  "subject": "Simsonn Plus X or Pro Ultra?",
+  "description_text": "Hello,\r\n\r\nI'm having difficulty deciding between the two options. Could you clarify\r\nthe differences besides the RGB feature?\r\n\r\nAlso, are they available in Europe?\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-11-25T12:20:06Z",
+  "updated_at": "2025-12-18T09:46:54Z",
+  "requester_id": 158007320865,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012942664,
+      "body_text": "Hi Net Kek，  Pro X Ultra脚踏板采用 16 位分辨率，刹车系统支持 8 级液压调节和 RGB 灯光。 如果您不介意 RGB 灯光，Plus X也是一个不错的选择。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-26T11:27:41Z",
+      "updated_at": "2025-11-26T11:27:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158013102071,
+      "body_text": "Thank you!  I bought it from amazon.de. Order #028-7838377-6044341.  That's the latest version with the updated dumper. Is that correct? https://www.amazon.de/-/en/dp/B0DYV6N2G8?ref=fed_asin_title",
+      "user_id": 158007320865,
+      "created_at": "2025-11-29T12:02:18Z",
+      "updated_at": "2025-11-29T12:02:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158014680654,
+      "body_text": "Hi Net Kek,  YES",
+      "user_id": 158007774607,
+      "created_at": "2025-12-18T09:46:37Z",
+      "updated_at": "2025-12-18T09:46:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

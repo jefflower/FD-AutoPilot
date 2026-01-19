@@ -1,0 +1,94 @@
+{
+  "id": 1182,
+  "subject": "#JV8CTCZ01",
+  "description_text": "Hi, Simsonn’s! I recently ordered from you guys and still not have heard about a tracking number to track my order. I’m just not sure if maybe I put the wrong email or not and wanted to reach out to check. \r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-04T00:09:36Z",
+  "updated_at": "2025-07-15T03:59:41Z",
+  "requester_id": 158001889993,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004445159,
+      "body_text": "Hi Ears08,    Sorry for the delay, due to an error in calculating the inventory of goods in the warehouse, we have cancelled the previous logistic order and reshipped the goods, this is your logistic tracking link, it is expected to be delivered for you around the 7th.  https://www.track718.us/en/detail?nums=882505593671",
+      "user_id": 158001343601,
+      "created_at": "2025-07-04T13:38:43Z",
+      "updated_at": "2025-07-04T13:38:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004486414,
+      "body_text": "Thank you for the update. Any word on the order now? I am still not seeing any movement or update from the tracking number. \r\n\r\n> ",
+      "user_id": 158001889993,
+      "created_at": "2025-07-09T06:47:44Z",
+      "updated_at": "2025-07-09T06:47:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004501713,
+      "body_text": "Hi Ears08,     I apologize for the delay, here is the link to your logistics tracking, our US warehouse has been busy lately causing some confusion. I've pushed for you and will have a logistics update today, please stay tuned. Sorry for the inconvenience. https://t.17track.net/en#nums=882505593671",
+      "user_id": 158001343601,
+      "created_at": "2025-07-10T09:30:47Z",
+      "updated_at": "2025-07-10T09:30:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004834956,
+      "body_text": "Hello! I did get some of my items (1 shifter, 1 handbrake, 2 pedals) but I am still waiting on 1 more shifter and 1 more handbrake. I don’t know if they’re on the way and just haven’t been delivered yet, but I just want to make sure that’s the case and they weren’t forgotten. \r\n\r\n",
+      "user_id": 158001889993,
+      "created_at": "2025-07-14T20:17:38Z",
+      "updated_at": "2025-07-14T20:17:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004838398,
+      "body_text": "Hi, I noticed that your other two packages were also signed for, did you receive all of these products.",
+      "user_id": 158001343601,
+      "created_at": "2025-07-15T02:18:37Z",
+      "updated_at": "2025-07-15T02:18:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004842545,
+      "body_text": "I have received some of my order, yes! However, I am still missing 1 more shifter and 1 more handbrake. \r\n\r\n",
+      "user_id": 158001889993,
+      "created_at": "2025-07-15T03:44:20Z",
+      "updated_at": "2025-07-15T03:44:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004842589,
+      "body_text": "Hi, you have a total of 4 packages and it shows that they have all been delivered in full.  https://www.track718.us/en/detail?nums=JSEXC3091076499YQ,JSEGX0112171080YQ,9234690383093300092548,882505593671",
+      "user_id": 158001343601,
+      "created_at": "2025-07-15T03:55:35Z",
+      "updated_at": "2025-07-15T03:55:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158004842622,
+      "body_text": "Handbrake:  JSEXC3091076499YQ JSEGX0112171080YQ     2 pedals and 1 shifter:  882505593671     Another shifter:  9234690383093300092548",
+      "user_id": 158001343601,
+      "created_at": "2025-07-15T03:59:41Z",
+      "updated_at": "2025-07-15T03:59:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

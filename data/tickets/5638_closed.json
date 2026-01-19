@@ -1,0 +1,24 @@
+{
+  "id": 5638,
+  "subject": "Package",
+  "description_text": "\r\n\r\n\r\n\r\nSent to wrong address I’m in peoria , Arizona   Not chino California \r\n\r\nSent from Yahoo Mail for iPhone\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-11-04T18:25:45Z",
+  "updated_at": "2025-11-05T06:11:22Z",
+  "requester_id": 158004921668,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158011769811,
+      "body_text": "此工单已关闭并合并到工单 5639 中",
+      "user_id": 158000445778,
+      "created_at": "2025-11-05T06:11:22Z",
+      "updated_at": "2025-11-05T06:11:22Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

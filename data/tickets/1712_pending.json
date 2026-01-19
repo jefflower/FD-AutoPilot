@@ -1,0 +1,54 @@
+{
+  "id": 1712,
+  "subject": "Order-SSN1937 calibration issue",
+  "description_text": "Hi.\r\n\r\nI am able to calibrate my pedals in the simsonn manager, however when I go\r\ninto games to assign the pedals there is an extra channel. This extra\r\nchannel is axis 4 in some games or x rotation in control panel. This\r\nchannel is flickering and makes it impossible to assign the pedals in game\r\nor even get into some games. I have attached a picture  and clip of said\r\nproblem. I am willing to trouble shoot this to get these working properly.\r\nHowever if this can't be resolved I will need to return them.\r\n\r\nAwaiting your response.\r\n\r\nKind regards.\r\n\r\nMatt\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-20T04:17:11Z",
+  "updated_at": "2025-07-21T07:14:46Z",
+  "requester_id": 158002240316,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005212468,
+      "body_text": "Hi Matt Bromley,     Please update to version 2.0.9 for the latest features and improved compatibility.   In the “Settings - Update” section, click “Manual Firmware Update,” then navigate to the pedals-firmware folder → pedals folder → and select the proxultra.sfu file to update. This firmware will disable the 4th axis.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-20T05:57:48Z",
+      "updated_at": "2025-07-20T05:57:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005221714,
+      "body_text": "Pics of issue.\r\n\r\nOn Sun, 20 July 2025, 3:28 pm service@simsonn.com, ",
+      "user_id": 158002240316,
+      "created_at": "2025-07-20T09:40:41Z",
+      "updated_at": "2025-07-20T09:40:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005221872,
+      "body_text": "Thank you this is very helpful and has resolved my issue.\r\n\r\nOn Sun, 20 July 2025, 3:28 pm service@simsonn.com, ",
+      "user_id": 158002240316,
+      "created_at": "2025-07-20T09:55:24Z",
+      "updated_at": "2025-07-20T09:55:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005253531,
+      "body_text": "Hi Matt Bromley,    Thank you for your prompt feedback and feel free to contact us if you have any other questions. Have fun!",
+      "user_id": 158001343601,
+      "created_at": "2025-07-21T07:14:46Z",
+      "updated_at": "2025-07-21T07:14:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

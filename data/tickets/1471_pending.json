@@ -1,0 +1,24 @@
+{
+  "id": 1471,
+  "subject": "My throttle pedals isnt working.",
+  "description_text": "Hello, my name is Tyler and i bought a set of yalls pro x pedals about a\r\nmonth ago, and now the throttle pedals isnt registering inputs anymore, let\r\nme know what i can do.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-07-12T03:27:32Z",
+  "updated_at": "2025-07-12T08:10:34Z",
+  "requester_id": 158001622293,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158004638005,
+      "body_text": "你好，CUTTER 90，  请检查这两个部件，看它们是否由于蓝色限位器调整得太紧而损坏。 ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-12T06:32:31Z",
+      "updated_at": "2025-07-12T06:32:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

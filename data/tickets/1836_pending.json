@@ -1,0 +1,204 @@
+{
+  "id": 1836,
+  "subject": "Saving config works incorrectly (Simsonn Plus X)",
+  "description_text": "\nHello! \n\nSimsonn Manager v2.0.9\n\nEncountered with the following issue:\n*  Calibrate pedals.\n*  Set your own custom value for Maximum Force field or change Elastomer to Medium.\n*  Click Save button.\nActual result: \nThe Maximum Force value resets to the value before changing.\n \nPlease, fix this issue. I have attached the video.\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2025-07-23T18:30:27Z",
+  "updated_at": "2025-08-26T03:42:03Z",
+  "requester_id": 158002299029,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005483093,
+      "body_text": "\nI cannot view the ticket, since it does not exist. Nice service, nothing to add here.\n \nMoreover, after each calibration, deadzones settings are reset, even though the values says that deadzones are set correctly. \nthe worst software I have ever seen.\n \n>Wednesday, July 23, 2025 9:30 PM +03:00 from service@simsonn.com ",
+      "user_id": 158002299029,
+      "created_at": "2025-07-23T19:45:29Z",
+      "updated_at": "2025-07-23T19:45:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005487268,
+      "body_text": "Hi andrey volodko,  After changing the force value in kg, if it turns red, just press Enter to confirm. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-24T02:06:05Z",
+      "updated_at": "2025-07-24T02:06:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005490583,
+      "body_text": "\nno, it does not work. \nmoreover, sometimes, the maximum value is reset after changing deadzone. I tried hitting Enter — it makes nothing! Clicking Save button and Changing deadzones resetting the setting. It is not ok.\n\nJust watch the new video I have ATTACHED and see. \n \n>Thursday, July 24, 2025 5:06 AM +03:00 from service@simsonn.com ",
+      "user_id": 158002299029,
+      "created_at": "2025-07-24T10:49:47Z",
+      "updated_at": "2025-07-24T10:49:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005493598,
+      "body_text": "\nCan you send me Simsonn Manager 2.0.7 installation file? \n\n \n>Thursday, July 24, 2025 5:06 AM +03:00 from service@simsonn.com ",
+      "user_id": 158002299029,
+      "created_at": "2025-07-24T12:23:39Z",
+      "updated_at": "2025-07-24T12:23:39Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005498424,
+      "body_text": "Hi andrey volodko,  https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-07-24T13:13:13Z",
+      "updated_at": "2025-07-24T13:13:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005498464,
+      "body_text": "\nI’m asking version 2.0.7, you send me the link where there are only 2.0.8 and 2.0.9… \nnevermind, I alrady found it myself. \n\n \n>Thursday, July 24, 2025 4:13 PM +03:00 from service@simsonn.com ",
+      "user_id": 158002299029,
+      "created_at": "2025-07-24T13:17:07Z",
+      "updated_at": "2025-07-24T13:17:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005498467,
+      "body_text": "Hi andrey volodko,     Could you please upload it to Google Drive? I can’t watch this video at the moment.",
+      "user_id": 158000445778,
+      "created_at": "2025-07-24T13:17:11Z",
+      "updated_at": "2025-07-24T13:17:11Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005498541,
+      "body_text": "\nhttps://drive.google.com/file/d/1TcA1k0AiLkvcCUSTNB0ZprwJlZivrkpi/view?usp=sharing\n\n \n>Thursday, July 24, 2025 4:17 PM +03:00 from service@simsonn.com ",
+      "user_id": 158002299029,
+      "created_at": "2025-07-24T13:24:30Z",
+      "updated_at": "2025-07-24T13:24:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005550936,
+      "body_text": "Hi andrey volodko,  We will release SIMSONN Manager 2.1.0 later, and once you update to it, the issue will be resolved. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-26T04:00:33Z",
+      "updated_at": "2025-07-26T04:00:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005614148,
+      "body_text": "\nnot all problems was resolved at all.\n*  Changing deadzones resets max Force value\n*  Save button resets chosen elastomer\n*  If you change deadzone, then click Save button, the preset will contain incorrect Max Force value, since it resets after changing deadzone (1st point)\n \nI’m really asking you, just watch the full video I sent to you, it contains almost all the points I mentioned. I really do not want to return the pedals, but this resetting after changing deadzones makes not user friendly, and you have to keep in mind lots of bugs. \nYou created the feature of saving exact kilograms, thats great, just make it working propertly, please. \n>Saturday, July 26, 2025 7:00 AM +03:00 from service@simsonn.com ",
+      "user_id": 158002299029,
+      "created_at": "2025-07-26T12:53:13Z",
+      "updated_at": "2025-07-26T12:53:13Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005620341,
+      "body_text": "Hi andrey volodko,  Alright, we’re sorry for the inconvenience caused. We’ll have everything checked and all functions fixed by tomorrow (Monday). ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-27T02:42:25Z",
+      "updated_at": "2025-07-27T02:42:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005698500,
+      "body_text": "\nok, thanks.\nPlease, let me know, when new version is uploaded.\n\n \n>Sunday, July 27, 2025 5:42 AM +03:00 from service@simsonn.com ",
+      "user_id": 158002299029,
+      "created_at": "2025-07-28T06:55:03Z",
+      "updated_at": "2025-07-28T06:55:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005785344,
+      "body_text": "\nHello. \nTell me please, when the update will be delivered? It’s end of tuesday already, you mentioned Monday.\n\n \n>Sunday, July 27, 2025 5:42 AM +03:00 from service@simsonn.com ",
+      "user_id": 158002299029,
+      "created_at": "2025-07-29T19:05:15Z",
+      "updated_at": "2025-07-29T19:05:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005868358,
+      "body_text": "Hi andrey volodko,  There are still some other issues that haven’t been fully tested yet. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-31T05:32:47Z",
+      "updated_at": "2025-07-31T05:32:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006695679,
+      "body_text": "\nHello!\n\nCould you tell me, will there be a promised update? Or it doesn’t make sense to expect it?  \nThanks.\n \n>Thursday, July 31, 2025 8:32 AM +03:00 from service@simsonn.com ",
+      "user_id": 158002299029,
+      "created_at": "2025-08-11T13:16:11Z",
+      "updated_at": "2025-08-11T13:16:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158006978451,
+      "body_text": "Hi andrey volodko,  The update has been completed. Generally, we accumulate several updates before releasing them to avoid frequent updates for customers. I can send it to you on Monday for testing to see if it resolves your issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-17T04:43:14Z",
+      "updated_at": "2025-08-17T04:43:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007081351,
+      "body_text": "Hi andrey volodko,  Please check if this 2.1.1 test version has resolved the software issues you reported earlier.   https://drive.google.com/file/d/1UPkeOHREyALtCtNmL87a2WnUDZV0Gx_b/view?usp=sharing",
+      "user_id": 158000445778,
+      "created_at": "2025-08-18T12:37:15Z",
+      "updated_at": "2025-08-18T12:37:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007508337,
+      "body_text": "\nHey. Sorry, I didn’t have enough time to test, just tried really quick. It seems like much more stable now. But provide more thorough testing from your side, please, before releasing.\n\n \n>Monday, August 18, 2025 3:37 PM +03:00 from service@simsonn.com ",
+      "user_id": 158002299029,
+      "created_at": "2025-08-25T12:46:29Z",
+      "updated_at": "2025-08-25T12:46:29Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158007548328,
+      "body_text": "Hi andrey volodko,  Alright, we will take this issue very seriously and conduct thorough testing of all functions before delivery to ensure everything works properly. Thank you very much for your feedback. ",
+      "user_id": 158000445778,
+      "created_at": "2025-08-26T03:42:02Z",
+      "updated_at": "2025-08-26T03:42:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

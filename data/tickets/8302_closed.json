@@ -1,0 +1,24 @@
+{
+  "id": 8302,
+  "subject": "Pedido SSN4850",
+  "description_text": "Buenos días.\r\n\r\nMe gustaría saber si el pedido SSN4850  a entrado en vuestro sistema, ya\r\nque lo realice ayer por la noche y me gustaría tener alguna noticia de su\r\nestado.\r\n\r\nMuchas gracias\r\n\r\nR. Cruz\r\n\r\n",
+  "status": 5,
+  "priority": 1,
+  "created_at": "2025-12-15T13:37:47Z",
+  "updated_at": "2025-12-21T12:59:53Z",
+  "requester_id": 158007785458,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014841108,
+      "body_text": "此工单已关闭并合并至工单 8803。",
+      "user_id": 158000445778,
+      "created_at": "2025-12-21T12:59:53Z",
+      "updated_at": "2025-12-21T12:59:53Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "id": 10623,
+  "subject": "Amazon Order: 114-7333728-9470668",
+  "description_text": "Hi Simsonn,\r\n\r\nI hit a request to cancel on accident on this Amazon order. Please continue\r\nto ship it if you can.\r\n\r\nThanks, Kaden\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-12T07:43:56Z",
+  "updated_at": "2026-01-16T03:40:31Z",
+  "requester_id": 158009030520,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016844306,
+      "body_text": "Hi Kaden Ly,  Alright, I will inform our Amazon operations team to resume the shipment for you. Thank you for your support. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-12T07:48:40Z",
+      "updated_at": "2026-01-12T07:48:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016887049,
+      "body_text": "Sounds good thanks, do you know how long the shipment will take?\r\n\r\n",
+      "user_id": 158009030520,
+      "created_at": "2026-01-12T17:51:55Z",
+      "updated_at": "2026-01-12T17:51:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017081287,
+      "body_text": "Hi Kaden Ly,  Sorry. Our Amazon colleague acted so quickly; he had already cancelled your order by the time we notified him. Could you please reorder? We will ship your order from our US warehouse immediately.",
+      "user_id": 158007774607,
+      "created_at": "2026-01-14T08:13:26Z",
+      "updated_at": "2026-01-14T08:13:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017123230,
+      "body_text": "No problem, I just re ordered it. Here is order number: 114-7038728-5380227\r\n\r\n\r\n",
+      "user_id": 158009030520,
+      "created_at": "2026-01-14T16:56:33Z",
+      "updated_at": "2026-01-14T16:56:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017237994,
+      "body_text": "Hi Kaden Ly,  OK. Thanks. We have shipped it, here is your tracking number: 887920088042,   ships from US warehouse, the shipping carrier is FedEx, you can track it via https://www.fedex.com/fedextrack",
+      "user_id": 158007774607,
+      "created_at": "2026-01-16T03:40:29Z",
+      "updated_at": "2026-01-16T03:40:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

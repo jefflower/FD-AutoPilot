@@ -1,0 +1,84 @@
+{
+  "id": 9109,
+  "subject": "RETURN REQUEST ORDER #SSN4997",
+  "description_text": "Hi,\r\nI got my pedals today, the brake does not work as intended. I dont know if\r\nthe problem is with the spring or what, but I literally cannot under any\r\ncircumstance fully depress the brake, even on the 'softest' (factory)\r\nsetting and following the instruction manual to change the\r\npre-load settings. Change the pre-load settings helped a *little, *but\r\nthese pedals literally only depress about 20% of the way, even planting\r\nmyself and using my arms to try and press them.\r\nALSO, the VAM pro linear motors that were supposed to come with the pedals\r\nhavent arrived yet.\r\n\r\nThis whole experience has been really unpleasant and I'd like a refund.\r\n\r\nThanks.\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2025-12-24T20:51:08Z",
+  "updated_at": "2025-12-31T08:33:18Z",
+  "requester_id": 158007856733,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015057357,
+      "body_text": "Hi Cory Clark,  You will need to manually calibrate the pedals, including the brake pedal. There is a calibration button in the software—please follow the steps and press all three pedals one by one. This procedure is also described in our user manual. After calibration, the blue signal in the software should move correctly from 0% to 100% when pressing the pedals. Additionally, the VAM haptic module is shipped separately due to different design and packaging. I will check the tracking number for you and get back to you once it’s confirmed. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-25T02:41:17Z",
+      "updated_at": "2025-12-25T02:41:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015057435,
+      "body_text": "The spring for the breaks is physically incapable of being depressed fully.\r\nThe manual explicitly says that the spring will be fully depressed before\r\nactuating the elastomers. I have spent literal hours trying different\r\npre-load settings, trying different elastomers, nothing works. It’s not a\r\nmatter of the software not working- I understand that there is a\r\ncalibration in the software. What I’m saying is that the spring I have I\r\nbelieve to be faulty- it is WAY too stiff.\r\n\r\nAgain- the manual says the spring should be able to be fully depressed for\r\n“stage one” of the braking, and the elastomers represent “stage two”. With\r\nthe spring that came in my package I am completely unable to depress the\r\nspring fully.\r\n\r\nIs there any way I can get a new brake spring and maybe a softer one to try\r\nat least?\r\n\r\nThanks for the help\r\n\r\nC\r\n\r\nOn Wed, Dec 24, 2025 at 9:41 PM service@simsonn.com ",
+      "user_id": 158007856733,
+      "created_at": "2025-12-25T02:46:26Z",
+      "updated_at": "2025-12-25T02:46:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015058155,
+      "body_text": "Hi Cory Clark,  There is a 10mm limit spacer inside the brake spring, which restricts the compression travel of the spring. You can remove it to allow the spring to fully compress. By default, we leave this spacer in place at the factory because F1 setups use a short travel to simulate a 1–2mm gap in the brake disc. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-25T04:08:20Z",
+      "updated_at": "2025-12-25T04:08:20Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015058284,
+      "body_text": "I have removed the 10mm spacer. I can still only get the pedal to travel at\r\nMOST 1 inch. At MOST. With all my strength, just pressing on the pedal.\r\nDoesn’t matter if it’s with my foot or separated from the plate and it’s\r\njust the brake pedal in my hand, I CANNOT get it to move.\r\n\r\nIn all seriousness, does this sound like it’s functioning properly?\r\n\r\nOn Wed, Dec 24, 2025 at 11:08 PM service@simsonn.com ",
+      "user_id": 158007856733,
+      "created_at": "2025-12-25T04:24:44Z",
+      "updated_at": "2025-12-25T04:24:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015058298,
+      "body_text": "Hi Cory Clark,  Please take a photo of the side of the brake pedal and open the Simsonn Manager 2.1.2 software so I can check the force calibration settings. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-25T04:26:41Z",
+      "updated_at": "2025-12-25T04:26:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015058372,
+      "body_text": "Here you can see the brake pedal in full, the spring with spacer removed\r\nand the pre-load at the point that gives me the most pedal travel (again,\r\nonly LITERALLY an inch at most). With absolutely ALL of my force applied to\r\nthis pedal, what you see in the picture is the result AFTER CALIBRATION.\r\n\r\nPlease advise.\r\n\r\nOn Wed, Dec 24, 2025 at 11:26 PM service@simsonn.com ",
+      "user_id": 158007856733,
+      "created_at": "2025-12-25T04:37:56Z",
+      "updated_at": "2025-12-25T04:37:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015106184,
+      "body_text": "Any tracking order for those motors yet?\r\n\r\nOn Wed, Dec 24, 2025 at 11:37 PM Cory Clark <coryclarkinsurance@gmail.com>\r\nwrote:\r\n\r\n> Here you can see the brake pedal in full, the spring with spacer removed\r\n> and the pre-load at the point that gives me the most pedal travel (again,\r\n> only LITERALLY an inch at most). With absolutely ALL of my force applied to\r\n> this pedal, what you see in the picture is the result AFTER CALIBRATION.\r\n>\r\n> Please advise.\r\n>\r\n> On Wed, Dec 24, 2025 at 11:26 PM service@simsonn.com ",
+      "user_id": 158007856733,
+      "created_at": "2025-12-26T16:45:32Z",
+      "updated_at": "2025-12-26T16:45:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

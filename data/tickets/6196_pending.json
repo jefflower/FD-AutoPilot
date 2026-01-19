@@ -1,0 +1,84 @@
+{
+  "id": 6196,
+  "subject": "Throttle Issue Order #SSN2641",
+  "description_text": "Hello,\r\n\r\nI am having a persistent throttle issue that is getting worse.\r\n\r\nMy throttle pedal says it is depressed when it is not in multiple game\r\ntitles.\r\nI have recalibrated and adjusted it multiple times as well as have it\r\ngrounded correctly.\r\n\r\nCan you provide additional information on this issue or provide a\r\nreplacement?\r\n\r\nPlease advise.\r\n\r\nBest regards,\r\nRobert\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-11-16T03:48:46Z",
+  "updated_at": "2025-11-19T03:48:06Z",
+  "requester_id": 158007135876,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158012441473,
+      "body_text": "Hi Robbie Francisco,    Please don't worry—we'll repair or replace it for you. First, please provide us with a video showing the issue you're experiencing.",
+      "user_id": 158001343601,
+      "created_at": "2025-11-17T08:15:05Z",
+      "updated_at": "2025-11-17T08:15:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012449274,
+      "body_text": "I will try to provide a video but it is an intermittent issue. The throttle\r\npedal mechanism is not sticking, it seems to be an issue with the encoder.\r\nThe pedal returns to 0% position but in games it still says it is 100%\r\ndepressed.\r\n\r\nI would like to also note this issue is happening on the previous and\r\nnewest software.\r\n\r\nIs there any other data I can provide?\r\n\r\nThank you,\r\nRobbie\r\n\r\nOn Mon, Nov 17, 2025, 3:15 AM support@simsonn.com ",
+      "user_id": 158007135876,
+      "created_at": "2025-11-17T11:54:40Z",
+      "updated_at": "2025-11-17T11:54:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012495916,
+      "body_text": " MedalTVAutomobilista220251116145351853-1763424352.mp4\r\n<https://drive.google.com/file/d/14sXY4lAhNAvZvwBPDbGYJUNfEIa43ZRZ/view?usp=drive_web>\r\nHello,\r\n\r\nHere is the most recent in game clip of the throttle sticking. You can see\r\nI downshift to hit the brakes and it pins on the limiter at full throttle.\r\n\r\nThank you,\r\n\r\nOn Mon, Nov 17, 2025 at 6:54 AM Robbie Francisco <\r\nrobbiefrancisco40@gmail.com> wrote:\r\n\r\n> I will try to provide a video but it is an intermittent issue. The\r\n> throttle pedal mechanism is not sticking, it seems to be an issue with the\r\n> encoder. The pedal returns to 0% position but in games it still says it is\r\n> 100% depressed.\r\n>\r\n> I would like to also note this issue is happening on the previous and\r\n> newest software.\r\n>\r\n> Is there any other data I can provide?\r\n>\r\n> Thank you,\r\n> Robbie\r\n>\r\n> On Mon, Nov 17, 2025, 3:15 AM support@simsonn.com ",
+      "user_id": 158007135876,
+      "created_at": "2025-11-18T00:06:59Z",
+      "updated_at": "2025-11-18T00:06:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012520396,
+      "body_text": "Hello support team,\r\n\r\nHave you had the opportunity to review this support issue as well as\r\nsupplied footage?\r\n\r\nPlease advise\r\n\r\nThank you.\r\n\r\nOn Mon, Nov 17, 2025, 7:08 PM Robbie Francisco <robbiefrancisco40@gmail.com>\r\nwrote:\r\n\r\n>  MedalTVAutomobilista220251116145351853-1763424352.mp4\r\n> <https://drive.google.com/file/d/14sXY4lAhNAvZvwBPDbGYJUNfEIa43ZRZ/view?usp=drive_web>\r\n> Hello,\r\n>\r\n> Here is the most recent in game clip of the throttle sticking. You can see\r\n> I downshift to hit the brakes and it pins on the limiter at full throttle.\r\n>\r\n> Thank you,\r\n>\r\n> On Mon, Nov 17, 2025 at 6:54 AM Robbie Francisco <\r\n> robbiefrancisco40@gmail.com> wrote:\r\n>\r\n>> I will try to provide a video but it is an intermittent issue. The\r\n>> throttle pedal mechanism is not sticking, it seems to be an issue with the\r\n>> encoder. The pedal returns to 0% position but in games it still says it is\r\n>> 100% depressed.\r\n>>\r\n>> I would like to also note this issue is happening on the previous and\r\n>> newest software.\r\n>>\r\n>> Is there any other data I can provide?\r\n>>\r\n>> Thank you,\r\n>> Robbie\r\n>>\r\n>> On Mon, Nov 17, 2025, 3:15 AM support@simsonn.com ",
+      "user_id": 158007135876,
+      "created_at": "2025-11-18T14:26:09Z",
+      "updated_at": "2025-11-18T14:26:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012558430,
+      "body_text": "Hi Robbie Francisco,   If this happens, it indicates that the computer’s grounding is not reliable, possibly because a three-prong plug was not used with a three-prong wall outlet. You can refer to the post below: connect the computer case to the stand, and connect the control box to the metal screws on the pedals. This should resolve the disconnection issue.     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-11-19T03:26:31Z",
+      "updated_at": "2025-11-19T03:26:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012558640,
+      "body_text": "I will try grounding the sim chassis to the computer itself next. This has\r\nnot been an issue until recently though and I have had these pedals for\r\nsome time. The pedal control box is also already grounded to the pedals.\r\n\r\nDo you have any feedback on this?\r\n\r\nThank you.\r\n\r\nOn Tue, Nov 18, 2025, 10:26 PM support@simsonn.com ",
+      "user_id": 158007135876,
+      "created_at": "2025-11-19T03:42:44Z",
+      "updated_at": "2025-11-19T03:42:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158012558695,
+      "body_text": "Hi Robbie Francisco,  As long as the PC case is connected to the pedal’s metal screws and the control box is connected to the pedal’s metal screws, there should be no further issues. ",
+      "user_id": 158000445778,
+      "created_at": "2025-11-19T03:48:05Z",
+      "updated_at": "2025-11-19T03:48:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

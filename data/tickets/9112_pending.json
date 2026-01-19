@@ -1,0 +1,24 @@
+{
+  "id": 9112,
+  "subject": "Clutch Stopped Working Randomly",
+  "description_text": "Hello there!\r\n\r\nSo, I was just inquiring as if there was anything that could be done about\r\nmy situation. I bought my Simsonn Pro pedals last year, Nov 18, 2024 from\r\namazon.ca. My order number is: *702-3257287-9674606*. I have treated my\r\npedals well, they're all in great condition, and I actually hadn't used\r\nthem in a few months. But the last time I did, everything was working as\r\nexpected. Today I went to drive with them, and found that my clutch pedal\r\nwas not registering in game. I tried it out in SimPedalsConfig_4.1106,\r\nwhich is what I set them up in originally, and the clutch is not\r\nregistering at all. It shows no pressure or input, and i've tried to\r\nmess with the dock, reset my pc, use a different USB port, moved the\r\ngrounding wire, checked the condition of the wire and the hub as well, and\r\neverything looks fine, but the pedal just does not work at all.\r\n\r\nI'm not sure if your warranty period runs for one or two years after\r\npurchase, so i'm not quite sure if there is anything that can be done here,\r\nbut I was hoping that maybe you could help me out, as I'm sad my pedal is\r\nno longer working. my pedals seem to be out of date, as I only see listings\r\nof the Pro X/ Ultra and Plus X, so I'm worried I can't even get a\r\nreplacement.\r\n\r\nThanks for your time,\r\n\r\nSeage~\r\n\r\n\r\n-- \r\nCourtney Howlett | Seage\r\nIllustrator | Storyteller\r\nSeageart.com <http://seageart.com/>\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-12-25T00:44:06Z",
+  "updated_at": "2025-12-25T02:35:00Z",
+  "requester_id": 158008501899,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015057286,
+      "body_text": "Hi Courtney Howlett,  Only pedals with firmware version 1.7.1 are compatible with SIMSONN Manager 2.1.2. If the software indicates that the firmware is too old, please go to Settings → Update → Manual Firmware Update → pedals-firmware → pedals-plus.sfu to update it. If your pedals are running version 1.7.0, they do not support the latest software.      https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2025-12-25T02:35:00Z",
+      "updated_at": "2025-12-25T02:35:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

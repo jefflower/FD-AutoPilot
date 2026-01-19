@@ -1,0 +1,24 @@
+{
+  "id": 10273,
+  "subject": "Vam rumble motors",
+  "description_text": "Hi,\r\nI have heard there has been some failures with the vam motors.\r\n\r\nWhat warranty do they have?\r\nWhat procedure follows if they fail?\r\n\r\nThank you,\r\n\r\nJarett\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-08T07:03:56Z",
+  "updated_at": "2026-01-08T07:24:01Z",
+  "requester_id": 158008979491,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016293334,
+      "body_text": "Hi Jarett Barnes,  The VAM assembly process has been improved. Under normal use, and as long as an incompatible mode is not selected, it should not be damaged. If any damage does occur, we will replace it. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-08T07:24:01Z",
+      "updated_at": "2026-01-08T07:24:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "id": 4654,
+  "subject": "Hey! question about my order #SSN2848!",
+  "description_text": "Hey SImsonn,\r\n\r\nQuestions regarding Order #SSN2848\r\n\r\nim sending you this email because i have a question about the haptics? it was not delivered in the first parcel i got? is it going to come in a alternativ box?\r\n\r\nor is it so simple that is was missed?\r\n\r\nBest Regards Emanuel\r\n\r\n",
+  "status": 3,
+  "priority": 2,
+  "created_at": "2025-10-09T13:40:34Z",
+  "updated_at": "2025-10-20T10:43:49Z",
+  "requester_id": 158005406478,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158010152254,
+      "body_text": "Its also missing the base plate etc etc. i only got the pedals and controller box",
+      "user_id": 158005406478,
+      "created_at": "2025-10-09T13:45:03Z",
+      "updated_at": "2025-10-09T13:45:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010187188,
+      "body_text": "Hi Emanuel Eriksson,    We apologize for the inconvenience. Our Pro X Ultra baseplate is currently out of stock at our German warehouse, so we've shipped the pedal to you first. We can send your baseplate via UPS, but customs duties may apply. Alternatively, we can reship it once our German warehouse restocks in next two days. Additionally, here is your Haptics tracking link:  https://t.17track.net/en#nums=SF6045959980692",
+      "user_id": 158001343601,
+      "created_at": "2025-10-10T03:55:02Z",
+      "updated_at": "2025-10-10T03:55:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010187290,
+      "body_text": "So if i understand correctly, you will after the items is restocked in germany you will send the remaining items? Everything that wasnt included in the first box? Baseplate, heel rest etc? When can i estimate a shipment of these? Or what did you mean with reship?        And the Haptics is coming in a different package according to your tracking link? =] are those in the risk of custums duties? Just thinking so i know the final amount",
+      "user_id": 158005406478,
+      "created_at": "2025-10-10T04:05:57Z",
+      "updated_at": "2025-10-10T04:05:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010188694,
+      "body_text": "Hi Emanuel Eriksson,  Yes, that’s correct — once the stock is replenished at our German warehouse, we will send out the remaining items (the baseplate, heel rest, etc.) to you. ",
+      "user_id": 158001343601,
+      "created_at": "2025-10-10T05:56:41Z",
+      "updated_at": "2025-10-10T05:56:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010188717,
+      "body_text": "Will it be within the next couple of days? =]",
+      "user_id": 158005406478,
+      "created_at": "2025-10-10T05:58:18Z",
+      "updated_at": "2025-10-10T05:58:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010188719,
+      "body_text": "Will it be within the next couple of days? =]",
+      "user_id": 158005406478,
+      "created_at": "2025-10-10T05:58:20Z",
+      "updated_at": "2025-10-10T05:58:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010198347,
+      "body_text": "Yes",
+      "user_id": 158001343601,
+      "created_at": "2025-10-10T08:31:22Z",
+      "updated_at": "2025-10-10T08:31:22Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010463659,
+      "body_text": "Hi again,     How long approx until my last package from germany is going to be sent?      And i also noticed i got a new tracking number for the haptics sent from China? :)",
+      "user_id": 158005406478,
+      "created_at": "2025-10-15T04:16:36Z",
+      "updated_at": "2025-10-15T04:16:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158010478406,
+      "body_text": "Hi Emanuel Eriksson,      Your parcel has been dispatched via DHL Express. Here is your tracking link:  https://www.dhl.com/us-en/home/tracking.html?tracking-id=CE326628238DE",
+      "user_id": 158001343601,
+      "created_at": "2025-10-15T09:09:19Z",
+      "updated_at": "2025-10-15T09:09:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010478422,
+      "body_text": "Yes, the haptics are being sent from China, but there will be no shipping charges incurred, so please do not worry.",
+      "user_id": 158001343601,
+      "created_at": "2025-10-15T09:10:45Z",
+      "updated_at": "2025-10-15T09:10:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158010718308,
+      "body_text": "Hey Again,     The last update on the haptics are that they are delivered to a local company but i cant find any tracking number to continue the tracking?     Best regards Emanuel",
+      "user_id": 158005406478,
+      "created_at": "2025-10-20T09:21:09Z",
+      "updated_at": "2025-10-20T09:21:09Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    }
+  ]
+}

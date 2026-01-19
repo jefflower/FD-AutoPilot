@@ -1,0 +1,44 @@
+{
+  "id": 1784,
+  "subject": "Help! - Order #SSN1843 - Simsonn Vam Pro Interfering with Simsonn Plus X brake pedals",
+  "description_text": "Hi there\r\n\r\nI need some help with this issue I have with the Vam pros x Plus X pedals,\r\nespecially with the brake pedal activating (without pressing) every time\r\none/any of the Vam Pro vibrates via any in-game feedback.\r\n\r\nI have installed all 3 Vam Pros onto the appropriate pedals and have used\r\nboth Simson Manager and Simhub to configure the Vam Pros. Despite trying\r\ndifferent games and different troubleshooting, the issue remains the same.\r\nBrake pedal activates every time any of the Vam Pro vibrates.\r\n\r\n\r\nThe Solutions I have tried are listed below:\r\n\r\n1) Grounding the Pedals\r\n2) Reinstall Hardware for both Simmson and Simhub\r\n3) Calibrate all pedals in Simmson manager\r\n4) Applied Deadzones on the Brake setting on Simmson manager\r\n5) Tweaking different settings in both Simmson and Simhub\r\n6) Tried different games\r\n\r\nThe only solution that works is deactivating the Simsonn Vam Pros, but that\r\ndefeats the purpose of purchasing it.\r\n\r\nPlease see attached google drive for pictures and video of the issue. Your\r\nhelp is greatly appreciated.\r\n\r\nhttps://drive.google.com/drive/folders/1dCRmrPN9eaY4hnEtrnc4BNje_k6-ttEo?usp=sharing\r\n\r\nKindest regard\r\nJackie\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2025-07-22T12:45:20Z",
+  "updated_at": "2025-07-26T04:12:10Z",
+  "requester_id": 158002140254,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158005355424,
+      "body_text": "Hi Jackie A,  To address EMI (Electromagnetic Interference) issues, please follow the steps below to improve device stability and USB connection reliability:     1.    Ensure proper grounding: Make sure the computer is connected to a three-prong outlet with a reliable ground. Two-prong plugs do not provide grounding.     2.    Control box grounding: Use a green shielding wire to connect the metal housing (such as a copper post or screw) of the control box to any metal screw on the pedal. Ensure the contact point is paint-free and conductive.     3.    Base grounding (e.g., Fanatec / MOZA): It’s recommended to connect the metal part of the base to the PC chassis or an external ground to discharge static buildup.     4.    Avoid high-interference zones: Keep USB cables away from high-voltage power lines or adapters; route cables separately where possible.     5.    Use direct USB connection: Connect devices directly to a rear USB 3.0 port on the PC instead of using unpowered or low-quality USB hubs.     6.    Use USB cables with ferrite cores: If needed, switch to high-quality USB cables with ferrite beads to reduce high-frequency interference.     7.    Keep software and firmware updated: Ensure SIMSONN Manager and firmware are updated to the latest version, as some updates include EMI handling improvements.     8.    Use a USB isolator: If the above methods don’t resolve the issue, using a USB isolator is recommended. It physically separates the USB power and data lines, effectively shielding the control device from EMI sources.     https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting     https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-07-23T03:37:54Z",
+      "updated_at": "2025-07-23T03:37:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005545447,
+      "body_text": "Thank you for the help, the problem has been resolved.\r\n\r\nAfter grounding the box with the pedal, I managed to move the control box a\r\nlittle further down (away from the brake pedal) now everything works fines,\r\neven without playing the deadzone on the brake settings, and can apply 100%\r\nfeedback on the Vam Pro x3 on Simhub without any issues.\r\n\r\nAgain very much appreciate your support, highly recommended by my friends\r\nand others to you guys :)\r\n\r\nKindest regards\r\nJackie\r\n[image: image.png]\r\n\r\n",
+      "user_id": 158002140254,
+      "created_at": "2025-07-25T22:41:04Z",
+      "updated_at": "2025-07-25T22:41:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158005550995,
+      "body_text": "Hi Jackie A,  This means the vibration is causing the PlusX control box to continuously touch the brake sensor, resulting in fluctuating signals. ",
+      "user_id": 158000445778,
+      "created_at": "2025-07-26T04:12:09Z",
+      "updated_at": "2025-07-26T04:12:09Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ]
+}
