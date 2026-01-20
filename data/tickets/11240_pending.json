@@ -1,0 +1,25 @@
+{
+  "id": 11240,
+  "subject": "Order expected delivery time",
+  "description_text": "\r\n\r\nhello i placed an order under the email grovespatrick00@gmail.com for some pedals and a shifter. the tracking i was provided isnt very user friendly and i cant find a expected delivery date. could you provide that for me please? thank you. \r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-19T05:26:30Z",
+  "updated_at": "2026-01-19T07:05:32Z",
+  "requester_id": 158009401652,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017383274,
+      "body_text": "Hi Patrick Groves,  It is found that your order will be shipped in two packages: 1. The gear shift lever was shipped on the 14th and is expected to arrive around the 23rd.  You can track your shipping information via the following link:  https://t.17track.net/en#nums=SF6047241308263 2. Pedals  Due to an upcoming product upgrade, this item has been out of stock for two weeks. We will ship the latest version to you as soon as possible after the upgrade is complete, enhancing your experience. We sincerely apologize for the delay and any inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-19T07:05:32Z",
+      "updated_at": "2026-01-19T07:05:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

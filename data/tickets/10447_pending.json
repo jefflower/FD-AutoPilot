@@ -1,0 +1,125 @@
+{
+  "id": 10447,
+  "subject": "SIMSONN Pro X pedals detected in Simsonn Manager but not in simulation games",
+  "description_text": "Hello,\r\n\r\nI am contacting you regarding an issue with my *SIMSONN Pro X pedal set*.\r\n\r\nThe pedals are correctly detected by *Simsonn Manager*, and they work\r\nproperly within the software (all axes respond normally).\r\nHowever, *none of my simulation games detect the pedals* (Assetto Corsa,\r\niRacing, etc.).\r\n\r\nI have tried many solutions without success:\r\n\r\n   -\r\n\r\n   Multiple versions of *FreeJoy*\r\n   -\r\n\r\n   Different USB ports (no USB hub)\r\n   -\r\n\r\n   Reinstalling drivers and software\r\n   -\r\n\r\n   Reading and writing the configuration in FreeJoy\r\n   -\r\n\r\n   Testing with several games and controller profiles\r\n\r\nI have also researched this issue using ChatGPT and various specialised\r\nwebsites and forums, but *no solution has resolved the problem*.\r\n\r\nThis leads me to believe the issue may be related to the pedal firmware or\r\ninternal configuration, since:\r\n\r\n   -\r\n\r\n   Simsonn Manager correctly recognises the pedals\r\n   -\r\n\r\n   Windows detects the device properly\r\n   -\r\n\r\n   Simulation games do not detect any pedal axes\r\n\r\nCould you please assist me by providing:\r\n\r\n   -\r\n\r\n   An *official firmware* or a reset procedure\r\n   -\r\n\r\n   A *compatible FreeJoy configuration*\r\n   -\r\n\r\n   Or any recommended solution to make the pedals detectable in games\r\n\r\nI would be happy to provide screenshots, videos, or any additional\r\ninformation if needed.\r\n\r\nThank you in advance for your support.\r\n\r\nKind regards,\r\n\r\n\r\n\r\nBar Ayrton\r\n\r\n<http://www.avg.com/email-signature?utm_medium=email&utm_source=link&utm_campaign=sig-email&utm_content=webmail>\r\nSans\r\nvirus.www.avg.com\r\n<http://www.avg.com/email-signature?utm_medium=email&utm_source=link&utm_campaign=sig-email&utm_content=webmail>\r\n<#DAB4FAD8-2DD7-40BB-A1B8-4E2AA1F9FDF2>\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-09T22:05:56Z",
+  "updated_at": "2026-01-19T07:53:11Z",
+  "requester_id": 158009009172,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016650513,
+      "body_text": "Hi Ayrton,  Please record a short test video in SIMSONN Manager, upload it to Google Drive, and share the link with proper access permissions. In addition, these games should all be bindable. Please also send a screenshot of the Assetto Corsa control configuration screen so I can check it. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-10T02:42:45Z",
+      "updated_at": "2026-01-10T02:42:45Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016700026,
+      "body_text": "https://drive.google.com/file/d/1ik1zQsFLPxnun78l71TJ7Ss27siybc53/view?usp=drive_link  https://drive.google.com/file/d/1pw4IgnmuHaWRTX7fDsV1XzeDhHVQczrU/view?usp=drive_link     Here are the two videos as requested.\n\nOne on the SIMSONN app.\n\nOne in the LE MANS ULTIMATE game.",
+      "user_id": 158009009172,
+      "created_at": "2026-01-10T10:38:46Z",
+      "updated_at": "2026-01-10T10:38:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158016768128,
+      "body_text": "Hi Ayrton,       Launch the latest version of SIMSONN Manager 2.1.3.    On the “Plus X” control unit, press and hold the “Upgrade” button.    While holding the button, unplug the USB cable from the PC and then plug it back in. The software should detect the device entering “SIMSONN Flasher update mode”.    In the software go to: Settings → Update → Manual Firmware Update.    In the file selector choose: pedals‑firmware → pedals‑plusx.sfu.    Click “Start Update” and wait until the firmware is completely written. During this process do not disconnect the USB or close the application.    Once the update is finished (you’ll get a success prompt or the unit will reboot), unplug and re‑plug the USB then test the pedal device to confirm everything works correctly.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T03:21:57Z",
+      "updated_at": "2026-01-11T03:21:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016803103,
+      "body_text": "Hello,  Thank you for your detailed instructions. I have carefully followed all the steps you provided and tried the procedure multiple times, but unfortunately it still does not work.  The device is not updating as expected, and the issue remains unchanged after several attempts. I must admit that I am disappointed not to have found a solution so far.  Please let me know what additional steps I can try, or if there is another solution you would recommend.",
+      "user_id": 158009009172,
+      "created_at": "2026-01-11T10:48:40Z",
+      "updated_at": "2026-01-11T10:48:40Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158016821311,
+      "body_text": "Hi Ayrton,     I noticed the issue in the video you provided. You will need to calibrate the pedals first. Please follow the steps below:    Click the “Calibrate” button;    When prompted, press each of the three pedals (throttle / brake / clutch) one by one with normal force;    After calibration, click Save.    During the post-calibration test, the blue progress bar should move smoothly from 0% to 100%. Only after a successful calibration with the full signal range will the pedals be correctly recognized by the game. If the signal range is too small, the game will not be able to detect or bind the pedal input properly.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-11T15:08:02Z",
+      "updated_at": "2026-01-11T15:08:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017296806,
+      "body_text": "Hello,  Thank you very much for your help and support. The pedal set is now working properly.  Unfortunately, my handbrake is now not being recognized by the application.  Could you please advise on how to resolve this issue?  Best regards,",
+      "user_id": 158009009172,
+      "created_at": "2026-01-16T21:14:21Z",
+      "updated_at": "2026-01-16T21:14:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158017306256,
+      "body_text": "sorry, not my Handbrake, this my Shifter not recognized by the application.",
+      "user_id": 158009009172,
+      "created_at": "2026-01-17T00:05:19Z",
+      "updated_at": "2026-01-17T00:05:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158017312893,
+      "body_text": "Hi Ayrton,  Could you please take a few photos of your shifter？I’d like to check whether the configuration profile may have been overwritten, which could cause detection or gear-mapping issues. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-17T05:06:27Z",
+      "updated_at": "2026-01-17T05:06:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017319561,
+      "body_text": "",
+      "user_id": 158009009172,
+      "created_at": "2026-01-17T08:50:41Z",
+      "updated_at": "2026-01-17T08:50:41Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158017334774,
+      "body_text": "After several hours, I managed to find the correct driver and the right configuration to get the shifter recognised. However, 7th gear and reverse are inverted.",
+      "user_id": 158009009172,
+      "created_at": "2026-01-17T14:27:55Z",
+      "updated_at": "2026-01-17T14:27:55Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158017385589,
+      "body_text": "Hi Ayrton,   Please use the latest SIMSONN Manager 2.1.3, select 7R mode, and perform a full recalibration of all gears. During calibration, shift through the gears in the following order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → R. Once calibration is completed successfully, the device will work properly and switch modes normally.      https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2026-01-19T07:53:10Z",
+      "updated_at": "2026-01-19T07:53:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

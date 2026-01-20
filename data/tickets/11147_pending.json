@@ -1,0 +1,25 @@
+{
+  "id": 11147,
+  "subject": "simsonn brake pedal failure",
+  "description_text": "I connected it as soon as the product arrived, but it's more than 5kg, so it's adding more weight\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-17T16:06:53Z",
+  "updated_at": "2026-01-19T06:00:39Z",
+  "requester_id": 158009347432,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017378827,
+      "body_text": "Hi 김세원,    Please open SIMSONN Manager v2.1.3 and follow the steps below to zero and calibrate the pedals:    Click Offset, and follow the instructions in the pop-up dialog to zero the pedal signal;    Click Calibrate, then press each pedal with normal force;    Click Save;    After calibration, test the pedals again — the blue progress bar should move smoothly from 0% to 100%. Only then is the calibration successful.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-19T06:00:39Z",
+      "updated_at": "2026-01-19T06:00:39Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

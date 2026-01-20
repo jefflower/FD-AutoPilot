@@ -5,7 +5,7 @@
   "status": 3,
   "priority": 1,
   "created_at": "2026-01-12T07:22:11Z",
-  "updated_at": "2026-01-15T06:01:31Z",
+  "updated_at": "2026-01-19T08:16:16Z",
   "requester_id": 158009030018,
   "responder_id": null,
   "cc_emails": [],
@@ -19,6 +19,27 @@
       "incoming": false,
       "private": false,
       "source": 0
+    },
+    {
+      "id": 158017383291,
+      "body_text": "Hi,\r\nThanks.\r\nI already received the handbrake. Any news when the pedals and haptics will\r\nbe shipped.\r\n\r\nBest\r\nDimitar\r\n\r\nOn Thu, Jan 15, 2026 at 8:01 AM service@simsonn.com ",
+      "user_id": 158009030018,
+      "created_at": "2026-01-19T07:06:16Z",
+      "updated_at": "2026-01-19T07:06:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017391335,
+      "body_text": "Hi Dimitar Nenov,  ​It has been found that your order has been shipped in two packages. You have already received the handbrake. As for the pedal and haptic device in the other package, due to the impact of heavy snow in Europe on the goods we sent to the German warehouse, road congestion and delivery delays have occurred. It is expected to be shipped around the 22nd. We are sorry for the inconvenience caused to you. If you have any questions, we will give priority to answering them for you.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-19T08:16:16Z",
+      "updated_at": "2026-01-19T08:16:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
     }
-  ]
+  ],
+  "available_langs": []
 }

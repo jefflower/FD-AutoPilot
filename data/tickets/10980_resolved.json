@@ -1,0 +1,45 @@
+{
+  "id": 10980,
+  "subject": "clutch pedal not working",
+  "description_text": "Good Morning,\r\n\r\ni recently purchased simson pro x pedals and the clutch pedal is not working out of the box, the pedals are all plugged in correctly, my software is fully up to date, and when i plug the throttle pedal into the clutch pedal port it functions correctly so there is no issue with the control box, please assist.\r\n\r\nThank you.\r\n\r\n\r\n",
+  "status": 4,
+  "priority": 1,
+  "created_at": "2026-01-15T11:32:34Z",
+  "updated_at": "2026-01-19T08:31:25Z",
+  "requester_id": 158009120227,
+  "responder_id": 158007774664,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017235505,
+      "body_text": "Hi Luke Cozier,    If you plug the clutch into the throttle port and the clutch still shows no signal on the throttle channel, please try the steps below first:    Plug all three pedals back into the correct ports;    Unplug and replug the USB once;    Open SIMSONN Manager and click Offset, then follow the steps in the pop-up (this shifts the white/raw signal to the 0% position);    Recalibrate the pedals and press each pedal in sequence to complete calibration. After successful calibration, the blue signal should move smoothly from 0% to 100%.    If the clutch still doesn’t work after these steps, it may be that the clutch pressure sensor or the RJ11 connector/cable was damaged during shipping. Please provide your order number and the recipient name, phone number, and shipping address. We will send you a replacement clutch sensor spare part for you to swap in. Thank you for your effort and cooperation!",
+      "user_id": 158000445778,
+      "created_at": "2026-01-16T01:59:40Z",
+      "updated_at": "2026-01-16T01:59:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017259181,
+      "body_text": "Good Morning,\r\n\r\nokay i followed those steps and still no response from the clutch pedal.\r\nmy order number is 3063838450854771, Name: Friends of Motorsport Ltd,\r\nAddress: Hopewell plantation, Bridgetown, ST thomas, BB22080\r\nNumber: +1(246)282-9010\r\n________________________________\r\n",
+      "user_id": 158009120227,
+      "created_at": "2026-01-16T11:39:20Z",
+      "updated_at": "2026-01-16T11:39:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017392673,
+      "body_text": "Hi Luke Cozier,       ​We're sorry, there's no suitable logistics company at the moment to resend your order. You can purchase from the link below and note the product you need. We will refund you after you receive the goods. You can purchase after 24 hours. https://www.aliexpress.com/item/1005010400334373.html",
+      "user_id": 158007774664,
+      "created_at": "2026-01-19T08:31:15Z",
+      "updated_at": "2026-01-19T08:31:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

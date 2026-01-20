@@ -1,0 +1,35 @@
+{
+  "id": 10678,
+  "subject": "查询订单状态",
+  "description_text": "您好，我想查询我的 Plus X 脚踏和两件装 VAM Pros 的订单状态。我通过亚马逊订购的，预计送达日期是 1 月 15 日至 20 日，但根据我的追踪信息，SF-Express 已经收到了订单信息，但尚未发货。所以我想确认一下这个送达日期是否准确，或者我应该有不同的预期。\n\n我的追踪号码是：\nSF6047221878010\n\n感谢您的帮助。",
+  "status": 4,
+  "priority": 3,
+  "created_at": "2026-01-12T14:39:00Z",
+  "updated_at": "2026-01-19T05:44:06Z",
+  "requester_id": 158009033917,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017364716,
+      "body_text": "您好，我今天只收到了订购的 VAM Pros，但还没有收到 Plus X 脚踏板。它们似乎是分开发货的，但我没有第二个追踪号码。我想知道在哪里可以找到它，或者是不是出了什么问题。谢谢。",
+      "user_id": 158009033917,
+      "created_at": "2026-01-18T17:57:10Z",
+      "updated_at": "2026-01-18T17:57:10Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158017378522,
+      "body_text": "您好，Noah Cabral，这是您踏板的追踪号码：887920054401（从美国仓库发货，承运商是FedEx，您可以通过 https://www.fedex.com/fedextrack 进行追踪）。我们的美国仓库将在周一上午安排承运商取件。取件后，追踪信息将进行更新。",
+      "user_id": 158007774607,
+      "created_at": "2026-01-19T05:43:51Z",
+      "updated_at": "2026-01-19T05:43:51Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

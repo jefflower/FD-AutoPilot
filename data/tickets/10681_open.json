@@ -5,9 +5,9 @@
   "status": 2,
   "priority": 4,
   "created_at": "2026-01-12T14:54:24Z",
-  "updated_at": "2026-01-19T01:54:02Z",
+  "updated_at": "2026-01-19T12:28:10Z",
   "requester_id": 158009034113,
-  "responder_id": 158000445778,
+  "responder_id": 158007774664,
   "cc_emails": [],
   "conversations": [
     {
@@ -26,6 +26,26 @@
       "user_id": 158009034113,
       "created_at": "2026-01-13T18:54:53Z",
       "updated_at": "2026-01-13T18:54:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017385539,
+      "body_text": "Hi Harry,  Sure, we will send you a replacement control board. Please provide your order number, contact name, phone number, and full shipping address, and we will arrange shipment as soon as possible after confirmation. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-19T07:51:48Z",
+      "updated_at": "2026-01-19T07:51:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017408649,
+      "body_text": "Hi there\r\nmy order number was\r\nOrder ID: 3064613794070315\r\nHarry Cuthbert\r\nWhite Lodge Clapham Hill\r\nWhitstable\r\nKent\r\nCT53DJ\r\nUnited Kingdom\r\nphone : +447926096508\r\nThanks :)\r\n\r\nOn Mon, 19 Jan 2026 at 07:51, service@simsonn.com ",
+      "user_id": 158009034113,
+      "created_at": "2026-01-19T11:56:32Z",
+      "updated_at": "2026-01-19T11:56:32Z",
       "incoming": true,
       "private": false,
       "source": 0

@@ -5,9 +5,21 @@
   "status": 3,
   "priority": 1,
   "created_at": "2026-01-14T03:33:09Z",
-  "updated_at": "2026-01-14T03:57:30Z",
+  "updated_at": "2026-01-19T10:00:28Z",
   "requester_id": 158000958451,
   "responder_id": null,
   "cc_emails": [],
-  "conversations": []
+  "conversations": [
+    {
+      "id": 158017396095,
+      "body_text": "尊敬的UPS客户 ：\n\n\n您提供的信息我们给到目的国了，等待核实处理，建议您继续关注UPS官网。\n\n\n\n\n\n\n\nCana Cheng\nUPS - 中国\n客户服务中心\n\n\n\n自3月1日起，寄送非文件货物至或途径欧盟、瑞士和挪威国家的发件人都需要在商业发票上列出每件商品的6位数HS编码，以及欧盟收件人的EORI编号。\n\n您可以通过访问“帮助中心”获得快速便捷的信息。\n\n您可以通过下载APP：UPS Mobile查看更多货物信息。\n\n\n\n\n--------------- Original Message ---------------\n",
+      "user_id": 158000958451,
+      "created_at": "2026-01-19T09:03:06Z",
+      "updated_at": "2026-01-19T09:03:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
 }

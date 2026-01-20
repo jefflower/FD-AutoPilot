@@ -1,0 +1,45 @@
+{
+  "id": 10994,
+  "subject": "Problème pédalier Plus X",
+  "description_text": "[image: Fichier vidéo QuickTime]\r\nIMG_9209.mov\r\n<https://drive.google.com/file/d/1tM_j7iTZV75F69x71WVav-ZdtWL9_cxR/view?usp=drivesdk>\r\n[image: Fichier vidéo QuickTime]\r\nIMG_9208.mov\r\n<https://drive.google.com/file/d/1iwYrRiNlQ0W8rAzIUE41gYSfFKQdq3kS/view?usp=drivesdk>\r\nBonjour,\r\n\r\nJe vous contacte concernant un problème rencontré avec mon pédalier\r\ncommandé le 28 novembre.\r\n\r\nCela fait donc à peine un mois que je l’utilise, et j’ai récemment constaté\r\nun dysfonctionnement. En effet, le vérin hydraulique de la pédale\r\nd’accélérateur présente une fuite, comme vous pouvez le voir dans la vidéo\r\njointe.\r\n\r\nÉtant donné le faible temps d’utilisation depuis la réception du produit,\r\nje souhaitais vous signaler ce problème et savoir quelles solutions peuvent\r\nêtre envisagées (réparation, remplacement ou prise en charge sous garantie).\r\n\r\nJe reste bien entendu disponible pour toute information complémentaire.\r\n\r\nCordialement,\r\nIllan\r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-15T14:28:39Z",
+  "updated_at": "2026-01-19T12:02:33Z",
+  "requester_id": 158009124353,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017234943,
+      "body_text": "Hi grosso illan,  We will send you a new one-way hydraulic throttle rod as a replacement. Also, please note that our unit is a pure hydraulic damper, designed to stabilize the travel and absorb vibration/shock. It is not a traditional gas spring, so it will not auto-return by itself—this is normal behavior. Could you please provide your order number and the recipient name, phone number, and shipping address so we can arrange the replacement shipment? ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-16T01:36:37Z",
+      "updated_at": "2026-01-16T01:36:37Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017247171,
+      "body_text": "Bonjour,\r\n\r\nMerci pour votre retour rapide et pour la prise en charge du remplacement\r\nde la pièce.\r\n\r\nJ’ai bien compris le fonctionnement de l’amortisseur hydraulique ainsi que\r\nle fait qu’il ne s’agisse pas d’un ressort à gaz avec retour automatique.\r\nMerci pour cette précision.\r\n\r\nVoici les informations demandées :\r\n\r\nNuméro de commande : #SSN3999\r\nNom du destinataire : Illan GROSSO\r\nNuméro de téléphone : 0783668895\r\nAdresse de livraison : 13 rue des clozeaux, saint germain les Arpajon, 91180\r\n\r\nN’hésitez pas à me contacter si vous avez besoin d’informations\r\nsupplémentaires.\r\n\r\nCordialement,\r\nIllan\r\n\r\nLe ven. 16 janv. 2026 à 02:36, service@simsonn.com ",
+      "user_id": 158009124353,
+      "created_at": "2026-01-16T08:04:57Z",
+      "updated_at": "2026-01-16T08:04:57Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017408820,
+      "body_text": "Hi grosso illan,    This is your logistics tracking link.  https://t.17track.net/en#nums=SF6047252836777",
+      "user_id": 158001343601,
+      "created_at": "2026-01-19T12:02:33Z",
+      "updated_at": "2026-01-19T12:02:33Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

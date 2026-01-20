@@ -1,0 +1,25 @@
+{
+  "id": 10115,
+  "subject": "HS Pro 换挡器",
+  "description_text": "您好，不幸的是，我今天收到HS Pro换挡器后，下载了最新版本的SIMSONN Manager，但设备屏幕中的“换挡”选项卡没有出现。我住在英国，我不确定你们是否发布了新版本的软件，但因此我只能在序列模式下使用我的换挡器。请解决这个问题，因为我有点沮丧了… 谢谢。",
+  "status": 5,
+  "priority": 4,
+  "created_at": "2026-01-06T17:09:12Z",
+  "updated_at": "2026-01-06T23:09:28Z",
+  "requester_id": 158008955327,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016004196,
+      "body_text": "你好 dckwods，我们今天将发布一个新版本软件，它将正式添加对HS Pro校准页面的支持。请更新软件并尝试一下。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-06T22:27:27Z",
+      "updated_at": "2026-01-06T22:27:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

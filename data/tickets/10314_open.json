@@ -1,0 +1,125 @@
+{
+  "id": 10314,
+  "subject": "Order #SSN5316",
+  "description_text": "Bonjour,\r\n\r\nJe me permets de vous contacter car j'ai effectué une commande le 26\r\ndécembre chez vous, le colis est toujours en livraison à ce jour. Après\r\ncontact avec UPS, je n'arrive pas à avoir plus d'informations. Est-ce\r\npossible d'avoir plus d'informations ?.\r\n\r\nBonne journée\r\n\r\n",
+  "status": 2,
+  "priority": 4,
+  "created_at": "2026-01-08T14:23:08Z",
+  "updated_at": "2026-01-19T06:28:20Z",
+  "requester_id": 158008982578,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016454448,
+      "body_text": "Hi Dylan,  I found an exception alert from UPS and need your correct phone number to proceed with the shipment. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-09T01:33:14Z",
+      "updated_at": "2026-01-09T01:33:14Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016481437,
+      "body_text": "Bonjour, mon numéro de téléphone 07 81 51 85 69\r\n\r\nLe ven. 9 janv. 2026 à 02:33, service@simsonn.com ",
+      "user_id": 158008982578,
+      "created_at": "2026-01-09T05:31:04Z",
+      "updated_at": "2026-01-09T05:31:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016627864,
+      "body_text": "Avez-vous plus d’informations ?\r\n\r\nLe ven. 9 janv. 2026 à 06:30, Dylan <dilan17300@gmail.com> a écrit :\r\n\r\n> Bonjour, mon numéro de téléphone 07 81 51 85 69\r\n>\r\n> Le ven. 9 janv. 2026 à 02:33, service@simsonn.com ",
+      "user_id": 158008982578,
+      "created_at": "2026-01-09T22:26:03Z",
+      "updated_at": "2026-01-09T22:26:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016649220,
+      "body_text": "Hi Dylan,  I’ve already replied to UPS. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-10T02:29:15Z",
+      "updated_at": "2026-01-10T02:29:15Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016855838,
+      "body_text": "Bonjour\r\nUPS me demande la facture commerciale en format pdf svp ?\r\nBonne journée\r\n\r\nLe sam. 10 janv. 2026 à 03:29, service@simsonn.com ",
+      "user_id": 158008982578,
+      "created_at": "2026-01-12T11:16:27Z",
+      "updated_at": "2026-01-12T11:16:27Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016879432,
+      "body_text": "Voici le mail de ups\r\n\r\nLe lun. 12 janv. 2026 à 12:16, Dylan <dilan17300@gmail.com> a écrit :\r\n\r\n> Bonjour\r\n> UPS me demande la facture commerciale en format pdf svp ?\r\n> Bonne journée\r\n>\r\n> Le sam. 10 janv. 2026 à 03:29, service@simsonn.com ",
+      "user_id": 158008982578,
+      "created_at": "2026-01-12T16:34:46Z",
+      "updated_at": "2026-01-12T16:34:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016925595,
+      "body_text": "Hi Dylan,    Here is your invoice. If any customs duties are incurred, please send us the invoice after completing payment, and we will reimburse you. All the best!",
+      "user_id": 158001343601,
+      "created_at": "2026-01-13T02:48:52Z",
+      "updated_at": "2026-01-13T02:48:52Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017192528,
+      "body_text": "Bonjour,\r\nmerci pour la facture. tout a été transmis à la douane et le colis est en\r\nattente de validation de la douane...Frustrant de ne pas pouvoir profiter\r\nde ce joli matériel... j'espère que le problème va être résolu au plus\r\nvite.\r\nBonne journée\r\n\r\nLe mar. 13 janv. 2026 à 03:49, service@simsonn.com ",
+      "user_id": 158008982578,
+      "created_at": "2026-01-15T14:10:22Z",
+      "updated_at": "2026-01-15T14:10:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017237135,
+      "body_text": "Hi Dylan,    We hope everything goes smoothly. Please send us the tax payment invoice after completing customs clearance, and we will reimburse you for a portion of the fees.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-16T03:04:59Z",
+      "updated_at": "2026-01-16T03:04:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017378688,
+      "body_text": "Bonjour,\r\nVoici les preuves de paiement pour la taxe de la douane. Si besoin d’avoir\r\nd’autre informations hésitez pas.\r\nJ’ai oublié d’enregistrer le reçu j’espère que ça ne sera pas un problème\r\npour vous\r\nBonne journée\r\n\r\nLe ven. 16 janv. 2026 à 04:05, service@simsonn.com ",
+      "user_id": 158008982578,
+      "created_at": "2026-01-19T05:53:25Z",
+      "updated_at": "2026-01-19T05:53:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017378703,
+      "body_text": "Le lun. 19 janv. 2026 à 06:52, Dylan <dilan17300@gmail.com> a écrit :\r\n\r\n> Bonjour,\r\n> Voici les preuves de paiement pour la taxe de la douane. Si besoin d’avoir\r\n> d’autre informations hésitez pas.\r\n> J’ai oublié d’enregistrer le reçu j’espère que ça ne sera pas un problème\r\n> pour vous\r\n> Bonne journée\r\n>\r\n> Le ven. 16 janv. 2026 à 04:05, service@simsonn.com ",
+      "user_id": 158008982578,
+      "created_at": "2026-01-19T05:54:04Z",
+      "updated_at": "2026-01-19T05:54:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

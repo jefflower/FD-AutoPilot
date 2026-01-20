@@ -5,7 +5,7 @@
   "status": 2,
   "priority": 4,
   "created_at": "2026-01-16T13:31:40Z",
-  "updated_at": "2026-01-17T07:11:40Z",
+  "updated_at": "2026-01-19T12:28:26Z",
   "requester_id": 158009299808,
   "responder_id": 158000445778,
   "cc_emails": [],
@@ -29,6 +29,27 @@
       "incoming": true,
       "private": false,
       "source": 2
+    },
+    {
+      "id": 158017380791,
+      "body_text": "Hi gary poole,  Yes — if the haptic motor 24V power supply is still connected, it’s normal for the control box LED to stay on. If you want it to turn off completely, you need to unplug/switch off the separate 24V power adapter from the wall outlet. Turning off the PC alone will not fully cut the power. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-19T06:12:41Z",
+      "updated_at": "2026-01-19T06:12:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017410483,
+      "body_text": "  \r\n  \r\n  \r\nAh thats not a good design plan    why would you leave power permanently on when pluged in to 24v power ? Energy is a fortune in the uk surely it carnt be that had to put a least a switch on the box to turn of power for that input kind regards gary its a shame as the pedles are excellent apart from that one design floor kind regards gary\r\n  \r\n\r\n  \r\n\r\n  \r\n\r\n  \r\n  \r\n  \r\n  \r\n  \r\n>   \r\n> ",
+      "user_id": 158009299808,
+      "created_at": "2026-01-19T12:17:54Z",
+      "updated_at": "2026-01-19T12:17:54Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
     }
-  ]
+  ],
+  "available_langs": []
 }

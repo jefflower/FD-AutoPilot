@@ -1,0 +1,65 @@
+{
+  "id": 11086,
+  "subject": "France",
+  "description_text": "Bonjour,\r\n\r\nJ'essaie de commander votre pédalier PLUS X P3-H3 chez Amazon mais ils semblent bloquer la commande.\r\nJe ne peux que passer par Amazon car ce sont des chèques  cadeaux que je dois utiliser.\r\n\r\n\r\n\r\n",
+  "status": 2,
+  "priority": 1,
+  "created_at": "2026-01-16T14:29:04Z",
+  "updated_at": "2026-01-19T06:39:38Z",
+  "requester_id": 158009300525,
+  "responder_id": 158007774607,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017318670,
+      "body_text": "Hi Aureltouch orl,  Vous pouvez essayer d'acheter d'abord le P2-H2, puis d'acheter l'embrayage séparément.",
+      "user_id": 158007774607,
+      "created_at": "2026-01-17T07:38:27Z",
+      "updated_at": "2026-01-17T07:38:27Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017318697,
+      "body_text": "Je ne trouve pas l'embrayage sur Amazon\r\n\r\n________________________________\r\n",
+      "user_id": 158009300525,
+      "created_at": "2026-01-17T07:40:49Z",
+      "updated_at": "2026-01-17T07:40:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017349803,
+      "body_text": "J'ai suivi vos recommandations, j'ai commandé le P2H2 et l'embrayage séparément mais la baseplate est devenue trop chère, car les 3 pédales séparées sont plus chères que l'ensemble avec la baseplate noire.\r\n\r\n\r\n________________________________\r\n",
+      "user_id": 158009300525,
+      "created_at": "2026-01-18T08:42:12Z",
+      "updated_at": "2026-01-18T08:42:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017378560,
+      "body_text": "Hi Aureltouch orl,  Après avoir passé votre commande, veuillez nous communiquer le numéro de commande afin que nous puissions vous rembourser la différence de prix. Il semblerait qu'en raison de problèmes fiscaux, Amazon France n'autorise pas l'achat de produits dont le prix dépasse 150 euros.",
+      "user_id": 158007774607,
+      "created_at": "2026-01-19T05:46:02Z",
+      "updated_at": "2026-01-19T05:46:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017382656,
+      "body_text": "Merci pour votre retour, c'est très appréciable un bon service client tel que le votre.\r\n\r\nP2-H2 + pédale d'embrayage 238€ séparément, au lieu de 193€ vendus ensemble. J'avoue que je préférerais avoir la baseplate plutôt qu'un remboursement. ?\r\n\r\n405-5805425-5597143\r\n\r\n405-0366719-2198731\r\n\r\nCordialement, Perraud Aurélien\r\n\r\n________________________________\r\n",
+      "user_id": 158009300525,
+      "created_at": "2026-01-19T06:39:38Z",
+      "updated_at": "2026-01-19T06:39:38Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

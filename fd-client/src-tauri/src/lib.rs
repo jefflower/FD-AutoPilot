@@ -9,7 +9,7 @@ use ai::GeminiClient;
 use api::FreshdeskClient;
 use storage::Storage;
 use settings::Settings;
-use tauri::{AppHandle, Emitter};
+use tauri::{AppHandle, Emitter, Manager, WebviewWindowBuilder, WebviewUrl};
 use tauri_plugin_dialog::DialogExt;
 use std::sync::mpsc;
 
@@ -233,6 +233,157 @@ async fn export_to_csv_cmd(
     Ok(())
 }
 
+#[tauri::command]
+async fn open_notebook_window(app: AppHandle, notebook_id: String) -> Result<(), String> {
+    println!("[Rust] open_notebook_window called with notebook_id: {}", notebook_id);
+    let window_label = "notebook_shadow";
+    
+    // 如果窗口已存在，只需根据 notebook_id 决定是否重新加载
+    if let Some(window) = app.get_webview_window(window_label) {
+        println!("[Rust] Shadow window already exists, checking URL...");
+        let current_url = window.url().map_err(|e| e.to_string())?;
+        if !current_url.as_str().contains(&notebook_id) {
+            println!("[Rust] URL mismatch, navigating to new notebook...");
+            let target_url = format!("https://notebooklm.google.com/notebook/{}", notebook_id);
+            window.navigate(target_url.parse().unwrap()).map_err(|e| e.to_string())?;
+        } else {
+            println!("[Rust] URL already matches, reusing existing window");
+        }
+        return Ok(());
+    }
+
+    // 创建新窗口（默认隐藏）
+    let target_url = format!("https://notebooklm.google.com/notebook/{}", notebook_id);
+    let builder = WebviewWindowBuilder::new(&app, window_label, WebviewUrl::External(target_url.parse().unwrap()))
+        .title("NotebookLM Shadow")
+        .inner_size(1280.0, 1000.0) // 强制桌面尺寸
+        .visible(false) // 影子窗口默认隐藏
+        .initialization_script(r#"
+            (function() {
+                console.log('Shadow initialization script running...');
+                window.__TAURI_SHADOW__ = true;
+                
+                // 确保 __TAURI__ API 可用
+                // 这会等待 Tauri 内部初始化完成
+                function waitForTauri(callback) {
+                    if (window.__TAURI_INTERNALS__) {
+                        window.__TAURI__ = {
+                            core: {
+                                invoke: function(cmd, args) {
+                                    return window.__TAURI_INTERNALS__.invoke(cmd, args);
+                                }
+                            }
+                        };
+                        console.log('Shadow IPC bridge ready');
+                        callback();
+                    } else {
+                        setTimeout(() => waitForTauri(callback), 100);
+                    }
+                }
+                
+                waitForTauri(function() {
+                    console.log('Shadow state fully initialized');
+                });
+            })();
+        "#);
+
+    let _window = builder.build().map_err(|e| {
+        println!("[Rust] Failed to build shadow window: {}", e);
+        e.to_string()
+    })?;
+    
+    println!("[Rust] Shadow window created successfully");
+    Ok(())
+}
+
+#[tauri::command]
+async fn forward_shadow_event(app: AppHandle, event: String, payload: String) -> Result<(), String> {
+    println!("[Rust] forward_shadow_event: event={}, payload_len={}", event, payload.len());
+    app.emit(&event, payload).map_err(|e| e.to_string())?;
+    Ok(())
+}
+
+#[tauri::command]
+async fn execute_notebook_js(app: AppHandle, script: String) -> Result<(), String> {
+    println!("[Rust] execute_notebook_js called, script_len={}", script.len());
+    if let Some(window) = app.get_webview_window("notebook_shadow") {
+        println!("[Rust] Found shadow window, executing script...");
+        window.eval(&script).map_err(|e| {
+            println!("[Rust] Script eval failed: {}", e);
+            e.to_string()
+        })?;
+        println!("[Rust] Script executed successfully");
+        Ok(())
+    } else {
+        println!("[Rust] ERROR: Shadow window not found!");
+        Err("Shadow window not found".to_string())
+    }
+}
+
+#[tauri::command]
+async fn get_shadow_result(app: AppHandle) -> Result<String, String> {
+    println!("[Rust] get_shadow_result called");
+    if let Some(window) = app.get_webview_window("notebook_shadow") {
+        // 注入脚本：提取内容并通过 invoke 发送回 Rust
+        let extract_script = r#"
+            (function() {
+                try {
+                    // AI 回复在 .to-user-container .message-text-content 中
+                    const responses = document.querySelectorAll('.to-user-container .message-text-content');
+                    const lastResponse = responses[responses.length - 1];
+                    const text = lastResponse ? (lastResponse.innerText || lastResponse.textContent || "").trim() : "";
+                    
+                    // 检测是否完成：存在复制按钮说明生成完毕
+                    const isFinished = !!document.querySelector('.chat-message-pair:last-child .xap-copy-to-clipboard');
+                    
+                    const result = JSON.stringify({ text: text, finished: isFinished });
+                    console.log('[Shadow] Extraction done, length:', text.length, 'finished:', isFinished);
+                    
+                    // 通过 invoke 发送回 Rust
+                    if (window.__TAURI__ && window.__TAURI__.core && window.__TAURI__.core.invoke) {
+                        window.__TAURI__.core.invoke('forward_shadow_event', { 
+                            event: 'shadow-result', 
+                            payload: result 
+                        }).then(() => {
+                            console.log('[Shadow] Result sent via invoke');
+                        }).catch(e => {
+                            console.error('[Shadow] invoke error:', e);
+                        });
+                    } else {
+                        console.error('[Shadow] __TAURI__.core.invoke not available');
+                    }
+                } catch (e) {
+                    console.error('[Shadow] Extraction error:', e);
+                }
+            })();
+        "#;
+        
+        window.eval(extract_script).map_err(|e| e.to_string())?;
+        
+        // 返回占位符，实际结果通过事件传回
+        Ok("__PENDING__".to_string())
+    } else {
+        Err("Shadow window not found".to_string())
+    }
+}
+
+#[tauri::command]
+async fn toggle_notebook_window(app: AppHandle, visible: bool) -> Result<(), String> {
+    if let Some(window) = app.get_webview_window("notebook_shadow") {
+        if visible {
+            window.show().map_err(|e| e.to_string())?;
+            window.set_focus().map_err(|e| e.to_string())?;
+        } else {
+            window.hide().map_err(|e| e.to_string())?;
+        }
+        Ok(())
+    } else {
+        Err("Shadow window not found".to_string())
+    }
+}
+
+// 保持现有的其他函数...
+
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
@@ -247,7 +398,12 @@ pub fn run() {
             sync_statuses_cmd,
             translate_ticket_cmd,
             load_ticket_cmd,
-            export_to_csv_cmd
+            export_to_csv_cmd,
+            open_notebook_window,
+            execute_notebook_js,
+            get_shadow_result,
+            forward_shadow_event,
+            toggle_notebook_window
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

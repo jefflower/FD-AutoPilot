@@ -5,9 +5,9 @@
   "status": 2,
   "priority": 4,
   "created_at": "2025-12-03T23:28:21Z",
-  "updated_at": "2026-01-17T21:39:56Z",
+  "updated_at": "2026-01-19T10:50:31Z",
   "requester_id": 158005155421,
-  "responder_id": 158000445778,
+  "responder_id": 158007774607,
   "cc_emails": [],
   "conversations": [
     {
@@ -116,6 +116,26 @@
       "user_id": 158005155421,
       "created_at": "2026-01-17T21:06:25Z",
       "updated_at": "2026-01-17T21:06:25Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017385949,
+      "body_text": "Hi U. Nathan Davis,  Could you please send me a photo or screenshot showing which part is missing? I’ll check your order and shipping records. If it was missed in the shipment, we will arrange a replacement as soon as possible. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-19T08:03:40Z",
+      "updated_at": "2026-01-19T08:03:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017392036,
+      "body_text": "See old emails for photos. This was a closed case where you guys had sent\r\nthe bolts but I never received them.\r\n\r\nU Davis\r\n\r\nOn Mon, Jan 19, 2026, 3:03 AM service@simsonn.com ",
+      "user_id": 158005155421,
+      "created_at": "2026-01-19T08:19:27Z",
+      "updated_at": "2026-01-19T08:19:27Z",
       "incoming": true,
       "private": false,
       "source": 0

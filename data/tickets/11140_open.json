@@ -3,12 +3,53 @@
   "subject": "",
   "description_text": "Hola.me acaban de entregar los pedales pero el amortiguador del acelerador\r\nno funciona correctamente\r\n\r\n",
   "status": 2,
-  "priority": 1,
+  "priority": 3,
   "created_at": "2026-01-17T13:19:15Z",
-  "updated_at": "2026-01-18T13:30:03Z",
+  "updated_at": "2026-01-19T11:56:53Z",
   "requester_id": 158009346400,
-  "responder_id": null,
+  "responder_id": 158000445778,
   "cc_emails": [],
-  "conversations": [],
+  "conversations": [
+    {
+      "id": 158017379176,
+      "body_text": "Hi Naise,     The throttle damping uses a pure hydraulic damper, which is a one-way damping design: you will feel damping when pressing down, and little to no damping on the return (the pedal mainly returns by the spring). Could you please describe the exact issue you’re experiencing? For example: damping too strong/too weak, not smooth, sticking, slow return, unusual noise, or abnormal travel.  To help us diagnose the cause faster, please record a short video and upload it to Google Drive, then send us the link and set the sharing permission to “Anyone with the link can view.”",
+      "user_id": 158000445778,
+      "created_at": "2026-01-19T06:05:43Z",
+      "updated_at": "2026-01-19T06:05:43Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017401259,
+      "body_text": "Ruido anormal .recorrido irregular.\r\nhttps://drive.google.com/file/d/1aQkS3qYoeL0UvV8YcLiEgTaF1xMQtWFo/view?usp=drivesdk\r\n\r\nEl lun, 19 ene 2026, 7:05, service@simsonn.com ",
+      "user_id": 158009346400,
+      "created_at": "2026-01-19T10:14:46Z",
+      "updated_at": "2026-01-19T10:14:46Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017404760,
+      "body_text": "Hi Naise,  When testing manually, please keep the cylinder body facing up and the metal rod facing down. This helps prevent air from entering the hydraulic unit and affecting the test results. If you confirm there is an issue, please let us know and we can send you a replacement one-way hydraulic rod for the throttle. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-19T10:47:53Z",
+      "updated_at": "2026-01-19T10:47:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017404912,
+      "body_text": "Si.hau un problema porque independientemente de la dirección en la que\r\ncoloque el amortiguador tiene un primer recorrido sin fuerza y no se siente\r\nsuave.\r\n\r\nEl lun, 19 ene 2026, 11:48, service@simsonn.com ",
+      "user_id": 158009346400,
+      "created_at": "2026-01-19T10:53:18Z",
+      "updated_at": "2026-01-19T10:53:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
   "available_langs": []
 }

@@ -1,0 +1,25 @@
+{
+  "id": 11143,
+  "subject": "plus X issue",
+  "description_text": "Hello, i’m feomitaly and i have bought your Simsonn plus X pedal set. I have a problem because Simsonn Manager doesn’t recognize pedala. They are “disconnected”. I was using them last week and they were perfect. I bought pedals 1 month ago but I used them just 3-4 Hours. Thank you for the attention Luca -- Inviato da Libero Mail\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2026-01-17T14:15:32Z",
+  "updated_at": "2026-01-19T06:01:21Z",
+  "requester_id": 158009346701,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017378833,
+      "body_text": "Hi luca. re1995@libero. it,    You can use SIMSONN Manager v2.1.3 to manually restore the PlusX firmware. Please follow the steps below:    Open SIMSONN Manager v2.1.3;    Press and hold the upgrade button on the PlusX control box, then plug the USB cable back in (keep holding the button);    Once the software shows it has entered firmware update (Flasher) mode, go to: Settings → Update → Manual Firmware Update → pedals → firmware → pedals-plusx.sfu, and complete the update;    After the update, unplug and replug both the USB cable and the power supply;    In SIMSONN Manager, check the firmware versions: CPU1: 2.0.6 / CPU2: 2.0.4. If they match, the restore was successful;    Finally, click the vibration test button and confirm the haptics/vibration works normally.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-19T06:01:21Z",
+      "updated_at": "2026-01-19T06:01:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

@@ -1,0 +1,45 @@
+{
+  "id": 11255,
+  "subject": "",
+  "description_text": "Hello, we put in an order about 2 weeks ago and paid for the express\r\nshipping, it’s been about two weeks and we have still yet to receive\r\nanything. It’s a little frustrating after paying $30 for 2-3 day shipping\r\nand waiting 2 weeks.\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-19T07:28:00Z",
+  "updated_at": "2026-01-19T08:29:55Z",
+  "requester_id": 158009445834,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017385848,
+      "body_text": "Hi Dalton Zimmerman,  ​Okay, I'm very sorry to have kept you waiting. I need you to provide the order number so that I can check it for you.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-19T08:00:28Z",
+      "updated_at": "2026-01-19T08:00:28Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017391234,
+      "body_text": "It’s okay, the order number is\r\n SSN5621\r\n\r\n",
+      "user_id": 158009445834,
+      "created_at": "2026-01-19T08:16:07Z",
+      "updated_at": "2026-01-19T08:16:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017392477,
+      "body_text": "Hi Dalton Zimmerman,  ​I found that your order will be shipped in three packages, and the details are as follows:      1. Regarding the pedal,Due to an upcoming product upgrade, this item has been out of stock for two weeks. We will ship the latest version to you as soon as possible after the upgrade is complete, enhancing your experience. We sincerely apologize for the delay and any inconvenience caused.     2. Regarding the power supply, I found that one of the packages was delivered on the 16th, and the tracking link is as follows:  https://t.17track.net/en#nums=SF6047224807299     3. Another power supply was shipped on the 17th and is expected to arrive around the 25th.You can track your shipping information via the following link:  https://t.17track.net/en#nums=SF6047224807271     We are very sorry for the inconvenience caused to you. If you have any further questions, we will give priority to answering them for you.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-19T08:29:54Z",
+      "updated_at": "2026-01-19T08:29:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

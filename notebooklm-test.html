@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NotebookLM API 测试工具</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 32px;
+    }
+
+    .section {
+      margin-bottom: 30px;
+      padding: 20px;
+      background: #f7fafc;
+      border-radius: 12px;
+      border-left: 4px solid #667eea;
+    }
+
+    .section h2 {
+      margin-bottom: 15px;
+      color: #2d3748;
+      font-size: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+      color: #4a5568;
+      font-size: 14px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      font-family: 'Monaco', 'Courier New', monospace;
+      font-size: 13px;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    button {
+      padding: 12px 24px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+    }
+
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .btn-secondary {
+      background: #edf2f7;
+      color: #4a5568;
+    }
+
+    .btn-secondary:hover {
+      background: #e2e8f0;
+      box-shadow: none;
+    }
+
+    .response {
+      margin-top: 20px;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      border: 2px solid #e2e8f0;
+      white-space: pre-wrap;
+      font-family: 'Monaco', monospace;
+      font-size: 12px;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+
+    .status {
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .status.success {
+      background: #c6f6d5;
+      color: #22543d;
+    }
+
+    .status.error {
+      background: #fed7d7;
+      color: #742a2a;
+    }
+
+    .status.info {
+      background: #bee3f8;
+      color: #2c5282;
+    }
+
+    .instructions {
+      background: #fff5f5;
+      border-left-color: #f56565;
+      margin-bottom: 20px;
+    }
+
+    .instructions code {
+      background: #ffebee;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 12px;
+    }
+
+    .instructions ol {
+      margin: 10px 0 10px 20px;
+    }
+
+    .instructions li {
+      margin: 8px 0;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>🤖 NotebookLM API 测试工具</h1>
+
+    <!-- 使用说明 -->
+    <div class="section instructions">
+      <h2>📖 使用说明</h2>
+
+      <div
+        style="background: #e6fffa; border: 2px solid #38b2ac; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
+        <h3 style="margin: 0 0 10px 0; color: #234e52;">🚀 推荐方法: 自动提取配置</h3>
+        <ol style="margin: 8px 0 12px 20px; line-height: 1.8;">
+          <li>在浏览器中打开 <a href="https://notebooklm.google.com/notebook/7662c1de-8bba-4d54-b834-e38161f942f4"
+              target="_blank">NotebookLM页面</a> 并登录</li>
+          <li>按 F12 打开开发者工具,切换到 <strong>Console</strong> 标签</li>
+          <li>点击下方按钮复制自动提取脚本</li>
+          <li>粘贴到 Console 中并按 Enter</li>
+          <li>在 NotebookLM 中发送任意消息</li>
+          <li>脚本会自动提取配置并复制到剪贴板!</li>
+        </ol>
+        <button onclick="copyExtractScript()"
+          style="background: linear-gradient(135deg, #38b2ac 0%, #319795 100%); margin: 0;">
+          📋 复制自动提取脚本
+        </button>
+      </div>
+
+      <details style="margin-top: 15px;">
+        <summary style="cursor: pointer; color: #4a5568; font-weight: 600; padding: 8px 0;">
+          📝 手动提取方法 (点击展开)
+        </summary>
+        <ol style="margin: 10px 0 0 20px; line-height: 1.8;">
+          <li>在浏览器中打开 <a href="https://notebooklm.google.com/notebook/7662c1de-8bba-4d54-b834-e38161f942f4"
+              target="_blank">NotebookLM页面</a> 并登录</li>
+          <li>打开浏览器开发者工具(F12),切换到 Network 标签</li>
+          <li>在NotebookLM中发送一条消息</li>
+          <li>在Network中找到包含 <code>stream</code> 或 <code>generate</code> 的 POST 请求</li>
+          <li>复制以下信息并填入下方表单:
+            <ul>
+              <li><strong>Cookie</strong>: Request Headers → Cookie</li>
+              <li><strong>at Token</strong>: Request Payload → at</li>
+              <li><strong>f.sid</strong>: Query String Parameters → f.sid</li>
+            </ul>
+          </li>
+        </ol>
+      </details>
+    </div>
+
+    <!-- 配置区 -->
+    <div class="section">
+      <h2>⚙️ 配置信息</h2>
+
+      <div class="form-group">
+        <label>Cookie:</label>
+        <textarea id="cookie" placeholder="粘贴完整的Cookie字符串" rows="3"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>AT Token:</label>
+        <input type="text" id="atToken" placeholder="粘贴at token值">
+      </div>
+
+      <div class="form-group">
+        <label>F.SID:</label>
+        <input type="text" id="fSid" placeholder="粘贴f.sid值">
+      </div>
+
+      <div class="form-group">
+        <label>Notebook ID:</label>
+        <input type="text" id="notebookId" value="7662c1de-8bba-4d54-b834-e38161f942f4">
+      </div>
+
+      <button onclick="saveConfig()">💾 保存配置</button>
+      <button class="btn-secondary" onclick="loadConfig()">📂 加载配置</button>
+      <button class="btn-secondary" onclick="clearConfig()">🗑️ 清除配置</button>
+    </div>
+
+    <!-- 查询区 -->
+    <div class="section">
+      <h2>💬 发送查询</h2>
+
+      <div class="form-group">
+        <label>你的问题:</label>
+        <textarea id="query" placeholder="输入你想问的问题..." rows="3"></textarea>
+      </div>
+
+      <button onclick="sendQuery(false)">🚀 发送查询(非流式)</button>
+      <button onclick="sendQuery(true)">🌊 发送查询(流式)</button>
+
+      <div id="status"></div>
+      <div id="response" class="response" style="display:none;"></div>
+    </div>
+
+    <!-- 测试说明 -->
+    <div class="section">
+      <h2>🧪 测试建议</h2>
+      <p>建议的测试问题:</p>
+      <ul>
+        <li>"这些文档主要讲什么?"</li>
+        <li>"总结一下主要内容"</li>
+        <li>"有哪些常见的故障排查方法?"</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // 自动提取脚本内容
+    const autoExtractScript = `/**
+ * NotebookLM 配置自动提取工具
+ * 使用方法: 在 NotebookLM 页面的 Console 中运行此脚本,然后发送一条消息
+ */
+(function() {
+  console.log('%c🚀 NotebookLM 配置自动提取工具已启动', 'color: #667eea; font-size: 16px; font-weight: bold;');
+  console.log('%c请在 NotebookLM 中发送一条消息...', 'color: #48bb78; font-size: 14px;');
+  
+  const extractedConfig = {
+    cookie: document.cookie,
+    atToken: null,
+    fSid: null,
+    notebookId: null,
+    apiUrl: null
+  };
+
+  const urlMatch = window.location.pathname.match(/\\/notebook\\/([a-f0-9-]+)/);
+  if (urlMatch) extractedConfig.notebookId = urlMatch[1];
+
+  const originalXHROpen = XMLHttpRequest.prototype.open;
+  const originalXHRSend = XMLHttpRequest.prototype.send;
+  const originalFetch = window.fetch;
+
+  XMLHttpRequest.prototype.open = function(method, url) {
+    this._method = method;
+    this._url = url;
+    return originalXHROpen.apply(this, arguments);
+  };
+
+  XMLHttpRequest.prototype.send = function(data) {
+    const url = this._url;
+    if (this._method === 'POST' && url && (url.includes('stream') || url.includes('generate') || url.includes('orchestration'))) {
+      console.log('%c✅ 捕获到API请求!', 'color: #48bb78; font-weight: bold;');
+      extractedConfig.apiUrl = url;
+      try {
+        const urlObj = new URL(url, window.location.origin);
+        extractedConfig.fSid = urlObj.searchParams.get('f.sid');
+        if (data) {
+          const params = new URLSearchParams(data);
+          extractedConfig.atToken = params.get('at');
+        }
+      } catch (e) {}
+      setTimeout(() => displayConfig(), 500);
+    }
+    return originalXHRSend.apply(this, arguments);
+  };
+
+  window.fetch = async function(...args) {
+    const [resource, config] = args;
+    const url = typeof resource === 'string' ? resource : resource.url;
+    if (config?.method === 'POST' && url && (url.includes('stream') || url.includes('generate') || url.includes('orchestration'))) {
+      console.log('%c✅ 捕获到API请求!', 'color: #48bb78; font-weight: bold;');
+      extractedConfig.apiUrl = url;
+      try {
+        const urlObj = new URL(url, window.location.origin);
+        extractedConfig.fSid = urlObj.searchParams.get('f.sid');
+        if (config?.body) {
+          const params = new URLSearchParams(config.body);
+          extractedConfig.atToken = params.get('at');
+        }
+      } catch (e) {}
+      setTimeout(() => displayConfig(), 500);
+    }
+    return originalFetch.apply(this, args);
+  };
+
+  function displayConfig() {
+    console.clear();
+    console.log('%c═══════════════════════════════════════', 'color: #667eea; font-weight: bold;');
+    console.log('%c🎉 配置信息提取完成!', 'color: #48bb78; font-size: 18px; font-weight: bold;');
+    console.log('%c═══════════════════════════════════════', 'color: #667eea; font-weight: bold;');
+    
+    const configJson = {
+      notebookId: extractedConfig.notebookId,
+      fSid: extractedConfig.fSid,
+      atToken: extractedConfig.atToken,
+      cookie: extractedConfig.cookie
+    };
+    
+    console.log('');
+    console.log('%c📋 配置信息:', 'color: #4299e1; font-size: 14px; font-weight: bold;');
+    console.log(JSON.stringify(configJson, null, 2));
+    console.log('');
+    
+    navigator.clipboard.writeText(JSON.stringify(configJson, null, 2)).then(() => {
+      console.log('%c✅ 配置已复制到剪贴板!', 'color: #48bb78; font-size: 14px; font-weight: bold;');
+      console.log('%c💡 现在可以粘贴到测试工具中使用了', 'color: #4299e1;');
+    });
+    
+    window.NOTEBOOKLM_CONFIG = configJson;
+    console.log('%c💾 配置已保存到: window.NOTEBOOKLM_CONFIG', 'color: #805ad5;');
+  }
+
+  console.log('%c⏳ 等待捕获API请求... 请在NotebookLM中发送一条消息', 'color: #4299e1;');
+})();`;
+
+    // 复制自动提取脚本
+    function copyExtractScript() {
+      navigator.clipboard.writeText(autoExtractScript).then(() => {
+        alert('✅ 自动提取脚本已复制到剪贴板!\\n\\n下一步:\\n1. 打开NotebookLM页面\\n2. 按F12打开开发者工具\\n3. 切换到Console标签\\n4. 粘贴脚本并按Enter\\n5. 在NotebookLM中发送一条消息');
+      }).catch(err => {
+        alert('复制失败: ' + err);
+      });
+    }
+
+    // 保存配置到localStorage
+    function saveConfig() {
+      const config = {
+        cookie: document.getElementById('cookie').value,
+        atToken: document.getElementById('atToken').value,
+        fSid: document.getElementById('fSid').value,
+        notebookId: document.getElementById('notebookId').value
+      };
+
+      localStorage.setItem('notebooklm_test_config', JSON.stringify(config));
+      showStatus('配置已保存到浏览器本地存储', 'success');
+    }
+
+    // 从localStorage加载配置
+    function loadConfig() {
+      const stored = localStorage.getItem('notebooklm_test_config');
+      if (stored) {
+        const config = JSON.parse(stored);
+        document.getElementById('cookie').value = config.cookie || '';
+        document.getElementById('atToken').value = config.atToken || '';
+        document.getElementById('fSid').value = config.fSid || '';
+        document.getElementById('notebookId').value = config.notebookId || '';
+        showStatus('配置已加载', 'success');
+      } else {
+        showStatus('未找到保存的配置', 'info');
+      }
+    }
+
+    // 清除配置
+    function clearConfig() {
+      localStorage.removeItem('notebooklm_test_config');
+      document.getElementById('cookie').value = '';
+      document.getElementById('atToken').value = '';
+      document.getElementById('fSid').value = '';
+      showStatus('配置已清除', 'info');
+    }
+
+    // 显示状态信息
+    function showStatus(message, type = 'info') {
+      const statusDiv = document.getElementById('status');
+      statusDiv.className = 'status ' + type;
+      statusDiv.textContent = message;
+      statusDiv.style.display = 'block';
+    }
+
+    // 显示响应
+    function showResponse(text) {
+      const responseDiv = document.getElementById('response');
+      responseDiv.textContent = text;
+      responseDiv.style.display = 'block';
+    }
+
+    // 生成UUID
+    function generateUUID() {
+      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        const r = Math.random() * 16 | 0;
+        const v = c === 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+      });
+    }
+
+    // 构造请求
+    async function sendQuery(streaming = false) {
+      const cookie = document.getElementById('cookie').value.trim();
+      const atToken = document.getElementById('atToken').value.trim();
+      const fSid = document.getElementById('fSid').value.trim();
+      const notebookId = document.getElementById('notebookId').value.trim();
+      const query = document.getElementById('query').value.trim();
+
+      // 验证
+      if (!cookie || !atToken || !fSid || !notebookId || !query) {
+        showStatus('请填写所有必填字段!', 'error');
+        return;
+      }
+
+      // 构造请求
+      const sessionUuid = generateUUID();
+      const reqId = Math.floor(Math.random() * 900000) + 100000;
+
+      const innerData = [
+        [[]],  // 文档ID数组,空表示使用所有文档
+        query,
+        null,
+        [2, null, [1], [1]],
+        sessionUuid,
+        null, null, null, 1
+      ];
+
+      const fReqData = [null, JSON.stringify([innerData])];
+      const fReq = JSON.stringify(fReqData);
+
+      const url = `https://notebooklm.google.com/_/LabsTailwindUi/data/google.internal.labs.tailwind.orchestration.v1.LabsTailwindOrchestrationService/GenerateFreeFormStreamed?bl=boq_labs-tailwind-frontend_20260115.08_p0&_reqid=${reqId}&rt=c&f.sid=${fSid}`;
+
+      const formData = new URLSearchParams({
+        'f.req': fReq,
+        'at': atToken
+      });
+
+      showStatus('正在发送请求...', 'info');
+      showResponse('');
+
+      try {
+        const response = await fetch(url, {
+          method: 'POST',
+          headers: {
+            'Cookie': cookie,
+            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+            'Referer': `https://notebooklm.google.com/notebook/${notebookId}`,
+            'Origin': 'https://notebooklm.google.com'
+          },
+          body: formData.toString()
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+
+        if (streaming) {
+          showStatus('正在接收流式响应...', 'info');
+          let fullText = '';
+          const reader = response.body.getReader();
+          const decoder = new TextDecoder();
+
+          while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+
+            const chunk = decoder.decode(value, { stream: true });
+            fullText += chunk + '\n---CHUNK---\n';
+            showResponse(fullText);
+          }
+
+          showStatus('✅ 流式响应接收完成', 'success');
+        } else {
+          const text = await response.text();
+          showResponse(text);
+          showStatus('✅ 响应接收完成', 'success');
+        }
+
+      } catch (error) {
+        showStatus('❌ 错误: ' + error.message, 'error');
+        console.error('请求失败:', error);
+      }
+    }
+
+    // 页面加载时尝试加载配置
+    window.addEventListener('load', () => {
+      const stored = localStorage.getItem('notebooklm_test_config');
+      if (stored) {
+        loadConfig();
+      }
+    });
+  </script>
+</body>
+
+</html>

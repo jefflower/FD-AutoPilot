@@ -1,0 +1,25 @@
+{
+  "id": 11185,
+  "subject": "#SSN2625 return money",
+  "description_text": "Hi Can you please return my money and cancel this order? This order created 4 month ago and no news about estimated delivery date. I can't wait this order for the several years. \r\n\r\n",
+  "status": 3,
+  "priority": 4,
+  "created_at": "2026-01-18T07:00:11Z",
+  "updated_at": "2026-01-19T12:13:57Z",
+  "requester_id": 158004741021,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017410284,
+      "body_text": "Hi Иван Ткачев,    We're currently coordinating with the logistics provider to arrange a return shipment and process your refund. We sincerely apologize for the inconvenience caused by the delayed delivery.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-19T12:13:57Z",
+      "updated_at": "2026-01-19T12:13:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

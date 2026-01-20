@@ -5,7 +5,7 @@
   "status": 3,
   "priority": 4,
   "created_at": "2026-01-08T13:14:44Z",
-  "updated_at": "2026-01-14T09:01:15Z",
+  "updated_at": "2026-01-19T10:31:56Z",
   "requester_id": 158008981814,
   "responder_id": null,
   "cc_emails": [],
@@ -59,6 +59,27 @@
       "incoming": false,
       "private": false,
       "source": 0
+    },
+    {
+      "id": 158017398999,
+      "body_text": "Gibt es langsam  Neuigkeiten ??\r\n\r\n\r\nservice@simsonn.com ",
+      "user_id": 158008981814,
+      "created_at": "2026-01-19T09:24:44Z",
+      "updated_at": "2026-01-19T09:24:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017401876,
+      "body_text": "Hi Marco Brock,  ​I learned from the logistics department that this batch of goods is expected to be shipped out one after another around the 22nd. We are deeply sorry for the inconvenience caused to you.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-19T10:31:56Z",
+      "updated_at": "2026-01-19T10:31:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
     }
-  ]
+  ],
+  "available_langs": []
 }

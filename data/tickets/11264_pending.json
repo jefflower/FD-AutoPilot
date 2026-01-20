@@ -1,0 +1,25 @@
+{
+  "id": 11264,
+  "subject": "Order wenth through but no email",
+  "description_text": "Hi can you help me with my order?\r\nI see transaction went through in my account but I did not get any email\r\nnor I see an order in Simsonn website?\r\n\r\nKind regards,\r\nIvan\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-19T09:53:41Z",
+  "updated_at": "2026-01-19T10:19:19Z",
+  "requester_id": 158009489956,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017401402,
+      "body_text": "Hi Ivan Kolić, ​  I found the order you placed, and the order number is #SSN6173 The email you used is ​kolicivan@outlook.com  So the information about your successful order may have been sent to this email address of yours.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-19T10:19:19Z",
+      "updated_at": "2026-01-19T10:19:19Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

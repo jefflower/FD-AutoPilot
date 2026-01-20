@@ -1,0 +1,45 @@
+{
+  "id": 11013,
+  "subject": "Kompatiblität zur Fanatec GT DD PRO",
+  "description_text": "Hallo liebes Simsonn Team\r\n\r\nIch Habe eine Fanatec GT DD Pro Wheel Base spiele Am Pc sind Die  Simsonn Pro X Ultra Sim Racing Pedal\r\nkompatibel?? ich habe von EMI fehler gelesen ?? Lg Jan\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-15T20:43:06Z",
+  "updated_at": "2026-01-19T06:29:47Z",
+  "requester_id": 158009130858,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017311864,
+      "body_text": "Hi Anderas Welzenthal,  We also have a Fanatec CSL DD 8Nm in our test setup, and it works well with our pedals. The wheelbase will not interfere with the pedal signal. We recommend using proper grounded 3-prong outlets for both your PC and power strip, with a reliable household earth/ground connection. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-17T04:02:31Z",
+      "updated_at": "2026-01-17T04:02:31Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017318312,
+      "body_text": "Super vielen dank und wenn ich die Ultra x pedalle kaufe brauche ich dann auch das upgrade kit dazu ??? Oder sind die Ultra x pedal Full equipt??\r\nLg jan\r\n________________________________\r\n",
+      "user_id": 158009130858,
+      "created_at": "2026-01-17T07:08:11Z",
+      "updated_at": "2026-01-17T07:08:11Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017382408,
+      "body_text": "Hi Anderas Welzenthal,  The Ultra does not require an upgrade kit. The upgrade kit is only for the older ProX version. The Ultra is already the latest version, so there’s no need to purchase it. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-19T06:29:46Z",
+      "updated_at": "2026-01-19T06:29:46Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

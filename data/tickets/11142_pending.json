@@ -1,0 +1,65 @@
+{
+  "id": 11142,
+  "subject": "Order #SSN5881",
+  "description_text": "Good morning, I've made this order (#SSN5881) last week and still have no\r\nshipping number or any information about it, I understand that you guys are\r\nhaving a hard time because of many orders and I'm not complaining about the\r\ndelay, just waiting to know if everything is alright with the order or if\r\nthere is any prevision of delivery\r\nRest of good week\r\nDavid Rodrigues\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-17T14:08:31Z",
+  "updated_at": "2026-01-19T10:22:53Z",
+  "requester_id": 158009346626,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017378682,
+      "body_text": "Hi David Rodrigues,  We apologize for the inconvenience. The PLUS X pedals are currently out of stock at our US warehouse. We have urgently arranged an air shipment and expect to ship your order on the 22nd, with delivery estimated around the 25th.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-19T05:52:55Z",
+      "updated_at": "2026-01-19T05:52:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017399689,
+      "body_text": "Of course, no problem, but you said us warehouse and I'm from Portugal\r\n(Europe) it could be a misspell, just confirming, the shifter is in stock\r\nhere?\r\n\r\n",
+      "user_id": 158009346626,
+      "created_at": "2026-01-19T09:30:52Z",
+      "updated_at": "2026-01-19T09:30:52Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017400470,
+      "body_text": "Hi David Rodrigues,  ​Well, your pedals need to be shipped from our warehouse in the United States, and we will ship the gear shift lever together with the pedals.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-19T09:51:36Z",
+      "updated_at": "2026-01-19T09:51:36Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017400694,
+      "body_text": "Ok, thank you so much, and rest of good work\r\n\r\n",
+      "user_id": 158009346626,
+      "created_at": "2026-01-19T09:56:44Z",
+      "updated_at": "2026-01-19T09:56:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017401526,
+      "body_text": "Hi David Rodrigues,  Okay,Thank you for purchasing our product. Should you have any questions in the future, please feel free to contact us. We will address them promptly.Wish you a pleasant day.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-19T10:22:53Z",
+      "updated_at": "2026-01-19T10:22:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

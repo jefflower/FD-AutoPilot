@@ -1,0 +1,75 @@
+{
+  "id": 9180,
+  "subject": "Simsonn VAM Pro Linear Motors no longer vibrating after update",
+  "description_text": "Hi Simsonn support,\r\n\r\nJust setup my Simsonn VAM Pro (2x for Throttle and Break).\r\nTested it and worked.\r\n\r\nUpdated Simsonn manager + Pedal firmware to the latest version and it no\r\nlonger vibrates.\r\n\r\nAny suggestions?\r\n\r\nOrder #SSN3532\r\nSimsonn Manager 2.1.2\r\nPedals: Simsonn PLus X\r\n\r\nScreenshot attached.\r\n\r\n[image: image.png]\r\n\r\nCheers\r\nBen\r\n\r\n",
+  "status": 2,
+  "priority": 2,
+  "created_at": "2025-12-25T23:31:45Z",
+  "updated_at": "2026-01-19T11:19:31Z",
+  "requester_id": 158008705512,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015147578,
+      "body_text": "Hi Ben Ryan,  Launch the latest version of SIMSONN Manager 2.1.2. On the “Plus X” control unit, press and hold the “Upgrade” button. While holding the button, unplug the USB cable from the PC and then plug it back in. The software should detect the device entering “SIMSONN Flasher update mode”. In the software go to: Settings → Update → Manual Firmware Update. In the file selector choose: pedals‑firmware → pedals‑plusx.sfu. Click “Start Update” and wait until the firmware is completely written. During this process do not disconnect the USB or close the application. Once the update is finished (you’ll get a success prompt or the unit will reboot), unplug and re‑plug the USB then test the pedal device to confirm everything works correctly. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T03:36:53Z",
+      "updated_at": "2025-12-28T03:36:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015161084,
+      "body_text": "Hi,\r\n\r\nThanks for getting back to me, I have haptics again.\r\n\r\nNow I'm facing an issue with my break coming on 20% when any vibration\r\noccurs. If I disable the haptics I can drive normally in iRacing.\r\nAs soon as I re-enable haptics, I can no longer drive.\r\n\r\nI have put the ground wire from the pedal control box to the clutch and\r\nalso the break but same problem still occurs.\r\nUsed the U connector to mount the VAM PRO motors to the Plus X Pedals.\r\n\r\nThanks\r\n\r\nOn Sun, 28 Dec 2025 at 14:37, service@simsonn.com ",
+      "user_id": 158008705512,
+      "created_at": "2025-12-28T11:34:33Z",
+      "updated_at": "2025-12-28T11:34:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015166220,
+      "body_text": "你好，本·瑞安  Please use the included nylon screws and nylon washers to install the motor. This is intended to electrically isolate the motor from the mounting bracket and prevent interference caused by the motor. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-28T15:41:49Z",
+      "updated_at": "2025-12-28T15:41:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015172495,
+      "body_text": "All fixed, thanks very much for your help.\r\n\r\nOn Mon, Dec 29, 2025, 2:42 AM service@simsonn.com ",
+      "user_id": 158008705512,
+      "created_at": "2025-12-28T22:54:26Z",
+      "updated_at": "2025-12-28T22:54:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015245801,
+      "body_text": "",
+      "user_id": 158008705512,
+      "created_at": "2025-12-30T10:12:33Z",
+      "updated_at": "2025-12-30T10:12:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 6
+    },
+    {
+      "id": 158017406286,
+      "body_text": "Hi Service,\r\n\r\nI'm still having some slight issues with the VAM PRO.\r\nWhen driving in iRacing, I'm getting 2% break pressure coming on when they\r\nactivate.\r\n\r\nI have isolated the VAM PRO with the nylon screws/washer.\r\nAlso grounded the control box to the clutch pedal.\r\n\r\nAttached is a quick video - https://photos.app.goo.gl/iXE46ZvL5c48ZHNi8\r\n\r\nCheers\r\nBen\r\n\r\n",
+      "user_id": 158008705512,
+      "created_at": "2026-01-19T11:19:30Z",
+      "updated_at": "2026-01-19T11:19:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

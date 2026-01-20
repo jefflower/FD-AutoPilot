@@ -1,0 +1,25 @@
+{
+  "id": 11233,
+  "subject": "Order ssn3029",
+  "description_text": "Hi.\r\n\r\nI am still having issues with my haptics control box. The replacement one that was sent a couple of months ago fixed the disconnecting issues for awhile. It has now started happening again randomly.\r\nAs soon as I disconnect the power plug for the haptic motors the pedals stop randomly disconnecting.\r\n\r\nCan you please advise a solution, I've seen online other people are having these issues as well. Would there be a revised control box coming out?\r\n\r\nRegards Justin\r\n\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2026-01-19T03:02:05Z",
+  "updated_at": "2026-01-19T07:50:04Z",
+  "requester_id": 158006303018,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017385451,
+      "body_text": "Hi Justin Gall,  First, please download SIMSONN Manager v2.1.3 from our official website and update the firmware to CPU1: 2.0.6 / CPU2: 2.0.4. Second, please connect the USB cable directly to a rear motherboard USB 3.0 (blue) port on your PC, and do not use any USB hubs. Additionally, we recommend using a wire to connect the PC case (chassis), the control box, and a metal screw on the pedals together to create a common ground. This can significantly reduce interference and resolve the issue. You can also refer to the post below for guidance.      ​ If this occurs, it indicates that your PC’s grounding may be unreliable, possibly because a three-prong plug was not used in a grounded wall outlet. You can refer to the post below and connect the three metal screws on the PC case, control box, and pedals, which should resolve the disconnection issue.  https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2026-01-19T07:49:53Z",
+      "updated_at": "2026-01-19T07:49:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

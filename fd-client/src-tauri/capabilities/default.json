@@ -3,7 +3,8 @@
   "identifier": "default",
   "description": "Capability for the main window",
   "windows": [
-    "main"
+    "main",
+    "notebook_shadow"
   ],
   "permissions": [
     "core:default",
@@ -18,5 +19,16 @@
     "dialog:allow-message",
     "dialog:allow-ask",
     "dialog:allow-confirm"
-  ]
+  ],
+  "remote": {
+    "urls": [
+      "https://notebooklm.google.com/*"
+    ],
+    "permissions": [
+      "core:default",
+      "core:event:default",
+      "core:event:allow-emit",
+      "core:event:allow-listen"
+    ]
+  }
 }

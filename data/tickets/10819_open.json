@@ -5,7 +5,7 @@
   "status": 2,
   "priority": 4,
   "created_at": "2026-01-13T19:32:59Z",
-  "updated_at": "2026-01-17T15:57:09Z",
+  "updated_at": "2026-01-19T11:27:37Z",
   "requester_id": 158008150841,
   "responder_id": 158001343601,
   "cc_emails": [],
@@ -126,6 +126,16 @@
       "user_id": 158008150841,
       "created_at": "2026-01-17T15:15:01Z",
       "updated_at": "2026-01-17T15:15:01Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017407814,
+      "body_text": "Buongiorno quando verrà spedito il nuovo pacco? Se è stato gia spedito\r\nposso avere il tracking?\r\n\r\nIl giorno sab 17 gen 2026 alle 03:30 support@simsonn.com <\r\nsupport@simsonn.com> ha scritto:\r\n\r\n> Hi Francesco Mastrangelo,\r\n>\r\n> Alright, we'll arrange a replacement for you as soon as possible. Please\r\n> confirm the following information:\r\n> Product: Pro X Ultra Baseplate\r\n> Address:\r\n> Francesco Mastrangelo\r\n> Via Lezzeno 48\r\n> <https://www.google.com/maps/search/Via+Lezzeno+48?entry=gmail&source=g>\r\n> Carrozzeria TOTAL PAINT 1.0\r\n> 00135 Rome RM\r\n> Italy\r\n> +39 320 265 0622\r\n>\r\n> Il Ven, 16 Gen alle 8:09 PM , Francesco Mastrangelo <\r\n> fmastrangelo04@gmail.com> ha scritto:\r\n>\r\n> Ho appena finito una chiamata con loro e mi confermano nuovamente che non\r\n> sanno dirmi dove si trova questo pacco, non so piu che cosa fare\r\n>\r\n> Il giorno ven 16 gen 2026 alle 12:09 support@simsonn.com <\r\n> support@simsonn.com> ha scritto:\r\n>\r\n>> Hi Francesco Mastrangelo,\r\n>>\r\n>> Please contact the final-mile carrier first. Here's your tracking number:\r\n>> 9C9648I220807\r\n>> If that doesn't work, we'll reship your order. No need to worry.\r\n>> https://www.poste.it/cerca/index.html#/risultati-spedizioni/9C9648I220807\r\n>>\r\n>> Il Ven, 16 Gen alle 6:25 PM , Francesco Mastrangelo <\r\n>> fmastrangelo04@gmail.com> ha scritto:\r\n>> A me questo pacco serve urgentemente non posso aspettare altro tempo so\r\n>> che non è nemmeno colpa vostra, eventualmente me ne potreste spedire un\r\n>> altro evitando questo servizio dí spedizione usandone un altro?\r\n>>\r\n>> 10819:4206036\r\n>\r\n\r\n",
+      "user_id": 158008150841,
+      "created_at": "2026-01-19T11:27:37Z",
+      "updated_at": "2026-01-19T11:27:37Z",
       "incoming": true,
       "private": false,
       "source": 0

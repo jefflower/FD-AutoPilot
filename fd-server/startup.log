@@ -1,0 +1,96 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.jefflower:fd-server >-----------------------
+[INFO] Building fd-server 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot-maven-plugin:3.4.1:run (default-cli) > test-compile @ fd-server >>>
+[INFO] 
+[INFO] --- maven-resources-plugin:3.3.1:resources (default-resources) @ fd-server ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.13.0:compile (default-compile) @ fd-server ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.3.1:testResources (default-testResources) @ fd-server ---
+[INFO] skip non existing resourceDirectory /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.13.0:testCompile (default-testCompile) @ fd-server ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< spring-boot-maven-plugin:3.4.1:run (default-cli) < test-compile @ fd-server <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:3.4.1:run (default-cli) @ fd-server ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.1)
+
+2026-01-20T20:36:46.830+08:00  INFO 41037 --- [fd-server] [           main] c.j.fdserver.FdServerApplication         : Starting FdServerApplication using Java 23.0.1 with PID 41037 (/Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/target/classes started by zangjiafu in /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server)
+2026-01-20T20:36:46.831+08:00  INFO 41037 --- [fd-server] [           main] c.j.fdserver.FdServerApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-01-20T20:36:47.299+08:00  INFO 41037 --- [fd-server] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-20T20:36:47.336+08:00  INFO 41037 --- [fd-server] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 1 JPA repository interface.
+2026-01-20T20:36:47.657+08:00  INFO 41037 --- [fd-server] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-01-20T20:36:47.669+08:00  INFO 41037 --- [fd-server] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-20T20:36:47.669+08:00  INFO 41037 --- [fd-server] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-01-20T20:36:47.709+08:00  INFO 41037 --- [fd-server] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-01-20T20:36:47.710+08:00  INFO 41037 --- [fd-server] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 838 ms
+2026-01-20T20:36:47.818+08:00  INFO 41037 --- [fd-server] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-20T20:36:47.865+08:00  INFO 41037 --- [fd-server] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.4.Final
+2026-01-20T20:36:47.889+08:00  INFO 41037 --- [fd-server] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-01-20T20:36:48.117+08:00  INFO 41037 --- [fd-server] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-20T20:36:48.139+08:00  INFO 41037 --- [fd-server] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-01-20T20:36:48.525+08:00  INFO 41037 --- [fd-server] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn1: url=jdbc:h2:file:./data/db user=SA
+2026-01-20T20:36:48.527+08:00  INFO 41037 --- [fd-server] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-01-20T20:36:48.556+08:00  WARN 41037 --- [fd-server] [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-01-20T20:36:48.571+08:00  INFO 41037 --- [fd-server] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-20T20:36:49.083+08:00  INFO 41037 --- [fd-server] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: 
+    create table client_request (
+        id bigint generated by default as identity,
+        client_ip varchar(255),
+        created_at timestamp(6),
+        endpoint varchar(255),
+        payload clob,
+        primary key (id)
+    )
+2026-01-20T20:36:49.113+08:00  INFO 41037 --- [fd-server] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-20T20:36:49.298+08:00  WARN 41037 --- [fd-server] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-20T20:36:49.551+08:00  INFO 41037 --- [fd-server] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/db'
+2026-01-20T20:36:49.611+08:00  INFO 41037 --- [fd-server] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-01-20T20:36:49.617+08:00  INFO 41037 --- [fd-server] [           main] c.j.fdserver.FdServerApplication         : Started FdServerApplication in 3.087 seconds (process running for 3.389)
+2026-01-20T20:37:10.122+08:00  INFO 41037 --- [fd-server] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-20T20:37:10.125+08:00  INFO 41037 --- [fd-server] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-20T20:37:10.139+08:00  INFO 41037 --- [fd-server] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
+Hibernate: 
+    insert 
+    into
+        client_request
+        (client_ip, created_at, endpoint, payload, id) 
+    values
+        (?, ?, ?, ?, default)
+Hibernate: 
+    select
+        cr1_0.id,
+        cr1_0.client_ip,
+        cr1_0.created_at,
+        cr1_0.endpoint,
+        cr1_0.payload 
+    from
+        client_request cr1_0
