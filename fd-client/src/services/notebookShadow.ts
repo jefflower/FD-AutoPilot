@@ -49,37 +49,46 @@ export class NotebookShadowService {
         (async function() {
           console.log('[Shadow JS] ========== SCRIPT INJECTION START ==========');
           
-          // 重置运行标志，允许重复执行
-          window.__SHADOW_RUNNING__ = false;
-          
-          // 步骤 1: 先清除历史对话记录
           async function clearHistory() {
-            console.log('[Shadow JS] Step 1: Clearing history...');
+            console.log('[Shadow JS] Step 1: Checking for previous conversation...');
             const optionsBtn = document.querySelector('button[aria-label="对话选项"], button[aria-label="Conversation options"]');
             if (!optionsBtn) {
-              console.log('[Shadow JS] Options button not found, skipping clear');
+              console.log('[Shadow JS] Options button not found, assuming new chat');
               return;
             }
             
             optionsBtn.click();
-            console.log('[Shadow JS] Options button clicked, waiting for menu...');
-            await new Promise(r => setTimeout(r, 800));
+            await new Promise(r => setTimeout(r, 600));
             
             const menuItems = Array.from(document.querySelectorAll('.mat-mdc-menu-content button, [role="menuitem"]'));
-            console.log('[Shadow JS] Found menu items:', menuItems.length);
-            
             const deleteItem = menuItems.find(el => 
               el.textContent.includes('删除对话记录') || 
               el.textContent.includes('Delete conversation') ||
               el.textContent.includes('Delete chat')
             );
             
-            if (!deleteItem) {
-          console.log('[Shadow JS] Step 2: Starting input process...');
-          
-          // 步骤 2: 等待页面准备好并输入
+            if (deleteItem) {
+              console.log('[Shadow JS] Clicking delete conversation...');
+              (deleteItem as HTMLElement).click();
+              await new Promise(r => setTimeout(r, 800));
+              
+              const confirmBtn = Array.from(document.querySelectorAll('button')).find(el => 
+                el.textContent.includes('删除') || el.textContent.includes('Delete')
+              );
+              if (confirmBtn) {
+                console.log('[Shadow JS] Confirming deletion...');
+                confirmBtn.click();
+                await new Promise(r => setTimeout(r, 2000));
+              }
+            } else {
+              // 点击空白处关闭菜单
+              document.body.click();
+              await new Promise(r => setTimeout(r, 500));
+            }
+          }
+
           async function doInput() {
-            // 等待输入框出现
+            console.log('[Shadow JS] Step 2: Finding input area...');
             let input = null;
             for (let i = 0; i < 40; i++) {
               input = document.querySelector('textarea.query-box-input, textarea[aria-label*="查询框"], textarea[aria-label*="Chat box"], textarea[aria-label*="Ask"]');
@@ -88,63 +97,45 @@ export class NotebookShadowService {
             }
             
             if (!input) {
-              console.error('[Shadow JS] Input not found after waiting!');
+              console.error('[Shadow JS] Input not found!');
               return;
             }
             
-            console.log('[Shadow JS] Found input:', input.className);
-            input.style.border = '3px solid green';
+            console.log('[Shadow JS] Input area found, setting value...');
             const valueToSet = ${JSON.stringify(prompt)};
-
-            // 输入内容
-            input.focus();
-            input.click();
-            await new Promise(r => setTimeout(r, 200));
-            input.value = '';
-            input.textContent = '';
-            await new Promise(r => setTimeout(r, 100));
+            (input as HTMLTextAreaElement).focus();
             
             const selection = window.getSelection();
             const range = document.createRange();
             range.selectNodeContents(input);
-            selection.removeAllRanges();
-            selection.addRange(range);
+            selection?.removeAllRanges();
+            selection?.addRange(range);
+            
             if (!document.execCommand('insertText', false, valueToSet)) {
-              input.value = valueToSet;
+              (input as HTMLTextAreaElement).value = valueToSet;
             }
             input.dispatchEvent(new Event('input', { bubbles: true }));
-            await new Promise(r => setTimeout(r, 50));
-            input.dispatchEvent(new Event('change', { bubbles: true }));
-            input.blur();
-            input.focus();
-            
-            console.log('[Shadow JS] Step 3: Content input done, clicking send...');
-            await new Promise(r => setTimeout(r, 1200));
-            
-            // 点击发送按钮
+            await new Promise(r => setTimeout(r, 500));
+
+            console.log('[Shadow JS] Step 3: Clicking send button...');
             const sendBtn = document.querySelector('button.submit-button') || 
                             document.querySelector('button[aria-label="提交"]:not(.actions-enter-button)') ||
                             document.querySelector('button[aria-label="Send"]:not(.actions-enter-button)');
             if (sendBtn) {
-              sendBtn.disabled = false;
-              sendBtn.style.border = '3px solid blue';
-              const opts = { bubbles: true, cancelable: true, view: window };
-              sendBtn.dispatchEvent(new MouseEvent('mousedown', opts));
-              await new Promise(r => setTimeout(r, 200));
-              sendBtn.dispatchEvent(new MouseEvent('mouseup', opts));
-              sendBtn.click();
+              (sendBtn as HTMLElement).click();
               console.log('[Shadow JS] Send button clicked!');
-              
-              await new Promise(r => setTimeout(r, 500));
-              if (input.value && input.value.length > 0) {
-                input.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', code: 'Enter', keyCode: 13, bubbles: true }));
-              }
+            } else {
+              console.error('[Shadow JS] Send button not found!');
             }
-            
-            console.log('[Shadow JS] Step 4: All done!');
           }
           
-          await doInput();
+          try {
+            await clearHistory();
+            await doInput();
+            console.log('[Shadow JS] Script execution finished successfully');
+          } catch (e) {
+            console.error('[Shadow JS] Script error:', e);
+          }
         })();
       `;
 
