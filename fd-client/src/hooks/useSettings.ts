@@ -7,6 +7,12 @@ export function useSettings() {
   const [outputDir, setOutputDir] = useState("data");
   const [syncStartDate, setSyncStartDate] = useState("2025-01");
 
+  // MQ 配置状态（扁平化）
+  const [mqHost, setMqHost] = useState('localhost');
+  const [mqPort, setMqPort] = useState(5672);
+  const [mqUsername, setMqUsername] = useState('guest');
+  const [mqPassword, setMqPassword] = useState('guest');
+
   // NotebookLM配置状态
   const [notebookLMConfig, setNotebookLMConfig] = useState<NotebookLMConfig>({
     cookie: '',
@@ -22,6 +28,11 @@ export function useSettings() {
       if (settings.api_key) setApiKey(settings.api_key);
       if (settings.output_dir) setOutputDir(settings.output_dir);
       if (settings.sync_start_date) setSyncStartDate(settings.sync_start_date);
+      // MQ 配置
+      if (settings.mq_host) setMqHost(settings.mq_host);
+      if (settings.mq_port) setMqPort(settings.mq_port);
+      if (settings.mq_username) setMqUsername(settings.mq_username);
+      if (settings.mq_password) setMqPassword(settings.mq_password);
     }).catch(console.error);
 
     try {
@@ -35,15 +46,21 @@ export function useSettings() {
     }
   }, []);
 
-  // 自动保存 Freshdesk 设置
+  // 自动保存设置（含 MQ 配置）
   useEffect(() => {
     const timeout = setTimeout(() => {
-      if (apiKey || outputDir !== "data" || syncStartDate !== "2025-01") {
-        invoke("save_settings_cmd", { apiKey, outputDir, syncStartDate }).catch(console.error);
-      }
+      invoke("save_settings_cmd", { 
+        apiKey, 
+        outputDir, 
+        syncStartDate,
+        mqHost,
+        mqPort,
+        mqUsername,
+        mqPassword,
+      }).catch(console.error);
     }, 500);
     return () => clearTimeout(timeout);
-  }, [apiKey, outputDir, syncStartDate]);
+  }, [apiKey, outputDir, syncStartDate, mqHost, mqPort, mqUsername, mqPassword]);
 
   // 自动保存 NotebookLM 配置
   useEffect(() => {
@@ -61,6 +78,11 @@ export function useSettings() {
     apiKey, setApiKey,
     outputDir, setOutputDir,
     syncStartDate, setSyncStartDate,
+    mqHost, setMqHost,
+    mqPort, setMqPort,
+    mqUsername, setMqUsername,
+    mqPassword, setMqPassword,
     notebookLMConfig, setNotebookLMConfig
   };
 }
+

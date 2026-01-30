@@ -1,0 +1,95 @@
+{
+  "id": 9740,
+  "subject": "Order# SSN4273",
+  "description_text": "Good morning,\r\n\r\nI placed Order# SSN4273 on December 1st. The order was out for delivery on December 15th then was returned to sender on December 22nd. The UPS tracking says met with customer but no one was home on that day. Can I please get the shipment shipped back out so my husband can receive his Christmas gift.\r\n\r\nThank you,\r\nJenn\r\n\r\n\r\n\r\nSent from my T-Mobile 5G Device\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n\r\n",
+  "status": 2,
+  "priority": 4,
+  "created_at": "2026-01-01T16:07:51Z",
+  "updated_at": "2026-01-19T13:41:05Z",
+  "requester_id": 158008840845,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016335612,
+      "body_text": "Hi jgranitski@outlook. com,     Your package has been delivered. Have you received it?",
+      "user_id": 158001343601,
+      "created_at": "2026-01-08T11:58:47Z",
+      "updated_at": "2026-01-08T11:58:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016405974,
+      "body_text": "Hello,\r\n\r\nNo, this was never delivered. It states incomplete address and was returned to sender.\r\n\r\nThank you,\r\nJenn\r\n\r\nSent from my T-Mobile 5G Device\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158008840845,
+      "created_at": "2026-01-08T18:42:07Z",
+      "updated_at": "2026-01-08T18:42:07Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016653496,
+      "body_text": "Hello,\r\n\r\nDo you have an update on this issue?\r\n\r\nThank you,\r\nJenn\r\n\r\nSent from my T-Mobile 5G Device\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158008840845,
+      "created_at": "2026-01-10T03:12:20Z",
+      "updated_at": "2026-01-10T03:12:20Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016872189,
+      "body_text": "Hello again,\r\n\r\nCan someone please reach out to me and provide an update of why I don't have my package? Please reach h out via phone if that's easier.\r\n\r\nThank you,\r\nJenn\r\n321-298-7918\r\n\r\nSent from my T-Mobile 5G Device\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158008840845,
+      "created_at": "2026-01-12T15:06:56Z",
+      "updated_at": "2026-01-12T15:06:56Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017096410,
+      "body_text": "Hi jgranitski@outlook. com,    I apologize for not responding to you promptly. Please confirm your address as soon as possible, and we will reship your order.  Jennifer Granitski  2489 Lineberry Lane  Malabar, FL 32950  United States  +1 321-298-7918",
+      "user_id": 158001343601,
+      "created_at": "2026-01-14T11:57:23Z",
+      "updated_at": "2026-01-14T11:57:23Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017106675,
+      "body_text": "Good morning,\r\n\r\nYes, I confirm that's my address.\r\n\r\nThank you,\r\nJenn\r\n\r\nSent from my T-Mobile 5G Device\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158008840845,
+      "created_at": "2026-01-14T14:07:12Z",
+      "updated_at": "2026-01-14T14:07:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017169476,
+      "body_text": "Hi jgranitski@outlook. com,     We apologize for the inconvenience. The Black Plus X Two-Pedal Set from our US warehouse is currently out of stock. May we ship you the Silver version instead? Alternatively, you may wait until around the 22nd when we expect restocked inventory to ship your order.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T07:52:49Z",
+      "updated_at": "2026-01-15T07:52:49Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017414676,
+      "body_text": "I will wait until the black come back into stock.\r\n\r\nThanks.\r\n\r\nSent from my T-Mobile 5G Device\r\nGet Outlook for Android<https://aka.ms/AAb9ysg>\r\n________________________________\r\n",
+      "user_id": 158008840845,
+      "created_at": "2026-01-19T13:07:44Z",
+      "updated_at": "2026-01-19T13:07:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

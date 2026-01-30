@@ -1,0 +1,55 @@
+{
+  "id": 11240,
+  "subject": "Order expected delivery time",
+  "description_text": "\r\n\r\nhello i placed an order under the email grovespatrick00@gmail.com for some pedals and a shifter. the tracking i was provided isnt very user friendly and i cant find a expected delivery date. could you provide that for me please? thank you. \r\n",
+  "status": 2,
+  "priority": 1,
+  "created_at": "2026-01-19T05:26:30Z",
+  "updated_at": "2026-01-20T23:42:35Z",
+  "requester_id": 158009401652,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017383274,
+      "body_text": "Hi Patrick Groves,  It is found that your order will be shipped in two packages: 1. The gear shift lever was shipped on the 14th and is expected to arrive around the 23rd.  You can track your shipping information via the following link:  https://t.17track.net/en#nums=SF6047241308263 2. Pedals  Due to an upcoming product upgrade, this item has been out of stock for two weeks. We will ship the latest version to you as soon as possible after the upgrade is complete, enhancing your experience. We sincerely apologize for the delay and any inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-19T07:05:32Z",
+      "updated_at": "2026-01-19T07:05:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017446913,
+      "body_text": "how long until the upgrade is completed? i didnt expect to be waiting weeks for the pedals... ur website did not mention that when i placed the order. i also paid for 3-7 business days shipping under the assumption that it would actually be 3-7 business days... \r\n\r\nif i had i known these pedals were back order i may have bought different pedals elsewhere that could arrive sooner. the pedals and shifter is all im waiting on to complete my sim. \r\n\r\n\r\n> ",
+      "user_id": 158009401652,
+      "created_at": "2026-01-19T20:41:26Z",
+      "updated_at": "2026-01-19T20:41:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017475320,
+      "body_text": "Hi Patrick Groves,  We are very sorry for the inconvenience caused to you, and we sincerely apologize to you again.The specific time has not been notified to us yet, but it is expected to be soon.If your order is delayed and you have paid for expedited shipping, we will issue a refund through the platform. You need not worry.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-20T08:33:00Z",
+      "updated_at": "2026-01-20T08:33:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017497021,
+      "body_text": "how soon is soon? 1 week? 2 weeks? soon is very vague. \r\n\r\n> ",
+      "user_id": 158009401652,
+      "created_at": "2026-01-20T15:05:34Z",
+      "updated_at": "2026-01-20T15:05:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

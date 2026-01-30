@@ -1,0 +1,19 @@
+# 配置文件（包含敏感信息）
+fd-server/src/main/resources/application.yml
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Build
+target/
+dist/
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

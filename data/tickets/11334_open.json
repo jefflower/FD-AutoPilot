@@ -1,0 +1,35 @@
+{
+  "id": 11334,
+  "subject": "Vam haptics",
+  "description_text": "Hi ive order ur simsonn plus x pedals including the optional basic vam for\r\n3 pedals and it seems that im missing the cable for the psu\r\n\r\nmy order number is\r\n#SSN5875\r\n\r\nand my tracking number for the vam only is\r\nYT2600900705679471 <http://www.yuntrack.com/Track/Detail/YT2600900705679471>\r\n\r\ncould u pls provide me the cable\r\n\r\nregards\r\nDaniel\r\n\r\n",
+  "status": 2,
+  "priority": 1,
+  "created_at": "2026-01-20T06:56:23Z",
+  "updated_at": "2026-01-20T19:55:03Z",
+  "requester_id": 158009532031,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017470992,
+      "body_text": "Hi Daniel,  ​​It has been found that your order will be shipped in two packages. Your power supply is expected to arrive around the 22nd. Please keep an eye out for it.  You can track your shipping information via the following link:  https://t.17track.net/en#nums=YT2600900705679471",
+      "user_id": 158001343601,
+      "created_at": "2026-01-20T07:17:02Z",
+      "updated_at": "2026-01-20T07:17:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017483987,
+      "body_text": "yes i know and i have already recieved the vam motors but the cable is\r\nstill missing.\r\n\r\nOn Tue, 20 Jan 2026 at 3:17 PM, service@simsonn.com ",
+      "user_id": 158009532031,
+      "created_at": "2026-01-20T11:52:35Z",
+      "updated_at": "2026-01-20T11:52:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

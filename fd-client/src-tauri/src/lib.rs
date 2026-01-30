@@ -3,15 +3,20 @@ mod models;
 mod storage;
 mod settings;
 mod ai;
+mod mq_consumer;
 
 use ai::GeminiClient;
 
 use api::FreshdeskClient;
 use storage::Storage;
 use settings::Settings;
-use tauri::{AppHandle, Emitter, Manager, WebviewWindowBuilder, WebviewUrl};
+use mq_consumer::{MqConsumer, MqConfig, MqConsumerState};
+use tauri::{AppHandle, Emitter, Manager, WebviewWindowBuilder, WebviewUrl, State};
 use tauri_plugin_dialog::DialogExt;
 use std::sync::mpsc;
+use std::sync::Arc;
+use std::sync::atomic::Ordering;
+use tokio::sync::Mutex as TokioMutex;
 
 fn log(app: &AppHandle, msg: &str) {
     let _ = app.emit("log", msg.to_string());
@@ -88,8 +93,8 @@ async fn sync_tickets(app: AppHandle, api_key: String, output_dir: String, full_
                 tokio::time::sleep(tokio::time::Duration::from_millis(500)).await;
             }
 
-            if max_updated_at.is_none() || ticket.updated_at > max_updated_at.clone().unwrap() {
-                max_updated_at = Some(ticket.updated_at.clone());
+            if max_updated_at.is_none() || ticket.updated_at.as_ref() > max_updated_at.as_ref() {
+                max_updated_at = ticket.updated_at.clone();
             }
 
             if storage.save_ticket(&ticket, None).is_ok() {
@@ -132,8 +137,34 @@ async fn select_folder(app: AppHandle) -> Result<String, String> {
 }
 
 #[tauri::command]
-fn save_settings_cmd(app: AppHandle, api_key: String, output_dir: String, sync_start_date: String) -> Result<(), String> {
-    let s = Settings { api_key, output_dir, sync_start_date };
+fn save_settings_cmd(
+    app: AppHandle,
+    api_key: String, 
+    output_dir: String, 
+    sync_start_date: String,
+    mq_host: String,
+    mq_port: u16,
+    mq_username: String,
+    mq_password: String,
+) -> Result<(), String> {
+    println!("[Rust] save_settings_cmd: host={}, port={}, user={}, pass_len={}", 
+        mq_host, mq_port, mq_username, mq_password.len());
+    
+    // 加载现有设置以保留MQ消费者配置
+    let existing = settings::load_settings(&app);
+    
+    let s = Settings { 
+        api_key, 
+        output_dir, 
+        sync_start_date,
+        mq_host,
+        mq_port,
+        mq_username,
+        mq_password,
+        // 保留现有的MQ消费者配置
+        mq_consumer_enabled: existing.mq_consumer_enabled,
+        mq_batch_size: existing.mq_batch_size,
+    };
     settings::save_settings(&app, &s)
 }
 
@@ -168,6 +199,7 @@ async fn translate_ticket_cmd(app: AppHandle, output_dir: String, ticket_id: u64
     
     Ok(translated)
 }
+
 
 #[tauri::command]
 fn load_ticket_cmd(output_dir: String, ticket_id: u64, lang: Option<String>) -> Result<Option<models::Ticket>, String> {
@@ -206,7 +238,7 @@ async fn export_to_csv_cmd(
             let mut conv_text = String::new();
             for conv in ticket.conversations {
                 conv_text.push_str(&format!(
-                    "[{}] {}: {}\n",
+                    "[{:?}] {}: {}\n",
                     conv.created_at,
                     if conv.incoming { "Customer" } else { "Agent" },
                     conv.body_text
@@ -219,8 +251,8 @@ async fn export_to_csv_cmd(
                     ticket.subject.unwrap_or_default(),
                     ticket.status.to_string(),
                     ticket.priority.to_string(),
-                    ticket.created_at,
-                    ticket.updated_at,
+                    ticket.created_at.unwrap_or_default(),
+                    ticket.updated_at.unwrap_or_default(),
                     ticket.description_text.unwrap_or_default(),
                     conv_text,
                 ])
@@ -368,6 +400,15 @@ async fn get_shadow_result(app: AppHandle) -> Result<String, String> {
 }
 
 #[tauri::command]
+async fn get_notebook_window_visibility(app: AppHandle) -> Result<bool, String> {
+    if let Some(window) = app.get_webview_window("notebook_shadow") {
+        window.is_visible().map_err(|e| e.to_string())
+    } else {
+        Ok(false)
+    }
+}
+
+#[tauri::command]
 async fn toggle_notebook_window(app: AppHandle, visible: bool) -> Result<(), String> {
     if let Some(window) = app.get_webview_window("notebook_shadow") {
         if visible {
@@ -376,19 +417,250 @@ async fn toggle_notebook_window(app: AppHandle, visible: bool) -> Result<(), Str
         } else {
             window.hide().map_err(|e| e.to_string())?;
         }
+        // 发送全局事件通知前端所有组件更新按钮状态
+        app.emit("notebook-window-visibility-changed", visible).map_err(|e| e.to_string())?;
         Ok(())
     } else {
         Err("Shadow window not found".to_string())
     }
 }
 
-// 保持现有的其他函数...
+// =========== MQ Consumer Commands ===========
+
+/// 翻译 MQ 消费者状态
+pub struct MqTranslateState {
+    consumer: Arc<TokioMutex<Option<MqConsumer>>>,
+    state: MqConsumerState,
+}
+
+impl Default for MqTranslateState {
+    fn default() -> Self {
+        Self {
+            consumer: Arc::new(TokioMutex::new(None)),
+            state: MqConsumerState::default(),
+        }
+    }
+}
+
+/// 回复 MQ 消费者状态
+pub struct MqReplyState {
+    consumer: Arc<TokioMutex<Option<MqConsumer>>>,
+    state: MqConsumerState,
+}
+
+impl Default for MqReplyState {
+    fn default() -> Self {
+        let state = MqConsumerState::default();
+        state.batch_size.store(1, Ordering::SeqCst);
+        Self {
+            consumer: Arc::new(TokioMutex::new(None)),
+            state,
+        }
+    }
+}
+
+#[tauri::command]
+async fn start_mq_consumer(
+    app: AppHandle,
+    auth_token: String,
+    mq_state: State<'_, MqTranslateState>,
+) -> Result<String, String> {
+    // 检查是否已在运行
+    if mq_state.state.is_running.load(std::sync::atomic::Ordering::SeqCst) {
+        return Err("Consumer already running".to_string());
+    }
+
+    // 从设置加载配置
+    let mut settings = settings::load_settings(&app);
+    let config = MqConfig::from_settings(&settings);
+    
+    // 设置 batch_size 到状态
+    mq_state.state.batch_size.store(settings.mq_batch_size, std::sync::atomic::Ordering::SeqCst);
+    
+    log(&app, &format!("🐰 Starting MQ consumer, connecting to {}:{}", config.host, config.port));
+
+    // 使用共享状态创建消费者
+    let consumer = MqConsumer::new_with_state(config, mq_state.state.clone());
+    
+    // 保存消费者实例
+    {
+        let mut lock = mq_state.consumer.lock().await;
+        *lock = Some(consumer);
+    }
+    
+    // 保存启动状态到设置
+    settings.mq_consumer_enabled = true;
+    let _ = settings::save_settings(&app, &settings);
+
+    // 启动消费（在后台任务中）
+    let app_clone = app.clone();
+    let consumer_arc = mq_state.consumer.clone();
+    
+    tokio::spawn(async move {
+        let lock = consumer_arc.lock().await;
+        if let Some(ref consumer) = *lock {
+            if let Err(e) = consumer.start_consuming(app_clone.clone(), auth_token, "translate").await {
+                GeminiClient::log(&app_clone, &format!("❌ Translation MQ Consumer error: {}", e));
+            }
+        }
+    });
+
+    Ok("MQ Consumer started".to_string())
+}
+
+#[tauri::command]
+async fn stop_mq_consumer(
+    app: AppHandle,
+    mq_state: State<'_, MqTranslateState>,
+) -> Result<String, String> {
+    mq_state.state.is_running.store(false, std::sync::atomic::Ordering::SeqCst);
+    
+    // 保存停止状态到设置
+    let mut settings = settings::load_settings(&app);
+    settings.mq_consumer_enabled = false;
+    let _ = settings::save_settings(&app, &settings);
+    
+    log(&app, "🛑 Stopping MQ consumer...");
+    Ok("MQ Consumer stopping".to_string())
+}
+
+#[tauri::command]
+async fn get_mq_consumer_status(
+    mq_state: State<'_, MqTranslateState>,
+) -> Result<serde_json::Value, String> {
+    let is_running = mq_state.state.is_running.load(std::sync::atomic::Ordering::SeqCst);
+    let batch_size = mq_state.state.batch_size.load(std::sync::atomic::Ordering::SeqCst);
+    let current_task = mq_state.state.current_task.lock().await.clone();
+    let translating = mq_state.state.translating_tickets.lock().await.clone();
+    let completed = mq_state.state.completed_tickets.lock().await.clone();
+    
+    Ok(serde_json::json!({
+        "isRunning": is_running,
+        "batchSize": batch_size,
+        "currentTask": current_task,
+        "translatingTickets": translating,
+        "completedTickets": completed
+    }))
+}
+
+#[tauri::command]
+async fn update_mq_batch_size(
+    app: AppHandle,
+    batch_size: u32,
+    mq_state: State<'_, MqTranslateState>,
+) -> Result<(), String> {
+    // 更新内存状态
+    mq_state.state.batch_size.store(batch_size, std::sync::atomic::Ordering::SeqCst);
+    
+    // 同步保存到设置
+    let mut settings = settings::load_settings(&app);
+    settings.mq_batch_size = batch_size;
+    settings::save_settings(&app, &settings)?;
+    
+    log(&app, &format!("⚙️ MQ batch size updated to {}", batch_size));
+    Ok(())
+}
+
+// =========== Reply MQ Commands ===========
+
+#[tauri::command]
+async fn start_reply_mq_consumer(
+    app: AppHandle,
+    auth_token: String,
+    mq_state: State<'_, MqReplyState>,
+) -> Result<String, String> {
+    if mq_state.state.is_running.load(Ordering::SeqCst) {
+        return Err("Reply Consumer already running".to_string());
+    }
+
+    let settings = settings::load_settings(&app);
+    let config = MqConfig::from_settings(&settings);
+    
+    mq_state.state.batch_size.store(settings.mq_batch_size, Ordering::SeqCst);
+    
+    log(&app, &format!("🐰 Starting Reply MQ consumer, connecting to {}:{}", config.host, config.port));
+
+    let consumer = MqConsumer::new_with_state(config, mq_state.state.clone());
+    
+    {
+        let mut lock = mq_state.consumer.lock().await;
+        *lock = Some(consumer);
+    }
+    
+    let app_clone = app.clone();
+    let consumer_arc = mq_state.consumer.clone();
+    
+    tokio::spawn(async move {
+        let lock = consumer_arc.lock().await;
+        if let Some(ref consumer) = *lock {
+            if let Err(e) = consumer.start_consuming(app_clone.clone(), auth_token, "reply").await {
+                GeminiClient::log(&app_clone, &format!("❌ Reply MQ Consumer error: {}", e));
+            }
+        }
+    });
+
+    Ok("Reply MQ Consumer started".to_string())
+}
+
+#[tauri::command]
+async fn stop_reply_mq_consumer(
+    app: AppHandle,
+    mq_state: State<'_, MqReplyState>,
+) -> Result<String, String> {
+    mq_state.state.is_running.store(false, Ordering::SeqCst);
+    log(&app, "🛑 Stopping Reply MQ consumer...");
+    Ok("Reply MQ Consumer stopping".to_string())
+}
+
+#[tauri::command]
+async fn get_reply_mq_consumer_status(
+    mq_state: State<'_, MqReplyState>,
+) -> Result<serde_json::Value, String> {
+    let is_running = mq_state.state.is_running.load(Ordering::SeqCst);
+    let batch_size = mq_state.state.batch_size.load(Ordering::SeqCst);
+    let current_task = mq_state.state.current_task.lock().await.clone();
+    let translating = mq_state.state.translating_tickets.lock().await.clone();
+    let completed = mq_state.state.completed_tickets.lock().await.clone();
+    
+    Ok(serde_json::json!({
+        "isRunning": is_running,
+        "batchSize": batch_size,
+        "currentTask": current_task,
+        "translatingTickets": translating, // 虽然变量名是 translating，但在 UI 上会对应“回复中”
+        "completedTickets": completed
+    }))
+}
+
+
+#[tauri::command]
+async fn complete_reply_task(
+    ticket_id: i64,
+    success: bool,
+    mq_state: State<'_, MqReplyState>,
+) -> Result<(), String> {
+    let mut p_acks = mq_state.state.pending_acks.lock().await;
+    if let Some(tx) = p_acks.remove(&ticket_id) {
+        let _ = tx.send(success);
+        Ok(())
+    } else {
+        Err(format!("No pending task found for ticket #{}", ticket_id))
+    }
+}
+
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
         .plugin(tauri_plugin_opener::init())
         .plugin(tauri_plugin_dialog::init())
+        .manage(MqTranslateState::default())
+        .manage(MqReplyState::default())
+        .setup(|app| {
+            let settings = settings::load_settings(app.handle());
+            let mq_translate_state = app.state::<MqTranslateState>();
+            mq_translate_state.state.batch_size.store(settings.mq_batch_size, Ordering::SeqCst);
+            Ok(())
+        })
         .invoke_handler(tauri::generate_handler![
             sync_tickets, 
             list_local_tickets,
@@ -403,7 +675,18 @@ pub fn run() {
             execute_notebook_js,
             get_shadow_result,
             forward_shadow_event,
-            toggle_notebook_window
+            toggle_notebook_window,
+            get_notebook_window_visibility,
+            // MQ 消费者命令
+            start_mq_consumer,
+            stop_mq_consumer,
+            get_mq_consumer_status,
+            update_mq_batch_size,
+            // Reply MQ
+            start_reply_mq_consumer,
+            stop_reply_mq_consumer,
+            get_reply_mq_consumer_status,
+            complete_reply_task
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

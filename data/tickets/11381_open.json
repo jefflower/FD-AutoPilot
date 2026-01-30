@@ -1,0 +1,25 @@
+{
+  "id": 11381,
+  "subject": "Order # SSN6273",
+  "description_text": "Hello I placed and order and am asking what carrier you use for shipping. If it’s the USPS I need to add a mailbox to the shipping. I left it out thinking it would be UPS or FEDEX due to size or weight but could you PLEASE add the POBOX 463\r\nPlease please please. Thankyou!\r\nRoss Campoli\r\n\r\n",
+  "status": 2,
+  "priority": 1,
+  "created_at": "2026-01-20T16:34:37Z",
+  "updated_at": "2026-01-20T17:37:30Z",
+  "requester_id": 158009539205,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017511865,
+      "body_text": "Oh nevermind. I read your shipping page and says you do not deliver to PO Box’s so I guess I panicked over nothing. Haha. Thanks for your time anyways",
+      "user_id": 158009539205,
+      "created_at": "2026-01-20T17:37:30Z",
+      "updated_at": "2026-01-20T17:37:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    }
+  ],
+  "available_langs": []
+}

@@ -1,0 +1,65 @@
+{
+  "id": 11316,
+  "subject": "Order #SSN6263",
+  "description_text": "Hi, I would just like to know the status of my order since I bought express\r\nshipping and was hoping to get it as soon as possible. And it still wasn't\r\nfulfilled. Thanks\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-19T23:18:19Z",
+  "updated_at": "2026-01-20T09:33:17Z",
+  "requester_id": 158009528873,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017461510,
+      "body_text": "Hi Tomás Silva,  ​​We apologize for the delay. Two shipments destined for our German warehouse have been affected by heavy snowfall in Europe, causing road blockages and delivery delays. We will expedite delivery or explore alternative logistics channels to ship your order from China as soon as possible. Compensation will be provided based on the delay after your order is completed. We apologize for the inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-20T01:44:56Z",
+      "updated_at": "2026-01-20T01:44:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017476395,
+      "body_text": "Hi, how long will take to arrive from china? And how can i ask for\r\ncompensation since i asked for express delivery but will probably get it\r\nlater?\r\n\r\nsupport@simsonn.com ",
+      "user_id": 158009528873,
+      "created_at": "2026-01-20T09:05:42Z",
+      "updated_at": "2026-01-20T09:05:42Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017477177,
+      "body_text": "Hi Tomás Silva,  If your order is delayed and you have paid for expedited shipping, we will issue a refund through the platform. You need not worry.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-20T09:28:47Z",
+      "updated_at": "2026-01-20T09:28:47Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017477256,
+      "body_text": "Ok, thank you.\r\n\r\nsupport@simsonn.com ",
+      "user_id": 158009528873,
+      "created_at": "2026-01-20T09:30:35Z",
+      "updated_at": "2026-01-20T09:30:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017477340,
+      "body_text": "Hi Tomás Silva,  You're welcome. Thank you for purchasing our product. Should you have any questions in the future, please feel free to contact us. We will address them promptly.Wish you a pleasant day.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-20T09:33:17Z",
+      "updated_at": "2026-01-20T09:33:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

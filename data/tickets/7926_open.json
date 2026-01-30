@@ -1,0 +1,135 @@
+{
+  "id": 7926,
+  "subject": "Simsonn 6+R H-Pattern Shifter",
+  "description_text": "Hello,\r\n\r\nI ended up purchasing your pattern 6+R H pattern shifter from amazon\r\n~6months ago before realizing you had a full product suite/website. It has\r\nbeen a blast to use, but when I upgraded to my new PC a few days ago all my\r\nperipherals work except this shifter. The led buttons are dim and when\r\npressed don't glow bright blue like before. I can still see the white power\r\ninside the device.\r\n\r\nIm running a booster cable to the PC and have tried different usb slots,\r\nanother computer and direct USB hub power. It is recognized in my device\r\nmanager but on Asseta Corsa it can recognize all gears except 3rd and 5th\r\ngear.\r\n\r\nIs there any firmware updates for this device or troubleshooting I can try?\r\nTo me it seems like its not getting enough power but I have tried all I can\r\nwith no luck. I very much like this shifter so I am trying to find a\r\nsolution. A warranty was purchased through amazon but since the purchase I\r\nhad a falling out with them and have closed my account down due to shady\r\npractices.\r\n\r\nThanks,\r\n\r\n",
+  "status": 2,
+  "priority": 1,
+  "created_at": "2025-12-10T21:56:57Z",
+  "updated_at": "2026-01-20T08:12:38Z",
+  "requester_id": 158007749078,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158014297103,
+      "body_text": "Hi Tyler W,  Could you please provide your order number? Additionally, please send us a photo of the product so that I can confirm the exact model and offer you the correct solution. If possible, you may also record a video and share it with us via Google Drive. Just make sure the access permission is set to “viewable.” ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T01:14:01Z",
+      "updated_at": "2025-12-11T01:14:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014298517,
+      "body_text": "It was purchased through amazon. Here is a link for the shifter video as\r\nrequested. Thanks\r\nhttps://drive.google.com/file/d/1PmOW5aL42Z7WzVpC2_DnFxyEMY-JFPIb/view?usp=sharing\r\n\r\nOn Wed, Dec 10, 2025 at 7:14 PM service@simsonn.com ",
+      "user_id": 158007749078,
+      "created_at": "2025-12-11T02:26:44Z",
+      "updated_at": "2025-12-11T02:26:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014298746,
+      "body_text": "Hi Tyler W,  So you mean the device was working fine before the upgrade, and the issue only appeared afterward, correct? ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T02:36:56Z",
+      "updated_at": "2025-12-11T02:36:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014298776,
+      "body_text": "Correct. Granted I had not used it in a few weeks, my last memory it was\r\nworking.\r\n\r\nOn Wed, Dec 10, 2025 at 8:37 PM service@simsonn.com ",
+      "user_id": 158007749078,
+      "created_at": "2025-12-11T02:38:51Z",
+      "updated_at": "2025-12-11T02:38:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014298829,
+      "body_text": "Hi Tyler W,  You just need to download Freejoy and connect your device, and I can check whether the configuration has any issues.      https://drive.google.com/file/d/1hnHNudj0VhE6xr7ypu-KeEDuVrlVHVg9/view?usp=drive_link",
+      "user_id": 158000445778,
+      "created_at": "2025-12-11T02:41:54Z",
+      "updated_at": "2025-12-11T02:41:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014298963,
+      "body_text": "downloaded, what are my next steps?\r\n\r\nOn Wed, Dec 10, 2025 at 8:42 PM service@simsonn.com ",
+      "user_id": 158007749078,
+      "created_at": "2025-12-11T02:50:16Z",
+      "updated_at": "2025-12-11T02:50:16Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014472118,
+      "body_text": "Hi Tyler W,  Please open Freejoy and check if the device is connected. Then click Read Config from Device and go to the Button interface to test for any issues. You can take screenshots of the Pin Config and Button interface and send them to me for configuration review. If it’s a settings issue, we can provide the factory configuration to help you restore it. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-14T03:18:16Z",
+      "updated_at": "2025-12-14T03:18:16Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014608396,
+      "body_text": "Please see it says incompatible Firmware?\r\n\r\nOn Sat, Dec 13, 2025 at 9:18 PM service@simsonn.com ",
+      "user_id": 158007749078,
+      "created_at": "2025-12-17T00:53:49Z",
+      "updated_at": "2025-12-17T00:53:49Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158014622321,
+      "body_text": "Hi Tyler W,  You are not using the Freejoy version I provided. The link I gave is for version 1.7.0, while you are using 1.7.1, which is not compatible. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-17T10:44:07Z",
+      "updated_at": "2025-12-17T10:44:07Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016193811,
+      "body_text": "my apologies, please see attached\r\n\r\nOn Wed, Dec 17, 2025 at 4:44 AM service@simsonn.com ",
+      "user_id": 158007749078,
+      "created_at": "2026-01-07T19:27:21Z",
+      "updated_at": "2026-01-07T19:27:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016255027,
+      "body_text": "Hi Tyler W,  If it still doesn’t work, you can install ToDesk, and I can assist you remotely to check and resolve the issue. No registration is required—just provide the connection ID and the temporary access code. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-08T02:32:24Z",
+      "updated_at": "2026-01-08T02:32:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017457881,
+      "body_text": "Hi,\r\n\r\nI am following up on my previous message regarding the remote support\r\nsession via ToDesk.\r\n\r\nPlease let me know when you might be available to assist me with the\r\nshifter configuration.\r\n\r\nBest regards,\r\n\r\nTyler W\r\n\r\n",
+      "user_id": 158007749078,
+      "created_at": "2026-01-19T23:54:47Z",
+      "updated_at": "2026-01-19T23:54:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

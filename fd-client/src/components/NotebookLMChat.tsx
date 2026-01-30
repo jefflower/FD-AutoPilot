@@ -1,10 +1,48 @@
 import React, { useState, useRef, useEffect } from 'react';
-import {
-    NotebookLMClient,
-    NotebookLMConfig,
-    NotebookLMConfigManager,
-    generateExtractScript
-} from '../services/notebookLM';
+// 注意: notebookLM 模块不存在，使用本地类型声明
+// import {
+//     NotebookLMClient,
+//     NotebookLMConfig,
+//     NotebookLMConfigManager,
+//     generateExtractScript
+// } from '../services/notebookLM';
+
+// 临时类型声明 - TODO: 需要创建或导入实际的 notebookLM 服务
+interface NotebookLMConfig {
+    cookie: string;
+    atToken: string;
+    fSid: string;
+    notebookId: string;
+}
+
+const NotebookLMConfigManager = {
+    loadConfig: (): NotebookLMConfig | null => {
+        const saved = localStorage.getItem('notebookLM_config');
+        return saved ? JSON.parse(saved) : null;
+    },
+    saveConfig: (config: NotebookLMConfig) => {
+        localStorage.setItem('notebookLM_config', JSON.stringify(config));
+    },
+    validateConfig: (config: NotebookLMConfig) => {
+        return !!(config.cookie && config.atToken && config.fSid && config.notebookId);
+    }
+};
+
+class NotebookLMClient {
+    constructor(_config: NotebookLMConfig) { }
+    async query(_params: { query: string }): Promise<string> {
+        return 'NotebookLM 服务暂未配置';
+    }
+    async *queryStream(_params: { query: string }): AsyncGenerator<{ text: string }> {
+        yield { text: 'NotebookLM 服务暂未配置' };
+    }
+}
+
+const generateExtractScript = () => `
+// 在 NotebookLM 页面的浏览器控制台中运行此脚本
+console.log('请手动提取 Cookie, AT Token 和 F.SID');
+`;
+
 import './NotebookLMChat.css';
 
 /**

@@ -1,0 +1,25 @@
+{
+  "id": 11303,
+  "subject": "Order Update",
+  "description_text": "Hello,\r\n\r\nI would just like an update on my order, ID:SSN6067\r\n\r\nThanks,\r\nSean Coughlin\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-19T20:21:04Z",
+  "updated_at": "2026-01-20T02:12:57Z",
+  "requester_id": 158009526617,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017462206,
+      "body_text": "Hi Sean Coughlin,  Due to product upgrades, this item has been out of stock for two weeks. Once the upgrades are complete, we will ship the latest version to you as soon as possible to enhance your experience. We expect to ship within the next few days. We sincerely apologize for any inconvenience this may have caused.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-20T02:12:57Z",
+      "updated_at": "2026-01-20T02:12:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

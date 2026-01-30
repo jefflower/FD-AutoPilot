@@ -8,6 +8,14 @@ pub struct Settings {
     pub api_key: String,
     pub output_dir: String,
     pub sync_start_date: String,
+    // RabbitMQ 配置
+    pub mq_host: String,
+    pub mq_port: u16,
+    pub mq_username: String,
+    pub mq_password: String,
+    // MQ 消费者配置
+    pub mq_consumer_enabled: bool, // MQ消费者是否应该自动启动
+    pub mq_batch_size: u32,        // 每批翻译任务数量
 }
 
 impl Default for Settings {
@@ -16,6 +24,14 @@ impl Default for Settings {
             api_key: String::new(),
             output_dir: "data".to_string(),
             sync_start_date: "2025-01".to_string(),
+            // MQ 默认配置
+            mq_host: "localhost".to_string(),
+            mq_port: 5672,
+            mq_username: "guest".to_string(),
+            mq_password: "guest".to_string(),
+            // MQ 消费者默认配置
+            mq_consumer_enabled: false,
+            mq_batch_size: 5,
         }
     }
 }
@@ -40,28 +56,40 @@ fn init_db(conn: &Connection) -> Result<()> {
     Ok(())
 }
 
+fn save_setting(conn: &Connection, key: &str, value: &str) -> Result<(), String> {
+    conn.execute(
+        "INSERT OR REPLACE INTO settings (key, value) VALUES (?1, ?2)",
+        [key, value],
+    )
+    .map_err(|e| e.to_string())?;
+    Ok(())
+}
+
+fn load_setting(conn: &Connection, key: &str) -> Option<String> {
+    conn.query_row("SELECT value FROM settings WHERE key = ?1", [key], |row| {
+        row.get::<_, String>(0)
+    })
+    .ok()
+}
+
 pub fn save_settings(app: &AppHandle, settings: &Settings) -> Result<(), String> {
     let db_path = get_db_path(app);
     let conn = Connection::open(&db_path).map_err(|e| e.to_string())?;
     init_db(&conn).map_err(|e| e.to_string())?;
 
-    conn.execute(
-        "INSERT OR REPLACE INTO settings (key, value) VALUES ('api_key', ?1)",
-        [&settings.api_key],
-    )
-    .map_err(|e| e.to_string())?;
-
-    conn.execute(
-        "INSERT OR REPLACE INTO settings (key, value) VALUES ('output_dir', ?1)",
-        [&settings.output_dir],
-    )
-    .map_err(|e| e.to_string())?;
-
-    conn.execute(
-        "INSERT OR REPLACE INTO settings (key, value) VALUES ('sync_start_date', ?1)",
-        [&settings.sync_start_date],
-    )
-    .map_err(|e| e.to_string())?;
+    save_setting(&conn, "api_key", &settings.api_key)?;
+    save_setting(&conn, "output_dir", &settings.output_dir)?;
+    save_setting(&conn, "sync_start_date", &settings.sync_start_date)?;
+    save_setting(&conn, "mq_host", &settings.mq_host)?;
+    save_setting(&conn, "mq_port", &settings.mq_port.to_string())?;
+    save_setting(&conn, "mq_username", &settings.mq_username)?;
+    save_setting(&conn, "mq_password", &settings.mq_password)?;
+    save_setting(
+        &conn,
+        "mq_consumer_enabled",
+        &settings.mq_consumer_enabled.to_string(),
+    )?;
+    save_setting(&conn, "mq_batch_size", &settings.mq_batch_size.to_string())?;
 
     Ok(())
 }
@@ -80,28 +108,32 @@ pub fn load_settings(app: &AppHandle) -> Settings {
 
     let mut settings = Settings::default();
 
-    if let Ok(api_key) = conn.query_row(
-        "SELECT value FROM settings WHERE key = 'api_key'",
-        [],
-        |row| row.get::<_, String>(0),
-    ) {
-        settings.api_key = api_key;
+    if let Some(v) = load_setting(&conn, "api_key") {
+        settings.api_key = v;
     }
-
-    if let Ok(output_dir) = conn.query_row(
-        "SELECT value FROM settings WHERE key = 'output_dir'",
-        [],
-        |row| row.get::<_, String>(0),
-    ) {
-        settings.output_dir = output_dir;
+    if let Some(v) = load_setting(&conn, "output_dir") {
+        settings.output_dir = v;
     }
-
-    if let Ok(sync_start_date) = conn.query_row(
-        "SELECT value FROM settings WHERE key = 'sync_start_date'",
-        [],
-        |row| row.get::<_, String>(0),
-    ) {
-        settings.sync_start_date = sync_start_date;
+    if let Some(v) = load_setting(&conn, "sync_start_date") {
+        settings.sync_start_date = v;
+    }
+    if let Some(v) = load_setting(&conn, "mq_host") {
+        settings.mq_host = v;
+    }
+    if let Some(v) = load_setting(&conn, "mq_port") {
+        settings.mq_port = v.parse().unwrap_or(5672);
+    }
+    if let Some(v) = load_setting(&conn, "mq_username") {
+        settings.mq_username = v;
+    }
+    if let Some(v) = load_setting(&conn, "mq_password") {
+        settings.mq_password = v;
+    }
+    if let Some(v) = load_setting(&conn, "mq_consumer_enabled") {
+        settings.mq_consumer_enabled = v.parse().unwrap_or(false);
+    }
+    if let Some(v) = load_setting(&conn, "mq_batch_size") {
+        settings.mq_batch_size = v.parse().unwrap_or(5);
     }
 
     settings

@@ -24,6 +24,9 @@ export class NotebookShadowService {
     try {
       console.log('[Shadow] Calling open_notebook_window...');
       await invoke('open_notebook_window', { notebookId: this.notebookId });
+      // 增加延时确保导航和基础脚本加载
+      console.log('[Shadow] Waiting for window to settle (3000ms)...');
+      await new Promise(r => setTimeout(r, 3000));
       console.log('[Shadow] open_notebook_window completed successfully');
     } catch (err) {
       console.error('[Shadow] open_notebook_window failed:', err);
@@ -72,45 +75,14 @@ export class NotebookShadowService {
             );
             
             if (!deleteItem) {
-              document.body.click();
-              console.log('[Shadow JS] Delete option not found, menu closed');
-              await new Promise(r => setTimeout(r, 300));
-              return;
-            }
-            
-            if (deleteItem.disabled || deleteItem.getAttribute('aria-disabled') === 'true') {
-              console.log('[Shadow JS] Delete option is disabled (no history), skipping');
-              document.body.click();
-              await new Promise(r => setTimeout(r, 300));
-              return;
-            }
-            
-            deleteItem.click();
-            console.log('[Shadow JS] Delete menu clicked, waiting for confirm dialog...');
-            await new Promise(r => setTimeout(r, 800));
-            
-            const confirmBtn = document.querySelector('button.yes-button');
-            if (confirmBtn) {
-              confirmBtn.click();
-              console.log('[Shadow JS] History cleared successfully!');
-              await new Promise(r => setTimeout(r, 1000));
-            } else {
-              console.log('[Shadow JS] Confirm button not found');
-              const closeBtn = document.querySelector('button.no-button, button[mat-dialog-close]');
-              if (closeBtn) closeBtn.click();
-            }
-          }
-          
-          // 立即执行清除历史
-          await clearHistory();
           console.log('[Shadow JS] Step 2: Starting input process...');
           
           // 步骤 2: 等待页面准备好并输入
           async function doInput() {
             // 等待输入框出现
             let input = null;
-            for (let i = 0; i < 30; i++) {
-              input = document.querySelector('textarea.query-box-input, textarea[aria-label*="查询框"], textarea[aria-label*="Chat box"]');
+            for (let i = 0; i < 40; i++) {
+              input = document.querySelector('textarea.query-box-input, textarea[aria-label*="查询框"], textarea[aria-label*="Chat box"], textarea[aria-label*="Ask"]');
               if (input) break;
               await new Promise(r => setTimeout(r, 500));
             }
@@ -151,13 +123,14 @@ export class NotebookShadowService {
             
             // 点击发送按钮
             const sendBtn = document.querySelector('button.submit-button') || 
-                            document.querySelector('button[aria-label="提交"]:not(.actions-enter-button)');
+                            document.querySelector('button[aria-label="提交"]:not(.actions-enter-button)') ||
+                            document.querySelector('button[aria-label="Send"]:not(.actions-enter-button)');
             if (sendBtn) {
               sendBtn.disabled = false;
               sendBtn.style.border = '3px solid blue';
               const opts = { bubbles: true, cancelable: true, view: window };
               sendBtn.dispatchEvent(new MouseEvent('mousedown', opts));
-              await new Promise(r => setTimeout(r, 100));
+              await new Promise(r => setTimeout(r, 200));
               sendBtn.dispatchEvent(new MouseEvent('mouseup', opts));
               sendBtn.click();
               console.log('[Shadow JS] Send button clicked!');
@@ -261,6 +234,7 @@ export class NotebookShadowService {
    * 显示影子窗口
    */
   async show() {
+    await this.init();
     await invoke('toggle_notebook_window', { visible: true });
   }
 

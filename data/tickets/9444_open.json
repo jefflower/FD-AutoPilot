@@ -1,0 +1,175 @@
+{
+  "id": 9444,
+  "subject": "Not getting 100% travel when using Simhub",
+  "description_text": "Hi Team,\r\nI have the SIMSONN PRO Sim Racing Pedals PC Racing Simulator Pedals\r\nPressure Sensor 200KG Load Cell Brake Pedal HE Hydraulic Pedal Black\r\n(P3-H3). Perched May 2024. I have upgraded to the Plus X Control Box to\r\nallow me to use your VAM Pro Linear Motors.\r\n\r\nUsing your Simsonn Manager v2.1.2 software my Pedals show as SIMSONN Plus X\r\n(CPU1:v2.0.5 CPU2:v2.0.4).\r\n[image: image.png]\r\nThere are many issues with games I have tested where the VAM motors lock up\r\nand constantly rumble after just 10 to 15 minutes requiring me to\r\ndisconnect the power to stop them.\r\nFor this reason and also the additional options I am using Simhub. The\r\nissue I am having in Simhub is that it does appear to recognize the pedals\r\ncalibration. The Break start dead zone is ignored, this is easily tweaked\r\nin game but only happens when using Simhub. But the issue I am\r\nstruggling most with is my Throttle will not go to 100% in game when fully\r\npressed. In games where I can adjust the end deadzone I can dial it out but\r\nIt needs adjusting constantly. For games that dont have this setting I have\r\ntried using linearity but this reduces the pedal throw a lot and is not a\r\nsolution.\r\n\r\nDo you have any solution for me to get my pedals working with Simhub. My\r\nfriend is using Simhub with his Simsonn Pro X Ultra pedals and is not\r\nhaving the same issues.\r\nThanks.\r\n\r\n",
+  "status": 2,
+  "priority": 4,
+  "created_at": "2025-12-29T10:04:21Z",
+  "updated_at": "2026-01-19T19:41:02Z",
+  "requester_id": 158002875217,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015240851,
+      "body_text": "Hi Derek Ofori-Atta,  If this happens, it indicates that the computer’s grounding is not reliable, possibly because a three-prong plug was not used with a three-prong wall outlet. You can refer to the post below: connect the computer case to the stand, and connect the control box to the metal screws on the pedals. This should resolve the disconnection issue.  https://github.com/SHWotever/SimHub/wiki/USB-Issues-Troubleshooting https://support.gomezsimindustries.com/portal/en/kb/articles/understanding-emi-and-grounding",
+      "user_id": 158000445778,
+      "created_at": "2025-12-30T07:37:58Z",
+      "updated_at": "2025-12-30T07:37:58Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015277221,
+      "body_text": "Hi\r\nMy PC is fully grounded and I have never had emi issues. I have connected\r\nthe control box to the pedals with a ground wire and it has made no\r\ndifference to the issue where my Throttle does not register 100% in games\r\neven though its properly calibrated in the Simsonn Manager software.\r\nPlease see clips attached\r\n unknown_2025.12.30-20.03_clip_1.mp4\r\n<https://drive.google.com/file/d/1iF3xW8wpJfJ_HDOosr2ABMYz9np8bQrj/view?usp=drive_web>\r\n.\r\n\r\nOn Tue, 30 Dec 2025 at 07:38, service@simsonn.com ",
+      "user_id": 158002875217,
+      "created_at": "2025-12-30T20:14:22Z",
+      "updated_at": "2025-12-30T20:14:22Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015289775,
+      "body_text": "Hi Derek Ofori-Atta,  The key point here is to use a wire to connect the PC case (chassis) to one of the screws on the control box (grounding). This can effectively resolve the disconnection issue. ",
+      "user_id": 158000445778,
+      "created_at": "2025-12-31T01:28:57Z",
+      "updated_at": "2025-12-31T01:28:57Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158015314800,
+      "body_text": "I am not reporting a disconnection issue, are you not reading my emails?\r\nlook at the video clips you will see the issue I am reporting.\r\n\r\nOn Wed, 31 Dec 2025 at 01:29, service@simsonn.com ",
+      "user_id": 158002875217,
+      "created_at": "2025-12-31T15:01:04Z",
+      "updated_at": "2025-12-31T15:01:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016155741,
+      "body_text": "Hi Derek Ofori-Atta,  Please uninstall SIMSONN Manager version 2.1.2 from your computer first, then download and install SIMSONN Manager version 2.1.3 from our official website.  SIMSONN Manager 2.1.3 includes optimizations for the vibration function. Please test again using this version.  https://www.simsonn.com/pages/download",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T15:18:01Z",
+      "updated_at": "2026-01-07T15:18:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016214404,
+      "body_text": "Okay I will uninstall 2.1.2 and install 2.1.3. and let you know how it goes.\r\n\r\nOn Wed, 7 Jan 2026 at 15:18, service@simsonn.com ",
+      "user_id": 158002875217,
+      "created_at": "2026-01-07T21:59:30Z",
+      "updated_at": "2026-01-07T21:59:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016224016,
+      "body_text": " unknown_2026.01.07-22.58.mp4\r\n<https://drive.google.com/file/d/19VtvxWEwY48o-7PQdTDHVB7LC9e9PBgt/view?usp=drive_web>\r\nI am now running 2.1.3 and I still have the issue. See the attached video,\r\nthe throttle never goes to 100% and the break is on all the time.\r\n\r\nOn Wed, 7 Jan 2026 at 21:59, Derek Ofori-Atta <derek.oforiatta@gmail.com>\r\nwrote:\r\n\r\n> Okay I will uninstall 2.1.2 and install 2.1.3. and let you know how it\r\n> goes.\r\n>\r\n> On Wed, 7 Jan 2026 at 15:18, service@simsonn.com ",
+      "user_id": 158002875217,
+      "created_at": "2026-01-07T23:06:03Z",
+      "updated_at": "2026-01-07T23:06:03Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016252884,
+      "body_text": "Hi Derek Ofori-Atta,  If it still doesn’t work, you can install ToDesk, and I can assist you remotely to check and resolve the issue. No registration is required—just provide the connection ID and the temporary access code. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-08T02:20:10Z",
+      "updated_at": "2026-01-08T02:20:10Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016828419,
+      "body_text": "Okay when can we do the ToDesk session?\r\n\r\nOn Thu, 8 Jan 2026 at 02:20, service@simsonn.com ",
+      "user_id": 158002875217,
+      "created_at": "2026-01-11T19:30:26Z",
+      "updated_at": "2026-01-11T19:30:26Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017137100,
+      "body_text": "Am I going to get an answer? I have tried everything you have suggested and\r\nthe issue still persists. I am ready to do the ToDesk session if that is\r\nwhat it takes.\r\n\r\nOn Sun, 11 Jan 2026 at 19:30, Derek Ofori-Atta <derek.oforiatta@gmail.com>\r\nwrote:\r\n\r\n> Okay when can we do the ToDesk session?\r\n>\r\n> On Thu, 8 Jan 2026 at 02:20, service@simsonn.com ",
+      "user_id": 158002875217,
+      "created_at": "2026-01-14T19:56:47Z",
+      "updated_at": "2026-01-14T19:56:47Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017154514,
+      "body_text": "Hi Derek Ofori-Atta,  We recommend installing the VAM Pro using nylon screws and nylon washers. This is to electrically isolate the VAM Pro from the motor bracket, which helps reduce/avoid interference carried through the bracket and prevents the VAM Pro from affecting the pedal signal. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-15T01:44:25Z",
+      "updated_at": "2026-01-15T01:44:25Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017198720,
+      "body_text": "What size screws and washers do i need?\r\n\r\nOn Thu, 15 Jan 2026 at 01:44, service@simsonn.com ",
+      "user_id": 158002875217,
+      "created_at": "2026-01-15T15:17:19Z",
+      "updated_at": "2026-01-15T15:17:19Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017312940,
+      "body_text": "Hi Derek Ofori-Atta,  M3 nylon screws and M3 nylon washers/spacers. If they’re not included in your accessory kit, we can send you a replacement set. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-17T05:09:44Z",
+      "updated_at": "2026-01-17T05:09:44Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017322166,
+      "body_text": "No I did not get any nylon screws or washers, I did use the fiber washers\r\nthat were included. So yes please send me a set.\r\n\r\nOn Sat, 17 Jan 2026 at 05:09, service@simsonn.com ",
+      "user_id": 158002875217,
+      "created_at": "2026-01-17T09:39:18Z",
+      "updated_at": "2026-01-17T09:39:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017385369,
+      "body_text": "Hi Derek Ofori-Atta,  Please provide your order number and the recipient’s name, phone number, and shipping address ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-19T07:47:00Z",
+      "updated_at": "2026-01-19T07:47:00Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017439345,
+      "body_text": "Hi,\r\nThe information requested is below.\r\n\r\n*Order number=*  Order #SSN3430\r\n\r\n*recipient’s name=* DEREK OFORI ATTA\r\n\r\n*phone number=* +44 7447 947974\r\n\r\n*shipping address:*\r\n85 Whitehead Close\r\nLondon N18 1UZ\r\nUnited Kingdom\r\n\r\n\r\nOn Mon, 19 Jan 2026 at 07:47, service@simsonn.com ",
+      "user_id": 158002875217,
+      "created_at": "2026-01-19T19:00:04Z",
+      "updated_at": "2026-01-19T19:00:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

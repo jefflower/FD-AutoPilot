@@ -1,0 +1,55 @@
+{
+  "id": 9991,
+  "subject": "Order #SSN5337",
+  "description_text": "Dear Simsoon Team,\r\n\r\nI want to ask, when i can expect my Order to arrieve ?\r\n\r\nI know about the much holidays at last, but i Hope the express Delivery\r\n gets faster than the normal Way.\r\n\r\nI Hope you have a Good Time\r\n\r\nKindle reguards\r\n\r\nChris Bühler\r\n\r\n",
+  "status": 2,
+  "priority": 4,
+  "created_at": "2026-01-05T12:20:46Z",
+  "updated_at": "2026-01-20T08:41:34Z",
+  "requester_id": 158008934292,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016330184,
+      "body_text": "Hi Free Pianist,    We apologize for the delay. The shipment is expected to arrive at our German warehouse on the 12th, at which time we will be able to ship your order. We apologize for the inconvenience.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-08T11:11:55Z",
+      "updated_at": "2026-01-08T11:11:55Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017081559,
+      "body_text": "Hi,\r\nThanks for the Information.\r\nSo i See the linear Motors are on the way, but the Pedals are still\r\n confirmed, but Not on the way at the Moment.\r\n\r\nThe goods were supposed to arrive at the German warehouse two days ago.but\r\nthe Pedals are still Not Shopping at the Moment\r\nI would like to inquire whether the pedals will be delivered to me this\r\nweek. I mean, I paid for express delivery so that the goods would arrive as\r\nquickly as possible and not after three weeks.\r\n\r\nBest reguards\r\n\r\nChris Bühler\r\nservice@simsonn.com ",
+      "user_id": 158008934292,
+      "created_at": "2026-01-14T08:19:28Z",
+      "updated_at": "2026-01-14T08:19:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017099654,
+      "body_text": "Hi Free Pianist,    We apologize for the delay. Two shipments destined for our German warehouse have been affected by heavy snowfall in Europe, causing road blockages and delivery delays. We will expedite delivery or explore alternative logistics channels to ship your order from China as soon as possible.  Compensation will be provided based on the delay after your order is completed. We apologize for the inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-14T12:31:59Z",
+      "updated_at": "2026-01-14T12:31:59Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017474345,
+      "body_text": "Hey Guys,\r\nIm so sorry to ask again for my Delivery, but i hear nothing about my\r\nPedals singe last Week.\r\n\r\nThe haptic Motors arrieved me last week but i  Need the Pedals.\r\n\r\nSo the wheater in Germnay are still fine and we had last week around plus\r\n10 C. So i dont think That the wheater is the Problem Now.\r\n\r\nI miss the 24H Daytona becource i cant Play without Pedals.\r\n\r\n\r\nSo please Tell me when i can expect the delivery off my new Pedals.\r\n\r\nGet your Best\r\n\r\nHope i hear from you\r\n\r\nBest reguards\r\nChris\r\n\r\nservice@simsonn.com ",
+      "user_id": 158008934292,
+      "created_at": "2026-01-20T08:09:17Z",
+      "updated_at": "2026-01-20T08:09:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

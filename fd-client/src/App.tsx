@@ -8,6 +8,7 @@ import { useSettings } from "./hooks/useSettings";
 import { useSync } from "./hooks/useSync";
 import { useTickets } from "./hooks/useTickets";
 import { useTranslation } from "./hooks/useTranslation";
+import MQTaskRunner from "./components/MQTaskRunner";
 
 function App() {
   const [activeTab, setActiveTab] = useState<'sync' | 'browse' | 'settings'>('sync');
@@ -17,6 +18,10 @@ function App() {
     apiKey, setApiKey,
     outputDir, setOutputDir,
     syncStartDate, setSyncStartDate,
+    mqHost, setMqHost,
+    mqPort, setMqPort,
+    mqUsername, setMqUsername,
+    mqPassword, setMqPassword,
     notebookLMConfig, setNotebookLMConfig
   } = useSettings();
 
@@ -135,12 +140,22 @@ function App() {
             setOutputDir={setOutputDir}
             syncStartDate={syncStartDate}
             setSyncStartDate={setSyncStartDate}
+            mqHost={mqHost}
+            setMqHost={setMqHost}
+            mqPort={mqPort}
+            setMqPort={setMqPort}
+            mqUsername={mqUsername}
+            setMqUsername={setMqUsername}
+            mqPassword={mqPassword}
+            setMqPassword={setMqPassword}
             notebookLMConfig={notebookLMConfig}
             setNotebookLMConfig={setNotebookLMConfig}
             setLogs={setLogs}
           />
         )}
       </div>
+      {/* Global Task Runners */}
+      <MQTaskRunner notebookLMConfig={notebookLMConfig} setLogs={setLogs} />
     </div>
   );
 }

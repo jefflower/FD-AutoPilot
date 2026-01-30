@@ -1,0 +1,65 @@
+{
+  "id": 10681,
+  "subject": "6+R shifter issues",
+  "description_text": "Hi there\r\n\r\nI recently bought a SIMSONN 6+r shifter see below\r\n[image: image.png]\r\nShifter was working great, I didn't use shifter for a few weeks. No when i\r\nplug in the device Windows does not recognise the device, nothing in device\r\nmanager or joy.CPL\r\n\r\nThe two lights on top light up and have power. but device does not function\r\n\r\nDo you have any ideas what could be wrong?\r\n\r\nI'm good with electronics so I can solder new components if required, would\r\njust need to know what. the PCB looks fine with no obvious breaks\r\n\r\nIf you can help me please let me know :)\r\n\r\n",
+  "status": 4,
+  "priority": 4,
+  "created_at": "2026-01-12T14:54:24Z",
+  "updated_at": "2026-01-20T07:01:31Z",
+  "requester_id": 158009034113,
+  "responder_id": 158007774664,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016935653,
+      "body_text": "Hi Harry,  Please plug it directly into a rear USB 3.0 port on your PC and check if it works properly. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-13T06:08:17Z",
+      "updated_at": "2026-01-13T06:08:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017019527,
+      "body_text": "Hi there\r\nI've given this a try and still no device detected. I've tried on multiple\r\nPCs too still nothing ?\r\n\r\n",
+      "user_id": 158009034113,
+      "created_at": "2026-01-13T18:54:53Z",
+      "updated_at": "2026-01-13T18:54:53Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017385539,
+      "body_text": "Hi Harry,  Sure, we will send you a replacement control board. Please provide your order number, contact name, phone number, and full shipping address, and we will arrange shipment as soon as possible after confirmation. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-19T07:51:48Z",
+      "updated_at": "2026-01-19T07:51:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017408649,
+      "body_text": "Hi there\r\nmy order number was\r\nOrder ID: 3064613794070315\r\nHarry Cuthbert\r\nWhite Lodge Clapham Hill\r\nWhitstable\r\nKent\r\nCT53DJ\r\nUnited Kingdom\r\nphone : +447926096508\r\nThanks :)\r\n\r\nOn Mon, 19 Jan 2026 at 07:51, service@simsonn.com ",
+      "user_id": 158009034113,
+      "created_at": "2026-01-19T11:56:32Z",
+      "updated_at": "2026-01-19T11:56:32Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017470436,
+      "body_text": "Hi Harry,      Your product has been shipped. The logistics number is:YT2602000704200268. You can track it at this website:​https://t.17track.net/zh-cn#nums=YT2602000704200268",
+      "user_id": 158007774664,
+      "created_at": "2026-01-20T07:01:24Z",
+      "updated_at": "2026-01-20T07:01:24Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

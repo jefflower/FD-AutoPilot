@@ -5,7 +5,7 @@
   "status": 2,
   "priority": 4,
   "created_at": "2026-01-02T13:06:34Z",
-  "updated_at": "2026-01-19T07:41:51Z",
+  "updated_at": "2026-01-20T23:02:10Z",
   "requester_id": 158008847503,
   "responder_id": 158001343601,
   "cc_emails": [],
@@ -66,6 +66,16 @@
       "user_id": 158008847503,
       "created_at": "2026-01-19T07:05:48Z",
       "updated_at": "2026-01-19T07:05:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017533242,
+      "body_text": "\r\n\r\nIl giorno 19 gen 2026, alle ore 08:05, andrea bartoli <andreabar88@hotmail.it> ha scritto:\r\n\r\n﻿ Hi,\r\n1 of 2 package (i think pedals) is being delivered today!\r\nThe pedals motor are not being delivered today (and i hope there are no duties on those too!!)\r\nBut i must pay (i payed in this moment!) 114,57€ of dutyies!!!!\r\nI attach the invoice of ups courier\r\nIn the last email you write that in case of duties you refound me? (I attach your mail in reply)\r\nBest regards\r\nAndrea Bartoli\r\n[image0.png]\r\n[image1.png]\r\n\r\nIl giorno 15 gen 2026, alle ore 08:44, support@simsonn.com ha scritto:\r\n\r\n﻿\r\nHi andrea bartoli,\r\n\r\nWe apologize for the delay. Two shipments destined for our German warehouse were impacted by heavy snowfall in Europe, causing road blockages and delivery delays. We have already arranged for shipments from China. Should any customs duties arise, we will reimburse you.\r\n\r\n",
+      "user_id": 158008847503,
+      "created_at": "2026-01-20T23:02:10Z",
+      "updated_at": "2026-01-20T23:02:10Z",
       "incoming": true,
       "private": false,
       "source": 0

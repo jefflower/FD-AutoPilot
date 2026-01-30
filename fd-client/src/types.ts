@@ -22,6 +22,11 @@ export interface Settings {
   api_key: string;
   output_dir: string;
   sync_start_date: string;
+  // MQ 配置
+  mq_host: string;
+  mq_port: number;
+  mq_username: string;
+  mq_password: string;
 }
 
 export interface Progress {

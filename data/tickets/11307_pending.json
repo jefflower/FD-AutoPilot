@@ -1,0 +1,25 @@
+{
+  "id": 11307,
+  "subject": "Shipping",
+  "description_text": "Hi,when can i expect my order shipped out ",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2026-01-19T20:46:58Z",
+  "updated_at": "2026-01-20T02:07:56Z",
+  "requester_id": 158009527053,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017462107,
+      "body_text": "Hi Alberto Irrizari,  Due to an upcoming product upgrade, this item has been out of stock for two weeks. We will ship the latest version to you as soon as possible after the upgrade is complete, enhancing your experience. We sincerely apologize for the delay and any inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-20T02:07:56Z",
+      "updated_at": "2026-01-20T02:07:56Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

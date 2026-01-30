@@ -1,0 +1,35 @@
+{
+  "id": 11320,
+  "subject": "My Order #SSN6305 on the 01202026",
+  "description_text": " Hi ,\r\n        how to add  U-Shaped Vertical Mounting Brackets for Brake and\r\nthrottle to my order ,without cancelling it , just paying the additional\r\namount , and getting them in the same package/delivery ? Or have I to\r\ncancel all and proceed to a new order (not my preference ...) ? Thks for\r\nyour quick answer.\r\n\r\n",
+  "status": 2,
+  "priority": 1,
+  "created_at": "2026-01-20T00:28:15Z",
+  "updated_at": "2026-01-20T19:03:31Z",
+  "requester_id": 158009529493,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017471639,
+      "body_text": "Hi Patrick JUBIOT,  ​We have added it for you free of charge, and you don't need to pay any fees.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-20T07:39:02Z",
+      "updated_at": "2026-01-20T07:39:02Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017481738,
+      "body_text": "Fine !!! Thks for this good new ,best regard.\r\n\r\n\r\nLe mar. 20 janv. 2026, 08:39, service@simsonn.com ",
+      "user_id": 158009529493,
+      "created_at": "2026-01-20T10:45:50Z",
+      "updated_at": "2026-01-20T10:45:50Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

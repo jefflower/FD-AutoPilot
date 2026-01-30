@@ -1,0 +1,55 @@
+{
+  "id": 10815,
+  "subject": "response for ticket #9958",
+  "description_text": "Hello support team,\r\n\r\nI would like an update on ticket #9958 regarding the pedal control box and\r\nif it has been shipped yet?\r\n\r\nThanks.\r\n\r\n",
+  "status": 2,
+  "priority": 1,
+  "created_at": "2026-01-13T19:03:48Z",
+  "updated_at": "2026-01-20T23:42:35Z",
+  "requester_id": 158008926933,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017076367,
+      "body_text": "Hi D. W.,     We sincerely apologize for the delay in processing your replacement order. We have now arranged for its shipment. Here is your tracking link:    https://t.17track.net/en#nums=SF6047241225801",
+      "user_id": 158001343601,
+      "created_at": "2026-01-14T07:03:05Z",
+      "updated_at": "2026-01-14T07:03:05Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017077068,
+      "body_text": "Hi support team,\r\n\r\nNo worries and thanks for the update, i will let you guys know if i still\r\nhave any issues after receiving the control box.\r\n\r\n\r\nOn Wed, 14 Jan 2026 at 08:03, service@simsonn.com ",
+      "user_id": 158008926933,
+      "created_at": "2026-01-14T07:06:15Z",
+      "updated_at": "2026-01-14T07:06:15Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017157373,
+      "body_text": "Hi D. W.,     Sure, feel free to reach out to us with any questions. We'll get back to you as soon as possible.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-15T02:34:29Z",
+      "updated_at": "2026-01-15T02:34:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017497779,
+      "body_text": "Hi support team,\r\n\r\nI just received the new control box but unfortunately it's also the brake\r\npedal that's faulty because it creates a short circuit when connected to\r\nthe new control box. The throttle pedal connects to my pc and works fine\r\nwhen the brake ISN'T connected to the pedal control box. The brake\r\nunfortunately has to be replaced or repaired.\r\n\r\nI look forward to hearing from you.\r\n\r\nOn Thu, 15 Jan 2026 at 03:34, service@simsonn.com ",
+      "user_id": 158008926933,
+      "created_at": "2026-01-20T15:16:12Z",
+      "updated_at": "2026-01-20T15:16:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

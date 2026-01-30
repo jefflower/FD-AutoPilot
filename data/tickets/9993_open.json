@@ -1,0 +1,95 @@
+{
+  "id": 9993,
+  "subject": "Relance colis",
+  "description_text": "Bonjour,\r\nJe vous confirme avoir reçu le colis le 05/01/2026.Pour rappel, il a été expédié le 19/12/2025 via UPS en livraison express.\r\nLe colis est resté bloqué en douane à partir du 22/12, portant le délai total de livraison à 17 jours, ce qui est incompatible avec une livraison express.Ce retard est dû à une erreur de qualification d’UPS, qui m’a identifiée à tort comme professionnelle alors que je suis particulier, bloquant inutilement le dédouanement.\r\nUPS m’a confirmé que seul l’expéditeur peut engager la réclamation et demander le remboursement des frais de port.Je précise avoir déjà adressé un premier mail à ce sujet, resté sans réponse.\r\nJe vous remercie donc de bien vouloir effectuer la démarche auprès d’UPS afin d’obtenir le remboursement des frais de livraison express, et de me tenir informée de la suite donnée.\r\nCordialement,Iona Fuentes\r\n",
+  "status": 2,
+  "priority": 4,
+  "created_at": "2026-01-05T12:43:57Z",
+  "updated_at": "2026-01-20T08:27:45Z",
+  "requester_id": 158008757625,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158015123937,
+      "body_text": "Hi ionafuentes@live. fr,    Apologies for the delayed response. Your package is currently awaiting customs clearance. If any duties are incurred, please send us the invoice after payment is completed, and we will cover the charges for you.  https://www.ups.com/track?loc=en_US&requester=ST&trackNums=1Z144AW70406291380/trackdetails  Your tracking number is 1Z144AW70406291380: This UPS shipment to France requires recipient assistance for customs clearance. An email has been sent to the recipient's address: IONAFUENTES@LIVE.FR, detailing the required documentation. Please respond to the local UPS office as soon as possible.  UPS France Customer Service Hotline: 0821 233 877  French Customs Clearance Port Email: frbrokerage@ups.com  If you haven't received the email or have other questions, you may contact your local UPS directly. Thank you.",
+      "user_id": 158001343601,
+      "created_at": "2025-12-27T03:27:53Z",
+      "updated_at": "2025-12-27T03:27:53Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016074869,
+      "body_text": "ID 号为 9215 和 9653 的工单已合并到此工单。",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T06:39:11Z",
+      "updated_at": "2026-01-07T06:39:11Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016074871,
+      "body_text": "合并来自工单9215  \n      主题: Commande n° SSN5008 – Demande de remboursement des frais de livraison express  \n      描述:  \n Bonjour, \n   \n Je vous contacte concernant ma commande n° SSN5008, passée le 18 décembre 2024, avec une livraison express (délai annoncé : 3–7 jours) facturée 34,95 €. \n À ce jour, 26 décembre, le colis est toujours en transit à Paris et n’a pas encore été livré. Le délai de livraison express n’est donc plus respecté. \n Je constate par ailleurs que les frais de livraison express sont actuellement affichés à 25,95 €, soit un tarif inférieur à celui que j’ai payé lors de ma commande. \n Dans ces conditions, je vous demande le remboursement des frais de livraison express, le service correspondant n’ayant pas été assuré. \n   \n Je vous remercie par avance pour votre retour et la régularisation de la situation. \n   \n Cordialement, \n   \n Iona Fuentes \n Commande n° SSN5008",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T06:39:12Z",
+      "updated_at": "2026-01-07T06:39:12Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016074876,
+      "body_text": "合并来自工单9653  \n      主题: Demande d'informations  \n      描述:  Bonjour, \n   \n Je vous contacte concernant ma commande expédiée via UPS (colis 1Z144AW70406291380). \n   \n Le colis est bloqué en douane à Roissy depuis le 22/12, soit près de 10 jours, alors que j’ai payé une livraison express casi 40€.  \n Ce blocage est dû à une erreur de qualification : UPS a considéré à tort que j’étais professionnelle, alors que je suis particulier. \n Aucun document n’est donc requis pour le dédouanement, ce qui m’a été confirmé. \n   \n UPS m’indique par ailleurs que seul l’expéditeur peut ouvrir une réclamation et demander le remboursement des frais de port. \n Je vous remercie donc de bien vouloir intervenir rapidement auprès d’UPS pour débloquer le colis et engager la demande de remboursement des frais de livraison express. \n   \n Merci de me tenir informée rapidement. \n   \n Cordialement, \n Iona Fuentes",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T06:39:12Z",
+      "updated_at": "2026-01-07T06:39:12Z",
+      "incoming": false,
+      "private": true,
+      "source": 2
+    },
+    {
+      "id": 158016329880,
+      "body_text": "Hi ionafuentes@live. fr,    I see the package has been delivered. Did you receive it?",
+      "user_id": 158001343601,
+      "created_at": "2026-01-08T11:09:35Z",
+      "updated_at": "2026-01-08T11:09:35Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158016413274,
+      "body_text": "Hi,\r\nYes, I confirm that I have received the package, but only on January 5th.\r\nI have already sent you two emails regarding the refund of the express shipping fees, and I have not received any answer about this point.\r\nThe shipment was sent on December 19th and was blocked at customs from December 22nd to January 5th, which makes a total delivery time of 17 days, for a service that was paid as express (5 days maximum).\r\nUPS informed me that only the sender can request the refund, so I kindly ask you again to file the claim with UPS so that the express shipping fees can be refunded.\r\nThank you for your follow-up.\r\nKind regards,Iona Fuentes\r\n\r\n\r\n \r\n \r\n  Le jeu., janv. 8, 2026 à 12:09, service@simsonn.com",
+      "user_id": 158008757625,
+      "created_at": "2026-01-08T19:30:24Z",
+      "updated_at": "2026-01-08T19:30:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017471452,
+      "body_text": "We apologize for the inconvenience caused. We have issued a refund of 30 euros as compensation.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-20T07:31:54Z",
+      "updated_at": "2026-01-20T07:31:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017471996,
+      "body_text": "Thank you, refund received\r\n\r\n\r\n \r\n \r\n  Le mar., janv. 20, 2026 à 8:32, service@simsonn.com",
+      "user_id": 158008757625,
+      "created_at": "2026-01-20T07:50:48Z",
+      "updated_at": "2026-01-20T07:50:48Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

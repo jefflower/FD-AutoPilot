@@ -1,0 +1,35 @@
+{
+  "id": 11281,
+  "subject": "Software Simsonn V2.1.3 for pedals Plus",
+  "description_text": "Hello, I'm having a problem with the Simsonn software screen where some text isn't displaying. I've already tried finding a light-colored theme for the software, but it wasn't possible. I've also changed the Windows theme to see if that would solve it, but nothing changed. Do you know how I can fix this problem?\r\n\r\n[cid:9e6f5d4e-e53a-404b-bc04-4258cabe5483]\r\n\r\n[cid:2904697f-182f-4b85-9dc8-7788b9a63d02]\r\n\r\n\r\n[cid:41dade60-83ec-43de-9894-b4154452885b]\r\n\r\n:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\r\nGuilherme Secchi\r\n\r\nPsicólogo - CRP: 12/08367\r\n\r\nPsicólogo no Centro Especializado em Reabilitação - CER II - Uniplac\r\n\r\nContato - (49) 999116040\r\n:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\r\n\r\n",
+  "status": 2,
+  "priority": 1,
+  "created_at": "2026-01-19T14:26:47Z",
+  "updated_at": "2026-01-21T00:10:45Z",
+  "requester_id": 158009519765,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017475790,
+      "body_text": "Hi Guilherme Secchi,  Could you please provide your order number? Also, what language is your Windows system currently set to (e.g., Chinese / English / French / German, etc.)? I’ll forward this information to our engineer so we can investigate the issue for you. ",
+      "user_id": 158000445778,
+      "created_at": "2026-01-20T08:48:13Z",
+      "updated_at": "2026-01-20T08:48:13Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017504476,
+      "body_text": "Hello, I'm not sure of my ticket number because the link sent to my email doesn't open, but I believe it's 11281.\r\n\r\nMy Windows is set to Portuguese (Brazil).\r\n\r\n\r\n:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\r\nGuilherme Secchi\r\n\r\nPsicólogo - CRP: 12/08367\r\n\r\nPsicólogo no Centro Especializado em Reabilitação - CER II - Uniplac\r\n\r\nContato - (49) 999116040\r\n:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\r\n________________________________\r\nDe: support@simsonn.com ",
+      "user_id": 158009519765,
+      "created_at": "2026-01-20T16:03:30Z",
+      "updated_at": "2026-01-20T16:03:30Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

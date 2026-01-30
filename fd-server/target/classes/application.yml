@@ -21,6 +21,23 @@ spring:
       settings:
         trace: false
         web-allow-others: true
+  rabbitmq:
+    host: 47.110.152.25
+    port: 5672
+    username: admin
+    password: rabbitmq@hnlx
 
 server:
   port: 9988
+
+# Freshdesk 配置
+freshdesk:
+  domain: simsonn.freshdesk.com
+  api-key: slHVv3wH9gTk8dEUPPW
+  sync:
+    cron: "0 0/5 * * * ?"
+
+# JWT 配置
+jwt:
+  secret: aMzL0FFgyu4mlbEQlXjKLYcrPpYRjMjN3qHfswQc4na22R0uYcDV90e0Q1pEre8S
+  expiration-hours: 24

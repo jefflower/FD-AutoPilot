@@ -5,9 +5,31 @@
   "status": 3,
   "priority": 1,
   "created_at": "2026-01-16T21:18:54Z",
-  "updated_at": "2026-01-17T03:05:28Z",
+  "updated_at": "2026-01-20T08:54:26Z",
   "requester_id": 158009307506,
   "responder_id": null,
   "cc_emails": [],
-  "conversations": []
+  "conversations": [
+    {
+      "id": 158017441128,
+      "body_text": "Still hasn’t shipped? Ryan Wenndt ",
+      "user_id": 158009307506,
+      "created_at": "2026-01-19T19:23:12Z",
+      "updated_at": "2026-01-19T19:23:12Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017475989,
+      "body_text": "Hi Ryan Wenndt,  ​We apologize for the inconvenience. The Pro X pedals are currently out of stock at our US warehouse. We have urgently arranged an air shipment and expect to ship your order on the 22nd, with delivery estimated around the 25th. ​ Additionally, here is the tracking link for your Haptics shipment: ​ https://t.17track.net/en#nums=SF6047238967828",
+      "user_id": 158001343601,
+      "created_at": "2026-01-20T08:54:26Z",
+      "updated_at": "2026-01-20T08:54:26Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
 }

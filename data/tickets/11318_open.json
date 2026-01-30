@@ -1,0 +1,85 @@
+{
+  "id": 11318,
+  "subject": "ultra x pedals do not work",
+  "description_text": "software detects the pedals but my computer does not doesnt show up in\r\ncontrollers and doesnt show up in games please advise, these pedals are not\r\nplug and play, if i cant get these working within 2 days im gonna put them\r\nback in the box and send them back where they came from. i accidentally hit\r\nthat upgrade button and it showed up in my computer as simmson flasher, but\r\nstill do noit work\r\n\r\n",
+  "status": 2,
+  "priority": 2,
+  "created_at": "2026-01-20T00:00:12Z",
+  "updated_at": "2026-01-21T01:41:06Z",
+  "requester_id": 158009529195,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017460244,
+      "body_text": "I am beyond pissed off, so frustrating trying to get these piece of shit\r\npedals to work. Software detects it my pc detects but cannot use it in game\r\nyour software just freezes up constantly, I’ve tried reinstalling software,\r\nreflating firmware to old version and newest version, I don’t know how much\r\nmore time I can waste of these “PLUG AND PLAY PEDALS”.\r\n\r\nOn Mon, Jan 19, 2026 at 7:05 PM service@simsonn.com ",
+      "user_id": 158009529195,
+      "created_at": "2026-01-20T01:07:36Z",
+      "updated_at": "2026-01-20T01:07:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017475697,
+      "body_text": "Hi mitch,  Could you please provide a short test video, or send us a screenshot of the SIMSONN Manager interface?  If the device has entered SIMSONN Flasher mode, please simply release the upgrade button (let it pop back up), then unplug and re-plug the USB cable. It should return to normal working mode.  If it still doesn’t work, please record a complete video (including: USB reconnection, the software screen, and the device status), upload it to Google Drive, and send us the sharing link. Please set the permission to “Anyone with the link can view.”  Also, please let us know which game cannot bind the inputs (e.g., iRacing / ACC / AC / F1 / ETS2, etc.).",
+      "user_id": 158000445778,
+      "created_at": "2026-01-20T08:45:29Z",
+      "updated_at": "2026-01-20T08:45:29Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017481029,
+      "body_text": "I can get it out of flasher mode just fine but when it goes back to normal\r\nit no games can detect it, okay listen to me, the pedals do not work in any\r\ngame, they work perfectly fine in the simmson  software but no not work in\r\nany game. I’ve followed all instructions in the manual.  ALL GAMES DO NOT\r\nDETECT PEDALS, it’s the same problem as many other people on the forums.\r\nI’ve already started the return process, I’m not wasting any more time on\r\nthis,  Like what you want me to waste more time sending you videos so you\r\ncan figure out what’s wrong with your bad electronics. This is absolutely\r\nunacceptable I’m going to be posting about this in all the forums.\r\n\r\nOn Tue, Jan 20, 2026 at 3:45 AM service@simsonn.com ",
+      "user_id": 158009529195,
+      "created_at": "2026-01-20T10:25:17Z",
+      "updated_at": "2026-01-20T10:25:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017481451,
+      "body_text": "Works fine for me in Simson software does not detect in games or in\r\njoy.cpl, I need a solution or im just returning it.\r\n\r\n",
+      "user_id": 158009529195,
+      "created_at": "2026-01-20T10:37:24Z",
+      "updated_at": "2026-01-20T10:37:24Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017482108,
+      "body_text": "I’ve included pictures with people with the same issue as me.\r\n\r\n",
+      "user_id": 158009529195,
+      "created_at": "2026-01-20T10:57:28Z",
+      "updated_at": "2026-01-20T10:57:28Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017496623,
+      "body_text": "I will upload some videos and pictures tonight for you but as far as I’m\r\nconcerned it is defective and doesn’t work as advertise and I see several\r\nother people have the same issue on the sim racing forums, I’m reading all\r\nsorts of posts of forums where guys had to run grounding wires or get a\r\ncontroller box replacement, no one seems to have a actual solution. I would\r\nlike to start the return/refund process, I have already installed and\r\nuninstalled these pedals twice on my rig, I can’t waste anymore time\r\ntroubleshooting it. I will pack it up tonight please send return\r\ninstructions and return label. Thank you.\r\n\r\n",
+      "user_id": 158009529195,
+      "created_at": "2026-01-20T15:00:35Z",
+      "updated_at": "2026-01-20T15:00:35Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017517343,
+      "body_text": "After trying solution I could think of and exhausting every forum\r\nsuggestion I have come to the conclusion that the control box is faulty.\r\n\r\nThe Simsonn X Pro Ultra enumerates only as USB Vendor Defined HID and never\r\nappears in joy.cpl. I have tried to flash both the old .SFU and latest\r\nfirmware. Device does not show HID joystick usage, and therefore, cannot be\r\nused in game and is useless to me, it is packed up and ready to be returned\r\nto you to start the refund process, please advise if you need anything more\r\nfrom me to go forward thank you.\r\n\r\n\r\n\r\n",
+      "user_id": 158009529195,
+      "created_at": "2026-01-20T18:49:51Z",
+      "updated_at": "2026-01-20T18:49:51Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

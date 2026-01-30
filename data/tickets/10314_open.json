@@ -5,7 +5,7 @@
   "status": 2,
   "priority": 4,
   "created_at": "2026-01-08T14:23:08Z",
-  "updated_at": "2026-01-19T06:28:20Z",
+  "updated_at": "2026-01-20T06:42:34Z",
   "requester_id": 158008982578,
   "responder_id": 158001343601,
   "cc_emails": [],
@@ -116,6 +116,16 @@
       "user_id": 158008982578,
       "created_at": "2026-01-19T05:54:04Z",
       "updated_at": "2026-01-19T05:54:04Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017469918,
+      "body_text": "Bonjour\r\nAvez vous reçu les pièce jointe ?\r\nBonne journée\r\n\r\nLe lun. 19 janv. 2026 à 06:53, Dylan <dilan17300@gmail.com> a écrit :\r\n\r\n>\r\n>\r\n> Le lun. 19 janv. 2026 à 06:52, Dylan <dilan17300@gmail.com> a écrit :\r\n>\r\n>> Bonjour,\r\n>> Voici les preuves de paiement pour la taxe de la douane. Si besoin\r\n>> d’avoir d’autre informations hésitez pas.\r\n>> J’ai oublié d’enregistrer le reçu j’espère que ça ne sera pas un problème\r\n>> pour vous\r\n>> Bonne journée\r\n>>\r\n>> Le ven. 16 janv. 2026 à 04:05, service@simsonn.com ",
+      "user_id": 158008982578,
+      "created_at": "2026-01-20T06:42:34Z",
+      "updated_at": "2026-01-20T06:42:34Z",
       "incoming": true,
       "private": false,
       "source": 0

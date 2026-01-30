@@ -5,7 +5,7 @@
   "status": 3,
   "priority": 1,
   "created_at": "2026-01-14T16:51:29Z",
-  "updated_at": "2026-01-15T07:04:05Z",
+  "updated_at": "2026-01-20T09:03:18Z",
   "requester_id": 158009011103,
   "responder_id": null,
   "cc_emails": [],
@@ -19,6 +19,27 @@
       "incoming": false,
       "private": false,
       "source": 0
+    },
+    {
+      "id": 158017438661,
+      "body_text": "It is in perfect condition, package only opened. I will send them back. Thank you for the help! ",
+      "user_id": 158009011103,
+      "created_at": "2026-01-19T18:47:43Z",
+      "updated_at": "2026-01-19T18:47:43Z",
+      "incoming": true,
+      "private": false,
+      "source": 2
+    },
+    {
+      "id": 158017476310,
+      "body_text": "Hi Nathan Matthews,  You're welcome. Thank you for purchasing our product. Should you have any questions in the future, please feel free to contact us. We will address them promptly.Wish you a pleasant day.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-20T09:03:17Z",
+      "updated_at": "2026-01-20T09:03:17Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
     }
-  ]
+  ],
+  "available_langs": []
 }

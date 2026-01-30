@@ -5,10 +5,21 @@
   "status": 2,
   "priority": 3,
   "created_at": "2026-01-17T13:16:29Z",
-  "updated_at": "2026-01-19T05:58:44Z",
+  "updated_at": "2026-01-20T14:34:21Z",
   "requester_id": 158009346392,
   "responder_id": 158001343601,
   "cc_emails": [],
-  "conversations": [],
+  "conversations": [
+    {
+      "id": 158017494040,
+      "body_text": "Hi\r\n\r\nPlease can you provide an update with regards to this please.\r\n\r\nBest Regards,\r\nGeorge Cowley\r\n________________________________\r\n",
+      "user_id": 158009346392,
+      "created_at": "2026-01-20T14:34:21Z",
+      "updated_at": "2026-01-20T14:34:21Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
   "available_langs": []
 }

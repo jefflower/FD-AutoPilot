@@ -16,12 +16,13 @@ impl Storage {
     }
 
     /// Get status name from status code
-    fn status_name(status: i32) -> &'static str {
+    fn status_name(status: &crate::models::TicketStatus) -> &'static str {
+        use crate::models::TicketStatus::*;
         match status {
-            2 => "open",
-            3 => "pending",
-            4 => "resolved",
-            5 => "closed",
+            PendingTrans => "open",
+            PendingReply => "pending",
+            PendingAudit => "audit",
+            Completed => "resolved",
             _ => "unknown",
         }
     }
@@ -32,10 +33,10 @@ impl Storage {
             Some(l) => format!(
                 "{}_{}_{}.json",
                 ticket.id,
-                Self::status_name(ticket.status),
+                Self::status_name(&ticket.status),
                 l
             ),
-            None => format!("{}_{}.json", ticket.id, Self::status_name(ticket.status)),
+            None => format!("{}_{}.json", ticket.id, Self::status_name(&ticket.status)),
         }
     }
 

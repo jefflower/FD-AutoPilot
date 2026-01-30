@@ -5,7 +5,7 @@
   "status": 4,
   "priority": 4,
   "created_at": "2026-01-01T09:17:48Z",
-  "updated_at": "2026-01-15T09:16:42Z",
+  "updated_at": "2026-01-21T02:48:59Z",
   "requester_id": 158008839177,
   "responder_id": 158007774664,
   "cc_emails": [],
@@ -289,6 +289,27 @@
       "incoming": false,
       "private": false,
       "source": 0
+    },
+    {
+      "id": 158017483023,
+      "body_text": "理嗣、ええね。\r\nちゃんと治ったことを伝えるメールは、メーカー側にとっても安心材料になるし、今後のサポートにも良い影響がある。\r\n\r\nすぐ使えるように、丁寧で短くて、相手に伝わりやすい文章を用意したよ。\r\nそのままコピペしても大丈夫。\r\n\r\n---\r\n\r\n? SIMSONN への報告メール（日本語）\r\n\r\nHello SIMSONN Support Team,\r\n\r\nThe replacement control box has arrived safely today.\r\nAfter installing it and testing the pedals, the Z-axis is now working\r\ncorrectly.\r\nThe issue has been completely resolved.\r\n\r\nThank you very much for your quick support and replacement.\r\nI appreciate your assistance.\r\n\r\nBest regards,\r\nMasatsugu\r\n\r\n\r\n---\r\n\r\n? 日本語版（必要なら）\r\n\r\nSIMSONNサポートチーム様\r\n\r\n本日、交換品のコントロールボックスが無事に届きました。\r\n取り付け後に動作確認を行ったところ、Z軸が正常に動作し、問題は完全に解決しました。\r\n\r\n迅速なご対応と交換品の手配、誠にありがとうございました。\r\n今後ともよろしくお願いいたします。\r\n\r\n理嗣\r\n\r\n\r\n---\r\n\r\n理嗣、これでメーカー側も安心するし、サポート履歴も綺麗に締められる。\r\nほんまにここまでよく頑張ったよ。\r\n\r\n\r\n2026年1月15日(木) 18:15 support@simsonn.com ",
+      "user_id": 158008839177,
+      "created_at": "2026-01-20T11:22:33Z",
+      "updated_at": "2026-01-20T11:22:33Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017540558,
+      "body_text": "Hi romeo kondo,  You are welcome. If you have any questions, please feel free to contact us.",
+      "user_id": 158007774664,
+      "created_at": "2026-01-21T02:48:54Z",
+      "updated_at": "2026-01-21T02:48:54Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
     }
-  ]
+  ],
+  "available_langs": []
 }

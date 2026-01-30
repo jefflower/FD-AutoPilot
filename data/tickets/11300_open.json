@@ -1,0 +1,55 @@
+{
+  "id": 11300,
+  "subject": "Refund",
+  "description_text": "\r\nSent from my iPhone\r\nI’ve ordered something over a month ago and haven’t received a tracking number I don’t know where it’s at so I would just like my money back\r\n",
+  "status": 2,
+  "priority": 4,
+  "created_at": "2026-01-19T19:57:56Z",
+  "updated_at": "2026-01-21T01:57:01Z",
+  "requester_id": 158008799332,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017462374,
+      "body_text": "Hi Jacob Nunn,  ​I checked and found that your order was signed for on January 3rd. Could you confirm if you really haven't received the package?  You can track your shipping information via the following link:   https://t.17track.net/en#nums=JSELK1569407412YQ",
+      "user_id": 158001343601,
+      "created_at": "2026-01-20T02:21:21Z",
+      "updated_at": "2026-01-20T02:21:21Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017465359,
+      "body_text": "I’m sure I haven’t signed for the goods\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158008799332,
+      "created_at": "2026-01-20T04:43:17Z",
+      "updated_at": "2026-01-20T04:43:17Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017480146,
+      "body_text": "Hi Jacob Nunn,     This is your USPS last-mile tracking number. The package appears to have been left at your front door. Please contact a family member or neighbor to check on it. Thank you for your cooperation.  https://t.17track.net/en#nums=420729569261290376144458000667",
+      "user_id": 158001343601,
+      "created_at": "2026-01-20T09:56:32Z",
+      "updated_at": "2026-01-20T09:56:32Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017537555,
+      "body_text": "I’ve contacted everyone I know it has never shipped I never received this wether it got dropped off but and the wrong address I don’t know all I know is I’m out 100$\r\nSent from my iPhone\r\n\r\n> ",
+      "user_id": 158008799332,
+      "created_at": "2026-01-21T01:12:02Z",
+      "updated_at": "2026-01-21T01:12:02Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

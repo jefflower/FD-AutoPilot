@@ -5,7 +5,7 @@
   "status": 2,
   "priority": 4,
   "created_at": "2025-12-27T12:31:24Z",
-  "updated_at": "2026-01-17T21:54:34Z",
+  "updated_at": "2026-01-20T08:30:45Z",
   "requester_id": 158007839709,
   "responder_id": 158001343601,
   "cc_emails": [],
@@ -106,6 +106,16 @@
       "user_id": 158007839709,
       "created_at": "2026-01-17T21:54:34Z",
       "updated_at": "2026-01-17T21:54:34Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017475237,
+      "body_text": "This is still in Germany.. if you don’t send a replacement and resolve the\r\nissue with DHL Germany, I’m asking for a refund.\r\n\r\nOn Sat, 17 Jan 2026 at 23:54, Andrei Vasilescu <avasilescu98@gmail.com>\r\nwrote:\r\n\r\n> Still nothing?\r\n>\r\n> On Thu, 15 Jan 2026 at 17:45, Andrei Vasilescu <avasilescu98@gmail.com>\r\n> wrote:\r\n>\r\n>> Please do your best, it’s been too long already..\r\n>>\r\n>> Thank you,\r\n>> Andrei\r\n>>\r\n>> On Thu, 15 Jan 2026 at 12:55, service@simsonn.com ",
+      "user_id": 158007839709,
+      "created_at": "2026-01-20T08:30:45Z",
+      "updated_at": "2026-01-20T08:30:45Z",
       "incoming": true,
       "private": false,
       "source": 0

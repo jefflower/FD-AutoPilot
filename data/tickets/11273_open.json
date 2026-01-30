@@ -3,14 +3,45 @@
   "subject": "Refund request for Order #SSN5700 - Package refused",
   "description_text": "Dear Simsonn Support Team,\r\n\r\nI am writing to you regarding my order #SSN5700.\r\n\r\nI am informing you that I have refused the delivery of the package due to the unexpected and high customs fees. The package is now being returned to your warehouse.\r\n\r\nTracking number: 1ZJ455510406322760\r\n\r\nSince I will not be receiving the items, I am requesting a full refund for this order. Please let me know once you have processed the refund or if you need any further information from my side.\r\n\r\nThank you for your assistance.\r\n\r\nBest regards,\r\n\r\nRémi Zickenheiner\r\n",
   "status": 2,
-  "priority": 1,
+  "priority": 4,
   "created_at": "2026-01-19T11:55:06Z",
-  "updated_at": "2026-01-19T11:55:06Z",
+  "updated_at": "2026-01-20T13:26:58Z",
   "requester_id": 158009518430,
-  "responder_id": null,
+  "responder_id": 158001343601,
   "cc_emails": [
     "service@simsonn.com"
   ],
-  "conversations": [],
+  "conversations": [
+    {
+      "id": 158017480527,
+      "body_text": "Hi remi zickenheiner,    Please don't worry. After completing payment, provide the UPS invoice and we will reimburse you.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-20T10:09:40Z",
+      "updated_at": "2026-01-20T10:09:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017480805,
+      "body_text": "Hi remi zickenheiner,     Please contact UPS to arrange for redelivery. If you refuse the shipment, you will be responsible for the high international return fees.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-20T10:17:48Z",
+      "updated_at": "2026-01-20T10:17:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017486195,
+      "body_text": "Dear Simsonn Team, \r\n\r\nThank you for your proposal to reimburse the customs fees. I have been in contact with UPS, and the total amount for customs duties, taxes, and brokerage fees is 150 €. Before I proceed with the payment to UPS, I need your formal written confirmation regarding the following points: Do you agree to reimburse the full amount of 150 € upon receiving the invoice? How many days will it take to process the refund after I send you the receipt? Which payment method will you use for the reimbursement? Please consider your reply as a formal agreement between us. Once I have your clear confirmation on these points, I will immediately pay UPS to receive the package and send you the invoice. I look forward to your confirmation. \r\n\r\nBest regards, \r\n\r\nRémi Zickenheiner\r\n\r\n> Le 20 janv. 2026 à 11:09, service@simsonn.com a écrit :\r\n> \r\n> Hi remi zickenheiner,\r\n> \r\n> Please don't worry. After completing payment, provide the UPS invoice and we will reimburse you.\r\n> \r\n> \r\n> \r\n> ",
+      "user_id": 158009518430,
+      "created_at": "2026-01-20T12:50:18Z",
+      "updated_at": "2026-01-20T12:50:18Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
   "available_langs": []
 }

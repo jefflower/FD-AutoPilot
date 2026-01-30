@@ -1,0 +1,35 @@
+{
+  "id": 9984,
+  "subject": "Simsonn plus x squeaky clutch",
+  "description_text": "Hello, I recently got the simsonn plus x as a Christmas gift but after a\r\nfew days of use, the clutch seems to have a squeaking problem. The throttle\r\npedal seems to have this noise as well but only occasionally. I've read the\r\nmanual and have applied the recommended ptfe dry lube on the indicated\r\nclutch points and have given it time to settle in.\r\n\r\nIt seems I am still having issues with the squeaky noise returning multiple\r\ntimes very quickly or not eliminating the noise at all. Is there any way to\r\nresolve this?\r\n\r\nI have attached a video for reference. Thank you.\r\n\r\n",
+  "status": 2,
+  "priority": 1,
+  "created_at": "2026-01-05T10:17:58Z",
+  "updated_at": "2026-01-21T01:41:06Z",
+  "requester_id": 158008933574,
+  "responder_id": 158000445778,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158016089718,
+      "body_text": "Hi Alvander Lor,    The video you uploaded is incomplete and cannot be opened properly. Please share the video via Google Drive and make sure the link access is set to viewable, so we can review it.  In addition, lubrication can be applied to all moving joints. Please note that the hydraulic damper is filled with fluid, and it is normal to hear some noise during movement.",
+      "user_id": 158000445778,
+      "created_at": "2026-01-07T08:03:41Z",
+      "updated_at": "2026-01-07T08:03:41Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017455673,
+      "body_text": "https://drive.google.com/file/d/1D_WZ6sTgYIOqm4IK5AdSTuzhNqOn6mE-/view?usp=drivesdk\r\n\r\n\r\nOn Wed, Jan 7, 2026, 2:04 AM service@simsonn.com ",
+      "user_id": 158008933574,
+      "created_at": "2026-01-19T23:21:06Z",
+      "updated_at": "2026-01-19T23:21:06Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

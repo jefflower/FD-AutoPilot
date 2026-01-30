@@ -1,0 +1,45 @@
+{
+  "id": 11294,
+  "subject": "return policy",
+  "description_text": "hi, i ordered a set of pedals on aliexpress order id: 3065833176368705 but\r\ni no longer need them and wanted to return them. I know its free return but\r\nsince i had to pay importation duties i wanted to know how the return works\r\nand if i need to pay other duties. Thanks\r\n\r\n",
+  "status": 3,
+  "priority": 1,
+  "created_at": "2026-01-19T16:49:40Z",
+  "updated_at": "2026-01-20T08:47:52Z",
+  "requester_id": 158009522434,
+  "responder_id": 158007774664,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017472950,
+      "body_text": "Hi Claudio Scacchetti,  Hello, you can return it to our German warehouse address. You will need to pay for the return shipping yourself.        Return address information for German warehouse: Recipient/Company: Gubitz GmbH-KBL Street + House Number: Hüttenkamp 12 Postal Code: 24536 City: Neumünster State/Province: Schleswig-Holstein Country: Germany Phone: 017622233089 ",
+      "user_id": 158007774664,
+      "created_at": "2026-01-20T07:57:08Z",
+      "updated_at": "2026-01-20T07:57:08Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017475600,
+      "body_text": "if it states free return on aliexpress why do i need to pay for shipping?\r\n\r\nOn Tue, 20 Jan 2026 at 08:57, support@simsonn.com ",
+      "user_id": 158009522434,
+      "created_at": "2026-01-20T08:42:45Z",
+      "updated_at": "2026-01-20T08:42:45Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017475770,
+      "body_text": "Hi Claudio Scacchetti,  We're sorry, we don't have a refund option for shipping fees. Returns to our German warehouse will incur shipping costs for the customer. If you have any questions about your product, please contact us online for assistance.",
+      "user_id": 158007774664,
+      "created_at": "2026-01-20T08:47:40Z",
+      "updated_at": "2026-01-20T08:47:40Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

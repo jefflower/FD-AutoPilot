@@ -1,0 +1,35 @@
+{
+  "id": 10839,
+  "subject": "Order #SSN5514 – Request",
+  "description_text": "Hello Simsonn Team,\r\n\r\nI’m writing to ask for an update on my order #SSN5514, which has been in\r\nconfirmed status since 30 December.\r\n\r\nCould you please let me know the current status of the order and provide an\r\nestimated timeframe for when it is expected to be shipped?\r\n\r\nThank you in advance for your assistance.\r\n\r\nI look forward to your response.\r\n\r\n",
+  "status": 2,
+  "priority": 1,
+  "created_at": "2026-01-14T00:06:44Z",
+  "updated_at": "2026-01-20T22:40:41Z",
+  "requester_id": 158009059145,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017071473,
+      "body_text": "Hi mikejohnson,  We apologize for the delay. Two shipments destined for our German warehouse have been affected by heavy snowfall in Europe, causing road blockages and delivery delays. We will expedite delivery or explore alternative logistics channels to ship your order from China as soon as possible. Compensation will be provided based on the delay after your order is completed. We apologize for the inconvenience caused.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-14T06:11:18Z",
+      "updated_at": "2026-01-14T06:11:18Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017493682,
+      "body_text": "Hi,\r\n\r\nThank you for the update. Could you please provide an estimated timeframe\r\nfor when my order is expected to be shipped?\r\n\r\nBest regards\r\n\r\nEl mié, 14 ene 2026, 7:11, service@simsonn.com ",
+      "user_id": 158009059145,
+      "created_at": "2026-01-20T14:29:44Z",
+      "updated_at": "2026-01-20T14:29:44Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

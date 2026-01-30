@@ -1,0 +1,25 @@
+{
+  "id": 11284,
+  "subject": "Order #SSN5568",
+  "description_text": "I have only just received my pedals and I did not receive any of my\r\nhaptics. Are these on the way and if not, are we able to have some sent?\r\nCheers\r\n\r\n",
+  "status": 3,
+  "priority": 3,
+  "created_at": "2026-01-19T14:47:53Z",
+  "updated_at": "2026-01-20T08:06:01Z",
+  "requester_id": 158009520781,
+  "responder_id": null,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017474215,
+      "body_text": "Hi Blair Bennett,  ​It is found that your order will be shipped in two packages:  ​​Your power supply is on the way and is expected to arrive around the 22nd.  You can track your shipping information via the following link:  https://t.17track.net/en#nums=SF6047224804965",
+      "user_id": 158001343601,
+      "created_at": "2026-01-20T08:06:01Z",
+      "updated_at": "2026-01-20T08:06:01Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}

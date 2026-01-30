@@ -12,21 +12,18 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => {
             <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-indigo-500/25">F</div>
             <div className="flex-1 flex flex-col gap-2 mt-8">
                 <NavButton
-                    tab="sync"
                     label="Sync"
                     active={activeTab === 'sync'}
                     onClick={() => setActiveTab('sync')}
                     icon={<svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>}
                 />
                 <NavButton
-                    tab="browse"
                     label="Tickets"
                     active={activeTab === 'browse'}
                     onClick={() => setActiveTab('browse')}
                     icon={<svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>}
                 />
                 <NavButton
-                    tab="settings"
                     label="Settings"
                     active={activeTab === 'settings'}
                     onClick={() => setActiveTab('settings')}

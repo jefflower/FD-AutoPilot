@@ -1,0 +1,45 @@
+{
+  "id": 11299,
+  "subject": "My order",
+  "description_text": "Still haven't gotten my pedals and haven't heard anything back from you guys I tried calling the number on your site but it says the call can't be completed. My order number is \r\n\r\nSSN5329 I've gotten all the unimportant pieces but theres no tracking number for the pedals I was only ever given two tracking numbers bothe say delivered yet I have no pedals just a baseplate and the vibration motors and it's been almost a full month wtf $500 for this is bullshit \r\nYahoo Mail: Search, Organize, Conquer\r\n",
+  "status": 2,
+  "priority": 4,
+  "created_at": "2026-01-19T19:36:20Z",
+  "updated_at": "2026-01-20T17:11:47Z",
+  "requester_id": 158009023879,
+  "responder_id": 158001343601,
+  "cc_emails": [],
+  "conversations": [
+    {
+      "id": 158017480286,
+      "body_text": "Hi Emory Nelson,     We apologize for the inconvenience. We did indeed ship the footplate and base plate. Did you only receive the base plate?  Don't worry. Please provide the shipping label from the package you received, and we will resend the missing item.",
+      "user_id": 158001343601,
+      "created_at": "2026-01-20T10:01:48Z",
+      "updated_at": "2026-01-20T10:01:48Z",
+      "incoming": false,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017506656,
+      "body_text": "The picture you guys attached was just the baseplate and equipment no pedals or control box \r\n\r\nYahoo Mail: Search, Organize, Conquer \r\n \r\n  ",
+      "user_id": 158009023879,
+      "created_at": "2026-01-20T16:31:36Z",
+      "updated_at": "2026-01-20T16:31:36Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    },
+    {
+      "id": 158017507190,
+      "body_text": "\r\nThis is everything I've received \r\n\r\nYahoo Mail: Search, Organize, Conquer \r\n \r\n  ",
+      "user_id": 158009023879,
+      "created_at": "2026-01-20T16:38:59Z",
+      "updated_at": "2026-01-20T16:38:59Z",
+      "incoming": true,
+      "private": false,
+      "source": 0
+    }
+  ],
+  "available_langs": []
+}
