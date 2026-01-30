@@ -43,6 +43,7 @@ export interface NotebookLMConfig {
   atToken: string;
   fSid: string;
   notebookId: string;
+  notebookUrl?: string;
   prompt: string;
   sourceIds?: string[];
 }

@@ -55,7 +55,7 @@ const MQTaskRunner: React.FC<MQTaskRunnerProps> = ({ notebookLMConfig, setLogs }
                 }
 
                 const finalPrompt = (notebookLMConfig.prompt || '请根据以下工单内容回答我的问题:\n\n${工单内容}').replace('${工单内容}', context);
-                const shadowService = new NotebookShadowService(notebookLMConfig.notebookId);
+                const shadowService = new NotebookShadowService(notebookLMConfig.notebookId, notebookLMConfig.notebookUrl);
 
                 // 确保窗口可见且活跃，避免部分浏览器策略拦截脚本执行
                 console.log('[MQTaskRunner] Opening shadow window...');

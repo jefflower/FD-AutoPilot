@@ -19,6 +19,7 @@ export function useSettings() {
     atToken: '',
     fSid: '',
     notebookId: '7662c1de-8bba-4d54-b834-e38161f942f4',
+    notebookUrl: 'https://notebooklm.google.com/notebook/7662c1de-8bba-4d54-b834-e38161f942f4',
     prompt: '请使用用户工单的语言，根据下面的工单内容（可能包含已经回复过的内容）简要的做出回复，直接给出回复内容即可\n\n${工单内容}'
   });
 

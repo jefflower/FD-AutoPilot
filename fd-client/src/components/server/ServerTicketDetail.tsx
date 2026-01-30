@@ -143,7 +143,7 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
             const finalPrompt = promptTemplate.replace('${工单内容}', context);
             setCurrentPrompt(finalPrompt); // 保存当前 Prompt 用于查看
 
-            const shadowService = new NotebookShadowService(notebookConfig.notebookId);
+            const shadowService = new NotebookShadowService(notebookConfig.notebookId, notebookConfig.notebookUrl);
             for await (const chunk of shadowService.query(finalPrompt)) {
                 if (chunk.status === 'error') {
                     setAiError(chunk.text);

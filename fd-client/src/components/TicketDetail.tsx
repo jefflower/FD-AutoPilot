@@ -100,7 +100,7 @@ const TicketDetail: React.FC<TicketDetailProps> = ({
             // 构造 Prompt
             const finalPrompt = (notebookLMConfig.prompt || '请根据以下工单内容回答我的问题:\n\n${工单内容}').replace('${工单内容}', context);
 
-            const shadowService = new NotebookShadowService(notebookLMConfig.notebookId);
+            const shadowService = new NotebookShadowService(notebookLMConfig.notebookId, notebookLMConfig.notebookUrl);
 
             // 使用影子窗口进行流式渲染
             for await (const chunk of shadowService.query(finalPrompt)) {
@@ -162,7 +162,7 @@ const TicketDetail: React.FC<TicketDetailProps> = ({
     };
 
     const toggleShadowWindow = async () => {
-        const shadowService = new NotebookShadowService(notebookLMConfig.notebookId);
+        const shadowService = new NotebookShadowService(notebookLMConfig.notebookId, notebookLMConfig.notebookUrl);
         if (showShadow) {
             await shadowService.hide();
             setShowShadow(false);

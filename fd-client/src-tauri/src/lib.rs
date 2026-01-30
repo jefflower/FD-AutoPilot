@@ -266,17 +266,26 @@ async fn export_to_csv_cmd(
 }
 
 #[tauri::command]
-async fn open_notebook_window(app: AppHandle, notebook_id: String) -> Result<(), String> {
-    println!("[Rust] open_notebook_window called with notebook_id: {}", notebook_id);
+async fn open_notebook_window(app: AppHandle, notebook_id: String, notebook_url: Option<String>) -> Result<(), String> {
+    println!("[Rust] open_notebook_window called with notebook_id: {}, notebook_url: {:?}", notebook_id, notebook_url);
     let window_label = "notebook_shadow";
+
+    let target_url = if let Some(url) = notebook_url {
+        if url.is_empty() {
+            format!("https://notebooklm.google.com/notebook/{}", notebook_id)
+        } else {
+            url
+        }
+    } else {
+        format!("https://notebooklm.google.com/notebook/{}", notebook_id)
+    };
     
-    // 如果窗口已存在，只需根据 notebook_id 决定是否重新加载
+    // 如果窗口已存在，只需根据 URL 决定是否重新加载
     if let Some(window) = app.get_webview_window(window_label) {
         println!("[Rust] Shadow window already exists, checking URL...");
         let current_url = window.url().map_err(|e| e.to_string())?;
-        if !current_url.as_str().contains(&notebook_id) {
-            println!("[Rust] URL mismatch, navigating to new notebook...");
-            let target_url = format!("https://notebooklm.google.com/notebook/{}", notebook_id);
+        if current_url.as_str() != target_url {
+            println!("[Rust] URL mismatch, navigating to new URL: {}", target_url);
             window.navigate(target_url.parse().unwrap()).map_err(|e| e.to_string())?;
         } else {
             println!("[Rust] URL already matches, reusing existing window");
@@ -285,7 +294,7 @@ async fn open_notebook_window(app: AppHandle, notebook_id: String) -> Result<(),
     }
 
     // 创建新窗口（默认隐藏）
-    let target_url = format!("https://notebooklm.google.com/notebook/{}", notebook_id);
+    println!("[Rust] Creating new shadow window with URL: {}", target_url);
     let builder = WebviewWindowBuilder::new(&app, window_label, WebviewUrl::External(target_url.parse().unwrap()))
         .title("NotebookLM Shadow")
         .inner_size(1280.0, 1000.0) // 强制桌面尺寸

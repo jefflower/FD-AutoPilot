@@ -11,17 +11,22 @@ export interface ShadowResponse {
  */
 export class NotebookShadowService {
   private notebookId: string;
+  private notebookUrl?: string;
   private initialized: boolean = false;
 
-  constructor(notebookId: string) {
+  constructor(notebookId: string, notebookUrl?: string) {
     this.notebookId = notebookId;
+    this.notebookUrl = notebookUrl;
   }
 
   async init() {
     if (this.initialized) return;
     this.initialized = true;
     try {
-      await invoke('open_notebook_window', { notebookId: this.notebookId });
+      await invoke('open_notebook_window', { 
+        notebookId: this.notebookId,
+        notebookUrl: this.notebookUrl
+      });
       await new Promise(r => setTimeout(r, 2000));
     } catch (err) {
       this.initialized = false;
@@ -120,34 +125,44 @@ export class NotebookShadowService {
         let idleCount = 0;
         let everValid = false;
 
-        while (idleCount < 180) { // 3分钟总超时
+        while (idleCount < 360) { // 3分钟总超时 (360 * 500ms)
           const pollScript = `
             (function() {
               if (!window.__SHADOW_SESSION_ACTIVE) return;
               try {
-                // 1. 获取所有文本块
-                const contents = document.querySelectorAll('.message-text-content');
-                if (contents.length === 0) return;
+                // 1. 获取最后一个回复消息容器 (聚合同一条消息内的所有块)
+                const pairs = document.querySelectorAll('.chat-message-pair');
+                if (pairs.length === 0) return;
+                
+                const lastPair = pairs[pairs.length - 1];
+                // 提取容器内所有的文本内容，处理换行导致的多个 div/span
+                const text = (lastPair.innerText || lastPair.textContent || "").trim();
+                
+                // 2. 括号平衡校验逻辑
+                function isJsonBalanced(str) {
+                  let open = 0, close = 0;
+                  for (let char of str) {
+                    if (char === '[') open++;
+                    if (char === ']') close++;
+                  }
+                  return open > 0 && open === close;
+                }
 
-                // 2. 定位最后一个回复
-                const lastContent = contents[contents.length - 1];
-                const text = (lastContent.innerText || lastContent.textContent || "").trim();
-                
-                // 3. 动态抓取逻辑：
-                // 不再硬性过滤非 JSON 内容，以便用户能看到“思考中”的文字
-                const isJsonLike = text.includes('[') && text.includes(']');
-                const looksLikeThinking = text.endsWith('...') || 
-                                          text.includes('Thinking') || 
-                                          text.includes('Assessing') || 
-                                          text.includes('Reading') ||
-                                          text.includes('正在思考');
-                
-                // 4. 判定完成状态
+                // 3. 动态状态分析
+                const balanced = isJsonBalanced(text);
                 const input = document.querySelector('textarea.query-box-input');
                 const botIdle = input && !input.disabled;
-                const isFinished = isJsonLike && botIdle;
                 
-                const payload = JSON.stringify({ text, finished: isFinished, valid: isJsonLike });
+                // 判定完成状态：
+                // (JSON配对成功 且 机器人空闲) -> 正常收工
+                const isFinished = balanced && botIdle;
+                
+                const payload = JSON.stringify({ 
+                  text, 
+                  finished: isFinished, 
+                  valid: balanced 
+                });
+
                 if (text !== window.__SHADOW_LAST_TEXT) {
                    window.__SHADOW_LAST_TEXT = text;
                    window.__TAURI__.core.invoke('forward_shadow_event', { event: 'shadow-result', payload }).catch(()=>{});
@@ -163,7 +178,6 @@ export class NotebookShadowService {
               const { text, finished, valid } = JSON.parse(shadowResult);
               shadowResult = null; 
 
-              // 只要是有效内容或者是已经生成的 JSON 片段，就往外抛
               if (text && text !== lastYieldedText) {
                 lastYieldedText = text;
                 idleCount = 0;
@@ -176,13 +190,13 @@ export class NotebookShadowService {
             idleCount++;
           }
           
-          // 如果已经得到了有效 JSON 但长时间没更新，强行结束
-          if (everValid && idleCount > 50 && lastYieldedText.includes(']')) {
+          // 如果机器人空闲时间过长（5秒）且已有内容，强制结束，防止因微小字符差异导致的死锁
+          if (everValid && idleCount > 10) { 
              yield { text: lastYieldedText, status: 'complete' };
              break;
           }
           
-          await new Promise(r => setTimeout(r, 1000));
+          await new Promise(r => setTimeout(r, 500));
         }
       } finally {
         unlistenResult();

@@ -348,24 +348,44 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
                                 />
                             </div>
 
-                            <div className="grid grid-cols-2 gap-4">
+                            <div className="space-y-4">
                                 <div>
-                                    <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">Notebook ID</label>
+                                    <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">Notebook URL</label>
                                     <input
                                         type="text"
-                                        value={notebookLMConfig.notebookId}
-                                        onChange={(e) => setNotebookLMConfig((prev: NotebookLMConfig) => ({ ...prev, notebookId: e.target.value }))}
+                                        value={notebookLMConfig.notebookUrl || ''}
+                                        onChange={(e) => {
+                                            const url = e.target.value;
+                                            const updates: Partial<NotebookLMConfig> = { notebookUrl: url };
+                                            const match = url.match(/\/notebook\/([a-f0-9-]+)/);
+                                            if (match) {
+                                                updates.notebookId = match[1];
+                                            }
+                                            setNotebookLMConfig((prev: NotebookLMConfig) => ({ ...prev, ...updates }));
+                                        }}
                                         className="w-full px-4 py-2.5 bg-slate-800/50 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-purple-500/50"
+                                        placeholder="https://notebooklm.google.com/notebook/..."
                                     />
                                 </div>
-                                <div>
-                                    <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">F.SID</label>
-                                    <input
-                                        type="text"
-                                        value={notebookLMConfig.fSid}
-                                        onChange={(e) => setNotebookLMConfig((prev: NotebookLMConfig) => ({ ...prev, fSid: e.target.value }))}
-                                        className="w-full px-4 py-2.5 bg-slate-800/50 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-purple-500/50"
-                                    />
+                                <div className="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">Notebook ID</label>
+                                        <input
+                                            type="text"
+                                            value={notebookLMConfig.notebookId}
+                                            onChange={(e) => setNotebookLMConfig((prev: NotebookLMConfig) => ({ ...prev, notebookId: e.target.value }))}
+                                            className="w-full px-4 py-2.5 bg-slate-800/50 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-purple-500/50"
+                                        />
+                                    </div>
+                                    <div>
+                                        <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">F.SID</label>
+                                        <input
+                                            type="text"
+                                            value={notebookLMConfig.fSid}
+                                            onChange={(e) => setNotebookLMConfig((prev: NotebookLMConfig) => ({ ...prev, fSid: e.target.value }))}
+                                            className="w-full px-4 py-2.5 bg-slate-800/50 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-purple-500/50"
+                                        />
+                                    </div>
                                 </div>
                             </div>
 
