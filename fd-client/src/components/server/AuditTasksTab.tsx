@@ -6,7 +6,7 @@ import type { ServerTicket } from '../../types/server';
 const AuditTasksTab: React.FC = () => {
     const [loading, setLoading] = useState(false);
     const [submitting, setSubmitting] = useState(false);
-    const [error, setError] = useState<string | null>(null);
+    const [, setError] = useState<string | null>(null);
     const [selectedId, setSelectedId] = useState<number | null>(null);
     const [selectedTicket, setSelectedTicket] = useState<ServerTicket | null>(null);
 

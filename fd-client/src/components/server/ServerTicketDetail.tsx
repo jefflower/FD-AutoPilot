@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import { ServerTicket } from '../../types/server';
 import { serverApi } from '../../services/serverApi';
-import { LangLabel } from '../Common';
 import { useSettings } from '../../hooks/useSettings';
 import { useNotebookShadow } from '../../hooks/useNotebookShadow';
 import { NotebookShadowService } from '../../services/notebookShadow';
-import { invoke } from '@tauri-apps/api/core';
 
 interface ServerTicketDetailProps {
     ticket: ServerTicket;
@@ -40,7 +38,7 @@ const AGENT_MAP: Record<string, string> = {
 const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
     ticket,
     onRefresh,
-    isEmbed = false,
+    // isEmbed = false,
     isProcessing = false,
     isSplitMode: propIsSplitMode,
     setIsSplitMode: propSetIsSplitMode
@@ -53,6 +51,8 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
     const [aiReplies, setAiReplies] = useState<[string, string] | null>(null); // [工单语言, 中文]
     const [aiReplyLang, setAiReplyLang] = useState<'original' | 'cn'>('original');
     const [aiError, setAiError] = useState<string | null>(null);
+    const [currentPrompt, setCurrentPrompt] = useState<string>(''); // 存储发给 AI 的完整提示词
+    const [showPrompts, setShowPrompts] = useState(false); // 是否显示提示词视图
     const aiResponseEndRef = React.useRef<HTMLDivElement>(null);
 
     // 自动滚动 AI 回复到底部
@@ -108,7 +108,7 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
     }, [parsedData, ticket.createdAt]);
 
     const handleTriggerAiReply = async () => {
-        if (isProcessing || generatingAiReply) return;
+        if (generatingAiReply || isProcessing) return;
         if (!notebookConfig?.notebookId) {
             alert('请先在“设置”中配置 Notebook ID');
             return;
@@ -121,9 +121,27 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
         setAiError(null);
 
         try {
-            const context = `Subject: ${ticket.subject}\n\nDescription: ${parsedData?.description || 'No description'}\n\nConversations:\n${parsedData?.conversations?.map(c => `${c.incoming ? 'Customer' : 'Agent'}: ${c.bodyText}`).join('\n')}`;
+            // 深度构造上下文：包含明确的时间戳和角色标识
+            let context = `【TICKET SUBJECT】: ${ticket.subject}\n`;
+            context += `【INITIAL DESCRIPTION】: ${parsedData?.description || 'No description content'}\n\n`;
+
+            if (parsedData?.conversations && parsedData.conversations.length > 0) {
+                context += "【DETAILED INTERACTION LOGS】:\n";
+                context += "--------------------------------------------------\n";
+                for (const conv of parsedData.conversations) {
+                    const userIdStr = String(conv.userId);
+                    const agentName = AGENT_MAP[userIdStr];
+                    const role = agentName ? `AGENT (${agentName})` : (conv.incoming ? 'CUSTOMER' : 'AGENT');
+
+                    const timeStr = conv.createdAt || 'Unknown Time';
+                    context += `[${timeStr}] <${role}>:\n${conv.bodyText}\n`;
+                    context += "--------------------------------------------------\n";
+                }
+            }
+
             const promptTemplate = notebookConfig.prompt || '请根据以下工单内容回答我的问题:\n\n${工单内容}';
             const finalPrompt = promptTemplate.replace('${工单内容}', context);
+            setCurrentPrompt(finalPrompt); // 保存当前 Prompt 用于查看
 
             const shadowService = new NotebookShadowService(notebookConfig.notebookId);
             for await (const chunk of shadowService.query(finalPrompt)) {
@@ -133,7 +151,7 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
                 }
                 setAiReplyText(chunk.text);
 
-                // 尝试解析双语 JSON 数组
+                // 完全对齐老代码的解析逻辑 (TicketDetail.tsx:L114-150)
                 if (chunk.status === 'complete' || (chunk.text.includes('[') && chunk.text.includes(']'))) {
                     try {
                         let textToParse = chunk.text.trim();
@@ -149,10 +167,9 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
                         } catch {
                             const match = textToParse.match(/^\[\s*"([\s\S]*?)"\s*,\s*"([\s\S]*?)"\s*\]$/);
                             if (match) {
-                                parsed = [
-                                    match[1].replace(/\\n/g, '\n').replace(/\\"/g, '"'),
-                                    match[2].replace(/\\n/g, '\n').replace(/\\"/g, '"')
-                                ];
+                                const str1 = match[1].replace(/\\n/g, '\n').replace(/\\"/g, '"');
+                                const str2 = match[2].replace(/\\n/g, '\n').replace(/\\"/g, '"');
+                                parsed = [str1, str2];
                             }
                         }
 
@@ -302,139 +319,240 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
                             })}
                         </div>
 
-                        {/* AI Replies & Existing Replies */}
-                        {(aiReplyText || (ticket.replies && ticket.replies.length > 0)) && (
-                            <div className="space-y-4 pt-8 border-t border-slate-800">
-                                <div className="flex items-center gap-2 px-1">
-                                    <div className="w-1.5 h-4 bg-orange-500 rounded-full"></div>
-                                    <h3 className="text-xs font-black text-slate-400 uppercase tracking-widest">AI & REPLIES</h3>
+                        {/* AI 回复与历史回复容器 */}
+                        {(generatingAiReply || aiReplyText || (ticket.replies && ticket.replies.length > 0)) && (
+                            <div className="space-y-4 pt-10 border-t border-slate-800/80">
+                                <div className="flex items-center justify-between px-1">
+                                    <div className="flex items-center gap-2">
+                                        <div className="w-1.5 h-4 bg-purple-500 rounded-full animate-pulse"></div>
+                                        <h3 className="text-[11px] font-black text-slate-400 uppercase tracking-[0.2em]">NotebookLM AI Suggestion</h3>
+                                    </div>
+                                    {generatingAiReply && (
+                                        <div className="flex items-center gap-2">
+                                            <span className="text-[9px] text-purple-400 font-bold animate-pulse italic">SMART THINKING...</span>
+                                            <div className="w-2 h-2 rounded-full bg-purple-500 animate-ping"></div>
+                                        </div>
+                                    )}
                                 </div>
 
-                                {/* 手动触发生成的 AI 回复 */}
-                                {(aiReplyText || aiError) && (
-                                    <div className={`p-5 rounded-xl border shadow-lg backdrop-blur-sm transition-all animate-in fade-in slide-in-from-top-2 ${aiError ? 'bg-rose-900/20 border-rose-500/30' : 'bg-slate-800/40 border-orange-500/20 shadow-orange-500/5'
-                                        }`}>
-                                        <div className="flex items-center justify-between mb-3 border-b border-white/10 pb-2">
-                                            <div className="flex items-center gap-2">
-                                                <span className={`text-[10px] font-black uppercase ${aiError ? 'text-rose-400' : 'text-orange-400'}`}>
-                                                    {aiError ? 'AI ERROR' : 'AI RECOMMENDATION'}
-                                                </span>
-                                                {!aiError && aiReplies && (
-                                                    <div className="flex bg-black/40 rounded-md p-0.5 border border-white/10 ml-2">
+                                {(generatingAiReply || aiReplyText || aiError) && (
+                                    <div className="relative mt-2 group">
+                                        {/* 装饰边框背景 */}
+                                        <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500/20 via-indigo-500/20 to-pink-500/20 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000"></div>
+
+                                        <div className={`relative rounded-xl overflow-hidden border shadow-2xl transition-all duration-500 ${aiError
+                                            ? 'bg-slate-900/90 border-red-500/40'
+                                            : 'bg-slate-900/90 border-purple-500/30'
+                                            }`}>
+
+                                            {/* AI Header */}
+                                            <div className="flex items-center justify-between px-4 py-3 bg-white/5 border-b border-white/5">
+                                                <div className="flex items-center gap-3">
+                                                    <div className={`w-6 h-6 rounded-lg flex items-center justify-center text-xs ${aiError
+                                                        ? 'bg-red-500/20 text-red-400'
+                                                        : 'bg-gradient-to-br from-purple-500 to-indigo-600 text-white shadow-lg shadow-purple-500/20'
+                                                        }`}>
+                                                        {aiError ? '!' : 'AI'}
+                                                    </div>
+                                                    <span className="text-[11px] font-black text-white uppercase tracking-wider">
+                                                        {aiError ? 'Generation Error' : 'NotebookLM Response'}
+                                                    </span>
+                                                </div>
+                                                <div className="flex items-center gap-3">
+                                                    {!aiError && (
                                                         <button
-                                                            onClick={() => setAiReplyLang('original')}
-                                                            className={`px-2 py-0.5 rounded text-[8px] font-black transition-all ${aiReplyLang === 'original' ? 'bg-orange-600 text-white' : 'text-slate-500 hover:text-slate-300'}`}
-                                                        >ORIGINAL</button>
-                                                        <button
-                                                            onClick={() => setAiReplyLang('cn')}
-                                                            className={`px-2 py-0.5 rounded text-[8px] font-black transition-all ${aiReplyLang === 'cn' ? 'bg-orange-600 text-white' : 'text-slate-500 hover:text-slate-300'}`}
-                                                        >CHINESE</button>
+                                                            onClick={(e) => {
+                                                                e.stopPropagation();
+                                                                setShowPrompts(!showPrompts);
+                                                            }}
+                                                            className={`px-3 py-1 text-[9px] font-black rounded-lg border transition-all ${showPrompts ? 'bg-indigo-600/30 border-indigo-500 text-indigo-300' : 'bg-white/5 border-white/10 text-slate-400 hover:text-white hover:border-white/20'}`}
+                                                        >
+                                                            {showPrompts ? 'HIDE PROMPTS' : 'VIEW PROMPTS'}
+                                                        </button>
+                                                    )}
+                                                    <div className="flex items-center gap-2">
+                                                        {aiReplies && !aiError && !generatingAiReply && (
+                                                            <div className="flex bg-black/40 rounded-lg p-0.5 border border-white/10 mr-2">
+                                                                <button
+                                                                    onClick={() => setAiReplyLang('original')}
+                                                                    className={`px-3 py-1 text-[10px] font-bold rounded-md transition-all ${aiReplyLang === 'original' ? 'bg-purple-600 text-white shadow-lg' : 'text-slate-500 hover:text-slate-300'}`}
+                                                                >
+                                                                    ORIGIN
+                                                                </button>
+                                                                <button
+                                                                    onClick={() => setAiReplyLang('cn')}
+                                                                    className={`px-3 py-1 text-[10px] font-bold rounded-md transition-all ${aiReplyLang === 'cn' ? 'bg-purple-600 text-white shadow-lg' : 'text-slate-500 hover:text-slate-300'}`}
+                                                                >
+                                                                    CHINESE
+                                                                </button>
+                                                            </div>
+                                                        )}
+                                                        <button onClick={() => { setAiReplyText(''); setAiError(null); setGeneratingAiReply(false); }} className="text-slate-500 hover:text-white transition-colors">
+                                                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            {/* AI Content Area */}
+                                            <div className="p-6 overflow-hidden">
+                                                {showPrompts ? (
+                                                    <div className="space-y-4 animate-in fade-in slide-in-from-bottom-2 duration-300">
+                                                        <div className="text-[10px] font-bold text-indigo-400 uppercase tracking-widest flex items-center gap-2">
+                                                            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                                                            RAW PROMPT DEBUGGER
+                                                        </div>
+                                                        <div className="bg-black/40 border border-white/5 p-4 rounded-xl">
+                                                            <pre className="text-[11px] text-slate-300 font-mono whitespace-pre-wrap leading-relaxed selection:bg-indigo-500/30">
+                                                                {currentPrompt || 'Prompt processing...'}
+                                                            </pre>
+                                                        </div>
+                                                    </div>
+                                                ) : (
+                                                    <div className={`min-h-[100px] text-sm leading-relaxed whitespace-pre-wrap transition-all ${aiError ? 'text-red-400 font-mono' : 'text-slate-200'}`}>
+                                                        {aiError ? (
+                                                            <div className="flex items-start gap-2">
+                                                                <span className="mt-1">❌</span>
+                                                                <span>{aiError}</span>
+                                                            </div>
+                                                        ) : aiReplies ? (
+                                                            <div className="animate-in fade-in duration-500">
+                                                                {aiReplyLang === 'original' ? aiReplies[0] : aiReplies[1]}
+                                                            </div>
+                                                        ) : aiReplyText ? (
+                                                            <div className="flex flex-col">
+                                                                {aiReplyText}
+                                                                {generatingAiReply && <span className="inline-block w-1 h-4 ml-1 bg-purple-500 animate-pulse align-middle"></span>}
+                                                            </div>
+                                                        ) : (
+                                                            <div className="flex flex-col items-center justify-center py-6 gap-3">
+                                                                <div className="flex gap-1.5 item-center">
+                                                                    <div className="w-1.5 h-1.5 rounded-full bg-purple-500 animate-bounce [animation-delay:-0.3s]"></div>
+                                                                    <div className="w-1.5 h-1.5 rounded-full bg-purple-500 animate-bounce [animation-delay:-0.15s]"></div>
+                                                                    <div className="w-1.5 h-1.5 rounded-full bg-purple-500 animate-bounce"></div>
+                                                                </div>
+                                                                <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest animate-pulse">Analyzing context & building response...</span>
+                                                            </div>
+                                                        )}
                                                     </div>
                                                 )}
+                                                <div ref={aiResponseEndRef} />
                                             </div>
-                                            <span className="text-[10px] text-slate-500 italic">
-                                                {generatingAiReply ? 'Thinking...' : 'Stable'}
-                                            </span>
-                                        </div>
 
-                                        <div className={`text-sm leading-loose whitespace-pre-wrap ${aiError ? 'text-rose-200 font-mono text-xs' : 'text-slate-100'}`}>
-                                            {aiError ? aiError : (
-                                                aiReplies ? (aiReplyLang === 'original' ? aiReplies[0] : aiReplies[1]) : aiReplyText
+                                            {/* AI Actions / Audit Simulator */}
+                                            {(aiReplyText || aiReplies) && !aiError && !generatingAiReply && (
+                                                <div className="px-4 py-3 bg-white/5 border-t border-white/5 flex flex-wrap gap-2 items-center justify-between">
+                                                    <div className="flex gap-2">
+                                                        <button
+                                                            onClick={() => {
+                                                                const text = aiReplies ? (aiReplyLang === 'original' ? aiReplies[0] : aiReplies[1]) : aiReplyText;
+                                                                navigator.clipboard.writeText(text);
+                                                                alert('Text copied to clipboard');
+                                                            }}
+                                                            className="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-md text-[10px] font-black border border-white/10 flex items-center gap-1.5 transition-all"
+                                                        >
+                                                            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" /></svg>
+                                                            COPY CONTENT
+                                                        </button>
+                                                        <button className="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-md text-[10px] font-black border border-white/10 transition-all">
+                                                            {"EDIT & REPLY"}
+                                                        </button>
+                                                    </div>
+
+                                                    <div className="flex gap-2">
+                                                        <button className="px-4 py-1.5 bg-emerald-600/20 hover:bg-emerald-600/40 text-emerald-400 rounded-md text-[10px] font-black border border-emerald-500/30 transition-all">
+                                                            AUDIT: PASS
+                                                        </button>
+                                                        <button className="px-4 py-1.5 bg-rose-600/20 hover:bg-rose-600/40 text-rose-400 rounded-md text-[10px] font-black border border-rose-500/30 transition-all">
+                                                            AUDIT: REJECT
+                                                        </button>
+                                                    </div>
+                                                </div>
                                             )}
                                         </div>
-                                        <div ref={aiResponseEndRef} />
-
-                                        {!aiError && aiReplyText && (
-                                            <div className="mt-4 flex justify-end">
-                                                <button
-                                                    onClick={() => {
-                                                        const text = aiReplies ? (aiReplyLang === 'original' ? aiReplies[0] : aiReplies[1]) : aiReplyText;
-                                                        navigator.clipboard.writeText(text);
-                                                        alert('已复制到剪贴板');
-                                                    }}
-                                                    className="px-4 py-1.5 bg-slate-700 hover:bg-slate-600 text-white text-[10px] font-black rounded-lg transition-all border border-white/10 flex items-center gap-2"
-                                                >
-                                                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" /></svg>
-                                                    COPY REPLY
-                                                </button>
-                                            </div>
-                                        )}
                                     </div>
                                 )}
 
-                                {/* 工单已有的回复列表 */}
-                                {ticket.replies?.map(reply => (
-                                    <div key={reply.id} className="p-5 bg-slate-800/40 rounded-xl border border-slate-700/50 space-y-4">
-                                        <div className="flex items-center justify-between border-b border-slate-700/50 pb-2">
-                                            <span className="text-[10px] font-black text-indigo-400 uppercase tracking-tighter">REPLY #{reply.id}</span>
-                                            <span className="text-[10px] text-slate-500">{reply.createdAt}</span>
+                                {/* 历史回复部分 */}
+                                {ticket.replies && ticket.replies.length > 0 && (
+                                    <div className="space-y-4">
+                                        <div className="flex items-center gap-2 pt-6 pb-2">
+                                            <div className="w-1.5 h-3 bg-slate-600 rounded-full"></div>
+                                            <h4 className="text-[10px] font-black text-slate-500 uppercase tracking-widest">History Logs</h4>
                                         </div>
+                                        {ticket.replies.map(reply => (
+                                            <div key={reply.id} className="p-5 bg-slate-800/40 rounded-xl border border-slate-700/50 space-y-4">
+                                                <div className="flex items-center justify-between border-b border-slate-700/50 pb-2">
+                                                    <span className="text-[10px] font-black text-indigo-400 uppercase tracking-tighter">REPLY #{reply.id}</span>
+                                                    <span className="text-[10px] text-slate-500">{reply.createdAt}</span>
+                                                </div>
 
-                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                            <div className="space-y-2">
-                                                <div className="text-[10px] font-bold text-slate-500">ZH REPLY</div>
-                                                <div className="text-sm text-slate-200 bg-black/20 p-3 rounded-lg border border-white/5">{reply.zhReply}</div>
-                                            </div>
-                                            <div className="space-y-2">
-                                                <div className="text-[10px] font-bold text-slate-500">TARGET REPLY ({reply.replyLang})</div>
-                                                <div className="text-sm text-slate-200 bg-black/20 p-3 rounded-lg border border-white/5">{reply.targetReply}</div>
-                                            </div>
-                                        </div>
-
-                                        {/* 审核面板 */}
-                                        <div className="mt-4 pt-4 border-t border-slate-700/50">
-                                            {auditState.replyId === reply.id ? (
-                                                <div className="space-y-4 bg-slate-900/40 p-4 rounded-xl border border-blue-500/20 animate-in fade-in slide-in-from-top-2">
-                                                    <div className="flex items-center gap-4">
-                                                        <button
-                                                            onClick={() => setAuditState(s => ({ ...s, result: 'PASS' }))}
-                                                            className={`flex-1 py-2 text-xs font-bold rounded-lg border transition-all ${auditState.result === 'PASS' ? 'bg-emerald-600 border-emerald-500 text-white' : 'bg-slate-800 border-slate-700 text-slate-400'}`}
-                                                        >
-                                                            APPROVE (通过)
-                                                        </button>
-                                                        <button
-                                                            onClick={() => setAuditState(s => ({ ...s, result: 'REJECT' }))}
-                                                            className={`flex-1 py-2 text-xs font-bold rounded-lg border transition-all ${auditState.result === 'REJECT' ? 'bg-rose-600 border-rose-500 text-white' : 'bg-slate-800 border-slate-700 text-slate-400'}`}
-                                                        >
-                                                            REJECT (驳回)
-                                                        </button>
+                                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                    <div className="space-y-2">
+                                                        <div className="text-[10px] font-bold text-slate-500">ZH REPLY</div>
+                                                        <div className="text-sm text-slate-200 bg-black/20 p-3 rounded-lg border border-white/5">{reply.zhReply}</div>
                                                     </div>
-                                                    <textarea
-                                                        value={auditState.remark}
-                                                        onChange={(e) => setAuditState(s => ({ ...s, remark: e.target.value }))}
-                                                        placeholder="输入审核意见 (可选)..."
-                                                        className="w-full bg-black/20 border border-slate-700 rounded-lg p-3 text-sm text-white placeholder:text-slate-600 focus:border-blue-500 outline-none h-20 resize-none transition-colors"
-                                                    />
-                                                    <div className="flex justify-end gap-3">
-                                                        <button
-                                                            onClick={() => setAuditState({ replyId: null, result: 'PASS', remark: '' })}
-                                                            className="px-4 py-2 text-xs font-bold text-slate-400 hover:text-white transition-colors"
-                                                        >
-                                                            CANCEL
-                                                        </button>
-                                                        <button
-                                                            onClick={handleSubmitAudit}
-                                                            disabled={submitting}
-                                                            className="px-6 py-2 bg-blue-600 hover:bg-blue-500 text-white text-xs font-black rounded-lg transition-all shadow-lg shadow-blue-500/20"
-                                                        >
-                                                            {submitting ? 'SUBMITTING...' : 'CONFIRM AUDIT'}
-                                                        </button>
+                                                    <div className="space-y-2">
+                                                        <div className="text-[10px] font-bold text-slate-500">TARGET REPLY ({reply.replyLang})</div>
+                                                        <div className="text-sm text-slate-200 bg-black/20 p-3 rounded-lg border border-white/5">{reply.targetReply}</div>
                                                     </div>
                                                 </div>
-                                            ) : (
-                                                <div className="flex justify-end">
-                                                    <button
-                                                        onClick={() => setAuditState({ replyId: reply.id, result: 'PASS', remark: '' })}
-                                                        className="px-6 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-black rounded-lg transition-all shadow-lg shadow-indigo-500/20 flex items-center gap-2"
-                                                    >
-                                                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                                                        AUDIT THIS REPLY
-                                                    </button>
+
+                                                <div className="mt-4 pt-4 border-t border-slate-700/50">
+                                                    {auditState.replyId === reply.id ? (
+                                                        <div className="space-y-4 bg-slate-900/40 p-4 rounded-xl border border-blue-500/20 animate-in fade-in slide-in-from-top-2">
+                                                            <div className="flex items-center gap-4">
+                                                                <button
+                                                                    onClick={() => setAuditState(s => ({ ...s, result: 'PASS' }))}
+                                                                    className={`flex-1 py-2 text-xs font-bold rounded-lg border transition-all ${auditState.result === 'PASS' ? 'bg-emerald-600 border-emerald-500 text-white' : 'bg-slate-800 border-slate-700 text-slate-400'}`}
+                                                                >
+                                                                    APPROVE (通过)
+                                                                </button>
+                                                                <button
+                                                                    onClick={() => setAuditState(s => ({ ...s, result: 'REJECT' }))}
+                                                                    className={`flex-1 py-2 text-xs font-bold rounded-lg border transition-all ${auditState.result === 'REJECT' ? 'bg-rose-600 border-rose-500 text-white' : 'bg-slate-800 border-slate-700 text-slate-400'}`}
+                                                                >
+                                                                    REJECT (驳回)
+                                                                </button>
+                                                            </div>
+                                                            <textarea
+                                                                value={auditState.remark}
+                                                                onChange={(e) => setAuditState(s => ({ ...s, remark: e.target.value }))}
+                                                                placeholder="输入审核意见 (可选)..."
+                                                                className="w-full bg-black/20 border border-slate-700 rounded-lg p-3 text-sm text-white placeholder:text-slate-600 focus:border-blue-500 outline-none h-20 resize-none transition-colors"
+                                                            />
+                                                            <div className="flex justify-end gap-3">
+                                                                <button
+                                                                    onClick={() => setAuditState({ replyId: null, result: 'PASS', remark: '' })}
+                                                                    className="px-4 py-2 text-xs font-bold text-slate-400 hover:text-white transition-colors"
+                                                                >
+                                                                    CANCEL
+                                                                </button>
+                                                                <button
+                                                                    onClick={handleSubmitAudit}
+                                                                    disabled={submitting}
+                                                                    className="px-6 py-2 bg-blue-600 hover:bg-blue-500 text-white text-xs font-black rounded-lg transition-all shadow-lg shadow-blue-500/20"
+                                                                >
+                                                                    {submitting ? 'SUBMITTING...' : 'CONFIRM AUDIT'}
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    ) : (
+                                                        <div className="flex justify-end">
+                                                            <button
+                                                                onClick={() => setAuditState({ replyId: reply.id, result: 'PASS', remark: '' })}
+                                                                className="px-6 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-black rounded-lg transition-all shadow-lg shadow-indigo-500/20 flex items-center gap-2"
+                                                            >
+                                                                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                                                AUDIT THIS REPLY
+                                                            </button>
+                                                        </div>
+                                                    )}
                                                 </div>
-                                            )}
-                                        </div>
+                                            </div>
+                                        ))}
                                     </div>
-                                ))}
+                                )}
                             </div>
                         )}
                     </>

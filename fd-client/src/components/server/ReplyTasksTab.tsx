@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { invoke } from '@tauri-apps/api/core';
 import { listen } from '@tauri-apps/api/event';
 import { serverApi } from '../../services/serverApi';
-import { NotebookShadowService } from '../../services/notebookShadow';
+// import { NotebookShadowService } from '../../services/notebookShadow';
 import ServerTaskWorkspace from './ServerTaskWorkspace';
 import { useSettings } from '../../hooks/useSettings';
 import { useNotebookShadow } from '../../hooks/useNotebookShadow';
@@ -49,7 +49,7 @@ const ReplyTasksTab: React.FC = () => {
     const [mqStarting, setMqStarting] = useState(false);
     const logEndRef = useRef<HTMLDivElement>(null);
 
-    const { notebookLMConfig: mqConfig } = useSettings();
+    const { } = useSettings();
     const { visible: shadowVisible, toggle: handleToggleShadow } = useNotebookShadow();
 
     // 自动滚动日志

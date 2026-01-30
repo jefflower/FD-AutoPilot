@@ -6,232 +6,198 @@ export interface ShadowResponse {
 }
 
 /**
- * NotebookLM 影子窗口服务
- * 针对 Google 的严苛环境，采用具备远程域权限放通的 IPC 模式进行通信
+ * NotebookLM 影子窗口服务 - 结构化校验增强版
+ * 专门解决“中间思考过程被抓取”的问题
  */
 export class NotebookShadowService {
   private notebookId: string;
+  private initialized: boolean = false;
 
   constructor(notebookId: string) {
     this.notebookId = notebookId;
   }
 
-  /**
-   * 初始化影子窗口
-   */
   async init() {
-    console.log('[Shadow] Initializing window for:', this.notebookId);
+    if (this.initialized) return;
+    this.initialized = true;
     try {
-      console.log('[Shadow] Calling open_notebook_window...');
       await invoke('open_notebook_window', { notebookId: this.notebookId });
-      // 增加延时确保导航和基础脚本加载
-      console.log('[Shadow] Waiting for window to settle (3000ms)...');
-      await new Promise(r => setTimeout(r, 3000));
-      console.log('[Shadow] open_notebook_window completed successfully');
+      await new Promise(r => setTimeout(r, 2000));
     } catch (err) {
-      console.error('[Shadow] open_notebook_window failed:', err);
+      this.initialized = false;
       throw err;
     }
   }
 
-  /**
-   * 发送提问并监听输出 (基于权限放通的 IPC 模式)
-   */
   async *query(prompt: string): AsyncIterableIterator<ShadowResponse> {
-    console.log('[Shadow] query() called with prompt length:', prompt.length);
     try {
-      console.log('[Shadow] Step 1: Initializing shadow window...');
       await this.init();
-      console.log('[Shadow] Step 2: Shadow window initialized');
 
-      // 3. 注入指令 (仅负责输入与发送，不再负责数据回传)
-      const injectScript = `
+      const mainScript = `
         (async function() {
-          console.log('[Shadow JS] ========== SCRIPT INJECTION START ==========');
-          
-          async function clearHistory() {
-            console.log('[Shadow JS] Step 1: Checking for previous conversation...');
-            const optionsBtn = document.querySelector('button[aria-label="对话选项"], button[aria-label="Conversation options"]');
-            if (!optionsBtn) {
-              console.log('[Shadow JS] Options button not found, assuming new chat');
-              return;
+          const log = (msg) => {
+            if (window.__TAURI__?.core) {
+              window.__TAURI__.core.invoke('forward_shadow_event', { 
+                event: 'shadow-log', 
+                payload: '[Shadow] ' + msg 
+              }).catch(() => {});
             }
-            
-            optionsBtn.click();
-            await new Promise(r => setTimeout(r, 600));
-            
-            const menuItems = Array.from(document.querySelectorAll('.mat-mdc-menu-content button, [role="menuitem"]'));
-            const deleteItem = menuItems.find(el => 
-              el.textContent.includes('删除对话记录') || 
-              el.textContent.includes('Delete conversation') ||
-              el.textContent.includes('Delete chat')
-            );
-            
-            if (deleteItem) {
-              console.log('[Shadow JS] Clicking delete conversation...');
-              (deleteItem as HTMLElement).click();
-              await new Promise(r => setTimeout(r, 800));
-              
-              const confirmBtn = Array.from(document.querySelectorAll('button')).find(el => 
-                el.textContent.includes('删除') || el.textContent.includes('Delete')
-              );
-              if (confirmBtn) {
-                console.log('[Shadow JS] Confirming deletion...');
-                confirmBtn.click();
-                await new Promise(r => setTimeout(r, 2000));
-              }
-            } else {
-              // 点击空白处关闭菜单
-              document.body.click();
-              await new Promise(r => setTimeout(r, 500));
-            }
+          };
+
+          window.__SHADOW_SESSION_ACTIVE = false;
+          window.__SHADOW_LAST_TEXT = "";
+
+          async function forceClear() {
+             for (let i = 0; i < 3; i++) {
+                const pairs = document.querySelectorAll('.chat-message-pair, [role="log"] .message-content');
+                if (pairs.length === 0) return true;
+                
+                const menuBtn = document.querySelector('button[aria-label="对话选项"]') || 
+                                Array.from(document.querySelectorAll('button')).find(b => b.innerHTML.includes('more_vert') || b.innerText.includes('more_vert'));
+                if (!menuBtn) { await new Promise(r => setTimeout(r, 1000)); continue; }
+                
+                menuBtn.click();
+                await new Promise(r => setTimeout(r, 800));
+                
+                const delItem = Array.from(document.querySelectorAll('.mat-mdc-menu-item, [role="menuitem"]')).find(el => 
+                   el.innerText.includes('删除对话记录') || el.innerText.includes('Delete') || el.innerText.includes('清除')
+                );
+                
+                if (delItem) {
+                   delItem.click();
+                   await new Promise(r => setTimeout(r, 1000));
+                   const confirm = document.querySelector('button.yes-button') || 
+                                   Array.from(document.querySelectorAll('button')).find(el => 
+                                     (el.innerText.includes('删除') || el.innerText.includes('Delete')) && el.classList.contains('mat-mdc-button-base')
+                                   );
+                   if (confirm) {
+                      confirm.click();
+                      await new Promise(r => setTimeout(r, 2500));
+                      if (document.querySelectorAll('.chat-message-pair').length === 0) return true;
+                   }
+                } else {
+                   document.body.click();
+                }
+                await new Promise(r => setTimeout(r, 1000));
+             }
+             return false;
           }
 
-          async function doInput() {
-            console.log('[Shadow JS] Step 2: Finding input area...');
-            let input = null;
-            for (let i = 0; i < 40; i++) {
-              input = document.querySelector('textarea.query-box-input, textarea[aria-label*="查询框"], textarea[aria-label*="Chat box"], textarea[aria-label*="Ask"]');
-              if (input) break;
-              await new Promise(r => setTimeout(r, 500));
-            }
-            
-            if (!input) {
-              console.error('[Shadow JS] Input not found!');
-              return;
-            }
-            
-            console.log('[Shadow JS] Input area found, setting value...');
-            const valueToSet = ${JSON.stringify(prompt)};
-            (input as HTMLTextAreaElement).focus();
-            
-            const selection = window.getSelection();
-            const range = document.createRange();
-            range.selectNodeContents(input);
-            selection?.removeAllRanges();
-            selection?.addRange(range);
-            
-            if (!document.execCommand('insertText', false, valueToSet)) {
-              (input as HTMLTextAreaElement).value = valueToSet;
-            }
-            input.dispatchEvent(new Event('input', { bubbles: true }));
-            await new Promise(r => setTimeout(r, 500));
-
-            console.log('[Shadow JS] Step 3: Clicking send button...');
-            const sendBtn = document.querySelector('button.submit-button') || 
-                            document.querySelector('button[aria-label="提交"]:not(.actions-enter-button)') ||
-                            document.querySelector('button[aria-label="Send"]:not(.actions-enter-button)');
-            if (sendBtn) {
-              (sendBtn as HTMLElement).click();
-              console.log('[Shadow JS] Send button clicked!');
-            } else {
-              console.error('[Shadow JS] Send button not found!');
-            }
-          }
+          log('Process: Pure Cleaning...');
+          await forceClear();
           
-          try {
-            await clearHistory();
-            await doInput();
-            console.log('[Shadow JS] Script execution finished successfully');
-          } catch (e) {
-            console.error('[Shadow JS] Script error:', e);
+          const input = document.querySelector('textarea.query-box-input');
+          if (!input) { log('❌ FATAL: No input element'); return; }
+          
+          input.value = ${JSON.stringify(prompt)};
+          input.dispatchEvent(new Event('input', { bubbles: true }));
+          await new Promise(r => setTimeout(r, 500));
+
+          const sendBtn = document.querySelector('button.submit-button') || 
+                          Array.from(document.querySelectorAll('button')).find(b => b.innerHTML.includes('arrow_forward') && !b.disabled);
+          
+          if (sendBtn) {
+            sendBtn.click();
+            window.__SHADOW_SESSION_ACTIVE = true;
+            log('✅ NEW SESSION STARTED');
           }
         })();
       `;
 
-
-      console.log('[Shadow] Step 5: Injecting script to shadow window...');
-      await invoke('execute_notebook_js', { script: injectScript });
-      console.log('[Shadow] Step 6: Script injected successfully');
-
-      // --- 下面是"拉取模式 (Pull Mode)"的核心逻辑 ---
-      // Rust 端通过 forward_shadow_event 发送事件，我们在这里监听
+      await invoke('execute_notebook_js', { script: mainScript });
+      
       const { listen } = await import('@tauri-apps/api/event');
-      
-      // 等待删除历史和输入操作完成 (clearHistory + input 大约需要4秒)
-      console.log('[Shadow] Step 6.5: Waiting 5s for delete history and input to complete...');
-      await new Promise(r => setTimeout(r, 5000));
-      
+      yield { text: "", status: 'streaming' };
+
+      let shadowResult: string | null = null;
+      const unlistenResult = await listen<string>('shadow-result', (e) => {
+        shadowResult = e.payload;
+      });
+      const unlistenLog = await listen<string>('shadow-log', (e) => console.log('[Shadow-Remote]', e.payload));
+
       try {
-        let lastReceivedText = "";
-        let idleSeconds = 0;
-        console.log('[Shadow] Step 7: Starting poll-based retrieval loop (60s timeout)...');
+        let lastYieldedText = "";
+        let idleCount = 0;
+        let everValid = false;
 
-        while (idleSeconds < 60) {
-          // 使用事件监听获取结果
-          const resultPromise = new Promise<string>((resolve) => {
-            const timeout = setTimeout(() => resolve(""), 1500); // 1.5秒超时
-            listen<string>('shadow-result', (event) => {
-              clearTimeout(timeout);
-              console.log('[Shadow] Received event payload:', event.payload?.substring(0, 100));
-              resolve(event.payload || "");
-            }).then(unlisten => {
-              setTimeout(() => unlisten(), 2000);
-            });
-          });
+        while (idleCount < 180) { // 3分钟总超时
+          const pollScript = `
+            (function() {
+              if (!window.__SHADOW_SESSION_ACTIVE) return;
+              try {
+                // 1. 获取所有文本块
+                const contents = document.querySelectorAll('.message-text-content');
+                if (contents.length === 0) return;
+
+                // 2. 定位最后一个回复
+                const lastContent = contents[contents.length - 1];
+                const text = (lastContent.innerText || lastContent.textContent || "").trim();
+                
+                // 3. 动态抓取逻辑：
+                // 不再硬性过滤非 JSON 内容，以便用户能看到“思考中”的文字
+                const isJsonLike = text.includes('[') && text.includes(']');
+                const looksLikeThinking = text.endsWith('...') || 
+                                          text.includes('Thinking') || 
+                                          text.includes('Assessing') || 
+                                          text.includes('Reading') ||
+                                          text.includes('正在思考');
+                
+                // 4. 判定完成状态
+                const input = document.querySelector('textarea.query-box-input');
+                const botIdle = input && !input.disabled;
+                const isFinished = isJsonLike && botIdle;
+                
+                const payload = JSON.stringify({ text, finished: isFinished, valid: isJsonLike });
+                if (text !== window.__SHADOW_LAST_TEXT) {
+                   window.__SHADOW_LAST_TEXT = text;
+                   window.__TAURI__.core.invoke('forward_shadow_event', { event: 'shadow-result', payload }).catch(()=>{});
+                }
+              } catch(e) {}
+            })()
+          `;
+
+          await invoke('execute_notebook_js', { script: pollScript });
           
-          // 触发 Rust 执行脚本
-          await invoke('get_shadow_result');
-          const rawResult = await resultPromise;
-          
-          // 解析 JSON 格式的返回值
-          let currentText = "";
-          let isFinished = false;
-          try {
-            if (rawResult && rawResult.startsWith('{')) {
-              const parsed = JSON.parse(rawResult);
-              currentText = parsed.text || "";
-              isFinished = parsed.finished === true;
-            }
-          } catch (e) {
-            console.log('[Shadow] Parse error:', e);
-          }
-          
-          if (currentText && currentText !== lastReceivedText && currentText.length > 10) {
-            console.log('[Shadow] New content, length:', currentText.length, 'finished:', isFinished);
-            lastReceivedText = currentText;
-            idleSeconds = 0;
-            yield { text: currentText, status: isFinished ? 'complete' : 'streaming' };
-            
-            if (isFinished) {
-              console.log('[Shadow] AI generation complete, exiting loop');
-              break;
-            }
+          if (shadowResult) {
+            try {
+              const { text, finished, valid } = JSON.parse(shadowResult);
+              shadowResult = null; 
+
+              // 只要是有效内容或者是已经生成的 JSON 片段，就往外抛
+              if (text && text !== lastYieldedText) {
+                lastYieldedText = text;
+                idleCount = 0;
+                everValid = valid;
+                yield { text, status: finished ? 'complete' : 'streaming' };
+                if (finished) break;
+              }
+            } catch {}
           } else {
-            idleSeconds++;
+            idleCount++;
           }
-
-          // 如果已有一定长度且5秒未变化，认为生成完成
-          if (idleSeconds > 5 && lastReceivedText.length > 50) {
-            console.log('[Shadow] Content stable for 5s, ending loop');
-            yield { text: lastReceivedText, status: 'complete' };
-            break;
+          
+          // 如果已经得到了有效 JSON 但长时间没更新，强行结束
+          if (everValid && idleCount > 50 && lastYieldedText.includes(']')) {
+             yield { text: lastYieldedText, status: 'complete' };
+             break;
           }
-
-          await new Promise(r => setTimeout(r, 1000)); // 每秒拉取一次
+          
+          await new Promise(r => setTimeout(r, 1000));
         }
-        
-        console.log('[Shadow] Retrieval loop ended. Final length:', lastReceivedText.length);
       } finally {
-        console.log('[Shadow] Query process complete');
+        unlistenResult();
+        unlistenLog();
       }
-
-    } catch (err) {
-      yield { text: `影子浏览器拉取异常: ${err}`, status: 'error' };
+    } catch (err: unknown) {
+      yield { text: `影子浏览器异常: ${err instanceof Error ? err.message : String(err)}`, status: 'error' };
     }
   }
 
-  /**
-   * 显示影子窗口
-   */
   async show() {
     await this.init();
     await invoke('toggle_notebook_window', { visible: true });
   }
 
-  /**
-   * 隐藏影子窗口
-   */
   async hide() {
     await invoke('toggle_notebook_window', { visible: false });
   }
