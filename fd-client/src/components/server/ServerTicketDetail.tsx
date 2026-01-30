@@ -50,6 +50,17 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
     const { visible: shadowVisible, toggle: handleToggleShadow } = useNotebookShadow();
     const [generatingAiReply, setGeneratingAiReply] = useState(false);
     const [aiReplyText, setAiReplyText] = useState('');
+    const [aiReplies, setAiReplies] = useState<[string, string] | null>(null); // [工单语言, 中文]
+    const [aiReplyLang, setAiReplyLang] = useState<'original' | 'cn'>('original');
+    const [aiError, setAiError] = useState<string | null>(null);
+    const aiResponseEndRef = React.useRef<HTMLDivElement>(null);
+
+    // 自动滚动 AI 回复到底部
+    React.useEffect(() => {
+        if (aiReplyText) {
+            aiResponseEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, [aiReplyText]);
 
     // 优先使用外部传入的分栏状态
     const [internalIsSplitMode, setInternalIsSplitMode] = useState(false);
@@ -105,19 +116,57 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
 
         setGeneratingAiReply(true);
         setAiReplyText('');
+        setAiReplies(null);
+        setAiReplyLang('original');
+        setAiError(null);
+
         try {
             const context = `Subject: ${ticket.subject}\n\nDescription: ${parsedData?.description || 'No description'}\n\nConversations:\n${parsedData?.conversations?.map(c => `${c.incoming ? 'Customer' : 'Agent'}: ${c.bodyText}`).join('\n')}`;
             const promptTemplate = notebookConfig.prompt || '请根据以下工单内容回答我的问题:\n\n${工单内容}';
             const finalPrompt = promptTemplate.replace('${工单内容}', context);
 
             const shadowService = new NotebookShadowService(notebookConfig.notebookId);
-            let lastText = '';
             for await (const chunk of shadowService.query(finalPrompt)) {
+                if (chunk.status === 'error') {
+                    setAiError(chunk.text);
+                    break;
+                }
                 setAiReplyText(chunk.text);
+
+                // 尝试解析双语 JSON 数组
+                if (chunk.status === 'complete' || (chunk.text.includes('[') && chunk.text.includes(']'))) {
+                    try {
+                        let textToParse = chunk.text.trim();
+                        const startIdx = textToParse.indexOf('[');
+                        const endIdx = textToParse.lastIndexOf(']');
+                        if (startIdx !== -1 && endIdx > startIdx) {
+                            textToParse = textToParse.substring(startIdx, endIdx + 1);
+                        }
+
+                        let parsed = null;
+                        try {
+                            parsed = JSON.parse(textToParse);
+                        } catch {
+                            const match = textToParse.match(/^\[\s*"([\s\S]*?)"\s*,\s*"([\s\S]*?)"\s*\]$/);
+                            if (match) {
+                                parsed = [
+                                    match[1].replace(/\\n/g, '\n').replace(/\\"/g, '"'),
+                                    match[2].replace(/\\n/g, '\n').replace(/\\"/g, '"')
+                                ];
+                            }
+                        }
+
+                        if (parsed && Array.isArray(parsed) && parsed.length >= 2) {
+                            setAiReplies([parsed[0], parsed[1]]);
+                        }
+                    } catch (e) {
+                        console.log('[AI Reply] Parse attempt failed:', e);
+                    }
+                }
             }
         } catch (e) {
             console.error('AI Reply Error:', e);
-            alert('AI 生成失败: ' + (e as Error).message);
+            setAiError((e as Error).message);
         } finally {
             setGeneratingAiReply(false);
         }
@@ -262,15 +311,54 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
                                 </div>
 
                                 {/* 手动触发生成的 AI 回复 */}
-                                {aiReplyText && (
-                                    <div className="p-5 bg-orange-900/10 rounded-xl border border-orange-500/20 shadow-orange-500/5">
-                                        <div className="flex items-center justify-between mb-3 border-b border-orange-500/10 pb-2">
-                                            <span className="text-[10px] font-black text-orange-400 uppercase">NEW AI RECOMMENDATION</span>
-                                            <span className="text-[10px] text-orange-500/50 italic">Just generated</span>
+                                {(aiReplyText || aiError) && (
+                                    <div className={`p-5 rounded-xl border shadow-lg backdrop-blur-sm transition-all animate-in fade-in slide-in-from-top-2 ${aiError ? 'bg-rose-900/20 border-rose-500/30' : 'bg-slate-800/40 border-orange-500/20 shadow-orange-500/5'
+                                        }`}>
+                                        <div className="flex items-center justify-between mb-3 border-b border-white/10 pb-2">
+                                            <div className="flex items-center gap-2">
+                                                <span className={`text-[10px] font-black uppercase ${aiError ? 'text-rose-400' : 'text-orange-400'}`}>
+                                                    {aiError ? 'AI ERROR' : 'AI RECOMMENDATION'}
+                                                </span>
+                                                {!aiError && aiReplies && (
+                                                    <div className="flex bg-black/40 rounded-md p-0.5 border border-white/10 ml-2">
+                                                        <button
+                                                            onClick={() => setAiReplyLang('original')}
+                                                            className={`px-2 py-0.5 rounded text-[8px] font-black transition-all ${aiReplyLang === 'original' ? 'bg-orange-600 text-white' : 'text-slate-500 hover:text-slate-300'}`}
+                                                        >ORIGINAL</button>
+                                                        <button
+                                                            onClick={() => setAiReplyLang('cn')}
+                                                            className={`px-2 py-0.5 rounded text-[8px] font-black transition-all ${aiReplyLang === 'cn' ? 'bg-orange-600 text-white' : 'text-slate-500 hover:text-slate-300'}`}
+                                                        >CHINESE</button>
+                                                    </div>
+                                                )}
+                                            </div>
+                                            <span className="text-[10px] text-slate-500 italic">
+                                                {generatingAiReply ? 'Thinking...' : 'Stable'}
+                                            </span>
                                         </div>
-                                        <div className="text-sm text-orange-50/90 leading-loose whitespace-pre-wrap font-medium">
-                                            {aiReplyText}
+
+                                        <div className={`text-sm leading-loose whitespace-pre-wrap ${aiError ? 'text-rose-200 font-mono text-xs' : 'text-slate-100'}`}>
+                                            {aiError ? aiError : (
+                                                aiReplies ? (aiReplyLang === 'original' ? aiReplies[0] : aiReplies[1]) : aiReplyText
+                                            )}
                                         </div>
+                                        <div ref={aiResponseEndRef} />
+
+                                        {!aiError && aiReplyText && (
+                                            <div className="mt-4 flex justify-end">
+                                                <button
+                                                    onClick={() => {
+                                                        const text = aiReplies ? (aiReplyLang === 'original' ? aiReplies[0] : aiReplies[1]) : aiReplyText;
+                                                        navigator.clipboard.writeText(text);
+                                                        alert('已复制到剪贴板');
+                                                    }}
+                                                    className="px-4 py-1.5 bg-slate-700 hover:bg-slate-600 text-white text-[10px] font-black rounded-lg transition-all border border-white/10 flex items-center gap-2"
+                                                >
+                                                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" /></svg>
+                                                    COPY REPLY
+                                                </button>
+                                            </div>
+                                        )}
                                     </div>
                                 )}
 
