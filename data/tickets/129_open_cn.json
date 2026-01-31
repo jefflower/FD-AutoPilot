@@ -1,0 +1,16 @@
+{
+  "id": 129,
+  "externalId": "10105",
+  "subject": "订单状态 SSN5512",
+  "descriptionText": null,
+  "content": "{\"description\":\"Good morning, I placed an order on December 30th, order number SSN5512, and I would like to know its current status as I haven't received an email with the tracking number. Thank you very much and best regards.\\r\\n\\r\\nM Cristina Sánchez Sánchez\\r\\n\\r\\n\",\"conversations\":[{\"id\":158016316769,\"bodyText\":\"Hi MARIA CRISTINA SANCHEZ SANCHEZ,    We apologize for the delay. The shipment is expected to arrive at our German warehouse on the 12th, at which time we will be able to ship your order. We apologize for the inconvenience.\",\"isPrivate\":false,\"incoming\":false,\"userId\":158001343601,\"createdAt\":\"2026-01-08T09:52:43Z\"},{\"id\":158017267572,\"bodyText\":\"Good afternoon, we still haven't received any updates on the shipment. We haven't received any emails to track the package or to let us know it's in the warehouse or any other information.\\r\\n\\r\\nM Cristina Sánchez Sánchez\\r\\n\\r\\nEl 8 ene 2026 10:52 a. m., service@simsonn.com escribió:\\r\\nHi MARIA CRISTINA SANCHEZ SANCHEZ,\\r\\n\\r\\nWe apologize for the delay. The shipment is expected to arrive at our German warehouse on the 12th, at which time we will be able to ship your order. We apologize for the inconvenience.\\r\\n\\r\\n\\r\\n\\r\\n\",\"isPrivate\":false,\"incoming\":true,\"userId\":158008953174,\"createdAt\":\"2026-01-16T14:18:40Z\"},{\"id\":158017310612,\"bodyText\":\"Hi MARIA CRISTINA SANCHEZ SANCHEZ,    We apologize for the delay. Two shipments destined for our German warehouse have been affected by heavy snowfall in Europe, causing road blockages and delivery delays. We will expedite delivery or explore alternative logistics channels to ship your order from China as soon as possible.  Compensation will be provided based on the delay after your order is completed. We apologize for the inconvenience caused.\",\"isPrivate\":false,\"incoming\":false,\"userId\":158001343601,\"createdAt\":\"2026-01-17T02:39:56Z\"},{\"id\":158018277761,\"bodyText\":\"Hello, I purchased the VAMs and Im having an issue with them. The output from motor 3 on the controller is not working. It is not the VAMs because when I change which motor is connected to output 3, the one that stops working changes, so I assume it is the controller itself\\r\\n\\r\\nM Cristina Sánchez Sánchez\\r\\n\\r\\nEl 17 ene 2026 3:40 a. m., service@simsonn.com escribió:\\r\\nHi MARIA CRISTINA SANCHEZ SANCHEZ,\\r\\n\\r\\nWe apologize for the delay. Two shipments destined for our German warehouse have been affected by heavy snowfall in Europe, causing road blockages and delivery delays. We will expedite delivery or explore alternative logistics channels to ship your order from China as soon as possible.\\r\\nCompensation will be provided based on the delay after your order is completed. We apologize for the inconvenience caused.\\r\\n\\r\\n\\r\\n\\r\\n\",\"isPrivate\":false,\"incoming\":true,\"userId\":158008953174,\"createdAt\":\"2026-01-29T15:01:15Z\"}]}",
+  "status": "PENDING_TRANS",
+  "priority": 0,
+  "createdAt": "2026-01-30T13:05:44.207305",
+  "updatedAt": null,
+  "requesterId": null,
+  "responderId": null,
+  "ccEmails": [],
+  "conversations": [],
+  "availableLangs": []
+}
