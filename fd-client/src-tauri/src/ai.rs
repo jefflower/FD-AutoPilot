@@ -45,7 +45,7 @@ impl GeminiClient {
         let _ = app.emit("log", msg.to_string());
     }
 
-    pub fn translate_ticket(
+    pub async fn translate_ticket(
         app: &AppHandle,
         ticket: &Ticket,
         target_lang: &str,
@@ -56,10 +56,11 @@ impl GeminiClient {
         );
 
         // Prepare prompt
-        let lang_name = if target_lang == "cn" {
-            "Simplified Chinese"
-        } else {
-            "English"
+        let lang_name = match target_lang {
+            "cn" | "zh-CN" => "Simplified Chinese",
+            "en" => "English",
+            "jp" => "Japanese",
+            _ => target_lang, // 兜底使用原始代码
         };
         let mut prompt = format!(
             "You are a professional customer support translator. \
@@ -70,9 +71,10 @@ impl GeminiClient {
             2. Do NOT include any intro, outro, explanations, or markdown blocks (like ```json).\
             3. You MUST translate BOTH the subject/description AND EVERY item in the 'conversations' list.\
             4. Maintain the original 'id' for each conversation item.\
-            5. JSON Structure:\
-            {{\n  \"subject\": \"translated title\",\n  \"description_text\": \"translated main content\",\n  \"conversations\": [\n    {{\"id\": 123, \"body_text\": \"translated message 1\"}},\n    {{\"id\": 456, \"body_text\": \"translated message 2\"}}\n  ]\n}}\n\n",
-            lang_name
+            5. Ensure the content is ONLY in {} - DO NOT output in English if the target is {}.\
+            6. JSON Structure Example:\
+            {{\n  \"subject\": \"翻译后的标题\",\n  \"description_text\": \"翻译后的正文内容\",\n  \"conversations\": [\n    {{\"id\": 123, \"body_text\": \"翻译后的对话消息\"}}\n  ]\n}}\n\n",
+            lang_name, lang_name, lang_name
         );
 
         prompt.push_str(&format!(
@@ -145,7 +147,16 @@ impl GeminiClient {
             }
         }
 
-        Self::log(app, &format!("✅ Translation to {} complete.", target_lang));
+        Self::log(
+            app,
+            &format!(
+                "✅ Translation to {} complete. Result: Title({} chars), Desc({} chars), Conversations({} items)",
+                target_lang,
+                new_ticket.subject.as_ref().map(|s| s.len()).unwrap_or(0),
+                new_ticket.description_text.as_ref().map(|s| s.len()).unwrap_or(0),
+                new_ticket.conversations.len()
+            ),
+        );
         Ok(new_ticket)
     }
 }

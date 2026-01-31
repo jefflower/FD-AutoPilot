@@ -31,7 +31,15 @@ interface MqConsumerStatus {
     completedTickets: CompletedTicket[];
 }
 
-const TranslationTasksTab: React.FC = () => {
+interface TranslationTasksTabProps {
+    mqTarget?: { id: number; type: 'translate' | 'reply' } | null;
+    onMqTargetHandled?: () => void;
+}
+
+const TranslationTasksTab: React.FC<TranslationTasksTabProps> = ({
+    mqTarget,
+    onMqTargetHandled
+}) => {
     const [error, setError] = useState<string | null>(null);
     const [selectedId, setSelectedId] = useState<number | null>(null);
 
@@ -53,27 +61,26 @@ const TranslationTasksTab: React.FC = () => {
     const batchSizeDebounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
     // 轮询 MQ 状态
-    useEffect(() => {
-        const checkStatus = async () => {
-            try {
-                const status = await invoke<MqConsumerStatus>('get_mq_consumer_status');
-                setMqStatus(status);
-                // 仅在非聚焦状态下同步服务端值
-                if (!isInputFocused && status.batchSize) {
-                    if (!hasInitialized || status.batchSize.toString() !== batchSizeInput) {
-                        setBatchSizeInput(status.batchSize.toString());
-                        setHasInitialized(true);
-                    }
+    const checkStatus = useCallback(async () => {
+        try {
+            const status = await invoke<MqConsumerStatus>('get_mq_consumer_status');
+            setMqStatus(status);
+            if (!isInputFocused && status.batchSize) {
+                if (!hasInitialized || status.batchSize.toString() !== batchSizeInput) {
+                    setBatchSizeInput(status.batchSize.toString());
+                    setHasInitialized(true);
                 }
-            } catch (err) {
-                console.error('Failed to get MQ status:', err);
             }
-        };
+        } catch (err) {
+            console.error('Failed to get MQ status:', err);
+        }
+    }, [isInputFocused, hasInitialized, batchSizeInput]);
 
+    useEffect(() => {
         checkStatus();
-        const interval = setInterval(checkStatus, 3000); // 降低频率
+        const interval = setInterval(checkStatus, 3000);
         return () => clearInterval(interval);
-    }, [isInputFocused]); // 依赖聚焦状态，失焦时立即触发一次同步
+    }, [checkStatus]);
 
     // 监听日志事件
     useEffect(() => {
@@ -292,6 +299,9 @@ const TranslationTasksTab: React.FC = () => {
                 selectedTaskId={selectedId}
                 onSelectTask={setSelectedId}
                 onLoadTicket={handleLoadTicket}
+                mqTarget={mqTarget}
+                onMqTargetHandled={onMqTargetHandled}
+                onRefresh={checkStatus}
             />
         </div>
     );

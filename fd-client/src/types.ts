@@ -27,6 +27,7 @@ export interface Settings {
   mq_port: number;
   mq_username: string;
   mq_password: string;
+  translation_lang: string;
 }
 
 export interface Progress {

@@ -12,6 +12,7 @@ export function useSettings() {
   const [mqPort, setMqPort] = useState(5672);
   const [mqUsername, setMqUsername] = useState('guest');
   const [mqPassword, setMqPassword] = useState('guest');
+  const [translationLang, setTranslationLang] = useState('cn');
 
   // NotebookLM配置状态
   const [notebookLMConfig, setNotebookLMConfig] = useState<NotebookLMConfig>({
@@ -34,6 +35,7 @@ export function useSettings() {
       if (settings.mq_port) setMqPort(settings.mq_port);
       if (settings.mq_username) setMqUsername(settings.mq_username);
       if (settings.mq_password) setMqPassword(settings.mq_password);
+      if (settings.translation_lang) setTranslationLang(settings.translation_lang);
     }).catch(console.error);
 
     try {
@@ -58,10 +60,11 @@ export function useSettings() {
         mqPort,
         mqUsername,
         mqPassword,
+        translationLang,
       }).catch(console.error);
     }, 500);
     return () => clearTimeout(timeout);
-  }, [apiKey, outputDir, syncStartDate, mqHost, mqPort, mqUsername, mqPassword]);
+  }, [apiKey, outputDir, syncStartDate, mqHost, mqPort, mqUsername, mqPassword, translationLang]);
 
   // 自动保存 NotebookLM 配置
   useEffect(() => {
@@ -83,6 +86,7 @@ export function useSettings() {
     mqPort, setMqPort,
     mqUsername, setMqUsername,
     mqPassword, setMqPassword,
+    translationLang, setTranslationLang,
     notebookLMConfig, setNotebookLMConfig
   };
 }

@@ -3,7 +3,15 @@ import { serverApi } from '../../services/serverApi';
 import ServerTicketDetail from './ServerTicketDetail';
 import type { ServerTicket } from '../../types/server';
 
-const AuditTasksTab: React.FC = () => {
+interface AuditTasksTabProps {
+    mqTarget?: { id: number; type: 'translate' | 'reply' } | null;
+    onMqTargetHandled?: () => void;
+}
+
+const AuditTasksTab: React.FC<AuditTasksTabProps> = ({
+    mqTarget: _mqTarget,
+    onMqTargetHandled: _onMqTargetHandled
+}) => {
     const [loading, setLoading] = useState(false);
     const [submitting, setSubmitting] = useState(false);
     const [, setError] = useState<string | null>(null);

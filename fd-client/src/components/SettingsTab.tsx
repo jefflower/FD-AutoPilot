@@ -17,6 +17,8 @@ interface SettingsTabProps {
     setMqUsername: (s: string) => void;
     mqPassword: string;
     setMqPassword: (s: string) => void;
+    translationLang: string;
+    setTranslationLang: (s: string) => void;
     notebookLMConfig: NotebookLMConfig;
     setNotebookLMConfig: React.Dispatch<React.SetStateAction<NotebookLMConfig>>;
     setLogs: (updater: (prev: string[]) => string[]) => void;
@@ -30,6 +32,7 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
     mqPort, setMqPort,
     mqUsername, setMqUsername,
     mqPassword, setMqPassword,
+    translationLang, setTranslationLang,
     notebookLMConfig, setNotebookLMConfig,
     setLogs
 }) => {
@@ -251,6 +254,20 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
                                     className="w-full px-4 py-3 bg-slate-800/50 border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all"
                                 />
                                 <p className="text-[10px] text-slate-500 mt-2">Tickets will be fetched starting from this month during full sync</p>
+                            </div>
+
+                            <div>
+                                <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">Translation Target Language (MQ/Manual)</label>
+                                <select
+                                    value={translationLang}
+                                    onChange={(e) => setTranslationLang(e.target.value)}
+                                    className="w-full px-4 py-3 bg-slate-800/50 border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all text-sm appearance-none"
+                                >
+                                    <option value="cn">简体中文 (Simplified Chinese)</option>
+                                    <option value="en">English (English)</option>
+                                    <option value="jp">日本語 (Japanese)</option>
+                                </select>
+                                <p className="text-[10px] text-slate-500 mt-2">Defines the default language for MQ and manual translations</p>
                             </div>
                         </div>
                     </section>

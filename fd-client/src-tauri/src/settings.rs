@@ -16,6 +16,7 @@ pub struct Settings {
     // MQ 消费者配置
     pub mq_consumer_enabled: bool, // MQ消费者是否应该自动启动
     pub mq_batch_size: u32,        // 每批翻译任务数量
+    pub translation_lang: String,  // 翻译目标语言 (如 "cn", "en")
 }
 
 impl Default for Settings {
@@ -32,6 +33,7 @@ impl Default for Settings {
             // MQ 消费者默认配置
             mq_consumer_enabled: false,
             mq_batch_size: 5,
+            translation_lang: "cn".to_string(),
         }
     }
 }
@@ -90,6 +92,7 @@ pub fn save_settings(app: &AppHandle, settings: &Settings) -> Result<(), String>
         &settings.mq_consumer_enabled.to_string(),
     )?;
     save_setting(&conn, "mq_batch_size", &settings.mq_batch_size.to_string())?;
+    save_setting(&conn, "translation_lang", &settings.translation_lang)?;
 
     Ok(())
 }
@@ -134,6 +137,9 @@ pub fn load_settings(app: &AppHandle) -> Settings {
     }
     if let Some(v) = load_setting(&conn, "mq_batch_size") {
         settings.mq_batch_size = v.parse().unwrap_or(5);
+    }
+    if let Some(v) = load_setting(&conn, "translation_lang") {
+        settings.translation_lang = v;
     }
 
     settings

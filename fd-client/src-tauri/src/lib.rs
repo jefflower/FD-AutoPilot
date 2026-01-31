@@ -146,6 +146,7 @@ fn save_settings_cmd(
     mq_port: u16,
     mq_username: String,
     mq_password: String,
+    translation_lang: String,
 ) -> Result<(), String> {
     println!("[Rust] save_settings_cmd: host={}, port={}, user={}, pass_len={}", 
         mq_host, mq_port, mq_username, mq_password.len());
@@ -164,6 +165,7 @@ fn save_settings_cmd(
         // 保留现有的MQ消费者配置
         mq_consumer_enabled: existing.mq_consumer_enabled,
         mq_batch_size: existing.mq_batch_size,
+        translation_lang: translation_lang,
     };
     settings::save_settings(&app, &s)
 }
@@ -192,7 +194,7 @@ async fn translate_ticket_cmd(app: AppHandle, output_dir: String, ticket_id: u64
     };
     
     // 2. Call AI module
-    let translated = GeminiClient::translate_ticket(&app, &original, &target_lang)?;
+    let translated = GeminiClient::translate_ticket(&app, &original, &target_lang).await?;
     
     // 3. Save translated ticket with language code
     storage.save_ticket(&translated, Some(&target_lang))?;
@@ -202,7 +204,7 @@ async fn translate_ticket_cmd(app: AppHandle, output_dir: String, ticket_id: u64
 
 #[tauri::command]
 async fn translate_ticket_direct_cmd(app: AppHandle, ticket: models::Ticket, target_lang: String) -> Result<models::Ticket, String> {
-    GeminiClient::translate_ticket(&app, &ticket, &target_lang)
+    GeminiClient::translate_ticket(&app, &ticket, &target_lang).await
 }
 
 
@@ -449,9 +451,11 @@ pub struct MqTranslateState {
 
 impl Default for MqTranslateState {
     fn default() -> Self {
+        let state = MqConsumerState::default();
+        state.batch_size.store(1, Ordering::SeqCst);
         Self {
             consumer: Arc::new(TokioMutex::new(None)),
-            state: MqConsumerState::default(),
+            state,
         }
     }
 }
@@ -657,7 +661,22 @@ async fn complete_reply_task(
         let _ = tx.send(success);
         Ok(())
     } else {
-        Err(format!("No pending task found for ticket #{}", ticket_id))
+        Err(format!("No pending reply task found for ticket #{}", ticket_id))
+    }
+}
+
+#[tauri::command]
+async fn complete_translate_task(
+    ticket_id: i64,
+    success: bool,
+    mq_state: State<'_, MqTranslateState>,
+) -> Result<(), String> {
+    let mut p_acks = mq_state.state.pending_acks.lock().await;
+    if let Some(tx) = p_acks.remove(&ticket_id) {
+        let _ = tx.send(success);
+        Ok(())
+    } else {
+        Err(format!("No pending translation task found for ticket #{}", ticket_id))
     }
 }
 
@@ -701,7 +720,8 @@ pub fn run() {
             start_reply_mq_consumer,
             stop_reply_mq_consumer,
             get_reply_mq_consumer_status,
-            complete_reply_task
+            complete_reply_task,
+            complete_translate_task
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

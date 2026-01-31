@@ -34,7 +34,15 @@ interface CompletedTicket {
     errorMessage?: string;
 }
 
-const ReplyTasksTab: React.FC = () => {
+interface ReplyTasksTabProps {
+    mqTarget?: { id: number; type: 'translate' | 'reply' } | null;
+    onMqTargetHandled?: () => void;
+}
+
+const ReplyTasksTab: React.FC<ReplyTasksTabProps> = ({
+    mqTarget,
+    onMqTargetHandled
+}) => {
     const [error, setError] = useState<string | null>(null);
     const [selectedId, setSelectedId] = useState<number | null>(null);
     const [mqStatus, setMqStatus] = useState<MqConsumerStatus>({
@@ -267,6 +275,9 @@ const ReplyTasksTab: React.FC = () => {
                 selectedTaskId={selectedId}
                 onSelectTask={setSelectedId}
                 onLoadTicket={handleLoadTicket}
+                mqTarget={mqTarget}
+                onMqTargetHandled={onMqTargetHandled}
+                onRefresh={updateMqStatus}
             />
         </div>
     );

@@ -8,8 +8,9 @@ use std::sync::Arc;
 use tauri::AppHandle;
 
 use crate::ai::GeminiClient;
-use crate::models::{Conversation, Ticket};
+use crate::models::Ticket;
 use crate::settings::Settings;
+use crate::storage::Storage;
 
 /// 翻译任务队列名称
 const TRANSLATE_QUEUE: &str = "q.ticket.translation";
@@ -142,7 +143,7 @@ impl Default for MqConsumerState {
         Self {
             is_running: Arc::new(AtomicBool::new(false)),
             current_task: Arc::new(tokio::sync::Mutex::new(None)),
-            batch_size: Arc::new(AtomicU32::new(5)),
+            batch_size: Arc::new(AtomicU32::new(1)),
             translating_tickets: Arc::new(tokio::sync::Mutex::new(Vec::new())),
             completed_tickets: Arc::new(tokio::sync::Mutex::new(Vec::new())),
             pending_acks: Arc::new(tokio::sync::Mutex::new(std::collections::HashMap::new())),
@@ -229,7 +230,7 @@ impl MqConsumer {
 
         channel
             .queue_declare(
-                TRANSLATE_QUEUE,
+                queue_name,
                 QueueDeclareOptions {
                     durable: true,
                     ..Default::default()
@@ -239,7 +240,7 @@ impl MqConsumer {
             .await
             .map_err(|e| format!("Failed to declare queue: {}", e))?;
 
-        GeminiClient::log(&app, &format!("✅ Connected to RabbitMQ, consuming from {} (batch: {})", TRANSLATE_QUEUE, batch_size));
+        GeminiClient::log(&app, &format!("✅ Connected to RabbitMQ, consuming from {} (batch: {})", queue_name, batch_size));
 
         // 创建消费者
         let mut consumer = channel
@@ -264,7 +265,7 @@ impl MqConsumer {
                             let auth_token_clone = auth_token.clone();
                             let q_type = queue_type.to_string();
 
-                            // 派发到异步任务处理，实现并发
+                            // 派发到异步任务处理，实现并发 (受 QoS prefetch 限制)
                             tokio::spawn(async move {
                                 if q_type == "translate" {
                                     self_clone.handle_delivery(app_clone, channel_clone, delivery, auth_token_clone).await;
@@ -365,17 +366,17 @@ impl MqConsumer {
                 
                 match result {
                     Ok(_) => {
-                        GeminiClient::log(&app, &format!("✅ Ticket #{} translated and saved", msg.ticket_id));
-                        // 翻译完成且保存成功后 ACK 消息
+                        GeminiClient::log(&app, &format!("✅ Ticket #{} processing completed and saved", msg.ticket_id));
+                        // 任务成功完成且保存成功后 ACK 消息
                         let _ = channel
                             .basic_ack(delivery.delivery_tag, BasicAckOptions::default())
                             .await;
                     }
                     Err(ref e) => {
                         GeminiClient::log(&app, &format!("❌ Translation failed for ticket #{}: {}", msg.ticket_id, e));
-                        // 失败则 NACK 并重新入队
+                        // 失败则 NACK 且不重新入队，防止无限循环抢占资源
                         let _ = channel
-                            .basic_nack(delivery.delivery_tag, BasicNackOptions { requeue: true, ..Default::default() })
+                            .basic_nack(delivery.delivery_tag, BasicNackOptions { requeue: false, ..Default::default() })
                             .await;
                     }
                 }
@@ -423,29 +424,11 @@ impl MqConsumer {
                     translating.push(translating_ticket);
                 }
                 
-                // 注册 ACK 等待信号
-                let (tx, rx) = tokio::sync::oneshot::channel();
-                {
-                    let mut p_acks = self.state.pending_acks.lock().await;
-                    p_acks.insert(msg.ticket_id, tx);
-                }
+                // (注意：generate_reply_and_submit 内部会负责注册 ACK 等待信号)
 
-                // 通知前端开始处理
+                // 通知前端开始处理，并在这里等待结果（generate_reply_and_submit 内部已包含 rx 等待）
                 let result = self.generate_reply_and_submit(&app, &msg, &auth_token).await;
-                
-                // 等待前端完成信号（或者超时/失败）
-                let mut final_success = false;
-                if result.is_ok() {
-                    // 等待前端调用 complete_reply_task
-                    match tokio::time::timeout(std::time::Duration::from_secs(300), rx).await {
-                        Ok(Ok(success)) => {
-                            final_success = success;
-                        }
-                        _ => {
-                            GeminiClient::log(&app, &format!("⏳ Reply task for ticket #{} timed out waiting for frontend", msg.ticket_id));
-                        }
-                    }
-                }
+                let final_success = result.is_ok();
 
                 let completed_at = std::time::SystemTime::now()
                     .duration_since(std::time::UNIX_EPOCH)
@@ -485,8 +468,8 @@ impl MqConsumer {
                     GeminiClient::log(&app, &format!("✅ Reply task for ticket #{} completed and ACKed", msg.ticket_id));
                     let _ = channel.basic_ack(delivery.delivery_tag, BasicAckOptions::default()).await;
                 } else {
-                    GeminiClient::log(&app, &format!("❌ Reply task for ticket #{} failed or timed out, NACKing", msg.ticket_id));
-                    let _ = channel.basic_nack(delivery.delivery_tag, BasicNackOptions { requeue: true, ..Default::default() }).await;
+                    GeminiClient::log(&app, &format!("❌ Reply task for ticket #{} failed or timed out, NACKing (no requeue)", msg.ticket_id));
+                    let _ = channel.basic_nack(delivery.delivery_tag, BasicNackOptions { requeue: false, ..Default::default() }).await;
                 }
 
                 // 确保从 map 中移除（以防超时或其他异常残留）
@@ -508,15 +491,15 @@ impl MqConsumer {
         self.state.is_running.store(false, Ordering::SeqCst);
     }
 
-    /// 翻译并提交结果
+    /// 翻译并提交结果 (改为发送事件通知前端处理)
     async fn translate_and_submit(
         &self,
         app: &AppHandle,
         msg: &TranslationMessage,
         auth_token: &str,
     ) -> Result<(), String> {
-        GeminiClient::log(app, &format!("🔍 Starting translate_and_submit for ticket #{}", msg.ticket_id));
-
+        let settings = crate::settings::load_settings(app);
+        // 1. 从 API 获取最新完整工单数据 (包含 conversations)
         let client = reqwest::Client::new();
         let get_url = format!("{}/tickets/{}", SERVER_API_URL, msg.ticket_id);
         
@@ -530,96 +513,63 @@ impl MqConsumer {
             .await
             .map_err(|e| format!("Failed to parse ticket response: {}", e))?;
         
-        let server_ticket = api_resp.data.ok_or_else(|| format!("Ticket #{} not found on server", msg.ticket_id))?;
+        let original_ticket = api_resp.data.ok_or_else(|| format!("Ticket #{} not found on server", msg.ticket_id))?;
         
-        let mut description_text = server_ticket.description_text.clone();
-        let mut conversations = server_ticket.conversations.clone();
+        // 2. 调用 AI 模块进行翻译 (后端直接调用，并发受 QoS 限制)
+        GeminiClient::log(app, &format!("⚙️ Backend AI translating ticket #{}...", msg.ticket_id));
+        let target_lang = settings.translation_lang.clone();
+        let translated = GeminiClient::translate_ticket(app, &original_ticket, &target_lang).await?;
         
-        let is_json = if let Some(content_str) = &server_ticket.content {
-            content_str.trim().starts_with('{')
-        } else {
-            false
-        };
+        // 3. 保存到本地存储
+        let storage = Storage::new(&settings.output_dir);
+        storage.save_ticket(&translated, Some(&target_lang))?;
+        
+        // 4. 提交到服务端
+        GeminiClient::log(app, &format!("📤 Submitting translation for ticket #{} to server...", msg.ticket_id));
+        
+        // 构造服务端期望的 JSON 结构 (与前端 ServerTicketDetail.tsx:L194 一致)
+        let translated_conversations: Vec<serde_json::Value> = translated.conversations.iter().map(|c| {
+            serde_json::json!({
+                "id": c.id,
+                "bodyText": c.body_text,
+                "userId": c.user_id,
+                "createdAt": c.created_at,
+                "incoming": c.incoming,
+                "isPrivate": c.private
+            })
+        }).collect();
 
-        if is_json {
-            if let Some(content_str) = &server_ticket.content {
-                if let Ok(content_json) = serde_json::from_str::<TicketContent>(content_str) {
-                    description_text = content_json.description;
-                    if let Some(convs) = content_json.conversations {
-                        conversations = convs.into_iter().map(|c| Conversation {
-                            id: c.id,
-                            body_text: c.body_text,
-                            user_id: c.user_id,
-                            created_at: c.created_at,
-                            updated_at: None,
-                            incoming: c.incoming.unwrap_or(!c.is_private.unwrap_or(false)),
-                            private: c.is_private.unwrap_or(false),
-                            source: Some(0),
-                        }).collect();
-                    }
-                }
-            }
-        }
+        let final_translated_content = serde_json::json!({
+            "description": translated.description_text,
+            "conversations": translated_conversations
+        }).to_string();
 
-        let ticket = Ticket {
-            id: msg.ticket_id as u64,
-            external_id: server_ticket.external_id.clone(),
-            subject: server_ticket.subject.clone(),
-            description_text,
-            content: server_ticket.content.clone(),
-            status: server_ticket.status.clone(),
-            priority: server_ticket.priority,
-            created_at: server_ticket.created_at.clone(),
-            updated_at: server_ticket.updated_at.clone(),
-            requester_id: server_ticket.requester_id,
-            responder_id: server_ticket.responder_id,
-            cc_emails: server_ticket.cc_emails.clone(),
-            conversations,
-            available_langs: server_ticket.available_langs.clone(),
-        };
-
-        let translated = GeminiClient::translate_ticket(app, &ticket, "cn")?;
-
-        let translated_content_str = if is_json {
-            let translated_content_model = TicketContent {
-                description: translated.description_text.clone(),
-                conversations: Some(translated.conversations.iter().map(|c| ConversationDto {
-                    id: c.id,
-                    body_text: c.body_text.clone(),
-                    is_private: Some(c.private),
-                    incoming: Some(c.incoming),
-                    user_id: c.user_id,
-                    created_at: c.created_at.clone(),
-                }).collect()),
-            };
-            serde_json::to_string(&translated_content_model).unwrap_or_else(|_| translated.description_text.clone().unwrap_or_default())
-        } else {
-            translated.description_text.clone().unwrap_or_default()
-        };
-
-        let url = format!("{}/tickets/{}/translation", SERVER_API_URL, msg.ticket_id);
-        let body = serde_json::json!({
-            "targetLang": "zh-CN",
+        let submit_data = serde_json::json!({
+            "targetLang": target_lang,
             "translatedTitle": translated.subject.clone().unwrap_or_default(),
-            "translatedContent": translated_content_str,
+            "translatedContent": final_translated_content
         });
 
-        let response = client
-            .post(&url)
+        let post_url = format!("{}/tickets/{}/translation", SERVER_API_URL, msg.ticket_id);
+        let submit_resp = client.post(&post_url)
             .header("Authorization", format!("Bearer {}", auth_token))
-            .header("Content-Type", "application/json")
-            .json(&body)
+            .json(&submit_data)
             .send()
             .await
-            .map_err(|e| format!("Failed to submit translation: {}", e))?;
+            .map_err(|e| format!("Failed to submit translation to server: {}", e))?;
 
-        if !response.status().is_success() {
-            let status = response.status();
-            let text = response.text().await.unwrap_or_default();
-            return Err(format!("Server returned {}: {}", status, text));
+        if !submit_resp.status().is_success() {
+            let status = submit_resp.status();
+            let body = submit_resp.text().await.unwrap_or_default();
+            return Err(format!("Server returned error during translation submission ({}): {}", status, body));
         }
 
-        GeminiClient::log(app, &format!("✅ Successfully saved translation for ticket #{}", msg.ticket_id));
+        GeminiClient::log(app, &format!("✅ Translation for ticket #{} successfully submitted to server", msg.ticket_id));
+
+        // 5. 发出事件通知前端刷新
+        use tauri::Emitter;
+        let _ = app.emit("ticket-updated", msg.ticket_id);
+        
         Ok(())
     }
 
@@ -653,6 +603,13 @@ impl MqConsumer {
             }
         }
 
+        // 注册 ACK 等待信号
+        let (tx, rx) = tokio::sync::oneshot::channel();
+        {
+            let mut p_acks = self.state.pending_acks.lock().await;
+            p_acks.insert(msg.ticket_id, tx);
+        }
+
         // --- 核心改动：发出事件通知前端处理 ---
         use tauri::Emitter;
         let payload = serde_json::json!({
@@ -668,6 +625,20 @@ impl MqConsumer {
             .map_err(|e| format!("Failed to emit mq-reply-request: {}", e))?;
 
         GeminiClient::log(app, &format!("📡 Emitted mq-reply-request for ticket #{}", msg.ticket_id));
-        Ok(())
+        
+        // 等待前端完成信号（或者超时/失败）
+        match tokio::time::timeout(std::time::Duration::from_secs(300), rx).await {
+            Ok(Ok(success)) => {
+                if success {
+                    Ok(())
+                } else {
+                    Err("Frontend reported failure in reply task".to_string())
+                }
+            }
+            _ => {
+                GeminiClient::log(app, &format!("⏳ Reply task for ticket #{} timed out waiting for frontend", msg.ticket_id));
+                Err("Reply task timed out".to_string())
+            }
+        }
     }
 }

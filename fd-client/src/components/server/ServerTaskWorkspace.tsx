@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
+import { invoke } from '@tauri-apps/api/core';
 import type { ServerTicket } from '../../types/server';
 import ServerTicketDetail from './ServerTicketDetail';
 
@@ -20,6 +21,8 @@ interface ServerTaskWorkspaceProps {
     onSelectTask?: (id: number | null) => void; // 新增：选中任务时的回调
     onLoadTicket: (ticketId: number) => Promise<ServerTicket>;
     onRefresh?: () => void;
+    mqTarget?: { id: number; type: 'translate' | 'reply' } | null;
+    onMqTargetHandled?: () => void;
 }
 
 const ServerTaskWorkspace: React.FC<ServerTaskWorkspaceProps> = ({
@@ -29,7 +32,9 @@ const ServerTaskWorkspace: React.FC<ServerTaskWorkspaceProps> = ({
     selectedTaskId: propSelectedTaskId,
     onSelectTask,
     onLoadTicket,
-    onRefresh
+    onRefresh,
+    mqTarget,
+    onMqTargetHandled
 }) => {
     // 状态：当前手动点开的“已完成”工单 ID（只能同时打开一个）
     const [viewingCompletedId, setViewingCompletedId] = useState<number | null>(null);
@@ -58,6 +63,92 @@ const ServerTaskWorkspace: React.FC<ServerTaskWorkspaceProps> = ({
         localStorage.setItem('server_split_mode', s.toString());
     };
 
+    // 详情页引用
+    const detailRef = useRef<any>(null);
+
+    // 提取为一个稳定的加载函数
+    const fetchTicketData = useCallback(async (id: number) => {
+        if (!id || id <= 0) return;
+        setIsLoading(true);
+        try {
+            console.log(`[Workspace] Loading ticket #${id}...`);
+            const ticket = await onLoadTicket(id);
+            setSelectedTicket(ticket);
+        } catch (err) {
+            console.error('Failed to load task ticket:', err);
+        } finally {
+            setIsLoading(false);
+        }
+    }, [onLoadTicket]);
+
+    // MQ 事件处理: 响应来自父组件的调度信号 (自动处理本工作区内的任务)
+    useEffect(() => {
+        if (mqTarget) {
+            const { id, type: taskType } = mqTarget;
+            console.log(`[Workspace MQ] Handling ${taskType} for ticket #${id}`);
+
+            // 1. 选中该工单 (触发详情页加载)
+            handleSelectTask(id);
+
+            // 2. 开始轮询执行
+            let retryCount = 0;
+            const maxRetries = 200; // 增加到 20秒 容错
+            let isCurrentEffectActive = true;
+
+            const checkAndRun = async () => {
+                if (!isCurrentEffectActive) return;
+
+                const currentId = detailRef.current?.getTicketId();
+                // 检查：引用存在 && ID 匹配
+                if (detailRef.current && currentId === id) {
+                    console.log(`[Workspace MQ] Ready. ID matched: ${currentId}. Triggering...`);
+                    let success = false;
+                    try {
+                        if (taskType === 'translate' && detailRef.current.handleAiTranslate) {
+                            success = await detailRef.current.handleAiTranslate(true);
+                            await invoke('complete_translate_task', { ticketId: id, success });
+                        } else if (taskType === 'reply' && detailRef.current.handleTriggerAiReply) {
+                            success = await detailRef.current.handleTriggerAiReply(true);
+                            await invoke('complete_reply_task', { ticketId: id, success });
+                        } else {
+                            console.warn(`[Workspace MQ] Method for ${taskType} not found in detailRef`);
+                            // 降级上报，避免死锁
+                            const cmd = taskType === 'translate' ? 'complete_translate_task' : 'complete_reply_task';
+                            await invoke(cmd, { ticketId: id, success: false });
+                        }
+                    } catch (err) {
+                        console.error(`[Workspace MQ] Critical error:`, err);
+                        const cmd = taskType === 'translate' ? 'complete_translate_task' : 'complete_reply_task';
+                        await invoke(cmd, { ticketId: id, success: false });
+                    } finally {
+                        if (isCurrentEffectActive) {
+                            onMqTargetHandled?.();
+                            // 触发一次数据刷新
+                            fetchTicketData(id);
+                            onRefresh?.();
+                        }
+                    }
+                } else if (retryCount < maxRetries) {
+                    retryCount++;
+                    if (isCurrentEffectActive) {
+                        setTimeout(checkAndRun, 100);
+                    }
+                } else {
+                    console.error(`[Workspace MQ] Timeout after ${maxRetries} retries. Ready: ${!!detailRef.current}, ID in Detail: ${currentId}, Target ID: ${id}`);
+                    if (isCurrentEffectActive) {
+                        const cmd = taskType === 'translate' ? 'complete_translate_task' : 'complete_reply_task';
+                        await invoke(cmd, { ticketId: id, success: false });
+                        onMqTargetHandled?.();
+                        onRefresh?.();
+                    }
+                }
+            };
+
+            checkAndRun();
+            return () => { isCurrentEffectActive = false; };
+        }
+    }, [mqTarget, onMqTargetHandled, onRefresh, fetchTicketData]);
+
 
     // 1. 响应逻辑：
     // 如果外部传入或选中的是一个正在处理的任务 -> 属于“执行中”标签
@@ -83,7 +174,7 @@ const ServerTaskWorkspace: React.FC<ServerTaskWorkspaceProps> = ({
         }
     }, [translatingTasks.length, selectedTicketId]); // 依赖 selectedTicketId 确保在选中状态变化时重新评估
 
-    // 内部处理选中
+    // 内部处理选中 (已经声明在上方)
     const handleSelectTask = (id: number | null) => {
         if (id === selectedTicketId && selectedTicket) return;
 
@@ -120,22 +211,11 @@ const ServerTaskWorkspace: React.FC<ServerTaskWorkspaceProps> = ({
     // 监听选中 ID 变化并加载数据
     useEffect(() => {
         if (selectedTicketId && selectedTicketId > 0) {
-            const load = async () => {
-                setIsLoading(true);
-                try {
-                    const ticket = await onLoadTicket(selectedTicketId);
-                    setSelectedTicket(ticket);
-                } catch (err) {
-                    console.error('Failed to load task ticket:', err);
-                } finally {
-                    setIsLoading(false);
-                }
-            };
-            load();
+            fetchTicketData(selectedTicketId);
         } else {
             setSelectedTicket(null);
         }
-    }, [selectedTicketId, onLoadTicket]);
+    }, [selectedTicketId, fetchTicketData]);
 
     const isProcessing = (id: number) => translatingTasks.some(t => t.ticketId === id);
 
@@ -223,6 +303,7 @@ const ServerTaskWorkspace: React.FC<ServerTaskWorkspaceProps> = ({
 
                 {selectedTicket ? (
                     <ServerTicketDetail
+                        ref={detailRef}
                         ticket={selectedTicket}
                         isEmbed={true}
                         isProcessing={isProcessing(selectedTicket.id)}

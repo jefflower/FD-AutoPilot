@@ -3,7 +3,8 @@
  * 在保留原有功能的基础上集成新的服务端交互模块
  */
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import { listen } from '@tauri-apps/api/event';
 import "./index.css";
 
 // 原有组件
@@ -46,8 +47,12 @@ function AppNew() {
         mqPort, setMqPort,
         mqUsername, setMqUsername,
         mqPassword, setMqPassword,
+        translationLang, setTranslationLang,
         notebookLMConfig, setNotebookLMConfig
     } = useSettings();
+
+    const [mqTarget, setMqTarget] = useState<{ id: number; type: 'translate' | 'reply' } | null>(null);
+    const lastTaskRef = useRef<{ id: number; type: string; time: number } | null>(null);
 
     const {
         tickets,
@@ -93,6 +98,41 @@ function AppNew() {
         loadTickets,
         setLogs
     );
+
+    // MQ 全局监听
+    useEffect(() => {
+        const handleMqTask = async (event: any, type: 'translate' | 'reply') => {
+            try {
+                const data = JSON.parse(event.payload as string);
+                console.log(`[Global MQ ${type}] Received:`, data);
+
+                // 仅在非任务相关页面时才自动跳转
+                const taskTabs: TabType[] = ['server-tickets', 'translation', 'reply', 'audit'];
+                if (!taskTabs.includes(activeTab)) {
+                    setActiveTab('server-tickets');
+                }
+                // 设置追踪目标 (增加去重逻辑：相同 ID + 类型 10秒内不重复触发)
+                const now = Date.now();
+                if (lastTaskRef.current?.id === data.ticketId && lastTaskRef.current?.type === type && (now - lastTaskRef.current.time) < 10000) {
+                    console.warn(`[Global MQ ${type}] Ignoring duplicate trigger for ticket #${data.ticketId} (within 10s deduplication window)`);
+                    return;
+                }
+
+                lastTaskRef.current = { id: data.ticketId, type, time: now };
+                setMqTarget({ id: data.ticketId, type });
+            } catch (err) {
+                console.error(`[Global MQ ${type}] Parse error:`, err);
+            }
+        };
+
+        const unlistenReply = listen('mq-reply-request', (event) => handleMqTask(event, 'reply'));
+        const unlistenTranslate = listen('mq-translate-request', (event) => handleMqTask(event, 'translate'));
+
+        return () => {
+            unlistenReply.then(f => f());
+            unlistenTranslate.then(f => f());
+        };
+    }, [activeTab]);
 
     // 处理登录
     const handleLogin = async (credentials: { username: string; password: string }) => {
@@ -210,6 +250,8 @@ function AppNew() {
                         setMqUsername={setMqUsername}
                         mqPassword={mqPassword}
                         setMqPassword={setMqPassword}
+                        translationLang={translationLang}
+                        setTranslationLang={setTranslationLang}
                         notebookLMConfig={notebookLMConfig}
                         setNotebookLMConfig={setNotebookLMConfig}
                         setLogs={setLogs}
@@ -235,7 +277,13 @@ function AppNew() {
                         />
                     );
                 }
-                return <ServerTicketsTab isAdmin={auth.isAdmin} />;
+                return (
+                    <ServerTicketsTab
+                        isAdmin={auth.isAdmin}
+                        mqTarget={mqTarget}
+                        onMqTargetHandled={() => setMqTarget(null)}
+                    />
+                );
 
             case 'translation':
                 if (!auth.isLoggedIn) {
@@ -248,7 +296,12 @@ function AppNew() {
                         />
                     );
                 }
-                return <TranslationTasksTab />;
+                return (
+                    <TranslationTasksTab
+                        mqTarget={mqTarget}
+                        onMqTargetHandled={() => setMqTarget(null)}
+                    />
+                );
 
             case 'reply':
                 if (!auth.isLoggedIn) {
@@ -261,7 +314,12 @@ function AppNew() {
                         />
                     );
                 }
-                return <ReplyTasksTab />;
+                return (
+                    <ReplyTasksTab
+                        mqTarget={mqTarget}
+                        onMqTargetHandled={() => setMqTarget(null)}
+                    />
+                );
 
             case 'audit':
                 if (!auth.isLoggedIn) {
@@ -274,7 +332,12 @@ function AppNew() {
                         />
                     );
                 }
-                return <AuditTasksTab />;
+                return (
+                    <AuditTasksTab
+                        mqTarget={mqTarget}
+                        onMqTargetHandled={() => setMqTarget(null)}
+                    />
+                );
 
             // ===== 管理员模块 =====
             case 'admin-users':

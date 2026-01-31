@@ -1,10 +1,13 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { ticketApi } from '../../services/serverApi';
 import ServerTicketDetail from './ServerTicketDetail';
+import { invoke } from '@tauri-apps/api/core';
 import type { ServerTicket, TicketStatus, TicketQueryParams } from '../../types/server';
 
 interface ServerTicketsTabProps {
     isAdmin: boolean;
+    mqTarget?: { id: number; type: 'translate' | 'reply' } | null;
+    onMqTargetHandled?: () => void;
 }
 
 const STATUS_OPTIONS: { value: TicketStatus | ''; label: string; color: string }[] = [
@@ -18,7 +21,11 @@ const STATUS_OPTIONS: { value: TicketStatus | ''; label: string; color: string }
     { value: 'COMPLETED', label: '已完成', color: 'bg-green-500/20 text-green-500' },
 ];
 
-const ServerTicketsTab: React.FC<ServerTicketsTabProps> = ({ isAdmin: _isAdmin }) => {
+const ServerTicketsTab: React.FC<ServerTicketsTabProps> = ({
+    isAdmin: _isAdmin,
+    mqTarget,
+    onMqTargetHandled
+}) => {
     const [tickets, setTickets] = useState<ServerTicket[]>([]);
     const [loading, setLoading] = useState(true);
     const [loadingMore, setLoadingMore] = useState(false);
@@ -111,17 +118,40 @@ const ServerTicketsTab: React.FC<ServerTicketsTabProps> = ({ isAdmin: _isAdmin }
         }
     }, [page, statusFilter, searchQuery, selectedId]);
 
+    // 详情页引用
+    const detailRef = useRef<any>(null);
+
     // 核心数据加载
     useEffect(() => {
         loadTickets(true);
-    }, [statusFilter, searchQuery]);
+    }, [statusFilter, searchQuery, loadTickets]);
 
-    // 详情加载
+    // MQ 事件处理: 响应来自父组件的调度信号
+    // MQ 事件处理: 响应来自父组件的调度信号
+    useEffect(() => {
+        if (mqTarget) {
+            const { id } = mqTarget;
+            // 仅仅选中，执行交给详情页或其所在的 Workspace
+            setSelectedId(id);
+            // 立即标记已处理，防止在这里轮询干扰 Workspace 的轮询
+            onMqTargetHandled?.();
+        }
+    }, [mqTarget, onMqTargetHandled]);
+
+    // 详情加载与自动滚动
     useEffect(() => {
         if (selectedId) {
             ticketApi.getTicketById(selectedId)
                 .then(setSelectedTicket)
                 .catch(err => console.error('Failed to load details:', err));
+
+            // 自动滚动到选中项
+            setTimeout(() => {
+                const element = document.getElementById(`ticket-item-${selectedId}`);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            }, 100);
         } else {
             setSelectedTicket(null);
         }
@@ -209,6 +239,7 @@ const ServerTicketsTab: React.FC<ServerTicketsTabProps> = ({ isAdmin: _isAdmin }
                     {tickets.map(t => (
                         <button
                             key={t.id}
+                            id={`ticket-item-${t.id}`}
                             onClick={() => setSelectedId(t.id)}
                             className={`w-full text-left p-2.5 rounded-lg transition-all border group ${selectedId === t.id
                                 ? 'bg-indigo-500/10 border-indigo-500/30 shadow-lg shadow-indigo-500/5'
@@ -250,6 +281,7 @@ const ServerTicketsTab: React.FC<ServerTicketsTabProps> = ({ isAdmin: _isAdmin }
             <div className="flex-1 bg-slate-900/40 relative">
                 {selectedTicket ? (
                     <ServerTicketDetail
+                        ref={detailRef}
                         ticket={selectedTicket}
                         isEmbed={true}
                         displayLang={displayLang}
