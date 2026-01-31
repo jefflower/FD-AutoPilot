@@ -345,6 +345,11 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
                     }
                 }
             }
+            // 如果是自动保存模式但代码运行到这里，说明没有成功解析并保存
+            if (autoSave) {
+                console.warn('[ServerTicketDetail] Auto-save reply failed: No valid JSON response parsed.');
+                return false;
+            }
             return true;
         } catch (e) {
             console.error('AI Reply Error:', e);
@@ -410,6 +415,26 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
 
     return (
         <div className="h-full flex flex-col bg-slate-900 overflow-hidden relative">
+            {/* Loading Overlay */}
+            {isTranslating && (
+                <div className="absolute inset-0 z-50 bg-slate-900/80 backdrop-blur-sm flex flex-col items-center justify-center animate-in fade-in duration-300">
+                    <div className="flex flex-col items-center gap-6 p-8 bg-slate-800 rounded-2xl shadow-2xl border border-white/10 max-w-sm w-full">
+                        <div className="relative">
+                            <div className="w-16 h-16 border-4 border-emerald-500/30 border-t-emerald-500 rounded-full animate-spin"></div>
+                            <div className="absolute inset-0 flex items-center justify-center">
+                                <svg className="w-8 h-8 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div className="text-center space-y-2">
+                            <h3 className="text-lg font-bold text-white tracking-wide">AI Translating...</h3>
+                            <p className="text-sm text-slate-400">Analyzing context and generating translation</p>
+                        </div>
+                    </div>
+                </div>
+            )}
+
             {/* Header */}
             <div className="flex-none p-3 border-b border-slate-700/50 flex items-center justify-between bg-slate-800/40 backdrop-blur-sm z-10">
                 <div className="flex items-center gap-3">
