@@ -44,6 +44,25 @@ const ServerTaskWorkspace: React.FC<ServerTaskWorkspaceProps> = ({
     const [selectedTicket, setSelectedTicket] = useState<ServerTicket | null>(null);
     const [isLoading, setIsLoading] = useState(false);
 
+    // MQ 专用状态：用于后台执行的任务工单数据
+    const [mqTicket, setMqTicket] = useState<ServerTicket | null>(null);
+    const mqDetailRef = useRef<any>(null);
+
+    // 监听 mqTarget 变化并加载对应的工单数据（用于后台执行）
+    useEffect(() => {
+        if (mqTarget && mqTarget.id) {
+            // 如果 mqTarget 和当前选中的是同一个，可以直接复用（优化点），但为了逻辑简单，这里独立加载
+            // 或者：如果 ID 相同，且 selectedTicket 已经有了，是否可以复用？
+            // 考虑到 selectedTicket 可能还没加载完，这里还是独立加载比较稳妥，或者依赖 caching
+            console.log(`[Workspace] Loading MQ ticket #${mqTarget.id}...`);
+            onLoadTicket(mqTarget.id)
+                .then(t => setMqTicket(t))
+                .catch(err => console.error('Failed to load MQ ticket:', err));
+        } else {
+            setMqTicket(null);
+        }
+    }, [mqTarget, onLoadTicket]);
+
     // 语言与显示偏好 (从 localStorage 加载以保持跨页面一致性)
     const [displayLang, setDisplayLangState] = useState<'original' | 'cn' | 'en'>(() => {
         return (localStorage.getItem('server_display_lang') as 'original' | 'cn' | 'en') || 'cn';
@@ -88,6 +107,7 @@ const ServerTaskWorkspace: React.FC<ServerTaskWorkspaceProps> = ({
             console.log(`[Workspace MQ] Handling ${taskType} for ticket #${id}`);
 
             // 1. 选中该工单 (触发详情页加载)
+            // 初始时跳转到该任务，以满足 "显示正在执行任务" 的需求，但允许用户随后切换到其他 tab
             handleSelectTask(id);
 
             // 2. 开始轮询执行
@@ -98,20 +118,23 @@ const ServerTaskWorkspace: React.FC<ServerTaskWorkspaceProps> = ({
             const checkAndRun = async () => {
                 if (!isCurrentEffectActive) return;
 
-                const currentId = detailRef.current?.getTicketId();
+                // 使用 mqDetailRef 确保即使切换了 Tab，后台任务也能引用到正确的组件实例
+                const currentRef = mqDetailRef.current;
+                const currentId = currentRef?.getTicketId();
+
                 // 检查：引用存在 && ID 匹配
-                if (detailRef.current && currentId === id) {
+                if (currentRef && currentId === id) {
                     console.log(`[Workspace MQ] Ready. ID matched: ${currentId}. Triggering...`);
                     let success = false;
                     try {
-                        if (taskType === 'translate' && detailRef.current.handleAiTranslate) {
-                            success = await detailRef.current.handleAiTranslate(true);
+                        if (taskType === 'translate' && currentRef.handleAiTranslate) {
+                            success = await currentRef.handleAiTranslate(true);
                             await invoke('complete_translate_task', { ticketId: id, success });
-                        } else if (taskType === 'reply' && detailRef.current.handleTriggerAiReply) {
-                            success = await detailRef.current.handleTriggerAiReply(true);
+                        } else if (taskType === 'reply' && currentRef.handleTriggerAiReply) {
+                            success = await currentRef.handleTriggerAiReply(true);
                             await invoke('complete_reply_task', { ticketId: id, success });
                         } else {
-                            console.warn(`[Workspace MQ] Method for ${taskType} not found in detailRef`);
+                            console.warn(`[Workspace MQ] Method for ${taskType} not found in mqDetailRef`);
                             // 降级上报，避免死锁
                             const cmd = taskType === 'translate' ? 'complete_translate_task' : 'complete_reply_task';
                             await invoke(cmd, { ticketId: id, success: false });
@@ -123,8 +146,8 @@ const ServerTaskWorkspace: React.FC<ServerTaskWorkspaceProps> = ({
                     } finally {
                         if (isCurrentEffectActive) {
                             onMqTargetHandled?.();
-                            // 触发一次数据刷新
-                            fetchTicketData(id);
+                            // 注意：不要调用 fetchTicketData(id)，因为它会强制选中该 Ticket，干扰用户查看其他 Ticket
+                            // mqTicket 的数据刷新已在组件 onRefresh prop 中处理
                             onRefresh?.();
                         }
                     }
@@ -134,7 +157,7 @@ const ServerTaskWorkspace: React.FC<ServerTaskWorkspaceProps> = ({
                         setTimeout(checkAndRun, 100);
                     }
                 } else {
-                    console.error(`[Workspace MQ] Timeout after ${maxRetries} retries. Ready: ${!!detailRef.current}, ID in Detail: ${currentId}, Target ID: ${id}`);
+                    console.error(`[Workspace MQ] Timeout after ${maxRetries} retries. Ready: ${!!currentRef}, ID in Detail: ${currentId}, Target ID: ${id}`);
                     if (isCurrentEffectActive) {
                         const cmd = taskType === 'translate' ? 'complete_translate_task' : 'complete_reply_task';
                         await invoke(cmd, { ticketId: id, success: false });
@@ -295,25 +318,54 @@ const ServerTaskWorkspace: React.FC<ServerTaskWorkspaceProps> = ({
 
             {/* Detail Area */}
             <div className="flex-1 relative overflow-hidden">
+                {/* 1. MQ Ticket Detail (Background or Foreground) */}
+                {/* 必须存在，以供 automation 调用。如果也是当前选中的，则显示；否则隐藏 */}
+                {mqTicket && (
+                    <div className={mqTarget && selectedTicketId === mqTarget.id ? "h-full w-full" : "hidden"}>
+                        <ServerTicketDetail
+                            ref={mqDetailRef}
+                            ticket={mqTicket}
+                            isEmbed={true}
+                            isProcessing={true}
+                            displayLang={displayLang}
+                            setDisplayLang={setDisplayLang}
+                            isSplitMode={isSplitMode}
+                            setIsSplitMode={setIsSplitMode}
+                            onRefresh={() => {
+                                onRefresh?.();
+                                // 刷新后台 MQ 任务的数据，确保显示最新状态（如翻译结果）
+                                onLoadTicket(mqTicket.id).then(t => setMqTicket(t));
+                            }}
+                        />
+                    </div>
+                )}
+
+                {/* 2. Selected Ticket Detail (Foreground) */}
+                {/* 只有当选中的工单不是 MQ 工单时，才渲染这个独立的 view 实例 */}
                 {isLoading ? (
                     <div className="absolute inset-0 flex items-center justify-center bg-slate-900/10 backdrop-blur-sm z-10">
                         <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-500"></div>
                     </div>
                 ) : null}
 
-                {selectedTicket ? (
-                    <ServerTicketDetail
-                        ref={detailRef}
-                        ticket={selectedTicket}
-                        isEmbed={true}
-                        isProcessing={isProcessing(selectedTicket.id)}
-                        displayLang={displayLang}
-                        setDisplayLang={setDisplayLang}
-                        isSplitMode={isSplitMode}
-                        setIsSplitMode={setIsSplitMode}
-                        onRefresh={onRefresh}
-                    />
-                ) : (
+                {selectedTicket && (!mqTarget || selectedTicket.id !== mqTarget.id) ? (
+                    <div className="h-full w-full">
+                        <ServerTicketDetail
+                            ref={detailRef}
+                            ticket={selectedTicket}
+                            isEmbed={true}
+                            isProcessing={isProcessing(selectedTicket.id)}
+                            displayLang={displayLang}
+                            setDisplayLang={setDisplayLang}
+                            isSplitMode={isSplitMode}
+                            setIsSplitMode={setIsSplitMode}
+                            onRefresh={onRefresh}
+                        />
+                    </div>
+                ) : null}
+
+                {/* Empty State */}
+                {!selectedTicket && (!mqTicket || (mqTarget && selectedTicketId !== mqTarget.id)) && !isLoading && (
                     <div className="flex-1 flex items-center justify-center text-slate-600 flex-col gap-4 h-full">
                         <svg className="w-16 h-16 opacity-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 6h16M4 12h16m-7 6h7" />
