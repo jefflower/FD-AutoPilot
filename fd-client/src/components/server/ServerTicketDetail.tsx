@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
-import { ServerTicket } from '../../types/server';
+import React, { useState, useEffect } from 'react';
+import { ServerTicket, TicketTranslation } from '../../types/server';
 import { serverApi } from '../../services/serverApi';
 import { useSettings } from '../../hooks/useSettings';
 import { useNotebookShadow } from '../../hooks/useNotebookShadow';
 import { NotebookShadowService } from '../../services/notebookShadow';
+import { invoke } from '@tauri-apps/api/core';
+import { listen } from '@tauri-apps/api/event';
 
 interface ServerTicketDetailProps {
     ticket: ServerTicket;
@@ -55,6 +57,11 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
     const [showPrompts, setShowPrompts] = useState(false); // 是否显示提示词视图
     const aiResponseEndRef = React.useRef<HTMLDivElement>(null);
 
+    // AI Translation state
+    const [isTranslating, setIsTranslating] = useState(false);
+    const [tempTranslation, setTempTranslation] = useState<Partial<TicketTranslation> | null>(null);
+    const [isTranslationDiffMode, setIsTranslationDiffMode] = useState(false);
+
     // 自动滚动 AI 回复到底部
     React.useEffect(() => {
         if (aiReplyText) {
@@ -87,9 +94,15 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
     };
 
     const parsedData = React.useMemo(() => parseJsonContent(ticket.content), [ticket.content]);
-    const parsedTranslation = React.useMemo(() =>
+
+    const oldTranslation = React.useMemo(() =>
         parseJsonContent(ticket.translation?.translatedContent),
         [ticket.translation?.translatedContent]
+    );
+
+    const newTranslation = React.useMemo(() =>
+        isTranslationDiffMode && tempTranslation ? parseJsonContent(tempTranslation.translatedContent) : null,
+        [tempTranslation, isTranslationDiffMode]
     );
 
     // 合并后的对话列表：将 Description 作为首条
@@ -107,7 +120,105 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
         return conversations;
     }, [parsedData, ticket.createdAt]);
 
-    const handleTriggerAiReply = async () => {
+    const handleAiTranslate = async (autoSave: boolean = false) => {
+        if (isTranslating || isProcessing) return;
+        setIsTranslating(true);
+        setAiError(null);
+
+        try {
+            // 构造 Rust 期望的 Ticket 结构
+            const rustTicket = {
+                id: ticket.id,
+                externalId: ticket.externalId,
+                subject: ticket.subject,
+                descriptionText: parsedData?.description || '',
+                content: ticket.content,
+                status: ticket.status,
+                priority: 0,
+                createdAt: ticket.createdAt,
+                conversations: (parsedData?.conversations || []).map(c => ({
+                    id: c.id,
+                    body_text: c.bodyText,
+                    user_id: c.userId,
+                    created_at: c.createdAt,
+                    incoming: (c.incoming !== false && !AGENT_MAP[String(c.userId)]),
+                    private: c.isPrivate || false,
+                }))
+            };
+
+            // 调用 Rust 命令进行直接翻译 (不依赖本地存储)
+            const result = (await invoke('translate_ticket_direct_cmd', {
+                ticket: rustTicket,
+                targetLang: 'cn'
+            })) as any;
+
+            // 构造翻译后的 content (和服务端格式保持一致，即包含 description 和 conversations 的 JSON)
+            const translatedConversations = result.conversations?.map((c: any) => ({
+                id: c.id,
+                bodyText: c.body_text,
+                userId: c.user_id,
+                createdAt: c.created_at,
+                incoming: c.incoming,
+                isPrivate: c.private
+            })) || [];
+
+            const finalTranslatedContent = JSON.stringify({
+                description: result.descriptionText, // Ticket 结构有 rename_all="camelCase"
+                conversations: translatedConversations
+            });
+
+            const translationData = {
+                targetLang: 'zh-CN',
+                translatedTitle: result.subject || ticket.subject,
+                translatedContent: finalTranslatedContent,
+            };
+
+            console.log('[TranslationData] Prepared:', {
+                ticketId: ticket.id,
+                targetLang: translationData.targetLang,
+                titleLen: translationData.translatedTitle?.length,
+                contentLen: translationData.translatedContent?.length
+            });
+
+            if (autoSave) {
+                await serverApi.ticket.submitTranslation(ticket.id, translationData);
+                onRefresh?.();
+            } else {
+                setTempTranslation(translationData);
+                setIsTranslationDiffMode(true);
+            }
+        } catch (e) {
+            console.error('AI Translation Error:', e);
+            const errMsg = (e as Error).message || String(e);
+            setAiError(errMsg);
+            if (!autoSave) alert('翻译失败: ' + errMsg);
+        } finally {
+            setIsTranslating(false);
+        }
+    };
+
+    const handleConfirmTranslation = async () => {
+        if (!tempTranslation || submitting) return;
+        setSubmitting(true);
+        console.log('[SubmitTranslation] Starting...', { ticketId: ticket.id, data: tempTranslation });
+        try {
+            await serverApi.ticket.submitTranslation(ticket.id, tempTranslation as any);
+            console.log('[SubmitTranslation] Success');
+            setTempTranslation(null);
+            setIsTranslationDiffMode(false);
+            if (onRefresh) {
+                console.log('[SubmitTranslation] Calling onRefresh...');
+                onRefresh();
+            }
+        } catch (e) {
+            console.error('[SubmitTranslation] Failed:', e);
+            alert('保存翻译失败: ' + (e as Error).message);
+        } finally {
+            setSubmitting(false);
+        }
+    };
+
+    const handleTriggerAiReply = async (autoSave: boolean = false) => {
         if (generatingAiReply || isProcessing) return;
         if (!notebookConfig?.notebookId) {
             alert('请先在“设置”中配置 Notebook ID');
@@ -175,6 +286,22 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
 
                         if (parsed && Array.isArray(parsed) && parsed.length >= 2) {
                             setAiReplies([parsed[0], parsed[1]]);
+
+                            // 如果是自动保存模式
+                            if (autoSave) {
+                                try {
+                                    await serverApi.ticket.submitReply(ticket.id, {
+                                        zhReply: parsed[1],
+                                        targetReply: parsed[0]
+                                    });
+                                    // 通知 MQ 任务完成
+                                    await invoke('complete_reply_task', { ticketId: ticket.id, success: true });
+                                    onRefresh?.();
+                                } catch (err) {
+                                    console.error('Auto-save reply failed:', err);
+                                    await invoke('complete_reply_task', { ticketId: ticket.id, success: false });
+                                }
+                            }
                         }
                     } catch (e) {
                         console.log('[AI Reply] Parse attempt failed:', e);
@@ -184,6 +311,9 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
         } catch (e) {
             console.error('AI Reply Error:', e);
             setAiError((e as Error).message);
+            if (autoSave) {
+                await invoke('complete_reply_task', { ticketId: ticket.id, success: false });
+            }
         } finally {
             setGeneratingAiReply(false);
         }
@@ -209,7 +339,32 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
 
     const [isJsonMode, setIsJsonMode] = useState(false);
 
-    const renderChatBubble = (msg: any, isIncoming: boolean, isEmerald: boolean = false, isDesc: boolean = false) => {
+    // MQ Event Listeners
+    useEffect(() => {
+        const unlistenReply = listen('mq-reply-request', (event) => {
+            const data = JSON.parse(event.payload as string);
+            if (data.ticketId === ticket.id) {
+                console.log('MQ Reply Request received for current ticket:', ticket.id);
+                handleTriggerAiReply(true);
+            }
+        });
+
+        // 假设也存在 mq-translate-request (虽然后端代码里没看到，但按需求增加)
+        const unlistenTranslate = listen('mq-translate-request', (event) => {
+            const data = JSON.parse(event.payload as string);
+            if (data.ticketId === ticket.id) {
+                console.log('MQ Translate Request received for current ticket:', ticket.id);
+                handleAiTranslate(true);
+            }
+        });
+
+        return () => {
+            unlistenReply.then(f => f());
+            unlistenTranslate.then(f => f());
+        };
+    }, [ticket.id]);
+
+    const renderChatBubble = (msg: any, isIncoming: boolean, isEmerald: boolean = false, isDesc: boolean = false, customTag?: string) => {
         const bubbleBaseClass = "p-3 rounded-lg shadow-sm transition-all duration-200 break-all overflow-wrap-anywhere min-w-0 max-w-[90%]";
         const incomingClass = isEmerald ? "bg-emerald-900/40 text-emerald-100 border border-emerald-700/50" : "bg-slate-700/60 text-slate-100 border border-slate-600/50";
         const outgoingClass = "bg-blue-600/30 text-blue-50 border border-blue-500/30";
@@ -217,8 +372,12 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
         return (
             <div className={`flex flex-col ${isIncoming ? 'items-start' : 'items-end'} w-full min-w-0`}>
                 <div className={`flex items-center gap-2 mb-1 px-1 ${isIncoming ? '' : 'flex-row-reverse'}`}>
-                    {isDesc && <span className="text-[10px] bg-indigo-500 text-white px-1 rounded-sm font-bold">DESC</span>}
-                    {isEmerald && <span className="text-[8px] bg-emerald-600/80 text-white px-1 rounded-sm font-black tracking-tighter uppercase">TRANSLATION</span>}
+                    {isDesc && <span className="text-[10px] bg-indigo-500 text-white px-1 rounded-sm font-bold shadow-sm">DESC</span>}
+                    {customTag ? (
+                        <span className="text-[8px] bg-emerald-600 text-white px-1.5 py-0.5 rounded-sm font-black tracking-tighter uppercase shadow-sm border border-emerald-500/50">{customTag}</span>
+                    ) : (
+                        isEmerald && <span className="text-[8px] bg-emerald-600/80 text-white px-1 rounded-sm font-black tracking-tighter uppercase">TRANSLATION</span>
+                    )}
                     <span className={`text-[10px] font-black uppercase tracking-wider ${isIncoming ? 'text-slate-400' : 'text-blue-400'}`}>
                         {isIncoming ? 'Customer' : (AGENT_MAP[msg.userId.toString()] || 'Agent')}
                     </span>
@@ -248,7 +407,10 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
                     <button onClick={handleToggleShadow} className={`px-3 py-1.5 rounded-md text-[10px] font-black transition-all ${shadowVisible ? 'bg-orange-600 text-white' : 'bg-slate-700 text-slate-400'}`}>
                         BROWSER {shadowVisible ? 'ON' : 'OFF'}
                     </button>
-                    <button onClick={handleTriggerAiReply} disabled={generatingAiReply} className="px-3 py-1.5 bg-blue-600 hover:bg-blue-500 disabled:opacity-50 text-white rounded-md text-[10px] font-black transition-all">
+                    <button onClick={() => handleAiTranslate(false)} disabled={isTranslating} className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 disabled:opacity-50 text-white rounded-md text-[10px] font-black transition-all">
+                        {isTranslating ? 'TRANSLATING...' : 'AI TRANSLATE'}
+                    </button>
+                    <button onClick={() => handleTriggerAiReply(false)} disabled={generatingAiReply} className="px-3 py-1.5 bg-blue-600 hover:bg-blue-500 disabled:opacity-50 text-white rounded-md text-[10px] font-black transition-all">
                         {generatingAiReply ? 'GENERATING...' : 'AI REPLY'}
                     </button>
                     <div className="w-px h-4 bg-slate-700 mx-1"></div>
@@ -260,6 +422,23 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
                     </button>
                 </div>
             </div>
+
+            {/* Translation Confirmation Bar */}
+            {isTranslationDiffMode && tempTranslation && (
+                <div className="flex-none p-2 bg-emerald-600/20 border-b border-emerald-500/30 flex items-center justify-between animate-in slide-in-from-top duration-300">
+                    <div className="flex items-center gap-2 px-2">
+                        <span className="text-[10px] font-black text-emerald-400 uppercase tracking-widest">Translation Preview (Click Confirm to Save)</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <button onClick={() => { setTempTranslation(null); setIsTranslationDiffMode(false); }} className="px-3 py-1 bg-slate-700 hover:bg-slate-600 text-white rounded-md text-[10px] font-bold">
+                            CANCEL
+                        </button>
+                        <button onClick={handleConfirmTranslation} disabled={submitting} className="px-3 py-1 bg-emerald-600 hover:bg-emerald-500 text-white rounded-md text-[10px] font-bold shadow-lg shadow-emerald-500/20">
+                            {submitting ? 'SAVING...' : 'CONFIRM & SAVE'}
+                        </button>
+                    </div>
+                </div>
+            )}
 
             {/* Content Area */}
             <div className="flex-1 overflow-y-auto p-4 space-y-6 custom-scrollbar">
@@ -280,11 +459,15 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
                                 const isDesc = msg.id === -1;
 
                                 // 翻译匹配逻辑
-                                let transMsg = null;
+                                let oldTransMsg = null;
+                                let newTransMsg = null;
+
                                 if (isDesc) {
-                                    if (parsedTranslation?.description) transMsg = { bodyText: parsedTranslation.description };
+                                    if (oldTranslation?.description) oldTransMsg = { bodyText: oldTranslation.description };
+                                    if (newTranslation?.description) newTransMsg = { bodyText: newTranslation.description };
                                 } else {
-                                    transMsg = parsedTranslation?.conversations?.find(c => c.id === msg.id);
+                                    oldTransMsg = oldTranslation?.conversations?.find(c => c.id === msg.id);
+                                    newTransMsg = newTranslation?.conversations?.find(c => c.id === msg.id);
                                 }
 
                                 return (
@@ -295,18 +478,21 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
                                                 {renderChatBubble(msg, isIncoming, false, isDesc)}
 
                                                 {/* 非分栏模式下，紧跟展示翻译气泡 */}
-                                                {!isSplitMode && transMsg && (
-                                                    <div className="animate-in fade-in slide-in-from-top-1 duration-300">
-                                                        {renderChatBubble({ ...transMsg, userId: msg.userId, createdAt: msg.createdAt }, isIncoming, true, isDesc)}
+                                                {!isSplitMode && (
+                                                    <div className="flex flex-col gap-2 animate-in fade-in slide-in-from-top-1 duration-300">
+                                                        {oldTransMsg && renderChatBubble({ ...oldTransMsg, userId: msg.userId, createdAt: msg.createdAt }, isIncoming, true, isDesc)}
+                                                        {newTransMsg && renderChatBubble({ ...newTransMsg, userId: msg.userId, createdAt: msg.createdAt }, isIncoming, true, isDesc, "Gemini Preview")}
                                                     </div>
                                                 )}
                                             </div>
 
                                             {isSplitMode && (
-                                                <div className="min-w-0 w-full">
-                                                    {transMsg ? (
-                                                        renderChatBubble({ ...transMsg, userId: msg.userId, createdAt: msg.createdAt }, isIncoming, true, isDesc)
-                                                    ) : (
+                                                <div className="min-w-0 w-full flex flex-col gap-2">
+                                                    {oldTransMsg && renderChatBubble({ ...oldTransMsg, userId: msg.userId, createdAt: msg.createdAt }, isIncoming, true, isDesc)}
+
+                                                    {newTransMsg && renderChatBubble({ ...newTransMsg, userId: msg.userId, createdAt: msg.createdAt }, isIncoming, true, isDesc, "Gemini Preview")}
+
+                                                    {!oldTransMsg && !newTransMsg && (
                                                         <div className="h-full flex items-center justify-center border border-dashed border-slate-700 rounded-lg py-6 text-slate-600 text-[10px] italic">
                                                             No translation available
                                                         </div>

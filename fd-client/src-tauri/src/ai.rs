@@ -68,8 +68,10 @@ impl GeminiClient {
             CRITICAL INSTRUCTIONS:\
             1. Response must be ONLY a valid JSON object.\
             2. Do NOT include any intro, outro, explanations, or markdown blocks (like ```json).\
-            3. Detailed JSON Structure:\
-            {{\n  \"subject\": \"translated title\",\n  \"description_text\": \"translated main content\",\n  \"conversations\": [\n    {{\"id\": 123, \"body_text\": \"translated message\"}}\n  ]\n}}\n\n",
+            3. You MUST translate BOTH the subject/description AND EVERY item in the 'conversations' list.\
+            4. Maintain the original 'id' for each conversation item.\
+            5. JSON Structure:\
+            {{\n  \"subject\": \"translated title\",\n  \"description_text\": \"translated main content\",\n  \"conversations\": [\n    {{\"id\": 123, \"body_text\": \"translated message 1\"}},\n    {{\"id\": 456, \"body_text\": \"translated message 2\"}}\n  ]\n}}\n\n",
             lang_name
         );
 

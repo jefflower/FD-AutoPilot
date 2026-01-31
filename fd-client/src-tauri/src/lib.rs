@@ -200,6 +200,11 @@ async fn translate_ticket_cmd(app: AppHandle, output_dir: String, ticket_id: u64
     Ok(translated)
 }
 
+#[tauri::command]
+async fn translate_ticket_direct_cmd(app: AppHandle, ticket: models::Ticket, target_lang: String) -> Result<models::Ticket, String> {
+    GeminiClient::translate_ticket(&app, &ticket, &target_lang)
+}
+
 
 #[tauri::command]
 fn load_ticket_cmd(output_dir: String, ticket_id: u64, lang: Option<String>) -> Result<Option<models::Ticket>, String> {
@@ -678,6 +683,7 @@ pub fn run() {
             load_settings_cmd,
             sync_statuses_cmd,
             translate_ticket_cmd,
+            translate_ticket_direct_cmd,
             load_ticket_cmd,
             export_to_csv_cmd,
             open_notebook_window,
