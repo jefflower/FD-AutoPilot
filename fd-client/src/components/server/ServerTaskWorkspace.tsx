@@ -359,7 +359,10 @@ const ServerTaskWorkspace: React.FC<ServerTaskWorkspaceProps> = ({
                             setDisplayLang={setDisplayLang}
                             isSplitMode={isSplitMode}
                             setIsSplitMode={setIsSplitMode}
-                            onRefresh={onRefresh}
+                            onRefresh={() => {
+                                onRefresh?.();
+                                fetchTicketData(selectedTicket.id);
+                            }}
                         />
                     </div>
                 ) : null}
