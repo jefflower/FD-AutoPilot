@@ -138,12 +138,21 @@ const ServerTicketsTab: React.FC<ServerTicketsTabProps> = ({
         }
     }, [mqTarget, onMqTargetHandled]);
 
+    const refreshSelectedTicket = useCallback(async () => {
+        if (selectedId) {
+            try {
+                const ticket = await ticketApi.getTicketById(selectedId);
+                setSelectedTicket(ticket);
+            } catch (err) {
+                console.error('Failed to refresh details:', err);
+            }
+        }
+    }, [selectedId]);
+
     // 详情加载与自动滚动
     useEffect(() => {
         if (selectedId) {
-            ticketApi.getTicketById(selectedId)
-                .then(setSelectedTicket)
-                .catch(err => console.error('Failed to load details:', err));
+            refreshSelectedTicket();
 
             // 自动滚动到选中项
             setTimeout(() => {
@@ -288,7 +297,10 @@ const ServerTicketsTab: React.FC<ServerTicketsTabProps> = ({
                         setDisplayLang={setDisplayLang}
                         isSplitMode={isSplitMode}
                         setIsSplitMode={setIsSplitMode}
-                        onRefresh={() => loadTickets(true)}
+                        onRefresh={() => {
+                            loadTickets(true);
+                            refreshSelectedTicket();
+                        }}
                     />
                 ) : (
                     <div className="h-full flex flex-col items-center justify-center text-slate-600">

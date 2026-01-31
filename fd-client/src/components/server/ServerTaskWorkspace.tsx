@@ -162,17 +162,12 @@ const ServerTaskWorkspace: React.FC<ServerTaskWorkspaceProps> = ({
         }
     }, [propSelectedTaskId, completedTasks.length]);
 
-    // 2. 自动追踪：新任务开始处理时，自动选中它
+    // 2. 自动追踪：如果没有选中任何任务，且有正在处理的任务，则自动选中第一个
     useEffect(() => {
-        if (translatingTasks.length > 0) {
-            const latest = translatingTasks[0].ticketId;
-            // 只有当当前没选中，或者当前选中的不是正在处理的任务时，才自动跳转
-            const isCurrentProcessing = translatingTasks.some(t => t.ticketId === selectedTicketId);
-            if (!selectedTicketId || !isCurrentProcessing) {
-                handleSelectTask(latest);
-            }
+        if (translatingTasks.length > 0 && !selectedTicketId) {
+            handleSelectTask(translatingTasks[0].ticketId);
         }
-    }, [translatingTasks.length, selectedTicketId]); // 依赖 selectedTicketId 确保在选中状态变化时重新评估
+    }, [translatingTasks.length, selectedTicketId]);
 
     // 内部处理选中 (已经声明在上方)
     const handleSelectTask = (id: number | null) => {
@@ -311,7 +306,10 @@ const ServerTaskWorkspace: React.FC<ServerTaskWorkspaceProps> = ({
                         setDisplayLang={setDisplayLang}
                         isSplitMode={isSplitMode}
                         setIsSplitMode={setIsSplitMode}
-                        onRefresh={onRefresh}
+                        onRefresh={() => {
+                            if (selectedTicketId) fetchTicketData(selectedTicketId);
+                            onRefresh?.();
+                        }}
                     />
                 ) : (
                     <div className="flex-1 flex items-center justify-center text-slate-600 flex-col gap-4 h-full">
