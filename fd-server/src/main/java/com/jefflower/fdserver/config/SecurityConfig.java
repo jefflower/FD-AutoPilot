@@ -63,6 +63,8 @@ public class SecurityConfig {
                         .requestMatchers("/api/v1/admin/**").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.POST, "/api/v1/sync/freshdesk").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.POST, "/api/v1/tickets/*/valid").hasRole("ADMIN")
+                        // 显式允许工单查询
+                        .requestMatchers(HttpMethod.GET, "/api/v1/tickets/**").hasAnyRole("USER", "ADMIN")
                         // 其他接口需认证
                         .anyRequest().authenticated())
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)

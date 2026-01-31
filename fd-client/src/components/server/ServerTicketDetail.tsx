@@ -293,9 +293,11 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
             setCurrentPrompt(finalPrompt); // 保存当前 Prompt 用于查看
 
             const shadowService = new NotebookShadowService(notebookConfig.notebookId, notebookConfig.notebookUrl);
+            let hasError = false;
             for await (const chunk of shadowService.query(finalPrompt)) {
                 if (chunk.status === 'error') {
                     setAiError(chunk.text);
+                    hasError = true;
                     break;
                 }
                 setAiReplyText(chunk.text);
@@ -345,7 +347,7 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
                     }
                 }
             }
-            return true;
+            return !hasError;
         } catch (e) {
             console.error('AI Reply Error:', e);
             setAiError((e as Error).message);
@@ -410,6 +412,20 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
 
     return (
         <div className="h-full flex flex-col bg-slate-900 overflow-hidden relative">
+            {/* AI Translation Loading Overlay */}
+            {isTranslating && (
+                <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm z-[100] flex flex-col items-center justify-center gap-4 animate-in fade-in duration-300">
+                    <div className="relative">
+                        <div className="w-16 h-16 border-4 border-emerald-500/20 rounded-full"></div>
+                        <div className="absolute top-0 left-0 w-16 h-16 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin"></div>
+                    </div>
+                    <div className="flex flex-col items-center gap-1">
+                        <span className="text-emerald-400 font-black text-sm uppercase tracking-[0.3em] animate-pulse">AI Translating</span>
+                        <span className="text-slate-500 text-[10px] font-bold uppercase tracking-widest">Processing ticket content...</span>
+                    </div>
+                </div>
+            )}
+
             {/* Header */}
             <div className="flex-none p-3 border-b border-slate-700/50 flex items-center justify-between bg-slate-800/40 backdrop-blur-sm z-10">
                 <div className="flex items-center gap-3">
