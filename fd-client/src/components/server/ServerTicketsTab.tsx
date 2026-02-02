@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { ticketApi } from '../../services/serverApi';
 import ServerTicketDetail from './ServerTicketDetail';
-import { invoke } from '@tauri-apps/api/core';
 import type { ServerTicket, TicketStatus, TicketQueryParams } from '../../types/server';
 
 interface ServerTicketsTabProps {
@@ -36,7 +35,6 @@ const ServerTicketsTab: React.FC<ServerTicketsTabProps> = ({
     // 查询参数
     const [statusFilter, setStatusFilter] = useState<TicketStatus | ''>('');
     const [searchQuery, setSearchQuery] = useState('');
-    const [page, setPage] = useState(0);
     const [hasMore, setHasMore] = useState(true);
 
     // 语言与显示偏好 (从 localStorage 加载以保持跨页面一致性)
@@ -61,6 +59,7 @@ const ServerTicketsTab: React.FC<ServerTicketsTabProps> = ({
     const scrollContainerRef = useRef<HTMLDivElement>(null);
     const isFetchingRef = useRef(false);
     const requestIdRef = useRef(0);
+    const pageRef = useRef(0); // 使用 Ref 记录当前页码，避免触发函数重建
 
     const loadTickets = useCallback(async (reset = true, targetPage?: number) => {
         if (!reset && isFetchingRef.current) return;
@@ -70,13 +69,14 @@ const ServerTicketsTab: React.FC<ServerTicketsTabProps> = ({
 
         if (reset) {
             setLoading(true);
+            pageRef.current = 0; // 重置时页码归零
         } else {
             setLoadingMore(true);
         }
         setError(null);
 
         try {
-            const fetchPage = reset ? 0 : (targetPage ?? page);
+            const fetchPage = reset ? 0 : (targetPage ?? (pageRef.current + 1));
             const params: TicketQueryParams = {
                 page: fetchPage,
                 size: 30,
@@ -91,20 +91,19 @@ const ServerTicketsTab: React.FC<ServerTicketsTabProps> = ({
 
             if (reset) {
                 setTickets(result.content);
-                // 默认选中第一个
-                if (result.content.length > 0 && !selectedId) {
-                    setSelectedId(result.content[0].id);
-                }
+                // 默认选中第一个 (使用函数式更新避免依赖 selectedId)
+                setSelectedId(prev => {
+                    if (!prev && result.content.length > 0) {
+                        return result.content[0].id;
+                    }
+                    return prev;
+                });
             } else {
                 setTickets(prev => [...prev, ...result.content]);
             }
 
             setHasMore(result.number + 1 < result.totalPages);
-            if (reset) {
-                setPage(0);
-            } else {
-                setPage(fetchPage);
-            }
+            pageRef.current = result.number; // 更新 Ref
         } catch (err) {
             if (currentRequestId === requestIdRef.current) {
                 setError(err instanceof Error ? err.message : '加载失败');
@@ -116,7 +115,7 @@ const ServerTicketsTab: React.FC<ServerTicketsTabProps> = ({
                 setLoadingMore(false);
             }
         }
-    }, [page, statusFilter, searchQuery, selectedId]);
+    }, [statusFilter, searchQuery]);
 
     // 详情页引用
     const detailRef = useRef<any>(null);
@@ -160,10 +159,10 @@ const ServerTicketsTab: React.FC<ServerTicketsTabProps> = ({
     const handleScroll = useCallback(() => {
         const container = scrollContainerRef.current;
         if (!container || isFetchingRef.current || !hasMore) return;
-        if (container.scrollTop + container.clientHeight >= container.scrollHeight - 50) {
-            loadTickets(false, page + 1);
+        if (container.scrollTop + container.clientHeight >= container.scrollHeight - 100) {
+            loadTickets(false);
         }
-    }, [loadTickets, page, hasMore]);
+    }, [loadTickets, hasMore]);
 
     return (
         <div className="flex-1 flex h-full overflow-hidden">
@@ -284,8 +283,6 @@ const ServerTicketsTab: React.FC<ServerTicketsTabProps> = ({
                         ref={detailRef}
                         ticket={selectedTicket}
                         isEmbed={true}
-                        displayLang={displayLang}
-                        setDisplayLang={setDisplayLang}
                         isSplitMode={isSplitMode}
                         setIsSplitMode={setIsSplitMode}
                         onRefresh={() => loadTickets(true)}
