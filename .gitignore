@@ -17,4 +17,5 @@ Thumbs.db
 
 # Logs
 *.log
-\n# Local data folder\n/data/
+# Local data folder
+data/
