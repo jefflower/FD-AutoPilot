@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { invoke } from '@tauri-apps/api/core';
 import type { ServerTicket } from '../../types/server';
 import ServerTicketDetail from './ServerTicketDetail';
+import { useTicketProcess } from '../../hooks/useTicketProcess';
 
 interface Task {
     ticketId: number;
@@ -43,20 +44,37 @@ const ServerTaskWorkspace: React.FC<ServerTaskWorkspaceProps> = ({
 
     const [selectedTicket, setSelectedTicket] = useState<ServerTicket | null>(null);
     const [isLoading, setIsLoading] = useState(false);
+    // 处理持久化状态：改用全局 Hook
+    const { getProcessState, setProcessStatus } = useTicketProcess();
 
-    // 语言与显示偏好 (从 localStorage 加载以保持跨页面一致性)
-    const [displayLang, setDisplayLangState] = useState<'original' | 'cn' | 'en'>(() => {
-        return (localStorage.getItem('server_display_lang') as 'original' | 'cn' | 'en') || 'cn';
-    });
+    const setProcessingStatus = useCallback((ticketId: number, status: 'translating' | 'replying' | null) => {
+        console.log(`[Workspace Audit] Ticket #${ticketId} status change: ${status}`);
+        setProcessStatus(ticketId, status);
+    }, [setProcessStatus]);
+
+    // === 核心状态：计算当前选中工单的全局活跃状态 (手动触发 + MQ 自动触发) ===
+    const currentGlobalActiveStatus = React.useMemo(() => {
+        if (!selectedTicketId) return null;
+        const idNum = Number(selectedTicketId);
+
+        // 1. 优先检查全局状态 (useTicketProcess)
+        const manualStatus = getProcessState(idNum).status;
+
+        // 2. 检查 MQ 自动翻译状态 (translatingTasks)
+        const isMqTranslating = translatingTasks.some(t => Number(t.ticketId) === idNum);
+
+        const finalStatus = manualStatus || (isMqTranslating ? 'translating' : null);
+
+        console.log(`[Workspace Status Tracking] ID: ${idNum}, Manual: ${manualStatus}, MQ: ${isMqTranslating}, Final: ${finalStatus}`);
+
+        return finalStatus;
+    }, [selectedTicketId, getProcessState, translatingTasks]);
+
     const [isSplitMode, setIsSplitModeState] = useState<boolean>(() => {
         const saved = localStorage.getItem('server_split_mode');
         return saved !== null ? saved === 'true' : true; // 默认开启分栏
     });
 
-    const setDisplayLang = (l: 'original' | 'cn' | 'en') => {
-        setDisplayLangState(l);
-        localStorage.setItem('server_display_lang', l);
-    };
 
     const setIsSplitMode = (s: boolean) => {
         setIsSplitModeState(s);
@@ -208,6 +226,20 @@ const ServerTaskWorkspace: React.FC<ServerTaskWorkspaceProps> = ({
         }
     };
 
+    // 包装详情页的刷新逻辑：既刷新列表状态，也重新拉取当前详情
+    const handleDetailRefresh = useCallback(async () => {
+        if (!selectedTicketId) return;
+
+        console.log('[Workspace] Refreshing ticket data:', selectedTicketId);
+
+        // 直接重新获取最新数据并载入
+        await fetchTicketData(selectedTicketId);
+
+        if (onRefresh) {
+            onRefresh();
+        }
+    }, [selectedTicketId, fetchTicketData, onRefresh]);
+
     // 监听选中 ID 变化并加载数据
     useEffect(() => {
         if (selectedTicketId && selectedTicketId > 0) {
@@ -217,7 +249,6 @@ const ServerTaskWorkspace: React.FC<ServerTaskWorkspaceProps> = ({
         }
     }, [selectedTicketId, fetchTicketData]);
 
-    const isProcessing = (id: number) => translatingTasks.some(t => t.ticketId === id);
 
     // 获取“已完成”标签页的任务对象
     const viewingCompletedTask = viewingCompletedId ? completedTasks.find(t => t.ticketId === viewingCompletedId) : null;
@@ -294,7 +325,7 @@ const ServerTaskWorkspace: React.FC<ServerTaskWorkspaceProps> = ({
             </div>
 
             {/* Detail Area */}
-            <div className="flex-1 relative overflow-hidden">
+            <div className="flex-1 relative overflow-hidden bg-slate-900">
                 {isLoading ? (
                     <div className="absolute inset-0 flex items-center justify-center bg-slate-900/10 backdrop-blur-sm z-10">
                         <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-500"></div>
@@ -303,15 +334,16 @@ const ServerTaskWorkspace: React.FC<ServerTaskWorkspaceProps> = ({
 
                 {selectedTicket ? (
                     <ServerTicketDetail
+                        key={selectedTicket.id}
                         ref={detailRef}
                         ticket={selectedTicket}
                         isEmbed={true}
-                        isProcessing={isProcessing(selectedTicket.id)}
-                        displayLang={displayLang}
-                        setDisplayLang={setDisplayLang}
+                        isProcessing={translatingTasks.some(t => Number(t.ticketId) === Number(selectedTicket.id))}
+                        activeProcessType={currentGlobalActiveStatus}
+                        onProcessStatusChange={setProcessingStatus}
                         isSplitMode={isSplitMode}
                         setIsSplitMode={setIsSplitMode}
-                        onRefresh={onRefresh}
+                        onRefresh={handleDetailRefresh}
                     />
                 ) : (
                     <div className="flex-1 flex items-center justify-center text-slate-600 flex-col gap-4 h-full">

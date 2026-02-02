@@ -38,12 +38,23 @@ public class Ticket {
     @Column(name = "is_valid")
     private Boolean isValid = false;
 
-    @OneToOne(mappedBy = "ticket", fetch = FetchType.EAGER)
-    private TicketTranslation translation;
+    @OneToMany(mappedBy = "ticket", fetch = FetchType.EAGER)
+    @OrderBy("id DESC")
+    private java.util.List<TicketTranslation> translations;
 
     @OneToMany(mappedBy = "ticket", fetch = FetchType.EAGER)
     @OrderBy("createdAt DESC")
     private java.util.List<TicketReply> replies;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("translation")
+    public TicketTranslation getTranslation() {
+        if (translations == null || translations.isEmpty())
+            return null;
+        return translations.stream()
+                .sorted((a, b) -> b.getId().compareTo(a.getId()))
+                .findFirst()
+                .orElse(null);
+    }
 
     @PreUpdate
     public void preUpdate() {

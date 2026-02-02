@@ -134,7 +134,7 @@ export const ticketApi = {
   },
 
   async getTicketById(id: number): Promise<ServerTicket> {
-    return request<ServerTicket>(`/tickets/${id}`);
+    return request<ServerTicket>(`/tickets/${id}?_t=${Date.now()}`);
   },
 
   async submitTranslation(ticketId: number, data: TranslationSubmitData): Promise<void> {
@@ -151,7 +151,7 @@ export const ticketApi = {
     }, explicitToken);
   },
 
-  async submitAudit(ticketId: number, data: AuditSubmitData): Promise<void> {
+  async submitAudit(ticketId: number, data: AuditAuditData): Promise<void> {
     await request<void>(`/tickets/${ticketId}/audit`, {
       method: 'POST',
       body: JSON.stringify(data),

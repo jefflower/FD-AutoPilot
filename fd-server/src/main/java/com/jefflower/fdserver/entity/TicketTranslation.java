@@ -12,7 +12,7 @@ public class TicketTranslation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "ticket_id", nullable = false)
     @com.fasterxml.jackson.annotation.JsonIgnore
     private Ticket ticket;

@@ -47,6 +47,7 @@ public class TicketService {
     @Transactional
     public TicketTranslation submitTranslation(Long ticketId, TranslationRequest request) {
         Ticket ticket = getTicketById(ticketId);
+        System.out.println("[TicketService] Submitting translation for ticket #" + ticketId);
 
         // 查找是否已存在该语言的翻译，如果存在则更新，否则新增
         TicketTranslation translation = translationRepository
@@ -57,42 +58,46 @@ public class TicketService {
         translation.setTargetLang(request.getTargetLang());
         translation.setTranslatedTitle(request.getTranslatedTitle());
         translation.setTranslatedContent(request.getTranslatedContent());
-        translationRepository.save(translation);
+        TicketTranslation saved = translationRepository.save(translation);
 
         // 如果已经是 PENDING_REPLY 状态，说明已经触发过后续流程，无需重复处理
         if (ticket.getStatus() != TicketStatus.PENDING_REPLY) {
             ticket.setStatus(TicketStatus.PENDING_REPLY);
+            ticket.setUpdatedAt(LocalDateTime.now());
             ticketRepository.save(ticket);
 
             // 发送回复任务到 MQ
             mqPublisherService.sendReplyTask(ticket);
         }
 
-        return translation;
+        return saved;
     }
 
     @Transactional
     public TicketReply submitReply(Long ticketId, ReplyRequest request) {
         Ticket ticket = getTicketById(ticketId);
+        System.out.println("[TicketService] Submitting reply for ticket #" + ticketId);
 
         TicketReply reply = new TicketReply();
         reply.setTicket(ticket);
         reply.setZhReply(request.getZhReply());
         reply.setTargetReply(request.getTargetReply());
-        replyRepository.save(reply);
+        TicketReply saved = replyRepository.save(reply);
 
         ticket.setStatus(TicketStatus.PENDING_AUDIT);
+        ticket.setUpdatedAt(LocalDateTime.now());
         ticketRepository.save(ticket);
 
         // 发送审核任务到 MQ
         mqPublisherService.sendAuditTask(ticket);
 
-        return reply;
+        return saved;
     }
 
     @Transactional
     public TicketAudit submitAudit(Long ticketId, AuditRequest request, Long auditorId) {
         Ticket ticket = getTicketById(ticketId);
+        System.out.println("[TicketService] Submitting audit for ticket #" + ticketId);
 
         TicketAudit audit = new TicketAudit();
         audit.setTicket(ticket);
@@ -100,10 +105,11 @@ public class TicketService {
         audit.setAuditResult(request.getAuditResult());
         audit.setAuditRemark(request.getAuditRemark());
         audit.setAuditorId(auditorId);
-        auditRepository.save(audit);
+        TicketAudit saved = auditRepository.save(audit);
 
         if (request.getAuditResult() == AuditResult.PASS) {
             ticket.setStatus(TicketStatus.COMPLETED);
+            ticket.setUpdatedAt(LocalDateTime.now());
             ticketRepository.save(ticket);
 
             // 同步回复到 Freshdesk
@@ -115,13 +121,14 @@ public class TicketService {
             freshdeskService.pushReplyToFreshdesk(ticket, reply);
         } else {
             ticket.setStatus(TicketStatus.PENDING_REPLY);
+            ticket.setUpdatedAt(LocalDateTime.now());
             ticketRepository.save(ticket);
 
             // 重新发送回复任务
             mqPublisherService.sendReplyTask(ticket);
         }
 
-        return audit;
+        return saved;
     }
 
     @Transactional

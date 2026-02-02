@@ -1,18 +1,21 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import { ServerTicket, TicketTranslation } from '../../types/server';
+import { ServerTicket } from '../../types/server';
 import { serverApi } from '../../services/serverApi';
 import { useSettings } from '../../hooks/useSettings';
 import { useNotebookShadow } from '../../hooks/useNotebookShadow';
 import { NotebookShadowService } from '../../services/notebookShadow';
+import { useTicketProcess } from '../../hooks/useTicketProcess';
 import { invoke } from '@tauri-apps/api/core';
 
 interface ServerTicketDetailProps {
     ticket: ServerTicket;
-    onRefresh?: () => void;
+    onRefresh?: () => void | Promise<void>;
     isEmbed?: boolean;
     isProcessing?: boolean;
     isSplitMode?: boolean;
     setIsSplitMode?: (s: boolean) => void;
+    activeProcessType?: 'translating' | 'replying' | null;
+    onProcessStatusChange?: (ticketId: number, status: 'translating' | 'replying' | null) => void;
 }
 
 interface ParsedContent {
@@ -46,12 +49,14 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
     // isEmbed = false,
     isProcessing = false,
     isSplitMode: propIsSplitMode,
-    setIsSplitMode: propSetIsSplitMode
+    setIsSplitMode: propSetIsSplitMode,
+    activeProcessType,
+    onProcessStatusChange
 }, ref) => {
     const [submitting, setSubmitting] = useState(false);
     const { notebookLMConfig: notebookConfig } = useSettings();
     const { visible: shadowVisible, toggle: handleToggleShadow } = useNotebookShadow();
-    const [generatingAiReply, setGeneratingAiReply] = useState(false);
+    // const [generatingAiReply, setGeneratingAiReply] = useState(false); // 改为 prop 驱动
     const [aiReplyText, setAiReplyText] = useState('');
     const [aiReplies, setAiReplies] = useState<[string, string] | null>(null); // [工单语言, 中文]
     const [aiReplyLang, setAiReplyLang] = useState<'original' | 'cn'>('original');
@@ -60,10 +65,15 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
     const [showPrompts, setShowPrompts] = useState(false); // 是否显示提示词视图
     const aiResponseEndRef = React.useRef<HTMLDivElement>(null);
 
-    // AI Translation state
-    const [isTranslating, setIsTranslating] = useState(false);
-    const [tempTranslation, setTempTranslation] = useState<Partial<TicketTranslation> | null>(null);
-    const [isTranslationDiffMode, setIsTranslationDiffMode] = useState(false);
+    // AI 处理状态持久化 (从全局 Hook 获取)
+    const { getProcessState, setProcessStatus, setTempTranslation: setGlobalTempTranslation } = useTicketProcess();
+    const processState = getProcessState(ticket.id);
+
+    const isTranslating = activeProcessType === 'translating' || processState.status === 'translating';
+    const generatingAiReply = activeProcessType === 'replying' || processState.status === 'replying';
+
+    const tempTranslation = processState.tempTranslation;
+    const isTranslationDiffMode = !!tempTranslation;
 
     // 自动滚动 AI 回复到底部
     React.useEffect(() => {
@@ -108,13 +118,21 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
         [tempTranslation, isTranslationDiffMode]
     );
 
-    // === 状态重置：切换工单时清空状态 ===
+    // === 状态监控日志 ===
     useEffect(() => {
-        setIsTranslating(false);
-        setGeneratingAiReply(false);
+        if (isTranslating || generatingAiReply) {
+            console.log(`[StatusCheck] Animation active. translates:${isTranslating}, reply:${generatingAiReply}, ticket:${ticket.id}`);
+        }
+    }, [isTranslating, generatingAiReply, ticket.id]);
+
+    // === 状态派生：处理状态完全由父组件 prop 驱动，确保跨组件卸载持久化 ===
+    // (已移动到上方 useState 处合并定义)
+
+    // === 状态重置：切换工单时清空局部 UI 状态 ===
+    useEffect(() => {
+        console.log(`[ServerTicketDetail] Ticket ID changed to #${ticket.id}, activeProcessType from parent: ${activeProcessType}`);
+        // 局部 UI 状态重置
         setAiError(null);
-        setTempTranslation(null);
-        setIsTranslationDiffMode(false);
         setAiReplies(null);
         setAiReplyText('');
     }, [ticket.id]);
@@ -138,18 +156,18 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
     const handleAiTranslate = useCallback(async (autoSave: boolean = false): Promise<boolean> => {
         if (autoSave) console.log(`[ServerTicketDetail] handleAiTranslate (autoSave=true) for ticket #${ticket.id}`);
 
-        // 如果是手动触发 (autoSave=false) 且正在处理中，则拦截
-        if (!autoSave && (isTranslating || isProcessing)) {
-            console.log(`[ServerTicketDetail] Translation blocked: isTranslating=${isTranslating}, isProcessing=${isProcessing}`);
+        if (!autoSave && (isTranslating || generatingAiReply || isProcessing)) {
+            console.log(`[ServerTicketDetail] Translation blocked: isTranslating=${isTranslating}, generatingAiReply=${generatingAiReply}, isProcessing=${isProcessing}`);
             return false;
         }
-        // 如果已经是组件内部正在翻译中，且是自动化调用，由于我们要确保成功，如果它正在翻译，说明正在努力，所以这里可以返回 true 或者等待
-        // 简单处理：拦截重复调用，但确保不触发后端重试循环
         if (isTranslating) {
             console.log(`[ServerTicketDetail] Already translating ticket #${ticket.id}, ignoring redundant call.`);
-            return true; // 已经是就绪状态，返回 true 避免触发后端的重试
+            return true;
         }
-        setIsTranslating(true);
+
+        console.log(`[ServerTicketDetail] handleAiTranslate START for #${ticket.id}`);
+        setProcessStatus(ticket.id, 'translating');
+        onProcessStatusChange?.(ticket.id, 'translating');
         setAiError(null);
 
         try {
@@ -211,8 +229,7 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
                 await serverApi.ticket.submitTranslation(ticket.id, translationData);
                 onRefresh?.();
             } else {
-                setTempTranslation(translationData);
-                setIsTranslationDiffMode(true);
+                setGlobalTempTranslation(ticket.id, translationData);
             }
             return true;
         } catch (e) {
@@ -222,9 +239,11 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
             if (!autoSave) alert('翻译失败: ' + errMsg);
             return false;
         } finally {
-            setIsTranslating(false);
+            console.log(`[ServerTicketDetail] handleAiTranslate END for #${ticket.id}`);
+            setProcessStatus(ticket.id, null);
+            onProcessStatusChange?.(ticket.id, null);
         }
-    }, [ticket, parsedData, isTranslating, isProcessing, onRefresh]);
+    }, [ticket, parsedData, isTranslating, isProcessing, onRefresh, onProcessStatusChange]);
 
     const handleConfirmTranslation = async () => {
         if (!tempTranslation || submitting) return;
@@ -232,11 +251,25 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
         console.log('[SubmitTranslation] Starting...', { ticketId: ticket.id, data: tempTranslation });
         try {
             await serverApi.ticket.submitTranslation(ticket.id, tempTranslation as any);
-            console.log('[SubmitTranslation] Success');
-            setTempTranslation(null);
-            setIsTranslationDiffMode(false);
+            console.log('[SubmitTranslation] Success, updating local state for instant feedback');
+
+            // 1. 手动更新当前 ticket 对象中的翻译（乐观更新），确保视觉上不闪回旧数据
+            if (ticket) {
+                const newTranslation = {
+                    ...(ticket.translation || {}),
+                    ...tempTranslation,
+                    id: ticket.translation?.id || Date.now(),
+                    createdAt: new Date().toISOString()
+                };
+                // @ts-ignore - 临时修改 prop 引用以实现即时刷新，父组件随后会传回真正的对象
+                ticket.translation = newTranslation;
+            }
+
+            // 2. 清理临时状态
+            setGlobalTempTranslation(ticket.id, null);
+
+            // 3. 通知父组件刷新（背景同步）
             if (onRefresh) {
-                console.log('[SubmitTranslation] Calling onRefresh...');
                 onRefresh();
             }
         } catch (e) {
@@ -250,8 +283,8 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
     const handleTriggerAiReply = useCallback(async (autoSave: boolean = false): Promise<boolean> => {
         if (autoSave) console.log(`[ServerTicketDetail] handleTriggerAiReply (autoSave=true) for ticket #${ticket.id}`);
 
-        if (!autoSave && (generatingAiReply || isProcessing)) {
-            console.log(`[ServerTicketDetail] Reply blocked: generatingAiReply=${generatingAiReply}, isProcessing=${isProcessing}`);
+        if (!autoSave && (generatingAiReply || isTranslating || isProcessing)) {
+            console.log(`[ServerTicketDetail] Reply blocked: generatingAiReply=${generatingAiReply}, isTranslating=${isTranslating}, isProcessing=${isProcessing}`);
             return false;
         }
         if (generatingAiReply) {
@@ -263,10 +296,11 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
             return false;
         }
 
-        setGeneratingAiReply(true);
+        console.log(`[ServerTicketDetail] handleTriggerAiReply START for #${ticket.id}`);
+        setProcessStatus(ticket.id, 'replying');
+        onProcessStatusChange?.(ticket.id, 'replying');
         setAiReplyText('');
         setAiReplies(null);
-        setAiReplyLang('original');
         setAiError(null);
 
         try {
@@ -351,9 +385,11 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
             setAiError((e as Error).message);
             return false;
         } finally {
-            setGeneratingAiReply(false);
+            console.log(`[ServerTicketDetail] handleTriggerAiReply FINALLY for #${ticket.id}`);
+            setProcessStatus(ticket.id, null);
+            onProcessStatusChange?.(ticket.id, null);
         }
-    }, [ticket, parsedData, generatingAiReply, isProcessing, notebookConfig, onRefresh]);
+    }, [ticket, parsedData, generatingAiReply, isProcessing, notebookConfig, onRefresh, onProcessStatusChange]);
 
     const handleSubmitAudit = async () => {
         if (!auditState.replyId || submitting) return;
@@ -425,10 +461,18 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
                     <button onClick={handleToggleShadow} className={`px-3 py-1.5 rounded-md text-[10px] font-black transition-all ${shadowVisible ? 'bg-orange-600 text-white' : 'bg-slate-700 text-slate-400'}`}>
                         BROWSER {shadowVisible ? 'ON' : 'OFF'}
                     </button>
-                    <button onClick={() => handleAiTranslate(false)} disabled={isTranslating} className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 disabled:opacity-50 text-white rounded-md text-[10px] font-black transition-all">
+                    <button
+                        onClick={() => handleAiTranslate(false)}
+                        disabled={isTranslating || generatingAiReply || isProcessing}
+                        className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 disabled:opacity-50 text-white rounded-md text-[10px] font-black transition-all"
+                    >
                         {isTranslating ? 'TRANSLATING...' : 'AI TRANSLATE'}
                     </button>
-                    <button onClick={() => handleTriggerAiReply(false)} disabled={generatingAiReply} className="px-3 py-1.5 bg-blue-600 hover:bg-blue-500 disabled:opacity-50 text-white rounded-md text-[10px] font-black transition-all">
+                    <button
+                        onClick={() => handleTriggerAiReply(false)}
+                        disabled={generatingAiReply || isTranslating || isProcessing}
+                        className="px-3 py-1.5 bg-blue-600 hover:bg-blue-500 disabled:opacity-50 text-white rounded-md text-[10px] font-black transition-all"
+                    >
                         {generatingAiReply ? 'GENERATING...' : 'AI REPLY'}
                     </button>
                     <div className="w-px h-4 bg-slate-700 mx-1"></div>
@@ -448,7 +492,7 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
                         <span className="text-[10px] font-black text-emerald-400 uppercase tracking-widest">Translation Preview (Click Confirm to Save)</span>
                     </div>
                     <div className="flex items-center gap-2">
-                        <button onClick={() => { setTempTranslation(null); setIsTranslationDiffMode(false); }} className="px-3 py-1 bg-slate-700 hover:bg-slate-600 text-white rounded-md text-[10px] font-bold">
+                        <button onClick={() => setGlobalTempTranslation(ticket.id, null)} className="px-3 py-1 bg-slate-700 hover:bg-slate-600 text-white rounded-md text-[10px] font-bold">
                             CANCEL
                         </button>
                         <button onClick={handleConfirmTranslation} disabled={submitting} className="px-3 py-1 bg-emerald-600 hover:bg-emerald-500 text-white rounded-md text-[10px] font-bold shadow-lg shadow-emerald-500/20">
@@ -591,7 +635,7 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
                                                                 </button>
                                                             </div>
                                                         )}
-                                                        <button onClick={() => { setAiReplyText(''); setAiError(null); setGeneratingAiReply(false); }} className="text-slate-500 hover:text-white transition-colors">
+                                                        <button onClick={() => { setAiReplyText(''); setAiError(null); onProcessStatusChange?.(ticket.id, null); }} className="text-slate-500 hover:text-white transition-colors">
                                                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
                                                         </button>
                                                     </div>
@@ -762,6 +806,67 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
                     </>
                 )}
             </div>
+
+            {/* AI 翻译/回复 锁屏动画 */}
+            {(isTranslating || generatingAiReply) ? (
+                <div className="absolute inset-0 z-[200] backdrop-blur-[2px] flex items-center justify-center animate-in fade-in duration-500">
+                    <style dangerouslySetInnerHTML={{
+                        __html: `
+                        @keyframes shimmer_move {
+                            0% { transform: translateX(-100%); }
+                            100% { transform: translateX(100%); }
+                        }
+                        .animate-shimmer {
+                            animation: shimmer_move 2s infinite;
+                        }
+                    ` }} />
+                    <div className="absolute inset-0 bg-slate-950/40"></div>
+
+                    {/* 呼吸灯背景 */}
+                    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                        <div className="absolute -inset-[100%] opacity-20 bg-[conic-gradient(from_0deg,transparent_0%,#3b82f6_25%,transparent_50%,#8b5cf6_75%,transparent_100%)] animate-[spin_8s_linear_infinite]"></div>
+                    </div>
+
+                    <div className="relative group">
+                        {/* 流光边框 */}
+                        <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl blur-lg opacity-75 animate-pulse"></div>
+
+                        <div className="relative bg-slate-900 border border-white/10 rounded-2xl p-8 flex flex-col items-center gap-6 shadow-2xl min-w-[320px]">
+                            {/* AI 核心动画 */}
+                            <div className="relative w-20 h-20">
+                                <div className="absolute inset-0 border-4 border-blue-500/20 rounded-full"></div>
+                                <div className="absolute inset-0 border-4 border-t-blue-500 rounded-full animate-spin"></div>
+                                <div className="absolute inset-2 border-4 border-purple-500/20 rounded-full"></div>
+                                <div className="absolute inset-2 border-4 border-b-purple-500 rounded-full animate-[spin_2s_linear_infinite_reverse]"></div>
+                                <div className="absolute inset-0 flex items-center justify-center">
+                                    <div className="w-4 h-4 bg-white rounded-full shadow-[0_0_15px_rgba(255,255,255,0.8)] animate-pulse"></div>
+                                </div>
+                            </div>
+
+                            <div className="text-center space-y-2">
+                                <h3 className="text-lg font-black text-white tracking-widest uppercase">
+                                    {isTranslating ? 'AI Translating' : 'AI Thinking'}
+                                </h3>
+                                <div className="flex flex-col items-center gap-1">
+                                    <p className="text-xs text-slate-400 font-medium animate-pulse">
+                                        {isTranslating ? 'Optimizing linguistics & tone...' : 'Synthesizing knowledge from sources...'}
+                                    </p>
+                                    <div className="flex gap-1 mt-2">
+                                        <div className="w-1 h-1 bg-blue-500 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+                                        <div className="w-1 h-1 bg-purple-500 rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+                                        <div className="w-1 h-1 bg-pink-500 rounded-full animate-bounce"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* 扫描线动画 */}
+                            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-50 blur-sm overflow-hidden">
+                                <div className="h-full w-full bg-blue-400/30 animate-shimmer"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            ) : null}
         </div>
     );
 });

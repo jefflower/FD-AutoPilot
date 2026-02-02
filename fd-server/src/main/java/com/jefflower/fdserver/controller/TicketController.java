@@ -59,10 +59,6 @@ public class TicketController {
     public ResponseEntity<ApiResponse<TicketTranslation>> submitTranslation(
             @PathVariable Long id,
             @Valid @RequestBody TranslationRequest request) {
-        log.info("Received translation for ticket #{}: targetLang={}, titleLen={}, contentLen={}",
-                id, request.getTargetLang(),
-                request.getTranslatedTitle() != null ? request.getTranslatedTitle().length() : 0,
-                request.getTranslatedContent() != null ? request.getTranslatedContent().length() : 0);
         TicketTranslation translation = ticketService.submitTranslation(id, request);
         return ResponseEntity.ok(ApiResponse.ok("翻译上报成功", translation));
     }
