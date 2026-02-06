@@ -47,18 +47,33 @@ public class TicketService {
     @Transactional
     public TicketTranslation submitTranslation(Long ticketId, TranslationRequest request) {
         Ticket ticket = getTicketById(ticketId);
-        System.out.println("[TicketService] Submitting translation for ticket #" + ticketId);
+        System.out.println("[TicketService] Submitting translation for ticket #" + ticketId + ", targetLang: "
+                + request.getTargetLang());
+        System.out.println("[TicketService] Translation details - Title: " +
+                (request.getTranslatedTitle() != null
+                        ? request.getTranslatedTitle().substring(0, Math.min(50, request.getTranslatedTitle().length()))
+                        : "null")
+                +
+                ", Content length: "
+                + (request.getTranslatedContent() != null ? request.getTranslatedContent().length() : 0));
 
-        // 查找是否已存在该语言的翻译，如果存在则更新，否则新增
-        TicketTranslation translation = translationRepository
-                .findByTicketAndTargetLang(ticket, request.getTargetLang())
-                .orElse(new TicketTranslation());
+        // 先删除已存在的翻译记录（如果有）
+        translationRepository.findByTicketAndTargetLang(ticket, request.getTargetLang())
+                .ifPresent(existing -> {
+                    System.out.println("[TicketService] Deleting existing translation record ID: " + existing.getId());
+                    translationRepository.delete(existing);
+                });
 
+        // 创建新的翻译记录
+        System.out.println("[TicketService] Creating new translation record");
+        TicketTranslation translation = new TicketTranslation();
         translation.setTicket(ticket);
         translation.setTargetLang(request.getTargetLang());
         translation.setTranslatedTitle(request.getTranslatedTitle());
         translation.setTranslatedContent(request.getTranslatedContent());
         TicketTranslation saved = translationRepository.save(translation);
+
+        System.out.println("[TicketService] Translation saved with ID: " + saved.getId());
 
         // 如果已经是 PENDING_REPLY 状态，说明已经触发过后续流程，无需重复处理
         if (ticket.getStatus() != TicketStatus.PENDING_REPLY) {
@@ -77,6 +92,9 @@ public class TicketService {
     public TicketReply submitReply(Long ticketId, ReplyRequest request) {
         Ticket ticket = getTicketById(ticketId);
         System.out.println("[TicketService] Submitting reply for ticket #" + ticketId);
+
+        // 删除该工单已有的回复
+        replyRepository.deleteByTicket(ticket);
 
         TicketReply reply = new TicketReply();
         reply.setTicket(ticket);

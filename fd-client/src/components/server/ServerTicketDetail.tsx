@@ -6,6 +6,7 @@ import { useNotebookShadow } from '../../hooks/useNotebookShadow';
 import { NotebookShadowService } from '../../services/notebookShadow';
 import { useTicketProcess } from '../../hooks/useTicketProcess';
 import { invoke } from '@tauri-apps/api/core';
+import { ask, message } from '@tauri-apps/plugin-dialog';
 
 interface ServerTicketDetailProps {
     ticket: ServerTicket;
@@ -54,7 +55,7 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
     onProcessStatusChange
 }, ref) => {
     const [submitting, setSubmitting] = useState(false);
-    const { notebookLMConfig: notebookConfig } = useSettings();
+    const { notebookLMConfig: notebookConfig, translationLang } = useSettings();
     const { visible: shadowVisible, toggle: handleToggleShadow } = useNotebookShadow();
     // const [generatingAiReply, setGeneratingAiReply] = useState(false); // 改为 prop 驱动
     const [aiReplyText, setAiReplyText] = useState('');
@@ -65,9 +66,18 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
     const [showPrompts, setShowPrompts] = useState(false); // 是否显示提示词视图
     const aiResponseEndRef = React.useRef<HTMLDivElement>(null);
 
+    // 使用 ref 保存最新的 ticket，确保异步回调中使用正确的 ID
+    const ticketRef = React.useRef(ticket);
+    React.useEffect(() => {
+        ticketRef.current = ticket;
+    }, [ticket]);
+
     // AI 处理状态持久化 (从全局 Hook 获取)
-    const { getProcessState, setProcessStatus, setTempTranslation: setGlobalTempTranslation } = useTicketProcess();
+    const { getProcessState, setProcessStatus, setTempTranslation: setGlobalTempTranslation, getActiveReplyingId, setActiveReplyingId } = useTicketProcess();
     const processState = getProcessState(ticket.id);
+
+    // 临时保存的AI回复（手动触发时使用，需用户确认后才保存）
+    const [tempAiReply, setTempAiReply] = useState<[string, string] | null>(null);
 
     const isTranslating = activeProcessType === 'translating' || processState.status === 'translating';
     const generatingAiReply = activeProcessType === 'replying' || processState.status === 'replying';
@@ -160,7 +170,7 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
             console.log(`[ServerTicketDetail] Translation blocked: isTranslating=${isTranslating}, generatingAiReply=${generatingAiReply}, isProcessing=${isProcessing}`);
             return false;
         }
-        if (isTranslating) {
+        if (!autoSave && isTranslating) {
             console.log(`[ServerTicketDetail] Already translating ticket #${ticket.id}, ignoring redundant call.`);
             return true;
         }
@@ -191,29 +201,38 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
                 }))
             };
 
+            // 使用配置的语言 (默认 zh-CN)
+            // 使用配置的语言 (默认 zh-CN)，并将简写 'cn' 转换为标准 'zh-CN'
+            let targetLang = translationLang || 'zh-CN';
+            if (targetLang === 'cn') targetLang = 'zh-CN';
+
+            console.log(`[ServerTicketDetail] Invoking translation with targetLang: ${targetLang}`);
+
             // 调用 Rust 命令进行直接翻译 (不依赖本地存储)
             const result = (await invoke('translate_ticket_direct_cmd', {
                 ticket: rustTicket,
-                targetLang: 'zh-CN'
+                targetLang: targetLang
             })) as any;
+
+            console.log('[ServerTicketDetail] Translation Result RAW:', result);
 
             // 构造翻译后的 content (和服务端格式保持一致，即包含 description 和 conversations 的 JSON)
             const translatedConversations = result.conversations?.map((c: any) => ({
                 id: c.id,
-                bodyText: c.body_text,
-                userId: c.user_id,
-                createdAt: c.created_at,
+                bodyText: c.bodyText || c.body_text || '', // 兼容 camelCase 和 snake_case
+                userId: c.userId || c.user_id,
+                createdAt: c.createdAt || c.created_at,
                 incoming: c.incoming,
-                isPrivate: c.private
+                isPrivate: c.private || c.is_private
             })) || [];
 
             const finalTranslatedContent = JSON.stringify({
-                description: result.descriptionText, // Ticket 结构有 rename_all="camelCase"
+                description: result.descriptionText || result.description_text || '',
                 conversations: translatedConversations
             });
 
             const translationData = {
-                targetLang: 'zh-CN',
+                targetLang: targetLang,
                 translatedTitle: result.subject || ticket.subject,
                 translatedContent: finalTranslatedContent,
             };
@@ -222,12 +241,20 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
                 ticketId: ticket.id,
                 targetLang: translationData.targetLang,
                 titleLen: translationData.translatedTitle?.length,
-                contentLen: translationData.translatedContent?.length
+                contentLen: translationData.translatedContent?.length,
+                contentPreview: finalTranslatedContent.substring(0, 100)
             });
 
             if (autoSave) {
-                await serverApi.ticket.submitTranslation(ticket.id, translationData);
-                onRefresh?.();
+                console.log(`[ServerTicketDetail] autoSave triggered for ticket #${ticket.id}. Calling serverApi.ticket.submitTranslation...`);
+                try {
+                    await serverApi.ticket.submitTranslation(ticket.id, translationData);
+                    console.log(`[ServerTicketDetail] serverApi.ticket.submitTranslation completed successfully for #${ticket.id}`);
+                    onRefresh?.();
+                } catch (saveErr) {
+                    console.error(`[ServerTicketDetail] FATAL: autoSave failed for ticket #${ticket.id}:`, saveErr);
+                    throw saveErr; // Rethrow to ensure handleAiTranslate returns false/catches in outer block
+                }
             } else {
                 setGlobalTempTranslation(ticket.id, translationData);
             }
@@ -243,7 +270,7 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
             setProcessStatus(ticket.id, null);
             onProcessStatusChange?.(ticket.id, null);
         }
-    }, [ticket, parsedData, isTranslating, isProcessing, onRefresh, onProcessStatusChange]);
+    }, [ticket, parsedData, isTranslating, isProcessing, onRefresh, onProcessStatusChange, notebookConfig, translationLang]);
 
     const handleConfirmTranslation = async () => {
         if (!tempTranslation || submitting) return;
@@ -281,14 +308,23 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
     };
 
     const handleTriggerAiReply = useCallback(async (autoSave: boolean = false): Promise<boolean> => {
-        if (autoSave) console.log(`[ServerTicketDetail] handleTriggerAiReply (autoSave=true) for ticket #${ticket.id}`);
+        // 使用 ref 获取最新的 ticket，防止闭包问题导致使用旧 ID
+        const currentTicket = ticketRef.current;
+        if (autoSave) console.log(`[ServerTicketDetail] handleTriggerAiReply (autoSave=true) for ticket #${currentTicket.id}`);
 
         if (!autoSave && (generatingAiReply || isTranslating || isProcessing)) {
             console.log(`[ServerTicketDetail] Reply blocked: generatingAiReply=${generatingAiReply}, isTranslating=${isTranslating}, isProcessing=${isProcessing}`);
             return false;
         }
+
+        // 单任务互斥检测（仅限手动触发时检查）
+        const currentActiveId = getActiveReplyingId();
+        if (!autoSave && currentActiveId !== null && currentActiveId !== currentTicket.id) {
+            alert(`工单 #${currentActiveId} 正在执行 AI Reply，请等待完成后再试。\n\n多任务并发 AI Reply 功能正在开发中...`);
+            return false;
+        }
         if (generatingAiReply) {
-            console.log(`[ServerTicketDetail] Already generating reply for ticket #${ticket.id}, ignoring redundant call.`);
+            console.log(`[ServerTicketDetail] Already generating reply for ticket #${currentTicket.id}, ignoring redundant call.`);
             return true;
         }
         if (!notebookConfig?.notebookId) {
@@ -296,16 +332,18 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
             return false;
         }
 
-        console.log(`[ServerTicketDetail] handleTriggerAiReply START for #${ticket.id}`);
-        setProcessStatus(ticket.id, 'replying');
-        onProcessStatusChange?.(ticket.id, 'replying');
+        console.log(`[ServerTicketDetail] handleTriggerAiReply START for #${currentTicket.id}`);
+        setActiveReplyingId(currentTicket.id); // 设置互斥状态
+        setProcessStatus(currentTicket.id, 'replying');
+        onProcessStatusChange?.(currentTicket.id, 'replying');
         setAiReplyText('');
         setAiReplies(null);
+        setTempAiReply(null); // 清理临时保存
         setAiError(null);
 
         try {
             // 深度构造上下文：包含明确的时间戳和角色标识
-            let context = `【TICKET SUBJECT】: ${ticket.subject}\n`;
+            let context = `【TICKET SUBJECT】: ${currentTicket.subject}\n`;
             context += `【INITIAL DESCRIPTION】: ${parsedData?.description || 'No description content'}\n\n`;
 
             if (parsedData?.conversations && parsedData.conversations.length > 0) {
@@ -327,6 +365,9 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
             setCurrentPrompt(finalPrompt); // 保存当前 Prompt 用于查看
 
             const shadowService = new NotebookShadowService(notebookConfig.notebookId, notebookConfig.notebookUrl);
+            let saveSuccess = false;
+            let saveError: Error | null = null;
+
             for await (const chunk of shadowService.query(finalPrompt)) {
                 if (chunk.status === 'error') {
                     setAiError(chunk.text);
@@ -359,19 +400,24 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
                         if (parsed && Array.isArray(parsed) && parsed.length >= 2) {
                             setAiReplies([parsed[0], parsed[1]]);
 
-                            // 如果是自动保存模式
+                            // 如果是自动保存模式（MQ触发）
                             if (autoSave) {
                                 try {
-                                    await serverApi.ticket.submitReply(ticket.id, {
+                                    await serverApi.ticket.submitReply(currentTicket.id, {
                                         zhReply: parsed[1],
                                         targetReply: parsed[0]
                                     });
                                     onRefresh?.();
-                                    return true;
+                                    saveSuccess = true;
+                                    break; // ✅ 使用 break 而不是 return,确保迭代器被正常消费
                                 } catch (err) {
                                     console.error('Auto-save reply failed:', err);
-                                    return false;
+                                    saveError = err as Error;
+                                    break; // ✅ 使用 break 而不是 return
                                 }
+                            } else {
+                                // 手动触发：存到临时状态，等用户确认保存
+                                setTempAiReply([parsed[0], parsed[1]]);
                             }
                         }
                     } catch (e) {
@@ -379,17 +425,44 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
                     }
                 }
             }
+
+            // 在循环外返回结果
+            if (autoSave) {
+                if (saveError) return false;
+                return saveSuccess;
+            }
             return true;
         } catch (e) {
             console.error('AI Reply Error:', e);
             setAiError((e as Error).message);
             return false;
         } finally {
-            console.log(`[ServerTicketDetail] handleTriggerAiReply FINALLY for #${ticket.id}`);
-            setProcessStatus(ticket.id, null);
-            onProcessStatusChange?.(ticket.id, null);
+            console.log(`[ServerTicketDetail] handleTriggerAiReply FINALLY for #${currentTicket.id}`);
+            setActiveReplyingId(null); // 清理互斥状态
+            setProcessStatus(currentTicket.id, null);
+            onProcessStatusChange?.(currentTicket.id, null);
         }
-    }, [ticket, parsedData, generatingAiReply, isProcessing, notebookConfig, onRefresh, onProcessStatusChange]);
+    }, [ticket, parsedData, generatingAiReply, isProcessing, notebookConfig, onRefresh, onProcessStatusChange, getActiveReplyingId, setActiveReplyingId, setTempAiReply]);
+
+    // 确认保存AI回复（手动触发后用户点击保存）
+    const handleConfirmReply = async () => {
+        if (!tempAiReply || submitting) return;
+        setSubmitting(true);
+        try {
+            await serverApi.ticket.submitReply(ticket.id, {
+                zhReply: tempAiReply[1],
+                targetReply: tempAiReply[0]
+            });
+            setTempAiReply(null);
+            setAiReplies(null);
+            setAiReplyText('');
+            onRefresh?.();
+        } catch (e) {
+            alert('保存回复失败: ' + (e as Error).message);
+        } finally {
+            setSubmitting(false);
+        }
+    };
 
     const handleSubmitAudit = async () => {
         if (!auditState.replyId || submitting) return;
@@ -406,6 +479,56 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
             alert('审核提交失败: ' + (e as Error).message);
         } finally {
             setSubmitting(false);
+        }
+    };
+
+    const [mqSubmitting, setMqSubmitting] = useState(false);
+
+    const handleTriggerMqTranslate = async () => {
+        if (mqSubmitting) return;
+
+        const confirmed = await ask('确定要发送 MQ 翻译请求吗？这会重新入队处理。', {
+            title: 'MQ 翻译确认',
+            kind: 'warning'
+        });
+
+        if (!confirmed) return;
+
+        setMqSubmitting(true);
+        try {
+            await serverApi.ticket.triggerAiTranslation(ticket.id);
+            // Optimistic update or refresh
+            onProcessStatusChange?.(ticket.id, 'translating');
+            onRefresh?.();
+        } catch (e) {
+            console.error('MQ Translate Error:', e);
+            await message('MQ 翻译触发失败: ' + (e as Error).message, { title: '错误', kind: 'error' });
+        } finally {
+            setMqSubmitting(false);
+        }
+    };
+
+    const handleTriggerMqReply = async () => {
+        if (mqSubmitting) return;
+
+        const confirmed = await ask('确定要发送 MQ 回复生成请求吗？这会重新入队处理。', {
+            title: 'MQ 回复确认',
+            kind: 'warning'
+        });
+
+        if (!confirmed) return;
+
+        setMqSubmitting(true);
+        try {
+            await serverApi.ticket.triggerAiReply(ticket.id);
+            // Optimistic update or refresh
+            onProcessStatusChange?.(ticket.id, 'replying');
+            onRefresh?.();
+        } catch (e) {
+            console.error('MQ Reply Error:', e);
+            await message('MQ 回复触发失败: ' + (e as Error).message, { title: '错误', kind: 'error' });
+        } finally {
+            setMqSubmitting(false);
         }
     };
 
@@ -458,7 +581,7 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
                 </div>
 
                 <div className="flex items-center gap-2">
-                    <button onClick={handleToggleShadow} className={`px-3 py-1.5 rounded-md text-[10px] font-black transition-all ${shadowVisible ? 'bg-orange-600 text-white' : 'bg-slate-700 text-slate-400'}`}>
+                    <button onClick={() => handleToggleShadow(notebookConfig?.notebookId, notebookConfig?.notebookUrl)} className={`px-3 py-1.5 rounded-md text-[10px] font-black transition-all ${shadowVisible ? 'bg-orange-600 text-white' : 'bg-slate-700 text-slate-400'}`}>
                         BROWSER {shadowVisible ? 'ON' : 'OFF'}
                     </button>
                     <button
@@ -475,6 +598,26 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
                     >
                         {generatingAiReply ? 'GENERATING...' : 'AI REPLY'}
                     </button>
+
+                    {/* New MQ Trigger Buttons */}
+                    <div className="w-px h-4 bg-slate-700 mx-1"></div>
+                    <button
+                        onClick={handleTriggerMqTranslate}
+                        disabled={isTranslating || generatingAiReply || isProcessing || mqSubmitting}
+                        className="px-3 py-1.5 border border-purple-500/50 text-purple-400 hover:bg-purple-500/10 disabled:opacity-50 rounded-md text-[10px] font-black transition-all"
+                        title="Trigger Server-side MQ Translation"
+                    >
+                        {mqSubmitting ? 'SENDING...' : 'MQ TRANS'}
+                    </button>
+                    <button
+                        onClick={handleTriggerMqReply}
+                        disabled={generatingAiReply || isTranslating || isProcessing || mqSubmitting}
+                        className="px-3 py-1.5 border border-indigo-500/50 text-indigo-400 hover:bg-indigo-500/10 disabled:opacity-50 rounded-md text-[10px] font-black transition-all"
+                        title="Trigger Server-side MQ Reply"
+                    >
+                        {mqSubmitting ? 'SENDING...' : 'MQ REPLY'}
+                    </button>
+
                     <div className="w-px h-4 bg-slate-700 mx-1"></div>
                     <button onClick={() => setIsJsonMode(!isJsonMode)} className={`px-3 py-1.5 rounded-md text-[10px] font-black border ${isJsonMode ? 'bg-indigo-600 border-indigo-500 text-white' : 'bg-slate-700 border-slate-600 text-slate-400'}`}>
                         JSON
@@ -665,7 +808,29 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
                                                             </div>
                                                         ) : aiReplies ? (
                                                             <div className="animate-in fade-in duration-500">
-                                                                {aiReplyLang === 'original' ? aiReplies[0] : aiReplies[1]}
+                                                                {isSplitMode ? (
+                                                                    <div className="grid grid-cols-2 gap-4">
+                                                                        <div className="bg-slate-800/60 p-4 rounded-lg border border-slate-700/50">
+                                                                            <div className="text-[10px] font-bold text-slate-500 mb-2 uppercase tracking-wider">Target Language Reply</div>
+                                                                            <div className="text-sm text-slate-200 whitespace-pre-wrap">{aiReplies[0]}</div>
+                                                                        </div>
+                                                                        <div className="bg-emerald-900/40 p-4 rounded-lg border border-emerald-700/50">
+                                                                            <div className="text-[10px] font-bold text-emerald-500 mb-2 uppercase tracking-wider">中文回复</div>
+                                                                            <div className="text-sm text-emerald-100 whitespace-pre-wrap">{aiReplies[1]}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                ) : (
+                                                                    <div className="space-y-4">
+                                                                        <div className="bg-slate-800/60 p-4 rounded-lg border border-slate-700/50">
+                                                                            <div className="text-[10px] font-bold text-slate-500 mb-2 uppercase tracking-wider">Target Language Reply</div>
+                                                                            <div className="text-sm text-slate-200 whitespace-pre-wrap">{aiReplies[0]}</div>
+                                                                        </div>
+                                                                        <div className="bg-emerald-900/40 p-4 rounded-lg border border-emerald-700/50">
+                                                                            <div className="text-[10px] font-bold text-emerald-500 mb-2 uppercase tracking-wider">中文回复</div>
+                                                                            <div className="text-sm text-emerald-100 whitespace-pre-wrap">{aiReplies[1]}</div>
+                                                                        </div>
+                                                                    </div>
+                                                                )}
                                                             </div>
                                                         ) : aiReplyText ? (
                                                             <div className="flex flex-col">
@@ -687,33 +852,51 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
                                                 <div ref={aiResponseEndRef} />
                                             </div>
 
-                                            {/* AI Actions / Audit Simulator */}
-                                            {(aiReplyText || aiReplies) && !aiError && !generatingAiReply && (
-                                                <div className="px-4 py-3 bg-white/5 border-t border-white/5 flex flex-wrap gap-2 items-center justify-between">
-                                                    <div className="flex gap-2">
-                                                        <button
-                                                            onClick={() => {
-                                                                const text = aiReplies ? (aiReplyLang === 'original' ? aiReplies[0] : aiReplies[1]) : aiReplyText;
-                                                                navigator.clipboard.writeText(text);
-                                                                alert('Text copied to clipboard');
-                                                            }}
-                                                            className="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-md text-[10px] font-black border border-white/10 flex items-center gap-1.5 transition-all"
-                                                        >
-                                                            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" /></svg>
-                                                            COPY CONTENT
-                                                        </button>
-                                                        <button className="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-md text-[10px] font-black border border-white/10 transition-all">
-                                                            {"EDIT & REPLY"}
-                                                        </button>
-                                                    </div>
-
-                                                    <div className="flex gap-2">
-                                                        <button className="px-4 py-1.5 bg-emerald-600/20 hover:bg-emerald-600/40 text-emerald-400 rounded-md text-[10px] font-black border border-emerald-500/30 transition-all">
-                                                            AUDIT: PASS
-                                                        </button>
-                                                        <button className="px-4 py-1.5 bg-rose-600/20 hover:bg-rose-600/40 text-rose-400 rounded-md text-[10px] font-black border border-rose-500/30 transition-all">
-                                                            AUDIT: REJECT
-                                                        </button>
+                                            {/* AI Actions / Save & Discard */}
+                                            {aiReplies && !aiError && !generatingAiReply && (
+                                                <div className="bg-gradient-to-r from-purple-600/10 to-indigo-600/10 border-t border-purple-500/20 p-4">
+                                                    <div className="flex items-center justify-between">
+                                                        <div className="flex items-center gap-3">
+                                                            {tempAiReply ? (
+                                                                <span className="text-[10px] font-black text-amber-400 uppercase tracking-widest flex items-center gap-2">
+                                                                    <span className="w-2 h-2 bg-amber-400 rounded-full animate-pulse"></span>
+                                                                    等待保存确认
+                                                                </span>
+                                                            ) : (
+                                                                <span className="text-[10px] font-bold text-slate-500">
+                                                                    已完成 · 请复制或保存回复
+                                                                </span>
+                                                            )}
+                                                        </div>
+                                                        <div className="flex gap-2">
+                                                            <button
+                                                                onClick={() => {
+                                                                    const text = aiReplies ? `${aiReplies[0]}\n\n---\n\n${aiReplies[1]}` : aiReplyText;
+                                                                    navigator.clipboard.writeText(text);
+                                                                    alert('已复制到剪贴板');
+                                                                }}
+                                                                className="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-md text-[10px] font-black border border-white/10 flex items-center gap-1.5 transition-all"
+                                                            >
+                                                                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" /></svg>
+                                                                复制全部
+                                                            </button>
+                                                            <button
+                                                                onClick={() => { setTempAiReply(null); setAiReplies(null); setAiReplyText(''); }}
+                                                                className="px-3 py-1.5 bg-slate-700 hover:bg-slate-600 text-slate-300 rounded-md text-[10px] font-black border border-white/10 transition-all"
+                                                            >
+                                                                丢弃
+                                                            </button>
+                                                            {tempAiReply && (
+                                                                <button
+                                                                    onClick={handleConfirmReply}
+                                                                    disabled={submitting}
+                                                                    className="px-5 py-1.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white rounded-md text-[10px] font-black shadow-lg shadow-purple-500/30 transition-all flex items-center gap-2 animate-pulse"
+                                                                >
+                                                                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                                                                    {submitting ? '保存中...' : '保存回复'}
+                                                                </button>
+                                                            )}
+                                                        </div>
                                                     </div>
                                                 </div>
                                             )}
@@ -737,66 +920,69 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
 
                                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                                     <div className="space-y-2">
-                                                        <div className="text-[10px] font-bold text-slate-500">ZH REPLY</div>
-                                                        <div className="text-sm text-slate-200 bg-black/20 p-3 rounded-lg border border-white/5">{reply.zhReply}</div>
-                                                    </div>
-                                                    <div className="space-y-2">
                                                         <div className="text-[10px] font-bold text-slate-500">TARGET REPLY ({reply.replyLang})</div>
                                                         <div className="text-sm text-slate-200 bg-black/20 p-3 rounded-lg border border-white/5">{reply.targetReply}</div>
                                                     </div>
+                                                    <div className="space-y-2">
+                                                        <div className="text-[10px] font-bold text-slate-500">ZH REPLY</div>
+                                                        <div className="text-sm text-slate-200 bg-black/20 p-3 rounded-lg border border-white/5">{reply.zhReply}</div>
+                                                    </div>
                                                 </div>
 
-                                                <div className="mt-4 pt-4 border-t border-slate-700/50">
-                                                    {auditState.replyId === reply.id ? (
-                                                        <div className="space-y-4 bg-slate-900/40 p-4 rounded-xl border border-blue-500/20 animate-in fade-in slide-in-from-top-2">
-                                                            <div className="flex items-center gap-4">
+                                                {/* 审核区域：仅当工单状态为待审核时显示 */}
+                                                {ticket.status === 'PENDING_AUDIT' && (
+                                                    <div className="mt-4 pt-4 border-t border-slate-700/50">
+                                                        {auditState.replyId === reply.id ? (
+                                                            <div className="space-y-4 bg-slate-900/40 p-4 rounded-xl border border-blue-500/20 animate-in fade-in slide-in-from-top-2">
+                                                                <div className="flex items-center gap-4">
+                                                                    <button
+                                                                        onClick={() => setAuditState(s => ({ ...s, result: 'PASS' }))}
+                                                                        className={`flex-1 py-2 text-xs font-bold rounded-lg border transition-all ${auditState.result === 'PASS' ? 'bg-emerald-600 border-emerald-500 text-white' : 'bg-slate-800 border-slate-700 text-slate-400'}`}
+                                                                    >
+                                                                        APPROVE (通过)
+                                                                    </button>
+                                                                    <button
+                                                                        onClick={() => setAuditState(s => ({ ...s, result: 'REJECT' }))}
+                                                                        className={`flex-1 py-2 text-xs font-bold rounded-lg border transition-all ${auditState.result === 'REJECT' ? 'bg-rose-600 border-rose-500 text-white' : 'bg-slate-800 border-slate-700 text-slate-400'}`}
+                                                                    >
+                                                                        REJECT (驳回)
+                                                                    </button>
+                                                                </div>
+                                                                <textarea
+                                                                    value={auditState.remark}
+                                                                    onChange={(e) => setAuditState(s => ({ ...s, remark: e.target.value }))}
+                                                                    placeholder="输入审核意见 (可选)..."
+                                                                    className="w-full bg-black/20 border border-slate-700 rounded-lg p-3 text-sm text-white placeholder:text-slate-600 focus:border-blue-500 outline-none h-20 resize-none transition-colors"
+                                                                />
+                                                                <div className="flex justify-end gap-3">
+                                                                    <button
+                                                                        onClick={() => setAuditState({ replyId: null, result: 'PASS', remark: '' })}
+                                                                        className="px-4 py-2 text-xs font-bold text-slate-400 hover:text-white transition-colors"
+                                                                    >
+                                                                        CANCEL
+                                                                    </button>
+                                                                    <button
+                                                                        onClick={handleSubmitAudit}
+                                                                        disabled={submitting}
+                                                                        className="px-6 py-2 bg-blue-600 hover:bg-blue-500 text-white text-xs font-black rounded-lg transition-all shadow-lg shadow-blue-500/20"
+                                                                    >
+                                                                        {submitting ? 'SUBMITTING...' : 'CONFIRM AUDIT'}
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        ) : (
+                                                            <div className="flex justify-end">
                                                                 <button
-                                                                    onClick={() => setAuditState(s => ({ ...s, result: 'PASS' }))}
-                                                                    className={`flex-1 py-2 text-xs font-bold rounded-lg border transition-all ${auditState.result === 'PASS' ? 'bg-emerald-600 border-emerald-500 text-white' : 'bg-slate-800 border-slate-700 text-slate-400'}`}
+                                                                    onClick={() => setAuditState({ replyId: reply.id, result: 'PASS', remark: '' })}
+                                                                    className="px-6 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-black rounded-lg transition-all shadow-lg shadow-indigo-500/20 flex items-center gap-2"
                                                                 >
-                                                                    APPROVE (通过)
-                                                                </button>
-                                                                <button
-                                                                    onClick={() => setAuditState(s => ({ ...s, result: 'REJECT' }))}
-                                                                    className={`flex-1 py-2 text-xs font-bold rounded-lg border transition-all ${auditState.result === 'REJECT' ? 'bg-rose-600 border-rose-500 text-white' : 'bg-slate-800 border-slate-700 text-slate-400'}`}
-                                                                >
-                                                                    REJECT (驳回)
+                                                                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                                                    AUDIT THIS REPLY
                                                                 </button>
                                                             </div>
-                                                            <textarea
-                                                                value={auditState.remark}
-                                                                onChange={(e) => setAuditState(s => ({ ...s, remark: e.target.value }))}
-                                                                placeholder="输入审核意见 (可选)..."
-                                                                className="w-full bg-black/20 border border-slate-700 rounded-lg p-3 text-sm text-white placeholder:text-slate-600 focus:border-blue-500 outline-none h-20 resize-none transition-colors"
-                                                            />
-                                                            <div className="flex justify-end gap-3">
-                                                                <button
-                                                                    onClick={() => setAuditState({ replyId: null, result: 'PASS', remark: '' })}
-                                                                    className="px-4 py-2 text-xs font-bold text-slate-400 hover:text-white transition-colors"
-                                                                >
-                                                                    CANCEL
-                                                                </button>
-                                                                <button
-                                                                    onClick={handleSubmitAudit}
-                                                                    disabled={submitting}
-                                                                    className="px-6 py-2 bg-blue-600 hover:bg-blue-500 text-white text-xs font-black rounded-lg transition-all shadow-lg shadow-blue-500/20"
-                                                                >
-                                                                    {submitting ? 'SUBMITTING...' : 'CONFIRM AUDIT'}
-                                                                </button>
-                                                            </div>
-                                                        </div>
-                                                    ) : (
-                                                        <div className="flex justify-end">
-                                                            <button
-                                                                onClick={() => setAuditState({ replyId: reply.id, result: 'PASS', remark: '' })}
-                                                                className="px-6 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-black rounded-lg transition-all shadow-lg shadow-indigo-500/20 flex items-center gap-2"
-                                                            >
-                                                                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                                                                AUDIT THIS REPLY
-                                                            </button>
-                                                        </div>
-                                                    )}
-                                                </div>
+                                                        )}
+                                                    </div>
+                                                )}
                                             </div>
                                         ))}
                                     </div>
@@ -807,8 +993,8 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
                 )}
             </div>
 
-            {/* AI 翻译/回复 锁屏动画 */}
-            {(isTranslating || generatingAiReply) ? (
+            {/* AI 翻译锁屏动画（仅翻译时显示，Reply过程中不锁屏以便查看浏览器状态）*/}
+            {isTranslating ? (
                 <div className="absolute inset-0 z-[200] backdrop-blur-[2px] flex items-center justify-center animate-in fade-in duration-500">
                     <style dangerouslySetInnerHTML={{
                         __html: `
@@ -845,11 +1031,11 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
 
                             <div className="text-center space-y-2">
                                 <h3 className="text-lg font-black text-white tracking-widest uppercase">
-                                    {isTranslating ? 'AI Translating' : 'AI Thinking'}
+                                    AI Translating
                                 </h3>
                                 <div className="flex flex-col items-center gap-1">
                                     <p className="text-xs text-slate-400 font-medium animate-pulse">
-                                        {isTranslating ? 'Optimizing linguistics & tone...' : 'Synthesizing knowledge from sources...'}
+                                        Optimizing linguistics & tone...
                                     </p>
                                     <div className="flex gap-1 mt-2">
                                         <div className="w-1 h-1 bg-blue-500 rounded-full animate-bounce [animation-delay:-0.3s]"></div>

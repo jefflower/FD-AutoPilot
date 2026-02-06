@@ -4,8 +4,6 @@ import { listen } from '@tauri-apps/api/event';
 import { serverApi } from '../../services/serverApi';
 // import { NotebookShadowService } from '../../services/notebookShadow';
 import ServerTaskWorkspace from './ServerTaskWorkspace';
-import { useSettings } from '../../hooks/useSettings';
-import { useNotebookShadow } from '../../hooks/useNotebookShadow';
 
 // MQ 消费状态接口
 interface MqConsumerStatus {
@@ -55,10 +53,8 @@ const ReplyTasksTab: React.FC<ReplyTasksTabProps> = ({
 
     const [logs, setLogs] = useState<string[]>([]);
     const [mqStarting, setMqStarting] = useState(false);
+    const [mqStopping, setMqStopping] = useState(false);
     const logEndRef = useRef<HTMLDivElement>(null);
-
-    const { } = useSettings();
-    const { visible: shadowVisible, toggle: handleToggleShadow } = useNotebookShadow();
 
     // 自动滚动日志
     useEffect(() => {
@@ -72,10 +68,18 @@ const ReplyTasksTab: React.FC<ReplyTasksTabProps> = ({
         try {
             const status = await invoke<MqConsumerStatus>('get_reply_mq_consumer_status');
             setMqStatus(status);
+
+            // 检测状态变化，更新UI状态
+            if (status.isRunning && mqStarting) {
+                setMqStarting(false);
+            }
+            if (!status.isRunning && mqStopping) {
+                setMqStopping(false);
+            }
         } catch (error) {
             console.error('Failed to get MQ status:', error);
         }
-    }, []);
+    }, [mqStarting, mqStopping]);
 
     // 初始化和监听
     useEffect(() => {
@@ -109,11 +113,14 @@ const ReplyTasksTab: React.FC<ReplyTasksTabProps> = ({
     };
 
     const handleStopMq = async () => {
+        setMqStopping(true);
         try {
             await invoke('stop_reply_mq_consumer');
             setLogs(prev => [...prev, '🛑 Reply MQ 消费停止中...']);
+            // 不立即设为 false，等待 updateMqStatus 确认状态变化
         } catch (err: any) {
             console.error('Stop failed:', err);
+            setMqStopping(false);
         }
     };
 
@@ -144,35 +151,27 @@ const ReplyTasksTab: React.FC<ReplyTasksTabProps> = ({
                             {!mqStatus.isRunning ? (
                                 <button
                                     onClick={handleStartMq}
-                                    disabled={mqStarting}
-                                    className="flex-1 h-9 bg-orange-600 hover:bg-orange-500 text-white text-xs font-bold rounded-lg transition-all disabled:opacity-50 shadow-lg shadow-orange-900/20"
+                                    disabled={mqStarting || mqStopping}
+                                    className="flex-1 h-9 bg-orange-600 hover:bg-orange-500 text-white text-xs font-bold rounded-lg transition-all disabled:opacity-50 shadow-lg shadow-orange-900/20 flex items-center justify-center gap-2"
                                 >
+                                    {mqStarting && <div className="w-3 h-3 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>}
                                     {mqStarting ? '启动中...' : '启动消费'}
                                 </button>
                             ) : (
                                 <button
                                     onClick={handleStopMq}
-                                    className="flex-1 h-9 bg-red-500/80 hover:bg-red-500 text-white text-xs font-bold rounded-lg transition-all"
+                                    disabled={mqStopping}
+                                    className="flex-1 h-9 bg-red-500/80 hover:bg-red-500 text-white text-xs font-bold rounded-lg transition-all disabled:opacity-50 flex items-center justify-center gap-2"
                                 >
-                                    停止消费
+                                    {mqStopping && <div className="w-3 h-3 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>}
+                                    {mqStopping ? '停止中...' : '停止消费'}
                                 </button>
                             )}
                         </div>
 
                         <div className="flex items-center justify-between px-1">
                             <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">单任务执行模式</span>
-                            <div className="flex items-center gap-2">
-                                <button
-                                    onClick={handleToggleShadow}
-                                    className={`px-2 h-6 rounded border text-[9px] font-bold transition-all ${shadowVisible
-                                        ? 'bg-purple-500 border-purple-400 text-white'
-                                        : 'bg-slate-800 border-white/10 text-slate-500 hover:text-slate-300'
-                                        }`}
-                                >
-                                    BROWSER
-                                </button>
-                                <div className="text-[10px] text-orange-400 font-mono">FIXED 1</div>
-                            </div>
+                            <div className="text-[10px] text-orange-400 font-mono">FIXED 1</div>
                         </div>
                     </div>
 

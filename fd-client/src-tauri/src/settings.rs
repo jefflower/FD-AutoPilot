@@ -16,7 +16,7 @@ pub struct Settings {
     // MQ 消费者配置
     pub mq_consumer_enabled: bool, // MQ消费者是否应该自动启动
     pub mq_batch_size: u32,        // 每批翻译任务数量
-    pub translation_lang: String,  // 翻译目标语言 (如 "cn", "en")
+    pub translation_lang: String,  // 翻译目标语言 (如 "zh-CN", "en")
 }
 
 impl Default for Settings {
@@ -33,7 +33,7 @@ impl Default for Settings {
             // MQ 消费者默认配置
             mq_consumer_enabled: false,
             mq_batch_size: 5,
-            translation_lang: "cn".to_string(),
+            translation_lang: "zh-CN".to_string(),
         }
     }
 }

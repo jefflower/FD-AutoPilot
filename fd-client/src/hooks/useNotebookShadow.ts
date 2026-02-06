@@ -35,10 +35,19 @@ export const useNotebookShadow = () => {
     };
   }, []);
 
-  const toggle = useCallback(async () => {
+  /**
+   * 切换影子窗口可见性
+   * @param notebookId - NotebookLM ID（首次创建窗口时必需）
+   * @param notebookUrl - NotebookLM URL（可选）
+   */
+  const toggle = useCallback(async (notebookId?: string, notebookUrl?: string) => {
     const nextValue = !globalShadowVisible;
     try {
-      await invoke('toggle_notebook_window', { visible: nextValue });
+      await invoke('toggle_notebook_window', { 
+        visible: nextValue,
+        notebookId: notebookId || null,
+        notebookUrl: notebookUrl || null
+      });
       // toggle_notebook_window 会触发 notebook-window-visibility-changed 事件，
       // 所以这里不需要手动调用 updateGlobalVisible(nextValue)，
       // 依赖事件驱动以保证状态绝对同步。

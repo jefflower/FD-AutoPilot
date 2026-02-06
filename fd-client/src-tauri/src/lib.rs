@@ -425,7 +425,7 @@ async fn get_notebook_window_visibility(app: AppHandle) -> Result<bool, String> 
 }
 
 #[tauri::command]
-async fn toggle_notebook_window(app: AppHandle, visible: bool) -> Result<(), String> {
+async fn toggle_notebook_window(app: AppHandle, visible: bool, notebook_id: Option<String>, notebook_url: Option<String>) -> Result<(), String> {
     if let Some(window) = app.get_webview_window("notebook_shadow") {
         if visible {
             window.show().map_err(|e| e.to_string())?;
@@ -436,8 +436,23 @@ async fn toggle_notebook_window(app: AppHandle, visible: bool) -> Result<(), Str
         // 发送全局事件通知前端所有组件更新按钮状态
         app.emit("notebook-window-visibility-changed", visible).map_err(|e| e.to_string())?;
         Ok(())
+    } else if visible {
+        // 窗口不存在且需要显示时，先创建窗口
+        if let Some(nb_id) = notebook_id {
+            open_notebook_window(app.clone(), nb_id, notebook_url).await?;
+            // 创建完成后显示窗口
+            if let Some(window) = app.get_webview_window("notebook_shadow") {
+                window.show().map_err(|e| e.to_string())?;
+                window.set_focus().map_err(|e| e.to_string())?;
+                app.emit("notebook-window-visibility-changed", true).map_err(|e| e.to_string())?;
+            }
+            Ok(())
+        } else {
+            Err("Cannot create shadow window: notebook_id not provided".to_string())
+        }
     } else {
-        Err("Shadow window not found".to_string())
+        // 窗口不存在且要隐藏，直接返回成功（本来就没显示）
+        Ok(())
     }
 }
 
@@ -655,12 +670,28 @@ async fn complete_reply_task(
     ticket_id: i64,
     success: bool,
     mq_state: State<'_, MqReplyState>,
+    app: tauri::AppHandle,
 ) -> Result<(), String> {
+    use crate::ai::GeminiClient;
+    GeminiClient::log(&app, &format!("🎯 [complete_reply_task] Called for ticket #{}, success: {}", ticket_id, success));
+
     let mut p_acks = mq_state.state.pending_acks.lock().await;
+    GeminiClient::log(&app, &format!("🔍 [complete_reply_task] Current pending_acks size: {}", p_acks.len()));
+
     if let Some(tx) = p_acks.remove(&ticket_id) {
-        let _ = tx.send(success);
-        Ok(())
+        GeminiClient::log(&app, &format!("✅ [complete_reply_task] Found tx for #{}, sending signal...", ticket_id));
+        match tx.send(success) {
+            Ok(_) => {
+                GeminiClient::log(&app, &format!("📤 [complete_reply_task] Signal sent successfully for #{}", ticket_id));
+                Ok(())
+            }
+            Err(_) => {
+                GeminiClient::log(&app, &format!("❌ [complete_reply_task] Failed to send signal (rx dropped?) for #{}", ticket_id));
+                Err(format!("Failed to send completion signal for ticket #{}", ticket_id))
+            }
+        }
     } else {
+        GeminiClient::log(&app, &format!("❌ [complete_reply_task] No pending task found for #{}", ticket_id));
         Err(format!("No pending reply task found for ticket #{}", ticket_id))
     }
 }

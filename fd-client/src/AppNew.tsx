@@ -3,7 +3,7 @@
  * 在保留原有功能的基础上集成新的服务端交互模块
  */
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { listen } from '@tauri-apps/api/event';
 import "./index.css";
 
@@ -23,6 +23,9 @@ import AuditTasksTab from "./components/server/AuditTasksTab";
 import AdminUsersTab from "./components/admin/AdminUsersTab";
 import ManualSyncTab from "./components/admin/ManualSyncTab";
 import UserProfileTab from "./components/user/UserProfileTab";
+// Headless Runners
+import MqTranslationRunner from "./components/runners/MqTranslationRunner";
+import MqReplyRunner from "./components/runners/MqReplyRunner";
 
 // Hooks
 import { useSettings } from "./hooks/useSettings";
@@ -103,14 +106,19 @@ function AppNew() {
     useEffect(() => {
         const handleMqTask = async (event: any, type: 'translate' | 'reply') => {
             try {
-                const data = JSON.parse(event.payload as string);
+                // event.payload 已经是对象了，不需要 JSON.parse
+                const data = event.payload;
                 console.log(`[Global MQ ${type}] Received:`, data);
 
-                // 仅在非任务相关页面时才自动跳转
-                const taskTabs: TabType[] = ['server-tickets', 'translation', 'reply', 'audit'];
-                if (!taskTabs.includes(activeTab)) {
-                    setActiveTab('server-tickets');
+                // 根据任务类型自动切换到对应的 Tab (已禁用，改用后台处理)
+                if (type === 'translate') {
+                    console.log('[Global MQ translate] Background processing (no auto-switch)');
+                    // setActiveTab('translation');
+                } else if (type === 'reply') {
+                    console.log('[Global MQ reply] Background processing (no auto-switch)');
+                    // setActiveTab('reply');
                 }
+
                 // 设置追踪目标 (增加去重逻辑：相同 ID + 类型 10秒内不重复触发)
                 const now = Date.now();
                 if (lastTaskRef.current?.id === data.ticketId && lastTaskRef.current?.type === type && (now - lastTaskRef.current.time) < 10000) {
@@ -143,6 +151,11 @@ function AppNew() {
     const handleRegister = async (data: { username: string; password: string }) => {
         await auth.register(data);
     };
+
+    // 稳定的回调函数 for MQ Target Handled
+    const handleMqTargetHandled = useCallback(() => {
+        setMqTarget(null);
+    }, []);
 
     // 渲染当前 Tab 内容
     const renderTabContent = () => {
@@ -281,61 +294,34 @@ function AppNew() {
                     <ServerTicketsTab
                         isAdmin={auth.isAdmin}
                         mqTarget={mqTarget}
-                        onMqTargetHandled={() => setMqTarget(null)}
+                        onMqTargetHandled={handleMqTargetHandled}
                     />
                 );
 
             case 'translation':
-                if (!auth.isLoggedIn) {
-                    return (
-                        <AuthLoginTab
-                            onLogin={handleLogin}
-                            onSwitchToRegister={() => setAuthView('register')}
-                            isLoading={auth.isLoading}
-                            error={auth.error}
-                        />
-                    );
-                }
+                if (!auth.isLoggedIn) return null;
                 return (
                     <TranslationTasksTab
                         mqTarget={mqTarget}
-                        onMqTargetHandled={() => setMqTarget(null)}
+                        onMqTargetHandled={handleMqTargetHandled}
                     />
                 );
 
             case 'reply':
-                if (!auth.isLoggedIn) {
-                    return (
-                        <AuthLoginTab
-                            onLogin={handleLogin}
-                            onSwitchToRegister={() => setAuthView('register')}
-                            isLoading={auth.isLoading}
-                            error={auth.error}
-                        />
-                    );
-                }
+                if (!auth.isLoggedIn) return null;
                 return (
                     <ReplyTasksTab
                         mqTarget={mqTarget}
-                        onMqTargetHandled={() => setMqTarget(null)}
+                        onMqTargetHandled={handleMqTargetHandled}
                     />
                 );
 
             case 'audit':
-                if (!auth.isLoggedIn) {
-                    return (
-                        <AuthLoginTab
-                            onLogin={handleLogin}
-                            onSwitchToRegister={() => setAuthView('register')}
-                            isLoading={auth.isLoading}
-                            error={auth.error}
-                        />
-                    );
-                }
+                if (!auth.isLoggedIn) return null;
                 return (
                     <AuditTasksTab
                         mqTarget={mqTarget}
-                        onMqTargetHandled={() => setMqTarget(null)}
+                        onMqTargetHandled={handleMqTargetHandled}
                     />
                 );
 
@@ -415,6 +401,20 @@ function AppNew() {
             <div className="flex-1 flex overflow-hidden">
                 {renderTabContent()}
             </div>
+
+            {/* 隐藏的后台 Task Runners：独立处理 MQ 任务，无需渲染完整 UI */}
+            {auth.isLoggedIn && (
+                <>
+                    <MqTranslationRunner
+                        mqTarget={mqTarget}
+                        onMqTargetHandled={handleMqTargetHandled}
+                    />
+                    <MqReplyRunner
+                        mqTarget={mqTarget}
+                        onMqTargetHandled={handleMqTargetHandled}
+                    />
+                </>
+            )}
         </div>
     );
 }

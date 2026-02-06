@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { listen } from '@tauri-apps/api/event';
 import { invoke } from '@tauri-apps/api/core';
 import { NotebookShadowService } from '../services/notebookShadow';
@@ -20,13 +20,14 @@ interface MQReplyRequest {
 }
 
 const MQTaskRunner: React.FC<MQTaskRunnerProps> = ({ notebookLMConfig, setLogs }) => {
-    const [isProcessing, setIsProcessing] = useState(false);
+    // 使用 useRef 而不是 useState,避免状态改变导致 useEffect 重新执行
+    const isProcessingRef = useRef(false);
 
     useEffect(() => {
         const unlistenPromise = listen<string>('mq-reply-request', async (event) => {
             console.log('[MQTaskRunner] Received request:', event.payload);
 
-            if (isProcessing) {
+            if (isProcessingRef.current) {
                 console.warn('[MQTaskRunner] Already processing a task, skipping (MQ prefetch should be 1)');
                 return;
             }
@@ -40,7 +41,7 @@ const MQTaskRunner: React.FC<MQTaskRunnerProps> = ({ notebookLMConfig, setLogs }
             try {
                 const request: MQReplyRequest = JSON.parse(event.payload);
                 ticketId = request.ticketId;
-                setIsProcessing(true);
+                isProcessingRef.current = true;
                 setLogs(prev => [...prev, `🤖 MQ Task: Generating reply for ticket #${request.ticketId} via NotebookLM`]);
 
                 // ... (rest of the logic)
@@ -106,14 +107,14 @@ const MQTaskRunner: React.FC<MQTaskRunnerProps> = ({ notebookLMConfig, setLogs }
                     await invoke('complete_reply_task', { ticketId, success: false });
                 }
             } finally {
-                setIsProcessing(false);
+                isProcessingRef.current = false;
             }
         });
 
         return () => {
             unlistenPromise.then(fn => fn());
         };
-    }, [notebookLMConfig, isProcessing, setLogs]);
+    }, [notebookLMConfig, setLogs]);  // 移除 isProcessing 依赖
 
     return null; // 全局隐藏组件
 };

@@ -8,7 +8,12 @@ export interface ShadowResponse {
 /**
  * NotebookLM 影子窗口服务 - 结构化校验增强版
  * 专门解决“中间思考过程被抓取”的问题
+ * 包含全局互斥锁，确保同时只有一个查询在执行
  */
+
+// 全局互斥锁状态
+let globalQueryLock: Promise<void> = Promise.resolve();
+
 export class NotebookShadowService {
   private notebookId: string;
   private notebookUrl?: string;
@@ -17,6 +22,27 @@ export class NotebookShadowService {
   constructor(notebookId: string, notebookUrl?: string) {
     this.notebookId = notebookId;
     this.notebookUrl = notebookUrl;
+  }
+
+  /**
+   * 获取全局查询锁
+   * 确保同时只有一个查询在执行
+   */
+  private async acquireLock(): Promise<() => void> {
+    // 等待当前持有锁的查询完成
+    await globalQueryLock;
+    
+    // 创建新的锁
+    let release: () => void;
+    globalQueryLock = new Promise<void>((resolve) => {
+      release = resolve;
+    });
+    
+    console.log('[NotebookShadow] Query lock acquired');
+    return () => {
+      console.log('[NotebookShadow] Query lock released');
+      release!();
+    };
   }
 
   async init() {
@@ -35,22 +61,32 @@ export class NotebookShadowService {
   }
 
   async *query(prompt: string): AsyncIterableIterator<ShadowResponse> {
+    // 每次查询生成唯一会话ID，用于防止跨查询混淆
+    const sessionId = `session_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
+    console.log(`[NotebookShadow] Starting new query session: ${sessionId}`);
+    
+    // 【关键】获取全局互斥锁，确保同时只有一个查询在执行
+    const releaseLock = await this.acquireLock();
+    
     try {
       await this.init();
 
       const mainScript = `
         (async function() {
+          const SESSION_ID = "${sessionId}";
           const log = (msg) => {
             if (window.__TAURI__?.core) {
               window.__TAURI__.core.invoke('forward_shadow_event', { 
                 event: 'shadow-log', 
-                payload: '[Shadow] ' + msg 
+                payload: '[Shadow:' + SESSION_ID.slice(-6) + '] ' + msg 
               }).catch(() => {});
             }
           };
 
+          // 【关键】每次新查询必须重置所有会话状态
+          window.__SHADOW_SESSION_ID = SESSION_ID;
           window.__SHADOW_SESSION_ACTIVE = false;
-          window.__SHADOW_LAST_TEXT = "";
+          window.__SHADOW_LAST_TEXT = "";  // 重置，防止读取旧响应
 
           async function forceClear() {
              for (let i = 0; i < 3; i++) {
@@ -128,6 +164,7 @@ export class NotebookShadowService {
         while (idleCount < 360) { // 3分钟总超时 (360 * 500ms)
           const pollScript = `
             (function() {
+              // 只检查会话是否激活
               if (!window.__SHADOW_SESSION_ACTIVE) return;
               try {
                 // 1. 获取最后一个回复消息容器 (聚合同一条消息内的所有块)
@@ -160,7 +197,7 @@ export class NotebookShadowService {
                 const payload = JSON.stringify({ 
                   text, 
                   finished: isFinished, 
-                  valid: balanced 
+                  valid: balanced
                 });
 
                 if (text !== window.__SHADOW_LAST_TEXT) {
@@ -204,6 +241,11 @@ export class NotebookShadowService {
       }
     } catch (err: unknown) {
       yield { text: `影子浏览器异常: ${err instanceof Error ? err.message : String(err)}`, status: 'error' };
+    } finally {
+      // 【关键】确保锁被释放,无论成功还是失败
+      // 注意:会话清理已经在 mainScript 的 forceClear() 中完成(在输入新提示词之前)
+      // 不需要在这里再次清理,否则可能干扰结果获取
+      releaseLock();
     }
   }
 

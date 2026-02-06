@@ -12,7 +12,7 @@ export function useSettings() {
   const [mqPort, setMqPort] = useState(5672);
   const [mqUsername, setMqUsername] = useState('guest');
   const [mqPassword, setMqPassword] = useState('guest');
-  const [translationLang, setTranslationLang] = useState('cn');
+  const [translationLang, setTranslationLang] = useState('zh-CN');
 
   // NotebookLM配置状态
   const [notebookLMConfig, setNotebookLMConfig] = useState<NotebookLMConfig>({
