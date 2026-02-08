@@ -22,6 +22,7 @@ function App() {
     mqPort, setMqPort,
     mqUsername, setMqUsername,
     mqPassword, setMqPassword,
+    translationLang, setTranslationLang,
     notebookLMConfig, setNotebookLMConfig
   } = useSettings();
 
@@ -148,6 +149,8 @@ function App() {
             setMqUsername={setMqUsername}
             mqPassword={mqPassword}
             setMqPassword={setMqPassword}
+            translationLang={translationLang}
+            setTranslationLang={setTranslationLang}
             notebookLMConfig={notebookLMConfig}
             setNotebookLMConfig={setNotebookLMConfig}
             setLogs={setLogs}

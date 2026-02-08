@@ -23,7 +23,7 @@ public class TicketService {
     private final TicketReplyRepository replyRepository;
     private final TicketAuditRepository auditRepository;
     private final MqPublisherService mqPublisherService;
-    private final FreshdeskService freshdeskService;
+    private final ReplyPushService replyPushService;
 
     public Page<Ticket> queryTickets(
             TicketStatus status,
@@ -136,7 +136,7 @@ public class TicketService {
             reply.setIsSelected(true);
             replyRepository.save(reply);
 
-            freshdeskService.pushReplyToFreshdesk(ticket, reply);
+            replyPushService.pushReplyToFreshdesk(ticket, reply);
         } else {
             ticket.setStatus(TicketStatus.PENDING_REPLY);
             ticket.setUpdatedAt(LocalDateTime.now());

@@ -3,7 +3,7 @@
  */
 
 import { useState, useEffect, useCallback } from 'react';
-import { authApi, getAuthToken, setAuthToken } from '../services/serverApi';
+import { authApi, getAuthToken, setAuthToken, isTokenExpired } from '../services/serverApi';
 import type { User, LoginRequest, RegisterRequest } from '../types/server';
 
 interface AuthState {
@@ -25,12 +25,21 @@ export function useAuth() {
     error: null,
   });
 
-  // 初始化时检查本地存储的 token
+  // 初始化时检查本地存储的 token（含过期校验）
   useEffect(() => {
     const token = getAuthToken();
     const savedUser = localStorage.getItem('fd_auth_user');
-    
+
     if (token && savedUser) {
+      // token 已过期，清除并跳转到登录
+      if (isTokenExpired(token)) {
+        console.warn('[useAuth] Stored token is expired, clearing...');
+        setAuthToken(null);
+        localStorage.removeItem('fd_auth_user');
+        setState(prev => ({ ...prev, isLoading: false }));
+        return;
+      }
+
       try {
         const user = JSON.parse(savedUser) as User;
         setState({
@@ -116,6 +125,33 @@ export function useAuth() {
       error: null,
     });
   }, []);
+
+  // 监听 token 过期事件（来自 serverApi 的 401 响应），自动登出
+  useEffect(() => {
+    const handleTokenExpired = () => {
+      console.warn('[useAuth] Token expired (401), logging out...');
+      logout();
+    };
+
+    window.addEventListener('auth-token-expired', handleTokenExpired);
+    return () => window.removeEventListener('auth-token-expired', handleTokenExpired);
+  }, [logout]);
+
+  // 定时检查 token 是否过期（每 60 秒），处理使用过程中 token 到期的情况
+  useEffect(() => {
+    if (!state.isLoggedIn) return;
+
+    const checkExpiry = () => {
+      const token = getAuthToken();
+      if (token && isTokenExpired(token)) {
+        console.warn('[useAuth] Token expired during session, logging out...');
+        logout();
+      }
+    };
+
+    const interval = setInterval(checkExpiry, 60_000);
+    return () => clearInterval(interval);
+  }, [state.isLoggedIn, logout]);
 
   const clearError = useCallback(() => {
     setState(prev => ({ ...prev, error: null }));

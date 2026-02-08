@@ -38,6 +38,51 @@ public class Ticket {
     @Column(name = "is_valid")
     private Boolean isValid = false;
 
+    // ========== Freshdesk 原生元数据 ==========
+
+    @Column(name = "fd_status")
+    private Integer fdStatus;
+
+    @Column(name = "fd_priority")
+    private Integer fdPriority;
+
+    @Column(name = "fd_source")
+    private Integer fdSource;
+
+    @Column(name = "fd_type", length = 64)
+    private String fdType;
+
+    @Column(name = "fd_requester_id")
+    private Long fdRequesterId;
+
+    @Column(name = "fd_responder_id")
+    private Long fdResponderId;
+
+    @Column(name = "fd_group_id")
+    private Long fdGroupId;
+
+    @Column(name = "fd_tags", length = 512)
+    private String fdTags;
+
+    @Column(name = "fd_created_at")
+    private LocalDateTime fdCreatedAt;
+
+    @Column(name = "fd_updated_at")
+    private LocalDateTime fdUpdatedAt;
+
+    // ========== 同步控制字段 ==========
+
+    @Column(name = "content_hash", length = 64)
+    private String contentHash;
+
+    @Column(name = "last_synced_at")
+    private LocalDateTime lastSyncedAt;
+
+    @Column(name = "sync_source", length = 16)
+    private String syncSource;
+
+    // ========== 关联关系 ==========
+
     @OneToMany(mappedBy = "ticket", fetch = FetchType.EAGER)
     @OrderBy("id DESC")
     private java.util.List<TicketTranslation> translations;

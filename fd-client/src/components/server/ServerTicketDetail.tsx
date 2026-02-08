@@ -3,9 +3,10 @@ import { ServerTicket } from '../../types/server';
 import { serverApi } from '../../services/serverApi';
 import { useSettings } from '../../hooks/useSettings';
 import { useNotebookShadow } from '../../hooks/useNotebookShadow';
-import { NotebookShadowService } from '../../services/notebookShadow';
 import { useTicketProcess } from '../../hooks/useTicketProcess';
-import { invoke } from '@tauri-apps/api/core';
+import { useAiReply } from '../../hooks/useAiReply';
+import { useAiTranslation } from '../../hooks/useAiTranslation';
+import { AGENT_MAP } from '../../constants/agentMap';
 import { ask, message } from '@tauri-apps/plugin-dialog';
 
 interface ServerTicketDetailProps {
@@ -31,13 +32,6 @@ interface ParsedContent {
     }>;
 }
 
-// 员工 ID 映射配置表
-const AGENT_MAP: Record<string, string> = {
-    "158001343601": "Simsonn1",
-    "158000445778": "Simsonn2",
-    "158007774607": "Simsonn3",
-};
-
 export interface ServerTicketDetailHandle {
     handleAiTranslate: (autoSave?: boolean) => Promise<boolean>;
     handleTriggerAiReply: (autoSave?: boolean) => Promise<boolean>;
@@ -55,9 +49,10 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
     onProcessStatusChange
 }, ref) => {
     const [submitting, setSubmitting] = useState(false);
-    const { notebookLMConfig: notebookConfig, translationLang } = useSettings();
+    const { notebookLMConfig: notebookConfig } = useSettings();
     const { visible: shadowVisible, toggle: handleToggleShadow } = useNotebookShadow();
-    // const [generatingAiReply, setGeneratingAiReply] = useState(false); // 改为 prop 驱动
+    const { runReply } = useAiReply();
+    const { runTranslation } = useAiTranslation();
     const [aiReplyText, setAiReplyText] = useState('');
     const [aiReplies, setAiReplies] = useState<[string, string] | null>(null); // [工单语言, 中文]
     const [aiReplyLang, setAiReplyLang] = useState<'original' | 'cn'>('original');
@@ -66,14 +61,8 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
     const [showPrompts, setShowPrompts] = useState(false); // 是否显示提示词视图
     const aiResponseEndRef = React.useRef<HTMLDivElement>(null);
 
-    // 使用 ref 保存最新的 ticket，确保异步回调中使用正确的 ID
-    const ticketRef = React.useRef(ticket);
-    React.useEffect(() => {
-        ticketRef.current = ticket;
-    }, [ticket]);
-
     // AI 处理状态持久化 (从全局 Hook 获取)
-    const { getProcessState, setProcessStatus, setTempTranslation: setGlobalTempTranslation, getActiveReplyingId, setActiveReplyingId } = useTicketProcess();
+    const { getProcessState, setTempTranslation: setGlobalTempTranslation } = useTicketProcess();
     const processState = getProcessState(ticket.id);
 
     // 临时保存的AI回复（手动触发时使用，需用户确认后才保存）
@@ -82,15 +71,18 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
     const isTranslating = activeProcessType === 'translating' || processState.status === 'translating';
     const generatingAiReply = activeProcessType === 'replying' || processState.status === 'replying';
 
+    // MQ 流式文本：当 MQ 任务正在处理且本地 aiReplyText 为空时，使用全局流式文本
+    const mqStreamingText = processState.streamingText || '';
+
     const tempTranslation = processState.tempTranslation;
     const isTranslationDiffMode = !!tempTranslation;
 
     // 自动滚动 AI 回复到底部
     React.useEffect(() => {
-        if (aiReplyText) {
+        if (aiReplyText || mqStreamingText) {
             aiResponseEndRef.current?.scrollIntoView({ behavior: 'smooth' });
         }
-    }, [aiReplyText]);
+    }, [aiReplyText, mqStreamingText]);
 
     // 优先使用外部传入的分栏状态
     const [internalIsSplitMode, setInternalIsSplitMode] = useState(false);
@@ -164,113 +156,19 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
 
 
     const handleAiTranslate = useCallback(async (autoSave: boolean = false): Promise<boolean> => {
-        if (autoSave) console.log(`[ServerTicketDetail] handleAiTranslate (autoSave=true) for ticket #${ticket.id}`);
+        if (!autoSave && (isTranslating || generatingAiReply || isProcessing)) return false;
 
-        if (!autoSave && (isTranslating || generatingAiReply || isProcessing)) {
-            console.log(`[ServerTicketDetail] Translation blocked: isTranslating=${isTranslating}, generatingAiReply=${generatingAiReply}, isProcessing=${isProcessing}`);
-            return false;
-        }
-        if (!autoSave && isTranslating) {
-            console.log(`[ServerTicketDetail] Already translating ticket #${ticket.id}, ignoring redundant call.`);
-            return true;
-        }
-
-        console.log(`[ServerTicketDetail] handleAiTranslate START for #${ticket.id}`);
-        setProcessStatus(ticket.id, 'translating');
-        onProcessStatusChange?.(ticket.id, 'translating');
         setAiError(null);
 
-        try {
-            // 构造 Rust 期望的 Ticket 结构
-            const rustTicket = {
-                id: ticket.id,
-                externalId: ticket.externalId,
-                subject: ticket.subject,
-                descriptionText: parsedData?.description || '',
-                content: ticket.content,
-                status: ticket.status,
-                priority: 0,
-                createdAt: ticket.createdAt,
-                conversations: (parsedData?.conversations || []).map(c => ({
-                    id: c.id,
-                    body_text: c.bodyText,
-                    user_id: c.userId,
-                    created_at: c.createdAt,
-                    incoming: (c.incoming !== false && !AGENT_MAP[String(c.userId)]),
-                    private: c.isPrivate || false,
-                }))
-            };
+        const success = await runTranslation(ticket, {
+            autoSave,
+            onStatusChange: (status) => onProcessStatusChange?.(ticket.id, status),
+            onError: (err) => { setAiError(err); if (!autoSave) alert('翻译失败: ' + err); },
+        });
 
-            // 使用配置的语言 (默认 zh-CN)
-            // 使用配置的语言 (默认 zh-CN)，并将简写 'cn' 转换为标准 'zh-CN'
-            let targetLang = translationLang || 'zh-CN';
-            if (targetLang === 'cn') targetLang = 'zh-CN';
-
-            console.log(`[ServerTicketDetail] Invoking translation with targetLang: ${targetLang}`);
-
-            // 调用 Rust 命令进行直接翻译 (不依赖本地存储)
-            const result = (await invoke('translate_ticket_direct_cmd', {
-                ticket: rustTicket,
-                targetLang: targetLang
-            })) as any;
-
-            console.log('[ServerTicketDetail] Translation Result RAW:', result);
-
-            // 构造翻译后的 content (和服务端格式保持一致，即包含 description 和 conversations 的 JSON)
-            const translatedConversations = result.conversations?.map((c: any) => ({
-                id: c.id,
-                bodyText: c.bodyText || c.body_text || '', // 兼容 camelCase 和 snake_case
-                userId: c.userId || c.user_id,
-                createdAt: c.createdAt || c.created_at,
-                incoming: c.incoming,
-                isPrivate: c.private || c.is_private
-            })) || [];
-
-            const finalTranslatedContent = JSON.stringify({
-                description: result.descriptionText || result.description_text || '',
-                conversations: translatedConversations
-            });
-
-            const translationData = {
-                targetLang: targetLang,
-                translatedTitle: result.subject || ticket.subject,
-                translatedContent: finalTranslatedContent,
-            };
-
-            console.log('[TranslationData] Prepared:', {
-                ticketId: ticket.id,
-                targetLang: translationData.targetLang,
-                titleLen: translationData.translatedTitle?.length,
-                contentLen: translationData.translatedContent?.length,
-                contentPreview: finalTranslatedContent.substring(0, 100)
-            });
-
-            if (autoSave) {
-                console.log(`[ServerTicketDetail] autoSave triggered for ticket #${ticket.id}. Calling serverApi.ticket.submitTranslation...`);
-                try {
-                    await serverApi.ticket.submitTranslation(ticket.id, translationData);
-                    console.log(`[ServerTicketDetail] serverApi.ticket.submitTranslation completed successfully for #${ticket.id}`);
-                    onRefresh?.();
-                } catch (saveErr) {
-                    console.error(`[ServerTicketDetail] FATAL: autoSave failed for ticket #${ticket.id}:`, saveErr);
-                    throw saveErr; // Rethrow to ensure handleAiTranslate returns false/catches in outer block
-                }
-            } else {
-                setGlobalTempTranslation(ticket.id, translationData);
-            }
-            return true;
-        } catch (e) {
-            console.error('AI Translation Error:', e);
-            const errMsg = (e as Error).message || String(e);
-            setAiError(errMsg);
-            if (!autoSave) alert('翻译失败: ' + errMsg);
-            return false;
-        } finally {
-            console.log(`[ServerTicketDetail] handleAiTranslate END for #${ticket.id}`);
-            setProcessStatus(ticket.id, null);
-            onProcessStatusChange?.(ticket.id, null);
-        }
-    }, [ticket, parsedData, isTranslating, isProcessing, onRefresh, onProcessStatusChange, notebookConfig, translationLang]);
+        if (success && autoSave) onRefresh?.();
+        return success;
+    }, [ticket, runTranslation, isTranslating, generatingAiReply, isProcessing, onRefresh, onProcessStatusChange]);
 
     const handleConfirmTranslation = async () => {
         if (!tempTranslation || submitting) return;
@@ -308,141 +206,29 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
     };
 
     const handleTriggerAiReply = useCallback(async (autoSave: boolean = false): Promise<boolean> => {
-        // 使用 ref 获取最新的 ticket，防止闭包问题导致使用旧 ID
-        const currentTicket = ticketRef.current;
-        if (autoSave) console.log(`[ServerTicketDetail] handleTriggerAiReply (autoSave=true) for ticket #${currentTicket.id}`);
+        if (!autoSave && (generatingAiReply || isTranslating || isProcessing)) return false;
 
-        if (!autoSave && (generatingAiReply || isTranslating || isProcessing)) {
-            console.log(`[ServerTicketDetail] Reply blocked: generatingAiReply=${generatingAiReply}, isTranslating=${isTranslating}, isProcessing=${isProcessing}`);
-            return false;
-        }
-
-        // 单任务互斥检测（仅限手动触发时检查）
-        const currentActiveId = getActiveReplyingId();
-        if (!autoSave && currentActiveId !== null && currentActiveId !== currentTicket.id) {
-            alert(`工单 #${currentActiveId} 正在执行 AI Reply，请等待完成后再试。\n\n多任务并发 AI Reply 功能正在开发中...`);
-            return false;
-        }
-        if (generatingAiReply) {
-            console.log(`[ServerTicketDetail] Already generating reply for ticket #${currentTicket.id}, ignoring redundant call.`);
-            return true;
-        }
-        if (!notebookConfig?.notebookId) {
-            if (!autoSave) alert('请先在“设置”中配置 Notebook ID');
-            return false;
-        }
-
-        console.log(`[ServerTicketDetail] handleTriggerAiReply START for #${currentTicket.id}`);
-        setActiveReplyingId(currentTicket.id); // 设置互斥状态
-        setProcessStatus(currentTicket.id, 'replying');
-        onProcessStatusChange?.(currentTicket.id, 'replying');
+        // 清理 UI 状态
         setAiReplyText('');
         setAiReplies(null);
-        setTempAiReply(null); // 清理临时保存
+        setTempAiReply(null);
         setAiError(null);
 
-        try {
-            // 深度构造上下文：包含明确的时间戳和角色标识
-            let context = `【TICKET SUBJECT】: ${currentTicket.subject}\n`;
-            context += `【INITIAL DESCRIPTION】: ${parsedData?.description || 'No description content'}\n\n`;
+        const success = await runReply(ticket, {
+            autoSave,
+            onStatusChange: (status) => onProcessStatusChange?.(ticket.id, status),
+            onError: (err) => { setAiError(err); if (!autoSave) alert(err); },
+            onStreamChunk: (text) => setAiReplyText(text),
+            onParsed: (replies) => {
+                setAiReplies(replies);
+                if (!autoSave) setTempAiReply(replies);
+            },
+            onPromptReady: (prompt) => setCurrentPrompt(prompt),
+        });
 
-            if (parsedData?.conversations && parsedData.conversations.length > 0) {
-                context += "【DETAILED INTERACTION LOGS】:\n";
-                context += "--------------------------------------------------\n";
-                for (const conv of parsedData.conversations) {
-                    const userIdStr = String(conv.userId);
-                    const agentName = AGENT_MAP[userIdStr];
-                    const role = agentName ? `AGENT (${agentName})` : (conv.incoming ? 'CUSTOMER' : 'AGENT');
-
-                    const timeStr = conv.createdAt || 'Unknown Time';
-                    context += `[${timeStr}] <${role}>:\n${conv.bodyText}\n`;
-                    context += "--------------------------------------------------\n";
-                }
-            }
-
-            const promptTemplate = notebookConfig.prompt || '请根据以下工单内容回答我的问题:\n\n${工单内容}';
-            const finalPrompt = promptTemplate.replace('${工单内容}', context);
-            setCurrentPrompt(finalPrompt); // 保存当前 Prompt 用于查看
-
-            const shadowService = new NotebookShadowService(notebookConfig.notebookId, notebookConfig.notebookUrl);
-            let saveSuccess = false;
-            let saveError: Error | null = null;
-
-            for await (const chunk of shadowService.query(finalPrompt)) {
-                if (chunk.status === 'error') {
-                    setAiError(chunk.text);
-                    break;
-                }
-                setAiReplyText(chunk.text);
-
-                // 完全对齐老代码的解析逻辑 (TicketDetail.tsx:L114-150)
-                if (chunk.status === 'complete' || (chunk.text.includes('[') && chunk.text.includes(']'))) {
-                    try {
-                        let textToParse = chunk.text.trim();
-                        const startIdx = textToParse.indexOf('[');
-                        const endIdx = textToParse.lastIndexOf(']');
-                        if (startIdx !== -1 && endIdx > startIdx) {
-                            textToParse = textToParse.substring(startIdx, endIdx + 1);
-                        }
-
-                        let parsed = null;
-                        try {
-                            parsed = JSON.parse(textToParse);
-                        } catch {
-                            const match = textToParse.match(/^\[\s*"([\s\S]*?)"\s*,\s*"([\s\S]*?)"\s*\]$/);
-                            if (match) {
-                                const str1 = match[1].replace(/\\n/g, '\n').replace(/\\"/g, '"');
-                                const str2 = match[2].replace(/\\n/g, '\n').replace(/\\"/g, '"');
-                                parsed = [str1, str2];
-                            }
-                        }
-
-                        if (parsed && Array.isArray(parsed) && parsed.length >= 2) {
-                            setAiReplies([parsed[0], parsed[1]]);
-
-                            // 如果是自动保存模式（MQ触发）
-                            if (autoSave) {
-                                try {
-                                    await serverApi.ticket.submitReply(currentTicket.id, {
-                                        zhReply: parsed[1],
-                                        targetReply: parsed[0]
-                                    });
-                                    onRefresh?.();
-                                    saveSuccess = true;
-                                    break; // ✅ 使用 break 而不是 return,确保迭代器被正常消费
-                                } catch (err) {
-                                    console.error('Auto-save reply failed:', err);
-                                    saveError = err as Error;
-                                    break; // ✅ 使用 break 而不是 return
-                                }
-                            } else {
-                                // 手动触发：存到临时状态，等用户确认保存
-                                setTempAiReply([parsed[0], parsed[1]]);
-                            }
-                        }
-                    } catch (e) {
-                        console.log('[AI Reply] Parse attempt failed:', e);
-                    }
-                }
-            }
-
-            // 在循环外返回结果
-            if (autoSave) {
-                if (saveError) return false;
-                return saveSuccess;
-            }
-            return true;
-        } catch (e) {
-            console.error('AI Reply Error:', e);
-            setAiError((e as Error).message);
-            return false;
-        } finally {
-            console.log(`[ServerTicketDetail] handleTriggerAiReply FINALLY for #${currentTicket.id}`);
-            setActiveReplyingId(null); // 清理互斥状态
-            setProcessStatus(currentTicket.id, null);
-            onProcessStatusChange?.(currentTicket.id, null);
-        }
-    }, [ticket, parsedData, generatingAiReply, isProcessing, notebookConfig, onRefresh, onProcessStatusChange, getActiveReplyingId, setActiveReplyingId, setTempAiReply]);
+        if (success && autoSave) onRefresh?.();
+        return success;
+    }, [ticket, runReply, generatingAiReply, isTranslating, isProcessing, onRefresh, onProcessStatusChange]);
 
     // 确认保存AI回复（手动触发后用户点击保存）
     const handleConfirmReply = async () => {
@@ -497,8 +283,7 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
         setMqSubmitting(true);
         try {
             await serverApi.ticket.triggerAiTranslation(ticket.id);
-            // Optimistic update or refresh
-            onProcessStatusChange?.(ticket.id, 'translating');
+            await message('MQ 翻译任务已发送，请在"翻译任务"标签页中查看进度。', { title: '已入队', kind: 'info' });
             onRefresh?.();
         } catch (e) {
             console.error('MQ Translate Error:', e);
@@ -521,8 +306,7 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
         setMqSubmitting(true);
         try {
             await serverApi.ticket.triggerAiReply(ticket.id);
-            // Optimistic update or refresh
-            onProcessStatusChange?.(ticket.id, 'replying');
+            await message('MQ 回复任务已发送，请在"回复任务"标签页中查看进度。', { title: '已入队', kind: 'info' });
             onRefresh?.();
         } catch (e) {
             console.error('MQ Reply Error:', e);
@@ -711,7 +495,7 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
                         </div>
 
                         {/* AI 回复与历史回复容器 */}
-                        {(generatingAiReply || aiReplyText || (ticket.replies && ticket.replies.length > 0)) && (
+                        {(generatingAiReply || aiReplyText || mqStreamingText || (ticket.replies && ticket.replies.length > 0)) && (
                             <div className="space-y-4 pt-10 border-t border-slate-800/80">
                                 <div className="flex items-center justify-between px-1">
                                     <div className="flex items-center gap-2">
@@ -726,7 +510,7 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
                                     )}
                                 </div>
 
-                                {(generatingAiReply || aiReplyText || aiError) && (
+                                {(generatingAiReply || aiReplyText || mqStreamingText || aiError) && (
                                     <div className="relative mt-2 group">
                                         {/* 装饰边框背景 */}
                                         <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500/20 via-indigo-500/20 to-pink-500/20 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000"></div>
@@ -832,9 +616,9 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
                                                                     </div>
                                                                 )}
                                                             </div>
-                                                        ) : aiReplyText ? (
+                                                        ) : (aiReplyText || mqStreamingText) ? (
                                                             <div className="flex flex-col">
-                                                                {aiReplyText}
+                                                                {aiReplyText || mqStreamingText}
                                                                 {generatingAiReply && <span className="inline-block w-1 h-4 ml-1 bg-purple-500 animate-pulse align-middle"></span>}
                                                             </div>
                                                         ) : (

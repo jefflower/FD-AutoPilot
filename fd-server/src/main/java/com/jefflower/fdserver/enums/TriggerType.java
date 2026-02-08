@@ -5,5 +5,6 @@ package com.jefflower.fdserver.enums;
  */
 public enum TriggerType {
     MANUAL, // 手动触发
-    SCHEDULED // 定时触发
+    SCHEDULED, // 定时触发
+    WEBHOOK // Freshdesk Webhook 触发
 }

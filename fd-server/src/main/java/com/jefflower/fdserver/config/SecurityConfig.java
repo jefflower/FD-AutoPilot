@@ -56,8 +56,9 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                        // 白名单：登录、注册、H2控制台
+                        // 白名单：登录、注册、H2控制台、Webhook
                         .requestMatchers("/api/v1/auth/**").permitAll()
+                        .requestMatchers("/api/v1/webhook/**").permitAll()
                         .requestMatchers("/h2-console/**").permitAll()
                         // Admin 专属接口
                         .requestMatchers("/api/v1/admin/**").hasRole("ADMIN")

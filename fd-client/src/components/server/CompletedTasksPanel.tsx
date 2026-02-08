@@ -22,7 +22,7 @@ const CompletedTasksPanel: React.FC<CompletedTasksPanelProps> = ({
     completedTasks,
     selectedId,
     onSelectTask,
-    onClearList
+    onClearList: _onClearList
 }) => {
     return (
         <div className="flex flex-col h-full bg-slate-900/20 border-l border-white/10 w-72 flex-shrink-0">

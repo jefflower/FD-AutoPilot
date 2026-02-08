@@ -19,7 +19,6 @@ const ServerBrowseTab: React.FC = () => {
     const [hasMore, setHasMore] = useState(true);
 
     // 预览语言
-    const [displayLang, setDisplayLang] = useState<'original' | 'cn' | 'en'>('original');
     const [listLang, setListLang] = useState<'original' | 'cn' | 'en'>('original');
 
     // 多选状态
@@ -95,7 +94,6 @@ const ServerBrowseTab: React.FC = () => {
     // 详情选择处理
     const handleSelectTicket = (ticket: ServerTicket) => {
         setSelectedTicket(ticket);
-        setDisplayLang(listLang); // 跟随列表预览选项
     };
 
     return (
@@ -126,8 +124,6 @@ const ServerBrowseTab: React.FC = () => {
                 {selectedTicket ? (
                     <ServerTicketDetail
                         ticket={selectedTicket}
-                        displayLang={displayLang}
-                        setDisplayLang={setDisplayLang}
                         onRefresh={() => loadTickets(true)}
                     />
                 ) : (

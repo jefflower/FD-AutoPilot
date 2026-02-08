@@ -3,6 +3,7 @@ import { invoke } from '@tauri-apps/api/core';
 import { serverApi } from '../services/serverApi';
 import { useSettings } from './useSettings';
 import { useTicketProcess } from './useTicketProcess';
+import { AGENT_MAP } from '../constants/agentMap';
 
 interface AiTranslationOptions {
     onStatusChange?: (status: 'translating' | null) => void;
@@ -14,18 +15,12 @@ export function useAiTranslation() {
     const { translationLang } = useSettings();
     const { setProcessStatus, setTempTranslation } = useTicketProcess();
 
-    const AGENT_MAP: Record<string, string> = {
-        "158001343601": "Simsonn1",
-        "158000445778": "Simsonn2",
-        "158007774607": "Simsonn3",
-    };
-
     const runTranslation = useCallback(async (ticket: any, options: AiTranslationOptions = {}) => {
         const { onStatusChange, onError, autoSave } = options;
-        
+
         console.log(`[useAiTranslation] Starting translation for ticket #${ticket.id}, autoSave=${autoSave}`);
         setProcessStatus(ticket.id, 'translating');
-        if (onStatusChange) onStatusChange('translating');
+        onStatusChange?.('translating');
 
         try {
             // 解析 ticket content
@@ -102,13 +97,12 @@ export function useAiTranslation() {
         } catch (e) {
             console.error('[useAiTranslation] Error:', e);
             const errMsg = (e as Error).message || String(e);
-            if (onError) onError(errMsg);
-            if (!autoSave) alert('Translation failed: ' + errMsg);
+            onError?.(errMsg);
             return false;
         } finally {
             console.log(`[useAiTranslation] Finished for #${ticket.id}`);
             setProcessStatus(ticket.id, null);
-            if (onStatusChange) onStatusChange(null);
+            onStatusChange?.(null);
         }
     }, [translationLang, setProcessStatus, setTempTranslation]);
 

@@ -34,8 +34,16 @@ server:
 freshdesk:
   domain: simsonn.freshdesk.com
   api-key: slHVv3wH9gTk8dEUPPW
+  webhook:
+    secret: ${FRESHDESK_WEBHOOK_SECRET:}
   sync:
-    cron: "0 0/5 * * * ?"
+    cron: "0 0/15 * * * ?"
+    statuses: 2,3
+  api:
+    connect-timeout: 10000
+    read-timeout: 30000
+    max-retries: 3
+    rate-limit-threshold: 10
 
 # JWT 配置
 jwt:

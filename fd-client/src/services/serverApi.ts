@@ -45,6 +45,22 @@ export const getAuthToken = (): string | null => {
   return authToken;
 };
 
+/**
+ * 解析 JWT payload 中的 exp 字段，判断 token 是否已过期
+ */
+export const isTokenExpired = (token: string): boolean => {
+  try {
+    const parts = token.split('.');
+    if (parts.length !== 3) return true;
+    const payload = JSON.parse(atob(parts[1]));
+    if (!payload.exp) return false; // 没有 exp 字段则不判断过期
+    // exp 是秒级时间戳，留 30 秒缓冲
+    return payload.exp * 1000 < Date.now() + 30_000;
+  } catch {
+    return true;
+  }
+};
+
 // 通用请求方法
 async function request<T>(
   endpoint: string,
@@ -67,6 +83,12 @@ async function request<T>(
   });
 
   if (!response.ok) {
+    // Token 过期或无效，触发全局登出
+    if (response.status === 401) {
+      setAuthToken(null);
+      window.dispatchEvent(new CustomEvent('auth-token-expired'));
+    }
+
     const errorData: { error?: string; message?: string } = await response.json().catch(() => ({
       error: 'UNKNOWN_ERROR',
       message: `HTTP ${response.status}: ${response.statusText}`,

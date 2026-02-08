@@ -151,6 +151,14 @@ impl Default for MqConsumerState {
     }
 }
 
+/// Drop Guard: 确保 is_running 在 start_consuming 退出时（无论成功还是错误）都被重置为 false
+struct RunGuard(Arc<AtomicBool>);
+impl Drop for RunGuard {
+    fn drop(&mut self) {
+        self.0.store(false, Ordering::SeqCst);
+    }
+}
+
 /// MQ 消费者
 #[derive(Clone)]
 pub struct MqConsumer {
@@ -201,6 +209,8 @@ impl MqConsumer {
         }
 
         self.state.is_running.store(true, Ordering::SeqCst);
+        // Guard 确保函数退出时（包括连接失败等错误路径）is_running 一定被重置为 false
+        let _run_guard = RunGuard(self.state.is_running.clone());
         GeminiClient::log(&app, &format!("🐰 Connecting to RabbitMQ for {}...", queue_name));
 
         let conn = self.connect().await?;
@@ -259,6 +269,16 @@ impl MqConsumer {
                 Ok(Some(delivery_result)) => {
                     match delivery_result {
                         Ok(delivery) => {
+                            // 收到消息后再次检查 is_running，防止 stop 后仍处理已到达的消息
+                            if !self.state.is_running.load(Ordering::SeqCst) {
+                                GeminiClient::log(&app, "🛑 Consumer stopped, rejecting received message (requeue)");
+                                let _ = channel.basic_nack(
+                                    delivery.delivery_tag,
+                                    BasicNackOptions { requeue: true, ..Default::default() },
+                                ).await;
+                                break;
+                            }
+
                             let app_clone = app.clone();
                             let channel_clone = channel.clone();
                             let self_clone = self.clone();
@@ -296,7 +316,7 @@ impl MqConsumer {
         }
 
         GeminiClient::log(&app, "🛑 MQ Consumer stopped");
-        self.state.is_running.store(false, Ordering::SeqCst);
+        // _run_guard 的 Drop 会自动将 is_running 设为 false
         Ok(())
     }
 
@@ -308,6 +328,16 @@ impl MqConsumer {
         delivery: lapin::message::Delivery,
         auth_token: String,
     ) {
+        // 二次检查：tokio::spawn 的任务可能在 stop 之后才开始执行
+        if !self.state.is_running.load(Ordering::SeqCst) {
+            GeminiClient::log(&app, "🛑 Consumer already stopped, rejecting translate task (requeue)");
+            let _ = channel.basic_nack(
+                delivery.delivery_tag,
+                BasicNackOptions { requeue: true, ..Default::default() },
+            ).await;
+            return;
+        }
+
         let _data = String::from_utf8_lossy(&delivery.data);
         let preview = _data.chars().take(200).collect::<String>();
         GeminiClient::log(&app, &format!("📨 Raw MQ Message (len: {}): {}{}", _data.len(), preview, if _data.len() > 200 { "..." } else { "" }));
@@ -404,6 +434,16 @@ impl MqConsumer {
         delivery: lapin::message::Delivery,
         auth_token: String,
     ) {
+        // 检查 is_running，防止 stop 后仍处理已到达的回复任务
+        if !self.state.is_running.load(Ordering::SeqCst) {
+            GeminiClient::log(&app, "🛑 Consumer already stopped, rejecting reply task (requeue)");
+            let _ = channel.basic_nack(
+                delivery.delivery_tag,
+                BasicNackOptions { requeue: true, ..Default::default() },
+            ).await;
+            return;
+        }
+
         let _data = String::from_utf8_lossy(&delivery.data);
         GeminiClient::log(&app, &format!("📨 Received Reply Task MQ Message (len: {})", _data.len()));
 
@@ -508,6 +548,11 @@ impl MqConsumer {
         msg: &TranslationMessage,
         auth_token: &str,
     ) -> Result<(), String> {
+        // 检查 is_running，防止 stop 后继续处理
+        if !self.state.is_running.load(Ordering::SeqCst) {
+            return Err("Consumer stopped, aborting translation task".to_string());
+        }
+
         GeminiClient::log(app, &format!("🔄 [MQ-TRANSLATE] Triggering frontend translation for ticket #{}", msg.ticket_id));
 
         // 1. 从 API 获取最新 ticket 信息（用于显示）
@@ -526,6 +571,11 @@ impl MqConsumer {
 
         let server_ticket = api_resp.data.ok_or_else(|| format!("Ticket #{} not found on server", msg.ticket_id))?;
 
+        // 再次检查 is_running（API 请求可能耗时）
+        if !self.state.is_running.load(Ordering::SeqCst) {
+            return Err("Consumer stopped during API fetch, aborting".to_string());
+        }
+
         // 更新状态中的显示信息
         {
             let mut translating = self.state.translating_tickets.lock().await;
@@ -538,7 +588,8 @@ impl MqConsumer {
         // 2. 发送事件到前端，触发 handleAiTranslate(autoSave=true)
         app.emit("mq-translate-request", serde_json::json!({
             "ticketId": msg.ticket_id,
-            "externalId": server_ticket.external_id.unwrap_or_default()
+            "externalId": server_ticket.external_id.unwrap_or_default(),
+            "subject": server_ticket.subject.unwrap_or_default()
         })).map_err(|e| format!("Failed to emit mq-translate-request: {}", e))?;
 
         GeminiClient::log(app, &format!("✅ [MQ-TRANSLATE] Frontend translation event sent for ticket #{}", msg.ticket_id));
@@ -593,21 +644,31 @@ impl MqConsumer {
         msg: &ReplyMessage,
         auth_token: &str,
     ) -> Result<(), String> {
+        // 检查 is_running，防止 stop 后继续处理
+        if !self.state.is_running.load(Ordering::SeqCst) {
+            return Err("Consumer stopped, aborting reply task".to_string());
+        }
+
         let client = reqwest::Client::new();
         let get_url = format!("{}/tickets/{}", SERVER_API_URL, msg.ticket_id);
-        
+
         let resp = client.get(&get_url)
             .header("Authorization", format!("Bearer {}", auth_token))
             .send()
             .await
             .map_err(|e| format!("Failed to fetch ticket from server: {}", e))?;
-        
+
         let api_resp: RustApiResponse<Ticket> = resp.json()
             .await
             .map_err(|e| format!("Failed to parse ticket response: {}", e))?;
-        
+
         let server_ticket = api_resp.data.ok_or_else(|| format!("Ticket #{} not found on server", msg.ticket_id))?;
-        
+
+        // 再次检查 is_running（API 请求可能耗时）
+        if !self.state.is_running.load(Ordering::SeqCst) {
+            return Err("Consumer stopped during API fetch, aborting reply task".to_string());
+        }
+
         {
             let mut translating = self.state.translating_tickets.lock().await;
             if let Some(t) = translating.iter_mut().find(|t| t.ticket_id == msg.ticket_id) {
@@ -634,7 +695,7 @@ impl MqConsumer {
             "authToken": auth_token,
         });
         
-        app.emit("mq-reply-request", payload.to_string())
+        app.emit("mq-reply-request", payload)
             .map_err(|e| format!("Failed to emit mq-reply-request: {}", e))?;
 
         GeminiClient::log(app, &format!("📡 Emitted mq-reply-request for ticket #{}", msg.ticket_id));

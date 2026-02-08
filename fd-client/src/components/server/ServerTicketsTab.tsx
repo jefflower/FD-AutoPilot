@@ -5,8 +5,6 @@ import type { ServerTicket, TicketStatus, TicketQueryParams } from '../../types/
 
 interface ServerTicketsTabProps {
     isAdmin: boolean;
-    mqTarget?: { id: number; type: 'translate' | 'reply' } | null;
-    onMqTargetHandled?: () => void;
 }
 
 const STATUS_OPTIONS: { value: TicketStatus | ''; label: string; color: string }[] = [
@@ -21,9 +19,7 @@ const STATUS_OPTIONS: { value: TicketStatus | ''; label: string; color: string }
 ];
 
 const ServerTicketsTab: React.FC<ServerTicketsTabProps> = ({
-    isAdmin: _isAdmin,
-    mqTarget,
-    onMqTargetHandled
+    isAdmin: _isAdmin
 }) => {
     const [tickets, setTickets] = useState<ServerTicket[]>([]);
     const [loading, setLoading] = useState(true);
@@ -126,16 +122,7 @@ const ServerTicketsTab: React.FC<ServerTicketsTabProps> = ({
     }, [statusFilter, searchQuery, loadTickets]);
 
     // MQ 事件处理: 响应来自父组件的调度信号
-    // MQ 事件处理: 响应来自父组件的调度信号
-    useEffect(() => {
-        if (mqTarget) {
-            const { id } = mqTarget;
-            // 仅仅选中，执行交给详情页或其所在的 Workspace
-            setSelectedId(id);
-            // 立即标记已处理，防止在这里轮询干扰 Workspace 的轮询
-            onMqTargetHandled?.();
-        }
-    }, [mqTarget, onMqTargetHandled]);
+
 
     // 详情加载与自动滚动
     useEffect(() => {

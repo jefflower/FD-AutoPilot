@@ -7,7 +7,7 @@ import com.jefflower.fdserver.entity.SyncLog;
 import com.jefflower.fdserver.entity.SysUser;
 import com.jefflower.fdserver.enums.TriggerType;
 import com.jefflower.fdserver.service.AuthService;
-import com.jefflower.fdserver.service.FreshdeskService;
+import com.jefflower.fdserver.service.FreshdeskSyncService;
 import com.jefflower.fdserver.service.SyncConfigService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -25,7 +25,7 @@ import java.util.Map;
 public class AdminController {
 
     private final AuthService authService;
-    private final FreshdeskService freshdeskService;
+    private final FreshdeskSyncService freshdeskSyncService;
     private final SyncConfigService syncConfigService;
 
     // ========== 用户管理 ==========
@@ -51,10 +51,11 @@ public class AdminController {
      */
     @PostMapping("/sync/freshdesk")
     public ResponseEntity<ApiResponse<Map<String, Object>>> syncFreshdesk() {
-        FreshdeskService.SyncResult result = freshdeskService.syncTicketsWithLock(TriggerType.MANUAL);
+        FreshdeskSyncService.SyncResult result = freshdeskSyncService.syncTicketsWithLock(TriggerType.MANUAL);
         Map<String, Object> data = new HashMap<>();
         data.put("syncedCount", result.getSyncedCount());
         data.put("updatedCount", result.getUpdatedCount());
+        data.put("skippedCount", result.getSkippedCount());
         data.put("success", result.isSuccess());
         data.put("message", result.getMessage());
         return ResponseEntity.ok(ApiResponse.ok(data));

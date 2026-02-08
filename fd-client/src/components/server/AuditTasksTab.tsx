@@ -185,7 +185,6 @@ const AuditTasksTab: React.FC<AuditTasksTabProps> = ({
                     <ServerTicketDetail
                         ticket={selectedTicket}
                         isEmbed={true}
-                        displayLang="cn"
                         onRefresh={() => loadTasks(true)}
                     />
                 ) : (

@@ -1,10 +1,13 @@
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/FdServerApplication.java
+/Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/client/FreshdeskApiClient.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/config/RabbitMQConfig.java
+/Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/config/RestTemplateConfig.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/config/SecurityConfig.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/controller/AdminController.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/controller/AuthController.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/controller/RequestController.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/controller/TicketController.java
+/Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/controller/WebhookController.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/dto/ApiResponse.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/dto/ApproveRequest.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/dto/AuditRequest.java
@@ -15,6 +18,7 @@
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/dto/TicketContent.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/dto/TranslationRequest.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/dto/ValidRequest.java
+/Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/entity/FailedReplyPush.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/entity/SyncConfig.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/entity/SyncLog.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/entity/SysUser.java
@@ -30,6 +34,7 @@
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/enums/UserStatus.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/model/ClientRequest.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/repository/ClientRequestRepository.java
+/Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/repository/FailedReplyPushRepository.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/repository/SyncConfigRepository.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/repository/SyncLogRepository.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/repository/SysUserRepository.java
@@ -37,11 +42,13 @@
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/repository/TicketReplyRepository.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/repository/TicketRepository.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/repository/TicketTranslationRepository.java
+/Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/scheduler/ReplyPushRetryScheduler.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/scheduler/SyncScheduler.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/security/JwtAuthenticationFilter.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/security/JwtUtil.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/service/AuthService.java
-/Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/service/FreshdeskService.java
+/Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/service/FreshdeskSyncService.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/service/MqPublisherService.java
+/Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/service/ReplyPushService.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/service/SyncConfigService.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/service/TicketService.java

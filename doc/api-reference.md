@@ -1,6 +1,6 @@
 # API Reference
 
-All API endpoints are prefixed with `/api/v1`.
+All API endpoints are prefixed with `/api/v1`. Authentication is required for all endpoints except Login and Register (via `Authorization: Bearer <token>` header).
 
 ## Authentication
 
@@ -35,6 +35,7 @@ All API endpoints are prefixed with `/api/v1`.
   "password": "password"
 }
 ```
+Note: New users are created with status `PENDING`. They cannot login until approved by an admin.
 
 ## Tickets
 
@@ -42,13 +43,23 @@ All API endpoints are prefixed with `/api/v1`.
 `GET /api/v1/tickets`
 
 **Query Parameters:**
-- `page`: Page number (default 0)
-- `size`: Page size (default 20)
-- `status`: Filter by status (e.g., `PENDING_TRANS`, `COMPLETED`)
-- `subject`: Filter by subject (fuzzy match)
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `page` | int | 0 | Page number |
+| `size` | int | 20 | Page size |
+| `status` | string | - | Filter by status (e.g., `PENDING_TRANS`, `COMPLETED`) |
+| `subject` | string | - | Filter by subject (fuzzy match) |
+| `external_id` | string | - | Filter by Freshdesk external ID (exact match) |
+| `is_valid` | boolean | - | Filter by validity flag |
+| `created_after` | ISO8601 datetime | - | Filter tickets created after this time |
+| `created_before` | ISO8601 datetime | - | Filter tickets created before this time |
+
+**Response:** `ApiResponse<Page<Ticket>>` — Paginated list with ticket data including associated translations and replies.
 
 ### Get Ticket Detail
 `GET /api/v1/tickets/{id}`
+
+**Response:** `ApiResponse<Ticket>` — Single ticket with full details (subject, content, status, translations, replies).
 
 ### Submit Translation
 `POST /api/v1/tickets/{id}/translation`
@@ -61,6 +72,7 @@ All API endpoints are prefixed with `/api/v1`.
   "translatedContent": "Content in Chinese"
 }
 ```
+**Effect:** Updates ticket status to `PENDING_REPLY` and sends MQ message to `q.ticket.reply`.
 
 ### Submit Reply Draft
 `POST /api/v1/tickets/{id}/reply`
@@ -68,11 +80,11 @@ All API endpoints are prefixed with `/api/v1`.
 **Request Body:**
 ```json
 {
-  "replyLang": "en",
   "zhReply": "Chinese explanation for audit",
   "targetReply": "English reply for customer"
 }
 ```
+**Effect:** Updates ticket status to `PENDING_AUDIT` and sends MQ message to `q.ticket.audit`.
 
 ### Submit Audit Result
 `POST /api/v1/tickets/{id}/audit`
@@ -81,18 +93,23 @@ All API endpoints are prefixed with `/api/v1`.
 ```json
 {
   "replyId": 101,
-  "auditResult": "PASS",  // or "REJECT"
+  "auditResult": "PASS",
   "auditRemark": "Approved."
 }
 ```
+**Effect:**
+- `PASS`: Updates ticket status to `COMPLETED`, pushes reply to Freshdesk.
+- `REJECT`: Updates ticket status back to `PENDING_REPLY` for re-generation.
 
 ### Trigger AI Translation (Manual)
 `POST /api/v1/tickets/{id}/ai-translate`
-Triggers the AI translation task for a specific ticket.
+
+Sends the ticket to `q.ticket.translation` for AI translation processing. Does not change ticket status immediately.
 
 ### Trigger AI Reply (Manual)
 `POST /api/v1/tickets/{id}/ai-reply`
-Triggers the AI reply generation task for a specific ticket.
+
+Sends the ticket to `q.ticket.reply` for AI reply generation. Does not change ticket status immediately.
 
 ### Update Ticket Validity
 `POST /api/v1/tickets/{id}/valid`
@@ -110,10 +127,13 @@ Triggers the AI reply generation task for a specific ticket.
 
 #### Manual Sync
 `POST /api/v1/sync/freshdesk`
-Triggers an immediate synchronization with Freshdesk.
+
+Triggers an immediate incremental synchronization with Freshdesk.
 
 #### Get Sync Config
 `GET /api/v1/sync/config`
+
+Returns current sync configuration (cron expression, enabled flag).
 
 #### Update Sync Config
 `PUT /api/v1/sync/config`
@@ -129,15 +149,19 @@ Triggers an immediate synchronization with Freshdesk.
 #### Get Sync Status
 `GET /api/v1/sync/status`
 
+Returns current sync running status.
+
 #### Get Sync Logs
 `GET /api/v1/sync/logs`
 
+Returns history of sync executions (status, trigger type, counts, timestamps).
+
 ### User Management
 - `GET /api/v1/admin/users/pending`: List pending user registrations.
-- `POST /api/v1/admin/users/{id}/approve`: Approve or reject a user.
+- `POST /api/v1/admin/users/{id}/approve`: Approve or reject a user. Body: `{ "action": "APPROVE" }` or `{ "action": "REJECT" }`.
 
 ## System / Debug
 
 ### Client Request Logging
-- `POST /api/requests`: Log a raw client request.
+- `POST /api/requests`: Log a raw client request for debugging.
 - `GET /api/requests`: Retrieve all logged requests.

@@ -3,8 +3,7 @@
  * 在保留原有功能的基础上集成新的服务端交互模块
  */
 
-import { useState, useEffect, useRef, useCallback } from "react";
-import { listen } from '@tauri-apps/api/event';
+import { useState, useEffect, useCallback } from "react";
 import "./index.css";
 
 // 原有组件
@@ -23,9 +22,11 @@ import AuditTasksTab from "./components/server/AuditTasksTab";
 import AdminUsersTab from "./components/admin/AdminUsersTab";
 import ManualSyncTab from "./components/admin/ManualSyncTab";
 import UserProfileTab from "./components/user/UserProfileTab";
-// Headless Runners
-import MqTranslationRunner from "./components/runners/MqTranslationRunner";
-import MqReplyRunner from "./components/runners/MqReplyRunner";
+
+// Context Providers
+import { MQTranslationProvider } from "./context/MQTranslationContext";
+import { MQReplyProvider } from "./context/MQReplyContext";
+import { FloatingTaskWidget } from "./components/common/FloatingTaskWidget";
 
 // Hooks
 import { useSettings } from "./hooks/useSettings";
@@ -37,6 +38,22 @@ import { useAuth } from "./hooks/useAuth";
 function AppNew() {
     const [activeTab, setActiveTab] = useState<TabType>('sync');
     const [authView, setAuthView] = useState<'login' | 'register'>('login');
+    const [navigateToTicketId, setNavigateToTicketId] = useState<number | null>(null);
+
+    // 监听 FloatingTaskWidget 的导航事件
+    useEffect(() => {
+        const handler = (e: Event) => {
+            const { tab, ticketId } = (e as CustomEvent).detail;
+            setActiveTab(tab);
+            setNavigateToTicketId(ticketId);
+        };
+        window.addEventListener('navigate-to-task', handler);
+        return () => window.removeEventListener('navigate-to-task', handler);
+    }, []);
+
+    const handleTaskNavigated = useCallback(() => {
+        setNavigateToTicketId(null);
+    }, []);
 
     // 认证状态
     const auth = useAuth();
@@ -53,9 +70,6 @@ function AppNew() {
         translationLang, setTranslationLang,
         notebookLMConfig, setNotebookLMConfig
     } = useSettings();
-
-    const [mqTarget, setMqTarget] = useState<{ id: number; type: 'translate' | 'reply' } | null>(null);
-    const lastTaskRef = useRef<{ id: number; type: string; time: number } | null>(null);
 
     const {
         tickets,
@@ -102,46 +116,6 @@ function AppNew() {
         setLogs
     );
 
-    // MQ 全局监听
-    useEffect(() => {
-        const handleMqTask = async (event: any, type: 'translate' | 'reply') => {
-            try {
-                // event.payload 已经是对象了，不需要 JSON.parse
-                const data = event.payload;
-                console.log(`[Global MQ ${type}] Received:`, data);
-
-                // 根据任务类型自动切换到对应的 Tab (已禁用，改用后台处理)
-                if (type === 'translate') {
-                    console.log('[Global MQ translate] Background processing (no auto-switch)');
-                    // setActiveTab('translation');
-                } else if (type === 'reply') {
-                    console.log('[Global MQ reply] Background processing (no auto-switch)');
-                    // setActiveTab('reply');
-                }
-
-                // 设置追踪目标 (增加去重逻辑：相同 ID + 类型 10秒内不重复触发)
-                const now = Date.now();
-                if (lastTaskRef.current?.id === data.ticketId && lastTaskRef.current?.type === type && (now - lastTaskRef.current.time) < 10000) {
-                    console.warn(`[Global MQ ${type}] Ignoring duplicate trigger for ticket #${data.ticketId} (within 10s deduplication window)`);
-                    return;
-                }
-
-                lastTaskRef.current = { id: data.ticketId, type, time: now };
-                setMqTarget({ id: data.ticketId, type });
-            } catch (err) {
-                console.error(`[Global MQ ${type}] Parse error:`, err);
-            }
-        };
-
-        const unlistenReply = listen('mq-reply-request', (event) => handleMqTask(event, 'reply'));
-        const unlistenTranslate = listen('mq-translate-request', (event) => handleMqTask(event, 'translate'));
-
-        return () => {
-            unlistenReply.then(f => f());
-            unlistenTranslate.then(f => f());
-        };
-    }, [activeTab]);
-
     // 处理登录
     const handleLogin = async (credentials: { username: string; password: string }) => {
         await auth.login(credentials);
@@ -151,11 +125,6 @@ function AppNew() {
     const handleRegister = async (data: { username: string; password: string }) => {
         await auth.register(data);
     };
-
-    // 稳定的回调函数 for MQ Target Handled
-    const handleMqTargetHandled = useCallback(() => {
-        setMqTarget(null);
-    }, []);
 
     // 渲染当前 Tab 内容
     const renderTabContent = () => {
@@ -293,8 +262,6 @@ function AppNew() {
                 return (
                     <ServerTicketsTab
                         isAdmin={auth.isAdmin}
-                        mqTarget={mqTarget}
-                        onMqTargetHandled={handleMqTargetHandled}
                     />
                 );
 
@@ -302,8 +269,8 @@ function AppNew() {
                 if (!auth.isLoggedIn) return null;
                 return (
                     <TranslationTasksTab
-                        mqTarget={mqTarget}
-                        onMqTargetHandled={handleMqTargetHandled}
+                        initialSelectedId={navigateToTicketId}
+                        onNavigated={handleTaskNavigated}
                     />
                 );
 
@@ -311,18 +278,15 @@ function AppNew() {
                 if (!auth.isLoggedIn) return null;
                 return (
                     <ReplyTasksTab
-                        mqTarget={mqTarget}
-                        onMqTargetHandled={handleMqTargetHandled}
+                        initialSelectedId={navigateToTicketId}
+                        onNavigated={handleTaskNavigated}
                     />
                 );
 
             case 'audit':
                 if (!auth.isLoggedIn) return null;
                 return (
-                    <AuditTasksTab
-                        mqTarget={mqTarget}
-                        onMqTargetHandled={handleMqTargetHandled}
-                    />
+                    <AuditTasksTab />
                 );
 
             // ===== 管理员模块 =====
@@ -386,36 +350,29 @@ function AppNew() {
 
     // 已登录：显示完整界面
     return (
-        <div className="flex h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
-            {/* 侧边栏 */}
-            <SidebarNew
-                activeTab={activeTab}
-                setActiveTab={setActiveTab}
-                isLoggedIn={auth.isLoggedIn}
-                isAdmin={auth.isAdmin}
-                onLogout={auth.logout}
-                username={auth.user?.username}
-            />
-
-            {/* 主内容区 */}
-            <div className="flex-1 flex overflow-hidden">
-                {renderTabContent()}
-            </div>
-
-            {/* 隐藏的后台 Task Runners：独立处理 MQ 任务，无需渲染完整 UI */}
-            {auth.isLoggedIn && (
-                <>
-                    <MqTranslationRunner
-                        mqTarget={mqTarget}
-                        onMqTargetHandled={handleMqTargetHandled}
+        <MQTranslationProvider>
+            <MQReplyProvider>
+                <div className="flex h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
+                    {/* 侧边栏 */}
+                    <SidebarNew
+                        activeTab={activeTab}
+                        setActiveTab={setActiveTab}
+                        isLoggedIn={auth.isLoggedIn}
+                        isAdmin={auth.isAdmin}
+                        onLogout={auth.logout}
+                        username={auth.user?.username}
                     />
-                    <MqReplyRunner
-                        mqTarget={mqTarget}
-                        onMqTargetHandled={handleMqTargetHandled}
-                    />
-                </>
-            )}
-        </div>
+
+                    {/* 主内容区 */}
+                    <div className="flex-1 flex overflow-hidden">
+                        {renderTabContent()}
+                    </div>
+
+                    {/* 悬浮状态窗 */}
+                    <FloatingTaskWidget />
+                </div>
+            </MQReplyProvider>
+        </MQTranslationProvider>
     );
 }
 
