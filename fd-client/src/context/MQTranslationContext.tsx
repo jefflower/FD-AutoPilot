@@ -73,12 +73,10 @@ export const MQTranslationProvider: React.FC<{ children: ReactNode }> = ({ child
     // 监听日志事件
     useEffect(() => {
         let unlisten: (() => void) | null = null;
-        import('@tauri-apps/api/event').then(({ listen }) => {
-            listen<string>('log', (event) => {
-                setLogs(prev => [...prev.slice(-49), event.payload]);
-            }).then((fn) => {
-                unlisten = fn;
-            });
+        listen<string>('log', (event) => {
+            setLogs(prev => [...prev.slice(-49), event.payload]);
+        }).then((fn) => {
+            unlisten = fn;
         });
 
         return () => {

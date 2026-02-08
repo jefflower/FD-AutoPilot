@@ -78,12 +78,10 @@ export const MQReplyProvider: React.FC<{ children: ReactNode }> = ({ children })
     // 监听日志
     useEffect(() => {
         let unlisten: (() => void) | null = null;
-        import('@tauri-apps/api/event').then(({ listen }) => {
-            listen<string>('log', (event) => {
-                setLogs(prev => [...prev.slice(-49), event.payload]);
-            }).then((fn) => {
-                unlisten = fn;
-            });
+        listen<string>('log', (event) => {
+            setLogs(prev => [...prev.slice(-49), event.payload]);
+        }).then((fn) => {
+            unlisten = fn;
         });
         return () => { if (unlisten) unlisten(); };
     }, []);

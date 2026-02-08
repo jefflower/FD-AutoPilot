@@ -22,9 +22,12 @@ import type {
   SyncConfigUpdate,
   SyncStatus,
   PaginatedSyncLogs,
+  SqlQueryResult,
+  TableInfo,
 } from '../types/server';
 
 const API_BASE_URL = 'http://localhost:9988/api/v1';
+const ACTUATOR_BASE_URL = 'http://localhost:9988/actuator';
 
 // Token 存储
 let authToken: string | null = null;
@@ -250,6 +253,61 @@ export const adminApi = {
   async getSyncLogs(page = 0, size = 10): Promise<PaginatedSyncLogs> {
     return request<PaginatedSyncLogs>(`/sync/logs?page=${page}&size=${size}`);
   },
+
+  async executeSql(sql: string, maxRows?: number): Promise<SqlQueryResult> {
+    return request<SqlQueryResult>('/admin/database/query', {
+      method: 'POST',
+      body: JSON.stringify({ sql, maxRows }),
+    });
+  },
+
+  async getDatabaseTables(): Promise<TableInfo[]> {
+    return request<TableInfo[]>('/admin/database/tables');
+  },
+};
+
+// ============ Actuator API（日志查看、运行时监控） ============
+export const actuatorApi = {
+  /** 获取日志文件内容（纯文本） */
+  async fetchLogfile(sizeKB = 200): Promise<string> {
+    const token = getAuthToken();
+    const headers: Record<string, string> = {};
+    if (token) headers['Authorization'] = `Bearer ${token}`;
+    // 用 Range header 只取最后 N KB，避免日志文件过大
+    headers['Range'] = `bytes=-${sizeKB * 1024}`;
+
+    const response = await fetch(`${ACTUATOR_BASE_URL}/logfile`, { headers });
+    if (!response.ok && response.status !== 206) {
+      throw new Error(`获取日志失败: ${response.status}`);
+    }
+    return response.text();
+  },
+
+  /** 获取所有 logger 及级别 */
+  async getLoggers(): Promise<Record<string, { configuredLevel: string | null; effectiveLevel: string }>> {
+    const token = getAuthToken();
+    const headers: Record<string, string> = { 'Content-Type': 'application/json' };
+    if (token) headers['Authorization'] = `Bearer ${token}`;
+
+    const response = await fetch(`${ACTUATOR_BASE_URL}/loggers`, { headers });
+    if (!response.ok) throw new Error(`获取 loggers 失败: ${response.status}`);
+    const data = await response.json();
+    return data.loggers;
+  },
+
+  /** 动态修改 logger 级别 */
+  async setLoggerLevel(loggerName: string, level: string): Promise<void> {
+    const token = getAuthToken();
+    const headers: Record<string, string> = { 'Content-Type': 'application/json' };
+    if (token) headers['Authorization'] = `Bearer ${token}`;
+
+    const response = await fetch(`${ACTUATOR_BASE_URL}/loggers/${encodeURIComponent(loggerName)}`, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({ configuredLevel: level }),
+    });
+    if (!response.ok) throw new Error(`设置日志级别失败: ${response.status}`);
+  },
 };
 
 // 导出所有 API
@@ -257,6 +315,7 @@ export const serverApi = {
   auth: authApi,
   ticket: ticketApi,
   admin: adminApi,
+  actuator: actuatorApi,
 };
 
 export default serverApi;

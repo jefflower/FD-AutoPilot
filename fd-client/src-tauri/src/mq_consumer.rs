@@ -10,7 +10,6 @@ use tauri::{AppHandle, Emitter};
 use crate::ai::GeminiClient;
 use crate::models::Ticket;
 use crate::settings::Settings;
-use crate::storage::Storage;
 
 /// 翻译任务队列名称
 const TRANSLATE_QUEUE: &str = "q.ticket.translation";
@@ -96,6 +95,7 @@ pub struct TranslationResult {
 
 /// 服务端通用的 API 响应包装
 #[derive(Debug, Deserialize)]
+#[allow(dead_code)]
 pub struct RustApiResponse<T> {
     pub success: bool,
     pub data: Option<T>,
@@ -175,6 +175,7 @@ impl MqConsumer {
         }
     }
 
+    #[allow(dead_code)]
     pub fn get_state(&self) -> MqConsumerState {
         self.state.clone()
     }

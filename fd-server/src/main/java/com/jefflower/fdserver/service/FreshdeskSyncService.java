@@ -90,7 +90,8 @@ public class FreshdeskSyncService {
             syncLog = syncConfigService.createSyncLog(triggerType);
             SyncResult result = doSyncTickets();
             syncConfigService.completeSyncLog(syncLog, result.getSyncedCount(), result.getUpdatedCount());
-            syncConfigService.updateLastSyncTime(LocalDateTime.now());
+            syncConfigService.updateLastSyncTime(
+                    LocalDateTime.now().truncatedTo(java.time.temporal.ChronoUnit.SECONDS));
             return result;
         } catch (Exception e) {
             log.error("Sync failed", e);
@@ -139,7 +140,11 @@ public class FreshdeskSyncService {
         log.info("Starting Freshdesk ticket sync...");
 
         LocalDateTime lastSyncTime = syncConfigService.getLastSyncTime();
-        String updatedSince = lastSyncTime != null ? lastSyncTime.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME) : null;
+        // Freshdesk 要求 ISO8601 格式: 2024-12-01T10:30:00Z（不能有微秒）
+        String updatedSince = lastSyncTime != null
+                ? lastSyncTime.truncatedTo(java.time.temporal.ChronoUnit.SECONDS)
+                        .format(DateTimeFormatter.ISO_LOCAL_DATE_TIME) + "Z"
+                : null;
 
         Set<Integer> statuses = parseStatuses();
 

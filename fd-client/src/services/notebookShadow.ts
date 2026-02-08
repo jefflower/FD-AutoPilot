@@ -1,4 +1,5 @@
 import { invoke } from '@tauri-apps/api/core';
+import { listen } from '@tauri-apps/api/event';
 
 export interface ShadowResponse {
   text: string;
@@ -287,7 +288,6 @@ export class NotebookShadowService {
 
       await invoke('execute_notebook_js', { script: mainScript });
 
-      const { listen } = await import('@tauri-apps/api/event');
       yield { text: "", status: 'streaming' };
 
       // 监听日志和中继结果

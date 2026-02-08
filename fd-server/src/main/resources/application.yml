@@ -30,6 +30,18 @@ spring:
 server:
   port: 9988
 
+# Actuator 监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,loggers,logfile,env,metrics
+  endpoint:
+    logfile:
+      external-file: logs/fd-server.log
+    health:
+      show-details: when-authorized
+
 # Freshdesk 配置
 freshdesk:
   domain: simsonn.freshdesk.com

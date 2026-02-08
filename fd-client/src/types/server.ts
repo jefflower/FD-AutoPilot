@@ -179,3 +179,32 @@ export interface ApiError {
   message: string;
 }
 
+// ============ 数据库查询相关 ============
+export interface SqlQueryResult {
+  success: boolean;
+  error?: string;
+  columns?: SqlColumnInfo[];
+  rows?: (string | number | boolean | null)[][];
+  rowCount?: number;
+  updateCount?: number;
+  destructive?: boolean;
+  executionTimeMs: number;
+}
+
+export interface SqlColumnInfo {
+  name: string;
+  type: string;
+}
+
+export interface TableInfo {
+  tableName: string;
+  columns: TableColumnDetail[];
+}
+
+export interface TableColumnDetail {
+  name: string;
+  type: string;
+  nullable: boolean;
+  primaryKey: boolean;
+}
+

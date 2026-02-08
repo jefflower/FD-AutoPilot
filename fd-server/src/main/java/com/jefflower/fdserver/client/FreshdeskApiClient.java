@@ -9,8 +9,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.function.Supplier;
 import java.util.regex.Matcher;
@@ -55,8 +53,8 @@ public class FreshdeskApiClient {
                 freshdeskDomain));
 
         if (updatedSince != null && !updatedSince.isEmpty()) {
-            urlBuilder.append("&updated_since=")
-                    .append(URLEncoder.encode(updatedSince, StandardCharsets.UTF_8));
+            // 不做 URLEncoder.encode —— 时间戳字符在 query 参数中安全，且 RestTemplate 会自行处理编码
+            urlBuilder.append("&updated_since=").append(updatedSince);
             log.info("Fetching tickets updated since: {}", updatedSince);
         } else {
             log.info("Fetching all tickets (no updated_since filter)");

@@ -5,6 +5,7 @@
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/config/SecurityConfig.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/controller/AdminController.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/controller/AuthController.java
+/Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/controller/DatabaseController.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/controller/RequestController.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/controller/TicketController.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/controller/WebhookController.java
@@ -15,6 +16,9 @@
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/dto/LoginResponse.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/dto/RegisterRequest.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/dto/ReplyRequest.java
+/Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/dto/SqlQueryRequest.java
+/Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/dto/SqlQueryResult.java
+/Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/dto/TableInfo.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/dto/TicketContent.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/dto/TranslationRequest.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/dto/ValidRequest.java
@@ -47,6 +51,7 @@
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/security/JwtAuthenticationFilter.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/security/JwtUtil.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/service/AuthService.java
+/Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/service/DatabaseQueryService.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/service/FreshdeskSyncService.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/service/MqPublisherService.java
 /Users/zangjiafu/Work/project/FD-AutoPilot/fd-server/src/main/java/com/jefflower/fdserver/service/ReplyPushService.java
