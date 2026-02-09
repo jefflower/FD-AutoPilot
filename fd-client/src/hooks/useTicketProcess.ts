@@ -69,11 +69,6 @@ export const useTicketProcess = () => {
         notify();
     }, []);
 
-    const clearProcessState = useCallback((ticketId: number) => {
-        delete globalProcessStates[ticketId];
-        notify();
-    }, []);
-
     // AI Reply 互斥状态管理
     const getActiveReplyingId = useCallback((): number | null => globalActiveReplyingId, []);
 
@@ -87,7 +82,6 @@ export const useTicketProcess = () => {
         setProcessStatus,
         setTempTranslation,
         setStreamingText,
-        clearProcessState,
         getActiveReplyingId,
         setActiveReplyingId,
         setTempAiReply

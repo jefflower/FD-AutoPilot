@@ -1,31 +1,20 @@
-/**
- * 侧边栏导航组件 (扩展版)
- * 在保留原有菜单的基础上添加新功能入口
- */
-
 import React from 'react';
 import { NavButton } from './Common';
 
-// 扩展 Tab 类型定义
 export type TabType =
-    // 原有 Tab
-    | 'sync'
-    | 'browse'
     | 'settings'
-    // 认证 Tab
     | 'auth'
-    // 用户中心
     | 'profile'
-    // 新增 Tab - 服务端交互
     | 'server-tickets'
     | 'translation'
     | 'reply'
     | 'audit'
-    // 新增 Tab - 管理员专属
+    | 'approved'
     | 'admin-users'
     | 'manual-sync'
     | 'server-logs'
-    | 'database';
+    | 'database'
+    | 'knowledge';
 
 interface SidebarNewProps {
     activeTab: TabType;
@@ -51,34 +40,7 @@ const SidebarNew: React.FC<SidebarNewProps> = ({
                 F
             </div>
 
-            {/* 导航菜单 */}
             <div className="flex-1 flex flex-col gap-2 mt-8 w-full items-center overflow-hidden">
-                {/* ===== 原有功能 ===== */}
-                <NavButton
-                    label="Sync"
-                    active={activeTab === 'sync'}
-                    onClick={() => setActiveTab('sync')}
-                    icon={
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                        </svg>
-                    }
-                />
-                <NavButton
-                    label="Tickets"
-                    active={activeTab === 'browse'}
-                    onClick={() => setActiveTab('browse')}
-                    icon={
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                        </svg>
-                    }
-                />
-
-                {/* 分隔线 */}
-                <div className="w-8 h-px bg-white/10 my-2"></div>
-
-                {/* ===== 服务端交互模块 ===== */}
                 {isLoggedIn ? (
                     <>
                         <NavButton
@@ -118,6 +80,16 @@ const SidebarNew: React.FC<SidebarNewProps> = ({
                             icon={
                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            }
+                        />
+                        <NavButton
+                            label="推送"
+                            active={activeTab === 'approved'}
+                            onClick={() => setActiveTab('approved')}
+                            icon={
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                                 </svg>
                             }
                         />
@@ -167,6 +139,16 @@ const SidebarNew: React.FC<SidebarNewProps> = ({
                                     icon={
                                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+                                        </svg>
+                                    }
+                                />
+                                <NavButton
+                                    label="知识库"
+                                    active={activeTab === 'knowledge'}
+                                    onClick={() => setActiveTab('knowledge')}
+                                    icon={
+                                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                                         </svg>
                                     }
                                 />

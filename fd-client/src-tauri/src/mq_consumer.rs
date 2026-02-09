@@ -15,6 +15,8 @@ use crate::settings::Settings;
 const TRANSLATE_QUEUE: &str = "q.ticket.translation";
 /// 回复任务队列名称
 const REPLY_QUEUE: &str = "q.ticket.reply";
+/// 审核任务队列名称
+const AUDIT_QUEUE: &str = "q.ticket.audit";
 
 /// 服务端 API 地址
 const SERVER_API_URL: &str = "http://localhost:9988/api/v1";
@@ -130,7 +132,6 @@ pub struct CompletedTicket {
 #[derive(Clone)]
 pub struct MqConsumerState {
     pub is_running: Arc<AtomicBool>,
-    pub current_task: Arc<tokio::sync::Mutex<Option<String>>>,
     pub batch_size: Arc<AtomicU32>,
     pub translating_tickets: Arc<tokio::sync::Mutex<Vec<TranslatingTicket>>>,
     pub completed_tickets: Arc<tokio::sync::Mutex<Vec<CompletedTicket>>>,
@@ -142,7 +143,6 @@ impl Default for MqConsumerState {
     fn default() -> Self {
         Self {
             is_running: Arc::new(AtomicBool::new(false)),
-            current_task: Arc::new(tokio::sync::Mutex::new(None)),
             batch_size: Arc::new(AtomicU32::new(1)),
             translating_tickets: Arc::new(tokio::sync::Mutex::new(Vec::new())),
             completed_tickets: Arc::new(tokio::sync::Mutex::new(Vec::new())),
@@ -159,6 +159,13 @@ impl Drop for RunGuard {
     }
 }
 
+/// 消息解析后的任务信息
+struct TaskInfo {
+    ticket_id: i64,
+    initial_external_id: String,
+    initial_subject: String,
+}
+
 /// MQ 消费者
 #[derive(Clone)]
 pub struct MqConsumer {
@@ -173,11 +180,6 @@ impl MqConsumer {
             config,
             state,
         }
-    }
-
-    #[allow(dead_code)]
-    pub fn get_state(&self) -> MqConsumerState {
-        self.state.clone()
     }
 
     /// 连接到 RabbitMQ
@@ -199,10 +201,11 @@ impl MqConsumer {
         auth_token: String,
         queue_type: &str, // "translate" or "reply"
     ) -> Result<(), String> {
-        let queue_name = if queue_type == "translate" {
-            TRANSLATE_QUEUE
-        } else {
-            REPLY_QUEUE
+        let queue_name = match queue_type {
+            "translate" => TRANSLATE_QUEUE,
+            "reply" => REPLY_QUEUE,
+            "audit" => AUDIT_QUEUE,
+            _ => return Err(format!("Unknown queue type: {}", queue_type)),
         };
 
         if self.state.is_running.load(Ordering::SeqCst) {
@@ -222,7 +225,7 @@ impl MqConsumer {
 
         // 设置 QoS (prefetch count)，控制并发消费数量
         // 对于回复任务，强制设为 1，因为 NotebookLM 影子窗口同一时间只能处理一个
-        let batch_size = if queue_type == "reply" { 1 } else { self.state.batch_size.load(Ordering::SeqCst) as u16 };
+        let batch_size = if queue_type == "reply" || queue_type == "audit" { 1 } else { self.state.batch_size.load(Ordering::SeqCst) as u16 };
         channel
             .basic_qos(batch_size, BasicQosOptions::default())
             .await
@@ -286,17 +289,64 @@ impl MqConsumer {
                             let auth_token_clone = auth_token.clone();
                             let q_type = queue_type.to_string();
 
-                            // 对于 reply 任务，直接同步等待完成（确保串行执行）
-                            // 对于 translate 任务，可以并发处理（通过 tokio::spawn）
+                            // reply: 同步等待完成（串行执行）
+                            // translate: 并发处理（tokio::spawn，受 QoS prefetch 限制）
                             if q_type == "reply" {
-                                GeminiClient::log(&app, "🔄 [CONSUMER LOOP] Got reply message, will AWAIT handle_reply_delivery...");
-                                // 直接 await，阻塞等待当前任务完成后才处理下一条消息
-                                self_clone.handle_reply_delivery(app_clone, channel_clone, delivery, auth_token_clone).await;
-                                GeminiClient::log(&app, "🔄 [CONSUMER LOOP] handle_reply_delivery returned, continuing loop...");
+                                let auth_for_payload = auth_token_clone.clone();
+                                self_clone.handle_message(
+                                    app_clone, channel_clone, delivery, auth_token_clone,
+                                    "REPLY", "mq-reply-request",
+                                    |data| {
+                                        let msg: ReplyMessage = serde_json::from_slice(data).map_err(|e| e.to_string())?;
+                                        Ok(TaskInfo { ticket_id: msg.ticket_id, initial_external_id: "Loading...".into(), initial_subject: "Loading...".into() })
+                                    },
+                                    move |ticket, ticket_id| serde_json::json!({
+                                        "ticketId": ticket_id,
+                                        "externalId": ticket.external_id,
+                                        "subject": ticket.subject,
+                                        "description": ticket.description_text,
+                                        "conversations": ticket.conversations,
+                                        "authToken": auth_for_payload,
+                                        "auditRemark": ticket.last_audit_remark,
+                                    }),
+                                ).await;
+                            } else if q_type == "audit" {
+                                // 审核任务：同步等待（人工审核，与 reply 相同串行模式）
+                                let auth_for_payload = auth_token_clone.clone();
+                                self_clone.handle_message(
+                                    app_clone, channel_clone, delivery, auth_token_clone,
+                                    "AUDIT", "mq-audit-request",
+                                    |data| {
+                                        let msg: ReplyMessage = serde_json::from_slice(data).map_err(|e| e.to_string())?;
+                                        Ok(TaskInfo { ticket_id: msg.ticket_id, initial_external_id: "Loading...".into(), initial_subject: "Loading...".into() })
+                                    },
+                                    move |ticket, ticket_id| serde_json::json!({
+                                        "ticketId": ticket_id,
+                                        "externalId": ticket.external_id,
+                                        "subject": ticket.subject,
+                                        "status": ticket.status.to_string(),
+                                        "authToken": auth_for_payload,
+                                    }),
+                                ).await;
                             } else if q_type == "translate" {
-                                // 派发到异步任务处理，实现并发 (受 QoS prefetch 限制)
                                 tokio::spawn(async move {
-                                    self_clone.handle_delivery(app_clone, channel_clone, delivery, auth_token_clone).await;
+                                    self_clone.handle_message(
+                                        app_clone, channel_clone, delivery, auth_token_clone,
+                                        "TRANSLATE", "mq-translate-request",
+                                        |data| {
+                                            let msg: TranslationMessage = serde_json::from_slice(data).map_err(|e| e.to_string())?;
+                                            Ok(TaskInfo {
+                                                ticket_id: msg.ticket_id,
+                                                initial_external_id: msg.payload.external_id,
+                                                initial_subject: msg.payload.subject.unwrap_or_default(),
+                                            })
+                                        },
+                                        |ticket, ticket_id| serde_json::json!({
+                                            "ticketId": ticket_id,
+                                            "externalId": ticket.external_id.clone().unwrap_or_default(),
+                                            "subject": ticket.subject.clone().unwrap_or_default(),
+                                        }),
+                                    ).await;
                                 });
                             }
                         }
@@ -321,17 +371,25 @@ impl MqConsumer {
         Ok(())
     }
 
-    /// 处理单个消息
-    async fn handle_delivery(
+    /// 统一的消息处理框架
+    ///
+    /// 翻译和回复任务共用：检查运行状态 → 解析消息 → 管理任务生命周期 → ACK/NACK
+    async fn handle_message(
         &self,
         app: AppHandle,
         channel: lapin::Channel,
         delivery: lapin::message::Delivery,
         auth_token: String,
+        task_label: &str,
+        event_name: &str,
+        parse_fn: impl FnOnce(&[u8]) -> Result<TaskInfo, String>,
+        build_payload: impl FnOnce(&Ticket, i64) -> serde_json::Value,
     ) {
-        // 二次检查：tokio::spawn 的任务可能在 stop 之后才开始执行
+        // 根据任务类型确定超时时间：审核任务 30 分钟（人工操作），其他 5 分钟
+        let timeout_secs: u64 = if task_label == "AUDIT" { 1800 } else { 300 };
+        // 1. 检查运行状态
         if !self.state.is_running.load(Ordering::SeqCst) {
-            GeminiClient::log(&app, "🛑 Consumer already stopped, rejecting translate task (requeue)");
+            GeminiClient::log(&app, &format!("🛑 Consumer stopped, rejecting {} task (requeue)", task_label));
             let _ = channel.basic_nack(
                 delivery.delivery_tag,
                 BasicNackOptions { requeue: true, ..Default::default() },
@@ -339,200 +397,100 @@ impl MqConsumer {
             return;
         }
 
-        let _data = String::from_utf8_lossy(&delivery.data);
-        let preview = _data.chars().take(200).collect::<String>();
-        GeminiClient::log(&app, &format!("📨 Raw MQ Message (len: {}): {}{}", _data.len(), preview, if _data.len() > 200 { "..." } else { "" }));
+        // 2. 记录原始消息
+        let raw = String::from_utf8_lossy(&delivery.data);
+        GeminiClient::log(&app, &format!("📨 [{}] MQ Message (len: {})", task_label, raw.len()));
 
-        // 解析消息
-        match serde_json::from_slice::<TranslationMessage>(&delivery.data) {
-            Ok(msg) => {
-                GeminiClient::log(&app, &format!("📝 Processing ticket #{} (external_id: {})", msg.ticket_id, msg.payload.external_id));
-                
-                let started_at = std::time::SystemTime::now()
-                    .duration_since(std::time::UNIX_EPOCH)
-                    .unwrap()
-                    .as_millis() as i64;
-                
-                let translating_ticket = TranslatingTicket {
-                    ticket_id: msg.ticket_id,
-                    external_id: msg.payload.external_id.clone(),
-                    subject: msg.payload.subject.clone().unwrap_or_default(),
-                    started_at,
-                };
-
-                // 添加到翻译中列表
-                {
-                    let mut translating = self.state.translating_tickets.lock().await;
-                    translating.push(translating_ticket.clone());
-                }
-                
-                // 执行翻译并提交
-                let result = self.translate_and_submit(&app, &msg, &auth_token).await;
-                
-                let completed_at = std::time::SystemTime::now()
-                    .duration_since(std::time::UNIX_EPOCH)
-                    .unwrap()
-                    .as_millis() as i64;
-                
-                // 从翻译中列表移除
-                {
-                    let mut translating = self.state.translating_tickets.lock().await;
-                    translating.retain(|t| t.ticket_id != msg.ticket_id);
-                }
-                
-                // 添加到已完成列表
-                {
-                    let completed_ticket = CompletedTicket {
-                        ticket_id: msg.ticket_id,
-                        external_id: msg.payload.external_id.clone(),
-                        subject: msg.payload.subject.clone().unwrap_or_default(),
-                        started_at,
-                        completed_at,
-                        duration_ms: completed_at - started_at,
-                        success: result.is_ok(),
-                        error_message: result.as_ref().err().cloned(),
-                    };
-                    
-                    let mut completed = self.state.completed_tickets.lock().await;
-                    completed.insert(0, completed_ticket);
-                    if completed.len() > 100 {
-                        completed.truncate(100);
-                    }
-                }
-                
-                match result {
-                    Ok(_) => {
-                        GeminiClient::log(&app, &format!("✅ Ticket #{} processing completed and saved", msg.ticket_id));
-                        // 任务成功完成且保存成功后 ACK 消息
-                        let _ = channel
-                            .basic_ack(delivery.delivery_tag, BasicAckOptions::default())
-                            .await;
-                    }
-                    Err(ref e) => {
-                        GeminiClient::log(&app, &format!("❌ Translation failed for ticket #{}: {}", msg.ticket_id, e));
-                        // 失败则 NACK 且不重新入队，防止无限循环抢占资源
-                        let _ = channel
-                            .basic_nack(delivery.delivery_tag, BasicNackOptions { requeue: false, ..Default::default() })
-                            .await;
-                    }
-                }
-            }
+        // 3. 解析消息
+        let task_info = match parse_fn(&delivery.data) {
+            Ok(info) => info,
             Err(e) => {
-                GeminiClient::log(&app, &format!("❌ Failed to parse message: {}", e));
-                // 格式错误无法解析，ACK 避免死循环
-                let _ = channel
-                    .basic_ack(delivery.delivery_tag, BasicAckOptions::default())
-                    .await;
+                GeminiClient::log(&app, &format!("❌ Failed to parse {} message: {}", task_label, e));
+                let _ = channel.basic_ack(delivery.delivery_tag, BasicAckOptions::default()).await;
+                return;
             }
-        }
-    }
+        };
 
-    /// 处理回复消息
-    async fn handle_reply_delivery(
-        &self,
-        app: AppHandle,
-        channel: lapin::Channel,
-        delivery: lapin::message::Delivery,
-        auth_token: String,
-    ) {
-        // 检查 is_running，防止 stop 后仍处理已到达的回复任务
-        if !self.state.is_running.load(Ordering::SeqCst) {
-            GeminiClient::log(&app, "🛑 Consumer already stopped, rejecting reply task (requeue)");
-            let _ = channel.basic_nack(
-                delivery.delivery_tag,
-                BasicNackOptions { requeue: true, ..Default::default() },
-            ).await;
-            return;
+        let ticket_id = task_info.ticket_id;
+        GeminiClient::log(&app, &format!("📝 [{}] Processing ticket #{}", task_label, ticket_id));
+
+        // 4. 记录开始时间 + 加入处理中列表
+        let started_at = std::time::SystemTime::now()
+            .duration_since(std::time::UNIX_EPOCH)
+            .unwrap()
+            .as_millis() as i64;
+
+        {
+            let mut translating = self.state.translating_tickets.lock().await;
+            translating.push(TranslatingTicket {
+                ticket_id,
+                external_id: task_info.initial_external_id.clone(),
+                subject: task_info.initial_subject.clone(),
+                started_at,
+            });
         }
 
-        let _data = String::from_utf8_lossy(&delivery.data);
-        GeminiClient::log(&app, &format!("📨 Received Reply Task MQ Message (len: {})", _data.len()));
+        // 5. 通过前端执行任务
+        let result = self.submit_via_frontend(
+            &app, ticket_id, &auth_token, event_name, task_label, timeout_secs,
+            |ticket| build_payload(ticket, ticket_id),
+        ).await;
 
-        match serde_json::from_slice::<ReplyMessage>(&delivery.data) {
-            Ok(msg) => {
-                GeminiClient::log(&app, &format!("📝 [TASK START] Processing reply for ticket #{} - Thread will BLOCK here until frontend completes", msg.ticket_id));
+        // 6. 记录完成时间
+        let completed_at = std::time::SystemTime::now()
+            .duration_since(std::time::UNIX_EPOCH)
+            .unwrap()
+            .as_millis() as i64;
 
-                let started_at = std::time::SystemTime::now()
-                    .duration_since(std::time::UNIX_EPOCH)
-                    .unwrap()
-                    .as_millis() as i64;
-
-                // 复用 TranslatingTicket 结构体
-                let translating_ticket = TranslatingTicket {
-                    ticket_id: msg.ticket_id,
-                    external_id: "Loading...".to_string(),
-                    subject: "Loading...".to_string(),
-                    started_at,
-                };
-
-                {
-                    let mut translating = self.state.translating_tickets.lock().await;
-                    translating.push(translating_ticket);
-                    GeminiClient::log(&app, &format!("🔵 [TASK #{} Added to translatingTickets, count: {}]", msg.ticket_id, translating.len()));
-                }
-
-                // (注意：generate_reply_and_submit 内部会负责注册 ACK 等待信号)
-
-                // 通知前端开始处理，并在这里等待结果（generate_reply_and_submit 内部已包含 rx 等待）
-                GeminiClient::log(&app, &format!("⏳ [TASK #{}] Calling generate_reply_and_submit (will await rx)...", msg.ticket_id));
-                let result = self.generate_reply_and_submit(&app, &msg, &auth_token).await;
-                GeminiClient::log(&app, &format!("🎯 [TASK #{}] generate_reply_and_submit returned: {:?}", msg.ticket_id, result));
-                let final_success = result.is_ok();
-
-                let completed_at = std::time::SystemTime::now()
-                    .duration_since(std::time::UNIX_EPOCH)
-                    .unwrap()
-                    .as_millis() as i64;
-                
-                let mut ticket_info = (msg.ticket_id.to_string(), "Reply Task".to_string());
-                
-                {
-                    let mut translating = self.state.translating_tickets.lock().await;
-                    if let Some(pos) = translating.iter().position(|t| t.ticket_id == msg.ticket_id) {
-                        let t = translating.remove(pos);
-                        ticket_info = (t.external_id, t.subject);
-                    }
-                }
-                
-                {
-                    let completed_ticket = CompletedTicket {
-                        ticket_id: msg.ticket_id,
-                        external_id: ticket_info.0,
-                        subject: ticket_info.1,
-                        started_at,
-                        completed_at,
-                        duration_ms: completed_at - started_at,
-                        success: result.is_ok(),
-                        error_message: result.as_ref().err().cloned(),
-                    };
-                    
-                    let mut completed = self.state.completed_tickets.lock().await;
-                    completed.insert(0, completed_ticket);
-                    if completed.len() > 100 {
-                        completed.truncate(100);
-                    }
-                }
-                
-                if final_success {
-                    GeminiClient::log(&app, &format!("✅ [TASK #{}] Reply task completed and ACKed - Now ready for next message", msg.ticket_id));
-                    let _ = channel.basic_ack(delivery.delivery_tag, BasicAckOptions::default()).await;
-                } else {
-                    GeminiClient::log(&app, &format!("❌ [TASK #{}] Reply task failed or timed out, NACKing (no requeue)", msg.ticket_id));
-                    let _ = channel.basic_nack(delivery.delivery_tag, BasicNackOptions { requeue: false, ..Default::default() }).await;
-                }
-
-                GeminiClient::log(&app, &format!("🏁 [TASK #{}] handle_reply_delivery FINISHED. Returning to consumer loop.", msg.ticket_id));
-
-                // 确保从 map 中移除（以防超时或其他异常残留）
-                {
-                    let mut p_acks = self.state.pending_acks.lock().await;
-                    p_acks.remove(&msg.ticket_id);
-                }
+        // 7. 从处理中列表移除，获取最终显示信息（submit_via_frontend 可能已更新）
+        let (final_external_id, final_subject) = {
+            let mut translating = self.state.translating_tickets.lock().await;
+            if let Some(pos) = translating.iter().position(|t| t.ticket_id == ticket_id) {
+                let t = translating.remove(pos);
+                (t.external_id, t.subject)
+            } else {
+                (task_info.initial_external_id, task_info.initial_subject)
             }
-            Err(e) => {
-                GeminiClient::log(&app, &format!("❌ Failed to parse reply message: {}", e));
+        };
+
+        // 8. 加入已完成列表
+        {
+            let completed_ticket = CompletedTicket {
+                ticket_id,
+                external_id: final_external_id,
+                subject: final_subject,
+                started_at,
+                completed_at,
+                duration_ms: completed_at - started_at,
+                success: result.is_ok(),
+                error_message: result.as_ref().err().cloned(),
+            };
+            let mut completed = self.state.completed_tickets.lock().await;
+            completed.insert(0, completed_ticket);
+            if completed.len() > 100 {
+                completed.truncate(100);
+            }
+        }
+
+        // 9. ACK/NACK
+        match &result {
+            Ok(_) => {
+                GeminiClient::log(&app, &format!("✅ [{}] Ticket #{} completed", task_label, ticket_id));
                 let _ = channel.basic_ack(delivery.delivery_tag, BasicAckOptions::default()).await;
             }
+            Err(e) => {
+                GeminiClient::log(&app, &format!("❌ [{}] Ticket #{} failed: {}", task_label, ticket_id, e));
+                let _ = channel.basic_nack(
+                    delivery.delivery_tag,
+                    BasicNackOptions { requeue: false, ..Default::default() },
+                ).await;
+            }
+        }
+
+        // 10. 清理 pending_acks（安全兜底，防止超时/异常残留）
+        {
+            let mut p_acks = self.state.pending_acks.lock().await;
+            p_acks.remove(&ticket_id);
         }
     }
 
@@ -542,25 +500,28 @@ impl MqConsumer {
         self.state.is_running.store(false, Ordering::SeqCst);
     }
 
-    /// 触发前端翻译 (复用前端的 handleAiTranslate 逻辑)
-    async fn translate_and_submit(
+    /// 统一的前端任务提交函数（翻译和回复共用）
+    ///
+    /// 流程：检查运行状态 → 获取工单详情 → 更新显示信息 → 注册 ACK 信号 → 发送事件到前端 → 等待完成
+    async fn submit_via_frontend(
         &self,
         app: &AppHandle,
-        msg: &TranslationMessage,
+        ticket_id: i64,
         auth_token: &str,
+        event_name: &str,
+        task_label: &str,
+        timeout_secs: u64,
+        build_payload: impl FnOnce(&Ticket) -> serde_json::Value,
     ) -> Result<(), String> {
-        // 检查 is_running，防止 stop 后继续处理
         if !self.state.is_running.load(Ordering::SeqCst) {
-            return Err("Consumer stopped, aborting translation task".to_string());
+            return Err(format!("Consumer stopped, aborting {} task", task_label));
         }
 
-        GeminiClient::log(app, &format!("🔄 [MQ-TRANSLATE] Triggering frontend translation for ticket #{}", msg.ticket_id));
+        GeminiClient::log(app, &format!("🔄 [MQ-{}] Triggering frontend for ticket #{}", task_label, ticket_id));
 
-        // 1. 从 API 获取最新 ticket 信息（用于显示）
+        // 1. 从服务端 API 获取工单详情
         let client = reqwest::Client::new();
-        let get_url = format!("{}/tickets/{}", SERVER_API_URL, msg.ticket_id);
-
-        let resp = client.get(&get_url)
+        let resp = client.get(format!("{}/tickets/{}", SERVER_API_URL, ticket_id))
             .header("Authorization", format!("Bearer {}", auth_token))
             .send()
             .await
@@ -570,163 +531,63 @@ impl MqConsumer {
             .await
             .map_err(|e| format!("Failed to parse ticket response: {}", e))?;
 
-        let server_ticket = api_resp.data.ok_or_else(|| format!("Ticket #{} not found on server", msg.ticket_id))?;
+        let server_ticket = api_resp.data
+            .ok_or_else(|| format!("Ticket #{} not found on server", ticket_id))?;
 
-        // 再次检查 is_running（API 请求可能耗时）
+        // 再次检查（API 请求可能耗时）
         if !self.state.is_running.load(Ordering::SeqCst) {
-            return Err("Consumer stopped during API fetch, aborting".to_string());
+            return Err(format!("Consumer stopped during API fetch, aborting {} task", task_label));
         }
 
-        // 更新状态中的显示信息
+        // 2. 更新状态中的显示信息
         {
             let mut translating = self.state.translating_tickets.lock().await;
-            if let Some(t) = translating.iter_mut().find(|t| t.ticket_id == msg.ticket_id) {
+            if let Some(t) = translating.iter_mut().find(|t| t.ticket_id == ticket_id) {
                 t.external_id = server_ticket.external_id.clone().unwrap_or_default();
                 t.subject = server_ticket.subject.clone().unwrap_or_default();
             }
         }
 
-        // 2. 发送事件到前端，触发 handleAiTranslate(autoSave=true)
-        app.emit("mq-translate-request", serde_json::json!({
-            "ticketId": msg.ticket_id,
-            "externalId": server_ticket.external_id.unwrap_or_default(),
-            "subject": server_ticket.subject.unwrap_or_default()
-        })).map_err(|e| format!("Failed to emit mq-translate-request: {}", e))?;
-
-        GeminiClient::log(app, &format!("✅ [MQ-TRANSLATE] Frontend translation event sent for ticket #{}", msg.ticket_id));
-        
-        // 3. 等待前端完成翻译 (通过 complete_translate_task)
-        let (tx, rx) = tokio::sync::oneshot::channel();
-        
-        {
-            let mut p_acks = self.state.pending_acks.lock().await;
-            p_acks.insert(msg.ticket_id, tx);
-            GeminiClient::log(app, &format!("⏳ [MQ-TRANSLATE] Waiting for frontend completion for ticket #{} (pending: {})", msg.ticket_id, p_acks.len()));
-        }
-
-        // 设置等待超时 (例如 5 分钟)
-        match tokio::time::timeout(std::time::Duration::from_secs(300), rx).await {
-            Ok(result) => {
-                match result {
-                    Ok(success) => {
-                        if success {
-                            GeminiClient::log(app, &format!("✅ [MQ-TRANSLATE] Frontend reported success for ticket #{}", msg.ticket_id));
-                            Ok(())
-                        } else {
-                            let err_msg = format!("Frontend reported failure for ticket #{}", msg.ticket_id);
-                            GeminiClient::log(app, &format!("❌ [MQ-TRANSLATE] {}", err_msg));
-                            Err(err_msg)
-                        }
-                    },
-                    Err(_) => {
-                        let err_msg = format!("Frontend completion channel closed for ticket #{}", msg.ticket_id);
-                        GeminiClient::log(app, &format!("❌ [MQ-TRANSLATE] {}", err_msg));
-                        Err(err_msg)
-                    }
-                }
-            },
-            Err(_) => {
-                // 超时处理
-                {
-                    let mut p_acks = self.state.pending_acks.lock().await;
-                    p_acks.remove(&msg.ticket_id);
-                }
-                let err_msg = format!("Timed out waiting for frontend completion for ticket #{}", msg.ticket_id);
-                GeminiClient::log(app, &format!("❌ [MQ-TRANSLATE] {}", err_msg));
-                Err(err_msg)
-            }
-        }
-    }
-
-    /// 生成回复并提交 (已弃用直接调用，改为通知前端)
-    async fn generate_reply_and_submit(
-        &self,
-        app: &AppHandle,
-        msg: &ReplyMessage,
-        auth_token: &str,
-    ) -> Result<(), String> {
-        // 检查 is_running，防止 stop 后继续处理
-        if !self.state.is_running.load(Ordering::SeqCst) {
-            return Err("Consumer stopped, aborting reply task".to_string());
-        }
-
-        let client = reqwest::Client::new();
-        let get_url = format!("{}/tickets/{}", SERVER_API_URL, msg.ticket_id);
-
-        let resp = client.get(&get_url)
-            .header("Authorization", format!("Bearer {}", auth_token))
-            .send()
-            .await
-            .map_err(|e| format!("Failed to fetch ticket from server: {}", e))?;
-
-        let api_resp: RustApiResponse<Ticket> = resp.json()
-            .await
-            .map_err(|e| format!("Failed to parse ticket response: {}", e))?;
-
-        let server_ticket = api_resp.data.ok_or_else(|| format!("Ticket #{} not found on server", msg.ticket_id))?;
-
-        // 再次检查 is_running（API 请求可能耗时）
-        if !self.state.is_running.load(Ordering::SeqCst) {
-            return Err("Consumer stopped during API fetch, aborting reply task".to_string());
-        }
-
-        {
-            let mut translating = self.state.translating_tickets.lock().await;
-            if let Some(t) = translating.iter_mut().find(|t| t.ticket_id == msg.ticket_id) {
-                t.external_id = server_ticket.external_id.clone().unwrap_or_default();
-                t.subject = server_ticket.subject.clone().unwrap_or_default();
-            }
-        }
-
-        // 注册 ACK 等待信号
+        // 3. 注册 ACK 等待信号
         let (tx, rx) = tokio::sync::oneshot::channel();
         {
             let mut p_acks = self.state.pending_acks.lock().await;
-            p_acks.insert(msg.ticket_id, tx);
+            p_acks.insert(ticket_id, tx);
         }
 
-        // --- 核心改动：发出事件通知前端处理 ---
-        use tauri::Emitter;
-        let payload = serde_json::json!({
-            "ticketId": msg.ticket_id,
-            "externalId": server_ticket.external_id,
-            "subject": server_ticket.subject,
-            "description": server_ticket.description_text,
-            "conversations": server_ticket.conversations,
-            "authToken": auth_token,
-        });
-        
-        app.emit("mq-reply-request", payload)
-            .map_err(|e| format!("Failed to emit mq-reply-request: {}", e))?;
+        // 4. 构建 payload 并发送事件到前端
+        let payload = build_payload(&server_ticket);
+        app.emit(event_name, payload)
+            .map_err(|e| format!("Failed to emit {}: {}", event_name, e))?;
 
-        GeminiClient::log(app, &format!("📡 Emitted mq-reply-request for ticket #{}", msg.ticket_id));
+        GeminiClient::log(app, &format!("📡 [MQ-{}] Event sent for ticket #{}, awaiting completion (timeout: {}s)...", task_label, ticket_id, timeout_secs));
 
-        // 等待前端完成信号（或者超时/失败）
-        GeminiClient::log(app, &format!("⏳ [CRITICAL] About to AWAIT rx for ticket #{} (timeout: 300s)...", msg.ticket_id));
-        let await_start = std::time::Instant::now();
-
-        let result = match tokio::time::timeout(std::time::Duration::from_secs(300), rx).await {
+        // 5. 等待前端完成信号
+        match tokio::time::timeout(std::time::Duration::from_secs(timeout_secs), rx).await {
             Ok(Ok(success)) => {
-                let elapsed = await_start.elapsed().as_secs_f64();
-                GeminiClient::log(app, &format!("✅ [CRITICAL] rx RECEIVED for ticket #{} after {:.2}s, success: {}", msg.ticket_id, elapsed, success));
                 if success {
+                    GeminiClient::log(app, &format!("✅ [MQ-{}] Frontend reported success for ticket #{}", task_label, ticket_id));
                     Ok(())
                 } else {
-                    Err("Frontend reported failure in reply task".to_string())
+                    let err_msg = format!("Frontend reported failure for ticket #{}", ticket_id);
+                    GeminiClient::log(app, &format!("❌ [MQ-{}] {}", task_label, err_msg));
+                    Err(err_msg)
                 }
             }
             Ok(Err(_)) => {
-                let elapsed = await_start.elapsed().as_secs_f64();
-                GeminiClient::log(app, &format!("❌ [CRITICAL] rx ERROR for ticket #{} after {:.2}s (channel closed)", msg.ticket_id, elapsed));
-                Err("Channel closed before receiving signal".to_string())
+                let err_msg = format!("Frontend completion channel closed for ticket #{}", ticket_id);
+                GeminiClient::log(app, &format!("❌ [MQ-{}] {}", task_label, err_msg));
+                Err(err_msg)
             }
             Err(_) => {
-                GeminiClient::log(app, &format!("⏳ [CRITICAL] rx TIMEOUT for ticket #{} after 300s", msg.ticket_id));
-                Err("Reply task timed out".to_string())
+                {
+                    let mut p_acks = self.state.pending_acks.lock().await;
+                    p_acks.remove(&ticket_id);
+                }
+                let err_msg = format!("Timed out waiting for frontend completion for ticket #{}", ticket_id);
+                GeminiClient::log(app, &format!("❌ [MQ-{}] {}", task_label, err_msg));
+                Err(err_msg)
             }
-        };
-
-        GeminiClient::log(app, &format!("🎬 [CRITICAL] generate_reply_and_submit RETURNING for ticket #{}", msg.ticket_id));
-        result
+        }
     }
 }

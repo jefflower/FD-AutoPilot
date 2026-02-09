@@ -26,7 +26,7 @@ public class Ticket {
     private String sourceLang;
 
     @Enumerated(EnumType.STRING)
-    @Column(length = 32)
+    @Column(columnDefinition = "VARCHAR(32)")
     private TicketStatus status = TicketStatus.PENDING_TRANS;
 
     @Column(name = "created_at")
@@ -37,6 +37,10 @@ public class Ticket {
 
     @Column(name = "is_valid")
     private Boolean isValid = false;
+
+    @Lob
+    @Column(name = "last_audit_remark")
+    private String lastAuditRemark;
 
     // ========== Freshdesk 原生元数据 ==========
 

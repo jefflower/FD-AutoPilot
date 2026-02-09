@@ -81,6 +81,12 @@ public class TicketController {
         return ResponseEntity.ok(ApiResponse.ok("审核提交成功", audit));
     }
 
+    @PostMapping("/{id}/skip-reply")
+    public ResponseEntity<ApiResponse<Void>> skipReply(@PathVariable Long id) {
+        ticketService.skipReply(id);
+        return ResponseEntity.ok(ApiResponse.ok("回复已跳过，工单标记完成", null));
+    }
+
     @PostMapping("/{id}/ai-translate")
     public ResponseEntity<ApiResponse<Void>> triggerAiTranslation(@PathVariable Long id) {
         ticketService.triggerAiTranslation(id);
@@ -91,6 +97,19 @@ public class TicketController {
     public ResponseEntity<ApiResponse<Void>> triggerAiReply(@PathVariable Long id) {
         ticketService.triggerAiReply(id);
         return ResponseEntity.ok(ApiResponse.ok("AI回复任务已触发", null));
+    }
+
+    @PostMapping("/{id}/push-reply")
+    public ResponseEntity<ApiResponse<Void>> pushApprovedReply(@PathVariable Long id) {
+        ticketService.pushApprovedReply(id);
+        return ResponseEntity.ok(ApiResponse.ok("回复已推送到 Freshdesk", null));
+    }
+
+    @PostMapping("/batch-push")
+    public ResponseEntity<ApiResponse<Integer>> batchPushReplies(
+            @RequestBody java.util.List<Long> ticketIds) {
+        int count = ticketService.batchPushApprovedReplies(ticketIds);
+        return ResponseEntity.ok(ApiResponse.ok("批量推送完成", count));
     }
 
     @PostMapping("/{id}/valid")

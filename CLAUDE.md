@@ -57,8 +57,13 @@ Freshdesk API ──(cron 5min)──→ fd-server ──(RabbitMQ)──→ fd-
 ### 工单状态流转
 状态流转是整个系统的核心，每次转换都通过 RabbitMQ 消息触发下一阶段：
 ```
-PENDING_TRANS → TRANSLATING → PENDING_REPLY → REPLYING → PENDING_AUDIT → AUDITING → COMPLETED
+PENDING_TRANS → TRANSLATING → PENDING_REPLY → REPLYING → PENDING_AUDIT → AUDITING → APPROVED → COMPLETED
 ```
+
+审核分支逻辑：
+- **PASS + 自动推送关闭** → `APPROVED`（进入待推送队列，手动推送到 Freshdesk）
+- **PASS + 自动推送开启** → `COMPLETED`（直接推送到 Freshdesk）
+- **REJECT** → `PENDING_REPLY`（保存 `lastAuditRemark`，MQ 重新回复，AI 注入审核反馈）
 
 对应的 MQ 队列和路由键：
 - `q.ticket.translation` → `ticket.task.translate`
@@ -78,8 +83,8 @@ Exchange: `fd.ticket.task.exchange` (TopicExchange)
      1. `mainScript`（IIFE）：清理历史 → 输入 prompt → 点击发送 → 建立 in-page observer（setInterval）
      2. Observer 仅写 `window.__SHADOW_LATEST_RESULT` 全局变量（不在 setInterval 中调用 invoke，避免 IPC 不稳定）
      3. Generator 定期注入 relay 脚本，读取全局变量并通过 `forward_shadow_event` 中继到主窗口
-   - DOM 选择器：使用 `.to-user-container .message-text-content` 只提取 bot 回复（避免 prompt 中的 `[timestamp]` 干扰 JSON 解析）
-   - 完成检测：`.xap-copy-to-clipboard` 复制按钮出现 + `isJsonBalanced` + `botIdle` + `botResponded` 多重校验
+   - DOM 选择器：集中在 `SELECTORS` 常量对象中管理（NotebookLM 更新 UI 后只需修改一处），通过 `JSON.stringify` 注入 mainScript
+   - 完成检测：复制按钮出现 + `isJsonBalanced` + `botIdle` + `botResponded` 多重校验
    - 全局互斥锁确保同时只有一个查询在执行
 
 ### Rust ↔ React 通信机制
@@ -98,12 +103,18 @@ Rust 后端通过 Tauri Event 与 React 前端通信：
 
 ### 前端状态管理
 使用 React Hooks + Context 模式（无 Redux）：
-- `MQTranslationContext` — 管理翻译任务队列、处理中任务、完成历史、MQ 消费者启停
-- `MQReplyContext` — 管理回复任务队列，结构与翻译 Context 对称，但默认 batchSize=1（回复需要 Shadow Window 串行执行）。传递 `onStreamChunk` 回调将流式文本写入全局状态，供 `ServerTicketDetail` 显示
-- `useTicketProcess` — 全局工单处理状态（`status`, `tempTranslation`, `tempAiReply`, `streamingText`），使用模块级变量 + listener 模式跨组件共享，`streamingText` 用于 MQ 流式文本桥接
-- **统一 AI Hooks**（按钮点击和 MQ 自动触发走同一代码路径）：
-  - `useAiReply` — AI 回复生成（Shadow Window → NotebookLM），支持 `onStreamChunk`/`onParsed`/`onPromptReady` 回调
-  - `useAiTranslation` — AI 翻译（Rust Gemini CLI），支持 `onStatusChange`/`onError` 回调
+- `createMQTaskContext` — **通用 MQ 任务 Context 工厂函数**（`context/createMQTaskContext.tsx`），翻译和回复 Context 通过配置参数差异化（事件名、命令名、并发模式等），消除 95% 重复代码。`taskProcessor` 通过 Provider prop 注入（支持在组件内使用 React hooks）
+- `MQTranslationContext` — 通过工厂创建，并发模式（batchSize=5），注入 `runTranslation` 作为 taskProcessor
+- `MQReplyContext` — 通过工厂创建，串行模式（batchSize=1，任务间延迟 1s），注入 `runReply` + `onStreamChunk` 回调桥接流式文本
+- `useTicketProcess` — 全局工单处理状态（`status`, `tempTranslation`, `tempAiReply`, `streamingText`），使用模块级变量 + listener 模式跨组件共享
+- **AI Provider 抽象层**（`src/ai/`）：
+  - `types.ts` — 定义 `AiTranslationProvider` 和 `AiReplyProvider` 接口，支持未来快速切换 AI 提供商
+  - `providers/geminiTranslationProvider.ts` — Gemini CLI 翻译实现
+  - `providers/notebookLMReplyProvider.ts` — NotebookLM 回复实现
+  - `index.ts` — 工厂函数 `getTranslationProvider(name)` / `getReplyProvider(name, config)`
+- **统一 AI Hooks**（按钮点击和 MQ 自动触发走同一代码路径，内部委托给 Provider）：
+  - `useAiReply` — 薄层 Hook，委托给 `NotebookLMReplyProvider`
+  - `useAiTranslation` — 薄层 Hook，委托给 `GeminiTranslationProvider`
 - 其他 Hooks: `useAuth`, `useSettings`, `useTickets`, `useSync`, `useNotebookShadow`
 - 共享常量: `constants/agentMap.ts` — Freshdesk Agent ID → 名称映射（统一引用，避免多处定义）
 
@@ -115,21 +126,29 @@ Rust 后端通过 Tauri Event 与 React 前端通信：
 - **MQ 发布**: `service/MqPublisherService.java`
 - **RabbitMQ 配置**: `config/RabbitMQConfig.java`（队列、交换机、绑定）
 - **安全配置**: `config/SecurityConfig.java` + `security/JwtUtil.java` + `security/JwtAuthenticationFilter.java`
-- **实体**: `entity/Ticket.java`, `entity/TicketTranslation.java`, `entity/TicketReply.java`, `entity/TicketAudit.java`, `entity/SysUser.java`
+- **认证与用户管理**: `service/AuthService.java` — 登录、注册、用户分页查询（状态/用户名过滤）、审批、角色修改、密码重置
+- **实体**: `entity/Ticket.java`（含 `lastAuditRemark` 字段）, `entity/TicketTranslation.java`, `entity/TicketReply.java`, `entity/TicketAudit.java`, `entity/SysUser.java`（`password` 字段 `@JsonIgnore`）, `entity/SystemConfig.java`（系统配置键值对）
+- **系统配置**: `service/SystemConfigService.java` — 自动推送开关、企业微信 Webhook 配置读写
+- **企业微信通知**: `service/WeChatWorkNotifyService.java` — 审核通过/驳回/推送完成等事件通知
+- **配置端点**: `controller/ConfigController.java` — 自动推送 + 企业微信配置管理
+- **管理端点**: `controller/AdminController.java` — 用户管理（分页查询、审批、角色修改、密码重置）+ 同步管理
 
 ### 客户端前端 (fd-client/src/)
 - **主入口**: `AppNew.tsx` — 全局布局、Context Provider 包裹、Tab 路由
-- **Shadow 服务**: `services/notebookShadow.ts` — NotebookLM 影子窗口核心逻辑（混合 observer + relay 架构）
+- **AI Provider 抽象**: `ai/` — AI 提供商接口定义 + 实现（Gemini 翻译、NotebookLM 回复），工厂函数
+- **Shadow 服务**: `services/notebookShadow.ts` — NotebookLM 影子窗口核心逻辑（混合 observer + relay 架构，`SELECTORS` 常量管理 DOM 选择器）
 - **API 客户端**: `services/serverApi.ts` — 后端 REST API 封装
-- **Context**: `context/MQTranslationContext.tsx`, `context/MQReplyContext.tsx` — MQ 任务队列管理、事件监听、去重
-- **统一 AI Hooks**: `hooks/useAiReply.ts`, `hooks/useAiTranslation.ts` — 按钮和 MQ 共用的 AI 处理逻辑
+- **Context 工厂**: `context/createMQTaskContext.tsx` — 通用 MQ 任务 Context 工厂函数
+- **Context**: `context/MQTranslationContext.tsx`, `context/MQReplyContext.tsx` — 基于工厂创建的薄层封装
+- **统一 AI Hooks**: `hooks/useAiReply.ts`, `hooks/useAiTranslation.ts` — 薄层 Hook，委托给 AI Provider
 - **全局状态**: `hooks/useTicketProcess.ts` — 工单处理状态 + 流式文本桥接
 - **共享常量**: `constants/agentMap.ts` — Agent ID 映射
-- **Server 模式组件**: `components/server/` — 工单列表、翻译任务、回复任务、审核任务、`ServerTaskWorkspace`（多标签页工作区）、`FloatingTaskWidget`（浮动任务指示器）
+- **Server 模式组件**: `components/server/` — 工单列表、翻译任务、回复任务、审核任务（卡片内联审核）、`ApprovedTasksTab`（待推送队列 + 批量推送）、`ServerTaskWorkspace`（多标签页工作区）、`FloatingTaskWidget`（浮动任务指示器）
+- **工单详情子组件**: `components/server/ticket-detail/` — `TranslationPreviewBar`、`AiReplyPanel`、`ReplyHistoryPanel`
 
 ### 客户端 Rust 后端 (fd-client/src-tauri/src/)
-- **Tauri 命令注册**: `lib.rs` — 所有 `#[tauri::command]` 和 `invoke_handler` 注册
-- **MQ 消费者**: `mq_consumer.rs`（~27KB，包含翻译和回复两个独立消费者）
+- **Tauri 命令注册**: `lib.rs` — 所有 `#[tauri::command]` 和 `invoke_handler` 注册，`MqConsumerHolder` 共用结构 + newtype wrappers，通用命令辅助函数（`start_consumer_inner` 等）
+- **MQ 消费者**: `mq_consumer.rs` — 统一 `handle_message` 消息处理框架 + `submit_via_frontend` 前端任务提交函数
 - **AI 翻译**: `ai.rs` — Gemini CLI 调用封装
 - **Freshdesk API**: `api.rs` — 本地直连 Freshdesk 的 HTTP 客户端
 
@@ -142,17 +161,28 @@ Rust 后端通过 Tauri Event 与 React 前端通信：
 - `GET /tickets` — 查询工单（分页、状态过滤）
 - `POST /tickets/{id}/translation` — 上报翻译结果
 - `POST /tickets/{id}/reply` — 上报回复内容
-- `POST /tickets/{id}/audit` — 上报审核结果
+- `POST /tickets/{id}/audit` — 上报审核结果（PASS → APPROVED/COMPLETED，REJECT → PENDING_REPLY + 保存审核意见）
+- `POST /tickets/{id}/push-reply` — 手动推送 APPROVED 工单回复到 Freshdesk
+- `POST /tickets/batch-push` — 批量推送 APPROVED 工单
 - `POST /tickets/{id}/ai-translate` | `POST /tickets/{id}/ai-reply` — 手动触发 AI 任务
 - `POST /sync/freshdesk` — 手动触发同步
-- `GET /admin/users/pending` | `POST /admin/users/{id}/approve` — 用户审批
+- `GET /admin/users` — 用户列表（分页、状态过滤、用户名搜索）
+- `GET /admin/users/pending` — 待审核用户列表
+- `POST /admin/users/{id}/approve` — 批准/拒绝用户
+- `PUT /admin/users/{id}/role` — 修改用户角色
+- `POST /admin/users/{id}/reset-password` — 重置用户密码
+- `GET /config/auto-reply` | `PUT /config/auto-reply` — 自动推送开关
+- `GET /config/wecom-webhook` | `PUT /config/wecom-webhook` — 企业微信 Webhook 配置
+- `POST /config/wecom-webhook/test` — 测试企业微信 Webhook
 
 ## 数据模型
 
 - **Ticket** (1) → (1) **TicketTranslation**
 - **Ticket** (1) → (N) **TicketReply**（通常只有一个活跃草稿）
 - **Ticket** (1) → (N) **TicketAudit**
-- **SysUser** — 角色: ADMIN/USER，状态: PENDING/APPROVED/REJECTED
+- **Ticket.lastAuditRemark** — 最近一次审核驳回意见（注入 AI 回复提示词）
+- **SysUser** — 角色: ADMIN/USER，状态: PENDING/APPROVED/REJECTED，`password` 字段 `@JsonIgnore` 不暴露到 API
+- **SystemConfig** — 系统配置键值对（auto_reply_enabled, wecom_webhook_url, wecom_notify_enabled）
 
 ## 配置
 

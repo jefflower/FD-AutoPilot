@@ -127,21 +127,30 @@ export const FloatingTaskWidget: React.FC = () => {
                                     ))}
 
                                     {/* Recent Completed */}
-                                    {transHistory.slice(0, 3).map(task => (
-                                        <div
-                                            key={task.ticketId}
-                                            onClick={() => navigateToTask('translation', task.ticketId)}
-                                            className={`${taskItemClass} flex items-center justify-between p-2 rounded-lg border ${task.status === 'failed' ? 'bg-red-500/10 border-red-500/20' : 'bg-green-500/5 border-green-500/10'}`}
-                                        >
-                                            <div className="flex items-center gap-2">
-                                                <span className="text-[10px] font-mono text-slate-500">#{task.externalId}</span>
-                                                <span className="text-[9px] text-slate-600 truncate max-w-[120px]">{task.subject}</span>
+                                    {transHistory.slice(0, 3).map(task => {
+                                        const bg = task.status === 'failed' ? 'bg-red-500/10 border-red-500/20'
+                                            : task.status === 'skipped' ? 'bg-amber-500/10 border-amber-500/20'
+                                            : 'bg-green-500/5 border-green-500/10';
+                                        const labelColor = task.status === 'failed' ? 'text-red-400'
+                                            : task.status === 'skipped' ? 'text-amber-500/60'
+                                            : 'text-green-500/50';
+                                        const label = task.status === 'failed' ? 'FAIL'
+                                            : task.status === 'skipped' ? 'SKIP'
+                                            : 'DONE';
+                                        return (
+                                            <div
+                                                key={task.ticketId}
+                                                onClick={() => navigateToTask('translation', task.ticketId)}
+                                                className={`${taskItemClass} flex items-center justify-between p-2 rounded-lg border ${bg}`}
+                                            >
+                                                <div className="flex items-center gap-2">
+                                                    <span className="text-[10px] font-mono text-slate-500">#{task.externalId}</span>
+                                                    <span className="text-[9px] text-slate-600 truncate max-w-[120px]">{task.subject}</span>
+                                                </div>
+                                                <span className={`text-[9px] font-bold uppercase ${labelColor}`}>{label}</span>
                                             </div>
-                                            <span className={`text-[9px] font-bold uppercase ${task.status === 'failed' ? 'text-red-400' : 'text-green-500/50'}`}>
-                                                {task.status === 'failed' ? 'FAIL' : 'DONE'}
-                                            </span>
-                                        </div>
-                                    ))}
+                                        );
+                                    })}
                                 </div>
                             </div>
                         )}
@@ -193,21 +202,30 @@ export const FloatingTaskWidget: React.FC = () => {
                                     ))}
 
                                     {/* Recent Completed */}
-                                    {replyHistory.slice(0, 3).map(task => (
-                                        <div
-                                            key={task.ticketId}
-                                            onClick={() => navigateToTask('reply', task.ticketId)}
-                                            className={`${taskItemClass} flex items-center justify-between p-2 rounded-lg border ${task.status === 'failed' ? 'bg-red-500/10 border-red-500/20' : 'bg-green-500/5 border-green-500/10'}`}
-                                        >
-                                            <div className="flex items-center gap-2">
-                                                <span className="text-[10px] font-mono text-slate-500">#{task.externalId}</span>
-                                                <span className="text-[9px] text-slate-600 truncate max-w-[120px]">{task.subject}</span>
+                                    {replyHistory.slice(0, 3).map(task => {
+                                        const bg = task.status === 'failed' ? 'bg-red-500/10 border-red-500/20'
+                                            : task.status === 'skipped' ? 'bg-amber-500/10 border-amber-500/20'
+                                            : 'bg-green-500/5 border-green-500/10';
+                                        const labelColor = task.status === 'failed' ? 'text-red-400'
+                                            : task.status === 'skipped' ? 'text-amber-500/60'
+                                            : 'text-green-500/50';
+                                        const label = task.status === 'failed' ? 'FAIL'
+                                            : task.status === 'skipped' ? 'SKIP'
+                                            : 'DONE';
+                                        return (
+                                            <div
+                                                key={task.ticketId}
+                                                onClick={() => navigateToTask('reply', task.ticketId)}
+                                                className={`${taskItemClass} flex items-center justify-between p-2 rounded-lg border ${bg}`}
+                                            >
+                                                <div className="flex items-center gap-2">
+                                                    <span className="text-[10px] font-mono text-slate-500">#{task.externalId}</span>
+                                                    <span className="text-[9px] text-slate-600 truncate max-w-[120px]">{task.subject}</span>
+                                                </div>
+                                                <span className={`text-[9px] font-bold uppercase ${labelColor}`}>{label}</span>
                                             </div>
-                                            <span className={`text-[9px] font-bold uppercase ${task.status === 'failed' ? 'text-red-400' : 'text-green-500/50'}`}>
-                                                {task.status === 'failed' ? 'FAIL' : 'DONE'}
-                                            </span>
-                                        </div>
-                                    ))}
+                                        );
+                                    })}
                                 </div>
                             </div>
                         )}

@@ -7,6 +7,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.sql.DataSource;
+import java.io.BufferedReader;
+import java.io.Reader;
 import java.sql.*;
 import java.util.*;
 
@@ -87,8 +89,13 @@ public class DatabaseQueryService {
             List<Object> row = new ArrayList<>();
             for (int i = 1; i <= columnCount; i++) {
                 Object value = rs.getObject(i);
-                // 将非基础类型转为字符串以确保 JSON 序列化
-                if (value != null && !(value instanceof Number)
+                if (value instanceof Clob clob) {
+                    value = readClob(clob);
+                } else if (value instanceof Blob blob) {
+                    value = "(BLOB " + blob.length() + " bytes)";
+                } else if (value instanceof byte[] bytes) {
+                    value = "(BINARY " + bytes.length + " bytes)";
+                } else if (value != null && !(value instanceof Number)
                         && !(value instanceof String)
                         && !(value instanceof Boolean)) {
                     value = value.toString();
@@ -99,6 +106,22 @@ public class DatabaseQueryService {
         }
 
         return SqlQueryResult.selectResult(columns, rows, duration);
+    }
+
+    private String readClob(Clob clob) {
+        try (Reader reader = clob.getCharacterStream();
+             BufferedReader br = new BufferedReader(reader)) {
+            StringBuilder sb = new StringBuilder();
+            char[] buf = new char[4096];
+            int len;
+            while ((len = br.read(buf)) != -1) {
+                sb.append(buf, 0, len);
+            }
+            return sb.toString();
+        } catch (Exception e) {
+            log.warn("读取 CLOB 失败: {}", e.getMessage());
+            return "(CLOB 读取失败)";
+        }
     }
 
     public List<TableInfo> getTableMetadata() {

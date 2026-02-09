@@ -9,6 +9,8 @@ import com.jefflower.fdserver.enums.UserStatus;
 import com.jefflower.fdserver.repository.SysUserRepository;
 import com.jefflower.fdserver.security.JwtUtil;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -68,6 +70,17 @@ public class AuthService {
         return userRepository.findByStatus(UserStatus.PENDING);
     }
 
+    public Page<SysUser> getAllUsers(UserStatus status, String username, Pageable pageable) {
+        if (status != null && username != null && !username.isBlank()) {
+            return userRepository.findByStatusAndUsernameContainingIgnoreCase(status, username, pageable);
+        } else if (status != null) {
+            return userRepository.findByStatus(status, pageable);
+        } else if (username != null && !username.isBlank()) {
+            return userRepository.findByUsernameContainingIgnoreCase(username, pageable);
+        }
+        return userRepository.findAll(pageable);
+    }
+
     @Transactional
     public SysUser approveUser(Long userId, String action) {
         SysUser user = userRepository.findById(userId)
@@ -82,5 +95,27 @@ public class AuthService {
         }
 
         return userRepository.save(user);
+    }
+
+    @Transactional
+    public SysUser updateUserRole(Long userId, String role) {
+        SysUser user = userRepository.findById(userId)
+                .orElseThrow(() -> new RuntimeException("用户不存在"));
+
+        try {
+            user.setRole(UserRole.valueOf(role.toUpperCase()));
+        } catch (IllegalArgumentException e) {
+            throw new RuntimeException("无效的角色: " + role);
+        }
+
+        return userRepository.save(user);
+    }
+
+    @Transactional
+    public void resetPassword(Long userId, String newPassword) {
+        SysUser user = userRepository.findById(userId)
+                .orElseThrow(() -> new RuntimeException("用户不存在"));
+        user.setPassword(passwordEncoder.encode(newPassword));
+        userRepository.save(user);
     }
 }

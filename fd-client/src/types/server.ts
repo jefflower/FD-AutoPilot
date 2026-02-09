@@ -32,13 +32,14 @@ export interface RegisterRequest {
 }
 
 // ============ 工单相关 ============
-export type TicketStatus = 
-  | 'PENDING_TRANS' 
-  | 'TRANSLATING' 
-  | 'PENDING_REPLY' 
-  | 'REPLYING' 
-  | 'PENDING_AUDIT' 
-  | 'AUDITING' 
+export type TicketStatus =
+  | 'PENDING_TRANS'
+  | 'TRANSLATING'
+  | 'PENDING_REPLY'
+  | 'REPLYING'
+  | 'PENDING_AUDIT'
+  | 'AUDITING'
+  | 'APPROVED'
   | 'COMPLETED';
 
 export interface ServerTicket {
@@ -51,6 +52,7 @@ export interface ServerTicket {
   createdAt: string;
   updatedAt: string;
   isValid: boolean;
+  lastAuditRemark?: string;
   translation?: TicketTranslation;
   replies?: TicketReply[];
 }
@@ -177,6 +179,22 @@ export type PaginatedSyncLogs = PaginatedResponse<SyncLog>;
 export interface ApiError {
   error: string;
   message: string;
+}
+
+// ============ 知识库相关 ============
+export interface KnowledgeNote {
+  id: number;
+  title: string;
+  content: string;
+  sortOrder: number;
+  createdAt: string;
+  updatedAt?: string;
+}
+
+export interface KnowledgeNoteRequest {
+  title: string;
+  content: string;
+  sortOrder?: number;
 }
 
 // ============ 数据库查询相关 ============

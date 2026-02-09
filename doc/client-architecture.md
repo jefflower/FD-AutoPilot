@@ -26,7 +26,11 @@ The client acts as a worker node. It connects to the RabbitMQ server and listens
 4. **Wait**: Registers a `oneshot::channel` in `pending_acks` and awaits the frontend completion signal (300s timeout).
 5. **ACK/NACK**: On success ACKs the message; on failure NACKs without requeue.
 
-**Stop Behavior**: When `stop()` is called, `is_running` is set to `false`. Multiple checkpoints (`RunGuard` drop guard, consumer loop check, `handle_delivery` entry check, `translate_and_submit` mid-check) ensure no new tasks are processed. Already-buffered messages are NACK'd with `requeue: true`.
+**Architecture**: Unified `handle_message()` framework handles both message types with `parse_fn` and `build_payload` closures for type-specific logic. `submit_via_frontend()` is the common function for fetching ticket details, emitting events, and awaiting completion signals via `oneshot::channel`.
+
+**Stop Behavior**: When `stop()` is called, `is_running` is set to `false`. Multiple checkpoints (`RunGuard` drop guard, consumer loop check, `handle_message` entry check, `submit_via_frontend` mid-check) ensure no new tasks are processed. Already-buffered messages are NACK'd with `requeue: true`.
+
+**State Management (lib.rs)**: `MqConsumerHolder` is the shared underlying struct for both consumers. `MqTranslateState` and `MqReplyState` are newtype wrappers (required by Tauri's `State<>` type system). Common command logic is extracted into `start_consumer_inner`, `stop_consumer_inner`, `get_consumer_status_inner`, `complete_task_inner` helper functions.
 
 ### 2. NotebookLM Shadow Service (`src/services/notebookShadow.ts`)
 Since Google NotebookLM has no public API, we use a "Shadow Window" technique with a **hybrid observer + relay architecture (v3)**.
@@ -50,19 +54,27 @@ Since Google NotebookLM has no public API, we use a "Shadow Window" technique wi
 - **Mutex**: Global lock ensures only one query runs at a time.
 
 ### 3. Context Providers (`src/context/`)
-Two React Context providers manage MQ task queues:
 
-#### MQTranslationContext
-- Listens for `mq-translate-request` events, deduplicates via `queuedTicketIdsRef`
-- **Concurrent dispatch**: Uses `activeCountRef` to track active tasks, dispatches up to `batchSize` tasks simultaneously
-- Each task: fetch ticket detail → `runTranslation` (invokes Rust `translate_ticket_direct_cmd`) → `complete_translate_task`
-- Manages `processingTasks` (Map), `completedHistory`, consumer start/stop/status
+#### createMQTaskContext (Factory)
+A generic factory function (`createMQTaskContext.tsx`) generates React Context + Provider + hook from a `MQTaskConfig` object. Eliminates 95% duplication between translation and reply contexts. The `taskProcessor` function is injected via Provider prop (not config) to support React hooks.
 
-#### MQReplyContext
-- Listens for `mq-reply-request` events, same dedup pattern
-- **Serial processing**: Only 1 task at a time (Shadow Window limitation)
-- Each task: fetch ticket detail → `runReply` (Shadow Window → NotebookLM) → `complete_reply_task`
-- Passes `onStreamChunk` callback for real-time streaming text display
+**Config parameters**: `taskType`, `eventName`, `startCommand`, `stopCommand`, `statusCommand`, `completeCommand`, `defaultBatchSize`, `concurrencyMode` (`'parallel'` | `'serial'`), `interTaskDelayMs`.
+
+**Internal logic**: Event listening → dedup (`queuedTicketIdsRef` + `processingTasksRef`) → task scheduling (parallel via `activeCountRef` or serial via `isProcessingRef`) → completion history → consumer control.
+
+#### MQTranslationContext (~47 lines)
+- Config: `concurrencyMode: 'parallel'`, `defaultBatchSize: 5`
+- Injects `runTranslation` as taskProcessor
+
+#### MQReplyContext (~52 lines)
+- Config: `concurrencyMode: 'serial'`, `defaultBatchSize: 1`, `interTaskDelayMs: 1000`
+- Injects `runReply` with `onStreamChunk` callback bridging to `setStreamingText`
+
+### 3.5. AI Provider Abstraction (`src/ai/`)
+Defines provider interfaces (`AiTranslationProvider`, `AiReplyProvider`) and concrete implementations:
+- `GeminiTranslationProvider` — wraps Rust `translate_ticket_direct_cmd` invoke
+- `NotebookLMReplyProvider` — wraps `NotebookShadowService` with streaming and JSON parsing
+- Factory functions `getTranslationProvider(name)` / `getReplyProvider(name, config)` for future provider swapping
 
 ### 4. State Management
 
@@ -77,7 +89,6 @@ Two React Context providers manage MQ task queues:
 | `useAiTranslation.ts` | AI translation via Rust Gemini CLI. Callbacks: `onStatusChange`, `onError` |
 | `useNotebookShadow.ts` | Shadow window visibility state |
 | `useSync.ts` | Freshdesk synchronization status |
-| `useTranslation.ts` | Local batch translation workflow |
 
 #### Shared Constants
 - `constants/agentMap.ts` — Freshdesk Agent ID → name mapping (single source of truth)
@@ -85,51 +96,64 @@ Two React Context providers manage MQ task queues:
 ## Directory Map (Source)
 ```text
 src/
+├── ai/                              # AI Provider abstraction layer
+│   ├── types.ts                     # Provider interfaces (AiTranslationProvider, AiReplyProvider)
+│   ├── index.ts                     # Factory functions + re-exports
+│   ├── parseUtils.ts                # Shared JSON parsing utilities
+│   └── providers/
+│       ├── geminiTranslationProvider.ts   # Gemini CLI translation
+│       └── notebookLMReplyProvider.ts     # NotebookLM reply generation
 ├── components/
-│   ├── server/                    # Server-mode task components
-│   │   ├── ServerTicketDetail.tsx  # Ticket detail with AI actions
-│   │   ├── ServerTicketList.tsx    # Paginated ticket list
-│   │   ├── ServerTicketsTab.tsx    # Tickets tab container
-│   │   ├── ServerTaskWorkspace.tsx # Multi-tab task workspace
-│   │   ├── TranslationTasksTab.tsx # MQ translation task management
-│   │   ├── ReplyTasksTab.tsx       # MQ reply task management
-│   │   ├── AuditTasksTab.tsx       # Audit task management
-│   │   ├── ServerBrowseTab.tsx     # Server browse tab
-│   │   └── CompletedTasksPanel.tsx # Completed tasks panel
+│   ├── server/                      # Server-mode task components
+│   │   ├── ServerTicketDetail.tsx    # Ticket detail with AI actions (~600 lines)
+│   │   ├── ticket-detail/           # Sub-components extracted from ServerTicketDetail
+│   │   │   ├── TranslationPreviewBar.tsx  # Translation confirmation bar
+│   │   │   ├── AiReplyPanel.tsx           # AI reply streaming + bilingual display
+│   │   │   └── ReplyHistoryPanel.tsx      # Reply history + audit controls
+│   │   ├── ServerTicketList.tsx      # Paginated ticket list
+│   │   ├── ServerTicketsTab.tsx      # Tickets tab container
+│   │   ├── ServerTaskWorkspace.tsx   # Multi-tab task workspace
+│   │   ├── TranslationTasksTab.tsx   # MQ translation task management
+│   │   ├── ReplyTasksTab.tsx         # MQ reply task management
+│   │   ├── AuditTasksTab.tsx         # Audit task management (inline card review)
+│   │   └── ApprovedTasksTab.tsx      # Approved tickets push queue
 │   ├── common/
-│   │   └── FloatingTaskWidget.tsx  # Floating task status indicator
+│   │   └── FloatingTaskWidget.tsx    # Floating task status indicator
 │   ├── admin/
-│   │   ├── AdminUsersTab.tsx       # User approval management
-│   │   └── ManualSyncTab.tsx       # Manual Freshdesk sync
+│   │   ├── AdminUsersTab.tsx         # User management (list, approval, role change, password reset)
+│   │   ├── ManualSyncTab.tsx         # Manual Freshdesk sync + auto-reply toggle
+│   │   ├── ServerLogsTab.tsx         # Server log viewer
+│   │   └── DatabaseTab.tsx           # Database query panel
 │   ├── auth/
-│   │   ├── AuthLoginTab.tsx        # Login form
-│   │   └── AuthRegisterTab.tsx     # Register form
+│   │   ├── AuthLoginTab.tsx          # Login form
+│   │   └── AuthRegisterTab.tsx       # Register form
 │   ├── user/
-│   │   └── UserProfileTab.tsx      # User profile
-│   ├── SidebarNew.tsx              # Navigation sidebar
-│   └── SettingsTab.tsx             # Settings management
+│   │   └── UserProfileTab.tsx        # User profile
+│   ├── SidebarNew.tsx                # Navigation sidebar
+│   └── SettingsTab.tsx               # Settings management
 ├── context/
-│   ├── MQTranslationContext.tsx    # Translation task queue + concurrent dispatch
-│   └── MQReplyContext.tsx          # Reply task queue + serial dispatch
-├── hooks/                          # (see Hooks table above)
+│   ├── createMQTaskContext.tsx       # Generic MQ task context factory
+│   ├── MQTranslationContext.tsx      # Translation config (thin wrapper)
+│   └── MQReplyContext.tsx            # Reply config (thin wrapper)
+├── hooks/                            # (see Hooks table above)
 ├── services/
-│   ├── notebookShadow.ts          # Shadow Window service (hybrid observer + relay)
-│   └── serverApi.ts               # REST API client for fd-server
+│   ├── notebookShadow.ts            # Shadow Window service (SELECTORS constant + hybrid observer + relay)
+│   └── serverApi.ts                  # REST API client for fd-server
 ├── constants/
-│   └── agentMap.ts                # Agent ID mapping
+│   └── agentMap.ts                  # Agent ID mapping
 ├── types/
-│   ├── types.ts                   # Local data types
-│   └── server.ts                  # Server API types
-├── AppNew.tsx                     # Main entry, Context providers, tab routing
-└── main.tsx                       # React entry point
+│   ├── types.ts                     # Local data types
+│   └── server.ts                    # Server API types
+├── AppNew.tsx                       # Main entry, Context providers, tab routing
+└── main.tsx                         # React entry point
 ```
 
 ## Rust Backend (`src-tauri/src/`)
 ```text
 src-tauri/src/
-├── lib.rs           # Tauri command registration + MQ state management
+├── lib.rs           # Tauri commands + MqConsumerHolder/newtype wrappers + common helpers
 ├── main.rs          # Application bootstrap
-├── mq_consumer.rs   # RabbitMQ consumer (translate + reply, RunGuard, is_running checks)
+├── mq_consumer.rs   # Unified MQ consumer (handle_message + submit_via_frontend, RunGuard)
 ├── ai.rs            # Gemini CLI translation engine
 ├── api.rs           # Freshdesk HTTP client (local direct access)
 ├── models.rs        # Shared data models (Ticket, Conversation, etc.)
@@ -137,20 +161,22 @@ src-tauri/src/
 └── storage.rs       # Local SQLite storage
 ```
 
-## AI Workflow (Hybrid)
+## AI Workflow (Provider-based)
 
-### 1. Translation (Rust Backend — Gemini CLI)
+Both translation and reply use the **AI Provider abstraction** (`src/ai/`). Hooks (`useAiTranslation`, `useAiReply`) delegate to provider implementations, enabling future provider swapping via factory functions.
+
+### 1. Translation (`GeminiTranslationProvider`)
 - **Trigger**: MQ message on `q.ticket.translation` OR button click in UI
-- **Execution**: `useAiTranslation` hook → `invoke('translate_ticket_direct_cmd')` → `ai.rs` calls `gemini` CLI
+- **Execution**: `useAiTranslation` → `GeminiTranslationProvider.translate()` → `invoke('translate_ticket_direct_cmd')` → `ai.rs` → `gemini` CLI
 - **Concurrency**: Supports parallel execution (configurable `batchSize` via QoS prefetch)
 - **Result**: Auto-saved via `serverApi.ticket.submitTranslation()`, or manual preview in UI
 
-### 2. Reply Generation (Frontend Shadow Window — NotebookLM)
+### 2. Reply Generation (`NotebookLMReplyProvider`)
 - **Trigger**: MQ message on `q.ticket.reply` OR button click in UI
-- **Execution**: `useAiReply` hook → `NotebookShadowService.query(prompt)` → Shadow Window → NotebookLM
+- **Execution**: `useAiReply` → `NotebookLMReplyProvider.generateReply()` → `NotebookShadowService.query(prompt)` → Shadow Window → NotebookLM
 - **Concurrency**: Serial only (1 at a time, Shadow Window limitation)
-- **Result**: Parsed as `[targetReply, zhReply]` JSON array. Auto-saved or manual confirm in UI.
-- **JSON Parsing**: Uses backward search for `["` pattern (avoids matching `[timestamp]` from conversation logs in prompt)
+- **Result**: Parsed as `[targetReply, zhReply]` JSON array via `parseReply()`. Auto-saved or manual confirm in UI.
+- **JSON Parsing**: Uses backward search for `["` pattern (avoids matching `[timestamp]` from conversation logs in prompt), shared in `parseUtils.ts`
 
 ## Tauri Commands (registered in `lib.rs`)
 

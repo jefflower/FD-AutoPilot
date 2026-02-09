@@ -18,9 +18,9 @@ This document provides a detailed map of the `FD-AutoPilot` codebase to help AI 
 Built with **Tauri v2**, **React 19**, **TypeScript**, and **TailwindCSS**.
 
 ### `src-tauri/` (Rust Backend for Client)
-- `src/lib.rs`: Main entry point. Registers all Tauri commands (`#[tauri::command]`), manages MQ consumer state (`MqTranslateState`, `MqReplyState`).
+- `src/lib.rs`: Main entry point. Registers all Tauri commands (`#[tauri::command]`). `MqConsumerHolder` shared struct with `MqTranslateState`/`MqReplyState` newtype wrappers. Common helpers: `start_consumer_inner`, `stop_consumer_inner`, `get_consumer_status_inner`, `complete_task_inner`.
 - `src/main.rs`: Application bootstrap.
-- `src/mq_consumer.rs`: RabbitMQ consumer. Two independent consumers (translation parallel, reply serial). Includes `RunGuard` for safe `is_running` cleanup, multi-level stop checks.
+- `src/mq_consumer.rs`: Unified RabbitMQ consumer. `handle_message()` framework with `parse_fn`/`build_payload` closures. `submit_via_frontend()` common function. `RunGuard` for safe `is_running` cleanup, multi-level stop checks.
 - `src/ai.rs`: Gemini CLI translation engine (`GeminiClient::translate_ticket`).
 - `src/api.rs`: Freshdesk HTTP client (direct access for local sync).
 - `src/models.rs`: Shared data models (Ticket, Conversation, etc.).
@@ -39,20 +39,25 @@ Built with **Tauri v2**, **React 19**, **TypeScript**, and **TailwindCSS**.
 - `SidebarNew.tsx`: Main navigation sidebar.
 - `SettingsTab.tsx`: Settings management (MQ config, NotebookLM config).
 - **`server/`** — Server-mode task components:
-    - `ServerTicketDetail.tsx`: Ticket detail workspace with AI action buttons.
+    - `ServerTicketDetail.tsx`: Ticket detail workspace with AI action buttons (~600 lines).
+    - **`ticket-detail/`** — Sub-components extracted from ServerTicketDetail:
+        - `TranslationPreviewBar.tsx`: Translation confirmation bar.
+        - `AiReplyPanel.tsx`: AI reply streaming display + bilingual toggle + save/discard.
+        - `ReplyHistoryPanel.tsx`: Reply history list + inline audit controls.
     - `ServerTicketList.tsx`: Paginated ticket list with filters.
     - `ServerTicketsTab.tsx`: Tickets tab container.
     - `ServerTaskWorkspace.tsx`: Multi-tab task workspace (auto-close successful tabs, retain failed tabs).
     - `TranslationTasksTab.tsx`: MQ translation task management (left panel + workspace).
     - `ReplyTasksTab.tsx`: MQ reply task management (no concurrency config, serial only).
-    - `AuditTasksTab.tsx`: Audit task management.
-    - `ServerBrowseTab.tsx`: Server browse tab.
-    - `CompletedTasksPanel.tsx`: Completed tasks panel.
+    - `AuditTasksTab.tsx`: Audit task management (inline card-based review with one-click pass/reject).
+    - `ApprovedTasksTab.tsx`: Approved tickets queue (manual/batch push to Freshdesk, auto-reply toggle).
 - **`common/`** — Shared components:
     - `FloatingTaskWidget.tsx`: Floating task status indicator (shows active MQ tasks).
 - **`admin/`** — Admin-only components:
-    - `AdminUsersTab.tsx`: User approval management.
-    - `ManualSyncTab.tsx`: Manual Freshdesk sync trigger.
+    - `AdminUsersTab.tsx`: User management (paginated list with status/username filters, approval, role change, password reset, confirm dialogs).
+    - `ManualSyncTab.tsx`: Manual Freshdesk sync trigger + auto-reply push toggle.
+    - `ServerLogsTab.tsx`: Server log viewer.
+    - `DatabaseTab.tsx`: Database query panel.
 - **`auth/`** — Authentication:
     - `AuthLoginTab.tsx`: Login form.
     - `AuthRegisterTab.tsx`: Register form.
@@ -60,8 +65,9 @@ Built with **Tauri v2**, **React 19**, **TypeScript**, and **TailwindCSS**.
     - `UserProfileTab.tsx`: User profile.
 
 #### Context Providers (`context/`)
-- `MQTranslationContext.tsx`: Translation task queue, concurrent dispatch (`activeCountRef` + `batchSize`), consumer start/stop, completion history.
-- `MQReplyContext.tsx`: Reply task queue, serial dispatch, streaming text bridge via `onStreamChunk`.
+- `createMQTaskContext.tsx`: Generic factory function that generates Context + Provider + hook from `MQTaskConfig`. Handles event listening, dedup, task scheduling (parallel/serial), completion history, consumer control.
+- `MQTranslationContext.tsx`: Thin wrapper using `createMQTaskContext` with `concurrencyMode: 'parallel'`, `defaultBatchSize: 5`.
+- `MQReplyContext.tsx`: Thin wrapper using `createMQTaskContext` with `concurrencyMode: 'serial'`, `defaultBatchSize: 1`, streaming text bridge via `onStreamChunk`.
 
 #### Hooks (`hooks/`)
 - `useAuth.ts`: JWT authentication state (login, register, token storage).
@@ -72,10 +78,17 @@ Built with **Tauri v2**, **React 19**, **TypeScript**, and **TailwindCSS**.
 - `useAiTranslation.ts`: AI translation hook (Rust Gemini CLI). Supports `onStatusChange`, `onError` callbacks.
 - `useNotebookShadow.ts`: Shadow window visibility state.
 - `useSync.ts`: Freshdesk synchronization status.
-- `useTranslation.ts`: Local batch translation workflow.
+
+#### AI Provider Abstraction (`ai/`)
+- `types.ts`: Provider interfaces (`AiTranslationProvider`, `AiReplyProvider`) and shared types.
+- `index.ts`: Factory functions (`getTranslationProvider`, `getReplyProvider`) + re-exports.
+- `parseUtils.ts`: Shared JSON parsing utilities (backward `]` search, regex fallback).
+- **`providers/`**:
+    - `geminiTranslationProvider.ts`: `GeminiTranslationProvider` — wraps Rust `translate_ticket_direct_cmd` invoke.
+    - `notebookLMReplyProvider.ts`: `NotebookLMReplyProvider` — wraps `NotebookShadowService` with streaming and JSON parsing.
 
 #### Services (`services/`)
-- `notebookShadow.ts`: **Core Service**. NotebookLM Shadow Window (hybrid observer + relay architecture v3).
+- `notebookShadow.ts`: **Core Service**. NotebookLM Shadow Window (hybrid observer + relay architecture v3). DOM selectors centralized in `SELECTORS` constant.
 - `serverApi.ts`: REST API client for `fd-server`.
 
 #### Constants (`constants/`)
@@ -97,8 +110,9 @@ Built with **Spring Boot 3.4**, **Java 21**, **H2 Database**, and **RabbitMQ**.
 
 #### Controller (`controller/`)
 - `AuthController.java`: Login/Register endpoints.
-- `TicketController.java`: Ticket CRUD, translation/reply/audit submission, AI triggers.
-- `AdminController.java`: Freshdesk sync, user approvals, sync config management.
+- `TicketController.java`: Ticket CRUD, translation/reply/audit submission, AI triggers, push-reply, batch-push.
+- `AdminController.java`: Freshdesk sync, user management (paginated query, approvals, role change, password reset), sync config management.
+- `ConfigController.java`: System config endpoints (auto-reply toggle, WeChat Work webhook).
 - `RequestController.java`: Debug endpoint for logging raw client requests.
 
 #### DTO (`dto/`)
@@ -117,12 +131,13 @@ Built with **Spring Boot 3.4**, **Java 21**, **H2 Database**, and **RabbitMQ**.
 - `TicketTranslation.java`: Translation details.
 - `TicketReply.java`: Draft replies.
 - `TicketAudit.java`: Audit history records.
-- `SysUser.java`: User accounts.
+- `SysUser.java`: User accounts (`password` field `@JsonIgnore`).
+- `SystemConfig.java`: System configuration key-value pairs (auto-reply, WeChat Work webhook).
 - `SyncConfig.java`: Sync configuration (cron expression, enabled flag).
 - `SyncLog.java`: Sync execution history logs.
 
 #### Enums (`enums/`)
-- `TicketStatus.java`: `PENDING_TRANS`, `TRANSLATING`, `PENDING_REPLY`, `REPLYING`, `PENDING_AUDIT`, `AUDITING`, `COMPLETED`.
+- `TicketStatus.java`: `PENDING_TRANS`, `TRANSLATING`, `PENDING_REPLY`, `REPLYING`, `PENDING_AUDIT`, `AUDITING`, `APPROVED`, `COMPLETED`.
 - `UserRole.java`: `ADMIN`, `USER`.
 - `UserStatus.java`: `PENDING`, `APPROVED`, `REJECTED`.
 - `AuditResult.java`: `PASS`, `REJECT`.
@@ -131,16 +146,18 @@ Built with **Spring Boot 3.4**, **Java 21**, **H2 Database**, and **RabbitMQ**.
 
 #### Repository (`repository/`)
 - `TicketRepository.java`, `TicketTranslationRepository.java`, `TicketReplyRepository.java`, `TicketAuditRepository.java`
-- `SysUserRepository.java`
+- `SysUserRepository.java`, `SystemConfigRepository.java`
 - `SyncConfigRepository.java`, `SyncLogRepository.java`
 - `ClientRequestRepository.java`
 
 #### Service (`service/`)
-- `TicketService.java`: Ticket workflow orchestration (state transitions, MQ message triggers).
+- `TicketService.java`: Ticket workflow orchestration (state transitions, MQ message triggers, APPROVED push logic).
 - `FreshdeskService.java`: Freshdesk API sync (incremental via `updated_since`).
-- `MqPublisherService.java`: RabbitMQ message publishing.
-- `AuthService.java`: User authentication and registration.
+- `MqPublisherService.java`: RabbitMQ message publishing (includes `auditRemark` in reply payload).
+- `AuthService.java`: User authentication, registration, paginated user queries (status/username filters), role management, and password reset.
 - `SyncConfigService.java`: Sync configuration management.
+- `SystemConfigService.java`: System config CRUD (auto-reply toggle, WeChat Work webhook).
+- `WeChatWorkNotifyService.java`: WeChat Work webhook notifications (audit pass/reject, reply pushed).
 
 #### Scheduler (`scheduler/`)
 - `SyncScheduler.java`: Cron-based Freshdesk sync scheduler.

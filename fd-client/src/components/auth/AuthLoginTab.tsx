@@ -1,9 +1,11 @@
 /**
- * 登录页面组件 - 工单智能处理流程动画
- * 工单到达节点后停顿，进度条增加完成后进入下一节点
+ * 登录页面组件 - 全新设计
+ * 左右分屏布局：左侧工单流水线动画展示，右侧登录表单
+ * 特效：极光背景、浮动粒子、S-wave 流水线、玻璃态表单
  */
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import { getServerBaseUrl, setServerBaseUrl } from '../../services/serverApi';
 
 interface AuthLoginTabProps {
     onLogin: (credentials: { username: string; password: string }) => Promise<void>;
@@ -12,37 +14,58 @@ interface AuthLoginTabProps {
     error?: string | null;
 }
 
-// 5个处理节点（包含完成）
+// ===== 节点配置 =====
 const NODES = [
-    { id: 0, label: '同步', color: '#6366f1', icon: '🔄' },
-    { id: 1, label: '翻译', color: '#06b6d4', icon: '🌐' },
-    { id: 2, label: '回复', color: '#f59e0b', icon: '💬' },
-    { id: 3, label: '审核', color: '#8b5cf6', icon: '✅' },
-    { id: 4, label: '完成', color: '#22c55e', icon: '🎉' },
+    { id: 0, label: '同步', color: '#6366f1', lightColor: '#818cf8' },
+    { id: 1, label: '翻译', color: '#06b6d4', lightColor: '#22d3ee' },
+    { id: 2, label: '回复', color: '#f59e0b', lightColor: '#fbbf24' },
+    { id: 3, label: '审核', color: '#8b5cf6', lightColor: '#a78bfa' },
+    { id: 4, label: '推送', color: '#22c55e', lightColor: '#4ade80' },
 ];
 
-// 节点位置（曲线分布）
+// SVG 图标路径 (heroicons outline, viewBox 0 0 24 24)
+const NODE_ICON_PATHS = [
+    // Sync - 刷新箭头
+    'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15',
+    // Translate - 语言
+    'M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129',
+    // Reply - 对话
+    'M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z',
+    // Audit - 审核勾选
+    'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z',
+    // Complete - 星光
+    'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z',
+];
+
+// S-wave 节点位置 (viewBox 0 0 730 320)
 const NODE_POSITIONS = [
-    { x: 100, y: 90 },   // 同步
-    { x: 250, y: 130 },  // 翻译
-    { x: 400, y: 90 },   // 回复
-    { x: 550, y: 130 },  // 审核
-    { x: 700, y: 90 },   // 完成
+    { x: 90, y: 90 },    // 同步 (上)
+    { x: 240, y: 230 },  // 翻译 (下)
+    { x: 390, y: 90 },   // 回复 (上)
+    { x: 540, y: 230 },  // 审核 (下)
+    { x: 640, y: 90 },   // 完成 (上)
 ];
 
-// 计算两点之间曲线上的位置
+// 浮动粒子配置 (模块级常量，避免重复生成)
+const PARTICLES = Array.from({ length: 30 }, (_, i) => ({
+    id: i,
+    left: Math.random() * 100,
+    top: Math.random() * 100,
+    size: Math.random() * 3 + 1,
+    duration: Math.random() * 20 + 15,
+    delay: Math.random() * -20,
+    opacity: Math.random() * 0.3 + 0.1,
+    color: NODES[i % 5].color,
+}));
+
+// 贝塞尔曲线插值
 const getPositionBetweenNodes = (fromIdx: number, toIdx: number, t: number) => {
     const from = NODE_POSITIONS[fromIdx];
     const to = NODE_POSITIONS[toIdx];
-
-    // 控制点（曲线弯曲）
-    const controlY = (from.y + to.y) / 2 + (fromIdx % 2 === 0 ? 30 : -30);
+    const controlY = (from.y + to.y) / 2 + (fromIdx % 2 === 0 ? 40 : -40);
     const cx = (from.x + to.x) / 2;
-
-    // 二阶贝塞尔曲线
     const x = (1 - t) * (1 - t) * from.x + 2 * (1 - t) * t * cx + t * t * to.x;
     const y = (1 - t) * (1 - t) * from.y + 2 * (1 - t) * t * controlY + t * t * to.y;
-
     return { x, y };
 };
 
@@ -56,8 +79,11 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
     const [password, setPassword] = useState('');
     const [localError, setLocalError] = useState<string | null>(null);
     const [focusedField, setFocusedField] = useState<string | null>(null);
+    const [showServerConfig, setShowServerConfig] = useState(false);
+    const [serverUrl, setServerUrlLocal] = useState(getServerBaseUrl);
+    const [mounted, setMounted] = useState(false);
 
-    // 动画状态 - 使用单一状态对象避免同步问题
+    // 动画状态
     const [animState, setAnimState] = useState({
         currentNode: 0,
         phase: 'processing' as 'processing' | 'moving',
@@ -65,77 +91,79 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
         moveProgress: 0,
     });
 
-    // 动画逻辑 - 使用函数式更新确保状态同步
+    // 入场动画
+    useEffect(() => {
+        const timer = setTimeout(() => setMounted(true), 100);
+        return () => clearTimeout(timer);
+    }, []);
+
+    // 动画逻辑
     useEffect(() => {
         const interval = setInterval(() => {
             setAnimState(prev => {
                 if (prev.phase === 'processing') {
-                    // 在节点处理中 - 进度条增加
                     if (prev.progress >= 100) {
-                        // 处理完成，开始移动到下一节点
-                        return {
-                            ...prev,
-                            phase: 'moving',
-                            progress: 0,
-                            moveProgress: 0,
-                        };
+                        return { ...prev, phase: 'moving', progress: 0, moveProgress: 0 };
                     }
                     return { ...prev, progress: prev.progress + 2 };
                 } else {
-                    // 移动到下一节点
                     if (prev.moveProgress >= 1) {
-                        // 到达下一节点，开始处理
                         const nextNode = (prev.currentNode + 1) % NODES.length;
-                        return {
-                            currentNode: nextNode,
-                            phase: 'processing',
-                            progress: 0,
-                            moveProgress: 0,
-                        };
+                        return { currentNode: nextNode, phase: 'processing', progress: 0, moveProgress: 0 };
                     }
                     return { ...prev, moveProgress: prev.moveProgress + 0.04 };
                 }
             });
         }, 50);
-
         return () => clearInterval(interval);
     }, []);
 
-    // 计算工单位置
+    // 工单位置计算
     const getTicketPosition = useCallback(() => {
         if (animState.phase === 'processing') {
             return NODE_POSITIONS[animState.currentNode];
-        } else {
-            const nextNode = (animState.currentNode + 1) % NODES.length;
-            // 处理从最后节点到第一个节点的特殊情况
-            if (nextNode === 0) {
-                // 从完成节点移出屏幕右侧，然后从左侧进入
-                const t = animState.moveProgress;
-                if (t < 0.5) {
-                    // 移出右侧
-                    const from = NODE_POSITIONS[animState.currentNode];
-                    return { x: from.x + t * 200, y: from.y };
-                } else {
-                    // 从左侧进入
-                    const to = NODE_POSITIONS[0];
-                    return { x: to.x - (1 - t) * 200, y: to.y };
-                }
-            }
-            return getPositionBetweenNodes(animState.currentNode, nextNode, animState.moveProgress);
         }
+        const nextNode = (animState.currentNode + 1) % NODES.length;
+        if (nextNode === 0) {
+            const t = animState.moveProgress;
+            if (t < 0.5) {
+                const from = NODE_POSITIONS[animState.currentNode];
+                return { x: from.x + t * 200, y: from.y };
+            } else {
+                const to = NODE_POSITIONS[0];
+                return { x: to.x - (1 - t) * 200, y: to.y };
+            }
+        }
+        return getPositionBetweenNodes(animState.currentNode, nextNode, animState.moveProgress);
     }, [animState]);
 
     const ticketPos = getTicketPosition();
+    const activeNode = NODES[animState.currentNode];
+
+    // 曲线路径
+    const curvePath = useMemo(() => {
+        const segments: string[] = [];
+        for (let i = 0; i < NODE_POSITIONS.length; i++) {
+            const p = NODE_POSITIONS[i];
+            if (i === 0) {
+                segments.push(`M${p.x},${p.y}`);
+            } else {
+                const prev = NODE_POSITIONS[i - 1];
+                const controlY = (prev.y + p.y) / 2 + ((i - 1) % 2 === 0 ? 40 : -40);
+                const cx = (prev.x + p.x) / 2;
+                segments.push(`Q${cx},${controlY} ${p.x},${p.y}`);
+            }
+        }
+        return segments.join(' ');
+    }, []);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setLocalError(null);
-
         if (!username.trim() || !password.trim()) {
             setLocalError('请输入用户名和密码');
             return;
         }
-
         try {
             await onLogin({ username: username.trim(), password });
         } catch (err) {
@@ -144,219 +172,429 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
     };
 
     const displayError = error || localError;
-    const activeNode = NODES[animState.currentNode];
-
-    // 生成曲线路径
-    const curvePath = (() => {
-        const segments: string[] = [];
-        for (let i = 0; i < NODE_POSITIONS.length; i++) {
-            const p = NODE_POSITIONS[i];
-            if (i === 0) {
-                segments.push(`M${p.x},${p.y}`);
-            } else {
-                const prev = NODE_POSITIONS[i - 1];
-                const controlY = (prev.y + p.y) / 2 + ((i - 1) % 2 === 0 ? 30 : -30);
-                const cx = (prev.x + p.x) / 2;
-                segments.push(`Q${cx},${controlY} ${p.x},${p.y}`);
-            }
-        }
-        return segments.join(' ');
-    })();
 
     return (
-        <div className="flex-1 flex flex-col relative overflow-hidden bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
+        <div className="h-full w-full flex flex-row relative overflow-hidden bg-slate-950">
 
-            {/* ===== 顶部动画区域 ===== */}
-            <div className="h-[240px] relative flex-shrink-0">
+            {/* ===== 左侧面板 - 流水线动画展示 ===== */}
+            <div className="w-[55%] relative overflow-hidden flex flex-col">
+
+                {/* 极光背景 */}
+                <div className="absolute inset-0 pointer-events-none">
+                    <div
+                        className="absolute -top-1/4 -left-1/4 w-[600px] h-[600px] rounded-full blur-[120px] opacity-20"
+                        style={{ background: 'radial-gradient(circle, #6366f1, transparent)', animation: 'aurora1 15s ease-in-out infinite' }}
+                    />
+                    <div
+                        className="absolute -bottom-1/4 -right-1/4 w-[500px] h-[500px] rounded-full blur-[100px] opacity-15"
+                        style={{ background: 'radial-gradient(circle, #8b5cf6, transparent)', animation: 'aurora2 12s ease-in-out infinite alternate' }}
+                    />
+                    <div
+                        className="absolute top-1/3 left-1/3 w-[400px] h-[400px] rounded-full blur-[80px] opacity-10"
+                        style={{ background: 'radial-gradient(circle, #06b6d4, transparent)', animation: 'aurora3 18s ease-in-out infinite' }}
+                    />
+                </div>
+
                 {/* 网格背景 */}
                 <div
-                    className="absolute inset-0 opacity-[0.03]"
+                    className="absolute inset-0 opacity-[0.04] pointer-events-none"
                     style={{
-                        backgroundImage: 'linear-gradient(rgba(99,102,241,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,0.8) 1px, transparent 1px)',
-                        backgroundSize: '30px 30px'
+                        backgroundImage: 'linear-gradient(rgba(99,102,241,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,0.6) 1px, transparent 1px)',
+                        backgroundSize: '40px 40px'
                     }}
                 />
 
+                {/* 浮动粒子 */}
+                {PARTICLES.map(p => (
+                    <div
+                        key={p.id}
+                        className="absolute rounded-full pointer-events-none"
+                        style={{
+                            left: `${p.left}%`,
+                            top: `${p.top}%`,
+                            width: p.size,
+                            height: p.size,
+                            backgroundColor: p.color,
+                            opacity: p.opacity,
+                            animation: `floatParticle ${p.duration}s ease-in-out infinite`,
+                            animationDelay: `${p.delay}s`,
+                        }}
+                    />
+                ))}
+
                 {/* 状态指示器 */}
-                <div className="absolute top-4 left-1/2 -translate-x-1/2 flex items-center gap-3 bg-slate-800/90 backdrop-blur rounded-full px-5 py-2.5 border border-white/10 shadow-lg">
-                    <span className="text-xl">{activeNode.icon}</span>
-                    <span className="text-white font-medium">{activeNode.label}</span>
-                    <div className="w-24 h-2 bg-slate-700 rounded-full overflow-hidden">
+                <div className={`absolute top-6 left-1/2 -translate-x-1/2 flex items-center gap-3 bg-slate-900/80 backdrop-blur-xl rounded-full px-6 py-3 border border-white/10 shadow-2xl z-10 transition-all duration-700 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
+                    <div
+                        className="w-2.5 h-2.5 rounded-full animate-pulse"
+                        style={{ backgroundColor: activeNode.color, boxShadow: `0 0 12px ${activeNode.color}` }}
+                    />
+                    <span className="text-white font-semibold text-sm tracking-wide">{activeNode.label}</span>
+                    <div className="w-32 h-1.5 bg-slate-700/50 rounded-full overflow-hidden">
                         <div
                             className="h-full rounded-full transition-all duration-75"
                             style={{
                                 width: animState.phase === 'processing' ? `${animState.progress}%` : '0%',
-                                backgroundColor: activeNode.color
+                                background: `linear-gradient(90deg, ${activeNode.color}, ${activeNode.lightColor})`,
+                                boxShadow: `0 0 8px ${activeNode.color}60`,
                             }}
                         />
                     </div>
-                    <span className="text-xs text-slate-400 w-8">
-                        {animState.phase === 'processing' ? `${animState.progress}%` : '→'}
+                    <span className="text-xs text-slate-500 font-mono w-10 text-right">
+                        {animState.phase === 'processing' ? `${animState.progress}%` : 'MOVE'}
                     </span>
                 </div>
 
-                {/* SVG 动画层 */}
-                <svg className="absolute inset-0 w-full h-full" viewBox="0 0 800 200" preserveAspectRatio="xMidYMid meet">
-                    <defs>
-                        <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" stopColor="#6366f1" />
-                            <stop offset="25%" stopColor="#06b6d4" />
-                            <stop offset="50%" stopColor="#f59e0b" />
-                            <stop offset="75%" stopColor="#8b5cf6" />
-                            <stop offset="100%" stopColor="#22c55e" />
-                        </linearGradient>
-                        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                            <feGaussianBlur stdDeviation="3" result="blur" />
-                            <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
-                        </filter>
-                    </defs>
+                {/* SVG 流水线 */}
+                <div className="flex-1 flex items-center justify-center px-6">
+                    <svg
+                        className={`w-full max-w-[680px] h-auto transition-all duration-1000 ${mounted ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
+                        viewBox="0 0 730 320"
+                        preserveAspectRatio="xMidYMid meet"
+                    >
+                        <defs>
+                            {/* 路径渐变 */}
+                            <linearGradient id="pathGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stopColor="#6366f1" />
+                                <stop offset="25%" stopColor="#06b6d4" />
+                                <stop offset="50%" stopColor="#f59e0b" />
+                                <stop offset="75%" stopColor="#8b5cf6" />
+                                <stop offset="100%" stopColor="#22c55e" />
+                            </linearGradient>
 
-                    {/* 虚线路径 */}
-                    <path
-                        d={curvePath}
-                        fill="none"
-                        stroke="url(#pathGradient)"
-                        strokeWidth="2"
-                        strokeDasharray="8,4"
-                        opacity="0.4"
-                    />
+                            {/* 光晕滤镜 */}
+                            <filter id="nodeGlow" x="-100%" y="-100%" width="300%" height="300%">
+                                <feGaussianBlur stdDeviation="6" result="blur" />
+                                <feMerge>
+                                    <feMergeNode in="blur" />
+                                    <feMergeNode in="SourceGraphic" />
+                                </feMerge>
+                            </filter>
 
-                    {/* 处理节点 */}
-                    {NODES.map((node, idx) => {
-                        const pos = NODE_POSITIONS[idx];
-                        const isActive = animState.currentNode === idx && animState.phase === 'processing';
+                            <filter id="orbGlow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feGaussianBlur stdDeviation="4" result="blur" />
+                                <feMerge>
+                                    <feMergeNode in="blur" />
+                                    <feMergeNode in="SourceGraphic" />
+                                </feMerge>
+                            </filter>
 
-                        return (
-                            <g key={idx}>
-                                {/* 节点光晕（活跃时） */}
-                                {isActive && (
-                                    <circle cx={pos.x} cy={pos.y} r="38" fill={node.color} opacity="0.15">
-                                        <animate attributeName="r" values="32;42;32" dur="1s" repeatCount="indefinite" />
-                                    </circle>
-                                )}
+                            {/* 各节点径向渐变 */}
+                            {NODES.map((node, idx) => (
+                                <radialGradient key={`grad-${idx}`} id={`nodeGrad${idx}`}>
+                                    <stop offset="0%" stopColor={node.lightColor} />
+                                    <stop offset="100%" stopColor={node.color} />
+                                </radialGradient>
+                            ))}
+                        </defs>
 
-                                {/* 节点圆 */}
-                                <circle
-                                    cx={pos.x}
-                                    cy={pos.y}
-                                    r="26"
-                                    fill={isActive ? node.color : '#1e293b'}
-                                    stroke={node.color}
-                                    strokeWidth="2"
-                                    filter={isActive ? 'url(#glow)' : ''}
-                                    style={{ transition: 'fill 0.3s' }}
-                                />
+                        {/* 底层路径光晕 */}
+                        <path
+                            d={curvePath}
+                            fill="none"
+                            stroke="url(#pathGrad)"
+                            strokeWidth="6"
+                            opacity="0.08"
+                            strokeLinecap="round"
+                        />
 
-                                {/* 节点图标 */}
-                                <text x={pos.x} y={pos.y + 6} textAnchor="middle" fontSize="18">{node.icon}</text>
+                        {/* 主路径 - 流动虚线 */}
+                        <path
+                            d={curvePath}
+                            fill="none"
+                            stroke="url(#pathGrad)"
+                            strokeWidth="2"
+                            strokeDasharray="8,16"
+                            opacity="0.4"
+                            strokeLinecap="round"
+                            style={{ animation: 'dashFlow 1.5s linear infinite' }}
+                        />
 
-                                {/* 节点标签 */}
-                                <text
-                                    x={pos.x}
-                                    y={pos.y + 50}
-                                    textAnchor="middle"
-                                    fill={isActive ? '#fff' : '#64748b'}
-                                    fontSize="12"
-                                    fontWeight={isActive ? '600' : '400'}
-                                >
-                                    {node.label}
-                                </text>
-                            </g>
-                        );
-                    })}
+                        {/* 路径上的流动光点 */}
+                        <circle r="3" fill="#6366f1" opacity="0.6" filter="url(#orbGlow)">
+                            <animateMotion dur="6s" repeatCount="indefinite" path={curvePath} />
+                        </circle>
+                        <circle r="2" fill="#06b6d4" opacity="0.5">
+                            <animateMotion dur="6s" repeatCount="indefinite" path={curvePath} begin="2s" />
+                        </circle>
+                        <circle r="2" fill="#8b5cf6" opacity="0.4">
+                            <animateMotion dur="6s" repeatCount="indefinite" path={curvePath} begin="4s" />
+                        </circle>
 
-                    {/* 移动的工单 */}
-                    <g transform={`translate(${ticketPos.x - 16}, ${ticketPos.y - 20})`}>
-                        {/* 阴影 */}
-                        <rect x="3" y="3" width="32" height="40" rx="4" fill="rgba(0,0,0,0.4)" />
-                        {/* 工单主体 */}
-                        <rect x="0" y="0" width="32" height="40" rx="4" fill="#0f172a" stroke={activeNode.color} strokeWidth="2" />
-                        {/* 标题栏 */}
-                        <rect x="0" y="0" width="32" height="11" rx="4" fill={activeNode.color} />
-                        <rect x="0" y="7" width="32" height="4" fill={activeNode.color} />
-                        {/* 内容线 */}
-                        <line x1="5" y1="18" x2="27" y2="18" stroke="#475569" strokeWidth="2" strokeLinecap="round" />
-                        <line x1="5" y1="25" x2="22" y2="25" stroke="#475569" strokeWidth="2" strokeLinecap="round" />
-                        <line x1="5" y1="32" x2="17" y2="32" stroke="#475569" strokeWidth="2" strokeLinecap="round" />
+                        {/* 处理节点 */}
+                        {NODES.map((node, idx) => {
+                            const pos = NODE_POSITIONS[idx];
+                            const isActive = animState.currentNode === idx && animState.phase === 'processing';
+                            const isPassed = idx < animState.currentNode ||
+                                (idx === animState.currentNode && animState.phase === 'moving');
 
-                        {/* 处理动画（活跃时闪烁） */}
+                            return (
+                                <g key={idx}>
+                                    {/* 脉冲环 (活跃时，三层波纹) */}
+                                    {isActive && (
+                                        <>
+                                            <circle cx={pos.x} cy={pos.y} r="28" fill="none" stroke={node.color} strokeWidth="2" opacity="0.6">
+                                                <animate attributeName="r" values="28;52" dur="1.5s" repeatCount="indefinite" />
+                                                <animate attributeName="opacity" values="0.6;0" dur="1.5s" repeatCount="indefinite" />
+                                            </circle>
+                                            <circle cx={pos.x} cy={pos.y} r="28" fill="none" stroke={node.color} strokeWidth="1.5" opacity="0.4">
+                                                <animate attributeName="r" values="28;52" dur="1.5s" repeatCount="indefinite" begin="0.5s" />
+                                                <animate attributeName="opacity" values="0.4;0" dur="1.5s" repeatCount="indefinite" begin="0.5s" />
+                                            </circle>
+                                            <circle cx={pos.x} cy={pos.y} r="28" fill="none" stroke={node.lightColor} strokeWidth="1" opacity="0.3">
+                                                <animate attributeName="r" values="28;52" dur="1.5s" repeatCount="indefinite" begin="1s" />
+                                                <animate attributeName="opacity" values="0.3;0" dur="1.5s" repeatCount="indefinite" begin="1s" />
+                                            </circle>
+                                        </>
+                                    )}
+
+                                    {/* 节点外环光晕 */}
+                                    <circle
+                                        cx={pos.x} cy={pos.y} r="34"
+                                        fill={isActive ? node.color : 'transparent'}
+                                        opacity={isActive ? 0.12 : 0}
+                                        style={{ transition: 'all 0.5s ease' }}
+                                    />
+
+                                    {/* 节点主体圆 */}
+                                    <circle
+                                        cx={pos.x} cy={pos.y} r="28"
+                                        fill={isActive || isPassed ? `url(#nodeGrad${idx})` : '#0f172a'}
+                                        stroke={node.color}
+                                        strokeWidth={isActive ? 2.5 : 1.5}
+                                        filter={isActive ? 'url(#nodeGlow)' : ''}
+                                        style={{ transition: 'fill 0.4s, stroke-width 0.3s' }}
+                                    />
+
+                                    {/* 内环装饰 */}
+                                    <circle
+                                        cx={pos.x} cy={pos.y} r="22"
+                                        fill="none"
+                                        stroke={isActive ? 'rgba(255,255,255,0.2)' : 'rgba(255,255,255,0.05)'}
+                                        strokeWidth="1"
+                                        strokeDasharray="4,4"
+                                        style={{ transition: 'stroke 0.3s' }}
+                                    />
+
+                                    {/* 节点图标 (SVG icon) */}
+                                    <svg
+                                        x={pos.x - 11} y={pos.y - 11}
+                                        width="22" height="22"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke={isActive || isPassed ? 'white' : '#64748b'}
+                                        strokeWidth="1.8"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                    >
+                                        <path d={NODE_ICON_PATHS[idx]} />
+                                    </svg>
+
+                                    {/* 节点标签 (上排节点标签在下方，下排节点标签在上方) */}
+                                    <text
+                                        x={pos.x}
+                                        y={pos.y + (idx % 2 === 0 ? 52 : -44)}
+                                        textAnchor="middle"
+                                        fill={isActive ? '#fff' : isPassed ? '#94a3b8' : '#475569'}
+                                        fontSize="13"
+                                        fontWeight={isActive ? '600' : '400'}
+                                        fontFamily="Inter, system-ui, sans-serif"
+                                        style={{ transition: 'fill 0.3s' }}
+                                    >
+                                        {node.label}
+                                    </text>
+                                </g>
+                            );
+                        })}
+
+                        {/* 移动的能量球 */}
+                        <g filter="url(#orbGlow)">
+                            {/* 外层光晕 */}
+                            <circle cx={ticketPos.x} cy={ticketPos.y} r="16" fill={activeNode.color} opacity="0.12" />
+                            {/* 中层光晕 */}
+                            <circle cx={ticketPos.x} cy={ticketPos.y} r="10" fill={activeNode.color} opacity="0.3" />
+                            {/* 核心 */}
+                            <circle cx={ticketPos.x} cy={ticketPos.y} r="6" fill={activeNode.lightColor} />
+                            {/* 高光点 */}
+                            <circle cx={ticketPos.x - 2} cy={ticketPos.y - 2} r="2" fill="white" opacity="0.8" />
+                        </g>
+
+                        {/* 处理中闪烁环 */}
                         {animState.phase === 'processing' && (
-                            <rect x="-2" y="-2" width="36" height="44" rx="6" fill="none" stroke={activeNode.color} strokeWidth="2" opacity="0.5">
-                                <animate attributeName="opacity" values="0.5;0.2;0.5" dur="0.8s" repeatCount="indefinite" />
-                            </rect>
+                            <circle
+                                cx={ticketPos.x} cy={ticketPos.y} r="8"
+                                fill="none" stroke={activeNode.lightColor} strokeWidth="1.5"
+                            >
+                                <animate attributeName="r" values="8;18;8" dur="1s" repeatCount="indefinite" />
+                                <animate attributeName="opacity" values="0.6;0.1;0.6" dur="1s" repeatCount="indefinite" />
+                            </circle>
                         )}
-                    </g>
-                </svg>
+                    </svg>
+                </div>
+
+                {/* 品牌标识 */}
+                <div className={`text-center pb-8 transition-all duration-700 delay-300 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+                    <h2 className="text-2xl font-bold bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                        FD-AutoPilot
+                    </h2>
+                    <p className="text-slate-500 text-sm mt-1">智能工单自动化处理平台</p>
+                </div>
             </div>
 
-            {/* ===== 登录卡片区域 ===== */}
-            <div className="flex-1 flex items-start justify-center px-6 pt-2 pb-6">
-                <div className="w-full max-w-sm">
+            {/* ===== 分割线 ===== */}
+            <div className="w-px relative flex-shrink-0">
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-transparent" />
+            </div>
+
+            {/* ===== 右侧面板 - 登录表单 ===== */}
+            <div className="flex-1 flex items-center justify-center relative overflow-hidden bg-slate-900/50">
+                {/* 右侧微弱背景光 */}
+                <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] rounded-full blur-[100px] opacity-[0.05] pointer-events-none" style={{ background: '#6366f1' }} />
+
+                <div className={`w-full max-w-sm px-8 transition-all duration-700 delay-200 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                     {/* Logo */}
-                    <div className="text-center mb-4">
-                        <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 shadow-lg shadow-indigo-500/30 mb-2">
-                            <span className="text-white text-lg font-black">FD</span>
+                    <div className="text-center mb-8">
+                        <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-500 via-purple-500 to-cyan-500 shadow-2xl shadow-indigo-500/25 mb-4">
+                            <span className="text-white text-xl font-black tracking-tight">FD</span>
                         </div>
-                        <h1 className="text-lg font-bold text-white">FD-AutoPilot</h1>
-                        <p className="text-slate-500 text-xs">智能工单自动化处理平台</p>
+                        <h1 className="text-2xl font-bold text-white mb-1">欢迎回来</h1>
+                        <p className="text-slate-500 text-sm">登录以启动工单处理流水线</p>
                     </div>
 
-                    {/* 卡片 */}
-                    <div className="backdrop-blur-xl bg-slate-800/80 rounded-2xl border border-white/10 p-5 shadow-xl">
-                        <form onSubmit={handleSubmit} className="space-y-4">
+                    {/* 玻璃质感卡片 */}
+                    <div className="backdrop-blur-2xl bg-white/[0.04] rounded-3xl border border-white/[0.08] p-7 shadow-2xl relative overflow-hidden">
+                        {/* 顶部高光线 */}
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+
+                        <form onSubmit={handleSubmit} className="space-y-5">
+                            {/* 错误提示 */}
                             {displayError && (
-                                <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-2.5 text-red-300 text-sm flex items-center gap-2">
-                                    <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01" />
-                                    </svg>
-                                    {displayError}
+                                <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-3 flex items-center gap-2.5">
+                                    <div className="flex-shrink-0 w-8 h-8 bg-red-500/20 rounded-lg flex items-center justify-center">
+                                        <svg className="w-4 h-4 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01" />
+                                        </svg>
+                                    </div>
+                                    <span className="text-red-300 text-sm">{displayError}</span>
                                 </div>
                             )}
 
-                            <div>
-                                <label className="text-slate-400 text-xs font-medium mb-1 block">用户名</label>
-                                <div className={`relative ${focusedField === 'username' ? 'z-10' : ''}`}>
-                                    <div className={`absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg opacity-0 blur transition-opacity ${focusedField === 'username' ? 'opacity-50' : ''}`} />
-                                    <input
-                                        type="text"
-                                        value={username}
-                                        onChange={(e) => setUsername(e.target.value)}
-                                        onFocus={() => setFocusedField('username')}
-                                        onBlur={() => setFocusedField(null)}
-                                        placeholder="请输入用户名"
-                                        className="relative w-full px-3 py-2.5 bg-slate-900/80 border border-white/10 rounded-lg text-white text-sm placeholder-slate-500 focus:outline-none"
-                                    />
+                            {/* 用户名输入 */}
+                            <div className="space-y-1.5">
+                                <label className="text-slate-400 text-xs font-medium pl-1 block">用户名</label>
+                                <div className={`relative group ${focusedField === 'username' ? 'z-10' : ''}`}>
+                                    <div className={`absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-xl opacity-0 blur transition-opacity duration-300 ${focusedField === 'username' ? 'opacity-50' : 'group-hover:opacity-20'}`} />
+                                    <div className="relative flex items-center">
+                                        <div className="absolute left-3.5 text-slate-500">
+                                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                            </svg>
+                                        </div>
+                                        <input
+                                            type="text"
+                                            value={username}
+                                            onChange={(e) => setUsername(e.target.value)}
+                                            onFocus={() => setFocusedField('username')}
+                                            onBlur={() => setFocusedField(null)}
+                                            placeholder="请输入用户名"
+                                            className="relative w-full pl-10 pr-4 py-3 bg-slate-900/60 border border-white/10 rounded-xl text-white text-sm placeholder-slate-600 focus:outline-none focus:border-transparent transition-all duration-300"
+                                        />
+                                    </div>
                                 </div>
                             </div>
 
-                            <div>
-                                <label className="text-slate-400 text-xs font-medium mb-1 block">密码</label>
-                                <div className={`relative ${focusedField === 'password' ? 'z-10' : ''}`}>
-                                    <div className={`absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg opacity-0 blur transition-opacity ${focusedField === 'password' ? 'opacity-50' : ''}`} />
-                                    <input
-                                        type="password"
-                                        value={password}
-                                        onChange={(e) => setPassword(e.target.value)}
-                                        onFocus={() => setFocusedField('password')}
-                                        onBlur={() => setFocusedField(null)}
-                                        placeholder="请输入密码"
-                                        className="relative w-full px-3 py-2.5 bg-slate-900/80 border border-white/10 rounded-lg text-white text-sm placeholder-slate-500 focus:outline-none"
-                                    />
+                            {/* 密码输入 */}
+                            <div className="space-y-1.5">
+                                <label className="text-slate-400 text-xs font-medium pl-1 block">密码</label>
+                                <div className={`relative group ${focusedField === 'password' ? 'z-10' : ''}`}>
+                                    <div className={`absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl opacity-0 blur transition-opacity duration-300 ${focusedField === 'password' ? 'opacity-50' : 'group-hover:opacity-20'}`} />
+                                    <div className="relative flex items-center">
+                                        <div className="absolute left-3.5 text-slate-500">
+                                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                            </svg>
+                                        </div>
+                                        <input
+                                            type="password"
+                                            value={password}
+                                            onChange={(e) => setPassword(e.target.value)}
+                                            onFocus={() => setFocusedField('password')}
+                                            onBlur={() => setFocusedField(null)}
+                                            placeholder="请输入密码"
+                                            className="relative w-full pl-10 pr-4 py-3 bg-slate-900/60 border border-white/10 rounded-xl text-white text-sm placeholder-slate-600 focus:outline-none focus:border-transparent transition-all duration-300"
+                                        />
+                                    </div>
                                 </div>
                             </div>
 
+                            {/* 登录按钮 */}
                             <button
                                 type="submit"
                                 disabled={isLoading || !username.trim() || !password.trim()}
-                                className="w-full py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-medium rounded-lg transition-all disabled:opacity-50 text-sm"
+                                className="w-full py-3 bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-600 bg-[length:200%_100%] hover:from-indigo-500 hover:via-purple-500 hover:to-indigo-500 text-white font-semibold text-sm rounded-xl transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 flex items-center justify-center gap-2 relative overflow-hidden group mt-1"
                             >
-                                {isLoading ? '登录中...' : '🚀 启动流水线'}
+                                {/* Shimmer 光效 */}
+                                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                                    <div
+                                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
+                                        style={{ animation: 'shimmer 2s linear infinite' }}
+                                    />
+                                </div>
+                                {isLoading ? (
+                                    <>
+                                        <svg className="animate-spin w-4 h-4 text-white/80" fill="none" viewBox="0 0 24 24">
+                                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                                        </svg>
+                                        <span>登录中...</span>
+                                    </>
+                                ) : (
+                                    <>
+                                        <span>启动流水线</span>
+                                        <svg className="w-4 h-4 text-white/80 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                        </svg>
+                                    </>
+                                )}
                             </button>
                         </form>
 
-                        <div className="mt-4 pt-4 border-t border-white/10 text-center">
+                        {/* 服务器配置 */}
+                        <div className="mt-5 pt-5 border-t border-white/[0.06]">
+                            <button
+                                type="button"
+                                onClick={() => setShowServerConfig(!showServerConfig)}
+                                className="w-full flex items-center justify-center gap-1.5 text-slate-500 hover:text-slate-300 text-[11px] transition-colors"
+                            >
+                                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                服务器配置
+                                <svg className={`w-3 h-3 transition-transform duration-300 ${showServerConfig ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            {showServerConfig && (
+                                <div className="mt-3 space-y-2">
+                                    <label className="text-slate-600 text-[10px] font-medium uppercase tracking-wider block">Server URL</label>
+                                    <input
+                                        type="text"
+                                        value={serverUrl}
+                                        onChange={(e) => {
+                                            setServerUrlLocal(e.target.value);
+                                            setServerBaseUrl(e.target.value);
+                                        }}
+                                        className="w-full px-3 py-2 bg-slate-900/60 border border-white/10 rounded-lg text-slate-300 text-xs font-mono placeholder-slate-600 focus:outline-none focus:border-indigo-500/50 transition-colors"
+                                        placeholder="http://localhost:9988"
+                                    />
+                                </div>
+                            )}
+                        </div>
+
+                        {/* 注册链接 */}
+                        <div className="mt-4 text-center">
                             <button onClick={onSwitchToRegister} className="text-slate-500 hover:text-white text-xs transition-colors">
-                                还没有账号? <span className="text-indigo-400">注册</span>
+                                还没有账号? <span className="text-indigo-400 hover:text-indigo-300 transition-colors">注册</span>
                             </button>
                         </div>
                     </div>

@@ -1,20 +1,19 @@
 import { useState, useEffect } from 'react';
 import { invoke } from '@tauri-apps/api/core';
 import { Settings, NotebookLMConfig } from '../types';
+import { getServerBaseUrl, setServerBaseUrl } from '../services/serverApi';
 
 export function useSettings() {
-  const [apiKey, setApiKey] = useState("");
-  const [outputDir, setOutputDir] = useState("data");
-  const [syncStartDate, setSyncStartDate] = useState("2025-01");
+  const [serverUrl, setServerUrl] = useState(getServerBaseUrl);
 
-  // MQ 配置状态（扁平化）
+  // MQ 配置
   const [mqHost, setMqHost] = useState('localhost');
   const [mqPort, setMqPort] = useState(5672);
   const [mqUsername, setMqUsername] = useState('guest');
   const [mqPassword, setMqPassword] = useState('guest');
   const [translationLang, setTranslationLang] = useState('zh-CN');
 
-  // NotebookLM配置状态
+  // NotebookLM 配置
   const [notebookLMConfig, setNotebookLMConfig] = useState<NotebookLMConfig>({
     cookie: '',
     atToken: '',
@@ -27,10 +26,6 @@ export function useSettings() {
   // 加载配置
   useEffect(() => {
     invoke<Settings>("load_settings_cmd").then((settings) => {
-      if (settings.api_key) setApiKey(settings.api_key);
-      if (settings.output_dir) setOutputDir(settings.output_dir);
-      if (settings.sync_start_date) setSyncStartDate(settings.sync_start_date);
-      // MQ 配置
       if (settings.mq_host) setMqHost(settings.mq_host);
       if (settings.mq_port) setMqPort(settings.mq_port);
       if (settings.mq_username) setMqUsername(settings.mq_username);
@@ -49,13 +44,10 @@ export function useSettings() {
     }
   }, []);
 
-  // 自动保存设置（含 MQ 配置）
+  // 自动保存设置
   useEffect(() => {
     const timeout = setTimeout(() => {
-      invoke("save_settings_cmd", { 
-        apiKey, 
-        outputDir, 
-        syncStartDate,
+      invoke("save_settings_cmd", {
         mqHost,
         mqPort,
         mqUsername,
@@ -64,7 +56,12 @@ export function useSettings() {
       }).catch(console.error);
     }, 500);
     return () => clearTimeout(timeout);
-  }, [apiKey, outputDir, syncStartDate, mqHost, mqPort, mqUsername, mqPassword, translationLang]);
+  }, [mqHost, mqPort, mqUsername, mqPassword, translationLang]);
+
+  // serverUrl 变更时同步到 serverApi 模块
+  useEffect(() => {
+    setServerBaseUrl(serverUrl);
+  }, [serverUrl]);
 
   // 自动保存 NotebookLM 配置
   useEffect(() => {
@@ -79,9 +76,7 @@ export function useSettings() {
   }, [notebookLMConfig]);
 
   return {
-    apiKey, setApiKey,
-    outputDir, setOutputDir,
-    syncStartDate, setSyncStartDate,
+    serverUrl, setServerUrl,
     mqHost, setMqHost,
     mqPort, setMqPort,
     mqUsername, setMqUsername,
@@ -90,4 +85,3 @@ export function useSettings() {
     notebookLMConfig, setNotebookLMConfig
   };
 }
-

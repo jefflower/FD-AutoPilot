@@ -22,6 +22,7 @@ The data model is centered around the `Ticket` entity.
 - **TicketReply**: Stores proposed reply in both languages (`zhReply`, `targetReply`). Note: `ReplyRequest` DTO only accepts `zhReply` and `targetReply` (no `replyLang` field).
 - **TicketAudit**: Audit history records (`auditResult`: PASS/REJECT, linked to a reply).
 - **SysUser**: Users with role (ADMIN/USER) and status (PENDING/APPROVED/REJECTED).
+- **SystemConfig**: System configuration key-value pairs (`auto_reply_enabled`, `wecom_webhook_url`, `wecom_notify_enabled`).
 - **SyncConfig**: Sync configuration (cron expression, enabled flag).
 - **SyncLog**: Sync execution history (status, trigger type, ticket count, timestamps).
 
@@ -38,8 +39,26 @@ The data model is centered around the `Ticket` entity.
 #### Task Distribution (`TicketService.java` + `MqPublisherService.java`)
 State changes trigger MQ messages via `MqPublisherService`:
 - `PENDING_TRANS` → Send to `q.ticket.translation` (routing key: `ticket.task.translate`)
-- `PENDING_REPLY` → Send to `q.ticket.reply` (routing key: `ticket.task.reply`)
+- `PENDING_REPLY` → Send to `q.ticket.reply` (routing key: `ticket.task.reply`, includes `auditRemark` if present)
 - `PENDING_AUDIT` → Send to `q.ticket.audit` (routing key: `ticket.task.audit`)
+
+#### Audit & Push Flow
+- **PASS + auto-reply OFF** → `APPROVED` (enters push queue for manual push)
+- **PASS + auto-reply ON** → `COMPLETED` (auto-push to Freshdesk via `ReplyPushService`)
+- **REJECT** → `PENDING_REPLY` (saves `lastAuditRemark` on Ticket, re-enters MQ reply flow with audit feedback injected into AI prompt)
+- **Push**: `pushApprovedReply()` / `batchPushApprovedReplies()` push selected reply to Freshdesk and transition to `COMPLETED`
+
+#### System Configuration (`SystemConfigService.java`)
+Runtime config stored in `SystemConfig` entity (key-value pairs):
+- `auto_reply_enabled` — Auto-push to Freshdesk after audit pass (default: `false`)
+- `wecom_webhook_url` — WeChat Work webhook URL
+- `wecom_notify_enabled` — Enable WeChat Work notifications (default: `false`)
+
+#### WeChat Work Notifications (`WeChatWorkNotifyService.java`)
+Async webhook notifications on key events:
+- Audit pass / reject
+- Reply pushed to Freshdesk
+- MQ auto-reply completed
 
 #### Sync Configuration (`SyncConfigService.java`)
 - Manages sync settings (cron expression, enabled flag)
@@ -57,6 +76,15 @@ State changes trigger MQ messages via `MqPublisherService`:
 - `POST /api/v1/tickets/{id}/ai-translate` — Manual trigger AI translation (sends MQ message)
 - `POST /api/v1/tickets/{id}/ai-reply` — Manual trigger AI reply (sends MQ message)
 - `POST /api/v1/tickets/{id}/valid` — Update ticket validity
+- `POST /api/v1/tickets/{id}/push-reply` — Push approved ticket reply to Freshdesk
+- `POST /api/v1/tickets/batch-push` — Batch push approved tickets
+
+#### `ConfigController.java`
+- `GET /api/v1/config/auto-reply` — Get auto-reply enabled status
+- `PUT /api/v1/config/auto-reply` — Set auto-reply enabled
+- `GET /api/v1/config/wecom-webhook` — Get WeChat Work webhook config
+- `PUT /api/v1/config/wecom-webhook` — Set WeChat Work webhook config
+- `POST /api/v1/config/wecom-webhook/test` — Send test notification
 
 #### `AdminController.java`
 - `POST /api/v1/sync/freshdesk` — Manual sync trigger
@@ -64,12 +92,26 @@ State changes trigger MQ messages via `MqPublisherService`:
 - `PUT /api/v1/sync/config` — Update sync configuration
 - `GET /api/v1/sync/status` — Get sync status
 - `GET /api/v1/sync/logs` — Get sync execution logs
+- `GET /api/v1/admin/users` — List all users (paginated, supports status/username filters)
 - `GET /api/v1/admin/users/pending` — List pending users
 - `POST /api/v1/admin/users/{id}/approve` — Approve/reject user
+- `PUT /api/v1/admin/users/{id}/role` — Update user role (ADMIN/USER)
+- `POST /api/v1/admin/users/{id}/reset-password` — Reset user password
 
 #### `AuthController.java`
 - `POST /api/v1/auth/login` — Login (returns JWT token)
 - `POST /api/v1/auth/register` — Register (initial status: PENDING)
+
+#### User Management (`AuthService.java`)
+Handles authentication, registration, and user lifecycle management:
+- **Login**: Validates credentials (BCrypt) + status check (must be `APPROVED`) + JWT token generation
+- **Register**: Creates user with `role=USER`, `status=PENDING`
+- **Paginated Query**: `getAllUsers(status, username, pageable)` — supports optional status filter, username fuzzy search (case-insensitive), sorted by `createdAt` descending
+- **Approval**: `approveUser(id, action)` — sets status to `APPROVED` or `REJECTED`
+- **Role Management**: `updateUserRole(id, role)` — changes user role between `ADMIN` and `USER`
+- **Password Reset**: `resetPassword(id, newPassword)` — BCrypt re-encodes and saves
+
+**Note**: `SysUser.password` is annotated with `@JsonIgnore` to prevent password hash leakage in API responses.
 
 #### `RequestController.java`
 - `POST /api/requests` — Log raw client request (debug)

@@ -20,8 +20,12 @@ pub struct Conversation {
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub enum TicketStatus {
     PendingTrans,
+    Translating,
     PendingReply,
+    Replying,
     PendingAudit,
+    Auditing,
+    Approved,
     Completed,
     #[serde(untagged)]
     Unknown(serde_json::Value),
@@ -31,8 +35,12 @@ impl std::fmt::Display for TicketStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Self::PendingTrans => write!(f, "PENDING_TRANS"),
+            Self::Translating => write!(f, "TRANSLATING"),
             Self::PendingReply => write!(f, "PENDING_REPLY"),
+            Self::Replying => write!(f, "REPLYING"),
             Self::PendingAudit => write!(f, "PENDING_AUDIT"),
+            Self::Auditing => write!(f, "AUDITING"),
+            Self::Approved => write!(f, "APPROVED"),
             Self::Completed => write!(f, "COMPLETED"),
             Self::Unknown(v) => write!(f, "{}", v),
         }
@@ -69,9 +77,6 @@ pub struct Ticket {
     pub conversations: Vec<Conversation>,
     #[serde(default)]
     pub available_langs: Vec<String>,
-}
-
-#[derive(Debug, Serialize, Deserialize)]
-pub struct SyncState {
-    pub last_updated_at: Option<String>,
+    #[serde(default)]
+    pub last_audit_remark: Option<String>,
 }

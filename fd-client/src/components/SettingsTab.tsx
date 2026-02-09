@@ -1,14 +1,10 @@
-import React, { useState } from 'react';
-import { open } from '@tauri-apps/plugin-dialog';
+import React, { useState, useEffect, useCallback } from 'react';
 import { NotebookLMConfig } from '../types';
+import { configApi } from '../services/serverApi';
 
 interface SettingsTabProps {
-    apiKey: string;
-    setApiKey: (s: string) => void;
-    outputDir: string;
-    setOutputDir: (s: string) => void;
-    syncStartDate: string;
-    setSyncStartDate: (s: string) => void;
+    serverUrl: string;
+    setServerUrl: (s: string) => void;
     mqHost: string;
     setMqHost: (s: string) => void;
     mqPort: number;
@@ -21,30 +17,68 @@ interface SettingsTabProps {
     setTranslationLang: (s: string) => void;
     notebookLMConfig: NotebookLMConfig;
     setNotebookLMConfig: React.Dispatch<React.SetStateAction<NotebookLMConfig>>;
-    setLogs: (updater: (prev: string[]) => string[]) => void;
 }
 
 const SettingsTab: React.FC<SettingsTabProps> = ({
-    apiKey, setApiKey,
-    outputDir, setOutputDir,
-    syncStartDate, setSyncStartDate,
+    serverUrl, setServerUrl,
     mqHost, setMqHost,
     mqPort, setMqPort,
     mqUsername, setMqUsername,
     mqPassword, setMqPassword,
     translationLang, setTranslationLang,
     notebookLMConfig, setNotebookLMConfig,
-    setLogs
 }) => {
-    const [showApiKey, setShowApiKey] = useState(false);
-    async function selectFolder() {
+    const [toasts, setToasts] = useState<string[]>([]);
+
+    // 服务端配置状态
+    const [wecomUrl, setWecomUrl] = useState('');
+    const [wecomEnabled, setWecomEnabled] = useState(false);
+    const [wecomLoading, setWecomLoading] = useState(false);
+    const [wecomTesting, setWecomTesting] = useState(false);
+    const [configLoaded, setConfigLoaded] = useState(false);
+
+    const loadServerConfig = useCallback(async () => {
         try {
-            const folder = await open({ directory: true, multiple: false, title: "Select Output Directory" });
-            if (folder) setOutputDir(folder as string);
-        } catch (error) {
-            console.error(error);
+            const wecom = await configApi.getWeComWebhook();
+            setWecomUrl(wecom.url || '');
+            setWecomEnabled(wecom.enabled);
+            setConfigLoaded(true);
+        } catch {
+            // 服务端不可用时静默忽略
         }
-    }
+    }, []);
+
+    useEffect(() => {
+        loadServerConfig();
+    }, [loadServerConfig]);
+
+    const handleSaveWecom = async () => {
+        setWecomLoading(true);
+        try {
+            await configApi.setWeComWebhook(wecomUrl, wecomEnabled);
+            setToasts(prev => [...prev, '企业微信配置已保存']);
+        } catch (err) {
+            setToasts(prev => [...prev, `保存失败: ${(err as Error).message}`]);
+        } finally {
+            setWecomLoading(false);
+        }
+    };
+
+    const handleTestWecom = async () => {
+        setWecomTesting(true);
+        try {
+            const result = await configApi.testWeComWebhook();
+            if (result.success) {
+                setToasts(prev => [...prev, '企业微信测试消息发送成功']);
+            } else {
+                setToasts(prev => [...prev, '企业微信测试消息发送失败']);
+            }
+        } catch (err) {
+            setToasts(prev => [...prev, `测试失败: ${(err as Error).message}`]);
+        } finally {
+            setWecomTesting(false);
+        }
+    };
 
     const copyExtractScript = () => {
         const script = `/**
@@ -52,7 +86,7 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
  */
 (function() {
   console.log('%c🚀 NotebookLM 配置自动提取工具已启动', 'color: #667eea; font-size: 16px; font-weight: bold;');
-  
+
   const extractedConfig = {
     cookie: document.cookie,
     atToken: null,
@@ -62,7 +96,7 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
     sourceIds: []
   };
 
-  const urlMatch = window.location.pathname.match(/\/notebook\/([a-f0-9-]+)/);
+  const urlMatch = window.location.pathname.match(/\\/notebook\\/([a-f0-9-]+)/);
   if (urlMatch) extractedConfig.notebookId = urlMatch[1];
 
   const originalXHROpen = XMLHttpRequest.prototype.open;
@@ -79,13 +113,11 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
         const outerArr = JSON.parse(fReqStr);
         if (outerArr[1]) {
           const innerArr = JSON.parse(outerArr[1]);
-          // innerArr[0][0] 通常是 source ids 列表 [[["id1"]], [["id2"]]...]
           const sources = innerArr[0][0];
           if (Array.isArray(sources)) {
             extractedConfig.sourceIds = sources.map(s => s[0]?.[0]).filter(id => typeof id === 'string');
             console.log('%c🎯 捕获到 ' + extractedConfig.sourceIds.length + ' 个文档源!', 'color: #ecc94b; font-weight: bold;');
           }
-          // 尝试提取对话 ID 或笔记本相关 UUID
           const notebookUuid = innerArr[0][innerArr[0].length - 5];
           if (typeof notebookUuid === 'string' && notebookUuid.includes('-')) {
              console.log('%c📓 捕获到 Notebook 上下文!', 'color: #4299e1; font-weight: bold;');
@@ -139,7 +171,7 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
     console.log('%c═══════════════════════════════════════', 'color: #667eea; font-weight: bold;');
     console.log('%c🎉 配置信息提取完成!', 'color: #48bb78; font-size: 18px; font-weight: bold;');
     console.log('%c═══════════════════════════════════════', 'color: #667eea; font-weight: bold;');
-    
+
     const configJson = {
       notebookId: extractedConfig.notebookId,
       fSid: extractedConfig.fSid,
@@ -147,16 +179,16 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
       cookie: extractedConfig.cookie,
       sourceIds: extractedConfig.sourceIds
     };
-    
+
     console.log('');
     console.log('%c📋 配置信息 (已自动复制):', 'color: #4299e1; font-size: 14px; font-weight: bold;');
     console.log(JSON.stringify(configJson, null, 2));
     console.log('');
-    
+
     navigator.clipboard.writeText(JSON.stringify(configJson, null, 2)).then(() => {
       console.log('%c✅ 已复制到剪贴板!', 'color: #48bb78; font-weight: bold;');
     });
-    
+
     window.NOTEBOOKLM_CONFIG = configJson;
   }
 
@@ -164,10 +196,9 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
 })();`;
 
         navigator.clipboard.writeText(script).then(() => {
-            setLogs(prev => [...prev, '✅ NotebookLM自动提取脚本已复制到剪贴板!']);
-            setLogs(prev => [...prev, '📝 请在NotebookLM页面的Console中粘贴并运行']);
+            setToasts(prev => [...prev, 'NotebookLM自动提取脚本已复制到剪贴板!']);
         }).catch(err => {
-            setLogs(prev => [...prev, `❌ 复制失败: ${err}`]);
+            setToasts(prev => [...prev, `复制失败: ${err}`]);
         });
     };
 
@@ -189,71 +220,15 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
 
                         <div className="space-y-5">
                             <div>
-                                <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">Output Directory</label>
-                                <div className="flex gap-2">
-                                    <input
-                                        value={outputDir}
-                                        onChange={(e) => setOutputDir(e.target.value)}
-                                        className="flex-1 px-4 py-3 bg-slate-800/50 border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all font-mono text-sm"
-                                        placeholder="data"
-                                    />
-                                    <button
-                                        onClick={selectFolder}
-                                        className="px-4 py-3 bg-slate-700/50 border border-white/10 rounded-lg text-slate-300 hover:bg-slate-700 hover:text-white transition-all flex items-center gap-2"
-                                    >
-                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" /></svg>
-                                        Browse
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div>
-                                <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">Freshdesk API Key</label>
-                                <div className="flex gap-2">
-                                    <div className="flex-1 relative">
-                                        <input
-                                            type={showApiKey ? "text" : "password"}
-                                            value={apiKey}
-                                            onChange={(e) => setApiKey(e.target.value)}
-                                            className="w-full px-4 py-3 pr-12 bg-slate-800/50 border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all font-mono text-sm"
-                                            placeholder="Enter your Freshdesk API Key"
-                                        />
-                                        <button
-                                            type="button"
-                                            onClick={() => setShowApiKey(!showApiKey)}
-                                            className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white transition-colors"
-                                        >
-                                            {showApiKey ? (
-                                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268-2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" /></svg>
-                                            ) : (
-                                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268-2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
-                                            )}
-                                        </button>
-                                    </div>
-                                    <button
-                                        onClick={() => {
-                                            navigator.clipboard.writeText(apiKey).then(() => {
-                                                setLogs(prev => [...prev, '✅ API Key 已复制到剪贴板']);
-                                            });
-                                        }}
-                                        className="px-4 py-3 bg-slate-700/50 border border-white/10 rounded-lg text-slate-300 hover:bg-slate-700 hover:text-white transition-all"
-                                        title="复制 API Hex"
-                                    >
-                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
-                                    </button>
-                                </div>
-                                <p className="text-[10px] text-slate-500 mt-2">Find your API key in Freshdesk → Profile Settings → API Key</p>
-                            </div>
-
-                            <div>
-                                <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">Full Sync Start Date</label>
+                                <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">Server URL</label>
                                 <input
-                                    type="month"
-                                    value={syncStartDate}
-                                    onChange={(e) => setSyncStartDate(e.target.value)}
-                                    className="w-full px-4 py-3 bg-slate-800/50 border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all"
+                                    type="text"
+                                    value={serverUrl}
+                                    onChange={(e) => setServerUrl(e.target.value)}
+                                    className="w-full px-4 py-3 bg-slate-800/50 border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all font-mono text-sm"
+                                    placeholder="http://localhost:9988"
                                 />
-                                <p className="text-[10px] text-slate-500 mt-2">Tickets will be fetched starting from this month during full sync</p>
+                                <p className="text-[10px] text-slate-500 mt-2">FD-Server base URL (default: http://localhost:9988)</p>
                             </div>
 
                             <div>
@@ -358,7 +333,7 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
                                             if (config.notebookId || config.atToken) {
                                                 setNotebookLMConfig(prev => ({ ...prev, ...config }));
                                                 e.target.value = '';
-                                                setLogs(prev => [...prev, '✅ 已成功导入 AI 配置']);
+                                                setToasts(prev => [...prev, '已成功导入 AI 配置']);
                                             }
                                         } catch (err) { }
                                     }}
@@ -465,7 +440,75 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
                             )}
                         </div>
                     </section>
+
+                    {/* WeChat Work Integration */}
+                    {configLoaded && (
+                        <section className="bg-white/5 rounded-xl border border-white/10 p-6">
+                            <h3 className="text-sm font-bold text-slate-300 uppercase tracking-wider mb-6 flex items-center gap-2">
+                                <span className="w-1 h-4 bg-green-500 rounded-full"></span>
+                                WeChat Work (企业微信)
+                            </h3>
+                            <div className="space-y-5">
+                                <div className="flex items-center justify-between p-4 bg-green-500/5 border border-green-500/10 rounded-lg">
+                                    <div>
+                                        <p className="text-sm text-white font-medium">启用企业微信通知</p>
+                                        <p className="text-[10px] text-slate-500 mt-1">审核通过/驳回、回复推送等事件将发送通知到企业微信群</p>
+                                    </div>
+                                    <button
+                                        onClick={() => setWecomEnabled(!wecomEnabled)}
+                                        className={`relative w-12 h-6 rounded-full transition-colors duration-200 ${
+                                            wecomEnabled ? 'bg-green-500' : 'bg-slate-600'
+                                        }`}
+                                    >
+                                        <div className={`absolute top-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform duration-200 ${
+                                            wecomEnabled ? 'translate-x-6' : 'translate-x-0.5'
+                                        }`} />
+                                    </button>
+                                </div>
+
+                                <div>
+                                    <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">Webhook URL</label>
+                                    <input
+                                        type="text"
+                                        value={wecomUrl}
+                                        onChange={(e) => setWecomUrl(e.target.value)}
+                                        className="w-full px-4 py-2.5 bg-slate-800/50 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-green-500/50 font-mono"
+                                        placeholder="https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=..."
+                                    />
+                                    <p className="text-[10px] text-slate-500 mt-2">在企业微信群设置中创建机器人获取 Webhook 地址</p>
+                                </div>
+
+                                <div className="flex gap-3">
+                                    <button
+                                        onClick={handleSaveWecom}
+                                        disabled={wecomLoading}
+                                        className="px-5 py-2 bg-green-600 hover:bg-green-500 disabled:opacity-50 text-white text-xs font-bold rounded-lg transition-all"
+                                    >
+                                        {wecomLoading ? '保存中...' : '保存配置'}
+                                    </button>
+                                    <button
+                                        onClick={handleTestWecom}
+                                        disabled={wecomTesting || !wecomUrl}
+                                        className="px-5 py-2 bg-slate-700/50 hover:bg-slate-600/50 disabled:opacity-30 text-slate-300 hover:text-white text-xs font-bold rounded-lg transition-all border border-white/10"
+                                    >
+                                        {wecomTesting ? '发送中...' : '发送测试消息'}
+                                    </button>
+                                </div>
+                            </div>
+                        </section>
+                    )}
                 </div>
+
+                {/* Toast Notifications */}
+                {toasts.length > 0 && (
+                    <div className="fixed bottom-4 right-4 space-y-2 z-50">
+                        {toasts.slice(-3).map((msg, i) => (
+                            <div key={i} className="bg-slate-900/90 backdrop-blur border border-white/10 rounded-lg px-4 py-2 shadow-2xl animate-fade-in">
+                                <span className="text-[11px] text-slate-300 font-medium">{msg}</span>
+                            </div>
+                        ))}
+                    </div>
+                )}
 
                 {/* Footer Status */}
                 <div className="fixed bottom-0 left-0 right-0 p-4 pointer-events-none">

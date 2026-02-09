@@ -8,7 +8,7 @@
  */
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { adminApi } from '../../services/serverApi';
+import { adminApi, configApi } from '../../services/serverApi';
 import type { SyncResult, SyncConfig, SyncLog } from '../../types/server';
 
 // 常用 cron 预设
@@ -30,6 +30,10 @@ const ManualSyncTab: React.FC = () => {
     const [cronExpression, setCronExpression] = useState('');
     const [syncEnabled, setSyncEnabled] = useState(true);
     const [lastSyncTime, setLastSyncTime] = useState('');
+
+    // 自动推送状态
+    const [autoReplyEnabled, setAutoReplyEnabled] = useState(false);
+    const [autoReplyLoading, setAutoReplyLoading] = useState(false);
 
     // 日志状态
     const [logs, setLogs] = useState<SyncLog[]>([]);
@@ -61,11 +65,35 @@ const ManualSyncTab: React.FC = () => {
         }
     }, []);
 
+    // 加载自动推送配置
+    const loadAutoReplyConfig = useCallback(async () => {
+        try {
+            const cfg = await configApi.getAutoReply();
+            setAutoReplyEnabled(cfg.enabled);
+        } catch {
+            // 静默忽略
+        }
+    }, []);
+
+    const handleToggleAutoReply = async () => {
+        setAutoReplyLoading(true);
+        try {
+            const newVal = !autoReplyEnabled;
+            await configApi.setAutoReply(newVal);
+            setAutoReplyEnabled(newVal);
+        } catch (err) {
+            alert('设置失败: ' + (err as Error).message);
+        } finally {
+            setAutoReplyLoading(false);
+        }
+    };
+
     // 初始化加载
     useEffect(() => {
         loadConfig();
         loadLogs();
-    }, [loadConfig, loadLogs]);
+        loadAutoReplyConfig();
+    }, [loadConfig, loadLogs, loadAutoReplyConfig]);
 
     // 触发同步
     const handleSync = async () => {
@@ -210,6 +238,21 @@ const ManualSyncTab: React.FC = () => {
                                 className={`relative w-12 h-6 rounded-full transition-colors ${syncEnabled ? 'bg-indigo-500' : 'bg-slate-600'}`}
                             >
                                 <span className={`absolute top-1 w-4 h-4 bg-white rounded-full transition-transform ${syncEnabled ? 'left-7' : 'left-1'}`} />
+                            </button>
+                        </div>
+
+                        {/* 自动推送回复开关 */}
+                        <div className="flex items-center justify-between p-3 bg-emerald-500/5 border border-emerald-500/10 rounded-lg">
+                            <div>
+                                <span className="text-slate-300">审核通过后自动推送回复</span>
+                                <p className="text-[10px] text-slate-500 mt-0.5">开启后审核通过将直接推送到 Freshdesk，关闭则进入待推送队列</p>
+                            </div>
+                            <button
+                                onClick={handleToggleAutoReply}
+                                disabled={autoReplyLoading}
+                                className={`relative w-12 h-6 rounded-full transition-colors flex-shrink-0 ${autoReplyEnabled ? 'bg-emerald-500' : 'bg-slate-600'} ${autoReplyLoading ? 'opacity-50' : ''}`}
+                            >
+                                <span className={`absolute top-1 w-4 h-4 bg-white rounded-full transition-transform ${autoReplyEnabled ? 'left-7' : 'left-1'}`} />
                             </button>
                         </div>
 

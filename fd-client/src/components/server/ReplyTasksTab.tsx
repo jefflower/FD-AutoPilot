@@ -52,7 +52,7 @@ const ReplyTasksTab: React.FC<ReplyTasksTabProps> = ({ initialSelectedId, onNavi
         subject: t.subject,
         startedAt: t.addedAt,
         completedAt: t.addedAt,
-        success: t.status === 'completed',
+        success: t.status === 'completed' || t.status === 'skipped',
         isProcessed: true
     }));
 
@@ -138,24 +138,40 @@ const ReplyTasksTab: React.FC<ReplyTasksTabProps> = ({ initialSelectedId, onNavi
                             <span className="text-[10px] font-mono text-green-500/50">({filteredCompletedHistory.length})</span>
                         </div>
                         <div className="space-y-1">
-                            {filteredCompletedHistory.map(task => (
-                                <button
-                                    key={task.ticketId}
-                                    onClick={() => setSelectedId(task.ticketId)}
-                                    className={`w-full text-left p-2 rounded-lg transition-all border group ${selectedId === task.ticketId
-                                        ? 'bg-green-500/10 border-green-500/30'
-                                        : 'bg-white/5 border-transparent hover:bg-white/10'
-                                        }`}
-                                >
-                                    <div className="flex items-center justify-between mb-0.5">
-                                        <span className="text-[10px] font-bold text-slate-500 opacity-60 group-hover:opacity-100 transition-opacity">#{task.externalId}</span>
-                                        <span className={`text-[9px] font-black uppercase tracking-tighter ${task.status === 'completed' ? 'text-green-500/50' : 'text-red-500/50'}`}>
-                                            {task.status === 'completed' ? 'Done' : 'Failed'}
-                                        </span>
-                                    </div>
-                                    <div className="text-[11px] text-slate-400 truncate group-hover:text-slate-200 transition-colors">{task.subject}</div>
-                                </button>
-                            ))}
+                            {filteredCompletedHistory.map(task => {
+                                const statusColor = task.status === 'skipped'
+                                    ? 'text-amber-500/50'
+                                    : task.status === 'completed'
+                                        ? 'text-green-500/50'
+                                        : 'text-red-500/50';
+                                const statusLabel = task.status === 'skipped'
+                                    ? 'Skipped'
+                                    : task.status === 'completed'
+                                        ? 'Done'
+                                        : 'Failed';
+                                const borderColor = task.status === 'skipped'
+                                    ? 'bg-amber-500/10 border-amber-500/30'
+                                    : 'bg-green-500/10 border-green-500/30';
+
+                                return (
+                                    <button
+                                        key={task.ticketId}
+                                        onClick={() => setSelectedId(task.ticketId)}
+                                        className={`w-full text-left p-2 rounded-lg transition-all border group ${selectedId === task.ticketId
+                                            ? borderColor
+                                            : 'bg-white/5 border-transparent hover:bg-white/10'
+                                            }`}
+                                    >
+                                        <div className="flex items-center justify-between mb-0.5">
+                                            <span className="text-[10px] font-bold text-slate-500 opacity-60 group-hover:opacity-100 transition-opacity">#{task.externalId}</span>
+                                            <span className={`text-[9px] font-black uppercase tracking-tighter ${statusColor}`}>
+                                                {statusLabel}
+                                            </span>
+                                        </div>
+                                        <div className="text-[11px] text-slate-400 truncate group-hover:text-slate-200 transition-colors">{task.subject}</div>
+                                    </button>
+                                );
+                            })}
                             {filteredCompletedHistory.length === 0 && (
                                 <div className="text-center py-6 text-slate-600 text-[10px] italic border border-dashed border-white/5 rounded-xl">暂无已完成工单</div>
                             )}

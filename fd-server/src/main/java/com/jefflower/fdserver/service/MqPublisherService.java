@@ -5,6 +5,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.support.TransactionSynchronization;
+import org.springframework.transaction.support.TransactionSynchronizationManager;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -32,6 +34,26 @@ public class MqPublisherService {
     }
 
     private void sendTask(String routingKey, Ticket ticket) {
+        // 预先构建消息，捕获当前值（事务提交后 ticket 状态可能变化）
+        Map<String, Object> message = buildMessage(routingKey, ticket);
+
+        if (TransactionSynchronizationManager.isSynchronizationActive()) {
+            // 在事务内：延迟到事务提交后再发送，避免消费者在 DB 数据未提交时就拿到消息
+            TransactionSynchronizationManager.registerSynchronization(new TransactionSynchronization() {
+                @Override
+                public void afterCommit() {
+                    log.info("Sending message to {} with ticketId: {} (after commit)", routingKey, ticket.getId());
+                    rabbitTemplate.convertAndSend(EXCHANGE, routingKey, message);
+                }
+            });
+        } else {
+            // 不在事务内：立即发送
+            log.info("Sending message to {} with ticketId: {} (immediate)", routingKey, ticket.getId());
+            rabbitTemplate.convertAndSend(EXCHANGE, routingKey, message);
+        }
+    }
+
+    private Map<String, Object> buildMessage(String routingKey, Ticket ticket) {
         Map<String, Object> message = new HashMap<>();
         message.put("msgId", UUID.randomUUID().toString());
         message.put("ticketId", ticket.getId());
@@ -41,11 +63,14 @@ public class MqPublisherService {
         payload.put("externalId", ticket.getExternalId());
         payload.put("subject", ticket.getSubject());
         payload.put("content", ticket.getContent());
+        if (ticket.getLastAuditRemark() != null) {
+            payload.put("auditRemark", ticket.getLastAuditRemark());
+        }
         message.put("payload", payload);
 
-        log.info("Sending message to {} with ticketId: {}. Payload content len: {}",
+        log.info("Building message for {} with ticketId: {}. Payload content len: {}",
                 routingKey, ticket.getId(),
                 payload.get("content") != null ? ((String) payload.get("content")).length() : 0);
-        rabbitTemplate.convertAndSend(EXCHANGE, routingKey, message);
+        return message;
     }
 }

@@ -6,6 +6,7 @@ import com.jefflower.fdserver.enums.AuditResult;
 import com.jefflower.fdserver.enums.TicketStatus;
 import com.jefflower.fdserver.repository.*;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
@@ -14,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class TicketService {
@@ -24,6 +26,8 @@ public class TicketService {
     private final TicketAuditRepository auditRepository;
     private final MqPublisherService mqPublisherService;
     private final ReplyPushService replyPushService;
+    private final SystemConfigService systemConfigService;
+    private final WeChatWorkNotifyService weChatWorkNotifyService;
 
     public Page<Ticket> queryTickets(
             TicketStatus status,
@@ -109,13 +113,16 @@ public class TicketService {
         // 发送审核任务到 MQ
         mqPublisherService.sendAuditTask(ticket);
 
+        // 通知企业微信：AI回复已完成，等待审核
+        weChatWorkNotifyService.notifyMqReplyCompleted(ticket);
+
         return saved;
     }
 
     @Transactional
     public TicketAudit submitAudit(Long ticketId, AuditRequest request, Long auditorId) {
         Ticket ticket = getTicketById(ticketId);
-        System.out.println("[TicketService] Submitting audit for ticket #" + ticketId);
+        log.info("[TicketService] Submitting audit for ticket #{}", ticketId);
 
         TicketAudit audit = new TicketAudit();
         audit.setTicket(ticket);
@@ -126,27 +133,86 @@ public class TicketService {
         TicketAudit saved = auditRepository.save(audit);
 
         if (request.getAuditResult() == AuditResult.PASS) {
-            ticket.setStatus(TicketStatus.COMPLETED);
-            ticket.setUpdatedAt(LocalDateTime.now());
-            ticketRepository.save(ticket);
-
-            // 同步回复到 Freshdesk
             TicketReply reply = replyRepository.findById(request.getReplyId())
                     .orElseThrow(() -> new RuntimeException("回复不存在"));
             reply.setIsSelected(true);
             replyRepository.save(reply);
 
-            replyPushService.pushReplyToFreshdesk(ticket, reply);
-        } else {
-            ticket.setStatus(TicketStatus.PENDING_REPLY);
+            boolean autoReply = systemConfigService.isAutoReplyEnabled();
+            if (autoReply) {
+                // 自动推送模式：直接推送到 Freshdesk → COMPLETED
+                ticket.setStatus(TicketStatus.COMPLETED);
+                replyPushService.pushReplyToFreshdesk(ticket, reply);
+            } else {
+                // 手动推送模式：进入 APPROVED 等待推送
+                ticket.setStatus(TicketStatus.APPROVED);
+            }
+            ticket.setLastAuditRemark(null);
             ticket.setUpdatedAt(LocalDateTime.now());
             ticketRepository.save(ticket);
 
-            // 重新发送回复任务
+            weChatWorkNotifyService.notifyAuditPass(ticket);
+        } else {
+            // REJECT：保存审核意见，回到待回复状态
+            ticket.setStatus(TicketStatus.PENDING_REPLY);
+            ticket.setLastAuditRemark(request.getAuditRemark());
+            ticket.setUpdatedAt(LocalDateTime.now());
+            ticketRepository.save(ticket);
+
             mqPublisherService.sendReplyTask(ticket);
+
+            weChatWorkNotifyService.notifyAuditReject(ticket, request.getAuditRemark());
         }
 
         return saved;
+    }
+
+    @Transactional
+    public void pushApprovedReply(Long ticketId) {
+        Ticket ticket = getTicketById(ticketId);
+        if (ticket.getStatus() != TicketStatus.APPROVED) {
+            throw new RuntimeException("工单状态不是 APPROVED，无法推送");
+        }
+
+        TicketReply reply = replyRepository.findByTicket(ticket).stream()
+                .filter(r -> Boolean.TRUE.equals(r.getIsSelected()))
+                .findFirst()
+                .orElseThrow(() -> new RuntimeException("未找到已选中的回复"));
+
+        replyPushService.pushReplyToFreshdesk(ticket, reply);
+
+        ticket.setStatus(TicketStatus.COMPLETED);
+        ticket.setUpdatedAt(LocalDateTime.now());
+        ticketRepository.save(ticket);
+
+        weChatWorkNotifyService.notifyReplyPushed(ticket);
+    }
+
+    @Transactional
+    public int batchPushApprovedReplies(java.util.List<Long> ticketIds) {
+        int successCount = 0;
+        for (Long id : ticketIds) {
+            try {
+                pushApprovedReply(id);
+                successCount++;
+            } catch (Exception e) {
+                log.error("批量推送失败, ticketId={}", id, e);
+            }
+        }
+        return successCount;
+    }
+
+    /**
+     * 跳过回复：最后一条对话不是客户消息时，直接标记工单为 COMPLETED，跳过审核流程
+     */
+    @Transactional
+    public void skipReply(Long ticketId) {
+        Ticket ticket = getTicketById(ticketId);
+        log.info("[TicketService] Skipping reply for ticket #{}, current status: {}", ticketId, ticket.getStatus());
+
+        ticket.setStatus(TicketStatus.COMPLETED);
+        ticket.setUpdatedAt(LocalDateTime.now());
+        ticketRepository.save(ticket);
     }
 
     @Transactional
@@ -160,6 +226,13 @@ public class TicketService {
     @Transactional
     public void triggerAiReply(Long ticketId) {
         Ticket ticket = getTicketById(ticketId);
+
+        // 校验是否已完成翻译
+        boolean hasTranslation = translationRepository.existsByTicket(ticket);
+        if (!hasTranslation) {
+            throw new RuntimeException("工单 #" + ticketId + " 尚未完成翻译，无法触发回复");
+        }
+
         ticket.setStatus(TicketStatus.REPLYING);
         ticketRepository.save(ticket);
         mqPublisherService.sendReplyTask(ticket);

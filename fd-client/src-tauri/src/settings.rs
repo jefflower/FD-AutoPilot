@@ -5,32 +5,24 @@ use tauri::Manager;
 
 #[derive(Debug, serde::Serialize, serde::Deserialize, Clone)]
 pub struct Settings {
-    pub api_key: String,
-    pub output_dir: String,
-    pub sync_start_date: String,
     // RabbitMQ 配置
     pub mq_host: String,
     pub mq_port: u16,
     pub mq_username: String,
     pub mq_password: String,
     // MQ 消费者配置
-    pub mq_consumer_enabled: bool, // MQ消费者是否应该自动启动
-    pub mq_batch_size: u32,        // 每批翻译任务数量
-    pub translation_lang: String,  // 翻译目标语言 (如 "zh-CN", "en")
+    pub mq_consumer_enabled: bool,
+    pub mq_batch_size: u32,
+    pub translation_lang: String,
 }
 
 impl Default for Settings {
     fn default() -> Self {
         Settings {
-            api_key: String::new(),
-            output_dir: "data".to_string(),
-            sync_start_date: "2025-01".to_string(),
-            // MQ 默认配置
             mq_host: "localhost".to_string(),
             mq_port: 5672,
             mq_username: "guest".to_string(),
             mq_password: "guest".to_string(),
-            // MQ 消费者默认配置
             mq_consumer_enabled: false,
             mq_batch_size: 5,
             translation_lang: "zh-CN".to_string(),
@@ -79,9 +71,6 @@ pub fn save_settings(app: &AppHandle, settings: &Settings) -> Result<(), String>
     let conn = Connection::open(&db_path).map_err(|e| e.to_string())?;
     init_db(&conn).map_err(|e| e.to_string())?;
 
-    save_setting(&conn, "api_key", &settings.api_key)?;
-    save_setting(&conn, "output_dir", &settings.output_dir)?;
-    save_setting(&conn, "sync_start_date", &settings.sync_start_date)?;
     save_setting(&conn, "mq_host", &settings.mq_host)?;
     save_setting(&conn, "mq_port", &settings.mq_port.to_string())?;
     save_setting(&conn, "mq_username", &settings.mq_username)?;
@@ -111,15 +100,6 @@ pub fn load_settings(app: &AppHandle) -> Settings {
 
     let mut settings = Settings::default();
 
-    if let Some(v) = load_setting(&conn, "api_key") {
-        settings.api_key = v;
-    }
-    if let Some(v) = load_setting(&conn, "output_dir") {
-        settings.output_dir = v;
-    }
-    if let Some(v) = load_setting(&conn, "sync_start_date") {
-        settings.sync_start_date = v;
-    }
     if let Some(v) = load_setting(&conn, "mq_host") {
         settings.mq_host = v;
     }

@@ -6,12 +6,14 @@ import com.jefflower.fdserver.entity.SyncConfig;
 import com.jefflower.fdserver.entity.SyncLog;
 import com.jefflower.fdserver.entity.SysUser;
 import com.jefflower.fdserver.enums.TriggerType;
+import com.jefflower.fdserver.enums.UserStatus;
 import com.jefflower.fdserver.service.AuthService;
 import com.jefflower.fdserver.service.FreshdeskSyncService;
 import com.jefflower.fdserver.service.SyncConfigService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,6 +32,24 @@ public class AdminController {
 
     // ========== 用户管理 ==========
 
+    @GetMapping("/admin/users")
+    public ResponseEntity<ApiResponse<Page<SysUser>>> getAllUsers(
+            @RequestParam(required = false) String status,
+            @RequestParam(required = false) String username,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "20") int size) {
+        UserStatus userStatus = null;
+        if (status != null && !status.isBlank()) {
+            try {
+                userStatus = UserStatus.valueOf(status.toUpperCase());
+            } catch (IllegalArgumentException ignored) {
+            }
+        }
+        Page<SysUser> users = authService.getAllUsers(
+                userStatus, username, PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "createdAt")));
+        return ResponseEntity.ok(ApiResponse.ok(users));
+    }
+
     @GetMapping("/admin/users/pending")
     public ResponseEntity<ApiResponse<List<SysUser>>> getPendingUsers() {
         List<SysUser> users = authService.getPendingUsers();
@@ -42,6 +62,30 @@ public class AdminController {
             @RequestBody ApproveRequest request) {
         SysUser user = authService.approveUser(id, request.getAction());
         return ResponseEntity.ok(ApiResponse.ok("用户状态更新成功", user));
+    }
+
+    @PutMapping("/admin/users/{id}/role")
+    public ResponseEntity<ApiResponse<SysUser>> updateUserRole(
+            @PathVariable Long id,
+            @RequestBody Map<String, String> request) {
+        String role = request.get("role");
+        if (role == null || role.isBlank()) {
+            throw new RuntimeException("角色不能为空");
+        }
+        SysUser user = authService.updateUserRole(id, role);
+        return ResponseEntity.ok(ApiResponse.ok("角色更新成功", user));
+    }
+
+    @PostMapping("/admin/users/{id}/reset-password")
+    public ResponseEntity<ApiResponse<Void>> resetPassword(
+            @PathVariable Long id,
+            @RequestBody Map<String, String> request) {
+        String newPassword = request.get("password");
+        if (newPassword == null || newPassword.length() < 6) {
+            throw new RuntimeException("密码不能少于6位");
+        }
+        authService.resetPassword(id, newPassword);
+        return ResponseEntity.ok(ApiResponse.ok("密码重置成功", null));
     }
 
     // ========== 同步管理 ==========

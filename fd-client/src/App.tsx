@@ -1,166 +1,297 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import "./index.css";
-import Sidebar from "./components/Sidebar";
-import SyncTab from "./components/SyncTab";
-import BrowseTab from "./components/BrowseTab";
+
 import SettingsTab from "./components/SettingsTab";
+import SidebarNew, { TabType } from "./components/SidebarNew";
+import AuthLoginTab from "./components/auth/AuthLoginTab";
+import AuthRegisterTab from "./components/auth/AuthRegisterTab";
+import TranslationTasksTab from "./components/server/TranslationTasksTab";
+import ReplyTasksTab from "./components/server/ReplyTasksTab";
+import ServerTicketsTab from "./components/server/ServerTicketsTab";
+import AuditTasksTab from "./components/server/AuditTasksTab";
+import ApprovedTasksTab from "./components/server/ApprovedTasksTab";
+import AdminUsersTab from "./components/admin/AdminUsersTab";
+import ManualSyncTab from "./components/admin/ManualSyncTab";
+import ServerLogsTab from "./components/admin/ServerLogsTab";
+import DatabaseTab from "./components/admin/DatabaseTab";
+import KnowledgeTab from "./components/admin/KnowledgeTab";
+import UserProfileTab from "./components/user/UserProfileTab";
+
+import { MQTranslationProvider } from "./context/MQTranslationContext";
+import { MQReplyProvider } from "./context/MQReplyContext";
+import { MQAuditProvider } from "./context/MQAuditContext";
+import { FloatingTaskWidget } from "./components/common/FloatingTaskWidget";
+
 import { useSettings } from "./hooks/useSettings";
-import { useSync } from "./hooks/useSync";
-import { useTickets } from "./hooks/useTickets";
-import { useTranslation } from "./hooks/useTranslation";
-import MQTaskRunner from "./components/MQTaskRunner";
+import { useAuth } from "./hooks/useAuth";
 
 function App() {
-  const [activeTab, setActiveTab] = useState<'sync' | 'browse' | 'settings'>('sync');
+    const [activeTab, setActiveTab] = useState<TabType>('server-tickets');
+    const [authView, setAuthView] = useState<'login' | 'register'>('login');
+    const [navigateToTicketId, setNavigateToTicketId] = useState<number | null>(null);
 
-  // Logic Hooks
-  const {
-    apiKey, setApiKey,
-    outputDir, setOutputDir,
-    syncStartDate, setSyncStartDate,
-    mqHost, setMqHost,
-    mqPort, setMqPort,
-    mqUsername, setMqUsername,
-    mqPassword, setMqPassword,
-    translationLang, setTranslationLang,
-    notebookLMConfig, setNotebookLMConfig
-  } = useSettings();
+    useEffect(() => {
+        const handler = (e: Event) => {
+            const { tab, ticketId } = (e as CustomEvent).detail;
+            setActiveTab(tab);
+            setNavigateToTicketId(ticketId);
+        };
+        window.addEventListener('navigate-to-task', handler);
+        return () => window.removeEventListener('navigate-to-task', handler);
+    }, []);
 
-  const {
-    tickets,
-    selectedTicket, setSelectedTicket,
-    displayLang, setDisplayLang,
-    isLoadingTickets, setIsLoadingTickets,
-    listLang, setListLang,
-    searchQuery, setSearchQuery,
-    statusFilter, setStatusFilter,
-    filteredTickets, statusCounts,
-    loadTickets,
-    navigateToTicket
-  } = useTickets(outputDir);
+    const handleTaskNavigated = useCallback(() => {
+        setNavigateToTicketId(null);
+    }, []);
 
-  const {
-    logs, setLogs,
-    isSyncing,
-    progress,
-    fullSync, setFullSync,
-    logsEndRef,
-    startSync,
-    syncStatuses
-  } = useSync(apiKey, outputDir, syncStartDate, loadTickets);
+    const auth = useAuth();
 
-  const {
-    isTranslating,
-    selectedIds, setSelectedIds,
-    batchProgress,
-    isAborting, setIsAborting,
-    abortBatchRef,
-    handleTranslate,
-    handleBatchTranslate,
-    handleBatchExport,
-    toggleTicketSelection,
-    handleSwitchToOriginal
-  } = useTranslation(
-    outputDir,
-    tickets,
-    selectedTicket,
-    setSelectedTicket,
-    setDisplayLang,
-    setIsLoadingTickets,
-    loadTickets,
-    setLogs
-  );
+    const {
+        serverUrl, setServerUrl,
+        mqHost, setMqHost,
+        mqPort, setMqPort,
+        mqUsername, setMqUsername,
+        mqPassword, setMqPassword,
+        translationLang, setTranslationLang,
+        notebookLMConfig, setNotebookLMConfig
+    } = useSettings();
 
-  return (
-    <div className="flex h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
-      {/* Sidebar Navigation */}
-      <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
+    const handleLogin = async (credentials: { username: string; password: string }) => {
+        await auth.login(credentials);
+    };
 
-      {/* Main Content Area */}
-      <div className="flex-1 flex overflow-hidden">
-        {activeTab === 'sync' && (
-          <SyncTab
-            isSyncing={isSyncing}
-            progress={progress}
-            fullSync={fullSync}
-            setFullSync={setFullSync}
-            syncStartDate={syncStartDate}
-            startSync={startSync}
-            syncStatuses={syncStatuses}
-            logs={logs}
-            logsEndRef={logsEndRef}
-          />
-        )}
+    const handleRegister = async (data: { username: string; password: string }) => {
+        await auth.register(data);
+    };
 
-        {activeTab === 'browse' && (
-          <BrowseTab
-            tickets={tickets}
-            filteredTickets={filteredTickets}
-            selectedTicket={selectedTicket}
-            setSelectedTicket={setSelectedTicket}
-            isLoadingTickets={isLoadingTickets}
-            loadTickets={loadTickets}
-            searchQuery={searchQuery}
-            setSearchQuery={setSearchQuery}
-            statusFilter={statusFilter}
-            setStatusFilter={setStatusFilter}
-            statusCounts={statusCounts}
-            listLang={listLang}
-            setListLang={setListLang}
-            selectedIds={selectedIds}
-            toggleSelectAll={() => {
-              if (selectedIds.size === filteredTickets.length && filteredTickets.length > 0) {
-                setSelectedIds(new Set());
-              } else {
-                setSelectedIds(new Set(filteredTickets.map(t => t.id)));
-              }
-            }}
-            toggleTicketSelection={toggleTicketSelection}
-            handleBatchTranslate={handleBatchTranslate}
-            handleBatchExport={() => handleBatchExport(listLang)}
-            batchProgress={batchProgress}
-            isAborting={isAborting}
-            abortBatchRef={abortBatchRef}
-            setIsAborting={setIsAborting}
-            displayLang={displayLang}
-            setDisplayLang={setDisplayLang}
-            isTranslating={isTranslating}
-            handleTranslate={handleTranslate}
-            handleSwitchToOriginal={handleSwitchToOriginal}
-            navigateToTicket={navigateToTicket}
-            setLogs={setLogs}
-            notebookLMConfig={notebookLMConfig}
-          />
-        )}
+    const renderTabContent = () => {
+        switch (activeTab) {
+            case 'auth':
+                return authView === 'login' ? (
+                    <AuthLoginTab
+                        onLogin={handleLogin}
+                        onSwitchToRegister={() => setAuthView('register')}
+                        isLoading={auth.isLoading}
+                        error={auth.error}
+                    />
+                ) : (
+                    <AuthRegisterTab
+                        onRegister={handleRegister}
+                        onSwitchToLogin={() => setAuthView('login')}
+                        isLoading={auth.isLoading}
+                        error={auth.error}
+                    />
+                );
 
-        {activeTab === 'settings' && (
-          <SettingsTab
-            apiKey={apiKey}
-            setApiKey={setApiKey}
-            outputDir={outputDir}
-            setOutputDir={setOutputDir}
-            syncStartDate={syncStartDate}
-            setSyncStartDate={setSyncStartDate}
-            mqHost={mqHost}
-            setMqHost={setMqHost}
-            mqPort={mqPort}
-            setMqPort={setMqPort}
-            mqUsername={mqUsername}
-            setMqUsername={setMqUsername}
-            mqPassword={mqPassword}
-            setMqPassword={setMqPassword}
-            translationLang={translationLang}
-            setTranslationLang={setTranslationLang}
-            notebookLMConfig={notebookLMConfig}
-            setNotebookLMConfig={setNotebookLMConfig}
-            setLogs={setLogs}
-          />
-        )}
-      </div>
-      {/* Global Task Runners */}
-      <MQTaskRunner notebookLMConfig={notebookLMConfig} setLogs={setLogs} />
-    </div>
-  );
+            case 'profile':
+                return (
+                    <UserProfileTab
+                        username={auth.user?.username}
+                        role={auth.user?.role}
+                        onLogout={auth.logout}
+                    />
+                );
+
+            case 'settings':
+                return (
+                    <SettingsTab
+                        serverUrl={serverUrl}
+                        setServerUrl={setServerUrl}
+                        mqHost={mqHost}
+                        setMqHost={setMqHost}
+                        mqPort={mqPort}
+                        setMqPort={setMqPort}
+                        mqUsername={mqUsername}
+                        setMqUsername={setMqUsername}
+                        mqPassword={mqPassword}
+                        setMqPassword={setMqPassword}
+                        translationLang={translationLang}
+                        setTranslationLang={setTranslationLang}
+                        notebookLMConfig={notebookLMConfig}
+                        setNotebookLMConfig={setNotebookLMConfig}
+                    />
+                );
+
+            case 'server-tickets':
+                if (!auth.isLoggedIn) {
+                    return authView === 'login' ? (
+                        <AuthLoginTab
+                            onLogin={handleLogin}
+                            onSwitchToRegister={() => setAuthView('register')}
+                            isLoading={auth.isLoading}
+                            error={auth.error}
+                        />
+                    ) : (
+                        <AuthRegisterTab
+                            onRegister={handleRegister}
+                            onSwitchToLogin={() => setAuthView('login')}
+                            isLoading={auth.isLoading}
+                            error={auth.error}
+                        />
+                    );
+                }
+                return (
+                    <ServerTicketsTab
+                        isAdmin={auth.isAdmin}
+                    />
+                );
+
+            case 'translation':
+                if (!auth.isLoggedIn) return null;
+                return (
+                    <TranslationTasksTab
+                        initialSelectedId={navigateToTicketId}
+                        onNavigated={handleTaskNavigated}
+                    />
+                );
+
+            case 'reply':
+                if (!auth.isLoggedIn) return null;
+                return (
+                    <ReplyTasksTab
+                        initialSelectedId={navigateToTicketId}
+                        onNavigated={handleTaskNavigated}
+                    />
+                );
+
+            case 'audit':
+                if (!auth.isLoggedIn) return null;
+                return (
+                    <AuditTasksTab />
+                );
+
+            case 'approved':
+                if (!auth.isLoggedIn) return null;
+                return (
+                    <ApprovedTasksTab />
+                );
+
+            case 'admin-users':
+                if (!auth.isLoggedIn || !auth.isAdmin) {
+                    return (
+                        <div className="flex-1 flex items-center justify-center text-slate-400">
+                            <div className="text-center">
+                                <svg className="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                </svg>
+                                <p>需要管理员权限</p>
+                            </div>
+                        </div>
+                    );
+                }
+                return <AdminUsersTab />;
+
+            case 'manual-sync':
+                if (!auth.isLoggedIn || !auth.isAdmin) {
+                    return (
+                        <div className="flex-1 flex items-center justify-center text-slate-400">
+                            <div className="text-center">
+                                <svg className="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                </svg>
+                                <p>需要管理员权限</p>
+                            </div>
+                        </div>
+                    );
+                }
+                return <ManualSyncTab />;
+
+            case 'server-logs':
+                if (!auth.isLoggedIn || !auth.isAdmin) {
+                    return (
+                        <div className="flex-1 flex items-center justify-center text-slate-400">
+                            <div className="text-center">
+                                <svg className="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                </svg>
+                                <p>需要管理员权限</p>
+                            </div>
+                        </div>
+                    );
+                }
+                return <ServerLogsTab />;
+
+            case 'database':
+                if (!auth.isLoggedIn || !auth.isAdmin) {
+                    return (
+                        <div className="flex-1 flex items-center justify-center text-slate-400">
+                            <div className="text-center">
+                                <svg className="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                </svg>
+                                <p>需要管理员权限</p>
+                            </div>
+                        </div>
+                    );
+                }
+                return <DatabaseTab />;
+
+            case 'knowledge':
+                if (!auth.isLoggedIn || !auth.isAdmin) {
+                    return (
+                        <div className="flex-1 flex items-center justify-center text-slate-400">
+                            <div className="text-center">
+                                <svg className="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                </svg>
+                                <p>需要管理员权限</p>
+                            </div>
+                        </div>
+                    );
+                }
+                return <KnowledgeTab />;
+
+            default:
+                return null;
+        }
+    };
+
+    if (!auth.isLoggedIn) {
+        return (
+            <div className="h-screen w-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
+                {authView === 'login' ? (
+                    <AuthLoginTab
+                        onLogin={handleLogin}
+                        onSwitchToRegister={() => setAuthView('register')}
+                        isLoading={auth.isLoading}
+                        error={auth.error}
+                    />
+                ) : (
+                    <AuthRegisterTab
+                        onRegister={handleRegister}
+                        onSwitchToLogin={() => setAuthView('login')}
+                        isLoading={auth.isLoading}
+                        error={auth.error}
+                    />
+                )}
+            </div>
+        );
+    }
+
+    return (
+        <MQTranslationProvider>
+            <MQReplyProvider>
+                <MQAuditProvider>
+                    <div className="flex h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
+                        <SidebarNew
+                            activeTab={activeTab}
+                            setActiveTab={setActiveTab}
+                            isLoggedIn={auth.isLoggedIn}
+                            isAdmin={auth.isAdmin}
+                            onLogout={auth.logout}
+                            username={auth.user?.username}
+                        />
+
+                        <div className="flex-1 flex overflow-hidden">
+                            {renderTabContent()}
+                        </div>
+
+                        <FloatingTaskWidget />
+                    </div>
+                </MQAuditProvider>
+            </MQReplyProvider>
+        </MQTranslationProvider>
+    );
 }
 
 export default App;

@@ -2,6 +2,7 @@ package com.jefflower.fdserver.entity;
 
 import com.jefflower.fdserver.enums.UserRole;
 import com.jefflower.fdserver.enums.UserStatus;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import java.time.LocalDateTime;
@@ -17,6 +18,7 @@ public class SysUser {
     @Column(unique = true, nullable = false, length = 64)
     private String username;
 
+    @JsonIgnore
     @Column(nullable = false, length = 128)
     private String password;
 

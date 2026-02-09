@@ -24,6 +24,8 @@ const SqlQueryPanel: React.FC = () => {
     const [showTables, setShowTables] = useState(false);
     const [tablesLoading, setTablesLoading] = useState(false);
     const [sortConfig, setSortConfig] = useState<{ col: number; dir: 'asc' | 'desc' } | null>(null);
+    const [selectedTable, setSelectedTable] = useState<string | null>(null);
+    const [expandedCell, setExpandedCell] = useState<{ row: number; col: number } | null>(null);
 
     const textareaRef = useRef<HTMLTextAreaElement>(null);
     const historyRef = useRef<HTMLDivElement>(null);
@@ -226,29 +228,74 @@ const SqlQueryPanel: React.FC = () => {
                 </div>
             </div>
 
-            {/* 表结构面板 */}
+            {/* 表结构面板 — 左右分栏 */}
             {showTables && tables.length > 0 && (
-                <div className="bg-slate-800/50 border border-white/10 rounded-xl p-3 max-h-48 overflow-y-auto">
-                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
+                <div className="flex bg-slate-800/50 border border-white/10 rounded-xl h-48 overflow-hidden">
+                    {/* 左侧：表名列表 */}
+                    <div className="w-40 flex-shrink-0 border-r border-white/10 overflow-y-auto">
                         {tables.map(t => (
-                            <div key={t.tableName} className="text-xs">
-                                <button
-                                    onClick={() => setSql(`SELECT * FROM ${t.tableName} LIMIT 50`)}
-                                    className="font-medium text-indigo-400 hover:text-indigo-300 mb-1 cursor-pointer"
-                                >
-                                    {t.tableName}
-                                </button>
-                                <div className="space-y-0.5">
-                                    {t.columns.map(c => (
-                                        <div key={c.name} className="flex items-center gap-1.5 text-slate-500">
-                                            {c.primaryKey && <span className="text-yellow-500 text-[9px]">PK</span>}
-                                            <span className="text-slate-400">{c.name}</span>
-                                            <span className="text-slate-600">{c.type}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
+                            <button
+                                key={t.tableName}
+                                onClick={() => setSelectedTable(prev => prev === t.tableName ? null : t.tableName)}
+                                className={`w-full flex items-center justify-between px-3 py-1.5 text-xs text-left transition-colors ${
+                                    selectedTable === t.tableName
+                                        ? 'bg-indigo-500/15 text-indigo-400'
+                                        : 'text-slate-400 hover:bg-white/5 hover:text-slate-300'
+                                }`}
+                            >
+                                <span className="font-mono truncate">{t.tableName}</span>
+                                <span className="text-[10px] text-slate-600 flex-shrink-0 ml-1">{t.columns.length}</span>
+                            </button>
                         ))}
+                    </div>
+                    {/* 右侧：列详情 */}
+                    <div className="flex-1 overflow-y-auto">
+                        {selectedTable ? (
+                            (() => {
+                                const t = tables.find(tb => tb.tableName === selectedTable);
+                                if (!t) return null;
+                                return (
+                                    <div className="p-3">
+                                        <div className="flex items-center justify-between mb-2">
+                                            <span className="text-xs font-medium text-indigo-400">{t.tableName}</span>
+                                            <button
+                                                onClick={() => setSql(`SELECT * FROM ${t.tableName} LIMIT 50`)}
+                                                className="px-2 py-0.5 text-[10px] text-slate-500 hover:text-indigo-400 hover:bg-indigo-500/10 rounded transition-colors"
+                                            >
+                                                SELECT *
+                                            </button>
+                                        </div>
+                                        <table className="w-full text-[11px]">
+                                            <thead>
+                                                <tr className="text-slate-600">
+                                                    <th className="text-left py-1 pr-3 font-medium">列名</th>
+                                                    <th className="text-left py-1 pr-3 font-medium">类型</th>
+                                                    <th className="text-left py-1 font-medium">约束</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {t.columns.map(c => (
+                                                    <tr key={c.name} className="hover:bg-white/5">
+                                                        <td className="py-0.5 pr-3 text-slate-300 font-mono whitespace-nowrap">
+                                                            {c.name}
+                                                        </td>
+                                                        <td className="py-0.5 pr-3 text-slate-500 font-mono">{c.type}</td>
+                                                        <td className="py-0.5 space-x-1.5">
+                                                            {c.primaryKey && <span className="text-yellow-500">PK</span>}
+                                                            {!c.nullable && <span className="text-orange-400/60">NOT NULL</span>}
+                                                        </td>
+                                                    </tr>
+                                                ))}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                );
+                            })()
+                        ) : (
+                            <div className="flex items-center justify-center h-full text-slate-600 text-xs">
+                                选择左侧表名查看结构
+                            </div>
+                        )}
                     </div>
                 </div>
             )}
@@ -324,25 +371,52 @@ const SqlQueryPanel: React.FC = () => {
                                             <td className="px-3 py-1.5 text-slate-600 border-b border-white/5 font-mono">
                                                 {ri + 1}
                                             </td>
-                                            {row.map((cell, ci) => (
-                                                <td
-                                                    key={ci}
-                                                    className="px-3 py-1.5 border-b border-white/5 font-mono max-w-xs truncate"
-                                                    title={cell === null ? 'NULL' : String(cell)}
-                                                >
-                                                    {cell === null ? (
-                                                        <span className="text-slate-600 italic">NULL</span>
-                                                    ) : typeof cell === 'boolean' ? (
-                                                        <span className={cell ? 'text-green-400' : 'text-red-400'}>
-                                                            {String(cell)}
-                                                        </span>
-                                                    ) : typeof cell === 'number' ? (
-                                                        <span className="text-blue-400">{cell}</span>
-                                                    ) : (
-                                                        <span className="text-slate-300">{String(cell)}</span>
-                                                    )}
-                                                </td>
-                                            ))}
+                                            {row.map((cell, ci) => {
+                                                const cellStr = cell === null ? null : String(cell);
+                                                const isLong = cellStr !== null && cellStr.length > 80;
+                                                const isExpanded = expandedCell?.row === ri && expandedCell?.col === ci;
+
+                                                return (
+                                                    <td
+                                                        key={ci}
+                                                        className={`px-3 py-1.5 border-b border-white/5 font-mono ${isExpanded ? 'max-w-lg' : 'max-w-xs'}`}
+                                                    >
+                                                        {cell === null ? (
+                                                            <span className="text-slate-600 italic">NULL</span>
+                                                        ) : typeof cell === 'boolean' ? (
+                                                            <span className={cell ? 'text-green-400' : 'text-red-400'}>
+                                                                {String(cell)}
+                                                            </span>
+                                                        ) : typeof cell === 'number' ? (
+                                                            <span className="text-blue-400">{cell}</span>
+                                                        ) : isExpanded ? (
+                                                            <div>
+                                                                <pre className="text-slate-300 whitespace-pre-wrap break-all text-[11px] max-h-60 overflow-y-auto">
+                                                                    {cellStr}
+                                                                </pre>
+                                                                <button
+                                                                    onClick={() => setExpandedCell(null)}
+                                                                    className="text-[10px] text-indigo-400 hover:text-indigo-300 mt-1"
+                                                                >
+                                                                    收起
+                                                                </button>
+                                                            </div>
+                                                        ) : isLong ? (
+                                                            <div className="flex items-center gap-1">
+                                                                <span className="text-slate-300 truncate block max-w-[200px]">{cellStr}</span>
+                                                                <button
+                                                                    onClick={() => setExpandedCell({ row: ri, col: ci })}
+                                                                    className="text-[10px] text-indigo-400 hover:text-indigo-300 whitespace-nowrap flex-shrink-0"
+                                                                >
+                                                                    展开
+                                                                </button>
+                                                            </div>
+                                                        ) : (
+                                                            <span className="text-slate-300">{cellStr}</span>
+                                                        )}
+                                                    </td>
+                                                );
+                                            })}
                                         </tr>
                                     ))}
                                 </tbody>

@@ -10,4 +10,6 @@ public interface TicketTranslationRepository extends JpaRepository<TicketTransla
     List<TicketTranslation> findByTicket(Ticket ticket);
 
     Optional<TicketTranslation> findByTicketAndTargetLang(Ticket ticket, String targetLang);
+
+    boolean existsByTicket(Ticket ticket);
 }

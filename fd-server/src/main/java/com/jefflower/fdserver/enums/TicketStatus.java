@@ -7,5 +7,6 @@ public enum TicketStatus {
     REPLYING,
     PENDING_AUDIT,
     AUDITING,
+    APPROVED,
     COMPLETED
 }

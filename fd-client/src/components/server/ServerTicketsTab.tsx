@@ -15,6 +15,7 @@ const STATUS_OPTIONS: { value: TicketStatus | ''; label: string; color: string }
     { value: 'REPLYING', label: '回复中', color: 'bg-purple-500/20 text-purple-500' },
     { value: 'PENDING_AUDIT', label: '待审核', color: 'bg-pink-500/20 text-pink-500' },
     { value: 'AUDITING', label: '审核中', color: 'bg-indigo-500/20 text-indigo-400' },
+    { value: 'APPROVED', label: '待推送', color: 'bg-emerald-500/20 text-emerald-500' },
     { value: 'COMPLETED', label: '已完成', color: 'bg-green-500/20 text-green-500' },
 ];
 

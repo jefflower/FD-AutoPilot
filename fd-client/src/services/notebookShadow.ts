@@ -19,6 +19,23 @@ export interface ShadowResponse {
  * 同时保留 in-page observer 的连续 DOM 监测能力。
  */
 
+/**
+ * NotebookLM DOM 选择器常量
+ * NotebookLM 更新 UI 后只需修改此处
+ */
+const SELECTORS = {
+  INPUT: 'textarea.query-box-input',
+  CHAT_PAIR: '.chat-message-pair',
+  CHAT_PAIR_ALT: '[role="log"] .message-content',
+  BOT_REPLY: '.to-user-container .message-text-content',
+  BOT_REPLY_FALLBACK_1: '.model-response-text',
+  BOT_REPLY_FALLBACK_2: '.response-container',
+  COPY_BUTTON: '.xap-copy-to-clipboard',
+  SEND_BUTTON: 'button.submit-button:not([disabled])',
+  MENU_BUTTON: 'button[aria-label="对话选项"]',
+  CONFIRM_DELETE: 'button.yes-button',
+} as const;
+
 // 全局互斥锁状态
 let globalQueryLock: Promise<void> = Promise.resolve();
 
@@ -76,6 +93,7 @@ export class NotebookShadowService {
       const mainScript = `
         (async function() {
           const SESSION_ID = "${sessionId}";
+          const SEL = ${JSON.stringify(SELECTORS)};
           const log = (msg) => {
             if (window.__TAURI__?.core) {
               window.__TAURI__.core.invoke('forward_shadow_event', {
@@ -102,11 +120,11 @@ export class NotebookShadowService {
 
           async function forceClear() {
              for (let i = 0; i < 3; i++) {
-                const pairs = document.querySelectorAll('.chat-message-pair, [role="log"] .message-content');
+                const pairs = document.querySelectorAll(SEL.CHAT_PAIR + ', ' + SEL.CHAT_PAIR_ALT);
                 if (pairs.length === 0) { log('No history to clear'); return true; }
 
                 log('Found ' + pairs.length + ' pair(s), attempting to clear...');
-                const menuBtn = document.querySelector('button[aria-label="对话选项"]') ||
+                const menuBtn = document.querySelector(SEL.MENU_BUTTON) ||
                                 Array.from(document.querySelectorAll('button')).find(b => b.innerHTML.includes('more_vert') || b.innerText.includes('more_vert'));
                 if (!menuBtn) { log('No menu button found, waiting...'); await new Promise(r => setTimeout(r, 1000)); continue; }
 
@@ -120,14 +138,14 @@ export class NotebookShadowService {
                 if (delItem) {
                    delItem.click();
                    await new Promise(r => setTimeout(r, 1000));
-                   const confirm = document.querySelector('button.yes-button') ||
+                   const confirm = document.querySelector(SEL.CONFIRM_DELETE) ||
                                    Array.from(document.querySelectorAll('button')).find(el =>
                                      (el.innerText.includes('删除') || el.innerText.includes('Delete')) && el.classList.contains('mat-mdc-button-base')
                                    );
                    if (confirm) {
                       confirm.click();
                       await new Promise(r => setTimeout(r, 2500));
-                      if (document.querySelectorAll('.chat-message-pair').length === 0) {
+                      if (document.querySelectorAll(SEL.CHAT_PAIR).length === 0) {
                         log('History cleared successfully');
                         return true;
                       }
@@ -147,7 +165,7 @@ export class NotebookShadowService {
           // 等待输入框就绪
           let input = null;
           for (let retry = 0; retry < 10; retry++) {
-            input = document.querySelector('textarea.query-box-input');
+            input = document.querySelector(SEL.INPUT);
             if (input) break;
             log('Waiting for input textarea... attempt ' + (retry + 1));
             await new Promise(r => setTimeout(r, 1000));
@@ -173,7 +191,7 @@ export class NotebookShadowService {
           // 等待发送按钮可用
           let sendBtn = null;
           for (let retry = 0; retry < 10; retry++) {
-            sendBtn = document.querySelector('button.submit-button:not([disabled])') ||
+            sendBtn = document.querySelector(SEL.SEND_BUTTON) ||
                       Array.from(document.querySelectorAll('button')).find(b =>
                         (b.innerHTML.includes('arrow_forward') || b.innerHTML.includes('send')) && !b.disabled
                       );
@@ -191,8 +209,8 @@ export class NotebookShadowService {
             let confirmed = false;
             for (let check = 0; check < 20; check++) {
               await new Promise(r => setTimeout(r, 500));
-              const pairs = document.querySelectorAll('.chat-message-pair');
-              const inp = document.querySelector('textarea.query-box-input');
+              const pairs = document.querySelectorAll(SEL.CHAT_PAIR);
+              const inp = document.querySelector(SEL.INPUT);
               const inputCleared = inp && inp.value.trim().length === 0;
               if (pairs.length > 0 || inputCleared) {
                 log('Message confirmed sent: pairs=' + pairs.length + ', inputCleared=' + inputCleared);
@@ -210,7 +228,7 @@ export class NotebookShadowService {
               if (!window.__SHADOW_SESSION_ACTIVE) return;
               window.__SHADOW_HEARTBEAT = (window.__SHADOW_HEARTBEAT || 0) + 1;
               try {
-                const pairs = document.querySelectorAll('.chat-message-pair');
+                const pairs = document.querySelectorAll(SEL.CHAT_PAIR);
                 const pairCount = pairs.length;
 
                 if (pairCount === 0) {
@@ -229,9 +247,9 @@ export class NotebookShadowService {
                 const lastPair = pairs[pairCount - 1];
 
                 // 【关键】只提取 bot 回复文本，不读整个 chat pair（用户 prompt 中有 [timestamp] 会干扰 JSON 检测）
-                var botMsgEl = lastPair.querySelector('.to-user-container .message-text-content') ||
-                               lastPair.querySelector('.model-response-text') ||
-                               lastPair.querySelector('.response-container');
+                var botMsgEl = lastPair.querySelector(SEL.BOT_REPLY) ||
+                               lastPair.querySelector(SEL.BOT_REPLY_FALLBACK_1) ||
+                               lastPair.querySelector(SEL.BOT_REPLY_FALLBACK_2);
                 var text;
                 if (botMsgEl) {
                   text = (botMsgEl.innerText || botMsgEl.textContent || '').trim();
@@ -247,14 +265,14 @@ export class NotebookShadowService {
                 }
 
                 const balanced = isJsonBalanced(text);
-                const inp = document.querySelector('textarea.query-box-input');
+                const inp = document.querySelector(SEL.INPUT);
                 const botIdle = inp && !inp.disabled;
 
                 // 跟踪 bot 是否已开始响应
                 if (!botIdle) window.__SHADOW_BOT_RESPONDED = true;
 
                 // 复制按钮出现 = 生成完毕（比 textarea disabled 更可靠）
-                const hasCopyBtn = !!lastPair.querySelector('.xap-copy-to-clipboard');
+                const hasCopyBtn = !!lastPair.querySelector(SEL.COPY_BUTTON);
                 const isFinished = window.__SHADOW_BOT_RESPONDED && (hasCopyBtn || (balanced && botIdle));
 
                 // 写入全局变量（每次都写，让 relay 脚本能读到最新状态）
