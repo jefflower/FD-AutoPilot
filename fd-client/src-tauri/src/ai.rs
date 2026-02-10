@@ -37,6 +37,28 @@ where
     }
 }
 
+/// Extract JSON object from a string by finding the first '{' and last '}'.
+/// Used to strip markdown fences and surrounding text from AI output.
+pub fn extract_json_object(raw: &str) -> Result<&str, String> {
+    let start = raw
+        .find('{')
+        .ok_or_else(|| format!("Failed to find JSON start '{{' in output: {}", raw))?;
+    let end = raw
+        .rfind('}')
+        .ok_or_else(|| format!("Failed to find JSON end '}}' in output: {}", raw))?;
+    Ok(&raw[start..=end])
+}
+
+/// Map a short language code to a full language name.
+pub fn lang_code_to_name(code: &str) -> &str {
+    match code {
+        "cn" | "zh-CN" => "Simplified Chinese",
+        "en" => "English",
+        "jp" => "Japanese",
+        _ => code,
+    }
+}
+
 pub struct GeminiClient;
 
 impl GeminiClient {
@@ -56,12 +78,7 @@ impl GeminiClient {
         );
 
         // Prepare prompt
-        let lang_name = match target_lang {
-            "cn" | "zh-CN" => "Simplified Chinese",
-            "en" => "English",
-            "jp" => "Japanese",
-            _ => target_lang, // 兜底使用原始代码
-        };
+        let lang_name = lang_code_to_name(target_lang);
         let mut prompt = format!(
             "You are a professional customer support translator. \
             Translate the following support ticket into {}. \
@@ -107,13 +124,7 @@ impl GeminiClient {
         let stdout = String::from_utf8_lossy(&output.stdout);
 
         // Robust JSON extraction: Find the first '{' and the last '}'
-        let start = stdout
-            .find('{')
-            .ok_or_else(|| format!("Failed to find JSON start '{{' in output: {}", stdout))?;
-        let end = stdout
-            .rfind('}')
-            .ok_or_else(|| format!("Failed to find JSON end '}}' in output: {}", stdout))?;
-        let clean_json = &stdout[start..=end];
+        let clean_json = extract_json_object(&stdout)?;
 
         let translated_data: TranslationResult = serde_json::from_str(clean_json).map_err(|e| {
             format!(
@@ -158,5 +169,203 @@ impl GeminiClient {
             ),
         );
         Ok(new_ticket)
+    }
+
+    /// Sync-translate a reply: given both language versions and a direction,
+    /// translate one side to match the other using Gemini CLI.
+    pub async fn sync_translate_reply(
+        app: &AppHandle,
+        source_text: &str,
+        reference_text: &str,
+        direction: &str,
+        target_lang: &str,
+    ) -> Result<String, String> {
+        let lang_name = lang_code_to_name(target_lang);
+
+        let (from_label, to_label, translate_from, translate_to) = match direction {
+            "zh_to_target" => ("Chinese", lang_name, source_text, reference_text),
+            "target_to_zh" => (lang_name, "Chinese", source_text, reference_text),
+            _ => return Err(format!("Unknown direction: {}", direction)),
+        };
+
+        Self::log(
+            app,
+            &format!("🔄 Sync translating reply: {} → {}...", from_label, to_label),
+        );
+
+        let prompt = format!(
+            "You are a professional customer support translator.\n\
+            \n\
+            Below are two versions of a customer support reply:\n\
+            \n\
+            --- VERSION A ({}) ---\n\
+            {}\n\
+            \n\
+            --- VERSION B ({}) ---\n\
+            {}\n\
+            \n\
+            TASK: Translate VERSION A from {} into {}.\n\
+            Use VERSION B as reference for context and tone, but produce a fresh translation of VERSION A.\n\
+            \n\
+            CRITICAL RULES:\n\
+            1. Output ONLY the translated text. No explanations, no labels, no markdown.\n\
+            2. Maintain the same tone, formatting, and paragraph structure as VERSION A.\n\
+            3. The output must be entirely in {}.",
+            from_label, translate_from,
+            to_label, translate_to,
+            from_label, to_label,
+            to_label
+        );
+
+        let output = Command::new("gemini")
+            .arg(&prompt)
+            .output()
+            .map_err(|e| format!("Failed to execute gemini: {}", e))?;
+
+        if !output.status.success() {
+            let stderr = String::from_utf8_lossy(&output.stderr);
+            return Err(format!("Gemini CLI error: {}", stderr));
+        }
+
+        let stdout = String::from_utf8_lossy(&output.stdout).trim().to_string();
+
+        Self::log(
+            app,
+            &format!("✅ Sync translation complete ({} → {}), result: {} chars", from_label, to_label, stdout.len()),
+        );
+
+        Ok(stdout)
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    // ── extract_json_object ──
+
+    #[test]
+    fn extract_json_from_clean_input() {
+        let input = r#"{"subject":"Hello","description_text":"World"}"#;
+        assert_eq!(extract_json_object(input).unwrap(), input);
+    }
+
+    #[test]
+    fn extract_json_from_markdown_fenced_output() {
+        let input = "Here is the translation:\n```json\n{\"subject\":\"你好\"}\n```\nDone!";
+        assert_eq!(
+            extract_json_object(input).unwrap(),
+            r#"{"subject":"你好"}"#
+        );
+    }
+
+    #[test]
+    fn extract_json_with_nested_braces() {
+        let input = r#"prefix {"a":{"b":"c"}} suffix"#;
+        assert_eq!(
+            extract_json_object(input).unwrap(),
+            r#"{"a":{"b":"c"}}"#
+        );
+    }
+
+    #[test]
+    fn extract_json_no_opening_brace() {
+        let input = "no json here";
+        assert!(extract_json_object(input).is_err());
+    }
+
+    #[test]
+    fn extract_json_no_closing_brace() {
+        let input = "start { but never close";
+        // rfind('}') will fail
+        assert!(extract_json_object(input).is_err());
+    }
+
+    // ── lang_code_to_name ──
+
+    #[test]
+    fn lang_code_chinese_variants() {
+        assert_eq!(lang_code_to_name("cn"), "Simplified Chinese");
+        assert_eq!(lang_code_to_name("zh-CN"), "Simplified Chinese");
+    }
+
+    #[test]
+    fn lang_code_english() {
+        assert_eq!(lang_code_to_name("en"), "English");
+    }
+
+    #[test]
+    fn lang_code_japanese() {
+        assert_eq!(lang_code_to_name("jp"), "Japanese");
+    }
+
+    #[test]
+    fn lang_code_unknown_passthrough() {
+        assert_eq!(lang_code_to_name("ko"), "ko");
+        assert_eq!(lang_code_to_name("fr"), "fr");
+    }
+
+    // ── TranslationResult deserialization ──
+
+    #[test]
+    fn deserialize_translation_result_standard() {
+        let json = r#"{
+            "subject": "翻译后的标题",
+            "description_text": "翻译后的正文",
+            "conversations": [
+                {"id": 123, "body_text": "翻译后的对话"}
+            ]
+        }"#;
+        let result: TranslationResult = serde_json::from_str(json).unwrap();
+        assert_eq!(result.subject, "翻译后的标题");
+        assert_eq!(result.description_text.as_deref(), Some("翻译后的正文"));
+        assert_eq!(result.conversations.len(), 1);
+        assert_eq!(result.conversations[0].id, 123);
+        assert_eq!(result.conversations[0].body_text, "翻译后的对话");
+    }
+
+    #[test]
+    fn deserialize_translation_result_with_aliases() {
+        // Test field aliases: "title" -> subject, "content" -> description_text
+        let json = r#"{
+            "title": "Title via alias",
+            "content": "Content via alias",
+            "conversations": []
+        }"#;
+        let result: TranslationResult = serde_json::from_str(json).unwrap();
+        assert_eq!(result.subject, "Title via alias");
+        assert_eq!(result.description_text.as_deref(), Some("Content via alias"));
+    }
+
+    #[test]
+    fn deserialize_conversation_id_as_string() {
+        // The deserialize_id function should handle string IDs
+        let json = r#"{"id": "456", "body_text": "test"}"#;
+        let conv: ConversationTranslation = serde_json::from_str(json).unwrap();
+        assert_eq!(conv.id, 456);
+    }
+
+    #[test]
+    fn deserialize_conversation_id_as_number() {
+        let json = r#"{"id": 789, "body_text": "test"}"#;
+        let conv: ConversationTranslation = serde_json::from_str(json).unwrap();
+        assert_eq!(conv.id, 789);
+    }
+
+    #[test]
+    fn deserialize_conversation_id_invalid_string() {
+        let json = r#"{"id": "not_a_number", "body_text": "test"}"#;
+        let result = serde_json::from_str::<ConversationTranslation>(json);
+        assert!(result.is_err());
+    }
+
+    #[test]
+    fn deserialize_translation_result_null_description() {
+        let json = r#"{
+            "subject": "Title",
+            "conversations": []
+        }"#;
+        let result: TranslationResult = serde_json::from_str(json).unwrap();
+        assert!(result.description_text.is_none());
     }
 }

@@ -494,6 +494,18 @@ impl MqConsumer {
         }
     }
 
+    /// 解析翻译消息（提取为独立方法以便测试）
+    pub fn parse_translation_message(data: &[u8]) -> Result<(i64, String, String), String> {
+        let msg: TranslationMessage = serde_json::from_slice(data).map_err(|e| e.to_string())?;
+        Ok((msg.ticket_id, msg.payload.external_id, msg.payload.subject.unwrap_or_default()))
+    }
+
+    /// 解析回复消息（提取为独立方法以便测试）
+    pub fn parse_reply_message(data: &[u8]) -> Result<i64, String> {
+        let msg: ReplyMessage = serde_json::from_slice(data).map_err(|e| e.to_string())?;
+        Ok(msg.ticket_id)
+    }
+
     /// 停止消费
     #[allow(dead_code)]
     pub fn stop(&self) {
@@ -589,5 +601,255 @@ impl MqConsumer {
                 Err(err_msg)
             }
         }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    // ── MqConfig ──
+
+    #[test]
+    fn mq_config_from_settings() {
+        let settings = Settings {
+            mq_host: "rabbitmq.example.com".to_string(),
+            mq_port: 5673,
+            mq_username: "admin".to_string(),
+            mq_password: "secret".to_string(),
+            mq_consumer_enabled: true,
+            mq_batch_size: 10,
+            translation_lang: "en".to_string(),
+        };
+        let config = MqConfig::from_settings(&settings);
+        assert_eq!(config.host, "rabbitmq.example.com");
+        assert_eq!(config.port, 5673);
+        assert_eq!(config.username, "admin");
+        assert_eq!(config.password, "secret");
+    }
+
+    // ── MqConsumerState ──
+
+    #[test]
+    fn consumer_state_default() {
+        let state = MqConsumerState::default();
+        assert!(!state.is_running.load(Ordering::SeqCst));
+        assert_eq!(state.batch_size.load(Ordering::SeqCst), 1);
+    }
+
+    #[tokio::test]
+    async fn consumer_state_translating_list_operations() {
+        let state = MqConsumerState::default();
+
+        // Initially empty
+        assert!(state.translating_tickets.lock().await.is_empty());
+
+        // Add a ticket
+        {
+            let mut list = state.translating_tickets.lock().await;
+            list.push(TranslatingTicket {
+                ticket_id: 42,
+                external_id: "EXT-1".to_string(),
+                subject: "Test".to_string(),
+                started_at: 1000,
+            });
+        }
+        assert_eq!(state.translating_tickets.lock().await.len(), 1);
+
+        // Remove by position
+        {
+            let mut list = state.translating_tickets.lock().await;
+            let pos = list.iter().position(|t| t.ticket_id == 42);
+            assert!(pos.is_some());
+            list.remove(pos.unwrap());
+        }
+        assert!(state.translating_tickets.lock().await.is_empty());
+    }
+
+    #[tokio::test]
+    async fn consumer_state_pending_acks() {
+        let state = MqConsumerState::default();
+
+        let (tx, rx) = tokio::sync::oneshot::channel();
+        {
+            let mut p_acks = state.pending_acks.lock().await;
+            p_acks.insert(100, tx);
+        }
+
+        // Simulate completion signal
+        {
+            let mut p_acks = state.pending_acks.lock().await;
+            if let Some(sender) = p_acks.remove(&100) {
+                sender.send(true).unwrap();
+            }
+        }
+
+        assert!(rx.await.unwrap());
+    }
+
+    // ── RunGuard ──
+
+    #[test]
+    fn run_guard_resets_on_drop() {
+        let flag = Arc::new(AtomicBool::new(true));
+        {
+            let _guard = RunGuard(flag.clone());
+            assert!(flag.load(Ordering::SeqCst));
+        }
+        // After drop, should be false
+        assert!(!flag.load(Ordering::SeqCst));
+    }
+
+    // ── Message deserialization ──
+
+    #[test]
+    fn deserialize_translation_message() {
+        let json = r#"{
+            "msgId": "msg-001",
+            "ticketId": 42,
+            "timestamp": 1700000000000,
+            "payload": {
+                "externalId": "EXT-42",
+                "subject": "Help needed",
+                "content": "I have an issue"
+            }
+        }"#;
+        let msg: TranslationMessage = serde_json::from_str(json).unwrap();
+        assert_eq!(msg.msg_id, "msg-001");
+        assert_eq!(msg.ticket_id, 42);
+        assert_eq!(msg.payload.external_id, "EXT-42");
+        assert_eq!(msg.payload.subject.as_deref(), Some("Help needed"));
+    }
+
+    #[test]
+    fn deserialize_reply_message() {
+        let json = r#"{
+            "msgId": "msg-002",
+            "ticketId": 99,
+            "timestamp": 1700000000000
+        }"#;
+        let msg: ReplyMessage = serde_json::from_str(json).unwrap();
+        assert_eq!(msg.msg_id, "msg-002");
+        assert_eq!(msg.ticket_id, 99);
+    }
+
+    #[test]
+    fn parse_translation_message_valid() {
+        let json = br#"{
+            "msgId": "msg-001",
+            "ticketId": 42,
+            "timestamp": 1700000000000,
+            "payload": {
+                "externalId": "EXT-42",
+                "subject": "Help"
+            }
+        }"#;
+        let (ticket_id, ext_id, subject) = MqConsumer::parse_translation_message(json).unwrap();
+        assert_eq!(ticket_id, 42);
+        assert_eq!(ext_id, "EXT-42");
+        assert_eq!(subject, "Help");
+    }
+
+    #[test]
+    fn parse_translation_message_no_subject() {
+        let json = br#"{
+            "msgId": "msg-001",
+            "ticketId": 42,
+            "timestamp": 1700000000000,
+            "payload": {
+                "externalId": "EXT-42"
+            }
+        }"#;
+        let (_, _, subject) = MqConsumer::parse_translation_message(json).unwrap();
+        assert_eq!(subject, ""); // defaults to empty
+    }
+
+    #[test]
+    fn parse_translation_message_invalid_json() {
+        let bad = b"not json at all";
+        assert!(MqConsumer::parse_translation_message(bad).is_err());
+    }
+
+    #[test]
+    fn parse_reply_message_valid() {
+        let json = br#"{"msgId": "r-1", "ticketId": 77, "timestamp": 1000}"#;
+        assert_eq!(MqConsumer::parse_reply_message(json).unwrap(), 77);
+    }
+
+    #[test]
+    fn parse_reply_message_invalid() {
+        let bad = b"{}";
+        assert!(MqConsumer::parse_reply_message(bad).is_err());
+    }
+
+    // ── TicketContent / ConversationDto ──
+
+    #[test]
+    fn deserialize_ticket_content() {
+        let json = r#"{
+            "description": "issue description",
+            "conversations": [
+                {
+                    "id": 1,
+                    "bodyText": "Hello",
+                    "isPrivate": false,
+                    "incoming": true
+                }
+            ]
+        }"#;
+        let content: TicketContent = serde_json::from_str(json).unwrap();
+        assert_eq!(content.description.as_deref(), Some("issue description"));
+        let convs = content.conversations.unwrap();
+        assert_eq!(convs.len(), 1);
+        assert_eq!(convs[0].id, 1);
+        assert_eq!(convs[0].body_text, "Hello");
+    }
+
+    // ── CompletedTicket ──
+
+    #[test]
+    fn completed_ticket_serialization() {
+        let ticket = CompletedTicket {
+            ticket_id: 1,
+            external_id: "E-1".to_string(),
+            subject: "Test".to_string(),
+            started_at: 1000,
+            completed_at: 2000,
+            duration_ms: 1000,
+            success: true,
+            error_message: None,
+        };
+        let json = serde_json::to_string(&ticket).unwrap();
+        assert!(json.contains("\"ticketId\":1"));
+        assert!(json.contains("\"durationMs\":1000"));
+    }
+
+    // ── Consumer stop ──
+
+    #[test]
+    fn consumer_stop_sets_flag() {
+        let state = MqConsumerState::default();
+        state.is_running.store(true, Ordering::SeqCst);
+
+        let config = MqConfig {
+            host: "localhost".to_string(),
+            port: 5672,
+            username: "guest".to_string(),
+            password: "guest".to_string(),
+        };
+        let consumer = MqConsumer::new_with_state(config, state.clone());
+
+        assert!(state.is_running.load(Ordering::SeqCst));
+        consumer.stop();
+        assert!(!state.is_running.load(Ordering::SeqCst));
+    }
+
+    // ── Queue name constants ──
+
+    #[test]
+    fn queue_constants() {
+        assert_eq!(TRANSLATE_QUEUE, "q.ticket.translation");
+        assert_eq!(REPLY_QUEUE, "q.ticket.reply");
+        assert_eq!(AUDIT_QUEUE, "q.ticket.audit");
     }
 }
