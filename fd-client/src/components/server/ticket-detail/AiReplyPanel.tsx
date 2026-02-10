@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface AiReplyPanelProps {
     generatingAiReply: boolean;
@@ -39,6 +40,7 @@ const AiReplyPanel: React.FC<AiReplyPanelProps> = ({
     onDiscard,
     onConfirmReply,
 }) => {
+    const { t } = useTranslation(['tickets', 'common']);
     const hasContent = generatingAiReply || aiReplyText || mqStreamingText || aiError;
     if (!hasContent) return null;
 
@@ -62,7 +64,7 @@ const AiReplyPanel: React.FC<AiReplyPanelProps> = ({
                             {aiError ? '!' : 'AI'}
                         </div>
                         <span className="text-[11px] font-black text-white uppercase tracking-wider">
-                            {aiError ? 'Generation Error' : 'NotebookLM Response'}
+                            {aiError ? t('reply.generationError') : t('reply.notebookResponse')}
                         </span>
                     </div>
                     <div className="flex items-center gap-3">
@@ -71,7 +73,7 @@ const AiReplyPanel: React.FC<AiReplyPanelProps> = ({
                                 onClick={(e) => { e.stopPropagation(); setShowPrompts(!showPrompts); }}
                                 className={`px-3 py-1 text-[9px] font-black rounded-lg border transition-all ${showPrompts ? 'bg-indigo-600/30 border-indigo-500 text-indigo-300' : 'bg-white/5 border-white/10 text-slate-400 hover:text-white hover:border-white/20'}`}
                             >
-                                {showPrompts ? 'HIDE PROMPTS' : 'VIEW PROMPTS'}
+                                {showPrompts ? t('reply.hidePrompts') : t('reply.viewPrompts')}
                             </button>
                         )}
                         <div className="flex items-center gap-2">
@@ -81,13 +83,13 @@ const AiReplyPanel: React.FC<AiReplyPanelProps> = ({
                                         onClick={() => setAiReplyLang('original')}
                                         className={`px-3 py-1 text-[10px] font-bold rounded-md transition-all ${aiReplyLang === 'original' ? 'bg-purple-600 text-white shadow-lg' : 'text-slate-500 hover:text-slate-300'}`}
                                     >
-                                        ORIGIN
+                                        {t('reply.originTab')}
                                     </button>
                                     <button
                                         onClick={() => setAiReplyLang('cn')}
                                         className={`px-3 py-1 text-[10px] font-bold rounded-md transition-all ${aiReplyLang === 'cn' ? 'bg-purple-600 text-white shadow-lg' : 'text-slate-500 hover:text-slate-300'}`}
                                     >
-                                        CHINESE
+                                        {t('reply.chineseTab')}
                                     </button>
                                 </div>
                             )}
@@ -104,11 +106,11 @@ const AiReplyPanel: React.FC<AiReplyPanelProps> = ({
                         <div className="space-y-4 animate-in fade-in slide-in-from-bottom-2 duration-300">
                             <div className="text-[10px] font-bold text-indigo-400 uppercase tracking-widest flex items-center gap-2">
                                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
-                                RAW PROMPT DEBUGGER
+                                {t('reply.promptDebugger')}
                             </div>
                             <div className="bg-black/40 border border-white/5 p-4 rounded-xl">
                                 <pre className="text-[11px] text-slate-300 font-mono whitespace-pre-wrap leading-relaxed selection:bg-indigo-500/30">
-                                    {currentPrompt || 'Prompt processing...'}
+                                    {currentPrompt || t('reply.promptProcessing')}
                                 </pre>
                             </div>
                         </div>
@@ -124,22 +126,22 @@ const AiReplyPanel: React.FC<AiReplyPanelProps> = ({
                                     {isSplitMode ? (
                                         <div className="grid grid-cols-2 gap-4">
                                             <div className="bg-slate-800/60 p-4 rounded-lg border border-slate-700/50">
-                                                <div className="text-[10px] font-bold text-slate-500 mb-2 uppercase tracking-wider">Target Language Reply</div>
+                                                <div className="text-[10px] font-bold text-slate-500 mb-2 uppercase tracking-wider">{t('reply.targetLangReply')}</div>
                                                 <div className="text-sm text-slate-200 whitespace-pre-wrap">{aiReplies[0]}</div>
                                             </div>
                                             <div className="bg-emerald-900/40 p-4 rounded-lg border border-emerald-700/50">
-                                                <div className="text-[10px] font-bold text-emerald-500 mb-2 uppercase tracking-wider">&#x4E2D;&#x6587;&#x56DE;&#x590D;</div>
+                                                <div className="text-[10px] font-bold text-emerald-500 mb-2 uppercase tracking-wider">{t('reply.chineseReply')}</div>
                                                 <div className="text-sm text-emerald-100 whitespace-pre-wrap">{aiReplies[1]}</div>
                                             </div>
                                         </div>
                                     ) : (
                                         <div className="space-y-4">
                                             <div className="bg-slate-800/60 p-4 rounded-lg border border-slate-700/50">
-                                                <div className="text-[10px] font-bold text-slate-500 mb-2 uppercase tracking-wider">Target Language Reply</div>
+                                                <div className="text-[10px] font-bold text-slate-500 mb-2 uppercase tracking-wider">{t('reply.targetLangReply')}</div>
                                                 <div className="text-sm text-slate-200 whitespace-pre-wrap">{aiReplies[0]}</div>
                                             </div>
                                             <div className="bg-emerald-900/40 p-4 rounded-lg border border-emerald-700/50">
-                                                <div className="text-[10px] font-bold text-emerald-500 mb-2 uppercase tracking-wider">&#x4E2D;&#x6587;&#x56DE;&#x590D;</div>
+                                                <div className="text-[10px] font-bold text-emerald-500 mb-2 uppercase tracking-wider">{t('reply.chineseReply')}</div>
                                                 <div className="text-sm text-emerald-100 whitespace-pre-wrap">{aiReplies[1]}</div>
                                             </div>
                                         </div>
@@ -157,7 +159,7 @@ const AiReplyPanel: React.FC<AiReplyPanelProps> = ({
                                         <div className="w-1.5 h-1.5 rounded-full bg-purple-500 animate-bounce [animation-delay:-0.15s]"></div>
                                         <div className="w-1.5 h-1.5 rounded-full bg-purple-500 animate-bounce"></div>
                                     </div>
-                                    <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest animate-pulse">Analyzing context & building response...</span>
+                                    <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest animate-pulse">{t('reply.analyzingContext')}</span>
                                 </div>
                             )}
                         </div>
@@ -173,11 +175,11 @@ const AiReplyPanel: React.FC<AiReplyPanelProps> = ({
                                 {tempAiReply ? (
                                     <span className="text-[10px] font-black text-amber-400 uppercase tracking-widest flex items-center gap-2">
                                         <span className="w-2 h-2 bg-amber-400 rounded-full animate-pulse"></span>
-                                        &#x7B49;&#x5F85;&#x4FDD;&#x5B58;&#x786E;&#x8BA4;
+                                        {t('reply.waitingConfirm')}
                                     </span>
                                 ) : (
                                     <span className="text-[10px] font-bold text-slate-500">
-                                        &#x5DF2;&#x5B8C;&#x6210; &#xB7; &#x8BF7;&#x590D;&#x5236;&#x6216;&#x4FDD;&#x5B58;&#x56DE;&#x590D;
+                                        {t('reply.completedHint')}
                                     </span>
                                 )}
                             </div>
@@ -186,18 +188,18 @@ const AiReplyPanel: React.FC<AiReplyPanelProps> = ({
                                     onClick={() => {
                                         const text = aiReplies ? `${aiReplies[0]}\n\n---\n\n${aiReplies[1]}` : aiReplyText;
                                         navigator.clipboard.writeText(text);
-                                        alert('已复制到剪贴板');
+                                        alert(t('reply.copiedToClipboard'));
                                     }}
                                     className="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-md text-[10px] font-black border border-white/10 flex items-center gap-1.5 transition-all"
                                 >
                                     <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" /></svg>
-                                    &#x590D;&#x5236;&#x5168;&#x90E8;
+                                    {t('reply.copyAll')}
                                 </button>
                                 <button
                                     onClick={onDiscard}
                                     className="px-3 py-1.5 bg-slate-700 hover:bg-slate-600 text-slate-300 rounded-md text-[10px] font-black border border-white/10 transition-all"
                                 >
-                                    &#x4E22;&#x5F03;
+                                    {t('reply.discard')}
                                 </button>
                                 {tempAiReply && (
                                     <button
@@ -206,7 +208,7 @@ const AiReplyPanel: React.FC<AiReplyPanelProps> = ({
                                         className="px-5 py-1.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white rounded-md text-[10px] font-black shadow-lg shadow-purple-500/30 transition-all flex items-center gap-2 animate-pulse"
                                     >
                                         <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                                        {submitting ? '保存中...' : '保存回复'}
+                                        {submitting ? t('reply.savingReply') : t('reply.saveReply')}
                                     </button>
                                 )}
                             </div>

@@ -5,6 +5,7 @@
  */
 
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { getServerBaseUrl, setServerBaseUrl } from '../../services/serverApi';
 
 interface AuthLoginTabProps {
@@ -16,12 +17,14 @@ interface AuthLoginTabProps {
 
 // ===== 节点配置 =====
 const NODES = [
-    { id: 0, label: '同步', color: '#6366f1', lightColor: '#818cf8' },
-    { id: 1, label: '翻译', color: '#06b6d4', lightColor: '#22d3ee' },
-    { id: 2, label: '回复', color: '#f59e0b', lightColor: '#fbbf24' },
-    { id: 3, label: '审核', color: '#8b5cf6', lightColor: '#a78bfa' },
-    { id: 4, label: '推送', color: '#22c55e', lightColor: '#4ade80' },
+    { id: 0, color: '#6366f1', lightColor: '#818cf8' },
+    { id: 1, color: '#06b6d4', lightColor: '#22d3ee' },
+    { id: 2, color: '#f59e0b', lightColor: '#fbbf24' },
+    { id: 3, color: '#8b5cf6', lightColor: '#a78bfa' },
+    { id: 4, color: '#22c55e', lightColor: '#4ade80' },
 ];
+
+const PIPELINE_KEYS = ['sync', 'translate', 'reply', 'audit', 'push'];
 
 // SVG 图标路径 (heroicons outline, viewBox 0 0 24 24)
 const NODE_ICON_PATHS = [
@@ -75,6 +78,7 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
     isLoading = false,
     error,
 }) => {
+    const { t } = useTranslation('auth');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [localError, setLocalError] = useState<string | null>(null);
@@ -161,13 +165,13 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
         e.preventDefault();
         setLocalError(null);
         if (!username.trim() || !password.trim()) {
-            setLocalError('请输入用户名和密码');
+            setLocalError(t('login.validationRequired'));
             return;
         }
         try {
             await onLogin({ username: username.trim(), password });
         } catch (err) {
-            setLocalError(err instanceof Error ? err.message : '登录失败');
+            setLocalError(err instanceof Error ? err.message : t('login.loginFailed'));
         }
     };
 
@@ -228,7 +232,7 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
                         className="w-2.5 h-2.5 rounded-full animate-pulse"
                         style={{ backgroundColor: activeNode.color, boxShadow: `0 0 12px ${activeNode.color}` }}
                     />
-                    <span className="text-white font-semibold text-sm tracking-wide">{activeNode.label}</span>
+                    <span className="text-white font-semibold text-sm tracking-wide">{t(`pipeline.${PIPELINE_KEYS[animState.currentNode]}` as any)}</span>
                     <div className="w-32 h-1.5 bg-slate-700/50 rounded-full overflow-hidden">
                         <div
                             className="h-full rounded-full transition-all duration-75"
@@ -400,7 +404,7 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
                                         fontFamily="Inter, system-ui, sans-serif"
                                         style={{ transition: 'fill 0.3s' }}
                                     >
-                                        {node.label}
+                                        {t(`pipeline.${PIPELINE_KEYS[idx]}` as any)}
                                     </text>
                                 </g>
                             );
@@ -436,7 +440,7 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
                     <h2 className="text-2xl font-bold bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
                         FD-AutoPilot
                     </h2>
-                    <p className="text-slate-500 text-sm mt-1">智能工单自动化处理平台</p>
+                    <p className="text-slate-500 text-sm mt-1">{t('login.brandSubtitle')}</p>
                 </div>
             </div>
 
@@ -456,8 +460,8 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
                         <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-500 via-purple-500 to-cyan-500 shadow-2xl shadow-indigo-500/25 mb-4">
                             <span className="text-white text-xl font-black tracking-tight">FD</span>
                         </div>
-                        <h1 className="text-2xl font-bold text-white mb-1">欢迎回来</h1>
-                        <p className="text-slate-500 text-sm">登录以启动工单处理流水线</p>
+                        <h1 className="text-2xl font-bold text-white mb-1">{t('login.title')}</h1>
+                        <p className="text-slate-500 text-sm">{t('login.subtitle')}</p>
                     </div>
 
                     {/* 玻璃质感卡片 */}
@@ -480,7 +484,7 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
 
                             {/* 用户名输入 */}
                             <div className="space-y-1.5">
-                                <label className="text-slate-400 text-xs font-medium pl-1 block">用户名</label>
+                                <label className="text-slate-400 text-xs font-medium pl-1 block">{t('login.username')}</label>
                                 <div className={`relative group ${focusedField === 'username' ? 'z-10' : ''}`}>
                                     <div className={`absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-xl opacity-0 blur transition-opacity duration-300 ${focusedField === 'username' ? 'opacity-50' : 'group-hover:opacity-20'}`} />
                                     <div className="relative flex items-center">
@@ -495,7 +499,7 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
                                             onChange={(e) => setUsername(e.target.value)}
                                             onFocus={() => setFocusedField('username')}
                                             onBlur={() => setFocusedField(null)}
-                                            placeholder="请输入用户名"
+                                            placeholder={t('login.usernamePlaceholder')}
                                             className="relative w-full pl-10 pr-4 py-3 bg-slate-900/60 border border-white/10 rounded-xl text-white text-sm placeholder-slate-600 focus:outline-none focus:border-transparent transition-all duration-300"
                                         />
                                     </div>
@@ -504,7 +508,7 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
 
                             {/* 密码输入 */}
                             <div className="space-y-1.5">
-                                <label className="text-slate-400 text-xs font-medium pl-1 block">密码</label>
+                                <label className="text-slate-400 text-xs font-medium pl-1 block">{t('login.password')}</label>
                                 <div className={`relative group ${focusedField === 'password' ? 'z-10' : ''}`}>
                                     <div className={`absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl opacity-0 blur transition-opacity duration-300 ${focusedField === 'password' ? 'opacity-50' : 'group-hover:opacity-20'}`} />
                                     <div className="relative flex items-center">
@@ -519,7 +523,7 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
                                             onChange={(e) => setPassword(e.target.value)}
                                             onFocus={() => setFocusedField('password')}
                                             onBlur={() => setFocusedField(null)}
-                                            placeholder="请输入密码"
+                                            placeholder={t('login.passwordPlaceholder')}
                                             className="relative w-full pl-10 pr-4 py-3 bg-slate-900/60 border border-white/10 rounded-xl text-white text-sm placeholder-slate-600 focus:outline-none focus:border-transparent transition-all duration-300"
                                         />
                                     </div>
@@ -545,11 +549,11 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
                                             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                                             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                                         </svg>
-                                        <span>登录中...</span>
+                                        <span>{t('login.loggingIn')}</span>
                                     </>
                                 ) : (
                                     <>
-                                        <span>启动流水线</span>
+                                        <span>{t('login.submitButton')}</span>
                                         <svg className="w-4 h-4 text-white/80 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                         </svg>
@@ -569,7 +573,7 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                 </svg>
-                                服务器配置
+                                {t('login.serverConfig')}
                                 <svg className={`w-3 h-3 transition-transform duration-300 ${showServerConfig ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                                 </svg>
@@ -594,7 +598,7 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
                         {/* 注册链接 */}
                         <div className="mt-4 text-center">
                             <button onClick={onSwitchToRegister} className="text-slate-500 hover:text-white text-xs transition-colors">
-                                还没有账号? <span className="text-indigo-400 hover:text-indigo-300 transition-colors">注册</span>
+                                {t('login.noAccount')} <span className="text-indigo-400 hover:text-indigo-300 transition-colors">{t('login.register')}</span>
                             </button>
                         </div>
                     </div>

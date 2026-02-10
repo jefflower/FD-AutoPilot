@@ -7,20 +7,25 @@
  * - 查看同步日志
  */
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { adminApi, configApi } from '../../services/serverApi';
 import type { SyncResult, SyncConfig, SyncLog } from '../../types/server';
-
-// 常用 cron 预设
-const CRON_PRESETS = [
-    { label: '每5分钟', value: '0 0/5 * * * ?' },
-    { label: '每10分钟', value: '0 0/10 * * * ?' },
-    { label: '每30分钟', value: '0 0/30 * * * ?' },
-    { label: '每小时', value: '0 0 * * * ?' },
-    { label: '每天 9:00', value: '0 0 9 * * ?' },
+// 常用 cron 预设 - 工厂函数
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const getCronPresets = (t: (...args: any[]) => string) => [
+    { label: t('sync.cronPresets.every5min'), value: '0 0/5 * * * ?' },
+    { label: t('sync.cronPresets.every10min'), value: '0 0/10 * * * ?' },
+    { label: t('sync.cronPresets.every30min'), value: '0 0/30 * * * ?' },
+    { label: t('sync.cronPresets.everyHour'), value: '0 0 * * * ?' },
+    { label: t('sync.cronPresets.dailyAt9'), value: '0 0 9 * * ?' },
 ];
 
 const ManualSyncTab: React.FC = () => {
+    const { t, i18n } = useTranslation(['admin', 'common']);
+
+    const cronPresets = useMemo(() => getCronPresets(t), [t]);
+
     const [syncing, setSyncing] = useState(false);
     const [result, setResult] = useState<SyncResult | null>(null);
     const [error, setError] = useState<string | null>(null);
@@ -82,7 +87,7 @@ const ManualSyncTab: React.FC = () => {
             await configApi.setAutoReply(newVal);
             setAutoReplyEnabled(newVal);
         } catch (err) {
-            alert('设置失败: ' + (err as Error).message);
+            alert(t('sync.config.setFailed', { error: (err as Error).message }));
         } finally {
             setAutoReplyLoading(false);
         }
@@ -107,7 +112,7 @@ const ManualSyncTab: React.FC = () => {
             loadLogs(); // 刷新日志
             loadConfig(); // 刷新配置（更新上次同步时间）
         } catch (err) {
-            setError(err instanceof Error ? err.message : '同步失败');
+            setError(err instanceof Error ? err.message : t('sync.syncFailed'));
         } finally {
             setSyncing(false);
         }
@@ -122,9 +127,9 @@ const ManualSyncTab: React.FC = () => {
                 lastSyncTime: lastSyncTime || undefined,
             });
             await loadConfig();
-            alert('配置保存成功！重启服务生效 cron 配置');
+            alert(t('sync.config.saveSuccess'));
         } catch (err) {
-            alert('保存失败：' + (err instanceof Error ? err.message : '未知错误'));
+            alert(t('sync.config.saveFailed', { error: err instanceof Error ? err.message : t('common:error.unknownError') }));
         }
     };
 
@@ -132,7 +137,7 @@ const ManualSyncTab: React.FC = () => {
     const formatTime = (time: string | null) => {
         if (!time) return '-';
         try {
-            return new Date(time).toLocaleString('zh-CN');
+            return new Date(time).toLocaleString(i18n.language);
         } catch {
             return time;
         }
@@ -147,7 +152,7 @@ const ManualSyncTab: React.FC = () => {
         };
         return (
             <span className={`px-2 py-0.5 rounded text-xs border ${colors[status] || 'bg-slate-500/20 text-slate-400'}`}>
-                {status === 'SUCCESS' ? '成功' : status === 'FAILED' ? '失败' : '进行中'}
+                {t(`sync.logs.status.${status}` as any)}
             </span>
         );
     };
@@ -162,14 +167,14 @@ const ManualSyncTab: React.FC = () => {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                         </svg>
                     </div>
-                    <h1 className="text-2xl font-bold text-white mb-2">同步管理</h1>
-                    <p className="text-slate-400">配置自动同步或手动触发 Freshdesk 工单同步</p>
+                    <h1 className="text-2xl font-bold text-white mb-2">{t('sync.title')}</h1>
+                    <p className="text-slate-400">{t('sync.subtitle')}</p>
                 </div>
 
                 {/* 同步状态卡片 */}
                 <div className="bg-slate-800/50 backdrop-blur-xl rounded-2xl border border-white/10 p-6">
                     <div className="flex items-center justify-between mb-4">
-                        <h2 className="text-lg font-semibold text-white">同步状态</h2>
+                        <h2 className="text-lg font-semibold text-white">{t('sync.status.title')}</h2>
                         <div className="flex items-center gap-2">
                             {config?.isSyncing ? (
                                 <span className="flex items-center gap-2 text-yellow-400">
@@ -177,23 +182,23 @@ const ManualSyncTab: React.FC = () => {
                                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
                                     </svg>
-                                    正在同步中...
+                                    {t('sync.status.syncing')}
                                 </span>
                             ) : (
-                                <span className="text-emerald-400">空闲</span>
+                                <span className="text-emerald-400">{t('sync.status.idle')}</span>
                             )}
                         </div>
                     </div>
 
                     <div className="grid grid-cols-2 gap-4 text-sm mb-4">
                         <div>
-                            <span className="text-slate-400">上次同步：</span>
+                            <span className="text-slate-400">{t('sync.status.lastSync')}</span>
                             <span className="text-white ml-2">{formatTime(config?.lastSyncTime || null)}</span>
                         </div>
                         <div>
-                            <span className="text-slate-400">自动同步：</span>
+                            <span className="text-slate-400">{t('sync.status.autoSync')}</span>
                             <span className={`ml-2 ${syncEnabled ? 'text-emerald-400' : 'text-red-400'}`}>
-                                {syncEnabled ? '已启用' : '已禁用'}
+                                {syncEnabled ? t('sync.status.enabled') : t('sync.status.disabled')}
                             </span>
                         </div>
                     </div>
@@ -203,7 +208,7 @@ const ManualSyncTab: React.FC = () => {
                         disabled={syncing || config?.isSyncing}
                         className="w-full px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-medium rounded-xl shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.02] transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                     >
-                        {syncing ? '正在同步...' : '立即同步'}
+                        {syncing ? t('sync.status.syncing_btn') : t('sync.status.syncNow')}
                     </button>
 
                     {/* 结果显示 */}
@@ -212,7 +217,7 @@ const ManualSyncTab: React.FC = () => {
                             <p className={result.success ? 'text-emerald-400' : 'text-red-400'}>{result.message}</p>
                             {result.success && (
                                 <p className="text-slate-300 text-sm mt-1">
-                                    新增：{result.syncedCount}，更新：{result.updatedCount || 0}
+                                    {t('sync.status.newCount', { count: result.syncedCount })}{t('sync.status.updateCount', { count: result.updatedCount || 0 })}
                                 </p>
                             )}
                         </div>
@@ -227,12 +232,12 @@ const ManualSyncTab: React.FC = () => {
 
                 {/* 配置卡片 */}
                 <div className="bg-slate-800/50 backdrop-blur-xl rounded-2xl border border-white/10 p-6">
-                    <h2 className="text-lg font-semibold text-white mb-4">同步配置</h2>
+                    <h2 className="text-lg font-semibold text-white mb-4">{t('sync.config.title')}</h2>
 
                     <div className="space-y-4">
                         {/* 自动同步开关 */}
                         <div className="flex items-center justify-between">
-                            <span className="text-slate-300">启用自动同步</span>
+                            <span className="text-slate-300">{t('sync.config.enableAutoSync')}</span>
                             <button
                                 onClick={() => setSyncEnabled(!syncEnabled)}
                                 className={`relative w-12 h-6 rounded-full transition-colors ${syncEnabled ? 'bg-indigo-500' : 'bg-slate-600'}`}
@@ -244,8 +249,8 @@ const ManualSyncTab: React.FC = () => {
                         {/* 自动推送回复开关 */}
                         <div className="flex items-center justify-between p-3 bg-emerald-500/5 border border-emerald-500/10 rounded-lg">
                             <div>
-                                <span className="text-slate-300">审核通过后自动推送回复</span>
-                                <p className="text-[10px] text-slate-500 mt-0.5">开启后审核通过将直接推送到 Freshdesk，关闭则进入待推送队列</p>
+                                <span className="text-slate-300">{t('sync.config.autoReply')}</span>
+                                <p className="text-[10px] text-slate-500 mt-0.5">{t('sync.config.autoReplyDesc')}</p>
                             </div>
                             <button
                                 onClick={handleToggleAutoReply}
@@ -258,7 +263,7 @@ const ManualSyncTab: React.FC = () => {
 
                         {/* Cron 表达式 */}
                         <div>
-                            <label className="block text-slate-300 mb-2">Cron 表达式</label>
+                            <label className="block text-slate-300 mb-2">{t('sync.config.cronExpression')}</label>
                             <div className="flex gap-2">
                                 <input
                                     type="text"
@@ -271,8 +276,8 @@ const ManualSyncTab: React.FC = () => {
                                     onChange={(e) => setCronExpression(e.target.value)}
                                     className="px-3 py-2 bg-slate-700/50 border border-white/10 rounded-lg text-white focus:outline-none focus:border-indigo-500"
                                 >
-                                    <option value="">预设...</option>
-                                    {CRON_PRESETS.map((preset) => (
+                                    <option value="">{t('sync.config.cronPreset')}</option>
+                                    {cronPresets.map((preset) => (
                                         <option key={preset.value} value={preset.value}>{preset.label}</option>
                                     ))}
                                 </select>
@@ -281,7 +286,7 @@ const ManualSyncTab: React.FC = () => {
 
                         {/* 上次同步时间（可编辑） */}
                         <div>
-                            <label className="block text-slate-300 mb-2">上次同步时间（修改可重新同步历史数据）</label>
+                            <label className="block text-slate-300 mb-2">{t('sync.config.lastSyncTimeLabel')}</label>
                             <input
                                 type="datetime-local"
                                 value={lastSyncTime ? lastSyncTime.slice(0, 16) : ''}
@@ -294,7 +299,7 @@ const ManualSyncTab: React.FC = () => {
                             onClick={handleSaveConfig}
                             className="w-full px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition-colors"
                         >
-                            保存配置
+                            {t('sync.config.saveConfig')}
                         </button>
                     </div>
                 </div>
@@ -302,24 +307,24 @@ const ManualSyncTab: React.FC = () => {
                 {/* 同步日志 */}
                 <div className="bg-slate-800/50 backdrop-blur-xl rounded-2xl border border-white/10 p-6">
                     <div className="flex items-center justify-between mb-4">
-                        <h2 className="text-lg font-semibold text-white">同步日志</h2>
+                        <h2 className="text-lg font-semibold text-white">{t('sync.logs.title')}</h2>
                         <button onClick={loadLogs} disabled={loadingLogs} className="text-indigo-400 hover:text-indigo-300 text-sm">
-                            {loadingLogs ? '刷新中...' : '刷新'}
+                            {loadingLogs ? t('sync.logs.refreshing') : t('common:button.refresh')}
                         </button>
                     </div>
 
                     {logs.length === 0 ? (
-                        <p className="text-slate-400 text-center py-4">暂无同步记录</p>
+                        <p className="text-slate-400 text-center py-4">{t('sync.logs.noRecords')}</p>
                     ) : (
                         <div className="overflow-x-auto">
                             <table className="w-full text-sm">
                                 <thead>
                                     <tr className="text-slate-400 border-b border-white/10">
-                                        <th className="text-left py-2 px-2">时间</th>
-                                        <th className="text-left py-2 px-2">类型</th>
-                                        <th className="text-left py-2 px-2">状态</th>
-                                        <th className="text-right py-2 px-2">新增</th>
-                                        <th className="text-right py-2 px-2">更新</th>
+                                        <th className="text-left py-2 px-2">{t('sync.logs.table.time')}</th>
+                                        <th className="text-left py-2 px-2">{t('sync.logs.table.type')}</th>
+                                        <th className="text-left py-2 px-2">{t('sync.logs.table.status')}</th>
+                                        <th className="text-right py-2 px-2">{t('sync.logs.table.added')}</th>
+                                        <th className="text-right py-2 px-2">{t('sync.logs.table.updated')}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -327,7 +332,7 @@ const ManualSyncTab: React.FC = () => {
                                         <tr key={log.id} className="border-b border-white/5 text-slate-300">
                                             <td className="py-2 px-2">{formatTime(log.startTime)}</td>
                                             <td className="py-2 px-2">
-                                                {log.triggerType === 'MANUAL' ? '手动' : '定时'}
+                                                {t(`sync.logs.triggerType.${log.triggerType}` as any)}
                                             </td>
                                             <td className="py-2 px-2">
                                                 <StatusBadge status={log.status} />

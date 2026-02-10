@@ -22,9 +22,9 @@ public class SyncScheduler {
 
     /**
      * 定时同步任务
-     * cron 表达式从配置读取，默认每 15 分钟执行一次
+     * cron 表达式从配置读取，默认每 1 分钟执行一次
      */
-    @Scheduled(cron = "${freshdesk.sync.cron:0 0/15 * * * ?}")
+    @Scheduled(cron = "${freshdesk.sync.cron:0 0/1 * * * ?}")
     public void scheduledSync() {
         if (!syncConfigService.isSyncEnabled()) {
             log.debug("Scheduled sync is disabled");

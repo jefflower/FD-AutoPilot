@@ -1,9 +1,11 @@
 
 import React, { useState, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useMQTranslation } from '../../context/MQTranslationContext';
 import { useMQReply } from '../../context/MQReplyContext';
 
 export const FloatingTaskWidget: React.FC = () => {
+    const { t } = useTranslation(['tasks', 'common']);
     const [expanded, setExpanded] = useState(false);
 
     const {
@@ -53,13 +55,13 @@ export const FloatingTaskWidget: React.FC = () => {
                     ) : (
                         <div className="w-2.5 h-2.5 rounded-full bg-slate-500"></div>
                     )}
-                    <span className="text-xs font-bold tracking-wide">MQ TASKS</span>
+                    <span className="text-xs font-bold tracking-wide">{t('widget.title')}</span>
                 </div>
 
                 {(totalActive > 0) && (
                     <div className="flex items-center gap-1.5 px-2 py-0.5 bg-white/10 rounded-full">
                         <span className="text-[10px] font-black">{totalActive}</span>
-                        <span className="text-[9px] opacity-60 uppercase">Active</span>
+                        <span className="text-[9px] opacity-60 uppercase">{t('widget.active')}</span>
                     </div>
                 )}
 
@@ -77,7 +79,7 @@ export const FloatingTaskWidget: React.FC = () => {
 
                     {/* Header */}
                     <div className="px-4 py-3 border-b border-white/5 bg-white/5 flex items-center justify-between">
-                        <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Background Jobs</span>
+                        <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{t('widget.backgroundJobs')}</span>
                         <div className="text-[10px] text-slate-500 font-mono">
                             CTX: {transProcessing.size + replyProcessing.size} CPU
                         </div>
@@ -90,7 +92,7 @@ export const FloatingTaskWidget: React.FC = () => {
                             <div className="p-3">
                                 <h4 className="flex items-center gap-2 text-[10px] font-bold text-cyan-400 uppercase mb-2">
                                     <span className="w-1 h-3 bg-cyan-500 rounded-full"></span>
-                                    Translation Queue
+                                    {t('widget.translationQueue')}
                                 </h4>
                                 <div className="space-y-1.5">
                                     {/* Active */}
@@ -105,7 +107,7 @@ export const FloatingTaskWidget: React.FC = () => {
                                                     <span className="text-[10px] font-black font-mono text-cyan-300">#{task.externalId}</span>
                                                     <span className="text-[9px] text-cyan-200/70 truncate max-w-[120px]">{task.subject}</span>
                                                 </div>
-                                                <span className="text-[9px] text-cyan-500 font-bold animate-pulse mt-0.5">TRANSLATING...</span>
+                                                <span className="text-[9px] text-cyan-500 font-bold animate-pulse mt-0.5">{t('widget.translating')}</span>
                                             </div>
                                             <div className="w-3 h-3 border-2 border-cyan-500/30 border-t-cyan-500 rounded-full animate-spin"></div>
                                         </div>
@@ -122,7 +124,7 @@ export const FloatingTaskWidget: React.FC = () => {
                                                 <span className="text-[10px] font-mono text-slate-400">#{task.externalId}</span>
                                                 <span className="text-[9px] text-slate-500 truncate max-w-[120px]">{task.subject}</span>
                                             </div>
-                                            <span className="text-[9px] text-slate-600 font-bold uppercase">WAITING</span>
+                                            <span className="text-[9px] text-slate-600 font-bold uppercase">{t('widget.waiting')}</span>
                                         </div>
                                     ))}
 
@@ -134,9 +136,9 @@ export const FloatingTaskWidget: React.FC = () => {
                                         const labelColor = task.status === 'failed' ? 'text-red-400'
                                             : task.status === 'skipped' ? 'text-amber-500/60'
                                             : 'text-green-500/50';
-                                        const label = task.status === 'failed' ? 'FAIL'
-                                            : task.status === 'skipped' ? 'SKIP'
-                                            : 'DONE';
+                                        const label = task.status === 'failed' ? t('widget.statusFail')
+                                            : task.status === 'skipped' ? t('widget.statusSkip')
+                                            : t('widget.statusDone');
                                         return (
                                             <div
                                                 key={task.ticketId}
@@ -165,7 +167,7 @@ export const FloatingTaskWidget: React.FC = () => {
                             <div className="p-3">
                                 <h4 className="flex items-center gap-2 text-[10px] font-bold text-orange-400 uppercase mb-2">
                                     <span className="w-1 h-3 bg-orange-500 rounded-full"></span>
-                                    Auto-Reply Queue
+                                    {t('widget.autoReplyQueue')}
                                 </h4>
                                 <div className="space-y-1.5">
                                     {/* Active */}
@@ -180,7 +182,7 @@ export const FloatingTaskWidget: React.FC = () => {
                                                     <span className="text-[10px] font-black font-mono text-orange-300">#{task.externalId}</span>
                                                     <span className="text-[9px] text-orange-200/70 truncate max-w-[120px]">{task.subject}</span>
                                                 </div>
-                                                <span className="text-[9px] text-orange-500 font-bold animate-pulse mt-0.5">GENERATING REPLY...</span>
+                                                <span className="text-[9px] text-orange-500 font-bold animate-pulse mt-0.5">{t('widget.generatingReply')}</span>
                                             </div>
                                             <div className="w-3 h-3 border-2 border-orange-500/30 border-t-orange-500 rounded-full animate-spin"></div>
                                         </div>
@@ -197,7 +199,7 @@ export const FloatingTaskWidget: React.FC = () => {
                                                 <span className="text-[10px] font-mono text-slate-400">#{task.externalId}</span>
                                                 <span className="text-[9px] text-slate-500 truncate max-w-[120px]">{task.subject}</span>
                                             </div>
-                                            <span className="text-[9px] text-slate-600 font-bold uppercase">WAITING</span>
+                                            <span className="text-[9px] text-slate-600 font-bold uppercase">{t('widget.waiting')}</span>
                                         </div>
                                     ))}
 
@@ -209,9 +211,9 @@ export const FloatingTaskWidget: React.FC = () => {
                                         const labelColor = task.status === 'failed' ? 'text-red-400'
                                             : task.status === 'skipped' ? 'text-amber-500/60'
                                             : 'text-green-500/50';
-                                        const label = task.status === 'failed' ? 'FAIL'
-                                            : task.status === 'skipped' ? 'SKIP'
-                                            : 'DONE';
+                                        const label = task.status === 'failed' ? t('widget.statusFail')
+                                            : task.status === 'skipped' ? t('widget.statusSkip')
+                                            : t('widget.statusDone');
                                         return (
                                             <div
                                                 key={task.ticketId}
@@ -232,7 +234,7 @@ export const FloatingTaskWidget: React.FC = () => {
 
                         {(totalActive === 0 && transHistory.length === 0 && replyHistory.length === 0) && (
                             <div className="p-8 text-center text-slate-600 text-[10px] italic">
-                                No active tasks
+                                {t('widget.noActiveTasks')}
                             </div>
                         )}
 

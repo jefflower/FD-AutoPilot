@@ -3,16 +3,19 @@
  */
 
 import React, { useState, useEffect, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import { adminApi } from '../../services/serverApi';
 import type { User, UserStatus, UserQueryParams, UserRole } from '../../types/server';
 
-const STATUS_LABELS: Record<UserStatus, { label: string; color: string }> = {
-    PENDING: { label: '待审核', color: 'bg-yellow-500' },
-    APPROVED: { label: '已批准', color: 'bg-green-500' },
-    REJECTED: { label: '已拒绝', color: 'bg-red-500' },
+const STATUS_COLORS: Record<UserStatus, string> = {
+    PENDING: 'bg-yellow-500',
+    APPROVED: 'bg-green-500',
+    REJECTED: 'bg-red-500',
 };
 
 const AdminUsersTab: React.FC = () => {
+    const { t, i18n } = useTranslation(['admin', 'common']);
+
     const [users, setUsers] = useState<User[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
@@ -56,11 +59,11 @@ const AdminUsersTab: React.FC = () => {
             setTotalPages(result.totalPages);
             setTotalElements(result.totalElements);
         } catch (err) {
-            setError(err instanceof Error ? err.message : '加载用户列表失败');
+            setError(err instanceof Error ? err.message : t('users.loadFailed'));
         } finally {
             setLoading(false);
         }
-    }, [page, statusFilter, searchQuery]);
+    }, [page, statusFilter, searchQuery, t]);
 
     useEffect(() => {
         loadUsers();
@@ -73,10 +76,10 @@ const AdminUsersTab: React.FC = () => {
 
         try {
             await adminApi.approveUser(userId, action);
-            showSuccess(action === 'APPROVE' ? '用户已批准' : '用户已拒绝');
+            showSuccess(action === 'APPROVE' ? t('users.userApproved') : t('users.userRejected'));
             loadUsers();
         } catch (err) {
-            setError(err instanceof Error ? err.message : '操作失败');
+            setError(err instanceof Error ? err.message : t('users.operationFailed'));
         } finally {
             setOperating(null);
         }
@@ -89,10 +92,10 @@ const AdminUsersTab: React.FC = () => {
 
         try {
             await adminApi.updateUserRole(userId, role);
-            showSuccess(`角色已更新为${role === 'ADMIN' ? '管理员' : '用户'}`);
+            showSuccess(t('users.roleUpdated', { role: t(`common:userRole.${role}`) }));
             loadUsers();
         } catch (err) {
-            setError(err instanceof Error ? err.message : '角色更新失败');
+            setError(err instanceof Error ? err.message : t('users.roleUpdateFailed'));
         } finally {
             setOperating(null);
         }
@@ -105,11 +108,11 @@ const AdminUsersTab: React.FC = () => {
 
         try {
             await adminApi.resetPassword(resetTarget.id, newPassword);
-            showSuccess(`已重置 ${resetTarget.username} 的密码`);
+            showSuccess(t('users.passwordResetSuccess', { username: resetTarget.username }));
             setResetTarget(null);
             setNewPassword('');
         } catch (err) {
-            setError(err instanceof Error ? err.message : '密码重置失败');
+            setError(err instanceof Error ? err.message : t('users.passwordResetFailed'));
         } finally {
             setOperating(null);
         }
@@ -126,7 +129,7 @@ const AdminUsersTab: React.FC = () => {
                             type="text"
                             value={searchQuery}
                             onChange={(e) => { setSearchQuery(e.target.value); setPage(0); }}
-                            placeholder="搜索用户名..."
+                            placeholder={t('users.searchPlaceholder')}
                             className="w-full px-4 py-2 bg-slate-700/50 border border-white/10 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                         />
                     </div>
@@ -137,20 +140,20 @@ const AdminUsersTab: React.FC = () => {
                         onChange={(e) => { setStatusFilter(e.target.value as UserStatus | ''); setPage(0); }}
                         className="px-4 py-2 bg-slate-700/50 border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
                     >
-                        <option value="">全部状态</option>
-                        <option value="PENDING">待审核</option>
-                        <option value="APPROVED">已批准</option>
-                        <option value="REJECTED">已拒绝</option>
+                        <option value="">{t('common:label.allStatus')}</option>
+                        <option value="PENDING">{t('common:userStatus.PENDING')}</option>
+                        <option value="APPROVED">{t('common:userStatus.APPROVED')}</option>
+                        <option value="REJECTED">{t('common:userStatus.REJECTED')}</option>
                     </select>
 
                     {/* 统计 + 刷新 */}
-                    <span className="text-sm text-slate-400">共 {totalElements} 人</span>
+                    <span className="text-sm text-slate-400">{t('users.totalCount', { count: totalElements })}</span>
                     <button
                         onClick={loadUsers}
                         disabled={loading}
                         className="px-4 py-2 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600 transition-colors disabled:opacity-50"
                     >
-                        {loading ? '加载中...' : '刷新'}
+                        {loading ? t('common:button.loading') : t('common:button.refresh')}
                     </button>
                 </div>
             </div>
@@ -175,23 +178,23 @@ const AdminUsersTab: React.FC = () => {
                             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                         </svg>
-                        加载中...
+                        {t('common:button.loading')}
                     </div>
                 ) : users.length === 0 ? (
                     <div className="flex items-center justify-center h-full text-slate-400">
-                        暂无用户数据
+                        {t('users.noData')}
                     </div>
                 ) : (
                     <div className="bg-slate-800/30 rounded-lg overflow-hidden">
                         <table className="w-full">
                             <thead>
                                 <tr className="border-b border-white/10">
-                                    <th className="px-4 py-3 text-left text-sm font-medium text-slate-400">ID</th>
-                                    <th className="px-4 py-3 text-left text-sm font-medium text-slate-400">用户名</th>
-                                    <th className="px-4 py-3 text-left text-sm font-medium text-slate-400">角色</th>
-                                    <th className="px-4 py-3 text-left text-sm font-medium text-slate-400">状态</th>
-                                    <th className="px-4 py-3 text-left text-sm font-medium text-slate-400">创建时间</th>
-                                    <th className="px-4 py-3 text-right text-sm font-medium text-slate-400">操作</th>
+                                    <th className="px-4 py-3 text-left text-sm font-medium text-slate-400">{t('users.table.id')}</th>
+                                    <th className="px-4 py-3 text-left text-sm font-medium text-slate-400">{t('users.table.username')}</th>
+                                    <th className="px-4 py-3 text-left text-sm font-medium text-slate-400">{t('users.table.role')}</th>
+                                    <th className="px-4 py-3 text-left text-sm font-medium text-slate-400">{t('users.table.status')}</th>
+                                    <th className="px-4 py-3 text-left text-sm font-medium text-slate-400">{t('users.table.createdAt')}</th>
+                                    <th className="px-4 py-3 text-right text-sm font-medium text-slate-400">{t('users.table.actions')}</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -202,16 +205,16 @@ const AdminUsersTab: React.FC = () => {
                                         <td className="px-4 py-3 text-sm">
                                             <span className={`px-2 py-1 rounded text-xs font-medium ${user.role === 'ADMIN' ? 'bg-purple-500/20 text-purple-400' : 'bg-blue-500/20 text-blue-400'
                                                 }`}>
-                                                {user.role === 'ADMIN' ? '管理员' : '用户'}
+                                                {t(`common:userRole.${user.role}`)}
                                             </span>
                                         </td>
                                         <td className="px-4 py-3 text-sm">
-                                            <span className={`px-2 py-1 rounded text-xs font-medium text-white ${STATUS_LABELS[user.status]?.color || 'bg-gray-500'}`}>
-                                                {STATUS_LABELS[user.status]?.label || user.status}
+                                            <span className={`px-2 py-1 rounded text-xs font-medium text-white ${STATUS_COLORS[user.status] || 'bg-gray-500'}`}>
+                                                {t(`common:userStatus.${user.status}`)}
                                             </span>
                                         </td>
                                         <td className="px-4 py-3 text-sm text-slate-400">
-                                            {new Date(user.createdAt).toLocaleString()}
+                                            {new Date(user.createdAt).toLocaleString(i18n.language)}
                                         </td>
                                         <td className="px-4 py-3 text-sm text-right">
                                             <div className="flex justify-end gap-2">
@@ -223,14 +226,14 @@ const AdminUsersTab: React.FC = () => {
                                                             disabled={operating === user.id}
                                                             className="px-3 py-1 bg-emerald-500 text-white text-xs rounded hover:bg-emerald-600 transition-colors disabled:opacity-50"
                                                         >
-                                                            批准
+                                                            {t('users.action.approve')}
                                                         </button>
                                                         <button
                                                             onClick={() => setConfirmAction({ user, action: 'REJECT' })}
                                                             disabled={operating === user.id}
                                                             className="px-3 py-1 bg-red-500 text-white text-xs rounded hover:bg-red-600 transition-colors disabled:opacity-50"
                                                         >
-                                                            拒绝
+                                                            {t('users.action.reject')}
                                                         </button>
                                                     </>
                                                 )}
@@ -247,14 +250,14 @@ const AdminUsersTab: React.FC = () => {
                                                             disabled={operating === user.id}
                                                             className="px-3 py-1 bg-violet-500 text-white text-xs rounded hover:bg-violet-600 transition-colors disabled:opacity-50"
                                                         >
-                                                            {user.role === 'ADMIN' ? '降为用户' : '升为管理员'}
+                                                            {user.role === 'ADMIN' ? t('users.action.demoteToUser') : t('users.action.promoteToAdmin')}
                                                         </button>
                                                         <button
                                                             onClick={() => { setResetTarget(user); setNewPassword(''); }}
                                                             disabled={operating === user.id}
                                                             className="px-3 py-1 bg-amber-500 text-white text-xs rounded hover:bg-amber-600 transition-colors disabled:opacity-50"
                                                         >
-                                                            重置密码
+                                                            {t('users.action.resetPassword')}
                                                         </button>
                                                     </>
                                                 )}
@@ -266,7 +269,7 @@ const AdminUsersTab: React.FC = () => {
                                                         disabled={operating === user.id}
                                                         className="px-3 py-1 bg-emerald-500 text-white text-xs rounded hover:bg-emerald-600 transition-colors disabled:opacity-50"
                                                     >
-                                                        重新批准
+                                                        {t('users.action.reApprove')}
                                                     </button>
                                                 )}
                                             </div>
@@ -287,17 +290,17 @@ const AdminUsersTab: React.FC = () => {
                         disabled={page === 0}
                         className="px-3 py-1.5 bg-slate-700 text-white rounded-lg disabled:opacity-50"
                     >
-                        上一页
+                        {t('common:button.previousPage')}
                     </button>
                     <span className="text-slate-400">
-                        {page + 1} / {totalPages}
+                        {t('common:label.pageInfo', { current: page + 1, total: totalPages })}
                     </span>
                     <button
                         onClick={() => setPage(p => Math.min(totalPages - 1, p + 1))}
                         disabled={page >= totalPages - 1}
                         className="px-3 py-1.5 bg-slate-700 text-white rounded-lg disabled:opacity-50"
                     >
-                        下一页
+                        {t('common:button.nextPage')}
                     </button>
                 </div>
             )}
@@ -306,18 +309,18 @@ const AdminUsersTab: React.FC = () => {
             {confirmAction && (
                 <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50" onClick={() => setConfirmAction(null)}>
                     <div className="bg-slate-800 border border-white/10 rounded-xl p-6 w-96 shadow-2xl" onClick={e => e.stopPropagation()}>
-                        <h3 className="text-lg font-semibold text-white mb-3">确认操作</h3>
+                        <h3 className="text-lg font-semibold text-white mb-3">{t('users.confirmDialog.title')}</h3>
                         <p className="text-slate-300 mb-6">
-                            {confirmAction.action === 'APPROVE' && `确定批准用户「${confirmAction.user.username}」？`}
-                            {confirmAction.action === 'REJECT' && `确定拒绝用户「${confirmAction.user.username}」？该用户将无法登录。`}
-                            {confirmAction.action === 'ROLE' && `确定将用户「${confirmAction.user.username}」的角色修改为${confirmAction.role === 'ADMIN' ? '管理员' : '普通用户'}？`}
+                            {confirmAction.action === 'APPROVE' && t('users.confirmDialog.confirmApprove', { username: confirmAction.user.username })}
+                            {confirmAction.action === 'REJECT' && t('users.confirmDialog.confirmReject', { username: confirmAction.user.username })}
+                            {confirmAction.action === 'ROLE' && t('users.confirmDialog.confirmRoleChange', { username: confirmAction.user.username, role: t(`common:userRole.${confirmAction.role}` as any) })}
                         </p>
                         <div className="flex justify-end gap-3">
                             <button
                                 onClick={() => setConfirmAction(null)}
                                 className="px-4 py-2 bg-slate-700 text-white rounded-lg hover:bg-slate-600 transition-colors"
                             >
-                                取消
+                                {t('common:button.cancel')}
                             </button>
                             <button
                                 onClick={() => {
@@ -332,7 +335,7 @@ const AdminUsersTab: React.FC = () => {
                                     : 'bg-indigo-500 hover:bg-indigo-600'
                                     }`}
                             >
-                                确定
+                                {t('common:button.confirm')}
                             </button>
                         </div>
                     </div>
@@ -344,32 +347,32 @@ const AdminUsersTab: React.FC = () => {
                 <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50" onClick={() => setResetTarget(null)}>
                     <div className="bg-slate-800 border border-white/10 rounded-xl p-6 w-96 shadow-2xl" onClick={e => e.stopPropagation()}>
                         <h3 className="text-lg font-semibold text-white mb-3">
-                            重置密码 - {resetTarget.username}
+                            {t('users.resetPasswordDialog.title', { username: resetTarget.username })}
                         </h3>
                         <input
                             type="password"
                             value={newPassword}
                             onChange={e => setNewPassword(e.target.value)}
-                            placeholder="输入新密码（至少6位）"
+                            placeholder={t('users.resetPasswordDialog.placeholder')}
                             className="w-full px-4 py-2 mb-2 bg-slate-700/50 border border-white/10 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                             autoFocus
                         />
                         {newPassword.length > 0 && newPassword.length < 6 && (
-                            <p className="text-red-400 text-xs mb-4">密码不能少于6位</p>
+                            <p className="text-red-400 text-xs mb-4">{t('users.resetPasswordDialog.minLengthError')}</p>
                         )}
                         <div className="flex justify-end gap-3 mt-4">
                             <button
                                 onClick={() => setResetTarget(null)}
                                 className="px-4 py-2 bg-slate-700 text-white rounded-lg hover:bg-slate-600 transition-colors"
                             >
-                                取消
+                                {t('common:button.cancel')}
                             </button>
                             <button
                                 onClick={handleResetPassword}
                                 disabled={newPassword.length < 6 || operating === resetTarget.id}
                                 className="px-4 py-2 bg-amber-500 text-white rounded-lg hover:bg-amber-600 transition-colors disabled:opacity-50"
                             >
-                                {operating === resetTarget.id ? '处理中...' : '重置'}
+                                {operating === resetTarget.id ? t('users.resetPasswordDialog.processing') : t('users.resetPasswordDialog.reset')}
                             </button>
                         </div>
                     </div>

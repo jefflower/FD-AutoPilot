@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import type { ServerTicket } from '../../types/server';
 import ServerTicketDetail from './ServerTicketDetail';
 import { useTicketProcess } from '../../hooks/useTicketProcess';
@@ -32,6 +33,7 @@ const ServerTaskWorkspace: React.FC<ServerTaskWorkspaceProps> = ({
     onLoadTicket,
     onRefresh
 }) => {
+    const { t } = useTranslation(['tasks', 'common']);
     const [internalSelectedTicketId, setInternalSelectedTicketId] = useState<number | null>(null);
     const selectedTicketId = propSelectedTaskId !== undefined ? propSelectedTaskId : internalSelectedTicketId;
 
@@ -254,7 +256,7 @@ const ServerTaskWorkspace: React.FC<ServerTaskWorkspaceProps> = ({
 
                 {translatingTasks.length === 0 && openedCompletedTabs.length === 0 && (
                     <div className="flex items-center px-4 text-slate-600 text-[10px] italic h-10">
-                        {type === 'translation' ? 'Waiting for MQ tasks...' : 'No active tasks'}
+                        {type === 'translation' ? t('workspace.waitingForTasks') : t('workspace.noActiveTasks')}
                     </div>
                 )}
             </div>
@@ -285,7 +287,7 @@ const ServerTaskWorkspace: React.FC<ServerTaskWorkspaceProps> = ({
                         <svg className="w-16 h-16 opacity-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 6h16M4 12h16m-7 6h7" />
                         </svg>
-                        <p className="text-sm font-medium">Please select a task from the list</p>
+                        <p className="text-sm font-medium">{t('workspace.selectTask')}</p>
                     </div>
                 )}
             </div>

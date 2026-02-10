@@ -190,6 +190,9 @@ export function createMQTaskContext(config: MQTaskConfig) {
                 };
 
                 setTaskQueue(prev => [...prev, newTask]);
+
+                // 消息被消费，队列 ready 数已变化，刷新侧边栏计数
+                window.dispatchEvent(new Event('queue-counts-refresh'));
             });
 
             return () => { unlistenPromise.then(fn => fn()); };
@@ -255,6 +258,9 @@ export function createMQTaskContext(config: MQTaskConfig) {
 
                 // 触发重新调度
                 setTaskQueue(prev => prev.length > 0 ? [...prev] : prev);
+
+                // 通知侧边栏刷新队列计数
+                window.dispatchEvent(new Event('queue-counts-refresh'));
             }
         }, []);
 

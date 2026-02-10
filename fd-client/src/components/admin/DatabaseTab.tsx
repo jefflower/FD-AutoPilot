@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import SqlQueryPanel from './SqlQueryPanel';
 import H2ConsolePanel from './H2ConsolePanel';
 
 type DbMode = 'sql' | 'h2console';
 
 const DatabaseTab: React.FC = () => {
+    const { t } = useTranslation(['admin', 'common']);
     const [mode, setMode] = useState<DbMode>('sql');
 
     return (
         <div className="flex-1 flex flex-col min-w-0 p-4 gap-3">
             {/* 顶部标题栏 */}
             <div className="flex items-center justify-between">
-                <h2 className="text-lg font-semibold text-white">数据库管理</h2>
+                <h2 className="text-lg font-semibold text-white">{t('database.title')}</h2>
                 <div className="flex bg-white/5 rounded-lg p-0.5 border border-white/10">
                     <button
                         onClick={() => setMode('sql')}
@@ -21,7 +23,7 @@ const DatabaseTab: React.FC = () => {
                                 : 'text-slate-400 hover:text-white'
                         }`}
                     >
-                        SQL 查询
+                        {t('database.sqlQuery')}
                     </button>
                     <button
                         onClick={() => setMode('h2console')}
@@ -31,7 +33,7 @@ const DatabaseTab: React.FC = () => {
                                 : 'text-slate-400 hover:text-white'
                         }`}
                     >
-                        H2 Console
+                        {t('database.h2Console')}
                     </button>
                 </div>
             </div>

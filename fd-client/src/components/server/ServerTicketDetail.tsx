@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ServerTicket } from '../../types/server';
 import { serverApi } from '../../services/serverApi';
 import { useSettings } from '../../hooks/useSettings';
@@ -51,6 +52,7 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
     activeProcessType,
     onProcessStatusChange
 }, ref) => {
+    const { t } = useTranslation(['tickets', 'common']);
     const [submitting, setSubmitting] = useState(false);
     const { notebookLMConfig: notebookConfig } = useSettings();
     const { visible: shadowVisible, toggle: handleToggleShadow } = useNotebookShadow();
@@ -162,12 +164,12 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
         const success = await runTranslation(ticket, {
             autoSave,
             onStatusChange: (status) => onProcessStatusChange?.(ticket.id, status),
-            onError: (err) => { setAiError(err); if (!autoSave) alert('翻译失败: ' + err); },
+            onError: (err) => { setAiError(err); if (!autoSave) alert(t('detail.translationFailed', { error: err })); },
         });
 
         if (success && autoSave) onRefresh?.();
         return success;
-    }, [ticket, runTranslation, isTranslating, generatingAiReply, isProcessing, onRefresh, onProcessStatusChange]);
+    }, [ticket, runTranslation, isTranslating, generatingAiReply, isProcessing, onRefresh, onProcessStatusChange, t]);
 
     const handleConfirmTranslation = async () => {
         if (!tempTranslation || submitting) return;
@@ -198,7 +200,7 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
             }
         } catch (e) {
             console.error('[SubmitTranslation] Failed:', e);
-            alert('保存翻译失败: ' + (e as Error).message);
+            alert(t('detail.saveTranslationFailed', { error: (e as Error).message }));
         } finally {
             setSubmitting(false);
         }
@@ -243,7 +245,7 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
             setAiReplyText('');
             onRefresh?.();
         } catch (e) {
-            alert('保存回复失败: ' + (e as Error).message);
+            alert(t('detail.saveReplyFailed', { error: (e as Error).message }));
         } finally {
             setSubmitting(false);
         }
@@ -260,7 +262,7 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
             });
             onRefresh?.();
         } catch (e) {
-            alert('审核提交失败: ' + (e as Error).message);
+            alert(t('detail.auditSubmitFailed', { error: (e as Error).message }));
         } finally {
             setAuditSubmitting(false);
         }
@@ -271,8 +273,8 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
     const handleTriggerMqTranslate = async () => {
         if (mqSubmitting) return;
 
-        const confirmed = await ask('确定要发送 MQ 翻译请求吗？这会重新入队处理。', {
-            title: 'MQ 翻译确认',
+        const confirmed = await ask(t('mq.translateConfirmMessage'), {
+            title: t('mq.translateConfirmTitle'),
             kind: 'warning'
         });
 
@@ -281,11 +283,11 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
         setMqSubmitting(true);
         try {
             await serverApi.ticket.triggerAiTranslation(ticket.id);
-            await message('MQ 翻译任务已发送，请在"翻译任务"标签页中查看进度。', { title: '已入队', kind: 'info' });
+            await message(t('mq.translateSentMessage'), { title: t('mq.translateSentTitle'), kind: 'info' });
             onRefresh?.();
         } catch (e) {
             console.error('MQ Translate Error:', e);
-            await message('MQ 翻译触发失败: ' + (e as Error).message, { title: '错误', kind: 'error' });
+            await message(t('mq.translateErrorMessage', { error: (e as Error).message }), { title: t('mq.translateErrorTitle'), kind: 'error' });
         } finally {
             setMqSubmitting(false);
         }
@@ -294,8 +296,8 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
     const handleTriggerMqReply = async () => {
         if (mqSubmitting) return;
 
-        const confirmed = await ask('确定要发送 MQ 回复生成请求吗？这会重新入队处理。', {
-            title: 'MQ 回复确认',
+        const confirmed = await ask(t('mq.replyConfirmMessage'), {
+            title: t('mq.replyConfirmTitle'),
             kind: 'warning'
         });
 
@@ -304,11 +306,11 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
         setMqSubmitting(true);
         try {
             await serverApi.ticket.triggerAiReply(ticket.id);
-            await message('MQ 回复任务已发送，请在"回复任务"标签页中查看进度。', { title: '已入队', kind: 'info' });
+            await message(t('mq.replySentMessage'), { title: t('mq.replySentTitle'), kind: 'info' });
             onRefresh?.();
         } catch (e) {
             console.error('MQ Reply Error:', e);
-            await message('MQ 回复触发失败: ' + (e as Error).message, { title: '错误', kind: 'error' });
+            await message(t('mq.replyErrorMessage', { error: (e as Error).message }), { title: t('mq.replyErrorTitle'), kind: 'error' });
         } finally {
             setMqSubmitting(false);
         }
@@ -324,14 +326,14 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
         return (
             <div className={`flex flex-col ${isIncoming ? 'items-start' : 'items-end'} w-full min-w-0`}>
                 <div className={`flex items-center gap-2 mb-1 px-1 ${isIncoming ? '' : 'flex-row-reverse'}`}>
-                    {isDesc && <span className="text-[10px] bg-indigo-500 text-white px-1 rounded-sm font-bold shadow-sm">DESC</span>}
+                    {isDesc && <span className="text-[10px] bg-indigo-500 text-white px-1 rounded-sm font-bold shadow-sm">{t('detail.descTag')}</span>}
                     {customTag ? (
                         <span className="text-[8px] bg-emerald-600 text-white px-1.5 py-0.5 rounded-sm font-black tracking-tighter uppercase shadow-sm border border-emerald-500/50">{customTag}</span>
                     ) : (
-                        isEmerald && <span className="text-[8px] bg-emerald-600/80 text-white px-1 rounded-sm font-black tracking-tighter uppercase">TRANSLATION</span>
+                        isEmerald && <span className="text-[8px] bg-emerald-600/80 text-white px-1 rounded-sm font-black tracking-tighter uppercase">{t('detail.translationTag')}</span>
                     )}
                     <span className={`text-[10px] font-black uppercase tracking-wider ${isIncoming ? 'text-slate-400' : 'text-blue-400'}`}>
-                        {isIncoming ? 'Customer' : (AGENT_MAP[msg.userId.toString()] || 'Agent')}
+                        {isIncoming ? t('detail.customerLabel') : (AGENT_MAP[msg.userId.toString()] || t('detail.agentLabel'))}
                     </span>
                     <span className="text-[10px] text-slate-500">{msg.createdAt}</span>
                 </div>
@@ -358,27 +360,27 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
                         <h2 className="text-xs font-black text-white truncate max-w-[300px] leading-tight flex items-center gap-2">
                             <span className="text-blue-400">#{ticket.externalId}</span> {ticket.subject}
                         </h2>
-                        <span className="text-[9px] text-slate-500 font-bold uppercase tracking-tighter">{ticket.status}</span>
+                        <span className="text-[9px] text-slate-500 font-bold uppercase tracking-tighter">{t(`common:ticketStatus.${ticket.status}` as any)}</span>
                     </div>
                 </div>
 
                 <div className="flex items-center gap-2">
                     <button onClick={() => handleToggleShadow(notebookConfig?.notebookId, notebookConfig?.notebookUrl)} className={`px-3 py-1.5 rounded-md text-[10px] font-black transition-all ${shadowVisible ? 'bg-orange-600 text-white' : 'bg-slate-700 text-slate-400'}`}>
-                        BROWSER {shadowVisible ? 'ON' : 'OFF'}
+                        {shadowVisible ? t('detail.browserOn') : t('detail.browserOff')}
                     </button>
                     <button
                         onClick={() => handleAiTranslate(false)}
                         disabled={isTranslating || generatingAiReply || isProcessing}
                         className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 disabled:opacity-50 text-white rounded-md text-[10px] font-black transition-all"
                     >
-                        {isTranslating ? 'TRANSLATING...' : 'AI TRANSLATE'}
+                        {isTranslating ? t('detail.translatingBtn') : t('detail.aiTranslateBtn')}
                     </button>
                     <button
                         onClick={() => handleTriggerAiReply(false)}
                         disabled={generatingAiReply || isTranslating || isProcessing}
                         className="px-3 py-1.5 bg-blue-600 hover:bg-blue-500 disabled:opacity-50 text-white rounded-md text-[10px] font-black transition-all"
                     >
-                        {generatingAiReply ? 'GENERATING...' : 'AI REPLY'}
+                        {generatingAiReply ? t('detail.generatingBtn') : t('detail.aiReplyBtn')}
                     </button>
 
                     {/* New MQ Trigger Buttons */}
@@ -387,17 +389,17 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
                         onClick={handleTriggerMqTranslate}
                         disabled={isTranslating || generatingAiReply || isProcessing || mqSubmitting}
                         className="px-3 py-1.5 border border-purple-500/50 text-purple-400 hover:bg-purple-500/10 disabled:opacity-50 rounded-md text-[10px] font-black transition-all"
-                        title="Trigger Server-side MQ Translation"
+                        title={t('detail.mqTransTooltip')}
                     >
-                        {mqSubmitting ? 'SENDING...' : 'MQ TRANS'}
+                        {mqSubmitting ? t('detail.sendingBtn') : t('detail.mqTransBtn')}
                     </button>
                     <button
                         onClick={handleTriggerMqReply}
                         disabled={generatingAiReply || isTranslating || isProcessing || mqSubmitting}
                         className="px-3 py-1.5 border border-indigo-500/50 text-indigo-400 hover:bg-indigo-500/10 disabled:opacity-50 rounded-md text-[10px] font-black transition-all"
-                        title="Trigger Server-side MQ Reply"
+                        title={t('detail.mqReplyTooltip')}
                     >
-                        {mqSubmitting ? 'SENDING...' : 'MQ REPLY'}
+                        {mqSubmitting ? t('detail.sendingBtn') : t('detail.mqReplyBtn')}
                     </button>
 
                     <div className="w-px h-4 bg-slate-700 mx-1"></div>
@@ -405,7 +407,7 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
                         JSON
                     </button>
                     <button onClick={() => setIsSplitMode(!isSplitMode)} className={`px-3 py-1.5 rounded-md text-[10px] font-black border ${isSplitMode ? 'bg-blue-600 border-blue-500 text-white' : 'bg-slate-700 border-slate-600 text-slate-400'}`}>
-                        SPLIT
+                        {t('detail.splitBtn')}
                     </button>
                 </div>
             </div>
@@ -460,7 +462,7 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
                                                 {!isSplitMode && (
                                                     <div className="flex flex-col gap-2 animate-in fade-in slide-in-from-top-1 duration-300">
                                                         {oldTransMsg && renderChatBubble({ ...oldTransMsg, userId: msg.userId, createdAt: msg.createdAt }, isIncoming, true, isDesc)}
-                                                        {newTransMsg && renderChatBubble({ ...newTransMsg, userId: msg.userId, createdAt: msg.createdAt }, isIncoming, true, isDesc, "Gemini Preview")}
+                                                        {newTransMsg && renderChatBubble({ ...newTransMsg, userId: msg.userId, createdAt: msg.createdAt }, isIncoming, true, isDesc, t('detail.geminiPreview'))}
                                                     </div>
                                                 )}
                                             </div>
@@ -469,11 +471,11 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
                                                 <div className="min-w-0 w-full flex flex-col gap-2">
                                                     {oldTransMsg && renderChatBubble({ ...oldTransMsg, userId: msg.userId, createdAt: msg.createdAt }, isIncoming, true, isDesc)}
 
-                                                    {newTransMsg && renderChatBubble({ ...newTransMsg, userId: msg.userId, createdAt: msg.createdAt }, isIncoming, true, isDesc, "Gemini Preview")}
+                                                    {newTransMsg && renderChatBubble({ ...newTransMsg, userId: msg.userId, createdAt: msg.createdAt }, isIncoming, true, isDesc, t('detail.geminiPreview'))}
 
                                                     {!oldTransMsg && !newTransMsg && (
                                                         <div className="h-full flex items-center justify-center border border-dashed border-slate-700 rounded-lg py-6 text-slate-600 text-[10px] italic">
-                                                            No translation available
+                                                            {t('detail.noTranslation')}
                                                         </div>
                                                     )}
                                                 </div>
@@ -490,11 +492,11 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
                                 <div className="flex items-center justify-between px-1">
                                     <div className="flex items-center gap-2">
                                         <div className="w-1.5 h-4 bg-purple-500 rounded-full animate-pulse"></div>
-                                        <h3 className="text-[11px] font-black text-slate-400 uppercase tracking-[0.2em]">NotebookLM AI Suggestion</h3>
+                                        <h3 className="text-[11px] font-black text-slate-400 uppercase tracking-[0.2em]">{t('detail.aiSuggestionTitle')}</h3>
                                     </div>
                                     {generatingAiReply && (
                                         <div className="flex items-center gap-2">
-                                            <span className="text-[9px] text-purple-400 font-bold animate-pulse italic">SMART THINKING...</span>
+                                            <span className="text-[9px] text-purple-400 font-bold animate-pulse italic">{t('detail.aiThinking')}</span>
                                             <div className="w-2 h-2 rounded-full bg-purple-500 animate-ping"></div>
                                         </div>
                                     )}
@@ -522,9 +524,11 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
 
                                 <ReplyHistoryPanel
                                     replies={ticket.replies || []}
+                                    ticketId={ticket.id}
                                     ticketStatus={ticket.status}
                                     submitting={auditSubmitting}
                                     onSubmitAudit={handleSubmitAudit}
+                                    onRefresh={onRefresh}
                                 />
                             </div>
                         )}
@@ -570,11 +574,11 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
 
                             <div className="text-center space-y-2">
                                 <h3 className="text-lg font-black text-white tracking-widest uppercase">
-                                    AI Translating
+                                    {t('detail.aiTranslatingTitle')}
                                 </h3>
                                 <div className="flex flex-col items-center gap-1">
                                     <p className="text-xs text-slate-400 font-medium animate-pulse">
-                                        Optimizing linguistics & tone...
+                                        {t('detail.aiTranslatingDesc')}
                                     </p>
                                     <div className="flex gap-1 mt-2">
                                         <div className="w-1 h-1 bg-blue-500 rounded-full animate-bounce [animation-delay:-0.3s]"></div>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import { serverApi } from '../../services/serverApi';
 import ServerTicketDetail from './ServerTicketDetail';
 import { useMQAudit } from '../../context/MQAuditContext';
@@ -7,6 +8,7 @@ import type { ServerTicket } from '../../types/server';
 type AuditMode = 'mq' | 'query';
 
 const AuditTasksTab: React.FC = () => {
+    const { t } = useTranslation(['tasks', 'common']);
     const {
         processingTasks,
         completedHistory,
@@ -73,7 +75,7 @@ const AuditTasksTab: React.FC = () => {
         try {
             const ticket = await serverApi.ticket.getTicketById(ticketId);
             if (!ticket.replies || ticket.replies.length === 0) {
-                alert('该工单没有回复内容，无法审核');
+                alert(t('audit.noReplyContent'));
                 return;
             }
             await serverApi.ticket.submitAudit(ticketId, {
@@ -83,11 +85,11 @@ const AuditTasksTab: React.FC = () => {
             completeAudit(ticketId, true);
             setSelectedId(null);
         } catch (err) {
-            alert('审核提交失败: ' + (err as Error).message);
+            alert(t('audit.submitFailed', { error: (err as Error).message }));
         } finally {
             setSubmitting(false);
         }
-    }, [completeAudit]);
+    }, [completeAudit, t]);
 
     // MQ 审核驳回
     const handleMqReject = useCallback(async (ticketId: number) => {
@@ -95,7 +97,7 @@ const AuditTasksTab: React.FC = () => {
         try {
             const ticket = await serverApi.ticket.getTicketById(ticketId);
             if (!ticket.replies || ticket.replies.length === 0) {
-                alert('该工单没有回复内容，无法审核');
+                alert(t('audit.noReplyContent'));
                 return;
             }
             await serverApi.ticket.submitAudit(ticketId, {
@@ -108,11 +110,11 @@ const AuditTasksTab: React.FC = () => {
             setRejectRemark('');
             setSelectedId(null);
         } catch (err) {
-            alert('驳回失败: ' + (err as Error).message);
+            alert(t('audit.rejectFailed', { error: (err as Error).message }));
         } finally {
             setSubmitting(false);
         }
-    }, [completeAudit, rejectRemark]);
+    }, [completeAudit, rejectRemark, t]);
 
     // ============ 状态查询模式逻辑 ============
 
@@ -178,7 +180,7 @@ const AuditTasksTab: React.FC = () => {
             setSelectedTicketIds(new Set());
             loadQueryTasks();
         } catch (err) {
-            alert('批量处理过程中出现错误');
+            alert(t('audit.batchError'));
         } finally {
             setSubmitting(false);
         }
@@ -222,7 +224,7 @@ const AuditTasksTab: React.FC = () => {
                                 : 'text-slate-500 hover:text-slate-300 border-b-2 border-transparent'
                         }`}
                     >
-                        MQ 队列
+                        {t('audit.mqQueue')}
                     </button>
                     <button
                         onClick={() => handleModeSwitch('query')}
@@ -232,7 +234,7 @@ const AuditTasksTab: React.FC = () => {
                                 : 'text-slate-500 hover:text-slate-300 border-b-2 border-transparent'
                         }`}
                     >
-                        状态查询
+                        {t('audit.statusQuery')}
                     </button>
                 </div>
 
@@ -244,13 +246,13 @@ const AuditTasksTab: React.FC = () => {
                             <div className="flex items-center justify-between mb-4">
                                 <h3 className="font-bold text-white text-sm tracking-wide flex items-center gap-2">
                                     <span className="w-1 h-3 bg-pink-500 rounded-full"></span>
-                                    MQ 审核任务
+                                    {t('audit.mqTitle')}
                                 </h3>
                                 <div className={`px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-widest ${isRunning
                                     ? 'bg-pink-500/20 text-pink-400 border border-pink-500/30'
                                     : 'bg-slate-800 text-slate-500 border border-white/5'
                                     }`}>
-                                    {isRunning ? 'Running' : 'Stopped'}
+                                    {isRunning ? t('audit.statusRunning') : t('audit.statusStopped')}
                                 </div>
                             </div>
 
@@ -260,14 +262,14 @@ const AuditTasksTab: React.FC = () => {
                                         onClick={() => startConsumer()}
                                         className="flex-1 h-9 bg-pink-600 hover:bg-pink-500 text-white text-xs font-bold rounded-lg shadow-lg shadow-pink-900/20 transition-all flex items-center justify-center gap-2"
                                     >
-                                        启动审核
+                                        {t('audit.startConsumer')}
                                     </button>
                                 ) : (
                                     <button
                                         onClick={() => stopConsumer()}
                                         className="flex-1 h-9 bg-red-500/80 hover:bg-red-500 text-white text-xs font-bold rounded-lg transition-all flex items-center justify-center gap-2"
                                     >
-                                        停止审核
+                                        {t('audit.stopConsumer')}
                                     </button>
                                 )}
                             </div>
@@ -280,7 +282,7 @@ const AuditTasksTab: React.FC = () => {
                                 <div className="flex items-center justify-between px-2 mb-2">
                                     <h4 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] flex items-center gap-2">
                                         {processingList.length > 0 && <span className="w-1.5 h-1.5 bg-pink-400 rounded-full animate-ping"></span>}
-                                        Auditing
+                                        {t('audit.auditing')}
                                     </h4>
                                     <span className="text-[10px] font-mono text-pink-500/50">({processingList.length})</span>
                                 </div>
@@ -314,7 +316,7 @@ const AuditTasksTab: React.FC = () => {
                                                         <textarea
                                                             value={rejectRemark}
                                                             onChange={(e) => setRejectRemark(e.target.value)}
-                                                            placeholder="输入驳回意见..."
+                                                            placeholder={t('audit.rejectPlaceholder')}
                                                             className="w-full bg-black/30 border border-rose-500/30 rounded-lg p-2 text-xs text-white placeholder:text-slate-600 focus:border-rose-500 outline-none h-14 resize-none"
                                                             autoFocus
                                                         />
@@ -323,14 +325,14 @@ const AuditTasksTab: React.FC = () => {
                                                                 onClick={() => { setRejectingId(null); setRejectRemark(''); }}
                                                                 className="px-3 py-1 text-[10px] font-bold text-slate-400 hover:text-white transition-colors"
                                                             >
-                                                                取消
+                                                                {t('common:button.cancel')}
                                                             </button>
                                                             <button
                                                                 onClick={() => handleMqReject(task.ticketId)}
                                                                 disabled={submitting}
                                                                 className="px-4 py-1 bg-rose-600 hover:bg-rose-500 text-white text-[10px] font-bold rounded-lg transition-all"
                                                             >
-                                                                {submitting ? '...' : '确认驳回'}
+                                                                {submitting ? '...' : t('audit.confirmReject')}
                                                             </button>
                                                         </div>
                                                     </div>
@@ -344,7 +346,7 @@ const AuditTasksTab: React.FC = () => {
                                                         className="px-3 py-1 bg-emerald-600/80 hover:bg-emerald-500 disabled:opacity-30 text-white text-[10px] font-bold rounded-lg transition-all flex items-center gap-1"
                                                     >
                                                         <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
-                                                        通过
+                                                        {t('audit.pass')}
                                                     </button>
                                                     <button
                                                         onClick={() => { setRejectingId(isRejectMode ? null : task.ticketId); setRejectRemark(''); }}
@@ -356,7 +358,7 @@ const AuditTasksTab: React.FC = () => {
                                                         } disabled:opacity-30`}
                                                     >
                                                         <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M6 18L18 6M6 6l12 12" /></svg>
-                                                        驳回
+                                                        {t('audit.reject')}
                                                     </button>
                                                 </div>
 
@@ -369,7 +371,7 @@ const AuditTasksTab: React.FC = () => {
 
                                     {processingList.length === 0 && (
                                         <div className="text-center py-6 text-slate-600 text-[10px] italic border border-dashed border-white/5 rounded-xl">
-                                            {isRunning ? '等待审核任务...' : '启动消费后开始审核'}
+                                            {isRunning ? t('audit.waitingForTasks') : t('audit.startToAudit')}
                                         </div>
                                     )}
                                 </div>
@@ -378,7 +380,7 @@ const AuditTasksTab: React.FC = () => {
                             {/* Completed History 列表 */}
                             <div>
                                 <div className="flex items-center justify-between px-2 mb-2 mt-4">
-                                    <h4 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">Completed History</h4>
+                                    <h4 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">{t('audit.completedHistory')}</h4>
                                     <span className="text-[10px] font-mono text-green-500/50">({filteredCompletedHistory.length})</span>
                                 </div>
                                 <div className="space-y-1">
@@ -394,14 +396,14 @@ const AuditTasksTab: React.FC = () => {
                                             <div className="flex items-center justify-between mb-0.5">
                                                 <span className="text-[10px] font-bold text-slate-500 opacity-60 group-hover:opacity-100 transition-opacity">#{task.externalId}</span>
                                                 <span className={`text-[9px] font-black uppercase tracking-tighter ${task.status === 'completed' ? 'text-green-500/50' : 'text-red-500/50'}`}>
-                                                    {task.status === 'completed' ? 'Done' : 'Failed'}
+                                                    {task.status === 'completed' ? t('audit.statusDone') : t('audit.statusFailed')}
                                                 </span>
                                             </div>
                                             <div className="text-[11px] text-slate-400 truncate group-hover:text-slate-200 transition-colors">{task.subject}</div>
                                         </button>
                                     ))}
                                     {filteredCompletedHistory.length === 0 && (
-                                        <div className="text-center py-6 text-slate-600 text-[10px] italic border border-dashed border-white/5 rounded-xl">暂无已完成审核</div>
+                                        <div className="text-center py-6 text-slate-600 text-[10px] italic border border-dashed border-white/5 rounded-xl">{t('audit.noCompleted')}</div>
                                     )}
                                 </div>
                             </div>
@@ -423,13 +425,13 @@ const AuditTasksTab: React.FC = () => {
                             <div className="flex items-center justify-between mb-4">
                                 <h3 className="font-bold text-white text-sm tracking-wide flex items-center gap-2">
                                     <span className="w-1 h-3 bg-pink-500 rounded-full"></span>
-                                    审核任务 ({queryStats.pending})
+                                    {t('audit.queryTitle', { count: queryStats.pending })}
                                 </h3>
                                 <button
                                     onClick={selectAll}
                                     className="text-[10px] font-black text-pink-400 uppercase tracking-widest hover:text-white transition-colors"
                                 >
-                                    {selectedTicketIds.size === queryTickets.length && queryTickets.length > 0 ? '取消全选' : '全选'}
+                                    {selectedTicketIds.size === queryTickets.length && queryTickets.length > 0 ? t('audit.selectAllOrDeselect') : t('audit.selectAll')}
                                 </button>
                             </div>
 
@@ -438,7 +440,7 @@ const AuditTasksTab: React.FC = () => {
                                 disabled={selectedTicketIds.size === 0 || submitting}
                                 className="w-full h-9 bg-pink-600 hover:bg-pink-500 disabled:opacity-30 disabled:hover:bg-pink-600 text-white text-xs font-bold rounded-lg transition-all shadow-lg shadow-pink-900/20 flex items-center justify-center gap-2"
                             >
-                                {submitting ? '正在处理...' : `批量通过 (${selectedTicketIds.size})`}
+                                {submitting ? t('audit.batchProcessing') : t('audit.batchPass', { count: selectedTicketIds.size })}
                             </button>
                         </div>
 
@@ -465,7 +467,7 @@ const AuditTasksTab: React.FC = () => {
                                             <span className="text-[10px] font-bold text-slate-500 group-hover:text-pink-400 transition-colors">#{task.externalId}</span>
                                             <span className={`text-[8px] font-black uppercase tracking-tighter ${task.status === 'AUDITING' ? 'text-indigo-400' : 'text-pink-400'
                                                 }`}>
-                                                {task.status === 'AUDITING' ? 'Auditing' : 'New'}
+                                                {task.status === 'AUDITING' ? t('audit.statusAuditing') : t('audit.statusNew')}
                                             </span>
                                         </div>
                                         <div className="text-[11px] text-slate-300 truncate font-medium group-hover:text-white transition-colors">
@@ -475,10 +477,10 @@ const AuditTasksTab: React.FC = () => {
                                 </div>
                             ))}
                             {queryTickets.length === 0 && !queryLoading && (
-                                <div className="text-center py-12 text-slate-600 text-[10px] italic">暂无待审核工单</div>
+                                <div className="text-center py-12 text-slate-600 text-[10px] italic">{t('audit.noAuditTickets')}</div>
                             )}
                             {queryLoading && queryTickets.length === 0 && (
-                                <div className="text-center py-12 text-slate-600 text-[10px] italic">加载中...</div>
+                                <div className="text-center py-12 text-slate-600 text-[10px] italic">{t('audit.loading')}</div>
                             )}
                         </div>
                     </>
@@ -501,10 +503,10 @@ const AuditTasksTab: React.FC = () => {
                             <svg className="w-8 h-8 opacity-20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                         </div>
                         <p className="text-sm font-medium">
-                            {mode === 'mq' ? '点击工单查看完整详情' : '选择左侧工单进行审核'}
+                            {mode === 'mq' ? t('audit.emptyMqHint') : t('audit.emptyQueryHint')}
                         </p>
                         <p className="text-xs text-slate-700">
-                            {mode === 'mq' ? '可在左侧列表快速审核' : '支持批量通过操作'}
+                            {mode === 'mq' ? t('audit.emptyMqSubHint') : t('audit.emptyQuerySubHint')}
                         </p>
                     </div>
                 )}

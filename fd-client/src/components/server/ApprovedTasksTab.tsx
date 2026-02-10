@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import { serverApi, configApi } from '../../services/serverApi';
 import ServerTicketDetail from './ServerTicketDetail';
 import type { ServerTicket } from '../../types/server';
 
 const ApprovedTasksTab: React.FC = () => {
+    const { t } = useTranslation(['tasks', 'common']);
     const [loading, setLoading] = useState(false);
     const [pushing, setPushing] = useState<number | null>(null);
     const [batchPushing, setBatchPushing] = useState(false);
@@ -75,7 +77,7 @@ const ApprovedTasksTab: React.FC = () => {
             await configApi.setAutoReply(newValue);
             setAutoReplyEnabled(newValue);
         } catch (err) {
-            alert('设置失败: ' + (err as Error).message);
+            alert(t('approved.settingFailed', { error: (err as Error).message }));
         } finally {
             setAutoReplyLoading(false);
         }
@@ -87,7 +89,7 @@ const ApprovedTasksTab: React.FC = () => {
             await serverApi.ticket.pushReply(ticketId);
             loadData(true);
         } catch (err) {
-            alert('推送失败: ' + (err as Error).message);
+            alert(t('approved.pushFailed', { error: (err as Error).message }));
         } finally {
             setPushing(null);
         }
@@ -102,7 +104,7 @@ const ApprovedTasksTab: React.FC = () => {
             setSelectedTicketIds(new Set());
             loadData(true);
         } catch (err) {
-            alert('批量推送失败: ' + (err as Error).message);
+            alert(t('approved.batchPushFailed', { error: (err as Error).message }));
         } finally {
             setBatchPushing(false);
         }
@@ -141,7 +143,7 @@ const ApprovedTasksTab: React.FC = () => {
                     <div className="flex items-center justify-between mb-4">
                         <h3 className="font-bold text-white text-sm tracking-wide flex items-center gap-2">
                             <span className="w-1 h-3 bg-emerald-500 rounded-full"></span>
-                            待推送队列
+                            {t('approved.title')}
                         </h3>
                         <button
                             onClick={handleToggleAutoReply}
@@ -152,7 +154,7 @@ const ApprovedTasksTab: React.FC = () => {
                                     : 'bg-slate-800 text-slate-500 border border-white/5'
                             }`}
                         >
-                            {autoReplyEnabled ? 'Auto ON' : 'Auto OFF'}
+                            {autoReplyEnabled ? t('approved.autoOn') : t('approved.autoOff')}
                         </button>
                     </div>
 
@@ -162,14 +164,14 @@ const ApprovedTasksTab: React.FC = () => {
                                 onClick={selectAll}
                                 className="h-9 px-3 bg-slate-700/50 hover:bg-slate-700 text-white text-xs font-bold rounded-lg transition-all flex items-center justify-center"
                             >
-                                {selectedTicketIds.size === approvedTickets.length && approvedTickets.length > 0 ? '取消全选' : '全选'}
+                                {selectedTicketIds.size === approvedTickets.length && approvedTickets.length > 0 ? t('approved.deselectAll') : t('approved.selectAll')}
                             </button>
                             <button
                                 onClick={handleBatchPush}
                                 disabled={selectedTicketIds.size === 0 || batchPushing}
                                 className="flex-1 h-9 bg-emerald-600 hover:bg-emerald-500 disabled:opacity-30 text-white text-xs font-bold rounded-lg shadow-lg shadow-emerald-900/20 transition-all flex items-center justify-center gap-2"
                             >
-                                {batchPushing ? '推送中...' : `批量推送 (${selectedTicketIds.size})`}
+                                {batchPushing ? t('approved.batchPushing') : t('approved.batchPush', { count: selectedTicketIds.size })}
                             </button>
                         </div>
                     </div>
@@ -182,7 +184,7 @@ const ApprovedTasksTab: React.FC = () => {
                         <div className="flex items-center justify-between px-2 mb-2">
                             <h4 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] flex items-center gap-2">
                                 {approvedTickets.length > 0 && <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-ping"></span>}
-                                Approved
+                                {t('approved.statusApproved')}
                             </h4>
                             <span className="text-[10px] font-mono text-emerald-500/50">({approvedTickets.length})</span>
                         </div>
@@ -217,13 +219,13 @@ const ApprovedTasksTab: React.FC = () => {
                                                             onClick={(e) => { e.stopPropagation(); handlePushSingle(ticket.id); }}
                                                             className="px-1.5 py-0.5 bg-emerald-600/60 hover:bg-emerald-500 text-white text-[9px] font-bold rounded transition-all opacity-0 group-hover:opacity-100"
                                                         >
-                                                            推送
+                                                            {t('approved.push')}
                                                         </button>
                                                     )}
                                                     {pushing === ticket.id ? (
                                                         <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></div>
                                                     ) : (
-                                                        <span className="text-[8px] font-black text-emerald-400/50 uppercase tracking-tighter">Approved</span>
+                                                        <span className="text-[8px] font-black text-emerald-400/50 uppercase tracking-tighter">{t('approved.statusApproved')}</span>
                                                     )}
                                                 </div>
                                             </div>
@@ -239,7 +241,7 @@ const ApprovedTasksTab: React.FC = () => {
 
                             {approvedTickets.length === 0 && !loading && (
                                 <div className="text-center py-6 text-slate-600 text-[10px] italic border border-dashed border-white/5 rounded-xl">
-                                    {autoReplyEnabled ? '自动推送已开启' : '暂无待推送工单'}
+                                    {autoReplyEnabled ? t('approved.autoEnabled') : t('approved.noApproved')}
                                 </div>
                             )}
                         </div>
@@ -248,7 +250,7 @@ const ApprovedTasksTab: React.FC = () => {
                     {/* 已推送列表 */}
                     <div>
                         <div className="flex items-center justify-between px-2 mb-2 mt-4">
-                            <h4 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">Completed</h4>
+                            <h4 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">{t('approved.completed')}</h4>
                             <span className="text-[10px] font-mono text-green-500/50">({completedTickets.length})</span>
                         </div>
                         <div className="space-y-1">
@@ -265,14 +267,14 @@ const ApprovedTasksTab: React.FC = () => {
                                     <div className="flex items-center justify-between mb-0.5">
                                         <span className="text-[10px] font-bold text-slate-500 opacity-60 group-hover:opacity-100 transition-opacity">#{ticket.externalId}</span>
                                         <span className="text-[9px] font-black uppercase tracking-tighter text-green-500/50">
-                                            Pushed
+                                            {t('approved.statusPushed')}
                                         </span>
                                     </div>
                                     <div className="text-[11px] text-slate-400 truncate group-hover:text-slate-200 transition-colors">{ticket.subject}</div>
                                 </button>
                             ))}
                             {completedTickets.length === 0 && (
-                                <div className="text-center py-6 text-slate-600 text-[10px] italic border border-dashed border-white/5 rounded-xl">暂无已推送工单</div>
+                                <div className="text-center py-6 text-slate-600 text-[10px] italic border border-dashed border-white/5 rounded-xl">{t('approved.noCompleted')}</div>
                             )}
                         </div>
                     </div>
@@ -294,8 +296,8 @@ const ApprovedTasksTab: React.FC = () => {
                         <div className="w-16 h-16 rounded-full bg-slate-800/50 flex items-center justify-center">
                             <svg className="w-8 h-8 opacity-20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" /></svg>
                         </div>
-                        <p className="text-sm font-medium">审核通过的工单将显示在此</p>
-                        <p className="text-xs text-slate-700">点击工单查看详情，或批量推送到 Freshdesk</p>
+                        <p className="text-sm font-medium">{t('approved.emptyHint')}</p>
+                        <p className="text-xs text-slate-700">{t('approved.emptySubHint')}</p>
                     </div>
                 )}
             </div>

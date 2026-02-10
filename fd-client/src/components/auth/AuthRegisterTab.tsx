@@ -4,6 +4,7 @@
  */
 
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { getServerBaseUrl, setServerBaseUrl } from '../../services/serverApi';
 
 interface AuthRegisterTabProps {
@@ -19,6 +20,7 @@ const AuthRegisterTab: React.FC<AuthRegisterTabProps> = ({
     isLoading = false,
     error,
 }) => {
+    const { t } = useTranslation('auth');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -33,17 +35,17 @@ const AuthRegisterTab: React.FC<AuthRegisterTabProps> = ({
         setLocalError(null);
 
         if (!username.trim() || !password.trim() || !confirmPassword.trim()) {
-            setLocalError('请填写所有字段');
+            setLocalError(t('register.validationAllFields'));
             return;
         }
 
         if (password.length < 6) {
-            setLocalError('密码至少需要 6 位');
+            setLocalError(t('register.validationMinPassword'));
             return;
         }
 
         if (password !== confirmPassword) {
-            setLocalError('两次输入的密码不一致');
+            setLocalError(t('register.validationPasswordMatch'));
             return;
         }
 
@@ -51,7 +53,7 @@ const AuthRegisterTab: React.FC<AuthRegisterTabProps> = ({
             await onRegister({ username: username.trim(), password });
             setSuccess(true);
         } catch (err) {
-            setLocalError(err instanceof Error ? err.message : '注册失败');
+            setLocalError(err instanceof Error ? err.message : t('register.registerFailed'));
         }
     };
 
@@ -75,9 +77,9 @@ const AuthRegisterTab: React.FC<AuthRegisterTabProps> = ({
                         </svg>
                     </div>
 
-                    <h2 className="text-3xl font-bold text-white mb-4">注册成功!</h2>
+                    <h2 className="text-3xl font-bold text-white mb-4">{t('register.successTitle')}</h2>
                     <p className="text-slate-400 mb-8 leading-relaxed">
-                        您的账号已创建成功，请等待管理员审核后即可登录使用。
+                        {t('register.successMessage')}
                     </p>
 
                     <button
@@ -87,7 +89,7 @@ const AuthRegisterTab: React.FC<AuthRegisterTabProps> = ({
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
                         </svg>
-                        返回登录
+                        {t('register.backToLogin')}
                     </button>
                 </div>
 
@@ -133,10 +135,10 @@ const AuthRegisterTab: React.FC<AuthRegisterTabProps> = ({
                         </svg>
                     </div>
                     <h1 className="text-3xl font-bold text-white mb-2">
-                        创建账号
+                        {t('register.title')}
                     </h1>
                     <p className="text-slate-400 text-sm">
-                        注册后需等待管理员审批
+                        {t('register.subtitle')}
                     </p>
                 </div>
 
@@ -163,7 +165,7 @@ const AuthRegisterTab: React.FC<AuthRegisterTabProps> = ({
 
                         {/* 用户名输入 */}
                         <div className="space-y-2">
-                            <label className="block text-slate-300 text-sm font-medium pl-1">用户名</label>
+                            <label className="block text-slate-300 text-sm font-medium pl-1">{t('register.username')}</label>
                             <div className={`relative group ${focusedField === 'username' ? 'z-10' : ''}`}>
                                 <div className={`absolute -inset-0.5 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-xl opacity-0 blur transition-opacity duration-300 ${focusedField === 'username' ? 'opacity-50' : 'group-hover:opacity-30'}`} />
                                 <div className="relative flex items-center">
@@ -178,7 +180,7 @@ const AuthRegisterTab: React.FC<AuthRegisterTabProps> = ({
                                         onChange={(e) => setUsername(e.target.value)}
                                         onFocus={() => setFocusedField('username')}
                                         onBlur={() => setFocusedField(null)}
-                                        placeholder="请输入用户名"
+                                        placeholder={t('register.usernamePlaceholder')}
                                         className="w-full pl-12 pr-4 py-3.5 bg-slate-900/50 border border-white/10 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-transparent transition-all duration-300"
                                     />
                                 </div>
@@ -187,7 +189,7 @@ const AuthRegisterTab: React.FC<AuthRegisterTabProps> = ({
 
                         {/* 密码输入 */}
                         <div className="space-y-2">
-                            <label className="block text-slate-300 text-sm font-medium pl-1">密码</label>
+                            <label className="block text-slate-300 text-sm font-medium pl-1">{t('register.password')}</label>
                             <div className={`relative group ${focusedField === 'password' ? 'z-10' : ''}`}>
                                 <div className={`absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl opacity-0 blur transition-opacity duration-300 ${focusedField === 'password' ? 'opacity-50' : 'group-hover:opacity-30'}`} />
                                 <div className="relative flex items-center">
@@ -202,7 +204,7 @@ const AuthRegisterTab: React.FC<AuthRegisterTabProps> = ({
                                         onChange={(e) => setPassword(e.target.value)}
                                         onFocus={() => setFocusedField('password')}
                                         onBlur={() => setFocusedField(null)}
-                                        placeholder="至少 6 位"
+                                        placeholder={t('register.passwordPlaceholder')}
                                         className="w-full pl-12 pr-4 py-3.5 bg-slate-900/50 border border-white/10 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-transparent transition-all duration-300"
                                     />
                                 </div>
@@ -211,7 +213,7 @@ const AuthRegisterTab: React.FC<AuthRegisterTabProps> = ({
 
                         {/* 确认密码 */}
                         <div className="space-y-2">
-                            <label className="block text-slate-300 text-sm font-medium pl-1">确认密码</label>
+                            <label className="block text-slate-300 text-sm font-medium pl-1">{t('register.confirmPassword')}</label>
                             <div className={`relative group ${focusedField === 'confirm' ? 'z-10' : ''}`}>
                                 <div className={`absolute -inset-0.5 bg-gradient-to-r from-pink-500 to-orange-500 rounded-xl opacity-0 blur transition-opacity duration-300 ${focusedField === 'confirm' ? 'opacity-50' : 'group-hover:opacity-30'}`} />
                                 <div className="relative flex items-center">
@@ -226,7 +228,7 @@ const AuthRegisterTab: React.FC<AuthRegisterTabProps> = ({
                                         onChange={(e) => setConfirmPassword(e.target.value)}
                                         onFocus={() => setFocusedField('confirm')}
                                         onBlur={() => setFocusedField(null)}
-                                        placeholder="再次输入密码"
+                                        placeholder={t('register.confirmPlaceholder')}
                                         className="w-full pl-12 pr-4 py-3.5 bg-slate-900/50 border border-white/10 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-transparent transition-all duration-300"
                                     />
                                 </div>
@@ -249,11 +251,11 @@ const AuthRegisterTab: React.FC<AuthRegisterTabProps> = ({
                                             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                                             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                                         </svg>
-                                        <span className="text-white font-semibold">提交中...</span>
+                                        <span className="text-white font-semibold">{t('register.submitting')}</span>
                                     </>
                                 ) : (
                                     <>
-                                        <span className="text-white font-semibold text-lg">注 册</span>
+                                        <span className="text-white font-semibold text-lg">{t('register.submitButton')}</span>
                                         <svg className="w-5 h-5 text-white/80 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                         </svg>
@@ -270,7 +272,7 @@ const AuthRegisterTab: React.FC<AuthRegisterTabProps> = ({
                             <div className="w-full border-t border-white/10" />
                         </div>
                         <div className="relative flex justify-center text-sm">
-                            <span className="px-4 bg-transparent text-slate-500">已有账号?</span>
+                            <span className="px-4 bg-transparent text-slate-500">{t('register.hasAccount')}</span>
                         </div>
                     </div>
 
@@ -285,7 +287,7 @@ const AuthRegisterTab: React.FC<AuthRegisterTabProps> = ({
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
-                            服务器配置
+                            {t('register.serverConfig')}
                             <svg className={`w-3 h-3 transition-transform ${showServerConfig ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                             </svg>
@@ -316,13 +318,13 @@ const AuthRegisterTab: React.FC<AuthRegisterTabProps> = ({
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
                         </svg>
-                        返回登录
+                        {t('register.backToLogin')}
                     </button>
                 </div>
 
                 {/* 底部版权 */}
                 <p className="text-center text-slate-600 text-xs mt-8">
-                    FD-AutoPilot · Freshdesk 智能工单处理系统
+                    {t('register.brandFooter')}
                 </p>
             </div>
 

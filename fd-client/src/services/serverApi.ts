@@ -26,6 +26,7 @@ import type {
   TableInfo,
   KnowledgeNote,
   KnowledgeNoteRequest,
+  QueueCounts,
 } from '../types/server';
 
 // Server URL（从 localStorage 读取，默认 http://localhost:9988）
@@ -201,6 +202,13 @@ export const ticketApi = {
     }, explicitToken);
   },
 
+  async updateReply(ticketId: number, replyId: number, data: ReplySubmitData): Promise<void> {
+    await request<void>(`/tickets/${ticketId}/reply/${replyId}`, {
+      method: 'PUT',
+      body: JSON.stringify(data),
+    });
+  },
+
   async submitAudit(ticketId: number, data: AuditSubmitData): Promise<void> {
     await request<void>(`/tickets/${ticketId}/audit`, {
       method: 'POST',
@@ -236,6 +244,10 @@ export const ticketApi = {
       method: 'POST',
       body: JSON.stringify(ticketIds),
     });
+  },
+
+  async getQueueCounts(): Promise<QueueCounts> {
+    return request<QueueCounts>('/tickets/queue-counts');
   },
 };
 

@@ -197,6 +197,14 @@ export interface KnowledgeNoteRequest {
   sortOrder?: number;
 }
 
+// ============ MQ 队列计数 ============
+export interface QueueCounts {
+  translation: number;
+  reply: number;
+  audit: number;
+  dlq: number;
+}
+
 // ============ 数据库查询相关 ============
 export interface SqlQueryResult {
   success: boolean;

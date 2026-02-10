@@ -3,6 +3,7 @@ package com.jefflower.fdserver.controller;
 import com.jefflower.fdserver.dto.*;
 import com.jefflower.fdserver.entity.*;
 import com.jefflower.fdserver.enums.TicketStatus;
+import com.jefflower.fdserver.service.MqQueueService;
 import com.jefflower.fdserver.service.TicketService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -14,6 +15,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
+import java.util.Map;
 
 @Slf4j
 @RestController
@@ -22,6 +24,7 @@ import java.time.LocalDateTime;
 public class TicketController {
 
     private final TicketService ticketService;
+    private final MqQueueService mqQueueService;
 
     @GetMapping
     public ResponseEntity<ApiResponse<Page<Ticket>>> queryTickets(
@@ -81,6 +84,15 @@ public class TicketController {
         return ResponseEntity.ok(ApiResponse.ok("审核提交成功", audit));
     }
 
+    @PutMapping("/{id}/reply/{replyId}")
+    public ResponseEntity<ApiResponse<TicketReply>> updateReply(
+            @PathVariable Long id,
+            @PathVariable Long replyId,
+            @RequestBody ReplyRequest request) {
+        TicketReply reply = ticketService.updateReply(id, replyId, request);
+        return ResponseEntity.ok(ApiResponse.ok("回复更新成功", reply));
+    }
+
     @PostMapping("/{id}/skip-reply")
     public ResponseEntity<ApiResponse<Void>> skipReply(@PathVariable Long id) {
         ticketService.skipReply(id);
@@ -110,6 +122,11 @@ public class TicketController {
             @RequestBody java.util.List<Long> ticketIds) {
         int count = ticketService.batchPushApprovedReplies(ticketIds);
         return ResponseEntity.ok(ApiResponse.ok("批量推送完成", count));
+    }
+
+    @GetMapping("/queue-counts")
+    public ResponseEntity<ApiResponse<Map<String, Long>>> getQueueCounts() {
+        return ResponseEntity.ok(ApiResponse.ok(mqQueueService.getQueueCounts()));
     }
 
     @PostMapping("/{id}/valid")

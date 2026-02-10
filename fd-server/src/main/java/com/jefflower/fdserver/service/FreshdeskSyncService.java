@@ -140,11 +140,16 @@ public class FreshdeskSyncService {
         log.info("Starting Freshdesk ticket sync...");
 
         LocalDateTime lastSyncTime = syncConfigService.getLastSyncTime();
-        // Freshdesk 要求 ISO8601 格式: 2024-12-01T10:30:00Z（不能有微秒）
-        String updatedSince = lastSyncTime != null
-                ? lastSyncTime.truncatedTo(java.time.temporal.ChronoUnit.SECONDS)
-                        .format(DateTimeFormatter.ISO_LOCAL_DATE_TIME) + "Z"
-                : null;
+        String updatedSince = null;
+
+        if (lastSyncTime != null) {
+            // 将本地时间转换为 UTC 时间字符串 (ISO 8601)
+            // 防止 "Z" 直接拼接导致的时区错误 (例如: 北京时间 10:00 + "Z" = UTC 10:00 = 北京 18:00 -> 未来时间)
+            updatedSince = java.time.ZonedDateTime.of(lastSyncTime, java.time.ZoneId.systemDefault())
+                    .withZoneSameInstant(java.time.ZoneId.of("UTC"))
+                    .minusMinutes(5) // 回溯 5 分钟，防止漏单 (clock skew / long transaction)
+                    .format(DateTimeFormatter.ISO_INSTANT); // 格式: 2023-10-01T10:00:00Z
+        }
 
         Set<Integer> statuses = parseStatuses();
 

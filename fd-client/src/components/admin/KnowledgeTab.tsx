@@ -4,22 +4,11 @@
  */
 
 import React, { useState, useEffect, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ticketApi, adminApi, downloadWithAuth } from '../../services/serverApi';
 import type { ServerTicket, TicketStatus, KnowledgeNote, KnowledgeNoteRequest } from '../../types/server';
 
 // ============ 常量 ============
-
-const STATUS_OPTIONS: { value: TicketStatus | ''; label: string }[] = [
-    { value: '', label: '全部状态' },
-    { value: 'PENDING_TRANS', label: '待翻译' },
-    { value: 'TRANSLATING', label: '翻译中' },
-    { value: 'PENDING_REPLY', label: '待回复' },
-    { value: 'REPLYING', label: '回复中' },
-    { value: 'PENDING_AUDIT', label: '待审核' },
-    { value: 'AUDITING', label: '审核中' },
-    { value: 'APPROVED', label: '待推送' },
-    { value: 'COMPLETED', label: '已完成' },
-];
 
 const STATUS_COLORS: Record<string, string> = {
     PENDING_TRANS: 'bg-yellow-500/20 text-yellow-400',
@@ -32,15 +21,15 @@ const STATUS_COLORS: Record<string, string> = {
     COMPLETED: 'bg-green-500/20 text-green-400',
 };
 
-const VALID_FILTER_OPTIONS = [
-    { value: 'all', label: '全部' },
-    { value: 'valid', label: '有效' },
-    { value: 'invalid', label: '无效' },
+const TICKET_STATUSES: TicketStatus[] = [
+    'PENDING_TRANS', 'TRANSLATING', 'PENDING_REPLY', 'REPLYING',
+    'PENDING_AUDIT', 'AUDITING', 'APPROVED', 'COMPLETED',
 ];
 
 // ============ 主组件 ============
 
 const KnowledgeTab: React.FC = () => {
+    const { t } = useTranslation(['admin', 'common']);
     const [activePanel, setActivePanel] = useState<'tickets' | 'notes'>('tickets');
 
     return (
@@ -50,7 +39,7 @@ const KnowledgeTab: React.FC = () => {
                 <div className="flex items-center justify-between">
                     <h3 className="font-bold text-white text-sm tracking-wide flex items-center gap-2">
                         <span className="w-1 h-4 bg-amber-500 rounded-full"></span>
-                        知识库管理
+                        {t('knowledge.title')}
                     </h3>
                     <div className="flex bg-black/40 rounded-lg p-0.5 border border-white/5">
                         <button
@@ -60,7 +49,7 @@ const KnowledgeTab: React.FC = () => {
                                 : 'text-slate-400 hover:text-slate-300'
                                 }`}
                         >
-                            工单标记
+                            {t('knowledge.ticketMarking')}
                         </button>
                         <button
                             onClick={() => setActivePanel('notes')}
@@ -69,7 +58,7 @@ const KnowledgeTab: React.FC = () => {
                                 : 'text-slate-400 hover:text-slate-300'
                                 }`}
                         >
-                            注意事项
+                            {t('knowledge.notes')}
                         </button>
                     </div>
                 </div>
@@ -84,6 +73,8 @@ const KnowledgeTab: React.FC = () => {
 // ============ 工单标记面板 ============
 
 const TicketValidityPanel: React.FC = () => {
+    const { t } = useTranslation(['admin', 'common']);
+
     const [tickets, setTickets] = useState<ServerTicket[]>([]);
     const [loading, setLoading] = useState(true);
     const [statusFilter, setStatusFilter] = useState<TicketStatus | ''>('');
@@ -162,7 +153,7 @@ const TicketValidityPanel: React.FC = () => {
             await downloadWithAuth('/admin/knowledge/export/tickets', 'knowledge_tickets.csv');
         } catch (err) {
             console.error('导出失败:', err);
-            alert('导出失败: ' + err);
+            alert(t('knowledge.tickets.exportFailed', { error: String(err) }));
         }
     };
 
@@ -183,10 +174,6 @@ const TicketValidityPanel: React.FC = () => {
         }
     };
 
-    const getStatusLabel = (status: string) => {
-        return STATUS_OPTIONS.find(o => o.value === status)?.label || status;
-    };
-
     return (
         <div className="flex-1 flex flex-col overflow-hidden">
             {/* 工具栏 */}
@@ -198,23 +185,24 @@ const TicketValidityPanel: React.FC = () => {
                         onChange={e => setStatusFilter(e.target.value as TicketStatus | '')}
                         className="px-2.5 py-1.5 bg-black/40 border border-white/10 rounded-lg text-xs text-white focus:border-amber-500/50 focus:outline-none"
                     >
-                        {STATUS_OPTIONS.map(opt => (
-                            <option key={opt.value} value={opt.value}>{opt.label}</option>
+                        <option value="">{t('common:label.allStatus')}</option>
+                        {TICKET_STATUSES.map(status => (
+                            <option key={status} value={status}>{t(`common:ticketStatus.${status}`)}</option>
                         ))}
                     </select>
 
                     {/* 有效性筛选 */}
                     <div className="flex bg-black/30 rounded-lg p-0.5 border border-white/5">
-                        {VALID_FILTER_OPTIONS.map(opt => (
+                        {(['all', 'valid', 'invalid'] as const).map(opt => (
                             <button
-                                key={opt.value}
-                                onClick={() => setValidFilter(opt.value)}
-                                className={`px-2 py-1 rounded-md text-[10px] font-medium transition-all ${validFilter === opt.value
+                                key={opt}
+                                onClick={() => setValidFilter(opt)}
+                                className={`px-2 py-1 rounded-md text-[10px] font-medium transition-all ${validFilter === opt
                                     ? 'bg-amber-500/20 text-amber-400'
                                     : 'text-slate-500 hover:text-slate-400'
                                     }`}
                             >
-                                {opt.label}
+                                {opt === 'all' ? t('knowledge.tickets.all') : opt === 'valid' ? t('knowledge.tickets.validOnly') : t('knowledge.tickets.invalidOnly')}
                             </button>
                         ))}
                     </div>
@@ -226,7 +214,7 @@ const TicketValidityPanel: React.FC = () => {
                         </svg>
                         <input
                             type="text"
-                            placeholder="搜索标题..."
+                            placeholder={t('knowledge.tickets.searchPlaceholder')}
                             value={searchQuery}
                             onChange={e => setSearchQuery(e.target.value)}
                             className="w-full pl-7 pr-3 py-1.5 bg-black/40 border border-white/5 rounded-lg text-xs text-white placeholder-slate-500 focus:border-amber-500/50 focus:outline-none"
@@ -238,20 +226,20 @@ const TicketValidityPanel: React.FC = () => {
                     {/* 批量操作 */}
                     {selectedIds.size > 0 && (
                         <div className="flex items-center gap-1.5">
-                            <span className="text-[10px] text-slate-400">已选 {selectedIds.size} 条</span>
+                            <span className="text-[10px] text-slate-400">{t('knowledge.tickets.selectedCount', { count: selectedIds.size })}</span>
                             <button
                                 onClick={() => handleBatchMark(true)}
                                 disabled={batchLoading}
                                 className="px-2.5 py-1 bg-emerald-500/20 text-emerald-400 rounded-lg text-[10px] font-medium hover:bg-emerald-500/30 disabled:opacity-50 transition-colors"
                             >
-                                标记有效
+                                {t('knowledge.tickets.markValid')}
                             </button>
                             <button
                                 onClick={() => handleBatchMark(false)}
                                 disabled={batchLoading}
                                 className="px-2.5 py-1 bg-red-500/20 text-red-400 rounded-lg text-[10px] font-medium hover:bg-red-500/30 disabled:opacity-50 transition-colors"
                             >
-                                标记无效
+                                {t('knowledge.tickets.markInvalid')}
                             </button>
                         </div>
                     )}
@@ -264,7 +252,7 @@ const TicketValidityPanel: React.FC = () => {
                         <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                         </svg>
-                        导出有效工单
+                        {t('knowledge.tickets.exportValid')}
                     </button>
                 </div>
             </div>
@@ -282,10 +270,10 @@ const TicketValidityPanel: React.FC = () => {
                                     className="w-3.5 h-3.5 rounded border-white/20 bg-transparent accent-amber-500 cursor-pointer"
                                 />
                             </th>
-                            <th className="px-3 py-2.5 text-left text-[10px] font-medium text-slate-400 uppercase tracking-wider w-24">工单号</th>
-                            <th className="px-3 py-2.5 text-left text-[10px] font-medium text-slate-400 uppercase tracking-wider">标题</th>
-                            <th className="px-3 py-2.5 text-center text-[10px] font-medium text-slate-400 uppercase tracking-wider w-20">状态</th>
-                            <th className="px-3 py-2.5 text-center text-[10px] font-medium text-slate-400 uppercase tracking-wider w-16">有效</th>
+                            <th className="px-3 py-2.5 text-left text-[10px] font-medium text-slate-400 uppercase tracking-wider w-24">{t('knowledge.tickets.ticketId')}</th>
+                            <th className="px-3 py-2.5 text-left text-[10px] font-medium text-slate-400 uppercase tracking-wider">{t('knowledge.tickets.subject')}</th>
+                            <th className="px-3 py-2.5 text-center text-[10px] font-medium text-slate-400 uppercase tracking-wider w-20">{t('common:label.status')}</th>
+                            <th className="px-3 py-2.5 text-center text-[10px] font-medium text-slate-400 uppercase tracking-wider w-16">{t('knowledge.tickets.valid')}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -297,14 +285,14 @@ const TicketValidityPanel: React.FC = () => {
                                             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                                             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
                                         </svg>
-                                        加载中...
+                                        {t('common:button.loading')}
                                     </div>
                                 </td>
                             </tr>
                         ) : tickets.length === 0 ? (
                             <tr>
                                 <td colSpan={5} className="px-4 py-20 text-center text-slate-500 text-xs">
-                                    暂无工单数据
+                                    {t('knowledge.tickets.noData')}
                                 </td>
                             </tr>
                         ) : (
@@ -329,7 +317,7 @@ const TicketValidityPanel: React.FC = () => {
                                     </td>
                                     <td className="px-3 py-2 text-center">
                                         <span className={`inline-block px-1.5 py-0.5 rounded text-[9px] font-bold ${STATUS_COLORS[ticket.status] || 'bg-slate-500/20 text-slate-400'}`}>
-                                            {getStatusLabel(ticket.status)}
+                                            {t(`common:ticketStatus.${ticket.status}` as any)}
                                         </span>
                                     </td>
                                     <td className="px-3 py-2 text-center">
@@ -352,7 +340,7 @@ const TicketValidityPanel: React.FC = () => {
             {/* 分页 */}
             <div className="px-4 py-2 border-t border-white/5 bg-slate-900/30 flex items-center justify-between flex-shrink-0">
                 <span className="text-[10px] text-slate-500">
-                    共 {totalElements} 条 / 第 {page + 1} 页，共 {totalPages} 页
+                    {t('knowledge.tickets.pagination', { total: totalElements, current: page + 1, pages: totalPages })}
                 </span>
                 <div className="flex items-center gap-1">
                     <button
@@ -360,14 +348,14 @@ const TicketValidityPanel: React.FC = () => {
                         disabled={page === 0}
                         className="px-2.5 py-1 bg-white/5 text-slate-400 rounded text-[10px] hover:bg-white/10 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
                     >
-                        上一页
+                        {t('common:button.previousPage')}
                     </button>
                     <button
                         onClick={() => setPage(p => Math.min(totalPages - 1, p + 1))}
                         disabled={page >= totalPages - 1}
                         className="px-2.5 py-1 bg-white/5 text-slate-400 rounded text-[10px] hover:bg-white/10 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
                     >
-                        下一页
+                        {t('common:button.nextPage')}
                     </button>
                 </div>
             </div>
@@ -378,6 +366,8 @@ const TicketValidityPanel: React.FC = () => {
 // ============ 注意事项面板 ============
 
 const NotesPanel: React.FC = () => {
+    const { t, i18n } = useTranslation(['admin', 'common']);
+
     const [notes, setNotes] = useState<KnowledgeNote[]>([]);
     const [loading, setLoading] = useState(true);
     const [editingId, setEditingId] = useState<number | null>(null); // null=查看, 0=新建
@@ -428,14 +418,14 @@ const NotesPanel: React.FC = () => {
             await loadNotes();
         } catch (err) {
             console.error('保存失败:', err);
-            alert('保存失败: ' + err);
+            alert(t('knowledge.notesPanel.saveFailed', { error: String(err) }));
         } finally {
             setSaving(false);
         }
     };
 
     const handleDelete = async (id: number) => {
-        if (!confirm('确认删除此注意事项？')) return;
+        if (!confirm(t('knowledge.notesPanel.confirmDelete'))) return;
         try {
             await adminApi.deleteKnowledgeNote(id);
             await loadNotes();
@@ -449,7 +439,7 @@ const NotesPanel: React.FC = () => {
             await downloadWithAuth('/admin/knowledge/export/notes', 'knowledge_notes.csv');
         } catch (err) {
             console.error('导出失败:', err);
-            alert('导出失败: ' + err);
+            alert(t('knowledge.notesPanel.exportFailed', { error: String(err) }));
         }
     };
 
@@ -457,7 +447,7 @@ const NotesPanel: React.FC = () => {
         <div className="flex-1 flex flex-col overflow-hidden">
             {/* 工具栏 */}
             <div className="px-4 py-2.5 border-b border-white/5 bg-slate-900/30 flex items-center justify-between flex-shrink-0">
-                <span className="text-[10px] text-slate-500">共 {notes.length} 条注意事项</span>
+                <span className="text-[10px] text-slate-500">{t('knowledge.notesPanel.totalNotes', { count: notes.length })}</span>
                 <div className="flex items-center gap-2">
                     <button
                         onClick={handleAdd}
@@ -467,7 +457,7 @@ const NotesPanel: React.FC = () => {
                         <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
                         </svg>
-                        添加
+                        {t('knowledge.notesPanel.add')}
                     </button>
                     <button
                         onClick={handleExport}
@@ -477,7 +467,7 @@ const NotesPanel: React.FC = () => {
                         <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                         </svg>
-                        导出
+                        {t('knowledge.notesPanel.export')}
                     </button>
                 </div>
             </div>
@@ -501,11 +491,11 @@ const NotesPanel: React.FC = () => {
                             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
                         </svg>
-                        加载中...
+                        {t('common:button.loading')}
                     </div>
                 ) : notes.length === 0 && editingId !== 0 ? (
                     <div className="text-center py-20 text-slate-500 text-xs">
-                        暂无注意事项，点击上方"添加"按钮创建
+                        {t('knowledge.notesPanel.noData')}
                     </div>
                 ) : (
                     notes.map(note => (
@@ -531,15 +521,15 @@ const NotesPanel: React.FC = () => {
                                         </div>
                                         <p className="text-xs text-slate-400 whitespace-pre-wrap break-words leading-relaxed">{note.content}</p>
                                         <p className="text-[10px] text-slate-600 mt-2">
-                                            创建于 {new Date(note.createdAt).toLocaleString()}
-                                            {note.updatedAt && ` · 更新于 ${new Date(note.updatedAt).toLocaleString()}`}
+                                            {t('knowledge.notesPanel.createdAt', { time: new Date(note.createdAt).toLocaleString(i18n.language) })}
+                                            {note.updatedAt && ` \u00B7 ${t('knowledge.notesPanel.updatedAt', { time: new Date(note.updatedAt).toLocaleString(i18n.language) })}`}
                                         </p>
                                     </div>
                                     <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0">
                                         <button
                                             onClick={() => handleEdit(note)}
                                             className="p-1.5 text-slate-500 hover:text-amber-400 hover:bg-amber-500/10 rounded-lg transition-colors"
-                                            title="编辑"
+                                            title={t('common:button.edit')}
                                         >
                                             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
@@ -548,7 +538,7 @@ const NotesPanel: React.FC = () => {
                                         <button
                                             onClick={() => handleDelete(note.id)}
                                             className="p-1.5 text-slate-500 hover:text-red-400 hover:bg-red-500/10 rounded-lg transition-colors"
-                                            title="删除"
+                                            title={t('common:button.delete')}
                                         >
                                             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
@@ -576,6 +566,8 @@ interface NoteEditCardProps {
 }
 
 const NoteEditCard: React.FC<NoteEditCardProps> = ({ form, setForm, onSave, onCancel, saving }) => {
+    const { t } = useTranslation(['admin', 'common']);
+
     return (
         <div className="bg-slate-800/70 backdrop-blur-xl rounded-xl border border-amber-500/30 p-4 space-y-3">
             <div className="flex items-center gap-3">
@@ -584,15 +576,15 @@ const NoteEditCard: React.FC<NoteEditCardProps> = ({ form, setForm, onSave, onCa
                     value={form.sortOrder ?? 0}
                     onChange={e => setForm(prev => ({ ...prev, sortOrder: parseInt(e.target.value) || 0 }))}
                     className="w-16 px-2 py-1.5 bg-black/40 border border-white/10 rounded-lg text-xs text-white text-center focus:border-amber-500/50 focus:outline-none"
-                    placeholder="序号"
-                    title="排序序号"
+                    placeholder={t('knowledge.notesPanel.sortOrder')}
+                    title={t('knowledge.notesPanel.sortOrder')}
                 />
                 <input
                     type="text"
                     value={form.title}
                     onChange={e => setForm(prev => ({ ...prev, title: e.target.value }))}
                     className="flex-1 px-3 py-1.5 bg-black/40 border border-white/10 rounded-lg text-xs text-white focus:border-amber-500/50 focus:outline-none"
-                    placeholder="标题"
+                    placeholder={t('knowledge.notesPanel.titlePlaceholder')}
                     autoFocus
                 />
             </div>
@@ -600,7 +592,7 @@ const NoteEditCard: React.FC<NoteEditCardProps> = ({ form, setForm, onSave, onCa
                 value={form.content}
                 onChange={e => setForm(prev => ({ ...prev, content: e.target.value }))}
                 className="w-full px-3 py-2 bg-black/40 border border-white/10 rounded-lg text-xs text-white focus:border-amber-500/50 focus:outline-none resize-none leading-relaxed"
-                placeholder="内容..."
+                placeholder={t('knowledge.notesPanel.contentPlaceholder')}
                 rows={4}
             />
             <div className="flex items-center justify-end gap-2">
@@ -608,14 +600,14 @@ const NoteEditCard: React.FC<NoteEditCardProps> = ({ form, setForm, onSave, onCa
                     onClick={onCancel}
                     className="px-3 py-1.5 text-slate-400 hover:text-slate-300 text-[10px] font-medium transition-colors"
                 >
-                    取消
+                    {t('common:button.cancel')}
                 </button>
                 <button
                     onClick={onSave}
                     disabled={saving || !form.title.trim() || !form.content.trim()}
                     className="px-3 py-1.5 bg-amber-500/20 text-amber-400 rounded-lg text-[10px] font-medium hover:bg-amber-500/30 disabled:opacity-50 transition-colors"
                 >
-                    {saving ? '保存中...' : '保存'}
+                    {saving ? t('knowledge.notesPanel.saving') : t('common:button.save')}
                 </button>
             </div>
         </div>

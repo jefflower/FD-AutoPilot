@@ -1,5 +1,7 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { NavButton } from './Common';
+import type { QueueCounts } from '../types/server';
 
 export type TabType =
     | 'settings'
@@ -23,6 +25,7 @@ interface SidebarNewProps {
     isAdmin: boolean;
     onLogout?: () => void;
     username?: string;
+    queueCounts?: QueueCounts | null;
 }
 
 const SidebarNew: React.FC<SidebarNewProps> = ({
@@ -31,8 +34,11 @@ const SidebarNew: React.FC<SidebarNewProps> = ({
     isLoggedIn,
     isAdmin,
     onLogout: _onLogout,
-    username
+    username,
+    queueCounts
 }) => {
+    const { t } = useTranslation('common');
+
     return (
         <div className="w-16 min-w-16 max-w-16 bg-slate-900/50 backdrop-blur-xl border-r border-white/10 flex flex-col items-center py-6 flex-shrink-0 overflow-x-hidden overflow-y-auto box-border">
             {/* Logo */}
@@ -44,7 +50,7 @@ const SidebarNew: React.FC<SidebarNewProps> = ({
                 {isLoggedIn ? (
                     <>
                         <NavButton
-                            label="Server"
+                            label={t('nav.server')}
                             active={activeTab === 'server-tickets'}
                             onClick={() => setActiveTab('server-tickets')}
                             icon={
@@ -54,9 +60,10 @@ const SidebarNew: React.FC<SidebarNewProps> = ({
                             }
                         />
                         <NavButton
-                            label="翻译"
+                            label={t('nav.translation')}
                             active={activeTab === 'translation'}
                             onClick={() => setActiveTab('translation')}
+                            badge={queueCounts?.translation}
                             icon={
                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
@@ -64,9 +71,10 @@ const SidebarNew: React.FC<SidebarNewProps> = ({
                             }
                         />
                         <NavButton
-                            label="回复"
+                            label={t('nav.reply')}
                             active={activeTab === 'reply'}
                             onClick={() => setActiveTab('reply')}
+                            badge={queueCounts?.reply}
                             icon={
                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
@@ -74,9 +82,10 @@ const SidebarNew: React.FC<SidebarNewProps> = ({
                             }
                         />
                         <NavButton
-                            label="审核"
+                            label={t('nav.audit')}
                             active={activeTab === 'audit'}
                             onClick={() => setActiveTab('audit')}
+                            badge={queueCounts?.audit}
                             icon={
                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -84,7 +93,7 @@ const SidebarNew: React.FC<SidebarNewProps> = ({
                             }
                         />
                         <NavButton
-                            label="推送"
+                            label={t('nav.push')}
                             active={activeTab === 'approved'}
                             onClick={() => setActiveTab('approved')}
                             icon={
@@ -94,16 +103,14 @@ const SidebarNew: React.FC<SidebarNewProps> = ({
                             }
                         />
 
-                        {/* 管理员分隔线 */}
                         {isAdmin && (
                             <div className="w-8 h-px bg-white/10 my-2"></div>
                         )}
 
-                        {/* ===== 管理员专属模块 ===== */}
                         {isAdmin && (
                             <>
                                 <NavButton
-                                    label="用户"
+                                    label={t('nav.users')}
                                     active={activeTab === 'admin-users'}
                                     onClick={() => setActiveTab('admin-users')}
                                     icon={
@@ -113,7 +120,7 @@ const SidebarNew: React.FC<SidebarNewProps> = ({
                                     }
                                 />
                                 <NavButton
-                                    label="同步"
+                                    label={t('nav.sync')}
                                     active={activeTab === 'manual-sync'}
                                     onClick={() => setActiveTab('manual-sync')}
                                     icon={
@@ -123,7 +130,7 @@ const SidebarNew: React.FC<SidebarNewProps> = ({
                                     }
                                 />
                                 <NavButton
-                                    label="日志"
+                                    label={t('nav.logs')}
                                     active={activeTab === 'server-logs'}
                                     onClick={() => setActiveTab('server-logs')}
                                     icon={
@@ -133,7 +140,7 @@ const SidebarNew: React.FC<SidebarNewProps> = ({
                                     }
                                 />
                                 <NavButton
-                                    label="数据库"
+                                    label={t('nav.database')}
                                     active={activeTab === 'database'}
                                     onClick={() => setActiveTab('database')}
                                     icon={
@@ -143,7 +150,7 @@ const SidebarNew: React.FC<SidebarNewProps> = ({
                                     }
                                 />
                                 <NavButton
-                                    label="知识库"
+                                    label={t('nav.knowledge')}
                                     active={activeTab === 'knowledge'}
                                     onClick={() => setActiveTab('knowledge')}
                                     icon={
@@ -156,9 +163,8 @@ const SidebarNew: React.FC<SidebarNewProps> = ({
                         )}
                     </>
                 ) : (
-                    /* 未登录时显示登录入口 */
                     <NavButton
-                        label="登录"
+                        label={t('nav.login')}
                         active={activeTab === 'auth'}
                         onClick={() => setActiveTab('auth')}
                         icon={
@@ -169,11 +175,10 @@ const SidebarNew: React.FC<SidebarNewProps> = ({
                     />
                 )}
 
-                {/* 设置放在底部 */}
                 <div className="flex-1"></div>
 
                 <NavButton
-                    label="Settings"
+                    label={t('nav.settings')}
                     active={activeTab === 'settings'}
                     onClick={() => setActiveTab('settings')}
                     icon={
@@ -185,12 +190,11 @@ const SidebarNew: React.FC<SidebarNewProps> = ({
                 />
             </div>
 
-            {/* 用户信息 - 点击进入用户中心 */}
             {isLoggedIn && (
                 <div className="mt-4 flex flex-col items-center gap-2">
                     <div
                         className={`w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center text-white text-xs font-medium cursor-pointer hover:scale-110 transition-transform duration-200 shadow-lg shadow-indigo-500/25 ${activeTab === 'profile' ? 'ring-2 ring-white/50' : ''}`}
-                        title={`${username || '用户'} - 用户中心`}
+                        title={`${username || t('label.user')} - ${t('nav.profile')}`}
                         onClick={() => setActiveTab('profile')}
                     >
                         {username?.charAt(0).toUpperCase() || 'U'}

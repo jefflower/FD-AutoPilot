@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { serverApi } from '../../services/serverApi';
 import ServerTaskWorkspace from './ServerTaskWorkspace';
 import { useMQTranslation } from '../../context/MQTranslationContext';
@@ -9,6 +10,7 @@ interface TranslationTasksTabProps {
 }
 
 const TranslationTasksTab: React.FC<TranslationTasksTabProps> = ({ initialSelectedId, onNavigated }) => {
+    const { t } = useTranslation(['tasks', 'common']);
     const {
         processingTasks,
         completedHistory,
@@ -89,13 +91,13 @@ const TranslationTasksTab: React.FC<TranslationTasksTabProps> = ({ initialSelect
                     <div className="flex items-center justify-between mb-4">
                         <h3 className="font-bold text-white text-sm tracking-wide flex items-center gap-2">
                             <span className="w-1 h-3 bg-cyan-500 rounded-full"></span>
-                            MQ 自动翻译
+                            {t('translation.title')}
                         </h3>
                         <div className={`px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-widest ${isRunning
                             ? 'bg-cyan-500/20 text-cyan-400 border border-cyan-500/30'
                             : 'bg-slate-800 text-slate-500 border border-white/5'
                             }`}>
-                            {isRunning ? 'Running' : 'Stopped'}
+                            {isRunning ? t('translation.statusRunning') : t('translation.statusStopped')}
                         </div>
                     </div>
 
@@ -106,20 +108,20 @@ const TranslationTasksTab: React.FC<TranslationTasksTabProps> = ({ initialSelect
                                     onClick={() => startConsumer()}
                                     className="flex-1 h-9 bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-bold rounded-lg shadow-lg shadow-cyan-900/20 transition-all flex items-center justify-center gap-2"
                                 >
-                                    启动消费
+                                    {t('translation.startConsumer')}
                                 </button>
                             ) : (
                                 <button
                                     onClick={() => stopConsumer()}
                                     className="flex-1 h-9 bg-red-500/80 hover:bg-red-500 text-white text-xs font-bold rounded-lg transition-all flex items-center justify-center gap-2"
                                 >
-                                    停止消费
+                                    {t('translation.stopConsumer')}
                                 </button>
                             )}
                         </div>
 
                         <div className="flex items-center justify-between px-1">
-                            <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Concurrency</span>
+                            <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">{t('translation.concurrency')}</span>
                             <div className="flex items-center gap-2">
                                 <span className="text-[10px] text-slate-500">x</span>
                                 <input
@@ -144,7 +146,7 @@ const TranslationTasksTab: React.FC<TranslationTasksTabProps> = ({ initialSelect
                         <div className="flex items-center justify-between px-2 mb-2">
                             <h4 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] flex items-center gap-2">
                                 {processingList.length > 0 && <span className="w-1.5 h-1.5 bg-cyan-400 rounded-full animate-ping"></span>}
-                                Processing
+                                {t('translation.processing')}
                             </h4>
                             <span className="text-[10px] font-mono text-cyan-500/50">({processingList.length})</span>
                         </div>
@@ -172,7 +174,7 @@ const TranslationTasksTab: React.FC<TranslationTasksTabProps> = ({ initialSelect
                             ))}
 
                             {processingList.length === 0 && (
-                                <div className="text-center py-6 text-slate-600 text-[10px] italic border border-dashed border-white/5 rounded-xl">空闲中...</div>
+                                <div className="text-center py-6 text-slate-600 text-[10px] italic border border-dashed border-white/5 rounded-xl">{t('translation.idle')}</div>
                             )}
                         </div>
                     </div>
@@ -180,7 +182,7 @@ const TranslationTasksTab: React.FC<TranslationTasksTabProps> = ({ initialSelect
                     {/* 已完成列表 */}
                     <div>
                         <div className="flex items-center justify-between px-2 mb-2 mt-4">
-                            <h4 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">Completed History</h4>
+                            <h4 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">{t('translation.completedHistory')}</h4>
                             <span className="text-[10px] font-mono text-green-500/50">({filteredCompletedHistory.length})</span>
                         </div>
                         <div className="space-y-1">
@@ -191,10 +193,10 @@ const TranslationTasksTab: React.FC<TranslationTasksTabProps> = ({ initialSelect
                                         ? 'text-green-500/50'
                                         : 'text-red-500/50';
                                 const statusLabel = task.status === 'skipped'
-                                    ? 'Skipped'
+                                    ? t('translation.statusSkipped')
                                     : task.status === 'completed'
-                                        ? 'Done'
-                                        : 'Failed';
+                                        ? t('translation.statusDone')
+                                        : t('translation.statusFailed');
                                 const borderColor = task.status === 'skipped'
                                     ? 'bg-amber-500/10 border-amber-500/30'
                                     : 'bg-green-500/10 border-green-500/30';
@@ -219,7 +221,7 @@ const TranslationTasksTab: React.FC<TranslationTasksTabProps> = ({ initialSelect
                                 );
                             })}
                             {filteredCompletedHistory.length === 0 && (
-                                <div className="text-center py-6 text-slate-600 text-[10px] italic border border-dashed border-white/5 rounded-xl">暂无已完成工单</div>
+                                <div className="text-center py-6 text-slate-600 text-[10px] italic border border-dashed border-white/5 rounded-xl">{t('translation.noCompleted')}</div>
                             )}
                         </div>
                     </div>
@@ -249,4 +251,3 @@ const TranslationTasksTab: React.FC<TranslationTasksTabProps> = ({ initialSelect
 };
 
 export default TranslationTasksTab;
-

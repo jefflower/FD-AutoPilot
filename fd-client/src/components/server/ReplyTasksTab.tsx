@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import { serverApi } from '../../services/serverApi';
 import ServerTaskWorkspace from './ServerTaskWorkspace';
 import { useMQReply } from '../../context/MQReplyContext';
@@ -9,6 +10,7 @@ interface ReplyTasksTabProps {
 }
 
 const ReplyTasksTab: React.FC<ReplyTasksTabProps> = ({ initialSelectedId, onNavigated }) => {
+    const { t } = useTranslation(['tasks', 'common']);
     const {
         processingTasks,
         completedHistory,
@@ -63,13 +65,13 @@ const ReplyTasksTab: React.FC<ReplyTasksTabProps> = ({ initialSelectedId, onNavi
                     <div className="flex items-center justify-between mb-4">
                         <h3 className="font-bold text-white text-sm tracking-wide flex items-center gap-2">
                             <span className="w-1 h-3 bg-orange-500 rounded-full"></span>
-                            MQ 自动回复
+                            {t('reply.title')}
                         </h3>
                         <div className={`px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-widest ${isRunning
                             ? 'bg-orange-500/20 text-orange-400 border border-orange-500/30'
                             : 'bg-slate-800 text-slate-500 border border-white/5'
                             }`}>
-                            {isRunning ? 'Running' : 'Stopped'}
+                            {isRunning ? t('reply.statusRunning') : t('reply.statusStopped')}
                         </div>
                     </div>
 
@@ -80,14 +82,14 @@ const ReplyTasksTab: React.FC<ReplyTasksTabProps> = ({ initialSelectedId, onNavi
                                     onClick={() => startConsumer()}
                                     className="flex-1 h-9 bg-orange-600 hover:bg-orange-500 text-white text-xs font-bold rounded-lg shadow-lg shadow-orange-900/20 transition-all flex items-center justify-center gap-2"
                                 >
-                                    启动回复
+                                    {t('reply.startConsumer')}
                                 </button>
                             ) : (
                                 <button
                                     onClick={() => stopConsumer()}
                                     className="flex-1 h-9 bg-red-500/80 hover:bg-red-500 text-white text-xs font-bold rounded-lg transition-all flex items-center justify-center gap-2"
                                 >
-                                    停止回复
+                                    {t('reply.stopConsumer')}
                                 </button>
                             )}
                         </div>
@@ -99,7 +101,7 @@ const ReplyTasksTab: React.FC<ReplyTasksTabProps> = ({ initialSelectedId, onNavi
                         <div className="flex items-center justify-between px-2 mb-2">
                             <h4 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] flex items-center gap-2">
                                 {processingList.length > 0 && <span className="w-1.5 h-1.5 bg-orange-400 rounded-full animate-ping"></span>}
-                                Processing
+                                {t('reply.processing')}
                             </h4>
                             <span className="text-[10px] font-mono text-orange-500/50">({processingList.length})</span>
                         </div>
@@ -127,14 +129,14 @@ const ReplyTasksTab: React.FC<ReplyTasksTabProps> = ({ initialSelectedId, onNavi
                             ))}
 
                             {processingList.length === 0 && (
-                                <div className="text-center py-6 text-slate-600 text-[10px] italic border border-dashed border-white/5 rounded-xl">空闲中...</div>
+                                <div className="text-center py-6 text-slate-600 text-[10px] italic border border-dashed border-white/5 rounded-xl">{t('reply.idle')}</div>
                             )}
                         </div>
                     </div>
 
                     <div>
                         <div className="flex items-center justify-between px-2 mb-2 mt-4">
-                            <h4 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">Completed</h4>
+                            <h4 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">{t('reply.completed')}</h4>
                             <span className="text-[10px] font-mono text-green-500/50">({filteredCompletedHistory.length})</span>
                         </div>
                         <div className="space-y-1">
@@ -145,10 +147,10 @@ const ReplyTasksTab: React.FC<ReplyTasksTabProps> = ({ initialSelectedId, onNavi
                                         ? 'text-green-500/50'
                                         : 'text-red-500/50';
                                 const statusLabel = task.status === 'skipped'
-                                    ? 'Skipped'
+                                    ? t('reply.statusSkipped')
                                     : task.status === 'completed'
-                                        ? 'Done'
-                                        : 'Failed';
+                                        ? t('reply.statusDone')
+                                        : t('reply.statusFailed');
                                 const borderColor = task.status === 'skipped'
                                     ? 'bg-amber-500/10 border-amber-500/30'
                                     : 'bg-green-500/10 border-green-500/30';
@@ -173,7 +175,7 @@ const ReplyTasksTab: React.FC<ReplyTasksTabProps> = ({ initialSelectedId, onNavi
                                 );
                             })}
                             {filteredCompletedHistory.length === 0 && (
-                                <div className="text-center py-6 text-slate-600 text-[10px] italic border border-dashed border-white/5 rounded-xl">暂无已完成工单</div>
+                                <div className="text-center py-6 text-slate-600 text-[10px] italic border border-dashed border-white/5 rounded-xl">{t('reply.noCompleted')}</div>
                             )}
                         </div>
                     </div>

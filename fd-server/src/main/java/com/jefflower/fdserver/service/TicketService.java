@@ -168,6 +168,19 @@ public class TicketService {
     }
 
     @Transactional
+    public TicketReply updateReply(Long ticketId, Long replyId, ReplyRequest request) {
+        Ticket ticket = getTicketById(ticketId);
+        TicketReply reply = replyRepository.findById(replyId)
+                .orElseThrow(() -> new RuntimeException("回复不存在: " + replyId));
+        if (!reply.getTicket().getId().equals(ticketId)) {
+            throw new RuntimeException("回复不属于此工单");
+        }
+        reply.setZhReply(request.getZhReply());
+        reply.setTargetReply(request.getTargetReply());
+        return replyRepository.save(reply);
+    }
+
+    @Transactional
     public void pushApprovedReply(Long ticketId) {
         Ticket ticket = getTicketById(ticketId);
         if (ticket.getStatus() != TicketStatus.APPROVED) {

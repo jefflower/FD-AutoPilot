@@ -4,6 +4,7 @@
  */
 
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface UserProfileTabProps {
     username?: string;
@@ -16,6 +17,8 @@ const UserProfileTab: React.FC<UserProfileTabProps> = ({
     role = 'USER',
     onLogout,
 }) => {
+    const { t } = useTranslation(['settings', 'common']);
+
     return (
         <div className="flex-1 flex items-center justify-center p-8">
             <div className="w-full max-w-md">
@@ -32,7 +35,7 @@ const UserProfileTab: React.FC<UserProfileTabProps> = ({
                     {/* 角色标签 */}
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-700/50 text-sm text-slate-300 mb-8">
                         <span className={`w-2 h-2 rounded-full ${role === 'ADMIN' ? 'bg-amber-400' : 'bg-green-400'}`} />
-                        {role === 'ADMIN' ? '管理员' : '普通用户'}
+                        {role === 'ADMIN' ? t('settings:profile.roleAdmin') : t('settings:profile.roleUser')}
                     </div>
 
                     {/* 分隔线 */}
@@ -48,13 +51,13 @@ const UserProfileTab: React.FC<UserProfileTabProps> = ({
                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                             </svg>
-                            退出登录
+                            {t('settings:profile.logout')}
                         </button>
                     </div>
 
                     {/* 提示 */}
                     <p className="text-slate-500 text-xs mt-6">
-                        更多功能即将推出...
+                        {t('settings:profile.comingSoon')}
                     </p>
                 </div>
             </div>

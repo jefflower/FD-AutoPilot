@@ -39,8 +39,8 @@ public class SyncConfigService {
     @PostConstruct
     @Transactional
     public void initDefaultConfig() {
-        // 默认 cron: 每5分钟执行一次
-        saveConfigIfNotExists(SyncConfig.KEY_SYNC_CRON, "0 0/5 * * * ?", "定时同步 cron 表达式");
+        // 默认 cron: 每1分钟执行一次
+        saveConfigIfNotExists(SyncConfig.KEY_SYNC_CRON, "0 0/1 * * * ?", "定时同步 cron 表达式");
         // 默认启用
         saveConfigIfNotExists(SyncConfig.KEY_SYNC_ENABLED, "true", "是否启用自动同步");
         // 上次同步时间（初始为空）

@@ -33,6 +33,9 @@ npm run dev                            # 仅前端 Vite 开发服务器（端口
 npm run tauri dev                      # Tauri 完整开发模式（含 Rust 后端，热重载）
 npm run build                          # TypeScript 编译 + Vite 打包
 npm run tauri build                    # 生产构建（生成安装包）
+npm test                               # 运行所有前端测试（Vitest）
+npm run test:watch                     # 开发模式（监听文件变更自动重跑）
+npm run test:coverage                  # 覆盖率报告
 
 # Rust 部分单独编译/测试
 cd src-tauri
@@ -40,7 +43,7 @@ cargo build                            # 编译 Rust
 cargo test                             # Rust 测试
 ```
 
-**注意**: 前端没有配置 ESLint、Prettier 或测试框架（无 vitest/jest）。也没有 CI/CD 流水线。
+**注意**: 前端没有配置 ESLint、Prettier。也没有 CI/CD 流水线。测试框架使用 Vitest + React Testing Library（`npm test`）。
 
 ## 核心技术架构
 
@@ -199,3 +202,97 @@ Rust 后端通过 Tauri Event 与 React 前端通信：
 ## 文档参考
 
 详细文档位于 `doc/` 目录：`project-documentation.md`（总览）、`system-design.md`（状态流转图）、`client-architecture.md`、`server-architecture.md`、`api-reference.md`、`project-structure.md`
+
+## Agent Teams 配置
+
+本项目使用分层模型策略：开发用 opus（最强推理），测试和文档用 haiku（高性价比），代码审查用 sonnet（平衡）。
+
+### 模型分配规则
+
+当使用 Task 工具启动子代理时，**必须**根据任务类型指定 `model` 参数：
+
+| 任务类型 | model 参数 | 适用场景 |
+|----------|-----------|----------|
+| 开发 | `opus` | 编写/修改业务代码、架构设计、复杂调试、性能优化 |
+| 代码审查 | `sonnet` | 代码质量分析、安全审查、PR Review |
+| 测试 | `haiku` | 执行测试、编写测试用例、测试报告 |
+| 文档 | `haiku` | 编写/更新文档、API 文档、注释 |
+| 探索 | `haiku` | 代码库搜索、文件查找、结构分析 |
+
+### Agent 角色定义
+
+#### 开发组 — model: opus
+
+**backend-dev** (Java/Spring Boot 后端开发)
+- 范围: `fd-server/src/**`
+- 职责: TicketService 工作流、Controller 端点、MQ 配置、Entity/DTO、SecurityConfig
+- 关注: 工单状态流转正确性、MQ 消息可靠投递、事务一致性
+
+**frontend-dev** (React/TypeScript 前端开发)
+- 范围: `fd-client/src/**`（不含 `src-tauri`）
+- 职责: 组件开发、Hooks/Context、AI Provider 抽象层、Shadow Window 逻辑
+- 关注: MQ Context 工厂模式一致性、流式文本桥接、状态管理
+
+**rust-dev** (Tauri/Rust 客户端后端开发)
+- 范围: `fd-client/src-tauri/src/**`
+- 职责: MQ 消费者、Gemini CLI 调用(ai.rs)、Tauri 命令注册(lib.rs)、Freshdesk API(api.rs)
+- 关注: 异步安全、Event 通信可靠性、错误处理
+
+**architect** (架构设计)
+- 使用 `subagent_type=Plan`
+- 职责: 跨模块设计、数据流优化、技术选型、状态机扩展
+
+**debugger** (复杂调试)
+- 职责: 跨层问题定位（Rust↔React↔Server）、MQ 消息丢失排查、Shadow Window 时序问题
+
+#### 代码审查组 — model: sonnet
+
+**code-reviewer** (代码审查)
+- 职责: 代码质量、安全漏洞（OWASP Top 10）、最佳实践、重复代码检测
+- 特别关注: JWT 安全、SQL 注入（H2 控制台）、XSS（Shadow Window 注入脚本）
+
+#### 测试组 — model: haiku
+
+**test-runner** (测试执行)
+- 后端: `cd fd-server && mvn test`
+- Rust: `cd fd-client/src-tauri && cargo test`
+- 前端: `cd fd-client && npm test`（Vitest 单元测试 + React Testing Library）
+- 前端覆盖率: `cd fd-client && npm run test:coverage`
+
+**test-writer** (测试编写)
+- 后端: JUnit 5 + Spring Boot Test，放置于 `fd-server/src/test/java/**`
+- Rust: `#[cfg(test)]` 模块，放置于对应源文件内
+- 关注: 工单状态流转边界、MQ 消息序列化/反序列化、API 权限校验
+
+#### 文档组 — model: haiku
+
+**doc-writer** (文档编写)
+- 范围: `doc/**`、代码内注释
+- 职责: API 文档更新、架构文档维护、变更日志
+- 格式: 中文撰写，遵循 `doc/` 目录现有风格
+
+### 并行执行策略
+
+以下场景应并行启动多个子代理：
+
+1. **全栈功能开发**: 同时启动 `backend-dev`(opus) + `frontend-dev`(opus) + `rust-dev`(opus) 分别处理各层改动
+2. **开发+测试**: 开发完成后，同时启动 `test-runner`(haiku) + `code-reviewer`(sonnet)
+3. **多模块探索**: 需要了解跨模块逻辑时，同时启动多个 `Explore`(haiku) 子代理搜索不同模块
+4. **文档+测试补全**: 同时启动 `doc-writer`(haiku) + `test-writer`(haiku)
+
+### 典型工作流示例
+
+```
+用户请求: "给 TicketService 添加批量删除功能"
+
+1. [Explore/haiku] 并行探索 TicketService、TicketController、serverApi.ts 现有模式
+2. [architect/opus/Plan] 设计 API + 前后端方案
+3. 用户确认方案后，并行执行:
+   - [backend-dev/opus] 实现 Service + Controller
+   - [frontend-dev/opus] 实现前端调用 + UI
+4. 开发完成后，并行执行:
+   - [test-runner/haiku] 运行现有测试确保无回归
+   - [test-writer/haiku] 编写新功能测试
+   - [code-reviewer/sonnet] 审查代码质量
+5. [doc-writer/haiku] 更新 API 文档
+```

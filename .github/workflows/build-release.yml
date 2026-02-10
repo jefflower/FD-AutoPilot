@@ -1,0 +1,65 @@
+name: Build & Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: windows-latest
+            args: ''
+          - platform: macos-latest
+            args: '--target aarch64-apple-darwin'
+
+    runs-on: ${{ matrix.platform }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Rust stable
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.platform == 'macos-latest' && 'aarch64-apple-darwin' || '' }}
+
+      - name: Rust cache
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: './fd-client/src-tauri -> target'
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+          cache-dependency-path: fd-client/package-lock.json
+
+      - name: Install frontend dependencies
+        run: npm install
+        working-directory: fd-client
+
+      - name: Build Tauri app
+        uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          projectPath: ./fd-client
+          tagName: ${{ github.ref_name }}
+          releaseName: 'FD-AutoPilot ${{ github.ref_name }}'
+          releaseBody: |
+            ## FD-AutoPilot ${{ github.ref_name }}
+
+            自动构建产物，请根据系统下载对应安装包：
+            - **Windows**: `.msi` 或 `.exe`
+            - **macOS (Apple Silicon)**: `.dmg`
+          releaseDraft: false
+          prerelease: false
+          args: ${{ matrix.args }}

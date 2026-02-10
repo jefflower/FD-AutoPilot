@@ -1,27 +1,20 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ticketApi } from '../../services/serverApi';
 import ServerTicketDetail from './ServerTicketDetail';
 import type { ServerTicket, TicketStatus, TicketQueryParams } from '../../types/server';
+import { getTicketStatusOptions } from '../../utils/statusLabels';
 
 interface ServerTicketsTabProps {
     isAdmin: boolean;
 }
 
-const STATUS_OPTIONS: { value: TicketStatus | ''; label: string; color: string }[] = [
-    { value: '', label: '全部状态', color: 'bg-slate-500' },
-    { value: 'PENDING_TRANS', label: '待翻译', color: 'bg-yellow-500/20 text-yellow-500' },
-    { value: 'TRANSLATING', label: '翻译中', color: 'bg-blue-500/20 text-blue-500' },
-    { value: 'PENDING_REPLY', label: '待回复', color: 'bg-orange-500/20 text-orange-500' },
-    { value: 'REPLYING', label: '回复中', color: 'bg-purple-500/20 text-purple-500' },
-    { value: 'PENDING_AUDIT', label: '待审核', color: 'bg-pink-500/20 text-pink-500' },
-    { value: 'AUDITING', label: '审核中', color: 'bg-indigo-500/20 text-indigo-400' },
-    { value: 'APPROVED', label: '待推送', color: 'bg-emerald-500/20 text-emerald-500' },
-    { value: 'COMPLETED', label: '已完成', color: 'bg-green-500/20 text-green-500' },
-];
-
 const ServerTicketsTab: React.FC<ServerTicketsTabProps> = ({
     isAdmin: _isAdmin
 }) => {
+    const { t } = useTranslation(['tickets', 'common']);
+    const statusOptions = useMemo(() => getTicketStatusOptions(t), [t]);
+
     const [tickets, setTickets] = useState<ServerTicket[]>([]);
     const [loading, setLoading] = useState(true);
     const [loadingMore, setLoadingMore] = useState(false);
@@ -103,7 +96,7 @@ const ServerTicketsTab: React.FC<ServerTicketsTabProps> = ({
             pageRef.current = result.number; // 更新 Ref
         } catch (err) {
             if (currentRequestId === requestIdRef.current) {
-                setError(err instanceof Error ? err.message : '加载失败');
+                setError(err instanceof Error ? err.message : t('list.loadFailed'));
             }
         } finally {
             if (currentRequestId === requestIdRef.current) {
@@ -112,7 +105,7 @@ const ServerTicketsTab: React.FC<ServerTicketsTabProps> = ({
                 setLoadingMore(false);
             }
         }
-    }, [statusFilter, searchQuery]);
+    }, [statusFilter, searchQuery, t]);
 
     // 详情页引用
     const detailRef = useRef<any>(null);
@@ -161,10 +154,10 @@ const ServerTicketsTab: React.FC<ServerTicketsTabProps> = ({
                     <div className="flex items-center justify-between mb-4">
                         <h3 className="font-bold text-white text-sm tracking-wide flex items-center gap-2">
                             <span className="w-1 h-3 bg-indigo-500 rounded-full"></span>
-                            Server Tickets
+                            {t('list.title')}
                         </h3>
                         <div className={`px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-widest bg-indigo-500/20 text-indigo-400 border border-indigo-500/30`}>
-                            Active
+                            {t('list.active')}
                         </div>
                     </div>
 
@@ -174,13 +167,13 @@ const ServerTicketsTab: React.FC<ServerTicketsTabProps> = ({
                                 onClick={() => setDisplayLang('original')}
                                 className={`flex-1 py-1 text-[10px] font-bold rounded-md transition-all ${displayLang === 'original' ? 'bg-indigo-500 text-white shadow-lg' : 'text-slate-500 hover:text-slate-300'}`}
                             >
-                                原文
+                                {t('list.original')}
                             </button>
                             <button
                                 onClick={() => setDisplayLang('cn')}
                                 className={`flex-1 py-1 text-[10px] font-bold rounded-md transition-all ${displayLang === 'cn' ? 'bg-indigo-500 text-white shadow-lg' : 'text-slate-500 hover:text-slate-300'}`}
                             >
-                                中文
+                                {t('list.chinese')}
                             </button>
                         </div>
 
@@ -189,7 +182,7 @@ const ServerTicketsTab: React.FC<ServerTicketsTabProps> = ({
                                 type="text"
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
-                                placeholder="搜索工单..."
+                                placeholder={t('list.searchPlaceholder')}
                                 className="w-full pl-8 pr-3 py-1.5 bg-black/40 border border-white/5 rounded-lg text-xs text-white placeholder-slate-600 focus:outline-none focus:border-indigo-500/50 transition-all"
                             />
                             <svg className="w-3.5 h-3.5 absolute left-2.5 top-2 text-slate-500 group-focus-within:text-indigo-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -202,10 +195,10 @@ const ServerTicketsTab: React.FC<ServerTicketsTabProps> = ({
                 {/* 状态筛选 - 横向滚动胶囊 */}
                 <div className="p-2 border-b border-white/10 bg-slate-900/40">
                     <div className="flex items-center gap-1.5 overflow-x-auto pb-1 custom-scrollbar-hidden no-scrollbar">
-                        {STATUS_OPTIONS.map(opt => (
+                        {statusOptions.map(opt => (
                             <button
                                 key={opt.value}
-                                onClick={() => setStatusFilter(opt.value)}
+                                onClick={() => setStatusFilter(opt.value as TicketStatus | '')}
                                 className={`flex-shrink-0 px-3 py-1 rounded-full text-[10px] font-bold transition-all border ${statusFilter === opt.value
                                     ? 'bg-indigo-500/20 border-indigo-500/50 text-indigo-400'
                                     : 'bg-white/5 border-transparent text-slate-500 hover:bg-white/10 hover:text-slate-300'
@@ -223,25 +216,25 @@ const ServerTicketsTab: React.FC<ServerTicketsTabProps> = ({
                     onScroll={handleScroll}
                     className="flex-1 overflow-y-auto custom-scrollbar p-2 space-y-1"
                 >
-                    {tickets.map(t => (
+                    {tickets.map(ticket => (
                         <button
-                            key={t.id}
-                            id={`ticket-item-${t.id}`}
-                            onClick={() => setSelectedId(t.id)}
-                            className={`w-full text-left p-2.5 rounded-lg transition-all border group ${selectedId === t.id
+                            key={ticket.id}
+                            id={`ticket-item-${ticket.id}`}
+                            onClick={() => setSelectedId(ticket.id)}
+                            className={`w-full text-left p-2.5 rounded-lg transition-all border group ${selectedId === ticket.id
                                 ? 'bg-indigo-500/10 border-indigo-500/30 shadow-lg shadow-indigo-500/5'
                                 : 'bg-white/5 border-transparent hover:bg-white/10'
                                 }`}
                         >
                             <div className="flex items-center justify-between mb-0.5">
-                                <span className="text-[10px] font-bold text-indigo-400/60 group-hover:text-indigo-400 transition-opacity">#{t.externalId}</span>
-                                <span className={`px-1.5 py-0.5 rounded-[4px] text-[8px] font-black uppercase tracking-tighter ${STATUS_OPTIONS.find(o => o.value === t.status)?.color
+                                <span className="text-[10px] font-bold text-indigo-400/60 group-hover:text-indigo-400 transition-opacity">#{ticket.externalId}</span>
+                                <span className={`px-1.5 py-0.5 rounded-[4px] text-[8px] font-black uppercase tracking-tighter ${statusOptions.find(o => o.value === ticket.status)?.color
                                     }`}>
-                                    {STATUS_OPTIONS.find(o => o.value === t.status)?.label || t.status}
+                                    {statusOptions.find(o => o.value === ticket.status)?.label || ticket.status}
                                 </span>
                             </div>
                             <div className="text-[11px] text-slate-300 truncate font-medium group-hover:text-white transition-colors">
-                                {(displayLang === 'cn' && t.translation) ? t.translation.translatedTitle : t.subject}
+                                {(displayLang === 'cn' && ticket.translation) ? ticket.translation.translatedTitle : ticket.subject}
                             </div>
                         </button>
                     ))}
@@ -259,7 +252,7 @@ const ServerTicketsTab: React.FC<ServerTicketsTabProps> = ({
                     )}
 
                     {!loading && tickets.length === 0 && (
-                        <div className="text-center py-12 text-slate-600 text-[10px] italic">暂无工单数据</div>
+                        <div className="text-center py-12 text-slate-600 text-[10px] italic">{t('list.noData')}</div>
                     )}
                 </div>
             </div>
@@ -277,7 +270,7 @@ const ServerTicketsTab: React.FC<ServerTicketsTabProps> = ({
                     />
                 ) : (
                     <div className="h-full flex flex-col items-center justify-center text-slate-600">
-                        <div className="text-sm font-medium">请选择工单查看详情</div>
+                        <div className="text-sm font-medium">{t('list.selectTicketHint')}</div>
                     </div>
                 )}
             </div>

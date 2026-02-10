@@ -4,6 +4,7 @@
  */
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import { actuatorApi } from '../../services/serverApi';
 
 type LogLevel = 'ERROR' | 'WARN' | 'INFO' | 'DEBUG' | 'TRACE';
@@ -26,7 +27,6 @@ const SIZE_OPTIONS = [
 const LEVEL_OPTIONS: (LogLevel | 'ALL')[] = ['ALL', 'ERROR', 'WARN', 'INFO', 'DEBUG', 'TRACE'];
 
 function detectLogLevel(line: string): LogLevel | null {
-    // 匹配标准 logback 格式中的级别字段
     if (/\bERROR\b/.test(line)) return 'ERROR';
     if (/\bWARN\b/.test(line)) return 'WARN';
     if (/\bINFO\b/.test(line)) return 'INFO';
@@ -36,18 +36,17 @@ function detectLogLevel(line: string): LogLevel | null {
 }
 
 const ServerLogsTab: React.FC = () => {
+    const { t } = useTranslation(['admin', 'common']);
     const [logText, setLogText] = useState('');
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
-    // 控制项
     const [autoRefresh, setAutoRefresh] = useState(true);
     const [sizeKB, setSizeKB] = useState(200);
     const [levelFilter, setLevelFilter] = useState<LogLevel | 'ALL'>('ALL');
     const [searchQuery, setSearchQuery] = useState('');
     const [autoScroll, setAutoScroll] = useState(true);
 
-    // 动态调级
     const [showLoggerPanel, setShowLoggerPanel] = useState(false);
     const [loggers, setLoggers] = useState<Record<string, { configuredLevel: string | null; effectiveLevel: string }>>({});
     const [loggerFilter, setLoggerFilter] = useState('com.jefflower');
@@ -62,17 +61,15 @@ const ServerLogsTab: React.FC = () => {
             const text = await actuatorApi.fetchLogfile(sizeKB);
             setLogText(text);
         } catch (err) {
-            setError(err instanceof Error ? err.message : '获取日志失败');
+            setError(err instanceof Error ? err.message : t('logs.fetchFailed'));
         }
-    }, [sizeKB]);
+    }, [sizeKB, t]);
 
-    // 初次加载
     useEffect(() => {
         setLoading(true);
         fetchLogs().finally(() => setLoading(false));
     }, [fetchLogs]);
 
-    // 自动刷新
     useEffect(() => {
         if (intervalRef.current) clearInterval(intervalRef.current);
         if (autoRefresh) {
@@ -83,36 +80,31 @@ const ServerLogsTab: React.FC = () => {
         };
     }, [autoRefresh, fetchLogs]);
 
-    // 自动滚动到底部
     useEffect(() => {
         if (autoScroll && logContainerRef.current) {
             logContainerRef.current.scrollTop = logContainerRef.current.scrollHeight;
         }
     }, [logText, autoScroll]);
 
-    // 处理日志行
     const processedLines = React.useMemo(() => {
         if (!logText) return [];
         const lines = logText.split('\n');
         return lines
             .map(line => ({ text: line, level: detectLogLevel(line) }))
             .filter(({ text, level }) => {
-                // 级别过滤
                 if (levelFilter !== 'ALL' && level !== levelFilter) return false;
-                // 搜索过滤
                 if (searchQuery && !text.toLowerCase().includes(searchQuery.toLowerCase())) return false;
                 return true;
             });
     }, [logText, levelFilter, searchQuery]);
 
-    // 加载 loggers
     const loadLoggers = async () => {
         setLoggerLoading(true);
         try {
             const data = await actuatorApi.getLoggers();
             setLoggers(data);
         } catch (err) {
-            setError(err instanceof Error ? err.message : '获取 loggers 失败');
+            setError(err instanceof Error ? err.message : t('logs.fetchLoggersFailed'));
         } finally {
             setLoggerLoading(false);
         }
@@ -123,11 +115,10 @@ const ServerLogsTab: React.FC = () => {
             await actuatorApi.setLoggerLevel(loggerName, level);
             await loadLoggers();
         } catch (err) {
-            setError(err instanceof Error ? err.message : '设置级别失败');
+            setError(err instanceof Error ? err.message : t('logs.setLevelFailed'));
         }
     };
 
-    // 过滤 loggers
     const filteredLoggers = React.useMemo(() => {
         if (!loggerFilter.trim()) return Object.entries(loggers).slice(0, 50);
         return Object.entries(loggers)
@@ -150,7 +141,7 @@ const ServerLogsTab: React.FC = () => {
             {/* 顶部标题栏 */}
             <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                    <h2 className="text-lg font-semibold text-white">服务端日志</h2>
+                    <h2 className="text-lg font-semibold text-white">{t('logs.title')}</h2>
                     {errorCount > 0 && (
                         <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-red-500/20 text-red-400">
                             {errorCount} ERROR
@@ -167,14 +158,13 @@ const ServerLogsTab: React.FC = () => {
                         onClick={() => { setShowLoggerPanel(!showLoggerPanel); if (!showLoggerPanel) loadLoggers(); }}
                         className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${showLoggerPanel ? 'bg-indigo-500/20 text-indigo-400 border border-indigo-500/30' : 'bg-white/5 text-slate-400 hover:bg-white/10 border border-white/10'}`}
                     >
-                        日志级别管理
+                        {t('logs.logLevelManager')}
                     </button>
                 </div>
             </div>
 
             {/* 工具栏 */}
             <div className="flex items-center gap-3 flex-wrap">
-                {/* 搜索 */}
                 <div className="relative flex-1 min-w-[200px] max-w-[400px]">
                     <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -183,23 +173,21 @@ const ServerLogsTab: React.FC = () => {
                         type="text"
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
-                        placeholder="搜索日志..."
+                        placeholder={t('logs.searchPlaceholder')}
                         className="w-full pl-9 pr-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500/50"
                     />
                 </div>
 
-                {/* 级别过滤 */}
                 <select
                     value={levelFilter}
                     onChange={(e) => setLevelFilter(e.target.value as LogLevel | 'ALL')}
                     className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-white focus:outline-none focus:border-indigo-500/50"
                 >
                     {LEVEL_OPTIONS.map(level => (
-                        <option key={level} value={level} className="bg-slate-800">{level === 'ALL' ? '全部级别' : level}</option>
+                        <option key={level} value={level} className="bg-slate-800">{level === 'ALL' ? t('logs.allLevels') : level}</option>
                     ))}
                 </select>
 
-                {/* 加载大小 */}
                 <select
                     value={sizeKB}
                     onChange={(e) => setSizeKB(Number(e.target.value))}
@@ -210,36 +198,31 @@ const ServerLogsTab: React.FC = () => {
                     ))}
                 </select>
 
-                {/* 分隔 */}
                 <div className="w-px h-6 bg-white/10"></div>
 
-                {/* 自动刷新 */}
                 <button
                     onClick={() => setAutoRefresh(!autoRefresh)}
                     className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${autoRefresh ? 'bg-green-500/20 text-green-400 border border-green-500/30' : 'bg-white/5 text-slate-400 border border-white/10 hover:bg-white/10'}`}
                 >
                     <div className={`w-1.5 h-1.5 rounded-full ${autoRefresh ? 'bg-green-400 animate-pulse' : 'bg-slate-500'}`}></div>
-                    自动刷新
+                    {t('logs.autoRefresh')}
                 </button>
 
-                {/* 自动滚动 */}
                 <button
                     onClick={() => setAutoScroll(!autoScroll)}
                     className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${autoScroll ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30' : 'bg-white/5 text-slate-400 border border-white/10 hover:bg-white/10'}`}
                 >
-                    跟踪底部
+                    {t('logs.followBottom')}
                 </button>
 
-                {/* 手动刷新 */}
                 <button
                     onClick={() => { setLoading(true); fetchLogs().finally(() => setLoading(false)); }}
                     className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-xs text-slate-400 hover:bg-white/10 hover:text-white transition-colors"
                 >
-                    {loading ? '加载中...' : '刷新'}
+                    {loading ? t('common:button.loading') : t('common:button.refresh')}
                 </button>
             </div>
 
-            {/* 错误提示 */}
             {error && (
                 <div className="px-4 py-2 bg-red-500/10 border border-red-500/20 rounded-lg text-sm text-red-400">
                     {error}
@@ -254,14 +237,14 @@ const ServerLogsTab: React.FC = () => {
                             type="text"
                             value={loggerFilter}
                             onChange={(e) => setLoggerFilter(e.target.value)}
-                            placeholder="过滤 logger 名称..."
+                            placeholder={t('logs.loggerFilterPlaceholder')}
                             className="flex-1 px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500/50"
                         />
                         <button
                             onClick={loadLoggers}
                             className="px-3 py-1.5 bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 rounded-lg text-xs font-medium hover:bg-indigo-500/30 transition-colors"
                         >
-                            {loggerLoading ? '加载中...' : '刷新'}
+                            {loggerLoading ? t('common:button.loading') : t('common:button.refresh')}
                         </button>
                     </div>
                     <div className="overflow-y-auto flex-1 space-y-1">
@@ -274,7 +257,7 @@ const ServerLogsTab: React.FC = () => {
                                     onChange={(e) => handleSetLevel(name, e.target.value)}
                                     className="px-2 py-0.5 bg-white/5 border border-white/10 rounded text-xs text-white focus:outline-none opacity-0 group-hover:opacity-100 transition-opacity"
                                 >
-                                    <option value="" className="bg-slate-800">默认</option>
+                                    <option value="" className="bg-slate-800">{t('logs.defaultLevel')}</option>
                                     {(['TRACE', 'DEBUG', 'INFO', 'WARN', 'ERROR', 'OFF'] as const).map(l => (
                                         <option key={l} value={l} className="bg-slate-800">{l}</option>
                                     ))}
@@ -283,7 +266,7 @@ const ServerLogsTab: React.FC = () => {
                         ))}
                         {filteredLoggers.length === 0 && (
                             <div className="text-center text-slate-500 text-xs py-4">
-                                {loggerLoading ? '加载中...' : '无匹配的 logger'}
+                                {loggerLoading ? t('common:button.loading') : t('logs.noMatchingLoggers')}
                             </div>
                         )}
                     </div>
@@ -301,16 +284,15 @@ const ServerLogsTab: React.FC = () => {
                             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
                         </svg>
-                        加载日志中...
+                        {t('logs.loadingLogs')}
                     </div>
                 ) : processedLines.length === 0 ? (
                     <div className="flex items-center justify-center h-full text-slate-500">
-                        {logText ? '没有匹配的日志行' : '暂无日志'}
+                        {logText ? t('logs.noMatchingLines') : t('logs.noLogs')}
                     </div>
                 ) : (
                     processedLines.map((line, index) => {
                         const colorClass = line.level ? LOG_LEVEL_COLORS[line.level] : 'text-slate-400';
-                        // 搜索关键字高亮
                         if (searchQuery && line.text.toLowerCase().includes(searchQuery.toLowerCase())) {
                             const regex = new RegExp(`(${searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
                             const parts = line.text.split(regex);
@@ -335,8 +317,12 @@ const ServerLogsTab: React.FC = () => {
 
             {/* 底部状态栏 */}
             <div className="flex items-center justify-between text-[11px] text-slate-500 px-1">
-                <span>{processedLines.length} 行{levelFilter !== 'ALL' ? ` (过滤: ${levelFilter})` : ''}{searchQuery ? ` (搜索: "${searchQuery}")` : ''}</span>
-                <span>{autoRefresh ? '每 3 秒自动刷新' : '自动刷新已暂停'}</span>
+                <span>
+                    {t('logs.lineCount', { count: processedLines.length })}
+                    {levelFilter !== 'ALL' ? ` ${t('logs.filterInfo', { level: levelFilter })}` : ''}
+                    {searchQuery ? ` ${t('logs.searchInfo', { query: searchQuery })}` : ''}
+                </span>
+                <span>{autoRefresh ? t('logs.autoRefreshStatus') : t('logs.autoRefreshPaused')}</span>
             </div>
         </div>
     );

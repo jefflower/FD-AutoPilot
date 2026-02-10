@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import { adminApi } from '../../services/serverApi';
 import type { SqlQueryResult, TableInfo } from '../../types/server';
 
@@ -14,6 +15,8 @@ const HISTORY_KEY = 'fd_sql_history';
 const MAX_HISTORY = 20;
 
 const SqlQueryPanel: React.FC = () => {
+    const { t } = useTranslation(['admin', 'common']);
+
     const [sql, setSql] = useState('');
     const [result, setResult] = useState<SqlQueryResult | null>(null);
     const [loading, setLoading] = useState(false);
@@ -60,11 +63,11 @@ const SqlQueryPanel: React.FC = () => {
             setTables(data);
             setShowTables(true);
         } catch (err) {
-            setError(err instanceof Error ? err.message : '获取表结构失败');
+            setError(err instanceof Error ? err.message : t('database.getTablesFailed'));
         } finally {
             setTablesLoading(false);
         }
-    }, [tables.length, showTables]);
+    }, [tables.length, showTables, t]);
 
     const executeQuery = useCallback(async () => {
         const trimmed = sql.trim();
@@ -74,7 +77,7 @@ const SqlQueryPanel: React.FC = () => {
         const upperSql = trimmed.toUpperCase();
         const dangerous = ['DROP', 'DELETE', 'TRUNCATE', 'ALTER', 'UPDATE'].find(k => upperSql.startsWith(k));
         if (dangerous) {
-            const confirmed = window.confirm(`当前 SQL 包含 ${dangerous} 操作，确认执行？`);
+            const confirmed = window.confirm(t('database.confirmDangerous', { keyword: dangerous }));
             if (!confirmed) return;
         }
 
@@ -91,12 +94,12 @@ const SqlQueryPanel: React.FC = () => {
             setHistory(newHistory);
             localStorage.setItem(HISTORY_KEY, JSON.stringify(newHistory));
         } catch (err) {
-            setError(err instanceof Error ? err.message : '执行失败');
+            setError(err instanceof Error ? err.message : t('database.executeFailed'));
             setResult(null);
         } finally {
             setLoading(false);
         }
-    }, [sql, history]);
+    }, [sql, history, t]);
 
     const handleKeyDown = (e: React.KeyboardEvent) => {
         if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') {
@@ -142,7 +145,7 @@ const SqlQueryPanel: React.FC = () => {
                     value={sql}
                     onChange={e => setSql(e.target.value)}
                     onKeyDown={handleKeyDown}
-                    placeholder="输入 SQL 查询... (Ctrl+Enter 执行)"
+                    placeholder={t('database.sqlPlaceholder')}
                     spellCheck={false}
                     className="w-full h-32 px-4 py-3 bg-slate-950/80 border border-white/10 rounded-xl font-mono text-sm text-green-400 placeholder-slate-600 resize-y focus:outline-none focus:border-indigo-500/50 leading-relaxed"
                 />
@@ -160,14 +163,14 @@ const SqlQueryPanel: React.FC = () => {
                                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
                                 </svg>
-                                执行中...
+                                {t('database.executing')}
                             </>
                         ) : (
                             <>
                                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
                                 </svg>
-                                执行 (⌘↵)
+                                {t('database.execute')}
                             </>
                         )}
                     </button>
@@ -176,7 +179,7 @@ const SqlQueryPanel: React.FC = () => {
                         onClick={() => { setSql(''); setResult(null); setError(null); setSortConfig(null); }}
                         className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-xs text-slate-400 hover:bg-white/10 hover:text-white transition-colors"
                     >
-                        清空
+                        {t('database.clear')}
                     </button>
 
                     {/* 历史 */}
@@ -186,7 +189,7 @@ const SqlQueryPanel: React.FC = () => {
                             disabled={history.length === 0}
                             className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-xs text-slate-400 hover:bg-white/10 hover:text-white transition-colors disabled:opacity-40"
                         >
-                            历史 ({history.length})
+                            {t('database.history', { count: history.length })}
                         </button>
                         {showHistory && history.length > 0 && (
                             <div className="absolute top-full left-0 mt-1 w-96 max-h-64 overflow-y-auto bg-slate-800 border border-white/10 rounded-xl shadow-xl z-50">
@@ -209,13 +212,13 @@ const SqlQueryPanel: React.FC = () => {
                         onClick={loadTables}
                         className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${showTables ? 'bg-indigo-500/20 text-indigo-400 border border-indigo-500/30' : 'bg-white/5 text-slate-400 hover:bg-white/10 border border-white/10'}`}
                     >
-                        {tablesLoading ? '加载中...' : '表结构'}
+                        {tablesLoading ? t('database.tableStructureLoading') : t('database.tableStructure')}
                     </button>
 
                     <div className="w-px h-5 bg-white/10" />
 
                     {/* 快捷查询 */}
-                    <span className="text-[10px] text-slate-500 uppercase tracking-wider">快捷:</span>
+                    <span className="text-[10px] text-slate-500 uppercase tracking-wider">{t('database.quickQuery')}</span>
                     {QUICK_QUERIES.map(q => (
                         <button
                             key={q.label}
@@ -252,14 +255,14 @@ const SqlQueryPanel: React.FC = () => {
                     <div className="flex-1 overflow-y-auto">
                         {selectedTable ? (
                             (() => {
-                                const t = tables.find(tb => tb.tableName === selectedTable);
-                                if (!t) return null;
+                                const tbl = tables.find(tb => tb.tableName === selectedTable);
+                                if (!tbl) return null;
                                 return (
                                     <div className="p-3">
                                         <div className="flex items-center justify-between mb-2">
-                                            <span className="text-xs font-medium text-indigo-400">{t.tableName}</span>
+                                            <span className="text-xs font-medium text-indigo-400">{tbl.tableName}</span>
                                             <button
-                                                onClick={() => setSql(`SELECT * FROM ${t.tableName} LIMIT 50`)}
+                                                onClick={() => setSql(`SELECT * FROM ${tbl.tableName} LIMIT 50`)}
                                                 className="px-2 py-0.5 text-[10px] text-slate-500 hover:text-indigo-400 hover:bg-indigo-500/10 rounded transition-colors"
                                             >
                                                 SELECT *
@@ -268,13 +271,13 @@ const SqlQueryPanel: React.FC = () => {
                                         <table className="w-full text-[11px]">
                                             <thead>
                                                 <tr className="text-slate-600">
-                                                    <th className="text-left py-1 pr-3 font-medium">列名</th>
-                                                    <th className="text-left py-1 pr-3 font-medium">类型</th>
-                                                    <th className="text-left py-1 font-medium">约束</th>
+                                                    <th className="text-left py-1 pr-3 font-medium">{t('database.tableColumn')}</th>
+                                                    <th className="text-left py-1 pr-3 font-medium">{t('database.tableType')}</th>
+                                                    <th className="text-left py-1 font-medium">{t('database.tableConstraint')}</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                {t.columns.map(c => (
+                                                {tbl.columns.map(c => (
                                                     <tr key={c.name} className="hover:bg-white/5">
                                                         <td className="py-0.5 pr-3 text-slate-300 font-mono whitespace-nowrap">
                                                             {c.name}
@@ -293,7 +296,7 @@ const SqlQueryPanel: React.FC = () => {
                             })()
                         ) : (
                             <div className="flex items-center justify-center h-full text-slate-600 text-xs">
-                                选择左侧表名查看结构
+                                {t('database.selectTableHint')}
                             </div>
                         )}
                     </div>
@@ -317,8 +320,8 @@ const SqlQueryPanel: React.FC = () => {
             {/* DML 结果 */}
             {result && result.success && result.updateCount !== undefined && result.updateCount !== null && (
                 <div className={`px-4 py-2 rounded-lg text-sm ${result.destructive ? 'bg-yellow-500/10 border border-yellow-500/20 text-yellow-400' : 'bg-green-500/10 border border-green-500/20 text-green-400'}`}>
-                    {result.destructive && '⚠ '}
-                    影响 {result.updateCount} 行，耗时 {result.executionTimeMs}ms
+                    {result.destructive && '\u26A0 '}
+                    {t('database.affectedRows', { count: result.updateCount, time: result.executionTimeMs })}
                 </div>
             )}
 
@@ -327,10 +330,10 @@ const SqlQueryPanel: React.FC = () => {
                 <>
                     {/* 状态栏 */}
                     <div className="flex items-center justify-between text-[11px] text-slate-500 px-1">
-                        <span>查询到 {result.rowCount} 行，耗时 {result.executionTimeMs}ms</span>
+                        <span>{t('database.queryResult', { count: result.rowCount, time: result.executionTimeMs })}</span>
                         {sortConfig && (
                             <span>
-                                排序: {result.columns[sortConfig.col]?.name} ({sortConfig.dir === 'asc' ? '升序' : '降序'})
+                                {t('database.sortInfo', { column: result.columns[sortConfig.col]?.name, direction: sortConfig.dir === 'asc' ? t('database.sortAsc') : t('database.sortDesc') })}
                             </span>
                         )}
                     </div>
@@ -339,7 +342,7 @@ const SqlQueryPanel: React.FC = () => {
                     <div className="flex-1 overflow-auto border border-white/10 rounded-xl min-h-0">
                         {sortedRows.length === 0 ? (
                             <div className="flex items-center justify-center h-full text-slate-500 text-sm py-8">
-                                查询结果为空
+                                {t('database.emptyResult')}
                             </div>
                         ) : (
                             <table className="w-full text-xs">
@@ -357,7 +360,7 @@ const SqlQueryPanel: React.FC = () => {
                                                     <span className="text-slate-600 text-[10px]">{col.type}</span>
                                                     {sortConfig?.col === i && (
                                                         <span className="text-indigo-400">
-                                                            {sortConfig.dir === 'asc' ? '↑' : '↓'}
+                                                            {sortConfig.dir === 'asc' ? '\u2191' : '\u2193'}
                                                         </span>
                                                     )}
                                                 </div>
@@ -398,7 +401,7 @@ const SqlQueryPanel: React.FC = () => {
                                                                     onClick={() => setExpandedCell(null)}
                                                                     className="text-[10px] text-indigo-400 hover:text-indigo-300 mt-1"
                                                                 >
-                                                                    收起
+                                                                    {t('database.collapse')}
                                                                 </button>
                                                             </div>
                                                         ) : isLong ? (
@@ -408,7 +411,7 @@ const SqlQueryPanel: React.FC = () => {
                                                                     onClick={() => setExpandedCell({ row: ri, col: ci })}
                                                                     className="text-[10px] text-indigo-400 hover:text-indigo-300 whitespace-nowrap flex-shrink-0"
                                                                 >
-                                                                    展开
+                                                                    {t('database.expand')}
                                                                 </button>
                                                             </div>
                                                         ) : (
@@ -429,7 +432,7 @@ const SqlQueryPanel: React.FC = () => {
             {/* 无结果时的空状态 */}
             {!result && !error && !loading && (
                 <div className="flex-1 flex items-center justify-center text-slate-600 text-sm">
-                    输入 SQL 并按 Ctrl+Enter 执行查询
+                    {t('database.emptyState')}
                 </div>
             )}
         </div>

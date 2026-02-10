@@ -1,4 +1,5 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import "./index.css";
 
 import SettingsTab from "./components/SettingsTab";
@@ -24,8 +25,11 @@ import { FloatingTaskWidget } from "./components/common/FloatingTaskWidget";
 
 import { useSettings } from "./hooks/useSettings";
 import { useAuth } from "./hooks/useAuth";
+import { ticketApi } from "./services/serverApi";
+import type { QueueCounts } from "./types/server";
 
 function App() {
+    const { t } = useTranslation('common');
     const [activeTab, setActiveTab] = useState<TabType>('server-tickets');
     const [authView, setAuthView] = useState<'login' | 'register'>('login');
     const [navigateToTicketId, setNavigateToTicketId] = useState<number | null>(null);
@@ -45,6 +49,42 @@ function App() {
     }, []);
 
     const auth = useAuth();
+    const [queueCounts, setQueueCounts] = useState<QueueCounts | null>(null);
+    const pollTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+    const fetchQueueCounts = useCallback(() => {
+        if (!auth.isLoggedIn) return;
+        ticketApi.getQueueCounts().then(setQueueCounts).catch(() => {});
+    }, [auth.isLoggedIn]);
+
+    // 定时轮询 MQ 队列计数
+    useEffect(() => {
+        if (!auth.isLoggedIn) {
+            setQueueCounts(null);
+            if (pollTimerRef.current) {
+                clearInterval(pollTimerRef.current);
+                pollTimerRef.current = null;
+            }
+            return;
+        }
+
+        fetchQueueCounts();
+        pollTimerRef.current = setInterval(fetchQueueCounts, 30_000);
+
+        return () => {
+            if (pollTimerRef.current) {
+                clearInterval(pollTimerRef.current);
+                pollTimerRef.current = null;
+            }
+        };
+    }, [auth.isLoggedIn, fetchQueueCounts]);
+
+    // 任务完成时立即刷新队列计数
+    useEffect(() => {
+        const handler = () => fetchQueueCounts();
+        window.addEventListener('queue-counts-refresh', handler);
+        return () => window.removeEventListener('queue-counts-refresh', handler);
+    }, [fetchQueueCounts]);
 
     const {
         serverUrl, setServerUrl,
@@ -174,7 +214,7 @@ function App() {
                                 <svg className="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                                 </svg>
-                                <p>需要管理员权限</p>
+                                <p>{t('error.adminRequired')}</p>
                             </div>
                         </div>
                     );
@@ -189,7 +229,7 @@ function App() {
                                 <svg className="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                                 </svg>
-                                <p>需要管理员权限</p>
+                                <p>{t('error.adminRequired')}</p>
                             </div>
                         </div>
                     );
@@ -204,7 +244,7 @@ function App() {
                                 <svg className="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                                 </svg>
-                                <p>需要管理员权限</p>
+                                <p>{t('error.adminRequired')}</p>
                             </div>
                         </div>
                     );
@@ -219,7 +259,7 @@ function App() {
                                 <svg className="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                                 </svg>
-                                <p>需要管理员权限</p>
+                                <p>{t('error.adminRequired')}</p>
                             </div>
                         </div>
                     );
@@ -234,7 +274,7 @@ function App() {
                                 <svg className="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                                 </svg>
-                                <p>需要管理员权限</p>
+                                <p>{t('error.adminRequired')}</p>
                             </div>
                         </div>
                     );
@@ -280,6 +320,7 @@ function App() {
                             isAdmin={auth.isAdmin}
                             onLogout={auth.logout}
                             username={auth.user?.username}
+                            queueCounts={queueCounts}
                         />
 
                         <div className="flex-1 flex overflow-hidden">
