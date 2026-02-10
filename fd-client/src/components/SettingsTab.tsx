@@ -1,4 +1,6 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
+import { invoke } from '@tauri-apps/api/core';
 import { NotebookLMConfig } from '../types';
 import { configApi } from '../services/serverApi';
 
@@ -28,6 +30,7 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
     translationLang, setTranslationLang,
     notebookLMConfig, setNotebookLMConfig,
 }) => {
+    const { t, i18n } = useTranslation(['settings', 'common']);
     const [toasts, setToasts] = useState<string[]>([]);
 
     // 服务端配置状态
@@ -36,6 +39,57 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
     const [wecomLoading, setWecomLoading] = useState(false);
     const [wecomTesting, setWecomTesting] = useState(false);
     const [configLoaded, setConfigLoaded] = useState(false);
+
+    // NotebookLM Selectors 状态
+    const [selectors, setSelectors] = useState<Record<string, string> | null>(null);
+    const [selectorsLoading, setSelectorsLoading] = useState(false);
+    const fileInputRef = useRef<HTMLInputElement>(null);
+
+    const loadSelectors = useCallback(async () => {
+        try {
+            const data = await invoke('get_notebook_selectors_cmd') as Record<string, string>;
+            setSelectors(data);
+        } catch {
+            setToasts(prev => [...prev, t('settings:selectors.loadFailed')]);
+        }
+    }, [t]);
+
+    useEffect(() => {
+        loadSelectors();
+    }, [loadSelectors]);
+
+    const handleResetSelectors = async () => {
+        setSelectorsLoading(true);
+        try {
+            const defaults = await invoke('reset_notebook_selectors_cmd') as Record<string, string>;
+            setSelectors(defaults);
+            setToasts(prev => [...prev, t('settings:selectors.resetSuccess')]);
+        } catch (err) {
+            setToasts(prev => [...prev, t('settings:selectors.resetFailed', { error: (err as Error).message })]);
+        } finally {
+            setSelectorsLoading(false);
+        }
+    };
+
+    const handleUploadSelectors = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = async (ev) => {
+            try {
+                const parsed = JSON.parse(ev.target?.result as string);
+                if (typeof parsed !== 'object' || Array.isArray(parsed)) throw new Error('not object');
+                await invoke('save_notebook_selectors_cmd', { selectors: parsed });
+                setSelectors(parsed);
+                setToasts(prev => [...prev, t('settings:selectors.uploadSuccess')]);
+            } catch {
+                setToasts(prev => [...prev, t('settings:selectors.uploadInvalid')]);
+            }
+        };
+        reader.readAsText(file);
+        // 重置 input 以便重复上传同一文件
+        e.target.value = '';
+    };
 
     const loadServerConfig = useCallback(async () => {
         try {
@@ -56,9 +110,9 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
         setWecomLoading(true);
         try {
             await configApi.setWeComWebhook(wecomUrl, wecomEnabled);
-            setToasts(prev => [...prev, '企业微信配置已保存']);
+            setToasts(prev => [...prev, t('settings:wecom.saveSuccess')]);
         } catch (err) {
-            setToasts(prev => [...prev, `保存失败: ${(err as Error).message}`]);
+            setToasts(prev => [...prev, t('common:message.saveFailed', { error: (err as Error).message })]);
         } finally {
             setWecomLoading(false);
         }
@@ -69,12 +123,12 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
         try {
             const result = await configApi.testWeComWebhook();
             if (result.success) {
-                setToasts(prev => [...prev, '企业微信测试消息发送成功']);
+                setToasts(prev => [...prev, t('settings:wecom.testSuccess')]);
             } else {
-                setToasts(prev => [...prev, '企业微信测试消息发送失败']);
+                setToasts(prev => [...prev, t('settings:wecom.testFailed')]);
             }
         } catch (err) {
-            setToasts(prev => [...prev, `测试失败: ${(err as Error).message}`]);
+            setToasts(prev => [...prev, t('settings:wecom.testError', { error: (err as Error).message })]);
         } finally {
             setWecomTesting(false);
         }
@@ -196,9 +250,9 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
 })();`;
 
         navigator.clipboard.writeText(script).then(() => {
-            setToasts(prev => [...prev, 'NotebookLM自动提取脚本已复制到剪贴板!']);
+            setToasts(prev => [...prev, t('settings:ai.scriptCopied')]);
         }).catch(err => {
-            setToasts(prev => [...prev, `复制失败: ${err}`]);
+            setToasts(prev => [...prev, t('common:message.copyFailed', { error: err })]);
         });
     };
 
@@ -206,43 +260,69 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
         <div className="flex-1 p-6 overflow-auto">
             <div className="max-w-3xl mx-auto w-full">
                 <header className="mb-6">
-                    <h1 className="text-2xl font-bold text-white mb-1">Settings</h1>
-                    <p className="text-slate-400 text-sm">Configure your connection and AI preferences</p>
+                    <h1 className="text-2xl font-bold text-white mb-1">{t('settings:title')}</h1>
+                    <p className="text-slate-400 text-sm">{t('settings:subtitle')}</p>
                 </header>
 
                 <div className="space-y-6 pb-12">
+                    {/* Language Settings */}
+                    <section className="bg-white/5 rounded-xl border border-white/10 p-6">
+                        <h3 className="text-sm font-bold text-slate-300 uppercase tracking-wider mb-6 flex items-center gap-2">
+                            <span className="w-1 h-4 bg-amber-500 rounded-full"></span>
+                            {t('settings:language.title')}
+                        </h3>
+                        <div className="flex gap-3">
+                            {[
+                                { code: 'zh-CN', label: '简体中文' },
+                                { code: 'en-US', label: 'English' },
+                            ].map(lang => (
+                                <button
+                                    key={lang.code}
+                                    onClick={() => i18n.changeLanguage(lang.code)}
+                                    className={`flex-1 py-3 px-4 rounded-xl border text-sm font-medium transition-all ${
+                                        i18n.language === lang.code
+                                            ? 'bg-amber-500/20 border-amber-500/50 text-amber-400'
+                                            : 'bg-slate-800/50 border-white/10 text-slate-400 hover:bg-white/10'
+                                    }`}
+                                >
+                                    {lang.label}
+                                </button>
+                            ))}
+                        </div>
+                    </section>
+
                     {/* Connection Settings */}
                     <section className="bg-white/5 rounded-xl border border-white/10 p-6">
                         <h3 className="text-sm font-bold text-slate-300 uppercase tracking-wider mb-6 flex items-center gap-2">
                             <span className="w-1 h-4 bg-indigo-500 rounded-full"></span>
-                            Connection Settings
+                            {t('settings:connection.title')}
                         </h3>
 
                         <div className="space-y-5">
                             <div>
-                                <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">Server URL</label>
+                                <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">{t('settings:connection.serverUrl')}</label>
                                 <input
                                     type="text"
                                     value={serverUrl}
                                     onChange={(e) => setServerUrl(e.target.value)}
                                     className="w-full px-4 py-3 bg-slate-800/50 border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all font-mono text-sm"
-                                    placeholder="http://localhost:9988"
+                                    placeholder={t('settings:connection.serverUrlPlaceholder')}
                                 />
-                                <p className="text-[10px] text-slate-500 mt-2">FD-Server base URL (default: http://localhost:9988)</p>
+                                <p className="text-[10px] text-slate-500 mt-2">{t('settings:connection.serverUrlHint')}</p>
                             </div>
 
                             <div>
-                                <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">Translation Target Language (MQ/Manual)</label>
+                                <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">{t('settings:connection.translationLang')}</label>
                                 <select
                                     value={translationLang}
                                     onChange={(e) => setTranslationLang(e.target.value)}
                                     className="w-full px-4 py-3 bg-slate-800/50 border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all text-sm appearance-none"
                                 >
-                                    <option value="cn">简体中文 (Simplified Chinese)</option>
-                                    <option value="en">English (English)</option>
-                                    <option value="jp">日本語 (Japanese)</option>
+                                    <option value="cn">{t('settings:connection.langOptionCn')}</option>
+                                    <option value="en">{t('settings:connection.langOptionEn')}</option>
+                                    <option value="jp">{t('settings:connection.langOptionJp')}</option>
                                 </select>
-                                <p className="text-[10px] text-slate-500 mt-2">Defines the default language for MQ and manual translations</p>
+                                <p className="text-[10px] text-slate-500 mt-2">{t('settings:connection.translationLangHint')}</p>
                             </div>
                         </div>
                     </section>
@@ -251,12 +331,12 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
                     <section className="bg-white/5 rounded-xl border border-white/10 p-6">
                         <h3 className="text-sm font-bold text-slate-300 uppercase tracking-wider mb-6 flex items-center gap-2">
                             <span className="w-1 h-4 bg-cyan-500 rounded-full"></span>
-                            RabbitMQ Broker
+                            {t('settings:mq.title')}
                         </h3>
                         <div className="space-y-4">
                             <div className="grid grid-cols-3 gap-4">
                                 <div className="col-span-2">
-                                    <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">Host</label>
+                                    <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">{t('settings:mq.host')}</label>
                                     <input
                                         type="text"
                                         value={mqHost}
@@ -266,7 +346,7 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
                                     />
                                 </div>
                                 <div>
-                                    <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">Port</label>
+                                    <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">{t('settings:mq.port')}</label>
                                     <input
                                         type="number"
                                         value={mqPort}
@@ -280,7 +360,7 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
                             </div>
                             <div className="grid grid-cols-2 gap-4">
                                 <div>
-                                    <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">Username</label>
+                                    <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">{t('settings:mq.username')}</label>
                                     <input
                                         type="text"
                                         value={mqUsername}
@@ -289,7 +369,7 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
                                     />
                                 </div>
                                 <div>
-                                    <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">Password</label>
+                                    <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">{t('settings:mq.password')}</label>
                                     <input
                                         type="password"
                                         value={mqPassword}
@@ -306,14 +386,14 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
                         <div className="flex items-center justify-between mb-6">
                             <h3 className="text-sm font-bold text-slate-300 uppercase tracking-wider flex items-center gap-2">
                                 <span className="w-1 h-4 bg-purple-500 rounded-full"></span>
-                                AI Engine (NotebookLM)
+                                {t('settings:ai.title')}
                             </h3>
                             <button
                                 onClick={copyExtractScript}
                                 className="px-3 py-1.5 bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/20 rounded-lg text-purple-400 text-xs font-medium transition-all flex items-center gap-2"
                             >
                                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
-                                脚本助手
+                                {t('settings:ai.scriptHelper')}
                             </button>
                         </div>
 
@@ -321,11 +401,11 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
                             <div className="p-4 bg-purple-500/5 border border-purple-500/10 rounded-lg">
                                 <p className="text-[11px] text-purple-200/80 mb-2 flex items-center gap-1.5">
                                     <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                                    快速导入：在 NotebookLM 页面运行脚本后直接在此粘贴 JSON
+                                    {t('settings:ai.quickImportHint')}
                                 </p>
                                 <textarea
                                     className="w-full px-3 py-2 bg-slate-900/50 border border-white/5 rounded text-[10px] text-slate-400 font-mono focus:outline-none focus:border-purple-500/50"
-                                    placeholder="Paste JSON configuration here..."
+                                    placeholder={t('settings:ai.importPlaceholder')}
                                     rows={1}
                                     onChange={(e) => {
                                         try {
@@ -333,7 +413,7 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
                                             if (config.notebookId || config.atToken) {
                                                 setNotebookLMConfig(prev => ({ ...prev, ...config }));
                                                 e.target.value = '';
-                                                setToasts(prev => [...prev, '已成功导入 AI 配置']);
+                                                setToasts(prev => [...prev, t('settings:ai.importSuccess')]);
                                             }
                                         } catch (err) { }
                                     }}
@@ -342,7 +422,7 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
 
                             <div className="space-y-4">
                                 <div>
-                                    <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">Notebook URL</label>
+                                    <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">{t('settings:ai.notebookUrl')}</label>
                                     <input
                                         type="text"
                                         value={notebookLMConfig.notebookUrl || ''}
@@ -356,12 +436,12 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
                                             setNotebookLMConfig((prev: NotebookLMConfig) => ({ ...prev, ...updates }));
                                         }}
                                         className="w-full px-4 py-2.5 bg-slate-800/50 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-purple-500/50"
-                                        placeholder="https://notebooklm.google.com/notebook/..."
+                                        placeholder={t('settings:ai.notebookUrlPlaceholder')}
                                     />
                                 </div>
                                 <div className="grid grid-cols-2 gap-4">
                                     <div>
-                                        <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">Notebook ID</label>
+                                        <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">{t('settings:ai.notebookId')}</label>
                                         <input
                                             type="text"
                                             value={notebookLMConfig.notebookId}
@@ -370,7 +450,7 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
                                         />
                                     </div>
                                     <div>
-                                        <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">F.SID</label>
+                                        <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">{t('settings:ai.fSid')}</label>
                                         <input
                                             type="text"
                                             value={notebookLMConfig.fSid}
@@ -382,7 +462,7 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
                             </div>
 
                             <div>
-                                <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">AT Token</label>
+                                <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">{t('settings:ai.atToken')}</label>
                                 <input
                                     type="password"
                                     value={notebookLMConfig.atToken}
@@ -392,7 +472,7 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
                             </div>
 
                             <div>
-                                <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">Cookie</label>
+                                <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">{t('settings:ai.cookie')}</label>
                                 <textarea
                                     value={notebookLMConfig.cookie}
                                     onChange={(e) => setNotebookLMConfig((prev: NotebookLMConfig) => ({ ...prev, cookie: e.target.value }))}
@@ -402,7 +482,7 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
                             </div>
 
                             <div>
-                                <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">Source IDs (关联文档)</label>
+                                <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">{t('settings:ai.sourceIds')}</label>
                                 <textarea
                                     value={notebookLMConfig.sourceIds?.join('\n') || ''}
                                     onChange={(e) => {
@@ -410,18 +490,18 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
                                         setNotebookLMConfig((prev: NotebookLMConfig) => ({ ...prev, sourceIds: ids }));
                                     }}
                                     className="w-full px-4 py-2.5 bg-slate-800/50 border border-white/10 rounded-lg text-white text-[11px] focus:outline-none focus:ring-2 focus:ring-purple-500/50 font-mono"
-                                    placeholder="Enter Source UUIDs (one per line)"
+                                    placeholder={t('settings:ai.sourceIdsPlaceholder')}
                                     rows={2}
                                 />
                             </div>
 
                             <div>
-                                <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">AI Prompt Template</label>
+                                <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">{t('settings:ai.promptTemplate')}</label>
                                 <textarea
                                     value={notebookLMConfig.prompt}
                                     onChange={(e) => setNotebookLMConfig((prev: NotebookLMConfig) => ({ ...prev, prompt: e.target.value }))}
                                     className="w-full px-4 py-3 bg-slate-800/50 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-purple-500/50"
-                                    placeholder="Template for AI response generation..."
+                                    placeholder={t('settings:ai.promptPlaceholder')}
                                     rows={3}
                                 />
                             </div>
@@ -430,14 +510,52 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
                             {notebookLMConfig.cookie && notebookLMConfig.atToken && notebookLMConfig.fSid ? (
                                 <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-3 flex items-center gap-3">
                                     <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-                                    <span className="text-green-400 text-xs font-medium">NotebookLM Configuration Complete</span>
+                                    <span className="text-green-400 text-xs font-medium">{t('settings:ai.configComplete')}</span>
                                 </div>
                             ) : (
                                 <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-3 flex items-center gap-3">
                                     <div className="w-2 h-2 rounded-full bg-yellow-500"></div>
-                                    <span className="text-yellow-400 text-xs font-medium">Please complete NotebookLM configuration</span>
+                                    <span className="text-yellow-400 text-xs font-medium">{t('settings:ai.configIncomplete')}</span>
                                 </div>
                             )}
+                        </div>
+                    </section>
+
+                    {/* NotebookLM Selectors */}
+                    <section className="bg-white/5 rounded-xl border border-white/10 p-6">
+                        <h3 className="text-sm font-bold text-slate-300 uppercase tracking-wider mb-2 flex items-center gap-2">
+                            <span className="w-1 h-4 bg-teal-500 rounded-full"></span>
+                            {t('settings:selectors.title')}
+                        </h3>
+                        <p className="text-[10px] text-slate-500 mb-5">{t('settings:selectors.description')}</p>
+
+                        {selectors && (
+                            <pre className="w-full p-4 bg-slate-900/60 border border-white/5 rounded-lg text-[11px] text-slate-400 font-mono overflow-auto max-h-64 mb-5 select-all">
+                                {JSON.stringify(selectors, null, 2)}
+                            </pre>
+                        )}
+
+                        <div className="flex gap-3">
+                            <button
+                                onClick={handleResetSelectors}
+                                disabled={selectorsLoading}
+                                className="px-4 py-2 bg-teal-600/80 hover:bg-teal-500 disabled:opacity-50 text-white text-xs font-bold rounded-lg transition-all"
+                            >
+                                {t('settings:selectors.resetToDefault')}
+                            </button>
+                            <button
+                                onClick={() => fileInputRef.current?.click()}
+                                className="px-4 py-2 bg-slate-700/50 hover:bg-slate-600/50 text-slate-300 hover:text-white text-xs font-bold rounded-lg transition-all border border-white/10"
+                            >
+                                {t('settings:selectors.uploadConfig')}
+                            </button>
+                            <input
+                                ref={fileInputRef}
+                                type="file"
+                                accept=".json"
+                                className="hidden"
+                                onChange={handleUploadSelectors}
+                            />
                         </div>
                     </section>
 
@@ -446,13 +564,13 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
                         <section className="bg-white/5 rounded-xl border border-white/10 p-6">
                             <h3 className="text-sm font-bold text-slate-300 uppercase tracking-wider mb-6 flex items-center gap-2">
                                 <span className="w-1 h-4 bg-green-500 rounded-full"></span>
-                                WeChat Work (企业微信)
+                                {t('settings:wecom.title')}
                             </h3>
                             <div className="space-y-5">
                                 <div className="flex items-center justify-between p-4 bg-green-500/5 border border-green-500/10 rounded-lg">
                                     <div>
-                                        <p className="text-sm text-white font-medium">启用企业微信通知</p>
-                                        <p className="text-[10px] text-slate-500 mt-1">审核通过/驳回、回复推送等事件将发送通知到企业微信群</p>
+                                        <p className="text-sm text-white font-medium">{t('settings:wecom.enableNotify')}</p>
+                                        <p className="text-[10px] text-slate-500 mt-1">{t('settings:wecom.enableNotifyDesc')}</p>
                                     </div>
                                     <button
                                         onClick={() => setWecomEnabled(!wecomEnabled)}
@@ -467,15 +585,15 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
                                 </div>
 
                                 <div>
-                                    <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">Webhook URL</label>
+                                    <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">{t('settings:wecom.webhookUrl')}</label>
                                     <input
                                         type="text"
                                         value={wecomUrl}
                                         onChange={(e) => setWecomUrl(e.target.value)}
                                         className="w-full px-4 py-2.5 bg-slate-800/50 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-green-500/50 font-mono"
-                                        placeholder="https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=..."
+                                        placeholder={t('settings:wecom.webhookPlaceholder')}
                                     />
-                                    <p className="text-[10px] text-slate-500 mt-2">在企业微信群设置中创建机器人获取 Webhook 地址</p>
+                                    <p className="text-[10px] text-slate-500 mt-2">{t('settings:wecom.webhookHint')}</p>
                                 </div>
 
                                 <div className="flex gap-3">
@@ -484,14 +602,14 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
                                         disabled={wecomLoading}
                                         className="px-5 py-2 bg-green-600 hover:bg-green-500 disabled:opacity-50 text-white text-xs font-bold rounded-lg transition-all"
                                     >
-                                        {wecomLoading ? '保存中...' : '保存配置'}
+                                        {wecomLoading ? t('common:button.saving') : t('settings:wecom.saveConfig')}
                                     </button>
                                     <button
                                         onClick={handleTestWecom}
                                         disabled={wecomTesting || !wecomUrl}
                                         className="px-5 py-2 bg-slate-700/50 hover:bg-slate-600/50 disabled:opacity-30 text-slate-300 hover:text-white text-xs font-bold rounded-lg transition-all border border-white/10"
                                     >
-                                        {wecomTesting ? '发送中...' : '发送测试消息'}
+                                        {wecomTesting ? t('settings:wecom.sending') : t('settings:wecom.sendTestMessage')}
                                     </button>
                                 </div>
                             </div>
@@ -515,7 +633,7 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
                     <div className="max-w-3xl mx-auto flex justify-end">
                         <div className="bg-slate-900/90 backdrop-blur border border-white/10 rounded-full px-4 py-2 flex items-center gap-2 shadow-2xl">
                             <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                            <span className="text-[11px] text-slate-300 font-medium">Settings saved to local vault</span>
+                            <span className="text-[11px] text-slate-300 font-medium">{t('settings:footer.savedToLocal')}</span>
                         </div>
                     </div>
                 </div>

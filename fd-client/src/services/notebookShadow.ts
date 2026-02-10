@@ -20,21 +20,12 @@ export interface ShadowResponse {
  */
 
 /**
- * NotebookLM DOM 选择器常量
- * NotebookLM 更新 UI 后只需修改此处
+ * 从 Rust 后端动态加载 NotebookLM DOM 选择器
+ * 选择器通过 Settings 持久化，支持热更新
  */
-const SELECTORS = {
-  INPUT: 'textarea.query-box-input',
-  CHAT_PAIR: '.chat-message-pair',
-  CHAT_PAIR_ALT: '[role="log"] .message-content',
-  BOT_REPLY: '.to-user-container .message-text-content',
-  BOT_REPLY_FALLBACK_1: '.model-response-text',
-  BOT_REPLY_FALLBACK_2: '.response-container',
-  COPY_BUTTON: '.xap-copy-to-clipboard',
-  SEND_BUTTON: 'button.submit-button:not([disabled])',
-  MENU_BUTTON: 'button[aria-label="对话选项"]',
-  CONFIRM_DELETE: 'button.yes-button',
-} as const;
+async function loadSelectors(): Promise<Record<string, string>> {
+  return await invoke('get_notebook_selectors_cmd') as Record<string, string>;
+}
 
 // 全局互斥锁状态
 let globalQueryLock: Promise<void> = Promise.resolve();
@@ -87,13 +78,16 @@ export class NotebookShadowService {
     try {
       await this.init();
 
+      // 动态加载选择器
+      const selectors = await loadSelectors();
+
       // ====== mainScript ======
       // 清理 → 输入 → 发送 → 建立 in-page observer
       // observer 仅写 window.__SHADOW_LATEST_RESULT，不做 IPC
       const mainScript = `
         (async function() {
           const SESSION_ID = "${sessionId}";
-          const SEL = ${JSON.stringify(SELECTORS)};
+          const SEL = ${JSON.stringify(selectors)};
           const log = (msg) => {
             if (window.__TAURI__?.core) {
               window.__TAURI__.core.invoke('forward_shadow_event', {

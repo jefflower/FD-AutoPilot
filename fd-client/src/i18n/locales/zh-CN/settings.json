@@ -1,0 +1,81 @@
+{
+  "title": "设置",
+  "subtitle": "配置连接和 AI 偏好设置",
+  "language": {
+    "title": "语言设置"
+  },
+  "connection": {
+    "title": "连接设置",
+    "serverUrl": "服务器地址",
+    "serverUrlPlaceholder": "http://localhost:9988",
+    "serverUrlHint": "FD-Server 基础地址 (默认: http://localhost:9988)",
+    "translationLang": "翻译目标语言 (MQ/手动)",
+    "translationLangHint": "定义 MQ 和手动翻译的默认语言",
+    "langOptionCn": "简体中文 (Simplified Chinese)",
+    "langOptionEn": "English (English)",
+    "langOptionJp": "日本語 (Japanese)"
+  },
+  "mq": {
+    "title": "RabbitMQ Broker",
+    "host": "主机",
+    "port": "端口",
+    "username": "用户名",
+    "password": "密码"
+  },
+  "ai": {
+    "title": "AI 引擎 (NotebookLM)",
+    "scriptHelper": "脚本助手",
+    "quickImportHint": "快速导入：在 NotebookLM 页面运行脚本后直接在此粘贴 JSON",
+    "importPlaceholder": "在此粘贴 JSON 配置...",
+    "notebookUrl": "Notebook URL",
+    "notebookUrlPlaceholder": "https://notebooklm.google.com/notebook/...",
+    "notebookId": "Notebook ID",
+    "fSid": "F.SID",
+    "atToken": "AT Token",
+    "cookie": "Cookie",
+    "sourceIds": "Source IDs (关联文档)",
+    "sourceIdsPlaceholder": "输入 Source UUID（每行一个）",
+    "promptTemplate": "AI Prompt 模板",
+    "promptPlaceholder": "AI 回复生成模板...",
+    "configComplete": "NotebookLM 配置已完成",
+    "configIncomplete": "请完成 NotebookLM 配置",
+    "scriptCopied": "NotebookLM自动提取脚本已复制到剪贴板!",
+    "importSuccess": "已成功导入 AI 配置"
+  },
+  "selectors": {
+    "title": "NotebookLM 选择器",
+    "description": "NotebookLM 页面 DOM 选择器配置，UI 变更后可在此更新",
+    "resetToDefault": "恢复默认",
+    "uploadConfig": "上传配置",
+    "resetSuccess": "选择器已恢复为默认值",
+    "resetFailed": "恢复默认失败: {{error}}",
+    "uploadSuccess": "选择器配置已更新",
+    "uploadInvalid": "无效的 JSON 文件，请检查格式",
+    "loadFailed": "加载选择器失败"
+  },
+  "wecom": {
+    "title": "企业微信",
+    "enableNotify": "启用企业微信通知",
+    "enableNotifyDesc": "审核通过/驳回、回复推送等事件将发送通知到企业微信群",
+    "webhookUrl": "Webhook URL",
+    "webhookPlaceholder": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=...",
+    "webhookHint": "在企业微信群设置中创建机器人获取 Webhook 地址",
+    "saveConfig": "保存配置",
+    "sendTestMessage": "发送测试消息",
+    "sending": "发送中...",
+    "saveSuccess": "企业微信配置已保存",
+    "testSuccess": "企业微信测试消息发送成功",
+    "testFailed": "企业微信测试消息发送失败",
+    "testError": "测试失败: {{error}}"
+  },
+  "footer": {
+    "savedToLocal": "设置已保存到本地"
+  },
+  "profile": {
+    "title": "用户中心",
+    "roleAdmin": "管理员",
+    "roleUser": "普通用户",
+    "logout": "退出登录",
+    "comingSoon": "更多功能即将推出..."
+  }
+}

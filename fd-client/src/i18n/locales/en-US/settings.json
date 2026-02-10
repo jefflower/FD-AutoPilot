@@ -1,0 +1,81 @@
+{
+  "title": "Settings",
+  "subtitle": "Configure your connection and AI preferences",
+  "language": {
+    "title": "Language"
+  },
+  "connection": {
+    "title": "Connection Settings",
+    "serverUrl": "Server URL",
+    "serverUrlPlaceholder": "http://localhost:9988",
+    "serverUrlHint": "FD-Server base URL (default: http://localhost:9988)",
+    "translationLang": "Translation Target Language (MQ/Manual)",
+    "translationLangHint": "Defines the default language for MQ and manual translations",
+    "langOptionCn": "简体中文 (Simplified Chinese)",
+    "langOptionEn": "English (English)",
+    "langOptionJp": "日本語 (Japanese)"
+  },
+  "mq": {
+    "title": "RabbitMQ Broker",
+    "host": "Host",
+    "port": "Port",
+    "username": "Username",
+    "password": "Password"
+  },
+  "ai": {
+    "title": "AI Engine (NotebookLM)",
+    "scriptHelper": "Script Helper",
+    "quickImportHint": "Quick import: Run the script on NotebookLM page and paste JSON here",
+    "importPlaceholder": "Paste JSON configuration here...",
+    "notebookUrl": "Notebook URL",
+    "notebookUrlPlaceholder": "https://notebooklm.google.com/notebook/...",
+    "notebookId": "Notebook ID",
+    "fSid": "F.SID",
+    "atToken": "AT Token",
+    "cookie": "Cookie",
+    "sourceIds": "Source IDs (Linked Documents)",
+    "sourceIdsPlaceholder": "Enter Source UUIDs (one per line)",
+    "promptTemplate": "AI Prompt Template",
+    "promptPlaceholder": "Template for AI response generation...",
+    "configComplete": "NotebookLM Configuration Complete",
+    "configIncomplete": "Please complete NotebookLM configuration",
+    "scriptCopied": "NotebookLM extraction script copied to clipboard!",
+    "importSuccess": "AI configuration imported successfully"
+  },
+  "selectors": {
+    "title": "NotebookLM Selectors",
+    "description": "DOM selectors for NotebookLM page. Update here when NotebookLM UI changes.",
+    "resetToDefault": "Reset to Default",
+    "uploadConfig": "Upload Config",
+    "resetSuccess": "Selectors reset to defaults",
+    "resetFailed": "Reset failed: {{error}}",
+    "uploadSuccess": "Selectors configuration updated",
+    "uploadInvalid": "Invalid JSON file, please check the format",
+    "loadFailed": "Failed to load selectors"
+  },
+  "wecom": {
+    "title": "WeChat Work",
+    "enableNotify": "Enable WeChat Work Notifications",
+    "enableNotifyDesc": "Audit pass/reject, reply push and other events will be sent to WeChat Work group",
+    "webhookUrl": "Webhook URL",
+    "webhookPlaceholder": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=...",
+    "webhookHint": "Create a bot in WeChat Work group settings to get the Webhook URL",
+    "saveConfig": "Save Config",
+    "sendTestMessage": "Send Test Message",
+    "sending": "Sending...",
+    "saveSuccess": "WeChat Work configuration saved",
+    "testSuccess": "WeChat Work test message sent successfully",
+    "testFailed": "WeChat Work test message failed to send",
+    "testError": "Test failed: {{error}}"
+  },
+  "footer": {
+    "savedToLocal": "Settings saved to local vault"
+  },
+  "profile": {
+    "title": "User Profile",
+    "roleAdmin": "Admin",
+    "roleUser": "Regular User",
+    "logout": "Log Out",
+    "comingSoon": "More features coming soon..."
+  }
+}

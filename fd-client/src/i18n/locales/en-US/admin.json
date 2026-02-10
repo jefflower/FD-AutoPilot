@@ -1,0 +1,201 @@
+{
+  "users": {
+    "title": "User Management",
+    "searchPlaceholder": "Search username...",
+    "totalCount": "{{count}} users",
+    "noData": "No user data",
+    "loadFailed": "Failed to load user list",
+    "operationFailed": "Operation failed",
+    "roleUpdateFailed": "Failed to update role",
+    "passwordResetFailed": "Failed to reset password",
+    "userApproved": "User approved",
+    "userRejected": "User rejected",
+    "roleUpdated": "Role updated to {{role}}",
+    "passwordResetSuccess": "Password reset for {{username}}",
+    "table": {
+      "id": "ID",
+      "username": "Username",
+      "role": "Role",
+      "status": "Status",
+      "createdAt": "Created At",
+      "actions": "Actions"
+    },
+    "action": {
+      "approve": "Approve",
+      "reject": "Reject",
+      "reApprove": "Re-approve",
+      "demoteToUser": "Demote to User",
+      "promoteToAdmin": "Promote to Admin",
+      "resetPassword": "Reset Password"
+    },
+    "confirmDialog": {
+      "title": "Confirm Action",
+      "confirmApprove": "Are you sure to approve user \"{{username}}\"?",
+      "confirmReject": "Are you sure to reject user \"{{username}}\"? The user will not be able to log in.",
+      "confirmRoleChange": "Are you sure to change the role of user \"{{username}}\" to {{role}}?"
+    },
+    "resetPasswordDialog": {
+      "title": "Reset Password - {{username}}",
+      "placeholder": "Enter new password (at least 6 characters)",
+      "minLengthError": "Password must be at least 6 characters",
+      "processing": "Processing...",
+      "reset": "Reset"
+    }
+  },
+  "sync": {
+    "title": "Sync Management",
+    "subtitle": "Configure auto-sync or manually trigger Freshdesk ticket sync",
+    "status": {
+      "title": "Sync Status",
+      "syncing": "Syncing...",
+      "idle": "Idle",
+      "lastSync": "Last Sync:",
+      "autoSync": "Auto Sync:",
+      "enabled": "Enabled",
+      "disabled": "Disabled",
+      "syncNow": "Sync Now",
+      "syncing_btn": "Syncing...",
+      "newCount": "Added: {{count}}",
+      "updateCount": "Updated: {{count}}"
+    },
+    "config": {
+      "title": "Sync Configuration",
+      "enableAutoSync": "Enable Auto Sync",
+      "autoReply": "Auto-push reply after audit approval",
+      "autoReplyDesc": "When enabled, approved tickets will be pushed directly to Freshdesk; when disabled, they enter the push queue",
+      "cronExpression": "Cron Expression",
+      "cronPreset": "Presets...",
+      "lastSyncTimeLabel": "Last Sync Time (modify to re-sync historical data)",
+      "saveConfig": "Save Configuration",
+      "saveSuccess": "Configuration saved! Restart service to apply cron changes",
+      "saveFailed": "Save failed: {{error}}",
+      "setFailed": "Setting failed: {{error}}"
+    },
+    "cronPresets": {
+      "every5min": "Every 5 min",
+      "every10min": "Every 10 min",
+      "every30min": "Every 30 min",
+      "everyHour": "Every hour",
+      "dailyAt9": "Daily at 9:00"
+    },
+    "syncFailed": "Sync failed",
+    "logs": {
+      "title": "Sync Logs",
+      "refreshing": "Refreshing...",
+      "noRecords": "No sync records",
+      "table": {
+        "time": "Time",
+        "type": "Type",
+        "status": "Status",
+        "added": "Added",
+        "updated": "Updated"
+      },
+      "triggerType": {
+        "MANUAL": "Manual",
+        "SCHEDULED": "Scheduled"
+      },
+      "status": {
+        "SUCCESS": "Success",
+        "FAILED": "Failed",
+        "RUNNING": "Running"
+      }
+    }
+  },
+  "logs": {
+    "title": "Server Logs",
+    "logLevelManager": "Log Level Manager",
+    "searchPlaceholder": "Search logs...",
+    "allLevels": "All Levels",
+    "autoRefresh": "Auto Refresh",
+    "followBottom": "Follow Bottom",
+    "loadingLogs": "Loading logs...",
+    "noMatchingLines": "No matching log lines",
+    "noLogs": "No logs available",
+    "fetchFailed": "Failed to fetch logs",
+    "fetchLoggersFailed": "Failed to fetch loggers",
+    "setLevelFailed": "Failed to set level",
+    "loggerFilterPlaceholder": "Filter logger name...",
+    "noMatchingLoggers": "No matching loggers",
+    "defaultLevel": "Default",
+    "lineCount": "{{count}} lines",
+    "filterInfo": "(Filter: {{level}})",
+    "searchInfo": "(Search: \"{{query}}\")",
+    "autoRefreshStatus": "Auto-refresh every 3s",
+    "autoRefreshPaused": "Auto-refresh paused"
+  },
+  "database": {
+    "title": "Database Management",
+    "sqlQuery": "SQL Query",
+    "h2Console": "H2 Console",
+    "sqlPlaceholder": "Enter SQL query... (Ctrl+Enter to execute)",
+    "executing": "Executing...",
+    "execute": "Execute (⌘↵)",
+    "clear": "Clear",
+    "history": "History ({{count}})",
+    "tableStructure": "Table Structure",
+    "tableStructureLoading": "Loading...",
+    "quickQuery": "Quick:",
+    "selectTableHint": "Select a table on the left to view its structure",
+    "tableColumn": "Column",
+    "tableType": "Type",
+    "tableConstraint": "Constraint",
+    "getTablesFailed": "Failed to get table structure",
+    "confirmDangerous": "This SQL contains a {{keyword}} operation. Confirm execution?",
+    "executeFailed": "Execution failed",
+    "affectedRows": "{{count}} rows affected, took {{time}}ms",
+    "queryResult": "{{count}} rows returned, took {{time}}ms",
+    "sortInfo": "Sort: {{column}} ({{direction}})",
+    "sortAsc": "Ascending",
+    "sortDesc": "Descending",
+    "emptyResult": "Query returned no results",
+    "expand": "Expand",
+    "collapse": "Collapse",
+    "emptyState": "Enter SQL and press Ctrl+Enter to execute",
+    "h2": {
+      "jdbcUrl": "JDBC URL:",
+      "username": "Username:",
+      "password": "Password:",
+      "hint": "Tip: Click Connect to start using the console below",
+      "loading": "Loading H2 Console...",
+      "loadFailed": "Unable to load H2 Console",
+      "loadFailedHint": "Please ensure the server is running (localhost:9988) and H2 Console is enabled",
+      "retry": "Retry"
+    }
+  },
+  "knowledge": {
+    "title": "Knowledge Base",
+    "ticketMarking": "Ticket Marking",
+    "notes": "Notes",
+    "tickets": {
+      "searchPlaceholder": "Search title...",
+      "ticketId": "Ticket ID",
+      "subject": "Subject",
+      "valid": "Valid",
+      "all": "All",
+      "validOnly": "Valid",
+      "invalidOnly": "Invalid",
+      "selectedCount": "{{count}} selected",
+      "markValid": "Mark Valid",
+      "markInvalid": "Mark Invalid",
+      "exportValid": "Export Valid Tickets",
+      "exportFailed": "Export failed: {{error}}",
+      "noData": "No ticket data",
+      "pagination": "{{total}} items / Page {{current}} of {{pages}}"
+    },
+    "notesPanel": {
+      "totalNotes": "{{count}} notes",
+      "add": "Add",
+      "export": "Export",
+      "sortOrder": "Order",
+      "titlePlaceholder": "Title",
+      "contentPlaceholder": "Content...",
+      "saving": "Saving...",
+      "saveFailed": "Save failed: {{error}}",
+      "confirmDelete": "Are you sure to delete this note?",
+      "noData": "No notes yet. Click the \"Add\" button above to create one.",
+      "createdAt": "Created at {{time}}",
+      "updatedAt": "Updated at {{time}}",
+      "exportFailed": "Export failed: {{error}}"
+    }
+  }
+}

@@ -70,6 +70,17 @@ async fn translate_ticket_direct_cmd(app: AppHandle, ticket: models::Ticket, tar
 
 
 #[tauri::command]
+async fn sync_translate_reply_cmd(
+    app: AppHandle,
+    source_text: String,
+    reference_text: String,
+    direction: String,
+    target_lang: String,
+) -> Result<String, String> {
+    GeminiClient::sync_translate_reply(&app, &source_text, &reference_text, &direction, &target_lang).await
+}
+
+#[tauri::command]
 async fn save_text_file_cmd(save_path: String, content: String) -> Result<(), String> {
     std::fs::write(&save_path, content.as_bytes()).map_err(|e| e.to_string())
 }
@@ -256,6 +267,23 @@ async fn toggle_notebook_window(app: AppHandle, visible: bool, notebook_id: Opti
         // 窗口不存在且要隐藏，直接返回成功（本来就没显示）
         Ok(())
     }
+}
+
+// =========== NotebookLM Selectors Commands ===========
+
+#[tauri::command]
+fn get_notebook_selectors_cmd(app: AppHandle) -> std::collections::HashMap<String, String> {
+    settings::get_notebook_selectors(&app)
+}
+
+#[tauri::command]
+fn save_notebook_selectors_cmd(app: AppHandle, selectors: serde_json::Value) -> Result<(), String> {
+    settings::save_notebook_selectors_from_json(&app, &selectors)
+}
+
+#[tauri::command]
+fn reset_notebook_selectors_cmd(app: AppHandle) -> Result<std::collections::HashMap<String, String>, String> {
+    settings::reset_notebook_selectors(&app)
 }
 
 // =========== MQ Consumer Commands ===========
@@ -527,6 +555,7 @@ pub fn run() {
             save_settings_cmd,
             load_settings_cmd,
             translate_ticket_direct_cmd,
+            sync_translate_reply_cmd,
             save_text_file_cmd,
             open_notebook_window,
             execute_notebook_js,
@@ -534,6 +563,10 @@ pub fn run() {
             forward_shadow_event,
             toggle_notebook_window,
             get_notebook_window_visibility,
+            // NotebookLM Selectors
+            get_notebook_selectors_cmd,
+            save_notebook_selectors_cmd,
+            reset_notebook_selectors_cmd,
             // MQ 消费者命令
             start_mq_consumer,
             stop_mq_consumer,
