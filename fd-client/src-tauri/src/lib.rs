@@ -71,6 +71,23 @@ fn load_settings_cmd(app: AppHandle) -> Settings {
     settings::load_settings(&app)
 }
 
+/// 仅同步 MQ 队列名到本地 SQLite（由前端从服务端获取后调用）
+#[tauri::command]
+fn sync_mq_queues_cmd(
+    app: AppHandle,
+    queue_translation: String,
+    queue_reply: String,
+    queue_audit: String,
+    queue_dlq: String,
+) -> Result<(), String> {
+    let mut s = settings::load_settings(&app);
+    s.mq_queue_translation = queue_translation;
+    s.mq_queue_reply = queue_reply;
+    s.mq_queue_audit = queue_audit;
+    s.mq_queue_dlq = queue_dlq;
+    settings::save_settings(&app, &s)
+}
+
 #[tauri::command]
 async fn translate_ticket_direct_cmd(app: AppHandle, ticket: models::Ticket, target_lang: String) -> Result<models::Ticket, String> {
     GeminiClient::translate_ticket(&app, &ticket, &target_lang).await
@@ -563,6 +580,7 @@ pub fn run() {
             select_folder,
             save_settings_cmd,
             load_settings_cmd,
+            sync_mq_queues_cmd,
             translate_ticket_direct_cmd,
             sync_translate_reply_cmd,
             save_text_file_cmd,

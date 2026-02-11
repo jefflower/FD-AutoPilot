@@ -54,7 +54,7 @@ export function useSettings() {
     }
   }, []);
 
-  // 自动保存设置
+  // 自动保存设置（不含队列名，队列名由服务端管理，通过 sync_mq_queues_cmd 同步）
   useEffect(() => {
     const timeout = setTimeout(() => {
       invoke("save_settings_cmd", {
@@ -70,7 +70,7 @@ export function useSettings() {
       }).catch(console.error);
     }, 500);
     return () => clearTimeout(timeout);
-  }, [mqHost, mqPort, mqUsername, mqPassword, translationLang, mqQueueTranslation, mqQueueReply, mqQueueAudit, mqQueueDlq]);
+  }, [mqHost, mqPort, mqUsername, mqPassword, translationLang]);
 
   // serverUrl 变更时同步到 serverApi 模块
   useEffect(() => {

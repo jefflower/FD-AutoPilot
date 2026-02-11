@@ -467,6 +467,17 @@ export const configApi = {
       method: 'POST',
     });
   },
+
+  async getMqQueues(): Promise<Record<string, string>> {
+    return request<Record<string, string>>('/config/mq-queues');
+  },
+
+  async setMqQueues(config: Record<string, string>): Promise<void> {
+    await request<void>('/config/mq-queues', {
+      method: 'PUT',
+      body: JSON.stringify(config),
+    });
+  },
 };
 
 // ============ 下载辅助函数（Tauri 兼容） ============

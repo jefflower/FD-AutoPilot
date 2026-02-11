@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect, useCallback, useRef, ReactNode } from 'react';
 import { listen } from '@tauri-apps/api/event';
 import { invoke } from '@tauri-apps/api/core';
-import { serverApi } from '../services/serverApi';
+import { serverApi, configApi } from '../services/serverApi';
 
 /**
  * 通用 MQ 任务类型
@@ -120,9 +120,23 @@ export function createMQTaskContext(config: MQTaskConfig) {
             return () => { if (unlisten) unlisten(); };
         }, []);
 
-        // 启动消费者
+        // 启动消费者（先从服务端同步队列名到本地）
         const startConsumer = useCallback(async () => {
             try {
+                // 从服务端获取最新队列配置，同步到本地 Tauri 存储
+                try {
+                    const mqConfig = await configApi.getMqQueues();
+                    await invoke('sync_mq_queues_cmd', {
+                        queueTranslation: mqConfig.queueTranslation || 'q.ticket.translation',
+                        queueReply: mqConfig.queueReply || 'q.ticket.reply',
+                        queueAudit: mqConfig.queueAudit || 'q.ticket.audit',
+                        queueDlq: mqConfig.queueDlq || 'q.ticket.dlq',
+                    });
+                    setLogs(prev => [...prev, `📡 队列配置已从服务端同步`]);
+                } catch {
+                    setLogs(prev => [...prev, `⚠️ 无法从服务端同步队列配置，使用本地缓存`]);
+                }
+
                 const authToken = localStorage.getItem('fd_auth_token') || '';
                 await invoke(config.startCommand, { authToken });
                 setLogs(prev => [...prev, `🐰 ${config.taskType} MQ 消费启动中...`]);

@@ -111,6 +111,9 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
         e.target.value = '';
     };
 
+    // 队列名保存状态
+    const [mqQueueSaving, setMqQueueSaving] = useState(false);
+
     const loadServerConfig = useCallback(async () => {
         try {
             const wecom = await configApi.getWeComWebhook();
@@ -120,7 +123,26 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
         } catch {
             // 服务端不可用时静默忽略
         }
-    }, []);
+
+        // 从服务端加载 MQ 队列名（覆盖本地缓存）
+        try {
+            const mqConfig = await configApi.getMqQueues();
+            if (mqConfig.queueTranslation) setMqQueueTranslation(mqConfig.queueTranslation);
+            if (mqConfig.queueReply) setMqQueueReply(mqConfig.queueReply);
+            if (mqConfig.queueAudit) setMqQueueAudit(mqConfig.queueAudit);
+            if (mqConfig.queueDlq) setMqQueueDlq(mqConfig.queueDlq);
+
+            // 同步到本地 Tauri 存储（供 Rust MQ 消费者使用）
+            invoke('sync_mq_queues_cmd', {
+                queueTranslation: mqConfig.queueTranslation || 'q.ticket.translation',
+                queueReply: mqConfig.queueReply || 'q.ticket.reply',
+                queueAudit: mqConfig.queueAudit || 'q.ticket.audit',
+                queueDlq: mqConfig.queueDlq || 'q.ticket.dlq',
+            }).catch(console.error);
+        } catch {
+            // 服务端不可用时使用本地缓存值
+        }
+    }, [setMqQueueTranslation, setMqQueueReply, setMqQueueAudit, setMqQueueDlq]);
 
     useEffect(() => {
         loadServerConfig();
@@ -401,13 +423,16 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
                         </div>
                     </section>
 
-                    {/* MQ Queue Names */}
+                    {/* MQ Queue Names (Server-managed) */}
                     <section className="bg-white/5 rounded-xl border border-white/10 p-6">
                         <h3 className="text-sm font-bold text-slate-300 uppercase tracking-wider mb-6 flex items-center gap-2">
                             <span className="w-1 h-4 bg-cyan-500 rounded-full"></span>
                             MQ 队列配置
                         </h3>
                         <div className="space-y-4">
+                            <div className="p-3 bg-cyan-500/5 border border-cyan-500/10 rounded-lg">
+                                <p className="text-[10px] text-cyan-200/70">队列名由服务端管理，修改后点击保存将同步到服务端。重启 MQ 消费者后生效。</p>
+                            </div>
                             <div className="grid grid-cols-2 gap-4">
                                 <div>
                                     <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">翻译队列</label>
@@ -452,7 +477,35 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
                                     />
                                 </div>
                             </div>
-                            <p className="text-[10px] text-slate-500">修改队列名后需重启 MQ 消费者才能生效</p>
+                            <button
+                                onClick={async () => {
+                                    setMqQueueSaving(true);
+                                    try {
+                                        await configApi.setMqQueues({
+                                            queueTranslation: mqQueueTranslation,
+                                            queueReply: mqQueueReply,
+                                            queueAudit: mqQueueAudit,
+                                            queueDlq: mqQueueDlq,
+                                        });
+                                        // 同步到本地 Tauri 存储
+                                        await invoke('sync_mq_queues_cmd', {
+                                            queueTranslation: mqQueueTranslation,
+                                            queueReply: mqQueueReply,
+                                            queueAudit: mqQueueAudit,
+                                            queueDlq: mqQueueDlq,
+                                        });
+                                        setToasts(prev => [...prev, 'MQ 队列配置已保存到服务端']);
+                                    } catch (err) {
+                                        setToasts(prev => [...prev, `队列配置保存失败：${(err as Error).message}`]);
+                                    } finally {
+                                        setMqQueueSaving(false);
+                                    }
+                                }}
+                                disabled={mqQueueSaving}
+                                className="px-5 py-2 bg-cyan-600/80 hover:bg-cyan-500 disabled:opacity-50 text-white text-xs font-bold rounded-lg transition-all"
+                            >
+                                {mqQueueSaving ? '保存中...' : '保存队列配置'}
+                            </button>
                         </div>
                     </section>
 
