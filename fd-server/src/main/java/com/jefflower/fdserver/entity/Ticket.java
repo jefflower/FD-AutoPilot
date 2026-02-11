@@ -4,6 +4,7 @@ import com.jefflower.fdserver.enums.TicketStatus;
 import jakarta.persistence.*;
 import lombok.Data;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Data
 @Entity
@@ -96,11 +97,11 @@ public class Ticket {
 
     @OneToMany(mappedBy = "ticket", fetch = FetchType.LAZY)
     @OrderBy("id DESC")
-    private java.util.List<TicketTranslation> translations;
+    private Set<TicketTranslation> translations;
 
     @OneToMany(mappedBy = "ticket", fetch = FetchType.LAZY)
     @OrderBy("createdAt DESC")
-    private java.util.List<TicketReply> replies;
+    private Set<TicketReply> replies;
 
     @com.fasterxml.jackson.annotation.JsonProperty("translation")
     public TicketTranslation getTranslation() {

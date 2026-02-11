@@ -234,7 +234,7 @@ const ServerTicketsTab: React.FC<ServerTicketsTabProps> = ({
                                 </span>
                             </div>
                             <div className="text-[11px] text-slate-300 truncate font-medium group-hover:text-white transition-colors">
-                                {(displayLang === 'cn' && ticket.translation) ? ticket.translation.translatedTitle : ticket.subject}
+                                {(displayLang === 'cn' && (ticket.translatedTitle || ticket.translation?.translatedTitle)) ? (ticket.translatedTitle || ticket.translation?.translatedTitle) : ticket.subject}
                             </div>
                         </button>
                     ))}

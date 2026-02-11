@@ -24,6 +24,9 @@ public class TicketListDTO {
     private LocalDateTime updatedAt;
     private Boolean isValid;
 
+    // 翻译标题（来自最新的 TicketTranslation，用于列表中文显示模式）
+    private String translatedTitle;
+
     // Freshdesk 元数据（列表中常用于筛选/展示）
     private Integer fdStatus;
     private Integer fdPriority;

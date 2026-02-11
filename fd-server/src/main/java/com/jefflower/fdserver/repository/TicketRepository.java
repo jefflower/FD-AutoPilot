@@ -43,10 +43,13 @@ public interface TicketRepository extends JpaRepository<Ticket, Long> {
         Optional<Ticket> findByIdWithAssociations(@Param("id") Long id);
 
         /**
-         * 列表查询 — DTO 投影版本，不查 content/lastAuditRemark 等大字段，不触发关联加载
+         * 列表查询 — DTO 投影版本，不查 content/lastAuditRemark 等大字段，不触发关联加载。
+         * 通过标量子查询获取最新翻译标题（translatedTitle），用于列表中文显示模式。
          */
         @Query("SELECT new com.jefflower.fdserver.dto.TicketListDTO(" +
                         "t.id, t.externalId, t.subject, t.status, t.createdAt, t.updatedAt, t.isValid, " +
+                        "(SELECT tr.translatedTitle FROM TicketTranslation tr WHERE tr.ticket.id = t.id AND tr.id = " +
+                        "(SELECT MAX(tr2.id) FROM TicketTranslation tr2 WHERE tr2.ticket.id = t.id)), " +
                         "t.fdStatus, t.fdPriority, t.fdRequesterId, t.fdResponderId, t.fdTags, t.fdCreatedAt, t.fdUpdatedAt) " +
                         "FROM Ticket t WHERE " +
                         "(:status IS NULL OR t.status = :status) AND " +

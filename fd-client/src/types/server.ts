@@ -53,6 +53,8 @@ export interface ServerTicket {
   updatedAt: string;
   isValid: boolean;
   lastAuditRemark?: string;
+  /** 列表 DTO 返回的翻译标题（轻量，仅列表查询时存在） */
+  translatedTitle?: string;
   translation?: TicketTranslation;
   replies?: TicketReply[];
 }
