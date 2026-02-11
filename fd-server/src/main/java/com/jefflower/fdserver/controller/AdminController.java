@@ -211,4 +211,25 @@ public class AdminController {
 
         return ResponseEntity.ok(ApiResponse.ok("队列重置完成", data));
     }
+
+    /**
+     * 一键清理：删除所有工单及关联数据（需超级密码验证）
+     */
+    @PostMapping("/admin/tickets/purge-all")
+    public ResponseEntity<ApiResponse<Map<String, Object>>> purgeAllTickets(
+            @RequestBody Map<String, String> request) {
+        String password = request.get("superPassword");
+        if (password == null || !password.equals(superPassword)) {
+            return ResponseEntity.status(403)
+                    .body(ApiResponse.error("FORBIDDEN", "超级密码验证失败"));
+        }
+
+        long deletedCount = ticketService.purgeAllTickets();
+
+        Map<String, Object> data = new HashMap<>();
+        data.put("deletedTickets", deletedCount);
+        log.info("数据清理完成：删除了 {} 个工单及所有关联数据", deletedCount);
+
+        return ResponseEntity.ok(ApiResponse.ok("数据清理完成", data));
+    }
 }

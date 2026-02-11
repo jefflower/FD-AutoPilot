@@ -40,7 +40,7 @@ export class ApiError extends Error {
 }
 
 // Server URL（从 localStorage 读取，默认 http://localhost:9988）
-const DEFAULT_SERVER_URL = 'http://localhost:9988';
+const DEFAULT_SERVER_URL = 'http://47.110.152.25:9988';
 let serverBaseUrl: string = localStorage.getItem('fd_server_url') || DEFAULT_SERVER_URL;
 
 const getApiBaseUrl = () => `${serverBaseUrl}/api/v1`;
@@ -388,6 +388,13 @@ export const adminApi = {
 
   async purgeQueues(superPassword: string): Promise<{ purgedMessages: number; resetTickets: number }> {
     return request<{ purgedMessages: number; resetTickets: number }>('/admin/queues/purge', {
+      method: 'POST',
+      body: JSON.stringify({ superPassword }),
+    });
+  },
+
+  async purgeAllTickets(superPassword: string): Promise<{ deletedTickets: number }> {
+    return request<{ deletedTickets: number }>('/admin/tickets/purge-all', {
       method: 'POST',
       body: JSON.stringify({ superPassword }),
     });

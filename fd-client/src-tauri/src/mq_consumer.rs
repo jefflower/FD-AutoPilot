@@ -12,7 +12,7 @@ use crate::models::Ticket;
 use crate::settings::Settings;
 
 /// 服务端 API 地址
-const SERVER_API_URL: &str = "http://localhost:9988/api/v1";
+const SERVER_API_URL: &str = "http://47.110.152.25:9988/api/v1";
 
 /// MQ 配置
 #[derive(Clone, Debug)]

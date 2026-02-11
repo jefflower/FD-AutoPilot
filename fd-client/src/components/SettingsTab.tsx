@@ -60,6 +60,12 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
     const [purgeLoading, setPurgeLoading] = useState(false);
     const [purgeResult, setPurgeResult] = useState<{ purgedMessages: number; resetTickets: number } | null>(null);
 
+    // 数据清理状态
+    const [showPurgeAllDialog, setShowPurgeAllDialog] = useState(false);
+    const [purgeAllPassword, setPurgeAllPassword] = useState('');
+    const [purgeAllLoading, setPurgeAllLoading] = useState(false);
+    const [purgeAllResult, setPurgeAllResult] = useState<{ deletedTickets: number } | null>(null);
+
     // NotebookLM Selectors 状态
     const [selectors, setSelectors] = useState<Record<string, string> | null>(null);
     const [selectorsLoading, setSelectorsLoading] = useState(false);
@@ -176,128 +182,6 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
         }
     };
 
-    const copyExtractScript = () => {
-        const script = `/**
- * NotebookLM 配置自动提取工具
- */
-(function() {
-  console.log('%c🚀 NotebookLM 配置自动提取工具已启动', 'color: #667eea; font-size: 16px; font-weight: bold;');
-
-  const extractedConfig = {
-    cookie: document.cookie,
-    atToken: null,
-    fSid: null,
-    notebookId: null,
-    apiUrl: null,
-    sourceIds: []
-  };
-
-  const urlMatch = window.location.pathname.match(/\\/notebook\\/([a-f0-9-]+)/);
-  if (urlMatch) extractedConfig.notebookId = urlMatch[1];
-
-  const originalXHROpen = XMLHttpRequest.prototype.open;
-  const originalXHRSend = XMLHttpRequest.prototype.send;
-  const originalFetch = window.fetch;
-
-  function parseFReq(data) {
-    if (!data) return;
-    try {
-      const params = new URLSearchParams(data);
-      extractedConfig.atToken = params.get('at');
-      const fReqStr = params.get('f.req');
-      if (fReqStr) {
-        const outerArr = JSON.parse(fReqStr);
-        if (outerArr[1]) {
-          const innerArr = JSON.parse(outerArr[1]);
-          const sources = innerArr[0][0];
-          if (Array.isArray(sources)) {
-            extractedConfig.sourceIds = sources.map(s => s[0]?.[0]).filter(id => typeof id === 'string');
-            console.log('%c🎯 捕获到 ' + extractedConfig.sourceIds.length + ' 个文档源!', 'color: #ecc94b; font-weight: bold;');
-          }
-          const notebookUuid = innerArr[0][innerArr[0].length - 5];
-          if (typeof notebookUuid === 'string' && notebookUuid.includes('-')) {
-             console.log('%c📓 捕获到 Notebook 上下文!', 'color: #4299e1; font-weight: bold;');
-          }
-        }
-      }
-    } catch (e) {
-      console.warn('解析 f.req 失败', e);
-    }
-  }
-
-  XMLHttpRequest.prototype.open = function(method, url) {
-    this._method = method;
-    this._url = url;
-    return originalXHROpen.apply(this, arguments);
-  };
-
-  XMLHttpRequest.prototype.send = function(data) {
-    const url = this._url;
-    if (this._method === 'POST' && url && (url.includes('stream') || url.includes('generate') || url.includes('orchestration'))) {
-      console.log('%c✅ 捕获到API请求!', 'color: #48bb78; font-weight: bold;');
-      extractedConfig.apiUrl = url;
-      try {
-        const urlObj = new URL(url, window.location.origin);
-        extractedConfig.fSid = urlObj.searchParams.get('f.sid');
-        parseFReq(data);
-      } catch (e) {}
-      setTimeout(() => displayConfig(), 500);
-    }
-    return originalXHRSend.apply(this, arguments);
-  };
-
-  window.fetch = async function(...args) {
-    const [resource, config] = args;
-    const url = typeof resource === 'string' ? resource : resource.url;
-    if (config?.method === 'POST' && url && (url.includes('stream') || url.includes('generate') || url.includes('orchestration'))) {
-      console.log('%c✅ 捕获到API请求!', 'color: #48bb78; font-weight: bold;');
-      extractedConfig.apiUrl = url;
-      try {
-        const urlObj = new URL(url, window.location.origin);
-        extractedConfig.fSid = urlObj.searchParams.get('f.sid');
-        parseFReq(config.body);
-      } catch (e) {}
-      setTimeout(() => displayConfig(), 500);
-    }
-    return originalFetch.apply(this, args);
-  };
-
-  function displayConfig() {
-    console.clear();
-    console.log('%c═══════════════════════════════════════', 'color: #667eea; font-weight: bold;');
-    console.log('%c🎉 配置信息提取完成!', 'color: #48bb78; font-size: 18px; font-weight: bold;');
-    console.log('%c═══════════════════════════════════════', 'color: #667eea; font-weight: bold;');
-
-    const configJson = {
-      notebookId: extractedConfig.notebookId,
-      fSid: extractedConfig.fSid,
-      atToken: extractedConfig.atToken,
-      cookie: extractedConfig.cookie,
-      sourceIds: extractedConfig.sourceIds
-    };
-
-    console.log('');
-    console.log('%c📋 配置信息 (已自动复制):', 'color: #4299e1; font-size: 14px; font-weight: bold;');
-    console.log(JSON.stringify(configJson, null, 2));
-    console.log('');
-
-    navigator.clipboard.writeText(JSON.stringify(configJson, null, 2)).then(() => {
-      console.log('%c✅ 已复制到剪贴板!', 'color: #48bb78; font-weight: bold;');
-    });
-
-    window.NOTEBOOKLM_CONFIG = configJson;
-  }
-
-  console.log('%c⏳ 等待捕获API请求... 请在NotebookLM中发送一条消息', 'color: #4299e1;');
-})();`;
-
-        navigator.clipboard.writeText(script).then(() => {
-            setToasts(prev => [...prev, t('settings:ai.scriptCopied')]);
-        }).catch(err => {
-            setToasts(prev => [...prev, t('common:message.copyFailed', { error: err })]);
-        });
-    };
-
     return (
         <div className="flex-1 p-6 overflow-auto">
             <div className="max-w-3xl mx-auto w-full">
@@ -307,6 +191,14 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
                 </header>
 
                 <div className="space-y-6 pb-12">
+
+                    {/* ====== 本地配置 (Local Settings) ====== */}
+                    <div className="flex items-center gap-3 mt-2">
+                        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+                        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em]">{t('settings:sections.local')}</span>
+                        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+                    </div>
+
                     {/* Language Settings */}
                     <section className="bg-white/5 rounded-xl border border-white/10 p-6">
                         <h3 className="text-sm font-bold text-slate-300 uppercase tracking-wider mb-6 flex items-center gap-2">
@@ -423,6 +315,102 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
                         </div>
                     </section>
 
+                    {/* AI Engine Settings (Simplified) */}
+                    <section className="bg-white/5 rounded-xl border border-white/10 p-6">
+                        <h3 className="text-sm font-bold text-slate-300 uppercase tracking-wider mb-6 flex items-center gap-2">
+                            <span className="w-1 h-4 bg-purple-500 rounded-full"></span>
+                            {t('settings:ai.title')}
+                        </h3>
+
+                        <div className="space-y-5">
+                            <div className="space-y-4">
+                                <div>
+                                    <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">{t('settings:ai.notebookUrl')}</label>
+                                    <input
+                                        type="text"
+                                        value={notebookLMConfig.notebookUrl || ''}
+                                        onChange={(e) => {
+                                            const url = e.target.value;
+                                            const updates: Partial<NotebookLMConfig> = { notebookUrl: url };
+                                            const match = url.match(/\/notebook\/([a-f0-9-]+)/);
+                                            if (match) {
+                                                updates.notebookId = match[1];
+                                            }
+                                            setNotebookLMConfig((prev: NotebookLMConfig) => ({ ...prev, ...updates }));
+                                        }}
+                                        className="w-full px-4 py-2.5 bg-slate-800/50 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-purple-500/50"
+                                        placeholder={t('settings:ai.notebookUrlPlaceholder')}
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">{t('settings:ai.notebookId')}</label>
+                                    <input
+                                        type="text"
+                                        value={notebookLMConfig.notebookId}
+                                        onChange={(e) => setNotebookLMConfig((prev: NotebookLMConfig) => ({ ...prev, notebookId: e.target.value }))}
+                                        className="w-full px-4 py-2.5 bg-slate-800/50 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-purple-500/50"
+                                    />
+                                </div>
+                            </div>
+
+                            <div>
+                                <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">{t('settings:ai.promptTemplate')}</label>
+                                <textarea
+                                    value={notebookLMConfig.prompt}
+                                    onChange={(e) => setNotebookLMConfig((prev: NotebookLMConfig) => ({ ...prev, prompt: e.target.value }))}
+                                    className="w-full px-4 py-3 bg-slate-800/50 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-purple-500/50"
+                                    placeholder={t('settings:ai.promptPlaceholder')}
+                                    rows={3}
+                                />
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* NotebookLM Selectors */}
+                    <section className="bg-white/5 rounded-xl border border-white/10 p-6">
+                        <h3 className="text-sm font-bold text-slate-300 uppercase tracking-wider mb-2 flex items-center gap-2">
+                            <span className="w-1 h-4 bg-teal-500 rounded-full"></span>
+                            {t('settings:selectors.title')}
+                        </h3>
+                        <p className="text-[10px] text-slate-500 mb-5">{t('settings:selectors.description')}</p>
+
+                        {selectors && (
+                            <pre className="w-full p-4 bg-slate-900/60 border border-white/5 rounded-lg text-[11px] text-slate-400 font-mono overflow-auto max-h-64 mb-5 select-all">
+                                {JSON.stringify(selectors, null, 2)}
+                            </pre>
+                        )}
+
+                        <div className="flex gap-3">
+                            <button
+                                onClick={handleResetSelectors}
+                                disabled={selectorsLoading}
+                                className="px-4 py-2 bg-teal-600/80 hover:bg-teal-500 disabled:opacity-50 text-white text-xs font-bold rounded-lg transition-all"
+                            >
+                                {t('settings:selectors.resetToDefault')}
+                            </button>
+                            <button
+                                onClick={() => fileInputRef.current?.click()}
+                                className="px-4 py-2 bg-slate-700/50 hover:bg-slate-600/50 text-slate-300 hover:text-white text-xs font-bold rounded-lg transition-all border border-white/10"
+                            >
+                                {t('settings:selectors.uploadConfig')}
+                            </button>
+                            <input
+                                ref={fileInputRef}
+                                type="file"
+                                accept=".json"
+                                className="hidden"
+                                onChange={handleUploadSelectors}
+                            />
+                        </div>
+                    </section>
+
+                    {/* ====== 云端配置 (Cloud Settings) ====== */}
+                    <div className="flex items-center gap-3 mt-2">
+                        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+                        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em]">{t('settings:sections.cloud')}</span>
+                        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+                    </div>
+
                     {/* MQ Queue Names (Server-managed) */}
                     <section className="bg-white/5 rounded-xl border border-white/10 p-6">
                         <h3 className="text-sm font-bold text-slate-300 uppercase tracking-wider mb-6 flex items-center gap-2">
@@ -509,184 +497,6 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
                         </div>
                     </section>
 
-                    {/* AI Engine Settings */}
-                    <section className="bg-white/5 rounded-xl border border-white/10 p-6">
-                        <div className="flex items-center justify-between mb-6">
-                            <h3 className="text-sm font-bold text-slate-300 uppercase tracking-wider flex items-center gap-2">
-                                <span className="w-1 h-4 bg-purple-500 rounded-full"></span>
-                                {t('settings:ai.title')}
-                            </h3>
-                            <button
-                                onClick={copyExtractScript}
-                                className="px-3 py-1.5 bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/20 rounded-lg text-purple-400 text-xs font-medium transition-all flex items-center gap-2"
-                            >
-                                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
-                                {t('settings:ai.scriptHelper')}
-                            </button>
-                        </div>
-
-                        <div className="space-y-5">
-                            <div className="p-4 bg-purple-500/5 border border-purple-500/10 rounded-lg">
-                                <p className="text-[11px] text-purple-200/80 mb-2 flex items-center gap-1.5">
-                                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                                    {t('settings:ai.quickImportHint')}
-                                </p>
-                                <textarea
-                                    className="w-full px-3 py-2 bg-slate-900/50 border border-white/5 rounded text-[10px] text-slate-400 font-mono focus:outline-none focus:border-purple-500/50"
-                                    placeholder={t('settings:ai.importPlaceholder')}
-                                    rows={1}
-                                    onChange={(e) => {
-                                        try {
-                                            const config = JSON.parse(e.target.value);
-                                            if (config.notebookId || config.atToken) {
-                                                setNotebookLMConfig(prev => ({ ...prev, ...config }));
-                                                e.target.value = '';
-                                                setToasts(prev => [...prev, t('settings:ai.importSuccess')]);
-                                            }
-                                        } catch (err) { }
-                                    }}
-                                />
-                            </div>
-
-                            <div className="space-y-4">
-                                <div>
-                                    <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">{t('settings:ai.notebookUrl')}</label>
-                                    <input
-                                        type="text"
-                                        value={notebookLMConfig.notebookUrl || ''}
-                                        onChange={(e) => {
-                                            const url = e.target.value;
-                                            const updates: Partial<NotebookLMConfig> = { notebookUrl: url };
-                                            const match = url.match(/\/notebook\/([a-f0-9-]+)/);
-                                            if (match) {
-                                                updates.notebookId = match[1];
-                                            }
-                                            setNotebookLMConfig((prev: NotebookLMConfig) => ({ ...prev, ...updates }));
-                                        }}
-                                        className="w-full px-4 py-2.5 bg-slate-800/50 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-purple-500/50"
-                                        placeholder={t('settings:ai.notebookUrlPlaceholder')}
-                                    />
-                                </div>
-                                <div className="grid grid-cols-2 gap-4">
-                                    <div>
-                                        <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">{t('settings:ai.notebookId')}</label>
-                                        <input
-                                            type="text"
-                                            value={notebookLMConfig.notebookId}
-                                            onChange={(e) => setNotebookLMConfig((prev: NotebookLMConfig) => ({ ...prev, notebookId: e.target.value }))}
-                                            className="w-full px-4 py-2.5 bg-slate-800/50 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-purple-500/50"
-                                        />
-                                    </div>
-                                    <div>
-                                        <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">{t('settings:ai.fSid')}</label>
-                                        <input
-                                            type="text"
-                                            value={notebookLMConfig.fSid}
-                                            onChange={(e) => setNotebookLMConfig((prev: NotebookLMConfig) => ({ ...prev, fSid: e.target.value }))}
-                                            className="w-full px-4 py-2.5 bg-slate-800/50 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-purple-500/50"
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div>
-                                <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">{t('settings:ai.atToken')}</label>
-                                <input
-                                    type="password"
-                                    value={notebookLMConfig.atToken}
-                                    onChange={(e) => setNotebookLMConfig((prev: NotebookLMConfig) => ({ ...prev, atToken: e.target.value }))}
-                                    className="w-full px-4 py-2.5 bg-slate-800/50 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-purple-500/50"
-                                />
-                            </div>
-
-                            <div>
-                                <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">{t('settings:ai.cookie')}</label>
-                                <textarea
-                                    value={notebookLMConfig.cookie}
-                                    onChange={(e) => setNotebookLMConfig((prev: NotebookLMConfig) => ({ ...prev, cookie: e.target.value }))}
-                                    className="w-full px-4 py-2.5 bg-slate-800/50 border border-white/10 rounded-lg text-white text-xs focus:outline-none focus:ring-2 focus:ring-purple-500/50 font-mono"
-                                    rows={3}
-                                />
-                            </div>
-
-                            <div>
-                                <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">{t('settings:ai.sourceIds')}</label>
-                                <textarea
-                                    value={notebookLMConfig.sourceIds?.join('\n') || ''}
-                                    onChange={(e) => {
-                                        const ids = e.target.value.split('\n').map(s => s.trim()).filter(Boolean);
-                                        setNotebookLMConfig((prev: NotebookLMConfig) => ({ ...prev, sourceIds: ids }));
-                                    }}
-                                    className="w-full px-4 py-2.5 bg-slate-800/50 border border-white/10 rounded-lg text-white text-[11px] focus:outline-none focus:ring-2 focus:ring-purple-500/50 font-mono"
-                                    placeholder={t('settings:ai.sourceIdsPlaceholder')}
-                                    rows={2}
-                                />
-                            </div>
-
-                            <div>
-                                <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">{t('settings:ai.promptTemplate')}</label>
-                                <textarea
-                                    value={notebookLMConfig.prompt}
-                                    onChange={(e) => setNotebookLMConfig((prev: NotebookLMConfig) => ({ ...prev, prompt: e.target.value }))}
-                                    className="w-full px-4 py-3 bg-slate-800/50 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-purple-500/50"
-                                    placeholder={t('settings:ai.promptPlaceholder')}
-                                    rows={3}
-                                />
-                            </div>
-
-                            {/* Config Status Indicator */}
-                            {notebookLMConfig.cookie && notebookLMConfig.atToken && notebookLMConfig.fSid ? (
-                                <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-3 flex items-center gap-3">
-                                    <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-                                    <span className="text-green-400 text-xs font-medium">{t('settings:ai.configComplete')}</span>
-                                </div>
-                            ) : (
-                                <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-3 flex items-center gap-3">
-                                    <div className="w-2 h-2 rounded-full bg-yellow-500"></div>
-                                    <span className="text-yellow-400 text-xs font-medium">{t('settings:ai.configIncomplete')}</span>
-                                </div>
-                            )}
-                        </div>
-                    </section>
-
-                    {/* NotebookLM Selectors */}
-                    <section className="bg-white/5 rounded-xl border border-white/10 p-6">
-                        <h3 className="text-sm font-bold text-slate-300 uppercase tracking-wider mb-2 flex items-center gap-2">
-                            <span className="w-1 h-4 bg-teal-500 rounded-full"></span>
-                            {t('settings:selectors.title')}
-                        </h3>
-                        <p className="text-[10px] text-slate-500 mb-5">{t('settings:selectors.description')}</p>
-
-                        {selectors && (
-                            <pre className="w-full p-4 bg-slate-900/60 border border-white/5 rounded-lg text-[11px] text-slate-400 font-mono overflow-auto max-h-64 mb-5 select-all">
-                                {JSON.stringify(selectors, null, 2)}
-                            </pre>
-                        )}
-
-                        <div className="flex gap-3">
-                            <button
-                                onClick={handleResetSelectors}
-                                disabled={selectorsLoading}
-                                className="px-4 py-2 bg-teal-600/80 hover:bg-teal-500 disabled:opacity-50 text-white text-xs font-bold rounded-lg transition-all"
-                            >
-                                {t('settings:selectors.resetToDefault')}
-                            </button>
-                            <button
-                                onClick={() => fileInputRef.current?.click()}
-                                className="px-4 py-2 bg-slate-700/50 hover:bg-slate-600/50 text-slate-300 hover:text-white text-xs font-bold rounded-lg transition-all border border-white/10"
-                            >
-                                {t('settings:selectors.uploadConfig')}
-                            </button>
-                            <input
-                                ref={fileInputRef}
-                                type="file"
-                                accept=".json"
-                                className="hidden"
-                                onChange={handleUploadSelectors}
-                            />
-                        </div>
-                    </section>
-
                     {/* WeChat Work Integration */}
                     {configLoaded && (
                         <section className="bg-white/5 rounded-xl border border-white/10 p-6">
@@ -744,91 +554,185 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
                         </section>
                     )}
 
-                    {/* Queue Management (Admin Only) */}
+                    {/* ====== 管理操作 (Admin Operations) ====== */}
                     {isAdmin && (
-                        <section className="bg-white/5 rounded-xl border border-red-500/20 p-6">
-                            <h3 className="text-sm font-bold text-slate-300 uppercase tracking-wider mb-6 flex items-center gap-2">
-                                <span className="w-1 h-4 bg-red-500 rounded-full"></span>
-                                队列管理
-                            </h3>
-                            <div className="space-y-4">
-                                <div className="p-4 bg-red-500/5 border border-red-500/10 rounded-lg">
-                                    <p className="text-xs text-red-200/80 mb-1">清空所有 MQ 队列中的待处理消息，并将处理中的工单状态回退。</p>
-                                    <p className="text-[10px] text-slate-500">此操作不可撤销，请谨慎使用。</p>
-                                </div>
-                                <button
-                                    onClick={() => { setShowPurgeDialog(true); setPurgePassword(''); setPurgeResult(null); }}
-                                    className="px-5 py-2 bg-red-600/80 hover:bg-red-500 text-white text-xs font-bold rounded-lg transition-all"
-                                >
-                                    重置所有队列
-                                </button>
+                        <>
+                            <div className="flex items-center gap-3 mt-2">
+                                <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+                                <span className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em]">{t('settings:sections.admin')}</span>
+                                <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
                             </div>
 
-                            {/* Purge Confirmation Dialog */}
-                            {showPurgeDialog && (
-                                <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50">
-                                    <div className="bg-slate-900 border border-white/10 rounded-2xl p-6 w-full max-w-md shadow-2xl">
-                                        <h4 className="text-lg font-bold text-white mb-4">确认重置队列</h4>
-                                        <div className="space-y-4">
-                                            <div className="p-3 bg-red-500/10 border border-red-500/20 rounded-lg">
-                                                <p className="text-xs text-red-300 leading-relaxed">
-                                                    此操作将：
-                                                </p>
-                                                <ul className="text-xs text-red-300/80 mt-2 space-y-1 list-disc list-inside">
-                                                    <li>清空翻译 / 回复 / 审核 / 死信队列中的所有消息</li>
-                                                    <li>回退处理中的工单状态至待处理</li>
-                                                </ul>
-                                            </div>
-                                            <div>
-                                                <label className="block text-xs font-medium text-slate-400 mb-2">超级密码</label>
-                                                <input
-                                                    type="password"
-                                                    value={purgePassword}
-                                                    onChange={(e) => setPurgePassword(e.target.value)}
-                                                    className="w-full px-4 py-2.5 bg-slate-800/50 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-red-500/50"
-                                                    placeholder="请输入超级密码"
-                                                    autoFocus
-                                                />
-                                            </div>
-                                            {purgeResult && (
-                                                <div className="p-3 bg-green-500/10 border border-green-500/20 rounded-lg">
-                                                    <p className="text-xs text-green-300">
-                                                        清空了 <span className="font-bold">{purgeResult.purgedMessages}</span> 条消息，回退了 <span className="font-bold">{purgeResult.resetTickets}</span> 个工单
+                            {/* Queue Management */}
+                            <section className="bg-white/5 rounded-xl border border-red-500/20 p-6">
+                                <h3 className="text-sm font-bold text-slate-300 uppercase tracking-wider mb-6 flex items-center gap-2">
+                                    <span className="w-1 h-4 bg-red-500 rounded-full"></span>
+                                    队列管理
+                                </h3>
+                                <div className="space-y-4">
+                                    <div className="p-4 bg-red-500/5 border border-red-500/10 rounded-lg">
+                                        <p className="text-xs text-red-200/80 mb-1">清空所有 MQ 队列中的待处理消息，并将处理中的工单状态回退。</p>
+                                        <p className="text-[10px] text-slate-500">此操作不可撤销，请谨慎使用。</p>
+                                    </div>
+                                    <button
+                                        onClick={() => { setShowPurgeDialog(true); setPurgePassword(''); setPurgeResult(null); }}
+                                        className="px-5 py-2 bg-red-600/80 hover:bg-red-500 text-white text-xs font-bold rounded-lg transition-all"
+                                    >
+                                        重置所有队列
+                                    </button>
+                                </div>
+
+                                {/* Purge Confirmation Dialog */}
+                                {showPurgeDialog && (
+                                    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50">
+                                        <div className="bg-slate-900 border border-white/10 rounded-2xl p-6 w-full max-w-md shadow-2xl">
+                                            <h4 className="text-lg font-bold text-white mb-4">确认重置队列</h4>
+                                            <div className="space-y-4">
+                                                <div className="p-3 bg-red-500/10 border border-red-500/20 rounded-lg">
+                                                    <p className="text-xs text-red-300 leading-relaxed">
+                                                        此操作将：
                                                     </p>
+                                                    <ul className="text-xs text-red-300/80 mt-2 space-y-1 list-disc list-inside">
+                                                        <li>清空翻译 / 回复 / 审核 / 死信队列中的所有消息</li>
+                                                        <li>回退处理中的工单状态至待处理</li>
+                                                    </ul>
                                                 </div>
-                                            )}
-                                            <div className="flex gap-3 justify-end pt-2">
-                                                <button
-                                                    onClick={() => setShowPurgeDialog(false)}
-                                                    className="px-5 py-2 bg-slate-700/50 hover:bg-slate-600/50 text-slate-300 text-xs font-bold rounded-lg transition-all border border-white/10"
-                                                >
-                                                    取消
-                                                </button>
-                                                <button
-                                                    onClick={async () => {
-                                                        if (!purgePassword) return;
-                                                        setPurgeLoading(true);
-                                                        try {
-                                                            const result = await adminApi.purgeQueues(purgePassword);
-                                                            setPurgeResult(result);
-                                                            setToasts(prev => [...prev, `队列重置成功：清空 ${result.purgedMessages} 条消息，回退 ${result.resetTickets} 个工单`]);
-                                                        } catch (err) {
-                                                            setToasts(prev => [...prev, `队列重置失败：${(err as Error).message}`]);
-                                                        } finally {
-                                                            setPurgeLoading(false);
-                                                        }
-                                                    }}
-                                                    disabled={purgeLoading || !purgePassword}
-                                                    className="px-5 py-2 bg-red-600 hover:bg-red-500 disabled:opacity-50 text-white text-xs font-bold rounded-lg transition-all"
-                                                >
-                                                    {purgeLoading ? '处理中...' : '确认重置'}
-                                                </button>
+                                                <div>
+                                                    <label className="block text-xs font-medium text-slate-400 mb-2">超级密码</label>
+                                                    <input
+                                                        type="password"
+                                                        value={purgePassword}
+                                                        onChange={(e) => setPurgePassword(e.target.value)}
+                                                        className="w-full px-4 py-2.5 bg-slate-800/50 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-red-500/50"
+                                                        placeholder="请输入超级密码"
+                                                        autoFocus
+                                                    />
+                                                </div>
+                                                {purgeResult && (
+                                                    <div className="p-3 bg-green-500/10 border border-green-500/20 rounded-lg">
+                                                        <p className="text-xs text-green-300">
+                                                            清空了 <span className="font-bold">{purgeResult.purgedMessages}</span> 条消息，回退了 <span className="font-bold">{purgeResult.resetTickets}</span> 个工单
+                                                        </p>
+                                                    </div>
+                                                )}
+                                                <div className="flex gap-3 justify-end pt-2">
+                                                    <button
+                                                        onClick={() => setShowPurgeDialog(false)}
+                                                        className="px-5 py-2 bg-slate-700/50 hover:bg-slate-600/50 text-slate-300 text-xs font-bold rounded-lg transition-all border border-white/10"
+                                                    >
+                                                        取消
+                                                    </button>
+                                                    <button
+                                                        onClick={async () => {
+                                                            if (!purgePassword) return;
+                                                            setPurgeLoading(true);
+                                                            try {
+                                                                const result = await adminApi.purgeQueues(purgePassword);
+                                                                setPurgeResult(result);
+                                                                setToasts(prev => [...prev, `队列重置成功：清空 ${result.purgedMessages} 条消息，回退 ${result.resetTickets} 个工单`]);
+                                                            } catch (err) {
+                                                                setToasts(prev => [...prev, `队列重置失败：${(err as Error).message}`]);
+                                                            } finally {
+                                                                setPurgeLoading(false);
+                                                            }
+                                                        }}
+                                                        disabled={purgeLoading || !purgePassword}
+                                                        className="px-5 py-2 bg-red-600 hover:bg-red-500 disabled:opacity-50 text-white text-xs font-bold rounded-lg transition-all"
+                                                    >
+                                                        {purgeLoading ? '处理中...' : '确认重置'}
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+                                )}
+                            </section>
+
+                            {/* Data Cleanup */}
+                            <section className="bg-white/5 rounded-xl border border-red-500/20 p-6">
+                                <h3 className="text-sm font-bold text-slate-300 uppercase tracking-wider mb-6 flex items-center gap-2">
+                                    <span className="w-1 h-4 bg-red-500 rounded-full"></span>
+                                    {t('settings:purgeAll.title')}
+                                </h3>
+                                <div className="space-y-4">
+                                    <div className="p-4 bg-red-500/5 border border-red-500/10 rounded-lg">
+                                        <p className="text-xs text-red-200/80 mb-1">{t('settings:purgeAll.description')}</p>
+                                        <p className="text-[10px] text-slate-500">{t('settings:purgeAll.warning')}</p>
+                                    </div>
+                                    <button
+                                        onClick={() => { setShowPurgeAllDialog(true); setPurgeAllPassword(''); setPurgeAllResult(null); }}
+                                        className="px-5 py-2 bg-red-600/80 hover:bg-red-500 text-white text-xs font-bold rounded-lg transition-all"
+                                    >
+                                        {t('settings:purgeAll.button')}
+                                    </button>
                                 </div>
-                            )}
-                        </section>
+
+                                {/* Purge All Confirmation Dialog */}
+                                {showPurgeAllDialog && (
+                                    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50">
+                                        <div className="bg-slate-900 border border-white/10 rounded-2xl p-6 w-full max-w-md shadow-2xl">
+                                            <h4 className="text-lg font-bold text-white mb-4">{t('settings:purgeAll.confirmTitle')}</h4>
+                                            <div className="space-y-4">
+                                                <div className="p-3 bg-red-500/10 border border-red-500/20 rounded-lg">
+                                                    <p className="text-xs text-red-300 leading-relaxed">{t('settings:purgeAll.confirmWarning')}</p>
+                                                    <ul className="text-xs text-red-300/80 mt-2 space-y-1 list-disc list-inside">
+                                                        <li>{t('settings:purgeAll.confirmItems.tickets')}</li>
+                                                        <li>{t('settings:purgeAll.confirmItems.translations')}</li>
+                                                        <li>{t('settings:purgeAll.confirmItems.replies')}</li>
+                                                        <li>{t('settings:purgeAll.confirmItems.audits')}</li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <label className="block text-xs font-medium text-slate-400 mb-2">{t('settings:purgeAll.superPassword')}</label>
+                                                    <input
+                                                        type="password"
+                                                        value={purgeAllPassword}
+                                                        onChange={(e) => setPurgeAllPassword(e.target.value)}
+                                                        className="w-full px-4 py-2.5 bg-slate-800/50 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-red-500/50"
+                                                        placeholder={t('settings:purgeAll.passwordPlaceholder')}
+                                                        autoFocus
+                                                    />
+                                                </div>
+                                                {purgeAllResult && (
+                                                    <div className="p-3 bg-green-500/10 border border-green-500/20 rounded-lg">
+                                                        <p className="text-xs text-green-300">
+                                                            {t('settings:purgeAll.success', { count: purgeAllResult.deletedTickets })}
+                                                        </p>
+                                                    </div>
+                                                )}
+                                                <div className="flex gap-3 justify-end pt-2">
+                                                    <button
+                                                        onClick={() => setShowPurgeAllDialog(false)}
+                                                        className="px-5 py-2 bg-slate-700/50 hover:bg-slate-600/50 text-slate-300 text-xs font-bold rounded-lg transition-all border border-white/10"
+                                                    >
+                                                        {t('common:button.cancel')}
+                                                    </button>
+                                                    <button
+                                                        onClick={async () => {
+                                                            if (!purgeAllPassword) return;
+                                                            setPurgeAllLoading(true);
+                                                            try {
+                                                                const result = await adminApi.purgeAllTickets(purgeAllPassword);
+                                                                setPurgeAllResult(result);
+                                                                setToasts(prev => [...prev, t('settings:purgeAll.success', { count: result.deletedTickets })]);
+                                                            } catch (err) {
+                                                                setToasts(prev => [...prev, t('settings:purgeAll.failed', { error: (err as Error).message })]);
+                                                            } finally {
+                                                                setPurgeAllLoading(false);
+                                                            }
+                                                        }}
+                                                        disabled={purgeAllLoading || !purgeAllPassword}
+                                                        className="px-5 py-2 bg-red-600 hover:bg-red-500 disabled:opacity-50 text-white text-xs font-bold rounded-lg transition-all"
+                                                    >
+                                                        {purgeAllLoading ? t('settings:purgeAll.processing') : t('settings:purgeAll.confirm')}
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
+                            </section>
+                        </>
                     )}
                 </div>
 

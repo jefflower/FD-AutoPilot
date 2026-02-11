@@ -11,11 +11,7 @@ export interface Settings {
 }
 
 export interface NotebookLMConfig {
-  cookie: string;
-  atToken: string;
-  fSid: string;
   notebookId: string;
   notebookUrl?: string;
   prompt: string;
-  sourceIds?: string[];
 }

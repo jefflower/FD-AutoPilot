@@ -1,14 +1,19 @@
 {
   "title": "Settings",
   "subtitle": "Configure your connection and AI preferences",
+  "sections": {
+    "local": "Local Settings",
+    "cloud": "Cloud Settings",
+    "admin": "Admin Operations"
+  },
   "language": {
     "title": "Language"
   },
   "connection": {
     "title": "Connection Settings",
     "serverUrl": "Server URL",
-    "serverUrlPlaceholder": "http://localhost:9988",
-    "serverUrlHint": "FD-Server base URL (default: http://localhost:9988)",
+    "serverUrlPlaceholder": "http://47.110.152.25:9988",
+    "serverUrlHint": "FD-Server base URL (default: http://47.110.152.25:9988)",
     "translationLang": "Translation Target Language (MQ/Manual)",
     "translationLangHint": "Defines the default language for MQ and manual translations",
     "langOptionCn": "简体中文 (Simplified Chinese)",
@@ -24,23 +29,11 @@
   },
   "ai": {
     "title": "AI Engine (NotebookLM)",
-    "scriptHelper": "Script Helper",
-    "quickImportHint": "Quick import: Run the script on NotebookLM page and paste JSON here",
-    "importPlaceholder": "Paste JSON configuration here...",
     "notebookUrl": "Notebook URL",
     "notebookUrlPlaceholder": "https://notebooklm.google.com/notebook/...",
     "notebookId": "Notebook ID",
-    "fSid": "F.SID",
-    "atToken": "AT Token",
-    "cookie": "Cookie",
-    "sourceIds": "Source IDs (Linked Documents)",
-    "sourceIdsPlaceholder": "Enter Source UUIDs (one per line)",
     "promptTemplate": "AI Prompt Template",
-    "promptPlaceholder": "Template for AI response generation...",
-    "configComplete": "NotebookLM Configuration Complete",
-    "configIncomplete": "Please complete NotebookLM configuration",
-    "scriptCopied": "NotebookLM extraction script copied to clipboard!",
-    "importSuccess": "AI configuration imported successfully"
+    "promptPlaceholder": "Template for AI response generation..."
   },
   "selectors": {
     "title": "NotebookLM Selectors",
@@ -67,6 +60,26 @@
     "testSuccess": "WeChat Work test message sent successfully",
     "testFailed": "WeChat Work test message failed to send",
     "testError": "Test failed: {{error}}"
+  },
+  "purgeAll": {
+    "title": "Data Cleanup",
+    "description": "Remove all tickets and associated data (translations, replies, audit records) from database.",
+    "warning": "Database will be reset to a clean state. This action cannot be undone.",
+    "button": "Purge All Ticket Data",
+    "confirmTitle": "Confirm Purge All Ticket Data",
+    "confirmWarning": "This will permanently delete:",
+    "confirmItems": {
+      "tickets": "All ticket records",
+      "translations": "All translation records",
+      "replies": "All AI reply records",
+      "audits": "All audit records"
+    },
+    "superPassword": "Super Password",
+    "passwordPlaceholder": "Enter super password",
+    "processing": "Processing...",
+    "confirm": "Confirm Purge",
+    "success": "Purged {{count}} tickets and all associated data",
+    "failed": "Data cleanup failed: {{error}}"
   },
   "footer": {
     "savedToLocal": "Settings saved to local vault"

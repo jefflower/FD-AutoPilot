@@ -275,4 +275,20 @@ public class TicketService {
         log.info("[TicketService] 队列重置：回退了 {} 个处理中的工单", count);
         return count;
     }
+
+    /**
+     * 清除所有工单及关联数据（翻译、回复、审核），重置为全新数据库
+     * @return 删除的工单总数
+     */
+    @Transactional
+    public long purgeAllTickets() {
+        long ticketCount = ticketRepository.count();
+        // 先删除子表（外键依赖），再删除主表
+        auditRepository.deleteAll();
+        replyRepository.deleteAll();
+        translationRepository.deleteAll();
+        ticketRepository.deleteAll();
+        log.info("[TicketService] 数据清理完成：删除了 {} 个工单及所有关联数据", ticketCount);
+        return ticketCount;
+    }
 }

@@ -1,14 +1,19 @@
 {
   "title": "设置",
   "subtitle": "配置连接和 AI 偏好设置",
+  "sections": {
+    "local": "本地配置",
+    "cloud": "云端配置",
+    "admin": "管理操作"
+  },
   "language": {
     "title": "语言设置"
   },
   "connection": {
     "title": "连接设置",
     "serverUrl": "服务器地址",
-    "serverUrlPlaceholder": "http://localhost:9988",
-    "serverUrlHint": "FD-Server 基础地址 (默认: http://localhost:9988)",
+    "serverUrlPlaceholder": "http://47.110.152.25:9988",
+    "serverUrlHint": "FD-Server 基础地址 (默认: http://47.110.152.25:9988)",
     "translationLang": "翻译目标语言 (MQ/手动)",
     "translationLangHint": "定义 MQ 和手动翻译的默认语言",
     "langOptionCn": "简体中文 (Simplified Chinese)",
@@ -24,23 +29,11 @@
   },
   "ai": {
     "title": "AI 引擎 (NotebookLM)",
-    "scriptHelper": "脚本助手",
-    "quickImportHint": "快速导入：在 NotebookLM 页面运行脚本后直接在此粘贴 JSON",
-    "importPlaceholder": "在此粘贴 JSON 配置...",
     "notebookUrl": "Notebook URL",
     "notebookUrlPlaceholder": "https://notebooklm.google.com/notebook/...",
     "notebookId": "Notebook ID",
-    "fSid": "F.SID",
-    "atToken": "AT Token",
-    "cookie": "Cookie",
-    "sourceIds": "Source IDs (关联文档)",
-    "sourceIdsPlaceholder": "输入 Source UUID（每行一个）",
     "promptTemplate": "AI Prompt 模板",
-    "promptPlaceholder": "AI 回复生成模板...",
-    "configComplete": "NotebookLM 配置已完成",
-    "configIncomplete": "请完成 NotebookLM 配置",
-    "scriptCopied": "NotebookLM自动提取脚本已复制到剪贴板!",
-    "importSuccess": "已成功导入 AI 配置"
+    "promptPlaceholder": "AI 回复生成模板..."
   },
   "selectors": {
     "title": "NotebookLM 选择器",
@@ -67,6 +60,26 @@
     "testSuccess": "企业微信测试消息发送成功",
     "testFailed": "企业微信测试消息发送失败",
     "testError": "测试失败: {{error}}"
+  },
+  "purgeAll": {
+    "title": "数据清理",
+    "description": "清除数据库中所有工单及其关联数据（翻译、回复、审核记录）。",
+    "warning": "执行后数据库将恢复为全新状态，此操作不可撤销。",
+    "button": "清除所有工单数据",
+    "confirmTitle": "确认清除所有工单数据",
+    "confirmWarning": "此操作将永久删除：",
+    "confirmItems": {
+      "tickets": "所有工单记录",
+      "translations": "所有翻译记录",
+      "replies": "所有 AI 回复记录",
+      "audits": "所有审核记录"
+    },
+    "superPassword": "超级密码",
+    "passwordPlaceholder": "请输入超级密码",
+    "processing": "处理中...",
+    "confirm": "确认清除",
+    "success": "已清除 {{count}} 个工单及所有关联数据",
+    "failed": "数据清理失败：{{error}}"
   },
   "footer": {
     "savedToLocal": "设置已保存到本地"

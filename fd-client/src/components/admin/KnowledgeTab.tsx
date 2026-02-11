@@ -7,6 +7,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ticketApi, adminApi, downloadWithAuth } from '../../services/serverApi';
 import type { ServerTicket, TicketStatus, KnowledgeNote, KnowledgeNoteRequest } from '../../types/server';
+import ServerTicketDetail from '../server/ServerTicketDetail';
 
 // ============ 常量 ============
 
@@ -77,7 +78,7 @@ const TicketValidityPanel: React.FC = () => {
 
     const [tickets, setTickets] = useState<ServerTicket[]>([]);
     const [loading, setLoading] = useState(true);
-    const [statusFilter, setStatusFilter] = useState<TicketStatus | ''>('');
+    const [statusFilter, setStatusFilter] = useState<TicketStatus | ''>('COMPLETED');
     const [validFilter, setValidFilter] = useState<string>('all');
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedIds, setSelectedIds] = useState<Set<number>>(new Set());
@@ -85,6 +86,10 @@ const TicketValidityPanel: React.FC = () => {
     const [totalPages, setTotalPages] = useState(0);
     const [totalElements, setTotalElements] = useState(0);
     const [batchLoading, setBatchLoading] = useState(false);
+    const [selectedTicketId, setSelectedTicketId] = useState<number | null>(null);
+    const [selectedTicket, setSelectedTicket] = useState<ServerTicket | null>(null);
+    const [detailLoading, setDetailLoading] = useState(false);
+    const [isSplitMode, setIsSplitMode] = useState(() => localStorage.getItem('knowledge_split_mode') === 'true');
 
     const PAGE_SIZE = 30;
 
@@ -117,6 +122,22 @@ const TicketValidityPanel: React.FC = () => {
         setPage(0);
         setSelectedIds(new Set());
     }, [statusFilter, validFilter, searchQuery]);
+
+    // 加载选中工单的详情
+    useEffect(() => {
+        if (!selectedTicketId) {
+            setSelectedTicket(null);
+            return;
+        }
+        setDetailLoading(true);
+        ticketApi.getTicketById(selectedTicketId)
+            .then(ticket => setSelectedTicket(ticket))
+            .catch(err => {
+                console.error('加载工单详情失败:', err);
+                setSelectedTicket(null);
+            })
+            .finally(() => setDetailLoading(false));
+    }, [selectedTicketId]);
 
     const handleToggleValid = async (ticketId: number, currentValue: boolean) => {
         // 乐观更新
@@ -257,106 +278,141 @@ const TicketValidityPanel: React.FC = () => {
                 </div>
             </div>
 
-            {/* 表格 */}
-            <div className="flex-1 overflow-auto">
-                <table className="w-full">
-                    <thead className="sticky top-0 bg-slate-900/90 backdrop-blur-sm z-10">
-                        <tr className="border-b border-white/10">
-                            <th className="px-3 py-2.5 w-10">
-                                <input
-                                    type="checkbox"
-                                    checked={tickets.length > 0 && selectedIds.size === tickets.length}
-                                    onChange={toggleSelectAll}
-                                    className="w-3.5 h-3.5 rounded border-white/20 bg-transparent accent-amber-500 cursor-pointer"
-                                />
-                            </th>
-                            <th className="px-3 py-2.5 text-left text-[10px] font-medium text-slate-400 uppercase tracking-wider w-24">{t('knowledge.tickets.ticketId')}</th>
-                            <th className="px-3 py-2.5 text-left text-[10px] font-medium text-slate-400 uppercase tracking-wider">{t('knowledge.tickets.subject')}</th>
-                            <th className="px-3 py-2.5 text-center text-[10px] font-medium text-slate-400 uppercase tracking-wider w-20">{t('common:label.status')}</th>
-                            <th className="px-3 py-2.5 text-center text-[10px] font-medium text-slate-400 uppercase tracking-wider w-16">{t('knowledge.tickets.valid')}</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {loading ? (
-                            <tr>
-                                <td colSpan={5} className="px-4 py-20 text-center text-slate-500 text-xs">
-                                    <div className="flex items-center justify-center gap-2">
-                                        <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
-                                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
-                                        </svg>
-                                        {t('common:button.loading')}
-                                    </div>
-                                </td>
-                            </tr>
-                        ) : tickets.length === 0 ? (
-                            <tr>
-                                <td colSpan={5} className="px-4 py-20 text-center text-slate-500 text-xs">
-                                    {t('knowledge.tickets.noData')}
-                                </td>
-                            </tr>
-                        ) : (
-                            tickets.map(ticket => (
-                                <tr
-                                    key={ticket.id}
-                                    className="border-b border-white/5 hover:bg-white/[0.03] transition-colors"
-                                >
-                                    <td className="px-3 py-2">
+            {/* 主内容区：左右分栏 */}
+            <div className="flex-1 flex overflow-hidden">
+                {/* 左侧：工单列表 */}
+                <div className="w-[480px] flex-shrink-0 border-r border-white/5 flex flex-col overflow-hidden">
+                    {/* 表格 */}
+                    <div className="flex-1 overflow-auto">
+                        <table className="w-full">
+                            <thead className="sticky top-0 bg-slate-900/90 backdrop-blur-sm z-10">
+                                <tr className="border-b border-white/10">
+                                    <th className="px-3 py-2.5 w-10">
                                         <input
                                             type="checkbox"
-                                            checked={selectedIds.has(ticket.id)}
-                                            onChange={() => toggleSelect(ticket.id)}
+                                            checked={tickets.length > 0 && selectedIds.size === tickets.length}
+                                            onChange={toggleSelectAll}
                                             className="w-3.5 h-3.5 rounded border-white/20 bg-transparent accent-amber-500 cursor-pointer"
                                         />
-                                    </td>
-                                    <td className="px-3 py-2">
-                                        <span className="text-[10px] font-mono text-indigo-400/80">#{ticket.externalId}</span>
-                                    </td>
-                                    <td className="px-3 py-2">
-                                        <span className="text-xs text-slate-300 line-clamp-1">{ticket.subject}</span>
-                                    </td>
-                                    <td className="px-3 py-2 text-center">
-                                        <span className={`inline-block px-1.5 py-0.5 rounded text-[9px] font-bold ${STATUS_COLORS[ticket.status] || 'bg-slate-500/20 text-slate-400'}`}>
-                                            {t(`common:ticketStatus.${ticket.status}` as any)}
-                                        </span>
-                                    </td>
-                                    <td className="px-3 py-2 text-center">
-                                        <button
-                                            onClick={() => handleToggleValid(ticket.id, ticket.isValid)}
-                                            className={`relative w-9 h-5 rounded-full transition-colors ${ticket.isValid ? 'bg-emerald-500' : 'bg-slate-600'
-                                                }`}
-                                        >
-                                            <div className={`absolute top-0.5 w-4 h-4 bg-white rounded-full transition-transform shadow-sm ${ticket.isValid ? 'translate-x-[18px]' : 'translate-x-0.5'
-                                                }`} />
-                                        </button>
-                                    </td>
+                                    </th>
+                                    <th className="px-3 py-2.5 text-left text-[10px] font-medium text-slate-400 uppercase tracking-wider w-24">{t('knowledge.tickets.ticketId')}</th>
+                                    <th className="px-3 py-2.5 text-left text-[10px] font-medium text-slate-400 uppercase tracking-wider">{t('knowledge.tickets.subject')}</th>
+                                    <th className="px-3 py-2.5 text-center text-[10px] font-medium text-slate-400 uppercase tracking-wider w-20">{t('common:label.status')}</th>
+                                    <th className="px-3 py-2.5 text-center text-[10px] font-medium text-slate-400 uppercase tracking-wider w-16">{t('knowledge.tickets.valid')}</th>
                                 </tr>
-                            ))
-                        )}
-                    </tbody>
-                </table>
-            </div>
+                            </thead>
+                            <tbody>
+                                {loading ? (
+                                    <tr>
+                                        <td colSpan={5} className="px-4 py-20 text-center text-slate-500 text-xs">
+                                            <div className="flex items-center justify-center gap-2">
+                                                <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+                                                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                                                </svg>
+                                                {t('common:button.loading')}
+                                            </div>
+                                        </td>
+                                    </tr>
+                                ) : tickets.length === 0 ? (
+                                    <tr>
+                                        <td colSpan={5} className="px-4 py-20 text-center text-slate-500 text-xs">
+                                            {t('knowledge.tickets.noData')}
+                                        </td>
+                                    </tr>
+                                ) : (
+                                    tickets.map(ticket => (
+                                        <tr
+                                            key={ticket.id}
+                                            onClick={() => setSelectedTicketId(ticket.id)}
+                                            className={`border-b border-white/5 hover:bg-white/[0.03] transition-colors cursor-pointer ${
+                                                selectedTicketId === ticket.id ? 'bg-amber-500/10 border-l-2 border-l-amber-500' : ''
+                                            }`}
+                                        >
+                                            <td className="px-3 py-2">
+                                                <input
+                                                    type="checkbox"
+                                                    checked={selectedIds.has(ticket.id)}
+                                                    onChange={() => toggleSelect(ticket.id)}
+                                                    onClick={e => e.stopPropagation()}
+                                                    className="w-3.5 h-3.5 rounded border-white/20 bg-transparent accent-amber-500 cursor-pointer"
+                                                />
+                                            </td>
+                                            <td className="px-3 py-2">
+                                                <span className="text-[10px] font-mono text-indigo-400/80">#{ticket.externalId}</span>
+                                            </td>
+                                            <td className="px-3 py-2">
+                                                <span className="text-xs text-slate-300 line-clamp-1">{ticket.subject}</span>
+                                            </td>
+                                            <td className="px-3 py-2 text-center">
+                                                <span className={`inline-block px-1.5 py-0.5 rounded text-[9px] font-bold ${STATUS_COLORS[ticket.status] || 'bg-slate-500/20 text-slate-400'}`}>
+                                                    {t(`common:ticketStatus.${ticket.status}` as any)}
+                                                </span>
+                                            </td>
+                                            <td className="px-3 py-2 text-center">
+                                                <button
+                                                    onClick={e => { e.stopPropagation(); handleToggleValid(ticket.id, ticket.isValid); }}
+                                                    className={`relative w-9 h-5 rounded-full transition-colors ${ticket.isValid ? 'bg-emerald-500' : 'bg-slate-600'
+                                                        }`}
+                                                >
+                                                    <div className={`absolute top-0.5 w-4 h-4 bg-white rounded-full transition-transform shadow-sm ${ticket.isValid ? 'translate-x-[18px]' : 'translate-x-0.5'
+                                                        }`} />
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    ))
+                                )}
+                            </tbody>
+                        </table>
+                    </div>
 
-            {/* 分页 */}
-            <div className="px-4 py-2 border-t border-white/5 bg-slate-900/30 flex items-center justify-between flex-shrink-0">
-                <span className="text-[10px] text-slate-500">
-                    {t('knowledge.tickets.pagination', { total: totalElements, current: page + 1, pages: totalPages })}
-                </span>
-                <div className="flex items-center gap-1">
-                    <button
-                        onClick={() => setPage(p => Math.max(0, p - 1))}
-                        disabled={page === 0}
-                        className="px-2.5 py-1 bg-white/5 text-slate-400 rounded text-[10px] hover:bg-white/10 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
-                    >
-                        {t('common:button.previousPage')}
-                    </button>
-                    <button
-                        onClick={() => setPage(p => Math.min(totalPages - 1, p + 1))}
-                        disabled={page >= totalPages - 1}
-                        className="px-2.5 py-1 bg-white/5 text-slate-400 rounded text-[10px] hover:bg-white/10 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
-                    >
-                        {t('common:button.nextPage')}
-                    </button>
+                    {/* 分页 */}
+                    <div className="px-4 py-2 border-t border-white/5 bg-slate-900/30 flex items-center justify-between flex-shrink-0">
+                        <span className="text-[10px] text-slate-500">
+                            {t('knowledge.tickets.pagination', { total: totalElements, current: page + 1, pages: totalPages })}
+                        </span>
+                        <div className="flex items-center gap-1">
+                            <button
+                                onClick={() => setPage(p => Math.max(0, p - 1))}
+                                disabled={page === 0}
+                                className="px-2.5 py-1 bg-white/5 text-slate-400 rounded text-[10px] hover:bg-white/10 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                            >
+                                {t('common:button.previousPage')}
+                            </button>
+                            <button
+                                onClick={() => setPage(p => Math.min(totalPages - 1, p + 1))}
+                                disabled={page >= totalPages - 1}
+                                className="px-2.5 py-1 bg-white/5 text-slate-400 rounded text-[10px] hover:bg-white/10 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                            >
+                                {t('common:button.nextPage')}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                {/* 右侧：详情预览 */}
+                <div className="flex-1 overflow-auto">
+                    {detailLoading ? (
+                        <div className="flex items-center justify-center h-full text-slate-500 text-xs gap-2">
+                            <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                            </svg>
+                            加载中...
+                        </div>
+                    ) : selectedTicket ? (
+                        <ServerTicketDetail
+                            ticket={selectedTicket}
+                            onRefresh={loadTickets}
+                            isEmbed
+                            isSplitMode={isSplitMode}
+                            setIsSplitMode={(s) => { setIsSplitMode(s); localStorage.setItem('knowledge_split_mode', String(s)); }}
+                        />
+                    ) : (
+                        <div className="flex items-center justify-center h-full text-slate-500 text-xs">
+                            点击左侧工单查看详情
+                        </div>
+                    )}
                 </div>
             </div>
         </div>
