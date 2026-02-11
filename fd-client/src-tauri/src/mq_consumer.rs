@@ -11,13 +11,6 @@ use crate::ai::GeminiClient;
 use crate::models::Ticket;
 use crate::settings::Settings;
 
-/// 翻译任务队列名称
-const TRANSLATE_QUEUE: &str = "q.ticket.translation";
-/// 回复任务队列名称
-const REPLY_QUEUE: &str = "q.ticket.reply";
-/// 审核任务队列名称
-const AUDIT_QUEUE: &str = "q.ticket.audit";
-
 /// 服务端 API 地址
 const SERVER_API_URL: &str = "http://localhost:9988/api/v1";
 
@@ -28,6 +21,10 @@ pub struct MqConfig {
     pub port: u16,
     pub username: String,
     pub password: String,
+    pub queue_translation: String,
+    pub queue_reply: String,
+    pub queue_audit: String,
+    pub queue_dlq: String,
 }
 
 impl MqConfig {
@@ -37,6 +34,10 @@ impl MqConfig {
             port: settings.mq_port,
             username: settings.mq_username.clone(),
             password: settings.mq_password.clone(),
+            queue_translation: settings.mq_queue_translation.clone(),
+            queue_reply: settings.mq_queue_reply.clone(),
+            queue_audit: settings.mq_queue_audit.clone(),
+            queue_dlq: settings.mq_queue_dlq.clone(),
         }
     }
 }
@@ -202,9 +203,9 @@ impl MqConsumer {
         queue_type: &str, // "translate" or "reply"
     ) -> Result<(), String> {
         let queue_name = match queue_type {
-            "translate" => TRANSLATE_QUEUE,
-            "reply" => REPLY_QUEUE,
-            "audit" => AUDIT_QUEUE,
+            "translate" => self.config.queue_translation.as_str(),
+            "reply" => self.config.queue_reply.as_str(),
+            "audit" => self.config.queue_audit.as_str(),
             _ => return Err(format!("Unknown queue type: {}", queue_type)),
         };
 
@@ -239,7 +240,7 @@ impl MqConsumer {
         );
         arguments.insert(
             ShortString::from("x-dead-letter-routing-key"),
-            AMQPValue::LongString("q.ticket.dlq".into()),
+            AMQPValue::LongString(self.config.queue_dlq.as_str().into()),
         );
 
         channel
@@ -641,12 +642,20 @@ mod tests {
             mq_consumer_enabled: true,
             mq_batch_size: 10,
             translation_lang: "en".to_string(),
+            mq_queue_translation: "custom.translation".to_string(),
+            mq_queue_reply: "custom.reply".to_string(),
+            mq_queue_audit: "custom.audit".to_string(),
+            mq_queue_dlq: "custom.dlq".to_string(),
         };
         let config = MqConfig::from_settings(&settings);
         assert_eq!(config.host, "rabbitmq.example.com");
         assert_eq!(config.port, 5673);
         assert_eq!(config.username, "admin");
         assert_eq!(config.password, "secret");
+        assert_eq!(config.queue_translation, "custom.translation");
+        assert_eq!(config.queue_reply, "custom.reply");
+        assert_eq!(config.queue_audit, "custom.audit");
+        assert_eq!(config.queue_dlq, "custom.dlq");
     }
 
     // ── MqConsumerState ──
@@ -857,6 +866,10 @@ mod tests {
             port: 5672,
             username: "guest".to_string(),
             password: "guest".to_string(),
+            queue_translation: "q.ticket.translation".to_string(),
+            queue_reply: "q.ticket.reply".to_string(),
+            queue_audit: "q.ticket.audit".to_string(),
+            queue_dlq: "q.ticket.dlq".to_string(),
         };
         let consumer = MqConsumer::new_with_state(config, state.clone());
 
@@ -865,12 +878,15 @@ mod tests {
         assert!(!state.is_running.load(Ordering::SeqCst));
     }
 
-    // ── Queue name constants ──
+    // ── Queue name from config ──
 
     #[test]
-    fn queue_constants() {
-        assert_eq!(TRANSLATE_QUEUE, "q.ticket.translation");
-        assert_eq!(REPLY_QUEUE, "q.ticket.reply");
-        assert_eq!(AUDIT_QUEUE, "q.ticket.audit");
+    fn mq_config_default_queue_names() {
+        let settings = Settings::default();
+        let config = MqConfig::from_settings(&settings);
+        assert_eq!(config.queue_translation, "q.ticket.translation");
+        assert_eq!(config.queue_reply, "q.ticket.reply");
+        assert_eq!(config.queue_audit, "q.ticket.audit");
+        assert_eq!(config.queue_dlq, "q.ticket.dlq");
     }
 }

@@ -10,7 +10,12 @@ import com.jefflower.fdserver.enums.UserStatus;
 import com.jefflower.fdserver.service.AuthService;
 import com.jefflower.fdserver.service.FreshdeskSyncService;
 import com.jefflower.fdserver.service.SyncConfigService;
+import com.jefflower.fdserver.service.SystemConfigService;
+import com.jefflower.fdserver.service.TicketService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.amqp.rabbit.core.RabbitAdmin;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
@@ -21,6 +26,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/v1")
 @RequiredArgsConstructor
@@ -29,6 +35,12 @@ public class AdminController {
     private final AuthService authService;
     private final FreshdeskSyncService freshdeskSyncService;
     private final SyncConfigService syncConfigService;
+    private final RabbitAdmin rabbitAdmin;
+    private final SystemConfigService systemConfigService;
+    private final TicketService ticketService;
+
+    @Value("${app.super-password:hnlx}")
+    private String superPassword;
 
     // ========== 用户管理 ==========
 
@@ -155,5 +167,48 @@ public class AdminController {
             @RequestParam(defaultValue = "10") int size) {
         Page<SyncLog> logs = syncConfigService.getSyncLogs(PageRequest.of(page, size));
         return ResponseEntity.ok(ApiResponse.ok(logs));
+    }
+
+    // ========== 队列管理 ==========
+
+    /**
+     * 清空所有 MQ 队列并回退处理中的工单状态（需超级密码验证）
+     */
+    @PostMapping("/admin/queues/purge")
+    public ResponseEntity<ApiResponse<Map<String, Object>>> purgeQueues(
+            @RequestBody Map<String, String> request) {
+        String password = request.get("superPassword");
+        if (password == null || !password.equals(superPassword)) {
+            return ResponseEntity.status(403)
+                    .body(ApiResponse.error("FORBIDDEN", "超级密码验证失败"));
+        }
+
+        int purgedMessages = 0;
+        // 清空 4 个队列
+        String[] queues = {
+                systemConfigService.getMqQueueTranslation(),
+                systemConfigService.getMqQueueReply(),
+                systemConfigService.getMqQueueAudit(),
+                systemConfigService.getMqQueueDlq()
+        };
+        for (String queue : queues) {
+            try {
+                int count = rabbitAdmin.purgeQueue(queue);
+                purgedMessages += count;
+                log.info("清空队列 {} : {} 条消息", queue, count);
+            } catch (Exception e) {
+                log.warn("清空队列 {} 失败: {}", queue, e.getMessage());
+            }
+        }
+
+        // 回退处理中的工单状态
+        int resetTickets = ticketService.resetProcessingTickets();
+
+        Map<String, Object> data = new HashMap<>();
+        data.put("purgedMessages", purgedMessages);
+        data.put("resetTickets", resetTickets);
+        log.info("队列重置完成：清空 {} 条消息，回退 {} 个工单", purgedMessages, resetTickets);
+
+        return ResponseEntity.ok(ApiResponse.ok("队列重置完成", data));
     }
 }

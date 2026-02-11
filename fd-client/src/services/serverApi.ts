@@ -385,6 +385,13 @@ export const adminApi = {
       body: JSON.stringify({ ticketIds, isValid }),
     });
   },
+
+  async purgeQueues(superPassword: string): Promise<{ purgedMessages: number; resetTickets: number }> {
+    return request<{ purgedMessages: number; resetTickets: number }>('/admin/queues/purge', {
+      method: 'POST',
+      body: JSON.stringify({ superPassword }),
+    });
+  },
 };
 
 // ============ Actuator API（日志查看、运行时监控） ============

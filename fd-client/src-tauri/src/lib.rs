@@ -43,6 +43,10 @@ fn save_settings_cmd(
     mq_username: String,
     mq_password: String,
     translation_lang: String,
+    mq_queue_translation: String,
+    mq_queue_reply: String,
+    mq_queue_audit: String,
+    mq_queue_dlq: String,
 ) -> Result<(), String> {
     let existing = settings::load_settings(&app);
 
@@ -54,6 +58,10 @@ fn save_settings_cmd(
         mq_consumer_enabled: existing.mq_consumer_enabled,
         mq_batch_size: existing.mq_batch_size,
         translation_lang,
+        mq_queue_translation,
+        mq_queue_reply,
+        mq_queue_audit,
+        mq_queue_dlq,
     };
     settings::save_settings(&app, &s)
 }

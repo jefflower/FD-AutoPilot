@@ -16,6 +16,11 @@ pub struct Settings {
     pub mq_consumer_enabled: bool,
     pub mq_batch_size: u32,
     pub translation_lang: String,
+    // MQ 队列名配置
+    pub mq_queue_translation: String,
+    pub mq_queue_reply: String,
+    pub mq_queue_audit: String,
+    pub mq_queue_dlq: String,
 }
 
 impl Default for Settings {
@@ -28,6 +33,10 @@ impl Default for Settings {
             mq_consumer_enabled: false,
             mq_batch_size: 5,
             translation_lang: "zh-CN".to_string(),
+            mq_queue_translation: "q.ticket.translation".to_string(),
+            mq_queue_reply: "q.ticket.reply".to_string(),
+            mq_queue_audit: "q.ticket.audit".to_string(),
+            mq_queue_dlq: "q.ticket.dlq".to_string(),
         }
     }
 }
@@ -84,6 +93,10 @@ pub fn save_settings(app: &AppHandle, settings: &Settings) -> Result<(), String>
     )?;
     save_setting(&conn, "mq_batch_size", &settings.mq_batch_size.to_string())?;
     save_setting(&conn, "translation_lang", &settings.translation_lang)?;
+    save_setting(&conn, "mq_queue_translation", &settings.mq_queue_translation)?;
+    save_setting(&conn, "mq_queue_reply", &settings.mq_queue_reply)?;
+    save_setting(&conn, "mq_queue_audit", &settings.mq_queue_audit)?;
+    save_setting(&conn, "mq_queue_dlq", &settings.mq_queue_dlq)?;
 
     Ok(())
 }
@@ -122,6 +135,18 @@ pub fn load_settings(app: &AppHandle) -> Settings {
     }
     if let Some(v) = load_setting(&conn, "translation_lang") {
         settings.translation_lang = v;
+    }
+    if let Some(v) = load_setting(&conn, "mq_queue_translation") {
+        settings.mq_queue_translation = v;
+    }
+    if let Some(v) = load_setting(&conn, "mq_queue_reply") {
+        settings.mq_queue_reply = v;
+    }
+    if let Some(v) = load_setting(&conn, "mq_queue_audit") {
+        settings.mq_queue_audit = v;
+    }
+    if let Some(v) = load_setting(&conn, "mq_queue_dlq") {
+        settings.mq_queue_dlq = v;
     }
 
     settings
@@ -205,6 +230,10 @@ mod tests {
         assert!(!s.mq_consumer_enabled);
         assert_eq!(s.mq_batch_size, 5);
         assert_eq!(s.translation_lang, "zh-CN");
+        assert_eq!(s.mq_queue_translation, "q.ticket.translation");
+        assert_eq!(s.mq_queue_reply, "q.ticket.reply");
+        assert_eq!(s.mq_queue_audit, "q.ticket.audit");
+        assert_eq!(s.mq_queue_dlq, "q.ticket.dlq");
     }
 
     #[test]
@@ -217,6 +246,10 @@ mod tests {
             mq_consumer_enabled: true,
             mq_batch_size: 10,
             translation_lang: "en".to_string(),
+            mq_queue_translation: "custom.translation".to_string(),
+            mq_queue_reply: "custom.reply".to_string(),
+            mq_queue_audit: "custom.audit".to_string(),
+            mq_queue_dlq: "custom.dlq".to_string(),
         };
         let json = serde_json::to_string(&s).unwrap();
         let back: Settings = serde_json::from_str(&json).unwrap();
@@ -226,6 +259,10 @@ mod tests {
         assert!(back.mq_consumer_enabled);
         assert_eq!(back.mq_batch_size, 10);
         assert_eq!(back.translation_lang, "en");
+        assert_eq!(back.mq_queue_translation, "custom.translation");
+        assert_eq!(back.mq_queue_reply, "custom.reply");
+        assert_eq!(back.mq_queue_audit, "custom.audit");
+        assert_eq!(back.mq_queue_dlq, "custom.dlq");
     }
 
     // ── SQLite setting operations (in-memory DB) ──

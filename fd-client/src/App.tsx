@@ -96,6 +96,10 @@ function App() {
         mqUsername, setMqUsername,
         mqPassword, setMqPassword,
         translationLang, setTranslationLang,
+        mqQueueTranslation, setMqQueueTranslation,
+        mqQueueReply, setMqQueueReply,
+        mqQueueAudit, setMqQueueAudit,
+        mqQueueDlq, setMqQueueDlq,
         notebookLMConfig, setNotebookLMConfig
     } = useSettings();
 
@@ -151,6 +155,15 @@ function App() {
                         setMqPassword={setMqPassword}
                         translationLang={translationLang}
                         setTranslationLang={setTranslationLang}
+                        mqQueueTranslation={mqQueueTranslation}
+                        setMqQueueTranslation={setMqQueueTranslation}
+                        mqQueueReply={mqQueueReply}
+                        setMqQueueReply={setMqQueueReply}
+                        mqQueueAudit={mqQueueAudit}
+                        setMqQueueAudit={setMqQueueAudit}
+                        mqQueueDlq={mqQueueDlq}
+                        setMqQueueDlq={setMqQueueDlq}
+                        isAdmin={auth.isAdmin}
                         notebookLMConfig={notebookLMConfig}
                         setNotebookLMConfig={setNotebookLMConfig}
                     />

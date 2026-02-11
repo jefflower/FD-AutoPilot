@@ -13,6 +13,12 @@ export function useSettings() {
   const [mqPassword, setMqPassword] = useState('guest');
   const [translationLang, setTranslationLang] = useState('zh-CN');
 
+  // MQ 队列名配置
+  const [mqQueueTranslation, setMqQueueTranslation] = useState('q.ticket.translation');
+  const [mqQueueReply, setMqQueueReply] = useState('q.ticket.reply');
+  const [mqQueueAudit, setMqQueueAudit] = useState('q.ticket.audit');
+  const [mqQueueDlq, setMqQueueDlq] = useState('q.ticket.dlq');
+
   // NotebookLM 配置
   const [notebookLMConfig, setNotebookLMConfig] = useState<NotebookLMConfig>({
     cookie: '',
@@ -31,6 +37,10 @@ export function useSettings() {
       if (settings.mq_username) setMqUsername(settings.mq_username);
       if (settings.mq_password) setMqPassword(settings.mq_password);
       if (settings.translation_lang) setTranslationLang(settings.translation_lang);
+      if (settings.mq_queue_translation) setMqQueueTranslation(settings.mq_queue_translation);
+      if (settings.mq_queue_reply) setMqQueueReply(settings.mq_queue_reply);
+      if (settings.mq_queue_audit) setMqQueueAudit(settings.mq_queue_audit);
+      if (settings.mq_queue_dlq) setMqQueueDlq(settings.mq_queue_dlq);
     }).catch(console.error);
 
     try {
@@ -53,10 +63,14 @@ export function useSettings() {
         mqUsername,
         mqPassword,
         translationLang,
+        mqQueueTranslation,
+        mqQueueReply,
+        mqQueueAudit,
+        mqQueueDlq,
       }).catch(console.error);
     }, 500);
     return () => clearTimeout(timeout);
-  }, [mqHost, mqPort, mqUsername, mqPassword, translationLang]);
+  }, [mqHost, mqPort, mqUsername, mqPassword, translationLang, mqQueueTranslation, mqQueueReply, mqQueueAudit, mqQueueDlq]);
 
   // serverUrl 变更时同步到 serverApi 模块
   useEffect(() => {
@@ -82,6 +96,10 @@ export function useSettings() {
     mqUsername, setMqUsername,
     mqPassword, setMqPassword,
     translationLang, setTranslationLang,
+    mqQueueTranslation, setMqQueueTranslation,
+    mqQueueReply, setMqQueueReply,
+    mqQueueAudit, setMqQueueAudit,
+    mqQueueDlq, setMqQueueDlq,
     notebookLMConfig, setNotebookLMConfig
   };
 }

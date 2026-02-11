@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { invoke } from '@tauri-apps/api/core';
 import { NotebookLMConfig } from '../types';
-import { configApi } from '../services/serverApi';
+import { configApi, adminApi } from '../services/serverApi';
 
 interface SettingsTabProps {
     serverUrl: string;
@@ -17,6 +17,15 @@ interface SettingsTabProps {
     setMqPassword: (s: string) => void;
     translationLang: string;
     setTranslationLang: (s: string) => void;
+    mqQueueTranslation: string;
+    setMqQueueTranslation: (s: string) => void;
+    mqQueueReply: string;
+    setMqQueueReply: (s: string) => void;
+    mqQueueAudit: string;
+    setMqQueueAudit: (s: string) => void;
+    mqQueueDlq: string;
+    setMqQueueDlq: (s: string) => void;
+    isAdmin: boolean;
     notebookLMConfig: NotebookLMConfig;
     setNotebookLMConfig: React.Dispatch<React.SetStateAction<NotebookLMConfig>>;
 }
@@ -28,6 +37,11 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
     mqUsername, setMqUsername,
     mqPassword, setMqPassword,
     translationLang, setTranslationLang,
+    mqQueueTranslation, setMqQueueTranslation,
+    mqQueueReply, setMqQueueReply,
+    mqQueueAudit, setMqQueueAudit,
+    mqQueueDlq, setMqQueueDlq,
+    isAdmin,
     notebookLMConfig, setNotebookLMConfig,
 }) => {
     const { t, i18n } = useTranslation(['settings', 'common']);
@@ -39,6 +53,12 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
     const [wecomLoading, setWecomLoading] = useState(false);
     const [wecomTesting, setWecomTesting] = useState(false);
     const [configLoaded, setConfigLoaded] = useState(false);
+
+    // 队列管理状态
+    const [showPurgeDialog, setShowPurgeDialog] = useState(false);
+    const [purgePassword, setPurgePassword] = useState('');
+    const [purgeLoading, setPurgeLoading] = useState(false);
+    const [purgeResult, setPurgeResult] = useState<{ purgedMessages: number; resetTickets: number } | null>(null);
 
     // NotebookLM Selectors 状态
     const [selectors, setSelectors] = useState<Record<string, string> | null>(null);
@@ -381,6 +401,61 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
                         </div>
                     </section>
 
+                    {/* MQ Queue Names */}
+                    <section className="bg-white/5 rounded-xl border border-white/10 p-6">
+                        <h3 className="text-sm font-bold text-slate-300 uppercase tracking-wider mb-6 flex items-center gap-2">
+                            <span className="w-1 h-4 bg-cyan-500 rounded-full"></span>
+                            MQ 队列配置
+                        </h3>
+                        <div className="space-y-4">
+                            <div className="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">翻译队列</label>
+                                    <input
+                                        type="text"
+                                        value={mqQueueTranslation}
+                                        onChange={(e) => setMqQueueTranslation(e.target.value)}
+                                        className="w-full px-4 py-2.5 bg-slate-800/50 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500/50 font-mono"
+                                        placeholder="q.ticket.translation"
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">回复队列</label>
+                                    <input
+                                        type="text"
+                                        value={mqQueueReply}
+                                        onChange={(e) => setMqQueueReply(e.target.value)}
+                                        className="w-full px-4 py-2.5 bg-slate-800/50 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500/50 font-mono"
+                                        placeholder="q.ticket.reply"
+                                    />
+                                </div>
+                            </div>
+                            <div className="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">审核队列</label>
+                                    <input
+                                        type="text"
+                                        value={mqQueueAudit}
+                                        onChange={(e) => setMqQueueAudit(e.target.value)}
+                                        className="w-full px-4 py-2.5 bg-slate-800/50 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500/50 font-mono"
+                                        placeholder="q.ticket.audit"
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-xs font-medium text-slate-400 mb-2 uppercase">死信队列</label>
+                                    <input
+                                        type="text"
+                                        value={mqQueueDlq}
+                                        onChange={(e) => setMqQueueDlq(e.target.value)}
+                                        className="w-full px-4 py-2.5 bg-slate-800/50 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500/50 font-mono"
+                                        placeholder="q.ticket.dlq"
+                                    />
+                                </div>
+                            </div>
+                            <p className="text-[10px] text-slate-500">修改队列名后需重启 MQ 消费者才能生效</p>
+                        </div>
+                    </section>
+
                     {/* AI Engine Settings */}
                     <section className="bg-white/5 rounded-xl border border-white/10 p-6">
                         <div className="flex items-center justify-between mb-6">
@@ -613,6 +688,93 @@ const SettingsTab: React.FC<SettingsTabProps> = ({
                                     </button>
                                 </div>
                             </div>
+                        </section>
+                    )}
+
+                    {/* Queue Management (Admin Only) */}
+                    {isAdmin && (
+                        <section className="bg-white/5 rounded-xl border border-red-500/20 p-6">
+                            <h3 className="text-sm font-bold text-slate-300 uppercase tracking-wider mb-6 flex items-center gap-2">
+                                <span className="w-1 h-4 bg-red-500 rounded-full"></span>
+                                队列管理
+                            </h3>
+                            <div className="space-y-4">
+                                <div className="p-4 bg-red-500/5 border border-red-500/10 rounded-lg">
+                                    <p className="text-xs text-red-200/80 mb-1">清空所有 MQ 队列中的待处理消息，并将处理中的工单状态回退。</p>
+                                    <p className="text-[10px] text-slate-500">此操作不可撤销，请谨慎使用。</p>
+                                </div>
+                                <button
+                                    onClick={() => { setShowPurgeDialog(true); setPurgePassword(''); setPurgeResult(null); }}
+                                    className="px-5 py-2 bg-red-600/80 hover:bg-red-500 text-white text-xs font-bold rounded-lg transition-all"
+                                >
+                                    重置所有队列
+                                </button>
+                            </div>
+
+                            {/* Purge Confirmation Dialog */}
+                            {showPurgeDialog && (
+                                <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50">
+                                    <div className="bg-slate-900 border border-white/10 rounded-2xl p-6 w-full max-w-md shadow-2xl">
+                                        <h4 className="text-lg font-bold text-white mb-4">确认重置队列</h4>
+                                        <div className="space-y-4">
+                                            <div className="p-3 bg-red-500/10 border border-red-500/20 rounded-lg">
+                                                <p className="text-xs text-red-300 leading-relaxed">
+                                                    此操作将：
+                                                </p>
+                                                <ul className="text-xs text-red-300/80 mt-2 space-y-1 list-disc list-inside">
+                                                    <li>清空翻译 / 回复 / 审核 / 死信队列中的所有消息</li>
+                                                    <li>回退处理中的工单状态至待处理</li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <label className="block text-xs font-medium text-slate-400 mb-2">超级密码</label>
+                                                <input
+                                                    type="password"
+                                                    value={purgePassword}
+                                                    onChange={(e) => setPurgePassword(e.target.value)}
+                                                    className="w-full px-4 py-2.5 bg-slate-800/50 border border-white/10 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-red-500/50"
+                                                    placeholder="请输入超级密码"
+                                                    autoFocus
+                                                />
+                                            </div>
+                                            {purgeResult && (
+                                                <div className="p-3 bg-green-500/10 border border-green-500/20 rounded-lg">
+                                                    <p className="text-xs text-green-300">
+                                                        清空了 <span className="font-bold">{purgeResult.purgedMessages}</span> 条消息，回退了 <span className="font-bold">{purgeResult.resetTickets}</span> 个工单
+                                                    </p>
+                                                </div>
+                                            )}
+                                            <div className="flex gap-3 justify-end pt-2">
+                                                <button
+                                                    onClick={() => setShowPurgeDialog(false)}
+                                                    className="px-5 py-2 bg-slate-700/50 hover:bg-slate-600/50 text-slate-300 text-xs font-bold rounded-lg transition-all border border-white/10"
+                                                >
+                                                    取消
+                                                </button>
+                                                <button
+                                                    onClick={async () => {
+                                                        if (!purgePassword) return;
+                                                        setPurgeLoading(true);
+                                                        try {
+                                                            const result = await adminApi.purgeQueues(purgePassword);
+                                                            setPurgeResult(result);
+                                                            setToasts(prev => [...prev, `队列重置成功：清空 ${result.purgedMessages} 条消息，回退 ${result.resetTickets} 个工单`]);
+                                                        } catch (err) {
+                                                            setToasts(prev => [...prev, `队列重置失败：${(err as Error).message}`]);
+                                                        } finally {
+                                                            setPurgeLoading(false);
+                                                        }
+                                                    }}
+                                                    disabled={purgeLoading || !purgePassword}
+                                                    className="px-5 py-2 bg-red-600 hover:bg-red-500 disabled:opacity-50 text-white text-xs font-bold rounded-lg transition-all"
+                                                >
+                                                    {purgeLoading ? '处理中...' : '确认重置'}
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
                         </section>
                     )}
                 </div>

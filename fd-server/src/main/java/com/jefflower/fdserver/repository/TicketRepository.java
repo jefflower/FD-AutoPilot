@@ -5,9 +5,11 @@ import com.jefflower.fdserver.enums.TicketStatus;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import java.time.LocalDateTime;
+import java.util.Collection;
 import java.util.Optional;
 
 public interface TicketRepository extends JpaRepository<Ticket, Long> {
@@ -28,4 +30,11 @@ public interface TicketRepository extends JpaRepository<Ticket, Long> {
                         @Param("createdAfter") LocalDateTime createdAfter,
                         @Param("createdBefore") LocalDateTime createdBefore,
                         Pageable pageable);
+
+        @Modifying
+        @Query("UPDATE Ticket t SET t.status = :targetStatus, t.updatedAt = :now WHERE t.status = :sourceStatus")
+        int updateStatusBatch(
+                        @Param("sourceStatus") TicketStatus sourceStatus,
+                        @Param("targetStatus") TicketStatus targetStatus,
+                        @Param("now") LocalDateTime now);
 }

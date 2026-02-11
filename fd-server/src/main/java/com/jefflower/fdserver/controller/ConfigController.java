@@ -53,4 +53,15 @@ public class ConfigController {
         boolean success = weChatWorkNotifyService.sendTestMessage();
         return ResponseEntity.ok(ApiResponse.ok(Map.of("success", success)));
     }
+
+    @GetMapping("/mq-queues")
+    public ResponseEntity<ApiResponse<Map<String, String>>> getMqQueues() {
+        return ResponseEntity.ok(ApiResponse.ok(configService.getAllMqConfig()));
+    }
+
+    @PutMapping("/mq-queues")
+    public ResponseEntity<ApiResponse<Void>> setMqQueues(@RequestBody Map<String, String> body) {
+        configService.updateMqConfig(body);
+        return ResponseEntity.ok(ApiResponse.ok("MQ 队列配置已更新", null));
+    }
 }

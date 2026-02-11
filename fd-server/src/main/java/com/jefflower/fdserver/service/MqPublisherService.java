@@ -18,24 +18,24 @@ import java.util.UUID;
 public class MqPublisherService {
 
     private final RabbitTemplate rabbitTemplate;
-
-    private static final String EXCHANGE = "fd.ticket.task.exchange";
+    private final SystemConfigService systemConfigService;
 
     public void sendTranslationTask(Ticket ticket) {
-        sendTask("ticket.task.translate", ticket);
+        sendTask(systemConfigService.getMqRoutingTranslate(), ticket);
     }
 
     public void sendReplyTask(Ticket ticket) {
-        sendTask("ticket.task.reply", ticket);
+        sendTask(systemConfigService.getMqRoutingReply(), ticket);
     }
 
     public void sendAuditTask(Ticket ticket) {
-        sendTask("ticket.task.audit", ticket);
+        sendTask(systemConfigService.getMqRoutingAudit(), ticket);
     }
 
     private void sendTask(String routingKey, Ticket ticket) {
         // 预先构建消息，捕获当前值（事务提交后 ticket 状态可能变化）
         Map<String, Object> message = buildMessage(routingKey, ticket);
+        String exchange = systemConfigService.getMqExchange();
 
         if (TransactionSynchronizationManager.isSynchronizationActive()) {
             // 在事务内：延迟到事务提交后再发送，避免消费者在 DB 数据未提交时就拿到消息
@@ -43,13 +43,13 @@ public class MqPublisherService {
                 @Override
                 public void afterCommit() {
                     log.info("Sending message to {} with ticketId: {} (after commit)", routingKey, ticket.getId());
-                    rabbitTemplate.convertAndSend(EXCHANGE, routingKey, message);
+                    rabbitTemplate.convertAndSend(exchange, routingKey, message);
                 }
             });
         } else {
             // 不在事务内：立即发送
             log.info("Sending message to {} with ticketId: {} (immediate)", routingKey, ticket.getId());
-            rabbitTemplate.convertAndSend(EXCHANGE, routingKey, message);
+            rabbitTemplate.convertAndSend(exchange, routingKey, message);
         }
     }
 

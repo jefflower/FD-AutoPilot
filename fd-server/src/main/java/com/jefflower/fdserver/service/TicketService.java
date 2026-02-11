@@ -257,4 +257,22 @@ public class TicketService {
         ticket.setIsValid(isValid);
         return ticketRepository.save(ticket);
     }
+
+    /**
+     * 批量回退处理中的工单状态（用于队列重置）
+     * TRANSLATING → PENDING_TRANS
+     * REPLYING → PENDING_REPLY
+     * AUDITING → PENDING_AUDIT
+     * @return 回退的工单数量
+     */
+    @Transactional
+    public int resetProcessingTickets() {
+        LocalDateTime now = LocalDateTime.now();
+        int count = 0;
+        count += ticketRepository.updateStatusBatch(TicketStatus.TRANSLATING, TicketStatus.PENDING_TRANS, now);
+        count += ticketRepository.updateStatusBatch(TicketStatus.REPLYING, TicketStatus.PENDING_REPLY, now);
+        count += ticketRepository.updateStatusBatch(TicketStatus.AUDITING, TicketStatus.PENDING_AUDIT, now);
+        log.info("[TicketService] 队列重置：回退了 {} 个处理中的工单", count);
+        return count;
+    }
 }
