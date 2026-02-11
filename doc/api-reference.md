@@ -1,6 +1,6 @@
 # API Reference
 
-All API endpoints are prefixed with `/api/v1`. Authentication is required for all endpoints except Login and Register (via `Authorization: Bearer <token>` header).
+所有 API 端点前缀为 `/api/v1`。除登录/注册和 Freshdesk Webhook 外，所有端点均需认证头 `Authorization: Bearer <token>`。
 
 ## Authentication
 
@@ -45,21 +45,21 @@ Note: New users are created with status `PENDING`. They cannot login until appro
 **Query Parameters:**
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| `page` | int | 0 | Page number |
-| `size` | int | 20 | Page size |
-| `status` | string | - | Filter by status (e.g., `PENDING_TRANS`, `COMPLETED`) |
-| `subject` | string | - | Filter by subject (fuzzy match) |
-| `external_id` | string | - | Filter by Freshdesk external ID (exact match) |
-| `is_valid` | boolean | - | Filter by validity flag |
-| `created_after` | ISO8601 datetime | - | Filter tickets created after this time |
-| `created_before` | ISO8601 datetime | - | Filter tickets created before this time |
+| `page` | int | 0 | 页号（从 0 开始）|
+| `size` | int | 20 | 每页记录数 |
+| `status` | string | - | 按状态过滤（例：`PENDING_TRANS`, `PENDING_REPLY`, `PENDING_AUDIT`, `APPROVED`, `COMPLETED`）|
+| `subject` | string | - | 按工单主题模糊查询 |
+| `external_id` | string | - | 按 Freshdesk 工单 ID 精确匹配 |
+| `is_valid` | boolean | - | 按有效性标记过滤 |
+| `created_after` | ISO8601 datetime | - | 查询在此时间后创建的工单 |
+| `created_before` | ISO8601 datetime | - | 查询在此时间前创建的工单 |
 
-**Response:** `ApiResponse<Page<Ticket>>` — Paginated list with ticket data including associated translations and replies.
+**Response:** `ApiResponse<Page<Ticket>>` — 分页工单列表，包含关联的翻译和回复数据。
 
 ### Get Ticket Detail
 `GET /api/v1/tickets/{id}`
 
-**Response:** `ApiResponse<Ticket>` — Single ticket with full details (subject, content, status, translations, replies).
+**Response:** `ApiResponse<Ticket>` — 单个工单完整详情，包括主题、内容、状态、翻译记录、回复历史和审核信息。
 
 ### Submit Translation
 `POST /api/v1/tickets/{id}/translation`
@@ -68,11 +68,11 @@ Note: New users are created with status `PENDING`. They cannot login until appro
 ```json
 {
   "targetLang": "zh-CN",
-  "translatedTitle": "Title in Chinese",
-  "translatedContent": "Content in Chinese"
+  "translatedTitle": "中文标题",
+  "translatedContent": "中文内容"
 }
 ```
-**Effect:** Updates ticket status to `PENDING_REPLY` and sends MQ message to `q.ticket.reply`.
+**Effect:** 工单状态转换到 `PENDING_REPLY`，发送 MQ 消息到 `q.ticket.reply` 队列触发回复任务。
 
 ### Submit Reply Draft
 `POST /api/v1/tickets/{id}/reply`
@@ -80,11 +80,28 @@ Note: New users are created with status `PENDING`. They cannot login until appro
 **Request Body:**
 ```json
 {
-  "zhReply": "Chinese explanation for audit",
-  "targetReply": "English reply for customer"
+  "zhReply": "中文审核说明",
+  "targetReply": "英文客户回复"
 }
 ```
-**Effect:** Updates ticket status to `PENDING_AUDIT` and sends MQ message to `q.ticket.audit`.
+**Effect:** 工单状态转换到 `PENDING_AUDIT`，发送 MQ 消息到 `q.ticket.audit` 队列触发审核任务。
+
+### Update Reply
+`PUT /api/v1/tickets/{id}/reply/{replyId}`
+
+**Request Body:**
+```json
+{
+  "zhReply": "更新后的中文审核说明",
+  "targetReply": "更新后的英文客户回复"
+}
+```
+**Effect:** 更新指定回复的内容（支持在 PENDING_AUDIT 或 PENDING_REPLY 状态下修改）。
+
+### Skip Reply
+`POST /api/v1/tickets/{id}/skip-reply`
+
+**Effect:** 跳过当前回复任务，将工单标记为已完成状态（`COMPLETED`）。
 
 ### Submit Audit Result
 `POST /api/v1/tickets/{id}/audit`
@@ -94,28 +111,28 @@ Note: New users are created with status `PENDING`. They cannot login until appro
 {
   "replyId": 101,
   "auditResult": "PASS",
-  "auditRemark": "Approved."
+  "auditRemark": "已批准"
 }
 ```
 **Effect:**
-- `PASS` + auto-reply OFF: Updates ticket status to `APPROVED` (enters push queue).
-- `PASS` + auto-reply ON: Updates ticket status to `COMPLETED`, auto-pushes reply to Freshdesk.
-- `REJECT`: Updates ticket status back to `PENDING_REPLY`, saves `auditRemark` as `lastAuditRemark` on ticket for AI feedback injection.
+- `PASS` + 自动推送关闭：工单转换到 `APPROVED`（进入待推送队列）
+- `PASS` + 自动推送开启：工单转换到 `COMPLETED`（自动推送回复到 Freshdesk）
+- `REJECT`：工单转换回 `PENDING_REPLY`，保存 `auditRemark` 为工单的 `lastAuditRemark` 用于 AI 反馈注入
 
 ### Trigger AI Translation (Manual)
 `POST /api/v1/tickets/{id}/ai-translate`
 
-Sends the ticket to `q.ticket.translation` for AI translation processing. Does not change ticket status immediately.
+发送工单到 `q.ticket.translation` 队列进行 AI 翻译处理。不立即改变工单状态。
 
 ### Trigger AI Reply (Manual)
 `POST /api/v1/tickets/{id}/ai-reply`
 
-Sends the ticket to `q.ticket.reply` for AI reply generation. Does not change ticket status immediately.
+发送工单到 `q.ticket.reply` 队列进行 AI 回复生成。不立即改变工单状态。
 
 ### Push Approved Reply to Freshdesk
 `POST /api/v1/tickets/{id}/push-reply`
 
-**Effect:** Pushes the selected reply of an `APPROVED` ticket to Freshdesk and updates status to `COMPLETED`.
+**Effect:** 推送 `APPROVED` 状态工单的选定回复到 Freshdesk，工单转换到 `COMPLETED`。
 
 ### Batch Push Approved Replies
 `POST /api/v1/tickets/batch-push`
@@ -124,7 +141,12 @@ Sends the ticket to `q.ticket.reply` for AI reply generation. Does not change ti
 ```json
 [101, 102, 103]
 ```
-**Response:** `ApiResponse<Integer>` — Number of successfully pushed tickets.
+**Response:** `ApiResponse<Integer>` — 成功推送的工单数量。
+
+### Get Queue Counts
+`GET /api/v1/tickets/queue-counts`
+
+**Response:** `ApiResponse<Map<String, Integer>>` — 各状态队列的工单计数（PENDING_TRANS, PENDING_REPLY, PENDING_AUDIT, APPROVED 等）。
 
 ### Update Ticket Validity
 `POST /api/v1/tickets/{id}/valid`
@@ -135,41 +157,56 @@ Sends the ticket to `q.ticket.reply` for AI reply generation. Does not change ti
   "isValid": true
 }
 ```
+**Permission:** 仅限 ADMIN 角色。用于标记工单是否在知识库中有效使用。
 
-## Admin
+## Sync Management
 
-### Sync Management
-
-#### Manual Sync
+### Manual Sync
 `POST /api/v1/sync/freshdesk`
 
-Triggers an immediate incremental synchronization with Freshdesk.
+触发一次立即的增量同步（从 Freshdesk 同步新增/更新的工单到本地数据库）。
 
-#### Get Sync Config
+### Get Sync Config
 `GET /api/v1/sync/config`
 
-Returns current sync configuration (cron expression, enabled flag).
+返回当前同步配置（Cron 表达式、启用标记、最后同步时间）。
 
-#### Update Sync Config
+**Response:** `ApiResponse<{ cronExpression: string, syncEnabled: boolean, lastSyncTime: ISO8601 datetime }>`
+
+### Update Sync Config
 `PUT /api/v1/sync/config`
 
 **Request Body:**
 ```json
 {
   "cronExpression": "0 0/10 * * * ?",
-  "syncEnabled": "true"
+  "syncEnabled": true,
+  "lastSyncTime": "2024-01-01T00:00:00Z"
 }
 ```
+**Permission:** 仅限 ADMIN 角色。
 
-#### Get Sync Status
+### Get Sync Status
 `GET /api/v1/sync/status`
 
-Returns current sync running status.
+返回当前同步运行状态（是否正在同步、最后同步时间）。
 
-#### Get Sync Logs
+**Response:** `ApiResponse<{ isSyncing: boolean, lastSyncTime: ISO8601 datetime }>`
+
+### Get Sync Logs
 `GET /api/v1/sync/logs`
 
-Returns history of sync executions (status, trigger type, counts, timestamps).
+返回同步执行历史记录（状态、触发类型、处理计数、时间戳）。
+
+**Query Parameters:**
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `page` | int | 0 | 页号 |
+| `size` | int | 20 | 每页记录数 |
+
+**Response:** `ApiResponse<Page<SyncLog>>` — 分页同步日志列表。
+
+## Admin
 
 ### User Management
 
@@ -179,17 +216,17 @@ Returns history of sync executions (status, trigger type, counts, timestamps).
 **Query Parameters:**
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| `page` | int | 0 | Page number |
-| `size` | int | 20 | Page size |
-| `status` | string | - | Filter by status (`PENDING`, `APPROVED`, `REJECTED`) |
-| `username` | string | - | Filter by username (fuzzy match, case-insensitive) |
+| `page` | int | 0 | 页号 |
+| `size` | int | 20 | 每页记录数 |
+| `status` | string | - | 按用户状态过滤（`PENDING`, `APPROVED`, `REJECTED`）|
+| `username` | string | - | 按用户名模糊查询（不区分大小写）|
 
-**Response:** `ApiResponse<Page<SysUser>>` — Paginated user list (password field excluded via `@JsonIgnore`). Sorted by `createdAt` descending.
+**Response:** `ApiResponse<Page<SysUser>>` — 分页用户列表，密码字段通过 `@JsonIgnore` 排除，按 `createdAt` 降序排列。
 
 #### List Pending Users
 `GET /api/v1/admin/users/pending`
 
-**Response:** `ApiResponse<List<SysUser>>` — All users with status `PENDING`.
+**Response:** `ApiResponse<List<SysUser>>` — 所有状态为 `PENDING` 的用户。
 
 #### Approve/Reject User
 `POST /api/v1/admin/users/{id}/approve`
@@ -198,10 +235,11 @@ Returns history of sync executions (status, trigger type, counts, timestamps).
 ```json
 { "action": "APPROVE" }
 ```
-or
+或
 ```json
 { "action": "REJECT" }
 ```
+**Permission:** 仅限 ADMIN 角色。
 
 #### Update User Role
 `PUT /api/v1/admin/users/{id}/role`
@@ -210,16 +248,111 @@ or
 ```json
 { "role": "ADMIN" }
 ```
-Accepted values: `ADMIN`, `USER`.
+接受值：`ADMIN`, `USER`。
+
+**Permission:** 仅限 ADMIN 角色。
 
 #### Reset User Password
 `POST /api/v1/admin/users/{id}/reset-password`
 
 **Request Body:**
 ```json
-{ "password": "newpassword" }
+{ "password": "新密码" }
 ```
-Password must be at least 6 characters.
+密码至少 6 个字符。
+
+**Permission:** 仅限 ADMIN 角色。
+
+## Knowledge Base Management
+
+### List Knowledge Notes
+`GET /api/v1/admin/knowledge/notes`
+
+返回知识库注意事项列表。
+
+**Response:** `ApiResponse<List<KnowledgeNote>>` — 包含 id, title, content, sortOrder 等字段。
+
+### Create Knowledge Note
+`POST /api/v1/admin/knowledge/notes`
+
+**Request Body:**
+```json
+{
+  "title": "注意事项标题",
+  "content": "详细说明内容",
+  "sortOrder": 1
+}
+```
+**Response:** `ApiResponse<KnowledgeNote>`
+
+**Permission:** 仅限 ADMIN 角色。
+
+### Update Knowledge Note
+`PUT /api/v1/admin/knowledge/notes/{id}`
+
+**Request Body:**
+```json
+{
+  "title": "更新后的标题",
+  "content": "更新后的内容",
+  "sortOrder": 1
+}
+```
+**Permission:** 仅限 ADMIN 角色。
+
+### Delete Knowledge Note
+`DELETE /api/v1/admin/knowledge/notes/{id}`
+
+**Permission:** 仅限 ADMIN 角色。
+
+### Batch Mark Ticket Validity
+`POST /api/v1/admin/knowledge/batch-valid`
+
+**Request Body:**
+```json
+{
+  "ticketIds": [101, 102, 103],
+  "isValid": true
+}
+```
+**Effect:** 批量标记指定工单的有效性标记。
+
+**Permission:** 仅限 ADMIN 角色。
+
+### Export Valid Tickets to CSV
+`GET /api/v1/admin/knowledge/export/tickets`
+
+**Response:** CSV 文件下载，包含所有 `isValid=true` 的工单数据。
+
+### Export Knowledge Notes to CSV
+`GET /api/v1/admin/knowledge/export/notes`
+
+**Response:** CSV 文件下载，包含所有知识库注意事项。
+
+## Database Administration
+
+### Execute SQL Query
+`POST /api/v1/admin/database/query`
+
+**Request Body:**
+```json
+{
+  "sql": "SELECT * FROM ticket WHERE status = 'PENDING_TRANS'",
+  "maxRows": 1000
+}
+```
+**Response:** `ApiResponse<QueryResult>` — 查询结果（列名、数据行）。
+
+**Permission:** 仅限 ADMIN 角色。建议用于调试和数据导出。
+
+### Get Table Metadata
+`GET /api/v1/admin/database/tables`
+
+返回数据库所有表的元数据信息（表名、列定义）。
+
+**Response:** `ApiResponse<List<TableMetadata>>`
+
+**Permission:** 仅限 ADMIN 角色。
 
 ## System Configuration
 
@@ -235,6 +368,7 @@ Password must be at least 6 characters.
 ```json
 { "enabled": true }
 ```
+**Permission:** 仅限 ADMIN 角色。
 
 ### Get WeChat Work Webhook Config
 `GET /api/v1/config/wecom-webhook`
@@ -248,14 +382,23 @@ Password must be at least 6 characters.
 ```json
 { "url": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=...", "enabled": true }
 ```
+**Permission:** 仅限 ADMIN 角色。
 
 ### Test WeChat Work Webhook
 `POST /api/v1/config/wecom-webhook/test`
 
 **Response:** `ApiResponse<{ success: boolean }>`
 
-## System / Debug
+## Webhooks
 
-### Client Request Logging
-- `POST /api/requests`: Log a raw client request for debugging.
-- `GET /api/requests`: Retrieve all logged requests.
+### Receive Freshdesk Webhook
+`POST /api/v1/webhook/freshdesk`
+
+**Authentication:** 无需认证。支持 Freshdesk Webhook 签名验证（`X-Freshdesk-Webhook-Secret` 请求头）。
+
+**Request Body:**
+Freshdesk webhook 原始事件负载（JSON 格式）。系统自动处理工单创建/更新事件。
+
+**Response:** `{ "status": "received" }`
+
+**Note:** 该端点在系统初始化时需在 Freshdesk 管理后台配置 Webhook URL。
