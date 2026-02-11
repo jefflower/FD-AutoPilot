@@ -1,27 +1,30 @@
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback, useRef, lazy, Suspense } from "react";
 import { useTranslation } from "react-i18next";
 import "./index.css";
 
-import SettingsTab from "./components/SettingsTab";
+// 首屏必需的组件（同步加载）
 import SidebarNew, { TabType } from "./components/SidebarNew";
 import AuthLoginTab from "./components/auth/AuthLoginTab";
 import AuthRegisterTab from "./components/auth/AuthRegisterTab";
-import TranslationTasksTab from "./components/server/TranslationTasksTab";
-import ReplyTasksTab from "./components/server/ReplyTasksTab";
-import ServerTicketsTab from "./components/server/ServerTicketsTab";
-import AuditTasksTab from "./components/server/AuditTasksTab";
-import ApprovedTasksTab from "./components/server/ApprovedTasksTab";
-import AdminUsersTab from "./components/admin/AdminUsersTab";
-import ManualSyncTab from "./components/admin/ManualSyncTab";
-import ServerLogsTab from "./components/admin/ServerLogsTab";
-import DatabaseTab from "./components/admin/DatabaseTab";
-import KnowledgeTab from "./components/admin/KnowledgeTab";
-import UserProfileTab from "./components/user/UserProfileTab";
+
+// 非首屏组件（懒加载）
+const SettingsTab = lazy(() => import("./components/SettingsTab"));
+const TranslationTasksTab = lazy(() => import("./components/server/TranslationTasksTab"));
+const ReplyTasksTab = lazy(() => import("./components/server/ReplyTasksTab"));
+const ServerTicketsTab = lazy(() => import("./components/server/ServerTicketsTab"));
+const AuditTasksTab = lazy(() => import("./components/server/AuditTasksTab"));
+const ApprovedTasksTab = lazy(() => import("./components/server/ApprovedTasksTab"));
+const AdminUsersTab = lazy(() => import("./components/admin/AdminUsersTab"));
+const ManualSyncTab = lazy(() => import("./components/admin/ManualSyncTab"));
+const ServerLogsTab = lazy(() => import("./components/admin/ServerLogsTab"));
+const DatabaseTab = lazy(() => import("./components/admin/DatabaseTab"));
+const KnowledgeTab = lazy(() => import("./components/admin/KnowledgeTab"));
+const UserProfileTab = lazy(() => import("./components/user/UserProfileTab"));
+const FloatingTaskWidget = lazy(() => import("./components/common/FloatingTaskWidget").then(m => ({ default: m.FloatingTaskWidget })));
 
 import { MQTranslationProvider } from "./context/MQTranslationContext";
 import { MQReplyProvider } from "./context/MQReplyContext";
 import { MQAuditProvider } from "./context/MQAuditContext";
-import { FloatingTaskWidget } from "./components/common/FloatingTaskWidget";
 
 import { useSettings } from "./hooks/useSettings";
 import { useAuth } from "./hooks/useAuth";
@@ -323,11 +326,17 @@ function App() {
                             queueCounts={queueCounts}
                         />
 
-                        <div className="flex-1 flex overflow-hidden">
-                            {renderTabContent()}
-                        </div>
+                        <Suspense fallback={
+                            <div className="flex-1 flex items-center justify-center">
+                                <div className="animate-spin rounded-full h-8 w-8 border-2 border-slate-600 border-t-blue-400" />
+                            </div>
+                        }>
+                            <div className="flex-1 flex overflow-hidden">
+                                {renderTabContent()}
+                            </div>
 
-                        <FloatingTaskWidget />
+                            <FloatingTaskWidget />
+                        </Suspense>
                     </div>
                 </MQAuditProvider>
             </MQReplyProvider>

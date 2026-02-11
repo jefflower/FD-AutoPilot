@@ -205,7 +205,7 @@ Rust 后端通过 Tauri Event 与 React 前端通信：
 
 ## Agent Teams 配置
 
-本项目使用分层模型策略：开发用 opus（最强推理），测试和文档用 haiku（高性价比），代码审查用 sonnet（平衡）。
+本项目使用分层模型策略：开发用 opus（最强推理），测试编写和代码审查用 sonnet（平衡），测试执行和文档用 haiku（高性价比）。
 
 ### 模型分配规则
 
@@ -215,84 +215,242 @@ Rust 后端通过 Tauri Event 与 React 前端通信：
 |----------|-----------|----------|
 | 开发 | `opus` | 编写/修改业务代码、架构设计、复杂调试、性能优化 |
 | 代码审查 | `sonnet` | 代码质量分析、安全审查、PR Review |
-| 测试 | `haiku` | 执行测试、编写测试用例、测试报告 |
+| 测试编写 | `sonnet` | 编写测试用例（需要理解业务逻辑） |
+| 测试执行 | `haiku` | 运行测试、生成覆盖率报告 |
 | 文档 | `haiku` | 编写/更新文档、API 文档、注释 |
 | 探索 | `haiku` | 代码库搜索、文件查找、结构分析 |
 
-### Agent 角色定义
+### 角色 → 实际调用映射
 
-#### 开发组 — model: opus
+每个角色对应 Task 工具的具体参数，主代理**必须**按此表构造调用：
 
-**backend-dev** (Java/Spring Boot 后端开发)
-- 范围: `fd-server/src/**`
-- 职责: TicketService 工作流、Controller 端点、MQ 配置、Entity/DTO、SecurityConfig
-- 关注: 工单状态流转正确性、MQ 消息可靠投递、事务一致性
+| 角色 | subagent_type | model | prompt 关键指令 |
+|------|--------------|-------|----------------|
+| backend-dev | `general-purpose` | `opus` | "你是 Java/Spring Boot 后端开发。范围限定 `fd-server/src/**`。关注工单状态流转正确性、MQ 消息可靠投递、事务一致性。" |
+| frontend-dev | `general-purpose` | `opus` | "你是 React/TypeScript 前端开发。范围限定 `fd-client/src/**`（不含 `src-tauri`）。关注 MQ Context 工厂模式一致性、流式文本桥接、状态管理。" |
+| rust-dev | `general-purpose` | `opus` | "你是 Tauri/Rust 客户端后端开发。范围限定 `fd-client/src-tauri/src/**`。关注异步安全、Event 通信可靠性、错误处理。" |
+| architect | `Plan` | `opus` | （Plan 模式自动获取上下文，用于跨模块设计、数据流优化、技术选型、状态机扩展） |
+| debugger | `general-purpose` | `opus` | "你是跨层调试专家。负责定位 Rust↔React↔Server 问题、MQ 消息丢失排查、Shadow Window 时序问题。输出：根因分析 + 修复建议。" |
+| code-reviewer | `general-purpose` | `sonnet` | "你是代码审查者。重点关注 OWASP Top 10（JWT 安全、SQL 注入、XSS）、最佳实践、重复代码。输出：问题列表（按严重级别排序）+ 修复建议。" |
+| test-runner | `Bash` | `haiku` | 直接执行测试命令（见下方测试命令表） |
+| test-writer | `general-purpose` | `sonnet` | "你是测试工程师。后端用 JUnit 5 + Spring Boot Test（`fd-server/src/test/java/**`），Rust 用 `#[cfg(test)]`，前端用 Vitest + RTL。关注工单状态流转边界、MQ 序列化/反序列化、API 权限校验。" |
+| doc-writer | `general-purpose` | `haiku` | "你是文档工程师。范围 `doc/**` + 代码内注释。中文撰写，遵循 `doc/` 目录现有风格。" |
 
-**frontend-dev** (React/TypeScript 前端开发)
-- 范围: `fd-client/src/**`（不含 `src-tauri`）
-- 职责: 组件开发、Hooks/Context、AI Provider 抽象层、Shadow Window 逻辑
-- 关注: MQ Context 工厂模式一致性、流式文本桥接、状态管理
+**测试命令表**（test-runner 使用）：
 
-**rust-dev** (Tauri/Rust 客户端后端开发)
-- 范围: `fd-client/src-tauri/src/**`
-- 职责: MQ 消费者、Gemini CLI 调用(ai.rs)、Tauri 命令注册(lib.rs)、Freshdesk API(api.rs)
-- 关注: 异步安全、Event 通信可靠性、错误处理
+| 模块 | 命令 |
+|------|------|
+| 后端 | `cd fd-server && mvn test` |
+| Rust | `cd fd-client/src-tauri && cargo test` |
+| 前端 | `cd fd-client && npm test` |
+| 前端覆盖率 | `cd fd-client && npm run test:coverage` |
 
-**architect** (架构设计)
-- 使用 `subagent_type=Plan`
-- 职责: 跨模块设计、数据流优化、技术选型、状态机扩展
+### 主代理编排协议
 
-**debugger** (复杂调试)
-- 职责: 跨层问题定位（Rust↔React↔Server）、MQ 消息丢失排查、Shadow Window 时序问题
+主代理（即对话中的顶层 Claude 实例）同时承担**管理者**角色，在调度子代理执行之前和之后，**必须**完成以下管理职责：
 
-#### 代码审查组 — model: sonnet
+#### Phase 0: 需求受理（每次用户请求必经）
 
-**code-reviewer** (代码审查)
-- 职责: 代码质量、安全漏洞（OWASP Top 10）、最佳实践、重复代码检测
-- 特别关注: JWT 安全、SQL 注入（H2 控制台）、XSS（Shadow Window 注入脚本）
+收到用户请求后，主代理**必须先完成以下分析**，再进入决策树：
 
-#### 测试组 — model: haiku
+1. **需求澄清** — 请求是否明确？若存在歧义，用 `AskUserQuestion` 澄清，不得假设
+2. **范围评估** — 判断涉及哪些层（server / React / Rust / 跨层），影响哪些模块
+3. **复杂度判断** — 按以下标准分级：
+   - **简单**: 单文件改动、逻辑清晰、无依赖 → 直接执行，跳过任务拆解
+   - **中等**: 2-5 个文件、单层、有明确模式可参考 → 创建 TaskCreate 跟踪，走流程B
+   - **复杂**: 跨层、模糊需求、需要设计决策 → 完整任务拆解，走流程A/C/D
+4. **任务拆解**（中等及以上）— 使用 `TaskCreate` 将需求拆解为可执行任务，每个任务须包含：
+   - 明确的完成标准（什么状态算"做完"）
+   - 涉及的文件/模块范围
+   - 依赖关系（通过 `addBlockedBy` 设定）
+5. **风险识别** — 是否涉及：状态机变更、MQ 消息格式变更、数据库 Schema 变更、安全相关改动？若是，标记为高风险，流程中必须经过 architect 设计 + 用户确认
 
-**test-runner** (测试执行)
-- 后端: `cd fd-server && mvn test`
-- Rust: `cd fd-client/src-tauri && cargo test`
-- 前端: `cd fd-client && npm test`（Vitest 单元测试 + React Testing Library）
-- 前端覆盖率: `cd fd-client && npm run test:coverage`
+#### Phase 1-N: 执行与跟踪
 
-**test-writer** (测试编写)
-- 后端: JUnit 5 + Spring Boot Test，放置于 `fd-server/src/test/java/**`
-- Rust: `#[cfg(test)]` 模块，放置于对应源文件内
-- 关注: 工单状态流转边界、MQ 消息序列化/反序列化、API 权限校验
+在各流程（A/B/C/D）执行期间，主代理**必须**：
 
-#### 文档组 — model: haiku
+- **阶段推进前**: 检查当前阶段的门控条件是否满足（见下方阶段门控表）
+- **子代理返回后**: 用 `TaskUpdate` 更新任务状态，记录产出摘要
+- **异常发生时**: 按「失败回退规则」处理，不得静默跳过
 
-**doc-writer** (文档编写)
-- 范围: `doc/**`、代码内注释
-- 职责: API 文档更新、架构文档维护、变更日志
-- 格式: 中文撰写，遵循 `doc/` 目录现有风格
+#### Phase Final: 完成确认
 
-### 并行执行策略
+所有任务完成后，主代理**必须**：
 
-以下场景应并行启动多个子代理：
+1. 用 `TaskList` 确认所有任务状态为 `completed`
+2. 向用户汇报：完成了什么、改了哪些文件、测试是否通过、是否有遗留风险
+3. 若有遗留项（如文档未更新、测试覆盖不足），明确告知用户
 
-1. **全栈功能开发**: 同时启动 `backend-dev`(opus) + `frontend-dev`(opus) + `rust-dev`(opus) 分别处理各层改动
-2. **开发+测试**: 开发完成后，同时启动 `test-runner`(haiku) + `code-reviewer`(sonnet)
-3. **多模块探索**: 需要了解跨模块逻辑时，同时启动多个 `Explore`(haiku) 子代理搜索不同模块
-4. **文档+测试补全**: 同时启动 `doc-writer`(haiku) + `test-writer`(haiku)
+#### 阶段门控表
 
-### 典型工作流示例
+每个阶段之间设置门控条件，**不满足则不得进入下一阶段**：
+
+| 门控点 | 准入条件 | 适用流程 |
+|--------|---------|---------|
+| 探索 → 设计 | Explore 产出了涉及模块的文件清单和现有模式总结 | A, D |
+| 设计 → 开发 | architect 方案已获用户确认；API 契约、数据结构已明确 | A, D |
+| 开发 → 验证 | 所有 dev agent 已返回；代码已写入文件系统 | A, B, C, D |
+| 验证 → 补充测试 | 现有测试全部通过；code-reviewer 无 P0/P1 问题 | A |
+| 测试 → 文档 | 全部测试通过（含新增测试） | A, D |
+| 诊断 → 修复 | debugger 输出了根因分析和涉及文件清单 | C |
+
+### 工作流决策树
+
+完成 Phase 0 需求受理后，主代理按以下逻辑选择工作流：
 
 ```
-用户请求: "给 TicketService 添加批量删除功能"
-
-1. [Explore/haiku] 并行探索 TicketService、TicketController、serverApi.ts 现有模式
-2. [architect/opus/Plan] 设计 API + 前后端方案
-3. 用户确认方案后，并行执行:
-   - [backend-dev/opus] 实现 Service + Controller
-   - [frontend-dev/opus] 实现前端调用 + UI
-4. 开发完成后，并行执行:
-   - [test-runner/haiku] 运行现有测试确保无回归
-   - [test-writer/haiku] 编写新功能测试
-   - [code-reviewer/sonnet] 审查代码质量
-5. [doc-writer/haiku] 更新 API 文档
+用户请求 → Phase 0 需求受理（澄清 + 范围 + 复杂度 + 拆解 + 风险）
+  │
+  ├─ 简单任务？ ──→ 直接执行，无需子代理
+  │
+  ├─ 是 Bug/异常？ ──→ 流程C: Bug 修复
+  │
+  ├─ 是重构/优化？ ──→ 流程D: 重构优化
+  │
+  ├─ 判断变更范围
+  │   ├─ 跨层（涉及 server + client 或 React + Rust）──→ 流程A: 全栈新功能
+  │   └─ 单层 ──→ 流程B: 单层变更
+  │
+  └─ 无法判断？ ──→ Explore(haiku) 先探索，再重新进入决策树
 ```
+
+### 流程A: 全栈新功能（跨层 + 新功能/需求）
+
+```
+Step 1: 探索
+  Explore(haiku) × N 并行探索涉及模块（如 TicketService、TicketController、serverApi.ts）
+  ── 门控 ──→ 产出文件清单 + 现有模式总结，否则补充探索
+
+Step 2: 设计
+  architect(opus/Plan) 设计方案，输出必须包含：
+  - API 契约（端点、请求/响应结构）
+  - MQ 消息格式（如涉及）
+  - 数据模型变更（如涉及）
+  - 各层任务分工和接口约定
+  → 用户确认方案
+  ── 门控 ──→ 用户已确认 + 契约已明确，否则不得进入开发
+
+Step 3: 并行开发（前提：Step 2 的契约已确定）
+  主代理用 TaskCreate 为每个子任务创建跟踪项，然后同时启动（单条消息多个 Task 调用）：
+  - backend-dev(opus) — 实现 Service + Controller + Entity
+  - frontend-dev(opus) — 实现组件 + Hooks + API 调用
+  - rust-dev(opus) — 实现 Tauri 命令 + MQ 处理（仅涉及 Rust 层时）
+  子代理返回后，主代理用 TaskUpdate 更新各任务状态
+  ── 门控 ──→ 所有 dev agent 已返回 + 代码已写入，否则等待
+
+Step 4: 并行验证
+  同时启动：
+  - test-runner(haiku/Bash) — 运行现有测试确保无回归
+  - code-reviewer(sonnet) — 审查代码质量和安全
+  ── 门控 ──→ 测试全通过 + 无 P0/P1 审查问题，否则进入「失败回退规则」
+
+Step 5: 补充测试
+  test-writer(sonnet) — 为新功能编写测试
+  test-runner(haiku/Bash) — 运行新测试
+  ── 门控 ──→ 新测试全部通过
+
+Step 6: 文档（仅涉及 API 变更时）
+  doc-writer(haiku) — 更新 API 文档
+
+Step Final: 主代理用 TaskList 确认全部完成，向用户汇报产出摘要
+```
+
+### 流程B: 单层变更（仅后端 / 仅前端 / 仅 Rust）
+
+```
+Step 1: Explore(haiku) 探索相关文件
+Step 2: 对应 dev agent(opus) 直接实现（简单变更可跳过 architect）
+  主代理用 TaskCreate 创建跟踪项
+  ── 门控 ──→ 代码已写入
+Step 3: test-runner(haiku/Bash) 验证
+  ── 门控 ──→ 测试通过，否则 dev agent 修复（最多 2 轮）
+Step 4: 若涉及 API 变更 → doc-writer(haiku)
+Step Final: 主代理确认完成，向用户汇报
+```
+
+### 流程C: Bug 修复
+
+```
+Step 1: 诊断
+  debugger(opus) 定位根因
+  输出：根因分析 + 涉及文件 + 修复方向
+  ── 门控 ──→ 根因已明确 + 涉及文件已列出，否则补充诊断
+
+Step 2: 修复
+  对应 dev agent(opus) 实施修复
+  主代理用 TaskCreate/TaskUpdate 跟踪
+  ── 门控 ──→ 修复代码已写入
+
+Step 3: 防回归
+  并行启动：
+  - test-writer(sonnet) — 补充回归测试（覆盖此 Bug 场景）
+  - test-runner(haiku/Bash) — 运行全量测试
+  ── 门控 ──→ 全量测试通过 + 回归测试覆盖了 Bug 场景
+
+Step 4: 验证
+  code-reviewer(sonnet) — 审查修复是否引入新问题
+  ── 门控 ──→ 无新问题，否则回到 Step 2
+
+Step Final: 主代理确认完成，向用户汇报（含根因、修复方案、测试覆盖）
+```
+
+### 流程D: 重构优化
+
+```
+Step 1: 全面分析
+  Explore(haiku) × N 并行分析现有实现
+  ── 门控 ──→ 产出现有实现的结构总结和问题点
+
+Step 2: 设计
+  architect(opus/Plan) 设计重构方案
+  → 用户确认方案（重构风险较高，必须确认）
+  ── 门控 ──→ 用户已确认方案
+
+Step 3: 执行
+  对应 dev agent(opus) 实施重构
+  主代理用 TaskCreate/TaskUpdate 跟踪
+  ── 门控 ──→ 重构代码已写入
+
+Step 4: 全量验证（重构必须跑全量测试）
+  test-runner(haiku/Bash) — 后端 + 前端 + Rust 全部测试
+  ── 门控 ──→ 全量测试通过，否则 dev agent 修复后重跑（最多 2 轮）
+
+Step 5: 审查
+  code-reviewer(sonnet) — 重点关注行为一致性
+  ── 门控 ──→ 无行为变更问题
+
+Step Final: 主代理确认完成，向用户汇报（含重构范围、行为一致性确认、测试结果）
+```
+
+### 失败回退规则
+
+主代理在验证步骤遇到失败时，**必须**按以下规则处理，不得跳过：
+
+| 失败类型 | 处理方式 | 最大重试 |
+|---------|---------|---------|
+| 测试失败 | 原 dev agent(opus) 修复 → test-runner 重跑 | 2 轮 |
+| 审查发现安全问题 | 立即停止流程，原 dev agent(opus) 修复 → code-reviewer 重审 | 2 轮 |
+| 构建失败 | debugger(opus) 定位 → dev agent(opus) 修复 | 2 轮 |
+| 并行产出冲突 | architect(opus/Plan) 协调合并策略 → dev agent 调整 | 1 轮 |
+| 超过最大重试 | 停止自动流程，向用户报告问题详情，等待人工决策 | — |
+
+### 并行执行约束
+
+以下规则约束何时可以并行、何时必须串行：
+
+**可以并行的组合：**
+- 多个 Explore agent（探索不同模块）
+- backend-dev + frontend-dev + rust-dev（前提：architect 已输出 API 契约和数据结构）
+- test-runner + code-reviewer（互不依赖）
+- doc-writer + test-writer（互不依赖）
+
+**必须串行的依赖：**
+- architect → dev agents（开发必须基于确认后的设计方案）
+- dev agents → test-runner（测试必须在代码写完后）
+- debugger → dev agent（修复必须基于诊断结论）
+- 所有开发/测试 → doc-writer（文档必须反映最终实现）
+
+**特殊约束：**
+- debugger 是阻塞性的：触发后暂停其他工作流，直到诊断完成
+- 全量测试失败后，不得启动 doc-writer（代码未稳定，文档会过时）
+- 并行启动多个 dev agent 时，必须在同一条消息中发送多个 Task 调用

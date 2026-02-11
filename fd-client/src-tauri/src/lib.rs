@@ -548,6 +548,7 @@ pub fn run() {
             let settings = settings::load_settings(app.handle());
             let mq_translate_state = app.state::<MqTranslateState>();
             mq_translate_state.0.state.batch_size.store(settings.mq_batch_size, Ordering::SeqCst);
+
             Ok(())
         })
         .invoke_handler(tauri::generate_handler![

@@ -52,9 +52,10 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        // 允许的来源（Tauri 开发服务器）
-        configuration.setAllowedOrigins(
-                Arrays.asList("http://localhost:1420", "http://127.0.0.1:1420", "tauri://localhost"));
+        // 允许的来源（Tauri 开发服务器 + 生产模式）
+        // 使用 allowedOriginPatterns 支持通配符，且兼容 allowCredentials(true)
+        configuration.setAllowedOriginPatterns(
+                Arrays.asList("http://localhost:*", "http://127.0.0.1:*", "tauri://localhost", "https://tauri.localhost"));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("*"));
         configuration.setAllowCredentials(true);
