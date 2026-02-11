@@ -95,7 +95,7 @@ class AuthServiceTest {
         when(userRepository.findByUsername("noone")).thenReturn(Optional.empty());
 
         RuntimeException ex = assertThrows(RuntimeException.class, () -> authService.login(request));
-        assertEquals("用户名或密码错误", ex.getMessage());
+        assertEquals("USER_NOT_FOUND", ex.getMessage());
     }
 
     @Test
@@ -108,7 +108,7 @@ class AuthServiceTest {
         when(passwordEncoder.matches("wrong", "encoded_password")).thenReturn(false);
 
         RuntimeException ex = assertThrows(RuntimeException.class, () -> authService.login(request));
-        assertEquals("用户名或密码错误", ex.getMessage());
+        assertEquals("WRONG_PASSWORD", ex.getMessage());
     }
 
     @Test
@@ -121,7 +121,7 @@ class AuthServiceTest {
         when(passwordEncoder.matches("rawpass", "encoded_password")).thenReturn(true);
 
         RuntimeException ex = assertThrows(RuntimeException.class, () -> authService.login(request));
-        assertEquals("用户尚未审核通过", ex.getMessage());
+        assertEquals("USER_NOT_APPROVED", ex.getMessage());
     }
 
     // ========== register ==========

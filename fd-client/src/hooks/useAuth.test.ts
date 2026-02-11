@@ -6,11 +6,24 @@ import { useAuth } from './useAuth';
 vi.mock('../services/serverApi', () => {
   let _token: string | null = null;
 
+  class ApiError extends Error {
+    code: string;
+    constructor(code: string, message: string) {
+      super(message);
+      this.code = code;
+      this.name = 'ApiError';
+    }
+  }
+
   return {
+    ApiError,
     authApi: {
       login: vi.fn(),
       register: vi.fn(),
       logout: vi.fn(),
+      checkAdmin: vi.fn(),
+      initAdmin: vi.fn(),
+      superResetPassword: vi.fn(),
     },
     getAuthToken: () => _token,
     setAuthToken: (t: string | null) => {
@@ -35,6 +48,9 @@ const getServerApiMock = async () => {
       login: ReturnType<typeof vi.fn>;
       register: ReturnType<typeof vi.fn>;
       logout: ReturnType<typeof vi.fn>;
+      checkAdmin: ReturnType<typeof vi.fn>;
+      initAdmin: ReturnType<typeof vi.fn>;
+      superResetPassword: ReturnType<typeof vi.fn>;
     },
     isTokenExpired: mod.isTokenExpired as ReturnType<typeof vi.fn>,
     setAuthToken: mod.setAuthToken,

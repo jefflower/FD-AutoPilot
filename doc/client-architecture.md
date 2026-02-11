@@ -12,17 +12,18 @@ The `fd-client` is a hybrid application built with **Tauri v2** and **React**. I
 ## Core Components
 
 ### 1. RabbitMQ Consumer (`src-tauri/src/mq_consumer.rs`)
-The client acts as a worker node. It connects to the RabbitMQ server and listens on two queues via **two independent consumers**:
+The client acts as a worker node. It connects to the RabbitMQ server and listens on three queues via **three independent consumers**:
 
 | Consumer | Queue | Concurrency | Processing Mode |
 |----------|-------|-------------|-----------------|
 | Translation | `q.ticket.translation` | Configurable (`batchSize`, default 1) | `tokio::spawn` parallel |
 | Reply | `q.ticket.reply` | Fixed 1 | Direct `await` serial |
+| Audit | `q.ticket.audit` | Fixed 1 | Direct `await` serial |
 
 **Workflow:**
 1. **Receive**: Rust backend receives an MQ message.
 2. **Fetch**: Calls `fd-server` API to get latest ticket details.
-3. **Emit**: Emits a Tauri Event (`mq-translate-request` or `mq-reply-request`) to the React frontend.
+3. **Emit**: Emits a Tauri Event (`mq-translate-request`, `mq-reply-request`, or `mq-audit-request`) to the React frontend.
 4. **Wait**: Registers a `oneshot::channel` in `pending_acks` and awaits the frontend completion signal (300s timeout).
 5. **ACK/NACK**: On success ACKs the message; on failure NACKs without requeue.
 
@@ -30,7 +31,7 @@ The client acts as a worker node. It connects to the RabbitMQ server and listens
 
 **Stop Behavior**: When `stop()` is called, `is_running` is set to `false`. Multiple checkpoints (`RunGuard` drop guard, consumer loop check, `handle_message` entry check, `submit_via_frontend` mid-check) ensure no new tasks are processed. Already-buffered messages are NACK'd with `requeue: true`.
 
-**State Management (lib.rs)**: `MqConsumerHolder` is the shared underlying struct for both consumers. `MqTranslateState` and `MqReplyState` are newtype wrappers (required by Tauri's `State<>` type system). Common command logic is extracted into `start_consumer_inner`, `stop_consumer_inner`, `get_consumer_status_inner`, `complete_task_inner` helper functions.
+**State Management (lib.rs)**: `MqConsumerHolder` is the shared underlying struct for all three consumers. `MqTranslateState`, `MqReplyState`, and `MqAuditState` are newtype wrappers (required by Tauri's `State<>` type system). Common command logic is extracted into `start_consumer_inner`, `stop_consumer_inner`, `get_consumer_status_inner`, `complete_task_inner` helper functions.
 
 ### 2. NotebookLM Shadow Service (`src/services/notebookShadow.ts`)
 Since Google NotebookLM has no public API, we use a "Shadow Window" technique with a **hybrid observer + relay architecture (v3)**.
@@ -69,6 +70,12 @@ A generic factory function (`createMQTaskContext.tsx`) generates React Context +
 #### MQReplyContext (~52 lines)
 - Config: `concurrencyMode: 'serial'`, `defaultBatchSize: 1`, `interTaskDelayMs: 1000`
 - Injects `runReply` with `onStreamChunk` callback bridging to `setStreamingText`
+
+#### MQAuditContext (~99 lines)
+- Config: `concurrencyMode: 'serial'`, `defaultBatchSize: 1`, `interTaskDelayMs: 500`
+- **特殊机制**: taskProcessor 返回 Promise，在用户手动审核后 resolve（人工操作模式）
+- 非 `PENDING_AUDIT` 状态的工单自动跳过消费
+- 导出 `useMQAudit()` Hook，包含 `completeAudit(ticketId, success)` 和 `getAuditingTicket(ticketId)` 方法
 
 ### 3.5. AI Provider Abstraction (`src/ai/`)
 Defines provider interfaces (`AiTranslationProvider`, `AiReplyProvider`) and concrete implementations:
@@ -134,7 +141,8 @@ src/
 ├── context/
 │   ├── createMQTaskContext.tsx       # Generic MQ task context factory
 │   ├── MQTranslationContext.tsx      # Translation config (thin wrapper)
-│   └── MQReplyContext.tsx            # Reply config (thin wrapper)
+│   ├── MQReplyContext.tsx            # Reply config (thin wrapper)
+│   └── MQAuditContext.tsx            # Audit config (thin wrapper, manual approval mode)
 ├── hooks/                            # (see Hooks table above)
 ├── services/
 │   ├── notebookShadow.ts            # Shadow Window service (SELECTORS constant + hybrid observer + relay)
@@ -144,7 +152,7 @@ src/
 ├── types/
 │   ├── types.ts                     # Local data types
 │   └── server.ts                    # Server API types
-├── AppNew.tsx                       # Main entry, Context providers, tab routing
+├── App.tsx                          # Main entry, Context providers, tab routing（React.lazy 懒加载 12 个非首屏 Tab 组件）
 └── main.tsx                         # React entry point
 ```
 
@@ -182,10 +190,43 @@ Both translation and reply use the **AI Provider abstraction** (`src/ai/`). Hook
 
 | Category | Commands |
 |----------|----------|
-| Local Sync | `sync_tickets`, `list_local_tickets`, `load_ticket_cmd`, `sync_statuses_cmd` |
 | Settings | `save_settings_cmd`, `load_settings_cmd` |
-| File | `select_folder`, `export_to_csv_cmd` |
-| Translation | `translate_ticket_cmd`, `translate_ticket_direct_cmd` |
+| File | `select_folder`, `save_text_file_cmd` |
+| Translation | `translate_ticket_direct_cmd`, `sync_translate_reply_cmd` |
 | NotebookLM | `open_notebook_window`, `execute_notebook_js`, `get_shadow_result`, `toggle_notebook_window`, `get_notebook_window_visibility`, `forward_shadow_event` |
+| NotebookLM Selectors | `get_notebook_selectors_cmd`, `save_notebook_selectors_cmd`, `reset_notebook_selectors_cmd` |
 | MQ Translation | `start_mq_consumer`, `stop_mq_consumer`, `get_mq_consumer_status`, `update_mq_batch_size`, `complete_translate_task` |
 | MQ Reply | `start_reply_mq_consumer`, `stop_reply_mq_consumer`, `get_reply_mq_consumer_status`, `complete_reply_task` |
+| MQ Audit | `start_audit_mq_consumer`, `stop_audit_mq_consumer`, `get_audit_mq_consumer_status`, `complete_audit_task` |
+
+## Performance Optimization
+
+### 1. Component Lazy Loading (`App.tsx`)
+首屏同步加载 3 个核心组件：
+- `SidebarNew` — 导航侧边栏
+- `AuthLoginTab` — 登录表单
+- `AuthRegisterTab` — 注册表单
+
+其余 12 个 Tab 组件通过 `React.lazy()` + `Suspense` 懒加载：
+- Settings, TranslationTasks, ReplyTasks, ServerTickets, AuditTasks, ApprovedTasks
+- AdminUsers, ManualSync, ServerLogs, Database, Knowledge, UserProfile, FloatingTaskWidget
+
+加载中显示 spinner 转圈，避免首屏阻塞。
+
+### 2. Vite Build Optimization (`vite.config.ts`)
+- **Manual Chunks**: 将依赖分离为独立 chunk，减少体积碎片化：
+  - `react-vendor`: React 生态（react, react-dom）
+  - `tauri-vendor`: Tauri 插件（@tauri-apps/api, dialog, opener）
+  - `i18n-vendor`: 国际化（i18next, react-i18next）
+- **Chunk Size Warning Limit**: 设为 500KB，允许稍大的 chunk（默认 500KB），适应大型应用
+
+## UI Features
+
+### Authentication Page (`AuthLoginTab.tsx`)
+- **左右分屏设计**：左侧工单流水线动画，右侧登录表单
+- **视效**：极光背景、浮动粒子、S-wave 流水线、玻璃态表单
+- **"忘记密码？"链接**：点击弹出引导对话框（需管理员帮助，触发企业微信或邮件通知）
+
+### DevTools
+- Tauri DevTools 不再自动打开
+- 通过右键菜单 → "Inspect Element" 打开，便于调试

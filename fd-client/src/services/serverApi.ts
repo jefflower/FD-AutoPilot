@@ -29,6 +29,16 @@ import type {
   QueueCounts,
 } from '../types/server';
 
+// 自定义 API 错误类，携带错误码
+export class ApiError extends Error {
+  code: string;
+  constructor(code: string, message: string) {
+    super(message);
+    this.code = code;
+    this.name = 'ApiError';
+  }
+}
+
 // Server URL（从 localStorage 读取，默认 http://localhost:9988）
 const DEFAULT_SERVER_URL = 'http://localhost:9988';
 let serverBaseUrl: string = localStorage.getItem('fd_server_url') || DEFAULT_SERVER_URL;
@@ -111,7 +121,7 @@ async function request<T>(
       error: 'UNKNOWN_ERROR',
       message: `HTTP ${response.status}: ${response.statusText}`,
     }));
-    throw new Error(errorData.message || `Request failed: ${response.status}`);
+    throw new ApiError(errorData.error || 'UNKNOWN_ERROR', errorData.message || `Request failed: ${response.status}`);
   }
 
   // 处理空响应
@@ -148,6 +158,24 @@ export const authApi = {
 
   async register(data: RegisterRequest): Promise<void> {
     await request<void>('/auth/register', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    });
+  },
+
+  async checkAdmin(): Promise<{ exists: boolean }> {
+    return request<{ exists: boolean }>('/auth/check-admin');
+  },
+
+  async initAdmin(data: { password: string; superPassword: string }): Promise<void> {
+    await request<void>('/auth/init-admin', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    });
+  },
+
+  async superResetPassword(data: { username: string; newPassword: string; superPassword: string }): Promise<void> {
+    await request<void>('/auth/super-reset-password', {
       method: 'POST',
       body: JSON.stringify(data),
     });

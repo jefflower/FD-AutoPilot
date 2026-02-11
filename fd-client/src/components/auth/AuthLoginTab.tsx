@@ -6,13 +6,14 @@
 
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { getServerBaseUrl, setServerBaseUrl } from '../../services/serverApi';
+import { getServerBaseUrl, setServerBaseUrl, authApi } from '../../services/serverApi';
 
 interface AuthLoginTabProps {
     onLogin: (credentials: { username: string; password: string }) => Promise<void>;
     onSwitchToRegister: () => void;
     isLoading?: boolean;
     error?: string | null;
+    errorCode?: string | null;
 }
 
 // ===== 节点配置 =====
@@ -77,16 +78,26 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
     onSwitchToRegister,
     isLoading = false,
     error,
+    errorCode,
 }) => {
     const { t } = useTranslation('auth');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [localError, setLocalError] = useState<string | null>(null);
-    const [showForgotPassword, setShowForgotPassword] = useState(false);
     const [focusedField, setFocusedField] = useState<string | null>(null);
     const [showServerConfig, setShowServerConfig] = useState(false);
     const [serverUrl, setServerUrlLocal] = useState(getServerBaseUrl);
     const [mounted, setMounted] = useState(false);
+
+    // 新增状态：admin 检查、初始化面板、重置密码面板
+    const [adminExists, setAdminExists] = useState<boolean | null>(null);
+    const [showInitAdmin, setShowInitAdmin] = useState(false);
+    const [showResetPassword, setShowResetPassword] = useState(false);
+    const [superPassword, setSuperPassword] = useState('');
+    const [newPassword, setNewPassword] = useState('');
+    const [resetUsername, setResetUsername] = useState('');
+    const [actionLoading, setActionLoading] = useState(false);
+    const [actionMessage, setActionMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
 
     // 动画状态
     const [animState, setAnimState] = useState({
@@ -100,6 +111,13 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
     useEffect(() => {
         const timer = setTimeout(() => setMounted(true), 100);
         return () => clearTimeout(timer);
+    }, []);
+
+    // 初始化时检查 admin 是否存在
+    useEffect(() => {
+        authApi.checkAdmin()
+            .then(data => setAdminExists(data.exists))
+            .catch(() => setAdminExists(null));
     }, []);
 
     // 动画逻辑
@@ -161,6 +179,71 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
         }
         return segments.join(' ');
     }, []);
+
+    // 初始化 Admin 处理
+    const handleInitAdmin = async () => {
+        if (!newPassword.trim() || !superPassword.trim()) {
+            setActionMessage({ type: 'error', text: '请填写所有字段' });
+            return;
+        }
+        setActionLoading(true);
+        setActionMessage(null);
+        try {
+            await authApi.initAdmin({ password: newPassword.trim(), superPassword: superPassword.trim() });
+            setActionMessage({ type: 'success', text: '管理员账号创建成功！用户名为 admin' });
+            setUsername('admin');
+            setAdminExists(true);
+            setTimeout(() => {
+                setShowInitAdmin(false);
+                setActionMessage(null);
+                setNewPassword('');
+                setSuperPassword('');
+            }, 1500);
+        } catch (err) {
+            setActionMessage({ type: 'error', text: err instanceof Error ? err.message : '创建失败' });
+        } finally {
+            setActionLoading(false);
+        }
+    };
+
+    // 重置密码处理
+    const handleResetPassword = async () => {
+        if (!resetUsername.trim() || !newPassword.trim() || !superPassword.trim()) {
+            setActionMessage({ type: 'error', text: '请填写所有字段' });
+            return;
+        }
+        setActionLoading(true);
+        setActionMessage(null);
+        try {
+            await authApi.superResetPassword({
+                username: resetUsername.trim(),
+                newPassword: newPassword.trim(),
+                superPassword: superPassword.trim(),
+            });
+            setActionMessage({ type: 'success', text: '密码重置成功！' });
+            setTimeout(() => {
+                setShowResetPassword(false);
+                setActionMessage(null);
+                setNewPassword('');
+                setSuperPassword('');
+                setResetUsername('');
+            }, 1500);
+        } catch (err) {
+            setActionMessage({ type: 'error', text: err instanceof Error ? err.message : '重置失败' });
+        } finally {
+            setActionLoading(false);
+        }
+    };
+
+    // 关闭面板时清理状态
+    const closePanel = () => {
+        setShowInitAdmin(false);
+        setShowResetPassword(false);
+        setActionMessage(null);
+        setNewPassword('');
+        setSuperPassword('');
+        setResetUsername('');
+    };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -471,15 +554,200 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
                         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
 
                         <form onSubmit={handleSubmit} className="space-y-5">
-                            {/* 错误提示 */}
-                            {displayError && (
-                                <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-3 flex items-center gap-2.5">
-                                    <div className="flex-shrink-0 w-8 h-8 bg-red-500/20 rounded-lg flex items-center justify-center">
-                                        <svg className="w-4 h-4 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01" />
-                                        </svg>
+                            {/* 错误提示 - 基于错误码显示不同内容 */}
+                            {displayError && !showInitAdmin && !showResetPassword && (
+                                <div className="space-y-2.5">
+                                    <div className={`${errorCode === 'USER_NOT_APPROVED' ? 'bg-amber-500/10 border-amber-500/20' : 'bg-red-500/10 border-red-500/20'} border rounded-xl p-3 flex items-start gap-2.5`}>
+                                        <div className={`flex-shrink-0 w-8 h-8 ${errorCode === 'USER_NOT_APPROVED' ? 'bg-amber-500/20' : 'bg-red-500/20'} rounded-lg flex items-center justify-center mt-0.5`}>
+                                            <svg className={`w-4 h-4 ${errorCode === 'USER_NOT_APPROVED' ? 'text-amber-400' : 'text-red-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01" />
+                                            </svg>
+                                        </div>
+                                        <div className="flex-1 min-w-0">
+                                            {errorCode === 'USER_NOT_FOUND' && (
+                                                <>
+                                                    <span className="text-red-300 text-sm block">用户不存在</span>
+                                                    {adminExists === false ? (
+                                                        <button
+                                                            type="button"
+                                                            onClick={() => { setShowInitAdmin(true); setActionMessage(null); }}
+                                                            className="mt-1.5 text-indigo-400 hover:text-indigo-300 text-xs transition-colors underline underline-offset-2"
+                                                        >
+                                                            初始化管理员账号
+                                                        </button>
+                                                    ) : (
+                                                        <span className="text-slate-500 text-xs mt-1 block">请检查用户名是否正确</span>
+                                                    )}
+                                                </>
+                                            )}
+                                            {errorCode === 'WRONG_PASSWORD' && (
+                                                <>
+                                                    <span className="text-red-300 text-sm block">密码错误</span>
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => { setShowResetPassword(true); setResetUsername(username); setActionMessage(null); }}
+                                                        className="mt-1.5 text-indigo-400 hover:text-indigo-300 text-xs transition-colors underline underline-offset-2"
+                                                    >
+                                                        忘记密码？
+                                                    </button>
+                                                </>
+                                            )}
+                                            {errorCode === 'USER_NOT_APPROVED' && (
+                                                <span className="text-amber-300 text-sm block">账号审核中，请联系管理员</span>
+                                            )}
+                                            {/* 未知错误码或无错误码时显示原始错误 */}
+                                            {errorCode && !['USER_NOT_FOUND', 'WRONG_PASSWORD', 'USER_NOT_APPROVED'].includes(errorCode) && (
+                                                <span className="text-red-300 text-sm block">{displayError}</span>
+                                            )}
+                                            {!errorCode && (
+                                                <span className="text-red-300 text-sm block">{displayError}</span>
+                                            )}
+                                        </div>
                                     </div>
-                                    <span className="text-red-300 text-sm">{displayError}</span>
+                                </div>
+                            )}
+
+                            {/* 初始化 Admin 面板 */}
+                            {showInitAdmin && (
+                                <div className="space-y-4 bg-slate-800/40 border border-indigo-500/20 rounded-xl p-4">
+                                    <div className="flex items-center justify-between">
+                                        <h3 className="text-white text-sm font-semibold">初始化管理员账号</h3>
+                                        <button type="button" onClick={closePanel} className="text-slate-500 hover:text-slate-300 transition-colors">
+                                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <p className="text-slate-400 text-xs">系统尚未创建管理员，请设置 admin 账号密码。</p>
+
+                                    {actionMessage && (
+                                        <div className={`${actionMessage.type === 'success' ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-300' : 'bg-red-500/10 border-red-500/20 text-red-300'} border rounded-lg p-2.5 text-xs`}>
+                                            {actionMessage.text}
+                                        </div>
+                                    )}
+
+                                    <div className="space-y-3">
+                                        <div>
+                                            <label className="text-slate-400 text-xs font-medium pl-1 block mb-1">管理员密码</label>
+                                            <input
+                                                type="password"
+                                                value={newPassword}
+                                                onChange={(e) => setNewPassword(e.target.value)}
+                                                placeholder="设置 admin 密码"
+                                                className="w-full px-3 py-2.5 bg-slate-900/60 border border-white/10 rounded-xl text-white text-sm placeholder-slate-600 focus:outline-none focus:border-indigo-500/50 transition-colors"
+                                            />
+                                        </div>
+                                        <div>
+                                            <label className="text-slate-400 text-xs font-medium pl-1 block mb-1">超级密码</label>
+                                            <input
+                                                type="password"
+                                                value={superPassword}
+                                                onChange={(e) => setSuperPassword(e.target.value)}
+                                                placeholder="输入超级密码"
+                                                className="w-full px-3 py-2.5 bg-slate-900/60 border border-white/10 rounded-xl text-white text-sm placeholder-slate-600 focus:outline-none focus:border-indigo-500/50 transition-colors"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="flex gap-2">
+                                        <button
+                                            type="button"
+                                            onClick={handleInitAdmin}
+                                            disabled={actionLoading || !newPassword.trim() || !superPassword.trim()}
+                                            className="flex-1 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-medium text-xs rounded-xl transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed shadow-lg shadow-indigo-500/20 flex items-center justify-center gap-1.5"
+                                        >
+                                            {actionLoading ? (
+                                                <svg className="animate-spin w-3.5 h-3.5" fill="none" viewBox="0 0 24 24">
+                                                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                                                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                                                </svg>
+                                            ) : null}
+                                            <span>创建管理员</span>
+                                        </button>
+                                        <button
+                                            type="button"
+                                            onClick={closePanel}
+                                            className="px-4 py-2.5 bg-slate-700/50 hover:bg-slate-700/80 text-slate-300 text-xs rounded-xl transition-colors"
+                                        >
+                                            取消
+                                        </button>
+                                    </div>
+                                </div>
+                            )}
+
+                            {/* 重置密码面板 */}
+                            {showResetPassword && (
+                                <div className="space-y-4 bg-slate-800/40 border border-indigo-500/20 rounded-xl p-4">
+                                    <div className="flex items-center justify-between">
+                                        <h3 className="text-white text-sm font-semibold">重置密码</h3>
+                                        <button type="button" onClick={closePanel} className="text-slate-500 hover:text-slate-300 transition-colors">
+                                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <p className="text-slate-400 text-xs">通过超级密码重置用户密码。</p>
+
+                                    {actionMessage && (
+                                        <div className={`${actionMessage.type === 'success' ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-300' : 'bg-red-500/10 border-red-500/20 text-red-300'} border rounded-lg p-2.5 text-xs`}>
+                                            {actionMessage.text}
+                                        </div>
+                                    )}
+
+                                    <div className="space-y-3">
+                                        <div>
+                                            <label className="text-slate-400 text-xs font-medium pl-1 block mb-1">用户名</label>
+                                            <input
+                                                type="text"
+                                                value={resetUsername}
+                                                onChange={(e) => setResetUsername(e.target.value)}
+                                                placeholder="输入用户名"
+                                                className="w-full px-3 py-2.5 bg-slate-900/60 border border-white/10 rounded-xl text-white text-sm placeholder-slate-600 focus:outline-none focus:border-indigo-500/50 transition-colors"
+                                            />
+                                        </div>
+                                        <div>
+                                            <label className="text-slate-400 text-xs font-medium pl-1 block mb-1">新密码</label>
+                                            <input
+                                                type="password"
+                                                value={newPassword}
+                                                onChange={(e) => setNewPassword(e.target.value)}
+                                                placeholder="输入新密码"
+                                                className="w-full px-3 py-2.5 bg-slate-900/60 border border-white/10 rounded-xl text-white text-sm placeholder-slate-600 focus:outline-none focus:border-indigo-500/50 transition-colors"
+                                            />
+                                        </div>
+                                        <div>
+                                            <label className="text-slate-400 text-xs font-medium pl-1 block mb-1">超级密码</label>
+                                            <input
+                                                type="password"
+                                                value={superPassword}
+                                                onChange={(e) => setSuperPassword(e.target.value)}
+                                                placeholder="输入超级密码"
+                                                className="w-full px-3 py-2.5 bg-slate-900/60 border border-white/10 rounded-xl text-white text-sm placeholder-slate-600 focus:outline-none focus:border-indigo-500/50 transition-colors"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="flex gap-2">
+                                        <button
+                                            type="button"
+                                            onClick={handleResetPassword}
+                                            disabled={actionLoading || !resetUsername.trim() || !newPassword.trim() || !superPassword.trim()}
+                                            className="flex-1 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-medium text-xs rounded-xl transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed shadow-lg shadow-indigo-500/20 flex items-center justify-center gap-1.5"
+                                        >
+                                            {actionLoading ? (
+                                                <svg className="animate-spin w-3.5 h-3.5" fill="none" viewBox="0 0 24 24">
+                                                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                                                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                                                </svg>
+                                            ) : null}
+                                            <span>重置密码</span>
+                                        </button>
+                                        <button
+                                            type="button"
+                                            onClick={closePanel}
+                                            className="px-4 py-2.5 bg-slate-700/50 hover:bg-slate-700/80 text-slate-300 text-xs rounded-xl transition-colors"
+                                        >
+                                            取消
+                                        </button>
+                                    </div>
                                 </div>
                             )}
 
@@ -600,25 +868,16 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
                         <div className="mt-4 text-center">
                             <button
                                 type="button"
-                                onClick={() => setShowForgotPassword(!showForgotPassword)}
+                                onClick={() => {
+                                    setShowResetPassword(true);
+                                    setResetUsername(username);
+                                    setActionMessage(null);
+                                }}
                                 className="text-slate-500 hover:text-indigo-400 text-xs transition-colors"
                             >
                                 {t('login.forgotPassword')}
                             </button>
                         </div>
-
-                        {showForgotPassword && (
-                            <div className="mt-3 bg-amber-500/10 border border-amber-500/20 rounded-xl p-3">
-                                <div className="flex items-start gap-2">
-                                    <svg className="w-4 h-4 text-amber-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
-                                    <p className="text-amber-300/90 text-xs leading-relaxed">
-                                        {t('login.forgotPasswordHint')}
-                                    </p>
-                                </div>
-                            </div>
-                        )}
 
                         {/* 注册链接 */}
                         <div className="mt-4 text-center">

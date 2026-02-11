@@ -3,7 +3,7 @@
  */
 
 import { useState, useEffect, useCallback } from 'react';
-import { authApi, getAuthToken, setAuthToken, isTokenExpired } from '../services/serverApi';
+import { authApi, getAuthToken, setAuthToken, isTokenExpired, ApiError } from '../services/serverApi';
 import type { User, LoginRequest, RegisterRequest } from '../types/server';
 
 interface AuthState {
@@ -13,6 +13,7 @@ interface AuthState {
   isAdmin: boolean;
   isLoading: boolean;
   error: string | null;
+  errorCode: string | null;
 }
 
 export function useAuth() {
@@ -23,6 +24,7 @@ export function useAuth() {
     isAdmin: false,
     isLoading: true,
     error: null,
+    errorCode: null,
   });
 
   // 初始化时检查本地存储的 token（含过期校验）
@@ -49,6 +51,7 @@ export function useAuth() {
           isAdmin: user.role === 'ADMIN',
           isLoading: false,
           error: null,
+          errorCode: null,
         });
       } catch {
         // 解析失败，清除
@@ -62,19 +65,19 @@ export function useAuth() {
   }, []);
 
   const login = useCallback(async (credentials: LoginRequest) => {
-    setState(prev => ({ ...prev, isLoading: true, error: null }));
-    
+    setState(prev => ({ ...prev, isLoading: true, error: null, errorCode: null }));
+
     try {
       const response = await authApi.login(credentials);
       const user = response.user;
-      
+
       // 检查 user 是否存在
       if (!user) {
         throw new Error('登录响应缺少用户信息');
       }
-      
+
       localStorage.setItem('fd_auth_user', JSON.stringify(user));
-      
+
       setState({
         token: response.token,
         user,
@@ -82,16 +85,27 @@ export function useAuth() {
         isAdmin: user.role === 'ADMIN',
         isLoading: false,
         error: null,
+        errorCode: null,
       });
-      
+
       return response;
     } catch (err) {
-      const message = err instanceof Error ? err.message : '登录失败';
-      setState(prev => ({
-        ...prev,
-        isLoading: false,
-        error: message,
-      }));
+      if (err instanceof ApiError) {
+        setState(prev => ({
+          ...prev,
+          isLoading: false,
+          error: err.message,
+          errorCode: err.code,
+        }));
+      } else {
+        const message = err instanceof Error ? err.message : '登录失败';
+        setState(prev => ({
+          ...prev,
+          isLoading: false,
+          error: message,
+          errorCode: null,
+        }));
+      }
       throw err;
     }
   }, []);
@@ -123,6 +137,7 @@ export function useAuth() {
       isAdmin: false,
       isLoading: false,
       error: null,
+      errorCode: null,
     });
   }, []);
 
@@ -154,7 +169,7 @@ export function useAuth() {
   }, [state.isLoggedIn, logout]);
 
   const clearError = useCallback(() => {
-    setState(prev => ({ ...prev, error: null }));
+    setState(prev => ({ ...prev, error: null, errorCode: null }));
   }, []);
 
   return {

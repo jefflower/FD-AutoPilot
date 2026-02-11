@@ -116,6 +116,7 @@ function App() {
                         onSwitchToRegister={() => setAuthView('register')}
                         isLoading={auth.isLoading}
                         error={auth.error}
+                        errorCode={auth.errorCode}
                     />
                 ) : (
                     <AuthRegisterTab
@@ -163,6 +164,7 @@ function App() {
                             onSwitchToRegister={() => setAuthView('register')}
                             isLoading={auth.isLoading}
                             error={auth.error}
+                            errorCode={auth.errorCode}
                         />
                     ) : (
                         <AuthRegisterTab
@@ -298,6 +300,7 @@ function App() {
                         onSwitchToRegister={() => setAuthView('register')}
                         isLoading={auth.isLoading}
                         error={auth.error}
+                        errorCode={auth.errorCode}
                     />
                 ) : (
                     <AuthRegisterTab
