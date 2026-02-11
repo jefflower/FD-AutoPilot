@@ -82,6 +82,7 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [localError, setLocalError] = useState<string | null>(null);
+    const [showForgotPassword, setShowForgotPassword] = useState(false);
     const [focusedField, setFocusedField] = useState<string | null>(null);
     const [showServerConfig, setShowServerConfig] = useState(false);
     const [serverUrl, setServerUrlLocal] = useState(getServerBaseUrl);
@@ -594,6 +595,30 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
                                 </div>
                             )}
                         </div>
+
+                        {/* 忘记密码 */}
+                        <div className="mt-4 text-center">
+                            <button
+                                type="button"
+                                onClick={() => setShowForgotPassword(!showForgotPassword)}
+                                className="text-slate-500 hover:text-indigo-400 text-xs transition-colors"
+                            >
+                                {t('login.forgotPassword')}
+                            </button>
+                        </div>
+
+                        {showForgotPassword && (
+                            <div className="mt-3 bg-amber-500/10 border border-amber-500/20 rounded-xl p-3">
+                                <div className="flex items-start gap-2">
+                                    <svg className="w-4 h-4 text-amber-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <p className="text-amber-300/90 text-xs leading-relaxed">
+                                        {t('login.forgotPasswordHint')}
+                                    </p>
+                                </div>
+                            </div>
+                        )}
 
                         {/* 注册链接 */}
                         <div className="mt-4 text-center">

@@ -8,7 +8,9 @@ import com.jefflower.fdserver.enums.UserRole;
 import com.jefflower.fdserver.enums.UserStatus;
 import com.jefflower.fdserver.repository.SysUserRepository;
 import com.jefflower.fdserver.security.JwtUtil;
+import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -17,6 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class AuthService {
@@ -24,6 +27,23 @@ public class AuthService {
     private final SysUserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final JwtUtil jwtUtil;
+
+    @PostConstruct
+    @Transactional
+    public void initDefaultAdmin() {
+        if (userRepository.existsByUsername("admin")) {
+            log.info("Default admin user already exists, skipping initialization");
+            return;
+        }
+
+        SysUser admin = new SysUser();
+        admin.setUsername("admin");
+        admin.setPassword(passwordEncoder.encode("admin123"));
+        admin.setRole(UserRole.ADMIN);
+        admin.setStatus(UserStatus.APPROVED);
+        userRepository.save(admin);
+        log.info("Default admin user created: username=admin, role=ADMIN, status=APPROVED");
+    }
 
     public LoginResponse login(LoginRequest request) {
         SysUser user = userRepository.findByUsername(request.getUsername())
