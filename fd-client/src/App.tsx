@@ -6,6 +6,8 @@ import "./index.css";
 import SidebarNew, { TabType } from "./components/SidebarNew";
 import AuthLoginTab from "./components/auth/AuthLoginTab";
 import AuthRegisterTab from "./components/auth/AuthRegisterTab";
+import ErrorBoundary from "./components/common/ErrorBoundary";
+import ToastProvider from "./components/common/ToastProvider";
 
 // 非首屏组件（懒加载）
 const SettingsTab = lazy(() => import("./components/SettingsTab"));
@@ -31,8 +33,25 @@ import { useAuth } from "./hooks/useAuth";
 import { ticketApi } from "./services/serverApi";
 import type { QueueCounts } from "./types/server";
 
-function App() {
+/** Admin 权限守卫 — 未登录或非管理员时显示锁定提示 */
+const AdminGuard: React.FC<{ isLoggedIn: boolean; isAdmin: boolean; children: React.ReactNode }> = ({ isLoggedIn, isAdmin, children }) => {
     const { t } = useTranslation('common');
+    if (!isLoggedIn || !isAdmin) {
+        return (
+            <div className="flex-1 flex items-center justify-center text-slate-400">
+                <div className="text-center">
+                    <svg className="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                    <p>{t('error.adminRequired')}</p>
+                </div>
+            </div>
+        );
+    }
+    return <>{children}</>;
+};
+
+function App() {
     const [activeTab, setActiveTab] = useState<TabType>('server-tickets');
     const [authView, setAuthView] = useState<'login' | 'register'>('login');
     const [navigateToTicketId, setNavigateToTicketId] = useState<number | null>(null);
@@ -225,79 +244,19 @@ function App() {
                 );
 
             case 'admin-users':
-                if (!auth.isLoggedIn || !auth.isAdmin) {
-                    return (
-                        <div className="flex-1 flex items-center justify-center text-slate-400">
-                            <div className="text-center">
-                                <svg className="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                                </svg>
-                                <p>{t('error.adminRequired')}</p>
-                            </div>
-                        </div>
-                    );
-                }
-                return <AdminUsersTab />;
+                return <AdminGuard isLoggedIn={auth.isLoggedIn} isAdmin={auth.isAdmin}><AdminUsersTab /></AdminGuard>;
 
             case 'manual-sync':
-                if (!auth.isLoggedIn || !auth.isAdmin) {
-                    return (
-                        <div className="flex-1 flex items-center justify-center text-slate-400">
-                            <div className="text-center">
-                                <svg className="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                                </svg>
-                                <p>{t('error.adminRequired')}</p>
-                            </div>
-                        </div>
-                    );
-                }
-                return <ManualSyncTab />;
+                return <AdminGuard isLoggedIn={auth.isLoggedIn} isAdmin={auth.isAdmin}><ManualSyncTab /></AdminGuard>;
 
             case 'server-logs':
-                if (!auth.isLoggedIn || !auth.isAdmin) {
-                    return (
-                        <div className="flex-1 flex items-center justify-center text-slate-400">
-                            <div className="text-center">
-                                <svg className="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                                </svg>
-                                <p>{t('error.adminRequired')}</p>
-                            </div>
-                        </div>
-                    );
-                }
-                return <ServerLogsTab />;
+                return <AdminGuard isLoggedIn={auth.isLoggedIn} isAdmin={auth.isAdmin}><ServerLogsTab /></AdminGuard>;
 
             case 'database':
-                if (!auth.isLoggedIn || !auth.isAdmin) {
-                    return (
-                        <div className="flex-1 flex items-center justify-center text-slate-400">
-                            <div className="text-center">
-                                <svg className="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                                </svg>
-                                <p>{t('error.adminRequired')}</p>
-                            </div>
-                        </div>
-                    );
-                }
-                return <DatabaseTab />;
+                return <AdminGuard isLoggedIn={auth.isLoggedIn} isAdmin={auth.isAdmin}><DatabaseTab /></AdminGuard>;
 
             case 'knowledge':
-                if (!auth.isLoggedIn || !auth.isAdmin) {
-                    return (
-                        <div className="flex-1 flex items-center justify-center text-slate-400">
-                            <div className="text-center">
-                                <svg className="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                                </svg>
-                                <p>{t('error.adminRequired')}</p>
-                            </div>
-                        </div>
-                    );
-                }
-                return <KnowledgeTab />;
+                return <AdminGuard isLoggedIn={auth.isLoggedIn} isAdmin={auth.isAdmin}><KnowledgeTab /></AdminGuard>;
 
             default:
                 return null;
@@ -306,57 +265,63 @@ function App() {
 
     if (!auth.isLoggedIn) {
         return (
-            <div className="h-screen w-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
-                {authView === 'login' ? (
-                    <AuthLoginTab
-                        onLogin={handleLogin}
-                        onSwitchToRegister={() => setAuthView('register')}
-                        isLoading={auth.isLoading}
-                        error={auth.error}
-                        errorCode={auth.errorCode}
-                    />
-                ) : (
-                    <AuthRegisterTab
-                        onRegister={handleRegister}
-                        onSwitchToLogin={() => setAuthView('login')}
-                        isLoading={auth.isLoading}
-                        error={auth.error}
-                    />
-                )}
-            </div>
+            <ToastProvider>
+                <div className="h-screen w-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
+                    {authView === 'login' ? (
+                        <AuthLoginTab
+                            onLogin={handleLogin}
+                            onSwitchToRegister={() => setAuthView('register')}
+                            isLoading={auth.isLoading}
+                            error={auth.error}
+                            errorCode={auth.errorCode}
+                        />
+                    ) : (
+                        <AuthRegisterTab
+                            onRegister={handleRegister}
+                            onSwitchToLogin={() => setAuthView('login')}
+                            isLoading={auth.isLoading}
+                            error={auth.error}
+                        />
+                    )}
+                </div>
+            </ToastProvider>
         );
     }
 
     return (
-        <MQTranslationProvider>
-            <MQReplyProvider>
-                <MQAuditProvider>
-                    <div className="flex h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
-                        <SidebarNew
-                            activeTab={activeTab}
-                            setActiveTab={setActiveTab}
-                            isLoggedIn={auth.isLoggedIn}
-                            isAdmin={auth.isAdmin}
-                            onLogout={auth.logout}
-                            username={auth.user?.username}
-                            queueCounts={queueCounts}
-                        />
+        <ToastProvider>
+            <MQTranslationProvider>
+                <MQReplyProvider>
+                    <MQAuditProvider>
+                        <div className="flex h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
+                            <SidebarNew
+                                activeTab={activeTab}
+                                setActiveTab={setActiveTab}
+                                isLoggedIn={auth.isLoggedIn}
+                                isAdmin={auth.isAdmin}
+                                onLogout={auth.logout}
+                                username={auth.user?.username}
+                                queueCounts={queueCounts}
+                            />
 
-                        <Suspense fallback={
-                            <div className="flex-1 flex items-center justify-center">
-                                <div className="animate-spin rounded-full h-8 w-8 border-2 border-slate-600 border-t-blue-400" />
-                            </div>
-                        }>
-                            <div className="flex-1 flex overflow-hidden">
-                                {renderTabContent()}
-                            </div>
+                            <ErrorBoundary>
+                                <Suspense fallback={
+                                    <div className="flex-1 flex items-center justify-center">
+                                        <div className="animate-spin rounded-full h-8 w-8 border-2 border-slate-600 border-t-blue-400" />
+                                    </div>
+                                }>
+                                    <div className="flex-1 flex overflow-hidden">
+                                        {renderTabContent()}
+                                    </div>
 
-                            <FloatingTaskWidget />
-                        </Suspense>
-                    </div>
-                </MQAuditProvider>
-            </MQReplyProvider>
-        </MQTranslationProvider>
+                                    <FloatingTaskWidget />
+                                </Suspense>
+                            </ErrorBoundary>
+                        </div>
+                    </MQAuditProvider>
+                </MQReplyProvider>
+            </MQTranslationProvider>
+        </ToastProvider>
     );
 }
 

@@ -19,32 +19,22 @@ public class DatabaseQueryService {
 
     private final DataSource dataSource;
 
-    private static final Set<String> BLOCKED_KEYWORDS = Set.of(
-            "SHUTDOWN", "SCRIPT TO", "RUNSCRIPT"
-    );
-
-    private static final Set<String> DESTRUCTIVE_PREFIXES = Set.of(
-            "DROP", "DELETE", "TRUNCATE", "ALTER", "UPDATE", "INSERT"
-    );
-
+    /**
+     * 执行已经过 SqlValidator 校验的 SQL 查询。
+     * <p>
+     * 安全校验已在 Controller 层由 SqlValidator 完成，
+     * 此方法仅负责执行和结果组装。异常信息会脱敏后返回。
+     *
+     * @param sql     已校验的安全 SQL
+     * @param maxRows 最大行数
+     * @return 查询结果
+     */
     public SqlQueryResult executeQuery(String sql, Integer maxRows) {
         if (sql == null || sql.isBlank()) {
             return SqlQueryResult.error("SQL 不能为空");
         }
 
         String trimmedSql = sql.trim();
-        String upperSql = trimmedSql.toUpperCase();
-
-        // 检查绝对禁止的命令
-        for (String blocked : BLOCKED_KEYWORDS) {
-            if (upperSql.contains(blocked)) {
-                return SqlQueryResult.error("禁止执行的 SQL 命令: " + blocked);
-            }
-        }
-
-        // 标记是否为破坏性操作
-        boolean isDestructive = DESTRUCTIVE_PREFIXES.stream()
-                .anyMatch(upperSql::startsWith);
 
         int effectiveMaxRows = (maxRows != null && maxRows > 0)
                 ? Math.min(maxRows, 1000)
@@ -54,7 +44,13 @@ public class DatabaseQueryService {
         try (Connection conn = dataSource.getConnection();
              Statement stmt = conn.createStatement()) {
 
+            // 设置只读模式，防止意外写入
+            conn.setReadOnly(true);
+
             stmt.setMaxRows(effectiveMaxRows);
+            // 设置查询超时（秒），防止慢查询占用连接
+            stmt.setQueryTimeout(30);
+
             boolean hasResultSet = stmt.execute(trimmedSql);
             long duration = System.currentTimeMillis() - startTime;
 
@@ -63,13 +59,51 @@ public class DatabaseQueryService {
                     return buildQueryResult(rs, duration);
                 }
             } else {
+                // 理论上经过 SqlValidator 校验后不应到达此分支（只允许 SELECT）
+                // 但作为防御性编程，仍然处理
                 int updateCount = stmt.getUpdateCount();
-                return SqlQueryResult.updateResult(updateCount, duration, isDestructive);
+                return SqlQueryResult.updateResult(updateCount, duration, false);
             }
         } catch (SQLException e) {
-            log.warn("SQL 执行失败: {}", e.getMessage());
-            return SqlQueryResult.error(e.getMessage());
+            long duration = System.currentTimeMillis() - startTime;
+            // 错误信息脱敏：记录完整错误到日志，返回给前端的信息简化
+            log.warn("SQL 执行失败 [{}ms]: {} | SQL: {}", duration, e.getMessage(), trimmedSql);
+            return SqlQueryResult.error(sanitizeErrorMessage(e));
         }
+    }
+
+    /**
+     * 将 SQL 异常信息脱敏，避免暴露数据库内部细节。
+     */
+    private String sanitizeErrorMessage(SQLException e) {
+        String message = e.getMessage();
+        if (message == null) {
+            return "查询执行失败";
+        }
+
+        // 提取可以安全返回给用户的常见错误类型
+        String upperMessage = message.toUpperCase();
+        if (upperMessage.contains("SYNTAX") || upperMessage.contains("PARSE")) {
+            return "查询执行失败: SQL 语法错误";
+        }
+        if (upperMessage.contains("NOT FOUND") || upperMessage.contains("NOT EXIST")) {
+            return "查询执行失败: 表或列不存在";
+        }
+        if (upperMessage.contains("TIMEOUT") || upperMessage.contains("TIMED OUT")) {
+            return "查询执行失败: 查询超时，请简化查询条件";
+        }
+        if (upperMessage.contains("PERMISSION") || upperMessage.contains("DENIED")) {
+            return "查询执行失败: 权限不足";
+        }
+        if (upperMessage.contains("DATA TYPE") || upperMessage.contains("CONVERSION") || upperMessage.contains("CAST")) {
+            return "查询执行失败: 数据类型不匹配";
+        }
+        if (upperMessage.contains("AMBIGUOUS")) {
+            return "查询执行失败: 列名不明确，请指定表别名";
+        }
+
+        // 默认返回通用错误提示
+        return "查询执行失败，请检查 SQL 语句是否正确";
     }
 
     private SqlQueryResult buildQueryResult(ResultSet rs, long duration) throws SQLException {

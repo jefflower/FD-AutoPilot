@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 import { TicketTranslation } from '../types/server';
 
 export type ProcessType = 'translating' | 'replying' | null;
@@ -27,14 +27,19 @@ export const useTicketProcess = () => {
     const [, setTick] = useState(0);
     const forceUpdate = useCallback(() => setTick(t => t + 1), []);
 
-    // 注册监听器
-    useState(() => {
+    // 使用 ref 保持 listener 引用稳定，确保 cleanup 时能正确删除
+    const listenerRef = useRef<(() => void) | null>(null);
+
+    // 注册/注销监听器（组件卸载时自动清理，避免内存泄漏）
+    useEffect(() => {
         const listener = () => forceUpdate();
+        listenerRef.current = listener;
         listeners.add(listener);
         return () => {
             listeners.delete(listener);
+            listenerRef.current = null;
         };
-    });
+    }, [forceUpdate]);
 
     const getProcessState = useCallback((ticketId: number): ProcessState => {
         return globalProcessStates[ticketId] || defaultState;

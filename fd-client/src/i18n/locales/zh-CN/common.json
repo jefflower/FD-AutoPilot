@@ -66,6 +66,17 @@
     "networkError": "网络错误",
     "unknownError": "未知错误"
   },
+  "errorBoundary": {
+    "title": "页面出现异常",
+    "description": "很抱歉，该区域发生了意外错误。您可以尝试重新加载。",
+    "details": "查看错误详情",
+    "retry": "重试"
+  },
+  "confirmDialog": {
+    "defaultTitle": "确认操作",
+    "defaultConfirm": "确定",
+    "defaultCancel": "取消"
+  },
   "label": {
     "total": "共 {{count}} 条",
     "totalUsers": "共 {{count}} 人",

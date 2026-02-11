@@ -7,7 +7,14 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
-@Table(name = "ticket")
+@Table(name = "ticket", indexes = {
+        @Index(name = "idx_ticket_status", columnList = "status"),
+        @Index(name = "idx_ticket_external_id", columnList = "external_id"),
+        @Index(name = "idx_ticket_created_at", columnList = "created_at"),
+        @Index(name = "idx_ticket_is_valid", columnList = "is_valid"),
+        @Index(name = "idx_ticket_status_created_at", columnList = "status, created_at"),
+        @Index(name = "idx_ticket_status_updated_at", columnList = "status, updated_at")
+})
 public class Ticket {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -87,11 +94,11 @@ public class Ticket {
 
     // ========== 关联关系 ==========
 
-    @OneToMany(mappedBy = "ticket", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "ticket", fetch = FetchType.LAZY)
     @OrderBy("id DESC")
     private java.util.List<TicketTranslation> translations;
 
-    @OneToMany(mappedBy = "ticket", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "ticket", fetch = FetchType.LAZY)
     @OrderBy("createdAt DESC")
     private java.util.List<TicketReply> replies;
 

@@ -30,6 +30,8 @@ spring:
     port: 5672
     username: admin
     password: rabbitmq@hnlx
+    publisher-confirm-type: correlated
+    publisher-returns: true
 
 server:
   port: 9988
@@ -64,4 +66,4 @@ freshdesk:
 # JWT 配置
 jwt:
   secret: aMzL0FFgyu4mlbEQlXjKLYcrPpYRjMjN3qHfswQc4na22R0uYcDV90e0Q1pEre8S
-  expiration-hours: 24
+  expiration-hours: 8

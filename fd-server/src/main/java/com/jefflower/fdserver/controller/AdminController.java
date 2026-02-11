@@ -8,6 +8,7 @@ import com.jefflower.fdserver.entity.SysUser;
 import com.jefflower.fdserver.enums.TriggerType;
 import com.jefflower.fdserver.enums.UserStatus;
 import com.jefflower.fdserver.service.AuthService;
+import com.jefflower.fdserver.service.DlqConsumerService;
 import com.jefflower.fdserver.service.FreshdeskSyncService;
 import com.jefflower.fdserver.service.SyncConfigService;
 import com.jefflower.fdserver.service.SystemConfigService;
@@ -22,6 +23,8 @@ import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import com.jefflower.fdserver.util.SuperPasswordVerifier;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -33,6 +36,7 @@ import java.util.Map;
 public class AdminController {
 
     private final AuthService authService;
+    private final DlqConsumerService dlqConsumerService;
     private final FreshdeskSyncService freshdeskSyncService;
     private final SyncConfigService syncConfigService;
     private final RabbitAdmin rabbitAdmin;
@@ -93,8 +97,9 @@ public class AdminController {
             @PathVariable Long id,
             @RequestBody Map<String, String> request) {
         String newPassword = request.get("password");
-        if (newPassword == null || newPassword.length() < 6) {
-            throw new RuntimeException("密码不能少于6位");
+        // 密码强度校验已移至 AuthService.resetPassword()，此处仅做基本非空检查
+        if (newPassword == null || newPassword.isBlank()) {
+            throw new RuntimeException("密码不能为空");
         }
         authService.resetPassword(id, newPassword);
         return ResponseEntity.ok(ApiResponse.ok("密码重置成功", null));
@@ -178,7 +183,7 @@ public class AdminController {
     public ResponseEntity<ApiResponse<Map<String, Object>>> purgeQueues(
             @RequestBody Map<String, String> request) {
         String password = request.get("superPassword");
-        if (password == null || !password.equals(superPassword)) {
+        if (!SuperPasswordVerifier.verify(password, superPassword)) {
             return ResponseEntity.status(403)
                     .body(ApiResponse.error("FORBIDDEN", "超级密码验证失败"));
         }
@@ -219,7 +224,7 @@ public class AdminController {
     public ResponseEntity<ApiResponse<Map<String, Object>>> purgeAllTickets(
             @RequestBody Map<String, String> request) {
         String password = request.get("superPassword");
-        if (password == null || !password.equals(superPassword)) {
+        if (!SuperPasswordVerifier.verify(password, superPassword)) {
             return ResponseEntity.status(403)
                     .body(ApiResponse.error("FORBIDDEN", "超级密码验证失败"));
         }
@@ -231,5 +236,35 @@ public class AdminController {
         log.info("数据清理完成：删除了 {} 个工单及所有关联数据", deletedCount);
 
         return ResponseEntity.ok(ApiResponse.ok("数据清理完成", data));
+    }
+
+    // ========== DLQ 管理 ==========
+
+    /**
+     * 手动将死信队列中的消息重新投递到指定队列
+     * routingKey: 目标路由键（如 ticket.task.translate, ticket.task.reply, ticket.task.audit）
+     */
+    @PostMapping("/admin/dlq/requeue")
+    public ResponseEntity<ApiResponse<Map<String, Object>>> requeueDeadLetters(
+            @RequestBody Map<String, String> request) {
+        String routingKey = request.get("routingKey");
+        if (routingKey == null || routingKey.isBlank()) {
+            throw new RuntimeException("routingKey 不能为空");
+        }
+
+        boolean batchMode = "true".equalsIgnoreCase(request.get("batchMode"));
+        Map<String, Object> data = new HashMap<>();
+
+        if (batchMode) {
+            int count = dlqConsumerService.requeueAllDeadLetters(routingKey);
+            data.put("requeuedCount", count);
+            log.info("DLQ 批量重投完成：{} 条消息重投到 {}", count, routingKey);
+        } else {
+            boolean success = dlqConsumerService.requeueDeadLetter(routingKey);
+            data.put("requeued", success);
+            log.info("DLQ 单条重投 {}: routingKey={}", success ? "成功" : "失败（队列为空）", routingKey);
+        }
+
+        return ResponseEntity.ok(ApiResponse.ok("DLQ 重投操作完成", data));
     }
 }

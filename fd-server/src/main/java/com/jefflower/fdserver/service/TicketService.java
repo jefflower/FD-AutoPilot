@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,6 +30,9 @@ public class TicketService {
     private final SystemConfigService systemConfigService;
     private final WeChatWorkNotifyService weChatWorkNotifyService;
 
+    /**
+     * 列表查询（返回完整 Ticket 实体）— 保持向后兼容
+     */
     public Page<Ticket> queryTickets(
             TicketStatus status,
             String externalId,
@@ -43,14 +47,61 @@ public class TicketService {
                 PageRequest.of(page, size, Sort.by(Sort.Order.desc("updatedAt"))));
     }
 
+    /**
+     * 列表查询（返回轻量 DTO）— 不查 content 等大字段，不加载关联数据
+     * 支持自定义排序参数
+     */
+    public Page<TicketListDTO> queryTicketsAsDTO(
+            TicketStatus status,
+            String externalId,
+            String subject,
+            Boolean isValid,
+            LocalDateTime createdAfter,
+            LocalDateTime createdBefore,
+            int page,
+            int size,
+            Sort sort) {
+        Pageable pageable = PageRequest.of(page, size, sort != null ? sort : Sort.by(Sort.Order.desc("updatedAt")));
+        return ticketRepository.findByFiltersAsDTO(
+                status, externalId, subject, isValid, createdAfter, createdBefore, pageable);
+    }
+
+    /**
+     * 获取工单详情（含关联的 translations 和 replies，通过 EntityGraph 一次性加载）
+     */
     public Ticket getTicketById(Long id) {
+        return ticketRepository.findByIdWithAssociations(id)
+                .orElseThrow(() -> new RuntimeException("工单不存在: " + id));
+    }
+
+    /**
+     * 获取工单（不加载关联数据，用于内部状态更新等场景）
+     */
+    public Ticket getTicketByIdSimple(Long id) {
         return ticketRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("工单不存在: " + id));
     }
 
     @Transactional
     public TicketTranslation submitTranslation(Long ticketId, TranslationRequest request) {
-        Ticket ticket = getTicketById(ticketId);
+        Ticket ticket = getTicketByIdSimple(ticketId);
+
+        // 幂等性检查：只有 TRANSLATING / PENDING_TRANS / PENDING_REPLY 状态才接受翻译上报
+        // 如果状态已推进到更后面的阶段（如 REPLYING、PENDING_AUDIT 等），说明是重复消息，跳过
+        if (ticket.getStatus() != TicketStatus.TRANSLATING
+                && ticket.getStatus() != TicketStatus.PENDING_TRANS
+                && ticket.getStatus() != TicketStatus.PENDING_REPLY) {
+            log.warn("[TicketService] 幂等性检查: 翻译上报被跳过, ticketId={}, 当前状态={}, 期望状态=TRANSLATING/PENDING_TRANS/PENDING_REPLY",
+                    ticketId, ticket.getStatus());
+            return translationRepository.findByTicketAndTargetLang(ticket, request.getTargetLang())
+                    .orElseGet(() -> {
+                        TicketTranslation empty = new TicketTranslation();
+                        empty.setTicket(ticket);
+                        empty.setTargetLang(request.getTargetLang());
+                        return empty;
+                    });
+        }
+
         System.out.println("[TicketService] Submitting translation for ticket #" + ticketId + ", targetLang: "
                 + request.getTargetLang());
         System.out.println("[TicketService] Translation details - Title: " +
@@ -94,7 +145,23 @@ public class TicketService {
 
     @Transactional
     public TicketReply submitReply(Long ticketId, ReplyRequest request) {
-        Ticket ticket = getTicketById(ticketId);
+        Ticket ticket = getTicketByIdSimple(ticketId);
+
+        // 幂等性检查：只有 REPLYING / PENDING_REPLY 状态才接受回复上报
+        // 如果状态已推进到 PENDING_AUDIT 或更后面，说明是重复消息，跳过
+        if (ticket.getStatus() != TicketStatus.REPLYING
+                && ticket.getStatus() != TicketStatus.PENDING_REPLY) {
+            log.warn("[TicketService] 幂等性检查: 回复上报被跳过, ticketId={}, 当前状态={}, 期望状态=REPLYING/PENDING_REPLY",
+                    ticketId, ticket.getStatus());
+            return replyRepository.findByTicket(ticket).stream()
+                    .findFirst()
+                    .orElseGet(() -> {
+                        TicketReply empty = new TicketReply();
+                        empty.setTicket(ticket);
+                        return empty;
+                    });
+        }
+
         System.out.println("[TicketService] Submitting reply for ticket #" + ticketId);
 
         // 删除该工单已有的回复
@@ -121,7 +188,23 @@ public class TicketService {
 
     @Transactional
     public TicketAudit submitAudit(Long ticketId, AuditRequest request, Long auditorId) {
-        Ticket ticket = getTicketById(ticketId);
+        Ticket ticket = getTicketByIdSimple(ticketId);
+
+        // 幂等性检查：只有 AUDITING / PENDING_AUDIT 状态才接受审核上报
+        // 如果状态已推进到 APPROVED / COMPLETED，说明是重复消息，跳过
+        // 注意：PENDING_REPLY 也是合法的（REJECT 后回到 PENDING_REPLY），但此时不应再次审核
+        if (ticket.getStatus() != TicketStatus.AUDITING
+                && ticket.getStatus() != TicketStatus.PENDING_AUDIT) {
+            log.warn("[TicketService] 幂等性检查: 审核上报被跳过, ticketId={}, 当前状态={}, 期望状态=AUDITING/PENDING_AUDIT",
+                    ticketId, ticket.getStatus());
+            return auditRepository.findTopByTicketOrderByCreatedAtDesc(ticket)
+                    .orElseGet(() -> {
+                        TicketAudit empty = new TicketAudit();
+                        empty.setTicket(ticket);
+                        return empty;
+                    });
+        }
+
         log.info("[TicketService] Submitting audit for ticket #{}", ticketId);
 
         TicketAudit audit = new TicketAudit();
@@ -169,7 +252,7 @@ public class TicketService {
 
     @Transactional
     public TicketReply updateReply(Long ticketId, Long replyId, ReplyRequest request) {
-        Ticket ticket = getTicketById(ticketId);
+        Ticket ticket = getTicketByIdSimple(ticketId);
         TicketReply reply = replyRepository.findById(replyId)
                 .orElseThrow(() -> new RuntimeException("回复不存在: " + replyId));
         if (!reply.getTicket().getId().equals(ticketId)) {
@@ -182,7 +265,7 @@ public class TicketService {
 
     @Transactional
     public void pushApprovedReply(Long ticketId) {
-        Ticket ticket = getTicketById(ticketId);
+        Ticket ticket = getTicketByIdSimple(ticketId);
         if (ticket.getStatus() != TicketStatus.APPROVED) {
             throw new RuntimeException("工单状态不是 APPROVED，无法推送");
         }
@@ -220,7 +303,7 @@ public class TicketService {
      */
     @Transactional
     public void skipReply(Long ticketId) {
-        Ticket ticket = getTicketById(ticketId);
+        Ticket ticket = getTicketByIdSimple(ticketId);
         log.info("[TicketService] Skipping reply for ticket #{}, current status: {}", ticketId, ticket.getStatus());
 
         ticket.setStatus(TicketStatus.COMPLETED);
@@ -230,7 +313,7 @@ public class TicketService {
 
     @Transactional
     public void triggerAiTranslation(Long ticketId) {
-        Ticket ticket = getTicketById(ticketId);
+        Ticket ticket = getTicketByIdSimple(ticketId);
         ticket.setStatus(TicketStatus.TRANSLATING);
         ticketRepository.save(ticket);
         mqPublisherService.sendTranslationTask(ticket);
@@ -238,7 +321,7 @@ public class TicketService {
 
     @Transactional
     public void triggerAiReply(Long ticketId) {
-        Ticket ticket = getTicketById(ticketId);
+        Ticket ticket = getTicketByIdSimple(ticketId);
 
         // 校验是否已完成翻译
         boolean hasTranslation = translationRepository.existsByTicket(ticket);
@@ -253,7 +336,7 @@ public class TicketService {
 
     @Transactional
     public Ticket updateValidity(Long ticketId, Boolean isValid) {
-        Ticket ticket = getTicketById(ticketId);
+        Ticket ticket = getTicketByIdSimple(ticketId);
         ticket.setIsValid(isValid);
         return ticketRepository.save(ticket);
     }

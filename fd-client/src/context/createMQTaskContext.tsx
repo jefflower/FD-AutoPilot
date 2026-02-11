@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect, useCallback, useRef, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback, useRef, useMemo, ReactNode } from 'react';
 import { listen } from '@tauri-apps/api/event';
 import { invoke } from '@tauri-apps/api/core';
 import { serverApi, configApi } from '../services/serverApi';
@@ -313,19 +313,32 @@ export function createMQTaskContext(config: MQTaskConfig) {
             setCompletedHistory([]);
         }, []);
 
+        const contextValue = useMemo<MQTaskContextType>(() => ({
+            taskQueue,
+            processingTasks,
+            completedHistory,
+            clearHistory,
+            isRunning,
+            startConsumer,
+            stopConsumer,
+            batchSize,
+            updateBatchSize,
+            logs
+        }), [
+            taskQueue,
+            processingTasks,
+            completedHistory,
+            clearHistory,
+            isRunning,
+            startConsumer,
+            stopConsumer,
+            batchSize,
+            updateBatchSize,
+            logs
+        ]);
+
         return (
-            <Context.Provider value={{
-                taskQueue,
-                processingTasks,
-                completedHistory,
-                clearHistory,
-                isRunning,
-                startConsumer,
-                stopConsumer,
-                batchSize,
-                updateBatchSize,
-                logs
-            }}>
+            <Context.Provider value={contextValue}>
                 {children}
             </Context.Provider>
         );

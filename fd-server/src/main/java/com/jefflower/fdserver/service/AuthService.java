@@ -8,6 +8,8 @@ import com.jefflower.fdserver.enums.UserRole;
 import com.jefflower.fdserver.enums.UserStatus;
 import com.jefflower.fdserver.repository.SysUserRepository;
 import com.jefflower.fdserver.security.JwtUtil;
+import com.jefflower.fdserver.util.SuperPasswordVerifier;
+import com.jefflower.fdserver.util.PasswordValidator;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -63,6 +65,12 @@ public class AuthService {
             throw new RuntimeException("用户名已存在");
         }
 
+        // 密码强度校验
+        PasswordValidator.ValidationResult pwdCheck = PasswordValidator.validate(request.getPassword());
+        if (!pwdCheck.isValid()) {
+            throw new RuntimeException(pwdCheck.getMessage());
+        }
+
         SysUser user = new SysUser();
         user.setUsername(request.getUsername());
         user.setPassword(passwordEncoder.encode(request.getPassword()));
@@ -78,7 +86,7 @@ public class AuthService {
 
     @Transactional
     public SysUser initAdmin(String username, String password, String inputSuperPassword) {
-        if (!this.superPassword.equals(inputSuperPassword)) {
+        if (!SuperPasswordVerifier.verify(inputSuperPassword, this.superPassword)) {
             throw new RuntimeException("INVALID_SUPER_PASSWORD");
         }
 
@@ -99,7 +107,7 @@ public class AuthService {
 
     @Transactional
     public void superResetPassword(String username, String newPassword, String inputSuperPassword) {
-        if (!this.superPassword.equals(inputSuperPassword)) {
+        if (!SuperPasswordVerifier.verify(inputSuperPassword, this.superPassword)) {
             throw new RuntimeException("INVALID_SUPER_PASSWORD");
         }
 
@@ -158,6 +166,12 @@ public class AuthService {
 
     @Transactional
     public void resetPassword(Long userId, String newPassword) {
+        // 密码强度校验
+        PasswordValidator.ValidationResult pwdCheck = PasswordValidator.validate(newPassword);
+        if (!pwdCheck.isValid()) {
+            throw new RuntimeException(pwdCheck.getMessage());
+        }
+
         SysUser user = userRepository.findById(userId)
                 .orElseThrow(() -> new RuntimeException("用户不存在"));
         user.setPassword(passwordEncoder.encode(newPassword));

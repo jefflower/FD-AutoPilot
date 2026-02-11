@@ -10,6 +10,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.util.HtmlUtils;
 
 import java.util.List;
 
@@ -34,8 +35,8 @@ public class KnowledgeService {
     @Transactional
     public KnowledgeNote createNote(KnowledgeNoteRequest request) {
         KnowledgeNote note = new KnowledgeNote();
-        note.setTitle(request.getTitle());
-        note.setContent(request.getContent());
+        note.setTitle(sanitize(request.getTitle()));
+        note.setContent(sanitize(request.getContent()));
         note.setSortOrder(request.getSortOrder() != null ? request.getSortOrder() : 0);
         return noteRepository.save(note);
     }
@@ -43,12 +44,22 @@ public class KnowledgeService {
     @Transactional
     public KnowledgeNote updateNote(Long id, KnowledgeNoteRequest request) {
         KnowledgeNote note = getNoteById(id);
-        note.setTitle(request.getTitle());
-        note.setContent(request.getContent());
+        note.setTitle(sanitize(request.getTitle()));
+        note.setContent(sanitize(request.getContent()));
         if (request.getSortOrder() != null) {
             note.setSortOrder(request.getSortOrder());
         }
         return noteRepository.save(note);
+    }
+
+    /**
+     * 对用户输入做 HTML 转义，防止存储型 XSS。
+     */
+    private String sanitize(String input) {
+        if (input == null) {
+            return null;
+        }
+        return HtmlUtils.htmlEscape(input);
     }
 
     @Transactional

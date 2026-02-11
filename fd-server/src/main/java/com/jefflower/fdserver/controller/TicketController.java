@@ -9,6 +9,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Sort;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
@@ -26,8 +27,13 @@ public class TicketController {
     private final TicketService ticketService;
     private final MqQueueService mqQueueService;
 
+    /**
+     * 工单列表查询 — 默认返回轻量 DTO（不含 content 等大字段），
+     * 传入 detail=true 时返回完整 Ticket 实体（向后兼容）。
+     * 支持通过 sort_by 和 sort_dir 控制排序。
+     */
     @GetMapping
-    public ResponseEntity<ApiResponse<Page<Ticket>>> queryTickets(
+    public ResponseEntity<?> queryTickets(
             @RequestParam(required = false) TicketStatus status,
             @RequestParam(required = false, name = "external_id") String externalId,
             @RequestParam(required = false) String subject,
@@ -35,17 +41,32 @@ public class TicketController {
             @RequestParam(required = false, name = "created_after") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime createdAfter,
             @RequestParam(required = false, name = "created_before") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime createdBefore,
             @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "20") int size) {
+            @RequestParam(defaultValue = "20") int size,
+            @RequestParam(required = false, name = "sort_by", defaultValue = "updatedAt") String sortBy,
+            @RequestParam(required = false, name = "sort_dir", defaultValue = "DESC") String sortDir,
+            @RequestParam(required = false, defaultValue = "false") boolean detail) {
 
-        Page<Ticket> tickets = ticketService.queryTickets(
-                status, externalId, subject, isValid, createdAfter, createdBefore, page, size);
-        if (!tickets.isEmpty()) {
-            Ticket first = tickets.getContent().get(0);
-            log.info("Query tickets page {} size {}: total={}, firstTicket#{} contentLen={}",
-                    page, size, tickets.getTotalElements(), first.getId(),
-                    first.getContent() != null ? first.getContent().length() : 0);
+        Sort sort = Sort.by("ASC".equalsIgnoreCase(sortDir) ? Sort.Order.asc(sortBy) : Sort.Order.desc(sortBy));
+
+        if (detail) {
+            // 向后兼容模式：返回完整 Ticket 实体（含 content、关联数据）
+            Page<Ticket> tickets = ticketService.queryTickets(
+                    status, externalId, subject, isValid, createdAfter, createdBefore, page, size);
+            if (!tickets.isEmpty()) {
+                Ticket first = tickets.getContent().get(0);
+                log.info("Query tickets (detail) page {} size {}: total={}, firstTicket#{} contentLen={}",
+                        page, size, tickets.getTotalElements(), first.getId(),
+                        first.getContent() != null ? first.getContent().length() : 0);
+            }
+            return ResponseEntity.ok(ApiResponse.ok(tickets));
         }
-        return ResponseEntity.ok(ApiResponse.ok(tickets));
+
+        // 默认模式：返回轻量 DTO（不含 content、不加载关联数据）
+        Page<TicketListDTO> ticketDTOs = ticketService.queryTicketsAsDTO(
+                status, externalId, subject, isValid, createdAfter, createdBefore, page, size, sort);
+        log.info("Query tickets (DTO) page {} size {}: total={}",
+                page, size, ticketDTOs.getTotalElements());
+        return ResponseEntity.ok(ApiResponse.ok(ticketDTOs));
     }
 
     @GetMapping("/{id}")

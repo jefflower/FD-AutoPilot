@@ -9,7 +9,10 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
-@Table(name = "sys_user")
+@Table(name = "sys_user", indexes = {
+        @Index(name = "idx_sys_user_username", columnList = "username"),
+        @Index(name = "idx_sys_user_status", columnList = "status")
+})
 public class SysUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

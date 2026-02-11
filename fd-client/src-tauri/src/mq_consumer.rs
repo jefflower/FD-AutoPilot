@@ -167,6 +167,14 @@ struct TaskInfo {
     initial_subject: String,
 }
 
+/// consume_loop 退出原因
+enum StopReason {
+    /// 用户主动停止（is_running 被设为 false）
+    UserStopped,
+    /// 消费者流结束（连接断开、通道关闭等）
+    StreamEnded,
+}
+
 /// MQ 消费者
 #[derive(Clone)]
 pub struct MqConsumer {
@@ -195,17 +203,24 @@ impl MqConsumer {
             .map_err(|e| format!("Failed to connect to RabbitMQ: {}", e))
     }
 
-    /// 启动消费循环
+    /// 最大重连次数
+    const MAX_RECONNECT_ATTEMPTS: u32 = 5;
+    /// 初始重连退避时间（秒）
+    const INITIAL_RECONNECT_BACKOFF_SECS: u64 = 2;
+
+    /// 启动消费循环（带断线自动重连）
+    ///
+    /// 当连接断开时（非主动停止），会自动进行指数退避重连（最多 MAX_RECONNECT_ATTEMPTS 次）。
+    /// 每次成功重连后重置重连计数器。
     pub async fn start_consuming(
         &self,
         app: AppHandle,
         auth_token: String,
-        queue_type: &str, // "translate" or "reply"
+        queue_type: &str, // "translate" or "reply" or "audit"
     ) -> Result<(), String> {
-        let queue_name = match queue_type {
-            "translate" => self.config.queue_translation.as_str(),
-            "reply" => self.config.queue_reply.as_str(),
-            "audit" => self.config.queue_audit.as_str(),
+        // 验证 queue_type
+        match queue_type {
+            "translate" | "reply" | "audit" => {},
             _ => return Err(format!("Unknown queue type: {}", queue_type)),
         };
 
@@ -216,7 +231,107 @@ impl MqConsumer {
         self.state.is_running.store(true, Ordering::SeqCst);
         // Guard 确保函数退出时（包括连接失败等错误路径）is_running 一定被重置为 false
         let _run_guard = RunGuard(self.state.is_running.clone());
-        GeminiClient::log(&app, &format!("🐰 Connecting to RabbitMQ for {}...", queue_name));
+
+        let mut reconnect_count: u32 = 0;
+
+        // 外层重连循环
+        loop {
+            if !self.state.is_running.load(Ordering::SeqCst) {
+                break;
+            }
+
+            let need_reconnect = match self.consume_loop(&app, &auth_token, queue_type).await {
+                Ok(StopReason::UserStopped) => {
+                    GeminiClient::log(&app, "🛑 MQ Consumer stopped by user");
+                    false
+                }
+                Ok(StopReason::StreamEnded) => {
+                    // StreamEnded 意味着曾经成功连接并消费过，然后连接断开
+                    // 重置重连计数器（因为之前的连接是成功的）
+                    reconnect_count = 0;
+                    true
+                }
+                Err(e) => {
+                    GeminiClient::log(&app, &format!("❌ consume_loop error: {}", e));
+                    true
+                }
+            };
+
+            if !need_reconnect {
+                break;
+            }
+
+            // 连接断开或出错，尝试重连
+            if !self.state.is_running.load(Ordering::SeqCst) {
+                GeminiClient::log(&app, "🛑 MQ Consumer stopped (connection lost but stop requested)");
+                break;
+            }
+
+            reconnect_count += 1;
+            if reconnect_count > Self::MAX_RECONNECT_ATTEMPTS {
+                let msg = format!("MQ 连接断开，已达到最大重连次数 ({})，停止消费", Self::MAX_RECONNECT_ATTEMPTS);
+                GeminiClient::log(&app, &format!("❌ {}", msg));
+                // 通知前端连接最终失败
+                let _ = app.emit("mq-connection-status", serde_json::json!({
+                    "queueType": queue_type,
+                    "status": "disconnected",
+                    "reason": "max_reconnect_exceeded",
+                    "message": msg,
+                }));
+                break;
+            }
+
+            let backoff_secs = Self::INITIAL_RECONNECT_BACKOFF_SECS * (1u64 << (reconnect_count - 1).min(4));
+            GeminiClient::log(&app, &format!(
+                "⚠️ MQ 连接断开，{}秒后尝试重连 ({}/{})",
+                backoff_secs, reconnect_count, Self::MAX_RECONNECT_ATTEMPTS
+            ));
+
+            // 通知前端正在重连
+            let _ = app.emit("mq-connection-status", serde_json::json!({
+                "queueType": queue_type,
+                "status": "reconnecting",
+                "attempt": reconnect_count,
+                "maxAttempts": Self::MAX_RECONNECT_ATTEMPTS,
+                "backoffSecs": backoff_secs,
+            }));
+
+            // 指数退避等待，期间检查 is_running
+            let mut waited: u64 = 0;
+            while waited < backoff_secs {
+                if !self.state.is_running.load(Ordering::SeqCst) {
+                    GeminiClient::log(&app, "🛑 Reconnect cancelled: consumer stopped");
+                    break;
+                }
+                tokio::time::sleep(std::time::Duration::from_secs(1)).await;
+                waited += 1;
+            }
+
+            if !self.state.is_running.load(Ordering::SeqCst) {
+                break;
+            }
+        }
+
+        // _run_guard 的 Drop 会自动将 is_running 设为 false
+        Ok(())
+    }
+
+    /// 内部消费循环：建立连接 → 声明队列 → 消费消息
+    /// 返回 StopReason 表示退出原因
+    async fn consume_loop(
+        &self,
+        app: &AppHandle,
+        auth_token: &str,
+        queue_type: &str,
+    ) -> Result<StopReason, String> {
+        let queue_name = match queue_type {
+            "translate" => self.config.queue_translation.as_str(),
+            "reply" => self.config.queue_reply.as_str(),
+            "audit" => self.config.queue_audit.as_str(),
+            _ => return Err(format!("Unknown queue type: {}", queue_type)),
+        };
+
+        GeminiClient::log(app, &format!("🐰 Connecting to RabbitMQ for {}...", queue_name));
 
         let conn = self.connect().await?;
         let channel = conn
@@ -255,7 +370,14 @@ impl MqConsumer {
             .await
             .map_err(|e| format!("Failed to declare queue: {}", e))?;
 
-        GeminiClient::log(&app, &format!("✅ Connected to RabbitMQ, consuming from {} (batch: {})", queue_name, batch_size));
+        GeminiClient::log(app, &format!("✅ Connected to RabbitMQ, consuming from {} (batch: {})", queue_name, batch_size));
+
+        // 通知前端连接成功
+        let _ = app.emit("mq-connection-status", serde_json::json!({
+            "queueType": queue_type,
+            "status": "connected",
+            "queue": queue_name,
+        }));
 
         // 创建消费者
         let mut consumer = channel
@@ -276,18 +398,18 @@ impl MqConsumer {
                         Ok(delivery) => {
                             // 收到消息后再次检查 is_running，防止 stop 后仍处理已到达的消息
                             if !self.state.is_running.load(Ordering::SeqCst) {
-                                GeminiClient::log(&app, "🛑 Consumer stopped, rejecting received message (requeue)");
+                                GeminiClient::log(app, "🛑 Consumer stopped, rejecting received message (requeue)");
                                 let _ = channel.basic_nack(
                                     delivery.delivery_tag,
                                     BasicNackOptions { requeue: true, ..Default::default() },
                                 ).await;
-                                break;
+                                return Ok(StopReason::UserStopped);
                             }
 
                             let app_clone = app.clone();
                             let channel_clone = channel.clone();
                             let self_clone = self.clone();
-                            let auth_token_clone = auth_token.clone();
+                            let auth_token_clone = auth_token.to_string();
                             let q_type = queue_type.to_string();
 
                             // reply: 同步等待完成（串行执行）
@@ -352,24 +474,30 @@ impl MqConsumer {
                             }
                         }
                         Err(e) => {
-                            GeminiClient::log(&app, &format!("❌ Delivery error: {}", e));
+                            GeminiClient::log(app, &format!("❌ Delivery error: {}", e));
+                            // delivery error 通常意味着连接已断开，退出消费循环触发重连
+                            return Ok(StopReason::StreamEnded);
                         }
                     }
                 }
                 Ok(None) => {
-                    // 消费者被关闭
-                    break;
+                    // 消费者流结束（连接断开）
+                    GeminiClient::log(app, "⚠️ Consumer stream ended (connection may have been lost)");
+                    return Ok(StopReason::StreamEnded);
                 }
                 Err(_) => {
-                    // 超时，继续循环检查 is_running 状态
-                    continue;
+                    // 超时，检查连接是否仍然存活
+                    if conn.status().connected() {
+                        continue; // 连接正常，只是没有新消息
+                    } else {
+                        GeminiClient::log(app, "⚠️ RabbitMQ connection lost detected during timeout check");
+                        return Ok(StopReason::StreamEnded);
+                    }
                 }
             }
         }
 
-        GeminiClient::log(&app, "🛑 MQ Consumer stopped");
-        // _run_guard 的 Drop 会自动将 is_running 设为 false
-        Ok(())
+        Ok(StopReason::UserStopped)
     }
 
     /// 统一的消息处理框架
@@ -496,12 +624,14 @@ impl MqConsumer {
     }
 
     /// 解析翻译消息（提取为独立方法以便测试）
+    #[allow(dead_code)]
     pub fn parse_translation_message(data: &[u8]) -> Result<(i64, String, String), String> {
         let msg: TranslationMessage = serde_json::from_slice(data).map_err(|e| e.to_string())?;
         Ok((msg.ticket_id, msg.payload.external_id, msg.payload.subject.unwrap_or_default()))
     }
 
     /// 解析回复消息（提取为独立方法以便测试）
+    #[allow(dead_code)]
     pub fn parse_reply_message(data: &[u8]) -> Result<i64, String> {
         let msg: ReplyMessage = serde_json::from_slice(data).map_err(|e| e.to_string())?;
         Ok(msg.ticket_id)

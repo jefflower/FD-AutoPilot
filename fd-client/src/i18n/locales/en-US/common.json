@@ -66,6 +66,17 @@
     "networkError": "Network error",
     "unknownError": "Unknown error"
   },
+  "errorBoundary": {
+    "title": "Something went wrong",
+    "description": "Sorry, an unexpected error occurred in this section. You can try reloading.",
+    "details": "View error details",
+    "retry": "Retry"
+  },
+  "confirmDialog": {
+    "defaultTitle": "Confirm Action",
+    "defaultConfirm": "Confirm",
+    "defaultCancel": "Cancel"
+  },
   "label": {
     "total": "{{count}} items",
     "totalUsers": "{{count}} users",

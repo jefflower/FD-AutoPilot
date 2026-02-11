@@ -79,9 +79,9 @@ class TicketServiceTest {
     class GetTicketById {
 
         @Test
-        @DisplayName("存在的工单 → 正常返回")
+        @DisplayName("存在的工单 → 正常返回（通过 EntityGraph 加载关联数据）")
         void returnsTicketWhenExists() {
-            when(ticketRepository.findById(1L)).thenReturn(Optional.of(sampleTicket));
+            when(ticketRepository.findByIdWithAssociations(1L)).thenReturn(Optional.of(sampleTicket));
 
             Ticket result = ticketService.getTicketById(1L);
 
@@ -91,7 +91,7 @@ class TicketServiceTest {
         @Test
         @DisplayName("不存在的工单 → 抛出 RuntimeException")
         void throwsWhenNotFound() {
-            when(ticketRepository.findById(99L)).thenReturn(Optional.empty());
+            when(ticketRepository.findByIdWithAssociations(99L)).thenReturn(Optional.empty());
 
             RuntimeException ex = assertThrows(RuntimeException.class,
                     () -> ticketService.getTicketById(99L));
