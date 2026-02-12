@@ -3,9 +3,13 @@ package com.jefflower.fdserver.entity;
 import com.jefflower.fdserver.enums.AuditResult;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import java.time.LocalDateTime;
 
 @Data
+@EqualsAndHashCode(exclude = {"ticket"})
+@ToString(exclude = {"ticket"})
 @Entity
 @Table(name = "ticket_audit", indexes = {
         @Index(name = "idx_audit_ticket_id", columnList = "ticket_id")

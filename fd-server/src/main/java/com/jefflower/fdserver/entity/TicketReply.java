@@ -2,9 +2,13 @@ package com.jefflower.fdserver.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import java.time.LocalDateTime;
 
 @Data
+@EqualsAndHashCode(exclude = {"ticket"})
+@ToString(exclude = {"ticket"})
 @Entity
 @Table(name = "ticket_reply", indexes = {
         @Index(name = "idx_reply_ticket_id", columnList = "ticket_id")

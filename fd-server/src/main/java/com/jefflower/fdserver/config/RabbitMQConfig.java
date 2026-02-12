@@ -16,6 +16,15 @@ public class RabbitMQConfig {
 
     public static final String DLQ_NAME = "q.ticket.dlq";
 
+    // 默认队列/交换机/路由键（与 SystemConfigService 默认值一致）
+    public static final String EXCHANGE_NAME = "fd.ticket.task.exchange";
+    public static final String QUEUE_TRANSLATION = "q.ticket.translation";
+    public static final String QUEUE_REPLY = "q.ticket.reply";
+    public static final String QUEUE_AUDIT = "q.ticket.audit";
+    public static final String ROUTING_TRANSLATE = "ticket.task.translate";
+    public static final String ROUTING_REPLY = "ticket.task.reply";
+    public static final String ROUTING_AUDIT = "ticket.task.audit";
+
     @Bean
     public RabbitAdmin rabbitAdmin(ConnectionFactory connectionFactory) {
         return new RabbitAdmin(connectionFactory);
@@ -56,11 +65,58 @@ public class RabbitMQConfig {
         return template;
     }
 
-    /**
-     * 声明死信队列（确保存在）
-     */
+    // ========== Exchange ==========
+
+    @Bean
+    public TopicExchange ticketTaskExchange() {
+        return ExchangeBuilder.topicExchange(EXCHANGE_NAME).durable(true).build();
+    }
+
+    // ========== Queues ==========
+
+    @Bean
+    public Queue translationQueue() {
+        return QueueBuilder.durable(QUEUE_TRANSLATION)
+                .withArgument("x-dead-letter-exchange", "")
+                .withArgument("x-dead-letter-routing-key", DLQ_NAME)
+                .build();
+    }
+
+    @Bean
+    public Queue replyQueue() {
+        return QueueBuilder.durable(QUEUE_REPLY)
+                .withArgument("x-dead-letter-exchange", "")
+                .withArgument("x-dead-letter-routing-key", DLQ_NAME)
+                .build();
+    }
+
+    @Bean
+    public Queue auditQueue() {
+        return QueueBuilder.durable(QUEUE_AUDIT)
+                .withArgument("x-dead-letter-exchange", "")
+                .withArgument("x-dead-letter-routing-key", DLQ_NAME)
+                .build();
+    }
+
     @Bean
     public Queue deadLetterQueue() {
         return QueueBuilder.durable(DLQ_NAME).build();
+    }
+
+    // ========== Bindings ==========
+
+    @Bean
+    public Binding translationBinding(Queue translationQueue, TopicExchange ticketTaskExchange) {
+        return BindingBuilder.bind(translationQueue).to(ticketTaskExchange).with(ROUTING_TRANSLATE);
+    }
+
+    @Bean
+    public Binding replyBinding(Queue replyQueue, TopicExchange ticketTaskExchange) {
+        return BindingBuilder.bind(replyQueue).to(ticketTaskExchange).with(ROUTING_REPLY);
+    }
+
+    @Bean
+    public Binding auditBinding(Queue auditQueue, TopicExchange ticketTaskExchange) {
+        return BindingBuilder.bind(auditQueue).to(ticketTaskExchange).with(ROUTING_AUDIT);
     }
 }

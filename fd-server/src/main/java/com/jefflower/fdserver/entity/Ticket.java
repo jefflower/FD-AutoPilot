@@ -3,10 +3,14 @@ package com.jefflower.fdserver.entity;
 import com.jefflower.fdserver.enums.TicketStatus;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import java.time.LocalDateTime;
 import java.util.Set;
 
 @Data
+@EqualsAndHashCode(exclude = {"translations", "replies"})
+@ToString(exclude = {"translations", "replies"})
 @Entity
 @Table(name = "ticket", indexes = {
         @Index(name = "idx_ticket_status", columnList = "status"),
