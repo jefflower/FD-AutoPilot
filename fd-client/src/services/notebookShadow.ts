@@ -218,8 +218,10 @@ export class NotebookShadowService {
         if (sendBtn) {
           sendBtn.click();
           window.__SHADOW_SESSION_ACTIVE = true;
+          window.__SHADOW_SEND_FAILED = false;
           log('Send button clicked, message sent');
         } else {
+          window.__SHADOW_SEND_FAILED = true;
           log('FATAL: No send button found after retries');
         }
       })();
@@ -407,6 +409,19 @@ export class NotebookShadowService {
 
     await invoke('execute_notebook_js', { script: observerScript });
 
+    // 检查发送是否失败（injectSendScript 设置的标记）
+    await new Promise(r => setTimeout(r, 1000));
+    try {
+      const sendCheck = await invoke('execute_notebook_js', {
+        script: '(function(){ return String(!!window.__SHADOW_SEND_FAILED); })()'
+      }) as string;
+      if (sendCheck === 'true') {
+        console.error('[NotebookShadow] Send failed (button not found), aborting observer');
+        yield { text: '发送失败：未找到发送按钮，请检查 NotebookLM 页面状态', status: 'error' };
+        return;
+      }
+    } catch { /* ignore check failure, proceed */ }
+
     // relay 脚本
     const relayScript = `
       (function() {
@@ -453,7 +468,7 @@ export class NotebookShadowService {
       let heartbeatStaleCount = 0;
 
       // 等待循环：定期注入 relay 脚本，读取 observer 写入的全局变量
-      while (idleCount < 360) { // 3分钟总超时
+      while (idleCount < 240) { // 约 4 分钟总超时（对齐 Rust 5 分钟 + 30s 宽限期）
 
         // 注入 relay 脚本
         try {
@@ -538,7 +553,13 @@ export class NotebookShadowService {
           break;
         }
 
-        // 硬超时：30 秒完全无文本响应
+        // 硬超时 A：60 秒完全无任何文本响应（消息可能根本没有发送成功）
+        if (!lastYieldedText && textChangeCount === 0 && idleCount > 120) {
+           console.error('[NotebookShadow] No response in 60s, message likely not sent or input too long');
+           yield { text: '', status: 'error' };
+           break;
+        }
+        // 硬超时 B：30 秒有文本但不再变化（bot 已停止生成）
         if (lastYieldedText && idleCount > 60) {
            console.log('[NotebookShadow] Hard timeout (30s silence), completing with last text.');
            yield { text: lastYieldedText, status: 'complete' };

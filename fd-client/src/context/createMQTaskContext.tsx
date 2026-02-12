@@ -236,7 +236,13 @@ export function createMQTaskContext(config: MQTaskConfig) {
 
                 const wasSkipped = result === 'skipped';
                 console.log(`[MQ-${config.taskType}] ${wasSkipped ? '⏭' : '✅'} ${wasSkipped ? 'Skipped' : 'Completed'} ticket #${task.ticketId}`);
-                await invoke(config.completeCommand, { ticketId: task.ticketId, success: true });
+
+                // 任务本身已成功 — ACK invoke 失败不应覆盖任务结果（例如 consumer 已停止导致 pending_acks 被清理）
+                try {
+                    await invoke(config.completeCommand, { ticketId: task.ticketId, success: true });
+                } catch (ackErr) {
+                    console.warn(`[MQ-${config.taskType}] ACK invoke failed for ticket #${task.ticketId} (task succeeded, consumer may have stopped):`, ackErr);
+                }
 
                 setCompletedHistory(prev => [{ ...task, status: wasSkipped ? 'skipped' as const : 'completed' as const }, ...prev].slice(0, 50));
             } catch (err: any) {

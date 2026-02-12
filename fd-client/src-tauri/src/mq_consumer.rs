@@ -692,7 +692,7 @@ impl MqConsumer {
         }
 
         // 3. 注册 ACK 等待信号
-        let (tx, rx) = tokio::sync::oneshot::channel();
+        let (tx, mut rx) = tokio::sync::oneshot::channel();
         {
             let mut p_acks = self.state.pending_acks.lock().await;
             p_acks.insert(ticket_id, tx);
@@ -705,48 +705,71 @@ impl MqConsumer {
 
         GeminiClient::log(app, &format!("📡 [MQ-{}] Event sent for ticket #{}, awaiting completion (timeout: {}s)...", task_label, ticket_id, timeout_secs));
 
-        // 5. 等待前端完成信号（同时监听 is_running 停止信号，避免锁死）
+        // 5. 等待前端完成信号（同时监听 is_running 停止信号）
+        //    当 consumer 停止时，给正在执行的任务一个宽限期（30秒）以完成，
+        //    避免将实际成功的任务误标记为失败。
         let is_running = self.state.is_running.clone();
-        let wait_result = tokio::select! {
-            result = tokio::time::timeout(std::time::Duration::from_secs(timeout_secs), rx) => {
-                match result {
-                    Ok(Ok(success)) => {
-                        if success {
-                            GeminiClient::log(app, &format!("✅ [MQ-{}] Frontend reported success for ticket #{}", task_label, ticket_id));
-                            Ok(())
-                        } else {
+        let grace_period_secs: u64 = 30;
+        let mut stop_detected = false;
+        let mut wait_timeout_secs = timeout_secs;
+
+        let wait_result = loop {
+            tokio::select! {
+                biased;  // 优先检查 rx（完成信号优先于超时和停止检测）
+                result = &mut rx => {
+                    match result {
+                        Ok(true) => {
+                            if stop_detected {
+                                GeminiClient::log(app, &format!("✅ [MQ-{}] Ticket #{} completed during grace period", task_label, ticket_id));
+                            } else {
+                                GeminiClient::log(app, &format!("✅ [MQ-{}] Frontend reported success for ticket #{}", task_label, ticket_id));
+                            }
+                            break Ok(());
+                        }
+                        Ok(false) => {
                             let err_msg = format!("Frontend reported failure for ticket #{}", ticket_id);
                             GeminiClient::log(app, &format!("❌ [MQ-{}] {}", task_label, err_msg));
-                            Err(err_msg)
+                            break Err(err_msg);
+                        }
+                        Err(_) => {
+                            let err_msg = format!("Frontend completion channel closed for ticket #{}", ticket_id);
+                            GeminiClient::log(app, &format!("❌ [MQ-{}] {}", task_label, err_msg));
+                            break Err(err_msg);
                         }
                     }
-                    Ok(Err(_)) => {
-                        let err_msg = format!("Frontend completion channel closed for ticket #{}", ticket_id);
-                        GeminiClient::log(app, &format!("❌ [MQ-{}] {}", task_label, err_msg));
-                        Err(err_msg)
-                    }
-                    Err(_) => {
-                        let err_msg = format!("Timed out waiting for frontend completion for ticket #{}", ticket_id);
-                        GeminiClient::log(app, &format!("❌ [MQ-{}] {}", task_label, err_msg));
-                        Err(err_msg)
+                }
+                _ = tokio::time::sleep(std::time::Duration::from_secs(wait_timeout_secs)) => {
+                    if stop_detected {
+                        let err_msg = format!("Ticket #{} did not complete within grace period ({}s) after consumer stop", ticket_id, grace_period_secs);
+                        GeminiClient::log(app, &format!("⏰ [MQ-{}] {}", task_label, err_msg));
+                        break Err(err_msg);
+                    } else {
+                        let err_msg = format!("Timed out ({}s) waiting for frontend completion for ticket #{}", timeout_secs, ticket_id);
+                        GeminiClient::log(app, &format!("⏰ [MQ-{}] {}", task_label, err_msg));
+                        break Err(err_msg);
                     }
                 }
-            }
-            _ = async {
-                loop {
-                    tokio::time::sleep(std::time::Duration::from_secs(2)).await;
-                    if !is_running.load(Ordering::SeqCst) {
-                        break;
+                _ = async {
+                    loop {
+                        tokio::time::sleep(std::time::Duration::from_secs(2)).await;
+                        if !is_running.load(Ordering::SeqCst) {
+                            break;
+                        }
                     }
+                }, if !stop_detected => {
+                    // 停止信号触发 — 进入宽限期，不立即中断
+                    stop_detected = true;
+                    wait_timeout_secs = grace_period_secs;
+                    GeminiClient::log(app, &format!(
+                        "⏳ [MQ-{}] Consumer stopping, waiting up to {}s for ticket #{} to complete...",
+                        task_label, grace_period_secs, ticket_id
+                    ));
+                    continue;  // 重新进入 select，用宽限期超时替代原始超时
                 }
-            } => {
-                let err_msg = format!("Consumer stopped, aborting wait for ticket #{}", ticket_id);
-                GeminiClient::log(app, &format!("🛑 [MQ-{}] {}", task_label, err_msg));
-                Err(err_msg)
             }
         };
 
-        // 停止时清理残留的 pending_acks
+        // 失败时清理残留的 pending_acks
         if wait_result.is_err() {
             let mut p_acks = self.state.pending_acks.lock().await;
             p_acks.remove(&ticket_id);

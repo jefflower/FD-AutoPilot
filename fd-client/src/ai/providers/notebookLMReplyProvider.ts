@@ -24,6 +24,10 @@ export class NotebookLMReplyProvider implements AiReplyProvider {
     private static readonly MAX_SINGLE_PROMPT_LENGTH = 12000;
     /** 每段内容的目标大小 */
     private static readonly CHUNK_SIZE = 10000;
+    /** 上下文最大长度（字符数），超出时从最旧对话开始截断 */
+    private static readonly MAX_CONTEXT_LENGTH = 30000;
+    /** 单条对话最大长度，超出则截断并标注 */
+    private static readonly MAX_SINGLE_CONVERSATION_LENGTH = 3000;
 
     constructor(notebookId: string, notebookUrl?: string) {
         this.notebookId = notebookId;
@@ -43,15 +47,52 @@ export class NotebookLMReplyProvider implements AiReplyProvider {
         context += `【INITIAL DESCRIPTION】: ${parsedData?.description || 'No description content'}\n\n`;
 
         if (parsedData?.conversations && parsedData.conversations.length > 0) {
-            context += "【DETAILED INTERACTION LOGS】:\n";
-            context += "--------------------------------------------------\n";
-            for (const conv of parsedData.conversations) {
+            const conversations = parsedData.conversations;
+            const separator = "--------------------------------------------------\n";
+
+            // 从最新对话向最旧填充，确保最近的对话优先保留
+            const formattedConvs: string[] = [];
+            for (const conv of conversations) {
                 const userIdStr = String(conv.userId);
                 const agentName = AGENT_MAP[userIdStr];
                 const role = agentName ? `AGENT (${agentName})` : (conv.incoming ? 'CUSTOMER' : 'AGENT');
                 const timeStr = conv.createdAt || 'Unknown Time';
-                context += `[${timeStr}] <${role}>:\n${conv.bodyText}\n`;
-                context += "--------------------------------------------------\n";
+
+                // 截断过长的单条对话
+                let bodyText = conv.bodyText || '';
+                if (bodyText.length > NotebookLMReplyProvider.MAX_SINGLE_CONVERSATION_LENGTH) {
+                    bodyText = bodyText.substring(0, NotebookLMReplyProvider.MAX_SINGLE_CONVERSATION_LENGTH) + '\n...[内容已截断]';
+                }
+
+                formattedConvs.push(`[${timeStr}] <${role}>:\n${bodyText}\n${separator}`);
+            }
+
+            // 计算可用空间并截断最旧的对话
+            const header = "【DETAILED INTERACTION LOGS】:\n" + separator;
+            const availableLength = NotebookLMReplyProvider.MAX_CONTEXT_LENGTH - context.length - header.length;
+
+            let totalLength = 0;
+            let startIndex = 0;
+
+            // 从最新（末尾）向最旧（开头）累加，找到能放入的起始索引
+            for (let i = formattedConvs.length - 1; i >= 0; i--) {
+                if (totalLength + formattedConvs[i].length > availableLength) {
+                    startIndex = i + 1;
+                    break;
+                }
+                totalLength += formattedConvs[i].length;
+            }
+
+            context += header;
+
+            if (startIndex > 0) {
+                const skipped = startIndex;
+                console.log(`[NotebookLMReplyProvider] Truncating ${skipped} oldest conversation(s) to fit context limit`);
+                context += `[... 已省略最早的 ${skipped} 条对话记录 ...]\n${separator}`;
+            }
+
+            for (let i = startIndex; i < formattedConvs.length; i++) {
+                context += formattedConvs[i];
             }
         }
 
