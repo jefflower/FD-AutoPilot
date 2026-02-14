@@ -30,8 +30,10 @@
     "REJECTED": "Rejected"
   },
   "userRole": {
+    "SUPER_ADMIN": "Super Admin",
     "ADMIN": "Admin",
-    "USER": "User"
+    "USER": "User",
+    "AUDITOR": "Auditor"
   },
   "button": {
     "confirm": "Confirm",

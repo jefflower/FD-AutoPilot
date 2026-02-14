@@ -4,13 +4,14 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { authApi, getAuthToken, setAuthToken, isTokenExpired, ApiError } from '../services/serverApi';
-import type { User, LoginRequest, RegisterRequest } from '../types/server';
+import type { User, UserRole, LoginRequest, RegisterRequest } from '../types/server';
 
 interface AuthState {
   token: string | null;
   user: User | null;
   isLoggedIn: boolean;
-  isAdmin: boolean;
+  isAdmin: boolean;        // 保留（ADMIN 或 SUPER_ADMIN）
+  roles: string[];          // 新增：完整角色列表
   isLoading: boolean;
   error: string | null;
   errorCode: string | null;
@@ -22,6 +23,7 @@ export function useAuth() {
     user: null,
     isLoggedIn: false,
     isAdmin: false,
+    roles: [],
     isLoading: true,
     error: null,
     errorCode: null,
@@ -44,11 +46,14 @@ export function useAuth() {
 
       try {
         const user = JSON.parse(savedUser) as User;
+        const roles = user.roles || [user.role];
+        const isAdmin = roles.some(r => r === 'ADMIN' || r === 'SUPER_ADMIN');
         setState({
           token,
           user,
           isLoggedIn: true,
-          isAdmin: user.role === 'ADMIN',
+          isAdmin,
+          roles,
           isLoading: false,
           error: null,
           errorCode: null,
@@ -78,11 +83,15 @@ export function useAuth() {
 
       localStorage.setItem('fd_auth_user', JSON.stringify(user));
 
+      const roles = user.roles || [user.role];
+      const isAdmin = roles.some(r => r === 'ADMIN' || r === 'SUPER_ADMIN');
+
       setState({
-        token: response.token,
+        token: response.accessToken || response.token,
         user,
         isLoggedIn: true,
-        isAdmin: user.role === 'ADMIN',
+        isAdmin,
+        roles,
         isLoading: false,
         error: null,
         errorCode: null,
@@ -135,6 +144,7 @@ export function useAuth() {
       user: null,
       isLoggedIn: false,
       isAdmin: false,
+      roles: [],
       isLoading: false,
       error: null,
       errorCode: null,
@@ -172,12 +182,38 @@ export function useAuth() {
     setState(prev => ({ ...prev, error: null, errorCode: null }));
   }, []);
 
+  // 角色检查
+  const hasRole = useCallback((role: string): boolean => {
+    if (!state.user) return false;
+    return state.user.roles?.includes(role as UserRole) ?? state.user.role === role;
+  }, [state.user]);
+
+  // 权限检查（预留，当前基于角色判断，后续可改为从服务端获取精确权限）
+  const hasPermission = useCallback((permission: string): boolean => {
+    if (!state.user) return false;
+    // SUPER_ADMIN 拥有所有权限
+    if (hasRole('SUPER_ADMIN')) return true;
+    // ADMIN 拥有所有权限
+    if (hasRole('ADMIN')) return true;
+    // USER 角色：ticket:read, ticket:translate, ticket:reply
+    if (hasRole('USER')) {
+      return ['ticket:read', 'ticket:translate', 'ticket:reply'].includes(permission);
+    }
+    // AUDITOR 角色
+    if (hasRole('AUDITOR')) {
+      return ['ticket:read', 'ticket:audit', 'ticket:push'].includes(permission);
+    }
+    return false;
+  }, [state.user, hasRole]);
+
   return {
     ...state,
     login,
     register,
     logout,
     clearError,
+    hasRole,
+    hasPermission,
   };
 }
 

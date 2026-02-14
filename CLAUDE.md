@@ -258,6 +258,68 @@ Rust 后端通过 Tauri Event 与 React 前端通信：
 
 本项目使用分层模型策略：开发用 opus（最强推理），测试编写和代码审查用 sonnet（平衡），测试执行和文档用 haiku（高性价比）。
 
+### fd-server 模块化架构
+
+fd-server 采用**单体内模块化**架构——在同一个 Spring Boot 应用内按业务域划分包结构，为后续拆分微服务做准备。
+
+#### 模块划分
+
+| 模块 | 包路径 | 职责 | 可依赖 |
+|------|--------|------|--------|
+| **auth** | `com.jefflower.fdserver.auth.*` | 用户认证授权（JWT、RBAC、用户生命周期、安全配置） | common |
+| **ticket** | `com.jefflower.fdserver.ticket.*` | 工单业务（含 Freshdesk 集成、MQ 分发、知识库、通知、管理后台） | common, auth |
+| **common** | `com.jefflower.fdserver.common.*` | 公共基础（通用工具、全局异常处理、公共 DTO、公共配置） | 无（最底层） |
+
+#### 模块间依赖规则
+
+```
+common  ←──  auth  ←──  ticket
+```
+- 箭头方向 = 依赖方向（A ← B 表示 B 可依赖 A）
+- common 不依赖任何业务模块
+- auth 只依赖 common
+- ticket 可依赖 auth（如获取当前用户）和 common
+- ticket 内部子包（freshdesk/mq/knowledge/notify/admin）可互相调用，不需要额外隔离
+- 模块间通过注入 Service 直接调用（允许单向依赖），不做过度抽象
+
+#### auth 模块内部结构
+
+```
+auth/
+├── controller/    AuthController（登录/注册）, 用户管理端点
+├── service/       AuthService（认证/授权核心逻辑）
+├── entity/        SysUser
+├── repository/    SysUserRepository
+├── dto/           LoginRequest, LoginResponse, RegisterRequest 等
+├── enums/         UserRole, UserStatus
+├── security/      JwtUtil, JwtAuthenticationFilter
+├── config/        SecurityConfig
+└── util/          PasswordValidator, SuperPasswordVerifier
+```
+
+#### ticket 模块内部结构
+
+```
+ticket/
+├── controller/    TicketController, ConfigController, KnowledgeController, WebhookController, DatabaseController, RequestController
+├── service/       TicketService, MqPublisherService, FreshdeskSyncService, ReplyPushService, SystemConfigService, KnowledgeNoteService, WeChatWorkNotifyService, DatabaseQueryService, DlqConsumerService, MqQueueService, RequestService
+├── entity/        Ticket, TicketTranslation, TicketReply, TicketAudit, SystemConfig, KnowledgeNote, SyncLog, SyncConfig, FailedReplyPush, RequestRecord
+├── repository/    对应各 Entity 的 JpaRepository
+├── dto/           工单相关所有 DTO
+├── enums/         TicketStatus, AuditResult, SyncStatus, TriggerType
+├── scheduler/     SyncScheduler, ReplyPushRetryScheduler
+└── config/        RabbitMQConfig, MqInitializer
+```
+
+#### common 模块内部结构
+
+```
+common/
+├── config/        RestTemplateConfig, 其他公共配置
+├── dto/           通用响应结构（如有）
+└── util/          SqlValidator, 其他通用工具
+```
+
 ### 模型分配规则
 
 当使用 Task 工具启动子代理时，**必须**根据任务类型指定 `model` 参数：
@@ -265,7 +327,7 @@ Rust 后端通过 Tauri Event 与 React 前端通信：
 | 任务类型 | model 参数 | 适用场景 |
 |----------|-----------|----------|
 | 开发 | `opus` | 编写/修改业务代码、架构设计、复杂调试、性能优化 |
-| 代码审查 | `sonnet` | 代码质量分析、安全审查、PR Review |
+| 代码审查 | `sonnet` | 代码质量分析、安全审查、PR Review、模块边界合规检查 |
 | 测试编写 | `sonnet` | 编写测试用例（需要理解业务逻辑） |
 | 测试执行 | `haiku` | 运行测试、生成覆盖率报告 |
 | 文档 | `haiku` | 编写/更新文档、API 文档、注释 |
@@ -277,21 +339,26 @@ Rust 后端通过 Tauri Event 与 React 前端通信：
 
 | 角色 | subagent_type | model | prompt 关键指令 |
 |------|--------------|-------|----------------|
-| backend-dev | `general-purpose` | `opus` | "你是 Java/Spring Boot 后端开发。范围限定 `fd-server/src/**`。关注工单状态流转正确性、MQ 消息可靠投递、事务一致性。" |
+| auth-dev | `general-purpose` | `opus` | "你是认证授权模块开发。范围限定 `fd-server/**/auth/**`。关注 JWT 安全、RBAC 权限模型、用户生命周期、密码策略、会话管理。不得直接依赖 ticket 模块的任何类。" |
+| ticket-dev | `general-purpose` | `opus` | "你是工单业务模块开发。范围限定 `fd-server/**/ticket/**`。关注工单状态流转正确性、MQ 消息可靠投递、事务一致性。可依赖 auth 模块的公开 Service/DTO，不得操作 auth 内部实现。" |
+| common-dev | `general-purpose` | `opus` | "你是公共模块开发。范围限定 `fd-server/**/common/**`。关注通用工具类、公共配置、全局异常处理。不得依赖任何业务模块（auth/ticket）。" |
 | frontend-dev | `general-purpose` | `opus` | "你是 React/TypeScript 前端开发。范围限定 `fd-client/src/**`（不含 `src-tauri`）。关注 MQ Context 工厂模式一致性、流式文本桥接、状态管理。" |
 | rust-dev | `general-purpose` | `opus` | "你是 Tauri/Rust 客户端后端开发。范围限定 `fd-client/src-tauri/src/**`。关注异步安全、Event 通信可靠性、错误处理。" |
-| architect | `Plan` | `opus` | （Plan 模式自动获取上下文，用于跨模块设计、数据流优化、技术选型、状态机扩展） |
-| debugger | `general-purpose` | `opus` | "你是跨层调试专家。负责定位 Rust↔React↔Server 问题、MQ 消息丢失排查、Shadow Window 时序问题。输出：根因分析 + 修复建议。" |
-| code-reviewer | `general-purpose` | `sonnet` | "你是代码审查者。重点关注 OWASP Top 10（JWT 安全、SQL 注入、XSS）、最佳实践、重复代码。输出：问题列表（按严重级别排序）+ 修复建议。" |
+| architect | `Plan` | `opus` | （Plan 模式自动获取上下文，用于跨模块设计、数据流优化、技术选型、状态机扩展、模块边界设计） |
+| debugger | `general-purpose` | `opus` | "你是跨层调试专家。负责定位 Rust↔React↔Server 问题、MQ 消息丢失排查、Shadow Window 时序问题、模块间依赖错误。输出：根因分析 + 修复建议。" |
+| code-reviewer | `general-purpose` | `sonnet` | "你是代码审查者。重点关注 OWASP Top 10（JWT 安全、SQL 注入、XSS）、最佳实践、重复代码。**额外关注模块边界合规**：检查 import 是否违反依赖规则（common ← auth ← ticket），auth 模块是否引用了 ticket 的类，common 是否引用了业务模块的类。输出：问题列表（按严重级别排序）+ 修复建议。" |
+| module-guardian | `general-purpose` | `sonnet` | "你是模块化守护者。检查 fd-server 的模块边界合规性。检查项：1) 依赖方向合规（common ← auth ← ticket，不可反向）；2) 无循环依赖；3) auth 模块的 import 不包含 ticket 包的类；4) common 模块的 import 不包含 auth/ticket 包的类；5) 包结构是否正确归属模块。输出：违规列表 + 修复建议。" |
 | test-runner | `Bash` | `haiku` | 直接执行测试命令（见下方测试命令表） |
-| test-writer | `general-purpose` | `sonnet` | "你是测试工程师。后端用 JUnit 5 + Spring Boot Test（`fd-server/src/test/java/**`），Rust 用 `#[cfg(test)]`，前端用 Vitest + RTL。关注工单状态流转边界、MQ 序列化/反序列化、API 权限校验。" |
+| test-writer | `general-purpose` | `sonnet` | "你是测试工程师。后端用 JUnit 5 + Spring Boot Test（`fd-server/src/test/java/**`），Rust 用 `#[cfg(test)]`，前端用 Vitest + RTL。关注工单状态流转边界、MQ 序列化/反序列化、API 权限校验。测试类的包结构应与源码模块结构一致（auth/ticket/common）。" |
 | doc-writer | `general-purpose` | `haiku` | "你是文档工程师。范围 `doc/**` + 代码内注释。中文撰写，遵循 `doc/` 目录现有风格。" |
 
 **测试命令表**（test-runner 使用）：
 
 | 模块 | 命令 |
 |------|------|
-| 后端 | `cd fd-server && mvn test` |
+| 后端全量 | `cd fd-server && mvn test` |
+| 后端 auth 模块 | `cd fd-server && mvn test -Dtest="com.jefflower.fdserver.auth.**"` |
+| 后端 ticket 模块 | `cd fd-server && mvn test -Dtest="com.jefflower.fdserver.ticket.**"` |
 | Rust | `cd fd-client/src-tauri && cargo test` |
 | 前端 | `cd fd-client && npm test` |
 | 前端覆盖率 | `cd fd-client && npm run test:coverage` |
@@ -305,20 +372,32 @@ Rust 后端通过 Tauri Event 与 React 前端通信：
 收到用户请求后，主代理**必须先完成以下分析**，再进入决策树：
 
 1. **需求澄清** — 请求是否明确？若存在歧义，用 `AskUserQuestion` 澄清，不得假设
-2. **范围评估** — 判断涉及哪些层（server / React / Rust / 跨层），影响哪些模块
+2. **范围评估** — 判断涉及哪些层（server / React / Rust / 跨层），**以及涉及哪些业务模块（auth / ticket / common / 跨模块）**
 3. **复杂度判断** — 按以下标准分级：
    - **简单**: 单文件改动、逻辑清晰、无依赖 → 直接执行，跳过任务拆解
-   - **中等**: 2-5 个文件、单层、有明确模式可参考 → 创建 TaskCreate 跟踪，走流程B
-   - **复杂**: 跨层、模糊需求、需要设计决策 → 完整任务拆解，走流程A/C/D
+   - **中等**: 2-5 个文件、单层单模块、有明确模式可参考 → 创建 TaskCreate 跟踪，走流程B
+   - **复杂**: 跨层/跨模块、模糊需求、需要设计决策 → 完整任务拆解，走流程A/C/D/E
 4. **任务拆解**（中等及以上）— 使用 `TaskCreate` 将需求拆解为可执行任务，每个任务须包含：
    - 明确的完成标准（什么状态算"做完"）
    - 涉及的文件/模块范围
    - 依赖关系（通过 `addBlockedBy` 设定）
-5. **风险识别** — 是否涉及：状态机变更、MQ 消息格式变更、数据库 Schema 变更、安全相关改动？若是，标记为高风险，流程中必须经过 architect 设计 + 用户确认
+5. **风险识别** — 是否涉及：状态机变更、MQ 消息格式变更、数据库 Schema 变更、安全相关改动、**模块边界变更**？若是，标记为高风险，流程中必须经过 architect 设计 + 用户确认
+
+#### 后端 dev agent 选择规则
+
+根据变更涉及的模块选择对应 dev agent：
+
+| 变更范围 | 选择的 agent |
+|---------|-------------|
+| 仅 auth 模块 | auth-dev |
+| 仅 ticket 模块 | ticket-dev |
+| 仅 common 模块 | common-dev |
+| 跨 auth + ticket | common-dev（公共部分）→ auth-dev → ticket-dev（按依赖顺序串行） |
+| 新模块创建 | architect 先设计 → common-dev（公共基础）→ 对应模块 dev |
 
 #### Phase 1-N: 执行与跟踪
 
-在各流程（A/B/C/D）执行期间，主代理**必须**：
+在各流程（A/B/C/D/E）执行期间，主代理**必须**：
 
 - **阶段推进前**: 检查当前阶段的门控条件是否满足（见下方阶段门控表）
 - **子代理返回后**: 用 `TaskUpdate` 更新任务状态，记录产出摘要
@@ -338,12 +417,14 @@ Rust 后端通过 Tauri Event 与 React 前端通信：
 
 | 门控点 | 准入条件 | 适用流程 |
 |--------|---------|---------|
-| 探索 → 设计 | Explore 产出了涉及模块的文件清单和现有模式总结 | A, D |
-| 设计 → 开发 | architect 方案已获用户确认；API 契约、数据结构已明确 | A, D |
-| 开发 → 验证 | 所有 dev agent 已返回；代码已写入文件系统 | A, B, C, D |
+| 探索 → 设计 | Explore 产出了涉及模块的文件清单和现有模式总结 | A, D, E |
+| 设计 → 开发 | architect 方案已获用户确认；API 契约、数据结构已明确 | A, D, E |
+| 开发 → 验证 | 所有 dev agent 已返回；代码已写入文件系统 | A, B, C, D, E |
 | 验证 → 补充测试 | 现有测试全部通过；code-reviewer 无 P0/P1 问题 | A |
 | 测试 → 文档 | 全部测试通过（含新增测试） | A, D |
 | 诊断 → 修复 | debugger 输出了根因分析和涉及文件清单 | C |
+| 模块抽取 → 依赖验证 | 代码已移动 + 编译通过 | E |
+| 依赖验证 → 完成 | module-guardian 无违规 + 全量测试通过 | E |
 
 ### 工作流决策树
 
@@ -356,7 +437,9 @@ Rust 后端通过 Tauri Event 与 React 前端通信：
   │
   ├─ 是 Bug/异常？ ──→ 流程C: Bug 修复
   │
-  ├─ 是重构/优化？ ──→ 流程D: 重构优化
+  ├─ 是模块化重构？ ──→ 流程E: 模块化重构
+  │
+  ├─ 是其他重构/优化？ ──→ 流程D: 重构优化
   │
   ├─ 判断变更范围
   │   ├─ 跨层（涉及 server + client 或 React + Rust）──→ 流程A: 全栈新功能
@@ -378,12 +461,13 @@ Step 2: 设计
   - MQ 消息格式（如涉及）
   - 数据模型变更（如涉及）
   - 各层任务分工和接口约定
+  - **变更涉及的业务模块及依赖方向**
   → 用户确认方案
   ── 门控 ──→ 用户已确认 + 契约已明确，否则不得进入开发
 
 Step 3: 并行开发（前提：Step 2 的契约已确定）
   主代理用 TaskCreate 为每个子任务创建跟踪项，然后同时启动（单条消息多个 Task 调用）：
-  - backend-dev(opus) — 实现 Service + Controller + Entity
+  - auth-dev / ticket-dev / common-dev(opus) — 按模块分工实现后端（参照"后端 dev agent 选择规则"）
   - frontend-dev(opus) — 实现组件 + Hooks + API 调用
   - rust-dev(opus) — 实现 Tauri 命令 + MQ 处理（仅涉及 Rust 层时）
   子代理返回后，主代理用 TaskUpdate 更新各任务状态
@@ -392,7 +476,7 @@ Step 3: 并行开发（前提：Step 2 的契约已确定）
 Step 4: 并行验证
   同时启动：
   - test-runner(haiku/Bash) — 运行现有测试确保无回归
-  - code-reviewer(sonnet) — 审查代码质量和安全
+  - code-reviewer(sonnet) — 审查代码质量、安全和模块边界合规
   ── 门控 ──→ 测试全通过 + 无 P0/P1 审查问题，否则进入「失败回退规则」
 
 Step 5: 补充测试
@@ -411,6 +495,7 @@ Step Final: 主代理用 TaskList 确认全部完成，向用户汇报产出摘�
 ```
 Step 1: Explore(haiku) 探索相关文件
 Step 2: 对应 dev agent(opus) 直接实现（简单变更可跳过 architect）
+  后端变更按模块选择 auth-dev / ticket-dev / common-dev
   主代理用 TaskCreate 创建跟踪项
   ── 门控 ──→ 代码已写入
 Step 3: test-runner(haiku/Bash) 验证
@@ -424,11 +509,11 @@ Step Final: 主代理确认完成，向用户汇报
 ```
 Step 1: 诊断
   debugger(opus) 定位根因
-  输出：根因分析 + 涉及文件 + 修复方向
+  输出：根因分析 + 涉及文件 + 涉及模块 + 修复方向
   ── 门控 ──→ 根因已明确 + 涉及文件已列出，否则补充诊断
 
 Step 2: 修复
-  对应 dev agent(opus) 实施修复
+  按模块选择对应 dev agent(opus) 实施修复
   主代理用 TaskCreate/TaskUpdate 跟踪
   ── 门控 ──→ 修复代码已写入
 
@@ -458,19 +543,63 @@ Step 2: 设计
   ── 门控 ──→ 用户已确认方案
 
 Step 3: 执行
-  对应 dev agent(opus) 实施重构
+  按模块选择对应 dev agent(opus) 实施重构
   主代理用 TaskCreate/TaskUpdate 跟踪
   ── 门控 ──→ 重构代码已写入
 
 Step 4: 全量验证（重构必须跑全量测试）
-  test-runner(haiku/Bash) — 后端 + 前端 + Rust 全部测试
-  ── 门控 ──→ 全量测试通过，否则 dev agent 修复后重跑（最多 2 轮）
+  并行启动：
+  - test-runner(haiku/Bash) — 后端 + 前端 + Rust 全部测试
+  - module-guardian(sonnet) — 检查模块边界合规
+  ── 门控 ──→ 全量测试通过 + 无模块边界违规，否则 dev agent 修复后重跑（最多 2 轮）
 
 Step 5: 审查
-  code-reviewer(sonnet) — 重点关注行为一致性
+  code-reviewer(sonnet) — 重点关注行为一致性 + 模块边界
   ── 门控 ──→ 无行为变更问题
 
 Step Final: 主代理确认完成，向用户汇报（含重构范围、行为一致性确认、测试结果）
+```
+
+### 流程E: 模块化重构（将现有代码拆分到模块）
+
+```
+Step 1: 探索
+  Explore(haiku) × N 分析待抽取模块的代码分布和依赖关系
+  输出：涉及文件清单、当前 import 依赖图、耦合点
+  ── 门控 ──→ 产出文件清单 + 依赖分析，否则补充探索
+
+Step 2: 设计
+  architect(opus/Plan) 设计模块边界 + 依赖规则 + 迁移步骤
+  输出必须包含：
+  - 哪些类移入新模块
+  - 模块公开接口（哪些 Service/DTO 可被外部依赖）
+  - 需要解耦的耦合点及解耦方案
+  - 迁移顺序（先 common → 再目标模块 → 最后调整引用方）
+  → 用户确认方案
+  ── 门控 ──→ 用户已确认方案
+
+Step 3: 公共基础
+  common-dev(opus) — 建立/完善公共模块（通用异常、公共 DTO、工具类）
+  ── 门控 ──→ 公共模块就绪 + 编译通过
+
+Step 4: 模块抽取
+  对应模块 dev agent(opus) 执行抽取（如 auth-dev 抽取认证模块）
+  - 移动文件到新包结构
+  - 修正所有 import
+  - 调整引用方代码
+  ── 门控 ──→ 代码已移动 + 编译通过
+
+Step 5: 依赖验证
+  并行启动：
+  - module-guardian(sonnet) — 检查模块边界合规（import 方向、循环依赖）
+  - test-runner(haiku/Bash) — 全量测试（确保行为不变）
+  ── 门控 ──→ 无依赖违规 + 全量测试通过，否则对应 dev agent 修复（最多 2 轮）
+
+Step 6: 审查
+  code-reviewer(sonnet) — 重点关注行为一致性 + 模块边界 + import 清洁度
+  ── 门控 ──→ 无问题
+
+Step Final: 主代理确认完成，向用户汇报（含迁移范围、模块边界验证结果、测试结果）
 ```
 
 ### 失败回退规则
@@ -482,6 +611,7 @@ Step Final: 主代理确认完成，向用户汇报（含重构范围、行为�
 | 测试失败 | 原 dev agent(opus) 修复 → test-runner 重跑 | 2 轮 |
 | 审查发现安全问题 | 立即停止流程，原 dev agent(opus) 修复 → code-reviewer 重审 | 2 轮 |
 | 构建失败 | debugger(opus) 定位 → dev agent(opus) 修复 | 2 轮 |
+| 模块边界违规 | module-guardian 输出违规详情 → 对应 dev agent(opus) 修复 → module-guardian 重检 | 2 轮 |
 | 并行产出冲突 | architect(opus/Plan) 协调合并策略 → dev agent 调整 | 1 轮 |
 | 超过最大重试 | 停止自动流程，向用户报告问题详情，等待人工决策 | — |
 
@@ -491,8 +621,8 @@ Step Final: 主代理确认完成，向用户汇报（含重构范围、行为�
 
 **可以并行的组合：**
 - 多个 Explore agent（探索不同模块）
-- backend-dev + frontend-dev + rust-dev（前提：architect 已输出 API 契约和数据结构）
-- test-runner + code-reviewer（互不依赖）
+- 不同层的 dev agents（如 auth-dev + frontend-dev + rust-dev）
+- test-runner + code-reviewer + module-guardian（互不依赖）
 - doc-writer + test-writer（互不依赖）
 
 **必须串行的依赖：**
@@ -500,8 +630,10 @@ Step Final: 主代理确认完成，向用户汇报（含重构范围、行为�
 - dev agents → test-runner（测试必须在代码写完后）
 - debugger → dev agent（修复必须基于诊断结论）
 - 所有开发/测试 → doc-writer（文档必须反映最终实现）
+- **模块化重构中**：common-dev → auth-dev → ticket-dev（按依赖层级顺序，底层先行）
 
 **特殊约束：**
 - debugger 是阻塞性的：触发后暂停其他工作流，直到诊断完成
 - 全量测试失败后，不得启动 doc-writer（代码未稳定，文档会过时）
 - 并行启动多个 dev agent 时，必须在同一条消息中发送多个 Task 调用
+- **模块化重构中**，同一模块的抽取不可并行（避免包移动冲突），不同模块可并行

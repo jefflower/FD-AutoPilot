@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: fd-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --requirepass ${REDIS_PASSWORD:-fdredis123}
+    restart: unless-stopped
+
+volumes:
+  redis_data:

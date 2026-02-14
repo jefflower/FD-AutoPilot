@@ -4,13 +4,14 @@
  */
 
 // ============ 用户相关 ============
-export type UserRole = 'ADMIN' | 'USER';
+export type UserRole = 'SUPER_ADMIN' | 'ADMIN' | 'USER' | 'AUDITOR';
 export type UserStatus = 'PENDING' | 'APPROVED' | 'REJECTED';
 
 export interface User {
   id: number;
   username: string;
-  role: UserRole;
+  role: UserRole;       // 保留兼容（= roles[0]）
+  roles?: UserRole[];   // 新增：完整角色列表
   status: UserStatus;
   createdAt: string;
 }
@@ -21,8 +22,12 @@ export interface LoginRequest {
 }
 
 export interface LoginResponse {
-  token: string;
-  expireAt: number;
+  token: string;                    // 兼容旧代码（= accessToken）
+  accessToken: string;              // 新增
+  refreshToken: string;             // 新增
+  expireAt: number;                 // 兼容旧代码（= accessTokenExpireAt）
+  accessTokenExpireAt: number;      // 新增
+  refreshTokenExpireAt: number;     // 新增
   user: User;
 }
 

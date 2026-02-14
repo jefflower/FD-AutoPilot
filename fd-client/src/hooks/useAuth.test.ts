@@ -24,6 +24,7 @@ vi.mock('../services/serverApi', () => {
       checkAdmin: vi.fn(),
       initAdmin: vi.fn(),
       superResetPassword: vi.fn(),
+      refreshToken: vi.fn(),
     },
     getAuthToken: () => _token,
     setAuthToken: (t: string | null) => {
@@ -51,6 +52,7 @@ const getServerApiMock = async () => {
       checkAdmin: ReturnType<typeof vi.fn>;
       initAdmin: ReturnType<typeof vi.fn>;
       superResetPassword: ReturnType<typeof vi.fn>;
+      refreshToken: ReturnType<typeof vi.fn>;
     },
     isTokenExpired: mod.isTokenExpired as ReturnType<typeof vi.fn>,
     setAuthToken: mod.setAuthToken,

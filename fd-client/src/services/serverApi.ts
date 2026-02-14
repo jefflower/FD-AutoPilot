@@ -73,6 +73,25 @@ export const getAuthToken = (): string | null => {
   return authToken;
 };
 
+// Refresh Token 存储
+let refreshTokenValue: string | null = null;
+
+export const setRefreshToken = (token: string | null) => {
+  refreshTokenValue = token;
+  if (token) {
+    localStorage.setItem('fd_auth_refresh_token', token);
+  } else {
+    localStorage.removeItem('fd_auth_refresh_token');
+  }
+};
+
+export const getRefreshToken = (): string | null => {
+  if (!refreshTokenValue) {
+    refreshTokenValue = localStorage.getItem('fd_auth_refresh_token');
+  }
+  return refreshTokenValue;
+};
+
 /**
  * 解析 JWT payload 中的 exp 字段，判断 token 是否已过期
  */
@@ -89,13 +108,77 @@ export const isTokenExpired = (token: string): boolean => {
   }
 };
 
+// Token 自动刷新（防止并发刷新）
+let isRefreshing = false;
+let refreshPromise: Promise<boolean> | null = null;
+
+async function tryRefreshToken(): Promise<boolean> {
+  // 防止并发刷新
+  if (isRefreshing && refreshPromise) {
+    return refreshPromise;
+  }
+
+  const rt = getRefreshToken();
+  if (!rt) return false;
+
+  isRefreshing = true;
+  refreshPromise = (async () => {
+    try {
+      const response = await fetch(`${getApiBaseUrl()}/auth/refresh`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ refreshToken: rt }),
+      });
+
+      if (!response.ok) {
+        return false;
+      }
+
+      const json = await response.json();
+      const data = json.data || json;
+
+      setAuthToken(data.accessToken || data.token);
+      setRefreshToken(data.refreshToken);
+
+      // 更新本地存储的用户信息
+      if (data.user) {
+        localStorage.setItem('fd_auth_user', JSON.stringify(data.user));
+      }
+
+      return true;
+    } catch {
+      return false;
+    } finally {
+      isRefreshing = false;
+      refreshPromise = null;
+    }
+  })();
+
+  return refreshPromise;
+}
+
 // 通用请求方法
 async function request<T>(
   endpoint: string,
   options: RequestInit = {},
   explicitToken?: string
 ): Promise<T> {
-  const token = explicitToken || getAuthToken();
+  let token = explicitToken || getAuthToken();
+
+  // 自动刷新逻辑（不用于 /auth/refresh 和 /auth/login 本身）
+  if (token && isTokenExpired(token) && !endpoint.includes('/auth/refresh') && !endpoint.includes('/auth/login')) {
+    const refreshed = await tryRefreshToken();
+    if (refreshed) {
+      token = getAuthToken();
+    } else {
+      // 刷新失败，触发登出
+      setAuthToken(null);
+      setRefreshToken(null);
+      window.dispatchEvent(new CustomEvent('auth-token-expired'));
+      throw new ApiError('TOKEN_EXPIRED', 'Token 已过期且刷新失败');
+    }
+  }
+
   const headers: HeadersInit = {
     'Content-Type': 'application/json',
     ...options.headers,
@@ -152,7 +235,9 @@ export const authApi = {
       method: 'POST',
       body: JSON.stringify(data),
     });
-    setAuthToken(response.token);
+    // 存储双 Token
+    setAuthToken(response.accessToken || response.token);
+    setRefreshToken(response.refreshToken);
     return response;
   },
 
@@ -181,8 +266,34 @@ export const authApi = {
     });
   },
 
+  async refreshToken(): Promise<LoginResponse> {
+    const rt = getRefreshToken();
+    if (!rt) throw new ApiError('NO_REFRESH_TOKEN', '无 Refresh Token');
+
+    const response = await request<LoginResponse>('/auth/refresh', {
+      method: 'POST',
+      body: JSON.stringify({ refreshToken: rt }),
+    });
+
+    setAuthToken(response.accessToken || response.token);
+    setRefreshToken(response.refreshToken);
+    return response;
+  },
+
   logout() {
+    // 尝试通知服务端（best effort，fire-and-forget）
+    const token = getAuthToken();
+    if (token) {
+      fetch(`${getApiBaseUrl()}/auth/logout`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+      }).catch(() => {}); // 忽略错误
+    }
     setAuthToken(null);
+    setRefreshToken(null);
   },
 };
 
@@ -305,7 +416,7 @@ export const adminApi = {
     });
   },
 
-  async updateUserRole(userId: number, role: 'ADMIN' | 'USER'): Promise<void> {
+  async updateUserRole(userId: number, role: string): Promise<void> {
     await request<void>(`/admin/users/${userId}/role`, {
       method: 'PUT',
       body: JSON.stringify({ role }),

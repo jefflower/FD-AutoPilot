@@ -1,18 +1,19 @@
 package com.jefflower.fdserver.controller;
 
+import com.jefflower.fdserver.auth.security.RequiresPermission;
 import com.jefflower.fdserver.dto.ApiResponse;
-import com.jefflower.fdserver.dto.ApproveRequest;
-import com.jefflower.fdserver.entity.SyncConfig;
-import com.jefflower.fdserver.entity.SyncLog;
-import com.jefflower.fdserver.entity.SysUser;
-import com.jefflower.fdserver.enums.TriggerType;
-import com.jefflower.fdserver.enums.UserStatus;
-import com.jefflower.fdserver.service.AuthService;
-import com.jefflower.fdserver.service.DlqConsumerService;
-import com.jefflower.fdserver.service.FreshdeskSyncService;
-import com.jefflower.fdserver.service.SyncConfigService;
-import com.jefflower.fdserver.service.SystemConfigService;
-import com.jefflower.fdserver.service.TicketService;
+import com.jefflower.fdserver.auth.dto.ApproveRequest;
+import com.jefflower.fdserver.ticket.entity.SyncConfig;
+import com.jefflower.fdserver.ticket.entity.SyncLog;
+import com.jefflower.fdserver.auth.entity.SysUser;
+import com.jefflower.fdserver.ticket.enums.TriggerType;
+import com.jefflower.fdserver.auth.enums.UserStatus;
+import com.jefflower.fdserver.auth.service.AuthService;
+import com.jefflower.fdserver.ticket.service.DlqConsumerService;
+import com.jefflower.fdserver.ticket.service.FreshdeskSyncService;
+import com.jefflower.fdserver.ticket.service.SyncConfigService;
+import com.jefflower.fdserver.ticket.service.SystemConfigService;
+import com.jefflower.fdserver.ticket.service.TicketService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.core.RabbitAdmin;
@@ -23,7 +24,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.jefflower.fdserver.util.SuperPasswordVerifier;
+import com.jefflower.fdserver.common.util.SuperPasswordVerifier;
 
 import java.util.HashMap;
 import java.util.List;
@@ -48,7 +49,9 @@ public class AdminController {
 
     // ========== 用户管理 ==========
 
+    @Deprecated
     @GetMapping("/admin/users")
+    @RequiresPermission("user:read")
     public ResponseEntity<ApiResponse<Page<SysUser>>> getAllUsers(
             @RequestParam(required = false) String status,
             @RequestParam(required = false) String username,
@@ -66,13 +69,17 @@ public class AdminController {
         return ResponseEntity.ok(ApiResponse.ok(users));
     }
 
+    @Deprecated
     @GetMapping("/admin/users/pending")
+    @RequiresPermission("user:read")
     public ResponseEntity<ApiResponse<List<SysUser>>> getPendingUsers() {
         List<SysUser> users = authService.getPendingUsers();
         return ResponseEntity.ok(ApiResponse.ok(users));
     }
 
+    @Deprecated
     @PostMapping("/admin/users/{id}/approve")
+    @RequiresPermission("user:manage")
     public ResponseEntity<ApiResponse<SysUser>> approveUser(
             @PathVariable Long id,
             @RequestBody ApproveRequest request) {
@@ -80,7 +87,9 @@ public class AdminController {
         return ResponseEntity.ok(ApiResponse.ok("用户状态更新成功", user));
     }
 
+    @Deprecated
     @PutMapping("/admin/users/{id}/role")
+    @RequiresPermission("user:manage")
     public ResponseEntity<ApiResponse<SysUser>> updateUserRole(
             @PathVariable Long id,
             @RequestBody Map<String, String> request) {
@@ -92,7 +101,9 @@ public class AdminController {
         return ResponseEntity.ok(ApiResponse.ok("角色更新成功", user));
     }
 
+    @Deprecated
     @PostMapping("/admin/users/{id}/reset-password")
+    @RequiresPermission("user:manage")
     public ResponseEntity<ApiResponse<Void>> resetPassword(
             @PathVariable Long id,
             @RequestBody Map<String, String> request) {
@@ -111,6 +122,7 @@ public class AdminController {
      * 手动触发同步
      */
     @PostMapping("/sync/freshdesk")
+    @RequiresPermission("sync:manage")
     public ResponseEntity<ApiResponse<Map<String, Object>>> syncFreshdesk() {
         FreshdeskSyncService.SyncResult result = freshdeskSyncService.syncTicketsWithLock(TriggerType.MANUAL);
         Map<String, Object> data = new HashMap<>();
@@ -126,6 +138,7 @@ public class AdminController {
      * 获取同步配置
      */
     @GetMapping("/sync/config")
+    @RequiresPermission("sync:read")
     public ResponseEntity<ApiResponse<Map<String, Object>>> getSyncConfig() {
         Map<String, Object> config = new HashMap<>();
         config.put("cronExpression", syncConfigService.getCronExpression());
@@ -139,6 +152,7 @@ public class AdminController {
      * 更新同步配置
      */
     @PutMapping("/sync/config")
+    @RequiresPermission("sync:manage")
     public ResponseEntity<ApiResponse<Void>> updateSyncConfig(@RequestBody Map<String, String> request) {
         if (request.containsKey("cronExpression")) {
             syncConfigService.updateConfig(SyncConfig.KEY_SYNC_CRON, request.get("cronExpression"));
@@ -156,6 +170,7 @@ public class AdminController {
      * 获取同步状态
      */
     @GetMapping("/sync/status")
+    @RequiresPermission("sync:read")
     public ResponseEntity<ApiResponse<Map<String, Object>>> getSyncStatus() {
         Map<String, Object> status = new HashMap<>();
         status.put("isSyncing", syncConfigService.isSyncing());
@@ -167,6 +182,7 @@ public class AdminController {
      * 获取同步日志
      */
     @GetMapping("/sync/logs")
+    @RequiresPermission("sync:read")
     public ResponseEntity<ApiResponse<Page<SyncLog>>> getSyncLogs(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size) {
@@ -180,6 +196,7 @@ public class AdminController {
      * 清空所有 MQ 队列并回退处理中的工单状态（需超级密码验证）
      */
     @PostMapping("/admin/queues/purge")
+    @RequiresPermission("queue:manage")
     public ResponseEntity<ApiResponse<Map<String, Object>>> purgeQueues(
             @RequestBody Map<String, String> request) {
         String password = request.get("superPassword");
@@ -221,6 +238,7 @@ public class AdminController {
      * 一键清理：删除所有工单及关联数据（需超级密码验证）
      */
     @PostMapping("/admin/tickets/purge-all")
+    @RequiresPermission("queue:manage")
     public ResponseEntity<ApiResponse<Map<String, Object>>> purgeAllTickets(
             @RequestBody Map<String, String> request) {
         String password = request.get("superPassword");
@@ -245,6 +263,7 @@ public class AdminController {
      * routingKey: 目标路由键（如 ticket.task.translate, ticket.task.reply, ticket.task.audit）
      */
     @PostMapping("/admin/dlq/requeue")
+    @RequiresPermission("queue:manage")
     public ResponseEntity<ApiResponse<Map<String, Object>>> requeueDeadLetters(
             @RequestBody Map<String, String> request) {
         String routingKey = request.get("routingKey");

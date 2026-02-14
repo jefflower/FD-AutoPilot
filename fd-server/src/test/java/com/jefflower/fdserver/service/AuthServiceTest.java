@@ -1,13 +1,20 @@
 package com.jefflower.fdserver.service;
 
-import com.jefflower.fdserver.dto.LoginRequest;
-import com.jefflower.fdserver.dto.LoginResponse;
-import com.jefflower.fdserver.dto.RegisterRequest;
-import com.jefflower.fdserver.entity.SysUser;
-import com.jefflower.fdserver.enums.UserRole;
-import com.jefflower.fdserver.enums.UserStatus;
-import com.jefflower.fdserver.repository.SysUserRepository;
-import com.jefflower.fdserver.security.JwtUtil;
+import com.jefflower.fdserver.auth.dto.TokenPair;
+import com.jefflower.fdserver.auth.entity.SysRole;
+import com.jefflower.fdserver.auth.entity.SysUserRole;
+import com.jefflower.fdserver.auth.repository.SysRoleRepository;
+import com.jefflower.fdserver.auth.repository.SysUserRoleRepository;
+import com.jefflower.fdserver.auth.service.AuthService;
+import com.jefflower.fdserver.auth.service.PermissionCacheService;
+import com.jefflower.fdserver.auth.service.TokenService;
+import com.jefflower.fdserver.auth.dto.LoginRequest;
+import com.jefflower.fdserver.auth.dto.LoginResponse;
+import com.jefflower.fdserver.auth.dto.RegisterRequest;
+import com.jefflower.fdserver.auth.entity.SysUser;
+import com.jefflower.fdserver.auth.enums.UserStatus;
+import com.jefflower.fdserver.auth.repository.SysUserRepository;
+import com.jefflower.fdserver.auth.security.JwtUtil;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -40,6 +47,18 @@ class AuthServiceTest {
     @Mock
     private JwtUtil jwtUtil;
 
+    @Mock
+    private TokenService tokenService;
+
+    @Mock
+    private SysUserRoleRepository sysUserRoleRepository;
+
+    @Mock
+    private SysRoleRepository sysRoleRepository;
+
+    @Mock
+    private PermissionCacheService permissionCacheService;
+
     @InjectMocks
     private AuthService authService;
 
@@ -52,14 +71,12 @@ class AuthServiceTest {
         approvedUser.setId(1L);
         approvedUser.setUsername("testuser");
         approvedUser.setPassword("encoded_password");
-        approvedUser.setRole(UserRole.USER);
         approvedUser.setStatus(UserStatus.APPROVED);
 
         pendingUser = new SysUser();
         pendingUser.setId(2L);
         pendingUser.setUsername("pendinguser");
         pendingUser.setPassword("encoded_password");
-        pendingUser.setRole(UserRole.USER);
         pendingUser.setStatus(UserStatus.PENDING);
     }
 
@@ -71,19 +88,35 @@ class AuthServiceTest {
         request.setUsername("testuser");
         request.setPassword("rawpass");
 
+        // Mock RBAC role lookup: user has USER role via sys_user_role
+        SysUserRole userRole = new SysUserRole(1L, 10L);
+        SysRole role = new SysRole("USER", "普通用户", "工单操作", true);
+        role.setId(10L);
+        when(sysUserRoleRepository.findByUserId(1L)).thenReturn(List.of(userRole));
+        when(sysRoleRepository.findById(10L)).thenReturn(Optional.of(role));
+
+        TokenPair tokenPair = TokenPair.builder()
+                .accessToken("jwt-access-token")
+                .refreshToken("refresh-token-uuid")
+                .accessTokenExpireAt(System.currentTimeMillis() + 1800000L)
+                .refreshTokenExpireAt(System.currentTimeMillis() + 604800000L)
+                .build();
+
         when(userRepository.findByUsername("testuser")).thenReturn(Optional.of(approvedUser));
         when(passwordEncoder.matches("rawpass", "encoded_password")).thenReturn(true);
-        when(jwtUtil.generateToken(1L, "testuser", "USER")).thenReturn("jwt-token");
-        when(jwtUtil.getExpirationMillis()).thenReturn(3600000L);
+        when(tokenService.createTokenPair(eq(1L), eq("testuser"), eq(List.of("USER")))).thenReturn(tokenPair);
 
         LoginResponse response = authService.login(request);
 
         assertNotNull(response);
-        assertEquals("jwt-token", response.getToken());
+        assertEquals("jwt-access-token", response.getToken());
+        assertEquals("jwt-access-token", response.getAccessToken());
+        assertEquals("refresh-token-uuid", response.getRefreshToken());
         assertNotNull(response.getExpireAt());
         assertEquals(1L, response.getUser().getId());
         assertEquals("testuser", response.getUser().getUsername());
         assertEquals("USER", response.getUser().getRole());
+        assertEquals(List.of("USER"), response.getUser().getRoles());
     }
 
     @Test
@@ -132,6 +165,9 @@ class AuthServiceTest {
         request.setUsername("newuser");
         request.setPassword("password123");
 
+        SysRole userRole = new SysRole("USER", "普通用户", "工单操作", true);
+        userRole.setId(10L);
+
         when(userRepository.existsByUsername("newuser")).thenReturn(false);
         when(passwordEncoder.encode("password123")).thenReturn("encoded_new");
         when(userRepository.save(any(SysUser.class))).thenAnswer(invocation -> {
@@ -139,14 +175,19 @@ class AuthServiceTest {
             saved.setId(10L);
             return saved;
         });
+        when(sysRoleRepository.findByCode("USER")).thenReturn(Optional.of(userRole));
+        when(sysUserRoleRepository.save(any(SysUserRole.class))).thenAnswer(i -> i.getArgument(0));
 
         SysUser result = authService.register(request);
 
         assertNotNull(result);
         assertEquals("newuser", result.getUsername());
         assertEquals("encoded_new", result.getPassword());
-        assertEquals(UserRole.USER, result.getRole());
         assertEquals(UserStatus.PENDING, result.getStatus());
+
+        // 验证 RBAC 角色分配
+        verify(sysRoleRepository).findByCode("USER");
+        verify(sysUserRoleRepository).save(any(SysUserRole.class));
 
         ArgumentCaptor<SysUser> captor = ArgumentCaptor.forClass(SysUser.class);
         verify(userRepository).save(captor.capture());
@@ -296,27 +337,46 @@ class AuthServiceTest {
 
     @Test
     void updateUserRole_toAdmin() {
+        SysRole adminRole = new SysRole("ADMIN", "管理员", "管理权限", true);
+        adminRole.setId(20L);
+
         when(userRepository.findById(1L)).thenReturn(Optional.of(approvedUser));
-        when(userRepository.save(any(SysUser.class))).thenAnswer(i -> i.getArgument(0));
+        when(sysRoleRepository.findByCode("ADMIN")).thenReturn(Optional.of(adminRole));
+        when(sysUserRoleRepository.save(any(SysUserRole.class))).thenAnswer(i -> i.getArgument(0));
 
         SysUser result = authService.updateUserRole(1L, "ADMIN");
 
-        assertEquals(UserRole.ADMIN, result.getRole());
+        assertNotNull(result);
+        assertEquals(1L, result.getId());
+
+        // 验证 RBAC 操作：清除旧角色 + 分配新角色
+        verify(sysUserRoleRepository).deleteByUserId(1L);
+        verify(sysUserRoleRepository).save(any(SysUserRole.class));
+        verify(permissionCacheService).evictUserPermissions(1L);
     }
 
     @Test
     void updateUserRole_caseInsensitive() {
+        SysRole adminRole = new SysRole("ADMIN", "管理员", "管理权限", true);
+        adminRole.setId(20L);
+
         when(userRepository.findById(1L)).thenReturn(Optional.of(approvedUser));
-        when(userRepository.save(any(SysUser.class))).thenAnswer(i -> i.getArgument(0));
+        when(sysRoleRepository.findByCode("ADMIN")).thenReturn(Optional.of(adminRole));
+        when(sysUserRoleRepository.save(any(SysUserRole.class))).thenAnswer(i -> i.getArgument(0));
 
         SysUser result = authService.updateUserRole(1L, "admin");
 
-        assertEquals(UserRole.ADMIN, result.getRole());
+        assertNotNull(result);
+        verify(sysRoleRepository).findByCode("ADMIN");
+        verify(sysUserRoleRepository).deleteByUserId(1L);
+        verify(sysUserRoleRepository).save(any(SysUserRole.class));
+        verify(permissionCacheService).evictUserPermissions(1L);
     }
 
     @Test
     void updateUserRole_invalidRole_throwsException() {
         when(userRepository.findById(1L)).thenReturn(Optional.of(approvedUser));
+        when(sysRoleRepository.findByCode("SUPERADMIN")).thenReturn(Optional.empty());
 
         RuntimeException ex = assertThrows(RuntimeException.class,
                 () -> authService.updateUserRole(1L, "SUPERADMIN"));
@@ -352,7 +412,7 @@ class AuthServiceTest {
         when(userRepository.findById(999L)).thenReturn(Optional.empty());
 
         RuntimeException ex = assertThrows(RuntimeException.class,
-                () -> authService.resetPassword(999L, "newpass"));
+                () -> authService.resetPassword(999L, "newpass123"));
         assertEquals("用户不存在", ex.getMessage());
     }
 }
