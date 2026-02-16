@@ -325,9 +325,60 @@ Rust 后端通过 Tauri Event 与 React 前端通信（浏览器模式下这些�
 - `SpaWebConfig.java` + `@ConditionalOnResource("classpath:static/index.html")`，非 API 路径转发到 index.html
 - Maven `with-frontend` Profile: `mvn clean package -Pwith-frontend` 自动构建 fd-web 并复制到 `src/main/resources/static/`
 
-## 文档参考
+## 文档体系
 
-详细文档位于 `doc/` 目录：`project-documentation.md`（总览）、`system-design.md`（状态流转图）、`client-architecture.md`、`server-architecture.md`、`api-reference.md`、`project-structure.md`
+### 文档结构地图
+
+```
+doc/
+├── project-documentation.md          # [总览] 项目入口文档，Quick Start，架构概览图
+├── project-structure.md              # [结构] 三个子项目的完整目录树
+├── system-design.md                  # [设计] 状态流转图、数据流、安全模型、MQ 设计
+├── server-architecture.md            # [后端] fd-server 整体架构、模块划分、依赖规则
+├── client-architecture.md            # [客户端] fd-client + fd-web 架构、Tauri 桥接、双模式
+├── api-reference.md                  # [API] REST API 全量端点参考（跨模块汇总视图）
+├── freshdesk-api-reference.md        # [外部] Freshdesk API 集成参考
+└── modules/                          # [模块] 每个服务端模块的独立文档
+    ├── common.md                     #   公共基础设施（DTO、异常、工具类）
+    ├── auth.md                       #   认证授权（JWT、RBAC、权限自注册、用户设置）
+    ├── task.md                       #   任务调度（claim API、超时回收、TaskHandler）
+    └── ticket.md                     #   工单业务（状态流转、MQ、Freshdesk、知识库）
+```
+
+### 文档职责划分
+
+| 文档 | 维护触发条件 | 内容边界 |
+|------|-------------|---------|
+| `project-documentation.md` | 项目整体架构变更、子项目增减 | Quick Start、架构概览图、三项目关系 |
+| `project-structure.md` | 任何文件/目录新增或删除 | 目录树、文件用途说明 |
+| `system-design.md` | 状态机变更、MQ 协议变更、安全模型变更 | 状态流转图、数据流图、ER 图 |
+| `server-architecture.md` | 服务端模块新增/删除、模块依赖规则变更 | 模块划分、依赖链、整体架构 |
+| `client-architecture.md` | fd-client Rust 命令变更、fd-web 目录结构变更、Tauri 桥接变更 | Tauri 架构、双模式、Shadow Window |
+| `api-reference.md` | 任何 REST API 端点新增/修改/删除 | 跨模块 API 汇总（快速查找用） |
+| `modules/*.md` | 对应模块的代码结构变更（Entity/Service/Controller/DTO/Config） | 模块内部完整文档（API、Service 接口、数据模型、扩展点） |
+
+### 文档新增规则
+
+- **新增服务端模块**: 必须在 `doc/modules/` 下创建 `{模块名}.md`，格式参照现有模块文档
+- **新增子项目**: 必须在 `doc/` 下创建 `{项目名}-architecture.md`，并更新 `project-documentation.md`
+- **新增外部集成**: 必须在 `doc/` 下创建 `{外部系统}-api-reference.md`
+- **模块文档内容标准**: 模块概览 → REST API（含请求/响应示例）→ 模块间 Service 接口 → 数据模型 → 扩展点 → 依赖关系 → Maven artifact 建议
+
+### 文档同步判定矩阵
+
+| 代码变更类型 | 需要更新的文档 |
+|-------------|--------------|
+| 新增/删除 REST API 端点 | `api-reference.md` + 对应 `modules/*.md` |
+| Entity 字段新增/修改 | 对应 `modules/*.md` |
+| 新增 Service 公开方法 | 对应 `modules/*.md` |
+| 模块间依赖变更 | `server-architecture.md` + 涉及的 `modules/*.md` |
+| 工单状态机变更 | `system-design.md` + `modules/ticket.md` |
+| MQ 队列/路由键变更 | `system-design.md` + `modules/ticket.md` |
+| Tauri command 增减 | `client-architecture.md` |
+| fd-web 目录结构变更 | `project-structure.md` + `client-architecture.md` |
+| 新增服务端模块 | `server-architecture.md` + 新建 `modules/{name}.md` + `project-structure.md` |
+| 权限/角色变更 | `modules/auth.md` + 涉及模块的 `modules/*.md` |
+| 配置项新增 | 对应 `modules/*.md` |
 
 ## Agent Teams 配置
 
@@ -444,7 +495,7 @@ common/
 | module-guardian | `general-purpose` | `sonnet` | "你是模块化守护者。检查 fd-server 的模块边界合规性。检查项：1) 依赖方向合规（common ← auth ← task ← ticket，不可反向）；2) 无循环依赖；3) auth 模块的 import 不包含 ticket 包的类；4) common 模块的 import 不包含 auth/ticket 包的类；5) 包结构是否正确归属模块。输出：违规列表 + 修复建议。" |
 | test-runner | `Bash` | `haiku` | 直接执行测试命令（见下方测试命令表） |
 | test-writer | `general-purpose` | `sonnet` | "你是测试工程师。后端用 JUnit 5 + Spring Boot Test（`fd-server/src/test/java/**`），Rust 用 `#[cfg(test)]`，前端用 Vitest + RTL。关注工单状态流转边界、MQ 序列化/反序列化、API 权限校验。测试类的包结构应与源码模块结构一致（auth/ticket/common）。" |
-| doc-writer | `general-purpose` | `haiku` | "你是文档工程师。范围 `doc/**` + 代码内注释。中文撰写，遵循 `doc/` 目录现有风格。" |
+| doc-writer | `general-purpose` | `haiku` | "你是文档工程师。中文撰写。**文档结构**：`doc/` 下分两层——顶层文档（project-documentation.md 总览、project-structure.md 目录树、system-design.md 设计图、server-architecture.md 后端架构、client-architecture.md 客户端架构、api-reference.md API 汇总、freshdesk-api-reference.md 外部 API）和 `doc/modules/` 模块文档（common.md/auth.md/task.md/ticket.md，每个模块独立完整文档）。**更新规则**：1) 接收到代码变更清单和文档影响清单；2) 只更新受影响的文档，不改无关内容；3) 模块文档格式：模块概览 → REST API（含示例）→ 模块间 Service 接口 → 数据模型 → 扩展点 → 依赖关系 → Maven artifact 建议；4) api-reference.md 是跨模块 API 快速索引，新增端点必须同步；5) 新增模块必须创建 modules/{name}.md。" |
 
 **测试命令表**（test-runner 使用）：
 
@@ -479,6 +530,7 @@ common/
    - 涉及的文件/模块范围
    - 依赖关系（通过 `addBlockedBy` 设定）
 5. **风险识别** — 是否涉及：状态机变更、MQ 消息格式变更、数据库 Schema 变更、安全相关改动、**模块边界变更**？若是，标记为高风险，流程中必须经过 architect 设计 + 用户确认
+6. **文档影响评估**（必须） — 根据「文档同步判定矩阵」（见文档体系章节），列出本次变更需要更新的文档清单。此清单在 Phase Final 时传递给 doc-writer。即使是单文件改动，也必须评估是否影响文档（如新增了 API 端点、修改了 Entity 字段等）
 
 #### 后端 dev agent 选择规则
 
@@ -503,13 +555,16 @@ common/
 - **子代理返回后**: 用 `TaskUpdate` 更新任务状态，记录产出摘要
 - **异常发生时**: 按「失败回退规则」处理，不得静默跳过
 
-#### Phase Final: 完成确认
+#### Phase Final: 完成确认（含强制文档同步）
 
 所有任务完成后，主代理**必须**：
 
 1. 用 `TaskList` 确认所有任务状态为 `completed`
-2. 向用户汇报：完成了什么、改了哪些文件、测试是否通过、是否有遗留风险
-3. 若有遗留项（如文档未更新、测试覆盖不足），明确告知用户
+2. **文档同步**（强制）— 检查 Phase 0 的「文档影响清单」：
+   - 若清单非空：启动 doc-writer(haiku)，传入「代码变更摘要 + 需要更新的文档列表 + 变更的具体内容」
+   - doc-writer 完成后，主代理验证文档文件确实已更新
+   - 若清单为空（纯内部重构、不影响任何公开接口/结构）：记录「本次变更无文档影响」
+3. 向用户汇报：完成了什么、改了哪些文件、测试是否通过、文档是否已同步、是否有遗留风险
 
 #### 阶段门控表
 
@@ -521,10 +576,11 @@ common/
 | 设计 → 开发 | architect 方案已获用户确认；API 契约、数据结构已明确 | A, D, E |
 | 开发 → 验证 | 所有 dev agent 已返回；代码已写入文件系统 | A, B, C, D, E |
 | 验证 → 补充测试 | 现有测试全部通过；code-reviewer 无 P0/P1 问题 | A |
-| 测试 → 文档 | 全部测试通过（含新增测试） | A, D |
+| 测试 → 文档同步 | 全部测试通过（含新增测试） | A, B, C, D, E |
+| 文档同步 → 完成 | 文档影响清单中的所有文档已更新（或清单为空） | A, B, C, D, E |
 | 诊断 → 修复 | debugger 输出了根因分析和涉及文件清单 | C |
 | 模块抽取 → 依赖验证 | 代码已移动 + 编译通过 | E |
-| 依赖验证 → 完成 | module-guardian 无违规 + 全量测试通过 | E |
+| 依赖验证 → 文档同步 | module-guardian 无违规 + 全量测试通过 | E |
 
 ### 工作流决策树
 
@@ -584,10 +640,11 @@ Step 5: 补充测试
   test-runner(haiku/Bash) — 运行新测试
   ── 门控 ──→ 新测试全部通过
 
-Step 6: 文档（仅涉及 API 变更时）
-  doc-writer(haiku) — 更新 API 文档
+Step 6: 文档同步（根据 Phase 0 文档影响清单）
+  doc-writer(haiku) — 更新受影响的文档（api-reference.md + modules/*.md + 其他）
+  ── 门控 ──→ 文档影响清单中的所有文档已更新
 
-Step Final: 主代理用 TaskList 确认全部完成，向用户汇报产出摘要
+Step Final: 主代理用 TaskList 确认全部完成，向用户汇报产出摘要（含文档同步状态）
 ```
 
 ### 流程B: 单层变更（仅后端 / 仅前端 / 仅 Rust）
@@ -600,8 +657,9 @@ Step 2: 对应 dev agent(opus) 直接实现（简单变更可跳过 architect）
   ── 门控 ──→ 代码已写入
 Step 3: test-runner(haiku/Bash) 验证
   ── 门控 ──→ 测试通过，否则 dev agent 修复（最多 2 轮）
-Step 4: 若涉及 API 变更 → doc-writer(haiku)
-Step Final: 主代理确认完成，向用户汇报
+Step 4: 文档同步（根据 Phase 0 文档影响清单）
+  doc-writer(haiku) — 更新受影响的文档
+Step Final: 主代理确认完成，向用户汇报（含文档同步状态）
 ```
 
 ### 流程C: Bug 修复
@@ -627,7 +685,10 @@ Step 4: 验证
   code-reviewer(sonnet) — 审查修复是否引入新问题
   ── 门控 ──→ 无新问题，否则回到 Step 2
 
-Step Final: 主代理确认完成，向用户汇报（含根因、修复方案、测试覆盖）
+Step 5: 文档同步（根据 Phase 0 文档影响清单）
+  doc-writer(haiku) — 若修复涉及 API/数据模型变更，更新对应文档
+
+Step Final: 主代理确认完成，向用户汇报（含根因、修复方案、测试覆盖、文档同步状态）
 ```
 
 ### 流程D: 重构优化
@@ -657,7 +718,11 @@ Step 5: 审查
   code-reviewer(sonnet) — 重点关注行为一致性 + 模块边界
   ── 门控 ──→ 无行为变更问题
 
-Step Final: 主代理确认完成，向用户汇报（含重构范围、行为一致性确认、测试结果）
+Step 6: 文档同步（重构通常影响多份文档）
+  doc-writer(haiku) — 根据文档影响清单更新（重构必须同步 project-structure.md + 涉及的 modules/*.md）
+  ── 门控 ──→ 文档影响清单中的所有文档已更新
+
+Step Final: 主代理确认完成，向用户汇报（含重构范围、行为一致性确认、测试结果、文档同步状态）
 ```
 
 ### 流程E: 模块化重构（将现有代码拆分到模块）
@@ -699,7 +764,12 @@ Step 6: 审查
   code-reviewer(sonnet) — 重点关注行为一致性 + 模块边界 + import 清洁度
   ── 门控 ──→ 无问题
 
-Step Final: 主代理确认完成，向用户汇报（含迁移范围、模块边界验证结果、测试结果）
+Step 7: 文档同步（模块化重构必须更新文档）
+  doc-writer(haiku) — 更新 server-architecture.md + project-structure.md + 涉及的 modules/*.md
+  若新增模块 → 创建 modules/{name}.md
+  ── 门控 ──→ 所有文档已更新
+
+Step Final: 主代理确认完成，向用户汇报（含迁移范围、模块边界验证结果、测试结果、文档同步状态）
 ```
 
 ### 失败回退规则
