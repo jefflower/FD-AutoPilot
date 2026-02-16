@@ -1,6 +1,7 @@
 package com.jefflower.fdserver.ticket.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jefflower.fdserver.task.service.TaskDistributionService;
 import com.jefflower.fdserver.ticket.client.FreshdeskApiClient;
 import com.jefflower.fdserver.ticket.dto.TicketContent;
 import com.jefflower.fdserver.ticket.entity.SyncLog;
@@ -42,6 +43,7 @@ public class FreshdeskSyncService {
     private final MqPublisherService mqPublisherService;
     private final SyncConfigService syncConfigService;
     private final ObjectMapper objectMapper;
+    private final TaskDistributionService taskDistributionService;
 
     @Value("${freshdesk.sync.statuses:2,3}")
     private String syncStatuses;
@@ -240,6 +242,9 @@ public class FreshdeskSyncService {
 
         if (shouldTriggerWorkflow) {
             mqPublisherService.sendTranslationTask(ticket);
+            taskDistributionService.createTask("ticket.translate", "ticket",
+                    String.valueOf(ticket.getId()), null,
+                    com.jefflower.fdserver.task.enums.TriggerType.EVENT);
             log.info("Sent MQ translation task for ticket {} (isNew={}, syncSource={})",
                     externalId, isNew, syncSource);
         }

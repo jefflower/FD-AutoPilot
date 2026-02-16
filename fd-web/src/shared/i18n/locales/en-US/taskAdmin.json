@@ -1,0 +1,84 @@
+{
+  "nav": {
+    "dashboard": "Dashboard",
+    "definitions": "Definitions",
+    "history": "History"
+  },
+  "dashboard": {
+    "title": "Task Dashboard",
+    "autoRefresh": "Auto-refreshing every 10s",
+    "loading": "Loading...",
+    "loadFailed": "Failed to load dashboard data",
+    "noData": "No task data",
+    "totalTasks": "Total Tasks",
+    "status": {
+      "PENDING": "Pending",
+      "CLAIMED": "Claimed",
+      "COMPLETED": "Completed",
+      "FAILED": "Failed",
+      "TIMEOUT": "Timeout",
+      "CANCELLED": "Cancelled"
+    }
+  },
+  "definitions": {
+    "title": "Task Definition Management",
+    "loading": "Loading...",
+    "loadFailed": "Failed to load task definitions",
+    "noData": "No task definitions",
+    "triggerSuccess": "Task triggered",
+    "triggerFailed": "Trigger failed: {{error}}",
+    "toggleSuccess": "Status updated",
+    "toggleFailed": "Toggle failed: {{error}}",
+    "table": {
+      "code": "Code",
+      "name": "Name",
+      "executionMode": "Execution Mode",
+      "cronExpression": "Cron Expression",
+      "timeout": "Timeout(s)",
+      "maxRetries": "Max Retries",
+      "maxConcurrency": "Max Concurrency",
+      "enabled": "Enabled",
+      "actions": "Actions"
+    },
+    "executionMode": {
+      "CLIENT_DISTRIBUTED": "Client Distributed",
+      "SERVER_SCHEDULED": "Server Scheduled",
+      "SERVER_TRIGGERED": "Server Triggered"
+    },
+    "action": {
+      "trigger": "Trigger",
+      "enable": "Enable",
+      "disable": "Disable"
+    }
+  },
+  "history": {
+    "title": "Task Execution History",
+    "loading": "Loading...",
+    "loadFailed": "Failed to load execution history",
+    "noData": "No execution records",
+    "allTypes": "All Types",
+    "table": {
+      "id": "ID",
+      "taskType": "Task Type",
+      "referenceId": "Reference ID",
+      "status": "Status",
+      "assignedTo": "Assigned To",
+      "triggerType": "Trigger Type",
+      "createdAt": "Created At",
+      "completedAt": "Completed At"
+    },
+    "status": {
+      "PENDING": "Pending",
+      "CLAIMED": "Claimed",
+      "COMPLETED": "Completed",
+      "FAILED": "Failed",
+      "TIMEOUT": "Timeout",
+      "CANCELLED": "Cancelled"
+    },
+    "triggerType": {
+      "EVENT": "Event",
+      "SCHEDULED": "Scheduled",
+      "MANUAL": "Manual"
+    }
+  }
+}

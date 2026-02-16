@@ -7,7 +7,7 @@ import com.jefflower.fdserver.ticket.dto.SqlQueryResult;
 import com.jefflower.fdserver.ticket.dto.TableInfo;
 import com.jefflower.fdserver.ticket.service.DatabaseQueryService;
 import com.jefflower.fdserver.common.util.SqlValidator;
-import com.jefflower.fdserver.util.SqlValidator.ValidationResult;
+import com.jefflower.fdserver.common.util.SqlValidator.ValidationResult;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

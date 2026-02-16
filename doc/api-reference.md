@@ -206,6 +206,36 @@ Note: New users are created with status `PENDING`. They cannot login until appro
 
 **Response:** `ApiResponse<Page<SyncLog>>` — 分页同步日志列表。
 
+## User Settings
+
+### Get User Settings for App
+`GET /api/v1/user/settings/{appCode}`
+
+返回指定应用的用户设置（JSON 字符串）。
+
+**Response:** `ApiResponse<String>` — 返回 `settingsJson` 或 `null`
+
+### Save User Settings
+`PUT /api/v1/user/settings/{appCode}`
+
+**Request Body:** JSON 字符串（例如 `"{\"mqEnabled\": true, \"notebookLMUrl\": \"...\"}"` 作为字符串发送）
+
+**Response:** `ApiResponse<String>` — 返回保存成功的消息
+
+### Delete User Settings
+`DELETE /api/v1/user/settings/{appCode}`
+
+删除指定应用的用户设置。
+
+**Response:** `ApiResponse<Void>` — 返回删除成功的消息
+
+### Get All User Settings
+`GET /api/v1/user/settings`
+
+返回当前用户所有应用的设置列表。
+
+**Response:** `ApiResponse<List<UserAppSettings>>` — 返回用户全部应用设置记录
+
 ## Admin
 
 ### User Management
@@ -388,6 +418,139 @@ Note: New users are created with status `PENDING`. They cannot login until appro
 `POST /api/v1/config/wecom-webhook/test`
 
 **Response:** `ApiResponse<{ success: boolean }>`
+
+## Task Management
+
+### Claim Task
+`POST /api/v1/tasks/claim`
+
+客户端领取一个待处理任务。
+
+**Request Body:**
+```json
+{
+  "taskCode": "translation"
+}
+```
+
+**Response:** `ApiResponse<TaskInstance>` — 返回领取的任务实例，包含 `id`, `taskCode`, `status`, `claimedAt` 等字段。若无待处理任务，返回 `null`。
+
+### Complete Task
+`POST /api/v1/tasks/{id}/complete`
+
+客户端上报任务完成结果。
+
+**Request Body:**
+```json
+{
+  "result": "SUCCESS",
+  "resultData": "{\"translationId\": 123, \"status\": \"completed\"}",
+  "errorMessage": null
+}
+```
+
+**Response:** `ApiResponse<TaskInstance>` — 返回更新后的任务实例
+
+### Release Task
+`POST /api/v1/tasks/{id}/release`
+
+客户端释放一个已领取但未完成的任务（返还到待处理队列）。
+
+**Response:** `ApiResponse<TaskInstance>` — 返回释放后的任务实例
+
+### Get My Tasks
+`GET /api/v1/tasks/mine`
+
+获取当前用户的所有任务（分页）。
+
+**Query Parameters:**
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `page` | int | 0 | 页号 |
+| `size` | int | 20 | 每页记录数 |
+| `status` | string | - | 按状态过滤（`PENDING`, `CLAIMED`, `COMPLETED`, `FAILED`）|
+
+**Response:** `ApiResponse<Page<TaskInstance>>` — 返回分页任务列表
+
+### Task Dashboard (Admin)
+`GET /api/v1/task-admin/dashboard`
+
+获取任务执行统计和仪表板数据（ADMIN 权限）。
+
+**Response:** `ApiResponse<TaskDashboard>` — 返回统计信息（总任务数、执行中、完成、失败等）
+
+### List Task Definitions (Admin)
+`GET /api/v1/task-admin/definitions`
+
+列出所有任务定义（ADMIN 权限）。
+
+**Response:** `ApiResponse<List<TaskDefinition>>` — 返回任务定义列表
+
+### Create Task Definition (Admin)
+`POST /api/v1/task-admin/definitions`
+
+创建新的任务定义（ADMIN 权限）。
+
+**Request Body:**
+```json
+{
+  "code": "review",
+  "name": "审核",
+  "handler": "com.jefflower.fdserver.task.handler.ReviewTaskHandler",
+  "cronExpression": "0 */5 * * * ?",
+  "enabled": true
+}
+```
+
+**Response:** `ApiResponse<TaskDefinition>`
+
+### Toggle Task Definition (Admin)
+`PUT /api/v1/task-admin/definitions/{id}/toggle`
+
+启用或禁用任务定义（ADMIN 权限）。
+
+**Request Body:**
+```json
+{
+  "enabled": false
+}
+```
+
+**Response:** `ApiResponse<TaskDefinition>`
+
+### Manual Trigger Task (Admin)
+`POST /api/v1/task-admin/definitions/{code}/trigger`
+
+手动触发一个任务定义（立即创建任务实例，ADMIN 权限）。
+
+**Response:** `ApiResponse<TaskInstance>`
+
+### Get Task Execution History (Admin)
+`GET /api/v1/task-admin/history`
+
+获取任务执行历史记录（ADMIN 权限）。
+
+**Query Parameters:**
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `page` | int | 0 | 页号 |
+| `size` | int | 20 | 每页记录数 |
+| `taskCode` | string | - | 按任务代码过滤 |
+| `status` | string | - | 按状态过滤 |
+
+**Response:** `ApiResponse<Page<TaskExecutionLog>>`
+
+### Cleanup Task History (Admin)
+`DELETE /api/v1/task-admin/history/cleanup`
+
+清理过期的任务执行历史（ADMIN 权限）。
+
+**Query Parameters:**
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `olderThanDays` | int | 30 | 清理多少天前的记录 |
+
+**Response:** `ApiResponse<Integer>` — 返回删除的记录数
 
 ## Webhooks
 

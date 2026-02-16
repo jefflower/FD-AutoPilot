@@ -1,18 +1,24 @@
 package com.jefflower.fdserver.service;
 
-import com.jefflower.fdserver.dto.AuditRequest;
-import com.jefflower.fdserver.dto.ReplyRequest;
-import com.jefflower.fdserver.dto.TranslationRequest;
-import com.jefflower.fdserver.entity.Ticket;
-import com.jefflower.fdserver.entity.TicketAudit;
-import com.jefflower.fdserver.entity.TicketReply;
-import com.jefflower.fdserver.entity.TicketTranslation;
-import com.jefflower.fdserver.enums.AuditResult;
-import com.jefflower.fdserver.enums.TicketStatus;
-import com.jefflower.fdserver.repository.TicketAuditRepository;
-import com.jefflower.fdserver.repository.TicketReplyRepository;
-import com.jefflower.fdserver.repository.TicketRepository;
-import com.jefflower.fdserver.repository.TicketTranslationRepository;
+import com.jefflower.fdserver.ticket.dto.AuditRequest;
+import com.jefflower.fdserver.ticket.dto.ReplyRequest;
+import com.jefflower.fdserver.ticket.dto.TranslationRequest;
+import com.jefflower.fdserver.ticket.entity.Ticket;
+import com.jefflower.fdserver.ticket.entity.TicketAudit;
+import com.jefflower.fdserver.ticket.entity.TicketReply;
+import com.jefflower.fdserver.ticket.entity.TicketTranslation;
+import com.jefflower.fdserver.ticket.enums.AuditResult;
+import com.jefflower.fdserver.ticket.enums.TicketStatus;
+import com.jefflower.fdserver.ticket.repository.TicketAuditRepository;
+import com.jefflower.fdserver.ticket.repository.TicketReplyRepository;
+import com.jefflower.fdserver.ticket.repository.TicketRepository;
+import com.jefflower.fdserver.ticket.repository.TicketTranslationRepository;
+import com.jefflower.fdserver.ticket.service.MqPublisherService;
+import com.jefflower.fdserver.ticket.service.ReplyPushService;
+import com.jefflower.fdserver.ticket.service.SystemConfigService;
+import com.jefflower.fdserver.ticket.service.TicketService;
+import com.jefflower.fdserver.ticket.service.WeChatWorkNotifyService;
+import com.jefflower.fdserver.task.service.TaskDistributionService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -53,6 +59,8 @@ class TicketServiceTest {
     private SystemConfigService systemConfigService;
     @Mock
     private WeChatWorkNotifyService weChatWorkNotifyService;
+    @Mock
+    private TaskDistributionService taskDistributionService;
 
     @InjectMocks
     private TicketService ticketService;

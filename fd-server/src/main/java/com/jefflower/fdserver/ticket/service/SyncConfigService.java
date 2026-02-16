@@ -3,6 +3,7 @@ package com.jefflower.fdserver.ticket.service;
 import com.jefflower.fdserver.ticket.entity.SyncConfig;
 import com.jefflower.fdserver.ticket.entity.SyncLog;
 import com.jefflower.fdserver.ticket.enums.SyncStatus;
+import com.jefflower.fdserver.ticket.enums.TriggerType;
 import com.jefflower.fdserver.ticket.repository.SyncConfigRepository;
 import com.jefflower.fdserver.ticket.repository.SyncLogRepository;
 import lombok.RequiredArgsConstructor;
@@ -117,7 +118,7 @@ public class SyncConfigService {
     }
 
     @Transactional
-    public SyncLog createSyncLog(com.jefflower.fdserver.enums.TriggerType triggerType) {
+    public SyncLog createSyncLog(TriggerType triggerType) {
         SyncLog log = new SyncLog();
         log.setStartTime(LocalDateTime.now());
         log.setTriggerType(triggerType);

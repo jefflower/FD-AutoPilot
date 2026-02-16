@@ -1,15 +1,18 @@
 package com.jefflower.fdserver.auth.controller;
 
 import com.jefflower.fdserver.auth.dto.*;
-import com.jefflower.fdserver.dto.ApiResponse;
+import com.jefflower.fdserver.common.dto.ApiResponse;
 import com.jefflower.fdserver.auth.entity.SysUser;
 import com.jefflower.fdserver.auth.service.AuthService;
+import com.jefflower.fdserver.auth.service.ModuleService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -18,6 +21,7 @@ import java.util.Map;
 public class AuthController {
 
     private final AuthService authService;
+    private final ModuleService moduleService;
 
     @PostMapping("/login")
     public ResponseEntity<ApiResponse<LoginResponse>> login(@Valid @RequestBody LoginRequest request) {
@@ -116,5 +120,31 @@ public class AuthController {
                         .body(ApiResponse.error("RESET_FAILED", msg));
             };
         }
+    }
+
+    /**
+     * 获取当前用户可访问的模块列表（含每个模块下该用户拥有的权限）
+     */
+    @GetMapping("/me/modules")
+    public ResponseEntity<ApiResponse<List<Map<String, Object>>>> getMyModules(Authentication authentication) {
+        if (authentication == null || authentication.getDetails() == null) {
+            return ResponseEntity.status(401)
+                    .body(ApiResponse.error("UNAUTHORIZED", "请先登录"));
+        }
+        Long userId = (Long) authentication.getDetails();
+        return ResponseEntity.ok(ApiResponse.ok(moduleService.getUserModulesWithPermissions(userId)));
+    }
+
+    /**
+     * 获取当前用户的全部权限 code 列表
+     */
+    @GetMapping("/me/permissions")
+    public ResponseEntity<ApiResponse<List<String>>> getMyPermissions(Authentication authentication) {
+        if (authentication == null || authentication.getDetails() == null) {
+            return ResponseEntity.status(401)
+                    .body(ApiResponse.error("UNAUTHORIZED", "请先登录"));
+        }
+        Long userId = (Long) authentication.getDetails();
+        return ResponseEntity.ok(ApiResponse.ok(moduleService.getUserPermissionCodes(userId)));
     }
 }

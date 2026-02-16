@@ -4,7 +4,7 @@ import com.jefflower.fdserver.auth.entity.SysPermission;
 import com.jefflower.fdserver.auth.entity.SysRole;
 import com.jefflower.fdserver.auth.security.RequiresPermission;
 import com.jefflower.fdserver.auth.service.RolePermissionService;
-import com.jefflower.fdserver.dto.ApiResponse;
+import com.jefflower.fdserver.common.dto.ApiResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

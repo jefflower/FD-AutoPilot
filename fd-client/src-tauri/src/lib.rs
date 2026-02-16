@@ -1,98 +1,18 @@
 mod models;
-mod settings;
 mod ai;
-mod mq_consumer;
 
 use ai::GeminiClient;
 
-use settings::Settings;
-use mq_consumer::{MqConsumer, MqConfig, MqConsumerState};
-use tauri::{AppHandle, Emitter, Manager, WebviewWindowBuilder, WebviewUrl, State};
+use tauri::{AppHandle, Emitter, Manager, WebviewWindowBuilder, WebviewUrl};
 use tauri_plugin_dialog::DialogExt;
 use std::sync::mpsc;
-use std::sync::Arc;
-use std::sync::atomic::Ordering;
-use tokio::sync::Mutex as TokioMutex;
 
-fn log(app: &AppHandle, msg: &str) {
-    let _ = app.emit("log", msg.to_string());
-}
-
-#[tauri::command]
-async fn select_folder(app: AppHandle) -> Result<String, String> {
-    let (tx, rx) = mpsc::channel();
-    
-    app.dialog()
-        .file()
-        .pick_folder(move |folder| {
-            let _ = tx.send(folder);
-        });
-    
-    match rx.recv() {
-        Ok(Some(path)) => Ok(path.to_string()),
-        Ok(None) => Err("No folder selected".to_string()),
-        Err(_) => Err("Dialog error".to_string()),
-    }
-}
-
-#[tauri::command]
-fn save_settings_cmd(
-    app: AppHandle,
-    mq_host: String,
-    mq_port: u16,
-    mq_username: String,
-    mq_password: String,
-    translation_lang: String,
-    mq_queue_translation: String,
-    mq_queue_reply: String,
-    mq_queue_audit: String,
-    mq_queue_dlq: String,
-) -> Result<(), String> {
-    let existing = settings::load_settings(&app);
-
-    let s = Settings {
-        mq_host,
-        mq_port,
-        mq_username,
-        mq_password,
-        mq_consumer_enabled: existing.mq_consumer_enabled,
-        mq_batch_size: existing.mq_batch_size,
-        translation_lang,
-        mq_queue_translation,
-        mq_queue_reply,
-        mq_queue_audit,
-        mq_queue_dlq,
-    };
-    settings::save_settings(&app, &s)
-}
-
-#[tauri::command]
-fn load_settings_cmd(app: AppHandle) -> Settings {
-    settings::load_settings(&app)
-}
-
-/// 仅同步 MQ 队列名到本地 SQLite（由前端从服务端获取后调用）
-#[tauri::command]
-fn sync_mq_queues_cmd(
-    app: AppHandle,
-    queue_translation: String,
-    queue_reply: String,
-    queue_audit: String,
-    queue_dlq: String,
-) -> Result<(), String> {
-    let mut s = settings::load_settings(&app);
-    s.mq_queue_translation = queue_translation;
-    s.mq_queue_reply = queue_reply;
-    s.mq_queue_audit = queue_audit;
-    s.mq_queue_dlq = queue_dlq;
-    settings::save_settings(&app, &s)
-}
+// =========== AI 翻译命令 ===========
 
 #[tauri::command]
 async fn translate_ticket_direct_cmd(app: AppHandle, ticket: models::Ticket, target_lang: String) -> Result<models::Ticket, String> {
     GeminiClient::translate_ticket(&app, &ticket, &target_lang).await
 }
-
 
 #[tauri::command]
 async fn sync_translate_reply_cmd(
@@ -103,6 +23,25 @@ async fn sync_translate_reply_cmd(
     target_lang: String,
 ) -> Result<String, String> {
     GeminiClient::sync_translate_reply(&app, &source_text, &reference_text, &direction, &target_lang).await
+}
+
+// =========== 文件系统命令 ===========
+
+#[tauri::command]
+async fn select_folder(app: AppHandle) -> Result<String, String> {
+    let (tx, rx) = mpsc::channel();
+
+    app.dialog()
+        .file()
+        .pick_folder(move |folder| {
+            let _ = tx.send(folder);
+        });
+
+    match rx.recv() {
+        Ok(Some(path)) => Ok(path.to_string()),
+        Ok(None) => Err("No folder selected".to_string()),
+        Err(_) => Err("Dialog error".to_string()),
+    }
 }
 
 #[tauri::command]
@@ -351,295 +290,19 @@ async fn toggle_notebook_window(app: AppHandle, visible: bool, notebook_id: Opti
     }
 }
 
-// =========== NotebookLM Selectors Commands ===========
-
-#[tauri::command]
-fn get_notebook_selectors_cmd(app: AppHandle) -> std::collections::HashMap<String, String> {
-    settings::get_notebook_selectors(&app)
-}
-
-#[tauri::command]
-fn save_notebook_selectors_cmd(app: AppHandle, selectors: serde_json::Value) -> Result<(), String> {
-    settings::save_notebook_selectors_from_json(&app, &selectors)
-}
-
-#[tauri::command]
-fn reset_notebook_selectors_cmd(app: AppHandle) -> Result<std::collections::HashMap<String, String>, String> {
-    settings::reset_notebook_selectors(&app)
-}
-
-// =========== MQ Consumer Commands ===========
-
-/// MQ 消费者持有者（翻译和回复共用底层结构，但 Tauri State 需要不同类型）
-struct MqConsumerHolder {
-    consumer: Arc<TokioMutex<Option<MqConsumer>>>,
-    state: MqConsumerState,
-}
-
-impl Default for MqConsumerHolder {
-    fn default() -> Self {
-        let state = MqConsumerState::default();
-        state.batch_size.store(1, Ordering::SeqCst);
-        Self {
-            consumer: Arc::new(TokioMutex::new(None)),
-            state,
-        }
-    }
-}
-
-/// 翻译 MQ 消费者状态（Tauri State newtype wrapper）
-pub struct MqTranslateState(MqConsumerHolder);
-impl Default for MqTranslateState {
-    fn default() -> Self { Self(MqConsumerHolder::default()) }
-}
-
-/// 回复 MQ 消费者状态（Tauri State newtype wrapper）
-pub struct MqReplyState(MqConsumerHolder);
-impl Default for MqReplyState {
-    fn default() -> Self { Self(MqConsumerHolder::default()) }
-}
-
-/// 审核 MQ 消费者状态（Tauri State newtype wrapper）
-pub struct MqAuditState(MqConsumerHolder);
-impl Default for MqAuditState {
-    fn default() -> Self { Self(MqConsumerHolder::default()) }
-}
-
-// =========== 通用辅助函数 ===========
-
-async fn start_consumer_inner(
-    app: &AppHandle,
-    holder: &MqConsumerHolder,
-    queue_type: &str,
-    auth_token: String,
-) -> Result<String, String> {
-    if holder.state.is_running.load(Ordering::SeqCst) {
-        return Err(format!("{} consumer already running", queue_type));
-    }
-
-    let settings = settings::load_settings(app);
-    let config = MqConfig::from_settings(&settings);
-    holder.state.batch_size.store(settings.mq_batch_size, Ordering::SeqCst);
-
-    log(app, &format!("🐰 Starting {} MQ consumer, connecting to {}:{}", queue_type, config.host, config.port));
-
-    let consumer = MqConsumer::new_with_state(config, holder.state.clone());
-    {
-        let mut lock = holder.consumer.lock().await;
-        *lock = Some(consumer);
-    }
-
-    let app_clone = app.clone();
-    let consumer_arc = holder.consumer.clone();
-    let qt = queue_type.to_string();
-
-    tokio::spawn(async move {
-        let lock = consumer_arc.lock().await;
-        if let Some(ref consumer) = *lock {
-            if let Err(e) = consumer.start_consuming(app_clone.clone(), auth_token, &qt).await {
-                GeminiClient::log(&app_clone, &format!("❌ {} MQ Consumer error: {}", qt, e));
-            }
-        }
-    });
-
-    Ok(format!("{} MQ Consumer started", queue_type))
-}
-
-async fn stop_consumer_inner(
-    app: &AppHandle,
-    holder: &MqConsumerHolder,
-    queue_type: &str,
-) -> Result<String, String> {
-    holder.state.is_running.store(false, Ordering::SeqCst);
-    log(app, &format!("🛑 Stopping {} MQ consumer...", queue_type));
-    Ok(format!("{} MQ Consumer stopping", queue_type))
-}
-
-async fn get_consumer_status_inner(
-    holder: &MqConsumerHolder,
-) -> Result<serde_json::Value, String> {
-    let is_running = holder.state.is_running.load(Ordering::SeqCst);
-    let batch_size = holder.state.batch_size.load(Ordering::SeqCst);
-    let translating = holder.state.translating_tickets.lock().await.clone();
-    let completed = holder.state.completed_tickets.lock().await.clone();
-
-    Ok(serde_json::json!({
-        "isRunning": is_running,
-        "batchSize": batch_size,
-        "translatingTickets": translating,
-        "completedTickets": completed
-    }))
-}
-
-async fn complete_task_inner(
-    holder: &MqConsumerHolder,
-    ticket_id: i64,
-    success: bool,
-    task_label: &str,
-    app: Option<&AppHandle>,
-) -> Result<(), String> {
-    if let Some(app) = app {
-        GeminiClient::log(app, &format!("🎯 [complete_{}_task] ticket #{}, success: {}", task_label, ticket_id, success));
-    }
-
-    let mut p_acks = holder.state.pending_acks.lock().await;
-    if let Some(tx) = p_acks.remove(&ticket_id) {
-        tx.send(success).map_err(|_| format!("Failed to send completion signal for ticket #{}", ticket_id))
-    } else {
-        Err(format!("No pending {} task found for ticket #{}", task_label, ticket_id))
-    }
-}
-
-// =========== Tauri 命令（薄包装） ===========
-
-#[tauri::command]
-async fn start_mq_consumer(
-    app: AppHandle,
-    auth_token: String,
-    mq_state: State<'_, MqTranslateState>,
-) -> Result<String, String> {
-    let result = start_consumer_inner(&app, &mq_state.0, "translate", auth_token).await?;
-    // 保存启动状态到设置
-    let mut s = settings::load_settings(&app);
-    s.mq_consumer_enabled = true;
-    let _ = settings::save_settings(&app, &s);
-    Ok(result)
-}
-
-#[tauri::command]
-async fn stop_mq_consumer(
-    app: AppHandle,
-    mq_state: State<'_, MqTranslateState>,
-) -> Result<String, String> {
-    let result = stop_consumer_inner(&app, &mq_state.0, "translate").await?;
-    let mut s = settings::load_settings(&app);
-    s.mq_consumer_enabled = false;
-    let _ = settings::save_settings(&app, &s);
-    Ok(result)
-}
-
-#[tauri::command]
-async fn get_mq_consumer_status(
-    mq_state: State<'_, MqTranslateState>,
-) -> Result<serde_json::Value, String> {
-    get_consumer_status_inner(&mq_state.0).await
-}
-
-#[tauri::command]
-async fn update_mq_batch_size(
-    app: AppHandle,
-    batch_size: u32,
-    mq_state: State<'_, MqTranslateState>,
-) -> Result<(), String> {
-    mq_state.0.state.batch_size.store(batch_size, Ordering::SeqCst);
-    let mut s = settings::load_settings(&app);
-    s.mq_batch_size = batch_size;
-    settings::save_settings(&app, &s)?;
-    log(&app, &format!("⚙️ MQ batch size updated to {}", batch_size));
-    Ok(())
-}
-
-#[tauri::command]
-async fn start_reply_mq_consumer(
-    app: AppHandle,
-    auth_token: String,
-    mq_state: State<'_, MqReplyState>,
-) -> Result<String, String> {
-    start_consumer_inner(&app, &mq_state.0, "reply", auth_token).await
-}
-
-#[tauri::command]
-async fn stop_reply_mq_consumer(
-    app: AppHandle,
-    mq_state: State<'_, MqReplyState>,
-) -> Result<String, String> {
-    stop_consumer_inner(&app, &mq_state.0, "reply").await
-}
-
-#[tauri::command]
-async fn get_reply_mq_consumer_status(
-    mq_state: State<'_, MqReplyState>,
-) -> Result<serde_json::Value, String> {
-    get_consumer_status_inner(&mq_state.0).await
-}
-
-#[tauri::command]
-async fn complete_reply_task(
-    ticket_id: i64,
-    success: bool,
-    mq_state: State<'_, MqReplyState>,
-    app: tauri::AppHandle,
-) -> Result<(), String> {
-    complete_task_inner(&mq_state.0, ticket_id, success, "reply", Some(&app)).await
-}
-
-#[tauri::command]
-async fn complete_translate_task(
-    ticket_id: i64,
-    success: bool,
-    mq_state: State<'_, MqTranslateState>,
-) -> Result<(), String> {
-    complete_task_inner(&mq_state.0, ticket_id, success, "translate", None).await
-}
-
-// =========== Audit MQ 消费者命令 ===========
-
-#[tauri::command]
-async fn start_audit_mq_consumer(
-    app: AppHandle,
-    auth_token: String,
-    mq_state: State<'_, MqAuditState>,
-) -> Result<String, String> {
-    start_consumer_inner(&app, &mq_state.0, "audit", auth_token).await
-}
-
-#[tauri::command]
-async fn stop_audit_mq_consumer(
-    app: AppHandle,
-    mq_state: State<'_, MqAuditState>,
-) -> Result<String, String> {
-    stop_consumer_inner(&app, &mq_state.0, "audit").await
-}
-
-#[tauri::command]
-async fn get_audit_mq_consumer_status(
-    mq_state: State<'_, MqAuditState>,
-) -> Result<serde_json::Value, String> {
-    get_consumer_status_inner(&mq_state.0).await
-}
-
-#[tauri::command]
-async fn complete_audit_task(
-    ticket_id: i64,
-    success: bool,
-    mq_state: State<'_, MqAuditState>,
-    app: tauri::AppHandle,
-) -> Result<(), String> {
-    complete_task_inner(&mq_state.0, ticket_id, success, "audit", Some(&app)).await
-}
+// =========== Tauri 入口 ===========
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
         .plugin(tauri_plugin_opener::init())
         .plugin(tauri_plugin_dialog::init())
-        .manage(MqTranslateState::default())
-        .manage(MqReplyState::default())
-        .manage(MqAuditState::default())
-        .setup(|app| {
-            let settings = settings::load_settings(app.handle());
-            let mq_translate_state = app.state::<MqTranslateState>();
-            mq_translate_state.0.state.batch_size.store(settings.mq_batch_size, Ordering::SeqCst);
-
-            Ok(())
-        })
         .invoke_handler(tauri::generate_handler![
-            select_folder,
-            save_settings_cmd,
-            load_settings_cmd,
-            sync_mq_queues_cmd,
+            // AI 翻译
             translate_ticket_direct_cmd,
             sync_translate_reply_cmd,
+            // 文件系统
+            select_folder,
             save_text_file_cmd,
             // 通用 Shadow Window 命令
             open_shadow_window,
@@ -647,33 +310,13 @@ pub fn run() {
             toggle_shadow_window,
             get_shadow_window_visibility,
             close_shadow_window,
-            // NotebookLM 兼容层命令（委托给通用版本）
+            // NotebookLM 兼容层命令
             open_notebook_window,
             execute_notebook_js,
             get_shadow_result,
             forward_shadow_event,
             toggle_notebook_window,
             get_notebook_window_visibility,
-            // NotebookLM Selectors
-            get_notebook_selectors_cmd,
-            save_notebook_selectors_cmd,
-            reset_notebook_selectors_cmd,
-            // MQ 消费者命令
-            start_mq_consumer,
-            stop_mq_consumer,
-            get_mq_consumer_status,
-            update_mq_batch_size,
-            // Reply MQ
-            start_reply_mq_consumer,
-            stop_reply_mq_consumer,
-            get_reply_mq_consumer_status,
-            complete_reply_task,
-            complete_translate_task,
-            // Audit MQ
-            start_audit_mq_consumer,
-            stop_audit_mq_consumer,
-            get_audit_mq_consumer_status,
-            complete_audit_task
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

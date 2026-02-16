@@ -1,6 +1,8 @@
 package com.jefflower.fdserver.auth.security;
 
 import com.jefflower.fdserver.auth.service.PermissionCacheService;
+import com.jefflower.fdserver.auth.security.Logical;
+import com.jefflower.fdserver.auth.security.RequiresPermission;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;

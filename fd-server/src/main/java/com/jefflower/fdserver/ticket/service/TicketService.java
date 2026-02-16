@@ -1,5 +1,6 @@
 package com.jefflower.fdserver.ticket.service;
 
+import com.jefflower.fdserver.task.service.TaskDistributionService;
 import com.jefflower.fdserver.ticket.dto.*;
 import com.jefflower.fdserver.ticket.entity.*;
 import com.jefflower.fdserver.ticket.enums.AuditResult;
@@ -29,6 +30,7 @@ public class TicketService {
     private final ReplyPushService replyPushService;
     private final SystemConfigService systemConfigService;
     private final WeChatWorkNotifyService weChatWorkNotifyService;
+    private final TaskDistributionService taskDistributionService;
 
     /**
      * 列表查询（返回完整 Ticket 实体）— 保持向后兼容
@@ -130,6 +132,9 @@ public class TicketService {
 
         System.out.println("[TicketService] Translation saved with ID: " + saved.getId());
 
+        // 完成翻译任务
+        taskDistributionService.completeByReference("ticket.translate", String.valueOf(ticketId));
+
         // 如果已经是 PENDING_REPLY 状态，说明已经触发过后续流程，无需重复处理
         if (ticket.getStatus() != TicketStatus.PENDING_REPLY) {
             ticket.setStatus(TicketStatus.PENDING_REPLY);
@@ -138,6 +143,10 @@ public class TicketService {
 
             // 发送回复任务到 MQ
             mqPublisherService.sendReplyTask(ticket);
+            // 创建回复任务实例
+            taskDistributionService.createTask("ticket.reply", "ticket",
+                    String.valueOf(ticket.getId()), null,
+                    com.jefflower.fdserver.task.enums.TriggerType.EVENT);
         }
 
         return saved;
@@ -177,8 +186,15 @@ public class TicketService {
         ticket.setUpdatedAt(LocalDateTime.now());
         ticketRepository.save(ticket);
 
+        // 完成回复任务
+        taskDistributionService.completeByReference("ticket.reply", String.valueOf(ticketId));
+
         // 发送审核任务到 MQ
         mqPublisherService.sendAuditTask(ticket);
+        // 创建审核任务实例
+        taskDistributionService.createTask("ticket.audit", "ticket",
+                String.valueOf(ticket.getId()), null,
+                com.jefflower.fdserver.task.enums.TriggerType.EVENT);
 
         // 通知企业微信：AI回复已完成，等待审核
         weChatWorkNotifyService.notifyMqReplyCompleted(ticket);
@@ -215,6 +231,9 @@ public class TicketService {
         audit.setAuditorId(auditorId);
         TicketAudit saved = auditRepository.save(audit);
 
+        // 完成审核任务
+        taskDistributionService.completeByReference("ticket.audit", String.valueOf(ticketId));
+
         if (request.getAuditResult() == AuditResult.PASS) {
             TicketReply reply = replyRepository.findById(request.getReplyId())
                     .orElseThrow(() -> new RuntimeException("回复不存在"));
@@ -243,6 +262,10 @@ public class TicketService {
             ticketRepository.save(ticket);
 
             mqPublisherService.sendReplyTask(ticket);
+            // REJECT 后重新创建回复任务实例
+            taskDistributionService.createTask("ticket.reply", "ticket",
+                    String.valueOf(ticket.getId()), null,
+                    com.jefflower.fdserver.task.enums.TriggerType.EVENT);
 
             weChatWorkNotifyService.notifyAuditReject(ticket, request.getAuditRemark());
         }
@@ -317,6 +340,9 @@ public class TicketService {
         ticket.setStatus(TicketStatus.TRANSLATING);
         ticketRepository.save(ticket);
         mqPublisherService.sendTranslationTask(ticket);
+        taskDistributionService.createTask("ticket.translate", "ticket",
+                String.valueOf(ticket.getId()), null,
+                com.jefflower.fdserver.task.enums.TriggerType.MANUAL);
     }
 
     @Transactional
@@ -332,6 +358,9 @@ public class TicketService {
         ticket.setStatus(TicketStatus.REPLYING);
         ticketRepository.save(ticket);
         mqPublisherService.sendReplyTask(ticket);
+        taskDistributionService.createTask("ticket.reply", "ticket",
+                String.valueOf(ticket.getId()), null,
+                com.jefflower.fdserver.task.enums.TriggerType.MANUAL);
     }
 
     @Transactional

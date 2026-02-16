@@ -1,0 +1,84 @@
+{
+  "nav": {
+    "dashboard": "仪表盘",
+    "definitions": "任务定义",
+    "history": "执行历史"
+  },
+  "dashboard": {
+    "title": "任务仪表盘",
+    "autoRefresh": "每 10 秒自动刷新",
+    "loading": "加载中...",
+    "loadFailed": "加载仪表盘数据失败",
+    "noData": "暂无任务数据",
+    "totalTasks": "总任务数",
+    "status": {
+      "PENDING": "待处理",
+      "CLAIMED": "处理中",
+      "COMPLETED": "已完成",
+      "FAILED": "失败",
+      "TIMEOUT": "超时",
+      "CANCELLED": "已取消"
+    }
+  },
+  "definitions": {
+    "title": "任务定义管理",
+    "loading": "加载中...",
+    "loadFailed": "加载任务定义失败",
+    "noData": "暂无任务定义",
+    "triggerSuccess": "任务已触发",
+    "triggerFailed": "触发失败: {{error}}",
+    "toggleSuccess": "状态已更新",
+    "toggleFailed": "切换失败: {{error}}",
+    "table": {
+      "code": "任务编码",
+      "name": "任务名称",
+      "executionMode": "执行模式",
+      "cronExpression": "Cron 表达式",
+      "timeout": "超时(秒)",
+      "maxRetries": "最大重试",
+      "maxConcurrency": "最大并发",
+      "enabled": "启用状态",
+      "actions": "操作"
+    },
+    "executionMode": {
+      "CLIENT_DISTRIBUTED": "客户端分发",
+      "SERVER_SCHEDULED": "服务端定时",
+      "SERVER_TRIGGERED": "服务端触发"
+    },
+    "action": {
+      "trigger": "手动触发",
+      "enable": "启用",
+      "disable": "禁用"
+    }
+  },
+  "history": {
+    "title": "任务执行历史",
+    "loading": "加载中...",
+    "loadFailed": "加载执行历史失败",
+    "noData": "暂无执行记录",
+    "allTypes": "全部类型",
+    "table": {
+      "id": "ID",
+      "taskType": "任务类型",
+      "referenceId": "关联ID",
+      "status": "状态",
+      "assignedTo": "执行者",
+      "triggerType": "触发方式",
+      "createdAt": "创建时间",
+      "completedAt": "完成时间"
+    },
+    "status": {
+      "PENDING": "待处理",
+      "CLAIMED": "处理中",
+      "COMPLETED": "已完成",
+      "FAILED": "失败",
+      "TIMEOUT": "超时",
+      "CANCELLED": "已取消"
+    },
+    "triggerType": {
+      "EVENT": "事件触发",
+      "SCHEDULED": "定时触发",
+      "MANUAL": "手动触发"
+    }
+  }
+}

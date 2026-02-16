@@ -1,13 +1,16 @@
 package com.jefflower.fdserver.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.jefflower.fdserver.client.FreshdeskApiClient;
-import com.jefflower.fdserver.dto.TicketContent;
-import com.jefflower.fdserver.entity.SyncLog;
-import com.jefflower.fdserver.entity.Ticket;
-import com.jefflower.fdserver.enums.TicketStatus;
-import com.jefflower.fdserver.enums.TriggerType;
-import com.jefflower.fdserver.repository.TicketRepository;
+import com.jefflower.fdserver.ticket.client.FreshdeskApiClient;
+import com.jefflower.fdserver.ticket.dto.TicketContent;
+import com.jefflower.fdserver.ticket.entity.SyncLog;
+import com.jefflower.fdserver.ticket.entity.Ticket;
+import com.jefflower.fdserver.ticket.enums.TicketStatus;
+import com.jefflower.fdserver.ticket.enums.TriggerType;
+import com.jefflower.fdserver.ticket.repository.TicketRepository;
+import com.jefflower.fdserver.ticket.service.FreshdeskSyncService;
+import com.jefflower.fdserver.ticket.service.MqPublisherService;
+import com.jefflower.fdserver.ticket.service.SyncConfigService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -39,6 +42,9 @@ class FreshdeskSyncServiceTest {
 
     @Mock
     private SyncConfigService syncConfigService;
+
+    @Mock
+    private com.jefflower.fdserver.task.service.TaskDistributionService taskDistributionService;
 
     @InjectMocks
     private FreshdeskSyncService freshdeskSyncService;

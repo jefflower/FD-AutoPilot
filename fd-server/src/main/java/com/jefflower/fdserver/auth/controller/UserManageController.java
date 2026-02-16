@@ -1,7 +1,7 @@
 package com.jefflower.fdserver.auth.controller;
 
 import com.jefflower.fdserver.auth.security.RequiresPermission;
-import com.jefflower.fdserver.dto.ApiResponse;
+import com.jefflower.fdserver.common.dto.ApiResponse;
 import com.jefflower.fdserver.auth.dto.ApproveRequest;
 import com.jefflower.fdserver.auth.entity.SysUser;
 import com.jefflower.fdserver.auth.enums.UserStatus;

@@ -8,6 +8,7 @@ import java.util.List;
 public interface SysRolePermissionRepository extends JpaRepository<SysRolePermission, Long> {
     List<SysRolePermission> findByRoleId(Long roleId);
     void deleteByRoleId(Long roleId);
+    boolean existsByRoleIdAndPermissionId(Long roleId, Long permissionId);
 
     @Query("SELECT DISTINCT p.code FROM SysRolePermission rp " +
            "JOIN SysPermission p ON rp.permissionId = p.id " +

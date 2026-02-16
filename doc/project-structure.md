@@ -5,445 +5,382 @@
 ## 根目录（`/`）
 - `data/`: 持久化数据存储目录（H2 数据库文件）。
 - `doc/`: 项目文档。
-    - `api-reference.md`: HTTP API 端点和用法说明。
-    - `client-architecture.md`: Tauri + React 客户端详细说明。
-    - `project-documentation.md`: 高层概览和项目入口。
-    - `project-structure.md`: 本文件。
-    - `server-architecture.md`: Spring Boot 服务端详细说明。
-    - `system-design.md`: 综合系统设计文档（数据库模式、状态流转、MQ 设计）。
-- `fd-client/`: 前端/客户端应用（Tauri + React）。
-- `fd-server/`: 后端/服务端应用（Spring Boot）。
+- `fd-server/`: 后端应用（Spring Boot），含 RBAC 权限、工单业务、SPA 托管。
+- `fd-web/`: 前端应用（React 19 + Vite 7），独立 Web 项目。
+- `fd-client/`: 桌面客户端（Tauri v2，纯 Rust），WebView 加载 fd-web。
 
-## 客户端应用（`fd-client/`）
-基于 **Tauri v2**、**React 19**、**TypeScript** 和 **TailwindCSS** 构建。
+## 三项目关系
 
-### `src-tauri/` Rust 后端
-- `src/lib.rs`: 主入口点。注册所有 Tauri 命令（`#[tauri::command]`）。`MqConsumerHolder` 共用结构体和 `MqTranslateState`/`MqReplyState` 新类型包装器。通用辅助函数：`start_consumer_inner`、`stop_consumer_inner`、`get_consumer_status_inner`、`complete_task_inner`。
-- `src/main.rs`: 应用程序引导。
-- `src/mq_consumer.rs`: 统一 RabbitMQ 消费者。`handle_message()` 框架支持 `parse_fn`/`build_payload` 闭包。`submit_via_frontend()` 通用函数。`RunGuard` 用于安全的 `is_running` 清理和多级停止检查。
-- `src/ai.rs`: Gemini CLI 翻译引擎（`GeminiClient::translate_ticket`）。
-- `src/api.rs`: Freshdesk HTTP 客户端（本地直连用于同步）。
-- `src/models.rs`: 共享数据模型（Ticket、Conversation 等）。
-- `src/settings.rs`: 设置管理（持久化到磁盘 JSON 文件）。
-- `tauri.conf.json`: Tauri 配置（窗口、权限、CSP、bundles）。
-- `Cargo.toml`: Rust 依赖（lapin、reqwest、serde、tokio）。
+```
+fd-web (React 前端)
+  ├── npm run dev          → localhost:5173（开发模式，代理 /api → fd-server:9988）
+  ├── npm run publish      → 构建并复制到 fd-server/static/（一键发布）
+  └── npm run build        → dist/（供 fd-client 打包或 fd-server 托管）
 
-### `src/` 前端源代码
+fd-server (Spring Boot 后端)
+  ├── mvn spring-boot:run  → localhost:9988（API + 可选 SPA 托管）
+  └── SpaWebConfig         → 当 static/index.html 存在时自动激活 SPA 路由
 
-#### 入口点
-- `main.tsx`: React 入口点。
-- `App.tsx`: 主布局、Context Provider 包裹（`MQTranslationProvider`、`MQReplyProvider`、`MQAuditProvider`）、Tab 路由、侧边栏。
+fd-client (Tauri 桌面壳)
+  ├── npm run tauri dev    → WebView 加载 fd-web dev server (5173)
+  └── npm run tauri build  → WebView 加载 fd-web/dist（离线打包）
+```
 
-#### 组件（`components/`）
-- `Common.tsx`: 共用 UI 组件库。
-- `SidebarNew.tsx`: 主导航侧边栏。
-- `SettingsTab.tsx`: 设置管理（MQ 配置、NotebookLM 配置）。
-- **`server/`** — 服务端模式任务组件：
-    - `ServerTicketDetail.tsx`: 工单详情工作区，包含 AI 操作按钮（~600 行）。
-    - **`ticket-detail/`** — 从 ServerTicketDetail 提取的子组件：
-        - `TranslationPreviewBar.tsx`: 翻译确认条。
-        - `AiReplyPanel.tsx`: AI 回复流式显示 + 双语切换 + 保存/丢弃。
-        - `ReplyHistoryPanel.tsx`: 回复历史列表 + 内联审核控件。
-    - `ServerTicketList.tsx`: 分页工单列表，带过滤器。
-    - `ServerTicketsTab.tsx`: 工单 Tab 容器。
-    - `ServerTaskWorkspace.tsx`: 多标签页任务工作区（自动关闭成功标签页，保留失败标签页）。
-    - `TranslationTasksTab.tsx`: MQ 翻译任务管理（左面板 + 工作区）。
-    - `ReplyTasksTab.tsx`: MQ 回复任务管理（无并发配置，仅串行模式）。
-    - `AuditTasksTab.tsx`: 审核任务管理（卡片内联审核，一键通过/驳回）。
-    - `ApprovedTasksTab.tsx`: 已批准工单队列（手动/批量推送到 Freshdesk，自动推送切换）。
-- **`common/`** — 共享组件：
-    - `FloatingTaskWidget.tsx`: 浮动任务状态指示器（显示活跃 MQ 任务）。
-- **`admin/`** — 仅管理员组件：
-    - `AdminUsersTab.tsx`: 用户管理（分页列表，状态/用户名过滤，批准、角色修改、密码重置、确认对话框）。
-    - `ManualSyncTab.tsx`: 手动触发 Freshdesk 同步 + 自动推送切换。
-    - `ServerLogsTab.tsx`: 服务端日志查看器。
-    - `DatabaseTab.tsx`: 数据库查询面板。
-    - `KnowledgeTab.tsx`: 知识库管理面板。
-    - `SqlQueryPanel.tsx`: SQL 查询执行面板。
-    - `H2ConsolePanel.tsx`: H2 数据库控制台面板。
-- **`auth/`** — 身份验证：
-    - `AuthLoginTab.tsx`: 登录表单。
-    - `AuthRegisterTab.tsx`: 注册表单。
-- **`user/`** — 用户组件：
-    - `UserProfileTab.tsx`: 用户个人资料。
+### 开发模式
 
-#### Context 提供者（`context/`）
-- `createMQTaskContext.tsx`: 通用工厂函数，从 `MQTaskConfig` 生成 Context + Provider + Hook。处理事件监听、去重、任务调度（并行/串行）、完成历史、消费者控制。
-- `MQTranslationContext.tsx`: 基于工厂创建的薄层包装，使用 `concurrencyMode: 'parallel'`、`defaultBatchSize: 5`。
-- `MQReplyContext.tsx`: 基于工厂创建的薄层包装，使用 `concurrencyMode: 'serial'`、`defaultBatchSize: 1`，通过 `onStreamChunk` 实现流式文本桥接。
-- `MQAuditContext.tsx`: 基于工厂创建的薄层包装，用于审核任务管理。
+| 场景 | 启动命令 | 说明 |
+|------|---------|------|
+| 前端独立开发 | `cd fd-web && npm run dev` | 浏览器访问 5173，API 代理到 9988 |
+| 全栈开发 | fd-server:run + fd-web:dev | 前后端分离热重载 |
+| Tauri 桌面开发 | fd-server:run + fd-web:dev + `cd fd-client && npm run tauri dev` | 三端联调 |
+| 集成预览 | `cd fd-web && npm run publish` + fd-server:run | 浏览器访问 9988，前后端同源 |
 
-#### Hooks（`hooks/`）
-- `useAuth.ts`: JWT 身份验证状态（登录、注册、Token 存储）。
-- `useSettings.ts`: 应用程序设置（MQ、NotebookLM、API 密钥）。
-- `useAiReply.ts`: AI 回复生成 Hook（Shadow Window → NotebookLM）。支持 `onStreamChunk`、`onParsed`、`onPromptReady` 回调。
-- `useAiTranslation.ts`: AI 翻译 Hook（Rust Gemini CLI）。支持 `onStatusChange`、`onError` 回调。
-- `useNotebookShadow.ts`: Shadow 窗口可见性状态。
-- `useTicketProcess.ts`: 全局工单处理状态（`status`、`tempTranslation`、`tempAiReply`、`streamingText`）。模块级变量 + 监听器模式。
-- 相关测试文件：`useAuth.test.ts`。
+---
 
-#### AI 提供者抽象（`ai/`）
-- `types.ts`: 提供者接口（`AiTranslationProvider`、`AiReplyProvider`）和共享类型。
-- `index.ts`: 工厂函数（`getTranslationProvider`、`getReplyProvider`）+ 重新导出。
-- `parseUtils.ts`: 共享 JSON 解析工具（后向 `]` 搜索、正则表达式回退）。
-- **`providers/`**:
-    - `geminiTranslationProvider.ts`: `GeminiTranslationProvider` — 包装 Rust `translate_ticket_direct_cmd` 调用。
-    - `notebookLMReplyProvider.ts`: `NotebookLMReplyProvider` — 使用流式处理和 JSON 解析包装 `NotebookShadowService`。
-- 相关测试文件：`index.test.ts`、`parseUtils.test.ts`。
+## 前端应用（`fd-web/`）
 
-#### 服务（`services/`）
-- `notebookShadow.ts`: **核心服务**。NotebookLM Shadow Window（混合 observer + relay 架构 v3）。DOM 选择器集中在 `SELECTORS` 常量中管理。
-- `serverApi.ts`: `fd-server` 的 REST API 客户端。
-- 相关测试文件：`serverApi.test.ts`。
+基于 **React 19**、**Vite 7**、**TypeScript**、**TailwindCSS 3.4**、**React Router 7** 构建。
 
-#### 常量（`constants/`）
-- `agentMap.ts`: Freshdesk Agent ID → 名称映射（单一真实来源）。
+### 目录树
+```
+fd-web/
+├── src/
+│   ├── main.tsx                               # React 入口
+│   ├── App.tsx                                # 主布局、Context Provider、Tab 路由
+│   ├── index.css                              # 全局样式（TailwindCSS）
+│   ├── vite-env.d.ts                          # Vite 类型定义
+│   │
+│   ├── router/                                # 路由系统
+│   │   ├── routes.ts                          # 路由定义（path, module, requiredPermission）
+│   │   ├── guards.tsx                         # AuthGuard + PermissionGuard
+│   │   └── index.tsx                          # 懒加载组件导出
+│   │
+│   ├── shared/                                # 跨模块共享（不依赖 Tauri）
+│   │   ├── components/                        # UI 组件库
+│   │   │   ├── SidebarNew.tsx                 # 主导航侧边栏
+│   │   │   ├── Common.tsx                     # 通用 UI 组件（LangLabel 等）
+│   │   │   ├── ErrorBoundary.tsx              # 全局错误边界
+│   │   │   ├── Toast.tsx                      # Toast 通知
+│   │   │   ├── ToastProvider.tsx              # Toast Context Provider
+│   │   │   ├── ConfirmDialog.tsx              # 确认对话框
+│   │   │   └── FloatingTaskWidget.tsx         # 浮动 MQ 任务指示器
+│   │   ├── hooks/
+│   │   │   ├── useAuth.ts                     # JWT 认证状态（登录/注册/Token）
+│   │   │   └── useToast.ts                    # Toast 通知 Hook
+│   │   ├── services/
+│   │   │   └── serverApi.ts                   # fd-server REST API 客户端（含 Token 刷新）
+│   │   ├── types/
+│   │   │   └── server.ts                      # 所有后端 API 类型定义
+│   │   ├── constants/
+│   │   │   └── agentMap.ts                    # Freshdesk Agent ID → 名称映射
+│   │   ├── utils/
+│   │   │   └── statusLabels.ts                # 工单状态标签映射
+│   │   └── i18n/                              # 国际化
+│   │       ├── config.ts                      # i18next 配置
+│   │       ├── types.ts                       # 类型定义
+│   │       └── locales/{zh-CN,en-US}/         # 语言包
+│   │
+│   ├── modules/                               # 按业务域划分的页面模块
+│   │   ├── auth/pages/                        # 认证页面
+│   │   │   ├── AuthLoginTab.tsx               # 登录
+│   │   │   └── AuthRegisterTab.tsx            # 注册
+│   │   ├── ticket/                            # 工单模块
+│   │   │   ├── pages/
+│   │   │   │   ├── ServerTicketsTab.tsx        # 工单列表
+│   │   │   │   ├── TranslationTasksTab.tsx    # MQ 翻译任务
+│   │   │   │   ├── ReplyTasksTab.tsx          # MQ 回复任务
+│   │   │   │   ├── AuditTasksTab.tsx          # 审核任务
+│   │   │   │   ├── ApprovedTasksTab.tsx       # 已批准/待推送
+│   │   │   │   └── ServerTaskWorkspace.tsx    # 多标签页工作区
+│   │   │   └── components/
+│   │   │       ├── ServerTicketDetail.tsx      # 工单详情（AI 操作）
+│   │   │       ├── ServerTicketList.tsx        # 分页工单列表
+│   │   │       └── ticket-detail/
+│   │   │           ├── TranslationPreviewBar.tsx
+│   │   │           ├── AiReplyPanel.tsx
+│   │   │           └── ReplyHistoryPanel.tsx
+│   │   ├── admin/                             # 管理模块
+│   │   │   ├── pages/
+│   │   │   │   ├── AdminUsersTab.tsx          # 用户管理
+│   │   │   │   ├── ManualSyncTab.tsx          # 同步管理
+│   │   │   │   ├── KnowledgeTab.tsx           # 知识库
+│   │   │   │   ├── DatabaseTab.tsx            # 数据库查询
+│   │   │   │   └── ServerLogsTab.tsx          # 服务端日志
+│   │   │   └── components/
+│   │   │       ├── SqlQueryPanel.tsx
+│   │   │       └── H2ConsolePanel.tsx
+│   │   └── system/pages/                      # 系统模块
+│   │       ├── SettingsTab.tsx                 # 设置（NotebookLM）
+│   │       └── UserProfileTab.tsx             # 个人资料
+│   │
+│   ├── shared/                                # 跨模块共享（浏览器 + Tauri 通用）
+│   │   ├── ai/                                # AI Provider 抽象（迁入自 tauri/）
+│   │   │   ├── types.ts                       # 接口定义
+│   │   │   ├── index.ts                       # 工厂函数
+│   │   │   ├── parseUtils.ts                  # JSON 解析工具
+│   │   │   └── providers/
+│   │   │       ├── geminiTranslationProvider.ts
+│   │   │       └── notebookLMReplyProvider.ts
+│   │   ├── components/                        # 通用 UI 组件
+│   │   ├── context/                           # 任务管理 Context（迁入自 tauri/）
+│   │   │   ├── createMQTaskContext.tsx         # 工厂函数
+│   │   │   ├── MQTranslationContext.tsx       # 翻译（轮询模式）
+│   │   │   ├── MQReplyContext.tsx             # 回复（轮询模式）
+│   │   │   └── MQAuditContext.tsx             # 审核（轮询模式）
+│   │   ├── hooks/                             # 通用 Hooks（迁入自 tauri/）
+│   │   ├── services/                          # REST API 客户端等
+│   │   ├── types/, constants/, utils/, i18n/  # 其他共享代码
+│   │
+│   ├── tauri/                                 # Tauri 桥接层（仅 Tauri WebView 环境生效）
+│   │   ├── bridge.ts                          # Tauri 环境检测 + 命令桥接
+│   │   ├── hooks/
+│   │   │   ├── useSettings.ts                 # 本地设置（Tauri 仅）
+│   │   │   └── useNotebookShadow.ts           # Shadow Window 可见性
+│   │   └── services/
+│   │       ├── notebookShadow.ts              # NotebookLM Shadow Window 核心
+│   │       ├── trackingShadow.ts              # 追踪 Shadow
+│   │       └── trackingUtils.ts               # 追踪工具
+│   │
+│   └── test/                                  # 测试配置
+│       ├── setup.ts
+│       ├── tauriMock.ts
+│       └── renderHelper.tsx
+│
+├── package.json                               # 依赖和脚本
+├── vite.config.ts                             # Vite 配置（端口 5173，API 代理）
+├── tsconfig.json                              # TypeScript 配置
+├── tsconfig.node.json                         # Node 端 TS 配置
+├── tailwind.config.js                         # TailwindCSS 配置
+├── postcss.config.js                          # PostCSS 配置
+└── index.html                                 # HTML 入口
+```
 
-#### 类型（`types/`）
-- `types.ts`: 本地数据类型（工单、对话用于离线模式）。
-- `server.ts`: 服务端 API 类型（ServerTicket、TicketTranslation、TicketReply 等）。
+### npm 脚本
 
-#### 工具函数（`utils/`）
-- `statusLabels.ts`: 工单状态标签和显示名称映射。
-- 相关测试文件：`statusLabels.test.ts`。
+| 命令 | 说明 |
+|------|------|
+| `npm run dev` | 启动 Vite 开发服务器（端口 5173，代理 /api → 9988） |
+| `npm run build` | TypeScript 检查 + Vite 构建（输出 dist/） |
+| `npm run publish` | 构建并复制到 fd-server/static/（一键发布到服务端） |
+| `npm test` | 运行 Vitest 测试 |
+| `npm run test:watch` | 监听模式测试 |
+| `npm run test:coverage` | 覆盖率报告 |
 
-#### 国际化（`i18n/`）
-- `config.ts`: i18n 配置文件。
-- `types.ts`: 国际化类型定义。
-- `locales/{zh-CN,en-US}/`: 语言包目录，包含 `common.json`、`auth.json`、`tickets.json`、`tasks.json`、`admin.json`、`settings.json`。
+### 关键设计原则
 
-#### 测试（`test/`）
-- `setup.ts`: 测试环境设置。
-- `tauriMock.ts`: Tauri API 模拟。
-- `renderHelper.tsx`: React 测试工具函数。
+- **shared/ vs tauri/**: shared/ 下的代码在浏览器和 Tauri WebView 中均可运行；tauri/ 下的代码依赖 `@tauri-apps/api`，通过 `isTauriEnv()` 条件加载
+- **模块化页面**: modules/ 按业务域划分，每个模块有独立的 pages/ 和 components/
+- **代码分割**: 非首屏组件使用 `React.lazy` + `Suspense` 懒加载
 
-#### 其他
-- `index.css`: 全局样式。
-- `main.tsx`: TypeScript 入口配置。
-- `vite-env.d.ts`: Vite 环境类型定义。
+---
 
-## 服务端应用（`fd-server/`）
-基于 **Spring Boot 3.4**、**Java 21**、**H2 数据库** 和 **RabbitMQ** 构建。
+## 桌面客户端（`fd-client/`）
 
-### `src/main/java/com/jefflower/fdserver/`
-- `FdServerApplication.java`: 主 Spring Boot 应用程序类。
-
-#### 配置（`config/`）
-- `RabbitMQConfig.java`: 队列、交换机、路由键、DLQ 设置。
-- `SecurityConfig.java`: Spring Security 设置（JWT 过滤器、CORS、端点权限）。
-- `RestTemplateConfig.java`: HTTP 客户端配置。
-
-#### 客户端（`client/`）
-- `FreshdeskApiClient.java`: Freshdesk API 调用封装。
-
-#### 控制器（`controller/`）
-- `AuthController.java`: 登录/注册端点。
-- `TicketController.java`: 工单 CRUD、翻译/回复/审核提交、AI 触发、推送回复、批量推送。
-- `AdminController.java`: Freshdesk 同步、用户管理（分页查询、批准、角色修改、密码重置）、同步配置管理。
-- `ConfigController.java`: 系统配置端点（自动推送切换、企业微信 Webhook）。
-- `DatabaseController.java`: 数据库查询和管理端点。
-- `KnowledgeController.java`: 知识库管理端点。
-- `WebhookController.java`: Webhook 接收端点（用于外部事件触发）。
-- `RequestController.java`: 调试端点（记录原始客户端请求）。
-
-#### 数据传输对象（`dto/`）
-- `LoginRequest.java`, `LoginResponse.java`: 身份验证 DTO。
-- `RegisterRequest.java`: 注册 DTO。
-- `TranslationRequest.java`: 翻译提交（`targetLang`、`translatedTitle`、`translatedContent`）。
-- `ReplyRequest.java`: 回复提交（`zhReply`、`targetReply`）。
-- `AuditRequest.java`: 审核提交（`replyId`、`auditResult`、`auditRemark`）。
-- `ValidRequest.java`: 工单有效性切换（`isValid`）。
-- `BatchValidRequest.java`: 批量工单有效性切换。
-- `ApproveRequest.java`: 用户批准请求。
-- `ApiResponse.java`: 通用 API 响应包装器。
-- `TicketContent.java`: 解析的工单内容 DTO。
-- `KnowledgeNoteRequest.java`: 知识库笔记请求。
-- `SqlQueryRequest.java`: SQL 查询请求。
-- `SqlQueryResult.java`: SQL 查询结果。
-- `TableInfo.java`: 表信息 DTO。
-
-#### 实体（`entity/`）
-- `Ticket.java`: 主工单记录（与翻译和回复有 `@OneToMany` 关系）。
-- `TicketTranslation.java`: 翻译详情。
-- `TicketReply.java`: 草稿回复。
-- `TicketAudit.java`: 审核历史记录。
-- `SysUser.java`: 用户账户（`password` 字段 `@JsonIgnore`）。
-- `SystemConfig.java`: 系统配置键值对（自动推送、企业微信 Webhook）。
-- `SyncConfig.java`: 同步配置（cron 表达式、启用标志）。
-- `SyncLog.java`: 同步执行历史日志。
-- `KnowledgeNote.java`: 知识库笔记。
-- `FailedReplyPush.java`: 失败的回复推送记录。
-
-#### 仓库（`repository/`）
-- `TicketRepository.java`, `TicketTranslationRepository.java`, `TicketReplyRepository.java`, `TicketAuditRepository.java`
-- `SysUserRepository.java`, `SystemConfigRepository.java`
-- `SyncConfigRepository.java`, `SyncLogRepository.java`
-- `KnowledgeNoteRepository.java`, `FailedReplyPushRepository.java`
-- `ClientRequestRepository.java`
-
-#### 服务（`service/`）
-- `TicketService.java`: 工单工作流编排（状态转换、MQ 消息触发、APPROVED 推送逻辑）。
-- `FreshdeskService.java`: Freshdesk API 同步（通过 `updated_since` 增量同步）。
-- `FreshdeskSyncService.java`: Freshdesk 同步服务（新同步架构）。
-- `MqPublisherService.java`: RabbitMQ 消息发布（回复负载中包含 `auditRemark`）。
-- `MqQueueService.java`: MQ 队列管理服务。
-- `AuthService.java`: 用户身份验证、注册、分页用户查询（状态/用户名过滤）、角色管理、密码重置。
-- `SyncConfigService.java`: 同步配置管理。
-- `SystemConfigService.java`: 系统配置 CRUD（自动推送切换、企业微信 Webhook）。
-- `WeChatWorkNotifyService.java`: 企业微信 Webhook 通知（审核通过/驳回、回复已推送）。
-- `KnowledgeService.java`: 知识库服务。
-- `DatabaseQueryService.java`: 数据库查询服务。
-- `ReplyPushService.java`: 回复推送服务。
-
-#### 调度器（`scheduler/`）
-- `SyncScheduler.java`: Cron-based Freshdesk 同步调度器。
-- `ReplyPushRetryScheduler.java`: 回复推送重试调度器。
-
-#### 安全（`security/`）
-- `JwtUtil.java`: JWT 令牌生成和验证。
-- `JwtAuthenticationFilter.java`: Spring Security JWT 身份验证过滤器。
-
-#### 模型（`model/`）
-- `ClientRequest.java`: 客户端请求模型（用于调试和审计）。
-
-## 关键配置文件
-- `fd-server/src/main/resources/application.yml`: 服务端配置（H2 路径、RabbitMQ、Freshdesk、JWT）。
-- `fd-client/src-tauri/tauri.conf.json`: 客户端窗口和能力配置。
-- `fd-client/src-tauri/Cargo.toml`: Rust 依赖。
-- `fd-client/package.json`: Node.js 依赖和前端脚本。
-- `fd-client/vite.config.ts`: Vite 构建配置。
-- `fd-client/tsconfig.json`: TypeScript 配置。
-- `fd-client/vitest.config.ts`: Vitest 测试框架配置。
-
-## Enums（枚举）
-
-### 后端 Enums（`enums/`）
-- `TicketStatus.java`: 工单状态（`PENDING_TRANS`、`TRANSLATING`、`PENDING_REPLY`、`REPLYING`、`PENDING_AUDIT`、`AUDITING`、`APPROVED`、`COMPLETED`）。
-- `UserRole.java`: 用户角色（`ADMIN`、`USER`）。
-- `UserStatus.java`: 用户状态（`PENDING`、`APPROVED`、`REJECTED`）。
-- `AuditResult.java`: 审核结果（`PASS`、`REJECT`）。
-- `SyncStatus.java`: 同步执行状态。
-- `TriggerType.java`: 同步触发类型（`CRON`、`MANUAL`）。
-
-## 前端项目结构概览
+基于 **Tauri v2**（纯 Rust），WebView 加载 fd-web 前端。
 
 ### 目录树
 ```
 fd-client/
-├── src/                                    # 前端 React 源代码
-│   ├── App.tsx                             # 主应用程序（入口、路由、Provider 包裹）
-│   ├── main.tsx                            # React 应用启动
-│   ├── index.css                           # 全局样式
-│   ├── vite-env.d.ts                       # Vite 类型定义
-│   ├── types.ts                            # 本地数据类型
-│   ├── types/
-│   │   └── server.ts                       # 服务端 API 类型
-│   ├── ai/                                 # AI 提供者抽象层
-│   │   ├── types.ts                        # 接口定义
-│   │   ├── index.ts                        # 工厂函数
-│   │   ├── parseUtils.ts                   # JSON 解析工具
-│   │   ├── providers/
-│   │   │   ├── geminiTranslationProvider.ts
-│   │   │   └── notebookLMReplyProvider.ts
-│   │   └── *.test.ts                       # 单元测试
-│   ├── context/                            # React Context + Provider
-│   │   ├── createMQTaskContext.tsx         # 工厂函数
-│   │   ├── MQTranslationContext.tsx        # 翻译 Context
-│   │   ├── MQReplyContext.tsx              # 回复 Context
-│   │   └── MQAuditContext.tsx              # 审核 Context
-│   ├── hooks/                              # React Custom Hooks
-│   │   ├── useAuth.ts
-│   │   ├── useSettings.ts
-│   │   ├── useAiTranslation.ts
-│   │   ├── useAiReply.ts
-│   │   ├── useNotebookShadow.ts
-│   │   ├── useTicketProcess.ts
-│   │   └── *.test.ts
-│   ├── services/
-│   │   ├── notebookShadow.ts               # NotebookLM Shadow Window 核心
-│   │   ├── serverApi.ts                    # 后端 API 客户端
-│   │   └── *.test.ts
-│   ├── constants/
-│   │   └── agentMap.ts                     # Agent ID 映射
-│   ├── utils/
-│   │   ├── statusLabels.ts                 # 状态标签工具
-│   │   └── *.test.ts
-│   ├── i18n/                               # 国际化
-│   │   ├── config.ts
-│   │   ├── types.ts
-│   │   └── locales/
-│   │       ├── zh-CN/
-│   │       └── en-US/
-│   ├── components/
-│   │   ├── Common.tsx                      # 共用 UI 组件
-│   │   ├── SidebarNew.tsx                  # 导航侧边栏
-│   │   ├── SettingsTab.tsx                 # 设置标签页
-│   │   ├── auth/                           # 身份验证组件
-│   │   │   ├── AuthLoginTab.tsx
-│   │   │   └── AuthRegisterTab.tsx
-│   │   ├── user/
-│   │   │   └── UserProfileTab.tsx
-│   │   ├── admin/                          # 管理员组件
-│   │   │   ├── AdminUsersTab.tsx
-│   │   │   ├── ManualSyncTab.tsx
-│   │   │   ├── ServerLogsTab.tsx
-│   │   │   ├── DatabaseTab.tsx
-│   │   │   ├── KnowledgeTab.tsx
-│   │   │   ├── SqlQueryPanel.tsx
-│   │   │   └── H2ConsolePanel.tsx
-│   │   ├── server/                         # 服务端模式组件
-│   │   │   ├── ServerTicketsTab.tsx
-│   │   │   ├── ServerTicketList.tsx
-│   │   │   ├── ServerTicketDetail.tsx
-│   │   │   ├── ServerTaskWorkspace.tsx
-│   │   │   ├── TranslationTasksTab.tsx
-│   │   │   ├── ReplyTasksTab.tsx
-│   │   │   ├── AuditTasksTab.tsx
-│   │   │   ├── ApprovedTasksTab.tsx
-│   │   │   └── ticket-detail/
-│   │   │       ├── TranslationPreviewBar.tsx
-│   │   │       ├── AiReplyPanel.tsx
-│   │   │       └── ReplyHistoryPanel.tsx
-│   │   └── common/
-│   │       └── FloatingTaskWidget.tsx
-│   └── test/                               # 测试配置
-│       ├── setup.ts
-│       ├── tauriMock.ts
-│       └── renderHelper.tsx
-├── src-tauri/                              # Tauri/Rust 后端
+├── src-tauri/                                 # Tauri/Rust 后端（已精简）
 │   ├── src/
-│   │   ├── lib.rs                          # Tauri 命令主入口
-│   │   ├── main.rs                         # 应用引导
-│   │   ├── ai.rs                           # Gemini CLI 翻译
-│   │   ├── api.rs                          # Freshdesk HTTP 客户端
-│   │   ├── models.rs                       # 数据模型
-│   │   ├── mq_consumer.rs                  # RabbitMQ 消费者
-│   │   └── settings.rs                     # 设置管理
-│   ├── tauri.conf.json                     # Tauri 配置
-│   └── Cargo.toml                          # Rust 依赖
-├── package.json                            # Node.js 依赖和脚本
-├── tsconfig.json                           # TypeScript 配置
-├── vite.config.ts                          # Vite 构建配置
-├── vitest.config.ts                        # Vitest 测试配置
-└── index.html                              # HTML 入口
+│   │   ├── lib.rs                             # Tauri 命令注册（AI + Shadow Window）
+│   │   ├── main.rs                            # 应用引导
+│   │   ├── ai.rs                              # Gemini CLI 翻译引擎
+│   │   ├── models.rs                          # 共享数据模型
+│   │   └── api.rs                             # Freshdesk HTTP 客户端（备用）
+│   ├── tauri.conf.json                        # Tauri 配置
+│   └── Cargo.toml                             # Rust 依赖
+└── package.json                               # 仅含 @tauri-apps/cli
 ```
 
-## 后端项目结构概览
+### Tauri 配置要点
 
-### 目录树
+- `devUrl`: `http://localhost:5173`（开发时加载 fd-web dev server）
+- `frontendDist`: `../../fd-web/dist`（生产构建时加载 fd-web 打包产物）
+- `beforeDevCommand`: 空（不再由 fd-client 启动前端）
+- `CSP`: null（支持 Shadow Window 跨域注入）
+
+---
+
+## 后端应用（`fd-server/`）
+
+基于 **Spring Boot 3.4.1**、**Java 21**、**H2 数据库**、**RabbitMQ**、**Redis** 构建。
+
+采用**单体内模块化**架构，按业务域划分三个包：
+
 ```
-fd-server/
-├── src/main/java/com/jefflower/fdserver/
-│   ├── FdServerApplication.java            # Spring Boot 应用主类
-│   ├── config/
-│   │   ├── RabbitMQConfig.java
-│   │   ├── SecurityConfig.java
-│   │   └── RestTemplateConfig.java
-│   ├── client/
-│   │   └── FreshdeskApiClient.java
+fd-server/src/main/java/com/jefflower/fdserver/
+├── FdServerApplication.java                   # Spring Boot 主类
+│
+├── auth/                                      # 认证授权模块（+用户设置）
 │   ├── controller/
-│   │   ├── AuthController.java
-│   │   ├── TicketController.java
-│   │   ├── AdminController.java
-│   │   ├── ConfigController.java
-│   │   ├── DatabaseController.java
-│   │   ├── KnowledgeController.java
-│   │   ├── WebhookController.java
-│   │   └── RequestController.java
-│   ├── dto/
-│   │   ├── LoginRequest.java
-│   │   ├── LoginResponse.java
-│   │   ├── RegisterRequest.java
-│   │   ├── TranslationRequest.java
-│   │   ├── ReplyRequest.java
-│   │   ├── AuditRequest.java
-│   │   ├── ValidRequest.java
-│   │   ├── BatchValidRequest.java
-│   │   ├── ApproveRequest.java
-│   │   ├── ApiResponse.java
-│   │   ├── TicketContent.java
-│   │   ├── KnowledgeNoteRequest.java
-│   │   ├── SqlQueryRequest.java
-│   │   ├── SqlQueryResult.java
-│   │   └── TableInfo.java
-│   ├── entity/
-│   │   ├── Ticket.java
-│   │   ├── TicketTranslation.java
-│   │   ├── TicketReply.java
-│   │   ├── TicketAudit.java
-│   │   ├── SysUser.java
-│   │   ├── SystemConfig.java
-│   │   ├── SyncConfig.java
-│   │   ├── SyncLog.java
-│   │   ├── KnowledgeNote.java
-│   │   └── FailedReplyPush.java
-│   ├── enums/
-│   │   ├── TicketStatus.java
-│   │   ├── UserRole.java
-│   │   ├── UserStatus.java
-│   │   ├── AuditResult.java
-│   │   ├── SyncStatus.java
-│   │   └── TriggerType.java
-│   ├── repository/
-│   │   ├── TicketRepository.java
-│   │   ├── TicketTranslationRepository.java
-│   │   ├── TicketReplyRepository.java
-│   │   ├── TicketAuditRepository.java
-│   │   ├── SysUserRepository.java
-│   │   ├── SystemConfigRepository.java
-│   │   ├── SyncConfigRepository.java
-│   │   ├── SyncLogRepository.java
-│   │   ├── KnowledgeNoteRepository.java
-│   │   ├── FailedReplyPushRepository.java
-│   │   └── ClientRequestRepository.java
+│   │   ├── AuthController.java                # 登录/注册/me 端点
+│   │   ├── UserManageController.java          # 用户 CRUD/审批/角色
+│   │   ├── RolePermissionController.java      # RBAC 角色权限管理
+│   │   └── UserSettingsController.java        # 用户应用设置 CRUD
 │   ├── service/
-│   │   ├── TicketService.java
-│   │   ├── FreshdeskService.java
-│   │   ├── FreshdeskSyncService.java
-│   │   ├── MqPublisherService.java
-│   │   ├── MqQueueService.java
-│   │   ├── AuthService.java
-│   │   ├── SyncConfigService.java
-│   │   ├── SystemConfigService.java
-│   │   ├── WeChatWorkNotifyService.java
-│   │   ├── KnowledgeService.java
-│   │   ├── DatabaseQueryService.java
-│   │   └── ReplyPushService.java
-│   ├── scheduler/
-│   │   ├── SyncScheduler.java
-│   │   └── ReplyPushRetryScheduler.java
+│   │   ├── AuthService.java                   # 认证核心逻辑
+│   │   ├── ModuleService.java                 # 模块权限查询
+│   │   ├── ModulePermissionDefinition.java    # 权限自注册接口
+│   │   └── UserAppSettingsService.java        # 用户设置管理
+│   ├── entity/
+│   │   ├── SysUser.java                       # 用户
+│   │   ├── SysRole.java                       # 角色
+│   │   ├── SysPermission.java                 # 权限
+│   │   ├── SysUserRole.java                   # 用户-角色关联
+│   │   ├── SysRolePermission.java             # 角色-权限关联
+│   │   ├── SysModule.java                     # 模块（auth/ticket/system）
+│   │   └── UserAppSettings.java               # 用户应用设置
+│   ├── repository/                            # 对应各实体 JpaRepository
+│   ├── dto/                                   # LoginRequest/Response, RegisterRequest 等
+│   ├── enums/                                 # UserRole, UserStatus
+│   ├── annotation/
+│   │   └── RequiresPermission.java            # 方法级权限注解
+│   ├── aspect/
+│   │   └── PermissionAspect.java              # AOP 权限切面
 │   ├── security/
-│   │   ├── JwtUtil.java
-│   │   └── JwtAuthenticationFilter.java
-│   └── model/
-│       └── ClientRequest.java
+│   │   ├── JwtUtil.java                       # JWT 双 Token（access + refresh）
+│   │   └── JwtAuthenticationFilter.java       # Security 过滤器
+│   ├── config/
+│   │   ├── SecurityConfig.java                # Spring Security 配置
+│   │   ├── AuthDataInitializer.java           # 增量同步（模块/角色/权限自动注册）
+│   │   └── AuthPermissionDefinition.java      # auth 模块 4 个权限定义
+│   └── util/
+│       ├── PasswordValidator.java
+│       └── SuperPasswordVerifier.java
+│
+├── task/                                      # 任务调度模块（新增）
+│   ├── controller/
+│   │   ├── TaskClaimController.java           # 任务领取/完成/释放
+│   │   └── TaskAdminController.java           # 任务管理后台
+│   ├── service/
+│   │   ├── TaskClaimService.java              # 任务领取核心逻辑
+│   │   ├── TaskExecutionService.java          # 任务执行
+│   │   ├── TaskDefinitionService.java         # 任务定义管理
+│   │   └── TaskStatisticsService.java         # 统计和报表
+│   ├── entity/
+│   │   ├── TaskDefinition.java                # 任务定义
+│   │   ├── TaskInstance.java                  # 任务实例
+│   │   └── TaskExecutionLog.java              # 执行日志
+│   ├── repository/                            # TaskDefinition/Instance/Log Repository
+│   ├── enums/
+│   │   ├── TaskStatus.java                    # PENDING, CLAIMED, COMPLETED, FAILED
+│   │   └── TaskType.java                      # MANUAL, SCHEDULED, CRON
+│   ├── scheduler/
+│   │   ├── TaskRecoveryScheduler.java         # 超时任务回收
+│   │   └── TaskCronScheduler.java             # Cron 定时调度
+│   ├── dto/                                   # 任务相关 DTO
+│   └── config/
+│       └── TaskPermissionDefinition.java      # task 模块权限定义
+│
+├── ticket/                                    # 工单业务模块
+│   ├── controller/
+│   │   ├── TicketController.java              # 工单 CRUD、翻译/回复/审核提交
+│   │   ├── SyncController.java                # Freshdesk 同步管理
+│   │   ├── QueueController.java               # MQ 队列/DLQ 管理
+│   │   ├── ConfigController.java              # 系统配置（自动推送、企微）
+│   │   ├── KnowledgeController.java           # 知识库 CRUD
+│   │   ├── DatabaseController.java            # SQL 查询
+│   │   ├── WebhookController.java             # Freshdesk Webhook
+│   │   └── RequestController.java             # 调试端点
+│   ├── service/
+│   │   ├── TicketService.java                 # 工单工作流编排
+│   │   ├── MqPublisherService.java            # RabbitMQ 发布
+│   │   ├── MqQueueService.java                # 队列管理
+│   │   ├── DlqConsumerService.java            # 死信队列消费
+│   │   ├── FreshdeskSyncService.java          # 增量同步
+│   │   ├── SyncConfigService.java             # 同步配置
+│   │   ├── ReplyPushService.java              # 回复推送
+│   │   ├── SystemConfigService.java           # 系统配置
+│   │   ├── WeChatWorkNotifyService.java       # 企微通知
+│   │   ├── KnowledgeNoteService.java          # 知识库
+│   │   ├── DatabaseQueryService.java          # 数据库查询
+│   │   └── RequestService.java                # 请求记录
+│   ├── entity/                                # Ticket, Translation, Reply, Audit, SystemConfig, KnowledgeNote, SyncLog, SyncConfig, FailedReplyPush, RequestRecord
+│   ├── repository/                            # 对应各实体 JpaRepository
+│   ├── dto/                                   # 工单相关 DTO
+│   ├── enums/                                 # TicketStatus, AuditResult, SyncStatus, TriggerType
+│   ├── scheduler/
+│   │   ├── SyncScheduler.java                 # Cron 同步调度
+│   │   └── ReplyPushRetryScheduler.java       # 推送重试调度
+│   ├── client/
+│   │   └── FreshdeskApiClient.java            # Freshdesk HTTP 客户端
+│   └── config/
+│       ├── RabbitMQConfig.java                # 队列、交换机、路由键
+│       ├── MqInitializer.java                 # MQ 初始化
+│       ├── TicketPermissionDefinition.java    # ticket 模块 6 个权限
+│       └── SystemPermissionDefinition.java    # system 模块 8 个权限
+│
+├── common/                                    # 公共基础模块
+│   ├── config/
+│   │   ├── RestTemplateConfig.java            # HTTP 客户端配置
+│   │   └── SpaWebConfig.java                  # SPA 路由（@ConditionalOnResource）
+│   ├── dto/
+│   │   └── ApiResponse.java                   # 通用响应包装
+│   └── util/
+│       ├── SqlValidator.java                  # SQL 安全校验
+│       └── SuperPasswordVerifier.java         # 超级密码验证
+│
 ├── src/main/resources/
-│   └── application.yml                     # 应用配置（H2、RabbitMQ、Freshdesk）
-├── pom.xml                                 # Maven 依赖配置
-└── mvn test                                # 运行测试命令
+│   ├── application.yml                        # 应用配置（H2、RabbitMQ、Redis、JWT）
+│   └── static/                                # 前端静态资源（npm run publish 写入）
+├── src/test/java/                             # 测试代码（70 个测试用例）
+└── pom.xml                                    # Maven 配置（含 with-frontend Profile）
 ```
 
-## 关键职责分配
+### 模块间依赖规则
 
-### 前端源代码（`fd-client/src/`）
-- **路由与布局**: `App.tsx` → `SidebarNew.tsx` + 各标签页组件
-- **身份验证**: `AuthLoginTab.tsx`, `AuthRegisterTab.tsx` + `useAuth.ts`
-- **AI 工作流**:
-  - 翻译: `TranslationTasksTab.tsx` → `MQTranslationContext` → `useAiTranslation` → `GeminiTranslationProvider`
-  - 回复: `ReplyTasksTab.tsx` → `MQReplyContext` → `useAiReply` → `NotebookLMReplyProvider` → `notebookShadow.ts`（Shadow Window）
-  - 审核: `AuditTasksTab.tsx` → `MQAuditContext` → 内联审核卡片
-- **管理功能**: `AdminUsersTab.tsx` + `ManualSyncTab.tsx` + `DatabaseTab.tsx` + `ServerLogsTab.tsx`
+```
+common（底层） ← auth（中层） ← task ← ticket（上层）
+```
+- common 不依赖任何业务模块
+- auth 只依赖 common
+- task 只依赖 auth 和 common
+- ticket 可依赖 task、auth 和 common
 
-### 后端源代码（`fd-server/src/`）
-- **工单流程**: `TicketService.java` → 状态转换 → `MqPublisherService` → RabbitMQ
-- **Freshdesk 同步**: `FreshdeskSyncService.java` / `FreshdeskService.java` → `FreshdeskApiClient`
-- **MQ 任务分发**: `RabbitMQConfig` → 队列配置 + `MqQueueService`
-- **用户管理**: `AuthService.java` + `AdminController` → 分页、批准、角色修改
-- **系统配置**: `SystemConfigService.java` → 自动推送、企业微信
+### Maven Profile
 
-### Rust 后端（`fd-client/src-tauri/src/`）
-- **Tauri 命令入口**: `lib.rs` → 注册所有命令、`MqConsumerHolder`
-- **MQ 消费**: `mq_consumer.rs` → 通用 `handle_message()` 框架 → 翻译/回复/审核任务
-- **翻译引擎**: `ai.rs` → `GeminiClient::translate_ticket()` → Gemini CLI 调用
-- **Freshdesk API**: `api.rs` → 本地同步和数据获取
-- **设置与存储**: `settings.rs` + 本地 JSON 持久化
+| Profile | 命令 | 说明 |
+|---------|------|------|
+| 默认 | `mvn clean package` | 仅后端，不含前端 |
+| with-frontend | `mvn clean package -Pwith-frontend` | 自动执行 fd-web npm install + build，复制 dist 到 static |
+
+---
+
+## 关键配置文件
+
+| 文件 | 说明 |
+|------|------|
+| `fd-server/src/main/resources/application.yml` | 后端配置（H2、RabbitMQ、Redis、JWT、Freshdesk） |
+| `fd-web/vite.config.ts` | 前端构建配置（端口 5173、API 代理、代码分割） |
+| `fd-web/tsconfig.json` | TypeScript 配置（strict、path alias `@/*`） |
+| `fd-client/src-tauri/tauri.conf.json` | Tauri 配置（devUrl、frontendDist、窗口） |
+| `fd-client/src-tauri/Cargo.toml` | Rust 依赖（lapin、reqwest、serde、tokio） |
+
+## 数据模型
+
+### RBAC 五表（auth 模块）
+- **SysUser** → **SysUserRole** → **SysRole** → **SysRolePermission** → **SysPermission**
+- **SysModule**: 模块实体（auth/ticket/system），一对多关联 SysPermission
+
+### 工单业务（ticket 模块）
+- **Ticket** (1→N) **TicketTranslation**
+- **Ticket** (1→N) **TicketReply**
+- **Ticket** (1→N) **TicketAudit**
+- **SystemConfig**: 系统配置键值对
+- **KnowledgeNote**: 知识库注意事项
+- **SyncLog/SyncConfig**: 同步日志和配置
+- **FailedReplyPush**: 推送失败重试记录
+
+## Enums
+
+### 后端 Enums
+
+| Enum | 模块 | 值 |
+|------|------|-----|
+| TicketStatus | ticket | PENDING_TRANS, TRANSLATING, PENDING_REPLY, REPLYING, PENDING_AUDIT, AUDITING, APPROVED, COMPLETED |
+| AuditResult | ticket | PASS, REJECT |
+| SyncStatus | ticket | SUCCESS, FAILED, RUNNING |
+| TriggerType | ticket | CRON, MANUAL |
+| UserRole | auth | SUPER_ADMIN, ADMIN, USER, AUDITOR |
+| UserStatus | auth | PENDING, APPROVED, REJECTED |
