@@ -4,6 +4,7 @@ import { NotebookShadowService } from '../../../tauri/services/notebookShadow';
 import { AGENT_MAP } from '../../constants/agentMap';
 import { extractTrackingNumbers, isLogisticsRelated, formatTrackingContext } from '../../utils/trackingUtils';
 import { TrackingShadowService } from '../../../tauri/services/trackingShadow';
+import { cleanTextForAi } from '../../utils/contentCleaner';
 
 /**
  * NotebookLM 回复 Provider
@@ -44,7 +45,7 @@ export class NotebookLMReplyProvider implements AiReplyProvider {
         } catch (e) { /* ignore */ }
 
         let context = `【TICKET SUBJECT】: ${ticket.subject}\n`;
-        context += `【INITIAL DESCRIPTION】: ${parsedData?.description || 'No description content'}\n\n`;
+        context += `【INITIAL DESCRIPTION】: ${cleanTextForAi(parsedData?.description || '') || 'No description content'}\n\n`;
 
         if (parsedData?.conversations && parsedData.conversations.length > 0) {
             const conversations = parsedData.conversations;
@@ -58,8 +59,8 @@ export class NotebookLMReplyProvider implements AiReplyProvider {
                 const role = agentName ? `AGENT (${agentName})` : (conv.incoming ? 'CUSTOMER' : 'AGENT');
                 const timeStr = conv.createdAt || 'Unknown Time';
 
-                // 截断过长的单条对话
-                let bodyText = conv.bodyText || '';
+                // 先清洗冗余内容（HTML、长URL、邮件引用），再截断
+                let bodyText = cleanTextForAi(conv.bodyText || '');
                 if (bodyText.length > NotebookLMReplyProvider.MAX_SINGLE_CONVERSATION_LENGTH) {
                     bodyText = bodyText.substring(0, NotebookLMReplyProvider.MAX_SINGLE_CONVERSATION_LENGTH) + '\n...[内容已截断]';
                 }

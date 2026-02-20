@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect, useCallback, useRef, useMemo, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useEffect, useLayoutEffect, useCallback, useRef, useMemo, ReactNode } from 'react';
 import { serverApi, taskApi } from '../services/serverApi';
 
 /**
@@ -100,12 +100,16 @@ export function createMQTaskContext(config: MQTaskConfig) {
         const queuedTicketIdsRef = useRef(new Set<number>());
         const pollTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
         const isRunningRef = useRef(false);
+        const emptyPollLoggedRef = useRef(false);
+        const scheduleNextRef = useRef<() => void>(() => {});
 
-        // 同步 refs
-        useEffect(() => { processingTasksRef.current = processingTasks; }, [processingTasks]);
-        useEffect(() => { taskProcessorRef.current = taskProcessor; }, [taskProcessor]);
-        useEffect(() => { batchSizeRef.current = batchSize; }, [batchSize]);
-        useEffect(() => { isRunningRef.current = isRunning; }, [isRunning]);
+        // 合并 4 个 ref 同步为 1 个 useLayoutEffect
+        useLayoutEffect(() => {
+            processingTasksRef.current = processingTasks;
+            taskProcessorRef.current = taskProcessor;
+            batchSizeRef.current = batchSize;
+            isRunningRef.current = isRunning;
+        }, [processingTasks, taskProcessor, batchSize, isRunning]);
 
         // 核心轮询逻辑：从服务端 claim 任务
         const pollAndClaim = useCallback(async () => {
@@ -121,7 +125,15 @@ export function createMQTaskContext(config: MQTaskConfig) {
                 if (currentSlots <= 0) return; // 没有空闲槽位，跳过
 
                 const claimed = await taskApi.claimTasks(config.taskType, clientId, currentSlots);
-                if (claimed.length === 0) return;
+                if (claimed.length === 0) {
+                    // 首次空结果时记录日志（避免每次轮询都刷日志）
+                    if (!emptyPollLoggedRef.current) {
+                        emptyPollLoggedRef.current = true;
+                        setLogs(prev => [...prev.slice(-49), `⏳ ${config.taskType} 暂无待领取任务，等待中...`]);
+                    }
+                    return;
+                }
+                emptyPollLoggedRef.current = false; // 有结果时重置
 
                 // 将 claimed TaskInstance 转换为 MQTask 并加入队列
                 for (const task of claimed) {
@@ -160,6 +172,7 @@ export function createMQTaskContext(config: MQTaskConfig) {
                 window.dispatchEvent(new Event('queue-counts-refresh'));
             } catch (err) {
                 console.error(`[Task-${config.taskType}] Claim failed:`, err);
+                setLogs(prev => [...prev.slice(-49), `❌ ${config.taskType} 任务领取失败: ${(err as Error).message}`]);
             }
         }, []);
 
@@ -167,6 +180,7 @@ export function createMQTaskContext(config: MQTaskConfig) {
         const startConsumer = useCallback(() => {
             setIsRunning(true);
             isRunningRef.current = true;
+            emptyPollLoggedRef.current = false;
             setLogs(prev => [...prev, `▶ ${config.taskType} 任务消费启动`]);
             // 立即执行一次 claim
             pollAndClaim();
@@ -278,44 +292,58 @@ export function createMQTaskContext(config: MQTaskConfig) {
                     isProcessingRef.current = false;
                 }
 
-                // 触发重新调度
-                setTaskQueue(prev => prev.length > 0 ? [...prev] : prev);
+                // 触发重新调度（直接调用调度函数，而非通过 setState 强制重渲染）
+                scheduleNextRef.current();
 
                 // 通知侧边栏刷新队列计数
                 window.dispatchEvent(new Event('queue-counts-refresh'));
             }
         }, []);
 
-        // 任务调度器
+        // 任务调度函数（提取为独立函数，供 scheduleNextRef 调用）
+        const scheduleNext = useCallback(() => {
+            setTaskQueue(currentQueue => {
+                if (currentQueue.length === 0) return currentQueue;
+
+                if (config.concurrencyMode === 'parallel') {
+                    const maxConcurrent = batchSizeRef.current;
+                    const slotsAvailable = maxConcurrent - activeCountRef.current;
+                    if (slotsAvailable <= 0) return currentQueue;
+
+                    const count = Math.min(slotsAvailable, currentQueue.length);
+                    const tasksToStart = currentQueue.slice(0, count);
+
+                    for (const task of tasksToStart) {
+                        activeCountRef.current++;
+                        processOneTask(task);
+                    }
+
+                    return currentQueue.slice(count);
+                } else {
+                    if (isProcessingRef.current) return currentQueue;
+                    isProcessingRef.current = true;
+
+                    const currentTask = currentQueue[0];
+                    if (!currentTask) {
+                        isProcessingRef.current = false;
+                        return currentQueue;
+                    }
+                    processOneTask(currentTask);
+                    return currentQueue.slice(1);
+                }
+            });
+        }, [processOneTask]);
+
+        // 保持 scheduleNextRef 始终指向最新的 scheduleNext
+        useLayoutEffect(() => {
+            scheduleNextRef.current = scheduleNext;
+        }, [scheduleNext]);
+
+        // 任务调度器 — 队列变化时触发调度
         useEffect(() => {
             if (taskQueue.length === 0) return;
-
-            if (config.concurrencyMode === 'parallel') {
-                const maxConcurrent = batchSizeRef.current;
-                const slotsAvailable = maxConcurrent - activeCountRef.current;
-                if (slotsAvailable <= 0) return;
-
-                const count = Math.min(slotsAvailable, taskQueue.length);
-                const tasksToStart = taskQueue.slice(0, count);
-                setTaskQueue(prev => prev.slice(count));
-
-                for (const task of tasksToStart) {
-                    activeCountRef.current++;
-                    processOneTask(task);
-                }
-            } else {
-                if (isProcessingRef.current) return;
-                isProcessingRef.current = true;
-
-                const currentTask = taskQueue[0];
-                if (!currentTask) {
-                    isProcessingRef.current = false;
-                    return;
-                }
-                setTaskQueue(prev => prev.slice(1));
-                processOneTask(currentTask);
-            }
-        }, [taskQueue, batchSize, processOneTask]);
+            scheduleNext();
+        }, [taskQueue, batchSize, scheduleNext]);
 
         const clearHistory = useCallback(() => {
             setCompletedHistory([]);

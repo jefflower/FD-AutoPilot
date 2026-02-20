@@ -31,6 +31,19 @@ import type {
   TaskDefinition,
   TaskInstance,
   TaskCompleteRequest,
+  SysRole,
+  SysPermission,
+  SysModule,
+  PermissionOverview,
+  MobileAuditDetail,
+  MobileAuditSubmit,
+  MobileAuditResult,
+  NotifyChannelConfig,
+  OrgSyncConfig,
+  OrgSyncResult,
+  OrgSyncLog,
+  SysDepartment,
+  OAuthStatus,
 } from '../types/server';
 
 // 自定义 API 错误类，携带错误码
@@ -43,17 +56,22 @@ export class ApiError extends Error {
   }
 }
 
-// Server URL（从 localStorage 读取，默认 http://localhost:9988）
-const DEFAULT_SERVER_URL = 'http://47.110.152.25:9988';
-let serverBaseUrl: string = localStorage.getItem('fd_server_url') || DEFAULT_SERVER_URL;
+// Server URL（从 localStorage 读取）
+// 同源部署时（前端由 fd-server 托管）使用相对路径，无需配置
+// 分离部署时，用户在设置页面填写服务端地址
+const DEFAULT_SERVER_URL = '';  // 空字符串 = 相对路径（同源模式）
+let serverBaseUrl: string = localStorage.getItem('fd_server_url') ?? DEFAULT_SERVER_URL;
 
 const getApiBaseUrl = () => `${serverBaseUrl}/api/v1`;
 const getActuatorBaseUrl = () => `${serverBaseUrl}/actuator`;
 
 export const setServerBaseUrl = (url: string) => {
-  // 去掉末尾斜杠
-  serverBaseUrl = url.replace(/\/+$/, '') || DEFAULT_SERVER_URL;
-  localStorage.setItem('fd_server_url', serverBaseUrl);
+  serverBaseUrl = url.replace(/\/+$/, '');
+  if (serverBaseUrl) {
+    localStorage.setItem('fd_server_url', serverBaseUrl);
+  } else {
+    localStorage.removeItem('fd_server_url');
+  }
 };
 
 export const getServerBaseUrl = (): string => serverBaseUrl;
@@ -392,6 +410,11 @@ export const ticketApi = {
   async getQueueCounts(): Promise<QueueCounts> {
     return request<QueueCounts>('/tickets/queue-counts');
   },
+
+  async getAuditToken(ticketId: number): Promise<string> {
+    const data = await request<{ token: string }>(`/tickets/${ticketId}/audit-token`);
+    return data.token;
+  },
 };
 
 // ============ 管理员 API ============
@@ -406,29 +429,29 @@ export const adminApi = {
       });
     }
     const query = searchParams.toString();
-    return request<PaginatedUsers>(`/admin/users${query ? `?${query}` : ''}`);
+    return request<PaginatedUsers>(`/auth/users${query ? `?${query}` : ''}`);
   },
 
   async getPendingUsers(): Promise<User[]> {
-    return request<User[]>('/admin/users/pending');
+    return request<User[]>('/auth/users/pending');
   },
 
   async approveUser(userId: number, action: 'APPROVE' | 'REJECT'): Promise<void> {
-    await request<void>(`/admin/users/${userId}/approve`, {
+    await request<void>(`/auth/users/${userId}/approve`, {
       method: 'POST',
       body: JSON.stringify({ action }),
     });
   },
 
   async updateUserRole(userId: number, role: string): Promise<void> {
-    await request<void>(`/admin/users/${userId}/role`, {
+    await request<void>(`/auth/users/${userId}/role`, {
       method: 'PUT',
       body: JSON.stringify({ role }),
     });
   },
 
   async resetPassword(userId: number, password: string): Promise<void> {
-    await request<void>(`/admin/users/${userId}/reset-password`, {
+    await request<void>(`/auth/users/${userId}/reset-password`, {
       method: 'POST',
       body: JSON.stringify({ password }),
     });
@@ -514,6 +537,60 @@ export const adminApi = {
       body: JSON.stringify({ superPassword }),
     });
   },
+
+  // ---- 用户角色/权限管理 (新 auth 路径) ----
+
+  async getUserRoles(userId: number): Promise<string[]> {
+    return request<string[]>(`/auth/users/${userId}/roles`);
+  },
+
+  async setUserRoles(userId: number, roleCodes: string[]): Promise<void> {
+    await request<void>(`/auth/users/${userId}/roles`, {
+      method: 'PUT',
+      body: JSON.stringify(roleCodes),
+    });
+  },
+
+  async getUserPermissions(userId: number): Promise<string[]> {
+    return request<string[]>(`/auth/users/${userId}/permissions`);
+  },
+};
+
+// ============ RBAC API（角色、权限、模块） ============
+export const rbacApi = {
+  async getRoles(): Promise<SysRole[]> {
+    return request<SysRole[]>('/auth/roles');
+  },
+
+  async getRolePermissions(roleId: number): Promise<string[]> {
+    return request<string[]>(`/auth/roles/${roleId}/permissions`);
+  },
+
+  async setRolePermissions(roleId: number, permissionCodes: string[]): Promise<void> {
+    await request<void>(`/auth/roles/${roleId}/permissions`, {
+      method: 'PUT',
+      body: JSON.stringify(permissionCodes),
+    });
+  },
+
+  async getPermissions(): Promise<SysPermission[]> {
+    return request<SysPermission[]>('/auth/permissions');
+  },
+
+  async getModules(): Promise<SysModule[]> {
+    return request<SysModule[]>('/auth/modules');
+  },
+
+  async toggleModule(moduleId: number, enabled: boolean): Promise<SysModule> {
+    return request<SysModule>(`/auth/modules/${moduleId}/toggle`, {
+      method: 'PUT',
+      body: JSON.stringify({ enabled }),
+    });
+  },
+
+  async getPermissionOverview(): Promise<PermissionOverview> {
+    return request<PermissionOverview>('/auth/permission-overview');
+  },
 };
 
 // ============ Actuator API（日志查看、运行时监控） ============
@@ -590,14 +667,20 @@ export const configApi = {
     });
   },
 
-  async getMqQueues(): Promise<Record<string, string>> {
-    return request<Record<string, string>>('/config/mq-queues');
+  async getNotifyChannel(): Promise<NotifyChannelConfig> {
+    return request<NotifyChannelConfig>('/config/notify-channel');
   },
 
-  async setMqQueues(config: Record<string, string>): Promise<void> {
-    await request<void>('/config/mq-queues', {
+  async setNotifyChannel(config: Partial<NotifyChannelConfig>): Promise<void> {
+    await request<void>('/config/notify-channel', {
       method: 'PUT',
       body: JSON.stringify(config),
+    });
+  },
+
+  async testNotifyChannel(): Promise<{ success: boolean }> {
+    return request<{ success: boolean }>('/config/notify-channel/test', {
+      method: 'POST',
     });
   },
 };
@@ -640,14 +723,14 @@ export const taskApi = {
 
   /** 客户端认领任务 */
   async claimTasks(type: string, clientId: string, limit = 1): Promise<TaskInstance[]> {
-    return request<TaskInstance[]>(`/task-admin/claim?type=${encodeURIComponent(type)}&clientId=${encodeURIComponent(clientId)}&limit=${limit}`, {
+    return request<TaskInstance[]>(`/tasks/claim?type=${encodeURIComponent(type)}&clientId=${encodeURIComponent(clientId)}&limit=${limit}`, {
       method: 'POST',
     });
   },
 
   /** 完成任务 */
   async completeTask(id: number, data: TaskCompleteRequest): Promise<void> {
-    await request<void>(`/task-admin/${id}/complete`, {
+    await request<void>(`/tasks/${id}/complete`, {
       method: 'POST',
       body: JSON.stringify(data),
     });
@@ -655,14 +738,14 @@ export const taskApi = {
 
   /** 释放任务 */
   async releaseTask(id: number, clientId: string): Promise<void> {
-    await request<void>(`/task-admin/${id}/release?clientId=${encodeURIComponent(clientId)}`, {
+    await request<void>(`/tasks/${id}/release?clientId=${encodeURIComponent(clientId)}`, {
       method: 'POST',
     });
   },
 
   /** 获取我的任务 */
   async getMyTasks(clientId: string): Promise<TaskInstance[]> {
-    return request<TaskInstance[]>(`/task-admin/my-tasks?clientId=${encodeURIComponent(clientId)}`);
+    return request<TaskInstance[]>(`/tasks/mine?clientId=${encodeURIComponent(clientId)}`);
   },
 };
 
@@ -679,6 +762,93 @@ export const userSettingsApi = {
   },
   async deleteSettings(appCode: string): Promise<void> {
     await request<void>(`/user/settings/${appCode}`, { method: 'DELETE' });
+  },
+};
+
+// ============ 移动审核 Token API（无需 JWT） ============
+export const auditTokenApi = {
+  async getDetail(token: string): Promise<MobileAuditDetail> {
+    const url = `${serverBaseUrl}/api/v1/audit-token/${encodeURIComponent(token)}`;
+    const response = await fetch(url, {
+      headers: { 'Content-Type': 'application/json' },
+    });
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => null);
+      throw new Error(errorData?.message || `请求失败: ${response.status}`);
+    }
+    const json = await response.json();
+    return json.data ?? json;
+  },
+
+  async submitAudit(token: string, data: MobileAuditSubmit): Promise<MobileAuditResult> {
+    const url = `${serverBaseUrl}/api/v1/audit-token/${encodeURIComponent(token)}/submit`;
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => null);
+      throw new Error(errorData?.message || `提交失败: ${response.status}`);
+    }
+    const json = await response.json();
+    return json.data ?? json;
+  },
+};
+
+// ============ 组织架构同步 API ============
+export const orgSyncApi = {
+  async getConfig(): Promise<OrgSyncConfig> {
+    return request<OrgSyncConfig>('/auth/org-sync/config');
+  },
+
+  async saveConfig(config: OrgSyncConfig): Promise<void> {
+    await request<void>('/auth/org-sync/config', {
+      method: 'PUT',
+      body: JSON.stringify(config),
+    });
+  },
+
+  async triggerSync(): Promise<OrgSyncResult> {
+    return request<OrgSyncResult>('/auth/org-sync/trigger', {
+      method: 'POST',
+    });
+  },
+
+  async testConnection(): Promise<{ success: boolean }> {
+    return request<{ success: boolean }>('/auth/org-sync/test-connection', {
+      method: 'POST',
+    });
+  },
+
+  async getSyncLogs(): Promise<OrgSyncLog[]> {
+    return request<OrgSyncLog[]>('/auth/org-sync/logs');
+  },
+
+  async getDepartments(): Promise<SysDepartment[]> {
+    return request<SysDepartment[]>('/auth/org-sync/departments');
+  },
+};
+
+// ============ OAuth API ============
+export const oauthApi = {
+  async getStatus(): Promise<OAuthStatus> {
+    return request<OAuthStatus>('/auth/oauth/status');
+  },
+
+  async getOAuthUrl(platform: string, redirectUri: string): Promise<string> {
+    const data = await request<{ url: string }>(`/auth/oauth/${platform}/url?redirectUri=${encodeURIComponent(redirectUri)}`);
+    return data.url;
+  },
+
+  async oauthCallback(platform: string, authCode: string): Promise<LoginResponse> {
+    const response = await request<LoginResponse>(`/auth/oauth/${platform}/callback`, {
+      method: 'POST',
+      body: JSON.stringify({ authCode }),
+    });
+    setAuthToken(response.accessToken || response.token);
+    setRefreshToken(response.refreshToken);
+    return response;
   },
 };
 
@@ -724,10 +894,13 @@ export const serverApi = {
   auth: authApi,
   ticket: ticketApi,
   admin: adminApi,
+  rbac: rbacApi,
   actuator: actuatorApi,
   config: configApi,
   task: taskApi,
   userSettings: userSettingsApi,
+  orgSync: orgSyncApi,
+  oauth: oauthApi,
 };
 
 export default serverApi;

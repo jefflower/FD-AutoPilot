@@ -1,0 +1,73 @@
+{
+  "title": "Organization Sync",
+  "subtitle": "Sync departments and users from DingTalk or WeCom",
+  "platform": {
+    "label": "Sync Platform",
+    "dingtalk": "DingTalk",
+    "wecom": "WeCom",
+    "none": "Disabled"
+  },
+  "oauth": {
+    "label": "OAuth Login",
+    "desc": "Allow users to login via DingTalk/WeCom scan"
+  },
+  "defaultRole": {
+    "label": "Default Role for Synced Users",
+    "hint": "Newly synced users will be assigned this role"
+  },
+  "dingtalk": {
+    "appKey": "App Key",
+    "appSecret": "App Secret",
+    "corpId": "Corp ID",
+    "rootDeptId": "Root Dept ID",
+    "rootDeptHint": "Default: 1 (company root)"
+  },
+  "wecom": {
+    "corpId": "Corp ID",
+    "agentId": "Agent ID",
+    "secret": "Secret",
+    "rootDeptId": "Root Dept ID",
+    "rootDeptHint": "Default: 1 (company root)"
+  },
+  "actions": {
+    "saveConfig": "Save Config",
+    "testConnection": "Test Connection",
+    "triggerSync": "Sync Now",
+    "testing": "Testing...",
+    "syncing": "Syncing..."
+  },
+  "result": {
+    "title": "Sync Result",
+    "deptCreated": "Depts Created",
+    "deptUpdated": "Depts Updated",
+    "userCreated": "Users Created",
+    "userUpdated": "Users Updated",
+    "userSkipped": "Users Skipped",
+    "duration": "Duration"
+  },
+  "logs": {
+    "title": "Sync Logs",
+    "noLogs": "No sync records",
+    "trigger": "Triggered By",
+    "time": "Time",
+    "status": "Status",
+    "detail": "Detail"
+  },
+  "departments": {
+    "title": "Department Preview",
+    "noDepts": "No departments, please sync first"
+  },
+  "message": {
+    "saveSuccess": "Config saved",
+    "saveFailed": "Save failed: {{error}}",
+    "testSuccess": "Connection successful",
+    "testFailed": "Connection failed",
+    "syncSuccess": "Sync completed",
+    "syncFailed": "Sync failed: {{error}}"
+  },
+  "status": {
+    "RUNNING": "Running",
+    "SUCCESS": "Success",
+    "FAILED": "Failed"
+  }
+}

@@ -4,6 +4,18 @@
 
 ## 模块概览
 
+### Maven 坐标
+
+```xml
+<dependency>
+    <groupId>com.jefflower</groupId>
+    <artifactId>fd-server-task</artifactId>
+    <version>${project.version}</version>
+</dependency>
+```
+
+**模块性质**: 任务分发模块，被 `fd-server-ticket` 依赖，依赖 `fd-server-auth`（传递获得 common）。
+
 ### 职责边界
 
 task 模块专注于**任务生命周期管理**和**分布式调度**，被设计为未来微服务化的独立服务。
@@ -1183,45 +1195,83 @@ fd-client                Task Module            TicketService
 
 ## 模块依赖
 
-### 依赖树
+### Maven 依赖链
 
 ```
-task (模块级)
-  ├── auth (权限注解: @RequiresPermission)
-  ├── common (通用工具、全局异常)
-  └── Spring Boot 核心
+common ← auth ← task ← ticket ← app
+
+task 模块的依赖:
+  ├─ fd-server-auth (直接依赖，包含权限检查 @RequiresPermission)
+  │  └─ 传递获得: fd-server-common
+  └─ Spring Boot 核心
       ├── spring-data-jpa
-      ├── spring-data-redis (Token 黑名单、缓存）
-      ├── spring-context （TaskScheduler）
-      └── spring-amqp （可选，后续集成 MQ）
+      ├── spring-data-redis (可选)
+      ├── spring-context (TaskScheduler)
+      └── spring-boot-starter-test (仅测试)
+```
+
+### fd-server-task 的 Maven 依赖
+
+```xml
+<!-- task 模块的 pom.xml 依赖声明 -->
+<dependency>
+    <groupId>com.jefflower</groupId>
+    <artifactId>fd-server-auth</artifactId>
+    <version>${project.version}</version>
+</dependency>
+
+<!-- 自动传递获得 fd-server-common 和 auth 的所有依赖 -->
 ```
 
 ### 被依赖的模块
 
 ```
-ticket
-  ├── task (TaskDistributionService)
-  ├── auth (权限检查)
-  └── common
+fd-server-ticket
+  ├─ fd-server-task (直接依赖 TaskDistributionService)
+  │  └─ 传递获得: fd-server-auth + fd-server-common
+  └─ Spring Boot 核心
 ```
 
-## Maven 多模块化建议
+## Maven 多模块现状
 
-当 fd-server 演化为微服务架构时，task 模块可独立为 Maven 子模块。
+当前 fd-server 已采用 Maven 多模块化，task 模块已是独立子模块。
 
-### 推荐 POM 坐标
+### 当前 POM 坐标
 
 ```xml
 <groupId>com.jefflower</groupId>
 <artifactId>fd-server-task</artifactId>
-<version>1.0.0</version>
+<version>${project.version}</version>
 <packaging>jar</packaging>
 
 <name>FD Server - Task Distribution Module</name>
 <description>Multi-client task distribution, scheduling, and execution framework</description>
 ```
 
-### 依赖声明（fd-server-task/pom.xml）
+### 当前依赖声明（fd-server-task/pom.xml）
+
+**task 模块继承 fd-server 的 parent pom**:
+
+```xml
+<parent>
+    <groupId>com.jefflower</groupId>
+    <artifactId>fd-server</artifactId>
+    <version>${project.version}</version>
+    <relativePath>../pom.xml</relativePath>
+</parent>
+
+<dependencies>
+  <!-- 内部依赖 -->
+  <dependency>
+    <groupId>com.jefflower</groupId>
+    <artifactId>fd-server-auth</artifactId>
+    <version>${project.version}</version>
+  </dependency>
+  <!-- 注意: fd-server-common 通过 fd-server-auth 的传递依赖自动获得 -->
+</dependencies>
+```
+
+**早期 pom.xml 格式参考**（单独使用时）:
 
 ```xml
 <dependencies>

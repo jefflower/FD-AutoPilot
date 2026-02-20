@@ -3,7 +3,7 @@
  */
 
 import { useState, useEffect, useCallback } from 'react';
-import { authApi, getAuthToken, setAuthToken, isTokenExpired, ApiError } from '../services/serverApi';
+import { authApi, oauthApi, getAuthToken, setAuthToken, isTokenExpired, ApiError } from '../services/serverApi';
 import type { User, UserRole, LoginRequest, RegisterRequest } from '../types/server';
 
 interface AuthState {
@@ -121,7 +121,7 @@ export function useAuth() {
 
   const register = useCallback(async (data: RegisterRequest) => {
     setState(prev => ({ ...prev, isLoading: true, error: null }));
-    
+
     try {
       await authApi.register(data);
       setState(prev => ({ ...prev, isLoading: false }));
@@ -132,6 +132,55 @@ export function useAuth() {
         isLoading: false,
         error: message,
       }));
+      throw err;
+    }
+  }, []);
+
+  const oauthLogin = useCallback(async (platform: string, authCode: string) => {
+    setState(prev => ({ ...prev, isLoading: true, error: null, errorCode: null }));
+
+    try {
+      const response = await oauthApi.oauthCallback(platform, authCode);
+      const user = response.user;
+
+      if (!user) {
+        throw new Error('OAuth 登录响应缺少用户信息');
+      }
+
+      localStorage.setItem('fd_auth_user', JSON.stringify(user));
+
+      const roles = user.roles || [user.role];
+      const isAdmin = roles.some(r => r === 'ADMIN' || r === 'SUPER_ADMIN');
+
+      setState({
+        token: response.accessToken || response.token,
+        user,
+        isLoggedIn: true,
+        isAdmin,
+        roles,
+        isLoading: false,
+        error: null,
+        errorCode: null,
+      });
+
+      return response;
+    } catch (err) {
+      if (err instanceof ApiError) {
+        setState(prev => ({
+          ...prev,
+          isLoading: false,
+          error: err.message,
+          errorCode: err.code,
+        }));
+      } else {
+        const message = err instanceof Error ? err.message : 'OAuth 登录失败';
+        setState(prev => ({
+          ...prev,
+          isLoading: false,
+          error: message,
+          errorCode: null,
+        }));
+      }
       throw err;
     }
   }, []);
@@ -161,22 +210,6 @@ export function useAuth() {
     window.addEventListener('auth-token-expired', handleTokenExpired);
     return () => window.removeEventListener('auth-token-expired', handleTokenExpired);
   }, [logout]);
-
-  // 定时检查 token 是否过期（每 60 秒），处理使用过程中 token 到期的情况
-  useEffect(() => {
-    if (!state.isLoggedIn) return;
-
-    const checkExpiry = () => {
-      const token = getAuthToken();
-      if (token && isTokenExpired(token)) {
-        console.warn('[useAuth] Token expired during session, logging out...');
-        logout();
-      }
-    };
-
-    const interval = setInterval(checkExpiry, 60_000);
-    return () => clearInterval(interval);
-  }, [state.isLoggedIn, logout]);
 
   const clearError = useCallback(() => {
     setState(prev => ({ ...prev, error: null, errorCode: null }));
@@ -210,6 +243,7 @@ export function useAuth() {
     ...state,
     login,
     register,
+    oauthLogin,
     logout,
     clearError,
     hasRole,

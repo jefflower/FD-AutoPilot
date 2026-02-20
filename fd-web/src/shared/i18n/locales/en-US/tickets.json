@@ -95,6 +95,20 @@
     "saveEditFailed": "Save failed: {{error}}",
     "syncFailed": "Sync translation failed: {{error}}"
   },
+  "admin": {
+    "title": "Admin Operations",
+    "resetQueues": "Reset Queues",
+    "purgeAll": "Purge All Tickets",
+    "purgeConfirmTitle": "Confirm Reset Queues",
+    "purgeWarning": "This will clear all messages from MQ queues and reset in-progress ticket statuses.",
+    "purgeItem1": "Clear all messages in translation, reply, and audit queues",
+    "purgeItem2": "Reset in-progress tickets to pending status",
+    "superPassword": "Super Password",
+    "passwordPlaceholder": "Enter super password",
+    "purgeSuccess": "Purged {{messages}} messages, reset {{tickets}} tickets",
+    "purgeFailed": "Queue reset failed: {{error}}",
+    "confirmPurge": "Confirm Reset"
+  },
   "mq": {
     "translateConfirmTitle": "MQ Translation Confirm",
     "translateConfirmMessage": "Are you sure you want to send an MQ translation request? This will re-queue for processing.",

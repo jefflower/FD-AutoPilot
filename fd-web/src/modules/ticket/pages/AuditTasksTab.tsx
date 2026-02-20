@@ -1,9 +1,17 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, lazy, Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
-import { serverApi } from '../../../shared/services/serverApi';
+import { serverApi, ticketApi } from '../../../shared/services/serverApi';
 import ServerTicketDetail from '../components/ServerTicketDetail';
 import { useMQAudit } from '../../../shared/context/MQAuditContext';
 import type { ServerTicket } from '../../../shared/types/server';
+import TaskStatusBadge from '../components/TaskStatusBadge';
+import ConsumerControlButtons from '../components/ConsumerControlButtons';
+import CompletedTaskCard from '../components/CompletedTaskCard';
+import EmptyStateHint from '../components/EmptyStateHint';
+import LogPanel from '../components/LogPanel';
+import DetailEmptyState from '../components/DetailEmptyState';
+
+const MobilePreviewModal = lazy(() => import('../components/MobilePreviewModal'));
 
 type AuditMode = 'mq' | 'query';
 
@@ -37,6 +45,22 @@ const AuditTasksTab: React.FC = () => {
     // MQ 模式 - 驳回状态
     const [rejectingId, setRejectingId] = useState<number | null>(null);
     const [rejectRemark, setRejectRemark] = useState('');
+
+    // 移动预览
+    const [previewToken, setPreviewToken] = useState<string | null>(null);
+    const [previewLoading, setPreviewLoading] = useState<number | null>(null);
+
+    const handleMobilePreview = useCallback(async (ticketId: number) => {
+        setPreviewLoading(ticketId);
+        try {
+            const token = await ticketApi.getAuditToken(ticketId);
+            setPreviewToken(token);
+        } catch (err) {
+            alert(t('audit.previewFailed', { error: (err as Error).message }));
+        } finally {
+            setPreviewLoading(null);
+        }
+    }, [t]);
 
     // 状态查询模式
     const [queryLoading, setQueryLoading] = useState(false);
@@ -76,6 +100,8 @@ const AuditTasksTab: React.FC = () => {
             const ticket = await serverApi.ticket.getTicketById(ticketId);
             if (!ticket.replies || ticket.replies.length === 0) {
                 alert(t('audit.noReplyContent'));
+                // 无回复内容，自动跳过此审核任务（释放消费者）
+                completeAudit(ticketId, true);
                 return;
             }
             await serverApi.ticket.submitAudit(ticketId, {
@@ -86,6 +112,8 @@ const AuditTasksTab: React.FC = () => {
             setSelectedId(null);
         } catch (err) {
             alert(t('audit.submitFailed', { error: (err as Error).message }));
+            // 错误时也必须释放消费者，否则 Promise 永不 resolve 导致消费者死锁
+            completeAudit(ticketId, false);
         } finally {
             setSubmitting(false);
         }
@@ -98,6 +126,8 @@ const AuditTasksTab: React.FC = () => {
             const ticket = await serverApi.ticket.getTicketById(ticketId);
             if (!ticket.replies || ticket.replies.length === 0) {
                 alert(t('audit.noReplyContent'));
+                // 无回复内容，自动跳过此审核任务（释放消费者）
+                completeAudit(ticketId, true);
                 return;
             }
             await serverApi.ticket.submitAudit(ticketId, {
@@ -111,6 +141,8 @@ const AuditTasksTab: React.FC = () => {
             setSelectedId(null);
         } catch (err) {
             alert(t('audit.rejectFailed', { error: (err as Error).message }));
+            // 错误时也必须释放消费者，否则 Promise 永不 resolve 导致消费者死锁
+            completeAudit(ticketId, false);
         } finally {
             setSubmitting(false);
         }
@@ -248,31 +280,22 @@ const AuditTasksTab: React.FC = () => {
                                     <span className="w-1 h-3 bg-pink-500 rounded-full"></span>
                                     {t('audit.mqTitle')}
                                 </h3>
-                                <div className={`px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-widest ${isRunning
-                                    ? 'bg-pink-500/20 text-pink-400 border border-pink-500/30'
-                                    : 'bg-slate-800 text-slate-500 border border-white/5'
-                                    }`}>
-                                    {isRunning ? t('audit.statusRunning') : t('audit.statusStopped')}
-                                </div>
+                                <TaskStatusBadge
+                                    isActive={isRunning}
+                                    activeLabel={t('audit.statusRunning')}
+                                    inactiveLabel={t('audit.statusStopped')}
+                                    color="pink"
+                                />
                             </div>
 
-                            <div className="flex gap-2">
-                                {!isRunning ? (
-                                    <button
-                                        onClick={() => startConsumer()}
-                                        className="flex-1 h-9 bg-pink-600 hover:bg-pink-500 text-white text-xs font-bold rounded-lg shadow-lg shadow-pink-900/20 transition-all flex items-center justify-center gap-2"
-                                    >
-                                        {t('audit.startConsumer')}
-                                    </button>
-                                ) : (
-                                    <button
-                                        onClick={() => stopConsumer()}
-                                        className="flex-1 h-9 bg-red-500/80 hover:bg-red-500 text-white text-xs font-bold rounded-lg transition-all flex items-center justify-center gap-2"
-                                    >
-                                        {t('audit.stopConsumer')}
-                                    </button>
-                                )}
-                            </div>
+                            <ConsumerControlButtons
+                                isRunning={isRunning}
+                                onStart={startConsumer}
+                                onStop={stopConsumer}
+                                startLabel={t('audit.startConsumer')}
+                                stopLabel={t('audit.stopConsumer')}
+                                color="pink"
+                            />
                         </div>
 
                         {/* MQ 任务列表 */}
@@ -360,6 +383,15 @@ const AuditTasksTab: React.FC = () => {
                                                         <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M6 18L18 6M6 6l12 12" /></svg>
                                                         {t('audit.reject')}
                                                     </button>
+                                                    <button
+                                                        onClick={() => handleMobilePreview(task.ticketId)}
+                                                        disabled={previewLoading === task.ticketId}
+                                                        className="px-2 py-1 bg-blue-600/20 text-blue-400 hover:bg-blue-600/40 disabled:opacity-30 text-[10px] font-bold rounded-lg transition-all flex items-center gap-1 ml-auto"
+                                                        title={t('audit.mobilePreview')}
+                                                    >
+                                                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2" strokeWidth="2" /><circle cx="12" cy="18" r="1" fill="currentColor" /></svg>
+                                                        {previewLoading === task.ticketId ? '...' : t('audit.mobilePreview')}
+                                                    </button>
                                                 </div>
 
                                                 {selectedId === task.ticketId && (
@@ -370,9 +402,7 @@ const AuditTasksTab: React.FC = () => {
                                     })}
 
                                     {processingList.length === 0 && (
-                                        <div className="text-center py-6 text-slate-600 text-[10px] italic border border-dashed border-white/5 rounded-xl">
-                                            {isRunning ? t('audit.waitingForTasks') : t('audit.startToAudit')}
-                                        </div>
+                                        <EmptyStateHint message={isRunning ? t('audit.waitingForTasks') : t('audit.startToAudit')} />
                                     )}
                                 </div>
                             </div>
@@ -385,38 +415,26 @@ const AuditTasksTab: React.FC = () => {
                                 </div>
                                 <div className="space-y-1">
                                     {filteredCompletedHistory.map(task => (
-                                        <button
+                                        <CompletedTaskCard
                                             key={`${task.ticketId}-${task.addedAt}`}
-                                            onClick={() => setSelectedId(task.ticketId)}
-                                            className={`w-full text-left p-2 rounded-lg transition-all border group ${selectedId === task.ticketId
-                                                ? 'bg-green-500/10 border-green-500/30'
-                                                : 'bg-white/5 border-transparent hover:bg-white/10'
-                                                }`}
-                                        >
-                                            <div className="flex items-center justify-between mb-0.5">
-                                                <span className="text-[10px] font-bold text-slate-500 opacity-60 group-hover:opacity-100 transition-opacity">#{task.externalId}</span>
-                                                <span className={`text-[9px] font-black uppercase tracking-tighter ${task.status === 'completed' ? 'text-green-500/50' : 'text-red-500/50'}`}>
-                                                    {task.status === 'completed' ? t('audit.statusDone') : t('audit.statusFailed')}
-                                                </span>
-                                            </div>
-                                            <div className="text-[11px] text-slate-400 truncate group-hover:text-slate-200 transition-colors">{task.subject}</div>
-                                        </button>
+                                            ticketId={task.ticketId}
+                                            externalId={task.externalId}
+                                            subject={task.subject}
+                                            status={task.status}
+                                            statusLabel={task.status === 'completed' ? t('audit.statusDone') : t('audit.statusFailed')}
+                                            isSelected={selectedId === task.ticketId}
+                                            onSelect={setSelectedId}
+                                        />
                                     ))}
                                     {filteredCompletedHistory.length === 0 && (
-                                        <div className="text-center py-6 text-slate-600 text-[10px] italic border border-dashed border-white/5 rounded-xl">{t('audit.noCompleted')}</div>
+                                        <EmptyStateHint message={t('audit.noCompleted')} />
                                     )}
                                 </div>
                             </div>
                         </div>
 
                         {/* 底部日志 */}
-                        {logs.length > 0 && (
-                            <div className="h-16 bg-black/40 border-t border-white/10 overflow-y-auto p-2 text-[9px] font-mono text-slate-500">
-                                {logs.slice(-3).map((log, i) => (
-                                    <div key={i} className="truncate">{log}</div>
-                                ))}
-                            </div>
-                        )}
+                        <LogPanel logs={logs} />
                     </>
                 ) : (
                     /* ==================== 状态查询模式 ==================== */
@@ -498,19 +516,23 @@ const AuditTasksTab: React.FC = () => {
                         onRefresh={handleRefresh}
                     />
                 ) : (
-                    <div className="h-full flex flex-col items-center justify-center text-slate-600 gap-4">
-                        <div className="w-16 h-16 rounded-full bg-slate-800/50 flex items-center justify-center">
-                            <svg className="w-8 h-8 opacity-20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                        </div>
-                        <p className="text-sm font-medium">
-                            {mode === 'mq' ? t('audit.emptyMqHint') : t('audit.emptyQueryHint')}
-                        </p>
-                        <p className="text-xs text-slate-700">
-                            {mode === 'mq' ? t('audit.emptyMqSubHint') : t('audit.emptyQuerySubHint')}
-                        </p>
-                    </div>
+                    <DetailEmptyState
+                        icon={<svg className="w-8 h-8 opacity-20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>}
+                        title={mode === 'mq' ? t('audit.emptyMqHint') : t('audit.emptyQueryHint')}
+                        subtitle={mode === 'mq' ? t('audit.emptyMqSubHint') : t('audit.emptyQuerySubHint')}
+                    />
                 )}
             </div>
+
+            {/* Mobile Preview Modal */}
+            {previewToken && (
+                <Suspense fallback={null}>
+                    <MobilePreviewModal
+                        token={previewToken}
+                        onClose={() => setPreviewToken(null)}
+                    />
+                </Suspense>
+            )}
         </div>
     );
 };

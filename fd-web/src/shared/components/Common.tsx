@@ -27,29 +27,3 @@ export const LangLabel: React.FC<{ lang: string }> = ({ lang }) => {
         </span>
     );
 };
-
-interface NavButtonProps {
-    active: boolean;
-    onClick: () => void;
-    icon: React.ReactNode;
-    label: string;
-    badge?: number;
-}
-
-export const NavButton: React.FC<NavButtonProps> = ({ active, onClick, icon, label, badge }) => (
-    <button
-        onClick={onClick}
-        className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-200 group relative ${active ? 'bg-indigo-500/20 text-indigo-400' : 'text-slate-400 hover:bg-white/5 hover:text-white'
-            }`}
-    >
-        {icon}
-        {badge != null && badge > 0 && (
-            <span className="absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] px-1 bg-red-500 text-white text-[10px] font-bold rounded-full flex items-center justify-center leading-none shadow-lg shadow-red-500/30">
-                {badge}
-            </span>
-        )}
-        <span className="absolute left-14 bg-slate-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10 transition-all pointer-events-none">
-            {label}
-        </span>
-    </button>
-);

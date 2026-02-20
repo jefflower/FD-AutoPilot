@@ -1,0 +1,109 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - 'dev*'
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # ============================================================
+  # Backend: Java 21 + Maven multi-module build & test
+  # ============================================================
+  backend:
+    name: Backend (Java 21)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+          cache-dependency-path: fd-server/pom.xml
+
+      - name: Build & Test
+        working-directory: fd-server
+        run: |
+          mvn clean verify -B \
+            -Dtemurin.jvm=java \
+            -Dtemurin.javac=javac
+
+      - name: Upload test reports
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: backend-test-reports
+          path: fd-server/**/target/surefire-reports/
+          retention-days: 7
+
+      - name: OWASP Dependency Check
+        working-directory: fd-server
+        run: |
+          mvn org.owasp:dependency-check-maven:check -B \
+            -DfailBuildOnCVSS=9
+
+      - name: Upload dependency-check report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dependency-check-report
+          path: fd-server/**/target/dependency-check-report.*
+          retention-days: 14
+
+  # ============================================================
+  # Frontend: Node.js 20 + TypeScript check + Vitest + Build
+  # ============================================================
+  frontend:
+    name: Frontend (Node.js 20)
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: fd-web
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: fd-web/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: ESLint check
+        continue-on-error: true
+        run: npx eslint src/ --max-warnings 0
+
+      - name: TypeScript check
+        run: npx tsc --noEmit
+
+      - name: Run tests
+        run: npm test
+
+      - name: Build
+        run: npm run build
+
+      - name: Upload build artifacts
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: frontend-dist
+          path: fd-web/dist/
+          retention-days: 7

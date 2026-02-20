@@ -61,6 +61,31 @@
     "testFailed": "WeChat Work test message failed to send",
     "testError": "Test failed: {{error}}"
   },
+  "notify": {
+    "title": "Notification Channel",
+    "platform": "Notification Platform",
+    "platformOption": {
+      "wecom": "WeChat Work",
+      "dingtalk": "DingTalk",
+      "none": "Disabled"
+    },
+    "enableNotify": "Enable Notifications",
+    "enableNotifyDesc": "Audit pass/reject, reply push events will be sent to group chat",
+    "webhookUrl": "Webhook URL",
+    "webhookPlaceholder": {
+      "wecom": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=...",
+      "dingtalk": "https://oapi.dingtalk.com/robot/send?access_token=..."
+    },
+    "auditBaseUrl": "Audit Link Domain",
+    "auditBaseUrlHint": "Base URL for mobile audit links, e.g. https://fd.example.com",
+    "saveConfig": "Save Config",
+    "sendTestMessage": "Send Test Message",
+    "sending": "Sending...",
+    "saveSuccess": "Notification channel config saved",
+    "testSuccess": "Test message sent successfully",
+    "testFailed": "Test message failed to send",
+    "testError": "Test failed: {{error}}"
+  },
   "purgeAll": {
     "title": "Data Cleanup",
     "description": "Remove all tickets and associated data (translations, replies, audit records) from database.",
@@ -80,6 +105,37 @@
     "confirm": "Confirm Purge",
     "success": "Purged {{count}} tickets and all associated data",
     "failed": "Data cleanup failed: {{error}}"
+  },
+  "aiConfig": {
+    "title": "AI Engine Configuration",
+    "subtitle": "Configure AI engines for ticket translation and reply",
+    "sections": {
+      "translation": "Translation Engine",
+      "reply": "Reply Engine",
+      "selectors": "DOM Selectors"
+    },
+    "translation": {
+      "provider": "Translation Engine",
+      "providerHint": "Select the AI engine for automatic translation",
+      "geminiCli": "Gemini CLI",
+      "geminiCliDesc": "Use locally installed Gemini CLI tool (desktop only)",
+      "geminiApi": "Gemini REST API",
+      "geminiApiDesc": "Call Gemini via REST API (requires API Key)",
+      "geminiCliPath": "CLI Command",
+      "geminiCliPathPlaceholder": "gemini",
+      "geminiCliPathHint": "Path or command name for the Gemini CLI executable",
+      "geminiModel": "Model",
+      "geminiModelPlaceholder": "gemini-2.0-flash",
+      "geminiModelHint": "Gemini model used for translation",
+      "apiKey": "API Key",
+      "apiKeyPlaceholder": "AIza...",
+      "apiKeyHint": "Gemini API key (securely stored in server user settings)",
+      "apiEndpoint": "API Endpoint",
+      "apiEndpointPlaceholder": "https://generativelanguage.googleapis.com/v1beta",
+      "apiEndpointHint": "Gemini API endpoint, leave empty for default",
+      "saveSuccess": "Translation engine config saved",
+      "saveFailed": "Save failed: {{error}}"
+    }
   },
   "footer": {
     "savedToLocal": "Settings saved to local vault"

@@ -1,6 +1,7 @@
 import { invoke } from '@tauri-apps/api/core';
 import { listen } from '@tauri-apps/api/event';
 import { isTauriEnv } from '../bridge';
+import { userSettingsApi } from '../../shared/services/serverApi';
 
 export interface ShadowResponse {
   text: string;
@@ -24,13 +25,41 @@ export interface ShadowResponse {
  * 前 N-1 段使用简化等待（sendAndWaitAck），最后一段使用完整 observer+relay。
  */
 
+/** NotebookLM DOM 选择器默认值（与 NotebookLM 页面结构对应） */
+const DEFAULT_SELECTORS: Record<string, string> = {
+  INPUT: 'textarea.query-box-input',
+  CHAT_PAIR: '.chat-message-pair',
+  CHAT_PAIR_ALT: '[role="log"] .message-content',
+  BOT_REPLY: '.to-user-container .message-text-content',
+  BOT_REPLY_FALLBACK_1: '.model-response-text',
+  BOT_REPLY_FALLBACK_2: '.response-container',
+  COPY_BUTTON: '.xap-copy-to-clipboard',
+  SEND_BUTTON: 'button.submit-button:not([disabled])',
+  MENU_BUTTON: 'button[aria-label="对话选项"]',
+  CONFIRM_DELETE: 'button.yes-button',
+};
+
+const SELECTORS_APP_CODE = 'notebook-selectors';
+
 /**
- * 从 Rust 后端动态加载 NotebookLM DOM 选择器
- * 选择器通过 Settings 持久化，支持热更新
+ * 加载 NotebookLM DOM 选择器
+ * 优先从 UserAppSettings API 加载自定义配置，失败则使用内置默认值
  */
 async function loadSelectors(): Promise<Record<string, string>> {
-  return await invoke('get_notebook_selectors_cmd') as Record<string, string>;
+  try {
+    const raw = await userSettingsApi.getSettings(SELECTORS_APP_CODE);
+    if (raw) {
+      const custom = JSON.parse(raw) as Record<string, string>;
+      return { ...DEFAULT_SELECTORS, ...custom };
+    }
+  } catch {
+    console.warn('[NotebookShadow] Failed to load custom selectors, using defaults');
+  }
+  return { ...DEFAULT_SELECTORS };
 }
+
+/** 导出默认选择器供 SettingsTab 使用 */
+export { DEFAULT_SELECTORS, SELECTORS_APP_CODE };
 
 // 全局互斥锁状态
 let globalQueryLock: Promise<void> = Promise.resolve();

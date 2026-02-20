@@ -12,6 +12,18 @@
 | **依赖关系** | 不依赖任何其他模块（auth/task/ticket）；被所有其他模块依赖 |
 | **复用范围** | 全应用 + 未来微服务体系 |
 
+### Maven 坐标
+
+```xml
+<dependency>
+    <groupId>com.jefflower</groupId>
+    <artifactId>fd-server-common</artifactId>
+    <version>${project.version}</version>
+</dependency>
+```
+
+**模块性质**: 底层基础设施模块，被 `fd-server-auth`、`fd-server-task`、`fd-server-ticket`、`fd-server-app` 等所有模块依赖。
+
 ### 依赖规则
 
 ```
@@ -399,32 +411,35 @@ if (!matched) {
 
 ## 依赖树
 
-### 后端依赖关系图
+### Maven 模块级依赖图
 
 ```
-            Spring Boot 3.4.1
-                    │
-    ┌───────────────┼───────────────┐
-    │               │               │
-RestTemplateConfig SpaWebConfig  Exception Handler
-    │               │
-    └─────────┬─────┘
-              │
-              ↓
-         [common]  ← 无上层依赖，自洽
-              ↑
-    ┌─────────┼─────────┐
-    │         │         │
-  [auth]   [task]   [ticket]
-    ├─────────┼─────────┤
-    │         │         │
-  Controllers Services  Entities
-    │         │         │
-    └─────────┴─────────┘
-         使用 common
+fd-server (parent POM)
+    │
+    ├─→ fd-server-common          ← 最底层，被所有其他模块依赖
+    │   └─ Spring Boot 核心
+    │
+    ├─→ fd-server-auth
+    │   └─ depends on: fd-server-common
+    │
+    ├─→ fd-server-task
+    │   └─ depends on: fd-server-auth (传递获得 common)
+    │
+    ├─→ fd-server-ticket
+    │   └─ depends on: fd-server-task (传递获得 auth + common)
+    │
+    └─→ fd-server-app (主应用)
+        └─ depends on: fd-server-ticket (传递获得所有子模块)
 ```
 
-### Maven 依赖声明
+### 依赖规则
+
+**common 模块**:
+- `不得` 依赖 auth / task / ticket 等任何业务模块
+- `只能` 依赖 Spring Boot 核心库、Lombok 等第三方库
+- 被所有其他模块依赖（单向依赖）
+
+### fd-server-common 的 pom.xml 依赖
 
 ```xml
 <!-- common 模块的 pom.xml 片段 -->
@@ -435,10 +450,14 @@ RestTemplateConfig SpaWebConfig  Exception Handler
         <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
 
-    <!-- JPA (for RestTemplate bean initialization) -->
     <dependency>
         <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-data-jpa</artifactId>
+        <artifactId>spring-boot-starter-validation</artifactId>
+    </dependency>
+
+    <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-core</artifactId>
     </dependency>
 
     <!-- Lombok -->
@@ -456,53 +475,57 @@ RestTemplateConfig SpaWebConfig  Exception Handler
     </dependency>
 </dependencies>
 
-<!-- 注意：common 不依赖 auth / task / ticket 模块 -->
+<!-- 注意：common 不依赖 fd-server-auth / fd-server-task / fd-server-ticket 等任何业务模块 -->
 ```
 
 ---
 
-## 未来微服务化建议
+## Maven 多模块现状
 
-### Maven 多模块化
+当前 fd-server 已采用 Maven 多模块化架构：
 
-当 fd-server 演化为微服务体系时，建议：
+```
+fd-server/                           # parent POM (packaging: pom)
+├── pom.xml                          # 统一依赖版本管理
+├── fd-server-common/                # Maven 子模块（artifactId: fd-server-common）
+│   ├── src/main/java/com/jefflower/fdserver/common/
+│   ├── src/test/java/com/jefflower/fdserver/common/
+│   └── pom.xml
+├── fd-server-auth/                  # Maven 子模块（depends on common）
+│   ├── src/main/java/com/jefflower/fdserver/auth/
+│   ├── src/test/java/com/jefflower/fdserver/auth/
+│   └── pom.xml
+├── fd-server-task/                  # Maven 子模块（depends on auth）
+│   ├── src/main/java/com/jefflower/fdserver/task/
+│   ├── src/test/java/com/jefflower/fdserver/task/
+│   └── pom.xml
+├── fd-server-ticket/                # Maven 子模块（depends on task）
+│   ├── src/main/java/com/jefflower/fdserver/ticket/
+│   ├── src/test/java/com/jefflower/fdserver/ticket/
+│   └── pom.xml
+└── fd-server-app/                   # 主应用模块（packaging: jar）
+    ├── src/main/java/com/jefflower/fdserver/
+    ├── src/test/java/com/jefflower/fdserver/
+    └── pom.xml
+```
 
-1. **抽取 common 为独立 Maven 模块**：
-   ```
-   fd-server-parent/
-   ├── fd-server-common/           # Maven 模块，artifactId: fd-server-common
-   │   ├── src/main/java/com/jefflower/fdserver/common/
-   │   └── pom.xml
-   ├── fd-server-auth/             # 认证服务
-   │   ├── pom.xml                 # depends on fd-server-common
-   │   └── src/
-   ├── fd-server-ticket/           # 工单服务
-   │   ├── pom.xml                 # depends on fd-server-common, fd-server-auth
-   │   └── src/
-   └── pom.xml (parent)
-   ```
+**关键特性**:
+- 每个模块都有独立的 `src/test/` 目录，测试在模块本地
+- 版本由 parent pom 统一管理（`${project.version}`）
+- 编译顺序自动管理（Maven 根据依赖顺序构建）
 
-2. **Artifact 坐标**：
-   ```xml
-   <groupId>com.jefflower</groupId>
-   <artifactId>fd-server-common</artifactId>
-   <version>${project.version}</version>
-   ```
+### 跨模块发布策略
 
-3. **发布策略**：
-   - 将 `fd-server-common` 发布到私有 Maven 仓库
-   - 其他服务（如 fd-server-auth、fd-server-ticket）依赖此 jar
-   - 版本管理：与 parent pom 同步
+若未来需要将模块发布到私有 Maven 仓库：
 
-4. **跨服务共享**：
-   ```xml
-   <!-- fd-server-auth/pom.xml -->
-   <dependency>
-       <groupId>com.jefflower</groupId>
-       <artifactId>fd-server-common</artifactId>
-       <version>${parent.version}</version>
-   </dependency>
-   ```
+```xml
+<!-- fd-server-auth/pom.xml 中指定依赖版本 -->
+<dependency>
+    <groupId>com.jefflower</groupId>
+    <artifactId>fd-server-common</artifactId>
+    <version>${project.version}</version>  <!-- 继承 parent 的版本 -->
+</dependency>
+```
 
 ### 扩展建议
 

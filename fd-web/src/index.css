@@ -14,6 +14,11 @@ body {
     font-family: 'Inter', system-ui, sans-serif;
 }
 
+/* Mobile safe area for bottom bar (iPhone notch) */
+.safe-area-bottom {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+}
+
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -65,4 +70,33 @@ body {
 @keyframes shimmer {
     0% { transform: translateX(-100%); }
     100% { transform: translateX(100%); }
+}
+
+/* ===== Navigation Animations ===== */
+
+/* Module icon breathing glow — collapsed active state */
+@keyframes moduleGlow {
+    0%, 100% {
+        box-shadow: 0 0 0 1.5px rgba(var(--glow-rgb), 0.35),
+                    0 0 0 0 rgba(var(--glow-rgb), 0);
+    }
+    50% {
+        box-shadow: 0 0 0 1.5px rgba(var(--glow-rgb), 0.55),
+                    0 0 14px 3px rgba(var(--glow-rgb), 0.12);
+    }
+}
+
+.module-icon-glow {
+    animation: moduleGlow 2.4s ease-in-out infinite;
+}
+
+/* Left indicator bar expand/collapse */
+@keyframes indicatorExpand {
+    from { height: 0; opacity: 0; }
+    to   { height: 1.25rem; opacity: 1; }
+}
+
+@keyframes indicatorShrink {
+    from { height: 1.25rem; opacity: 1; }
+    to   { height: 0; opacity: 0; }
 }

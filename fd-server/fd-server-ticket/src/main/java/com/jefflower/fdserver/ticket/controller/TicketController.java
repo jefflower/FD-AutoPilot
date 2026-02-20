@@ -1,0 +1,216 @@
+package com.jefflower.fdserver.ticket.controller;
+
+import com.jefflower.fdserver.auth.security.RequiresPermission;
+import com.jefflower.fdserver.common.dto.ApiResponse;
+import com.jefflower.fdserver.task.enums.TaskStatus;
+import com.jefflower.fdserver.task.service.TaskDistributionService;
+import com.jefflower.fdserver.ticket.dto.*;
+import com.jefflower.fdserver.ticket.entity.*;
+import com.jefflower.fdserver.ticket.enums.TicketStatus;
+import com.jefflower.fdserver.ticket.service.AuditTokenService;
+import com.jefflower.fdserver.ticket.service.TicketService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Sort;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.web.bind.annotation.*;
+
+import java.time.LocalDateTime;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+@Tag(name = "工单", description = "工单查询、翻译、回复、审核、推送等核心业务接口")
+@Slf4j
+@RestController
+@RequestMapping("/api/v1/tickets")
+@RequiredArgsConstructor
+public class TicketController {
+
+    private final TicketService ticketService;
+    private final TaskDistributionService taskDistributionService;
+    private final AuditTokenService auditTokenService;
+
+    /**
+     * 工单列表查询 — 默认返回轻量 DTO（不含 content 等大字段），
+     * 传入 detail=true 时返回完整 Ticket 实体（向后兼容）。
+     * 支持通过 sort_by 和 sort_dir 控制排序。
+     */
+    @Operation(summary = "查询工单列表", description = "分页查询工单列表，支持按状态、主题、有效性、时间范围过滤。默认返回轻量 DTO，detail=true 时返回完整实体")
+    @GetMapping
+    @RequiresPermission("ticket:read")
+    public ResponseEntity<?> queryTickets(
+            @Parameter(description = "工单状态过滤") @RequestParam(required = false) TicketStatus status,
+            @Parameter(description = "Freshdesk 外部 ID") @RequestParam(required = false, name = "external_id") String externalId,
+            @Parameter(description = "主题关键字搜索") @RequestParam(required = false) String subject,
+            @Parameter(description = "有效性标记过滤") @RequestParam(required = false, name = "is_valid") Boolean isValid,
+            @Parameter(description = "创建时间起始") @RequestParam(required = false, name = "created_after") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime createdAfter,
+            @Parameter(description = "创建时间截止") @RequestParam(required = false, name = "created_before") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime createdBefore,
+            @Parameter(description = "页码，从 0 开始") @RequestParam(defaultValue = "0") int page,
+            @Parameter(description = "每页大小") @RequestParam(defaultValue = "20") int size,
+            @Parameter(description = "排序字段") @RequestParam(required = false, name = "sort_by", defaultValue = "updatedAt") String sortBy,
+            @Parameter(description = "排序方向（ASC/DESC）") @RequestParam(required = false, name = "sort_dir", defaultValue = "DESC") String sortDir,
+            @Parameter(description = "是否返回完整实体（默认 false 返回轻量 DTO）") @RequestParam(required = false, defaultValue = "false") boolean detail) {
+
+        Sort sort = Sort.by("ASC".equalsIgnoreCase(sortDir) ? Sort.Order.asc(sortBy) : Sort.Order.desc(sortBy));
+
+        if (detail) {
+            // 向后兼容模式：返回完整 Ticket 实体（含 content、关联数据）
+            Page<Ticket> tickets = ticketService.queryTickets(
+                    status, externalId, subject, isValid, createdAfter, createdBefore, page, size);
+            if (!tickets.isEmpty()) {
+                Ticket first = tickets.getContent().get(0);
+                log.info("Query tickets (detail) page {} size {}: total={}, firstTicket#{} contentLen={}",
+                        page, size, tickets.getTotalElements(), first.getId(),
+                        first.getContent() != null ? first.getContent().length() : 0);
+            }
+            return ResponseEntity.ok(ApiResponse.ok(tickets));
+        }
+
+        // 默认模式：返回轻量 DTO（不含 content、不加载关联数据）
+        Page<TicketListDTO> ticketDTOs = ticketService.queryTicketsAsDTO(
+                status, externalId, subject, isValid, createdAfter, createdBefore, page, size, sort);
+        log.info("Query tickets (DTO) page {} size {}: total={}",
+                page, size, ticketDTOs.getTotalElements());
+        return ResponseEntity.ok(ApiResponse.ok(ticketDTOs));
+    }
+
+    @Operation(summary = "获取工单详情", description = "根据工单 ID 获取完整的工单详情，包含翻译、回复等关联数据")
+    @GetMapping("/{id}")
+    @RequiresPermission("ticket:read")
+    public ResponseEntity<ApiResponse<Ticket>> getTicket(
+            @Parameter(description = "工单 ID") @PathVariable Long id) {
+        Ticket ticket = ticketService.getTicketById(id);
+        log.info("Get ticket #{} response size: subjectLen={}, contentLen={}",
+                id,
+                ticket.getSubject() != null ? ticket.getSubject().length() : 0,
+                ticket.getContent() != null ? ticket.getContent().length() : 0);
+        return ResponseEntity.ok(ApiResponse.ok(ticket));
+    }
+
+    @Operation(summary = "提交翻译结果", description = "为指定工单上报翻译结果，包含目标语言、翻译后的标题和内容")
+    @PostMapping("/{id}/translation")
+    @RequiresPermission("ticket:translate")
+    public ResponseEntity<ApiResponse<TicketTranslation>> submitTranslation(
+            @Parameter(description = "工单 ID") @PathVariable Long id,
+            @Valid @RequestBody TranslationRequest request) {
+        TicketTranslation translation = ticketService.submitTranslation(id, request);
+        return ResponseEntity.ok(ApiResponse.ok("翻译上报成功", translation));
+    }
+
+    @Operation(summary = "提交回复", description = "为指定工单上报回复内容，包含中文回复和目标语言回复")
+    @PostMapping("/{id}/reply")
+    @RequiresPermission("ticket:reply")
+    public ResponseEntity<ApiResponse<TicketReply>> submitReply(
+            @Parameter(description = "工单 ID") @PathVariable Long id,
+            @RequestBody ReplyRequest request) {
+        TicketReply reply = ticketService.submitReply(id, request);
+        return ResponseEntity.ok(ApiResponse.ok("回复上报成功", reply));
+    }
+
+    @Operation(summary = "提交审核结果", description = "对指定工单的回复进行审核（通过或驳回），驳回时需填写审核意见")
+    @PostMapping("/{id}/audit")
+    @RequiresPermission("ticket:audit")
+    public ResponseEntity<ApiResponse<TicketAudit>> submitAudit(
+            @Parameter(description = "工单 ID") @PathVariable Long id,
+            @Valid @RequestBody AuditRequest request,
+            Authentication authentication) {
+        Long auditorId = (Long) authentication.getDetails();
+        TicketAudit audit = ticketService.submitAudit(id, request, auditorId);
+        return ResponseEntity.ok(ApiResponse.ok("审核提交成功", audit));
+    }
+
+    @Operation(summary = "更新回复", description = "更新指定工单的指定回复内容")
+    @PutMapping("/{id}/reply/{replyId}")
+    @RequiresPermission("ticket:reply")
+    public ResponseEntity<ApiResponse<TicketReply>> updateReply(
+            @Parameter(description = "工单 ID") @PathVariable Long id,
+            @Parameter(description = "回复 ID") @PathVariable Long replyId,
+            @RequestBody ReplyRequest request) {
+        TicketReply reply = ticketService.updateReply(id, replyId, request);
+        return ResponseEntity.ok(ApiResponse.ok("回复更新成功", reply));
+    }
+
+    @Operation(summary = "跳过回复", description = "跳过指定工单的回复环节，直接标记为完成")
+    @PostMapping("/{id}/skip-reply")
+    @RequiresPermission("ticket:manage")
+    public ResponseEntity<ApiResponse<Void>> skipReply(
+            @Parameter(description = "工单 ID") @PathVariable Long id) {
+        ticketService.skipReply(id);
+        return ResponseEntity.ok(ApiResponse.ok("回复已跳过，工单标记完成", null));
+    }
+
+    @Operation(summary = "触发 AI 翻译", description = "手动触发指定工单的 AI 翻译任务")
+    @PostMapping("/{id}/ai-translate")
+    @RequiresPermission("ticket:translate")
+    public ResponseEntity<ApiResponse<Void>> triggerAiTranslation(
+            @Parameter(description = "工单 ID") @PathVariable Long id) {
+        ticketService.triggerAiTranslation(id);
+        return ResponseEntity.ok(ApiResponse.ok("AI翻译任务已触发", null));
+    }
+
+    @Operation(summary = "触发 AI 回复", description = "手动触发指定工单的 AI 回复生成任务")
+    @PostMapping("/{id}/ai-reply")
+    @RequiresPermission("ticket:reply")
+    public ResponseEntity<ApiResponse<Void>> triggerAiReply(
+            @Parameter(description = "工单 ID") @PathVariable Long id) {
+        ticketService.triggerAiReply(id);
+        return ResponseEntity.ok(ApiResponse.ok("AI回复任务已触发", null));
+    }
+
+    @Operation(summary = "推送回复到 Freshdesk", description = "将指定已审核通过（APPROVED）工单的回复推送到 Freshdesk")
+    @PostMapping("/{id}/push-reply")
+    @RequiresPermission("ticket:push")
+    public ResponseEntity<ApiResponse<Void>> pushApprovedReply(
+            @Parameter(description = "工单 ID") @PathVariable Long id) {
+        ticketService.pushApprovedReply(id);
+        return ResponseEntity.ok(ApiResponse.ok("回复已推送到 Freshdesk", null));
+    }
+
+    @Operation(summary = "批量推送回复", description = "批量将多个已审核通过（APPROVED）工单的回复推送到 Freshdesk")
+    @PostMapping("/batch-push")
+    @RequiresPermission("ticket:push")
+    public ResponseEntity<ApiResponse<Integer>> batchPushReplies(
+            @RequestBody java.util.List<Long> ticketIds) {
+        int count = ticketService.batchPushApprovedReplies(ticketIds);
+        return ResponseEntity.ok(ApiResponse.ok("批量推送完成", count));
+    }
+
+    @Operation(summary = "获取队列计数", description = "获取翻译、回复、审核各队列中待处理和已领取的任务数量")
+    @GetMapping("/queue-counts")
+    @RequiresPermission("ticket:read")
+    public ResponseEntity<ApiResponse<Map<String, Long>>> getQueueCounts() {
+        List<TaskStatus> pendingStatuses = List.of(TaskStatus.PENDING, TaskStatus.CLAIMED);
+        Map<String, Long> counts = new LinkedHashMap<>();
+        counts.put("translation", taskDistributionService.countByTypeAndStatuses("ticket.translate", pendingStatuses));
+        counts.put("reply", taskDistributionService.countByTypeAndStatuses("ticket.reply", pendingStatuses));
+        counts.put("audit", taskDistributionService.countByTypeAndStatuses("ticket.audit", pendingStatuses));
+        return ResponseEntity.ok(ApiResponse.ok(counts));
+    }
+
+    @Operation(summary = "更新工单有效性", description = "标记工单的知识库有效性（用于数据导出和筛选）")
+    @PostMapping("/{id}/valid")
+    @RequiresPermission("ticket:manage")
+    public ResponseEntity<ApiResponse<Ticket>> updateValidity(
+            @Parameter(description = "工单 ID") @PathVariable Long id,
+            @RequestBody ValidRequest request) {
+        Ticket ticket = ticketService.updateValidity(id, request.getIsValid());
+        return ResponseEntity.ok(ApiResponse.ok("有效性更新成功", ticket));
+    }
+
+    @Operation(summary = "获取工单的审核 Token", description = "获取或创建指定工单的审核 Token，供桌面端预览移动审核页面使用")
+    @GetMapping("/{id}/audit-token")
+    @RequiresPermission("ticket:audit")
+    public ResponseEntity<ApiResponse<Map<String, String>>> getAuditToken(
+            @Parameter(description = "工单 ID") @PathVariable Long id) {
+        String token = auditTokenService.getOrCreateToken(id);
+        return ResponseEntity.ok(ApiResponse.ok(Map.of("token", token)));
+    }
+}

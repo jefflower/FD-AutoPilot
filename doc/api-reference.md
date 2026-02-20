@@ -37,6 +37,36 @@
 ```
 Note: New users are created with status `PENDING`. They cannot login until approved by an admin.
 
+## Mobile Audit
+
+### Get Ticket Audit Detail (Mobile)
+`GET /api/v1/audit-token/{token}`
+
+**Authentication:** 无需 JWT，通过 Token 直接认证。
+
+**Description:** 移动端通过审核 Token 获取工单审核详情（用于分享给第三方审核员）。
+
+**Response:** `ApiResponse<AuditDetail>` — 包含工单信息、翻译记录、待审核回复等。
+
+### Submit Mobile Audit Result
+`POST /api/v1/audit-token/{token}/submit`
+
+**Authentication:** 无需 JWT，通过 Token 直接认证。
+
+**Request Body:**
+```json
+{
+  "auditResult": "PASS",
+  "auditRemark": "审核通过"
+}
+```
+
+**Effect:**
+- `PASS`：工单转换到 `APPROVED` 或 `COMPLETED`（根据系统自动推送配置）
+- `REJECT`：工单转换回 `PENDING_REPLY`，保存审核意见
+
+**Response:** `ApiResponse<Void>` — 审核结果已保存
+
 ## Tickets
 
 ### List Tickets
@@ -158,6 +188,17 @@ Note: New users are created with status `PENDING`. They cannot login until appro
 }
 ```
 **Permission:** 仅限 ADMIN 角色。用于标记工单是否在知识库中有效使用。
+
+### Get/Generate Audit Token
+`GET /api/v1/tickets/{id}/audit-token`
+
+**Description:** 获取或生成指定工单的审核 Token，用于分享给第三方审核员（移动端）。生成的 Token 可通过 `/api/v1/audit-token/{token}` 端点访问工单详情和提交审核结果。
+
+**Permission:** 需 `ticket:audit` 权限。
+
+**Response:** `ApiResponse<{ token: string, expiresAt: ISO8601 datetime, auditUrl: string }>`
+
+**Note:** 每次调用会重新生成新 Token，之前的 Token 作废。Token 有效期通常为 24 小时。
 
 ## Sync Management
 
@@ -419,6 +460,57 @@ Note: New users are created with status `PENDING`. They cannot login until appro
 
 **Response:** `ApiResponse<{ success: boolean }>`
 
+### Get Notification Channel Config
+`GET /api/v1/config/notify-channel`
+
+**Description:** 获取所有已配置的通知渠道设置（邮件、企业微信、钉钉等）。
+
+**Response:** `ApiResponse<NotifyChannelConfig>` — 包含各通知渠道的启用状态和配置参数。
+
+### Set Notification Channel Config
+`PUT /api/v1/config/notify-channel`
+
+**Request Body:**
+```json
+{
+  "email": {
+    "enabled": true,
+    "smtpServer": "smtp.qq.com",
+    "smtpPort": 587,
+    "fromAddress": "noreply@example.com"
+  },
+  "wecomWebhook": {
+    "enabled": true,
+    "url": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=..."
+  },
+  "dingding": {
+    "enabled": false,
+    "webhook": "https://oapi.dingtalk.com/robot/send?access_token=..."
+  }
+}
+```
+
+**Permission:** 仅限 ADMIN 角色。
+
+**Response:** `ApiResponse<NotifyChannelConfig>` — 返回保存后的配置
+
+### Test Notification Channel
+`POST /api/v1/config/notify-channel/test`
+
+**Request Body:**
+```json
+{
+  "channel": "wecom",
+  "recipient": "user@example.com"
+}
+```
+
+**Description:** 发送测试消息到指定通知渠道，验证配置正确性。
+
+**Permission:** 仅限 ADMIN 角色。
+
+**Response:** `ApiResponse<{ success: boolean, message: string }>`
+
 ## Task Management
 
 ### Claim Task
@@ -565,3 +657,278 @@ Freshdesk webhook 原始事件负载（JSON 格式）。系统自动处理工单
 **Response:** `{ "status": "received" }`
 
 **Note:** 该端点在系统初始化时需在 Freshdesk 管理后台配置 Webhook URL。
+
+## OAuth 免密登录与组织架构同步
+
+### OAuth 登录状态查询
+`GET /api/v1/auth/oauth/status`
+
+获取 OAuth 登录启用状态及支持的平台列表。
+
+**Response:**
+```json
+{
+  "code": 0,
+  "message": "success",
+  "data": {
+    "oauthEnabled": true,
+    "platforms": [
+      {
+        "name": "dingtalk",
+        "enabled": true,
+        "configured": true
+      },
+      {
+        "name": "wecom",
+        "enabled": false,
+        "configured": true
+      }
+    ]
+  }
+}
+```
+
+**Authentication:** 无需认证
+
+---
+
+### 获取 OAuth 登录 URL
+`GET /api/v1/auth/oauth/{platform}/url?redirectUri=xxx`
+
+**Path Parameters:**
+- `platform: string` — 平台（dingtalk / wecom）
+
+**Query Parameters:**
+- `redirectUri: string` — 登录成功后的重定向 URI
+
+**Response:**
+```json
+{
+  "code": 0,
+  "message": "success",
+  "data": {
+    "authorizationUrl": "https://login.dingtalk.com/oauth2/auth?...",
+    "state": "random-state-value"
+  }
+}
+```
+
+**Authentication:** 无需认证
+
+---
+
+### 处理 OAuth 登录回调
+`POST /api/v1/auth/oauth/{platform}/callback`
+
+**Path Parameters:**
+- `platform: string` — 平台（dingtalk / wecom）
+
+**Request Body:**
+```json
+{
+  "code": "auth-code-from-platform",
+  "state": "random-state-value"
+}
+```
+
+**Response:**
+```json
+{
+  "code": 0,
+  "message": "success",
+  "data": {
+    "accessToken": "eyJhbGc...",
+    "refreshToken": "eyJhbGc...",
+    "expiresIn": 3600,
+    "user": {
+      "id": 1,
+      "username": "dingtalk_user_123",
+      "displayName": "张三",
+      "avatar": "https://...",
+      "dingtalkUserId": "ext-123456"
+    }
+  }
+}
+```
+
+**Errors:**
+- `400` OAUTH_FAILED: OAuth 认证失败
+- `404` OAUTH_USER_NOT_FOUND: 用户不存在
+
+**Authentication:** 无需认证
+
+---
+
+### 获取组织架构同步配置
+`GET /api/v1/auth/org-sync/config`
+
+**Response:**
+```json
+{
+  "code": 0,
+  "message": "success",
+  "data": {
+    "platform": "dingtalk",
+    "enabled": true,
+    "lastSyncTime": "2026-02-16T10:00:00Z",
+    "lastSyncStatus": "SUCCESS",
+    "deptCount": 15,
+    "userCount": 200
+  }
+}
+```
+
+**Permission:** `org:manage`
+
+---
+
+### 更新组织架构同步配置
+`PUT /api/v1/auth/org-sync/config`
+
+**Request Body:**
+```json
+{
+  "platform": "dingtalk",
+  "enabled": true,
+  "dingtalkCorpId": "xxx",
+  "dingtalkCorpSecret": "xxx"
+}
+```
+
+**Response:**
+```json
+{
+  "code": 0,
+  "message": "success",
+  "data": null
+}
+```
+
+**Permission:** `org:manage`
+
+---
+
+### 手动触发组织架构同步
+`POST /api/v1/auth/org-sync/trigger`
+
+**Response:**
+```json
+{
+  "code": 0,
+  "message": "success",
+  "data": {
+    "syncId": 123,
+    "startTime": "2026-02-16T10:00:00Z",
+    "status": "RUNNING"
+  }
+}
+```
+
+**Permission:** `org:manage`
+
+---
+
+### 测试组织架构连接
+`POST /api/v1/auth/org-sync/test-connection`
+
+**Request Body:**
+```json
+{
+  "platform": "dingtalk",
+  "corpId": "xxx",
+  "corpSecret": "xxx"
+}
+```
+
+**Response:**
+```json
+{
+  "code": 0,
+  "message": "success",
+  "data": {
+    "connected": true,
+    "message": "连接成功"
+  }
+}
+```
+
+**Permission:** `org:manage`
+
+---
+
+### 获取组织架构同步日志
+`GET /api/v1/auth/org-sync/logs?page=0&size=20`
+
+**Query Parameters:**
+- `page: int` — 页码（默认 0）
+- `size: int` — 页大小（默认 20）
+
+**Response:**
+```json
+{
+  "code": 0,
+  "message": "success",
+  "data": {
+    "content": [
+      {
+        "id": 1,
+        "platform": "dingtalk",
+        "triggerUser": "admin",
+        "startTime": "2026-02-16T10:00:00Z",
+        "endTime": "2026-02-16T10:05:00Z",
+        "deptCreated": 5,
+        "deptUpdated": 3,
+        "userCreated": 20,
+        "userUpdated": 15,
+        "userSkipped": 2,
+        "status": "SUCCESS",
+        "errorMessage": null
+      }
+    ],
+    "totalElements": 50,
+    "totalPages": 3,
+    "currentPage": 0,
+    "pageSize": 20
+  }
+}
+```
+
+**Permission:** `org:manage`
+
+---
+
+### 获取同步的部门列表
+`GET /api/v1/auth/org-sync/departments?page=0&size=20&platform=dingtalk`
+
+**Query Parameters:**
+- `page: int` — 页码
+- `size: int` — 页大小
+- `platform: string` — 平台过滤（dingtalk/wecom）
+
+**Response:**
+```json
+{
+  "code": 0,
+  "message": "success",
+  "data": {
+    "content": [
+      {
+        "id": 1,
+        "name": "总部",
+        "parentId": null,
+        "externalId": "EXT-001",
+        "platform": "dingtalk",
+        "path": "/总部",
+        "sortOrder": 1,
+        "createdAt": "2026-02-16T10:00:00Z"
+      }
+    ],
+    "totalElements": 15,
+    "totalPages": 1,
+    "currentPage": 0,
+    "pageSize": 20
+  }
+}
+```
+
+**Permission:** `org:read`

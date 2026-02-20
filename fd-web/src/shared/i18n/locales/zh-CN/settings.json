@@ -61,6 +61,31 @@
     "testFailed": "企业微信测试消息发送失败",
     "testError": "测试失败: {{error}}"
   },
+  "notify": {
+    "title": "通知渠道",
+    "platform": "通知平台",
+    "platformOption": {
+      "wecom": "企业微信",
+      "dingtalk": "钉钉",
+      "none": "关闭通知"
+    },
+    "enableNotify": "启用通知",
+    "enableNotifyDesc": "审核通过/驳回、回复推送等事件将发送通知到群",
+    "webhookUrl": "Webhook URL",
+    "webhookPlaceholder": {
+      "wecom": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=...",
+      "dingtalk": "https://oapi.dingtalk.com/robot/send?access_token=..."
+    },
+    "auditBaseUrl": "审核链接域名",
+    "auditBaseUrlHint": "移动端审核链接的基础 URL，如 https://fd.example.com",
+    "saveConfig": "保存配置",
+    "sendTestMessage": "发送测试消息",
+    "sending": "发送中...",
+    "saveSuccess": "通知渠道配置已保存",
+    "testSuccess": "测试消息发送成功",
+    "testFailed": "测试消息发送失败",
+    "testError": "测试失败: {{error}}"
+  },
   "purgeAll": {
     "title": "数据清理",
     "description": "清除数据库中所有工单及其关联数据（翻译、回复、审核记录）。",
@@ -80,6 +105,37 @@
     "confirm": "确认清除",
     "success": "已清除 {{count}} 个工单及所有关联数据",
     "failed": "数据清理失败：{{error}}"
+  },
+  "aiConfig": {
+    "title": "AI 引擎配置",
+    "subtitle": "配置工单翻译和回复所使用的 AI 引擎",
+    "sections": {
+      "translation": "翻译引擎",
+      "reply": "回复引擎",
+      "selectors": "DOM 选择器"
+    },
+    "translation": {
+      "provider": "翻译引擎",
+      "providerHint": "选择用于自动翻译的 AI 引擎",
+      "geminiCli": "Gemini CLI",
+      "geminiCliDesc": "使用本地安装的 Gemini CLI 工具（仅桌面模式）",
+      "geminiApi": "Gemini REST API",
+      "geminiApiDesc": "通过 REST API 直接调用 Gemini（需要 API Key）",
+      "geminiCliPath": "CLI 命令",
+      "geminiCliPathPlaceholder": "gemini",
+      "geminiCliPathHint": "Gemini CLI 可执行文件路径或命令名",
+      "geminiModel": "模型",
+      "geminiModelPlaceholder": "gemini-2.0-flash",
+      "geminiModelHint": "翻译使用的 Gemini 模型",
+      "apiKey": "API Key",
+      "apiKeyPlaceholder": "AIza...",
+      "apiKeyHint": "Gemini API 密钥（安全存储在服务端用户设置中）",
+      "apiEndpoint": "API 端点",
+      "apiEndpointPlaceholder": "https://generativelanguage.googleapis.com/v1beta",
+      "apiEndpointHint": "Gemini API 端点，留空使用默认地址",
+      "saveSuccess": "翻译引擎配置已保存",
+      "saveFailed": "保存失败: {{error}}"
+    }
   },
   "footer": {
     "savedToLocal": "设置已保存到本地"

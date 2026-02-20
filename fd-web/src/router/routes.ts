@@ -17,7 +17,7 @@ export const routes: RouteConfig[] = [
 
   // Admin 模块
   { path: '/admin/users', label: '用户管理', icon: 'users', module: 'auth', requiredPermission: 'user:read' },
-  { path: '/admin/sync', label: '同步管理', icon: 'refresh-cw', module: 'system', requiredPermission: 'sync:manage' },
+  { path: '/admin/sync', label: '同步管理', icon: 'refresh-cw', module: 'ticket', requiredPermission: 'sync:manage' },
   { path: '/admin/knowledge', label: '知识库', icon: 'book-open', module: 'system', requiredPermission: 'knowledge:read' },
   { path: '/admin/database', label: '数据库', icon: 'database', module: 'system', requiredPermission: 'database:query' },
   { path: '/admin/logs', label: '服务日志', icon: 'file-text', module: 'system', requiredPermission: 'sync:read' },

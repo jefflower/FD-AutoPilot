@@ -15,17 +15,32 @@
     "table": {
       "id": "ID",
       "username": "Username",
+      "displayName": "Display Name",
+      "department": "Department",
+      "source": "Source",
       "role": "Role",
       "status": "Status",
       "createdAt": "Created At",
       "actions": "Actions"
     },
+    "source": {
+      "local": "Local",
+      "dingtalk": "DingTalk",
+      "wecom": "WeCom"
+    },
+    "filter": {
+      "allSources": "All Sources",
+      "allDepts": "All Departments"
+    },
+    "noDepartment": "—",
     "action": {
       "approve": "Approve",
       "reject": "Reject",
       "reApprove": "Re-approve",
       "demoteToUser": "Demote to User",
       "promoteToAdmin": "Promote to Admin",
+      "manageRoles": "Roles",
+      "viewPermissions": "Perms",
       "resetPassword": "Reset Password"
     },
     "confirmDialog": {
@@ -34,6 +49,18 @@
       "confirmReject": "Are you sure to reject user \"{{username}}\"? The user will not be able to log in.",
       "confirmRoleChange": "Are you sure to change the role of user \"{{username}}\" to {{role}}?"
     },
+    "roleManage": {
+      "title": "Manage Roles - {{username}}",
+      "loadFailed": "Failed to load role info",
+      "saveSuccess": "Roles updated for {{username}}",
+      "builtIn": "Built-in",
+      "atLeastOne": "Please select at least one role"
+    },
+    "permView": {
+      "title": "Permissions - {{username}}",
+      "loadFailed": "Failed to load permissions",
+      "noPermissions": "This user has no permissions"
+    },
     "resetPasswordDialog": {
       "title": "Reset Password - {{username}}",
       "placeholder": "Enter new password (at least 6 characters)",
@@ -41,6 +68,33 @@
       "processing": "Processing...",
       "reset": "Reset"
     }
+  },
+  "roles": {
+    "title": "Role & Permission Management",
+    "roleList": "Roles",
+    "permissionConfig": "Permission Config",
+    "builtIn": "Built-in",
+    "loadFailed": "Failed to load",
+    "selectRole": "Select a role from the left to manage its permissions",
+    "superAdminHint": "Super Admin has all permissions automatically",
+    "permissionsOf": "Permissions of {{name}}",
+    "selectAll": "Select All",
+    "savePermissions": "Save Permissions",
+    "saving": "Saving...",
+    "saveSuccess": "Permissions saved",
+    "saveFailed": "Failed to save permissions",
+    "permCount": "{{selected}}/{{total}}",
+    "overview": "Overview",
+    "permConfig": "Permission Config",
+    "moduleEnabled": "Enabled",
+    "moduleDisabled": "Disabled",
+    "toggleModuleFailed": "Failed to toggle module",
+    "builtInCannotToggle": "Built-in module cannot be disabled",
+    "moduleToggleSuccess": "Module status updated",
+    "overviewStats": "{{modules}} modules, {{permissions}} permissions, {{roles}} roles",
+    "roleColumn": "Role",
+    "permissionColumn": "Permission",
+    "coverageRate": "Coverage"
   },
   "sync": {
     "title": "Sync Management",

@@ -63,7 +63,9 @@
     "emptyMqHint": "Click a ticket to view full details",
     "emptyMqSubHint": "Quick audit from the left panel",
     "emptyQueryHint": "Select a ticket from the left to audit",
-    "emptyQuerySubHint": "Batch pass is supported"
+    "emptyQuerySubHint": "Batch pass is supported",
+    "mobilePreview": "Mobile Preview",
+    "previewFailed": "Failed to get preview link: {{error}}"
   },
   "approved": {
     "title": "Push Queue",

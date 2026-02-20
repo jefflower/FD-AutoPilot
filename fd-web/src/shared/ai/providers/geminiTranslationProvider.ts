@@ -1,6 +1,7 @@
 import { isTauriEnv, tauriInvoke } from '../../../tauri/bridge';
 import { AiTranslationProvider, TranslationInput, TranslationOutput } from '../types';
 import { AGENT_MAP } from '../../constants/agentMap';
+import { cleanTextForAi } from '../../utils/contentCleaner';
 
 /**
  * Gemini CLI 翻译 Provider
@@ -31,14 +32,14 @@ export class GeminiTranslationProvider implements AiTranslationProvider {
             id: ticket.id,
             externalId: ticket.externalId,
             subject: ticket.subject,
-            descriptionText: parsedData?.description || '',
+            descriptionText: cleanTextForAi(parsedData?.description || ''),
             content: ticket.content,
             status: ticket.status,
             priority: 0,
             createdAt: ticket.createdAt,
             conversations: (parsedData?.conversations || []).map((c: any) => ({
                 id: c.id,
-                body_text: c.bodyText,
+                body_text: cleanTextForAi(c.bodyText || ''),
                 user_id: c.userId,
                 created_at: c.createdAt,
                 incoming: (c.incoming !== false && !AGENT_MAP[String(c.userId)]),
@@ -65,6 +66,15 @@ export class GeminiTranslationProvider implements AiTranslationProvider {
             incoming: c.incoming,
             isPrivate: c.private || c.is_private
         })) || [];
+
+        // 验证翻译完整性：如果原始工单有 conversations，翻译结果也必须有
+        const originalConversations = parsedData?.conversations || [];
+        if (originalConversations.length > 0 && translatedConversations.length === 0) {
+            throw new Error(
+                `[GeminiTranslationProvider] 翻译不完整：原始工单有 ${originalConversations.length} 条对话，` +
+                `但 Gemini 返回的翻译结果中 conversations 为空。ticketId=${ticket.id}`
+            );
+        }
 
         const translatedContent = JSON.stringify({
             description: result.descriptionText || result.description_text || '',

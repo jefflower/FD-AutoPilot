@@ -4,6 +4,18 @@ ticket 模块是 FD-AutoPilot 系统的核心业务引擎，管理工单的**完
 
 ## 模块概览
 
+### Maven 坐标
+
+```xml
+<dependency>
+    <groupId>com.jefflower</groupId>
+    <artifactId>fd-server-ticket</artifactId>
+    <version>${project.version}</version>
+</dependency>
+```
+
+**模块性质**: 核心业务模块，依赖 `fd-server-task`（间接依赖 auth 和 common）。集成 Freshdesk API、RabbitMQ、企业微信等外部服务。
+
 ### 职责范围
 
 | 职责 | 说明 |
@@ -19,22 +31,50 @@ ticket 模块是 FD-AutoPilot 系统的核心业务引擎，管理工单的**完
 | **系统配置** | 自动推送开关、企业微信 Webhook、MQ 队列配置 |
 | **数据库查询** | 管理员 SQL 查询（仅读、超时保护） |
 
-### 对其他模块的依赖
+### Maven 依赖链
 
 ```
-ticket ← auth（权限检查、获取当前用户、用户应用设置）
-ticket ← task（创建/完成任务实例、任务分发）
-ticket ← common（工具、异常、API 响应）
+common ← auth ← task ← ticket ← app
+
+ticket 模块的依赖:
+  ├─ fd-server-task (直接依赖，TaskDistributionService + 任务定义)
+  │  └─ 传递获得: fd-server-auth + fd-server-common
+  └─ Spring Boot 核心
+      ├── spring-boot-starter-amqp (RabbitMQ)
+      ├── spring-boot-starter-web (REST API)
+      ├── spring-boot-starter-data-jpa (数据库)
+      ├── spring-boot-starter-scheduling (定时任务)
+      └── spring-boot-starter-test (仅测试)
+```
+
+### fd-server-ticket 的 Maven 依赖
+
+```xml
+<!-- ticket 模块的 pom.xml 依赖声明 -->
+<dependency>
+    <groupId>com.jefflower</groupId>
+    <artifactId>fd-server-task</artifactId>
+    <version>${project.version}</version>
+</dependency>
+
+<!-- 自动传递获得 fd-server-auth 和 fd-server-common 的所有依赖 -->
+
+<!-- ticket 模块特有依赖 -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-amqp</artifactId>
+</dependency>
 ```
 
 **允许的依赖**：
-- `auth` 模块的所有公开 Service（`AuthService`、`PermissionCacheService`、`ModuleService`）和 DTO
-- `task` 模块的 `TaskDistributionService`、`TaskInstanceService`、任务定义相关 API
+- `auth` 模块的所有公开 Service（`AuthService`、`RolePermissionService`、`UserAppSettingsService`）和接口
+- `task` 模块的 `TaskDistributionService`、任务定义相关 API
 - `common` 模块的工具类、公共 DTO、异常类
+- Spring Boot 核心库（web、data-jpa、amqp、scheduling）
 
 **禁止的依赖**：
-- 不得引用 `auth` 模块的内部类（如 `SecurityConfig` 的非公开 bean）
-- 不得引用 `task` 模块的内部实现细节
+- 不得引用 `auth` 模块的内部实现类（如 `SecurityConfig`、`JwtAuthenticationFilter` 等 security 包内部类）
+- 不得引用 `task` 模块的内部实现细节（repository、scheduler、config 等）
 
 ---
 
@@ -143,6 +183,11 @@ COMPLETED          ← 已完成，已推送或自动推送（开关打开时）
 | `mq_queue_translation` | `q.ticket.translation` | 翻译队列名 |
 | `mq_queue_reply` | `q.ticket.reply` | 回复队列名 |
 | `mq_queue_audit` | `q.ticket.audit` | 审核队列名 |
+| `notify_platform` | `wecom` / `dingtalk` / `none` | 通知平台（企业微信/钉钉/无） |
+| `dingtalk_webhook_url` | `https://oapi.dingtalk.com/robot/send?access_token=...` | 钉钉 Webhook URL |
+| `dingtalk_notify_enabled` | `true` / `false` | 是否启用钉钉通知 |
+| `audit_base_url` | `https://fd.example.com` | 审核链接 baseUrl（用于生成移动审核链接） |
+| `audit_token_expire_hours` | `24` | 审核令牌有效时长（小时，默认 24） |
 
 #### SyncConfig
 同步配置表。
@@ -197,6 +242,25 @@ COMPLETED          ← 已完成，已推送或自动推送（开关打开时）
 | `method` | HTTP 方法 |
 | `statusCode` | 响应状态码 |
 | `timestamp` | 请求时间 |
+
+#### AuditToken
+一次性审核令牌（用于移动审核，支持无登录状态访问）。
+
+| 字段 | 类型 | 说明 |
+|------|------|------|
+| `id` | BIGINT | 主键 |
+| `token` | VARCHAR(60) UQ | Base64URL 编码的随机令牌（43字符，256bit 熵） |
+| `ticketId` | BIGINT FK | 关联工单 ID |
+| `status` | ENUM | ACTIVE / USED / EXPIRED / REVOKED |
+| `usedAt` | TIMESTAMP | 使用时间（审核完成时设置） |
+| `expireAt` | TIMESTAMP | 过期时间（默认 24h） |
+| `createdAt` | TIMESTAMP | 创建时间 |
+
+**枚举 AuditTokenStatus**:
+- `ACTIVE` — 活跃可用，可提交审核
+- `USED` — 已使用，禁止重复提交
+- `EXPIRED` — 已过期，不可用
+- `REVOKED` — 已撤销（工单状态变化时自动撤销）
 
 ### DTO
 
@@ -719,6 +783,38 @@ AUDITOR 或 ADMIN 提交审核意见（通过或驳回）。
 
 ---
 
+#### GET /tickets/{id}/audit-token - 获取或生成审核令牌
+
+为指定工单生成或获取一次性审核令牌（用于桌面端生成移动审核链接）。
+
+**路径参数**:
+- `id` (long): 工单 ID
+
+**响应**:
+```json
+{
+  "code": 0,
+  "message": "success",
+  "data": {
+    "token": "AbCdEfGhIjKlMnOpQrStUvWxYz0123456789_-",
+    "expireAt": "2025-02-17T10:30:00Z",
+    "auditUrl": "https://fd.example.com/audit/AbCdEfGhIjKlMnOpQrStUvWxYz0123456789_-"
+  }
+}
+```
+
+**工作流**:
+1. 撤销该工单所有旧的 ACTIVE Token
+2. 若工单已有 ACTIVE Token，直接返回（复用原 Token）
+3. 否则生成新 Token（Base64URL，256bit 熵）
+4. 设置过期时间为 24h 后（可配置）
+
+**权限**: `ticket:audit`（AUDITOR、ADMIN）
+
+**前置条件**: 工单状态为 PENDING_AUDIT
+
+---
+
 ### SyncController (/api/v1/sync)
 
 #### POST /sync/freshdesk - 手动触发 Freshdesk 同步
@@ -908,6 +1004,157 @@ AUDITOR 或 ADMIN 提交审核意见（通过或驳回）。
 ```
 
 **权限**: `system:config:manage`（ADMIN）
+
+---
+
+#### GET /config/notify-channel - 获取通知渠道配置
+
+获取当前通知平台配置（企业微信/钉钉）。
+
+**响应**:
+```json
+{
+  "code": 0,
+  "message": "success",
+  "data": {
+    "platform": "wecom",
+    "webhookUrl": "https://qyapi.weixin.qq.com/...",
+    "enabled": true,
+    "auditBaseUrl": "https://fd.example.com"
+  }
+}
+```
+
+**权限**: `system:config:read`（ADMIN）
+
+---
+
+#### PUT /config/notify-channel - 保存通知渠道配置
+
+更新通知渠道配置。
+
+**请求 Body**:
+```json
+{
+  "platform": "wecom" | "dingtalk" | "none",
+  "webhookUrl": "https://...",
+  "enabled": true,
+  "auditBaseUrl": "https://fd.example.com"
+}
+```
+
+**权限**: `system:config:manage`（ADMIN）
+
+---
+
+#### POST /config/notify-channel/test - 测试通知渠道
+
+发送测试消息到当前配置的通知渠道。
+
+**响应**:
+```json
+{
+  "code": 0,
+  "message": "测试消息已发送"
+}
+```
+
+**权限**: `system:config:manage`（ADMIN）
+
+---
+
+### AuditTokenController (/api/v1/audit-token)
+
+移动审核端点（无需 JWT，Token 自身即认证，支持在移动设备上使用）。
+
+#### GET /audit-token/{token} - 获取工单审核详情
+
+通过一次性审核令牌获取工单的完整审核信息（包括翻译、回复、历史）。
+
+**路径参数**:
+- `token` (string): 一次性审核令牌
+
+**响应**:
+```json
+{
+  "code": 0,
+  "message": "success",
+  "data": {
+    "ticketId": 123,
+    "externalId": "fd-12345",
+    "subject": "工单主题",
+    "content": "原文内容",
+    "translatedTitle": "翻译的标题",
+    "translatedContent": "翻译的内容",
+    "zhReply": "中文回复",
+    "targetReply": "English reply",
+    "replyId": 789,
+    "status": "PENDING_AUDIT",
+    "lastAuditRemark": "上次驳回意见（若有）",
+    "auditHistory": [
+      {
+        "auditResult": "REJECT",
+        "auditRemark": "语气不太友好",
+        "createdAt": "2025-02-16T10:00:00Z"
+      }
+    ],
+    "alreadyAudited": false
+  }
+}
+```
+
+**权限**: 无（Token 自身即认证）
+
+**安全约束**:
+- Token 有效期 24h（可配置 `audit_token_expire_hours`）
+- Token 一次性使用，提交审核后标记 USED，禁止重复使用
+- 使用悲观锁 `SELECT ... FOR UPDATE` 防并发提交
+
+**错误处理**:
+- 404: Token 不存在
+- 410: Token 已过期或已使用（EXPIRED / USED / REVOKED）
+- 400: Token 对应的工单不在 PENDING_AUDIT 状态
+
+---
+
+#### POST /audit-token/{token}/submit - 提交审核结果
+
+通过审核令牌提交审核意见（移动端无登录直接审核）。
+
+**路径参数**:
+- `token` (string): 一次性审核令牌
+
+**请求 Body**:
+```json
+{
+  "auditResult": "PASS" | "REJECT",
+  "auditRemark": "驳回意见（可选，REJECT 时建议填写）"
+}
+```
+
+**响应**:
+```json
+{
+  "code": 0,
+  "message": "审核已提交，工单进入下一阶段"
+}
+```
+
+**副作用** (同 `/api/v1/tickets/{id}/audit`):
+- PASS: 状态流转为 APPROVED 或 COMPLETED（取决于 auto_reply_enabled 配置）
+- REJECT: 状态流转为 PENDING_REPLY，保存 auditRemark
+
+**权限**: 无（Token 自身即认证）
+
+**安全约束**:
+- 提交前 Token 状态必须为 ACTIVE
+- 提交成功后 Token 立即标记 USED，防重复提交
+- 悲观锁确保并发安全
+
+**错误处理**:
+- 404: Token 不存在
+- 409: Token 已被使用（重复提交）
+- 410: Token 已过期或已撤销
 
 ---
 
@@ -1329,23 +1576,46 @@ AUDITOR 或 ADMIN 提交审核意见（通过或驳回）。
 7. 返回更新后的工单
 ```
 
-**submitAudit 工作流**:
+**submitReply 工作流**:
+```
+1. 检查工单是否存在 → 404
+2. 检查工单状态是否为 REPLYING → 400（幂等性）
+3. 创建 TicketReply 记录
+4. 更新工单状态 REPLYING → PENDING_AUDIT
+5. 生成审核令牌：auditTokenService.generateToken(ticketId)
+6. 发送 MQ 审核任务（ticket.task.audit）
+7. 发送审核通知（含审核链接）：notifyService.notifyPendingAudit(ticket, token)
+8. 创建 TaskInstance 记录（用于前端追踪）
+9. 返回更新后的工单
+```
+
+**submitAudit 工作流** (仅限 JWT 认证端点):
 ```
 审核通过 (PASS):
   1. 创建 TicketAudit 记录（auditResult=PASS）
   2. 检查 auto_reply_enabled：
      - ON: 状态流转 AUDITING → COMPLETED，发送推送任务，MQ 推送
      - OFF: 状态流转 AUDITING → APPROVED
-  3. 异步通知管理员和提交者
-  4. 返回工单
+  3. 撤销该工单所有 ACTIVE AuditToken（标记为 REVOKED）
+  4. 异步通知管理员和提交者：notifyService.notifyAuditPass(ticket)
+  5. 返回工单
 
 审核驳回 (REJECT):
   1. 创建 TicketAudit 记录（auditResult=REJECT, auditRemark=req.remark）
   2. 保存驳回意见到 Ticket.lastAuditRemark
   3. 状态流转 AUDITING → PENDING_REPLY
-  4. 发送 MQ 回复任务（payload 中包含 lastAuditRemark）
-  5. 异步通知管理员
-  6. 返回工单
+  4. 撤销该工单所有 ACTIVE AuditToken（标记为 REVOKED）
+  5. 发送 MQ 回复任务（payload 中包含 lastAuditRemark）
+  6. 异步通知管理员：notifyService.notifyAuditReject(ticket, remark)
+  7. 返回工单
+```
+
+**通过 AuditToken 提交审核** (AuditTokenController.submitByToken):
+```
+1. 消费 Token：auditTokenService.consumeToken(token) → ticketId
+2. 查询工单，验证状态为 PENDING_AUDIT
+3. 执行与 submitAudit 相同的审核逻辑（PASS/REJECT）
+4. 注意：通过 Token 审核时，auditResult 中的审核人为 "Mobile Auditor"（移动审核）
 ```
 
 ---
@@ -1467,24 +1737,184 @@ Freshdesk 同步服务，负责增量同步和 Webhook 处理。
 
 ---
 
-### WeChatWorkNotifyService
+### AuditTokenService
 
-企业微信通知服务，支持异步通知。
+审核令牌管理服务，负责生成、验证、消费一次性审核令牌。
 
 #### 核心方法
 
-```java
-@Async
-public void notifyAuditPass(Ticket ticket, String auditorName) { ... }
+- `AuditToken generateToken(Long ticketId)` — 生成新的审核令牌
+  - 撤销该工单所有旧的 ACTIVE Token（标记为 REVOKED）
+  - 生成新 Token：SecureRandom(32bytes) + Base64URL，43 字符
+  - 设置过期时间为当前时间 + 24h（可配置 `audit_token_expire_hours`）
+  - Token 状态初始化为 ACTIVE
+  - 返回新生成的 AuditToken
 
-@Async
-public void notifyAuditReject(Ticket ticket, TicketAudit audit, String auditorName) { ... }
+- `AuditToken getOrCreateToken(Long ticketId)` — 获取或创建审核令牌
+  - 优先查询工单的 ACTIVE Token
+  - 若存在且未过期，直接返回
+  - 否则调用 generateToken() 创建新 Token
 
-@Async
-public void notifyReplyPushComplete(Ticket ticket, LocalDateTime time) { ... }
+- `AuditTokenDetail getDetailByToken(String token)` — 获取工单审核详情
+  - 查询 Token 对应的工单
+  - 验证 Token 状态（ACTIVE，未过期）
+  - 加载工单的翻译、回复、审核历史
+  - 检查工单状态是否为 PENDING_AUDIT（若否返回错误）
+
+- `Long consumeToken(String token)` — 消费 Token（标记 USED）
+  - 使用悲观锁 `SELECT ... FOR UPDATE` 查询 Token
+  - 验证 Token 状态为 ACTIVE 且未过期
+  - 原子性标记 Token 为 USED，设置 usedAt = now()
+  - 返回 ticketId
+
+- `void revokeToken(Long ticketId)` — 撤销指定工单的所有 ACTIVE Token
+  - 查询工单的所有 ACTIVE Token
+  - 批量更新状态为 REVOKED
+  - 用于工单状态变化时自动清理旧 Token
+
+#### 安全设计
+
+**Token 生成**:
+- 熵源：`SecureRandom.nextBytes(32)` 生成 256bit 随机数
+- 编码：Base64URL 编码（移除 `=` padding），43 字符
+- 存储：数据库唯一索引确保 Token 唯一性
+
+**Token 消费**:
+- 悲观锁 `SELECT ... FOR UPDATE` 防并发重复使用
+- 一旦标记 USED，任何再次提交将被拒绝（409 状态码）
+- 过期检查：`expireAt > now()`
+
+**Token 撤销**:
+- 工单状态变化时（非 PENDING_AUDIT），自动撤销所有 ACTIVE Token
+- 例如：PENDING_AUDIT → APPROVED 时，旧 Token 全部 REVOKED
+
+---
+
+### NotifyService (通知策略模式)
+
+统一的通知服务，支持多种通知平台（企业微信、钉钉等）。
+
+#### 设计：策略模式
+
+```
+NotifyStrategy (接口)
+  ├── WeChatWorkNotifyStrategy
+  └── DingTalkNotifyStrategy
+
+NotifyService (策略路由层)
+  └── 根据 SystemConfig.notify_platform 选择具体 Strategy
 ```
 
-**消息格式**: Markdown 格式，包含工单号、主题、操作人、时间等信息。
+#### NotifyStrategy 接口
+
+```java
+public interface NotifyStrategy {
+  void sendMarkdown(String title, String content);
+  void sendAuditNotify(String title, String content, String auditUrl);
+  void sendTestMessage();
+  String getPlatformName();
+}
+```
+
+#### NotifyService 核心方法
+
+- `void notifyPendingAudit(Ticket ticket, String auditToken)` — 发送审核通知（含审核链接）
+  - 构造审核链接：`{auditBaseUrl}/audit/{token}`
+  - 获取当前平台 Strategy
+  - 调用 `sendAuditNotify(title, content, auditUrl)`
+  - 异步执行（`@Async`）
+
+- `void notifyAuditPass(Ticket ticket)` — 审核通过通知
+  - 通知内容：工单号、主题、审核通过
+  - 异步执行
+
+- `void notifyAuditReject(Ticket ticket, String remark)` — 审核驳回通知
+  - 通知内容：工单号、主题、驳回原因
+  - 异步执行
+
+- `void notifyReplyPushed(Ticket ticket)` — 回复已推送通知
+  - 通知内容：工单号、主题、推送时间
+  - 异步执行
+
+- `void sendTestMessage()` — 测试当前平台
+  - 获取当前平台 Strategy
+  - 调用 `sendTestMessage()`
+  - 用于验证通知配置是否正确
+
+#### WeChatWorkNotifyStrategy 实现
+
+企业微信群机器人通知。
+
+**Webhook URL**:
+```
+https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=<unique_key>
+```
+
+**消息格式**: Markdown（包含工单号、主题、链接等）
+
+**示例**:
+```markdown
+## 工单待审核通知
+- **工单号**: fd-12345
+- **主题**: 用户无法登录
+- **翻译**: 已完成
+- **回复**: 已生成
+
+[点击审核](https://fd.example.com/audit/token_abc123)
+```
+
+#### DingTalkNotifyStrategy 实现
+
+钉钉 ActionCard 通知（支持审核按钮）。
+
+**Webhook URL**:
+```
+https://oapi.dingtalk.com/robot/send?access_token=<token>
+```
+
+**消息格式**: ActionCard（可包含交互按钮）
+
+**示例**:
+```json
+{
+  "msgtype": "actionCard",
+  "actionCard": {
+    "title": "工单待审核",
+    "text": "工单号: fd-12345\n主题: 用户无法登录",
+    "btns": [
+      {
+        "title": "去审核",
+        "actionURL": "https://fd.example.com/audit/token_abc123"
+      }
+    ]
+  }
+}
+```
+
+---
+
+### WeChatWorkNotifyService (遗留实现)
+
+**注意**: 此 Service 已被 NotifyService + WeChatWorkNotifyStrategy 替代。为保证向后兼容性，保留但内部调用 NotifyService。
+
+#### 核心方法 (委托给 NotifyService)
+
+```java
+@Async
+public void notifyAuditPass(Ticket ticket, String auditorName) {
+  notifyService.notifyAuditPass(ticket);
+}
+
+@Async
+public void notifyAuditReject(Ticket ticket, TicketAudit audit, String auditorName) {
+  notifyService.notifyAuditReject(ticket, audit.getAuditRemark());
+}
+
+@Async
+public void notifyReplyPushComplete(Ticket ticket, LocalDateTime time) {
+  notifyService.notifyReplyPushed(ticket);
+}
+```
 
 ---
 
@@ -1540,6 +1970,18 @@ ticket 模块通过 `TicketPermissionDefinition` 定义权限。
 | `database:execute` | 执行 SQL | ADMIN | 执行只读 SQL 查询 |
 | `knowledge:read` | 查看知识库 | ADMIN | 查看注意事项 |
 | `knowledge:manage` | 管理知识库 | ADMIN | CRUD 注意事项、批量标记、导出 |
+
+### 审核令牌相关
+
+审核令牌（AuditToken）实现了移动审核的无登录访问能力。以下权限控制令牌生成：
+
+| 权限 Code | 权限名 | 允许角色 | 功能 |
+|----------|-------|--------|------|
+| `ticket:audit` | 审核工单 | AUDITOR | 生成审核令牌（GET /tickets/{id}/audit-token） |
+
+**无权限端点** (无需 JWT):
+- `GET /api/v1/audit-token/{token}` — 任何人可通过有效 Token 获取审核详情
+- `POST /api/v1/audit-token/{token}/submit` — 任何人可通过有效 Token 提交审核结果
 
 ---
 
@@ -1621,20 +2063,56 @@ CREATE INDEX idx_failed_push_ticket_id ON failed_reply_push(ticket_id);
 
 ---
 
-## Maven 多模块化建议
+## Maven 多模块现状
 
-当项目演化为微服务架构时，ticket 模块可独立为 Maven 子模块。
+当前 fd-server 已采用 Maven 多模块化，ticket 模块已是独立子模块。
 
-### Artifact 坐标
+### 当前 Artifact 坐标
 
 ```xml
 <groupId>com.jefflower</groupId>
 <artifactId>fd-server-ticket</artifactId>
-<version>1.0.0</version>
+<version>${project.version}</version>
 <packaging>jar</packaging>
 ```
 
-### 依赖声明
+### 当前依赖声明
+
+**ticket 模块继承 fd-server 的 parent pom**:
+
+```xml
+<parent>
+    <groupId>com.jefflower</groupId>
+    <artifactId>fd-server</artifactId>
+    <version>${project.version}</version>
+    <relativePath>../pom.xml</relativePath>
+</parent>
+
+<dependencies>
+  <!-- 内部依赖 -->
+  <dependency>
+    <groupId>com.jefflower</groupId>
+    <artifactId>fd-server-task</artifactId>
+    <version>${project.version}</version>
+  </dependency>
+  <!-- 注意: fd-server-auth 和 fd-server-common 通过 fd-server-task 的传递依赖自动获得 -->
+
+  <!-- ticket 特有依赖：AMQP (RabbitMQ) -->
+  <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-amqp</artifactId>
+  </dependency>
+
+  <!-- 测试 -->
+  <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-test</artifactId>
+    <scope>test</scope>
+  </dependency>
+</dependencies>
+```
+
+**早期 pom.xml 格式参考**（单独使用时）:
 
 ```xml
 <dependencies>
@@ -1745,6 +2223,65 @@ Please generate a reply considering the following feedback from the previous aud
 - 定时轮询作为补偿机制（容错）
 - Webhook 失败时，定时轮询会重新同步（通过回溯时间）
 - 重复工单通过哈希去重，无需担心重复创建
+
+---
+
+### Q: 什么是审核令牌（AuditToken）？
+
+**A**: 审核令牌是一次性的、无须登录的审核凭证。用于支持移动设备上的审核场景：
+- 工单进入 PENDING_AUDIT 状态时，自动生成审核令牌
+- 系统发送包含审核链接的通知（企业微信/钉钉）
+- 审核人可在移动设备上点击链接，无需输入用户名密码
+- 令牌有效期 24h（可配置），一次性使用（防重复审核）
+
+---
+
+### Q: 审核令牌如何生成和分发？
+
+**A**:
+1. **生成时机**: 工单状态转换到 PENDING_AUDIT 时自动调用 `auditTokenService.generateToken(ticketId)`
+2. **Token 格式**: Base64URL 编码的随机数（256bit 熵），43 字符，全局唯一
+3. **分发方式**: 通过 NotifyService 发送通知（企业微信/钉钉），包含审核链接
+4. **审核链接**: `{auditBaseUrl}/audit/{token}`，点击即可进行无登录审核
+5. **TOKEN 复用**: 同一工单的 ACTIVE Token 不会重复生成，优先复用原 Token
+
+---
+
+### Q: 如何防止审核令牌被滥用或重复使用？
+
+**A**:
+- **一次性使用**: Token 提交审核后立即标记为 USED，后续请求将被拒绝（409 状态码）
+- **悲观锁保护**: 使用数据库 `SELECT ... FOR UPDATE` 确保并发提交时只有一个请求成功
+- **过期自动清理**: Token 过期后（默认 24h）无法使用，过期 Token 不可恢复
+- **工单状态同步**: 工单状态变化时自动撤销所有 ACTIVE Token，防止状态不一致导致的重复审核
+- **Token 格式**: 使用 SecureRandom 生成，攻击者无法猜测或伪造有效 Token
+
+---
+
+### Q: 通知平台如何选择和配置？
+
+**A**:
+1. **平台选择**: 通过 SystemConfig.notify_platform 指定（`wecom` / `dingtalk` / `none`）
+2. **Webhook 配置**:
+   - 企业微信: `wecom_webhook_url` + `wecom_notify_enabled`
+   - 钉钉: `dingtalk_webhook_url` + `dingtalk_notify_enabled`
+3. **测试通知**: 调用 `POST /config/notify-channel/test` 验证配置是否正确
+4. **通知内容**: 根据 Strategy 实现自动适配（Markdown for WeChat, ActionCard for DingTalk）
+5. **异步发送**: 所有通知使用 `@Async` 异步执行，不阻塞主流程
+
+---
+
+### Q: 如何在前端生成和显示审核链接？
+
+**A**:
+1. **获取令牌**: 调用 `GET /api/v1/tickets/{id}/audit-token`（需要 `ticket:audit` 权限）
+2. **响应包含**:
+   - `token`: 令牌字符串
+   - `expireAt`: 过期时间
+   - `auditUrl`: 完整审核链接（自动拼接 `auditBaseUrl` + `/audit/{token}`）
+3. **显示方式**:
+   - 桌面端可显示 QR 码或链接，供管理员扫描/分享
+   - 或直接通过通知发送，管理员点击通知内的链接即可跳转
 
 ---
 

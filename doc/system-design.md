@@ -1,7 +1,7 @@
 # FD-AutoPilot 系统详细设计文档
 
 ## 1. 项目背景
-FD-AutoPilot 系统旨在通过自动化手段提升工单处理效率。系统结合了 AI 翻译、回复生成及人工审核流程，通过服务端与客户端的协同工作实现闭环。
+FD-AutoPilot 系统旨在通过自动化手段提升工单处理效率。系统结合了 AI 翻译、回复生成及人工审核流程，通过服务端与客户端的协同工作实现闭环。同时支持组织架构同步（钉钉/企业微信）和 OAuth 免密登录，使用户无需手动创建账户。
 
 ---
 
@@ -760,3 +760,393 @@ graph TD
     AU -->|REJECT| PR
     PR -->|保存 lastAuditRemark| RE
 ```
+
+---
+
+## 10. 移动审核流程 [NEW]
+
+### 10.1 移动审核分支说明
+
+工单进入 `PENDING_AUDIT` 状态后，系统支持通过一次性 Token 的移动链接进行异步审核，特别适合审核人在移动设备或外出场景：
+
+```
+工单进入 PENDING_AUDIT
+    │
+    ├─ 1. AuditTokenService.generateToken() → 生成一次性审核 Token（存 DB）
+    ├─ 2. 构建审核链接: {auditBaseUrl}/m/audit?token=xxx
+    └─ 3. NotifyService 根据配置平台（企微/钉钉）发送通知到群
+              │
+              ▼
+    群成员点击链接 → 手机浏览器打开移动审核页面
+              │
+              ├─ GET /api/v1/audit-token/{token} → 获取工单详情（无需JWT）
+              ├─ 审核人查看翻译、回复、历史
+              └─ POST /api/v1/audit-token/{token}/submit → 提交审核结果
+                     │
+                     ├─ PASS → APPROVED/COMPLETED（复用 TicketService.submitAudit）
+                     └─ REJECT → PENDING_REPLY + 保存驳回意见（AI 注入反馈）
+```
+
+### 10.2 Token 安全设计
+
+- **生成策略**: SecureRandom(32bytes) + Base64URL 编码 = 43 字符，256bit 熵
+- **过期机制**: 默认 24h 过期（可配置），审核后立即标记 `USED`
+- **并发保护**: 悲观锁防并发提交，先到先得原则
+- **主动撤销**: 工单状态变化（REJECTED/COMPLETED）时，旧 Token 自动 `REVOKED`
+
+### 10.3 相关 API 端点
+
+#### 10.3a 获取审核详情（无需 JWT）
+- **Method**: `GET /api/v1/audit-token/{token}`
+- **Response**:
+    ```json
+    {
+      "ticketId": 1001,
+      "subject": "System down",
+      "originalContent": "Full logs...",
+      "translation": {
+        "targetLang": "zh-CN",
+        "translatedTitle": "系统故障",
+        "translatedContent": "完整日志..."
+      },
+      "reply": {
+        "zhReply": "我们正在处理...",
+        "targetReply": "We are handling..."
+      },
+      "auditHistory": [
+        {
+          "auditorId": 10,
+          "auditResult": "PASS",
+          "auditRemark": "回复得很专业"
+        }
+      ]
+    }
+    ```
+- **失败响应** (如 Token 已过期或无效):
+    ```json
+    {
+      "error": "INVALID_TOKEN",
+      "message": "审核 Token 已过期或无效"
+    }
+    ```
+
+#### 10.3b 提交审核结果（无需 JWT）
+- **Method**: `POST /api/v1/audit-token/{token}/submit`
+- **Body**:
+    ```json
+    {
+      "auditResult": "PASS",
+      "auditRemark": "回复内容准确，符合公司规范"
+    }
+    ```
+- **Logic**:
+  - 验证 Token 有效性和有效期
+  - 检查工单当前状态是否仍为 `PENDING_AUDIT`（防止重复审核）
+  - 调用 `TicketService.submitAudit()` 处理状态流转
+  - 标记 Token 为 `USED`
+- **Response**:
+    ```json
+    {
+      "success": true,
+      "ticketId": 1001,
+      "newStatus": "COMPLETED",
+      "message": "审核已提交"
+    }
+    ```
+
+---
+
+## 11. 通知策略模式 [NEW]
+
+### 11.1 通知服务架构
+
+系统通过策略模式支持多种通知平台，通过 `SystemConfig` 中的 `notify_platform` 配置项动态路由：
+
+```
+NotifyService（策略路由）
+    │
+    ├─ SystemConfigService.getNotifyPlatform() → "wecom" / "dingtalk" / "none"
+    │
+    ├─ WeChatWorkNotifyStrategy → 企业微信 Webhook（markdown 消息）
+    └─ DingTalkNotifyStrategy → 钉钉 Webhook（ActionCard 带审核按钮）
+```
+
+### 11.2 支持的通知事件
+
+通知策略应支持以下关键事件：
+
+| 事件             | 触发条件                         | 通知内容示例                       | 涉及配置               |
+| :-------------- | :------------------------------- | :-------------------------------- | :--------------------- |
+| 待审核通知        | 工单进入 `PENDING_AUDIT`         | 工单标题、审核链接、翻译/回复预览  | `audit_notify_enabled` |
+| 审核通过通知      | 工单转到 `APPROVED/COMPLETED`    | 工单标题、审核人、审核时间         | `pass_notify_enabled`  |
+| 审核驳回通知      | 工单转回 `PENDING_REPLY`         | 工单标题、驳回原因、需重新处理    | `reject_notify_enabled` |
+| 推送成功通知      | 回复推送到 Freshdesk 成功         | 工单标题、Freshdesk 链接           | `push_notify_enabled`  |
+| 推送失败通知      | 推送失败进入重试队列              | 工单标题、失败原因、重试计数       | `push_fail_notify_enabled` |
+
+### 11.3 WeChatWorkNotifyStrategy 实现
+
+企业微信策略通过 Webhook 发送 markdown 格式消息，支持移动审核链接嵌入：
+
+```json
+{
+  "msgtype": "markdown",
+  "markdown": {
+    "content": "## 工单 #1001 待审核\n**标题**: System down\n**原始内容**: Full logs appended...\n\n**翻译结果**: 系统故障...\n**建议回复**: 我们正在处理...\n\n[立即审核](https://example.com/m/audit?token=xxx)\n\n审核截止: 2024-01-02 10:00"
+  }
+}
+```
+
+特点：
+- Markdown 格式便于富文本展示
+- 支持链接点击，可内嵌移动审核 URL
+- 支持 @群成员 或 @所有人
+
+### 11.4 DingTalkNotifyStrategy 实现
+
+钉钉策略通过 ActionCard 类型消息支持在应用内交互式审核：
+
+```json
+{
+  "msgtype": "actionCard",
+  "actionCard": {
+    "title": "工单 #1001 待审核",
+    "text": "**标题**: System down\n**原始**: Full logs...\n**翻译**: 系统故障...\n**回复**: 我们正在处理...",
+    "btns": [
+      {
+        "title": "Web 审核",
+        "actionURL": "https://example.com/tickets/1001/audit"
+      },
+      {
+        "title": "移动审核",
+        "actionURL": "https://example.com/m/audit?token=xxx"
+      }
+    ]
+  }
+}
+```
+
+特点：
+- ActionCard 支持多个按钮，便于用户快速导航
+- 支持 Web 和移动链接
+- 钉钉应用内可直接交互
+
+### 11.5 NotifyService 接口
+
+位于 `/fd-server/src/main/java/.../service/NotifyService.java`，提供统一通知接口：
+
+```java
+public interface NotifyService {
+    // 待审核通知
+    void notifyPendingAudit(Ticket ticket, String auditTokenUrl);
+
+    // 审核通过通知
+    void notifyAuditPass(Ticket ticket, String auditorName);
+
+    // 审核驳回通知
+    void notifyAuditReject(Ticket ticket, String auditRemark);
+
+    // 推送成功通知
+    void notifyPushSuccess(Ticket ticket, String freshdeskUrl);
+
+    // 推送失败通知
+    void notifyPushFailed(Ticket ticket, String errorMessage, int retryCount);
+
+    // 测试通知
+    void sendTestMessage();
+}
+```
+
+实现类根据配置的 `notify_platform` 动态选择对应策略。
+
+### 11.6 配置项清单
+
+通知相关的系统配置：
+
+| 配置键                    | 说明                                  | 示例/默认值        |
+| :------------------------ | :------------------------------------ | :----------------- |
+| `notify_platform`         | 通知平台 (wecom/dingtalk/none)        | `wecom`            |
+| `notify_webhook_url`      | Webhook URL（企微或钉钉）            | `https://qyapi...` |
+| `audit_notify_enabled`    | 是否启用待审核通知                    | `true`             |
+| `pass_notify_enabled`     | 是否启用审核通过通知                  | `true`             |
+| `reject_notify_enabled`   | 是否启用审核驳回通知                  | `true`             |
+| `push_notify_enabled`     | 是否启用推送成功通知                  | `true`             |
+| `push_fail_notify_enabled`| 是否启用推送失败通知                  | `true`             |
+| `audit_token_expiry_hours`| 审核 Token 过期时间（小时）           | `24`               |
+| `audit_base_url`          | 移动审核页面基础 URL                  | `https://example.com` |
+
+---
+
+## 12. 组织架构同步设计 [NEW]
+
+### 12.1 同步流程概述
+
+系统支持从钉钉或企业微信自动同步组织架构（部门、用户），无需手工创建账户：
+
+```
+钉钉/企业微信组织
+    │
+    ├─ 1. OrgSyncService.sync(platform) → 选择对应策略
+    │
+    ├─ 2a. DingTalkSyncStrategy 调用钉钉 API
+    │   └─ GET /dingtalk/v1.0/departments (递归获取部门树)
+    │   └─ GET /dingtalk/v1.0/users?department_id=xxx (获取部门成员)
+    │
+    ├─ 2b. WeComSyncStrategy 调用企微 API
+    │   └─ GET /cgi-bin/department/list (获取部门列表)
+    │   └─ GET /cgi-bin/user/list?department_id=xxx (获取成员列表)
+    │
+    ├─ 3. 数据库事务：
+    │   ├─ 创建/更新 SysDepartment（部门树）
+    │   ├─ 创建/更新 SysUser（填充 displayName, avatar, dingtalkUserId/wecomUserId）
+    │   └─ 记录 OrgSyncLog（统计创建/更新/跳过数）
+    │
+    ├─ 4. 权限初始化：
+    │   └─ 为新用户自动分配 default_sync_role（默认 USER 角色）
+    │
+    └─ 5. 返回同步结果（deptCreated, userCreated, userUpdated 等）
+```
+
+### 12.2 策略模式架构
+
+使用策略模式支持多平台扩展：
+
+```java
+// 策略接口
+public interface OrgSyncStrategy {
+    OrgSyncResult sync(OrgSyncConfig config);  // 执行同步
+    void testConnection(OrgSyncConfig config) throws Exception;  // 测试连接
+}
+
+// 具体策略
+public class DingTalkSyncStrategy implements OrgSyncStrategy { ... }
+public class WeComSyncStrategy implements OrgSyncStrategy { ... }
+
+// 策略路由
+@Service
+public class OrgSyncService {
+    public OrgSyncResult sync(String platform) {
+        OrgSyncStrategy strategy = getStrategy(platform);  // dingtalk/wecom
+        return strategy.sync(...);
+    }
+}
+```
+
+### 12.3 数据模型
+
+**SysDepartment**（部门）：
+- `id` — 主键
+- `name` — 部门名称
+- `parentId` — 父部门 ID（支持树形结构）
+- `externalId` — 外部系统 ID（如钉钉部门 ID）
+- `platform` — 来源平台（DINGTALK/WECOM）
+- `path` — 部门路径（如 `/总部/研发部`）
+
+**SysUser 新增字段**（与外部系统关联）：
+- `dingtalkUserId` — 钉钉用户 ID
+- `wecomUserId` — 企业微信用户 ID
+- `displayName` — 显示名称（从外部系统获取）
+- `avatar` — 头像 URL
+- `mobile` — 手机号
+- `email` — 邮箱
+- `departmentId` — FK → SysDepartment
+- `externalSyncAt` — 最后一次同步时间
+
+**OrgSyncLog**（同步日志）：
+- `platform` — 同步平台
+- `triggerUser` — 触发同步的用户
+- `startTime`, `endTime` — 同步时间
+- `deptCreated`, `deptUpdated` — 部门统计
+- `userCreated`, `userUpdated`, `userSkipped` — 用户统计
+- `status` — RUNNING/SUCCESS/FAILED
+- `errorMessage` — 错误信息
+
+### 12.4 配置管理
+
+所有 OAuth 和同步配置存储在 `AuthConfig` 表（支持密钥加密）：
+
+| 配置键 | 说明 | 示例 |
+|--------|------|------|
+| `org_sync_platform` | 活跃同步平台 | `dingtalk` / `wecom` |
+| `oauth_enabled` | 是否启用 OAuth 登录 | `true` / `false` |
+| `default_sync_role` | 新同步用户的默认角色 | `USER` |
+| `dingtalk_corp_id` | 钉钉企业 ID（密钥） | `ding123xxx` |
+| `dingtalk_corp_secret` | 钉钉企业密钥（密钥） | `xxx` |
+| `wecom_corp_id` | 企微企业 ID（密钥） | `ww123xxx` |
+| `wecom_corp_secret` | 企微企业密钥（密钥） | `xxx` |
+
+---
+
+## 13. OAuth 免密登录设计 [NEW]
+
+### 13.1 登录流程
+
+支持钉钉和企业微信的 OAuth 2.0 免密登录，用户无需手工注册：
+
+```
+用户点击 OAuth 登录按钮（钉钉/企微）
+    │
+    ├─ 1. 前端调用 GET /api/v1/auth/oauth/{platform}/url
+    │   └─ 后端返回 authorizationUrl + state（防 CSRF）
+    │
+    ├─ 2. 前端跳转到认证服务商登录界面
+    │   └─ 用户在钉钉/企微app 内授权
+    │
+    ├─ 3. 认证服务商重定向回 redirectUri
+    │   ├─ 携带 code + state
+    │
+    ├─ 4. 前端调用 POST /api/v1/auth/oauth/{platform}/callback
+    │   ├─ 后端验证 state（防 CSRF）
+    │   ├─ 后端用 code 向服务商请求 access_token
+    │   ├─ 后端调用服务商用户信息接口
+    │   │
+    │   └─ 用户已存在?
+    │       ├─ 是 → 直接返回登录 Token
+    │       └─ 否 → 创建新用户，状态为 APPROVED（因为来自可信源）
+    │
+    └─ 5. 前端获得 accessToken，正常进入系统
+```
+
+### 13.2 关键设计点
+
+**信任源**：
+- OAuth 用户来自可信的企业平台（钉钉/企微），无需 admin 手工审批
+- 新用户自动状态为 `APPROVED`，默认角色为 `default_sync_role`（通常是 USER）
+
+**账户绑定**：
+- 系统记录 `dingtalkUserId` 或 `wecomUserId`
+- 同一用户多次登录时复用同一账户（基于 userId 去重）
+
+**冲突处理**：
+- 若钉钉用户名与本地已有用户重复，系统自动处理（如加后缀）
+- 优先使用 `externalId` 而非用户名进行绑定
+
+**同步与登录联动**：
+- 定期同步时如发现用户信息变更（如头像、部门），自动更新 `SysUser`
+- 用户通过 OAuth 登录时，自动更新 `externalSyncAt`
+
+### 13.3 API 设计
+
+**GET /auth/oauth/status** — 查询平台启用状态
+- 返回 `oauthEnabled` 和支持的平台列表
+
+**GET /auth/oauth/{platform}/url?redirectUri=xxx** — 获取登录 URL
+- 返回认证服务商的 authorization URL + state
+
+**POST /auth/oauth/{platform}/callback** — 处理登录回调
+- 请求体包含 `code` 和 `state`
+- 返回 `accessToken` + 用户信息
+
+---
+
+## 14. ErrorCode 枚举 [NEW]
+
+系统新增以下错误代码用于 OAuth 和组织同步异常处理：
+
+| ErrorCode | HTTP 状态 | 说明 |
+|-----------|----------|------|
+| `OAUTH_DISABLED` | 400 | OAuth 功能未启用 |
+| `OAUTH_FAILED` | 400 | OAuth 认证失败（code 无效或过期） |
+| `OAUTH_USER_NOT_FOUND` | 404 | 从 OAuth 平台获取用户信息失败 |
+| `ORG_SYNC_FAILED` | 500 | 组织架构同步失败 |
+| `ORG_SYNC_PLATFORM_NOT_CONFIGURED` | 400 | 指定平台的同步配置不完整 |
+| `ORG_SYNC_IN_PROGRESS` | 409 | 同步任务已在进行中，请稍后重试 |

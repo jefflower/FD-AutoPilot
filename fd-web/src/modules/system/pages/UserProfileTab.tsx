@@ -1,22 +1,17 @@
 /**
  * 用户中心页面
  * 显示用户信息和注销功能
+ * 从 AuthContext 获取认证状态，无需 prop drilling
  */
 
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { useAuthContext } from '../../../shared/context/AuthContext';
 
-interface UserProfileTabProps {
-    username?: string;
-    role?: string;
-    onLogout: () => void;
-}
-
-const UserProfileTab: React.FC<UserProfileTabProps> = ({
-    username = '用户',
-    role = 'USER',
-    onLogout,
-}) => {
+const UserProfileTab: React.FC = () => {
+    const { user, logout } = useAuthContext();
+    const username = user?.username ?? '用户';
+    const role = user?.role ?? 'USER';
     const { t } = useTranslation(['settings', 'common']);
 
     return (
@@ -45,7 +40,7 @@ const UserProfileTab: React.FC<UserProfileTabProps> = ({
                     <div className="space-y-3">
                         {/* 注销按钮 */}
                         <button
-                            onClick={onLogout}
+                            onClick={logout}
                             className="w-full py-3 px-4 bg-red-500/10 hover:bg-red-500/20 border border-red-500/20 hover:border-red-500/30 text-red-400 rounded-xl transition-all flex items-center justify-center gap-2"
                         >
                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

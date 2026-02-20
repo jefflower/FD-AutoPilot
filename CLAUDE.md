@@ -15,15 +15,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 开发命令
 
-### 服务端 (fd-server)
+### 服务端 (fd-server) — Maven 多模块
 ```bash
 cd fd-server
-mvn spring-boot:run                    # 运行（端口 9988）
-mvn test                               # 运行所有测试
-mvn test -Dtest=TicketServiceTest       # 运行单个测试类
-mvn test -Dtest=TicketServiceTest#testMethod  # 运行单个测试方法
-mvn clean package                      # 构建
+mvn install -DskipTests && mvn spring-boot:run -pl fd-server-app  # 运行（端口 9988）
+mvn test                               # 运行所有模块的测试
+mvn test -pl fd-server-auth            # 仅运行 auth 模块测试
+mvn test -pl fd-server-ticket          # 仅运行 ticket 模块测试
+mvn clean package                      # 构建所有模块
 mvn clean package -DskipTests          # 跳过测试构建
+mvn compile -pl fd-server-common,fd-server-auth  # 仅编译指定模块
 ```
 
 ### 前端 (fd-web)
@@ -53,7 +54,8 @@ cargo test                             # Rust 测试
 ### 构建带前端的 Server 包
 ```bash
 cd fd-server
-mvn clean package -Pwith-frontend      # 自动构建 fd-web 并嵌入 jar（浏览器访问 localhost:9988）
+mvn clean package -Pwith-frontend      # 自动构建 fd-web 并嵌入 fd-server-app jar（浏览器访问 localhost:9988）
+# 可执行 JAR 位置: fd-server/fd-server-app/target/fd-server-app-0.0.1-SNAPSHOT.jar
 ```
 
 **注意**: 前端没有配置 ESLint、Prettier。也没有 CI/CD 流水线。测试框架使用 Vitest + React Testing Library（`npm test`）。
@@ -146,7 +148,22 @@ Rust 后端通过 Tauri Event 与 React 前端通信（浏览器模式下这些�
 
 ## 关键文件位置
 
-### 后端 — auth 模块 (fd-server/.../auth/)
+### 后端 — Maven 多模块结构
+
+fd-server 采用 **Maven 多模块** 架构，编译顺序：common → auth → task → ticket → app
+
+```
+fd-server/                          (parent POM, packaging: pom)
+├── fd-server-common/               (jar) 公共基础
+├── fd-server-auth/                 (jar) 认证授权
+├── fd-server-task/                 (jar) 任务调度框架
+├── fd-server-ticket/               (jar) 工单业务
+└── fd-server-app/                  (jar) 启动入口 + 资源 + 静态文件
+```
+
+依赖链: `common ← auth ← task ← ticket ← app`
+
+### 后端 — auth 模块 (fd-server-auth/.../auth/)
 - **认证控制器**: `controller/AuthController.java` — 登录、注册、Token 刷新、`GET /me/modules`、`GET /me/permissions`
 - **用户管理**: `controller/UserManageController.java` — 用户 CRUD、审批、角色修改、密码重置
 - **RBAC 管理**: `controller/RolePermissionController.java` — 角色权限分配
@@ -155,19 +172,32 @@ Rust 后端通过 Tauri Event 与 React 前端通信（浏览器模式下这些�
 - **数据初始化**: `config/AuthDataInitializer.java` — 增量同步模式（扫描所有 ModulePermissionDefinition 实现，自动注册模块和权限）
 - **实体**: `entity/SysUser.java`, `entity/SysRole.java`, `entity/SysPermission.java`, `entity/SysUserRole.java`, `entity/SysRolePermission.java`, `entity/SysModule.java`
 - **安全**: `security/JwtUtil.java`, `security/JwtAuthenticationFilter.java`, `config/SecurityConfig.java`
-- **AOP 权限**: `annotation/RequiresPermission.java`, `aspect/PermissionAspect.java`
+- **AOP 权限**: `security/RequiresPermission.java`, `security/PermissionAspect.java`
 
-### 后端 — ticket 模块 (fd-server/.../ticket/)
+### 后端 — task 模块 (fd-server-task/.../task/)
+- **任务分发**: `service/TaskDistributionService.java` — 原子领取、完成上报、超时重试
+- **任务调度**: `service/TaskScheduleService.java` + `scheduler/TaskCronScheduler.java` — Cron 定时任务
+- **任务恢复**: `scheduler/TaskRecoveryScheduler.java` — 超时任务回收
+- **控制器**: `controller/TaskController.java`（claim/complete/mine）, `controller/TaskAdminController.java`（管理端）
+- **实体**: `entity/TaskDefinition.java`, `entity/TaskInstance.java`
+
+### 后端 — ticket 模块 (fd-server-ticket/.../ticket/)
 - **工单服务**: `service/TicketService.java` — 工单工作流编排核心
 - **MQ 发布**: `service/MqPublisherService.java`
 - **Freshdesk 同步**: `service/FreshdeskSyncService.java` + `scheduler/SyncScheduler.java`
 - **权限定义**: `config/TicketPermissionDefinition.java`（6 个权限）, `config/SystemPermissionDefinition.java`（8 个权限）
 - **控制器**: `controller/TicketController.java`, `controller/SyncController.java`（同步管理）, `controller/QueueController.java`（队列/DLQ）, `controller/ConfigController.java`, `controller/KnowledgeController.java`, `controller/DatabaseController.java`, `controller/WebhookController.java`, `controller/RequestController.java`
-- **实体**: Ticket, TicketTranslation, TicketReply, TicketAudit, SystemConfig, KnowledgeNote, SyncLog, SyncConfig, FailedReplyPush, RequestRecord
+- **实体**: Ticket, TicketTranslation, TicketReply, TicketAudit, SystemConfig, KnowledgeNote, SyncLog, SyncConfig, FailedReplyPush, ClientRequest
 
-### 后端 — common 模块 (fd-server/.../common/)
+### 后端 — common 模块 (fd-server-common/.../common/)
 - `config/RestTemplateConfig.java`, `config/SpaWebConfig.java`（SPA 路由，`@ConditionalOnResource` 仅在有前端时激活）
 - `dto/ApiResponse.java`, `util/SqlValidator.java`, `util/SuperPasswordVerifier.java`
+
+### 后端 — app 模块 (fd-server-app/)
+- `FdServerApplication.java` — 启动入口（`@SpringBootApplication` + `@EnableScheduling`）
+- `src/main/resources/application.yml` — 全局配置（已在 .gitignore 中）
+- `src/main/resources/data.sql` — 初始数据
+- `src/main/resources/static/` — 前端静态文件（通过 with-frontend profile 构建）
 
 ### 前端 (fd-web/src/)
 - **主入口**: `App.tsx` — 全局布局、Context Provider 包裹、Tab 路由（`React.lazy` 懒加载 + `Suspense`）
@@ -307,7 +337,7 @@ Rust 后端通过 Tauri Event 与 React 前端通信（浏览器模式下这些�
 ## 配置
 
 ### 服务端
-- 配置文件: `fd-server/src/main/resources/application.yml`（已在 .gitignore 中）
+- 配置文件: `fd-server/fd-server-app/src/main/resources/application.yml`（已在 .gitignore 中）
 - 数据库: H2 文件数据库，Hibernate DDL `update` 自动建表
 - H2 控制台: `/h2-console`（开发启用）
 
@@ -386,16 +416,17 @@ doc/
 
 ### fd-server 模块化架构
 
-fd-server 采用**单体内模块化**架构——在同一个 Spring Boot 应用内按业务域划分包结构，为后续拆分微服务做准备。
+fd-server 采用 **Maven 多模块**架构——parent POM + 5 个子模块（common/auth/task/ticket/app），编译时由 Maven Reactor 按依赖拓扑排序。
 
 #### 模块划分
 
-| 模块 | 包路径 | 职责 | 可依赖 |
-|------|--------|------|--------|
-| **auth** | `com.jefflower.fdserver.auth.*` | 用户认证授权（JWT、RBAC、用户生命周期、安全配置、权限注解/接口） | common |
-| **task** | `com.jefflower.fdserver.task.*` | 任务调度与分发（多客户端任务分发、定时任务调度、执行历史、Dashboard） | common, auth |
-| **ticket** | `com.jefflower.fdserver.ticket.*` | 工单业务（含 Freshdesk 集成、MQ 分发、知识库、通知、管理后台） | common, auth, task |
-| **common** | `com.jefflower.fdserver.common.*` | 公共基础（通用工具、全局异常处理、公共 DTO、公共配置） | 无（最底层） |
+| Maven 模块 | artifactId | 包路径 | 职责 | Maven 依赖 |
+|-----------|------------|--------|------|------------|
+| **common** | `fd-server-common` | `com.jefflower.fdserver.common.*` | 公共基础（通用工具、全局异常处理、公共 DTO、公共配置） | 无（最底层） |
+| **auth** | `fd-server-auth` | `com.jefflower.fdserver.auth.*` | 用户认证授权（JWT、RBAC、用户生命周期、安全配置、权限注解/接口） | fd-server-common |
+| **task** | `fd-server-task` | `com.jefflower.fdserver.task.*` | 任务调度与分发（多客户端任务分发、定时任务调度、执行历史、Dashboard） | fd-server-auth |
+| **ticket** | `fd-server-ticket` | `com.jefflower.fdserver.ticket.*` | 工单业务（含 Freshdesk 集成、MQ 分发、知识库、通知、管理后台） | fd-server-task + amqp |
+| **app** | `fd-server-app` | `com.jefflower.fdserver` | 启动入口 + 资源文件 + 静态前端 | fd-server-ticket + h2 + actuator |
 
 #### 模块间依赖规则
 
@@ -483,10 +514,10 @@ common/
 
 | 角色 | subagent_type | model | prompt 关键指令 |
 |------|--------------|-------|----------------|
-| auth-dev | `general-purpose` | `opus` | "你是认证授权模块开发。范围限定 `fd-server/**/auth/**`。关注 JWT 安全、RBAC 权限模型、用户生命周期、密码策略、会话管理。不得直接依赖 ticket 模块的任何类。" |
-| task-dev | `general-purpose` | `opus` | "你是任务调度模块开发。范围限定 `fd-server/**/task/**`。关注多客户端并发安全、原子任务领取、超时回收、定时任务调度。可依赖 auth 模块的权限注解/接口和 common 模块。不得依赖 ticket 模块。" |
-| ticket-dev | `general-purpose` | `opus` | "你是工单业务模块开发。范围限定 `fd-server/**/ticket/**`。关注工单状态流转正确性、MQ 消息可靠投递、事务一致性。可依赖 auth 模块的公开 Service/DTO 和 task 模块的 TaskDistributionService，不得操作 auth/task 内部实现。" |
-| common-dev | `general-purpose` | `opus` | "你是公共模块开发。范围限定 `fd-server/**/common/**`。关注通用工具类、公共配置、全局异常处理。不得依赖任何业务模块（auth/ticket）。" |
+| auth-dev | `general-purpose` | `opus` | "你是认证授权模块开发。范围限定 `fd-server/fd-server-auth/**`。关注 JWT 安全、RBAC 权限模型、用户生命周期、密码策略、会话管理。不得直接依赖 ticket 模块的任何类。" |
+| task-dev | `general-purpose` | `opus` | "你是任务调度模块开发。范围限定 `fd-server/fd-server-task/**`。关注多客户端并发安全、原子任务领取、超时回收、定时任务调度。可依赖 auth 模块的权限注解/接口和 common 模块。不得依赖 ticket 模块。" |
+| ticket-dev | `general-purpose` | `opus` | "你是工单业务模块开发。范围限定 `fd-server/fd-server-ticket/**`。关注工单状态流转正确性、MQ 消息可靠投递、事务一致性。可依赖 auth 模块的公开 Service/DTO 和 task 模块的 TaskDistributionService，不得操作 auth/task 内部实现。" |
+| common-dev | `general-purpose` | `opus` | "你是公共模块开发。范围限定 `fd-server/fd-server-common/**`。关注通用工具类、公共配置、全局异常处理。不得依赖任何业务模块（auth/ticket）。" |
 | frontend-dev | `general-purpose` | `opus` | "你是 React/TypeScript 前端开发。范围限定 `fd-web/src/**`。关注：1) `shared/` 目录（REST 轮询任务 Context、AI Provider、Hooks、API 封装）为跨平台通用代码；2) `tauri/` 目录仅 4 个文件（bridge.ts + NotebookLM Shadow）为 Tauri 桌面专属；3) `isTauriEnv()` + `tauriInvoke()` 条件桥接模式；4) `createMQTaskContext` 工厂函数基于 REST 轮询 claim API（非 Tauri 事件）；5) `useSettings` 通过 UserAppSettings API 存储到服务端。" |
 | rust-dev | `general-purpose` | `opus` | "你是 Tauri/Rust 客户端后端开发。范围限定 `fd-client/src-tauri/src/**`（仅 4 个文件：lib.rs, ai.rs, models.rs, api.rs）。Rust 层已精简为纯壳子：16 个 Tauri command（AI 翻译 2 + 文件系统 2 + Shadow Window 12），无 MQ 消费、无本地数据库、无设置存储。关注 Gemini CLI 调用可靠性、Shadow Window 生命周期管理。" |
 | architect | `Plan` | `opus` | （Plan 模式自动获取上下文，用于跨模块设计、数据流优化、技术选型、状态机扩展、模块边界设计） |
@@ -494,7 +525,7 @@ common/
 | code-reviewer | `general-purpose` | `sonnet` | "你是代码审查者。重点关注 OWASP Top 10（JWT 安全、SQL 注入、XSS）、最佳实践、重复代码。**额外关注模块边界合规**：检查 import 是否违反依赖规则（common ← auth ← task ← ticket），auth 模块是否引用了 ticket 的类，common 是否引用了业务模块的类。输出：问题列表（按严重级别排序）+ 修复建议。" |
 | module-guardian | `general-purpose` | `sonnet` | "你是模块化守护者。检查 fd-server 的模块边界合规性。检查项：1) 依赖方向合规（common ← auth ← task ← ticket，不可反向）；2) 无循环依赖；3) auth 模块的 import 不包含 ticket 包的类；4) common 模块的 import 不包含 auth/ticket 包的类；5) 包结构是否正确归属模块。输出：违规列表 + 修复建议。" |
 | test-runner | `Bash` | `haiku` | 直接执行测试命令（见下方测试命令表） |
-| test-writer | `general-purpose` | `sonnet` | "你是测试工程师。后端用 JUnit 5 + Spring Boot Test（`fd-server/src/test/java/**`），Rust 用 `#[cfg(test)]`，前端用 Vitest + RTL。关注工单状态流转边界、MQ 序列化/反序列化、API 权限校验。测试类的包结构应与源码模块结构一致（auth/ticket/common）。" |
+| test-writer | `general-purpose` | `sonnet` | "你是测试工程师。后端用 JUnit 5 + Spring Boot Test，每个模块的测试在各自子模块的 `src/test/java/` 下（如 `fd-server-auth/src/test/java/`），Rust 用 `#[cfg(test)]`，前端用 Vitest + RTL。关注工单状态流转边界、MQ 序列化/反序列化、API 权限校验。测试类的包结构应与源码模块结构一致。" |
 | doc-writer | `general-purpose` | `haiku` | "你是文档工程师。中文撰写。**文档结构**：`doc/` 下分两层——顶层文档（project-documentation.md 总览、project-structure.md 目录树、system-design.md 设计图、server-architecture.md 后端架构、client-architecture.md 客户端架构、api-reference.md API 汇总、freshdesk-api-reference.md 外部 API）和 `doc/modules/` 模块文档（common.md/auth.md/task.md/ticket.md，每个模块独立完整文档）。**更新规则**：1) 接收到代码变更清单和文档影响清单；2) 只更新受影响的文档，不改无关内容；3) 模块文档格式：模块概览 → REST API（含示例）→ 模块间 Service 接口 → 数据模型 → 扩展点 → 依赖关系 → Maven artifact 建议；4) api-reference.md 是跨模块 API 快速索引，新增端点必须同步；5) 新增模块必须创建 modules/{name}.md。" |
 
 **测试命令表**（test-runner 使用）：
@@ -502,9 +533,9 @@ common/
 | 模块 | 命令 |
 |------|------|
 | 后端全量 | `cd fd-server && mvn test` |
-| 后端 auth 模块 | `cd fd-server && mvn test -Dtest="com.jefflower.fdserver.auth.**"` |
-| 后端 ticket 模块 | `cd fd-server && mvn test -Dtest="com.jefflower.fdserver.ticket.**"` |
-| 后端 task 模块 | `cd fd-server && mvn test -Dtest="com.jefflower.fdserver.task.**"` |
+| 后端 auth 模块 | `cd fd-server && mvn test -pl fd-server-auth` |
+| 后端 task 模块 | `cd fd-server && mvn test -pl fd-server-task` |
+| 后端 ticket 模块 | `cd fd-server && mvn test -pl fd-server-ticket` |
 | Rust | `cd fd-client/src-tauri && cargo test` |
 | 前端 | `cd fd-web && npm test` |
 | 前端覆盖率 | `cd fd-web && npm run test:coverage` |

@@ -95,6 +95,20 @@
     "saveEditFailed": "保存失败: {{error}}",
     "syncFailed": "翻译同步失败: {{error}}"
   },
+  "admin": {
+    "title": "管理操作",
+    "resetQueues": "重置队列",
+    "purgeAll": "清除所有工单",
+    "purgeConfirmTitle": "确认重置队列",
+    "purgeWarning": "此操作将清空所有 MQ 队列中的消息，并重置处理中的工单状态。",
+    "purgeItem1": "清空翻译、回复、审核队列中的所有消息",
+    "purgeItem2": "将处理中的工单重置为待处理状态",
+    "superPassword": "超级密码",
+    "passwordPlaceholder": "请输入超级密码",
+    "purgeSuccess": "已清空 {{messages}} 条消息，重置 {{tickets}} 个工单",
+    "purgeFailed": "队列重置失败：{{error}}",
+    "confirmPurge": "确认重置"
+  },
   "mq": {
     "translateConfirmTitle": "MQ 翻译确认",
     "translateConfirmMessage": "确定要发送 MQ 翻译请求吗？这会重新入队处理。",

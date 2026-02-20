@@ -1,0 +1,73 @@
+{
+  "title": "组织架构同步",
+  "subtitle": "同步钉钉或企业微信的部门与用户数据",
+  "platform": {
+    "label": "同步平台",
+    "dingtalk": "钉钉",
+    "wecom": "企业微信",
+    "none": "关闭"
+  },
+  "oauth": {
+    "label": "OAuth 免密登录",
+    "desc": "允许用户通过钉钉/企微扫码登录"
+  },
+  "defaultRole": {
+    "label": "同步用户默认角色",
+    "hint": "新同步的用户将自动分配此角色"
+  },
+  "dingtalk": {
+    "appKey": "App Key",
+    "appSecret": "App Secret",
+    "corpId": "Corp ID",
+    "rootDeptId": "根部门 ID",
+    "rootDeptHint": "默认为 1（公司根目录）"
+  },
+  "wecom": {
+    "corpId": "Corp ID",
+    "agentId": "Agent ID",
+    "secret": "Secret",
+    "rootDeptId": "根部门 ID",
+    "rootDeptHint": "默认为 1（公司根目录）"
+  },
+  "actions": {
+    "saveConfig": "保存配置",
+    "testConnection": "测试连接",
+    "triggerSync": "手动同步",
+    "testing": "测试中...",
+    "syncing": "同步中..."
+  },
+  "result": {
+    "title": "同步结果",
+    "deptCreated": "新增部门",
+    "deptUpdated": "更新部门",
+    "userCreated": "新增用户",
+    "userUpdated": "更新用户",
+    "userSkipped": "跳过用户",
+    "duration": "耗时"
+  },
+  "logs": {
+    "title": "同步日志",
+    "noLogs": "暂无同步记录",
+    "trigger": "触发人",
+    "time": "时间",
+    "status": "状态",
+    "detail": "详情"
+  },
+  "departments": {
+    "title": "部门预览",
+    "noDepts": "暂无部门数据，请先同步"
+  },
+  "message": {
+    "saveSuccess": "配置已保存",
+    "saveFailed": "保存失败: {{error}}",
+    "testSuccess": "连接成功",
+    "testFailed": "连接失败",
+    "syncSuccess": "同步完成",
+    "syncFailed": "同步失败: {{error}}"
+  },
+  "status": {
+    "RUNNING": "运行中",
+    "SUCCESS": "成功",
+    "FAILED": "失败"
+  }
+}

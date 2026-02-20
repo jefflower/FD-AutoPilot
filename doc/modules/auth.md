@@ -2,6 +2,18 @@
 
 ## 1. 模块概述
 
+### Maven 坐标
+
+```xml
+<dependency>
+    <groupId>com.jefflower</groupId>
+    <artifactId>fd-server-auth</artifactId>
+    <version>${project.version}</version>
+</dependency>
+```
+
+**模块性质**: 认证授权模块，被 `fd-server-task` 和 `fd-server-ticket` 依赖（作为间接依赖者）。
+
 **包路径**: `com.jefflower.fdserver.auth.*`
 
 **核心职责**:
@@ -28,26 +40,41 @@ auth/
 ├── controller/
 │   ├── AuthController.java              # 认证端点（登录/注册/Token 刷新/登出）
 │   ├── UserManageController.java        # 用户管理端点（ADMIN 操作）
-│   └── RolePermissionController.java    # 角色权限端点
+│   ├── RolePermissionController.java    # 角色权限端点
+│   ├── UserSettingsController.java      # 用户设置端点
+│   ├── OrgSyncController.java           # 组织架构同步端点
+│   └── OAuthController.java             # OAuth 登录端点
 ├── service/
 │   ├── AuthService.java                 # 认证核心逻辑
 │   ├── RolePermissionService.java       # 权限查询和管理
 │   ├── ModuleService.java               # 模块管理（权限初始化）
 │   ├── TokenService.java                # JWT Token 生命周期管理
 │   ├── UserAppSettingsService.java      # 用户应用设置存储
-│   └── PermissionCacheService.java      # Redis + 本地双级缓存
+│   ├── PermissionCacheService.java      # Redis + 本地双级缓存
+│   ├── AuthConfigService.java           # Auth 模块配置存储
+│   ├── OrgSyncService.java              # 组织架构同步编排核心
+│   ├── OAuthService.java                # OAuth 免密登录流程
+│   ├── OrgSyncStrategy.java             # 同步策略接口
+│   ├── DingTalkSyncStrategy.java        # 钉钉同步策略
+│   └── WeComSyncStrategy.java           # 企业微信同步策略
 ├── entity/
-│   ├── SysUser.java
+│   ├── SysUser.java                     # (新增字段: dingtalkUserId, wecomUserId, displayName, avatar, mobile, email, departmentId, externalSyncAt)
 │   ├── SysRole.java
 │   ├── SysPermission.java
 │   ├── SysModule.java
 │   ├── SysUserRole.java
 │   ├── SysRolePermission.java
-│   └── UserAppSettings.java
+│   ├── UserAppSettings.java
+│   ├── SysDepartment.java               # 部门实体（新增）
+│   ├── AuthConfig.java                  # Auth 配置存储（新增）
+│   └── OrgSyncLog.java                  # 同步日志（新增）
 ├── repository/
-│   ├── SysUserRepository.java
+│   ├── SysUserRepository.java           # (新增查询方法: findByDingtalkUserId, findByWecomUserId, findByDepartmentId)
 │   ├── SysRoleRepository.java
 │   ├── SysPermissionRepository.java
+│   ├── SysDepartmentRepository.java     # 部门 Repository（新增）
+│   ├── AuthConfigRepository.java        # 配置 Repository（新增）
+│   ├── OrgSyncLogRepository.java        # 同步日志 Repository（新增）
 │   └── ...（其他 Repository）
 ├── dto/
 │   ├── LoginRequest.java
@@ -56,18 +83,28 @@ auth/
 │   ├── RefreshTokenRequest.java
 │   ├── ApproveRequest.java
 │   ├── UserDTO.java
+│   ├── DepartmentDTO.java               # 部门 DTO（新增）
+│   ├── ExternalUserDTO.java             # 外部用户 DTO（新增）
+│   ├── OAuthUserInfo.java               # OAuth 用户信息（新增）
+│   ├── OAuthLoginRequest.java           # OAuth 登录请求（新增）
+│   ├── OrgSyncResult.java               # 同步结果 DTO（新增）
+│   ├── AuthConfigDTO.java               # 配置 DTO（新增）
 │   └── ...
 ├── enums/
 │   ├── UserRole.java                    # SUPER_ADMIN, ADMIN, USER, AUDITOR
 │   ├── UserStatus.java                  # PENDING, APPROVED, REJECTED
-│   └── Logical.java                     # 权限检查逻辑 AND/OR
+│   ├── Logical.java                     # 权限检查逻辑 AND/OR
+│   ├── OrgSyncStatus.java               # RUNNING, SUCCESS, FAILED（新增）
+│   └── OAuthPlatform.java               # DINGTALK, WECOM（新增）
 ├── security/
 │   ├── JwtUtil.java                     # JWT 编解码和验证
 │   ├── JwtAuthenticationFilter.java      # 请求拦截，Token 提取和验证
-│   ├── SecurityConfig.java              # Spring Security 配置
-│   └── PermissionAspect.java            # @RequiresPermission AOP 拦截
+│   ├── SecurityConfig.java              # Spring Security 配置（OAuth 端点白名单）
+│   ├── PermissionAspect.java            # @RequiresPermission AOP 拦截
+│   └── RequiresPermission.java          # 权限检查注解
 ├── config/
 │   ├── AuthDataInitializer.java         # 权限数据初始化（@PostConstruct）
+│   ├── AuthPermissionDefinition.java    # Auth 模块权限定义（新增 org:read、org:manage）
 │   └── JwtProperties.java               # JWT 配置类
 ├── constants/
 │   └── TokenConstants.java              # Token 相关常量
@@ -844,6 +881,293 @@ Authorization: Bearer <accessToken>
 
 ---
 
+### 3.5 组织架构同步端点 (OrgSyncController)
+
+**基路径**: `/api/v1/auth/org-sync`
+
+#### GET /config
+获取组织架构同步配置（包括平台、凭证等）。
+
+**响应** (200 OK):
+```json
+{
+  "code": 0,
+  "message": "success",
+  "data": {
+    "platform": "dingtalk",
+    "enabled": true,
+    "lastSyncTime": "2026-02-16T10:00:00Z",
+    "lastSyncStatus": "SUCCESS",
+    "deptCount": 15,
+    "userCount": 200
+  }
+}
+```
+
+**权限**: `org:manage`
+
+---
+
+#### PUT /config
+更新组织架构同步配置。
+
+**请求**:
+```json
+{
+  "platform": "dingtalk",
+  "enabled": true,
+  "dingtalkCorpId": "xxx",
+  "dingtalkCorpSecret": "xxx",
+  "wecomCorpId": "xxx",
+  "wecomCorpSecret": "xxx"
+}
+```
+
+**响应** (200 OK):
+```json
+{
+  "code": 0,
+  "message": "success",
+  "data": null
+}
+```
+
+**权限**: `org:manage`
+
+---
+
+#### POST /trigger
+手动触发组织架构同步。
+
+**响应** (200 OK):
+```json
+{
+  "code": 0,
+  "message": "success",
+  "data": {
+    "syncId": 123,
+    "startTime": "2026-02-16T10:00:00Z",
+    "status": "RUNNING"
+  }
+}
+```
+
+**权限**: `org:manage`
+
+---
+
+#### POST /test-connection
+测试组织架构连接配置。
+
+**请求**:
+```json
+{
+  "platform": "dingtalk",
+  "corpId": "xxx",
+  "corpSecret": "xxx"
+}
+```
+
+**响应** (200 OK):
+```json
+{
+  "code": 0,
+  "message": "success",
+  "data": {
+    "connected": true,
+    "message": "连接成功"
+  }
+}
+```
+
+**权限**: `org:manage`
+
+---
+
+#### GET /logs
+获取组织架构同步日志。
+
+**查询参数**:
+- `page: int` — 页码（0 开始，默认 0）
+- `size: int` — 页大小（默认 20）
+
+**响应** (200 OK):
+```json
+{
+  "code": 0,
+  "message": "success",
+  "data": {
+    "content": [
+      {
+        "id": 1,
+        "platform": "dingtalk",
+        "triggerUser": "admin",
+        "startTime": "2026-02-16T10:00:00Z",
+        "endTime": "2026-02-16T10:05:00Z",
+        "deptCreated": 5,
+        "deptUpdated": 3,
+        "userCreated": 20,
+        "userUpdated": 15,
+        "userSkipped": 2,
+        "status": "SUCCESS",
+        "errorMessage": null
+      }
+    ],
+    "totalElements": 50,
+    "totalPages": 3,
+    "currentPage": 0,
+    "pageSize": 20
+  }
+}
+```
+
+**权限**: `org:manage`
+
+---
+
+#### GET /departments
+获取同步的部门列表。
+
+**查询参数**:
+- `page: int` — 页码
+- `size: int` — 页大小
+- `platform: string` — 平台过滤（dingtalk/wecom）
+
+**响应** (200 OK):
+```json
+{
+  "code": 0,
+  "message": "success",
+  "data": {
+    "content": [
+      {
+        "id": 1,
+        "name": "总部",
+        "parentId": null,
+        "externalId": "EXT-001",
+        "platform": "dingtalk",
+        "path": "/总部",
+        "sortOrder": 1,
+        "createdAt": "2026-02-16T10:00:00Z"
+      }
+    ],
+    "totalElements": 15,
+    "totalPages": 1,
+    "currentPage": 0,
+    "pageSize": 20
+  }
+}
+```
+
+**权限**: `org:read`
+
+---
+
+### 3.6 OAuth 免密登录端点 (OAuthController)
+
+**基路径**: `/api/v1/auth/oauth`
+
+#### GET /status
+获取 OAuth 登录启用状态。
+
+**响应** (200 OK):
+```json
+{
+  "code": 0,
+  "message": "success",
+  "data": {
+    "oauthEnabled": true,
+    "platforms": [
+      {
+        "name": "dingtalk",
+        "enabled": true,
+        "configured": true
+      },
+      {
+        "name": "wecom",
+        "enabled": false,
+        "configured": true
+      }
+    ]
+  }
+}
+```
+
+**权限**: 无需认证
+
+---
+
+#### GET /{platform}/url
+获取 OAuth 登录 URL。
+
+**路径参数**:
+- `platform: string` — OAuth 平台（dingtalk / wecom）
+
+**查询参数**:
+- `redirectUri: string` — 登录成功后的重定向 URI
+
+**响应** (200 OK):
+```json
+{
+  "code": 0,
+  "message": "success",
+  "data": {
+    "authorizationUrl": "https://login.dingtalk.com/oauth2/auth?client_id=xxx&redirect_uri=...",
+    "state": "random-state-value"
+  }
+}
+```
+
+**权限**: 无需认证
+
+---
+
+#### POST /{platform}/callback
+处理 OAuth 登录回调。
+
+**路径参数**:
+- `platform: string` — OAuth 平台（dingtalk / wecom）
+
+**请求**:
+```json
+{
+  "code": "auth-code-from-platform",
+  "state": "random-state-value"
+}
+```
+
+**响应** (200 OK):
+```json
+{
+  "code": 0,
+  "message": "success",
+  "data": {
+    "accessToken": "eyJhbGc...",
+    "refreshToken": "eyJhbGc...",
+    "expiresIn": 3600,
+    "user": {
+      "id": 1,
+      "username": "dingtalk_user_123",
+      "displayName": "张三",
+      "avatar": "https://...",
+      "email": "zhangsan@example.com",
+      "status": "APPROVED",
+      "roles": ["USER"],
+      "dingtalkUserId": "ext-123456"
+    }
+  }
+}
+```
+
+**错误**:
+- `400` OAUTH_DISABLED: OAuth 未启用
+- `400` OAUTH_FAILED: OAuth 认证失败
+- `404` OAUTH_USER_NOT_FOUND: 用户不存在（新用户可能需要 admin 审批）
+
+**权限**: 无需认证
+
+---
+
 ## 4. 模块间开放 Service 接口
 
 ### 4.1 AuthService
@@ -1091,6 +1415,66 @@ public class TicketModuleDefinition implements ModulePermissionDefinition {
 }
 ```
 
+### 6.3 Auth 模块权限定义（AuthPermissionDefinition）
+
+auth 模块本身定义的权限（已在启动时注册）：
+
+```java
+@Component
+public class AuthPermissionDefinition implements ModulePermissionDefinition {
+
+    @Override
+    public String getModuleCode() {
+        return "auth";
+    }
+
+    @Override
+    public String getModuleName() {
+        return "认证授权";
+    }
+
+    @Override
+    public String getModuleDescription() {
+        return "用户认证、权限管理和组织架构";
+    }
+
+    @Override
+    public String getModuleIcon() {
+        return "🔐";
+    }
+
+    @Override
+    public String getModuleRoutePath() {
+        return "/admin/users";
+    }
+
+    @Override
+    public int getModuleSortOrder() {
+        return 5;
+    }
+
+    @Override
+    public Map<String, String> getPermissions() {
+        return Map.ofEntries(
+            Map.entry("user:read", "查看用户"),
+            Map.entry("user:manage", "用户管理"),
+            Map.entry("org:read", "查看组织架构"),
+            Map.entry("org:manage", "管理组织架构")
+        );
+    }
+
+    @Override
+    public Map<String, List<String>> getDefaultRoleAssignments() {
+        return Map.ofEntries(
+            Map.entry("user:read", List.of("ADMIN")),
+            Map.entry("user:manage", List.of("ADMIN")),
+            Map.entry("org:read", List.of("ADMIN")),
+            Map.entry("org:manage", List.of("ADMIN"))
+        );
+    }
+}
+```
+
 ### 6.3 权限数据初始化流程
 
 **启动时** (`AuthDataInitializer` @PostConstruct):
@@ -1129,6 +1513,29 @@ public class SysUser {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private UserStatus status;  // PENDING, APPROVED, REJECTED
+
+    @Column(length = 128)
+    private String displayName;  // 显示名称（来自 OAuth 或手工设置）
+
+    @Column(length = 256)
+    private String avatar;  // 头像 URL
+
+    @Column(length = 64)
+    private String mobile;  // 手机号
+
+    @Column(length = 128)
+    private String email;  // 电子邮箱
+
+    @Column(length = 64)
+    private String dingtalkUserId;  // 钉钉用户 ID
+
+    @Column(length = 64)
+    private String wecomUserId;  // 企业微信用户 ID
+
+    @Column(nullable = false, columnDefinition = "BIGINT DEFAULT 0")
+    private Long departmentId;  // FK → sys_department.id
+
+    private LocalDateTime externalSyncAt;  // 最后一次从外部系统同步的时间
 
     @CreationTimestamp
     private LocalDateTime createdAt;
@@ -1285,6 +1692,123 @@ public class UserAppSettings {
 
     @CreationTimestamp
     private LocalDateTime createdAt;
+
+    @UpdateTimestamp
+    private LocalDateTime updatedAt;
+}
+```
+
+### 7.7 部门表 (SysDepartment)
+
+```java
+@Entity
+@Table(name = "sys_department", uniqueConstraints = {@UniqueConstraint(columnNames = {"external_id", "platform"})})
+public class SysDepartment {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false, length = 128)
+    private String name;  // 部门名称
+
+    @Column(columnDefinition = "BIGINT DEFAULT 0")
+    private Long parentId;  // 父部门 ID
+
+    @Column(nullable = false, length = 64)
+    private String externalId;  // 外部系统部门 ID（钉钉/企微）
+
+    @Column(nullable = false, length = 32)
+    private String platform;  // DINGTALK, WECOM
+
+    @Column(columnDefinition = "TEXT")
+    private String path;  // 部门路径，如 /总部/研发部
+
+    @Column(nullable = false, columnDefinition = "INT DEFAULT 0")
+    private Integer sortOrder;  // 排序顺序
+
+    @CreationTimestamp
+    private LocalDateTime createdAt;
+
+    @UpdateTimestamp
+    private LocalDateTime updatedAt;
+}
+```
+
+### 7.8 Auth 配置表 (AuthConfig)
+
+```java
+@Entity
+@Table(name = "auth_config", uniqueConstraints = {@UniqueConstraint(columnNames = "config_key")})
+public class AuthConfig {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(unique = true, nullable = false, length = 128)
+    private String configKey;  // 配置键，如 org_sync_platform, oauth_enabled
+
+    @Column(nullable = false, columnDefinition = "TEXT")
+    private String configValue;  // 配置值
+
+    @Column(length = 256)
+    private String description;  // 配置描述
+
+    @Column(nullable = false)
+    private Boolean isSecret;  // 是否为敏感信息（密码、Secret）
+
+    @UpdateTimestamp
+    private LocalDateTime updatedAt;
+}
+```
+
+**配置键常量**（在 AuthConfigService 中定义）：
+- `org_sync_platform` — 组织同步平台（dingtalk/wecom）
+- `oauth_enabled` — 是否启用 OAuth 登录
+- `default_sync_role` — 新同步用户的默认角色
+- `dingtalk_corp_id`, `dingtalk_corp_secret` — 钉钉认证信息
+- `wecom_corp_id`, `wecom_corp_secret` — 企业微信认证信息
+
+### 7.9 组织同步日志表 (OrgSyncLog)
+
+```java
+@Entity
+@Table(name = "org_sync_log")
+public class OrgSyncLog {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false, length = 32)
+    private String platform;  // DINGTALK, WECOM
+
+    @Column(length = 64)
+    private String triggerUser;  // 触发同步的用户
+
+    @CreationTimestamp
+    private LocalDateTime startTime;
+
+    private LocalDateTime endTime;
+
+    @Column(columnDefinition = "INT DEFAULT 0")
+    private Integer deptCreated;  // 新增部门数
+
+    @Column(columnDefinition = "INT DEFAULT 0")
+    private Integer deptUpdated;  // 更新部门数
+
+    @Column(columnDefinition = "INT DEFAULT 0")
+    private Integer userCreated;  // 新增用户数
+
+    @Column(columnDefinition = "INT DEFAULT 0")
+    private Integer userUpdated;  // 更新用户数
+
+    @Column(columnDefinition = "INT DEFAULT 0")
+    private Integer userSkipped;  // 跳过的用户数（已存在）
+
+    @Enumerated(EnumType.STRING)
+    private OrgSyncStatus status;  // RUNNING, SUCCESS, FAILED
+
+    @Column(columnDefinition = "TEXT")
+    private String errorMessage;  // 错误信息
 
     @UpdateTimestamp
     private LocalDateTime updatedAt;
@@ -1508,28 +2032,86 @@ public class NotificationService {
 
 ---
 
-## 12. 依赖关系
+## 12. Maven 模块依赖关系
 
-### 12.1 auth 模块依赖的包
+### 12.1 fd-server-auth 模块依赖链
 
 ```
-com.jefflower.fdserver.common.*      ← 基础设施
-  ↓
-com.jefflower.fdserver.auth.*        ← 认证授权
-  ↓
-com.jefflower.fdserver.ticket.*      ← 业务逻辑
+Maven 依赖链（单向）:
+common ← auth ← task ← ticket ← app
 ```
 
-**auth 模块直接依赖**:
-- `com.jefflower.fdserver.common.*` — 异常、DTO 基类、工具
-- Spring Security 5.x
-- Spring Data JPA
-- JJWT (io.jsonwebtoken:jjwt-api, jjwt-impl, jjwt-jackson)
-- Spring Boot Starter Data Redis (可选)
-- BCrypt (org.springframework.security:spring-security-crypto)
+**fd-server-auth 的 Maven 依赖** (pom.xml):
+```xml
+<dependency>
+    <groupId>com.jefflower</groupId>
+    <artifactId>fd-server-common</artifactId>
+    <version>${project.version}</version>
+</dependency>
+
+<!-- Spring Security -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-security</artifactId>
+</dependency>
+
+<!-- JWT -->
+<dependency>
+    <groupId>io.jsonwebtoken</groupId>
+    <artifactId>jjwt-api</artifactId>
+    <version>0.12.3</version>
+</dependency>
+<dependency>
+    <groupId>io.jsonwebtoken</groupId>
+    <artifactId>jjwt-impl</artifactId>
+    <version>0.12.3</version>
+    <scope>runtime</scope>
+</dependency>
+<dependency>
+    <groupId>io.jsonwebtoken</groupId>
+    <artifactId>jjwt-jackson</artifactId>
+    <version>0.12.3</version>
+    <scope>runtime</scope>
+</dependency>
+
+<!-- Redis (可选，用于 Token 黑名单) -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-redis</artifactId>
+    <optional>true</optional>
+</dependency>
+
+<!-- JPA -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-jpa</artifactId>
+</dependency>
+
+<!-- AOP (支持 @RequiresPermission 注解) -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-aop</artifactId>
+</dependency>
+
+<!-- Lombok -->
+<dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <optional>true</optional>
+</dependency>
+
+<!-- 测试 -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-test</artifactId>
+    <scope>test</scope>
+</dependency>
+```
 
 **谁依赖 auth 模块**:
-- `com.jefflower.fdserver.ticket.*` — 通过 @Autowired 注入 service, 实现 ModulePermissionDefinition, 使用 @RequiresPermission 注解
+- `fd-server-task` — 直接依赖 (间接传递给 ticket)
+- `fd-server-ticket` — 间接依赖（通过 task）
+- 原始用法: 通过 @Autowired 注入 service、实现 ModulePermissionDefinition、使用 @RequiresPermission 注解
 
 ### 12.2 模块间接口隔离
 
@@ -1594,15 +2176,19 @@ auth:
 
 ---
 
-## 14. Maven 多模块化建议
+## 14. Maven 多模块现状
 
-### 14.1 未来 artifact 坐标
+### 14.1 当前 Artifact 坐标
 
 ```
-com.jefflower:fd-server-auth:1.0.0
+com.jefflower:fd-server-auth:${project.version}
 ```
 
-**pom.xml** (`fd-server-auth/pom.xml`):
+**当前位置**: `fd-server/fd-server-auth/pom.xml`
+
+### 14.2 当前 pom.xml 结构
+
+**fd-server-auth/pom.xml** 继承自 parent POM，现状示例:
 
 ```xml
 <project>

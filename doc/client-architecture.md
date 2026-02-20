@@ -310,6 +310,134 @@ src-tauri/src/
 - **交互**: 人工操作，无自动化
 - **结果**: 通过 `serverApi.ticket.submitAudit()` 提交审核结论
 
+## 路由配置
+
+### 路由定义（`fd-web/src/router/routes.ts`）
+路由配置关联模块、权限和懒加载组件：
+
+```typescript
+interface Route {
+    path: string;
+    component: React.ComponentType;
+    requiredPermission?: string; // 权限 code
+    label?: string;              // Tab 标签
+    icon?: React.ReactNode;      // Tab 图标
+}
+```
+
+**核心路由树**：
+- `/auth/login` — 登录页
+- `/auth/register` — 注册页
+- `/tickets` — 工单列表 Tab
+- `/tasks/translation` — 翻译任务 Tab
+- `/tasks/reply` — 回复任务 Tab
+- `/tasks/audit` — 审核任务 Tab
+- `/tasks/approved` — 待推送队列 Tab
+- `/admin/users` — 用户管理 Tab
+- `/admin/sync` — 同步管理 Tab
+- `/admin/knowledge` — 知识库管理 Tab
+- `/admin/database` — 数据库查询 Tab
+- `/admin/logs` — 服务器日志 Tab
+- `/system/settings` — 设置 Tab
+- `/system/profile` — 个人资料 Tab
+
+### 权限守卫（`fd-web/src/router/guards.tsx`）
+- **AuthGuard**: 检查 JWT token 有效性，重定向到登录页
+- **PermissionGuard**: 检查用户权限，若权限不足显示 403 提示
+- **应用位置**: `App.tsx` → `AppInner` 组件中的 RouterProvider 包裹
+
+### 移动审核独立入口（`/m/audit`）
+
+移动审核页面在 `App.tsx` 中通过路径检测实现独立渲染，**不经过 AuthProvider**：
+
+```typescript
+function App() {
+    // 移动审核页面 — 独立入口，无需登录
+    if (window.location.pathname === '/m/audit') {
+        return <MobileAuditPage />;
+    }
+    return (
+        <AuthProvider>
+            <AppInner />
+        </AuthProvider>
+    );
+}
+```
+
+**特点**：
+- 无需 JWT 认证，通过 URL 参数 `token` 验证（审核 Token）
+- `auditTokenApi` 使用原生 `fetch`（不经过 JWT 拦截器）
+- 独立暗色主题，移动屏幕适配（`safe-area-*` 支持 notch 和 home 指示器）
+- 状态机：`loading` → `ready` / `audited` / `error` → `submitted`
+- 页面组件: `fd-web/src/modules/mobile/pages/MobileAuditPage.tsx`
+
+**集成**：
+- 从 `AuditTasksTab` 或后端审核链接生成短 URL
+- 短 URL 带有加密 token 参数，服务端 `auditTokenApi.validateToken()` 验证
+- 用户打开链接 → MobileAuditPage 自动加载对应工单 → 审核完成后提交结果
+
+### AuditTasksTab 移动预览功能
+
+AuditTasksTab 新增 iframe 手机预览功能（`fd-web/src/modules/ticket/pages/AuditTasksTab.tsx`）：
+
+**组件结构**：
+- `MobilePreviewModal.tsx` — 弹窗组件，内嵌 iframe
+- 预设尺寸：iPhone SE（375×667）、iPhone 14 Pro（393×852）、Android（375×812）
+- iframe 边框和圆角模拟手机外形
+
+**预览流程**：
+1. 用户在 AuditTasksTab 的工单卡片中点击"移动预览"按钮
+2. 弹出 `MobilePreviewModal`，调用 `ticketApi.getAuditToken(ticketId)` 获取审核 Token
+3. 构建预览 URL: `${window.location.origin}/m/audit?token=${token}`
+4. 将 URL 设置到 iframe 的 `src` 属性
+5. iframe 内加载 MobileAuditPage，显示移动版本的审核界面
+
+**示例代码**：
+```typescript
+// AuditTasksTab.tsx
+const handleMobilePreview = async (ticketId: string) => {
+    const token = await ticketApi.getAuditToken(ticketId);
+    setPreviewUrl(`${window.location.origin}/m/audit?token=${token}`);
+    setShowPreviewModal(true);
+};
+
+// MobilePreviewModal.tsx
+<div className="mobile-frame">
+    <iframe
+        src={previewUrl}
+        className="mobile-viewport"
+        style={{
+            width: selectedSize === 'iphone-se' ? '375px' : '393px',
+            height: selectedSize === 'iphone-se' ? '667px' : '852px',
+        }}
+    />
+</div>
+```
+
+### 通知渠道配置
+
+SettingsTab 重构为统一通知渠道配置页面（`fd-web/src/modules/system/pages/SettingsTab.tsx`），管理员可统一配置工单通知：
+
+**配置项**：
+1. **通知平台选择**：企业微信 / 钉钉 / 关闭
+2. **Webhook URL**：根据选择的平台显示不同占位符
+   - 企业微信: `https://qyapi.weixin.qq.com/cgi-bin/webhook/...`
+   - 钉钉: `https://oapi.dingtalk.com/robot/send?...`
+3. **审核链接域名**：生成移动审核链接时使用的域名（如 `https://api.example.com`）
+
+**API 集成**：
+- `configApi.getNotifyChannel()` — 获取当前通知渠道配置
+- `configApi.setNotifyChannel(platform, webhookUrl, auditDomain)` — 保存配置
+- `configApi.testNotifyChannel()` — 测试 Webhook（发送测试消息）
+
+**UI 流程**：
+1. 管理员访问 SettingsTab
+2. 选择通知平台 → 输入 Webhook URL
+3. 点击"测试"按钮发送测试消息
+4. 消息成功投递后显示"测试成功"提示
+5. 点击"保存"提交配置
+6. 后续工单审核链接按配置的域名和 token 生成
+
 ## Performance Optimization
 
 ### Component Lazy Loading (`App.tsx`)

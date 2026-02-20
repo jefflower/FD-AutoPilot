@@ -1,4 +1,18 @@
 {
+  "module": {
+    "ticket": "Tickets",
+    "admin": "Admin",
+    "task": "Tasks"
+  },
+  "moduleDesc": {
+    "ticket": "Translation, reply & audit",
+    "admin": "Users, permissions & data",
+    "task": "Task definitions & monitoring"
+  },
+  "sidebar": {
+    "collapse": "Collapse",
+    "expand": "Expand"
+  },
   "nav": {
     "server": "Server",
     "translation": "Translate",
@@ -15,7 +29,10 @@
     "profile": "Profile",
     "taskDashboard": "Dashboard",
     "taskDefinitions": "Definitions",
-    "taskHistory": "History"
+    "taskHistory": "History",
+    "rolePermission": "Perms",
+    "aiConfig": "AI Config",
+    "orgSync": "Org Sync"
   },
   "ticketStatus": {
     "PENDING_TRANS": "Pending Translation",
@@ -49,6 +66,7 @@
     "copy": "Copy",
     "loading": "Loading...",
     "saving": "Saving...",
+    "processing": "Processing...",
     "submitting": "Submitting...",
     "previousPage": "Previous",
     "nextPage": "Next",

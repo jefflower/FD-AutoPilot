@@ -15,17 +15,32 @@
     "table": {
       "id": "ID",
       "username": "用户名",
+      "displayName": "显示名",
+      "department": "部门",
+      "source": "来源",
       "role": "角色",
       "status": "状态",
       "createdAt": "创建时间",
       "actions": "操作"
     },
+    "source": {
+      "local": "本地",
+      "dingtalk": "钉钉",
+      "wecom": "企微"
+    },
+    "filter": {
+      "allSources": "全部来源",
+      "allDepts": "全部部门"
+    },
+    "noDepartment": "—",
     "action": {
       "approve": "批准",
       "reject": "拒绝",
       "reApprove": "重新批准",
       "demoteToUser": "降为用户",
       "promoteToAdmin": "升为管理员",
+      "manageRoles": "管理角色",
+      "viewPermissions": "权限",
       "resetPassword": "重置密码"
     },
     "confirmDialog": {
@@ -34,6 +49,18 @@
       "confirmReject": "确定拒绝用户「{{username}}」？该用户将无法登录。",
       "confirmRoleChange": "确定将用户「{{username}}」的角色修改为{{role}}？"
     },
+    "roleManage": {
+      "title": "{{username}} 的角色管理",
+      "loadFailed": "加载角色信息失败",
+      "saveSuccess": "已更新 {{username}} 的角色",
+      "builtIn": "内置",
+      "atLeastOne": "请至少选择一个角色"
+    },
+    "permView": {
+      "title": "{{username}} 的权限列表",
+      "loadFailed": "加载权限信息失败",
+      "noPermissions": "该用户暂无权限"
+    },
     "resetPasswordDialog": {
       "title": "重置密码 - {{username}}",
       "placeholder": "输入新密码（至少6位）",
@@ -41,6 +68,33 @@
       "processing": "处理中...",
       "reset": "重置"
     }
+  },
+  "roles": {
+    "title": "角色权限管理",
+    "roleList": "角色列表",
+    "permissionConfig": "权限配置",
+    "builtIn": "内置",
+    "loadFailed": "加载失败",
+    "selectRole": "请从左侧选择一个角色来管理其权限",
+    "superAdminHint": "超级管理员自动拥有所有权限，无需手动配置",
+    "permissionsOf": "{{name}} 的权限",
+    "selectAll": "全选",
+    "savePermissions": "保存权限",
+    "saving": "保存中...",
+    "saveSuccess": "权限保存成功",
+    "saveFailed": "权限保存失败",
+    "permCount": "{{selected}}/{{total}}",
+    "overview": "权限总览",
+    "permConfig": "权限配置",
+    "moduleEnabled": "已启用",
+    "moduleDisabled": "已禁用",
+    "toggleModuleFailed": "切换模块状态失败",
+    "builtInCannotToggle": "内置模块不可禁用",
+    "moduleToggleSuccess": "模块状态已更新",
+    "overviewStats": "共 {{modules}} 个模块、{{permissions}} 个权限、{{roles}} 个角色",
+    "roleColumn": "角色",
+    "permissionColumn": "权限",
+    "coverageRate": "覆盖率"
   },
   "sync": {
     "title": "同步管理",

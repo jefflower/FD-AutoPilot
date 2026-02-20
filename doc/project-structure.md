@@ -82,7 +82,7 @@ fd-web/
 │   │
 │   ├── modules/                               # 按业务域划分的页面模块
 │   │   ├── auth/pages/                        # 认证页面
-│   │   │   ├── AuthLoginTab.tsx               # 登录
+│   │   │   ├── AuthLoginTab.tsx               # 登录（新增 OAuth 按钮）
 │   │   │   └── AuthRegisterTab.tsx            # 注册
 │   │   ├── ticket/                            # 工单模块
 │   │   │   ├── pages/
@@ -95,13 +95,15 @@ fd-web/
 │   │   │   └── components/
 │   │   │       ├── ServerTicketDetail.tsx      # 工单详情（AI 操作）
 │   │   │       ├── ServerTicketList.tsx        # 分页工单列表
+│   │   │       ├── MobilePreviewModal.tsx      # iframe 手机预览模态框
 │   │   │       └── ticket-detail/
 │   │   │           ├── TranslationPreviewBar.tsx
 │   │   │           ├── AiReplyPanel.tsx
 │   │   │           └── ReplyHistoryPanel.tsx
 │   │   ├── admin/                             # 管理模块
 │   │   │   ├── pages/
-│   │   │   │   ├── AdminUsersTab.tsx          # 用户管理
+│   │   │   │   ├── AdminUsersTab.tsx          # 用户管理（新增部门列、来源列、头像、显示名）
+│   │   │   │   ├── OrgSyncTab.tsx             # 组织架构同步管理（新增）
 │   │   │   │   ├── ManualSyncTab.tsx          # 同步管理
 │   │   │   │   ├── KnowledgeTab.tsx           # 知识库
 │   │   │   │   ├── DatabaseTab.tsx            # 数据库查询
@@ -109,6 +111,9 @@ fd-web/
 │   │   │   └── components/
 │   │   │       ├── SqlQueryPanel.tsx
 │   │   │       └── H2ConsolePanel.tsx
+│   │   ├── mobile/                            # 移动端模块
+│   │   │   └── pages/
+│   │   │       └── MobileAuditPage.tsx        # 移动审核页面（独立入口，无需登录）
 │   │   └── system/pages/                      # 系统模块
 │   │       ├── SettingsTab.tsx                 # 设置（NotebookLM）
 │   │       └── UserProfileTab.tsx             # 个人资料
@@ -206,126 +211,76 @@ fd-client/
 
 基于 **Spring Boot 3.4.1**、**Java 21**、**H2 数据库**、**RabbitMQ**、**Redis** 构建。
 
-采用**单体内模块化**架构，按业务域划分三个包：
+采用 **Maven 多模块**架构（parent POM + 5 个子模块），编译顺序：common → auth → task → ticket → app。
 
 ```
-fd-server/src/main/java/com/jefflower/fdserver/
-├── FdServerApplication.java                   # Spring Boot 主类
+fd-server/                                     # parent POM (packaging: pom)
+├── pom.xml                                    # dependencyManagement + pluginManagement
 │
-├── auth/                                      # 认证授权模块（+用户设置）
-│   ├── controller/
-│   │   ├── AuthController.java                # 登录/注册/me 端点
-│   │   ├── UserManageController.java          # 用户 CRUD/审批/角色
-│   │   ├── RolePermissionController.java      # RBAC 角色权限管理
-│   │   └── UserSettingsController.java        # 用户应用设置 CRUD
-│   ├── service/
-│   │   ├── AuthService.java                   # 认证核心逻辑
-│   │   ├── ModuleService.java                 # 模块权限查询
-│   │   ├── ModulePermissionDefinition.java    # 权限自注册接口
-│   │   └── UserAppSettingsService.java        # 用户设置管理
-│   ├── entity/
-│   │   ├── SysUser.java                       # 用户
-│   │   ├── SysRole.java                       # 角色
-│   │   ├── SysPermission.java                 # 权限
-│   │   ├── SysUserRole.java                   # 用户-角色关联
-│   │   ├── SysRolePermission.java             # 角色-权限关联
-│   │   ├── SysModule.java                     # 模块（auth/ticket/system）
-│   │   └── UserAppSettings.java               # 用户应用设置
-│   ├── repository/                            # 对应各实体 JpaRepository
-│   ├── dto/                                   # LoginRequest/Response, RegisterRequest 等
-│   ├── enums/                                 # UserRole, UserStatus
-│   ├── annotation/
-│   │   └── RequiresPermission.java            # 方法级权限注解
-│   ├── aspect/
-│   │   └── PermissionAspect.java              # AOP 权限切面
-│   ├── security/
-│   │   ├── JwtUtil.java                       # JWT 双 Token（access + refresh）
-│   │   └── JwtAuthenticationFilter.java       # Security 过滤器
-│   ├── config/
-│   │   ├── SecurityConfig.java                # Spring Security 配置
-│   │   ├── AuthDataInitializer.java           # 增量同步（模块/角色/权限自动注册）
-│   │   └── AuthPermissionDefinition.java      # auth 模块 4 个权限定义
-│   └── util/
-│       ├── PasswordValidator.java
-│       └── SuperPasswordVerifier.java
+├── fd-server-common/                          # (jar) 公共基础模块
+│   └── src/main/java/.../common/
+│       ├── config/
+│       │   ├── RestTemplateConfig.java        # HTTP 客户端配置
+│       │   └── SpaWebConfig.java              # SPA 路由（@ConditionalOnResource）
+│       ├── dto/
+│       │   └── ApiResponse.java               # 通用响应包装
+│       ├── exception/
+│       │   ├── BusinessException.java         # 业务异常
+│       │   └── GlobalExceptionHandler.java    # 全局异常处理
+│       └── util/
+│           ├── PasswordValidator.java
+│           ├── SqlValidator.java              # SQL 安全校验
+│           └── SuperPasswordVerifier.java     # 超级密码验证
 │
-├── task/                                      # 任务调度模块（新增）
-│   ├── controller/
-│   │   ├── TaskClaimController.java           # 任务领取/完成/释放
-│   │   └── TaskAdminController.java           # 任务管理后台
-│   ├── service/
-│   │   ├── TaskClaimService.java              # 任务领取核心逻辑
-│   │   ├── TaskExecutionService.java          # 任务执行
-│   │   ├── TaskDefinitionService.java         # 任务定义管理
-│   │   └── TaskStatisticsService.java         # 统计和报表
-│   ├── entity/
-│   │   ├── TaskDefinition.java                # 任务定义
-│   │   ├── TaskInstance.java                  # 任务实例
-│   │   └── TaskExecutionLog.java              # 执行日志
-│   ├── repository/                            # TaskDefinition/Instance/Log Repository
-│   ├── enums/
-│   │   ├── TaskStatus.java                    # PENDING, CLAIMED, COMPLETED, FAILED
-│   │   └── TaskType.java                      # MANUAL, SCHEDULED, CRON
-│   ├── scheduler/
-│   │   ├── TaskRecoveryScheduler.java         # 超时任务回收
-│   │   └── TaskCronScheduler.java             # Cron 定时调度
-│   ├── dto/                                   # 任务相关 DTO
-│   └── config/
-│       └── TaskPermissionDefinition.java      # task 模块权限定义
+├── fd-server-auth/                            # (jar) 认证授权模块
+│   ├── src/main/java/.../auth/
+│   │   ├── controller/                        # AuthController, UserManageController, RolePermissionController, UserSettingsController, OrgSyncController, OAuthController
+│   │   ├── service/                           # AuthService, ModuleService, TokenService, RolePermissionService, UserAppSettingsService, AuthConfigService, OrgSyncService, OAuthService 等
+│   │   ├── entity/                            # SysUser, SysRole, SysPermission, SysUserRole, SysRolePermission, SysModule, UserAppSettings, SysDepartment, AuthConfig, OrgSyncLog
+│   │   ├── repository/                        # 对应各实体 JpaRepository（新增 SysDepartmentRepository, AuthConfigRepository, OrgSyncLogRepository）
+│   │   ├── dto/                               # LoginRequest/Response, RegisterRequest, DepartmentDTO, ExternalUserDTO, OAuthUserInfo, OAuthLoginRequest, OrgSyncResult, AuthConfigDTO 等
+│   │   ├── enums/                             # UserStatus, OrgSyncStatus, OAuthPlatform
+│   │   ├── security/                          # JwtUtil, JwtAuthenticationFilter, RequiresPermission, PermissionAspect
+│   │   └── config/                            # SecurityConfig, AuthDataInitializer, AuthPermissionDefinition
+│   └── src/test/java/.../auth/service/        # AuthServiceTest
 │
-├── ticket/                                    # 工单业务模块
-│   ├── controller/
-│   │   ├── TicketController.java              # 工单 CRUD、翻译/回复/审核提交
-│   │   ├── SyncController.java                # Freshdesk 同步管理
-│   │   ├── QueueController.java               # MQ 队列/DLQ 管理
-│   │   ├── ConfigController.java              # 系统配置（自动推送、企微）
-│   │   ├── KnowledgeController.java           # 知识库 CRUD
-│   │   ├── DatabaseController.java            # SQL 查询
-│   │   ├── WebhookController.java             # Freshdesk Webhook
-│   │   └── RequestController.java             # 调试端点
-│   ├── service/
-│   │   ├── TicketService.java                 # 工单工作流编排
-│   │   ├── MqPublisherService.java            # RabbitMQ 发布
-│   │   ├── MqQueueService.java                # 队列管理
-│   │   ├── DlqConsumerService.java            # 死信队列消费
-│   │   ├── FreshdeskSyncService.java          # 增量同步
-│   │   ├── SyncConfigService.java             # 同步配置
-│   │   ├── ReplyPushService.java              # 回复推送
-│   │   ├── SystemConfigService.java           # 系统配置
-│   │   ├── WeChatWorkNotifyService.java       # 企微通知
-│   │   ├── KnowledgeNoteService.java          # 知识库
-│   │   ├── DatabaseQueryService.java          # 数据库查询
-│   │   └── RequestService.java                # 请求记录
-│   ├── entity/                                # Ticket, Translation, Reply, Audit, SystemConfig, KnowledgeNote, SyncLog, SyncConfig, FailedReplyPush, RequestRecord
-│   ├── repository/                            # 对应各实体 JpaRepository
-│   ├── dto/                                   # 工单相关 DTO
-│   ├── enums/                                 # TicketStatus, AuditResult, SyncStatus, TriggerType
-│   ├── scheduler/
-│   │   ├── SyncScheduler.java                 # Cron 同步调度
-│   │   └── ReplyPushRetryScheduler.java       # 推送重试调度
-│   ├── client/
-│   │   └── FreshdeskApiClient.java            # Freshdesk HTTP 客户端
-│   └── config/
-│       ├── RabbitMQConfig.java                # 队列、交换机、路由键
-│       ├── MqInitializer.java                 # MQ 初始化
-│       ├── TicketPermissionDefinition.java    # ticket 模块 6 个权限
-│       └── SystemPermissionDefinition.java    # system 模块 8 个权限
+├── fd-server-task/                            # (jar) 任务调度模块
+│   ├── src/main/java/.../task/
+│   │   ├── controller/                        # TaskController, TaskAdminController
+│   │   ├── service/                           # TaskDistributionService, TaskScheduleService, TaskHandler
+│   │   ├── entity/                            # TaskDefinition, TaskInstance
+│   │   ├── repository/                        # TaskDefinitionRepository, TaskInstanceRepository
+│   │   ├── enums/                             # TaskStatus, ExecutionMode, TriggerType
+│   │   ├── scheduler/                         # TaskRecoveryScheduler, TaskCronScheduler, TaskSchedulerRegistry
+│   │   ├── dto/                               # TaskCompleteRequest
+│   │   └── config/                            # TaskConfig, TaskPermissionDefinition
+│   └── src/test/java/                         # (暂无测试)
 │
-├── common/                                    # 公共基础模块
-│   ├── config/
-│   │   ├── RestTemplateConfig.java            # HTTP 客户端配置
-│   │   └── SpaWebConfig.java                  # SPA 路由（@ConditionalOnResource）
-│   ├── dto/
-│   │   └── ApiResponse.java                   # 通用响应包装
-│   └── util/
-│       ├── SqlValidator.java                  # SQL 安全校验
-│       └── SuperPasswordVerifier.java         # 超级密码验证
+├── fd-server-ticket/                          # (jar) 工单业务模块
+│   ├── src/main/java/.../ticket/
+│   │   ├── controller/                        # TicketController, SyncController, QueueController, ConfigController, KnowledgeController, DatabaseController, WebhookController, RequestController, AuditTokenController
+│   │   ├── service/                           # TicketService, MqPublisherService, FreshdeskSyncService, ReplyPushService 等
+│   │   │   └── notify/                        # 通知策略模式子包
+│   │   │       ├── NotifyStrategy.java        # 通知策略接口
+│   │   │       ├── WeChatWorkNotifyStrategy.java  # 企业微信策略实现
+│   │   │       ├── DingTalkNotifyStrategy.java    # 钉钉策略实现
+│   │   │       └── NotifyService.java         # 策略路由层
+│   │   ├── entity/                            # Ticket, TicketTranslation, TicketReply, TicketAudit, SystemConfig, AuditToken 等
+│   │   ├── repository/                        # 对应各实体 JpaRepository + AuditTokenRepository
+│   │   ├── dto/                               # 工单相关 DTO、MobileAuditDetailResponse、MobileAuditSubmitRequest、MobileAuditSubmitResponse、NotifyChannelConfig
+│   │   ├── enums/                             # TicketStatus, AuditResult, SyncStatus, TriggerType, AuditTokenStatus
+│   │   ├── scheduler/                         # SyncScheduler, ReplyPushRetryScheduler
+│   │   ├── client/                            # FreshdeskApiClient
+│   │   └── config/                            # RabbitMQConfig, MqInitializer, TicketPermissionDefinition, SystemPermissionDefinition, TicketTaskDefinitionInitializer
+│   └── src/test/java/.../ticket/service/      # TicketServiceTest, FreshdeskSyncServiceTest
 │
-├── src/main/resources/
-│   ├── application.yml                        # 应用配置（H2、RabbitMQ、Redis、JWT）
-│   └── static/                                # 前端静态资源（npm run publish 写入）
-├── src/test/java/                             # 测试代码（70 个测试用例）
-└── pom.xml                                    # Maven 配置（含 with-frontend Profile）
+└── fd-server-app/                             # (jar) 启动入口
+    ├── src/main/java/.../FdServerApplication.java  # @SpringBootApplication + @EnableScheduling
+    └── src/main/resources/
+        ├── application.yml                    # 应用配置（H2、RabbitMQ、Redis、JWT）
+        ├── data.sql                           # 初始数据
+        ├── logback-spring.xml                 # 日志配置
+        └── static/                            # 前端静态资源（with-frontend Profile 构建）
 ```
 
 ### 模块间依赖规则
@@ -333,17 +288,23 @@ fd-server/src/main/java/com/jefflower/fdserver/
 ```
 common（底层） ← auth（中层） ← task ← ticket（上层）
 ```
-- common 不依赖任何业务模块
-- auth 只依赖 common
-- task 只依赖 auth 和 common
-- ticket 可依赖 task、auth 和 common
+- common 不依赖任何业务模块（Maven: 无内部依赖）
+- auth 只依赖 common（Maven: `fd-server-common`）
+- task 只依赖 auth（Maven: `fd-server-auth`，传递获得 common）
+- ticket 可依赖 task（Maven: `fd-server-task`，传递获得 auth + common）
+- app 聚合 ticket（Maven: `fd-server-ticket`，传递获得所有模块）
 
-### Maven Profile
+### Maven 命令
 
-| Profile | 命令 | 说明 |
-|---------|------|------|
-| 默认 | `mvn clean package` | 仅后端，不含前端 |
-| with-frontend | `mvn clean package -Pwith-frontend` | 自动执行 fd-web npm install + build，复制 dist 到 static |
+| 操作 | 命令 |
+|------|------|
+| 全量构建 | `cd fd-server && mvn clean package` |
+| 跳过测试 | `mvn clean package -DskipTests` |
+| 运行应用 | `mvn spring-boot:run -pl fd-server-app` |
+| 仅编译某模块 | `mvn compile -pl fd-server-common,fd-server-auth` |
+| 模块测试 | `mvn test -pl fd-server-auth` |
+| 含前端构建 | `mvn clean package -Pwith-frontend` |
+| 可执行 JAR | `fd-server-app/target/fd-server-app-0.0.1-SNAPSHOT.jar` |
 
 ---
 
@@ -351,7 +312,7 @@ common（底层） ← auth（中层） ← task ← ticket（上层）
 
 | 文件 | 说明 |
 |------|------|
-| `fd-server/src/main/resources/application.yml` | 后端配置（H2、RabbitMQ、Redis、JWT、Freshdesk） |
+| `fd-server/fd-server-app/src/main/resources/application.yml` | 后端配置（H2、RabbitMQ、Redis、JWT、Freshdesk） |
 | `fd-web/vite.config.ts` | 前端构建配置（端口 5173、API 代理、代码分割） |
 | `fd-web/tsconfig.json` | TypeScript 配置（strict、path alias `@/*`） |
 | `fd-client/src-tauri/tauri.conf.json` | Tauri 配置（devUrl、frontendDist、窗口） |
@@ -367,6 +328,7 @@ common（底层） ← auth（中层） ← task ← ticket（上层）
 - **Ticket** (1→N) **TicketTranslation**
 - **Ticket** (1→N) **TicketReply**
 - **Ticket** (1→N) **TicketAudit**
+- **Ticket** (1→N) **AuditToken** — 一次性移动审核令牌（无状态，单令牌绑定一张工单）
 - **SystemConfig**: 系统配置键值对
 - **KnowledgeNote**: 知识库注意事项
 - **SyncLog/SyncConfig**: 同步日志和配置
@@ -380,6 +342,7 @@ common（底层） ← auth（中层） ← task ← ticket（上层）
 |------|------|-----|
 | TicketStatus | ticket | PENDING_TRANS, TRANSLATING, PENDING_REPLY, REPLYING, PENDING_AUDIT, AUDITING, APPROVED, COMPLETED |
 | AuditResult | ticket | PASS, REJECT |
+| AuditTokenStatus | ticket | ACTIVE, USED, EXPIRED |
 | SyncStatus | ticket | SUCCESS, FAILED, RUNNING |
 | TriggerType | ticket | CRON, MANUAL |
 | UserRole | auth | SUPER_ADMIN, ADMIN, USER, AUDITOR |

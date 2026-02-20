@@ -1,6 +1,6 @@
 # Server Architecture (FD-Server)
 
-`fd-server` 是集中式 Java Spring Boot 应用，管理工单生命周期、Freshdesk 同步、RabbitMQ 任务分发、RBAC 权限控制。采用**单体内模块化**架构。
+`fd-server` 是集中式 Java Spring Boot 应用，管理工单生命周期、Freshdesk 同步、RabbitMQ 任务分发、RBAC 权限控制。采用 **Maven 多模块**架构（parent POM + 5 个子模块）。
 
 ## Technology Stack
 - **Language**: Java 21 (Temurin)
@@ -11,16 +11,18 @@
 - **Security**: Spring Security + JWT (Dual Token) + RBAC
 - **Port**: 9988 (default)
 
-## Modular Architecture
+## Maven Multi-Module Architecture
 
 ```
-com.jefflower.fdserver/
-├── FdServerApplication.java
-├── auth/       ← 认证授权（JWT、RBAC、用户/角色/权限/模块管理、用户设置）
-├── task/       ← 任务调度（任务定义、任务实例、多客户端分发、定时调度）
-├── ticket/     ← 工单业务（Freshdesk 集成、MQ、同步、知识库、通知）
-└── common/     ← 公共基础（通用工具、全局异常、公共配置）
+fd-server/                              (parent POM, packaging: pom)
+├── fd-server-common/                   (jar) 公共基础（通用工具、全局异常、公共配置）
+├── fd-server-auth/                     (jar) 认证授权（JWT、RBAC、用户/角色/权限/模块管理、用户设置）
+├── fd-server-task/                     (jar) 任务调度（任务定义、任务实例、多客户端分发、定时调度）
+├── fd-server-ticket/                   (jar) 工单业务（Freshdesk 集成、MQ、同步、知识库、通知）
+└── fd-server-app/                      (jar) 启动入口 + 资源文件 + 静态前端
 ```
+
+Java 包名保持 `com.jefflower.fdserver.*` 不变，模块边界由 Maven 依赖在编译期强制执行。
 
 ### 模块间依赖规则
 

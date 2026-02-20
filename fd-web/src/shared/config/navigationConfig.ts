@@ -1,0 +1,105 @@
+import {
+  Server, Languages, MessageSquare, CheckCircle, Send,
+  Users, Shield, RefreshCw, FileText, Database, BookOpen,
+  LayoutDashboard, ListChecks, History, Settings, User, Bot,
+  Building2,
+  type LucideIcon,
+} from 'lucide-react';
+import type { TabType } from '../types/navigation';
+import type { QueueCounts } from '../types/server';
+
+export interface NavPage {
+  tab: TabType;
+  labelKey: string;
+  icon: LucideIcon;
+  badgeKey?: keyof QueueCounts;
+  requireAdmin?: boolean;
+}
+
+export interface NavModule {
+  id: string;
+  labelKey: string;
+  descKey: string;
+  icon: LucideIcon;
+  color: string;           // tailwind color name: 'indigo' | 'amber' | 'cyan'
+  requireAdmin?: boolean;
+  pages: NavPage[];
+}
+
+export interface BottomNavItem {
+  tab: TabType;
+  labelKey: string;
+  icon: LucideIcon;
+}
+
+export const navigationModules: NavModule[] = [
+  {
+    id: 'ticket',
+    labelKey: 'module.ticket',
+    descKey: 'moduleDesc.ticket',
+    icon: Server,
+    color: 'indigo',
+    pages: [
+      { tab: 'server-tickets', labelKey: 'nav.server', icon: Server },
+      { tab: 'translation', labelKey: 'nav.translation', icon: Languages, badgeKey: 'translation' },
+      { tab: 'reply', labelKey: 'nav.reply', icon: MessageSquare, badgeKey: 'reply' },
+      { tab: 'audit', labelKey: 'nav.audit', icon: CheckCircle, badgeKey: 'audit' },
+      { tab: 'approved', labelKey: 'nav.push', icon: Send },
+      { tab: 'manual-sync', labelKey: 'nav.sync', icon: RefreshCw, requireAdmin: true },
+      { tab: 'ai-config', labelKey: 'nav.aiConfig', icon: Bot },
+    ],
+  },
+  {
+    id: 'admin',
+    labelKey: 'module.admin',
+    descKey: 'moduleDesc.admin',
+    icon: Shield,
+    color: 'amber',
+    requireAdmin: true,
+    pages: [
+      { tab: 'admin-users', labelKey: 'nav.users', icon: Users },
+      { tab: 'role-permission', labelKey: 'nav.rolePermission', icon: Shield },
+      { tab: 'server-logs', labelKey: 'nav.logs', icon: FileText },
+      { tab: 'database', labelKey: 'nav.database', icon: Database },
+      { tab: 'knowledge', labelKey: 'nav.knowledge', icon: BookOpen },
+      { tab: 'org-sync', labelKey: 'nav.orgSync', icon: Building2 },
+    ],
+  },
+  {
+    id: 'task',
+    labelKey: 'module.task',
+    descKey: 'moduleDesc.task',
+    icon: ListChecks,
+    color: 'cyan',
+    requireAdmin: true,
+    pages: [
+      { tab: 'task-dashboard', labelKey: 'nav.taskDashboard', icon: LayoutDashboard },
+      { tab: 'task-definitions', labelKey: 'nav.taskDefinitions', icon: ListChecks },
+      { tab: 'task-history', labelKey: 'nav.taskHistory', icon: History },
+    ],
+  },
+];
+
+export const bottomNavItems: BottomNavItem[] = [
+  { tab: 'settings', labelKey: 'nav.settings', icon: Settings },
+];
+
+export const profileNavItem: BottomNavItem = {
+  tab: 'profile', labelKey: 'nav.profile', icon: User,
+};
+
+/** 根据 TabType 查找所属模块 */
+export function findModuleByTab(tab: TabType): NavModule | undefined {
+  return navigationModules.find(m => m.pages.some(p => p.tab === tab));
+}
+
+/** 计算模块的汇总 badge */
+export function getModuleBadge(module: NavModule, queueCounts?: QueueCounts | null): number {
+  if (!queueCounts) return 0;
+  return module.pages.reduce((sum, page) => {
+    if (page.badgeKey && queueCounts[page.badgeKey]) {
+      return sum + queueCounts[page.badgeKey];
+    }
+    return sum;
+  }, 0);
+}

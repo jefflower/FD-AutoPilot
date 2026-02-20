@@ -6,14 +6,24 @@
 // ============ 用户相关 ============
 export type UserRole = 'SUPER_ADMIN' | 'ADMIN' | 'USER' | 'AUDITOR';
 export type UserStatus = 'PENDING' | 'APPROVED' | 'REJECTED';
+export type UserType = 'INTERNAL' | 'EXTERNAL';
 
 export interface User {
   id: number;
   username: string;
   role: UserRole;       // 保留兼容（= roles[0]）
-  roles?: UserRole[];   // 新增：完整角色列表
+  roles?: UserRole[];   // 完整角色列表
+  userType?: UserType;  // B端(INTERNAL) / C端(EXTERNAL)
   status: UserStatus;
   createdAt: string;
+  displayName?: string;
+  avatar?: string;
+  mobile?: string;
+  email?: string;
+  departmentId?: number;
+  dingtalkUserId?: string;
+  wecomUserId?: string;
+  externalSyncAt?: string;
 }
 
 export interface LoginRequest {
@@ -34,6 +44,61 @@ export interface LoginResponse {
 export interface RegisterRequest {
   username: string;
   password: string;
+}
+
+// ============ 应用相关 ============
+export interface SysApplication {
+  id: number;
+  code: string;
+  name: string;
+  description?: string;
+  enabled: boolean;
+  builtIn: boolean;
+  createdAt: string;
+}
+
+// ============ RBAC 相关 ============
+export interface SysRole {
+  id: number;
+  code: string;
+  name: string;
+  description?: string;
+  builtIn: boolean;
+  createdAt: string;
+}
+
+export interface SysPermission {
+  id: number;
+  code: string;
+  name: string;
+  module: string;
+  description?: string;
+  createdAt: string;
+}
+
+export interface SysModule {
+  id: number;
+  code: string;
+  name: string;
+  description?: string;
+  icon?: string;
+  sortOrder: number;
+  enabled: boolean;
+  routePath?: string;
+  builtIn: boolean;
+  createdAt: string;
+}
+
+export interface PermissionOverview {
+  modules: SysModule[];
+  permissions: SysPermission[];
+  roles: SysRole[];
+  matrix: Record<string, string[]>;  // roleCode → permissionCodes
+  stats: {
+    moduleCount: number;
+    permissionCount: number;
+    roleCount: number;
+  };
 }
 
 // ============ 工单相关 ============
@@ -204,12 +269,11 @@ export interface KnowledgeNoteRequest {
   sortOrder?: number;
 }
 
-// ============ MQ 队列计数 ============
+// ============ 任务队列计数 ============
 export interface QueueCounts {
   translation: number;
   reply: number;
   audit: number;
-  dlq: number;
 }
 
 // ============ 数据库查询相关 ============
@@ -253,6 +317,15 @@ export interface NotebookLMConfig {
   prompt: string;
 }
 
+// AI Translation Engine config (stored via UserAppSettings, appCode: 'ai-translation-config')
+export interface AiTranslationConfig {
+  provider: 'gemini-cli' | 'gemini-api' | string;
+  geminiCliPath?: string;
+  geminiModel?: string;
+  apiKey?: string;
+  apiEndpoint?: string;
+}
+
 // ============ 任务调度相关 ============
 export interface TaskDefinition {
   id: number;
@@ -293,5 +366,103 @@ export interface TaskCompleteRequest {
   clientId: string;
   success: boolean;
   message?: string;
+}
+
+// ============ 移动审核相关 ============
+export interface MobileAuditDetail {
+  ticketId: number;
+  externalId: string;
+  subject: string;
+  content: string;
+  translatedTitle?: string;
+  translatedContent?: string;
+  zhReply?: string;
+  targetReply?: string;
+  replyId?: number;
+  status: string;
+  lastAuditRemark?: string;
+  auditHistory: AuditHistoryItem[];
+  alreadyAudited: boolean;
+}
+
+export interface AuditHistoryItem {
+  auditResult: string;
+  auditRemark?: string;
+  createdAt: string;
+}
+
+export interface MobileAuditSubmit {
+  auditResult: 'PASS' | 'REJECT';
+  auditRemark?: string;
+}
+
+export interface MobileAuditResult {
+  success: boolean;
+  message: string;
+  auditResult?: string;
+}
+
+// ============ 通知渠道配置 ============
+export interface NotifyChannelConfig {
+  platform: string;
+  webhookUrl: string;
+  enabled: boolean;
+  auditBaseUrl: string;
+}
+
+// ============ 组织架构同步 ============
+export interface OrgSyncConfig {
+  orgSyncPlatform: string;
+  oauthEnabled: boolean;
+  defaultSyncRole: string;
+  dingtalkAppKey: string;
+  dingtalkAppSecret: string;
+  dingtalkCorpId: string;
+  dingtalkRootDeptId: string;
+  wecomCorpId: string;
+  wecomAgentId: string;
+  wecomSecret: string;
+  wecomRootDeptId: string;
+}
+
+export interface OrgSyncResult {
+  departmentsCreated: number;
+  departmentsUpdated: number;
+  usersCreated: number;
+  usersUpdated: number;
+  usersSkipped: number;
+  platform: string;
+  durationMs: number;
+}
+
+export interface OrgSyncLog {
+  id: number;
+  platform: string;
+  triggerUser: string;
+  startTime: string;
+  endTime: string | null;
+  departmentsCreated: number;
+  departmentsUpdated: number;
+  usersCreated: number;
+  usersUpdated: number;
+  usersSkipped: number;
+  status: 'RUNNING' | 'SUCCESS' | 'FAILED';
+  errorMessage: string | null;
+  createdAt: string;
+}
+
+export interface SysDepartment {
+  id: number;
+  name: string;
+  parentId: number | null;
+  externalId: string;
+  platform: string;
+  sortOrder: number;
+  path: string;
+}
+
+export interface OAuthStatus {
+  enabled: boolean;
+  platform: string;
 }
 

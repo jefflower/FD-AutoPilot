@@ -3,6 +3,10 @@ import { useTranslation } from 'react-i18next';
 import { serverApi, configApi } from '../../../shared/services/serverApi';
 import ServerTicketDetail from '../components/ServerTicketDetail';
 import type { ServerTicket } from '../../../shared/types/server';
+import TaskStatusBadge from '../components/TaskStatusBadge';
+import CompletedTaskCard from '../components/CompletedTaskCard';
+import EmptyStateHint from '../components/EmptyStateHint';
+import DetailEmptyState from '../components/DetailEmptyState';
 
 const ApprovedTasksTab: React.FC = () => {
     const { t } = useTranslation(['tasks', 'common']);
@@ -145,17 +149,14 @@ const ApprovedTasksTab: React.FC = () => {
                             <span className="w-1 h-3 bg-emerald-500 rounded-full"></span>
                             {t('approved.title')}
                         </h3>
-                        <button
+                        <TaskStatusBadge
+                            isActive={autoReplyEnabled}
+                            activeLabel={t('approved.autoOn')}
+                            inactiveLabel={t('approved.autoOff')}
+                            color="emerald"
                             onClick={handleToggleAutoReply}
                             disabled={autoReplyLoading}
-                            className={`px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-widest transition-all ${
-                                autoReplyEnabled
-                                    ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
-                                    : 'bg-slate-800 text-slate-500 border border-white/5'
-                            }`}
-                        >
-                            {autoReplyEnabled ? t('approved.autoOn') : t('approved.autoOff')}
-                        </button>
+                        />
                     </div>
 
                     <div className="space-y-3">
@@ -240,9 +241,7 @@ const ApprovedTasksTab: React.FC = () => {
                             ))}
 
                             {approvedTickets.length === 0 && !loading && (
-                                <div className="text-center py-6 text-slate-600 text-[10px] italic border border-dashed border-white/5 rounded-xl">
-                                    {autoReplyEnabled ? t('approved.autoEnabled') : t('approved.noApproved')}
-                                </div>
+                                <EmptyStateHint message={autoReplyEnabled ? t('approved.autoEnabled') : t('approved.noApproved')} />
                             )}
                         </div>
                     </div>
@@ -255,26 +254,19 @@ const ApprovedTasksTab: React.FC = () => {
                         </div>
                         <div className="space-y-1">
                             {completedTickets.map(ticket => (
-                                <button
+                                <CompletedTaskCard
                                     key={ticket.id}
-                                    onClick={() => setSelectedId(selectedId === ticket.id ? null : ticket.id)}
-                                    className={`w-full text-left p-2 rounded-lg transition-all border group ${
-                                        selectedId === ticket.id
-                                            ? 'bg-green-500/10 border-green-500/30'
-                                            : 'bg-white/5 border-transparent hover:bg-white/10'
-                                    }`}
-                                >
-                                    <div className="flex items-center justify-between mb-0.5">
-                                        <span className="text-[10px] font-bold text-slate-500 opacity-60 group-hover:opacity-100 transition-opacity">#{ticket.externalId}</span>
-                                        <span className="text-[9px] font-black uppercase tracking-tighter text-green-500/50">
-                                            {t('approved.statusPushed')}
-                                        </span>
-                                    </div>
-                                    <div className="text-[11px] text-slate-400 truncate group-hover:text-slate-200 transition-colors">{ticket.subject}</div>
-                                </button>
+                                    ticketId={ticket.id}
+                                    externalId={ticket.externalId}
+                                    subject={ticket.subject}
+                                    status="completed"
+                                    statusLabel={t('approved.statusPushed')}
+                                    isSelected={selectedId === ticket.id}
+                                    onSelect={(id) => setSelectedId(selectedId === id ? null : id)}
+                                />
                             ))}
                             {completedTickets.length === 0 && (
-                                <div className="text-center py-6 text-slate-600 text-[10px] italic border border-dashed border-white/5 rounded-xl">{t('approved.noCompleted')}</div>
+                                <EmptyStateHint message={t('approved.noCompleted')} />
                             )}
                         </div>
                     </div>
@@ -292,13 +284,10 @@ const ApprovedTasksTab: React.FC = () => {
                         onRefresh={handleRefresh}
                     />
                 ) : (
-                    <div className="h-full flex flex-col items-center justify-center text-slate-600 gap-4">
-                        <div className="w-16 h-16 rounded-full bg-slate-800/50 flex items-center justify-center">
-                            <svg className="w-8 h-8 opacity-20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" /></svg>
-                        </div>
-                        <p className="text-sm font-medium">{t('approved.emptyHint')}</p>
-                        <p className="text-xs text-slate-700">{t('approved.emptySubHint')}</p>
-                    </div>
+                    <DetailEmptyState
+                        title={t('approved.emptyHint')}
+                        subtitle={t('approved.emptySubHint')}
+                    />
                 )}
             </div>
         </div>

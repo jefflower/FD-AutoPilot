@@ -6,10 +6,12 @@
 
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { getServerBaseUrl, setServerBaseUrl, authApi } from '../../../shared/services/serverApi';
+import { getServerBaseUrl, setServerBaseUrl, authApi, oauthApi } from '../../../shared/services/serverApi';
+import type { OAuthStatus } from '../../../shared/types/server';
 
 interface AuthLoginTabProps {
     onLogin: (credentials: { username: string; password: string }) => Promise<void>;
+    onOAuthLogin?: (platform: string, authCode: string) => Promise<void>;
     onSwitchToRegister: () => void;
     isLoading?: boolean;
     error?: string | null;
@@ -75,6 +77,7 @@ const getPositionBetweenNodes = (fromIdx: number, toIdx: number, t: number) => {
 
 const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
     onLogin,
+    onOAuthLogin,
     onSwitchToRegister,
     isLoading = false,
     error,
@@ -88,6 +91,10 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
     const [showServerConfig, setShowServerConfig] = useState(false);
     const [serverUrl, setServerUrlLocal] = useState(getServerBaseUrl);
     const [mounted, setMounted] = useState(false);
+
+    // OAuth 状态
+    const [oauthStatus, setOauthStatus] = useState<OAuthStatus | null>(null);
+    const [oauthLoading, setOauthLoading] = useState(false);
 
     // 新增状态：admin 检查、初始化面板、重置密码面板
     const [adminExists, setAdminExists] = useState<boolean | null>(null);
@@ -119,6 +126,61 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
             .then(data => setAdminExists(data.exists))
             .catch(() => setAdminExists(null));
     }, []);
+
+    // 检查 OAuth 状态
+    useEffect(() => {
+        oauthApi.getStatus()
+            .then(setOauthStatus)
+            .catch(() => setOauthStatus(null));
+    }, []);
+
+    // 处理 OAuth 回调（从弹窗返回的 authCode）
+    useEffect(() => {
+        const handleMessage = async (e: MessageEvent) => {
+            if (e.data?.type === 'oauth-callback' && e.data?.code && e.data?.platform) {
+                setOauthLoading(true);
+                setLocalError(null);
+                try {
+                    if (onOAuthLogin) {
+                        await onOAuthLogin(e.data.platform, e.data.code);
+                    }
+                } catch (err) {
+                    setLocalError(err instanceof Error ? err.message : t('login.oauthFailed'));
+                } finally {
+                    setOauthLoading(false);
+                }
+            }
+        };
+        window.addEventListener('message', handleMessage);
+        return () => window.removeEventListener('message', handleMessage);
+    }, [onOAuthLogin, t]);
+
+    // 发起 OAuth 登录
+    const handleOAuthLogin = async (platform: string) => {
+        setOauthLoading(true);
+        setLocalError(null);
+        try {
+            const redirectUri = `${window.location.origin}/oauth/callback`;
+            const url = await oauthApi.getOAuthUrl(platform, redirectUri);
+            // 打开授权弹窗
+            const popup = window.open(url, 'oauth_popup', 'width=600,height=700,left=300,top=100');
+            // 轮询检测弹窗关闭（URL 变化由 OAuth callback 页处理）
+            if (popup) {
+                const timer = setInterval(() => {
+                    if (popup.closed) {
+                        clearInterval(timer);
+                        setOauthLoading(false);
+                    }
+                }, 500);
+            } else {
+                // 弹窗被拦截，直接跳转
+                window.location.href = url;
+            }
+        } catch (err) {
+            setLocalError(err instanceof Error ? err.message : t('login.oauthFailed'));
+            setOauthLoading(false);
+        }
+    };
 
     // 动画逻辑
     useEffect(() => {
@@ -830,6 +892,50 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
                                 )}
                             </button>
                         </form>
+
+                        {/* OAuth 登录区域 */}
+                        {oauthStatus?.enabled && oauthStatus.platform && (
+                            <div className="mt-5 pt-5 border-t border-white/[0.06]">
+                                <div className="flex items-center gap-3 mb-4">
+                                    <div className="flex-1 h-px bg-white/[0.06]" />
+                                    <span className="text-slate-600 text-xs">{t('login.oauthDivider')}</span>
+                                    <div className="flex-1 h-px bg-white/[0.06]" />
+                                </div>
+                                <button
+                                    type="button"
+                                    onClick={() => handleOAuthLogin(oauthStatus.platform!)}
+                                    disabled={oauthLoading || isLoading}
+                                    className="w-full py-2.5 bg-slate-800/60 border border-white/10 rounded-xl text-sm text-slate-300 hover:bg-slate-700/60 hover:text-white transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                                >
+                                    {oauthLoading ? (
+                                        <>
+                                            <svg className="animate-spin w-4 h-4" fill="none" viewBox="0 0 24 24">
+                                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                                            </svg>
+                                            <span>{t('login.oauthLoading')}</span>
+                                        </>
+                                    ) : (
+                                        <>
+                                            {oauthStatus.platform === 'dingtalk' ? (
+                                                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+                                                </svg>
+                                            ) : (
+                                                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5.46 7.12c-.1-.01-.2-.02-.3-.02-.78 0-1.46.44-1.81 1.09-.17-.07-.35-.11-.55-.11-.78 0-1.41.63-1.41 1.41v.03a1.41 1.41 0 00-1.38 1.41c0 .08.01.15.02.22a1.41 1.41 0 001.08 2.16c.25.47.75.79 1.32.79.52 0 .98-.27 1.24-.67.26.13.55.2.86.2.83 0 1.53-.55 1.76-1.3a1.74 1.74 0 00-.83-3.21z"/>
+                                                </svg>
+                                            )}
+                                            <span>
+                                                {oauthStatus.platform === 'dingtalk'
+                                                    ? t('login.oauthDingtalk')
+                                                    : t('login.oauthWecom')}
+                                            </span>
+                                        </>
+                                    )}
+                                </button>
+                            </div>
+                        )}
 
                         {/* 服务器配置 */}
                         <div className="mt-5 pt-5 border-t border-white/[0.06]">

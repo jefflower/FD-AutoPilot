@@ -63,7 +63,9 @@
     "emptyMqHint": "点击工单查看完整详情",
     "emptyMqSubHint": "可在左侧列表快速审核",
     "emptyQueryHint": "选择左侧工单进行审核",
-    "emptyQuerySubHint": "支持批量通过操作"
+    "emptyQuerySubHint": "支持批量通过操作",
+    "mobilePreview": "手机预览",
+    "previewFailed": "获取预览链接失败: {{error}}"
   },
   "approved": {
     "title": "待推送队列",
