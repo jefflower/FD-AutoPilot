@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:flowable="http://flowable.org/bpmn"
+             xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+             xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC"
+             xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI"
+             targetNamespace="http://flowable.org/fdserver"
+             xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://www.omg.org/spec/BPMN/2.0/20100501/BPMN20.xsd">
+
+  <process id="ticket-standard-flow" name="标准工单处理流程" isExecutable="true">
+
+    <!-- ========== START ========== -->
+    <startEvent id="start" name="工单进入"/>
+
+    <!-- ========== TRANSLATION PHASE ========== -->
+    <sequenceFlow id="flow_start_translate" sourceRef="start" targetRef="translate_agent"/>
+
+    <serviceTask id="translate_agent" name="翻译 (Agent)"
+                 flowable:delegateExpression="${agentTaskDelegate}">
+      <extensionElements>
+        <flowable:field name="agentCode" stringValue="gemini-translate"/>
+      </extensionElements>
+    </serviceTask>
+
+    <sequenceFlow id="flow_translate_to_gw" sourceRef="translate_agent" targetRef="translate_env_gw"/>
+
+    <exclusiveGateway id="translate_env_gw" name="翻译执行环境"/>
+
+    <sequenceFlow id="flow_translate_wait" sourceRef="translate_env_gw" targetRef="translate_wait">
+      <conditionExpression xsi:type="tFormalExpression">${pendingTaskType != null}</conditionExpression>
+    </sequenceFlow>
+
+    <sequenceFlow id="flow_translate_skip" sourceRef="translate_env_gw" targetRef="translate_merge_gw">
+      <conditionExpression xsi:type="tFormalExpression">${pendingTaskType == null}</conditionExpression>
+    </sequenceFlow>
+
+    <receiveTask id="translate_wait" name="等待翻译完成"/>
+
+    <sequenceFlow id="flow_translate_wait_done" sourceRef="translate_wait" targetRef="translate_merge_gw"/>
+
+    <exclusiveGateway id="translate_merge_gw"/>
+
+    <sequenceFlow id="flow_translate_merge_to_cb" sourceRef="translate_merge_gw" targetRef="translation_done_cb"/>
+
+    <serviceTask id="translation_done_cb" name="翻译完成回调"
+                 flowable:delegateExpression="${businessCallbackDelegate}">
+      <extensionElements>
+        <flowable:field name="callbackType" stringValue="ticket.translationDone"/>
+      </extensionElements>
+    </serviceTask>
+
+    <!-- ========== REPLY PHASE ========== -->
+    <sequenceFlow id="flow_cb_to_reply" sourceRef="translation_done_cb" targetRef="reply_agent"/>
+
+    <serviceTask id="reply_agent" name="回复 (Agent)"
+                 flowable:delegateExpression="${agentTaskDelegate}">
+      <extensionElements>
+        <flowable:field name="agentCode" stringValue="notebooklm-reply"/>
+      </extensionElements>
+    </serviceTask>
+
+    <sequenceFlow id="flow_reply_to_gw" sourceRef="reply_agent" targetRef="reply_env_gw"/>
+
+    <exclusiveGateway id="reply_env_gw" name="回复执行环境"/>
+
+    <sequenceFlow id="flow_reply_wait" sourceRef="reply_env_gw" targetRef="reply_wait">
+      <conditionExpression xsi:type="tFormalExpression">${pendingTaskType != null}</conditionExpression>
+    </sequenceFlow>
+
+    <sequenceFlow id="flow_reply_skip" sourceRef="reply_env_gw" targetRef="reply_merge_gw">
+      <conditionExpression xsi:type="tFormalExpression">${pendingTaskType == null}</conditionExpression>
+    </sequenceFlow>
+
+    <receiveTask id="reply_wait" name="等待回复完成"/>
+
+    <sequenceFlow id="flow_reply_wait_done" sourceRef="reply_wait" targetRef="reply_merge_gw"/>
+
+    <exclusiveGateway id="reply_merge_gw"/>
+
+    <sequenceFlow id="flow_reply_merge_to_cb" sourceRef="reply_merge_gw" targetRef="reply_done_cb"/>
+
+    <serviceTask id="reply_done_cb" name="回复完成回调"
+                 flowable:delegateExpression="${businessCallbackDelegate}">
+      <extensionElements>
+        <flowable:field name="callbackType" stringValue="ticket.replyDone"/>
+      </extensionElements>
+    </serviceTask>
+
+    <!-- ========== AUDIT PHASE ========== -->
+    <sequenceFlow id="flow_cb_to_audit" sourceRef="reply_done_cb" targetRef="audit_create"/>
+
+    <serviceTask id="audit_create" name="创建审核任务"
+                 flowable:delegateExpression="${humanTaskDelegate}">
+      <extensionElements>
+        <flowable:field name="humanTaskType" stringValue="ticket.audit"/>
+      </extensionElements>
+    </serviceTask>
+
+    <sequenceFlow id="flow_audit_create_to_wait" sourceRef="audit_create" targetRef="audit_wait"/>
+
+    <receiveTask id="audit_wait" name="等待审核完成"/>
+
+    <sequenceFlow id="flow_audit_to_gw" sourceRef="audit_wait" targetRef="audit_result_gw"/>
+
+    <exclusiveGateway id="audit_result_gw" name="审核结果"/>
+
+    <!-- PASS -->
+    <sequenceFlow id="flow_audit_pass" sourceRef="audit_result_gw" targetRef="audit_pass_cb">
+      <conditionExpression xsi:type="tFormalExpression">${auditResult == 'PASS'}</conditionExpression>
+    </sequenceFlow>
+
+    <serviceTask id="audit_pass_cb" name="审核通过回调"
+                 flowable:delegateExpression="${businessCallbackDelegate}">
+      <extensionElements>
+        <flowable:field name="callbackType" stringValue="ticket.auditPass"/>
+      </extensionElements>
+    </serviceTask>
+
+    <sequenceFlow id="flow_pass_to_end" sourceRef="audit_pass_cb" targetRef="end"/>
+
+    <!-- REJECT → loop back to reply -->
+    <sequenceFlow id="flow_audit_reject" sourceRef="audit_result_gw" targetRef="audit_reject_cb">
+      <conditionExpression xsi:type="tFormalExpression">${auditResult == 'REJECT'}</conditionExpression>
+    </sequenceFlow>
+
+    <serviceTask id="audit_reject_cb" name="审核驳回回调"
+                 flowable:delegateExpression="${businessCallbackDelegate}">
+      <extensionElements>
+        <flowable:field name="callbackType" stringValue="ticket.auditReject"/>
+      </extensionElements>
+    </serviceTask>
+
+    <sequenceFlow id="flow_reject_to_reply" sourceRef="audit_reject_cb" targetRef="reply_agent"/>
+
+    <!-- ========== END ========== -->
+    <endEvent id="end" name="流程结束"/>
+
+  </process>
+
+  <bpmndi:BPMNDiagram id="BPMNDiagram_ticket_standard_flow">
+    <bpmndi:BPMNPlane bpmnElement="ticket-standard-flow" id="BPMNPlane_ticket_standard_flow">
+      <bpmndi:BPMNShape id="shape_start" bpmnElement="start">
+        <omgdc:Bounds x="100" y="200" width="36" height="36"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_translate_agent" bpmnElement="translate_agent">
+        <omgdc:Bounds x="200" y="178" width="120" height="80"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_translate_env_gw" bpmnElement="translate_env_gw">
+        <omgdc:Bounds x="380" y="198" width="40" height="40"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_translate_wait" bpmnElement="translate_wait">
+        <omgdc:Bounds x="440" y="100" width="120" height="60"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_translate_merge_gw" bpmnElement="translate_merge_gw">
+        <omgdc:Bounds x="580" y="198" width="40" height="40"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_translation_done_cb" bpmnElement="translation_done_cb">
+        <omgdc:Bounds x="680" y="178" width="120" height="80"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_reply_agent" bpmnElement="reply_agent">
+        <omgdc:Bounds x="860" y="178" width="120" height="80"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_reply_env_gw" bpmnElement="reply_env_gw">
+        <omgdc:Bounds x="1040" y="198" width="40" height="40"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_reply_wait" bpmnElement="reply_wait">
+        <omgdc:Bounds x="1100" y="100" width="120" height="60"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_reply_merge_gw" bpmnElement="reply_merge_gw">
+        <omgdc:Bounds x="1240" y="198" width="40" height="40"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_reply_done_cb" bpmnElement="reply_done_cb">
+        <omgdc:Bounds x="1340" y="178" width="120" height="80"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_audit_create" bpmnElement="audit_create">
+        <omgdc:Bounds x="1520" y="178" width="120" height="80"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_audit_wait" bpmnElement="audit_wait">
+        <omgdc:Bounds x="1700" y="188" width="120" height="60"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_audit_result_gw" bpmnElement="audit_result_gw">
+        <omgdc:Bounds x="1880" y="198" width="40" height="40"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_audit_pass_cb" bpmnElement="audit_pass_cb">
+        <omgdc:Bounds x="1980" y="100" width="120" height="80"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_audit_reject_cb" bpmnElement="audit_reject_cb">
+        <omgdc:Bounds x="1980" y="280" width="120" height="80"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_end" bpmnElement="end">
+        <omgdc:Bounds x="2160" y="122" width="36" height="36"/>
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

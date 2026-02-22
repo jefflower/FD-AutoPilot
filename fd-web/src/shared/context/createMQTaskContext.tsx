@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, useLayoutEffect, useCallback, useRef, useMemo, ReactNode } from 'react';
 import { serverApi, taskApi } from '../services/serverApi';
+import { useServerEvents } from './ServerEventsContext';
 
 /**
  * 通用 MQ 任务类型
@@ -91,6 +92,10 @@ export function createMQTaskContext(config: MQTaskConfig) {
         const [batchSize, setBatchSize] = useState(config.defaultBatchSize);
         const [logs, setLogs] = useState<string[]>([]);
 
+        // SSE 集成
+        const serverEvents = useServerEvents();
+        const sseConnected = serverEvents?.status === 'connected';
+
         // Refs
         const processingTasksRef = useRef(processingTasks);
         const activeCountRef = useRef(0);
@@ -102,6 +107,7 @@ export function createMQTaskContext(config: MQTaskConfig) {
         const isRunningRef = useRef(false);
         const emptyPollLoggedRef = useRef(false);
         const scheduleNextRef = useRef<() => void>(() => {});
+        const pollAndClaimRef = useRef<() => void>(() => {});
 
         // 合并 4 个 ref 同步为 1 个 useLayoutEffect
         useLayoutEffect(() => {
@@ -176,6 +182,42 @@ export function createMQTaskContext(config: MQTaskConfig) {
             }
         }, []);
 
+        // 保持 pollAndClaimRef 指向最新
+        useLayoutEffect(() => {
+            pollAndClaimRef.current = pollAndClaim;
+        }, [pollAndClaim]);
+
+        // SSE 事件订阅：收到 task-available 时立即触发 claim
+        useEffect(() => {
+            if (!serverEvents || !isRunning) return;
+
+            return serverEvents.subscribe('task-available', (data: any) => {
+                // 只处理匹配当前 taskType 的事件
+                if (data?.taskType === config.taskType) {
+                    console.log(`[SSE→Task] Received task-available for ${config.taskType}, triggering immediate claim`);
+                    pollAndClaimRef.current();
+                }
+            });
+        }, [serverEvents, isRunning]);
+
+        // SSE 连接状态变化时调整轮询间隔
+        useEffect(() => {
+            if (!isRunning) return;
+
+            // 清除旧定时器
+            if (pollTimerRef.current) {
+                clearInterval(pollTimerRef.current);
+            }
+
+            // SSE 连接中 → 30s 兜底轮询；断开 → 3s 高频轮询
+            const interval = sseConnected ? 30000 : (config.pollIntervalMs || 3000);
+            pollTimerRef.current = setInterval(() => pollAndClaimRef.current(), interval);
+
+            if (sseConnected) {
+                console.log(`[Task-${config.taskType}] SSE connected, polling interval → 30s (fallback)`);
+            }
+        }, [sseConnected, isRunning]);
+
         // 启动消费者
         const startConsumer = useCallback(() => {
             setIsRunning(true);
@@ -184,9 +226,10 @@ export function createMQTaskContext(config: MQTaskConfig) {
             setLogs(prev => [...prev, `▶ ${config.taskType} 任务消费启动`]);
             // 立即执行一次 claim
             pollAndClaim();
-            // 启动定时轮询
-            pollTimerRef.current = setInterval(pollAndClaim, config.pollIntervalMs || 3000);
-        }, [pollAndClaim]);
+            // 启动定时轮询（SSE 连接时用 30s 兜底，否则 3s）
+            const interval = sseConnected ? 30000 : (config.pollIntervalMs || 3000);
+            pollTimerRef.current = setInterval(pollAndClaim, interval);
+        }, [pollAndClaim, sseConnected]);
 
         // 停止消费者
         const stopConsumer = useCallback(() => {

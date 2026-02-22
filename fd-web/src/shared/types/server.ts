@@ -308,7 +308,6 @@ export interface TableColumnDetail {
 // Client settings (stored on server via UserAppSettings API)
 export interface ClientSettings {
   translationLang: string;
-  notebookLMConfig: NotebookLMConfig;
 }
 
 export interface NotebookLMConfig {
@@ -464,5 +463,108 @@ export interface SysDepartment {
 export interface OAuthStatus {
   enabled: boolean;
   platform: string;
+}
+
+// ============ AI Agent ============
+export type AgentProviderType = 'LOCAL_CLI' | 'HTTP_API' | 'SHADOW_WINDOW' | 'LOCAL_FUNCTION';
+export type AgentExecutionEnv = 'CLIENT_ONLY' | 'SERVER_ONLY' | 'BOTH';
+export type AgentExecutionStatus = 'RUNNING' | 'SUCCESS' | 'FAILED' | 'TIMEOUT' | 'CANCELLED';
+
+export interface AgentDefinition {
+  id: number;
+  code: string;
+  name: string;
+  description: string;
+  providerType: AgentProviderType;
+  executionEnv: AgentExecutionEnv;
+  capability: string;
+  providerConfig: string | Record<string, any>;
+  enabled: boolean;
+  sortOrder: number;
+  builtIn: boolean;
+}
+
+export interface AgentExecuteInput {
+  data: any;
+  params?: Record<string, any>;
+  referenceType?: string;
+  referenceId?: number;
+}
+
+export interface AgentExecuteResult {
+  success: boolean;
+  output: any;
+  durationMs: number;
+  tokenCount?: number;
+  error?: string;
+}
+
+export interface AgentStreamChunk {
+  text: string;
+  status: 'streaming' | 'complete' | 'error';
+}
+
+export interface AgentProxyTestResult {
+  reachable: boolean;
+  models: string[];
+  errorMessage?: string;
+}
+
+export interface AgentExecutionReport {
+  agentCode: string;
+  status: AgentExecutionStatus;
+  durationMs: number;
+  tokenCount?: number;
+  referenceType?: string;
+  referenceId?: number;
+  executedOn: string;
+  inputSnapshot?: string;
+  outputSnapshot?: string;
+  errorMessage?: string;
+}
+
+export interface AgentStats {
+  agentCode: string;
+  agentName: string;
+  totalExecutions: number;
+  successCount: number;
+  failedCount: number;
+  avgDurationMs: number;
+  successRate: number;
+}
+
+export interface AgentExecutionLog {
+  id: number;
+  agentCode: string;
+  status: AgentExecutionStatus;
+  referenceType?: string;
+  referenceId?: number;
+  executedBy?: string;
+  executedOn?: string;
+  durationMs?: number;
+  tokenCount?: number;
+  inputSnapshot?: string;
+  outputSnapshot?: string;
+  errorMessage?: string;
+  createdAt: string;
+}
+
+export type AgentBindings = Record<string, string>;
+
+// ============ Workflow ============
+export interface WorkflowDefinition {
+  id: number;
+  processKey: string;
+  name: string;
+  description: string;
+  businessType: string;
+  deploymentId?: string;
+  processDefinitionId?: string;
+  bpmnXml?: string;
+  enabled: boolean;
+  builtIn: boolean;
+  version: number;
+  createdAt: string;
+  updatedAt: string;
 }
 

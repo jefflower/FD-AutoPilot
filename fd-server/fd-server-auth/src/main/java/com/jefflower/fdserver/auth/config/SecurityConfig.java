@@ -104,12 +104,16 @@ public class SecurityConfig {
                         // 静态资源：前端 SPA（index.html、JS/CSS/图片等）
                         .requestMatchers("/", "/index.html", "/vite.svg", "/assets/**", "/favicon.ico").permitAll()
                         // SpringDoc OpenAPI / Swagger UI
-                        .requestMatchers("/swagger-ui/**", "/swagger-ui.html", "/api-docs/**", "/v3/api-docs/**").permitAll()
+                        .requestMatchers("/swagger-ui/**", "/swagger-ui.html", "/api-docs/**", "/v3/api-docs/**")
+                        .permitAll()
                         // auth/me/** 需要认证（modules、permissions 端点需要有效 token）
                         .requestMatchers("/api/v1/auth/me/**").authenticated()
                         // 白名单：仅 login、register、refresh-token、OAuth 不需要认证
-                        .requestMatchers("/api/v1/auth/login", "/api/v1/auth/register", "/api/v1/auth/refresh-token").permitAll()
-                        .requestMatchers("/api/v1/auth/oauth/status", "/api/v1/auth/oauth/*/url", "/api/v1/auth/oauth/*/callback").permitAll()
+                        .requestMatchers("/api/v1/auth/login", "/api/v1/auth/register", "/api/v1/auth/refresh-token")
+                        .permitAll()
+                        .requestMatchers("/api/v1/auth/oauth/status", "/api/v1/auth/oauth/*/url",
+                                "/api/v1/auth/oauth/*/callback")
+                        .permitAll()
                         // Webhook（Freshdesk 回调，无需 token）
                         .requestMatchers("/api/v1/webhook/**").permitAll()
                         // 移动审核 Token API（无需 JWT，Token 自身即认证凭证）

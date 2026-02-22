@@ -71,6 +71,7 @@ impl GeminiClient {
         app: &AppHandle,
         ticket: &Ticket,
         target_lang: &str,
+        system_prompt: Option<&str>,
     ) -> Result<Ticket, String> {
         Self::log(
             app,
@@ -79,20 +80,31 @@ impl GeminiClient {
 
         // Prepare prompt
         let lang_name = lang_code_to_name(target_lang);
-        let mut prompt = format!(
-            "You are a professional customer support translator. \
-            Translate the following support ticket into {}. \
-            \
-            CRITICAL INSTRUCTIONS:\
-            1. Response must be ONLY a valid JSON object.\
-            2. Do NOT include any intro, outro, explanations, or markdown blocks (like ```json).\
-            3. You MUST translate BOTH the subject/description AND EVERY item in the 'conversations' list.\
-            4. Maintain the original 'id' for each conversation item.\
-            5. Ensure the content is ONLY in {} - DO NOT output in English if the target is {}.\
-            6. JSON Structure Example:\
-            {{\n  \"subject\": \"翻译后的标题\",\n  \"description_text\": \"翻译后的正文内容\",\n  \"conversations\": [\n    {{\"id\": 123, \"body_text\": \"翻译后的对话消息\"}}\n  ]\n}}\n\n",
-            lang_name, lang_name, lang_name
-        );
+        let mut prompt = match system_prompt {
+            Some(sp) if !sp.trim().is_empty() => {
+                // 使用外部传入的 systemPrompt，替换占位符
+                let mut p = sp.replace("${TARGET_LANG}", lang_name);
+                p.push_str("\n\n");
+                p
+            }
+            _ => {
+                // 使用默认硬编码的 systemPrompt
+                format!(
+                    "You are a professional customer support translator. \
+                    Translate the following support ticket into {}. \
+                    \
+                    CRITICAL INSTRUCTIONS:\
+                    1. Response must be ONLY a valid JSON object.\
+                    2. Do NOT include any intro, outro, explanations, or markdown blocks (like ```json).\
+                    3. You MUST translate BOTH the subject/description AND EVERY item in the 'conversations' list.\
+                    4. Maintain the original 'id' for each conversation item.\
+                    5. Ensure the content is ONLY in {} - DO NOT output in English if the target is {}.\
+                    6. JSON Structure Example:\
+                    {{\n  \"subject\": \"翻译后的标题\",\n  \"description_text\": \"翻译后的正文内容\",\n  \"conversations\": [\n    {{\"id\": 123, \"body_text\": \"翻译后的对话消息\"}}\n  ]\n}}\n\n",
+                    lang_name, lang_name, lang_name
+                )
+            }
+        };
 
         prompt.push_str(&format!(
             "--- TICKET TO TRANSLATE ---\n\
@@ -169,6 +181,82 @@ impl GeminiClient {
             ),
         );
         Ok(new_ticket)
+    }
+
+    /// Generic gemini CLI execution: takes a fully constructed prompt and a list of models (priority ordered).
+    /// Tries each model in order; returns raw stdout on the first success.
+    pub async fn execute_gemini(
+        app: &AppHandle,
+        prompt: &str,
+        models: &[String],
+    ) -> Result<String, String> {
+        let models_to_try: Vec<&str> = if models.is_empty() {
+            vec![""]
+        } else {
+            models.iter().map(|s| s.as_str()).collect()
+        };
+
+        Self::log(
+            app,
+            &format!(
+                "🤖 Executing gemini CLI with {} model(s): [{}]",
+                models_to_try.len(),
+                models_to_try.join(", ")
+            ),
+        );
+
+        let mut last_error = String::new();
+
+        for (i, model) in models_to_try.iter().enumerate() {
+            Self::log(
+                app,
+                &format!(
+                    "  Trying model: {} ({}/{})",
+                    if model.is_empty() { "default" } else { model },
+                    i + 1,
+                    models_to_try.len()
+                ),
+            );
+
+            let mut cmd = Command::new("gemini");
+            if !model.is_empty() {
+                cmd.arg("--model").arg(model);
+            }
+            cmd.arg(prompt);
+
+            match cmd.output() {
+                Ok(output) if output.status.success() => {
+                    let stdout = String::from_utf8_lossy(&output.stdout).trim().to_string();
+                    Self::log(
+                        app,
+                        &format!(
+                            "  ✅ Success with model: {}, output: {} chars",
+                            if model.is_empty() { "default" } else { model },
+                            stdout.len()
+                        ),
+                    );
+                    return Ok(stdout);
+                }
+                Ok(output) => {
+                    let stderr = String::from_utf8_lossy(&output.stderr).to_string();
+                    Self::log(
+                        app,
+                        &format!(
+                            "  ❌ Model {} failed: {}",
+                            if model.is_empty() { "default" } else { model },
+                            stderr
+                        ),
+                    );
+                    last_error = stderr;
+                    // Continue to next model
+                }
+                Err(e) => {
+                    return Err(format!("Failed to execute gemini: {}", e));
+                }
+            }
+        }
+
+        Err(format!("All models failed. Last error: {}", last_error))
     }
 
     /// Sync-translate a reply: given both language versions and a direction,

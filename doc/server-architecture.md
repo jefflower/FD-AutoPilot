@@ -1,6 +1,6 @@
 # Server Architecture (FD-Server)
 
-`fd-server` 是集中式 Java Spring Boot 应用，管理工单生命周期、Freshdesk 同步、RabbitMQ 任务分发、RBAC 权限控制。采用 **Maven 多模块**架构（parent POM + 5 个子模块）。
+`fd-server` 是集中式 Java Spring Boot 应用，管理工单生命周期、Freshdesk 同步、RabbitMQ 任务分发、RBAC 权限控制。采用 **Maven 多模块**架构（parent POM + 6 个子模块）。
 
 ## Technology Stack
 - **Language**: Java 21 (Temurin)
@@ -18,6 +18,7 @@ fd-server/                              (parent POM, packaging: pom)
 ├── fd-server-common/                   (jar) 公共基础（通用工具、全局异常、公共配置）
 ├── fd-server-auth/                     (jar) 认证授权（JWT、RBAC、用户/角色/权限/模块管理、用户设置）
 ├── fd-server-task/                     (jar) 任务调度（任务定义、任务实例、多客户端分发、定时调度）
+├── fd-server-ai/                       (jar) AI Agent 管理（Agent 定义、执行日志、能力绑定、SPI 扩展）
 ├── fd-server-ticket/                   (jar) 工单业务（Freshdesk 集成、MQ、同步、知识库、通知）
 └── fd-server-app/                      (jar) 启动入口 + 资源文件 + 静态前端
 ```
@@ -27,12 +28,13 @@ Java 包名保持 `com.jefflower.fdserver.*` 不变，模块边界由 Maven 依�
 ### 模块间依赖规则
 
 ```
-common  ←──  auth  ←──  task  ←──  ticket
+common  ←──  auth  ←──  task  ←──  ai  ←──  ticket
 ```
 - common 不依赖任何业务模块（最底层）
 - auth 只依赖 common
 - task 只依赖 auth 和 common（任务定义、用户认证）
-- ticket 可依赖 auth、task、common（创建任务、获取当前用户）
+- ai 只依赖 task（通过 task 传递获得 auth + common）
+- ticket 依赖 ai（通过 ai 传递获得 task + auth + common）
 - 模块间通过 Service 注入直接调用（允许单向依赖）
 
 ## Module: auth (42 files)
@@ -123,6 +125,7 @@ public interface ModulePermissionDefinition {
 
 实现类：
 - `AuthPermissionDefinition` — auth 模块 4 个权限
+- `AiPermissionDefinition` — ai 模块 3 个权限（ai:manage, ai:execute, ai:view_logs）
 - `TicketPermissionDefinition` — ticket 模块 6 个权限
 - `SystemPermissionDefinition` — system 模块 8 个权限
 
@@ -194,6 +197,71 @@ task/
 5. **上报完成** (`POST /api/v1/tasks/{id}/complete`): 客户端上报结果（状态转为 COMPLETED/FAILED，设置 `completedAt` 和 `result`），自动创建 `TaskExecutionLog`
 6. **释放任务** (`POST /api/v1/tasks/{id}/release`): 客户端可主动释放未完成的任务（状态转为 PENDING，清除 `claimedBy`），或由 `TaskRecoveryScheduler` 自动释放超时任务
 7. **统计和审计**: `TaskExecutionLog` 记录所有执行历史，用于审计和优化
+
+## Module: ai
+
+AI Agent 管理模块，提供统一的 AI Agent 定义、执行日志、能力绑定和服务端 Provider SPI。
+
+```
+ai/
+├── config/
+│   ├── AiPermissionDefinition.java    # ai 模块权限定义（ai:manage, ai:execute, ai:view_logs）
+│   └── AiDataInitializer.java         # 内置 Agent 初始化（gemini-translate, notebooklm-reply, tracking-query）
+├── controller/
+│   ├── AgentDefinitionController.java # Agent 定义 CRUD + 启用/禁用
+│   ├── AgentExecutionController.java  # 执行、上报、日志查询、统计
+│   └── AgentBindingController.java    # 能力绑定配置
+├── dto/
+│   ├── AgentExecuteRequest.java       # 执行请求（input, referenceType, referenceId）
+│   ├── AgentExecuteResult.java        # 执行结果（success, output, tokenCount）
+│   ├── AgentExecutionReport.java      # 客户端执行上报
+│   └── AgentStats.java               # 统计数据（成功率、平均耗时）
+├── entity/
+│   ├── AgentDefinition.java           # Agent 定义（code, name, providerType, capability, config）
+│   ├── AgentExecution.java            # 执行日志（agentCode, status, duration, tokenCount）
+│   └── AgentBinding.java             # 能力绑定（capability → agentCode）
+├── enums/
+│   ├── ProviderType.java              # LOCAL_CLI, HTTP_API, SHADOW_WINDOW, LOCAL_FUNCTION
+│   ├── ExecutionEnv.java              # CLIENT_ONLY, SERVER_ONLY, BOTH
+│   └── ExecutionStatus.java           # RUNNING, SUCCESS, FAILED, TIMEOUT, CANCELLED
+├── repository/
+│   ├── AgentDefinitionRepository.java
+│   ├── AgentExecutionRepository.java
+│   └── AgentBindingRepository.java
+├── service/
+│   ├── AgentDefinitionService.java    # Agent 定义 CRUD
+│   ├── AgentExecutionService.java     # 执行日志记录与统计
+│   ├── AgentDispatchService.java      # 调度核心（服务端执行 + 客户端定义查询）
+│   ├── AgentBindingService.java       # 能力绑定管理
+│   └── AgentProvider.java            # SPI 接口（服务端 Provider）
+└── provider/
+    └── HttpApiAgentProvider.java      # 通用 HTTP API Provider（OpenAI/Claude 兼容）
+```
+
+### Agent 定义模型
+
+| 字段 | 类型 | 说明 |
+|------|------|------|
+| code | String (unique) | Agent 唯一标识，如 "gemini-translate" |
+| name | String | 显示名 |
+| providerType | ProviderType | LOCAL_CLI / HTTP_API / SHADOW_WINDOW / LOCAL_FUNCTION |
+| executionEnv | ExecutionEnv | CLIENT_ONLY / SERVER_ONLY / BOTH |
+| capability | String | 能力标签，如 "translation" / "reply" / "tracking" |
+| providerConfig | TEXT (JSON) | Provider 特有配置 |
+| enabled | boolean | 启用/禁用 |
+| builtIn | boolean | 内置不可删除 |
+
+### 能力绑定
+
+通过 `ai_agent_binding` 表实现 capability → agentCode 的映射。系统通过 `resolveByCapability()` 查找：先查绑定表，再按 capability 匹配第一个启用的 Agent。
+
+### 内置 Agent
+
+| Code | ProviderType | Capability | 说明 |
+|------|-------------|-----------|------|
+| gemini-translate | LOCAL_CLI | translation | Gemini CLI 翻译 |
+| notebooklm-reply | SHADOW_WINDOW | reply | NotebookLM 回复 |
+| tracking-query | SHADOW_WINDOW | tracking | 17track 物流查询 |
 
 ## Module: ticket (59 files)
 
@@ -382,6 +450,21 @@ common/
 ### Webhook (`WebhookController.java`)
 - `POST /api/v1/webhook/freshdesk` — Freshdesk Webhook 回调
 
+### Agent Management
+- `GET /api/v1/agents/definitions` — 获取已启用的 Agent 定义（登录用户）
+- `GET /api/v1/agents/definitions/all` — 获取全部 Agent 定义（ai:manage）
+- `POST /api/v1/agents/definitions` — 创建 Agent 定义（ai:manage）
+- `PUT /api/v1/agents/definitions/{id}` — 更新 Agent 定义（ai:manage）
+- `PUT /api/v1/agents/definitions/{id}/toggle` — 启用/禁用（ai:manage）
+- `DELETE /api/v1/agents/definitions/{id}` — 删除 Agent 定义（ai:manage）
+- `POST /api/v1/agents/execute/{code}` — 服务端执行 Agent（ai:execute）
+- `POST /api/v1/agents/executions/report` — 客户端上报执行结果（登录用户）
+- `GET /api/v1/agents/executions` — 执行日志列表（ai:view_logs）
+- `GET /api/v1/agents/stats` — 统计仪表盘（ai:view_logs）
+- `GET /api/v1/agents/bindings` — 获取能力绑定
+- `PUT /api/v1/agents/bindings/{capability}` — 设置能力绑定（ai:manage）
+- `DELETE /api/v1/agents/bindings/{capability}` — 删除能力绑定（ai:manage）
+
 ## Security (`SecurityConfig.java`)
 
 - **JWT Authentication**: Stateless，`Authorization: Bearer <token>`
@@ -451,7 +534,8 @@ Exchange: `fd.ticket.task.exchange` (TopicExchange)
 
 - Default admin: `admin/admin123`, role=SUPER_ADMIN, status=APPROVED
 - 内置角色: SUPER_ADMIN, ADMIN, USER, AUDITOR
-- 内置模块: auth (认证授权), ticket (工单管理), system (系统管理)
+- 内置模块: auth (认证授权), ai (AI Agent 管理), ticket (工单管理), system (系统管理)
+- 内置 Agent: gemini-translate (Gemini CLI 翻译), notebooklm-reply (NotebookLM 回复), tracking-query (17track 物流查询)
 - Sync cron: `0 0/1 * * * ?` (每分钟), 启用 `true`
 - Auto-reply: `false`
 - WeChat notifications: `false`

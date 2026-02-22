@@ -17,7 +17,6 @@ const ReplyTasksTab = lazy(() => import("./modules/ticket/pages/ReplyTasksTab"))
 const ServerTicketsTab = lazy(() => import("./modules/ticket/pages/ServerTicketsTab"));
 const AuditTasksTab = lazy(() => import("./modules/ticket/pages/AuditTasksTab"));
 const ApprovedTasksTab = lazy(() => import("./modules/ticket/pages/ApprovedTasksTab"));
-const AiConfigTab = lazy(() => import("./modules/ticket/pages/AiConfigTab"));
 const AdminUsersTab = lazy(() => import("./modules/admin/pages/AdminUsersTab"));
 const ManualSyncTab = lazy(() => import("./modules/admin/pages/ManualSyncTab"));
 const ServerLogsTab = lazy(() => import("./modules/admin/pages/ServerLogsTab"));
@@ -25,14 +24,19 @@ const DatabaseTab = lazy(() => import("./modules/admin/pages/DatabaseTab"));
 const KnowledgeTab = lazy(() => import("./modules/admin/pages/KnowledgeTab"));
 const RolePermissionTab = lazy(() => import("./modules/admin/pages/RolePermissionTab"));
 const OrgSyncTab = lazy(() => import("./modules/admin/pages/OrgSyncTab"));
+const AgentManageTab = lazy(() => import("./modules/admin/pages/AgentManageTab"));
 const TaskDashboardTab = lazy(() => import("./modules/task/pages/TaskDashboardTab"));
 const TaskDefinitionsTab = lazy(() => import("./modules/task/pages/TaskDefinitionsTab"));
 const TaskHistoryTab = lazy(() => import("./modules/task/pages/TaskHistoryTab"));
 const UserProfileTab = lazy(() => import("./modules/system/pages/UserProfileTab"));
 const FloatingTaskWidget = lazy(() => import("./shared/components/FloatingTaskWidget").then(m => ({ default: m.FloatingTaskWidget })));
+const WorkflowListTab = lazy(() => import("./modules/workflow/pages/WorkflowListTab"));
+const WorkflowGuideTab = lazy(() => import("./modules/workflow/pages/WorkflowGuideTab"));
 const MobileAuditPage = lazy(() => import("./modules/mobile/pages/MobileAuditPage"));
 
 import { AuthProvider, useAuthContext } from "./shared/context/AuthContext";
+import { AgentProvider } from "./shared/agents";
+import { ServerEventsProvider } from "./shared/context/ServerEventsContext";
 import { MQTranslationProvider } from "./shared/context/MQTranslationContext";
 import { MQReplyProvider } from "./shared/context/MQReplyContext";
 import { MQAuditProvider } from "./shared/context/MQAuditContext";
@@ -106,10 +110,6 @@ const TAB_COMPONENTS: Partial<Record<TabType, TabRoute>> = {
         component: ApprovedTasksTab,
         requireAuth: true,
     },
-    'ai-config': {
-        component: AiConfigTab,
-        requireAuth: true,
-    },
     'admin-users': {
         component: AdminUsersTab,
         requireAdmin: true,
@@ -138,6 +138,10 @@ const TAB_COMPONENTS: Partial<Record<TabType, TabRoute>> = {
         component: OrgSyncTab,
         requireAdmin: true,
     },
+    'agent-manage': {
+        component: AgentManageTab,
+        requireAdmin: true,
+    },
     'task-dashboard': {
         component: TaskDashboardTab,
         requireAdmin: true,
@@ -148,6 +152,14 @@ const TAB_COMPONENTS: Partial<Record<TabType, TabRoute>> = {
     },
     'task-history': {
         component: TaskHistoryTab,
+        requireAdmin: true,
+    },
+    'workflow-list': {
+        component: WorkflowListTab,
+        requireAdmin: true,
+    },
+    'workflow-guide': {
+        component: WorkflowGuideTab,
         requireAdmin: true,
     },
 };
@@ -339,6 +351,8 @@ function AppInner() {
 
     return (
         <ToastProvider>
+            <ServerEventsProvider>
+            <AgentProvider>
             <MQTranslationProvider>
                 <MQReplyProvider>
                     <MQAuditProvider>
@@ -364,6 +378,8 @@ function AppInner() {
                     </MQAuditProvider>
                 </MQReplyProvider>
             </MQTranslationProvider>
+            </AgentProvider>
+            </ServerEventsProvider>
         </ToastProvider>
     );
 }

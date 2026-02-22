@@ -14,6 +14,7 @@ export default defineConfig({
         manualChunks: {
           'react-vendor': ['react', 'react-dom', 'react-router-dom'],
           'i18n-vendor': ['i18next', 'react-i18next', 'i18next-browser-languagedetector'],
+          'bpmn-vendor': ['bpmn-js'],
         },
       },
     },

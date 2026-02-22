@@ -10,8 +10,13 @@ use std::sync::mpsc;
 // =========== AI 翻译命令 ===========
 
 #[tauri::command]
-async fn translate_ticket_direct_cmd(app: AppHandle, ticket: models::Ticket, target_lang: String) -> Result<models::Ticket, String> {
-    GeminiClient::translate_ticket(&app, &ticket, &target_lang).await
+async fn translate_ticket_direct_cmd(app: AppHandle, ticket: models::Ticket, target_lang: String, system_prompt: Option<String>) -> Result<models::Ticket, String> {
+    GeminiClient::translate_ticket(&app, &ticket, &target_lang, system_prompt.as_deref()).await
+}
+
+#[tauri::command]
+async fn execute_gemini_cmd(app: AppHandle, prompt: String, models: Vec<String>) -> Result<String, String> {
+    GeminiClient::execute_gemini(&app, &prompt, &models).await
 }
 
 #[tauri::command]
@@ -300,6 +305,7 @@ pub fn run() {
         .invoke_handler(tauri::generate_handler![
             // AI 翻译
             translate_ticket_direct_cmd,
+            execute_gemini_cmd,
             sync_translate_reply_cmd,
             // 文件系统
             select_folder,

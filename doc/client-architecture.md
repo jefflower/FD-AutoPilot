@@ -41,6 +41,7 @@ fd-web/src/
 │   ├── components/   # 通用 UI 组件
 │   ├── hooks/        # useAuth, useToast
 │   ├── ai/           # AI Provider 抽象 + 实现
+│   ├── agents/       # AI Agent 运行时（统一 Agent 管理框架）
 │   ├── context/      # 任务管理 Context (工厂模式)
 │   ├── services/     # serverApi.ts (REST API 封装)
 │   ├── types/        # server.ts (后端类型定义)
@@ -97,6 +98,7 @@ fd-web/src/
 │   │   │   └── SqlQueryPanel.tsx        # SQL 查询面板
 │   │   └── pages/
 │   │       ├── AdminUsersTab.tsx        # 用户管理
+│   │       ├── AgentManageTab.tsx       # AI Agent 管理（定义/绑定/日志/统计）
 │   │       ├── DatabaseTab.tsx          # 数据库查询
 │   │       ├── KnowledgeTab.tsx         # 知识库管理
 │   │       ├── ManualSyncTab.tsx        # 手动同步 + 自动推送
@@ -132,6 +134,17 @@ fd-web/src/
 │   │   └── providers/
 │   │       ├── geminiTranslationProvider.ts   # Gemini CLI 翻译
 │   │       └── notebookLMReplyProvider.ts     # NotebookLM 回复生成
+│   ├── agents/                          # AI Agent 运行时（v0.3 新增）
+│   │   ├── index.ts                     # 模块入口 re-exports
+│   │   ├── AgentRegistry.ts             # Agent 注册中心（单例，从后端加载定义）
+│   │   ├── AgentContext.tsx             # AgentProvider Context（App.tsx 包裹）
+│   │   ├── useAgent.ts                  # useAgent + useAgentStream 统一 Hook
+│   │   └── executors/
+│   │       ├── types.ts                 # AgentExecutor 接口定义
+│   │       ├── CliExecutor.ts           # LOCAL_CLI 执行器（Tauri invoke）
+│   │       ├── HttpApiExecutor.ts       # HTTP_API 执行器（服务端代理）
+│   │       ├── ShadowExecutor.ts        # SHADOW_WINDOW 执行器（流式）
+│   │       └── FunctionExecutor.ts      # LOCAL_FUNCTION 执行器
 │   ├── components/
 │   │   ├── SidebarNew.tsx               # 导航侧边栏
 │   │   ├── Common.tsx                   # 通用 UI（LangLabel 等）
@@ -148,8 +161,9 @@ fd-web/src/
 │   ├── hooks/
 │   │   ├── useAuth.ts                   # JWT 认证（登录、注册、token 存储）
 │   │   ├── useToast.ts                  # 吐司 Hook
-│   │   ├── useAiTranslation.ts          # AI 翻译 Hook → GeminiTranslationProvider
-│   │   ├── useAiReply.ts                # AI 回复 Hook → NotebookLMReplyProvider
+│   │   ├── useAiTranslation.ts          # AI 翻译 Hook → Agent 运行时（resolveByCapability）
+│   │   ├── useAiReply.ts                # AI 回复 Hook → Agent 运行时（从 providerConfig 读取配置）
+│   │   ├── useSettings.ts               # 用户设置（translationLang），服务端存储
 │   │   └── useTicketProcess.ts          # 全局工单处理状态（模块级变量 + listener）
 │   ├── services/
 │   │   └── serverApi.ts                 # 后端 REST API 客户端封装
@@ -242,11 +256,34 @@ Google NotebookLM 无公开 API，使用 **Shadow Window** 技术 + **混合 obs
 - 非 `PENDING_AUDIT` 状态的工单自动跳过
 - 导出 `completeAudit(ticketId, success)` 和 `getAuditingTicket(ticketId)`
 
-### 3. AI Provider 抽象 (`fd-web/src/shared/ai/`)
-定义 Provider 接口 (`AiTranslationProvider`, `AiReplyProvider`) 和实现：
-- `GeminiTranslationProvider` — 包装 Tauri `translate_ticket_direct_cmd` invoke（Tauri 模式下）或本地 HTTP API（Web 模式下）
-- `NotebookLMReplyProvider` — 包装 `NotebookShadowService` + 流式处理 + JSON 解析（Tauri 模式下专用）
-- Factory 函数 `getTranslationProvider(name)` / `getReplyProvider(name, config)` 支持未来切换 AI 提供商
+### 3. AI Agent 管理框架 (`fd-web/src/shared/agents/`)
+
+v0.3 引入统一的 AI Agent 管理框架，替代原有的硬编码 Provider 工厂模式。
+
+**核心组件**：
+- `AgentRegistry`（单例）— 从后端 `/api/v1/agents/definitions` 加载 Agent 定义，注册 4 种 Executor
+- `AgentProvider`（Context）— App.tsx 中包裹，应用启动时初始化 Registry
+- `useAgent(agentCode)` / `useAgentStream(agentCode)` — 统一的 Agent 调用 Hook，自动上报执行结果
+
+**4 种 Executor**：
+
+| Executor | ProviderType | 环境要求 | 执行方式 |
+|----------|-------------|---------|---------|
+| CliExecutor | LOCAL_CLI | Tauri 仅 | `tauriInvoke(config.invokeCommand, data)` |
+| HttpApiExecutor | HTTP_API | 始终可用 | `POST /agents/execute/{code}` 走服务端 |
+| ShadowExecutor | SHADOW_WINDOW | Tauri 仅 | 通过 `shadowHandler` 委托业务逻辑 |
+| FunctionExecutor | LOCAL_FUNCTION | 始终可用 | 从注册函数表查找执行 |
+
+**能力绑定**：管理员可通过 Agent 管理页面配置每种能力（translation/reply/tracking）使用哪个 Agent。`resolveByCapability()` 先查绑定表，再按 capability 匹配。
+
+**Agent 管理 UI**：`AgentManageTab` 为不同 Provider 类型提供结构化配置面板：
+- **HTTP_API** → `HttpApiConfigPanel`（Base URL + 连接检测 + 模型选择 + API Key + System Prompt）
+- **SHADOW_WINDOW** → `ShadowWindowConfigPanel`（Window Label + NotebookLM URL/ID/Prompt）
+- **其他** → JSON textarea
+
+**配置集中化**：NotebookLM 的核心配置（notebookId/notebookUrl/prompt）已从 `useSettings`（per-user）迁移到 `notebooklm-reply` agent 的 `providerConfig`（全局），管理员在 Agent 管理页面统一配置。`useAiReply` 和 `ServerTicketDetail` 直接从 agent definition 读取配置。
+
+**向后兼容**：旧的 `shared/ai/` 目录保留（渐进废弃），`useAiTranslation` 和 `useAiReply` 内部已委托 Agent 系统，对外接口不变。
 
 ### 4. 状态管理
 
@@ -256,10 +293,10 @@ Google NotebookLM 无公开 API，使用 **Shadow Window** 技术 + **混合 obs
 |------|----------|---------|------|
 | `useAuth` | `shared/hooks/` | JWT 认证（登录、注册、token 存储） | 浏览器 + Tauri |
 | `useToast` | `shared/hooks/` | 全局吐司提示 | 浏览器 + Tauri |
-| `useAiReply` | `shared/hooks/` | AI 回复 → NotebookLMReplyProvider | 浏览器 + Tauri |
-| `useAiTranslation` | `shared/hooks/` | AI 翻译 → GeminiTranslationProvider | 浏览器 + Tauri |
+| `useAiReply` | `shared/hooks/` | AI 回复 → Agent 系统（从 agent providerConfig 读取配置） | 浏览器 + Tauri |
+| `useAiTranslation` | `shared/hooks/` | AI 翻译 → Agent 系统（resolveByCapability('translation')） | 浏览器 + Tauri |
 | `useTicketProcess` | `shared/hooks/` | 全局工单处理状态（模块级变量 + listener） | 浏览器 + Tauri |
-| `useSettings` | `tauri/hooks/` | 本地设置（Tauri 仅） | Tauri 仅 |
+| `useSettings` | `shared/hooks/` | 用户设置（translationLang），服务端存储 | 浏览器 + Tauri |
 | `useNotebookShadow` | `tauri/hooks/` | Shadow 窗口可见性（Tauri 仅） | Tauri 仅 |
 
 #### 共享常量
@@ -287,18 +324,18 @@ src-tauri/src/
 | NotebookLM | `open_notebook_window`, `execute_notebook_js`, `get_shadow_result`, `toggle_notebook_window`, `get_notebook_window_visibility`, `forward_shadow_event` | Shadow Window 管理 |
 | NotebookLM Selectors | `get_notebook_selectors_cmd`, `save_notebook_selectors_cmd`, `reset_notebook_selectors_cmd` | DOM 选择器管理 |
 
-## AI Workflow (Provider-based)
+## AI Workflow (Agent-based)
 
-### 1. 翻译 (`GeminiTranslationProvider`)
+### 1. 翻译
 - **触发**: REST API `POST /api/v1/tasks/claim` 获取翻译任务，或 UI 按钮手动触发
-- **执行**: `useAiTranslation` → `GeminiTranslationProvider.translate()` → `invoke('translate_ticket_direct_cmd')` → Rust `ai.rs` → `gemini` CLI
+- **执行**: `useAiTranslation` → `AgentRegistry.resolveByCapability('translation')` → `CliExecutor` → `invoke('translate_ticket_direct_cmd')` → Rust `ai.rs` → `gemini` CLI
 - **并发**: 支持并行（MQTranslationContext 默认 `batchSize: 5`）
 - **结果**: 自动通过 `serverApi.ticket.submitTranslation()` 保存，或 UI 预览确认后提交
 - **集成**: 支持浏览器模式（HTTP API）和 Tauri 模式（本地 CLI）
 
-### 2. 回复生成 (`NotebookLMReplyProvider`)
+### 2. 回复生成
 - **触发**: REST API `POST /api/v1/tasks/claim` 获取回复任务，或 UI 按钮手动触发
-- **执行**: `useAiReply` → `NotebookLMReplyProvider.generateReply()` → `NotebookShadowService.query(prompt)` → Shadow Window → NotebookLM
+- **执行**: `useAiReply` → `AgentRegistry.resolveByCapability('reply')` → `ShadowExecutor(shadowHandler)` → `NotebookShadowService.query(prompt)` → Shadow Window → NotebookLM
 - **并发**: 仅串行（Shadow Window 限制，MQReplyContext 强制 `batchSize: 1`）
 - **结果**: 解析为 `[targetReply, zhReply]` JSON 数组。自动保存或 UI 确认
 - **JSON 解析**: 反向搜索 `["` pattern（避免匹配 prompt 中的 `[timestamp]`），共享于 `parseUtils.ts`

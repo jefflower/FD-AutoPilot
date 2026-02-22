@@ -54,6 +54,19 @@ public enum ErrorCode {
     INTERNAL_ERROR(500, "服务器内部错误"),
     SUPER_PASSWORD_WRONG(403, "超级密码错误"),
 
+    // AI
+    AGENT_NOT_FOUND(404, "Agent 不存在"),
+    AGENT_NOT_AVAILABLE(400, "Agent 不可用"),
+    AGENT_EXECUTION_FAILED(500, "Agent 执行失败"),
+    AGENT_PROVIDER_NOT_FOUND(500, "Agent Provider 未找到"),
+
+    // Workflow
+    WORKFLOW_NOT_FOUND(404, "工作流定义不存在"),
+    WORKFLOW_ALREADY_EXISTS(409, "工作流定义已存在"),
+    WORKFLOW_DEPLOY_FAILED(500, "工作流部署失败"),
+    WORKFLOW_INSTANCE_NOT_FOUND(404, "工作流实例不存在"),
+    WORKFLOW_SIGNAL_FAILED(500, "工作流信号发送失败"),
+
     // Config
     CONFIG_NOT_FOUND(404, "配置不存在");
 

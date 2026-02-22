@@ -90,8 +90,7 @@ fd-web/
 │   │   │   │   ├── TranslationTasksTab.tsx    # MQ 翻译任务
 │   │   │   │   ├── ReplyTasksTab.tsx          # MQ 回复任务
 │   │   │   │   ├── AuditTasksTab.tsx          # 审核任务
-│   │   │   │   ├── ApprovedTasksTab.tsx       # 已批准/待推送
-│   │   │   │   └── ServerTaskWorkspace.tsx    # 多标签页工作区
+│   │   │   │   └── ApprovedTasksTab.tsx       # 已批准/待推送
 │   │   │   └── components/
 │   │   │       ├── ServerTicketDetail.tsx      # 工单详情（AI 操作）
 │   │   │       ├── ServerTicketList.tsx        # 分页工单列表
@@ -104,6 +103,8 @@ fd-web/
 │   │   │   ├── pages/
 │   │   │   │   ├── AdminUsersTab.tsx          # 用户管理（新增部门列、来源列、头像、显示名）
 │   │   │   │   ├── OrgSyncTab.tsx             # 组织架构同步管理（新增）
+│   │   │   │   ├── AgentManageTab.tsx         # AI Agent 管理页面（新增）
+│   │   │   │   ├── RolePermissionTab.tsx      # 角色权限管理
 │   │   │   │   ├── ManualSyncTab.tsx          # 同步管理
 │   │   │   │   ├── KnowledgeTab.tsx           # 知识库
 │   │   │   │   ├── DatabaseTab.tsx            # 数据库查询
@@ -126,6 +127,17 @@ fd-web/
 │   │   │   └── providers/
 │   │   │       ├── geminiTranslationProvider.ts
 │   │   │       └── notebookLMReplyProvider.ts
+│   │   ├── agents/                            # AI Agent 运行时（v0.3 新增）
+│   │   │   ├── index.ts                       # 模块入口
+│   │   │   ├── AgentRegistry.ts               # Agent 注册中心（单例）
+│   │   │   ├── AgentContext.tsx               # AgentProvider Context
+│   │   │   ├── useAgent.ts                    # useAgent + useAgentStream Hook
+│   │   │   └── executors/
+│   │   │       ├── types.ts                   # AgentExecutor 接口
+│   │   │       ├── CliExecutor.ts             # LOCAL_CLI（Tauri invoke）
+│   │   │       ├── HttpApiExecutor.ts         # HTTP_API（服务端代理）
+│   │   │       ├── ShadowExecutor.ts          # SHADOW_WINDOW（流式）
+│   │   │       └── FunctionExecutor.ts        # LOCAL_FUNCTION（本地 JS）
 │   │   ├── components/                        # 通用 UI 组件
 │   │   ├── context/                           # 任务管理 Context（迁入自 tauri/）
 │   │   │   ├── createMQTaskContext.tsx         # 工厂函数
@@ -211,7 +223,7 @@ fd-client/
 
 基于 **Spring Boot 3.4.1**、**Java 21**、**H2 数据库**、**RabbitMQ**、**Redis** 构建。
 
-采用 **Maven 多模块**架构（parent POM + 5 个子模块），编译顺序：common → auth → task → ticket → app。
+采用 **Maven 多模块**架构（parent POM + 6 个子模块），编译顺序：common → auth → task → ai → ticket → app。
 
 ```
 fd-server/                                     # parent POM (packaging: pom)
@@ -256,6 +268,18 @@ fd-server/                                     # parent POM (packaging: pom)
 │   │   └── config/                            # TaskConfig, TaskPermissionDefinition
 │   └── src/test/java/                         # (暂无测试)
 │
+├── fd-server-ai/                              # (jar) AI Agent 管理模块
+│   ├── src/main/java/.../ai/
+│   │   ├── controller/                        # AgentDefinitionController, AgentExecutionController, AgentBindingController
+│   │   ├── service/                           # AgentDefinitionService, AgentExecutionService, AgentDispatchService, AgentBindingService, AgentProvider (SPI)
+│   │   ├── entity/                            # AgentDefinition, AgentExecution, AgentBinding
+│   │   ├── repository/                        # AgentDefinitionRepository, AgentExecutionRepository, AgentBindingRepository
+│   │   ├── provider/                          # HttpApiAgentProvider
+│   │   ├── dto/                               # AgentExecuteRequest, AgentExecuteResult, AgentExecutionReport, AgentProxyTestResult, AgentStats
+│   │   ├── enums/                             # ProviderType, ExecutionEnv, ExecutionStatus
+│   │   └── config/                            # AiPermissionDefinition, AiDataInitializer
+│   └── src/test/java/                         # (暂无测试)
+│
 ├── fd-server-ticket/                          # (jar) 工单业务模块
 │   ├── src/main/java/.../ticket/
 │   │   ├── controller/                        # TicketController, SyncController, QueueController, ConfigController, KnowledgeController, DatabaseController, WebhookController, RequestController, AuditTokenController
@@ -286,12 +310,13 @@ fd-server/                                     # parent POM (packaging: pom)
 ### 模块间依赖规则
 
 ```
-common（底层） ← auth（中层） ← task ← ticket（上层）
+common（底层） ← auth（中层） ← task ← ai ← ticket（上层）
 ```
 - common 不依赖任何业务模块（Maven: 无内部依赖）
 - auth 只依赖 common（Maven: `fd-server-common`）
 - task 只依赖 auth（Maven: `fd-server-auth`，传递获得 common）
-- ticket 可依赖 task（Maven: `fd-server-task`，传递获得 auth + common）
+- ai 只依赖 task（Maven: `fd-server-task`，传递获得 auth + common）
+- ticket 可依赖 ai（Maven: `fd-server-ai`，传递获得 task + auth + common）
 - app 聚合 ticket（Maven: `fd-server-ticket`，传递获得所有模块）
 
 ### Maven 命令
@@ -334,6 +359,11 @@ common（底层） ← auth（中层） ← task ← ticket（上层）
 - **SyncLog/SyncConfig**: 同步日志和配置
 - **FailedReplyPush**: 推送失败重试记录
 
+### AI Agent（ai 模块）
+- **AgentDefinition**: Agent 定义（code 唯一，name，providerType，capability，providerConfig，enabled）
+- **AgentExecution**: 执行日志（agentCode，status，durationMs，tokenCount，executedAt）
+- **AgentBinding**: 能力绑定（capability → agentCode，多对一关系）
+
 ## Enums
 
 ### 后端 Enums
@@ -347,3 +377,6 @@ common（底层） ← auth（中层） ← task ← ticket（上层）
 | TriggerType | ticket | CRON, MANUAL |
 | UserRole | auth | SUPER_ADMIN, ADMIN, USER, AUDITOR |
 | UserStatus | auth | PENDING, APPROVED, REJECTED |
+| ProviderType | ai | LOCAL_CLI, HTTP_API, SHADOW_WINDOW, LOCAL_FUNCTION |
+| ExecutionEnv | ai | CLIENT_ONLY, SERVER_ONLY, BOTH |
+| ExecutionStatus | ai | RUNNING, SUCCESS, FAILED, TIMEOUT, CANCELLED |

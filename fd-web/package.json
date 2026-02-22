@@ -13,9 +13,12 @@
     "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
+    "@bpmn-io/properties-panel": "^3.39.0",
     "@tauri-apps/api": "^2.9.1",
     "@tauri-apps/plugin-dialog": "^2.6.0",
     "@tauri-apps/plugin-opener": "^2.5.3",
+    "bpmn-js": "^18.12.0",
+    "bpmn-js-properties-panel": "^5.51.0",
     "i18next": "^25.8.4",
     "i18next-browser-languagedetector": "^8.2.0",
     "lucide-react": "^0.563.0",

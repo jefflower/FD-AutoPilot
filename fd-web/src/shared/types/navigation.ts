@@ -21,5 +21,7 @@ export type TabType =
     | 'task-dashboard'
     | 'task-definitions'
     | 'task-history'
-    | 'ai-config'
-    | 'org-sync';
+    | 'org-sync'
+    | 'agent-manage'
+    | 'workflow-list'
+    | 'workflow-guide';

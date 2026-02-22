@@ -39,6 +39,7 @@ public class TicketService {
     private final TaskDistributionService taskDistributionService;
     private final TicketStateMachine stateMachine;
     private final ObjectMapper objectMapper;
+    private final TicketWorkflowOrchestrator orchestrator;
 
     /**
      * 构建 TaskInstance 的 payload JSON（供前端显示工单标题等信息）
@@ -192,19 +193,8 @@ public class TicketService {
 
         log.debug("[TicketService] Translation saved with ID: {}", saved.getId());
 
-        // 完成翻译任务
-        taskDistributionService.completeByReference("ticket.translate", String.valueOf(ticketId));
-
-        // 如果已经是 PENDING_REPLY 状态，说明已经触发过后续流程，无需重复处理
-        if (ticket.getStatus() != TicketStatus.PENDING_REPLY) {
-            stateMachine.transition(ticket, TicketStatus.PENDING_REPLY);
-            ticketRepository.save(ticket);
-
-            // 创建回复任务实例
-            taskDistributionService.createTask("ticket.reply", "ticket",
-                    String.valueOf(ticket.getId()), buildTaskPayload(ticket),
-                    com.jefflower.fdserver.task.enums.TriggerType.EVENT);
-        }
+        // 委托编排器处理后续流程（状态转换 + 任务创建 或 BPMN 信号）
+        orchestrator.onTranslationCompleted(ticket);
 
         return saved;
     }
@@ -238,20 +228,8 @@ public class TicketService {
         reply.setTargetReply(request.getTargetReply());
         TicketReply saved = replyRepository.save(reply);
 
-        stateMachine.transition(ticket, TicketStatus.PENDING_AUDIT);
-        ticketRepository.save(ticket);
-
-        // 完成回复任务
-        taskDistributionService.completeByReference("ticket.reply", String.valueOf(ticketId));
-
-        // 创建审核任务实例
-        taskDistributionService.createTask("ticket.audit", "ticket",
-                String.valueOf(ticket.getId()), buildTaskPayload(ticket),
-                com.jefflower.fdserver.task.enums.TriggerType.EVENT);
-
-        // 生成审核 Token 并发送带审核链接的通知
-        String auditToken = auditTokenService.generateToken(ticket.getId());
-        notifyService.notifyPendingAudit(ticket, auditToken);
+        // 委托编排器处理后续流程
+        orchestrator.onReplyCompleted(ticket);
 
         return saved;
     }
@@ -284,41 +262,9 @@ public class TicketService {
         audit.setAuditorId(auditorId);
         TicketAudit saved = auditRepository.save(audit);
 
-        // 完成审核任务
-        taskDistributionService.completeByReference("ticket.audit", String.valueOf(ticketId));
-
-        if (request.getAuditResult() == AuditResult.PASS) {
-            TicketReply reply = replyRepository.findById(request.getReplyId())
-                    .orElseThrow(() -> new BusinessException(ErrorCode.REPLY_NOT_FOUND));
-            reply.setIsSelected(true);
-            replyRepository.save(reply);
-
-            boolean autoReply = systemConfigService.isAutoReplyEnabled();
-            if (autoReply) {
-                // 自动推送模式：直接推送到 Freshdesk → COMPLETED
-                stateMachine.transition(ticket, TicketStatus.COMPLETED);
-                replyPushService.pushReplyToFreshdesk(ticket, reply);
-            } else {
-                // 手动推送模式：进入 APPROVED 等待推送
-                stateMachine.transition(ticket, TicketStatus.APPROVED);
-            }
-            ticket.setLastAuditRemark(null);
-            ticketRepository.save(ticket);
-
-            notifyService.notifyAuditPass(ticket);
-        } else {
-            // REJECT：保存审核意见，回到待回复状态
-            stateMachine.transition(ticket, TicketStatus.PENDING_REPLY);
-            ticket.setLastAuditRemark(request.getAuditRemark());
-            ticketRepository.save(ticket);
-
-            // REJECT 后重新创建回复任务实例
-            taskDistributionService.createTask("ticket.reply", "ticket",
-                    String.valueOf(ticket.getId()), buildTaskPayload(ticket),
-                    com.jefflower.fdserver.task.enums.TriggerType.EVENT);
-
-            notifyService.notifyAuditReject(ticket, request.getAuditRemark());
-        }
+        // 委托编排器处理后续流程
+        orchestrator.onAuditCompleted(ticket, request.getAuditResult(), request.getAuditRemark(),
+                request.getReplyId(), auditorId);
 
         return saved;
     }

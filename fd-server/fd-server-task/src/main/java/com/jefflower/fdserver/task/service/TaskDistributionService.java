@@ -8,8 +8,11 @@ import com.jefflower.fdserver.task.enums.TaskStatus;
 import com.jefflower.fdserver.task.enums.TriggerType;
 import com.jefflower.fdserver.task.repository.TaskDefinitionRepository;
 import com.jefflower.fdserver.task.repository.TaskInstanceRepository;
+import com.jefflower.fdserver.task.event.TaskCompletedEvent;
+import com.jefflower.fdserver.task.event.TaskPushEvent;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,6 +28,7 @@ public class TaskDistributionService {
 
     private final TaskInstanceRepository taskInstanceRepository;
     private final TaskDefinitionRepository taskDefinitionRepository;
+    private final ApplicationEventPublisher eventPublisher;
 
     /**
      * 创建任务（幂等：同 taskType + referenceId 已有 PENDING/CLAIMED 则跳过）
@@ -54,6 +58,16 @@ public class TaskDistributionService {
         TaskInstance saved = taskInstanceRepository.save(instance);
         log.info("Created task instance: id={}, type={}, refType={}, refId={}",
                 saved.getId(), taskType, referenceType, referenceId);
+
+        // 发布任务创建事件 → SSE 推送给客户端
+        Long refIdLong = null;
+        try {
+            if (referenceId != null) refIdLong = Long.parseLong(referenceId);
+        } catch (NumberFormatException ignored) {
+        }
+        eventPublisher.publishEvent(new TaskPushEvent(
+                this, taskType, saved.getId(), referenceType, refIdLong, null));
+
         return saved;
     }
 
@@ -136,6 +150,10 @@ public class TaskDistributionService {
         taskInstanceRepository.save(task);
 
         log.info("Task {} completed by client {}: success={}", taskId, clientId, success);
+
+        // 发布任务完成事件 → SSE 通知客户端
+        eventPublisher.publishEvent(new TaskCompletedEvent(
+                this, taskId, task.getTaskType(), success, clientId));
     }
 
     /**

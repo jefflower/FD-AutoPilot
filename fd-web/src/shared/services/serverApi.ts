@@ -44,6 +44,12 @@ import type {
   OrgSyncLog,
   SysDepartment,
   OAuthStatus,
+  AgentDefinition,
+  AgentBindings,
+  AgentExecutionReport,
+  AgentExecutionLog,
+  AgentStats,
+  AgentProxyTestResult,
 } from '../types/server';
 
 // 自定义 API 错误类，携带错误码
@@ -889,7 +895,141 @@ export async function downloadWithAuth(path: string, defaultFilename: string) {
   }
 }
 
-// 导出所有 API
+// ============ Agent API ============
+export const agentApi = {
+  async getDefinitions(): Promise<AgentDefinition[]> {
+    return (await request<AgentDefinition[]>('/agents/definitions')) || [];
+  },
+
+  async getAllDefinitions(): Promise<AgentDefinition[]> {
+    return (await request<AgentDefinition[]>('/agents/definitions/all')) || [];
+  },
+
+  async getClientAgents(): Promise<AgentDefinition[]> {
+    return (await request<AgentDefinition[]>('/agents/definitions/client')) || [];
+  },
+
+  async createDefinition(def: Partial<AgentDefinition>): Promise<AgentDefinition> {
+    return request<AgentDefinition>('/agents/definitions', {
+      method: 'POST',
+      body: JSON.stringify(def),
+    });
+  },
+
+  async updateDefinition(id: number, def: Partial<AgentDefinition>): Promise<AgentDefinition> {
+    return request<AgentDefinition>(`/agents/definitions/${id}`, {
+      method: 'PUT',
+      body: JSON.stringify(def),
+    });
+  },
+
+  async toggleDefinition(id: number): Promise<void> {
+    await request<void>(`/agents/definitions/${id}/toggle`, { method: 'PUT' });
+  },
+
+  async deleteDefinition(id: number): Promise<void> {
+    await request<void>(`/agents/definitions/${id}`, { method: 'DELETE' });
+  },
+
+  async getBindings(): Promise<AgentBindings> {
+    return (await request<AgentBindings>('/agents/bindings')) || {};
+  },
+
+  async setBinding(capability: string, agentCode: string): Promise<void> {
+    await request<void>(`/agents/bindings/${capability}`, {
+      method: 'PUT',
+      body: JSON.stringify({ agentCode }),
+    });
+  },
+
+  async removeBinding(capability: string): Promise<void> {
+    await request<void>(`/agents/bindings/${capability}`, {
+      method: 'DELETE',
+    });
+  },
+
+  async testProxy(baseUrl: string, apiKey?: string): Promise<AgentProxyTestResult> {
+    return request<AgentProxyTestResult>('/agents/definitions/test-proxy', {
+      method: 'POST',
+      body: JSON.stringify({ baseUrl, apiKey: apiKey || '' }),
+    });
+  },
+
+  async executeAgent(code: string, req: { input: string; referenceType?: string; referenceId?: number }): Promise<{ success: boolean; output: string; tokenCount?: number; errorMessage?: string }> {
+    return request<{ success: boolean; output: string; tokenCount?: number; errorMessage?: string }>(`/agents/execute/${code}`, {
+      method: 'POST',
+      body: JSON.stringify(req),
+    });
+  },
+
+  async reportExecution(report: AgentExecutionReport): Promise<void> {
+    try {
+      await request<void>('/agents/executions/report', {
+        method: 'POST',
+        body: JSON.stringify(report),
+      });
+    } catch {
+      // 上报失败不阻塞业务
+    }
+  },
+
+  async getExecutions(params?: { agentCode?: string; page?: number; size?: number }): Promise<{ content: AgentExecutionLog[]; totalElements: number; totalPages: number }> {
+    const searchParams = new URLSearchParams();
+    if (params?.agentCode) searchParams.set('agentCode', params.agentCode);
+    if (params?.page !== undefined) searchParams.set('page', String(params.page));
+    if (params?.size !== undefined) searchParams.set('size', String(params.size));
+    return (await request<{ content: AgentExecutionLog[]; totalElements: number; totalPages: number }>(`/agents/executions?${searchParams}`)) || { content: [], totalElements: 0, totalPages: 0 };
+  },
+
+  async getStats(): Promise<AgentStats[]> {
+    return (await request<AgentStats[]>('/agents/stats')) || [];
+  },
+};
+
+// 工作流 API
+export const workflowApi = {
+  // 流程定义 CRUD
+  async listDefinitions(): Promise<any[]> {
+    return (await request<any[]>('/workflows/definitions')) || [];
+  },
+  async listByBusinessType(businessType: string): Promise<any[]> {
+    return (await request<any[]>(`/workflows/definitions/type/${businessType}`)) || [];
+  },
+  async createDefinition(data: { processKey: string; name: string; description: string; businessType: string }): Promise<any> {
+    return request<any>('/workflows/definitions', { method: 'POST', body: JSON.stringify(data) });
+  },
+  async updateDefinition(id: number, data: { name: string; description: string; businessType: string; enabled: boolean }): Promise<any> {
+    return request<any>(`/workflows/definitions/${id}`, { method: 'PUT', body: JSON.stringify(data) });
+  },
+  async deleteDefinition(id: number): Promise<void> {
+    await request<void>(`/workflows/definitions/${id}`, { method: 'DELETE' });
+  },
+
+  // BPMN XML
+  async getBpmnXml(id: number): Promise<{ processKey: string; bpmnXml: string }> {
+    return request<{ processKey: string; bpmnXml: string }>(`/workflows/definitions/${id}/bpmn`);
+  },
+  async saveBpmnXml(id: number, bpmnXml: string): Promise<void> {
+    await request<void>(`/workflows/definitions/${id}/bpmn`, { method: 'PUT', body: JSON.stringify({ bpmnXml }) });
+  },
+
+  // 部署
+  async deploy(id: number): Promise<void> {
+    await request<void>(`/workflows/definitions/${id}/deploy`, { method: 'POST' });
+  },
+
+  // 实例管理
+  async getActiveActivities(processInstanceId: string): Promise<string[]> {
+    return (await request<string[]>(`/workflows/instances/${processInstanceId}/activities`)) || [];
+  },
+  async signalInstance(processInstanceId: string, activityId: string, variables?: Record<string, any>): Promise<void> {
+    await request<void>(`/workflows/instances/${processInstanceId}/signal`, { method: 'POST', body: JSON.stringify({ activityId, variables }) });
+  },
+  async terminateInstance(processInstanceId: string, reason?: string): Promise<void> {
+    await request<void>(`/workflows/instances/${processInstanceId}?reason=${encodeURIComponent(reason || '手动终止')}`, { method: 'DELETE' });
+  },
+};
+
 export const serverApi = {
   auth: authApi,
   ticket: ticketApi,
@@ -901,6 +1041,8 @@ export const serverApi = {
   userSettings: userSettingsApi,
   orgSync: orgSyncApi,
   oauth: oauthApi,
+  agent: agentApi,
+  workflow: workflowApi,
 };
 
 export default serverApi;

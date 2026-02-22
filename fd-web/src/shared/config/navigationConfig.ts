@@ -2,7 +2,7 @@ import {
   Server, Languages, MessageSquare, CheckCircle, Send,
   Users, Shield, RefreshCw, FileText, Database, BookOpen,
   LayoutDashboard, ListChecks, History, Settings, User, Bot,
-  Building2,
+  Building2, GitBranch, BookMarked,
   type LucideIcon,
 } from 'lucide-react';
 import type { TabType } from '../types/navigation';
@@ -46,7 +46,6 @@ export const navigationModules: NavModule[] = [
       { tab: 'audit', labelKey: 'nav.audit', icon: CheckCircle, badgeKey: 'audit' },
       { tab: 'approved', labelKey: 'nav.push', icon: Send },
       { tab: 'manual-sync', labelKey: 'nav.sync', icon: RefreshCw, requireAdmin: true },
-      { tab: 'ai-config', labelKey: 'nav.aiConfig', icon: Bot },
     ],
   },
   {
@@ -63,6 +62,7 @@ export const navigationModules: NavModule[] = [
       { tab: 'database', labelKey: 'nav.database', icon: Database },
       { tab: 'knowledge', labelKey: 'nav.knowledge', icon: BookOpen },
       { tab: 'org-sync', labelKey: 'nav.orgSync', icon: Building2 },
+      { tab: 'agent-manage', labelKey: 'nav.agentManage', icon: Bot },
     ],
   },
   {
@@ -76,6 +76,18 @@ export const navigationModules: NavModule[] = [
       { tab: 'task-dashboard', labelKey: 'nav.taskDashboard', icon: LayoutDashboard },
       { tab: 'task-definitions', labelKey: 'nav.taskDefinitions', icon: ListChecks },
       { tab: 'task-history', labelKey: 'nav.taskHistory', icon: History },
+    ],
+  },
+  {
+    id: 'workflow',
+    labelKey: 'module.workflow',
+    descKey: 'moduleDesc.workflow',
+    icon: GitBranch,
+    color: 'purple',
+    requireAdmin: true,
+    pages: [
+      { tab: 'workflow-list', labelKey: 'nav.workflowList', icon: GitBranch },
+      { tab: 'workflow-guide', labelKey: 'nav.workflowGuide', icon: BookMarked },
     ],
   },
 ];

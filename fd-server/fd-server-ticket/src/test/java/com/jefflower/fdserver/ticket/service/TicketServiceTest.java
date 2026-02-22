@@ -57,6 +57,8 @@ class TicketServiceTest {
     private AuditTokenService auditTokenService;
     @Mock
     private TaskDistributionService taskDistributionService;
+    @Mock
+    private TicketWorkflowOrchestrator orchestrator;
 
     // 使用真实实例（无状态纯逻辑组件）
     private final TicketStateMachine stateMachine = new TicketStateMachine();
@@ -79,7 +81,8 @@ class TicketServiceTest {
                 auditTokenService,
                 taskDistributionService,
                 stateMachine,
-                objectMapper
+                objectMapper,
+                orchestrator
         );
 
         sampleTicket = new Ticket();
@@ -164,22 +167,20 @@ class TicketServiceTest {
         }
 
         @Test
-        @DisplayName("首次翻译 → 保存翻译、状态变为 PENDING_REPLY、创建回复任务")
+        @DisplayName("首次翻译 → 保存翻译、委托编排器处理后续流程")
         void firstTranslation_savesAndTransitions() {
             when(translationRepository.findByTicketAndTargetLang(sampleTicket, "zh-CN"))
                     .thenReturn(Optional.empty());
             TicketTranslation saved = new TicketTranslation();
             saved.setId(10L);
             when(translationRepository.save(any(TicketTranslation.class))).thenReturn(saved);
-            when(ticketRepository.save(any(Ticket.class))).thenReturn(sampleTicket);
 
             TicketTranslation result = ticketService.submitTranslation(1L, translationRequest);
 
             assertEquals(10L, result.getId());
 
-            // 验证状态变更
-            assertEquals(TicketStatus.PENDING_REPLY, sampleTicket.getStatus());
-            verify(ticketRepository).save(sampleTicket);
+            // 验证编排器被调用
+            verify(orchestrator).onTranslationCompleted(sampleTicket);
         }
 
         @Test
@@ -191,7 +192,6 @@ class TicketServiceTest {
                     .thenReturn(Optional.of(existing));
             when(translationRepository.save(any(TicketTranslation.class)))
                     .thenReturn(new TicketTranslation());
-            when(ticketRepository.save(any(Ticket.class))).thenReturn(sampleTicket);
 
             ticketService.submitTranslation(1L, translationRequest);
 
@@ -220,7 +220,6 @@ class TicketServiceTest {
                     .thenReturn(Optional.empty());
             ArgumentCaptor<TicketTranslation> captor = ArgumentCaptor.forClass(TicketTranslation.class);
             when(translationRepository.save(captor.capture())).thenAnswer(inv -> inv.getArgument(0));
-            when(ticketRepository.save(any(Ticket.class))).thenReturn(sampleTicket);
 
             ticketService.submitTranslation(1L, translationRequest);
 
@@ -253,21 +252,17 @@ class TicketServiceTest {
         }
 
         @Test
-        @DisplayName("提交回复 → 删除旧回复、保存新回复、状态变为 PENDING_AUDIT、生成审核Token并通知")
+        @DisplayName("提交回复 → 删除旧回复、保存新回复、委托编排器处理后续流程")
         void submitsReplyAndTransitions() {
             TicketReply saved = new TicketReply();
             saved.setId(20L);
             when(replyRepository.save(any(TicketReply.class))).thenReturn(saved);
-            when(ticketRepository.save(any(Ticket.class))).thenReturn(sampleTicket);
-            when(auditTokenService.generateToken(1L)).thenReturn("test-audit-token");
 
             TicketReply result = ticketService.submitReply(1L, replyRequest);
 
             assertEquals(20L, result.getId());
-            assertEquals(TicketStatus.PENDING_AUDIT, sampleTicket.getStatus());
             verify(replyRepository).deleteByTicket(sampleTicket);
-            verify(auditTokenService).generateToken(1L);
-            verify(notifyService).notifyPendingAudit(sampleTicket, "test-audit-token");
+            verify(orchestrator).onReplyCompleted(sampleTicket);
         }
 
         @Test
@@ -275,7 +270,6 @@ class TicketServiceTest {
         void fieldsMappedCorrectly() {
             ArgumentCaptor<TicketReply> captor = ArgumentCaptor.forClass(TicketReply.class);
             when(replyRepository.save(captor.capture())).thenAnswer(inv -> inv.getArgument(0));
-            when(ticketRepository.save(any(Ticket.class))).thenReturn(sampleTicket);
 
             ticketService.submitReply(1L, replyRequest);
 
@@ -309,80 +303,56 @@ class TicketServiceTest {
         }
 
         @Test
-        @DisplayName("审核通过 + 自动推送关闭 → 状态变为 APPROVED")
+        @DisplayName("审核通过 → 保存审核记录、委托编排器处理后续流程")
         void pass_autoReplyDisabled_approved() {
             stubDefaultAuditSave();
             AuditRequest req = new AuditRequest();
             req.setReplyId(20L);
             req.setAuditResult(AuditResult.PASS);
 
-            TicketReply reply = new TicketReply();
-            reply.setId(20L);
-            reply.setTicket(sampleTicket);
-            when(replyRepository.findById(20L)).thenReturn(Optional.of(reply));
-            when(systemConfigService.isAutoReplyEnabled()).thenReturn(false);
-            when(ticketRepository.save(any(Ticket.class))).thenReturn(sampleTicket);
+            ticketService.submitAudit(1L, req, 100L);
 
-            TicketAudit result = ticketService.submitAudit(1L, req, 100L);
-
-            assertEquals(TicketStatus.APPROVED, sampleTicket.getStatus());
-            assertNull(sampleTicket.getLastAuditRemark());
-            assertTrue(reply.getIsSelected());
-            verify(replyPushService, never()).pushReplyToFreshdesk(any(), any());
-            verify(notifyService).notifyAuditPass(sampleTicket);
+            verify(orchestrator).onAuditCompleted(sampleTicket, AuditResult.PASS, null, 20L, 100L);
         }
 
         @Test
-        @DisplayName("审核通过 + 自动推送开启 → 状态变为 COMPLETED，推送到 Freshdesk")
+        @DisplayName("审核通过 → 编排器被调用（自动推送场景由编排器决定）")
         void pass_autoReplyEnabled_completed() {
             stubDefaultAuditSave();
             AuditRequest req = new AuditRequest();
             req.setReplyId(20L);
             req.setAuditResult(AuditResult.PASS);
 
-            TicketReply reply = new TicketReply();
-            reply.setId(20L);
-            reply.setTicket(sampleTicket);
-            when(replyRepository.findById(20L)).thenReturn(Optional.of(reply));
-            when(systemConfigService.isAutoReplyEnabled()).thenReturn(true);
-            when(ticketRepository.save(any(Ticket.class))).thenReturn(sampleTicket);
-
             ticketService.submitAudit(1L, req, 100L);
 
-            assertEquals(TicketStatus.COMPLETED, sampleTicket.getStatus());
-            verify(replyPushService).pushReplyToFreshdesk(sampleTicket, reply);
-            verify(notifyService).notifyAuditPass(sampleTicket);
+            verify(orchestrator).onAuditCompleted(sampleTicket, AuditResult.PASS, null, 20L, 100L);
         }
 
         @Test
-        @DisplayName("审核驳回 → 状态回退 PENDING_REPLY，保存驳回意见，创建回复任务")
+        @DisplayName("审核驳回 → 委托编排器处理后续流程")
         void reject_rollsBackToPendingReply() {
             stubDefaultAuditSave();
             AuditRequest req = new AuditRequest();
             req.setReplyId(20L);
             req.setAuditResult(AuditResult.REJECT);
             req.setAuditRemark("回复质量不佳");
-            when(ticketRepository.save(any(Ticket.class))).thenReturn(sampleTicket);
 
             ticketService.submitAudit(1L, req, 100L);
 
-            assertEquals(TicketStatus.PENDING_REPLY, sampleTicket.getStatus());
-            assertEquals("回复质量不佳", sampleTicket.getLastAuditRemark());
-            verify(notifyService).notifyAuditReject(sampleTicket, "回复质量不佳");
+            verify(orchestrator).onAuditCompleted(sampleTicket, AuditResult.REJECT, "回复质量不佳", 20L, 100L);
         }
 
         @Test
-        @DisplayName("审核通过但回复 ID 不存在 → 抛出异常")
+        @DisplayName("审核 → 编排器始终被调用（异常由编排器处理）")
         void pass_replyNotFound_throws() {
             stubDefaultAuditSave();
             AuditRequest req = new AuditRequest();
             req.setReplyId(999L);
             req.setAuditResult(AuditResult.PASS);
 
-            when(replyRepository.findById(999L)).thenReturn(Optional.empty());
+            ticketService.submitAudit(1L, req, 100L);
 
-            assertThrows(RuntimeException.class,
-                    () -> ticketService.submitAudit(1L, req, 100L));
+            verify(orchestrator).onAuditCompleted(sampleTicket, AuditResult.PASS, null, 999L, 100L);
         }
 
         @Test
@@ -392,7 +362,6 @@ class TicketServiceTest {
             req.setReplyId(20L);
             req.setAuditResult(AuditResult.REJECT);
             req.setAuditRemark("需改进");
-            when(ticketRepository.save(any(Ticket.class))).thenReturn(sampleTicket);
 
             ArgumentCaptor<TicketAudit> captor = ArgumentCaptor.forClass(TicketAudit.class);
             when(auditRepository.save(captor.capture())).thenAnswer(inv -> inv.getArgument(0));

@@ -2,12 +2,14 @@
   "module": {
     "ticket": "Tickets",
     "admin": "Admin",
-    "task": "Tasks"
+    "task": "Tasks",
+    "workflow": "Workflow"
   },
   "moduleDesc": {
     "ticket": "Translation, reply & audit",
     "admin": "Users, permissions & data",
-    "task": "Task definitions & monitoring"
+    "task": "Task definitions & monitoring",
+    "workflow": "BPMN workflow management & design"
   },
   "sidebar": {
     "collapse": "Collapse",
@@ -31,8 +33,11 @@
     "taskDefinitions": "Definitions",
     "taskHistory": "History",
     "rolePermission": "Perms",
-    "aiConfig": "AI Config",
-    "orgSync": "Org Sync"
+    "orgSync": "Org Sync",
+    "agentManage": "Agents",
+    "workflowList": "Definitions",
+    "workflowDesigner": "Designer",
+    "workflowGuide": "Guide"
   },
   "ticketStatus": {
     "PENDING_TRANS": "Pending Translation",

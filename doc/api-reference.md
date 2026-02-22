@@ -932,3 +932,190 @@ Freshdesk webhook 原始事件负载（JSON 格式）。系统自动处理工单
 ```
 
 **Permission:** `org:read`
+
+---
+
+## AI Agent Management
+
+### Get Enabled Agent Definitions
+`GET /api/v1/agents/definitions`
+
+获取所有已启用的 Agent 定义（前端 AgentRegistry 初始化用）。
+
+**Response:** `ApiResponse<List<AgentDefinition>>`
+
+### Get All Agent Definitions (Admin)
+`GET /api/v1/agents/definitions/all`
+
+获取全部 Agent 定义（含禁用，管理页面用）。
+
+**Permission:** `ai:manage`
+
+**Response:** `ApiResponse<List<AgentDefinition>>`
+
+### Create Agent Definition
+`POST /api/v1/agents/definitions`
+
+**Permission:** `ai:manage`
+
+**Request Body:**
+```json
+{
+  "code": "email-summary",
+  "name": "邮件摘要",
+  "description": "通过 OpenAI 生成邮件摘要",
+  "providerType": "HTTP_API",
+  "executionEnv": "SERVER_ONLY",
+  "capability": "summary",
+  "providerConfig": "{\"baseUrl\":\"https://api.openai.com/v1\",\"model\":\"gpt-4o-mini\"}"
+}
+```
+
+**Response:** `ApiResponse<AgentDefinition>`
+
+### Update Agent Definition
+`PUT /api/v1/agents/definitions/{id}`
+
+**Permission:** `ai:manage`
+
+**Request Body:** 同创建，部分字段可选。
+
+**Response:** `ApiResponse<AgentDefinition>`
+
+### Toggle Agent Definition
+`PUT /api/v1/agents/definitions/{id}/toggle`
+
+启用或禁用 Agent。
+
+**Permission:** `ai:manage`
+
+**Response:** `ApiResponse<AgentDefinition>`
+
+### Delete Agent Definition
+`DELETE /api/v1/agents/definitions/{id}`
+
+删除 Agent 定义（内置 Agent 不可删除）。
+
+**Permission:** `ai:manage`
+
+### Test Proxy Connection
+`POST /api/v1/agents/definitions/test-proxy`
+
+测试 HTTP API 代理服务器的连通性，返回可达性和可用模型列表。
+
+**Permission:** `ai:manage`
+
+**Request Body:**
+```json
+{
+  "baseUrl": "http://localhost:8045/v1",
+  "apiKey": ""
+}
+```
+
+**Response:** `ApiResponse<AgentProxyTestResult>`
+```json
+{
+  "reachable": true,
+  "models": ["gemini-2.5-flash", "gemini-2.5-pro", ...],
+  "errorMessage": null
+}
+```
+
+### Execute Agent on Server
+`POST /api/v1/agents/execute/{code}`
+
+在服务端执行指定 Agent。
+
+**Permission:** `ai:execute`
+
+**Request Body:**
+```json
+{
+  "input": "待处理的文本内容",
+  "referenceType": "ticket",
+  "referenceId": 101
+}
+```
+
+**Response:** `ApiResponse<AgentExecuteResult>`
+```json
+{
+  "success": true,
+  "output": "处理结果",
+  "tokenCount": 150,
+  "errorMessage": null
+}
+```
+
+### Report Client Execution
+`POST /api/v1/agents/executions/report`
+
+客户端上报 Agent 执行结果（用于统计和日志）。
+
+**Request Body:**
+```json
+{
+  "agentCode": "gemini-translate",
+  "status": "SUCCESS",
+  "durationMs": 3500,
+  "tokenCount": 200,
+  "referenceType": "ticket",
+  "referenceId": 101,
+  "executedOn": "client",
+  "inputSnapshot": "...",
+  "outputSnapshot": "...",
+  "errorMessage": null
+}
+```
+
+### Get Execution Logs
+`GET /api/v1/agents/executions`
+
+**Permission:** `ai:view_logs`
+
+**Query Parameters:**
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `agentCode` | string | - | 按 Agent 过滤 |
+| `page` | int | 0 | 页号 |
+| `size` | int | 20 | 每页记录数 |
+
+**Response:** `ApiResponse<Page<AgentExecution>>`
+
+### Get Agent Stats Dashboard
+`GET /api/v1/agents/stats`
+
+获取各 Agent 的统计数据（总调用次数、成功率、平均耗时）。
+
+**Permission:** `ai:view_logs`
+
+**Response:** `ApiResponse<List<AgentStats>>`
+
+### Get Capability Bindings
+`GET /api/v1/agents/bindings`
+
+获取所有能力绑定（capability → agentCode 映射）。
+
+**Response:** `ApiResponse<Map<String, String>>`
+
+### Set Capability Binding
+`PUT /api/v1/agents/bindings/{capability}`
+
+为指定能力设置默认 Agent。
+
+**Permission:** `ai:manage`
+
+**Request Body:**
+```json
+{
+  "agentCode": "gemini-translate"
+}
+```
+
+### Delete Capability Binding
+`DELETE /api/v1/agents/bindings/{capability}`
+
+删除指定能力的绑定。
+
+**Permission:** `ai:manage`

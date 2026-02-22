@@ -2,12 +2,14 @@
   "module": {
     "ticket": "工单中心",
     "admin": "管理后台",
-    "task": "任务调度"
+    "task": "任务调度",
+    "workflow": "工作流"
   },
   "moduleDesc": {
     "ticket": "工单翻译、回复与审核",
     "admin": "用户、权限与数据管理",
-    "task": "任务定义与执行监控"
+    "task": "任务定义与执行监控",
+    "workflow": "BPMN 工作流管理与设计"
   },
   "sidebar": {
     "collapse": "收起侧栏",
@@ -31,8 +33,11 @@
     "taskDefinitions": "任务定义",
     "taskHistory": "执行历史",
     "rolePermission": "权限",
-    "aiConfig": "AI 配置",
-    "orgSync": "组织同步"
+    "orgSync": "组织同步",
+    "agentManage": "Agent 管理",
+    "workflowList": "流程定义",
+    "workflowDesigner": "流程设计",
+    "workflowGuide": "使用指南"
   },
   "ticketStatus": {
     "PENDING_TRANS": "待翻译",

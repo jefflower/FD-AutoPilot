@@ -29,6 +29,8 @@
 		<module>fd-server-common</module>
 		<module>fd-server-auth</module>
 		<module>fd-server-task</module>
+		<module>fd-server-ai</module>
+		<module>fd-server-workflow</module>
 		<module>fd-server-ticket</module>
 		<module>fd-server-app</module>
 	</modules>
@@ -49,6 +51,16 @@
 			<dependency>
 				<groupId>com.jefflower</groupId>
 				<artifactId>fd-server-task</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.jefflower</groupId>
+				<artifactId>fd-server-ai</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.jefflower</groupId>
+				<artifactId>fd-server-workflow</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>

@@ -2,8 +2,8 @@ import React, { useState, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ServerTicket } from '../../../shared/types/server';
 import { serverApi } from '../../../shared/services/serverApi';
-import { useSettings } from '../../../shared/hooks/useSettings';
 import { useNotebookShadow } from '../../../tauri/hooks/useNotebookShadow';
+import { AgentRegistry } from '../../../shared/agents/AgentRegistry';
 import { useTicketProcess } from '../../../shared/hooks/useTicketProcess';
 import { useAiReply } from '../../../shared/hooks/useAiReply';
 import { useAiTranslation } from '../../../shared/hooks/useAiTranslation';
@@ -72,7 +72,6 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
 }, ref) => {
     const { t } = useTranslation(['tickets', 'common']);
     const [submitting, setSubmitting] = useState(false);
-    const { notebookLMConfig: notebookConfig } = useSettings();
     const { visible: shadowVisible, toggle: handleToggleShadow } = useNotebookShadow();
     const { runReply } = useAiReply();
     const { runTranslation } = useAiTranslation();
@@ -383,7 +382,12 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
                 </div>
 
                 <div className="flex items-center gap-2">
-                    <button onClick={() => handleToggleShadow(notebookConfig?.notebookId, notebookConfig?.notebookUrl)} className={`px-3 py-1.5 rounded-md text-[10px] font-black transition-all ${shadowVisible ? 'bg-orange-600 text-white' : 'bg-slate-700 text-slate-400'}`}>
+                    <button onClick={() => {
+                        const registry = AgentRegistry.getInstance();
+                        const replyDef = registry.getDefinitionByCode('notebooklm-reply');
+                        const cfg = replyDef ? (typeof replyDef.providerConfig === 'string' ? JSON.parse(replyDef.providerConfig || '{}') : replyDef.providerConfig) : {};
+                        handleToggleShadow(cfg?.notebookId, cfg?.notebookUrl);
+                    }} className={`px-3 py-1.5 rounded-md text-[10px] font-black transition-all ${shadowVisible ? 'bg-orange-600 text-white' : 'bg-slate-700 text-slate-400'}`}>
                         {shadowVisible ? t('detail.browserOn') : t('detail.browserOff')}
                     </button>
                     <button
