@@ -23,7 +23,8 @@ import java.util.Set;
  *
  * <h3>分支流程</h3>
  * <ul>
- *   <li>审核驳回：PENDING_AUDIT/AUDITING → PENDING_REPLY</li>
+ *   <li>审核驳回（重新回复）：PENDING_AUDIT/AUDITING → PENDING_REPLY</li>
+ *   <li>审核驳回（重新翻译）：PENDING_AUDIT/AUDITING → PENDING_TRANS</li>
  *   <li>审核通过 + 自动推送：PENDING_AUDIT/AUDITING → COMPLETED</li>
  *   <li>跳过回复：任意状态 → COMPLETED</li>
  *   <li>手动触发翻译：任意状态 → TRANSLATING</li>
@@ -59,12 +60,14 @@ public class TicketStateMachine {
                     TicketStatus.AUDITING,       // 审核任务被领取
                     TicketStatus.APPROVED,       // 审核通过（手动推送模式）
                     TicketStatus.COMPLETED,      // 审核通过（自动推送模式）
-                    TicketStatus.PENDING_REPLY   // 审核驳回
+                    TicketStatus.PENDING_REPLY,  // 审核驳回 → 重新回复
+                    TicketStatus.PENDING_TRANS   // 审核驳回 → 重新翻译
             )),
             Map.entry(TicketStatus.AUDITING, Set.of(
                     TicketStatus.APPROVED,       // 审核通过（手动推送模式）
                     TicketStatus.COMPLETED,      // 审核通过（自动推送模式）
-                    TicketStatus.PENDING_REPLY   // 审核驳回
+                    TicketStatus.PENDING_REPLY,  // 审核驳回 → 重新回复
+                    TicketStatus.PENDING_TRANS   // 审核驳回 → 重新翻译
             )),
             Map.entry(TicketStatus.APPROVED, Set.of(
                     TicketStatus.COMPLETED,      // 手动推送到 Freshdesk

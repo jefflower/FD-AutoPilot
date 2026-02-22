@@ -93,6 +93,23 @@
     "noActiveTasks": "No active tasks",
     "selectTask": "Please select a task from the list"
   },
+  "automation": {
+    "title": "Workflow Automation",
+    "pipeline": "Processing Pipeline",
+    "startAll": "Start All",
+    "stopAll": "Stop All",
+    "stageTranslation": "Translation",
+    "stageReply": "Reply",
+    "stageAudit": "Audit",
+    "processing": "Processing",
+    "completed": "Completed",
+    "noTasks": "No tasks",
+    "retranslate": "Retranslate",
+    "retranslateRemark": "Enter retranslation reason...",
+    "confirmRetranslate": "Confirm Retranslate",
+    "tauriRequired": "Requires Tauri desktop client",
+    "tauriHint": "Translation and reply use local AI Agents, requires desktop client"
+  },
   "widget": {
     "title": "MQ TASKS",
     "active": "Active",

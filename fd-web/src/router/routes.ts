@@ -10,15 +10,16 @@ export interface RouteConfig {
 export const routes: RouteConfig[] = [
   // Ticket 模块
   { path: '/tickets', label: '工单列表', icon: 'list', module: 'ticket', requiredPermission: 'ticket:read' },
+  { path: '/automation', label: '自动化', icon: 'workflow', module: 'ticket', requiredPermission: 'ticket:translate' },
   { path: '/translation', label: '翻译任务', icon: 'languages', module: 'ticket', requiredPermission: 'ticket:translate', requiresTauri: true },
   { path: '/reply', label: '回复任务', icon: 'message-square', module: 'ticket', requiredPermission: 'ticket:reply', requiresTauri: true },
   { path: '/audit', label: '审核任务', icon: 'check-circle', module: 'ticket', requiredPermission: 'ticket:audit', requiresTauri: true },
   { path: '/approved', label: '待推送', icon: 'send', module: 'ticket', requiredPermission: 'ticket:push' },
+  { path: '/ticket/knowledge', label: '知识库', icon: 'book-open', module: 'ticket', requiredPermission: 'knowledge:read' },
 
   // Admin 模块
   { path: '/admin/users', label: '用户管理', icon: 'users', module: 'auth', requiredPermission: 'user:read' },
   { path: '/admin/sync', label: '同步管理', icon: 'refresh-cw', module: 'ticket', requiredPermission: 'sync:manage' },
-  { path: '/admin/knowledge', label: '知识库', icon: 'book-open', module: 'system', requiredPermission: 'knowledge:read' },
   { path: '/admin/database', label: '数据库', icon: 'database', module: 'system', requiredPermission: 'database:query' },
   { path: '/admin/logs', label: '服务日志', icon: 'file-text', module: 'system', requiredPermission: 'sync:read' },
 

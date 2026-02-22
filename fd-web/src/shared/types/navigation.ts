@@ -11,6 +11,7 @@ export type TabType =
     | 'translation'
     | 'reply'
     | 'audit'
+    | 'automation'
     | 'approved'
     | 'admin-users'
     | 'manual-sync'

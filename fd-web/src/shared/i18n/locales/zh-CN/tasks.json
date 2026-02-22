@@ -93,6 +93,23 @@
     "noActiveTasks": "暂无活跃任务",
     "selectTask": "请从列表中选择任务"
   },
+  "automation": {
+    "title": "工作流自动化",
+    "pipeline": "处理流水线",
+    "startAll": "全部启动",
+    "stopAll": "全部停止",
+    "stageTranslation": "翻译",
+    "stageReply": "回复",
+    "stageAudit": "审核",
+    "processing": "处理中",
+    "completed": "已完成",
+    "noTasks": "暂无任务",
+    "retranslate": "重新翻译",
+    "retranslateRemark": "输入重新翻译原因...",
+    "confirmRetranslate": "确认重译",
+    "tauriRequired": "此功能需要 Tauri 桌面客户端",
+    "tauriHint": "翻译和回复使用本地 AI Agent，需通过桌面客户端运行"
+  },
   "widget": {
     "title": "MQ 任务",
     "active": "活跃",

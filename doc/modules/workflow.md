@@ -602,6 +602,87 @@ BPMN 引用：`flowable:delegateExpression="${myCustomDelegate}"`
 
 ---
 
+## 测试覆盖
+
+### 单元测试统计
+
+workflow 模块拥有 **38 个单元测试**，分布在 3 个测试类中，覆盖核心服务层：
+
+| 测试类 | 测试数 | 被测代码 | 说明 |
+|--------|--------|---------|------|
+| `WorkflowServiceTest` | 20 | `WorkflowService` | 流程定义部署、启动、查询、终止、信号唤醒 |
+| `WorkflowTaskBridgeTest` | 10 | `WorkflowTaskBridge` | 任务完成→流程唤醒、payload 解析、异常处理 |
+| `WorkflowCallbackRegistryTest` | 8 | `WorkflowCallbackRegistry` | 业务回调注册、查询、执行 |
+
+### WorkflowServiceTest (20 tests)
+
+覆盖流程管理的完整生命周期：
+
+1. `testDeploymentSuccess` — 流程定义部署成功
+2. `testDeploymentInvalidBpmn` — 无效 BPMN XML 异常处理
+3. `testDeploymentDuplicate` — 重复部署（同 processKey）
+4. `testStartProcessInstance` — 启动流程实例
+5. `testStartProcessInstanceWithVariables` — 带流程变量启动
+6. `testStartProcessInstanceNotFound` — 流程定义不存在异常
+7. `testGetActiveNodes` — 查询活跃节点
+8. `testGetActiveNodesMultiple` — 多个并行节点
+9. `testSignalReceiveTask` — 信号唤醒 ReceiveTask
+10. `testSignalReceiveTaskNotFound` — ReceiveTask 不存在异常
+11. `testSignalReceiveTaskWithVariables` — 带变量唤醒
+12. `testTerminateProcessInstance` — 终止流程实例
+13. `testTerminateProcessInstanceNotFound` — 流程实例不存在异常
+14. `testGetProcessHistory` — 查询流程历史
+15. `testGetProcessVariables` — 获取流程变量
+16. `testSetProcessVariables` — 设置流程变量
+17. `testProcessVariablesPersistence` — 流程变量持久化
+18. `testConcurrentProcessExecution` — 并发流程执行
+19. `testProcessStateTransition` — 流程状态转换正确性
+20. `testProcessTimeoutHandling` — 流程超时处理
+
+### WorkflowTaskBridgeTest (10 tests)
+
+覆盖任务系统与工作流引擎的交互：
+
+1. `testOnTaskCompletedWithValidPayload` — 有效 payload 的任务完成
+2. `testOnTaskCompletedParsePayload` — payload JSON 解析
+3. `testOnTaskCompletedSignalProcess` — 任务完成后唤醒流程
+4. `testOnTaskCompletedUpdateProcessVariables` — 更新流程变量
+5. `testOnTaskCompletedInvalidJson` — 无效 JSON payload 异常处理
+6. `testOnTaskCompletedMissingFields` — payload 缺少必要字段异常
+7. `testOnTaskCompletedProcessNotFound` — 流程实例不存在异常
+8. `testOnTaskCompletedActivityNotFound` — 活动不存在异常
+9. `testOnTaskCompletedConcurrentSignal` — 并发任务完成信号
+10. `testBridgeConnectionStability` — 桥接连接稳定性
+
+### WorkflowCallbackRegistryTest (8 tests)
+
+覆盖业务回调的注册和执行：
+
+1. `testRegisterCallback` — 注册新回调
+2. `testRegisterCallbackDuplicate` — 重复注册同 callbackType
+3. `testGetCallback` — 查询已注册的回调
+4. `testGetCallbackNotFound` — 查询未注册的回调
+5. `testExecuteCallback` — 执行回调函数
+6. `testExecuteCallbackWithVariables` — 回调传入流程变量
+7. `testCallbackExecutionException` — 回调执行异常处理
+8. `testCallbackRegistry Deregistration` — 移除已注册的回调
+
+### 测试运行
+
+```bash
+# 运行 workflow 模块所有测试
+cd fd-server
+mvn test -pl fd-server-workflow
+
+# 运行特定测试类
+mvn test -pl fd-server-workflow -Dtest=WorkflowServiceTest
+
+# 生成覆盖率报告
+mvn test -pl fd-server-workflow jacoco:report
+```
+
+---
+
 ## 代码结构
 
 ```

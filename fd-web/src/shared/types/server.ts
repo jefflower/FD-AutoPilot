@@ -201,7 +201,7 @@ export interface ReplySubmitData {
 
 export interface AuditSubmitData {
   replyId: number;
-  auditResult: 'PASS' | 'REJECT';
+  auditResult: 'PASS' | 'REJECT' | 'RETRANSLATE';
   auditRemark?: string;
 }
 

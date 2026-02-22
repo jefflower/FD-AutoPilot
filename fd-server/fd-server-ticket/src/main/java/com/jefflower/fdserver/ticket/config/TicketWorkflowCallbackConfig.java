@@ -61,6 +61,7 @@ public class TicketWorkflowCallbackConfig implements CommandLineRunner {
         registerReplyDone();
         registerAuditPass();
         registerAuditReject();
+        registerAuditRetranslate();
         log.info("[TicketWorkflowCallbackConfig] All ticket workflow callbacks registered");
     }
 
@@ -124,6 +125,20 @@ public class TicketWorkflowCallbackConfig implements CommandLineRunner {
 
             notifyService.notifyAuditReject(ticket, auditRemark);
             // 注意：BPMN 流程会自动循环回 reply_agent，由 AgentTaskDelegate 创建回复任务
+        });
+    }
+
+    private void registerAuditRetranslate() {
+        callbackRegistry.register("ticket.auditRetranslate", (businessKey, vars) -> {
+            Ticket ticket = findTicket(businessKey);
+
+            String auditRemark = vars.get("auditRemark") != null ? vars.get("auditRemark").toString() : null;
+            stateMachine.transition(ticket, TicketStatus.PENDING_TRANS);
+            ticket.setLastAuditRemark(auditRemark);
+            ticketRepository.save(ticket);
+
+            notifyService.notifyAuditReject(ticket, auditRemark);
+            // 注意：BPMN 流程会自动循环回 translate_agent，由 AgentTaskDelegate 创建翻译任务
         });
     }
 

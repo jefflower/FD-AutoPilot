@@ -408,3 +408,84 @@ common ← auth ← task ← ai ← ticket ← app
     </dependency>
 </dependencies>
 ```
+
+---
+
+## 测试覆盖
+
+### 单元测试统计
+
+ai 模块拥有 **38 个单元测试**，分布在 3 个测试类中，覆盖核心 Service 层：
+
+| 测试类 | 测试数 | 被测代码 | 说明 |
+|--------|--------|---------|------|
+| `AgentDefinitionServiceTest` | 14 | `AgentDefinitionService` | Agent 定义的 CRUD、启用禁用、查询操作 |
+| `AgentBindingServiceTest` | 12 | `AgentBindingService` | 能力绑定的获取、设置、移除及解析逻辑 |
+| `AgentExecutionServiceTest` | 12 | `AgentExecutionService` | 执行日志记录、客户端上报、统计仪表盘 |
+
+### AgentDefinitionServiceTest (14 tests)
+
+覆盖 Agent 定义的生命周期和查询操作：
+
+1. `testFindAllDefinitions` — 查询全部 Agent 定义
+2. `testFindEnabledDefinitions` — 查询已启用的定义
+3. `testFindByCode` — 按 code 查找单个定义
+4. `testFindByCodeNotFound` — code 不存在时返回空
+5. `testFindByCapability` — 按能力标签查找
+6. `testFindByCapabilityEmpty` — 能力不存在时返回空列表
+7. `testCreateDefinition` — 创建新 Agent 定义
+8. `testCreateDuplicateCode` — 重复 code 异常处理
+9. `testUpdateDefinition` — 更新 Agent 定义
+10. `testUpdateBuiltInNotAllowed` — 内置 Agent 不可删除
+11. `testToggleEnable` — 启用/禁用切换
+12. `testToggleDisable` — 禁用切换
+13. `testDeleteDefinition` — 删除自定义 Agent
+14. `testDeleteBuiltInNotAllowed` — 内置 Agent 删除失败
+
+### AgentBindingServiceTest (12 tests)
+
+覆盖能力绑定的完整业务流程：
+
+1. `testGetAllBindings` — 查询所有绑定
+2. `testGetBinding` — 获取指定能力的绑定
+3. `testGetBindingNotFound` — 绑定不存在时返回空
+4. `testSetBinding` — 设置新的能力绑定
+5. `testSetBindingOverwrite` — 覆盖已有绑定
+6. `testRemoveBinding` — 移除绑定
+7. `testRemoveBindingNotExists` — 移除不存在的绑定
+8. `testResolveAgentCode` — 能力解析到 Agent Code
+9. `testResolveAgentCodeWithoutBinding` — 无绑定时回退默认
+10. `testResolveAgentCodeNotFound` — 绑定 Agent 不存在异常
+11. `testBindingPersistence` — 绑定数据持久化
+12. `testMultipleBindings` — 多个不同能力的绑定
+
+### AgentExecutionServiceTest (12 tests)
+
+覆盖执行日志记录和统计分析：
+
+1. `testStartExecution` — 开始执行日志记录
+2. `testCompleteExecutionSuccess` — 完成日志（成功）
+3. `testCompleteExecutionFailed` — 完成日志（失败）
+4. `testCompleteExecutionTimeout` — 执行超时标记
+5. `testReportFromClient` — 客户端上报执行结果
+6. `testReportFromClientWithToken` — 客户端上报带 Token 信息
+7. `testQueryExecutionLogs` — 查询执行日志（分页）
+8. `testQueryExecutionLogsByAgent` — 按 Agent Code 筛选日志
+9. `testGetStatsDashboard` — 统计仪表盘数据
+10. `testStatsDashboardSuccessRate` — 统计成功率计算
+11. `testStatsDashboardAverageDuration` — 统计平均耗时
+12. `testStatsDashboardCallCount` — 统计调用次数
+
+### 测试运行
+
+```bash
+# 运行 ai 模块所有测试
+cd fd-server
+mvn test -pl fd-server-ai
+
+# 运行特定测试类
+mvn test -pl fd-server-ai -Dtest=AgentDefinitionServiceTest
+
+# 生成覆盖率报告
+mvn test -pl fd-server-ai jacoco:report
+```

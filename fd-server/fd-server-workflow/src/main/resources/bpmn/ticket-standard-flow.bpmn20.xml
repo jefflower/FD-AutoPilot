@@ -133,6 +133,20 @@
 
     <sequenceFlow id="flow_reject_to_reply" sourceRef="audit_reject_cb" targetRef="reply_agent"/>
 
+    <!-- RETRANSLATE → loop back to translate -->
+    <sequenceFlow id="flow_retranslate" sourceRef="audit_result_gw" targetRef="audit_retranslate_cb">
+      <conditionExpression xsi:type="tFormalExpression">${auditResult == 'RETRANSLATE'}</conditionExpression>
+    </sequenceFlow>
+
+    <serviceTask id="audit_retranslate_cb" name="重新翻译回调"
+                 flowable:delegateExpression="${businessCallbackDelegate}">
+      <extensionElements>
+        <flowable:field name="callbackType" stringValue="ticket.auditRetranslate"/>
+      </extensionElements>
+    </serviceTask>
+
+    <sequenceFlow id="flow_retranslate_to_translate" sourceRef="audit_retranslate_cb" targetRef="translate_agent"/>
+
     <!-- ========== END ========== -->
     <endEvent id="end" name="流程结束"/>
 

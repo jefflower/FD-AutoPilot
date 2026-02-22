@@ -100,7 +100,6 @@ fd-web/src/
 │   │       ├── AdminUsersTab.tsx        # 用户管理
 │   │       ├── AgentManageTab.tsx       # AI Agent 管理（定义/绑定/日志/统计）
 │   │       ├── DatabaseTab.tsx          # 数据库查询
-│   │       ├── KnowledgeTab.tsx         # 知识库管理
 │   │       ├── ManualSyncTab.tsx        # 手动同步 + 自动推送
 │   │       └── ServerLogsTab.tsx        # 服务器日志
 │   ├── auth/
@@ -125,7 +124,8 @@ fd-web/src/
 │           ├── TranslationTasksTab.tsx  # 翻译任务（REST 轮询）
 │           ├── ReplyTasksTab.tsx        # 回复任务（REST 轮询）
 │           ├── AuditTasksTab.tsx        # 审核任务（卡片内联审核）
-│           └── ApprovedTasksTab.tsx     # 待推送队列 + 批量推送
+│           ├── ApprovedTasksTab.tsx     # 待推送队列 + 批量推送
+│           └── KnowledgeTab.tsx         # 知识库管理
 ├── shared/
 │   ├── ai/
 │   │   ├── types.ts                     # AiTranslationProvider / AiReplyProvider 接口

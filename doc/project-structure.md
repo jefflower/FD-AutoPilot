@@ -223,7 +223,7 @@ fd-client/
 
 基于 **Spring Boot 3.4.1**、**Java 21**、**H2 数据库**、**RabbitMQ**、**Redis** 构建。
 
-采用 **Maven 多模块**架构（parent POM + 6 个子模块），编译顺序：common → auth → task → ai → ticket → app。
+采用 **Maven 多模块**架构（parent POM + 7 个子模块），编译顺序：common → auth → task → ai → workflow → ticket → app。
 
 ```
 fd-server/                                     # parent POM (packaging: pom)
@@ -278,7 +278,29 @@ fd-server/                                     # parent POM (packaging: pom)
 │   │   ├── dto/                               # AgentExecuteRequest, AgentExecuteResult, AgentExecutionReport, AgentProxyTestResult, AgentStats
 │   │   ├── enums/                             # ProviderType, ExecutionEnv, ExecutionStatus
 │   │   └── config/                            # AiPermissionDefinition, AiDataInitializer
-│   └── src/test/java/                         # (暂无测试)
+│   └── src/test/java/.../ai/
+│       └── service/                           # 14+12+12=38 单元测试
+│           ├── AgentDefinitionServiceTest.java
+│           ├── AgentBindingServiceTest.java
+│           └── AgentExecutionServiceTest.java
+│
+├── fd-server-workflow/                        # (jar) 工作流引擎模块
+│   ├── src/main/java/.../workflow/
+│   │   ├── controller/                        # WorkflowDefinitionController, WorkflowInstanceController
+│   │   ├── service/                           # WorkflowService, WorkflowTaskBridge, WorkflowCallbackRegistry
+│   │   ├── delegate/                          # AgentTaskDelegate, HumanTaskDelegate, BusinessCallbackDelegate
+│   │   ├── entity/                            # WorkflowDefinition
+│   │   ├── repository/                        # WorkflowDefinitionRepository
+│   │   ├── event/                             # WorkflowStatusEvent, WorkflowSseListener
+│   │   ├── dto/                               # WorkflowStartRequest, WorkflowInstanceInfo
+│   │   └── config/                            # FlowableConfig, WorkflowDataInitializer, WorkflowPermissionDefinition
+│   ├── src/main/resources/bpmn/               # BPMN 流程定义文件
+│   │   └── ticket-standard-flow.bpmn20.xml   # 工单标准处理流程
+│   └── src/test/java/.../workflow/
+│       └── service/                           # 20+10+8=38 单元测试
+│           ├── WorkflowServiceTest.java
+│           ├── WorkflowTaskBridgeTest.java
+│           └── WorkflowCallbackRegistryTest.java
 │
 ├── fd-server-ticket/                          # (jar) 工单业务模块
 │   ├── src/main/java/.../ticket/
@@ -310,13 +332,14 @@ fd-server/                                     # parent POM (packaging: pom)
 ### 模块间依赖规则
 
 ```
-common（底层） ← auth（中层） ← task ← ai ← ticket（上层）
+common（底层） ← auth（中层） ← task ← ai ← workflow ← ticket（上层）
 ```
 - common 不依赖任何业务模块（Maven: 无内部依赖）
 - auth 只依赖 common（Maven: `fd-server-common`）
 - task 只依赖 auth（Maven: `fd-server-auth`，传递获得 common）
 - ai 只依赖 task（Maven: `fd-server-task`，传递获得 auth + common）
-- ticket 可依赖 ai（Maven: `fd-server-ai`，传递获得 task + auth + common）
+- workflow 只依赖 ai（Maven: `fd-server-ai`，传递获得 task + auth + common）
+- ticket 可依赖 workflow（Maven: `fd-server-workflow`，传递获得 ai + task + auth + common）
 - app 聚合 ticket（Maven: `fd-server-ticket`，传递获得所有模块）
 
 ### Maven 命令
