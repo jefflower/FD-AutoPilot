@@ -123,8 +123,8 @@ const AuditStagePanel: React.FC<AuditStagePanelProps> = ({
                                 <div className="text-[10px] text-slate-300 truncate">{task.subject}</div>
                             </div>
 
-                            {/* Action buttons */}
-                            <div className="mt-2 flex items-center gap-1.5" onClick={(e) => e.stopPropagation()}>
+                            {/* Action buttons - grid layout for compact display */}
+                            <div className="mt-2 grid grid-cols-3 gap-1" onClick={(e) => e.stopPropagation()}>
                                 {/* Pass */}
                                 <button
                                     onClick={() => {
@@ -132,44 +132,47 @@ const AuditStagePanel: React.FC<AuditStagePanelProps> = ({
                                         Promise.resolve(onPass(task.ticketId)).finally(() => setSubmitting(false));
                                     }}
                                     disabled={submitting}
-                                    className="px-2.5 py-1 bg-emerald-600/80 hover:bg-emerald-500 disabled:opacity-30 text-white text-[10px] font-bold rounded-md transition-all flex items-center gap-1"
+                                    className="py-1.5 bg-emerald-600/80 hover:bg-emerald-500 disabled:opacity-30 text-white text-[10px] font-bold rounded-md transition-all flex items-center justify-center gap-0.5"
+                                    title={t('audit.pass')}
                                 >
-                                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg className="w-3 h-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
                                     </svg>
-                                    {t('audit.pass')}
+                                    <span className="truncate">{t('audit.pass')}</span>
                                 </button>
 
                                 {/* Reject */}
                                 <button
                                     onClick={() => openRemarkInput('reject', task.ticketId)}
                                     disabled={submitting}
-                                    className={`px-2.5 py-1 text-[10px] font-bold rounded-md transition-all flex items-center gap-1 disabled:opacity-30 ${
+                                    className={`py-1.5 text-[10px] font-bold rounded-md transition-all flex items-center justify-center gap-0.5 disabled:opacity-30 ${
                                         isThisRemarkOpen && remarkMode?.type === 'reject'
                                             ? 'bg-red-600 text-white'
                                             : 'bg-red-600/20 text-red-400 hover:bg-red-600/40'
                                     }`}
+                                    title={t('audit.reject')}
                                 >
-                                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg className="w-3 h-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M6 18L18 6M6 6l12 12" />
                                     </svg>
-                                    {t('audit.reject')}
+                                    <span className="truncate">{t('audit.reject')}</span>
                                 </button>
 
                                 {/* Retranslate */}
                                 <button
                                     onClick={() => openRemarkInput('retranslate', task.ticketId)}
                                     disabled={submitting}
-                                    className={`px-2.5 py-1 text-[10px] font-bold rounded-md transition-all flex items-center gap-1 disabled:opacity-30 ${
+                                    className={`py-1.5 text-[10px] font-bold rounded-md transition-all flex items-center justify-center gap-0.5 disabled:opacity-30 ${
                                         isThisRemarkOpen && remarkMode?.type === 'retranslate'
                                             ? 'bg-amber-600 text-white'
                                             : 'bg-amber-600/20 text-amber-400 hover:bg-amber-600/40'
                                     }`}
+                                    title={t('automation.retranslate')}
                                 >
-                                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg className="w-3 h-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                                     </svg>
-                                    {t('automation.retranslate')}
+                                    <span className="truncate">{t('automation.retranslate')}</span>
                                 </button>
                             </div>
 

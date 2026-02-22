@@ -223,7 +223,7 @@ const WorkflowAutomationTab: React.FC = () => {
             {/* Middle: Three-column layout + Detail */}
             <div className="flex-1 flex overflow-hidden">
                 {/* Three stage columns */}
-                <div className="w-[460px] flex-shrink-0 flex gap-1 p-1 border-r border-slate-700/50 overflow-hidden">
+                <div className="w-[540px] flex-shrink-0 flex gap-1 p-1 border-r border-slate-700/50 overflow-hidden">
                     {/* Translation column */}
                     <div className="flex-1 min-w-0">
                         <StagePanel
