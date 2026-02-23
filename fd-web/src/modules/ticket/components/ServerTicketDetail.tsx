@@ -31,6 +31,16 @@ async function compatMessage(msg: string, options?: { title?: string; kind?: str
 import AiReplyPanel from './ticket-detail/AiReplyPanel';
 import ReplyHistoryPanel from './ticket-detail/ReplyHistoryPanel';
 
+/**
+ * 清理对话内容中的 AI 预处理标记
+ * contentCleaner 为 AI 输入添加的占位符不应显示给用户
+ */
+function cleanDisplayText(text: string): string {
+    if (!text) return '';
+    // 移除 [...邮件引用已省略...] 及其前后多余空行
+    return text.replace(/\[\.\.\.邮件引用已省略\.\.\.\]\n*/g, '').replace(/\n{3,}/g, '\n\n').trim();
+}
+
 interface ServerTicketDetailProps {
     ticket: ServerTicket;
     onRefresh?: () => void | Promise<void>;
@@ -355,7 +365,7 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
                     <span className="text-[10px] text-slate-500">{msg.createdAt}</span>
                 </div>
                 <div className={`${bubbleBaseClass} ${isIncoming ? incomingClass : outgoingClass} ${isEmerald ? 'ring-1 ring-emerald-500/20' : ''}`}>
-                    <div className="text-sm leading-relaxed whitespace-pre-wrap">{msg.bodyText}</div>
+                    <div className="text-sm leading-relaxed whitespace-pre-wrap">{cleanDisplayText(msg.bodyText)}</div>
                 </div>
             </div>
         );

@@ -2,6 +2,32 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## 项目终极目标与演进路线
+
+> **终极目标：构建 Agent 驱动的工作流自动化平台**
+>
+> FD-AutoPilot 的长期愿景不是一个"工单翻译回复工具"，而是一个**通过 BPMN 工作流编排多个 AI Agent 实现业务自动化**的平台。
+>
+> **当前阶段（v0.4）**：优先保证工单自动翻译→回复→审核体系可用。使用 Legacy 硬编码编排（`fd.workflow.enabled=false`），Agent 执行逻辑与业务 Hook 耦合。
+>
+> **终极形态**：
+> 1. **Agent 即插件** — 每个 Agent 是独立的能力单元（翻译、回复、物流查询、情感分析、质检...），通过 `AgentDefinition` 声明式注册，执行逻辑真正封装在 Executor 内部，不与业务 Hook 耦合
+> 2. **工作流即编排** — BPMN 流程定义决定 Agent 的执行顺序、并行/串行、条件分支、异常处理。运营人员可通过 BpmnEditor 可视化编辑流程，无需改代码
+> 3. **流程驱动一切** — 工单从进入系统到最终完成，全程由 Flowable 流程实例驱动。Agent 节点（AgentTaskDelegate）自动调度执行，人工节点（HumanTaskDelegate）自动创建待办，回调节点（BusinessCallbackDelegate）处理业务副作用
+>
+> **演进路径（开发时必须遵守的方向性约束）**：
+> - ❌ 不要在业务 Hook（useAiReply、useAiTranslation）中硬编码新的 Agent 调用逻辑
+> - ❌ 不要在 LegacyTicketOrchestrator 中增加复杂的分支编排
+> - ✅ 新增 Agent 时，执行逻辑应封装在对应的 Executor 中，通过 AgentDefinition 配置驱动
+> - ✅ 新增业务流程时，优先考虑是否可以用 BPMN 节点编排实现
+> - ✅ 保持 TicketWorkflowOrchestrator 接口的抽象，为切换到 Flowable 模式做准备
+> - ✅ 补齐 Flowable 集成缺口时机：当 Agent 数量 ≥ 5 个或出现非线性流程需求时
+>
+> **Flowable 集成待补齐的 3 个缺口**（切换 `fd.workflow.enabled=true` 前必须完成）：
+> 1. **流程启动入口** — FreshdeskSyncService 同步新工单时需调用 `workflowService.startProcess()` 启动 BPMN 流程实例
+> 2. **任务完成唤醒** — WorkflowTaskBridge.onTaskCompleted() 需集成到 TaskDistributionService.completeTask() 调用链，实现 CLIENT_ONLY Agent 完成后自动 signal ReceiveTask
+> 3. **Agent 执行解耦** — ShadowExecutor 的 shadowHandler 不应由业务 Hook 传入，而应由 Agent 自身的 Executor 根据 providerConfig 自行构建
+
 ## 项目概览
 
 **FD-AutoPilot** 是一个智能工单处理系统，集成 Freshdesk 与 AI 能力（Google NotebookLM + Gemini CLI）来自动化翻译和回复生成。

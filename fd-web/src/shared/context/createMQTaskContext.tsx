@@ -338,6 +338,13 @@ export function createMQTaskContext(config: MQTaskConfig) {
                 // 触发重新调度（直接调用调度函数，而非通过 setState 强制重渲染）
                 scheduleNextRef.current();
 
+                // 任务完成后立即触发一次 pollAndClaim，避免串行模式下
+                // 队列为空时需要等待定时器（SSE 连接时高达 30s）才能领取下一个任务
+                if (isRunningRef.current) {
+                    // 短暂延迟后触发，确保 scheduleNext 的 setState 已处理
+                    setTimeout(() => pollAndClaimRef.current(), 100);
+                }
+
                 // 通知侧边栏刷新队列计数
                 window.dispatchEvent(new Event('queue-counts-refresh'));
             }

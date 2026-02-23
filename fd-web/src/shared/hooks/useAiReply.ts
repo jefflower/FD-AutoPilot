@@ -321,6 +321,7 @@ export function useAiReply() {
                                 }
                             } else {
                                 setTempAiReply(ticket.id, parsed);
+                                break;
                             }
                         }
                     }

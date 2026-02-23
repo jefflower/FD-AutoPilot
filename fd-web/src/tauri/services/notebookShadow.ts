@@ -131,6 +131,9 @@ export class NotebookShadowService {
         const SEL = ${JSON.stringify(selectors)};
         ${this.buildLogHelper(sessionId)}
 
+        // 标记清理开始
+        window.__SHADOW_CLEAR_DONE = false;
+
         // 清除上一次的 observer
         if (window.__SHADOW_POLL_INTERVAL) {
           clearInterval(window.__SHADOW_POLL_INTERVAL);
@@ -147,9 +150,12 @@ export class NotebookShadowService {
         window.__SHADOW_LATEST_RESULT = null;
 
         async function forceClear() {
+           // 先等待 DOM 稳定（页面可能还在渲染历史记录）
+           await new Promise(r => setTimeout(r, 1500));
+
            for (let i = 0; i < 3; i++) {
               const pairs = document.querySelectorAll(SEL.CHAT_PAIR + ', ' + SEL.CHAT_PAIR_ALT);
-              if (pairs.length === 0) { log('No history to clear'); return true; }
+              if (pairs.length === 0) { log('No history to clear (attempt ' + (i+1) + ')'); return true; }
 
               log('Found ' + pairs.length + ' pair(s), attempting to clear...');
               const menuBtn = document.querySelector(SEL.MENU_BUTTON) ||
@@ -189,11 +195,30 @@ export class NotebookShadowService {
 
         log('Process: Pure Cleaning...');
         await forceClear();
+        // 标记清理完成
+        window.__SHADOW_CLEAR_DONE = true;
+        log('Clear script finished, __SHADOW_CLEAR_DONE = true');
       })();
     `;
     await invoke('execute_notebook_js', { script: clearScript });
-    // 等待清理完成
-    await new Promise(r => setTimeout(r, 1000));
+
+    // 轮询等待清理完成（最多 15 秒），而非硬等 1 秒
+    const maxWaitMs = 15000;
+    const pollMs = 500;
+    const startTime = Date.now();
+    while (Date.now() - startTime < maxWaitMs) {
+      try {
+        const result = await invoke('execute_notebook_js', {
+          script: '(function(){ return String(!!window.__SHADOW_CLEAR_DONE); })()'
+        }) as string;
+        if (result === 'true') {
+          console.log(`[NotebookShadow:${sessionId.slice(-6)}] Clear completed in ${Date.now() - startTime}ms`);
+          return;
+        }
+      } catch { /* ignore */ }
+      await new Promise(r => setTimeout(r, pollMs));
+    }
+    console.warn(`[NotebookShadow:${sessionId.slice(-6)}] Clear timeout after ${maxWaitMs}ms, proceeding anyway`);
   }
 
   /**
