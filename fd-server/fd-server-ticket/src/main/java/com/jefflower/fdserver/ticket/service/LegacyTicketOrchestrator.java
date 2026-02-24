@@ -38,6 +38,12 @@ public class LegacyTicketOrchestrator implements TicketWorkflowOrchestrator {
     private final ObjectMapper objectMapper;
 
     @Override
+    public void onNewTicket(Ticket ticket) {
+        taskDistributionService.createTask("ticket.translate", "ticket",
+                String.valueOf(ticket.getId()), buildTaskPayload(ticket), TriggerType.EVENT);
+    }
+
+    @Override
     public void onTranslationCompleted(Ticket ticket) {
         taskDistributionService.completeByReference("ticket.translate", String.valueOf(ticket.getId()));
 
@@ -86,6 +92,15 @@ public class LegacyTicketOrchestrator implements TicketWorkflowOrchestrator {
             ticketRepository.save(ticket);
 
             notifyService.notifyAuditPass(ticket);
+        } else if (result == AuditResult.RETRANSLATE) {
+            stateMachine.transition(ticket, TicketStatus.PENDING_TRANS);
+            ticket.setLastAuditRemark(auditRemark);
+            ticketRepository.save(ticket);
+
+            taskDistributionService.createTask("ticket.translate", "ticket",
+                    String.valueOf(ticket.getId()), buildTaskPayload(ticket), TriggerType.EVENT);
+
+            notifyService.notifyAuditReject(ticket, auditRemark);
         } else {
             stateMachine.transition(ticket, TicketStatus.PENDING_REPLY);
             ticket.setLastAuditRemark(auditRemark);

@@ -42,6 +42,9 @@ class FreshdeskSyncServiceTest {
     @Mock
     private com.jefflower.fdserver.task.service.TaskDistributionService taskDistributionService;
 
+    @Mock
+    private TicketWorkflowOrchestrator orchestrator;
+
     @InjectMocks
     private FreshdeskSyncService freshdeskSyncService;
 
@@ -137,7 +140,7 @@ class FreshdeskSyncServiceTest {
 
         assertTrue(result.isSuccess());
         assertEquals(1, result.getSyncedCount());
-        verify(taskDistributionService).createTask(eq("ticket.translate"), eq("ticket"), anyString(), anyString(), any());
+        verify(orchestrator).onNewTicket(any(Ticket.class));
         verify(syncConfigService).releaseSyncLock();
     }
 
@@ -187,7 +190,7 @@ class FreshdeskSyncServiceTest {
         assertEquals(1, saved.getFdPriority());
         assertEquals("urgent,vip", saved.getFdTags());
 
-        verify(taskDistributionService).createTask(eq("ticket.translate"), eq("ticket"), anyString(), anyString(), any());
+        verify(orchestrator).onNewTicket(any(Ticket.class));
     }
 
     @Test
@@ -215,7 +218,7 @@ class FreshdeskSyncServiceTest {
                 freshdeskSyncService.processSingleTicket(fdTicket, "POLLING");
 
         assertEquals(FreshdeskSyncService.TicketSyncResult.SKIPPED, result);
-        verify(taskDistributionService, never()).createTask(eq("ticket.translate"), anyString(), anyString(), anyString(), any());
+        verify(orchestrator, never()).onNewTicket(any(Ticket.class));
     }
 
     @Test
@@ -231,7 +234,7 @@ class FreshdeskSyncServiceTest {
                 freshdeskSyncService.processSingleTicket(fdTicket, "WEBHOOK");
 
         assertEquals(FreshdeskSyncService.TicketSyncResult.UPDATED, result);
-        verify(taskDistributionService).createTask(eq("ticket.translate"), eq("ticket"), anyString(), anyString(), any());
+        verify(orchestrator).onNewTicket(any(Ticket.class));
     }
 
     @Test
@@ -250,7 +253,7 @@ class FreshdeskSyncServiceTest {
         // APPROVED is not in the doNotDisturb set, but shouldTriggerWorkflow returns
         // true only for COMPLETED. APPROVED is neither in doNotDisturb nor COMPLETED,
         // so workflow should NOT be triggered.
-        verify(taskDistributionService, never()).createTask(eq("ticket.translate"), anyString(), anyString(), anyString(), any());
+        verify(orchestrator, never()).onNewTicket(any(Ticket.class));
     }
 
     @ParameterizedTest
@@ -269,7 +272,7 @@ class FreshdeskSyncServiceTest {
                 freshdeskSyncService.processSingleTicket(fdTicket, "POLLING");
 
         assertEquals(FreshdeskSyncService.TicketSyncResult.UPDATED, result);
-        verify(taskDistributionService, never()).createTask(eq("ticket.translate"), anyString(), anyString(), anyString(), any());
+        verify(orchestrator, never()).onNewTicket(any(Ticket.class));
     }
 
     @Test

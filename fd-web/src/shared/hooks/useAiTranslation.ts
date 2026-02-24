@@ -6,7 +6,7 @@ import { AgentRegistry } from '../agents/AgentRegistry';
 import { AGENT_MAP } from '../constants/agentMap';
 import { cleanTextForAi } from '../utils/contentCleaner';
 import type { AgentExecutor } from '../agents/executors/types';
-import type { AgentDefinition, AgentExecuteResult, TranslationSubmitData } from '../types/server';
+import type { AgentDefinition, AgentExecuteResult, StandardAgentInput, TranslationSubmitData } from '../types/server';
 
 interface AiTranslationOptions {
     onStatusChange?: (status: 'translating' | null) => void;
@@ -122,7 +122,7 @@ async function executeTranslation(
         });
     }
 
-    // LOCAL_CLI 路径：前端构建完整 prompt，传给通用 gemini 命令
+    // GEMINI_CLI / LOCAL_CLI 路径：前端构建完整 prompt，传给通用 gemini 命令
     const agentConfig = parseProviderConfig(definition.providerConfig);
     const systemPrompt = agentConfig.systemPrompt || '';
     const langName = langCodeToName(targetLang);
@@ -212,9 +212,17 @@ export function useAiTranslation() {
 
         try {
             const registry = AgentRegistry.getInstance();
-            const resolved = registry.resolveByCapability('translation');
+
+            // 优先使用工作流注入的 agentCode（BPMN 中 AgentTaskDelegate 指定）
+            const workflowAgentCode = (ticket as any)._agentCode as string | undefined;
+            const resolved = workflowAgentCode
+                ? registry.resolve(workflowAgentCode)
+                : registry.resolveByCapability('translation');
 
             if (!resolved) {
+                if (workflowAgentCode) {
+                    throw new Error(`工作流指定的 Agent "${workflowAgentCode}" 在当前环境不可用，请检查 Agent 配置`);
+                }
                 if (!registry.hasBinding('translation')) {
                     throw new Error('翻译能力未配置 Agent，请在 Agent 管理 → 能力绑定页面为 "translation" 配置 Agent');
                 }
@@ -227,7 +235,31 @@ export function useAiTranslation() {
 
             console.log(`[useAiTranslation] Using agent: ${definition.code} (${definition.name}), providerType: ${definition.providerType}, targetLang: ${targetLang}`);
 
-            const execResult = await executeTranslation(definition, executor, ticket, targetLang);
+            let execResult: AgentExecuteResult;
+
+            if (definition.inputSchema) {
+                // 新标准化路径：构建 StandardAgentInput，Executor 自行构建 prompt
+                // 优先使用工作流注入的 agentInput（来自 TaskInstance payload）
+                const workflowInput = (ticket as any)._agentInput as StandardAgentInput | undefined;
+                const standardInput: StandardAgentInput = workflowInput || {
+                    ticket: { id: ticket.id, subject: ticket.subject, content: ticket.content },
+                    targetLang,
+                };
+                // 确保 targetLang 存在（工作流输入可能未携带）
+                if (!standardInput.targetLang) {
+                    standardInput.targetLang = targetLang;
+                }
+                console.log(`[useAiTranslation] Standard path: agent=${definition.code}, targetLang=${standardInput.targetLang}, fromWorkflow=${!!workflowInput}`);
+                execResult = await executor.execute(definition, {
+                    data: standardInput,
+                    referenceType: 'ticket',
+                    referenceId: ticket.id,
+                });
+            } else {
+                // 旧路径：Hook 构建 prompt
+                console.log(`[useAiTranslation] Legacy path: agent=${definition.code}`);
+                execResult = await executeTranslation(definition, executor, ticket, targetLang);
+            }
 
             if (!execResult.success) {
                 throw new Error(execResult.error || 'Agent 翻译执行失败');

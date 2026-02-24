@@ -19,23 +19,26 @@ fd-server/                              (parent POM, packaging: pom)
 ├── fd-server-auth/                     (jar) 认证授权（JWT、RBAC、用户/角色/权限/模块管理、用户设置）
 ├── fd-server-task/                     (jar) 任务调度（任务定义、任务实例、多客户端分发、定时调度）
 ├── fd-server-ai/                       (jar) AI Agent 管理（Agent 定义、执行日志、能力绑定、SPI 扩展）
+├── fd-server-workflow/                 (jar) 工作流引擎（Flowable BPMN 2.0、JavaDelegate、异步唤醒、双轨模式）
 ├── fd-server-ticket/                   (jar) 工单业务（Freshdesk 集成、MQ、同步、知识库、通知）
 └── fd-server-app/                      (jar) 启动入口 + 资源文件 + 静态前端
 ```
 
-Java 包名保持 `com.jefflower.fdserver.*` 不变，模块边界由 Maven 依赖在编译期强制执行。
+Java 包名保持 `com.jefflower.fdserver.*` 不变，模块边界由 Maven 依赖在编译期强制执行。编译顺序：common → auth → task → ai → workflow → ticket → app
 
 ### 模块间依赖规则
 
 ```
-common  ←──  auth  ←──  task  ←──  ai  ←──  ticket
+common  ←──  auth  ←──  task  ←──  ai  ←──  workflow  ←──  ticket
 ```
 - common 不依赖任何业务模块（最底层）
 - auth 只依赖 common
 - task 只依赖 auth 和 common（任务定义、用户认证）
 - ai 只依赖 task（通过 task 传递获得 auth + common）
-- ticket 依赖 ai（通过 ai 传递获得 task + auth + common）
-- 模块间通过 Service 注入直接调用（允许单向依赖）
+- workflow 只依赖 ai, task, auth, common（通过 AgentDispatchService 触发 Agent、TaskDistributionService 创建任务、Flowable 引擎集成）
+- ticket 只依赖 workflow, ai, task, auth, common（通过 TicketWorkflowOrchestrator 编排工作流）
+- 模块间通过 Service 注入直接调用（允许单向依赖）；workflow 模块仅依赖 ai/task 的公开 Service 接口，不访问内部实现
+- ticket 模块仅依赖 workflow/ai 的公开 Service 接口，不访问 auth/task 的内部实现
 
 ## Module: auth (42 files)
 
@@ -262,6 +265,81 @@ ai/
 | gemini-translate | LOCAL_CLI | translation | Gemini CLI 翻译 |
 | notebooklm-reply | SHADOW_WINDOW | reply | NotebookLM 回复 |
 | tracking-query | SHADOW_WINDOW | tracking | 17track 物流查询 |
+
+## Module: workflow (Flowable BPMN 2.0 集成)
+
+工作流引擎模块，基于 Flowable BPMN 2.0 实现声明式工单处理流程编排。支持双轨模式（Flowable vs Legacy），通过 BPMN 定义实现 Agent 调度、人工审核、业务回调。**v0.4.1+ 默认启用** (`fd.workflow.enabled=true`)。
+
+```
+workflow/
+├── config/
+│   ├── FlowableConfig.java              # Flowable 引擎配置
+│   └── WorkflowPermissionDefinition.java # workflow 模块权限定义（workflow:manage, workflow:view）
+├── controller/
+│   └── WorkflowController.java          # 流程定义/实例管理 API
+├── delegate/
+│   ├── AgentTaskDelegate.java           # BPMN ServiceTask Delegate（Agent 执行节点）
+│   ├── HumanTaskDelegate.java           # 人工审核任务节点
+│   └── BusinessCallbackDelegate.java    # 业务回调节点
+├── listener/
+│   └── WorkflowTaskCompletionListener.java # 应用事件监听器（parallelJoinGw 后触发）
+├── dto/
+│   ├── WorkflowStartRequest.java        # 流程启动请求
+│   └── WorkflowInstanceInfo.java        # 流程实例信息
+├── service/
+│   ├── WorkflowService.java             # 流程部署、启动、查询、终止
+│   ├── WorkflowTaskBridge.java          # 任务完成 signal 唤醒 ReceiveTask（与 task 模块通信）
+│   └── WorkflowCallbackRegistry.java    # 业务回调注册表（解耦 workflow ↔ ticket）
+└── resources/
+    └── bpmn/
+        └── ticket-standard-flow.bpmn20.xml # 工单标准 BPMN 流程（并行网关+Agent+审核）
+```
+
+### 双轨工作流编排模式
+
+系统支持两种编排方式，通过配置开关 `fd.workflow.enabled` 控制：
+
+- **`true` (v0.4.1+ 默认)**: 使用 FlowableTicketOrchestrator，BPMN 驱动工单流转，支持并行网关、条件分支、定时器等高级功能
+- **`false` (Legacy)**: 使用 LegacyTicketOrchestrator，传统硬编码编排，MQ 驱动串行执行
+
+### 并行网关流程设计（v0.4.1+）
+
+BPMN 流程定义使用 `parallelForkGw`（分叉）和 `parallelJoinGw`（汇聚）实现翻译与回复的**并行执行**：
+
+```
+START → PENDING_TRANS → parallelForkGw
+    ├─ 翻译分支: AgentTask(gemini-translate) ReceiveTask → 接收 translation 事件
+    └─ 回复分支: AgentTask(notebooklm-reply) ReceiveTask → 接收 reply 事件
+    → parallelJoinGw (两分支都完成时触发)
+    → bothDone 回调 (WorkflowTaskCompletionListener)
+    → audit_create ServiceTask → PENDING_AUDIT
+    → ...
+```
+
+### 核心组件说明
+
+| 组件 | 职责 |
+|------|------|
+| **AgentTaskDelegate** | BPMN ServiceTask Delegate，检查 agent executionEnv（CLIENT_ONLY/SERVER_ONLY/BOTH），决定服务端直接执行还是创建 TaskInstance 等待客户端 |
+| **WorkflowTaskCompletionListener** | Spring ApplicationEventListener，监听 WorkflowTaskCompletedEvent，parallelJoinGw 汇聚后触发 bothDone 回调处理两分支统一完成 |
+| **WorkflowTaskBridge** | 与 task 模块通信的桥接，TaskDistributionService.completeTask() 完成任务时调用 signal ReceiveTask，唤醒 BPMN 暂停的任务 |
+| **WorkflowCallbackRegistry** | 业务模块（ticket）注册回调，workflow 模块的 BusinessCallbackDelegate 通过注册表调用，实现解耦 |
+| **TicketWorkflowOrchestrator** | 接口，定义工单工作流编排契约（onNewTicket/onTranslationDone/onReplyDone/onAuditDone） |
+| **FlowableTicketOrchestrator** | 实现 TicketWorkflowOrchestrator，通过 WorkflowService 启动 BPMN 流程实例 |
+| **LegacyTicketOrchestrator** | 实现 TicketWorkflowOrchestrator，传统 MQ 驱动编排（fd.workflow.enabled=false 时使用） |
+
+### AgentTaskDelegate 参数配置
+
+AgentTaskDelegate 支持通过 BPMN FieldExtension 配置 `taskType`（可选，默认 `workflow.agent.{agentCode}`）：
+
+```xml
+<serviceTask id="translate_agent" name="翻译 Agent" class="com.jefflower.fdserver.workflow.delegate.AgentTaskDelegate">
+  <extensionElements>
+    <flowable:field name="agentCode" stringValue="gemini-translate" />
+    <flowable:field name="taskType" stringValue="ticket.translate" />  <!-- 可选，覆盖默认值 -->
+  </extensionElements>
+</serviceTask>
+```
 
 ## Module: ticket (59 files)
 

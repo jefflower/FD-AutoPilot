@@ -3,7 +3,6 @@ package com.jefflower.fdserver.ticket.service;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jefflower.fdserver.common.exception.BusinessException;
 import com.jefflower.fdserver.common.exception.ErrorCode;
-import com.jefflower.fdserver.task.service.TaskDistributionService;
 import com.jefflower.fdserver.ticket.client.FreshdeskApiClient;
 import com.jefflower.fdserver.ticket.dto.TicketContent;
 import com.jefflower.fdserver.ticket.entity.SyncLog;
@@ -44,7 +43,7 @@ public class FreshdeskSyncService {
     private final TicketRepository ticketRepository;
     private final SyncConfigService syncConfigService;
     private final ObjectMapper objectMapper;
-    private final TaskDistributionService taskDistributionService;
+    private final TicketWorkflowOrchestrator orchestrator;
 
     @Value("${freshdesk.sync.statuses:2,3}")
     private String syncStatuses;
@@ -242,14 +241,8 @@ public class FreshdeskSyncService {
         ticketRepository.save(ticket);
 
         if (shouldTriggerWorkflow) {
-            taskDistributionService.createTask("ticket.translate", "ticket",
-                    String.valueOf(ticket.getId()),
-                    String.format("{\"ticketId\":%d,\"externalId\":\"%s\",\"subject\":\"%s\"}",
-                            ticket.getId(),
-                            ticket.getExternalId() != null ? ticket.getExternalId().replace("\"", "\\\"") : "",
-                            ticket.getSubject() != null ? ticket.getSubject().replace("\"", "\\\"").replace("\n", " ") : ""),
-                    com.jefflower.fdserver.task.enums.TriggerType.EVENT);
-            log.info("Created translation task for ticket {} (isNew={}, syncSource={})",
+            orchestrator.onNewTicket(ticket);
+            log.info("Triggered workflow for ticket {} (isNew={}, syncSource={})",
                     externalId, isNew, syncSource);
         }
 

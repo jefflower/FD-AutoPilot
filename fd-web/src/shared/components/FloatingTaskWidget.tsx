@@ -23,9 +23,9 @@ export const FloatingTaskWidget: React.FC = () => {
     const totalActive = transProcessing.size + replyProcessing.size + translationQueue.length + replyQueue.length;
     const isRunning = transProcessing.size > 0 || replyProcessing.size > 0;
 
-    const navigateToTask = useCallback((tab: 'translation' | 'reply', ticketId: number) => {
+    const navigateToTask = useCallback((_tab: 'translation' | 'reply' | 'automation', ticketId: number) => {
         window.dispatchEvent(new CustomEvent('navigate-to-task', {
-            detail: { tab, ticketId }
+            detail: { tab: 'automation', ticketId }
         }));
         setExpanded(false);
     }, []);

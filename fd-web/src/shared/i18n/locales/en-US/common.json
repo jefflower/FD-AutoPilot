@@ -37,7 +37,9 @@
     "agentManage": "Agents",
     "workflowList": "Definitions",
     "workflowDesigner": "Designer",
-    "workflowGuide": "Guide"
+    "workflowAgents": "Agents",
+    "workflowGuide": "Guide",
+    "automation": "Automation"
   },
   "ticketStatus": {
     "PENDING_TRANS": "Pending Translation",

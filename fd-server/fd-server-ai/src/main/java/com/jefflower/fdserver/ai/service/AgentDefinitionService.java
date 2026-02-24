@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class AgentDefinitionService {
@@ -35,6 +36,18 @@ public class AgentDefinitionService {
         return repository.findByCode(code);
     }
 
+    public List<AgentDefinition> findByGroupCode(String groupCode) {
+        return repository.findByGroupCodeAndEnabledTrueOrderBySortOrder(groupCode);
+    }
+
+    public List<String> getGroupCodes() {
+        return repository.findAllByOrderBySortOrder().stream()
+                .map(AgentDefinition::getGroupCode)
+                .filter(gc -> gc != null && !gc.isBlank())
+                .distinct()
+                .collect(Collectors.toList());
+    }
+
     @Transactional
     public AgentDefinition create(AgentDefinition def) {
         if (repository.existsByCode(def.getCode())) {
@@ -53,7 +66,13 @@ public class AgentDefinitionService {
         existing.setProviderType(updated.getProviderType());
         existing.setExecutionEnv(updated.getExecutionEnv());
         existing.setCapability(updated.getCapability());
+        existing.setGroupCode(updated.getGroupCode());
+        existing.setCallMode(updated.getCallMode());
+        existing.setCallUrl(updated.getCallUrl());
         existing.setProviderConfig(updated.getProviderConfig());
+        existing.setInputSchema(updated.getInputSchema());
+        existing.setOutputSchema(updated.getOutputSchema());
+        existing.setTemplateEngine(updated.getTemplateEngine());
         existing.setSortOrder(updated.getSortOrder());
 
         // code 和 builtIn 不允许修改

@@ -23,7 +23,8 @@ import java.util.Set;
  *
  * <h3>分支流程</h3>
  * <ul>
- *   <li>审核驳回：PENDING_AUDIT/AUDITING → PENDING_REPLY</li>
+ *   <li>审核驳回（重新回复）：PENDING_AUDIT/AUDITING → PENDING_REPLY</li>
+ *   <li>审核驳回（重新翻译）：PENDING_AUDIT/AUDITING → PENDING_TRANS</li>
  *   <li>审核通过 + 自动推送：PENDING_AUDIT/AUDITING → COMPLETED</li>
  *   <li>跳过回复：任意状态 → COMPLETED</li>
  *   <li>手动触发翻译：任意状态 → TRANSLATING</li>
@@ -59,12 +60,14 @@ public class TicketStateMachine {
                     TicketStatus.AUDITING,       // 审核任务被领取
                     TicketStatus.APPROVED,       // 审核通过（手动推送模式）
                     TicketStatus.COMPLETED,      // 审核通过（自动推送模式）
-                    TicketStatus.PENDING_REPLY   // 审核驳回
+                    TicketStatus.PENDING_REPLY,  // 审核驳回 → 重新回复
+                    TicketStatus.PENDING_TRANS   // 审核驳回 → 重新翻译
             )),
             Map.entry(TicketStatus.AUDITING, Set.of(
                     TicketStatus.APPROVED,       // 审核通过（手动推送模式）
                     TicketStatus.COMPLETED,      // 审核通过（自动推送模式）
-                    TicketStatus.PENDING_REPLY   // 审核驳回
+                    TicketStatus.PENDING_REPLY,  // 审核驳回 → 重新回复
+                    TicketStatus.PENDING_TRANS   // 审核驳回 → 重新翻译
             )),
             Map.entry(TicketStatus.APPROVED, Set.of(
                     TicketStatus.COMPLETED,      // 手动推送到 Freshdesk
@@ -189,6 +192,24 @@ public class TicketStateMachine {
     public static final Set<TicketStatus> REPLY_ACCEPTED_STATES = Set.of(
             TicketStatus.REPLYING,
             TicketStatus.PENDING_REPLY
+    );
+
+    /**
+     * Flowable 并行网关模式 — 回复上报可接受的状态集合（放宽）。
+     * <p>
+     * 并行网关下翻译和回复同时执行，回复 Agent 完成时工单状态可能仍是：
+     * - PENDING_TRANS（刚启动，翻译也还没完成）
+     * - TRANSLATING（翻译已被领取但还在进行中）
+     * - PENDING_REPLY（翻译已完成，translationDone 回调已触发）
+     * - REPLYING（回复任务已被领取）
+     * <p>
+     * 状态转换由 BPMN 回调统一管理，submitReply 仅负责保存数据。
+     */
+    public static final Set<TicketStatus> WORKFLOW_REPLY_ACCEPTED_STATES = Set.of(
+            TicketStatus.PENDING_TRANS,
+            TicketStatus.TRANSLATING,
+            TicketStatus.PENDING_REPLY,
+            TicketStatus.REPLYING
     );
 
     /**

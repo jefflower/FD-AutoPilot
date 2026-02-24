@@ -100,6 +100,21 @@ public class AgentDispatchService {
     }
 
     /**
+     * 在服务端执行 Agent（结构化输入版本）
+     * 将 structuredInput 序列化为 JSON 字符串后调用原有方法
+     */
+    public AgentExecuteResult executeOnServer(String agentCode, Map<String, Object> structuredInput,
+                                               String refType, Long refId, String userId) {
+        try {
+            String jsonInput = objectMapper.writeValueAsString(structuredInput);
+            return executeOnServer(agentCode, jsonInput, refType, refId, userId);
+        } catch (Exception e) {
+            log.error("[AgentDispatchService] Failed to serialize structured input for agent: {}", agentCode, e);
+            return new AgentExecuteResult(false, null, null, "序列化输入失败: " + e.getMessage());
+        }
+    }
+
+    /**
      * 获取客户端可执行的 Agent 定义列表
      */
     public List<AgentDefinition> getClientExecutableAgents() {

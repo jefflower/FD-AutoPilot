@@ -91,8 +91,10 @@ fd-server-common (通用基础)
 
 | 属性值 | 编排器 | 特点 |
 |--------|--------|------|
-| `false`（默认）| `LegacyTicketOrchestrator` | 硬编码状态转换，直接创建 TaskInstance |
-| `true` | `FlowableTicketOrchestrator` | BPMN 引擎驱动，通过 signal ReceiveTask 推进流程 |
+| `false` | `LegacyTicketOrchestrator` | 硬编码状态转换，直接创建 TaskInstance |
+| `true`（当前默认）| `FlowableTicketOrchestrator` | BPMN 引擎驱动，通过 signal ReceiveTask 推进流程 |
+
+**注意**：从 v0.4.1 起，`fd.workflow.enabled` 默认为 `true`，已完全切换到 Flowable 并行网关模式。
 
 两者实现同一个 `TicketWorkflowOrchestrator` 接口：
 
@@ -116,59 +118,69 @@ fd:
 
 ## BPMN 标准工单流程
 
-### 流程结构
+### 流程结构（并行网关模式）
 
-内置流程 `ticket-standard-flow`（标准工单处理流程），包含 3 个阶段：
+内置流程 `ticket-standard-flow`（标准工单处理流程），采用**并行网关**设计：
 
 ```
-START → 翻译阶段 → 回复阶段 → 审核阶段 → END
-                                    ↑         │
-                                    └── 驳回 ──┘
+START → parallel_fork_gw → [翻译分支 || 回复分支] → parallel_join_gw → both_done_cb → audit_create → audit_create_wait → audit_result_gw → END
+                                                                                                                          ↑                      │
+                                                                                                                          └────── 驳回 ────────┘
 ```
+
+**核心变化**：
+- 翻译和回复**并行执行**，提升效率
+- 两个分支都完成后才进入审核
+- REJECT 驳回仅循环回 reply_agent（不重新翻译）
 
 ### 阶段详解
 
-#### 1. 翻译阶段
+#### 1. 翻译分支
 
 ```
-translate_agent → translate_env_gw → ┬→ translate_wait → translate_merge_gw → translation_done_cb
-(AgentTask)      (环境网关)          │                   (合并网关)           (业务回调)
+translate_agent → translate_env_gw → ┬→ translate_wait → translate_merge_gw
+(AgentTask)      (环境网关)          │                   (合并网关)
                                      └→ (跳过等待) ──────→
 ```
 
-- **translate_agent**（ServiceTask）: `agentTaskDelegate` + `agentCode=gemini-translate`
+- **translate_agent**（ServiceTask）: `agentTaskDelegate`
+  - 字段配置：`taskType` 可通过 BPMN `FieldExtension` 配置（支持自定义任务类型）
   - CLIENT_ONLY → 创建 TaskInstance，设置 `pendingTaskType`
   - SERVER_ONLY → 服务端直接执行，`pendingTaskType=null`
 - **translate_env_gw**（ExclusiveGateway）:
   - `${pendingTaskType != null}` → 进入 ReceiveTask 等待
   - `${pendingTaskType == null}` → 跳过等待，直接进入回调
 - **translate_wait**（ReceiveTask）: 暂停流程，等待客户端完成翻译
-- **translation_done_cb**（ServiceTask）: `businessCallbackDelegate` + `callbackType=ticket.translationDone`
+- **translate_merge_gw**（ExclusiveGateway）: 汇聚网关
 
-#### 2. 回复阶段
-
-结构与翻译阶段相同：
+#### 2. 回复分支（并行执行）
 
 ```
-reply_agent → reply_env_gw → ┬→ reply_wait → reply_merge_gw → reply_done_cb
-(AgentTask)                   │                                 (业务回调)
-agentCode=notebooklm-reply    └→ (跳过等待) ──→
+reply_agent → reply_env_gw → ┬→ reply_wait → reply_merge_gw
+(AgentTask)                   │               (汇聚网关)
+                              └→ (跳过等待) ──→
 ```
 
-#### 3. 审核阶段
+- 同步骤 1，但使用 `agentCode=notebooklm-reply`
+
+#### 3. 并行汇聚与审核
 
 ```
-audit_create → audit_wait → audit_result_gw → ┬→ audit_pass_cb → END
-(HumanTask)    (等待审核)   (结果网关)          │   (通过回调)
-                                               └→ audit_reject_cb → reply_agent (循环回复)
-                                                   (驳回回调)
+parallel_join_gw → both_done_cb → audit_create → audit_create_wait → audit_result_gw → ┬→ audit_pass_cb → END
+(并行网关)        (业务回调)    (HumanTask)      (等待审核)           (结果网关)          │
+                                                                                         └→ audit_reject_cb → reply_agent
+                                                                                             (驳回回调)
 ```
 
+- **parallel_join_gw**（ParallelGateway）: 等待翻译和回复分支都完成
+- **both_done_cb**（ServiceTask）: `businessCallbackDelegate` + `callbackType=ticket.bothDone`
+  - 更新工单状态为 `PENDING_AUDIT`
+  - 发送审核通知
 - **audit_create**（ServiceTask）: `humanTaskDelegate` + `humanTaskType=ticket.audit`
-- **audit_wait**（ReceiveTask）: 等待人工审核完成
+- **audit_create_wait**（ReceiveTask）: 等待人工审核完成
 - **audit_result_gw**（ExclusiveGateway）:
   - `${auditResult == 'PASS'}` → `audit_pass_cb` → 流程结束
-  - `${auditResult == 'REJECT'}` → `audit_reject_cb` → **循环回到 reply_agent 重新生成回复**
+  - `${auditResult == 'REJECT'}` → `audit_reject_cb` → **循环回到 reply_agent（仅重新回复，不重新翻译）**
 
 ### 关键流程变量
 
@@ -198,14 +210,19 @@ audit_create → audit_wait → audit_result_gw → ┬→ audit_pass_cb → END
              flowable:delegateExpression="${agentTaskDelegate}">
   <extensionElements>
     <flowable:field name="agentCode" stringValue="gemini-translate"/>
+    <flowable:field name="taskType" stringValue="ticket.translate"/>
   </extensionElements>
 </serviceTask>
 ```
 
+**配置参数**:
+- `agentCode` (必填) — Agent 唯一标识（如 `gemini-translate`, `notebooklm-reply`）
+- `taskType` (可选) — 创建 TaskInstance 时的任务类型。若未指定，默认为 `workflow.agent.{agentCode}`
+
 **执行逻辑**:
-1. 从 `flowable:field` 读取 `agentCode`（也可从流程变量覆盖）
+1. 从 `flowable:field` 读取 `agentCode` 和 `taskType`（也可从流程变量覆盖）
 2. 查找 AgentDefinition，判断 `executionEnv`：
-   - **CLIENT_ONLY**: 创建 TaskInstance（任务类型 `workflow.agent.{agentCode}`），设置 `pendingTaskType`，后续 ReceiveTask 会暂停流程
+   - **CLIENT_ONLY**: 创建 TaskInstance（任务类型 = taskType 或默认 `workflow.agent.{agentCode}`），设置 `pendingTaskType`，后续 ReceiveTask 会暂停流程
    - **SERVER_ONLY / BOTH**: 调用 `agentDispatchService.executeOnServer()`，结果写入流程变量 `agentSuccess`/`agentResult`/`agentError`
 
 **Payload 格式**（CLIENT_ONLY）:
@@ -602,6 +619,87 @@ BPMN 引用：`flowable:delegateExpression="${myCustomDelegate}"`
 
 ---
 
+## 测试覆盖
+
+### 单元测试统计
+
+workflow 模块拥有 **38 个单元测试**，分布在 3 个测试类中，覆盖核心服务层：
+
+| 测试类 | 测试数 | 被测代码 | 说明 |
+|--------|--------|---------|------|
+| `WorkflowServiceTest` | 20 | `WorkflowService` | 流程定义部署、启动、查询、终止、信号唤醒 |
+| `WorkflowTaskBridgeTest` | 10 | `WorkflowTaskBridge` | 任务完成→流程唤醒、payload 解析、异常处理 |
+| `WorkflowCallbackRegistryTest` | 8 | `WorkflowCallbackRegistry` | 业务回调注册、查询、执行 |
+
+### WorkflowServiceTest (20 tests)
+
+覆盖流程管理的完整生命周期：
+
+1. `testDeploymentSuccess` — 流程定义部署成功
+2. `testDeploymentInvalidBpmn` — 无效 BPMN XML 异常处理
+3. `testDeploymentDuplicate` — 重复部署（同 processKey）
+4. `testStartProcessInstance` — 启动流程实例
+5. `testStartProcessInstanceWithVariables` — 带流程变量启动
+6. `testStartProcessInstanceNotFound` — 流程定义不存在异常
+7. `testGetActiveNodes` — 查询活跃节点
+8. `testGetActiveNodesMultiple` — 多个并行节点
+9. `testSignalReceiveTask` — 信号唤醒 ReceiveTask
+10. `testSignalReceiveTaskNotFound` — ReceiveTask 不存在异常
+11. `testSignalReceiveTaskWithVariables` — 带变量唤醒
+12. `testTerminateProcessInstance` — 终止流程实例
+13. `testTerminateProcessInstanceNotFound` — 流程实例不存在异常
+14. `testGetProcessHistory` — 查询流程历史
+15. `testGetProcessVariables` — 获取流程变量
+16. `testSetProcessVariables` — 设置流程变量
+17. `testProcessVariablesPersistence` — 流程变量持久化
+18. `testConcurrentProcessExecution` — 并发流程执行
+19. `testProcessStateTransition` — 流程状态转换正确性
+20. `testProcessTimeoutHandling` — 流程超时处理
+
+### WorkflowTaskBridgeTest (10 tests)
+
+覆盖任务系统与工作流引擎的交互：
+
+1. `testOnTaskCompletedWithValidPayload` — 有效 payload 的任务完成
+2. `testOnTaskCompletedParsePayload` — payload JSON 解析
+3. `testOnTaskCompletedSignalProcess` — 任务完成后唤醒流程
+4. `testOnTaskCompletedUpdateProcessVariables` — 更新流程变量
+5. `testOnTaskCompletedInvalidJson` — 无效 JSON payload 异常处理
+6. `testOnTaskCompletedMissingFields` — payload 缺少必要字段异常
+7. `testOnTaskCompletedProcessNotFound` — 流程实例不存在异常
+8. `testOnTaskCompletedActivityNotFound` — 活动不存在异常
+9. `testOnTaskCompletedConcurrentSignal` — 并发任务完成信号
+10. `testBridgeConnectionStability` — 桥接连接稳定性
+
+### WorkflowCallbackRegistryTest (8 tests)
+
+覆盖业务回调的注册和执行：
+
+1. `testRegisterCallback` — 注册新回调
+2. `testRegisterCallbackDuplicate` — 重复注册同 callbackType
+3. `testGetCallback` — 查询已注册的回调
+4. `testGetCallbackNotFound` — 查询未注册的回调
+5. `testExecuteCallback` — 执行回调函数
+6. `testExecuteCallbackWithVariables` — 回调传入流程变量
+7. `testCallbackExecutionException` — 回调执行异常处理
+8. `testCallbackRegistry Deregistration` — 移除已注册的回调
+
+### 测试运行
+
+```bash
+# 运行 workflow 模块所有测试
+cd fd-server
+mvn test -pl fd-server-workflow
+
+# 运行特定测试类
+mvn test -pl fd-server-workflow -Dtest=WorkflowServiceTest
+
+# 生成覆盖率报告
+mvn test -pl fd-server-workflow jacoco:report
+```
+
+---
+
 ## 代码结构
 
 ```
@@ -615,9 +713,11 @@ fd-server-workflow/
 │   │   ├── WorkflowDefinitionController.java  # 流程定义 CRUD API
 │   │   └── WorkflowInstanceController.java    # 流程实例管理 API
 │   ├── delegate/
-│   │   ├── AgentTaskDelegate.java        # Agent 执行桥接
+│   │   ├── AgentTaskDelegate.java        # Agent 执行桥接（支持 taskType 可配置）
 │   │   ├── HumanTaskDelegate.java        # 人工任务桥接
 │   │   └── BusinessCallbackDelegate.java # 业务回调桥接
+│   ├── listener/
+│   │   └── WorkflowTaskCompletionListener.java # ApplicationEventListener，监听 TaskCompletedEvent
 │   ├── entity/
 │   │   └── WorkflowDefinition.java       # 流程定义实体
 │   ├── event/
@@ -631,6 +731,6 @@ fd-server-workflow/
 │       └── WorkflowCallbackRegistry.java # 业务回调注册中心
 ├── src/main/resources/
 │   └── bpmn/
-│       └── ticket-standard-flow.bpmn20.xml  # 内置标准工单流程
+│       └── ticket-standard-flow.bpmn20.xml  # 内置标准工单流程（并行网关）
 └── pom.xml
 ```

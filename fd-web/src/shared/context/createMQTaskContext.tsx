@@ -13,6 +13,8 @@ export interface MQTask {
     error?: string;
     addedAt: number;
     taskInstanceId?: number;  // 服务端 TaskInstance ID，用于 complete/release
+    agentInput?: Record<string, any>;  // 工作流 AgentTaskDelegate 注入的标准化输入
+    agentCode?: string;  // 工作流指定的 Agent code（优先于 capability 解析）
 }
 
 /**
@@ -169,6 +171,8 @@ export function createMQTaskContext(config: MQTaskConfig) {
                         status: 'pending',
                         addedAt: Date.now(),
                         taskInstanceId: task.id,
+                        agentInput: payload.agentInput || undefined,  // 工作流标准化输入
+                        agentCode: payload.agentCode || undefined,    // 工作流指定的 Agent code
                     };
 
                     setTaskQueue(prev => [...prev, mqTask]);
@@ -272,6 +276,17 @@ export function createMQTaskContext(config: MQTaskConfig) {
                 const ticket = await serverApi.ticket.getTicketDetail(task.ticketId);
                 if (!ticket) throw new Error(`Ticket #${task.ticketId} not found`);
 
+                // 注入工作流标准化输入（如果 payload 中包含 agentInput）
+                if (task.agentInput) {
+                    (ticket as any)._agentInput = task.agentInput;
+                    console.log(`[Task-${config.taskType}] Injected agentInput for ticket #${task.ticketId}`);
+                }
+                // 注入工作流指定的 agentCode（优先于 capability 解析）
+                if (task.agentCode) {
+                    (ticket as any)._agentCode = task.agentCode;
+                    console.log(`[Task-${config.taskType}] Injected agentCode=${task.agentCode} for ticket #${task.ticketId}`);
+                }
+
                 const result = await taskProcessorRef.current(ticket, {
                     onStatusChange: (status) => console.log(`[Task-${config.taskType}] T#${task.ticketId} status: ${status}`),
                     onError: (err) => console.error(`[Task-${config.taskType}] T#${task.ticketId} error: ${err}`),
@@ -337,6 +352,13 @@ export function createMQTaskContext(config: MQTaskConfig) {
 
                 // 触发重新调度（直接调用调度函数，而非通过 setState 强制重渲染）
                 scheduleNextRef.current();
+
+                // 任务完成后立即触发一次 pollAndClaim，避免串行模式下
+                // 队列为空时需要等待定时器（SSE 连接时高达 30s）才能领取下一个任务
+                if (isRunningRef.current) {
+                    // 短暂延迟后触发，确保 scheduleNext 的 setState 已处理
+                    setTimeout(() => pollAndClaimRef.current(), 100);
+                }
 
                 // 通知侧边栏刷新队列计数
                 window.dispatchEvent(new Event('queue-counts-refresh'));

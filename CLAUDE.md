@@ -2,6 +2,32 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## 项目终极目标与演进路线
+
+> **终极目标：构建 Agent 驱动的工作流自动化平台**
+>
+> FD-AutoPilot 的长期愿景不是一个"工单翻译回复工具"，而是一个**通过 BPMN 工作流编排多个 AI Agent 实现业务自动化**的平台。
+>
+> **当前阶段（v0.4）**：优先保证工单自动翻译→回复→审核体系可用。使用 Legacy 硬编码编排（`fd.workflow.enabled=false`），Agent 执行逻辑与业务 Hook 耦合。
+>
+> **终极形态**：
+> 1. **Agent 即插件** — 每个 Agent 是独立的能力单元（翻译、回复、物流查询、情感分析、质检...），通过 `AgentDefinition` 声明式注册，执行逻辑真正封装在 Executor 内部，不与业务 Hook 耦合
+> 2. **工作流即编排** — BPMN 流程定义决定 Agent 的执行顺序、并行/串行、条件分支、异常处理。运营人员可通过 BpmnEditor 可视化编辑流程，无需改代码
+> 3. **流程驱动一切** — 工单从进入系统到最终完成，全程由 Flowable 流程实例驱动。Agent 节点（AgentTaskDelegate）自动调度执行，人工节点（HumanTaskDelegate）自动创建待办，回调节点（BusinessCallbackDelegate）处理业务副作用
+>
+> **演进路径（开发时必须遵守的方向性约束）**：
+> - ❌ 不要在业务 Hook（useAiReply、useAiTranslation）中硬编码新的 Agent 调用逻辑
+> - ❌ 不要在 LegacyTicketOrchestrator 中增加复杂的分支编排
+> - ✅ 新增 Agent 时，执行逻辑应封装在对应的 Executor 中，通过 AgentDefinition 配置驱动
+> - ✅ 新增业务流程时，优先考虑是否可以用 BPMN 节点编排实现
+> - ✅ 保持 TicketWorkflowOrchestrator 接口的抽象，为切换到 Flowable 模式做准备
+> - ✅ 补齐 Flowable 集成缺口时机：当 Agent 数量 ≥ 5 个或出现非线性流程需求时
+>
+> **Flowable 集成待补齐的 3 个缺口**（切换 `fd.workflow.enabled=true` 前必须完成）：
+> 1. **流程启动入口** — FreshdeskSyncService 同步新工单时需调用 `workflowService.startProcess()` 启动 BPMN 流程实例
+> 2. **任务完成唤醒** — WorkflowTaskBridge.onTaskCompleted() 需集成到 TaskDistributionService.completeTask() 调用链，实现 CLIENT_ONLY Agent 完成后自动 signal ReceiveTask
+> 3. **Agent 执行解耦** — ShadowExecutor 的 shadowHandler 不应由业务 Hook 传入，而应由 Agent 自身的 Executor 根据 providerConfig 自行构建
+
 ## 项目概览
 
 **FD-AutoPilot** 是一个智能工单处理系统，集成 Freshdesk 与 AI 能力（Google NotebookLM + Gemini CLI）来自动化翻译和回复生成。
@@ -135,6 +161,7 @@ Rust 后端通过 Tauri Event 与 React 前端通信（浏览器模式下这些�
 - `shared/context/MQTranslationContext` — 并发模式（batchSize=5，pollInterval=3s）
 - `shared/context/MQReplyContext` — 串行模式（batchSize=1，任务间延迟 1s）
 - `shared/context/MQAuditContext` — 串行模式（batchSize=1，人工审核模式）
+- `shared/context/ServerEventsContext.tsx` — SSE 事件系统（连接管理、事件解析、指数退避重连）
 - `shared/hooks/useTicketProcess` — 全局工单处理状态，模块级变量 + listener 模式跨组件共享
 - `shared/hooks/useSettings` — 用户设置（translationLang），通过 UserAppSettings API 存储到服务端。NotebookLM 配置已迁移到 notebooklm-reply agent 的 providerConfig
 - **Agent 运行时**（`shared/agents/`）：
@@ -158,7 +185,7 @@ Rust 后端通过 Tauri Event 与 React 前端通信（浏览器模式下这些�
 
 ### 后端 — Maven 多模块结构
 
-fd-server 采用 **Maven 多模块** 架构，编译顺序：common → auth → task → ai → ticket → app
+fd-server 采用 **Maven 多模块** 架构，编译顺序：common → auth → task → ai → workflow → ticket → app
 
 ```
 fd-server/                          (parent POM, packaging: pom)
@@ -166,11 +193,12 @@ fd-server/                          (parent POM, packaging: pom)
 ├── fd-server-auth/                 (jar) 认证授权
 ├── fd-server-task/                 (jar) 任务调度框架
 ├── fd-server-ai/                   (jar) AI Agent 管理
+├── fd-server-workflow/             (jar) 工作流引擎（Flowable BPMN 2.0）
 ├── fd-server-ticket/               (jar) 工单业务
 └── fd-server-app/                  (jar) 启动入口 + 资源 + 静态文件
 ```
 
-依赖链: `common ← auth ← task ← ai ← ticket ← app`
+依赖链: `common ← auth ← task ← ai ← workflow ← ticket ← app`
 
 ### 后端 — auth 模块 (fd-server-auth/.../auth/)
 - **认证控制器**: `controller/AuthController.java` — 登录、注册、Token 刷新、`GET /me/modules`、`GET /me/permissions`
@@ -187,6 +215,9 @@ fd-server/                          (parent POM, packaging: pom)
 - **任务分发**: `service/TaskDistributionService.java` — 原子领取、完成上报、超时重试
 - **任务调度**: `service/TaskScheduleService.java` + `scheduler/TaskCronScheduler.java` — Cron 定时任务
 - **任务恢复**: `scheduler/TaskRecoveryScheduler.java` — 超时任务回收
+- **SSE 推送**: `controller/EventStreamController.java` — SSE 端点 `/api/v1/events/stream`
+- **SSE 管理**: `service/SseConnectionManager.java` — 连接池管理 + 心跳
+- **SSE 监听**: `listener/SseNotificationListener.java` — Spring Event → SSE 推送
 - **控制器**: `controller/TaskController.java`（claim/complete/mine）, `controller/TaskAdminController.java`（管理端）
 - **实体**: `entity/TaskDefinition.java`, `entity/TaskInstance.java`
 
@@ -204,6 +235,17 @@ fd-server/                          (parent POM, packaging: pom)
 - **枚举**: `enums/ProviderType.java`（LOCAL_CLI/HTTP_API/SHADOW_WINDOW/LOCAL_FUNCTION）, `enums/ExecutionEnv.java`（CLIENT_ONLY/SERVER_ONLY/BOTH）, `enums/ExecutionStatus.java`
 - **权限定义**: `config/AiPermissionDefinition.java`（3 个权限：ai:manage, ai:execute, ai:view_logs）
 - **数据初始化**: `config/AiDataInitializer.java`（4 个内置 Agent：gemini-translate, notebooklm-reply, tracking-query, antigravity-translate）
+
+### 后端 — workflow 模块 (fd-server-workflow/.../workflow/)
+- **工作流服务**: `service/WorkflowService.java` — 流程部署、启动、查询、终止
+- **异步唤醒**: `service/WorkflowTaskBridge.java` — 任务完成时通过 Flowable RuntimeService 信号唤醒 ReceiveTask
+- **回调注册**: `service/WorkflowCallbackRegistry.java` — 业务模块注册回调（解耦 workflow ↔ ticket）
+- **Agent 节点**: `delegate/AgentTaskDelegate.java` — BPMN ServiceTask，检查 executionEnv 决定服务端直接执行或创建 TaskInstance 等待客户端
+- **人工节点**: `delegate/HumanTaskDelegate.java` — 创建人工审核任务
+- **回调节点**: `delegate/BusinessCallbackDelegate.java` — 调用注册的业务回调
+- **流程定义**: `src/main/resources/bpmn/ticket-standard-flow.bpmn20.xml` — 工单标准 BPMN 流程
+- **权限定义**: `config/WorkflowPermissionDefinition.java`（workflow:manage, workflow:view）
+- **引擎配置**: `config/FlowableConfig.java` — Flowable 引擎配置
 
 ### 后端 — ticket 模块 (fd-server-ticket/.../ticket/)
 - **工单服务**: `service/TicketService.java` — 工单工作流编排核心
@@ -239,6 +281,8 @@ fd-server/                          (parent POM, packaging: pom)
   - `ticket/pages/` — ServerTicketsTab, TranslationTasksTab, ReplyTasksTab, AuditTasksTab, ApprovedTasksTab, ServerTaskWorkspace
   - `ticket/components/` — ServerTicketDetail, ServerTicketList, ticket-detail/（TranslationPreviewBar, AiReplyPanel, ReplyHistoryPanel）
   - `admin/pages/` — AdminUsersTab, ManualSyncTab, KnowledgeTab, DatabaseTab, ServerLogsTab, RolePermissionTab, OrgSyncTab, AgentManageTab
+  - `workflow/pages/` — WorkflowListTab（流程定义列表）, WorkflowGuideTab（流程引导配置）
+  - `workflow/components/` — BpmnEditor（bpmn-js 编辑器封装）
   - `system/pages/` — SettingsTab, UserProfileTab
 - **Tauri 桥接层** (`tauri/`):
   - `bridge.ts` — `isTauriEnv()` + `tauriInvoke()` + `tauriListen()` 条件调用
@@ -363,7 +407,7 @@ fd-server/                          (parent POM, packaging: pom)
 - **Ticket.isValid** — 知识库有效性标记（用于数据导出和筛选）
 - **RBAC 五表模型**: SysUser → SysUserRole → SysRole → SysRolePermission → SysPermission，SysModule（模块实体，一对多关联 Permission）
 - **SysUser** — 状态: PENDING/APPROVED/REJECTED，`password` 字段 `@JsonIgnore`。启动时自动创建默认 admin 用户（admin/admin123），角色 SUPER_ADMIN
-- **SysModule** — 内置 4 个模块：auth（认证授权）、ticket（工单管理）、system（系统管理）、ai（AI Agent 管理），code/name/icon/routePath/sortOrder/enabled/builtIn
+- **SysModule** — 内置 5 个模块：auth（认证授权）、ticket（工单管理）、system（系统管理）、ai（AI Agent 管理）、workflow（工作流管理），code/name/icon/routePath/sortOrder/enabled/builtIn
 - **SysRole** — 内置角色：SUPER_ADMIN（全部权限）、ADMIN、USER、AUDITOR
 - **SysPermission** — 通过 `ModulePermissionDefinition` 接口自动注册，启动时增量同步
 - **SystemConfig** — 系统配置键值对（auto_reply_enabled, wecom_webhook_url, wecom_notify_enabled）
@@ -417,6 +461,7 @@ doc/
     ├── auth.md                       #   认证授权（JWT、RBAC、权限自注册、用户设置）
     ├── task.md                       #   任务调度（claim API、超时回收、TaskHandler）
     ├── ai.md                         #   AI Agent 管理（定义、执行日志、能力绑定、SPI 扩展）
+    ├── workflow.md                   #   工作流引擎（Flowable BPMN 2.0、JavaDelegate、双轨模式）
     └── ticket.md                     #   工单业务（状态流转、MQ、Freshdesk、知识库）
 ```
 
@@ -461,7 +506,7 @@ doc/
 
 ### fd-server 模块化架构
 
-fd-server 采用 **Maven 多模块**架构——parent POM + 6 个子模块（common/auth/task/ai/ticket/app），编译时由 Maven Reactor 按依赖拓扑排序。
+fd-server 采用 **Maven 多模块**架构——parent POM + 7 个子模块（common/auth/task/ai/workflow/ticket/app），编译时由 Maven Reactor 按依赖拓扑排序。
 
 #### 模块划分
 
@@ -471,20 +516,22 @@ fd-server 采用 **Maven 多模块**架构——parent POM + 6 个子模块（co
 | **auth** | `fd-server-auth` | `com.jefflower.fdserver.auth.*` | 用户认证授权（JWT、RBAC、用户生命周期、安全配置、权限注解/接口） | fd-server-common |
 | **task** | `fd-server-task` | `com.jefflower.fdserver.task.*` | 任务调度与分发（多客户端任务分发、定时任务调度、执行历史、Dashboard） | fd-server-auth |
 | **ai** | `fd-server-ai` | `com.jefflower.fdserver.ai.*` | AI Agent 管理（Agent 定义、执行日志、能力绑定、SPI 扩展） | fd-server-task |
-| **ticket** | `fd-server-ticket` | `com.jefflower.fdserver.ticket.*` | 工单业务（含 Freshdesk 集成、MQ 分发、知识库、通知、管理后台） | fd-server-ai + amqp |
+| **workflow** | `fd-server-workflow` | `com.jefflower.fdserver.workflow.*` | 工作流引擎（Flowable BPMN 2.0 集成、JavaDelegate、异步唤醒、双轨模式） | fd-server-ai + flowable-spring-boot-starter |
+| **ticket** | `fd-server-ticket` | `com.jefflower.fdserver.ticket.*` | 工单业务（含 Freshdesk 集成、MQ 分发、知识库、通知、管理后台） | fd-server-workflow + amqp |
 | **app** | `fd-server-app` | `com.jefflower.fdserver` | 启动入口 + 资源文件 + 静态前端 | fd-server-ticket + h2 + actuator |
 
 #### 模块间依赖规则
 
 ```
-common  ←──  auth  ←──  task  ←──  ai  ←──  ticket
+common  ←──  auth  ←──  task  ←──  ai  ←──  workflow  ←──  ticket
 ```
 - 箭头方向 = 依赖方向（A ← B 表示 B 可依赖 A）
 - common 不依赖任何业务模块
 - auth 只依赖 common（提供权限注解 `@RequiresPermission`、权限定义接口 `ModulePermissionDefinition`）
 - task 可依赖 auth（使用权限注解和权限自注册）和 common
 - ai 可依赖 task、auth、common（使用权限注解、Agent SPI 注册）
-- ticket 可依赖 ai、task、auth、common（通过 AgentDispatchService 触发 AI 任务、TaskDistributionService 创建/完成任务）
+- workflow 可依赖 ai、task、auth、common（通过 AgentDispatchService 触发 Agent、TaskDistributionService 创建任务、Flowable 引擎集成）
+- ticket 可依赖 workflow、ai、task、auth、common（通过 TicketWorkflowOrchestrator 编排工作流、AgentDispatchService 触发 AI 任务、TaskDistributionService 创建/完成任务）
 - 模块内部子包可互相调用，不需要额外隔离
 - 模块间通过注入 Service 直接调用（允许单向依赖），不做过度抽象
 
@@ -533,6 +580,24 @@ ai/
 └── config/        AiPermissionDefinition（权限自注册）, AiDataInitializer（内置 Agent 初始化）
 ```
 
+#### workflow 模块内部结构
+
+```
+workflow/
+├── controller/    WorkflowController（流程定义/实例管理）
+├── service/       WorkflowService（流程部署/启动/查询）, WorkflowTaskBridge（异步唤醒 ReceiveTask）, WorkflowCallbackRegistry（业务回调注册表）
+├── delegate/      AgentTaskDelegate（AI Agent 节点）, HumanTaskDelegate（人工任务节点）, BusinessCallbackDelegate（业务回调节点）
+├── entity/        （无独立实体，复用 task 模块的 TaskInstance）
+├── dto/           WorkflowStartRequest, WorkflowInstanceInfo
+├── config/        FlowableConfig（引擎配置）, WorkflowPermissionDefinition（权限自注册）
+└── resources/     bpmn/ticket-standard-flow.bpmn20.xml（工单标准流程定义）
+```
+
+**双轨工作流编排**：
+- `fd.workflow.enabled=true` → FlowableTicketOrchestrator（BPMN 驱动）
+- `fd.workflow.enabled=false` → LegacyTicketOrchestrator（传统 MQ 驱动）
+- 配置开关在 ticket 模块的 WorkflowOrchestratorConfig 中
+
 #### ticket 模块内部结构
 
 ```
@@ -543,6 +608,7 @@ ticket/
 ├── repository/    对应各 Entity 的 JpaRepository
 ├── dto/           工单相关所有 DTO
 ├── enums/         TicketStatus, AuditResult, SyncStatus, TriggerType
+├── orchestrator/  TicketWorkflowOrchestrator（接口）, FlowableTicketOrchestrator, LegacyTicketOrchestrator, TicketWorkflowCallbackConfig, WorkflowOrchestratorConfig
 ├── scheduler/     SyncScheduler, ReplyPushRetryScheduler
 └── config/        RabbitMQConfig, MqInitializer, TicketPermissionDefinition, SystemPermissionDefinition
 ```
@@ -577,18 +643,20 @@ common/
 |------|--------------|-------|----------------|
 | auth-dev | `general-purpose` | `opus` | "你是认证授权模块开发。范围限定 `fd-server/fd-server-auth/**`。关注 JWT 安全、RBAC 权限模型、用户生命周期、密码策略、会话管理。不得直接依赖 ticket 模块的任何类。" |
 | task-dev | `general-purpose` | `opus` | "你是任务调度模块开发。范围限定 `fd-server/fd-server-task/**`。关注多客户端并发安全、原子任务领取、超时回收、定时任务调度。可依赖 auth 模块的权限注解/接口和 common 模块。不得依赖 ticket 模块。" |
-| ai-dev | `general-purpose` | `opus` | "你是 AI Agent 模块开发。范围限定 `fd-server/fd-server-ai/**`。关注 Agent 定义管理、SPI Provider 扩展、执行日志记录、能力绑定解析。可依赖 task、auth、common 模块。不得依赖 ticket 模块。" |
-| ticket-dev | `general-purpose` | `opus` | "你是工单业务模块开发。范围限定 `fd-server/fd-server-ticket/**`。关注工单状态流转正确性、MQ 消息可靠投递、事务一致性。可依赖 ai 模块的 AgentDispatchService、auth 模块的公开 Service/DTO 和 task 模块的 TaskDistributionService，不得操作 auth/task/ai 内部实现。" |
+| ai-dev | `general-purpose` | `opus` | "你是 AI Agent 模块开发。范围限定 `fd-server/fd-server-ai/**`。包路径 `com.jefflower.fdserver.ai.*`。职责：Agent 定义 CRUD、执行日志、能力绑定、AgentDispatchService 调度核心、AgentProvider SPI 扩展、HttpApiAgentProvider 实现。可依赖 task、auth、common 模块。不得依赖 workflow、ticket 模块。" |
+| workflow-dev | `general-purpose` | `opus` | "你是工作流引擎模块开发。范围限定 `fd-server/fd-server-workflow/**`。包路径 `com.jefflower.fdserver.workflow.*`。职责：Flowable BPMN 2.0 引擎集成、三种 JavaDelegate（AgentTaskDelegate/HumanTaskDelegate/BusinessCallbackDelegate）、WorkflowTaskBridge 异步唤醒、WorkflowCallbackRegistry 业务回调注册、WorkflowService 流程管理、双轨模式开关。可依赖 ai、task、auth、common 模块。不得依赖 ticket 模块。" |
+| ticket-dev | `general-purpose` | `opus` | "你是工单业务模块开发。范围限定 `fd-server/fd-server-ticket/**`。关注工单状态流转正确性、MQ 消息可靠投递、事务一致性。可依赖 workflow 模块的 WorkflowService/WorkflowCallbackRegistry、ai 模块的 AgentDispatchService、auth 模块的公开 Service/DTO 和 task 模块的 TaskDistributionService，不得操作 auth/task/ai/workflow 内部实现。" |
 | common-dev | `general-purpose` | `opus` | "你是公共模块开发。范围限定 `fd-server/fd-server-common/**`。关注通用工具类、公共配置、全局异常处理。不得依赖任何业务模块（auth/ticket）。" |
-| frontend-dev | `general-purpose` | `opus` | "你是 React/TypeScript 前端开发。范围限定 `fd-web/src/**`。关注：1) `shared/` 目录（REST 轮询任务 Context、AI Provider、Hooks、API 封装）为跨平台通用代码；2) `tauri/` 目录仅 4 个文件（bridge.ts + NotebookLM Shadow）为 Tauri 桌面专属；3) `isTauriEnv()` + `tauriInvoke()` 条件桥接模式；4) `createMQTaskContext` 工厂函数基于 REST 轮询 claim API（非 Tauri 事件）；5) `useSettings` 通过 UserAppSettings API 存储到服务端。" |
+| frontend-dev | `general-purpose` | `opus` | "你是 React/TypeScript 前端开发。范围限定 `fd-web/src/**`。关注：1) `shared/` 目录（REST 轮询任务 Context、AI Provider、Hooks、API 封装）为跨平台通用代码；2) `shared/agents/` Agent 运行时（AgentRegistry 单例 + 4 种 Executor + useAgent Hook）；3) `shared/context/ServerEventsContext` SSE 事件系统（实时推送 + 指数退避重连）；4) `modules/workflow/` 工作流管理页面（BpmnEditor + WorkflowListTab + WorkflowGuideTab）；5) `modules/admin/pages/AgentManageTab` Agent 管理页面；6) `tauri/` 目录为 Tauri 桌面专属；7) `isTauriEnv()` + `tauriInvoke()` 条件桥接模式；8) `createMQTaskContext` 工厂函数基于 REST 轮询 + SSE 混合模式；9) `useSettings` 通过 UserAppSettings API 存储到服务端。" |
 | rust-dev | `general-purpose` | `opus` | "你是 Tauri/Rust 客户端后端开发。范围限定 `fd-client/src-tauri/src/**`（仅 4 个文件：lib.rs, ai.rs, models.rs, api.rs）。Rust 层已精简为纯壳子：16 个 Tauri command（AI 翻译 2 + 文件系统 2 + Shadow Window 12），无 MQ 消费、无本地数据库、无设置存储。关注 Gemini CLI 调用可靠性、Shadow Window 生命周期管理。" |
 | architect | `Plan` | `opus` | （Plan 模式自动获取上下文，用于跨模块设计、数据流优化、技术选型、状态机扩展、模块边界设计） |
 | debugger | `general-purpose` | `opus` | "你是跨层调试专家。负责定位 Rust↔React↔Server 问题、MQ 消息丢失排查、Shadow Window 时序问题、模块间依赖错误。输出：根因分析 + 修复建议。" |
-| code-reviewer | `general-purpose` | `sonnet` | "你是代码审查者。重点关注 OWASP Top 10（JWT 安全、SQL 注入、XSS）、最佳实践、重复代码。**额外关注模块边界合规**：检查 import 是否违反依赖规则（common ← auth ← task ← ai ← ticket），auth 模块是否引用了 ticket/ai 的类，common 是否引用了业务模块的类。输出：问题列表（按严重级别排序）+ 修复建议。" |
-| module-guardian | `general-purpose` | `sonnet` | "你是模块化守护者。检查 fd-server 的模块边界合规性。检查项：1) 依赖方向合规（common ← auth ← task ← ai ← ticket，不可反向）；2) 无循环依赖；3) auth 模块的 import 不包含 ticket/ai 包的类；4) common 模块的 import 不包含 auth/ticket/ai 包的类；5) ai 模块的 import 不包含 ticket 包的类；6) 包结构是否正确归属模块。输出：违规列表 + 修复建议。" |
+| code-reviewer | `general-purpose` | `sonnet` | "你是代码审查者。重点关注 OWASP Top 10（JWT 安全、SQL 注入、XSS）、最佳实践、重复代码、Flowable 表达式注入风险。**额外关注模块边界合规**：检查 import 是否违反依赖规则（common ← auth ← task ← ai ← workflow ← ticket），auth 模块是否引用了 ticket/ai/workflow 的类，common 是否引用了业务模块的类。输出：问题列表（按严重级别排序）+ 修复建议。" |
+| module-guardian | `general-purpose` | `sonnet` | "你是模块化守护者。检查 fd-server 的模块边界合规性。检查项：1) 依赖方向合规（common ← auth ← task ← ai ← workflow ← ticket，不可反向）；2) 无循环依赖；3) auth 模块的 import 不包含 ticket/ai/workflow 包的类；4) common 模块的 import 不包含 auth/ticket/ai/workflow 包的类；5) ai 模块的 import 不包含 workflow/ticket 包的类；6) workflow 模块的 import 不包含 ticket 包的类；7) 包结构是否正确归属模块。输出：违规列表 + 修复建议。" |
 | test-runner | `Bash` | `haiku` | 直接执行测试命令（见下方测试命令表） |
 | test-writer | `general-purpose` | `sonnet` | "你是测试工程师。后端用 JUnit 5 + Spring Boot Test，每个模块的测试在各自子模块的 `src/test/java/` 下（如 `fd-server-auth/src/test/java/`），Rust 用 `#[cfg(test)]`，前端用 Vitest + RTL。关注工单状态流转边界、MQ 序列化/反序列化、API 权限校验。测试类的包结构应与源码模块结构一致。" |
-| doc-writer | `general-purpose` | `haiku` | "你是文档工程师。中文撰写。**文档结构**：`doc/` 下分两层——顶层文档（project-documentation.md 总览、project-structure.md 目录树、system-design.md 设计图、server-architecture.md 后端架构、client-architecture.md 客户端架构、api-reference.md API 汇总、freshdesk-api-reference.md 外部 API）和 `doc/modules/` 模块文档（common.md/auth.md/task.md/ai.md/ticket.md，每个模块独立完整文档）。**更新规则**：1) 接收到代码变更清单和文档影响清单；2) 只更新受影响的文档，不改无关内容；3) 模块文档格式：模块概览 → REST API（含示例）→ 模块间 Service 接口 → 数据模型 → 扩展点 → 依赖关系 → Maven artifact 建议；4) api-reference.md 是跨模块 API 快速索引，新增端点必须同步；5) 新增模块必须创建 modules/{name}.md。" |
+| e2e-tester | `general-purpose` | `opus` | "你是浏览器 E2E 测试专家。通过 Chrome MCP 工具操作浏览器进行核心流程端到端测试。测试环境：fd-server 在 localhost:9988，fd-web 在 localhost:5173。默认管理员 admin/admin123。可测试范围：登录/注册、工单列表/详情、手动翻译提交、回复编辑保存、审核通过/驳回、用户管理、RBAC 权限、Agent 管理、工作流管理、知识库、数据库查询、同步管理。不可测试：Gemini CLI 翻译和 NotebookLM 回复（需 Tauri 桌面端）。测试步骤：tabs_context_mcp → navigate → read_page/find → computer(click/type/screenshot) → 验证结果。" |
+| doc-writer | `general-purpose` | `haiku` | "你是文档工程师。中文撰写。**文档结构**：`doc/` 下分两层——顶层文档（project-documentation.md 总览、project-structure.md 目录树、system-design.md 设计图、server-architecture.md 后端架构、client-architecture.md 客户端架构、api-reference.md API 汇总、freshdesk-api-reference.md 外部 API）和 `doc/modules/` 模块文档（common.md/auth.md/task.md/ai.md/workflow.md/ticket.md，每个模块独立完整文档）。**更新规则**：1) 接收到代码变更清单和文档影响清单；2) 只更新受影响的文档，不改无关内容；3) 模块文档格式：模块概览 → REST API（含示例）→ 模块间 Service 接口 → 数据模型 → 扩展点 → 依赖关系 → Maven artifact 建议；4) api-reference.md 是跨模块 API 快速索引，新增端点必须同步；5) 新增模块必须创建 modules/{name}.md。" |
 
 **测试命令表**（test-runner 使用）：
 
@@ -598,7 +666,9 @@ common/
 | 后端 auth 模块 | `cd fd-server && mvn test -pl fd-server-auth` |
 | 后端 task 模块 | `cd fd-server && mvn test -pl fd-server-task` |
 | 后端 ai 模块 | `cd fd-server && mvn test -pl fd-server-ai` |
+| 后端 workflow 模块 | `cd fd-server && mvn test -pl fd-server-workflow` |
 | 后端 ticket 模块 | `cd fd-server && mvn test -pl fd-server-ticket` |
+| 浏览器 E2E | 由 e2e-tester 通过 Chrome MCP 执行 |
 | Rust | `cd fd-client/src-tauri && cargo test` |
 | 前端 | `cd fd-web && npm test` |
 | 前端覆盖率 | `cd fd-web && npm run test:coverage` |
@@ -635,10 +705,13 @@ common/
 | 仅 auth 模块 | auth-dev |
 | 仅 task 模块 | task-dev |
 | 仅 ai 模块 | ai-dev |
+| 仅 workflow 模块 | workflow-dev |
 | 仅 ticket 模块 | ticket-dev |
 | 仅 common 模块 | common-dev |
 | 跨 auth + task | auth-dev → task-dev（按依赖顺序串行） |
 | 跨 task + ai | task-dev → ai-dev（按依赖顺序串行） |
+| 跨 ai + workflow | ai-dev → workflow-dev（按依赖顺序串行） |
+| 跨 workflow + ticket | workflow-dev → ticket-dev（按依赖顺序串行） |
 | 跨 ai + ticket | ai-dev → ticket-dev（按依赖顺序串行） |
 | 跨 task + ticket | task-dev → ticket-dev（按依赖顺序串行） |
 | 跨 auth + ticket | auth-dev → ticket-dev（按依赖顺序串行） |
@@ -720,7 +793,7 @@ Step 2: 设计
 
 Step 3: 并行开发（前提：Step 2 的契约已确定）
   主代理用 TaskCreate 为每个子任务创建跟踪项，然后同时启动（单条消息多个 Task 调用）：
-  - auth-dev / ticket-dev / common-dev(opus) — 按模块分工实现后端（参照"后端 dev agent 选择规则"）
+  - auth-dev / ai-dev / workflow-dev / ticket-dev / common-dev(opus) — 按模块分工实现后端（参照"后端 dev agent 选择规则"）
   - frontend-dev(opus) — 实现组件 + Hooks + API 调用
   - rust-dev(opus) — 实现 Tauri 命令（仅涉及 Rust 层时，如 AI 翻译或 Shadow Window 变更）
   子代理返回后，主代理用 TaskUpdate 更新各任务状态
@@ -897,7 +970,7 @@ Step Final: 主代理确认完成，向用户汇报（含迁移范围、模块�
 - dev agents → test-runner（测试必须在代码写完后）
 - debugger → dev agent（修复必须基于诊断结论）
 - 所有开发/测试 → doc-writer（文档必须反映最终实现）
-- **模块化重构中**：common-dev → auth-dev → task-dev → ticket-dev（按依赖层级顺序，底层先行）
+- **模块化重构中**：common-dev → auth-dev → task-dev → ai-dev → workflow-dev → ticket-dev（按依赖层级顺序，底层先行）
 
 **特殊约束：**
 - debugger 是阻塞性的：触发后暂停其他工作流，直到诊断完成

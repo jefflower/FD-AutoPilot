@@ -11,6 +11,7 @@ export type TabType =
     | 'translation'
     | 'reply'
     | 'audit'
+    | 'automation'
     | 'approved'
     | 'admin-users'
     | 'manual-sync'
@@ -24,4 +25,5 @@ export type TabType =
     | 'org-sync'
     | 'agent-manage'
     | 'workflow-list'
-    | 'workflow-guide';
+    | 'workflow-guide'
+    | 'workflow-agents';

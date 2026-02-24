@@ -32,6 +32,8 @@ const UserProfileTab = lazy(() => import("./modules/system/pages/UserProfileTab"
 const FloatingTaskWidget = lazy(() => import("./shared/components/FloatingTaskWidget").then(m => ({ default: m.FloatingTaskWidget })));
 const WorkflowListTab = lazy(() => import("./modules/workflow/pages/WorkflowListTab"));
 const WorkflowGuideTab = lazy(() => import("./modules/workflow/pages/WorkflowGuideTab"));
+const WorkflowAgentsTab = lazy(() => import("./modules/workflow/pages/WorkflowAgentsTab"));
+const WorkflowAutomationTab = lazy(() => import("./modules/ticket/pages/WorkflowAutomationTab"));
 const MobileAuditPage = lazy(() => import("./modules/mobile/pages/MobileAuditPage"));
 
 import { AuthProvider, useAuthContext } from "./shared/context/AuthContext";
@@ -106,6 +108,10 @@ const TAB_COMPONENTS: Partial<Record<TabType, TabRoute>> = {
         component: AuditTasksTab,
         requireAuth: true,
     },
+    'automation': {
+        component: WorkflowAutomationTab,
+        requireAuth: true,
+    },
     'approved': {
         component: ApprovedTasksTab,
         requireAuth: true,
@@ -132,7 +138,7 @@ const TAB_COMPONENTS: Partial<Record<TabType, TabRoute>> = {
     },
     'knowledge': {
         component: KnowledgeTab,
-        requireAdmin: true,
+        requireAuth: true,
     },
     'org-sync': {
         component: OrgSyncTab,
@@ -156,6 +162,10 @@ const TAB_COMPONENTS: Partial<Record<TabType, TabRoute>> = {
     },
     'workflow-list': {
         component: WorkflowListTab,
+        requireAdmin: true,
+    },
+    'workflow-agents': {
+        component: WorkflowAgentsTab,
         requireAdmin: true,
     },
     'workflow-guide': {

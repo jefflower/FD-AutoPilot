@@ -57,11 +57,30 @@ export class AgentRegistry {
         this.executors.set(executor.providerType, executor);
     }
 
+    /** 旧 ProviderType -> 新 ProviderType 映射 */
+    private mapLegacyProviderType(type: string): string | null {
+        const LEGACY_MAP: Record<string, string> = {
+            'LOCAL_CLI': 'GEMINI_CLI',
+            'SHADOW_WINDOW': 'WEB_AUTOMATION',
+        };
+        return LEGACY_MAP[type] || null;
+    }
+
+    /** 根据 providerType 查找 executor，兼容旧名称 */
+    private findExecutor(providerType: string): AgentExecutor | undefined {
+        let executor = this.executors.get(providerType);
+        if (!executor) {
+            const mapped = this.mapLegacyProviderType(providerType);
+            if (mapped) executor = this.executors.get(mapped);
+        }
+        return executor;
+    }
+
     resolve(code: string): { definition: AgentDefinition; executor: AgentExecutor } | null {
         const definition = this.definitions.get(code);
         if (!definition || !definition.enabled) return null;
 
-        const executor = this.executors.get(definition.providerType);
+        const executor = this.findExecutor(definition.providerType);
         if (!executor || !executor.isAvailable()) return null;
 
         return { definition, executor };
@@ -86,7 +105,7 @@ export class AgentRegistry {
             if (!def) {
                 console.warn(`[AgentRegistry] 能力 "${capability}" 绑定的 Agent "${boundCode}" 未找到或已禁用`);
             } else {
-                const executor = this.executors.get(def.providerType);
+                const executor = this.findExecutor(def.providerType);
                 console.warn(`[AgentRegistry] 能力 "${capability}" 绑定的 Agent "${boundCode}" 不可用 (providerType=${def.providerType}, executorAvailable=${executor?.isAvailable() ?? false})`);
             }
         }

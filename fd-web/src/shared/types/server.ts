@@ -201,7 +201,7 @@ export interface ReplySubmitData {
 
 export interface AuditSubmitData {
   replyId: number;
-  auditResult: 'PASS' | 'REJECT';
+  auditResult: 'PASS' | 'REJECT' | 'RETRANSLATE';
   auditRemark?: string;
 }
 
@@ -466,7 +466,8 @@ export interface OAuthStatus {
 }
 
 // ============ AI Agent ============
-export type AgentProviderType = 'LOCAL_CLI' | 'HTTP_API' | 'SHADOW_WINDOW' | 'LOCAL_FUNCTION';
+export type AgentProviderType = 'GEMINI_CLI' | 'HTTP_API' | 'WEB_AUTOMATION' | 'LOCAL_FUNCTION' | 'LOCAL_CLI' | 'SHADOW_WINDOW';
+export type AgentCallMode = 'HTTP' | 'MQ';
 export type AgentExecutionEnv = 'CLIENT_ONLY' | 'SERVER_ONLY' | 'BOTH';
 export type AgentExecutionStatus = 'RUNNING' | 'SUCCESS' | 'FAILED' | 'TIMEOUT' | 'CANCELLED';
 
@@ -478,10 +479,16 @@ export interface AgentDefinition {
   providerType: AgentProviderType;
   executionEnv: AgentExecutionEnv;
   capability: string;
+  groupCode?: string;
+  callMode?: AgentCallMode;
+  callUrl?: string;
   providerConfig: string | Record<string, any>;
   enabled: boolean;
   sortOrder: number;
   builtIn: boolean;
+  inputSchema?: Record<string, any>;
+  outputSchema?: Record<string, any>;
+  templateEngine?: string;
 }
 
 export interface AgentExecuteInput {
@@ -502,6 +509,20 @@ export interface AgentExecuteResult {
 export interface AgentStreamChunk {
   text: string;
   status: 'streaming' | 'complete' | 'error';
+  parsedOutput?: Record<string, any>;  // 仅 status='complete' 时存在
+}
+
+/** 标准化的 Agent 输入，由 inputSchema 定义结构 */
+export interface StandardAgentInput {
+  ticket?: {
+    id: number;
+    subject: string;
+    content: string;
+  };
+  targetLang?: string;
+  lastAuditRemark?: string;
+  trackingNumbers?: string[];
+  [key: string]: any;
 }
 
 export interface AgentProxyTestResult {

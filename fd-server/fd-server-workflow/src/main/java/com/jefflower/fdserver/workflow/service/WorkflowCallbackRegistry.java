@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.BiConsumer;
+import java.util.function.Function;
 
 /**
  * 工作流回调注册中心。
@@ -21,6 +22,9 @@ public class WorkflowCallbackRegistry {
     private static final Logger log = LoggerFactory.getLogger(WorkflowCallbackRegistry.class);
 
     private final Map<String, BiConsumer<String, Map<String, Object>>> callbacks = new ConcurrentHashMap<>();
+
+    /** 业务数据提供者 */
+    private final Map<String, Function<String, Map<String, Object>>> dataProviders = new ConcurrentHashMap<>();
 
     /**
      * 注册回调
@@ -56,5 +60,27 @@ public class WorkflowCallbackRegistry {
      */
     public boolean hasCallback(String callbackType) {
         return callbacks.containsKey(callbackType);
+    }
+
+    /**
+     * 注册业务数据提供者
+     * @param entityType 实体类型（如 "ticket"）
+     * @param provider 提供者函数：businessKey -> 业务数据 Map
+     */
+    public void registerDataProvider(String entityType, Function<String, Map<String, Object>> provider) {
+        dataProviders.put(entityType, provider);
+        log.info("[WorkflowCallbackRegistry] Registered data provider: {}", entityType);
+    }
+
+    /**
+     * 获取业务数据
+     */
+    public Map<String, Object> getBusinessData(String entityType, String businessKey) {
+        Function<String, Map<String, Object>> provider = dataProviders.get(entityType);
+        if (provider == null) {
+            log.warn("[WorkflowCallbackRegistry] No data provider for entity type: {}", entityType);
+            return Map.of();
+        }
+        return provider.apply(businessKey);
     }
 }

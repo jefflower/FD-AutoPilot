@@ -1,8 +1,8 @@
 import {
-  Server, Languages, MessageSquare, CheckCircle, Send,
+  Server, Send,
   Users, Shield, RefreshCw, FileText, Database, BookOpen,
   LayoutDashboard, ListChecks, History, Settings, User, Bot,
-  Building2, GitBranch, BookMarked,
+  Building2, GitBranch, BookMarked, Workflow,
   type LucideIcon,
 } from 'lucide-react';
 import type { TabType } from '../types/navigation';
@@ -41,10 +41,9 @@ export const navigationModules: NavModule[] = [
     color: 'indigo',
     pages: [
       { tab: 'server-tickets', labelKey: 'nav.server', icon: Server },
-      { tab: 'translation', labelKey: 'nav.translation', icon: Languages, badgeKey: 'translation' },
-      { tab: 'reply', labelKey: 'nav.reply', icon: MessageSquare, badgeKey: 'reply' },
-      { tab: 'audit', labelKey: 'nav.audit', icon: CheckCircle, badgeKey: 'audit' },
+      { tab: 'automation', labelKey: 'nav.automation', icon: Workflow, badgeKey: 'translation' },
       { tab: 'approved', labelKey: 'nav.push', icon: Send },
+      { tab: 'knowledge', labelKey: 'nav.knowledge', icon: BookOpen },
       { tab: 'manual-sync', labelKey: 'nav.sync', icon: RefreshCw, requireAdmin: true },
     ],
   },
@@ -60,7 +59,6 @@ export const navigationModules: NavModule[] = [
       { tab: 'role-permission', labelKey: 'nav.rolePermission', icon: Shield },
       { tab: 'server-logs', labelKey: 'nav.logs', icon: FileText },
       { tab: 'database', labelKey: 'nav.database', icon: Database },
-      { tab: 'knowledge', labelKey: 'nav.knowledge', icon: BookOpen },
       { tab: 'org-sync', labelKey: 'nav.orgSync', icon: Building2 },
       { tab: 'agent-manage', labelKey: 'nav.agentManage', icon: Bot },
     ],
@@ -87,6 +85,7 @@ export const navigationModules: NavModule[] = [
     requireAdmin: true,
     pages: [
       { tab: 'workflow-list', labelKey: 'nav.workflowList', icon: GitBranch },
+      { tab: 'workflow-agents', labelKey: 'nav.workflowAgents', icon: Bot },
       { tab: 'workflow-guide', labelKey: 'nav.workflowGuide', icon: BookMarked },
     ],
   },
