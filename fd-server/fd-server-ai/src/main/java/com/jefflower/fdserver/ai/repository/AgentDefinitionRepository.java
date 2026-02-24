@@ -17,4 +17,6 @@ public interface AgentDefinitionRepository extends JpaRepository<AgentDefinition
     List<AgentDefinition> findByCapabilityAndEnabledTrueOrderBySortOrder(String capability);
 
     List<AgentDefinition> findAllByOrderBySortOrder();
+
+    List<AgentDefinition> findByGroupCodeAndEnabledTrueOrderBySortOrder(String groupCode);
 }

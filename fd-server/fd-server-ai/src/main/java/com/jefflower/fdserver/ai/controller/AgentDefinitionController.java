@@ -76,6 +76,16 @@ public class AgentDefinitionController {
         return ApiResponse.ok(definitionService.findByCapability(capability));
     }
 
+    @GetMapping("/definitions/group/{groupCode}")
+    public ApiResponse<List<AgentDefinition>> getByGroupCode(@PathVariable String groupCode) {
+        return ApiResponse.ok(definitionService.findByGroupCode(groupCode));
+    }
+
+    @GetMapping("/definitions/groups")
+    public ApiResponse<List<String>> getGroupCodes() {
+        return ApiResponse.ok(definitionService.getGroupCodes());
+    }
+
     @PostMapping("/definitions/test-proxy")
     @RequiresPermission("ai:manage")
     public ApiResponse<AgentProxyTestResult> testProxy(@RequestBody Map<String, String> body) {

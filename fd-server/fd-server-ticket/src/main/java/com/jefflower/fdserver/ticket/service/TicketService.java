@@ -203,11 +203,16 @@ public class TicketService {
     public TicketReply submitReply(Long ticketId, ReplyRequest request) {
         Ticket ticket = getTicketByIdSimple(ticketId);
 
-        // 幂等性检查：只有 REPLYING / PENDING_REPLY 状态才接受回复上报
-        // 如果状态已推进到 PENDING_AUDIT 或更后面，说明是重复消息，跳过
-        if (!stateMachine.isInAcceptedStates(ticket.getStatus(), TicketStateMachine.REPLY_ACCEPTED_STATES)) {
-            log.warn("[TicketService] 幂等性检查: 回复上报被跳过, ticketId={}, 当前状态={}, 期望状态=REPLYING/PENDING_REPLY",
-                    ticketId, ticket.getStatus());
+        // 幂等性检查：
+        // - Legacy 模式：只有 REPLYING / PENDING_REPLY 才接受回复上报
+        // - Flowable 并行网关模式：翻译和回复同时执行，回复完成时状态可能仍是 PENDING_TRANS/TRANSLATING，
+        //   需要放宽检查范围。状态转换由 BPMN 回调统一管理。
+        var acceptedStates = orchestrator.isFlowableMode()
+                ? TicketStateMachine.WORKFLOW_REPLY_ACCEPTED_STATES
+                : TicketStateMachine.REPLY_ACCEPTED_STATES;
+        if (!stateMachine.isInAcceptedStates(ticket.getStatus(), acceptedStates)) {
+            log.warn("[TicketService] 幂等性检查: 回复上报被跳过, ticketId={}, 当前状态={}, 期望状态={}, flowableMode={}",
+                    ticketId, ticket.getStatus(), acceptedStates, orchestrator.isFlowableMode());
             return replyRepository.findByTicket(ticket).stream()
                     .findFirst()
                     .orElseGet(() -> {

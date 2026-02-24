@@ -29,7 +29,7 @@ function makeDefinition(overrides: Partial<AgentDefinition> = {}): AgentDefiniti
         code: 'test-agent',
         name: 'Test Agent',
         description: 'A test agent',
-        providerType: 'LOCAL_CLI',
+        providerType: 'GEMINI_CLI',
         executionEnv: 'CLIENT_ONLY',
         capability: 'translate',
         providerConfig: {},
@@ -40,7 +40,7 @@ function makeDefinition(overrides: Partial<AgentDefinition> = {}): AgentDefiniti
     };
 }
 
-function makeExecutor(providerType: AgentDefinition['providerType'] = 'LOCAL_CLI', available = true): AgentExecutor {
+function makeExecutor(providerType: AgentDefinition['providerType'] = 'GEMINI_CLI', available = true): AgentExecutor {
     return {
         providerType,
         isAvailable: vi.fn(() => available),
@@ -90,10 +90,10 @@ describe('AgentRegistry', () => {
     describe('registerExecutor()', () => {
         it('注册后可通过 resolve 找到对应 executor', async () => {
             const registry = AgentRegistry.getInstance();
-            const executor = makeExecutor('LOCAL_CLI');
+            const executor = makeExecutor('GEMINI_CLI');
             registry.registerExecutor(executor);
 
-            const def = makeDefinition({ code: 'agent-a', providerType: 'LOCAL_CLI' });
+            const def = makeDefinition({ code: 'agent-a', providerType: 'GEMINI_CLI' });
             // 手动填充 definitions（通过 loadDefinitions mock）
             const apiMock = await getAgentApiMock();
             apiMock.getDefinitions.mockResolvedValue([def]);
@@ -107,14 +107,14 @@ describe('AgentRegistry', () => {
 
         it('注册不同 providerType 的 executor 互不干扰', async () => {
             const registry = AgentRegistry.getInstance();
-            const cliExecutor = makeExecutor('LOCAL_CLI');
+            const cliExecutor = makeExecutor('GEMINI_CLI');
             const httpExecutor = makeExecutor('HTTP_API');
             registry.registerExecutor(cliExecutor);
             registry.registerExecutor(httpExecutor);
 
             const apiMock = await getAgentApiMock();
             apiMock.getDefinitions.mockResolvedValue([
-                makeDefinition({ code: 'cli-agent', providerType: 'LOCAL_CLI' }),
+                makeDefinition({ code: 'cli-agent', providerType: 'GEMINI_CLI' }),
                 makeDefinition({ code: 'http-agent', providerType: 'HTTP_API' }),
             ]);
             apiMock.getBindings.mockResolvedValue({});
@@ -126,13 +126,13 @@ describe('AgentRegistry', () => {
 
         it('后注册的同类型 executor 覆盖先注册的', async () => {
             const registry = AgentRegistry.getInstance();
-            const first = makeExecutor('LOCAL_CLI');
-            const second = makeExecutor('LOCAL_CLI');
+            const first = makeExecutor('GEMINI_CLI');
+            const second = makeExecutor('GEMINI_CLI');
             registry.registerExecutor(first);
             registry.registerExecutor(second);
 
             const apiMock = await getAgentApiMock();
-            apiMock.getDefinitions.mockResolvedValue([makeDefinition({ code: 'x', providerType: 'LOCAL_CLI' })]);
+            apiMock.getDefinitions.mockResolvedValue([makeDefinition({ code: 'x', providerType: 'GEMINI_CLI' })]);
             apiMock.getBindings.mockResolvedValue({});
             await registry.loadDefinitions();
 
@@ -219,10 +219,10 @@ describe('AgentRegistry', () => {
     describe('resolve()', () => {
         it('找到定义和 executor 时返回 { definition, executor }', async () => {
             const registry = AgentRegistry.getInstance();
-            const executor = makeExecutor('LOCAL_CLI');
+            const executor = makeExecutor('GEMINI_CLI');
             registry.registerExecutor(executor);
 
-            const def = makeDefinition({ code: 'target', providerType: 'LOCAL_CLI' });
+            const def = makeDefinition({ code: 'target', providerType: 'GEMINI_CLI' });
             const apiMock = await getAgentApiMock();
             apiMock.getDefinitions.mockResolvedValue([def]);
             apiMock.getBindings.mockResolvedValue({});
@@ -246,7 +246,7 @@ describe('AgentRegistry', () => {
 
         it('定义 enabled=false 时返回 null', async () => {
             const registry = AgentRegistry.getInstance();
-            const executor = makeExecutor('LOCAL_CLI');
+            const executor = makeExecutor('GEMINI_CLI');
             registry.registerExecutor(executor);
 
             const def = makeDefinition({ code: 'disabled', enabled: false });
@@ -273,16 +273,50 @@ describe('AgentRegistry', () => {
 
         it('executor.isAvailable() 返回 false 时返回 null', async () => {
             const registry = AgentRegistry.getInstance();
-            const unavailableExecutor = makeExecutor('SHADOW_WINDOW', false);
+            const unavailableExecutor = makeExecutor('WEB_AUTOMATION', false);
             registry.registerExecutor(unavailableExecutor);
 
-            const def = makeDefinition({ code: 'shadow-agent', providerType: 'SHADOW_WINDOW' });
+            const def = makeDefinition({ code: 'shadow-agent', providerType: 'WEB_AUTOMATION' });
             const apiMock = await getAgentApiMock();
             apiMock.getDefinitions.mockResolvedValue([def]);
             apiMock.getBindings.mockResolvedValue({});
             await registry.loadDefinitions();
 
             expect(registry.resolve('shadow-agent')).toBeNull();
+        });
+
+        it('legacy providerType LOCAL_CLI 映射到 GEMINI_CLI executor', async () => {
+            const registry = AgentRegistry.getInstance();
+            const executor = makeExecutor('GEMINI_CLI');
+            registry.registerExecutor(executor);
+
+            // 后端返回旧值 LOCAL_CLI
+            const def = makeDefinition({ code: 'legacy-cli', providerType: 'LOCAL_CLI' });
+            const apiMock = await getAgentApiMock();
+            apiMock.getDefinitions.mockResolvedValue([def]);
+            apiMock.getBindings.mockResolvedValue({});
+            await registry.loadDefinitions();
+
+            const result = registry.resolve('legacy-cli');
+            expect(result).not.toBeNull();
+            expect(result!.executor).toBe(executor);
+        });
+
+        it('legacy providerType SHADOW_WINDOW 映射到 WEB_AUTOMATION executor', async () => {
+            const registry = AgentRegistry.getInstance();
+            const executor = makeExecutor('WEB_AUTOMATION');
+            registry.registerExecutor(executor);
+
+            // 后端返回旧值 SHADOW_WINDOW
+            const def = makeDefinition({ code: 'legacy-shadow', providerType: 'SHADOW_WINDOW' });
+            const apiMock = await getAgentApiMock();
+            apiMock.getDefinitions.mockResolvedValue([def]);
+            apiMock.getBindings.mockResolvedValue({});
+            await registry.loadDefinitions();
+
+            const result = registry.resolve('legacy-shadow');
+            expect(result).not.toBeNull();
+            expect(result!.executor).toBe(executor);
         });
     });
 
@@ -291,7 +325,7 @@ describe('AgentRegistry', () => {
     describe('resolveByCapability()', () => {
         it('有绑定且 agent 可用时成功解析', async () => {
             const registry = AgentRegistry.getInstance();
-            const executor = makeExecutor('LOCAL_CLI');
+            const executor = makeExecutor('GEMINI_CLI');
             registry.registerExecutor(executor);
 
             const def = makeDefinition({ code: 'translate-agent', capability: 'translate' });
@@ -327,7 +361,7 @@ describe('AgentRegistry', () => {
 
         it('绑定的 agent 已禁用时返回 null', async () => {
             const registry = AgentRegistry.getInstance();
-            const executor = makeExecutor('LOCAL_CLI');
+            const executor = makeExecutor('GEMINI_CLI');
             registry.registerExecutor(executor);
 
             const def = makeDefinition({ code: 'disabled-agent', enabled: false });
@@ -341,7 +375,7 @@ describe('AgentRegistry', () => {
 
         it('不自动回退到同 capability 的其他 agent', async () => {
             const registry = AgentRegistry.getInstance();
-            const executor = makeExecutor('LOCAL_CLI');
+            const executor = makeExecutor('GEMINI_CLI');
             registry.registerExecutor(executor);
 
             // 有 capability='translate' 的 agent 但没有绑定

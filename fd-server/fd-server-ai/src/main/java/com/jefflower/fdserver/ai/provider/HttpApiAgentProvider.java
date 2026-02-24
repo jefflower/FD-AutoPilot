@@ -52,6 +52,23 @@ public class HttpApiAgentProvider implements AgentProvider {
             return new AgentExecuteResult(false, null, null, "HTTP API Agent 缺少 baseUrl 配置");
         }
 
+        String userInput = input;  // 默认：原始输入作为 user message
+
+        // 尝试识别结构化输入并应用模板
+        try {
+            JsonNode inputNode = objectMapper.readTree(input);
+            if (inputNode.has("ticket") && systemPrompt != null && !systemPrompt.isEmpty()) {
+                // 结构化输入 + systemPrompt 模板：将 ticket 数据嵌入模板
+                String resolvedPrompt = resolveTemplateVariables(systemPrompt, inputNode);
+                userInput = resolvedPrompt;  // 将解析后的完整 prompt 作为 user message
+                systemPrompt = "";  // system message 已合并到 user message
+                log.debug("[HttpApiAgentProvider] Using template-resolved prompt, length={}", userInput.length());
+            }
+        } catch (Exception e) {
+            // 不是有效 JSON 或解析失败，保持原始 input
+            log.debug("[HttpApiAgentProvider] Input is not structured JSON, using as-is");
+        }
+
         try {
             String endpoint = baseUrl.endsWith("/") ? baseUrl + "chat/completions" : baseUrl + "/chat/completions";
 
@@ -64,7 +81,7 @@ public class HttpApiAgentProvider implements AgentProvider {
             Map<String, Object> requestBody = Map.of(
                     "model", model,
                     "max_tokens", maxTokens,
-                    "messages", buildMessages(systemPrompt, input)
+                    "messages", buildMessages(systemPrompt, userInput)
             );
 
             HttpEntity<Map<String, Object>> entity = new HttpEntity<>(requestBody, headers);
@@ -86,6 +103,63 @@ public class HttpApiAgentProvider implements AgentProvider {
             log.error("[HttpApiAgentProvider] Execution failed", e);
             return new AgentExecuteResult(false, null, null, e.getMessage());
         }
+    }
+
+    /**
+     * 将结构化输入中的字段替换到模板占位符中
+     */
+    private String resolveTemplateVariables(String template, JsonNode inputNode) {
+        String result = template;
+
+        // 替换 ${TARGET_LANG}
+        if (inputNode.has("targetLang")) {
+            String langName = langCodeToName(inputNode.get("targetLang").asText("en"));
+            result = result.replace("${TARGET_LANG}", langName);
+        }
+
+        // 替换 ${TICKET_CONTENT}
+        if (inputNode.has("ticket")) {
+            String ticketContent = formatTicketForPrompt(inputNode.get("ticket"));
+            result = result.replace("${TICKET_CONTENT}", ticketContent);
+        }
+
+        return result;
+    }
+
+    private String langCodeToName(String code) {
+        return switch (code) {
+            case "cn", "zh-CN" -> "Simplified Chinese";
+            case "en" -> "English";
+            case "jp", "ja" -> "Japanese";
+            default -> code;
+        };
+    }
+
+    private String formatTicketForPrompt(JsonNode ticketNode) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("--- TICKET TO TRANSLATE ---\n");
+        sb.append("SUBJECT: ").append(ticketNode.path("subject").asText("")).append("\n");
+
+        String content = ticketNode.path("content").asText("{}");
+        try {
+            JsonNode contentNode = objectMapper.readTree(content);
+            String desc = contentNode.path("description").asText("");
+            if (!desc.isEmpty()) {
+                sb.append("DESCRIPTION: ").append(desc).append("\n");
+            }
+            JsonNode conversations = contentNode.path("conversations");
+            if (conversations.isArray() && !conversations.isEmpty()) {
+                sb.append("CONVERSATIONS:\n");
+                for (JsonNode c : conversations) {
+                    sb.append("MSG_ID ").append(c.path("id").asText(""))
+                      .append(": ").append(c.path("bodyText").asText("")).append("\n");
+                }
+            }
+        } catch (Exception e) {
+            sb.append("CONTENT: ").append(content).append("\n");
+        }
+
+        return sb.toString();
     }
 
     /**

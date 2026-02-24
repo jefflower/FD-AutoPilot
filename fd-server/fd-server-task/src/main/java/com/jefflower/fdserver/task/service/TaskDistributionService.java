@@ -134,6 +134,12 @@ public class TaskDistributionService {
         TaskInstance task = taskInstanceRepository.findById(taskId)
                 .orElseThrow(() -> new BusinessException(ErrorCode.TASK_NOT_FOUND, "Task not found: " + taskId));
 
+        // 幂等检查：已完成/已失败的任务不可重复 complete
+        if (task.getStatus() != TaskStatus.CLAIMED) {
+            log.debug("Task {} already in status {}, ignoring duplicate complete (success={})", taskId, task.getStatus(), success);
+            return;
+        }
+
         if (!clientId.equals(task.getAssignedTo())) {
             throw new BusinessException(ErrorCode.TASK_NOT_OWNED, "Task " + taskId + " is not assigned to client " + clientId);
         }

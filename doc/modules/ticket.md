@@ -78,19 +78,38 @@ ticket 模块的依赖:
 
 ---
 
+## 工单工作流编排
+
+### 编排器接口（TicketWorkflowOrchestrator）
+
+工单处理通过 `TicketWorkflowOrchestrator` 接口编排。系统支持两种实现：
+
+| 实现类 | 编排模式 | 说明 |
+|--------|---------|------|
+| `FlowableTicketOrchestrator` | Flowable BPMN | 通过 BPMN 流程驱动（当前默认） |
+| `LegacyTicketOrchestrator` | 硬编码状态转换 | 传统 MQ 驱动（仅在 `fd.workflow.enabled=false` 时用） |
+
+**核心方法**:
+- `void onNewTicket(Ticket ticket)` — **新工单创建时调用**，启动编排流程（通常由 FreshdeskSyncService 调用）
+- `void onTranslationCompleted(Long ticketId, ...)` — **Flowable 模式下为 no-op**（改由 WorkflowTaskCompletionListener 自动唤醒）
+- `void onReplyCompleted(Long ticketId, ...)` — **Flowable 模式下为 no-op**
+- `void onAuditCompleted(Long ticketId, ...)` — 审核完成后处理
+
+---
+
 ## 工单状态机
 
 ### 状态定义 (TicketStatus Enum)
 
 ```
-PENDING_TRANS      ← 初始状态，待翻译
+PENDING_TRANS      ← 初始状态，待翻译（并行网关后自动进入翻译+回复并行阶段）
   ↓ [翻译完成]
 TRANSLATING        ← 翻译进行中
   ↓ [翻译回调成功]
 PENDING_REPLY      ← 待生成回复
   ↓ [触发 AI 回复]
 REPLYING           ← 回复生成中
-  ↓ [回复完成]
+  ↓ [回复完成+翻译完成]
 PENDING_AUDIT      ← 待审核
   ↓ [提交审核]
 AUDITING           ← 审核进行中
@@ -1532,6 +1551,24 @@ AUDITOR 或 ADMIN 提交审核意见（通过或驳回）。
 
 ---
 
+## 工作流回调配置（TicketWorkflowCallbackConfig）
+
+工单处理过程中的业务回调通过 `TicketWorkflowCallbackConfig` 注册到 `WorkflowCallbackRegistry`：
+
+| 回调类型 | 触发时机 | 业务行为 | 版本变更 |
+|---------|---------|---------|---------|
+| `ticket.translationDone` | 翻译完成后 | 更新工单状态为 PENDING_REPLY | 保留 |
+| `ticket.bothDone` | **翻译和回复都完成后**（并行汇聚） | 更新工单状态为 PENDING_AUDIT，发送审核通知 | **新增（v0.4.1）** |
+| `ticket.replyDone` | 回复完成后 | no-op（由 bothDone 统一处理） | **已弃用（v0.4.1）** |
+| `ticket.auditPass` | 审核通过后 | 标记回复、更新工单状态为 APPROVED/COMPLETED | 保留 |
+| `ticket.auditReject` | 审核驳回后 | 保存驳回意见、状态回退 | 保留 |
+
+**说明**：
+- 从 v0.4.1 起，系统采用并行网关，翻译和回复独立完成后，通过 `bothDone` 统一处理状态转换
+- `ticket.replyDone` 回调已不再使用（传统串行模式遗留）
+
+---
+
 ## 核心 Service
 
 ### TicketService
@@ -1657,10 +1694,10 @@ Freshdesk 同步服务，负责增量同步和 Webhook 处理。
    - 计算内容 SHA-256 哈希
    - 若哈希已存在 → skip（内容未变）
    - 否则 → insert 或 update Ticket 记录
+   - 若为新工单 → 调用 orchestrator.onNewTicket(ticket) **启动编排流程**
 5. 更新 SyncConfig.freshdesk_last_sync_time
 6. 创建 SyncLog 记录（syncedCount, updatedCount, status）
 7. 释放分布式锁
-8. 若有新工单 → 发送翻译任务
 ```
 
 **Webhook 处理** (processSingleTicketFromWebhook):
@@ -1668,8 +1705,10 @@ Freshdesk 同步服务，负责增量同步和 Webhook 处理。
 1. 解析 Webhook payload
 2. 查询本地是否存在此工单
 3. 不存在 → insert；存在 → update
-4. 发送翻译任务
+4. 若为新工单 → 调用 orchestrator.onNewTicket(ticket) **启动编排流程**
 ```
+
+**说明**：`onNewTicket()` 替代了原先的直接 TaskInstance 创建逻辑。在 Flowable 模式下，此方法启动 BPMN 流程实例；在 Legacy 模式下，创建初始翻译任务。
 
 ---
 

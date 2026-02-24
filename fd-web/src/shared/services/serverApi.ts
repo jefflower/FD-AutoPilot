@@ -948,6 +948,14 @@ export const agentApi = {
     });
   },
 
+  async getByGroupCode(groupCode: string): Promise<AgentDefinition[]> {
+    return (await request<AgentDefinition[]>(`/agents/definitions/group/${groupCode}`)) || [];
+  },
+
+  async getGroupCodes(): Promise<string[]> {
+    return (await request<string[]>('/agents/definitions/groups')) || [];
+  },
+
   async testProxy(baseUrl: string, apiKey?: string): Promise<AgentProxyTestResult> {
     return request<AgentProxyTestResult>('/agents/definitions/test-proxy', {
       method: 'POST',

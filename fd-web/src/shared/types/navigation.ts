@@ -25,4 +25,5 @@ export type TabType =
     | 'org-sync'
     | 'agent-manage'
     | 'workflow-list'
-    | 'workflow-guide';
+    | 'workflow-guide'
+    | 'workflow-agents';

@@ -26,6 +26,30 @@ interface ReplyHistoryPanelProps {
     onRefresh?: () => void | Promise<void>;
 }
 
+/**
+ * 尝试从可能包含 JSON 的回复文本中提取纯文本内容。
+ * 处理旧数据中 targetReply/zhReply 字段存储了完整 JSON 对象的情况。
+ */
+function extractReplyText(text: string, fieldName: 'targetReply' | 'zhReply'): string {
+    if (!text || typeof text !== 'string') return text || '';
+    const trimmed = text.trim();
+    // 如果不以 { 开头，肯定不是 JSON 对象，直接返回
+    if (!trimmed.startsWith('{')) return text;
+    try {
+        const obj = JSON.parse(trimmed);
+        if (typeof obj === 'object' && obj !== null && !Array.isArray(obj)) {
+            // 优先提取对应字段名
+            const target = obj.targetReply || obj.target_reply || obj.reply || obj.englishReply || '';
+            const zh = obj.zhReply || obj.zh_reply || obj.chineseReply || '';
+            if (fieldName === 'targetReply' && typeof target === 'string' && target.length > 0) return target;
+            if (fieldName === 'zhReply' && typeof zh === 'string' && zh.length > 0) return zh;
+        }
+    } catch {
+        // 不是有效 JSON，原样返回
+    }
+    return text;
+}
+
 const ReplyHistoryPanel: React.FC<ReplyHistoryPanelProps> = ({
     replies,
     ticketId,
@@ -59,8 +83,8 @@ const ReplyHistoryPanel: React.FC<ReplyHistoryPanelProps> = ({
 
     const enterEditMode = (reply: Reply) => {
         setEditingReplyId(reply.id);
-        setEditedTarget(reply.targetReply);
-        setEditedZh(reply.zhReply);
+        setEditedTarget(extractReplyText(reply.targetReply, 'targetReply'));
+        setEditedZh(extractReplyText(reply.zhReply, 'zhReply'));
         setNeedsSync(false);
         // 退出审核面板
         setAuditState({ replyId: null, result: 'PASS', remark: '' });
@@ -243,11 +267,11 @@ const ReplyHistoryPanel: React.FC<ReplyHistoryPanelProps> = ({
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div className="space-y-2">
                                         <div className="text-[10px] font-bold text-slate-500">{t('history.targetReply')} ({reply.replyLang})</div>
-                                        <div className="text-sm text-slate-200 bg-black/20 p-3 rounded-lg border border-white/5 whitespace-pre-wrap">{reply.targetReply}</div>
+                                        <div className="text-sm text-slate-200 bg-black/20 p-3 rounded-lg border border-white/5 whitespace-pre-wrap">{extractReplyText(reply.targetReply, 'targetReply')}</div>
                                     </div>
                                     <div className="space-y-2">
                                         <div className="text-[10px] font-bold text-slate-500">{t('history.zhReply')}</div>
-                                        <div className="text-sm text-slate-200 bg-black/20 p-3 rounded-lg border border-white/5 whitespace-pre-wrap">{reply.zhReply}</div>
+                                        <div className="text-sm text-slate-200 bg-black/20 p-3 rounded-lg border border-white/5 whitespace-pre-wrap">{extractReplyText(reply.zhReply, 'zhReply')}</div>
                                     </div>
                                 </div>
 

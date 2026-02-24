@@ -38,6 +38,12 @@ public class LegacyTicketOrchestrator implements TicketWorkflowOrchestrator {
     private final ObjectMapper objectMapper;
 
     @Override
+    public void onNewTicket(Ticket ticket) {
+        taskDistributionService.createTask("ticket.translate", "ticket",
+                String.valueOf(ticket.getId()), buildTaskPayload(ticket), TriggerType.EVENT);
+    }
+
+    @Override
     public void onTranslationCompleted(Ticket ticket) {
         taskDistributionService.completeByReference("ticket.translate", String.valueOf(ticket.getId()));
 

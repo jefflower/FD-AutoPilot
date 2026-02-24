@@ -4,13 +4,22 @@ import BpmnModeler from 'bpmn-js/lib/Modeler';
 import 'bpmn-js/dist/assets/diagram-js.css';
 import 'bpmn-js/dist/assets/bpmn-font/css/bpmn.css';
 
+export interface SelectedBpmnElement {
+    id: string;
+    type: string;        // e.g. 'bpmn:ServiceTask', 'bpmn:ParallelGateway'
+    name: string;
+    businessObject: any; // bpmn-js business object
+}
+
 export interface BpmnEditorHandle {
     getXml: () => Promise<string>;
+    getModeler: () => BpmnModeler | null;
 }
 
 interface BpmnEditorProps {
     xml: string;
     onChanged?: () => void;
+    onElementSelected?: (element: SelectedBpmnElement | null) => void;
 }
 
 const EMPTY_BPMN = `<?xml version="1.0" encoding="UTF-8"?>
@@ -31,7 +40,7 @@ const EMPTY_BPMN = `<?xml version="1.0" encoding="UTF-8"?>
   </bpmndi:BPMNDiagram>
 </definitions>`;
 
-const BpmnEditor = forwardRef<BpmnEditorHandle, BpmnEditorProps>(({ xml, onChanged }, ref) => {
+const BpmnEditor = forwardRef<BpmnEditorHandle, BpmnEditorProps>(({ xml, onChanged, onElementSelected }, ref) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const modelerRef = useRef<BpmnModeler | null>(null);
     const { i18n } = useTranslation('bpmn');
@@ -42,7 +51,11 @@ const BpmnEditor = forwardRef<BpmnEditorHandle, BpmnEditorProps>(({ xml, onChang
         return result.xml || '';
     }, []);
 
-    useImperativeHandle(ref, () => ({ getXml }), [getXml]);
+    const getModeler = useCallback((): BpmnModeler | null => {
+        return modelerRef.current;
+    }, []);
+
+    useImperativeHandle(ref, () => ({ getXml, getModeler }), [getXml, getModeler]);
 
     // 初始化 modeler（语言切换时重建以刷新 UI 文案）
     useEffect(() => {
@@ -76,6 +89,22 @@ const BpmnEditor = forwardRef<BpmnEditorHandle, BpmnEditorProps>(({ xml, onChang
         if (onChanged) {
             modeler.on('commandStack.changed', onChanged);
         }
+
+        // 监听节点选中事件
+        modeler.on('selection.changed', (e: any) => {
+            const selection = e.newSelection;
+            if (selection && selection.length === 1) {
+                const element = selection[0];
+                onElementSelected?.({
+                    id: element.id,
+                    type: element.type,
+                    name: element.businessObject?.name || '',
+                    businessObject: element.businessObject,
+                });
+            } else {
+                onElementSelected?.(null);
+            }
+        });
 
         // 加载当前 XML
         const xmlToLoad = xml?.trim() ? xml : EMPTY_BPMN;

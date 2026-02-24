@@ -195,6 +195,24 @@ public class TicketStateMachine {
     );
 
     /**
+     * Flowable 并行网关模式 — 回复上报可接受的状态集合（放宽）。
+     * <p>
+     * 并行网关下翻译和回复同时执行，回复 Agent 完成时工单状态可能仍是：
+     * - PENDING_TRANS（刚启动，翻译也还没完成）
+     * - TRANSLATING（翻译已被领取但还在进行中）
+     * - PENDING_REPLY（翻译已完成，translationDone 回调已触发）
+     * - REPLYING（回复任务已被领取）
+     * <p>
+     * 状态转换由 BPMN 回调统一管理，submitReply 仅负责保存数据。
+     */
+    public static final Set<TicketStatus> WORKFLOW_REPLY_ACCEPTED_STATES = Set.of(
+            TicketStatus.PENDING_TRANS,
+            TicketStatus.TRANSLATING,
+            TicketStatus.PENDING_REPLY,
+            TicketStatus.REPLYING
+    );
+
+    /**
      * 审核上报可接受的状态集合
      * AUDITING（正常流程）/ PENDING_AUDIT（幂等，尚未开始审核）
      */

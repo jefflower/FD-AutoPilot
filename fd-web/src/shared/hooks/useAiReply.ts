@@ -6,7 +6,7 @@ import { extractReplyArray } from '../ai/parseUtils';
 import { AGENT_MAP } from '../constants/agentMap';
 import { cleanTextForAi } from '../utils/contentCleaner';
 import { extractTrackingNumbers, isLogisticsRelated, formatTrackingContext } from '../utils/trackingUtils';
-import type { AgentDefinition, AgentExecuteInput, AgentStreamChunk } from '../types/server';
+import type { AgentDefinition, AgentExecuteInput, AgentStreamChunk, StandardAgentInput } from '../types/server';
 
 /** 单条 prompt 最大长度阈值 */
 const MAX_SINGLE_PROMPT_LENGTH = 12000;
@@ -213,9 +213,17 @@ export function useAiReply() {
 
         try {
             const registry = AgentRegistry.getInstance();
-            const resolved = registry.resolveByCapability('reply');
+
+            // 优先使用工作流注入的 agentCode（BPMN 中 AgentTaskDelegate 指定）
+            const workflowAgentCode = (ticket as any)._agentCode as string | undefined;
+            const resolved = workflowAgentCode
+                ? registry.resolve(workflowAgentCode)
+                : registry.resolveByCapability('reply');
 
             if (!resolved) {
+                if (workflowAgentCode) {
+                    throw new Error(`工作流指定的 Agent "${workflowAgentCode}" 在当前环境不可用，请检查 Agent 配置`);
+                }
                 if (!registry.hasBinding('reply')) {
                     throw new Error('回复能力未配置 Agent，请在 Agent 管理 → 能力绑定页面为 "reply" 配置 Agent');
                 }
@@ -224,110 +232,217 @@ export function useAiReply() {
 
             const { definition, executor } = resolved;
 
-            // 从 agent definition 的 providerConfig 读取配置
-            const agentConfig = parseProviderConfig(definition.providerConfig);
-
-            // 配置检查（Shadow Window 类型需要 notebookId）
-            if (definition.providerType === 'SHADOW_WINDOW' && !agentConfig.notebookId) {
-                const err = '请先在 Agent 管理中配置 Notebook ID';
-                onError?.(err);
-                setActiveReplyingId(null);
-                setProcessStatus(ticket.id, null);
-                onStatusChange?.(null);
-                return false;
-            }
-
-            const promptTemplate = agentConfig.prompt || '请根据以下工单内容回答我的问题:\n\n${工单内容}';
-            onPromptReady?.(promptTemplate);
-
-            console.log(`[useAiReply] Using agent: ${definition.code} (${definition.name})`);
-
-            // 构建上下文
-            let context = buildContext(ticket);
-
-            // 注入审核驳回反馈
-            if (ticket.lastAuditRemark) {
-                context += "\n【PREVIOUS AUDIT FEEDBACK】:\n";
-                context += `审核意见: ${ticket.lastAuditRemark}\n`;
-                context += "请根据以上审核反馈改进你的回复，避免重复之前的问题。\n\n";
-            }
-
-            // 物流信息自动注入
-            try {
-                const trackingNumbers = extractTrackingNumbers(context);
-                if (trackingNumbers.length > 0 && isLogisticsRelated(ticket.subject, context)) {
-                    console.log(`[useAiReply] Detected logistics ticket with ${trackingNumbers.length} tracking number(s), querying...`);
-                    onStreamChunk?.('');
-
-                    const { TrackingShadowService } = await import('../../tauri/services/trackingShadow');
-                    const trackingService = new TrackingShadowService();
-                    const trackingResults = await trackingService.queryMultiple(trackingNumbers.slice(0, 3));
-                    const trackingContext = formatTrackingContext(trackingResults);
-                    if (trackingContext) {
-                        context += trackingContext;
-                        console.log(`[useAiReply] Logistics context injected (${trackingContext.length} chars)`);
-                    }
-                }
-            } catch (err) {
-                console.warn('[useAiReply] Logistics query failed, proceeding without:', err);
-            }
-
-            // 构建消息（处理分段）
-            const messages = buildMessages(context, promptTemplate);
-
-            // 准备 agent 输入（notebookId/notebookUrl 已在 definition.providerConfig 中）
-            const agentInput: AgentExecuteInput = {
-                data: { messages },
-                params: {
-                    shadowHandler: createNotebookShadowHandler,
-                },
-                referenceType: 'ticket',
-                referenceId: ticket.id,
-            };
-
             let saveSuccess = false;
             let saveError: Error | null = null;
             let finalParsed: [string, string] | null = null;
 
-            // 流式处理
-            if (executor.executeStream) {
-                for await (const chunk of executor.executeStream(definition, agentInput)) {
+            console.log(`[useAiReply] Using agent: ${definition.code} (${definition.name})`);
+
+            if (definition.inputSchema) {
+                // ===== 新标准化路径：构建 StandardAgentInput，Executor 自行构建 prompt =====
+                // 优先使用工作流注入的 agentInput（来自 TaskInstance payload）
+                const workflowInput = (ticket as any)._agentInput as StandardAgentInput | undefined;
+                console.log(`[useAiReply] Standard path: agent=${definition.code}, fromWorkflow=${!!workflowInput}`);
+
+                let standardInput: StandardAgentInput;
+
+                if (workflowInput) {
+                    // 工作流路径：直接使用 agentInput
+                    standardInput = workflowInput;
+                } else {
+                    // 常规路径：Hook 层构建 StandardAgentInput
+                    // 物流信息预查询（仍在 Hook 层，因为需要 await TrackingShadowService）
+                    let trackingContext: string | undefined;
+                    try {
+                        const trackingNumbers = extractTrackingNumbers(ticket.content || '');
+                        if (trackingNumbers.length > 0 && isLogisticsRelated(ticket.subject, ticket.content || '')) {
+                            console.log(`[useAiReply] Standard path: detected ${trackingNumbers.length} tracking number(s), querying...`);
+                            const { TrackingShadowService } = await import('../../tauri/services/trackingShadow');
+                            const trackingService = new TrackingShadowService();
+                            const trackingResults = await trackingService.queryMultiple(trackingNumbers.slice(0, 3));
+                            trackingContext = formatTrackingContext(trackingResults) || undefined;
+                        }
+                    } catch (err) {
+                        console.warn('[useAiReply] Standard path: logistics query failed:', err);
+                    }
+
+                    standardInput = {
+                        ticket: { id: ticket.id, subject: ticket.subject, content: ticket.content },
+                        lastAuditRemark: ticket.lastAuditRemark,
+                        trackingContext,
+                    };
+                }
+
+                if (!executor.executeStream) {
+                    throw new Error(`Agent "${definition.code}" 不支持流式执行`);
+                }
+
+                for await (const chunk of executor.executeStream(definition, {
+                    data: standardInput,
+                    referenceType: 'ticket',
+                    referenceId: ticket.id,
+                })) {
                     if (chunk.status === 'error') {
                         throw new Error(chunk.text);
                     }
 
                     onStreamChunk?.(chunk.text);
 
-                    // 尝试解析回复
-                    if (chunk.status === 'complete' || (chunk.text.includes('[') && chunk.text.includes(']'))) {
-                        const parsed = extractReplyArray(chunk.text);
+                    if (chunk.status === 'complete' && chunk.parsedOutput) {
+                        // 新路径：直接使用 Executor 返回的 parsedOutput
+                        finalParsed = [chunk.parsedOutput.targetReply, chunk.parsedOutput.zhReply];
+                        onParsed?.(finalParsed);
+                        if (autoSave) {
+                            try {
+                                await serverApi.ticket.submitReply(ticket.id, {
+                                    zhReply: finalParsed[1],
+                                    targetReply: finalParsed[0]
+                                });
+                                saveSuccess = true;
+                            } catch (err) {
+                                console.error('Auto-save reply failed:', err);
+                                saveError = err as Error;
+                            }
+                        } else {
+                            setTempAiReply(ticket.id, finalParsed);
+                        }
+                        break;
+                    }
 
+                    // Fallback: 如果 complete 但没有 parsedOutput，尝试自行解析
+                    if (chunk.status === 'complete') {
+                        console.log(`[useAiReply] Complete chunk without parsedOutput, attempting manual parse. Text length: ${chunk.text?.length}`);
+                        const parsed = extractReplyArray(chunk.text);
                         if (parsed) {
                             finalParsed = parsed;
                             onParsed?.(finalParsed);
-
                             if (autoSave) {
                                 try {
                                     await serverApi.ticket.submitReply(ticket.id, {
-                                        zhReply: parsed[1],
-                                        targetReply: parsed[0]
+                                        zhReply: parsed[1], targetReply: parsed[0]
                                     });
                                     saveSuccess = true;
-                                    break;
                                 } catch (err) {
                                     console.error('Auto-save reply failed:', err);
                                     saveError = err as Error;
-                                    break;
                                 }
                             } else {
-                                setTempAiReply(ticket.id, parsed);
-                                break;
+                                setTempAiReply(ticket.id, finalParsed);
                             }
+                            break;
+                        } else {
+                            console.warn(`[useAiReply] Manual parse also failed for complete chunk. First 500 chars:`, chunk.text?.substring(0, 500));
                         }
                     }
                 }
+
+                // 流式结束后，如果 finalParsed 仍为 null，抛出明确错误（而非返回 false 导致无限循环）
+                if (!finalParsed && !saveSuccess && !saveError) {
+                    throw new Error('回复结果解析失败：AI 返回的内容无法提取为 [targetReply, zhReply] 格式，请检查 Agent 配置和 NotebookLM 响应');
+                }
             } else {
-                throw new Error(`Agent "${definition.code}" 不支持流式执行`);
+                // ===== 旧路径：Hook 构建 prompt，完整保留现有逻辑 =====
+                console.log(`[useAiReply] Legacy path: agent=${definition.code}`);
+
+                // 从 agent definition 的 providerConfig 读取配置
+                const agentConfig = parseProviderConfig(definition.providerConfig);
+
+                // 配置检查（Shadow Window 类型需要 notebookId）
+                if ((definition.providerType === 'WEB_AUTOMATION' || definition.providerType === 'SHADOW_WINDOW') && !agentConfig.notebookId) {
+                    const err = '请先在 Agent 管理中配置 Notebook ID';
+                    onError?.(err);
+                    setActiveReplyingId(null);
+                    setProcessStatus(ticket.id, null);
+                    onStatusChange?.(null);
+                    return false;
+                }
+
+                const promptTemplate = agentConfig.prompt || '请根据以下工单内容回答我的问题:\n\n${工单内容}';
+                onPromptReady?.(promptTemplate);
+
+                // 构建上下文
+                let context = buildContext(ticket);
+
+                // 注入审核驳回反馈
+                if (ticket.lastAuditRemark) {
+                    context += "\n【PREVIOUS AUDIT FEEDBACK】:\n";
+                    context += `审核意见: ${ticket.lastAuditRemark}\n`;
+                    context += "请根据以上审核反馈改进你的回复，避免重复之前的问题。\n\n";
+                }
+
+                // 物流信息自动注入
+                try {
+                    const trackingNumbers = extractTrackingNumbers(context);
+                    if (trackingNumbers.length > 0 && isLogisticsRelated(ticket.subject, context)) {
+                        console.log(`[useAiReply] Detected logistics ticket with ${trackingNumbers.length} tracking number(s), querying...`);
+                        onStreamChunk?.('');
+
+                        const { TrackingShadowService } = await import('../../tauri/services/trackingShadow');
+                        const trackingService = new TrackingShadowService();
+                        const trackingResults = await trackingService.queryMultiple(trackingNumbers.slice(0, 3));
+                        const trackingContext = formatTrackingContext(trackingResults);
+                        if (trackingContext) {
+                            context += trackingContext;
+                            console.log(`[useAiReply] Logistics context injected (${trackingContext.length} chars)`);
+                        }
+                    }
+                } catch (err) {
+                    console.warn('[useAiReply] Logistics query failed, proceeding without:', err);
+                }
+
+                // 构建消息（处理分段）
+                const messages = buildMessages(context, promptTemplate);
+
+                // 准备 agent 输入（notebookId/notebookUrl 已在 definition.providerConfig 中）
+                const agentInput: AgentExecuteInput = {
+                    data: { messages },
+                    params: {
+                        shadowHandler: createNotebookShadowHandler,
+                    },
+                    referenceType: 'ticket',
+                    referenceId: ticket.id,
+                };
+
+                // 流式处理
+                if (executor.executeStream) {
+                    for await (const chunk of executor.executeStream(definition, agentInput)) {
+                        if (chunk.status === 'error') {
+                            throw new Error(chunk.text);
+                        }
+
+                        onStreamChunk?.(chunk.text);
+
+                        // 尝试解析回复
+                        if (chunk.status === 'complete' || (chunk.text.includes('[') && chunk.text.includes(']'))) {
+                            const parsed = extractReplyArray(chunk.text);
+
+                            if (parsed) {
+                                finalParsed = parsed;
+                                onParsed?.(finalParsed);
+
+                                if (autoSave) {
+                                    try {
+                                        await serverApi.ticket.submitReply(ticket.id, {
+                                            zhReply: parsed[1],
+                                            targetReply: parsed[0]
+                                        });
+                                        saveSuccess = true;
+                                        break;
+                                    } catch (err) {
+                                        console.error('Auto-save reply failed:', err);
+                                        saveError = err as Error;
+                                        break;
+                                    }
+                                } else {
+                                    setTempAiReply(ticket.id, parsed);
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                } else {
+                    throw new Error(`Agent "${definition.code}" 不支持流式执行`);
+                }
             }
 
             if (autoSave) {

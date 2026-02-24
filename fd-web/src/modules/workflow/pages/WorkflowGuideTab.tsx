@@ -596,10 +596,10 @@ agentRegistry.registerExecutor(myExecutor);`}</pre>
                             <h3 className="text-sm font-semibold text-white mb-3">Agent Provider 类型</h3>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                                 <ProviderCard
-                                    type="LOCAL_CLI"
+                                    type="GEMINI_CLI"
                                     icon={<Monitor className="w-5 h-5 text-blue-400" />}
-                                    title="LOCAL_CLI"
-                                    desc="本地 CLI 工具调用，如 Gemini CLI 翻译"
+                                    title="GEMINI_CLI"
+                                    desc="本地 CLI 工具调用，如 Gemini CLI 翻译（原 LOCAL_CLI）"
                                     env="CLIENT_ONLY"
                                     example="gemini-translate (Gemini CLI)"
                                 />
@@ -612,10 +612,10 @@ agentRegistry.registerExecutor(myExecutor);`}</pre>
                                     example="OpenAI GPT-4, Claude API"
                                 />
                                 <ProviderCard
-                                    type="SHADOW_WINDOW"
+                                    type="WEB_AUTOMATION"
                                     icon={<ExternalLink className="w-5 h-5 text-purple-400" />}
-                                    title="SHADOW_WINDOW"
-                                    desc="Shadow Window 浏览器自动化操作"
+                                    title="WEB_AUTOMATION"
+                                    desc="Shadow Window 浏览器自动化操作（原 SHADOW_WINDOW）"
                                     env="CLIENT_ONLY"
                                     example="notebooklm-reply, tracking-query"
                                 />

@@ -85,6 +85,7 @@ export const navigationModules: NavModule[] = [
     requireAdmin: true,
     pages: [
       { tab: 'workflow-list', labelKey: 'nav.workflowList', icon: GitBranch },
+      { tab: 'workflow-agents', labelKey: 'nav.workflowAgents', icon: Bot },
       { tab: 'workflow-guide', labelKey: 'nav.workflowGuide', icon: BookMarked },
     ],
   },

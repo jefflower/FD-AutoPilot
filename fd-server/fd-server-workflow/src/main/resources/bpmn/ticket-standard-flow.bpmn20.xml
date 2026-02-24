@@ -8,36 +8,42 @@
              targetNamespace="http://flowable.org/fdserver"
              xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://www.omg.org/spec/BPMN/2.0/20100501/BPMN20.xsd">
 
-  <process id="ticket-standard-flow" name="标准工单处理流程" isExecutable="true">
+  <process id="ticket-standard-flow" name="标准工单处理流程（并行翻译+回复）" isExecutable="true">
 
     <!-- ========== START ========== -->
     <startEvent id="start" name="工单进入"/>
 
-    <!-- ========== TRANSLATION PHASE ========== -->
-    <sequenceFlow id="flow_start_translate" sourceRef="start" targetRef="translate_agent"/>
+    <sequenceFlow id="flow_start_to_fork" sourceRef="start" targetRef="parallel_fork_gw"/>
+
+    <!-- ========== PARALLEL FORK ========== -->
+    <parallelGateway id="parallel_fork_gw" name="并行拆分"/>
+
+    <!-- ===== BRANCH 1: TRANSLATION ===== -->
+    <sequenceFlow id="flow_fork_to_translate" sourceRef="parallel_fork_gw" targetRef="translate_agent"/>
 
     <serviceTask id="translate_agent" name="翻译 (Agent)"
                  flowable:delegateExpression="${agentTaskDelegate}">
       <extensionElements>
         <flowable:field name="agentCode" stringValue="gemini-translate"/>
+        <flowable:field name="taskType" stringValue="ticket.translate"/>
       </extensionElements>
     </serviceTask>
 
-    <sequenceFlow id="flow_translate_to_gw" sourceRef="translate_agent" targetRef="translate_env_gw"/>
+    <sequenceFlow id="flow_translate_to_env_gw" sourceRef="translate_agent" targetRef="translate_env_gw"/>
 
-    <exclusiveGateway id="translate_env_gw" name="翻译执行环境"/>
+    <exclusiveGateway id="translate_env_gw" name="翻译执行环境检测"/>
 
-    <sequenceFlow id="flow_translate_wait" sourceRef="translate_env_gw" targetRef="translate_wait">
+    <sequenceFlow id="flow_translate_to_wait" sourceRef="translate_env_gw" targetRef="translate_agent_wait">
       <conditionExpression xsi:type="tFormalExpression">${pendingTaskType != null}</conditionExpression>
     </sequenceFlow>
 
-    <sequenceFlow id="flow_translate_skip" sourceRef="translate_env_gw" targetRef="translate_merge_gw">
+    <sequenceFlow id="flow_translate_skip_wait" sourceRef="translate_env_gw" targetRef="translate_merge_gw">
       <conditionExpression xsi:type="tFormalExpression">${pendingTaskType == null}</conditionExpression>
     </sequenceFlow>
 
-    <receiveTask id="translate_wait" name="等待翻译完成"/>
+    <receiveTask id="translate_agent_wait" name="等待翻译完成"/>
 
-    <sequenceFlow id="flow_translate_wait_done" sourceRef="translate_wait" targetRef="translate_merge_gw"/>
+    <sequenceFlow id="flow_translate_wait_to_merge" sourceRef="translate_agent_wait" targetRef="translate_merge_gw"/>
 
     <exclusiveGateway id="translate_merge_gw"/>
 
@@ -50,31 +56,34 @@
       </extensionElements>
     </serviceTask>
 
-    <!-- ========== REPLY PHASE ========== -->
-    <sequenceFlow id="flow_cb_to_reply" sourceRef="translation_done_cb" targetRef="reply_agent"/>
+    <sequenceFlow id="flow_translate_cb_to_join" sourceRef="translation_done_cb" targetRef="parallel_join_gw"/>
+
+    <!-- ===== BRANCH 2: REPLY ===== -->
+    <sequenceFlow id="flow_fork_to_reply" sourceRef="parallel_fork_gw" targetRef="reply_agent"/>
 
     <serviceTask id="reply_agent" name="回复 (Agent)"
                  flowable:delegateExpression="${agentTaskDelegate}">
       <extensionElements>
         <flowable:field name="agentCode" stringValue="notebooklm-reply"/>
+        <flowable:field name="taskType" stringValue="ticket.reply"/>
       </extensionElements>
     </serviceTask>
 
-    <sequenceFlow id="flow_reply_to_gw" sourceRef="reply_agent" targetRef="reply_env_gw"/>
+    <sequenceFlow id="flow_reply_to_env_gw" sourceRef="reply_agent" targetRef="reply_env_gw"/>
 
-    <exclusiveGateway id="reply_env_gw" name="回复执行环境"/>
+    <exclusiveGateway id="reply_env_gw" name="回复执行环境检测"/>
 
-    <sequenceFlow id="flow_reply_wait" sourceRef="reply_env_gw" targetRef="reply_wait">
+    <sequenceFlow id="flow_reply_to_wait" sourceRef="reply_env_gw" targetRef="reply_agent_wait">
       <conditionExpression xsi:type="tFormalExpression">${pendingTaskType != null}</conditionExpression>
     </sequenceFlow>
 
-    <sequenceFlow id="flow_reply_skip" sourceRef="reply_env_gw" targetRef="reply_merge_gw">
+    <sequenceFlow id="flow_reply_skip_wait" sourceRef="reply_env_gw" targetRef="reply_merge_gw">
       <conditionExpression xsi:type="tFormalExpression">${pendingTaskType == null}</conditionExpression>
     </sequenceFlow>
 
-    <receiveTask id="reply_wait" name="等待回复完成"/>
+    <receiveTask id="reply_agent_wait" name="等待回复完成"/>
 
-    <sequenceFlow id="flow_reply_wait_done" sourceRef="reply_wait" targetRef="reply_merge_gw"/>
+    <sequenceFlow id="flow_reply_wait_to_merge" sourceRef="reply_agent_wait" targetRef="reply_merge_gw"/>
 
     <exclusiveGateway id="reply_merge_gw"/>
 
@@ -87,9 +96,24 @@
       </extensionElements>
     </serviceTask>
 
-    <!-- ========== AUDIT PHASE ========== -->
-    <sequenceFlow id="flow_cb_to_audit" sourceRef="reply_done_cb" targetRef="audit_create"/>
+    <sequenceFlow id="flow_reply_cb_to_join" sourceRef="reply_done_cb" targetRef="parallel_join_gw"/>
 
+    <!-- ========== PARALLEL JOIN ========== -->
+    <parallelGateway id="parallel_join_gw" name="并行汇聚"/>
+
+    <sequenceFlow id="flow_join_to_both_done" sourceRef="parallel_join_gw" targetRef="both_done_cb"/>
+
+    <!-- ========== BOTH DONE CALLBACK ========== -->
+    <serviceTask id="both_done_cb" name="翻译+回复完成回调"
+                 flowable:delegateExpression="${businessCallbackDelegate}">
+      <extensionElements>
+        <flowable:field name="callbackType" stringValue="ticket.bothDone"/>
+      </extensionElements>
+    </serviceTask>
+
+    <sequenceFlow id="flow_both_done_to_audit" sourceRef="both_done_cb" targetRef="audit_create"/>
+
+    <!-- ========== AUDIT PHASE ========== -->
     <serviceTask id="audit_create" name="创建审核任务"
                  flowable:delegateExpression="${humanTaskDelegate}">
       <extensionElements>
@@ -97,11 +121,11 @@
       </extensionElements>
     </serviceTask>
 
-    <sequenceFlow id="flow_audit_create_to_wait" sourceRef="audit_create" targetRef="audit_wait"/>
+    <sequenceFlow id="flow_audit_create_to_wait" sourceRef="audit_create" targetRef="audit_create_wait"/>
 
-    <receiveTask id="audit_wait" name="等待审核完成"/>
+    <receiveTask id="audit_create_wait" name="等待审核完成"/>
 
-    <sequenceFlow id="flow_audit_to_gw" sourceRef="audit_wait" targetRef="audit_result_gw"/>
+    <sequenceFlow id="flow_audit_wait_to_result_gw" sourceRef="audit_create_wait" targetRef="audit_result_gw"/>
 
     <exclusiveGateway id="audit_result_gw" name="审核结果"/>
 
@@ -119,7 +143,7 @@
 
     <sequenceFlow id="flow_pass_to_end" sourceRef="audit_pass_cb" targetRef="end"/>
 
-    <!-- REJECT → loop back to reply -->
+    <!-- REJECT → loop back to reply_agent (不重新翻译，不经过并行 fork 网关) -->
     <sequenceFlow id="flow_audit_reject" sourceRef="audit_result_gw" targetRef="audit_reject_cb">
       <conditionExpression xsi:type="tFormalExpression">${auditResult == 'REJECT'}</conditionExpression>
     </sequenceFlow>
@@ -133,20 +157,6 @@
 
     <sequenceFlow id="flow_reject_to_reply" sourceRef="audit_reject_cb" targetRef="reply_agent"/>
 
-    <!-- RETRANSLATE → loop back to translate -->
-    <sequenceFlow id="flow_retranslate" sourceRef="audit_result_gw" targetRef="audit_retranslate_cb">
-      <conditionExpression xsi:type="tFormalExpression">${auditResult == 'RETRANSLATE'}</conditionExpression>
-    </sequenceFlow>
-
-    <serviceTask id="audit_retranslate_cb" name="重新翻译回调"
-                 flowable:delegateExpression="${businessCallbackDelegate}">
-      <extensionElements>
-        <flowable:field name="callbackType" stringValue="ticket.auditRetranslate"/>
-      </extensionElements>
-    </serviceTask>
-
-    <sequenceFlow id="flow_retranslate_to_translate" sourceRef="audit_retranslate_cb" targetRef="translate_agent"/>
-
     <!-- ========== END ========== -->
     <endEvent id="end" name="流程结束"/>
 
@@ -154,57 +164,241 @@
 
   <bpmndi:BPMNDiagram id="BPMNDiagram_ticket_standard_flow">
     <bpmndi:BPMNPlane bpmnElement="ticket-standard-flow" id="BPMNPlane_ticket_standard_flow">
+
+      <!-- ===== SHAPES ===== -->
+
+      <!-- START -->
       <bpmndi:BPMNShape id="shape_start" bpmnElement="start">
-        <omgdc:Bounds x="100" y="200" width="36" height="36"/>
+        <omgdc:Bounds x="60" y="302" width="36" height="36"/>
       </bpmndi:BPMNShape>
+
+      <!-- PARALLEL FORK -->
+      <bpmndi:BPMNShape id="shape_parallel_fork_gw" bpmnElement="parallel_fork_gw">
+        <omgdc:Bounds x="160" y="300" width="40" height="40"/>
+      </bpmndi:BPMNShape>
+
+      <!-- BRANCH 1: TRANSLATION (上方 y=120) -->
       <bpmndi:BPMNShape id="shape_translate_agent" bpmnElement="translate_agent">
-        <omgdc:Bounds x="200" y="178" width="120" height="80"/>
+        <omgdc:Bounds x="280" y="80" width="120" height="80"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="shape_translate_env_gw" bpmnElement="translate_env_gw">
-        <omgdc:Bounds x="380" y="198" width="40" height="40"/>
+        <omgdc:Bounds x="460" y="100" width="40" height="40"/>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="shape_translate_wait" bpmnElement="translate_wait">
-        <omgdc:Bounds x="440" y="100" width="120" height="60"/>
+      <bpmndi:BPMNShape id="shape_translate_agent_wait" bpmnElement="translate_agent_wait">
+        <omgdc:Bounds x="560" y="30" width="120" height="60"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="shape_translate_merge_gw" bpmnElement="translate_merge_gw">
-        <omgdc:Bounds x="580" y="198" width="40" height="40"/>
+        <omgdc:Bounds x="740" y="100" width="40" height="40"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="shape_translation_done_cb" bpmnElement="translation_done_cb">
-        <omgdc:Bounds x="680" y="178" width="120" height="80"/>
+        <omgdc:Bounds x="840" y="80" width="120" height="80"/>
       </bpmndi:BPMNShape>
+
+      <!-- BRANCH 2: REPLY (下方 y=480) -->
       <bpmndi:BPMNShape id="shape_reply_agent" bpmnElement="reply_agent">
-        <omgdc:Bounds x="860" y="178" width="120" height="80"/>
+        <omgdc:Bounds x="280" y="440" width="120" height="80"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="shape_reply_env_gw" bpmnElement="reply_env_gw">
-        <omgdc:Bounds x="1040" y="198" width="40" height="40"/>
+        <omgdc:Bounds x="460" y="460" width="40" height="40"/>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="shape_reply_wait" bpmnElement="reply_wait">
-        <omgdc:Bounds x="1100" y="100" width="120" height="60"/>
+      <bpmndi:BPMNShape id="shape_reply_agent_wait" bpmnElement="reply_agent_wait">
+        <omgdc:Bounds x="560" y="540" width="120" height="60"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="shape_reply_merge_gw" bpmnElement="reply_merge_gw">
-        <omgdc:Bounds x="1240" y="198" width="40" height="40"/>
+        <omgdc:Bounds x="740" y="460" width="40" height="40"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="shape_reply_done_cb" bpmnElement="reply_done_cb">
-        <omgdc:Bounds x="1340" y="178" width="120" height="80"/>
+        <omgdc:Bounds x="840" y="440" width="120" height="80"/>
       </bpmndi:BPMNShape>
+
+      <!-- PARALLEL JOIN -->
+      <bpmndi:BPMNShape id="shape_parallel_join_gw" bpmnElement="parallel_join_gw">
+        <omgdc:Bounds x="1020" y="300" width="40" height="40"/>
+      </bpmndi:BPMNShape>
+
+      <!-- BOTH DONE CALLBACK -->
+      <bpmndi:BPMNShape id="shape_both_done_cb" bpmnElement="both_done_cb">
+        <omgdc:Bounds x="1120" y="280" width="120" height="80"/>
+      </bpmndi:BPMNShape>
+
+      <!-- AUDIT PHASE -->
       <bpmndi:BPMNShape id="shape_audit_create" bpmnElement="audit_create">
-        <omgdc:Bounds x="1520" y="178" width="120" height="80"/>
+        <omgdc:Bounds x="1300" y="280" width="120" height="80"/>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="shape_audit_wait" bpmnElement="audit_wait">
-        <omgdc:Bounds x="1700" y="188" width="120" height="60"/>
+      <bpmndi:BPMNShape id="shape_audit_create_wait" bpmnElement="audit_create_wait">
+        <omgdc:Bounds x="1480" y="290" width="120" height="60"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="shape_audit_result_gw" bpmnElement="audit_result_gw">
-        <omgdc:Bounds x="1880" y="198" width="40" height="40"/>
+        <omgdc:Bounds x="1660" y="300" width="40" height="40"/>
       </bpmndi:BPMNShape>
+
+      <!-- PASS -->
       <bpmndi:BPMNShape id="shape_audit_pass_cb" bpmnElement="audit_pass_cb">
-        <omgdc:Bounds x="1980" y="100" width="120" height="80"/>
+        <omgdc:Bounds x="1760" y="180" width="120" height="80"/>
       </bpmndi:BPMNShape>
+
+      <!-- REJECT -->
       <bpmndi:BPMNShape id="shape_audit_reject_cb" bpmnElement="audit_reject_cb">
-        <omgdc:Bounds x="1980" y="280" width="120" height="80"/>
+        <omgdc:Bounds x="1760" y="410" width="120" height="80"/>
       </bpmndi:BPMNShape>
+
+      <!-- END -->
       <bpmndi:BPMNShape id="shape_end" bpmnElement="end">
-        <omgdc:Bounds x="2160" y="122" width="36" height="36"/>
+        <omgdc:Bounds x="1940" y="202" width="36" height="36"/>
       </bpmndi:BPMNShape>
+
+      <!-- ===== EDGES (连线) ===== -->
+
+      <!-- START → PARALLEL FORK -->
+      <bpmndi:BPMNEdge id="edge_start_to_fork" bpmnElement="flow_start_to_fork">
+        <omgdi:waypoint x="96" y="320"/>
+        <omgdi:waypoint x="160" y="320"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- FORK → 翻译分支 (向上) -->
+      <bpmndi:BPMNEdge id="edge_fork_to_translate" bpmnElement="flow_fork_to_translate">
+        <omgdi:waypoint x="180" y="300"/>
+        <omgdi:waypoint x="180" y="120"/>
+        <omgdi:waypoint x="280" y="120"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- 翻译 Agent → 环境网关 -->
+      <bpmndi:BPMNEdge id="edge_translate_to_env_gw" bpmnElement="flow_translate_to_env_gw">
+        <omgdi:waypoint x="400" y="120"/>
+        <omgdi:waypoint x="460" y="120"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- 翻译环境网关 → 等待 (CLIENT_ONLY) -->
+      <bpmndi:BPMNEdge id="edge_translate_to_wait" bpmnElement="flow_translate_to_wait">
+        <omgdi:waypoint x="480" y="100"/>
+        <omgdi:waypoint x="480" y="60"/>
+        <omgdi:waypoint x="560" y="60"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- 翻译环境网关 → 合并 (SERVER_ONLY, 跳过等待) -->
+      <bpmndi:BPMNEdge id="edge_translate_skip_wait" bpmnElement="flow_translate_skip_wait">
+        <omgdi:waypoint x="500" y="120"/>
+        <omgdi:waypoint x="740" y="120"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- 翻译等待 → 合并 -->
+      <bpmndi:BPMNEdge id="edge_translate_wait_to_merge" bpmnElement="flow_translate_wait_to_merge">
+        <omgdi:waypoint x="680" y="60"/>
+        <omgdi:waypoint x="760" y="60"/>
+        <omgdi:waypoint x="760" y="100"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- 翻译合并 → 翻译完成回调 -->
+      <bpmndi:BPMNEdge id="edge_translate_merge_to_cb" bpmnElement="flow_translate_merge_to_cb">
+        <omgdi:waypoint x="780" y="120"/>
+        <omgdi:waypoint x="840" y="120"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- 翻译完成回调 → JOIN -->
+      <bpmndi:BPMNEdge id="edge_translate_cb_to_join" bpmnElement="flow_translate_cb_to_join">
+        <omgdi:waypoint x="960" y="120"/>
+        <omgdi:waypoint x="1040" y="120"/>
+        <omgdi:waypoint x="1040" y="300"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- FORK → 回复分支 (向下) -->
+      <bpmndi:BPMNEdge id="edge_fork_to_reply" bpmnElement="flow_fork_to_reply">
+        <omgdi:waypoint x="180" y="340"/>
+        <omgdi:waypoint x="180" y="480"/>
+        <omgdi:waypoint x="280" y="480"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- 回复 Agent → 环境网关 -->
+      <bpmndi:BPMNEdge id="edge_reply_to_env_gw" bpmnElement="flow_reply_to_env_gw">
+        <omgdi:waypoint x="400" y="480"/>
+        <omgdi:waypoint x="460" y="480"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- 回复环境网关 → 等待 (CLIENT_ONLY) -->
+      <bpmndi:BPMNEdge id="edge_reply_to_wait" bpmnElement="flow_reply_to_wait">
+        <omgdi:waypoint x="480" y="500"/>
+        <omgdi:waypoint x="480" y="570"/>
+        <omgdi:waypoint x="560" y="570"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- 回复环境网关 → 合并 (SERVER_ONLY, 跳过等待) -->
+      <bpmndi:BPMNEdge id="edge_reply_skip_wait" bpmnElement="flow_reply_skip_wait">
+        <omgdi:waypoint x="500" y="480"/>
+        <omgdi:waypoint x="740" y="480"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- 回复等待 → 合并 -->
+      <bpmndi:BPMNEdge id="edge_reply_wait_to_merge" bpmnElement="flow_reply_wait_to_merge">
+        <omgdi:waypoint x="680" y="570"/>
+        <omgdi:waypoint x="760" y="570"/>
+        <omgdi:waypoint x="760" y="500"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- 回复合并 → 回复完成回调 -->
+      <bpmndi:BPMNEdge id="edge_reply_merge_to_cb" bpmnElement="flow_reply_merge_to_cb">
+        <omgdi:waypoint x="780" y="480"/>
+        <omgdi:waypoint x="840" y="480"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- 回复完成回调 → JOIN -->
+      <bpmndi:BPMNEdge id="edge_reply_cb_to_join" bpmnElement="flow_reply_cb_to_join">
+        <omgdi:waypoint x="960" y="480"/>
+        <omgdi:waypoint x="1040" y="480"/>
+        <omgdi:waypoint x="1040" y="340"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- JOIN → bothDone 回调 -->
+      <bpmndi:BPMNEdge id="edge_join_to_both_done" bpmnElement="flow_join_to_both_done">
+        <omgdi:waypoint x="1060" y="320"/>
+        <omgdi:waypoint x="1120" y="320"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- bothDone → 创建审核 -->
+      <bpmndi:BPMNEdge id="edge_both_done_to_audit" bpmnElement="flow_both_done_to_audit">
+        <omgdi:waypoint x="1240" y="320"/>
+        <omgdi:waypoint x="1300" y="320"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- 创建审核 → 等待审核 -->
+      <bpmndi:BPMNEdge id="edge_audit_create_to_wait" bpmnElement="flow_audit_create_to_wait">
+        <omgdi:waypoint x="1420" y="320"/>
+        <omgdi:waypoint x="1480" y="320"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- 等待审核 → 审核结果网关 -->
+      <bpmndi:BPMNEdge id="edge_audit_wait_to_result_gw" bpmnElement="flow_audit_wait_to_result_gw">
+        <omgdi:waypoint x="1600" y="320"/>
+        <omgdi:waypoint x="1660" y="320"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- 审核通过 → 通过回调 -->
+      <bpmndi:BPMNEdge id="edge_audit_pass" bpmnElement="flow_audit_pass">
+        <omgdi:waypoint x="1680" y="300"/>
+        <omgdi:waypoint x="1680" y="220"/>
+        <omgdi:waypoint x="1760" y="220"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- 通过回调 → 结束 -->
+      <bpmndi:BPMNEdge id="edge_pass_to_end" bpmnElement="flow_pass_to_end">
+        <omgdi:waypoint x="1880" y="220"/>
+        <omgdi:waypoint x="1940" y="220"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- 审核驳回 → 驳回回调 -->
+      <bpmndi:BPMNEdge id="edge_audit_reject" bpmnElement="flow_audit_reject">
+        <omgdi:waypoint x="1680" y="340"/>
+        <omgdi:waypoint x="1680" y="450"/>
+        <omgdi:waypoint x="1760" y="450"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- 驳回回调 → 回到回复 Agent (循环) -->
+      <bpmndi:BPMNEdge id="edge_reject_to_reply" bpmnElement="flow_reject_to_reply">
+        <omgdi:waypoint x="1820" y="490"/>
+        <omgdi:waypoint x="1820" y="620"/>
+        <omgdi:waypoint x="340" y="620"/>
+        <omgdi:waypoint x="340" y="520"/>
+      </bpmndi:BPMNEdge>
+
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
 </definitions>

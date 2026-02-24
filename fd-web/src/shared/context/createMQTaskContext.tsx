@@ -13,6 +13,8 @@ export interface MQTask {
     error?: string;
     addedAt: number;
     taskInstanceId?: number;  // 服务端 TaskInstance ID，用于 complete/release
+    agentInput?: Record<string, any>;  // 工作流 AgentTaskDelegate 注入的标准化输入
+    agentCode?: string;  // 工作流指定的 Agent code（优先于 capability 解析）
 }
 
 /**
@@ -169,6 +171,8 @@ export function createMQTaskContext(config: MQTaskConfig) {
                         status: 'pending',
                         addedAt: Date.now(),
                         taskInstanceId: task.id,
+                        agentInput: payload.agentInput || undefined,  // 工作流标准化输入
+                        agentCode: payload.agentCode || undefined,    // 工作流指定的 Agent code
                     };
 
                     setTaskQueue(prev => [...prev, mqTask]);
@@ -271,6 +275,17 @@ export function createMQTaskContext(config: MQTaskConfig) {
             try {
                 const ticket = await serverApi.ticket.getTicketDetail(task.ticketId);
                 if (!ticket) throw new Error(`Ticket #${task.ticketId} not found`);
+
+                // 注入工作流标准化输入（如果 payload 中包含 agentInput）
+                if (task.agentInput) {
+                    (ticket as any)._agentInput = task.agentInput;
+                    console.log(`[Task-${config.taskType}] Injected agentInput for ticket #${task.ticketId}`);
+                }
+                // 注入工作流指定的 agentCode（优先于 capability 解析）
+                if (task.agentCode) {
+                    (ticket as any)._agentCode = task.agentCode;
+                    console.log(`[Task-${config.taskType}] Injected agentCode=${task.agentCode} for ticket #${task.ticketId}`);
+                }
 
                 const result = await taskProcessorRef.current(ticket, {
                     onStatusChange: (status) => console.log(`[Task-${config.taskType}] T#${task.ticketId} status: ${status}`),

@@ -681,60 +681,66 @@ try {
 
 ### 9.1 完整状态流转
 
-系统定义工单的 8 种状态及其转换规则：
+系统采用**并行网关**设计实现高效工单处理（v0.4.1+）。Flowable BPMN 流程使用 parallelForkGw（分叉网关）和 parallelJoinGw（汇聚网关）实现翻译与回复的并行执行，由 bothDone 回调处理两个分支的统一完成：
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                     工单状态流转机制                               │
-└─────────────────────────────────────────────────────────────────┘
-
-PENDING_TRANS  →  TRANSLATING  →  PENDING_REPLY
-                                       ↓
-                                   REPLYING
-                                       ↓
-                                  PENDING_AUDIT
-                                       ↓
-    ┌──────────────────────────→  AUDITING  ←────────────────────┐
-    │                               ↓                              │
-    │                        审核通过 (PASS)                        │
-    │                               ↓                              │
-    │                      ┌────────────────┐                      │
-    │                      │ 自动推送已开启? │                      │
-    │                      └────────┬───────┘                      │
-    │                              /│\                             │
-    │                           是/ │ \否                          │
-    │                            /  │  \                           │
-    │                           /   │   \                          │
-    │                     COMPLETED APPROVED  (待推送队列)          │
-    │                           ↓       ↓                          │
-    │                           └─→推送→┘  (手动/批量推送)          │
-    │                                ↓                             │
-    │                           COMPLETED                          │
-    │                                ↓                             │
-    │                        Freshdesk 状态更新                     │
-    │                                                              │
-    └──────────────────── 审核驳回 (REJECT)  ────────────────────┘
-                                ↓
-                    PENDING_REPLY (重新回复)
-                                ↓
-                        保存 lastAuditRemark
-                                ↓
-                    AI 注入审核反馈重新生成回复
+START
+  ↓
+PENDING_TRANS (待翻译，新工单创建后)
+  ↓
+MQ publish: ticket.task.translate + ticket.task.reply
+  ↓
+parallelForkGw (分叉：两个任务并行)
+  ├─ 分支1 (翻译分支):
+  │    TRANSLATING (翻译中)
+  │      ↓
+  │    POST /translation → TicketTranslation saved
+  │      ↓
+  │    待汇聚
+  │
+  └─ 分支2 (回复分支):
+       REPLYING (回复中)
+         ↓
+       POST /reply → TicketReply saved
+         ↓
+       待汇聚
+  ↓
+parallelJoinGw (汇聚：两分支都完成)
+  ↓
+bothDone 回调 (WorkflowTaskCompletionListener 触发)
+  ↓
+PENDING_AUDIT (待审核)
+  ↓
+MQ publish: ticket.task.audit
+  ↓
+AUDITING (审核中)
+  ↓
+POST /audit (审核结果)
+  ├─ PASS + 自动推送 → COMPLETED (直接推送到 Freshdesk)
+  ├─ PASS + 手动推送 → APPROVED (进入待推送队列)
+  │    ↓
+  │  POST /push-reply 或批量推送 → COMPLETED
+  │
+  └─ REJECT → PENDING_REPLY (保存 lastAuditRemark，重新生成回复)
+       ↓
+     (回复分支重新执行，翻译分支跳过)
 ```
 
 ### 9.2 状态转换详解
 
+**核心变化（v0.4.1+）**: 翻译和回复任务通过 BPMN 并行网关（parallelForkGw/parallelJoinGw）并行执行，而非串行。两个分支完成后由 bothDone 回调（WorkflowTaskCompletionListener 触发）统一进入审核阶段。
+
 | 源状态         | 目标状态         | 触发条件                           | 备注                                |
 | :------------- | :-------------- | :-------------------------------- | :--------------------------------- |
-| PENDING_TRANS  | TRANSLATING     | MQ 消息 `q.ticket.translation`     | Client Rust 消费，调用 Gemini CLI  |
-| TRANSLATING    | PENDING_REPLY   | 翻译完成回调 `POST /translation`  | 更新 TicketTranslation             |
-| PENDING_REPLY  | REPLYING        | MQ 消息 `q.ticket.reply`          | Client React 消费，操作 NotebookLM |
-| REPLYING       | PENDING_AUDIT   | 回复完成回调 `POST /reply`        | 保存 TicketReply                   |
+| PENDING_TRANS  | TRANSLATING / REPLYING | BPMN parallelForkGw 分叉，同时发送两个 MQ | Client 消费 translate + reply 任务，并行执行 |
+| TRANSLATING    | (内部) | `POST /translation` 翻译完成回调 | 更新 TicketTranslation，signal ReceiveTask |
+| REPLYING       | (内部) | `POST /reply` 回复完成回调 | 保存 TicketReply，signal ReceiveTask |
+| (并行完成)  | PENDING_AUDIT   | bothDone 回调（WorkflowTaskCompletionListener）| parallelJoinGw 汇聚后触发，两分支都完成 |
 | PENDING_AUDIT  | AUDITING        | MQ 消息 `q.ticket.audit`          | 通知前端进入审核界面               |
 | AUDITING       | COMPLETED       | `POST /audit` (PASS + 自动推送)    | 同步推送回复到 Freshdesk           |
 | AUDITING       | APPROVED        | `POST /audit` (PASS + 非自动推送)  | 进入待推送队列，需手动推送         |
 | APPROVED       | COMPLETED       | `POST /{id}/push-reply` 或批量推送 | 手动推送回复到 Freshdesk           |
-| AUDITING       | PENDING_REPLY   | `POST /audit` (REJECT)            | 保存 lastAuditRemark，重新回复     |
+| AUDITING       | PENDING_REPLY   | `POST /audit` (REJECT)            | 保存 lastAuditRemark，重新生成回复（仅回复分支） |
 
 ### 9.3 状态流转 Mermaid 图
 

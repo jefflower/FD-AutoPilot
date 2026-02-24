@@ -12,11 +12,16 @@
  *    - 快速预检：`[` 后紧跟 `"` 才尝试解析（跳过 [timestamp] 格式）
  * 2. Fallback: 简单的 indexOf/lastIndexOf 截取
  * 3. 最终 Fallback: 正则匹配 `["str1", "str2"]` 模式
+ * 4. 对象 Fallback: 尝试解析为 {targetReply, zhReply} 或 {reply, zhReply} 格式的 JSON 对象
  */
 export function extractReplyArray(text: string): [string, string] | null {
     const trimmed = text.trim();
 
-    // 策略 1: 从后往前精确搜索
+    // 策略 0: 先尝试从对象格式提取（NotebookLM 经常返回对象格式）
+    const objectResult = extractFromJsonObject(trimmed);
+    if (objectResult) return objectResult;
+
+    // 策略 1: 从后往前精确搜索数组格式
     let jsonStr: string | null = null;
     const lastBracket = trimmed.lastIndexOf(']');
     if (lastBracket !== -1) {
@@ -63,6 +68,52 @@ export function extractReplyArray(text: string): [string, string] | null {
             const str2 = match[2].replace(/\\n/g, '\n').replace(/\\"/g, '"');
             return [str1, str2];
         }
+    }
+
+    return null;
+}
+
+/**
+ * 从 JSON 对象中提取回复内容
+ *
+ * 支持多种 key 命名风格：
+ * - {targetReply, zhReply}
+ * - {target_reply, zh_reply}
+ * - {reply, zhReply}
+ * - {englishReply, chineseReply}
+ * - 以及 markdown 代码块 ```json ... ``` 包裹的格式
+ */
+function extractFromJsonObject(text: string): [string, string] | null {
+    // 去掉 markdown 代码块包裹
+    let cleaned = text;
+    const codeBlockMatch = text.match(/```(?:json)?\s*([\s\S]*?)```/);
+    if (codeBlockMatch) {
+        cleaned = codeBlockMatch[1].trim();
+    }
+
+    // 尝试从文本中提取 JSON 对象
+    const firstBrace = cleaned.indexOf('{');
+    const lastBrace = cleaned.lastIndexOf('}');
+    if (firstBrace === -1 || lastBrace <= firstBrace) return null;
+
+    const jsonCandidate = cleaned.substring(firstBrace, lastBrace + 1);
+
+    try {
+        const obj = JSON.parse(jsonCandidate);
+        if (typeof obj !== 'object' || obj === null || Array.isArray(obj)) return null;
+
+        // 尝试多种 key 组合
+        const targetReply = obj.targetReply || obj.target_reply || obj.reply
+            || obj.englishReply || obj.english_reply || obj.enReply || obj.en_reply || '';
+        const zhReply = obj.zhReply || obj.zh_reply || obj.chineseReply
+            || obj.chinese_reply || obj.cnReply || obj.cn_reply || obj.translatedReply || '';
+
+        if (typeof targetReply === 'string' && typeof zhReply === 'string'
+            && (targetReply.length > 0 || zhReply.length > 0)) {
+            return [targetReply, zhReply];
+        }
+    } catch {
+        // JSON 解析失败，忽略
     }
 
     return null;

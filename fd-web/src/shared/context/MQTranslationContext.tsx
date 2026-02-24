@@ -42,12 +42,13 @@ function isTranslationStructureMatch(content: string, translatedContent: string)
 }
 
 /**
- * 翻译 MQ Context — 并发模式（batchSize=5）
+ * 翻译 MQ Context — 串行模式（batchSize=1）
+ * 并发度由工作流编排（多 Agent 节点）控制，消费端始终逐个处理
  */
 const { Provider: BaseProvider, useTaskContext } = createMQTaskContext({
     taskType: 'ticket.translate',
-    defaultBatchSize: 5,
-    concurrencyMode: 'parallel',
+    defaultBatchSize: 1,
+    concurrencyMode: 'serial',
     pollIntervalMs: 3000,
 });
 

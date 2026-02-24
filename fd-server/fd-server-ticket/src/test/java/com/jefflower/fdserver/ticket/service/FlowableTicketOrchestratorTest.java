@@ -42,96 +42,70 @@ class FlowableTicketOrchestratorTest {
     }
 
     // =========================================================================
-    // onTranslationCompleted
+    // onNewTicket
     // =========================================================================
 
     @Nested
-    @DisplayName("onTranslationCompleted")
+    @DisplayName("onNewTicket")
+    class OnNewTicket {
+
+        @Test
+        @DisplayName("新工单 → 启动 BPMN 流程实例")
+        void newTicket_startsProcess() {
+            when(workflowService.startProcess(eq("ticket-standard-flow"), eq("7"), any()))
+                    .thenReturn("proc-new-001");
+
+            orchestrator.onNewTicket(ticket);
+
+            verify(workflowService).startProcess(eq("ticket-standard-flow"), eq("7"), any());
+        }
+
+        @Test
+        @DisplayName("启动失败 → 向上传播异常")
+        void newTicket_startFails_throwsException() {
+            when(workflowService.startProcess(any(), any(), any()))
+                    .thenThrow(new RuntimeException("Flowable 引擎不可用"));
+
+            assertThrows(RuntimeException.class, () -> orchestrator.onNewTicket(ticket));
+        }
+    }
+
+    // =========================================================================
+    // onTranslationCompleted — 并行网关模式下为 no-op
+    // =========================================================================
+
+    @Nested
+    @DisplayName("onTranslationCompleted (no-op in parallel gateway mode)")
     class OnTranslationCompleted {
 
         @Test
-        @DisplayName("流程存在 → 信号 translate_wait ReceiveTask")
-        void translationCompleted_processExists_signalsTranslateWait() {
-            when(workflowService.getProcessInstanceId("7")).thenReturn("proc-001");
-
+        @DisplayName("翻译完成 → no-op，不调用 WorkflowService")
+        void translationCompleted_isNoOp() {
             orchestrator.onTranslationCompleted(ticket);
 
-            verify(workflowService).signalReceiveTask(eq("proc-001"), eq("translate_wait"), any());
-        }
-
-        @Test
-        @DisplayName("流程不存在 → 不发送信号，不抛异常")
-        void translationCompleted_processNotFound_skipsSignalGracefully() {
-            when(workflowService.getProcessInstanceId("7")).thenReturn(null);
-
-            assertDoesNotThrow(() -> orchestrator.onTranslationCompleted(ticket));
-
-            verify(workflowService, never()).signalReceiveTask(any(), any(), any());
-        }
-
-        @Test
-        @DisplayName("信号调用抛出异常 → 捕获异常，不向上传播")
-        void translationCompleted_signalFails_doesNotThrow() {
-            when(workflowService.getProcessInstanceId("7")).thenReturn("proc-fail");
-            doThrow(new RuntimeException("Flowable 连接超时"))
-                    .when(workflowService).signalReceiveTask(any(), any(), any());
-
-            assertDoesNotThrow(() -> orchestrator.onTranslationCompleted(ticket));
-        }
-
-        @Test
-        @DisplayName("getProcessInstanceId 使用工单 ID 的字符串形式作为 businessKey")
-        void translationCompleted_usesTicketIdAsBusinessKey() {
-            ticket.setId(123L);
-            when(workflowService.getProcessInstanceId("123")).thenReturn(null);
-
-            orchestrator.onTranslationCompleted(ticket);
-
-            verify(workflowService).getProcessInstanceId("123");
+            verifyNoInteractions(workflowService);
         }
     }
 
     // =========================================================================
-    // onReplyCompleted
+    // onReplyCompleted — 并行网关模式下为 no-op
     // =========================================================================
 
     @Nested
-    @DisplayName("onReplyCompleted")
+    @DisplayName("onReplyCompleted (no-op in parallel gateway mode)")
     class OnReplyCompleted {
 
         @Test
-        @DisplayName("流程存在 → 信号 reply_wait ReceiveTask")
-        void replyCompleted_processExists_signalsReplyWait() {
-            when(workflowService.getProcessInstanceId("7")).thenReturn("proc-002");
-
+        @DisplayName("回复完成 → no-op，不调用 WorkflowService")
+        void replyCompleted_isNoOp() {
             orchestrator.onReplyCompleted(ticket);
 
-            verify(workflowService).signalReceiveTask(eq("proc-002"), eq("reply_wait"), any());
-        }
-
-        @Test
-        @DisplayName("流程不存在 → 容错处理，不抛异常")
-        void replyCompleted_processNotFound_skipsGracefully() {
-            when(workflowService.getProcessInstanceId("7")).thenReturn(null);
-
-            assertDoesNotThrow(() -> orchestrator.onReplyCompleted(ticket));
-
-            verify(workflowService, never()).signalReceiveTask(any(), any(), any());
-        }
-
-        @Test
-        @DisplayName("信号调用失败 → 捕获异常，不向上传播")
-        void replyCompleted_signalFails_doesNotThrow() {
-            when(workflowService.getProcessInstanceId("7")).thenReturn("proc-fail");
-            doThrow(new RuntimeException("节点未就绪"))
-                    .when(workflowService).signalReceiveTask(any(), any(), any());
-
-            assertDoesNotThrow(() -> orchestrator.onReplyCompleted(ticket));
+            verifyNoInteractions(workflowService);
         }
     }
 
     // =========================================================================
-    // onAuditCompleted
+    // onAuditCompleted — 手动 signal audit_create_wait
     // =========================================================================
 
     @Nested
@@ -139,15 +113,15 @@ class FlowableTicketOrchestratorTest {
     class OnAuditCompleted {
 
         @Test
-        @DisplayName("审核通过 (PASS) → 信号 audit_wait，传递审核变量")
-        void auditCompleted_pass_signalsAuditWaitWithVariables() {
+        @DisplayName("审核通过 (PASS) → 信号 audit_create_wait，传递审核变量")
+        void auditCompleted_pass_signalsAuditCreateWaitWithVariables() {
             when(workflowService.getProcessInstanceId("7")).thenReturn("proc-003");
 
             orchestrator.onAuditCompleted(ticket, AuditResult.PASS, "审核意见", 200L, 5L);
 
             @SuppressWarnings("unchecked")
             ArgumentCaptor<Map<String, Object>> varsCaptor = ArgumentCaptor.forClass(Map.class);
-            verify(workflowService).signalReceiveTask(eq("proc-003"), eq("audit_wait"), varsCaptor.capture());
+            verify(workflowService).signalReceiveTask(eq("proc-003"), eq("audit_create_wait"), varsCaptor.capture());
 
             Map<String, Object> capturedVars = varsCaptor.getValue();
             assertEquals("PASS", capturedVars.get("auditResult"));
@@ -157,15 +131,15 @@ class FlowableTicketOrchestratorTest {
         }
 
         @Test
-        @DisplayName("审核驳回 (REJECT) → 信号 audit_wait，传递驳回相关变量")
-        void auditCompleted_reject_signalsAuditWaitWithRejectVariables() {
+        @DisplayName("审核驳回 (REJECT) → 信号 audit_create_wait，传递驳回相关变量")
+        void auditCompleted_reject_signalsAuditCreateWaitWithRejectVariables() {
             when(workflowService.getProcessInstanceId("7")).thenReturn("proc-004");
 
             orchestrator.onAuditCompleted(ticket, AuditResult.REJECT, "回复不够专业", 201L, 6L);
 
             @SuppressWarnings("unchecked")
             ArgumentCaptor<Map<String, Object>> varsCaptor = ArgumentCaptor.forClass(Map.class);
-            verify(workflowService).signalReceiveTask(eq("proc-004"), eq("audit_wait"), varsCaptor.capture());
+            verify(workflowService).signalReceiveTask(eq("proc-004"), eq("audit_create_wait"), varsCaptor.capture());
 
             Map<String, Object> capturedVars = varsCaptor.getValue();
             assertEquals("REJECT", capturedVars.get("auditResult"));

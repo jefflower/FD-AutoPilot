@@ -21,7 +21,7 @@ function makeDefinition(overrides: Partial<AgentDefinition> = {}): AgentDefiniti
         code: 'mock-agent',
         name: 'Mock Agent',
         description: '',
-        providerType: 'LOCAL_CLI',
+        providerType: 'GEMINI_CLI',
         executionEnv: 'CLIENT_ONLY',
         capability: 'translate',
         providerConfig: {},
@@ -33,7 +33,7 @@ function makeDefinition(overrides: Partial<AgentDefinition> = {}): AgentDefiniti
 }
 
 function makeExecutor(
-    providerType: AgentDefinition['providerType'] = 'LOCAL_CLI',
+    providerType: AgentDefinition['providerType'] = 'GEMINI_CLI',
     available = true,
     execResult?: Partial<AgentExecuteResult>,
 ): AgentExecutor {
@@ -85,7 +85,7 @@ describe('useAgent', () => {
 
     it('execute 成功后 result 更新，loading 回到 false', async () => {
         const def = makeDefinition({ code: 'ok-agent' });
-        const executor = makeExecutor('LOCAL_CLI', true, { output: 'hello world' });
+        const executor = makeExecutor('GEMINI_CLI', true, { output: 'hello world' });
         seedRegistry(def, executor);
 
         const { result } = renderHook(() => useAgent('ok-agent'));
@@ -107,7 +107,7 @@ describe('useAgent', () => {
         const def = makeDefinition({ code: 'slow-agent' });
         let resolveFn!: (v: AgentExecuteResult) => void;
         const slowExecutor: AgentExecutor = {
-            providerType: 'LOCAL_CLI',
+            providerType: 'GEMINI_CLI',
             isAvailable: vi.fn(() => true),
             execute: vi.fn(() => new Promise<AgentExecuteResult>(r => { resolveFn = r; })),
         };
@@ -149,7 +149,7 @@ describe('useAgent', () => {
     it('executor.execute 抛出异常时 error 被设置，loading 回到 false', async () => {
         const def = makeDefinition({ code: 'err-agent' });
         const failExecutor: AgentExecutor = {
-            providerType: 'LOCAL_CLI',
+            providerType: 'GEMINI_CLI',
             isAvailable: vi.fn(() => true),
             execute: vi.fn().mockRejectedValue(new Error('CLI crashed')),
         };
@@ -167,7 +167,7 @@ describe('useAgent', () => {
 
     it('executor 返回 success=false 时设置 error', async () => {
         const def = makeDefinition({ code: 'fail-result-agent' });
-        const executor = makeExecutor('LOCAL_CLI', true, {
+        const executor = makeExecutor('GEMINI_CLI', true, {
             success: false,
             output: null,
             error: 'Translation failed',
@@ -185,7 +185,7 @@ describe('useAgent', () => {
 
     it('execute 成功后调用 agentApi.reportExecution', async () => {
         const def = makeDefinition({ code: 'report-agent' });
-        const executor = makeExecutor('LOCAL_CLI', true, { success: true, output: 'ok' });
+        const executor = makeExecutor('GEMINI_CLI', true, { success: true, output: 'ok' });
         seedRegistry(def, executor);
 
         const { agentApi } = await import('../services/serverApi');
@@ -213,7 +213,7 @@ describe('useAgent', () => {
     it('execute 失败时也调用 agentApi.reportExecution（status=FAILED）', async () => {
         const def = makeDefinition({ code: 'fail-report-agent' });
         const failExecutor: AgentExecutor = {
-            providerType: 'LOCAL_CLI',
+            providerType: 'GEMINI_CLI',
             isAvailable: vi.fn(() => true),
             execute: vi.fn().mockRejectedValue(new Error('boom')),
         };
@@ -241,7 +241,7 @@ describe('useAgent', () => {
     it('多次 execute 互不干扰（每次重置 error 和 result）', async () => {
         const def = makeDefinition({ code: 'multi-agent' });
         const executor: AgentExecutor = {
-            providerType: 'LOCAL_CLI',
+            providerType: 'GEMINI_CLI',
             isAvailable: vi.fn(() => true),
             execute: vi.fn()
                 .mockResolvedValueOnce({ success: false, output: null, durationMs: 1, error: 'first error' })
@@ -297,7 +297,7 @@ describe('useAgentStream', () => {
     it('executor 不支持 executeStream 时 yield error chunk', async () => {
         const def = makeDefinition({ code: 'no-stream-agent' });
         // makeExecutor 不含 executeStream 方法
-        const executor = makeExecutor('LOCAL_CLI');
+        const executor = makeExecutor('GEMINI_CLI');
         seedRegistry(def, executor);
 
         const { result } = renderHook(() => useAgentStream('no-stream-agent'));
@@ -327,7 +327,7 @@ describe('useAgentStream', () => {
         }
 
         const streamExecutor: AgentExecutor = {
-            providerType: 'LOCAL_CLI',
+            providerType: 'GEMINI_CLI',
             isAvailable: vi.fn(() => true),
             execute: vi.fn(),
             executeStream: vi.fn(() => mockStream()),
@@ -358,7 +358,7 @@ describe('useAgentStream', () => {
         }
 
         const streamExecutor: AgentExecutor = {
-            providerType: 'LOCAL_CLI',
+            providerType: 'GEMINI_CLI',
             isAvailable: vi.fn(() => true),
             execute: vi.fn(),
             executeStream: vi.fn(() => errorStream()),
