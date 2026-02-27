@@ -8,6 +8,32 @@ export interface ShadowResponse {
   status: 'streaming' | 'complete' | 'error';
 }
 
+// ====== Shadow 配置类型（来自 providerConfig） ======
+
+export interface ShadowTimeouts {
+  pageLoadMs?: number;           // 默认 3000
+  clearMaxMs?: number;           // 默认 15000
+  ackTimeoutMs?: number;         // 默认 30000
+  noResponseTimeoutMs?: number;  // 默认 60000（无文本时超时）
+  silenceTimeoutMs?: number;     // 默认 30000（有文本后沉默超时）
+  totalTimeoutCycles?: number;   // 默认 240
+  relayIntervalMs?: number;      // 默认 500
+  interMessageDelayMs?: number;  // 默认 1000（多轮消息间延迟）
+  finishedConfirmMs?: number;    // 默认 3000
+}
+
+export interface ShadowClearConfig {
+  enabled?: boolean;             // 默认 true
+  maxRetries?: number;           // 默认 3
+  waitAfterDeleteMs?: number;    // 默认 2500
+}
+
+export interface ShadowConfig {
+  selectors?: Record<string, string>;  // DOM 选择器覆盖
+  timeouts?: ShadowTimeouts;
+  clearConfig?: ShadowClearConfig;
+}
+
 /**
  * NotebookLM 影子窗口服务
  *
@@ -41,23 +67,6 @@ const DEFAULT_SELECTORS: Record<string, string> = {
 
 const SELECTORS_APP_CODE = 'notebook-selectors';
 
-/**
- * 加载 NotebookLM DOM 选择器
- * 优先从 UserAppSettings API 加载自定义配置，失败则使用内置默认值
- */
-async function loadSelectors(): Promise<Record<string, string>> {
-  try {
-    const raw = await userSettingsApi.getSettings(SELECTORS_APP_CODE);
-    if (raw) {
-      const custom = JSON.parse(raw) as Record<string, string>;
-      return { ...DEFAULT_SELECTORS, ...custom };
-    }
-  } catch {
-    console.warn('[NotebookShadow] Failed to load custom selectors, using defaults');
-  }
-  return { ...DEFAULT_SELECTORS };
-}
-
 /** 导出默认选择器供 SettingsTab 使用 */
 export { DEFAULT_SELECTORS, SELECTORS_APP_CODE };
 
@@ -68,10 +77,38 @@ export class NotebookShadowService {
   private notebookId: string;
   private notebookUrl?: string;
   private initialized: boolean = false;
+  private config: ShadowConfig;
 
-  constructor(notebookId: string, notebookUrl?: string) {
+  constructor(notebookId: string, notebookUrl?: string, config?: ShadowConfig) {
     this.notebookId = notebookId;
     this.notebookUrl = notebookUrl;
+    this.config = config || {};
+  }
+
+  /**
+   * 加载 NotebookLM DOM 选择器
+   * 优先级：UserSettings（最高）→ providerConfig.selectors → DEFAULT_SELECTORS（最低）
+   */
+  private async loadSelectors(): Promise<Record<string, string>> {
+    let selectors = { ...DEFAULT_SELECTORS };
+
+    // 第二优先级：providerConfig
+    if (this.config.selectors) {
+      selectors = { ...selectors, ...this.config.selectors };
+    }
+
+    // 第一优先级：UserSettings
+    try {
+      const raw = await userSettingsApi.getSettings(SELECTORS_APP_CODE);
+      if (raw) {
+        const userSelectors = JSON.parse(raw) as Record<string, string>;
+        selectors = { ...selectors, ...userSelectors };
+      }
+    } catch {
+      console.warn('[NotebookShadow] Failed to load custom selectors, using defaults');
+    }
+
+    return selectors;
   }
 
   private async acquireLock(): Promise<() => void> {
@@ -96,7 +133,8 @@ export class NotebookShadowService {
         notebookUrl: this.notebookUrl
       });
       // 等待页面加载
-      await new Promise(r => setTimeout(r, 3000));
+      const pageLoadMs = this.config.timeouts?.pageLoadMs ?? 3000;
+      await new Promise(r => setTimeout(r, pageLoadMs));
     } catch (err) {
       this.initialized = false;
       throw err;
@@ -126,9 +164,40 @@ export class NotebookShadowService {
    * 清除 NotebookLM 聊天历史，确保干净的会话环境
    */
   private async injectClearScript(selectors: Record<string, string>, sessionId: string): Promise<void> {
+    // 清理配置
+    const clearEnabled = this.config.clearConfig?.enabled ?? true;
+    const maxRetries = this.config.clearConfig?.maxRetries ?? 3;
+    const waitAfterDeleteMs = this.config.clearConfig?.waitAfterDeleteMs ?? 2500;
+    const clearMaxMs = this.config.timeouts?.clearMaxMs ?? 15000;
+
+    // 如果清理被禁用，只重置状态不清理历史
+    if (!clearEnabled) {
+      const resetScript = `
+        (function() {
+          window.__SHADOW_CLEAR_DONE = true;
+          window.__SHADOW_SESSION_ID = "${sessionId}";
+          window.__SHADOW_SESSION_ACTIVE = false;
+          window.__SHADOW_LAST_TEXT = "";
+          window.__SHADOW_LAST_BOT_IDLE = false;
+          window.__SHADOW_BOT_RESPONDED = false;
+          window.__SHADOW_HEARTBEAT = 0;
+          window.__SHADOW_LATEST_RESULT = null;
+          if (window.__SHADOW_POLL_INTERVAL) {
+            clearInterval(window.__SHADOW_POLL_INTERVAL);
+            window.__SHADOW_POLL_INTERVAL = null;
+          }
+        })();
+      `;
+      await invoke('execute_notebook_js', { script: resetScript });
+      console.log(`[NotebookShadow:${sessionId.slice(-6)}] Clear disabled, state reset only`);
+      return;
+    }
+
     const clearScript = `
       (async function() {
         const SEL = ${JSON.stringify(selectors)};
+        const MAX_RETRIES = ${maxRetries};
+        const WAIT_AFTER_DELETE_MS = ${waitAfterDeleteMs};
         ${this.buildLogHelper(sessionId)}
 
         // 标记清理开始
@@ -153,7 +222,7 @@ export class NotebookShadowService {
            // 先等待 DOM 稳定（页面可能还在渲染历史记录）
            await new Promise(r => setTimeout(r, 1500));
 
-           for (let i = 0; i < 3; i++) {
+           for (let i = 0; i < MAX_RETRIES; i++) {
               const pairs = document.querySelectorAll(SEL.CHAT_PAIR + ', ' + SEL.CHAT_PAIR_ALT);
               if (pairs.length === 0) { log('No history to clear (attempt ' + (i+1) + ')'); return true; }
 
@@ -178,7 +247,7 @@ export class NotebookShadowService {
                                  );
                  if (confirm) {
                     confirm.click();
-                    await new Promise(r => setTimeout(r, 2500));
+                    await new Promise(r => setTimeout(r, WAIT_AFTER_DELETE_MS));
                     if (document.querySelectorAll(SEL.CHAT_PAIR).length === 0) {
                       log('History cleared successfully');
                       return true;
@@ -202,8 +271,8 @@ export class NotebookShadowService {
     `;
     await invoke('execute_notebook_js', { script: clearScript });
 
-    // 轮询等待清理完成（最多 15 秒），而非硬等 1 秒
-    const maxWaitMs = 15000;
+    // 轮询等待清理完成
+    const maxWaitMs = clearMaxMs;
     const pollMs = 500;
     const startTime = Date.now();
     while (Date.now() - startTime < maxWaitMs) {
@@ -290,11 +359,12 @@ export class NotebookShadowService {
    * @param expectedPairCount 期望的 chat-pair 最少数量（发送前的数量 + 1）
    * @param timeoutMs 超时毫秒数
    */
-  private async waitForAck(selectors: Record<string, string>, expectedPairCount: number, sessionId: string, timeoutMs: number = 30000): Promise<boolean> {
+  private async waitForAck(selectors: Record<string, string>, expectedPairCount: number, sessionId: string, timeoutMs?: number): Promise<boolean> {
+    const ackTimeout = timeoutMs ?? (this.config.timeouts?.ackTimeoutMs ?? 30000);
     const startTime = Date.now();
     const pollInterval = 500;
 
-    while (Date.now() - startTime < timeoutMs) {
+    while (Date.now() - startTime < ackTimeout) {
       const checkScript = `
         (function() {
           const SEL = ${JSON.stringify(selectors)};
@@ -341,7 +411,7 @@ export class NotebookShadowService {
       await new Promise(r => setTimeout(r, pollInterval));
     }
 
-    console.warn(`[NotebookShadow:${sessionId.slice(-6)}] waitForAck timeout after ${timeoutMs}ms`);
+    console.warn(`[NotebookShadow:${sessionId.slice(-6)}] waitForAck timeout after ${ackTimeout}ms`);
     return false;
   }
 
@@ -350,6 +420,16 @@ export class NotebookShadowService {
    * 这是 query 流程的核心——建立 DOM 监控 + 事件中继 + 完成检测
    */
   private async *observeAndRelay(selectors: Record<string, string>, sessionId: string): AsyncIterableIterator<ShadowResponse> {
+    // 从 config 读取超时配置
+    const relayIntervalMs = this.config.timeouts?.relayIntervalMs ?? 500;
+    const totalTimeoutCycles = this.config.timeouts?.totalTimeoutCycles ?? 240;
+    const finishedConfirmMs = this.config.timeouts?.finishedConfirmMs ?? 3000;
+    const noResponseTimeoutMs = this.config.timeouts?.noResponseTimeoutMs ?? 60000;
+    const silenceTimeoutMs = this.config.timeouts?.silenceTimeoutMs ?? 30000;
+    // 将超时毫秒换算为轮询次数（每次轮询约 relayIntervalMs）
+    const noResponseCycles = Math.ceil(noResponseTimeoutMs / relayIntervalMs);
+    const silenceCycles = Math.ceil(silenceTimeoutMs / relayIntervalMs);
+
     // 注入 observer 脚本：建立 setInterval 监控 DOM 变化
     const observerScript = `
       (function() {
@@ -456,7 +536,7 @@ export class NotebookShadowService {
               heartbeat: window.__SHADOW_HEARTBEAT
             });
           }
-        }, 500);
+        }, ${relayIntervalMs});
 
         log('In-page observer started (global var mode)');
       })();
@@ -517,13 +597,12 @@ export class NotebookShadowService {
       let textChangeCount = 0;
       let idleCount = 0;
       let finishedSeenAt: number | null = null;
-      const FINISHED_CONFIRM_MS = 3000;
       let relayFailCount = 0;
       let lastHeartbeat = -1;
       let heartbeatStaleCount = 0;
 
       // 等待循环：定期注入 relay 脚本，读取 observer 写入的全局变量
-      while (idleCount < 240) { // 约 4 分钟总超时（对齐 Rust 5 分钟 + 30s 宽限期）
+      while (idleCount < totalTimeoutCycles) {
 
         // 注入 relay 脚本
         try {
@@ -539,7 +618,7 @@ export class NotebookShadowService {
         }
 
         // 等待事件到达
-        await new Promise(r => setTimeout(r, 500));
+        await new Promise(r => setTimeout(r, relayIntervalMs));
 
         if (shadowResult) {
           try {
@@ -602,21 +681,21 @@ export class NotebookShadowService {
         }
 
         // 确认超时
-        if (finishedSeenAt && (Date.now() - finishedSeenAt) >= FINISHED_CONFIRM_MS) {
+        if (finishedSeenAt && (Date.now() - finishedSeenAt) >= finishedConfirmMs) {
           console.log('[NotebookShadow] Finished confirmed after delay, completing.');
           yield { text: lastYieldedText, status: 'complete' };
           break;
         }
 
-        // 硬超时 A：60 秒完全无任何文本响应（消息可能根本没有发送成功）
-        if (!lastYieldedText && textChangeCount === 0 && idleCount > 120) {
-           console.error('[NotebookShadow] No response in 60s, message likely not sent or input too long');
+        // 硬超时 A：无响应超时（消息可能根本没有发送成功）
+        if (!lastYieldedText && textChangeCount === 0 && idleCount > noResponseCycles) {
+           console.error(`[NotebookShadow] No response in ${noResponseTimeoutMs}ms, message likely not sent or input too long`);
            yield { text: '', status: 'error' };
            break;
         }
-        // 硬超时 B：30 秒有文本但不再变化（bot 已停止生成）
-        if (lastYieldedText && idleCount > 60) {
-           console.log('[NotebookShadow] Hard timeout (30s silence), completing with last text.');
+        // 硬超时 B：沉默超时（有文本但不再变化，bot 已停止生成）
+        if (lastYieldedText && idleCount > silenceCycles) {
+           console.log(`[NotebookShadow] Hard timeout (${silenceTimeoutMs}ms silence), completing with last text.`);
            yield { text: lastYieldedText, status: 'complete' };
            break;
         }
@@ -670,7 +749,7 @@ export class NotebookShadowService {
       await this.init();
 
       // 动态加载选择器
-      const selectors = await loadSelectors();
+      const selectors = await this.loadSelectors();
 
       // Step 1: 清理历史 + 重置状态
       await this.injectClearScript(selectors, sessionId);
@@ -718,7 +797,7 @@ export class NotebookShadowService {
       await this.init();
 
       // 动态加载选择器
-      const selectors = await loadSelectors();
+      const selectors = await this.loadSelectors();
 
       // Step 1: forceClear（只在开头清理一次）
       await this.injectClearScript(selectors, sessionId);
@@ -736,13 +815,14 @@ export class NotebookShadowService {
         await this.injectSendScript(selectors, messages[i], sessionId);
 
         // 等待 bot 响应完成（pair 数量增加 + bot 回复完毕）
-        const acked = await this.waitForAck(selectors, pairCountBefore + 1, sessionId, 30000);
+        const acked = await this.waitForAck(selectors, pairCountBefore + 1, sessionId);
         if (!acked) {
           console.warn(`[NotebookShadow:${sessionId.slice(-6)}] Intermediate message ${i + 1} ack timeout, continuing...`);
         }
 
         // 中间消息之间稍作延迟，避免操作过快
-        await new Promise(r => setTimeout(r, 1000));
+        const interMessageDelayMs = this.config.timeouts?.interMessageDelayMs ?? 1000;
+        await new Promise(r => setTimeout(r, interMessageDelayMs));
       }
 
       // Step 3: 发送最后一条，使用完整的 observer + relay 完成检测

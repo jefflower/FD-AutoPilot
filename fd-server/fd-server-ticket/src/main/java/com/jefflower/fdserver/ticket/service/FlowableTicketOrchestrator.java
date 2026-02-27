@@ -12,7 +12,6 @@ import java.util.Map;
 /**
  * Flowable 工作流编排 — 委托 BPMN 引擎处理流程推进。
  * <p>
- * 当 fd.workflow.enabled=true 时使用。
  * 数据保存在 TicketService 中完成，此处仅负责启动流程和唤醒 BPMN ReceiveTask。
  * <p>
  * 并行网关模式下：
@@ -29,8 +28,21 @@ public class FlowableTicketOrchestrator implements TicketWorkflowOrchestrator {
     private final WorkflowService workflowService;
 
     @Override
+    public boolean hasActiveProcess(Ticket ticket) {
+        String businessKey = String.valueOf(ticket.getId());
+        return workflowService.isProcessRunning(businessKey);
+    }
+
+    @Override
     public void onNewTicket(Ticket ticket) {
         String businessKey = String.valueOf(ticket.getId());
+
+        // 防止 Webhook 并发竞态创建重复流程实例
+        if (workflowService.isProcessRunning(businessKey)) {
+            log.warn("[FlowableOrchestrator] Skipping: process already running for ticket #{}", ticket.getId());
+            return;
+        }
+
         try {
             String processInstanceId = workflowService.startProcess(
                     "ticket-standard-flow", businessKey, Map.of());
@@ -50,11 +62,6 @@ public class FlowableTicketOrchestrator implements TicketWorkflowOrchestrator {
         // 自动唤醒对应的 ReceiveTask，无需手动 signal。
         log.debug("[FlowableOrchestrator] onTranslationCompleted for ticket #{} — " +
                 "no-op, workflow auto-bridges via TaskCompletedEvent", ticket.getId());
-    }
-
-    @Override
-    public boolean isFlowableMode() {
-        return true;
     }
 
     @Override

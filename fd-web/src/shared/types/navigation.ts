@@ -26,4 +26,5 @@ export type TabType =
     | 'agent-manage'
     | 'workflow-list'
     | 'workflow-guide'
-    | 'workflow-agents';
+    | 'workflow-agents'
+    | 'agent-automation';

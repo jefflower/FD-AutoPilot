@@ -86,7 +86,8 @@ public class NotifyService {
 
     /**
      * 通知：待审核（带审核链接）
-     * 使用 auditToken 构建一键审核链接，审核人可直接在移动端完成审核
+     * 使用 auditToken 构建一键审核链接，审核人可直接在移动端完成审核。
+     * 有审核链接时使用 sendAuditNotify（钉钉: actionCard 带按钮），无链接时降级为 sendMarkdown。
      */
     @Async
     public void notifyPendingAudit(Ticket ticket, String auditToken) {
@@ -95,20 +96,19 @@ public class NotifyService {
                 ? auditBaseUrl + "/mobile-audit?token=" + auditToken
                 : null;
 
-        StringBuilder sb = new StringBuilder();
-        sb.append(String.format(
-                "**AI回复已生成，等待审核**\n" +
+        String title = "AI回复已生成，等待审核";
+        String content = String.format(
+                "**%s**\n" +
                 ">工单号: #%s\n" +
                 ">标题: %s\n" +
                 ">状态: 等待审核",
-                ticket.getExternalId(), ticket.getSubject()));
+                title, ticket.getExternalId(), ticket.getSubject());
 
         if (auditLink != null) {
-            sb.append(String.format("\n>[点击审核](%s)", auditLink));
+            sendWithActiveStrategy(s -> s.sendAuditNotify(getWebhookUrl(), title, content, auditLink));
+        } else {
+            sendWithActiveStrategy(s -> s.sendMarkdown(getWebhookUrl(), content));
         }
-
-        String content = sb.toString();
-        sendWithActiveStrategy(s -> s.sendMarkdown(getWebhookUrl(), content));
     }
 
     /**

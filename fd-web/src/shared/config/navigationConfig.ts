@@ -42,6 +42,7 @@ export const navigationModules: NavModule[] = [
     pages: [
       { tab: 'server-tickets', labelKey: 'nav.server', icon: Server },
       { tab: 'automation', labelKey: 'nav.automation', icon: Workflow, badgeKey: 'translation' },
+      { tab: 'agent-automation', labelKey: 'nav.agentAutomation', icon: Bot },
       { tab: 'approved', labelKey: 'nav.push', icon: Send },
       { tab: 'knowledge', labelKey: 'nav.knowledge', icon: BookOpen },
       { tab: 'manual-sync', labelKey: 'nav.sync', icon: RefreshCw, requireAdmin: true },

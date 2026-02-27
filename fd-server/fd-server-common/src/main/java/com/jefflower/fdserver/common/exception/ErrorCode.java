@@ -27,6 +27,7 @@ public enum ErrorCode {
     TRANSLATION_NOT_FOUND(404, "翻译不存在"),
     TRANSLATION_REQUIRED(400, "工单尚未完成翻译"),
     TRANSLATION_INCOMPLETE(400, "翻译内容不完整"),
+    REPLY_REQUIRED(400, "工单尚未完成回复，无法通过审核"),
     SYNC_FAILED(500, "同步失败"),
 
     // Task

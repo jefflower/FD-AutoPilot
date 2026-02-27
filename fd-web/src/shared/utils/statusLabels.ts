@@ -16,9 +16,7 @@ export function getUserRoleLabel(t: AnyTFunction, role: string): string {
 const TICKET_STATUS_COLORS: Record<string, string> = {
   '': 'bg-slate-500',
   PENDING_TRANS: 'bg-yellow-500/20 text-yellow-500',
-  TRANSLATING: 'bg-blue-500/20 text-blue-500',
-  PENDING_REPLY: 'bg-orange-500/20 text-orange-500',
-  REPLYING: 'bg-purple-500/20 text-purple-500',
+  PROCESSING: 'bg-blue-500/20 text-blue-500',
   PENDING_AUDIT: 'bg-pink-500/20 text-pink-500',
   AUDITING: 'bg-indigo-500/20 text-indigo-400',
   APPROVED: 'bg-emerald-500/20 text-emerald-500',
@@ -26,7 +24,7 @@ const TICKET_STATUS_COLORS: Record<string, string> = {
 };
 
 const TICKET_STATUSES = [
-  'PENDING_TRANS', 'TRANSLATING', 'PENDING_REPLY', 'REPLYING',
+  'PENDING_TRANS', 'PROCESSING',
   'PENDING_AUDIT', 'AUDITING', 'APPROVED', 'COMPLETED',
 ] as const;
 

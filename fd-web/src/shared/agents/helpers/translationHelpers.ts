@@ -96,7 +96,7 @@ export function mapTranslationResult(result: any, ticket: any, lang: string): Tr
         parsedData = JSON.parse(ticket.content || '{}');
     } catch { /* ignore */ }
 
-    const translatedConversations = result.conversations?.map((c: any) => ({
+    const translatedConversations = result.conversations?.filter((c: any) => c.id != null).map((c: any) => ({
         id: c.id,
         bodyText: c.bodyText || c.body_text || '',
         userId: c.userId || c.user_id,
@@ -105,18 +105,29 @@ export function mapTranslationResult(result: any, ticket: any, lang: string): Tr
         isPrivate: c.private || c.is_private
     })) || [];
 
-    // 验证翻译完整性
+    // 兜底：AI 返回空 conversations 但原始工单有对话时，保留原始对话
     const originalConversations = parsedData?.conversations || [];
+    const finalConversations = (translatedConversations.length > 0)
+        ? translatedConversations
+        : originalConversations.map((c: any) => ({
+            id: c.id,
+            bodyText: c.bodyText || '',
+            userId: c.userId,
+            createdAt: c.createdAt,
+            incoming: c.incoming,
+            isPrivate: c.isPrivate,
+        }));
+
     if (originalConversations.length > 0 && translatedConversations.length === 0) {
-        throw new Error(
-            `翻译不完整：原始工单有 ${originalConversations.length} 条对话，` +
-            `但翻译结果中 conversations 为空。ticketId=${ticket.id}`
+        console.warn(
+            `[mapTranslationResult] AI 未翻译对话：原始工单有 ${originalConversations.length} 条对话，` +
+            `翻译结果 conversations 为空。ticketId=${ticket.id}，已回退到原始对话`
         );
     }
 
     const translatedContent = JSON.stringify({
         description: result.descriptionText || result.description_text || '',
-        conversations: translatedConversations
+        conversations: finalConversations
     });
 
     return {

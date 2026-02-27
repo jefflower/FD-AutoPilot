@@ -36,7 +36,7 @@ export interface MQTaskContextType {
     completedHistory: MQTask[];
     clearHistory: () => void;
     isRunning: boolean;
-    startConsumer: () => void;
+    startConsumer: (agentCode?: string) => void;
     stopConsumer: () => void;
     batchSize: number;
     updateBatchSize: (size: number) => void;
@@ -61,6 +61,19 @@ interface MQTaskProviderProps {
     children: ReactNode;
     taskProcessor: (ticket: any, callbacks: TaskCallbacks) => Promise<boolean | 'skipped'>;
 }
+
+/** 失败冷却记录 */
+interface FailureCooldownEntry {
+    count: number;       // 连续失败次数
+    cooldownUntil: number; // 冷却到期时间戳（Date.now() 基准）
+}
+
+/** 失败冷却常量 */
+const FAILURE_MAX_RETRIES = 3;         // 连续失败 N 次后进入冷却
+const FAILURE_COOLDOWN_MS = 60_000;    // 冷却时长 60 秒
+
+/** 任务执行超时（防止 Agent 挂起导致任务永远卡在 processingTasks 中） */
+const TASK_TIMEOUT_MS = 5 * 60 * 1000; // 5 分钟
 
 /**
  * 获取或创建客户端唯一标识
@@ -96,7 +109,6 @@ export function createMQTaskContext(config: MQTaskConfig) {
 
         // SSE 集成
         const serverEvents = useServerEvents();
-        const sseConnected = serverEvents?.status === 'connected';
 
         // Refs
         const processingTasksRef = useRef(processingTasks);
@@ -107,9 +119,16 @@ export function createMQTaskContext(config: MQTaskConfig) {
         const queuedTicketIdsRef = useRef(new Set<number>());
         const pollTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
         const isRunningRef = useRef(false);
+        const isPollingRef = useRef(false);  // 互斥锁：防止并发 pollAndClaim
         const emptyPollLoggedRef = useRef(false);
         const scheduleNextRef = useRef<() => void>(() => {});
         const pollAndClaimRef = useRef<() => void>(() => {});
+        // 失败冷却 Map：ticketId -> { count, cooldownUntil }
+        const failureCooldownRef = useRef<Map<number, FailureCooldownEntry>>(new Map());
+        // Agent 面板启动时指定的 agentCode（覆盖 capability binding 默认解析）
+        const agentCodeOverrideRef = useRef<string | undefined>(undefined);
+        // 最近完成的 ticketId 集合（防止 claim 已完成工单的重复任务）
+        const recentlyCompletedRef = useRef<Map<number, number>>(new Map()); // ticketId -> completedAt timestamp
 
         // 合并 4 个 ref 同步为 1 个 useLayoutEffect
         useLayoutEffect(() => {
@@ -119,9 +138,11 @@ export function createMQTaskContext(config: MQTaskConfig) {
             isRunningRef.current = isRunning;
         }, [processingTasks, taskProcessor, batchSize, isRunning]);
 
-        // 核心轮询逻辑：从服务端 claim 任务
+        // 核心轮询逻辑：从服务端 claim 任务（互斥：同一时间只允许一次执行）
         const pollAndClaim = useCallback(async () => {
             if (!isRunningRef.current) return;
+            if (isPollingRef.current) return;  // 互斥：有正在执行的 poll，跳过
+            isPollingRef.current = true;
 
             try {
                 const clientId = getOrCreateClientId();
@@ -133,6 +154,8 @@ export function createMQTaskContext(config: MQTaskConfig) {
                 if (currentSlots <= 0) return; // 没有空闲槽位，跳过
 
                 const claimed = await taskApi.claimTasks(config.taskType, clientId, currentSlots);
+
+
                 if (claimed.length === 0) {
                     // 首次空结果时记录日志（避免每次轮询都刷日志）
                     if (!emptyPollLoggedRef.current) {
@@ -150,16 +173,34 @@ export function createMQTaskContext(config: MQTaskConfig) {
 
                     const ticketId = payload.ticketId || parseInt(task.referenceId || '0');
 
-                    // 去重检查
+                    // 去重检查：任务已在执行中、队列中或最近已完成，直接跳过（不 release）
+                    // 服务端 claimTasks 会返回已 CLAIMED 的任务（"你已拥有此任务"语义），
+                    // 此时不能 release，否则正在执行的 Agent 完成后 completeTask 会失败
                     if (processingTasksRef.current.has(ticketId) || queuedTicketIdsRef.current.has(ticketId)) {
-                        console.warn(`[Task-${config.taskType}] Duplicate: ticket #${ticketId}, releasing task`);
-                        // 释放重复任务
-                        try {
-                            await taskApi.releaseTask(task.id, clientId);
-                        } catch (releaseErr) {
-                            console.error(`[Task-${config.taskType}] Failed to release duplicate task:`, releaseErr);
-                        }
                         continue;
+                    }
+
+                    // 最近完成的工单去重（30 分钟内完成的工单不再领取同类型任务）
+                    const completedAt = recentlyCompletedRef.current.get(ticketId);
+                    if (completedAt && Date.now() - completedAt < 30 * 60 * 1000) {
+                        continue;
+                    }
+
+                    // 失败冷却检查：同一 ticketId 连续失败超过阈值，冷却期内跳过
+                    const cooldownEntry = failureCooldownRef.current.get(ticketId);
+                    if (cooldownEntry && cooldownEntry.count >= FAILURE_MAX_RETRIES) {
+                        if (Date.now() < cooldownEntry.cooldownUntil) {
+                            const remainSec = Math.ceil((cooldownEntry.cooldownUntil - Date.now()) / 1000);
+                            console.warn(`[Task-${config.taskType}] Ticket #${ticketId} in cooldown (${cooldownEntry.count} failures, ${remainSec}s remaining), releasing task`);
+                            try {
+                                await taskApi.releaseTask(task.id, clientId);
+                            } catch (releaseErr) {
+                                console.error(`[Task-${config.taskType}] Failed to release cooldown task:`, releaseErr);
+                            }
+                            continue;
+                        }
+                        // 冷却已过期，清除记录，允许重试
+                        failureCooldownRef.current.delete(ticketId);
                     }
 
                     queuedTicketIdsRef.current.add(ticketId);
@@ -175,7 +216,11 @@ export function createMQTaskContext(config: MQTaskConfig) {
                         agentCode: payload.agentCode || undefined,    // 工作流指定的 Agent code
                     };
 
-                    setTaskQueue(prev => [...prev, mqTask]);
+                    setTaskQueue(prev => {
+                        // 队列级去重（防御性兜底）
+                        if (prev.some(t => t.ticketId === mqTask.ticketId)) return prev;
+                        return [...prev, mqTask];
+                    });
                 }
 
                 // 消息被消费，刷新侧边栏计数
@@ -183,6 +228,8 @@ export function createMQTaskContext(config: MQTaskConfig) {
             } catch (err) {
                 console.error(`[Task-${config.taskType}] Claim failed:`, err);
                 setLogs(prev => [...prev.slice(-49), `❌ ${config.taskType} 任务领取失败: ${(err as Error).message}`]);
+            } finally {
+                isPollingRef.current = false;
             }
         }, []);
 
@@ -204,45 +251,58 @@ export function createMQTaskContext(config: MQTaskConfig) {
             });
         }, [serverEvents, isRunning]);
 
-        // SSE 连接状态变化时调整轮询间隔
+        // 消费者运行时维持固定轮询（唯一的定时器管理点）
         useEffect(() => {
-            if (!isRunning) return;
-
-            // 清除旧定时器
-            if (pollTimerRef.current) {
-                clearInterval(pollTimerRef.current);
+            if (!isRunning) {
+                // 停止时清理定时器
+                if (pollTimerRef.current) {
+                    clearInterval(pollTimerRef.current);
+                    pollTimerRef.current = null;
+                }
+                return;
             }
 
-            // SSE 连接中 → 30s 兜底轮询；断开 → 3s 高频轮询
-            const interval = sseConnected ? 30000 : (config.pollIntervalMs || 3000);
+            // 启动时：立即执行一次 claim + 创建固定轮询
+            pollAndClaimRef.current();
+            const interval = config.pollIntervalMs || 5000;
             pollTimerRef.current = setInterval(() => pollAndClaimRef.current(), interval);
+            console.log(`[Task-${config.taskType}] Poll timer started: ${interval}ms`);
 
-            if (sseConnected) {
-                console.log(`[Task-${config.taskType}] SSE connected, polling interval → 30s (fallback)`);
-            }
-        }, [sseConnected, isRunning]);
+            return () => {
+                if (pollTimerRef.current) {
+                    clearInterval(pollTimerRef.current);
+                    pollTimerRef.current = null;
+                }
+            };
+        }, [isRunning]);
 
-        // 启动消费者
-        const startConsumer = useCallback(() => {
+        // 启动消费者（仅设置状态，定时器由 useEffect[isRunning] 统一管理）
+        const startConsumer = useCallback((agentCode?: string) => {
+            agentCodeOverrideRef.current = agentCode;
             setIsRunning(true);
             isRunningRef.current = true;
             emptyPollLoggedRef.current = false;
-            setLogs(prev => [...prev, `▶ ${config.taskType} 任务消费启动`]);
-            // 立即执行一次 claim
-            pollAndClaim();
-            // 启动定时轮询（SSE 连接时用 30s 兜底，否则 3s）
-            const interval = sseConnected ? 30000 : (config.pollIntervalMs || 3000);
-            pollTimerRef.current = setInterval(pollAndClaim, interval);
-        }, [pollAndClaim, sseConnected]);
+            const agentLabel = agentCode ? ` (agent: ${agentCode})` : '';
+            setLogs(prev => [...prev, `▶ ${config.taskType} 任务消费启动${agentLabel}`]);
+        }, []);
 
-        // 停止消费者
+        // 停止消费者（定时器由 useEffect[isRunning] 统一清理）
         const stopConsumer = useCallback(() => {
-            if (pollTimerRef.current) {
-                clearInterval(pollTimerRef.current);
-                pollTimerRef.current = null;
-            }
             setIsRunning(false);
             isRunningRef.current = false;
+            agentCodeOverrideRef.current = undefined;
+            // 清空队列并释放已领取但未执行的任务
+            const clientId = getOrCreateClientId();
+            setTaskQueue(prev => {
+                for (const task of prev) {
+                    if (task.taskInstanceId) {
+                        taskApi.releaseTask(task.taskInstanceId, clientId).catch(err =>
+                            console.warn(`[Task-${config.taskType}] Release failed:`, err));
+                    }
+                    queuedTicketIdsRef.current.delete(task.ticketId);
+                }
+                return [];
+            });
             setLogs(prev => [...prev, `⏹ ${config.taskType} 任务消费已停止`]);
         }, []);
 
@@ -251,18 +311,9 @@ export function createMQTaskContext(config: MQTaskConfig) {
             setBatchSize(size);
         }, []);
 
-        // 组件卸载时清理定时器
-        useEffect(() => {
-            return () => {
-                if (pollTimerRef.current) {
-                    clearInterval(pollTimerRef.current);
-                }
-            };
-        }, []);
-
         // 处理单个任务
         const processOneTask = useCallback(async (task: MQTask) => {
-            console.log(`[Task-${config.taskType}] ▶ Processing ticket #${task.ticketId}`);
+            console.log(`[Task-${config.taskType}] ▶ Processing ticket #${task.ticketId}, taskInstanceId=${task.taskInstanceId}`);
 
             setProcessingTasks(prev => {
                 const next = new Map(prev);
@@ -271,6 +322,7 @@ export function createMQTaskContext(config: MQTaskConfig) {
             });
 
             const clientId = getOrCreateClientId();
+            let taskFailed = false; // 本地变量追踪失败状态，用于 finally 中判断是否快速重试
 
             try {
                 const ticket = await serverApi.ticket.getTicketDetail(task.ticketId);
@@ -281,24 +333,50 @@ export function createMQTaskContext(config: MQTaskConfig) {
                     (ticket as any)._agentInput = task.agentInput;
                     console.log(`[Task-${config.taskType}] Injected agentInput for ticket #${task.ticketId}`);
                 }
-                // 注入工作流指定的 agentCode（优先于 capability 解析）
-                if (task.agentCode) {
+                // Agent 面板显式指定的 agentCode 最高优先（用户从面板启动特定 Agent）
+                // 工作流注入的 agentCode 次之（BPMN AgentTaskDelegate 指定）
+                // 都没有时由 capability binding 解析
+                if (agentCodeOverrideRef.current) {
+                    (ticket as any)._agentCode = agentCodeOverrideRef.current;
+                    console.log(`[Task-${config.taskType}] Using panel agentCode=${agentCodeOverrideRef.current} for ticket #${task.ticketId}`);
+                } else if (task.agentCode) {
                     (ticket as any)._agentCode = task.agentCode;
-                    console.log(`[Task-${config.taskType}] Injected agentCode=${task.agentCode} for ticket #${task.ticketId}`);
+                    console.log(`[Task-${config.taskType}] Using workflow agentCode=${task.agentCode} for ticket #${task.ticketId}`);
                 }
 
-                const result = await taskProcessorRef.current(ticket, {
-                    onStatusChange: (status) => console.log(`[Task-${config.taskType}] T#${task.ticketId} status: ${status}`),
-                    onError: (err) => console.error(`[Task-${config.taskType}] T#${task.ticketId} error: ${err}`),
-                    addLog: (msg) => setLogs(prev => [...prev.slice(-49), msg]),
+                // 超时保护：防止 Agent 执行挂起（如 Tauri invoke 超时、网络无响应）
+                let timeoutTimer: ReturnType<typeof setTimeout> | undefined;
+                const timeoutPromise = new Promise<never>((_, reject) => {
+                    timeoutTimer = setTimeout(
+                        () => reject(new Error(`任务执行超时（${TASK_TIMEOUT_MS / 1000}s），Agent 可能挂起`)),
+                        TASK_TIMEOUT_MS,
+                    );
                 });
+
+                let result: boolean | 'skipped';
+                try {
+                    result = await Promise.race([
+                        taskProcessorRef.current(ticket, {
+                            onStatusChange: (status) => console.log(`[Task-${config.taskType}] T#${task.ticketId} status: ${status}`),
+                            onError: (err) => console.error(`[Task-${config.taskType}] T#${task.ticketId} error: ${err}`),
+                            addLog: (msg) => setLogs(prev => [...prev.slice(-49), msg]),
+                        }),
+                        timeoutPromise,
+                    ]);
+                } finally {
+                    clearTimeout(timeoutTimer);
+                }
 
                 if (!result) throw new Error(`${config.taskType} function returned false`);
 
                 const wasSkipped = result === 'skipped';
                 console.log(`[Task-${config.taskType}] ${wasSkipped ? '⏭' : '✅'} ${wasSkipped ? 'Skipped' : 'Completed'} ticket #${task.ticketId}`);
 
-                // 通知服务端任务完成
+                // 成功时清除该 ticketId 的失败冷却记录，并记录为最近完成（防止重复 claim）
+                failureCooldownRef.current.delete(task.ticketId);
+                recentlyCompletedRef.current.set(task.ticketId, Date.now());
+
+                // 通知服务端任务完成（触发 WorkflowTaskBridge → signal ReceiveTask → 推进 BPMN）
                 if (task.taskInstanceId) {
                     try {
                         await taskApi.completeTask(task.taskInstanceId, {
@@ -306,14 +384,38 @@ export function createMQTaskContext(config: MQTaskConfig) {
                             success: true,
                             message: wasSkipped ? 'skipped' : 'completed',
                         });
+                        console.log(`[Task-${config.taskType}] ✅ Task complete API succeeded for ticket #${task.ticketId}, taskInstanceId=${task.taskInstanceId}`);
                     } catch (ackErr) {
-                        console.warn(`[Task-${config.taskType}] Complete API failed for ticket #${task.ticketId} (task succeeded):`, ackErr);
+                        // 如果 complete API 失败，后端 TaskInstance 仍为 CLAIMED，BPMN ReceiveTask 不会被 signal，工作流会卡住
+                        console.error(`[Task-${config.taskType}] ❌ Task complete API FAILED for ticket #${task.ticketId}, taskInstanceId=${task.taskInstanceId}:`, ackErr);
+                        setLogs(prev => [...prev.slice(-49), `❌ ${config.taskType} #${task.ticketId} 完成上报失败: ${(ackErr as Error).message || ackErr}`]);
                     }
+                } else {
+                    console.warn(`[Task-${config.taskType}] No taskInstanceId for ticket #${task.ticketId}, cannot notify server`);
+                    setLogs(prev => [...prev.slice(-49), `⚠️ ${config.taskType} #${task.ticketId} 无 taskInstanceId，无法通知服务端`]);
                 }
 
                 setCompletedHistory(prev => [{ ...task, status: wasSkipped ? 'skipped' as const : 'completed' as const }, ...prev].slice(0, 50));
+
+                // 通知工单详情页刷新（ticket-task-completed 事件携带 ticketId）
+                window.dispatchEvent(new CustomEvent('ticket-task-completed', { detail: { ticketId: task.ticketId, taskType: config.taskType } }));
             } catch (err: any) {
+                taskFailed = true;
                 console.error(`[Task-${config.taskType}] ❌ Failed ticket #${task.ticketId}:`, err);
+
+                // 更新失败冷却记录
+                const prev = failureCooldownRef.current.get(task.ticketId);
+                const newCount = (prev?.count || 0) + 1;
+                failureCooldownRef.current.set(task.ticketId, {
+                    count: newCount,
+                    cooldownUntil: newCount >= FAILURE_MAX_RETRIES
+                        ? Date.now() + FAILURE_COOLDOWN_MS
+                        : 0,
+                });
+                if (newCount >= FAILURE_MAX_RETRIES) {
+                    console.warn(`[Task-${config.taskType}] Ticket #${task.ticketId} reached ${newCount} consecutive failures, cooldown ${FAILURE_COOLDOWN_MS / 1000}s`);
+                    setLogs(prev => [...prev.slice(-49), `⚠️ ${config.taskType} #${task.ticketId} 连续失败 ${newCount} 次，冷却 ${FAILURE_COOLDOWN_MS / 1000} 秒`]);
+                }
 
                 // 通知服务端任务失败
                 if (task.taskInstanceId) {
@@ -344,19 +446,21 @@ export function createMQTaskContext(config: MQTaskConfig) {
                 if (config.concurrencyMode === 'parallel') {
                     activeCountRef.current--;
                 } else {
-                    if (config.interTaskDelayMs) {
+                    // 仅失败任务施加间隔延迟（防止快速失败循环），成功任务立即释放
+                    if (taskFailed && config.interTaskDelayMs) {
                         await new Promise(r => setTimeout(r, config.interTaskDelayMs));
                     }
                     isProcessingRef.current = false;
                 }
 
-                // 触发重新调度（直接调用调度函数，而非通过 setState 强制重渲染）
-                scheduleNextRef.current();
-
-                // 任务完成后立即触发一次 pollAndClaim，避免串行模式下
-                // 队列为空时需要等待定时器（SSE 连接时高达 30s）才能领取下一个任务
+                // 触发重新调度（停止后不再调度新任务）
                 if (isRunningRef.current) {
-                    // 短暂延迟后触发，确保 scheduleNext 的 setState 已处理
+                    scheduleNextRef.current();
+                }
+
+                // 成功完成时：100ms 后立即领取下一个任务（保持吞吐量）
+                // 失败时：不立即重试，等待 5s 定时轮询（防止快速失败循环导致渲染风暴）
+                if (isRunningRef.current && !taskFailed) {
                     setTimeout(() => pollAndClaimRef.current(), 100);
                 }
 
@@ -367,8 +471,10 @@ export function createMQTaskContext(config: MQTaskConfig) {
 
         // 任务调度函数（提取为独立函数，供 scheduleNextRef 调用）
         const scheduleNext = useCallback(() => {
+            if (!isRunningRef.current) return;  // 停止后不再调度新任务
             setTaskQueue(currentQueue => {
                 if (currentQueue.length === 0) return currentQueue;
+                if (!isRunningRef.current) return currentQueue;  // 二次检查（闭包竞态）
 
                 if (config.concurrencyMode === 'parallel') {
                     const maxConcurrent = batchSizeRef.current;
@@ -386,15 +492,34 @@ export function createMQTaskContext(config: MQTaskConfig) {
                     return currentQueue.slice(count);
                 } else {
                     if (isProcessingRef.current) return currentQueue;
-                    isProcessingRef.current = true;
 
-                    const currentTask = currentQueue[0];
+                    // 跳过队列头部已在 recentlyCompleted 中的任务（防御性兜底）
+                    let startIdx = 0;
+                    while (startIdx < currentQueue.length) {
+                        const candidate = currentQueue[startIdx];
+                        const completedAt = recentlyCompletedRef.current.get(candidate.ticketId);
+                        if (completedAt && Date.now() - completedAt < 30 * 60 * 1000) {
+                            queuedTicketIdsRef.current.delete(candidate.ticketId);
+                            startIdx++;
+                            continue;
+                        }
+                        break;
+                    }
+                    if (startIdx > 0) {
+                        // 移除已跳过的任务
+                        const trimmed = currentQueue.slice(startIdx);
+                        if (trimmed.length === 0) return trimmed;
+                        // 递归不需要，直接继续处理 trimmed[0]
+                    }
+
+                    isProcessingRef.current = true;
+                    const currentTask = currentQueue[startIdx];
                     if (!currentTask) {
                         isProcessingRef.current = false;
-                        return currentQueue;
+                        return currentQueue.slice(startIdx);
                     }
                     processOneTask(currentTask);
-                    return currentQueue.slice(1);
+                    return currentQueue.slice(startIdx + 1);
                 }
             });
         }, [processOneTask]);
@@ -404,11 +529,12 @@ export function createMQTaskContext(config: MQTaskConfig) {
             scheduleNextRef.current = scheduleNext;
         }, [scheduleNext]);
 
-        // 任务调度器 — 队列变化时触发调度
+        // 任务调度器 — 队列变化时触发调度（停止后不再调度）
         useEffect(() => {
             if (taskQueue.length === 0) return;
+            if (!isRunning) return;
             scheduleNext();
-        }, [taskQueue, batchSize, scheduleNext]);
+        }, [taskQueue, batchSize, scheduleNext, isRunning]);
 
         const clearHistory = useCallback(() => {
             setCompletedHistory([]);

@@ -209,7 +209,7 @@ class FreshdeskSyncServiceTest {
         }
         String expectedHash = computeHash(contentJson);
 
-        Ticket existing = buildExistingTicket("100", TicketStatus.PENDING_REPLY, expectedHash);
+        Ticket existing = buildExistingTicket("100", TicketStatus.PROCESSING, expectedHash);
         when(ticketRepository.findByExternalId("100")).thenReturn(Optional.of(existing));
         when(apiClient.fetchAllConversations("100")).thenReturn(Collections.emptyList());
         when(ticketRepository.save(any(Ticket.class))).thenAnswer(i -> i.getArgument(0));
@@ -226,7 +226,7 @@ class FreshdeskSyncServiceTest {
         Map<String, Object> fdTicket = buildFdTicket("200", "Updated subject", "New content");
 
         Ticket existing = buildExistingTicket("200", TicketStatus.COMPLETED, "old-hash");
-        when(ticketRepository.findByExternalId("200")).thenReturn(Optional.of(existing));
+        when(ticketRepository.findByExternalIdForUpdate("200")).thenReturn(Optional.of(existing));
         when(apiClient.fetchAllConversations("200")).thenReturn(Collections.emptyList());
         when(ticketRepository.save(any(Ticket.class))).thenAnswer(i -> i.getArgument(0));
 
@@ -258,7 +258,7 @@ class FreshdeskSyncServiceTest {
 
     @ParameterizedTest
     @EnumSource(value = TicketStatus.class, names = {
-            "PENDING_TRANS", "TRANSLATING", "PENDING_REPLY", "REPLYING", "PENDING_AUDIT", "AUDITING"
+            "PENDING_TRANS", "PROCESSING", "PENDING_AUDIT", "AUDITING"
     })
     void processSingleTicket_activeStatuses_doNotTriggerWorkflow(TicketStatus activeStatus) {
         Map<String, Object> fdTicket = buildFdTicket("400", "Subject", "Changed content");
@@ -336,7 +336,7 @@ class FreshdeskSyncServiceTest {
         SyncLog syncLog = new SyncLog();
 
         when(syncConfigService.createSyncLog(TriggerType.WEBHOOK)).thenReturn(syncLog);
-        when(ticketRepository.findByExternalId("700")).thenReturn(Optional.empty());
+        when(ticketRepository.findByExternalIdForUpdate("700")).thenReturn(Optional.empty());
         when(apiClient.fetchAllConversations("700")).thenReturn(Collections.emptyList());
         when(ticketRepository.save(any(Ticket.class))).thenAnswer(invocation -> {
             Ticket t = invocation.getArgument(0);
@@ -355,7 +355,7 @@ class FreshdeskSyncServiceTest {
         SyncLog syncLog = new SyncLog();
 
         when(syncConfigService.createSyncLog(TriggerType.WEBHOOK)).thenReturn(syncLog);
-        when(ticketRepository.findByExternalId("800")).thenThrow(new RuntimeException("DB error"));
+        when(ticketRepository.findByExternalIdForUpdate("800")).thenThrow(new RuntimeException("DB error"));
 
         assertThrows(RuntimeException.class,
                 () -> freshdeskSyncService.processSingleTicketFromWebhook(fdTicket));

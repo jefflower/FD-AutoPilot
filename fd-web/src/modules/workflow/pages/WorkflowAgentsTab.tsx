@@ -16,11 +16,13 @@ import { useAgentContext } from '../../../shared/agents';
 const PROVIDER_TYPE_LABELS: Record<string, { label: string; color: string }> = {
     GEMINI_CLI: { label: 'Gemini CLI', color: 'bg-green-500/20 text-green-400' },
     HTTP_API: { label: 'HTTP API', color: 'bg-blue-500/20 text-blue-400' },
-    WEB_AUTOMATION: { label: 'Web Auto', color: 'bg-purple-500/20 text-purple-400' },
+    NOTEBOOKLM: { label: 'NotebookLM', color: 'bg-purple-500/20 text-purple-400' },
+    TRACKING_SHADOW: { label: 'Tracking', color: 'bg-teal-500/20 text-teal-400' },
     LOCAL_FUNCTION: { label: 'Function', color: 'bg-amber-500/20 text-amber-400' },
     // 向后兼容旧值
     LOCAL_CLI: { label: 'CLI (legacy)', color: 'bg-green-500/20 text-green-400' },
     SHADOW_WINDOW: { label: 'Shadow (legacy)', color: 'bg-purple-500/20 text-purple-400' },
+    WEB_AUTOMATION: { label: 'Web Auto (legacy)', color: 'bg-purple-500/20 text-purple-400' },
 };
 
 const CALL_MODE_LABELS: Record<string, { label: string; color: string }> = {
@@ -398,7 +400,7 @@ const EditModal: React.FC<{
     const [showGroupSuggestions, setShowGroupSuggestions] = useState(false);
 
     const isHttpApi = def.providerType === 'HTTP_API';
-    const isShadowWindow = def.providerType === 'WEB_AUTOMATION' || def.providerType === 'SHADOW_WINDOW';
+    const isShadowWindow = def.providerType === 'NOTEBOOKLM' || def.providerType === 'TRACKING_SHADOW' || def.providerType === 'SHADOW_WINDOW' || def.providerType === 'WEB_AUTOMATION';
     const isLocalCli = def.providerType === 'GEMINI_CLI' || def.providerType === 'LOCAL_CLI';
 
     // 解析 providerConfig
@@ -542,7 +544,8 @@ const EditModal: React.FC<{
                                     >
                                         <option value="GEMINI_CLI">GEMINI_CLI</option>
                                         <option value="HTTP_API">HTTP_API</option>
-                                        <option value="WEB_AUTOMATION">WEB_AUTOMATION</option>
+                                        <option value="NOTEBOOKLM">NOTEBOOKLM</option>
+                                        <option value="TRACKING_SHADOW">TRACKING_SHADOW</option>
                                         <option value="LOCAL_FUNCTION">LOCAL_FUNCTION</option>
                                     </select>
                                 </div>

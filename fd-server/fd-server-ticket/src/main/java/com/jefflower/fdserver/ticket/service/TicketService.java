@@ -1,13 +1,10 @@
 package com.jefflower.fdserver.ticket.service;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jefflower.fdserver.common.exception.BusinessException;
 import com.jefflower.fdserver.common.exception.ErrorCode;
-import com.jefflower.fdserver.task.service.TaskDistributionService;
 import com.jefflower.fdserver.ticket.dto.*;
 import com.jefflower.fdserver.ticket.entity.*;
-import com.jefflower.fdserver.ticket.enums.AuditResult;
 import com.jefflower.fdserver.ticket.enums.TicketStatus;
 import com.jefflower.fdserver.ticket.repository.*;
 import com.jefflower.fdserver.ticket.service.notify.NotifyService;
@@ -21,7 +18,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
-import java.util.Map;
 
 @Slf4j
 @Service
@@ -33,36 +29,14 @@ public class TicketService {
     private final TicketReplyRepository replyRepository;
     private final TicketAuditRepository auditRepository;
     private final ReplyPushService replyPushService;
-    private final SystemConfigService systemConfigService;
     private final NotifyService notifyService;
-    private final AuditTokenService auditTokenService;
-    private final TaskDistributionService taskDistributionService;
     private final TicketStateMachine stateMachine;
     private final ObjectMapper objectMapper;
     private final TicketWorkflowOrchestrator orchestrator;
 
     /**
-     * 构建 TaskInstance 的 payload JSON（供前端显示工单标题等信息）
-     * 使用 ObjectMapper 替代 String.format，避免 JSON 转义风险
-     */
-    private String buildTaskPayload(Ticket ticket) {
-        Map<String, Object> payload = Map.of(
-                "ticketId", ticket.getId(),
-                "externalId", ticket.getExternalId() != null ? ticket.getExternalId() : "",
-                "subject", ticket.getSubject() != null ? ticket.getSubject() : ""
-        );
-        try {
-            return objectMapper.writeValueAsString(payload);
-        } catch (JsonProcessingException e) {
-            log.error("[TicketService] Failed to serialize task payload for ticket #{}", ticket.getId(), e);
-            // 降级：返回最小 JSON
-            return String.format("{\"ticketId\":%d}", ticket.getId());
-        }
-    }
-
-    /**
      * 翻译完整性校验：原始工单有 conversations 时，翻译结果也必须包含 conversations
-     * 防止 Gemini 返回空 conversations 导致不完整的翻译被提交并推进到 PENDING_REPLY
+     * 防止 Gemini 返回空 conversations 导致不完整的翻译被提交
      */
     private void validateTranslationCompleteness(Ticket ticket, String translatedContent) {
         if (ticket.getContent() == null || translatedContent == null) {
@@ -79,11 +53,9 @@ public class TicketService {
             int translatedCount = translatedConversations.isArray() ? translatedConversations.size() : 0;
 
             if (originalCount > 0 && translatedCount == 0) {
-                log.warn("[TicketService] 翻译不完整: ticketId={}, 原始conversations={}条, 翻译conversations={}条",
+                // 降级为警告：Gemini CLI 有时只翻译标题和描述，不翻译对话，不应阻塞流程
+                log.warn("[TicketService] 翻译不完整（已降级为警告）: ticketId={}, 原始conversations={}条, 翻译conversations={}条",
                         ticket.getId(), originalCount, translatedCount);
-                throw new BusinessException(ErrorCode.TRANSLATION_INCOMPLETE,
-                        String.format("翻译内容不完整：原始工单有 %d 条对话，但翻译结果中 conversations 为空。ticketId=%d",
-                                originalCount, ticket.getId()));
             }
         } catch (BusinessException e) {
             throw e;
@@ -150,10 +122,10 @@ public class TicketService {
     public TicketTranslation submitTranslation(Long ticketId, TranslationRequest request) {
         Ticket ticket = getTicketByIdSimple(ticketId);
 
-        // 幂等性检查：只有 TRANSLATING / PENDING_TRANS / PENDING_REPLY 状态才接受翻译上报
-        // 如果状态已推进到更后面的阶段（如 REPLYING、PENDING_AUDIT 等），说明是重复消息，跳过
+        // 幂等性检查：只有 PROCESSING / PENDING_TRANS 状态才接受翻译上报
+        // 如果状态已推进到更后面的阶段（如 PENDING_AUDIT 等），说明是重复消息，跳过
         if (!stateMachine.isInAcceptedStates(ticket.getStatus(), TicketStateMachine.TRANSLATION_ACCEPTED_STATES)) {
-            log.warn("[TicketService] 幂等性检查: 翻译上报被跳过, ticketId={}, 当前状态={}, 期望状态=TRANSLATING/PENDING_TRANS/PENDING_REPLY",
+            log.warn("[TicketService] 幂等性检查: 翻译上报被跳过, ticketId={}, 当前状态={}, 期望状态=PROCESSING/PENDING_TRANS",
                     ticketId, ticket.getStatus());
             return translationRepository.findByTicketAndTargetLang(ticket, request.getTargetLang())
                     .orElseGet(() -> {
@@ -204,15 +176,12 @@ public class TicketService {
         Ticket ticket = getTicketByIdSimple(ticketId);
 
         // 幂等性检查：
-        // - Legacy 模式：只有 REPLYING / PENDING_REPLY 才接受回复上报
-        // - Flowable 并行网关模式：翻译和回复同时执行，回复完成时状态可能仍是 PENDING_TRANS/TRANSLATING，
-        //   需要放宽检查范围。状态转换由 BPMN 回调统一管理。
-        var acceptedStates = orchestrator.isFlowableMode()
-                ? TicketStateMachine.WORKFLOW_REPLY_ACCEPTED_STATES
-                : TicketStateMachine.REPLY_ACCEPTED_STATES;
+        // Flowable 并行网关模式：翻译和回复同时执行，回复完成时状态可能仍是 PENDING_TRANS/PROCESSING，
+        // 需要放宽检查范围。状态转换由 BPMN 回调统一管理。
+        var acceptedStates = TicketStateMachine.WORKFLOW_REPLY_ACCEPTED_STATES;
         if (!stateMachine.isInAcceptedStates(ticket.getStatus(), acceptedStates)) {
-            log.warn("[TicketService] 幂等性检查: 回复上报被跳过, ticketId={}, 当前状态={}, 期望状态={}, flowableMode={}",
-                    ticketId, ticket.getStatus(), acceptedStates, orchestrator.isFlowableMode());
+            log.warn("[TicketService] 幂等性检查: 回复上报被跳过, ticketId={}, 当前状态={}, 期望状态={}",
+                    ticketId, ticket.getStatus(), acceptedStates);
             return replyRepository.findByTicket(ticket).stream()
                     .findFirst()
                     .orElseGet(() -> {
@@ -245,7 +214,7 @@ public class TicketService {
 
         // 幂等性检查：只有 AUDITING / PENDING_AUDIT 状态才接受审核上报
         // 如果状态已推进到 APPROVED / COMPLETED，说明是重复消息，跳过
-        // 注意：PENDING_REPLY 也是合法的（REJECT 后回到 PENDING_REPLY），但此时不应再次审核
+        // 注意：PROCESSING 也是合法的（REJECT 后回到 PROCESSING），但此时不应再次审核
         if (!stateMachine.isInAcceptedStates(ticket.getStatus(), TicketStateMachine.AUDIT_ACCEPTED_STATES)) {
             log.warn("[TicketService] 幂等性检查: 审核上报被跳过, ticketId={}, 当前状态={}, 期望状态=AUDITING/PENDING_AUDIT",
                     ticketId, ticket.getStatus());
@@ -258,6 +227,16 @@ public class TicketService {
         }
 
         log.info("[TicketService] Submitting audit for ticket #{}", ticketId);
+
+        // PASS 审核前校验：必须有翻译和回复内容
+        if (request.getAuditResult() == com.jefflower.fdserver.ticket.enums.AuditResult.PASS) {
+            if (!translationRepository.existsByTicket(ticket)) {
+                throw new BusinessException(ErrorCode.TRANSLATION_REQUIRED);
+            }
+            if (!replyRepository.existsByTicket(ticket)) {
+                throw new BusinessException(ErrorCode.REPLY_REQUIRED);
+            }
+        }
 
         TicketAudit audit = new TicketAudit();
         audit.setTicket(ticket);
@@ -276,7 +255,7 @@ public class TicketService {
 
     @Transactional
     public TicketReply updateReply(Long ticketId, Long replyId, ReplyRequest request) {
-        Ticket ticket = getTicketByIdSimple(ticketId);
+        getTicketByIdSimple(ticketId); // 验证工单存在
         TicketReply reply = replyRepository.findById(replyId)
                 .orElseThrow(() -> new BusinessException(ErrorCode.REPLY_NOT_FOUND, "回复不存在: " + replyId));
         if (!reply.getTicket().getId().equals(ticketId)) {
@@ -335,32 +314,50 @@ public class TicketService {
         ticketRepository.save(ticket);
     }
 
+    /**
+     * 重启工单的 BPMN 工作流（统一入口）。
+     * <p>
+     * 将工单状态强制重置为 PENDING_TRANS，然后通过编排器启动新的 BPMN 流程实例。
+     * BPMN 流程会通过并行网关同时执行翻译和回复 Agent，无需区分"触发翻译"和"触发回复"。
+     * <p>
+     * 前置校验：不能有活跃的工作流实例（防止重复启动）
+     */
     @Transactional
-    public void triggerAiTranslation(Long ticketId) {
+    public void restartWorkflow(Long ticketId) {
         Ticket ticket = getTicketByIdSimple(ticketId);
-        stateMachine.forceTransition(ticket, TicketStatus.TRANSLATING);
+
+        if (orchestrator.hasActiveProcess(ticket)) {
+            throw new BusinessException(ErrorCode.INVALID_STATUS_TRANSITION,
+                    "工单 #" + ticketId + " 已有活跃工作流，请等待完成或终止后重试");
+        }
+
+        stateMachine.forceTransition(ticket, TicketStatus.PENDING_TRANS);
         ticketRepository.save(ticket);
-        taskDistributionService.createTask("ticket.translate", "ticket",
-                String.valueOf(ticket.getId()), buildTaskPayload(ticket),
-                com.jefflower.fdserver.task.enums.TriggerType.MANUAL);
+        orchestrator.onNewTicket(ticket);
+        log.info("[TicketService] 工单 #{} 工作流已重启", ticketId);
     }
 
+    /**
+     * @deprecated 使用 {@link #restartWorkflow(Long)} 替代，此方法保留仅为 API 向后兼容
+     */
+    @Transactional
+    public void triggerAiTranslation(Long ticketId) {
+        restartWorkflow(ticketId);
+    }
+
+    /**
+     * @deprecated 使用 {@link #restartWorkflow(Long)} 替代，此方法保留仅为 API 向后兼容。
+     * 额外校验：翻译必须存在（用户意图是"重新生成回复"，翻译是前提条件）
+     */
     @Transactional
     public void triggerAiReply(Long ticketId) {
         Ticket ticket = getTicketByIdSimple(ticketId);
-
-        // 校验是否已完成翻译
         boolean hasTranslation = translationRepository.existsByTicket(ticket);
         if (!hasTranslation) {
             throw new BusinessException(ErrorCode.TRANSLATION_REQUIRED,
                     "工单 #" + ticketId + " 尚未完成翻译，无法触发回复");
         }
-
-        stateMachine.forceTransition(ticket, TicketStatus.REPLYING);
-        ticketRepository.save(ticket);
-        taskDistributionService.createTask("ticket.reply", "ticket",
-                String.valueOf(ticket.getId()), buildTaskPayload(ticket),
-                com.jefflower.fdserver.task.enums.TriggerType.MANUAL);
+        restartWorkflow(ticketId);
     }
 
     @Transactional
@@ -372,8 +369,7 @@ public class TicketService {
 
     /**
      * 批量回退处理中的工单状态（用于队列重置）
-     * TRANSLATING → PENDING_TRANS
-     * REPLYING → PENDING_REPLY
+     * PROCESSING → PENDING_TRANS
      * AUDITING → PENDING_AUDIT
      * @return 回退的工单数量
      */
@@ -381,8 +377,7 @@ public class TicketService {
     public int resetProcessingTickets() {
         LocalDateTime now = LocalDateTime.now();
         int count = 0;
-        count += ticketRepository.updateStatusBatch(TicketStatus.TRANSLATING, TicketStatus.PENDING_TRANS, now);
-        count += ticketRepository.updateStatusBatch(TicketStatus.REPLYING, TicketStatus.PENDING_REPLY, now);
+        count += ticketRepository.updateStatusBatch(TicketStatus.PROCESSING, TicketStatus.PENDING_TRANS, now);
         count += ticketRepository.updateStatusBatch(TicketStatus.AUDITING, TicketStatus.PENDING_AUDIT, now);
         log.info("[TicketService] 队列重置：回退了 {} 个处理中的工单", count);
         return count;

@@ -29,7 +29,7 @@ class TicketStateMachineTest {
     }
 
     // =========================================================================
-    // 主流程合法转换验证
+    // 主流程合法转换验证（简化后：6 状态模型）
     // =========================================================================
 
     @Nested
@@ -39,12 +39,8 @@ class TicketStateMachineTest {
         static Stream<Arguments> validTransitionPairs() {
             return Stream.of(
                     // 主流程前进
-                    Arguments.of(TicketStatus.PENDING_TRANS, TicketStatus.TRANSLATING, "待翻译 → 翻译中"),
-                    Arguments.of(TicketStatus.PENDING_TRANS, TicketStatus.PENDING_REPLY, "待翻译 → 待回复（幂等）"),
-                    Arguments.of(TicketStatus.TRANSLATING, TicketStatus.PENDING_REPLY, "翻译中 → 待回复"),
-                    Arguments.of(TicketStatus.PENDING_REPLY, TicketStatus.REPLYING, "待回复 → 回复中"),
-                    Arguments.of(TicketStatus.PENDING_REPLY, TicketStatus.PENDING_AUDIT, "待回复 → 待审核（幂等）"),
-                    Arguments.of(TicketStatus.REPLYING, TicketStatus.PENDING_AUDIT, "回复中 → 待审核"),
+                    Arguments.of(TicketStatus.PENDING_TRANS, TicketStatus.PROCESSING, "待翻译 → 处理中"),
+                    Arguments.of(TicketStatus.PROCESSING, TicketStatus.PENDING_AUDIT, "处理中 → 待审核"),
                     Arguments.of(TicketStatus.PENDING_AUDIT, TicketStatus.AUDITING, "待审核 → 审核中"),
 
                     // 审核通过路径
@@ -53,9 +49,13 @@ class TicketStateMachineTest {
                     Arguments.of(TicketStatus.AUDITING, TicketStatus.APPROVED, "审核中 → 已审核（手动推送）"),
                     Arguments.of(TicketStatus.AUDITING, TicketStatus.COMPLETED, "审核中 → 已完成（自动推送）"),
 
-                    // 审核驳回
-                    Arguments.of(TicketStatus.PENDING_AUDIT, TicketStatus.PENDING_REPLY, "待审核 → 待回复（驳回）"),
-                    Arguments.of(TicketStatus.AUDITING, TicketStatus.PENDING_REPLY, "审核中 → 待回复（驳回）"),
+                    // 审核驳回 → 重新回复
+                    Arguments.of(TicketStatus.PENDING_AUDIT, TicketStatus.PROCESSING, "待审核 → 处理中（驳回重新回复）"),
+                    Arguments.of(TicketStatus.AUDITING, TicketStatus.PROCESSING, "审核中 → 处理中（驳回重新回复）"),
+
+                    // 审核驳回 → 重新翻译
+                    Arguments.of(TicketStatus.PENDING_AUDIT, TicketStatus.PENDING_TRANS, "待审核 → 待翻译（驳回重新翻译）"),
+                    Arguments.of(TicketStatus.AUDITING, TicketStatus.PENDING_TRANS, "审核中 → 待翻译（驳回重新翻译）"),
 
                     // 推送
                     Arguments.of(TicketStatus.APPROVED, TicketStatus.COMPLETED, "已审核 → 已完成（手动推送）"),
@@ -97,19 +97,18 @@ class TicketStateMachineTest {
         static Stream<Arguments> invalidTransitionPairs() {
             return Stream.of(
                     // 跳过阶段
-                    Arguments.of(TicketStatus.PENDING_TRANS, TicketStatus.PENDING_AUDIT, "不能跳过回复阶段"),
+                    Arguments.of(TicketStatus.PENDING_TRANS, TicketStatus.PENDING_AUDIT, "不能跳过处理阶段"),
                     Arguments.of(TicketStatus.PENDING_TRANS, TicketStatus.COMPLETED, "不能从待翻译直接完成"),
-                    Arguments.of(TicketStatus.TRANSLATING, TicketStatus.APPROVED, "翻译中不能直接到已审核"),
-                    Arguments.of(TicketStatus.PENDING_REPLY, TicketStatus.APPROVED, "待回复不能直接到已审核"),
+                    Arguments.of(TicketStatus.PROCESSING, TicketStatus.APPROVED, "处理中不能直接到已审核"),
+                    Arguments.of(TicketStatus.PROCESSING, TicketStatus.COMPLETED, "处理中不能直接到已完成"),
 
                     // 逆流
-                    Arguments.of(TicketStatus.PENDING_REPLY, TicketStatus.TRANSLATING, "不能从待回复逆流到翻译中"),
-                    Arguments.of(TicketStatus.PENDING_AUDIT, TicketStatus.TRANSLATING, "不能从待审核逆流到翻译中"),
                     Arguments.of(TicketStatus.COMPLETED, TicketStatus.APPROVED, "不能从已完成回到已审核"),
+                    Arguments.of(TicketStatus.COMPLETED, TicketStatus.PROCESSING, "不能从已完成回到处理中"),
 
                     // 自身转换
-                    Arguments.of(TicketStatus.TRANSLATING, TicketStatus.TRANSLATING, "不能自身转换"),
-                    Arguments.of(TicketStatus.REPLYING, TicketStatus.REPLYING, "不能自身转换")
+                    Arguments.of(TicketStatus.PROCESSING, TicketStatus.PROCESSING, "不能自身转换"),
+                    Arguments.of(TicketStatus.PENDING_TRANS, TicketStatus.PENDING_TRANS, "不能自身转换")
             );
         }
 
@@ -143,22 +142,12 @@ class TicketStateMachineTest {
     class ForceTransitions {
 
         @Test
-        @DisplayName("手动触发翻译：任意状态 → TRANSLATING")
-        void forceTransition_anyToTranslating() {
+        @DisplayName("手动触发处理：任意状态 → PROCESSING")
+        void forceTransition_anyToProcessing() {
             for (TicketStatus status : TicketStatus.values()) {
                 ticket.setStatus(status);
-                assertDoesNotThrow(() -> stateMachine.forceTransition(ticket, TicketStatus.TRANSLATING));
-                assertEquals(TicketStatus.TRANSLATING, ticket.getStatus());
-            }
-        }
-
-        @Test
-        @DisplayName("手动触发回复：任意状态 → REPLYING")
-        void forceTransition_anyToReplying() {
-            for (TicketStatus status : TicketStatus.values()) {
-                ticket.setStatus(status);
-                assertDoesNotThrow(() -> stateMachine.forceTransition(ticket, TicketStatus.REPLYING));
-                assertEquals(TicketStatus.REPLYING, ticket.getStatus());
+                assertDoesNotThrow(() -> stateMachine.forceTransition(ticket, TicketStatus.PROCESSING));
+                assertEquals(TicketStatus.PROCESSING, ticket.getStatus());
             }
         }
 
@@ -178,7 +167,7 @@ class TicketStateMachineTest {
             ticket.setStatus(TicketStatus.PENDING_TRANS);
             ticket.setUpdatedAt(null);
 
-            stateMachine.forceTransition(ticket, TicketStatus.TRANSLATING);
+            stateMachine.forceTransition(ticket, TicketStatus.PROCESSING);
 
             assertNotNull(ticket.getUpdatedAt());
         }
@@ -193,32 +182,30 @@ class TicketStateMachineTest {
     class IdempotencyCheck {
 
         @Test
-        @DisplayName("翻译幂等：TRANSLATING/PENDING_TRANS/PENDING_REPLY 在接受范围内")
+        @DisplayName("翻译幂等：PROCESSING/PENDING_TRANS 在接受范围内")
         void translationAccepted() {
-            assertTrue(stateMachine.isInAcceptedStates(TicketStatus.TRANSLATING, TicketStateMachine.TRANSLATION_ACCEPTED_STATES));
+            assertTrue(stateMachine.isInAcceptedStates(TicketStatus.PROCESSING, TicketStateMachine.TRANSLATION_ACCEPTED_STATES));
             assertTrue(stateMachine.isInAcceptedStates(TicketStatus.PENDING_TRANS, TicketStateMachine.TRANSLATION_ACCEPTED_STATES));
-            assertTrue(stateMachine.isInAcceptedStates(TicketStatus.PENDING_REPLY, TicketStateMachine.TRANSLATION_ACCEPTED_STATES));
         }
 
         @Test
-        @DisplayName("翻译幂等：REPLYING/PENDING_AUDIT/APPROVED/COMPLETED 不在接受范围内")
+        @DisplayName("翻译幂等：PENDING_AUDIT/APPROVED/COMPLETED 不在接受范围内")
         void translationRejected() {
-            assertFalse(stateMachine.isInAcceptedStates(TicketStatus.REPLYING, TicketStateMachine.TRANSLATION_ACCEPTED_STATES));
             assertFalse(stateMachine.isInAcceptedStates(TicketStatus.PENDING_AUDIT, TicketStateMachine.TRANSLATION_ACCEPTED_STATES));
             assertFalse(stateMachine.isInAcceptedStates(TicketStatus.APPROVED, TicketStateMachine.TRANSLATION_ACCEPTED_STATES));
             assertFalse(stateMachine.isInAcceptedStates(TicketStatus.COMPLETED, TicketStateMachine.TRANSLATION_ACCEPTED_STATES));
         }
 
         @Test
-        @DisplayName("回复幂等：REPLYING/PENDING_REPLY 在接受范围内")
+        @DisplayName("回复幂等：PROCESSING 在接受范围内")
         void replyAccepted() {
-            assertTrue(stateMachine.isInAcceptedStates(TicketStatus.REPLYING, TicketStateMachine.REPLY_ACCEPTED_STATES));
-            assertTrue(stateMachine.isInAcceptedStates(TicketStatus.PENDING_REPLY, TicketStateMachine.REPLY_ACCEPTED_STATES));
+            assertTrue(stateMachine.isInAcceptedStates(TicketStatus.PROCESSING, TicketStateMachine.REPLY_ACCEPTED_STATES));
         }
 
         @Test
-        @DisplayName("回复幂等：PENDING_AUDIT/APPROVED/COMPLETED 不在接受范围内")
+        @DisplayName("回复幂等：PENDING_TRANS/PENDING_AUDIT/APPROVED/COMPLETED 不在接受范围内")
         void replyRejected() {
+            assertFalse(stateMachine.isInAcceptedStates(TicketStatus.PENDING_TRANS, TicketStateMachine.REPLY_ACCEPTED_STATES));
             assertFalse(stateMachine.isInAcceptedStates(TicketStatus.PENDING_AUDIT, TicketStateMachine.REPLY_ACCEPTED_STATES));
             assertFalse(stateMachine.isInAcceptedStates(TicketStatus.APPROVED, TicketStateMachine.REPLY_ACCEPTED_STATES));
             assertFalse(stateMachine.isInAcceptedStates(TicketStatus.COMPLETED, TicketStateMachine.REPLY_ACCEPTED_STATES));
@@ -232,9 +219,9 @@ class TicketStateMachineTest {
         }
 
         @Test
-        @DisplayName("审核幂等：PENDING_REPLY/APPROVED/COMPLETED 不在接受范围内")
+        @DisplayName("审核幂等：PROCESSING/APPROVED/COMPLETED 不在接受范围内")
         void auditRejected() {
-            assertFalse(stateMachine.isInAcceptedStates(TicketStatus.PENDING_REPLY, TicketStateMachine.AUDIT_ACCEPTED_STATES));
+            assertFalse(stateMachine.isInAcceptedStates(TicketStatus.PROCESSING, TicketStateMachine.AUDIT_ACCEPTED_STATES));
             assertFalse(stateMachine.isInAcceptedStates(TicketStatus.APPROVED, TicketStateMachine.AUDIT_ACCEPTED_STATES));
             assertFalse(stateMachine.isInAcceptedStates(TicketStatus.COMPLETED, TicketStateMachine.AUDIT_ACCEPTED_STATES));
         }
@@ -249,15 +236,9 @@ class TicketStateMachineTest {
     class ResetTransitions {
 
         @Test
-        @DisplayName("TRANSLATING → PENDING_TRANS 合法")
-        void translatingReset() {
-            assertTrue(stateMachine.isValidResetTransition(TicketStatus.TRANSLATING, TicketStatus.PENDING_TRANS));
-        }
-
-        @Test
-        @DisplayName("REPLYING → PENDING_REPLY 合法")
-        void replyingReset() {
-            assertTrue(stateMachine.isValidResetTransition(TicketStatus.REPLYING, TicketStatus.PENDING_REPLY));
+        @DisplayName("PROCESSING → PENDING_TRANS 合法")
+        void processingReset() {
+            assertTrue(stateMachine.isValidResetTransition(TicketStatus.PROCESSING, TicketStatus.PENDING_TRANS));
         }
 
         @Test
@@ -270,7 +251,6 @@ class TicketStateMachineTest {
         @DisplayName("非处理中状态不能回退")
         void nonProcessingStates_cannotReset() {
             assertFalse(stateMachine.isValidResetTransition(TicketStatus.PENDING_TRANS, TicketStatus.PENDING_TRANS));
-            assertFalse(stateMachine.isValidResetTransition(TicketStatus.PENDING_REPLY, TicketStatus.PENDING_REPLY));
             assertFalse(stateMachine.isValidResetTransition(TicketStatus.APPROVED, TicketStatus.PENDING_TRANS));
             assertFalse(stateMachine.isValidResetTransition(TicketStatus.COMPLETED, TicketStatus.PENDING_TRANS));
         }
@@ -278,9 +258,8 @@ class TicketStateMachineTest {
         @Test
         @DisplayName("回退方向必须正确")
         void resetDirection_mustBeCorrect() {
-            assertFalse(stateMachine.isValidResetTransition(TicketStatus.TRANSLATING, TicketStatus.PENDING_REPLY));
-            assertFalse(stateMachine.isValidResetTransition(TicketStatus.REPLYING, TicketStatus.PENDING_TRANS));
-            assertFalse(stateMachine.isValidResetTransition(TicketStatus.AUDITING, TicketStatus.PENDING_REPLY));
+            assertFalse(stateMachine.isValidResetTransition(TicketStatus.PROCESSING, TicketStatus.PENDING_AUDIT));
+            assertFalse(stateMachine.isValidResetTransition(TicketStatus.AUDITING, TicketStatus.PENDING_TRANS));
         }
     }
 
@@ -296,7 +275,7 @@ class TicketStateMachineTest {
         @DisplayName("合法转换不抛异常")
         void validTransition_noException() {
             assertDoesNotThrow(() ->
-                    stateMachine.validateTransition(TicketStatus.PENDING_TRANS, TicketStatus.TRANSLATING));
+                    stateMachine.validateTransition(TicketStatus.PENDING_TRANS, TicketStatus.PROCESSING));
         }
 
         @Test

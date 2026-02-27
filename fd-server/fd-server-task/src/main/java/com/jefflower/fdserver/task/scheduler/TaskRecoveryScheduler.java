@@ -20,11 +20,14 @@ import java.util.List;
 @RequiredArgsConstructor
 public class TaskRecoveryScheduler {
 
+    /** FAILED 任务冷却时间（秒）：防止快速失败循环 */
+    private static final int FAILED_COOLDOWN_SECONDS = 60;
+
     private final TaskDefinitionRepository taskDefinitionRepository;
     private final TaskInstanceRepository taskInstanceRepository;
 
     /**
-     * 每 30 秒扫描超时任务
+     * 每 30 秒扫描超时任务（CLAIMED 状态超时未完成）
      */
     @Scheduled(fixedDelay = 30000)
     @Transactional
@@ -39,24 +42,58 @@ public class TaskRecoveryScheduler {
 
             for (TaskInstance task : timeoutTasks) {
                 if (task.getRetryCount() < def.getMaxRetries()) {
-                    // 回到 PENDING，等待重新领取
-                    task.setStatus(TaskStatus.PENDING);
-                    task.setAssignedTo(null);
-                    task.setAssignedAt(null);
-                    task.setStartedAt(null);
-                    task.setRetryCount(task.getRetryCount() + 1);
-                    taskInstanceRepository.save(task);
-                    log.warn("Task {} timed out, retry {}/{}, reset to PENDING",
-                            task.getId(), task.getRetryCount(), def.getMaxRetries());
+                    resetToPending(task, def.getMaxRetries(), "timeout");
                 } else {
-                    // 超过最大重试次数，标记为 TIMEOUT
-                    task.setStatus(TaskStatus.TIMEOUT);
-                    task.setErrorMessage("Exceeded max retries (" + def.getMaxRetries() + ") due to timeout");
-                    task.setCompletedAt(LocalDateTime.now());
-                    taskInstanceRepository.save(task);
-                    log.error("Task {} permanently timed out after {} retries", task.getId(), def.getMaxRetries());
+                    markPermanentlyFailed(task, def.getMaxRetries(), "timeout");
                 }
             }
         }
+    }
+
+    /**
+     * 每 60 秒扫描 FAILED 状态任务（兜底恢复：WorkflowTaskCompletionListener 主路径未能重置的情况）
+     * <p>
+     * 冷却 60 秒后，若未超重试上限则重置为 PENDING；已超限则标记为 TIMEOUT。
+     */
+    @Scheduled(fixedDelay = 60000)
+    @Transactional
+    public void recoverFailedTasks() {
+        List<TaskDefinition> definitions = taskDefinitionRepository
+                .findByEnabledAndExecutionMode(true, ExecutionMode.CLIENT_DISTRIBUTED);
+
+        for (TaskDefinition def : definitions) {
+            LocalDateTime cooldownCutoff = LocalDateTime.now().minusSeconds(FAILED_COOLDOWN_SECONDS);
+            List<TaskInstance> failedTasks = taskInstanceRepository
+                    .findFailedTasksForRecovery(def.getCode(), TaskStatus.FAILED, cooldownCutoff);
+
+            for (TaskInstance task : failedTasks) {
+                if (task.getRetryCount() < def.getMaxRetries()) {
+                    resetToPending(task, def.getMaxRetries(), "failed-recovery");
+                } else {
+                    markPermanentlyFailed(task, def.getMaxRetries(), "failed-recovery");
+                }
+            }
+        }
+    }
+
+    private void resetToPending(TaskInstance task, int maxRetries, String source) {
+        task.setStatus(TaskStatus.PENDING);
+        task.setAssignedTo(null);
+        task.setAssignedAt(null);
+        task.setStartedAt(null);
+        task.setCompletedAt(null);
+        task.setRetryCount(task.getRetryCount() + 1);
+        taskInstanceRepository.save(task);
+        log.warn("[TaskRecovery] Task {} ({}) retry {}/{}, reset to PENDING",
+                task.getId(), source, task.getRetryCount(), maxRetries);
+    }
+
+    private void markPermanentlyFailed(TaskInstance task, int maxRetries, String source) {
+        task.setStatus(TaskStatus.TIMEOUT);
+        task.setErrorMessage("Exceeded max retries (" + maxRetries + ") due to " + source);
+        task.setCompletedAt(LocalDateTime.now());
+        taskInstanceRepository.save(task);
+        log.error("[TaskRecovery] Task {} ({}) permanently failed after {} retries",
+                task.getId(), source, maxRetries);
     }
 }

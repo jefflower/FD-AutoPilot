@@ -23,6 +23,8 @@ import java.security.NoSuchAlgorithmException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * Freshdesk 工单同步服务（重构版）
@@ -33,6 +35,7 @@ import java.util.*;
  * 3. 内容哈希 — 通过 SHA-256 检测内容是否真正变化
  * 4. 事务保证 — processSingleTicket 使用 @Transactional
  * 5. 丰富字段 — 存储 Freshdesk 优先级、来源、标签等元数据
+ * 6. 并发竞态 — Webhook 处理使用内存锁 + DB 悲观锁双重防护
  */
 @Slf4j
 @Service
@@ -42,6 +45,12 @@ public class FreshdeskSyncService {
     private final FreshdeskApiClient apiClient;
     private final TicketRepository ticketRepository;
     private final SyncConfigService syncConfigService;
+
+    /**
+     * 内存级 per-ticket 锁 — Webhook 并发竞态快速拒绝。
+     * 同一 externalId 的 Webhook 只允许一个执行，其余直接跳过。
+     */
+    private final ConcurrentHashMap<String, ReentrantLock> webhookLocks = new ConcurrentHashMap<>();
     private final ObjectMapper objectMapper;
     private final TicketWorkflowOrchestrator orchestrator;
 
@@ -118,9 +127,23 @@ public class FreshdeskSyncService {
     }
 
     /**
-     * Webhook 触发的单工单同步
+     * Webhook 触发的单工单同步 — 使用内存锁防止同一工单的并发 Webhook 竞态。
+     * <p>
+     * 防护层次：
+     * 1. 内存级 tryLock — 快速拒绝并发请求（同一 externalId）
+     * 2. processSingleTicket 内的 DB 悲观锁 — 对已有工单行加 FOR UPDATE 锁
+     * 3. FlowableTicketOrchestrator.onNewTicket 内的 isProcessRunning 检查 — 最后兜底
      */
     public void processSingleTicketFromWebhook(Map<String, Object> fdTicket) {
+        String externalId = String.valueOf(fdTicket.get("id"));
+
+        // 内存级 per-ticket 锁：同一工单的并发 Webhook 只允许一个执行
+        ReentrantLock lock = webhookLocks.computeIfAbsent(externalId, k -> new ReentrantLock());
+        if (!lock.tryLock()) {
+            log.info("[Webhook] Skipping concurrent webhook for ticket {}, already processing", externalId);
+            return;
+        }
+
         SyncLog syncLog = syncConfigService.createSyncLog(TriggerType.WEBHOOK);
         try {
             TicketSyncResult result = processSingleTicket(fdTicket, "WEBHOOK");
@@ -130,6 +153,8 @@ public class FreshdeskSyncService {
         } catch (Exception e) {
             syncConfigService.failSyncLog(syncLog, e.getMessage());
             throw e;
+        } finally {
+            lock.unlock();
         }
     }
 
@@ -186,12 +211,15 @@ public class FreshdeskSyncService {
 
     /**
      * 处理单个工单（核心逻辑）
-     * 修复：状态安全 + content_hash + 事务
+     * 修复：状态安全 + content_hash + 事务 + 悲观锁（Webhook 场景）
      */
     @Transactional
     public TicketSyncResult processSingleTicket(Map<String, Object> fdTicket, String syncSource) {
         String externalId = String.valueOf(fdTicket.get("id"));
-        Ticket existing = ticketRepository.findByExternalId(externalId).orElse(null);
+        // Webhook 场景使用悲观锁（SELECT FOR UPDATE），防止并发 Webhook 竞态更新同一行
+        Ticket existing = "WEBHOOK".equals(syncSource)
+                ? ticketRepository.findByExternalIdForUpdate(externalId).orElse(null)
+                : ticketRepository.findByExternalId(externalId).orElse(null);
         boolean isNew = (existing == null);
 
         // 获取描述
@@ -259,6 +287,13 @@ public class FreshdeskSyncService {
      * - COMPLETED + 内容变化 → 重新触发
      */
     private boolean shouldTriggerWorkflow(Ticket ticket, boolean isNew) {
+        // 前置检查：如果已有活跃 BPMN 流程实例，直接跳过（防止 Webhook 并发竞态创建重复流程）
+        if (orchestrator.hasActiveProcess(ticket)) {
+            log.debug("[FreshdeskSync] Skipping workflow trigger: active process exists for ticket #{}",
+                    ticket.getId());
+            return false;
+        }
+
         if (isNew)
             return true;
 
@@ -267,9 +302,7 @@ public class FreshdeskSyncService {
         // 处于活跃处理中的状态，不允许重置
         Set<TicketStatus> doNotDisturb = Set.of(
                 TicketStatus.PENDING_TRANS,
-                TicketStatus.TRANSLATING,
-                TicketStatus.PENDING_REPLY,
-                TicketStatus.REPLYING,
+                TicketStatus.PROCESSING,
                 TicketStatus.PENDING_AUDIT,
                 TicketStatus.AUDITING);
 

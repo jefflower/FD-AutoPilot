@@ -34,6 +34,7 @@ const WorkflowListTab = lazy(() => import("./modules/workflow/pages/WorkflowList
 const WorkflowGuideTab = lazy(() => import("./modules/workflow/pages/WorkflowGuideTab"));
 const WorkflowAgentsTab = lazy(() => import("./modules/workflow/pages/WorkflowAgentsTab"));
 const WorkflowAutomationTab = lazy(() => import("./modules/ticket/pages/WorkflowAutomationTab"));
+const AgentAutomationTab = lazy(() => import("./modules/ticket/pages/AgentAutomationTab"));
 const MobileAuditPage = lazy(() => import("./modules/mobile/pages/MobileAuditPage"));
 
 import { AuthProvider, useAuthContext } from "./shared/context/AuthContext";
@@ -110,6 +111,10 @@ const TAB_COMPONENTS: Partial<Record<TabType, TabRoute>> = {
     },
     'automation': {
         component: WorkflowAutomationTab,
+        requireAuth: true,
+    },
+    'agent-automation': {
+        component: AgentAutomationTab,
         requireAuth: true,
     },
     'approved': {

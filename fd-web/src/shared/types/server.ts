@@ -104,9 +104,7 @@ export interface PermissionOverview {
 // ============ 工单相关 ============
 export type TicketStatus =
   | 'PENDING_TRANS'
-  | 'TRANSLATING'
-  | 'PENDING_REPLY'
-  | 'REPLYING'
+  | 'PROCESSING'
   | 'PENDING_AUDIT'
   | 'AUDITING'
   | 'APPROVED'
@@ -466,7 +464,8 @@ export interface OAuthStatus {
 }
 
 // ============ AI Agent ============
-export type AgentProviderType = 'GEMINI_CLI' | 'HTTP_API' | 'WEB_AUTOMATION' | 'LOCAL_FUNCTION' | 'LOCAL_CLI' | 'SHADOW_WINDOW';
+export type AgentProviderType = 'GEMINI_CLI' | 'HTTP_API' | 'NOTEBOOKLM' | 'TRACKING_SHADOW' | 'LOCAL_FUNCTION'
+    | 'WEB_AUTOMATION' | 'SHADOW_WINDOW' | 'LOCAL_CLI'; // deprecated 兼容旧值
 export type AgentCallMode = 'HTTP' | 'MQ';
 export type AgentExecutionEnv = 'CLIENT_ONLY' | 'SERVER_ONLY' | 'BOTH';
 export type AgentExecutionStatus = 'RUNNING' | 'SUCCESS' | 'FAILED' | 'TIMEOUT' | 'CANCELLED';

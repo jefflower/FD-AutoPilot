@@ -38,7 +38,7 @@ class FlowableTicketOrchestratorTest {
         ticket.setId(7L);
         ticket.setExternalId("FD-7");
         ticket.setSubject("Flowable 测试工单");
-        ticket.setStatus(TicketStatus.TRANSLATING);
+        ticket.setStatus(TicketStatus.PROCESSING);
     }
 
     // =========================================================================

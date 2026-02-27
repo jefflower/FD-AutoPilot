@@ -61,7 +61,8 @@ export class AgentRegistry {
     private mapLegacyProviderType(type: string): string | null {
         const LEGACY_MAP: Record<string, string> = {
             'LOCAL_CLI': 'GEMINI_CLI',
-            'SHADOW_WINDOW': 'WEB_AUTOMATION',
+            'WEB_AUTOMATION': 'NOTEBOOKLM',
+            'SHADOW_WINDOW': 'NOTEBOOKLM',
         };
         return LEGACY_MAP[type] || null;
     }

@@ -147,22 +147,33 @@ public class TicketController {
         return ResponseEntity.ok(ApiResponse.ok("回复已跳过，工单标记完成", null));
     }
 
-    @Operation(summary = "触发 AI 翻译", description = "手动触发指定工单的 AI 翻译任务")
+    @Operation(summary = "重启工作流", description = "重启工单的 BPMN 工作流（翻译+回复并行执行）。统一替代 ai-translate / ai-reply 端点。")
+    @PostMapping("/{id}/restart-workflow")
+    @RequiresPermission("ticket:translate")
+    public ResponseEntity<ApiResponse<Void>> restartWorkflow(
+            @Parameter(description = "工单 ID") @PathVariable Long id) {
+        ticketService.restartWorkflow(id);
+        return ResponseEntity.ok(ApiResponse.ok("工作流已重启", null));
+    }
+
+    @Deprecated
+    @Operation(summary = "触发 AI 翻译（已废弃）", description = "已废弃，请使用 POST /{id}/restart-workflow。实际行为：重启整个 BPMN 工作流。")
     @PostMapping("/{id}/ai-translate")
     @RequiresPermission("ticket:translate")
     public ResponseEntity<ApiResponse<Void>> triggerAiTranslation(
             @Parameter(description = "工单 ID") @PathVariable Long id) {
         ticketService.triggerAiTranslation(id);
-        return ResponseEntity.ok(ApiResponse.ok("AI翻译任务已触发", null));
+        return ResponseEntity.ok(ApiResponse.ok("工作流已重启", null));
     }
 
-    @Operation(summary = "触发 AI 回复", description = "手动触发指定工单的 AI 回复生成任务")
+    @Deprecated
+    @Operation(summary = "触发 AI 回复（已废弃）", description = "已废弃，请使用 POST /{id}/restart-workflow。实际行为：校验翻译存在后重启整个 BPMN 工作流。")
     @PostMapping("/{id}/ai-reply")
     @RequiresPermission("ticket:reply")
     public ResponseEntity<ApiResponse<Void>> triggerAiReply(
             @Parameter(description = "工单 ID") @PathVariable Long id) {
         ticketService.triggerAiReply(id);
-        return ResponseEntity.ok(ApiResponse.ok("AI回复任务已触发", null));
+        return ResponseEntity.ok(ApiResponse.ok("工作流已重启", null));
     }
 
     @Operation(summary = "推送回复到 Freshdesk", description = "将指定已审核通过（APPROVED）工单的回复推送到 Freshdesk")

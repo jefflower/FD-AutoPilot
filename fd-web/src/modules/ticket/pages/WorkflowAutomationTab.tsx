@@ -4,11 +4,11 @@ import { useMQTranslation } from '../../../shared/context/MQTranslationContext';
 import { useMQReply } from '../../../shared/context/MQReplyContext';
 import { useMQAudit } from '../../../shared/context/MQAuditContext';
 import { serverApi, ticketApi } from '../../../shared/services/serverApi';
-import { isTauriEnv } from '../../../tauri/bridge';
+import { isTauriEnv, checkBridgeAvailable } from '../../../tauri/bridge';
 import PipelineOverviewBar from '../components/PipelineOverviewBar';
 import type { PipelineStage } from '../components/PipelineOverviewBar';
-import StagePanel from '../components/StagePanel';
-import AuditStagePanel from '../components/AuditStagePanel';
+import PipelineSidebar from '../components/PipelineSidebar';
+import NotifyConfigPanel from '../components/NotifyConfigPanel';
 import ServerTicketDetail from '../components/ServerTicketDetail';
 import type { ServerTicket } from '../../../shared/types/server';
 
@@ -26,7 +26,23 @@ const WorkflowAutomationTab: React.FC = () => {
     const [selectedTicketId, setSelectedTicketId] = useState<number | null>(null);
     const [selectedTicket, setSelectedTicket] = useState<ServerTicket | null>(null);
     const [showLogs, setShowLogs] = useState(false);
-    const isTauri = isTauriEnv();
+    const [agentDisabled, setAgentDisabled] = useState(!isTauriEnv());
+
+    // Mobile preview state
+    const [previewToken, setPreviewToken] = useState<string | null>(null);
+    const [previewLoading, setPreviewLoading] = useState<number | null>(null);
+
+    // Notify config panel state
+    const [showNotifyConfig, setShowNotifyConfig] = useState(false);
+
+    // 异步检测 Agent 可用性：Tauri 直接可用，或浏览器模式下 bridge 服务器可用
+    useEffect(() => {
+        if (isTauriEnv()) {
+            setAgentDisabled(false);
+            return;
+        }
+        checkBridgeAvailable().then(ok => setAgentDisabled(!ok));
+    }, []);
 
     // Split mode persistence (shared with other tabs)
     const [isSplitMode, setIsSplitModeState] = useState<boolean>(() => {
@@ -42,6 +58,7 @@ const WorkflowAutomationTab: React.FC = () => {
 
     useEffect(() => {
         if (selectedTicketId) {
+            setPreviewToken(null); // Clear preview when selecting a ticket
             serverApi.ticket.getTicketById(selectedTicketId)
                 .then(setSelectedTicket)
                 .catch(err => console.error('Failed to load ticket detail:', err));
@@ -171,7 +188,7 @@ const WorkflowAutomationTab: React.FC = () => {
         }
     }, [audit, selectedTicketId, t]);
 
-    // ============ Translation/Reply toggle handlers ============
+    // ============ Toggle handlers ============
 
     const handleTranslationToggle = useCallback(() => {
         if (translation.isRunning) {
@@ -197,6 +214,24 @@ const WorkflowAutomationTab: React.FC = () => {
         }
     }, [audit]);
 
+    // ============ Mobile preview ============
+
+    const handleMobilePreview = useCallback(async (ticketId: number) => {
+        setPreviewLoading(ticketId);
+        try {
+            const token = await ticketApi.getAuditToken(ticketId);
+            setPreviewToken(token);
+        } catch (err) {
+            alert(t('audit.previewFailed', { error: (err as Error).message }));
+        } finally {
+            setPreviewLoading(null);
+        }
+    }, [t]);
+
+    const handleBackFromPreview = useCallback(() => {
+        setPreviewToken(null);
+    }, []);
+
     // ============ Combined logs ============
 
     const combinedLogs = React.useMemo(() => {
@@ -205,8 +240,6 @@ const WorkflowAutomationTab: React.FC = () => {
             ...reply.logs.map(l => `[Reply] ${l}`),
             ...audit.logs.map(l => `[Audit] ${l}`),
         ];
-        // Logs are already chronological within each source.
-        // We show them interleaved, keeping last 50.
         return all.slice(-50);
     }, [translation.logs, reply.logs, audit.logs]);
 
@@ -218,63 +251,87 @@ const WorkflowAutomationTab: React.FC = () => {
                 onStartAll={handleStartAll}
                 onStopAll={handleStopAll}
                 allRunning={allRunning}
+                onSettingsClick={() => {
+                    setShowNotifyConfig(v => !v);
+                    setPreviewToken(null);
+                }}
+                showSettings={showNotifyConfig}
             />
 
-            {/* Middle: Three-column layout + Detail */}
+            {/* Middle: Sidebar + Detail */}
             <div className="flex-1 flex overflow-hidden">
-                {/* Three stage columns */}
-                <div className="w-[540px] flex-shrink-0 flex gap-1 p-1 border-r border-slate-700/50 overflow-hidden">
-                    {/* Translation column */}
-                    <div className="flex-1 min-w-0">
-                        <StagePanel
-                            title={t('automation.stageTranslation')}
-                            color="cyan"
-                            isRunning={translation.isRunning}
-                            onToggle={handleTranslationToggle}
-                            processingTasks={translation.processingTasks}
-                            completedHistory={translation.completedHistory}
-                            onSelectTicket={setSelectedTicketId}
-                            selectedTicketId={selectedTicketId}
-                            disabled={!isTauri}
-                            disabledMessage={!isTauri ? t('automation.tauriHint') : undefined}
-                        />
-                    </div>
-
-                    {/* Reply column */}
-                    <div className="flex-1 min-w-0">
-                        <StagePanel
-                            title={t('automation.stageReply')}
-                            color="orange"
-                            isRunning={reply.isRunning}
-                            onToggle={handleReplyToggle}
-                            processingTasks={reply.processingTasks}
-                            completedHistory={reply.completedHistory}
-                            onSelectTicket={setSelectedTicketId}
-                            selectedTicketId={selectedTicketId}
-                            disabled={!isTauri}
-                            disabledMessage={!isTauri ? t('automation.tauriHint') : undefined}
-                        />
-                    </div>
-
-                    {/* Audit column */}
-                    <div className="flex-1 min-w-0">
-                        <AuditStagePanel
-                            isRunning={audit.isRunning}
-                            onToggle={handleAuditToggle}
-                            processingTasks={audit.processingTasks}
-                            completedHistory={audit.completedHistory}
-                            onPass={handleAuditPass}
-                            onReject={handleAuditReject}
-                            onRetranslate={handleAuditRetranslate}
-                            onSelectTicket={setSelectedTicketId}
-                            selectedTicketId={selectedTicketId}
-                        />
-                    </div>
+                {/* Pipeline sidebar */}
+                <div className="w-80 flex-shrink-0 border-r border-slate-700/50 overflow-hidden">
+                    <PipelineSidebar
+                        translation={{
+                            isRunning: translation.isRunning,
+                            onToggle: handleTranslationToggle,
+                            processingTasks: translation.processingTasks,
+                            completedHistory: translation.completedHistory,
+                            disabled: agentDisabled,
+                            disabledMessage: agentDisabled ? t('automation.bridgeUnavailable') : undefined,
+                        }}
+                        reply={{
+                            isRunning: reply.isRunning,
+                            onToggle: handleReplyToggle,
+                            processingTasks: reply.processingTasks,
+                            completedHistory: reply.completedHistory,
+                            disabled: agentDisabled,
+                            disabledMessage: agentDisabled ? t('automation.bridgeUnavailable') : undefined,
+                        }}
+                        audit={{
+                            isRunning: audit.isRunning,
+                            onToggle: handleAuditToggle,
+                            processingTasks: audit.processingTasks,
+                            completedHistory: audit.completedHistory,
+                            onPass: handleAuditPass,
+                            onReject: handleAuditReject,
+                            onRetranslate: handleAuditRetranslate,
+                            onMobilePreview: handleMobilePreview,
+                            previewLoading,
+                        }}
+                        onSelectTicket={setSelectedTicketId}
+                        selectedTicketId={selectedTicketId}
+                    />
                 </div>
 
-                {/* Right: Ticket detail */}
+                {/* Right: Detail panel */}
                 <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
-                    {selectedTicket ? (
+                    {showNotifyConfig ? (
+                        <NotifyConfigPanel onClose={() => setShowNotifyConfig(false)} />
+                    ) : previewToken ? (
+                        <div className="flex-1 flex flex-col items-center justify-center bg-black/30 overflow-hidden py-4">
+                            {/* Back + controls bar */}
+                            <div className="flex items-center gap-3 mb-3">
+                                <button
+                                    onClick={handleBackFromPreview}
+                                    className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-800/90 rounded-lg text-xs font-medium text-slate-300 hover:text-white border border-white/10 transition-colors"
+                                >
+                                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                                    </svg>
+                                    {t('common:button.back')}
+                                </button>
+                                <span className="text-[10px] text-slate-500 font-mono">390 x 844 · iPhone 14</span>
+                            </div>
+                            {/* Phone frame */}
+                            <div
+                                className="bg-slate-950 rounded-[2.5rem] p-3 shadow-2xl border border-slate-700/50 flex-shrink-0"
+                                style={{ width: 390 + 24, height: Math.min(844, 720) + 24 }}
+                            >
+                                {/* Notch */}
+                                <div className="flex justify-center mb-1">
+                                    <div className="w-24 h-5 bg-slate-950 rounded-b-2xl" />
+                                </div>
+                                <iframe
+                                    src={`/m/audit?token=${encodeURIComponent(previewToken)}`}
+                                    className="w-full rounded-2xl bg-slate-900"
+                                    style={{ width: 390, height: Math.min(844, 720) - 30 }}
+                                    title="Mobile Audit Preview"
+                                />
+                            </div>
+                        </div>
+                    ) : selectedTicket ? (
                         <ServerTicketDetail
                             ticket={selectedTicket}
                             isEmbed={true}

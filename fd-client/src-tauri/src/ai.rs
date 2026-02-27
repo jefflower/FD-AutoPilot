@@ -1,7 +1,35 @@
 use crate::models::Ticket;
 use serde::{Deserialize, Serialize};
 use std::process::Command;
-use tauri::{AppHandle, Emitter};
+
+/// 日志抽象 trait，让核心 AI 函数不依赖 Tauri AppHandle
+pub trait GeminiLogger: Send + Sync {
+    fn log(&self, msg: &str);
+}
+
+/// Tauri 环境下的日志实现（IPC + stderr）
+#[cfg(feature = "tauri-app")]
+pub struct TauriLogger<'a> {
+    pub app: &'a tauri::AppHandle,
+}
+
+#[cfg(feature = "tauri-app")]
+impl GeminiLogger for TauriLogger<'_> {
+    fn log(&self, msg: &str) {
+        eprintln!("[GeminiLog] {}", msg);
+        use tauri::Emitter;
+        let _ = self.app.emit("log", msg.to_string());
+    }
+}
+
+/// HTTP Bridge 环境下的日志实现（仅 stderr）
+pub struct StderrLogger;
+
+impl GeminiLogger for StderrLogger {
+    fn log(&self, msg: &str) {
+        eprintln!("[GeminiLog] {}", msg);
+    }
+}
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct TranslationResult {
@@ -62,19 +90,13 @@ pub fn lang_code_to_name(code: &str) -> &str {
 pub struct GeminiClient;
 
 impl GeminiClient {
-    pub fn log(app: &AppHandle, msg: &str) {
-        eprintln!("[GeminiLog] {}", msg);
-        let _ = app.emit("log", msg.to_string());
-    }
-
     pub async fn translate_ticket(
-        app: &AppHandle,
+        logger: &dyn GeminiLogger,
         ticket: &Ticket,
         target_lang: &str,
         system_prompt: Option<&str>,
     ) -> Result<Ticket, String> {
-        Self::log(
-            app,
+        logger.log(
             &format!("🤖 Translating ticket #{} to {}...", ticket.id, target_lang),
         );
 
@@ -170,8 +192,7 @@ impl GeminiClient {
             }
         }
 
-        Self::log(
-            app,
+        logger.log(
             &format!(
                 "✅ Translation to {} complete. Result: Title({} chars), Desc({} chars), Conversations({} items)",
                 target_lang,
@@ -186,7 +207,7 @@ impl GeminiClient {
     /// Generic gemini CLI execution: takes a fully constructed prompt and a list of models (priority ordered).
     /// Tries each model in order; returns raw stdout on the first success.
     pub async fn execute_gemini(
-        app: &AppHandle,
+        logger: &dyn GeminiLogger,
         prompt: &str,
         models: &[String],
     ) -> Result<String, String> {
@@ -196,8 +217,7 @@ impl GeminiClient {
             models.iter().map(|s| s.as_str()).collect()
         };
 
-        Self::log(
-            app,
+        logger.log(
             &format!(
                 "🤖 Executing gemini CLI with {} model(s): [{}]",
                 models_to_try.len(),
@@ -208,8 +228,7 @@ impl GeminiClient {
         let mut last_error = String::new();
 
         for (i, model) in models_to_try.iter().enumerate() {
-            Self::log(
-                app,
+            logger.log(
                 &format!(
                     "  Trying model: {} ({}/{})",
                     if model.is_empty() { "default" } else { model },
@@ -227,8 +246,7 @@ impl GeminiClient {
             match cmd.output() {
                 Ok(output) if output.status.success() => {
                     let stdout = String::from_utf8_lossy(&output.stdout).trim().to_string();
-                    Self::log(
-                        app,
+                    logger.log(
                         &format!(
                             "  ✅ Success with model: {}, output: {} chars",
                             if model.is_empty() { "default" } else { model },
@@ -239,8 +257,7 @@ impl GeminiClient {
                 }
                 Ok(output) => {
                     let stderr = String::from_utf8_lossy(&output.stderr).to_string();
-                    Self::log(
-                        app,
+                    logger.log(
                         &format!(
                             "  ❌ Model {} failed: {}",
                             if model.is_empty() { "default" } else { model },
@@ -262,7 +279,7 @@ impl GeminiClient {
     /// Sync-translate a reply: given both language versions and a direction,
     /// translate one side to match the other using Gemini CLI.
     pub async fn sync_translate_reply(
-        app: &AppHandle,
+        logger: &dyn GeminiLogger,
         source_text: &str,
         reference_text: &str,
         direction: &str,
@@ -276,8 +293,7 @@ impl GeminiClient {
             _ => return Err(format!("Unknown direction: {}", direction)),
         };
 
-        Self::log(
-            app,
+        logger.log(
             &format!("🔄 Sync translating reply: {} → {}...", from_label, to_label),
         );
 
@@ -317,8 +333,7 @@ impl GeminiClient {
 
         let stdout = String::from_utf8_lossy(&output.stdout).trim().to_string();
 
-        Self::log(
-            app,
+        logger.log(
             &format!("✅ Sync translation complete ({} → {}), result: {} chars", from_label, to_label, stdout.len()),
         );
 

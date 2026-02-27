@@ -5,7 +5,14 @@ import { AGENT_MAP } from '../../../shared/constants/agentMap';
 
 type PageState = 'loading' | 'ready' | 'audited' | 'error' | 'submitted';
 
-export default function MobileAuditPage() {
+interface MobileAuditPageProps {
+    /** 直接传入 token（嵌入模式），不传则从 URL 参数读取 */
+    token?: string;
+    /** 嵌入模式下的返回按钮回调 */
+    onBack?: () => void;
+}
+
+export default function MobileAuditPage({ token: tokenProp, onBack }: MobileAuditPageProps = {}) {
     const [state, setState] = useState<PageState>('loading');
     const [detail, setDetail] = useState<MobileAuditDetail | null>(null);
     const [error, setError] = useState('');
@@ -16,8 +23,9 @@ export default function MobileAuditPage() {
     const [auditRemark, setAuditRemark] = useState('');
     const [submitting, setSubmitting] = useState(false);
 
-    // Parse token from URL
-    const token = new URLSearchParams(window.location.search).get('token') || '';
+    // Parse token from prop or URL
+    const token = tokenProp || new URLSearchParams(window.location.search).get('token') || '';
+    const isEmbedded = !!tokenProp;
 
     const loadDetail = useCallback(async () => {
         if (!token) {
@@ -60,7 +68,7 @@ export default function MobileAuditPage() {
     // ===== Loading =====
     if (state === 'loading') {
         return (
-            <div className="min-h-screen bg-slate-900 flex items-center justify-center">
+            <div className={`${isEmbedded ? 'h-full' : 'min-h-screen'} bg-slate-900 flex items-center justify-center`}>
                 <div className="text-center">
                     <div className="animate-spin rounded-full h-10 w-10 border-2 border-slate-600 border-t-blue-400 mx-auto mb-4" />
                     <p className="text-slate-400 text-sm">加载审核详情...</p>
@@ -72,7 +80,7 @@ export default function MobileAuditPage() {
     // ===== Error =====
     if (state === 'error') {
         return (
-            <div className="min-h-screen bg-slate-900 flex items-center justify-center p-6">
+            <div className={`${isEmbedded ? 'h-full' : 'min-h-screen'} bg-slate-900 flex items-center justify-center p-6`}>
                 <div className="text-center max-w-sm">
                     <div className="w-16 h-16 rounded-full bg-red-500/10 flex items-center justify-center mx-auto mb-4">
                         <svg className="w-8 h-8 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -90,7 +98,7 @@ export default function MobileAuditPage() {
     if (state === 'submitted' && submitResult) {
         const isPassed = submitResult.auditResult === 'PASS';
         return (
-            <div className="min-h-screen bg-slate-900 flex items-center justify-center p-6">
+            <div className={`${isEmbedded ? 'h-full' : 'min-h-screen'} bg-slate-900 flex items-center justify-center p-6`}>
                 <div className="text-center max-w-sm">
                     <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ${
                         submitResult.success
@@ -120,10 +128,21 @@ export default function MobileAuditPage() {
 
     // ===== Ready / Audited =====
     return (
-        <div className="min-h-screen bg-slate-900 text-white">
+        <div className={`${isEmbedded ? 'h-full flex flex-col' : 'min-h-screen'} bg-slate-900 text-white`}>
             {/* Header */}
             <div className="sticky top-0 z-10 bg-slate-800/95 backdrop-blur border-b border-slate-700 px-4 py-3">
                 <div className="flex items-center gap-2">
+                    {isEmbedded && onBack && (
+                        <button
+                            onClick={onBack}
+                            className="p-1 -ml-1 text-slate-400 hover:text-white transition-colors"
+                            title="返回详情"
+                        >
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+                    )}
                     <span className="text-xs px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 font-mono">
                         #{detail.externalId}
                     </span>
@@ -137,7 +156,7 @@ export default function MobileAuditPage() {
             </div>
 
             {/* Content */}
-            <div className="p-4 space-y-4 pb-32">
+            <div className={`p-4 space-y-4 ${isEmbedded ? 'flex-1 overflow-y-auto pb-4' : 'pb-32'}`}>
                 {/* Translated Title */}
                 {detail.translatedTitle && (
                     <Card title="翻译标题">
@@ -223,7 +242,7 @@ export default function MobileAuditPage() {
 
             {/* Bottom Action Bar */}
             {state === 'ready' && (
-                <div className="fixed bottom-0 left-0 right-0 bg-slate-800/95 backdrop-blur border-t border-slate-700 p-4 safe-area-bottom">
+                <div className={`${isEmbedded ? 'sticky bottom-0' : 'fixed bottom-0 left-0 right-0'} bg-slate-800/95 backdrop-blur border-t border-slate-700 p-4 safe-area-bottom`}>
                     {!showRejectForm ? (
                         <div className="flex gap-3">
                             <button
@@ -262,7 +281,7 @@ export default function MobileAuditPage() {
 
             {/* Audited overlay notice */}
             {state === 'audited' && (
-                <div className="fixed bottom-0 left-0 right-0 bg-slate-800/95 backdrop-blur border-t border-slate-700 p-4 safe-area-bottom">
+                <div className={`${isEmbedded ? 'sticky bottom-0' : 'fixed bottom-0 left-0 right-0'} bg-slate-800/95 backdrop-blur border-t border-slate-700 p-4 safe-area-bottom`}>
                     <div className="text-center text-sm text-yellow-300">
                         该工单已被审核，仅供查看
                     </div>

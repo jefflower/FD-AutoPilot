@@ -51,4 +51,41 @@ public interface TaskInstanceRepository extends JpaRepository<TaskInstance, Long
     @Modifying
     @Query("DELETE FROM TaskInstance t WHERE t.status IN :statuses AND t.completedAt < :cutoff")
     int deleteOldTasks(@Param("statuses") List<TaskStatus> statuses, @Param("cutoff") LocalDateTime cutoff);
+
+    /**
+     * 查找最近完成的任务（防止短时间内重复创建，debounce）
+     */
+    @Query("SELECT t FROM TaskInstance t WHERE t.taskType = :taskType AND t.referenceId = :refId AND t.status = :status AND t.completedAt > :cutoff ORDER BY t.completedAt DESC")
+    Optional<TaskInstance> findRecentlyCompletedTask(@Param("taskType") String taskType,
+                                                     @Param("refId") String refId,
+                                                     @Param("status") TaskStatus status,
+                                                     @Param("cutoff") LocalDateTime cutoff);
+
+    /**
+     * 取消同 taskType + referenceId 下、除指定任务外的所有活跃任务（PENDING + CLAIMED），防止重复处理。
+     * 包含 CLAIMED 是因为竞态条件：消费者可能在取消前已 claim 了新的重复任务。
+     */
+    @Modifying
+    @Query("UPDATE TaskInstance t SET t.status = :cancelStatus, t.completedAt = :now WHERE t.taskType = :taskType AND t.referenceId = :refId AND t.status IN :activeStatuses AND t.id <> :excludeId")
+    int cancelDuplicateActiveTasks(@Param("taskType") String taskType,
+                                   @Param("refId") String refId,
+                                   @Param("activeStatuses") List<TaskStatus> activeStatuses,
+                                   @Param("cancelStatus") TaskStatus cancelStatus,
+                                   @Param("now") LocalDateTime now,
+                                   @Param("excludeId") Long excludeId);
+
+    /**
+     * 查找已失败且冷却时间已过的任务（兜底恢复用）
+     */
+    @Query("SELECT t FROM TaskInstance t WHERE t.taskType = :taskType AND t.status = :status AND t.completedAt < :cutoff")
+    List<TaskInstance> findFailedTasksForRecovery(@Param("taskType") String taskType, @Param("status") TaskStatus status, @Param("cutoff") LocalDateTime cutoff);
+
+    /**
+     * 查找 payload 中包含指定 processInstanceId 且状态在指定范围内的任务。
+     * 用于工作流超时恢复：找出已完成/超时但 ReceiveTask 信号丢失的任务。
+     */
+    @Query("SELECT t FROM TaskInstance t WHERE t.payload LIKE CONCAT('%', :processInstanceId, '%') AND t.status IN :statuses")
+    List<TaskInstance> findByPayloadContainingAndStatusIn(
+            @Param("processInstanceId") String processInstanceId,
+            @Param("statuses") List<TaskStatus> statuses);
 }

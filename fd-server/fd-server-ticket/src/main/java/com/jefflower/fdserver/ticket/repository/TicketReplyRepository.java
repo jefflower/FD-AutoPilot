@@ -9,4 +9,6 @@ public interface TicketReplyRepository extends JpaRepository<TicketReply, Long> 
     List<TicketReply> findByTicket(Ticket ticket);
 
     void deleteByTicket(Ticket ticket);
+
+    boolean existsByTicket(Ticket ticket);
 }

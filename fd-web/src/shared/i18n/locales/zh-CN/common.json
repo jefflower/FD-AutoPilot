@@ -39,13 +39,12 @@
     "workflowDesigner": "流程设计",
     "workflowAgents": "Agent 管理",
     "workflowGuide": "使用指南",
-    "automation": "自动化"
+    "automation": "自动化",
+    "agentAutomation": "Agent 面板"
   },
   "ticketStatus": {
     "PENDING_TRANS": "待翻译",
-    "TRANSLATING": "翻译中",
-    "PENDING_REPLY": "待回复",
-    "REPLYING": "回复中",
+    "PROCESSING": "处理中",
     "PENDING_AUDIT": "待审核",
     "AUDITING": "审核中",
     "APPROVED": "待推送",
@@ -78,7 +77,8 @@
     "previousPage": "上一页",
     "nextPage": "下一页",
     "selectAll": "全选",
-    "deselectAll": "取消全选"
+    "deselectAll": "取消全选",
+    "back": "返回"
   },
   "message": {
     "saveSuccess": "保存成功",

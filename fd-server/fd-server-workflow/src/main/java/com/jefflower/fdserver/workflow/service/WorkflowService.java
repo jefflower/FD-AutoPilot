@@ -17,6 +17,8 @@ import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.Instant;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -93,7 +95,13 @@ public class WorkflowService {
 
     /**
      * 唤醒 ReceiveTask
+     * <p>
+     * 必须运行在事务中：trigger 会驱动 BPMN 流程继续执行，
+     * 后续 JavaDelegate / BusinessCallback 可能包含 JPA 写操作（如 ticketRepository.save）。
+     * 当从 @TransactionalEventListener(AFTER_COMMIT) 调用时，原始事务已提交，
+     * 需要此处声明 @Transactional 创建新事务。
      */
+    @Transactional
     public void signalReceiveTask(String processInstanceId, String activityId, Map<String, Object> vars) {
         Execution execution = runtimeService.createExecutionQuery()
                 .processInstanceId(processInstanceId)
@@ -169,5 +177,29 @@ public class WorkflowService {
                 .active()
                 .singleResult();
         return instance != null ? instance.getId() : null;
+    }
+
+    /**
+     * 查询所有在指定超时之前启动且当前停留在 ReceiveTask 上的流程实例。
+     * 用于超时检测：找出可能卡死的流程。
+     *
+     * @param startedBefore 流程启动时间早于此值的才算超时
+     * @return 超时的流程实例列表（包含 businessKey 和当前活跃节点信息）
+     */
+    public List<ProcessInstance> findStuckProcessInstances(Instant startedBefore) {
+        return runtimeService.createProcessInstanceQuery()
+                .active()
+                .startedBefore(Date.from(startedBefore))
+                .list();
+    }
+
+    /**
+     * 查询指定流程实例中，停留在某个 ReceiveTask 上的执行。
+     */
+    public Execution findReceiveTaskExecution(String processInstanceId, String activityId) {
+        return runtimeService.createExecutionQuery()
+                .processInstanceId(processInstanceId)
+                .activityId(activityId)
+                .singleResult();
     }
 }

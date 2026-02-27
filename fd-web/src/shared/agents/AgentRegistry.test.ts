@@ -273,10 +273,10 @@ describe('AgentRegistry', () => {
 
         it('executor.isAvailable() 返回 false 时返回 null', async () => {
             const registry = AgentRegistry.getInstance();
-            const unavailableExecutor = makeExecutor('WEB_AUTOMATION', false);
+            const unavailableExecutor = makeExecutor('NOTEBOOKLM', false);
             registry.registerExecutor(unavailableExecutor);
 
-            const def = makeDefinition({ code: 'shadow-agent', providerType: 'WEB_AUTOMATION' });
+            const def = makeDefinition({ code: 'shadow-agent', providerType: 'NOTEBOOKLM' });
             const apiMock = await getAgentApiMock();
             apiMock.getDefinitions.mockResolvedValue([def]);
             apiMock.getBindings.mockResolvedValue({});
@@ -302,9 +302,9 @@ describe('AgentRegistry', () => {
             expect(result!.executor).toBe(executor);
         });
 
-        it('legacy providerType SHADOW_WINDOW 映射到 WEB_AUTOMATION executor', async () => {
+        it('legacy providerType SHADOW_WINDOW 映射到 NOTEBOOKLM executor', async () => {
             const registry = AgentRegistry.getInstance();
-            const executor = makeExecutor('WEB_AUTOMATION');
+            const executor = makeExecutor('NOTEBOOKLM');
             registry.registerExecutor(executor);
 
             // 后端返回旧值 SHADOW_WINDOW

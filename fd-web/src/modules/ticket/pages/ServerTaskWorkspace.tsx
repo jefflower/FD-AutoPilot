@@ -2,7 +2,6 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { ServerTicket } from '../../../shared/types/server';
 import ServerTicketDetail from '../components/ServerTicketDetail';
-import { useTicketProcess } from '../../../shared/hooks/useTicketProcess';
 
 interface Task {
     ticketId: number;
@@ -42,16 +41,11 @@ const ServerTaskWorkspace: React.FC<ServerTaskWorkspaceProps> = ({
 
     const [selectedTicket, setSelectedTicket] = useState<ServerTicket | null>(null);
     const [isLoading, setIsLoading] = useState(false);
-    const { getProcessState, setProcessStatus } = useTicketProcess();
 
-    const setProcessingStatus = useCallback((ticketId: number, status: 'translating' | 'replying' | null) => {
-        setProcessStatus(ticketId, status);
-    }, [setProcessStatus]);
-
-    const currentGlobalActiveStatus = React.useMemo(() => {
-        if (!selectedTicketId) return null;
-        return getProcessState(Number(selectedTicketId)).status;
-    }, [selectedTicketId, getProcessState]);
+    // 从 workspace type 直接映射 activeProcessType
+    const activeProcessType = type === 'translation' ? 'translating' as const
+        : type === 'reply' ? 'replying' as const
+        : null;
 
     const [isSplitMode, setIsSplitModeState] = useState<boolean>(() => {
         const saved = localStorage.getItem('server_split_mode');
@@ -123,20 +117,15 @@ const ServerTaskWorkspace: React.FC<ServerTaskWorkspaceProps> = ({
         const removedIds = [...prevIds].filter(id => !currentIds.has(id));
         for (const removedId of removedIds) {
             const completedTask = completedTasks.find(t => t.ticketId === removedId);
-            if (completedTask && completedTask.success === false) {
-                // 失败任务：自动保留在选项卡中
+            if (completedTask) {
+                // 任务完成（成功或失败）：保留在选项卡中，避免组件卸载/重建闪烁
                 setOpenedCompletedTabs(prev => {
                     if (prev.some(t => t.ticketId === removedId)) return prev;
                     return [...prev, completedTask];
                 });
-            } else {
-                // 成功任务：不保留选项卡，如果当前选中的就是它则切走
-                if (selectedTicketId === removedId) {
-                    const nextId = translatingTasks.length > 0 ? translatingTasks[0].ticketId : null;
-                    if (onSelectTask) onSelectTask(nextId);
-                    else setInternalSelectedTicketId(nextId);
-                }
             }
+            // 不再清除 selectedTicketId — 让 detail 组件保持挂载，
+            // 新任务到来时会自动切换（上方 newIds 逻辑）
         }
 
         // 当前无选中任务时，选中执行中的第一个
@@ -276,8 +265,7 @@ const ServerTaskWorkspace: React.FC<ServerTaskWorkspaceProps> = ({
                         ticket={selectedTicket}
                         isEmbed={true}
                         isProcessing={isTaskProcessing(selectedTicket.id)}
-                        activeProcessType={currentGlobalActiveStatus}
-                        onProcessStatusChange={setProcessingStatus}
+                        activeProcessType={isTaskProcessing(selectedTicket.id) ? activeProcessType : null}
                         isSplitMode={isSplitMode}
                         setIsSplitMode={setIsSplitMode}
                         onRefresh={handleDetailRefresh}

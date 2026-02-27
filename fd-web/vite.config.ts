@@ -23,6 +23,7 @@ export default defineConfig({
   server: {
     port: 5173,
     strictPort: false,
+    host: '0.0.0.0',
     proxy: {
       '/api': {
         target: 'http://localhost:9988',
@@ -30,6 +31,10 @@ export default defineConfig({
       },
       '/h2-console': {
         target: 'http://localhost:9988',
+        changeOrigin: true,
+      },
+      '/bridge': {
+        target: 'http://localhost:9987',
         changeOrigin: true,
       },
     },

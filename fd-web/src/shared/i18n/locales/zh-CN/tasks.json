@@ -48,6 +48,10 @@
     "confirmReject": "确认驳回",
     "rejectPlaceholder": "输入驳回意见...",
     "noReplyContent": "该工单没有回复内容，无法审核",
+    "noTranslationContent": "该工单尚未完成翻译，无法通过审核",
+    "missingTranslation": "缺少翻译",
+    "missingReply": "缺少回复",
+    "batchSkipped": "以下工单因缺少翻译或回复被跳过: {{tickets}}",
     "submitFailed": "审核提交失败: {{error}}",
     "rejectFailed": "驳回失败: {{error}}",
     "queryTitle": "审核任务 ({{count}})",
@@ -108,7 +112,9 @@
     "retranslateRemark": "输入重新翻译原因...",
     "confirmRetranslate": "确认重译",
     "tauriRequired": "此功能需要 Tauri 桌面客户端",
-    "tauriHint": "翻译和回复使用本地 AI Agent，需通过桌面客户端运行"
+    "tauriHint": "翻译和回复使用本地 AI Agent，需通过桌面客户端运行",
+    "bridgeUnavailable": "未检测到 AI Agent 运行环境，请启动 Bridge 服务器或使用桌面客户端",
+    "settings": "通知设置"
   },
   "widget": {
     "title": "MQ 任务",

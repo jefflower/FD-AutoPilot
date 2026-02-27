@@ -2,7 +2,8 @@ import React, { createContext, useContext, useState, useEffect, useCallback } fr
 import { AgentRegistry } from './AgentRegistry';
 import { CliExecutor } from './executors/CliExecutor';
 import { HttpApiExecutor } from './executors/HttpApiExecutor';
-import { ShadowExecutor } from './executors/ShadowExecutor';
+import { NotebookLmExecutor } from './executors/NotebookLmExecutor';
+import { TrackingExecutor } from './executors/TrackingExecutor';
 import { FunctionExecutor } from './executors/FunctionExecutor';
 import type { AgentDefinition, AgentBindings } from '../types/server';
 
@@ -39,7 +40,8 @@ export const AgentProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
         registry.registerExecutor(new CliExecutor());
         registry.registerExecutor(new HttpApiExecutor());
-        registry.registerExecutor(new ShadowExecutor());
+        registry.registerExecutor(new NotebookLmExecutor());
+        registry.registerExecutor(new TrackingExecutor());
         registry.registerExecutor(new FunctionExecutor());
 
         registry.loadDefinitions()

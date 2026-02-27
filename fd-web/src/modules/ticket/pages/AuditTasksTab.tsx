@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, lazy, Suspense } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { serverApi, ticketApi } from '../../../shared/services/serverApi';
 import ServerTicketDetail from '../components/ServerTicketDetail';
@@ -10,8 +10,6 @@ import CompletedTaskCard from '../components/CompletedTaskCard';
 import EmptyStateHint from '../components/EmptyStateHint';
 import LogPanel from '../components/LogPanel';
 import DetailEmptyState from '../components/DetailEmptyState';
-
-const MobilePreviewModal = lazy(() => import('../components/MobilePreviewModal'));
 
 type AuditMode = 'mq' | 'query';
 
@@ -46,7 +44,7 @@ const AuditTasksTab: React.FC = () => {
     const [rejectingId, setRejectingId] = useState<number | null>(null);
     const [rejectRemark, setRejectRemark] = useState('');
 
-    // 移动预览
+    // 移动预览（右侧面板内联展示）
     const [previewToken, setPreviewToken] = useState<string | null>(null);
     const [previewLoading, setPreviewLoading] = useState<number | null>(null);
 
@@ -61,6 +59,10 @@ const AuditTasksTab: React.FC = () => {
             setPreviewLoading(null);
         }
     }, [t]);
+
+    const handleBackFromPreview = useCallback(() => {
+        setPreviewToken(null);
+    }, []);
 
     // 状态查询模式
     const [queryLoading, setQueryLoading] = useState(false);
@@ -98,10 +100,15 @@ const AuditTasksTab: React.FC = () => {
         setSubmitting(true);
         try {
             const ticket = await serverApi.ticket.getTicketById(ticketId);
+            // 校验翻译和回复都存在
+            if (!ticket.translation) {
+                alert(t('audit.noTranslationContent'));
+                completeAudit(ticketId, false);
+                return;
+            }
             if (!ticket.replies || ticket.replies.length === 0) {
                 alert(t('audit.noReplyContent'));
-                // 无回复内容，自动跳过此审核任务（释放消费者）
-                completeAudit(ticketId, true);
+                completeAudit(ticketId, false);
                 return;
             }
             await serverApi.ticket.submitAudit(ticketId, {
@@ -112,7 +119,6 @@ const AuditTasksTab: React.FC = () => {
             setSelectedId(null);
         } catch (err) {
             alert(t('audit.submitFailed', { error: (err as Error).message }));
-            // 错误时也必须释放消费者，否则 Promise 永不 resolve 导致消费者死锁
             completeAudit(ticketId, false);
         } finally {
             setSubmitting(false);
@@ -126,8 +132,7 @@ const AuditTasksTab: React.FC = () => {
             const ticket = await serverApi.ticket.getTicketById(ticketId);
             if (!ticket.replies || ticket.replies.length === 0) {
                 alert(t('audit.noReplyContent'));
-                // 无回复内容，自动跳过此审核任务（释放消费者）
-                completeAudit(ticketId, true);
+                completeAudit(ticketId, false);
                 return;
             }
             await serverApi.ticket.submitAudit(ticketId, {
@@ -141,7 +146,6 @@ const AuditTasksTab: React.FC = () => {
             setSelectedId(null);
         } catch (err) {
             alert(t('audit.rejectFailed', { error: (err as Error).message }));
-            // 错误时也必须释放消费者，否则 Promise 永不 resolve 导致消费者死锁
             completeAudit(ticketId, false);
         } finally {
             setSubmitting(false);
@@ -198,16 +202,27 @@ const AuditTasksTab: React.FC = () => {
     const handleBatchPass = async () => {
         if (selectedTicketIds.size === 0) return;
         setSubmitting(true);
+        const skipped: string[] = [];
         try {
             const ids = Array.from(selectedTicketIds);
             for (const id of ids) {
                 const ticket = queryTickets.find(t => t.id === id);
-                if (ticket && ticket.replies && ticket.replies.length > 0) {
-                    await serverApi.ticket.submitAudit(id, {
-                        replyId: ticket.replies[0].id,
-                        auditResult: 'PASS'
-                    });
+                if (!ticket) continue;
+                if (!ticket.translation) {
+                    skipped.push(`#${ticket.externalId}(${t('audit.missingTranslation')})`);
+                    continue;
                 }
+                if (!ticket.replies || ticket.replies.length === 0) {
+                    skipped.push(`#${ticket.externalId}(${t('audit.missingReply')})`);
+                    continue;
+                }
+                await serverApi.ticket.submitAudit(id, {
+                    replyId: ticket.replies[0].id,
+                    auditResult: 'PASS'
+                });
+            }
+            if (skipped.length > 0) {
+                alert(t('audit.batchSkipped', { tickets: skipped.join(', ') }));
             }
             setSelectedTicketIds(new Set());
             loadQueryTasks();
@@ -229,6 +244,7 @@ const AuditTasksTab: React.FC = () => {
         setRejectingId(null);
         setRejectRemark('');
         setSelectedTicketIds(new Set());
+        setPreviewToken(null);
     };
 
     const handleRefresh = useCallback(() => {
@@ -324,7 +340,7 @@ const AuditTasksTab: React.FC = () => {
                                             >
                                                 <div
                                                     className="cursor-pointer"
-                                                    onClick={() => setSelectedId(task.ticketId)}
+                                                    onClick={() => { setSelectedId(task.ticketId); setPreviewToken(null); }}
                                                 >
                                                     <div className="flex items-center justify-between mb-0.5">
                                                         <span className="text-[11px] font-bold font-mono text-pink-400 opacity-80 group-hover:opacity-100 transition-opacity">#{task.externalId}</span>
@@ -466,32 +482,46 @@ const AuditTasksTab: React.FC = () => {
                             {queryTickets.map(task => (
                                 <div
                                     key={task.id}
-                                    className={`flex items-center gap-2 p-2 rounded-xl transition-all border group ${selectedId === task.id
+                                    className={`p-2 rounded-xl transition-all border group ${selectedId === task.id
                                         ? 'bg-pink-500/10 border-pink-500/30'
                                         : 'bg-white/[0.02] border-transparent hover:bg-white/5'
                                         }`}
                                 >
-                                    <input
-                                        type="checkbox"
-                                        checked={selectedTicketIds.has(task.id)}
-                                        onChange={() => toggleSelect(task.id)}
-                                        className="w-4 h-4 rounded border-white/10 bg-black/40 text-pink-500 focus:ring-offset-0 focus:ring-0 cursor-pointer"
-                                    />
-                                    <button
-                                        onClick={() => setSelectedId(task.id)}
-                                        className="flex-1 text-left min-w-0"
-                                    >
-                                        <div className="flex items-center justify-between mb-0.5">
-                                            <span className="text-[10px] font-bold text-slate-500 group-hover:text-pink-400 transition-colors">#{task.externalId}</span>
-                                            <span className={`text-[8px] font-black uppercase tracking-tighter ${task.status === 'AUDITING' ? 'text-indigo-400' : 'text-pink-400'
-                                                }`}>
-                                                {task.status === 'AUDITING' ? t('audit.statusAuditing') : t('audit.statusNew')}
-                                            </span>
-                                        </div>
-                                        <div className="text-[11px] text-slate-300 truncate font-medium group-hover:text-white transition-colors">
-                                            {task.subject}
-                                        </div>
-                                    </button>
+                                    <div className="flex items-center gap-2">
+                                        <input
+                                            type="checkbox"
+                                            checked={selectedTicketIds.has(task.id)}
+                                            onChange={() => toggleSelect(task.id)}
+                                            className="w-4 h-4 rounded border-white/10 bg-black/40 text-pink-500 focus:ring-offset-0 focus:ring-0 cursor-pointer"
+                                        />
+                                        <button
+                                            onClick={() => { setSelectedId(task.id); setPreviewToken(null); }}
+                                            className="flex-1 text-left min-w-0"
+                                        >
+                                            <div className="flex items-center justify-between mb-0.5">
+                                                <span className="text-[10px] font-bold text-slate-500 group-hover:text-pink-400 transition-colors">#{task.externalId}</span>
+                                                <span className={`text-[8px] font-black uppercase tracking-tighter ${task.status === 'AUDITING' ? 'text-indigo-400' : 'text-pink-400'
+                                                    }`}>
+                                                    {task.status === 'AUDITING' ? t('audit.statusAuditing') : t('audit.statusNew')}
+                                                </span>
+                                            </div>
+                                            <div className="text-[11px] text-slate-300 truncate font-medium group-hover:text-white transition-colors">
+                                                {task.subject}
+                                            </div>
+                                        </button>
+                                    </div>
+                                    {/* 移动审核预览按钮 */}
+                                    <div className="flex justify-end mt-1">
+                                        <button
+                                            onClick={() => handleMobilePreview(task.id)}
+                                            disabled={previewLoading === task.id}
+                                            className="px-2 py-0.5 bg-blue-600/20 text-blue-400 hover:bg-blue-600/40 disabled:opacity-30 text-[10px] font-bold rounded-lg transition-all flex items-center gap-1"
+                                            title={t('audit.mobilePreview')}
+                                        >
+                                            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2" strokeWidth="2" /><circle cx="12" cy="18" r="1" fill="currentColor" /></svg>
+                                            {previewLoading === task.id ? '...' : t('audit.mobilePreview')}
+                                        </button>
+                                    </div>
                                 </div>
                             ))}
                             {queryTickets.length === 0 && !queryLoading && (
@@ -507,7 +537,38 @@ const AuditTasksTab: React.FC = () => {
 
             {/* 右侧详情区 */}
             <div className="flex-1 bg-slate-900/40 relative">
-                {selectedTicket ? (
+                {previewToken ? (
+                    <div className="h-full flex flex-col items-center justify-center bg-black/30 overflow-hidden py-4">
+                        {/* Back + controls */}
+                        <div className="flex items-center gap-3 mb-3">
+                            <button
+                                onClick={handleBackFromPreview}
+                                className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-800/90 rounded-lg text-xs font-medium text-slate-300 hover:text-white border border-white/10 transition-colors"
+                            >
+                                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                                </svg>
+                                {t('common:button.back')}
+                            </button>
+                            <span className="text-[10px] text-slate-500 font-mono">390 x 844 · iPhone 14</span>
+                        </div>
+                        {/* Phone frame */}
+                        <div
+                            className="bg-slate-950 rounded-[2.5rem] p-3 shadow-2xl border border-slate-700/50 flex-shrink-0"
+                            style={{ width: 390 + 24, height: Math.min(844, 720) + 24 }}
+                        >
+                            <div className="flex justify-center mb-1">
+                                <div className="w-24 h-5 bg-slate-950 rounded-b-2xl" />
+                            </div>
+                            <iframe
+                                src={`/m/audit?token=${encodeURIComponent(previewToken)}`}
+                                className="w-full rounded-2xl bg-slate-900"
+                                style={{ width: 390, height: Math.min(844, 720) - 30 }}
+                                title="Mobile Audit Preview"
+                            />
+                        </div>
+                    </div>
+                ) : selectedTicket ? (
                     <ServerTicketDetail
                         ticket={selectedTicket}
                         isEmbed={true}
@@ -523,16 +584,6 @@ const AuditTasksTab: React.FC = () => {
                     />
                 )}
             </div>
-
-            {/* Mobile Preview Modal */}
-            {previewToken && (
-                <Suspense fallback={null}>
-                    <MobilePreviewModal
-                        token={previewToken}
-                        onClose={() => setPreviewToken(null)}
-                    />
-                </Suspense>
-            )}
         </div>
     );
 };

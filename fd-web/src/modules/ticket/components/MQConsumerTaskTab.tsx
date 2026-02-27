@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { serverApi } from '../../../shared/services/serverApi';
 import ServerTaskWorkspace from '../pages/ServerTaskWorkspace';
 import type { MQTask } from '../../../shared/context/createMQTaskContext';
@@ -102,16 +102,19 @@ const MQConsumerTaskTab: React.FC<MQConsumerTaskTabProps> = ({
     // 过滤 completedHistory：排除正在处理中的 ticketId（防止重试时 key 冲突）
     const filteredCompletedHistory = completedHistory.filter(t => !processingTicketIds.has(t.ticketId));
 
-    // Map to ServerTaskWorkspace Task format
-    const workspaceTasks = processingList.map(t => ({
+    // Map to ServerTaskWorkspace Task format (memoized: only recompute when ticket IDs change)
+    const processingKey = processingList.map(t => t.ticketId).join(',');
+    const workspaceTasks = useMemo(() => processingList.map(t => ({
         ticketId: t.ticketId,
         externalId: t.externalId,
         subject: t.subject,
         startedAt: t.addedAt,
         isProcessed: false,
-    }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    })), [processingKey]);
 
-    const workspaceCompletedTasks = filteredCompletedHistory.map(t => ({
+    const completedKey = filteredCompletedHistory.map(t => `${t.ticketId}:${t.status}`).join(',');
+    const workspaceCompletedTasks = useMemo(() => filteredCompletedHistory.map(t => ({
         ticketId: t.ticketId,
         externalId: t.externalId,
         subject: t.subject,
@@ -119,7 +122,8 @@ const MQConsumerTaskTab: React.FC<MQConsumerTaskTabProps> = ({
         completedAt: t.addedAt,
         success: t.status === 'completed' || t.status === 'skipped',
         isProcessed: true,
-    }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    })), [completedKey]);
 
     const getStatusLabel = (status: string) => {
         if (status === 'skipped') return labels.statusSkipped;

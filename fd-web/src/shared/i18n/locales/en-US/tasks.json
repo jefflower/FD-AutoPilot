@@ -48,6 +48,10 @@
     "confirmReject": "Confirm Reject",
     "rejectPlaceholder": "Enter rejection reason...",
     "noReplyContent": "No reply content found, cannot audit",
+    "noTranslationContent": "Translation not completed, cannot pass audit",
+    "missingTranslation": "no translation",
+    "missingReply": "no reply",
+    "batchSkipped": "Skipped due to missing translation/reply: {{tickets}}",
     "submitFailed": "Audit submission failed: {{error}}",
     "rejectFailed": "Rejection failed: {{error}}",
     "queryTitle": "Audit Tasks ({{count}})",
@@ -108,7 +112,9 @@
     "retranslateRemark": "Enter retranslation reason...",
     "confirmRetranslate": "Confirm Retranslate",
     "tauriRequired": "Requires Tauri desktop client",
-    "tauriHint": "Translation and reply use local AI Agents, requires desktop client"
+    "tauriHint": "Translation and reply use local AI Agents, requires desktop client",
+    "bridgeUnavailable": "AI Agent runtime not detected. Start the Bridge server or use the desktop client",
+    "settings": "Notification Settings"
   },
   "widget": {
     "title": "MQ TASKS",

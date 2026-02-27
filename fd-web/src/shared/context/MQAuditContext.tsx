@@ -34,8 +34,9 @@ export const MQAuditProvider: React.FC<{ children: ReactNode }> = ({ children })
     const pendingResolversRef = useRef(new Map<number, { resolve: (success: boolean) => void; ticket: any }>());
 
     const taskProcessor = useCallback(async (ticket: any) => {
-        // 非 PENDING_AUDIT 状态的工单自动跳过（消费掉消息，进入下一条）
-        if (ticket.status !== 'PENDING_AUDIT') {
+        // 审核状态（PENDING_AUDIT/AUDITING）需要等人工操作，其余状态自动跳过
+        const auditStatuses = ['PENDING_AUDIT', 'AUDITING'];
+        if (!auditStatuses.includes(ticket.status)) {
             console.log(`[MQ-audit] Ticket #${ticket.id} status is ${ticket.status}, auto-skipping`);
             return true;
         }

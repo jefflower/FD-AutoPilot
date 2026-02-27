@@ -121,6 +121,33 @@ public class TaskAdminController {
     }
 
     /**
+     * 批量取消活跃任务（按 referenceId 范围）
+     */
+    @Operation(summary = "批量取消任务", description = "取消指定 referenceId 范围内的 PENDING/CLAIMED 任务")
+    @PostMapping("/cancel-batch")
+    @RequiresPermission("task:manage")
+    @Transactional
+    public ResponseEntity<ApiResponse<Integer>> cancelBatch(
+            @RequestParam String taskType,
+            @RequestParam(required = false) Long refIdBelow) {
+        LocalDateTime now = LocalDateTime.now();
+        List<TaskInstance> tasks = taskInstanceRepository.findByTaskTypeAndStatus(taskType, TaskStatus.PENDING);
+        int count = 0;
+        for (TaskInstance task : tasks) {
+            try {
+                long refId = Long.parseLong(task.getReferenceId());
+                if (refIdBelow != null && refId >= refIdBelow) continue;
+            } catch (NumberFormatException ignored) { continue; }
+            task.setStatus(TaskStatus.CANCELLED);
+            task.setCompletedAt(now);
+            taskInstanceRepository.save(task);
+            count++;
+        }
+        log.info("Batch cancelled {} tasks for type={}, refIdBelow={}", count, taskType, refIdBelow);
+        return ResponseEntity.ok(ApiResponse.ok("批量取消完成", count));
+    }
+
+    /**
      * 清理历史记录
      */
     @Operation(summary = "清理历史记录", description = "清理指定天数之前的已完成/失败/超时/已取消的任务记录")

@@ -13,9 +13,7 @@ import ServerTicketDetail from '../../ticket/components/ServerTicketDetail';
 
 const STATUS_COLORS: Record<string, string> = {
     PENDING_TRANS: 'bg-yellow-500/20 text-yellow-400',
-    TRANSLATING: 'bg-blue-500/20 text-blue-400',
-    PENDING_REPLY: 'bg-orange-500/20 text-orange-400',
-    REPLYING: 'bg-purple-500/20 text-purple-400',
+    PROCESSING: 'bg-blue-500/20 text-blue-400',
     PENDING_AUDIT: 'bg-pink-500/20 text-pink-400',
     AUDITING: 'bg-indigo-500/20 text-indigo-400',
     APPROVED: 'bg-emerald-500/20 text-emerald-400',
@@ -23,7 +21,7 @@ const STATUS_COLORS: Record<string, string> = {
 };
 
 const TICKET_STATUSES: TicketStatus[] = [
-    'PENDING_TRANS', 'TRANSLATING', 'PENDING_REPLY', 'REPLYING',
+    'PENDING_TRANS', 'PROCESSING',
     'PENDING_AUDIT', 'AUDITING', 'APPROVED', 'COMPLETED',
 ];
 

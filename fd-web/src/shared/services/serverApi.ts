@@ -394,10 +394,16 @@ export const ticketApi = {
     await request<void>(`/tickets/${ticketId}/skip-reply`, { method: 'POST' });
   },
 
+  async restartWorkflow(id: number): Promise<void> {
+    await request<void>(`/tickets/${id}/restart-workflow`, { method: 'POST' });
+  },
+
+  /** @deprecated 使用 restartWorkflow 替代 */
   async triggerAiTranslation(id: number): Promise<void> {
     await request<void>(`/tickets/${id}/ai-translate`, { method: 'POST' });
   },
 
+  /** @deprecated 使用 restartWorkflow 替代 */
   async triggerAiReply(id: number): Promise<void> {
     await request<void>(`/tickets/${id}/ai-reply`, { method: 'POST' });
   },

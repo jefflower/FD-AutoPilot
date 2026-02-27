@@ -5,8 +5,10 @@ import com.jefflower.fdserver.ticket.entity.Ticket;
 import com.jefflower.fdserver.ticket.enums.TicketStatus;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import jakarta.persistence.LockModeType;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Lock;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -15,6 +17,14 @@ import java.util.Optional;
 
 public interface TicketRepository extends JpaRepository<Ticket, Long> {
         Optional<Ticket> findByExternalId(String externalId);
+
+        /**
+         * 悲观锁查询 — Webhook 并发竞态保护。
+         * SELECT ... FOR UPDATE 锁定行，防止同一工单的并发 Webhook 同时触发工作流。
+         */
+        @Lock(LockModeType.PESSIMISTIC_WRITE)
+        @Query("SELECT t FROM Ticket t WHERE t.externalId = :externalId")
+        Optional<Ticket> findByExternalIdForUpdate(@Param("externalId") String externalId);
 
         /**
          * 列表查询（不加载关联数据，避免 N+1）

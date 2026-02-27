@@ -110,6 +110,12 @@
     "confirmPurge": "Confirm Reset"
   },
   "mq": {
+    "restartWorkflowConfirmTitle": "Restart Workflow",
+    "restartWorkflowConfirmMessage": "Restart this ticket's workflow? Translation and reply will run in parallel.",
+    "restartWorkflowSentTitle": "Submitted",
+    "restartWorkflowSentMessage": "Workflow restarted. Translation and reply tasks will run in parallel.",
+    "restartWorkflowErrorTitle": "Operation Failed",
+    "restartWorkflowErrorMessage": "Failed to restart workflow: {{error}}",
     "translateConfirmTitle": "MQ Translation Confirm",
     "translateConfirmMessage": "Are you sure you want to send an MQ translation request? This will re-queue for processing.",
     "translateSentTitle": "Queued",
@@ -122,5 +128,33 @@
     "replySentMessage": "MQ reply task sent. Check progress in the \"Reply Tasks\" tab.",
     "replyErrorTitle": "Error",
     "replyErrorMessage": "MQ reply trigger failed: {{error}}"
+  },
+  "notifyConfig": {
+    "title": "Audit Notification Settings",
+    "desc": "Send notifications with mobile audit links when tickets enter the audit stage",
+    "platform": "Notification Platform",
+    "wecom": "WeChat Work",
+    "wecomDesc": "Send via WeChat Work group robot",
+    "dingtalk": "DingTalk",
+    "dingtalkDesc": "Send via DingTalk group robot",
+    "disabled": "Disabled",
+    "disabledDesc": "No audit notifications",
+    "webhookUrl": "Webhook URL",
+    "webhookPlaceholder": {
+      "wecom": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=...",
+      "dingtalk": "https://oapi.dingtalk.com/robot/send?access_token=..."
+    },
+    "auditBaseUrl": "Audit Link Domain",
+    "auditBaseUrlPlaceholder": "https://fd.example.com",
+    "auditBaseUrlHint": "Base URL for the mobile audit page, used to generate one-click audit links",
+    "save": "Save",
+    "test": "Send Test Message",
+    "saving": "Saving...",
+    "testing": "Sending...",
+    "saveSuccess": "Notification settings saved",
+    "testSuccess": "Test message sent successfully",
+    "testFailed": "Test message failed",
+    "testError": "Test failed: {{error}}",
+    "loadFailed": "Failed to load notification settings"
   }
 }

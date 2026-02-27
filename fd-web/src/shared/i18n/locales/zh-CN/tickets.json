@@ -110,6 +110,12 @@
     "confirmPurge": "确认重置"
   },
   "mq": {
+    "restartWorkflowConfirmTitle": "重启工作流",
+    "restartWorkflowConfirmMessage": "确认重启此工单的工作流？翻译和回复将并行重新执行。",
+    "restartWorkflowSentTitle": "已提交",
+    "restartWorkflowSentMessage": "工作流已重启，翻译和回复任务将并行执行。",
+    "restartWorkflowErrorTitle": "操作失败",
+    "restartWorkflowErrorMessage": "重启工作流失败: {{error}}",
     "translateConfirmTitle": "MQ 翻译确认",
     "translateConfirmMessage": "确定要发送 MQ 翻译请求吗？这会重新入队处理。",
     "translateSentTitle": "已入队",
@@ -122,5 +128,33 @@
     "replySentMessage": "MQ 回复任务已发送，请在\"回复任务\"标签页中查看进度。",
     "replyErrorTitle": "错误",
     "replyErrorMessage": "MQ 回复触发失败: {{error}}"
+  },
+  "notifyConfig": {
+    "title": "审核通知设置",
+    "desc": "当工单进入审核阶段时，通过机器人发送通知和移动端审核链接",
+    "platform": "通知平台",
+    "wecom": "企业微信",
+    "wecomDesc": "通过企业微信群机器人发送通知",
+    "dingtalk": "钉钉",
+    "dingtalkDesc": "通过钉钉群机器人发送通知",
+    "disabled": "关闭",
+    "disabledDesc": "不发送审核通知",
+    "webhookUrl": "Webhook URL",
+    "webhookPlaceholder": {
+      "wecom": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=...",
+      "dingtalk": "https://oapi.dingtalk.com/robot/send?access_token=..."
+    },
+    "auditBaseUrl": "审核链接域名",
+    "auditBaseUrlPlaceholder": "https://fd.example.com",
+    "auditBaseUrlHint": "移动端审核页面的访问地址，用于生成一键审核链接",
+    "save": "保存配置",
+    "test": "发送测试消息",
+    "saving": "保存中...",
+    "testing": "发送中...",
+    "saveSuccess": "通知配置已保存",
+    "testSuccess": "测试消息发送成功",
+    "testFailed": "测试消息发送失败",
+    "testError": "测试失败: {{error}}",
+    "loadFailed": "加载通知配置失败"
   }
 }

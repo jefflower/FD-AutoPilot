@@ -39,13 +39,12 @@
     "workflowDesigner": "Designer",
     "workflowAgents": "Agents",
     "workflowGuide": "Guide",
-    "automation": "Automation"
+    "automation": "Automation",
+    "agentAutomation": "Agent Panel"
   },
   "ticketStatus": {
     "PENDING_TRANS": "Pending Translation",
-    "TRANSLATING": "Translating",
-    "PENDING_REPLY": "Pending Reply",
-    "REPLYING": "Replying",
+    "PROCESSING": "Processing",
     "PENDING_AUDIT": "Pending Audit",
     "AUDITING": "Auditing",
     "APPROVED": "Approved",
@@ -78,7 +77,8 @@
     "previousPage": "Previous",
     "nextPage": "Next",
     "selectAll": "Select All",
-    "deselectAll": "Deselect All"
+    "deselectAll": "Deselect All",
+    "back": "Back"
   },
   "message": {
     "saveSuccess": "Saved successfully",

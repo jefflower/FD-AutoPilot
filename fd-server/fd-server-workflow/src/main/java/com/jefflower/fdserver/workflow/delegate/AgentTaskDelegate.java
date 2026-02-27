@@ -78,6 +78,17 @@ public class AgentTaskDelegate implements JavaDelegate {
             execution.setVariableLocal("pendingTaskType", taskType);
             log.info("[AgentTaskDelegate] CLIENT_ONLY: created task type={}, businessKey={}, executionId={}",
                     taskType, businessKey, execution.getId());
+
+            // 触发可选的 startCallback（通知业务模块 Agent 任务已创建，如设置"进行中"状态）
+            String startCallback = getFieldValueOrDefault(execution, "startCallback", null);
+            if (startCallback != null) {
+                try {
+                    callbackRegistry.executeCallback(startCallback, businessKey, Map.of());
+                } catch (Exception e) {
+                    log.warn("[AgentTaskDelegate] startCallback '{}' failed for businessKey={}: {}",
+                            startCallback, businessKey, e.getMessage());
+                }
+            }
         } else {
             // SERVER_ONLY / BOTH：服务端同步执行
             execution.setVariableLocal("pendingTaskType", null);
@@ -202,6 +213,15 @@ public class AgentTaskDelegate implements JavaDelegate {
             payload.put("waitActivityId", execution.getCurrentActivityId() + "_wait");
             payload.put("agentCode", agentCode);
             payload.put("businessKey", execution.getProcessInstanceBusinessKey());
+
+            // 前端消费者所需的工单信息（避免 "Unknown Subject"）
+            String businessKey = execution.getProcessInstanceBusinessKey();
+            payload.put("ticketId", parseLongOrNull(businessKey));
+            Map<String, Object> ticketData = callbackRegistry.getBusinessData("ticket", businessKey);
+            if (ticketData.containsKey("subject")) {
+                payload.put("subject", ticketData.get("subject"));
+            }
+            payload.put("externalId", businessKey);
 
             // 如果有 inputSchema，添加结构化输入数据
             Map<String, Object> agentInput = buildStructuredInput(execution, def);

@@ -71,6 +71,8 @@ export const ServerEventsProvider: React.FC<ServerEventsProviderProps> = ({ chil
     const reconnectTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
     const retryCountRef = useRef(0);
     const mountedRef = useRef(true);
+    // 连接代际 ID：每次 connect() 递增，确保过期连接的 finally 不触发重连
+    const connectionGenRef = useRef(0);
 
     const dispatch = useCallback((eventType: string, data: any) => {
         const handlers = subscribersRef.current.get(eventType);
@@ -85,20 +87,34 @@ export const ServerEventsProvider: React.FC<ServerEventsProviderProps> = ({ chil
         }
     }, []);
 
+    const connectTimeRef = useRef<number>(0);
+    const authFailedRef = useRef(false);
+
     const connect = useCallback(async () => {
         if (!mountedRef.current) return;
 
         const token = getAuthToken();
         if (!token) {
-            // 未登录，不连接
             setStatus('disconnected');
             return;
         }
 
-        // 清理旧连接
+        if (authFailedRef.current) {
+            setStatus('disconnected');
+            return;
+        }
+
+        // 清理旧连接和定时器
         if (abortControllerRef.current) {
             abortControllerRef.current.abort();
         }
+        if (reconnectTimerRef.current) {
+            clearTimeout(reconnectTimerRef.current);
+            reconnectTimerRef.current = null;
+        }
+
+        // 递增连接代际，旧连接的 finally 将因代际不匹配而跳过重连
+        const myGen = ++connectionGenRef.current;
 
         const controller = new AbortController();
         abortControllerRef.current = controller;
@@ -107,6 +123,8 @@ export const ServerEventsProvider: React.FC<ServerEventsProviderProps> = ({ chil
         const clientId = getClientId();
         const baseUrl = getServerBaseUrl();
         const url = `${baseUrl}/api/v1/events/stream?clientId=${encodeURIComponent(clientId)}`;
+
+        let shouldReconnect = true;
 
         try {
             const response = await fetch(url, {
@@ -118,6 +136,11 @@ export const ServerEventsProvider: React.FC<ServerEventsProviderProps> = ({ chil
             });
 
             if (!response.ok) {
+                if (response.status === 401 || response.status === 403) {
+                    console.warn(`[SSE] Auth failed (${response.status}), stopping reconnect until token refresh`);
+                    authFailedRef.current = true;
+                    shouldReconnect = false;
+                }
                 throw new Error(`SSE connection failed: ${response.status}`);
             }
 
@@ -126,14 +149,15 @@ export const ServerEventsProvider: React.FC<ServerEventsProviderProps> = ({ chil
             }
 
             setStatus('connected');
-            retryCountRef.current = 0;
+            connectTimeRef.current = Date.now();
+            authFailedRef.current = false;
             console.log('[SSE] Connected');
 
             const reader = response.body.getReader();
             const decoder = new TextDecoder();
             let buffer = '';
 
-            while (mountedRef.current) {
+            while (mountedRef.current && myGen === connectionGenRef.current) {
                 const { done, value } = await reader.read();
                 if (done) break;
 
@@ -146,18 +170,24 @@ export const ServerEventsProvider: React.FC<ServerEventsProviderProps> = ({ chil
                         const parsed = JSON.parse(event.data);
                         dispatch(event.type, parsed);
                     } catch {
-                        // data 可能不是 JSON（如 connected 事件）
                         dispatch(event.type, event.data);
                     }
                 }
             }
         } catch (err: any) {
-            if (err.name === 'AbortError') return; // 主动断开
+            if (err.name === 'AbortError') return;
             console.warn('[SSE] Connection error:', err.message);
         } finally {
-            if (mountedRef.current) {
+            // 只有当前代际的连接才能触发重连，防止 StrictMode 双重挂载导致的竞态
+            if (mountedRef.current && myGen === connectionGenRef.current) {
                 setStatus('disconnected');
-                scheduleReconnect();
+                if (shouldReconnect) {
+                    const connectionDuration = Date.now() - connectTimeRef.current;
+                    if (connectionDuration > 5000) {
+                        retryCountRef.current = 0;
+                    }
+                    scheduleReconnect();
+                }
             }
         }
     }, [dispatch]);
@@ -165,7 +195,11 @@ export const ServerEventsProvider: React.FC<ServerEventsProviderProps> = ({ chil
     const scheduleReconnect = useCallback(() => {
         if (!mountedRef.current || !enabled) return;
 
-        // 指数退避：1s → 2s → 4s → 8s → 最大 30s
+        // 清理已有的重连定时器
+        if (reconnectTimerRef.current) {
+            clearTimeout(reconnectTimerRef.current);
+        }
+
         const delay = Math.min(1000 * Math.pow(2, retryCountRef.current), 30000);
         retryCountRef.current++;
 
@@ -193,14 +227,16 @@ export const ServerEventsProvider: React.FC<ServerEventsProviderProps> = ({ chil
             }
             if (reconnectTimerRef.current) {
                 clearTimeout(reconnectTimerRef.current);
+                reconnectTimerRef.current = null;
             }
         };
     }, [enabled, connect]);
 
-    // Token 变化时重连
+    // Token 变化时重连（同时清除认证失败标记）
     useEffect(() => {
         const handleTokenChange = () => {
             if (enabled && mountedRef.current) {
+                authFailedRef.current = false;
                 retryCountRef.current = 0;
                 connect();
             }

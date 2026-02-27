@@ -49,7 +49,6 @@ interface ServerTicketDetailProps {
     isSplitMode?: boolean;
     setIsSplitMode?: (s: boolean) => void;
     activeProcessType?: 'translating' | 'replying' | null;
-    onProcessStatusChange?: (ticketId: number, status: 'translating' | 'replying' | null) => void;
 }
 
 interface ParsedContent {
@@ -78,7 +77,6 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
     isSplitMode: propIsSplitMode,
     setIsSplitMode: propSetIsSplitMode,
     activeProcessType,
-    onProcessStatusChange
 }, ref) => {
     const { t } = useTranslation(['tickets', 'common']);
     const [submitting, setSubmitting] = useState(false);
@@ -93,20 +91,27 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
     const [showPrompts, setShowPrompts] = useState(false); // 是否显示提示词视图
     const aiResponseEndRef = React.useRef<HTMLDivElement>(null);
 
-    // AI 处理状态持久化 (从全局 Hook 获取)
-    const { getProcessState, setTempTranslation: setGlobalTempTranslation } = useTicketProcess();
-    const processState = getProcessState(ticket.id);
+    // MQ 流式文本：从全局 processState 读取（MQReplyContext 写入的跨组件数据通道）
+    const { getProcessState } = useTicketProcess();
+    const mqStreamingText = getProcessState(ticket.id).streamingText || '';
 
     // 临时保存的AI回复（手动触发时使用，需用户确认后才保存）
     const [tempAiReply, setTempAiReply] = useState<[string, string] | null>(null);
 
-    const isTranslating = activeProcessType === 'translating' || processState.status === 'translating';
-    const generatingAiReply = activeProcessType === 'replying' || processState.status === 'replying';
+    // 手动操作本地状态
+    const [manualTranslating, setManualTranslating] = useState(false);
+    const [manualReplying, setManualReplying] = useState(false);
 
-    // MQ 流式文本：当 MQ 任务正在处理且本地 aiReplyText 为空时，使用全局流式文本
-    const mqStreamingText = processState.streamingText || '';
+    // 临时翻译数据（手动翻译的 diff 展示）— 本地管理
+    const [tempTranslation, setTempTranslation] = useState<Partial<import('../../../shared/types/server').TicketTranslation> | null>(null);
 
-    const tempTranslation = processState.tempTranslation;
+    // 三源合并：MQ 自动化 | 后端状态 | 手动操作
+    // PROCESSING 状态下，通过 activeProcessType 区分翻译/回复
+    const isTranslating = (isProcessing && activeProcessType === 'translating')
+        || manualTranslating;
+    const generatingAiReply = (isProcessing && activeProcessType === 'replying')
+        || manualReplying;
+
     const isTranslationDiffMode = !!tempTranslation;
 
     // 自动滚动 AI 回复到底部
@@ -148,12 +153,10 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
         [tempTranslation, isTranslationDiffMode]
     );
 
-    // === 状态监控日志 ===
+    // === 状态监控日志（包含变为 false 的记录，帮助诊断闪烁） ===
     useEffect(() => {
-        if (isTranslating || generatingAiReply) {
-            console.log(`[StatusCheck] Animation active. translates:${isTranslating}, reply:${generatingAiReply}, ticket:${ticket.id}`);
-        }
-    }, [isTranslating, generatingAiReply, ticket.id]);
+        console.log(`[StatusBar] isTranslating=${isTranslating}, generatingAiReply=${generatingAiReply}, ticket=#${ticket.id}, status=${ticket.status}, activeProcessType=${activeProcessType}, manualTranslating=${manualTranslating}, manualReplying=${manualReplying}`);
+    }, [isTranslating, generatingAiReply, ticket.id, ticket.status, activeProcessType, manualTranslating, manualReplying]);
 
     // === 状态派生：处理状态完全由父组件 prop 驱动，确保跨组件卸载持久化 ===
     // (已移动到上方 useState 处合并定义)
@@ -165,7 +168,24 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
         setAiError(null);
         setAiReplies(null);
         setAiReplyText('');
+        setManualTranslating(false);
+        setManualReplying(false);
+        setTempTranslation(null);
+        setTempAiReply(null);
     }, [ticket.id]);
+
+    // === MQ 任务完成后自动刷新工单详情 ===
+    useEffect(() => {
+        const handler = (e: Event) => {
+            const { ticketId } = (e as CustomEvent).detail || {};
+            if (ticketId === ticket.id) {
+                console.log(`[ServerTicketDetail] ticket-task-completed for #${ticketId}, refreshing`);
+                onRefresh?.();
+            }
+        };
+        window.addEventListener('ticket-task-completed', handler);
+        return () => window.removeEventListener('ticket-task-completed', handler);
+    }, [ticket.id, onRefresh]);
 
     // 合并后的对话列表：将 Description 作为首条
     const combinedConversations = React.useMemo(() => {
@@ -187,16 +207,23 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
         if (!autoSave && (isTranslating || generatingAiReply || isProcessing)) return false;
 
         setAiError(null);
+        setManualTranslating(true);
 
-        const success = await runTranslation(ticket, {
-            autoSave,
-            onStatusChange: (status) => onProcessStatusChange?.(ticket.id, status),
-            onError: (err) => { setAiError(err); if (!autoSave) alert(t('detail.translationFailed', { error: err })); },
-        });
+        try {
+            const success = await runTranslation(ticket, {
+                autoSave,
+                onError: (err) => { setAiError(err); if (!autoSave) alert(t('detail.translationFailed', { error: err })); },
+                onResult: (data) => {
+                    if (!autoSave) setTempTranslation(data);
+                },
+            });
 
-        if (success && autoSave) onRefresh?.();
-        return success;
-    }, [ticket, runTranslation, isTranslating, generatingAiReply, isProcessing, onRefresh, onProcessStatusChange, t]);
+            if (success && autoSave) onRefresh?.();
+            return success;
+        } finally {
+            setManualTranslating(false);
+        }
+    }, [ticket, runTranslation, isTranslating, generatingAiReply, isProcessing, onRefresh, t]);
 
     const handleConfirmTranslation = async () => {
         if (!tempTranslation || submitting) return;
@@ -219,7 +246,7 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
             }
 
             // 2. 清理临时状态
-            setGlobalTempTranslation(ticket.id, null);
+            setTempTranslation(null);
 
             // 3. 通知父组件刷新（背景同步）
             if (onRefresh) {
@@ -241,22 +268,26 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
         setAiReplies(null);
         setTempAiReply(null);
         setAiError(null);
+        setManualReplying(true);
 
-        const success = await runReply(ticket, {
-            autoSave,
-            onStatusChange: (status) => onProcessStatusChange?.(ticket.id, status),
-            onError: (err) => { setAiError(err); if (!autoSave) alert(err); },
-            onStreamChunk: (text) => setAiReplyText(text),
-            onParsed: (replies) => {
-                setAiReplies(replies);
-                if (!autoSave) setTempAiReply(replies);
-            },
-            onPromptReady: (prompt) => setCurrentPrompt(prompt),
-        });
+        try {
+            const success = await runReply(ticket, {
+                autoSave,
+                onError: (err) => { setAiError(err); if (!autoSave) alert(err); },
+                onStreamChunk: (text) => setAiReplyText(text),
+                onParsed: (replies) => {
+                    setAiReplies(replies);
+                    if (!autoSave) setTempAiReply(replies);
+                },
+                onPromptReady: (prompt) => setCurrentPrompt(prompt),
+            });
 
-        if (success && autoSave) onRefresh?.();
-        return success;
-    }, [ticket, runReply, generatingAiReply, isTranslating, isProcessing, onRefresh, onProcessStatusChange]);
+            if (success && autoSave) onRefresh?.();
+            return success;
+        } finally {
+            setManualReplying(false);
+        }
+    }, [ticket, runReply, generatingAiReply, isTranslating, isProcessing, onRefresh]);
 
     // 确认保存AI回复（手动触发后用户点击保存）
     const handleConfirmReply = async () => {
@@ -297,11 +328,11 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
 
     const [mqSubmitting, setMqSubmitting] = useState(false);
 
-    const handleTriggerMqTranslate = async () => {
+    const handleRestartWorkflow = async () => {
         if (mqSubmitting) return;
 
-        const confirmed = await compatAsk(t('mq.translateConfirmMessage'), {
-            title: t('mq.translateConfirmTitle'),
+        const confirmed = await compatAsk(t('mq.restartWorkflowConfirmMessage', { defaultValue: '确认重启此工单的工作流？翻译和回复将并行重新执行。' }), {
+            title: t('mq.restartWorkflowConfirmTitle', { defaultValue: '重启工作流' }),
             kind: 'warning'
         });
 
@@ -309,39 +340,27 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
 
         setMqSubmitting(true);
         try {
-            await serverApi.ticket.triggerAiTranslation(ticket.id);
-            await compatMessage(t('mq.translateSentMessage'), { title: t('mq.translateSentTitle'), kind: 'info' });
+            await serverApi.ticket.restartWorkflow(ticket.id);
+            await compatMessage(t('mq.restartWorkflowSentMessage', { defaultValue: '工作流已重启，翻译和回复任务将并行执行。' }), {
+                title: t('mq.restartWorkflowSentTitle', { defaultValue: '已提交' }),
+                kind: 'info'
+            });
             onRefresh?.();
         } catch (e) {
-            console.error('MQ Translate Error:', e);
-            await compatMessage(t('mq.translateErrorMessage', { error: (e as Error).message }), { title: t('mq.translateErrorTitle'), kind: 'error' });
+            console.error('Restart Workflow Error:', e);
+            await compatMessage(t('mq.restartWorkflowErrorMessage', { error: (e as Error).message, defaultValue: `重启工作流失败: ${(e as Error).message}` }), {
+                title: t('mq.restartWorkflowErrorTitle', { defaultValue: '操作失败' }),
+                kind: 'error'
+            });
         } finally {
             setMqSubmitting(false);
         }
     };
 
-    const handleTriggerMqReply = async () => {
-        if (mqSubmitting) return;
-
-        const confirmed = await compatAsk(t('mq.replyConfirmMessage'), {
-            title: t('mq.replyConfirmTitle'),
-            kind: 'warning'
-        });
-
-        if (!confirmed) return;
-
-        setMqSubmitting(true);
-        try {
-            await serverApi.ticket.triggerAiReply(ticket.id);
-            await compatMessage(t('mq.replySentMessage'), { title: t('mq.replySentTitle'), kind: 'info' });
-            onRefresh?.();
-        } catch (e) {
-            console.error('MQ Reply Error:', e);
-            await compatMessage(t('mq.replyErrorMessage', { error: (e as Error).message }), { title: t('mq.replyErrorTitle'), kind: 'error' });
-        } finally {
-            setMqSubmitting(false);
-        }
-    };
+    /** @deprecated 保留向后兼容，实际调用 restartWorkflow */
+    const handleTriggerMqTranslate = handleRestartWorkflow;
+    /** @deprecated 保留向后兼容，实际调用 restartWorkflow */
+    const handleTriggerMqReply = handleRestartWorkflow;
 
     const [isJsonMode, setIsJsonMode] = useState(false);
 
@@ -384,8 +403,10 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
             <div className="flex-none p-3 border-b border-slate-700/50 flex items-center justify-between bg-slate-800/40 backdrop-blur-sm z-10">
                 <div className="flex items-center gap-3">
                     <div className="flex flex-col">
-                        <h2 className="text-xs font-black text-white truncate max-w-[300px] leading-tight flex items-center gap-2">
-                            <span className="text-blue-400">#{ticket.externalId}</span> {ticket.subject}
+                        <h2 className="text-xs font-black text-white truncate max-w-[400px] leading-tight flex items-center gap-2">
+                            <span className="text-blue-400">#{ticket.externalId}</span>
+                            <span className="text-[9px] text-slate-500 font-mono">ID:{ticket.id}</span>
+                            {ticket.subject}
                         </h2>
                         <span className="text-[9px] text-slate-500 font-bold uppercase tracking-tighter">{t(`common:ticketStatus.${ticket.status}` as any)}</span>
                     </div>
@@ -394,7 +415,8 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
                 <div className="flex items-center gap-2">
                     <button onClick={() => {
                         const registry = AgentRegistry.getInstance();
-                        const replyDef = registry.getDefinitionByCode('notebooklm-reply');
+                        const resolved = registry.resolveByCapability('reply');
+                        const replyDef = resolved?.definition;
                         const cfg = replyDef ? (typeof replyDef.providerConfig === 'string' ? JSON.parse(replyDef.providerConfig || '{}') : replyDef.providerConfig) : {};
                         handleToggleShadow(cfg?.notebookId, cfg?.notebookUrl);
                     }} className={`px-3 py-1.5 rounded-md text-[10px] font-black transition-all ${shadowVisible ? 'bg-orange-600 text-white' : 'bg-slate-700 text-slate-400'}`}>
@@ -448,7 +470,7 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
             {isTranslationDiffMode && tempTranslation && (
                 <TranslationPreviewBar
                     submitting={submitting}
-                    onCancel={() => setGlobalTempTranslation(ticket.id, null)}
+                    onCancel={() => setTempTranslation(null)}
                     onConfirm={handleConfirmTranslation}
                 />
             )}
@@ -518,8 +540,8 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
                             })}
                         </div>
 
-                        {/* AI 回复与历史回复容器 */}
-                        {(generatingAiReply || aiReplyText || mqStreamingText || (ticket.replies && ticket.replies.length > 0)) && (
+                        {/* AI 建议区块：仅在 AI 回复活动时显示 */}
+                        {(generatingAiReply || aiReplyText || mqStreamingText || tempAiReply || aiReplies) && (
                             <div className="space-y-4 pt-10 border-t border-slate-800/80">
                                 <div className="flex items-center justify-between px-1">
                                     <div className="flex items-center gap-2">
@@ -549,13 +571,18 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
                                     currentPrompt={currentPrompt}
                                     isSplitMode={isSplitMode}
                                     aiResponseEndRef={aiResponseEndRef}
-                                    onClose={() => { setAiReplyText(''); setAiError(null); onProcessStatusChange?.(ticket.id, null); }}
+                                    onClose={() => { setAiReplyText(''); setAiError(null); }}
                                     onDiscard={() => { setTempAiReply(null); setAiReplies(null); setAiReplyText(''); }}
                                     onConfirmReply={handleConfirmReply}
                                 />
+                            </div>
+                        )}
 
+                        {/* 回复历史区块：有历史回复时始终显示 */}
+                        {ticket.replies && ticket.replies.length > 0 && (
+                            <div className="pt-6 border-t border-slate-800/80">
                                 <ReplyHistoryPanel
-                                    replies={ticket.replies || []}
+                                    replies={ticket.replies}
                                     ticketId={ticket.id}
                                     ticketStatus={ticket.status}
                                     submitting={auditSubmitting}
@@ -568,66 +595,41 @@ const ServerTicketDetail = React.forwardRef<ServerTicketDetailHandle, ServerTick
                 )}
             </div>
 
-            {/* AI 翻译锁屏动画（仅翻译时显示，Reply过程中不锁屏以便查看浏览器状态）*/}
-            {isTranslating ? (
-                <div className="absolute inset-0 z-[200] backdrop-blur-[2px] flex items-center justify-center animate-in fade-in duration-500">
-                    <style dangerouslySetInnerHTML={{
-                        __html: `
-                        @keyframes shimmer_move {
-                            0% { transform: translateX(-100%); }
-                            100% { transform: translateX(100%); }
-                        }
-                        .animate-shimmer {
-                            animation: shimmer_move 2s infinite;
-                        }
-                    ` }} />
-                    <div className="absolute inset-0 bg-slate-950/40"></div>
-
-                    {/* 呼吸灯背景 */}
-                    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                        <div className="absolute -inset-[100%] opacity-20 bg-[conic-gradient(from_0deg,transparent_0%,#3b82f6_25%,transparent_50%,#8b5cf6_75%,transparent_100%)] animate-[spin_8s_linear_infinite]"></div>
+            {/* 任务状态条（始终挂载，CSS 控制可见性，避免 DOM 删除/重建导致闪烁） */}
+            <div
+                className={`absolute top-[52px] left-0 right-0 z-20 pointer-events-none flex flex-col transition-opacity duration-150 ${
+                    (isTranslating || generatingAiReply) ? 'opacity-100' : 'opacity-0'
+                }`}
+            >
+                <div
+                    className={`flex items-center gap-2 px-3 py-1.5 bg-emerald-950/80 border-b border-emerald-500/20 transition-all duration-150 ${
+                        isTranslating ? 'max-h-10 opacity-100' : 'max-h-0 opacity-0 overflow-hidden py-0 border-0'
+                    }`}
+                >
+                    <div className="relative w-3.5 h-3.5 flex-shrink-0">
+                        <div className="absolute inset-0 border-2 border-emerald-500/30 rounded-full"></div>
+                        <div className="absolute inset-0 border-2 border-t-emerald-400 rounded-full animate-spin"></div>
                     </div>
-
-                    <div className="relative group">
-                        {/* 流光边框 */}
-                        <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl blur-lg opacity-75 animate-pulse"></div>
-
-                        <div className="relative bg-slate-900 border border-white/10 rounded-2xl p-8 flex flex-col items-center gap-6 shadow-2xl min-w-[320px]">
-                            {/* AI 核心动画 */}
-                            <div className="relative w-20 h-20">
-                                <div className="absolute inset-0 border-4 border-blue-500/20 rounded-full"></div>
-                                <div className="absolute inset-0 border-4 border-t-blue-500 rounded-full animate-spin"></div>
-                                <div className="absolute inset-2 border-4 border-purple-500/20 rounded-full"></div>
-                                <div className="absolute inset-2 border-4 border-b-purple-500 rounded-full animate-[spin_2s_linear_infinite_reverse]"></div>
-                                <div className="absolute inset-0 flex items-center justify-center">
-                                    <div className="w-4 h-4 bg-white rounded-full shadow-[0_0_15px_rgba(255,255,255,0.8)] animate-pulse"></div>
-                                </div>
-                            </div>
-
-                            <div className="text-center space-y-2">
-                                <h3 className="text-lg font-black text-white tracking-widest uppercase">
-                                    {t('detail.aiTranslatingTitle')}
-                                </h3>
-                                <div className="flex flex-col items-center gap-1">
-                                    <p className="text-xs text-slate-400 font-medium animate-pulse">
-                                        {t('detail.aiTranslatingDesc')}
-                                    </p>
-                                    <div className="flex gap-1 mt-2">
-                                        <div className="w-1 h-1 bg-blue-500 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
-                                        <div className="w-1 h-1 bg-purple-500 rounded-full animate-bounce [animation-delay:-0.15s]"></div>
-                                        <div className="w-1 h-1 bg-pink-500 rounded-full animate-bounce"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* 扫描线动画 */}
-                            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-50 blur-sm overflow-hidden">
-                                <div className="h-full w-full bg-blue-400/30 animate-shimmer"></div>
-                            </div>
-                        </div>
+                    <span className="text-[10px] font-bold text-emerald-400 tracking-wide">{t('detail.aiTranslatingTitle')}</span>
+                    <div className="flex gap-0.5 ml-1">
+                        <div className="w-1 h-1 bg-emerald-400 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+                        <div className="w-1 h-1 bg-emerald-400 rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+                        <div className="w-1 h-1 bg-emerald-400 rounded-full animate-bounce"></div>
                     </div>
                 </div>
-            ) : null}
+                <div
+                    className={`flex items-center gap-2 px-3 py-1.5 bg-purple-950/80 border-b border-purple-500/20 transition-all duration-150 ${
+                        generatingAiReply ? 'max-h-10 opacity-100' : 'max-h-0 opacity-0 overflow-hidden py-0 border-0'
+                    }`}
+                >
+                    <div className="relative w-3.5 h-3.5 flex-shrink-0">
+                        <div className="absolute inset-0 border-2 border-purple-500/30 rounded-full"></div>
+                        <div className="absolute inset-0 border-2 border-t-purple-400 rounded-full animate-spin"></div>
+                    </div>
+                    <span className="text-[10px] font-bold text-purple-400 tracking-wide">{t('detail.aiThinking')}</span>
+                    <div className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-ping ml-1"></div>
+                </div>
+            </div>
         </div>
     );
 });

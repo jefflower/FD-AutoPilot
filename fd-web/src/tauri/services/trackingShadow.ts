@@ -19,9 +19,34 @@ export interface TrackingResult {
   events: TrackingEvent[];
 }
 
+// ==================== 配置类型 ====================
+
+export interface TrackingExtractionConfig {
+  maxNumbers?: number;          // 默认 3
+  waitForResultMs?: number;     // 默认 10000（单次提取超时）
+  captchaKeywords?: string[];   // 默认 ['captcha', '验证码', 'robot', 'blocked']
+}
+
+export interface TrackingConfig {
+  windowLabel?: string;           // 默认 'shadow_17track'
+  targetUrl?: string;             // 默认 "https://t.17track.net/en#nums=${TRACKING_NUMBERS}"
+  selectors?: Record<string, string>;
+  extractionConfig?: TrackingExtractionConfig;
+  timings?: {
+    initialWaitMs?: number;       // 默认 5000
+    pollIntervalMs?: number;      // 默认 1500
+    maxPollAttempts?: number;     // 默认 20
+    extractTimeoutMs?: number;    // 默认 3000
+    batchDelayMs?: number;        // 默认 2000
+  };
+}
+
 // ==================== 内部常量 ====================
 
 const LOG_PREFIX = '[TrackingShadow]';
+
+/** 默认 captcha 检测关键词 */
+const DEFAULT_CAPTCHA_KEYWORDS = ['captcha', '验证码', 'robot', 'blocked'];
 
 /** 17track 事件名称，用于影子窗口 → 主窗口中继 */
 const TRACKING_RESULT_EVENT = '17track-result';
@@ -51,13 +76,15 @@ function makeEmptyResult(trackingNumber: string, status = 'NotFound', statusDeta
  *
  * 脚本执行后通过 forward_shadow_event 中继 JSON 结果给主窗口。
  */
-function buildExtractScript(trackingNumber: string): string {
+function buildExtractScript(trackingNumber: string, captchaKeywords?: string[]): string {
   // 注意：此脚本将被注入到 webview 中执行，不能引用外部 TypeScript 变量。
   // 所有变量均以 IIFE 形式隔离。
+  const keywords = captchaKeywords || DEFAULT_CAPTCHA_KEYWORDS;
   return `
 (function() {
   try {
     var trackingNumber = ${JSON.stringify(trackingNumber)};
+    var captchaKeywords = ${JSON.stringify(keywords)};
 
     // ---------- 辅助函数 ----------
 
@@ -101,11 +128,9 @@ function buildExtractScript(trackingNumber: string): string {
       return;
     }
 
-    // 检测验证码 / 反爬拦截
-    if (bodyText.indexOf('captcha') !== -1 ||
-        bodyText.indexOf('验证码') !== -1 ||
-        bodyText.indexOf('robot') !== -1 ||
-        bodyText.indexOf('blocked') !== -1 ||
+    // 检测验证码 / 反爬拦截（关键词来自配置）
+    var hasCaptchaKeyword = captchaKeywords.some(function(kw) { return bodyText.indexOf(kw.toLowerCase()) !== -1; });
+    if (hasCaptchaKeyword ||
         document.querySelector('[class*="captcha"], [id*="captcha"], .g-recaptcha')) {
       sendResult({
         trackingNumber: trackingNumber,
@@ -358,19 +383,18 @@ function buildExtractScript(trackingNumber: string): string {
 // ==================== TrackingShadowService ====================
 
 export class TrackingShadowService {
-  private static readonly WINDOW_LABEL = 'shadow_17track';
-  private static readonly BASE_URL = 'https://t.17track.net/en';
+  private static readonly DEFAULT_BASE_URL = 'https://t.17track.net/en';
 
-  /** 初始页面加载等待时间（毫秒） */
-  private static readonly INITIAL_WAIT_MS = 5000;
-  /** 轮询间隔（毫秒） */
-  private static readonly POLL_INTERVAL_MS = 1500;
-  /** 最大轮询次数 */
-  private static readonly MAX_POLL_ATTEMPTS = 20;
-  /** tryExtractResult 内部超时（毫秒） */
-  private static readonly EXTRACT_TIMEOUT_MS = 3000;
-  /** 批量查询间隔（毫秒） */
-  private static readonly BATCH_DELAY_MS = 2000;
+  private config: TrackingConfig;
+
+  /** 影子窗口标签，从 config 读取或使用默认值 */
+  private get windowLabel(): string {
+    return this.config.windowLabel || 'shadow_17track';
+  }
+
+  constructor(config?: TrackingConfig) {
+    this.config = config || {};
+  }
 
   /**
    * 查询单个运单号的物流状态
@@ -388,24 +412,27 @@ export class TrackingShadowService {
       return makeEmptyResult(trackingNumber, 'Error', '运单号不能为空');
     }
 
-    const url = `${TrackingShadowService.BASE_URL}#nums=${encodeURIComponent(trimmed)}`;
+    // 从 config 读取 URL 模板，支持 ${TRACKING_NUMBERS} 变量
+    const targetUrlTemplate = this.config.targetUrl || `${TrackingShadowService.DEFAULT_BASE_URL}#nums=\${TRACKING_NUMBERS}`;
+    const url = targetUrlTemplate.replace('${TRACKING_NUMBERS}', encodeURIComponent(trimmed));
     console.log(`${LOG_PREFIX} queryTracking start: ${trimmed}`);
 
     try {
       // 1. 打开影子窗口
       await invoke('open_shadow_window', {
-        label: TrackingShadowService.WINDOW_LABEL,
+        label: this.windowLabel,
         url: url,
       });
       console.log(`${LOG_PREFIX} Shadow window opened: ${url}`);
 
       // 2. 等待 17track SPA 渲染（React/Next.js 水合 + 数据请求）
-      await new Promise(r => setTimeout(r, TrackingShadowService.INITIAL_WAIT_MS));
+      await new Promise(r => setTimeout(r, this.config.timings?.initialWaitMs ?? 5000));
 
       // 3. 轮询采集结果
+      const maxPollAttempts = this.config.timings?.maxPollAttempts ?? 20;
       let result: TrackingResult | null = null;
-      for (let attempt = 0; attempt < TrackingShadowService.MAX_POLL_ATTEMPTS; attempt++) {
-        console.log(`${LOG_PREFIX} Extract attempt ${attempt + 1}/${TrackingShadowService.MAX_POLL_ATTEMPTS}`);
+      for (let attempt = 0; attempt < maxPollAttempts; attempt++) {
+        console.log(`${LOG_PREFIX} Extract attempt ${attempt + 1}/${maxPollAttempts}`);
         result = await this.tryExtractResult(trimmed);
 
         if (result && result.status !== 'Loading') {
@@ -414,7 +441,7 @@ export class TrackingShadowService {
         }
 
         // 还在加载，等待后重试
-        await new Promise(r => setTimeout(r, TrackingShadowService.POLL_INTERVAL_MS));
+        await new Promise(r => setTimeout(r, this.config.timings?.pollIntervalMs ?? 1500));
       }
 
       // 4. 返回结果或默认值
@@ -426,7 +453,7 @@ export class TrackingShadowService {
     } finally {
       // 5. 确保关闭影子窗口释放资源
       await invoke('close_shadow_window', {
-        label: TrackingShadowService.WINDOW_LABEL,
+        label: this.windowLabel,
       }).catch((e: unknown) => {
         console.warn(`${LOG_PREFIX} close_shadow_window failed (may already be closed):`, e);
       });
@@ -455,8 +482,9 @@ export class TrackingShadowService {
 
       // 查询间隔（最后一个不需要等待）
       if (i < total - 1) {
-        console.log(`${LOG_PREFIX} Waiting ${TrackingShadowService.BATCH_DELAY_MS}ms before next query...`);
-        await new Promise(r => setTimeout(r, TrackingShadowService.BATCH_DELAY_MS));
+        const batchDelayMs = this.config.timings?.batchDelayMs ?? 2000;
+        console.log(`${LOG_PREFIX} Waiting ${batchDelayMs}ms before next query...`);
+        await new Promise(r => setTimeout(r, batchDelayMs));
       }
     }
 
@@ -499,22 +527,24 @@ export class TrackingShadowService {
           if (unlisten) unlisten();
         });
 
-        // 2. 注入采集脚本
-        const extractScript = buildExtractScript(trackingNumber);
+        // 2. 注入采集脚本（传入配置的 captcha 关键词）
+        const captchaKeywords = this.config.extractionConfig?.captchaKeywords;
+        const extractScript = buildExtractScript(trackingNumber, captchaKeywords);
         await invoke('execute_shadow_js', {
-          label: TrackingShadowService.WINDOW_LABEL,
+          label: this.windowLabel,
           script: extractScript,
         });
 
-        // 3. 超时处理
+        // 3. 超时处理（从配置读取等待超时）
+        const extractTimeoutMs = this.config.extractionConfig?.waitForResultMs ?? (this.config.timings?.extractTimeoutMs ?? 3000);
         timeoutId = setTimeout(() => {
           if (!resultReceived) {
             resultReceived = true;
-            console.warn(`${LOG_PREFIX} tryExtractResult timeout (${TrackingShadowService.EXTRACT_TIMEOUT_MS}ms)`);
+            console.warn(`${LOG_PREFIX} tryExtractResult timeout (${extractTimeoutMs}ms)`);
             if (unlisten) unlisten();
             resolve(null);
           }
-        }, TrackingShadowService.EXTRACT_TIMEOUT_MS);
+        }, extractTimeoutMs);
       } catch (err) {
         console.error(`${LOG_PREFIX} tryExtractResult error:`, err);
         if (!resultReceived) {

@@ -1,6 +1,7 @@
 package com.jefflower.fdserver.ticket.entity;
 
 import com.jefflower.fdserver.ticket.enums.TicketStatus;
+import com.jefflower.fdserver.ticket.enums.TicketStatusConverter;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -37,7 +38,7 @@ public class Ticket {
     @Column(name = "source_lang", length = 16)
     private String sourceLang;
 
-    @Enumerated(EnumType.STRING)
+    @Convert(converter = TicketStatusConverter.class)
     @Column(columnDefinition = "VARCHAR(32)")
     private TicketStatus status = TicketStatus.PENDING_TRANS;
 

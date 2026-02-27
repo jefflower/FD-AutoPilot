@@ -15,7 +15,6 @@ import com.jefflower.fdserver.ticket.repository.TicketReplyRepository;
 import com.jefflower.fdserver.ticket.repository.TicketRepository;
 import com.jefflower.fdserver.ticket.repository.TicketTranslationRepository;
 import com.jefflower.fdserver.ticket.service.notify.NotifyService;
-import com.jefflower.fdserver.task.service.TaskDistributionService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -50,13 +49,7 @@ class TicketServiceTest {
     @Mock
     private ReplyPushService replyPushService;
     @Mock
-    private SystemConfigService systemConfigService;
-    @Mock
     private NotifyService notifyService;
-    @Mock
-    private AuditTokenService auditTokenService;
-    @Mock
-    private TaskDistributionService taskDistributionService;
     @Mock
     private TicketWorkflowOrchestrator orchestrator;
 
@@ -76,10 +69,7 @@ class TicketServiceTest {
                 replyRepository,
                 auditRepository,
                 replyPushService,
-                systemConfigService,
                 notifyService,
-                auditTokenService,
-                taskDistributionService,
                 stateMachine,
                 objectMapper,
                 orchestrator
@@ -199,9 +189,9 @@ class TicketServiceTest {
         }
 
         @Test
-        @DisplayName("工单已是 PENDING_REPLY → 不重复创建任务")
-        void alreadyPendingReply_noTaskCreated() {
-            sampleTicket.setStatus(TicketStatus.PENDING_REPLY);
+        @DisplayName("工单已是 PROCESSING → 不重复创建任务")
+        void alreadyProcessing_noTaskCreated() {
+            sampleTicket.setStatus(TicketStatus.PROCESSING);
             when(translationRepository.findByTicketAndTargetLang(sampleTicket, "zh-CN"))
                     .thenReturn(Optional.empty());
             when(translationRepository.save(any(TicketTranslation.class)))
@@ -247,7 +237,7 @@ class TicketServiceTest {
             replyRequest.setZhReply("中文回复");
             replyRequest.setTargetReply("English reply");
 
-            sampleTicket.setStatus(TicketStatus.PENDING_REPLY);
+            sampleTicket.setStatus(TicketStatus.PROCESSING);
             when(ticketRepository.findById(1L)).thenReturn(Optional.of(sampleTicket));
         }
 
@@ -531,7 +521,7 @@ class TicketServiceTest {
         @Test
         @DisplayName("跳过回复 → 直接标记为 COMPLETED")
         void skipsToCompleted() {
-            sampleTicket.setStatus(TicketStatus.PENDING_REPLY);
+            sampleTicket.setStatus(TicketStatus.PROCESSING);
             when(ticketRepository.findById(1L)).thenReturn(Optional.of(sampleTicket));
             when(ticketRepository.save(any(Ticket.class))).thenReturn(sampleTicket);
 
@@ -543,35 +533,68 @@ class TicketServiceTest {
     }
 
     // =========================================================================
-    // triggerAiTranslation
+    // restartWorkflow
     // =========================================================================
 
     @Nested
-    @DisplayName("triggerAiTranslation")
+    @DisplayName("restartWorkflow")
+    class RestartWorkflow {
+
+        @Test
+        @DisplayName("重启工作流 → 状态变为 PENDING_TRANS，启动 BPMN 流程")
+        void restartsWorkflow() {
+            when(ticketRepository.findById(1L)).thenReturn(Optional.of(sampleTicket));
+            when(ticketRepository.save(any(Ticket.class))).thenReturn(sampleTicket);
+
+            ticketService.restartWorkflow(1L);
+
+            assertEquals(TicketStatus.PENDING_TRANS, sampleTicket.getStatus());
+            verify(orchestrator).onNewTicket(sampleTicket);
+        }
+
+        @Test
+        @DisplayName("已有活跃工作流 → 拒绝重复启动")
+        void activeProcess_throws() {
+            when(ticketRepository.findById(1L)).thenReturn(Optional.of(sampleTicket));
+            when(orchestrator.hasActiveProcess(sampleTicket)).thenReturn(true);
+
+            RuntimeException ex = assertThrows(RuntimeException.class,
+                    () -> ticketService.restartWorkflow(1L));
+            assertTrue(ex.getMessage().contains("活跃工作流"));
+        }
+    }
+
+    // =========================================================================
+    // triggerAiTranslation（兼容旧 API，委托 restartWorkflow）
+    // =========================================================================
+
+    @Nested
+    @DisplayName("triggerAiTranslation（兼容）")
     class TriggerAiTranslation {
 
         @Test
-        @DisplayName("触发翻译 → 状态变为 TRANSLATING，创建翻译任务")
+        @DisplayName("触发翻译 → 委托 restartWorkflow")
         void triggersTranslation() {
             when(ticketRepository.findById(1L)).thenReturn(Optional.of(sampleTicket));
             when(ticketRepository.save(any(Ticket.class))).thenReturn(sampleTicket);
 
             ticketService.triggerAiTranslation(1L);
 
-            assertEquals(TicketStatus.TRANSLATING, sampleTicket.getStatus());
+            assertEquals(TicketStatus.PENDING_TRANS, sampleTicket.getStatus());
+            verify(orchestrator).onNewTicket(sampleTicket);
         }
     }
 
     // =========================================================================
-    // triggerAiReply
+    // triggerAiReply（兼容旧 API，翻译校验 + 委托 restartWorkflow）
     // =========================================================================
 
     @Nested
-    @DisplayName("triggerAiReply")
+    @DisplayName("triggerAiReply（兼容）")
     class TriggerAiReply {
 
         @Test
-        @DisplayName("有翻译 → 状态变为 REPLYING，创建回复任务")
+        @DisplayName("有翻译 → 委托 restartWorkflow 重启 BPMN 流程")
         void triggersReply() {
             when(ticketRepository.findById(1L)).thenReturn(Optional.of(sampleTicket));
             when(translationRepository.existsByTicket(sampleTicket)).thenReturn(true);
@@ -579,11 +602,12 @@ class TicketServiceTest {
 
             ticketService.triggerAiReply(1L);
 
-            assertEquals(TicketStatus.REPLYING, sampleTicket.getStatus());
+            assertEquals(TicketStatus.PENDING_TRANS, sampleTicket.getStatus());
+            verify(orchestrator).onNewTicket(sampleTicket);
         }
 
         @Test
-        @DisplayName("无翻译 → 抛出异常，不创建任务")
+        @DisplayName("无翻译 → 抛出异常，不启动工作流")
         void noTranslation_throws() {
             when(ticketRepository.findById(1L)).thenReturn(Optional.of(sampleTicket));
             when(translationRepository.existsByTicket(sampleTicket)).thenReturn(false);

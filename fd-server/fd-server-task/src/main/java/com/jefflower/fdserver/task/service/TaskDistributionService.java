@@ -31,18 +31,28 @@ public class TaskDistributionService {
     private final ApplicationEventPublisher eventPublisher;
 
     /**
-     * 创建任务（幂等：同 taskType + referenceId 已有 PENDING/CLAIMED 则跳过）
+     * 创建任务（幂等：同 taskType + referenceId 已有活跃或最近完成的任务则跳过）
      */
     @Transactional
     public TaskInstance createTask(String taskType, String referenceType, String referenceId,
                                   String payload, TriggerType triggerType) {
         if (referenceId != null) {
+            // 1. 检查 PENDING/CLAIMED 活跃任务
             Optional<TaskInstance> existing = taskInstanceRepository
                     .findByTaskTypeAndReferenceIdAndStatusIn(taskType, referenceId,
                             List.of(TaskStatus.PENDING, TaskStatus.CLAIMED));
             if (existing.isPresent()) {
                 log.debug("Task already exists for type={} refId={}, skipping", taskType, referenceId);
                 return existing.get();
+            }
+            // 2. 检查最近 5 分钟内 COMPLETED 的任务（防止工作流重复触发导致循环创建）
+            Optional<TaskInstance> recentlyCompleted = taskInstanceRepository
+                    .findRecentlyCompletedTask(taskType, referenceId, TaskStatus.COMPLETED,
+                            LocalDateTime.now().minusMinutes(5));
+            if (recentlyCompleted.isPresent()) {
+                log.warn("Task type={} refId={} was COMPLETED recently (id={}), skipping re-creation (debounce)",
+                        taskType, referenceId, recentlyCompleted.get().getId());
+                return recentlyCompleted.get();
             }
         }
 
@@ -106,24 +116,48 @@ public class TaskDistributionService {
             limit = Math.min(limit, def.getMaxConcurrency() - (int) currentClaimed);
         }
 
-        // 3. 查询 PENDING 任务并分配
+        // 3. 查询 PENDING 任务并分配（多取一些以应对去重过滤）
         List<TaskInstance> pendingTasks = taskInstanceRepository
-                .findPendingTasks(taskType, TaskStatus.PENDING, PageRequest.of(0, limit));
+                .findPendingTasks(taskType, TaskStatus.PENDING, PageRequest.of(0, limit * 3));
         if (pendingTasks.isEmpty()) {
             return Collections.emptyList();
         }
 
-        LocalDateTime now = LocalDateTime.now();
+        // 4. 过滤掉 referenceId 已有最近完成任务的 PENDING 任务（防止重复处理已完成的工单）
+        LocalDateTime deduplicateCutoff = LocalDateTime.now().minusMinutes(30);
+        List<TaskInstance> filteredTasks = new ArrayList<>();
         for (TaskInstance task : pendingTasks) {
+            if (filteredTasks.size() >= limit) break;
+            if (task.getReferenceId() != null) {
+                Optional<TaskInstance> recentlyCompleted = taskInstanceRepository
+                        .findRecentlyCompletedTask(taskType, task.getReferenceId(), TaskStatus.COMPLETED, deduplicateCutoff);
+                if (recentlyCompleted.isPresent()) {
+                    // 自动取消此重复 PENDING 任务
+                    task.setStatus(TaskStatus.CANCELLED);
+                    task.setCompletedAt(LocalDateTime.now());
+                    taskInstanceRepository.save(task);
+                    log.debug("Auto-cancelled duplicate PENDING task {} (type={}, refId={}) — already completed recently",
+                            task.getId(), taskType, task.getReferenceId());
+                    continue;
+                }
+            }
+            filteredTasks.add(task);
+        }
+        if (filteredTasks.isEmpty()) {
+            return Collections.emptyList();
+        }
+
+        LocalDateTime now = LocalDateTime.now();
+        for (TaskInstance task : filteredTasks) {
             task.setStatus(TaskStatus.CLAIMED);
             task.setAssignedTo(clientId);
             task.setAssignedAt(now);
             task.setStartedAt(now);
         }
-        taskInstanceRepository.saveAll(pendingTasks);
+        taskInstanceRepository.saveAll(filteredTasks);
 
-        log.info("Client {} claimed {} tasks for type {}", clientId, pendingTasks.size(), taskType);
-        return pendingTasks;
+        log.info("Client {} claimed {} tasks for type {}", clientId, filteredTasks.size(), taskType);
+        return filteredTasks;
     }
 
     /**
@@ -134,13 +168,24 @@ public class TaskDistributionService {
         TaskInstance task = taskInstanceRepository.findById(taskId)
                 .orElseThrow(() -> new BusinessException(ErrorCode.TASK_NOT_FOUND, "Task not found: " + taskId));
 
-        // 幂等检查：已完成/已失败的任务不可重复 complete
-        if (task.getStatus() != TaskStatus.CLAIMED) {
-            log.debug("Task {} already in status {}, ignoring duplicate complete (success={})", taskId, task.getStatus(), success);
+        // 终态幂等：已完成/已失败/已超时/已取消 → 静默跳过
+        if (task.getStatus() == TaskStatus.COMPLETED || task.getStatus() == TaskStatus.FAILED
+                || task.getStatus() == TaskStatus.TIMEOUT || task.getStatus() == TaskStatus.CANCELLED) {
+            log.debug("Task {} already in terminal status {}, ignoring complete (success={})", taskId, task.getStatus(), success);
             return;
         }
 
-        if (!clientId.equals(task.getAssignedTo())) {
+        // PENDING 状态：claim 状态丢失（服务器重启/Recovery 回退），但消费者已完成工作，强制完成
+        if (task.getStatus() == TaskStatus.PENDING) {
+            log.warn("Task {} in PENDING but client {} reports completion (success={}). " +
+                    "Claim state may have been lost (server restart / recovery reset). Force-completing.",
+                    taskId, clientId, success);
+            task.setAssignedTo(clientId);
+            task.setAssignedAt(LocalDateTime.now());
+        }
+
+        // CLAIMED 状态：正常流程，验证 ownership
+        if (task.getStatus() == TaskStatus.CLAIMED && !clientId.equals(task.getAssignedTo())) {
             throw new BusinessException(ErrorCode.TASK_NOT_OWNED, "Task " + taskId + " is not assigned to client " + clientId);
         }
 
@@ -157,9 +202,22 @@ public class TaskDistributionService {
 
         log.info("Task {} completed by client {}: success={}", taskId, clientId, success);
 
-        // 发布任务完成事件 → SSE 通知客户端
+        // 成功完成时，取消同 type+referenceId 的其他活跃任务（PENDING + CLAIMED），防止重复处理
+        // 包含 CLAIMED 是因为消费者可能在取消执行前已 claim 了重复任务（竞态条件）
+        if (success && task.getReferenceId() != null) {
+            int cancelled = taskInstanceRepository.cancelDuplicateActiveTasks(
+                    task.getTaskType(), task.getReferenceId(),
+                    List.of(TaskStatus.PENDING, TaskStatus.CLAIMED), TaskStatus.CANCELLED, now, taskId);
+            if (cancelled > 0) {
+                log.info("Cancelled {} duplicate active tasks for type={}, refId={}",
+                        cancelled, task.getTaskType(), task.getReferenceId());
+            }
+        }
+
+        // 发布任务完成事件 → SSE 通知客户端 + 工作流桥接
         eventPublisher.publishEvent(new TaskCompletedEvent(
-                this, taskId, task.getTaskType(), success, clientId));
+                this, taskId, task.getTaskType(), success, clientId,
+                success ? null : resultOrError));
     }
 
     /**

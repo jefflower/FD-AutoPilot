@@ -612,12 +612,20 @@ agentRegistry.registerExecutor(myExecutor);`}</pre>
                                     example="OpenAI GPT-4, Claude API"
                                 />
                                 <ProviderCard
-                                    type="WEB_AUTOMATION"
+                                    type="NOTEBOOKLM"
                                     icon={<ExternalLink className="w-5 h-5 text-purple-400" />}
-                                    title="WEB_AUTOMATION"
-                                    desc="Shadow Window 浏览器自动化操作（原 SHADOW_WINDOW）"
+                                    title="NOTEBOOKLM"
+                                    desc="NotebookLM Shadow Window 自动化回复"
                                     env="CLIENT_ONLY"
-                                    example="notebooklm-reply, tracking-query"
+                                    example="notebooklm-reply"
+                                />
+                                <ProviderCard
+                                    type="TRACKING_SHADOW"
+                                    icon={<ExternalLink className="w-5 h-5 text-teal-400" />}
+                                    title="TRACKING_SHADOW"
+                                    desc="物流查询 Shadow Window（17track 等）"
+                                    env="CLIENT_ONLY"
+                                    example="tracking-query"
                                 />
                                 <ProviderCard
                                     type="LOCAL_FUNCTION"
