@@ -47,4 +47,14 @@ public class TaskPermissionDefinition implements ModulePermissionDefinition {
                 "task:trigger", List.of("ADMIN")
         );
     }
+
+    @Override
+    public Map<String, String> getPermissionTypes() {
+        Map<String, String> types = new LinkedHashMap<>();
+        types.put("task:read", "ROUTE");
+        types.put("task:claim", "OPERATION");
+        types.put("task:manage", "OPERATION");
+        types.put("task:trigger", "OPERATION");
+        return types;
+    }
 }

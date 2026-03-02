@@ -4,7 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Lob;
+import jakarta.persistence.Column;
 import java.time.LocalDateTime;
 
 @Entity
@@ -17,7 +17,7 @@ public class ClientRequest {
 
     private String endpoint;
 
-    @Lob
+    @Column(columnDefinition = "TEXT")
     private String payload;
 
     private LocalDateTime createdAt = LocalDateTime.now();

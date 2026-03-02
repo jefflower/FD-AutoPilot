@@ -32,7 +32,7 @@ function makeDefinition(overrides: Partial<AgentDefinition> = {}): AgentDefiniti
         providerType: 'GEMINI_CLI',
         executionEnv: 'CLIENT_ONLY',
         capability: 'translate',
-        providerConfig: {},
+        agentConfig: {},
         enabled: true,
         sortOrder: 0,
         builtIn: false,
@@ -160,30 +160,30 @@ describe('AgentRegistry', () => {
             expect(registry.getBindings()).toEqual(bindings);
         });
 
-        it('providerConfig 是 JSON 字符串时自动解析为对象', async () => {
+        it('agentConfig 是 JSON 字符串时自动解析为对象', async () => {
             const registry = AgentRegistry.getInstance();
             const apiMock = await getAgentApiMock();
-            const def = makeDefinition({ code: 'cfg-agent', providerConfig: '{"model":"gpt-4"}' as any });
+            const def = makeDefinition({ code: 'cfg-agent', agentConfig: '{"model":"gpt-4"}' as any });
             apiMock.getDefinitions.mockResolvedValue([def]);
             apiMock.getBindings.mockResolvedValue({});
 
             await registry.loadDefinitions();
 
             const loaded = registry.getDefinitionByCode('cfg-agent');
-            expect(loaded!.providerConfig).toEqual({ model: 'gpt-4' });
+            expect(loaded!.agentConfig).toEqual({ model: 'gpt-4' });
         });
 
-        it('providerConfig 是非法 JSON 时回退为空对象', async () => {
+        it('agentConfig 是非法 JSON 时回退为空对象', async () => {
             const registry = AgentRegistry.getInstance();
             const apiMock = await getAgentApiMock();
-            const def = makeDefinition({ code: 'bad-cfg', providerConfig: '{invalid json}' as any });
+            const def = makeDefinition({ code: 'bad-cfg', agentConfig: '{invalid json}' as any });
             apiMock.getDefinitions.mockResolvedValue([def]);
             apiMock.getBindings.mockResolvedValue({});
 
             await registry.loadDefinitions();
 
             const loaded = registry.getDefinitionByCode('bad-cfg');
-            expect(loaded!.providerConfig).toEqual({});
+            expect(loaded!.agentConfig).toEqual({});
         });
 
         it('API 失败时不抛出异常，definitions 保持不变', async () => {

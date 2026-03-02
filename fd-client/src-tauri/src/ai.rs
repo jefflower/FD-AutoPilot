@@ -1,6 +1,7 @@
 use crate::models::Ticket;
 use serde::{Deserialize, Serialize};
 use std::process::Command;
+use tokio::time::{timeout, Duration};
 
 /// 日志抽象 trait，让核心 AI 函数不依赖 Tauri AppHandle
 pub trait GeminiLogger: Send + Sync {
@@ -34,9 +35,9 @@ impl GeminiLogger for StderrLogger {
 #[derive(Debug, Serialize, Deserialize)]
 pub struct TranslationResult {
     #[serde(alias = "title")]
-    pub subject: String,
-    #[serde(alias = "content", alias = "body", alias = "description")]
-    pub description_text: Option<String>,
+    pub subject: Option<String>,
+    #[serde(alias = "description_text")]
+    pub description: Option<String>,
     pub conversations: Vec<ConversationTranslation>,
 }
 
@@ -44,6 +45,7 @@ pub struct TranslationResult {
 pub struct ConversationTranslation {
     #[serde(deserialize_with = "deserialize_id")]
     pub id: u64,
+    #[serde(alias = "bodyText")]
     pub body_text: String,
 }
 
@@ -96,53 +98,48 @@ impl GeminiClient {
         target_lang: &str,
         system_prompt: Option<&str>,
     ) -> Result<Ticket, String> {
-        logger.log(
-            &format!("🤖 Translating ticket #{} to {}...", ticket.id, target_lang),
-        );
+        logger.log(&format!(
+            "🤖 Translating ticket #{} to {}...",
+            ticket.id, target_lang
+        ));
 
-        // Prepare prompt
         let lang_name = lang_code_to_name(target_lang);
         let mut prompt = match system_prompt {
             Some(sp) if !sp.trim().is_empty() => {
-                // 使用外部传入的 systemPrompt，替换占位符
                 let mut p = sp.replace("${TARGET_LANG}", lang_name);
                 p.push_str("\n\n");
                 p
             }
             _ => {
-                // 使用默认硬编码的 systemPrompt
+                // 默认 systemPrompt（简化版：直接翻译 JSON）
                 format!(
-                    "You are a professional customer support translator. \
-                    Translate the following support ticket into {}. \
-                    \
-                    CRITICAL INSTRUCTIONS:\
-                    1. Response must be ONLY a valid JSON object.\
-                    2. Do NOT include any intro, outro, explanations, or markdown blocks (like ```json).\
-                    3. You MUST translate BOTH the subject/description AND EVERY item in the 'conversations' list.\
-                    4. Maintain the original 'id' for each conversation item.\
-                    5. Ensure the content is ONLY in {} - DO NOT output in English if the target is {}.\
-                    6. JSON Structure Example:\
-                    {{\n  \"subject\": \"翻译后的标题\",\n  \"description_text\": \"翻译后的正文内容\",\n  \"conversations\": [\n    {{\"id\": 123, \"body_text\": \"翻译后的对话消息\"}}\n  ]\n}}\n\n",
-                    lang_name, lang_name, lang_name
+                    "You are a professional customer service translator.\n\
+                    Translate the following JSON into {}.\n\
+                    Translate ONLY text fields: subject, description, and each conversation's bodyText.\n\
+                    Keep all non-text fields unchanged (id, userId, createdAt, incoming, private).\n\
+                    Return the EXACT same JSON structure with translated text.\n\
+                    Your response MUST be a single valid JSON object. No markdown fences, no explanations.\n\n",
+                    lang_name
                 )
             }
         };
 
-        prompt.push_str(&format!(
-            "--- TICKET TO TRANSLATE ---\n\
-            SUBJECT: {}\n",
-            ticket.subject.clone().unwrap_or_default()
-        ));
-        if let Some(desc) = &ticket.description_text {
-            prompt.push_str(&format!("DESCRIPTION: {}\n", desc));
-        }
-
-        if !ticket.conversations.is_empty() {
-            prompt.push_str("CONVERSATIONS:\n");
-            for c in &ticket.conversations {
-                prompt.push_str(&format!("MSG_ID {}: {}\n", c.id, c.body_text));
+        // 构建输入 JSON：如果 ticket.content 是有效 JSON 且含 subject，直接使用；否则从字段构建
+        let content_json = if let Some(ref content) = ticket.content {
+            if let Ok(val) = serde_json::from_str::<serde_json::Value>(content) {
+                if val.get("subject").is_some() {
+                    content.clone()
+                } else {
+                    build_ticket_json(ticket)
+                }
+            } else {
+                build_ticket_json(ticket)
             }
-        }
+        } else {
+            build_ticket_json(ticket)
+        };
+
+        prompt.push_str(&content_json);
 
         // Call gemini CLI
         let output = Command::new("gemini")
@@ -156,26 +153,25 @@ impl GeminiClient {
         }
 
         let stdout = String::from_utf8_lossy(&output.stdout);
-
-        // Robust JSON extraction: Find the first '{' and the last '}'
         let clean_json = extract_json_object(&stdout)?;
 
-        let translated_data: TranslationResult = serde_json::from_str(clean_json).map_err(|e| {
-            format!(
-                "Failed to parse translation JSON: {}. Extracted: {}",
-                e, clean_json
-            )
-        })?;
+        let translated_data: TranslationResult =
+            serde_json::from_str(clean_json).map_err(|e| {
+                format!(
+                    "Failed to parse translation JSON: {}. Extracted: {}",
+                    e, clean_json
+                )
+            })?;
 
-        // Create new ticket with translated content
+        // 结果映射
         let mut new_ticket = ticket.clone();
-        // Use translated subject if not empty, otherwise keep original
-        if !translated_data.subject.trim().is_empty() {
-            new_ticket.subject = Some(translated_data.subject);
+        if let Some(ref s) = translated_data.subject {
+            if !s.trim().is_empty() {
+                new_ticket.subject = Some(s.clone());
+            }
         }
 
-        // If AI returns an empty string or None, fallback to original content
-        new_ticket.description_text = match translated_data.description_text {
+        new_ticket.description_text = match translated_data.description {
             Some(ref s) if !s.trim().is_empty() => Some(s.clone()),
             _ => ticket.description_text.clone(),
         };
@@ -192,15 +188,13 @@ impl GeminiClient {
             }
         }
 
-        logger.log(
-            &format!(
-                "✅ Translation to {} complete. Result: Title({} chars), Desc({} chars), Conversations({} items)",
-                target_lang,
-                new_ticket.subject.as_ref().map(|s| s.len()).unwrap_or(0),
-                new_ticket.description_text.as_ref().map(|s| s.len()).unwrap_or(0),
-                new_ticket.conversations.len()
-            ),
-        );
+        logger.log(&format!(
+            "✅ Translation to {} complete. Result: Title({} chars), Desc({} chars), Conversations({} items)",
+            target_lang,
+            new_ticket.subject.as_ref().map(|s| s.len()).unwrap_or(0),
+            new_ticket.description_text.as_ref().map(|s| s.len()).unwrap_or(0),
+            new_ticket.conversations.len()
+        ));
         Ok(new_ticket)
     }
 
@@ -227,6 +221,8 @@ impl GeminiClient {
 
         let mut last_error = String::new();
 
+        let gemini_timeout = Duration::from_secs(300);
+
         for (i, model) in models_to_try.iter().enumerate() {
             logger.log(
                 &format!(
@@ -243,32 +239,52 @@ impl GeminiClient {
             }
             cmd.arg(prompt);
 
-            match cmd.output() {
-                Ok(output) if output.status.success() => {
-                    let stdout = String::from_utf8_lossy(&output.stdout).trim().to_string();
+            let result = timeout(gemini_timeout, tokio::task::spawn_blocking(move || {
+                cmd.output()
+            }))
+            .await;
+
+            match result {
+                Err(_) => {
+                    let model_name = if model.is_empty() { "default" } else { model };
                     logger.log(
-                        &format!(
-                            "  ✅ Success with model: {}, output: {} chars",
-                            if model.is_empty() { "default" } else { model },
-                            stdout.len()
-                        ),
+                        &format!("  ⏱ Model {} timed out after 120s", model_name),
                     );
-                    return Ok(stdout);
-                }
-                Ok(output) => {
-                    let stderr = String::from_utf8_lossy(&output.stderr).to_string();
-                    logger.log(
-                        &format!(
-                            "  ❌ Model {} failed: {}",
-                            if model.is_empty() { "default" } else { model },
-                            stderr
-                        ),
-                    );
-                    last_error = stderr;
+                    last_error = format!("Model {} timed out after 120s", model_name);
                     // Continue to next model
                 }
-                Err(e) => {
-                    return Err(format!("Failed to execute gemini: {}", e));
+                Ok(join_result) => {
+                    match join_result {
+                        Err(e) => {
+                            return Err(format!("Task join error: {}", e));
+                        }
+                        Ok(Ok(output)) if output.status.success() => {
+                            let stdout = String::from_utf8_lossy(&output.stdout).trim().to_string();
+                            logger.log(
+                                &format!(
+                                    "  ✅ Success with model: {}, output: {} chars",
+                                    if model.is_empty() { "default" } else { model },
+                                    stdout.len()
+                                ),
+                            );
+                            return Ok(stdout);
+                        }
+                        Ok(Ok(output)) => {
+                            let stderr = String::from_utf8_lossy(&output.stderr).to_string();
+                            logger.log(
+                                &format!(
+                                    "  ❌ Model {} failed: {}",
+                                    if model.is_empty() { "default" } else { model },
+                                    stderr
+                                ),
+                            );
+                            last_error = stderr;
+                            // Continue to next model
+                        }
+                        Ok(Err(e)) => {
+                            return Err(format!("Failed to execute gemini: {}", e));
+                        }
+                    }
                 }
             }
         }
@@ -339,6 +355,217 @@ impl GeminiClient {
 
         Ok(stdout)
     }
+}
+
+pub struct ClaudeClient;
+
+impl ClaudeClient {
+    /// Generic claude CLI execution: takes a prompt string and returns raw stdout.
+    /// Uses timeout + spawn_blocking pattern consistent with GeminiClient::execute_gemini.
+    pub async fn execute_claude(
+        logger: &dyn GeminiLogger,
+        prompt: &str,
+    ) -> Result<String, String> {
+        logger.log(
+            &format!(
+                "🤖 Executing claude CLI: prompt length={}",
+                prompt.len()
+            ),
+        );
+
+        let claude_timeout = Duration::from_secs(600);
+
+        let prompt_owned = prompt.to_string();
+        let result = timeout(claude_timeout, tokio::task::spawn_blocking(move || {
+            Command::new("claude")
+                .arg("-p")
+                .arg(&prompt_owned)
+                .arg("--output-format")
+                .arg("text")
+                // 清除 CLAUDECODE 环境变量，避免嵌套会话检测
+                .env_remove("CLAUDECODE")
+                .output()
+        }))
+        .await;
+
+        match result {
+            Err(_) => {
+                logger.log("  ⏱ Claude CLI timed out after 600s");
+                Err("Claude CLI timed out after 600s".to_string())
+            }
+            Ok(join_result) => {
+                match join_result {
+                    Err(e) => {
+                        Err(format!("Task join error: {}", e))
+                    }
+                    Ok(Ok(output)) if output.status.success() => {
+                        let stdout = String::from_utf8_lossy(&output.stdout).trim().to_string();
+                        logger.log(
+                            &format!(
+                                "  ✅ Claude CLI success, output: {} chars",
+                                stdout.len()
+                            ),
+                        );
+                        Ok(stdout)
+                    }
+                    Ok(Ok(output)) => {
+                        let stderr = String::from_utf8_lossy(&output.stderr).to_string();
+                        let stdout = String::from_utf8_lossy(&output.stdout).to_string();
+                        let exit_code = output.status.code().unwrap_or(-1);
+                        let err_detail = if !stderr.is_empty() {
+                            stderr.clone()
+                        } else if !stdout.is_empty() {
+                            format!("(stdout) {}", stdout.chars().take(500).collect::<String>())
+                        } else {
+                            format!("exit code {}", exit_code)
+                        };
+                        logger.log(
+                            &format!("  ❌ Claude CLI failed (exit={}): {}", exit_code, err_detail),
+                        );
+                        Err(format!("Claude CLI error: {}", err_detail))
+                    }
+                    Ok(Err(e)) => {
+                        Err(format!("Failed to execute claude: {}", e))
+                    }
+                }
+            }
+        }
+    }
+}
+
+/// 从 Ticket 结构体构建翻译输入 JSON（兜底，用于旧格式 content 或 content 为空时）
+fn build_ticket_json(ticket: &Ticket) -> String {
+    let conversations: Vec<serde_json::Value> = ticket
+        .conversations
+        .iter()
+        .map(|c| {
+            serde_json::json!({
+                "id": c.id,
+                "bodyText": c.body_text,
+                "userId": c.user_id,
+                "createdAt": c.created_at,
+                "incoming": c.incoming,
+                "private": c.private,
+            })
+        })
+        .collect();
+
+    serde_json::json!({
+        "subject": ticket.subject.as_deref().unwrap_or(""),
+        "description": ticket.description_text.as_deref().unwrap_or(""),
+        "conversations": conversations,
+    })
+    .to_string()
+}
+
+/// NotebookLM-py Python 库调用：通过本地 python3 执行 notebooklm-py 的 async API。
+/// 输入: query (查询问题), notebook_id (可选，NotebookLM notebook ID)
+/// 输出: NotebookLM 的回复文本
+pub async fn execute_notebooklm_py(
+    query: &str,
+    notebook_id: &str,
+) -> Result<String, String> {
+    eprintln!("[NotebookLmPy] Executing query, length={}, notebook_id={}", query.len(), if notebook_id.is_empty() { "(default)" } else { notebook_id });
+
+    // 内嵌 Python 脚本：使用 notebooklm-py 的 async API
+    let python_script = format!(
+        r#"
+import asyncio
+import json
+import sys
+
+async def main():
+    try:
+        from notebooklm import NotebookLMClient
+        async with await NotebookLMClient.from_storage() as client:
+            notebook_id = {notebook_id_repr}
+            response = await client.chat.ask(notebook_id, {query_repr})
+            # 输出 JSON 格式结果
+            reply_text = response.answer if hasattr(response, 'answer') else str(response)
+            result = {{"success": True, "reply": reply_text}}
+            print(json.dumps(result, ensure_ascii=False))
+    except Exception as e:
+        result = {{"success": False, "error": str(e)}}
+        print(json.dumps(result, ensure_ascii=False))
+
+asyncio.run(main())
+"#,
+        notebook_id_repr = serde_json::to_string(notebook_id).unwrap_or_else(|_| "\"\"".to_string()),
+        query_repr = serde_json::to_string(query).unwrap_or_else(|_| "\"\"".to_string()),
+    );
+
+    let python_timeout = Duration::from_secs(300);
+    let script_clone = python_script.clone();
+    let output = timeout(python_timeout, tokio::task::spawn_blocking(move || {
+        Command::new("python3")
+            .arg("-c")
+            .arg(&script_clone)
+            .output()
+    }))
+    .await
+    .map_err(|_| "notebooklm-py execution timed out after 120s".to_string())?
+    .map_err(|e| format!("Task join error: {}", e))?
+    .map_err(|e| format!("Failed to execute python3: {}", e))?;
+
+    if !output.status.success() {
+        let stderr = String::from_utf8_lossy(&output.stderr);
+        return Err(format!("python3 error: {}", stderr));
+    }
+
+    let stdout = String::from_utf8_lossy(&output.stdout).trim().to_string();
+    eprintln!("[NotebookLmPy] Raw output: {} chars", stdout.len());
+
+    // 解析 JSON 结果
+    let result: serde_json::Value = serde_json::from_str(&stdout)
+        .map_err(|e| format!("Failed to parse notebooklm-py output: {}. Raw: {}", e, stdout))?;
+
+    if result["success"].as_bool() == Some(true) {
+        let reply = result["reply"].as_str().unwrap_or("").to_string();
+        eprintln!("[NotebookLmPy] Success, reply length={}", reply.len());
+        Ok(reply)
+    } else {
+        let error = result["error"].as_str().unwrap_or("Unknown error").to_string();
+        Err(format!("notebooklm-py error: {}", error))
+    }
+}
+
+/// 通用 notebooklm CLI 执行器：调用 `notebooklm` 命令行工具
+/// args: 传给 notebooklm 的命令行参数列表
+/// timeout_secs: 超时时间（秒）
+/// 返回: CLI 的 stdout 输出（通常是 JSON）
+pub async fn execute_notebooklm_cli(
+    args: Vec<String>,
+    timeout_secs: u64,
+) -> Result<String, String> {
+    eprintln!(
+        "[NotebookLmCli] Executing: notebooklm {}",
+        args.join(" ")
+    );
+
+    let cli_timeout = Duration::from_secs(timeout_secs);
+    let args_clone = args.clone();
+    let output = timeout(cli_timeout, tokio::task::spawn_blocking(move || {
+        Command::new("notebooklm")
+            .args(&args_clone)
+            .output()
+    }))
+    .await
+    .map_err(|_| format!("notebooklm CLI timed out after {}s", timeout_secs))?
+    .map_err(|e| format!("Task join error: {}", e))?
+    .map_err(|e| format!("Failed to execute notebooklm: {}", e))?;
+
+    let stdout = String::from_utf8_lossy(&output.stdout).trim().to_string();
+    let stderr = String::from_utf8_lossy(&output.stderr).trim().to_string();
+
+    if !output.status.success() {
+        eprintln!("[NotebookLmCli] Command failed, stderr: {}", stderr);
+        return Err(format!("notebooklm CLI error (exit {}): {}",
+            output.status.code().unwrap_or(-1),
+            if stderr.is_empty() { &stdout } else { &stderr }));
+    }
+
+    eprintln!("[NotebookLmCli] Success, output: {} chars", stdout.len());
+    Ok(stdout)
 }
 
 #[cfg(test)]
@@ -412,16 +639,17 @@ mod tests {
 
     #[test]
     fn deserialize_translation_result_standard() {
+        // 新格式: description + bodyText
         let json = r#"{
             "subject": "翻译后的标题",
-            "description_text": "翻译后的正文",
+            "description": "翻译后的正文",
             "conversations": [
-                {"id": 123, "body_text": "翻译后的对话"}
+                {"id": 123, "bodyText": "翻译后的对话"}
             ]
         }"#;
         let result: TranslationResult = serde_json::from_str(json).unwrap();
-        assert_eq!(result.subject, "翻译后的标题");
-        assert_eq!(result.description_text.as_deref(), Some("翻译后的正文"));
+        assert_eq!(result.subject.as_deref(), Some("翻译后的标题"));
+        assert_eq!(result.description.as_deref(), Some("翻译后的正文"));
         assert_eq!(result.conversations.len(), 1);
         assert_eq!(result.conversations[0].id, 123);
         assert_eq!(result.conversations[0].body_text, "翻译后的对话");
@@ -429,15 +657,27 @@ mod tests {
 
     #[test]
     fn deserialize_translation_result_with_aliases() {
-        // Test field aliases: "title" -> subject, "content" -> description_text
+        // 旧格式: description_text + body_text（验证向后兼容）
         let json = r#"{
-            "title": "Title via alias",
-            "content": "Content via alias",
-            "conversations": []
+            "subject": "Title",
+            "description_text": "Content via alias",
+            "conversations": [
+                {"id": 1, "body_text": "old format"}
+            ]
         }"#;
         let result: TranslationResult = serde_json::from_str(json).unwrap();
-        assert_eq!(result.subject, "Title via alias");
-        assert_eq!(result.description_text.as_deref(), Some("Content via alias"));
+        assert_eq!(result.subject.as_deref(), Some("Title"));
+        assert_eq!(result.description.as_deref(), Some("Content via alias"));
+        assert_eq!(result.conversations[0].body_text, "old format");
+    }
+
+    #[test]
+    fn deserialize_conversation_body_text_camel_case() {
+        // bodyText（新格式）通过 alias 反序列化
+        let json = r#"{"id": 123, "bodyText": "camel case format"}"#;
+        let conv: ConversationTranslation = serde_json::from_str(json).unwrap();
+        assert_eq!(conv.id, 123);
+        assert_eq!(conv.body_text, "camel case format");
     }
 
     #[test]
@@ -469,6 +709,6 @@ mod tests {
             "conversations": []
         }"#;
         let result: TranslationResult = serde_json::from_str(json).unwrap();
-        assert!(result.description_text.is_none());
+        assert!(result.description.is_none());
     }
 }

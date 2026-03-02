@@ -185,7 +185,7 @@ class AgentDefinitionServiceTest {
         updated.setProviderType(ProviderType.HTTP_API);
         updated.setExecutionEnv(ExecutionEnv.BOTH);
         updated.setCapability("translate");
-        updated.setProviderConfig("{\"model\":\"gemini-pro\"}");
+        updated.setAgentConfig("{\"model\":\"gemini-pro\"}");
         updated.setSortOrder(5);
 
         when(repository.findById(1L)).thenReturn(Optional.of(enabledAgent));

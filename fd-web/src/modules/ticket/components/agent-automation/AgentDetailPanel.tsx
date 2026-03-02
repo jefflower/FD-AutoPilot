@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import type { AgentConsumerMapping, MQTaskLike } from './types';
 import type { ServerTicket } from '../../../../shared/types/server';
-import { parseProviderConfig } from '../../../../shared/agents/schemaUtils';
+import { parseAgentConfig } from '../../../../shared/agents/schemaUtils';
 import ServerTicketDetail from '../ServerTicketDetail';
+import AgentExecLogPanel from '../../../../shared/components/AgentExecLogPanel';
 
 interface AgentDetailPanelProps {
     selectedMapping: AgentConsumerMapping | null;
@@ -12,8 +13,8 @@ interface AgentDetailPanelProps {
     onRefreshTicket: () => void;
 }
 
-/** providerConfig 中需要摘要展示的关键字段 */
-const CONFIG_SUMMARY_KEYS = ['model', 'windowLabel', 'taskType', 'notebookId', 'targetUrl'];
+/** agentConfig 中需要摘要展示的关键字段 */
+const CONFIG_SUMMARY_KEYS = ['model', 'windowLabel', 'notebookId', 'targetUrl'];
 
 function ConfigSummary({ config }: { config: Record<string, any> }) {
     const entries = CONFIG_SUMMARY_KEYS
@@ -160,7 +161,7 @@ const AgentDetailPanel: React.FC<AgentDetailPanelProps> = ({
 
     // ========== 视图 B: 选中 Agent 但无选中工单 ==========
     const { definition, consumer } = selectedMapping;
-    const providerConfig = parseProviderConfig(definition.providerConfig);
+    const agentConfig = parseAgentConfig(definition.agentConfig);
 
     const processingTasks = consumer ? Array.from(consumer.processingTasks.values()) : [];
     const recentCompleted = consumer ? consumer.completedHistory.slice(-10).reverse() : [];
@@ -176,30 +177,22 @@ const AgentDetailPanel: React.FC<AgentDetailPanelProps> = ({
                     <div className="text-xs text-slate-400 mt-1">{definition.description}</div>
                 )}
                 <div className="flex items-center gap-2 mt-2">
-                    <span className="text-[10px] px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-400">
-                        {definition.providerType}
-                    </span>
-                    <span className="text-[10px] px-1.5 py-0.5 rounded bg-purple-500/10 text-purple-400">
-                        {definition.executionEnv}
-                    </span>
+                    {definition.requiredCapability && (
+                        <span className="text-[10px] px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-400">
+                            {definition.requiredCapability}
+                        </span>
+                    )}
                     <span className="text-[10px] px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-400">
                         {definition.capability}
                     </span>
-                    {definition.callMode && (
-                        <span className={`text-[10px] px-1.5 py-0.5 rounded ${
-                            definition.callMode === 'MQ' ? 'bg-orange-500/10 text-orange-400' : 'bg-cyan-500/10 text-cyan-400'
-                        }`}>
-                            {definition.callMode}
-                        </span>
-                    )}
                     {definition.groupCode && (
                         <span className="text-[10px] px-1.5 py-0.5 rounded bg-slate-600/30 text-slate-400">
                             {definition.groupCode}
                         </span>
                     )}
                 </div>
-                {Object.keys(providerConfig).length > 0 && (
-                    <ConfigSummary config={providerConfig} />
+                {Object.keys(agentConfig).length > 0 && (
+                    <ConfigSummary config={agentConfig} />
                 )}
             </div>
 
@@ -207,7 +200,7 @@ const AgentDetailPanel: React.FC<AgentDetailPanelProps> = ({
             {!consumer && (
                 <div className="mx-4 mt-4 p-3 rounded-lg bg-slate-800/40 border border-slate-700/30">
                     <div className="text-xs text-slate-500">
-                        此 Agent 通过工作流被动触发，无独立消费队列。任务由 BPMN 流程编排分发。
+                        此 Agent 通过任务系统被动触发，无独立消费队列。任务由 n8n 工作流编排分发。
                     </div>
                 </div>
             )}
@@ -263,6 +256,14 @@ const AgentDetailPanel: React.FC<AgentDetailPanelProps> = ({
                     )}
                 </div>
             )}
+
+            {/* 执行日志面板 */}
+            <div className="px-4 mt-2 pb-4">
+                <AgentExecLogPanel
+                    agentCode={definition.code}
+                    agentName={definition.name}
+                />
+            </div>
         </div>
     );
 };

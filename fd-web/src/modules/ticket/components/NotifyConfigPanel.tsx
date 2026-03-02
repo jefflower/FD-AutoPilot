@@ -51,6 +51,7 @@ const NotifyConfigPanel: React.FC<NotifyConfigPanelProps> = ({ onClose }) => {
     const [platform, setPlatform] = useState<Platform>('none');
     const [webhookUrl, setWebhookUrl] = useState('');
     const [auditBaseUrl, setAuditBaseUrl] = useState('');
+    const [notifyLang, setNotifyLang] = useState<string>('zh-CN');
     const [loading, setLoading] = useState(true);
     const [saving, setSaving] = useState(false);
     const [testing, setTesting] = useState(false);
@@ -67,6 +68,9 @@ const NotifyConfigPanel: React.FC<NotifyConfigPanelProps> = ({ onClose }) => {
                 setToast({ type: 'error', msg: t('notifyConfig.loadFailed') });
             })
             .finally(() => setLoading(false));
+        configApi.getNotifyLanguage()
+            .then(res => setNotifyLang(res.language || 'zh-CN'))
+            .catch(() => {});
     }, [t]);
 
     useEffect(() => {
@@ -85,13 +89,14 @@ const NotifyConfigPanel: React.FC<NotifyConfigPanelProps> = ({ onClose }) => {
                 enabled: platform !== 'none',
                 auditBaseUrl,
             });
+            await configApi.setNotifyLanguage(notifyLang);
             setToast({ type: 'success', msg: t('notifyConfig.saveSuccess') });
         } catch (err) {
             setToast({ type: 'error', msg: (err as Error).message });
         } finally {
             setSaving(false);
         }
-    }, [platform, webhookUrl, auditBaseUrl, t]);
+    }, [platform, webhookUrl, auditBaseUrl, notifyLang, t]);
 
     const handleTest = useCallback(async () => {
         setTesting(true);
@@ -99,10 +104,12 @@ const NotifyConfigPanel: React.FC<NotifyConfigPanelProps> = ({ onClose }) => {
             const result = await configApi.testNotifyChannel();
             setToast({
                 type: result.success ? 'success' : 'error',
-                msg: result.success ? t('notifyConfig.testSuccess') : t('notifyConfig.testFailed'),
+                msg: result.success
+                    ? t('notifyConfig.testSuccess')
+                    : result.error || t('notifyConfig.testFailed'),
             });
         } catch (err) {
-            setToast({ type: 'error', msg: t('notifyConfig.testError', { error: (err as Error).message }) });
+            setToast({ type: 'error', msg: (err as Error).message });
         } finally {
             setTesting(false);
         }
@@ -200,6 +207,33 @@ const NotifyConfigPanel: React.FC<NotifyConfigPanelProps> = ({ onClose }) => {
                         className="w-full px-3 py-2 bg-slate-800/50 border border-slate-700/50 rounded-lg text-xs text-slate-200 placeholder-slate-600 focus:outline-none focus:ring-1 ring-indigo-500/30 focus:border-transparent transition-all"
                     />
                     <p className="text-[10px] text-slate-600 mt-1.5">{t('notifyConfig.auditBaseUrlHint')}</p>
+                </div>
+
+                {/* Notification Language */}
+                <div>
+                    <label className="block text-[11px] font-bold text-slate-400 uppercase tracking-wide mb-2">
+                        {t('notifyConfig.language')}
+                    </label>
+                    <div className="flex gap-2">
+                        {[
+                            { id: 'zh-CN', label: '中文', flag: '🇨🇳' },
+                            { id: 'en-US', label: 'English', flag: '🇺🇸' },
+                        ].map(lang => (
+                            <button
+                                key={lang.id}
+                                onClick={() => setNotifyLang(lang.id)}
+                                className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-all text-xs font-bold ${
+                                    notifyLang === lang.id
+                                        ? 'bg-indigo-500/15 border-indigo-500/40 text-indigo-400'
+                                        : 'border-slate-700/50 text-slate-500 hover:border-slate-600 hover:text-slate-300'
+                                }`}
+                            >
+                                <span>{lang.flag}</span>
+                                <span>{lang.label}</span>
+                            </button>
+                        ))}
+                    </div>
+                    <p className="text-[10px] text-slate-600 mt-1.5">{t('notifyConfig.languageHint')}</p>
                 </div>
 
                 {/* Actions */}

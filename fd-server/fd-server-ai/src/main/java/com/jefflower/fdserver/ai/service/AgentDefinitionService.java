@@ -1,7 +1,9 @@
 package com.jefflower.fdserver.ai.service;
 
 import com.jefflower.fdserver.ai.entity.AgentDefinition;
+import com.jefflower.fdserver.ai.entity.CapabilityDefinition;
 import com.jefflower.fdserver.ai.repository.AgentDefinitionRepository;
+import com.jefflower.fdserver.ai.repository.CapabilityDefinitionRepository;
 import com.jefflower.fdserver.common.exception.BusinessException;
 import com.jefflower.fdserver.common.exception.ErrorCode;
 import org.springframework.stereotype.Service;
@@ -15,9 +17,12 @@ import java.util.stream.Collectors;
 public class AgentDefinitionService {
 
     private final AgentDefinitionRepository repository;
+    private final CapabilityDefinitionRepository capabilityDefinitionRepository;
 
-    public AgentDefinitionService(AgentDefinitionRepository repository) {
+    public AgentDefinitionService(AgentDefinitionRepository repository,
+                                   CapabilityDefinitionRepository capabilityDefinitionRepository) {
         this.repository = repository;
+        this.capabilityDefinitionRepository = capabilityDefinitionRepository;
     }
 
     public List<AgentDefinition> findAll() {
@@ -69,11 +74,19 @@ public class AgentDefinitionService {
         existing.setGroupCode(updated.getGroupCode());
         existing.setCallMode(updated.getCallMode());
         existing.setCallUrl(updated.getCallUrl());
-        existing.setProviderConfig(updated.getProviderConfig());
+        existing.setAgentConfig(updated.getAgentConfig());
         existing.setInputSchema(updated.getInputSchema());
         existing.setOutputSchema(updated.getOutputSchema());
         existing.setTemplateEngine(updated.getTemplateEngine());
         existing.setSortOrder(updated.getSortOrder());
+        existing.setAutoStart(updated.isAutoStart());
+        existing.setRequiredCapability(updated.getRequiredCapability());
+        existing.setSystemPrompt(updated.getSystemPrompt());
+
+        // 如果更新后 Agent 是启用状态，校验 requiredCapability 对应的 Capability 是否存在且启用
+        if (existing.isEnabled()) {
+            checkRequiredCapabilityEnabled(existing);
+        }
 
         // code 和 builtIn 不允许修改
         return repository.save(existing);
@@ -83,8 +96,32 @@ public class AgentDefinitionService {
     public void toggleEnabled(Long id) {
         AgentDefinition def = repository.findById(id)
                 .orElseThrow(() -> new BusinessException(ErrorCode.AGENT_NOT_FOUND));
-        def.setEnabled(!def.isEnabled());
+
+        boolean newEnabled = !def.isEnabled();
+
+        // 如果要启用 Agent，检查其 requiredCapability 对应的 Capability 是否存在且启用
+        if (newEnabled) {
+            checkRequiredCapabilityEnabled(def);
+        }
+
+        def.setEnabled(newEnabled);
         repository.save(def);
+    }
+
+    /**
+     * 校验 Agent 的 requiredCapability 对应的 Capability 是否存在且启用。
+     * 如果 requiredCapability 为 null，跳过检查（兼容旧数据）。
+     */
+    private void checkRequiredCapabilityEnabled(AgentDefinition def) {
+        if (def.getRequiredCapability() == null) {
+            return;
+        }
+        Optional<CapabilityDefinition> capOpt = capabilityDefinitionRepository
+                .findByCode(def.getRequiredCapability());
+        if (capOpt.isEmpty() || !capOpt.get().isEnabled()) {
+            throw new BusinessException(ErrorCode.CAPABILITY_DISABLED,
+                    "无法启用 Agent '" + def.getCode() + "'：所需的 Capability '" + def.getRequiredCapability() + "' 未启用");
+        }
     }
 
     @Transactional

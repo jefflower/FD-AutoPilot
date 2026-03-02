@@ -42,11 +42,6 @@ const ServerTaskWorkspace: React.FC<ServerTaskWorkspaceProps> = ({
     const [selectedTicket, setSelectedTicket] = useState<ServerTicket | null>(null);
     const [isLoading, setIsLoading] = useState(false);
 
-    // 从 workspace type 直接映射 activeProcessType
-    const activeProcessType = type === 'translation' ? 'translating' as const
-        : type === 'reply' ? 'replying' as const
-        : null;
-
     const [isSplitMode, setIsSplitModeState] = useState<boolean>(() => {
         const saved = localStorage.getItem('server_split_mode');
         return saved !== null ? saved === 'true' : true;
@@ -56,8 +51,6 @@ const ServerTaskWorkspace: React.FC<ServerTaskWorkspaceProps> = ({
         setIsSplitModeState(s);
         localStorage.setItem('server_split_mode', s.toString());
     };
-
-    const detailRef = useRef<any>(null);
 
     const fetchTicketData = useCallback(async (id: number) => {
         if (!id || id <= 0) return;
@@ -261,11 +254,8 @@ const ServerTaskWorkspace: React.FC<ServerTaskWorkspaceProps> = ({
                 {selectedTicket ? (
                     <ServerTicketDetail
                         key={selectedTicket.id}
-                        ref={detailRef}
                         ticket={selectedTicket}
                         isEmbed={true}
-                        isProcessing={isTaskProcessing(selectedTicket.id)}
-                        activeProcessType={isTaskProcessing(selectedTicket.id) ? activeProcessType : null}
                         isSplitMode={isSplitMode}
                         setIsSplitMode={setIsSplitMode}
                         onRefresh={handleDetailRefresh}

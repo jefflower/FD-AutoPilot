@@ -73,6 +73,8 @@ export interface SysPermission {
   name: string;
   module: string;
   description?: string;
+  type?: 'ROUTE' | 'OPERATION' | 'DATA';
+  builtIn?: boolean;
   createdAt: string;
 }
 
@@ -104,6 +106,9 @@ export interface PermissionOverview {
 // ============ 工单相关 ============
 export type TicketStatus =
   | 'PENDING_TRANS'
+  | 'TRANSLATING'
+  | 'PENDING_REPLY'
+  | 'REPLYING'
   | 'PROCESSING'
   | 'PENDING_AUDIT'
   | 'AUDITING'
@@ -464,9 +469,8 @@ export interface OAuthStatus {
 }
 
 // ============ AI Agent ============
-export type AgentProviderType = 'GEMINI_CLI' | 'HTTP_API' | 'NOTEBOOKLM' | 'TRACKING_SHADOW' | 'LOCAL_FUNCTION'
+export type AgentProviderType = 'GEMINI_CLI' | 'CLAUDE_CLI' | 'HTTP_API' | 'NOTEBOOKLM' | 'NOTEBOOKLM_PY' | 'TRACKING_SHADOW' | 'LOCAL_FUNCTION'
     | 'WEB_AUTOMATION' | 'SHADOW_WINDOW' | 'LOCAL_CLI'; // deprecated 兼容旧值
-export type AgentCallMode = 'HTTP' | 'MQ';
 export type AgentExecutionEnv = 'CLIENT_ONLY' | 'SERVER_ONLY' | 'BOTH';
 export type AgentExecutionStatus = 'RUNNING' | 'SUCCESS' | 'FAILED' | 'TIMEOUT' | 'CANCELLED';
 
@@ -475,19 +479,36 @@ export interface AgentDefinition {
   code: string;
   name: string;
   description: string;
-  providerType: AgentProviderType;
+  providerType: AgentProviderType | null;
   executionEnv: AgentExecutionEnv;
   capability: string;
+  requiredCapability?: string;
   groupCode?: string;
-  callMode?: AgentCallMode;
-  callUrl?: string;
-  providerConfig: string | Record<string, any>;
+  systemPrompt?: string;
+  agentConfig: string | Record<string, any>;
   enabled: boolean;
+  autoStart?: boolean;
   sortOrder: number;
   builtIn: boolean;
   inputSchema?: Record<string, any>;
   outputSchema?: Record<string, any>;
-  templateEngine?: string;
+}
+
+export interface CapabilityDefinition {
+  id: number;
+  code: string;
+  name: string;
+  description?: string;
+  providerType: AgentProviderType;
+  configSchema?: string;
+  detectConfig?: string;
+  installGuide?: string;
+  enabled: boolean;
+  builtIn: boolean;
+  sortOrder: number;
+  executionEnv: AgentExecutionEnv;
+  createdAt: string;
+  updatedAt?: string;
 }
 
 export interface AgentExecuteInput {
@@ -569,22 +590,148 @@ export interface AgentExecutionLog {
   createdAt: string;
 }
 
-export type AgentBindings = Record<string, string>;
-
-// ============ Workflow ============
-export interface WorkflowDefinition {
+/** 最近执行记录（用于仪表盘时间线） */
+export interface AgentExecution {
   id: number;
-  processKey: string;
-  name: string;
-  description: string;
-  businessType: string;
-  deploymentId?: string;
-  processDefinitionId?: string;
-  bpmnXml?: string;
-  enabled: boolean;
-  builtIn: boolean;
-  version: number;
+  agentCode: string;
+  capability?: string;
+  status: AgentExecutionStatus;
+  startTime?: string;
+  endTime?: string;
+  durationMs?: number;
+  input?: string;
+  output?: string;
+  errorMessage?: string;
   createdAt: string;
-  updatedAt: string;
 }
 
+export type AgentBindings = Record<string, string>;
+
+// ============ Agent Instance & Client Registration ============
+export interface AgentInstance {
+  id: number;
+  clientId: string;
+  userId: string;
+  agentCode: string;
+  localConfig?: string;
+  running: boolean;
+  lastHeartbeat?: string;
+  version?: string;
+  createdAt: string;
+  updatedAt?: string;
+}
+
+export interface ClientRegistration {
+  clientId: string;
+  userId: string;
+  clientType: string;
+  version: string;
+  enabledCapabilities: string;
+  lastHeartbeat?: string;
+  online: boolean;
+  createdAt: string;
+}
+
+export interface ClientRegisterRequest {
+  clientId: string;
+  clientType: 'TAURI' | 'WEB' | 'BRIDGE';
+  version: string;
+  enabledCapabilities: string[];
+  runningAgents: string[];
+}
+
+export interface ClientRegisterResponse {
+  clientId: string;
+  instanceCount: number;
+  onlineClients: number;
+}
+
+export interface ClientHeartbeatRequest {
+  clientId: string;
+  runningAgents: string[];
+}
+
+export interface ClientHeartbeatResponse {
+  serverTime: string;
+  commands: unknown[];
+}
+
+// ============ 知识库管理 ============
+export type KnowledgeSourceType = 'PDF' | 'URL' | 'TEXT' | 'CSV' | 'MARKDOWN';
+export type KnowledgeBaseSyncStatus = 'NOT_SYNCED' | 'SYNCING' | 'SYNCED' | 'FAILED';
+export type KnowledgeVisibility = 'PUBLIC' | 'PRIVATE';
+export type KnowledgePermissionLevel = 'READ' | 'WRITE' | 'ADMIN';
+export type KnowledgePermissionTarget = 'GROUP' | 'BASE';
+
+export interface KnowledgeGroup {
+  id: number;
+  name: string;
+  description?: string;
+  color?: string;
+  visibility: KnowledgeVisibility;
+  createdBy?: number;
+  createdAt: string;
+  updatedAt?: string;
+}
+
+export interface KnowledgeBase {
+  id: number;
+  name: string;
+  description?: string;
+  notebookId?: string;
+  color?: string;
+  groupId?: number;
+  visibility?: KnowledgeVisibility;
+  createdBy?: number;
+  sourceCount?: number;
+  syncedCount?: number;
+  createdAt: string;
+  updatedAt?: string;
+}
+
+export interface KnowledgeSource {
+  id: number;
+  knowledgeBaseId: number;
+  title: string;
+  sourceType: KnowledgeSourceType;
+  content?: string;
+  filePath?: string;
+  originalFileName?: string;
+  url?: string;
+  fileSize?: number;
+  syncStatus: KnowledgeBaseSyncStatus;
+  notebookSourceId?: string;
+  syncedAt?: string;
+  createdAt: string;
+  updatedAt?: string;
+}
+
+export interface KnowledgeSyncConfig {
+  knowledgeBaseId?: number;
+  ticketSourceId?: number;
+  notesSourceId?: number;
+}
+
+export interface KnowledgePermission {
+  id: number;
+  targetType: KnowledgePermissionTarget;
+  targetId: number;
+  userId: number;
+  permission: KnowledgePermissionLevel;
+  createdAt: string;
+}
+
+export interface NotebookInfo {
+  id: string;
+  title: string;
+  isOwner: boolean;
+  createdAt: string;
+}
+
+/** Bridge 返回的远程源信息 */
+export interface RemoteSource {
+  id: string;
+  title: string;
+  status: string;
+  type?: string;
+}

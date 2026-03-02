@@ -21,7 +21,6 @@ public class ModuleService {
     private final SysModuleRepository moduleRepository;
     private final SysPermissionRepository permissionRepository;
     private final SysRolePermissionRepository rolePermissionRepository;
-    private final SysModuleRepository moduleRepo;
 
     public List<SysModule> getAllModules() {
         return moduleRepository.findAll();
@@ -40,7 +39,7 @@ public class ModuleService {
         Set<String> userPermSet = new HashSet<>(userPermCodes);
 
         // 获取用户可访问的模块 codes
-        List<String> userModuleCodes = moduleRepo.findModuleCodesByUserId(userId);
+        List<String> userModuleCodes = moduleRepository.findModuleCodesByUserId(userId);
         Set<String> moduleCodeSet = new HashSet<>(userModuleCodes);
 
         // 获取启用的模块，按排序

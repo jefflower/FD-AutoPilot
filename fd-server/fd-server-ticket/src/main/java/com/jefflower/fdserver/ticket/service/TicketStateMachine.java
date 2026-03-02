@@ -12,23 +12,25 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * 工单状态机 —— 声明式状态转换规则（简化版，适配并行网关）
+ * 工单状态机 —— 声明式状态转换规则（完整 8 状态 + PROCESSING 兼容）
  *
  * <h3>主流程</h3>
  * <pre>
- * PENDING_TRANS → PROCESSING → PENDING_AUDIT → AUDITING → APPROVED → COMPLETED
+ * PENDING_TRANS → TRANSLATING → PENDING_REPLY → REPLYING → PENDING_AUDIT → AUDITING → APPROVED → COMPLETED
  * </pre>
  *
- * <p>PROCESSING 统一代表"翻译和/或回复正在执行中"，不再区分 TRANSLATING/PENDING_REPLY/REPLYING。
- * 并行网关下的真实进度由 BPMN 流程实例的活跃节点决定，ticket.status 只反映粗粒度阶段。</p>
+ * <h3>兼容流程（PROCESSING 统一态）</h3>
+ * <pre>
+ * PENDING_TRANS → PROCESSING → PENDING_AUDIT → APPROVED → COMPLETED
+ * </pre>
  *
  * <h3>分支流程</h3>
  * <ul>
- *   <li>审核驳回（重新回复）：PENDING_AUDIT/AUDITING → PROCESSING</li>
+ *   <li>审核驳回（重新回复）：PENDING_AUDIT/AUDITING → REPLYING/PROCESSING</li>
  *   <li>审核驳回（重新翻译）：PENDING_AUDIT/AUDITING → PENDING_TRANS</li>
  *   <li>审核通过 + 自动推送：PENDING_AUDIT/AUDITING → COMPLETED</li>
  *   <li>同步重触发：COMPLETED/APPROVED → PENDING_TRANS</li>
- *   <li>处理超时回退：PROCESSING → PENDING_TRANS, AUDITING → PENDING_AUDIT</li>
+ *   <li>处理超时回退：PROCESSING/TRANSLATING/PENDING_REPLY/REPLYING → PENDING_TRANS</li>
  * </ul>
  */
 @Slf4j
@@ -40,30 +42,43 @@ public class TicketStateMachine {
      */
     private static final Map<TicketStatus, Set<TicketStatus>> STANDARD_TRANSITIONS = Map.ofEntries(
             Map.entry(TicketStatus.PENDING_TRANS, Set.of(
-                    TicketStatus.PROCESSING      // 翻译/回复 Agent 开始执行
+                    TicketStatus.TRANSLATING,        // 翻译 Agent 开始执行
+                    TicketStatus.PROCESSING          // 兼容：n8n 并行网关直接进入处理中
+            )),
+            Map.entry(TicketStatus.TRANSLATING, Set.of(
+                    TicketStatus.PENDING_REPLY,      // 翻译完成，等待回复
+                    TicketStatus.PENDING_AUDIT       // 翻译完成，直接进入审核（跳过回复）
+            )),
+            Map.entry(TicketStatus.PENDING_REPLY, Set.of(
+                    TicketStatus.REPLYING            // 回复 Agent 开始执行
+            )),
+            Map.entry(TicketStatus.REPLYING, Set.of(
+                    TicketStatus.PENDING_AUDIT       // 回复完成，进入审核
             )),
             Map.entry(TicketStatus.PROCESSING, Set.of(
-                    TicketStatus.PENDING_AUDIT   // 翻译+回复均完成，进入审核
+                    TicketStatus.PENDING_AUDIT       // 兼容：翻译+回复均完成，进入审核
             )),
             Map.entry(TicketStatus.PENDING_AUDIT, Set.of(
-                    TicketStatus.AUDITING,       // 审核任务被领取
-                    TicketStatus.APPROVED,       // 审核通过（手动推送模式）
-                    TicketStatus.COMPLETED,      // 审核通过（自动推送模式）
-                    TicketStatus.PROCESSING,     // 审核驳回 → 重新回复
-                    TicketStatus.PENDING_TRANS   // 审核驳回 → 重新翻译
+                    TicketStatus.AUDITING,           // 审核人开始审核
+                    TicketStatus.APPROVED,           // 审核通过（手动推送模式）
+                    TicketStatus.COMPLETED,          // 审核通过（自动推送模式）
+                    TicketStatus.REPLYING,           // 审核驳回 → 重新回复
+                    TicketStatus.PROCESSING,         // 兼容：审核驳回 → 重新回复
+                    TicketStatus.PENDING_TRANS       // 审核驳回 → 重新翻译
             )),
             Map.entry(TicketStatus.AUDITING, Set.of(
-                    TicketStatus.APPROVED,       // 审核通过（手动推送模式）
-                    TicketStatus.COMPLETED,      // 审核通过（自动推送模式）
-                    TicketStatus.PROCESSING,     // 审核驳回 → 重新回复
-                    TicketStatus.PENDING_TRANS   // 审核驳回 → 重新翻译
+                    TicketStatus.APPROVED,           // 审核通过（手动推送模式）
+                    TicketStatus.COMPLETED,          // 审核通过（自动推送模式）
+                    TicketStatus.REPLYING,           // 审核驳回 → 重新回复
+                    TicketStatus.PROCESSING,         // 兼容：审核驳回 → 重新回复
+                    TicketStatus.PENDING_TRANS       // 审核驳回 → 重新翻译
             )),
             Map.entry(TicketStatus.APPROVED, Set.of(
-                    TicketStatus.COMPLETED,      // 手动推送到 Freshdesk
-                    TicketStatus.PENDING_TRANS   // 同步发现内容变化，重新触发
+                    TicketStatus.COMPLETED,          // 手动推送到 Freshdesk
+                    TicketStatus.PENDING_TRANS       // 同步发现内容变化，重新触发
             )),
             Map.entry(TicketStatus.COMPLETED, Set.of(
-                    TicketStatus.PENDING_TRANS   // 同步发现内容变化，重新触发
+                    TicketStatus.PENDING_TRANS       // 同步发现内容变化，重新触发
             ))
     );
 
@@ -72,7 +87,9 @@ public class TicketStateMachine {
      */
     private static final Map<TicketStatus, Set<TicketStatus>> RESET_TRANSITIONS = Map.of(
             TicketStatus.PROCESSING, Set.of(TicketStatus.PENDING_TRANS),
-            TicketStatus.AUDITING, Set.of(TicketStatus.PENDING_AUDIT)
+            TicketStatus.TRANSLATING, Set.of(TicketStatus.PENDING_TRANS),
+            TicketStatus.PENDING_REPLY, Set.of(TicketStatus.PENDING_TRANS),
+            TicketStatus.REPLYING, Set.of(TicketStatus.PENDING_TRANS)
     );
 
     public boolean isValidTransition(TicketStatus from, TicketStatus to) {
@@ -109,27 +126,31 @@ public class TicketStateMachine {
 
     // ========== 幂等接受状态集合 ==========
 
-    /** 翻译上报可接受：PROCESSING / PENDING_TRANS */
+    /** 翻译上报可接受：PENDING_TRANS / PROCESSING / TRANSLATING */
     public static final Set<TicketStatus> TRANSLATION_ACCEPTED_STATES = Set.of(
+            TicketStatus.PENDING_TRANS,
             TicketStatus.PROCESSING,
-            TicketStatus.PENDING_TRANS
+            TicketStatus.TRANSLATING
     );
 
-    /** 回复上报可接受：PROCESSING */
+    /** 回复上报可接受：PROCESSING / PENDING_REPLY / REPLYING */
     public static final Set<TicketStatus> REPLY_ACCEPTED_STATES = Set.of(
-            TicketStatus.PROCESSING
+            TicketStatus.PROCESSING,
+            TicketStatus.PENDING_REPLY,
+            TicketStatus.REPLYING
     );
 
-    /** 并行网关回复上报可接受（放宽）：PENDING_TRANS / PROCESSING */
+    /** 并行网关回复上报可接受（放宽）：PENDING_TRANS / PROCESSING / PENDING_REPLY */
     public static final Set<TicketStatus> WORKFLOW_REPLY_ACCEPTED_STATES = Set.of(
             TicketStatus.PENDING_TRANS,
-            TicketStatus.PROCESSING
+            TicketStatus.PROCESSING,
+            TicketStatus.PENDING_REPLY
     );
 
-    /** 审核上报可接受：AUDITING / PENDING_AUDIT */
+    /** 审核上报可接受：PENDING_AUDIT / AUDITING */
     public static final Set<TicketStatus> AUDIT_ACCEPTED_STATES = Set.of(
-            TicketStatus.AUDITING,
-            TicketStatus.PENDING_AUDIT
+            TicketStatus.PENDING_AUDIT,
+            TicketStatus.AUDITING
     );
 
     // ========== 内部方法 ==========

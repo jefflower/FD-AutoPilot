@@ -7,6 +7,7 @@ import TaskStatusBadge from '../components/TaskStatusBadge';
 import CompletedTaskCard from '../components/CompletedTaskCard';
 import EmptyStateHint from '../components/EmptyStateHint';
 import DetailEmptyState from '../components/DetailEmptyState';
+import TicketList from '../../../shared/components/TicketList';
 
 const ApprovedTasksTab: React.FC = () => {
     const { t } = useTranslation(['tasks', 'common']);
@@ -114,13 +115,6 @@ const ApprovedTasksTab: React.FC = () => {
         }
     };
 
-    const toggleSelect = (id: number) => {
-        const next = new Set(selectedTicketIds);
-        if (next.has(id)) next.delete(id);
-        else next.add(id);
-        setSelectedTicketIds(next);
-    };
-
     const selectAll = () => {
         if (selectedTicketIds.size === approvedTickets.length) {
             setSelectedTicketIds(new Set());
@@ -190,60 +184,38 @@ const ApprovedTasksTab: React.FC = () => {
                             <span className="text-[10px] font-mono text-emerald-500/50">({approvedTickets.length})</span>
                         </div>
 
-                        <div className="space-y-1">
-                            {approvedTickets.map(ticket => (
-                                <div
-                                    key={ticket.id}
-                                    className={`w-full text-left p-2.5 rounded-lg transition-all border group relative ${
-                                        selectedId === ticket.id
-                                            ? 'bg-emerald-500/10 border-emerald-500/30 shadow-lg shadow-emerald-500/5 z-10'
-                                            : 'bg-white/5 border-transparent hover:bg-white/10 hover:border-white/5'
-                                    }`}
-                                >
-                                    <div className="flex items-center gap-2">
-                                        <input
-                                            type="checkbox"
-                                            checked={selectedTicketIds.has(ticket.id)}
-                                            onChange={() => toggleSelect(ticket.id)}
-                                            onClick={(e) => e.stopPropagation()}
-                                            className="w-3.5 h-3.5 rounded border-white/10 bg-black/40 text-emerald-500 focus:ring-0 cursor-pointer flex-shrink-0"
-                                        />
-                                        <div
-                                            className="flex-1 min-w-0 cursor-pointer"
-                                            onClick={() => setSelectedId(selectedId === ticket.id ? null : ticket.id)}
+                        <TicketList
+                            tickets={approvedTickets}
+                            selectedId={selectedId}
+                            onSelect={(ticket) => setSelectedId(selectedId === ticket.id ? null : ticket.id)}
+                            themeColor="emerald"
+                            titleMode="original"
+                            selectable
+                            selectedIds={selectedTicketIds}
+                            onSelectionChange={setSelectedTicketIds}
+                            renderActions={(ticket) => (
+                                <>
+                                    {pushing !== ticket.id && (
+                                        <button
+                                            onClick={(e) => { e.stopPropagation(); handlePushSingle(ticket.id); }}
+                                            className="px-1.5 py-0.5 bg-emerald-600/60 hover:bg-emerald-500 text-white text-[9px] font-bold rounded transition-all"
                                         >
-                                            <div className="flex items-center justify-between mb-0.5">
-                                                <span className="text-[11px] font-bold font-mono text-emerald-400 opacity-80 group-hover:opacity-100 transition-opacity">#{ticket.externalId}</span>
-                                                <div className="flex items-center gap-1.5">
-                                                    {pushing !== ticket.id && (
-                                                        <button
-                                                            onClick={(e) => { e.stopPropagation(); handlePushSingle(ticket.id); }}
-                                                            className="px-1.5 py-0.5 bg-emerald-600/60 hover:bg-emerald-500 text-white text-[9px] font-bold rounded transition-all opacity-0 group-hover:opacity-100"
-                                                        >
-                                                            {t('approved.push')}
-                                                        </button>
-                                                    )}
-                                                    {pushing === ticket.id ? (
-                                                        <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></div>
-                                                    ) : (
-                                                        <span className="text-[8px] font-black text-emerald-400/50 uppercase tracking-tighter">{t('approved.statusApproved')}</span>
-                                                    )}
-                                                </div>
-                                            </div>
-                                            <div className="text-[11px] text-slate-300 truncate font-medium group-hover:text-white transition-colors">{ticket.subject}</div>
-                                        </div>
-                                    </div>
-
-                                    {selectedId === ticket.id && (
-                                        <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-emerald-500 rounded-l-lg"></div>
+                                            {t('approved.push')}
+                                        </button>
                                     )}
-                                </div>
-                            ))}
-
-                            {approvedTickets.length === 0 && !loading && (
-                                <EmptyStateHint message={autoReplyEnabled ? t('approved.autoEnabled') : t('approved.noApproved')} />
+                                    {pushing === ticket.id && (
+                                        <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></div>
+                                    )}
+                                </>
                             )}
-                        </div>
+                            renderStatus={(ticket) => (
+                                pushing === ticket.id
+                                    ? <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></div>
+                                    : <span className="text-[8px] font-black text-emerald-400/50 uppercase tracking-tighter">{t('approved.statusApproved')}</span>
+                            )}
+                            loading={loading}
+                            emptyText={autoReplyEnabled ? t('approved.autoEnabled') : t('approved.noApproved')}
+                        />
                     </div>
 
                     {/* 已推送列表 */}

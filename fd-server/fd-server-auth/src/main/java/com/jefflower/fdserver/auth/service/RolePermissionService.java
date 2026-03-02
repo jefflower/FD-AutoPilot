@@ -73,6 +73,87 @@ public class RolePermissionService {
         return permissionRepository.findByModule(module);
     }
 
+    /**
+     * 创建自定义权限（非 builtIn）
+     *
+     * @param code        权限代码（唯一）
+     * @param name        权限名称
+     * @param module      所属模块
+     * @param description 权限描述
+     * @param type        权限类型 (ROUTE, OPERATION, DATA)
+     * @return 新创建的权限
+     * @throws BusinessException 权限代码已存在时抛出
+     */
+    @Transactional
+    public SysPermission createPermission(String code, String name, String module, String description, String type) {
+        if (permissionRepository.existsByCode(code)) {
+            throw new BusinessException(ErrorCode.PERMISSION_ALREADY_EXISTS, "权限代码已存在: " + code);
+        }
+
+        SysPermission perm = new SysPermission(code, name, module);
+        perm.setDescription(description);
+        perm.setType(type);
+        perm.setBuiltIn(false);
+
+        return permissionRepository.save(perm);
+    }
+
+    /**
+     * 编辑权限
+     * <p>
+     * 内置权限 (builtIn=true) 只能修改 name 和 description
+     * 非内置权限可以修改 name, description, type
+     *
+     * @param id          权限 ID
+     * @param name        新的权限名称
+     * @param description 新的权限描述
+     * @param type        新的权限类型（非内置权限）
+     * @return 更新后的权限
+     * @throws BusinessException 权限不存在时抛出
+     */
+    @Transactional
+    public SysPermission updatePermission(Long id, String name, String description, String type) {
+        SysPermission perm = permissionRepository.findById(id)
+                .orElseThrow(() -> new BusinessException(ErrorCode.PERMISSION_NOT_FOUND, "权限不存在: id=" + id));
+
+        if (name != null) {
+            perm.setName(name);
+        }
+        if (description != null) {
+            perm.setDescription(description);
+        }
+        // 只有非内置权限才能修改 type
+        if (type != null && !Boolean.TRUE.equals(perm.getBuiltIn())) {
+            perm.setType(type);
+        }
+
+        return permissionRepository.save(perm);
+    }
+
+    /**
+     * 删除权限（仅非 builtIn）
+     *
+     * @param id 权限 ID
+     * @throws BusinessException 权限不存在或是内置权限时抛出
+     */
+    @Transactional
+    public void deletePermission(Long id) {
+        SysPermission perm = permissionRepository.findById(id)
+                .orElseThrow(() -> new BusinessException(ErrorCode.PERMISSION_NOT_FOUND, "权限不存在: id=" + id));
+
+        if (Boolean.TRUE.equals(perm.getBuiltIn())) {
+            throw new BusinessException(ErrorCode.BUSINESS_ERROR, "内置权限不可删除: " + perm.getCode());
+        }
+
+        // 删除所有关联的角色权限
+        rolePermissionRepository.deleteByPermissionId(id);
+
+        // 删除权限
+        permissionRepository.deleteById(id);
+
+        log.info("权限已删除: {} (id={})", perm.getCode(), id);
+    }
+
     // ==================== 角色-权限关联管理 ====================
 
     /**

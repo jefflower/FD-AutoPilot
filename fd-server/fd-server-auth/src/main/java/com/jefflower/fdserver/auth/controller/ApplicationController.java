@@ -6,6 +6,7 @@ import com.jefflower.fdserver.auth.security.RequiresPermission;
 import com.jefflower.fdserver.common.dto.ApiResponse;
 import com.jefflower.fdserver.common.exception.BusinessException;
 import com.jefflower.fdserver.common.exception.ErrorCode;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +18,7 @@ import java.util.List;
  * <p>
  * 提供系统应用的 CRUD 接口，内置应用不可删除。
  */
+@Tag(name = "应用管理", description = "系统应用的 CRUD 管理，内置应用不可删除")
 @RestController
 @RequestMapping("/api/v1/auth/applications")
 @RequiredArgsConstructor

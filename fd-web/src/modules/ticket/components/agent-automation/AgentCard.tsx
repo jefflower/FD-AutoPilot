@@ -11,34 +11,30 @@ interface AgentCardProps {
     shadowStatus?: ShadowStatus;
 }
 
-/** 判断 Agent 在浏览器模式下的可用性 */
-function getBrowserCompat(providerType: string, _capability: string): { available: boolean; label: string } {
-    if (providerType === 'HTTP_API' || providerType === 'LOCAL_FUNCTION') {
+/** 判断 Agent 在浏览器模式下的可用性（基于 requiredCapability） */
+function getBrowserCompat(requiredCapability: string | undefined): { available: boolean; label: string } {
+    if (!requiredCapability) {
         return { available: true, label: '浏览器可用' };
     }
-    if (providerType === 'NOTEBOOKLM') {
+    // 需要本地执行的 capability（含 -cli / -py 后缀）需要 bridge
+    if (requiredCapability.endsWith('-cli') || requiredCapability.endsWith('-py')) {
         return { available: true, label: '需 Bridge' };
     }
-    if (providerType === 'GEMINI_CLI') {
-        return { available: true, label: '需 Bridge' };
-    }
-    if (providerType === 'TRACKING_SHADOW') {
+    // 原始 shadow window 模式（notebooklm）仅桌面
+    if (requiredCapability === 'notebooklm') {
         return { available: false, label: '仅桌面' };
     }
-    return { available: false, label: '仅桌面' };
+    return { available: true, label: '浏览器可用' };
 }
 
 const capabilityColors: Record<string, { border: string; badge: string; text: string }> = {
     translation: { border: 'border-l-cyan-500', badge: 'bg-cyan-500/10 text-cyan-400', text: 'cyan' },
+    'ticket-translate': { border: 'border-l-cyan-500', badge: 'bg-cyan-500/10 text-cyan-400', text: 'cyan' },
     reply: { border: 'border-l-orange-500', badge: 'bg-orange-500/10 text-orange-400', text: 'orange' },
+    'ticket-reply': { border: 'border-l-orange-500', badge: 'bg-orange-500/10 text-orange-400', text: 'orange' },
     tracking: { border: 'border-l-emerald-500', badge: 'bg-emerald-500/10 text-emerald-400', text: 'emerald' },
 };
 const defaultCapabilityColor = { border: 'border-l-slate-500', badge: 'bg-slate-500/10 text-slate-400', text: 'slate' };
-
-const CALL_MODE_BADGE: Record<string, { label: string; cls: string }> = {
-    MQ: { label: 'MQ', cls: 'bg-orange-500/10 text-orange-400' },
-    HTTP: { label: 'HTTP', cls: 'bg-cyan-500/10 text-cyan-400' },
-};
 
 const AgentCard: React.FC<AgentCardProps> = ({
     mapping,
@@ -58,8 +54,6 @@ const AgentCard: React.FC<AgentCardProps> = ({
     const processingCount = consumer?.processingTasks.size ?? 0;
     const completedCount = consumer?.completedHistory.filter(t => t.status === 'completed').length ?? 0;
     const failedCount = consumer?.completedHistory.filter(t => t.status === 'failed').length ?? 0;
-
-    const callModeBadge = definition.callMode ? CALL_MODE_BADGE[definition.callMode] : null;
 
     return (
         <div
@@ -87,23 +81,20 @@ const AgentCard: React.FC<AgentCardProps> = ({
                         {definition.name}
                     </span>
                 </div>
-                <span className="text-[9px] px-1.5 py-0.5 rounded bg-slate-700/50 text-slate-400 font-mono flex-shrink-0">
-                    {definition.providerType}
-                </span>
+                {definition.requiredCapability && (
+                    <span className="text-[9px] px-1.5 py-0.5 rounded bg-slate-700/50 text-slate-400 font-mono flex-shrink-0">
+                        {definition.requiredCapability}
+                    </span>
+                )}
             </div>
 
-            {/* 第二行：capability + callMode + 浏览器兼容性 */}
+            {/* 第二行：capability + 浏览器兼容性 */}
             <div className="flex items-center gap-2 mt-1.5">
                 <span className={`text-[10px] px-1.5 py-0.5 rounded font-medium ${colors.badge}`}>
                     {capability}
                 </span>
-                {callModeBadge && (
-                    <span className={`text-[9px] px-1.5 py-0.5 rounded font-medium ${callModeBadge.cls}`}>
-                        {callModeBadge.label}
-                    </span>
-                )}
                 {!isTauriEnv() && (() => {
-                    const compat = getBrowserCompat(definition.providerType, capability);
+                    const compat = getBrowserCompat(definition.requiredCapability);
                     return (
                         <span className={`text-[9px] px-1.5 py-0.5 rounded font-medium ${
                             compat.available
@@ -114,9 +105,11 @@ const AgentCard: React.FC<AgentCardProps> = ({
                         </span>
                     );
                 })()}
-                <span className="text-[9px] text-slate-600">
-                    {definition.executionEnv}
-                </span>
+                {definition.autoStart && (
+                    <span className="text-[9px] px-1.5 py-0.5 rounded font-medium bg-blue-500/10 text-blue-400">
+                        自动
+                    </span>
+                )}
             </div>
 
             {/* 第三行：统计（仅有 consumer 的 agent） */}
@@ -137,8 +130,8 @@ const AgentCard: React.FC<AgentCardProps> = ({
                 </div>
             )}
 
-            {/* Shadow Window 状态（NOTEBOOKLM / TRACKING_SHADOW） */}
-            {(definition.providerType === 'NOTEBOOKLM' || definition.providerType === 'TRACKING_SHADOW') && shadowStatus && shadowStatus !== 'n/a' && (
+            {/* Shadow Window 状态（仅 requiredCapability === 'notebooklm'） */}
+            {definition.requiredCapability === 'notebooklm' && shadowStatus && shadowStatus !== 'n/a' && (
                 <div className="mt-1.5">
                     {shadowStatus === 'ready' ? (
                         <span className="text-[10px] text-emerald-500">Shadow Window ready</span>

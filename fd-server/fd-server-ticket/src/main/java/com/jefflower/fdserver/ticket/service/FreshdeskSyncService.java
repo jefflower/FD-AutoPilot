@@ -52,7 +52,7 @@ public class FreshdeskSyncService {
      */
     private final ConcurrentHashMap<String, ReentrantLock> webhookLocks = new ConcurrentHashMap<>();
     private final ObjectMapper objectMapper;
-    private final TicketWorkflowOrchestrator orchestrator;
+    private final N8nWebhookNotifier n8nWebhookNotifier;
 
     @Value("${freshdesk.sync.statuses:2,3}")
     private String syncStatuses;
@@ -132,7 +132,6 @@ public class FreshdeskSyncService {
      * 防护层次：
      * 1. 内存级 tryLock — 快速拒绝并发请求（同一 externalId）
      * 2. processSingleTicket 内的 DB 悲观锁 — 对已有工单行加 FOR UPDATE 锁
-     * 3. FlowableTicketOrchestrator.onNewTicket 内的 isProcessRunning 检查 — 最后兜底
      */
     public void processSingleTicketFromWebhook(Map<String, Object> fdTicket) {
         String externalId = String.valueOf(fdTicket.get("id"));
@@ -189,12 +188,17 @@ public class FreshdeskSyncService {
         }
 
         int syncedCount = 0, updatedCount = 0, skippedCount = 0;
+        List<Long> newTicketIds = new ArrayList<>();
 
         for (Map<String, Object> fdTicket : allTickets) {
             try {
                 TicketSyncResult result = processSingleTicket(fdTicket, "POLLING");
                 switch (result) {
-                    case NEW -> syncedCount++;
+                    case NEW -> {
+                        syncedCount++;
+                        String extId = String.valueOf(fdTicket.get("id"));
+                        ticketRepository.findByExternalId(extId).ifPresent(t -> newTicketIds.add(t.getId()));
+                    }
                     case UPDATED -> updatedCount++;
                     case SKIPPED -> skippedCount++;
                 }
@@ -202,6 +206,11 @@ public class FreshdeskSyncService {
                 String externalId = String.valueOf(fdTicket.get("id"));
                 log.error("Failed to process ticket {}: {}", externalId, e.getMessage());
             }
+        }
+
+        // 通知 n8n 有新工单需要处理
+        if (!newTicketIds.isEmpty()) {
+            n8nWebhookNotifier.notifyNewTickets(newTicketIds);
         }
 
         log.info("Sync completed: new={}, updated={}, skipped={}", syncedCount, updatedCount, skippedCount);
@@ -229,7 +238,7 @@ public class FreshdeskSyncService {
         }
 
         // 获取对话（带分页）
-        String allContent = buildFullContent(externalId, description);
+        String allContent = buildFullContent(externalId, (String) fdTicket.get("subject"), description);
 
         // 计算内容哈希
         String newHash = computeContentHash(allContent);
@@ -269,8 +278,7 @@ public class FreshdeskSyncService {
         ticketRepository.save(ticket);
 
         if (shouldTriggerWorkflow) {
-            orchestrator.onNewTicket(ticket);
-            log.info("Triggered workflow for ticket {} (isNew={}, syncSource={})",
+            log.info("Ticket {} ready for n8n processing (isNew={}, syncSource={})",
                     externalId, isNew, syncSource);
         }
 
@@ -283,17 +291,10 @@ public class FreshdeskSyncService {
      * 规则：
      * - 新工单 → 总是触发
      * - PENDING_TRANS → 不重发（已在队列中）
-     * - TRANSLATING ~ AUDITING（处理中）→ 不打断
+     * - PENDING_TRANS ~ PENDING_AUDIT（处理中）→ 不打断
      * - COMPLETED + 内容变化 → 重新触发
      */
     private boolean shouldTriggerWorkflow(Ticket ticket, boolean isNew) {
-        // 前置检查：如果已有活跃 BPMN 流程实例，直接跳过（防止 Webhook 并发竞态创建重复流程）
-        if (orchestrator.hasActiveProcess(ticket)) {
-            log.debug("[FreshdeskSync] Skipping workflow trigger: active process exists for ticket #{}",
-                    ticket.getId());
-            return false;
-        }
-
         if (isNew)
             return true;
 
@@ -302,6 +303,9 @@ public class FreshdeskSyncService {
         // 处于活跃处理中的状态，不允许重置
         Set<TicketStatus> doNotDisturb = Set.of(
                 TicketStatus.PENDING_TRANS,
+                TicketStatus.TRANSLATING,
+                TicketStatus.PENDING_REPLY,
+                TicketStatus.REPLYING,
                 TicketStatus.PROCESSING,
                 TicketStatus.PENDING_AUDIT,
                 TicketStatus.AUDITING);
@@ -319,8 +323,9 @@ public class FreshdeskSyncService {
     /**
      * 构建包含描述和所有对话的 JSON 内容
      */
-    private String buildFullContent(String externalId, String description) {
+    private String buildFullContent(String externalId, String subject, String description) {
         TicketContent contentModel = new TicketContent();
+        contentModel.setSubject(subject);
         contentModel.setDescription(description);
 
         try {

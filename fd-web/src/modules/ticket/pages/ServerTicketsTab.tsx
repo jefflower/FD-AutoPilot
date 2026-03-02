@@ -2,6 +2,8 @@ import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react'
 import { useTranslation } from 'react-i18next';
 import { ticketApi, adminApi } from '../../../shared/services/serverApi';
 import ServerTicketDetail from '../components/ServerTicketDetail';
+import TicketList from '../../../shared/components/TicketList';
+import type { TitleMode } from '../../../shared/components/TicketList';
 import type { ServerTicket, TicketStatus, TicketQueryParams } from '../../../shared/types/server';
 import { getTicketStatusOptions } from '../../../shared/utils/statusLabels';
 import { useAuthContext } from '../../../shared/context/AuthContext';
@@ -55,7 +57,6 @@ const ServerTicketsTab: React.FC = () => {
     const [purgeAllResult, setPurgeAllResult] = useState<{ deletedTickets: number } | null>(null);
     const [toasts, setToasts] = useState<string[]>([]);
 
-    const scrollContainerRef = useRef<HTMLDivElement>(null);
     const isFetchingRef = useRef(false);
     const requestIdRef = useRef(0);
     const pageRef = useRef(0); // 使用 Ref 记录当前页码，避免触发函数重建
@@ -116,9 +117,6 @@ const ServerTicketsTab: React.FC = () => {
         }
     }, [statusFilter, searchQuery, t]);
 
-    // 详情页引用
-    const detailRef = useRef<any>(null);
-
     // 核心数据加载
     useEffect(() => {
         loadTickets(true);
@@ -136,7 +134,7 @@ const ServerTicketsTab: React.FC = () => {
 
             // 自动滚动到选中项
             setTimeout(() => {
-                const element = document.getElementById(`ticket-item-${selectedId}`);
+                const element = document.querySelector(`[data-ticket-id="${selectedId}"]`);
                 if (element) {
                     element.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                 }
@@ -146,13 +144,15 @@ const ServerTicketsTab: React.FC = () => {
         }
     }, [selectedId]);
 
-    const handleScroll = useCallback(() => {
-        const container = scrollContainerRef.current;
-        if (!container || isFetchingRef.current || !hasMore) return;
-        if (container.scrollTop + container.clientHeight >= container.scrollHeight - 100) {
+    // 无限滚动 loadMore
+    const handleLoadMore = useCallback(() => {
+        if (!isFetchingRef.current) {
             loadTickets(false);
         }
-    }, [loadTickets, hasMore]);
+    }, [loadTickets]);
+
+    // displayLang → titleMode 映射
+    const titleMode: TitleMode = displayLang === 'original' ? 'original' : 'translated';
 
     // Toast 自动消失
     useEffect(() => {
@@ -261,58 +261,29 @@ const ServerTicketsTab: React.FC = () => {
                     </div>
                 </div>
 
-                {/* 滚动列表 */}
-                <div
-                    ref={scrollContainerRef}
-                    onScroll={handleScroll}
-                    className="flex-1 overflow-y-auto custom-scrollbar p-2 space-y-1"
-                >
-                    {tickets.map(ticket => (
-                        <button
-                            key={ticket.id}
-                            id={`ticket-item-${ticket.id}`}
-                            onClick={() => setSelectedId(ticket.id)}
-                            className={`w-full text-left p-2.5 rounded-lg transition-all border group ${selectedId === ticket.id
-                                ? 'bg-indigo-500/10 border-indigo-500/30 shadow-lg shadow-indigo-500/5'
-                                : 'bg-white/5 border-transparent hover:bg-white/10'
-                                }`}
-                        >
-                            <div className="flex items-center justify-between mb-0.5">
-                                <span className="text-[10px] font-bold text-indigo-400/60 group-hover:text-indigo-400 transition-opacity">#{ticket.externalId}</span>
-                                <span className={`px-1.5 py-0.5 rounded-[4px] text-[8px] font-black uppercase tracking-tighter ${statusOptions.find(o => o.value === ticket.status)?.color
-                                    }`}>
-                                    {statusOptions.find(o => o.value === ticket.status)?.label || ticket.status}
-                                </span>
-                            </div>
-                            <div className="text-[11px] text-slate-300 truncate font-medium group-hover:text-white transition-colors">
-                                {(displayLang === 'cn' && (ticket.translatedTitle || ticket.translation?.translatedTitle)) ? (ticket.translatedTitle || ticket.translation?.translatedTitle) : ticket.subject}
-                            </div>
-                        </button>
-                    ))}
+                {/* 工单列表 */}
+                <TicketList
+                    tickets={tickets}
+                    selectedId={selectedId}
+                    onSelect={(ticket) => setSelectedId(ticket.id)}
+                    themeColor="indigo"
+                    titleMode={titleMode}
+                    pagination={{ mode: 'infinite', hasMore, loadMore: handleLoadMore, loadingMore }}
+                    loading={loading}
+                    emptyText={t('list.noData')}
+                />
 
-                    {error && (
-                        <div className="m-2 p-2 bg-red-500/10 border border-red-500/20 rounded text-[10px] text-red-400 font-bold">
-                            {error}
-                        </div>
-                    )}
-
-                    {loadingMore && (
-                        <div className="flex justify-center p-4">
-                            <div className="w-4 h-4 border-2 border-indigo-500/30 border-t-indigo-500 rounded-full animate-spin" />
-                        </div>
-                    )}
-
-                    {!loading && tickets.length === 0 && (
-                        <div className="text-center py-12 text-slate-600 text-[10px] italic">{t('list.noData')}</div>
-                    )}
-                </div>
+                {error && (
+                    <div className="m-2 p-2 bg-red-500/10 border border-red-500/20 rounded text-[10px] text-red-400 font-bold">
+                        {error}
+                    </div>
+                )}
             </div>
 
             {/* 右侧详情 */}
             <div className="flex-1 bg-slate-900/40 relative">
                 {selectedTicket ? (
                     <ServerTicketDetail
-                        ref={detailRef}
                         ticket={selectedTicket}
                         isEmbed={true}
                         isSplitMode={isSplitMode}

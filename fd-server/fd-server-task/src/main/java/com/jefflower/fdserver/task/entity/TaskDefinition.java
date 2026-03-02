@@ -47,7 +47,7 @@ public class TaskDefinition {
     @Column(name = "handler_name", length = 64)
     private String handlerName;
 
-    @Lob
+    @Column(columnDefinition = "TEXT")
     private String config;
 
     @Column(name = "created_at")

@@ -27,8 +27,11 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Service
@@ -132,6 +135,45 @@ public class AuthService {
     }
 
     /**
+     * 批量填充用户的 roles 字段。
+     * 一次性查询所有用户的角色关联，避免 N+1 查询问题。
+     */
+    private void populateUserRoles(List<SysUser> users) {
+        if (users == null || users.isEmpty()) {
+            return;
+        }
+        try {
+            List<Long> userIds = users.stream().map(SysUser::getId).toList();
+            List<SysUserRole> allUserRoles = sysUserRoleRepository.findByUserIdIn(userIds);
+
+            // 构建 roleId -> roleCode 映射
+            Map<Long, String> roleCodeMap = sysRoleRepository.findAll().stream()
+                    .collect(Collectors.toMap(SysRole::getId, SysRole::getCode));
+
+            // 构建 userId -> List<roleCode> 映射
+            Map<Long, List<String>> userRolesMap = allUserRoles.stream()
+                    .collect(Collectors.groupingBy(
+                            SysUserRole::getUserId,
+                            Collectors.mapping(
+                                    ur -> roleCodeMap.getOrDefault(ur.getRoleId(), "USER"),
+                                    Collectors.toList()
+                            )
+                    ));
+
+            // 填充每个用户的 roles 字段
+            for (SysUser user : users) {
+                List<String> roles = userRolesMap.getOrDefault(user.getId(), List.of("USER"));
+                user.setRoles(roles.isEmpty() ? List.of("USER") : roles);
+            }
+        } catch (Exception e) {
+            log.warn("批量填充用户角色失败，设置默认角色: {}", e.getMessage());
+            for (SysUser user : users) {
+                user.setRoles(List.of("USER"));
+            }
+        }
+    }
+
+    /**
      * 解析用户角色列表。
      * 从 RBAC 关联表（sys_user_role + sys_role）查询；
      * 如果 RBAC 表中无记录，返回默认角色 ["USER"]。
@@ -228,18 +270,24 @@ public class AuthService {
     }
 
     public List<SysUser> getPendingUsers() {
-        return userRepository.findByStatus(UserStatus.PENDING);
+        List<SysUser> users = userRepository.findByStatus(UserStatus.PENDING);
+        populateUserRoles(users);
+        return users;
     }
 
     public Page<SysUser> getAllUsers(UserStatus status, String username, Pageable pageable) {
+        Page<SysUser> page;
         if (status != null && username != null && !username.isBlank()) {
-            return userRepository.findByStatusAndUsernameContainingIgnoreCase(status, username, pageable);
+            page = userRepository.findByStatusAndUsernameContainingIgnoreCase(status, username, pageable);
         } else if (status != null) {
-            return userRepository.findByStatus(status, pageable);
+            page = userRepository.findByStatus(status, pageable);
         } else if (username != null && !username.isBlank()) {
-            return userRepository.findByUsernameContainingIgnoreCase(username, pageable);
+            page = userRepository.findByUsernameContainingIgnoreCase(username, pageable);
+        } else {
+            page = userRepository.findAll(pageable);
         }
-        return userRepository.findAll(pageable);
+        populateUserRoles(page.getContent());
+        return page;
     }
 
     @Transactional

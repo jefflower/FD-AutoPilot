@@ -44,6 +44,10 @@
     "mqTransTooltip": "Trigger Server-side MQ Translation",
     "mqReplyTooltip": "Trigger Server-side MQ Reply",
     "splitBtn": "SPLIT",
+    "reprocessBtn": "REPROCESS",
+    "reprocessConfirmTitle": "Confirm Reprocess",
+    "reprocessConfirmDesc": "The ticket will be reset to \"Pending Translation\" and re-enter the automation pipeline (Translate → Reply → Audit). Existing translations and replies will not be deleted.",
+    "reprocessFailed": "Reprocess failed: {{error}}",
     "geminiPreview": "Gemini Preview"
   },
   "translation": {
@@ -119,13 +123,13 @@
     "translateConfirmTitle": "MQ Translation Confirm",
     "translateConfirmMessage": "Are you sure you want to send an MQ translation request? This will re-queue for processing.",
     "translateSentTitle": "Queued",
-    "translateSentMessage": "MQ translation task sent. Check progress in the \"Translation Tasks\" tab.",
+    "translateSentMessage": "MQ translation task sent. Check progress in the \"Agent Panel\".",
     "translateErrorTitle": "Error",
     "translateErrorMessage": "MQ translation trigger failed: {{error}}",
     "replyConfirmTitle": "MQ Reply Confirm",
     "replyConfirmMessage": "Are you sure you want to send an MQ reply generation request? This will re-queue for processing.",
     "replySentTitle": "Queued",
-    "replySentMessage": "MQ reply task sent. Check progress in the \"Reply Tasks\" tab.",
+    "replySentMessage": "MQ reply task sent. Check progress in the \"Agent Panel\".",
     "replyErrorTitle": "Error",
     "replyErrorMessage": "MQ reply trigger failed: {{error}}"
   },
@@ -155,6 +159,13 @@
     "testSuccess": "Test message sent successfully",
     "testFailed": "Test message failed",
     "testError": "Test failed: {{error}}",
-    "loadFailed": "Failed to load notification settings"
+    "loadFailed": "Failed to load notification settings",
+    "language": "Notification Language",
+    "languageHint": "Language used for audit notification messages"
+  },
+  "timeline": {
+    "title": "Status Timeline",
+    "showAll": "Show All ({{count}})",
+    "collapse": "Collapse"
   }
 }

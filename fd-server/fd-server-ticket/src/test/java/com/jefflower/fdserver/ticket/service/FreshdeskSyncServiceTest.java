@@ -42,9 +42,6 @@ class FreshdeskSyncServiceTest {
     @Mock
     private com.jefflower.fdserver.task.service.TaskDistributionService taskDistributionService;
 
-    @Mock
-    private TicketWorkflowOrchestrator orchestrator;
-
     @InjectMocks
     private FreshdeskSyncService freshdeskSyncService;
 
@@ -140,7 +137,6 @@ class FreshdeskSyncServiceTest {
 
         assertTrue(result.isSuccess());
         assertEquals(1, result.getSyncedCount());
-        verify(orchestrator).onNewTicket(any(Ticket.class));
         verify(syncConfigService).releaseSyncLock();
     }
 
@@ -190,7 +186,7 @@ class FreshdeskSyncServiceTest {
         assertEquals(1, saved.getFdPriority());
         assertEquals("urgent,vip", saved.getFdTags());
 
-        verify(orchestrator).onNewTicket(any(Ticket.class));
+        // n8n 通过定时扫描自动拾取新工单
     }
 
     @Test
@@ -199,6 +195,7 @@ class FreshdeskSyncServiceTest {
 
         // Build expected content hash using the same TicketContent model as the service
         TicketContent contentModel = new TicketContent();
+        contentModel.setSubject("Subject");
         contentModel.setDescription("Same content");
         contentModel.setConversations(null);
         String contentJson;
@@ -218,7 +215,7 @@ class FreshdeskSyncServiceTest {
                 freshdeskSyncService.processSingleTicket(fdTicket, "POLLING");
 
         assertEquals(FreshdeskSyncService.TicketSyncResult.SKIPPED, result);
-        verify(orchestrator, never()).onNewTicket(any(Ticket.class));
+        // n8n 不会触发（状态不满足条件）
     }
 
     @Test
@@ -234,7 +231,7 @@ class FreshdeskSyncServiceTest {
                 freshdeskSyncService.processSingleTicket(fdTicket, "WEBHOOK");
 
         assertEquals(FreshdeskSyncService.TicketSyncResult.UPDATED, result);
-        verify(orchestrator).onNewTicket(any(Ticket.class));
+        // n8n 通过定时扫描自动拾取新工单
     }
 
     @Test
@@ -253,12 +250,12 @@ class FreshdeskSyncServiceTest {
         // APPROVED is not in the doNotDisturb set, but shouldTriggerWorkflow returns
         // true only for COMPLETED. APPROVED is neither in doNotDisturb nor COMPLETED,
         // so workflow should NOT be triggered.
-        verify(orchestrator, never()).onNewTicket(any(Ticket.class));
+        // n8n 不会触发（状态不满足条件）
     }
 
     @ParameterizedTest
     @EnumSource(value = TicketStatus.class, names = {
-            "PENDING_TRANS", "PROCESSING", "PENDING_AUDIT", "AUDITING"
+            "PENDING_TRANS", "PROCESSING", "PENDING_AUDIT"
     })
     void processSingleTicket_activeStatuses_doNotTriggerWorkflow(TicketStatus activeStatus) {
         Map<String, Object> fdTicket = buildFdTicket("400", "Subject", "Changed content");
@@ -272,7 +269,7 @@ class FreshdeskSyncServiceTest {
                 freshdeskSyncService.processSingleTicket(fdTicket, "POLLING");
 
         assertEquals(FreshdeskSyncService.TicketSyncResult.UPDATED, result);
-        verify(orchestrator, never()).onNewTicket(any(Ticket.class));
+        // n8n 不会触发（状态不满足条件）
     }
 
     @Test

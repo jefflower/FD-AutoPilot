@@ -29,7 +29,7 @@ class TicketStateMachineTest {
     }
 
     // =========================================================================
-    // 主流程合法转换验证（简化后：6 状态模型）
+    // 主流程合法转换验证（简化后：5 状态模型）
     // =========================================================================
 
     @Nested
@@ -41,21 +41,16 @@ class TicketStateMachineTest {
                     // 主流程前进
                     Arguments.of(TicketStatus.PENDING_TRANS, TicketStatus.PROCESSING, "待翻译 → 处理中"),
                     Arguments.of(TicketStatus.PROCESSING, TicketStatus.PENDING_AUDIT, "处理中 → 待审核"),
-                    Arguments.of(TicketStatus.PENDING_AUDIT, TicketStatus.AUDITING, "待审核 → 审核中"),
 
                     // 审核通过路径
                     Arguments.of(TicketStatus.PENDING_AUDIT, TicketStatus.APPROVED, "待审核 → 已审核（手动推送）"),
                     Arguments.of(TicketStatus.PENDING_AUDIT, TicketStatus.COMPLETED, "待审核 → 已完成（自动推送）"),
-                    Arguments.of(TicketStatus.AUDITING, TicketStatus.APPROVED, "审核中 → 已审核（手动推送）"),
-                    Arguments.of(TicketStatus.AUDITING, TicketStatus.COMPLETED, "审核中 → 已完成（自动推送）"),
 
                     // 审核驳回 → 重新回复
                     Arguments.of(TicketStatus.PENDING_AUDIT, TicketStatus.PROCESSING, "待审核 → 处理中（驳回重新回复）"),
-                    Arguments.of(TicketStatus.AUDITING, TicketStatus.PROCESSING, "审核中 → 处理中（驳回重新回复）"),
 
                     // 审核驳回 → 重新翻译
                     Arguments.of(TicketStatus.PENDING_AUDIT, TicketStatus.PENDING_TRANS, "待审核 → 待翻译（驳回重新翻译）"),
-                    Arguments.of(TicketStatus.AUDITING, TicketStatus.PENDING_TRANS, "审核中 → 待翻译（驳回重新翻译）"),
 
                     // 推送
                     Arguments.of(TicketStatus.APPROVED, TicketStatus.COMPLETED, "已审核 → 已完成（手动推送）"),
@@ -212,9 +207,8 @@ class TicketStateMachineTest {
         }
 
         @Test
-        @DisplayName("审核幂等：AUDITING/PENDING_AUDIT 在接受范围内")
+        @DisplayName("审核幂等：PENDING_AUDIT 在接受范围内")
         void auditAccepted() {
-            assertTrue(stateMachine.isInAcceptedStates(TicketStatus.AUDITING, TicketStateMachine.AUDIT_ACCEPTED_STATES));
             assertTrue(stateMachine.isInAcceptedStates(TicketStatus.PENDING_AUDIT, TicketStateMachine.AUDIT_ACCEPTED_STATES));
         }
 
@@ -242,12 +236,6 @@ class TicketStateMachineTest {
         }
 
         @Test
-        @DisplayName("AUDITING → PENDING_AUDIT 合法")
-        void auditingReset() {
-            assertTrue(stateMachine.isValidResetTransition(TicketStatus.AUDITING, TicketStatus.PENDING_AUDIT));
-        }
-
-        @Test
         @DisplayName("非处理中状态不能回退")
         void nonProcessingStates_cannotReset() {
             assertFalse(stateMachine.isValidResetTransition(TicketStatus.PENDING_TRANS, TicketStatus.PENDING_TRANS));
@@ -259,7 +247,6 @@ class TicketStateMachineTest {
         @DisplayName("回退方向必须正确")
         void resetDirection_mustBeCorrect() {
             assertFalse(stateMachine.isValidResetTransition(TicketStatus.PROCESSING, TicketStatus.PENDING_AUDIT));
-            assertFalse(stateMachine.isValidResetTransition(TicketStatus.AUDITING, TicketStatus.PENDING_TRANS));
         }
     }
 

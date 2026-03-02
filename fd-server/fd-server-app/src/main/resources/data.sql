@@ -1,7 +1,6 @@
--- 移除 ticket.status 列的旧 CHECK 约束（H2 ddl-auto=update 不会自动更新枚举约束）
--- 改为纯 VARCHAR(32)，枚举校验由 JPA 应用层保证
-ALTER TABLE IF EXISTS ticket ALTER COLUMN IF EXISTS status VARCHAR(32);
+-- H2 schema 补丁 — 仅在 H2 环境下需要，PostgreSQL 不需要
+-- 当前已切换到 PostgreSQL，spring.sql.init.mode=never，此文件不会被执行
+-- 保留用于未来可能的 H2 开发/测试环境回退
 
--- 移除 ai_agent_definition.provider_type 列的旧 enum 约束
--- 新增了 GEMINI_CLI、WEB_AUTOMATION 等值，H2 不会自动扩展 enum
-ALTER TABLE IF EXISTS ai_agent_definition ALTER COLUMN IF EXISTS provider_type VARCHAR(32);
+-- ALTER TABLE IF EXISTS ticket ALTER COLUMN IF EXISTS status VARCHAR(32);
+-- ALTER TABLE IF EXISTS ai_agent_definition ALTER COLUMN IF EXISTS provider_type VARCHAR(32);

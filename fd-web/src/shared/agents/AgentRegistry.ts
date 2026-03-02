@@ -1,4 +1,4 @@
-import type { AgentDefinition, AgentBindings } from '../types/server';
+import type { AgentDefinition, AgentBindings, CapabilityDefinition } from '../types/server';
 import type { AgentExecutor } from './executors/types';
 
 /**
@@ -15,6 +15,7 @@ export class AgentRegistry {
     private definitions = new Map<string, AgentDefinition>();
     private executors = new Map<string, AgentExecutor>();
     private bindings: AgentBindings = {};
+    private capabilities = new Map<string, CapabilityDefinition>();
 
     private constructor() {}
 
@@ -27,27 +28,34 @@ export class AgentRegistry {
 
     async loadDefinitions(): Promise<void> {
         try {
-            const { agentApi } = await import('../services/serverApi');
+            const { agentApi, capabilityApi } = await import('../services/serverApi');
 
-            const [defs, bindings] = await Promise.all([
+            const [defs, bindings, caps] = await Promise.all([
                 agentApi.getDefinitions(),
                 agentApi.getBindings(),
+                capabilityApi.getCapabilities().catch(() => [] as CapabilityDefinition[]),
             ]);
 
             this.definitions.clear();
             for (const def of defs) {
-                if (typeof def.providerConfig === 'string') {
+                if (typeof def.agentConfig === 'string') {
                     try {
-                        def.providerConfig = JSON.parse(def.providerConfig as string);
+                        def.agentConfig = JSON.parse(def.agentConfig as string);
                     } catch {
-                        def.providerConfig = {};
+                        def.agentConfig = {};
                     }
                 }
                 this.definitions.set(def.code, def);
             }
 
             this.bindings = bindings || {};
-            console.log(`[AgentRegistry] Loaded ${this.definitions.size} definitions, ${Object.keys(this.bindings).length} bindings`);
+
+            this.capabilities.clear();
+            for (const cap of caps) {
+                this.capabilities.set(cap.code, cap);
+            }
+
+            console.log(`[AgentRegistry] Loaded ${this.definitions.size} definitions, ${Object.keys(this.bindings).length} bindings, ${this.capabilities.size} capabilities`);
         } catch (err) {
             console.warn('[AgentRegistry] Failed to load definitions:', err);
         }
@@ -77,11 +85,32 @@ export class AgentRegistry {
         return executor;
     }
 
+    isCapabilityEnabled(capabilityCode: string): boolean {
+        const cap = this.capabilities.get(capabilityCode);
+        return cap ? cap.enabled : true; // 未找到时默认 true（兼容旧数据）
+    }
+
+    getCapabilities(): CapabilityDefinition[] {
+        return Array.from(this.capabilities.values());
+    }
+
     resolve(code: string): { definition: AgentDefinition; executor: AgentExecutor } | null {
         const definition = this.definitions.get(code);
         if (!definition || !definition.enabled) return null;
 
-        const executor = this.findExecutor(definition.providerType);
+        // Capability 检查：如果 Agent 依赖的 Capability 被禁用，则不可用
+        if (definition.requiredCapability && !this.isCapabilityEnabled(definition.requiredCapability)) {
+            return null;
+        }
+
+        // 推导 providerType: Agent 字段 > CapabilityDefinition.providerType
+        let providerType = definition.providerType;
+        if (!providerType && definition.requiredCapability) {
+            const cap = this.capabilities.get(definition.requiredCapability);
+            if (cap) providerType = cap.providerType;
+        }
+
+        const executor = providerType ? this.findExecutor(providerType) : undefined;
         if (!executor || !executor.isAvailable()) return null;
 
         return { definition, executor };
@@ -94,6 +123,12 @@ export class AgentRegistry {
      * 未配置绑定时返回 null，不自动回退。
      */
     resolveByCapability(capability: string): { definition: AgentDefinition; executor: AgentExecutor } | null {
+        // Capability 级别检查：如果 Capability 本身被禁用，直接返回 null
+        if (!this.isCapabilityEnabled(capability)) {
+            console.warn(`[AgentRegistry] 能力 "${capability}" 已被禁用`);
+            return null;
+        }
+
         const boundCode = this.bindings[capability];
         if (!boundCode) {
             console.warn(`[AgentRegistry] 能力 "${capability}" 未配置绑定，请在 Agent 管理 → 能力绑定页面配置`);
@@ -106,8 +141,14 @@ export class AgentRegistry {
             if (!def) {
                 console.warn(`[AgentRegistry] 能力 "${capability}" 绑定的 Agent "${boundCode}" 未找到或已禁用`);
             } else {
-                const executor = this.findExecutor(def.providerType);
-                console.warn(`[AgentRegistry] 能力 "${capability}" 绑定的 Agent "${boundCode}" 不可用 (providerType=${def.providerType}, executorAvailable=${executor?.isAvailable() ?? false})`);
+                // 推导 providerType: Agent 字段 > CapabilityDefinition.providerType
+                let providerType = def.providerType;
+                if (!providerType && def.requiredCapability) {
+                    const cap = this.capabilities.get(def.requiredCapability);
+                    if (cap) providerType = cap.providerType;
+                }
+                const executor = providerType ? this.findExecutor(providerType) : undefined;
+                console.warn(`[AgentRegistry] 能力 "${capability}" 绑定的 Agent "${boundCode}" 不可用 (providerType=${def.providerType}, derivedProviderType=${providerType}, executorAvailable=${executor?.isAvailable() ?? false})`);
             }
         }
         return result;

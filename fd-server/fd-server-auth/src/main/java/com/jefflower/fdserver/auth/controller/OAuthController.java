@@ -4,12 +4,14 @@ import com.jefflower.fdserver.auth.dto.LoginResponse;
 import com.jefflower.fdserver.auth.dto.OAuthLoginRequest;
 import com.jefflower.fdserver.auth.service.OAuthService;
 import com.jefflower.fdserver.common.dto.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
+@Tag(name = "OAuth 登录", description = "第三方 OAuth 登录（钉钉/企业微信）")
 @RestController
 @RequestMapping("/api/v1/auth/oauth")
 @RequiredArgsConstructor

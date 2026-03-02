@@ -250,6 +250,26 @@
       "createdAt": "创建于 {{time}}",
       "updatedAt": "更新于 {{time}}",
       "exportFailed": "导出失败: {{error}}"
+    },
+    "sync": {
+      "title": "知识库同步配置",
+      "desc": "将标记的有效工单和注意事项同步到本地知识库中。同步后，请前往知识库模块的 NotebookLM 页面将内容推送到云端。",
+      "targetBase": "目标知识库",
+      "selectBase": "-- 请选择知识库 --",
+      "mapping": "映射配置",
+      "noSources": "该知识库暂无源文件，请先添加源文件",
+      "ticketLabel": "标记工单",
+      "notesLabel": "注意事项",
+      "selectSource": "-- 选择源文件 --",
+      "save": "保存配置",
+      "saving": "保存中...",
+      "saveSuccess": "配置已保存",
+      "syncBtn": "同步到知识库",
+      "syncing": "同步中...",
+      "syncSuccess": "同步成功",
+      "configIncomplete": "请先完成映射配置",
+      "result": "同步结果",
+      "nextStep": "请前往知识库模块的 NotebookLM 页面，点击同步将内容推送到云端。"
     }
   }
 }

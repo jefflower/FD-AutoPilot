@@ -51,4 +51,16 @@ public class AuthPermissionDefinition implements ModulePermissionDefinition {
                 "org:manage", List.of("ADMIN")
         );
     }
+
+    @Override
+    public Map<String, String> getPermissionTypes() {
+        Map<String, String> types = new LinkedHashMap<>();
+        types.put("user:read", "ROUTE");
+        types.put("user:manage", "OPERATION");
+        types.put("role:read", "ROUTE");
+        types.put("role:manage", "OPERATION");
+        types.put("org:read", "ROUTE");
+        types.put("org:manage", "OPERATION");
+        return types;
+    }
 }

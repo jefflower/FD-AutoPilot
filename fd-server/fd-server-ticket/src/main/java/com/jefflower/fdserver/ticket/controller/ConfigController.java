@@ -2,6 +2,8 @@ package com.jefflower.fdserver.ticket.controller;
 
 import com.jefflower.fdserver.auth.security.RequiresPermission;
 import com.jefflower.fdserver.common.dto.ApiResponse;
+import com.jefflower.fdserver.common.exception.BusinessException;
+import com.jefflower.fdserver.common.exception.ErrorCode;
 import com.jefflower.fdserver.ticket.service.SystemConfigService;
 import com.jefflower.fdserver.ticket.service.notify.NotifyService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -65,8 +67,9 @@ public class ConfigController {
     @Operation(summary = "测试企业微信 Webhook", description = "发送一条测试消息到企业微信，验证 Webhook 配置是否正确")
     @PostMapping("/wecom-webhook/test")
     @RequiresPermission("config:manage")
-    public ResponseEntity<ApiResponse<Map<String, Boolean>>> testWeComWebhook() {
-        boolean success = notifyService.sendTestMessage();
+    public ResponseEntity<ApiResponse<Map<String, Object>>> testWeComWebhook() {
+        String error = notifyService.sendTestMessage();
+        boolean success = (error == null);
         return ResponseEntity.ok(ApiResponse.ok(Map.of("success", success)));
     }
 
@@ -128,9 +131,92 @@ public class ConfigController {
     @Operation(summary = "测试通知渠道", description = "发送一条测试消息到当前选择的通知平台")
     @PostMapping("/notify-channel/test")
     @RequiresPermission("config:manage")
-    public ResponseEntity<ApiResponse<Map<String, Boolean>>> testNotifyChannel() {
-        boolean success = notifyService.sendTestMessage();
-        return ResponseEntity.ok(ApiResponse.ok(Map.of("success", success)));
+    public ResponseEntity<ApiResponse<Map<String, Object>>> testNotifyChannel() {
+        String error = notifyService.sendTestMessage();
+        boolean success = error == null;
+        Map<String, Object> result = new java.util.HashMap<>();
+        result.put("success", success);
+        if (error != null) {
+            result.put("error", error);
+        }
+        return ResponseEntity.ok(ApiResponse.ok(result));
+    }
+
+    // ============ NotebookLM 知识库配置 API ============
+
+    @Operation(summary = "获取 NotebookLM 知识库配置", description = "获取默认 NotebookID 和标签→知识库映射")
+    @GetMapping("/notebooklm")
+    @RequiresPermission("config:read")
+    public ResponseEntity<ApiResponse<Map<String, Object>>> getNotebookLmConfig() {
+        Map<String, Object> config = new java.util.HashMap<>();
+        config.put("defaultNotebookId", configService.getNotebookLmDefaultNotebookId());
+        config.put("notebookMapping", configService.getNotebookLmNotebookMapping());
+        return ResponseEntity.ok(ApiResponse.ok(config));
+    }
+
+    @Operation(summary = "设置 NotebookLM 知识库配置", description = "设置默认 NotebookID 和标签→知识库映射")
+    @PutMapping("/notebooklm")
+    @RequiresPermission("config:manage")
+    public ResponseEntity<ApiResponse<Void>> setNotebookLmConfig(@RequestBody Map<String, String> body) {
+        if (body.containsKey("defaultNotebookId")) {
+            configService.setNotebookLmDefaultNotebookId(body.get("defaultNotebookId"));
+        }
+        if (body.containsKey("notebookMapping")) {
+            configService.setNotebookLmNotebookMapping(body.get("notebookMapping"));
+        }
+        return ResponseEntity.ok(ApiResponse.ok("NotebookLM 配置已更新", null));
+    }
+
+    // ============ 知识库同步配置 API ============
+
+    @Operation(summary = "获取知识库同步配置", description = "获取工单/注意事项与知识库源文件的映射关系")
+    @GetMapping("/knowledge-sync")
+    @RequiresPermission("config:read")
+    public ResponseEntity<ApiResponse<Map<String, Object>>> getKnowledgeSyncConfig() {
+        String json = configService.getKnowledgeSyncConfig();
+        try {
+            @SuppressWarnings("unchecked")
+            Map<String, Object> config = new com.fasterxml.jackson.databind.ObjectMapper().readValue(json, Map.class);
+            return ResponseEntity.ok(ApiResponse.ok(config));
+        } catch (Exception e) {
+            return ResponseEntity.ok(ApiResponse.ok(new java.util.HashMap<>()));
+        }
+    }
+
+    @Operation(summary = "设置知识库同步配置", description = "设置工单/注意事项与知识库源文件的映射关系")
+    @PutMapping("/knowledge-sync")
+    @RequiresPermission("config:manage")
+    public ResponseEntity<ApiResponse<Void>> setKnowledgeSyncConfig(@RequestBody Map<String, Object> body) {
+        try {
+            String json = new com.fasterxml.jackson.databind.ObjectMapper().writeValueAsString(body);
+            configService.setKnowledgeSyncConfig(json);
+            return ResponseEntity.ok(ApiResponse.ok("知识库同步配置已更新", null));
+        } catch (Exception e) {
+            throw new BusinessException(ErrorCode.INVALID_PARAMETER, "无效的配置数据");
+        }
+    }
+
+    // ============ 通知语言配置 API ============
+
+    @Operation(summary = "获取通知语言配置", description = "获取通知消息使用的语言（zh-CN/en-US）")
+    @GetMapping("/notify-language")
+    @RequiresPermission("config:read")
+    public ResponseEntity<ApiResponse<Map<String, String>>> getNotifyLanguage() {
+        String lang = configService.getNotifyLanguage();
+        return ResponseEntity.ok(ApiResponse.ok(Map.of("language", lang)));
+    }
+
+    @Operation(summary = "设置通知语言配置", description = "设置通知消息使用的语言（zh-CN/en-US）")
+    @PutMapping("/notify-language")
+    @RequiresPermission("config:manage")
+    public ResponseEntity<ApiResponse<Void>> setNotifyLanguage(@RequestBody Map<String, String> body) {
+        String lang = body.getOrDefault("language", "zh-CN");
+        // 验证语言有效性
+        if (!"zh-CN".equals(lang) && !"en-US".equals(lang)) {
+            throw new BusinessException(ErrorCode.INVALID_PARAMETER, "Unsupported language: " + lang + ". Supported: zh-CN, en-US");
+        }
+        configService.setNotifyLanguage(lang);
+        return ResponseEntity.ok(ApiResponse.ok("通知语言设置已更新", null));
     }
 
 }

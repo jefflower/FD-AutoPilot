@@ -21,3 +21,9 @@ Thumbs.db
 logs/
 # Local data folder
 data/
+
+# n8n 配置（含敏感信息）
+n8n/.env
+
+# PID 文件
+.pids/

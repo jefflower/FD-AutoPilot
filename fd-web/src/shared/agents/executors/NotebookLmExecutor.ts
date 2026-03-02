@@ -1,7 +1,40 @@
 import { isTauriEnv, checkBridgeAvailable } from '../../../tauri/bridge';
 import type { AgentExecutor } from './types';
 import type { AgentDefinition, AgentExecuteInput, AgentExecuteResult, AgentStreamChunk } from '../../types/server';
-import { parseProviderConfig } from '../schemaUtils';
+import { parseAgentConfig } from '../schemaUtils';
+
+/** NotebookLM 执行器内置默认值，前端不再依赖 agentConfig 传入这些字段 */
+const NOTEBOOKLM_DEFAULTS = {
+    windowLabel: 'notebook_shadow',
+    selectors: {
+        INPUT: 'textarea.query-box-input',
+        CHAT_PAIR: '.chat-message-pair',
+        CHAT_PAIR_ALT: '[role="log"] .message-content',
+        BOT_REPLY: '.to-user-container .message-text-content',
+        BOT_REPLY_FALLBACK_1: '.model-response-text',
+        BOT_REPLY_FALLBACK_2: '.response-container',
+        COPY_BUTTON: '.xap-copy-to-clipboard',
+        SEND_BUTTON: 'button.submit-button:not([disabled])',
+        MENU_BUTTON: 'button[aria-label="对话选项"]',
+        CONFIRM_DELETE: 'button.yes-button',
+    },
+    timeouts: {
+        pageLoadMs: 3000,
+        clearMaxMs: 15000,
+        ackTimeoutMs: 30000,
+        noResponseTimeoutMs: 60000,
+        silenceTimeoutMs: 30000,
+        totalTimeoutCycles: 240,
+        relayIntervalMs: 500,
+        interMessageDelayMs: 1000,
+        finishedConfirmMs: 3000,
+    },
+    clearConfig: {
+        enabled: true,
+        maxRetries: 3,
+        waitAfterDeleteMs: 2500,
+    },
+};
 
 /**
  * NotebookLM 执行器
@@ -9,9 +42,8 @@ import { parseProviderConfig } from '../schemaUtils';
  * 通过 Tauri Shadow Window 与 NotebookLM 交互生成工单回复。
  * 支持流式输出（executeStream）。
  *
- * 两种运行模式：
- * - Tauri 桌面模式：直接调用 NotebookShadowService（前端 JS 编排）
- * - 浏览器模式（需 fd-client Tauri 后台运行）：通过 HTTP SSE 调用 Rust Shadow Agent
+ * 统一使用 Bridge SSE 路径（Rust 后端控制 Shadow Window），
+ * 仅在 Bridge 不可用且为 Tauri 桌面模式时降级为前端 JS 直连。
  */
 export class NotebookLmExecutor implements AgentExecutor {
     readonly providerType = 'NOTEBOOKLM' as const;
@@ -55,13 +87,22 @@ export class NotebookLmExecutor implements AgentExecutor {
     }
 
     async *executeStream(definition: AgentDefinition, input: AgentExecuteInput): AsyncGenerator<AgentStreamChunk> {
-        const config = parseProviderConfig(definition.providerConfig);
+        const userConfig = parseAgentConfig(definition.agentConfig);
+        // 深合并（嵌套对象如 selectors 需要合并而不是覆盖）
+        const config: Record<string, any> = {
+            ...NOTEBOOKLM_DEFAULTS,
+            ...userConfig,
+            selectors: { ...NOTEBOOKLM_DEFAULTS.selectors, ...(userConfig.selectors || {}) },
+            timeouts: { ...NOTEBOOKLM_DEFAULTS.timeouts, ...(userConfig.timeouts || {}) },
+            clearConfig: { ...NOTEBOOKLM_DEFAULTS.clearConfig, ...(userConfig.clearConfig || {}) },
+        };
 
         const { buildReplyContext, buildReplyMessages, parseReplyOutput } = await import('../helpers/replyHelpers');
 
         const ticket = input.data.ticket;
         const notebookId = config.notebookId;
-        const promptTemplate = config.prompt || '请根据以下工单内容回答我的问题:\n\n${工单内容}';
+        // 优先从独立字段读取，兼容旧的 agentConfig 内读取
+        const promptTemplate = definition.systemPrompt || config.systemPrompt || config.prompt || '请根据以下工单内容回答我的问题:\n\n${工单内容}';
         const lastAuditRemark = input.data.lastAuditRemark;
 
         if (!notebookId) {
@@ -100,11 +141,20 @@ export class NotebookLmExecutor implements AgentExecutor {
         const messages = buildReplyMessages(context, promptTemplate);
         console.log(`[NotebookLmExecutor] messages=${messages.length}, context length=${context.length}`);
 
-        // 选择执行路径
-        if (isTauriEnv()) {
+        // 统一优先使用 Bridge SSE（Rust 后端控制 Shadow Window）
+        const bridgeOk = await checkBridgeAvailable();
+        if (bridgeOk) {
+            console.log('[NotebookLmExecutor] 使用 Bridge SSE 路径');
+            yield* this.handleReplyBridge(config, messages, parseReplyOutput);
+        } else if (isTauriEnv()) {
+            console.warn('[NotebookLmExecutor] Bridge 不可用，降级为 Tauri 直连路径');
             yield* this.handleReplyTauri(config, messages, parseReplyOutput);
         } else {
-            yield* this.handleReplyBridge(config, messages, parseReplyOutput);
+            yield {
+                text: 'Shadow Agent 需要 fd-client (Tauri) 后台运行。请启动: npm run tauri dev (在 fd-client 目录)',
+                status: 'error',
+            };
+            return;
         }
     }
 

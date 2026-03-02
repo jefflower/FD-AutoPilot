@@ -7,34 +7,24 @@
 
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { agentApi } from '../../../shared/services/serverApi';
-import type { AgentDefinition, AgentProxyTestResult } from '../../../shared/types/server';
+import { agentApi, clientApi } from '../../../shared/services/serverApi';
+import type { AgentDefinition, AgentInstance, ClientRegistration, CapabilityDefinition } from '../../../shared/types/server';
 import { useAgentContext } from '../../../shared/agents';
+import { PROMPT_TEMPLATES, TEMPLATE_CATEGORIES } from '../../../shared/agents/promptTemplates';
+import AgentExecLogPanel from '../../../shared/components/AgentExecLogPanel';
+
+// ============ 模块定义 ============
+
+import { Headphones, Settings } from 'lucide-react';
+
+const MODULE_DEFS = [
+    { code: 'ticket', name: '工单中心', icon: Headphones },
+    { code: 'admin', name: '管理后台', icon: Settings },
+] as const;
+
+type ModuleFilter = 'all' | 'ticket' | 'admin' | '__ungrouped__';
 
 // ============ 常量 ============
-
-const PROVIDER_TYPE_LABELS: Record<string, { label: string; color: string }> = {
-    GEMINI_CLI: { label: 'Gemini CLI', color: 'bg-green-500/20 text-green-400' },
-    HTTP_API: { label: 'HTTP API', color: 'bg-blue-500/20 text-blue-400' },
-    NOTEBOOKLM: { label: 'NotebookLM', color: 'bg-purple-500/20 text-purple-400' },
-    TRACKING_SHADOW: { label: 'Tracking', color: 'bg-teal-500/20 text-teal-400' },
-    LOCAL_FUNCTION: { label: 'Function', color: 'bg-amber-500/20 text-amber-400' },
-    // 向后兼容旧值
-    LOCAL_CLI: { label: 'CLI (legacy)', color: 'bg-green-500/20 text-green-400' },
-    SHADOW_WINDOW: { label: 'Shadow (legacy)', color: 'bg-purple-500/20 text-purple-400' },
-    WEB_AUTOMATION: { label: 'Web Auto (legacy)', color: 'bg-purple-500/20 text-purple-400' },
-};
-
-const CALL_MODE_LABELS: Record<string, { label: string; color: string }> = {
-    HTTP: { label: 'HTTP', color: 'bg-cyan-500/20 text-cyan-400' },
-    MQ: { label: 'MQ', color: 'bg-orange-500/20 text-orange-400' },
-};
-
-const ENV_LABELS: Record<string, string> = {
-    CLIENT_ONLY: 'Client',
-    SERVER_ONLY: 'Server',
-    BOTH: 'Both',
-};
 
 const UNGROUPED_KEY = '__ungrouped__';
 
@@ -42,7 +32,7 @@ const UNGROUPED_KEY = '__ungrouped__';
 
 const WorkflowAgentsTab: React.FC = () => {
     const { t } = useTranslation(['common']);
-    const { reload: reloadAgentContext } = useAgentContext();
+    const { reload: reloadAgentContext, capabilities } = useAgentContext();
 
     const [definitions, setDefinitions] = useState<AgentDefinition[]>([]);
     const [groupCodes, setGroupCodes] = useState<string[]>([]);
@@ -50,6 +40,9 @@ const WorkflowAgentsTab: React.FC = () => {
     const [error, setError] = useState<string | null>(null);
     const [successMsg, setSuccessMsg] = useState<string | null>(null);
     const [operating, setOperating] = useState<number | null>(null);
+
+    // 模块筛选
+    const [moduleFilter, setModuleFilter] = useState<ModuleFilter>('all');
 
     // 分组折叠状态
     const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set());
@@ -84,10 +77,17 @@ const WorkflowAgentsTab: React.FC = () => {
         loadDefinitions();
     }, [loadDefinitions]);
 
+    // 按模块筛选后的 definitions
+    const filteredDefinitions = useMemo(() => {
+        if (moduleFilter === 'all') return definitions;
+        if (moduleFilter === UNGROUPED_KEY) return definitions.filter(d => !d.groupCode);
+        return definitions.filter(d => d.groupCode === moduleFilter);
+    }, [definitions, moduleFilter]);
+
     // 按 groupCode 分组
     const groupedDefinitions = useMemo(() => {
         const groups: Record<string, AgentDefinition[]> = {};
-        for (const def of definitions) {
+        for (const def of filteredDefinitions) {
             const key = def.groupCode || UNGROUPED_KEY;
             if (!groups[key]) groups[key] = [];
             groups[key].push(def);
@@ -97,7 +97,7 @@ const WorkflowAgentsTab: React.FC = () => {
             groups[key].sort((a, b) => a.sortOrder - b.sortOrder);
         }
         return groups;
-    }, [definitions]);
+    }, [filteredDefinitions]);
 
     // 分组键排序：有名称的组在前，未分组在最后
     const sortedGroupKeys = useMemo(() => {
@@ -156,9 +156,12 @@ const WorkflowAgentsTab: React.FC = () => {
         try {
             const payload: any = { ...editingDef };
 
-            // providerConfig: 对象需要序列化为字符串
-            if (typeof payload.providerConfig === 'object' && payload.providerConfig !== null) {
-                payload.providerConfig = JSON.stringify(payload.providerConfig);
+            // systemPrompt 已经是独立字段，直接发送
+
+            // agentConfig: 对象需要序列化为字符串（排除 systemPrompt 避免冗余）
+            if (typeof payload.agentConfig === 'object' && payload.agentConfig !== null) {
+                const { systemPrompt: _removed, ...cleanConfig } = payload.agentConfig;
+                payload.agentConfig = JSON.stringify(cleanConfig);
             }
             // inputSchema: 对象需要序列化为字符串
             if (typeof payload.inputSchema === 'object' && payload.inputSchema !== null) {
@@ -190,16 +193,12 @@ const WorkflowAgentsTab: React.FC = () => {
             code: '',
             name: '',
             description: '',
-            providerType: 'HTTP_API',
-            executionEnv: 'BOTH',
             capability: '',
             groupCode: '',
-            callMode: undefined,
-            callUrl: '',
-            providerConfig: {},
+            systemPrompt: '',
+            agentConfig: {},
             inputSchema: undefined,
             outputSchema: undefined,
-            templateEngine: '',
             enabled: true,
             sortOrder: 0,
         });
@@ -236,18 +235,68 @@ const WorkflowAgentsTab: React.FC = () => {
                 </button>
             </div>
 
+            {/* 模块筛选器 */}
+            <div className="flex items-center gap-1 px-4 pt-3 pb-2">
+                <button
+                    onClick={() => setModuleFilter('all')}
+                    className={`px-3 py-1.5 text-sm rounded-md transition-colors flex items-center gap-1.5 ${
+                        moduleFilter === 'all'
+                            ? 'bg-blue-500/20 text-blue-400 font-medium'
+                            : 'text-slate-400 hover:text-slate-300 hover:bg-slate-700/50'
+                    }`}
+                >
+                    {t('agent.module.all')}
+                    <span className="text-xs opacity-60">({definitions.length})</span>
+                </button>
+                {MODULE_DEFS.map(mod => {
+                    const count = definitions.filter(d => d.groupCode === mod.code).length;
+                    const Icon = mod.icon;
+                    return (
+                        <button
+                            key={mod.code}
+                            onClick={() => setModuleFilter(mod.code as ModuleFilter)}
+                            className={`px-3 py-1.5 text-sm rounded-md transition-colors flex items-center gap-1.5 ${
+                                moduleFilter === mod.code
+                                    ? 'bg-blue-500/20 text-blue-400 font-medium'
+                                    : 'text-slate-400 hover:text-slate-300 hover:bg-slate-700/50'
+                            }`}
+                        >
+                            <Icon className="w-3.5 h-3.5" />
+                            {t(`agent.module.${mod.code}`)}
+                            <span className="text-xs opacity-60">({count})</span>
+                        </button>
+                    );
+                })}
+                <button
+                    onClick={() => setModuleFilter(UNGROUPED_KEY as ModuleFilter)}
+                    className={`px-3 py-1.5 text-sm rounded-md transition-colors flex items-center gap-1.5 ${
+                        moduleFilter === UNGROUPED_KEY
+                            ? 'bg-blue-500/20 text-blue-400 font-medium'
+                            : 'text-slate-400 hover:text-slate-300 hover:bg-slate-700/50'
+                    }`}
+                >
+                    {t('agent.module.ungrouped')}
+                    <span className="text-xs opacity-60">({definitions.filter(d => !d.groupCode).length})</span>
+                </button>
+            </div>
+
             {/* 内容区 */}
             <div className="flex-1 overflow-auto p-4">
                 {loading ? (
                     <LoadingSpinner />
-                ) : definitions.length === 0 ? (
-                    <div className="text-center text-slate-500 py-12">暂无 Agent 定义</div>
+                ) : filteredDefinitions.length === 0 ? (
+                    <div className="text-center text-slate-500 py-12">
+                        {moduleFilter === 'all' ? '暂无 Agent 定义' : t('agent.noAgentsInModule')}
+                    </div>
                 ) : (
                     <div className="space-y-4">
                         {sortedGroupKeys.map(groupKey => {
                             const agents = groupedDefinitions[groupKey];
                             const isCollapsed = collapsedGroups.has(groupKey);
-                            const groupLabel = groupKey === UNGROUPED_KEY ? '未分组' : groupKey;
+                            const moduleDef = MODULE_DEFS.find(m => m.code === groupKey);
+                            const groupLabel = groupKey === UNGROUPED_KEY
+                                ? t('agent.module.ungrouped')
+                                : (moduleDef ? t(`agent.module.${moduleDef.code}`) : groupKey);
 
                             return (
                                 <div key={groupKey} className="border border-slate-700/50 rounded-lg overflow-hidden">
@@ -295,6 +344,7 @@ const WorkflowAgentsTab: React.FC = () => {
                 <EditModal
                     def={editingDef}
                     groupCodes={groupCodes}
+                    capabilities={capabilities}
                     onChange={setEditingDef}
                     onSave={handleSaveDef}
                     onCancel={() => setEditingDef(null)}
@@ -305,6 +355,23 @@ const WorkflowAgentsTab: React.FC = () => {
     );
 };
 
+// ============ 数据类型：合并 Instance + Client 信息 ============
+
+interface EnrichedInstance {
+    id: number;
+    clientId: string;
+    userId: string;
+    agentCode: string;
+    localConfig?: string;
+    running: boolean;
+    lastHeartbeat?: string;
+    version?: string;
+    createdAt: string;
+    // 来自 ClientRegistration 的附加信息
+    clientType?: string;
+    online: boolean;
+}
+
 // ============ Agent 卡片组件 ============
 
 const AgentCard: React.FC<{
@@ -313,76 +380,367 @@ const AgentCard: React.FC<{
     onToggle: (id: number) => void;
     onDelete: (id: number) => void;
     onEdit: () => void;
-}> = ({ def, operating, onToggle, onDelete, onEdit }) => (
-    <div className={`px-4 py-3 transition-colors ${
-        def.enabled
-            ? 'bg-slate-800/30'
-            : 'bg-slate-900/30 opacity-60'
-    }`}>
-        <div className="flex items-center justify-between">
-            <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-2 flex-wrap">
-                    <span className="text-slate-200 font-medium text-sm">{def.name}</span>
-                    <code className="text-xs text-slate-500 bg-slate-800 px-1.5 py-0.5 rounded">{def.code}</code>
-                    <span className={`text-xs px-1.5 py-0.5 rounded ${PROVIDER_TYPE_LABELS[def.providerType]?.color || 'bg-slate-700 text-slate-400'}`}>
-                        {PROVIDER_TYPE_LABELS[def.providerType]?.label || def.providerType}
-                    </span>
-                    <span className="text-xs text-slate-500">{ENV_LABELS[def.executionEnv] || def.executionEnv}</span>
-                    {def.callMode && (
-                        <span className={`text-xs px-1.5 py-0.5 rounded ${CALL_MODE_LABELS[def.callMode]?.color || 'bg-slate-700 text-slate-400'}`}>
-                            {CALL_MODE_LABELS[def.callMode]?.label || def.callMode}
-                        </span>
-                    )}
-                    {def.builtIn && <span className="text-xs text-slate-600 italic">built-in</span>}
-                </div>
-                <div className="text-xs text-slate-500 mt-1 flex items-center gap-2">
-                    {def.description && <span>{def.description}</span>}
-                    {def.description && def.capability && <span>-</span>}
-                    {def.capability && (
-                        <span>
-                            capability: <code className="text-slate-400">{def.capability}</code>
-                        </span>
-                    )}
-                    {def.inputSchema && (
-                        <span className="text-cyan-500/70 text-[10px] bg-cyan-500/10 px-1 rounded">inputSchema</span>
-                    )}
-                    {def.outputSchema && (
-                        <span className="text-cyan-500/70 text-[10px] bg-cyan-500/10 px-1 rounded">outputSchema</span>
-                    )}
+}> = ({ def, operating, onToggle, onDelete, onEdit }) => {
+    const { t } = useTranslation(['common']);
+    const [expanded, setExpanded] = useState(false);
+    const [expandedTab, setExpandedTab] = useState<'instances' | 'logs'>('instances');
+    const [instances, setInstances] = useState<EnrichedInstance[]>([]);
+    const [loadingInstances, setLoadingInstances] = useState(false);
+    const [tooltipClientId, setTooltipClientId] = useState<string | null>(null);
+
+    // 当展开时加载实例列表：同时请求 agentInstances 和 onlineClients，然后合并
+    useEffect(() => {
+        if (!expanded) return;
+        setLoadingInstances(true);
+
+        Promise.all([
+            agentApi.getInstancesByAgent(def.code).catch(() => [] as AgentInstance[]),
+            clientApi.getOnlineClients().catch(() => [] as ClientRegistration[]),
+        ])
+            .then(([agentInstances, onlineClients]) => {
+                // 建立 clientId → ClientRegistration 的映射
+                const clientMap = new Map<string, ClientRegistration>();
+                for (const c of onlineClients) {
+                    clientMap.set(c.clientId, c);
+                }
+
+                if (agentInstances.length > 0) {
+                    // 使用后端返回的 AgentInstance，合并 ClientRegistration 中的附加信息
+                    const enriched: EnrichedInstance[] = agentInstances.map(inst => {
+                        const client = clientMap.get(inst.clientId);
+                        return {
+                            id: inst.id,
+                            clientId: inst.clientId,
+                            userId: inst.userId,
+                            agentCode: inst.agentCode,
+                            localConfig: inst.localConfig,
+                            running: inst.running,
+                            lastHeartbeat: inst.lastHeartbeat,
+                            version: inst.version || client?.version,
+                            createdAt: inst.createdAt,
+                            clientType: client?.clientType,
+                            online: client?.online ?? false,
+                        };
+                    });
+                    setInstances(enriched);
+                } else {
+                    // 回退：从在线客户端中过滤
+                    const fallback: EnrichedInstance[] = onlineClients
+                        .filter(c => {
+                            const caps = (c.enabledCapabilities || '').split(',').map(s => s.trim());
+                            return caps.includes(def.capability) || caps.includes(def.code);
+                        })
+                        .map(c => ({
+                            id: 0,
+                            clientId: c.clientId,
+                            userId: c.userId,
+                            agentCode: def.code,
+                            running: c.online,
+                            lastHeartbeat: c.lastHeartbeat,
+                            version: c.version,
+                            createdAt: c.createdAt,
+                            clientType: c.clientType,
+                            online: c.online,
+                        }));
+                    setInstances(fallback);
+                }
+            })
+            .finally(() => setLoadingInstances(false));
+    }, [expanded, def.code, def.capability]);
+
+    const onlineCount = instances.filter(i => i.online || i.running).length;
+    const totalCount = instances.length;
+    const hasLocalConfig = instances.some(i => !!i.localConfig);
+
+    return (
+        <div className={`transition-colors ${
+            def.enabled
+                ? 'bg-slate-800/30'
+                : 'bg-slate-900/30 opacity-60'
+        }`}>
+            <div className="px-4 py-3">
+                <div className="flex items-center justify-between">
+                    <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 flex-wrap">
+                            <span className="text-slate-200 font-medium text-sm">{def.name}</span>
+                            <code className="text-xs text-slate-500 bg-slate-800 px-1.5 py-0.5 rounded">{def.code}</code>
+                            {def.builtIn && <span className="text-xs text-slate-600 italic">built-in</span>}
+                        </div>
+                        <div className="text-xs text-slate-500 mt-1 flex items-center gap-2">
+                            {def.description && <span>{def.description}</span>}
+                            {def.description && def.capability && <span>-</span>}
+                            {def.capability && (
+                                <span>
+                                    capability: <code className="text-slate-400">{def.capability}</code>
+                                </span>
+                            )}
+                            {def.requiredCapability && (
+                                <span className="text-[10px] bg-indigo-500/10 text-indigo-400 px-1 rounded">
+                                    requires: {def.requiredCapability}
+                                </span>
+                            )}
+                            {def.inputSchema && (
+                                <span className="text-cyan-500/70 text-[10px] bg-cyan-500/10 px-1 rounded">inputSchema</span>
+                            )}
+                            {def.outputSchema && (
+                                <span className="text-cyan-500/70 text-[10px] bg-cyan-500/10 px-1 rounded">outputSchema</span>
+                            )}
+                            {def.autoStart && (
+                                <span className="text-[10px] bg-blue-500/10 text-blue-400 px-1 rounded">自动启动</span>
+                            )}
+                        </div>
+                    </div>
+
+                    <div className="flex items-center gap-2 ml-3 flex-shrink-0">
+                        {/* 实例总览按钮 */}
+                        <button
+                            onClick={() => setExpanded(!expanded)}
+                            className="px-2 py-1 text-xs rounded bg-slate-700/50 hover:bg-slate-700 text-slate-400 hover:text-slate-300 transition-colors flex items-center gap-1.5"
+                            title={t('common:agentInstance.title')}
+                        >
+                            <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                                    d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                            </svg>
+                            {expanded ? (
+                                <>
+                                    <span className={onlineCount > 0 ? 'text-green-400' : 'text-slate-500'}>
+                                        {onlineCount}/{totalCount}
+                                    </span>
+                                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+                                    </svg>
+                                </>
+                            ) : (
+                                <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                </svg>
+                            )}
+                        </button>
+                        <button
+                            onClick={() => onToggle(def.id)}
+                            disabled={operating === def.id}
+                            className={`px-2 py-1 text-xs rounded transition-colors ${
+                                def.enabled
+                                    ? 'bg-green-500/20 text-green-400 hover:bg-green-500/30'
+                                    : 'bg-slate-700 text-slate-400 hover:bg-slate-600'
+                            }`}
+                        >
+                            {def.enabled ? t('common:capability.enabled') : t('common:capability.disabled')}
+                        </button>
+                        <button
+                            onClick={onEdit}
+                            className="px-2 py-1 text-xs text-slate-400 hover:text-slate-300 bg-slate-700/50 hover:bg-slate-700 rounded transition-colors"
+                        >
+                            {t('common:button.edit')}
+                        </button>
+                        {!def.builtIn && (
+                            <button
+                                onClick={() => onDelete(def.id)}
+                                disabled={operating === def.id}
+                                className="px-2 py-1 text-xs text-red-400 hover:text-red-300 bg-red-500/10 hover:bg-red-500/20 rounded transition-colors"
+                            >
+                                {t('common:button.delete')}
+                            </button>
+                        )}
+                    </div>
                 </div>
             </div>
 
-            <div className="flex items-center gap-2 ml-3 flex-shrink-0">
-                <button
-                    onClick={() => onToggle(def.id)}
-                    disabled={operating === def.id}
-                    className={`px-2 py-1 text-xs rounded transition-colors ${
-                        def.enabled
-                            ? 'bg-green-500/20 text-green-400 hover:bg-green-500/30'
-                            : 'bg-slate-700 text-slate-400 hover:bg-slate-600'
-                    }`}
-                >
-                    {def.enabled ? '已启用' : '已禁用'}
-                </button>
-                <button
-                    onClick={onEdit}
-                    className="px-2 py-1 text-xs text-slate-400 hover:text-slate-300 bg-slate-700/50 hover:bg-slate-700 rounded transition-colors"
-                >
-                    编辑
-                </button>
-                {!def.builtIn && (
-                    <button
-                        onClick={() => onDelete(def.id)}
-                        disabled={operating === def.id}
-                        className="px-2 py-1 text-xs text-red-400 hover:text-red-300 bg-red-500/10 hover:bg-red-500/20 rounded transition-colors"
-                    >
-                        删除
-                    </button>
-                )}
-            </div>
+            {/* 展开的面板（实例总览 / 执行日志） */}
+            {expanded && (
+                <div className="px-4 pb-3 border-t border-slate-700/30">
+                    {/* Tab 切换 */}
+                    <div className="flex items-center gap-1 mt-2 mb-2">
+                        <button
+                            onClick={() => setExpandedTab('instances')}
+                            className={`text-xs px-2.5 py-1 rounded transition-colors ${
+                                expandedTab === 'instances'
+                                    ? 'bg-blue-500/20 text-blue-300 font-medium'
+                                    : 'text-slate-400 hover:text-slate-300 hover:bg-slate-700/50'
+                            }`}
+                        >
+                            {t('common:agentInstance.instanceOverview')}
+                        </button>
+                        <button
+                            onClick={() => setExpandedTab('logs')}
+                            className={`text-xs px-2.5 py-1 rounded transition-colors ${
+                                expandedTab === 'logs'
+                                    ? 'bg-blue-500/20 text-blue-300 font-medium'
+                                    : 'text-slate-400 hover:text-slate-300 hover:bg-slate-700/50'
+                            }`}
+                        >
+                            执行日志
+                        </button>
+                    </div>
+
+                    {/* 实例总览 */}
+                    {expandedTab === 'instances' && (
+                        <div>
+                            {/* 标题行：在线/总数统计 */}
+                            <div className="flex items-center justify-between mb-2">
+                                <h4 className="text-xs text-slate-400 font-medium flex items-center gap-2">
+                                    {hasLocalConfig && (
+                                        <span title={t('common:agentInstance.hasLocalConfig')}>
+                                            <svg className="w-3 h-3 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                                                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            </svg>
+                                        </span>
+                                    )}
+                                </h4>
+                                {!loadingInstances && totalCount > 0 && (
+                                    <span className="text-xs text-slate-500">
+                                        <span className={onlineCount > 0 ? 'text-green-400' : 'text-slate-500'}>
+                                            {onlineCount}
+                                        </span>
+                                        {' '}{t('common:agentInstance.onlineSlash')}{' '}
+                                        {totalCount} {t('common:agentInstance.totalInstances')}
+                                    </span>
+                                )}
+                            </div>
+
+                            {loadingInstances ? (
+                                <div className="flex items-center gap-2 py-2">
+                                    <div className="animate-spin rounded-full h-3 w-3 border border-slate-600 border-t-blue-400" />
+                                    <span className="text-xs text-slate-500">{t('common:button.loading')}</span>
+                                </div>
+                            ) : instances.length === 0 ? (
+                                <div className="text-xs text-slate-600 py-2">
+                                    {t('common:agentInstance.noInstances')}
+                                </div>
+                            ) : (
+                                <div className="space-y-1.5">
+                                    {instances.map((inst, idx) => {
+                                        const isOnline = inst.online || inst.running;
+                                        return (
+                                            <div key={`${inst.clientId}-${idx}`}
+                                                className={`flex items-center justify-between px-3 py-2 rounded text-xs transition-colors ${
+                                                    isOnline
+                                                        ? 'bg-green-500/5 border border-green-500/20'
+                                                        : 'bg-slate-800/50 border border-slate-700/30'
+                                                }`}
+                                            >
+                                                <div className="flex items-center gap-2 min-w-0">
+                                                    {/* 在线状态指示点 */}
+                                                    <span className={`w-2 h-2 rounded-full flex-shrink-0 ${
+                                                        isOnline ? 'bg-green-400 shadow-[0_0_4px_rgba(74,222,128,0.5)]' : 'bg-slate-600'
+                                                    }`} />
+
+                                                    {/* clientId（截断 + tooltip） */}
+                                                    <div
+                                                        className="relative"
+                                                        onMouseEnter={() => setTooltipClientId(inst.clientId)}
+                                                        onMouseLeave={() => setTooltipClientId(null)}
+                                                    >
+                                                        <code className="text-slate-300 cursor-default">
+                                                            {inst.clientId.length > 12
+                                                                ? `${inst.clientId.slice(0, 12)}...`
+                                                                : inst.clientId}
+                                                        </code>
+                                                        {/* Tooltip */}
+                                                        {tooltipClientId === inst.clientId && inst.clientId.length > 12 && (
+                                                            <div className="absolute bottom-full left-0 mb-1 px-2 py-1 bg-slate-700 border border-slate-600 rounded shadow-lg text-xs text-slate-200 whitespace-nowrap z-10">
+                                                                {inst.clientId}
+                                                            </div>
+                                                        )}
+                                                    </div>
+
+                                                    {/* clientType badge */}
+                                                    {inst.clientType && (
+                                                        <ClientTypeBadge type={inst.clientType} />
+                                                    )}
+
+                                                    {/* 版本号 */}
+                                                    {inst.version && (
+                                                        <span className="text-slate-500">v{inst.version}</span>
+                                                    )}
+
+                                                    {/* localConfig 配置图标 */}
+                                                    {inst.localConfig && (
+                                                        <span title={t('common:agentInstance.hasLocalConfig')}>
+                                                            <svg className="w-3 h-3 text-amber-400/70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                                                                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                            </svg>
+                                                        </span>
+                                                    )}
+                                                </div>
+
+                                                <div className="flex items-center gap-3 flex-shrink-0">
+                                                    {/* 在线/离线状态文字 */}
+                                                    <span className={isOnline ? 'text-green-400 font-medium' : 'text-slate-600'}>
+                                                        {isOnline
+                                                            ? t('common:agentInstance.online')
+                                                            : t('common:agentInstance.offline')}
+                                                    </span>
+
+                                                    {/* 最后心跳时间（相对时间） */}
+                                                    {inst.lastHeartbeat && (
+                                                        <span className="text-slate-500" title={inst.lastHeartbeat}>
+                                                            {formatRelativeTime(inst.lastHeartbeat, t)}
+                                                        </span>
+                                                    )}
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            )}
+                        </div>
+                    )}
+
+                    {/* 执行日志 */}
+                    {expandedTab === 'logs' && (
+                        <AgentExecLogPanel
+                            agentCode={def.code}
+                            agentName={def.name}
+                        />
+                    )}
+                </div>
+            )}
         </div>
-    </div>
-);
+    );
+};
+
+// ============ clientType Badge 组件 ============
+
+const CLIENT_TYPE_STYLES: Record<string, string> = {
+    TAURI: 'bg-purple-500/15 text-purple-400 border-purple-500/30',
+    WEB: 'bg-blue-500/15 text-blue-400 border-blue-500/30',
+    BRIDGE: 'bg-amber-500/15 text-amber-400 border-amber-500/30',
+};
+
+const ClientTypeBadge: React.FC<{ type: string }> = ({ type }) => {
+    const style = CLIENT_TYPE_STYLES[type.toUpperCase()] || 'bg-slate-500/15 text-slate-400 border-slate-500/30';
+    return (
+        <span className={`px-1.5 py-0.5 text-[10px] font-medium rounded border ${style}`}>
+            {type}
+        </span>
+    );
+};
+
+/** 将 ISO 时间字符串转为相对时间显示（使用 i18n） */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function formatRelativeTime(isoStr: string, t: any): string {
+    try {
+        const date = new Date(isoStr);
+        const now = Date.now();
+        const diffMs = now - date.getTime();
+        const diffSec = Math.floor(diffMs / 1000);
+        if (diffSec < 60) return t('time.justNow') as string;
+        const diffMin = Math.floor(diffSec / 60);
+        if (diffMin < 60) return t('time.minutesAgo', { count: diffMin }) as string;
+        const diffHr = Math.floor(diffMin / 60);
+        if (diffHr < 24) return t('time.hoursAgo', { count: diffHr }) as string;
+        const diffDay = Math.floor(diffHr / 24);
+        return t('time.daysAgo', { count: diffDay }) as string;
+    } catch {
+        return isoStr;
+    }
+}
 
 // ============ 编辑弹窗 ============
 
@@ -391,34 +749,38 @@ type EditSection = 'basic' | 'execution' | 'schema';
 const EditModal: React.FC<{
     def: Partial<AgentDefinition>;
     groupCodes: string[];
+    capabilities: CapabilityDefinition[];
     onChange: (def: Partial<AgentDefinition>) => void;
     onSave: () => void;
     onCancel: () => void;
     saving: boolean;
-}> = ({ def, groupCodes, onChange, onSave, onCancel, saving }) => {
+}> = ({ def, groupCodes: _groupCodes, capabilities, onChange, onSave, onCancel, saving }) => {
     const [activeSection, setActiveSection] = useState<EditSection>('basic');
-    const [showGroupSuggestions, setShowGroupSuggestions] = useState(false);
 
-    const isHttpApi = def.providerType === 'HTTP_API';
-    const isShadowWindow = def.providerType === 'NOTEBOOKLM' || def.providerType === 'TRACKING_SHADOW' || def.providerType === 'SHADOW_WINDOW' || def.providerType === 'WEB_AUTOMATION';
-    const isLocalCli = def.providerType === 'GEMINI_CLI' || def.providerType === 'LOCAL_CLI';
-
-    // 解析 providerConfig
+    // 解析 agentConfig（排除 systemPrompt，它已提升为独立字段）
     const parsedConfig: Record<string, any> = useMemo(() => {
-        if (typeof def.providerConfig === 'object' && def.providerConfig !== null) return def.providerConfig as Record<string, any>;
-        try { return JSON.parse(def.providerConfig as string || '{}'); } catch { return {}; }
-    }, [def.providerConfig]);
+        let raw: Record<string, any>;
+        if (typeof def.agentConfig === 'object' && def.agentConfig !== null) {
+            raw = def.agentConfig as Record<string, any>;
+        } else {
+            try { raw = JSON.parse(def.agentConfig as string || '{}'); } catch { raw = {}; }
+        }
+        // 移除 systemPrompt，避免重复编辑
+        const { systemPrompt: _removed, ...rest } = raw;
+        return rest;
+    }, [def.agentConfig]);
 
-    const configStr = typeof def.providerConfig === 'object'
-        ? JSON.stringify(def.providerConfig, null, 2)
-        : (def.providerConfig || '{}');
-
-    // 分组建议过滤
-    const filteredGroupCodes = useMemo(() => {
-        const input = (def.groupCode || '').toLowerCase();
-        if (!input) return groupCodes;
-        return groupCodes.filter(g => g.toLowerCase().includes(input));
-    }, [def.groupCode, groupCodes]);
+    // 从匹配的 Capability 解析 configSchema
+    const parsedConfigSchema = useMemo(() => {
+        if (!def.requiredCapability) return undefined;
+        const cap = capabilities.find(c => c.code === def.requiredCapability);
+        if (!cap?.configSchema) return undefined;
+        try {
+            return JSON.parse(cap.configSchema) as Record<string, { type: string; label: string; required?: boolean; description?: string }>;
+        } catch {
+            return undefined;
+        }
+    }, [def.requiredCapability, capabilities]);
 
     const sections: { key: EditSection; label: string }[] = [
         { key: 'basic', label: '基本信息' },
@@ -482,34 +844,21 @@ const EditModal: React.FC<{
                                 placeholder="Agent 功能描述"
                             />
 
-                            {/* 分组 - 带下拉建议 */}
-                            <div className="relative">
+                            {/* 分组 - 下拉选择 */}
+                            <div>
                                 <label className="text-xs text-slate-500 mb-1 block">分组 (groupCode)</label>
-                                <input
-                                    type="text"
+                                <select
                                     value={def.groupCode || ''}
-                                    onChange={e => onChange({ ...def, groupCode: e.target.value })}
-                                    onFocus={() => setShowGroupSuggestions(true)}
-                                    onBlur={() => setTimeout(() => setShowGroupSuggestions(false), 200)}
-                                    placeholder="输入分组名称或选择已有分组"
+                                    onChange={e => onChange({ ...def, groupCode: e.target.value || '' })}
                                     className="w-full bg-slate-700 border border-slate-600 text-slate-200 text-sm rounded px-2 py-1.5"
-                                />
-                                {showGroupSuggestions && filteredGroupCodes.length > 0 && (
-                                    <div className="absolute z-10 w-full mt-1 bg-slate-700 border border-slate-600 rounded shadow-lg max-h-32 overflow-auto">
-                                        {filteredGroupCodes.map(g => (
-                                            <button
-                                                key={g}
-                                                onMouseDown={() => {
-                                                    onChange({ ...def, groupCode: g });
-                                                    setShowGroupSuggestions(false);
-                                                }}
-                                                className="w-full text-left px-3 py-1.5 text-sm text-slate-300 hover:bg-slate-600 transition-colors"
-                                            >
-                                                {g}
-                                            </button>
-                                        ))}
-                                    </div>
-                                )}
+                                >
+                                    <option value="">未分组</option>
+                                    {MODULE_DEFS.map(mod => (
+                                        <option key={mod.code} value={mod.code}>
+                                            {mod.name} ({mod.code})
+                                        </option>
+                                    ))}
+                                </select>
                             </div>
 
                             <Field
@@ -520,6 +869,22 @@ const EditModal: React.FC<{
                             />
 
                             <div>
+                                <label className="text-xs text-slate-500 mb-1 block">依赖能力 (requiredCapability)</label>
+                                <select
+                                    value={def.requiredCapability || ''}
+                                    onChange={e => onChange({ ...def, requiredCapability: e.target.value || undefined })}
+                                    className="w-full bg-slate-700 border border-slate-600 text-slate-200 text-sm rounded px-2 py-1.5"
+                                >
+                                    <option value="">无依赖</option>
+                                    {capabilities.map(cap => (
+                                        <option key={cap.code} value={cap.code}>
+                                            {cap.name} ({cap.code})
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
+
+                            <div>
                                 <label className="text-xs text-slate-500 mb-1 block">排序 (sortOrder)</label>
                                 <input
                                     type="number"
@@ -528,126 +893,44 @@ const EditModal: React.FC<{
                                     className="w-full bg-slate-700 border border-slate-600 text-slate-200 text-sm rounded px-2 py-1.5"
                                 />
                             </div>
+
+                            <div className="flex items-center justify-between">
+                                <div>
+                                    <label className="text-xs text-slate-500 block">自动启动</label>
+                                    <p className="text-[10px] text-slate-600 mt-0.5">打开 Agent 面板时自动启动 MQ Consumer</p>
+                                </div>
+                                <button
+                                    onClick={() => onChange({ ...def, autoStart: !def.autoStart })}
+                                    className={`relative inline-flex h-5 w-9 items-center rounded-full transition-colors ${
+                                        def.autoStart ? 'bg-blue-600' : 'bg-slate-600'
+                                    }`}
+                                >
+                                    <span
+                                        className={`inline-block h-3.5 w-3.5 rounded-full bg-white transition-transform ${
+                                            def.autoStart ? 'translate-x-4' : 'translate-x-0.5'
+                                        }`}
+                                    />
+                                </button>
+                            </div>
                         </div>
                     )}
 
                     {/* 执行配置 */}
                     {activeSection === 'execution' && (
                         <div className="space-y-4">
-                            <div className="grid grid-cols-2 gap-3">
-                                <div>
-                                    <label className="text-xs text-slate-500 mb-1 block">Provider Type</label>
-                                    <select
-                                        value={def.providerType || 'HTTP_API'}
-                                        onChange={e => onChange({ ...def, providerType: e.target.value as any })}
-                                        className="w-full bg-slate-700 border border-slate-600 text-slate-200 text-sm rounded px-2 py-1.5"
-                                    >
-                                        <option value="GEMINI_CLI">GEMINI_CLI</option>
-                                        <option value="HTTP_API">HTTP_API</option>
-                                        <option value="NOTEBOOKLM">NOTEBOOKLM</option>
-                                        <option value="TRACKING_SHADOW">TRACKING_SHADOW</option>
-                                        <option value="LOCAL_FUNCTION">LOCAL_FUNCTION</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label className="text-xs text-slate-500 mb-1 block">Execution Env</label>
-                                    <select
-                                        value={def.executionEnv || 'BOTH'}
-                                        onChange={e => onChange({ ...def, executionEnv: e.target.value as any })}
-                                        className="w-full bg-slate-700 border border-slate-600 text-slate-200 text-sm rounded px-2 py-1.5"
-                                    >
-                                        <option value="CLIENT_ONLY">CLIENT_ONLY</option>
-                                        <option value="SERVER_ONLY">SERVER_ONLY</option>
-                                        <option value="BOTH">BOTH</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            {/* Call Mode + Call URL */}
-                            <div className="grid grid-cols-2 gap-3">
-                                <div>
-                                    <label className="text-xs text-slate-500 mb-1 block">Call Mode（调用方式）</label>
-                                    <select
-                                        value={def.callMode || ''}
-                                        onChange={e => onChange({ ...def, callMode: (e.target.value || undefined) as any })}
-                                        className="w-full bg-slate-700 border border-slate-600 text-slate-200 text-sm rounded px-2 py-1.5"
-                                    >
-                                        <option value="">未指定</option>
-                                        <option value="HTTP">HTTP</option>
-                                        <option value="MQ">MQ</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label className="text-xs text-slate-500 mb-1 block">Call URL（仅 HTTP 模式）</label>
-                                    <input
-                                        type="text"
-                                        value={def.callUrl || ''}
-                                        onChange={e => onChange({ ...def, callUrl: e.target.value })}
-                                        placeholder="https://api.example.com/v1/agent"
-                                        disabled={def.callMode !== 'HTTP'}
-                                        className="w-full bg-slate-700 border border-slate-600 text-slate-200 text-sm rounded px-2 py-1.5 disabled:opacity-50"
-                                    />
-                                </div>
-                            </div>
-
-                            {/* Provider Config - 按 providerType 分支渲染 */}
-                            <div className="border-t border-slate-700/50 pt-4">
-                                <h4 className="text-xs text-slate-400 font-medium mb-3">Provider 配置</h4>
-                                {isHttpApi ? (
-                                    <HttpApiConfigPanel
-                                        config={parsedConfig}
-                                        onChange={newConfig => onChange({ ...def, providerConfig: newConfig })}
-                                    />
-                                ) : isShadowWindow ? (
-                                    <ShadowWindowConfigPanel
-                                        config={parsedConfig}
-                                        onChange={newConfig => onChange({ ...def, providerConfig: newConfig })}
-                                        capability={def.capability}
-                                    />
-                                ) : isLocalCli ? (
-                                    <CliConfigPanel
-                                        config={parsedConfig}
-                                        onChange={newConfig => onChange({ ...def, providerConfig: newConfig })}
-                                    />
-                                ) : (
-                                    <div>
-                                        <label className="text-xs text-slate-500 mb-1 block">Provider Config (JSON)</label>
-                                        <textarea
-                                            value={configStr}
-                                            onChange={e => {
-                                                try {
-                                                    const parsed = JSON.parse(e.target.value);
-                                                    onChange({ ...def, providerConfig: parsed });
-                                                } catch {
-                                                    onChange({ ...def, providerConfig: e.target.value as any });
-                                                }
-                                            }}
-                                            rows={6}
-                                            className="w-full bg-slate-700 border border-slate-600 text-slate-200 text-sm rounded px-2 py-1.5 font-mono resize-y"
-                                        />
-                                    </div>
-                                )}
-                            </div>
+                            <UnifiedConfigPanel
+                                systemPrompt={def.systemPrompt || ''}
+                                config={parsedConfig}
+                                configSchema={parsedConfigSchema}
+                                onSystemPromptChange={prompt => onChange({ ...def, systemPrompt: prompt })}
+                                onConfigChange={newConfig => onChange({ ...def, agentConfig: newConfig })}
+                            />
                         </div>
                     )}
 
                     {/* I/O Schema */}
                     {activeSection === 'schema' && (
                         <div className="space-y-4">
-                            <div>
-                                <label className="text-xs text-slate-500 mb-1 block">模板引擎 (templateEngine)</label>
-                                <select
-                                    value={def.templateEngine || ''}
-                                    onChange={e => onChange({ ...def, templateEngine: e.target.value })}
-                                    className="w-full bg-slate-700 border border-slate-600 text-slate-200 text-sm rounded px-2 py-1.5"
-                                >
-                                    <option value="">无</option>
-                                    <option value="handlebars">Handlebars</option>
-                                    <option value="mustache">Mustache</option>
-                                    <option value="simple">Simple (${'{'}...{'}'})</option>
-                                </select>
-                            </div>
-
                             <JsonSchemaEditor
                                 label="Input Schema"
                                 value={def.inputSchema}
@@ -680,6 +963,84 @@ const EditModal: React.FC<{
                     </button>
                 </div>
             </div>
+        </div>
+    );
+};
+
+// ============ 统一 Agent 配置面板 ============
+
+const UnifiedConfigPanel: React.FC<{
+    systemPrompt: string;
+    config: Record<string, any>;
+    configSchema?: Record<string, { type: string; label: string; required?: boolean; description?: string }>;
+    onSystemPromptChange: (prompt: string) => void;
+    onConfigChange: (config: Record<string, any>) => void;
+}> = ({ systemPrompt, config, configSchema, onSystemPromptChange, onConfigChange }) => {
+    const { i18n } = useTranslation();
+    const isZh = i18n.language?.startsWith('zh');
+
+    return (
+        <div className="space-y-4">
+            {/* System Prompt */}
+            <div>
+                <div className="flex items-center justify-between mb-1">
+                    <label className="block text-sm text-slate-300">提示词 (System Prompt)</label>
+                    <div className="flex items-center gap-2">
+                        <label className="text-xs text-slate-500">模板</label>
+                        <select
+                            className="bg-slate-700 text-slate-300 text-xs px-2 py-1 rounded border border-slate-600 hover:border-slate-500 transition-colors cursor-pointer max-w-[200px]"
+                            value=""
+                            onChange={(e) => {
+                                const template = PROMPT_TEMPLATES.find(t => t.id === e.target.value);
+                                if (template) {
+                                    onSystemPromptChange(template.prompt);
+                                }
+                            }}
+                        >
+                            <option value="">选择模板...</option>
+                            {Object.entries(TEMPLATE_CATEGORIES).map(([catKey, cat]) => (
+                                <optgroup key={catKey} label={isZh ? cat.label : cat.labelEn}>
+                                    {PROMPT_TEMPLATES.filter(t => t.category === catKey).map(t => (
+                                        <option key={t.id} value={t.id}>
+                                            {isZh ? t.name : t.nameEn}
+                                        </option>
+                                    ))}
+                                </optgroup>
+                            ))}
+                        </select>
+                    </div>
+                </div>
+                <textarea
+                    value={systemPrompt || ''}
+                    onChange={e => onSystemPromptChange(e.target.value)}
+                    rows={10}
+                    className="w-full px-3 py-2 bg-slate-800 border border-slate-600 rounded text-sm text-slate-200 font-mono resize-y"
+                    placeholder="输入 Agent 的系统提示词..."
+                />
+                <p className="mt-1 text-xs text-slate-500">
+                    支持模板变量：{'${TARGET_LANG}'}, {'${TICKET_CONTENT}'}, {'${工单内容}'}
+                </p>
+            </div>
+
+            {/* 根据 configSchema 动态渲染额外参数 */}
+            {configSchema && Object.entries(configSchema).map(([key, schema]) => (
+                <div key={key}>
+                    <label className="block text-sm text-slate-300 mb-1">
+                        {schema.label}
+                        {schema.required && <span className="text-red-400 ml-1">*</span>}
+                    </label>
+                    <input
+                        type="text"
+                        value={config[key] || ''}
+                        onChange={e => onConfigChange({ ...config, [key]: e.target.value })}
+                        className="w-full px-3 py-2 bg-slate-800 border border-slate-600 rounded text-sm text-slate-200"
+                        placeholder={schema.description || ''}
+                    />
+                    {schema.description && (
+                        <p className="mt-1 text-xs text-slate-500">{schema.description}</p>
+                    )}
+                </div>
+            ))}
         </div>
     );
 };
@@ -763,316 +1124,6 @@ const JsonSchemaEditor: React.FC<{
             />
             {jsonError && (
                 <p className="text-xs text-red-400 mt-1">{jsonError}</p>
-            )}
-        </div>
-    );
-};
-
-// ============ HTTP API 配置面板 ============
-
-type ProxyStatus = 'idle' | 'testing' | 'reachable' | 'unreachable';
-
-const HttpApiConfigPanel: React.FC<{
-    config: Record<string, any>;
-    onChange: (config: Record<string, any>) => void;
-}> = ({ config, onChange }) => {
-    const [proxyStatus, setProxyStatus] = useState<ProxyStatus>('idle');
-    const [availableModels, setAvailableModels] = useState<string[]>([]);
-    const [proxyError, setProxyError] = useState('');
-
-    const baseUrl = config.baseUrl || '';
-    const model = config.model || '';
-    const apiKey = config.apiKey || '';
-    const maxTokens = config.maxTokens ?? 8192;
-    const systemPrompt = config.systemPrompt || '';
-
-    const updateField = (field: string, value: any) => {
-        onChange({ ...config, [field]: value });
-    };
-
-    const handleTestProxy = async () => {
-        if (!baseUrl.trim()) return;
-        setProxyStatus('testing');
-        setProxyError('');
-        try {
-            const result: AgentProxyTestResult = await agentApi.testProxy(baseUrl, apiKey);
-            if (result.reachable) {
-                setProxyStatus('reachable');
-                setAvailableModels(result.models || []);
-            } else {
-                setProxyStatus('unreachable');
-                setProxyError(result.errorMessage || '连接失败');
-            }
-        } catch (err: any) {
-            setProxyStatus('unreachable');
-            setProxyError(err.message || '请求失败');
-        }
-    };
-
-    return (
-        <div className="space-y-3">
-            {/* Base URL + 检测按钮 */}
-            <div>
-                <label className="text-xs text-slate-500 mb-1 block">Base URL</label>
-                <div className="flex gap-2">
-                    <input
-                        type="text"
-                        value={baseUrl}
-                        onChange={e => updateField('baseUrl', e.target.value)}
-                        placeholder="http://localhost:8045/v1"
-                        className="flex-1 bg-slate-700 border border-slate-600 text-slate-200 text-sm rounded px-2 py-1.5"
-                    />
-                    <button
-                        onClick={handleTestProxy}
-                        disabled={proxyStatus === 'testing' || !baseUrl.trim()}
-                        className="px-3 py-1.5 text-xs bg-slate-600 hover:bg-slate-500 text-slate-200 rounded disabled:opacity-50 transition-colors whitespace-nowrap"
-                    >
-                        {proxyStatus === 'testing' ? (
-                            <span className="flex items-center gap-1.5">
-                                <span className="animate-spin inline-block w-3 h-3 border border-slate-400 border-t-transparent rounded-full" />
-                                检测中...
-                            </span>
-                        ) : '检测连接'}
-                    </button>
-                </div>
-            </div>
-
-            {/* 代理状态 */}
-            {proxyStatus === 'reachable' && (
-                <div className="px-3 py-2 bg-green-500/10 border border-green-500/20 rounded text-xs text-green-400 flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-green-400" />
-                    代理已连接（{availableModels.length} 个模型可用）
-                </div>
-            )}
-            {proxyStatus === 'unreachable' && (
-                <div className="space-y-2">
-                    <div className="px-3 py-2 bg-red-500/10 border border-red-500/20 rounded text-xs text-red-400 flex items-center gap-1.5">
-                        <span className="w-2 h-2 rounded-full bg-red-400" />
-                        代理不可达：{proxyError}
-                    </div>
-                    <div className="px-3 py-2.5 bg-amber-500/10 border border-amber-500/20 rounded-lg">
-                        <div className="text-amber-400 text-xs font-medium mb-1.5">安装引导</div>
-                        <ol className="text-xs text-slate-400 space-y-1 list-decimal list-inside">
-                            <li>
-                                下载{' '}
-                                <a href="https://github.com/lbjlaq/Antigravity-Manager/releases" target="_blank" rel="noopener noreferrer"
-                                    className="text-blue-400 hover:text-blue-300 underline">
-                                    Antigravity-Manager
-                                </a>
-                                {' '}安装包
-                            </li>
-                            <li>安装并登录 Google 账号授权</li>
-                            <li>在 API Proxy 标签页启动代理服务</li>
-                            <li>默认地址: <code className="text-slate-300 bg-slate-700/50 px-1 rounded">http://localhost:8045/v1</code></li>
-                        </ol>
-                    </div>
-                </div>
-            )}
-
-            {/* Model */}
-            <div>
-                <label className="text-xs text-slate-500 mb-1 block">Model</label>
-                {availableModels.length > 0 ? (
-                    <select
-                        value={availableModels.includes(model) ? model : ''}
-                        onChange={e => updateField('model', e.target.value)}
-                        className="w-full bg-slate-700 border border-slate-600 text-slate-200 text-sm rounded px-2 py-1.5"
-                    >
-                        {!availableModels.includes(model) && model && (
-                            <option value="">{model}（当前，不在列表中）</option>
-                        )}
-                        {availableModels.map(m => <option key={m} value={m}>{m}</option>)}
-                    </select>
-                ) : (
-                    <input
-                        type="text"
-                        value={model}
-                        onChange={e => updateField('model', e.target.value)}
-                        placeholder="gemini-2.5-flash"
-                        className="w-full bg-slate-700 border border-slate-600 text-slate-200 text-sm rounded px-2 py-1.5"
-                    />
-                )}
-            </div>
-
-            {/* API Key + Max Tokens */}
-            <div className="grid grid-cols-2 gap-3">
-                <div>
-                    <label className="text-xs text-slate-500 mb-1 block">API Key（可选）</label>
-                    <input
-                        type="password"
-                        value={apiKey}
-                        onChange={e => updateField('apiKey', e.target.value)}
-                        placeholder="本地代理通常无需填写"
-                        className="w-full bg-slate-700 border border-slate-600 text-slate-200 text-sm rounded px-2 py-1.5"
-                    />
-                </div>
-                <div>
-                    <label className="text-xs text-slate-500 mb-1 block">Max Tokens</label>
-                    <input
-                        type="number"
-                        value={maxTokens}
-                        onChange={e => updateField('maxTokens', parseInt(e.target.value) || 4096)}
-                        className="w-full bg-slate-700 border border-slate-600 text-slate-200 text-sm rounded px-2 py-1.5"
-                    />
-                </div>
-            </div>
-
-            {/* System Prompt */}
-            <div>
-                <label className="text-xs text-slate-500 mb-1 block">System Prompt</label>
-                <textarea
-                    value={systemPrompt}
-                    onChange={e => updateField('systemPrompt', e.target.value)}
-                    rows={4}
-                    className="w-full bg-slate-700 border border-slate-600 text-slate-200 text-sm rounded px-2 py-1.5 font-mono resize-y"
-                />
-            </div>
-        </div>
-    );
-};
-
-// ============ CLI 配置面板 ============
-
-const CliConfigPanel: React.FC<{
-    config: Record<string, any>;
-    onChange: (config: Record<string, any>) => void;
-}> = ({ config, onChange }) => {
-    const models = Array.isArray(config.models)
-        ? config.models
-        : (config.model ? [config.model] : []);
-    const timeout = config.timeout ?? 120;
-    const systemPrompt = config.systemPrompt || '';
-
-    const updateField = (field: string, value: any) => {
-        onChange({ ...config, [field]: value });
-    };
-
-    return (
-        <div className="space-y-3">
-            <div className="grid grid-cols-2 gap-3">
-                <div>
-                    <label className="text-xs text-slate-500 mb-1 block">Models（逗号分隔，按优先级排列）</label>
-                    <input
-                        type="text"
-                        value={models.join(', ')}
-                        onChange={e => {
-                            const arr = e.target.value.split(',').map(s => s.trim()).filter(Boolean);
-                            onChange({ ...config, models: arr });
-                        }}
-                        placeholder="gemini-2.5-flash, gemini-2.0-flash"
-                        className="w-full bg-slate-700 border border-slate-600 text-slate-200 text-sm rounded px-2 py-1.5"
-                    />
-                    <p className="text-xs text-slate-600 mt-0.5">第一个失败时自动切换到下一个</p>
-                </div>
-                <div>
-                    <label className="text-xs text-slate-500 mb-1 block">Timeout（秒）</label>
-                    <input
-                        type="number"
-                        value={timeout}
-                        onChange={e => updateField('timeout', parseInt(e.target.value) || 120)}
-                        className="w-full bg-slate-700 border border-slate-600 text-slate-200 text-sm rounded px-2 py-1.5"
-                    />
-                </div>
-            </div>
-
-            <div>
-                <label className="text-xs text-slate-500 mb-1 block">System Prompt</label>
-                <textarea
-                    value={systemPrompt}
-                    onChange={e => updateField('systemPrompt', e.target.value)}
-                    rows={8}
-                    placeholder="You are a professional translator..."
-                    className="w-full bg-slate-700 border border-slate-600 text-slate-200 text-sm rounded px-2 py-1.5 font-mono resize-y"
-                />
-                <p className="text-xs text-slate-600 mt-1">
-                    占位符：
-                    <code className="bg-slate-700/50 px-1 rounded mx-1">{'${TARGET_LANG}'}</code> 目标语言 ·
-                    <code className="bg-slate-700/50 px-1 rounded mx-1">{'${TICKET_CONTENT}'}</code> 工单内容
-                </p>
-            </div>
-        </div>
-    );
-};
-
-// ============ Shadow Window 配置面板 ============
-
-const ShadowWindowConfigPanel: React.FC<{
-    config: Record<string, any>;
-    onChange: (config: Record<string, any>) => void;
-    capability?: string;
-}> = ({ config, onChange, capability }) => {
-    const windowLabel = config.windowLabel || '';
-    const notebookUrl = config.notebookUrl || '';
-    const notebookId = config.notebookId || '';
-    const prompt = config.prompt || '';
-
-    const isNotebook = capability === 'reply';
-
-    const updateField = (field: string, value: any) => {
-        onChange({ ...config, [field]: value });
-    };
-
-    const handleUrlChange = (url: string) => {
-        const updates: Record<string, any> = { ...config, notebookUrl: url };
-        const match = url.match(/notebook\/([a-f0-9-]+)/);
-        if (match) {
-            updates.notebookId = match[1];
-        }
-        onChange(updates);
-    };
-
-    return (
-        <div className="space-y-3">
-            <div>
-                <label className="text-xs text-slate-500 mb-1 block">Window Label</label>
-                <input
-                    type="text"
-                    value={windowLabel}
-                    onChange={e => updateField('windowLabel', e.target.value)}
-                    placeholder="notebook_shadow"
-                    className="w-full bg-slate-700 border border-slate-600 text-slate-200 text-sm rounded px-2 py-1.5"
-                />
-            </div>
-
-            {isNotebook && (
-                <>
-                    <div>
-                        <label className="text-xs text-slate-500 mb-1 block">NotebookLM URL</label>
-                        <input
-                            type="text"
-                            value={notebookUrl}
-                            onChange={e => handleUrlChange(e.target.value)}
-                            placeholder="https://notebooklm.google.com/notebook/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-                            className="w-full bg-slate-700 border border-slate-600 text-slate-200 text-sm rounded px-2 py-1.5"
-                        />
-                    </div>
-                    <div>
-                        <label className="text-xs text-slate-500 mb-1 block">
-                            Notebook ID
-                            <span className="text-slate-600 ml-1">（从 URL 自动提取）</span>
-                        </label>
-                        <input
-                            type="text"
-                            value={notebookId}
-                            onChange={e => updateField('notebookId', e.target.value)}
-                            placeholder="自动从 URL 提取，或手动输入"
-                            className="w-full bg-slate-700 border border-slate-600 text-slate-200 text-sm rounded px-2 py-1.5"
-                        />
-                    </div>
-                    <div>
-                        <label className="text-xs text-slate-500 mb-1 block">Prompt 模板</label>
-                        <textarea
-                            value={prompt}
-                            onChange={e => updateField('prompt', e.target.value)}
-                            rows={4}
-                            placeholder={'请使用用户工单的语言...\n\n${工单内容}'}
-                            className="w-full bg-slate-700 border border-slate-600 text-slate-200 text-sm rounded px-2 py-1.5 font-mono resize-y"
-                        />
-                        <p className="text-xs text-slate-600 mt-1">
-                            使用 <code className="bg-slate-700/50 px-1 rounded">{'${工单内容}'}</code> 作为工单内容占位符
-                        </p>
-                    </div>
-                </>
             )}
         </div>
     );

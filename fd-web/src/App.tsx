@@ -12,10 +12,7 @@ import ToastProvider from "./shared/components/ToastProvider";
 
 // 非首屏组件（懒加载）
 const SettingsTab = lazy(() => import("./modules/system/pages/SettingsTab"));
-const TranslationTasksTab = lazy(() => import("./modules/ticket/pages/TranslationTasksTab"));
-const ReplyTasksTab = lazy(() => import("./modules/ticket/pages/ReplyTasksTab"));
 const ServerTicketsTab = lazy(() => import("./modules/ticket/pages/ServerTicketsTab"));
-const AuditTasksTab = lazy(() => import("./modules/ticket/pages/AuditTasksTab"));
 const ApprovedTasksTab = lazy(() => import("./modules/ticket/pages/ApprovedTasksTab"));
 const AdminUsersTab = lazy(() => import("./modules/admin/pages/AdminUsersTab"));
 const ManualSyncTab = lazy(() => import("./modules/admin/pages/ManualSyncTab"));
@@ -28,24 +25,32 @@ const AgentManageTab = lazy(() => import("./modules/admin/pages/AgentManageTab")
 const TaskDashboardTab = lazy(() => import("./modules/task/pages/TaskDashboardTab"));
 const TaskDefinitionsTab = lazy(() => import("./modules/task/pages/TaskDefinitionsTab"));
 const TaskHistoryTab = lazy(() => import("./modules/task/pages/TaskHistoryTab"));
+const AgentExecutionTab = lazy(() => import("./modules/task/pages/AgentExecutionTab"));
 const UserProfileTab = lazy(() => import("./modules/system/pages/UserProfileTab"));
 const FloatingTaskWidget = lazy(() => import("./shared/components/FloatingTaskWidget").then(m => ({ default: m.FloatingTaskWidget })));
-const WorkflowListTab = lazy(() => import("./modules/workflow/pages/WorkflowListTab"));
-const WorkflowGuideTab = lazy(() => import("./modules/workflow/pages/WorkflowGuideTab"));
+const WorkflowCapabilitiesTab = lazy(() => import("./modules/workflow/pages/WorkflowCapabilitiesTab"));
 const WorkflowAgentsTab = lazy(() => import("./modules/workflow/pages/WorkflowAgentsTab"));
-const WorkflowAutomationTab = lazy(() => import("./modules/ticket/pages/WorkflowAutomationTab"));
+const WorkflowAiTab = lazy(() => import("./modules/workflow/pages/WorkflowAiTab"));
+const WorkflowN8nTab = lazy(() => import("./modules/workflow/pages/WorkflowN8nTab"));
+const AiDashboardTab = lazy(() => import("./modules/workflow/pages/AiDashboardTab"));
 const AgentAutomationTab = lazy(() => import("./modules/ticket/pages/AgentAutomationTab"));
+const AuditCenterTab = lazy(() => import("./modules/ticket/pages/AuditCenterTab"));
+const KnowledgeBasePage = lazy(() => import("./modules/knowledge/pages/KnowledgeBasePage"));
+const NotebookLmPage = lazy(() => import("./modules/knowledge/pages/NotebookLmPage"));
 const MobileAuditPage = lazy(() => import("./modules/mobile/pages/MobileAuditPage"));
 
 import { AuthProvider, useAuthContext } from "./shared/context/AuthContext";
-import { AgentProvider } from "./shared/agents";
+import { AgentProvider, useAgentContext } from "./shared/agents";
 import { ServerEventsProvider } from "./shared/context/ServerEventsContext";
-import { MQTranslationProvider } from "./shared/context/MQTranslationContext";
-import { MQReplyProvider } from "./shared/context/MQReplyContext";
-import { MQAuditProvider } from "./shared/context/MQAuditContext";
+import { MQTranslateAgentProvider, useMQTranslateAgent } from "./shared/context/MQTranslateAgentContext";
+import { MQReplyAgentProvider, useMQReplyAgent } from "./shared/context/MQReplyAgentContext";
+import { UniversalAgentConsumer } from "./shared/context/UniversalAgentConsumer";
 
 import { useSettings } from "./shared/hooks/useSettings";
 import { ticketApi } from "./shared/services/serverApi";
+import { isTauriEnv, checkBridgeAvailable, resetBridgeAvailableCache } from "./tauri/bridge";
+import { initAgentShadow } from "./modules/ticket/components/agent-automation/shadowLifecycle";
+import { parseAgentConfig } from "./shared/agents/schemaUtils";
 import type { QueueCounts } from "./shared/types/server";
 
 /**
@@ -89,32 +94,12 @@ const TAB_COMPONENTS: Partial<Record<TabType, TabRoute>> = {
             setTranslationLang: ctx.setTranslationLang,
         }),
     },
-    'translation': {
-        component: TranslationTasksTab,
-        requireAuth: true,
-        props: (ctx) => ({
-            initialSelectedId: ctx.navigateToTicketId,
-            onNavigated: ctx.handleTaskNavigated,
-        }),
-    },
-    'reply': {
-        component: ReplyTasksTab,
-        requireAuth: true,
-        props: (ctx) => ({
-            initialSelectedId: ctx.navigateToTicketId,
-            onNavigated: ctx.handleTaskNavigated,
-        }),
-    },
-    'audit': {
-        component: AuditTasksTab,
-        requireAuth: true,
-    },
-    'automation': {
-        component: WorkflowAutomationTab,
-        requireAuth: true,
-    },
     'agent-automation': {
         component: AgentAutomationTab,
+        requireAuth: true,
+    },
+    'audit-center': {
+        component: AuditCenterTab,
         requireAuth: true,
     },
     'approved': {
@@ -145,6 +130,14 @@ const TAB_COMPONENTS: Partial<Record<TabType, TabRoute>> = {
         component: KnowledgeTab,
         requireAuth: true,
     },
+    'knowledge-base': {
+        component: KnowledgeBasePage,
+        requireAuth: true,
+    },
+    'notebooklm': {
+        component: NotebookLmPage,
+        requireAuth: true,
+    },
     'org-sync': {
         component: OrgSyncTab,
         requireAdmin: true,
@@ -165,18 +158,136 @@ const TAB_COMPONENTS: Partial<Record<TabType, TabRoute>> = {
         component: TaskHistoryTab,
         requireAdmin: true,
     },
-    'workflow-list': {
-        component: WorkflowListTab,
+    'agent-execution': {
+        component: AgentExecutionTab,
+        requireAdmin: true,
+    },
+    'workflow-capabilities': {
+        component: WorkflowCapabilitiesTab,
         requireAdmin: true,
     },
     'workflow-agents': {
         component: WorkflowAgentsTab,
         requireAdmin: true,
     },
-    'workflow-guide': {
-        component: WorkflowGuideTab,
+    'workflow-ai': {
+        component: WorkflowAiTab,
         requireAdmin: true,
     },
+    'ai-dashboard': {
+        component: AiDashboardTab,
+        requireAdmin: true,
+    },
+    // workflow-n8n: keep-alive 模式，不在此表中，始终挂载在 DOM 中（见下方渲染逻辑）
+};
+
+/**
+ * MQ Consumer 自动启动组件 — 登录后挂载，自动启动 autoStart=true 的 Agent Consumer
+ * 必须放在 AgentProvider + MQTranslateAgentProvider + MQReplyAgentProvider 内部
+ */
+const MQ_AUTO_START_RETRY_INTERVAL = 10_000; // 10 秒重试间隔
+const MQ_AUTO_START_MAX_RETRIES = 6;         // 最多重试 6 次（共 60 秒）
+
+const MQAutoStarter: React.FC = () => {
+    const { definitions } = useAgentContext();
+    const translate = useMQTranslateAgent();
+    const reply = useMQReplyAgent();
+    const doneRef = useRef(false);
+    const retryCountRef = useRef(0);
+    const retryTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+    const startedCodesRef = useRef<Set<string>>(new Set()); // 已成功启动的 agentCode
+
+    // 组件卸载时清理重试定时器
+    useEffect(() => {
+        return () => {
+            if (retryTimerRef.current) {
+                clearTimeout(retryTimerRef.current);
+                retryTimerRef.current = null;
+            }
+        };
+    }, []);
+
+    useEffect(() => {
+        if (doneRef.current || definitions.length === 0) return;
+
+        const autoStartDefs = definitions.filter(d => d.autoStart && d.enabled);
+        if (autoStartDefs.length === 0) return;
+
+        // Consumer 注册表
+        const consumerMap: Record<string, { startConsumer: (code?: string) => void; isRunning: boolean }> = {
+            'ticket-translate': translate,
+            'translation': translate,
+            'ticket-reply': reply,
+            'reply': reply,
+        };
+
+        const attemptStart = async (isRetry: boolean) => {
+            if (isRetry) {
+                console.log(`[MQAutoStart] Retry ${retryCountRef.current}/${MQ_AUTO_START_MAX_RETRIES}: checking bridge for skipped agents...`);
+                // 重试前清除 bridge 缓存，确保真正重新探测
+                resetBridgeAvailableCache();
+            }
+
+            const skippedCodes: string[] = [];
+
+            for (const def of autoStartDefs) {
+                // 已成功启动的不重复处理
+                if (startedCodesRef.current.has(def.code)) continue;
+
+                // 找到对应的 consumer
+                const config = parseAgentConfig(def.agentConfig);
+                const taskType = (config as any).taskType;
+                const consumer = (taskType && consumerMap[taskType]) || consumerMap[def.capability] || null;
+                if (!consumer || consumer.isRunning) {
+                    // consumer 已在运行，标记为已成功
+                    if (consumer?.isRunning) startedCodesRef.current.add(def.code);
+                    continue;
+                }
+
+                // 浏览器模式: 检查 bridge 可用性
+                const rc = def.requiredCapability;
+                if (!isTauriEnv() && rc) {
+                    const needsBridge = rc.endsWith('-cli') || rc.endsWith('-py');
+                    if (needsBridge) {
+                        const bridgeOk = await checkBridgeAvailable();
+                        if (!bridgeOk) {
+                            console.warn(`[MQAutoStart] Skipped "${def.name}": fd-bridge not available`);
+                            skippedCodes.push(def.code);
+                            continue;
+                        }
+                    }
+                }
+
+                // Shadow window 初始化（仅 notebooklm）
+                await initAgentShadow(def);
+                consumer.startConsumer(def.code);
+                startedCodesRef.current.add(def.code);
+                console.log(`[MQAutoStart] Auto-started "${def.name}" (${def.code})`);
+            }
+
+            // 判断是否需要重试
+            if (skippedCodes.length > 0 && retryCountRef.current < MQ_AUTO_START_MAX_RETRIES) {
+                retryCountRef.current += 1;
+                console.log(`[MQAutoStart] ${skippedCodes.length} agent(s) skipped, scheduling retry ${retryCountRef.current}/${MQ_AUTO_START_MAX_RETRIES} in ${MQ_AUTO_START_RETRY_INTERVAL / 1000}s`);
+                retryTimerRef.current = setTimeout(() => {
+                    retryTimerRef.current = null;
+                    attemptStart(true);
+                }, MQ_AUTO_START_RETRY_INTERVAL);
+            } else {
+                // 全部成功或超过最大重试次数
+                doneRef.current = true;
+                if (skippedCodes.length > 0) {
+                    console.warn(`[MQAutoStart] Gave up after ${MQ_AUTO_START_MAX_RETRIES} retries. Still skipped: ${skippedCodes.join(', ')}`);
+                } else {
+                    console.log('[MQAutoStart] All autoStart agents started successfully');
+                }
+            }
+        };
+
+        attemptStart(false);
+    }, [definitions, translate, reply]);
+
+    return null; // 无 UI 渲染
 };
 
 /** Admin 权限守卫 — 未登录或非管理员时显示锁定提示（从 AuthContext 获取状态） */
@@ -368,9 +479,10 @@ function AppInner() {
         <ToastProvider>
             <ServerEventsProvider>
             <AgentProvider>
-            <MQTranslationProvider>
-                <MQReplyProvider>
-                    <MQAuditProvider>
+                    <MQTranslateAgentProvider>
+                    <MQReplyAgentProvider>
+                        <MQAutoStarter />
+                        <UniversalAgentConsumer />
                         <AppShell
                             activeTab={activeTab}
                             setActiveTab={setActiveTab}
@@ -382,17 +494,24 @@ function AppInner() {
                                         <div className="animate-spin rounded-full h-8 w-8 border-2 border-slate-600 border-t-blue-400" />
                                     </div>
                                 }>
-                                    <div className="flex-1 flex overflow-hidden">
+                                    {/* 常规 tab 内容（条件渲染） */}
+                                    <div className="flex-1 flex overflow-hidden" style={{ display: activeTab === 'workflow-n8n' ? 'none' : undefined }}>
                                         {renderTabContent()}
                                     </div>
+
+                                    {/* n8n iframe — keep-alive：始终挂载，CSS 切换显隐，避免切换菜单时重新加载 */}
+                                    {auth.isLoggedIn && (
+                                        <div className="flex-1 flex overflow-hidden" style={{ display: activeTab === 'workflow-n8n' ? undefined : 'none' }}>
+                                            <WorkflowN8nTab />
+                                        </div>
+                                    )}
 
                                     <FloatingTaskWidget />
                                 </Suspense>
                             </ErrorBoundary>
                         </AppShell>
-                    </MQAuditProvider>
-                </MQReplyProvider>
-            </MQTranslationProvider>
+                    </MQReplyAgentProvider>
+                    </MQTranslateAgentProvider>
             </AgentProvider>
             </ServerEventsProvider>
         </ToastProvider>

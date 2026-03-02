@@ -7,11 +7,13 @@ import com.jefflower.fdserver.ai.service.AgentDefinitionService;
 import com.jefflower.fdserver.ai.service.AgentDispatchService;
 import com.jefflower.fdserver.auth.security.RequiresPermission;
 import com.jefflower.fdserver.common.dto.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
 
+@Tag(name = "Agent 定义", description = "Agent 定义的 CRUD、启停、配置管理")
 @RestController
 @RequestMapping("/api/v1/agents")
 public class AgentDefinitionController {

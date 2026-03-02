@@ -1,6 +1,6 @@
 import type { AgentExecutor } from './types';
 import type { AgentDefinition, AgentExecuteInput, AgentExecuteResult, AgentStreamChunk } from '../../types/server';
-import { buildHttpApiPrompt, langCodeToName } from '../helpers/translationHelpers';
+import { buildHttpApiPrompt } from '../helpers/translationHelpers';
 
 /**
  * HTTP_API 执行器
@@ -96,9 +96,9 @@ export class HttpApiExecutor implements AgentExecutor {
                 return this.buildReplyPrompt(definition, input);
             }
 
-            // 翻译（默认）
+            // 翻译（默认）— buildHttpApiPrompt 内部会调用 langCodeToName
             const targetLang = input.data.targetLang || 'en';
-            const prompt = buildHttpApiPrompt(input.data.ticket, langCodeToName(targetLang));
+            const prompt = buildHttpApiPrompt(input.data.ticket, targetLang);
             console.log(`[HttpApiExecutor] Translation standard path: prompt length=${prompt.length}`);
             return prompt;
         }
@@ -134,10 +134,10 @@ export class HttpApiExecutor implements AgentExecutor {
             context += `\n【PREVIOUS AUDIT FEEDBACK】:\n审核意见: ${lastAuditRemark}\n请根据以上审核反馈改进你的回复，避免重复之前的问题。\n\n`;
         }
 
-        // 从 providerConfig 读取 prompt 模板，fallback 到默认模板
-        const config = typeof definition.providerConfig === 'string'
-            ? (() => { try { return JSON.parse(definition.providerConfig); } catch { return {}; } })()
-            : (definition.providerConfig || {});
+        // 从 agentConfig 读取 prompt 模板，fallback 到默认模板
+        const config = typeof definition.agentConfig === 'string'
+            ? (() => { try { return JSON.parse(definition.agentConfig); } catch { return {}; } })()
+            : (definition.agentConfig || {});
         const promptTemplate = config.prompt || config.systemPrompt
             || '请根据以下工单内容生成回复，返回格式为 JSON：{"targetReply": "英文回复", "zhReply": "中文回复"}';
 

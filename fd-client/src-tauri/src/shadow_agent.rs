@@ -345,150 +345,149 @@ pub mod engine {
         async fn clear_history(&self) -> Result<(), String> {
             let sid = short_sid(&self.session_id);
             let clear_enabled = self.clear_config.enabled.unwrap_or(true);
-            let max_retries = self.clear_config.max_retries.unwrap_or(3);
-            let wait_after_delete_ms = self.clear_config.wait_after_delete_ms.unwrap_or(2500);
-            let clear_max_ms = self.timeouts.clear_max_ms.unwrap_or(15000);
             let selectors_json = serde_json::to_string(&self.selectors).unwrap();
             let full_sid = &self.session_id;
 
-            eprintln!("[ShadowAgent:{}] clear_history: enabled={}, max_retries={}, clear_max_ms={}",
-                sid, clear_enabled, max_retries, clear_max_ms);
-
-            // 重置状态脚本（所有情况都需要）
-            let reset_script = format!(r#"
-                (function() {{
-                    window.__SHADOW_SESSION_ID = "{}";
-                    window.__SHADOW_SESSION_ACTIVE = false;
-                    window.__SHADOW_LAST_TEXT = "";
-                    window.__SHADOW_LAST_BOT_IDLE = false;
-                    window.__SHADOW_BOT_RESPONDED = false;
-                    window.__SHADOW_HEARTBEAT = 0;
-                    window.__SHADOW_LATEST_RESULT = null;
-                    if (window.__SHADOW_POLL_INTERVAL) {{
-                        clearInterval(window.__SHADOW_POLL_INTERVAL);
-                        window.__SHADOW_POLL_INTERVAL = null;
-                    }}
-                    {}
-                }})();
-            "#, full_sid, if !clear_enabled { "window.__SHADOW_CLEAR_DONE = true;" } else { "window.__SHADOW_CLEAR_DONE = false;" });
-
-            self.eval_js(&reset_script).await?;
-            eprintln!("[ShadowAgent:{}] State reset done", sid);
+            eprintln!("[ShadowAgent:{}] clear_history: enabled={}", sid, clear_enabled);
 
             if !clear_enabled {
-                eprintln!("[ShadowAgent:{}] Clear disabled, skipping", sid);
+                // 仅重置状态
+                let reset_script = format!(r#"
+                    (function() {{
+                        window.__SHADOW_SESSION_ID = "{}";
+                        window.__SHADOW_SESSION_ACTIVE = false;
+                        window.__SHADOW_SEND_FAILED = false;
+                    }})();
+                "#, full_sid);
+                self.eval_js(&reset_script).await?;
+                eprintln!("[ShadowAgent:{}] Clear disabled, state reset only", sid);
                 return Ok(());
             }
 
-            // 完整清理脚本
-            let clear_script = format!(r#"
-                (async function() {{
-                    const SEL = {selectors};
-                    const MAX_RETRIES = {max_retries};
-                    const WAIT_AFTER_DELETE_MS = {wait_after_delete};
-
-                    async function forceClear() {{
-                        await new Promise(r => setTimeout(r, 1500));
-                        for (let i = 0; i < MAX_RETRIES; i++) {{
-                            const pairs = document.querySelectorAll(SEL.CHAT_PAIR + ', ' + SEL.CHAT_PAIR_ALT);
-                            if (pairs.length === 0) return true;
-
-                            const menuBtn = document.querySelector(SEL.MENU_BUTTON) ||
-                                Array.from(document.querySelectorAll('button')).find(b => b.innerHTML.includes('more_vert'));
-                            if (!menuBtn) {{ await new Promise(r => setTimeout(r, 1000)); continue; }}
-
-                            menuBtn.click();
-                            await new Promise(r => setTimeout(r, 800));
-
-                            const delItem = Array.from(document.querySelectorAll('.mat-mdc-menu-item, [role="menuitem"]')).find(el =>
-                                el.innerText.includes('删除对话记录') || el.innerText.includes('Delete') || el.innerText.includes('清除')
-                            );
-
-                            if (delItem) {{
-                                delItem.click();
-                                await new Promise(r => setTimeout(r, 1000));
-                                const confirm = document.querySelector(SEL.CONFIRM_DELETE) ||
-                                    Array.from(document.querySelectorAll('button')).find(el =>
-                                        (el.innerText.includes('删除') || el.innerText.includes('Delete')) && el.classList.contains('mat-mdc-button-base')
-                                    );
-                                if (confirm) {{
-                                    confirm.click();
-                                    await new Promise(r => setTimeout(r, WAIT_AFTER_DELETE_MS));
-                                    if (document.querySelectorAll(SEL.CHAT_PAIR).length === 0) return true;
-                                }}
-                            }} else {{
-                                document.body.click();
-                            }}
-                            await new Promise(r => setTimeout(r, 1000));
-                        }}
-                        return false;
-                    }}
-
-                    await forceClear();
-                    window.__SHADOW_CLEAR_DONE = true;
-                }})();
-            "#, selectors = selectors_json, max_retries = max_retries, wait_after_delete = wait_after_delete_ms);
-
-            self.eval_js(&clear_script).await?;
-            eprintln!("[ShadowAgent:{}] Clear script injected, polling for completion...", sid);
-
-            // 轮询等待清理完成
-            let start = std::time::Instant::now();
-            let max_wait = Duration::from_millis(clear_max_ms);
-            let mut poll_count = 0;
-            while start.elapsed() < max_wait {
-                poll_count += 1;
-
-                let check_script = r#"
-                    (function() {
-                        var done = !!window.__SHADOW_CLEAR_DONE;
-                        if (window.__TAURI__ && window.__TAURI__.core) {
-                            window.__TAURI__.core.invoke('forward_shadow_event', {
-                                event: 'shadow-clear-status',
-                                payload: JSON.stringify({ done: done })
-                            }).catch(function(){});
-                        } else if (window.__TAURI_INTERNALS__) {
-                            window.__TAURI_INTERNALS__.invoke('forward_shadow_event', {
-                                event: 'shadow-clear-status',
-                                payload: JSON.stringify({ done: done })
-                            }).catch(function(){});
-                        }
-                    })();
-                "#;
-
-                // FIX: 先注册监听器，再注入脚本（避免竞态）
-                let (done_tx, mut done_rx) = mpsc::channel::<bool>(1);
+            // 策略：直接刷新页面（比菜单点击清理更可靠）
+            // 先检查是否有对话历史
+            let has_history = {
+                let (tx, mut rx) = mpsc::channel::<bool>(1);
                 let unlisten = {
-                    let done_tx = done_tx.clone();
-                    self.app.listen("shadow-clear-status", move |event| {
+                    let tx = tx.clone();
+                    self.app.listen("shadow-has-history", move |event| {
                         if let Some(parsed) = parse_event_payload(event.payload()) {
-                            if parsed.get("done").and_then(|v| v.as_bool()).unwrap_or(false) {
-                                let _ = done_tx.try_send(true);
-                            }
+                            let has = parsed.get("hasHistory").and_then(|v| v.as_bool()).unwrap_or(false);
+                            let _ = tx.try_send(has);
                         }
                     })
                 };
+                drop(tx);
 
-                self.eval_js(check_script).await.ok();
+                let check = format!(r#"
+                    (function() {{
+                        var SEL = {selectors};
+                        var pairs = document.querySelectorAll(SEL.CHAT_PAIR);
+                        var altPairs = document.querySelectorAll(SEL.CHAT_PAIR_ALT || 'NOOP');
+                        var has = (pairs.length > 0) || (altPairs.length > 0);
+                        var payload = JSON.stringify({{ hasHistory: has, pairs: pairs.length, altPairs: altPairs.length }});
+                        if (window.__TAURI__ && window.__TAURI__.core) {{
+                            window.__TAURI__.core.invoke('forward_shadow_event', {{
+                                event: 'shadow-has-history', payload: payload
+                            }}).catch(function(){{}});
+                        }} else if (window.__TAURI_INTERNALS__) {{
+                            window.__TAURI_INTERNALS__.invoke('forward_shadow_event', {{
+                                event: 'shadow-has-history', payload: payload
+                            }}).catch(function(){{}});
+                        }}
+                    }})();
+                "#, selectors = selectors_json);
 
-                tokio::select! {
-                    result = done_rx.recv() => {
-                        self.app.unlisten(unlisten);
-                        if result == Some(true) {
-                            eprintln!("[ShadowAgent:{}] Clear completed after {}ms ({} polls)",
-                                sid, start.elapsed().as_millis(), poll_count);
-                            return Ok(());
-                        }
+                self.eval_js(&check).await.ok();
+                let result = tokio::select! {
+                    r = rx.recv() => r.unwrap_or(false),
+                    _ = tokio::time::sleep(Duration::from_secs(2)) => {
+                        eprintln!("[ShadowAgent:{}] History check timeout, assuming has history", sid);
+                        true
+                    },
+                };
+                self.app.unlisten(unlisten);
+                result
+            };
+
+            if has_history {
+                eprintln!("[ShadowAgent:{}] Has history, reloading page to clear...", sid);
+                // 刷新页面（最可靠的清理方式）
+                self.eval_js("window.location.reload();").await.ok();
+                // 等待页面重新加载
+                tokio::time::sleep(Duration::from_millis(4000)).await;
+
+                // 等待页面就绪（input 出现）
+                let _page_load_timeout = self.timeouts.page_load_ms.unwrap_or(3000);
+                let mut ready = false;
+                for i in 0..20 {
+                    let (tx, mut rx) = mpsc::channel::<bool>(1);
+                    let unlisten = {
+                        let tx = tx.clone();
+                        self.app.listen("shadow-page-ready", move |event| {
+                            if let Some(parsed) = parse_event_payload(event.payload()) {
+                                let r = parsed.get("ready").and_then(|v| v.as_bool()).unwrap_or(false);
+                                let _ = tx.try_send(r);
+                            }
+                        })
+                    };
+                    drop(tx);
+
+                    let ready_check = format!(r#"
+                        (function() {{
+                            var SEL = {selectors};
+                            var inp = document.querySelector(SEL.INPUT);
+                            var r = !!inp;
+                            var payload = JSON.stringify({{ ready: r }});
+                            if (window.__TAURI__ && window.__TAURI__.core) {{
+                                window.__TAURI__.core.invoke('forward_shadow_event', {{
+                                    event: 'shadow-page-ready', payload: payload
+                                }}).catch(function(){{}});
+                            }} else if (window.__TAURI_INTERNALS__) {{
+                                window.__TAURI_INTERNALS__.invoke('forward_shadow_event', {{
+                                    event: 'shadow-page-ready', payload: payload
+                                }}).catch(function(){{}});
+                            }}
+                        }})();
+                    "#, selectors = selectors_json);
+
+                    self.eval_js(&ready_check).await.ok();
+                    let result = tokio::select! {
+                        r = rx.recv() => r.unwrap_or(false),
+                        _ = tokio::time::sleep(Duration::from_millis(500)) => false,
+                    };
+                    self.app.unlisten(unlisten);
+
+                    if result {
+                        eprintln!("[ShadowAgent:{}] Page ready after reload (poll #{})", sid, i + 1);
+                        ready = true;
+                        break;
                     }
-                    _ = tokio::time::sleep(Duration::from_millis(500)) => {
-                        self.app.unlisten(unlisten);
-                    }
+                    tokio::time::sleep(Duration::from_millis(500)).await;
                 }
+
+                if !ready {
+                    eprintln!("[ShadowAgent:{}] WARNING: Page not ready after reload, proceeding anyway", sid);
+                }
+
+                // 刷新后需要重新初始化 IPC bridge
+                self.eval_js(SHADOW_INIT_SCRIPT).await.ok();
+                tokio::time::sleep(Duration::from_millis(1000)).await;
+            } else {
+                eprintln!("[ShadowAgent:{}] No history, page is clean", sid);
             }
 
-            // 超时后继续（清理可能未完成，但不阻塞流程）
-            eprintln!("[ShadowAgent:{}] WARNING: Clear timeout after {}ms ({} polls), proceeding anyway",
-                sid, clear_max_ms, poll_count);
+            // 设置会话状态
+            let state_script = format!(r#"
+                (function() {{
+                    window.__SHADOW_SESSION_ID = "{}";
+                    window.__SHADOW_SESSION_ACTIVE = false;
+                    window.__SHADOW_SEND_FAILED = false;
+                    window.__SHADOW_POLL_COUNT = 0;
+                }})();
+            "#, full_sid);
+            self.eval_js(&state_script).await?;
+            eprintln!("[ShadowAgent:{}] History cleared, state reset", sid);
             Ok(())
         }
 
@@ -510,6 +509,11 @@ pub mod engine {
                     }}
                     if (!input) {{ window.__SHADOW_SEND_FAILED = true; return; }}
 
+                    // 聚焦输入框
+                    input.focus();
+                    await new Promise(r => setTimeout(r, 200));
+
+                    // 设置文本值
                     try {{
                         const nativeSetter = Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype, 'value').set;
                         nativeSetter.call(input, {text});
@@ -522,8 +526,13 @@ pub mod engine {
                     input.dispatchEvent(new KeyboardEvent('keyup', {{ bubbles: true, key: 'a' }}));
                     await new Promise(r => setTimeout(r, 800));
 
+                    // 记录发送前的对话对数量
+                    var pairsBefore = document.querySelectorAll(SEL.CHAT_PAIR).length;
+                    window.__SHADOW_PAIRS_BEFORE_SEND = pairsBefore;
+
+                    // 方式 1: 尝试点击发送按钮
                     let sendBtn = null;
-                    for (let retry = 0; retry < 10; retry++) {{
+                    for (let retry = 0; retry < 5; retry++) {{
                         sendBtn = document.querySelector(SEL.SEND_BUTTON) ||
                             Array.from(document.querySelectorAll('button')).find(b =>
                                 (b.innerHTML.includes('arrow_forward') || b.innerHTML.includes('send')) && !b.disabled
@@ -534,9 +543,39 @@ pub mod engine {
 
                     if (sendBtn) {{
                         sendBtn.click();
-                        window.__SHADOW_SESSION_ACTIVE = true;
-                        window.__SHADOW_SEND_FAILED = false;
-                    }} else {{
+                    }}
+
+                    // 方式 2: 同时用 Enter 键触发（Angular 应用更可靠）
+                    await new Promise(r => setTimeout(r, 300));
+                    input.dispatchEvent(new KeyboardEvent('keydown', {{
+                        key: 'Enter', code: 'Enter', keyCode: 13, which: 13,
+                        bubbles: true, cancelable: true
+                    }}));
+                    input.dispatchEvent(new KeyboardEvent('keypress', {{
+                        key: 'Enter', code: 'Enter', keyCode: 13, which: 13,
+                        bubbles: true, cancelable: true
+                    }}));
+                    input.dispatchEvent(new KeyboardEvent('keyup', {{
+                        key: 'Enter', code: 'Enter', keyCode: 13, which: 13,
+                        bubbles: true, cancelable: true
+                    }}));
+
+                    window.__SHADOW_SESSION_ACTIVE = true;
+                    window.__SHADOW_SEND_FAILED = false;
+
+                    // 等待并验证消息是否真正发送（输入框被清空 + 新对话对出现）
+                    await new Promise(r => setTimeout(r, 2000));
+                    var pairsAfter = document.querySelectorAll(SEL.CHAT_PAIR).length;
+                    var inputCleared = input.value.trim().length === 0;
+                    var inputDisabled = input.disabled;
+                    window.__SHADOW_SEND_VERIFY = {{
+                        pairsBefore: pairsBefore,
+                        pairsAfter: pairsAfter,
+                        inputCleared: inputCleared,
+                        inputDisabled: inputDisabled,
+                        sent: (pairsAfter > pairsBefore) || inputCleared || inputDisabled
+                    }};
+                    if (!window.__SHADOW_SEND_VERIFY.sent) {{
                         window.__SHADOW_SEND_FAILED = true;
                     }}
                 }})();
@@ -672,6 +711,8 @@ pub mod engine {
             false
         }
 
+        /// 直接轮询 DOM 状态（无 observer setInterval，每次循环直接读 DOM + IPC 回传）
+        /// 与 wait_for_ack / get_chat_pair_count 完全一致的可靠模式
         async fn observe_and_relay(&self, tx: &mpsc::Sender<ShadowEvent>) {
             let sid = short_sid(&self.session_id);
             let relay_interval = self.timeouts.relay_interval_ms.unwrap_or(500);
@@ -684,91 +725,12 @@ pub mod engine {
             let silence_cycles = (silence_timeout / relay_interval).max(1);
             let max_total_cycles: u64 = 240;
 
-            eprintln!("[ShadowAgent:{}] observe_and_relay: relay_interval={}ms, no_response_timeout={}ms ({}cyc), silence_timeout={}ms ({}cyc), max_cycles={}",
-                sid, relay_interval, no_response_timeout, no_response_cycles, silence_timeout, silence_cycles, max_total_cycles);
-
-            // 注入 observer 脚本
-            let observer_script = format!(r#"
-                (function() {{
-                    const SEL = {selectors};
-                    if (window.__SHADOW_POLL_INTERVAL) {{
-                        clearInterval(window.__SHADOW_POLL_INTERVAL);
-                        window.__SHADOW_POLL_INTERVAL = null;
-                    }}
-                    window.__SHADOW_LAST_TEXT = "";
-                    window.__SHADOW_LAST_BOT_IDLE = false;
-                    window.__SHADOW_BOT_RESPONDED = false;
-                    window.__SHADOW_HEARTBEAT = 0;
-                    window.__SHADOW_LATEST_RESULT = null;
-
-                    window.__SHADOW_POLL_INTERVAL = setInterval(() => {{
-                        if (!window.__SHADOW_SESSION_ACTIVE) return;
-                        window.__SHADOW_HEARTBEAT = (window.__SHADOW_HEARTBEAT || 0) + 1;
-                        try {{
-                            const pairs = document.querySelectorAll(SEL.CHAT_PAIR);
-                            const pairCount = pairs.length;
-                            if (pairCount === 0) {{
-                                if (window.__SHADOW_HEARTBEAT % 10 === 0) {{
-                                    window.__SHADOW_LATEST_RESULT = JSON.stringify({{
-                                        heartbeatOnly: true, heartbeat: window.__SHADOW_HEARTBEAT, pairCount: 0
-                                    }});
-                                }}
-                                return;
-                            }}
-
-                            const lastPair = pairs[pairCount - 1];
-                            var botMsgEl = lastPair.querySelector(SEL.BOT_REPLY) ||
-                                lastPair.querySelector(SEL.BOT_REPLY_FALLBACK_1) ||
-                                lastPair.querySelector(SEL.BOT_REPLY_FALLBACK_2);
-                            var text;
-                            if (botMsgEl) {{
-                                text = (botMsgEl.innerText || botMsgEl.textContent || '').trim();
-                            }} else {{
-                                text = (lastPair.innerText || lastPair.textContent || '').trim();
-                            }}
-
-                            const inp = document.querySelector(SEL.INPUT);
-                            const botIdle = inp && !inp.disabled;
-                            if (!botIdle) window.__SHADOW_BOT_RESPONDED = true;
-                            const hasCopyBtn = !!lastPair.querySelector(SEL.COPY_BUTTON);
-
-                            function isJsonBalanced(str) {{
-                                let open = 0, close = 0;
-                                for (let ch of str) {{ if (ch === '[') open++; if (ch === ']') close++; }}
-                                return open > 0 && open === close;
-                            }}
-                            const balanced = isJsonBalanced(text);
-                            const isFinished = window.__SHADOW_BOT_RESPONDED && (hasCopyBtn || (balanced && botIdle));
-
-                            if (text !== window.__SHADOW_LAST_TEXT || botIdle !== window.__SHADOW_LAST_BOT_IDLE) {{
-                                window.__SHADOW_LAST_TEXT = text;
-                                window.__SHADOW_LAST_BOT_IDLE = botIdle;
-                                window.__SHADOW_LATEST_RESULT = JSON.stringify({{
-                                    text: text, finished: isFinished, valid: balanced,
-                                    botIdle: !!botIdle, botResponded: !!window.__SHADOW_BOT_RESPONDED,
-                                    heartbeat: window.__SHADOW_HEARTBEAT, pairCount: pairCount
-                                }});
-                            }}
-                        }} catch(e) {{
-                            window.__SHADOW_LATEST_RESULT = JSON.stringify({{
-                                error: (e.message || String(e)), heartbeat: window.__SHADOW_HEARTBEAT
-                            }});
-                        }}
-                    }}, {relay_interval});
-                }})();
-            "#, selectors = selectors_json, relay_interval = relay_interval);
-
-            if let Err(e) = self.eval_js(&observer_script).await {
-                eprintln!("[ShadowAgent:{}] FATAL: Failed to inject observer: {}", sid, e);
-                let _ = tx.send(ShadowEvent::Error { message: format!("Observer injection failed: {}", e) }).await;
-                return;
-            }
-            eprintln!("[ShadowAgent:{}] Observer injected", sid);
+            eprintln!("[ShadowAgent:{}] observe_and_relay (direct-poll mode): interval={}ms, no_resp={}ms, silence={}ms, max={}cyc",
+                sid, relay_interval, no_response_timeout, silence_timeout, max_total_cycles);
 
             // 检查发送失败
             tokio::time::sleep(Duration::from_secs(1)).await;
             {
-                // FIX: 先注册监听器
                 let (fail_tx, mut fail_rx) = mpsc::channel::<bool>(1);
                 let unlisten = {
                     self.app.listen("shadow-send-check", move |event| {
@@ -784,15 +746,25 @@ pub mod engine {
 
                 let check = r#"
                     (function() {
+                        var failed = !!window.__SHADOW_SEND_FAILED;
+                        var verify = window.__SHADOW_SEND_VERIFY || {};
+                        var payload = JSON.stringify({
+                            failed: failed,
+                            pairsBefore: verify.pairsBefore,
+                            pairsAfter: verify.pairsAfter,
+                            inputCleared: verify.inputCleared,
+                            inputDisabled: verify.inputDisabled,
+                            sent: verify.sent
+                        });
                         if (window.__TAURI__ && window.__TAURI__.core) {
                             window.__TAURI__.core.invoke('forward_shadow_event', {
                                 event: 'shadow-send-check',
-                                payload: JSON.stringify({ failed: !!window.__SHADOW_SEND_FAILED })
+                                payload: payload
                             }).catch(function(){});
                         } else if (window.__TAURI_INTERNALS__) {
                             window.__TAURI_INTERNALS__.invoke('forward_shadow_event', {
                                 event: 'shadow-send-check',
-                                payload: JSON.stringify({ failed: !!window.__SHADOW_SEND_FAILED })
+                                payload: payload
                             }).catch(function(){});
                         }
                     })();
@@ -805,88 +777,212 @@ pub mod engine {
                 };
                 self.app.unlisten(unlisten);
 
+                // 输出发送验证详情
+                eprintln!("[ShadowAgent:{}] Send check result: failed={}", sid, failed);
+
+                // 额外的验证检查：注入脚本读取 __SHADOW_SEND_VERIFY
+                {
+                    let (verify_tx, mut verify_rx) = mpsc::channel::<String>(1);
+                    let unlisten_v = {
+                        self.app.listen("shadow-send-verify", move |event| {
+                            let _ = verify_tx.try_send(event.payload().to_string());
+                        })
+                    };
+                    let verify_check = r#"
+                        (function() {
+                            var v = window.__SHADOW_SEND_VERIFY || {};
+                            var payload = JSON.stringify(v);
+                            if (window.__TAURI__ && window.__TAURI__.core) {
+                                window.__TAURI__.core.invoke('forward_shadow_event', {
+                                    event: 'shadow-send-verify', payload: payload
+                                }).catch(function(){});
+                            } else if (window.__TAURI_INTERNALS__) {
+                                window.__TAURI_INTERNALS__.invoke('forward_shadow_event', {
+                                    event: 'shadow-send-verify', payload: payload
+                                }).catch(function(){});
+                            }
+                        })();
+                    "#;
+                    self.eval_js(verify_check).await.ok();
+                    let verify_result = tokio::select! {
+                        r = verify_rx.recv() => r,
+                        _ = tokio::time::sleep(Duration::from_secs(2)) => None,
+                    };
+                    self.app.unlisten(unlisten_v);
+
+                    if let Some(raw) = verify_result {
+                        let payload_str = if raw.starts_with('"') {
+                            serde_json::from_str::<String>(&raw).unwrap_or(raw)
+                        } else { raw };
+                        eprintln!("[ShadowAgent:{}] Send verify: {}", sid, payload_str);
+                    }
+                }
+
                 if failed {
-                    eprintln!("[ShadowAgent:{}] FATAL: Send failed (button not found)", sid);
+                    eprintln!("[ShadowAgent:{}] FATAL: Send failed (button not found or message not sent)", sid);
                     let _ = tx.send(ShadowEvent::Error {
-                        message: "发送失败：未找到发送按钮，请检查 NotebookLM 页面状态".into()
+                        message: "发送失败：消息未成功发送，请检查 NotebookLM 页面状态".into()
                     }).await;
                     return;
                 }
                 eprintln!("[ShadowAgent:{}] Send check passed", sid);
             }
 
-            // relay 脚本
-            let relay_script = r#"
-                (function() {
-                    try {
-                        var r = window.__SHADOW_LATEST_RESULT;
-                        var h = window.__SHADOW_HEARTBEAT || 0;
-                        var active = !!window.__SHADOW_SESSION_ACTIVE;
-                        var payload;
-                        if (r) {
-                            payload = r;
-                            window.__SHADOW_LATEST_RESULT = null;
-                        } else {
-                            payload = JSON.stringify({ heartbeatOnly: true, heartbeat: h, active: active });
-                        }
-                        if (window.__TAURI__ && window.__TAURI__.core) {
-                            window.__TAURI__.core.invoke('forward_shadow_event', {
-                                event: 'shadow-result', payload: payload
-                            }).catch(function() {});
-                        } else if (window.__TAURI_INTERNALS__) {
-                            window.__TAURI_INTERNALS__.invoke('forward_shadow_event', {
-                                event: 'shadow-result', payload: payload
-                            }).catch(function() {});
-                        }
-                    } catch(e) {}
-                })();
-            "#;
+            // 直接轮询脚本：每次注入 → 直接读 DOM → IPC 回传（不依赖 setInterval observer）
+            // 诊断计数器（前 10 轮附加 DOM 结构信息，之后精简）
+            let poll_script = format!(r#"
+                (function() {{
+                    try {{
+                        var SEL = {selectors};
+                        window.__SHADOW_POLL_COUNT = (window.__SHADOW_POLL_COUNT || 0) + 1;
+                        var pollNum = window.__SHADOW_POLL_COUNT;
 
-            // FIX: 使用持久监听器（注册一次，循环内读取），避免循环内 listen/unlisten 的竞态
-            let (result_tx, mut result_rx) = mpsc::channel::<String>(16);
-            let persistent_unlisten = {
-                let result_tx = result_tx.clone();
-                self.app.listen("shadow-result", move |event| {
-                    let _ = result_tx.try_send(event.payload().to_string());
-                })
-            };
-            drop(result_tx); // 关掉多余的 sender，保留监听器内的那个
+                        // 主选择器 + ALT 选择器 fallback
+                        var pairs = document.querySelectorAll(SEL.CHAT_PAIR);
+                        var altPairs = SEL.CHAT_PAIR_ALT ? document.querySelectorAll(SEL.CHAT_PAIR_ALT) : [];
+                        var pairCount = pairs.length;
+                        var altCount = altPairs.length;
+                        var result;
+
+                        if (pairCount === 0 && altCount === 0) {{
+                            // 诊断：页面上到底有什么
+                            var diag = '';
+                            if (pollNum <= 5) {{
+                                var logEl = document.querySelector('[role="log"]');
+                                diag = logEl ? ('logChildren=' + logEl.children.length) : 'noLogRole';
+                                var allMsgEls = document.querySelectorAll('.message-text-content, .model-response-text, .response-container');
+                                diag += ',msgEls=' + allMsgEls.length;
+                            }}
+                            result = JSON.stringify({{ heartbeatOnly: true, pairCount: 0, altCount: altCount, diag: diag }});
+                        }} else {{
+                            // 优先使用主选择器，fallback 到 ALT
+                            var usedPairs = pairCount > 0 ? pairs : altPairs;
+                            var usedCount = pairCount > 0 ? pairCount : altCount;
+                            var lastPair = usedPairs[usedCount - 1];
+                            var selectorUsed = 'pair';
+
+                            var botMsgEl = lastPair.querySelector(SEL.BOT_REPLY);
+                            if (!botMsgEl) {{ botMsgEl = lastPair.querySelector(SEL.BOT_REPLY_FALLBACK_1); selectorUsed = 'fb1'; }}
+                            if (!botMsgEl) {{ botMsgEl = lastPair.querySelector(SEL.BOT_REPLY_FALLBACK_2); selectorUsed = 'fb2'; }}
+
+                            var text;
+                            if (botMsgEl) {{
+                                text = (botMsgEl.innerText || botMsgEl.textContent || '').trim();
+                            }} else {{
+                                text = (lastPair.innerText || lastPair.textContent || '').trim();
+                                selectorUsed = 'fullPair';
+                            }}
+
+                            var inp = document.querySelector(SEL.INPUT);
+                            var botIdle = inp && !inp.disabled;
+                            var hasCopyBtn = !!lastPair.querySelector(SEL.COPY_BUTTON);
+
+                            var open = 0, close = 0;
+                            for (var i = 0; i < text.length; i++) {{
+                                if (text[i] === '[') open++;
+                                if (text[i] === ']') close++;
+                            }}
+                            var balanced = open > 0 && open === close;
+                            var isFinished = hasCopyBtn || (balanced && botIdle);
+
+                            var res = {{
+                                text: text,
+                                finished: isFinished,
+                                valid: balanced,
+                                botIdle: !!botIdle,
+                                hasCopyBtn: hasCopyBtn,
+                                pairCount: pairCount,
+                                altCount: altCount,
+                                sel: selectorUsed
+                            }};
+
+                            // 前 10 轮附加诊断 HTML 片段
+                            if (pollNum <= 10) {{
+                                var pairHtml = lastPair.outerHTML || '';
+                                res.htmlSnippet = pairHtml.substring(0, 500);
+                                res.inputDisabled = inp ? inp.disabled : null;
+                                res.inputExists = !!inp;
+                                // 检查是否有 loading/thinking 指示器
+                                var loadingEl = document.querySelector('.loading-indicator, .thinking-indicator, [class*="loading"], [class*="thinking"]');
+                                res.hasLoading = !!loadingEl;
+                                if (loadingEl) res.loadingText = (loadingEl.innerText || '').substring(0, 100);
+                            }}
+
+                            result = JSON.stringify(res);
+                        }}
+
+                        if (window.__TAURI__ && window.__TAURI__.core) {{
+                            window.__TAURI__.core.invoke('forward_shadow_event', {{
+                                event: 'shadow-poll', payload: result
+                            }}).catch(function(){{}});
+                        }} else if (window.__TAURI_INTERNALS__) {{
+                            window.__TAURI_INTERNALS__.invoke('forward_shadow_event', {{
+                                event: 'shadow-poll', payload: result
+                            }}).catch(function(){{}});
+                        }}
+                    }} catch(e) {{
+                        var errPayload = JSON.stringify({{ error: e.message || String(e) }});
+                        if (window.__TAURI__ && window.__TAURI__.core) {{
+                            window.__TAURI__.core.invoke('forward_shadow_event', {{
+                                event: 'shadow-poll', payload: errPayload
+                            }}).catch(function(){{}});
+                        }} else if (window.__TAURI_INTERNALS__) {{
+                            window.__TAURI_INTERNALS__.invoke('forward_shadow_event', {{
+                                event: 'shadow-poll', payload: errPayload
+                            }}).catch(function(){{}});
+                        }}
+                    }}
+                }})();
+            "#, selectors = selectors_json);
 
             let mut last_yielded_text = String::new();
             let mut text_change_count: u64 = 0;
             let mut idle_count: u64 = 0;
             let mut finished_seen_at: Option<std::time::Instant> = None;
-            let mut relay_fail_count: u32 = 0;
+            let mut poll_fail_count: u32 = 0;
+            let mut bot_responded = false; // 在 Rust 端跟踪（替代页面内 __SHADOW_BOT_RESPONDED）
 
-            eprintln!("[ShadowAgent:{}] Starting relay loop...", sid);
+            eprintln!("[ShadowAgent:{}] Starting direct-poll loop...", sid);
 
             while idle_count < max_total_cycles {
-                // 注入 relay 脚本
-                if let Err(e) = self.eval_js(relay_script).await {
-                    relay_fail_count += 1;
-                    eprintln!("[ShadowAgent:{}] Relay injection failed ({}/10): {}", sid, relay_fail_count, e);
-                    if relay_fail_count > 10 {
-                        eprintln!("[ShadowAgent:{}] FATAL: Too many relay failures, aborting", sid);
+                // 1. 注册一次性监听器
+                let (result_tx, mut result_rx) = mpsc::channel::<String>(4);
+                let unlisten = {
+                    let result_tx = result_tx.clone();
+                    self.app.listen("shadow-poll", move |event| {
+                        let _ = result_tx.try_send(event.payload().to_string());
+                    })
+                };
+                drop(result_tx);
+
+                // 2. 注入直接轮询脚本
+                if let Err(e) = self.eval_js(&poll_script).await {
+                    poll_fail_count += 1;
+                    eprintln!("[ShadowAgent:{}] Poll injection failed ({}/10): {}", sid, poll_fail_count, e);
+                    self.app.unlisten(unlisten);
+                    if poll_fail_count > 10 {
+                        eprintln!("[ShadowAgent:{}] FATAL: Too many poll failures, aborting", sid);
                         let _ = tx.send(ShadowEvent::Error {
-                            message: "Too many relay failures, aborting".into()
+                            message: "Too many poll injection failures, aborting".into()
                         }).await;
                         break;
                     }
+                    tokio::time::sleep(Duration::from_millis(relay_interval)).await;
+                    continue;
                 } else {
-                    relay_fail_count = 0;
+                    poll_fail_count = 0;
                 }
 
-                // 等待事件到达
-                tokio::time::sleep(Duration::from_millis(relay_interval)).await;
+                // 3. 等待 IPC 回传（与 wait_for_ack 一致的超时模式）
+                let poll_result = tokio::select! {
+                    r = result_rx.recv() => r,
+                    _ = tokio::time::sleep(Duration::from_millis(relay_interval.max(1000))) => None,
+                };
 
-                // 从持久监听器的 channel 中排空所有已到达的事件（取最新的一个）
-                let mut latest_raw: Option<String> = None;
-                while let Ok(raw) = result_rx.try_recv() {
-                    latest_raw = Some(raw);
-                }
+                self.app.unlisten(unlisten);
 
-                if let Some(raw) = latest_raw {
-                    // payload 可能是双重 JSON 转义
+                // 4. 处理结果
+                if let Some(raw) = poll_result {
                     let payload_str = if raw.starts_with('"') {
                         serde_json::from_str::<String>(&raw).unwrap_or(raw)
                     } else {
@@ -896,25 +992,48 @@ pub mod engine {
                     if let Ok(parsed) = serde_json::from_str::<serde_json::Value>(&payload_str) {
                         if parsed.get("heartbeatOnly").and_then(|v| v.as_bool()).unwrap_or(false) {
                             idle_count += 1;
-                            if idle_count % 20 == 0 {
-                                let hb = parsed.get("heartbeat").and_then(|v| v.as_u64()).unwrap_or(0);
-                                eprintln!("[ShadowAgent:{}] Heartbeat: h={}, idle={}, active={}",
-                                    sid, hb, idle_count, parsed.get("active").and_then(|v| v.as_bool()).unwrap_or(false));
+                            let diag = parsed.get("diag").and_then(|v| v.as_str()).unwrap_or("");
+                            let alt_count = parsed.get("altCount").and_then(|v| v.as_u64()).unwrap_or(0);
+                            if idle_count <= 5 || idle_count % 20 == 0 {
+                                eprintln!("[ShadowAgent:{}] Poll heartbeat: idle={}, pairCount=0, altCount={}, diag={}",
+                                    sid, idle_count, alt_count, diag);
                             }
-                            // FIX: 不再 continue，让底部的超时检查始终执行
                         } else if parsed.get("error").is_some() {
                             let err_msg = parsed.get("error").and_then(|v| v.as_str()).unwrap_or("unknown");
-                            eprintln!("[ShadowAgent:{}] Observer error: {}", sid, err_msg);
+                            eprintln!("[ShadowAgent:{}] Poll error: {}", sid, err_msg);
                             idle_count += 1;
                         } else {
                             let text = parsed.get("text").and_then(|v| v.as_str()).unwrap_or("").to_string();
-                            let finished = parsed.get("finished").and_then(|v| v.as_bool()).unwrap_or(false);
+                            let bot_idle = parsed.get("botIdle").and_then(|v| v.as_bool()).unwrap_or(false);
+                            let has_copy_btn = parsed.get("hasCopyBtn").and_then(|v| v.as_bool()).unwrap_or(false);
+                            let balanced = parsed.get("valid").and_then(|v| v.as_bool()).unwrap_or(false);
+                            let sel_used = parsed.get("sel").and_then(|v| v.as_str()).unwrap_or("?");
+                            let alt_count = parsed.get("altCount").and_then(|v| v.as_u64()).unwrap_or(0);
+
+                            // 前 10 轮输出诊断 HTML
+                            if let Some(html) = parsed.get("htmlSnippet").and_then(|v| v.as_str()) {
+                                let has_loading = parsed.get("hasLoading").and_then(|v| v.as_bool()).unwrap_or(false);
+                                let loading_text = parsed.get("loadingText").and_then(|v| v.as_str()).unwrap_or("");
+                                let input_exists = parsed.get("inputExists").and_then(|v| v.as_bool()).unwrap_or(false);
+                                let input_disabled = parsed.get("inputDisabled").and_then(|v| v.as_bool());
+                                eprintln!("[ShadowAgent:{}] DIAG: sel={}, altCount={}, inputExists={}, inputDisabled={:?}, hasLoading={}, loadingText=\"{}\"",
+                                    sid, sel_used, alt_count, input_exists, input_disabled, has_loading, loading_text);
+                                eprintln!("[ShadowAgent:{}] DIAG HTML: {}", sid,
+                                    if html.len() > 300 { format!("{}...", &html[..300]) } else { html.to_string() });
+                            }
+
+                            // 在 Rust 端跟踪 bot_responded（当 botIdle=false 说明 bot 正在响应）
+                            if !bot_idle && !text.is_empty() {
+                                bot_responded = true;
+                            }
+
+                            let finished = bot_responded && (has_copy_btn || (balanced && bot_idle));
 
                             if !text.is_empty() && text != last_yielded_text {
                                 text_change_count += 1;
                                 let text_preview = if text.len() > 80 { format!("{}...", &text[..80]) } else { text.clone() };
-                                eprintln!("[ShadowAgent:{}] Text changed #{}: len={}, finished={}, preview=\"{}\"",
-                                    sid, text_change_count, text.len(), finished, text_preview);
+                                eprintln!("[ShadowAgent:{}] Text #{}: len={}, finished={}, botIdle={}, copyBtn={}, sel={}, alt={}, preview=\"{}\"",
+                                    sid, text_change_count, text.len(), finished, bot_idle, has_copy_btn, sel_used, alt_count, text_preview);
                                 last_yielded_text = text.clone();
                                 idle_count = 0;
                                 finished_seen_at = None;
@@ -930,19 +1049,22 @@ pub mod engine {
                                 }
                             } else if finished && !last_yielded_text.is_empty() && finished_seen_at.is_none() && text_change_count >= 2 {
                                 finished_seen_at = Some(std::time::Instant::now());
-                                eprintln!("[ShadowAgent:{}] Finished signal received, starting {}ms confirmation...",
+                                eprintln!("[ShadowAgent:{}] Finished signal, starting {}ms confirmation...",
                                     sid, finished_confirm_ms);
                             } else {
                                 idle_count += 1;
                             }
                         }
                     } else {
-                        eprintln!("[ShadowAgent:{}] Failed to parse relay payload: {}", sid,
+                        eprintln!("[ShadowAgent:{}] Failed to parse poll payload: {}", sid,
                             if payload_str.len() > 100 { format!("{}...", &payload_str[..100]) } else { payload_str });
                         idle_count += 1;
                     }
                 } else {
                     idle_count += 1;
+                    if idle_count % 10 == 0 {
+                        eprintln!("[ShadowAgent:{}] Poll timeout (no IPC response), idle={}", sid, idle_count);
+                    }
                 }
 
                 // 确认超时
@@ -966,8 +1088,6 @@ pub mod engine {
                 }
 
                 // 沉默超时
-                // 区分"思考状态文本"（短、NotebookLM loading 提示）和"实际回复文本"（>100字符）
-                // 短文本（思考中）沉默超时后继续等待，长文本沉默超时则认定完成
                 let is_substantial = last_yielded_text.len() > 100;
                 if !last_yielded_text.is_empty() && idle_count > silence_cycles {
                     if is_substantial {
@@ -976,8 +1096,7 @@ pub mod engine {
                         let _ = tx.send(ShadowEvent::Complete { text: last_yielded_text.clone() }).await;
                         break;
                     } else if idle_count > silence_cycles * 3 {
-                        // 短文本等待 3 倍沉默超时（90s）仍无变化，视为无有效回复
-                        eprintln!("[ShadowAgent:{}] ERROR: Only received thinking text after extended wait ({}ms): len={}, text=\"{}\"",
+                        eprintln!("[ShadowAgent:{}] ERROR: Only thinking text after {}ms: len={}, text=\"{}\"",
                             sid, silence_timeout * 3, last_yielded_text.len(), last_yielded_text);
                         let _ = tx.send(ShadowEvent::Error {
                             message: format!("NotebookLM 仅输出思考状态文本，未生成有效回复（等待 {}ms）", silence_timeout * 3),
@@ -987,10 +1106,7 @@ pub mod engine {
                 }
             }
 
-            // 清理
-            self.app.unlisten(persistent_unlisten);
-            self.eval_js("if(window.__SHADOW_POLL_INTERVAL){clearInterval(window.__SHADOW_POLL_INTERVAL);window.__SHADOW_POLL_INTERVAL=null;}").await.ok();
-            eprintln!("[ShadowAgent:{}] Relay loop ended, observer cleaned up", sid);
+            eprintln!("[ShadowAgent:{}] Poll loop ended", sid);
         }
     }
 }

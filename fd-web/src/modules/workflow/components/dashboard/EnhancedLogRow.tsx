@@ -1,0 +1,130 @@
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { ChevronDown, ChevronRight } from 'lucide-react';
+import type { AgentExecutionLog } from '../../../../shared/types/server';
+
+interface EnhancedLogRowProps {
+  log: AgentExecutionLog;
+  isExpanded: boolean;
+  onToggle: () => void;
+}
+
+function tryFormatJson(str: string | null | undefined): string {
+  if (!str) return '';
+  try {
+    const parsed = JSON.parse(str);
+    return JSON.stringify(parsed, null, 2);
+  } catch {
+    return str;
+  }
+}
+
+function formatTime(iso: string): string {
+  try {
+    const d = new Date(iso);
+    return d.toLocaleString();
+  } catch {
+    return iso;
+  }
+}
+
+function formatDuration(ms: number | null | undefined): string {
+  if (ms == null) return '-';
+  if (ms < 1000) return `${ms}ms`;
+  if (ms < 60000) return `${(ms / 1000).toFixed(1)}s`;
+  return `${(ms / 60000).toFixed(1)}min`;
+}
+
+const statusConfig: Record<string, { dot: string; badge: string; label: string }> = {
+  SUCCESS: { dot: 'bg-emerald-400', badge: 'bg-emerald-500/20 text-emerald-400', label: 'SUCCESS' },
+  FAILED: { dot: 'bg-red-400', badge: 'bg-red-500/20 text-red-400', label: 'FAILED' },
+  RUNNING: { dot: 'bg-blue-400 animate-pulse', badge: 'bg-blue-500/20 text-blue-400', label: 'RUNNING' },
+  TIMEOUT: { dot: 'bg-amber-400', badge: 'bg-amber-500/20 text-amber-400', label: 'TIMEOUT' },
+  CANCELLED: { dot: 'bg-slate-400', badge: 'bg-slate-500/20 text-slate-400', label: 'CANCELLED' },
+};
+
+const EnhancedLogRow: React.FC<EnhancedLogRowProps> = ({ log, isExpanded, onToggle }) => {
+  const { t } = useTranslation('common');
+  const config = statusConfig[log.status] || statusConfig.CANCELLED;
+
+  return (
+    <div className="border-b border-slate-700/30">
+      {/* Collapsed row */}
+      <div
+        onClick={onToggle}
+        className="flex items-center gap-3 px-4 py-2.5 cursor-pointer hover:bg-slate-700/20 transition-colors"
+      >
+        <div className={`w-2 h-2 rounded-full flex-shrink-0 ${config.dot}`} />
+        <span className="text-xs font-medium text-white min-w-[120px] truncate">{log.agentCode}</span>
+        <span className="text-xs text-slate-500 min-w-[140px]">{formatTime(log.createdAt)}</span>
+        <span className="text-xs text-slate-400 min-w-[60px]">{formatDuration(log.durationMs)}</span>
+        <span className={`text-xs px-2 py-0.5 rounded-full ${config.badge}`}>{config.label}</span>
+        <div className="flex-1" />
+        <button className="text-slate-400 hover:text-white transition-colors p-0.5">
+          {isExpanded ? (
+            <ChevronDown className="w-4 h-4" />
+          ) : (
+            <ChevronRight className="w-4 h-4" />
+          )}
+        </button>
+      </div>
+
+      {/* Expanded detail */}
+      {isExpanded && (
+        <div className="px-4 pb-4 bg-slate-800/30">
+          {/* Info grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mb-3 pt-2">
+            <InfoItem label={t('aiDashboard.executionLog.agent')} value={log.agentCode} />
+            <InfoItem label={t('aiDashboard.executionLog.status')} value={log.status} />
+            <InfoItem label={t('aiDashboard.executionLog.time')} value={formatTime(log.createdAt)} />
+            <InfoItem label={t('aiDashboard.executionLog.duration')} value={formatDuration(log.durationMs)} />
+            <InfoItem label={t('aiDashboard.executionLog.tokens')} value={log.tokenCount != null ? String(log.tokenCount) : '-'} />
+            <InfoItem
+              label={`${t('aiDashboard.executionLog.referenceType')} / ${t('aiDashboard.executionLog.referenceId')}`}
+              value={log.referenceType ? `${log.referenceType} #${log.referenceId ?? '-'}` : '-'}
+            />
+          </div>
+
+          {/* Input section */}
+          {log.inputSnapshot && (
+            <div className="mb-3">
+              <div className="text-xs text-slate-400 mb-1">{t('aiDashboard.executionLog.input')}</div>
+              <pre className="bg-slate-900/50 rounded-lg p-3 text-xs font-mono text-slate-300 max-h-[500px] overflow-y-auto whitespace-pre-wrap break-all">
+                {tryFormatJson(log.inputSnapshot)}
+              </pre>
+            </div>
+          )}
+
+          {/* Output section */}
+          {log.outputSnapshot && (
+            <div className="mb-3">
+              <div className="text-xs text-slate-400 mb-1">{t('aiDashboard.executionLog.output')}</div>
+              <pre className="bg-slate-900/50 rounded-lg p-3 text-xs font-mono text-slate-300 max-h-[500px] overflow-y-auto whitespace-pre-wrap break-all">
+                {tryFormatJson(log.outputSnapshot)}
+              </pre>
+            </div>
+          )}
+
+          {/* Error section */}
+          {log.errorMessage && (
+            <div>
+              <div className="text-xs text-red-400 mb-1">{t('aiDashboard.executionLog.errorMsg')}</div>
+              <pre className="bg-red-900/20 border border-red-800/30 rounded-lg p-3 text-xs font-mono text-red-300 max-h-[500px] overflow-y-auto whitespace-pre-wrap break-all">
+                {log.errorMessage}
+              </pre>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+};
+
+const InfoItem: React.FC<{ label: string; value: string }> = ({ label, value }) => (
+  <div>
+    <div className="text-xs text-slate-500">{label}</div>
+    <div className="text-xs text-slate-300 truncate">{value}</div>
+  </div>
+);
+
+export default EnhancedLogRow;

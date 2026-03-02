@@ -1,8 +1,8 @@
 import {
-  Server, Send,
+  Server, Send, ClipboardCheck,
   Users, Shield, RefreshCw, FileText, Database, BookOpen,
   LayoutDashboard, ListChecks, History, Settings, User, Bot,
-  Building2, GitBranch, BookMarked, Workflow,
+  Building2, GitBranch, Boxes, Cpu, Activity, Sparkles,
   type LucideIcon,
 } from 'lucide-react';
 import type { TabType } from '../types/navigation';
@@ -41,11 +41,21 @@ export const navigationModules: NavModule[] = [
     color: 'indigo',
     pages: [
       { tab: 'server-tickets', labelKey: 'nav.server', icon: Server },
-      { tab: 'automation', labelKey: 'nav.automation', icon: Workflow, badgeKey: 'translation' },
       { tab: 'agent-automation', labelKey: 'nav.agentAutomation', icon: Bot },
+      { tab: 'audit-center', labelKey: 'nav.auditCenter', icon: ClipboardCheck },
       { tab: 'approved', labelKey: 'nav.push', icon: Send },
-      { tab: 'knowledge', labelKey: 'nav.knowledge', icon: BookOpen },
+      { tab: 'knowledge', labelKey: 'nav.knowledgeManage', icon: BookOpen },
       { tab: 'manual-sync', labelKey: 'nav.sync', icon: RefreshCw, requireAdmin: true },
+    ],
+  },
+  {
+    id: 'knowledge',
+    labelKey: 'module.knowledge',
+    descKey: 'moduleDesc.knowledge',
+    icon: BookOpen,
+    color: 'amber',
+    pages: [
+      { tab: 'notebooklm', labelKey: 'nav.notebookLm', icon: Database },
     ],
   },
   {
@@ -75,6 +85,7 @@ export const navigationModules: NavModule[] = [
       { tab: 'task-dashboard', labelKey: 'nav.taskDashboard', icon: LayoutDashboard },
       { tab: 'task-definitions', labelKey: 'nav.taskDefinitions', icon: ListChecks },
       { tab: 'task-history', labelKey: 'nav.taskHistory', icon: History },
+      { tab: 'agent-execution', labelKey: 'nav.agentExecution', icon: Activity },
     ],
   },
   {
@@ -85,9 +96,11 @@ export const navigationModules: NavModule[] = [
     color: 'purple',
     requireAdmin: true,
     pages: [
-      { tab: 'workflow-list', labelKey: 'nav.workflowList', icon: GitBranch },
+      { tab: 'ai-dashboard', labelKey: 'nav.aiDashboard', icon: Activity },
+      { tab: 'workflow-capabilities', labelKey: 'nav.workflowCapabilities', icon: Cpu },
       { tab: 'workflow-agents', labelKey: 'nav.workflowAgents', icon: Bot },
-      { tab: 'workflow-guide', labelKey: 'nav.workflowGuide', icon: BookMarked },
+      { tab: 'workflow-ai', labelKey: 'nav.workflowAi', icon: Sparkles },
+      { tab: 'workflow-n8n', labelKey: 'nav.workflowN8n', icon: Boxes },
     ],
   },
 ];

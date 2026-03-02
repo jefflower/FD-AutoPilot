@@ -31,8 +31,7 @@ public class TicketAudit {
     @Column(name = "audit_result", length = 16)
     private AuditResult auditResult;
 
-    @Lob
-    @Column(name = "audit_remark")
+    @Column(name = "audit_remark", columnDefinition = "TEXT")
     private String auditRemark;
 
     @Column(name = "auditor_id")

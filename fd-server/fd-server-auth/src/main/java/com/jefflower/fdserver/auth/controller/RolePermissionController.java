@@ -1,5 +1,7 @@
 package com.jefflower.fdserver.auth.controller;
 
+import com.jefflower.fdserver.auth.dto.PermissionCreateRequest;
+import com.jefflower.fdserver.auth.dto.PermissionUpdateRequest;
 import com.jefflower.fdserver.auth.entity.SysModule;
 import com.jefflower.fdserver.auth.entity.SysPermission;
 import com.jefflower.fdserver.auth.entity.SysRole;
@@ -98,5 +100,44 @@ public class RolePermissionController {
     @RequiresPermission("role:read")
     public ResponseEntity<ApiResponse<Map<String, Object>>> getPermissionOverview() {
         return ResponseEntity.ok(ApiResponse.ok(rolePermissionService.getPermissionOverview()));
+    }
+
+    @Operation(summary = "创建自定义权限", description = "新增自定义权限 (builtIn=false)，内置权限在初始化时自动创建")
+    @PostMapping("/permissions")
+    @RequiresPermission("role:manage")
+    public ResponseEntity<ApiResponse<SysPermission>> createPermission(
+            @RequestBody PermissionCreateRequest request) {
+        SysPermission permission = rolePermissionService.createPermission(
+                request.getCode(),
+                request.getName(),
+                request.getModule(),
+                request.getDescription(),
+                request.getType()
+        );
+        return ResponseEntity.ok(ApiResponse.ok("权限创建成功", permission));
+    }
+
+    @Operation(summary = "编辑权限", description = "编辑权限信息。内置权限只能修改 name 和 description；非内置权限可修改所有字段")
+    @PutMapping("/permissions/{id}")
+    @RequiresPermission("role:manage")
+    public ResponseEntity<ApiResponse<SysPermission>> updatePermission(
+            @Parameter(description = "权限 ID") @PathVariable Long id,
+            @RequestBody PermissionUpdateRequest request) {
+        SysPermission permission = rolePermissionService.updatePermission(
+                id,
+                request.getName(),
+                request.getDescription(),
+                request.getType()
+        );
+        return ResponseEntity.ok(ApiResponse.ok("权限更新成功", permission));
+    }
+
+    @Operation(summary = "删除权限", description = "删除自定义权限 (仅非 builtIn 权限)，内置权限不可删除")
+    @DeleteMapping("/permissions/{id}")
+    @RequiresPermission("role:manage")
+    public ResponseEntity<ApiResponse<Void>> deletePermission(
+            @Parameter(description = "权限 ID") @PathVariable Long id) {
+        rolePermissionService.deletePermission(id);
+        return ResponseEntity.ok(ApiResponse.ok("权限删除成功", null));
     }
 }

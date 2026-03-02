@@ -14,10 +14,10 @@
 	<description>Ticket business logic, Freshdesk integration</description>
 
 	<dependencies>
-		<!-- Internal: workflow (transitively provides ai + task + auth + common + jpa + security + web) -->
+		<!-- Internal: ai (transitively provides task + auth + common + jpa + security + web) -->
 		<dependency>
 			<groupId>com.jefflower</groupId>
-			<artifactId>fd-server-workflow</artifactId>
+			<artifactId>fd-server-ai</artifactId>
 		</dependency>
 
 	</dependencies>

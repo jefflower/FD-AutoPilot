@@ -29,6 +29,12 @@ public class SysPermission {
     @Column(length = 256)
     private String description;
 
+    @Column(length = 32)
+    private String type;
+
+    @Column(columnDefinition = "boolean default false")
+    private Boolean builtIn = false;
+
     @Column(name = "created_at")
     private LocalDateTime createdAt = LocalDateTime.now();
 
@@ -37,5 +43,15 @@ public class SysPermission {
         this.name = name;
         this.module = module;
         this.createdAt = LocalDateTime.now();
+        this.builtIn = false;
+    }
+
+    public SysPermission(String code, String name, String module, String type) {
+        this.code = code;
+        this.name = name;
+        this.module = module;
+        this.type = type;
+        this.createdAt = LocalDateTime.now();
+        this.builtIn = false;
     }
 }

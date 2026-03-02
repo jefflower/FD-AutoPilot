@@ -82,13 +82,38 @@ public class TaskDistributionService {
     }
 
     /**
-     * 领取任务
-     * - 优先返回此客户端已 CLAIMED 的任务
-     * - 检查 maxConcurrency 限制
-     * - 查询 PENDING 任务并原子分配
+     * 创建任务（带路由目标参数重载）
+     */
+    @Transactional
+    public TaskInstance createTask(String taskType, String referenceType, String referenceId,
+                                   String payload, TriggerType triggerType,
+                                   String targetClientId, String targetUserId) {
+        TaskInstance instance = createTask(taskType, referenceType, referenceId, payload, triggerType);
+        if (targetClientId != null || targetUserId != null) {
+            instance.setTargetClientId(targetClientId);
+            instance.setTargetUserId(targetUserId);
+            taskInstanceRepository.save(instance);
+        }
+        return instance;
+    }
+
+    /**
+     * 领取任务（兼容旧签名）
      */
     @Transactional
     public List<TaskInstance> claimTasks(String taskType, String clientId, int limit) {
+        return claimTasks(taskType, clientId, null, limit);
+    }
+
+    /**
+     * 领取任务（带 userId 路由过滤）
+     * - 优先返回此客户端已 CLAIMED 的任务
+     * - 检查 maxConcurrency 限制
+     * - 查询 PENDING 任务并原子分配
+     * - 路由过滤：targetClientId 为 null 或等于当前 clientId；targetUserId 为 null 或等于当前 userId
+     */
+    @Transactional
+    public List<TaskInstance> claimTasks(String taskType, String clientId, String userId, int limit) {
         // 1. 先返回此客户端已领取的任务
         List<TaskInstance> alreadyClaimed = taskInstanceRepository
                 .findByAssignedToAndStatusIn(clientId, List.of(TaskStatus.CLAIMED));
@@ -116,31 +141,27 @@ public class TaskDistributionService {
             limit = Math.min(limit, def.getMaxConcurrency() - (int) currentClaimed);
         }
 
-        // 3. 查询 PENDING 任务并分配（多取一些以应对去重过滤）
+        // 3. 查询 PENDING 任务并分配
         List<TaskInstance> pendingTasks = taskInstanceRepository
                 .findPendingTasks(taskType, TaskStatus.PENDING, PageRequest.of(0, limit * 3));
         if (pendingTasks.isEmpty()) {
             return Collections.emptyList();
         }
 
-        // 4. 过滤掉 referenceId 已有最近完成任务的 PENDING 任务（防止重复处理已完成的工单）
-        LocalDateTime deduplicateCutoff = LocalDateTime.now().minusMinutes(30);
+        // 4. 按路由规则过滤（targetClientId / targetUserId）
         List<TaskInstance> filteredTasks = new ArrayList<>();
         for (TaskInstance task : pendingTasks) {
             if (filteredTasks.size() >= limit) break;
-            if (task.getReferenceId() != null) {
-                Optional<TaskInstance> recentlyCompleted = taskInstanceRepository
-                        .findRecentlyCompletedTask(taskType, task.getReferenceId(), TaskStatus.COMPLETED, deduplicateCutoff);
-                if (recentlyCompleted.isPresent()) {
-                    // 自动取消此重复 PENDING 任务
-                    task.setStatus(TaskStatus.CANCELLED);
-                    task.setCompletedAt(LocalDateTime.now());
-                    taskInstanceRepository.save(task);
-                    log.debug("Auto-cancelled duplicate PENDING task {} (type={}, refId={}) — already completed recently",
-                            task.getId(), taskType, task.getReferenceId());
-                    continue;
-                }
+
+            // 路由过滤：targetClientId 为 null 或等于当前 clientId
+            if (task.getTargetClientId() != null && !task.getTargetClientId().equals(clientId)) {
+                continue;
             }
+            // 路由过滤：targetUserId 为 null 或等于当前 userId（如果 userId 不为 null）
+            if (task.getTargetUserId() != null && userId != null && !task.getTargetUserId().equals(userId)) {
+                continue;
+            }
+
             filteredTasks.add(task);
         }
         if (filteredTasks.isEmpty()) {
@@ -185,7 +206,8 @@ public class TaskDistributionService {
         }
 
         // CLAIMED 状态：正常流程，验证 ownership
-        if (task.getStatus() == TaskStatus.CLAIMED && !clientId.equals(task.getAssignedTo())) {
+        // clientId 为 null 时（如 SyncBridge 超时强制取消），跳过 ownership 检查
+        if (task.getStatus() == TaskStatus.CLAIMED && clientId != null && !clientId.equals(task.getAssignedTo())) {
             throw new BusinessException(ErrorCode.TASK_NOT_OWNED, "Task " + taskId + " is not assigned to client " + clientId);
         }
 

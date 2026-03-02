@@ -44,6 +44,10 @@
     "mqTransTooltip": "触发服务端 MQ 翻译",
     "mqReplyTooltip": "触发服务端 MQ 回复",
     "splitBtn": "分栏",
+    "reprocessBtn": "重新处理",
+    "reprocessConfirmTitle": "确认重新处理",
+    "reprocessConfirmDesc": "工单将重置为「待翻译」状态，重新进入自动化流程（翻译→回复→审核）。已有的翻译和回复不会被删除。",
+    "reprocessFailed": "重新处理失败: {{error}}",
     "geminiPreview": "Gemini 预览"
   },
   "translation": {
@@ -119,13 +123,13 @@
     "translateConfirmTitle": "MQ 翻译确认",
     "translateConfirmMessage": "确定要发送 MQ 翻译请求吗？这会重新入队处理。",
     "translateSentTitle": "已入队",
-    "translateSentMessage": "MQ 翻译任务已发送，请在\"翻译任务\"标签页中查看进度。",
+    "translateSentMessage": "MQ 翻译任务已发送，请在 \"Agent 面板\" 中查看进度。",
     "translateErrorTitle": "错误",
     "translateErrorMessage": "MQ 翻译触发失败: {{error}}",
     "replyConfirmTitle": "MQ 回复确认",
     "replyConfirmMessage": "确定要发送 MQ 回复生成请求吗？这会重新入队处理。",
     "replySentTitle": "已入队",
-    "replySentMessage": "MQ 回复任务已发送，请在\"回复任务\"标签页中查看进度。",
+    "replySentMessage": "MQ 回复任务已发送，请在 \"Agent 面板\" 中查看进度。",
     "replyErrorTitle": "错误",
     "replyErrorMessage": "MQ 回复触发失败: {{error}}"
   },
@@ -155,6 +159,13 @@
     "testSuccess": "测试消息发送成功",
     "testFailed": "测试消息发送失败",
     "testError": "测试失败: {{error}}",
-    "loadFailed": "加载通知配置失败"
+    "loadFailed": "加载通知配置失败",
+    "language": "通知语言",
+    "languageHint": "设置审核通知消息的语言"
+  },
+  "timeline": {
+    "title": "状态时间线",
+    "showAll": "展开全部 ({{count}} 条)",
+    "collapse": "收起"
   }
 }

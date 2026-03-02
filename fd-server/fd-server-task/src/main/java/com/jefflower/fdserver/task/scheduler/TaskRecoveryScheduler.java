@@ -23,6 +23,9 @@ public class TaskRecoveryScheduler {
     /** FAILED 任务冷却时间（秒）：防止快速失败循环 */
     private static final int FAILED_COOLDOWN_SECONDS = 60;
 
+    /** 已完成任务保留天数 */
+    private static final int TASK_RETENTION_DAYS = 30;
+
     private final TaskDefinitionRepository taskDefinitionRepository;
     private final TaskInstanceRepository taskInstanceRepository;
 
@@ -95,5 +98,21 @@ public class TaskRecoveryScheduler {
         taskInstanceRepository.save(task);
         log.error("[TaskRecovery] Task {} ({}) permanently failed after {} retries",
                 task.getId(), source, maxRetries);
+    }
+
+    /**
+     * 每天凌晨 3:30 清理超过 30 天的已完成/失败/超时/取消的任务记录。
+     */
+    @Scheduled(cron = "0 30 3 * * ?")
+    @Transactional
+    public void cleanupOldTasks() {
+        LocalDateTime cutoff = LocalDateTime.now().minusDays(TASK_RETENTION_DAYS);
+        int deleted = taskInstanceRepository.deleteOldTasks(
+                List.of(TaskStatus.COMPLETED, TaskStatus.FAILED, TaskStatus.TIMEOUT, TaskStatus.CANCELLED),
+                cutoff);
+        if (deleted > 0) {
+            log.info("[TaskRecovery] 清理过期任务记录: 删除 {} 条 (保留 {} 天, cutoff={})",
+                    deleted, TASK_RETENTION_DAYS, cutoff);
+        }
     }
 }

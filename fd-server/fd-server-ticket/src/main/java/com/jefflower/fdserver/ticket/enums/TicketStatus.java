@@ -1,22 +1,21 @@
 package com.jefflower.fdserver.ticket.enums;
 
 public enum TicketStatus {
-    PENDING_TRANS,
-    PROCESSING,
-    PENDING_AUDIT,
-    AUDITING,
-    APPROVED,
-    COMPLETED;
+    PENDING_TRANS,    // 待翻译
+    TRANSLATING,      // 翻译中
+    PENDING_REPLY,    // 待回复
+    REPLYING,         // 回复中
+    PROCESSING,       // 处理中（兼容旧数据，统一代表翻译/回复执行中）
+    PENDING_AUDIT,    // 待审核
+    AUDITING,         // 审核中
+    APPROVED,         // 待推送
+    COMPLETED;        // 已完成
 
     /**
-     * 向后兼容：数据库中旧记录可能仍有 TRANSLATING/PENDING_REPLY/REPLYING，
-     * 反序列化时统一映射到 PROCESSING。
+     * 字符串转枚举，直接调用 valueOf。
      */
     public static TicketStatus fromString(String value) {
         if (value == null) return null;
-        return switch (value) {
-            case "TRANSLATING", "PENDING_REPLY", "REPLYING" -> PROCESSING;
-            default -> valueOf(value);
-        };
+        return valueOf(value);
     }
 }

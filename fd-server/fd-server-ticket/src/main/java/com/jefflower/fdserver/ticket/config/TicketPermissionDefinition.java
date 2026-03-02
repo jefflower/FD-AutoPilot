@@ -58,4 +58,18 @@ public class TicketPermissionDefinition implements ModulePermissionDefinition {
                 "sync:manage", List.of("ADMIN")
         );
     }
+
+    @Override
+    public Map<String, String> getPermissionTypes() {
+        Map<String, String> types = new LinkedHashMap<>();
+        types.put("ticket:read", "ROUTE");
+        types.put("ticket:translate", "OPERATION");
+        types.put("ticket:reply", "OPERATION");
+        types.put("ticket:audit", "OPERATION");
+        types.put("ticket:push", "OPERATION");
+        types.put("ticket:manage", "OPERATION");
+        types.put("sync:read", "ROUTE");
+        types.put("sync:manage", "OPERATION");
+        return types;
+    }
 }

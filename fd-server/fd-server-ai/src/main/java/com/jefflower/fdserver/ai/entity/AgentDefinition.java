@@ -28,11 +28,11 @@ public class AgentDefinition {
     @Column(length = 500)
     private String description;
 
-    @Column(nullable = false, length = 32, columnDefinition = "VARCHAR(32)")
+    @Column(length = 32, columnDefinition = "VARCHAR(32)")
     @Enumerated(EnumType.STRING)
     private ProviderType providerType;
 
-    @Column(nullable = false, length = 32, columnDefinition = "VARCHAR(32)")
+    @Column(length = 32, columnDefinition = "VARCHAR(32)")
     @Enumerated(EnumType.STRING)
     private ExecutionEnv executionEnv;
 
@@ -42,6 +42,10 @@ public class AgentDefinition {
     @Column(length = 64)
     private String groupCode;
 
+    /** 所需的底层执行能力编码，引用 CapabilityDefinition.code */
+    @Column(length = 64)
+    private String requiredCapability;
+
     @Column(length = 16)
     @Enumerated(EnumType.STRING)
     private CallMode callMode;
@@ -49,8 +53,8 @@ public class AgentDefinition {
     @Column(length = 500)
     private String callUrl;
 
-    @Column(columnDefinition = "TEXT")
-    private String providerConfig;
+    @Column(name = "provider_config", columnDefinition = "TEXT")
+    private String agentConfig;
 
     @Column(columnDefinition = "TEXT")
     private String inputSchema;
@@ -61,7 +65,14 @@ public class AgentDefinition {
     @Column(length = 50)
     private String templateEngine;
 
+    @Column(columnDefinition = "TEXT")
+    private String systemPrompt;
+
     private boolean enabled = true;
+
+    /** 前端加载后自动启动 MQ Consumer */
+    @Column(columnDefinition = "BOOLEAN NOT NULL DEFAULT false")
+    private boolean autoStart = false;
 
     private int sortOrder = 0;
 

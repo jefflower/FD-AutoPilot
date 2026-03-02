@@ -1,7 +1,7 @@
 import { isTauriEnv } from '../../../tauri/bridge';
 import type { AgentExecutor } from './types';
 import type { AgentDefinition, AgentExecuteInput, AgentExecuteResult, AgentStreamChunk } from '../../types/server';
-import { parseProviderConfig } from '../schemaUtils';
+import { parseAgentConfig } from '../schemaUtils';
 
 /**
  * 物流查询执行器（17track Shadow Window）
@@ -55,7 +55,7 @@ export class TrackingExecutor implements AgentExecutor {
             return;
         }
 
-        const config = parseProviderConfig(definition.providerConfig);
+        const config = parseAgentConfig(definition.agentConfig);
         const { TrackingShadowService } = await import('../../../tauri/services/trackingShadow');
         const trackingNumbers: string[] = input.data.trackingNumbers || [];
 

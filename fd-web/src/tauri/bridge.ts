@@ -13,6 +13,9 @@ export const isTauriEnv = (): boolean =>
 const BRIDGE_CMD_MAP: Record<string, string> = {
   translate_ticket_direct_cmd: '/bridge/translate',
   execute_gemini_cmd: '/bridge/gemini',
+  execute_claude_cmd: '/bridge/claude',
+  execute_notebooklm_py_cmd: '/bridge/notebooklm-py',
+  execute_notebooklm_cli_cmd: '/bridge/notebooklm-cli',
   sync_translate_reply_cmd: '/bridge/sync-translate',
 };
 
@@ -30,6 +33,11 @@ export async function checkBridgeAvailable(): Promise<boolean> {
   // 30 秒后重新探测（支持 bridge server 后启动的情况）
   setTimeout(() => { bridgeAvailable = null; }, 30000);
   return bridgeAvailable;
+}
+
+/** 重置 bridge 可用性缓存，使下次 checkBridgeAvailable 真正重新探测 */
+export function resetBridgeAvailableCache(): void {
+  bridgeAvailable = null;
 }
 
 async function bridgeInvoke<T>(cmd: string, args?: Record<string, unknown>): Promise<T> {
@@ -53,7 +61,13 @@ async function bridgeInvoke<T>(cmd: string, args?: Record<string, unknown>): Pro
     body: JSON.stringify(args || {}),
   });
 
-  const json = await resp.json();
+  const text = await resp.text();
+  let json: any;
+  try {
+    json = JSON.parse(text);
+  } catch {
+    throw new Error(`Bridge (${cmd}) 返回非 JSON: ${text.substring(0, 200)}`);
+  }
   if (!json.success) {
     throw new Error(json.error || `Bridge call failed: ${cmd}`);
   }
@@ -85,4 +99,30 @@ export async function tauriListen<T>(
   const { listen } = await import('@tauri-apps/api/event');
   const unlisten = await listen<T>(event, (e) => handler(e.payload));
   return unlisten;
+}
+
+// ============ Capability 环境检测 ============
+
+export interface CapabilityDetectResult {
+  code: string;
+  available: boolean;
+  version: string | null;
+  error: string | null;
+}
+
+/**
+ * 调用 fd-bridge 的能力检测端点，返回各 Capability 的环境可用性。
+ * 如果 bridge 不可用（fetch 失败），返回空数组。
+ */
+export async function detectCapabilities(): Promise<CapabilityDetectResult[]> {
+  try {
+    const resp = await fetch('/bridge/capabilities/detect', {
+      signal: AbortSignal.timeout(10000),
+    });
+    if (!resp.ok) return [];
+    const data = await resp.json();
+    return data.capabilities || [];
+  } catch {
+    return [];
+  }
 }

@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @Entity
@@ -63,4 +64,10 @@ public class SysUser {
 
     @Column(name = "external_sync_at")
     private LocalDateTime externalSyncAt;
+
+    // ====== 非持久化字段（用于 API 响应） ======
+
+    /** 用户角色代码列表，由 Service 层填充，不持久化到数据库 */
+    @Transient
+    private List<String> roles;
 }

@@ -24,8 +24,8 @@ export class FunctionExecutor implements AgentExecutor {
     }
 
     async execute(definition: AgentDefinition, input: AgentExecuteInput): Promise<AgentExecuteResult> {
-        const config = typeof definition.providerConfig === 'string'
-            ? JSON.parse(definition.providerConfig) : definition.providerConfig;
+        const config = typeof definition.agentConfig === 'string'
+            ? JSON.parse(definition.agentConfig) : definition.agentConfig;
         const functionName = config.functionName;
 
         if (!functionName) {

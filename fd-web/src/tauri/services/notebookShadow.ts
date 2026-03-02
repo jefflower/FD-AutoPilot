@@ -8,7 +8,7 @@ export interface ShadowResponse {
   status: 'streaming' | 'complete' | 'error';
 }
 
-// ====== Shadow 配置类型（来自 providerConfig） ======
+// ====== Shadow 配置类型（来自 agentConfig） ======
 
 export interface ShadowTimeouts {
   pageLoadMs?: number;           // 默认 3000
@@ -87,12 +87,12 @@ export class NotebookShadowService {
 
   /**
    * 加载 NotebookLM DOM 选择器
-   * 优先级：UserSettings（最高）→ providerConfig.selectors → DEFAULT_SELECTORS（最低）
+   * 优先级：UserSettings（最高）→ agentConfig.selectors → DEFAULT_SELECTORS（最低）
    */
   private async loadSelectors(): Promise<Record<string, string>> {
     let selectors = { ...DEFAULT_SELECTORS };
 
-    // 第二优先级：providerConfig
+    // 第二优先级：agentConfig
     if (this.config.selectors) {
       selectors = { ...selectors, ...this.config.selectors };
     }
@@ -202,6 +202,7 @@ export class NotebookShadowService {
 
         // 标记清理开始
         window.__SHADOW_CLEAR_DONE = false;
+        window.__SHADOW_CLEAR_ABORT = false;
 
         // 清除上一次的 observer
         if (window.__SHADOW_POLL_INTERVAL) {
@@ -223,6 +224,9 @@ export class NotebookShadowService {
            await new Promise(r => setTimeout(r, 1500));
 
            for (let i = 0; i < MAX_RETRIES; i++) {
+              // 检查是否已被外部中止（超时后会设置此标记）
+              if (window.__SHADOW_CLEAR_ABORT) { log('Clear aborted by timeout'); return false; }
+
               const pairs = document.querySelectorAll(SEL.CHAT_PAIR + ', ' + SEL.CHAT_PAIR_ALT);
               if (pairs.length === 0) { log('No history to clear (attempt ' + (i+1) + ')'); return true; }
 
@@ -231,21 +235,26 @@ export class NotebookShadowService {
                               Array.from(document.querySelectorAll('button')).find(b => b.innerHTML.includes('more_vert') || b.innerText.includes('more_vert'));
               if (!menuBtn) { log('No menu button found, waiting...'); await new Promise(r => setTimeout(r, 1000)); continue; }
 
+              if (window.__SHADOW_CLEAR_ABORT) { log('Clear aborted by timeout'); return false; }
               menuBtn.click();
               await new Promise(r => setTimeout(r, 800));
+              if (window.__SHADOW_CLEAR_ABORT) { log('Clear aborted by timeout'); return false; }
 
               const delItem = Array.from(document.querySelectorAll('.mat-mdc-menu-item, [role="menuitem"]')).find(el =>
                  el.innerText.includes('删除对话记录') || el.innerText.includes('Delete') || el.innerText.includes('清除')
               );
 
               if (delItem) {
+                 if (window.__SHADOW_CLEAR_ABORT) { log('Clear aborted by timeout'); return false; }
                  delItem.click();
                  await new Promise(r => setTimeout(r, 1000));
+                 if (window.__SHADOW_CLEAR_ABORT) { log('Clear aborted by timeout'); return false; }
                  const confirm = document.querySelector(SEL.CONFIRM_DELETE) ||
                                  Array.from(document.querySelectorAll('button')).find(el =>
                                    (el.innerText.includes('删除') || el.innerText.includes('Delete')) && el.classList.contains('mat-mdc-button-base')
                                  );
                  if (confirm) {
+                    if (window.__SHADOW_CLEAR_ABORT) { log('Clear aborted by timeout'); return false; }
                     confirm.click();
                     await new Promise(r => setTimeout(r, WAIT_AFTER_DELETE_MS));
                     if (document.querySelectorAll(SEL.CHAT_PAIR).length === 0) {
@@ -288,6 +297,12 @@ export class NotebookShadowService {
       await new Promise(r => setTimeout(r, pollMs));
     }
     console.warn(`[NotebookShadow:${sessionId.slice(-6)}] Clear timeout after ${maxWaitMs}ms, proceeding anyway`);
+    // 中止仍在后台运行的 forceClear，防止它删除后续发送的新消息
+    try {
+      await invoke('execute_notebook_js', {
+        script: '(function(){ window.__SHADOW_CLEAR_ABORT = true; window.__SHADOW_CLEAR_DONE = true; })()'
+      });
+    } catch { /* ignore */ }
   }
 
   /**

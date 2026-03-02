@@ -250,6 +250,26 @@
       "createdAt": "Created at {{time}}",
       "updatedAt": "Updated at {{time}}",
       "exportFailed": "Export failed: {{error}}"
+    },
+    "sync": {
+      "title": "Knowledge Sync Config",
+      "desc": "Sync marked valid tickets and notes to local knowledge base. After sync, go to Knowledge module's NotebookLM page to push content to cloud.",
+      "targetBase": "Target Knowledge Base",
+      "selectBase": "-- Select Knowledge Base --",
+      "mapping": "Mapping Config",
+      "noSources": "No sources in this knowledge base. Please add sources first.",
+      "ticketLabel": "Marked Tickets",
+      "notesLabel": "Notes",
+      "selectSource": "-- Select Source --",
+      "save": "Save Config",
+      "saving": "Saving...",
+      "saveSuccess": "Config saved",
+      "syncBtn": "Sync to Knowledge Base",
+      "syncing": "Syncing...",
+      "syncSuccess": "Sync successful",
+      "configIncomplete": "Please complete the mapping config first",
+      "result": "Sync Result",
+      "nextStep": "Please go to Knowledge module's NotebookLM page and click sync to push content to cloud."
     }
   }
 }

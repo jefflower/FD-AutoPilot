@@ -177,7 +177,7 @@ public class DatabaseQueryService {
                 ) pk ON c.TABLE_SCHEMA = pk.TABLE_SCHEMA
                     AND c.TABLE_NAME = pk.TABLE_NAME
                     AND c.COLUMN_NAME = pk.COLUMN_NAME
-                WHERE t.TABLE_SCHEMA = 'PUBLIC'
+                WHERE t.TABLE_SCHEMA = current_schema()
                 ORDER BY t.TABLE_NAME, c.ORDINAL_POSITION
                 """;
 

@@ -5,6 +5,7 @@ import com.jefflower.fdserver.common.exception.BusinessException;
 import com.jefflower.fdserver.common.exception.ErrorCode;
 import com.jefflower.fdserver.ticket.dto.*;
 import com.jefflower.fdserver.ticket.entity.*;
+import com.jefflower.fdserver.ticket.enums.AuditResult;
 import com.jefflower.fdserver.ticket.enums.TicketStatus;
 import com.jefflower.fdserver.ticket.repository.*;
 import com.jefflower.fdserver.ticket.service.notify.NotifyService;
@@ -30,9 +31,9 @@ public class TicketService {
     private final TicketAuditRepository auditRepository;
     private final ReplyPushService replyPushService;
     private final NotifyService notifyService;
+    private final SystemConfigService configService;
     private final TicketStateMachine stateMachine;
     private final ObjectMapper objectMapper;
-    private final TicketWorkflowOrchestrator orchestrator;
 
     /**
      * 翻译完整性校验：原始工单有 conversations 时，翻译结果也必须包含 conversations
@@ -165,9 +166,6 @@ public class TicketService {
 
         log.debug("[TicketService] Translation saved with ID: {}", saved.getId());
 
-        // 委托编排器处理后续流程（状态转换 + 任务创建 或 BPMN 信号）
-        orchestrator.onTranslationCompleted(ticket);
-
         return saved;
     }
 
@@ -176,8 +174,8 @@ public class TicketService {
         Ticket ticket = getTicketByIdSimple(ticketId);
 
         // 幂等性检查：
-        // Flowable 并行网关模式：翻译和回复同时执行，回复完成时状态可能仍是 PENDING_TRANS/PROCESSING，
-        // 需要放宽检查范围。状态转换由 BPMN 回调统一管理。
+        // n8n 工作流模式：翻译和回复可能并行执行，回复完成时状态可能仍是 PENDING_TRANS/PROCESSING，
+        // 需要放宽检查范围。
         var acceptedStates = TicketStateMachine.WORKFLOW_REPLY_ACCEPTED_STATES;
         if (!stateMachine.isInAcceptedStates(ticket.getStatus(), acceptedStates)) {
             log.warn("[TicketService] 幂等性检查: 回复上报被跳过, ticketId={}, 当前状态={}, 期望状态={}",
@@ -202,9 +200,6 @@ public class TicketService {
         reply.setTargetReply(request.getTargetReply());
         TicketReply saved = replyRepository.save(reply);
 
-        // 委托编排器处理后续流程
-        orchestrator.onReplyCompleted(ticket);
-
         return saved;
     }
 
@@ -212,11 +207,10 @@ public class TicketService {
     public TicketAudit submitAudit(Long ticketId, AuditRequest request, Long auditorId) {
         Ticket ticket = getTicketByIdSimple(ticketId);
 
-        // 幂等性检查：只有 AUDITING / PENDING_AUDIT 状态才接受审核上报
+        // 幂等性检查：只有 PENDING_AUDIT 状态才接受审核上报
         // 如果状态已推进到 APPROVED / COMPLETED，说明是重复消息，跳过
-        // 注意：PROCESSING 也是合法的（REJECT 后回到 PROCESSING），但此时不应再次审核
         if (!stateMachine.isInAcceptedStates(ticket.getStatus(), TicketStateMachine.AUDIT_ACCEPTED_STATES)) {
-            log.warn("[TicketService] 幂等性检查: 审核上报被跳过, ticketId={}, 当前状态={}, 期望状态=AUDITING/PENDING_AUDIT",
+            log.warn("[TicketService] 幂等性检查: 审核上报被跳过, ticketId={}, 当前状态={}, 期望状态=PENDING_AUDIT",
                     ticketId, ticket.getStatus());
             return auditRepository.findTopByTicketOrderByCreatedAtDesc(ticket)
                     .orElseGet(() -> {
@@ -246,9 +240,42 @@ public class TicketService {
         audit.setAuditorId(auditorId);
         TicketAudit saved = auditRepository.save(audit);
 
-        // 委托编排器处理后续流程
-        orchestrator.onAuditCompleted(ticket, request.getAuditResult(), request.getAuditRemark(),
-                request.getReplyId(), auditorId);
+        // 审核结果处理（n8n 定时扫描拾取驳回的工单）
+        AuditResult result = request.getAuditResult();
+        ticket.setLastAuditRemark(request.getAuditRemark());
+
+        switch (result) {
+            case PASS -> {
+                if (configService.isAutoReplyEnabled()) {
+                    // 自动推送模式 → 推送到 Freshdesk
+                    try {
+                        TicketReply reply = replyRepository.findById(request.getReplyId()).orElse(null);
+                        if (reply != null) {
+                            replyPushService.pushReplyToFreshdesk(ticket, reply);
+                            stateMachine.transition(ticket, TicketStatus.COMPLETED);
+                            notifyService.notifyReplyPushed(ticket);
+                        } else {
+                            stateMachine.transition(ticket, TicketStatus.APPROVED);
+                        }
+                    } catch (Exception e) {
+                        log.error("[TicketService] 自动推送失败, ticketId={}: {}", ticketId, e.getMessage());
+                        stateMachine.transition(ticket, TicketStatus.APPROVED);
+                    }
+                } else {
+                    // 手动推送模式
+                    stateMachine.transition(ticket, TicketStatus.APPROVED);
+                }
+            }
+            case REJECT -> {
+                // 驳回 → PROCESSING，n8n 下次扫描 pending-reply 时重新生成回复
+                stateMachine.transition(ticket, TicketStatus.PROCESSING);
+            }
+            case RETRANSLATE -> {
+                // 驳回至重新翻译 → PENDING_TRANS，n8n 下次扫描 pending 时重新翻译
+                stateMachine.transition(ticket, TicketStatus.PENDING_TRANS);
+            }
+        }
+        ticketRepository.save(ticket);
 
         return saved;
     }
@@ -315,26 +342,14 @@ public class TicketService {
     }
 
     /**
-     * 重启工单的 BPMN 工作流（统一入口）。
-     * <p>
-     * 将工单状态强制重置为 PENDING_TRANS，然后通过编排器启动新的 BPMN 流程实例。
-     * BPMN 流程会通过并行网关同时执行翻译和回复 Agent，无需区分"触发翻译"和"触发回复"。
-     * <p>
-     * 前置校验：不能有活跃的工作流实例（防止重复启动）
+     * 重启工单处理流程 — 重置状态为 PENDING_TRANS，n8n 定时扫描自动拾取。
      */
     @Transactional
     public void restartWorkflow(Long ticketId) {
         Ticket ticket = getTicketByIdSimple(ticketId);
-
-        if (orchestrator.hasActiveProcess(ticket)) {
-            throw new BusinessException(ErrorCode.INVALID_STATUS_TRANSITION,
-                    "工单 #" + ticketId + " 已有活跃工作流，请等待完成或终止后重试");
-        }
-
         stateMachine.forceTransition(ticket, TicketStatus.PENDING_TRANS);
         ticketRepository.save(ticket);
-        orchestrator.onNewTicket(ticket);
-        log.info("[TicketService] 工单 #{} 工作流已重启", ticketId);
+        log.info("[TicketService] 工单 #{} 状态已重置为 PENDING_TRANS，等待 n8n 拾取", ticketId);
     }
 
     /**
@@ -370,15 +385,12 @@ public class TicketService {
     /**
      * 批量回退处理中的工单状态（用于队列重置）
      * PROCESSING → PENDING_TRANS
-     * AUDITING → PENDING_AUDIT
      * @return 回退的工单数量
      */
     @Transactional
     public int resetProcessingTickets() {
         LocalDateTime now = LocalDateTime.now();
-        int count = 0;
-        count += ticketRepository.updateStatusBatch(TicketStatus.PROCESSING, TicketStatus.PENDING_TRANS, now);
-        count += ticketRepository.updateStatusBatch(TicketStatus.AUDITING, TicketStatus.PENDING_AUDIT, now);
+        int count = ticketRepository.updateStatusBatch(TicketStatus.PROCESSING, TicketStatus.PENDING_TRANS, now);
         log.info("[TicketService] 队列重置：回退了 {} 个处理中的工单", count);
         return count;
     }

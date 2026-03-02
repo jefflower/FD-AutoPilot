@@ -20,7 +20,14 @@
 			<artifactId>fd-server-ticket</artifactId>
 		</dependency>
 
-		<!-- H2 Database (runtime) -->
+		<!-- PostgreSQL Database (runtime) -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+		<!-- H2 Database (保留用于数据迁移和测试) -->
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>

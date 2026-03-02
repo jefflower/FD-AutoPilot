@@ -24,7 +24,7 @@ function makeDefinition(overrides: Partial<AgentDefinition> = {}): AgentDefiniti
         providerType: 'GEMINI_CLI',
         executionEnv: 'CLIENT_ONLY',
         capability: 'translate',
-        providerConfig: {},
+        agentConfig: {},
         enabled: true,
         sortOrder: 0,
         builtIn: false,

@@ -1,9 +1,9 @@
 import React, { useState, useCallback, useEffect, useMemo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useAgentContext } from '../../../shared/agents';
-import { useMQTranslation } from '../../../shared/context/MQTranslationContext';
-import { useMQReply } from '../../../shared/context/MQReplyContext';
-import { parseProviderConfig } from '../../../shared/agents/schemaUtils';
+import { useMQTranslateAgent } from '../../../shared/context/MQTranslateAgentContext';
+import { useMQReplyAgent } from '../../../shared/context/MQReplyAgentContext';
+import { parseAgentConfig } from '../../../shared/agents/schemaUtils';
 import { serverApi } from '../../../shared/services/serverApi';
 import type { ServerTicket } from '../../../shared/types/server';
 import {
@@ -26,16 +26,20 @@ const GROUP_LABELS: Record<string, string> = {
  * agentMappings 只依赖 definitions（低频变化），consumer 通过 ref 实时读取。
  */
 function useStableConsumerRegistry(
-    translation: AgentConsumerHandle,
+    translate: AgentConsumerHandle,
     reply: AgentConsumerHandle,
 ) {
     const registryRef = useRef<Record<string, AgentConsumerHandle>>({});
     // 每次渲染时更新 ref，但不触发 useMemo 重算
     registryRef.current = {
-        'ticket.translate': translation,
-        'ticket.reply': reply,
-        'translation': translation,
+        'agent.ticket-translate': translate,
+        'agent.ticket-reply': reply,
+        'ticket-translate': translate,
+        'ticket-reply': reply,
+        'translation': translate,
         'reply': reply,
+        'llm': translate,
+        'knowledge-query': reply,
     };
     return registryRef;
 }
@@ -43,19 +47,19 @@ function useStableConsumerRegistry(
 const AgentAutomationTab: React.FC = () => {
     const { t: _t } = useTranslation(['tasks', 'common']);
     const { definitions } = useAgentContext();
-    const translation = useMQTranslation();
-    const reply = useMQReply();
+    const translate = useMQTranslateAgent();
+    const reply = useMQReplyAgent();
 
     // Consumer 注册表用 Ref 避免每次 context 状态变化都重算 agentMappings
-    const consumerRegistryRef = useStableConsumerRegistry(translation, reply);
+    const consumerRegistryRef = useStableConsumerRegistry(translate, reply);
 
     // agentMappings 仅依赖 definitions（低频变化），不随 MQ context 状态变化而重算
     const agentMappings = useMemo((): AgentConsumerMapping[] => {
         return definitions
-            .filter(d => d.executionEnv !== 'SERVER_ONLY' && d.enabled)
+            .filter(d => d.enabled)
             .sort((a, b) => a.sortOrder - b.sortOrder)
             .map(def => {
-                const config = parseProviderConfig(def.providerConfig);
+                const config = parseAgentConfig(def.agentConfig);
                 const taskType = (config as any).taskType;
                 return {
                     definition: def,
@@ -66,7 +70,7 @@ const AgentAutomationTab: React.FC = () => {
                             || reg[def.capability]
                             || null;
                     },
-                    taskType: taskType || `ticket.${def.capability}`,
+                    taskType: taskType || `agent.${def.capability}`,
                 };
             });
     }, [definitions, consumerRegistryRef]);
@@ -94,7 +98,9 @@ const AgentAutomationTab: React.FC = () => {
             const mappings = agentMappingsRef.current;
             const statuses: Record<string, ShadowStatus> = {};
             for (const m of mappings) {
-                if (m.definition.providerType === 'NOTEBOOKLM' || m.definition.providerType === 'TRACKING_SHADOW') {
+                // 只有 requiredCapability === 'notebooklm'（原始 shadow window 模式）才需要 shadow window
+                const rc = m.definition.requiredCapability;
+                if (rc === 'notebooklm') {
                     statuses[m.definition.code] = await getShadowStatus(m.definition);
                 }
             }
@@ -135,30 +141,15 @@ const AgentAutomationTab: React.FC = () => {
 
     const startAgent = useCallback(async (mapping: AgentConsumerMapping) => {
         setStartupError(null);
-        const { providerType } = mapping.definition;
+        const rc = mapping.definition.requiredCapability;
 
-        // 浏览器模式预检查
-        if (!isTauriEnv()) {
-            if (providerType === 'NOTEBOOKLM') {
-                // NotebookLM 可通过 bridge SSE 在浏览器模式运行
+        // 浏览器模式预检查：所有需要本地执行的 capability（含 -cli / -py 后缀）都需要 bridge
+        if (!isTauriEnv() && rc) {
+            const needsBridge = rc.endsWith('-cli') || rc.endsWith('-py');
+            if (needsBridge) {
                 const bridgeOk = await checkBridgeAvailable();
                 if (!bridgeOk) {
-                    const errMsg = `Shadow Agent "${mapping.definition.name}" 需要 fd-client (Tauri) 后台运行提供 Shadow Window。请先启动: cd fd-client && npm run tauri dev`;
-                    setStartupError(errMsg);
-                    setShowLogs(true);
-                    return;
-                }
-            }
-            if (providerType === 'TRACKING_SHADOW') {
-                const errMsg = `Agent "${mapping.definition.name}" (物流查询) 仅在 Tauri 桌面模式可用`;
-                setStartupError(errMsg);
-                setShowLogs(true);
-                return;
-            }
-            if (providerType === 'GEMINI_CLI') {
-                const bridgeOk = await checkBridgeAvailable();
-                if (!bridgeOk) {
-                    const errMsg = `fd-bridge 服务器未运行。请执行: cargo run --bin fd-bridge --no-default-features --manifest-path fd-client/src-tauri/Cargo.toml`;
+                    const errMsg = `Agent "${mapping.definition.name}" (capability: ${rc}) 需要 fd-bridge 服务。请执行: cargo run --bin fd-bridge --no-default-features --manifest-path fd-client/src-tauri/Cargo.toml`;
                     setStartupError(errMsg);
                     setShowLogs(true);
                     return;
@@ -179,7 +170,7 @@ const AgentAutomationTab: React.FC = () => {
     // 运行统计直接从 context 读取，避免依赖 agentMappings（getter 每次渲染已是最新值）
     const runnableAgents = agentMappings.filter(m => m.consumer);
     // 直接读取 context 的 isRunning，确保启动/停止后触发重渲染
-    const runningCount = [translation.isRunning, reply.isRunning].filter(Boolean).length;
+    const runningCount = [translate.isRunning, reply.isRunning].filter(Boolean).length;
     const runnableCount = runnableAgents.length;
     const allRunning = runnableCount > 0 && runningCount === runnableCount;
 
@@ -191,23 +182,16 @@ const AgentAutomationTab: React.FC = () => {
         for (const m of agentMappings) {
             if (!m.consumer || m.consumer.isRunning) continue;
 
-            // 浏览器模式跳过不可用的 Agent
-            if (isWeb && m.definition.providerType === 'NOTEBOOKLM') {
-                const bridgeOk = await checkBridgeAvailable();
-                if (!bridgeOk) {
-                    skipped.push(`${m.definition.name} (需要 fd-client Tauri 后台)`);
-                    continue;
-                }
-            }
-            if (isWeb && m.definition.providerType === 'TRACKING_SHADOW') {
-                skipped.push(`${m.definition.name} (仅桌面模式)`);
-                continue;
-            }
-            if (isWeb && m.definition.providerType === 'GEMINI_CLI') {
-                const bridgeOk = await checkBridgeAvailable();
-                if (!bridgeOk) {
-                    skipped.push(`${m.definition.name} (需要 fd-bridge)`);
-                    continue;
+            // 浏览器模式：需要 bridge 的 capability 检查可用性
+            const rc = m.definition.requiredCapability;
+            if (isWeb && rc) {
+                const needsBridge = rc.endsWith('-cli') || rc.endsWith('-py');
+                if (needsBridge) {
+                    const bridgeOk = await checkBridgeAvailable();
+                    if (!bridgeOk) {
+                        skipped.push(`${m.definition.name} (需要 fd-bridge)`);
+                        continue;
+                    }
                 }
             }
             await startAgent(m);
@@ -227,10 +211,10 @@ const AgentAutomationTab: React.FC = () => {
 
     // 合并日志：直接依赖 logs 数组（低成本拼接，无需通过 agentMappings 中转）
     const combinedLogs = useMemo(() => {
-        const translationLogs = translation.logs.map(l => `[翻译] ${l}`);
-        const replyLogs = reply.logs.map(l => `[回复] ${l}`);
-        return [...translationLogs, ...replyLogs].slice(-50);
-    }, [translation.logs, reply.logs]);
+        const translateLogs = translate.logs.map(l => `[Translate] ${l}`);
+        const replyLogs = reply.logs.map(l => `[Reply] ${l}`);
+        return [...translateLogs, ...replyLogs].slice(-50);
+    }, [translate.logs, reply.logs]);
 
     const [showLogs, setShowLogs] = useState(false);
 

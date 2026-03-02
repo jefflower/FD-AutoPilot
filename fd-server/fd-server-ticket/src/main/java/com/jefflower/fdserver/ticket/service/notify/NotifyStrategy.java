@@ -16,8 +16,9 @@ public interface NotifyStrategy {
 
     /**
      * 发送测试消息
+     * @return null 表示成功，非 null 返回错误描述
      */
-    boolean sendTestMessage(String webhookUrl);
+    String sendTestMessage(String webhookUrl);
 
     /**
      * 平台标识

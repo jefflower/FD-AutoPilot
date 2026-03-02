@@ -93,8 +93,8 @@ export function resolveTemplate(
   return result;
 }
 
-/** 解析 providerConfig（字符串或对象） */
-export function parseProviderConfig(config: string | Record<string, any>): Record<string, any> {
+/** 解析 agentConfig（字符串或对象） */
+export function parseAgentConfig(config: string | Record<string, any>): Record<string, any> {
   if (typeof config === 'object' && config !== null) return config;
   try { return JSON.parse(config || '{}'); } catch { return {}; }
 }

@@ -12,6 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TicketContent {
+    private String subject;
     private String description;
     private List<ConversationDto> conversations;
 

@@ -1,12 +1,13 @@
 import { isTauriEnv, tauriInvoke } from '../../../../tauri/bridge';
-import { parseProviderConfig } from '../../../../shared/agents/schemaUtils';
+import { parseAgentConfig } from '../../../../shared/agents/schemaUtils';
 import type { AgentDefinition } from '../../../../shared/types/server';
 import type { ShadowStatus } from './types';
 
 /** Agent 启动时初始化 Shadow Window */
 export async function initAgentShadow(definition: AgentDefinition): Promise<void> {
-    if (!isTauriEnv() || definition.providerType !== 'NOTEBOOKLM') return;
-    const config = parseProviderConfig(definition.providerConfig);
+    // 只有 requiredCapability === 'notebooklm'（原始 shadow window 模式）才需要 shadow window
+    if (!isTauriEnv() || definition.requiredCapability !== 'notebooklm') return;
+    const config = parseAgentConfig(definition.agentConfig);
 
     if (definition.capability === 'reply' && config.windowLabel === 'notebook_shadow') {
         await tauriInvoke('open_notebook_window', {
@@ -29,7 +30,7 @@ export async function initAgentShadow(definition: AgentDefinition): Promise<void
 
 /** Agent 停止时关闭 Shadow Window */
 export async function closeAgentShadow(definition: AgentDefinition): Promise<void> {
-    if (!isTauriEnv() || definition.providerType !== 'NOTEBOOKLM') return;
+    if (!isTauriEnv() || definition.requiredCapability !== 'notebooklm') return;
 
     if (definition.capability === 'reply') {
         await tauriInvoke('toggle_notebook_window', { visible: false }).catch(() => {});
@@ -38,7 +39,7 @@ export async function closeAgentShadow(definition: AgentDefinition): Promise<voi
 
 /** 查询 Shadow Window 状态 */
 export async function getShadowStatus(definition: AgentDefinition): Promise<ShadowStatus> {
-    if (!isTauriEnv() || definition.providerType !== 'NOTEBOOKLM') return 'n/a';
+    if (!isTauriEnv() || definition.requiredCapability !== 'notebooklm') return 'n/a';
 
     if (definition.capability === 'reply') {
         try {

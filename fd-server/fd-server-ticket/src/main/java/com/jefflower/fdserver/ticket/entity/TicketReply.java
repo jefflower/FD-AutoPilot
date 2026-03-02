@@ -26,12 +26,10 @@ public class TicketReply {
     @Column(name = "reply_lang", length = 16)
     private String replyLang;
 
-    @Lob
-    @Column(name = "zh_reply")
+    @Column(name = "zh_reply", columnDefinition = "TEXT")
     private String zhReply;
 
-    @Lob
-    @Column(name = "target_reply")
+    @Column(name = "target_reply", columnDefinition = "TEXT")
     private String targetReply;
 
     @Column(name = "is_selected")

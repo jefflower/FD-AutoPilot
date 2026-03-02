@@ -51,7 +51,7 @@ class TicketServiceTest {
     @Mock
     private NotifyService notifyService;
     @Mock
-    private TicketWorkflowOrchestrator orchestrator;
+    private SystemConfigService configService;
 
     // 使用真实实例（无状态纯逻辑组件）
     private final TicketStateMachine stateMachine = new TicketStateMachine();
@@ -70,9 +70,9 @@ class TicketServiceTest {
                 auditRepository,
                 replyPushService,
                 notifyService,
+                configService,
                 stateMachine,
-                objectMapper,
-                orchestrator
+                objectMapper
         );
 
         sampleTicket = new Ticket();
@@ -157,7 +157,7 @@ class TicketServiceTest {
         }
 
         @Test
-        @DisplayName("首次翻译 → 保存翻译、委托编排器处理后续流程")
+        @DisplayName("首次翻译 → 保存翻译记录")
         void firstTranslation_savesAndTransitions() {
             when(translationRepository.findByTicketAndTargetLang(sampleTicket, "zh-CN"))
                     .thenReturn(Optional.empty());
@@ -168,9 +168,6 @@ class TicketServiceTest {
             TicketTranslation result = ticketService.submitTranslation(1L, translationRequest);
 
             assertEquals(10L, result.getId());
-
-            // 验证编排器被调用
-            verify(orchestrator).onTranslationCompleted(sampleTicket);
         }
 
         @Test
@@ -242,7 +239,7 @@ class TicketServiceTest {
         }
 
         @Test
-        @DisplayName("提交回复 → 删除旧回复、保存新回复、委托编排器处理后续流程")
+        @DisplayName("提交回复 → 删除旧回复、保存新回复")
         void submitsReplyAndTransitions() {
             TicketReply saved = new TicketReply();
             saved.setId(20L);
@@ -252,7 +249,6 @@ class TicketServiceTest {
 
             assertEquals(20L, result.getId());
             verify(replyRepository).deleteByTicket(sampleTicket);
-            verify(orchestrator).onReplyCompleted(sampleTicket);
         }
 
         @Test
@@ -293,34 +289,48 @@ class TicketServiceTest {
         }
 
         @Test
-        @DisplayName("审核通过 → 保存审核记录、委托编排器处理后续流程")
+        @DisplayName("审核通过（自动推送关闭） → 状态变为 APPROVED")
         void pass_autoReplyDisabled_approved() {
             stubDefaultAuditSave();
+            when(configService.isAutoReplyEnabled()).thenReturn(false);
+            when(translationRepository.existsByTicket(sampleTicket)).thenReturn(true);
+            when(replyRepository.existsByTicket(sampleTicket)).thenReturn(true);
+
             AuditRequest req = new AuditRequest();
             req.setReplyId(20L);
             req.setAuditResult(AuditResult.PASS);
 
             ticketService.submitAudit(1L, req, 100L);
 
-            verify(orchestrator).onAuditCompleted(sampleTicket, AuditResult.PASS, null, 20L, 100L);
+            assertEquals(TicketStatus.APPROVED, sampleTicket.getStatus());
         }
 
         @Test
-        @DisplayName("审核通过 → 编排器被调用（自动推送场景由编排器决定）")
+        @DisplayName("审核通过（自动推送开启） → 推送成功后状态变为 COMPLETED")
         void pass_autoReplyEnabled_completed() {
             stubDefaultAuditSave();
+            when(configService.isAutoReplyEnabled()).thenReturn(true);
+            when(translationRepository.existsByTicket(sampleTicket)).thenReturn(true);
+            when(replyRepository.existsByTicket(sampleTicket)).thenReturn(true);
+
+            TicketReply reply = new TicketReply();
+            reply.setId(20L);
+            when(replyRepository.findById(20L)).thenReturn(Optional.of(reply));
+
             AuditRequest req = new AuditRequest();
             req.setReplyId(20L);
             req.setAuditResult(AuditResult.PASS);
 
             ticketService.submitAudit(1L, req, 100L);
 
-            verify(orchestrator).onAuditCompleted(sampleTicket, AuditResult.PASS, null, 20L, 100L);
+            assertEquals(TicketStatus.COMPLETED, sampleTicket.getStatus());
+            verify(replyPushService).pushReplyToFreshdesk(sampleTicket, reply);
+            verify(notifyService).notifyReplyPushed(sampleTicket);
         }
 
         @Test
-        @DisplayName("审核驳回 → 委托编排器处理后续流程")
-        void reject_rollsBackToPendingReply() {
+        @DisplayName("审核驳回 → 状态变为 PROCESSING（n8n 扫描 pending-reply 重新回复）")
+        void reject_rollsBackToProcessing() {
             stubDefaultAuditSave();
             AuditRequest req = new AuditRequest();
             req.setReplyId(20L);
@@ -329,20 +339,23 @@ class TicketServiceTest {
 
             ticketService.submitAudit(1L, req, 100L);
 
-            verify(orchestrator).onAuditCompleted(sampleTicket, AuditResult.REJECT, "回复质量不佳", 20L, 100L);
+            assertEquals(TicketStatus.PROCESSING, sampleTicket.getStatus());
+            assertEquals("回复质量不佳", sampleTicket.getLastAuditRemark());
         }
 
         @Test
-        @DisplayName("审核 → 编排器始终被调用（异常由编排器处理）")
-        void pass_replyNotFound_throws() {
+        @DisplayName("审核驳回至重新翻译 → 状态变为 PENDING_TRANS")
+        void retranslate_rollsBackToPendingTrans() {
             stubDefaultAuditSave();
             AuditRequest req = new AuditRequest();
-            req.setReplyId(999L);
-            req.setAuditResult(AuditResult.PASS);
+            req.setReplyId(20L);
+            req.setAuditResult(AuditResult.RETRANSLATE);
+            req.setAuditRemark("翻译不准确");
 
             ticketService.submitAudit(1L, req, 100L);
 
-            verify(orchestrator).onAuditCompleted(sampleTicket, AuditResult.PASS, null, 999L, 100L);
+            assertEquals(TicketStatus.PENDING_TRANS, sampleTicket.getStatus());
+            assertEquals("翻译不准确", sampleTicket.getLastAuditRemark());
         }
 
         @Test
@@ -541,7 +554,7 @@ class TicketServiceTest {
     class RestartWorkflow {
 
         @Test
-        @DisplayName("重启工作流 → 状态变为 PENDING_TRANS，启动 BPMN 流程")
+        @DisplayName("重启工作流 → 状态重置为 PENDING_TRANS，等待 n8n 拾取")
         void restartsWorkflow() {
             when(ticketRepository.findById(1L)).thenReturn(Optional.of(sampleTicket));
             when(ticketRepository.save(any(Ticket.class))).thenReturn(sampleTicket);
@@ -549,18 +562,7 @@ class TicketServiceTest {
             ticketService.restartWorkflow(1L);
 
             assertEquals(TicketStatus.PENDING_TRANS, sampleTicket.getStatus());
-            verify(orchestrator).onNewTicket(sampleTicket);
-        }
-
-        @Test
-        @DisplayName("已有活跃工作流 → 拒绝重复启动")
-        void activeProcess_throws() {
-            when(ticketRepository.findById(1L)).thenReturn(Optional.of(sampleTicket));
-            when(orchestrator.hasActiveProcess(sampleTicket)).thenReturn(true);
-
-            RuntimeException ex = assertThrows(RuntimeException.class,
-                    () -> ticketService.restartWorkflow(1L));
-            assertTrue(ex.getMessage().contains("活跃工作流"));
+            verify(ticketRepository).save(sampleTicket);
         }
     }
 
@@ -573,7 +575,7 @@ class TicketServiceTest {
     class TriggerAiTranslation {
 
         @Test
-        @DisplayName("触发翻译 → 委托 restartWorkflow")
+        @DisplayName("触发翻译 → 委托 restartWorkflow，状态重置为 PENDING_TRANS")
         void triggersTranslation() {
             when(ticketRepository.findById(1L)).thenReturn(Optional.of(sampleTicket));
             when(ticketRepository.save(any(Ticket.class))).thenReturn(sampleTicket);
@@ -581,7 +583,6 @@ class TicketServiceTest {
             ticketService.triggerAiTranslation(1L);
 
             assertEquals(TicketStatus.PENDING_TRANS, sampleTicket.getStatus());
-            verify(orchestrator).onNewTicket(sampleTicket);
         }
     }
 
@@ -594,7 +595,7 @@ class TicketServiceTest {
     class TriggerAiReply {
 
         @Test
-        @DisplayName("有翻译 → 委托 restartWorkflow 重启 BPMN 流程")
+        @DisplayName("有翻译 → 委托 restartWorkflow，状态重置为 PENDING_TRANS")
         void triggersReply() {
             when(ticketRepository.findById(1L)).thenReturn(Optional.of(sampleTicket));
             when(translationRepository.existsByTicket(sampleTicket)).thenReturn(true);
@@ -603,7 +604,6 @@ class TicketServiceTest {
             ticketService.triggerAiReply(1L);
 
             assertEquals(TicketStatus.PENDING_TRANS, sampleTicket.getStatus());
-            verify(orchestrator).onNewTicket(sampleTicket);
         }
 
         @Test

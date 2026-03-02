@@ -44,18 +44,23 @@ public class TaskInstance {
     @Column(name = "assigned_at")
     private LocalDateTime assignedAt;
 
-    @Lob
+    @Column(columnDefinition = "TEXT")
     private String payload;
 
-    @Lob
+    @Column(columnDefinition = "TEXT")
     private String result;
 
-    @Lob
-    @Column(name = "error_message")
+    @Column(name = "error_message", columnDefinition = "TEXT")
     private String errorMessage;
 
     @Column(name = "retry_count")
     private int retryCount = 0;
+
+    @Column(name = "target_client_id", length = 64)
+    private String targetClientId;
+
+    @Column(name = "target_user_id", length = 64)
+    private String targetUserId;
 
     @Column(name = "created_at")
     private LocalDateTime createdAt = LocalDateTime.now();

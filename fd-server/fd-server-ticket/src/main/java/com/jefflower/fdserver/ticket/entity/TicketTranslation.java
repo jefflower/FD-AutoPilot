@@ -26,12 +26,10 @@ public class TicketTranslation {
     @Column(name = "target_lang", length = 16)
     private String targetLang;
 
-    @Lob
-    @Column(name = "translated_title")
+    @Column(name = "translated_title", columnDefinition = "TEXT")
     private String translatedTitle;
 
-    @Lob
-    @Column(name = "translated_content")
+    @Column(name = "translated_content", columnDefinition = "TEXT")
     private String translatedContent;
 
     @Column(name = "created_at")

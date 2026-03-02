@@ -20,7 +20,7 @@ public class OpenApiConfig {
         return new OpenAPI()
                 .info(new Info()
                         .title("FD-AutoPilot API")
-                        .version("1.0.0")
+                        .version("v0.4")
                         .description("FD-AutoPilot 智能工单处理系统 API 文档。集成 Freshdesk 与 AI 能力，提供工单生命周期管理、自动翻译、AI 回复生成、审核流转等功能。")
                         .contact(new Contact()
                                 .name("FD-AutoPilot Team")))

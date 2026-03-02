@@ -36,8 +36,8 @@ describe('getUserRoleLabel', () => {
 describe('getTicketStatusOptions', () => {
   it('返回包含全部状态加一个"全部"选项', () => {
     const options = getTicketStatusOptions(mockT);
-    // "全部" + 8 个状态 = 9
-    expect(options).toHaveLength(9);
+    // "全部" + 5 个状态 = 6
+    expect(options).toHaveLength(6);
   });
 
   it('第一个选项的 value 为空（全部筛选）', () => {
@@ -59,11 +59,8 @@ describe('getTicketStatusOptions', () => {
     const options = getTicketStatusOptions(mockT);
     const values = options.map(o => o.value);
     expect(values).toContain('PENDING_TRANS');
-    expect(values).toContain('TRANSLATING');
-    expect(values).toContain('PENDING_REPLY');
-    expect(values).toContain('REPLYING');
+    expect(values).toContain('PROCESSING');
     expect(values).toContain('PENDING_AUDIT');
-    expect(values).toContain('AUDITING');
     expect(values).toContain('APPROVED');
     expect(values).toContain('COMPLETED');
   });

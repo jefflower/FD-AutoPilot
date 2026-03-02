@@ -9,6 +9,7 @@ import com.jefflower.fdserver.ticket.entity.*;
 import com.jefflower.fdserver.ticket.enums.TicketStatus;
 import com.jefflower.fdserver.ticket.service.AuditTokenService;
 import com.jefflower.fdserver.ticket.service.TicketService;
+import com.jefflower.fdserver.ticket.service.TicketStatusLogService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -37,6 +38,7 @@ public class TicketController {
     private final TicketService ticketService;
     private final TaskDistributionService taskDistributionService;
     private final AuditTokenService auditTokenService;
+    private final TicketStatusLogService ticketStatusLogService;
 
     /**
      * 工单列表查询 — 默认返回轻量 DTO（不含 content 等大字段），
@@ -147,7 +149,7 @@ public class TicketController {
         return ResponseEntity.ok(ApiResponse.ok("回复已跳过，工单标记完成", null));
     }
 
-    @Operation(summary = "重启工作流", description = "重启工单的 BPMN 工作流（翻译+回复并行执行）。统一替代 ai-translate / ai-reply 端点。")
+    @Operation(summary = "重启工作流", description = "重置工单状态为 PENDING_TRANS，n8n 定时扫描自动拾取处理。统一替代 ai-translate / ai-reply 端点。")
     @PostMapping("/{id}/restart-workflow")
     @RequiresPermission("ticket:translate")
     public ResponseEntity<ApiResponse<Void>> restartWorkflow(
@@ -157,7 +159,7 @@ public class TicketController {
     }
 
     @Deprecated
-    @Operation(summary = "触发 AI 翻译（已废弃）", description = "已废弃，请使用 POST /{id}/restart-workflow。实际行为：重启整个 BPMN 工作流。")
+    @Operation(summary = "触发 AI 翻译（已废弃）", description = "已废弃，请使用 POST /{id}/restart-workflow。实际行为：重置状态为 PENDING_TRANS。")
     @PostMapping("/{id}/ai-translate")
     @RequiresPermission("ticket:translate")
     public ResponseEntity<ApiResponse<Void>> triggerAiTranslation(
@@ -167,7 +169,7 @@ public class TicketController {
     }
 
     @Deprecated
-    @Operation(summary = "触发 AI 回复（已废弃）", description = "已废弃，请使用 POST /{id}/restart-workflow。实际行为：校验翻译存在后重启整个 BPMN 工作流。")
+    @Operation(summary = "触发 AI 回复（已废弃）", description = "已废弃，请使用 POST /{id}/restart-workflow。实际行为：校验翻译存在后重置状态为 PENDING_TRANS。")
     @PostMapping("/{id}/ai-reply")
     @RequiresPermission("ticket:reply")
     public ResponseEntity<ApiResponse<Void>> triggerAiReply(
@@ -214,6 +216,15 @@ public class TicketController {
             @RequestBody ValidRequest request) {
         Ticket ticket = ticketService.updateValidity(id, request.getIsValid());
         return ResponseEntity.ok(ApiResponse.ok("有效性更新成功", ticket));
+    }
+
+    @Operation(summary = "获取工单状态转换历史", description = "查询指定工单的状态转换日志，按时间正序排列")
+    @GetMapping("/{id}/status-history")
+    @RequiresPermission("ticket:read")
+    public ResponseEntity<ApiResponse<List<TicketStatusLog>>> getStatusHistory(
+            @Parameter(description = "工单 ID") @PathVariable Long id) {
+        List<TicketStatusLog> history = ticketStatusLogService.getHistory(id);
+        return ResponseEntity.ok(ApiResponse.ok(history));
     }
 
     @Operation(summary = "获取工单的审核 Token", description = "获取或创建指定工单的审核 Token，供桌面端预览移动审核页面使用")

@@ -5,8 +5,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jefflower.fdserver.ai.dto.AgentExecuteResult;
 import com.jefflower.fdserver.ai.entity.AgentDefinition;
 import com.jefflower.fdserver.ai.entity.AgentExecution;
+import com.jefflower.fdserver.ai.entity.CapabilityDefinition;
 import com.jefflower.fdserver.ai.enums.ExecutionEnv;
 import com.jefflower.fdserver.ai.enums.ProviderType;
+import com.jefflower.fdserver.ai.repository.CapabilityDefinitionRepository;
 import com.jefflower.fdserver.common.exception.BusinessException;
 import com.jefflower.fdserver.common.exception.ErrorCode;
 import org.slf4j.Logger;
@@ -16,6 +18,7 @@ import org.springframework.stereotype.Service;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -25,15 +28,18 @@ public class AgentDispatchService {
 
     private final AgentDefinitionService definitionService;
     private final AgentExecutionService executionService;
+    private final CapabilityDefinitionRepository capabilityDefinitionRepository;
     private final Map<ProviderType, AgentProvider> providerMap;
     private final ObjectMapper objectMapper;
 
     public AgentDispatchService(AgentDefinitionService definitionService,
                                 AgentExecutionService executionService,
+                                CapabilityDefinitionRepository capabilityDefinitionRepository,
                                 List<AgentProvider> providers,
                                 ObjectMapper objectMapper) {
         this.definitionService = definitionService;
         this.executionService = executionService;
+        this.capabilityDefinitionRepository = capabilityDefinitionRepository;
         this.objectMapper = objectMapper;
         this.providerMap = providers.stream()
                 .collect(Collectors.toMap(AgentProvider::getProviderType, p -> p));
@@ -51,18 +57,25 @@ public class AgentDispatchService {
             throw new BusinessException(ErrorCode.AGENT_NOT_AVAILABLE, "Agent 已禁用: " + agentCode);
         }
 
-        if (def.getExecutionEnv() == ExecutionEnv.CLIENT_ONLY) {
+        // executionEnv 从 CapabilityDefinition 获取（Agent 层字段已废弃）
+        ExecutionEnv effectiveEnv = resolveExecutionEnv(def);
+        if (effectiveEnv == ExecutionEnv.CLIENT_ONLY) {
             throw new BusinessException(ErrorCode.AGENT_NOT_AVAILABLE, "Agent 仅支持客户端执行: " + agentCode);
         }
 
-        AgentProvider provider = providerMap.get(def.getProviderType());
+        // Capability 启用检查
+        checkCapabilityEnabled(def);
+
+        // providerType 从 CapabilityDefinition 获取（Agent 层字段已废弃）
+        ProviderType effectiveProvider = resolveProviderType(def);
+        AgentProvider provider = providerMap.get(effectiveProvider);
         if (provider == null) {
             throw new BusinessException(ErrorCode.AGENT_PROVIDER_NOT_FOUND,
-                    "未找到 ProviderType 为 " + def.getProviderType() + " 的 Provider");
+                    "未找到 ProviderType 为 " + effectiveProvider + " 的 Provider");
         }
 
-        // 解析 providerConfig
-        Map<String, Object> config = parseConfig(def.getProviderConfig());
+        // 解析 agentConfig
+        Map<String, Object> config = parseConfig(def.getAgentConfig());
 
         // 记录开始
         AgentExecution execution = executionService.startExecution(agentCode, refType, refId, userId, "server");
@@ -119,8 +132,71 @@ public class AgentDispatchService {
      */
     public List<AgentDefinition> getClientExecutableAgents() {
         return definitionService.findEnabled().stream()
-                .filter(d -> d.getExecutionEnv() != ExecutionEnv.SERVER_ONLY)
+                .filter(d -> resolveExecutionEnv(d) != ExecutionEnv.SERVER_ONLY)
+                .filter(this::isCapabilityEnabled)
                 .toList();
+    }
+
+    /**
+     * 检查 Agent 的 requiredCapability 对应的 Capability 是否启用。
+     * 如果 requiredCapability 为 null，跳过检查（兼容旧数据）。
+     */
+    private void checkCapabilityEnabled(AgentDefinition def) {
+        if (def.getRequiredCapability() == null) {
+            return;
+        }
+        Optional<CapabilityDefinition> capOpt = capabilityDefinitionRepository
+                .findByCode(def.getRequiredCapability());
+        if (capOpt.isEmpty() || !capOpt.get().isEnabled()) {
+            throw new BusinessException(ErrorCode.CAPABILITY_DISABLED,
+                    "Capability '" + def.getRequiredCapability() + "' is disabled or not found");
+        }
+    }
+
+    /**
+     * 判断 Agent 的 requiredCapability 对应的 Capability 是否启用（用于过滤）。
+     * 如果 requiredCapability 为 null，视为启用（兼容旧数据）。
+     */
+    private boolean isCapabilityEnabled(AgentDefinition def) {
+        if (def.getRequiredCapability() == null) {
+            return true;
+        }
+        return capabilityDefinitionRepository.findByCode(def.getRequiredCapability())
+                .map(CapabilityDefinition::isEnabled)
+                .orElse(false);
+    }
+
+    /**
+     * 解析 Agent 的有效 executionEnv。
+     * 优先从 requiredCapability → CapabilityDefinition.executionEnv 获取，
+     * 回退到 Agent 自身字段（兼容旧数据），默认 CLIENT_ONLY。
+     */
+    private ExecutionEnv resolveExecutionEnv(AgentDefinition def) {
+        if (def.getRequiredCapability() != null) {
+            Optional<CapabilityDefinition> capOpt = capabilityDefinitionRepository
+                    .findByCode(def.getRequiredCapability());
+            if (capOpt.isPresent() && capOpt.get().getExecutionEnv() != null) {
+                return capOpt.get().getExecutionEnv();
+            }
+        }
+        // 回退到 Agent 自身字段（兼容旧数据）
+        return def.getExecutionEnv() != null ? def.getExecutionEnv() : ExecutionEnv.CLIENT_ONLY;
+    }
+
+    /**
+     * 解析 Agent 的有效 providerType。
+     * 优先从 requiredCapability → CapabilityDefinition.providerType 获取，
+     * 回退到 Agent 自身字段（兼容旧数据）。
+     */
+    private ProviderType resolveProviderType(AgentDefinition def) {
+        if (def.getRequiredCapability() != null) {
+            Optional<CapabilityDefinition> capOpt = capabilityDefinitionRepository
+                    .findByCode(def.getRequiredCapability());
+            if (capOpt.isPresent() && capOpt.get().getProviderType() != null) {
+                return capOpt.get().getProviderType();
+            }
+        }
+        return def.getProviderType();
     }
 
     private Map<String, Object> parseConfig(String configJson) {
@@ -130,7 +206,7 @@ public class AgentDispatchService {
         try {
             return objectMapper.readValue(configJson, new TypeReference<>() {});
         } catch (Exception e) {
-            log.warn("[AgentDispatchService] Failed to parse providerConfig: {}", e.getMessage());
+            log.warn("[AgentDispatchService] Failed to parse agentConfig: {}", e.getMessage());
             return new HashMap<>();
         }
     }

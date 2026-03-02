@@ -329,9 +329,23 @@ function getSenderLabel(item: ConversationItem): string {
 
 function ConversationView({ jsonContent }: { jsonContent: string }) {
     const parsed = useMemo<ParsedContent | null>(() => {
+        let raw = jsonContent;
+        // 防御性处理：剥离 markdown 围栏
+        const fenceMatch = raw.match(/```(?:json)?\s*([\s\S]*?)\s*```/);
+        if (fenceMatch) raw = fenceMatch[1];
         try {
-            const obj = JSON.parse(jsonContent);
-            if (obj && typeof obj === 'object' && ('description' in obj || 'conversations' in obj)) {
+            const obj = JSON.parse(raw);
+            if (obj && typeof obj === 'object' && ('description' in obj || 'conversations' in obj
+                || 'description_text' in obj || 'descriptionText' in obj)) {
+                // 兼容 snake_case 键名
+                if (!obj.description && obj.description_text) obj.description = obj.description_text;
+                if (!obj.description && obj.descriptionText) obj.description = obj.descriptionText;
+                if (obj.conversations) {
+                    obj.conversations = obj.conversations.map((c: any) => ({
+                        ...c,
+                        bodyText: c.bodyText || c.body_text || '',
+                    }));
+                }
                 return obj as ParsedContent;
             }
             return null;

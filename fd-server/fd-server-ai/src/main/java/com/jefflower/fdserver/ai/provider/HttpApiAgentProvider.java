@@ -21,7 +21,7 @@ import java.util.Map;
  * 通用 HTTP API Agent Provider
  *
  * 支持 OpenAI/Claude 等标准 Chat Completion API。
- * 从 providerConfig 读取 baseUrl, model, apiKey, maxTokens, systemPrompt。
+ * 从 agentConfig 读取 baseUrl, model, apiKey, maxTokens, systemPrompt。
  */
 @Component
 public class HttpApiAgentProvider implements AgentProvider {

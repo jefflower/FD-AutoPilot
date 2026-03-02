@@ -9,6 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public interface AgentExecutionRepository extends JpaRepository<AgentExecution, Long> {
 
@@ -26,4 +27,15 @@ public interface AgentExecutionRepository extends JpaRepository<AgentExecution, 
     long countByAgentCodeAndCreatedAtAfter(String agentCode, LocalDateTime after);
 
     void deleteByCreatedAtBefore(LocalDateTime before);
+
+    // --- 导出用查询方法 ---
+
+    List<AgentExecution> findByCreatedAtAfterOrderByCreatedAtDesc(LocalDateTime cutoff);
+
+    List<AgentExecution> findByAgentCodeAndCreatedAtAfterOrderByCreatedAtDesc(String agentCode, LocalDateTime cutoff);
+
+    List<AgentExecution> findByStatusAndCreatedAtAfterOrderByCreatedAtDesc(ExecutionStatus status, LocalDateTime cutoff);
+
+    List<AgentExecution> findByAgentCodeAndStatusAndCreatedAtAfterOrderByCreatedAtDesc(
+            String agentCode, ExecutionStatus status, LocalDateTime cutoff);
 }

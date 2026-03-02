@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 import java.io.IOException;
 import java.util.Map;
@@ -16,6 +17,7 @@ import java.util.Map;
 /**
  * SSE 事件流端点 — 客户端通过此端点订阅实时事件
  */
+@Tag(name = "事件流", description = "SSE 实时事件推送端点")
 @Slf4j
 @RestController
 @RequestMapping("/api/v1/events")

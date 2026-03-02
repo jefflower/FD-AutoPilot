@@ -1,36 +1,36 @@
 
 import React, { useState, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useMQTranslation } from '../context/MQTranslationContext';
-import { useMQReply } from '../context/MQReplyContext';
+import { useMQTranslateAgent } from '../context/MQTranslateAgentContext';
+import { useMQReplyAgent } from '../context/MQReplyAgentContext';
 
 export const FloatingTaskWidget: React.FC = () => {
     const { t } = useTranslation(['tasks', 'common']);
     const [expanded, setExpanded] = useState(false);
 
     const {
-        translationQueue,
-        processingTasks: transProcessing,
-        completedHistory: transHistory
-    } = useMQTranslation();
+        taskQueue: geminiQueue,
+        processingTasks: geminiProcessing,
+        completedHistory: geminiHistory
+    } = useMQTranslateAgent();
 
     const {
-        replyQueue,
-        processingTasks: replyProcessing,
-        completedHistory: replyHistory
-    } = useMQReply();
+        taskQueue: notebookQueue,
+        processingTasks: notebookProcessing,
+        completedHistory: notebookHistory
+    } = useMQReplyAgent();
 
-    const totalActive = transProcessing.size + replyProcessing.size + translationQueue.length + replyQueue.length;
-    const isRunning = transProcessing.size > 0 || replyProcessing.size > 0;
+    const totalActive = geminiProcessing.size + notebookProcessing.size + geminiQueue.length + notebookQueue.length;
+    const isRunning = geminiProcessing.size > 0 || notebookProcessing.size > 0;
 
-    const navigateToTask = useCallback((_tab: 'translation' | 'reply' | 'automation', ticketId: number) => {
+    const navigateToTask = useCallback((_tab: string, ticketId: number) => {
         window.dispatchEvent(new CustomEvent('navigate-to-task', {
-            detail: { tab: 'automation', ticketId }
+            detail: { tab: 'agent-automation', ticketId }
         }));
         setExpanded(false);
     }, []);
 
-    if (totalActive === 0 && !expanded && transHistory.length === 0 && replyHistory.length === 0) {
+    if (totalActive === 0 && !expanded && geminiHistory.length === 0 && notebookHistory.length === 0) {
         return null;
     }
 
@@ -81,25 +81,25 @@ export const FloatingTaskWidget: React.FC = () => {
                     <div className="px-4 py-3 border-b border-white/5 bg-white/5 flex items-center justify-between">
                         <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{t('widget.backgroundJobs')}</span>
                         <div className="text-[10px] text-slate-500 font-mono">
-                            CTX: {transProcessing.size + replyProcessing.size} CPU
+                            CTX: {geminiProcessing.size + notebookProcessing.size} CPU
                         </div>
                     </div>
 
                     <div className="flex flex-col max-h-[400px] overflow-y-auto custom-scrollbar">
 
-                        {/* 1. Translation Section */}
-                        {(translationQueue.length > 0 || transProcessing.size > 0 || transHistory.length > 0) && (
+                        {/* 1. Gemini Agent Section */}
+                        {(geminiQueue.length > 0 || geminiProcessing.size > 0 || geminiHistory.length > 0) && (
                             <div className="p-3">
                                 <h4 className="flex items-center gap-2 text-[10px] font-bold text-cyan-400 uppercase mb-2">
                                     <span className="w-1 h-3 bg-cyan-500 rounded-full"></span>
-                                    {t('widget.translationQueue')}
+                                    Gemini Agent
                                 </h4>
                                 <div className="space-y-1.5">
                                     {/* Active */}
-                                    {Array.from(transProcessing.values()).map(task => (
+                                    {Array.from(geminiProcessing.values()).map(task => (
                                         <div
                                             key={task.ticketId}
-                                            onClick={() => navigateToTask('translation', task.ticketId)}
+                                            onClick={() => navigateToTask('gemini', task.ticketId)}
                                             className={`${taskItemClass} flex items-center justify-between p-2 rounded-lg bg-cyan-500/10 border border-cyan-500/20`}
                                         >
                                             <div className="flex flex-col min-w-0">
@@ -114,10 +114,10 @@ export const FloatingTaskWidget: React.FC = () => {
                                     ))}
 
                                     {/* Pending */}
-                                    {translationQueue.slice(0, 3).map(task => (
+                                    {geminiQueue.slice(0, 3).map(task => (
                                         <div
                                             key={task.ticketId}
-                                            onClick={() => navigateToTask('translation', task.ticketId)}
+                                            onClick={() => navigateToTask('gemini', task.ticketId)}
                                             className={`${taskItemClass} flex items-center justify-between p-2 rounded-lg bg-white/5 border border-white/5 opacity-60 hover:opacity-100`}
                                         >
                                             <div className="flex items-center gap-2">
@@ -129,7 +129,7 @@ export const FloatingTaskWidget: React.FC = () => {
                                     ))}
 
                                     {/* Recent Completed */}
-                                    {transHistory.slice(0, 3).map(task => {
+                                    {geminiHistory.slice(0, 3).map(task => {
                                         const bg = task.status === 'failed' ? 'bg-red-500/10 border-red-500/20'
                                             : task.status === 'skipped' ? 'bg-amber-500/10 border-amber-500/20'
                                             : 'bg-green-500/5 border-green-500/10';
@@ -142,7 +142,7 @@ export const FloatingTaskWidget: React.FC = () => {
                                         return (
                                             <div
                                                 key={task.ticketId}
-                                                onClick={() => navigateToTask('translation', task.ticketId)}
+                                                onClick={() => navigateToTask('gemini', task.ticketId)}
                                                 className={`${taskItemClass} flex items-center justify-between p-2 rounded-lg border ${bg}`}
                                             >
                                                 <div className="flex items-center gap-2">
@@ -158,23 +158,23 @@ export const FloatingTaskWidget: React.FC = () => {
                         )}
 
                         {/* Divider */}
-                        {((translationQueue.length > 0 || transProcessing.size > 0 || transHistory.length > 0) && (replyQueue.length > 0 || replyProcessing.size > 0 || replyHistory.length > 0)) && (
+                        {((geminiQueue.length > 0 || geminiProcessing.size > 0 || geminiHistory.length > 0) && (notebookQueue.length > 0 || notebookProcessing.size > 0 || notebookHistory.length > 0)) && (
                             <div className="h-px bg-white/5 mx-4 my-1"></div>
                         )}
 
-                        {/* 2. Reply Section */}
-                        {(replyQueue.length > 0 || replyProcessing.size > 0 || replyHistory.length > 0) && (
+                        {/* 2. NotebookLM Agent Section */}
+                        {(notebookQueue.length > 0 || notebookProcessing.size > 0 || notebookHistory.length > 0) && (
                             <div className="p-3">
                                 <h4 className="flex items-center gap-2 text-[10px] font-bold text-orange-400 uppercase mb-2">
                                     <span className="w-1 h-3 bg-orange-500 rounded-full"></span>
-                                    {t('widget.autoReplyQueue')}
+                                    NotebookLM Agent
                                 </h4>
                                 <div className="space-y-1.5">
                                     {/* Active */}
-                                    {Array.from(replyProcessing.values()).map(task => (
+                                    {Array.from(notebookProcessing.values()).map(task => (
                                         <div
                                             key={task.ticketId}
-                                            onClick={() => navigateToTask('reply', task.ticketId)}
+                                            onClick={() => navigateToTask('notebooklm', task.ticketId)}
                                             className={`${taskItemClass} flex items-center justify-between p-2 rounded-lg bg-orange-500/10 border border-orange-500/20`}
                                         >
                                             <div className="flex flex-col min-w-0">
@@ -189,10 +189,10 @@ export const FloatingTaskWidget: React.FC = () => {
                                     ))}
 
                                     {/* Pending */}
-                                    {replyQueue.slice(0, 3).map(task => (
+                                    {notebookQueue.slice(0, 3).map(task => (
                                         <div
                                             key={task.ticketId}
-                                            onClick={() => navigateToTask('reply', task.ticketId)}
+                                            onClick={() => navigateToTask('notebooklm', task.ticketId)}
                                             className={`${taskItemClass} flex items-center justify-between p-2 rounded-lg bg-white/5 border border-white/5 opacity-60 hover:opacity-100`}
                                         >
                                             <div className="flex items-center gap-2">
@@ -204,7 +204,7 @@ export const FloatingTaskWidget: React.FC = () => {
                                     ))}
 
                                     {/* Recent Completed */}
-                                    {replyHistory.slice(0, 3).map(task => {
+                                    {notebookHistory.slice(0, 3).map(task => {
                                         const bg = task.status === 'failed' ? 'bg-red-500/10 border-red-500/20'
                                             : task.status === 'skipped' ? 'bg-amber-500/10 border-amber-500/20'
                                             : 'bg-green-500/5 border-green-500/10';
@@ -217,7 +217,7 @@ export const FloatingTaskWidget: React.FC = () => {
                                         return (
                                             <div
                                                 key={task.ticketId}
-                                                onClick={() => navigateToTask('reply', task.ticketId)}
+                                                onClick={() => navigateToTask('notebooklm', task.ticketId)}
                                                 className={`${taskItemClass} flex items-center justify-between p-2 rounded-lg border ${bg}`}
                                             >
                                                 <div className="flex items-center gap-2">
@@ -232,7 +232,7 @@ export const FloatingTaskWidget: React.FC = () => {
                             </div>
                         )}
 
-                        {(totalActive === 0 && transHistory.length === 0 && replyHistory.length === 0) && (
+                        {(totalActive === 0 && geminiHistory.length === 0 && notebookHistory.length === 0) && (
                             <div className="p-8 text-center text-slate-600 text-[10px] italic">
                                 {t('widget.noActiveTasks')}
                             </div>

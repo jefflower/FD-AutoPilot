@@ -8,6 +8,7 @@ import com.jefflower.fdserver.auth.security.RequiresPermission;
 import com.jefflower.fdserver.auth.service.AuthConfigService;
 import com.jefflower.fdserver.auth.service.OrgSyncService;
 import com.jefflower.fdserver.common.dto.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Map;
 
+@Tag(name = "组织同步", description = "钉钉/企业微信组织架构同步、部门管理")
 @RestController
 @RequestMapping("/api/v1/auth/org-sync")
 @RequiredArgsConstructor

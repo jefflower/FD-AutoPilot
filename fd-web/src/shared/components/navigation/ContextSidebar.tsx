@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import type { TFunction } from 'i18next';
-import { ChevronsLeft } from 'lucide-react';
+import { ChevronsLeft, Pin } from 'lucide-react';
 import type { NavModule } from '../../config/navigationConfig';
 import type { QueueCounts } from '../../types/server';
 
@@ -27,7 +27,11 @@ interface ContextSidebarProps {
   isAdmin: boolean;
   onPageClick: (tab: string) => void;
   onCollapse: () => void;
+  onPin?: () => void;
   queueCounts?: QueueCounts | null;
+  isOverlay?: boolean;
+  /** 空闲自动折叠倒计时（秒），null 表示未激活 */
+  idleCountdown?: number | null;
 }
 
 const ContextSidebar: React.FC<ContextSidebarProps> = ({
@@ -36,14 +40,21 @@ const ContextSidebar: React.FC<ContextSidebarProps> = ({
   isAdmin,
   onPageClick,
   onCollapse,
+  onPin,
   queueCounts,
+  isOverlay = false,
+  idleCountdown,
 }) => {
   const { t } = useTranslation('common');
   const borderColor = borderColorMap[module.color] || borderColorMap.indigo;
   const titleColor = titleColorMap[module.color] || titleColorMap.indigo;
 
   return (
-    <div className="w-[220px] min-w-[220px] bg-slate-900/60 backdrop-blur-xl border-r border-white/5 flex flex-col flex-shrink-0 select-none">
+    <div className={`bg-slate-900/60 backdrop-blur-xl border-r border-white/5 flex flex-col flex-shrink-0 select-none ${
+      isOverlay
+        ? 'h-full w-full overflow-hidden'
+        : 'w-[220px] min-w-[220px]'
+    }`}>
       {/* Module Header */}
       <div className="px-4 pt-4 pb-3">
         <h2 className={`text-sm font-semibold ${titleColor}`}>
@@ -85,15 +96,28 @@ const ContextSidebar: React.FC<ContextSidebarProps> = ({
         })}
       </nav>
 
-      {/* Collapse Button */}
+      {/* Bottom Action Button */}
       <div className="px-2 pb-3">
-        <button
-          onClick={onCollapse}
-          className="w-full h-8 rounded-lg flex items-center justify-center gap-2 text-slate-500 hover:text-slate-300 hover:bg-white/5 transition-all duration-150"
-        >
-          <ChevronsLeft size={14} />
-          <span className="text-xs">{t('sidebar.collapse')}</span>
-        </button>
+        {isOverlay && onPin ? (
+          <button
+            onClick={onPin}
+            className="w-full h-8 rounded-lg flex items-center justify-center gap-2 text-slate-500 hover:text-slate-300 hover:bg-white/5 transition-all duration-150"
+          >
+            <Pin size={14} />
+            <span className="text-xs">{t('sidebar.pin')}</span>
+          </button>
+        ) : (
+          <button
+            onClick={onCollapse}
+            className="w-full h-8 rounded-lg flex items-center justify-center gap-2 text-slate-500 hover:text-slate-300 hover:bg-white/5 transition-all duration-150"
+          >
+            <ChevronsLeft size={14} />
+            <span className="text-xs">{t('sidebar.collapse')}</span>
+            {idleCountdown != null && idleCountdown > 0 && (
+              <span className="text-[10px] text-slate-600 tabular-nums ml-auto">{idleCountdown}s</span>
+            )}
+          </button>
+        )}
       </div>
     </div>
   );

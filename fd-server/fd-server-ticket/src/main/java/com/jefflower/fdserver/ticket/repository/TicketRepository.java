@@ -13,9 +13,16 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 public interface TicketRepository extends JpaRepository<Ticket, Long> {
+
+        /**
+         * 查询指定状态且 updatedAt 早于截止时间的工单（用于超时检测）
+         */
+        List<Ticket> findByStatusAndUpdatedAtBefore(TicketStatus status, LocalDateTime cutoff);
+
         Optional<Ticket> findByExternalId(String externalId);
 
         /**
@@ -30,12 +37,12 @@ public interface TicketRepository extends JpaRepository<Ticket, Long> {
          * 列表查询（不加载关联数据，避免 N+1）
          */
         @Query("SELECT t FROM Ticket t WHERE " +
-                        "(:status IS NULL OR t.status = :status) AND " +
-                        "(:externalId IS NULL OR t.externalId = :externalId) AND " +
-                        "(:subject IS NULL OR t.subject LIKE %:subject%) AND " +
-                        "(:isValid IS NULL OR t.isValid = :isValid) AND " +
-                        "(:createdAfter IS NULL OR t.createdAt >= :createdAfter) AND " +
-                        "(:createdBefore IS NULL OR t.createdAt <= :createdBefore)")
+                        "(CAST(:status AS string) IS NULL OR t.status = :status) AND " +
+                        "(CAST(:externalId AS string) IS NULL OR t.externalId = :externalId) AND " +
+                        "(CAST(:subject AS string) IS NULL OR t.subject LIKE %:subject%) AND " +
+                        "(CAST(:isValid AS boolean) IS NULL OR t.isValid = :isValid) AND " +
+                        "(CAST(:createdAfter AS timestamp) IS NULL OR t.createdAt >= :createdAfter) AND " +
+                        "(CAST(:createdBefore AS timestamp) IS NULL OR t.createdAt <= :createdBefore)")
         Page<Ticket> findByFilters(
                         @Param("status") TicketStatus status,
                         @Param("externalId") String externalId,
@@ -62,12 +69,12 @@ public interface TicketRepository extends JpaRepository<Ticket, Long> {
                         "(SELECT MAX(tr2.id) FROM TicketTranslation tr2 WHERE tr2.ticket.id = t.id)), " +
                         "t.fdStatus, t.fdPriority, t.fdRequesterId, t.fdResponderId, t.fdTags, t.fdCreatedAt, t.fdUpdatedAt) " +
                         "FROM Ticket t WHERE " +
-                        "(:status IS NULL OR t.status = :status) AND " +
-                        "(:externalId IS NULL OR t.externalId = :externalId) AND " +
-                        "(:subject IS NULL OR t.subject LIKE %:subject%) AND " +
-                        "(:isValid IS NULL OR t.isValid = :isValid) AND " +
-                        "(:createdAfter IS NULL OR t.createdAt >= :createdAfter) AND " +
-                        "(:createdBefore IS NULL OR t.createdAt <= :createdBefore)")
+                        "(CAST(:status AS string) IS NULL OR t.status = :status) AND " +
+                        "(CAST(:externalId AS string) IS NULL OR t.externalId = :externalId) AND " +
+                        "(CAST(:subject AS string) IS NULL OR t.subject LIKE %:subject%) AND " +
+                        "(CAST(:isValid AS boolean) IS NULL OR t.isValid = :isValid) AND " +
+                        "(CAST(:createdAfter AS timestamp) IS NULL OR t.createdAt >= :createdAfter) AND " +
+                        "(CAST(:createdBefore AS timestamp) IS NULL OR t.createdAt <= :createdBefore)")
         Page<TicketListDTO> findByFiltersAsDTO(
                         @Param("status") TicketStatus status,
                         @Param("externalId") String externalId,
@@ -83,4 +90,11 @@ public interface TicketRepository extends JpaRepository<Ticket, Long> {
                         @Param("sourceStatus") TicketStatus sourceStatus,
                         @Param("targetStatus") TicketStatus targetStatus,
                         @Param("now") LocalDateTime now);
+
+        /**
+         * 修复 version 为 NULL 的历史数据（@Version 乐观锁要求非空）
+         */
+        @Modifying
+        @Query(value = "UPDATE ticket SET version = 0 WHERE version IS NULL", nativeQuery = true)
+        int fixNullVersions();
 }

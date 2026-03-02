@@ -19,6 +19,8 @@ tower-http = { version = "0.6", features = ["cors"] }
 # Shadow Agent 依赖（SSE 流式输出）
 tokio-stream = "0.1"
 chrono = "0.4"
+rusqlite = { version = "0.32", features = ["bundled"] }
+dirs = "5"
 uuid = { version = "1", features = ["v4"] }
 # Tauri 桌面客户端（可选，仅桌面模式需要）
 tauri = { version = "2", features = ["devtools"], optional = true }

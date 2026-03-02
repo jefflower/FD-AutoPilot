@@ -5,31 +5,30 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ticketApi, adminApi, downloadWithAuth } from '../../../shared/services/serverApi';
-import type { ServerTicket, TicketStatus, KnowledgeNote, KnowledgeNoteRequest } from '../../../shared/types/server';
+import { ticketApi, adminApi, configApi, knowledgeApi, downloadWithAuth, getAuthToken, getApiBaseUrl } from '../../../shared/services/serverApi';
+import type { ServerTicket, TicketStatus, KnowledgeNote, KnowledgeNoteRequest, KnowledgeBase, KnowledgeSyncConfig } from '../../../shared/types/server';
 import ServerTicketDetail from '../../ticket/components/ServerTicketDetail';
+import SourcePicker from '../../../shared/components/SourcePicker';
+import TicketList from '../../../shared/components/TicketList';
 
 // ============ 常量 ============
 
-const STATUS_COLORS: Record<string, string> = {
-    PENDING_TRANS: 'bg-yellow-500/20 text-yellow-400',
-    PROCESSING: 'bg-blue-500/20 text-blue-400',
-    PENDING_AUDIT: 'bg-pink-500/20 text-pink-400',
-    AUDITING: 'bg-indigo-500/20 text-indigo-400',
-    APPROVED: 'bg-emerald-500/20 text-emerald-400',
-    COMPLETED: 'bg-green-500/20 text-green-400',
-};
-
 const TICKET_STATUSES: TicketStatus[] = [
-    'PENDING_TRANS', 'PROCESSING',
-    'PENDING_AUDIT', 'AUDITING', 'APPROVED', 'COMPLETED',
+    'PENDING_TRANS', 'TRANSLATING', 'PENDING_REPLY', 'REPLYING',
+    'PROCESSING', 'PENDING_AUDIT', 'AUDITING', 'APPROVED', 'COMPLETED',
 ];
 
 // ============ 主组件 ============
 
 const KnowledgeTab: React.FC = () => {
     const { t } = useTranslation(['admin', 'common']);
-    const [activePanel, setActivePanel] = useState<'tickets' | 'notes'>('tickets');
+    const [activePanel, setActivePanel] = useState<'tickets' | 'notes' | 'notebooklm'>('tickets');
+
+    const panels: { key: typeof activePanel; label: string }[] = [
+        { key: 'tickets', label: t('knowledge.ticketMarking') },
+        { key: 'notes', label: t('knowledge.notes') },
+        { key: 'notebooklm', label: 'NotebookLM' },
+    ];
 
     return (
         <div className="flex-1 flex flex-col h-full overflow-hidden">
@@ -41,30 +40,26 @@ const KnowledgeTab: React.FC = () => {
                         {t('knowledge.title')}
                     </h3>
                     <div className="flex bg-black/40 rounded-lg p-0.5 border border-white/5">
-                        <button
-                            onClick={() => setActivePanel('tickets')}
-                            className={`px-3 py-1 rounded-md text-xs font-medium transition-all ${activePanel === 'tickets'
-                                ? 'bg-amber-500/20 text-amber-400 shadow-sm'
-                                : 'text-slate-400 hover:text-slate-300'
-                                }`}
-                        >
-                            {t('knowledge.ticketMarking')}
-                        </button>
-                        <button
-                            onClick={() => setActivePanel('notes')}
-                            className={`px-3 py-1 rounded-md text-xs font-medium transition-all ${activePanel === 'notes'
-                                ? 'bg-amber-500/20 text-amber-400 shadow-sm'
-                                : 'text-slate-400 hover:text-slate-300'
-                                }`}
-                        >
-                            {t('knowledge.notes')}
-                        </button>
+                        {panels.map(p => (
+                            <button
+                                key={p.key}
+                                onClick={() => setActivePanel(p.key)}
+                                className={`px-3 py-1 rounded-md text-xs font-medium transition-all ${activePanel === p.key
+                                    ? 'bg-amber-500/20 text-amber-400 shadow-sm'
+                                    : 'text-slate-400 hover:text-slate-300'
+                                    }`}
+                            >
+                                {p.label}
+                            </button>
+                        ))}
                     </div>
                 </div>
             </div>
 
             {/* 面板内容 */}
-            {activePanel === 'tickets' ? <TicketValidityPanel /> : <NotesPanel />}
+            {activePanel === 'tickets' && <TicketValidityPanel />}
+            {activePanel === 'notes' && <NotesPanel />}
+            {activePanel === 'notebooklm' && <NotebookLmConfigPanel />}
         </div>
     );
 };
@@ -176,59 +171,44 @@ const TicketValidityPanel: React.FC = () => {
         }
     };
 
-    const toggleSelect = (id: number) => {
-        setSelectedIds(prev => {
-            const next = new Set(prev);
-            if (next.has(id)) next.delete(id);
-            else next.add(id);
-            return next;
-        });
-    };
-
-    const toggleSelectAll = () => {
-        if (selectedIds.size === tickets.length) {
-            setSelectedIds(new Set());
-        } else {
-            setSelectedIds(new Set(tickets.map(t => t.id)));
-        }
-    };
-
     return (
-        <div className="flex-1 flex flex-col overflow-hidden">
-            {/* 工具栏 */}
-            <div className="px-4 py-2.5 border-b border-white/5 bg-slate-900/30 flex-shrink-0">
-                <div className="flex items-center gap-2 flex-wrap">
-                    {/* 状态筛选 */}
-                    <select
-                        value={statusFilter}
-                        onChange={e => setStatusFilter(e.target.value as TicketStatus | '')}
-                        className="px-2.5 py-1.5 bg-black/40 border border-white/10 rounded-lg text-xs text-white focus:border-amber-500/50 focus:outline-none"
-                    >
-                        <option value="">{t('common:label.allStatus')}</option>
-                        {TICKET_STATUSES.map(status => (
-                            <option key={status} value={status}>{t(`common:ticketStatus.${status}`)}</option>
-                        ))}
-                    </select>
+        <div className="flex-1 flex h-full overflow-hidden">
+            {/* 左侧：工单列表 */}
+            <div className="w-80 border-r border-white/10 flex flex-col flex-shrink-0 bg-slate-900/20">
+                {/* 头部工具栏 */}
+                <div className="p-3 border-b border-white/10 bg-gradient-to-br from-amber-900/30 to-slate-900/20 space-y-2">
+                    {/* 状态筛选 + 有效性筛选 */}
+                    <div className="flex items-center gap-2">
+                        <select
+                            value={statusFilter}
+                            onChange={e => setStatusFilter(e.target.value as TicketStatus | '')}
+                            className="flex-1 min-w-0 px-2 py-1.5 bg-black/40 border border-white/10 rounded-lg text-[10px] text-white focus:border-amber-500/50 focus:outline-none"
+                        >
+                            <option value="">{t('common:label.allStatus')}</option>
+                            {TICKET_STATUSES.map(status => (
+                                <option key={status} value={status}>{t(`common:ticketStatus.${status}`)}</option>
+                            ))}
+                        </select>
 
-                    {/* 有效性筛选 */}
-                    <div className="flex bg-black/30 rounded-lg p-0.5 border border-white/5">
-                        {(['all', 'valid', 'invalid'] as const).map(opt => (
-                            <button
-                                key={opt}
-                                onClick={() => setValidFilter(opt)}
-                                className={`px-2 py-1 rounded-md text-[10px] font-medium transition-all ${validFilter === opt
-                                    ? 'bg-amber-500/20 text-amber-400'
-                                    : 'text-slate-500 hover:text-slate-400'
-                                    }`}
-                            >
-                                {opt === 'all' ? t('knowledge.tickets.all') : opt === 'valid' ? t('knowledge.tickets.validOnly') : t('knowledge.tickets.invalidOnly')}
-                            </button>
-                        ))}
+                        <div className="flex bg-black/30 rounded-lg p-0.5 border border-white/5 flex-shrink-0">
+                            {(['all', 'valid', 'invalid'] as const).map(opt => (
+                                <button
+                                    key={opt}
+                                    onClick={() => setValidFilter(opt)}
+                                    className={`px-1.5 py-1 rounded-md text-[10px] font-medium transition-all ${validFilter === opt
+                                        ? 'bg-amber-500/20 text-amber-400'
+                                        : 'text-slate-500 hover:text-slate-400'
+                                        }`}
+                                >
+                                    {opt === 'all' ? t('knowledge.tickets.all') : opt === 'valid' ? t('knowledge.tickets.validOnly') : t('knowledge.tickets.invalidOnly')}
+                                </button>
+                            ))}
+                        </div>
                     </div>
 
                     {/* 搜索框 */}
-                    <div className="relative flex-1 min-w-[180px] max-w-[300px]">
-                        <svg className="absolute left-2 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="relative">
+                        <svg className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                         </svg>
                         <input
@@ -236,182 +216,111 @@ const TicketValidityPanel: React.FC = () => {
                             placeholder={t('knowledge.tickets.searchPlaceholder')}
                             value={searchQuery}
                             onChange={e => setSearchQuery(e.target.value)}
-                            className="w-full pl-7 pr-3 py-1.5 bg-black/40 border border-white/5 rounded-lg text-xs text-white placeholder-slate-500 focus:border-amber-500/50 focus:outline-none"
+                            className="w-full pl-8 pr-3 py-1.5 bg-black/40 border border-white/5 rounded-lg text-xs text-white placeholder-slate-500 focus:border-amber-500/50 focus:outline-none"
                         />
                     </div>
+                </div>
 
-                    <div className="flex-1" />
+                {/* 批量操作栏 */}
+                {selectedIds.size > 0 && (
+                    <div className="px-3 py-2 border-b border-white/10 bg-amber-500/5 flex items-center gap-1.5 flex-shrink-0">
+                        <span className="text-[10px] text-slate-400 flex-shrink-0">{t('knowledge.tickets.selectedCount', { count: selectedIds.size })}</span>
+                        <div className="flex-1" />
+                        <button
+                            onClick={() => handleBatchMark(true)}
+                            disabled={batchLoading}
+                            className="px-2 py-1 bg-emerald-500/20 text-emerald-400 rounded-lg text-[10px] font-medium hover:bg-emerald-500/30 disabled:opacity-50 transition-colors"
+                        >
+                            {t('knowledge.tickets.markValid')}
+                        </button>
+                        <button
+                            onClick={() => handleBatchMark(false)}
+                            disabled={batchLoading}
+                            className="px-2 py-1 bg-red-500/20 text-red-400 rounded-lg text-[10px] font-medium hover:bg-red-500/30 disabled:opacity-50 transition-colors"
+                        >
+                            {t('knowledge.tickets.markInvalid')}
+                        </button>
+                    </div>
+                )}
 
-                    {/* 批量操作 */}
-                    {selectedIds.size > 0 && (
-                        <div className="flex items-center gap-1.5">
-                            <span className="text-[10px] text-slate-400">{t('knowledge.tickets.selectedCount', { count: selectedIds.size })}</span>
+                {/* 工单列表 */}
+                <TicketList
+                    tickets={tickets}
+                    selectedId={selectedTicketId}
+                    onSelect={(ticket) => setSelectedTicketId(ticket.id)}
+                    themeColor="amber"
+                    titleMode="original"
+                    selectable
+                    selectedIds={selectedIds}
+                    onSelectionChange={setSelectedIds}
+                    renderExtra={(ticket) => (
+                        <div className="flex items-center gap-2">
                             <button
-                                onClick={() => handleBatchMark(true)}
-                                disabled={batchLoading}
-                                className="px-2.5 py-1 bg-emerald-500/20 text-emerald-400 rounded-lg text-[10px] font-medium hover:bg-emerald-500/30 disabled:opacity-50 transition-colors"
+                                onClick={(e) => { e.stopPropagation(); handleToggleValid(ticket.id, ticket.isValid); }}
+                                className={`relative w-9 h-5 rounded-full transition-colors ${ticket.isValid ? 'bg-emerald-500' : 'bg-slate-600'}`}
                             >
-                                {t('knowledge.tickets.markValid')}
+                                <div className={`absolute top-0.5 w-4 h-4 bg-white rounded-full transition-transform shadow-sm ${ticket.isValid ? 'translate-x-[18px]' : 'translate-x-0.5'}`} />
                             </button>
-                            <button
-                                onClick={() => handleBatchMark(false)}
-                                disabled={batchLoading}
-                                className="px-2.5 py-1 bg-red-500/20 text-red-400 rounded-lg text-[10px] font-medium hover:bg-red-500/30 disabled:opacity-50 transition-colors"
-                            >
-                                {t('knowledge.tickets.markInvalid')}
-                            </button>
+                            <span className="text-[10px] text-slate-500">
+                                {ticket.isValid ? t('knowledge.tickets.validLabel', { defaultValue: '有效' }) : t('knowledge.tickets.invalidLabel', { defaultValue: '无效' })}
+                            </span>
                         </div>
                     )}
-
-                    {/* 导出 */}
-                    <button
-                        onClick={handleExport}
-                        className="px-2.5 py-1.5 bg-amber-500/20 text-amber-400 rounded-lg text-[10px] font-medium hover:bg-amber-500/30 transition-colors flex items-center gap-1"
-                    >
-                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                        </svg>
-                        {t('knowledge.tickets.exportValid')}
-                    </button>
-                </div>
+                    pagination={{ mode: 'pages', page, totalPages, totalElements, onPageChange: setPage }}
+                    loading={loading}
+                    density="compact"
+                    emptyText={t('knowledge.tickets.noData')}
+                />
             </div>
 
-            {/* 主内容区：左右分栏 */}
-            <div className="flex-1 flex overflow-hidden">
-                {/* 左侧：工单列表 */}
-                <div className="w-[480px] flex-shrink-0 border-r border-white/5 flex flex-col overflow-hidden">
-                    {/* 表格 */}
-                    <div className="flex-1 overflow-auto">
-                        <table className="w-full">
-                            <thead className="sticky top-0 bg-slate-900/90 backdrop-blur-sm z-10">
-                                <tr className="border-b border-white/10">
-                                    <th className="px-3 py-2.5 w-10">
-                                        <input
-                                            type="checkbox"
-                                            checked={tickets.length > 0 && selectedIds.size === tickets.length}
-                                            onChange={toggleSelectAll}
-                                            className="w-3.5 h-3.5 rounded border-white/20 bg-transparent accent-amber-500 cursor-pointer"
-                                        />
-                                    </th>
-                                    <th className="px-3 py-2.5 text-left text-[10px] font-medium text-slate-400 uppercase tracking-wider w-24">{t('knowledge.tickets.ticketId')}</th>
-                                    <th className="px-3 py-2.5 text-left text-[10px] font-medium text-slate-400 uppercase tracking-wider">{t('knowledge.tickets.subject')}</th>
-                                    <th className="px-3 py-2.5 text-center text-[10px] font-medium text-slate-400 uppercase tracking-wider w-20">{t('common:label.status')}</th>
-                                    <th className="px-3 py-2.5 text-center text-[10px] font-medium text-slate-400 uppercase tracking-wider w-16">{t('knowledge.tickets.valid')}</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {loading ? (
-                                    <tr>
-                                        <td colSpan={5} className="px-4 py-20 text-center text-slate-500 text-xs">
-                                            <div className="flex items-center justify-center gap-2">
-                                                <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
-                                                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                                                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
-                                                </svg>
-                                                {t('common:button.loading')}
-                                            </div>
-                                        </td>
-                                    </tr>
-                                ) : tickets.length === 0 ? (
-                                    <tr>
-                                        <td colSpan={5} className="px-4 py-20 text-center text-slate-500 text-xs">
-                                            {t('knowledge.tickets.noData')}
-                                        </td>
-                                    </tr>
-                                ) : (
-                                    tickets.map(ticket => (
-                                        <tr
-                                            key={ticket.id}
-                                            onClick={() => setSelectedTicketId(ticket.id)}
-                                            className={`border-b border-white/5 hover:bg-white/[0.03] transition-colors cursor-pointer ${
-                                                selectedTicketId === ticket.id ? 'bg-amber-500/10 border-l-2 border-l-amber-500' : ''
-                                            }`}
-                                        >
-                                            <td className="px-3 py-2">
-                                                <input
-                                                    type="checkbox"
-                                                    checked={selectedIds.has(ticket.id)}
-                                                    onChange={() => toggleSelect(ticket.id)}
-                                                    onClick={e => e.stopPropagation()}
-                                                    className="w-3.5 h-3.5 rounded border-white/20 bg-transparent accent-amber-500 cursor-pointer"
-                                                />
-                                            </td>
-                                            <td className="px-3 py-2">
-                                                <span className="text-[10px] font-mono text-indigo-400/80">#{ticket.externalId}</span>
-                                            </td>
-                                            <td className="px-3 py-2">
-                                                <span className="text-xs text-slate-300 line-clamp-1">{ticket.subject}</span>
-                                            </td>
-                                            <td className="px-3 py-2 text-center">
-                                                <span className={`inline-block px-1.5 py-0.5 rounded text-[9px] font-bold ${STATUS_COLORS[ticket.status] || 'bg-slate-500/20 text-slate-400'}`}>
-                                                    {t(`common:ticketStatus.${ticket.status}` as any)}
-                                                </span>
-                                            </td>
-                                            <td className="px-3 py-2 text-center">
-                                                <button
-                                                    onClick={e => { e.stopPropagation(); handleToggleValid(ticket.id, ticket.isValid); }}
-                                                    className={`relative w-9 h-5 rounded-full transition-colors ${ticket.isValid ? 'bg-emerald-500' : 'bg-slate-600'
-                                                        }`}
-                                                >
-                                                    <div className={`absolute top-0.5 w-4 h-4 bg-white rounded-full transition-transform shadow-sm ${ticket.isValid ? 'translate-x-[18px]' : 'translate-x-0.5'
-                                                        }`} />
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    ))
-                                )}
-                            </tbody>
-                        </table>
+            {/* 右侧：详情预览 */}
+            <div className="flex-1 bg-slate-900/40 relative">
+                {detailLoading ? (
+                    <div className="flex items-center justify-center h-full text-slate-500 text-xs gap-2">
+                        <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                        </svg>
+                        加载中...
                     </div>
-
-                    {/* 分页 */}
-                    <div className="px-4 py-2 border-t border-white/5 bg-slate-900/30 flex items-center justify-between flex-shrink-0">
-                        <span className="text-[10px] text-slate-500">
-                            {t('knowledge.tickets.pagination', { total: totalElements, current: page + 1, pages: totalPages })}
-                        </span>
-                        <div className="flex items-center gap-1">
+                ) : selectedTicket ? (
+                    <div className="flex flex-col h-full">
+                        {/* 右侧顶部操作栏：导出按钮 */}
+                        <div className="px-4 py-2 border-b border-white/10 bg-slate-900/60 flex items-center justify-end flex-shrink-0">
                             <button
-                                onClick={() => setPage(p => Math.max(0, p - 1))}
-                                disabled={page === 0}
-                                className="px-2.5 py-1 bg-white/5 text-slate-400 rounded text-[10px] hover:bg-white/10 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                                onClick={handleExport}
+                                className="px-2.5 py-1.5 bg-amber-500/20 text-amber-400 rounded-lg text-[10px] font-medium hover:bg-amber-500/30 transition-colors flex items-center gap-1"
                             >
-                                {t('common:button.previousPage')}
-                            </button>
-                            <button
-                                onClick={() => setPage(p => Math.min(totalPages - 1, p + 1))}
-                                disabled={page >= totalPages - 1}
-                                className="px-2.5 py-1 bg-white/5 text-slate-400 rounded text-[10px] hover:bg-white/10 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
-                            >
-                                {t('common:button.nextPage')}
+                                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                                {t('knowledge.tickets.exportValid')}
                             </button>
                         </div>
+                        <div className="flex-1 overflow-auto">
+                            <ServerTicketDetail
+                                ticket={selectedTicket}
+                                onRefresh={loadTickets}
+                                isEmbed
+                                isSplitMode={isSplitMode}
+                                setIsSplitMode={(s) => { setIsSplitMode(s); localStorage.setItem('knowledge_split_mode', String(s)); }}
+                            />
+                        </div>
                     </div>
-                </div>
-
-                {/* 右侧：详情预览 */}
-                <div className="flex-1 overflow-auto">
-                    {detailLoading ? (
-                        <div className="flex items-center justify-center h-full text-slate-500 text-xs gap-2">
-                            <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
-                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                ) : (
+                    <div className="flex flex-col items-center justify-center h-full text-slate-500 text-xs gap-3">
+                        <span>点击左侧工单查看详情</span>
+                        <button
+                            onClick={handleExport}
+                            className="px-2.5 py-1.5 bg-amber-500/20 text-amber-400 rounded-lg text-[10px] font-medium hover:bg-amber-500/30 transition-colors flex items-center gap-1"
+                        >
+                            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                             </svg>
-                            加载中...
-                        </div>
-                    ) : selectedTicket ? (
-                        <ServerTicketDetail
-                            ticket={selectedTicket}
-                            onRefresh={loadTickets}
-                            isEmbed
-                            isSplitMode={isSplitMode}
-                            setIsSplitMode={(s) => { setIsSplitMode(s); localStorage.setItem('knowledge_split_mode', String(s)); }}
-                        />
-                    ) : (
-                        <div className="flex items-center justify-center h-full text-slate-500 text-xs">
-                            点击左侧工单查看详情
-                        </div>
-                    )}
-                </div>
+                            {t('knowledge.tickets.exportValid')}
+                        </button>
+                    </div>
+                )}
             </div>
         </div>
     );
@@ -664,6 +573,281 @@ const NoteEditCard: React.FC<NoteEditCardProps> = ({ form, setForm, onSave, onCa
                     {saving ? t('knowledge.notesPanel.saving') : t('common:button.save')}
                 </button>
             </div>
+        </div>
+    );
+};
+
+// ============ 知识库同步配置面板 ============
+
+const NotebookLmConfigPanel: React.FC = () => {
+    const { t } = useTranslation(['admin', 'common']);
+
+    const [loading, setLoading] = useState(true);
+    const [saving, setSaving] = useState(false);
+    const [syncing, setSyncing] = useState(false);
+    const [successMsg, setSuccessMsg] = useState('');
+    const [errorMsg, setErrorMsg] = useState('');
+
+    // 配置数据
+    const [config, setConfig] = useState<KnowledgeSyncConfig>({});
+    const [bases, setBases] = useState<KnowledgeBase[]>([]);
+
+    // 同步结果
+    const [syncResult, setSyncResult] = useState<{ tickets?: string; notes?: string } | null>(null);
+
+    // 加载知识库列表 + 已保存配置
+    const loadData = useCallback(async () => {
+        setLoading(true);
+        try {
+            const [baseList, savedConfig] = await Promise.all([
+                knowledgeApi.listBases(),
+                configApi.getKnowledgeSyncConfig(),
+            ]);
+            setBases(baseList);
+
+            // 验证配置中的知识库是否仍然存在，不存在则清空失效的映射
+            const cfg = savedConfig || {};
+            if (cfg.knowledgeBaseId && !baseList.some(b => b.id === cfg.knowledgeBaseId)) {
+                console.warn(`配置的知识库 ID=${cfg.knowledgeBaseId} 已不存在，自动清空`);
+                cfg.knowledgeBaseId = undefined;
+                cfg.ticketSourceId = undefined;
+                cfg.notesSourceId = undefined;
+            }
+            setConfig(cfg);
+        } catch (err) {
+            console.error('加载配置失败:', err);
+            setErrorMsg('加载配置失败');
+        } finally {
+            setLoading(false);
+        }
+    }, []);
+
+    useEffect(() => {
+        loadData();
+    }, [loadData]);
+
+    // 选择知识库后重置源映射（SourcePicker 内部会自动加载源列表）
+    const handleBaseChange = (baseId: number | undefined) => {
+        setConfig(prev => ({
+            ...prev,
+            knowledgeBaseId: baseId,
+            ticketSourceId: undefined,
+            notesSourceId: undefined,
+        }));
+    };
+
+    const handleSave = async () => {
+        setSaving(true);
+        setErrorMsg('');
+        try {
+            await configApi.setKnowledgeSyncConfig(config);
+            setSuccessMsg(t('admin:knowledge.sync.saveSuccess', '配置已保存'));
+            setTimeout(() => setSuccessMsg(''), 3000);
+        } catch (err) {
+            console.error('保存配置失败:', err);
+            setErrorMsg('保存失败');
+        } finally {
+            setSaving(false);
+        }
+    };
+
+    const handleSync = async () => {
+        if (!config.knowledgeBaseId || !config.ticketSourceId || !config.notesSourceId) {
+            setErrorMsg(t('admin:knowledge.sync.configIncomplete', '请先完成映射配置'));
+            return;
+        }
+
+        setSyncing(true);
+        setErrorMsg('');
+        setSyncResult(null);
+
+        try {
+            const token = getAuthToken();
+            const baseUrl = getApiBaseUrl();
+            const headers: Record<string, string> = {};
+            if (token) headers['Authorization'] = `Bearer ${token}`;
+
+            // 1. 获取工单 CSV 内容
+            const ticketRes = await fetch(`${baseUrl}/admin/knowledge/export/tickets`, { headers });
+            if (!ticketRes.ok) throw new Error(`导出工单失败: ${ticketRes.status}`);
+            const ticketCsv = await ticketRes.text();
+
+            // 2. 获取注意事项内容
+            const notesRes = await fetch(`${baseUrl}/admin/knowledge/export/notes`, { headers });
+            if (!notesRes.ok) throw new Error(`导出注意事项失败: ${notesRes.status}`);
+            const notesCsv = await notesRes.text();
+
+            // 3. 更新映射的源文件 content
+            await knowledgeApi.updateSource(config.knowledgeBaseId, config.ticketSourceId, { content: ticketCsv });
+            await knowledgeApi.updateSource(config.knowledgeBaseId, config.notesSourceId, { content: notesCsv });
+
+            // 统计行数
+            const ticketLines = ticketCsv.split('\n').filter(l => l.trim()).length - 1; // 减去表头
+            const notesLines = notesCsv.split('\n').filter(l => l.trim()).length - 1;
+
+            setSyncResult({
+                tickets: `${t('admin:knowledge.sync.ticketLabel', '标记工单')} (${Math.max(0, ticketLines)} 条工单)`,
+                notes: `${t('admin:knowledge.sync.notesLabel', '注意事项')} (${Math.max(0, notesLines)} 条注意事项)`,
+            });
+
+            setSuccessMsg(t('admin:knowledge.sync.syncSuccess', '同步成功'));
+            setTimeout(() => setSuccessMsg(''), 5000);
+        } catch (err) {
+            console.error('同步失败:', err);
+            const msg = err instanceof Error ? err.message : String(err);
+            if (msg.includes('404') || msg.includes('NOT_FOUND')) {
+                setErrorMsg('同步失败: 映射的源文件已被删除，请重新选择');
+            } else {
+                setErrorMsg(`同步失败: ${msg}`);
+            }
+        } finally {
+            setSyncing(false);
+        }
+    };
+
+    if (loading) {
+        return (
+            <div className="flex items-center justify-center py-20 text-slate-500 text-xs gap-2">
+                <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                </svg>
+                加载中...
+            </div>
+        );
+    }
+
+    return (
+        <div className="flex-1 overflow-auto p-4 space-y-4">
+            {/* 消息提示 */}
+            {successMsg && (
+                <div className="px-3 py-2 bg-green-500/10 border border-green-500/30 rounded text-green-400 text-sm">
+                    {successMsg}
+                </div>
+            )}
+            {errorMsg && (
+                <div className="px-3 py-2 bg-red-500/10 border border-red-500/30 rounded text-red-400 text-sm">
+                    {errorMsg}
+                </div>
+            )}
+
+            {/* 说明 */}
+            <div className="p-4 bg-slate-800/50 border border-slate-700/50 rounded-lg">
+                <h3 className="text-slate-200 font-medium mb-2">{t('admin:knowledge.sync.title', '知识库同步配置')}</h3>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                    {t('admin:knowledge.sync.desc', '将标记的有效工单和注意事项同步到本地知识库中。同步后，请前往知识库模块的 NotebookLM 页面将内容推送到云端。')}
+                </p>
+            </div>
+
+            {/* 目标知识库选择 */}
+            <div className="p-4 bg-slate-800/50 border border-slate-700/50 rounded-lg space-y-3">
+                <div className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-amber-500 rounded-full" />
+                    <h4 className="text-slate-200 text-sm font-medium">{t('admin:knowledge.sync.targetBase', '目标知识库')}</h4>
+                </div>
+                <select
+                    value={config.knowledgeBaseId || ''}
+                    onChange={e => handleBaseChange(e.target.value ? Number(e.target.value) : undefined)}
+                    className="w-full px-3 py-2 bg-black/40 border border-white/10 rounded-lg text-sm text-white focus:border-amber-500/50 focus:outline-none"
+                >
+                    <option value="">{t('admin:knowledge.sync.selectBase', '-- 请选择知识库 --')}</option>
+                    {bases.map(base => (
+                        <option key={base.id} value={base.id}>{base.name}</option>
+                    ))}
+                </select>
+            </div>
+
+            {/* 映射配置 */}
+            {config.knowledgeBaseId && (
+                <div className="p-4 bg-slate-800/50 border border-slate-700/50 rounded-lg space-y-4">
+                    <div className="flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
+                        <h4 className="text-slate-200 text-sm font-medium">{t('admin:knowledge.sync.mapping', '映射配置')}</h4>
+                    </div>
+
+                    <div className="space-y-3">
+                        {/* 标记工单 → 源文件 */}
+                        <div className="flex items-center gap-3">
+                            <span className="text-xs text-slate-300 w-24 shrink-0">{t('admin:knowledge.sync.ticketLabel', '标记工单')}</span>
+                            <svg className="w-4 h-4 text-slate-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                            </svg>
+                            <SourcePicker
+                                knowledgeBaseId={config.knowledgeBaseId!}
+                                value={config.ticketSourceId}
+                                onChange={(id) => setConfig(prev => ({ ...prev, ticketSourceId: id }))}
+                                filterType="CSV"
+                                createDefaults={{ title: '已解决工单列表.csv', sourceType: 'CSV' }}
+                                className="flex-1"
+                            />
+                        </div>
+
+                        {/* 注意事项 → 源文件 */}
+                        <div className="flex items-center gap-3">
+                            <span className="text-xs text-slate-300 w-24 shrink-0">{t('admin:knowledge.sync.notesLabel', '注意事项')}</span>
+                            <svg className="w-4 h-4 text-slate-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                            </svg>
+                            <SourcePicker
+                                knowledgeBaseId={config.knowledgeBaseId!}
+                                value={config.notesSourceId}
+                                onChange={(id) => setConfig(prev => ({ ...prev, notesSourceId: id }))}
+                                filterType="CSV"
+                                createDefaults={{ title: '注意事项.csv', sourceType: 'CSV' }}
+                                className="flex-1"
+                            />
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {/* 操作按钮 */}
+            <div className="flex items-center gap-3 justify-end">
+                <button
+                    onClick={handleSave}
+                    disabled={saving || !config.knowledgeBaseId}
+                    className="px-4 py-2 bg-slate-500/20 text-slate-300 rounded-lg text-sm font-medium hover:bg-slate-500/30 disabled:opacity-50 transition-colors"
+                >
+                    {saving ? t('admin:knowledge.sync.saving', '保存中...') : t('admin:knowledge.sync.save', '保存配置')}
+                </button>
+                <button
+                    onClick={handleSync}
+                    disabled={syncing || !config.knowledgeBaseId || !config.ticketSourceId || !config.notesSourceId}
+                    className="px-4 py-2 bg-amber-500/20 text-amber-400 rounded-lg text-sm font-medium hover:bg-amber-500/30 disabled:opacity-50 transition-colors flex items-center gap-2"
+                >
+                    {syncing && (
+                        <svg className="w-3.5 h-3.5 animate-spin" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                        </svg>
+                    )}
+                    {syncing ? t('admin:knowledge.sync.syncing', '同步中...') : t('admin:knowledge.sync.syncBtn', '同步到知识库')}
+                </button>
+            </div>
+
+            {/* 同步结果 */}
+            {syncResult && (
+                <div className="p-4 bg-slate-800/50 border border-emerald-500/20 rounded-lg space-y-2">
+                    <h4 className="text-slate-200 text-sm font-medium">{t('admin:knowledge.sync.result', '同步结果')}</h4>
+                    <div className="space-y-1.5">
+                        <div className="flex items-center gap-2 text-xs">
+                            <span className="text-emerald-400">✓</span>
+                            <span className="text-slate-300">{t('admin:knowledge.sync.ticketLabel', '标记工单')}</span>
+                            <span className="text-slate-500">→</span>
+                            <span className="text-slate-400">{syncResult.tickets}</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-xs">
+                            <span className="text-emerald-400">✓</span>
+                            <span className="text-slate-300">{t('admin:knowledge.sync.notesLabel', '注意事项')}</span>
+                            <span className="text-slate-500">→</span>
+                            <span className="text-slate-400">{syncResult.notes}</span>
+                        </div>
+                    </div>
+                    <p className="text-[10px] text-slate-500 mt-2">
+                        {t('admin:knowledge.sync.nextStep', '请前往知识库模块的 NotebookLM 页面，点击同步将内容推送到云端。')}
+                    </p>
+                </div>
+            )}
         </div>
     );
 };

@@ -10,7 +10,7 @@ import zhTaskAdmin from './locales/zh-CN/taskAdmin.json';
 import zhAdmin from './locales/zh-CN/admin.json';
 import zhSettings from './locales/zh-CN/settings.json';
 import zhOrgSync from './locales/zh-CN/orgSync.json';
-import zhBpmn from './locales/zh-CN/bpmn.json';
+import zhKnowledge from './locales/zh-CN/knowledge.json';
 
 import enCommon from './locales/en-US/common.json';
 import enAuth from './locales/en-US/auth.json';
@@ -20,7 +20,7 @@ import enTaskAdmin from './locales/en-US/taskAdmin.json';
 import enAdmin from './locales/en-US/admin.json';
 import enSettings from './locales/en-US/settings.json';
 import enOrgSync from './locales/en-US/orgSync.json';
-import enBpmn from './locales/en-US/bpmn.json';
+import enKnowledge from './locales/en-US/knowledge.json';
 
 export const defaultNS = 'common';
 
@@ -34,7 +34,7 @@ export const resources = {
     admin: zhAdmin,
     settings: zhSettings,
     orgSync: zhOrgSync,
-    bpmn: zhBpmn,
+    knowledge: zhKnowledge,
   },
   'en-US': {
     common: enCommon,
@@ -45,7 +45,7 @@ export const resources = {
     admin: enAdmin,
     settings: enSettings,
     orgSync: enOrgSync,
-    bpmn: enBpmn,
+    knowledge: enKnowledge,
   },
 } as const;
 

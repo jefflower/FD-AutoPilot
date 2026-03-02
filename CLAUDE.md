@@ -46,14 +46,14 @@ cd fd-client/src-tauri && cargo check && cargo test
 
 依赖链：`common ← auth ← task ← ai ← ticket ← app`（单向，禁止反向）
 
-| 模块   | 核心职责                                                      |
-| ------ | ------------------------------------------------------------- |
-| common | DTO、异常、工具类                                             |
-| auth   | JWT + RBAC + 权限自注册(SPI)                                  |
-| task   | 任务分发 + SSE + 定时调度                                     |
+| 模块   | 核心职责                                                                           |
+| ------ | ---------------------------------------------------------------------------------- |
+| common | DTO、异常、工具类                                                                  |
+| auth   | JWT + RBAC + 权限自注册(SPI)                                                       |
+| task   | 任务分发 + SSE + 定时调度                                                          |
 | ai     | Agent 定义/实例/绑定 + Capability 管理 + 客户端注册 + SyncBridge + Capability 路由 |
-| ticket | 工单业务 + Freshdesk + 通知                                   |
-| app    | 启动入口 + n8n 集成                                           |
+| ticket | 工单业务 + Freshdesk + 通知                                                        |
+| app    | 启动入口 + n8n 集成                                                                |
 
 ### 前端 (fd-web/src/)
 
@@ -69,7 +69,9 @@ modules/
 ├── auth/      登录注册
 ├── ticket/    工单列表/详情/翻译/回复/审核
 ├── admin/     用户/同步/知识库/数据库/Agent/角色权限
-├── workflow/  n8n 集成 / Agent 管理 / Capability 管理
+├── workflow/  n8n 集成 / Agent 管理 / Capability 管理 / AI 工作台 Dashboard
+│   ├── pages/AiDashboardTab   AI 工作台：Agent 集中管控、统计概览、执行日志全屏查看
+│   └── components/dashboard/  StatsBar, ModuleAgentGrid, AgentStatusCard, ExecutionLogZone, EnhancedLogRow, ResizableSplitPane
 ├── task/      任务仪表盘 / Agent 执行时间线
 └── system/    设置/用户资料
 ```
@@ -109,18 +111,18 @@ PENDING_TRANS → TRANSLATING → PENDING_REPLY → REPLYING → PENDING_AUDIT �
 
 ### 角色定义
 
-| 角色           | model  | subagent_type   | 范围与职责                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| -------------- | ------ | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| backend-dev    | opus   | general-purpose | 后端开发。prompt 中指定模块范围（如 `fd-server-ai/**`）。遵守依赖链 `common ← auth ← task ← ai ← ticket ← app`，跨模块按底层先行串行                                                                                                                                                                                                                                                                                                        |
-| frontend-dev   | opus   | general-purpose | `fd-web/src/**`。Agent 运行时（Registry + Executor + useAgent）、MQ Consumer、Capability 设置 UI、执行时间线、Tauri 条件桥接（`isTauriEnv()`）                                                                                                                                                                                                                                                                                              |
-| rust-dev       | opus   | general-purpose | `fd-client/src-tauri/src/**`。CLI Executor（gemini/claude）、notebooklm-py 调用、Shadow Window 生命周期、HTTP Bridge、Capability 上报与注册                                                                                                                                                                                                                                                                                                 |
-| n8n-expert     | opus   | general-purpose | n8n 工作流设计与调试。Sync Bridge 端点对接、cron/Webhook 触发配置、错误处理分支、超时重试策略、n8n 与 capability 级路由的集成                                                                                                                                                                                                                                                                                                               |
-| architect      | opus   | Plan            | 跨层设计。Capability 体系建模、Definition+Instance 分离方案、capability 级路由策略、Sync Bridge 演进、shadow-window RPA 架构规划。输出 API 契约 + 数据模型 + 任务分工                                                                                                                                                                                                                                                                       |
-| debugger       | opus   | general-purpose | 跨层诊断。重点场景：Sync Bridge 超时/CompletableFuture 泄漏、Capability 路由失败（无 Agent/无客户端/Capability 关闭）、MQ Consumer 卡死、客户端注册心跳异常                                                                                                                                                                                                                                                                                 |
-| reviewer       | sonnet | general-purpose | 代码审查。重点：依赖链违规、`@Transactional` 误用（Sync Bridge 禁止长事务）、AgentInstance clientId 隔离、Capability 开关与 Agent 启停联动一致性                                                                                                                                                                                                                                                                                            |
-| test-writer    | sonnet | general-purpose | 编写自动化测试用例。后端：JUnit 5 + Mockito（Service/Controller 层），重点覆盖 Capability 路由、Sync Bridge 超时、AgentInstance 隔离、TicketStateMachine 状态转换。前端：Vitest + React Testing Library，重点覆盖 Capability 开关联动、MQ Consumer 生命周期、Agent 执行流程                                                                                                                                                                 |
-| preview-tester | opus   | general-purpose | 前端可视化验收。开发完成后重启项目（preview_start），使用 preview_* 工具链验收：preview_snapshot 检查页面结构与文案、preview_screenshot 截图验证布局、preview_inspect 校验 CSS 样式、preview_click/preview_fill 模拟用户交互、preview_console_logs/preview_network 检查运行时错误和 API 调用。发现问题反馈对应 dev agent 修复。测试中如果涉及n8n工作流，因为系统是iframe嵌入的n8n，你可能无法点击，你在preview中新开一个页面打开n8n进行操作 |
-| doc-writer     | haiku  | general-purpose | 中文文档。更新 `doc/v0.4-vision.md` 和 `CLAUDE.md` 受影响部分                                                                                                                                                                                                                                                                                                                                                                               |
+| 角色           | model  | subagent_type   | 范围与职责                                                                                                                                                                                                                                                                                                                                                 |
+| -------------- | ------ | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| backend-dev    | opus   | general-purpose | 后端开发。prompt 中指定模块范围（如 `fd-server-ai/**`）。遵守依赖链 `common ← auth ← task ← ai ← ticket ← app`，跨模块按底层先行串行                                                                                                                                                                                                                       |
+| frontend-dev   | opus   | general-purpose | `fd-web/src/**`。Agent 运行时（Registry + Executor + useAgent）、MQ Consumer、Capability 设置 UI、执行时间线、Tauri 条件桥接（`isTauriEnv()`）                                                                                                                                                                                                             |
+| rust-dev       | opus   | general-purpose | `fd-client/src-tauri/src/**`。CLI Executor（gemini/claude）、notebooklm-py 调用、Shadow Window 生命周期、HTTP Bridge、Capability 上报与注册                                                                                                                                                                                                                |
+| n8n-expert     | opus   | general-purpose | n8n 工作流设计与调试。Sync Bridge 端点对接、cron/Webhook 触发配置、错误处理分支、超时重试策略、n8n 与 capability 级路由的集成                                                                                                                                                                                                                              |
+| architect      | opus   | Plan            | 跨层设计。Capability 体系建模、Definition+Instance 分离方案、capability 级路由策略、Sync Bridge 演进、shadow-window RPA 架构规划。输出 API 契约 + 数据模型 + 任务分工                                                                                                                                                                                      |
+| debugger       | opus   | general-purpose | 跨层诊断。重点场景：Sync Bridge 超时/CompletableFuture 泄漏、Capability 路由失败（无 Agent/无客户端/Capability 关闭）、MQ Consumer 卡死、客户端注册心跳异常                                                                                                                                                                                                |
+| reviewer       | sonnet | general-purpose | 代码审查。重点：依赖链违规、`@Transactional` 误用（Sync Bridge 禁止长事务）、AgentInstance clientId 隔离、Capability 开关与 Agent 启停联动一致性                                                                                                                                                                                                           |
+| test-writer    | sonnet | general-purpose | 编写自动化测试用例。后端：JUnit 5 + Mockito（Service/Controller 层），重点覆盖 Capability 路由、Sync Bridge 超时、AgentInstance 隔离、TicketStateMachine 状态转换。前端：Vitest + React Testing Library，重点覆盖 Capability 开关联动、MQ Consumer 生命周期、Agent 执行流程                                                                                |
+| preview-tester | opus   | general-purpose | 前端可视化验收。开发完成后重启项目（preview_start），使用 preview_* 工具链验收：preview_snapshot 检查页面结构与文案、preview_screenshot 截图验证布局、preview_inspect 校验 CSS 样式、preview_click/preview_fill 模拟用户交互、preview_console_logs/preview_network 检查运行时错误和 API 调用。发现问题反馈对应 dev agent 修复。fd-web要在preview中启动测试 |
+| doc-writer     | haiku  | general-purpose | 中文文档。更新 `doc/v0.4-vision.md` 和 `CLAUDE.md` 受影响部分                                                                                                                                                                                                                                                                                              |
 
 ### 后端模块路由
 
@@ -128,12 +130,12 @@ prompt 中指定模块范围：`"范围限定 fd-server-{module}/**，可依赖 
 
 v0.4 重点模块分工：
 
-| 模块   | v0.4 开发重点                                                                    |
-| ------ | ------------------------------------------------------------------------------- |
+| 模块   | v0.4 开发重点                                                                            |
+| ------ | ---------------------------------------------------------------------------------------- |
 | ai     | Capability 建模、AgentInstance 实体、capability 级路由、Sync Bridge 增强、客户端注册心跳 |
-| ticket | N8nTicketService 端点扩展、审核驳回循环、通知策略                               |
-| task   | 任务路由增强（targetClientId/targetUserId）、客户端注册心跳                     |
-| app    | N8nAgentController capability 端点、N8nConfigController                        |
+| ticket | N8nTicketService 端点扩展、审核驳回循环、通知策略                                        |
+| task   | 任务路由增强（targetClientId/targetUserId）、客户端注册心跳                              |
+| app    | N8nAgentController capability 端点、N8nConfigController                                  |
 
 跨模块时按依赖链顺序串行派发（底层先完成再派发上层）。
 

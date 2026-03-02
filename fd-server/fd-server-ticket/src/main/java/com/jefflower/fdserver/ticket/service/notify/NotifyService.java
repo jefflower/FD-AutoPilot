@@ -30,12 +30,8 @@ public class NotifyService {
      */
     @Async
     public void notifyAuditPass(Ticket ticket) {
-        String content = String.format(
-                "**工单审核通过**\n" +
-                ">工单号: #%s\n" +
-                ">标题: %s\n" +
-                ">审核结果: 通过",
-                ticket.getExternalId(), ticket.getSubject());
+        String lang = configService.getNotifyLanguage();
+        String content = NotifyTemplate.auditPassBody(lang, ticket.getExternalId(), ticket.getSubject());
         sendWithActiveStrategy(s -> s.sendMarkdown(getWebhookUrl(), content));
     }
 
@@ -44,15 +40,8 @@ public class NotifyService {
      */
     @Async
     public void notifyAuditReject(Ticket ticket, String remark) {
-        String content = String.format(
-                "**工单审核驳回**\n" +
-                ">工单号: #%s\n" +
-                ">标题: %s\n" +
-                ">审核结果: 驳回\n" +
-                ">驳回意见: %s\n" +
-                ">后续: 已重新进入AI回复队列",
-                ticket.getExternalId(), ticket.getSubject(),
-                remark != null ? remark : "无");
+        String lang = configService.getNotifyLanguage();
+        String content = NotifyTemplate.auditRejectBody(lang, ticket.getExternalId(), ticket.getSubject(), remark);
         sendWithActiveStrategy(s -> s.sendMarkdown(getWebhookUrl(), content));
     }
 
@@ -61,12 +50,8 @@ public class NotifyService {
      */
     @Async
     public void notifyReplyPushed(Ticket ticket) {
-        String content = String.format(
-                "**工单回复已推送**\n" +
-                ">工单号: #%s\n" +
-                ">标题: %s\n" +
-                ">状态: 已推送到Freshdesk",
-                ticket.getExternalId(), ticket.getSubject());
+        String lang = configService.getNotifyLanguage();
+        String content = NotifyTemplate.replyPushedBody(lang, ticket.getExternalId(), ticket.getSubject());
         sendWithActiveStrategy(s -> s.sendMarkdown(getWebhookUrl(), content));
     }
 
@@ -75,12 +60,8 @@ public class NotifyService {
      */
     @Async
     public void notifyMqReplyCompleted(Ticket ticket) {
-        String content = String.format(
-                "**AI回复生成完成**\n" +
-                ">工单号: #%s\n" +
-                ">标题: %s\n" +
-                ">状态: 等待审核",
-                ticket.getExternalId(), ticket.getSubject());
+        String lang = configService.getNotifyLanguage();
+        String content = NotifyTemplate.mqReplyCompletedBody(lang, ticket.getExternalId(), ticket.getSubject());
         sendWithActiveStrategy(s -> s.sendMarkdown(getWebhookUrl(), content));
     }
 
@@ -91,18 +72,14 @@ public class NotifyService {
      */
     @Async
     public void notifyPendingAudit(Ticket ticket, String auditToken) {
+        String lang = configService.getNotifyLanguage();
         String auditBaseUrl = configService.getAuditBaseUrl();
         String auditLink = (auditBaseUrl != null && !auditBaseUrl.isBlank() && auditToken != null)
                 ? auditBaseUrl + "/mobile-audit?token=" + auditToken
                 : null;
 
-        String title = "AI回复已生成，等待审核";
-        String content = String.format(
-                "**%s**\n" +
-                ">工单号: #%s\n" +
-                ">标题: %s\n" +
-                ">状态: 等待审核",
-                title, ticket.getExternalId(), ticket.getSubject());
+        String title = NotifyTemplate.pendingAuditTitle(lang);
+        String content = NotifyTemplate.pendingAuditBody(lang, ticket.getExternalId(), ticket.getSubject());
 
         if (auditLink != null) {
             sendWithActiveStrategy(s -> s.sendAuditNotify(getWebhookUrl(), title, content, auditLink));
@@ -113,17 +90,18 @@ public class NotifyService {
 
     /**
      * 发送测试消息（同步，返回结果）
+     * @return null 表示成功，非 null 返回错误描述
      */
-    public boolean sendTestMessage() {
+    public String sendTestMessage() {
         NotifyStrategy strategy = getActiveStrategy();
         if (strategy == null) {
             log.warn("[NotifyService] 无活跃通知策略");
-            return false;
+            return "无活跃通知策略，请先选择通知平台";
         }
         String webhookUrl = getWebhookUrl();
         if (webhookUrl == null || webhookUrl.isBlank()) {
             log.warn("[NotifyService] Webhook URL 未配置");
-            return false;
+            return "Webhook URL 未配置";
         }
         return strategy.sendTestMessage(webhookUrl);
     }

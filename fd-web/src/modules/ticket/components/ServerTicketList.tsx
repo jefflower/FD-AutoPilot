@@ -30,7 +30,6 @@ const STATUS_KEYS: { id: TicketStatus | '', key: string, color: string }[] = [
     { id: 'PENDING_TRANS', key: 'PENDING_TRANS', color: 'yellow' },
     { id: 'PROCESSING', key: 'PROCESSING', color: 'blue' },
     { id: 'PENDING_AUDIT', key: 'PENDING_AUDIT', color: 'purple' },
-    { id: 'AUDITING', key: 'AUDITING', color: 'pink' },
     { id: 'COMPLETED', key: 'COMPLETED', color: 'green' },
 ];
 
@@ -217,7 +216,7 @@ const ServerTicketList: React.FC<ServerTicketListProps> = ({
                                             </div>
                                         </div>
                                         <div className={`px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider ${ticket.status === 'COMPLETED' ? 'bg-green-500/10 text-green-400 border border-green-500/20' :
-                                            ticket.status === 'PROCESSING' || ticket.status === 'AUDITING' ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20 animate-pulse' :
+                                            ticket.status === 'PROCESSING' ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20 animate-pulse' :
                                                 'bg-slate-700/50 text-slate-400 border border-white/5'
                                             }`}>
                                             {t(`common:ticketStatus.${ticket.status}` as any)}

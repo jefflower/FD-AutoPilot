@@ -46,6 +46,7 @@ public class AuthDataInitializer implements ApplicationRunner {
     public void run(ApplicationArguments args) {
         ensureBaseRoles();
         ensureDefaultAdmin();
+        ensureN8nServiceAccount();
         syncModulesAndPermissions();
         ensureSuperAdminHasAllPermissions();
         ensureDefaultApplications();
@@ -92,6 +93,29 @@ public class AuthDataInitializer implements ApplicationRunner {
     }
 
     /**
+     * 确保 n8n 服务账号存在（n8n-service/n8n-service, ADMIN 角色, APPROVED 状态）
+     * 用于 n8n 工作流通过 REST API 调用 fd-server
+     */
+    private void ensureN8nServiceAccount() {
+        if (userRepo.existsByUsername("n8n-service")) {
+            return;
+        }
+
+        SysUser n8nUser = new SysUser();
+        n8nUser.setUsername("n8n-service");
+        n8nUser.setPassword(passwordEncoder.encode("n8n-service"));
+        n8nUser.setStatus(UserStatus.APPROVED);
+        SysUser saved = userRepo.save(n8nUser);
+
+        // 分配 ADMIN 角色（具有所有业务权限）
+        roleRepo.findByCode("ADMIN").ifPresent(role ->
+                urRepo.save(new SysUserRole(saved.getId(), role.getId()))
+        );
+
+        log.info("[AuthInit] 创建 n8n 服务账号: n8n-service (ADMIN)");
+    }
+
+    /**
      * 扫描所有 ModulePermissionDefinition，增量同步模块和权限
      */
     private void syncModulesAndPermissions() {
@@ -109,11 +133,13 @@ public class AuthDataInitializer implements ApplicationRunner {
 
             // 2. 增量同步权限
             Map<String, String> permissions = def.getPermissions();
+            Map<String, String> permissionTypes = def.getPermissionTypes();
             Map<String, List<String>> defaultAssignments = def.getDefaultRoleAssignments();
 
             for (Map.Entry<String, String> entry : permissions.entrySet()) {
                 String permCode = entry.getKey();
                 String permName = entry.getValue();
+                String permType = permissionTypes.getOrDefault(permCode, null);
 
                 // 检查权限是否已存在
                 var existingPerm = permRepo.findByCode(permCode).orElse(null);
@@ -125,11 +151,22 @@ public class AuthDataInitializer implements ApplicationRunner {
                         permRepo.save(existingPerm);
                         log.info("[AuthInit] 迁移权限 {} 模块归属: {} → {}", permCode, oldModule, def.getModuleCode());
                     }
+                    // 如果 type 为 null，则从 PermissionDefinition 更新
+                    if (existingPerm.getType() == null && permType != null) {
+                        existingPerm.setType(permType);
+                        existingPerm.setBuiltIn(true);
+                        permRepo.save(existingPerm);
+                    }
                     continue;
                 }
 
                 // 创建新权限
-                SysPermission perm = permRepo.save(new SysPermission(permCode, permName, def.getModuleCode()));
+                SysPermission perm = new SysPermission(permCode, permName, def.getModuleCode());
+                if (permType != null) {
+                    perm.setType(permType);
+                }
+                perm.setBuiltIn(true);
+                final SysPermission savedPerm = permRepo.save(perm);
                 newPermissions++;
                 log.info("[AuthInit] 创建权限: {} ({})", permCode, def.getModuleCode());
 
@@ -137,8 +174,8 @@ public class AuthDataInitializer implements ApplicationRunner {
                 List<String> roleCodes = defaultAssignments.getOrDefault(permCode, List.of());
                 for (String roleCode : roleCodes) {
                     roleRepo.findByCode(roleCode).ifPresent(role -> {
-                        if (!rpRepo.existsByRoleIdAndPermissionId(role.getId(), perm.getId())) {
-                            rpRepo.save(new SysRolePermission(role.getId(), perm.getId()));
+                        if (!rpRepo.existsByRoleIdAndPermissionId(role.getId(), savedPerm.getId())) {
+                            rpRepo.save(new SysRolePermission(role.getId(), savedPerm.getId()));
                         }
                     });
                 }
@@ -188,15 +225,15 @@ public class AuthDataInitializer implements ApplicationRunner {
      */
     private void migrateExistingUsers() {
         try {
-            boolean hasRoleColumn = false;
-            try {
-                jdbcTemplate.queryForList("SELECT role FROM sys_user LIMIT 1");
-                hasRoleColumn = true;
-            } catch (Exception e) {
-                return;
+            // 使用 information_schema 检查列是否存在（避免直接 SELECT 在 PostgreSQL 中导致事务 abort）
+            Integer columnCount = jdbcTemplate.queryForObject(
+                "SELECT COUNT(*) FROM information_schema.columns " +
+                "WHERE table_schema = current_schema() AND table_name = 'sys_user' AND column_name = 'role'",
+                Integer.class
+            );
+            if (columnCount == null || columnCount == 0) {
+                return; // role 列不存在，无需迁移
             }
-
-            if (!hasRoleColumn) return;
 
             List<Map<String, Object>> usersWithoutRoles = jdbcTemplate.queryForList(
                 "SELECT u.id, u.role FROM sys_user u " +

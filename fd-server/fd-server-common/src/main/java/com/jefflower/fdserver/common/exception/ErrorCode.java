@@ -13,6 +13,7 @@ public enum ErrorCode {
     INVALID_PASSWORD(400, "密码不符合要求"),
     ROLE_NOT_FOUND(404, "角色不存在"),
     PERMISSION_NOT_FOUND(404, "权限不存在"),
+    PERMISSION_ALREADY_EXISTS(409, "权限已存在"),
     MODULE_NOT_FOUND(404, "模块不存在"),
     MODULE_BUILTIN_READONLY(403, "内置模块不允许修改"),
     ADMIN_ALREADY_EXISTS(409, "管理员已存在"),
@@ -50,23 +51,37 @@ public enum ErrorCode {
 
     // General
     INVALID_PARAMETER(400, "参数错误"),
+    BUSINESS_ERROR(400, "业务操作错误"),
     UNAUTHORIZED(401, "未授权"),
     FORBIDDEN(403, "无权限"),
     INTERNAL_ERROR(500, "服务器内部错误"),
     SUPER_PASSWORD_WRONG(403, "超级密码错误"),
+
+    // Client
+    CLIENT_NOT_FOUND(404, "客户端不存在"),
+    CLIENT_OFFLINE(400, "客户端离线"),
 
     // AI
     AGENT_NOT_FOUND(404, "Agent 不存在"),
     AGENT_NOT_AVAILABLE(400, "Agent 不可用"),
     AGENT_EXECUTION_FAILED(500, "Agent 执行失败"),
     AGENT_PROVIDER_NOT_FOUND(500, "Agent Provider 未找到"),
+    CAPABILITY_NOT_FOUND(404, "执行能力不存在"),
+    CAPABILITY_DISABLED(400, "执行能力已禁用"),
+    CAPABILITY_NO_AGENT(404, "该能力下无可用Agent"),
+    NO_CLIENT_AVAILABLE(503, "无在线客户端可执行该能力"),
+    CAPABILITY_CIRCUIT_OPEN(503, "执行能力断路器已打开，请稍后重试"),
 
     // Workflow
-    WORKFLOW_NOT_FOUND(404, "工作流定义不存在"),
-    WORKFLOW_ALREADY_EXISTS(409, "工作流定义已存在"),
-    WORKFLOW_DEPLOY_FAILED(500, "工作流部署失败"),
-    WORKFLOW_INSTANCE_NOT_FOUND(404, "工作流实例不存在"),
-    WORKFLOW_SIGNAL_FAILED(500, "工作流信号发送失败"),
+    WORKFLOW_NOT_FOUND(404, "工作流不存在"),
+    WORKFLOW_VERSION_NOT_FOUND(404, "工作流版本不存在"),
+    WORKFLOW_INVALID_JSON(400, "工作流 JSON 格式无效"),
+
+    // Knowledge
+    KNOWLEDGE_BASE_NOT_FOUND(404, "知识库不存在"),
+    KNOWLEDGE_SOURCE_NOT_FOUND(404, "知识库源不存在"),
+    KNOWLEDGE_GROUP_NOT_FOUND(404, "知识主体不存在"),
+    KNOWLEDGE_PERMISSION_DENIED(403, "知识库权限不足"),
 
     // Config
     CONFIG_NOT_FOUND(404, "配置不存在");

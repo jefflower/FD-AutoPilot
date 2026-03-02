@@ -34,7 +34,9 @@ public class SpaWebConfig implements WebMvcConfigurer {
                         }
                         // 排除 API 和 H2 Console 路径
                         if (resourcePath.startsWith("api/") || resourcePath.startsWith("h2-console")
-                                || resourcePath.startsWith("actuator/")) {
+                                || resourcePath.startsWith("actuator/")
+                                || resourcePath.startsWith("v3/")
+                                || resourcePath.startsWith("swagger-ui")) {
                             return null;
                         }
                         return new ClassPathResource("/static/index.html");

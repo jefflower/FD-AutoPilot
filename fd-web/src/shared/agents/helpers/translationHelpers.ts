@@ -23,89 +23,112 @@ export function langCodeToName(code: string): string {
 }
 
 /**
- * 将工单格式化为文本内容（用于替换 systemPrompt 中的 ${TICKET_CONTENT}）
+ * 将工单格式化为 JSON 字符串（content JSON 已含 subject，直接清洗后序列化）
  */
 export function formatTicketContent(ticket: any): string {
     let parsedData: any = {};
     try { parsedData = JSON.parse(ticket.content || '{}'); } catch { /* ignore */ }
 
-    let content = `--- TICKET TO TRANSLATE ---\nSUBJECT: ${ticket.subject || ''}\n`;
+    // content JSON 已含 subject，构建清洗后的 JSON
+    const cleanedContent: any = {
+        subject: parsedData?.subject || ticket.subject || '',
+        description: cleanTextForAi(parsedData?.description || ''),
+        conversations: (parsedData?.conversations || []).map((c: any) => ({
+            id: c.id,
+            bodyText: cleanTextForAi(c.bodyText || ''),
+            userId: c.userId,
+            createdAt: c.createdAt,
+            incoming: (c.incoming !== false && !AGENT_MAP[String(c.userId)]),
+            isPrivate: c.isPrivate || false,
+        })),
+    };
 
-    const desc = parsedData?.description;
-    if (desc) {
-        content += `DESCRIPTION: ${cleanTextForAi(desc)}\n`;
-    }
-
-    const conversations = parsedData?.conversations || [];
-    if (conversations.length > 0) {
-        content += 'CONVERSATIONS:\n';
-        for (const c of conversations) {
-            content += `MSG_ID ${c.id}: ${cleanTextForAi(c.bodyText || '')}\n`;
-        }
-    }
-
-    return content;
+    return JSON.stringify(cleanedContent, null, 2);
 }
 
 /**
- * 从 AI 原始输出中提取 JSON 对象（处理 markdown 围栏等）
+ * 从 AI 原始输出中提取 JSON（处理 markdown 围栏、数组/对象格式）
+ *
+ * 支持：
+ * - markdown 代码块包裹：```json ... ```
+ * - 纯 JSON 对象 { ... }
+ * - 纯 JSON 数组 [ ... ]
+ * - 带前后文本的 JSON
  */
 export function extractJsonObject(raw: string): string {
-    const start = raw.indexOf('{');
-    const end = raw.lastIndexOf('}');
-    if (start === -1 || end === -1 || end <= start) {
-        throw new Error(`翻译输出中未找到 JSON 对象`);
+    let cleaned = raw.trim();
+
+    // 1. 先剥离 markdown 代码块
+    const codeBlockMatch = cleaned.match(/```(?:json|JSON)?\s*([\s\S]*?)```/);
+    if (codeBlockMatch) {
+        cleaned = codeBlockMatch[1].trim();
     }
-    return raw.substring(start, end + 1);
+
+    // 2. 尝试提取 JSON 对象 { ... }
+    const objStart = cleaned.indexOf('{');
+    const objEnd = cleaned.lastIndexOf('}');
+    if (objStart !== -1 && objEnd > objStart) {
+        const candidate = cleaned.substring(objStart, objEnd + 1);
+        try {
+            JSON.parse(candidate);
+            return candidate;
+        } catch { /* 继续尝试其他格式 */ }
+    }
+
+    // 3. 尝试提取 JSON 数组 [ ... ]
+    const arrStart = cleaned.indexOf('[');
+    const arrEnd = cleaned.lastIndexOf(']');
+    if (arrStart !== -1 && arrEnd > arrStart) {
+        const candidate = cleaned.substring(arrStart, arrEnd + 1);
+        try {
+            JSON.parse(candidate);
+            return candidate;
+        } catch { /* 继续 */ }
+    }
+
+    // 4. 直接尝试解析整个 cleaned 字符串
+    try {
+        JSON.parse(cleaned);
+        return cleaned;
+    } catch { /* fall through */ }
+
+    throw new Error(`翻译输出中未找到有效 JSON：${cleaned.substring(0, 100)}...`);
 }
 
 /**
  * 为 HTTP_API Agent 构建文本 prompt
  */
 export function buildHttpApiPrompt(ticket: any, targetLang: string): string {
-    let parsedData: any = {};
-    try {
-        parsedData = JSON.parse(ticket.content || '{}');
-    } catch { /* ignore */ }
+    const langName = langCodeToName(targetLang);
+    const ticketContent = formatTicketContent(ticket);
 
-    const conversations = (parsedData?.conversations || []).map((c: any) => ({
-        id: c.id,
-        bodyText: cleanTextForAi(c.bodyText || ''),
-        userId: c.userId,
-        createdAt: c.createdAt,
-        incoming: (c.incoming !== false && !AGENT_MAP[String(c.userId)]),
-        isPrivate: c.isPrivate || false,
-    }));
-
-    const ticketData = {
-        subject: ticket.subject,
-        descriptionText: cleanTextForAi(parsedData?.description || ''),
-        conversations,
-    };
-
-    return `Translate the following ticket content to ${targetLang}.\n\n` +
-        `TICKET DATA (JSON):\n${JSON.stringify(ticketData, null, 2)}`;
+    return `Translate the following JSON into ${langName}.\n` +
+        `Translate only text fields (subject, description, bodyText). ` +
+        `Keep all other fields unchanged. Return the same JSON structure.\n\n` +
+        ticketContent;
 }
 
 /**
  * 将翻译结果映射为 TranslationSubmitData
+ *
+ * AI 返回同构 JSON（与输入结构一致），直接使用 camelCase 字段名，
+ * 兼容 snake_case（AI 可能仍返回 body_text / description_text 等）。
  */
 export function mapTranslationResult(result: any, ticket: any, lang: string): TranslationSubmitData {
     let parsedData: any = {};
-    try {
-        parsedData = JSON.parse(ticket.content || '{}');
-    } catch { /* ignore */ }
+    try { parsedData = JSON.parse(ticket.content || '{}'); } catch { /* ignore */ }
 
+    // AI 返回同构 JSON，直接使用字段名（camelCase），兼容 snake_case
     const translatedConversations = result.conversations?.filter((c: any) => c.id != null).map((c: any) => ({
         id: c.id,
         bodyText: c.bodyText || c.body_text || '',
-        userId: c.userId || c.user_id,
-        createdAt: c.createdAt || c.created_at,
+        userId: c.userId ?? c.user_id,
+        createdAt: c.createdAt ?? c.created_at,
         incoming: c.incoming,
-        isPrivate: c.private || c.is_private
+        isPrivate: c.isPrivate ?? c.is_private ?? c.private,
     })) || [];
 
-    // 兜底：AI 返回空 conversations 但原始工单有对话时，保留原始对话
+    // 兜底：AI 未翻译对话时保留原始
     const originalConversations = parsedData?.conversations || [];
     const finalConversations = (translatedConversations.length > 0)
         ? translatedConversations
@@ -120,19 +143,20 @@ export function mapTranslationResult(result: any, ticket: any, lang: string): Tr
 
     if (originalConversations.length > 0 && translatedConversations.length === 0) {
         console.warn(
-            `[mapTranslationResult] AI 未翻译对话：原始工单有 ${originalConversations.length} 条对话，` +
-            `翻译结果 conversations 为空。ticketId=${ticket.id}，已回退到原始对话`
+            `[mapTranslationResult] AI 未翻译对话：原始 ${originalConversations.length} 条，已回退。ticketId=${ticket.id}`
         );
     }
 
+    // translatedContent 现在也包含 subject（与输入同构）
     const translatedContent = JSON.stringify({
-        description: result.descriptionText || result.description_text || '',
+        subject: result.subject || parsedData?.subject || ticket.subject || '',
+        description: result.description || result.descriptionText || result.description_text || '',
         conversations: finalConversations
     });
 
     return {
         targetLang: lang,
-        translatedTitle: result.subject || ticket.subject,
+        translatedTitle: result.subject || parsedData?.subject || ticket.subject,
         translatedContent,
     };
 }

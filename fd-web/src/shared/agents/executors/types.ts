@@ -1,4 +1,4 @@
-import type { AgentDefinition, AgentExecuteInput, AgentExecuteResult, AgentStreamChunk } from '../../types/server';
+import type { AgentDefinition, AgentProviderType, AgentExecuteInput, AgentExecuteResult, AgentStreamChunk } from '../../types/server';
 
 /**
  * Agent 执行器接口
@@ -6,7 +6,7 @@ import type { AgentDefinition, AgentExecuteInput, AgentExecuteResult, AgentStrea
  * 每种 ProviderType 对应一个执行器实现。
  */
 export interface AgentExecutor {
-    readonly providerType: AgentDefinition['providerType'];
+    readonly providerType: AgentProviderType;
     isAvailable(): boolean;
     execute(definition: AgentDefinition, input: AgentExecuteInput): Promise<AgentExecuteResult>;
     executeStream?(definition: AgentDefinition, input: AgentExecuteInput): AsyncGenerator<AgentStreamChunk>;

@@ -17,7 +17,7 @@ public class SystemPermissionDefinition implements ModulePermissionDefinition {
     public String getModuleName() { return "系统管理"; }
 
     @Override
-    public String getModuleDescription() { return "队列管理、知识库、数据库查询、系统配置"; }
+    public String getModuleDescription() { return "知识库、数据库查询、系统配置"; }
 
     @Override
     public String getModuleIcon() { return "settings"; }
@@ -33,7 +33,6 @@ public class SystemPermissionDefinition implements ModulePermissionDefinition {
         Map<String, String> map = new LinkedHashMap<>();
         map.put("config:read", "查看配置");
         map.put("config:manage", "管理配置");
-        map.put("queue:manage", "管理队列");
         map.put("knowledge:read", "查看知识库");
         map.put("knowledge:manage", "管理知识库");
         map.put("database:query", "数据库查询");
@@ -45,10 +44,20 @@ public class SystemPermissionDefinition implements ModulePermissionDefinition {
         return Map.of(
                 "config:read", List.of("ADMIN"),
                 "config:manage", List.of("ADMIN"),
-                "queue:manage", List.of("ADMIN"),
                 "knowledge:read", List.of("ADMIN"),
                 "knowledge:manage", List.of("ADMIN"),
                 "database:query", List.of()
         );
+    }
+
+    @Override
+    public Map<String, String> getPermissionTypes() {
+        Map<String, String> types = new LinkedHashMap<>();
+        types.put("config:read", "ROUTE");
+        types.put("config:manage", "OPERATION");
+        types.put("knowledge:read", "ROUTE");
+        types.put("knowledge:manage", "OPERATION");
+        types.put("database:query", "DATA");
+        return types;
     }
 }

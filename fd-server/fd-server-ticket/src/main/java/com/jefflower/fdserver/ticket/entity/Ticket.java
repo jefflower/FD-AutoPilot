@@ -6,6 +6,8 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import org.hibernate.Hibernate;
+
 import java.time.LocalDateTime;
 import java.util.Set;
 
@@ -26,13 +28,17 @@ public class Ticket {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Version
+    @Column(columnDefinition = "BIGINT DEFAULT 0")
+    private Long version = 0L;
+
     @Column(name = "external_id", unique = true, nullable = false, length = 64)
     private String externalId;
 
-    @Lob
+    @Column(columnDefinition = "TEXT")
     private String subject;
 
-    @Lob
+    @Column(columnDefinition = "TEXT")
     private String content;
 
     @Column(name = "source_lang", length = 16)
@@ -51,8 +57,7 @@ public class Ticket {
     @Column(name = "is_valid")
     private Boolean isValid = false;
 
-    @Lob
-    @Column(name = "last_audit_remark")
+    @Column(name = "last_audit_remark", columnDefinition = "TEXT")
     private String lastAuditRemark;
 
     // ========== Freshdesk 原生元数据 ==========
@@ -102,20 +107,31 @@ public class Ticket {
 
     @OneToMany(mappedBy = "ticket", fetch = FetchType.LAZY)
     @OrderBy("id DESC")
+    @com.fasterxml.jackson.annotation.JsonIgnore
     private Set<TicketTranslation> translations;
 
     @OneToMany(mappedBy = "ticket", fetch = FetchType.LAZY)
     @OrderBy("createdAt DESC")
+    @com.fasterxml.jackson.annotation.JsonIgnore
     private Set<TicketReply> replies;
 
+    /** 返回最新的翻译记录；未加载时安全返回 null */
     @com.fasterxml.jackson.annotation.JsonProperty("translation")
     public TicketTranslation getTranslation() {
-        if (translations == null || translations.isEmpty())
+        if (translations == null || !Hibernate.isInitialized(translations) || translations.isEmpty())
             return null;
         return translations.stream()
                 .sorted((a, b) -> b.getId().compareTo(a.getId()))
                 .findFirst()
                 .orElse(null);
+    }
+
+    /** 返回回复列表；未加载时安全返回 null */
+    @com.fasterxml.jackson.annotation.JsonProperty("replies")
+    public Set<TicketReply> getLoadedReplies() {
+        if (replies == null || !Hibernate.isInitialized(replies))
+            return null;
+        return replies;
     }
 
     @PreUpdate
