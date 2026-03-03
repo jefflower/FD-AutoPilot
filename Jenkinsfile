@@ -6,8 +6,8 @@ pipeline {
     }
 
     environment {
-        DEPLOY_DIR = '/opt/fd-autopilot'
-        ENV_FILE   = '/opt/fd-autopilot/.env'
+        DEPLOY_DIR = '/var/lib/jenkins/fd-autopilot'
+        ENV_FILE   = '/var/lib/jenkins/fd-autopilot/.env'
     }
 
     triggers {
