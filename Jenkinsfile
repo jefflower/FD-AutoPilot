@@ -8,7 +8,8 @@ pipeline {
     environment {
         DEPLOY_DIR = '/var/lib/jenkins/fd-autopilot'
         ENV_FILE   = '/var/lib/jenkins/fd-autopilot/.env'
-        PATH       = "/var/lib/jenkins/node-v20.11.1-linux-x64/bin:${env.PATH}"
+        JAVA_HOME  = '/usr/lib/jvm/java-21-alibaba-dragonwell-21.0.5.0.5-1.1.al8.x86_64'
+        PATH       = "/var/lib/jenkins/node-v20.11.1-linux-x64/bin:${JAVA_HOME}/bin:${env.PATH}"
     }
 
     triggers {
