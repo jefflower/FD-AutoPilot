@@ -1,0 +1,114 @@
+# ============================================================
+# FD-Server 通用配置 (application.yml)
+# ============================================================
+# 敏感信息通过环境变量注入，无默认值（缺少时启动报错）
+# 开发环境使用 application-dev.yml 覆盖（spring.profiles.active=dev）
+
+spring:
+  application:
+    name: fd-server
+  profiles:
+    active: dev  # 开发默认激活 dev profile，部署时通过环境变量覆盖为 prod
+  datasource:
+    url: ${DB_URL}
+    driverClassName: org.postgresql.Driver
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    defer-datasource-initialization: false
+    show-sql: false
+    open-in-view: false  # 禁用 OpenEntityManagerInView，防止 SSE/SyncBridge 长连接泄漏数据库连接
+    properties:
+      hibernate:
+        format_sql: false
+        default_schema: fd_server
+  sql:
+    init:
+      mode: never  # PostgreSQL 不需要 H2 的 schema 补丁
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+  data:
+    redis:
+      host: ${REDIS_HOST}
+      port: ${REDIS_PORT}
+      password: ${REDIS_PASSWORD}
+      timeout: 3000ms
+
+# 知识库文件存储
+knowledge:
+  storage:
+    path: data/knowledge
+
+server:
+  port: 9988
+
+# Logging (MDC traceId pattern)
+logging:
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] [%X{traceId:-}] %-5level %logger{36} - %msg%n"
+
+# Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,loggers,logfile,env,metrics
+  endpoint:
+    logfile:
+      external-file: logs/fd-server.log
+    health:
+      show-details: when-authorized
+  info:
+    build:
+      enabled: true
+
+# Freshdesk
+freshdesk:
+  domain: ${FRESHDESK_DOMAIN}
+  api-key: ${FRESHDESK_API_KEY}
+  webhook:
+    secret: ${FRESHDESK_WEBHOOK_SECRET:}
+  sync:
+    cron: "0 0/15 * * * ?"
+    statuses: 2,3
+  api:
+    connect-timeout: 10000
+    read-timeout: 30000
+    max-retries: 3
+    rate-limit-threshold: 10
+  skip-workflow:
+    employee-user-ids: ${FRESHDESK_SKIP_EMPLOYEE_IDS:}
+
+# JWT
+jwt:
+  secret: ${JWT_SECRET}
+  expiration-hours: 8
+  access-token-minutes: 30
+  refresh-token-days: 7
+
+# Super password
+app:
+  super-password: ${SUPER_PASSWORD}
+
+# n8n 工作流引擎（伴随 fd-server 启动）
+n8n:
+  enabled: false  # 设为 true 时 fd-server 启动自动拉起 n8n
+  port: 5678
+  env-file: ""    # n8n/.env 路径，留空则自动查找项目根目录下的 n8n/.env
+  external-url: ${N8N_EXTERNAL_URL:http://localhost:5678}  # 前端访问 n8n 的地址
+  api-url: ${N8N_API_URL:http://localhost:5678}  # n8n REST API 地址
+  api-key: ${N8N_API_KEY:}  # n8n API Key（留空则不认证）
+
+# SpringDoc OpenAPI
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
