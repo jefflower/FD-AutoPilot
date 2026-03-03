@@ -9,7 +9,8 @@ pipeline {
         DEPLOY_DIR = '/var/lib/jenkins/fd-autopilot'
         ENV_FILE   = '/var/lib/jenkins/fd-autopilot/.env'
         JAVA_HOME  = '/usr/lib/jvm/java-21-alibaba-dragonwell-21.0.5.0.5-1.1.al8.x86_64'
-        PATH       = "/var/lib/jenkins/node-v20.11.1-linux-x64/bin:${JAVA_HOME}/bin:${env.PATH}"
+        NODE_HOME  = '/var/lib/jenkins/node-v22.16.0-linux-x64'
+        PATH       = "${NODE_HOME}/bin:${JAVA_HOME}/bin:${env.PATH}"
     }
 
     triggers {
@@ -78,7 +79,7 @@ pipeline {
                     pkill -f "n8n start" || true
                     sleep 1
 
-                    PID=$(pgrep -f "java -jar.*fd-server" || true)
+                    PID=$(pgrep -f "fd-server.jar" || true)
                     if [ ! -z "$PID" ]; then
                         echo "Stopping fd-server (PID: $PID)..."
                         kill $PID
@@ -97,7 +98,7 @@ pipeline {
                         ${JAVA_OPTS:--Xmx1g -Xms512m -XX:+UseG1GC} \
                         -Dspring.profiles.active=${SPRING_PROFILES_ACTIVE:-prod} \
                         -Dn8n.enabled=${N8N_ENABLED:-true} \
-                        -Dn8n.executable=/var/lib/jenkins/node-v20.11.1-linux-x64/bin/n8n \
+                        -Dn8n.executable=${NODE_HOME}/bin/n8n \
                         -Dn8n.env-file=${DEPLOY_DIR}/n8n/.env \
                         -Dn8n.external-url=${N8N_EXTERNAL_URL:-http://localhost:5678} \
                         -Dn8n.api-url=${N8N_API_URL:-http://localhost:5678} \
@@ -108,7 +109,7 @@ pipeline {
                     sleep 20
 
                     echo "========== VERIFY RESULT =========="
-                    NEW_PID=$(pgrep -f "java -jar.*fd-server" || true)
+                    NEW_PID=$(pgrep -f "fd-server.jar" || true)
                     if [ ! -z "$NEW_PID" ]; then
                         echo "fd-server started successfully! PID: $NEW_PID"
                         # 健康检查（重试3次）
