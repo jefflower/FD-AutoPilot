@@ -97,6 +97,7 @@ pipeline {
                         ${JAVA_OPTS:--Xmx1g -Xms512m -XX:+UseG1GC} \
                         -Dspring.profiles.active=${SPRING_PROFILES_ACTIVE:-prod} \
                         -Dn8n.enabled=${N8N_ENABLED:-true} \
+                        -Dn8n.executable=/var/lib/jenkins/node-v20.11.1-linux-x64/bin/n8n \
                         -Dn8n.env-file=${DEPLOY_DIR}/n8n/.env \
                         -Dn8n.external-url=${N8N_EXTERNAL_URL:-http://localhost:5678} \
                         -Dn8n.api-url=${N8N_API_URL:-http://localhost:5678} \
