@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Mobile safe area for bottom bar (iPhone notch) */
+.safe-area-bottom {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(99, 102, 241, 0.5);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(99, 102, 241, 0.7);
+}
+
+/* ===== Login Page Animations ===== */
+@keyframes floatParticle {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(30px, -40px) scale(1.2); }
+    50% { transform: translate(-20px, -80px) scale(0.8); }
+    75% { transform: translate(40px, -30px) scale(1.1); }
+}
+
+@keyframes aurora1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+}
+
+@keyframes aurora2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-30px, 30px) scale(1.15); }
+}
+
+@keyframes aurora3 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(20px, -30px) scale(0.95); }
+    75% { transform: translate(-30px, 10px) scale(1.05); }
+}
+
+@keyframes dashFlow {
+    to { stroke-dashoffset: -24; }
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* ===== Navigation Animations ===== */
+
+/* Module icon breathing glow — collapsed active state */
+@keyframes moduleGlow {
+    0%, 100% {
+        box-shadow: 0 0 0 1.5px rgba(var(--glow-rgb), 0.35),
+                    0 0 0 0 rgba(var(--glow-rgb), 0);
+    }
+    50% {
+        box-shadow: 0 0 0 1.5px rgba(var(--glow-rgb), 0.55),
+                    0 0 14px 3px rgba(var(--glow-rgb), 0.12);
+    }
+}
+
+.module-icon-glow {
+    animation: moduleGlow 2.4s ease-in-out infinite;
+}
+
+/* Left indicator bar expand/collapse */
+@keyframes indicatorExpand {
+    from { height: 0; opacity: 0; }
+    to   { height: 1.25rem; opacity: 1; }
+}
+
+@keyframes indicatorShrink {
+    from { height: 1.25rem; opacity: 1; }
+    to   { height: 0; opacity: 0; }
+}

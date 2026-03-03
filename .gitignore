@@ -1,5 +1,6 @@
 # 配置文件（包含敏感信息）
-fd-server/src/main/resources/application.yml
+fd-server/fd-server-app/src/main/resources/application.yml
+fd-server/fd-server-app/src/main/resources/application-dev.yml
 
 # IDE
 .idea/
@@ -20,3 +21,9 @@ Thumbs.db
 logs/
 # Local data folder
 data/
+
+# n8n 配置（含敏感信息）
+n8n/.env
+
+# PID 文件
+.pids/

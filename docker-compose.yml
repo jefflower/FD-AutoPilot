@@ -1,0 +1,97 @@
+# ============================================================
+# FD-AutoPilot Docker Compose
+# ============================================================
+# Usage:
+#   docker-compose up -d              # Start all services
+#   docker-compose up -d fd-server    # Start server only
+#   docker-compose logs -f fd-server  # Follow server logs
+#   docker-compose down               # Stop all services
+# ============================================================
+
+services:
+  fd-server:
+    build:
+      context: .
+      dockerfile: fd-server/Dockerfile
+    container_name: fd-server
+    ports:
+      - "9988:9988"
+    environment:
+      # Spring profile
+      - SPRING_PROFILES_ACTIVE=prod
+      # Database (H2 file inside container, persisted via volume)
+      - DB_URL=jdbc:h2:file:/app/data/fd-prod-db;DB_CLOSE_DELAY=-1
+      - DB_USERNAME=sa
+      - DB_PASSWORD=${DB_PASSWORD:?DB_PASSWORD is required}
+      # Redis
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_PASSWORD=${REDIS_PASSWORD:?REDIS_PASSWORD is required}
+      # JWT (MUST override in production)
+      - JWT_SECRET=${JWT_SECRET:?JWT_SECRET is required}
+      # Freshdesk
+      - FRESHDESK_DOMAIN=${FRESHDESK_DOMAIN:?FRESHDESK_DOMAIN is required}
+      - FRESHDESK_API_KEY=${FRESHDESK_API_KEY:?FRESHDESK_API_KEY is required}
+      - FRESHDESK_WEBHOOK_SECRET=${FRESHDESK_WEBHOOK_SECRET:-}
+      # Super password
+      - SUPER_PASSWORD=${SUPER_PASSWORD:?SUPER_PASSWORD is required}
+      # JVM tuning (override defaults from Dockerfile if needed)
+      - JAVA_OPTS=-Xmx512m -Xms256m -XX:+UseG1GC -XX:+UseContainerSupport
+    volumes:
+      - fd-data:/app/data
+      - fd-logs:/app/logs
+    depends_on:
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9988/actuator/health"]
+      interval: 30s
+      timeout: 10s
+      start_period: 60s
+      retries: 3
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 768M
+    restart: unless-stopped
+    networks:
+      - fd-network
+
+  redis:
+    image: redis:7-alpine
+    container_name: fd-redis
+    ports:
+      - "6379:6379"
+    command: redis-server --requirepass ${REDIS_PASSWORD:?REDIS_PASSWORD is required} --appendonly yes
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD:?REDIS_PASSWORD is required}", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 256M
+    restart: unless-stopped
+    networks:
+      - fd-network
+
+volumes:
+  fd-data:
+    driver: local
+  fd-logs:
+    driver: local
+  redis-data:
+    driver: local
+
+networks:
+  fd-network:
+    driver: bridge

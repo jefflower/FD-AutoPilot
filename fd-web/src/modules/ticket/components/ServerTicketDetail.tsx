@@ -1,0 +1,320 @@
+import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import { ServerTicket } from '../../../shared/types/server';
+import { serverApi } from '../../../shared/services/serverApi';
+import { AGENT_MAP } from '../../../shared/constants/agentMap';
+import ReplyHistoryPanel from './ticket-detail/ReplyHistoryPanel';
+import StatusTimeline from './ticket-detail/StatusTimeline';
+
+/**
+ * 清理对话内容中的 AI 预处理标记
+ * contentCleaner 为 AI 输入添加的占位符不应显示给用户
+ */
+function cleanDisplayText(text: string): string {
+    if (!text) return '';
+    // 移除 [...邮件引用已省略...] 及其前后多余空行
+    return text.replace(/\[\.\.\.邮件引用已省略\.\.\.\]\n*/g, '').replace(/\n{3,}/g, '\n\n').trim();
+}
+
+interface ServerTicketDetailProps {
+    ticket: ServerTicket;
+    onRefresh?: () => void | Promise<void>;
+    isEmbed?: boolean;
+    isSplitMode?: boolean;
+    setIsSplitMode?: (s: boolean) => void;
+}
+
+interface ParsedContent {
+    subject?: string;
+    description?: string;
+    conversations?: Array<{
+        id: number;
+        bodyText: string;
+        userId: number;
+        createdAt: string;
+        isPrivate?: boolean;
+        incoming?: boolean;
+    }>;
+}
+
+const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
+    ticket,
+    onRefresh,
+    // isEmbed = false,
+    isSplitMode: propIsSplitMode,
+    setIsSplitMode: propSetIsSplitMode,
+}) => {
+    const { t } = useTranslation(['tickets', 'common']);
+
+    // 审核提交状态（供 ReplyHistoryPanel 使用）
+    const [auditSubmitting, setAuditSubmitting] = useState(false);
+    // 重新处理
+    const [showReprocessConfirm, setShowReprocessConfirm] = useState(false);
+    const [reprocessing, setReprocessing] = useState(false);
+    const canReprocess = ticket.status !== 'PENDING_TRANS' && ticket.status !== 'PROCESSING';
+
+    // 优先使用外部传入的分栏状态
+    const [internalIsSplitMode, setInternalIsSplitMode] = useState(false);
+    const isSplitMode = propIsSplitMode !== undefined ? propIsSplitMode : internalIsSplitMode;
+    const setIsSplitMode = (s: boolean) => {
+        if (propSetIsSplitMode) propSetIsSplitMode(s);
+        else setInternalIsSplitMode(s);
+    };
+
+    const [isJsonMode, setIsJsonMode] = useState(false);
+
+    const parseJsonContent = (content: string | undefined): ParsedContent | null => {
+        if (!content) return null;
+        let raw = content;
+        // 防御性处理：剥离 markdown 围栏（```json ... ```）
+        const fenceMatch = raw.match(/```(?:json)?\s*([\s\S]*?)\s*```/);
+        if (fenceMatch) raw = fenceMatch[1];
+        try {
+            const data = JSON.parse(raw);
+            if (data && typeof data === 'object') {
+                // 兼容 snake_case 键名（AI 可能返回 description_text / body_text）
+                if (!data.description && data.description_text) data.description = data.description_text;
+                if (!data.description && data.descriptionText) data.description = data.descriptionText;
+                if (data.conversations) {
+                    data.conversations = data.conversations.map((c: any) => ({
+                        ...c,
+                        bodyText: c.bodyText || c.body_text || '',
+                    }));
+                }
+                return data;
+            }
+        } catch (e) { }
+        return null;
+    };
+
+    const parsedData = React.useMemo(() => parseJsonContent(ticket.content), [ticket.content]);
+
+    const translationData = React.useMemo(() =>
+        parseJsonContent(ticket.translation?.translatedContent),
+        [ticket.translation?.translatedContent]
+    );
+
+    // 合并后的对话列表：将 Description 作为首条
+    const combinedConversations = React.useMemo(() => {
+        const conversations = [...(parsedData?.conversations || [])];
+        if (parsedData?.description) {
+            conversations.unshift({
+                id: -1, // 特殊 ID 表示 Description
+                bodyText: parsedData.description,
+                userId: 0,
+                createdAt: ticket.createdAt,
+                incoming: true
+            });
+        }
+        return conversations;
+    }, [parsedData, ticket.createdAt]);
+
+    // === 状态重置：切换工单时清空局部 UI 状态 ===
+    useEffect(() => {
+        setAuditSubmitting(false);
+        setShowReprocessConfirm(false);
+        setReprocessing(false);
+    }, [ticket.id]);
+
+    const handleReprocess = async () => {
+        setReprocessing(true);
+        try {
+            await serverApi.ticket.restartWorkflow(ticket.id);
+            setShowReprocessConfirm(false);
+            onRefresh?.();
+        } catch (e) {
+            alert(t('detail.reprocessFailed', { error: (e as Error).message }));
+        } finally {
+            setReprocessing(false);
+        }
+    };
+
+    const handleSubmitAudit = async (auditData: { replyId: number | null, result: 'PASS' | 'REJECT', remark: string }) => {
+        if (!auditData.replyId || auditSubmitting) return;
+        setAuditSubmitting(true);
+        try {
+            await serverApi.ticket.submitAudit(ticket.id, {
+                replyId: auditData.replyId,
+                auditResult: auditData.result,
+                auditRemark: auditData.remark
+            });
+            onRefresh?.();
+        } catch (e) {
+            alert(t('detail.auditSubmitFailed', { error: (e as Error).message }));
+        } finally {
+            setAuditSubmitting(false);
+        }
+    };
+
+    const renderChatBubble = (msg: any, isIncoming: boolean, isEmerald: boolean = false, isDesc: boolean = false) => {
+        const bubbleBaseClass = "p-3 rounded-lg shadow-sm transition-all duration-200 break-all overflow-wrap-anywhere min-w-0 max-w-[90%]";
+        const incomingClass = isEmerald ? "bg-emerald-900/40 text-emerald-100 border border-emerald-700/50" : "bg-slate-700/60 text-slate-100 border border-slate-600/50";
+        const outgoingClass = "bg-blue-600/30 text-blue-50 border border-blue-500/30";
+
+        return (
+            <div className={`flex flex-col ${isIncoming ? 'items-start' : 'items-end'} w-full min-w-0`}>
+                <div className={`flex items-center gap-2 mb-1 px-1 ${isIncoming ? '' : 'flex-row-reverse'}`}>
+                    {isDesc && <span className="text-[10px] bg-indigo-500 text-white px-1 rounded-sm font-bold shadow-sm">{t('detail.descTag')}</span>}
+                    {isEmerald && <span className="text-[8px] bg-emerald-600/80 text-white px-1 rounded-sm font-black tracking-tighter uppercase">{t('detail.translationTag')}</span>}
+                    <span className={`text-[10px] font-black uppercase tracking-wider ${isIncoming ? 'text-slate-400' : 'text-blue-400'}`}>
+                        {isIncoming ? t('detail.customerLabel') : (AGENT_MAP[msg.userId.toString()] || t('detail.agentLabel'))}
+                    </span>
+                    <span className="text-[10px] text-slate-500">{msg.createdAt}</span>
+                </div>
+                <div className={`${bubbleBaseClass} ${isIncoming ? incomingClass : outgoingClass} ${isEmerald ? 'ring-1 ring-emerald-500/20' : ''}`}>
+                    <div className="text-sm leading-relaxed whitespace-pre-wrap">{cleanDisplayText(msg.bodyText)}</div>
+                </div>
+            </div>
+        );
+    };
+
+    return (
+        <div className="h-full flex flex-col bg-slate-900 overflow-hidden relative">
+            {/* Header */}
+            <div className="flex-none p-3 border-b border-slate-700/50 flex items-center justify-between bg-slate-800/40 backdrop-blur-sm z-10">
+                <div className="flex items-center gap-3 min-w-0 flex-1 mr-3">
+                    <div className="flex flex-col min-w-0">
+                        <h2 className="text-xs font-black text-white truncate max-w-[500px] leading-tight flex items-center gap-2">
+                            <span className="text-blue-400 flex-shrink-0">#{ticket.externalId}</span>
+                            <span className="text-[9px] text-slate-500 font-mono flex-shrink-0">ID:{ticket.id}</span>
+                            <span className="truncate">
+                                {translationData?.subject || ticket.translation?.translatedTitle || ticket.translatedTitle || ticket.subject}
+                            </span>
+                        </h2>
+                        <div className="flex items-center gap-2">
+                            <span className="text-[9px] text-slate-500 font-bold uppercase tracking-tighter">{t(`common:ticketStatus.${ticket.status}` as any)}</span>
+                            {(translationData?.subject || ticket.translation?.translatedTitle || ticket.translatedTitle) && (
+                                <span className="text-[9px] text-slate-600 truncate max-w-[300px]" title={ticket.subject}>{ticket.subject}</span>
+                            )}
+                        </div>
+                    </div>
+                </div>
+
+                <div className="flex items-center gap-2 flex-shrink-0">
+                    {canReprocess && (
+                        <button
+                            onClick={() => setShowReprocessConfirm(true)}
+                            className="px-3 py-1.5 rounded-md text-[10px] font-black border bg-amber-600/20 border-amber-500/40 text-amber-400 hover:bg-amber-600/30 transition-colors"
+                        >
+                            {t('detail.reprocessBtn')}
+                        </button>
+                    )}
+                    <button onClick={() => setIsJsonMode(!isJsonMode)} className={`px-3 py-1.5 rounded-md text-[10px] font-black border ${isJsonMode ? 'bg-indigo-600 border-indigo-500 text-white' : 'bg-slate-700 border-slate-600 text-slate-400'}`}>
+                        JSON
+                    </button>
+                    <button onClick={() => setIsSplitMode(!isSplitMode)} className={`px-3 py-1.5 rounded-md text-[10px] font-black border ${isSplitMode ? 'bg-blue-600 border-blue-500 text-white' : 'bg-slate-700 border-slate-600 text-slate-400'}`}>
+                        {t('detail.splitBtn')}
+                    </button>
+                </div>
+            </div>
+
+            {/* Content Area */}
+            <div className="flex-1 overflow-y-auto p-4 space-y-6 custom-scrollbar">
+                {isJsonMode ? (
+                    <pre className="text-[10px] text-emerald-400/80 bg-black/40 p-4 rounded-lg border border-slate-800 font-mono whitespace-pre-wrap break-all">
+                        {JSON.stringify(ticket, null, 2)}
+                    </pre>
+                ) : (
+                    <>
+                        <div className="space-y-6 relative">
+                            {isSplitMode && (
+                                <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-slate-700/50 to-transparent pointer-events-none"></div>
+                            )}
+                            {combinedConversations.map((msg, idx) => {
+                                const isAgent = !!AGENT_MAP[msg.userId.toString()];
+                                // Description (-1) 始终在左；如果是客服 ID，则在右；否则按 incoming 字段
+                                const isIncoming = (msg.id === -1) ? true : (msg.incoming !== false && !isAgent);
+                                const isDesc = msg.id === -1;
+
+                                // 翻译匹配逻辑
+                                let transMsg = null;
+                                if (isDesc) {
+                                    if (translationData?.description) transMsg = { bodyText: translationData.description };
+                                } else {
+                                    transMsg = translationData?.conversations?.find(c => c.id === msg.id);
+                                }
+
+                                return (
+                                    <div key={idx} className="w-full">
+                                        <div className={`grid ${isSplitMode ? 'grid-cols-2 gap-16' : 'grid-cols-1 gap-3'} w-full items-start`}>
+                                            <div className="min-w-0 w-full flex flex-col gap-2">
+                                                {/* 原文气泡 */}
+                                                {renderChatBubble(msg, isIncoming, false, isDesc)}
+
+                                                {/* 非分栏模式下，紧跟展示翻译气泡 */}
+                                                {!isSplitMode && transMsg && (
+                                                    <div className="flex flex-col gap-2 animate-in fade-in slide-in-from-top-1 duration-300">
+                                                        {renderChatBubble({ ...transMsg, userId: msg.userId, createdAt: msg.createdAt }, isIncoming, true, isDesc)}
+                                                    </div>
+                                                )}
+                                            </div>
+
+                                            {isSplitMode && (
+                                                <div className="min-w-0 w-full flex flex-col gap-2">
+                                                    {transMsg ? (
+                                                        renderChatBubble({ ...transMsg, userId: msg.userId, createdAt: msg.createdAt }, isIncoming, true, isDesc)
+                                                    ) : (
+                                                        <div className="h-full flex items-center justify-center border border-dashed border-slate-700 rounded-lg py-6 text-slate-600 text-[10px] italic">
+                                                            {t('detail.noTranslation')}
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            )}
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </div>
+
+                        {/* 回复历史区块：有历史回复时始终显示 */}
+                        {ticket.replies && ticket.replies.length > 0 && (
+                            <div className="pt-6 border-t border-slate-800/80">
+                                <ReplyHistoryPanel
+                                    replies={ticket.replies}
+                                    ticketId={ticket.id}
+                                    ticketStatus={ticket.status}
+                                    submitting={auditSubmitting}
+                                    onSubmitAudit={handleSubmitAudit}
+                                    onRefresh={onRefresh}
+                                />
+                            </div>
+                        )}
+
+                        {/* 状态时间线 */}
+                        <div className="pt-6 border-t border-slate-800/80">
+                            <StatusTimeline ticketId={ticket.id} />
+                        </div>
+                    </>
+                )}
+            </div>
+
+            {/* 重新处理确认对话框 */}
+            {showReprocessConfirm && (
+                <div className="absolute inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50">
+                    <div className="bg-slate-900 border border-white/10 rounded-2xl p-6 w-full max-w-sm shadow-2xl mx-4">
+                        <h4 className="text-sm font-bold text-white mb-3">{t('detail.reprocessConfirmTitle')}</h4>
+                        <p className="text-xs text-slate-400 mb-5 leading-relaxed">{t('detail.reprocessConfirmDesc')}</p>
+                        <div className="flex gap-3 justify-end">
+                            <button
+                                onClick={() => setShowReprocessConfirm(false)}
+                                disabled={reprocessing}
+                                className="px-4 py-2 bg-slate-700/50 hover:bg-slate-600/50 text-slate-300 text-xs font-bold rounded-lg transition-all border border-white/10"
+                            >
+                                {t('common:button.cancel')}
+                            </button>
+                            <button
+                                onClick={handleReprocess}
+                                disabled={reprocessing}
+                                className="px-4 py-2 bg-amber-600 hover:bg-amber-500 disabled:opacity-50 text-white text-xs font-bold rounded-lg transition-all"
+                            >
+                                {reprocessing ? t('common:button.processing') : t('common:button.confirm')}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
+        </div>
+    );
+};
+
+export default ServerTicketDetail;

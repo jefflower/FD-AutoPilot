@@ -1,0 +1,34 @@
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Git
+.git/
+.gitignore
+
+# Documentation
+doc/
+*.md
+LICENSE
+
+# Build artifacts
+**/target/
+**/dist/
+**/node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs & data
+logs/
+data/
+*.log
+
+# Client (not needed for server Docker build)
+fd-client/
+
+# Temp files
+*.tmp
+*.swp

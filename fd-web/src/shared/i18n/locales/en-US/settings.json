@@ -1,0 +1,150 @@
+{
+  "title": "Settings",
+  "subtitle": "Configure your connection and AI preferences",
+  "sections": {
+    "local": "Local Settings",
+    "cloud": "Cloud Settings",
+    "admin": "Admin Operations"
+  },
+  "language": {
+    "title": "Language"
+  },
+  "connection": {
+    "title": "Connection Settings",
+    "serverUrl": "Server URL",
+    "serverUrlPlaceholder": "http://47.110.152.25:9988",
+    "serverUrlHint": "FD-Server base URL (default: http://47.110.152.25:9988)",
+    "translationLang": "Translation Target Language (MQ/Manual)",
+    "translationLangHint": "Defines the default language for MQ and manual translations",
+    "langOptionCn": "简体中文 (Simplified Chinese)",
+    "langOptionEn": "English (English)",
+    "langOptionJp": "日本語 (Japanese)"
+  },
+  "mq": {
+    "title": "RabbitMQ Broker",
+    "host": "Host",
+    "port": "Port",
+    "username": "Username",
+    "password": "Password"
+  },
+  "ai": {
+    "title": "AI Engine (NotebookLM)",
+    "notebookUrl": "Notebook URL",
+    "notebookUrlPlaceholder": "https://notebooklm.google.com/notebook/...",
+    "notebookId": "Notebook ID",
+    "promptTemplate": "AI Prompt Template",
+    "promptPlaceholder": "Template for AI response generation..."
+  },
+  "selectors": {
+    "title": "NotebookLM Selectors",
+    "description": "DOM selectors for NotebookLM page. Update here when NotebookLM UI changes.",
+    "resetToDefault": "Reset to Default",
+    "uploadConfig": "Upload Config",
+    "resetSuccess": "Selectors reset to defaults",
+    "resetFailed": "Reset failed: {{error}}",
+    "uploadSuccess": "Selectors configuration updated",
+    "uploadInvalid": "Invalid JSON file, please check the format",
+    "loadFailed": "Failed to load selectors"
+  },
+  "wecom": {
+    "title": "WeChat Work",
+    "enableNotify": "Enable WeChat Work Notifications",
+    "enableNotifyDesc": "Audit pass/reject, reply push and other events will be sent to WeChat Work group",
+    "webhookUrl": "Webhook URL",
+    "webhookPlaceholder": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=...",
+    "webhookHint": "Create a bot in WeChat Work group settings to get the Webhook URL",
+    "saveConfig": "Save Config",
+    "sendTestMessage": "Send Test Message",
+    "sending": "Sending...",
+    "saveSuccess": "WeChat Work configuration saved",
+    "testSuccess": "WeChat Work test message sent successfully",
+    "testFailed": "WeChat Work test message failed to send",
+    "testError": "Test failed: {{error}}"
+  },
+  "notify": {
+    "title": "Notification Channel",
+    "platform": "Notification Platform",
+    "platformOption": {
+      "wecom": "WeChat Work",
+      "dingtalk": "DingTalk",
+      "none": "Disabled"
+    },
+    "enableNotify": "Enable Notifications",
+    "enableNotifyDesc": "Audit pass/reject, reply push events will be sent to group chat",
+    "webhookUrl": "Webhook URL",
+    "webhookPlaceholder": {
+      "wecom": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=...",
+      "dingtalk": "https://oapi.dingtalk.com/robot/send?access_token=..."
+    },
+    "auditBaseUrl": "Audit Link Domain",
+    "auditBaseUrlHint": "Base URL for mobile audit links, e.g. https://fd.example.com",
+    "saveConfig": "Save Config",
+    "sendTestMessage": "Send Test Message",
+    "sending": "Sending...",
+    "saveSuccess": "Notification channel config saved",
+    "testSuccess": "Test message sent successfully",
+    "testFailed": "Test message failed to send",
+    "testError": "Test failed: {{error}}"
+  },
+  "purgeAll": {
+    "title": "Data Cleanup",
+    "description": "Remove all tickets and associated data (translations, replies, audit records) from database.",
+    "warning": "Database will be reset to a clean state. This action cannot be undone.",
+    "button": "Purge All Ticket Data",
+    "confirmTitle": "Confirm Purge All Ticket Data",
+    "confirmWarning": "This will permanently delete:",
+    "confirmItems": {
+      "tickets": "All ticket records",
+      "translations": "All translation records",
+      "replies": "All AI reply records",
+      "audits": "All audit records"
+    },
+    "superPassword": "Super Password",
+    "passwordPlaceholder": "Enter super password",
+    "processing": "Processing...",
+    "confirm": "Confirm Purge",
+    "success": "Purged {{count}} tickets and all associated data",
+    "failed": "Data cleanup failed: {{error}}"
+  },
+  "aiConfig": {
+    "title": "AI Engine Configuration",
+    "subtitle": "Configure AI engines for ticket translation and reply",
+    "sections": {
+      "translation": "Translation Engine",
+      "reply": "Reply Engine",
+      "selectors": "DOM Selectors"
+    },
+    "translation": {
+      "provider": "Translation Engine",
+      "providerHint": "Select the AI engine for automatic translation",
+      "geminiCli": "Gemini CLI",
+      "geminiCliDesc": "Use locally installed Gemini CLI tool (desktop only)",
+      "geminiApi": "Gemini REST API",
+      "geminiApiDesc": "Call Gemini via REST API (requires API Key)",
+      "geminiCliPath": "CLI Command",
+      "geminiCliPathPlaceholder": "gemini",
+      "geminiCliPathHint": "Path or command name for the Gemini CLI executable",
+      "geminiModel": "Model",
+      "geminiModelPlaceholder": "gemini-2.0-flash",
+      "geminiModelHint": "Gemini model used for translation",
+      "apiKey": "API Key",
+      "apiKeyPlaceholder": "AIza...",
+      "apiKeyHint": "Gemini API key (securely stored in server user settings)",
+      "apiEndpoint": "API Endpoint",
+      "apiEndpointPlaceholder": "https://generativelanguage.googleapis.com/v1beta",
+      "apiEndpointHint": "Gemini API endpoint, leave empty for default",
+      "saveSuccess": "Translation engine config saved",
+      "saveFailed": "Save failed: {{error}}"
+    }
+  },
+  "footer": {
+    "savedToLocal": "Settings saved to local vault"
+  },
+  "profile": {
+    "title": "User Profile",
+    "roleAdmin": "Admin",
+    "roleUser": "Regular User",
+    "logout": "Log Out",
+    "comingSoon": "More features coming soon..."
+  }
+}

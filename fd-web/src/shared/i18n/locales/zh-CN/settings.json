@@ -1,0 +1,150 @@
+{
+  "title": "设置",
+  "subtitle": "配置连接和 AI 偏好设置",
+  "sections": {
+    "local": "本地配置",
+    "cloud": "云端配置",
+    "admin": "管理操作"
+  },
+  "language": {
+    "title": "语言设置"
+  },
+  "connection": {
+    "title": "连接设置",
+    "serverUrl": "服务器地址",
+    "serverUrlPlaceholder": "http://47.110.152.25:9988",
+    "serverUrlHint": "FD-Server 基础地址 (默认: http://47.110.152.25:9988)",
+    "translationLang": "翻译目标语言 (MQ/手动)",
+    "translationLangHint": "定义 MQ 和手动翻译的默认语言",
+    "langOptionCn": "简体中文 (Simplified Chinese)",
+    "langOptionEn": "English (English)",
+    "langOptionJp": "日本語 (Japanese)"
+  },
+  "mq": {
+    "title": "RabbitMQ Broker",
+    "host": "主机",
+    "port": "端口",
+    "username": "用户名",
+    "password": "密码"
+  },
+  "ai": {
+    "title": "AI 引擎 (NotebookLM)",
+    "notebookUrl": "Notebook URL",
+    "notebookUrlPlaceholder": "https://notebooklm.google.com/notebook/...",
+    "notebookId": "Notebook ID",
+    "promptTemplate": "AI Prompt 模板",
+    "promptPlaceholder": "AI 回复生成模板..."
+  },
+  "selectors": {
+    "title": "NotebookLM 选择器",
+    "description": "NotebookLM 页面 DOM 选择器配置，UI 变更后可在此更新",
+    "resetToDefault": "恢复默认",
+    "uploadConfig": "上传配置",
+    "resetSuccess": "选择器已恢复为默认值",
+    "resetFailed": "恢复默认失败: {{error}}",
+    "uploadSuccess": "选择器配置已更新",
+    "uploadInvalid": "无效的 JSON 文件，请检查格式",
+    "loadFailed": "加载选择器失败"
+  },
+  "wecom": {
+    "title": "企业微信",
+    "enableNotify": "启用企业微信通知",
+    "enableNotifyDesc": "审核通过/驳回、回复推送等事件将发送通知到企业微信群",
+    "webhookUrl": "Webhook URL",
+    "webhookPlaceholder": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=...",
+    "webhookHint": "在企业微信群设置中创建机器人获取 Webhook 地址",
+    "saveConfig": "保存配置",
+    "sendTestMessage": "发送测试消息",
+    "sending": "发送中...",
+    "saveSuccess": "企业微信配置已保存",
+    "testSuccess": "企业微信测试消息发送成功",
+    "testFailed": "企业微信测试消息发送失败",
+    "testError": "测试失败: {{error}}"
+  },
+  "notify": {
+    "title": "通知渠道",
+    "platform": "通知平台",
+    "platformOption": {
+      "wecom": "企业微信",
+      "dingtalk": "钉钉",
+      "none": "关闭通知"
+    },
+    "enableNotify": "启用通知",
+    "enableNotifyDesc": "审核通过/驳回、回复推送等事件将发送通知到群",
+    "webhookUrl": "Webhook URL",
+    "webhookPlaceholder": {
+      "wecom": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=...",
+      "dingtalk": "https://oapi.dingtalk.com/robot/send?access_token=..."
+    },
+    "auditBaseUrl": "审核链接域名",
+    "auditBaseUrlHint": "移动端审核链接的基础 URL，如 https://fd.example.com",
+    "saveConfig": "保存配置",
+    "sendTestMessage": "发送测试消息",
+    "sending": "发送中...",
+    "saveSuccess": "通知渠道配置已保存",
+    "testSuccess": "测试消息发送成功",
+    "testFailed": "测试消息发送失败",
+    "testError": "测试失败: {{error}}"
+  },
+  "purgeAll": {
+    "title": "数据清理",
+    "description": "清除数据库中所有工单及其关联数据（翻译、回复、审核记录）。",
+    "warning": "执行后数据库将恢复为全新状态，此操作不可撤销。",
+    "button": "清除所有工单数据",
+    "confirmTitle": "确认清除所有工单数据",
+    "confirmWarning": "此操作将永久删除：",
+    "confirmItems": {
+      "tickets": "所有工单记录",
+      "translations": "所有翻译记录",
+      "replies": "所有 AI 回复记录",
+      "audits": "所有审核记录"
+    },
+    "superPassword": "超级密码",
+    "passwordPlaceholder": "请输入超级密码",
+    "processing": "处理中...",
+    "confirm": "确认清除",
+    "success": "已清除 {{count}} 个工单及所有关联数据",
+    "failed": "数据清理失败：{{error}}"
+  },
+  "aiConfig": {
+    "title": "AI 引擎配置",
+    "subtitle": "配置工单翻译和回复所使用的 AI 引擎",
+    "sections": {
+      "translation": "翻译引擎",
+      "reply": "回复引擎",
+      "selectors": "DOM 选择器"
+    },
+    "translation": {
+      "provider": "翻译引擎",
+      "providerHint": "选择用于自动翻译的 AI 引擎",
+      "geminiCli": "Gemini CLI",
+      "geminiCliDesc": "使用本地安装的 Gemini CLI 工具（仅桌面模式）",
+      "geminiApi": "Gemini REST API",
+      "geminiApiDesc": "通过 REST API 直接调用 Gemini（需要 API Key）",
+      "geminiCliPath": "CLI 命令",
+      "geminiCliPathPlaceholder": "gemini",
+      "geminiCliPathHint": "Gemini CLI 可执行文件路径或命令名",
+      "geminiModel": "模型",
+      "geminiModelPlaceholder": "gemini-2.0-flash",
+      "geminiModelHint": "翻译使用的 Gemini 模型",
+      "apiKey": "API Key",
+      "apiKeyPlaceholder": "AIza...",
+      "apiKeyHint": "Gemini API 密钥（安全存储在服务端用户设置中）",
+      "apiEndpoint": "API 端点",
+      "apiEndpointPlaceholder": "https://generativelanguage.googleapis.com/v1beta",
+      "apiEndpointHint": "Gemini API 端点，留空使用默认地址",
+      "saveSuccess": "翻译引擎配置已保存",
+      "saveFailed": "保存失败: {{error}}"
+    }
+  },
+  "footer": {
+    "savedToLocal": "设置已保存到本地"
+  },
+  "profile": {
+    "title": "用户中心",
+    "roleAdmin": "管理员",
+    "roleUser": "普通用户",
+    "logout": "退出登录",
+    "comingSoon": "更多功能即将推出..."
+  }
+}

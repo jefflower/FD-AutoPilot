@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.jefflower</groupId>
+		<artifactId>fd-server</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>fd-server-app</artifactId>
+	<name>fd-server-app</name>
+	<description>Application entry point, resources, and static files</description>
+
+	<dependencies>
+		<!-- Aggregate all business modules -->
+		<dependency>
+			<groupId>com.jefflower</groupId>
+			<artifactId>fd-server-ticket</artifactId>
+		</dependency>
+
+		<!-- PostgreSQL Database (runtime) -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+		<!-- H2 Database (保留用于数据迁移和测试) -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+		<!-- Actuator -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+		<!-- SpringDoc OpenAPI (Swagger UI) -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>with-frontend</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>exec-maven-plugin</artifactId>
+						<version>3.1.0</version>
+						<executions>
+							<execution>
+								<id>npm-install</id>
+								<phase>generate-resources</phase>
+								<goals><goal>exec</goal></goals>
+								<configuration>
+									<executable>npm</executable>
+									<workingDirectory>${project.basedir}/../../fd-web</workingDirectory>
+									<arguments>
+										<argument>install</argument>
+									</arguments>
+								</configuration>
+							</execution>
+							<execution>
+								<id>npm-build</id>
+								<phase>generate-resources</phase>
+								<goals><goal>exec</goal></goals>
+								<configuration>
+									<executable>npm</executable>
+									<workingDirectory>${project.basedir}/../../fd-web</workingDirectory>
+									<arguments>
+										<argument>run</argument>
+										<argument>build</argument>
+									</arguments>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-resources-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>copy-frontend</id>
+								<phase>generate-resources</phase>
+								<goals><goal>copy-resources</goal></goals>
+								<configuration>
+									<outputDirectory>${project.basedir}/src/main/resources/static</outputDirectory>
+									<resources>
+										<resource>
+											<directory>${project.basedir}/../../fd-web/dist</directory>
+										</resource>
+									</resources>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>

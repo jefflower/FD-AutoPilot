@@ -1,0 +1,1 @@
+import{j as e}from"./index-DN3N1NF8.js";const s=({message:t})=>e.jsx("div",{className:"text-center py-6 text-slate-600 text-[10px] italic border border-dashed border-white/5 rounded-xl",children:t});export{s as E};

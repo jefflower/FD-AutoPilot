@@ -1,0 +1,66 @@
+package com.jefflower.fdserver.auth.config;
+
+import com.jefflower.fdserver.auth.service.ModulePermissionDefinition;
+import org.springframework.stereotype.Component;
+
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+@Component
+public class AuthPermissionDefinition implements ModulePermissionDefinition {
+
+    @Override
+    public String getModuleCode() { return "auth"; }
+
+    @Override
+    public String getModuleName() { return "认证授权"; }
+
+    @Override
+    public String getModuleDescription() { return "用户管理、角色权限管理"; }
+
+    @Override
+    public String getModuleIcon() { return "shield"; }
+
+    @Override
+    public String getModuleRoutePath() { return "/auth"; }
+
+    @Override
+    public int getModuleSortOrder() { return 0; }
+
+    @Override
+    public Map<String, String> getPermissions() {
+        Map<String, String> map = new LinkedHashMap<>();
+        map.put("user:read", "查看用户");
+        map.put("user:manage", "管理用户");
+        map.put("role:read", "查看角色");
+        map.put("role:manage", "管理角色");
+        map.put("org:read", "查看组织架构");
+        map.put("org:manage", "管理组织同步");
+        return map;
+    }
+
+    @Override
+    public Map<String, List<String>> getDefaultRoleAssignments() {
+        return Map.of(
+                "user:read", List.of("ADMIN"),
+                "user:manage", List.of("ADMIN"),
+                "role:read", List.of("ADMIN"),
+                "role:manage", List.of("ADMIN"),
+                "org:read", List.of("ADMIN"),
+                "org:manage", List.of("ADMIN")
+        );
+    }
+
+    @Override
+    public Map<String, String> getPermissionTypes() {
+        Map<String, String> types = new LinkedHashMap<>();
+        types.put("user:read", "ROUTE");
+        types.put("user:manage", "OPERATION");
+        types.put("role:read", "ROUTE");
+        types.put("role:manage", "OPERATION");
+        types.put("org:read", "ROUTE");
+        types.put("org:manage", "OPERATION");
+        return types;
+    }
+}

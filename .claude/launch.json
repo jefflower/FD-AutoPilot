@@ -1,0 +1,29 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "fd-server",
+      "runtimeExecutable": "mvn",
+      "runtimeArgs": ["-f", "fd-server/pom.xml", "spring-boot:run", "-pl", "fd-server-app"],
+      "port": 9988
+    },
+    {
+      "name": "fd-web",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "fd-web", "run", "dev"],
+      "port": 5173
+    },
+    {
+      "name": "fd-bridge",
+      "runtimeExecutable": "cargo",
+      "runtimeArgs": ["run", "--bin", "fd-bridge", "--no-default-features", "--manifest-path", "fd-client/src-tauri/Cargo.toml"],
+      "port": 9987
+    },
+    {
+      "name": "fd-client",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "fd-client", "run", "tauri", "dev"],
+      "port": 9987
+    }
+  ]
+}

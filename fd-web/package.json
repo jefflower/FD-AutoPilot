@@ -1,0 +1,46 @@
+{
+  "name": "fd-web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "publish": "vite build && rm -rf ../fd-server/fd-server-app/src/main/resources/static && mkdir -p ../fd-server/fd-server-app/src/main/resources/static && cp -r dist/* ../fd-server/fd-server-app/src/main/resources/static/ && echo '✅ Published to fd-server/fd-server-app/src/main/resources/static/'",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@dagrejs/dagre": "^2.0.4",
+    "@tauri-apps/api": "^2.9.1",
+    "@tauri-apps/plugin-dialog": "^2.6.0",
+    "@tauri-apps/plugin-opener": "^2.5.3",
+    "@xyflow/react": "^12.10.1",
+    "i18next": "^25.8.4",
+    "i18next-browser-languagedetector": "^8.2.0",
+    "lucide-react": "^0.563.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-i18next": "^16.5.4"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.6.0",
+    "autoprefixer": "^10.4.23",
+    "eslint": "^10.0.0",
+    "jsdom": "^28.0.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.56.0",
+    "vite": "^7.0.4",
+    "vitest": "^4.0.18"
+  }
+}
