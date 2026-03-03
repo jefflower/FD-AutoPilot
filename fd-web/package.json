@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "publish": "vite build && rm -rf ../fd-server/src/main/resources/static && mkdir -p ../fd-server/src/main/resources/static && cp -r dist/* ../fd-server/src/main/resources/static/ && echo '✅ Published to fd-server/src/main/resources/static/'",
+    "publish": "vite build && rm -rf ../fd-server/fd-server-app/src/main/resources/static && mkdir -p ../fd-server/fd-server-app/src/main/resources/static && cp -r dist/* ../fd-server/fd-server-app/src/main/resources/static/ && echo '✅ Published to fd-server/fd-server-app/src/main/resources/static/'",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage"

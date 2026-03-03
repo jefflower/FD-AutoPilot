@@ -8,6 +8,8 @@ This file provides guidance to Claude Code when working with code in this reposi
 
 > n8n系统的用户名为 `jeff890115@gmail.com`，密码为 `Jeff13467565377`
 
+> jenkins服务地址  http://47.110.152.25:9999/   用户名为 `jenkins`，密码为 `Jenkins@hnlx`
+
 ## 项目概览
 
 FD-AutoPilot — 智能工单处理系统，集成 Freshdesk + AI（Gemini CLI / NotebookLM）自动化翻译和回复。
