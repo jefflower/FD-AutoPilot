@@ -8,6 +8,7 @@ pipeline {
     environment {
         DEPLOY_DIR = '/var/lib/jenkins/fd-autopilot'
         ENV_FILE   = '/var/lib/jenkins/fd-autopilot/.env'
+        PATH       = "/var/lib/jenkins/node-v20.11.1-linux-x64/bin:${env.PATH}"
     }
 
     triggers {
