@@ -26,6 +26,7 @@ const CLI_DEFAULTS = {
  */
 export class CliExecutor implements AgentExecutor {
     readonly providerType = 'GEMINI_CLI' as const;
+    readonly supportedCapability = 'gemini-cli';
 
     isAvailable(): boolean {
         // Tauri 环境直接可用；Web 环境通过 HTTP bridge 也可用

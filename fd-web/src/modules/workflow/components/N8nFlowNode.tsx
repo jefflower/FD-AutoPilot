@@ -42,7 +42,7 @@ const N8nFlowNode: React.FC<NodeProps<N8nFlowNodeType>> = ({ data }) => {
       className="relative bg-slate-800/90 border border-slate-600/50 rounded-lg shadow-lg min-w-[200px] max-w-[240px] overflow-hidden"
       style={{ borderTopColor: color, borderTopWidth: 3 }}
     >
-      {/* Input handles */}
+      {/* Input handles — offset slightly above center to separate from output lines */}
       {!isTrigger &&
         Array.from({ length: inputCount }, (_, i) => (
           <Handle
@@ -52,7 +52,10 @@ const N8nFlowNode: React.FC<NodeProps<N8nFlowNodeType>> = ({ data }) => {
             id={`input-${i}`}
             className="!w-2.5 !h-2.5 !bg-slate-400 !border-slate-600"
             style={{
-              top: inputCount === 1 ? '50%' : `${((i + 1) / (inputCount + 1)) * 100}%`,
+              top:
+                inputCount === 1
+                  ? '42%'
+                  : `${((i + 1) / (inputCount + 1)) * 100}%`,
             }}
           />
         ))}
@@ -88,16 +91,20 @@ const N8nFlowNode: React.FC<NodeProps<N8nFlowNodeType>> = ({ data }) => {
         )}
       </div>
 
-      {/* Output handles */}
+      {/* Output handles — offset slightly below center to separate from input lines */}
       {Array.from({ length: outputCount }, (_, i) => (
         <Handle
           key={`output-${i}`}
           type="source"
           position={Position.Right}
           id={`output-${i}`}
-          className="!w-2.5 !h-2.5 !bg-slate-400 !border-slate-600"
+          className="!w-2.5 !h-2.5 !border-slate-600"
           style={{
-            top: outputCount === 1 ? '50%' : `${((i + 1) / (outputCount + 1)) * 100}%`,
+            top:
+              outputCount === 1
+                ? '58%'
+                : `${((i + 1) / (outputCount + 1)) * 100}%`,
+            backgroundColor: color,
           }}
         />
       ))}

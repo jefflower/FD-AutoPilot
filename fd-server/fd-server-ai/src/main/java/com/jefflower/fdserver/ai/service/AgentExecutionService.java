@@ -7,6 +7,8 @@ import com.jefflower.fdserver.ai.entity.AgentExecution;
 import com.jefflower.fdserver.ai.enums.ExecutionStatus;
 import com.jefflower.fdserver.ai.repository.AgentDefinitionRepository;
 import com.jefflower.fdserver.ai.repository.AgentExecutionRepository;
+import com.jefflower.fdserver.task.sse.SseConnectionManager;
+import com.jefflower.fdserver.task.sse.SseEventData;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
@@ -17,7 +19,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @Service
@@ -29,11 +33,14 @@ public class AgentExecutionService {
 
     private final AgentExecutionRepository executionRepository;
     private final AgentDefinitionRepository definitionRepository;
+    private final SseConnectionManager sseConnectionManager;
 
     public AgentExecutionService(AgentExecutionRepository executionRepository,
-                                 AgentDefinitionRepository definitionRepository) {
+                                 AgentDefinitionRepository definitionRepository,
+                                 SseConnectionManager sseConnectionManager) {
         this.executionRepository = executionRepository;
         this.definitionRepository = definitionRepository;
+        this.sseConnectionManager = sseConnectionManager;
     }
 
     @Transactional
@@ -46,7 +53,9 @@ public class AgentExecutionService {
         exec.setReferenceId(refId);
         exec.setExecutedBy(executedBy);
         exec.setExecutedOn(executedOn);
-        return executionRepository.save(exec);
+        AgentExecution saved = executionRepository.save(exec);
+        broadcastExecutionEvent("agent-execution-started", saved);
+        return saved;
     }
 
     @Transactional
@@ -58,7 +67,8 @@ public class AgentExecutionService {
             exec.setTokenCount(tokenCount);
             exec.setOutputSnapshot(truncate(output, 2000));
             exec.setErrorMessage(error);
-            executionRepository.save(exec);
+            AgentExecution saved = executionRepository.save(exec);
+            broadcastExecutionEvent("agent-execution-completed", saved);
         });
     }
 
@@ -75,7 +85,8 @@ public class AgentExecutionService {
         exec.setInputSnapshot(truncate(report.getInputSnapshot(), 2000));
         exec.setOutputSnapshot(truncate(report.getOutputSnapshot(), 2000));
         exec.setErrorMessage(report.getErrorMessage());
-        executionRepository.save(exec);
+        AgentExecution saved = executionRepository.save(exec);
+        broadcastExecutionEvent("agent-execution-completed", saved);
     }
 
     public Page<AgentExecution> findByAgent(String agentCode, Pageable pageable) {
@@ -162,6 +173,33 @@ public class AgentExecutionService {
         if (deleted > 0) {
             log.info("[AgentExecution] 清理过期执行记录: 删除 {} 条 (保留 {} 天, cutoff={})",
                     deleted, retentionDays, cutoff);
+        }
+    }
+
+    /**
+     * 查询当前所有 RUNNING 状态的执行记录。
+     */
+    public List<AgentExecution> findRunning() {
+        return executionRepository.findByStatusOrderByCreatedAtDesc(ExecutionStatus.RUNNING);
+    }
+
+    /**
+     * 广播 Agent 执行生命周期 SSE 事件。
+     * 包裹在 try-catch 中，确保广播失败不会影响主流程。
+     */
+    private void broadcastExecutionEvent(String eventType, AgentExecution exec) {
+        try {
+            Map<String, Object> data = new HashMap<>();
+            data.put("executionId", exec.getId());
+            data.put("agentCode", exec.getAgentCode());
+            data.put("status", exec.getStatus().name());
+            data.put("referenceType", exec.getReferenceType());
+            data.put("referenceId", exec.getReferenceId());
+            data.put("durationMs", exec.getDurationMs());
+            data.put("errorMessage", exec.getErrorMessage());
+            sseConnectionManager.broadcast(new SseEventData(eventType, data));
+        } catch (Exception e) {
+            log.warn("[AgentExecutionService] Failed to broadcast SSE event: {}", e.getMessage());
         }
     }
 

@@ -316,6 +316,9 @@
     "successRate": "Success Rate",
     "executions": "executions",
     "avgDuration": "avg {{ms}}ms",
+    "executingTasks": "Executing Tasks",
+    "processing": "Processing...",
+    "idle": "Idle",
     "moduleFilter": {
       "all": "All",
       "ticket": "Ticket Center",
@@ -328,7 +331,9 @@
       "online": "online",
       "running": "running",
       "noInstances": "No instances",
-      "capability": "Capability"
+      "capability": "Capability",
+      "executing": "Executing ({{count}})",
+      "idle": "Idle"
     },
     "executionLog": {
       "title": "Execution Log",
@@ -352,10 +357,34 @@
       "command": "Command",
       "prompt": "Prompt",
       "bridgeUnavailable": "Bridge service unavailable, cannot view local logs",
-      "fullscreen": "Fullscreen"
+      "fullscreen": "Fullscreen",
+      "running": "running"
     },
     "refresh": "Refresh",
     "autoRefresh": "Auto Refresh (10s)",
     "lastUpdated": "Last updated: {{time}}"
+  },
+  "jsonPreview": {
+    "preview": "Preview JSON",
+    "viewFull": "View Full JSON",
+    "compare": "Compare Versions",
+    "openInWindow": "Open in Window",
+    "copy": "Copy",
+    "copySuccess": "Copied to clipboard",
+    "search": "Search...",
+    "searchMatches": "{{current}} / {{total}}",
+    "noMatches": "No matches",
+    "close": "Close",
+    "closeAll": "Close All",
+    "minimize": "Minimize",
+    "maximize": "Maximize",
+    "restore": "Restore",
+    "lines": "{{count}} lines",
+    "chars": "{{count}} chars",
+    "compareSelected": "Compare ({{count}}/2)",
+    "original": "Original",
+    "compared": "Compared",
+    "flowView": "Flow",
+    "jsonView": "JSON"
   }
 }

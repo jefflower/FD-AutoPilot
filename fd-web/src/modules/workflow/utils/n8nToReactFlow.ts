@@ -1,4 +1,4 @@
-import { type Node, type Edge } from '@xyflow/react';
+import { type Node, type Edge, MarkerType } from '@xyflow/react';
 import * as dagre from '@dagrejs/dagre';
 
 // n8n 节点类型颜色映射
@@ -84,9 +84,16 @@ export function n8nToReactFlow(workflow: N8nWorkflow): { nodes: Node[]; edges: E
   const edges: Edge[] = [];
   const nodeNameSet = new Set(filteredNodes.map(n => n.name));
 
+  // Build a map of node name → color for edge coloring
+  const nodeColorMap = new Map<string, string>();
+  filteredNodes.forEach(n => {
+    nodeColorMap.set(n.name, NODE_COLORS[n.type] || NODE_COLORS.default);
+  });
+
   Object.entries(workflow.connections).forEach(([sourceName, conn]) => {
     if (!nodeNameSet.has(sourceName)) return; // 跳过已过滤的节点
 
+    const sourceColor = nodeColorMap.get(sourceName) || '#64748b';
     const outputs = conn.main || [];
     outputs.forEach((targets, outputIndex) => {
       targets.forEach((target) => {
@@ -98,8 +105,15 @@ export function n8nToReactFlow(workflow: N8nWorkflow): { nodes: Node[]; edges: E
           target: target.node,
           sourceHandle: `output-${outputIndex}`,
           targetHandle: `input-${target.index}`,
+          // Use default bezier for smooth curves; handle offset (42%/58%) creates natural separation
           animated: true,
-          style: { stroke: '#64748b', strokeWidth: 2 },
+          style: { stroke: sourceColor, strokeWidth: 2, opacity: 0.7 },
+          markerEnd: {
+            type: MarkerType.ArrowClosed,
+            width: 14,
+            height: 14,
+            color: sourceColor,
+          },
           label: outputs.length > 1 ? `#${outputIndex}` : undefined,
           labelStyle: { fill: '#94a3b8', fontSize: 10 },
         });
@@ -110,16 +124,17 @@ export function n8nToReactFlow(workflow: N8nWorkflow): { nodes: Node[]; edges: E
   // 3. 如果所有节点 position 都是 [0,0]，使用 dagre 自动布局
   const allZero = nodes.every(n => n.position.x === 0 && n.position.y === 0);
   if (allZero) {
-    return autoLayout(nodes, edges);
+    const result = autoLayout(nodes, edges);
+    return { nodes: result.nodes, edges: markLoopBackEdges(result.nodes, result.edges) };
   }
 
-  return { nodes, edges };
+  return { nodes, edges: markLoopBackEdges(nodes, edges) };
 }
 
 function autoLayout(nodes: Node[], edges: Edge[]): { nodes: Node[]; edges: Edge[] } {
   const g = new dagre.graphlib.Graph();
   g.setDefaultEdgeLabel(() => ({}));
-  g.setGraph({ rankdir: 'LR', nodesep: 80, ranksep: 120 });
+  g.setGraph({ rankdir: 'LR', nodesep: 100, ranksep: 150 });
 
   const nodeWidth = 220;
   const nodeHeight = 80;
@@ -182,6 +197,31 @@ export function getInputCount(
     });
   });
   return Math.max(maxIndex, 1);
+}
+
+/**
+ * Detect backward edges (source.x >= target.x in LR layout) and mark them as 'loopBack' type
+ * so they route above the nodes instead of through them.
+ */
+function markLoopBackEdges(nodes: Node[], edges: Edge[]): Edge[] {
+  const posMap = new Map<string, { x: number; y: number }>();
+  nodes.forEach(n => posMap.set(n.id, n.position));
+
+  return edges.map(edge => {
+    const srcPos = posMap.get(edge.source);
+    const tgtPos = posMap.get(edge.target);
+    if (srcPos && tgtPos && srcPos.x >= tgtPos.x) {
+      // This is a backward/loop edge — use custom loopBack edge type
+      return {
+        ...edge,
+        type: 'loopBack',
+        animated: true,
+        // Use dashed style for loop-back edges to visually distinguish them
+        style: { ...edge.style, strokeDasharray: '6 3' },
+      };
+    }
+    return edge;
+  });
 }
 
 /** 提取参数摘要 */

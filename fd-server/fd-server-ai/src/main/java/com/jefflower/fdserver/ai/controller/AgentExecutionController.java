@@ -99,6 +99,12 @@ public class AgentExecutionController {
         return ApiResponse.ok(page.getContent());
     }
 
+    @GetMapping("/executions/running")
+    @RequiresPermission("ai:view_logs")
+    public ApiResponse<List<AgentExecution>> getRunningExecutions() {
+        return ApiResponse.ok(executionService.findRunning());
+    }
+
     @GetMapping("/stats")
     @RequiresPermission("ai:view_logs")
     public ApiResponse<List<AgentStats>> getStats() {

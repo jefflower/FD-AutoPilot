@@ -1,13 +1,15 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Activity, RefreshCw } from 'lucide-react';
 import type {
   AgentDefinition,
   AgentInstance,
   AgentStats,
+  AgentExecutionLog,
   ClientRegistration,
 } from '../../../shared/types/server';
 import { agentApi, clientApi } from '../../../shared/services/api';
+import { useServerEvent } from '../../../shared/context/ServerEventsContext';
 import StatsBar from '../components/dashboard/StatsBar';
 import ModuleAgentGrid from '../components/dashboard/ModuleAgentGrid';
 import ExecutionLogZone from '../components/dashboard/ExecutionLogZone';
@@ -22,12 +24,16 @@ const AiDashboardTab: React.FC = () => {
   const [stats, setStats] = useState<AgentStats[]>([]);
   const [onlineClients, setOnlineClients] = useState<ClientRegistration[]>([]);
   const [syncBridgeStatus, setSyncBridgeStatus] = useState<{ activeWaiting: number }>({ activeWaiting: 0 });
+  const [runningExecutions, setRunningExecutions] = useState<AgentExecutionLog[]>([]);
   const [selectedAgent, setSelectedAgent] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
   const [autoRefresh, setAutoRefresh] = useState(true);
 
-  // Data loading
+  // SSE 触发日志刷新的计数器
+  const [logRefreshTrigger, setLogRefreshTrigger] = useState(0);
+
+  // Data loading — getRunningExecutions 单独 catch 防止其失败影响整体
   const loadData = useCallback(async () => {
     try {
       const [defs, insts, sts, clients, bridge] = await Promise.all([
@@ -43,6 +49,14 @@ const AiDashboardTab: React.FC = () => {
       setOnlineClients(clients);
       setSyncBridgeStatus(bridge);
       setLastUpdated(new Date());
+
+      // 单独获取 running，失败时不影响仪表盘
+      try {
+        const running = await agentApi.getRunningExecutions();
+        setRunningExecutions(running);
+      } catch {
+        // running 查询失败不影响主数据
+      }
     } catch (e) {
       console.error('[AiDashboard] loadData failed:', e);
     } finally {
@@ -61,6 +75,22 @@ const AiDashboardTab: React.FC = () => {
     const timer = setInterval(loadData, 10000);
     return () => clearInterval(timer);
   }, [autoRefresh, loadData]);
+
+  // SSE: 监听执行开始事件 — 立即刷新 running 列表和日志
+  const loadDataRef = useRef(loadData);
+  loadDataRef.current = loadData;
+
+  useServerEvent('agent-execution-started', useCallback(() => {
+    // 立即刷新全量数据 + 触发日志刷新
+    loadDataRef.current();
+    setLogRefreshTrigger(c => c + 1);
+  }, []));
+
+  // SSE: 监听执行完成事件 — 刷新数据和日志
+  useServerEvent('agent-execution-completed', useCallback(() => {
+    loadDataRef.current();
+    setLogRefreshTrigger(c => c + 1);
+  }, []));
 
   // Toggle Agent
   const handleToggle = useCallback(async (id: number) => {
@@ -155,6 +185,7 @@ const AiDashboardTab: React.FC = () => {
               overallSuccessRate={overallStats.rate}
               totalExecutions={overallStats.total}
               avgDurationMs={overallStats.avgMs}
+              executingTasks={runningExecutions.length}
             />
           </div>
 
@@ -171,6 +202,7 @@ const AiDashboardTab: React.FC = () => {
                   selectedAgent={selectedAgent}
                   onSelectAgent={setSelectedAgent}
                   onToggleAgent={handleToggle}
+                  runningExecutions={runningExecutions}
                 />
               }
               bottomContent={
@@ -178,6 +210,7 @@ const AiDashboardTab: React.FC = () => {
                   definitions={definitions}
                   selectedAgent={selectedAgent}
                   onAgentFilterChange={setSelectedAgent}
+                  refreshTrigger={logRefreshTrigger}
                 />
               }
             />

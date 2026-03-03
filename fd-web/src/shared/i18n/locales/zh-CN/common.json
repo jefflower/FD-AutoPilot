@@ -316,6 +316,9 @@
     "successRate": "成功率",
     "executions": "次执行",
     "avgDuration": "均 {{ms}}ms",
+    "executingTasks": "执行中任务",
+    "processing": "处理中...",
+    "idle": "空闲",
     "moduleFilter": {
       "all": "全部",
       "ticket": "工单中心",
@@ -328,7 +331,9 @@
       "online": "在线",
       "running": "运行中",
       "noInstances": "无实例",
-      "capability": "能力"
+      "capability": "能力",
+      "executing": "处理中 ({{count}})",
+      "idle": "空闲"
     },
     "executionLog": {
       "title": "执行日志",
@@ -352,10 +357,34 @@
       "command": "命令行",
       "prompt": "Prompt",
       "bridgeUnavailable": "Bridge 服务不可用，无法查看本地日志",
-      "fullscreen": "全屏查看"
+      "fullscreen": "全屏查看",
+      "running": "执行中"
     },
     "refresh": "刷新",
     "autoRefresh": "自动刷新 (10s)",
     "lastUpdated": "最后更新: {{time}}"
+  },
+  "jsonPreview": {
+    "preview": "预览 JSON",
+    "viewFull": "查看完整 JSON",
+    "compare": "对比版本",
+    "openInWindow": "浮动查看",
+    "copy": "复制",
+    "copySuccess": "已复制到剪贴板",
+    "search": "搜索...",
+    "searchMatches": "{{current}} / {{total}}",
+    "noMatches": "无匹配",
+    "close": "关闭",
+    "closeAll": "关闭全部",
+    "minimize": "最小化",
+    "maximize": "最大化",
+    "restore": "还原",
+    "lines": "{{count}} 行",
+    "chars": "{{count}} 字符",
+    "compareSelected": "对比选中 ({{count}}/2)",
+    "original": "原始",
+    "compared": "对比",
+    "flowView": "流程图",
+    "jsonView": "JSON"
   }
 }

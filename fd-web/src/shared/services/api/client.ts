@@ -18,6 +18,40 @@ export class ApiError extends Error {
 const DEFAULT_SERVER_URL = '';  // 空字符串 = 相对路径（同源模式）
 let serverBaseUrl: string = localStorage.getItem('fd_server_url') ?? DEFAULT_SERVER_URL;
 
+/**
+ * Tauri 开发模式自动修正：
+ * 当 Tauri webview 通过 devUrl 加载 http://localhost:5173 时，
+ * API 应通过 Vite 代理（相对路径），而非直连 fd-server 端口。
+ * 直连会触发跨域错误（Tauri WebKit webview 的 fetch 行为与标准浏览器不同）。
+ * 仅覆盖内存变量，不修改 localStorage（避免影响浏览器模式的设置）。
+ */
+function autoFixTauriDevUrl(): void {
+  if (typeof window === 'undefined') return;
+  if (!('__TAURI_INTERNALS__' in window)) return;
+
+  const origin = window.location.origin;
+  // 只在 dev 模式下修正（webview origin 为 http://localhost:*）
+  if (!origin.startsWith('http://localhost:')) return;
+
+  if (serverBaseUrl && serverBaseUrl.startsWith('http://localhost:')) {
+    try {
+      const configuredPort = new URL(serverBaseUrl).port;
+      const currentPort = window.location.port;
+      if (configuredPort && currentPort && configuredPort !== currentPort) {
+        console.warn(
+          `[API] Tauri dev mode: ignoring fd_server_url="${serverBaseUrl}", ` +
+          `using Vite proxy (relative URLs via :${currentPort})`
+        );
+        serverBaseUrl = '';
+        // 不修改 localStorage，仅内存覆盖
+      }
+    } catch {
+      // URL 解析失败时忽略
+    }
+  }
+}
+autoFixTauriDevUrl();
+
 export const getApiBaseUrl = () => `${serverBaseUrl}/api/v1`;
 export const getActuatorBaseUrl = () => `${serverBaseUrl}/actuator`;
 

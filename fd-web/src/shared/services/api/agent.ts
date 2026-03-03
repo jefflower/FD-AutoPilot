@@ -110,6 +110,11 @@ export const agentApi = {
     return (await request<AgentExecution[]>(`/agents/executions/recent?limit=${limit || 20}`)) || [];
   },
 
+  /** 获取当前正在执行（RUNNING）的执行记录 */
+  async getRunningExecutions(): Promise<AgentExecutionLog[]> {
+    return (await request<AgentExecutionLog[]>('/agents/executions/running')) || [];
+  },
+
   async getStats(): Promise<AgentStats[]> {
     return (await request<AgentStats[]>('/agents/stats')) || [];
   },

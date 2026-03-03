@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ChevronLeft, ChevronRight, AlertTriangle, Maximize2, X } from 'lucide-react';
 import type { AgentDefinition, AgentExecutionLog, AgentExecutionStatus } from '../../../../shared/types/server';
@@ -10,10 +10,12 @@ interface ExecutionLogZoneProps {
   definitions: AgentDefinition[];
   selectedAgent: string | null;
   onAgentFilterChange?: (code: string | null) => void;
+  /** SSE 事件触发的刷新计数器 — 变化时自动刷新日志 */
+  refreshTrigger?: number;
 }
 
 type TabKey = 'server' | 'local';
-type StatusFilter = '' | 'SUCCESS' | 'FAILED' | 'TIMEOUT';
+type StatusFilter = '' | 'RUNNING' | 'SUCCESS' | 'FAILED' | 'TIMEOUT';
 
 const PAGE_SIZE = 20;
 
@@ -41,6 +43,7 @@ const ExecutionLogZone: React.FC<ExecutionLogZoneProps> = ({
   definitions,
   selectedAgent,
   onAgentFilterChange,
+  refreshTrigger = 0,
 }) => {
   const { t } = useTranslation('common');
 
@@ -62,6 +65,9 @@ const ExecutionLogZone: React.FC<ExecutionLogZoneProps> = ({
   const [localTotal, setLocalTotal] = useState(0);
   const [localLoading, setLocalLoading] = useState(false);
   const [bridgeAvailable, setBridgeAvailable] = useState<boolean | null>(null);
+
+  // 记录上次 refreshTrigger 以检测 SSE 推送
+  const prevTriggerRef = useRef(refreshTrigger);
 
   // Sync selectedAgent to agentFilter
   useEffect(() => {
@@ -124,6 +130,18 @@ const ExecutionLogZone: React.FC<ExecutionLogZoneProps> = ({
     }
   }, [activeTab, fetchLocalLogs]);
 
+  // SSE 推送触发自动刷新：当 refreshTrigger 变化时，自动刷新当前 tab 的日志
+  useEffect(() => {
+    if (refreshTrigger !== prevTriggerRef.current) {
+      prevTriggerRef.current = refreshTrigger;
+      if (activeTab === 'server') {
+        fetchServerLogs();
+      } else {
+        fetchLocalLogs();
+      }
+    }
+  }, [refreshTrigger, activeTab, fetchServerLogs, fetchLocalLogs]);
+
   // Reset pagination when filter changes
   useEffect(() => {
     setServerPage(0);
@@ -150,15 +168,25 @@ const ExecutionLogZone: React.FC<ExecutionLogZoneProps> = ({
     setExpandedId(prev => (prev === id ? null : id));
   };
 
-  const currentLogs = activeTab === 'server' ? serverLogs : localLogs;
+  // 前端状态筛选（server logs 不支持后端 status 筛选，所以前端过滤）
+  const filteredServerLogs = statusFilter
+    ? serverLogs.filter(log => log.status === statusFilter)
+    : serverLogs;
+
+  const currentLogs = activeTab === 'server' ? filteredServerLogs : localLogs;
   const isLoading = activeTab === 'server' ? serverLoading : localLoading;
+
+  // 统计当前正在执行的数量
+  const runningCount = activeTab === 'server'
+    ? serverLogs.filter(log => log.status === 'RUNNING').length
+    : localLogs.filter(log => log.status === 'RUNNING').length;
 
   /** Shared content renderer (used both inline and in fullscreen modal) */
   const renderLogContent = (isModal: boolean) => (
     <>
       {/* Header: Tabs + Filters */}
       <div className={`flex-shrink-0 flex items-center justify-between gap-4 pb-3 border-b border-slate-700/30 ${isModal ? 'px-6 pt-4' : ''}`}>
-        {/* Left: Tabs */}
+        {/* Left: Tabs + Running indicator */}
         <div className="flex items-center gap-4">
           <button
             onClick={() => setActiveTab('server')}
@@ -180,6 +208,13 @@ const ExecutionLogZone: React.FC<ExecutionLogZoneProps> = ({
           >
             {t('aiDashboard.executionLog.localLogs')}
           </button>
+          {/* RUNNING 任务实时指示 */}
+          {runningCount > 0 && (
+            <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-blue-500/15 text-blue-400 text-xs font-medium animate-pulse">
+              <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+              {runningCount} {t('aiDashboard.executionLog.running')}
+            </div>
+          )}
         </div>
 
         {/* Right: Filters + Fullscreen button */}
@@ -200,6 +235,7 @@ const ExecutionLogZone: React.FC<ExecutionLogZoneProps> = ({
             className="text-xs bg-slate-800 border border-slate-700/50 text-slate-300 rounded-lg px-2 py-1 focus:outline-none focus:border-indigo-500/50"
           >
             <option value="">{t('aiDashboard.executionLog.allStatus')}</option>
+            <option value="RUNNING">RUNNING</option>
             <option value="SUCCESS">SUCCESS</option>
             <option value="FAILED">FAILED</option>
             <option value="TIMEOUT">TIMEOUT</option>

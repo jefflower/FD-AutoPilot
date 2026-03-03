@@ -14,6 +14,8 @@ export class AgentRegistry {
 
     private definitions = new Map<string, AgentDefinition>();
     private executors = new Map<string, AgentExecutor>();
+    /** capability code → executor 索引，优先路由 */
+    private capabilityExecutors = new Map<string, AgentExecutor>();
     private bindings: AgentBindings = {};
     private capabilities = new Map<string, CapabilityDefinition>();
 
@@ -63,6 +65,10 @@ export class AgentRegistry {
 
     registerExecutor(executor: AgentExecutor): void {
         this.executors.set(executor.providerType, executor);
+        // 同时按 capability code 索引，用于 capability 级路由
+        if (executor.supportedCapability) {
+            this.capabilityExecutors.set(executor.supportedCapability, executor);
+        }
     }
 
     /** 旧 ProviderType -> 新 ProviderType 映射 */
@@ -103,14 +109,24 @@ export class AgentRegistry {
             return null;
         }
 
-        // 推导 providerType: Agent 字段 > CapabilityDefinition.providerType
-        let providerType = definition.providerType;
-        if (!providerType && definition.requiredCapability) {
-            const cap = this.capabilities.get(definition.requiredCapability);
-            if (cap) providerType = cap.providerType;
+        // ---- Executor 路由（优先级从高到低）----
+        let executor: AgentExecutor | undefined;
+
+        // 1. 优先：通过 requiredCapability 直接查找 executor（capability 级路由）
+        if (definition.requiredCapability) {
+            executor = this.capabilityExecutors.get(definition.requiredCapability);
         }
 
-        const executor = providerType ? this.findExecutor(providerType) : undefined;
+        // 2. 回退：通过 providerType 查找（兼容旧数据）
+        if (!executor) {
+            let providerType = definition.providerType;
+            if (!providerType && definition.requiredCapability) {
+                const cap = this.capabilities.get(definition.requiredCapability);
+                if (cap) providerType = cap.providerType;
+            }
+            if (providerType) executor = this.findExecutor(providerType);
+        }
+
         if (!executor || !executor.isAvailable()) return null;
 
         return { definition, executor };
@@ -141,14 +157,9 @@ export class AgentRegistry {
             if (!def) {
                 console.warn(`[AgentRegistry] 能力 "${capability}" 绑定的 Agent "${boundCode}" 未找到或已禁用`);
             } else {
-                // 推导 providerType: Agent 字段 > CapabilityDefinition.providerType
-                let providerType = def.providerType;
-                if (!providerType && def.requiredCapability) {
-                    const cap = this.capabilities.get(def.requiredCapability);
-                    if (cap) providerType = cap.providerType;
-                }
-                const executor = providerType ? this.findExecutor(providerType) : undefined;
-                console.warn(`[AgentRegistry] 能力 "${capability}" 绑定的 Agent "${boundCode}" 不可用 (providerType=${def.providerType}, derivedProviderType=${providerType}, executorAvailable=${executor?.isAvailable() ?? false})`);
+                // 诊断日志
+                const capExecutor = def.requiredCapability ? this.capabilityExecutors.get(def.requiredCapability) : undefined;
+                console.warn(`[AgentRegistry] 能力 "${capability}" 绑定的 Agent "${boundCode}" 不可用 (requiredCapability=${def.requiredCapability}, capExecutorFound=${!!capExecutor}, providerType=${def.providerType}, executorAvailable=${capExecutor?.isAvailable() ?? false})`);
             }
         }
         return result;

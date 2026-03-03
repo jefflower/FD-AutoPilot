@@ -15,13 +15,14 @@ import {
   PanelRightOpen, PanelRightClose, Pencil, Check, X,
   Loader2, Bot, User, Code, FileJson,
   MessageSquareWarning, MessageSquare, Wrench, ChevronDown, ChevronRight,
-  Play, ExternalLink,
+  Play, ExternalLink, Eye,
 } from 'lucide-react';
 import { agentApi } from '../../../shared/services/serverApi';
 import type { AgentDefinition } from '../../../shared/types/server';
 import WorkspacePanel from '../components/WorkspacePanel';
 import VersionHistory from '../components/VersionHistory';
 import DeployPanel from '../components/DeployPanel';
+import { useJsonPreview } from '../../../shared/components/JsonPreview';
 
 // ============ 类型 ============
 
@@ -284,7 +285,8 @@ const CollapsibleSection: React.FC<{
 const MessageBubble: React.FC<{
   message: ConversationMessage;
   onApplyJson?: (json: string) => void;
-}> = ({ message, onApplyJson }) => {
+  onPreviewJson?: (json: string) => void;
+}> = ({ message, onApplyJson, onPreviewJson }) => {
   const { t } = useTranslation('common');
   const isUser = message.role === 'user';
 
@@ -335,15 +337,26 @@ const MessageBubble: React.FC<{
             </div>
 
             {/* 工作流 JSON 操作 */}
-            {message.workflowJson && onApplyJson && (
-              <button
-                onClick={() => onApplyJson(message.workflowJson!)}
-                className="mt-3 flex items-center gap-1.5 px-3 py-1.5 bg-blue-600/20 border border-blue-500/30 rounded text-xs text-blue-400 hover:bg-blue-600/30 transition-colors"
-              >
-                <FileJson className="w-3.5 h-3.5" />
-                {t('workflowAi.applyJson')}
-              </button>
-            )}
+            <div className="flex items-center gap-2">
+              {message.workflowJson && onApplyJson && (
+                <button
+                  onClick={() => onApplyJson(message.workflowJson!)}
+                  className="mt-3 flex items-center gap-1.5 px-3 py-1.5 bg-blue-600/20 border border-blue-500/30 rounded text-xs text-blue-400 hover:bg-blue-600/30 transition-colors"
+                >
+                  <FileJson className="w-3.5 h-3.5" />
+                  {t('workflowAi.applyJson')}
+                </button>
+              )}
+              {message.workflowJson && onPreviewJson && (
+                <button
+                  onClick={() => onPreviewJson(message.workflowJson!)}
+                  className="mt-3 flex items-center gap-1.5 px-3 py-1.5 bg-slate-700/30 border border-slate-600/30 rounded text-xs text-slate-400 hover:bg-slate-700/50 hover:text-slate-300 transition-colors"
+                >
+                  <Eye className="w-3.5 h-3.5" />
+                  {t('jsonPreview.preview')}
+                </button>
+              )}
+            </div>
 
             {/* Agent 提示词调整建议 */}
             {dr.agentPromptAdjustments.length > 0 && (
@@ -398,15 +411,26 @@ const MessageBubble: React.FC<{
           <>
             {/* 旧格式：纯文本渲染 */}
             <AssistantContent content={message.content} />
-            {message.workflowJson && onApplyJson && (
-              <button
-                onClick={() => onApplyJson(message.workflowJson!)}
-                className="mt-3 flex items-center gap-1.5 px-3 py-1.5 bg-blue-600/20 border border-blue-500/30 rounded text-xs text-blue-400 hover:bg-blue-600/30 transition-colors"
-              >
-                <FileJson className="w-3.5 h-3.5" />
-                {t('workflowAi.applyJson')}
-              </button>
-            )}
+            <div className="flex items-center gap-2">
+              {message.workflowJson && onApplyJson && (
+                <button
+                  onClick={() => onApplyJson(message.workflowJson!)}
+                  className="mt-3 flex items-center gap-1.5 px-3 py-1.5 bg-blue-600/20 border border-blue-500/30 rounded text-xs text-blue-400 hover:bg-blue-600/30 transition-colors"
+                >
+                  <FileJson className="w-3.5 h-3.5" />
+                  {t('workflowAi.applyJson')}
+                </button>
+              )}
+              {message.workflowJson && onPreviewJson && (
+                <button
+                  onClick={() => onPreviewJson(message.workflowJson!)}
+                  className="mt-3 flex items-center gap-1.5 px-3 py-1.5 bg-slate-700/30 border border-slate-600/30 rounded text-xs text-slate-400 hover:bg-slate-700/50 hover:text-slate-300 transition-colors"
+                >
+                  <Eye className="w-3.5 h-3.5" />
+                  {t('jsonPreview.preview')}
+                </button>
+              )}
+            </div>
           </>
         )}
       </div>
@@ -604,6 +628,7 @@ const ChatPanel: React.FC<{
   sending: boolean;
   onSend: (text: string) => void;
   onApplyJson: (json: string) => void;
+  onPreviewJson?: (json: string) => void;
   onRename: (name: string) => void;
   activeIteration: Iteration | null;
   iterations: Iteration[];
@@ -611,7 +636,7 @@ const ChatPanel: React.FC<{
   onSwitchIteration: (id: string) => void;
   onCreateIteration: () => void;
   onDeleteIteration: (id: string) => void;
-}> = ({ workflow, messages, sending, onSend, onApplyJson, onRename, activeIteration, iterations, activeIterationId, onSwitchIteration, onCreateIteration, onDeleteIteration }) => {
+}> = ({ workflow, messages, sending, onSend, onApplyJson, onPreviewJson, onRename, activeIteration, iterations, activeIterationId, onSwitchIteration, onCreateIteration, onDeleteIteration }) => {
   const { t } = useTranslation('common');
   const [input, setInput] = useState('');
   const [editing, setEditing] = useState(false);
@@ -679,7 +704,7 @@ const ChatPanel: React.FC<{
   return (
     <div className="flex-1 flex flex-col overflow-hidden min-w-0">
       {/* 顶部标题栏 */}
-      <div className="px-4 py-3 border-b border-slate-700/50 flex items-center gap-2">
+      <div className="px-4 py-3 border-b border-slate-700/50 flex items-center gap-2 flex-shrink-0">
         {editing ? (
           <div className="flex items-center gap-2 flex-1">
             <input
@@ -731,7 +756,7 @@ const ChatPanel: React.FC<{
           <p className="text-sm">{t('workflowAi.iteration.emptyHint')}</p>
         </div>
       ) : (
-        <div className="flex-1 overflow-y-auto px-4 py-4">
+        <div className="flex-1 overflow-y-auto px-4 py-4 min-h-0">
           {messages.length === 0 && (
             <div className="flex flex-col items-center justify-center h-full text-slate-500">
               <Bot className="w-10 h-10 mb-3 opacity-30" />
@@ -740,7 +765,7 @@ const ChatPanel: React.FC<{
             </div>
           )}
           {messages.map(msg => (
-            <MessageBubble key={msg.id} message={msg} onApplyJson={onApplyJson} />
+            <MessageBubble key={msg.id} message={msg} onApplyJson={onApplyJson} onPreviewJson={onPreviewJson} />
           ))}
           <div ref={messagesEndRef} />
         </div>
@@ -748,7 +773,7 @@ const ChatPanel: React.FC<{
 
       {/* 底部输入区 */}
       {activeIteration && (
-        <div className="px-4 py-3 border-t border-slate-700/50">
+        <div className="px-4 py-3 border-t border-slate-700/50 flex-shrink-0">
           <div className="flex items-end gap-2 bg-slate-800/50 border border-slate-700/50 rounded-lg px-3 py-2">
             <textarea
               ref={textareaRef}
@@ -797,8 +822,9 @@ const ToolPanel: React.FC<{
   onDeactivate: () => void;
   onRollback: (versionNumber: number) => void;
   onPreviewVersion?: (json: string) => void;
+  onViewFullJson?: () => void;
   deploying?: boolean;
-}> = ({ workflow, currentJson, onDeploy, onActivate, onDeactivate, onRollback, onPreviewVersion, deploying }) => {
+}> = ({ workflow, currentJson, onDeploy, onActivate, onDeactivate, onRollback, onPreviewVersion, onViewFullJson, deploying }) => {
   const { t } = useTranslation('common');
   const summary = useMemo(() => parseJsonSummary(currentJson), [currentJson]);
   const [showExecutions, setShowExecutions] = useState(false);
@@ -836,6 +862,15 @@ const ToolPanel: React.FC<{
             </div>
           ) : (
             <p className="text-xs text-slate-500">{t('workflowAi.noJson')}</p>
+          )}
+          {currentJson && onViewFullJson && (
+            <button
+              onClick={onViewFullJson}
+              className="w-full mt-2 flex items-center justify-center gap-1.5 py-1.5 text-[10px] text-slate-400 hover:text-blue-400 border border-dashed border-slate-600/50 hover:border-blue-500/30 rounded transition-colors"
+            >
+              <Eye className="w-3 h-3" />
+              {t('jsonPreview.viewFull')}
+            </button>
           )}
         </div>
 
@@ -1067,6 +1102,7 @@ const DeleteDialog: React.FC<{
 const WorkflowAiTab: React.FC = () => {
   const { t } = useTranslation('common');
   const { toast } = useToast();
+  const { openPreview } = useJsonPreview();
 
   // 工作流列表
   const [workflows, setWorkflows] = useState<AiWorkflow[]>([]);
@@ -1428,7 +1464,8 @@ const WorkflowAiTab: React.FC = () => {
   // 预览版本 JSON
   const handlePreviewVersion = useCallback((json: string) => {
     setCurrentJson(json);
-  }, []);
+    openPreview({ title: t('workflowAi.versionHistory.preview'), json });
+  }, [openPreview, t]);
 
   return (
     <div className="flex-1 flex overflow-hidden">
@@ -1449,6 +1486,7 @@ const WorkflowAiTab: React.FC = () => {
         sending={sending}
         onSend={handleSend}
         onApplyJson={handleApplyJson}
+        onPreviewJson={(json) => openPreview({ title: t('jsonPreview.preview'), json })}
         onRename={handleRename}
         activeIteration={activeIteration}
         iterations={currentWorkflowIters?.iterations || []}
@@ -1484,6 +1522,7 @@ const WorkflowAiTab: React.FC = () => {
                 onDeactivate={handleDeactivate}
                 onRollback={handleRollback}
                 onPreviewVersion={handlePreviewVersion}
+                onViewFullJson={() => currentJson && openPreview({ title: `${selectedWorkflow?.name || 'Workflow'} - JSON`, json: currentJson })}
                 deploying={deploying}
               />
             </div>

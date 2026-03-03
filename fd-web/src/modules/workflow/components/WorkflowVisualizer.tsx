@@ -9,6 +9,7 @@ import {
 import '@xyflow/react/dist/style.css';
 
 import N8nFlowNode from './N8nFlowNode';
+import LoopBackEdge from './LoopBackEdge';
 import {
   n8nToReactFlow,
   getOutputCount,
@@ -21,8 +22,9 @@ interface WorkflowVisualizerProps {
   className?: string;
 }
 
-// 注册自定义节点类型（必须在组件外部定义，避免无限重渲染）
+// 注册自定义节点/边类型（必须在组件外部定义，避免无限重渲染）
 const nodeTypes = { n8nNode: N8nFlowNode };
+const edgeTypes = { loopBack: LoopBackEdge };
 
 export default function WorkflowVisualizer({ workflowJson, className }: WorkflowVisualizerProps) {
   const { nodes, edges } = useMemo(() => {
@@ -63,6 +65,7 @@ export default function WorkflowVisualizer({ workflowJson, className }: Workflow
         nodes={nodes}
         edges={edges}
         nodeTypes={nodeTypes}
+        edgeTypes={edgeTypes}
         fitView
         fitViewOptions={{ padding: 0.2 }}
         proOptions={{ hideAttribution: true }}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { ChevronDown, ChevronRight } from 'lucide-react';
+import { ChevronDown, ChevronRight, ExternalLink } from 'lucide-react';
+import { useJsonPreview } from '../../../../shared/components/JsonPreview';
 import type { AgentExecutionLog } from '../../../../shared/types/server';
 
 interface EnhancedLogRowProps {
@@ -45,6 +46,7 @@ const statusConfig: Record<string, { dot: string; badge: string; label: string }
 
 const EnhancedLogRow: React.FC<EnhancedLogRowProps> = ({ log, isExpanded, onToggle }) => {
   const { t } = useTranslation('common');
+  const { openPreview } = useJsonPreview();
   const config = statusConfig[log.status] || statusConfig.CANCELLED;
 
   return (
@@ -88,7 +90,21 @@ const EnhancedLogRow: React.FC<EnhancedLogRowProps> = ({ log, isExpanded, onTogg
           {/* Input section */}
           {log.inputSnapshot && (
             <div className="mb-3">
-              <div className="text-xs text-slate-400 mb-1">{t('aiDashboard.executionLog.input')}</div>
+              <div className="flex items-center justify-between mb-1">
+                <div className="text-xs text-slate-400">
+                  {t('aiDashboard.executionLog.input')}
+                </div>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    openPreview({ title: `${log.agentCode} - Input`, json: log.inputSnapshot! });
+                  }}
+                  className="text-[10px] text-slate-500 hover:text-blue-400 transition-colors flex items-center gap-0.5"
+                >
+                  <ExternalLink className="w-2.5 h-2.5" />
+                  {t('jsonPreview.openInWindow')}
+                </button>
+              </div>
               <pre className="bg-slate-900/50 rounded-lg p-3 text-xs font-mono text-slate-300 max-h-[500px] overflow-y-auto whitespace-pre-wrap break-all">
                 {tryFormatJson(log.inputSnapshot)}
               </pre>
@@ -98,7 +114,21 @@ const EnhancedLogRow: React.FC<EnhancedLogRowProps> = ({ log, isExpanded, onTogg
           {/* Output section */}
           {log.outputSnapshot && (
             <div className="mb-3">
-              <div className="text-xs text-slate-400 mb-1">{t('aiDashboard.executionLog.output')}</div>
+              <div className="flex items-center justify-between mb-1">
+                <div className="text-xs text-slate-400">
+                  {t('aiDashboard.executionLog.output')}
+                </div>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    openPreview({ title: `${log.agentCode} - Output`, json: log.outputSnapshot! });
+                  }}
+                  className="text-[10px] text-slate-500 hover:text-blue-400 transition-colors flex items-center gap-0.5"
+                >
+                  <ExternalLink className="w-2.5 h-2.5" />
+                  {t('jsonPreview.openInWindow')}
+                </button>
+              </div>
               <pre className="bg-slate-900/50 rounded-lg p-3 text-xs font-mono text-slate-300 max-h-[500px] overflow-y-auto whitespace-pre-wrap break-all">
                 {tryFormatJson(log.outputSnapshot)}
               </pre>

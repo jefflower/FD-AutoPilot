@@ -17,6 +17,7 @@ import { formatTicketContent } from '../helpers/translationHelpers';
  */
 export class NotebookLmPyExecutor implements AgentExecutor {
     readonly providerType = 'NOTEBOOKLM_PY' as const;
+    readonly supportedCapability = 'notebooklm-py';
 
     isAvailable(): boolean {
         return true;

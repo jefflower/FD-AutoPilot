@@ -18,6 +18,7 @@ import { formatTicketContent } from '../helpers/translationHelpers';
  */
 export class ClaudeCliExecutor implements AgentExecutor {
     readonly providerType = 'CLAUDE_CLI' as const;
+    readonly supportedCapability = 'claude-cli';
 
     isAvailable(): boolean {
         // Tauri 环境直接可用；Web 环境通过 HTTP bridge 也可用

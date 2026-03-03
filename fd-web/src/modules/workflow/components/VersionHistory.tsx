@@ -8,8 +8,9 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { workflowAiApi } from '../../../shared/services/serverApi';
 import type { AiWorkflowVersion } from '../../../shared/services/api/workflow';
+import { useJsonPreview } from '../../../shared/components/JsonPreview';
 import {
-  History, RefreshCw, Eye, RotateCcw, Loader2, Clock, User,
+  History, RefreshCw, Eye, RotateCcw, Loader2, Clock, User, ArrowLeftRight,
 } from 'lucide-react';
 
 // ============ Props ============
@@ -67,7 +68,10 @@ const VersionItem: React.FC<{
   isCurrent: boolean;
   onPreview?: (json: string) => void;
   onRollback: (versionNumber: number) => void;
-}> = ({ version, isCurrent, onPreview, onRollback }) => {
+  compareSelection: number[];
+  toggleCompareSelect: (versionNumber: number) => void;
+  onOpenPreview: (options: { title: string; json: string }) => void;
+}> = ({ version, isCurrent, onPreview, onRollback, compareSelection, toggleCompareSelect, onOpenPreview }) => {
   const { t } = useTranslation('common');
 
   const formattedTime = (() => {
@@ -90,6 +94,12 @@ const VersionItem: React.FC<{
       {/* 版本号 + badge */}
       <div className="flex items-center justify-between mb-1.5">
         <div className="flex items-center gap-2">
+          <input
+            type="checkbox"
+            checked={compareSelection.includes(version.versionNumber)}
+            onChange={() => toggleCompareSelect(version.versionNumber)}
+            className="w-3 h-3 rounded border-slate-600 bg-slate-800 text-blue-500 focus:ring-0 focus:ring-offset-0 cursor-pointer flex-shrink-0"
+          />
           <span className="text-xs font-medium text-slate-200">v{version.versionNumber}</span>
           {isCurrent && (
             <span className="text-[10px] px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-400">
@@ -122,9 +132,12 @@ const VersionItem: React.FC<{
 
       {/* 操作按钮 */}
       <div className="flex items-center gap-2">
-        {onPreview && version.workflowJson && (
+        {version.workflowJson && (
           <button
-            onClick={() => onPreview(version.workflowJson)}
+            onClick={() => {
+              if (onPreview) onPreview(version.workflowJson);
+              onOpenPreview({ title: `v${version.versionNumber}`, json: version.workflowJson });
+            }}
             className="flex items-center gap-1 px-2 py-1 text-[10px] rounded bg-slate-700/50 text-slate-300 hover:bg-slate-700 hover:text-slate-200 transition-colors"
           >
             <Eye className="w-3 h-3" />
@@ -154,10 +167,39 @@ const VersionHistory: React.FC<VersionHistoryProps> = ({
   onPreview,
 }) => {
   const { t } = useTranslation('common');
+  const { openPreview } = useJsonPreview();
 
   const [versions, setVersions] = useState<AiWorkflowVersion[]>([]);
   const [loading, setLoading] = useState(false);
   const [rollbackTarget, setRollbackTarget] = useState<number | null>(null);
+  const [compareSelection, setCompareSelection] = useState<number[]>([]);
+
+  const toggleCompareSelect = (versionNumber: number) => {
+    setCompareSelection(prev => {
+      if (prev.includes(versionNumber)) {
+        return prev.filter(v => v !== versionNumber);
+      }
+      if (prev.length >= 2) {
+        return [prev[1], versionNumber]; // 替换最旧的选择
+      }
+      return [...prev, versionNumber];
+    });
+  };
+
+  const handleCompare = () => {
+    if (compareSelection.length !== 2) return;
+    const [v1Num, v2Num] = compareSelection.sort((a, b) => a - b);
+    const v1 = versions.find(v => v.versionNumber === v1Num);
+    const v2 = versions.find(v => v.versionNumber === v2Num);
+    if (!v1?.workflowJson || !v2?.workflowJson) return;
+    openPreview({
+      title: `v${v1Num}`,
+      json: v1.workflowJson,
+      compareJson: v2.workflowJson,
+      compareTitle: `v${v2Num}`,
+    });
+    setCompareSelection([]);
+  };
 
   // 加载版本列表
   const loadVersions = useCallback(async () => {
@@ -213,16 +255,30 @@ const VersionHistory: React.FC<VersionHistoryProps> = ({
           {t('workflowAi.versionHistory.noVersions')}
         </p>
       ) : (
-        <div className="space-y-2 max-h-64 overflow-y-auto">
-          {versions.map(v => (
-            <VersionItem
-              key={v.id}
-              version={v}
-              isCurrent={v.versionNumber === currentVersion}
-              onPreview={onPreview}
-              onRollback={setRollbackTarget}
-            />
-          ))}
+        <div className="space-y-2">
+          {compareSelection.length === 2 && (
+            <button
+              onClick={handleCompare}
+              className="w-full flex items-center justify-center gap-1.5 py-1.5 text-xs text-blue-400 bg-blue-600/10 border border-blue-500/30 rounded hover:bg-blue-600/20 transition-colors"
+            >
+              <ArrowLeftRight className="w-3.5 h-3.5" />
+              {t('jsonPreview.compare')}
+            </button>
+          )}
+          <div className="space-y-2 max-h-64 overflow-y-auto">
+            {versions.map(v => (
+              <VersionItem
+                key={v.id}
+                version={v}
+                isCurrent={v.versionNumber === currentVersion}
+                onPreview={onPreview}
+                onRollback={setRollbackTarget}
+                compareSelection={compareSelection}
+                toggleCompareSelect={toggleCompareSelect}
+                onOpenPreview={openPreview}
+              />
+            ))}
+          </div>
         </div>
       )}
 

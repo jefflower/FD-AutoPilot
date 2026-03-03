@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Monitor, Bot, Activity, ArrowLeftRight, TrendingUp } from 'lucide-react';
+import { Monitor, Bot, Activity, ArrowLeftRight, TrendingUp, Zap } from 'lucide-react';
 
 interface StatsBarProps {
   onlineClients: number;
@@ -12,6 +12,7 @@ interface StatsBarProps {
   overallSuccessRate: number;
   totalExecutions: number;
   avgDurationMs: number;
+  executingTasks: number;
 }
 
 interface StatCardProps {
@@ -65,6 +66,7 @@ const StatsBar: React.FC<StatsBarProps> = ({
   overallSuccessRate,
   totalExecutions,
   avgDurationMs,
+  executingTasks,
 }) => {
   const { t } = useTranslation('common');
 
@@ -91,6 +93,16 @@ const StatsBar: React.FC<StatsBarProps> = ({
         value={`${runningInstances} / ${totalInstances}`}
         color="emerald"
       />
+      {/* 正在执行任务 — 有任务时高亮显示 */}
+      <div className={executingTasks > 0 ? 'animate-pulse' : ''}>
+        <StatCard
+          icon={<Zap className="w-5 h-5" />}
+          label={t('aiDashboard.executingTasks')}
+          value={executingTasks}
+          subLabel={executingTasks > 0 ? t('aiDashboard.processing') : t('aiDashboard.idle')}
+          color={executingTasks > 0 ? 'amber' : 'blue'}
+        />
+      </div>
       <StatCard
         icon={<ArrowLeftRight className="w-5 h-5" />}
         label={t('aiDashboard.syncBridge')}

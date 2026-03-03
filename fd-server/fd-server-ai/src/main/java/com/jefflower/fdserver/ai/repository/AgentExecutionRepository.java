@@ -38,4 +38,8 @@ public interface AgentExecutionRepository extends JpaRepository<AgentExecution, 
 
     List<AgentExecution> findByAgentCodeAndStatusAndCreatedAtAfterOrderByCreatedAtDesc(
             String agentCode, ExecutionStatus status, LocalDateTime cutoff);
+
+    // --- 运行中查询 ---
+
+    List<AgentExecution> findByStatusOrderByCreatedAtDesc(ExecutionStatus status);
 }

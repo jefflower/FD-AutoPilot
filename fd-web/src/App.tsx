@@ -45,6 +45,7 @@ import { ServerEventsProvider } from "./shared/context/ServerEventsContext";
 import { MQTranslateAgentProvider, useMQTranslateAgent } from "./shared/context/MQTranslateAgentContext";
 import { MQReplyAgentProvider, useMQReplyAgent } from "./shared/context/MQReplyAgentContext";
 import { UniversalAgentConsumer } from "./shared/context/UniversalAgentConsumer";
+import { JsonPreviewProvider } from "./shared/components/JsonPreview";
 
 import { useSettings } from "./shared/hooks/useSettings";
 import { ticketApi } from "./shared/services/serverApi";
@@ -189,13 +190,14 @@ const MQ_AUTO_START_RETRY_INTERVAL = 10_000; // 10 秒重试间隔
 const MQ_AUTO_START_MAX_RETRIES = 6;         // 最多重试 6 次（共 60 秒）
 
 const MQAutoStarter: React.FC = () => {
-    const { definitions } = useAgentContext();
+    const { definitions, ready, reload } = useAgentContext();
     const translate = useMQTranslateAgent();
     const reply = useMQReplyAgent();
     const doneRef = useRef(false);
     const retryCountRef = useRef(0);
     const retryTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
     const startedCodesRef = useRef<Set<string>>(new Set()); // 已成功启动的 agentCode
+    const defLoadRetryRef = useRef(0); // definitions 加载重试计数
 
     // 组件卸载时清理重试定时器
     useEffect(() => {
@@ -207,11 +209,38 @@ const MQAutoStarter: React.FC = () => {
         };
     }, []);
 
+    // 当 AgentProvider ready 但 definitions 为空时，定时重试 reload
+    // 这处理了 API 初始加载失败（如 CORS / 网络错误）的情况
+    useEffect(() => {
+        if (!ready || definitions.length > 0 || doneRef.current) return;
+        if (defLoadRetryRef.current >= 3) {
+            console.warn('[MQAutoStart] Agent definitions still empty after 3 reload attempts, giving up');
+            return;
+        }
+
+        const timer = setTimeout(async () => {
+            defLoadRetryRef.current += 1;
+            console.log(`[MQAutoStart] Definitions empty, attempting reload (${defLoadRetryRef.current}/3)...`);
+            try {
+                await reload();
+            } catch (err) {
+                console.warn('[MQAutoStart] Reload failed:', err);
+            }
+        }, 5000 * defLoadRetryRef.current + 3000); // 3s, 8s, 13s 递增间隔
+
+        return () => clearTimeout(timer);
+    }, [ready, definitions.length, reload]);
+
     useEffect(() => {
         if (doneRef.current || definitions.length === 0) return;
 
         const autoStartDefs = definitions.filter(d => d.autoStart && d.enabled);
-        if (autoStartDefs.length === 0) return;
+        if (autoStartDefs.length === 0) {
+            console.log(`[MQAutoStart] No autoStart agents found among ${definitions.length} definitions`);
+            return;
+        }
+
+        console.log(`[MQAutoStart] Found ${autoStartDefs.length} autoStart agent(s): ${autoStartDefs.map(d => d.code).join(', ')}`);
 
         // Consumer 注册表
         const consumerMap: Record<string, { startConsumer: (code?: string) => void; isRunning: boolean }> = {
@@ -231,38 +260,49 @@ const MQAutoStarter: React.FC = () => {
             const skippedCodes: string[] = [];
 
             for (const def of autoStartDefs) {
-                // 已成功启动的不重复处理
-                if (startedCodesRef.current.has(def.code)) continue;
+                try {
+                    // 已成功启动的不重复处理
+                    if (startedCodesRef.current.has(def.code)) continue;
 
-                // 找到对应的 consumer
-                const config = parseAgentConfig(def.agentConfig);
-                const taskType = (config as any).taskType;
-                const consumer = (taskType && consumerMap[taskType]) || consumerMap[def.capability] || null;
-                if (!consumer || consumer.isRunning) {
-                    // consumer 已在运行，标记为已成功
-                    if (consumer?.isRunning) startedCodesRef.current.add(def.code);
-                    continue;
-                }
+                    // 找到对应的 consumer
+                    const config = parseAgentConfig(def.agentConfig);
+                    const taskType = (config as any).taskType;
+                    const consumer = (taskType && consumerMap[taskType]) || consumerMap[def.capability] || null;
 
-                // 浏览器模式: 检查 bridge 可用性
-                const rc = def.requiredCapability;
-                if (!isTauriEnv() && rc) {
-                    const needsBridge = rc.endsWith('-cli') || rc.endsWith('-py');
-                    if (needsBridge) {
-                        const bridgeOk = await checkBridgeAvailable();
-                        if (!bridgeOk) {
-                            console.warn(`[MQAutoStart] Skipped "${def.name}": fd-bridge not available`);
-                            skippedCodes.push(def.code);
-                            continue;
+                    if (!consumer) {
+                        console.warn(`[MQAutoStart] No consumer found for "${def.code}" (taskType=${taskType}, capability=${def.capability})`);
+                        continue;
+                    }
+
+                    if (consumer.isRunning) {
+                        // consumer 已在运行，标记为已成功
+                        startedCodesRef.current.add(def.code);
+                        continue;
+                    }
+
+                    // 浏览器模式: bridge 可用性仅作为警告，不再阻止消费者启动
+                    // 消费者需要先启动轮询，bridge 不可用时执行会失败但能给出即时反馈
+                    // （比之前的静默超时好得多）
+                    const rc = def.requiredCapability;
+                    if (!isTauriEnv() && rc) {
+                        const needsBridge = rc.endsWith('-cli') || rc.endsWith('-py');
+                        if (needsBridge) {
+                            const bridgeOk = await checkBridgeAvailable();
+                            if (!bridgeOk) {
+                                console.warn(`[MQAutoStart] Warning: fd-bridge not available for "${def.name}", consumer will start but execution may fail`);
+                            }
                         }
                     }
-                }
 
-                // Shadow window 初始化（仅 notebooklm）
-                await initAgentShadow(def);
-                consumer.startConsumer(def.code);
-                startedCodesRef.current.add(def.code);
-                console.log(`[MQAutoStart] Auto-started "${def.name}" (${def.code})`);
+                    // Shadow window 初始化（仅 notebooklm）
+                    await initAgentShadow(def);
+                    consumer.startConsumer(def.code);
+                    startedCodesRef.current.add(def.code);
+                    console.log(`[MQAutoStart] Auto-started "${def.name}" (${def.code})`);
+                } catch (err) {
+                    console.error(`[MQAutoStart] Error starting "${def.code}":`, err);
+                    skippedCodes.push(def.code);
+                }
             }
 
             // 判断是否需要重试
@@ -284,7 +324,9 @@ const MQAutoStarter: React.FC = () => {
             }
         };
 
-        attemptStart(false);
+        attemptStart(false).catch(err => {
+            console.error('[MQAutoStart] Unexpected error in attemptStart:', err);
+        });
     }, [definitions, translate, reply]);
 
     return null; // 无 UI 渲染
@@ -477,6 +519,7 @@ function AppInner() {
 
     return (
         <ToastProvider>
+            <JsonPreviewProvider>
             <ServerEventsProvider>
             <AgentProvider>
                     <MQTranslateAgentProvider>
@@ -514,6 +557,7 @@ function AppInner() {
                     </MQTranslateAgentProvider>
             </AgentProvider>
             </ServerEventsProvider>
+            </JsonPreviewProvider>
         </ToastProvider>
     );
 }

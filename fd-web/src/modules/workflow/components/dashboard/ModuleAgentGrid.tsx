@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import type { AgentDefinition, AgentInstance, AgentStats } from '../../../../shared/types/server';
+import type { AgentDefinition, AgentInstance, AgentStats, AgentExecutionLog } from '../../../../shared/types/server';
 import AgentStatusCard from './AgentStatusCard';
 
 interface ModuleAgentGridProps {
@@ -11,6 +11,8 @@ interface ModuleAgentGridProps {
   selectedAgent: string | null;
   onSelectAgent: (code: string) => void;
   onToggleAgent: (id: number) => void;
+  /** 当前正在执行中的任务列表 */
+  runningExecutions?: AgentExecutionLog[];
 }
 
 type ModuleCode = 'all' | 'ticket' | 'admin' | 'workflow' | 'ungrouped';
@@ -25,6 +27,7 @@ const ModuleAgentGrid: React.FC<ModuleAgentGridProps> = ({
   selectedAgent,
   onSelectAgent,
   onToggleAgent,
+  runningExecutions = [],
 }) => {
   const { t } = useTranslation('common');
   const [activeModule, setActiveModule] = useState<ModuleCode>('all');
@@ -42,6 +45,15 @@ const ModuleAgentGrid: React.FC<ModuleAgentGridProps> = ({
 
   const getStatsForAgent = (code: string) =>
     stats.find(s => s.agentCode === code);
+
+  // 统计每个 Agent 当前正在执行的任务数
+  const executingCountMap = useMemo(() => {
+    const map = new Map<string, number>();
+    runningExecutions.forEach(exec => {
+      map.set(exec.agentCode, (map.get(exec.agentCode) || 0) + 1);
+    });
+    return map;
+  }, [runningExecutions]);
 
   return (
     <div className="h-full flex flex-col overflow-hidden">
@@ -75,6 +87,7 @@ const ModuleAgentGrid: React.FC<ModuleAgentGridProps> = ({
               isSelected={selectedAgent === def.code}
               onSelect={onSelectAgent}
               onToggle={onToggleAgent}
+              executingCount={executingCountMap.get(def.code) || 0}
             />
           ))}
         </div>
