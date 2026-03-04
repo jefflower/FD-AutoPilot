@@ -19,7 +19,6 @@ export type TabType =
     | 'task-definitions'
     | 'task-history'
     | 'org-sync'
-    | 'agent-manage'
     | 'workflow-capabilities'
     | 'workflow-agents'
     | 'workflow-ai'

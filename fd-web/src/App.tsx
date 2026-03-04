@@ -21,7 +21,6 @@ const DatabaseTab = lazy(() => import("./modules/admin/pages/DatabaseTab"));
 const KnowledgeTab = lazy(() => import("./modules/admin/pages/KnowledgeTab"));
 const RolePermissionTab = lazy(() => import("./modules/admin/pages/RolePermissionTab"));
 const OrgSyncTab = lazy(() => import("./modules/admin/pages/OrgSyncTab"));
-const AgentManageTab = lazy(() => import("./modules/admin/pages/AgentManageTab"));
 const JenkinsTab = lazy(() => import("./modules/admin/pages/JenkinsTab"));
 const TaskDashboardTab = lazy(() => import("./modules/task/pages/TaskDashboardTab"));
 const TaskDefinitionsTab = lazy(() => import("./modules/task/pages/TaskDefinitionsTab"));
@@ -145,11 +144,7 @@ const TAB_COMPONENTS: Partial<Record<TabType, TabRoute>> = {
         component: OrgSyncTab,
         requireAdmin: true,
     },
-    'agent-manage': {
-        component: AgentManageTab,
-        requireAdmin: true,
-    },
-    'task-dashboard': {
+'task-dashboard': {
         component: TaskDashboardTab,
         requireAdmin: true,
     },

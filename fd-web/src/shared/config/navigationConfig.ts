@@ -72,7 +72,6 @@ export const navigationModules: NavModule[] = [
       { tab: 'server-logs', labelKey: 'nav.logs', icon: FileText },
       { tab: 'database', labelKey: 'nav.database', icon: Database },
       { tab: 'org-sync', labelKey: 'nav.orgSync', icon: Building2 },
-      { tab: 'agent-manage', labelKey: 'nav.agentManage', icon: Bot },
       { tab: 'admin-jenkins', labelKey: 'nav.jenkins', icon: Hammer },
     ],
   },

@@ -68,7 +68,8 @@ public class AiDataInitializer implements CommandLineRunner {
         backfillRequiredCapability();
 
         // 4. 清理已移除的内置 Agent
-        cleanupRemovedBuiltInAgents(Set.of("ticket-translate", "ticket-reply", "n8n-workflow-designer", "logistics-reply", "completion-reply"));
+        cleanupRemovedBuiltInAgents(Set.of("ticket-translate", "ticket-reply", "n8n-workflow-designer",
+                "logistics-reply", "completion-reply"));
 
         // 5. 初始化默认能力绑定
         ensureDefaultBinding("ticket-translate", "ticket-translate");
@@ -135,8 +136,10 @@ public class AiDataInitializer implements CommandLineRunner {
             // 生产数据保护：已存在的 Capability 不再强制更新 configSchema，仅打印差异提示
             CapabilityDefinition cap = existing.get();
             if (configSchema != null && !configSchema.equals(cap.getConfigSchema())) {
-                log.warn("[AiDataInitializer] Capability '{}' configSchema differs from code definition (DB value preserved). "
-                        + "Code: {}, DB: {}", code, configSchema, cap.getConfigSchema());
+                log.warn(
+                        "[AiDataInitializer] Capability '{}' configSchema differs from code definition (DB value preserved). "
+                                + "Code: {}, DB: {}",
+                        code, configSchema, cap.getConfigSchema());
             }
             return;
         }
@@ -162,8 +165,8 @@ public class AiDataInitializer implements CommandLineRunner {
         // === 工单处理 Agent（n8n 工作流 + Sync Bridge 使用） ===
         ensureBuiltInAgent(
                 "ticket-translate",
-                "工单翻译",
-                "通过 Gemini CLI 翻译工单内容",
+                "工单翻译并分类",
+                "通过 Gemini CLI 翻译工单内容并完成业务分类",
                 null,
                 null,
                 "ticket-translate",
@@ -288,7 +291,7 @@ public class AiDataInitializer implements CommandLineRunner {
                 "logistics-reply",
                 "ticket",
                 null, null,
-                null,  // agentConfig（notebookId 需要后续在管理后台配置）
+                null, // agentConfig（notebookId 需要后续在管理后台配置）
                 "根据下面的物流查询工单内容，使用用户工单的语言做出回复及回复的中文翻译。\n\n"
                         + "回复要点：\n"
                         + "- 确认收到物流查询请求\n"
@@ -318,7 +321,7 @@ public class AiDataInitializer implements CommandLineRunner {
                 "completion-reply",
                 "ticket",
                 null, null,
-                null,  // agentConfig（notebookId 需要后续在管理后台配置）
+                null, // agentConfig（notebookId 需要后续在管理后台配置）
                 "根据下面的工单内容，客户已确认问题解决或表示感谢。使用用户工单的语言做出礼貌的确认回复及中文翻译。\n\n"
                         + "回复要点：\n"
                         + "- 感谢客户的反馈\n"
@@ -454,8 +457,10 @@ public class AiDataInitializer implements CommandLineRunner {
             }
             // agentConfig 差异检测（不覆盖，由用户管理）
             if (agentConfig == null ? def.getAgentConfig() != null : !agentConfig.equals(def.getAgentConfig())) {
-                log.debug("[AiDataInitializer] Agent '{}' agentConfig differs from code definition (DB value preserved). "
-                        + "Code: {}, DB: {}", code, agentConfig, def.getAgentConfig());
+                log.debug(
+                        "[AiDataInitializer] Agent '{}' agentConfig differs from code definition (DB value preserved). "
+                                + "Code: {}, DB: {}",
+                        code, agentConfig, def.getAgentConfig());
             }
 
             // 回填 groupCode（仅旧值为 null 时）
