@@ -8,7 +8,8 @@ import {
   XCircle,
   Globe,
   Link2,
-  ChevronDown,
+  Settings,
+  X,
 } from 'lucide-react';
 import { configApi } from '../../../shared/services/serverApi';
 
@@ -35,8 +36,9 @@ export default function WorkflowN8nTab() {
 
   const [mode, setMode] = useState<N8nMode>(readMode);
   const [directUrl, setDirectUrl] = useState<string>(readDirectUrl);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  // 浮动配置面板开关
+  const [panelOpen, setPanelOpen] = useState(false);
+  const panelRef = useRef<HTMLDivElement>(null);
 
   // iframe key: 变更时强制重新挂载 iframe
   const [iframeKey, setIframeKey] = useState(0);
@@ -54,50 +56,39 @@ export default function WorkflowN8nTab() {
       .finally(() => setLoading(false));
   }, []);
 
-  // 点击外部关闭下拉菜单
+  // 点击外部关闭面板
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setDropdownOpen(false);
+      if (panelRef.current && !panelRef.current.contains(e.target as Node)) {
+        setPanelOpen(false);
       }
     }
-    if (dropdownOpen) {
+    if (panelOpen) {
       document.addEventListener('mousedown', handleClickOutside);
       return () => document.removeEventListener('mousedown', handleClickOutside);
     }
-  }, [dropdownOpen]);
+  }, [panelOpen]);
 
   const currentSrc = mode === 'proxy' ? PROXY_URL : directUrl;
 
-  const handleModeChange = useCallback(
-    (newMode: N8nMode) => {
-      setMode(newMode);
-      localStorage.setItem(LS_KEY_MODE, newMode);
-      setDropdownOpen(false);
-      // 模式切换后刷新 iframe
-      setIframeKey((k) => k + 1);
-    },
-    [],
-  );
+  const handleModeChange = useCallback((newMode: N8nMode) => {
+    setMode(newMode);
+    localStorage.setItem(LS_KEY_MODE, newMode);
+    setIframeKey((k) => k + 1);
+  }, []);
 
-  const handleDirectUrlChange = useCallback(
-    (url: string) => {
-      setDirectUrl(url);
-      localStorage.setItem(LS_KEY_DIRECT_URL, url);
-    },
-    [],
-  );
+  const handleDirectUrlChange = useCallback((url: string) => {
+    setDirectUrl(url);
+    localStorage.setItem(LS_KEY_DIRECT_URL, url);
+  }, []);
 
   const handleDirectUrlConfirm = useCallback(() => {
-    // URL 变更后按回车或失焦时刷新 iframe
     setIframeKey((k) => k + 1);
   }, []);
 
   const handleOpenNewWindow = useCallback(() => {
     const url = mode === 'proxy' ? PROXY_URL : directUrl;
-    if (url) {
-      window.open(url, '_blank');
-    }
+    if (url) window.open(url, '_blank');
   }, [mode, directUrl]);
 
   // ---------- 加载中 ----------
@@ -145,108 +136,126 @@ export default function WorkflowN8nTab() {
     );
   }
 
-  // ---------- n8n 已启用 — iframe 嵌入 ----------
+  // ---------- n8n 已启用 — iframe 全屏 + 浮动配置 ----------
   return (
-    <div className="flex flex-col w-full h-full bg-gray-50 dark:bg-gray-900">
-      {/* ====== 顶部工具栏 ====== */}
-      <div className="flex items-center gap-3 px-4 py-2 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 shrink-0">
-        {/* 模式切换下拉 */}
-        <div className="relative" ref={dropdownRef}>
-          <button
-            onClick={() => setDropdownOpen((v) => !v)}
-            className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium rounded-lg border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
-          >
-            {mode === 'proxy' ? (
-              <Globe className="w-4 h-4 text-purple-500" />
-            ) : (
-              <Link2 className="w-4 h-4 text-blue-500" />
-            )}
-            <span>{mode === 'proxy' ? '代理模式' : '直连模式'}</span>
-            <ChevronDown className="w-3.5 h-3.5 text-gray-400" />
-          </button>
+    <div className="relative w-full h-full">
+      {/* ====== iframe 全屏 ====== */}
+      {mode === 'direct' && !directUrl ? (
+        <div className="flex flex-col items-center justify-center w-full h-full text-gray-400 dark:text-gray-500 gap-3 bg-gray-50 dark:bg-gray-900">
+          <Link2 className="w-10 h-10" />
+          <p className="text-sm">请点击右上角设置，输入 n8n 直连地址</p>
+        </div>
+      ) : (
+        <iframe
+          key={iframeKey}
+          src={currentSrc}
+          className="w-full h-full border-0"
+          allow="clipboard-read; clipboard-write"
+          title="n8n Workflow Engine"
+        />
+      )}
 
-          {dropdownOpen && (
-            <div className="absolute top-full left-0 mt-1 w-44 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg shadow-lg z-50 overflow-hidden">
+      {/* ====== 右上角浮动按钮 ====== */}
+      {!panelOpen && (
+        <button
+          onClick={() => setPanelOpen(true)}
+          className="absolute top-2 right-2 z-20 flex items-center gap-1 px-2 py-1.5 text-xs font-medium rounded-lg
+            bg-gray-900/60 hover:bg-gray-900/80 text-white backdrop-blur-sm
+            shadow-lg transition-all"
+          title="n8n 连接设置"
+        >
+          <Settings className="w-3.5 h-3.5" />
+          <span>{mode === 'proxy' ? '代理' : '直连'}</span>
+        </button>
+      )}
+
+      {/* ====== 浮动配置面板 ====== */}
+      {panelOpen && (
+        <div
+          ref={panelRef}
+          className="absolute top-2 right-2 z-30 w-80
+            bg-gray-900/90 backdrop-blur-md rounded-xl shadow-2xl
+            border border-white/10 text-white overflow-hidden"
+        >
+          {/* 面板头部 */}
+          <div className="flex items-center justify-between px-4 py-2.5 border-b border-white/10">
+            <span className="text-sm font-medium">n8n 连接设置</span>
+            <button
+              onClick={() => setPanelOpen(false)}
+              className="p-0.5 rounded hover:bg-white/10 transition-colors"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+
+          {/* 面板内容 */}
+          <div className="px-4 py-3 space-y-3">
+            {/* 模式选择 */}
+            <div className="flex gap-2">
               <button
                 onClick={() => handleModeChange('proxy')}
-                className={`w-full flex items-center gap-2 px-3 py-2 text-sm text-left transition-colors ${
+                className={`flex-1 flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-medium rounded-lg transition-colors ${
                   mode === 'proxy'
-                    ? 'bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300'
-                    : 'text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600'
+                    ? 'bg-purple-600 text-white'
+                    : 'bg-white/10 text-gray-300 hover:bg-white/15'
                 }`}
               >
-                <Globe className="w-4 h-4" />
+                <Globe className="w-3.5 h-3.5" />
                 代理模式
               </button>
               <button
                 onClick={() => handleModeChange('direct')}
-                className={`w-full flex items-center gap-2 px-3 py-2 text-sm text-left transition-colors ${
+                className={`flex-1 flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-medium rounded-lg transition-colors ${
                   mode === 'direct'
-                    ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300'
-                    : 'text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600'
+                    ? 'bg-blue-600 text-white'
+                    : 'bg-white/10 text-gray-300 hover:bg-white/15'
                 }`}
               >
-                <Link2 className="w-4 h-4" />
+                <Link2 className="w-3.5 h-3.5" />
                 直连模式
               </button>
             </div>
-          )}
-        </div>
 
-        {/* 地址栏 */}
-        <div className="flex-1 min-w-0">
-          {mode === 'proxy' ? (
-            <div className="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 dark:text-gray-500 bg-gray-100 dark:bg-gray-700/50 rounded-lg border border-gray-200 dark:border-gray-600 cursor-default select-none">
-              <Globe className="w-3.5 h-3.5 shrink-0" />
-              <span className="truncate">{PROXY_URL}</span>
-            </div>
-          ) : (
-            <input
-              type="url"
-              value={directUrl}
-              onChange={(e) => handleDirectUrlChange(e.target.value)}
-              onBlur={handleDirectUrlConfirm}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter') {
-                  handleDirectUrlConfirm();
-                  (e.target as HTMLInputElement).blur();
-                }
-              }}
-              placeholder="输入 n8n 地址，如 http://47.110.152.25:5678"
-              className="w-full px-3 py-1.5 text-sm rounded-lg border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500/40 focus:border-purple-500 transition-colors"
-            />
-          )}
-        </div>
+            {/* 地址显示/输入 */}
+            {mode === 'proxy' ? (
+              <div className="flex items-center gap-2 px-3 py-2 text-xs text-gray-400 bg-white/5 rounded-lg border border-white/10">
+                <Globe className="w-3.5 h-3.5 shrink-0" />
+                <span className="truncate">{PROXY_URL}</span>
+                <span className="ml-auto text-[10px] text-gray-500">本机代理</span>
+              </div>
+            ) : (
+              <input
+                type="url"
+                value={directUrl}
+                onChange={(e) => handleDirectUrlChange(e.target.value)}
+                onBlur={handleDirectUrlConfirm}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    handleDirectUrlConfirm();
+                    (e.target as HTMLInputElement).blur();
+                  }
+                }}
+                placeholder="如 http://47.110.152.25:5678"
+                className="w-full px-3 py-2 text-xs rounded-lg border border-white/10
+                  bg-white/5 text-gray-200 placeholder-gray-500
+                  focus:outline-none focus:ring-1 focus:ring-purple-500/50 focus:border-purple-500/50 transition-colors"
+              />
+            )}
 
-        {/* 新窗口打开按钮 */}
-        <button
-          onClick={handleOpenNewWindow}
-          disabled={mode === 'direct' && !directUrl}
-          className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-gray-600 dark:text-gray-300 rounded-lg border border-gray-200 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors disabled:opacity-40 disabled:cursor-not-allowed shrink-0"
-          title="在新窗口中打开 n8n"
-        >
-          <ExternalLink className="w-4 h-4" />
-          <span className="hidden sm:inline">新窗口打开</span>
-        </button>
-      </div>
-
-      {/* ====== iframe 区域 ====== */}
-      <div className="flex-1 w-full min-h-0">
-        {mode === 'direct' && !directUrl ? (
-          <div className="flex flex-col items-center justify-center h-full text-gray-400 dark:text-gray-500 gap-3">
-            <Link2 className="w-10 h-10" />
-            <p className="text-sm">请在上方地址栏输入 n8n 直连地址</p>
+            {/* 新窗口打开 */}
+            <button
+              onClick={() => { handleOpenNewWindow(); setPanelOpen(false); }}
+              disabled={mode === 'direct' && !directUrl}
+              className="w-full flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-medium
+                rounded-lg bg-white/10 text-gray-200 hover:bg-white/15
+                transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+            >
+              <ExternalLink className="w-3.5 h-3.5" />
+              新窗口打开
+            </button>
           </div>
-        ) : (
-          <iframe
-            key={iframeKey}
-            src={currentSrc}
-            className="w-full h-full border-0"
-            allow="clipboard-read; clipboard-write"
-            title="n8n Workflow Engine"
-          />
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 }
