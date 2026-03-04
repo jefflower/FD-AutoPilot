@@ -25,6 +25,23 @@ interface AppShellProps {
 }
 
 const SIDEBAR_COLLAPSED_KEY = 'fd_sidebar_collapsed';
+const SIDEBAR_AUTO_COLLAPSE_ENABLED_KEY = 'fd_sidebar_auto_collapse_enabled';
+const SIDEBAR_COLLAPSE_SECONDS_KEY = 'fd_sidebar_collapse_seconds';
+const DEFAULT_COLLAPSE_SECONDS = 15;
+
+/** 从 localStorage 读取自动收起配置 */
+function loadAutoCollapseConfig(): { enabled: boolean; seconds: number } {
+  try {
+    const enabledStr = localStorage.getItem(SIDEBAR_AUTO_COLLAPSE_ENABLED_KEY);
+    const secondsStr = localStorage.getItem(SIDEBAR_COLLAPSE_SECONDS_KEY);
+    return {
+      enabled: enabledStr !== null ? JSON.parse(enabledStr) : true,
+      seconds: secondsStr !== null ? Math.max(5, Math.min(120, Number(secondsStr))) : DEFAULT_COLLAPSE_SECONDS,
+    };
+  } catch {
+    return { enabled: true, seconds: DEFAULT_COLLAPSE_SECONDS };
+  }
+}
 
 const AppShell: React.FC<AppShellProps> = ({
   activeTab,
@@ -35,6 +52,27 @@ const AppShell: React.FC<AppShellProps> = ({
   const { isAdmin, user } = useAuthContext();
   const username = user?.username;
   const [activeModuleId, setActiveModuleId] = useState<string>('ticket');
+
+  // ---- 自动收起配置 ----
+  const [autoCollapseEnabled, setAutoCollapseEnabledState] = useState(() => loadAutoCollapseConfig().enabled);
+  const [collapseSeconds, setCollapseSecondsState] = useState(() => loadAutoCollapseConfig().seconds);
+
+  // 更新自动收起开关并保存到 localStorage
+  const setAutoCollapseEnabled = useCallback((enabled: boolean) => {
+    setAutoCollapseEnabledState(enabled);
+    try {
+      localStorage.setItem(SIDEBAR_AUTO_COLLAPSE_ENABLED_KEY, JSON.stringify(enabled));
+    } catch { /* 忽略 localStorage 错误 */ }
+  }, []);
+
+  // 更新自动收起秒数并保存到 localStorage
+  const setCollapseSeconds = useCallback((seconds: number) => {
+    const clamped = Math.max(5, Math.min(120, seconds));
+    setCollapseSecondsState(clamped);
+    try {
+      localStorage.setItem(SIDEBAR_COLLAPSE_SECONDS_KEY, String(clamped));
+    } catch { /* 忽略 localStorage 错误 */ }
+  }, []);
 
   // ---- Sidebar State: 从 localStorage 读取，默认折叠 ----
   // sidebarCollapsed=true 表示未锁定（折叠），false 表示锁定（常驻展开）
@@ -63,8 +101,7 @@ const AppShell: React.FC<AppShellProps> = ({
   const [isHoveringNav, setIsHoveringNav] = useState(false);
   const hoverLeaveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // ---- 空闲自动折叠：锁定展开状态下 15 秒无侧栏交互则自动折叠 ----
-  const IDLE_COLLAPSE_SECONDS = 15;
+  // ---- 空闲自动折叠：锁定展开状态下无侧栏交互则自动折叠（秒数和开关可配置） ----
   const idleTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const countdownIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const [idleCountdown, setIdleCountdown] = useState<number | null>(null);
@@ -83,9 +120,9 @@ const AppShell: React.FC<AppShellProps> = ({
 
   const resetIdleTimer = useCallback(() => {
     clearIdleTimers();
-    // 仅在非折叠状态下启动计时
-    if (!sidebarCollapsed) {
-      setIdleCountdown(IDLE_COLLAPSE_SECONDS);
+    // 仅在非折叠且自动收起开启时启动计时
+    if (!sidebarCollapsed && autoCollapseEnabled) {
+      setIdleCountdown(collapseSeconds);
       // 每秒倒计时
       countdownIntervalRef.current = setInterval(() => {
         setIdleCountdown(prev => {
@@ -100,9 +137,9 @@ const AppShell: React.FC<AppShellProps> = ({
         try {
           localStorage.setItem(SIDEBAR_COLLAPSED_KEY, 'true');
         } catch { /* ignore */ }
-      }, IDLE_COLLAPSE_SECONDS * 1000);
+      }, collapseSeconds * 1000);
     }
-  }, [sidebarCollapsed, clearIdleTimers]);
+  }, [sidebarCollapsed, autoCollapseEnabled, collapseSeconds, clearIdleTimers]);
 
   // 侧栏展开/折叠变化时，重置或清除空闲计时器
   useEffect(() => {
@@ -422,6 +459,10 @@ const AppShell: React.FC<AppShellProps> = ({
             queueCounts={queueCounts}
             isOverlay={false}
             idleCountdown={idleCountdown}
+            autoCollapseEnabled={autoCollapseEnabled}
+            collapseSeconds={collapseSeconds}
+            onAutoCollapseEnabledChange={setAutoCollapseEnabled}
+            onCollapseSecondsChange={setCollapseSeconds}
           />
         )}
       </div>

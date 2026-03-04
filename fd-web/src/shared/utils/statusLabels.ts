@@ -31,6 +31,38 @@ const TICKET_STATUSES = [
   'PROCESSING', 'PENDING_AUDIT', 'AUDITING', 'APPROVED', 'COMPLETED',
 ] as const;
 
+// ============ Freshdesk 工单状态映射 ============
+
+/** Freshdesk 状态数字到标签的映射 */
+const FD_STATUS_LABELS: Record<number, string> = {
+  2: 'Open',
+  3: 'Pending',
+  4: 'Resolved',
+  5: 'Closed',
+  6: 'Waiting on Customer',
+  7: 'Waiting on Third Party',
+};
+
+/** Freshdesk 状态对应的 Tailwind 颜色样式 */
+export const FD_STATUS_COLORS: Record<number, string> = {
+  2: 'bg-blue-500/20 text-blue-400 ring-blue-500/30',        // Open - 蓝色
+  3: 'bg-yellow-500/20 text-yellow-400 ring-yellow-500/30',   // Pending - 黄色
+  4: 'bg-green-500/20 text-green-400 ring-green-500/30',      // Resolved - 绿色
+  5: 'bg-slate-500/20 text-slate-400 ring-slate-500/30',      // Closed - 灰色
+  6: 'bg-orange-500/20 text-orange-400 ring-orange-500/30',   // Waiting on Customer - 橙色
+  7: 'bg-violet-500/20 text-violet-400 ring-violet-500/30',   // Waiting on Third Party - 紫色
+};
+
+/** 获取 Freshdesk 状态标签文本 */
+export function getFdStatusLabel(fdStatus: number): string {
+  return FD_STATUS_LABELS[fdStatus] || `Status ${fdStatus}`;
+}
+
+/** 获取 Freshdesk 状态对应的颜色样式 */
+export function getFdStatusColor(fdStatus: number): string {
+  return FD_STATUS_COLORS[fdStatus] || 'bg-slate-500/20 text-slate-400 ring-slate-500/30';
+}
+
 export function getTicketStatusOptions(t: AnyTFunction) {
   return [
     { value: '', label: t('label.allStatus', { ns: 'common' }), color: TICKET_STATUS_COLORS[''] },

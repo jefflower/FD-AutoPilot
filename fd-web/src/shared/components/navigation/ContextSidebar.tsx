@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { TFunction } from 'i18next';
-import { ChevronsLeft, Pin } from 'lucide-react';
+import { ChevronsLeft, Pin, Settings, Minus, Plus } from 'lucide-react';
 import type { NavModule } from '../../config/navigationConfig';
 import type { QueueCounts } from '../../types/server';
 
@@ -32,6 +32,14 @@ interface ContextSidebarProps {
   isOverlay?: boolean;
   /** 空闲自动折叠倒计时（秒），null 表示未激活 */
   idleCountdown?: number | null;
+  /** 自动收起开关 */
+  autoCollapseEnabled?: boolean;
+  /** 自动收起秒数 */
+  collapseSeconds?: number;
+  /** 更新自动收起开关 */
+  onAutoCollapseEnabledChange?: (enabled: boolean) => void;
+  /** 更新自动收起秒数 */
+  onCollapseSecondsChange?: (seconds: number) => void;
 }
 
 const ContextSidebar: React.FC<ContextSidebarProps> = ({
@@ -44,10 +52,30 @@ const ContextSidebar: React.FC<ContextSidebarProps> = ({
   queueCounts,
   isOverlay = false,
   idleCountdown,
+  autoCollapseEnabled,
+  collapseSeconds,
+  onAutoCollapseEnabledChange,
+  onCollapseSecondsChange,
 }) => {
   const { t } = useTranslation('common');
   const borderColor = borderColorMap[module.color] || borderColorMap.indigo;
   const titleColor = titleColorMap[module.color] || titleColorMap.indigo;
+
+  // 设置面板展开/收起状态
+  const [showSettings, setShowSettings] = useState(false);
+  const settingsPanelRef = useRef<HTMLDivElement>(null);
+
+  // 点击外部关闭设置面板
+  useEffect(() => {
+    if (!showSettings) return;
+    const handleClickOutside = (e: MouseEvent) => {
+      if (settingsPanelRef.current && !settingsPanelRef.current.contains(e.target as Node)) {
+        setShowSettings(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [showSettings]);
 
   return (
     <div className={`bg-slate-900/60 backdrop-blur-xl border-r border-white/5 flex flex-col flex-shrink-0 select-none ${
@@ -107,16 +135,83 @@ const ContextSidebar: React.FC<ContextSidebarProps> = ({
             <span className="text-xs">{t('sidebar.pin')}</span>
           </button>
         ) : (
-          <button
-            onClick={onCollapse}
-            className="w-full h-8 rounded-lg flex items-center justify-center gap-2 text-slate-500 hover:text-slate-300 hover:bg-white/5 transition-all duration-150"
-          >
-            <ChevronsLeft size={14} />
-            <span className="text-xs">{t('sidebar.collapse')}</span>
-            {idleCountdown != null && idleCountdown > 0 && (
-              <span className="text-[10px] text-slate-600 tabular-nums ml-auto">{idleCountdown}s</span>
+          <>
+            {/* 自动收起设置面板 */}
+            {showSettings && onAutoCollapseEnabledChange && onCollapseSecondsChange && (
+              <div
+                ref={settingsPanelRef}
+                className="mb-2 mx-1 p-3 rounded-lg bg-slate-800/90 border border-white/10 backdrop-blur-sm"
+              >
+                {/* 自动收起开关 */}
+                <div className="flex items-center justify-between mb-2.5">
+                  <span className="text-xs text-slate-400">自动收起</span>
+                  <button
+                    onClick={() => onAutoCollapseEnabledChange(!autoCollapseEnabled)}
+                    className={`relative w-9 h-5 rounded-full transition-colors duration-200 flex-shrink-0 ${
+                      autoCollapseEnabled ? 'bg-indigo-500' : 'bg-slate-600'
+                    }`}
+                  >
+                    <span
+                      className={`absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-white shadow transition-transform duration-200 ${
+                        autoCollapseEnabled ? 'translate-x-4' : 'translate-x-0'
+                      }`}
+                    />
+                  </button>
+                </div>
+                {/* 收起时间调节 */}
+                <div className={`flex items-center justify-between transition-opacity duration-150 ${
+                  autoCollapseEnabled ? 'opacity-100' : 'opacity-40 pointer-events-none'
+                }`}>
+                  <span className="text-xs text-slate-400">时间</span>
+                  <div className="flex items-center gap-1.5">
+                    <button
+                      onClick={() => onCollapseSecondsChange(Math.max(5, (collapseSeconds ?? 15) - 5))}
+                      className="w-5 h-5 rounded flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/10 transition-colors"
+                    >
+                      <Minus size={12} />
+                    </button>
+                    <span className="text-xs text-slate-300 tabular-nums w-7 text-center">
+                      {collapseSeconds ?? 15}s
+                    </span>
+                    <button
+                      onClick={() => onCollapseSecondsChange(Math.min(120, (collapseSeconds ?? 15) + 5))}
+                      className="w-5 h-5 rounded flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/10 transition-colors"
+                    >
+                      <Plus size={12} />
+                    </button>
+                  </div>
+                </div>
+              </div>
             )}
-          </button>
+            {/* 底部按钮行：设置 + 收起 */}
+            <div className="flex items-center gap-1">
+              {/* 设置按钮（仅在有配置回调时显示） */}
+              {onAutoCollapseEnabledChange && (
+                <button
+                  onClick={() => setShowSettings(prev => !prev)}
+                  className={`h-8 w-8 rounded-lg flex items-center justify-center transition-all duration-150 flex-shrink-0 ${
+                    showSettings
+                      ? 'text-indigo-400 bg-white/5'
+                      : 'text-slate-500 hover:text-slate-300 hover:bg-white/5'
+                  }`}
+                  title="收起设置"
+                >
+                  <Settings size={14} />
+                </button>
+              )}
+              {/* 收起按钮 */}
+              <button
+                onClick={onCollapse}
+                className="flex-1 h-8 rounded-lg flex items-center justify-center gap-2 text-slate-500 hover:text-slate-300 hover:bg-white/5 transition-all duration-150"
+              >
+                <ChevronsLeft size={14} />
+                <span className="text-xs">{t('sidebar.collapse')}</span>
+                {autoCollapseEnabled && idleCountdown != null && idleCountdown > 0 && (
+                  <span className="text-[10px] text-slate-600 tabular-nums ml-auto">{idleCountdown}s</span>
+                )}
+              </button>
+            </div>
+          </>
         )}
       </div>
     </div>
