@@ -429,27 +429,33 @@ public class AiDataInitializer implements CommandLineRunner {
             String templateEngine, String requiredCapability) {
         var existing = repository.findByCode(code);
         if (existing.isPresent()) {
-            // 生产数据保护：已存在的 Agent 不再强制同步 systemPrompt/inputSchema/outputSchema/agentConfig
-            // 仅打印差异 WARN 日志，数据库值保留不变
+            // 重启自动同步：systemPrompt / inputSchema / outputSchema 以代码为准，自动覆盖
+            // agentConfig 由用户在管理后台配置（如 notebookId），不覆盖
             AgentDefinition def = existing.get();
             boolean updated = false;
 
-            // inputSchema 差异检测（不覆盖）
-            if (inputSchema != null && !inputSchema.equals(def.getInputSchema())) {
-                log.warn("[AiDataInitializer] Agent '{}' inputSchema differs from code definition (DB value preserved)", code);
-            }
-            // outputSchema 差异检测（不覆盖）
-            if (outputSchema != null && !outputSchema.equals(def.getOutputSchema())) {
-                log.warn("[AiDataInitializer] Agent '{}' outputSchema differs from code definition (DB value preserved)", code);
-            }
-            // agentConfig 差异检测（不覆盖）
-            if (agentConfig == null ? def.getAgentConfig() != null : !agentConfig.equals(def.getAgentConfig())) {
-                log.warn("[AiDataInitializer] Agent '{}' agentConfig differs from code definition (DB value preserved). "
-                        + "Code: {}, DB: {}", code, agentConfig, def.getAgentConfig());
-            }
-            // systemPrompt 差异检测（不覆盖）
+            // systemPrompt 自动同步
             if (systemPrompt != null && !systemPrompt.equals(def.getSystemPrompt())) {
-                log.warn("[AiDataInitializer] Agent '{}' systemPrompt differs from code definition (DB value preserved)", code);
+                log.info("[AiDataInitializer] Agent '{}' systemPrompt updated from code definition", code);
+                def.setSystemPrompt(systemPrompt);
+                updated = true;
+            }
+            // inputSchema 自动同步
+            if (inputSchema != null && !inputSchema.equals(def.getInputSchema())) {
+                log.info("[AiDataInitializer] Agent '{}' inputSchema updated from code definition", code);
+                def.setInputSchema(inputSchema);
+                updated = true;
+            }
+            // outputSchema 自动同步
+            if (outputSchema != null && !outputSchema.equals(def.getOutputSchema())) {
+                log.info("[AiDataInitializer] Agent '{}' outputSchema updated from code definition", code);
+                def.setOutputSchema(outputSchema);
+                updated = true;
+            }
+            // agentConfig 差异检测（不覆盖，由用户管理）
+            if (agentConfig == null ? def.getAgentConfig() != null : !agentConfig.equals(def.getAgentConfig())) {
+                log.debug("[AiDataInitializer] Agent '{}' agentConfig differs from code definition (DB value preserved). "
+                        + "Code: {}, DB: {}", code, agentConfig, def.getAgentConfig());
             }
 
             // 回填 groupCode（仅旧值为 null 时）
