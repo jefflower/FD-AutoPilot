@@ -3,12 +3,13 @@
 This file provides guidance to Claude Code when working with code in this repository.
 
 > v0.4 架构设计详见 `doc/v0.4-vision.md`
+> 自演进架构愿景详见 `doc/self-evolution-vision.md`
 
 > 敏感凭据（系统账号、n8n、Jenkins 等）请查看 `.claude/credentials.md`（已 gitignore，不会提交）
 
 ## 项目概览
 
-FD-AutoPilot — 智能工单处理系统，集成 Freshdesk + AI（Gemini CLI / NotebookLM）自动化翻译和回复。
+FD-AutoPilot — 赛博云办公室（Cyber Cloud Office）。任意端 Agent 互联的 AI 工作流平台，具备自我演进能力。n8n 作为编排引擎，通过 Sync Bridge 调用来自任意端（本地/远程/联邦/第三方）的 Agent 实现业务自动化。工单处理（Ticket）是第一个业务模块，自演进开发（Development）是平台能力的终极体现——系统通过内置 AI Agent 团队处理用户反馈、自动完成需求分析、编码、测试和发布。任何人可以把自己电脑上的 AI 能力注册到平台"打工"，帮任意 Git 仓库迭代项目也只是 Agent 任务中的一种。
 
 | 子项目        | 技术栈                            | 职责                         |
 | ------------- | --------------------------------- | ---------------------------- |
@@ -44,6 +45,8 @@ cd fd-client/src-tauri && cargo check && cargo test
 
 依赖链：`common ← auth ← task ← ai ← ticket ← app`（单向，禁止反向）
 
+> 自演进规划新增 `dev` 模块：`common ← auth ← task ← ai ← ticket ← dev ← app`，详见 `doc/self-evolution-vision.md`
+
 | 模块   | 核心职责                                                                           |
 | ------ | ---------------------------------------------------------------------------------- |
 | common | DTO、异常、工具类                                                                  |
@@ -51,6 +54,7 @@ cd fd-client/src-tauri && cargo check && cargo test
 | task   | 任务分发 + SSE + 定时调度                                                          |
 | ai     | Agent 定义/实例/绑定 + Capability 管理 + 客户端注册 + SyncBridge + Capability 路由 |
 | ticket | 工单业务 + Freshdesk + 通知                                                        |
+| dev    | **（规划中）** 信箱系统 + 自演进开发工作流 + Jenkins API 集成 + 版本管理            |
 | app    | 启动入口 + n8n 集成                                                                |
 
 ### 前端 (fd-web/src/)
@@ -89,6 +93,7 @@ Provider 层次：`AuthProvider → ServerEventsProvider → AgentProvider → M
 **客户端**: ClientRegistration（clientId + enabledCapabilities + 心跳在线状态）
 **任务**: TaskDefinition · TaskInstance（PENDING/CLAIMED/COMPLETED/FAILED/TIMEOUT + targetClientId/targetUserId 路由）
 **系统**: SystemConfig · KnowledgeNote · UserAppSettings
+**自演进（规划中）**: InboxMessage · InboxComment · DevTask · DevVersion · DevBuildRecord
 
 ## 工单状态流转
 
@@ -194,3 +199,23 @@ v0.4 重点模块分工：
 | 跨层 / 新 Agent / Sync Bridge / Capability 变更 | 流程 F                                |
 | n8n 工作流配置                                  | n8n-expert 单独处理或纳入流程 F       |
 | 重构 / 模块化                                   | 流程 F + 全量测试 + reviewer 重点检查 |
+
+### 迭代路线
+
+```
+v0.4  当前版本 — 6 模块 + Agent + Sync Bridge + n8n + Capability 体系
+ ↓
+v0.5  信箱 + 办公室 — 信箱系统 + 办公室工作台 UI + 需求经理 Agent
+ ↓
+v0.6  AI 评审 — CTO Agent + 代码上下文服务 + 技术可行性评估
+ ↓
+v0.7  AI 开发 — 研发总监 Agent + Agent Teams 自动编码 + claude-code Capability
+ ↓
+v0.8  自动发布 — Jenkins API 集成 + 用户验收 + 自动升级生产
+ ↓
+v0.9  Agent 互联 — 远程 Agent 注册 + Webhook Push + AI 打工经济
+ ↓
+v1.0  赛博云办公室 — 联邦互联 + Git-as-a-Task + 多项目管理
+```
+
+> 详细规划见 `doc/self-evolution-vision.md`

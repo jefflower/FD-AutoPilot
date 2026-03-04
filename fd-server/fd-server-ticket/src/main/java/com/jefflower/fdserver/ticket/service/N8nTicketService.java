@@ -198,14 +198,14 @@ public class N8nTicketService {
     // ========== AI 判定已解决 ==========
 
     /**
-     * AI 判定工单已解决 — 更新 Freshdesk 状态为 Resolved(4)，并完结工单
+     * AI 判定工单已解决 — 完结工单（Freshdesk 状态更新暂时跳过，待业务流程验证通过后启用）
      */
     @Transactional
     public Map<String, Object> resolveCompleted(Long ticketId) {
         Ticket ticket = getTicket(ticketId);
         TicketStatus beforeStatus = ticket.getStatus();
 
-        log.info("[N8nTicketService] 工单 #{} AI 判定已解决，准备更新 Freshdesk 状态", ticketId);
+        log.info("[N8nTicketService] 工单 #{} AI 判定已解决，当前状态: {}", ticketId, beforeStatus);
 
         // 校验状态：只有 PENDING_TRANS 或 PROCESSING 可以直接完结
         if (beforeStatus != TicketStatus.PENDING_TRANS && beforeStatus != TicketStatus.PROCESSING) {
@@ -213,22 +213,22 @@ public class N8nTicketService {
                     "工单 #" + ticketId + " 当前状态 " + beforeStatus + "，不可直接完结");
         }
 
-        // 调用 Freshdesk API 将工单状态改为 Resolved(4)
-        try {
-            freshdeskApiClient.updateTicketStatus(ticket.getExternalId(), 4);
-            log.info("[N8nTicketService] Freshdesk 工单 #{} 状态已更新为 Resolved(4)", ticket.getExternalId());
-        } catch (Exception e) {
-            log.error("[N8nTicketService] Freshdesk API 调用失败, ticketId={}, externalId={}", ticketId, ticket.getExternalId(), e);
-            throw new BusinessException(ErrorCode.BUSINESS_ERROR,
-                    "Freshdesk API 调用失败: " + e.getMessage());
-        }
+        // TODO: 业务流程验证通过后启用 Freshdesk API 调用
+        // try {
+        //     freshdeskApiClient.updateTicketStatus(ticket.getExternalId(), 4);
+        //     log.info("[N8nTicketService] Freshdesk 工单 #{} 状态已更新为 Resolved(4)", ticket.getExternalId());
+        // } catch (Exception e) {
+        //     log.error("[N8nTicketService] Freshdesk API 调用失败, ticketId={}, externalId={}", ticketId, ticket.getExternalId(), e);
+        //     throw new BusinessException(ErrorCode.BUSINESS_ERROR,
+        //             "Freshdesk API 调用失败: " + e.getMessage());
+        // }
 
         // 更新本地状态
         ticket.setFdStatus(4);  // Resolved
         stateMachine.transition(ticket, TicketStatus.COMPLETED);
         ticketRepository.save(ticket);
         statusLogService.logTransition(ticket, beforeStatus, TicketStatus.COMPLETED,
-                "n8n", "AI 判定工单已解决，Freshdesk 状态已更新为 Resolved");
+                "n8n", "AI 判定工单已解决（Freshdesk 同步待启用）");
 
         log.info("[N8nTicketService] 工单 #{} 已完结 (AI resolved), fdStatus=4", ticketId);
 

@@ -33,7 +33,7 @@ public class SysUser {
     private UserStatus status = UserStatus.PENDING;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "user_type", columnDefinition = "VARCHAR(20) DEFAULT 'INTERNAL'")
+    @Column(name = "user_type", length = 20)
     private UserType userType = UserType.INTERNAL;
 
     @Column(name = "created_at")
