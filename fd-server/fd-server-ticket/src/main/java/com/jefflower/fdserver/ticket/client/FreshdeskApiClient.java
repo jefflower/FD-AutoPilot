@@ -1,5 +1,8 @@
 package com.jefflower.fdserver.ticket.client;
 
+import com.jefflower.fdserver.common.exception.BusinessException;
+import com.jefflower.fdserver.common.exception.ErrorCode;
+import com.jefflower.fdserver.ticket.service.SystemConfigService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -9,6 +12,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.function.Supplier;
 import java.util.regex.Matcher;
@@ -17,15 +21,21 @@ import java.util.regex.Pattern;
 /**
  * Freshdesk API v2 客户端
  * 提供分页遍历、重试机制、限流感知
+ *
+ * 配置优先级：数据库（SystemConfig）→ 环境变量 → 未配置则报错
  */
 @Slf4j
 @Component
 public class FreshdeskApiClient {
 
     private final RestTemplate restTemplate;
+    private final SystemConfigService configService;
 
-    @Value("${freshdesk.domain}")
-    private String freshdeskDomain;
+    @Value("${freshdesk.domain:}")
+    private String envFreshdeskDomain;
+
+    @Value("${freshdesk.api-key:}")
+    private String envApiKey;
 
     @Value("${freshdesk.api.max-retries:3}")
     private int maxRetries;
@@ -35,25 +45,91 @@ public class FreshdeskApiClient {
 
     private static final Pattern LINK_NEXT_PATTERN = Pattern.compile("<([^>]+)>;\\s*rel=\"next\"");
 
-    public FreshdeskApiClient(@Qualifier("freshdeskRestTemplate") RestTemplate restTemplate) {
+    public FreshdeskApiClient(@Qualifier("freshdeskRestTemplate") RestTemplate restTemplate,
+                              SystemConfigService configService) {
         this.restTemplate = restTemplate;
+        this.configService = configService;
+    }
+
+    // ========== 配置获取（DB 优先 → 环境变量兜底） ==========
+
+    /**
+     * 获取 Freshdesk 域名，优先从数据库读取，再从环境变量兜底
+     * @throws BusinessException 如果未配置
+     */
+    private String getDomain() {
+        // 1. 数据库配置优先
+        String dbDomain = configService.getFreshdeskDomain();
+        if (dbDomain != null && !dbDomain.isBlank()) {
+            return dbDomain;
+        }
+        // 2. 环境变量兜底
+        if (envFreshdeskDomain != null && !envFreshdeskDomain.isBlank()) {
+            return envFreshdeskDomain;
+        }
+        // 3. 未配置
+        throw new BusinessException(ErrorCode.INVALID_PARAMETER,
+                "Freshdesk 域名未配置，请在系统设置中配置 Freshdesk 连接信息");
     }
 
     /**
+     * 获取 API Key，优先从数据库读取，再从环境变量兜底
+     * @throws BusinessException 如果未配置
+     */
+    private String getApiKey() {
+        // 1. 数据库配置优先
+        String dbKey = configService.getFreshdeskApiKey();
+        if (dbKey != null && !dbKey.isBlank()) {
+            return dbKey;
+        }
+        // 2. 环境变量兜底
+        if (envApiKey != null && !envApiKey.isBlank()) {
+            return envApiKey;
+        }
+        // 3. 未配置
+        throw new BusinessException(ErrorCode.INVALID_PARAMETER,
+                "Freshdesk API Key 未配置，请在系统设置中配置 Freshdesk 连接信息");
+    }
+
+    /**
+     * 构建带认证头的 HttpEntity（GET 请求用）
+     */
+    private HttpEntity<Void> buildAuthEntity() {
+        HttpHeaders headers = new HttpHeaders();
+        String apiKey = getApiKey();
+        String auth = apiKey + ":X";
+        String encodedAuth = Base64.getEncoder().encodeToString(auth.getBytes(StandardCharsets.UTF_8));
+        headers.set("Authorization", "Basic " + encodedAuth);
+        headers.set("Content-Type", "application/json");
+        return new HttpEntity<>(headers);
+    }
+
+    /**
+     * 构建带认证头和请求体的 HttpEntity（POST/PUT 请求用）
+     */
+    private <T> HttpEntity<T> buildAuthEntity(T body) {
+        HttpHeaders headers = new HttpHeaders();
+        String apiKey = getApiKey();
+        String auth = apiKey + ":X";
+        String encodedAuth = Base64.getEncoder().encodeToString(auth.getBytes(StandardCharsets.UTF_8));
+        headers.set("Authorization", "Basic " + encodedAuth);
+        headers.set("Content-Type", "application/json");
+        return new HttpEntity<>(body, headers);
+    }
+
+    // ========== 公开 API ==========
+
+    /**
      * 带分页获取所有工单
-     *
-     * @param updatedSince ISO 格式时间戳（可选）
-     * @param statuses     要获取的 Freshdesk 状态码集合（如 {2, 3}）
-     * @return 所有匹配工单列表
      */
     public List<Map<String, Object>> fetchAllTickets(String updatedSince, Set<Integer> statuses) {
+        String domain = getDomain();
         StringBuilder urlBuilder = new StringBuilder();
         urlBuilder.append(String.format(
                 "https://%s/api/v2/tickets?order_by=updated_at&order_type=desc&per_page=100&include=description",
-                freshdeskDomain));
+                domain));
 
         if (updatedSince != null && !updatedSince.isEmpty()) {
-            // 不做 URLEncoder.encode —— 时间戳字符在 query 参数中安全，且 RestTemplate 会自行处理编码
             urlBuilder.append("&updated_since=").append(updatedSince);
             log.info("Fetching tickets updated since: {}", updatedSince);
         } else {
@@ -69,8 +145,9 @@ public class FreshdeskApiClient {
             log.info("Fetching tickets page {} ...", pageCount);
 
             final String currentUrl = url;
+            HttpEntity<Void> authEntity = buildAuthEntity();
             ResponseEntity<List<Map<String, Object>>> response = executeWithRetry(
-                    () -> restTemplate.exchange(currentUrl, HttpMethod.GET, HttpEntity.EMPTY,
+                    () -> restTemplate.exchange(currentUrl, HttpMethod.GET, authEntity,
                             new ParameterizedTypeReference<List<Map<String, Object>>>() {
                             }));
 
@@ -103,12 +180,14 @@ public class FreshdeskApiClient {
      * 获取单个工单详情（Webhook 场景使用）
      */
     public Map<String, Object> fetchSingleTicket(String ticketId) {
+        String domain = getDomain();
         String url = String.format("https://%s/api/v2/tickets/%s?include=description",
-                freshdeskDomain, ticketId);
+                domain, ticketId);
 
+        HttpEntity<Void> authEntity = buildAuthEntity();
         return executeWithRetry(() -> {
             ResponseEntity<Map<String, Object>> response = restTemplate.exchange(
-                    url, HttpMethod.GET, HttpEntity.EMPTY,
+                    url, HttpMethod.GET, authEntity,
                     new ParameterizedTypeReference<Map<String, Object>>() {
                     });
             handleRateLimit(response.getHeaders());
@@ -120,8 +199,9 @@ public class FreshdeskApiClient {
      * 带分页获取工单的所有对话
      */
     public List<Map<String, Object>> fetchAllConversations(String ticketId) {
+        String domain = getDomain();
         String url = String.format("https://%s/api/v2/tickets/%s/conversations?per_page=100",
-                freshdeskDomain, ticketId);
+                domain, ticketId);
 
         List<Map<String, Object>> allConversations = new ArrayList<>();
         int pageCount = 0;
@@ -131,8 +211,9 @@ public class FreshdeskApiClient {
             final String currentUrl = url;
 
             try {
+                HttpEntity<Void> authEntity = buildAuthEntity();
                 ResponseEntity<List<Map<String, Object>>> response = executeWithRetry(
-                        () -> restTemplate.exchange(currentUrl, HttpMethod.GET, HttpEntity.EMPTY,
+                        () -> restTemplate.exchange(currentUrl, HttpMethod.GET, authEntity,
                                 new ParameterizedTypeReference<List<Map<String, Object>>>() {
                                 }));
 
@@ -164,11 +245,12 @@ public class FreshdeskApiClient {
      * 推送回复到 Freshdesk
      */
     public void pushReply(String ticketExternalId, String body) {
+        String domain = getDomain();
         String url = String.format("https://%s/api/v2/tickets/%s/reply",
-                freshdeskDomain, ticketExternalId);
+                domain, ticketExternalId);
 
         Map<String, Object> requestBody = Map.of("body", body);
-        HttpEntity<Map<String, Object>> entity = new HttpEntity<>(requestBody);
+        HttpEntity<Map<String, Object>> entity = buildAuthEntity(requestBody);
 
         executeWithRetry(() -> {
             ResponseEntity<Map<String, Object>> response = restTemplate.exchange(
@@ -184,16 +266,14 @@ public class FreshdeskApiClient {
 
     /**
      * 更新 Freshdesk 工单状态
-     *
-     * @param ticketExternalId Freshdesk 工单 ID
-     * @param status           Freshdesk 状态码（2=Open, 3=Pending, 4=Resolved, 5=Closed）
      */
     public void updateTicketStatus(String ticketExternalId, int status) {
+        String domain = getDomain();
         String url = String.format("https://%s/api/v2/tickets/%s",
-                freshdeskDomain, ticketExternalId);
+                domain, ticketExternalId);
 
         Map<String, Object> requestBody = Map.of("status", status);
-        HttpEntity<Map<String, Object>> entity = new HttpEntity<>(requestBody);
+        HttpEntity<Map<String, Object>> entity = buildAuthEntity(requestBody);
 
         executeWithRetry(() -> {
             ResponseEntity<Map<String, Object>> response = restTemplate.exchange(
@@ -207,11 +287,8 @@ public class FreshdeskApiClient {
         log.info("Updated Freshdesk ticket #{} status to {}", ticketExternalId, status);
     }
 
-    /**
-     * 带重试的 API 调用执行
-     * 策略：最多 maxRetries 次，指数退避（1s, 2s, 4s）
-     * HTTP 429 时读 Retry-After header
-     */
+    // ========== 内部方法 ==========
+
     private <T> T executeWithRetry(Supplier<T> apiCall) {
         int attempt = 0;
         while (true) {
@@ -221,12 +298,11 @@ public class FreshdeskApiClient {
                 attempt++;
 
                 if (e.getStatusCode() == HttpStatus.TOO_MANY_REQUESTS) {
-                    // 429 限流
                     long waitMs = parseRetryAfter(e.getResponseHeaders());
                     log.warn("Rate limited (429), waiting {}ms before retry (attempt {}/{})",
                             waitMs, attempt, maxRetries);
                     sleep(waitMs);
-                    continue; // 429 不计入 maxRetries
+                    continue;
                 }
 
                 if (attempt >= maxRetries) {
@@ -254,10 +330,6 @@ public class FreshdeskApiClient {
         }
     }
 
-    /**
-     * 解析 Link header 中的 next 页 URL
-     * 格式: <https://domain/api/v2/tickets?page=2>; rel="next"
-     */
     private String extractNextPageUrl(HttpHeaders headers) {
         List<String> linkHeaders = headers.get("Link");
         if (linkHeaders == null || linkHeaders.isEmpty()) {
@@ -273,9 +345,6 @@ public class FreshdeskApiClient {
         return null;
     }
 
-    /**
-     * 检查速率限制，低于阈值时主动休眠
-     */
     private void handleRateLimit(HttpHeaders headers) {
         List<String> remaining = headers.get("X-RateLimit-Remaining");
         if (remaining != null && !remaining.isEmpty()) {
@@ -291,9 +360,6 @@ public class FreshdeskApiClient {
         }
     }
 
-    /**
-     * 解析 Retry-After header（秒），默认 60 秒
-     */
     private long parseRetryAfter(HttpHeaders headers) {
         if (headers != null) {
             List<String> retryAfter = headers.get("Retry-After");
@@ -305,7 +371,7 @@ public class FreshdeskApiClient {
                 }
             }
         }
-        return 60_000; // 默认 60 秒
+        return 60_000;
     }
 
     private void sleep(long ms) {

@@ -11,6 +11,7 @@ import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { adminApi, configApi } from '../../../shared/services/serverApi';
 import type { SyncResult, SyncConfig, SyncLog } from '../../../shared/types/server';
+import FreshdeskConfigPanel from '../components/FreshdeskConfigPanel';
 // 常用 cron 预设 - 工厂函数
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const getCronPresets = (t: (...args: any[]) => string) => [
@@ -170,6 +171,9 @@ const ManualSyncTab: React.FC = () => {
                     <h1 className="text-2xl font-bold text-white mb-2">{t('sync.title')}</h1>
                     <p className="text-slate-400">{t('sync.subtitle')}</p>
                 </div>
+
+                {/* Freshdesk 连接配置 */}
+                <FreshdeskConfigPanel />
 
                 {/* 同步状态卡片 */}
                 <div className="bg-slate-800/50 backdrop-blur-xl rounded-2xl border border-white/10 p-6">

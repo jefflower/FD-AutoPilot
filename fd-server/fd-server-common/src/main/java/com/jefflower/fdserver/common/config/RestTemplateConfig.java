@@ -4,21 +4,16 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 
-import java.nio.charset.StandardCharsets;
 import java.time.Duration;
-import java.util.Base64;
 
 /**
  * Freshdesk REST 客户端配置
+ * 仅配置超时和 Content-Type，认证头由 FreshdeskApiClient 动态添加（支持从数据库读取配置）
  */
 @Configuration
 public class RestTemplateConfig {
-
-    @Value("${freshdesk.api-key}")
-    private String apiKey;
 
     @Value("${freshdesk.api.connect-timeout:10000}")
     private int connectTimeout;
@@ -28,13 +23,9 @@ public class RestTemplateConfig {
 
     @Bean("freshdeskRestTemplate")
     public RestTemplate freshdeskRestTemplate(RestTemplateBuilder builder) {
-        String auth = apiKey + ":X";
-        String encodedAuth = Base64.getEncoder().encodeToString(auth.getBytes(StandardCharsets.UTF_8));
-
         return builder
                 .setConnectTimeout(Duration.ofMillis(connectTimeout))
                 .setReadTimeout(Duration.ofMillis(readTimeout))
-                .defaultHeader("Authorization", "Basic " + encodedAuth)
                 .defaultHeader("Content-Type", "application/json")
                 .build();
     }

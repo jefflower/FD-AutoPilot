@@ -26,6 +26,8 @@ public class SystemConfigService {
     public static final String KEY_NOTEBOOKLM_NOTEBOOK_MAPPING = "notebooklm_notebook_mapping";
     public static final String KEY_NOTIFY_LANGUAGE = "notify_language";
     public static final String KEY_KNOWLEDGE_SYNC_CONFIG = "knowledge_sync_config";
+    public static final String KEY_FRESHDESK_DOMAIN = "freshdesk_domain";
+    public static final String KEY_FRESHDESK_API_KEY = "freshdesk_api_key";
 
     // ========== 自动推送配置 ==========
 
@@ -195,6 +197,33 @@ public class SystemConfigService {
 
     public void setKnowledgeSyncConfig(String configJson) {
         setConfig(KEY_KNOWLEDGE_SYNC_CONFIG, configJson, "知识库同步映射配置（工单/注意事项→源文件）");
+    }
+
+    // ========== Freshdesk 连接配置 ==========
+
+    public String getFreshdeskDomain() {
+        return getStringConfig(KEY_FRESHDESK_DOMAIN, "");
+    }
+
+    public void setFreshdeskDomain(String domain) {
+        setConfig(KEY_FRESHDESK_DOMAIN, domain, "Freshdesk 域名（如 xxx.freshdesk.com）");
+    }
+
+    public String getFreshdeskApiKey() {
+        return getStringConfig(KEY_FRESHDESK_API_KEY, "");
+    }
+
+    public void setFreshdeskApiKey(String apiKey) {
+        setConfig(KEY_FRESHDESK_API_KEY, apiKey, "Freshdesk API Key");
+    }
+
+    /**
+     * 检查 Freshdesk 是否已配置（domain 和 apiKey 都不为空）
+     */
+    public boolean isFreshdeskConfigured() {
+        String domain = getFreshdeskDomain();
+        String apiKey = getFreshdeskApiKey();
+        return domain != null && !domain.isBlank() && apiKey != null && !apiKey.isBlank();
     }
 
     private boolean getBooleanConfig(String key, boolean defaultValue) {

@@ -366,6 +366,25 @@ export const configApi = {
       body: JSON.stringify(config),
     });
   },
+
+  // Freshdesk 连接配置
+  async getFreshdeskConfig(): Promise<{ domain: string; apiKey: string; configured: boolean }> {
+    return (await request<{ domain: string; apiKey: string; configured: boolean }>('/config/freshdesk'))
+        || { domain: '', apiKey: '', configured: false };
+  },
+
+  async setFreshdeskConfig(config: { domain?: string; apiKey?: string }): Promise<void> {
+    await request<void>('/config/freshdesk', {
+      method: 'PUT',
+      body: JSON.stringify(config),
+    });
+  },
+
+  async testFreshdeskConnection(): Promise<{ success: boolean; error?: string; message?: string }> {
+    return request<{ success: boolean; error?: string; message?: string }>('/config/freshdesk/test', {
+      method: 'POST',
+    });
+  },
 };
 
 // ============ 用户设置 API ============

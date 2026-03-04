@@ -69,8 +69,8 @@ management:
 
 # Freshdesk
 freshdesk:
-  domain: ${FRESHDESK_DOMAIN}
-  api-key: ${FRESHDESK_API_KEY}
+  domain: ${FRESHDESK_DOMAIN:}
+  api-key: ${FRESHDESK_API_KEY:}
   webhook:
     secret: ${FRESHDESK_WEBHOOK_SECRET:}
   sync:

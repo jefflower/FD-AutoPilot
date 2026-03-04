@@ -4,6 +4,7 @@ import com.jefflower.fdserver.auth.security.RequiresPermission;
 import com.jefflower.fdserver.common.dto.ApiResponse;
 import com.jefflower.fdserver.common.exception.BusinessException;
 import com.jefflower.fdserver.common.exception.ErrorCode;
+import com.jefflower.fdserver.ticket.client.FreshdeskApiClient;
 import com.jefflower.fdserver.ticket.service.SystemConfigService;
 import com.jefflower.fdserver.ticket.service.notify.NotifyService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import com.jefflower.fdserver.ticket.dto.NotifyChannelConfig;
 
 import java.util.Map;
+import java.util.Set;
 
 @Tag(name = "系统配置", description = "自动推送开关、企业微信 Webhook 配置")
 @RestController
@@ -24,6 +26,7 @@ public class ConfigController {
 
     private final SystemConfigService configService;
     private final NotifyService notifyService;
+    private final FreshdeskApiClient freshdeskApiClient;
 
     @Operation(summary = "获取自动推送配置", description = "获取审核通过后是否自动推送回复到 Freshdesk 的开关状态")
     @GetMapping("/auto-reply")
@@ -217,6 +220,72 @@ public class ConfigController {
         }
         configService.setNotifyLanguage(lang);
         return ResponseEntity.ok(ApiResponse.ok("通知语言设置已更新", null));
+    }
+
+    // ============ Freshdesk 连接配置 API ============
+
+    @Operation(summary = "获取 Freshdesk 连接配置", description = "获取 Freshdesk 域名和 API Key（API Key 脱敏返回）")
+    @GetMapping("/freshdesk")
+    @RequiresPermission("config:read")
+    public ResponseEntity<ApiResponse<Map<String, Object>>> getFreshdeskConfig() {
+        String domain = configService.getFreshdeskDomain();
+        String apiKey = configService.getFreshdeskApiKey();
+        boolean configured = configService.isFreshdeskConfigured();
+
+        // API Key 脱敏：只显示前4位和后4位
+        String maskedApiKey = "";
+        if (apiKey != null && !apiKey.isBlank()) {
+            if (apiKey.length() > 8) {
+                maskedApiKey = apiKey.substring(0, 4) + "****" + apiKey.substring(apiKey.length() - 4);
+            } else {
+                maskedApiKey = "****";
+            }
+        }
+
+        Map<String, Object> config = new java.util.HashMap<>();
+        config.put("domain", domain != null ? domain : "");
+        config.put("apiKey", maskedApiKey);
+        config.put("configured", configured);
+        return ResponseEntity.ok(ApiResponse.ok(config));
+    }
+
+    @Operation(summary = "设置 Freshdesk 连接配置", description = "设置 Freshdesk 域名和 API Key")
+    @PutMapping("/freshdesk")
+    @RequiresPermission("config:manage")
+    public ResponseEntity<ApiResponse<Void>> setFreshdeskConfig(@RequestBody Map<String, String> body) {
+        if (body.containsKey("domain")) {
+            configService.setFreshdeskDomain(body.get("domain"));
+        }
+        if (body.containsKey("apiKey")) {
+            String apiKey = body.get("apiKey");
+            // 如果前端传回的是脱敏值（包含 ****），则不更新 API Key
+            if (apiKey != null && !apiKey.contains("****")) {
+                configService.setFreshdeskApiKey(apiKey);
+            }
+        }
+        return ResponseEntity.ok(ApiResponse.ok("Freshdesk 配置已更新", null));
+    }
+
+    @Operation(summary = "测试 Freshdesk 连接", description = "使用当前配置测试 Freshdesk API 连接是否正常")
+    @PostMapping("/freshdesk/test")
+    @RequiresPermission("config:manage")
+    public ResponseEntity<ApiResponse<Map<String, Object>>> testFreshdeskConnection() {
+        Map<String, Object> result = new java.util.HashMap<>();
+        try {
+            if (!configService.isFreshdeskConfigured()) {
+                result.put("success", false);
+                result.put("error", "Freshdesk 未配置，请先填写域名和 API Key");
+                return ResponseEntity.ok(ApiResponse.ok(result));
+            }
+            // 尝试获取工单列表来验证连接
+            freshdeskApiClient.fetchAllTickets(null, Set.of(2));
+            result.put("success", true);
+            result.put("message", "Freshdesk 连接成功");
+        } catch (Exception e) {
+            result.put("success", false);
+            result.put("error", "连接失败: " + e.getMessage());
+        }
+        return ResponseEntity.ok(ApiResponse.ok(result));
     }
 
 }
