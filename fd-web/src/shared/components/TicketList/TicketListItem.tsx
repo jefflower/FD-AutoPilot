@@ -148,7 +148,7 @@ const TicketListItem: React.FC<TicketListItemProps> = ({
       {/* Row 2: Title */}
       <div className="mt-1">
         <p className="text-[11px] text-slate-300 truncate font-medium group-hover:text-white transition-colors">
-          {title}
+          {title || <span className="text-slate-500 italic">(No Subject)</span>}
         </p>
       </div>
 
