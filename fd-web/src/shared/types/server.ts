@@ -113,7 +113,10 @@ export type TicketStatus =
   | 'PENDING_AUDIT'
   | 'AUDITING'
   | 'APPROVED'
+  | 'MANUAL_REQUIRED'
   | 'COMPLETED';
+
+export type TicketCategory = 'PRODUCT_FAULT' | 'LOGISTICS_INQUIRY' | 'BUSINESS_COOPERATION' | 'COMPLETED' | 'OTHER';
 
 export interface ServerTicket {
   id: number;
@@ -132,6 +135,8 @@ export interface ServerTicket {
   fdStatus?: number;
   /** Freshdesk 原始工单优先级 */
   fdPriority?: number;
+  /** AI 分类类别 */
+  ticketCategory?: string;
   /** 列表 DTO 返回的翻译标题（轻量，仅列表查询时存在） */
   translatedTitle?: string;
   translation?: TicketTranslation;

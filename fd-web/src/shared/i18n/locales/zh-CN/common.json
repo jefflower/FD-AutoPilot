@@ -45,7 +45,8 @@
     "agentAutomation": "Agent 面板",
     "auditCenter": "审核",
     "agentExecution": "Agent 执行",
-    "aiDashboard": "AI 工作台"
+    "aiDashboard": "AI 工作台",
+    "manualRequired": "人工处理"
   },
   "ticketStatus": {
     "PENDING_TRANS": "待翻译",
@@ -56,6 +57,7 @@
     "PENDING_AUDIT": "待审核",
     "AUDITING": "审核中",
     "APPROVED": "待推送",
+    "MANUAL_REQUIRED": "需人工处理",
     "COMPLETED": "已完成"
   },
   "userStatus": {

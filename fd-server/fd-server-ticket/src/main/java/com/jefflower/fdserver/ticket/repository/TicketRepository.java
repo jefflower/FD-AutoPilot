@@ -42,7 +42,9 @@ public interface TicketRepository extends JpaRepository<Ticket, Long> {
                         "(CAST(:subject AS string) IS NULL OR t.subject LIKE %:subject%) AND " +
                         "(CAST(:isValid AS boolean) IS NULL OR t.isValid = :isValid) AND " +
                         "(CAST(:createdAfter AS timestamp) IS NULL OR t.createdAt >= :createdAfter) AND " +
-                        "(CAST(:createdBefore AS timestamp) IS NULL OR t.createdAt <= :createdBefore)")
+                        "(CAST(:createdBefore AS timestamp) IS NULL OR t.createdAt <= :createdBefore) AND " +
+                        "(CAST(:fdStatus AS integer) IS NULL OR t.fdStatus = :fdStatus) AND " +
+                        "(CAST(:ticketCategory AS string) IS NULL OR t.ticketCategory = :ticketCategory)")
         Page<Ticket> findByFilters(
                         @Param("status") TicketStatus status,
                         @Param("externalId") String externalId,
@@ -50,6 +52,8 @@ public interface TicketRepository extends JpaRepository<Ticket, Long> {
                         @Param("isValid") Boolean isValid,
                         @Param("createdAfter") LocalDateTime createdAfter,
                         @Param("createdBefore") LocalDateTime createdBefore,
+                        @Param("fdStatus") Integer fdStatus,
+                        @Param("ticketCategory") String ticketCategory,
                         Pageable pageable);
 
         /**
@@ -68,14 +72,17 @@ public interface TicketRepository extends JpaRepository<Ticket, Long> {
                         "(SELECT tr.translatedTitle FROM TicketTranslation tr WHERE tr.ticket.id = t.id AND tr.id = " +
                         "(SELECT MAX(tr2.id) FROM TicketTranslation tr2 WHERE tr2.ticket.id = t.id)), " +
                         "t.origin, " +
-                        "t.fdStatus, t.fdPriority, t.fdRequesterId, t.fdResponderId, t.fdTags, t.fdCreatedAt, t.fdUpdatedAt) " +
+                        "t.fdStatus, t.fdPriority, t.fdRequesterId, t.fdResponderId, t.fdTags, t.fdCreatedAt, t.fdUpdatedAt, " +
+                        "t.ticketCategory) " +
                         "FROM Ticket t WHERE " +
                         "(CAST(:status AS string) IS NULL OR t.status = :status) AND " +
                         "(CAST(:externalId AS string) IS NULL OR t.externalId = :externalId) AND " +
                         "(CAST(:subject AS string) IS NULL OR t.subject LIKE %:subject%) AND " +
                         "(CAST(:isValid AS boolean) IS NULL OR t.isValid = :isValid) AND " +
                         "(CAST(:createdAfter AS timestamp) IS NULL OR t.createdAt >= :createdAfter) AND " +
-                        "(CAST(:createdBefore AS timestamp) IS NULL OR t.createdAt <= :createdBefore)")
+                        "(CAST(:createdBefore AS timestamp) IS NULL OR t.createdAt <= :createdBefore) AND " +
+                        "(CAST(:fdStatus AS integer) IS NULL OR t.fdStatus = :fdStatus) AND " +
+                        "(CAST(:ticketCategory AS string) IS NULL OR t.ticketCategory = :ticketCategory)")
         Page<TicketListDTO> findByFiltersAsDTO(
                         @Param("status") TicketStatus status,
                         @Param("externalId") String externalId,
@@ -83,6 +90,8 @@ public interface TicketRepository extends JpaRepository<Ticket, Long> {
                         @Param("isValid") Boolean isValid,
                         @Param("createdAfter") LocalDateTime createdAfter,
                         @Param("createdBefore") LocalDateTime createdBefore,
+                        @Param("fdStatus") Integer fdStatus,
+                        @Param("ticketCategory") String ticketCategory,
                         Pageable pageable);
 
         @Modifying

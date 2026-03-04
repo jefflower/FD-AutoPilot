@@ -65,4 +65,7 @@ public class TicketListDTO {
 
     @Schema(description = "Freshdesk 更新时间")
     private LocalDateTime fdUpdatedAt;
+
+    @Schema(description = "AI 分类类别")
+    private String ticketCategory;
 }

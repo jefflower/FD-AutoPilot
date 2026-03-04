@@ -81,6 +81,7 @@ public class TicketService {
             int size) {
         return ticketRepository.findByFilters(
                 status, externalId, subject, isValid, createdAfter, createdBefore,
+                null, null,
                 PageRequest.of(page, size, Sort.by(Sort.Order.desc("updatedAt"))));
     }
 
@@ -100,7 +101,8 @@ public class TicketService {
             Sort sort) {
         Pageable pageable = PageRequest.of(page, size, sort != null ? sort : Sort.by(Sort.Order.desc("updatedAt")));
         return ticketRepository.findByFiltersAsDTO(
-                status, externalId, subject, isValid, createdAfter, createdBefore, pageable);
+                status, externalId, subject, isValid, createdAfter, createdBefore,
+                null, null, pageable);
     }
 
     /**

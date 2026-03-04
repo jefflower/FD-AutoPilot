@@ -65,7 +65,8 @@ public class N8nTicketController {
         String translatedTitle = body.getOrDefault("translatedTitle", "");
         String translatedContent = body.getOrDefault("translatedContent", "");
         String targetLang = body.getOrDefault("targetLang", "zh-CN");
-        Map<String, Object> result = n8nTicketService.saveTranslationResult(id, translatedTitle, translatedContent, targetLang);
+        String ticketCategory = body.get("ticketCategory");
+        Map<String, Object> result = n8nTicketService.saveTranslationResult(id, translatedTitle, translatedContent, targetLang, ticketCategory);
         return ResponseEntity.ok(ApiResponse.ok("翻译结果已保存", result));
     }
 
@@ -90,6 +91,39 @@ public class N8nTicketController {
             @PathVariable Long id) {
         Map<String, Object> result = n8nTicketService.notifyPendingAudit(id);
         return ResponseEntity.ok(ApiResponse.ok("审核通知已发送", result));
+    }
+
+    // ========== 人工处理 ==========
+
+    @Operation(summary = "标记为人工处理", description = "将工单标记为需人工处理状态")
+    @PostMapping("/{id}/mark-manual")
+    @RequiresPermission("ticket:translate")
+    public ResponseEntity<ApiResponse<Map<String, Object>>> markManualRequired(
+            @PathVariable Long id,
+            @RequestBody(required = false) Map<String, String> body) {
+        String reason = body != null ? body.get("reason") : null;
+        Map<String, Object> result = n8nTicketService.markManualRequired(id, reason);
+        return ResponseEntity.ok(ApiResponse.ok("已标记为人工处理", result));
+    }
+
+    @Operation(summary = "获取待人工处理工单", description = "查询所有 MANUAL_REQUIRED 状态的工单")
+    @GetMapping("/manual-required")
+    @RequiresPermission("ticket:read")
+    public ResponseEntity<ApiResponse<List<Ticket>>> getManualRequiredTickets(
+            @RequestParam(value = "limit", defaultValue = "50") int limit) {
+        List<Ticket> tickets = n8nTicketService.findManualRequiredTickets(limit);
+        return ResponseEntity.ok(ApiResponse.ok(tickets));
+    }
+
+    @Operation(summary = "人工处理完成", description = "人工处理后继续处理或直接完结")
+    @PostMapping("/{id}/resolve-manual")
+    @RequiresPermission("ticket:translate")
+    public ResponseEntity<ApiResponse<Map<String, Object>>> resolveManualTicket(
+            @PathVariable Long id,
+            @RequestBody Map<String, String> body) {
+        String action = body.getOrDefault("action", "");
+        Map<String, Object> result = n8nTicketService.resolveManualTicket(id, action);
+        return ResponseEntity.ok(ApiResponse.ok("人工处理完成", result));
     }
 
     // ========== 调试 ==========

@@ -2,7 +2,7 @@ import {
   Server, Send, ClipboardCheck,
   Users, Shield, RefreshCw, FileText, Database, BookOpen,
   LayoutDashboard, ListChecks, History, Settings, User, Bot,
-  Building2, GitBranch, Boxes, Cpu, Activity, Sparkles,
+  Building2, GitBranch, Boxes, Cpu, Activity, Sparkles, AlertTriangle,
   type LucideIcon,
 } from 'lucide-react';
 import type { TabType } from '../types/navigation';
@@ -100,6 +100,7 @@ export const navigationModules: NavModule[] = [
       { tab: 'workflow-capabilities', labelKey: 'nav.workflowCapabilities', icon: Cpu },
       { tab: 'workflow-agents', labelKey: 'nav.workflowAgents', icon: Bot },
       { tab: 'workflow-ai', labelKey: 'nav.workflowAi', icon: Sparkles },
+      { tab: 'manual-required', labelKey: 'nav.manualRequired', icon: AlertTriangle },
       { tab: 'workflow-n8n', labelKey: 'nav.workflowN8n', icon: Boxes },
     ],
   },

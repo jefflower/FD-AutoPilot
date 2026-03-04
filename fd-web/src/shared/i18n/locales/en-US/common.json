@@ -45,7 +45,8 @@
     "agentAutomation": "Agent Panel",
     "auditCenter": "Audit",
     "agentExecution": "Agent Runs",
-    "aiDashboard": "AI Dashboard"
+    "aiDashboard": "AI Dashboard",
+    "manualRequired": "Manual"
   },
   "ticketStatus": {
     "PENDING_TRANS": "Pending Translation",
@@ -56,6 +57,7 @@
     "PENDING_AUDIT": "Pending Audit",
     "AUDITING": "Auditing",
     "APPROVED": "Approved",
+    "MANUAL_REQUIRED": "Manual Required",
     "COMPLETED": "Completed"
   },
   "userStatus": {

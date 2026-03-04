@@ -23,12 +23,13 @@ export const TICKET_STATUS_COLORS: Record<string, string> = {
   PENDING_AUDIT: 'bg-pink-500/20 text-pink-500',
   AUDITING: 'bg-purple-500/20 text-purple-500',
   APPROVED: 'bg-emerald-500/20 text-emerald-500',
+  MANUAL_REQUIRED: 'bg-red-500/20 text-red-500',
   COMPLETED: 'bg-green-500/20 text-green-500',
 };
 
 const TICKET_STATUSES = [
   'PENDING_TRANS', 'TRANSLATING', 'PENDING_REPLY', 'REPLYING',
-  'PROCESSING', 'PENDING_AUDIT', 'AUDITING', 'APPROVED', 'COMPLETED',
+  'PROCESSING', 'PENDING_AUDIT', 'AUDITING', 'APPROVED', 'MANUAL_REQUIRED', 'COMPLETED',
 ] as const;
 
 // ============ Freshdesk 工单状态映射 ============
@@ -61,6 +62,32 @@ export function getFdStatusLabel(fdStatus: number): string {
 /** 获取 Freshdesk 状态对应的颜色样式 */
 export function getFdStatusColor(fdStatus: number): string {
   return FD_STATUS_COLORS[fdStatus] || 'bg-slate-500/20 text-slate-400 ring-slate-500/30';
+}
+
+// ============ 工单分类映射 ============
+
+export const TICKET_CATEGORY_LABELS: Record<string, string> = {
+  PRODUCT_FAULT: '产品故障',
+  LOGISTICS_INQUIRY: '物流查询',
+  BUSINESS_COOPERATION: '商务合作',
+  COMPLETED: '处理完成',
+  OTHER: '其他',
+};
+
+export const TICKET_CATEGORY_COLORS: Record<string, string> = {
+  PRODUCT_FAULT: 'bg-red-500/20 text-red-400 ring-red-500/30',
+  LOGISTICS_INQUIRY: 'bg-blue-500/20 text-blue-400 ring-blue-500/30',
+  BUSINESS_COOPERATION: 'bg-amber-500/20 text-amber-400 ring-amber-500/30',
+  COMPLETED: 'bg-green-500/20 text-green-400 ring-green-500/30',
+  OTHER: 'bg-slate-500/20 text-slate-400 ring-slate-500/30',
+};
+
+export function getTicketCategoryLabel(category: string): string {
+  return TICKET_CATEGORY_LABELS[category] || category;
+}
+
+export function getTicketCategoryColor(category: string): string {
+  return TICKET_CATEGORY_COLORS[category] || 'bg-slate-500/20 text-slate-400 ring-slate-500/30';
 }
 
 export function getTicketStatusOptions(t: AnyTFunction) {

@@ -125,7 +125,7 @@ class TicketServiceTest {
         @DisplayName("委托到 repository.findByFilters 并返回分页结果")
         void delegatesToRepository() {
             Page<Ticket> page = new PageImpl<>(List.of(sampleTicket));
-            when(ticketRepository.findByFilters(any(), any(), any(), any(), any(), any(), any(Pageable.class)))
+            when(ticketRepository.findByFilters(any(), any(), any(), any(), any(), any(), any(), any(), any(Pageable.class)))
                     .thenReturn(page);
 
             Page<Ticket> result = ticketService.queryTickets(

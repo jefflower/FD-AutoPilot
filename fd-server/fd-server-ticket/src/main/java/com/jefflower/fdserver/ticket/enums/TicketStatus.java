@@ -9,6 +9,7 @@ public enum TicketStatus {
     PENDING_AUDIT,    // 待审核
     AUDITING,         // 审核中
     APPROVED,         // 待推送
+    MANUAL_REQUIRED,  // 需人工处理
     COMPLETED;        // 已完成
 
     /**

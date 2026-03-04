@@ -33,6 +33,7 @@ const WorkflowAgentsTab = lazy(() => import("./modules/workflow/pages/WorkflowAg
 const WorkflowAiTab = lazy(() => import("./modules/workflow/pages/WorkflowAiTab"));
 const WorkflowN8nTab = lazy(() => import("./modules/workflow/pages/WorkflowN8nTab"));
 const AiDashboardTab = lazy(() => import("./modules/workflow/pages/AiDashboardTab"));
+const ManualRequiredTab = lazy(() => import("./modules/workflow/pages/ManualRequiredTab"));
 const AgentAutomationTab = lazy(() => import("./modules/ticket/pages/AgentAutomationTab"));
 const AuditCenterTab = lazy(() => import("./modules/ticket/pages/AuditCenterTab"));
 const KnowledgeBasePage = lazy(() => import("./modules/knowledge/pages/KnowledgeBasePage"));
@@ -177,6 +178,10 @@ const TAB_COMPONENTS: Partial<Record<TabType, TabRoute>> = {
     },
     'ai-dashboard': {
         component: AiDashboardTab,
+        requireAdmin: true,
+    },
+    'manual-required': {
+        component: ManualRequiredTab,
         requireAdmin: true,
     },
     // workflow-n8n: keep-alive 模式，不在此表中，始终挂载在 DOM 中（见下方渲染逻辑）

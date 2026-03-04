@@ -68,11 +68,13 @@ public class AiDataInitializer implements CommandLineRunner {
         backfillRequiredCapability();
 
         // 4. 清理已移除的内置 Agent
-        cleanupRemovedBuiltInAgents(Set.of("ticket-translate", "ticket-reply", "n8n-workflow-designer"));
+        cleanupRemovedBuiltInAgents(Set.of("ticket-translate", "ticket-reply", "n8n-workflow-designer", "logistics-reply", "completion-reply"));
 
         // 5. 初始化默认能力绑定
         ensureDefaultBinding("ticket-translate", "ticket-translate");
         ensureDefaultBinding("ticket-reply", "ticket-reply");
+        ensureDefaultBinding("logistics-reply", "logistics-reply");
+        ensureDefaultBinding("completion-reply", "completion-reply");
     }
 
     /**
@@ -130,16 +132,11 @@ public class AiDataInitializer implements CommandLineRunner {
             int sortOrder, boolean enabled, String configSchema) {
         var existing = capabilityDefinitionRepository.findByCode(code);
         if (existing.isPresent()) {
-            // 回填 configSchema（已存在记录的同步）
+            // 生产数据保护：已存在的 Capability 不再强制更新 configSchema，仅打印差异提示
             CapabilityDefinition cap = existing.get();
-            boolean updated = false;
             if (configSchema != null && !configSchema.equals(cap.getConfigSchema())) {
-                cap.setConfigSchema(configSchema);
-                updated = true;
-            }
-            if (updated) {
-                capabilityDefinitionRepository.save(cap);
-                log.info("[AiDataInitializer] Updated configSchema for capability: {}", code);
+                log.warn("[AiDataInitializer] Capability '{}' configSchema differs from code definition (DB value preserved). "
+                        + "Code: {}, DB: {}", code, configSchema, cap.getConfigSchema());
             }
             return;
         }
@@ -174,13 +171,20 @@ public class AiDataInitializer implements CommandLineRunner {
                 null,
                 null,
                 null,
-                "You are a professional customer service translator.\n\n"
-                        + "Translate the following JSON into Simplified Chinese (中文).\n\n"
+                "You are a professional customer service translator and classifier.\n\n"
+                        + "Task: Translate the following ticket JSON into Simplified Chinese (中文), and classify the ticket into one of 5 categories.\n\n"
+                        + "CATEGORIES:\n"
+                        + "- PRODUCT_FAULT: Product quality issues, usage problems, returns/exchanges\n"
+                        + "- LOGISTICS_INQUIRY: Shipping status, delivery time, tracking inquiries\n"
+                        + "- BUSINESS_COOPERATION: Agency cooperation, bulk purchasing, business partnership\n"
+                        + "- COMPLETED: Customer confirms issue resolved, expresses thanks\n"
+                        + "- OTHER: Cannot be categorized into above\n\n"
                         + "STRICT OUTPUT FORMAT:\n"
                         + "- Output ONLY a raw JSON object. Start with { and end with }.\n"
                         + "- Do NOT wrap in markdown code fences (```).\n"
                         + "- Do NOT add any text before or after the JSON.\n"
-                        + "- Keep the JSON structure identical, only translate text values.\n\n"
+                        + "- Keep the JSON structure identical, only translate text values.\n"
+                        + "- ADD a \"category\" field at the top level with one of: PRODUCT_FAULT, LOGISTICS_INQUIRY, BUSINESS_COOPERATION, COMPLETED, OTHER\n\n"
                         + "Ticket JSON:\n${TICKET_CONTENT}",
                 0,
                 TRANSLATE_INPUT_SCHEMA,
@@ -271,6 +275,66 @@ public class AiDataInitializer implements CommandLineRunner {
                 null,
                 DEFAULT_TEMPLATE_ENGINE,
                 "claude-cli");
+
+        // === 物流查询回复 Agent ===
+        ensureBuiltInAgent(
+                "logistics-reply",
+                "物流查询回复",
+                "针对物流查询类工单生成专业回复",
+                null, null,
+                "logistics-reply",
+                "ticket",
+                null, null,
+                null,  // agentConfig（notebookId 需要后续在管理后台配置）
+                "根据下面的物流查询工单内容，使用用户工单的语言做出回复及回复的中文翻译。\n\n"
+                        + "回复要点：\n"
+                        + "- 确认收到物流查询请求\n"
+                        + "- 提供可能的物流进度说明\n"
+                        + "- 告知预计处理时间\n"
+                        + "- 语气专业友好\n\n"
+                        + "严格输出要求：\n"
+                        + "- 直接输出纯 JSON 数组，第一个元素为原文回复，第二个元素为中文翻译\n"
+                        + "- 回复内容要精简专业\n"
+                        + "- 禁止使用 markdown 代码块（```）包裹\n"
+                        + "- 禁止在 JSON 前后添加任何文字说明\n"
+                        + "- 输出必须以 [ 开头，以 ] 结尾\n\n"
+                        + "正确示例：[\"Hello, thanks for contacting us.\",\"你好，感谢联系我们。\"]\n\n"
+                        + "工单内容：\n${TICKET_CONTENT}",
+                2,
+                REPLY_INPUT_SCHEMA,
+                REPLY_OUTPUT_SCHEMA,
+                DEFAULT_TEMPLATE_ENGINE,
+                "notebooklm-py");
+
+        // === 处理完成回复 Agent ===
+        ensureBuiltInAgent(
+                "completion-reply",
+                "处理完成回复",
+                "针对已解决/客户致谢类工单生成确认回复",
+                null, null,
+                "completion-reply",
+                "ticket",
+                null, null,
+                null,  // agentConfig（notebookId 需要后续在管理后台配置）
+                "根据下面的工单内容，客户已确认问题解决或表示感谢。使用用户工单的语言做出礼貌的确认回复及中文翻译。\n\n"
+                        + "回复要点：\n"
+                        + "- 感谢客户的反馈\n"
+                        + "- 确认问题已圆满解决\n"
+                        + "- 欢迎后续联系\n"
+                        + "- 语气温暖亲切\n\n"
+                        + "严格输出要求：\n"
+                        + "- 直接输出纯 JSON 数组，第一个元素为原文回复，第二个元素为中文翻译\n"
+                        + "- 回复内容要精简专业\n"
+                        + "- 禁止使用 markdown 代码块（```）包裹\n"
+                        + "- 禁止在 JSON 前后添加任何文字说明\n"
+                        + "- 输出必须以 [ 开头，以 ] 结尾\n\n"
+                        + "正确示例：[\"Thank you for your feedback!\",\"感谢您的反馈！\"]\n\n"
+                        + "工单内容：\n${TICKET_CONTENT}",
+                3,
+                REPLY_INPUT_SCHEMA,
+                REPLY_OUTPUT_SCHEMA,
+                DEFAULT_TEMPLATE_ENGINE,
+                "notebooklm-py");
     }
 
     /**
@@ -362,39 +426,33 @@ public class AiDataInitializer implements CommandLineRunner {
             String templateEngine, String requiredCapability) {
         var existing = repository.findByCode(code);
         if (existing.isPresent()) {
-            // Backfill fields for existing agents if null
+            // 生产数据保护：已存在的 Agent 不再强制同步 systemPrompt/inputSchema/outputSchema/agentConfig
+            // 仅打印差异 WARN 日志，数据库值保留不变
             AgentDefinition def = existing.get();
             boolean updated = false;
 
-            // 内置 Agent 的 inputSchema 始终同步（修复 Schema 不一致时需重启生效）
+            // inputSchema 差异检测（不覆盖）
             if (inputSchema != null && !inputSchema.equals(def.getInputSchema())) {
-                def.setInputSchema(inputSchema);
-                updated = true;
-                log.info("[AiDataInitializer] Updated inputSchema for agent: {}", code);
+                log.warn("[AiDataInitializer] Agent '{}' inputSchema differs from code definition (DB value preserved)", code);
             }
-            // 内置 Agent 的 outputSchema 始终同步（修复 Schema 不一致时需重启生效）
+            // outputSchema 差异检测（不覆盖）
             if (outputSchema != null && !outputSchema.equals(def.getOutputSchema())) {
-                def.setOutputSchema(outputSchema);
-                updated = true;
-                log.info("[AiDataInitializer] Updated outputSchema for agent: {}", code);
+                log.warn("[AiDataInitializer] Agent '{}' outputSchema differs from code definition (DB value preserved)", code);
             }
+            // agentConfig 差异检测（不覆盖）
+            if (agentConfig == null ? def.getAgentConfig() != null : !agentConfig.equals(def.getAgentConfig())) {
+                log.warn("[AiDataInitializer] Agent '{}' agentConfig differs from code definition (DB value preserved). "
+                        + "Code: {}, DB: {}", code, agentConfig, def.getAgentConfig());
+            }
+            // systemPrompt 差异检测（不覆盖）
+            if (systemPrompt != null && !systemPrompt.equals(def.getSystemPrompt())) {
+                log.warn("[AiDataInitializer] Agent '{}' systemPrompt differs from code definition (DB value preserved)", code);
+            }
+
+            // 回填 groupCode（仅旧值为 null 时）
             if (def.getGroupCode() == null && groupCode != null) {
                 def.setGroupCode(groupCode);
                 updated = true;
-            }
-
-            // 内置 Agent 始终强制同步 agentConfig（覆盖旧格式，包括清空为 null）
-            if (agentConfig == null ? def.getAgentConfig() != null : !agentConfig.equals(def.getAgentConfig())) {
-                def.setAgentConfig(agentConfig);
-                updated = true;
-                log.info("[AiDataInitializer] Synced agentConfig for agent: {}", code);
-            }
-
-            // 内置 Agent 始终同步 systemPrompt
-            if (systemPrompt != null && !systemPrompt.equals(def.getSystemPrompt())) {
-                def.setSystemPrompt(systemPrompt);
-                updated = true;
-                log.info("[AiDataInitializer] Synced systemPrompt for agent: {}", code);
             }
 
             // 清空已废弃的 callMode、callUrl、templateEngine、executionEnv、providerType

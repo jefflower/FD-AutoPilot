@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { TICKET_STATUS_COLORS, getTicketStatusLabel, getFdStatusLabel, getFdStatusColor } from '../../utils/statusLabels';
+import { TICKET_STATUS_COLORS, getTicketStatusLabel, getFdStatusLabel, getFdStatusColor, getTicketCategoryLabel, getTicketCategoryColor } from '../../utils/statusLabels';
 import type { TicketListItemProps } from './types';
 
 /** Resolve the display title based on titleMode */
@@ -112,6 +112,15 @@ const TicketListItem: React.FC<TicketListItemProps> = ({
           <div className="opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0 flex items-center gap-1">
             {renderActions(ticket)}
           </div>
+        )}
+
+        {/* 工单分类 badge（仅在有 ticketCategory 时显示） */}
+        {ticket.ticketCategory && (
+          <span
+            className={`inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium ring-1 ring-inset ${getTicketCategoryColor(ticket.ticketCategory)}`}
+          >
+            {getTicketCategoryLabel(ticket.ticketCategory)}
+          </span>
         )}
 
         {/* Freshdesk 状态 badge（仅在有 fdStatus 时显示） */}

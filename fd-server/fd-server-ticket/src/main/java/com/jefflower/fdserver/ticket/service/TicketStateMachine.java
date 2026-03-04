@@ -47,7 +47,8 @@ public class TicketStateMachine {
             )),
             Map.entry(TicketStatus.TRANSLATING, Set.of(
                     TicketStatus.PENDING_REPLY,      // 翻译完成，等待回复
-                    TicketStatus.PENDING_AUDIT       // 翻译完成，直接进入审核（跳过回复）
+                    TicketStatus.PENDING_AUDIT,      // 翻译完成，直接进入审核（跳过回复）
+                    TicketStatus.MANUAL_REQUIRED     // 分类为商务合作/其他时标记人工处理
             )),
             Map.entry(TicketStatus.PENDING_REPLY, Set.of(
                     TicketStatus.REPLYING            // 回复 Agent 开始执行
@@ -77,6 +78,10 @@ public class TicketStateMachine {
                     TicketStatus.COMPLETED,          // 手动推送到 Freshdesk
                     TicketStatus.PENDING_TRANS       // 同步发现内容变化，重新触发
             )),
+            Map.entry(TicketStatus.MANUAL_REQUIRED, Set.of(
+                    TicketStatus.PENDING_REPLY,      // 人工介入后继续处理
+                    TicketStatus.COMPLETED           // 人工直接完结
+            )),
             Map.entry(TicketStatus.COMPLETED, Set.of(
                     TicketStatus.PENDING_TRANS       // 同步发现内容变化，重新触发
             ))
@@ -89,7 +94,8 @@ public class TicketStateMachine {
             TicketStatus.PROCESSING, Set.of(TicketStatus.PENDING_TRANS),
             TicketStatus.TRANSLATING, Set.of(TicketStatus.PENDING_TRANS),
             TicketStatus.PENDING_REPLY, Set.of(TicketStatus.PENDING_TRANS),
-            TicketStatus.REPLYING, Set.of(TicketStatus.PENDING_TRANS)
+            TicketStatus.REPLYING, Set.of(TicketStatus.PENDING_TRANS),
+            TicketStatus.MANUAL_REQUIRED, Set.of(TicketStatus.PENDING_TRANS)
     );
 
     public boolean isValidTransition(TicketStatus from, TicketStatus to) {

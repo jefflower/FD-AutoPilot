@@ -1,0 +1,620 @@
+{
+  "name": "FD-AutoPilot 工单自动处理（生产版）",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 15
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger",
+      "name": "定时触发（每15分钟）",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [0, 300]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "fd-new-tickets",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook 触发（实时）",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [0, 0],
+      "webhookId": "fd-new-tickets"
+    },
+    {
+      "parameters": {
+        "content": "## 工单自动处理工作流（生产版）\n\n### 流程\n1. 登录获取 JWT\n2. 获取待翻译工单（fdStatus=2 Open）\n3. 循环逐个处理每个工单：\n   - 调用翻译 Agent（含 AI 分类）→ 保存翻译结果\n   - 按分类路由：\n     - 产品故障 → ticket-reply Agent\n     - 物流查询 → logistics-reply Agent\n     - 处理完成 → completion-reply Agent\n     - 商务合作/其他 → 标记人工处理\n   - 回复分支 → 保存回复 → 推送审核通知\n4. 循环结束 → 汇总结果\n\n### API 地址\n生产环境: http://47.110.152.25:9988",
+        "height": 360,
+        "width": 380
+      },
+      "id": "sticky-note",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [-460, -140]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://47.110.152.25:9988/api/v1/auth/login",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"username\": \"n8n-service\",\n  \"password\": \"n8n-service\"\n}",
+        "options": {}
+      },
+      "id": "login",
+      "name": "登录获取 JWT",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [300, 150]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "http://47.110.152.25:9988/api/v1/n8n/tickets/pending",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $json.data.accessToken }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "fetch-pending",
+      "name": "获取待处理工单",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [550, 150]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "data",
+        "options": {}
+      },
+      "id": "split-tickets",
+      "name": "展开工单数组",
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [780, 150]
+    },
+    {
+      "parameters": {
+        "batchSize": 1,
+        "options": {}
+      },
+      "id": "loop-tickets",
+      "name": "逐个处理工单",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 2,
+      "position": [1020, 150]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://47.110.152.25:9988/api/v1/n8n/agents/ticket-translate/execute",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('登录获取 JWT').item.json.data.accessToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ input: { prompt: 'You are a professional customer support translator and classifier. Translate the following support ticket into Simplified Chinese (zh-CN), and classify it into one of 5 categories.\\n\\nCATEGORIES:\\n- PRODUCT_FAULT: Product quality issues, usage problems, returns/exchanges\\n- LOGISTICS_INQUIRY: Shipping status, delivery time, tracking inquiries\\n- BUSINESS_COOPERATION: Agency cooperation, bulk purchasing, business partnership\\n- COMPLETED: Customer confirms issue resolved, expresses thanks\\n- OTHER: Cannot be categorized into above\\n\\nSTRICT OUTPUT FORMAT:\\n- Output ONLY a raw JSON object. Start your response with { and end with }.\\n- Do NOT wrap in markdown code fences (```). Do NOT add any text before or after the JSON.\\n\\nTRANSLATION RULES:\\n1. Translate \"subject\" and \"description\" fields into Simplified Chinese.\\n2. For each item in \"conversations\", translate the \"bodyText\" field. Keep \"id\" unchanged.\\n3. All translated text must be natural Simplified Chinese.\\n4. ADD a \"category\" field with one of: PRODUCT_FAULT, LOGISTICS_INQUIRY, BUSINESS_COOPERATION, COMPLETED, OTHER\\n\\nREQUIRED JSON STRUCTURE:\\n{\"category\":\"PRODUCT_FAULT\",\"subject\":\"翻译后的标题\",\"description\":\"翻译后的正文\",\"conversations\":[{\"id\":123,\"bodyText\":\"翻译后的消息\"}]}\\n\\n=== TICKET DATA ===\\nSubject: ' + ($json.subject || '') + '\\nContent (JSON):\\n' + ($json.content || ''), models: ['gemini-2.5-flash'] }, refType: 'ticket', refId: String($json.id), timeoutMs: 300000 }) }}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "call-translate",
+      "name": "调用翻译 Agent（含分类）",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1280, 150]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=http://47.110.152.25:9988/api/v1/n8n/tickets/{{ $('逐个处理工单').item.json.id }}/save-translation",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('登录获取 JWT').item.json.data.accessToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ (() => { let raw = ($json.data && $json.data.output) || ''; const fm = raw.match(/```(?:json)?\\s*([\\s\\S]*?)\\s*```/); if (fm) raw = fm[1]; raw = raw.trim(); let p = {}; try { p = JSON.parse(raw); } catch(e) {} const desc = p.description || ''; const convs = (p.conversations || []).map(c => ({ id: c.id, bodyText: c.bodyText || c.body_text || '' })); const category = p.category || 'OTHER'; return JSON.stringify({ translatedTitle: p.subject || '', translatedContent: JSON.stringify({ description: desc, conversations: convs }), targetLang: 'zh-CN', ticketCategory: category }); })() }}",
+        "options": {}
+      },
+      "id": "save-translation",
+      "name": "保存翻译结果（含分类）",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1560, 150]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "cat-field",
+              "name": "category",
+              "value": "={{ (() => { let raw = ($('调用翻译 Agent（含分类）').item.json.data && $('调用翻译 Agent（含分类）').item.json.data.output) || ''; const fm = raw.match(/```(?:json)?\\s*([\\s\\S]*?)\\s*```/); if (fm) raw = fm[1]; raw = raw.trim(); try { return JSON.parse(raw).category || 'OTHER'; } catch(e) { return 'OTHER'; } })() }}",
+              "type": "string"
+            },
+            {
+              "id": "tid-field",
+              "name": "ticketId",
+              "value": "={{ $('逐个处理工单').item.json.id }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "extract-category",
+      "name": "提取分类",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [1840, 150]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "rules": [
+            {
+              "value": "PRODUCT_FAULT",
+              "output": 0
+            },
+            {
+              "value": "LOGISTICS_INQUIRY",
+              "output": 1
+            },
+            {
+              "value": "COMPLETED",
+              "output": 2
+            }
+          ],
+          "fallbackOutput": 3
+        },
+        "dataType": "string",
+        "value1": "={{ $json.category }}"
+      },
+      "id": "switch-category",
+      "name": "分类路由",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [2100, 150]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://47.110.152.25:9988/api/v1/n8n/agents/ticket-reply/execute",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('登录获取 JWT').item.json.data.accessToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ input: { ticket: { id: $('逐个处理工单').item.json.id, subject: $('逐个处理工单').item.json.subject || '', content: $('逐个处理工单').item.json.content || '' }, lastAuditRemark: $('逐个处理工单').item.json.lastAuditRemark || '' }, refType: 'ticket', refId: String($('逐个处理工单').item.json.id), timeoutMs: 300000 }) }}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "call-product-reply",
+      "name": "产品故障回复 Agent",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2400, -100]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://47.110.152.25:9988/api/v1/n8n/agents/logistics-reply/execute",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('登录获取 JWT').item.json.data.accessToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ input: { ticket: { id: $('逐个处理工单').item.json.id, subject: $('逐个处理工单').item.json.subject || '', content: $('逐个处理工单').item.json.content || '' }, lastAuditRemark: $('逐个处理工单').item.json.lastAuditRemark || '' }, refType: 'ticket', refId: String($('逐个处理工单').item.json.id), timeoutMs: 300000 }) }}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "call-logistics-reply",
+      "name": "物流查询回复 Agent",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2400, 100]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://47.110.152.25:9988/api/v1/n8n/agents/completion-reply/execute",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('登录获取 JWT').item.json.data.accessToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ input: { ticket: { id: $('逐个处理工单').item.json.id, subject: $('逐个处理工单').item.json.subject || '', content: $('逐个处理工单').item.json.content || '' }, lastAuditRemark: $('逐个处理工单').item.json.lastAuditRemark || '' }, refType: 'ticket', refId: String($('逐个处理工单').item.json.id), timeoutMs: 300000 }) }}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "call-completion-reply",
+      "name": "处理完成回复 Agent",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2400, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=http://47.110.152.25:9988/api/v1/n8n/tickets/{{ $('逐个处理工单').item.json.id }}/mark-manual",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('登录获取 JWT').item.json.data.accessToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ reason: 'AI 分类为' + ($json.category === 'BUSINESS_COOPERATION' ? '商务合作' : '其他') + '，需人工处理' }) }}",
+        "options": {}
+      },
+      "id": "mark-manual",
+      "name": "标记人工处理",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2400, 500]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=http://47.110.152.25:9988/api/v1/n8n/tickets/{{ $('逐个处理工单').item.json.id }}/save-reply",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('登录获取 JWT').item.json.data.accessToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ (() => { let raw = ($json.data && $json.data.output) || ''; const fm = raw.match(/```(?:\\w+)?\\s*([\\s\\S]*?)\\s*```/); if (fm) raw = fm[1]; raw = raw.trim(); let targetReply = raw; let zhReply = raw; try { const arr = JSON.parse(raw); if (Array.isArray(arr)) { targetReply = arr[0] || ''; zhReply = arr[1] || arr[0] || ''; } else if (typeof arr === 'string') { targetReply = arr; zhReply = arr; } } catch(e) {} return JSON.stringify({ targetReply, zhReply }); })() }}",
+        "options": {}
+      },
+      "id": "save-reply",
+      "name": "保存回复结果",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2700, 100]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=http://47.110.152.25:9988/api/v1/n8n/tickets/{{ $('逐个处理工单').item.json.id }}/notify-audit",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('登录获取 JWT').item.json.data.accessToken }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "notify-audit",
+      "name": "推送审核通知",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2960, 100]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"success\": true,\n  \"message\": \"Webhook received\"\n}",
+        "options": {}
+      },
+      "id": "webhook-response",
+      "name": "Webhook 响应",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [300, 0]
+    },
+    {
+      "parameters": {
+        "values": {
+          "number": [
+            {
+              "name": "processedCount",
+              "value": "={{ $items().length }}"
+            }
+          ],
+          "string": [
+            {
+              "name": "summary",
+              "value": "=n8n 工单自动处理完成: 共处理 {{ $items().length }} 个工单"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "summary",
+      "name": "汇总结果",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [1020, 500]
+    }
+  ],
+  "connections": {
+    "定时触发（每15分钟）": {
+      "main": [
+        [
+          {
+            "node": "登录获取 JWT",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook 触发（实时）": {
+      "main": [
+        [
+          {
+            "node": "Webhook 响应",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "登录获取 JWT",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook 响应": {
+      "main": [
+        []
+      ]
+    },
+    "登录获取 JWT": {
+      "main": [
+        [
+          {
+            "node": "获取待处理工单",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "获取待处理工单": {
+      "main": [
+        [
+          {
+            "node": "展开工单数组",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "展开工单数组": {
+      "main": [
+        [
+          {
+            "node": "逐个处理工单",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "逐个处理工单": {
+      "main": [
+        [
+          {
+            "node": "调用翻译 Agent（含分类）",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "汇总结果",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "调用翻译 Agent（含分类）": {
+      "main": [
+        [
+          {
+            "node": "保存翻译结果（含分类）",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "保存翻译结果（含分类）": {
+      "main": [
+        [
+          {
+            "node": "提取分类",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "提取分类": {
+      "main": [
+        [
+          {
+            "node": "分类路由",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "分类路由": {
+      "main": [
+        [
+          {
+            "node": "产品故障回复 Agent",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "物流查询回复 Agent",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "处理完成回复 Agent",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "标记人工处理",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "产品故障回复 Agent": {
+      "main": [
+        [
+          {
+            "node": "保存回复结果",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "物流查询回复 Agent": {
+      "main": [
+        [
+          {
+            "node": "保存回复结果",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "处理完成回复 Agent": {
+      "main": [
+        [
+          {
+            "node": "保存回复结果",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "标记人工处理": {
+      "main": [
+        [
+          {
+            "node": "逐个处理工单",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "保存回复结果": {
+      "main": [
+        [
+          {
+            "node": "推送审核通知",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "推送审核通知": {
+      "main": [
+        [
+          {
+            "node": "逐个处理工单",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "tags": [
+    {
+      "name": "FD-AutoPilot"
+    },
+    {
+      "name": "production"
+    }
+  ]
+}

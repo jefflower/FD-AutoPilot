@@ -38,6 +38,7 @@ public class N8nTicketService {
     private final AuditTokenService auditTokenService;
     private final NotifyService notifyService;
     private final TicketStatusLogService statusLogService;
+    private final TicketStateMachine stateMachine;
 
     private static final int DEFAULT_LIMIT = 20;
     private static final int MAX_LIMIT = 100;
@@ -51,6 +52,7 @@ public class N8nTicketService {
         int effectiveLimit = Math.max(1, Math.min(limit, MAX_LIMIT));
         return ticketRepository.findByFilters(
                 TicketStatus.PENDING_TRANS, null, null, null, null, null,
+                2, null,  // fdStatus=2 (Freshdesk Open)
                 PageRequest.of(0, effectiveLimit, Sort.by(Sort.Order.asc("createdAt")))
         ).getContent();
     }
@@ -62,6 +64,7 @@ public class N8nTicketService {
         int effectiveLimit = Math.max(1, Math.min(limit, MAX_LIMIT));
         return ticketRepository.findByFilters(
                 TicketStatus.PROCESSING, null, null, null, null, null,
+                null, null,
                 PageRequest.of(0, effectiveLimit, Sort.by(Sort.Order.asc("updatedAt")))
         ).getContent();
     }
@@ -73,11 +76,12 @@ public class N8nTicketService {
      */
     @Transactional
     public Map<String, Object> saveTranslationResult(Long ticketId, String translatedTitle,
-                                                      String translatedContent, String targetLang) {
+                                                      String translatedContent, String targetLang,
+                                                      String ticketCategory) {
         Ticket ticket = getTicket(ticketId);
         String lang = targetLang != null ? targetLang : "zh-CN";
 
-        log.info("[N8nTicketService] 保存翻译结果 #{}, targetLang={}", ticketId, lang);
+        log.info("[N8nTicketService] 保存翻译结果 #{}, targetLang={}, category={}", ticketId, lang, ticketCategory);
 
         if (ticket.getStatus() != TicketStatus.PENDING_TRANS && ticket.getStatus() != TicketStatus.PROCESSING) {
             throw new BusinessException(ErrorCode.INVALID_STATUS_TRANSITION,
@@ -85,6 +89,11 @@ public class N8nTicketService {
         }
 
         TicketStatus beforeStatus = ticket.getStatus();
+
+        // 保存 AI 分类类别
+        if (ticketCategory != null) {
+            ticket.setTicketCategory(ticketCategory);
+        }
 
         // 删除旧翻译
         translationRepository.findByTicketAndTargetLang(ticket, lang)
@@ -112,6 +121,7 @@ public class N8nTicketService {
         Map<String, Object> response = new HashMap<>();
         response.put("ticketId", ticketId);
         response.put("translatedTitle", translatedTitle);
+        response.put("ticketCategory", ticketCategory);
         response.put("status", ticket.getStatus().name());
         return response;
     }
@@ -179,6 +189,67 @@ public class N8nTicketService {
         Map<String, Object> response = new HashMap<>();
         response.put("ticketId", ticketId);
         response.put("status", "notified");
+        return response;
+    }
+
+    // ========== 人工处理 ==========
+
+    /**
+     * 标记工单为需人工处理状态（AI 分类为商务合作/其他等不适合自动回复的类别时调用）
+     */
+    @Transactional
+    public Map<String, Object> markManualRequired(Long ticketId, String reason) {
+        Ticket ticket = getTicket(ticketId);
+        TicketStatus beforeStatus = ticket.getStatus();
+        stateMachine.transition(ticket, TicketStatus.MANUAL_REQUIRED);
+        ticketRepository.save(ticket);
+        statusLogService.logTransition(ticket, beforeStatus, TicketStatus.MANUAL_REQUIRED,
+                "n8n", reason != null ? reason : "AI 分类为需人工处理");
+        log.info("[N8nTicketService] 工单 #{} 标记为人工处理, reason={}", ticketId, reason);
+        Map<String, Object> response = new HashMap<>();
+        response.put("ticketId", ticketId);
+        response.put("status", TicketStatus.MANUAL_REQUIRED.name());
+        return response;
+    }
+
+    /**
+     * 查询所有 MANUAL_REQUIRED 状态的工单
+     */
+    public List<Ticket> findManualRequiredTickets(int limit) {
+        int effectiveLimit = Math.max(1, Math.min(limit, MAX_LIMIT));
+        return ticketRepository.findByFilters(
+                TicketStatus.MANUAL_REQUIRED, null, null, null, null, null,
+                null, null,
+                PageRequest.of(0, effectiveLimit, Sort.by(Sort.Order.desc("updatedAt")))
+        ).getContent();
+    }
+
+    /**
+     * 人工处理完成 — 继续处理或直接完结
+     * @param action "continue" 继续回复流程 / "complete" 直接完结
+     */
+    @Transactional
+    public Map<String, Object> resolveManualTicket(Long ticketId, String action) {
+        Ticket ticket = getTicket(ticketId);
+        TicketStatus beforeStatus = ticket.getStatus();
+        TicketStatus targetStatus;
+        String logMessage;
+        if ("continue".equals(action)) {
+            targetStatus = TicketStatus.PENDING_REPLY;
+            logMessage = "人工处理：继续回复流程";
+        } else if ("complete".equals(action)) {
+            targetStatus = TicketStatus.COMPLETED;
+            logMessage = "人工处理：直接完结";
+        } else {
+            throw new BusinessException(ErrorCode.INVALID_PARAMETER, "无效的操作: " + action);
+        }
+        stateMachine.transition(ticket, targetStatus);
+        ticketRepository.save(ticket);
+        statusLogService.logTransition(ticket, beforeStatus, targetStatus, "manual", logMessage);
+        log.info("[N8nTicketService] 工单 #{} 人工处理完成: {} → {}", ticketId, beforeStatus, targetStatus);
+        Map<String, Object> response = new HashMap<>();
+        response.put("ticketId", ticketId);
+        response.put("status", targetStatus.name());
         return response;
     }
 

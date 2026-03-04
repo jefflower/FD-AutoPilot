@@ -29,4 +29,5 @@ export type TabType =
     | 'audit-center'
     | 'knowledge-base'
     | 'notebooklm'
-    | 'ai-dashboard';
+    | 'ai-dashboard'
+    | 'manual-required';

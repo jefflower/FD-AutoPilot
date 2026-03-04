@@ -98,6 +98,10 @@ public class Ticket {
     @Column(name = "origin", length = 32)
     private String origin;
 
+    /** AI 分类类别 */
+    @Column(name = "ticket_category", length = 32)
+    private String ticketCategory;
+
     // ========== 同步控制字段 ==========
 
     @Column(name = "content_hash", length = 64)

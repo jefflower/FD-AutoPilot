@@ -89,6 +89,7 @@ public class KnowledgeService {
     public List<Ticket> getValidTickets() {
         return ticketRepository.findByFilters(
                 null, null, null, true, null, null,
+                null, null,
                 PageRequest.of(0, 10000, Sort.by(Sort.Order.desc("updatedAt")))
         ).getContent();
     }
