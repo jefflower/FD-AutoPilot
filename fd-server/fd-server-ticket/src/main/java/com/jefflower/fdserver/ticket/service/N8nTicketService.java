@@ -47,12 +47,13 @@ public class N8nTicketService {
 
     /**
      * 查询可被 n8n 处理的待翻译工单（PENDING_TRANS 状态）
+     * @param fdStatus Freshdesk 状态过滤（可选，如 2=Open），null 则不过滤
      */
-    public List<Ticket> findPendingTickets(int limit) {
+    public List<Ticket> findPendingTickets(int limit, Integer fdStatus) {
         int effectiveLimit = Math.max(1, Math.min(limit, MAX_LIMIT));
         return ticketRepository.findByFilters(
                 TicketStatus.PENDING_TRANS, null, null, null, null, null,
-                2, null,  // fdStatus=2 (Freshdesk Open)
+                fdStatus, null,
                 PageRequest.of(0, effectiveLimit, Sort.by(Sort.Order.asc("createdAt")))
         ).getContent();
     }

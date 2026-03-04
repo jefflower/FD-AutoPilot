@@ -34,13 +34,14 @@ public class N8nTicketController {
 
     // ========== 查询 ==========
 
-    @Operation(summary = "获取待翻译工单", description = "查询 PENDING_TRANS 状态工单，limit 默认20，最大100")
+    @Operation(summary = "获取待翻译工单", description = "查询 PENDING_TRANS 状态工单，可按 fdStatus 过滤 Freshdesk 状态（2=Open），limit 默认20，最大100")
     @GetMapping("/pending")
     @RequiresPermission("ticket:read")
     public ResponseEntity<ApiResponse<List<Ticket>>> getPendingTickets(
-            @RequestParam(value = "limit", defaultValue = "20") int limit) {
-        List<Ticket> tickets = n8nTicketService.findPendingTickets(limit);
-        log.info("[N8nTicketController] 查询待处理工单: count={}, limit={}", tickets.size(), limit);
+            @RequestParam(value = "limit", defaultValue = "20") int limit,
+            @RequestParam(value = "fdStatus", required = false) Integer fdStatus) {
+        List<Ticket> tickets = n8nTicketService.findPendingTickets(limit, fdStatus);
+        log.info("[N8nTicketController] 查询待处理工单: count={}, limit={}, fdStatus={}", tickets.size(), limit, fdStatus);
         return ResponseEntity.ok(ApiResponse.ok(tickets));
     }
 

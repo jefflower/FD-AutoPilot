@@ -15,7 +15,7 @@ export class ApiError extends Error {
 // Server URL（从 localStorage 读取）
 // 同源部署时（前端由 fd-server 托管）使用相对路径，无需配置
 // 分离部署时，用户在设置页面填写服务端地址
-const DEFAULT_SERVER_URL = '';  // 空字符串 = 相对路径（同源模式）
+const DEFAULT_SERVER_URL = 'http://47.110.152.25:9988';  // 默认服务端地址
 let serverBaseUrl: string = localStorage.getItem('fd_server_url') ?? DEFAULT_SERVER_URL;
 
 /**
@@ -65,6 +65,53 @@ export const setServerBaseUrl = (url: string) => {
 };
 
 export const getServerBaseUrl = (): string => serverBaseUrl;
+
+/**
+ * 检测服务端是否可连接
+ * 优先尝试 health 端点，fallback 到任意可达性检测
+ */
+export async function checkServerConnection(url?: string): Promise<boolean> {
+  const base = url ?? serverBaseUrl;
+  try {
+    // 优先尝试 actuator health 端点
+    const resp = await fetch(`${base}/actuator/health`, {
+      method: 'GET',
+      signal: AbortSignal.timeout(5000),
+    });
+    return resp.ok;
+  } catch {
+    try {
+      // fallback: 尝试 API 根路径（即使 404 也说明服务端可达）
+      const resp = await fetch(`${base}/api/v1`, {
+        method: 'GET',
+        signal: AbortSignal.timeout(5000),
+      });
+      // 任意 HTTP 响应都说明可达
+      return resp.status > 0;
+    } catch {
+      return false;
+    }
+  }
+}
+
+/**
+ * 判断错误是否为网络级别错误（连接失败、DNS、超时等）
+ * 与 mq-task/utils.ts 中的 isNetworkError 保持一致
+ */
+export function isNetworkError(err: unknown): boolean {
+  if (err instanceof TypeError && (
+    err.message.includes('Failed to fetch') ||
+    err.message.includes('NetworkError') ||
+    err.message.includes('Network request failed') ||
+    err.message.includes('Load failed')
+  )) {
+    return true;
+  }
+  if (err instanceof DOMException && err.name === 'AbortError') {
+    return true;
+  }
+  return false;
+}
 
 // Token 存储
 let authToken: string | null = null;

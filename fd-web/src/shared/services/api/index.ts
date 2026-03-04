@@ -17,6 +17,8 @@ export {
   setRefreshToken,
   getRefreshToken,
   isTokenExpired,
+  checkServerConnection,
+  isNetworkError,
 } from './client';
 
 // Auth API

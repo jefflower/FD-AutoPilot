@@ -62,7 +62,7 @@
     {
       "parameters": {
         "method": "GET",
-        "url": "http://47.110.152.25:9988/api/v1/n8n/tickets/pending",
+        "url": "http://47.110.152.25:9988/api/v1/n8n/tickets/pending?fdStatus=2",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [

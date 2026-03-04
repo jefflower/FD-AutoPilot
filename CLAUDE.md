@@ -114,13 +114,26 @@ PENDING_TRANS → TRANSLATING → PENDING_REPLY → REPLYING → PENDING_AUDIT �
 | backend-dev    | opus   | general-purpose | 后端开发。prompt 中指定模块范围（如 `fd-server-ai/**`）。遵守依赖链 `common ← auth ← task ← ai ← ticket ← app`，跨模块按底层先行串行                                                                                                                                                                                                                       |
 | frontend-dev   | opus   | general-purpose | `fd-web/src/**`。Agent 运行时（Registry + Executor + useAgent）、MQ Consumer、Capability 设置 UI、执行时间线、Tauri 条件桥接（`isTauriEnv()`）                                                                                                                                                                                                             |
 | rust-dev       | opus   | general-purpose | `fd-client/src-tauri/src/**`。CLI Executor（gemini/claude）、notebooklm-py 调用、Shadow Window 生命周期、HTTP Bridge、Capability 上报与注册                                                                                                                                                                                                                |
-| n8n-expert     | opus   | general-purpose | n8n 工作流设计与调试。Sync Bridge 端点对接、cron/Webhook 触发配置、错误处理分支、超时重试策略、n8n 与 capability 级路由的集成                                                                                                                                                                                                                              |
+| n8n-expert     | opus   | general-purpose | n8n 工作流设计与调试。Sync Bridge 端点对接、cron/Webhook 触发配置、错误处理分支、超时重试策略、n8n 与 capability 级路由的集成。**必须遵守 n8n JSON 格式规范（见下方）**                                                                                                                                                                                     |
 | architect      | opus   | Plan            | 跨层设计。Capability 体系建模、Definition+Instance 分离方案、capability 级路由策略、Sync Bridge 演进、shadow-window RPA 架构规划。输出 API 契约 + 数据模型 + 任务分工                                                                                                                                                                                      |
 | debugger       | opus   | general-purpose | 跨层诊断。重点场景：Sync Bridge 超时/CompletableFuture 泄漏、Capability 路由失败（无 Agent/无客户端/Capability 关闭）、MQ Consumer 卡死、客户端注册心跳异常                                                                                                                                                                                                |
 | reviewer       | sonnet | general-purpose | 代码审查。重点：依赖链违规、`@Transactional` 误用（Sync Bridge 禁止长事务）、AgentInstance clientId 隔离、Capability 开关与 Agent 启停联动一致性                                                                                                                                                                                                           |
 | test-writer    | sonnet | general-purpose | 编写自动化测试用例。后端：JUnit 5 + Mockito（Service/Controller 层），重点覆盖 Capability 路由、Sync Bridge 超时、AgentInstance 隔离、TicketStateMachine 状态转换。前端：Vitest + React Testing Library，重点覆盖 Capability 开关联动、MQ Consumer 生命周期、Agent 执行流程                                                                                |
 | preview-tester | opus   | general-purpose | 前端可视化验收。开发完成后重启项目（preview_start），使用 preview_* 工具链验收：preview_snapshot 检查页面结构与文案、preview_screenshot 截图验证布局、preview_inspect 校验 CSS 样式、preview_click/preview_fill 模拟用户交互、preview_console_logs/preview_network 检查运行时错误和 API 调用。发现问题反馈对应 dev agent 修复。fd-web要在preview中启动测试 |
 | doc-writer     | haiku  | general-purpose | 中文文档。更新 `doc/v0.4-vision.md` 和 `CLAUDE.md` 受影响部分                                                                                                                                                                                                                                                                                              |
+
+### n8n 工作流 JSON 格式规范（红线）
+
+生成或修改 n8n 工作流 JSON 时**必须遵守**以下规则，违反会导致导入失败：
+
+| 规则 | 说明 |
+|------|------|
+| **typeVersion 只用官方版本号** | n8n 节点版本号只有整数或 `.1`/`.2` 等官方版本。Switch 节点只有 v1、v2、v3（无 3.2）。不确定时参考已成功导入的工作流 |
+| **Switch v3 使用 conditions 格式** | `rules.values[].conditions.conditions[{leftValue, rightValue, operator{type, operation}}]`，fallback 用 `options.fallbackOutput: "extra"`。**禁止**用简化的 `{value, output}` 格式 |
+| **Set v3.4 使用 values 格式** | `values.string[{name, value}]` + `values.number[{name, value}]`。**禁止**用 `assignments.assignments[]` 格式 |
+| **参考已有工作流** | 新建/修改前先读取 `n8n/workflows/ticket-auto-process.json`（已成功导入），确保格式一致 |
+| **connections 名称必须精确匹配** | `connections` 中的键名和 `node` 值必须与 `nodes[].name` 完全一致（含中文括号） |
+| **导入前验证 JSON** | 用 `python3 -c "import json; json.load(open('file.json'))"` 验证格式 |
 
 ### 后端模块路由
 

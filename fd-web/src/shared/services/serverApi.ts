@@ -17,6 +17,8 @@ export {
   setRefreshToken,
   getRefreshToken,
   isTokenExpired,
+  checkServerConnection,
+  isNetworkError,
   // API objects
   authApi,
   ticketApi,

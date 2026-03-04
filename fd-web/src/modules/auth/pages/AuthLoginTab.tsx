@@ -6,7 +6,7 @@
 
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { getServerBaseUrl, setServerBaseUrl, authApi, oauthApi } from '../../../shared/services/serverApi';
+import { getServerBaseUrl, setServerBaseUrl, checkServerConnection, isNetworkError, authApi, oauthApi } from '../../../shared/services/serverApi';
 import type { OAuthStatus } from '../../../shared/types/server';
 
 interface AuthLoginTabProps {
@@ -89,8 +89,12 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
     const [localError, setLocalError] = useState<string | null>(null);
     const [focusedField, setFocusedField] = useState<string | null>(null);
     const [showServerConfig, setShowServerConfig] = useState(false);
-    const [serverUrl, setServerUrlLocal] = useState(getServerBaseUrl);
     const [mounted, setMounted] = useState(false);
+
+    // 连接错误恢复状态
+    const [isConnectionError, setIsConnectionError] = useState(false);
+    const [connectionTestStatus, setConnectionTestStatus] = useState<'idle' | 'testing' | 'success' | 'failed'>('idle');
+    const [editingServerUrl, setEditingServerUrl] = useState(getServerBaseUrl);
 
     // OAuth 状态
     const [oauthStatus, setOauthStatus] = useState<OAuthStatus | null>(null);
@@ -310,6 +314,7 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setLocalError(null);
+        setIsConnectionError(false);
         if (!username.trim() || !password.trim()) {
             setLocalError(t('login.validationRequired'));
             return;
@@ -317,7 +322,46 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
         try {
             await onLogin({ username: username.trim(), password });
         } catch (err) {
-            setLocalError(err instanceof Error ? err.message : t('login.loginFailed'));
+            if (isNetworkError(err)) {
+                setIsConnectionError(true);
+                setShowServerConfig(true);
+                setEditingServerUrl(getServerBaseUrl());
+                setLocalError(t('login.connectionFailed'));
+            } else {
+                setLocalError(err instanceof Error ? err.message : t('login.loginFailed'));
+            }
+        }
+    };
+
+    // 测试服务端连接
+    const handleTestConnection = async () => {
+        setConnectionTestStatus('testing');
+        const ok = await checkServerConnection(editingServerUrl);
+        setConnectionTestStatus(ok ? 'success' : 'failed');
+        // 3 秒后重置状态
+        setTimeout(() => setConnectionTestStatus('idle'), 3000);
+    };
+
+    // 保存服务端地址并重试登录
+    const handleSaveAndRetry = async () => {
+        const trimmed = editingServerUrl.replace(/\/+$/, '');
+        setServerBaseUrl(trimmed);
+        setEditingServerUrl(trimmed);
+        setIsConnectionError(false);
+        setConnectionTestStatus('idle');
+        setLocalError(null);
+        // 如果用户名密码已填写，自动重试
+        if (username.trim() && password.trim()) {
+            try {
+                await onLogin({ username: username.trim(), password });
+            } catch (err) {
+                if (isNetworkError(err)) {
+                    setIsConnectionError(true);
+                    setLocalError(t('login.connectionFailed'));
+                } else {
+                    setLocalError(err instanceof Error ? err.message : t('login.loginFailed'));
+                }
+            }
         }
     };
 
@@ -937,35 +981,119 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
                             </div>
                         )}
 
-                        {/* 服务器配置 */}
+                        {/* 连接错误横幅 + 服务器配置 */}
                         <div className="mt-5 pt-5 border-t border-white/[0.06]">
+                            {/* 连接失败警告横幅 */}
+                            {isConnectionError && (
+                                <div className="mb-3 bg-amber-500/10 border border-amber-500/20 rounded-xl p-3">
+                                    <div className="flex items-start gap-2.5">
+                                        <div className="flex-shrink-0 w-7 h-7 bg-amber-500/20 rounded-lg flex items-center justify-center mt-0.5">
+                                            <svg className="w-3.5 h-3.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                            </svg>
+                                        </div>
+                                        <div className="flex-1 min-w-0">
+                                            <span className="text-amber-300 text-sm font-medium block">{t('login.connectionFailed')}</span>
+                                            <span className="text-slate-400 text-xs mt-0.5 block">{t('login.connectionFailedHint')}</span>
+                                            <span className="text-slate-500 text-[10px] font-mono mt-1 block break-all">
+                                                {t('login.currentServer')}: {getServerBaseUrl() || '(relative)'}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
+
                             <button
                                 type="button"
-                                onClick={() => setShowServerConfig(!showServerConfig)}
-                                className="w-full flex items-center justify-center gap-1.5 text-slate-500 hover:text-slate-300 text-[11px] transition-colors"
+                                onClick={() => {
+                                    setShowServerConfig(!showServerConfig);
+                                    if (!showServerConfig) {
+                                        setEditingServerUrl(getServerBaseUrl());
+                                    }
+                                }}
+                                className={`w-full flex items-center justify-center gap-1.5 text-[11px] transition-colors ${
+                                    isConnectionError
+                                        ? 'text-amber-400 hover:text-amber-300'
+                                        : 'text-slate-500 hover:text-slate-300'
+                                }`}
                             >
                                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                 </svg>
-                                {t('login.serverConfig')}
+                                {isConnectionError ? t('login.configureServer') : t('login.serverConfig')}
                                 <svg className={`w-3 h-3 transition-transform duration-300 ${showServerConfig ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                                 </svg>
                             </button>
                             {showServerConfig && (
-                                <div className="mt-3 space-y-2">
-                                    <label className="text-slate-600 text-[10px] font-medium uppercase tracking-wider block">Server URL</label>
-                                    <input
-                                        type="text"
-                                        value={serverUrl}
-                                        onChange={(e) => {
-                                            setServerUrlLocal(e.target.value);
-                                            setServerBaseUrl(e.target.value);
-                                        }}
-                                        className="w-full px-3 py-2 bg-slate-900/60 border border-white/10 rounded-lg text-slate-300 text-xs font-mono placeholder-slate-600 focus:outline-none focus:border-indigo-500/50 transition-colors"
-                                        placeholder="http://localhost:9988"
-                                    />
+                                <div className="mt-3 space-y-3">
+                                    <div>
+                                        <label className="text-slate-600 text-[10px] font-medium uppercase tracking-wider block mb-1">
+                                            {t('login.serverUrlLabel')}
+                                        </label>
+                                        <input
+                                            type="text"
+                                            value={editingServerUrl}
+                                            onChange={(e) => {
+                                                setEditingServerUrl(e.target.value);
+                                                setConnectionTestStatus('idle');
+                                            }}
+                                            className="w-full px-3 py-2 bg-slate-900/60 border border-white/10 rounded-lg text-slate-300 text-xs font-mono placeholder-slate-600 focus:outline-none focus:border-indigo-500/50 transition-colors"
+                                            placeholder={t('login.serverUrlPlaceholder')}
+                                        />
+                                    </div>
+
+                                    {/* 连接测试状态 */}
+                                    {connectionTestStatus !== 'idle' && (
+                                        <div className={`flex items-center gap-1.5 text-xs px-1 ${
+                                            connectionTestStatus === 'testing' ? 'text-slate-400' :
+                                            connectionTestStatus === 'success' ? 'text-emerald-400' :
+                                            'text-red-400'
+                                        }`}>
+                                            {connectionTestStatus === 'testing' && (
+                                                <svg className="animate-spin w-3 h-3" fill="none" viewBox="0 0 24 24">
+                                                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                                                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                                                </svg>
+                                            )}
+                                            {connectionTestStatus === 'success' && (
+                                                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                                </svg>
+                                            )}
+                                            {connectionTestStatus === 'failed' && (
+                                                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                                </svg>
+                                            )}
+                                            <span>
+                                                {connectionTestStatus === 'testing' && t('login.testing')}
+                                                {connectionTestStatus === 'success' && t('login.connectionSuccess')}
+                                                {connectionTestStatus === 'failed' && t('login.connectionFailedRetry')}
+                                            </span>
+                                        </div>
+                                    )}
+
+                                    {/* 操作按钮 */}
+                                    <div className="flex gap-2">
+                                        <button
+                                            type="button"
+                                            onClick={handleTestConnection}
+                                            disabled={connectionTestStatus === 'testing' || !editingServerUrl.trim()}
+                                            className="flex-1 py-2 bg-slate-700/60 hover:bg-slate-700/80 text-slate-300 text-xs rounded-lg transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                                        >
+                                            {t('login.testConnection')}
+                                        </button>
+                                        <button
+                                            type="button"
+                                            onClick={handleSaveAndRetry}
+                                            disabled={connectionTestStatus === 'testing'}
+                                            className="flex-1 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white text-xs font-medium rounded-lg transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed shadow-lg shadow-indigo-500/15"
+                                        >
+                                            {t('login.saveAndRetry')}
+                                        </button>
+                                    </div>
                                 </div>
                             )}
                         </div>
