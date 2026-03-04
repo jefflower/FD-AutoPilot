@@ -225,13 +225,18 @@ public class N8nProxyController {
 
     /**
      * 将 n8n 的响应回写到客户端：状态码、响应头、响应体。
+     * <p>
+     * 对于重定向响应（3xx），会重写 Location 头，将 n8n 内部路径添加 /n8n 前缀，
+     * 确保浏览器重定向到正确的代理路径而不是直接访问 n8n 内部路径。
      */
     private void writeResponse(HttpResponse<InputStream> proxyResponse, HttpServletResponse response)
             throws IOException {
         // 1. 状态码
-        response.setStatus(proxyResponse.statusCode());
+        int statusCode = proxyResponse.statusCode();
+        response.setStatus(statusCode);
 
         // 2. 响应头
+        boolean isRedirect = (statusCode >= 300 && statusCode < 400);
         proxyResponse.headers().map().forEach((name, values) -> {
             String lowerName = name.toLowerCase();
             // 跳过 hop-by-hop 头
@@ -239,6 +244,10 @@ public class N8nProxyController {
                 return;
             }
             for (String value : values) {
+                // 重写重定向 Location 头：添加 /n8n 前缀
+                if (isRedirect && "location".equals(lowerName)) {
+                    value = rewriteLocationHeader(value);
+                }
                 response.addHeader(name, value);
             }
         });
@@ -255,6 +264,48 @@ public class N8nProxyController {
                 }
             }
         }
+    }
+
+    /**
+     * 重写 Location 头：将 n8n 返回的相对路径或绝对路径添加 /n8n 前缀。
+     * <p>
+     * 示例：
+     * <ul>
+     *   <li>/signin → /n8n/signin</li>
+     *   <li>/setup → /n8n/setup</li>
+     *   <li>http://localhost:5678/editor → /n8n/editor（转为相对路径）</li>
+     *   <li>已包含 /n8n 前缀的路径 → 不重复添加</li>
+     * </ul>
+     */
+    private String rewriteLocationHeader(String location) {
+        if (location == null || location.isBlank()) {
+            return location;
+        }
+
+        String targetBaseUrl = resolveN8nUrl();
+
+        // 绝对 URL（指向 n8n 后端）→ 转为代理路径
+        if (location.startsWith(targetBaseUrl)) {
+            String path = location.substring(targetBaseUrl.length());
+            if (!path.startsWith("/")) {
+                path = "/" + path;
+            }
+            if (!path.startsWith(PROXY_PREFIX + "/") && !path.equals(PROXY_PREFIX)) {
+                path = PROXY_PREFIX + path;
+            }
+            log.debug("[N8nProxy] 重写 Location: {} → {}", location, path);
+            return path;
+        }
+
+        // 相对路径（以 / 开头但不以 /n8n 开头）→ 添加 /n8n 前缀
+        if (location.startsWith("/") && !location.startsWith(PROXY_PREFIX + "/") && !location.equals(PROXY_PREFIX)) {
+            String rewritten = PROXY_PREFIX + location;
+            log.debug("[N8nProxy] 重写 Location: {} → {}", location, rewritten);
+            return rewritten;
+        }
+
+        // 其他情况（外部 URL、已有前缀）→ 不修改
+        return location;
     }
 
     private String stripTrailingSlash(String url) {
