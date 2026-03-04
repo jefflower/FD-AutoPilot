@@ -80,6 +80,7 @@ const ExecutionLogZone: React.FC<ExecutionLogZoneProps> = ({
     try {
       const result = await agentApi.getExecutions({
         agentCode: agentFilter || undefined,
+        status: statusFilter || undefined,
         page: serverPage,
         size: PAGE_SIZE,
       });
@@ -90,7 +91,7 @@ const ExecutionLogZone: React.FC<ExecutionLogZoneProps> = ({
     } finally {
       setServerLoading(false);
     }
-  }, [agentFilter, serverPage]);
+  }, [agentFilter, statusFilter, serverPage]);
 
   // Fetch local logs
   const fetchLocalLogs = useCallback(async () => {
@@ -168,12 +169,8 @@ const ExecutionLogZone: React.FC<ExecutionLogZoneProps> = ({
     setExpandedId(prev => (prev === id ? null : id));
   };
 
-  // 前端状态筛选（server logs 不支持后端 status 筛选，所以前端过滤）
-  const filteredServerLogs = statusFilter
-    ? serverLogs.filter(log => log.status === statusFilter)
-    : serverLogs;
-
-  const currentLogs = activeTab === 'server' ? filteredServerLogs : localLogs;
+  // 状态筛选已由后端完成（server tab）或 Bridge API 完成（local tab），直接使用返回结果
+  const currentLogs = activeTab === 'server' ? serverLogs : localLogs;
   const isLoading = activeTab === 'server' ? serverLoading : localLoading;
 
   // 统计当前正在执行的数量

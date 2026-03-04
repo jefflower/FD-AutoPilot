@@ -42,4 +42,10 @@ public interface AgentExecutionRepository extends JpaRepository<AgentExecution, 
     // --- 运行中查询 ---
 
     List<AgentExecution> findByStatusOrderByCreatedAtDesc(ExecutionStatus status);
+
+    // --- 分页 + 状态过滤查询 ---
+
+    Page<AgentExecution> findByStatusOrderByCreatedAtDesc(ExecutionStatus status, Pageable pageable);
+
+    Page<AgentExecution> findByAgentCodeAndStatusOrderByCreatedAtDesc(String agentCode, ExecutionStatus status, Pageable pageable);
 }

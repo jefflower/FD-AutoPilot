@@ -1,8 +1,8 @@
 import React, { useState, useCallback, useEffect, useMemo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useAgentContext } from '../../../shared/agents';
-import { useMQTranslateAgent } from '../../../shared/context/MQTranslateAgentContext';
-import { useMQReplyAgent } from '../../../shared/context/MQReplyAgentContext';
+import { MQTranslateAgentProvider, useMQTranslateAgent } from '../../../shared/context/MQTranslateAgentContext';
+import { MQReplyAgentProvider, useMQReplyAgent } from '../../../shared/context/MQReplyAgentContext';
 import { parseAgentConfig } from '../../../shared/agents/schemaUtils';
 import { serverApi } from '../../../shared/services/serverApi';
 import type { ServerTicket } from '../../../shared/types/server';
@@ -44,7 +44,7 @@ function useStableConsumerRegistry(
     return registryRef;
 }
 
-const AgentAutomationTab: React.FC = () => {
+const AgentAutomationTabInner: React.FC = () => {
     const { t: _t } = useTranslation(['tasks', 'common']);
     const { definitions } = useAgentContext();
     const translate = useMQTranslateAgent();
@@ -334,5 +334,17 @@ const AgentAutomationTab: React.FC = () => {
         </div>
     );
 };
+
+/**
+ * AgentAutomationTab — 自包含 MQ Provider，不再依赖全局 Provider 链。
+ * MQTranslateAgentProvider 和 MQReplyAgentProvider 仅在此 Tab 挂载时激活。
+ */
+const AgentAutomationTab: React.FC = () => (
+    <MQTranslateAgentProvider>
+        <MQReplyAgentProvider>
+            <AgentAutomationTabInner />
+        </MQReplyAgentProvider>
+    </MQTranslateAgentProvider>
+);
 
 export default AgentAutomationTab;

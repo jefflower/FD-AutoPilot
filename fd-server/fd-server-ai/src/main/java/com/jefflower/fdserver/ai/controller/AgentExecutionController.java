@@ -78,14 +78,10 @@ public class AgentExecutionController {
     @RequiresPermission("ai:view_logs")
     public ApiResponse<Page<AgentExecution>> getExecutions(
             @RequestParam(required = false) String agentCode,
+            @RequestParam(required = false) String status,
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "20") int size) {
-        Page<AgentExecution> result;
-        if (agentCode != null && !agentCode.isEmpty()) {
-            result = executionService.findByAgent(agentCode, PageRequest.of(page, size));
-        } else {
-            result = executionService.findRecent(PageRequest.of(page, size));
-        }
+        Page<AgentExecution> result = executionService.findByFilters(agentCode, status, PageRequest.of(page, size));
         return ApiResponse.ok(result);
     }
 

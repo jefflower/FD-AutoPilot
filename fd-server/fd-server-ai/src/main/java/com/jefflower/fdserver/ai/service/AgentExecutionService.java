@@ -97,6 +97,26 @@ public class AgentExecutionService {
         return executionRepository.findAllByOrderByCreatedAtDesc(pageable);
     }
 
+    /**
+     * 按过滤条件分页查询执行记录（支持 agentCode 和 status 组合过滤）。
+     */
+    public Page<AgentExecution> findByFilters(String agentCode, String status, Pageable pageable) {
+        boolean hasAgent = agentCode != null && !agentCode.isEmpty();
+        boolean hasStatus = status != null && !status.isEmpty();
+
+        if (hasAgent && hasStatus) {
+            ExecutionStatus es = parseStatus(status);
+            return executionRepository.findByAgentCodeAndStatusOrderByCreatedAtDesc(agentCode, es, pageable);
+        } else if (hasAgent) {
+            return executionRepository.findByAgentCodeOrderByCreatedAtDesc(agentCode, pageable);
+        } else if (hasStatus) {
+            ExecutionStatus es = parseStatus(status);
+            return executionRepository.findByStatusOrderByCreatedAtDesc(es, pageable);
+        } else {
+            return executionRepository.findAllByOrderByCreatedAtDesc(pageable);
+        }
+    }
+
     public List<AgentStats> getStatsDashboard() {
         List<AgentDefinition> definitions = definitionRepository.findAllByOrderBySortOrder();
         List<AgentStats> statsList = new ArrayList<>();

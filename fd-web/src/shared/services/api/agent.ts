@@ -98,9 +98,10 @@ export const agentApi = {
     }
   },
 
-  async getExecutions(params?: { agentCode?: string; page?: number; size?: number }): Promise<{ content: AgentExecutionLog[]; totalElements: number; totalPages: number }> {
+  async getExecutions(params?: { agentCode?: string; status?: string; page?: number; size?: number }): Promise<{ content: AgentExecutionLog[]; totalElements: number; totalPages: number }> {
     const searchParams = new URLSearchParams();
     if (params?.agentCode) searchParams.set('agentCode', params.agentCode);
+    if (params?.status) searchParams.set('status', params.status);
     if (params?.page !== undefined) searchParams.set('page', String(params.page));
     if (params?.size !== undefined) searchParams.set('size', String(params.size));
     return (await request<{ content: AgentExecutionLog[]; totalElements: number; totalPages: number }>(`/agents/executions?${searchParams}`)) || { content: [], totalElements: 0, totalPages: 0 };

@@ -97,7 +97,10 @@ export function useTaskPoller(params: UseTaskPollerParams) {
                 let payload: any = {};
                 try { payload = JSON.parse(task.payload || '{}'); } catch { /* ignore */ }
 
-                const ticketId = payload.ticketId || parseInt(task.referenceId || '0');
+                // agentInput 中包含 n8n 注入的 ticketId/externalId/subject 等字段
+                const agentInput = payload.agentInput || {};
+
+                const ticketId = payload.ticketId || agentInput.ticketId || parseInt(task.referenceId || '0');
 
                 if (processingTasksRef.current.has(ticketId) || queuedTicketIdsRef.current.has(ticketId)) {
                     continue;
@@ -127,12 +130,12 @@ export function useTaskPoller(params: UseTaskPollerParams) {
 
                 const mqTask: MQTask = {
                     ticketId,
-                    externalId: payload.externalId || task.referenceId || '',
-                    subject: payload.subject || 'Unknown Subject',
+                    externalId: payload.externalId || agentInput.externalId || task.referenceId || '',
+                    subject: payload.subject || agentInput.subject || 'Unknown Subject',
                     status: 'pending',
                     addedAt: Date.now(),
                     taskInstanceId: task.id,
-                    agentInput: payload.agentInput || undefined,
+                    agentInput: agentInput || undefined,
                     agentCode: payload.agentCode || undefined,
                 };
 
