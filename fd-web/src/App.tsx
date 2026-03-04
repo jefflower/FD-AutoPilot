@@ -241,7 +241,10 @@ const MQAutoStarter: React.FC = () => {
 
         const autoStartDefs = definitions.filter(d => d.autoStart && d.enabled);
         if (autoStartDefs.length === 0) {
-            console.log(`[MQAutoStart] No autoStart agents found among ${definitions.length} definitions`);
+            if (!doneRef.current) {
+                console.log(`[MQAutoStart] No autoStart agents found among ${definitions.length} definitions`);
+                doneRef.current = true; // 防止重复日志
+            }
             return;
         }
 

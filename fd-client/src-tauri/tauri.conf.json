@@ -5,7 +5,7 @@
   "identifier": "com.zangjiafu.fd-client",
   "build": {
     "beforeDevCommand": "",
-    "devUrl": "http://localhost:5173",
+    "devUrl": "http://47.110.152.25:9988",
     "beforeBuildCommand": "cd ../fd-web && npm run build",
     "frontendDist": "../../fd-web/dist"
   },

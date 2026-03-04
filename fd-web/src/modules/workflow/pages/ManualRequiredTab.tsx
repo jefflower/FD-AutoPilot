@@ -14,14 +14,6 @@ import {
   Play, CheckCircle2, Inbox, Loader2,
 } from 'lucide-react';
 
-// ============ 类型 ============
-
-interface ApiResponse<T> {
-  code: number;
-  data: T;
-  message: string;
-}
-
 // ============ 工单卡片 ============
 
 interface TicketCardProps {
@@ -179,8 +171,8 @@ const ManualRequiredTab: React.FC = () => {
     setLoading(true);
     setError(null);
     try {
-      const resp = await request<ApiResponse<ServerTicket[]>>('/api/v1/n8n/tickets/manual-required');
-      setTickets(resp.data || []);
+      const tickets = await request<ServerTicket[]>('/n8n/tickets/manual-required');
+      setTickets(tickets || []);
     } catch (err: any) {
       setError(err.message || t('message.loadFailed'));
     } finally {
@@ -194,7 +186,7 @@ const ManualRequiredTab: React.FC = () => {
 
   const handleAction = useCallback(async (ticketId: number, action: 'continue' | 'complete') => {
     try {
-      await request(`/api/v1/n8n/tickets/${ticketId}/resolve-manual`, {
+      await request(`/n8n/tickets/${ticketId}/resolve-manual`, {
         method: 'POST',
         body: JSON.stringify({ action }),
       });

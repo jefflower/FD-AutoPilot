@@ -6,7 +6,7 @@
   "scripts": {
     "tauri": "tauri",
     "dev": "tauri dev",
-    "dev:hmr": "tauri dev --config src-tauri/tauri.hmr.conf.json",
+    "dev:local": "tauri dev --config src-tauri/tauri.hmr.conf.json",
     "build": "tauri build"
   },
   "devDependencies": {

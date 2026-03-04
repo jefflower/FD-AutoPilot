@@ -116,7 +116,7 @@ export type TicketStatus =
   | 'MANUAL_REQUIRED'
   | 'COMPLETED';
 
-export type TicketCategory = 'PRODUCT_FAULT' | 'LOGISTICS_INQUIRY' | 'BUSINESS_COOPERATION' | 'COMPLETED' | 'OTHER';
+export type TicketCategory = 'PRODUCT_FAULT' | 'LOGISTICS_INQUIRY' | 'BUSINESS_COOPERATION' | 'OTHER';
 
 export interface ServerTicket {
   id: number;

@@ -94,6 +94,17 @@ public class N8nTicketController {
         return ResponseEntity.ok(ApiResponse.ok("审核通知已发送", result));
     }
 
+    // ========== AI 判定已解决 ==========
+
+    @Operation(summary = "AI 判定工单已解决",
+            description = "翻译 Agent 判定工单为已解决状态，更新 Freshdesk 为 Resolved(4) 并完结工单")
+    @PostMapping("/{id}/resolve-completed")
+    @RequiresPermission("ticket:translate")
+    public ResponseEntity<ApiResponse<Map<String, Object>>> resolveCompleted(@PathVariable Long id) {
+        Map<String, Object> result = n8nTicketService.resolveCompleted(id);
+        return ResponseEntity.ok(ApiResponse.ok("工单已完结", result));
+    }
+
     // ========== 人工处理 ==========
 
     @Operation(summary = "标记为人工处理", description = "将工单标记为需人工处理状态")

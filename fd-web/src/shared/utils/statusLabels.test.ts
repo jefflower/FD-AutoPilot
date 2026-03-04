@@ -36,8 +36,8 @@ describe('getUserRoleLabel', () => {
 describe('getTicketStatusOptions', () => {
   it('返回包含全部状态加一个"全部"选项', () => {
     const options = getTicketStatusOptions(mockT);
-    // "全部" + 5 个状态 = 6
-    expect(options).toHaveLength(6);
+    // "全部" + 10 个状态 = 11
+    expect(options).toHaveLength(11);
   });
 
   it('第一个选项的 value 为空（全部筛选）', () => {

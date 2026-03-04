@@ -120,6 +120,8 @@ export const setAuthToken = (token: string | null) => {
   authToken = token;
   if (token) {
     localStorage.setItem('fd_auth_token', token);
+    // 通知 SSE 等监听者：token 已更新，可以（重新）连接
+    window.dispatchEvent(new CustomEvent('auth-token-changed'));
   } else {
     localStorage.removeItem('fd_auth_token');
   }

@@ -17,8 +17,8 @@ const POLL_INTERVAL_MS = 3_000;
 /** 单次最多处理的任务数 */
 const MAX_CONCURRENT = 1;
 
-/** 任务执行超时（毫秒）—— 与 SyncBridge 的 5 分钟对齐 */
-const EXEC_TIMEOUT_MS = 280_000; // 略小于后端 300s，留出网络开销
+/** 任务执行超时（毫秒）—— 与 SyncBridge 的 10 分钟对齐 */
+const EXEC_TIMEOUT_MS = 580_000; // 略小于后端 600s，留出网络开销
 
 // ─── 工具函数 ────────────────────────────────────────────────
 

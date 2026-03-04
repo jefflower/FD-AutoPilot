@@ -34,8 +34,8 @@
     },
     {
       "parameters": {
-        "content": "## 工单自动处理工作流\n\n### 流程\n1. 登录获取 JWT\n2. 获取待翻译工单\n3. 循环逐个处理每个工单：\n   - 调用翻译 Agent → 保存翻译结果\n   - 调用回复 Agent → 保存回复结果\n   - 推送审核通知\n4. 循环结束 → 汇总结果\n\n### 设计原则\n- Agent 端点纯透传，不含业务逻辑\n- Prompt 构建、数据校验在工作流节点中完成\n- 经 Sync Bridge 路由到客户端执行",
-        "height": 300,
+        "content": "## 工单自动处理工作流\n\n### 流程\n1. 登录获取 JWT\n2. 获取待翻译工单\n3. 循环逐个处理每个工单：\n   - 调用翻译 Agent（含 AI 分类 + resolved 判断）→ 保存翻译结果\n   - 检查 resolved：\n     - resolved=true → 调用 resolve-completed 标记工单已解决\n     - resolved=false → 按分类路由\n   - 按分类路由：\n     - 产品故障 → ticket-reply Agent\n     - 物流查询 → logistics-reply Agent\n     - 商务合作/其他 → 标记人工处理\n   - 回复分支 → 保存回复 → 推送审核通知\n4. 循环结束 → 汇总结果\n\n### 设计原则\n- Agent 端点纯透传，不含业务逻辑\n- Prompt 构建、数据校验在工作流节点中完成\n- 经 Sync Bridge 路由到客户端执行",
+        "height": 400,
         "width": 340
       },
       "id": "sticky-note",
@@ -117,13 +117,13 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify({ input: { prompt: 'You are a professional customer support translator. Translate the following support ticket into Simplified Chinese (zh-CN).\\n\\nSTRICT OUTPUT FORMAT:\\n- Output ONLY a raw JSON object. Start your response with { and end with }.\\n- Do NOT wrap in markdown code fences (```). Do NOT add any text before or after the JSON.\\n\\nTRANSLATION RULES:\\n1. Translate \"subject\" and \"description\" fields into Simplified Chinese.\\n2. For each item in \"conversations\", translate the \"bodyText\" field. Keep \"id\" unchanged.\\n3. All translated text must be natural Simplified Chinese.\\n\\nREQUIRED JSON STRUCTURE (use exactly these key names):\\n{\"subject\":\"翻译后的标题\",\"description\":\"翻译后的正文\",\"conversations\":[{\"id\":123,\"bodyText\":\"翻译后的消息\"}]}\\n\\n=== TICKET DATA ===\\nSubject: ' + ($json.subject || '') + '\\nContent (JSON):\\n' + ($json.content || ''), models: ['gemini-2.5-flash'] }, refType: 'ticket', refId: String($json.id), timeoutMs: 300000 }) }}",
+        "jsonBody": "={{ JSON.stringify({ input: { prompt: 'You are a professional customer support translator and classifier. Translate the following support ticket into Simplified Chinese (zh-CN), classify it into one of 4 categories, and determine if the issue is already resolved.\\n\\nCATEGORIES:\\n- PRODUCT_FAULT: Product quality issues, usage problems, returns/exchanges\\n- LOGISTICS_INQUIRY: Shipping status, delivery time, tracking inquiries\\n- BUSINESS_COOPERATION: Agency cooperation, bulk purchasing, business partnership\\n- OTHER: Cannot be categorized into above\\n\\nRESOLVED FIELD:\\n- Set \"resolved\": true if the customer confirms the issue is resolved, expresses thanks for resolution, or the conversation clearly indicates the problem has been fixed/handled.\\n- Set \"resolved\": false otherwise (issue is still open, customer is asking questions, reporting problems, etc.)\\n\\nSTRICT OUTPUT FORMAT:\\n- Output ONLY a raw JSON object. Start your response with { and end with }.\\n- Do NOT wrap in markdown code fences (```). Do NOT add any text before or after the JSON.\\n\\nTRANSLATION RULES:\\n1. Translate \"subject\" and \"description\" fields into Simplified Chinese.\\n2. For each item in \"conversations\", translate the \"bodyText\" field. Keep \"id\" unchanged.\\n3. All translated text must be natural Simplified Chinese.\\n4. ADD a \"category\" field with one of: PRODUCT_FAULT, LOGISTICS_INQUIRY, BUSINESS_COOPERATION, OTHER\\n5. ADD a \"resolved\" field with true or false\\n\\nREQUIRED JSON STRUCTURE:\\n{\"category\":\"PRODUCT_FAULT\",\"resolved\":false,\"subject\":\"翻译后的标题\",\"description\":\"翻译后的正文\",\"conversations\":[{\"id\":123,\"bodyText\":\"翻译后的消息\"}]}\\n\\n=== TICKET DATA ===\\nSubject: ' + ($json.subject || '') + '\\nContent (JSON):\\n' + ($json.content || ''), models: ['gemini-2.5-flash'] }, refType: 'ticket', refId: String($json.id), timeoutMs: 300000 }) }}",
         "options": {
           "timeout": 300000
         }
       },
       "id": "call-translate",
-      "name": "调用翻译 Agent",
+      "name": "调用翻译 Agent（含分类）",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [1280, 150]
@@ -143,14 +143,155 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ (() => { let raw = ($json.data && $json.data.output) || ''; const fm = raw.match(/```(?:json)?\\s*([\\s\\S]*?)\\s*```/); if (fm) raw = fm[1]; raw = raw.trim(); let p = {}; try { p = JSON.parse(raw); } catch(e) {} const desc = p.description || p.descriptionText || p.description_text || ''; const convs = (p.conversations || []).map(c => ({ id: c.id, bodyText: c.bodyText || c.body_text || '' })); return JSON.stringify({ translatedTitle: p.subject || '', translatedContent: JSON.stringify({ description: desc, conversations: convs }), targetLang: 'zh-CN' }); })() }}",
+        "jsonBody": "={{ (() => { let raw = ($json.data && $json.data.output) || ''; const fm = raw.match(/```(?:json)?\\s*([\\s\\S]*?)\\s*```/); if (fm) raw = fm[1]; raw = raw.trim(); let p = {}; try { p = JSON.parse(raw); } catch(e) {} const desc = p.description || ''; const convs = (p.conversations || []).map(c => ({ id: c.id, bodyText: c.bodyText || c.body_text || '' })); const category = p.category || 'OTHER'; return JSON.stringify({ translatedTitle: p.subject || '', translatedContent: JSON.stringify({ description: desc, conversations: convs }), targetLang: 'zh-CN', ticketCategory: category }); })() }}",
         "options": {}
       },
       "id": "save-translation",
-      "name": "保存翻译结果",
+      "name": "保存翻译结果（含分类）",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [1540, 150]
+      "position": [1560, 150]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "category",
+              "value": "={{ (() => { let raw = ($('调用翻译 Agent（含分类）').item.json.data && $('调用翻译 Agent（含分类）').item.json.data.output) || ''; const fm = raw.match(/```(?:json)?\\s*([\\s\\S]*?)\\s*```/); if (fm) raw = fm[1]; raw = raw.trim(); try { return JSON.parse(raw).category || 'OTHER'; } catch(e) { return 'OTHER'; } })() }}"
+            },
+            {
+              "name": "resolved",
+              "value": "={{ (() => { let raw = ($('调用翻译 Agent（含分类）').item.json.data && $('调用翻译 Agent（含分类）').item.json.data.output) || ''; const fm = raw.match(/```(?:json)?\\s*([\\s\\S]*?)\\s*```/); if (fm) raw = fm[1]; raw = raw.trim(); try { const p = JSON.parse(raw); return p.resolved === true ? 'true' : 'false'; } catch(e) { return 'false'; } })() }}"
+            }
+          ],
+          "number": [
+            {
+              "name": "ticketId",
+              "value": "={{ $('逐个处理工单').item.json.id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "extract-category",
+      "name": "提取分类",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [1840, 150]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": ""
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.resolved }}",
+                    "rightValue": "true",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ]
+              },
+              "renameOutput": true,
+              "outputKey": "已解决"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "id": "check-resolved",
+      "name": "检查是否已解决",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3,
+      "position": [2100, 150]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=http://localhost:9988/api/v1/n8n/tickets/{{ $('提取分类').item.json.ticketId }}/resolve-completed",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('登录获取 JWT').item.json.data.accessToken }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "resolve-completed",
+      "name": "标记工单已解决",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2400, 0]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": ""
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.category }}",
+                    "rightValue": "PRODUCT_FAULT",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ]
+              },
+              "renameOutput": true,
+              "outputKey": "产品故障"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": ""
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.category }}",
+                    "rightValue": "LOGISTICS_INQUIRY",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ]
+              },
+              "renameOutput": true,
+              "outputKey": "物流查询"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "id": "switch-category",
+      "name": "分类路由",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3,
+      "position": [2400, 300]
     },
     {
       "parameters": {
@@ -172,11 +313,61 @@
           "timeout": 300000
         }
       },
-      "id": "call-reply",
-      "name": "调用回复 Agent",
+      "id": "call-product-reply",
+      "name": "产品故障回复 Agent",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [1800, 150]
+      "position": [2700, 150]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://localhost:9988/api/v1/n8n/agents/logistics-reply/execute",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('登录获取 JWT').item.json.data.accessToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ input: { ticket: { id: $('逐个处理工单').item.json.id, subject: $('逐个处理工单').item.json.subject || '', content: $('逐个处理工单').item.json.content || '' }, lastAuditRemark: $('逐个处理工单').item.json.lastAuditRemark || '' }, refType: 'ticket', refId: String($('逐个处理工单').item.json.id), timeoutMs: 300000 }) }}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "call-logistics-reply",
+      "name": "物流查询回复 Agent",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2700, 350]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=http://localhost:9988/api/v1/n8n/tickets/{{ $('逐个处理工单').item.json.id }}/mark-manual",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('登录获取 JWT').item.json.data.accessToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ reason: 'AI 分类为' + ($json.category === 'BUSINESS_COOPERATION' ? '商务合作' : '其他') + '，需人工处理' }) }}",
+        "options": {}
+      },
+      "id": "mark-manual",
+      "name": "标记人工处理",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2700, 550]
     },
     {
       "parameters": {
@@ -200,7 +391,7 @@
       "name": "保存回复结果",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [2060, 150]
+      "position": [2960, 250]
     },
     {
       "parameters": {
@@ -221,7 +412,7 @@
       "name": "推送审核通知",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [2320, 150]
+      "position": [3220, 250]
     },
     {
       "parameters": {
@@ -330,7 +521,7 @@
       "main": [
         [
           {
-            "node": "调用翻译 Agent",
+            "node": "调用翻译 Agent（含分类）",
             "type": "main",
             "index": 0
           }
@@ -344,33 +535,120 @@
         ]
       ]
     },
-    "调用翻译 Agent": {
+    "调用翻译 Agent（含分类）": {
       "main": [
         [
           {
-            "node": "保存翻译结果",
+            "node": "保存翻译结果（含分类）",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "保存翻译结果": {
+    "保存翻译结果（含分类）": {
       "main": [
         [
           {
-            "node": "调用回复 Agent",
+            "node": "提取分类",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "调用回复 Agent": {
+    "提取分类": {
+      "main": [
+        [
+          {
+            "node": "检查是否已解决",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "检查是否已解决": {
+      "main": [
+        [
+          {
+            "node": "标记工单已解决",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "分类路由",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "标记工单已解决": {
+      "main": [
+        [
+          {
+            "node": "逐个处理工单",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "分类路由": {
+      "main": [
+        [
+          {
+            "node": "产品故障回复 Agent",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "物流查询回复 Agent",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "标记人工处理",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "产品故障回复 Agent": {
       "main": [
         [
           {
             "node": "保存回复结果",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "物流查询回复 Agent": {
+      "main": [
+        [
+          {
+            "node": "保存回复结果",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "标记人工处理": {
+      "main": [
+        [
+          {
+            "node": "逐个处理工单",
             "type": "main",
             "index": 0
           }

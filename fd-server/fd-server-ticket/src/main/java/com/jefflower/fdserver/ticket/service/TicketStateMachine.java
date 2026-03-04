@@ -43,7 +43,8 @@ public class TicketStateMachine {
     private static final Map<TicketStatus, Set<TicketStatus>> STANDARD_TRANSITIONS = Map.ofEntries(
             Map.entry(TicketStatus.PENDING_TRANS, Set.of(
                     TicketStatus.TRANSLATING,        // 翻译 Agent 开始执行
-                    TicketStatus.PROCESSING          // 兼容：n8n 并行网关直接进入处理中
+                    TicketStatus.PROCESSING,         // 兼容：n8n 并行网关直接进入处理中
+                    TicketStatus.COMPLETED           // AI 判定已解决，直接完结
             )),
             Map.entry(TicketStatus.TRANSLATING, Set.of(
                     TicketStatus.PENDING_REPLY,      // 翻译完成，等待回复
@@ -57,7 +58,8 @@ public class TicketStateMachine {
                     TicketStatus.PENDING_AUDIT       // 回复完成，进入审核
             )),
             Map.entry(TicketStatus.PROCESSING, Set.of(
-                    TicketStatus.PENDING_AUDIT       // 兼容：翻译+回复均完成，进入审核
+                    TicketStatus.PENDING_AUDIT,      // 兼容：翻译+回复均完成，进入审核
+                    TicketStatus.COMPLETED           // 翻译保存后判定已解决，直接完结
             )),
             Map.entry(TicketStatus.PENDING_AUDIT, Set.of(
                     TicketStatus.AUDITING,           // 审核人开始审核

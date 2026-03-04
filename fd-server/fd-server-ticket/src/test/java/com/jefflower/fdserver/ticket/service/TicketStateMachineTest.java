@@ -57,7 +57,11 @@ class TicketStateMachineTest {
 
                     // 同步重触发
                     Arguments.of(TicketStatus.APPROVED, TicketStatus.PENDING_TRANS, "已审核 → 待翻译（同步重触发）"),
-                    Arguments.of(TicketStatus.COMPLETED, TicketStatus.PENDING_TRANS, "已完成 → 待翻译（同步重触发）")
+                    Arguments.of(TicketStatus.COMPLETED, TicketStatus.PENDING_TRANS, "已完成 → 待翻译（同步重触发）"),
+
+                    // AI 判定已解决 → 直接完结
+                    Arguments.of(TicketStatus.PENDING_TRANS, TicketStatus.COMPLETED, "待翻译 → 已完成（AI 判定已解决）"),
+                    Arguments.of(TicketStatus.PROCESSING, TicketStatus.COMPLETED, "处理中 → 已完成（AI 判定已解决）")
             );
         }
 
@@ -93,9 +97,7 @@ class TicketStateMachineTest {
             return Stream.of(
                     // 跳过阶段
                     Arguments.of(TicketStatus.PENDING_TRANS, TicketStatus.PENDING_AUDIT, "不能跳过处理阶段"),
-                    Arguments.of(TicketStatus.PENDING_TRANS, TicketStatus.COMPLETED, "不能从待翻译直接完成"),
                     Arguments.of(TicketStatus.PROCESSING, TicketStatus.APPROVED, "处理中不能直接到已审核"),
-                    Arguments.of(TicketStatus.PROCESSING, TicketStatus.COMPLETED, "处理中不能直接到已完成"),
 
                     // 逆流
                     Arguments.of(TicketStatus.COMPLETED, TicketStatus.APPROVED, "不能从已完成回到已审核"),
@@ -269,10 +271,10 @@ class TicketStateMachineTest {
         @DisplayName("非法转换抛 BusinessException，包含状态信息")
         void invalidTransition_throwsWithDetail() {
             BusinessException ex = assertThrows(BusinessException.class, () ->
-                    stateMachine.validateTransition(TicketStatus.PENDING_TRANS, TicketStatus.COMPLETED));
+                    stateMachine.validateTransition(TicketStatus.PENDING_TRANS, TicketStatus.PENDING_AUDIT));
 
             assertTrue(ex.getMessage().contains("PENDING_TRANS"));
-            assertTrue(ex.getMessage().contains("COMPLETED"));
+            assertTrue(ex.getMessage().contains("PENDING_AUDIT"));
         }
     }
 

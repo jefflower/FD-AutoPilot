@@ -172,19 +172,22 @@ public class AiDataInitializer implements CommandLineRunner {
                 null,
                 null,
                 "You are a professional customer service translator and classifier.\n\n"
-                        + "Task: Translate the following ticket JSON into Simplified Chinese (中文), and classify the ticket into one of 5 categories.\n\n"
+                        + "Task: Translate the following ticket JSON into Simplified Chinese (中文), classify the ticket into one of 4 categories, and determine if the issue is already resolved.\n\n"
                         + "CATEGORIES:\n"
                         + "- PRODUCT_FAULT: Product quality issues, usage problems, returns/exchanges\n"
                         + "- LOGISTICS_INQUIRY: Shipping status, delivery time, tracking inquiries\n"
                         + "- BUSINESS_COOPERATION: Agency cooperation, bulk purchasing, business partnership\n"
-                        + "- COMPLETED: Customer confirms issue resolved, expresses thanks\n"
                         + "- OTHER: Cannot be categorized into above\n\n"
+                        + "RESOLVED DETECTION:\n"
+                        + "- Set \"resolved\" to true ONLY when the customer explicitly confirms the issue is resolved, expresses thanks for resolution, or indicates no further help is needed\n"
+                        + "- Set \"resolved\" to false for all other cases (new issues, ongoing problems, questions, etc.)\n\n"
                         + "STRICT OUTPUT FORMAT:\n"
                         + "- Output ONLY a raw JSON object. Start with { and end with }.\n"
                         + "- Do NOT wrap in markdown code fences (```).\n"
                         + "- Do NOT add any text before or after the JSON.\n"
                         + "- Keep the JSON structure identical, only translate text values.\n"
-                        + "- ADD a \"category\" field at the top level with one of: PRODUCT_FAULT, LOGISTICS_INQUIRY, BUSINESS_COOPERATION, COMPLETED, OTHER\n\n"
+                        + "- ADD a \"category\" field at the top level with one of: PRODUCT_FAULT, LOGISTICS_INQUIRY, BUSINESS_COOPERATION, OTHER\n"
+                        + "- ADD a \"resolved\" field at the top level with true or false\n\n"
                         + "Ticket JSON:\n${TICKET_CONTENT}",
                 0,
                 TRANSLATE_INPUT_SCHEMA,

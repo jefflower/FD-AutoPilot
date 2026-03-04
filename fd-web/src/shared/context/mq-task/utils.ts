@@ -6,8 +6,8 @@ import type { RecentlyCompletedEntry } from './types';
 export const FAILURE_MAX_RETRIES = 3;
 export const FAILURE_COOLDOWN_MS = 60_000;
 
-/** 任务执行超时（防止 Agent 挂起导致任务永远卡在 processingTasks 中） */
-export const TASK_TIMEOUT_MS = 5 * 60 * 1000; // 5 分钟
+/** 任务执行超时（防止 Agent 挂起导致任务永远卡在 processingTasks 中）—— 与 SyncBridge 10 分钟对齐 */
+export const TASK_TIMEOUT_MS = 10 * 60 * 1000; // 10 分钟
 
 /** completeTask 重试常量 */
 export const COMPLETE_MAX_RETRIES = 3;

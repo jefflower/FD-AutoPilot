@@ -52,7 +52,7 @@ public class N8nAgentController {
     private final AgentDefinitionService agentDefinitionService;
     private final TicketRepository ticketRepository;
 
-    private static final long DEFAULT_TIMEOUT_MS = 300_000L; // 5 分钟
+    private static final long DEFAULT_TIMEOUT_MS = 600_000L; // 10 分钟
 
     @Operation(summary = "Capability 级同步执行",
             description = "通过业务 capability 路由到可用 Agent + Client，创建任务并等待执行完成。")
