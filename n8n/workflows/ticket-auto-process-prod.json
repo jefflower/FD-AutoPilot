@@ -154,19 +154,17 @@
     },
     {
       "parameters": {
-        "assignments": {
-          "assignments": [
+        "values": {
+          "string": [
             {
-              "id": "cat-field",
               "name": "category",
-              "value": "={{ (() => { let raw = ($('调用翻译 Agent（含分类）').item.json.data && $('调用翻译 Agent（含分类）').item.json.data.output) || ''; const fm = raw.match(/```(?:json)?\\s*([\\s\\S]*?)\\s*```/); if (fm) raw = fm[1]; raw = raw.trim(); try { return JSON.parse(raw).category || 'OTHER'; } catch(e) { return 'OTHER'; } })() }}",
-              "type": "string"
-            },
+              "value": "={{ (() => { let raw = ($('调用翻译 Agent（含分类）').item.json.data && $('调用翻译 Agent（含分类）').item.json.data.output) || ''; const fm = raw.match(/```(?:json)?\\s*([\\s\\S]*?)\\s*```/); if (fm) raw = fm[1]; raw = raw.trim(); try { return JSON.parse(raw).category || 'OTHER'; } catch(e) { return 'OTHER'; } })() }}"
+            }
+          ],
+          "number": [
             {
-              "id": "tid-field",
               "name": "ticketId",
-              "value": "={{ $('逐个处理工单').item.json.id }}",
-              "type": "number"
+              "value": "={{ $('逐个处理工单').item.json.id }}"
             }
           ]
         },
@@ -181,29 +179,77 @@
     {
       "parameters": {
         "rules": {
-          "rules": [
+          "values": [
             {
-              "value": "PRODUCT_FAULT",
-              "output": 0
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": ""
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.category }}",
+                    "rightValue": "PRODUCT_FAULT",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ]
+              },
+              "renameOutput": true,
+              "outputKey": "产品故障"
             },
             {
-              "value": "LOGISTICS_INQUIRY",
-              "output": 1
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": ""
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.category }}",
+                    "rightValue": "LOGISTICS_INQUIRY",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ]
+              },
+              "renameOutput": true,
+              "outputKey": "物流查询"
             },
             {
-              "value": "COMPLETED",
-              "output": 2
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": ""
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.category }}",
+                    "rightValue": "COMPLETED",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ]
+              },
+              "renameOutput": true,
+              "outputKey": "处理完成"
             }
-          ],
-          "fallbackOutput": 3
+          ]
         },
-        "dataType": "string",
-        "value1": "={{ $json.category }}"
+        "options": {
+          "fallbackOutput": "extra"
+        }
       },
       "id": "switch-category",
       "name": "分类路由",
       "type": "n8n-nodes-base.switch",
-      "typeVersion": 3.2,
+      "typeVersion": 3,
       "position": [2100, 150]
     },
     {
