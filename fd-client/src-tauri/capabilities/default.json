@@ -10,6 +10,14 @@
     "core:default",
     "core:event:default",
     "core:window:default",
+    "core:window:allow-create",
+    "core:window:allow-destroy",
+    "core:window:allow-set-title",
+    "core:window:allow-set-size",
+    "core:window:allow-center",
+    "core:window:allow-set-focus",
+    "core:webview:default",
+    "core:webview:allow-create-webview-window",
     "core:app:default",
     "core:path:default",
     "opener:default",
@@ -22,13 +30,17 @@
   ],
   "remote": {
     "urls": [
-      "https://notebooklm.google.com/*"
+      "https://notebooklm.google.com/*",
+      "http://*:9988/*",
+      "https://*:9988/*"
     ],
     "permissions": [
       "core:default",
       "core:event:default",
       "core:event:allow-emit",
-      "core:event:allow-listen"
+      "core:event:allow-listen",
+      "core:window:default",
+      "core:webview:default"
     ]
   }
 }

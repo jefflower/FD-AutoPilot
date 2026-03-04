@@ -3,6 +3,8 @@ pub mod ai;
 pub mod bridge;
 pub mod shadow_agent;
 pub mod execution_log;
+#[cfg(feature = "tauri-app")]
+pub mod server_config;
 
 // Backward-compatibility shim: bin/bridge.rs imports `bridge_server::run_standalone`.
 // TODO: Remove this module once bin/bridge.rs is migrated to use `crate::bridge` directly.
@@ -22,6 +24,7 @@ pub mod commands;
 #[cfg(feature = "tauri-app")]
 pub fn run() {
     use commands::*;
+    use tauri::Manager;
 
     tauri::Builder::default()
         .plugin(tauri_plugin_opener::init())
@@ -29,6 +32,19 @@ pub fn run() {
         .setup(|app| {
             // Start bridge server with Shadow Agent support
             bridge::start_bridge_server_with_app(app.handle().clone());
+
+            // 生产模式：导航主窗口到配置的远程服务器 URL
+            // 开发模式（debug）使用 devUrl (localhost:5173) + Vite 代理，不导航
+            if !cfg!(debug_assertions) {
+                let server_url = server_config::read_server_url(app.handle());
+                eprintln!("[fd-client] 生产模式，导航到: {}", server_url);
+                if let Some(window) = app.get_webview_window("main") {
+                    if let Ok(url) = server_url.parse::<tauri::Url>() {
+                        let _ = window.navigate(url);
+                    }
+                }
+            }
+
             Ok(())
         })
         .invoke_handler(tauri::generate_handler![
@@ -54,6 +70,9 @@ pub fn run() {
             forward_shadow_event,
             toggle_notebook_window,
             get_notebook_window_visibility,
+            // Server URL config
+            server_config::get_server_url,
+            server_config::set_server_url,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
