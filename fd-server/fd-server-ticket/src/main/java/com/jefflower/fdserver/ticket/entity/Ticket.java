@@ -92,6 +92,12 @@ public class Ticket {
     @Column(name = "fd_updated_at")
     private LocalDateTime fdUpdatedAt;
 
+    // ========== 工单来源 ==========
+
+    /** 工单来源：FRESHDESK / MANUAL 等 */
+    @Column(name = "origin", length = 32)
+    private String origin;
+
     // ========== 同步控制字段 ==========
 
     @Column(name = "content_hash", length = 64)

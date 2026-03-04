@@ -108,8 +108,9 @@ public class SecurityConfig {
                         .permitAll()
                         // auth/me/** 需要认证（modules、permissions 端点需要有效 token）
                         .requestMatchers("/api/v1/auth/me/**").authenticated()
-                        // 白名单：仅 login、register、refresh-token、OAuth 不需要认证
-                        .requestMatchers("/api/v1/auth/login", "/api/v1/auth/register", "/api/v1/auth/refresh-token")
+                        // 白名单：仅 login、register、refresh、check-admin、OAuth 不需要认证
+                        .requestMatchers("/api/v1/auth/login", "/api/v1/auth/register",
+                                "/api/v1/auth/refresh", "/api/v1/auth/check-admin")
                         .permitAll()
                         .requestMatchers("/api/v1/auth/oauth/status", "/api/v1/auth/oauth/*/url",
                                 "/api/v1/auth/oauth/*/callback")

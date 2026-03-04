@@ -42,6 +42,9 @@ public class TicketListDTO {
     @Schema(description = "翻译标题（来自最新的 TicketTranslation，用于列表中文显示模式）")
     private String translatedTitle;
 
+    @Schema(description = "工单来源（FRESHDESK / MANUAL 等）")
+    private String origin;
+
     @Schema(description = "Freshdesk 工单状态码")
     private Integer fdStatus;
 

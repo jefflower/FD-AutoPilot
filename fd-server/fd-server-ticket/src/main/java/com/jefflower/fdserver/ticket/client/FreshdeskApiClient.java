@@ -183,6 +183,31 @@ public class FreshdeskApiClient {
     }
 
     /**
+     * 更新 Freshdesk 工单状态
+     *
+     * @param ticketExternalId Freshdesk 工单 ID
+     * @param status           Freshdesk 状态码（2=Open, 3=Pending, 4=Resolved, 5=Closed）
+     */
+    public void updateTicketStatus(String ticketExternalId, int status) {
+        String url = String.format("https://%s/api/v2/tickets/%s",
+                freshdeskDomain, ticketExternalId);
+
+        Map<String, Object> requestBody = Map.of("status", status);
+        HttpEntity<Map<String, Object>> entity = new HttpEntity<>(requestBody);
+
+        executeWithRetry(() -> {
+            ResponseEntity<Map<String, Object>> response = restTemplate.exchange(
+                    url, HttpMethod.PUT, entity,
+                    new ParameterizedTypeReference<Map<String, Object>>() {
+                    });
+            handleRateLimit(response.getHeaders());
+            return response.getBody();
+        });
+
+        log.info("Updated Freshdesk ticket #{} status to {}", ticketExternalId, status);
+    }
+
+    /**
      * 带重试的 API 调用执行
      * 策略：最多 maxRetries 次，指数退避（1s, 2s, 4s）
      * HTTP 429 时读 Retry-After header

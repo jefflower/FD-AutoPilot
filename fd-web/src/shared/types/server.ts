@@ -126,6 +126,8 @@ export interface ServerTicket {
   updatedAt: string;
   isValid: boolean;
   lastAuditRemark?: string;
+  /** 工单来源（FRESHDESK / MANUAL 等） */
+  origin?: string;
   /** 列表 DTO 返回的翻译标题（轻量，仅列表查询时存在） */
   translatedTitle?: string;
   translation?: TicketTranslation;

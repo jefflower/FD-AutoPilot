@@ -266,6 +266,7 @@ public class FreshdeskSyncService {
         ticket.setContentHash(newHash);
         ticket.setLastSyncedAt(LocalDateTime.now());
         ticket.setSyncSource(syncSource);
+        ticket.setOrigin("FRESHDESK");
         populateFreshdeskMetadata(ticket, fdTicket);
 
         // 状态安全判断

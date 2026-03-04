@@ -67,6 +67,7 @@ public interface TicketRepository extends JpaRepository<Ticket, Long> {
                         "t.id, t.externalId, t.subject, t.status, t.createdAt, t.updatedAt, t.isValid, " +
                         "(SELECT tr.translatedTitle FROM TicketTranslation tr WHERE tr.ticket.id = t.id AND tr.id = " +
                         "(SELECT MAX(tr2.id) FROM TicketTranslation tr2 WHERE tr2.ticket.id = t.id)), " +
+                        "t.origin, " +
                         "t.fdStatus, t.fdPriority, t.fdRequesterId, t.fdResponderId, t.fdTags, t.fdCreatedAt, t.fdUpdatedAt) " +
                         "FROM Ticket t WHERE " +
                         "(CAST(:status AS string) IS NULL OR t.status = :status) AND " +

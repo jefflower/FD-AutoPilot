@@ -36,6 +36,16 @@ public class ReplyPushService {
         try {
             apiClient.pushReply(ticket.getExternalId(), reply.getTargetReply());
             log.info("Successfully pushed reply to Freshdesk for ticket #{}", ticket.getExternalId());
+
+            // 推送成功后，将 Freshdesk 工单状态标记为 Pending（3），表示等待客户回复
+            try {
+                apiClient.updateTicketStatus(ticket.getExternalId(), 3);
+                ticket.setFdStatus(3);
+                log.info("Updated Freshdesk ticket #{} status to Pending", ticket.getExternalId());
+            } catch (Exception statusEx) {
+                log.warn("Reply pushed but failed to update Freshdesk status for ticket #{}: {}",
+                        ticket.getExternalId(), statusEx.getMessage());
+            }
         } catch (Exception e) {
             log.error("Failed to push reply to Freshdesk for ticket #{}, scheduling retry",
                     ticket.getExternalId(), e);
