@@ -35,6 +35,9 @@ pipeline {
 
         stage('Deploy') {
             steps {
+                withCredentials([
+                    string(credentialsId: 'freshdesk-api-key', variable: 'JENKINS_FRESHDESK_API_KEY')
+                ]) {
                 sh '''
                     echo "========== CHECK .env =========="
                     if [ ! -f "${ENV_FILE}" ]; then
@@ -74,6 +77,12 @@ pipeline {
                     set -a
                     . "${ENV_FILE}"
                     set +a
+
+                    # 使用 Jenkins 凭据覆盖敏感配置（不存储在代码中）
+                    if [ -n "${JENKINS_FRESHDESK_API_KEY}" ]; then
+                        export FRESHDESK_API_KEY="${JENKINS_FRESHDESK_API_KEY}"
+                        echo "FRESHDESK_API_KEY overridden from Jenkins credentials"
+                    fi
 
                     echo "========== STOP OLD PROCESS =========="
                     pkill -f "n8n start" || true
@@ -131,6 +140,7 @@ pipeline {
                         exit 1
                     fi
                 '''
+                } // withCredentials
             }
         }
     }
