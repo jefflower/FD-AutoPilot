@@ -147,7 +147,7 @@ export default function WorkflowN8nTab() {
 
   // ---------- n8n 已启用 — iframe 嵌入 ----------
   return (
-    <div className="flex flex-col h-full bg-gray-50 dark:bg-gray-900">
+    <div className="flex flex-col w-full h-full bg-gray-50 dark:bg-gray-900">
       {/* ====== 顶部工具栏 ====== */}
       <div className="flex items-center gap-3 px-4 py-2 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 shrink-0">
         {/* 模式切换下拉 */}
@@ -231,7 +231,7 @@ export default function WorkflowN8nTab() {
       </div>
 
       {/* ====== iframe 区域 ====== */}
-      <div className="flex-1 min-h-0">
+      <div className="flex-1 w-full min-h-0">
         {mode === 'direct' && !directUrl ? (
           <div className="flex flex-col items-center justify-center h-full text-gray-400 dark:text-gray-500 gap-3">
             <Link2 className="w-10 h-10" />
