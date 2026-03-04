@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
   Boxes,
@@ -10,14 +10,17 @@ import {
   Link2,
   Settings,
   X,
+  Monitor,
 } from 'lucide-react';
-import { configApi } from '../../../shared/services/serverApi';
+import { configApi, getServerBaseUrl } from '../../../shared/services/serverApi';
+// isTauriEnv 备用；跨域检测使用 isCrossOriginIframe() 更精确
+// import { isTauriEnv } from '../../../tauri/bridge';
 
 type N8nMode = 'proxy' | 'direct';
 
 const LS_KEY_MODE = 'fd_n8n_mode';
 const LS_KEY_DIRECT_URL = 'fd_n8n_direct_url';
-const PROXY_URL = '/n8n/';
+const N8N_PROXY_PATH = '/n8n/';
 
 function readMode(): N8nMode {
   const v = localStorage.getItem(LS_KEY_MODE);
@@ -26,6 +29,21 @@ function readMode(): N8nMode {
 
 function readDirectUrl(): string {
   return localStorage.getItem(LS_KEY_DIRECT_URL) || '';
+}
+
+/**
+ * 判断当前环境是否为跨域 iframe 场景（Tauri 客户端 + 有 serverBaseUrl）
+ * 跨域 iframe 中第三方 Cookie 会被 WebKit 阻止，n8n 登录会失败
+ */
+function isCrossOriginIframe(): boolean {
+  const baseUrl = getServerBaseUrl();
+  if (!baseUrl) return false; // 同源部署，无跨域问题
+  try {
+    const serverOrigin = new URL(baseUrl).origin;
+    return serverOrigin !== window.location.origin;
+  } catch {
+    return false;
+  }
 }
 
 export default function WorkflowN8nTab() {
@@ -42,6 +60,12 @@ export default function WorkflowN8nTab() {
 
   // iframe key: 变更时强制重新挂载 iframe
   const [iframeKey, setIframeKey] = useState(0);
+
+  // 是否已在新窗口打开 n8n（Tauri 跨域模式下使用）
+  const [openedInWindow, setOpenedInWindow] = useState(false);
+
+  // 检测跨域 iframe 场景
+  const crossOrigin = useMemo(() => isCrossOriginIframe(), []);
 
   useEffect(() => {
     configApi
@@ -69,12 +93,15 @@ export default function WorkflowN8nTab() {
     }
   }, [panelOpen]);
 
-  const currentSrc = mode === 'proxy' ? PROXY_URL : directUrl;
+  // 拼接 serverBaseUrl，确保 Tauri 客户端也能正确访问远程 n8n
+  const proxyUrl = `${getServerBaseUrl()}${N8N_PROXY_PATH}`;
+  const currentSrc = mode === 'proxy' ? proxyUrl : directUrl;
 
   const handleModeChange = useCallback((newMode: N8nMode) => {
     setMode(newMode);
     localStorage.setItem(LS_KEY_MODE, newMode);
     setIframeKey((k) => k + 1);
+    setOpenedInWindow(false);
   }, []);
 
   const handleDirectUrlChange = useCallback((url: string) => {
@@ -87,9 +114,12 @@ export default function WorkflowN8nTab() {
   }, []);
 
   const handleOpenNewWindow = useCallback(() => {
-    const url = mode === 'proxy' ? PROXY_URL : directUrl;
-    if (url) window.open(url, '_blank');
-  }, [mode, directUrl]);
+    const url = mode === 'proxy' ? proxyUrl : directUrl;
+    if (url) {
+      window.open(url, '_blank');
+      setOpenedInWindow(true);
+    }
+  }, [mode, directUrl, proxyUrl]);
 
   // ---------- 加载中 ----------
   if (loading) {
@@ -136,16 +166,57 @@ export default function WorkflowN8nTab() {
     );
   }
 
-  // ---------- n8n 已启用 — iframe 全屏 + 浮动配置 ----------
+  // ---------- n8n 已启用 ----------
+  // 跨域环境（Tauri 客户端访问远程服务）：iframe 中第三方 Cookie 被阻止，需要新窗口打开
+  const useWindowMode = crossOrigin;
+
   return (
     <div className="relative w-full h-full">
-      {/* ====== iframe 全屏 ====== */}
-      {mode === 'direct' && !directUrl ? (
+      {/* ====== 主内容区 ====== */}
+      {useWindowMode ? (
+        /* -- 跨域模式：提示用户新窗口打开 -- */
+        <div className="flex flex-col items-center justify-center w-full h-full gap-5 bg-gray-50 dark:bg-gray-900">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 p-8 max-w-md w-full mx-4 text-center">
+            <div className="w-14 h-14 mx-auto mb-4 bg-purple-100 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center">
+              <Monitor className="w-7 h-7 text-purple-500 dark:text-purple-400" />
+            </div>
+            <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">
+              n8n 工作流引擎
+            </h3>
+            <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">
+              {mode === 'proxy' ? '代理模式' : '直连模式'}：
+              <span className="font-mono text-xs ml-1 text-gray-600 dark:text-gray-300">
+                {currentSrc}
+              </span>
+            </p>
+            <p className="text-xs text-gray-400 dark:text-gray-500 mb-5">
+              桌面客户端需在新窗口中打开 n8n 以确保登录正常工作
+            </p>
+            <button
+              onClick={handleOpenNewWindow}
+              disabled={mode === 'direct' && !directUrl}
+              className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium rounded-xl
+                bg-purple-600 hover:bg-purple-700 text-white shadow-md
+                transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+            >
+              <ExternalLink className="w-4 h-4" />
+              {openedInWindow ? '再次打开 n8n' : '打开 n8n'}
+            </button>
+            {openedInWindow && (
+              <p className="mt-3 text-xs text-green-500 dark:text-green-400">
+                ✓ 已在新窗口中打开
+              </p>
+            )}
+          </div>
+        </div>
+      ) : mode === 'direct' && !directUrl ? (
+        /* -- 直连模式未配置地址 -- */
         <div className="flex flex-col items-center justify-center w-full h-full text-gray-400 dark:text-gray-500 gap-3 bg-gray-50 dark:bg-gray-900">
           <Link2 className="w-10 h-10" />
           <p className="text-sm">请点击右上角设置，输入 n8n 直连地址</p>
         </div>
       ) : (
+        /* -- 同源模式：iframe 嵌入 -- */
         <iframe
           key={iframeKey}
           src={currentSrc}
@@ -220,8 +291,8 @@ export default function WorkflowN8nTab() {
             {mode === 'proxy' ? (
               <div className="flex items-center gap-2 px-3 py-2 text-xs text-gray-400 bg-white/5 rounded-lg border border-white/10">
                 <Globe className="w-3.5 h-3.5 shrink-0" />
-                <span className="truncate">{PROXY_URL}</span>
-                <span className="ml-auto text-[10px] text-gray-500">本机代理</span>
+                <span className="truncate">{proxyUrl}</span>
+                <span className="ml-auto text-[10px] text-gray-500">代理</span>
               </div>
             ) : (
               <input
@@ -253,6 +324,14 @@ export default function WorkflowN8nTab() {
               <ExternalLink className="w-3.5 h-3.5" />
               新窗口打开
             </button>
+
+            {/* 跨域提示 */}
+            {crossOrigin && (
+              <p className="text-[10px] text-amber-400/70 leading-tight">
+                💡 检测到跨域环境，iframe 嵌入 n8n 时 Cookie 会被浏览器阻止，
+                已自动切换为新窗口模式。
+              </p>
+            )}
           </div>
         </div>
       )}
