@@ -13,7 +13,7 @@ export default function JenkinsTab() {
     }, []);
 
     return (
-        <div className="flex flex-col h-full bg-slate-950">
+        <div className="flex flex-col w-full h-full bg-slate-950">
             {/* 顶部工具栏 */}
             <div className="flex items-center justify-between px-4 py-2 border-b border-slate-800 bg-slate-900/50">
                 <div className="flex items-center gap-2 text-slate-300">
