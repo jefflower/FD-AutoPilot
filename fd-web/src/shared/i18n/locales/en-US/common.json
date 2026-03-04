@@ -46,7 +46,8 @@
     "auditCenter": "Audit",
     "agentExecution": "Agent Runs",
     "aiDashboard": "AI Dashboard",
-    "manualRequired": "Manual"
+    "manualRequired": "Manual",
+    "jenkins": "Jenkins"
   },
   "ticketStatus": {
     "PENDING_TRANS": "Pending Translation",

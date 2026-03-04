@@ -3,6 +3,7 @@ import {
   Users, Shield, RefreshCw, FileText, Database, BookOpen,
   LayoutDashboard, ListChecks, History, Settings, User, Bot,
   Building2, GitBranch, Boxes, Cpu, Activity, Sparkles, AlertTriangle,
+  Hammer,
   type LucideIcon,
 } from 'lucide-react';
 import type { TabType } from '../types/navigation';
@@ -72,6 +73,7 @@ export const navigationModules: NavModule[] = [
       { tab: 'database', labelKey: 'nav.database', icon: Database },
       { tab: 'org-sync', labelKey: 'nav.orgSync', icon: Building2 },
       { tab: 'agent-manage', labelKey: 'nav.agentManage', icon: Bot },
+      { tab: 'admin-jenkins', labelKey: 'nav.jenkins', icon: Hammer },
     ],
   },
   {

@@ -22,6 +22,7 @@ const KnowledgeTab = lazy(() => import("./modules/admin/pages/KnowledgeTab"));
 const RolePermissionTab = lazy(() => import("./modules/admin/pages/RolePermissionTab"));
 const OrgSyncTab = lazy(() => import("./modules/admin/pages/OrgSyncTab"));
 const AgentManageTab = lazy(() => import("./modules/admin/pages/AgentManageTab"));
+const JenkinsTab = lazy(() => import("./modules/admin/pages/JenkinsTab"));
 const TaskDashboardTab = lazy(() => import("./modules/task/pages/TaskDashboardTab"));
 const TaskDefinitionsTab = lazy(() => import("./modules/task/pages/TaskDefinitionsTab"));
 const TaskHistoryTab = lazy(() => import("./modules/task/pages/TaskHistoryTab"));
@@ -185,6 +186,7 @@ const TAB_COMPONENTS: Partial<Record<TabType, TabRoute>> = {
         requireAdmin: true,
     },
     // workflow-n8n: keep-alive 模式，不在此表中，始终挂载在 DOM 中（见下方渲染逻辑）
+    // admin-jenkins: keep-alive 模式，同 n8n，避免切换标签时重载 iframe
 };
 
 /**
@@ -546,7 +548,7 @@ function AppInner() {
                                     </div>
                                 }>
                                     {/* 常规 tab 内容（条件渲染） */}
-                                    <div className="flex-1 flex overflow-hidden" style={{ display: activeTab === 'workflow-n8n' ? 'none' : undefined }}>
+                                    <div className="flex-1 flex overflow-hidden" style={{ display: (activeTab === 'workflow-n8n' || activeTab === 'admin-jenkins') ? 'none' : undefined }}>
                                         {renderTabContent()}
                                     </div>
 
@@ -554,6 +556,13 @@ function AppInner() {
                                     {auth.isLoggedIn && (
                                         <div className="flex-1 flex overflow-hidden" style={{ display: activeTab === 'workflow-n8n' ? undefined : 'none' }}>
                                             <WorkflowN8nTab />
+                                        </div>
+                                    )}
+
+                                    {/* Jenkins iframe — keep-alive：同 n8n 模式 */}
+                                    {auth.isLoggedIn && (
+                                        <div className="flex-1 flex overflow-hidden" style={{ display: activeTab === 'admin-jenkins' ? undefined : 'none' }}>
+                                            <JenkinsTab />
                                         </div>
                                     )}
 

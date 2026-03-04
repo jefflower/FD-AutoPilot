@@ -46,7 +46,8 @@
     "auditCenter": "审核",
     "agentExecution": "Agent 执行",
     "aiDashboard": "AI 工作台",
-    "manualRequired": "人工处理"
+    "manualRequired": "人工处理",
+    "jenkins": "Jenkins"
   },
   "ticketStatus": {
     "PENDING_TRANS": "待翻译",

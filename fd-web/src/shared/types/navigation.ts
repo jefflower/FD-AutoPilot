@@ -30,4 +30,5 @@ export type TabType =
     | 'knowledge-base'
     | 'notebooklm'
     | 'ai-dashboard'
-    | 'manual-required';
+    | 'manual-required'
+    | 'admin-jenkins';
