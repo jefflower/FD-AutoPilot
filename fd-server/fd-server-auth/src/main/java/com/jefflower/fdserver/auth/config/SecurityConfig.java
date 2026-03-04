@@ -65,6 +65,22 @@ public class SecurityConfig {
         return http.build();
     }
 
+    /**
+     * n8n 反向代理专用安全链：/n8n/** 完全放行，不经过 JWT 过滤器。
+     * n8n 有自己的认证机制，无需 fd-server 的 JWT 认证。
+     * 同时需要禁用 frameOptions 以支持 n8n 在 iframe 中嵌入。
+     */
+    @Bean
+    @Order(1)
+    public SecurityFilterChain n8nProxyFilterChain(HttpSecurity http) throws Exception {
+        http
+                .securityMatcher("/n8n/**")
+                .csrf(csrf -> csrf.disable())
+                .headers(headers -> headers.frameOptions(frame -> frame.disable()))
+                .authorizeHttpRequests(auth -> auth.anyRequest().permitAll());
+        return http.build();
+    }
+
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();

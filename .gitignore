@@ -27,3 +27,6 @@ n8n/.env
 
 # PID 文件
 .pids/
+
+# Claude 敏感凭据文件
+.claude/credentials.md

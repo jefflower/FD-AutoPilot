@@ -28,6 +28,7 @@ public class SystemConfigService {
     public static final String KEY_KNOWLEDGE_SYNC_CONFIG = "knowledge_sync_config";
     public static final String KEY_FRESHDESK_DOMAIN = "freshdesk_domain";
     public static final String KEY_FRESHDESK_API_KEY = "freshdesk_api_key";
+    public static final String KEY_N8N_API_URL = "n8n_api_url";
 
     // ========== 自动推送配置 ==========
 
@@ -183,6 +184,20 @@ public class SystemConfigService {
         }
 
         return defaultId;
+    }
+
+    // ========== n8n API 地址配置 ==========
+
+    /**
+     * 获取 n8n API 地址（供反向代理使用）。
+     * 返回数据库中配置的值，若无配置则返回 null。
+     */
+    public String getN8nApiUrl() {
+        return getStringConfig(KEY_N8N_API_URL, null);
+    }
+
+    public void setN8nApiUrl(String url) {
+        setConfig(KEY_N8N_API_URL, url, "n8n API 地址（反向代理目标地址）");
     }
 
     // ========== 知识库同步配置 ==========

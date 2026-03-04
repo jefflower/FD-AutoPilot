@@ -34,6 +34,12 @@
 			<scope>runtime</scope>
 		</dependency>
 
+		<!-- WebSocket（n8n 反向代理 WebSocket 支持） -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-websocket</artifactId>
+		</dependency>
+
 		<!-- Actuator -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

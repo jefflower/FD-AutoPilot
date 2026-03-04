@@ -4,11 +4,7 @@ This file provides guidance to Claude Code when working with code in this reposi
 
 > v0.4 架构设计详见 `doc/v0.4-vision.md`
 
-> 系统的用户名为 `admin`，密码为 `admin123`
-
-> n8n系统的用户名为 `jeff890115@gmail.com`，密码为 `Jeff13467565377`
-
-> jenkins服务地址  http://47.110.152.25:9999/   用户名为 `jenkins`，密码为 `Jenkins@hnlx`
+> 敏感凭据（系统账号、n8n、Jenkins 等）请查看 `.claude/credentials.md`（已 gitignore，不会提交）
 
 ## 项目概览
 

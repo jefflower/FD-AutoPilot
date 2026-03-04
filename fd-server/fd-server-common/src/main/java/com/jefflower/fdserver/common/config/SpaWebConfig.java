@@ -32,11 +32,12 @@ public class SpaWebConfig implements WebMvcConfigurer {
                         if (requested.exists() && requested.isReadable()) {
                             return requested;
                         }
-                        // 排除 API 和 H2 Console 路径
+                        // 排除 API、H2 Console、n8n 反向代理等路径
                         if (resourcePath.startsWith("api/") || resourcePath.startsWith("h2-console")
                                 || resourcePath.startsWith("actuator/")
                                 || resourcePath.startsWith("v3/")
-                                || resourcePath.startsWith("swagger-ui")) {
+                                || resourcePath.startsWith("swagger-ui")
+                                || resourcePath.startsWith("n8n/") || resourcePath.equals("n8n")) {
                             return null;
                         }
                         return new ClassPathResource("/static/index.html");
