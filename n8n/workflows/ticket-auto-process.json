@@ -219,7 +219,7 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "=http://localhost:9988/api/v1/n8n/tickets/{{ $('提取分类').item.json.ticketId }}/resolve-completed",
+        "url": "=http://localhost:9988/api/v1/n8n/tickets/{{ $json.ticketId }}/resolve-completed",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
