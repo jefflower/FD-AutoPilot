@@ -62,6 +62,9 @@ public class ClientRegistrationService {
         reg.setClientType(req.getClientType());
         reg.setVersion(req.getVersion());
         reg.setEnabledCapabilities(toJson(req.getEnabledCapabilities()));
+        if (req.getDetectedSkills() != null && !req.getDetectedSkills().isEmpty()) {
+            reg.setDetectedSkills(toJson(req.getDetectedSkills()));
+        }
         reg.setLastHeartbeat(now);
         reg.setOnline(true);
         clientRepo.save(reg);

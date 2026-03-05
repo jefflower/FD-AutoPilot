@@ -9,6 +9,18 @@
 export const isTauriEnv = (): boolean =>
   typeof window !== 'undefined' && '__TAURI_INTERNALS__' in window;
 
+/**
+ * 计算 bridge 基础 URL：
+ * - localhost / 127.0.0.1（Vite 开发模式有 proxy）→ ''（相对路径）
+ * - 非 localhost（Tauri 加载远程服务器 URL）→ 'http://127.0.0.1:9987'（绝对路径直连 Rust bridge）
+ */
+export function getBridgeBaseUrl(): string {
+  if (typeof window === 'undefined') return '';
+  const host = window.location.hostname;
+  if (host === 'localhost' || host === '127.0.0.1') return '';
+  return 'http://127.0.0.1:9987';
+}
+
 // HTTP bridge 命令到端点的映射（仅 CLI Agent 命令）
 const BRIDGE_CMD_MAP: Record<string, string> = {
   translate_ticket_direct_cmd: '/bridge/translate',
@@ -25,7 +37,7 @@ let bridgeAvailable: boolean | null = null;
 export async function checkBridgeAvailable(): Promise<boolean> {
   if (bridgeAvailable !== null) return bridgeAvailable;
   try {
-    const resp = await fetch('/bridge/health', { signal: AbortSignal.timeout(2000) });
+    const resp = await fetch(`${getBridgeBaseUrl()}/bridge/health`, { signal: AbortSignal.timeout(2000) });
     bridgeAvailable = resp.ok;
   } catch {
     bridgeAvailable = false;
@@ -38,6 +50,18 @@ export async function checkBridgeAvailable(): Promise<boolean> {
 /** 重置 bridge 可用性缓存，使下次 checkBridgeAvailable 真正重新探测 */
 export function resetBridgeAvailableCache(): void {
   bridgeAvailable = null;
+}
+
+/**
+ * 判断当前环境是否具有 AI 执行能力。
+ *
+ * - Tauri 原生模式（`__TAURI_INTERNALS__` 存在）→ true
+ * - Tauri 加载远程 URL 但本地 HTTP bridge 可用 → true
+ * - 纯网页浏览器（两者都没有）→ false
+ */
+export async function hasExecutionCapability(): Promise<boolean> {
+  if (isTauriEnv()) return true;
+  return checkBridgeAvailable();
 }
 
 async function bridgeInvoke<T>(cmd: string, args?: Record<string, unknown>): Promise<T> {
@@ -55,7 +79,7 @@ async function bridgeInvoke<T>(cmd: string, args?: Record<string, unknown>): Pro
     );
   }
 
-  const resp = await fetch(path, {
+  const resp = await fetch(`${getBridgeBaseUrl()}${path}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(args || {}),
@@ -116,7 +140,7 @@ export interface CapabilityDetectResult {
  */
 export async function detectCapabilities(): Promise<CapabilityDetectResult[]> {
   try {
-    const resp = await fetch('/bridge/capabilities/detect', {
+    const resp = await fetch(`${getBridgeBaseUrl()}/bridge/capabilities/detect`, {
       signal: AbortSignal.timeout(10000),
     });
     if (!resp.ok) return [];
@@ -124,5 +148,35 @@ export async function detectCapabilities(): Promise<CapabilityDetectResult[]> {
     return data.capabilities || [];
   } catch {
     return [];
+  }
+}
+
+// ============ Skill 探测 ============
+
+export interface SkillInfo {
+  name: string;
+  description: string;
+}
+
+export interface SkillsDetectResult {
+  skills: SkillInfo[];
+  error: string | null;
+}
+
+/**
+ * 调用 fd-bridge 的 skill 探测端点，通过 AI 提示词探测指定 capability 的 skill 列表。
+ * 超时 60 秒（AI 响应需要时间）。
+ */
+export async function detectSkills(capCode: string): Promise<SkillsDetectResult> {
+  try {
+    const resp = await fetch(
+      `${getBridgeBaseUrl()}/bridge/capabilities/skills?cap=${encodeURIComponent(capCode)}`,
+      { signal: AbortSignal.timeout(60000) },
+    );
+    if (!resp.ok) return { skills: [], error: `HTTP ${resp.status}` };
+    const data = await resp.json();
+    return { skills: data.skills || [], error: data.error || null };
+  } catch (err: any) {
+    return { skills: [], error: err.message || String(err) };
   }
 }

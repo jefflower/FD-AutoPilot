@@ -639,9 +639,15 @@ export interface ClientRegistration {
   clientType: string;
   version: string;
   enabledCapabilities: string;
+  detectedSkills?: string;
   lastHeartbeat?: string;
   online: boolean;
   createdAt: string;
+}
+
+export interface ClientSkillItem {
+  name: string;
+  description: string;
 }
 
 export interface ClientRegisterRequest {
@@ -650,6 +656,7 @@ export interface ClientRegisterRequest {
   version: string;
   enabledCapabilities: string[];
   runningAgents: string[];
+  detectedSkills?: Record<string, ClientSkillItem[]>;
 }
 
 export interface ClientRegisterResponse {

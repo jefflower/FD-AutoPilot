@@ -12,7 +12,7 @@
  */
 import { clientApi } from './serverApi';
 import { isTauriEnv } from '../../tauri/bridge';
-import type { CapabilityDefinition } from '../types/server';
+import type { CapabilityDefinition, ClientSkillItem } from '../types/server';
 
 // ============ 类型定义 ============
 
@@ -66,10 +66,9 @@ export function getOrCreateClientId(): string {
 
 // ============ 客户端类型检测 ============
 
-function determineClientType(): 'TAURI' | 'WEB' | 'BRIDGE' {
-  if (isTauriEnv()) {
-    return 'TAURI';
-  }
+function determineClientType(canExecute: boolean): 'TAURI' | 'WEB' | 'BRIDGE' {
+  if (isTauriEnv()) return 'TAURI';
+  if (canExecute) return 'BRIDGE'; // 有 bridge 执行能力但非原生 Tauri（如 Tauri 加载远程 URL）
   return 'WEB';
 }
 
@@ -138,17 +137,21 @@ async function withRetry<T>(
  * 注册客户端到服务端（失败自动重试最多 3 次，指数退避）
  * @param capabilities 已加载的 CapabilityDefinition 列表
  * @param runningAgents 当前正在运行的 Agent code 列表
+ * @param canExecute 当前环境是否具有执行能力（用于区分 BRIDGE / WEB 类型）
+ * @param detectedSkills 客户端检测到的 AI Skills，按 capability 分组
  * @returns 注册响应（包含在线客户端数量），所有重试都失败时返回 null
  */
 export async function registerClient(
   capabilities: CapabilityDefinition[],
   runningAgents: string[] = [],
+  canExecute: boolean = false,
+  detectedSkills?: Record<string, ClientSkillItem[]>,
 ): Promise<{ onlineClients: number } | null> {
   const clientId = getOrCreateClientId();
   const enabledCapabilities = capabilities
     .filter(c => c.enabled)
     .map(c => c.code);
-  const clientType = determineClientType();
+  const clientType = determineClientType(canExecute);
 
   const result = await withRetry(
     async () => {
@@ -158,6 +161,7 @@ export async function registerClient(
         version: '0.4.0',
         enabledCapabilities,
         runningAgents,
+        detectedSkills,
       });
       return response;
     },

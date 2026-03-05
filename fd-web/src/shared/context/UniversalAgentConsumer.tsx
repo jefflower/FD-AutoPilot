@@ -3,7 +3,6 @@ import { useAgentContext } from '../agents/AgentContext';
 import { AgentRegistry } from '../agents/AgentRegistry';
 import { taskApi } from '../services/serverApi';
 import { getOrCreateClientId } from './mq-task/utils';
-import { isTauriEnv, checkBridgeAvailable } from '../../tauri/bridge';
 import type { TaskInstance } from '../types/server';
 
 // ─── 常量 ────────────────────────────────────────────────────
@@ -51,23 +50,22 @@ function withTimeout<T>(promise: Promise<T>, ms: number, label: string): Promise
  * 新增 Agent 无需开发新消费者，只要注册 AgentDefinition 即可。
  */
 export const UniversalAgentConsumer: React.FC = () => {
-  const { definitions, manualAgentOverrides } = useAgentContext();
+  const { definitions, manualAgentOverrides, canExecute } = useAgentContext();
   const clientId = getOrCreateClientId();
-  const isTauri = isTauriEnv();
 
   // 记录当前正在处理的任务 ID，避免重复执行
   const processingRef = useRef<Set<number>>(new Set());
   // 轮询锁：同一时间只允许一轮轮询
   const pollingRef = useRef(false);
-  // 是否已启动（bridge 可用后才启动）
+  // 是否已启动
   const activeRef = useRef(false);
   // round-robin 指针
   const rrIndexRef = useRef(0);
 
   // 筛选需要通用消费者处理的 agent 列表
-  // 网页端不消费任务：无执行能力，claim 了也执行不了，还会抢走 Tauri 客户端的任务
-  // 条件：Tauri 环境 且 enabled=true 且 轮询生效（手动覆盖优先，否则看 autoStart）且不在专用消费者中
-  const genericAgents = isTauri
+  // 无执行能力时（纯网页端）返回空列表，不消费任务
+  // 条件：有执行能力 且 enabled=true 且 轮询生效（手动覆盖优先，否则看 autoStart）且不在专用消费者中
+  const genericAgents = canExecute
     ? definitions.filter(
         (d: { enabled: boolean; code: string; autoStart?: boolean }) => {
           if (!d.enabled) return false;
@@ -211,45 +209,27 @@ export const UniversalAgentConsumer: React.FC = () => {
     }
   }, [genericAgents, clientId, processTask]);
 
-  // ── 启动：检查 bridge 可用性，然后开始轮询 ──
+  // ── 启动轮询（canExecute 已在 genericAgents 过滤中保证，此处无需再检查 bridge） ──
   useEffect(() => {
     if (genericAgents.length === 0) {
       activeRef.current = false;
       return;
     }
 
-    let timer: ReturnType<typeof setInterval> | null = null;
+    activeRef.current = true;
+    console.log(
+      `[UniversalAgent] 启动通用消费者，监听 ${genericAgents.length} 个 agent:`,
+      genericAgents.map((a) => a.code).join(', '),
+    );
 
-    const start = async () => {
-      // 浏览器模式需要 bridge
-      if (!isTauriEnv()) {
-        const bridgeOk = await checkBridgeAvailable();
-        if (!bridgeOk) {
-          console.warn(
-            '[UniversalAgent] fd-bridge 不可用，通用消费者未启动。需要的 agent:',
-            genericAgents.map((a) => a.code).join(', '),
-          );
-          return;
-        }
-      }
-
-      activeRef.current = true;
-      console.log(
-        `[UniversalAgent] 启动通用消费者，监听 ${genericAgents.length} 个 agent:`,
-        genericAgents.map((a) => a.code).join(', '),
-      );
-
-      // 立即执行一次
-      pollOnce();
-      // 定时轮询
-      timer = setInterval(pollOnce, POLL_INTERVAL_MS);
-    };
-
-    start();
+    // 立即执行一次
+    pollOnce();
+    // 定时轮询
+    const timer = setInterval(pollOnce, POLL_INTERVAL_MS);
 
     return () => {
       activeRef.current = false;
-      if (timer) clearInterval(timer);
+      clearInterval(timer);
     };
     // 仅在 agent 列表变化时重新启动
     // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -5,11 +5,12 @@
  * 所有请求均做 try-catch，bridge 不可用时返回合理默认值。
  */
 
-import { checkBridgeAvailable } from '../../tauri/bridge';
+import { checkBridgeAvailable, getBridgeBaseUrl } from '../../tauri/bridge';
 
 // ─── 常量 ──────────────────────────────────────────────────
 
-const BRIDGE_BASE = '/bridge';
+/** 动态计算 bridge 基础路径（支持 Tauri 远程 URL 模式直连 127.0.0.1:9987） */
+const bridgeBase = () => `${getBridgeBaseUrl()}/bridge`;
 
 // ─── 数据结构 ─────────────────────────────────────────────
 
@@ -46,7 +47,7 @@ async function bridgeFetch<T>(
     options?: RequestInit,
 ): Promise<T | null> {
     try {
-        const resp = await fetch(`${BRIDGE_BASE}${path}`, {
+        const resp = await fetch(`${bridgeBase()}${path}`, {
             ...options,
             headers: {
                 'Content-Type': 'application/json',

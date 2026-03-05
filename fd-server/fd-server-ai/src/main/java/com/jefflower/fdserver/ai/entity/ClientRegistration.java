@@ -28,6 +28,10 @@ public class ClientRegistration {
     @Column(name = "enabled_capabilities", columnDefinition = "TEXT")
     private String enabledCapabilities;
 
+    /** 客户端检测到的 AI Skills（JSON 格式，按 capability 分组） */
+    @Column(name = "detected_skills", columnDefinition = "TEXT")
+    private String detectedSkills;
+
     @Column(name = "last_heartbeat")
     private LocalDateTime lastHeartbeat;
 

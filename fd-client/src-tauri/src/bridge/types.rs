@@ -133,6 +133,26 @@ pub struct CapabilitiesResponse {
     pub capabilities: Vec<CapabilityInfo>,
 }
 
+// ========== Skill Detection ==========
+
+#[derive(Deserialize)]
+pub struct SkillsQueryParams {
+    pub cap: String,
+}
+
+#[derive(Serialize, Deserialize, Clone)]
+pub struct SkillInfo {
+    pub name: String,
+    pub description: String,
+}
+
+#[derive(Serialize)]
+pub struct SkillsResponse {
+    pub skills: Vec<SkillInfo>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub error: Option<String>,
+}
+
 // ========== NotebookLM CLI Request ==========
 
 #[derive(Deserialize)]

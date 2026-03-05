@@ -44,6 +44,7 @@ import { ServerEventsProvider } from "./shared/context/ServerEventsContext";
 import { UniversalAgentConsumer } from "./shared/context/UniversalAgentConsumer";
 import { JsonPreviewProvider } from "./shared/components/JsonPreview";
 import CyberOfficeFloat from "./shared/components/CyberOfficeFloat";
+import StartupGate from "./shared/components/StartupGate";
 
 import { useSettings } from "./shared/hooks/useSettings";
 import { ticketApi } from "./shared/services/serverApi";
@@ -364,6 +365,7 @@ function AppInner() {
             <JsonPreviewProvider>
             <ServerEventsProvider>
             <AgentProvider>
+                    <StartupGate>
                         <UniversalAgentConsumer />
                         <AppShell
                             activeTab={activeTab}
@@ -398,6 +400,7 @@ function AppInner() {
                             </ErrorBoundary>
                         </AppShell>
                         <CyberOfficeFloat onNavigateToOffice={() => setActiveTab('ai-dashboard')} />
+                    </StartupGate>
             </AgentProvider>
             </ServerEventsProvider>
             </JsonPreviewProvider>
