@@ -307,6 +307,18 @@
       "changeDescription": "Change description",
       "createdAt": "Created at",
       "createdBy": "Created by"
+    },
+    "n8nConfig": {
+      "title": "n8n API Configuration",
+      "notConfigured": "n8n API is not configured, workflow deployment is unavailable",
+      "configure": "Configure",
+      "apiUrl": "n8n API URL",
+      "apiUrlHint": "Leave empty to use server default",
+      "apiKey": "API Key",
+      "apiKeyPlaceholder": "Enter n8n API Key",
+      "apiKeyHint": "Create an API Key in n8n Settings → API",
+      "saved": "n8n configuration saved",
+      "saveFailed": "Failed to save n8n configuration"
     }
   },
   "aiDashboard": {

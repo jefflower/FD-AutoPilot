@@ -29,6 +29,7 @@ public class SystemConfigService {
     public static final String KEY_FRESHDESK_DOMAIN = "freshdesk_domain";
     public static final String KEY_FRESHDESK_API_KEY = "freshdesk_api_key";
     public static final String KEY_N8N_API_URL = "n8n_api_url";
+    public static final String KEY_N8N_API_KEY = "n8n_api_key";
 
     // ========== 自动推送配置 ==========
 
@@ -198,6 +199,16 @@ public class SystemConfigService {
 
     public void setN8nApiUrl(String url) {
         setConfig(KEY_N8N_API_URL, url, "n8n API 地址（反向代理目标地址）");
+    }
+
+    // ========== n8n API Key 配置 ==========
+
+    public String getN8nApiKey() {
+        return getStringConfig(KEY_N8N_API_KEY, null);
+    }
+
+    public void setN8nApiKey(String apiKey) {
+        setConfig(KEY_N8N_API_KEY, apiKey, "n8n API Key");
     }
 
     // ========== 知识库同步配置 ==========

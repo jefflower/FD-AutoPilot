@@ -68,6 +68,10 @@ public class AgentDefinition {
     @Column(columnDefinition = "TEXT")
     private String systemPrompt;
 
+    /** 用户可配置参数的 JSON Schema，定义了用户订阅时可自定义的参数 */
+    @Column(name = "user_config_schema", columnDefinition = "TEXT")
+    private String userConfigSchema;
+
     private boolean enabled = true;
 
     /** 前端加载后自动启动 MQ Consumer */

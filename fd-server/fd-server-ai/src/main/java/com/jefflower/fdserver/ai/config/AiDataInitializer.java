@@ -349,6 +349,14 @@ public class AiDataInitializer implements CommandLineRunner {
                 REPLY_OUTPUT_SCHEMA,
                 DEFAULT_TEMPLATE_ENGINE,
                 "notebooklm-py");
+
+        // 给需要用户配置 notebookId 的 Agent 设置 userConfigSchema
+        setUserConfigSchema("ticket-reply",
+                "{\"notebookId\":{\"type\":\"string\",\"label\":\"Notebook ID\",\"required\":true,\"description\":\"NotebookLM 知识库 ID\"}}");
+        setUserConfigSchema("logistics-reply",
+                "{\"notebookId\":{\"type\":\"string\",\"label\":\"Notebook ID\",\"required\":true,\"description\":\"NotebookLM 知识库 ID\"}}");
+        setUserConfigSchema("completion-reply",
+                "{\"notebookId\":{\"type\":\"string\",\"label\":\"Notebook ID\",\"required\":true,\"description\":\"NotebookLM 知识库 ID\"}}");
     }
 
     /**
@@ -409,6 +417,19 @@ public class AiDataInitializer implements CommandLineRunner {
                 log.info("[AiDataInitializer] Removed obsolete built-in agent: {}", agent.getCode());
             }
         }
+    }
+
+    /**
+     * 设置 Agent 的 userConfigSchema（仅当当前值为空时写入，不覆盖已有配置）。
+     */
+    private void setUserConfigSchema(String agentCode, String schema) {
+        repository.findByCode(agentCode).ifPresent(def -> {
+            if (def.getUserConfigSchema() == null || def.getUserConfigSchema().isBlank()) {
+                def.setUserConfigSchema(schema);
+                repository.save(def);
+                log.info("[AiDataInit] 设置 {} 的 userConfigSchema", agentCode);
+            }
+        });
     }
 
     /**

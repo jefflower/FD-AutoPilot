@@ -15,8 +15,9 @@ import {
   PanelRightOpen, PanelRightClose, Pencil, Check, X,
   Loader2, Bot, User, Code, FileJson,
   MessageSquareWarning, MessageSquare, Wrench, ChevronDown, ChevronRight,
-  Play, ExternalLink, Eye,
+  Play, ExternalLink, Eye, Settings, Key, AlertTriangle,
 } from 'lucide-react';
+import { n8nConfigApi } from '../../../shared/services/api/workflow';
 import { agentApi } from '../../../shared/services/serverApi';
 import type { AgentDefinition } from '../../../shared/types/server';
 import WorkspacePanel from '../components/WorkspacePanel';
@@ -1128,6 +1129,13 @@ const WorkflowAiTab: React.FC = () => {
   const [creating, setCreating] = useState(false);
   const [deleteTarget, setDeleteTarget] = useState<AiWorkflow | null>(null);
 
+  // n8n 配置
+  const [n8nConfigOpen, setN8nConfigOpen] = useState(false);
+  const [n8nApiUrl, setN8nApiUrl] = useState('');
+  const [n8nApiKey, setN8nApiKey] = useState('');
+  const [n8nConfigured, setN8nConfigured] = useState<boolean | null>(null); // null=loading
+  const [n8nSaving, setN8nSaving] = useState(false);
+
   const selectedWorkflow = useMemo(
     () => workflows.find(w => w.id === selectedId) || null,
     [workflows, selectedId],
@@ -1170,6 +1178,42 @@ const WorkflowAiTab: React.FC = () => {
   useEffect(() => {
     loadWorkflows();
   }, [loadWorkflows]);
+
+  // 加载 n8n 配置状态
+  const loadN8nConfig = useCallback(async () => {
+    try {
+      const config = await n8nConfigApi.getConfig();
+      setN8nApiUrl(config.apiUrl || '');
+      setN8nApiKey(config.apiKey || '');
+      setN8nConfigured(config.configured);
+    } catch {
+      setN8nConfigured(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    loadN8nConfig();
+  }, [loadN8nConfig]);
+
+  // 保存 n8n 配置
+  const handleSaveN8nConfig = useCallback(async () => {
+    setN8nSaving(true);
+    try {
+      await n8nConfigApi.setConfig({
+        apiUrl: n8nApiUrl || undefined,
+        apiKey: n8nApiKey || undefined,
+      });
+      toast('success', t('workflowAi.n8nConfig.saved'));
+      setN8nConfigOpen(false);
+      // 重新加载配置状态和工作流列表
+      await loadN8nConfig();
+      loadWorkflows();
+    } catch (err: any) {
+      toast('error', err.message || t('workflowAi.n8nConfig.saveFailed'));
+    } finally {
+      setN8nSaving(false);
+    }
+  }, [n8nApiUrl, n8nApiKey, toast, t, loadN8nConfig, loadWorkflows]);
 
   // 选中工作流后加载详情
   useEffect(() => {
@@ -1468,67 +1512,87 @@ const WorkflowAiTab: React.FC = () => {
   }, [openPreview, t]);
 
   return (
-    <div className="flex-1 flex overflow-hidden">
-      {/* 左侧列表 */}
-      <WorkflowListPanel
-        workflows={workflows}
-        selectedId={selectedId}
-        onSelect={handleSelect}
-        onCreate={() => setCreateDialogOpen(true)}
-        onDelete={wf => setDeleteTarget(wf)}
-        loading={listLoading}
-      />
-
-      {/* 中间对话面板 */}
-      <ChatPanel
-        workflow={selectedWorkflow}
-        messages={currentMessages}
-        sending={sending}
-        onSend={handleSend}
-        onApplyJson={handleApplyJson}
-        onPreviewJson={(json) => openPreview({ title: t('jsonPreview.preview'), json })}
-        onRename={handleRename}
-        activeIteration={activeIteration}
-        iterations={currentWorkflowIters?.iterations || []}
-        activeIterationId={currentWorkflowIters?.activeIterationId || null}
-        onSwitchIteration={handleSwitchIteration}
-        onCreateIteration={() => setShowAgentSelect(true)}
-        onDeleteIteration={handleDeleteIteration}
-      />
-
-      {/* 右侧工具面板 */}
-      {selectedWorkflow && (
-        <>
-          {/* 折叠切换按钮 */}
+    <div className="flex-1 flex flex-col overflow-hidden">
+      {/* n8n API 配置提示 */}
+      {n8nConfigured === false && !n8nConfigOpen && (
+        <div className="flex-shrink-0 px-4 py-2 bg-amber-500/10 border-b border-amber-500/30 flex items-center justify-between">
+          <div className="flex items-center gap-2 text-amber-400 text-xs">
+            <AlertTriangle className="w-4 h-4" />
+            <span>{t('workflowAi.n8nConfig.notConfigured')}</span>
+          </div>
           <button
-            onClick={() => setToolPanelOpen(v => !v)}
-            className="flex-shrink-0 w-6 flex items-center justify-center border-l border-slate-700/50 text-slate-500 hover:text-slate-300 hover:bg-slate-800/50 transition-colors"
-            title={toolPanelOpen ? t('workflowAi.collapsePanel') : t('workflowAi.expandPanel')}
+            onClick={() => setN8nConfigOpen(true)}
+            className="px-3 py-1 text-xs bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/30 rounded-lg transition-colors flex items-center gap-1.5"
           >
-            {toolPanelOpen ? (
-              <PanelRightClose className="w-3.5 h-3.5" />
-            ) : (
-              <PanelRightOpen className="w-3.5 h-3.5" />
-            )}
+            <Settings className="w-3.5 h-3.5" />
+            {t('workflowAi.n8nConfig.configure')}
           </button>
-
-          {toolPanelOpen && (
-            <div className="w-72 flex-shrink-0 border-l border-slate-700/50 h-full overflow-hidden">
-              <ToolPanel
-                workflow={selectedWorkflow}
-                currentJson={currentJson}
-                onDeploy={handleDeploy}
-                onActivate={handleActivate}
-                onDeactivate={handleDeactivate}
-                onRollback={handleRollback}
-                onPreviewVersion={handlePreviewVersion}
-                onViewFullJson={() => currentJson && openPreview({ title: `${selectedWorkflow?.name || 'Workflow'} - JSON`, json: currentJson })}
-                deploying={deploying}
-              />
-            </div>
-          )}
-        </>
+        </div>
       )}
+
+      {/* 主内容区 */}
+      <div className="flex-1 flex overflow-hidden">
+        {/* 左侧列表 */}
+        <WorkflowListPanel
+          workflows={workflows}
+          selectedId={selectedId}
+          onSelect={handleSelect}
+          onCreate={() => setCreateDialogOpen(true)}
+          onDelete={wf => setDeleteTarget(wf)}
+          loading={listLoading}
+        />
+
+        {/* 中间对话面板 */}
+        <ChatPanel
+          workflow={selectedWorkflow}
+          messages={currentMessages}
+          sending={sending}
+          onSend={handleSend}
+          onApplyJson={handleApplyJson}
+          onPreviewJson={(json) => openPreview({ title: t('jsonPreview.preview'), json })}
+          onRename={handleRename}
+          activeIteration={activeIteration}
+          iterations={currentWorkflowIters?.iterations || []}
+          activeIterationId={currentWorkflowIters?.activeIterationId || null}
+          onSwitchIteration={handleSwitchIteration}
+          onCreateIteration={() => setShowAgentSelect(true)}
+          onDeleteIteration={handleDeleteIteration}
+        />
+
+        {/* 右侧工具面板 */}
+        {selectedWorkflow && (
+          <>
+            {/* 折叠切换按钮 */}
+            <button
+              onClick={() => setToolPanelOpen(v => !v)}
+              className="flex-shrink-0 w-6 flex items-center justify-center border-l border-slate-700/50 text-slate-500 hover:text-slate-300 hover:bg-slate-800/50 transition-colors"
+              title={toolPanelOpen ? t('workflowAi.collapsePanel') : t('workflowAi.expandPanel')}
+            >
+              {toolPanelOpen ? (
+                <PanelRightClose className="w-3.5 h-3.5" />
+              ) : (
+                <PanelRightOpen className="w-3.5 h-3.5" />
+              )}
+            </button>
+
+            {toolPanelOpen && (
+              <div className="w-72 flex-shrink-0 border-l border-slate-700/50 h-full overflow-hidden">
+                <ToolPanel
+                  workflow={selectedWorkflow}
+                  currentJson={currentJson}
+                  onDeploy={handleDeploy}
+                  onActivate={handleActivate}
+                  onDeactivate={handleDeactivate}
+                  onRollback={handleRollback}
+                  onPreviewVersion={handlePreviewVersion}
+                  onViewFullJson={() => currentJson && openPreview({ title: `${selectedWorkflow?.name || 'Workflow'} - JSON`, json: currentJson })}
+                  deploying={deploying}
+                />
+              </div>
+            )}
+          </>
+        )}
+      </div>
 
       {/* 对话框 */}
       <CreateDialog
@@ -1547,6 +1611,59 @@ const WorkflowAiTab: React.FC = () => {
         onClose={() => setShowAgentSelect(false)}
         onSelect={handleCreateIteration}
       />
+
+      {/* n8n 配置弹窗 */}
+      {n8nConfigOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50" onClick={() => setN8nConfigOpen(false)}>
+          <div className="bg-slate-800 border border-slate-700 rounded-lg w-[480px] p-6" onClick={e => e.stopPropagation()}>
+            <div className="flex items-center gap-2 mb-4">
+              <Key className="w-5 h-5 text-blue-400" />
+              <h3 className="text-slate-200 font-medium">{t('workflowAi.n8nConfig.title')}</h3>
+            </div>
+            <div className="space-y-4">
+              <div>
+                <label className="block text-xs text-slate-400 mb-1">{t('workflowAi.n8nConfig.apiUrl')}</label>
+                <input
+                  value={n8nApiUrl}
+                  onChange={e => setN8nApiUrl(e.target.value)}
+                  placeholder="http://localhost:5678"
+                  className="w-full bg-slate-900/50 border border-slate-700 rounded px-3 py-2 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-blue-500"
+                />
+                <p className="text-[10px] text-slate-500 mt-1">{t('workflowAi.n8nConfig.apiUrlHint')}</p>
+              </div>
+              <div>
+                <label className="block text-xs text-slate-400 mb-1">{t('workflowAi.n8nConfig.apiKey')}</label>
+                <input
+                  value={n8nApiKey}
+                  onChange={e => setN8nApiKey(e.target.value)}
+                  placeholder={t('workflowAi.n8nConfig.apiKeyPlaceholder')}
+                  className="w-full bg-slate-900/50 border border-slate-700 rounded px-3 py-2 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-blue-500 font-mono"
+                />
+                <p className="text-[10px] text-slate-500 mt-1">{t('workflowAi.n8nConfig.apiKeyHint')}</p>
+              </div>
+            </div>
+            <div className="flex items-center justify-end gap-3 mt-5">
+              <button
+                onClick={() => setN8nConfigOpen(false)}
+                className="px-3 py-1.5 text-sm text-slate-400 hover:text-slate-300 transition-colors"
+              >
+                {t('button.cancel')}
+              </button>
+              <button
+                onClick={handleSaveN8nConfig}
+                disabled={n8nSaving}
+                className={`px-4 py-1.5 text-sm rounded transition-colors ${
+                  !n8nSaving
+                    ? 'bg-blue-600 hover:bg-blue-500 text-white'
+                    : 'bg-slate-700 text-slate-500 cursor-not-allowed'
+                }`}
+              >
+                {n8nSaving ? t('button.loading') : t('button.save')}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

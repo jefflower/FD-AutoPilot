@@ -1,9 +1,161 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { RefreshCw, Trash2, Power, Zap, AlertTriangle, Bot, ArrowRight } from 'lucide-react';
+import { RefreshCw, Trash2, Power, Zap, AlertTriangle, Bot, ArrowRight, Settings, ChevronDown, ChevronRight, Save } from 'lucide-react';
 import { userAgentApi } from '../../../shared/services/api/agent';
 import { useAgentContext } from '../../../shared/agents/AgentContext';
 import { useToast } from '../../../shared/hooks/useToast';
 import type { UserAgentConfigDTO } from '../../../shared/types/server';
+
+/** Agent 可配置参数的 Schema 项 */
+interface ConfigSchemaField {
+    type: 'string' | 'number' | 'boolean' | 'select';
+    label: string;
+    required?: boolean;
+    description?: string;
+    default?: any;
+    options?: { label: string; value: string }[];  // for select type
+}
+
+type ConfigSchema = Record<string, ConfigSchemaField>;
+
+/** 解析 userConfigSchema JSON */
+function parseSchema(schemaStr?: string): ConfigSchema | null {
+    if (!schemaStr) return null;
+    try {
+        const parsed = JSON.parse(schemaStr);
+        if (typeof parsed === 'object' && parsed !== null && Object.keys(parsed).length > 0) {
+            return parsed as ConfigSchema;
+        }
+        return null;
+    } catch {
+        return null;
+    }
+}
+
+/** 解析 customConfig JSON */
+function parseConfig(configStr?: string): Record<string, any> {
+    if (!configStr) return {};
+    try {
+        return JSON.parse(configStr);
+    } catch {
+        return {};
+    }
+}
+
+/** 可折叠的 Agent 参数配置面板 */
+const AgentConfigPanel: React.FC<{
+    agentCode: string;
+    schema: ConfigSchema;
+    initialConfig: Record<string, any>;
+    disabled?: boolean;
+    onSave: (configJson: string) => Promise<void>;
+}> = ({ schema, initialConfig, disabled, onSave }) => {
+    const [expanded, setExpanded] = useState(false);
+    const [values, setValues] = useState<Record<string, any>>(() => {
+        // 初始化：优先用已保存的值，否则用 schema 默认值
+        const init: Record<string, any> = {};
+        for (const [key, field] of Object.entries(schema)) {
+            init[key] = initialConfig[key] ?? field.default ?? '';
+        }
+        return init;
+    });
+    const [saving, setSaving] = useState(false);
+    const [dirty, setDirty] = useState(false);
+
+    const handleChange = (key: string, value: any) => {
+        setValues(prev => ({ ...prev, [key]: value }));
+        setDirty(true);
+    };
+
+    const handleSave = async () => {
+        setSaving(true);
+        try {
+            await onSave(JSON.stringify(values));
+            setDirty(false);
+        } finally {
+            setSaving(false);
+        }
+    };
+
+    const fields = Object.entries(schema);
+
+    return (
+        <div className="mb-3">
+            <button
+                onClick={() => setExpanded(!expanded)}
+                className="flex items-center gap-1.5 text-xs text-slate-400 hover:text-slate-300 transition-colors"
+            >
+                {expanded ? <ChevronDown className="w-3 h-3" /> : <ChevronRight className="w-3 h-3" />}
+                <Settings className="w-3 h-3" />
+                <span>参数配置</span>
+                {dirty && <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />}
+            </button>
+
+            {expanded && (
+                <div className="mt-2 pl-5 space-y-3">
+                    {fields.map(([key, field]) => (
+                        <div key={key}>
+                            <label className="flex items-center gap-1 text-xs text-slate-400 mb-1">
+                                {field.label || key}
+                                {field.required && <span className="text-red-400">*</span>}
+                            </label>
+                            {field.type === 'boolean' ? (
+                                <button
+                                    onClick={() => handleChange(key, !values[key])}
+                                    disabled={disabled}
+                                    className={`relative inline-flex h-5 w-9 items-center rounded-full transition-colors ${
+                                        disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
+                                    } ${values[key] ? 'bg-blue-600' : 'bg-slate-600'}`}
+                                >
+                                    <span className={`inline-block h-3.5 w-3.5 transform rounded-full bg-white transition-transform ${
+                                        values[key] ? 'translate-x-4.5' : 'translate-x-0.5'
+                                    }`} />
+                                </button>
+                            ) : field.type === 'select' ? (
+                                <select
+                                    value={values[key] || ''}
+                                    onChange={e => handleChange(key, e.target.value)}
+                                    disabled={disabled}
+                                    className="w-full bg-slate-900/50 border border-slate-700 rounded px-2.5 py-1.5 text-xs text-slate-200 focus:outline-none focus:border-blue-500 disabled:opacity-50"
+                                >
+                                    <option value="">请选择...</option>
+                                    {field.options?.map(opt => (
+                                        <option key={opt.value} value={opt.value}>{opt.label}</option>
+                                    ))}
+                                </select>
+                            ) : (
+                                <input
+                                    type={field.type === 'number' ? 'number' : 'text'}
+                                    value={values[key] ?? ''}
+                                    onChange={e => handleChange(key, field.type === 'number' ? Number(e.target.value) : e.target.value)}
+                                    disabled={disabled}
+                                    placeholder={field.description || ''}
+                                    className="w-full bg-slate-900/50 border border-slate-700 rounded px-2.5 py-1.5 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-blue-500 font-mono disabled:opacity-50"
+                                />
+                            )}
+                            {field.description && field.type !== 'boolean' && (
+                                <p className="text-[10px] text-slate-500 mt-0.5">{field.description}</p>
+                            )}
+                        </div>
+                    ))}
+
+                    {/* 保存按钮 */}
+                    <button
+                        onClick={handleSave}
+                        disabled={!dirty || saving || disabled}
+                        className={`flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-lg transition-colors ${
+                            dirty && !saving && !disabled
+                                ? 'bg-blue-600 hover:bg-blue-500 text-white'
+                                : 'bg-slate-700 text-slate-500 cursor-not-allowed'
+                        }`}
+                    >
+                        <Save className="w-3 h-3" />
+                        {saving ? '保存中...' : '保存参数'}
+                    </button>
+                </div>
+            )}
+        </div>
+    );
+};
 
 const MyAgentsTab: React.FC = () => {
     const { reload } = useAgentContext();
@@ -175,6 +327,34 @@ const MyAgentsTab: React.FC = () => {
                                 {agent.description && (
                                     <p className="text-xs text-slate-400 mb-3 line-clamp-2">{agent.description}</p>
                                 )}
+
+                                {/* 动态参数配置 */}
+                                {(() => {
+                                    const schema = parseSchema(agent.userConfigSchema);
+                                    if (!schema) return null;
+                                    return (
+                                        <AgentConfigPanel
+                                            agentCode={agent.agentCode}
+                                            schema={schema}
+                                            initialConfig={parseConfig(agent.customConfig)}
+                                            disabled={operating === agent.agentCode}
+                                            onSave={async (configJson) => {
+                                                setOperating(agent.agentCode);
+                                                try {
+                                                    const updated = await userAgentApi.updateConfig(agent.agentCode, { customConfig: configJson });
+                                                    setAgents(prev => prev.map(a => a.agentCode === agent.agentCode
+                                                        ? { ...a, customConfig: updated.customConfig } : a));
+                                                    await reload();
+                                                    toast('success', `${agent.agentName || agent.agentCode} 参数已保存`);
+                                                } catch (err: any) {
+                                                    toast('error', err.message || '保存失败');
+                                                } finally {
+                                                    setOperating(null);
+                                                }
+                                            }}
+                                        />
+                                    );
+                                })()}
 
                                 {/* 操作行 */}
                                 <div className="flex items-center justify-between pt-2 border-t border-slate-700/30">

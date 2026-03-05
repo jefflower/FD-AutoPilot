@@ -2,6 +2,7 @@ package com.jefflower.fdserver.ai.service;
 
 import com.jefflower.fdserver.common.exception.BusinessException;
 import com.jefflower.fdserver.common.exception.ErrorCode;
+import com.jefflower.fdserver.ticket.service.SystemConfigService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
@@ -14,15 +15,43 @@ import org.springframework.web.client.RestTemplate;
 public class N8nApiService {
 
     @Value("${n8n.api-url:http://localhost:5678}")
-    private String n8nApiUrl;
+    private String defaultApiUrl;
 
     @Value("${n8n.api-key:}")
-    private String n8nApiKey;
+    private String defaultApiKey;
 
     private final RestTemplate restTemplate;
+    private final SystemConfigService systemConfigService;
 
-    public N8nApiService() {
+    public N8nApiService(SystemConfigService systemConfigService) {
         this.restTemplate = new RestTemplate();
+        this.systemConfigService = systemConfigService;
+    }
+
+    /** 解析 n8n API URL：优先数据库，fallback 到配置文件 */
+    private String resolveApiUrl() {
+        try {
+            String dbUrl = systemConfigService.getN8nApiUrl();
+            if (dbUrl != null && !dbUrl.isBlank()) {
+                return dbUrl.endsWith("/") ? dbUrl.substring(0, dbUrl.length() - 1) : dbUrl;
+            }
+        } catch (Exception e) {
+            log.warn("[N8nApiService] 读取数据库 n8n_api_url 失败，使用默认值: {}", e.getMessage());
+        }
+        return defaultApiUrl;
+    }
+
+    /** 解析 n8n API Key：优先数据库，fallback 到配置文件 */
+    private String resolveApiKey() {
+        try {
+            String dbKey = systemConfigService.getN8nApiKey();
+            if (dbKey != null && !dbKey.isBlank()) {
+                return dbKey;
+            }
+        } catch (Exception e) {
+            log.warn("[N8nApiService] 读取数据库 n8n_api_key 失败，使用默认值: {}", e.getMessage());
+        }
+        return defaultApiKey;
     }
 
     /**
@@ -32,7 +61,7 @@ public class N8nApiService {
      * @return n8n 返回的响应 JSON（包含 id 字段）
      */
     public String createWorkflow(String json) {
-        String url = n8nApiUrl + "/api/v1/workflows";
+        String url = resolveApiUrl() + "/api/v1/workflows";
         try {
             HttpHeaders headers = buildHeaders();
             HttpEntity<String> entity = new HttpEntity<>(json, headers);
@@ -53,7 +82,7 @@ public class N8nApiService {
      * @return n8n 返回的响应 JSON
      */
     public String updateWorkflow(String n8nId, String json) {
-        String url = n8nApiUrl + "/api/v1/workflows/" + n8nId;
+        String url = resolveApiUrl() + "/api/v1/workflows/" + n8nId;
         try {
             HttpHeaders headers = buildHeaders();
             HttpEntity<String> entity = new HttpEntity<>(json, headers);
@@ -73,7 +102,7 @@ public class N8nApiService {
      * @return n8n 返回的响应 JSON
      */
     public String activateWorkflow(String n8nId) {
-        String url = n8nApiUrl + "/api/v1/workflows/" + n8nId + "/activate";
+        String url = resolveApiUrl() + "/api/v1/workflows/" + n8nId + "/activate";
         try {
             HttpHeaders headers = buildHeaders();
             HttpEntity<String> entity = new HttpEntity<>(null, headers);
@@ -93,7 +122,7 @@ public class N8nApiService {
      * @return n8n 返回的响应 JSON
      */
     public String deactivateWorkflow(String n8nId) {
-        String url = n8nApiUrl + "/api/v1/workflows/" + n8nId + "/deactivate";
+        String url = resolveApiUrl() + "/api/v1/workflows/" + n8nId + "/deactivate";
         try {
             HttpHeaders headers = buildHeaders();
             HttpEntity<String> entity = new HttpEntity<>(null, headers);
@@ -114,7 +143,7 @@ public class N8nApiService {
      * @return n8n 返回的执行记录 JSON（{data: [...], nextCursor: ...}）
      */
     public String listExecutions(String workflowId, int limit) {
-        String url = n8nApiUrl + "/api/v1/executions?workflowId=" + workflowId + "&limit=" + limit;
+        String url = resolveApiUrl() + "/api/v1/executions?workflowId=" + workflowId + "&limit=" + limit;
         try {
             HttpHeaders headers = buildHeaders();
             HttpEntity<String> entity = new HttpEntity<>(null, headers);
@@ -133,7 +162,7 @@ public class N8nApiService {
      * @return n8n 返回的工作流列表 JSON（{data: [...]}）
      */
     public String listWorkflows() {
-        String url = n8nApiUrl + "/api/v1/workflows";
+        String url = resolveApiUrl() + "/api/v1/workflows";
         try {
             HttpHeaders headers = buildHeaders();
             HttpEntity<String> entity = new HttpEntity<>(null, headers);
@@ -153,7 +182,7 @@ public class N8nApiService {
      * @return n8n 返回的工作流 JSON
      */
     public String getWorkflow(String n8nId) {
-        String url = n8nApiUrl + "/api/v1/workflows/" + n8nId;
+        String url = resolveApiUrl() + "/api/v1/workflows/" + n8nId;
         try {
             HttpHeaders headers = buildHeaders();
             HttpEntity<String> entity = new HttpEntity<>(null, headers);
@@ -172,8 +201,9 @@ public class N8nApiService {
     private HttpHeaders buildHeaders() {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
-        if (n8nApiKey != null && !n8nApiKey.isBlank()) {
-            headers.set("X-N8N-API-KEY", n8nApiKey);
+        String apiKey = resolveApiKey();
+        if (apiKey != null && !apiKey.isBlank()) {
+            headers.set("X-N8N-API-KEY", apiKey);
         }
         return headers;
     }

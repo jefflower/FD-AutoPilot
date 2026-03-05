@@ -288,4 +288,46 @@ public class ConfigController {
         return ResponseEntity.ok(ApiResponse.ok(result));
     }
 
+    // ============ n8n API 配置 ============
+
+    @Operation(summary = "获取 n8n API 配置", description = "获取 n8n API URL 和 API Key 配置（API Key 脱敏返回）")
+    @GetMapping("/n8n-api")
+    @RequiresPermission("config:read")
+    public ResponseEntity<ApiResponse<Map<String, Object>>> getN8nApiConfig() {
+        String apiUrl = configService.getN8nApiUrl();
+        String apiKey = configService.getN8nApiKey();
+
+        // API Key 脱敏
+        String maskedApiKey = "";
+        if (apiKey != null && !apiKey.isBlank()) {
+            if (apiKey.length() > 8) {
+                maskedApiKey = apiKey.substring(0, 4) + "****" + apiKey.substring(apiKey.length() - 4);
+            } else {
+                maskedApiKey = "****";
+            }
+        }
+
+        Map<String, Object> config = new java.util.HashMap<>();
+        config.put("apiUrl", apiUrl != null ? apiUrl : "");
+        config.put("apiKey", maskedApiKey);
+        config.put("configured", apiKey != null && !apiKey.isBlank());
+        return ResponseEntity.ok(ApiResponse.ok(config));
+    }
+
+    @Operation(summary = "设置 n8n API 配置", description = "设置 n8n API URL 和 API Key")
+    @PutMapping("/n8n-api")
+    @RequiresPermission("config:manage")
+    public ResponseEntity<ApiResponse<Void>> setN8nApiConfig(@RequestBody Map<String, String> body) {
+        if (body.containsKey("apiUrl")) {
+            configService.setN8nApiUrl(body.get("apiUrl"));
+        }
+        if (body.containsKey("apiKey")) {
+            String apiKey = body.get("apiKey");
+            if (apiKey != null && !apiKey.contains("****")) {
+                configService.setN8nApiKey(apiKey);
+            }
+        }
+        return ResponseEntity.ok(ApiResponse.ok("n8n API 配置已更新", null));
+    }
+
 }

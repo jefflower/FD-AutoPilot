@@ -45,6 +45,7 @@ public class UserAgentConfigService {
             dto.setAgentCode(config.getAgentCode());
             dto.setAutoStart(config.isAutoStart());
             dto.setEnabled(config.isEnabled());
+            dto.setCustomConfig(config.getCustomConfig());
             dto.setSubscribedAt(config.getSubscribedAt());
 
             AgentDefinition def = defMap.get(config.getAgentCode());
@@ -56,6 +57,7 @@ public class UserAgentConfigService {
                 dto.setExecutionEnv(def.getExecutionEnv() != null ? def.getExecutionEnv().name() : null);
                 dto.setGroupCode(def.getGroupCode());
                 dto.setAgentEnabled(def.isEnabled());
+                dto.setUserConfigSchema(def.getUserConfigSchema());
             }
             return dto;
         }).collect(Collectors.toList());
@@ -107,6 +109,7 @@ public class UserAgentConfigService {
         dto.setAgentCode(config.getAgentCode());
         dto.setAutoStart(config.isAutoStart());
         dto.setEnabled(config.isEnabled());
+        dto.setCustomConfig(config.getCustomConfig());
         dto.setSubscribedAt(config.getSubscribedAt());
         dto.setAgentName(def.getName());
         dto.setDescription(def.getDescription());
@@ -115,6 +118,7 @@ public class UserAgentConfigService {
         dto.setExecutionEnv(def.getExecutionEnv() != null ? def.getExecutionEnv().name() : null);
         dto.setGroupCode(def.getGroupCode());
         dto.setAgentEnabled(def.isEnabled());
+        dto.setUserConfigSchema(def.getUserConfigSchema());
         return dto;
     }
 
@@ -145,6 +149,9 @@ public class UserAgentConfigService {
         if (req.getEnabled() != null) {
             config.setEnabled(req.getEnabled());
         }
+        if (req.getCustomConfig() != null) {
+            config.setCustomConfig(req.getCustomConfig());
+        }
         userAgentRepo.save(config);
 
         log.info("[UserAgentConfig] 用户 {} 更新 Agent {} 配置: autoStart={}, enabled={}",
@@ -156,6 +163,7 @@ public class UserAgentConfigService {
         dto.setAgentCode(config.getAgentCode());
         dto.setAutoStart(config.isAutoStart());
         dto.setEnabled(config.isEnabled());
+        dto.setCustomConfig(config.getCustomConfig());
         dto.setSubscribedAt(config.getSubscribedAt());
         if (def != null) {
             dto.setAgentName(def.getName());
@@ -165,6 +173,7 @@ public class UserAgentConfigService {
             dto.setExecutionEnv(def.getExecutionEnv() != null ? def.getExecutionEnv().name() : null);
             dto.setGroupCode(def.getGroupCode());
             dto.setAgentEnabled(def.isEnabled());
+            dto.setUserConfigSchema(def.getUserConfigSchema());
         }
         return dto;
     }

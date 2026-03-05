@@ -307,6 +307,18 @@
       "changeDescription": "变更描述",
       "createdAt": "创建时间",
       "createdBy": "创建者"
+    },
+    "n8nConfig": {
+      "title": "n8n API 配置",
+      "notConfigured": "n8n API 尚未配置，工作流部署功能不可用",
+      "configure": "配置",
+      "apiUrl": "n8n API 地址",
+      "apiUrlHint": "留空则使用服务端默认地址",
+      "apiKey": "API Key",
+      "apiKeyPlaceholder": "输入 n8n API Key",
+      "apiKeyHint": "在 n8n 设置 → API → 创建 API Key",
+      "saved": "n8n 配置已保存",
+      "saveFailed": "保存 n8n 配置失败"
     }
   },
   "aiDashboard": {

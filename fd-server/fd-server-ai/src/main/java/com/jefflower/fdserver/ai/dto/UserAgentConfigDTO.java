@@ -20,4 +20,8 @@ public class UserAgentConfigDTO {
     private String executionEnv;
     private String groupCode;
     private boolean agentEnabled;  // AgentDefinition 全局启用状态
+    /** Agent 定义的用户可配置参数 Schema（JSON） */
+    private String userConfigSchema;
+    /** 用户已配置的自定义参数（JSON） */
+    private String customConfig;
 }

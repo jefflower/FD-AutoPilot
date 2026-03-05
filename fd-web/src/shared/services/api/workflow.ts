@@ -163,3 +163,16 @@ export const workflowAiApi = {
       body: JSON.stringify(data),
     }),
 };
+
+/** n8n 配置 API */
+export const n8nConfigApi = {
+  /** 获取 n8n API 配置（apiKey 脱敏返回） */
+  getConfig: () => request<{ apiUrl: string; apiKey: string; configured: boolean }>('/config/n8n-api'),
+
+  /** 更新 n8n API 配置 */
+  setConfig: (data: { apiUrl?: string; apiKey?: string }) =>
+    request<void>('/config/n8n-api', {
+      method: 'PUT',
+      body: JSON.stringify(data),
+    }),
+};

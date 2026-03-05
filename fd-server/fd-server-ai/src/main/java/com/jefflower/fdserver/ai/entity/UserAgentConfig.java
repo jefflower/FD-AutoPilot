@@ -35,6 +35,10 @@ public class UserAgentConfig {
     @Column(columnDefinition = "BOOLEAN NOT NULL DEFAULT true")
     private boolean enabled = true;
 
+    /** 用户自定义参数配置（JSON），按照 AgentDefinition.userConfigSchema 定义的结构存储 */
+    @Column(name = "custom_config", columnDefinition = "TEXT")
+    private String customConfig;
+
     /** 订阅时间 */
     @Column(name = "subscribed_at")
     private LocalDateTime subscribedAt;

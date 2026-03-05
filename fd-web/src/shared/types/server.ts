@@ -771,6 +771,9 @@ export interface UserAgentConfigDTO {
     executionEnv: string;
     groupCode: string;
     agentEnabled: boolean;  // 全局启用状态
+    // 动态配置
+    userConfigSchema?: string;  // JSON schema 定义用户可配置参数
+    customConfig?: string;      // 用户已配置的自定义参数 JSON
 }
 
 /** 用户 Agent 订阅请求 */
@@ -782,4 +785,5 @@ export interface UserAgentSubscribeRequest {
 export interface UserAgentConfigUpdateRequest {
     autoStart?: boolean;
     enabled?: boolean;
+    customConfig?: string;  // 用户自定义参数 JSON
 }

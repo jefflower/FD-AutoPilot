@@ -8,4 +8,6 @@ import lombok.Setter;
 public class UserAgentConfigUpdateRequest {
     private Boolean autoStart;
     private Boolean enabled;
+    /** 用户自定义参数配置（JSON）*/
+    private String customConfig;
 }
