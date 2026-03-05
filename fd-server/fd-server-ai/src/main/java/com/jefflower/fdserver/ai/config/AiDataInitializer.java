@@ -42,11 +42,11 @@ public class AiDataInitializer implements CommandLineRunner {
     }
 
     // --- Input/Output Schema constants ---
-    private static final String TRANSLATE_INPUT_SCHEMA = "{\"type\":\"object\",\"properties\":{\"ticket\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"content\":{\"type\":\"string\"}},\"required\":[\"id\",\"content\"]},\"targetLang\":{\"type\":\"string\"}},\"required\":[\"ticket\",\"targetLang\"]}";
+    private static final String TRANSLATE_INPUT_SCHEMA = "{\"type\":\"object\",\"properties\":{\"ticketContent\":{\"type\":\"string\",\"description\":\"工单原文内容 JSON（含 subject/description/conversations）\"},\"targetLang\":{\"type\":\"string\",\"description\":\"目标语言代码\"}},\"required\":[\"ticketContent\",\"targetLang\"]}";
 
     private static final String TRANSLATE_OUTPUT_SCHEMA = "{\"type\":\"object\",\"properties\":{\"subject\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"conversations\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"bodyText\":{\"type\":\"string\"}},\"required\":[\"id\",\"bodyText\"]}}},\"required\":[\"subject\",\"description\",\"conversations\"]}";
 
-    private static final String REPLY_INPUT_SCHEMA = "{\"type\":\"object\",\"properties\":{\"ticket\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"subject\":{\"type\":\"string\"},\"content\":{\"type\":\"string\"}},\"required\":[\"id\",\"subject\",\"content\"]},\"lastAuditRemark\":{\"type\":\"string\"}},\"required\":[\"ticket\"]}";
+    private static final String REPLY_INPUT_SCHEMA = "{\"type\":\"object\",\"properties\":{\"ticketContent\":{\"type\":\"string\",\"description\":\"工单原文内容 JSON（含 subject/description/conversations）\"},\"lastAuditRemark\":{\"type\":\"string\",\"description\":\"审核驳回备注\"}},\"required\":[\"ticketContent\"]}";
 
     private static final String REPLY_OUTPUT_SCHEMA = "{\"type\":\"object\",\"properties\":{\"targetReply\":{\"type\":\"string\"},\"zhReply\":{\"type\":\"string\"}},\"required\":[\"targetReply\",\"zhReply\"]}";
 
@@ -175,7 +175,7 @@ public class AiDataInitializer implements CommandLineRunner {
                 null,
                 null,
                 "You are a professional customer service translator and classifier.\n\n"
-                        + "Task: Translate the following ticket JSON into Simplified Chinese (中文), classify the ticket into one of 4 categories, and determine if the issue is already resolved.\n\n"
+                        + "Task: Translate the following ticket JSON into {{targetLang}}, classify the ticket into one of 4 categories, and determine if the issue is already resolved.\n\n"
                         + "CATEGORIES:\n"
                         + "- PRODUCT_FAULT: Product quality issues, usage problems, returns/exchanges\n"
                         + "- LOGISTICS_INQUIRY: Shipping status, delivery time, tracking inquiries\n"
@@ -191,7 +191,7 @@ public class AiDataInitializer implements CommandLineRunner {
                         + "- Keep the JSON structure identical, only translate text values.\n"
                         + "- ADD a \"category\" field at the top level with one of: PRODUCT_FAULT, LOGISTICS_INQUIRY, BUSINESS_COOPERATION, OTHER\n"
                         + "- ADD a \"resolved\" field at the top level with true or false\n\n"
-                        + "Ticket JSON:\n${TICKET_CONTENT}",
+                        + "Ticket JSON:\n{{ticketContent}}",
                 0,
                 TRANSLATE_INPUT_SCHEMA,
                 TRANSLATE_OUTPUT_SCHEMA,
@@ -210,6 +210,7 @@ public class AiDataInitializer implements CommandLineRunner {
                 null,
                 "{\"notebookId\":\"7662c1de-8bba-4d54-b834-e38161f942f4\"}",
                 "根据下面的工单内容，使用用户工单的语言做出回复及回复的中文翻译。\n\n"
+                        + "审核备注（如有驳回意见请据此调整回复）：\n{{lastAuditRemark}}\n\n"
                         + "严格输出要求：\n"
                         + "- 直接输出纯 JSON 数组，第一个元素为原文回复，第二个元素为中文翻译\n"
                         + "- 回复内容要精简专业\n"
@@ -217,7 +218,7 @@ public class AiDataInitializer implements CommandLineRunner {
                         + "- 禁止在 JSON 前后添加任何文字说明\n"
                         + "- 输出必须以 [ 开头，以 ] 结尾\n\n"
                         + "正确示例：[\"Hello, thanks for contacting us.\",\"你好，感谢联系我们。\"]\n\n"
-                        + "工单内容：\n${TICKET_CONTENT}",
+                        + "工单内容：\n{{ticketContent}}",
                 1,
                 REPLY_INPUT_SCHEMA,
                 REPLY_OUTPUT_SCHEMA,
@@ -237,11 +238,11 @@ public class AiDataInitializer implements CommandLineRunner {
                 null,
                 null,
                 "你是一个专业的 n8n 工作流设计师。根据用户的需求设计和修改 n8n 工作流。\n\n"
-                        + "## 工作区参考文档\n${WORKSPACE_DOCS}\n\n"
-                        + "## 当前工作流 JSON\n${CURRENT_WORKFLOW_JSON}\n\n"
-                        + "## 工作流中相关 Agent 的提示词\n${RELATED_AGENT_PROMPTS}\n\n"
-                        + "## 对话历史\n${CONVERSATION_HISTORY}\n\n"
-                        + "## 用户消息\n${USER_MESSAGE}\n\n"
+                        + "## 工作区参考文档\n{{workspaceDocs}}\n\n"
+                        + "## 当前工作流 JSON\n{{currentWorkflowJson}}\n\n"
+                        + "## 工作流中相关 Agent 的提示词\n{{relatedAgentPrompts}}\n\n"
+                        + "## 对话历史\n{{conversationHistory}}\n\n"
+                        + "## 用户消息\n{{userMessage}}\n\n"
                         + "## 输出要求\n"
                         + "你的回复必须严格遵循以下结构化 JSON 格式（用 ```json 包裹），不要输出其他格式：\n\n"
                         + "```json\n"
@@ -293,6 +294,7 @@ public class AiDataInitializer implements CommandLineRunner {
                 null, null,
                 null, // agentConfig（notebookId 需要后续在管理后台配置）
                 "根据下面的物流查询工单内容，使用用户工单的语言做出回复及回复的中文翻译。\n\n"
+                        + "审核备注（如有驳回意见请据此调整回复）：\n{{lastAuditRemark}}\n\n"
                         + "回复要点：\n"
                         + "- 确认收到物流查询请求\n"
                         + "- 提供可能的物流进度说明\n"
@@ -305,7 +307,7 @@ public class AiDataInitializer implements CommandLineRunner {
                         + "- 禁止在 JSON 前后添加任何文字说明\n"
                         + "- 输出必须以 [ 开头，以 ] 结尾\n\n"
                         + "正确示例：[\"Hello, thanks for contacting us.\",\"你好，感谢联系我们。\"]\n\n"
-                        + "工单内容：\n${TICKET_CONTENT}",
+                        + "工单内容：\n{{ticketContent}}",
                 2,
                 REPLY_INPUT_SCHEMA,
                 REPLY_OUTPUT_SCHEMA,
@@ -335,7 +337,7 @@ public class AiDataInitializer implements CommandLineRunner {
                         + "- 禁止在 JSON 前后添加任何文字说明\n"
                         + "- 输出必须以 [ 开头，以 ] 结尾\n\n"
                         + "正确示例：[\"Thank you for your feedback!\",\"感谢您的反馈！\"]\n\n"
-                        + "工单内容：\n${TICKET_CONTENT}",
+                        + "工单内容：\n{{ticketContent}}",
                 3,
                 REPLY_INPUT_SCHEMA,
                 REPLY_OUTPUT_SCHEMA,

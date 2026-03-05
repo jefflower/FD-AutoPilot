@@ -9,8 +9,8 @@ export type ReplyAgentTask = MQTask;
  *
  * 消费 agent.ticket-reply 类型的任务（由 SyncAgentExecutionService 创建）。
  * 将完整 ticket 对象传入 NotebookLmPyExecutor，Executor 自行读取 AgentDefinition
- * 中配置的 systemPrompt 和 notebookId，模板展开 ${TICKET_CONTENT} 后发送给 NotebookLM。
- * 外部只需传入标准化工单数据 { ticket: { id, subject, content }, lastAuditRemark? }。
+ * 中配置的 systemPrompt 和 notebookId，模板展开 {{ticket}} 后发送给 NotebookLM。
+ * 外部只需传入标准化工单数据 { ticket, lastAuditRemark? }。
  */
 const { Provider: BaseProvider, useTaskContext } = createMQTaskContext({
     taskType: 'agent.ticket-reply',

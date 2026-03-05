@@ -117,7 +117,7 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify({ input: { ticket: $json, targetLang: 'zh-CN' }, refType: 'ticket', refId: String($json.id), timeoutMs: 300000 }) }}",
+        "jsonBody": "={{ JSON.stringify({ input: { ticketContent: $json.content, targetLang: 'zh-CN' }, refType: 'ticket', refId: String($json.id), timeoutMs: 300000 }) }}",
         "options": {
           "timeout": 300000
         }
@@ -296,7 +296,7 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify({ input: { ticket: $('逐个处理工单').item.json, lastAuditRemark: $('逐个处理工单').item.json.lastAuditRemark || '' }, refType: 'ticket', refId: String($('逐个处理工单').item.json.id), timeoutMs: 300000 }) }}",
+        "jsonBody": "={{ JSON.stringify({ input: { ticketContent: $('逐个处理工单').item.json.content, lastAuditRemark: $('逐个处理工单').item.json.lastAuditRemark || '' }, refType: 'ticket', refId: String($('逐个处理工单').item.json.id), timeoutMs: 300000 }) }}",
         "options": {
           "timeout": 300000
         }
@@ -322,7 +322,7 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify({ input: { ticket: $('逐个处理工单').item.json, lastAuditRemark: $('逐个处理工单').item.json.lastAuditRemark || '' }, refType: 'ticket', refId: String($('逐个处理工单').item.json.id), timeoutMs: 300000 }) }}",
+        "jsonBody": "={{ JSON.stringify({ input: { ticketContent: $('逐个处理工单').item.json.content, lastAuditRemark: $('逐个处理工单').item.json.lastAuditRemark || '' }, refType: 'ticket', refId: String($('逐个处理工单').item.json.id), timeoutMs: 300000 }) }}",
         "options": {
           "timeout": 300000
         }

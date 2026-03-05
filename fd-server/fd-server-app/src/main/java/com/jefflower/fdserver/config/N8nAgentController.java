@@ -1,8 +1,6 @@
 package com.jefflower.fdserver.config;
 
 import com.jefflower.fdserver.ai.dto.AgentExecuteResult;
-import com.jefflower.fdserver.ai.dto.CapabilityExecuteRequest;
-import com.jefflower.fdserver.ai.dto.CapabilityExecuteResponse;
 import com.jefflower.fdserver.ai.dto.CapabilityRouteResult;
 import com.jefflower.fdserver.ai.entity.AgentExecution;
 import com.jefflower.fdserver.ai.service.AgentDefinitionService;
@@ -13,8 +11,6 @@ import com.jefflower.fdserver.ai.service.SyncAgentExecutionService;
 import com.jefflower.fdserver.auth.security.RequiresPermission;
 import com.jefflower.fdserver.common.dto.ApiResponse;
 import com.jefflower.fdserver.common.exception.BusinessException;
-import com.jefflower.fdserver.ticket.entity.Ticket;
-import com.jefflower.fdserver.ticket.repository.TicketRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.v3.oas.annotations.Operation;
@@ -33,14 +29,15 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * n8n Capability 级执行控制器。
+ * n8n Agent 执行控制器。
  * <p>
- * 提供 Capability 级路由的同步执行端点，n8n 通过业务 capability（如 "ticket-translate", "ticket-reply"）
- * 调用，系统自动路由到可用的 Agent + Client。
+ * 提供 Agent 同步执行端点 + Capability 健康检查 + 执行记录查询。
+ * n8n 通过 /agents/{agentCode}/execute 调用 Agent，系统透传 input 到客户端执行。
  * <p>
- * 同时保留旧的 agentCode 直连端点以兼容过渡期。
+ * 执行日志中的 inputSnapshot 包含实际解析后的提示词（systemPrompt + 模板替换结果），
+ * 便于调试和追踪。
  */
-@Tag(name = "n8n Agent 执行", description = "Capability 级路由 + Agent 同步执行接口，供 n8n 工作流节点调用")
+@Tag(name = "n8n Agent 执行", description = "Agent 同步执行 + Capability 健康检查 + 执行记录，供 n8n 工作流节点调用")
 @Slf4j
 @RestController
 @RequestMapping("/api/v1/n8n")
@@ -52,99 +49,9 @@ public class N8nAgentController {
     private final CapabilityRouterService capabilityRouter;
     private final CapabilityDefinitionService capabilityDefinitionService;
     private final AgentDefinitionService agentDefinitionService;
-    private final TicketRepository ticketRepository;
     private final ObjectMapper objectMapper;
 
     private static final long DEFAULT_TIMEOUT_MS = 600_000L; // 10 分钟
-
-    @Operation(summary = "Capability 级同步执行",
-            description = "通过业务 capability 路由到可用 Agent + Client，创建任务并等待执行完成。")
-    @PostMapping("/capabilities/{capability}/execute")
-    @RequiresPermission("ai:execute")
-    public ResponseEntity<ApiResponse<CapabilityExecuteResponse>> executeCapability(
-            @PathVariable String capability,
-            @RequestBody CapabilityExecuteRequest request) {
-
-        log.info("[N8nAgentController] Execute capability={}, refType={}, refId={}, targetClient={}, targetUser={}",
-                capability, request.getRefType(), request.getRefId(),
-                request.getTargetClientId(), request.getTargetUserId());
-
-        // 0. 当 refType=ticket 时，将 externalId 解析为本地数据库 ID
-        //    n8n 传入的 refId 通常是 Freshdesk 外部工单号，前端消费者需要本地 ID 来查询工单
-        Map<String, Object> input = request.getInput() != null ? new HashMap<>(request.getInput()) : new HashMap<>();
-        String refId = request.getRefId();
-
-        if ("ticket".equals(request.getRefType()) && refId != null) {
-            Ticket ticket = ticketRepository.findByExternalId(refId).orElse(null);
-            if (ticket != null) {
-                input.put("ticketId", ticket.getId());
-                input.put("externalId", refId);
-                input.put("subject", ticket.getSubject());
-                refId = String.valueOf(ticket.getId());
-                log.info("[N8nAgentController] Resolved ticket externalId={} → localId={}", request.getRefId(), ticket.getId());
-            } else {
-                log.warn("[N8nAgentController] Ticket not found by externalId={}, using raw refId", refId);
-            }
-        }
-
-        // 1. 路由
-        CapabilityRouteResult route = capabilityRouter.route(
-                capability, request.getTargetClientId(), request.getTargetUserId());
-
-        // 2. 记录执行开始
-        Long refIdLong = null;
-        try {
-            if (refId != null) {
-                refIdLong = Long.parseLong(refId);
-            }
-        } catch (NumberFormatException e) {
-            log.warn("[N8nAgentController] refId '{}' 无法转为 Long，executionRecord.referenceId 将为 null", refId);
-        }
-
-        String inputJson = serializeInput(input);
-        AgentExecution execution = agentExecutionService.startExecution(
-                route.getAgentCode(), request.getRefType(), refIdLong,
-                "n8n", route.getClientId(), inputJson);
-        long startTime = System.currentTimeMillis();
-
-        // 3. 执行
-        long timeoutMs = request.getTimeoutMs() != null ? request.getTimeoutMs() : DEFAULT_TIMEOUT_MS;
-        AgentExecuteResult result;
-        try {
-            result = syncAgentService.executeSyncViaRoute(
-                    route, input,
-                    request.getRefType(), refId, timeoutMs);
-        } catch (Exception e) {
-            // 异常时记录失败
-            long duration = System.currentTimeMillis() - startTime;
-            agentExecutionService.completeExecution(
-                    execution.getId(), false, duration, null, null, e.getMessage());
-            throw e;
-        }
-
-        // 4. 记录执行完成
-        long duration = System.currentTimeMillis() - startTime;
-        agentExecutionService.completeExecution(
-                execution.getId(), result.isSuccess(), duration,
-                result.getTokenCount(), result.getOutput(), result.getErrorMessage());
-
-        // 5. 包装返回
-        CapabilityExecuteResponse response = new CapabilityExecuteResponse();
-        response.setResult(result);
-
-        Map<String, String> routeInfo = new LinkedHashMap<>();
-        routeInfo.put("agentCode", route.getAgentCode());
-        routeInfo.put("clientId", route.getClientId());
-        routeInfo.put("userId", route.getUserId());
-        routeInfo.put("requiredCapability", route.getRequiredCapability());
-        response.setRouteInfo(routeInfo);
-
-        if (result.isSuccess()) {
-            return ResponseEntity.ok(ApiResponse.ok("Capability 执行成功", response));
-        } else {
-            return ResponseEntity.ok(ApiResponse.error("AGENT_EXECUTION_FAILED", result.getErrorMessage()));
-        }
-    }
 
     @Operation(summary = "同步执行 Agent",
             description = "通过 agentCode 调用客户端 Agent。纯透传：body 中的 input 直接传给 Agent 执行。")
@@ -180,7 +87,8 @@ public class N8nAgentController {
             log.warn("[N8nAgentController] refId '{}' 无法转为 Long，executionRecord.referenceId 将为 null", refId);
         }
 
-        String inputJson = serializeInput(input);
+        // 构建包含实际提示词的 inputSnapshot
+        String inputJson = buildInputSnapshot(agentCode, input);
         AgentExecution execution = agentExecutionService.startExecution(
                 agentCode, refType, refIdLong, "n8n", null, inputJson);
         long startTime = System.currentTimeMillis();
@@ -327,15 +235,64 @@ public class N8nAgentController {
         return ResponseEntity.ok(ApiResponse.ok("断路器已重置: " + capability));
     }
 
-    /** 将 input Map 序列化为 JSON 字符串，失败时返回 toString() */
-    private String serializeInput(Map<String, Object> input) {
-        if (input == null || input.isEmpty()) return null;
+    /**
+     * 构建包含实际提示词的 inputSnapshot。
+     * 查找 AgentDefinition.systemPrompt，用 input 数据做模板替换，
+     * 让执行日志能看到发给 AI 的实际 prompt。
+     */
+    private String buildInputSnapshot(String agentCode, Map<String, Object> input) {
+        Map<String, Object> snapshot = new LinkedHashMap<>();
+        snapshot.put("input", input);
+
         try {
-            return objectMapper.writeValueAsString(input);
-        } catch (JsonProcessingException e) {
-            log.warn("[N8nAgentController] 序列化 input 失败: {}", e.getMessage());
-            return input.toString();
+            var agentDef = agentDefinitionService.findByCode(agentCode).orElse(null);
+            if (agentDef != null && agentDef.getSystemPrompt() != null && !agentDef.getSystemPrompt().isBlank()) {
+                String systemPrompt = agentDef.getSystemPrompt();
+                snapshot.put("systemPrompt", systemPrompt);
+
+                // 模板替换：{{fieldName}} → input 中对应字段值
+                String resolvedPrompt = resolvePromptTemplate(systemPrompt, input);
+                snapshot.put("resolvedPrompt", resolvedPrompt);
+            }
+        } catch (Exception e) {
+            log.warn("[N8nAgentController] 构建 inputSnapshot 时查找 Agent 定义失败: {}", e.getMessage());
         }
+
+        try {
+            return objectMapper.writeValueAsString(snapshot);
+        } catch (JsonProcessingException e) {
+            log.warn("[N8nAgentController] 序列化 inputSnapshot 失败: {}", e.getMessage());
+            return snapshot.toString();
+        }
+    }
+
+    /**
+     * 简单模板替换：将 {{key}} 替换为 input 中对应字段的值。
+     * 对象类型序列化为 JSON，原始类型直接转 String。
+     * 与前端 resolveTemplate() 逻辑对齐。
+     */
+    private String resolvePromptTemplate(String template, Map<String, Object> variables) {
+        String result = template;
+        for (Map.Entry<String, Object> entry : variables.entrySet()) {
+            String placeholder = "{{" + entry.getKey() + "}}";
+            if (!result.contains(placeholder)) continue;
+
+            String value;
+            Object raw = entry.getValue();
+            if (raw == null) {
+                value = "";
+            } else if (raw instanceof String) {
+                value = (String) raw;
+            } else {
+                try {
+                    value = objectMapper.writeValueAsString(raw);
+                } catch (JsonProcessingException e) {
+                    value = raw.toString();
+                }
+            }
+            result = result.replace(placeholder, value);
+        }
+        return result;
     }
 
     @Operation(summary = "路由统计",

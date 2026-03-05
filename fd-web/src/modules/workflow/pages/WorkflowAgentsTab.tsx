@@ -1018,7 +1018,7 @@ const UnifiedConfigPanel: React.FC<{
                     placeholder="输入 Agent 的系统提示词..."
                 />
                 <p className="mt-1 text-xs text-slate-500">
-                    支持模板变量：{'${TARGET_LANG}'}, {'${TICKET_CONTENT}'}, {'${工单内容}'}
+                    支持模板变量：{'{{fieldName}}'} — input 中的字段名自动成为模板变量（如 {'{{ticket}}'}, {'{{targetLang}}'}）
                 </p>
             </div>
 
