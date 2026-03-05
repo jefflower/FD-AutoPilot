@@ -19,6 +19,7 @@ tower-http = { version = "0.6", features = ["cors"] }
 # Shadow Agent 依赖（SSE 流式输出）
 tokio-stream = "0.1"
 chrono = "0.4"
+reqwest = { version = "0.12", features = ["json"] }
 rusqlite = { version = "0.32", features = ["bundled"] }
 dirs = "5"
 uuid = { version = "1", features = ["v4"] }

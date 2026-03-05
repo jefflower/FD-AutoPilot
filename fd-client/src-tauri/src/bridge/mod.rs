@@ -95,6 +95,10 @@ fn build_router(log_store: Arc<ExecLogStore>) -> Router {
             post(agent_handler::notebooklm_cli_handler),
         )
         .route(
+            "/bridge/antigravity",
+            post(agent_handler::antigravity_handler),
+        )
+        .route(
             "/bridge/capabilities/detect",
             get(system_handler::capabilities_detect_handler),
         )

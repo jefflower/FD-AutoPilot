@@ -7,6 +7,7 @@ public enum ProviderType {
     NOTEBOOKLM,          // NotebookLM Shadow Window
     NOTEBOOKLM_PY,       // NotebookLM Python 库（notebooklm-py）
     TRACKING_SHADOW,     // 物流查询 Shadow Window（17track 等）
+    ANTIGRAVITY_TOOLS,   // Antigravity Tools 本地 AI 代理（OpenAI 兼容 API）
     LOCAL_FUNCTION,      // 本地函数
 
     // --- 以下为保留的旧值（向后兼容） ---

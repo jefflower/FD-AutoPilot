@@ -126,6 +126,10 @@ public class AiDataInitializer implements CommandLineRunner {
         ensureBuiltInCapability("shadow-window", "Shadow Window", ProviderType.TRACKING_SHADOW,
                 null, null, 3, false,
                 "{\"targetUrl\":{\"type\":\"string\",\"label\":\"Target URL\",\"required\":true,\"description\":\"目标网页 URL\"}}");
+
+        ensureBuiltInCapability("antigravity-tools", "Antigravity Tools", ProviderType.ANTIGRAVITY_TOOLS,
+                null, "{\"steps\":[\"安装并启动 Antigravity Tools 桌面应用\",\"确保代理服务运行在 localhost:8045\"]}", 4, true,
+                "{\"model\":{\"type\":\"string\",\"label\":\"Model\",\"required\":false,\"description\":\"模型名称（默认 gemini-2.5-flash）\"},\"systemPrompt\":{\"type\":\"string\",\"label\":\"System Prompt\",\"required\":false,\"description\":\"系统提示词\"},\"temperature\":{\"type\":\"number\",\"label\":\"Temperature\",\"required\":false,\"description\":\"生成温度（0-2）\"}}");
     }
 
     private void ensureBuiltInCapability(String code, String name, ProviderType providerType,
@@ -393,6 +397,7 @@ public class AiDataInitializer implements CommandLineRunner {
             case CLAUDE_CLI -> "claude-cli";
             case NOTEBOOKLM, NOTEBOOKLM_PY -> "notebooklm-py";
             case TRACKING_SHADOW -> "shadow-window";
+            case ANTIGRAVITY_TOOLS -> "antigravity-tools";
             default -> null; // HTTP_API, LOCAL_FUNCTION, deprecated types
         };
     }

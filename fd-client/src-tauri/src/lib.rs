@@ -3,6 +3,7 @@
 pub mod rust_log;
 pub mod models;
 pub mod ai;
+pub mod antigravity;
 pub mod bridge;
 pub mod shadow_agent;
 pub mod execution_log;

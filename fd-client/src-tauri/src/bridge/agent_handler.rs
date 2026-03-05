@@ -6,6 +6,7 @@ use axum::extract::{Json, State};
 use axum::http::StatusCode;
 
 use crate::ai::{ClaudeClient, GeminiClient, StderrLogger};
+use crate::antigravity::AntiGravityClient;
 use crate::execution_log::ExecLogEntry;
 
 use super::types::*;
@@ -484,6 +485,89 @@ pub async fn notebooklm_cli_handler(
                 error: Some(e),
             }),
         ),
+    }
+}
+
+pub async fn antigravity_handler(
+    State(state): State<LogState>,
+    Json(req): Json<AntiGravityRequest>,
+) -> StringResult {
+    rlog_info!(
+        "[fd-bridge] POST /bridge/antigravity: prompt_len={}, model={}",
+        req.prompt.len(),
+        req.model,
+    );
+
+    let start = std::time::Instant::now();
+
+    let ref_type = req
+        .metadata
+        .as_ref()
+        .and_then(|m| m.get("refType"))
+        .and_then(|v| v.as_str())
+        .map(|s| s.to_string());
+    let ref_id = req
+        .metadata
+        .as_ref()
+        .and_then(|m| m.get("refId"))
+        .and_then(|v| {
+            v.as_str()
+                .map(|s| s.to_string())
+                .or_else(|| v.as_i64().map(|n| n.to_string()))
+        });
+
+    let input_json = serde_json::json!({
+        "metadata": req.metadata,
+        "promptLength": req.prompt.len(),
+        "promptPreview": &req.prompt[..req.prompt.char_indices().take_while(|&(i, _)| i < 500).last().map_or(0, |(i, c)| i + c.len_utf8())],
+        "model": req.model,
+        "temperature": req.temperature,
+    })
+    .to_string();
+
+    let result = AntiGravityClient::chat(
+        &req.prompt,
+        &req.model,
+        req.system_prompt.as_deref(),
+        req.temperature,
+    )
+    .await;
+
+    let duration = start.elapsed().as_millis() as i64;
+
+    let entry = ExecLogEntry {
+        id: None,
+        agent_code: req
+            .agent_code
+            .clone()
+            .unwrap_or_else(|| "antigravity-tools".to_string()),
+        status: if result.is_ok() {
+            "success"
+        } else {
+            "failed"
+        }
+        .to_string(),
+        command: Some(format!(
+            "antigravity (model: {}, prompt: {} chars)",
+            req.model,
+            req.prompt.len()
+        )),
+        input_params: Some(input_json),
+        stdout: result.as_ref().ok().cloned(),
+        stderr: None,
+        error_msg: result.as_ref().err().cloned(),
+        duration_ms: Some(duration),
+        ref_type,
+        ref_id,
+        created_at: chrono::Utc::now().to_rfc3339(),
+    };
+    if let Err(e) = state.log_store.insert(&entry) {
+        rlog_error!("[ExecLog] Failed to insert antigravity log: {}", e);
+    }
+
+    match result {
+        Ok(output) => (StatusCode::OK, Json(ok_response(output))),
+        Err(e) => (StatusCode::INTERNAL_SERVER_ERROR, Json(err_response(e))),
     }
 }
 

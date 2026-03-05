@@ -82,10 +82,67 @@ async fn detect_capability(code: &str, command: &str, args: &[&str]) -> Capabili
     }
 }
 
+/// Detect antigravity-tools by checking its HTTP API endpoint.
+async fn detect_antigravity() -> CapabilityInfo {
+    let detect_timeout = Duration::from_secs(5);
+    let result = timeout(detect_timeout, async {
+        let client = reqwest::Client::new();
+        client
+            .get("http://127.0.0.1:8045/v1/models")
+            .send()
+            .await
+    })
+    .await;
+
+    match result {
+        Err(_) => CapabilityInfo {
+            code: "antigravity-tools".to_string(),
+            available: false,
+            version: None,
+            error: Some("detection timed out after 5s".to_string()),
+        },
+        Ok(Err(e)) => CapabilityInfo {
+            code: "antigravity-tools".to_string(),
+            available: false,
+            version: None,
+            error: Some(format!("connection failed: {}", e)),
+        },
+        Ok(Ok(resp)) => {
+            if resp.status().is_success() {
+                // Try to extract model count as version info
+                let version = match resp.json::<serde_json::Value>().await {
+                    Ok(json) => {
+                        let count = json
+                            .get("data")
+                            .and_then(|d| d.as_array())
+                            .map(|arr| arr.len())
+                            .unwrap_or(0);
+                        Some(format!("{} models available", count))
+                    }
+                    Err(_) => Some("service available".to_string()),
+                };
+                CapabilityInfo {
+                    code: "antigravity-tools".to_string(),
+                    available: true,
+                    version,
+                    error: None,
+                }
+            } else {
+                CapabilityInfo {
+                    code: "antigravity-tools".to_string(),
+                    available: false,
+                    version: None,
+                    error: Some(format!("API returned status {}", resp.status())),
+                }
+            }
+        }
+    }
+}
+
 pub async fn capabilities_detect_handler() -> Json<CapabilitiesResponse> {
     eprintln!("[fd-bridge] GET /bridge/capabilities/detect");
 
-    let (gemini, claude, notebooklm) = tokio::join!(
+    let (gemini, claude, notebooklm, antigravity) = tokio::join!(
         detect_capability("gemini-cli", "gemini", &["--version"]),
         detect_capability("claude-cli", "claude", &["--version"]),
         detect_capability(
@@ -93,10 +150,11 @@ pub async fn capabilities_detect_handler() -> Json<CapabilitiesResponse> {
             "python3",
             &["-c", "import notebooklm; print(notebooklm.__version__)"]
         ),
+        detect_antigravity(),
     );
 
     Json(CapabilitiesResponse {
-        capabilities: vec![gemini, claude, notebooklm],
+        capabilities: vec![gemini, claude, notebooklm, antigravity],
     })
 }
 
@@ -110,6 +168,25 @@ pub async fn skills_detect_handler(
 ) -> Json<SkillsResponse> {
     let cap = params.cap.clone();
     eprintln!("[fd-bridge] GET /bridge/capabilities/skills?cap={}", cap);
+
+    // antigravity-tools: predefined skills (no need to prompt AI)
+    if cap == "antigravity-tools" {
+        return Json(SkillsResponse {
+            skills: vec![
+                SkillInfo {
+                    name: "chat".to_string(),
+                    description: "OpenAI compatible chat completions API".to_string(),
+                    command: Some("POST /bridge/antigravity".to_string()),
+                },
+                SkillInfo {
+                    name: "models".to_string(),
+                    description: "List available models".to_string(),
+                    command: Some("GET /v1/models".to_string()),
+                },
+            ],
+            error: None,
+        });
+    }
 
     let command = match cap.as_str() {
         "gemini-cli" => "gemini",
@@ -208,6 +285,20 @@ pub async fn models_detect_handler(
 ) -> Json<ModelsResponse> {
     let cap = params.cap.clone();
     eprintln!("[fd-bridge] GET /bridge/capabilities/models?cap={}", cap);
+
+    // antigravity-tools: fetch models via HTTP API directly
+    if cap == "antigravity-tools" {
+        return match crate::antigravity::AntiGravityClient::list_models().await {
+            Ok(models) => Json(ModelsResponse {
+                models,
+                error: None,
+            }),
+            Err(e) => Json(ModelsResponse {
+                models: vec![],
+                error: Some(e),
+            }),
+        };
+    }
 
     let command = match cap.as_str() {
         "gemini-cli" => "gemini",

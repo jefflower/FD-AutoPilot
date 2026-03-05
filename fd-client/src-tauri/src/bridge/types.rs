@@ -169,6 +169,30 @@ pub struct ModelsResponse {
     pub error: Option<String>,
 }
 
+// ========== AntiGravity Tools Request ==========
+
+#[derive(Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct AntiGravityRequest {
+    pub prompt: String,
+    #[serde(default = "default_antigravity_model")]
+    pub model: String,
+    #[serde(default)]
+    pub system_prompt: Option<String>,
+    #[serde(default)]
+    pub temperature: Option<f32>,
+    /// Agent code for execution log attribution (default: "antigravity-tools").
+    #[serde(default)]
+    pub agent_code: Option<String>,
+    /// Structured metadata for readable logs.
+    #[serde(default)]
+    pub metadata: Option<serde_json::Value>,
+}
+
+fn default_antigravity_model() -> String {
+    "gemini-3-flash".to_string()
+}
+
 // ========== NotebookLM CLI Request ==========
 
 #[derive(Deserialize)]
