@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ChevronLeft, ChevronRight, AlertTriangle, Maximize2, X } from 'lucide-react';
+import { ChevronLeft, ChevronRight, AlertTriangle, Maximize2, X, Trash2 } from 'lucide-react';
 import type { AgentDefinition, AgentExecutionLog, AgentExecutionStatus } from '../../../../shared/types/server';
 import { agentApi } from '../../../../shared/services/api';
 import { execLogApi, type ExecLogEntry } from '../../../../shared/services/execLogApi';
+import { getOrCreateClientId } from '../../../../shared/context/mq-task/utils';
 import EnhancedLogRow from './EnhancedLogRow';
 
 interface ExecutionLogZoneProps {
@@ -35,6 +36,8 @@ function mapLocalToLog(entry: ExecLogEntry): AgentExecutionLog {
     inputSnapshot: entry.inputParams || entry.command || undefined,
     outputSnapshot: entry.stdout || undefined,
     errorMessage: entry.errorMsg || entry.stderr || undefined,
+    referenceType: entry.refType || undefined,
+    referenceId: entry.refId ? Number(entry.refId) || undefined : undefined,
     createdAt: entry.createdAt,
   };
 }
@@ -65,6 +68,9 @@ const ExecutionLogZone: React.FC<ExecutionLogZoneProps> = ({
   const [localTotal, setLocalTotal] = useState(0);
   const [localLoading, setLocalLoading] = useState(false);
   const [bridgeAvailable, setBridgeAvailable] = useState<boolean | null>(null);
+
+  // Cleanup state
+  const [cleanupLoading, setCleanupLoading] = useState(false);
 
   // 记录上次 refreshTrigger 以检测 SSE 推送
   const prevTriggerRef = useRef(refreshTrigger);
@@ -169,6 +175,64 @@ const ExecutionLogZone: React.FC<ExecutionLogZoneProps> = ({
     setExpandedId(prev => (prev === id ? null : id));
   };
 
+  // ── 清理日志 ──
+  const handleCleanup = useCallback(async () => {
+    const days = 7;
+    if (!window.confirm(t('aiDashboard.executionLog.cleanupConfirm', { days }))) return;
+
+    setCleanupLoading(true);
+    try {
+      if (activeTab === 'local') {
+        const result = await execLogApi.cleanup(agentFilter || undefined);
+        alert(t('aiDashboard.executionLog.cleanupSuccess', { count: result.deleted }));
+        fetchLocalLogs();
+      } else {
+        // 服务端清理
+        const resp = await fetch(`/api/v1/agents/executions/cleanup?retentionDays=${days}${agentFilter ? `&agentCode=${agentFilter}` : ''}`, {
+          method: 'DELETE',
+          headers: {
+            'Authorization': `Bearer ${localStorage.getItem('auth_token') || ''}`,
+          },
+        });
+        if (resp.ok) {
+          const json = await resp.json();
+          const deleted = json?.data?.deleted ?? 0;
+          alert(t('aiDashboard.executionLog.cleanupSuccess', { count: deleted }));
+          fetchServerLogs();
+        } else {
+          alert(t('aiDashboard.executionLog.cleanupFailed'));
+        }
+      }
+    } catch (err) {
+      console.error('[ExecutionLogZone] cleanup failed:', err);
+      alert(t('aiDashboard.executionLog.cleanupFailed'));
+    } finally {
+      setCleanupLoading(false);
+    }
+  }, [activeTab, agentFilter, t, fetchServerLogs, fetchLocalLogs]);
+
+  // ── 上报本地日志到服务端 ──
+  const handleReportToServer = useCallback(async (log: AgentExecutionLog) => {
+    const clientId = getOrCreateClientId();
+    const statusMap: Record<string, string> = {
+      RUNNING: 'RUNNING',
+      SUCCESS: 'SUCCESS',
+      FAILED: 'FAILED',
+      TIMEOUT: 'TIMEOUT',
+    };
+    await agentApi.reportExecution({
+      agentCode: log.agentCode,
+      status: (statusMap[log.status] || 'FAILED') as any,
+      durationMs: log.durationMs ?? 0,
+      referenceType: log.referenceType,
+      referenceId: log.referenceId,
+      executedOn: `client:${clientId}`,
+      inputSnapshot: log.inputSnapshot,
+      outputSnapshot: log.outputSnapshot,
+      errorMessage: log.errorMessage,
+    });
+  }, []);
+
   // 状态筛选已由后端完成（server tab）或 Bridge API 完成（local tab），直接使用返回结果
   const currentLogs = activeTab === 'server' ? serverLogs : localLogs;
   const isLoading = activeTab === 'server' ? serverLoading : localLoading;
@@ -214,7 +278,7 @@ const ExecutionLogZone: React.FC<ExecutionLogZoneProps> = ({
           )}
         </div>
 
-        {/* Right: Filters + Fullscreen button */}
+        {/* Right: Filters + Actions */}
         <div className="flex items-center gap-2">
           <select
             value={agentFilter}
@@ -237,6 +301,15 @@ const ExecutionLogZone: React.FC<ExecutionLogZoneProps> = ({
             <option value="FAILED">FAILED</option>
             <option value="TIMEOUT">TIMEOUT</option>
           </select>
+          {/* 清理按钮 */}
+          <button
+            onClick={handleCleanup}
+            disabled={cleanupLoading}
+            className="p-1.5 text-slate-400 hover:text-amber-400 hover:bg-amber-500/10 rounded-lg transition-colors disabled:opacity-30"
+            title={t('aiDashboard.executionLog.cleanup')}
+          >
+            <Trash2 className="w-4 h-4" />
+          </button>
           {isModal ? (
             <button
               onClick={() => setFullscreen(false)}
@@ -288,6 +361,8 @@ const ExecutionLogZone: React.FC<ExecutionLogZoneProps> = ({
             log={log}
             isExpanded={expandedId === log.id}
             onToggle={() => handleToggleExpand(log.id)}
+            isLocal={activeTab === 'local'}
+            onReport={activeTab === 'local' ? handleReportToServer : undefined}
           />
         ))}
       </div>

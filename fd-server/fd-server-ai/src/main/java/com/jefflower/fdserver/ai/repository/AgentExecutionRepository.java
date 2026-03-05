@@ -28,6 +28,8 @@ public interface AgentExecutionRepository extends JpaRepository<AgentExecution, 
 
     void deleteByCreatedAtBefore(LocalDateTime before);
 
+    void deleteByAgentCodeAndCreatedAtBefore(String agentCode, LocalDateTime before);
+
     // --- 导出用查询方法 ---
 
     List<AgentExecution> findByCreatedAtAfterOrderByCreatedAtDesc(LocalDateTime cutoff);

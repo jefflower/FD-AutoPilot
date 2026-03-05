@@ -360,7 +360,15 @@
       "prompt": "Prompt",
       "bridgeUnavailable": "Bridge 服务不可用，无法查看本地日志",
       "fullscreen": "全屏查看",
-      "running": "执行中"
+      "running": "执行中",
+      "cleanup": "清理",
+      "cleanupConfirm": "确认清理 {{days}} 天前的日志？",
+      "cleanupSuccess": "已清理 {{count}} 条记录",
+      "cleanupFailed": "清理失败",
+      "reportToServer": "上报到服务端",
+      "reporting": "上报中...",
+      "reportSuccess": "已上报到服务端",
+      "reportFailed": "上报失败"
     },
     "refresh": "刷新",
     "autoRefresh": "自动刷新 (10s)",

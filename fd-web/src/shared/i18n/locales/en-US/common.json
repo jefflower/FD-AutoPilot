@@ -360,7 +360,15 @@
       "prompt": "Prompt",
       "bridgeUnavailable": "Bridge service unavailable, cannot view local logs",
       "fullscreen": "Fullscreen",
-      "running": "running"
+      "running": "running",
+      "cleanup": "Cleanup",
+      "cleanupConfirm": "Clean up logs older than {{days}} days?",
+      "cleanupSuccess": "Cleaned up {{count}} records",
+      "cleanupFailed": "Cleanup failed",
+      "reportToServer": "Report to Server",
+      "reporting": "Reporting...",
+      "reportSuccess": "Reported to server",
+      "reportFailed": "Report failed"
     },
     "refresh": "Refresh",
     "autoRefresh": "Auto Refresh (10s)",

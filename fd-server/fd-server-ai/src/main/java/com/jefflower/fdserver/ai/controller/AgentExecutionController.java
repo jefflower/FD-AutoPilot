@@ -25,6 +25,7 @@ import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Map;
 
 @Tag(name = "Agent 执行", description = "Agent 执行调度、历史记录、统计分析")
 @RestController
@@ -105,6 +106,21 @@ public class AgentExecutionController {
     @RequiresPermission("ai:view_logs")
     public ApiResponse<List<AgentStats>> getStats() {
         return ApiResponse.ok(executionService.getStatsDashboard());
+    }
+
+    // ==================== 清理端点 ====================
+
+    @DeleteMapping("/executions/cleanup")
+    @RequiresPermission("ai:execute")
+    public ApiResponse<Map<String, Object>> cleanupExecutions(
+            @RequestParam(required = false) String agentCode,
+            @RequestParam(defaultValue = "7") int retentionDays) {
+        long deleted = executionService.manualCleanup(retentionDays, agentCode);
+        Map<String, Object> result = new java.util.LinkedHashMap<>();
+        result.put("deleted", deleted);
+        result.put("retentionDays", retentionDays);
+        result.put("agentCode", agentCode != null ? agentCode : "ALL");
+        return ApiResponse.ok("清理完成", result);
     }
 
     // ==================== 导出端点 ====================

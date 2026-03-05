@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ChevronDown, ChevronRight, ExternalLink } from 'lucide-react';
+import { ChevronDown, ChevronRight, ExternalLink, Upload, Check, Loader2 } from 'lucide-react';
 import { useJsonPreview } from '../../../../shared/components/JsonPreview';
 import type { AgentExecutionLog } from '../../../../shared/types/server';
 
@@ -8,6 +8,10 @@ interface EnhancedLogRowProps {
   log: AgentExecutionLog;
   isExpanded: boolean;
   onToggle: () => void;
+  /** 是否为本地日志（显示上报按钮） */
+  isLocal?: boolean;
+  /** 上报回调 */
+  onReport?: (log: AgentExecutionLog) => Promise<void>;
 }
 
 function tryFormatJson(str: string | null | undefined): string {
@@ -44,10 +48,27 @@ const statusConfig: Record<string, { dot: string; badge: string; label: string }
   CANCELLED: { dot: 'bg-slate-400', badge: 'bg-slate-500/20 text-slate-400', label: 'CANCELLED' },
 };
 
-const EnhancedLogRow: React.FC<EnhancedLogRowProps> = ({ log, isExpanded, onToggle }) => {
+const EnhancedLogRow: React.FC<EnhancedLogRowProps> = ({ log, isExpanded, onToggle, isLocal, onReport }) => {
   const { t } = useTranslation('common');
   const { openPreview } = useJsonPreview();
   const config = statusConfig[log.status] || statusConfig.CANCELLED;
+
+  const [reporting, setReporting] = useState(false);
+  const [reported, setReported] = useState(false);
+
+  const handleReport = async (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (reporting || reported || !onReport) return;
+    setReporting(true);
+    try {
+      await onReport(log);
+      setReported(true);
+    } catch {
+      // error handled by parent
+    } finally {
+      setReporting(false);
+    }
+  };
 
   return (
     <div className="border-b border-slate-700/30">
@@ -62,6 +83,30 @@ const EnhancedLogRow: React.FC<EnhancedLogRowProps> = ({ log, isExpanded, onTogg
         <span className="text-xs text-slate-400 min-w-[60px]">{formatDuration(log.durationMs)}</span>
         <span className={`text-xs px-2 py-0.5 rounded-full ${config.badge}`}>{config.label}</span>
         <div className="flex-1" />
+        {/* 本地日志上报按钮（折叠行内） */}
+        {isLocal && onReport && (
+          <button
+            onClick={handleReport}
+            disabled={reporting || reported}
+            className={`flex items-center gap-1 text-[10px] px-2 py-0.5 rounded transition-colors ${
+              reported
+                ? 'text-emerald-400 bg-emerald-500/10'
+                : reporting
+                ? 'text-slate-400 cursor-wait'
+                : 'text-blue-400 hover:text-blue-300 hover:bg-blue-500/10'
+            }`}
+            title={reported ? t('aiDashboard.executionLog.reportSuccess') : t('aiDashboard.executionLog.reportToServer')}
+          >
+            {reported ? (
+              <Check className="w-3 h-3" />
+            ) : reporting ? (
+              <Loader2 className="w-3 h-3 animate-spin" />
+            ) : (
+              <Upload className="w-3 h-3" />
+            )}
+            {reported ? t('aiDashboard.executionLog.reportSuccess') : reporting ? t('aiDashboard.executionLog.reporting') : t('aiDashboard.executionLog.reportToServer')}
+          </button>
+        )}
         <button className="text-slate-400 hover:text-white transition-colors p-0.5">
           {isExpanded ? (
             <ChevronDown className="w-4 h-4" />

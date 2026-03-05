@@ -2,9 +2,9 @@ import { useState, useCallback } from 'react';
 import { AgentRegistry } from './AgentRegistry';
 import type { AgentExecuteInput, AgentExecuteResult, AgentStreamChunk, AgentExecutionReport } from '../types/server';
 
-function truncate(str: string | undefined, maxLen = 500): string | undefined {
-    if (!str) return undefined;
-    return str.length > maxLen ? str.substring(0, maxLen) + '...[truncated]' : str;
+/** 将值安全转为字符串（不截断，完整保留便于调试） */
+function safeStr(str: string | undefined): string | undefined {
+    return str || undefined;
 }
 
 async function reportExecution(report: AgentExecutionReport): Promise<void> {
@@ -58,8 +58,8 @@ export function useAgent(agentCode: string) {
                 referenceType: input.referenceType,
                 referenceId: input.referenceId,
                 executedOn: 'client',
-                inputSnapshot: truncate(JSON.stringify(input.data)),
-                outputSnapshot: truncate(typeof execResult.output === 'string' ? execResult.output : JSON.stringify(execResult.output)),
+                inputSnapshot: safeStr(JSON.stringify(input.data)),
+                outputSnapshot: safeStr(typeof execResult.output === 'string' ? execResult.output : JSON.stringify(execResult.output)),
                 errorMessage: execResult.error,
             });
 
@@ -75,7 +75,7 @@ export function useAgent(agentCode: string) {
                 referenceType: input.referenceType,
                 referenceId: input.referenceId,
                 executedOn: 'client',
-                inputSnapshot: truncate(JSON.stringify(input.data)),
+                inputSnapshot: safeStr(JSON.stringify(input.data)),
                 errorMessage: errMsg,
             });
 
@@ -155,8 +155,8 @@ export function useAgentStream(agentCode: string) {
                 referenceType: input.referenceType,
                 referenceId: input.referenceId,
                 executedOn: 'client',
-                inputSnapshot: truncate(JSON.stringify(input.data)),
-                outputSnapshot: truncate(lastText),
+                inputSnapshot: safeStr(JSON.stringify(input.data)),
+                outputSnapshot: safeStr(lastText),
                 errorMessage: errorMsg,
             });
         }

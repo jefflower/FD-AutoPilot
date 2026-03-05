@@ -59,7 +59,7 @@ public class AgentExecutionService {
         exec.setReferenceId(refId);
         exec.setExecutedBy(executedBy);
         exec.setExecutedOn(executedOn);
-        exec.setInputSnapshot(truncate(inputSnapshot, 2000));
+        exec.setInputSnapshot(inputSnapshot);
         AgentExecution saved = executionRepository.save(exec);
         broadcastExecutionEvent("agent-execution-started", saved);
         return saved;
@@ -72,7 +72,7 @@ public class AgentExecutionService {
             exec.setStatus(success ? ExecutionStatus.SUCCESS : ExecutionStatus.FAILED);
             exec.setDurationMs(durationMs);
             exec.setTokenCount(tokenCount);
-            exec.setOutputSnapshot(truncate(output, 2000));
+            exec.setOutputSnapshot(output);
             exec.setErrorMessage(error);
             AgentExecution saved = executionRepository.save(exec);
             broadcastExecutionEvent("agent-execution-completed", saved);
@@ -89,8 +89,8 @@ public class AgentExecutionService {
         exec.setReferenceType(report.getReferenceType());
         exec.setReferenceId(report.getReferenceId());
         exec.setExecutedOn(report.getExecutedOn());
-        exec.setInputSnapshot(truncate(report.getInputSnapshot(), 2000));
-        exec.setOutputSnapshot(truncate(report.getOutputSnapshot(), 2000));
+        exec.setInputSnapshot(report.getInputSnapshot());
+        exec.setOutputSnapshot(report.getOutputSnapshot());
         exec.setErrorMessage(report.getErrorMessage());
         AgentExecution saved = executionRepository.save(exec);
         broadcastExecutionEvent("agent-execution-completed", saved);
@@ -236,8 +236,33 @@ public class AgentExecutionService {
         }
     }
 
-    private String truncate(String text, int maxLen) {
-        if (text == null) return null;
-        return text.length() > maxLen ? text.substring(0, maxLen) + "...[truncated]" : text;
+    /**
+     * 手动清理执行日志。
+     *
+     * @param retentionDaysOverride 保留天数（清理该天数之前的记录），null 则用默认值
+     * @param agentCode             可选 Agent 代码过滤，null 则清理所有
+     * @return 删除的记录数
+     */
+    @Transactional
+    public long manualCleanup(Integer retentionDaysOverride, String agentCode) {
+        int days = retentionDaysOverride != null ? retentionDaysOverride : retentionDays;
+        LocalDateTime cutoff = LocalDateTime.now().minusDays(days);
+        long countBefore = agentCode != null && !agentCode.isEmpty()
+                ? executionRepository.countByAgentCode(agentCode)
+                : executionRepository.count();
+
+        if (agentCode != null && !agentCode.isEmpty()) {
+            executionRepository.deleteByAgentCodeAndCreatedAtBefore(agentCode, cutoff);
+        } else {
+            executionRepository.deleteByCreatedAtBefore(cutoff);
+        }
+
+        long countAfter = agentCode != null && !agentCode.isEmpty()
+                ? executionRepository.countByAgentCode(agentCode)
+                : executionRepository.count();
+        long deleted = countBefore - countAfter;
+        log.info("[AgentExecution] 手动清理执行记录: 删除 {} 条 (保留 {} 天, agent={}, cutoff={})",
+                deleted, days, agentCode != null ? agentCode : "ALL", cutoff);
+        return deleted;
     }
 }
