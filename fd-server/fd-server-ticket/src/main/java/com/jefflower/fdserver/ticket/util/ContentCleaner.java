@@ -36,7 +36,9 @@ public final class ContentCleaner {
     private static final Pattern QUOTE_EN = Pattern.compile("^On\\s+.{10,80}\\s+wrote:\\s*$", Pattern.CASE_INSENSITIVE);
     private static final Pattern QUOTE_CN = Pattern.compile("^在\\s*.{5,60}\\s*写道[：:]");
     private static final Pattern FORWARD = Pattern.compile("^-{5,}\\s*(Forwarded|Original)\\s+(message|Message)", Pattern.CASE_INSENSITIVE);
-    private static final Pattern QUOTE_LINE = Pattern.compile("^>{1,3}\\s");
+    private static final Pattern QUOTE_LINE = Pattern.compile("^>{1,}\\s?");
+    // 分割线：连续 5+ 个相同特殊字符组成的行（>>>、===、---、___、*** 等）
+    private static final Pattern SEPARATOR_LINE = Pattern.compile("^[>=\\-_*~#]{5,}\\s*$");
 
     // HTML 实体
     private static final Pattern ENTITY_NBSP = Pattern.compile("&nbsp;", Pattern.CASE_INSENSITIVE);
@@ -49,8 +51,6 @@ public final class ContentCleaner {
     private static final Pattern ENTITY_APOS3 = Pattern.compile("&#x27;", Pattern.CASE_INSENSITIVE);
     private static final Pattern ENTITY_NUMERIC = Pattern.compile("&#(\\d+);");
 
-    private static final String QUOTE_MARKER = "[...邮件引用已省略...]";
-
     /**
      * 对文本执行全部降噪处理
      */
@@ -60,6 +60,8 @@ public final class ContentCleaner {
         }
 
         String result = text;
+        // 统一换行符：\r\n → \n，残留 \r → \n
+        result = result.replace("\r\n", "\n").replace("\r", "\n");
         result = stripHtml(result);
         result = shortenUrls(result);
         result = removeEmailQuotes(result);
@@ -142,7 +144,6 @@ public final class ContentCleaner {
             // "On ... wrote:" 格式
             if (QUOTE_EN.matcher(trimmed).matches()) {
                 if (!quoteReplaced) {
-                    result.add(QUOTE_MARKER);
                     quoteReplaced = true;
                 }
                 inQuoteBlock = true;
@@ -152,7 +153,6 @@ public final class ContentCleaner {
             // 中文 "在 ... 写道："
             if (QUOTE_CN.matcher(trimmed).find()) {
                 if (!quoteReplaced) {
-                    result.add(QUOTE_MARKER);
                     quoteReplaced = true;
                 }
                 inQuoteBlock = true;
@@ -162,7 +162,6 @@ public final class ContentCleaner {
             // 转发标记
             if (FORWARD.matcher(trimmed).find()) {
                 if (!quoteReplaced) {
-                    result.add(QUOTE_MARKER);
                     quoteReplaced = true;
                 }
                 inQuoteBlock = true;
@@ -172,10 +171,14 @@ public final class ContentCleaner {
             // ">" 开头的引用行
             if (QUOTE_LINE.matcher(trimmed).find()) {
                 if (!inQuoteBlock && !quoteReplaced) {
-                    result.add(QUOTE_MARKER);
                     quoteReplaced = true;
                 }
                 inQuoteBlock = true;
+                continue;
+            }
+
+            // 分割线（>>>>>>、=====、-----、_____ 等）直接删除
+            if (SEPARATOR_LINE.matcher(trimmed).matches()) {
                 continue;
             }
 

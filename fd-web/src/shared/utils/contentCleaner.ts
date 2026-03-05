@@ -89,7 +89,6 @@ function removeEmailQuotes(text: string): string {
         // 检测引用头 — "On ... wrote:" 格式（英文，兼容多行）
         if (/^On\s+.{10,80}\s+wrote:\s*$/i.test(trimmed)) {
             if (!quoteReplaced) {
-                result.push('[...邮件引用已省略...]');
                 quoteReplaced = true;
             }
             inQuoteBlock = true;
@@ -99,7 +98,6 @@ function removeEmailQuotes(text: string): string {
         // 检测引用头 — 中文 "在 ... 写道："
         if (/^在\s*.{5,60}\s*写道[：:]/.test(trimmed)) {
             if (!quoteReplaced) {
-                result.push('[...邮件引用已省略...]');
                 quoteReplaced = true;
             }
             inQuoteBlock = true;
@@ -109,17 +107,20 @@ function removeEmailQuotes(text: string): string {
         // 检测转发标记
         if (/^-{5,}\s*(Forwarded|Original)\s+(message|Message)/i.test(trimmed)) {
             if (!quoteReplaced) {
-                result.push('[...邮件引用已省略...]');
                 quoteReplaced = true;
             }
             inQuoteBlock = true;
             continue;
         }
 
+        // 分割线（>>>>>>、=====、-----、_____ 等）直接删除
+        if (/^[>=\-_*~#]{5,}\s*$/.test(trimmed)) {
+            continue;
+        }
+
         // 检测 ">" 开头的引用行
-        if (/^>{1,3}\s/.test(trimmed)) {
+        if (/^>{1,}\s?/.test(trimmed)) {
             if (!inQuoteBlock && !quoteReplaced) {
-                result.push('[...邮件引用已省略...]');
                 quoteReplaced = true;
             }
             inQuoteBlock = true;
@@ -168,6 +169,9 @@ export function cleanTextForAi(text: string): string {
     if (!text) return '';
 
     let result = text;
+
+    // Step 0: 统一换行符
+    result = result.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
 
     // Step 1: 清理 HTML
     result = stripHtml(result);
