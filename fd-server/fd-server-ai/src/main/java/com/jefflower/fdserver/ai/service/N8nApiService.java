@@ -2,8 +2,8 @@ package com.jefflower.fdserver.ai.service;
 
 import com.jefflower.fdserver.common.exception.BusinessException;
 import com.jefflower.fdserver.common.exception.ErrorCode;
-import com.jefflower.fdserver.ticket.service.SystemConfigService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
@@ -21,35 +21,44 @@ public class N8nApiService {
     private String defaultApiKey;
 
     private final RestTemplate restTemplate;
-    private final SystemConfigService systemConfigService;
 
-    public N8nApiService(SystemConfigService systemConfigService) {
+    /**
+     * 通过 SPI 接口获取数据库中的 n8n 配置（由 ticket 模块实现）。
+     * 使用 @Autowired(required=false) 避免在无实现时启动失败。
+     */
+    @Autowired(required = false)
+    private N8nConfigProvider n8nConfigProvider;
+
+    public N8nApiService() {
         this.restTemplate = new RestTemplate();
-        this.systemConfigService = systemConfigService;
     }
 
     /** 解析 n8n API URL：优先数据库，fallback 到配置文件 */
     private String resolveApiUrl() {
-        try {
-            String dbUrl = systemConfigService.getN8nApiUrl();
-            if (dbUrl != null && !dbUrl.isBlank()) {
-                return dbUrl.endsWith("/") ? dbUrl.substring(0, dbUrl.length() - 1) : dbUrl;
+        if (n8nConfigProvider != null) {
+            try {
+                String dbUrl = n8nConfigProvider.getN8nApiUrl();
+                if (dbUrl != null && !dbUrl.isBlank()) {
+                    return dbUrl.endsWith("/") ? dbUrl.substring(0, dbUrl.length() - 1) : dbUrl;
+                }
+            } catch (Exception e) {
+                log.warn("[N8nApiService] 读取数据库 n8n_api_url 失败，使用默认值: {}", e.getMessage());
             }
-        } catch (Exception e) {
-            log.warn("[N8nApiService] 读取数据库 n8n_api_url 失败，使用默认值: {}", e.getMessage());
         }
         return defaultApiUrl;
     }
 
     /** 解析 n8n API Key：优先数据库，fallback 到配置文件 */
     private String resolveApiKey() {
-        try {
-            String dbKey = systemConfigService.getN8nApiKey();
-            if (dbKey != null && !dbKey.isBlank()) {
-                return dbKey;
+        if (n8nConfigProvider != null) {
+            try {
+                String dbKey = n8nConfigProvider.getN8nApiKey();
+                if (dbKey != null && !dbKey.isBlank()) {
+                    return dbKey;
+                }
+            } catch (Exception e) {
+                log.warn("[N8nApiService] 读取数据库 n8n_api_key 失败，使用默认值: {}", e.getMessage());
             }
-        } catch (Exception e) {
-            log.warn("[N8nApiService] 读取数据库 n8n_api_key 失败，使用默认值: {}", e.getMessage());
         }
         return defaultApiKey;
     }
