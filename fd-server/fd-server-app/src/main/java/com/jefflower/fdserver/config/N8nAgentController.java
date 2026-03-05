@@ -244,7 +244,7 @@ public class N8nAgentController {
      */
     private String buildInputSnapshot(String agentCode, Map<String, Object> input) {
         Map<String, Object> snapshot = new LinkedHashMap<>();
-        snapshot.put("input", input);
+        // 不再存储业务原始数据，日志只保留 systemPrompt 模板和 resolvedPrompt
 
         try {
             var agentDef = agentDefinitionService.findByCode(agentCode).orElse(null);

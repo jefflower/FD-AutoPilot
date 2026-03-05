@@ -13,6 +13,10 @@ interface ExecutionLogZoneProps {
   onAgentFilterChange?: (code: string | null) => void;
   /** SSE 事件触发的刷新计数器 — 变化时自动刷新日志 */
   refreshTrigger?: number;
+  /** 默认展示的 tab，默认 'local' */
+  defaultTab?: TabKey;
+  /** 单 Agent 模式：隐藏 agent 过滤下拉框 */
+  singleAgentMode?: boolean;
 }
 
 type TabKey = 'server' | 'local';
@@ -47,10 +51,12 @@ const ExecutionLogZone: React.FC<ExecutionLogZoneProps> = ({
   selectedAgent,
   onAgentFilterChange,
   refreshTrigger = 0,
+  defaultTab = 'local',
+  singleAgentMode = false,
 }) => {
   const { t } = useTranslation('common');
 
-  const [activeTab, setActiveTab] = useState<TabKey>('server');
+  const [activeTab, setActiveTab] = useState<TabKey>(defaultTab);
   const [agentFilter, setAgentFilter] = useState<string>('');
   const [statusFilter, setStatusFilter] = useState<StatusFilter>('');
   const [expandedId, setExpandedId] = useState<number | null>(null);
@@ -280,16 +286,18 @@ const ExecutionLogZone: React.FC<ExecutionLogZoneProps> = ({
 
         {/* Right: Filters + Actions */}
         <div className="flex items-center gap-2">
-          <select
-            value={agentFilter}
-            onChange={(e) => handleAgentFilterChange(e.target.value)}
-            className="text-xs bg-slate-800 border border-slate-700/50 text-slate-300 rounded-lg px-2 py-1 focus:outline-none focus:border-indigo-500/50"
-          >
-            <option value="">{t('aiDashboard.executionLog.allAgents')}</option>
-            {definitions.map(d => (
-              <option key={d.code} value={d.code}>{d.code}</option>
-            ))}
-          </select>
+          {!singleAgentMode && (
+            <select
+              value={agentFilter}
+              onChange={(e) => handleAgentFilterChange(e.target.value)}
+              className="text-xs bg-slate-800 border border-slate-700/50 text-slate-300 rounded-lg px-2 py-1 focus:outline-none focus:border-indigo-500/50"
+            >
+              <option value="">{t('aiDashboard.executionLog.allAgents')}</option>
+              {definitions.map(d => (
+                <option key={d.code} value={d.code}>{d.code}</option>
+              ))}
+            </select>
+          )}
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value as StatusFilter)}
