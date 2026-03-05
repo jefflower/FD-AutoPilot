@@ -122,6 +122,14 @@ const CyberOfficePopover: React.FC<CyberOfficePopoverProps> = ({
       });
   }, [definitions, instances, onlineClientIds, executingCountMap, runningExecutions]);
 
+  // ─── Tick every second when there are running executions ───
+  const [, setTick] = useState(0);
+  useEffect(() => {
+    if (runningExecutions.length === 0) return;
+    const timer = setInterval(() => setTick(t => t + 1), 1000);
+    return () => clearInterval(timer);
+  }, [runningExecutions.length]);
+
   /** Summary counts */
   const summaryCounts = useMemo(() => {
     const counts = { executing: 0, standby: 0, enabled: 0, disabled: 0 };
