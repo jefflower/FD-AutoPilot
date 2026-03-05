@@ -17,6 +17,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.jefflower.fdserver.ticket.util.ContentCleaner;
+
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -327,7 +329,8 @@ public class FreshdeskSyncService {
     private String buildFullContent(String externalId, String subject, String description) {
         TicketContent contentModel = new TicketContent();
         contentModel.setSubject(subject);
-        contentModel.setDescription(description);
+        // 降噪：清洗 description（移除 HTML、邮件引用链、长 URL 等）
+        contentModel.setDescription(ContentCleaner.clean(description));
 
         try {
             List<Map<String, Object>> conversations = apiClient.fetchAllConversations(externalId);
@@ -335,7 +338,8 @@ public class FreshdeskSyncService {
                 List<TicketContent.ConversationDto> convDtos = conversations.stream()
                         .map(conv -> TicketContent.ConversationDto.builder()
                                 .id(Long.valueOf(String.valueOf(conv.get("id"))))
-                                .bodyText((String) conv.get("body_text"))
+                                // 降噪：清洗每条对话的 bodyText
+                                .bodyText(ContentCleaner.clean((String) conv.get("body_text")))
                                 .isPrivate((Boolean) conv.get("private"))
                                 .incoming((Boolean) conv.get("incoming"))
                                 .userId(conv.get("user_id") != null

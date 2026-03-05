@@ -91,6 +91,10 @@ fn build_router(log_store: Arc<ExecLogStore>) -> Router {
             post(agent_handler::notebooklm_py_handler),
         )
         .route(
+            "/bridge/notebooklm-rag",
+            post(agent_handler::notebooklm_rag_handler),
+        )
+        .route(
             "/bridge/notebooklm-cli",
             post(agent_handler::notebooklm_cli_handler),
         )

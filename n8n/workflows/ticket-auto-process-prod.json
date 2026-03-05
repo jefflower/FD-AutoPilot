@@ -13,7 +13,7 @@
         }
       },
       "id": "schedule-trigger",
-      "name": "定时触发（每15分钟）",
+      "name": "定时触发（每5分钟）",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
       "position": [0, 300]
@@ -34,8 +34,8 @@
     },
     {
       "parameters": {
-        "content": "## 工单自动处理工作流（生产版）\n\n### 流程\n1. 登录获取 JWT\n2. 获取待翻译工单（fdStatus=2 Open）\n3. 循环逐个处理每个工单：\n   - 刷新工单 Freshdesk 最新数据\n   - 调用翻译 Agent（含 AI 分类 + resolved 判断）→ 保存翻译结果\n   - 检查 resolved：\n     - resolved=true → 调用 resolve-completed 标记工单已解决\n     - resolved=false → 按分类路由\n   - 按分类路由：\n     - 产品故障 → ticket-reply Agent → 保存回复 → 推送审核通知\n     - 物流查询 / 商务合作 / 其他 → 标记人工处理\n4. 循环结束 → 汇总结果\n\n### API 地址\n生产环境: http://47.110.152.25:9988",
-        "height": 400,
+        "content": "## 工单自动处理工作流（生产版）\n\n### 流程\n1. 登录获取 JWT\n2. 获取待翻译工单（fdStatus=2 Open）\n3. 循环逐个处理每个工单：\n   - 刷新工单 Freshdesk 最新数据\n   - 调用翻译 Agent（含 AI 分类 + resolved 判断）→ 保存翻译结果\n   - 检查 resolved：\n     - resolved=true → 调用 resolve-completed 标记工单已解决\n     - resolved=false → 按分类路由\n   - 按分类路由：\n     - 产品故障 → ticket-reply Agent → 检查回复是否为空\n       - 空 → ticket-reply-long Agent（RAG 模式）→ 保存回复 → 推送审核通知\n       - 非空 → 保存回复 → 推送审核通知\n     - 物流查询 / 商务合作 / 其他 → 标记人工处理\n4. 循环结束 → 汇总结果\n\n### API 地址\n生产环境: http://47.110.152.25:9988",
+        "height": 460,
         "width": 380
       },
       "id": "sticky-note",
@@ -302,6 +302,58 @@
     },
     {
       "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": ""
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ ($json.data && $json.data.output) || '' }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "check-reply-empty",
+      "name": "检查回复是否为空",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [3160, 150]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://47.110.152.25:9988/api/v1/n8n/agents/ticket-reply-long/execute",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('登录获取 JWT').item.json.data.accessToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ input: { ticketContent: $('刷新工单 Freshdesk 数据').item.json.data.content, lastAuditRemark: $('刷新工单 Freshdesk 数据').item.json.data.lastAuditRemark || '' }, refType: 'ticket', refId: String($('刷新工单 Freshdesk 数据').item.json.data.id), timeoutMs: 600000 }) }}",
+        "options": {
+          "timeout": 600000
+        }
+      },
+      "id": "call-long-reply",
+      "name": "长内容回复 Agent",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [3420, 0]
+    },
+    {
+      "parameters": {
         "method": "POST",
         "url": "=http://47.110.152.25:9988/api/v1/n8n/tickets/{{ $('刷新工单 Freshdesk 数据').item.json.data.id }}/mark-manual",
         "sendHeaders": true,
@@ -346,7 +398,7 @@
       "name": "保存回复结果",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [3160, 150]
+      "position": [3680, 150]
     },
     {
       "parameters": {
@@ -367,7 +419,7 @@
       "name": "推送审核通知",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [3420, 150]
+      "position": [3940, 150]
     },
     {
       "parameters": {
@@ -411,7 +463,7 @@
     }
   ],
   "connections": {
-    "定时触发（每15分钟）": {
+    "定时触发（每5分钟）": {
       "main": [
         [
           {
@@ -586,6 +638,35 @@
       ]
     },
     "产品故障回复 Agent": {
+      "main": [
+        [
+          {
+            "node": "检查回复是否为空",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "检查回复是否为空": {
+      "main": [
+        [
+          {
+            "node": "长内容回复 Agent",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "保存回复结果",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "长内容回复 Agent": {
       "main": [
         [
           {

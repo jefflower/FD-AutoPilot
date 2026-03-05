@@ -2,6 +2,7 @@ import React, { createContext, useContext, useState, useEffect, useCallback, use
 import { AgentRegistry } from './AgentRegistry';
 import { GeminiCliExecutor } from './executors/GeminiCliExecutor';
 import { NotebookLmPyExecutor } from './executors/NotebookLmPyExecutor';
+import { NotebookLmRagExecutor } from './executors/NotebookLmRagExecutor';
 import { ClaudeCliExecutor } from './executors/ClaudeCliExecutor';
 import { ShadowWindowExecutor } from './executors/ShadowWindowExecutor';
 import { AntigravityToolsExecutor } from './executors/AntigravityToolsExecutor';
@@ -178,6 +179,7 @@ export const AgentProvider: React.FC<{ children: React.ReactNode }> = ({ childre
                 registry.registerExecutor(new GeminiCliExecutor());
                 registry.registerExecutor(new ClaudeCliExecutor());
                 registry.registerExecutor(new NotebookLmPyExecutor());
+                registry.registerExecutor(new NotebookLmRagExecutor());
                 registry.registerExecutor(new ShadowWindowExecutor());
                 registry.registerExecutor(new AntigravityToolsExecutor());
             }

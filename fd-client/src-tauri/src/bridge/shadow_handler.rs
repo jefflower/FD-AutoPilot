@@ -234,6 +234,19 @@ pub mod inner {
         .await
     }
 
+    async fn notebooklm_rag_handler_shadow(
+        State(state): State<AppState>,
+        body: Json<NotebookLmRagRequest>,
+    ) -> StringResult {
+        agent_handler::notebooklm_rag_handler(
+            State(LogState {
+                log_store: state.log_store,
+            }),
+            body,
+        )
+        .await
+    }
+
     async fn notebooklm_cli_handler_shadow(
         State(state): State<AppState>,
         body: Json<NotebookLmCliRequest>,
@@ -337,6 +350,7 @@ pub mod inner {
                 post(sync_translate_handler_shadow),
             )
             .route("/bridge/notebooklm-py", post(notebooklm_py_handler_shadow))
+            .route("/bridge/notebooklm-rag", post(notebooklm_rag_handler_shadow))
             .route("/bridge/notebooklm-cli", post(notebooklm_cli_handler_shadow))
             .route(
                 "/bridge/capabilities/detect",

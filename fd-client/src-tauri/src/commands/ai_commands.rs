@@ -175,6 +175,38 @@ pub async fn execute_notebooklm_py_cmd(
 }
 
 #[tauri::command]
+pub async fn execute_notebooklm_rag_cmd(
+    log_store: tauri::State<'_, Arc<ExecLogStore>>,
+    query: String,
+    source_content: String,
+    notebook_id: String,
+    agent_code: Option<String>,
+) -> Result<String, String> {
+    let start = std::time::Instant::now();
+    let result = crate::ai::execute_notebooklm_rag(&query, &source_content, &notebook_id).await;
+    let duration_ms = start.elapsed().as_millis() as i64;
+
+    let code = agent_code.as_deref().unwrap_or("notebooklm-rag");
+    let input_json = serde_json::json!({
+        "queryLength": query.len(),
+        "sourceContentLength": source_content.len(),
+        "notebookId": notebook_id,
+    })
+    .to_string();
+
+    write_log(
+        &log_store,
+        code,
+        &format!("notebooklm-rag (query: {} chars, source: {} chars, notebook: {})", query.len(), source_content.len(), notebook_id),
+        Some(input_json),
+        &result,
+        duration_ms,
+    );
+
+    result
+}
+
+#[tauri::command]
 pub async fn execute_antigravity_cmd(
     log_store: tauri::State<'_, Arc<ExecLogStore>>,
     prompt: String,

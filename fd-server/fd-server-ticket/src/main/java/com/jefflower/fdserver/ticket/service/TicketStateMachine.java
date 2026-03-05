@@ -59,7 +59,8 @@ public class TicketStateMachine {
             )),
             Map.entry(TicketStatus.PROCESSING, Set.of(
                     TicketStatus.PENDING_AUDIT,      // 兼容：翻译+回复均完成，进入审核
-                    TicketStatus.COMPLETED           // 翻译保存后判定已解决，直接完结
+                    TicketStatus.COMPLETED,          // 翻译保存后判定已解决，直接完结
+                    TicketStatus.MANUAL_REQUIRED     // 分类为商务合作/物流查询/其他时标记人工处理
             )),
             Map.entry(TicketStatus.PENDING_AUDIT, Set.of(
                     TicketStatus.AUDITING,           // 审核人开始审核

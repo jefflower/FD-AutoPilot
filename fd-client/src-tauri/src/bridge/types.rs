@@ -92,6 +92,18 @@ pub struct NotebookLmPyRequest {
     pub agent_code: Option<String>,
 }
 
+#[derive(Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct NotebookLmRagRequest {
+    pub query: String,
+    pub source_content: String,
+    #[serde(default)]
+    pub notebook_id: String,
+    /// Agent code for execution log attribution (default: "notebooklm-rag").
+    #[serde(default)]
+    pub agent_code: Option<String>,
+}
+
 // ========== Exec Log Query Params ==========
 
 #[derive(Deserialize)]

@@ -27,6 +27,7 @@ const BRIDGE_CMD_MAP: Record<string, string> = {
   execute_gemini_cmd: '/bridge/gemini',
   execute_claude_cmd: '/bridge/claude',
   execute_notebooklm_py_cmd: '/bridge/notebooklm-py',
+  execute_notebooklm_rag_cmd: '/bridge/notebooklm-rag',
   execute_notebooklm_cli_cmd: '/bridge/notebooklm-cli',
   execute_antigravity_cmd: '/bridge/antigravity',
   sync_translate_reply_cmd: '/bridge/sync-translate',

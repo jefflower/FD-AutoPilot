@@ -481,7 +481,7 @@ export interface OAuthStatus {
 }
 
 // ============ AI Agent ============
-export type AgentProviderType = 'GEMINI_CLI' | 'CLAUDE_CLI' | 'HTTP_API' | 'NOTEBOOKLM' | 'NOTEBOOKLM_PY' | 'TRACKING_SHADOW' | 'LOCAL_FUNCTION'
+export type AgentProviderType = 'GEMINI_CLI' | 'CLAUDE_CLI' | 'HTTP_API' | 'NOTEBOOKLM' | 'NOTEBOOKLM_PY' | 'NOTEBOOKLM_RAG' | 'TRACKING_SHADOW' | 'LOCAL_FUNCTION'
     | 'WEB_AUTOMATION' | 'SHADOW_WINDOW' | 'ANTIGRAVITY_TOOLS' | 'LOCAL_CLI'; // deprecated 兼容旧值
 export type AgentExecutionEnv = 'CLIENT_ONLY' | 'SERVER_ONLY' | 'BOTH';
 export type AgentExecutionStatus = 'RUNNING' | 'SUCCESS' | 'FAILED' | 'TIMEOUT' | 'CANCELLED';

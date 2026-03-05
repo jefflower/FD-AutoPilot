@@ -348,6 +348,57 @@ pub async fn notebooklm_py_handler(
     }
 }
 
+pub async fn notebooklm_rag_handler(
+    State(state): State<LogState>,
+    Json(req): Json<NotebookLmRagRequest>,
+) -> StringResult {
+    rlog_info!(
+        "[fd-bridge] POST /bridge/notebooklm-rag: query_len={}, source_len={}, notebook_id={}",
+        req.query.len(),
+        req.source_content.len(),
+        if req.notebook_id.is_empty() { "(empty)" } else { &req.notebook_id }
+    );
+
+    let start = std::time::Instant::now();
+    let input_json = serde_json::json!({
+        "queryLength": req.query.len(),
+        "sourceContentLength": req.source_content.len(),
+        "notebookId": req.notebook_id,
+    })
+    .to_string();
+
+    let result = crate::ai::execute_notebooklm_rag(&req.query, &req.source_content, &req.notebook_id).await;
+
+    let duration = start.elapsed().as_millis() as i64;
+
+    let entry = ExecLogEntry {
+        id: None,
+        agent_code: req.agent_code.clone().unwrap_or_else(|| "notebooklm-rag".to_string()),
+        status: if result.is_ok() { "success" } else { "failed" }.to_string(),
+        command: Some(format!(
+            "notebooklm-rag (query: {} chars, source: {} chars)",
+            req.query.len(),
+            req.source_content.len()
+        )),
+        input_params: Some(input_json),
+        stdout: result.as_ref().ok().cloned(),
+        stderr: None,
+        error_msg: result.as_ref().err().cloned(),
+        duration_ms: Some(duration),
+        ref_type: None,
+        ref_id: None,
+        created_at: chrono::Utc::now().to_rfc3339(),
+    };
+    if let Err(e) = state.log_store.insert(&entry) {
+        rlog_error!("[ExecLog] Failed to insert notebooklm-rag log: {}", e);
+    }
+
+    match result {
+        Ok(output) => (StatusCode::OK, Json(ok_response(output))),
+        Err(e) => (StatusCode::INTERNAL_SERVER_ERROR, Json(err_response(e))),
+    }
+}
+
 pub async fn notebooklm_cli_handler(
     State(state): State<LogState>,
     Json(mut req): Json<NotebookLmCliRequest>,

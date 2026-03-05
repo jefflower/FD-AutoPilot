@@ -530,6 +530,124 @@ asyncio.run(main())
     }
 }
 
+/// NotebookLM RAG 模式执行器：将内容作为临时 source 添加到 Notebook，提问后清理。
+///
+/// 流程: 写临时文件 → source add → source wait → ask → source delete → 清理临时文件
+pub async fn execute_notebooklm_rag(
+    query: &str,
+    source_content: &str,
+    notebook_id: &str,
+) -> Result<String, String> {
+    rlog_info!(
+        "[NotebookLmRag] Starting RAG execution: query_len={}, content_len={}, notebook_id={}",
+        query.len(), source_content.len(), notebook_id
+    );
+
+    // ① 写临时文件
+    let temp_dir = std::env::temp_dir().join("fd-rag-sources");
+    let _ = std::fs::create_dir_all(&temp_dir);
+    let file_name = format!("rag-{}.txt", chrono::Utc::now().format("%Y%m%d%H%M%S%3f"));
+    let temp_file = temp_dir.join(&file_name);
+    std::fs::write(&temp_file, source_content.as_bytes())
+        .map_err(|e| format!("Failed to write temp file: {}", e))?;
+    rlog_info!("[NotebookLmRag] Wrote {} bytes to {:?}", source_content.len(), temp_file);
+
+    // 确保清理的 guard（无论后续步骤是否失败）
+    let result = execute_notebooklm_rag_inner(query, notebook_id, &temp_file).await;
+
+    // ⑥ 清理临时文件
+    if let Err(e) = std::fs::remove_file(&temp_file) {
+        rlog_warn!("[NotebookLmRag] Failed to clean up temp file {:?}: {}", temp_file, e);
+    }
+
+    result
+}
+
+async fn execute_notebooklm_rag_inner(
+    query: &str,
+    notebook_id: &str,
+    temp_file: &std::path::Path,
+) -> Result<String, String> {
+    let file_path_str = temp_file.to_string_lossy().to_string();
+
+    // ② source add
+    let add_args = vec![
+        "source".to_string(), "add".to_string(),
+        file_path_str,
+        "-n".to_string(), notebook_id.to_string(),
+        "--json".to_string(),
+    ];
+    let add_output = execute_notebooklm_cli(add_args, 120).await
+        .map_err(|e| format!("source add failed: {}", e))?;
+
+    // 解析 source_id
+    let add_json: serde_json::Value = serde_json::from_str(&add_output)
+        .map_err(|e| format!("Failed to parse source add output: {}. Raw: {}", e, &add_output[..add_output.len().min(500)]))?;
+    let source_id = add_json["source_id"].as_str()
+        .ok_or_else(|| format!("source_id not found in add output: {}", &add_output[..add_output.len().min(500)]))?
+        .to_string();
+    rlog_info!("[NotebookLmRag] Source added: {}", source_id);
+
+    // ③ source wait
+    let wait_args = vec![
+        "source".to_string(), "wait".to_string(),
+        source_id.clone(),
+        "-n".to_string(), notebook_id.to_string(),
+        "--timeout".to_string(), "120".to_string(),
+    ];
+    if let Err(e) = execute_notebooklm_cli(wait_args, 150).await {
+        // 清理 source 后返回错误
+        let _ = delete_source(notebook_id, &source_id).await;
+        return Err(format!("source wait failed: {}", e));
+    }
+    rlog_info!("[NotebookLmRag] Source ready: {}", source_id);
+
+    // ④ ask（指定 source）
+    let ask_args = vec![
+        "ask".to_string(),
+        query.to_string(),
+        "-s".to_string(), source_id.clone(),
+        "-n".to_string(), notebook_id.to_string(),
+        "--new".to_string(),
+        "--json".to_string(),
+    ];
+    let ask_result = execute_notebooklm_cli(ask_args, 300).await;
+
+    // ⑤ 清理 source（无论 ask 是否成功）
+    let _ = delete_source(notebook_id, &source_id).await;
+
+    // 解析 ask 结果
+    let ask_output = ask_result.map_err(|e| format!("ask failed: {}", e))?;
+    let ask_json: serde_json::Value = serde_json::from_str(&ask_output)
+        .unwrap_or_else(|_| serde_json::Value::String(ask_output.clone()));
+
+    let answer = ask_json["answer"].as_str()
+        .unwrap_or_else(|| ask_json.as_str().unwrap_or(&ask_output));
+    rlog_info!("[NotebookLmRag] Got answer: {} chars", answer.len());
+
+    Ok(answer.to_string())
+}
+
+/// 辅助：删除 source（best effort，不中断主流程）
+async fn delete_source(notebook_id: &str, source_id: &str) -> Result<(), String> {
+    let del_args = vec![
+        "source".to_string(), "delete".to_string(),
+        source_id.to_string(),
+        "-n".to_string(), notebook_id.to_string(),
+        "-y".to_string(),
+    ];
+    match execute_notebooklm_cli(del_args, 30).await {
+        Ok(_) => {
+            rlog_info!("[NotebookLmRag] Source deleted: {}", source_id);
+            Ok(())
+        }
+        Err(e) => {
+            rlog_warn!("[NotebookLmRag] Failed to delete source {}: {}", source_id, e);
+            Err(e)
+        }
+    }
+}
+
 /// 通用 notebooklm CLI 执行器：调用 `notebooklm` 命令行工具
 /// args: 传给 notebooklm 的命令行参数列表
 /// timeout_secs: 超时时间（秒）

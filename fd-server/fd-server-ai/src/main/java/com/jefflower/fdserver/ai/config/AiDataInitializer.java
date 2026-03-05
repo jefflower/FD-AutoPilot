@@ -117,6 +117,48 @@ public class AiDataInitializer implements CommandLineRunner {
             + "4. 建议为不同业务场景创建独立的 Notebook，例如：客服知识库、物流知识库等。\""
             + "}";
 
+    private static final String NOTEBOOKLM_RAG_INSTALL_GUIDE = "{"
+            + "\"prerequisites\":[\"Python 3.10+\",\"pip\",\"Google 账号（用于 NotebookLM 登录）\"],"
+            + "\"steps\":["
+            + "\"1. 安装 Python 环境\","
+            + "\"   - Mac (Homebrew)：brew install python@3.12\","
+            + "\"   - Mac (官方安装包)：从 https://www.python.org/downloads/macos/ 下载 .pkg 并安装\","
+            + "\"   - Windows：从 https://www.python.org/downloads/windows/ 下载安装包，安装时务必勾选 'Add Python to PATH'\","
+            + "\"   - 验证：python3 --version（Mac）或 python --version（Windows）\","
+            + "\"   - 验证 pip：pip3 --version（Mac）或 pip --version（Windows）\","
+            + "\"2. 安装 CLI：pip3 install notebooklm-py（包含 notebooklm CLI 命令行工具）\","
+            + "\"   - 首次安装会自动下载 Playwright 浏览器引擎（约 200MB），需要网络连接\","
+            + "\"3. 登录 Google 账号\","
+            + "\"   - 执行：notebooklm login\","
+            + "\"   - 会自动打开浏览器，使用 Google 账号完成 OAuth 登录\","
+            + "\"   - 登录成功后终端会显示 'Authenticated as: xxx@gmail.com'\","
+            + "\"   - 验证登录状态：notebooklm status\","
+            + "\"4. 创建 Notebook（知识库）\","
+            + "\"   - 执行：notebooklm create \\\"你的知识库名称\\\"（例如：notebooklm create \\\"客服知识库\\\"）\","
+            + "\"   - 创建成功后会返回 notebook ID（一串 UUID），请记录下来\","
+            + "\"   - 也可以使用 --json 参数获取结构化输出：notebooklm create \\\"客服知识库\\\" --json\","
+            + "\"   - 添加知识源（可选）：notebooklm source add \\\"https://your-docs-url\\\" 或 notebooklm source add ./file.pdf\","
+            + "\"   - 查看已有 Notebook 列表：notebooklm list\","
+            + "\"5. 配置 Notebook ID 到 Agent\","
+            + "\"   - 进入系统的 '我的 Agent' 页面\","
+            + "\"   - 所有使用 NotebookLM 能力的 Agent（如 '故障工单回复'、'物流查询回复'、'处理完成回复' 等）都需要配置对应的 Notebook ID\","
+            + "\"   - 点击 Agent 卡片上的配置/设置按钮\","
+            + "\"   - 将第 4 步获取的 Notebook ID 填入 'Notebook ID' 字段并保存\","
+            + "\"   - 不同 Agent 可以配置相同或不同的 Notebook ID，建议按业务场景分配不同的知识库\","
+            + "\"6. 验证完整流程\","
+            + "\"   - 执行：notebooklm list（应能看到已创建的 Notebook）\","
+            + "\"   - 执行：notebooklm ask \\\"测试问题\\\"（验证能正常对话）\""
+            + "],"
+            + "\"platforms\":{"
+            + "\"mac\":\"推荐使用 Homebrew 安装 Python：brew install python@3.12。如遇权限问题可用 pip3 install --user notebooklm-py\","
+            + "\"windows\":\"从 python.org 下载安装包，安装时务必勾选 'Add Python to PATH'。如遇权限问题可用 pip install --user notebooklm-py\""
+            + "},"
+            + "\"notes\":\"NotebookLM RAG 模式使用 notebooklm CLI 工具，将工单内容作为临时 source 添加到知识库，提问后自动清理。适用于超过 6000 字符的长内容工单。"
+            + "RAG 模式每次执行会：①将工单内容写入临时文件 ②作为 source 添加到 Notebook ③等待处理完成后提问 ④自动清理临时 source。单次执行耗时约 1-3 分钟。"
+            + "登录凭据保存在 ~/.notebooklm/ 目录下，session 过期后需重新执行 notebooklm login。"
+            + "每个需要使用 NotebookLM 的 Agent 都需要单独配置 Notebook ID，不同 Agent 可以使用不同的 Notebook（知识库）。\""
+            + "}";
+
     private static final String ANTIGRAVITY_TOOLS_INSTALL_GUIDE = "{"
             + "\"prerequisites\":[\"Antigravity Tools 桌面应用\",\"至少一个已登录的 Google Antigravity IDE 账号\"],"
             + "\"steps\":["
@@ -177,13 +219,14 @@ public class AiDataInitializer implements CommandLineRunner {
 
         // 4. 清理已移除的内置 Agent
         cleanupRemovedBuiltInAgents(Set.of("ticket-translate", "ticket-reply", "n8n-workflow-designer",
-                "logistics-reply", "completion-reply"));
+                "logistics-reply", "completion-reply", "ticket-reply-long"));
 
         // 5. 初始化默认能力绑定
         ensureDefaultBinding("ticket-translate", "ticket-translate");
         ensureDefaultBinding("ticket-reply", "ticket-reply");
         ensureDefaultBinding("logistics-reply", "logistics-reply");
         ensureDefaultBinding("completion-reply", "completion-reply");
+        ensureDefaultBinding("ticket-reply-long", "ticket-reply-long");
     }
 
     /**
@@ -258,6 +301,11 @@ public class AiDataInitializer implements CommandLineRunner {
         ensureBuiltInCapability("notebooklm-py", "NotebookLM Python", ProviderType.NOTEBOOKLM_PY,
                 "{\"command\":\"python -c \\\"import notebooklm\\\"\"}", NOTEBOOKLM_PY_INSTALL_GUIDE,
                 2, true,
+                "{\"notebookId\":{\"type\":\"string\",\"label\":\"Notebook ID\",\"required\":true,\"description\":\"NotebookLM 知识库 ID\"}}");
+
+        ensureBuiltInCapability("notebooklm-rag", "NotebookLM RAG", ProviderType.NOTEBOOKLM_RAG,
+                "{\"command\":\"notebooklm --version\"}", NOTEBOOKLM_RAG_INSTALL_GUIDE,
+                5, true,
                 "{\"notebookId\":{\"type\":\"string\",\"label\":\"Notebook ID\",\"required\":true,\"description\":\"NotebookLM 知识库 ID\"}}");
 
         ensureBuiltInCapability("antigravity-tools", "Antigravity Tools", ProviderType.ANTIGRAVITY_TOOLS,
@@ -491,12 +539,41 @@ public class AiDataInitializer implements CommandLineRunner {
                 DEFAULT_TEMPLATE_ENGINE,
                 "notebooklm-py");
 
+        // === 长内容工单回复 Agent（RAG 模式） ===
+        ensureBuiltInAgent(
+                "ticket-reply-long",
+                "长内容工单回复",
+                "通过 NotebookLM RAG 模式生成长工单回复（适用于内容超过 6000 字符的工单）",
+                null, null,
+                "ticket-reply-long",
+                "ticket",
+                null, null, null,
+                "根据工单内容，使用用户工单的语言做出回复及回复的中文翻译。\n\n"
+                        + "严格输出要求：\n"
+                        + "- 直接输出纯 JSON 数组，第一个元素为原文回复，第二个元素为中文翻译\n"
+                        + "- 回复内容要精简专业\n"
+                        + "- 禁止使用 markdown 代码块（```）包裹\n"
+                        + "- 禁止在 JSON 前后添加任何文字说明\n"
+                        + "- 输出必须以 [ 开头，以 ] 结尾\n\n"
+                        + "正确示例：[\"Hello, thanks for contacting us.\",\"你好，感谢联系我们。\"]\n"
+                        + "{{#if lastAuditRemark}}\n\n"
+                        + "【审核驳回意见】：\n{{lastAuditRemark}}\n"
+                        + "请务必根据以上审核意见调整你的回复，避免重复之前的问题。"
+                        + "{{/if}}",
+                4,
+                REPLY_INPUT_SCHEMA,
+                REPLY_OUTPUT_SCHEMA,
+                DEFAULT_TEMPLATE_ENGINE,
+                "notebooklm-rag");
+
         // 给需要用户配置 notebookId 的 Agent 设置 userConfigSchema
         setUserConfigSchema("ticket-reply",
                 "{\"notebookId\":{\"type\":\"string\",\"label\":\"Notebook ID\",\"required\":true,\"description\":\"NotebookLM 知识库 ID\"}}");
         setUserConfigSchema("logistics-reply",
                 "{\"notebookId\":{\"type\":\"string\",\"label\":\"Notebook ID\",\"required\":true,\"description\":\"NotebookLM 知识库 ID\"}}");
         setUserConfigSchema("completion-reply",
+                "{\"notebookId\":{\"type\":\"string\",\"label\":\"Notebook ID\",\"required\":true,\"description\":\"NotebookLM 知识库 ID\"}}");
+        setUserConfigSchema("ticket-reply-long",
                 "{\"notebookId\":{\"type\":\"string\",\"label\":\"Notebook ID\",\"required\":true,\"description\":\"NotebookLM 知识库 ID\"}}");
     }
 
@@ -533,6 +610,7 @@ public class AiDataInitializer implements CommandLineRunner {
             case GEMINI_CLI -> "gemini-cli";
             case CLAUDE_CLI -> "claude-cli";
             case NOTEBOOKLM, NOTEBOOKLM_PY -> "notebooklm-py";
+            case NOTEBOOKLM_RAG -> "notebooklm-rag";
             case TRACKING_SHADOW -> "shadow-window";
             case ANTIGRAVITY_TOOLS -> "antigravity-tools";
             default -> null; // HTTP_API, LOCAL_FUNCTION, deprecated types
