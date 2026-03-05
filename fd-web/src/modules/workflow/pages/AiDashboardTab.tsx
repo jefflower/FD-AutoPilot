@@ -31,7 +31,7 @@ const AiDashboardTab: React.FC = () => {
   } = useOfficeData(autoRefresh ? 10000 : 0);
 
   // 手动启停 Agent（运行时状态，不修改数据库）
-  const { toggleManualAgent, manualStartedAgents } = useAgentContext();
+  const { toggleManualAgent, manualAgentOverrides } = useAgentContext();
 
   // Toggle Agent — 只改变运行时状态，不修改数据库的 enabled/autoStart
   const handleToggle = useCallback((id: number) => {
@@ -124,7 +124,7 @@ const AiDashboardTab: React.FC = () => {
               onViewLogs={setLogDrawerAgent}
               onToggleAgent={handleToggle}
               runningExecutions={runningExecutions}
-              manualStartedAgents={manualStartedAgents}
+              manualAgentOverrides={manualAgentOverrides}
             />
           </div>
         </>
