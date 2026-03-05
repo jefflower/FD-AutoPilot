@@ -105,7 +105,7 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "http://47.110.152.25:9988/api/v1/n8n/capabilities/ticket-translate/execute",
+        "url": "http://47.110.152.25:9988/api/v1/n8n/agents/ticket-translate/execute",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
@@ -284,7 +284,7 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "http://47.110.152.25:9988/api/v1/n8n/capabilities/ticket-reply/execute",
+        "url": "http://47.110.152.25:9988/api/v1/n8n/agents/ticket-reply/execute",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
@@ -310,7 +310,7 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "http://47.110.152.25:9988/api/v1/n8n/capabilities/logistics-reply/execute",
+        "url": "http://47.110.152.25:9988/api/v1/n8n/agents/logistics-reply/execute",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
