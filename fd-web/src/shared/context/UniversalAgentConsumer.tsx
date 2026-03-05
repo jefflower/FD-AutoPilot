@@ -9,7 +9,9 @@ import type { TaskInstance } from '../types/server';
 // ─── 常量 ────────────────────────────────────────────────────
 
 /** 已有专用消费者的 agent code，不需要通用消费者处理 */
-const DEDICATED_CONSUMER_CODES = new Set(['ticket-translate', 'ticket-reply']);
+// 注意：MQTranslateAgentProvider / MQReplyAgentProvider 已从组件树移除，
+// 所有 Agent 统一由 UniversalAgentConsumer 处理，不再排除任何 code。
+const DEDICATED_CONSUMER_CODES = new Set<string>();
 
 /** 轮询间隔（毫秒） */
 const POLL_INTERVAL_MS = 3_000;
