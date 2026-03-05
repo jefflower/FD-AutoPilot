@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Activity, RefreshCw } from 'lucide-react';
-import { agentApi } from '../../../shared/services/api';
+import { useAgentContext } from '../../../shared/agents/AgentContext';
 import { useOfficeData } from '../../../shared/hooks/useOfficeData';
 import StatsBar from '../components/dashboard/StatsBar';
 import ModuleAgentGrid from '../components/dashboard/ModuleAgentGrid';
@@ -30,11 +30,15 @@ const AiDashboardTab: React.FC = () => {
     refresh,
   } = useOfficeData(autoRefresh ? 10000 : 0);
 
-  // Toggle Agent
-  const handleToggle = useCallback(async (id: number) => {
-    await agentApi.toggleDefinition(id);
-    refresh();
-  }, [refresh]);
+  // 手动启停 Agent（运行时状态，不修改数据库）
+  const { toggleManualAgent, manualStartedAgents } = useAgentContext();
+
+  // Toggle Agent — 只改变运行时状态，不修改数据库的 enabled/autoStart
+  const handleToggle = useCallback((id: number) => {
+    const def = definitions.find(d => d.id === id);
+    if (!def) return;
+    toggleManualAgent(def.code);
+  }, [definitions, toggleManualAgent]);
 
   // 找到当前 drawer 对应的 agent name
   const drawerAgentName = useMemo(() => {
@@ -120,6 +124,7 @@ const AiDashboardTab: React.FC = () => {
               onViewLogs={setLogDrawerAgent}
               onToggleAgent={handleToggle}
               runningExecutions={runningExecutions}
+              manualStartedAgents={manualStartedAgents}
             />
           </div>
         </>

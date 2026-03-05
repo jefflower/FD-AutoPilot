@@ -13,6 +13,8 @@ interface DeskCardProps {
   onToggle: (id: number) => void;
   onClick: () => void;
   compact?: boolean;
+  /** 该 Agent 是否正在轮询任务（autoStart 或手动启动） */
+  isPolling?: boolean;
 }
 
 type DeskStatus = 'executing' | 'standby' | 'enabled' | 'disabled';
@@ -95,6 +97,7 @@ const DeskCard: React.FC<DeskCardProps> = ({
   onToggle,
   onClick,
   compact = false,
+  isPolling = false,
 }) => {
   const { t } = useTranslation('common');
 
@@ -170,15 +173,17 @@ const DeskCard: React.FC<DeskCardProps> = ({
         <div
           onClick={(e) => {
             e.stopPropagation();
-            onToggle(definition.id);
+            if (definition.enabled) onToggle(definition.id);
           }}
-          className={`w-8 h-4 rounded-full transition-colors cursor-pointer flex-shrink-0 relative ${
-            definition.enabled ? 'bg-indigo-500' : 'bg-slate-600'
+          title={isPolling ? '停止轮询' : '启动轮询'}
+          className={`w-8 h-4 rounded-full transition-colors flex-shrink-0 relative ${
+            !definition.enabled ? 'bg-slate-700 cursor-not-allowed' :
+            isPolling ? 'bg-indigo-500 cursor-pointer' : 'bg-slate-600 cursor-pointer'
           }`}
         >
           <div
             className={`w-3 h-3 rounded-full bg-white absolute top-0.5 transition-all ${
-              definition.enabled ? 'left-[18px]' : 'left-0.5'
+              isPolling ? 'left-[18px]' : 'left-0.5'
             }`}
           />
         </div>

@@ -17,6 +17,10 @@ interface AgentContextValue {
     capabilities: CapabilityDefinition[];
     onlineClients: number;
     reload: () => Promise<void>;
+    /** 运行时手动启动的 Agent code 集合（不持久化，刷新页面恢复默认） */
+    manualStartedAgents: Set<string>;
+    /** 手动启停 Agent（运行时状态，不修改数据库） */
+    toggleManualAgent: (code: string) => void;
 }
 
 const AgentCtx = createContext<AgentContextValue>({
@@ -26,6 +30,8 @@ const AgentCtx = createContext<AgentContextValue>({
     capabilities: [],
     onlineClients: 0,
     reload: async () => {},
+    manualStartedAgents: new Set(),
+    toggleManualAgent: () => {},
 });
 
 export const useAgentContext = () => useContext(AgentCtx);
@@ -36,6 +42,21 @@ export const AgentProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const [bindings, setBindings] = useState<AgentBindings>({});
     const [capabilities, setCapabilities] = useState<CapabilityDefinition[]>([]);
     const [onlineClients, setOnlineClients] = useState(0);
+
+    // 运行时手动启停状态（内存中，不持久化）
+    const [manualStartedAgents, setManualStartedAgents] = useState<Set<string>>(new Set());
+
+    const toggleManualAgent = useCallback((code: string) => {
+        setManualStartedAgents(prev => {
+            const next = new Set(prev);
+            if (next.has(code)) {
+                next.delete(code);
+            } else {
+                next.add(code);
+            }
+            return next;
+        });
+    }, []);
 
     // Refs to keep heartbeat callback stable
     const definitionsRef = useRef(definitions);
@@ -102,7 +123,10 @@ export const AgentProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     }, [ready, capabilities]);
 
     return (
-        <AgentCtx.Provider value={{ ready, definitions, bindings, capabilities, onlineClients, reload }}>
+        <AgentCtx.Provider value={{
+            ready, definitions, bindings, capabilities, onlineClients, reload,
+            manualStartedAgents, toggleManualAgent,
+        }}>
             {children}
         </AgentCtx.Provider>
     );

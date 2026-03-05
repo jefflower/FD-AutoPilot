@@ -13,6 +13,8 @@ interface ModuleAgentGridProps {
   /** 当前正在执行中的任务列表 */
   runningExecutions?: AgentExecutionLog[];
   compact?: boolean;
+  /** 运行时手动启动的 Agent code 集合 */
+  manualStartedAgents?: Set<string>;
 }
 
 type ModuleCode = 'all' | 'ticket' | 'admin' | 'workflow' | 'ungrouped';
@@ -28,6 +30,7 @@ const ModuleAgentGrid: React.FC<ModuleAgentGridProps> = ({
   onToggleAgent,
   runningExecutions = [],
   compact = false,
+  manualStartedAgents = new Set<string>(),
 }) => {
   const { t } = useTranslation('common');
   const [activeModule, setActiveModule] = useState<ModuleCode>('all');
@@ -101,6 +104,7 @@ const ModuleAgentGrid: React.FC<ModuleAgentGridProps> = ({
               onToggle={onToggleAgent}
               onClick={() => onViewLogs(def.code)}
               compact={compact}
+              isPolling={def.autoStart === true || manualStartedAgents.has(def.code)}
             />
           ))}
         </div>
