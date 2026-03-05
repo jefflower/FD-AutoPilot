@@ -11,6 +11,42 @@ import { useToast } from '../hooks/useToast';
 import { userAgentApi } from '../services/api/agent';
 import type { AgentDefinition, AgentBindings, CapabilityDefinition, ClientSkillItem, UserAgentConfigDTO } from '../types/server';
 
+// ============ 检测结果缓存 ============
+
+const DETECTION_CACHE_KEY = 'fd-detection-cache';
+
+interface DetectionCache {
+  canExecute: boolean;
+  capabilityStatus: CapabilityDetectResult[];
+  skillMap: Record<string, CapSkillState>;
+  modelMap: Record<string, string[]>;
+  timestamp: number;
+}
+
+/** 保存检测结果到 localStorage */
+function saveDetectionCache(data: Omit<DetectionCache, 'timestamp'>) {
+  try {
+    const cache: DetectionCache = { ...data, timestamp: Date.now() };
+    localStorage.setItem(DETECTION_CACHE_KEY, JSON.stringify(cache));
+  } catch { /* ignore */ }
+}
+
+/** 读取检测缓存 */
+function loadDetectionCache(): DetectionCache | null {
+  try {
+    const raw = localStorage.getItem(DETECTION_CACHE_KEY);
+    if (!raw) return null;
+    return JSON.parse(raw);
+  } catch { return null; }
+}
+
+/** 清除检测缓存（登出时调用） */
+export function clearDetectionCache() {
+  localStorage.removeItem(DETECTION_CACHE_KEY);
+}
+
+// ============ Capability Skill 状态 ============
+
 /** 单个 Capability 的 Skill 检测状态 */
 export interface CapSkillState {
     loading: boolean;
@@ -129,11 +165,14 @@ export const AgentProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         const registry = AgentRegistry.getInstance();
 
         const init = async () => {
+            // 0. 检查 localStorage 缓存
+            const cached = loadDetectionCache();
+
             // 1. 异步检测执行能力（Tauri 原生 或 HTTP bridge）
-            const capable = await hasExecutionCapability();
+            const capable = cached ? cached.canExecute : await hasExecutionCapability();
             setCanExecute(capable);
 
-            // 2. 仅有执行能力时注册执行器
+            // 2. 仅有执行能力时注册执行器（无论是否有缓存，executor 注册不能跳过）
             if (capable) {
                 registry.registerExecutor(new GeminiCliExecutor());
                 registry.registerExecutor(new ClaudeCliExecutor());
@@ -141,7 +180,7 @@ export const AgentProvider: React.FC<{ children: React.ReactNode }> = ({ childre
                 registry.registerExecutor(new ShadowWindowExecutor());
             }
 
-            // 3. 加载 Agent 定义（所有环境都需要，用于 UI 展示）
+            // 3. 加载 Agent 定义（所有环境都需要，用于 UI 展示，始终从服务端获取最新）
             try {
                 await registry.loadDefinitions();
                 setDefinitions(registry.getAllDefinitions());
@@ -153,7 +192,7 @@ export const AgentProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
             setReady(true);
 
-            // 3.5. 加载用户 Agent 配置
+            // 3.5. 加载用户 Agent 配置（始终从服务端获取最新）
             try {
                 const configs = await userAgentApi.getUserAgents();
                 setUserAgentConfigs(configs);
@@ -162,13 +201,26 @@ export const AgentProvider: React.FC<{ children: React.ReactNode }> = ({ childre
                 console.warn('[AgentProvider] Failed to load user agent configs:', err);
             }
 
-            // 4. 有执行能力时，探测本地 Capability 环境（gemini-cli / claude-cli / notebooklm-py）
+            // 如果有缓存，直接恢复检测结果，跳过耗时的 detectCapabilities / detectSkills / getAvailableModels
+            if (cached) {
+                console.log('[AgentProvider] Using cached detection results');
+                setCapabilityStatus(cached.capabilityStatus);
+                setSkillMap(cached.skillMap);
+                setModelMap(cached.modelMap);
+                setStartupReady(true);
+                return;
+            }
+
+            // 4. 无缓存：有执行能力时，探测本地 Capability 环境（gemini-cli / claude-cli / notebooklm-py）
+            let finalCapabilityStatus: CapabilityDetectResult[] = [];
+            let finalSkillMap: Record<string, CapSkillState> = {};
+            let finalModelMap: Record<string, string[]> = {};
+
             if (capable) {
-                let detectedStatus: CapabilityDetectResult[] = [];
                 try {
-                    detectedStatus = await detectCapabilities();
-                    setCapabilityStatus(detectedStatus);
-                    console.log('[AgentProvider] Capability detection:', detectedStatus);
+                    finalCapabilityStatus = await detectCapabilities();
+                    setCapabilityStatus(finalCapabilityStatus);
+                    console.log('[AgentProvider] Capability detection:', finalCapabilityStatus);
                 } catch (err) {
                     console.warn('[AgentProvider] Capability detection failed:', err);
                 }
@@ -207,6 +259,7 @@ export const AgentProvider: React.FC<{ children: React.ReactNode }> = ({ childre
                             try {
                                 const models = await executor.getAvailableModels();
                                 if (models.length > 0) {
+                                    finalModelMap = { ...finalModelMap, [capCode]: models };
                                     setModelMap(prev => ({ ...prev, [capCode]: models }));
                                 }
                             } catch (err) {
@@ -214,9 +267,19 @@ export const AgentProvider: React.FC<{ children: React.ReactNode }> = ({ childre
                             }
                         }),
                     ]);
+                    finalSkillMap = skillResults;
                     console.log('[AgentProvider] Skill detection:', skillResults);
                 }
             }
+
+            // 6. 保存检测结果到缓存
+            saveDetectionCache({
+                canExecute: capable,
+                capabilityStatus: finalCapabilityStatus,
+                skillMap: finalSkillMap,
+                modelMap: finalModelMap,
+            });
+
             setStartupReady(true);
         };
 

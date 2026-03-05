@@ -4,6 +4,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { authApi, oauthApi, getAuthToken, setAuthToken, isTokenExpired, ApiError } from '../services/serverApi';
+import { clearDetectionCache } from '../agents/AgentContext';
 import type { User, UserRole, LoginRequest, RegisterRequest } from '../types/server';
 
 interface AuthState {
@@ -188,6 +189,7 @@ export function useAuth() {
   const logout = useCallback(() => {
     authApi.logout();
     localStorage.removeItem('fd_auth_user');
+    clearDetectionCache();
     setState({
       token: null,
       user: null,

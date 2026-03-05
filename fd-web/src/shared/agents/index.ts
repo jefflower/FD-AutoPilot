@@ -14,6 +14,6 @@ export type {
 
 export { AgentRegistry } from './AgentRegistry';
 export { useAgent, useAgentStream } from './useAgent';
-export { AgentProvider, useAgentContext } from './AgentContext';
+export { AgentProvider, useAgentContext, clearDetectionCache } from './AgentContext';
 export type { CapSkillState } from './AgentContext';
 export type { AgentExecutor } from './executors/types';

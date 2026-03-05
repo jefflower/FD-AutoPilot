@@ -8,6 +8,7 @@ import type {
 } from '../types/server';
 import { agentApi, clientApi } from '../services/api';
 import { useServerEvent } from '../context/ServerEventsContext';
+import { useAgentContext } from '../agents/AgentContext';
 
 interface CyberOfficePopoverProps {
   onClose: () => void;
@@ -40,21 +41,31 @@ const CyberOfficePopover: React.FC<CyberOfficePopoverProps> = ({
   onClose,
   onNavigateToOffice,
 }) => {
-  const [definitions, setDefinitions] = useState<AgentDefinition[]>([]);
+  const { userAgentConfigs, definitions: allDefinitions } = useAgentContext();
+
   const [instances, setInstances] = useState<AgentInstance[]>([]);
   const [onlineClients, setOnlineClients] = useState<ClientRegistration[]>([]);
   const [runningExecutions, setRunningExecutions] = useState<AgentExecutionLog[]>([]);
   const [loading, setLoading] = useState(true);
 
+  // 从 context 获取用户已订阅且启用的 Agent 列表
+  const subscribedCodes = useMemo(
+    () => new Set(userAgentConfigs.filter(c => c.enabled).map(c => c.agentCode)),
+    [userAgentConfigs],
+  );
+
+  const userDefinitions = useMemo(
+    () => allDefinitions.filter(d => subscribedCodes.has(d.code)),
+    [allDefinitions, subscribedCodes],
+  );
+
   const loadData = useCallback(async () => {
     try {
-      const [defs, insts, clients, running] = await Promise.all([
-        agentApi.getAllDefinitions(),
+      const [insts, clients, running] = await Promise.all([
         agentApi.getAllInstances(),
         clientApi.getOnlineClients(),
         agentApi.getRunningExecutions(),
       ]);
-      setDefinitions(defs);
       setInstances(insts);
       setOnlineClients(clients);
       setRunningExecutions(running);
@@ -103,9 +114,9 @@ const CyberOfficePopover: React.FC<CyberOfficePopoverProps> = ({
     return map;
   }, [runningExecutions]);
 
-  /** Agent list with status */
+  /** Agent list with status (filtered to user's subscribed agents) */
   const agentList = useMemo(() => {
-    return definitions
+    return userDefinitions
       .slice()
       .sort((a, b) => {
         const sa = getStatus(a, instances.filter(i => i.agentCode === a.code), onlineClientIds, executingCountMap.get(a.code) || 0);
@@ -120,7 +131,7 @@ const CyberOfficePopover: React.FC<CyberOfficePopoverProps> = ({
         const execution = runningExecutions.find(e => e.agentCode === def.code);
         return { def, status, execCount, execution };
       });
-  }, [definitions, instances, onlineClientIds, executingCountMap, runningExecutions]);
+  }, [userDefinitions, instances, onlineClientIds, executingCountMap, runningExecutions]);
 
   // ─── Tick every second when there are running executions ───
   const [, setTick] = useState(0);
@@ -154,7 +165,8 @@ const CyberOfficePopover: React.FC<CyberOfficePopoverProps> = ({
       <div className="flex items-center justify-between px-4 py-3 border-b border-slate-700/50">
         <div className="flex items-center gap-2">
           <Building2 className="w-5 h-5 text-blue-400" />
-          <span className="text-sm font-semibold text-white">{'\u8d5b\u535a\u529e\u516c\u5ba4'}</span>
+          <span className="text-sm font-semibold text-white">赛博办公室</span>
+          <span className="text-[10px] text-slate-500">我的 Agent</span>
         </div>
         <button
           onClick={onClose}
@@ -195,7 +207,7 @@ const CyberOfficePopover: React.FC<CyberOfficePopoverProps> = ({
           </div>
         ) : agentList.length === 0 ? (
           <div className="flex items-center justify-center py-10 text-sm text-slate-500">
-            {'\u6682\u65e0 Agent'}
+            还没有订阅 Agent
           </div>
         ) : (
           agentList.map(({ def, status, execCount, execution }) => {

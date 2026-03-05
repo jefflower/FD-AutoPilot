@@ -158,7 +158,7 @@ const AgentConfigPanel: React.FC<{
 };
 
 const MyAgentsTab: React.FC = () => {
-    const { reload } = useAgentContext();
+    const { reload, capabilityStatus, canExecute } = useAgentContext();
     const { toast } = useToast();
 
     const [agents, setAgents] = useState<UserAgentConfigDTO[]>([]);
@@ -311,8 +311,15 @@ const MyAgentsTab: React.FC = () => {
                                             </span>
                                         )}
                                         {agent.requiredCapability && (
-                                            <span className="px-2 py-0.5 text-[10px] rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300">
+                                            <span className={`px-2 py-0.5 text-[10px] rounded-full border ${
+                                                canExecute && capabilityStatus.find(c => c.code === agent.requiredCapability && c.available)
+                                                    ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-300'
+                                                    : 'bg-purple-500/10 border-purple-500/20 text-purple-300'
+                                            }`}>
                                                 {agent.requiredCapability}
+                                                {canExecute && !capabilityStatus.find(c => c.code === agent.requiredCapability && c.available) && (
+                                                    <span className="ml-1 text-amber-400" title="当前客户端不具备此能力">&#9888;</span>
+                                                )}
                                             </span>
                                         )}
                                         {agent.groupCode && (

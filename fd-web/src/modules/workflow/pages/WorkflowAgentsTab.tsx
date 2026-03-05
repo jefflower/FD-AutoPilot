@@ -11,6 +11,7 @@ import { agentApi, clientApi } from '../../../shared/services/serverApi';
 import { userAgentApi } from '../../../shared/services/api/agent';
 import type { AgentDefinition, AgentInstance, ClientRegistration, CapabilityDefinition } from '../../../shared/types/server';
 import { useAgentContext } from '../../../shared/agents';
+import type { CapabilityDetectResult } from '../../../tauri/bridge';
 import { PROMPT_TEMPLATES, TEMPLATE_CATEGORIES } from '../../../shared/agents/promptTemplates';
 import AgentExecLogPanel from '../../../shared/components/AgentExecLogPanel';
 
@@ -33,7 +34,7 @@ const UNGROUPED_KEY = '__ungrouped__';
 
 const WorkflowAgentsTab: React.FC = () => {
     const { t } = useTranslation(['common']);
-    const { reload: reloadAgentContext, capabilities } = useAgentContext();
+    const { reload: reloadAgentContext, capabilities, capabilityStatus, canExecute } = useAgentContext();
 
     const [definitions, setDefinitions] = useState<AgentDefinition[]>([]);
     const [groupCodes, setGroupCodes] = useState<string[]>([]);
@@ -349,6 +350,8 @@ const WorkflowAgentsTab: React.FC = () => {
                                                     onEdit={() => setEditingDef({ ...def })}
                                                     subscribed={subscribedCodes.has(def.code)}
                                                     onSubscribe={handleSubscribe}
+                                                    capabilityStatus={capabilityStatus}
+                                                    canExecute={canExecute}
                                                 />
                                             ))}
                                         </div>
@@ -403,7 +406,9 @@ const AgentCard: React.FC<{
     onEdit: () => void;
     subscribed: boolean;
     onSubscribe: (agentCode: string) => void;
-}> = ({ def, operating, onToggle, onDelete, onEdit, subscribed, onSubscribe }) => {
+    capabilityStatus: CapabilityDetectResult[];
+    canExecute: boolean;
+}> = ({ def, operating, onToggle, onDelete, onEdit, subscribed, onSubscribe, capabilityStatus, canExecute }) => {
     const { t } = useTranslation(['common']);
     const [expanded, setExpanded] = useState(false);
     const [expandedTab, setExpandedTab] = useState<'instances' | 'logs'>('instances');
@@ -515,7 +520,7 @@ const AgentCard: React.FC<{
                     </div>
 
                     <div className="flex items-center gap-2 ml-3 flex-shrink-0">
-                        {/* 订阅按钮 */}
+                        {/* 订阅按钮 + Capability 可用性警告 */}
                         {subscribed ? (
                             <span className="flex items-center gap-1 px-2 py-1 text-xs text-emerald-400 bg-emerald-500/10 rounded">
                                 <Check className="w-3 h-3" />
@@ -529,6 +534,11 @@ const AgentCard: React.FC<{
                                 <Plus className="w-3 h-3" />
                                 订阅
                             </button>
+                        )}
+                        {canExecute && def.requiredCapability && !capabilityStatus.find(c => c.code === def.requiredCapability && c.available) && (
+                            <span className="text-[10px] text-amber-400" title={`当前客户端缺少 ${def.requiredCapability} 能力`}>
+                                &#9888;
+                            </span>
                         )}
                         {/* 实例总览按钮 */}
                         <button
