@@ -17,7 +17,7 @@ pub struct TauriLogger<'a> {
 #[cfg(feature = "tauri-app")]
 impl GeminiLogger for TauriLogger<'_> {
     fn log(&self, msg: &str) {
-        eprintln!("[GeminiLog] {}", msg);
+        rlog_info!("[AI] {}", msg);
         use tauri::Emitter;
         let _ = self.app.emit("log", msg.to_string());
     }
@@ -28,7 +28,7 @@ pub struct StderrLogger;
 
 impl GeminiLogger for StderrLogger {
     fn log(&self, msg: &str) {
-        eprintln!("[GeminiLog] {}", msg);
+        rlog_info!("[AI] {}", msg);
     }
 }
 
@@ -465,7 +465,7 @@ pub async fn execute_notebooklm_py(
     query: &str,
     notebook_id: &str,
 ) -> Result<String, String> {
-    eprintln!("[NotebookLmPy] Executing query, length={}, notebook_id={}", query.len(), if notebook_id.is_empty() { "(default)" } else { notebook_id });
+    rlog_info!("[NotebookLmPy] Executing query, length={}, notebook_id={}", query.len(), if notebook_id.is_empty() { "(default)" } else { notebook_id });
 
     // 内嵌 Python 脚本：使用 notebooklm-py 的 async API
     let python_script = format!(
@@ -513,7 +513,7 @@ asyncio.run(main())
     }
 
     let stdout = String::from_utf8_lossy(&output.stdout).trim().to_string();
-    eprintln!("[NotebookLmPy] Raw output: {} chars", stdout.len());
+    rlog_info!("[NotebookLmPy] Raw output: {} chars", stdout.len());
 
     // 解析 JSON 结果
     let result: serde_json::Value = serde_json::from_str(&stdout)
@@ -521,10 +521,11 @@ asyncio.run(main())
 
     if result["success"].as_bool() == Some(true) {
         let reply = result["reply"].as_str().unwrap_or("").to_string();
-        eprintln!("[NotebookLmPy] Success, reply length={}", reply.len());
+        rlog_info!("[NotebookLmPy] Success, reply length={}", reply.len());
         Ok(reply)
     } else {
         let error = result["error"].as_str().unwrap_or("Unknown error").to_string();
+        rlog_error!("[NotebookLmPy] Error: {}", error);
         Err(format!("notebooklm-py error: {}", error))
     }
 }
@@ -537,7 +538,7 @@ pub async fn execute_notebooklm_cli(
     args: Vec<String>,
     timeout_secs: u64,
 ) -> Result<String, String> {
-    eprintln!(
+    rlog_info!(
         "[NotebookLmCli] Executing: notebooklm {}",
         args.join(" ")
     );
@@ -558,13 +559,13 @@ pub async fn execute_notebooklm_cli(
     let stderr = String::from_utf8_lossy(&output.stderr).trim().to_string();
 
     if !output.status.success() {
-        eprintln!("[NotebookLmCli] Command failed, stderr: {}", stderr);
+        rlog_error!("[NotebookLmCli] Command failed, stderr: {}", stderr);
         return Err(format!("notebooklm CLI error (exit {}): {}",
             output.status.code().unwrap_or(-1),
             if stderr.is_empty() { &stdout } else { &stderr }));
     }
 
-    eprintln!("[NotebookLmCli] Success, output: {} chars", stdout.len());
+    rlog_info!("[NotebookLmCli] Success, output: {} chars", stdout.len());
     Ok(stdout)
 }
 

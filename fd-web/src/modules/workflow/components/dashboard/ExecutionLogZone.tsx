@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { ChevronLeft, ChevronRight, AlertTriangle, Maximize2, X, Trash2 } from 'lucide-react';
 import type { AgentDefinition, AgentExecutionLog, AgentExecutionStatus } from '../../../../shared/types/server';
 import { agentApi, getApiBaseUrl, getAuthToken } from '../../../../shared/services/api';
-import { execLogApi, type ExecLogEntry } from '../../../../shared/services/execLogApi';
+import { execLogApi, rustLogApi, type ExecLogEntry, type RustLogEntry } from '../../../../shared/services/execLogApi';
 import { getOrCreateClientId } from '../../../../shared/context/mq-task/utils';
 import EnhancedLogRow from './EnhancedLogRow';
 
@@ -19,7 +19,7 @@ interface ExecutionLogZoneProps {
   singleAgentMode?: boolean;
 }
 
-type TabKey = 'server' | 'local';
+type TabKey = 'server' | 'local' | 'system';
 type StatusFilter = '' | 'RUNNING' | 'SUCCESS' | 'FAILED' | 'TIMEOUT';
 
 const PAGE_SIZE = 20;
@@ -74,6 +74,11 @@ const ExecutionLogZone: React.FC<ExecutionLogZoneProps> = ({
   const [localTotal, setLocalTotal] = useState(0);
   const [localLoading, setLocalLoading] = useState(false);
   const [bridgeAvailable, setBridgeAvailable] = useState<boolean | null>(null);
+
+  // System (Rust runtime) logs state
+  const [systemLogs, setSystemLogs] = useState<RustLogEntry[]>([]);
+  const [systemLoading, setSystemLoading] = useState(false);
+  const [systemLevelFilter, setSystemLevelFilter] = useState<string>('');
 
   // Cleanup state
   const [cleanupLoading, setCleanupLoading] = useState(false);
@@ -130,6 +135,22 @@ const ExecutionLogZone: React.FC<ExecutionLogZoneProps> = ({
     }
   }, [agentFilter, statusFilter, localOffset, bridgeAvailable]);
 
+  // Fetch system (Rust runtime) logs
+  const fetchSystemLogs = useCallback(async () => {
+    setSystemLoading(true);
+    try {
+      const entries = await rustLogApi.query({
+        limit: 200,
+        level: systemLevelFilter || undefined,
+      });
+      setSystemLogs(entries);
+    } catch (e) {
+      console.error('[ExecutionLogZone] fetchSystemLogs failed:', e);
+    } finally {
+      setSystemLoading(false);
+    }
+  }, [systemLevelFilter]);
+
   // Trigger fetches
   useEffect(() => {
     if (activeTab === 'server') {
@@ -143,17 +164,25 @@ const ExecutionLogZone: React.FC<ExecutionLogZoneProps> = ({
     }
   }, [activeTab, fetchLocalLogs]);
 
+  useEffect(() => {
+    if (activeTab === 'system') {
+      fetchSystemLogs();
+    }
+  }, [activeTab, fetchSystemLogs]);
+
   // SSE 推送触发自动刷新：当 refreshTrigger 变化时，自动刷新当前 tab 的日志
   useEffect(() => {
     if (refreshTrigger !== prevTriggerRef.current) {
       prevTriggerRef.current = refreshTrigger;
       if (activeTab === 'server') {
         fetchServerLogs();
-      } else {
+      } else if (activeTab === 'local') {
         fetchLocalLogs();
+      } else {
+        fetchSystemLogs();
       }
     }
-  }, [refreshTrigger, activeTab, fetchServerLogs, fetchLocalLogs]);
+  }, [refreshTrigger, activeTab, fetchServerLogs, fetchLocalLogs, fetchSystemLogs]);
 
   // Reset pagination when filter changes
   useEffect(() => {
@@ -188,7 +217,11 @@ const ExecutionLogZone: React.FC<ExecutionLogZoneProps> = ({
 
     setCleanupLoading(true);
     try {
-      if (activeTab === 'local') {
+      if (activeTab === 'system') {
+        await rustLogApi.clear();
+        fetchSystemLogs();
+        return;
+      } else if (activeTab === 'local') {
         const result = await execLogApi.cleanup(agentFilter || undefined);
         alert(t('aiDashboard.executionLog.cleanupSuccess', { count: result.deleted }));
         fetchLocalLogs();
@@ -216,7 +249,7 @@ const ExecutionLogZone: React.FC<ExecutionLogZoneProps> = ({
     } finally {
       setCleanupLoading(false);
     }
-  }, [activeTab, agentFilter, t, fetchServerLogs, fetchLocalLogs]);
+  }, [activeTab, agentFilter, t, fetchServerLogs, fetchLocalLogs, fetchSystemLogs]);
 
   // ── 上报本地日志到服务端 ──
   const handleReportToServer = useCallback(async (log: AgentExecutionLog) => {
@@ -276,6 +309,16 @@ const ExecutionLogZone: React.FC<ExecutionLogZoneProps> = ({
           >
             {t('aiDashboard.executionLog.localLogs')}
           </button>
+          <button
+            onClick={() => setActiveTab('system')}
+            className={`text-sm pb-1 transition-colors ${
+              activeTab === 'system'
+                ? 'border-b-2 border-amber-500 text-amber-400'
+                : 'text-slate-400 hover:text-slate-300'
+            }`}
+          >
+            {t('aiDashboard.executionLog.systemLogs', '系统日志')}
+          </button>
           {/* RUNNING 任务实时指示 */}
           {runningCount > 0 && (
             <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-blue-500/15 text-blue-400 text-xs font-medium animate-pulse">
@@ -287,7 +330,7 @@ const ExecutionLogZone: React.FC<ExecutionLogZoneProps> = ({
 
         {/* Right: Filters + Actions */}
         <div className="flex items-center gap-2">
-          {!singleAgentMode && (
+          {activeTab !== 'system' && !singleAgentMode && (
             <select
               value={agentFilter}
               onChange={(e) => handleAgentFilterChange(e.target.value)}
@@ -299,17 +342,30 @@ const ExecutionLogZone: React.FC<ExecutionLogZoneProps> = ({
               ))}
             </select>
           )}
-          <select
-            value={statusFilter}
-            onChange={(e) => setStatusFilter(e.target.value as StatusFilter)}
-            className="text-xs bg-slate-800 border border-slate-700/50 text-slate-300 rounded-lg px-2 py-1 focus:outline-none focus:border-indigo-500/50"
-          >
-            <option value="">{t('aiDashboard.executionLog.allStatus')}</option>
-            <option value="RUNNING">RUNNING</option>
-            <option value="SUCCESS">SUCCESS</option>
-            <option value="FAILED">FAILED</option>
-            <option value="TIMEOUT">TIMEOUT</option>
-          </select>
+          {activeTab === 'system' ? (
+            <select
+              value={systemLevelFilter}
+              onChange={(e) => setSystemLevelFilter(e.target.value)}
+              className="text-xs bg-slate-800 border border-slate-700/50 text-slate-300 rounded-lg px-2 py-1 focus:outline-none focus:border-indigo-500/50"
+            >
+              <option value="">ALL</option>
+              <option value="INFO">INFO</option>
+              <option value="WARN">WARN</option>
+              <option value="ERROR">ERROR</option>
+            </select>
+          ) : (
+            <select
+              value={statusFilter}
+              onChange={(e) => setStatusFilter(e.target.value as StatusFilter)}
+              className="text-xs bg-slate-800 border border-slate-700/50 text-slate-300 rounded-lg px-2 py-1 focus:outline-none focus:border-indigo-500/50"
+            >
+              <option value="">{t('aiDashboard.executionLog.allStatus')}</option>
+              <option value="RUNNING">RUNNING</option>
+              <option value="SUCCESS">SUCCESS</option>
+              <option value="FAILED">FAILED</option>
+              <option value="TIMEOUT">TIMEOUT</option>
+            </select>
+          )}
           {/* 清理按钮 */}
           <button
             onClick={handleCleanup}
@@ -341,43 +397,80 @@ const ExecutionLogZone: React.FC<ExecutionLogZoneProps> = ({
 
       {/* Log list */}
       <div className={`flex-1 overflow-y-auto ${isModal ? 'px-6' : ''}`}>
-        {/* Bridge unavailable warning for local tab */}
-        {activeTab === 'local' && bridgeAvailable === false && (
-          <div className="flex items-center gap-2 p-4 text-sm text-amber-400">
-            <AlertTriangle className="w-4 h-4 flex-shrink-0" />
-            {t('aiDashboard.executionLog.bridgeUnavailable')}
-          </div>
-        )}
+        {activeTab === 'system' ? (
+          <>
+            {/* System logs loading */}
+            {systemLoading && (
+              <div className="flex items-center justify-center py-8">
+                <div className="animate-spin rounded-full h-6 w-6 border-2 border-slate-600 border-t-amber-400" />
+              </div>
+            )}
+            {/* System logs empty */}
+            {!systemLoading && systemLogs.length === 0 && (
+              <div className="text-center text-slate-500 text-sm py-8">
+                {t('aiDashboard.executionLog.noRecords')}
+              </div>
+            )}
+            {/* System log rows */}
+            {!systemLoading && systemLogs.map((entry, idx) => {
+              const levelColor =
+                entry.level === 'ERROR' ? 'text-red-400' :
+                entry.level === 'WARN' ? 'text-amber-400' :
+                'text-slate-400';
+              const time = new Date(entry.timestamp).toLocaleTimeString('zh-CN', { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' });
+              return (
+                <div
+                  key={idx}
+                  className="flex gap-2 py-1.5 px-2 border-b border-slate-800/50 hover:bg-slate-800/30 font-mono text-xs leading-relaxed"
+                >
+                  <span className="text-slate-500 flex-shrink-0 w-16">{time}</span>
+                  <span className={`flex-shrink-0 w-12 font-semibold ${levelColor}`}>{entry.level}</span>
+                  <span className="text-slate-300 break-all whitespace-pre-wrap">{entry.message}</span>
+                </div>
+              );
+            })}
+          </>
+        ) : (
+          <>
+            {/* Bridge unavailable warning for local tab */}
+            {activeTab === 'local' && bridgeAvailable === false && (
+              <div className="flex items-center gap-2 p-4 text-sm text-amber-400">
+                <AlertTriangle className="w-4 h-4 flex-shrink-0" />
+                {t('aiDashboard.executionLog.bridgeUnavailable')}
+              </div>
+            )}
 
-        {/* Loading */}
-        {isLoading && (
-          <div className="flex items-center justify-center py-8">
-            <div className="animate-spin rounded-full h-6 w-6 border-2 border-slate-600 border-t-indigo-400" />
-          </div>
-        )}
+            {/* Loading */}
+            {isLoading && (
+              <div className="flex items-center justify-center py-8">
+                <div className="animate-spin rounded-full h-6 w-6 border-2 border-slate-600 border-t-indigo-400" />
+              </div>
+            )}
 
-        {/* Empty state */}
-        {!isLoading && currentLogs.length === 0 && !(activeTab === 'local' && bridgeAvailable === false) && (
-          <div className="text-center text-slate-500 text-sm py-8">
-            {t('aiDashboard.executionLog.noRecords')}
-          </div>
-        )}
+            {/* Empty state */}
+            {!isLoading && currentLogs.length === 0 && !(activeTab === 'local' && bridgeAvailable === false) && (
+              <div className="text-center text-slate-500 text-sm py-8">
+                {t('aiDashboard.executionLog.noRecords')}
+              </div>
+            )}
 
-        {/* Log rows */}
-        {!isLoading && currentLogs.map(log => (
-          <EnhancedLogRow
-            key={log.id}
-            log={log}
-            isExpanded={expandedId === log.id}
-            onToggle={() => handleToggleExpand(log.id)}
-            isLocal={activeTab === 'local'}
-            onReport={activeTab === 'local' ? handleReportToServer : undefined}
-          />
-        ))}
+            {/* Log rows */}
+            {!isLoading && currentLogs.map(log => (
+              <EnhancedLogRow
+                key={log.id}
+                log={log}
+                isExpanded={expandedId === log.id}
+                onToggle={() => handleToggleExpand(log.id)}
+                isLocal={activeTab === 'local'}
+                onReport={activeTab === 'local' ? handleReportToServer : undefined}
+              />
+            ))}
+          </>
+        )}
       </div>
 
-      {/* Pagination */}
-      {!isLoading && currentLogs.length > 0 && (
+      {/* Pagination (not shown for system tab) */}
+      {activeTab !== 'system' && !isLoading && currentLogs.length > 0 && (
         <div className={`flex-shrink-0 flex items-center justify-center gap-3 pt-2 border-t border-slate-700/30 ${isModal ? 'px-6 pb-4' : ''}`}>
           {activeTab === 'server' ? (
             <>

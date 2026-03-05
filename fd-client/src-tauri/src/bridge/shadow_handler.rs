@@ -358,6 +358,15 @@ pub mod inner {
                 "/bridge/exec-logs/{id}",
                 get(get_exec_log_detail_shadow),
             )
+            // Rust runtime logs (stateless, uses global RustLogCollector)
+            .route(
+                "/bridge/rust-logs",
+                get(crate::bridge::rust_log_handler::list_rust_logs),
+            )
+            .route(
+                "/bridge/rust-logs/clear",
+                post(crate::bridge::rust_log_handler::clear_rust_logs),
+            )
             .with_state(state)
             .layer(cors)
     }

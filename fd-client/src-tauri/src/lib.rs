@@ -1,3 +1,6 @@
+// rust_log 必须在其他模块之前声明，宏才能在后续模块中使用
+#[macro_use]
+pub mod rust_log;
 pub mod models;
 pub mod ai;
 pub mod bridge;
@@ -61,6 +64,9 @@ pub fn run() {
             // File system
             select_folder,
             save_text_file_cmd,
+            // Rust runtime logs
+            get_rust_logs,
+            clear_rust_logs,
             // Generic Shadow Window commands
             open_shadow_window,
             execute_shadow_js,

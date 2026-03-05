@@ -67,6 +67,34 @@ async function bridgeFetch<T>(
     }
 }
 
+// ─── Rust 运行时日志 ─────────────────────────────────────
+
+export interface RustLogEntry {
+    timestamp: string;
+    level: string;
+    message: string;
+}
+
+export const rustLogApi = {
+    /** 查询 Rust 运行时日志 */
+    async query(opts?: { limit?: number; level?: string; keyword?: string }): Promise<RustLogEntry[]> {
+        const params = new URLSearchParams();
+        if (opts?.limit) params.set('limit', String(opts.limit));
+        if (opts?.level) params.set('level', opts.level);
+        if (opts?.keyword) params.set('keyword', opts.keyword);
+        const qs = params.toString();
+        const result = await bridgeFetch<RustLogEntry[]>(
+            `/rust-logs${qs ? `?${qs}` : ''}`,
+        );
+        return result ?? [];
+    },
+
+    /** 清空 Rust 运行时日志 */
+    async clear(): Promise<void> {
+        await bridgeFetch('/rust-logs/clear', { method: 'POST' });
+    },
+};
+
 export const execLogApi = {
     /**
      * 分页查询执行日志

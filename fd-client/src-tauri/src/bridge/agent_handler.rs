@@ -15,7 +15,7 @@ pub async fn translate_handler(
     State(state): State<LogState>,
     Json(req): Json<TranslateRequest>,
 ) -> TicketResult {
-    eprintln!(
+    rlog_info!(
         "[fd-bridge] POST /bridge/translate: subject={}",
         req.ticket.subject.as_deref().unwrap_or("(none)")
     );
@@ -68,7 +68,7 @@ pub async fn translate_handler(
         created_at: chrono::Utc::now().to_rfc3339(),
     };
     if let Err(e) = state.log_store.insert(&entry) {
-        eprintln!("[ExecLog] Failed to insert translate log: {}", e);
+        rlog_error!("[ExecLog] Failed to insert translate log: {}", e);
     }
 
     match result {
@@ -81,7 +81,7 @@ pub async fn gemini_handler(
     State(state): State<LogState>,
     Json(req): Json<GeminiRequest>,
 ) -> StringResult {
-    eprintln!(
+    rlog_info!(
         "[fd-bridge] POST /bridge/gemini: prompt_len={}, models={:?}",
         req.prompt.len(),
         req.models
@@ -142,7 +142,7 @@ pub async fn gemini_handler(
         created_at: chrono::Utc::now().to_rfc3339(),
     };
     if let Err(e) = state.log_store.insert(&entry) {
-        eprintln!("[ExecLog] Failed to insert gemini log: {}", e);
+        rlog_error!("[ExecLog] Failed to insert gemini log: {}", e);
     }
 
     match result {
@@ -155,7 +155,7 @@ pub async fn claude_handler(
     State(state): State<LogState>,
     Json(req): Json<ClaudeRequest>,
 ) -> StringResult {
-    eprintln!(
+    rlog_info!(
         "[fd-bridge] POST /bridge/claude: prompt_len={}",
         req.prompt.len(),
     );
@@ -213,7 +213,7 @@ pub async fn claude_handler(
         created_at: chrono::Utc::now().to_rfc3339(),
     };
     if let Err(e) = state.log_store.insert(&entry) {
-        eprintln!("[ExecLog] Failed to insert claude log: {}", e);
+        rlog_error!("[ExecLog] Failed to insert claude log: {}", e);
     }
 
     match result {
@@ -226,7 +226,7 @@ pub async fn sync_translate_handler(
     State(state): State<LogState>,
     Json(req): Json<SyncTranslateRequest>,
 ) -> StringResult {
-    eprintln!(
+    rlog_info!(
         "[fd-bridge] POST /bridge/sync-translate: direction={}, targetLang={}",
         req.direction, req.target_lang
     );
@@ -275,7 +275,7 @@ pub async fn sync_translate_handler(
         created_at: chrono::Utc::now().to_rfc3339(),
     };
     if let Err(e) = state.log_store.insert(&entry) {
-        eprintln!("[ExecLog] Failed to insert sync-translate log: {}", e);
+        rlog_error!("[ExecLog] Failed to insert sync-translate log: {}", e);
     }
 
     match result {
@@ -288,7 +288,7 @@ pub async fn notebooklm_py_handler(
     State(state): State<LogState>,
     Json(req): Json<NotebookLmPyRequest>,
 ) -> StringResult {
-    eprintln!(
+    rlog_info!(
         "[fd-bridge] POST /bridge/notebooklm-py: query_len={}, notebook_id={}",
         req.query.len(),
         if req.notebook_id.is_empty() {
@@ -338,7 +338,7 @@ pub async fn notebooklm_py_handler(
         created_at: chrono::Utc::now().to_rfc3339(),
     };
     if let Err(e) = state.log_store.insert(&entry) {
-        eprintln!("[ExecLog] Failed to insert notebooklm-py log: {}", e);
+        rlog_error!("[ExecLog] Failed to insert notebooklm-py log: {}", e);
     }
 
     match result {
@@ -351,7 +351,7 @@ pub async fn notebooklm_cli_handler(
     State(state): State<LogState>,
     Json(mut req): Json<NotebookLmCliRequest>,
 ) -> JsonResult {
-    eprintln!(
+    rlog_info!(
         "[fd-bridge] POST /bridge/notebooklm-cli: action={}",
         req.action
     );
@@ -379,7 +379,7 @@ pub async fn notebooklm_cli_handler(
                 let file_path = temp_dir.join(&file_name);
                 match std::fs::write(&file_path, content.as_bytes()) {
                     Ok(_) => {
-                        eprintln!(
+                        rlog_info!(
                             "[fd-bridge] add-source: wrote {} bytes to temp file {:?}",
                             content.len(),
                             file_path
@@ -434,7 +434,7 @@ pub async fn notebooklm_cli_handler(
     // 清理临时文件
     if let Some(ref path) = temp_file_path {
         if let Err(e) = std::fs::remove_file(path) {
-            eprintln!("[fd-bridge] Failed to clean up temp file {:?}: {}", path, e);
+            rlog_warn!("[fd-bridge] Failed to clean up temp file {:?}: {}", path, e);
         }
     }
     let duration = start.elapsed().as_millis() as i64;
@@ -459,7 +459,7 @@ pub async fn notebooklm_cli_handler(
         created_at: chrono::Utc::now().to_rfc3339(),
     };
     if let Err(e) = state.log_store.insert(&entry) {
-        eprintln!("[ExecLog] Failed to insert notebooklm-cli log: {}", e);
+        rlog_error!("[ExecLog] Failed to insert notebooklm-cli log: {}", e);
     }
 
     match result {

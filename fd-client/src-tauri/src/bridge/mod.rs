@@ -15,6 +15,7 @@ pub mod types;
 pub mod agent_handler;
 pub mod system_handler;
 pub mod exec_log_handler;
+pub mod rust_log_handler;
 pub mod shadow_handler;
 
 use std::sync::Arc;
@@ -112,6 +113,12 @@ fn build_router(log_store: Arc<ExecLogStore>) -> Router {
             "/bridge/exec-logs/{id}",
             get(exec_log_handler::get_exec_log_detail),
         )
+        // Rust runtime logs (stateless, uses global RustLogCollector)
+        .route("/bridge/rust-logs", get(rust_log_handler::list_rust_logs))
+        .route(
+            "/bridge/rust-logs/clear",
+            post(rust_log_handler::clear_rust_logs),
+        )
         .with_state(state)
         .layer(cors)
 }
@@ -125,13 +132,8 @@ pub async fn run_standalone() {
 
     let router = build_router(log_store);
     let addr = std::net::SocketAddr::from(([127, 0, 0, 1], 9987));
-    eprintln!(
-        "[fd-bridge] Standalone HTTP server listening on http://{}",
-        addr
-    );
-    eprintln!(
-        "[fd-bridge] Note: Shadow Window agents require Tauri desktop mode (npm run tauri dev)"
-    );
+    rlog_info!("[fd-bridge] Standalone HTTP server listening on http://{}", addr);
+    rlog_info!("[fd-bridge] Note: Shadow Window agents require Tauri desktop mode (npm run tauri dev)");
 
     let listener = tokio::net::TcpListener::bind(addr)
         .await
@@ -149,16 +151,16 @@ pub fn start_bridge_server() {
 
         let router = build_router(log_store);
         let addr = std::net::SocketAddr::from(([127, 0, 0, 1], 9987));
-        eprintln!("[fd-bridge] HTTP server listening on http://{}", addr);
+        rlog_info!("[fd-bridge] HTTP server listening on http://{}", addr);
 
         match tokio::net::TcpListener::bind(addr).await {
             Ok(listener) => {
                 if let Err(e) = axum::serve(listener, router).await {
-                    eprintln!("[fd-bridge] Server error: {}", e);
+                    rlog_error!("[fd-bridge] Server error: {}", e);
                 }
             }
             Err(e) => {
-                eprintln!("[fd-bridge] Failed to bind port {}: {}", addr, e);
+                rlog_error!("[fd-bridge] Failed to bind port {}: {}", addr, e);
             }
         }
     });
@@ -179,7 +181,7 @@ pub fn start_bridge_server_with_app(app_handle: tauri::AppHandle, log_store: Arc
             let router =
                 shadow_handler::inner::build_router_with_shadow(app_handle, log_store);
             let addr = std::net::SocketAddr::from(([127, 0, 0, 1], 9987));
-            eprintln!(
+            rlog_info!(
                 "[fd-bridge] HTTP server (with Shadow Agent) listening on http://{}",
                 addr
             );
@@ -187,11 +189,11 @@ pub fn start_bridge_server_with_app(app_handle: tauri::AppHandle, log_store: Arc
             match tokio::net::TcpListener::bind(addr).await {
                 Ok(listener) => {
                     if let Err(e) = axum::serve(listener, router).await {
-                        eprintln!("[fd-bridge] Server error: {}", e);
+                        rlog_error!("[fd-bridge] Server error: {}", e);
                     }
                 }
                 Err(e) => {
-                    eprintln!("[fd-bridge] Failed to bind port {}: {}", addr, e);
+                    rlog_error!("[fd-bridge] Failed to bind port {}: {}", addr, e);
                 }
             }
         });
