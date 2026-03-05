@@ -86,11 +86,9 @@ export const UniversalAgentConsumer: React.FC = () => {
       );
 
       try {
-        // 1. 解析 payload（SyncBridge payload 结构：{agentCode, agentInput, syncMode, mergedConfig, resolvedPrompt}）
+        // 1. 解析 payload（SyncBridge payload 结构：{agentCode, syncMode, mergedConfig, resolvedPrompt}）
+        // 服务端不再下发业务原始数据，客户端只需 resolvedPrompt + 执行配置
         const rawPayload = task.payload ? JSON.parse(task.payload) : {};
-        // 解包 agentInput：executor 只需要实际输入，不需要 SyncBridge 包装
-        const executorInput = rawPayload.agentInput || rawPayload;
-        // 提取服务端三级合并配置 + 服务端已解析的 resolvedPrompt
         const mergedConfig: Record<string, any> = rawPayload.mergedConfig || {};
         if (rawPayload.resolvedPrompt) {
           mergedConfig.resolvedPrompt = rawPayload.resolvedPrompt;
@@ -107,7 +105,7 @@ export const UniversalAgentConsumer: React.FC = () => {
         // 3. 执行（带超时保护）
         const result = await withTimeout(
           resolved.executor.execute(resolved.definition, {
-            data: executorInput,
+            data: {},
             params: mergedConfig,
           }),
           EXEC_TIMEOUT_MS,

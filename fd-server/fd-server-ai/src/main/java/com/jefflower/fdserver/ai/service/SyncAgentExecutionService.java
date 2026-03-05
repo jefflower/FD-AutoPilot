@@ -301,13 +301,12 @@ public class SyncAgentExecutionService {
         try {
             Map<String, Object> payloadMap = new HashMap<>();
             payloadMap.put("agentCode", agentCode);
-            payloadMap.put("agentInput", input);
             payloadMap.put("syncMode", true);
             if (!mergedConfig.isEmpty()) {
                 payloadMap.put("mergedConfig", mergedConfig);
             }
 
-            // 服务端统一解析提示词模板
+            // 服务端统一解析提示词模板，客户端只需 resolvedPrompt，不需要业务原始数据
             String systemPrompt = mergedConfig.containsKey("systemPrompt")
                     ? (String) mergedConfig.get("systemPrompt")
                     : (agentDef != null ? agentDef.getSystemPrompt() : null);
