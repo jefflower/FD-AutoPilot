@@ -32,7 +32,7 @@ const WorkflowAgentsTab = lazy(() => import("./modules/workflow/pages/WorkflowAg
 const WorkflowAiTab = lazy(() => import("./modules/workflow/pages/WorkflowAiTab"));
 const WorkflowN8nTab = lazy(() => import("./modules/workflow/pages/WorkflowN8nTab"));
 const AiDashboardTab = lazy(() => import("./modules/workflow/pages/AiDashboardTab"));
-const ManualRequiredTab = lazy(() => import("./modules/workflow/pages/ManualRequiredTab"));
+const ManualRequiredTab = lazy(() => import("./modules/ticket/pages/ManualRequiredTab"));
 const AuditCenterTab = lazy(() => import("./modules/ticket/pages/AuditCenterTab"));
 const KnowledgeBasePage = lazy(() => import("./modules/knowledge/pages/KnowledgeBasePage"));
 const NotebookLmPage = lazy(() => import("./modules/knowledge/pages/NotebookLmPage"));
