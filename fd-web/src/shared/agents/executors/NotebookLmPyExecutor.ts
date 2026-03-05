@@ -10,7 +10,7 @@ import { parseAgentConfig } from '../schemaUtils';
  * 通过 Tauri invoke 调用本地 notebooklm-py Python 库查询 NotebookLM 知识库。
  * 提示词由服务端统一构造（resolvedPrompt），客户端只负责透传给 CLI 执行。
  *
- * notebookId 从 AgentDefinition.agentConfig 或 mergedConfig 读取。
+ * notebookId 从用户自定义配置（UserAgentConfig.customConfig）读取，未配置时拒绝执行。
  */
 export class NotebookLmPyExecutor implements AgentExecutor {
     readonly providerType = 'NOTEBOOKLM_PY' as const;
@@ -36,7 +36,12 @@ export class NotebookLmPyExecutor implements AgentExecutor {
 
         try {
             const invokeCommand = config.invokeCommand || 'execute_notebooklm_py_cmd';
-            const notebookId = config.notebookId || '';
+            const notebookId = config.notebookId;
+
+            // notebookId 必须由用户在「我的 Agent」中配置
+            if (!notebookId) {
+                throw new Error(`notebookId 未配置，无法执行。请在「我的 Agent」中配置 Notebook ID`);
+            }
 
             // 服务端已解析的最终提示词
             const query = config.resolvedPrompt;
@@ -44,7 +49,7 @@ export class NotebookLmPyExecutor implements AgentExecutor {
                 throw new Error(`Agent "${definition.code}" 缺少 resolvedPrompt，请检查服务端是否正确下发`);
             }
 
-            console.log(`[NotebookLmPyExecutor] ${invokeCommand}: agentCode=${definition.code}, query length=${query.length}, notebookId=${notebookId ? notebookId.substring(0, 8) + '...' : '(default)'}`);
+            console.log(`[NotebookLmPyExecutor] ${invokeCommand}: agentCode=${definition.code}, query length=${query.length}, notebookId=${notebookId.substring(0, 8)}...`);
 
             const result = await tauriInvoke<string>(invokeCommand, {
                 query,

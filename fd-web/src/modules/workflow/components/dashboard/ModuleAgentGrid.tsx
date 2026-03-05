@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import type { AgentDefinition, AgentInstance, AgentStats, AgentExecutionLog } from '../../../../shared/types/server';
+import type { AgentDefinition, AgentInstance, AgentStats, AgentExecutionLog, UserAgentConfigDTO } from '../../../../shared/types/server';
 import DeskCard from './DeskCard';
 
 interface ModuleAgentGridProps {
@@ -15,6 +15,8 @@ interface ModuleAgentGridProps {
   compact?: boolean;
   /** 运行时手动覆盖的 Agent 轮询状态 */
   manualAgentOverrides?: Map<string, boolean>;
+  /** 用户 Agent 配置列表（用于获取用户级 autoStart） */
+  userAgentConfigs?: UserAgentConfigDTO[];
 }
 
 type ModuleCode = 'all' | 'ticket' | 'admin' | 'workflow' | 'ungrouped';
@@ -31,6 +33,7 @@ const ModuleAgentGrid: React.FC<ModuleAgentGridProps> = ({
   runningExecutions = [],
   compact = false,
   manualAgentOverrides = new Map<string, boolean>(),
+  userAgentConfigs = [],
 }) => {
   const { t } = useTranslation('common');
   const [activeModule, setActiveModule] = useState<ModuleCode>('all');
@@ -104,7 +107,7 @@ const ModuleAgentGrid: React.FC<ModuleAgentGridProps> = ({
               onToggle={onToggleAgent}
               onClick={() => onViewLogs(def.code)}
               compact={compact}
-              isPolling={manualAgentOverrides.has(def.code) ? manualAgentOverrides.get(def.code)! : def.autoStart === true}
+              isPolling={manualAgentOverrides.has(def.code) ? manualAgentOverrides.get(def.code)! : (userAgentConfigs.find(c => c.agentCode === def.code)?.autoStart === true)}
             />
           ))}
         </div>

@@ -3,7 +3,7 @@ import { useAgentContext } from '../agents/AgentContext';
 import { AgentRegistry } from '../agents/AgentRegistry';
 import { taskApi } from '../services/serverApi';
 import { getOrCreateClientId } from './mq-task/utils';
-import type { TaskInstance } from '../types/server';
+import type { TaskInstance, UserAgentConfigDTO } from '../types/server';
 
 // ─── 常量 ────────────────────────────────────────────────────
 
@@ -61,6 +61,9 @@ export const UniversalAgentConsumer: React.FC = () => {
   const activeRef = useRef(false);
   // round-robin 指针
   const rrIndexRef = useRef(0);
+  // 用户 Agent 配置 Ref（供 processTask 回调使用）
+  const userAgentConfigsRef = useRef<UserAgentConfigDTO[]>(userAgentConfigs);
+  userAgentConfigsRef.current = userAgentConfigs;
 
   // 筛选需要通用消费者处理的 agent 列表
   // 无执行能力时（纯网页端）返回空列表，不消费任务
@@ -97,6 +100,18 @@ export const UniversalAgentConsumer: React.FC = () => {
         const mergedConfig: Record<string, any> = rawPayload.mergedConfig || {};
         if (rawPayload.resolvedPrompt) {
           mergedConfig.resolvedPrompt = rawPayload.resolvedPrompt;
+        }
+
+        // 1.5. 合并用户自定义配置（最高优先级，覆盖 definition/instance 的默认值）
+        const userCfg = userAgentConfigsRef.current.find(c => c.agentCode === agentCode);
+        if (userCfg?.customConfig) {
+          try {
+            const custom = JSON.parse(userCfg.customConfig);
+            Object.assign(mergedConfig, custom);
+            console.log(`[UniversalAgent] Merged user customConfig for ${agentCode}:`, Object.keys(custom));
+          } catch (e) {
+            console.warn(`[UniversalAgent] Invalid customConfig JSON for ${agentCode}, skipped`);
+          }
         }
 
         // 2. 通过 AgentRegistry 解析 executor

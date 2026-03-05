@@ -87,14 +87,15 @@ export const AgentProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const toggleManualAgent = useCallback((code: string) => {
         setManualAgentOverrides(prev => {
             const next = new Map(prev);
-            const def = definitions.find(d => d.code === code);
-            const autoStart = def?.autoStart === true;
-            // 当前生效状态：有覆盖用覆盖值，否则用 autoStart
+            // 使用用户 Agent 配置的 autoStart（而非 AgentDefinition 的全局默认值）
+            const userConfig = userAgentConfigs.find(c => c.agentCode === code);
+            const autoStart = userConfig?.autoStart === true;
+            // 当前生效状态：有覆盖用覆盖值，否则用用户配置的 autoStart
             const currentlyPolling = next.has(code) ? next.get(code)! : autoStart;
             next.set(code, !currentlyPolling);
             return next;
         });
-    }, [definitions]);
+    }, [userAgentConfigs]);
 
     // Refs to keep heartbeat callback stable
     const definitionsRef = useRef(definitions);

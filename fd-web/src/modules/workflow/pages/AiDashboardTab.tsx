@@ -132,6 +132,7 @@ const AiDashboardTab: React.FC = () => {
               onToggleAgent={handleToggle}
               runningExecutions={runningExecutions}
               manualAgentOverrides={manualAgentOverrides}
+              userAgentConfigs={userAgentConfigs}
             />
           </div>
         </>

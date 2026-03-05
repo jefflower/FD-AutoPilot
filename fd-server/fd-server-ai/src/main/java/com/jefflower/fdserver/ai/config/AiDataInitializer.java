@@ -208,7 +208,7 @@ public class AiDataInitializer implements CommandLineRunner {
                 "ticket",
                 null,
                 null,
-                "{\"notebookId\":\"7662c1de-8bba-4d54-b834-e38161f942f4\"}",
+                null, // notebookId 不再在全局配置中硬编码，需用户在「我的 Agent」中自行配置
                 "根据下面的工单内容，使用用户工单的语言做出回复及回复的中文翻译。\n\n"
                         + "严格输出要求：\n"
                         + "- 直接输出纯 JSON 数组，第一个元素为原文回复，第二个元素为中文翻译\n"
