@@ -154,7 +154,8 @@
     "providerType": "Provider",
     "executionEnv": "执行环境",
     "onlineClients": "在线 {{count}} 个客户端",
-    "offline": "离线"
+    "offline": "离线",
+    "installGuide": "安装说明"
   },
   "agentInstance": {
     "title": "设备实例",

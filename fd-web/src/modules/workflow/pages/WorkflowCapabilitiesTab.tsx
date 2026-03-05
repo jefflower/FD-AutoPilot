@@ -395,12 +395,11 @@ const CapabilityCard: React.FC<{
                 <p className="text-sm text-slate-400 mb-3 line-clamp-2">{capability.description}</p>
             )}
 
-            {/* 环境检测不可用时的安装提示（仅在有本地执行环境时显示） */}
-            {canExecute && detectResult && !detectResult.available && capability.installGuide && (
-                <p className="text-xs text-amber-400/80 mb-3 line-clamp-2">
-                    {capability.installGuide}
-                </p>
-            )}
+            {/* 安装说明（有 installGuide 时始终可查看） */}
+            {capability.installGuide && <InstallGuideSection
+                guide={capability.installGuide}
+                isUnavailable={canExecute && detectResult ? !detectResult.available : false}
+            />}
 
             {/* AI Skills */}
             {canExecute && skillState && !skillState.loading && skillState.skills.length > 0 && (
@@ -483,6 +482,42 @@ const CapabilityCard: React.FC<{
                     {capability.enabled ? t('capability.enabled') : t('capability.disabled')}
                 </span>
             </div>
+        </div>
+    );
+};
+
+/** 可展开的安装说明区域 */
+const InstallGuideSection: React.FC<{
+    guide: string;
+    isUnavailable: boolean;
+}> = ({ guide, isUnavailable }) => {
+    const [expanded, setExpanded] = useState(false);
+    const { t } = useTranslation(['common']);
+
+    const colorClass = isUnavailable
+        ? 'text-amber-400/80 border-amber-500/20 bg-amber-500/5'
+        : 'text-slate-400 border-slate-600/30 bg-slate-700/20';
+    const iconColorClass = isUnavailable ? 'text-amber-400/60' : 'text-slate-500';
+
+    return (
+        <div className={`mb-3 rounded border ${colorClass}`}>
+            <button
+                onClick={() => setExpanded(!expanded)}
+                className="w-full flex items-center gap-1.5 px-2 py-1.5 text-xs hover:opacity-80 transition-opacity"
+            >
+                <svg className={`w-3.5 h-3.5 flex-shrink-0 ${iconColorClass}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span className="flex-1 text-left">{t('capability.installGuide', '安装说明')}</span>
+                <svg className={`w-3 h-3 transition-transform ${expanded ? 'rotate-180' : ''} ${iconColorClass}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+            </button>
+            {expanded && (
+                <div className="px-2 pb-2 text-xs whitespace-pre-wrap break-words leading-relaxed">
+                    {guide}
+                </div>
+            )}
         </div>
     );
 };

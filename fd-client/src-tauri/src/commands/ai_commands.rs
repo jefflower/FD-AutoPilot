@@ -6,6 +6,7 @@
 use std::sync::Arc;
 
 use crate::ai::{ClaudeClient, GeminiClient, TauriLogger};
+use crate::antigravity::AntiGravityClient;
 use crate::execution_log::{ExecLogEntry, ExecLogStore};
 use tauri::AppHandle;
 
@@ -165,6 +166,46 @@ pub async fn execute_notebooklm_py_cmd(
         &log_store,
         code,
         &format!("notebooklm-py (query: {} chars, notebook: {})", query.len(), notebook_id),
+        Some(input_json),
+        &result,
+        duration_ms,
+    );
+
+    result
+}
+
+#[tauri::command]
+pub async fn execute_antigravity_cmd(
+    log_store: tauri::State<'_, Arc<ExecLogStore>>,
+    prompt: String,
+    model: String,
+    agent_code: Option<String>,
+    system_prompt: Option<String>,
+    temperature: Option<f32>,
+) -> Result<String, String> {
+    let start = std::time::Instant::now();
+    let result = AntiGravityClient::chat(
+        &prompt,
+        &model,
+        system_prompt.as_deref(),
+        temperature,
+    )
+    .await;
+    let duration_ms = start.elapsed().as_millis() as i64;
+
+    let code = agent_code.as_deref().unwrap_or("antigravity-tools");
+    let input_json = serde_json::json!({
+        "promptLength": prompt.len(),
+        "model": model,
+        "hasSystemPrompt": system_prompt.is_some(),
+        "temperature": temperature,
+    })
+    .to_string();
+
+    write_log(
+        &log_store,
+        code,
+        &format!("antigravity (model: {}, prompt: {} chars)", model, prompt.len()),
         Some(input_json),
         &result,
         duration_ms,

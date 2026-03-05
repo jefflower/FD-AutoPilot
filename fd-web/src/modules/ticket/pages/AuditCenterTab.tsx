@@ -15,7 +15,6 @@ const AuditCenterTab: React.FC = () => {
     const { t } = useTranslation(['tickets', 'common']);
 
     const [pendingTickets, setPendingTickets] = useState<ServerTicket[]>([]);
-    const [auditedTickets, setAuditedTickets] = useState<ServerTicket[]>([]);
     const [loading, setLoading] = useState(false);
     const [selectedId, setSelectedId] = useState<number | null>(null);
     const [selectedTicket, setSelectedTicket] = useState<ServerTicket | null>(null);
@@ -40,14 +39,8 @@ const AuditCenterTab: React.FC = () => {
     const loadData = useCallback(async (silent = false) => {
         if (!silent) setLoading(true);
         try {
-            const [pending, approved, completed] = await Promise.all([
-                serverApi.ticket.getTickets({ status: 'PENDING_AUDIT', size: 100 }),
-                serverApi.ticket.getTickets({ status: 'APPROVED', size: 50 }),
-                serverApi.ticket.getTickets({ status: 'COMPLETED', size: 20 }),
-            ]);
+            const pending = await serverApi.ticket.getTickets({ status: 'PENDING_AUDIT', size: 100 });
             setPendingTickets(pending.content);
-            // 已审核 = 已批准 + 已完成（最近的）
-            setAuditedTickets([...approved.content, ...completed.content]);
         } catch (err) {
             console.error('[AuditCenterTab] Failed to load data:', err);
         } finally {
@@ -207,38 +200,6 @@ const AuditCenterTab: React.FC = () => {
                         )}
                     </div>
 
-                    {/* 已审核列表 */}
-                    <div>
-                        <div className="flex items-center justify-between px-2 mb-2 mt-4">
-                            <h4 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">
-                                {t('audit.auditedSection', { defaultValue: '已审核' })}
-                            </h4>
-                            <span className="text-[10px] font-mono text-green-500/50">({auditedTickets.length})</span>
-                        </div>
-
-                        {auditedTickets.length === 0 ? (
-                            <EmptyStateHint message={t('audit.noAudited', { defaultValue: '暂无已审核工单' })} />
-                        ) : (
-                            <TicketList
-                                tickets={auditedTickets}
-                                selectedId={selectedId}
-                                onSelect={(ticket) => setSelectedId(selectedId === ticket.id ? null : ticket.id)}
-                                themeColor="emerald"
-                                titleMode="auto"
-                                density="compact"
-                                renderStatus={(ticket) => (
-                                    <span className={`text-[9px] font-black uppercase tracking-tighter flex-shrink-0 ${
-                                        ticket.status === 'APPROVED' ? 'text-emerald-400/50' : 'text-green-500/50'
-                                    }`}>
-                                        {ticket.status === 'APPROVED'
-                                            ? t('common:ticketStatus.APPROVED')
-                                            : t('common:ticketStatus.COMPLETED')
-                                        }
-                                    </span>
-                                )}
-                            />
-                        )}
-                    </div>
                 </div>
             </div>
 

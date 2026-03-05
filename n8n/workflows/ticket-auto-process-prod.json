@@ -7,7 +7,7 @@
           "interval": [
             {
               "field": "minutes",
-              "minutesInterval": 15
+              "minutesInterval": 5
             }
           ]
         }
@@ -250,58 +250,28 @@
     },
     {
       "parameters": {
-        "rules": {
-          "values": [
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": ""
+          },
+          "conditions": [
             {
-              "conditions": {
-                "options": {
-                  "caseSensitive": true,
-                  "leftValue": ""
-                },
-                "conditions": [
-                  {
-                    "leftValue": "={{ $json.category }}",
-                    "rightValue": "PRODUCT_FAULT",
-                    "operator": {
-                      "type": "string",
-                      "operation": "equals"
-                    }
-                  }
-                ]
-              },
-              "renameOutput": true,
-              "outputKey": "产品故障"
-            },
-            {
-              "conditions": {
-                "options": {
-                  "caseSensitive": true,
-                  "leftValue": ""
-                },
-                "conditions": [
-                  {
-                    "leftValue": "={{ $json.category }}",
-                    "rightValue": "LOGISTICS_INQUIRY",
-                    "operator": {
-                      "type": "string",
-                      "operation": "equals"
-                    }
-                  }
-                ]
-              },
-              "renameOutput": true,
-              "outputKey": "物流查询"
+              "leftValue": "={{ $json.category }}",
+              "rightValue": "PRODUCT_FAULT",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
             }
           ]
         },
-        "options": {
-          "fallbackOutput": "extra"
-        }
+        "options": {}
       },
       "id": "switch-category",
       "name": "分类路由",
-      "type": "n8n-nodes-base.switch",
-      "typeVersion": 3,
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
       "position": [2600, 300]
     },
     {
@@ -602,13 +572,6 @@
         [
           {
             "node": "产品故障回复 Agent",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "标记人工处理",
             "type": "main",
             "index": 0
           }

@@ -61,6 +61,7 @@ pub fn run() {
             execute_gemini_cmd,
             execute_claude_cmd,
             execute_notebooklm_py_cmd,
+            execute_antigravity_cmd,
             sync_translate_reply_cmd,
             // File system
             select_folder,
