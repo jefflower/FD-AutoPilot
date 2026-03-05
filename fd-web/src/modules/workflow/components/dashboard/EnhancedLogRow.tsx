@@ -75,20 +75,20 @@ const EnhancedLogRow: React.FC<EnhancedLogRowProps> = ({ log, isExpanded, onTogg
       {/* Collapsed row */}
       <div
         onClick={onToggle}
-        className="flex items-center gap-3 px-4 py-2.5 cursor-pointer hover:bg-slate-700/20 transition-colors"
+        className="flex items-center gap-2 px-3 py-2 cursor-pointer hover:bg-slate-700/20 transition-colors"
       >
-        <div className={`w-2 h-2 rounded-full flex-shrink-0 ${config.dot}`} />
-        <span className="text-xs font-medium text-white min-w-[120px] truncate">{log.agentCode}</span>
-        <span className="text-xs text-slate-500 min-w-[140px]">{formatTime(log.createdAt)}</span>
-        <span className="text-xs text-slate-400 min-w-[60px]">{formatDuration(log.durationMs)}</span>
-        <span className={`text-xs px-2 py-0.5 rounded-full ${config.badge}`}>{config.label}</span>
-        <div className="flex-1" />
-        {/* 本地日志上报按钮（折叠行内） */}
+        <div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${config.dot}`} />
+        <span className="text-xs font-medium text-white truncate max-w-[140px] flex-shrink-0">{log.agentCode}</span>
+        <span className="text-[11px] text-slate-500 flex-shrink-0 tabular-nums">{formatTime(log.createdAt)}</span>
+        <span className="text-[11px] text-slate-400 flex-shrink-0 tabular-nums w-[48px] text-right">{formatDuration(log.durationMs)}</span>
+        <span className={`text-[10px] px-1.5 py-0.5 rounded-full flex-shrink-0 ${config.badge}`}>{config.label}</span>
+        <div className="flex-1 min-w-0" />
+        {/* 本地日志上报按钮（仅图标 + tooltip） */}
         {isLocal && onReport && (
           <button
             onClick={handleReport}
             disabled={reporting || reported}
-            className={`flex items-center gap-1 text-[10px] px-2 py-0.5 rounded transition-colors ${
+            className={`flex-shrink-0 p-1 rounded transition-colors ${
               reported
                 ? 'text-emerald-400 bg-emerald-500/10'
                 : reporting
@@ -98,20 +98,19 @@ const EnhancedLogRow: React.FC<EnhancedLogRowProps> = ({ log, isExpanded, onTogg
             title={reported ? t('aiDashboard.executionLog.reportSuccess') : t('aiDashboard.executionLog.reportToServer')}
           >
             {reported ? (
-              <Check className="w-3 h-3" />
+              <Check className="w-3.5 h-3.5" />
             ) : reporting ? (
-              <Loader2 className="w-3 h-3 animate-spin" />
+              <Loader2 className="w-3.5 h-3.5 animate-spin" />
             ) : (
-              <Upload className="w-3 h-3" />
+              <Upload className="w-3.5 h-3.5" />
             )}
-            {reported ? t('aiDashboard.executionLog.reportSuccess') : reporting ? t('aiDashboard.executionLog.reporting') : t('aiDashboard.executionLog.reportToServer')}
           </button>
         )}
-        <button className="text-slate-400 hover:text-white transition-colors p-0.5">
+        <button className="flex-shrink-0 text-slate-400 hover:text-white transition-colors p-0.5">
           {isExpanded ? (
-            <ChevronDown className="w-4 h-4" />
+            <ChevronDown className="w-3.5 h-3.5" />
           ) : (
-            <ChevronRight className="w-4 h-4" />
+            <ChevronRight className="w-3.5 h-3.5" />
           )}
         </button>
       </div>
