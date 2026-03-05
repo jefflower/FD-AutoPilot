@@ -117,7 +117,7 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify({ input: { ticket: { id: $json.id, subject: $json.subject || '', content: $json.description || $json.description_text || '' }, targetLang: 'zh-CN' }, refType: 'ticket', refId: String($json.id), timeoutMs: 300000 }) }}",
+        "jsonBody": "={{ JSON.stringify({ input: { ticket: $json, targetLang: 'zh-CN' }, refType: 'ticket', refId: String($json.id), timeoutMs: 300000 }) }}",
         "options": {
           "timeout": 300000
         }
@@ -296,7 +296,7 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify({ input: { ticket: { id: $('逐个处理工单').item.json.id, subject: $('逐个处理工单').item.json.subject || '', content: $('逐个处理工单').item.json.content || $('逐个处理工单').item.json.description || '' }, lastAuditRemark: $('逐个处理工单').item.json.lastAuditRemark || '' }, refType: 'ticket', refId: String($('逐个处理工单').item.json.id), timeoutMs: 300000 }) }}",
+        "jsonBody": "={{ JSON.stringify({ input: { ticket: $('逐个处理工单').item.json, lastAuditRemark: $('逐个处理工单').item.json.lastAuditRemark || '' }, refType: 'ticket', refId: String($('逐个处理工单').item.json.id), timeoutMs: 300000 }) }}",
         "options": {
           "timeout": 300000
         }
@@ -322,7 +322,7 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify({ input: { ticket: { id: $('逐个处理工单').item.json.id, subject: $('逐个处理工单').item.json.subject || '', content: $('逐个处理工单').item.json.content || $('逐个处理工单').item.json.description || '' }, lastAuditRemark: $('逐个处理工单').item.json.lastAuditRemark || '' }, refType: 'ticket', refId: String($('逐个处理工单').item.json.id), timeoutMs: 300000 }) }}",
+        "jsonBody": "={{ JSON.stringify({ input: { ticket: $('逐个处理工单').item.json, lastAuditRemark: $('逐个处理工单').item.json.lastAuditRemark || '' }, refType: 'ticket', refId: String($('逐个处理工单').item.json.id), timeoutMs: 300000 }) }}",
         "options": {
           "timeout": 300000
         }

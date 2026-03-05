@@ -9,7 +9,7 @@ export type TranslateAgentTask = MQTask;
  *
  * 消费 agent.ticket-translate 类型的任务（由 SyncAgentExecutionService 创建）。
  * 从任务 payload 中读取完整的 agentInput（包含 prompt、models 等），
- * 通过 CliExecutor 执行 Gemini CLI，将结果存储到 ticket._agentResult
+ * 通过 GeminiCliExecutor 执行 Gemini CLI，将结果存储到 ticket._agentResult
  * 供 createMQTaskContext 的 completeTask 发送回服务端。
  */
 const { Provider: BaseProvider, useTaskContext } = createMQTaskContext({
@@ -33,7 +33,7 @@ export const MQTranslateAgentProvider: React.FC<{ children: ReactNode }> = ({ ch
             throw new Error(`Agent "${agentCode}" not found in registry`);
         }
 
-        // 合并 ticket 对象到 executor 输入，CliExecutor 需要 data.ticket 进入标准化路径
+        // 合并 ticket 对象到 executor 输入，GeminiCliExecutor 需要 data.ticket 进入标准化路径
         const result = await resolved.executor.execute(resolved.definition, {
             data: { ...agentInput, ticket },
         });

@@ -1,12 +1,9 @@
 import React, { createContext, useContext, useState, useEffect, useCallback, useRef } from 'react';
 import { AgentRegistry } from './AgentRegistry';
-import { CliExecutor } from './executors/CliExecutor';
-import { HttpApiExecutor } from './executors/HttpApiExecutor';
-import { NotebookLmExecutor } from './executors/NotebookLmExecutor';
-import { TrackingExecutor } from './executors/TrackingExecutor';
-import { FunctionExecutor } from './executors/FunctionExecutor';
+import { GeminiCliExecutor } from './executors/GeminiCliExecutor';
 import { NotebookLmPyExecutor } from './executors/NotebookLmPyExecutor';
 import { ClaudeCliExecutor } from './executors/ClaudeCliExecutor';
+import { ShadowWindowExecutor } from './executors/ShadowWindowExecutor';
 import { registerClient, startHeartbeat, dispatchAgentChanged } from '../services/clientRegistration';
 import type { AgentDefinition, AgentBindings, CapabilityDefinition } from '../types/server';
 
@@ -77,13 +74,10 @@ export const AgentProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     useEffect(() => {
         const registry = AgentRegistry.getInstance();
 
-        registry.registerExecutor(new CliExecutor());
+        registry.registerExecutor(new GeminiCliExecutor());
         registry.registerExecutor(new ClaudeCliExecutor());
-        registry.registerExecutor(new HttpApiExecutor());
-        registry.registerExecutor(new NotebookLmExecutor());
-        registry.registerExecutor(new TrackingExecutor());
-        registry.registerExecutor(new FunctionExecutor());
         registry.registerExecutor(new NotebookLmPyExecutor());
+        registry.registerExecutor(new ShadowWindowExecutor());
 
         registry.loadDefinitions()
             .then(() => {

@@ -1,7 +1,7 @@
 /**
  * 翻译辅助函数
  *
- * 从 useAiTranslation.ts 提取的独立副本，供 CliExecutor / HttpApiExecutor 标准化路径使用。
+ * 从 useAiTranslation.ts 提取的独立副本，供 GeminiCliExecutor / HttpApiExecutor 标准化路径使用。
  * useAiTranslation.ts 中的原始函数暂时保留（Phase 3 切换后移除）。
  */
 

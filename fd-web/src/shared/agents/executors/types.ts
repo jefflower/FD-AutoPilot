@@ -10,6 +10,8 @@ export interface AgentExecutor {
     /** 该 executor 对应的 capability code，用于 capability 级路由 */
     readonly supportedCapability?: string;
     isAvailable(): boolean;
+    /** 该能力支持的模型列表（空数组 = 不支持模型选择） */
+    getAvailableModels?(): string[];
     execute(definition: AgentDefinition, input: AgentExecuteInput): Promise<AgentExecuteResult>;
     executeStream?(definition: AgentDefinition, input: AgentExecuteInput): AsyncGenerator<AgentStreamChunk>;
 }

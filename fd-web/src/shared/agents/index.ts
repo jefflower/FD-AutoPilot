@@ -15,6 +15,4 @@ export type {
 export { AgentRegistry } from './AgentRegistry';
 export { useAgent, useAgentStream } from './useAgent';
 export { AgentProvider, useAgentContext } from './AgentContext';
-export { registerAgentFunction } from './executors/FunctionExecutor';
-
 export type { AgentExecutor } from './executors/types';
