@@ -755,3 +755,31 @@ export interface RemoteSource {
   status: string;
   type?: string;
 }
+
+// ============ 用户 Agent 配置 ============
+/** 用户 Agent 配置（来自 /api/v1/user-agents） */
+export interface UserAgentConfigDTO {
+    agentCode: string;
+    autoStart: boolean;
+    enabled: boolean;
+    subscribedAt: string;
+    // AgentDefinition 摘要
+    agentName: string;
+    description: string;
+    capability: string;
+    requiredCapability: string;
+    executionEnv: string;
+    groupCode: string;
+    agentEnabled: boolean;  // 全局启用状态
+}
+
+/** 用户 Agent 订阅请求 */
+export interface UserAgentSubscribeRequest {
+    agentCode: string;
+}
+
+/** 用户 Agent 配置更新请求 */
+export interface UserAgentConfigUpdateRequest {
+    autoStart?: boolean;
+    enabled?: boolean;
+}

@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Activity, RefreshCw } from 'lucide-react';
 import { useAgentContext } from '../../../shared/agents/AgentContext';
 import { useOfficeData } from '../../../shared/hooks/useOfficeData';
+import type { AgentDefinition } from '../../../shared/types/server';
 import StatsBar from '../components/dashboard/StatsBar';
 import ModuleAgentGrid from '../components/dashboard/ModuleAgentGrid';
 import AgentLogDrawer from '../components/dashboard/AgentLogDrawer';
@@ -22,7 +23,6 @@ const AiDashboardTab: React.FC = () => {
     runningExecutions,
     loading,
     lastUpdated,
-    enabledAgents,
     trueRunningOnlineCount,
     executingCount,
     overallStats,
@@ -30,21 +30,28 @@ const AiDashboardTab: React.FC = () => {
     refresh,
   } = useOfficeData(autoRefresh ? 10000 : 0);
 
-  // 手动启停 Agent（运行时状态，不修改数据库）
-  const { toggleManualAgent, manualAgentOverrides } = useAgentContext();
+  // 手动启停 Agent（运行时状态，不修改数据库）+ 用户 Agent 配置
+  const { toggleManualAgent, manualAgentOverrides, userAgentConfigs } = useAgentContext();
+
+  // 过滤为用户已订阅的 Agent 列表
+  const userDefinitions: AgentDefinition[] = useMemo(() => {
+    if (userAgentConfigs.length === 0) return [];
+    const subscribedCodes = new Set(userAgentConfigs.map(c => c.agentCode));
+    return definitions.filter(d => subscribedCodes.has(d.code));
+  }, [definitions, userAgentConfigs]);
 
   // Toggle Agent — 只改变运行时状态，不修改数据库的 enabled/autoStart
   const handleToggle = useCallback((id: number) => {
-    const def = definitions.find(d => d.id === id);
+    const def = userDefinitions.find(d => d.id === id);
     if (!def) return;
     toggleManualAgent(def.code);
-  }, [definitions, toggleManualAgent]);
+  }, [userDefinitions, toggleManualAgent]);
 
   // 找到当前 drawer 对应的 agent name
   const drawerAgentName = useMemo(() => {
     if (!logDrawerAgent) return undefined;
-    return definitions.find(d => d.code === logDrawerAgent)?.name;
-  }, [logDrawerAgent, definitions]);
+    return userDefinitions.find(d => d.code === logDrawerAgent)?.name;
+  }, [logDrawerAgent, userDefinitions]);
 
   return (
     <div className="flex-1 flex flex-col overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
@@ -105,8 +112,8 @@ const AiDashboardTab: React.FC = () => {
           <div className="flex-shrink-0 px-6 py-3">
             <StatsBar
               onlineClients={onlineClients.length}
-              totalAgents={definitions.length}
-              enabledAgents={enabledAgents}
+              totalAgents={userDefinitions.length}
+              enabledAgents={userDefinitions.filter(d => d.enabled).length}
               runningOnlineAgents={trueRunningOnlineCount}
               executingTasks={executingCount}
               overallSuccessRate={overallStats.rate}
@@ -117,7 +124,7 @@ const AiDashboardTab: React.FC = () => {
           {/* Agent 工位网格（滚动区域） */}
           <div className="flex-1 overflow-auto px-6 pb-4">
             <ModuleAgentGrid
-              definitions={definitions}
+              definitions={userDefinitions}
               instances={instances}
               stats={stats}
               onlineClientIds={onlineClientIds}

@@ -29,4 +29,5 @@ export type TabType =
     | 'notebooklm'
     | 'ai-dashboard'
     | 'manual-required'
-    | 'admin-jenkins';
+    | 'admin-jenkins'
+    | 'my-agents';

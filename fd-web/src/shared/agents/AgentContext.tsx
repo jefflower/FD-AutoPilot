@@ -8,7 +8,8 @@ import { registerClient, startHeartbeat, dispatchAgentChanged } from '../service
 import { hasExecutionCapability, detectCapabilities } from '../../tauri/bridge';
 import type { CapabilityDetectResult, SkillInfo } from '../../tauri/bridge';
 import { useToast } from '../hooks/useToast';
-import type { AgentDefinition, AgentBindings, CapabilityDefinition, ClientSkillItem } from '../types/server';
+import { userAgentApi } from '../services/api/agent';
+import type { AgentDefinition, AgentBindings, CapabilityDefinition, ClientSkillItem, UserAgentConfigDTO } from '../types/server';
 
 /** 单个 Capability 的 Skill 检测状态 */
 export interface CapSkillState {
@@ -38,6 +39,10 @@ interface AgentContextValue {
     manualAgentOverrides: Map<string, boolean>;
     /** 手动启停 Agent（运行时状态，不修改数据库） */
     toggleManualAgent: (code: string) => void;
+    /** 当前用户已订阅的 Agent 配置列表 */
+    userAgentConfigs: UserAgentConfigDTO[];
+    /** 重新加载用户 Agent 配置 */
+    reloadUserAgents: () => Promise<void>;
 }
 
 const AgentCtx = createContext<AgentContextValue>({
@@ -54,6 +59,8 @@ const AgentCtx = createContext<AgentContextValue>({
     reload: async () => {},
     manualAgentOverrides: new Map(),
     toggleManualAgent: () => {},
+    userAgentConfigs: [],
+    reloadUserAgents: async () => {},
 });
 
 export const useAgentContext = () => useContext(AgentCtx);
@@ -75,6 +82,7 @@ export const AgentProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     // 运行时手动启停覆盖状态（内存中，不持久化）
     // Map<agentCode, isPolling> — 明确覆盖 autoStart 的默认值
     const [manualAgentOverrides, setManualAgentOverrides] = useState<Map<string, boolean>>(new Map());
+    const [userAgentConfigs, setUserAgentConfigs] = useState<UserAgentConfigDTO[]>([]);
 
     const toggleManualAgent = useCallback((code: string) => {
         setManualAgentOverrides(prev => {
@@ -91,6 +99,18 @@ export const AgentProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     // Refs to keep heartbeat callback stable
     const definitionsRef = useRef(definitions);
     definitionsRef.current = definitions;
+
+    const userAgentConfigsRef = useRef(userAgentConfigs);
+    userAgentConfigsRef.current = userAgentConfigs;
+
+    const reloadUserAgents = useCallback(async () => {
+        try {
+            const configs = await userAgentApi.getUserAgents();
+            setUserAgentConfigs(configs);
+        } catch (err) {
+            console.warn('[AgentProvider] Failed to load user agent configs:', err);
+        }
+    }, []);
 
     const reload = useCallback(async () => {
         const registry = AgentRegistry.getInstance();
@@ -131,6 +151,15 @@ export const AgentProvider: React.FC<{ children: React.ReactNode }> = ({ childre
             }
 
             setReady(true);
+
+            // 3.5. 加载用户 Agent 配置
+            try {
+                const configs = await userAgentApi.getUserAgents();
+                setUserAgentConfigs(configs);
+                console.log('[AgentProvider] User agent configs loaded:', configs.length);
+            } catch (err) {
+                console.warn('[AgentProvider] Failed to load user agent configs:', err);
+            }
 
             // 4. 有执行能力时，探测本地 Capability 环境（gemini-cli / claude-cli / notebooklm-py）
             if (capable) {
@@ -214,11 +243,17 @@ export const AgentProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         // 有执行能力时，等 startupReady（skill 探测完成后再注册，确保首次注册就携带 skills）
         if (canExecute && !startupReady) return;
 
-        // 获取当前可在客户端运行的 agent 列表
-        const getRunningAgents = () =>
-            definitionsRef.current
-                .filter(d => d.enabled && d.executionEnv !== 'SERVER_ONLY')
+        // 获取当前可在客户端运行的 agent 列表（仅上报用户已订阅的 Agent）
+        const getRunningAgents = () => {
+            const subscribedCodes = new Set(
+                userAgentConfigsRef.current
+                    .filter(c => c.enabled)
+                    .map(c => c.agentCode)
+            );
+            return definitionsRef.current
+                .filter(d => d.enabled && d.executionEnv !== 'SERVER_ONLY' && subscribedCodes.has(d.code))
                 .map(d => d.code);
+        };
 
         // 构造 detectedSkills（从 skillMap 中提取已完成的 skill 列表）
         const buildDetectedSkills = (): Record<string, ClientSkillItem[]> | undefined => {
@@ -254,6 +289,7 @@ export const AgentProvider: React.FC<{ children: React.ReactNode }> = ({ childre
             ready, canExecute, definitions, bindings, capabilities,
             capabilityStatus, skillMap, modelMap, startupReady, onlineClients, reload,
             manualAgentOverrides, toggleManualAgent,
+            userAgentConfigs, reloadUserAgents,
         }}>
             {children}
         </AgentCtx.Provider>

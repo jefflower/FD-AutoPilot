@@ -37,6 +37,7 @@ const AuditCenterTab = lazy(() => import("./modules/ticket/pages/AuditCenterTab"
 const KnowledgeBasePage = lazy(() => import("./modules/knowledge/pages/KnowledgeBasePage"));
 const NotebookLmPage = lazy(() => import("./modules/knowledge/pages/NotebookLmPage"));
 const MobileAuditPage = lazy(() => import("./modules/mobile/pages/MobileAuditPage"));
+const MyAgentsTab = lazy(() => import("./modules/workflow/pages/MyAgentsTab"));
 
 import { AuthProvider, useAuthContext } from "./shared/context/AuthContext";
 import { AgentProvider } from "./shared/agents";
@@ -158,6 +159,10 @@ const TAB_COMPONENTS: Partial<Record<TabType, TabRoute>> = {
     'workflow-agents': {
         component: WorkflowAgentsTab,
         requireAdmin: true,
+    },
+    'my-agents': {
+        component: MyAgentsTab,
+        requireAuth: true,
     },
     'workflow-ai': {
         component: WorkflowAiTab,

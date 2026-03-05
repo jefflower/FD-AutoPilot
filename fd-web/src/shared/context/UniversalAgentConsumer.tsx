@@ -50,7 +50,7 @@ function withTimeout<T>(promise: Promise<T>, ms: number, label: string): Promise
  * 新增 Agent 无需开发新消费者，只要注册 AgentDefinition 即可。
  */
 export const UniversalAgentConsumer: React.FC = () => {
-  const { definitions, manualAgentOverrides, canExecute } = useAgentContext();
+  const { definitions, manualAgentOverrides, canExecute, userAgentConfigs } = useAgentContext();
   const clientId = getOrCreateClientId();
 
   // 记录当前正在处理的任务 ID，避免重复执行
@@ -70,10 +70,13 @@ export const UniversalAgentConsumer: React.FC = () => {
         (d: { enabled: boolean; code: string; autoStart?: boolean }) => {
           if (!d.enabled) return false;
           if (DEDICATED_CONSUMER_CODES.has(d.code)) return false;
-          // 手动覆盖优先，否则用 autoStart
+          // 查找用户的 Agent 配置
+          const userConfig = userAgentConfigs.find(c => c.agentCode === d.code);
+          if (!userConfig || !userConfig.enabled) return false; // 未订阅或用户级已禁用
+          // 手动覆盖优先，否则用用户配置的 autoStart
           const shouldPoll = manualAgentOverrides.has(d.code)
             ? manualAgentOverrides.get(d.code)!
-            : d.autoStart === true;
+            : userConfig.autoStart;
           return shouldPoll;
         },
       )

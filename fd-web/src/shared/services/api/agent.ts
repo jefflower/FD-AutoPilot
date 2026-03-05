@@ -10,6 +10,8 @@ import type {
   AgentStats,
   AgentProxyTestResult,
   AgentInstance,
+  UserAgentConfigDTO,
+  UserAgentConfigUpdateRequest,
 } from '../../types/server';
 import { request, getApiBaseUrl, getAuthToken } from './client';
 
@@ -179,5 +181,41 @@ export const agentApi = {
     });
     if (!resp.ok) throw new Error(`Export failed: ${resp.status}`);
     return resp.blob();
+  },
+};
+
+/** 用户 Agent 配置 API */
+export const userAgentApi = {
+  /** 获取当前用户已订阅的 Agent 列表 */
+  async getUserAgents(): Promise<UserAgentConfigDTO[]> {
+    return (await request<UserAgentConfigDTO[]>('/user-agents')) || [];
+  },
+
+  /** 获取当前用户已订阅的 agentCode 列表（轻量） */
+  async getUserAgentCodes(): Promise<string[]> {
+    return (await request<string[]>('/user-agents/codes')) || [];
+  },
+
+  /** 订阅 Agent */
+  async subscribe(agentCode: string): Promise<UserAgentConfigDTO> {
+    return request<UserAgentConfigDTO>('/user-agents/subscribe', {
+      method: 'POST',
+      body: JSON.stringify({ agentCode }),
+    });
+  },
+
+  /** 退订 Agent */
+  async unsubscribe(agentCode: string): Promise<void> {
+    await request<void>(`/user-agents/${encodeURIComponent(agentCode)}`, {
+      method: 'DELETE',
+    });
+  },
+
+  /** 更新 Agent 配置 */
+  async updateConfig(agentCode: string, config: UserAgentConfigUpdateRequest): Promise<UserAgentConfigDTO> {
+    return request<UserAgentConfigDTO>(`/user-agents/${encodeURIComponent(agentCode)}/config`, {
+      method: 'PUT',
+      body: JSON.stringify(config),
+    });
   },
 };

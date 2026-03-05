@@ -1,13 +1,14 @@
 /**
- * 工作流中心 - Agent 管理页面
+ * 工作流中心 - Agent 市场页面
  *
- * 功能：Agent 分组展示、CRUD、inputSchema/outputSchema 编辑、Provider 配置
+ * 功能：Agent 分组展示、订阅、CRUD、inputSchema/outputSchema 编辑、Provider 配置
  * 从管理后台 AgentManageTab 迁移并增强
  */
 
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { agentApi, clientApi } from '../../../shared/services/serverApi';
+import { userAgentApi } from '../../../shared/services/api/agent';
 import type { AgentDefinition, AgentInstance, ClientRegistration, CapabilityDefinition } from '../../../shared/types/server';
 import { useAgentContext } from '../../../shared/agents';
 import { PROMPT_TEMPLATES, TEMPLATE_CATEGORIES } from '../../../shared/agents/promptTemplates';
@@ -15,7 +16,7 @@ import AgentExecLogPanel from '../../../shared/components/AgentExecLogPanel';
 
 // ============ 模块定义 ============
 
-import { Headphones, Settings } from 'lucide-react';
+import { Headphones, Settings, Check, Plus } from 'lucide-react';
 
 const MODULE_DEFS = [
     { code: 'ticket', name: '工单中心', icon: Headphones },
@@ -40,6 +41,9 @@ const WorkflowAgentsTab: React.FC = () => {
     const [error, setError] = useState<string | null>(null);
     const [successMsg, setSuccessMsg] = useState<string | null>(null);
     const [operating, setOperating] = useState<number | null>(null);
+
+    // 订阅状态
+    const [subscribedCodes, setSubscribedCodes] = useState<Set<string>>(new Set());
 
     // 模块筛选
     const [moduleFilter, setModuleFilter] = useState<ModuleFilter>('all');
@@ -76,6 +80,11 @@ const WorkflowAgentsTab: React.FC = () => {
     useEffect(() => {
         loadDefinitions();
     }, [loadDefinitions]);
+
+    // 加载当前用户订阅的 Agent 列表
+    useEffect(() => {
+        userAgentApi.getUserAgentCodes().then(codes => setSubscribedCodes(new Set(codes))).catch(() => {});
+    }, []);
 
     // 按模块筛选后的 definitions
     const filteredDefinitions = useMemo(() => {
@@ -188,6 +197,16 @@ const WorkflowAgentsTab: React.FC = () => {
         }
     };
 
+    const handleSubscribe = async (agentCode: string) => {
+        try {
+            await userAgentApi.subscribe(agentCode);
+            setSubscribedCodes(prev => new Set([...prev, agentCode]));
+            showSuccess(`已订阅 ${agentCode}`);
+        } catch (err: any) {
+            setError(err.message || '订阅失败');
+        }
+    };
+
     const handleCreate = () => {
         setEditingDef({
             code: '',
@@ -222,9 +241,9 @@ const WorkflowAgentsTab: React.FC = () => {
             {/* 顶部标题栏 */}
             <div className="flex items-center justify-between px-4 pt-4 pb-3 border-b border-slate-700/50">
                 <div>
-                    <h2 className="text-slate-200 font-medium text-lg">Agent 管理</h2>
+                    <h2 className="text-slate-200 font-medium text-lg">Agent 市场</h2>
                     <p className="text-xs text-slate-500 mt-0.5">
-                        管理 AI Agent 定义，配置执行参数和输入输出 Schema
+                        浏览和订阅 AI Agent，管理定义与配置
                     </p>
                 </div>
                 <button
@@ -328,6 +347,8 @@ const WorkflowAgentsTab: React.FC = () => {
                                                     onToggle={handleToggle}
                                                     onDelete={handleDelete}
                                                     onEdit={() => setEditingDef({ ...def })}
+                                                    subscribed={subscribedCodes.has(def.code)}
+                                                    onSubscribe={handleSubscribe}
                                                 />
                                             ))}
                                         </div>
@@ -380,7 +401,9 @@ const AgentCard: React.FC<{
     onToggle: (id: number) => void;
     onDelete: (id: number) => void;
     onEdit: () => void;
-}> = ({ def, operating, onToggle, onDelete, onEdit }) => {
+    subscribed: boolean;
+    onSubscribe: (agentCode: string) => void;
+}> = ({ def, operating, onToggle, onDelete, onEdit, subscribed, onSubscribe }) => {
     const { t } = useTranslation(['common']);
     const [expanded, setExpanded] = useState(false);
     const [expandedTab, setExpandedTab] = useState<'instances' | 'logs'>('instances');
@@ -492,6 +515,21 @@ const AgentCard: React.FC<{
                     </div>
 
                     <div className="flex items-center gap-2 ml-3 flex-shrink-0">
+                        {/* 订阅按钮 */}
+                        {subscribed ? (
+                            <span className="flex items-center gap-1 px-2 py-1 text-xs text-emerald-400 bg-emerald-500/10 rounded">
+                                <Check className="w-3 h-3" />
+                                已订阅
+                            </span>
+                        ) : (
+                            <button
+                                onClick={() => onSubscribe(def.code)}
+                                className="flex items-center gap-1 px-2 py-1 text-xs text-blue-400 hover:text-blue-300 hover:bg-blue-500/10 rounded transition-colors"
+                            >
+                                <Plus className="w-3 h-3" />
+                                订阅
+                            </button>
+                        )}
                         {/* 实例总览按钮 */}
                         <button
                             onClick={() => setExpanded(!expanded)}
