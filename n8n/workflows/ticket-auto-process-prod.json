@@ -105,7 +105,7 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "http://47.110.152.25:9988/api/v1/n8n/agents/ticket-translate/execute",
+        "url": "http://47.110.152.25:9988/api/v1/n8n/capabilities/ticket-translate/execute",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
@@ -117,7 +117,7 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify({ input: { prompt: 'You are a professional customer support translator and classifier. Translate the following support ticket into Simplified Chinese (zh-CN), classify it into one of 4 categories, and determine if the issue is already resolved.\\n\\nCATEGORIES:\\n- PRODUCT_FAULT: Product quality issues, usage problems, returns/exchanges\\n- LOGISTICS_INQUIRY: Shipping status, delivery time, tracking inquiries\\n- BUSINESS_COOPERATION: Agency cooperation, bulk purchasing, business partnership\\n- OTHER: Cannot be categorized into above\\n\\nRESOLVED FIELD:\\n- Set \"resolved\": true if the customer confirms the issue is resolved, expresses thanks for resolution, or the conversation clearly indicates the problem has been fixed/handled.\\n- Set \"resolved\": false otherwise (issue is still open, customer is asking questions, reporting problems, etc.)\\n\\nSTRICT OUTPUT FORMAT:\\n- Output ONLY a raw JSON object. Start your response with { and end with }.\\n- Do NOT wrap in markdown code fences (```). Do NOT add any text before or after the JSON.\\n\\nTRANSLATION RULES:\\n1. Translate \"subject\" and \"description\" fields into Simplified Chinese.\\n2. For each item in \"conversations\", translate the \"bodyText\" field. Keep \"id\" unchanged.\\n3. All translated text must be natural Simplified Chinese.\\n4. ADD a \"category\" field with one of: PRODUCT_FAULT, LOGISTICS_INQUIRY, BUSINESS_COOPERATION, OTHER\\n5. ADD a \"resolved\" field with true or false\\n\\nREQUIRED JSON STRUCTURE:\\n{\"category\":\"PRODUCT_FAULT\",\"resolved\":false,\"subject\":\"翻译后的标题\",\"description\":\"翻译后的正文\",\"conversations\":[{\"id\":123,\"bodyText\":\"翻译后的消息\"}]}\\n\\n=== TICKET DATA ===\\nSubject: ' + ($json.subject || '') + '\\nContent (JSON):\\n' + ($json.content || ''), models: ['gemini-2.5-flash'] }, refType: 'ticket', refId: String($json.id), timeoutMs: 300000 }) }}",
+        "jsonBody": "={{ JSON.stringify({ input: { ticket: { id: $json.id, subject: $json.subject || '', content: $json.description || $json.description_text || '' }, targetLang: 'zh-CN' }, refType: 'ticket', refId: String($json.id), timeoutMs: 300000 }) }}",
         "options": {
           "timeout": 300000
         }
@@ -284,7 +284,7 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "http://47.110.152.25:9988/api/v1/n8n/agents/ticket-reply/execute",
+        "url": "http://47.110.152.25:9988/api/v1/n8n/capabilities/ticket-reply/execute",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
@@ -296,7 +296,7 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify({ input: { ticket: { id: $('逐个处理工单').item.json.id, subject: $('逐个处理工单').item.json.subject || '', content: $('逐个处理工单').item.json.content || '' }, lastAuditRemark: $('逐个处理工单').item.json.lastAuditRemark || '' }, refType: 'ticket', refId: String($('逐个处理工单').item.json.id), timeoutMs: 300000 }) }}",
+        "jsonBody": "={{ JSON.stringify({ input: { ticket: { id: $('逐个处理工单').item.json.id, subject: $('逐个处理工单').item.json.subject || '', content: $('逐个处理工单').item.json.content || $('逐个处理工单').item.json.description || '' }, lastAuditRemark: $('逐个处理工单').item.json.lastAuditRemark || '' }, refType: 'ticket', refId: String($('逐个处理工单').item.json.id), timeoutMs: 300000 }) }}",
         "options": {
           "timeout": 300000
         }
@@ -310,7 +310,7 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "http://47.110.152.25:9988/api/v1/n8n/agents/logistics-reply/execute",
+        "url": "http://47.110.152.25:9988/api/v1/n8n/capabilities/logistics-reply/execute",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
@@ -322,7 +322,7 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify({ input: { ticket: { id: $('逐个处理工单').item.json.id, subject: $('逐个处理工单').item.json.subject || '', content: $('逐个处理工单').item.json.content || '' }, lastAuditRemark: $('逐个处理工单').item.json.lastAuditRemark || '' }, refType: 'ticket', refId: String($('逐个处理工单').item.json.id), timeoutMs: 300000 }) }}",
+        "jsonBody": "={{ JSON.stringify({ input: { ticket: { id: $('逐个处理工单').item.json.id, subject: $('逐个处理工单').item.json.subject || '', content: $('逐个处理工单').item.json.content || $('逐个处理工单').item.json.description || '' }, lastAuditRemark: $('逐个处理工单').item.json.lastAuditRemark || '' }, refType: 'ticket', refId: String($('逐个处理工单').item.json.id), timeoutMs: 300000 }) }}",
         "options": {
           "timeout": 300000
         }

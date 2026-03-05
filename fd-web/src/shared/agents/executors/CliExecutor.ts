@@ -44,7 +44,10 @@ export class CliExecutor implements AgentExecutor {
             };
         }
 
-        const config: Record<string, any> = { ...CLI_DEFAULTS, ...parseAgentConfig(definition.agentConfig) };
+        // 三级合并：CLI_DEFAULTS < definition.agentConfig < input.params（服务端 mergedConfig）
+        const agentConfig = parseAgentConfig(definition.agentConfig);
+        const mergedParams = input.params || {};
+        const config: Record<string, any> = { ...CLI_DEFAULTS, ...agentConfig, ...mergedParams };
         const startTime = Date.now();
 
         try {
@@ -55,7 +58,11 @@ export class CliExecutor implements AgentExecutor {
 
             // 新路径：标准化输入（有 inputSchema 且 input.data 包含 ticket）
             if (definition.inputSchema && input.data?.ticket) {
-                const cliData = this.buildCliInput(definition, config, input.data, invokeCommand);
+                // 将 mergedConfig 中的 systemPrompt 覆盖到 definition（优先级：mergedConfig > definition 独立字段 > agentConfig）
+                const effectiveDefinition = mergedParams.systemPrompt
+                    ? { ...definition, systemPrompt: mergedParams.systemPrompt }
+                    : definition;
+                const cliData = this.buildCliInput(effectiveDefinition, config, input.data, invokeCommand);
                 const result = await tauriInvoke(invokeCommand, cliData);
                 return this.parseCliOutput(result, startTime);
             }
