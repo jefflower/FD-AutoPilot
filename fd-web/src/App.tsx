@@ -45,7 +45,6 @@ import { ServerEventsProvider } from "./shared/context/ServerEventsContext";
 import { UniversalAgentConsumer } from "./shared/context/UniversalAgentConsumer";
 import { JsonPreviewProvider } from "./shared/components/JsonPreview";
 import CyberOfficeFloat from "./shared/components/CyberOfficeFloat";
-import StartupGate from "./shared/components/StartupGate";
 
 import { useSettings } from "./shared/hooks/useSettings";
 import { ticketApi } from "./shared/services/serverApi";
@@ -370,42 +369,40 @@ function AppInner() {
             <JsonPreviewProvider>
             <ServerEventsProvider>
             <AgentProvider>
-                    <StartupGate>
-                        <UniversalAgentConsumer />
-                        <AppShell
-                            activeTab={activeTab}
-                            setActiveTab={setActiveTab}
-                            queueCounts={queueCounts}
-                        >
-                            <ErrorBoundary>
-                                <Suspense fallback={
-                                    <div className="flex-1 flex items-center justify-center">
-                                        <div className="animate-spin rounded-full h-8 w-8 border-2 border-slate-600 border-t-blue-400" />
-                                    </div>
-                                }>
-                                    {/* 常规 tab 内容（条件渲染） */}
-                                    <div className="flex-1 flex overflow-hidden" style={{ display: (activeTab === 'workflow-n8n' || activeTab === 'admin-jenkins') ? 'none' : undefined }}>
-                                        {renderTabContent()}
-                                    </div>
+                    <UniversalAgentConsumer />
+                    <AppShell
+                        activeTab={activeTab}
+                        setActiveTab={setActiveTab}
+                        queueCounts={queueCounts}
+                    >
+                        <ErrorBoundary>
+                            <Suspense fallback={
+                                <div className="flex-1 flex items-center justify-center">
+                                    <div className="animate-spin rounded-full h-8 w-8 border-2 border-slate-600 border-t-blue-400" />
+                                </div>
+                            }>
+                                {/* 常规 tab 内容（条件渲染） */}
+                                <div className="flex-1 flex overflow-hidden" style={{ display: (activeTab === 'workflow-n8n' || activeTab === 'admin-jenkins') ? 'none' : undefined }}>
+                                    {renderTabContent()}
+                                </div>
 
-                                    {/* n8n iframe — keep-alive：始终挂载，CSS 切换显隐，避免切换菜单时重新加载 */}
-                                    {auth.isLoggedIn && (
-                                        <div className="flex-1 flex overflow-hidden" style={{ display: activeTab === 'workflow-n8n' ? undefined : 'none' }}>
-                                            <WorkflowN8nTab />
-                                        </div>
-                                    )}
+                                {/* n8n iframe — keep-alive：始终挂载，CSS 切换显隐，避免切换菜单时重新加载 */}
+                                {auth.isLoggedIn && (
+                                    <div className="flex-1 flex overflow-hidden" style={{ display: activeTab === 'workflow-n8n' ? undefined : 'none' }}>
+                                        <WorkflowN8nTab />
+                                    </div>
+                                )}
 
-                                    {/* Jenkins iframe — keep-alive：同 n8n 模式 */}
-                                    {auth.isLoggedIn && (
-                                        <div className="flex-1 flex overflow-hidden" style={{ display: activeTab === 'admin-jenkins' ? undefined : 'none' }}>
-                                            <JenkinsTab />
-                                        </div>
-                                    )}
-                                </Suspense>
-                            </ErrorBoundary>
-                        </AppShell>
-                        <CyberOfficeFloat onNavigateToOffice={() => setActiveTab('ai-dashboard')} />
-                    </StartupGate>
+                                {/* Jenkins iframe — keep-alive：同 n8n 模式 */}
+                                {auth.isLoggedIn && (
+                                    <div className="flex-1 flex overflow-hidden" style={{ display: activeTab === 'admin-jenkins' ? undefined : 'none' }}>
+                                        <JenkinsTab />
+                                    </div>
+                                )}
+                            </Suspense>
+                        </ErrorBoundary>
+                    </AppShell>
+                    <CyberOfficeFloat onNavigateToOffice={() => setActiveTab('ai-dashboard')} />
             </AgentProvider>
             </ServerEventsProvider>
             </JsonPreviewProvider>

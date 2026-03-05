@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Building2 } from 'lucide-react';
 import { agentApi } from '../services/api';
 import { useServerEvent } from '../context/ServerEventsContext';
+import { useAgentContext } from '../agents/AgentContext';
 import CyberOfficePopover from './CyberOfficePopover';
 
 interface CyberOfficeFloatProps {
@@ -11,6 +12,8 @@ interface CyberOfficeFloatProps {
 const CyberOfficeFloat: React.FC<CyberOfficeFloatProps> = ({ onNavigateToOffice }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [executingCount, setExecutingCount] = useState(0);
+  const { canExecute, startupReady } = useAgentContext();
+  const isDetecting = canExecute && !startupReady;
   const popoverRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -97,14 +100,22 @@ const CyberOfficeFloat: React.FC<CyberOfficeFloatProps> = ({ onNavigateToOffice 
       {/* Float button */}
       <button
         ref={buttonRef}
-        className="fixed z-50 w-14 h-14 rounded-full bg-slate-800 border-2 border-blue-500/50 shadow-lg shadow-blue-500/20 flex items-center justify-center hover:scale-110 transition-transform group cursor-grab active:cursor-grabbing touch-none"
+        className={`fixed z-50 w-14 h-14 rounded-full bg-slate-800 border-2 shadow-lg flex items-center justify-center hover:scale-110 transition-transform group cursor-grab active:cursor-grabbing touch-none ${
+          isDetecting
+            ? 'border-amber-500/50 shadow-amber-500/20 animate-pulse'
+            : 'border-blue-500/50 shadow-blue-500/20'
+        }`}
         style={{ right: pos.right, bottom: pos.bottom }}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
         onPointerUp={onPointerUp}
-        title={'\u8d5b\u535a\u529e\u516c\u5ba4'}
+        title={isDetecting ? '\u6b63\u5728\u68c0\u6d4b\u73af\u5883...' : '\u8d5b\u535a\u529e\u516c\u5ba4'}
       >
-        <Building2 className="w-6 h-6 text-blue-400 group-hover:text-blue-300 transition-colors" />
+        {isDetecting ? (
+          <div className="w-5 h-5 border-2 border-amber-400 border-t-transparent rounded-full animate-spin" />
+        ) : (
+          <Building2 className="w-6 h-6 text-blue-400 group-hover:text-blue-300 transition-colors" />
+        )}
         {executingCount > 0 && (
           <span className="absolute -top-1 -right-1 w-5 h-5 bg-amber-500 text-xs text-white rounded-full flex items-center justify-center animate-pulse font-medium">
             {executingCount}

@@ -7,6 +7,7 @@ import type { AgentDefinition } from '../../../shared/types/server';
 import StatsBar from '../components/dashboard/StatsBar';
 import ModuleAgentGrid from '../components/dashboard/ModuleAgentGrid';
 import AgentLogDrawer from '../components/dashboard/AgentLogDrawer';
+import StartupDetectBanner from '../components/dashboard/StartupDetectBanner';
 
 const AiDashboardTab: React.FC = () => {
   const { t } = useTranslation('common');
@@ -108,6 +109,11 @@ const AiDashboardTab: React.FC = () => {
         </div>
       ) : (
         <>
+          {/* 启动检测进度 */}
+          <div className="flex-shrink-0 px-6 pt-3">
+            <StartupDetectBanner />
+          </div>
+
           {/* Stats Bar */}
           <div className="flex-shrink-0 px-6 py-3">
             <StatsBar
