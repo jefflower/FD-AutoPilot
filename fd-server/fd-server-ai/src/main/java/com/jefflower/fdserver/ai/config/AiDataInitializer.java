@@ -205,7 +205,7 @@ public class AiDataInitializer implements CommandLineRunner {
 
                 for (Object constraintName : constraints) {
                     try {
-                        String dropSql = "ALTER TABLE " + table + " DROP CONSTRAINT " + constraintName;
+                        String dropSql = "ALTER TABLE " + table + " DROP CONSTRAINT \"" + constraintName + "\"";
                         entityManager.createNativeQuery(dropSql).executeUpdate();
                         log.info("[AiDataInitializer] Dropped CHECK constraint: {}.{}", table, constraintName);
                     } catch (Exception e) {
@@ -230,7 +230,11 @@ public class AiDataInitializer implements CommandLineRunner {
                 log.debug("[AiDataInitializer] Nullable alter skipped: {}", e.getMessage());
             }
         }
-        entityManager.flush();
+        try {
+            entityManager.flush();
+        } catch (Exception e) {
+            log.warn("[AiDataInitializer] Flush after constraint cleanup failed (non-fatal): {}", e.getMessage());
+        }
         log.info("[AiDataInitializer] Cleaned up outdated enum check constraints");
     }
 
