@@ -46,6 +46,12 @@ public class AgentExecutionService {
     @Transactional
     public AgentExecution startExecution(String agentCode, String refType, Long refId,
                                          String executedBy, String executedOn) {
+        return startExecution(agentCode, refType, refId, executedBy, executedOn, null);
+    }
+
+    @Transactional
+    public AgentExecution startExecution(String agentCode, String refType, Long refId,
+                                         String executedBy, String executedOn, String inputSnapshot) {
         AgentExecution exec = new AgentExecution();
         exec.setAgentCode(agentCode);
         exec.setStatus(ExecutionStatus.RUNNING);
@@ -53,6 +59,7 @@ public class AgentExecutionService {
         exec.setReferenceId(refId);
         exec.setExecutedBy(executedBy);
         exec.setExecutedOn(executedOn);
+        exec.setInputSnapshot(truncate(inputSnapshot, 2000));
         AgentExecution saved = executionRepository.save(exec);
         broadcastExecutionEvent("agent-execution-started", saved);
         return saved;
@@ -217,6 +224,12 @@ public class AgentExecutionService {
             data.put("referenceId", exec.getReferenceId());
             data.put("durationMs", exec.getDurationMs());
             data.put("errorMessage", exec.getErrorMessage());
+            data.put("executedBy", exec.getExecutedBy());
+            data.put("executedOn", exec.getExecutedOn());
+            // 开始执行时带上入参，方便前端实时展示
+            if (exec.getInputSnapshot() != null) {
+                data.put("inputSnapshot", exec.getInputSnapshot());
+            }
             sseConnectionManager.broadcast(new SseEventData(eventType, data));
         } catch (Exception e) {
             log.warn("[AgentExecutionService] Failed to broadcast SSE event: {}", e.getMessage());

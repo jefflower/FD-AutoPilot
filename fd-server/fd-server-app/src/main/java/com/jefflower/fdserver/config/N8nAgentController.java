@@ -15,6 +15,8 @@ import com.jefflower.fdserver.common.dto.ApiResponse;
 import com.jefflower.fdserver.common.exception.BusinessException;
 import com.jefflower.fdserver.ticket.entity.Ticket;
 import com.jefflower.fdserver.ticket.repository.TicketRepository;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -51,6 +53,7 @@ public class N8nAgentController {
     private final CapabilityDefinitionService capabilityDefinitionService;
     private final AgentDefinitionService agentDefinitionService;
     private final TicketRepository ticketRepository;
+    private final ObjectMapper objectMapper;
 
     private static final long DEFAULT_TIMEOUT_MS = 600_000L; // 10 分钟
 
@@ -88,13 +91,44 @@ public class N8nAgentController {
         CapabilityRouteResult route = capabilityRouter.route(
                 capability, request.getTargetClientId(), request.getTargetUserId());
 
-        // 2. 执行
-        long timeoutMs = request.getTimeoutMs() != null ? request.getTimeoutMs() : DEFAULT_TIMEOUT_MS;
-        AgentExecuteResult result = syncAgentService.executeSyncViaRoute(
-                route, input,
-                request.getRefType(), refId, timeoutMs);
+        // 2. 记录执行开始
+        Long refIdLong = null;
+        try {
+            if (refId != null) {
+                refIdLong = Long.parseLong(refId);
+            }
+        } catch (NumberFormatException e) {
+            log.warn("[N8nAgentController] refId '{}' 无法转为 Long，executionRecord.referenceId 将为 null", refId);
+        }
 
-        // 3. 包装返回
+        String inputJson = serializeInput(input);
+        AgentExecution execution = agentExecutionService.startExecution(
+                route.getAgentCode(), request.getRefType(), refIdLong,
+                "n8n", route.getClientId(), inputJson);
+        long startTime = System.currentTimeMillis();
+
+        // 3. 执行
+        long timeoutMs = request.getTimeoutMs() != null ? request.getTimeoutMs() : DEFAULT_TIMEOUT_MS;
+        AgentExecuteResult result;
+        try {
+            result = syncAgentService.executeSyncViaRoute(
+                    route, input,
+                    request.getRefType(), refId, timeoutMs);
+        } catch (Exception e) {
+            // 异常时记录失败
+            long duration = System.currentTimeMillis() - startTime;
+            agentExecutionService.completeExecution(
+                    execution.getId(), false, duration, null, null, e.getMessage());
+            throw e;
+        }
+
+        // 4. 记录执行完成
+        long duration = System.currentTimeMillis() - startTime;
+        agentExecutionService.completeExecution(
+                execution.getId(), result.isSuccess(), duration,
+                result.getTokenCount(), result.getOutput(), result.getErrorMessage());
+
+        // 5. 包装返回
         CapabilityExecuteResponse response = new CapabilityExecuteResponse();
         response.setResult(result);
 
@@ -136,8 +170,37 @@ public class N8nAgentController {
         log.info("[N8nAgentController] Execute agent={}, refType={}, refId={}, timeout={}ms",
                 agentCode, refType, refId, timeoutMs);
 
-        AgentExecuteResult result = syncAgentService.executeSyncOnClient(
-                agentCode, input, refType, refId, timeoutMs);
+        // 记录执行开始
+        Long refIdLong = null;
+        try {
+            if (refId != null) {
+                refIdLong = Long.parseLong(refId);
+            }
+        } catch (NumberFormatException e) {
+            log.warn("[N8nAgentController] refId '{}' 无法转为 Long，executionRecord.referenceId 将为 null", refId);
+        }
+
+        String inputJson = serializeInput(input);
+        AgentExecution execution = agentExecutionService.startExecution(
+                agentCode, refType, refIdLong, "n8n", null, inputJson);
+        long startTime = System.currentTimeMillis();
+
+        AgentExecuteResult result;
+        try {
+            result = syncAgentService.executeSyncOnClient(
+                    agentCode, input, refType, refId, timeoutMs);
+        } catch (Exception e) {
+            long duration = System.currentTimeMillis() - startTime;
+            agentExecutionService.completeExecution(
+                    execution.getId(), false, duration, null, null, e.getMessage());
+            throw e;
+        }
+
+        // 记录执行完成
+        long duration = System.currentTimeMillis() - startTime;
+        agentExecutionService.completeExecution(
+                execution.getId(), result.isSuccess(), duration,
+                result.getTokenCount(), result.getOutput(), result.getErrorMessage());
 
         if (result.isSuccess()) {
             return ResponseEntity.ok(ApiResponse.ok("Agent 执行成功", result));
@@ -262,6 +325,17 @@ public class N8nAgentController {
         syncAgentService.resetCircuitBreaker(capability);
         log.info("[N8nAgentController] 断路器已重置: capability={}", capability);
         return ResponseEntity.ok(ApiResponse.ok("断路器已重置: " + capability));
+    }
+
+    /** 将 input Map 序列化为 JSON 字符串，失败时返回 toString() */
+    private String serializeInput(Map<String, Object> input) {
+        if (input == null || input.isEmpty()) return null;
+        try {
+            return objectMapper.writeValueAsString(input);
+        } catch (JsonProcessingException e) {
+            log.warn("[N8nAgentController] 序列化 input 失败: {}", e.getMessage());
+            return input.toString();
+        }
     }
 
     @Operation(summary = "路由统计",
