@@ -129,16 +129,70 @@ PENDING_TRANS → TRANSLATING → PENDING_REPLY → REPLYING → PENDING_AUDIT �
 
 ### n8n 工作流 JSON 格式规范（红线）
 
-生成或修改 n8n 工作流 JSON 时**必须遵守**以下规则，违反会导致导入失败：
+生成或修改 n8n 工作流 JSON 时**必须遵守**以下规则，违反会导致导入失败或运行时路由错误：
+
+#### 基础格式规则
 
 | 规则 | 说明 |
 |------|------|
 | **typeVersion 只用官方版本号** | n8n 节点版本号只有整数或 `.1`/`.2` 等官方版本。Switch 节点只有 v1、v2、v3（无 3.2）。不确定时参考已成功导入的工作流 |
 | **Switch v3 使用 conditions 格式** | `rules.values[].conditions.conditions[{leftValue, rightValue, operator{type, operation}}]`，fallback 用 `options.fallbackOutput: "extra"`。**禁止**用简化的 `{value, output}` 格式 |
-| **Set v3.4 使用 values 格式** | `values.string[{name, value}]` + `values.number[{name, value}]`。**禁止**用 `assignments.assignments[]` 格式 |
-| **参考已有工作流** | 新建/修改前先读取 `n8n/workflows/ticket-auto-process.json`（已成功导入），确保格式一致 |
+| **Set v3.4 使用 assignments 格式** | `assignments.assignments[{id, name, value, type}]`。**禁止**用旧版 `values.string[{name, value}]` 格式（新版 n8n 不识别 values 格式，会导致节点输出为空） |
+| **参考已有工作流** | 新建/修改前先读取 `n8n/workflows/ticket-auto-process-prod.json`（已成功导入），确保格式一致 |
 | **connections 名称必须精确匹配** | `connections` 中的键名和 `node` 值必须与 `nodes[].name` 完全一致（含中文括号） |
 | **导入前验证 JSON** | 用 `python3 -c "import json; json.load(open('file.json'))"` 验证格式 |
+
+#### 踩坑经验（必读）
+
+| 坑点 | 说明 | 正确做法 |
+|------|------|----------|
+| **Switch v3 输出索引不可靠** | Switch v3 的 output 索引与 rules 数组索引的映射在某些情况下会错乱——规则判断正确但数据路由到错误的分支 | **二选一路由场景必须用 IF v2 节点**（`n8n-nodes-base.if`, typeVersion 2），true/false 分支映射可靠。Switch v3 仅用于 3+ 分支场景 |
+| **布尔值自动转换** | n8n 会把字符串 `"true"`/`"false"` 自动转换为布尔值，导致字符串比较失败 | 使用非布尔语义的字符串值，如 `"RESOLVED"` / `"NOT_RESOLVED"`，避免 `"true"` / `"false"` |
+| **Set 节点输出为空** | 使用旧版 `values.string[]` 格式的 Set v3.4 节点在新版 n8n 中不报错但输出空对象，下游节点全部拿到空数据 | 始终使用 `assignments.assignments[]` 格式，每个字段包含 `{id, name, value, type}` |
+| **修改后必须重新导入** | n8n 不会自动读取 JSON 文件的变更，修改后需要在 n8n UI 中删除旧工作流并重新导入 | 修改 JSON → 验证格式 → n8n UI 中导入 → 手动测试执行 |
+
+#### IF v2 节点格式参考
+
+```json
+{
+  "parameters": {
+    "conditions": {
+      "options": { "caseSensitive": true, "leftValue": "" },
+      "conditions": [{
+        "leftValue": "={{ $json.fieldName }}",
+        "rightValue": "EXPECTED_VALUE",
+        "operator": { "type": "string", "operation": "equals" }
+      }]
+    },
+    "options": {}
+  },
+  "name": "条件判断",
+  "type": "n8n-nodes-base.if",
+  "typeVersion": 2
+}
+```
+- connections[0] = true 分支（条件匹配）
+- connections[1] = false 分支（条件不匹配）
+
+#### Set v3.4 节点格式参考
+
+```json
+{
+  "parameters": {
+    "mode": "manual",
+    "assignments": {
+      "assignments": [
+        { "id": "field-xxx", "name": "fieldName", "value": "={{ expr }}", "type": "string" }
+      ]
+    },
+    "includeOtherFields": false,
+    "options": {}
+  },
+  "name": "设置字段",
+  "type": "n8n-nodes-base.set",
+  "typeVersion": 3.4
+}
+```
 
 ### 后端模块路由
 

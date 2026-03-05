@@ -33,7 +33,6 @@ const WorkflowAiTab = lazy(() => import("./modules/workflow/pages/WorkflowAiTab"
 const WorkflowN8nTab = lazy(() => import("./modules/workflow/pages/WorkflowN8nTab"));
 const AiDashboardTab = lazy(() => import("./modules/workflow/pages/AiDashboardTab"));
 const ManualRequiredTab = lazy(() => import("./modules/workflow/pages/ManualRequiredTab"));
-const AgentAutomationTab = lazy(() => import("./modules/ticket/pages/AgentAutomationTab"));
 const AuditCenterTab = lazy(() => import("./modules/ticket/pages/AuditCenterTab"));
 const KnowledgeBasePage = lazy(() => import("./modules/knowledge/pages/KnowledgeBasePage"));
 const NotebookLmPage = lazy(() => import("./modules/knowledge/pages/NotebookLmPage"));
@@ -44,6 +43,7 @@ import { AgentProvider } from "./shared/agents";
 import { ServerEventsProvider } from "./shared/context/ServerEventsContext";
 import { UniversalAgentConsumer } from "./shared/context/UniversalAgentConsumer";
 import { JsonPreviewProvider } from "./shared/components/JsonPreview";
+import CyberOfficeFloat from "./shared/components/CyberOfficeFloat";
 
 import { useSettings } from "./shared/hooks/useSettings";
 import { ticketApi } from "./shared/services/serverApi";
@@ -89,10 +89,6 @@ const TAB_COMPONENTS: Partial<Record<TabType, TabRoute>> = {
             translationLang: ctx.translationLang,
             setTranslationLang: ctx.setTranslationLang,
         }),
-    },
-    'agent-automation': {
-        component: AgentAutomationTab,
-        requireAuth: true,
     },
     'audit-center': {
         component: AuditCenterTab,
@@ -401,6 +397,7 @@ function AppInner() {
                                 </Suspense>
                             </ErrorBoundary>
                         </AppShell>
+                        <CyberOfficeFloat onNavigateToOffice={() => setActiveTab('ai-dashboard')} />
             </AgentProvider>
             </ServerEventsProvider>
             </JsonPreviewProvider>

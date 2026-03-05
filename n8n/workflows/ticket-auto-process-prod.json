@@ -154,24 +154,30 @@
     },
     {
       "parameters": {
-        "values": {
-          "string": [
+        "mode": "manual",
+        "assignments": {
+          "assignments": [
             {
+              "id": "field-category",
               "name": "category",
-              "value": "={{ (() => { let raw = ($('调用翻译 Agent（含分类）').item.json.data && $('调用翻译 Agent（含分类）').item.json.data.output) || ''; const fm = raw.match(/```(?:json)?\\s*([\\s\\S]*?)\\s*```/); if (fm) raw = fm[1]; raw = raw.trim(); try { return JSON.parse(raw).category || 'OTHER'; } catch(e) { return 'OTHER'; } })() }}"
+              "value": "={{ (() => { let raw = ($('调用翻译 Agent（含分类）').item.json.data && $('调用翻译 Agent（含分类）').item.json.data.output) || ''; const fm = raw.match(/```(?:json)?\\s*([\\s\\S]*?)\\s*```/); if (fm) raw = fm[1]; raw = raw.trim(); try { return JSON.parse(raw).category || 'OTHER'; } catch(e) { return 'OTHER'; } })() }}",
+              "type": "string"
             },
             {
+              "id": "field-resolved",
               "name": "resolved",
-              "value": "={{ (() => { let raw = ($('调用翻译 Agent（含分类）').item.json.data && $('调用翻译 Agent（含分类）').item.json.data.output) || ''; const fm = raw.match(/```(?:json)?\\s*([\\s\\S]*?)\\s*```/); if (fm) raw = fm[1]; raw = raw.trim(); try { const p = JSON.parse(raw); return p.resolved === true ? 'true' : 'false'; } catch(e) { return 'false'; } })() }}"
-            }
-          ],
-          "number": [
+              "value": "={{ (() => { let raw = ($('调用翻译 Agent（含分类）').item.json.data && $('调用翻译 Agent（含分类）').item.json.data.output) || ''; const fm = raw.match(/```(?:json)?\\s*([\\s\\S]*?)\\s*```/); if (fm) raw = fm[1]; raw = raw.trim(); try { const p = JSON.parse(raw); return p.resolved === true ? 'RESOLVED' : 'NOT_RESOLVED'; } catch(e) { return 'NOT_RESOLVED'; } })() }}",
+              "type": "string"
+            },
             {
+              "id": "field-ticketId",
               "name": "ticketId",
-              "value": "={{ $('逐个处理工单').item.json.id }}"
+              "value": "={{ $('逐个处理工单').item.json.id }}",
+              "type": "number"
             }
           ]
         },
+        "includeOtherFields": false,
         "options": {}
       },
       "id": "extract-category",
@@ -182,38 +188,20 @@
     },
     {
       "parameters": {
-        "rules": {
-          "values": [
+        "conditions": {
+          "string": [
             {
-              "conditions": {
-                "options": {
-                  "caseSensitive": true,
-                  "leftValue": ""
-                },
-                "conditions": [
-                  {
-                    "leftValue": "={{ $json.resolved }}",
-                    "rightValue": "true",
-                    "operator": {
-                      "type": "string",
-                      "operation": "equals"
-                    }
-                  }
-                ]
-              },
-              "renameOutput": true,
-              "outputKey": "已解决"
+              "value1": "={{ $json.resolved }}",
+              "operation": "equal",
+              "value2": "RESOLVED"
             }
           ]
-        },
-        "options": {
-          "fallbackOutput": "extra"
         }
       },
       "id": "check-resolved",
       "name": "检查是否已解决",
-      "type": "n8n-nodes-base.switch",
-      "typeVersion": 3,
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
       "position": [2100, 150]
     },
     {
@@ -428,20 +416,24 @@
     },
     {
       "parameters": {
-        "values": {
-          "number": [
+        "mode": "manual",
+        "assignments": {
+          "assignments": [
             {
+              "id": "field-processedCount",
               "name": "processedCount",
-              "value": "={{ $items().length }}"
-            }
-          ],
-          "string": [
+              "value": "={{ $items().length }}",
+              "type": "number"
+            },
             {
+              "id": "field-summary",
               "name": "summary",
-              "value": "=n8n 工单自动处理完成: 共处理 {{ $items().length }} 个工单"
+              "value": "=n8n 工单自动处理完成: 共处理 {{ $items().length }} 个工单",
+              "type": "string"
             }
           ]
         },
+        "includeOtherFields": false,
         "options": {}
       },
       "id": "summary",

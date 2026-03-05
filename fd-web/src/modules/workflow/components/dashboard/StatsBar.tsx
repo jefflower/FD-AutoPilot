@@ -1,18 +1,15 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Monitor, Bot, Activity, ArrowLeftRight, TrendingUp, Zap } from 'lucide-react';
+import { Monitor, Bot, TrendingUp, Zap } from 'lucide-react';
 
 interface StatsBarProps {
   onlineClients: number;
   totalAgents: number;
   enabledAgents: number;
-  runningInstances: number;
-  totalInstances: number;
-  syncBridgeWaiting: number;
+  runningOnlineAgents: number;
+  executingTasks: number;
   overallSuccessRate: number;
   totalExecutions: number;
-  avgDurationMs: number;
-  executingTasks: number;
 }
 
 interface StatCardProps {
@@ -22,6 +19,7 @@ interface StatCardProps {
   subLabel?: string;
   bottomInfo?: string;
   color: string;
+  pulse?: boolean;
 }
 
 const colorMap: Record<string, { bg: string; text: string }> = {
@@ -33,10 +31,10 @@ const colorMap: Record<string, { bg: string; text: string }> = {
   red: { bg: 'bg-red-500/10', text: 'text-red-400' },
 };
 
-const StatCard: React.FC<StatCardProps> = ({ icon, label, value, subLabel, bottomInfo, color }) => {
+const StatCard: React.FC<StatCardProps> = ({ icon, label, value, subLabel, bottomInfo, color, pulse }) => {
   const colors = colorMap[color] || colorMap.indigo;
   return (
-    <div className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-4 flex-1 min-w-0">
+    <div className={`bg-slate-800/50 border border-slate-700/50 rounded-xl p-4 flex-1 min-w-0 ${pulse ? 'animate-pulse' : ''}`}>
       <div className="flex items-center gap-3">
         <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${colors.bg} ${colors.text}`}>
           {icon}
@@ -60,13 +58,10 @@ const StatsBar: React.FC<StatsBarProps> = ({
   onlineClients,
   totalAgents,
   enabledAgents,
-  runningInstances,
-  totalInstances,
-  syncBridgeWaiting,
+  runningOnlineAgents,
+  executingTasks,
   overallSuccessRate,
   totalExecutions,
-  avgDurationMs,
-  executingTasks,
 }) => {
   const { t } = useTranslation('common');
 
@@ -74,48 +69,37 @@ const StatsBar: React.FC<StatsBarProps> = ({
 
   return (
     <div className="flex gap-3 flex-wrap lg:flex-nowrap">
+      {/* 1. 在线客户端 */}
       <StatCard
         icon={<Monitor className="w-5 h-5" />}
         label={t('aiDashboard.onlineClients')}
         value={onlineClients}
         color="cyan"
       />
+      {/* 2. Agent 概况 */}
       <StatCard
         icon={<Bot className="w-5 h-5" />}
         label={t('aiDashboard.totalAgents')}
-        value={totalAgents}
+        value={`${enabledAgents}/${totalAgents}`}
         subLabel={t('aiDashboard.enabledCount', { count: enabledAgents })}
+        bottomInfo={`${runningOnlineAgents} ${t('aiDashboard.agentCard.online', '在线')}`}
         color="indigo"
       />
+      {/* 3. 执行中任务 */}
       <StatCard
-        icon={<Activity className="w-5 h-5" />}
-        label={t('aiDashboard.runningInstances')}
-        value={`${runningInstances} / ${totalInstances}`}
-        color="emerald"
+        icon={<Zap className="w-5 h-5" />}
+        label={t('aiDashboard.executingTasks')}
+        value={executingTasks}
+        subLabel={executingTasks > 0 ? t('aiDashboard.processing') : t('aiDashboard.idle')}
+        color={executingTasks > 0 ? 'amber' : 'blue'}
+        pulse={executingTasks > 0}
       />
-      {/* 正在执行任务 — 有任务时高亮显示 */}
-      <div className={executingTasks > 0 ? 'animate-pulse' : ''}>
-        <StatCard
-          icon={<Zap className="w-5 h-5" />}
-          label={t('aiDashboard.executingTasks')}
-          value={executingTasks}
-          subLabel={executingTasks > 0 ? t('aiDashboard.processing') : t('aiDashboard.idle')}
-          color={executingTasks > 0 ? 'amber' : 'blue'}
-        />
-      </div>
-      <StatCard
-        icon={<ArrowLeftRight className="w-5 h-5" />}
-        label={t('aiDashboard.syncBridge')}
-        value={syncBridgeWaiting}
-        subLabel={t('aiDashboard.activeWaiting')}
-        color="blue"
-      />
+      {/* 4. 整体成功率 */}
       <StatCard
         icon={<TrendingUp className="w-5 h-5" />}
         label={t('aiDashboard.successRate')}
         value={`${overallSuccessRate}%`}
         subLabel={`${totalExecutions} ${t('aiDashboard.executions')}`}
-        bottomInfo={t('aiDashboard.avgDuration', { ms: avgDurationMs })}
         color={successRateColor}
       />
     </div>

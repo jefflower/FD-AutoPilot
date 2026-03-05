@@ -1,124 +1,46 @@
-import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Activity, RefreshCw } from 'lucide-react';
-import type {
-  AgentDefinition,
-  AgentInstance,
-  AgentStats,
-  AgentExecutionLog,
-  ClientRegistration,
-} from '../../../shared/types/server';
-import { agentApi, clientApi } from '../../../shared/services/api';
-import { useServerEvent } from '../../../shared/context/ServerEventsContext';
+import { agentApi } from '../../../shared/services/api';
+import { useOfficeData } from '../../../shared/hooks/useOfficeData';
 import StatsBar from '../components/dashboard/StatsBar';
 import ModuleAgentGrid from '../components/dashboard/ModuleAgentGrid';
-import ExecutionLogZone from '../components/dashboard/ExecutionLogZone';
-import ResizableSplitPane from '../components/dashboard/ResizableSplitPane';
+import AgentLogDrawer from '../components/dashboard/AgentLogDrawer';
 
 const AiDashboardTab: React.FC = () => {
   const { t } = useTranslation('common');
 
-  // State
-  const [definitions, setDefinitions] = useState<AgentDefinition[]>([]);
-  const [instances, setInstances] = useState<AgentInstance[]>([]);
-  const [stats, setStats] = useState<AgentStats[]>([]);
-  const [onlineClients, setOnlineClients] = useState<ClientRegistration[]>([]);
-  const [syncBridgeStatus, setSyncBridgeStatus] = useState<{ activeWaiting: number }>({ activeWaiting: 0 });
-  const [runningExecutions, setRunningExecutions] = useState<AgentExecutionLog[]>([]);
-  const [selectedAgent, setSelectedAgent] = useState<string | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
   const [autoRefresh, setAutoRefresh] = useState(true);
+  const [logDrawerAgent, setLogDrawerAgent] = useState<string | null>(null);
 
-  // SSE 触发日志刷新的计数器
-  const [logRefreshTrigger, setLogRefreshTrigger] = useState(0);
-
-  // Data loading — getRunningExecutions 单独 catch 防止其失败影响整体
-  const loadData = useCallback(async () => {
-    try {
-      const [defs, insts, sts, clients, bridge] = await Promise.all([
-        agentApi.getAllDefinitions(),
-        agentApi.getAllInstances(),
-        agentApi.getStats(),
-        clientApi.getOnlineClients(),
-        agentApi.getSyncBridgeStatus(),
-      ]);
-      setDefinitions(defs);
-      setInstances(insts);
-      setStats(sts);
-      setOnlineClients(clients);
-      setSyncBridgeStatus(bridge);
-      setLastUpdated(new Date());
-
-      // 单独获取 running，失败时不影响仪表盘
-      try {
-        const running = await agentApi.getRunningExecutions();
-        setRunningExecutions(running);
-      } catch {
-        // running 查询失败不影响主数据
-      }
-    } catch (e) {
-      console.error('[AiDashboard] loadData failed:', e);
-    } finally {
-      setLoading(false);
-    }
-  }, []);
-
-  // Initial load
-  useEffect(() => {
-    loadData();
-  }, [loadData]);
-
-  // Auto refresh 10s
-  useEffect(() => {
-    if (!autoRefresh) return;
-    const timer = setInterval(loadData, 10000);
-    return () => clearInterval(timer);
-  }, [autoRefresh, loadData]);
-
-  // SSE: 监听执行开始事件 — 立即刷新 running 列表和日志
-  const loadDataRef = useRef(loadData);
-  loadDataRef.current = loadData;
-
-  useServerEvent('agent-execution-started', useCallback(() => {
-    // 立即刷新全量数据 + 触发日志刷新
-    loadDataRef.current();
-    setLogRefreshTrigger(c => c + 1);
-  }, []));
-
-  // SSE: 监听执行完成事件 — 刷新数据和日志
-  useServerEvent('agent-execution-completed', useCallback(() => {
-    loadDataRef.current();
-    setLogRefreshTrigger(c => c + 1);
-  }, []));
+  const {
+    definitions,
+    instances,
+    stats,
+    onlineClients,
+    onlineClientIds,
+    runningExecutions,
+    loading,
+    lastUpdated,
+    enabledAgents,
+    trueRunningOnlineCount,
+    executingCount,
+    overallStats,
+    logRefreshTrigger,
+    refresh,
+  } = useOfficeData(autoRefresh ? 10000 : 0);
 
   // Toggle Agent
   const handleToggle = useCallback(async (id: number) => {
     await agentApi.toggleDefinition(id);
-    loadData();
-  }, [loadData]);
+    refresh();
+  }, [refresh]);
 
-  // Computed stats
-  const enabledAgents = definitions.filter(d => d.enabled).length;
-  const runningInstances = instances.filter(i => i.running).length;
-  const onlineClientIds = useMemo(
-    () => new Set(onlineClients.map(c => c.clientId)),
-    [onlineClients],
-  );
-
-  const overallStats = useMemo(() => {
-    if (stats.length === 0) return { rate: 0, total: 0, avgMs: 0 };
-    const totalExec = stats.reduce((s, st) => s + st.totalExecutions, 0);
-    const totalSuccess = stats.reduce((s, st) => s + st.successCount, 0);
-    const avgMs = totalExec > 0
-      ? Math.round(stats.reduce((s, st) => s + st.avgDurationMs * st.totalExecutions, 0) / totalExec)
-      : 0;
-    return {
-      rate: totalExec > 0 ? Math.round((totalSuccess / totalExec) * 100) : 0,
-      total: totalExec,
-      avgMs,
-    };
-  }, [stats]);
+  // 找到当前 drawer 对应的 agent name
+  const drawerAgentName = useMemo(() => {
+    if (!logDrawerAgent) return undefined;
+    return definitions.find(d => d.code === logDrawerAgent)?.name;
+  }, [logDrawerAgent, definitions]);
 
   return (
     <div className="flex-1 flex flex-col overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
@@ -126,11 +48,13 @@ const AiDashboardTab: React.FC = () => {
       <div className="flex-shrink-0 px-6 py-4 border-b border-slate-700/50">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-indigo-500/10 flex items-center justify-center">
-              <Activity className="w-5 h-5 text-indigo-400" />
+            <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center">
+              <Activity className="w-5 h-5 text-blue-400" />
             </div>
             <div>
-              <h1 className="text-lg font-semibold text-white">{t('aiDashboard.title')}</h1>
+              <h1 className="text-lg font-semibold text-white">
+                {t('aiDashboard.cyberOffice', '赛博办公室')}
+              </h1>
               {lastUpdated && (
                 <p className="text-xs text-slate-500">
                   {t('aiDashboard.lastUpdated', { time: lastUpdated.toLocaleTimeString() })}
@@ -156,7 +80,7 @@ const AiDashboardTab: React.FC = () => {
               {t('aiDashboard.autoRefresh')}
             </label>
             <button
-              onClick={loadData}
+              onClick={refresh}
               className="px-3 py-1.5 text-xs text-slate-300 bg-slate-700/50 hover:bg-slate-700 border border-slate-600/50 rounded-lg transition-colors flex items-center gap-1.5"
             >
               <RefreshCw className="w-3.5 h-3.5" />
@@ -172,51 +96,42 @@ const AiDashboardTab: React.FC = () => {
           <div className="animate-spin rounded-full h-8 w-8 border-2 border-slate-600 border-t-indigo-400" />
         </div>
       ) : (
-        <div className="flex-1 flex flex-col overflow-hidden">
+        <>
           {/* Stats Bar */}
-          <div className="flex-shrink-0 px-6 py-4">
+          <div className="flex-shrink-0 px-6 py-3">
             <StatsBar
               onlineClients={onlineClients.length}
               totalAgents={definitions.length}
               enabledAgents={enabledAgents}
-              runningInstances={runningInstances}
-              totalInstances={instances.length}
-              syncBridgeWaiting={syncBridgeStatus.activeWaiting}
+              runningOnlineAgents={trueRunningOnlineCount}
+              executingTasks={executingCount}
               overallSuccessRate={overallStats.rate}
               totalExecutions={overallStats.total}
-              avgDurationMs={overallStats.avgMs}
-              executingTasks={runningExecutions.length}
             />
           </div>
 
-          {/* Resizable Split: Agent Grid + Execution Log */}
-          <div className="flex-1 overflow-hidden px-6 pb-4">
-            <ResizableSplitPane
-              defaultRatio={0.4}
-              topContent={
-                <ModuleAgentGrid
-                  definitions={definitions}
-                  instances={instances}
-                  stats={stats}
-                  onlineClientIds={onlineClientIds}
-                  selectedAgent={selectedAgent}
-                  onSelectAgent={setSelectedAgent}
-                  onToggleAgent={handleToggle}
-                  runningExecutions={runningExecutions}
-                />
-              }
-              bottomContent={
-                <ExecutionLogZone
-                  definitions={definitions}
-                  selectedAgent={selectedAgent}
-                  onAgentFilterChange={setSelectedAgent}
-                  refreshTrigger={logRefreshTrigger}
-                />
-              }
+          {/* Agent 工位网格（滚动区域） */}
+          <div className="flex-1 overflow-auto px-6 pb-4">
+            <ModuleAgentGrid
+              definitions={definitions}
+              instances={instances}
+              stats={stats}
+              onlineClientIds={onlineClientIds}
+              onViewLogs={setLogDrawerAgent}
+              onToggleAgent={handleToggle}
+              runningExecutions={runningExecutions}
             />
           </div>
-        </div>
+        </>
       )}
+
+      {/* 日志抽屉 */}
+      <AgentLogDrawer
+        agentCode={logDrawerAgent}
+        agentName={drawerAgentName}
+        onClose={() => setLogDrawerAgent(null)}
+        refreshTrigger={logRefreshTrigger}
+      />
     </div>
   );
 };

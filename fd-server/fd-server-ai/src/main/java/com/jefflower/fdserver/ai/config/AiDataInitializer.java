@@ -200,7 +200,7 @@ public class AiDataInitializer implements CommandLineRunner {
 
         ensureBuiltInAgent(
                 "ticket-reply",
-                "工单回复",
+                "故障工单回复",
                 "通过 NotebookLM Python 生成工单回复",
                 null,
                 null,

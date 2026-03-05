@@ -62,8 +62,10 @@ export const UniversalAgentConsumer: React.FC = () => {
   const rrIndexRef = useRef(0);
 
   // 筛选需要通用消费者处理的 agent 列表
+  // 只有 enabled=true 且 autoStart=true 的 Agent 才自动消费任务
   const genericAgents = definitions.filter(
-    (d: { enabled: boolean; code: string }) => d.enabled && !DEDICATED_CONSUMER_CODES.has(d.code),
+    (d: { enabled: boolean; code: string; autoStart?: boolean }) =>
+      d.enabled && d.autoStart === true && !DEDICATED_CONSUMER_CODES.has(d.code),
   );
 
   // ── 执行单个任务 ──

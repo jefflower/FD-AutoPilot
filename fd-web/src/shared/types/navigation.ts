@@ -23,7 +23,6 @@ export type TabType =
     | 'workflow-agents'
     | 'workflow-ai'
     | 'workflow-n8n'
-    | 'agent-automation'
     | 'agent-execution'
     | 'audit-center'
     | 'knowledge-base'

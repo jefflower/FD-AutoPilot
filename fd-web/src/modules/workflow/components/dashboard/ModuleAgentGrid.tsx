@@ -1,18 +1,18 @@
 import React, { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { AgentDefinition, AgentInstance, AgentStats, AgentExecutionLog } from '../../../../shared/types/server';
-import AgentStatusCard from './AgentStatusCard';
+import DeskCard from './DeskCard';
 
 interface ModuleAgentGridProps {
   definitions: AgentDefinition[];
   instances: AgentInstance[];
   stats: AgentStats[];
   onlineClientIds: Set<string>;
-  selectedAgent: string | null;
-  onSelectAgent: (code: string) => void;
+  onViewLogs: (agentCode: string) => void;
   onToggleAgent: (id: number) => void;
   /** 当前正在执行中的任务列表 */
   runningExecutions?: AgentExecutionLog[];
+  compact?: boolean;
 }
 
 type ModuleCode = 'all' | 'ticket' | 'admin' | 'workflow' | 'ungrouped';
@@ -24,10 +24,10 @@ const ModuleAgentGrid: React.FC<ModuleAgentGridProps> = ({
   instances,
   stats,
   onlineClientIds,
-  selectedAgent,
-  onSelectAgent,
+  onViewLogs,
   onToggleAgent,
   runningExecutions = [],
+  compact = false,
 }) => {
   const { t } = useTranslation('common');
   const [activeModule, setActiveModule] = useState<ModuleCode>('all');
@@ -55,6 +55,18 @@ const ModuleAgentGrid: React.FC<ModuleAgentGridProps> = ({
     return map;
   }, [runningExecutions]);
 
+  // 获取每个 Agent 当前的执行记录（用于显示耗时）
+  const currentExecutionMap = useMemo(() => {
+    const map = new Map<string, AgentExecutionLog>();
+    runningExecutions.forEach(exec => {
+      // 取最近一条
+      if (!map.has(exec.agentCode)) {
+        map.set(exec.agentCode, exec);
+      }
+    });
+    return map;
+  }, [runningExecutions]);
+
   return (
     <div className="h-full flex flex-col overflow-hidden">
       {/* Module filter tabs */}
@@ -76,18 +88,19 @@ const ModuleAgentGrid: React.FC<ModuleAgentGridProps> = ({
 
       {/* Agent grid */}
       <div className="flex-1 overflow-y-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
           {filteredDefinitions.map(def => (
-            <AgentStatusCard
+            <DeskCard
               key={def.id}
               definition={def}
               instances={getInstancesForAgent(def.code)}
               onlineClientIds={onlineClientIds}
               stats={getStatsForAgent(def.code)}
-              isSelected={selectedAgent === def.code}
-              onSelect={onSelectAgent}
-              onToggle={onToggleAgent}
               executingCount={executingCountMap.get(def.code) || 0}
+              currentExecution={currentExecutionMap.get(def.code)}
+              onToggle={onToggleAgent}
+              onClick={() => onViewLogs(def.code)}
+              compact={compact}
             />
           ))}
         </div>

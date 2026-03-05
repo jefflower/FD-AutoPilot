@@ -42,7 +42,6 @@ export const navigationModules: NavModule[] = [
     color: 'indigo',
     pages: [
       { tab: 'server-tickets', labelKey: 'nav.server', icon: Server },
-      { tab: 'agent-automation', labelKey: 'nav.agentAutomation', icon: Bot },
       { tab: 'audit-center', labelKey: 'nav.auditCenter', icon: ClipboardCheck },
       { tab: 'approved', labelKey: 'nav.push', icon: Send },
       { tab: 'knowledge', labelKey: 'nav.knowledgeManage', icon: BookOpen },
@@ -97,7 +96,7 @@ export const navigationModules: NavModule[] = [
     color: 'purple',
     requireAdmin: true,
     pages: [
-      { tab: 'ai-dashboard', labelKey: 'nav.aiDashboard', icon: Activity },
+      { tab: 'ai-dashboard', labelKey: 'nav.cyberOffice', icon: Activity },
       { tab: 'workflow-capabilities', labelKey: 'nav.workflowCapabilities', icon: Cpu },
       { tab: 'workflow-agents', labelKey: 'nav.workflowAgents', icon: Bot },
       { tab: 'workflow-ai', labelKey: 'nav.workflowAi', icon: Sparkles },
