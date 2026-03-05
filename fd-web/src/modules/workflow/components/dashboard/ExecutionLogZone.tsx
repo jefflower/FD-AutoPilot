@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ChevronLeft, ChevronRight, AlertTriangle, Maximize2, X, Trash2 } from 'lucide-react';
 import type { AgentDefinition, AgentExecutionLog, AgentExecutionStatus } from '../../../../shared/types/server';
-import { agentApi } from '../../../../shared/services/api';
+import { agentApi, getApiBaseUrl, getAuthToken } from '../../../../shared/services/api';
 import { execLogApi, type ExecLogEntry } from '../../../../shared/services/execLogApi';
 import { getOrCreateClientId } from '../../../../shared/context/mq-task/utils';
 import EnhancedLogRow from './EnhancedLogRow';
@@ -194,10 +194,11 @@ const ExecutionLogZone: React.FC<ExecutionLogZoneProps> = ({
         fetchLocalLogs();
       } else {
         // 服务端清理
-        const resp = await fetch(`/api/v1/agents/executions/cleanup?retentionDays=${days}${agentFilter ? `&agentCode=${agentFilter}` : ''}`, {
+        const token = getAuthToken();
+        const resp = await fetch(`${getApiBaseUrl()}/agents/executions/cleanup?retentionDays=${days}${agentFilter ? `&agentCode=${agentFilter}` : ''}`, {
           method: 'DELETE',
           headers: {
-            'Authorization': `Bearer ${localStorage.getItem('auth_token') || ''}`,
+            ...(token ? { 'Authorization': `Bearer ${token}` } : {}),
           },
         });
         if (resp.ok) {
