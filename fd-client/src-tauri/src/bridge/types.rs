@@ -155,6 +155,20 @@ pub struct SkillsResponse {
     pub error: Option<String>,
 }
 
+// ========== Model Detection ==========
+
+#[derive(Deserialize)]
+pub struct ModelsQueryParams {
+    pub cap: String,
+}
+
+#[derive(Serialize)]
+pub struct ModelsResponse {
+    pub models: Vec<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub error: Option<String>,
+}
+
 // ========== NotebookLM CLI Request ==========
 
 #[derive(Deserialize)]

@@ -102,7 +102,7 @@ pub async fn capabilities_detect_handler() -> Json<CapabilitiesResponse> {
 
 // ========== Skill Detection ==========
 
-const SKILL_DETECT_PROMPT: &str = r#"请列出你擅长的技能领域，以纯 JSON 数组返回，格式: [{"name":"技能名","description":"简短描述","command":"示例调用命令"}]。command 字段写一个最简单的示例命令（如 gemini "翻译这段话" 或 claude -p "写一段代码"）。最多列出 10 个核心技能。只返回 JSON 数组，不要任何其他文字、代码块标记或解释。"#;
+const SKILL_DETECT_PROMPT: &str = r#"请列出你的skills，以纯 JSON 数组返回，格式: [{"name":"技能名","description":"简短描述","command":"示例调用命令"}]。command 字段写一个最简单的示例命令（如 gemini "翻译这段话" 或 claude -p "写一段代码"）。最多列出 10 个核心技能。只返回 JSON 数组，不要任何其他文字、代码块标记或解释。"#;
 
 /// Detect skills of a given AI CLI tool by prompting it.
 pub async fn skills_detect_handler(
@@ -192,6 +192,104 @@ pub async fn skills_detect_handler(
             }
             Ok(Err(e)) => Json(SkillsResponse {
                 skills: vec![],
+                error: Some(format!("{} not found or failed to start: {}", cap, e)),
+            }),
+        },
+    }
+}
+
+// ========== Model Detection ==========
+
+const MODEL_DETECT_PROMPT: &str = r#"请列出你当前可以使用的所有 AI 模型名称，以纯 JSON 字符串数组返回，格式: ["model-name-1", "model-name-2"]。只返回 JSON 数组，不要任何其他文字、代码块标记或解释。"#;
+
+/// Detect available models of a given AI CLI tool by prompting it.
+pub async fn models_detect_handler(
+    Query(params): Query<ModelsQueryParams>,
+) -> Json<ModelsResponse> {
+    let cap = params.cap.clone();
+    eprintln!("[fd-bridge] GET /bridge/capabilities/models?cap={}", cap);
+
+    let command = match cap.as_str() {
+        "gemini-cli" => "gemini",
+        "claude-cli" => "claude",
+        _ => {
+            return Json(ModelsResponse {
+                models: vec![],
+                error: Some(format!("unknown capability: {}", cap)),
+            });
+        }
+    };
+
+    let command_owned = command.to_string();
+    let cap_clone = cap.clone();
+    let model_timeout = Duration::from_secs(60);
+
+    let result = timeout(
+        model_timeout,
+        tokio::task::spawn_blocking(move || {
+            match cap_clone.as_str() {
+                // claude-cli: 使用 -p 参数传递 prompt（Claude Code 不接受 stdin 输入）
+                "claude-cli" => {
+                    Command::new(&command_owned)
+                        .arg("-p")
+                        .arg(MODEL_DETECT_PROMPT)
+                        .stdout(Stdio::piped())
+                        .stderr(Stdio::piped())
+                        .output()
+                }
+                // gemini-cli 等: 通过 stdin 传入 prompt
+                _ => {
+                    let mut child = Command::new(&command_owned)
+                        .stdin(Stdio::piped())
+                        .stdout(Stdio::piped())
+                        .stderr(Stdio::piped())
+                        .spawn()?;
+
+                    if let Some(mut stdin) = child.stdin.take() {
+                        stdin.write_all(MODEL_DETECT_PROMPT.as_bytes())?;
+                        // 关闭 stdin 表示输入结束
+                    }
+
+                    child.wait_with_output()
+                }
+            }
+        }),
+    )
+    .await;
+
+    match result {
+        Err(_) => Json(ModelsResponse {
+            models: vec![],
+            error: Some(format!("{} model detection timed out after 60s", cap)),
+        }),
+        Ok(join_result) => match join_result {
+            Err(e) => Json(ModelsResponse {
+                models: vec![],
+                error: Some(format!("task join error: {}", e)),
+            }),
+            Ok(Ok(output)) => {
+                let stdout = String::from_utf8_lossy(&output.stdout).trim().to_string();
+
+                // 尝试从输出中提取 JSON 数组（AI 可能包裹在 ```json ... ``` 中）
+                let json_str = extract_json_array(&stdout);
+
+                match serde_json::from_str::<Vec<String>>(&json_str) {
+                    Ok(models) => Json(ModelsResponse {
+                        models,
+                        error: None,
+                    }),
+                    Err(e) => Json(ModelsResponse {
+                        models: vec![],
+                        error: Some(format!(
+                            "failed to parse models JSON: {}. Raw output: {}",
+                            e,
+                            &stdout[..stdout.len().min(500)]
+                        )),
+                    }),
+                }
+            }
+            Ok(Err(e)) => Json(ModelsResponse {
+                models: vec![],
                 error: Some(format!("{} not found or failed to start: {}", cap, e)),
             }),
         },

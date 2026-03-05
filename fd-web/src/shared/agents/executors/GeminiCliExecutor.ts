@@ -1,4 +1,5 @@
-import { tauriInvoke } from '../../../tauri/bridge';
+import { tauriInvoke, detectSkills as bridgeDetectSkills, detectModels as bridgeDetectModels } from '../../../tauri/bridge';
+import type { SkillInfo } from '../../../tauri/bridge';
 import type { AgentExecutor } from './types';
 import type { AgentDefinition, AgentExecuteInput, AgentExecuteResult } from '../../types/server';
 import { parseAgentConfig } from '../schemaUtils';
@@ -25,8 +26,14 @@ export class GeminiCliExecutor implements AgentExecutor {
         return true;
     }
 
-    getAvailableModels(): string[] {
-        return ['gemini-2.5-pro', 'gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.0-flash-lite'];
+    async getAvailableModels(): Promise<string[]> {
+        const result = await bridgeDetectModels('gemini-cli');
+        return result.models;
+    }
+
+    async detectSkills(): Promise<SkillInfo[]> {
+        const result = await bridgeDetectSkills('gemini-cli');
+        return result.skills;
     }
 
     async execute(definition: AgentDefinition, input: AgentExecuteInput): Promise<AgentExecuteResult> {

@@ -1,3 +1,4 @@
+import type { SkillInfo } from '../../../tauri/bridge';
 import type { AgentExecutor } from './types';
 import type { AgentDefinition, AgentExecuteInput, AgentExecuteResult } from '../../types/server';
 
@@ -20,8 +21,12 @@ export class ShadowWindowExecutor implements AgentExecutor {
         return true;
     }
 
-    getAvailableModels(): string[] {
+    async getAvailableModels(): Promise<string[]> {
         return []; // Shadow Window 不需要模型选择
+    }
+
+    async detectSkills(): Promise<SkillInfo[]> {
+        return []; // Shadow Window 不支持 skill 探测
     }
 
     async execute(_definition: AgentDefinition, _input: AgentExecuteInput): Promise<AgentExecuteResult> {

@@ -1,4 +1,5 @@
-import { tauriInvoke } from '../../../tauri/bridge';
+import { tauriInvoke, detectSkills as bridgeDetectSkills, detectModels as bridgeDetectModels } from '../../../tauri/bridge';
+import type { SkillInfo } from '../../../tauri/bridge';
 import type { AgentExecutor } from './types';
 import type { AgentDefinition, AgentExecuteInput, AgentExecuteResult } from '../../types/server';
 import { parseAgentConfig } from '../schemaUtils';
@@ -23,8 +24,14 @@ export class ClaudeCliExecutor implements AgentExecutor {
         return true;
     }
 
-    getAvailableModels(): string[] {
-        return ['claude-sonnet-4-20250514', 'claude-opus-4-20250514', 'claude-haiku-4-20250514'];
+    async getAvailableModels(): Promise<string[]> {
+        const result = await bridgeDetectModels('claude-cli');
+        return result.models;
+    }
+
+    async detectSkills(): Promise<SkillInfo[]> {
+        const result = await bridgeDetectSkills('claude-cli');
+        return result.skills;
     }
 
     async execute(definition: AgentDefinition, input: AgentExecuteInput): Promise<AgentExecuteResult> {

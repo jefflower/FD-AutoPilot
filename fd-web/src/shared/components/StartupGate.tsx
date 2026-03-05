@@ -10,7 +10,7 @@ import { useAgentContext } from '../agents/AgentContext';
  * Skill 检测已在 AgentContext 中完成，本组件仅从 context 读取展示。
  */
 export const StartupGate: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    const { canExecute, startupReady, capabilityStatus, skillMap } = useAgentContext();
+    const { canExecute, startupReady, capabilityStatus, skillMap, modelMap } = useAgentContext();
     const [dismissed, setDismissed] = useState(false);
 
     const handleEnter = useCallback(() => {
@@ -123,6 +123,16 @@ export const StartupGate: React.FC<{ children: React.ReactNode }> = ({ children 
                                             未检测到 Skills
                                         </p>
                                     )}
+                                </div>
+                            )}
+
+                            {/* Model 列表 */}
+                            {modelMap[cap.code] && modelMap[cap.code].length > 0 && (
+                                <div className="mt-1.5 pt-1.5 border-t border-slate-700/20">
+                                    <p className="text-[10px] text-slate-500">
+                                        <span className="text-slate-400">模型:</span>{' '}
+                                        {modelMap[cap.code].join(', ')}
+                                    </p>
                                 </div>
                             )}
                         </div>

@@ -9,7 +9,7 @@ import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react'
 import { useTranslation } from 'react-i18next';
 import { capabilityApi, clientApi } from '../../../shared/services/serverApi';
 import type { CapabilityDefinition, ClientRegistration } from '../../../shared/types/server';
-import { useAgentContext } from '../../../shared/agents';
+import { useAgentContext, type CapSkillState } from '../../../shared/agents';
 import { useToast } from '../../../shared/hooks/useToast';
 import { detectCapabilities, type CapabilityDetectResult } from '../../../tauri/bridge';
 
@@ -71,7 +71,7 @@ const ONLINE_CLIENTS_POLL_INTERVAL = 30_000; // 30 秒
 const WorkflowCapabilitiesTab: React.FC = () => {
     const { t } = useTranslation(['common']);
     const { toast } = useToast();
-    const { definitions: agentDefinitions, reload: reloadAgentContext } = useAgentContext();
+    const { definitions: agentDefinitions, reload: reloadAgentContext, canExecute, capabilityStatus, skillMap, modelMap } = useAgentContext();
 
     const [capabilities, setCapabilities] = useState<CapabilityDefinition[]>([]);
     const [loading, setLoading] = useState(true);
@@ -131,10 +131,23 @@ const WorkflowCapabilitiesTab: React.FC = () => {
         loadCapabilities();
     }, [loadCapabilities]);
 
-    // 挂载时执行一次环境检测
+    // 挂载时执行一次环境检测（仅在有本地执行环境时）
     useEffect(() => {
-        runDetection();
-    }, [runDetection]);
+        if (canExecute) {
+            runDetection();
+        }
+    }, [runDetection, canExecute]);
+
+    // 当 canExecute=true 时，用 AgentContext 的 capabilityStatus 作为检测结果的补充（初始值）
+    useEffect(() => {
+        if (canExecute && capabilityStatus.length > 0 && Object.keys(detectResults).length === 0) {
+            const map: Record<string, CapabilityDetectResult> = {};
+            for (const r of capabilityStatus) {
+                map[r.code] = r;
+            }
+            setDetectResults(map);
+        }
+    }, [canExecute, capabilityStatus]); // eslint-disable-line react-hooks/exhaustive-deps
 
     // 在线客户端：挂载时获取一次 + 每 30 秒轮询
     useEffect(() => {
@@ -209,23 +222,37 @@ const WorkflowCapabilitiesTab: React.FC = () => {
 
     return (
         <div className="flex-1 flex flex-col overflow-hidden">
+            {/* 纯网页端提示条 */}
+            {!canExecute && (
+                <div className="mx-6 mt-4 px-4 py-3 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-start gap-3">
+                    <svg className="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <p className="text-sm text-blue-300/90">
+                        {t('capability.webOnlyBanner', '当前为网页端访问，无本地执行环境。以下为服务端全局配置，实际执行需通过桌面客户端。')}
+                    </p>
+                </div>
+            )}
+
             {/* 页面标题 */}
             <div className="px-6 py-4 border-b border-slate-700/50 flex items-center justify-between">
                 <div>
                     <h2 className="text-lg font-medium text-slate-200">{t('capability.title')}</h2>
                     <p className="text-sm text-slate-500 mt-1">{t('capability.description')}</p>
                 </div>
-                <button
-                    onClick={runDetection}
-                    disabled={detecting}
-                    className={`px-3 py-1.5 text-xs rounded border transition-colors ${
-                        detecting
-                            ? 'border-slate-600 text-slate-500 cursor-wait'
-                            : 'border-slate-600 text-slate-400 hover:text-slate-200 hover:border-slate-500'
-                    }`}
-                >
-                    {detecting ? t('capability.detecting') : t('capability.reDetect')}
-                </button>
+                {canExecute && (
+                    <button
+                        onClick={runDetection}
+                        disabled={detecting}
+                        className={`px-3 py-1.5 text-xs rounded border transition-colors ${
+                            detecting
+                                ? 'border-slate-600 text-slate-500 cursor-wait'
+                                : 'border-slate-600 text-slate-400 hover:text-slate-200 hover:border-slate-500'
+                        }`}
+                    >
+                        {detecting ? t('capability.detecting') : t('capability.reDetect')}
+                    </button>
+                )}
             </div>
 
             {/* 能力卡片列表 */}
@@ -245,8 +272,11 @@ const WorkflowCapabilitiesTab: React.FC = () => {
                                 onlineClientsLoading={onlineClientsLoading}
                                 toggling={toggling === cap.id}
                                 onToggle={() => handleToggle(cap)}
-                                detectResult={detectResults[cap.code]}
-                                detecting={detecting}
+                                detectResult={canExecute ? detectResults[cap.code] : undefined}
+                                detecting={canExecute ? detecting : false}
+                                canExecute={canExecute}
+                                skillState={canExecute ? skillMap[cap.code] : undefined}
+                                models={canExecute ? modelMap[cap.code] : undefined}
                             />
                         ))}
                     </div>
@@ -277,7 +307,10 @@ const CapabilityCard: React.FC<{
     onToggle: () => void;
     detectResult?: CapabilityDetectResult;
     detecting: boolean;
-}> = ({ capability, linkedAgentCount, onlineClientCount, onlineClientsLoading, toggling, onToggle, detectResult, detecting }) => {
+    canExecute: boolean;
+    skillState?: CapSkillState;
+    models?: string[];
+}> = ({ capability, linkedAgentCount, onlineClientCount, onlineClientsLoading, toggling, onToggle, detectResult, detecting, canExecute, skillState, models }) => {
     const { t } = useTranslation(['common']);
     const providerInfo = PROVIDER_TYPE_LABELS[capability.providerType] || {
         label: capability.providerType,
@@ -285,8 +318,10 @@ const CapabilityCard: React.FC<{
     };
     const envLabel = ENV_LABELS[capability.executionEnv] || capability.executionEnv;
 
-    // 渲染环境检测徽章
+    // 渲染环境检测徽章（仅在有本地执行环境时显示）
     const renderDetectBadge = () => {
+        if (!canExecute) return null;
+
         if (detecting) {
             return (
                 <span className="px-2 py-0.5 rounded bg-slate-700/50 text-slate-500 inline-flex items-center gap-1">
@@ -303,7 +338,7 @@ const CapabilityCard: React.FC<{
             return (
                 <span className="px-2 py-0.5 rounded bg-green-500/20 text-green-400 inline-flex items-center gap-1">
                     <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
-                    {detectResult.version ? `v${detectResult.version}` : t('capability.envAvailable')}
+                    {t('capability.localAvailable', '本地可用')}{detectResult.version ? ` v${detectResult.version}` : ''}
                 </span>
             );
         }
@@ -313,7 +348,7 @@ const CapabilityCard: React.FC<{
                 title={detectResult.error || capability.installGuide || undefined}
             >
                 <span className="w-1.5 h-1.5 rounded-full bg-red-400" />
-                {t('capability.notInstalled')}
+                {t('capability.localUnavailable', '本地不可用')}
             </span>
         );
     };
@@ -360,11 +395,46 @@ const CapabilityCard: React.FC<{
                 <p className="text-sm text-slate-400 mb-3 line-clamp-2">{capability.description}</p>
             )}
 
-            {/* 环境检测不可用时的安装提示 */}
-            {detectResult && !detectResult.available && capability.installGuide && (
+            {/* 环境检测不可用时的安装提示（仅在有本地执行环境时显示） */}
+            {canExecute && detectResult && !detectResult.available && capability.installGuide && (
                 <p className="text-xs text-amber-400/80 mb-3 line-clamp-2">
                     {capability.installGuide}
                 </p>
+            )}
+
+            {/* AI Skills */}
+            {canExecute && skillState && !skillState.loading && skillState.skills.length > 0 && (
+                <div className="mt-2 mb-2">
+                    <p className="text-[10px] text-slate-500 mb-1">AI Skills</p>
+                    <div className="flex flex-wrap gap-1">
+                        {skillState.skills.map((skill, i) => (
+                            <span
+                                key={i}
+                                className="px-1.5 py-0.5 text-[10px] rounded bg-blue-500/10 border border-blue-500/20 text-blue-400"
+                                title={`${skill.description}${skill.command ? '\n命令: ' + skill.command : ''}`}
+                            >
+                                {skill.name}
+                            </span>
+                        ))}
+                    </div>
+                </div>
+            )}
+
+            {/* 可用模型 */}
+            {canExecute && models && models.length > 0 && (
+                <div className="mt-2 mb-2">
+                    <p className="text-[10px] text-slate-500 mb-1">可用模型</p>
+                    <div className="flex flex-wrap gap-1">
+                        {models.map((model, i) => (
+                            <span
+                                key={i}
+                                className="px-1.5 py-0.5 text-[10px] rounded bg-purple-500/10 border border-purple-500/20 text-purple-400 font-mono"
+                            >
+                                {model}
+                            </span>
+                        ))}
+                    </div>
+                </div>
             )}
 
             {/* 底部标签 */}
@@ -409,6 +479,7 @@ const CapabilityCard: React.FC<{
                         ? 'bg-green-500/20 text-green-400'
                         : 'bg-red-500/20 text-red-400'
                 }`}>
+                    {!canExecute && `${t('capability.globalConfig', '全局')} · `}
                     {capability.enabled ? t('capability.enabled') : t('capability.disabled')}
                 </span>
             </div>

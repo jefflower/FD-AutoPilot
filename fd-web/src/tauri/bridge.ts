@@ -181,3 +181,27 @@ export async function detectSkills(capCode: string): Promise<SkillsDetectResult>
     return { skills: [], error: err.message || String(err) };
   }
 }
+
+// ============ Model 探测 ============
+
+export interface ModelsDetectResult {
+  models: string[];
+  error: string | null;
+}
+
+/**
+ * 调用 fd-bridge 的 model 探测端点，通过 AI 提示词获取指定 capability 的可用模型列表。
+ */
+export async function detectModels(capCode: string): Promise<ModelsDetectResult> {
+  try {
+    const resp = await fetch(
+      `${getBridgeBaseUrl()}/bridge/capabilities/models?cap=${encodeURIComponent(capCode)}`,
+      { signal: AbortSignal.timeout(60000) },
+    );
+    if (!resp.ok) return { models: [], error: `HTTP ${resp.status}` };
+    const data = await resp.json();
+    return { models: data.models || [], error: data.error || null };
+  } catch (err: any) {
+    return { models: [], error: err.message || String(err) };
+  }
+}

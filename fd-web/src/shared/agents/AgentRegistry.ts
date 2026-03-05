@@ -185,6 +185,10 @@ export class AgentRegistry {
         return Array.from(this.definitions.values());
     }
 
+    getAllExecutors(): AgentExecutor[] {
+        return Array.from(this.executors.values());
+    }
+
     getBindings(): AgentBindings {
         return { ...this.bindings };
     }

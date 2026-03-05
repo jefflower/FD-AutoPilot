@@ -5,7 +5,7 @@ import { NotebookLmPyExecutor } from './executors/NotebookLmPyExecutor';
 import { ClaudeCliExecutor } from './executors/ClaudeCliExecutor';
 import { ShadowWindowExecutor } from './executors/ShadowWindowExecutor';
 import { registerClient, startHeartbeat, dispatchAgentChanged } from '../services/clientRegistration';
-import { hasExecutionCapability, detectCapabilities, detectSkills } from '../../tauri/bridge';
+import { hasExecutionCapability, detectCapabilities } from '../../tauri/bridge';
 import type { CapabilityDetectResult, SkillInfo } from '../../tauri/bridge';
 import { useToast } from '../hooks/useToast';
 import type { AgentDefinition, AgentBindings, CapabilityDefinition, ClientSkillItem } from '../types/server';
@@ -28,6 +28,8 @@ interface AgentContextValue {
     capabilityStatus: CapabilityDetectResult[];
     /** AI Skill 探测结果，按 capability code 分组 */
     skillMap: Record<string, CapSkillState>;
+    /** AI 模型探测结果，按 capability code 分组 */
+    modelMap: Record<string, string[]>;
     /** 启动检测是否完成（canExecute 检测 + 能力检测 + skill 探测全部完成） */
     startupReady: boolean;
     onlineClients: number;
@@ -46,6 +48,7 @@ const AgentCtx = createContext<AgentContextValue>({
     capabilities: [],
     capabilityStatus: [],
     skillMap: {},
+    modelMap: {},
     startupReady: false,
     onlineClients: 0,
     reload: async () => {},
@@ -64,6 +67,7 @@ export const AgentProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const [capabilities, setCapabilities] = useState<CapabilityDefinition[]>([]);
     const [capabilityStatus, setCapabilityStatus] = useState<CapabilityDetectResult[]>([]);
     const [skillMap, setSkillMap] = useState<Record<string, CapSkillState>>({});
+    const [modelMap, setModelMap] = useState<Record<string, string[]>>({});
     const [startupReady, setStartupReady] = useState(false);
     const [onlineClients, setOnlineClients] = useState(0);
     const { toast } = useToast();
@@ -139,34 +143,47 @@ export const AgentProvider: React.FC<{ children: React.ReactNode }> = ({ childre
                     console.warn('[AgentProvider] Capability detection failed:', err);
                 }
 
-                // 5. 对可用的 AI capability 探测 skill 列表
-                const aiCaps = detectedStatus.filter(
-                    c => c.available && (c.code === 'gemini-cli' || c.code === 'claude-cli'),
-                );
-                if (aiCaps.length > 0) {
+                // 5. 对所有注册的 executor 探测 skill 列表
+                const executors = registry.getAllExecutors();
+                const capsWithSkills = executors.filter(e => e.supportedCapability);
+                if (capsWithSkills.length > 0) {
                     // 初始化 loading 状态
                     const initial: Record<string, CapSkillState> = {};
-                    aiCaps.forEach(c => {
-                        initial[c.code] = { loading: true, skills: [], error: null };
+                    capsWithSkills.forEach(e => {
+                        initial[e.supportedCapability!] = { loading: true, skills: [], error: null };
                     });
                     setSkillMap(initial);
 
-                    // 并行探测所有 AI capability 的 skills
+                    // 并行调用每个 executor 的 detectSkills() 和 getAvailableModels()
                     const skillResults: Record<string, CapSkillState> = {};
-                    await Promise.allSettled(
-                        aiCaps.map(async c => {
+                    await Promise.allSettled([
+                        // Skill 探测
+                        ...capsWithSkills.map(async executor => {
+                            const capCode = executor.supportedCapability!;
                             try {
-                                const result = await detectSkills(c.code);
-                                const state: CapSkillState = { loading: false, skills: result.skills, error: result.error };
-                                skillResults[c.code] = state;
-                                setSkillMap(prev => ({ ...prev, [c.code]: state }));
+                                const skills = await executor.detectSkills();
+                                const state: CapSkillState = { loading: false, skills, error: null };
+                                skillResults[capCode] = state;
+                                setSkillMap(prev => ({ ...prev, [capCode]: state }));
                             } catch (err: any) {
                                 const state: CapSkillState = { loading: false, skills: [], error: err.message };
-                                skillResults[c.code] = state;
-                                setSkillMap(prev => ({ ...prev, [c.code]: state }));
+                                skillResults[capCode] = state;
+                                setSkillMap(prev => ({ ...prev, [capCode]: state }));
                             }
                         }),
-                    );
+                        // Model 探测（与 skill 探测并行）
+                        ...capsWithSkills.map(async executor => {
+                            const capCode = executor.supportedCapability!;
+                            try {
+                                const models = await executor.getAvailableModels();
+                                if (models.length > 0) {
+                                    setModelMap(prev => ({ ...prev, [capCode]: models }));
+                                }
+                            } catch (err) {
+                                console.warn(`[AgentProvider] Model detection failed for ${capCode}:`, err);
+                            }
+                        }),
+                    ]);
                     console.log('[AgentProvider] Skill detection:', skillResults);
                 }
             }
@@ -235,7 +252,7 @@ export const AgentProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     return (
         <AgentCtx.Provider value={{
             ready, canExecute, definitions, bindings, capabilities,
-            capabilityStatus, skillMap, startupReady, onlineClients, reload,
+            capabilityStatus, skillMap, modelMap, startupReady, onlineClients, reload,
             manualAgentOverrides, toggleManualAgent,
         }}>
             {children}

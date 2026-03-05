@@ -1,4 +1,5 @@
 import { tauriInvoke } from '../../../tauri/bridge';
+import type { SkillInfo } from '../../../tauri/bridge';
 import type { AgentExecutor } from './types';
 import type { AgentDefinition, AgentExecuteInput, AgentExecuteResult } from '../../types/server';
 import { parseAgentConfig } from '../schemaUtils';
@@ -19,8 +20,12 @@ export class NotebookLmPyExecutor implements AgentExecutor {
         return true;
     }
 
-    getAvailableModels(): string[] {
+    async getAvailableModels(): Promise<string[]> {
         return []; // NotebookLM 不需要模型选择
+    }
+
+    async detectSkills(): Promise<SkillInfo[]> {
+        return []; // NotebookLM 不支持 skill 探测
     }
 
     async execute(definition: AgentDefinition, input: AgentExecuteInput): Promise<AgentExecuteResult> {
