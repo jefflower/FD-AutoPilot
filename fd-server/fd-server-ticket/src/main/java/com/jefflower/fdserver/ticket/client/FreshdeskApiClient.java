@@ -181,7 +181,7 @@ public class FreshdeskApiClient {
      */
     public Map<String, Object> fetchSingleTicket(String ticketId) {
         String domain = getDomain();
-        String url = String.format("https://%s/api/v2/tickets/%s?include=description",
+        String url = String.format("https://%s/api/v2/tickets/%s",
                 domain, ticketId);
 
         HttpEntity<Void> authEntity = buildAuthEntity();
