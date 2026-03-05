@@ -210,7 +210,6 @@ public class AiDataInitializer implements CommandLineRunner {
                 null,
                 "{\"notebookId\":\"7662c1de-8bba-4d54-b834-e38161f942f4\"}",
                 "根据下面的工单内容，使用用户工单的语言做出回复及回复的中文翻译。\n\n"
-                        + "审核备注（如有驳回意见请据此调整回复）：\n{{lastAuditRemark}}\n\n"
                         + "严格输出要求：\n"
                         + "- 直接输出纯 JSON 数组，第一个元素为原文回复，第二个元素为中文翻译\n"
                         + "- 回复内容要精简专业\n"
@@ -218,7 +217,11 @@ public class AiDataInitializer implements CommandLineRunner {
                         + "- 禁止在 JSON 前后添加任何文字说明\n"
                         + "- 输出必须以 [ 开头，以 ] 结尾\n\n"
                         + "正确示例：[\"Hello, thanks for contacting us.\",\"你好，感谢联系我们。\"]\n\n"
-                        + "工单内容：\n{{ticketContent}}",
+                        + "工单内容：\n{{ticketContent}}"
+                        + "{{#if lastAuditRemark}}\n\n"
+                        + "【审核驳回意见】：\n{{lastAuditRemark}}\n"
+                        + "请务必根据以上审核意见调整你的回复，避免重复之前的问题。"
+                        + "{{/if}}",
                 1,
                 REPLY_INPUT_SCHEMA,
                 REPLY_OUTPUT_SCHEMA,
@@ -294,7 +297,6 @@ public class AiDataInitializer implements CommandLineRunner {
                 null, null,
                 null, // agentConfig（notebookId 需要后续在管理后台配置）
                 "根据下面的物流查询工单内容，使用用户工单的语言做出回复及回复的中文翻译。\n\n"
-                        + "审核备注（如有驳回意见请据此调整回复）：\n{{lastAuditRemark}}\n\n"
                         + "回复要点：\n"
                         + "- 确认收到物流查询请求\n"
                         + "- 提供可能的物流进度说明\n"
@@ -307,7 +309,11 @@ public class AiDataInitializer implements CommandLineRunner {
                         + "- 禁止在 JSON 前后添加任何文字说明\n"
                         + "- 输出必须以 [ 开头，以 ] 结尾\n\n"
                         + "正确示例：[\"Hello, thanks for contacting us.\",\"你好，感谢联系我们。\"]\n\n"
-                        + "工单内容：\n{{ticketContent}}",
+                        + "工单内容：\n{{ticketContent}}"
+                        + "{{#if lastAuditRemark}}\n\n"
+                        + "【审核驳回意见】：\n{{lastAuditRemark}}\n"
+                        + "请务必根据以上审核意见调整你的回复，避免重复之前的问题。"
+                        + "{{/if}}",
                 2,
                 REPLY_INPUT_SCHEMA,
                 REPLY_OUTPUT_SCHEMA,

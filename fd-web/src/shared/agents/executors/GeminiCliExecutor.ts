@@ -1,7 +1,7 @@
 import { tauriInvoke } from '../../../tauri/bridge';
 import type { AgentExecutor } from './types';
 import type { AgentDefinition, AgentExecuteInput, AgentExecuteResult } from '../../types/server';
-import { parseAgentConfig, resolveTemplate } from '../schemaUtils';
+import { parseAgentConfig } from '../schemaUtils';
 import { extractJsonObject } from '../helpers/translationHelpers';
 
 /** CLI 执行器内置默认值 */
@@ -15,13 +15,7 @@ const CLI_DEFAULTS = {
  * Gemini CLI 执行器
  *
  * 通过 Tauri invoke 调用本地 Gemini CLI 工具。
- * 完全业务无关：从 systemPrompt 模板 + input.data 自动生成 prompt。
- *
- * 模板变量规则：
- * - input.data 中的每个字段自动成为模板变量
- * - 对象类型 → JSON.stringify（如 {{ticket}}）
- * - 原始类型 → String（如 {{targetLang}}）
- * - systemPrompt 中用 {{fieldName}} 引用
+ * 提示词由服务端统一构造（resolvedPrompt），客户端只负责透传给 CLI 执行。
  */
 export class GeminiCliExecutor implements AgentExecutor {
     readonly providerType = 'GEMINI_CLI' as const;
@@ -57,13 +51,24 @@ export class GeminiCliExecutor implements AgentExecutor {
                 throw new Error('CLI Agent 缺少 invokeCommand 或 cliCommand 配置');
             }
 
-            // systemPrompt 优先级：mergedConfig > definition 独立字段 > agentConfig
-            const effectiveDefinition = mergedParams.systemPrompt
-                ? { ...definition, systemPrompt: mergedParams.systemPrompt }
-                : definition;
+            // 服务端已解析的最终提示词
+            const prompt = config.resolvedPrompt;
+            if (!prompt) {
+                throw new Error(`Agent "${definition.code}" 缺少 resolvedPrompt，请检查服务端是否正确下发`);
+            }
 
-            const cliData = this.buildCliParams(effectiveDefinition, config, input.data || {});
-            const result = await tauriInvoke(invokeCommand, cliData);
+            const models = Array.isArray(config.models)
+                ? config.models
+                : (config.model ? [config.model] : []);
+
+            console.log(`[GeminiCliExecutor] ${invokeCommand}: agentCode=${definition.code}, prompt length=${prompt.length}, models=[${models.join(', ')}]`);
+
+            const params: Record<string, any> = { prompt, agentCode: definition.code };
+            if (models.length > 0) {
+                params.models = models;
+            }
+
+            const result = await tauriInvoke(invokeCommand, params);
             return this.parseCliOutput(result, startTime);
         } catch (err: any) {
             return {
@@ -73,42 +78,6 @@ export class GeminiCliExecutor implements AgentExecutor {
                 error: err?.message || String(err),
             };
         }
-    }
-
-    /**
-     * 构建 CLI 参数：{ prompt, models, agentCode }
-     *
-     * 通用逻辑：自动从 input.data 的字段名生成模板变量，
-     * systemPrompt 中用 {{fieldName}} 引用即可。
-     */
-    private buildCliParams(definition: AgentDefinition, config: Record<string, any>, data: any): Record<string, any> {
-        const systemPrompt = definition.systemPrompt || config.systemPrompt || '';
-
-        // 通用模板变量：input.data 字段名 → 模板变量名，业务无关
-        const templateVars: Record<string, string> = {};
-        for (const [key, value] of Object.entries(data)) {
-            if (value === null || value === undefined) {
-                templateVars[key] = '';
-            } else if (typeof value === 'object') {
-                templateVars[key] = JSON.stringify(value, null, 2);
-            } else {
-                templateVars[key] = String(value);
-            }
-        }
-
-        const resolvedPrompt = resolveTemplate(systemPrompt, templateVars);
-
-        const models = Array.isArray(config.models)
-            ? config.models
-            : (config.model ? [config.model] : []);
-
-        console.log(`[GeminiCliExecutor] ${config.invokeCommand}: agentCode=${definition.code}, prompt length=${resolvedPrompt.length}, models=[${models.join(', ')}], vars=[${Object.keys(templateVars).join(', ')}]`);
-
-        const params: Record<string, any> = { prompt: resolvedPrompt, agentCode: definition.code };
-        if (models.length > 0) {
-            params.models = models;
-        }
-        return params;
     }
 
     /** 解析 CLI 输出为结构化结果 */

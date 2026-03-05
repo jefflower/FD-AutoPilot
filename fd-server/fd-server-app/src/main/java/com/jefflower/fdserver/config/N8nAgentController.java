@@ -7,6 +7,7 @@ import com.jefflower.fdserver.ai.service.AgentDefinitionService;
 import com.jefflower.fdserver.ai.service.AgentExecutionService;
 import com.jefflower.fdserver.ai.service.CapabilityDefinitionService;
 import com.jefflower.fdserver.ai.service.CapabilityRouterService;
+import com.jefflower.fdserver.ai.service.PromptTemplateResolver;
 import com.jefflower.fdserver.ai.service.SyncAgentExecutionService;
 import com.jefflower.fdserver.auth.security.RequiresPermission;
 import com.jefflower.fdserver.common.dto.ApiResponse;
@@ -49,6 +50,7 @@ public class N8nAgentController {
     private final CapabilityRouterService capabilityRouter;
     private final CapabilityDefinitionService capabilityDefinitionService;
     private final AgentDefinitionService agentDefinitionService;
+    private final PromptTemplateResolver promptTemplateResolver;
     private final ObjectMapper objectMapper;
 
     private static final long DEFAULT_TIMEOUT_MS = 600_000L; // 10 分钟
@@ -237,7 +239,7 @@ public class N8nAgentController {
 
     /**
      * 构建包含实际提示词的 inputSnapshot。
-     * 查找 AgentDefinition.systemPrompt，用 input 数据做模板替换，
+     * 查找 AgentDefinition.systemPrompt，用共享 PromptTemplateResolver 做模板替换，
      * 让执行日志能看到发给 AI 的实际 prompt。
      */
     private String buildInputSnapshot(String agentCode, Map<String, Object> input) {
@@ -249,10 +251,7 @@ public class N8nAgentController {
             if (agentDef != null && agentDef.getSystemPrompt() != null && !agentDef.getSystemPrompt().isBlank()) {
                 String systemPrompt = agentDef.getSystemPrompt();
                 snapshot.put("systemPrompt", systemPrompt);
-
-                // 模板替换：{{fieldName}} → input 中对应字段值
-                String resolvedPrompt = resolvePromptTemplate(systemPrompt, input);
-                snapshot.put("resolvedPrompt", resolvedPrompt);
+                snapshot.put("resolvedPrompt", promptTemplateResolver.resolve(systemPrompt, input));
             }
         } catch (Exception e) {
             log.warn("[N8nAgentController] 构建 inputSnapshot 时查找 Agent 定义失败: {}", e.getMessage());
@@ -264,35 +263,6 @@ public class N8nAgentController {
             log.warn("[N8nAgentController] 序列化 inputSnapshot 失败: {}", e.getMessage());
             return snapshot.toString();
         }
-    }
-
-    /**
-     * 简单模板替换：将 {{key}} 替换为 input 中对应字段的值。
-     * 对象类型序列化为 JSON，原始类型直接转 String。
-     * 与前端 resolveTemplate() 逻辑对齐。
-     */
-    private String resolvePromptTemplate(String template, Map<String, Object> variables) {
-        String result = template;
-        for (Map.Entry<String, Object> entry : variables.entrySet()) {
-            String placeholder = "{{" + entry.getKey() + "}}";
-            if (!result.contains(placeholder)) continue;
-
-            String value;
-            Object raw = entry.getValue();
-            if (raw == null) {
-                value = "";
-            } else if (raw instanceof String) {
-                value = (String) raw;
-            } else {
-                try {
-                    value = objectMapper.writeValueAsString(raw);
-                } catch (JsonProcessingException e) {
-                    value = raw.toString();
-                }
-            }
-            result = result.replace(placeholder, value);
-        }
-        return result;
     }
 
     @Operation(summary = "路由统计",

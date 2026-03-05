@@ -42,6 +42,7 @@ public class SyncAgentExecutionService {
     private final AgentExecutionEnvResolver envResolver;
     private final AgentConfigMerger agentConfigMerger;
     private final CircuitBreakerService circuitBreakerService;
+    private final PromptTemplateResolver promptTemplateResolver;
     private final ObjectMapper objectMapper;
 
     /** 最大泄漏 Future 存活时间，默认 15 分钟，可通过 sync-bridge.max-future-age-ms 配置 */
@@ -65,11 +66,13 @@ public class SyncAgentExecutionService {
                                      AgentExecutionEnvResolver envResolver,
                                      AgentConfigMerger agentConfigMerger,
                                      CircuitBreakerService circuitBreakerService,
+                                     PromptTemplateResolver promptTemplateResolver,
                                      ObjectMapper objectMapper) {
         this.taskDistributionService = taskDistributionService;
         this.envResolver = envResolver;
         this.agentConfigMerger = agentConfigMerger;
         this.circuitBreakerService = circuitBreakerService;
+        this.promptTemplateResolver = promptTemplateResolver;
         this.objectMapper = objectMapper;
     }
 
@@ -95,8 +98,8 @@ public class SyncAgentExecutionService {
         // 三级配置合并：definition.agentConfig < instance.localConfig < runtimeParams(input)
         Map<String, Object> mergedConfig = agentConfigMerger.merge(agentDef, onlineInstance, null);
 
-        // 3. 构建 payload JSON
-        String payload = buildPayload(agentCode, input, mergedConfig);
+        // 3. 构建 payload JSON（含服务端解析的 resolvedPrompt）
+        String payload = buildPayload(agentCode, input, mergedConfig, agentDef);
 
         // 4. 创建 TaskInstance
         String taskType = "agent." + agentCode;
@@ -153,8 +156,8 @@ public class SyncAgentExecutionService {
         // 三级配置合并：definition.agentConfig < instance.localConfig < runtimeParams(input)
         Map<String, Object> mergedConfig = agentConfigMerger.merge(agentDef, agentInstance, null);
 
-        // 构建 payload JSON
-        String payload = buildPayload(agentCode, input, mergedConfig);
+        // 构建 payload JSON（含服务端解析的 resolvedPrompt）
+        String payload = buildPayload(agentCode, input, mergedConfig, agentDef);
 
         // 创建 TaskInstance（不锁定特定客户端，任何具备所需 Capability 的在线客户端均可 claim）
         String taskType = "agent." + agentCode;
@@ -289,8 +292,12 @@ public class SyncAgentExecutionService {
 
     /**
      * 构建 payload JSON。
+     * <p>
+     * 在服务端完成提示词模板解析（{{key}} 变量替换 + {{#if key}} 条件块），
+     * 将最终的 resolvedPrompt 放入 payload，客户端 Executor 直接使用。
      */
-    private String buildPayload(String agentCode, Map<String, Object> input, Map<String, Object> mergedConfig) {
+    private String buildPayload(String agentCode, Map<String, Object> input,
+                                Map<String, Object> mergedConfig, AgentDefinition agentDef) {
         try {
             Map<String, Object> payloadMap = new HashMap<>();
             payloadMap.put("agentCode", agentCode);
@@ -299,6 +306,17 @@ public class SyncAgentExecutionService {
             if (!mergedConfig.isEmpty()) {
                 payloadMap.put("mergedConfig", mergedConfig);
             }
+
+            // 服务端统一解析提示词模板
+            String systemPrompt = mergedConfig.containsKey("systemPrompt")
+                    ? (String) mergedConfig.get("systemPrompt")
+                    : (agentDef != null ? agentDef.getSystemPrompt() : null);
+            if (systemPrompt != null && !systemPrompt.isBlank()) {
+                String resolvedPrompt = promptTemplateResolver.resolve(systemPrompt, input);
+                payloadMap.put("resolvedPrompt", resolvedPrompt);
+                log.debug("[SyncBridge] Resolved prompt for agent={}, length={}", agentCode, resolvedPrompt.length());
+            }
+
             return objectMapper.writeValueAsString(payloadMap);
         } catch (Exception e) {
             throw new BusinessException(ErrorCode.INTERNAL_ERROR,

@@ -86,12 +86,15 @@ export const UniversalAgentConsumer: React.FC = () => {
       );
 
       try {
-        // 1. 解析 payload（SyncBridge payload 结构：{agentCode, agentInput: {...}, syncMode, mergedConfig}）
+        // 1. 解析 payload（SyncBridge payload 结构：{agentCode, agentInput, syncMode, mergedConfig, resolvedPrompt}）
         const rawPayload = task.payload ? JSON.parse(task.payload) : {};
-        // 解包 agentInput：executor 只需要实际输入（prompt, userMessage 等），不需要 SyncBridge 包装
+        // 解包 agentInput：executor 只需要实际输入，不需要 SyncBridge 包装
         const executorInput = rawPayload.agentInput || rawPayload;
-        // 提取服务端三级合并配置（definition + instance + runtime），传递给 executor 作为 params
-        const mergedConfig: Record<string, any> | undefined = rawPayload.mergedConfig;
+        // 提取服务端三级合并配置 + 服务端已解析的 resolvedPrompt
+        const mergedConfig: Record<string, any> = rawPayload.mergedConfig || {};
+        if (rawPayload.resolvedPrompt) {
+          mergedConfig.resolvedPrompt = rawPayload.resolvedPrompt;
+        }
 
         // 2. 通过 AgentRegistry 解析 executor
         const registry = AgentRegistry.getInstance();

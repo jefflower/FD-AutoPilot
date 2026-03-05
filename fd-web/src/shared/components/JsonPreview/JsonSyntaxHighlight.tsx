@@ -217,7 +217,7 @@ const JsonSyntaxHighlight: React.FC<JsonSyntaxHighlightProps> = ({ json, searchT
   }, [tokenLines.length]);
 
   return (
-    <div className="font-mono text-xs leading-5 whitespace-pre">
+    <div className="font-mono text-xs leading-5 whitespace-pre-wrap break-words">
       {tokenLines.map((line, lineIdx) => (
         <div key={lineIdx} className="flex hover:bg-slate-800/50">
           {/* Line number */}
@@ -228,7 +228,7 @@ const JsonSyntaxHighlight: React.FC<JsonSyntaxHighlightProps> = ({ json, searchT
             {lineIdx + 1}
           </span>
           {/* Line content */}
-          <span className="flex-1 min-w-0">
+          <span className="flex-1 min-w-0 break-all">
             {line.tokens.map((token, tokenIdx) => {
               if (token.type === 'whitespace') {
                 return (
