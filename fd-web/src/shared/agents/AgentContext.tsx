@@ -5,6 +5,8 @@ import { NotebookLmPyExecutor } from './executors/NotebookLmPyExecutor';
 import { ClaudeCliExecutor } from './executors/ClaudeCliExecutor';
 import { ShadowWindowExecutor } from './executors/ShadowWindowExecutor';
 import { registerClient, startHeartbeat, dispatchAgentChanged } from '../services/clientRegistration';
+import { isTauriEnv } from '../../tauri/bridge';
+import { useToast } from '../hooks/useToast';
 import type { AgentDefinition, AgentBindings, CapabilityDefinition } from '../types/server';
 
 interface AgentContextValue {
@@ -39,6 +41,7 @@ export const AgentProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const [bindings, setBindings] = useState<AgentBindings>({});
     const [capabilities, setCapabilities] = useState<CapabilityDefinition[]>([]);
     const [onlineClients, setOnlineClients] = useState(0);
+    const { toast } = useToast();
 
     // 运行时手动启停覆盖状态（内存中，不持久化）
     // Map<agentCode, isPolling> — 明确覆盖 autoStart 的默认值
@@ -74,10 +77,13 @@ export const AgentProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     useEffect(() => {
         const registry = AgentRegistry.getInstance();
 
-        registry.registerExecutor(new GeminiCliExecutor());
-        registry.registerExecutor(new ClaudeCliExecutor());
-        registry.registerExecutor(new NotebookLmPyExecutor());
-        registry.registerExecutor(new ShadowWindowExecutor());
+        // 仅 Tauri 客户端注册执行器，网页端无执行能力
+        if (isTauriEnv()) {
+            registry.registerExecutor(new GeminiCliExecutor());
+            registry.registerExecutor(new ClaudeCliExecutor());
+            registry.registerExecutor(new NotebookLmPyExecutor());
+            registry.registerExecutor(new ShadowWindowExecutor());
+        }
 
         registry.loadDefinitions()
             .then(() => {
@@ -92,9 +98,18 @@ export const AgentProvider: React.FC<{ children: React.ReactNode }> = ({ childre
             });
     }, []);
 
-    // 注册客户端并启动心跳
+    // 网页端登录提示：无法启动 Agent
     useEffect(() => {
         if (!ready) return;
+        if (!isTauriEnv()) {
+            toast('warning', '当前为网页端访问，无法启动 Agent 执行能力。如需使用 AI Agent，请通过桌面客户端登录。', 6000);
+        }
+    }, [ready]); // eslint-disable-line react-hooks/exhaustive-deps
+
+    // 注册客户端并启动心跳（仅 Tauri 客户端）
+    // 网页端不注册能力、不上报心跳，避免占用资源和抢占任务
+    useEffect(() => {
+        if (!ready || !isTauriEnv()) return;
 
         // 获取当前可在客户端运行的 agent 列表
         const getRunningAgents = () =>

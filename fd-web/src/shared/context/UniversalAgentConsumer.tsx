@@ -53,6 +53,7 @@ function withTimeout<T>(promise: Promise<T>, ms: number, label: string): Promise
 export const UniversalAgentConsumer: React.FC = () => {
   const { definitions, manualAgentOverrides } = useAgentContext();
   const clientId = getOrCreateClientId();
+  const isTauri = isTauriEnv();
 
   // 记录当前正在处理的任务 ID，避免重复执行
   const processingRef = useRef<Set<number>>(new Set());
@@ -64,18 +65,21 @@ export const UniversalAgentConsumer: React.FC = () => {
   const rrIndexRef = useRef(0);
 
   // 筛选需要通用消费者处理的 agent 列表
-  // 条件：enabled=true 且 轮询生效（手动覆盖优先，否则看 autoStart）且不在专用消费者中
-  const genericAgents = definitions.filter(
-    (d: { enabled: boolean; code: string; autoStart?: boolean }) => {
-      if (!d.enabled) return false;
-      if (DEDICATED_CONSUMER_CODES.has(d.code)) return false;
-      // 手动覆盖优先，否则用 autoStart
-      const shouldPoll = manualAgentOverrides.has(d.code)
-        ? manualAgentOverrides.get(d.code)!
-        : d.autoStart === true;
-      return shouldPoll;
-    },
-  );
+  // 网页端不消费任务：无执行能力，claim 了也执行不了，还会抢走 Tauri 客户端的任务
+  // 条件：Tauri 环境 且 enabled=true 且 轮询生效（手动覆盖优先，否则看 autoStart）且不在专用消费者中
+  const genericAgents = isTauri
+    ? definitions.filter(
+        (d: { enabled: boolean; code: string; autoStart?: boolean }) => {
+          if (!d.enabled) return false;
+          if (DEDICATED_CONSUMER_CODES.has(d.code)) return false;
+          // 手动覆盖优先，否则用 autoStart
+          const shouldPoll = manualAgentOverrides.has(d.code)
+            ? manualAgentOverrides.get(d.code)!
+            : d.autoStart === true;
+          return shouldPoll;
+        },
+      )
+    : [];
 
   // ── 执行单个任务 ──
   const processTask = useCallback(
