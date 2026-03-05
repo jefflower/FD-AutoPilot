@@ -115,7 +115,9 @@ public class N8nAgentController {
         if (result.isSuccess()) {
             return ResponseEntity.ok(ApiResponse.ok("Agent 执行成功", result));
         } else {
-            return ResponseEntity.ok(ApiResponse.error("AGENT_EXECUTION_FAILED", result.getErrorMessage()));
+            // 返回 HTTP 500，让 n8n HTTP Request 节点能正确识别失败
+            return ResponseEntity.status(500)
+                    .body(ApiResponse.error("AGENT_EXECUTION_FAILED", result.getErrorMessage()));
         }
     }
 
