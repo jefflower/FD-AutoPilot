@@ -11,13 +11,16 @@ import com.jefflower.fdserver.ai.service.AgentBinding;
 import com.jefflower.fdserver.ai.service.AgentBindingRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -29,16 +32,16 @@ public class AiDataInitializer implements CommandLineRunner {
     private final AgentDefinitionRepository repository;
     private final AgentBindingRepository bindingRepository;
     private final CapabilityDefinitionRepository capabilityDefinitionRepository;
-
-    @PersistenceContext
-    private EntityManager entityManager;
+    private final DataSource dataSource;
 
     public AiDataInitializer(AgentDefinitionRepository repository,
             AgentBindingRepository bindingRepository,
-            CapabilityDefinitionRepository capabilityDefinitionRepository) {
+            CapabilityDefinitionRepository capabilityDefinitionRepository,
+            DataSource dataSource) {
         this.repository = repository;
         this.bindingRepository = bindingRepository;
         this.capabilityDefinitionRepository = capabilityDefinitionRepository;
+        this.dataSource = dataSource;
     }
 
     // --- Install Guide constants ---
@@ -185,57 +188,60 @@ public class AiDataInitializer implements CommandLineRunner {
 
     /**
      * 清理 Hibernate 自动生成的 enum CHECK 约束，并移除已废弃字段的 NOT NULL 约束。
-     * Hibernate ddl-auto=update 在创建枚举列时会生成 CHECK 约束，
-     * 但新增枚举值后不会自动更新约束，导致插入新值时违反约束。
-     * 同时 ddl-auto=update 不会自动移除 NOT NULL 约束，需要手动处理。
      *
-     * H2 和 PostgreSQL 的约束命名规则不同，因此通过 INFORMATION_SCHEMA 动态查找 CHECK 约束。
+     * 使用独立 JDBC 连接（autoCommit=true），每条 DDL 独立事务，
+     * 避免 PostgreSQL "current transaction is aborted" 问题。
      */
     private void dropOutdatedCheckConstraints() {
-        // 动态查找并删除所有 CHECK 约束（兼容 H2 和 PostgreSQL 的不同命名规则）
-        // H2 在 INFORMATION_SCHEMA 中存大写表名，PostgreSQL 存小写，使用 UPPER() 统一
-        String[] tables = { "ai_agent_definition", "ai_capability_definition" };
-        for (String table : tables) {
-            try {
-                @SuppressWarnings("unchecked")
-                List<Object> constraints = entityManager.createNativeQuery(
-                    "SELECT CONSTRAINT_NAME FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS " +
-                    "WHERE UPPER(TABLE_NAME) = UPPER(:tableName) AND CONSTRAINT_TYPE = 'CHECK'"
-                ).setParameter("tableName", table).getResultList();
+        try (Connection conn = dataSource.getConnection()) {
+            conn.setAutoCommit(true);
 
-                for (Object constraintName : constraints) {
-                    try {
-                        String dropSql = "ALTER TABLE " + table + " DROP CONSTRAINT \"" + constraintName + "\"";
-                        entityManager.createNativeQuery(dropSql).executeUpdate();
-                        log.info("[AiDataInitializer] Dropped CHECK constraint: {}.{}", table, constraintName);
+            String[] tables = { "ai_agent_definition", "ai_capability_definition" };
+            for (String table : tables) {
+                // 查询该表的所有 CHECK 约束名
+                List<String> constraintNames = new ArrayList<>();
+                try (Statement stmt = conn.createStatement();
+                     ResultSet rs = stmt.executeQuery(
+                         "SELECT CONSTRAINT_NAME FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS " +
+                         "WHERE UPPER(TABLE_NAME) = UPPER('" + table + "') AND CONSTRAINT_TYPE = 'CHECK'")) {
+                    while (rs.next()) {
+                        String name = rs.getString(1);
+                        // 跳过 NOT NULL 约束（PostgreSQL 内部以 CHECK 形式存储）
+                        if (name != null && name.contains("not_null")) continue;
+                        constraintNames.add(name);
+                    }
+                } catch (Exception e) {
+                    log.debug("[AiDataInitializer] Failed to query constraints for {}: {}", table, e.getMessage());
+                }
+
+                // 逐个删除 CHECK 约束
+                for (String name : constraintNames) {
+                    try (Statement stmt = conn.createStatement()) {
+                        stmt.executeUpdate("ALTER TABLE " + table + " DROP CONSTRAINT \"" + name + "\"");
+                        log.info("[AiDataInitializer] Dropped CHECK constraint: {}.{}", table, name);
                     } catch (Exception e) {
-                        log.debug("[AiDataInitializer] Failed to drop constraint {}.{}: {}",
-                                table, constraintName, e.getMessage());
+                        log.debug("[AiDataInitializer] Failed to drop constraint {}.{}: {}", table, name, e.getMessage());
                     }
                 }
-            } catch (Exception e) {
-                log.debug("[AiDataInitializer] Failed to query constraints for {}: {}", table, e.getMessage());
             }
-        }
 
-        // 已废弃字段允许 NULL（Hibernate ddl-auto=update 不会自动移除 NOT NULL）
-        String[] nullableSqls = {
-                "ALTER TABLE ai_agent_definition ALTER COLUMN execution_env DROP NOT NULL",
-                "ALTER TABLE ai_agent_definition ALTER COLUMN provider_type DROP NOT NULL"
-        };
-        for (String sql : nullableSqls) {
-            try {
-                entityManager.createNativeQuery(sql).executeUpdate();
-            } catch (Exception e) {
-                log.debug("[AiDataInitializer] Nullable alter skipped: {}", e.getMessage());
+            // 已废弃字段允许 NULL
+            String[] nullableSqls = {
+                    "ALTER TABLE ai_agent_definition ALTER COLUMN execution_env DROP NOT NULL",
+                    "ALTER TABLE ai_agent_definition ALTER COLUMN provider_type DROP NOT NULL"
+            };
+            for (String sql : nullableSqls) {
+                try (Statement stmt = conn.createStatement()) {
+                    stmt.executeUpdate(sql);
+                } catch (Exception e) {
+                    log.debug("[AiDataInitializer] Nullable alter skipped: {}", e.getMessage());
+                }
             }
-        }
-        try {
-            entityManager.flush();
+
+            log.info("[AiDataInitializer] Cleaned up outdated enum check constraints");
         } catch (Exception e) {
-            log.warn("[AiDataInitializer] Flush after constraint cleanup failed (non-fatal): {}", e.getMessage());
+            log.warn("[AiDataInitializer] Constraint cleanup failed (non-fatal): {}", e.getMessage());
         }
-        log.info("[AiDataInitializer] Cleaned up outdated enum check constraints");
     }
 
     /**
