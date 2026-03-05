@@ -54,8 +54,8 @@ public class N8nTicketService {
     public List<Ticket> findPendingTickets(int limit, Integer fdStatus) {
         int effectiveLimit = Math.max(1, Math.min(limit, MAX_LIMIT));
         return ticketRepository.findByFilters(
-                TicketStatus.PENDING_TRANS, null, null, null, null, null,
-                fdStatus, null,
+                List.of(TicketStatus.PENDING_TRANS), null, null, null, null, null,
+                fdStatus != null ? List.of(fdStatus) : null, null,
                 PageRequest.of(0, effectiveLimit, Sort.by(Sort.Order.asc("createdAt")))
         ).getContent();
     }
@@ -66,7 +66,7 @@ public class N8nTicketService {
     public List<Ticket> findPendingReplyTickets(int limit) {
         int effectiveLimit = Math.max(1, Math.min(limit, MAX_LIMIT));
         return ticketRepository.findByFilters(
-                TicketStatus.PROCESSING, null, null, null, null, null,
+                List.of(TicketStatus.PROCESSING), null, null, null, null, null,
                 null, null,
                 PageRequest.of(0, effectiveLimit, Sort.by(Sort.Order.asc("updatedAt")))
         ).getContent();
@@ -265,7 +265,7 @@ public class N8nTicketService {
     public List<Ticket> findManualRequiredTickets(int limit) {
         int effectiveLimit = Math.max(1, Math.min(limit, MAX_LIMIT));
         return ticketRepository.findByFilters(
-                TicketStatus.MANUAL_REQUIRED, null, null, null, null, null,
+                List.of(TicketStatus.MANUAL_REQUIRED), null, null, null, null, null,
                 null, null,
                 PageRequest.of(0, effectiveLimit, Sort.by(Sort.Order.desc("updatedAt")))
         ).getContent();

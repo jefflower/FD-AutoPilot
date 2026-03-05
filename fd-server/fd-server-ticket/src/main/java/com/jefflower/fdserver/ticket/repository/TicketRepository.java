@@ -37,22 +37,22 @@ public interface TicketRepository extends JpaRepository<Ticket, Long> {
          * 列表查询（不加载关联数据，避免 N+1）
          */
         @Query("SELECT t FROM Ticket t WHERE " +
-                        "(CAST(:status AS string) IS NULL OR t.status = :status) AND " +
+                        "(:statuses IS NULL OR t.status IN :statuses) AND " +
                         "(CAST(:externalId AS string) IS NULL OR t.externalId = :externalId) AND " +
                         "(CAST(:subject AS string) IS NULL OR t.subject LIKE %:subject%) AND " +
                         "(CAST(:isValid AS boolean) IS NULL OR t.isValid = :isValid) AND " +
                         "(CAST(:createdAfter AS timestamp) IS NULL OR t.createdAt >= :createdAfter) AND " +
                         "(CAST(:createdBefore AS timestamp) IS NULL OR t.createdAt <= :createdBefore) AND " +
-                        "(CAST(:fdStatus AS integer) IS NULL OR t.fdStatus = :fdStatus) AND " +
+                        "(:fdStatuses IS NULL OR t.fdStatus IN :fdStatuses) AND " +
                         "(CAST(:ticketCategory AS string) IS NULL OR t.ticketCategory = :ticketCategory)")
         Page<Ticket> findByFilters(
-                        @Param("status") TicketStatus status,
+                        @Param("statuses") List<TicketStatus> statuses,
                         @Param("externalId") String externalId,
                         @Param("subject") String subject,
                         @Param("isValid") Boolean isValid,
                         @Param("createdAfter") LocalDateTime createdAfter,
                         @Param("createdBefore") LocalDateTime createdBefore,
-                        @Param("fdStatus") Integer fdStatus,
+                        @Param("fdStatuses") List<Integer> fdStatuses,
                         @Param("ticketCategory") String ticketCategory,
                         Pageable pageable);
 
@@ -75,22 +75,22 @@ public interface TicketRepository extends JpaRepository<Ticket, Long> {
                         "t.fdStatus, t.fdPriority, t.fdRequesterId, t.fdResponderId, t.fdTags, t.fdCreatedAt, t.fdUpdatedAt, " +
                         "t.ticketCategory) " +
                         "FROM Ticket t WHERE " +
-                        "(CAST(:status AS string) IS NULL OR t.status = :status) AND " +
+                        "(:statuses IS NULL OR t.status IN :statuses) AND " +
                         "(CAST(:externalId AS string) IS NULL OR t.externalId = :externalId) AND " +
                         "(CAST(:subject AS string) IS NULL OR t.subject LIKE %:subject%) AND " +
                         "(CAST(:isValid AS boolean) IS NULL OR t.isValid = :isValid) AND " +
                         "(CAST(:createdAfter AS timestamp) IS NULL OR t.createdAt >= :createdAfter) AND " +
                         "(CAST(:createdBefore AS timestamp) IS NULL OR t.createdAt <= :createdBefore) AND " +
-                        "(CAST(:fdStatus AS integer) IS NULL OR t.fdStatus = :fdStatus) AND " +
+                        "(:fdStatuses IS NULL OR t.fdStatus IN :fdStatuses) AND " +
                         "(CAST(:ticketCategory AS string) IS NULL OR t.ticketCategory = :ticketCategory)")
         Page<TicketListDTO> findByFiltersAsDTO(
-                        @Param("status") TicketStatus status,
+                        @Param("statuses") List<TicketStatus> statuses,
                         @Param("externalId") String externalId,
                         @Param("subject") String subject,
                         @Param("isValid") Boolean isValid,
                         @Param("createdAfter") LocalDateTime createdAfter,
                         @Param("createdBefore") LocalDateTime createdBefore,
-                        @Param("fdStatus") Integer fdStatus,
+                        @Param("fdStatuses") List<Integer> fdStatuses,
                         @Param("ticketCategory") String ticketCategory,
                         Pageable pageable);
 

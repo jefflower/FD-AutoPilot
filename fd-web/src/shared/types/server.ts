@@ -174,12 +174,13 @@ export interface TicketAudit {
 
 // ============ API 请求/响应类型 ============
 export interface TicketQueryParams {
-  status?: TicketStatus;
+  status?: string;  // 逗号分隔多选，如 "PENDING_TRANS,TRANSLATING"
   externalId?: string;
   subject?: string;
   isValid?: boolean;
   createdAfter?: string;
   createdBefore?: string;
+  fdStatus?: string; // 逗号分隔多选，如 "2,3"
   page?: number;
   size?: number;
 }

@@ -24,6 +24,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
+import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -49,24 +50,42 @@ public class TicketController {
     @GetMapping
     @RequiresPermission("ticket:read")
     public ResponseEntity<?> queryTickets(
-            @Parameter(description = "工单状态过滤") @RequestParam(required = false) TicketStatus status,
+            @Parameter(description = "工单状态过滤（逗号分隔多选，如 PENDING_TRANS,TRANSLATING）") @RequestParam(required = false) String status,
             @Parameter(description = "Freshdesk 外部 ID") @RequestParam(required = false, name = "external_id") String externalId,
             @Parameter(description = "主题关键字搜索") @RequestParam(required = false) String subject,
             @Parameter(description = "有效性标记过滤") @RequestParam(required = false, name = "is_valid") Boolean isValid,
             @Parameter(description = "创建时间起始") @RequestParam(required = false, name = "created_after") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime createdAfter,
             @Parameter(description = "创建时间截止") @RequestParam(required = false, name = "created_before") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime createdBefore,
+            @Parameter(description = "Freshdesk 状态过滤（逗号分隔多选，如 2,3）") @RequestParam(required = false, name = "fd_status") String fdStatus,
             @Parameter(description = "页码，从 0 开始") @RequestParam(defaultValue = "0") int page,
             @Parameter(description = "每页大小") @RequestParam(defaultValue = "20") int size,
             @Parameter(description = "排序字段") @RequestParam(required = false, name = "sort_by", defaultValue = "updatedAt") String sortBy,
             @Parameter(description = "排序方向（ASC/DESC）") @RequestParam(required = false, name = "sort_dir", defaultValue = "DESC") String sortDir,
             @Parameter(description = "是否返回完整实体（默认 false 返回轻量 DTO）") @RequestParam(required = false, defaultValue = "false") boolean detail) {
 
+        // 解析逗号分隔的状态列表
+        List<TicketStatus> statuses = null;
+        if (status != null && !status.isBlank()) {
+            statuses = Arrays.stream(status.split(","))
+                    .map(String::trim)
+                    .filter(s -> !s.isEmpty())
+                    .map(TicketStatus::valueOf)
+                    .toList();
+        }
+        List<Integer> fdStatuses = null;
+        if (fdStatus != null && !fdStatus.isBlank()) {
+            fdStatuses = Arrays.stream(fdStatus.split(","))
+                    .map(String::trim)
+                    .filter(s -> !s.isEmpty())
+                    .map(Integer::valueOf)
+                    .toList();
+        }
+
         Sort sort = Sort.by("ASC".equalsIgnoreCase(sortDir) ? Sort.Order.asc(sortBy) : Sort.Order.desc(sortBy));
 
         if (detail) {
-            // 向后兼容模式：返回完整 Ticket 实体（含 content、关联数据）
             Page<Ticket> tickets = ticketService.queryTickets(
-                    status, externalId, subject, isValid, createdAfter, createdBefore, page, size);
+                    statuses, externalId, subject, isValid, createdAfter, createdBefore, fdStatuses, page, size);
             if (!tickets.isEmpty()) {
                 Ticket first = tickets.getContent().get(0);
                 log.info("Query tickets (detail) page {} size {}: total={}, firstTicket#{} contentLen={}",
@@ -76,9 +95,8 @@ public class TicketController {
             return ResponseEntity.ok(ApiResponse.ok(tickets));
         }
 
-        // 默认模式：返回轻量 DTO（不含 content、不加载关联数据）
         Page<TicketListDTO> ticketDTOs = ticketService.queryTicketsAsDTO(
-                status, externalId, subject, isValid, createdAfter, createdBefore, page, size, sort);
+                statuses, externalId, subject, isValid, createdAfter, createdBefore, fdStatuses, page, size, sort);
         log.info("Query tickets (DTO) page {} size {}: total={}",
                 page, size, ticketDTOs.getTotalElements());
         return ResponseEntity.ok(ApiResponse.ok(ticketDTOs));

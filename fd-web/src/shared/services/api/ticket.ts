@@ -25,6 +25,7 @@ export const ticketApi = {
       externalId: 'external_id',
       createdAfter: 'created_after',
       createdBefore: 'created_before',
+      fdStatus: 'fd_status',
     };
     if (params) {
       Object.entries(params).forEach(([key, value]) => {

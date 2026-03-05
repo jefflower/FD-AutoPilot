@@ -19,6 +19,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Slf4j
 @Service
@@ -71,17 +72,19 @@ public class TicketService {
      * 列表查询（返回完整 Ticket 实体）— 保持向后兼容
      */
     public Page<Ticket> queryTickets(
-            TicketStatus status,
+            List<TicketStatus> statuses,
             String externalId,
             String subject,
             Boolean isValid,
             LocalDateTime createdAfter,
             LocalDateTime createdBefore,
+            List<Integer> fdStatuses,
             int page,
             int size) {
         return ticketRepository.findByFilters(
-                status, externalId, subject, isValid, createdAfter, createdBefore,
-                null, null,
+                statuses == null || statuses.isEmpty() ? null : statuses,
+                externalId, subject, isValid, createdAfter, createdBefore,
+                fdStatuses == null || fdStatuses.isEmpty() ? null : fdStatuses, null,
                 PageRequest.of(page, size, Sort.by(Sort.Order.desc("updatedAt"))));
     }
 
@@ -90,19 +93,21 @@ public class TicketService {
      * 支持自定义排序参数
      */
     public Page<TicketListDTO> queryTicketsAsDTO(
-            TicketStatus status,
+            List<TicketStatus> statuses,
             String externalId,
             String subject,
             Boolean isValid,
             LocalDateTime createdAfter,
             LocalDateTime createdBefore,
+            List<Integer> fdStatuses,
             int page,
             int size,
             Sort sort) {
         Pageable pageable = PageRequest.of(page, size, sort != null ? sort : Sort.by(Sort.Order.desc("updatedAt")));
         return ticketRepository.findByFiltersAsDTO(
-                status, externalId, subject, isValid, createdAfter, createdBefore,
-                null, null, pageable);
+                statuses == null || statuses.isEmpty() ? null : statuses,
+                externalId, subject, isValid, createdAfter, createdBefore,
+                fdStatuses == null || fdStatuses.isEmpty() ? null : fdStatuses, null, pageable);
     }
 
     /**

@@ -129,7 +129,7 @@ class TicketServiceTest {
                     .thenReturn(page);
 
             Page<Ticket> result = ticketService.queryTickets(
-                    TicketStatus.PENDING_TRANS, null, null, null, null, null, 0, 10);
+                    List.of(TicketStatus.PENDING_TRANS), null, null, null, null, null, null, 0, 10);
 
             assertEquals(1, result.getTotalElements());
             assertSame(sampleTicket, result.getContent().get(0));

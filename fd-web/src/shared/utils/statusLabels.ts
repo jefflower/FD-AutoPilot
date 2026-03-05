@@ -98,3 +98,16 @@ export function getTicketStatusOptions(t: AnyTFunction) {
     })),
   ];
 }
+
+const FD_STATUSES = [2, 3, 4, 5, 6, 7] as const;
+
+export function getFdStatusOptions() {
+  return [
+    { value: 0, label: '全部FD', color: 'bg-slate-500/20 text-slate-400 ring-slate-500/30' },
+    ...FD_STATUSES.map(fd => ({
+      value: fd,
+      label: FD_STATUS_LABELS[fd] || `Status ${fd}`,
+      color: FD_STATUS_COLORS[fd] || 'bg-slate-500/20 text-slate-400 ring-slate-500/30',
+    })),
+  ];
+}

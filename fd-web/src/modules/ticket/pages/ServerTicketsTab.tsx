@@ -4,8 +4,8 @@ import { ticketApi, adminApi } from '../../../shared/services/serverApi';
 import ServerTicketDetail from '../components/ServerTicketDetail';
 import TicketList from '../../../shared/components/TicketList';
 import type { TitleMode } from '../../../shared/components/TicketList';
-import type { ServerTicket, TicketStatus, TicketQueryParams } from '../../../shared/types/server';
-import { getTicketStatusOptions } from '../../../shared/utils/statusLabels';
+import type { ServerTicket, TicketQueryParams } from '../../../shared/types/server';
+import { getTicketStatusOptions, getFdStatusOptions } from '../../../shared/utils/statusLabels';
 import { useAuthContext } from '../../../shared/context/AuthContext';
 import DetailEmptyState from '../components/DetailEmptyState';
 
@@ -13,6 +13,7 @@ const ServerTicketsTab: React.FC = () => {
     const { isAdmin } = useAuthContext();
     const { t } = useTranslation(['tickets', 'common', 'settings']);
     const statusOptions = useMemo(() => getTicketStatusOptions(t), [t]);
+    const fdStatusOptions = useMemo(() => getFdStatusOptions(), []);
 
     const [tickets, setTickets] = useState<ServerTicket[]>([]);
     const [loading, setLoading] = useState(true);
@@ -22,9 +23,28 @@ const ServerTicketsTab: React.FC = () => {
     const [selectedTicket, setSelectedTicket] = useState<ServerTicket | null>(null);
 
     // 查询参数
-    const [statusFilter, setStatusFilter] = useState<TicketStatus | ''>('');
+    const [statusFilter, setStatusFilter] = useState<Set<string>>(new Set());  // 空集=全部
+    const [fdStatusFilter, setFdStatusFilter] = useState<Set<number>>(new Set([2])); // 默认 Open
     const [searchQuery, setSearchQuery] = useState('');
     const [hasMore, setHasMore] = useState(true);
+
+    // 多选切换
+    const toggleStatus = useCallback((value: string) => {
+        setStatusFilter(prev => {
+            if (value === '') return new Set(); // "全部" 清空选择
+            const next = new Set(prev);
+            if (next.has(value)) next.delete(value); else next.add(value);
+            return next;
+        });
+    }, []);
+    const toggleFdStatus = useCallback((value: number) => {
+        setFdStatusFilter(prev => {
+            if (value === 0) return new Set(); // "全部FD" 清空选择
+            const next = new Set(prev);
+            if (next.has(value)) next.delete(value); else next.add(value);
+            return next;
+        });
+    }, []);
 
     // 语言与显示偏好 (从 localStorage 加载以保持跨页面一致性)
     const [displayLang, setDisplayLangState] = useState<'original' | 'cn' | 'en'>(() => {
@@ -81,7 +101,8 @@ const ServerTicketsTab: React.FC = () => {
                 page: fetchPage,
                 size: 30,
             };
-            if (statusFilter) params.status = statusFilter;
+            if (statusFilter.size > 0) params.status = [...statusFilter].join(',');
+            if (fdStatusFilter.size > 0) params.fdStatus = [...fdStatusFilter].join(',');
             if (searchQuery.trim()) params.subject = searchQuery.trim();
 
             const result = await ticketApi.getTickets(params);
@@ -115,12 +136,12 @@ const ServerTicketsTab: React.FC = () => {
                 setLoadingMore(false);
             }
         }
-    }, [statusFilter, searchQuery, t]);
+    }, [statusFilter, fdStatusFilter, searchQuery, t]);
 
     // 核心数据加载
     useEffect(() => {
         loadTickets(true);
-    }, [statusFilter, searchQuery, loadTickets]);
+    }, [statusFilter, fdStatusFilter, searchQuery, loadTickets]);
 
     // MQ 事件处理: 响应来自父组件的调度信号
 
@@ -243,21 +264,45 @@ const ServerTicketsTab: React.FC = () => {
                     </div>
                 )}
 
-                {/* 状态筛选 - 横向滚动胶囊 */}
-                <div className="p-2 border-b border-white/10 bg-slate-900/40">
-                    <div className="flex items-center gap-1.5 overflow-x-auto pb-1 custom-scrollbar-hidden no-scrollbar">
-                        {statusOptions.map(opt => (
-                            <button
-                                key={opt.value}
-                                onClick={() => setStatusFilter(opt.value as TicketStatus | '')}
-                                className={`flex-shrink-0 px-3 py-1 rounded-full text-[10px] font-bold transition-all border ${statusFilter === opt.value
-                                    ? 'bg-indigo-500/20 border-indigo-500/50 text-indigo-400'
-                                    : 'bg-white/5 border-transparent text-slate-500 hover:bg-white/10 hover:text-slate-300'
-                                    }`}
-                            >
-                                {opt.label}
-                            </button>
-                        ))}
+                {/* 状态筛选 - 多选胶囊 */}
+                <div className="p-2 border-b border-white/10 bg-slate-900/40 space-y-1.5">
+                    <div className="flex items-center gap-1.5 overflow-x-auto pb-0.5 custom-scrollbar-hidden no-scrollbar">
+                        {statusOptions.map(opt => {
+                            const isAll = opt.value === '';
+                            const active = isAll ? statusFilter.size === 0 : statusFilter.has(opt.value);
+                            return (
+                                <button
+                                    key={opt.value}
+                                    onClick={() => toggleStatus(opt.value)}
+                                    className={`flex-shrink-0 px-3 py-1 rounded-full text-[10px] font-bold transition-all border ${active
+                                        ? 'bg-indigo-500/20 border-indigo-500/50 text-indigo-400'
+                                        : 'bg-white/5 border-transparent text-slate-500 hover:bg-white/10 hover:text-slate-300'
+                                        }`}
+                                >
+                                    {opt.label}
+                                </button>
+                            );
+                        })}
+                    </div>
+                    {/* FD 状态筛选 */}
+                    <div className="flex items-center gap-1.5 overflow-x-auto pb-0.5 custom-scrollbar-hidden no-scrollbar">
+                        <span className="flex-shrink-0 text-[9px] text-slate-600 font-medium mr-0.5">FD:</span>
+                        {fdStatusOptions.map(opt => {
+                            const isAll = opt.value === 0;
+                            const active = isAll ? fdStatusFilter.size === 0 : fdStatusFilter.has(opt.value);
+                            return (
+                                <button
+                                    key={opt.value}
+                                    onClick={() => toggleFdStatus(opt.value)}
+                                    className={`flex-shrink-0 px-2.5 py-0.5 rounded-full text-[10px] font-bold transition-all border ${active
+                                        ? 'bg-cyan-500/20 border-cyan-500/50 text-cyan-400'
+                                        : 'bg-white/5 border-transparent text-slate-500 hover:bg-white/10 hover:text-slate-300'
+                                        }`}
+                                >
+                                    {opt.label}
+                                </button>
+                            );
+                        })}
                     </div>
                 </div>
 
