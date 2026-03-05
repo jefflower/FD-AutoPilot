@@ -37,7 +37,7 @@ pub struct LogState {
 // ========== Server Startup Helpers ==========
 
 /// Initialize ExecLogStore, panicking on failure (called at startup).
-fn init_log_store() -> Arc<ExecLogStore> {
+pub fn init_log_store() -> Arc<ExecLogStore> {
     match ExecLogStore::open() {
         Ok(store) => Arc::new(store),
         Err(e) => {
@@ -165,14 +165,15 @@ pub fn start_bridge_server() {
 }
 
 /// Background mode (with AppHandle): CLI + Shadow Agent full endpoints.
+/// Accepts a pre-created `Arc<ExecLogStore>` so the same store is shared
+/// between the Bridge HTTP server and Tauri IPC commands.
 /// Note: Tauri setup hook has no Tokio runtime, so we spawn an independent thread+runtime.
 #[cfg(feature = "tauri-app")]
-pub fn start_bridge_server_with_app(app_handle: tauri::AppHandle) {
+pub fn start_bridge_server_with_app(app_handle: tauri::AppHandle, log_store: Arc<ExecLogStore>) {
     std::thread::spawn(move || {
         let rt = tokio::runtime::Runtime::new()
             .expect("[fd-bridge] Failed to create Tokio runtime");
         rt.block_on(async move {
-            let log_store = init_log_store();
             spawn_cleanup_task(log_store.clone());
 
             let router =

@@ -26,12 +26,16 @@ pub fn run() {
     use commands::*;
     use tauri::Manager;
 
+    // 创建全局共享的 ExecLogStore，Bridge HTTP 和 Tauri IPC 命令共用同一实例
+    let log_store = bridge::init_log_store();
+
     tauri::Builder::default()
         .plugin(tauri_plugin_opener::init())
         .plugin(tauri_plugin_dialog::init())
-        .setup(|app| {
-            // Start bridge server with Shadow Agent support
-            bridge::start_bridge_server_with_app(app.handle().clone());
+        .manage(log_store.clone())
+        .setup(move |app| {
+            // Start bridge server with Shadow Agent support,共享同一 log_store
+            bridge::start_bridge_server_with_app(app.handle().clone(), log_store.clone());
 
             // 生产模式：导航主窗口到配置的远程服务器 URL
             // 开发模式（debug）使用 devUrl (localhost:5173) + Vite 代理，不导航
