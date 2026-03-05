@@ -41,6 +41,86 @@ public class AiDataInitializer implements CommandLineRunner {
         this.capabilityDefinitionRepository = capabilityDefinitionRepository;
     }
 
+    // --- Install Guide constants ---
+    private static final String GEMINI_CLI_INSTALL_GUIDE = "{"
+            + "\"prerequisites\":[\"Node.js 18+\"],"
+            + "\"steps\":["
+            + "\"1. 安装 Node.js 18 或更高版本：https://nodejs.org/\","
+            + "\"2. 安装 Gemini CLI：npm install -g @anthropic-ai/gemini-cli\","
+            + "\"3. 认证登录：gemini auth\","
+            + "\"4. 验证安装：gemini --version\""
+            + "],"
+            + "\"platforms\":{"
+            + "\"mac\":\"在终端 (Terminal) 中执行以上命令\","
+            + "\"windows\":\"在 PowerShell 或 CMD 中执行以上命令\""
+            + "}"
+            + "}";
+
+    private static final String CLAUDE_CLI_INSTALL_GUIDE = "{"
+            + "\"prerequisites\":[\"Node.js 18+\"],"
+            + "\"steps\":["
+            + "\"1. 安装 Node.js 18 或更高版本：https://nodejs.org/\","
+            + "\"2. 安装 Claude Code：npm install -g @anthropic-ai/claude-code\","
+            + "\"3. 认证登录：claude auth（需要 Anthropic API Key 或 OAuth 登录）\","
+            + "\"4. 验证安装：claude --version\""
+            + "],"
+            + "\"platforms\":{"
+            + "\"mac\":\"在终端 (Terminal) 中执行以上命令\","
+            + "\"windows\":\"在 PowerShell 或 CMD 中执行以上命令\""
+            + "}"
+            + "}";
+
+    private static final String NOTEBOOKLM_PY_INSTALL_GUIDE = "{"
+            + "\"prerequisites\":[\"Python 3.10+\",\"pip\",\"Playwright (自动安装)\"],"
+            + "\"steps\":["
+            + "\"1. 安装 Python 3.10 或更高版本\","
+            + "\"   - Mac：brew install python@3.12 或从 https://www.python.org/downloads/ 下载 .pkg\","
+            + "\"   - Windows：从 https://www.python.org/downloads/ 下载安装包，勾选 Add to PATH\","
+            + "\"   - 验证：python3 --version\","
+            + "\"2. 安装 notebooklm-py：pip install notebooklm-py\","
+            + "\"3. 安装 Claude Code Skill：notebooklm skill install\","
+            + "\"4. 浏览器认证（首次使用）：notebooklm login（自动打开浏览器完成 Google OAuth）\","
+            + "\"5. 验证安装：notebooklm list\""
+            + "],"
+            + "\"platforms\":{"
+            + "\"mac\":\"推荐使用 Homebrew 安装 Python：brew install python@3.12\","
+            + "\"windows\":\"从 python.org 下载安装包，安装时务必勾选 Add Python to PATH\""
+            + "},"
+            + "\"notes\":\"notebooklm-py 首次运行会自动安装 Playwright 浏览器引擎，需要网络连接\""
+            + "}";
+
+    private static final String ANTIGRAVITY_TOOLS_INSTALL_GUIDE = "{"
+            + "\"prerequisites\":[\"Antigravity Tools 桌面应用\",\"至少一个已登录的 Google Antigravity IDE 账号\"],"
+            + "\"steps\":["
+            + "\"1. 下载 Antigravity Tools：\","
+            + "\"   - GitHub 仓库：github.com/lbjlaq/Antigravity-Manager\","
+            + "\"   - 前往 Releases 页面下载对应平台的安装包\","
+            + "\"2. Mac 安装：\","
+            + "\"   - Homebrew（推荐）：brew install --cask antigravity-tools\","
+            + "\"   - 手动安装：下载 .dmg 文件并拖入 Applications\","
+            + "\"     Apple Silicon：Antigravity.Tools_x.x.x_aarch64.dmg\","
+            + "\"     Intel：Antigravity.Tools_x.x.x_x64.dmg\","
+            + "\"     通用版：Antigravity.Tools_x.x.x_universal.dmg\","
+            + "\"3. Windows 安装：\","
+            + "\"   - 下载 .msi 或 .exe 安装包并运行\","
+            + "\"4. 启动应用并登录 Google 账号\","
+            + "\"5. 确保代理服务运行在 localhost:8045（默认端口）\","
+            + "\"6. 验证：curl http://127.0.0.1:8045/v1/models\""
+            + "],"
+            + "\"platforms\":{"
+            + "\"mac\":\"应用安装到 /Applications/Antigravity Tools.app，更新：brew upgrade --cask antigravity-tools\","
+            + "\"windows\":\"默认安装到 C:\\\\Users\\\\<用户名>\\\\AppData\\\\Local\\\\antigravity-tools\\\\\""
+            + "},"
+            + "\"config\":{"
+            + "\"configDir\":\"~/.antigravity_tools/\","
+            + "\"configFile\":\"~/.antigravity_tools/gui_config.json\","
+            + "\"accountsFile\":\"~/.antigravity_tools/accounts.json\","
+            + "\"logsDir\":\"~/.antigravity_tools/logs/\","
+            + "\"defaultPort\":8045,"
+            + "\"defaultApiKey\":\"在 gui_config.json 中配置 proxy.api_key\""
+            + "}"
+            + "}";
+
     // --- Input/Output Schema constants ---
     private static final String TRANSLATE_INPUT_SCHEMA = "{\"type\":\"object\",\"properties\":{\"ticketContent\":{\"type\":\"string\",\"description\":\"工单原文内容 JSON（含 subject/description/conversations）\"},\"targetLang\":{\"type\":\"string\",\"description\":\"目标语言代码\"}},\"required\":[\"ticketContent\",\"targetLang\"]}";
 
@@ -79,28 +159,50 @@ public class AiDataInitializer implements CommandLineRunner {
     }
 
     /**
-     * 清理 PostgreSQL 自动生成的 enum CHECK 约束，并移除已废弃字段的 NOT NULL 约束。
+     * 清理 Hibernate 自动生成的 enum CHECK 约束，并移除已废弃字段的 NOT NULL 约束。
      * Hibernate ddl-auto=update 在创建枚举列时会生成 CHECK 约束，
      * 但新增枚举值后不会自动更新约束，导致插入新值时违反约束。
      * 同时 ddl-auto=update 不会自动移除 NOT NULL 约束，需要手动处理。
+     *
+     * H2 和 PostgreSQL 的约束命名规则不同，因此通过 INFORMATION_SCHEMA 动态查找 CHECK 约束。
      */
     private void dropOutdatedCheckConstraints() {
-        String[] sqls = {
-                "ALTER TABLE ai_agent_definition DROP CONSTRAINT IF EXISTS ai_agent_definition_provider_type_check",
-                "ALTER TABLE ai_agent_definition DROP CONSTRAINT IF EXISTS ai_agent_definition_execution_env_check",
-                "ALTER TABLE ai_agent_definition DROP CONSTRAINT IF EXISTS ai_agent_definition_call_mode_check",
-                "ALTER TABLE ai_capability_definition DROP CONSTRAINT IF EXISTS ai_capability_definition_provider_type_check",
-                "ALTER TABLE ai_capability_definition DROP CONSTRAINT IF EXISTS ai_capability_definition_execution_env_check",
-                // 已废弃字段允许 NULL（Hibernate ddl-auto=update 不会自动移除 NOT NULL）
+        // 动态查找并删除所有 CHECK 约束（兼容 H2 和 PostgreSQL 的不同命名规则）
+        // H2 在 INFORMATION_SCHEMA 中存大写表名，PostgreSQL 存小写，使用 UPPER() 统一
+        String[] tables = { "ai_agent_definition", "ai_capability_definition" };
+        for (String table : tables) {
+            try {
+                @SuppressWarnings("unchecked")
+                List<Object> constraints = entityManager.createNativeQuery(
+                    "SELECT CONSTRAINT_NAME FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS " +
+                    "WHERE UPPER(TABLE_NAME) = UPPER(:tableName) AND CONSTRAINT_TYPE = 'CHECK'"
+                ).setParameter("tableName", table).getResultList();
+
+                for (Object constraintName : constraints) {
+                    try {
+                        String dropSql = "ALTER TABLE " + table + " DROP CONSTRAINT " + constraintName;
+                        entityManager.createNativeQuery(dropSql).executeUpdate();
+                        log.info("[AiDataInitializer] Dropped CHECK constraint: {}.{}", table, constraintName);
+                    } catch (Exception e) {
+                        log.debug("[AiDataInitializer] Failed to drop constraint {}.{}: {}",
+                                table, constraintName, e.getMessage());
+                    }
+                }
+            } catch (Exception e) {
+                log.debug("[AiDataInitializer] Failed to query constraints for {}: {}", table, e.getMessage());
+            }
+        }
+
+        // 已废弃字段允许 NULL（Hibernate ddl-auto=update 不会自动移除 NOT NULL）
+        String[] nullableSqls = {
                 "ALTER TABLE ai_agent_definition ALTER COLUMN execution_env DROP NOT NULL",
                 "ALTER TABLE ai_agent_definition ALTER COLUMN provider_type DROP NOT NULL"
         };
-        for (String sql : sqls) {
+        for (String sql : nullableSqls) {
             try {
                 entityManager.createNativeQuery(sql).executeUpdate();
             } catch (Exception e) {
-                // 约束可能不存在或数据库不支持 IF EXISTS，忽略
-                log.debug("[AiDataInitializer] Constraint drop skipped: {}", e.getMessage());
+                log.debug("[AiDataInitializer] Nullable alter skipped: {}", e.getMessage());
             }
         }
         entityManager.flush();
@@ -113,23 +215,23 @@ public class AiDataInitializer implements CommandLineRunner {
      */
     private void initBuiltInCapabilities() {
         ensureBuiltInCapability("gemini-cli", "Gemini CLI", ProviderType.GEMINI_CLI,
-                "{\"command\":\"gemini --version\"}", "{\"steps\":[\"安装 Gemini CLI\"]}", 0, true, null);
+                "{\"command\":\"gemini --version\"}", GEMINI_CLI_INSTALL_GUIDE, 0, true, null);
 
         ensureBuiltInCapability("claude-cli", "Claude CLI", ProviderType.CLAUDE_CLI,
-                "{\"command\":\"claude --version\"}", "{\"steps\":[\"安装 Claude CLI\"]}", 1, true, null);
+                "{\"command\":\"claude --version\"}", CLAUDE_CLI_INSTALL_GUIDE, 1, true, null);
 
         ensureBuiltInCapability("notebooklm-py", "NotebookLM Python", ProviderType.NOTEBOOKLM_PY,
-                "{\"command\":\"python -c \\\"import notebooklm\\\"\"}", "{\"steps\":[\"pip install notebooklm-py\"]}",
+                "{\"command\":\"python -c \\\"import notebooklm\\\"\"}", NOTEBOOKLM_PY_INSTALL_GUIDE,
                 2, true,
                 "{\"notebookId\":{\"type\":\"string\",\"label\":\"Notebook ID\",\"required\":true,\"description\":\"NotebookLM 知识库 ID\"}}");
 
-        ensureBuiltInCapability("shadow-window", "Shadow Window", ProviderType.TRACKING_SHADOW,
-                null, null, 3, false,
-                "{\"targetUrl\":{\"type\":\"string\",\"label\":\"Target URL\",\"required\":true,\"description\":\"目标网页 URL\"}}");
-
         ensureBuiltInCapability("antigravity-tools", "Antigravity Tools", ProviderType.ANTIGRAVITY_TOOLS,
-                null, "{\"steps\":[\"安装并启动 Antigravity Tools 桌面应用\",\"确保代理服务运行在 localhost:8045\"]}", 4, true,
+                null, ANTIGRAVITY_TOOLS_INSTALL_GUIDE, 3, true,
                 "{\"model\":{\"type\":\"string\",\"label\":\"Model\",\"required\":false,\"description\":\"模型名称（默认 gemini-2.5-flash）\"},\"systemPrompt\":{\"type\":\"string\",\"label\":\"System Prompt\",\"required\":false,\"description\":\"系统提示词\"},\"temperature\":{\"type\":\"number\",\"label\":\"Temperature\",\"required\":false,\"description\":\"生成温度（0-2）\"}}");
+
+        ensureBuiltInCapability("shadow-window", "Shadow Window", ProviderType.TRACKING_SHADOW,
+                null, null, 4, false,
+                "{\"targetUrl\":{\"type\":\"string\",\"label\":\"Target URL\",\"required\":true,\"description\":\"目标网页 URL\"}}");
     }
 
     private void ensureBuiltInCapability(String code, String name, ProviderType providerType,
