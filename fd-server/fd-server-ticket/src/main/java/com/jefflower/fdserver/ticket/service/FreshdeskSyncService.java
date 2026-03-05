@@ -385,6 +385,55 @@ public class FreshdeskSyncService {
         ticket.setFdUpdatedAt(parseDateTime(fdTicket, "updated_at"));
     }
 
+    // ========== 单工单刷新（n8n 循环调用） ==========
+
+    /**
+     * 从 Freshdesk API 刷新指定工单的最新内容（含对话），不改变工单状态，不触发 n8n Webhook。
+     * 供 n8n 工作流在循环处理每个工单前调用，确保拿到最新数据。
+     *
+     * @param ticketId 本地工单 ID
+     * @return 更新后的 Ticket 实体
+     */
+    @Transactional
+    public Ticket refreshTicketContent(Long ticketId) {
+        Ticket ticket = ticketRepository.findById(ticketId)
+                .orElseThrow(() -> new BusinessException(ErrorCode.TICKET_NOT_FOUND, "工单不存在: " + ticketId));
+
+        String externalId = ticket.getExternalId();
+        log.info("[FreshdeskSyncService] 刷新工单内容 #{}, externalId={}", ticketId, externalId);
+
+        // 从 Freshdesk API 获取最新工单数据
+        Map<String, Object> fdTicket = apiClient.fetchSingleTicket(externalId);
+
+        // 提取 description（优先 description_text）
+        String description = (String) fdTicket.get("description_text");
+        if (description == null) {
+            description = (String) fdTicket.get("description");
+        }
+
+        // 构建完整内容（含对话）
+        String subject = (String) fdTicket.get("subject");
+        String allContent = buildFullContent(externalId, subject, description);
+
+        // 计算内容哈希
+        String newHash = computeContentHash(allContent);
+
+        // 更新工单字段（不修改 status）
+        ticket.setSubject(subject);
+        ticket.setContent(allContent);
+        ticket.setContentHash(newHash);
+        ticket.setLastSyncedAt(LocalDateTime.now());
+        ticket.setSyncSource("N8N_REFRESH");
+
+        // 更新 Freshdesk 元数据
+        populateFreshdeskMetadata(ticket, fdTicket);
+
+        ticketRepository.save(ticket);
+        log.info("[FreshdeskSyncService] 工单 #{} 内容已刷新, contentHash={}", ticketId, newHash);
+
+        return ticket;
+    }
+
     // ========== 工具方法 ==========
 
     private String computeContentHash(String content) {

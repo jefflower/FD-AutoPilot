@@ -34,7 +34,7 @@
     },
     {
       "parameters": {
-        "content": "## 工单自动处理工作流（生产版）\n\n### 流程\n1. 登录获取 JWT\n2. 获取待翻译工单（fdStatus=2 Open）\n3. 循环逐个处理每个工单：\n   - 调用翻译 Agent（含 AI 分类 + resolved 判断）→ 保存翻译结果\n   - 检查 resolved：\n     - resolved=true → 调用 resolve-completed 标记工单已解决\n     - resolved=false → 按分类路由\n   - 按分类路由：\n     - 产品故障 → ticket-reply Agent\n     - 物流查询 → logistics-reply Agent\n     - 商务合作/其他 → 标记人工处理\n   - 回复分支 → 保存回复 → 推送审核通知\n4. 循环结束 → 汇总结果\n\n### API 地址\n生产环境: http://47.110.152.25:9988",
+        "content": "## 工单自动处理工作流（生产版）\n\n### 流程\n1. 登录获取 JWT\n2. 获取待翻译工单（fdStatus=2 Open）\n3. 循环逐个处理每个工单：\n   - 刷新工单 Freshdesk 最新数据\n   - 调用翻译 Agent（含 AI 分类 + resolved 判断）→ 保存翻译结果\n   - 检查 resolved：\n     - resolved=true → 调用 resolve-completed 标记工单已解决\n     - resolved=false → 按分类路由\n   - 按分类路由：\n     - 产品故障 → ticket-reply Agent → 保存回复 → 推送审核通知\n     - 物流查询 / 商务合作 / 其他 → 标记人工处理\n4. 循环结束 → 汇总结果\n\n### API 地址\n生产环境: http://47.110.152.25:9988",
         "height": 400,
         "width": 380
       },
@@ -105,6 +105,29 @@
     {
       "parameters": {
         "method": "POST",
+        "url": "=http://47.110.152.25:9988/api/v1/n8n/tickets/{{ $json.id }}/refresh",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('登录获取 JWT').item.json.data.accessToken }}"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "refresh-ticket",
+      "name": "刷新工单 Freshdesk 数据",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1260, 150]
+    },
+    {
+      "parameters": {
+        "method": "POST",
         "url": "http://47.110.152.25:9988/api/v1/n8n/agents/ticket-translate/execute",
         "sendHeaders": true,
         "headerParameters": {
@@ -117,7 +140,7 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify({ input: { ticketContent: $json.content, targetLang: 'zh-CN' }, refType: 'ticket', refId: String($json.id), timeoutMs: 300000 }) }}",
+        "jsonBody": "={{ JSON.stringify({ input: { ticketContent: $json.data.content, targetLang: 'zh-CN' }, refType: 'ticket', refId: String($json.data.id), timeoutMs: 300000 }) }}",
         "options": {
           "timeout": 300000
         }
@@ -126,12 +149,12 @@
       "name": "调用翻译 Agent（含分类）",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [1280, 150]
+      "position": [1500, 150]
     },
     {
       "parameters": {
         "method": "POST",
-        "url": "=http://47.110.152.25:9988/api/v1/n8n/tickets/{{ $('逐个处理工单').item.json.id }}/save-translation",
+        "url": "=http://47.110.152.25:9988/api/v1/n8n/tickets/{{ $('刷新工单 Freshdesk 数据').item.json.data.id }}/save-translation",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
@@ -150,7 +173,7 @@
       "name": "保存翻译结果（含分类）",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [1560, 150]
+      "position": [1760, 150]
     },
     {
       "parameters": {
@@ -172,7 +195,7 @@
             {
               "id": "field-ticketId",
               "name": "ticketId",
-              "value": "={{ $('逐个处理工单').item.json.id }}",
+              "value": "={{ $('刷新工单 Freshdesk 数据').item.json.data.id }}",
               "type": "number"
             }
           ]
@@ -184,7 +207,7 @@
       "name": "提取分类",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
-      "position": [1840, 150]
+      "position": [2040, 150]
     },
     {
       "parameters": {
@@ -202,7 +225,7 @@
       "name": "检查是否已解决",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
-      "position": [2100, 150]
+      "position": [2300, 150]
     },
     {
       "parameters": {
@@ -223,7 +246,7 @@
       "name": "标记工单已解决",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [2400, 0]
+      "position": [2600, 0]
     },
     {
       "parameters": {
@@ -279,7 +302,7 @@
       "name": "分类路由",
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3,
-      "position": [2400, 300]
+      "position": [2600, 300]
     },
     {
       "parameters": {
@@ -296,7 +319,7 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify({ input: { ticketContent: $('逐个处理工单').item.json.content, lastAuditRemark: $('逐个处理工单').item.json.lastAuditRemark || '' }, refType: 'ticket', refId: String($('逐个处理工单').item.json.id), timeoutMs: 300000 }) }}",
+        "jsonBody": "={{ JSON.stringify({ input: { ticketContent: $('刷新工单 Freshdesk 数据').item.json.data.content, lastAuditRemark: $('刷新工单 Freshdesk 数据').item.json.data.lastAuditRemark || '' }, refType: 'ticket', refId: String($('刷新工单 Freshdesk 数据').item.json.data.id), timeoutMs: 300000 }) }}",
         "options": {
           "timeout": 300000
         }
@@ -305,12 +328,12 @@
       "name": "产品故障回复 Agent",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [2700, 150]
+      "position": [2900, 150]
     },
     {
       "parameters": {
         "method": "POST",
-        "url": "http://47.110.152.25:9988/api/v1/n8n/agents/logistics-reply/execute",
+        "url": "=http://47.110.152.25:9988/api/v1/n8n/tickets/{{ $('刷新工单 Freshdesk 数据').item.json.data.id }}/mark-manual",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
@@ -322,45 +345,19 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify({ input: { ticketContent: $('逐个处理工单').item.json.content, lastAuditRemark: $('逐个处理工单').item.json.lastAuditRemark || '' }, refType: 'ticket', refId: String($('逐个处理工单').item.json.id), timeoutMs: 300000 }) }}",
-        "options": {
-          "timeout": 300000
-        }
-      },
-      "id": "call-logistics-reply",
-      "name": "物流查询回复 Agent",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [2700, 350]
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "=http://47.110.152.25:9988/api/v1/n8n/tickets/{{ $('逐个处理工单').item.json.id }}/mark-manual",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "Authorization",
-              "value": "=Bearer {{ $('登录获取 JWT').item.json.data.accessToken }}"
-            }
-          ]
-        },
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify({ reason: 'AI 分类为' + ($json.category === 'BUSINESS_COOPERATION' ? '商务合作' : '其他') + '，需人工处理' }) }}",
+        "jsonBody": "={{ JSON.stringify({ reason: 'AI 分类为' + ($json.category === 'LOGISTICS_INQUIRY' ? '物流查询' : $json.category === 'BUSINESS_COOPERATION' ? '商务合作' : '其他') + '，需人工处理' }) }}",
         "options": {}
       },
       "id": "mark-manual",
       "name": "标记人工处理",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [2700, 550]
+      "position": [2900, 450]
     },
     {
       "parameters": {
         "method": "POST",
-        "url": "=http://47.110.152.25:9988/api/v1/n8n/tickets/{{ $('逐个处理工单').item.json.id }}/save-reply",
+        "url": "=http://47.110.152.25:9988/api/v1/n8n/tickets/{{ $('刷新工单 Freshdesk 数据').item.json.data.id }}/save-reply",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
@@ -379,12 +376,12 @@
       "name": "保存回复结果",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [2960, 250]
+      "position": [3160, 150]
     },
     {
       "parameters": {
         "method": "POST",
-        "url": "=http://47.110.152.25:9988/api/v1/n8n/tickets/{{ $('逐个处理工单').item.json.id }}/notify-audit",
+        "url": "=http://47.110.152.25:9988/api/v1/n8n/tickets/{{ $('刷新工单 Freshdesk 数据').item.json.data.id }}/notify-audit",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
@@ -400,7 +397,7 @@
       "name": "推送审核通知",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [3220, 250]
+      "position": [3420, 150]
     },
     {
       "parameters": {
@@ -513,7 +510,7 @@
       "main": [
         [
           {
-            "node": "调用翻译 Agent（含分类）",
+            "node": "刷新工单 Freshdesk 数据",
             "type": "main",
             "index": 0
           }
@@ -521,6 +518,17 @@
         [
           {
             "node": "汇总结果",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "刷新工单 Freshdesk 数据": {
+      "main": [
+        [
+          {
+            "node": "调用翻译 Agent（含分类）",
             "type": "main",
             "index": 0
           }
@@ -600,7 +608,7 @@
         ],
         [
           {
-            "node": "物流查询回复 Agent",
+            "node": "标记人工处理",
             "type": "main",
             "index": 0
           }
@@ -615,17 +623,6 @@
       ]
     },
     "产品故障回复 Agent": {
-      "main": [
-        [
-          {
-            "node": "保存回复结果",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "物流查询回复 Agent": {
       "main": [
         [
           {

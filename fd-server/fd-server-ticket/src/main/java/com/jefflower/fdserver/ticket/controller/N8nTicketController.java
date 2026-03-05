@@ -138,6 +138,16 @@ public class N8nTicketController {
         return ResponseEntity.ok(ApiResponse.ok("人工处理完成", result));
     }
 
+    // ========== 刷新工单数据 ==========
+
+    @Operation(summary = "刷新工单 Freshdesk 数据", description = "从 Freshdesk API 同步工单最新内容（含对话），不改变工单状态")
+    @PostMapping("/{id}/refresh")
+    @RequiresPermission("ticket:read")
+    public ResponseEntity<ApiResponse<Ticket>> refreshTicket(@PathVariable Long id) {
+        Ticket ticket = n8nTicketService.refreshAndGetTicket(id);
+        return ResponseEntity.ok(ApiResponse.ok(ticket));
+    }
+
     // ========== 调试 ==========
 
     @Operation(summary = "获取工单状态转换历史", description = "查询状态转换日志，供 n8n 调试")

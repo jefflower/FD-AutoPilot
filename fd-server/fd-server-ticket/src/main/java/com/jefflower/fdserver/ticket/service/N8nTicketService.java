@@ -41,6 +41,7 @@ public class N8nTicketService {
     private final TicketStatusLogService statusLogService;
     private final TicketStateMachine stateMachine;
     private final FreshdeskApiClient freshdeskApiClient;
+    private final FreshdeskSyncService freshdeskSyncService;
 
     private static final int DEFAULT_LIMIT = 20;
     private static final int MAX_LIMIT = 100;
@@ -298,6 +299,16 @@ public class N8nTicketService {
         response.put("ticketId", ticketId);
         response.put("status", targetStatus.name());
         return response;
+    }
+
+    // ========== 刷新工单数据 ==========
+
+    /**
+     * 从 Freshdesk API 刷新工单最新数据（含对话），不改变工单状态。
+     * 供 n8n 工作流在循环处理每个工单前调用。
+     */
+    public Ticket refreshAndGetTicket(Long ticketId) {
+        return freshdeskSyncService.refreshTicketContent(ticketId);
     }
 
     // ========== 内部方法 ==========
