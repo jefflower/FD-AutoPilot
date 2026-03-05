@@ -23,5 +23,6 @@ public class ClientRegisterRequest {
     public static class SkillItem {
         private String name;
         private String description;
+        private String command;
     }
 }

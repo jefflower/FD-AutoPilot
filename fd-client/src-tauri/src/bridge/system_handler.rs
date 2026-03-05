@@ -102,7 +102,7 @@ pub async fn capabilities_detect_handler() -> Json<CapabilitiesResponse> {
 
 // ========== Skill Detection ==========
 
-const SKILL_DETECT_PROMPT: &str = r#"请列出你擅长的技能领域，以纯 JSON 数组返回，格式: [{"name":"技能名","description":"简短描述"}]。最多列出 10 个核心技能。只返回 JSON 数组，不要任何其他文字、代码块标记或解释。"#;
+const SKILL_DETECT_PROMPT: &str = r#"请列出你擅长的技能领域，以纯 JSON 数组返回，格式: [{"name":"技能名","description":"简短描述","command":"示例调用命令"}]。command 字段写一个最简单的示例命令（如 gemini "翻译这段话" 或 claude -p "写一段代码"）。最多列出 10 个核心技能。只返回 JSON 数组，不要任何其他文字、代码块标记或解释。"#;
 
 /// Detect skills of a given AI CLI tool by prompting it.
 pub async fn skills_detect_handler(
@@ -123,24 +123,38 @@ pub async fn skills_detect_handler(
     };
 
     let command_owned = command.to_string();
-    let skill_timeout = Duration::from_secs(30);
+    let cap_clone = cap.clone();
+    let skill_timeout = Duration::from_secs(60);
 
     let result = timeout(
         skill_timeout,
         tokio::task::spawn_blocking(move || {
-            // 通过 stdin 传入 prompt，避免 shell 转义问题
-            let mut child = Command::new(&command_owned)
-                .stdin(Stdio::piped())
-                .stdout(Stdio::piped())
-                .stderr(Stdio::piped())
-                .spawn()?;
+            match cap_clone.as_str() {
+                // claude-cli: 使用 -p 参数传递 prompt（Claude Code 不接受 stdin 输入）
+                "claude-cli" => {
+                    Command::new(&command_owned)
+                        .arg("-p")
+                        .arg(SKILL_DETECT_PROMPT)
+                        .stdout(Stdio::piped())
+                        .stderr(Stdio::piped())
+                        .output()
+                }
+                // gemini-cli 等: 通过 stdin 传入 prompt
+                _ => {
+                    let mut child = Command::new(&command_owned)
+                        .stdin(Stdio::piped())
+                        .stdout(Stdio::piped())
+                        .stderr(Stdio::piped())
+                        .spawn()?;
 
-            if let Some(mut stdin) = child.stdin.take() {
-                stdin.write_all(SKILL_DETECT_PROMPT.as_bytes())?;
-                // 关闭 stdin 表示输入结束
+                    if let Some(mut stdin) = child.stdin.take() {
+                        stdin.write_all(SKILL_DETECT_PROMPT.as_bytes())?;
+                        // 关闭 stdin 表示输入结束
+                    }
+
+                    child.wait_with_output()
+                }
             }
-
-            child.wait_with_output()
         }),
     )
     .await;

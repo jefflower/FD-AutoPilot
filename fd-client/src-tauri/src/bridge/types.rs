@@ -144,6 +144,8 @@ pub struct SkillsQueryParams {
 pub struct SkillInfo {
     pub name: String,
     pub description: String,
+    #[serde(default)]
+    pub command: Option<String>,
 }
 
 #[derive(Serialize)]

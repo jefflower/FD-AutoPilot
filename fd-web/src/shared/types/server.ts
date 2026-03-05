@@ -648,6 +648,7 @@ export interface ClientRegistration {
 export interface ClientSkillItem {
   name: string;
   description: string;
+  command?: string;
 }
 
 export interface ClientRegisterRequest {

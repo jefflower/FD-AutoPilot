@@ -99,16 +99,24 @@ export const StartupGate: React.FC<{ children: React.ReactNode }> = ({ children 
                                             Skill 探测失败: {skillMap[cap.code].error!.substring(0, 60)}
                                         </p>
                                     ) : skillMap[cap.code].skills.length > 0 ? (
-                                        <div className="flex flex-wrap gap-1.5">
-                                            {skillMap[cap.code].skills.map((skill, i) => (
-                                                <span
-                                                    key={i}
-                                                    className="px-2 py-0.5 text-xs rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-300"
-                                                    title={skill.description}
-                                                >
-                                                    {skill.name}
-                                                </span>
-                                            ))}
+                                        <div className="space-y-1.5">
+                                            <div className="flex flex-wrap gap-1.5">
+                                                {skillMap[cap.code].skills.map((skill, i) => (
+                                                    <span
+                                                        key={i}
+                                                        className="px-2 py-0.5 text-xs rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-300 cursor-help"
+                                                        title={`${skill.description}${skill.command ? '\n命令: ' + skill.command : ''}`}
+                                                    >
+                                                        {skill.name}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                            {/* 展示第一个有 command 的 skill 作为示例 */}
+                                            {skillMap[cap.code].skills.some(s => s.command) && (
+                                                <p className="text-[10px] text-slate-500 font-mono truncate" title="示例命令">
+                                                    $ {skillMap[cap.code].skills.find(s => s.command)?.command}
+                                                </p>
+                                            )}
                                         </div>
                                     ) : (
                                         <p className="text-xs text-slate-500">

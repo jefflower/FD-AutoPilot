@@ -156,6 +156,7 @@ export async function detectCapabilities(): Promise<CapabilityDetectResult[]> {
 export interface SkillInfo {
   name: string;
   description: string;
+  command?: string;
 }
 
 export interface SkillsDetectResult {
