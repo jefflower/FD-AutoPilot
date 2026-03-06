@@ -164,6 +164,17 @@ public class N8nTicketController {
         return ResponseEntity.ok(ApiResponse.ok("回复已清除", result));
     }
 
+    // ========== AI 回复（异步） ==========
+
+    @Operation(summary = "提交 AI 回复",
+            description = "将人工处理工单提交给 AI 回复，状态转为 REPLYING 并通过 n8n webhook 异步处理")
+    @PostMapping("/{id}/submit-for-ai-reply")
+    @RequiresPermission("ticket:reply")
+    public ResponseEntity<ApiResponse<Map<String, Object>>> submitForAiReply(@PathVariable Long id) {
+        Map<String, Object> result = n8nTicketService.submitForAiReply(id);
+        return ResponseEntity.ok(ApiResponse.ok("已提交 AI 回复", result));
+    }
+
     // ========== 刷新工单数据 ==========
 
     @Operation(summary = "刷新工单 Freshdesk 数据", description = "从 Freshdesk API 同步工单最新内容（含对话），不改变工单状态")

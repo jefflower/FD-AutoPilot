@@ -83,6 +83,7 @@ public class TicketStateMachine {
             )),
             Map.entry(TicketStatus.MANUAL_REQUIRED, Set.of(
                     TicketStatus.PENDING_REPLY,      // 人工介入后继续处理
+                    TicketStatus.REPLYING,           // 人工提交 AI 回复（跳过翻译，直接回复）
                     TicketStatus.PENDING_AUDIT,      // 人工回复后直接进入审核
                     TicketStatus.COMPLETED           // 人工直接完结
             )),

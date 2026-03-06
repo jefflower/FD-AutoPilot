@@ -19,7 +19,7 @@ import ReplyEditor from '../components/ticket-detail/ReplyEditor';
 import type { TranslateDirection } from '../components/ticket-detail/ReplyEditor';
 import type { ServerTicket } from '../../../shared/types/server';
 import {
-  AlertTriangle, Play, CheckCircle2, Loader2, MessageSquare,
+  AlertTriangle, Play, CheckCircle2, Loader2, MessageSquare, Sparkles,
 } from 'lucide-react';
 
 const ManualRequiredTab: React.FC = () => {
@@ -39,6 +39,7 @@ const ManualRequiredTab: React.FC = () => {
   const [manualTargetReply, setManualTargetReply] = useState('');
   const [translating, setTranslating] = useState(false);
   const [submittingReply, setSubmittingReply] = useState(false);
+  const [aiReplying, setAiReplying] = useState(false);
 
   // Split 模式持久化
   const [isSplitMode, setIsSplitModeState] = useState<boolean>(() => {
@@ -206,6 +207,35 @@ const ManualRequiredTab: React.FC = () => {
       setSubmittingReply(false);
     }
   }, [selectedTicket, manualTargetReply, manualZhReply, selectedId, fetchTickets]);
+
+  // AI 回复（异步）：提交到后端 → n8n webhook 异步处理 → 工单进入审核
+  const [confirmAiReply, setConfirmAiReply] = useState(false);
+  const handleAiReply = useCallback(async () => {
+    if (!selectedTicket) return;
+    // 双击确认
+    if (!confirmAiReply) {
+      setConfirmAiReply(true);
+      return;
+    }
+    setAiReplying(true);
+    setConfirmAiReply(false);
+    try {
+      await request(`/n8n/tickets/${selectedTicket.id}/submit-for-ai-reply`, {
+        method: 'POST',
+      });
+      // 工单已转为 REPLYING，从列表移除
+      if (selectedId === selectedTicket.id) {
+        setSelectedId(null);
+        setSelectedTicket(null);
+      }
+      setShowManualReply(false);
+      await fetchTickets();
+    } catch (err) {
+      console.error('[ManualRequiredTab] Submit AI reply failed:', err);
+    } finally {
+      setAiReplying(false);
+    }
+  }, [selectedTicket, confirmAiReply, selectedId, fetchTickets]);
 
   // 点击外部时取消确认状态
   const handleBlur = useCallback(() => {
@@ -380,6 +410,24 @@ const ManualRequiredTab: React.FC = () => {
                     <CheckCircle2 className="w-3.5 h-3.5" />
                   )}
                   {confirmAction === 'complete' ? '确认完结?' : '直接完结'}
+                </button>
+
+                <button
+                  onClick={handleAiReply}
+                  onBlur={() => setTimeout(() => setConfirmAiReply(false), 200)}
+                  disabled={aiReplying || submittingReply}
+                  className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-all ${
+                    confirmAiReply
+                      ? 'bg-amber-600 text-white ring-2 ring-amber-400/50'
+                      : 'bg-amber-500/15 text-amber-400 hover:bg-amber-500/25'
+                  } disabled:opacity-50 disabled:cursor-not-allowed`}
+                >
+                  {aiReplying ? (
+                    <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                  ) : (
+                    <Sparkles className="w-3.5 h-3.5" />
+                  )}
+                  {aiReplying ? '提交中...' : confirmAiReply ? '确认提交?' : '提交AI回复'}
                 </button>
 
                 <button

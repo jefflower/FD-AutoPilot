@@ -1,0 +1,313 @@
+{
+  "name": "FD-AutoPilot AI 回复（人工触发）",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "fd-ai-reply",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook 触发",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [0, 150],
+      "webhookId": "fd-ai-reply"
+    },
+    {
+      "parameters": {
+        "content": "## AI 回复工作流（人工触发）\n\n### 触发方式\nWebhook POST /webhook/fd-ai-reply\nBody: { \"ticketId\": 123 }\n\n### 流程\n1. 接收 ticketId\n2. 登录获取 JWT\n3. 刷新工单 Freshdesk 数据\n4. 获取对话标注\n5. 调用回复 Agent（带标注）\n6. 检查回复是否为空 → 空则用长内容 Agent\n7. 保存回复结果\n8. 推送审核通知\n\n### 使用场景\n人工处理页面点击「提交AI回复」按钮\n工单已从 MANUAL_REQUIRED → REPLYING\n回复完成后自动进入审核中心",
+        "height": 420,
+        "width": 360
+      },
+      "id": "sticky-note",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [-400, -80]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://47.110.152.25:9988/api/v1/auth/login",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"username\": \"n8n-service\",\n  \"password\": \"n8n-service\"\n}",
+        "options": {}
+      },
+      "id": "login",
+      "name": "登录获取 JWT",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [260, 150]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=http://47.110.152.25:9988/api/v1/n8n/tickets/{{ $('Webhook 触发').item.json.body.ticketId }}/refresh",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('登录获取 JWT').item.json.data.accessToken }}"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "refresh-ticket",
+      "name": "刷新工单数据",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [520, 150]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=http://47.110.152.25:9988/api/v1/n8n/tickets/{{ $('Webhook 触发').item.json.body.ticketId }}/annotations-text",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('登录获取 JWT').item.json.data.accessToken }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "fetch-annotations",
+      "name": "获取对话标注",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [780, 150]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://47.110.152.25:9988/api/v1/n8n/agents/ticket-reply/execute",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('登录获取 JWT').item.json.data.accessToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ input: { ticketContent: $('刷新工单数据').item.json.data.content, lastAuditRemark: $('刷新工单数据').item.json.data.lastAuditRemark || '', annotations: $('获取对话标注').item.json.data.annotations || '' }, refType: 'ticket', refId: String($('Webhook 触发').item.json.body.ticketId), timeoutMs: 300000 }) }}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "id": "call-reply",
+      "name": "调用回复 Agent",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1040, 150]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ ($json.data && $json.data.output) || '' }}",
+              "operation": "equal",
+              "value2": ""
+            }
+          ]
+        }
+      },
+      "id": "check-reply-empty",
+      "name": "检查回复是否为空",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [1300, 150]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://47.110.152.25:9988/api/v1/n8n/agents/ticket-reply-long/execute",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('登录获取 JWT').item.json.data.accessToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ input: { ticketContent: $('刷新工单数据').item.json.data.content, lastAuditRemark: $('刷新工单数据').item.json.data.lastAuditRemark || '', annotations: $('获取对话标注').item.json.data.annotations || '' }, refType: 'ticket', refId: String($('Webhook 触发').item.json.body.ticketId), timeoutMs: 600000 }) }}",
+        "options": {
+          "timeout": 600000
+        }
+      },
+      "id": "call-long-reply",
+      "name": "长内容回复 Agent",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1560, 0]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=http://47.110.152.25:9988/api/v1/n8n/tickets/{{ $('Webhook 触发').item.json.body.ticketId }}/save-reply",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('登录获取 JWT').item.json.data.accessToken }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ (() => { let raw = ($json.data && $json.data.output) || ''; const fm = raw.match(/```(?:\\w+)?\\s*([\\s\\S]*?)\\s*```/); if (fm) raw = fm[1]; raw = raw.trim(); let targetReply = raw; let zhReply = raw; try { const arr = JSON.parse(raw); if (Array.isArray(arr)) { targetReply = arr[0] || ''; zhReply = arr[1] || arr[0] || ''; } else if (typeof arr === 'string') { targetReply = arr; zhReply = arr; } } catch(e) {} return JSON.stringify({ targetReply, zhReply }); })() }}",
+        "options": {}
+      },
+      "id": "save-reply",
+      "name": "保存回复结果",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1820, 150]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=http://47.110.152.25:9988/api/v1/n8n/tickets/{{ $('Webhook 触发').item.json.body.ticketId }}/notify-audit",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('登录获取 JWT').item.json.data.accessToken }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "notify-audit",
+      "name": "推送审核通知",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2080, 150]
+    }
+  ],
+  "connections": {
+    "Webhook 触发": {
+      "main": [
+        [
+          {
+            "node": "登录获取 JWT",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "登录获取 JWT": {
+      "main": [
+        [
+          {
+            "node": "刷新工单数据",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "刷新工单数据": {
+      "main": [
+        [
+          {
+            "node": "获取对话标注",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "获取对话标注": {
+      "main": [
+        [
+          {
+            "node": "调用回复 Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "调用回复 Agent": {
+      "main": [
+        [
+          {
+            "node": "检查回复是否为空",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "检查回复是否为空": {
+      "main": [
+        [
+          {
+            "node": "长内容回复 Agent",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "保存回复结果",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "长内容回复 Agent": {
+      "main": [
+        [
+          {
+            "node": "保存回复结果",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "保存回复结果": {
+      "main": [
+        [
+          {
+            "node": "推送审核通知",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "tags": [
+    {
+      "name": "FD-AutoPilot"
+    },
+    {
+      "name": "production"
+    }
+  ]
+}

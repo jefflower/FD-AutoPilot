@@ -34,7 +34,7 @@
     },
     {
       "parameters": {
-        "content": "## 工单自动处理工作流（生产版）\n\n### 流程\n1. 登录获取 JWT\n2. 获取待翻译工单（fdStatus=2 Open）\n3. 循环逐个处理每个工单：\n   - 刷新工单 Freshdesk 最新数据\n   - 调用翻译 Agent（含 AI 分类 + resolved 判断）→ 保存翻译结果\n   - 检查 resolved：\n     - resolved=true → 调用 resolve-completed 标记工单已解决\n     - resolved=false → 按分类路由\n   - 按分类路由：\n     - 产品故障 → ticket-reply Agent → 检查回复是否为空\n       - 空 → ticket-reply-long Agent（RAG 模式）→ 保存回复 → 推送审核通知\n       - 非空 → 保存回复 → 推送审核通知\n     - 物流查询 / 商务合作 / 其他 → 标记人工处理\n4. 循环结束 → 汇总结果\n\n### API 地址\n生产环境: http://47.110.152.25:9988",
+        "content": "## 工单自动处理工作流（生产版）\n\n### 流程\n1. 登录获取 JWT\n2. 获取待翻译工单（fdStatus=2 Open）\n3. 循环逐个处理每个工单：\n   - 刷新工单 Freshdesk 最新数据\n   - 调用翻译 Agent（含 AI 分类 + resolved 判断）→ 保存翻译结果\n   - 检查 resolved：\n     - resolved=true → 调用 resolve-completed 标记工单已解决\n     - resolved=false → 按分类路由\n   - 按分类路由：\n     - 产品故障 → 获取对话标注 → ticket-reply Agent → 检查回复是否为空\n       - 空 → ticket-reply-long Agent（RAG 模式）→ 保存回复 → 推送审核通知\n       - 非空 → 保存回复 → 推送审核通知\n     - 物流查询 / 商务合作 / 视频审查 / 其他 → 标记人工处理\n4. 循环结束 → 汇总结果\n\n### API 地址\n生产环境: http://47.110.152.25:9988",
         "height": 460,
         "width": 380
       },
@@ -268,6 +268,27 @@
     },
     {
       "parameters": {
+        "method": "GET",
+        "url": "=http://47.110.152.25:9988/api/v1/n8n/tickets/{{ $('刷新工单 Freshdesk 数据').item.json.data.id }}/annotations-text",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('登录获取 JWT').item.json.data.accessToken }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "fetch-annotations",
+      "name": "获取对话标注",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2900, 150]
+    },
+    {
+      "parameters": {
         "method": "POST",
         "url": "http://47.110.152.25:9988/api/v1/n8n/agents/ticket-reply/execute",
         "sendHeaders": true,
@@ -281,7 +302,7 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify({ input: { ticketContent: $('刷新工单 Freshdesk 数据').item.json.data.content, lastAuditRemark: $('刷新工单 Freshdesk 数据').item.json.data.lastAuditRemark || '' }, refType: 'ticket', refId: String($('刷新工单 Freshdesk 数据').item.json.data.id), timeoutMs: 300000 }) }}",
+        "jsonBody": "={{ JSON.stringify({ input: { ticketContent: $('刷新工单 Freshdesk 数据').item.json.data.content, lastAuditRemark: $('刷新工单 Freshdesk 数据').item.json.data.lastAuditRemark || '', annotations: $('获取对话标注').item.json.data.annotations || '' }, refType: 'ticket', refId: String($('刷新工单 Freshdesk 数据').item.json.data.id), timeoutMs: 300000 }) }}",
         "options": {
           "timeout": 300000
         }
@@ -290,7 +311,7 @@
       "name": "产品故障回复 Agent",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [2900, 150]
+      "position": [3160, 150]
     },
     {
       "parameters": {
@@ -308,7 +329,7 @@
       "name": "检查回复是否为空",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
-      "position": [3160, 150]
+      "position": [3420, 150]
     },
     {
       "parameters": {
@@ -325,7 +346,7 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify({ input: { ticketContent: $('刷新工单 Freshdesk 数据').item.json.data.content, lastAuditRemark: $('刷新工单 Freshdesk 数据').item.json.data.lastAuditRemark || '' }, refType: 'ticket', refId: String($('刷新工单 Freshdesk 数据').item.json.data.id), timeoutMs: 600000 }) }}",
+        "jsonBody": "={{ JSON.stringify({ input: { ticketContent: $('刷新工单 Freshdesk 数据').item.json.data.content, lastAuditRemark: $('刷新工单 Freshdesk 数据').item.json.data.lastAuditRemark || '', annotations: $('获取对话标注').item.json.data.annotations || '' }, refType: 'ticket', refId: String($('刷新工单 Freshdesk 数据').item.json.data.id), timeoutMs: 600000 }) }}",
         "options": {
           "timeout": 600000
         }
@@ -334,7 +355,7 @@
       "name": "长内容回复 Agent",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [3420, 0]
+      "position": [3680, 0]
     },
     {
       "parameters": {
@@ -382,7 +403,7 @@
       "name": "保存回复结果",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [3680, 150]
+      "position": [3940, 150]
     },
     {
       "parameters": {
@@ -403,7 +424,7 @@
       "name": "推送审核通知",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [3940, 150]
+      "position": [4200, 150]
     },
     {
       "parameters": {
@@ -607,7 +628,7 @@
       "main": [
         [
           {
-            "node": "产品故障回复 Agent",
+            "node": "获取对话标注",
             "type": "main",
             "index": 0
           }
@@ -615,6 +636,17 @@
         [
           {
             "node": "标记人工处理",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "获取对话标注": {
+      "main": [
+        [
+          {
+            "node": "产品故障回复 Agent",
             "type": "main",
             "index": 0
           }
