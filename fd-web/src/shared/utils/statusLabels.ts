@@ -70,6 +70,7 @@ export const TICKET_CATEGORY_LABELS: Record<string, string> = {
   PRODUCT_FAULT: '产品故障',
   LOGISTICS_INQUIRY: '物流查询',
   BUSINESS_COOPERATION: '商务合作',
+  VIDEO_REVIEW: '视频审查',
   OTHER: '其他',
 };
 
@@ -77,6 +78,7 @@ export const TICKET_CATEGORY_COLORS: Record<string, string> = {
   PRODUCT_FAULT: 'bg-red-500/20 text-red-400 ring-red-500/30',
   LOGISTICS_INQUIRY: 'bg-blue-500/20 text-blue-400 ring-blue-500/30',
   BUSINESS_COOPERATION: 'bg-amber-500/20 text-amber-400 ring-amber-500/30',
+  VIDEO_REVIEW: 'bg-purple-500/20 text-purple-400 ring-purple-500/30',
   OTHER: 'bg-slate-500/20 text-slate-400 ring-slate-500/30',
 };
 

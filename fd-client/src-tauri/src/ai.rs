@@ -580,10 +580,13 @@ async fn execute_notebooklm_rag_inner(
     let add_output = execute_notebooklm_cli(add_args, 120).await
         .map_err(|e| format!("source add failed: {}", e))?;
 
-    // 解析 source_id
+    // 解析 source_id（兼容两种 CLI 输出格式）
+    // 格式1: {"source_id": "xxx", ...}
+    // 格式2: {"source": {"id": "xxx", ...}}
     let add_json: serde_json::Value = serde_json::from_str(&add_output)
         .map_err(|e| format!("Failed to parse source add output: {}. Raw: {}", e, &add_output[..add_output.len().min(500)]))?;
     let source_id = add_json["source_id"].as_str()
+        .or_else(|| add_json["source"]["id"].as_str())
         .ok_or_else(|| format!("source_id not found in add output: {}", &add_output[..add_output.len().min(500)]))?
         .to_string();
     rlog_info!("[NotebookLmRag] Source added: {}", source_id);

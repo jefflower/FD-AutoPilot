@@ -218,6 +218,18 @@ export const ServerEventsProvider: React.FC<ServerEventsProviderProps> = ({ chil
 
         if (enabled) {
             connect();
+        } else {
+            // 明确断开：递增代际（防止旧连接 finally 触发重连）+ 终止连接
+            connectionGenRef.current++;
+            if (abortControllerRef.current) {
+                abortControllerRef.current.abort();
+                abortControllerRef.current = null;
+            }
+            if (reconnectTimerRef.current) {
+                clearTimeout(reconnectTimerRef.current);
+                reconnectTimerRef.current = null;
+            }
+            setStatus('disconnected');
         }
 
         return () => {

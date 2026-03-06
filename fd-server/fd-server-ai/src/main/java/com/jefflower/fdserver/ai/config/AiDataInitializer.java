@@ -219,7 +219,7 @@ public class AiDataInitializer implements CommandLineRunner {
 
         // 4. 清理已移除的内置 Agent
         cleanupRemovedBuiltInAgents(Set.of("ticket-translate", "ticket-reply", "n8n-workflow-designer",
-                "logistics-reply", "completion-reply", "ticket-reply-long"));
+                "logistics-reply", "completion-reply", "ticket-reply-long", "manual-reply-translate"));
 
         // 5. 初始化默认能力绑定
         ensureDefaultBinding("ticket-translate", "ticket-translate");
@@ -227,6 +227,7 @@ public class AiDataInitializer implements CommandLineRunner {
         ensureDefaultBinding("logistics-reply", "logistics-reply");
         ensureDefaultBinding("completion-reply", "completion-reply");
         ensureDefaultBinding("ticket-reply-long", "ticket-reply-long");
+        ensureDefaultBinding("manual-reply-translate", "manual-reply-translate");
     }
 
     /**
@@ -364,11 +365,12 @@ public class AiDataInitializer implements CommandLineRunner {
                 null,
                 null,
                 "You are a professional customer service translator and classifier.\n\n"
-                        + "Task: Translate the following ticket JSON into {{targetLang}}, classify the ticket into one of 4 categories, and determine if the issue is already resolved.\n\n"
+                        + "Task: Translate the following ticket JSON into {{targetLang}}, classify the ticket into one of 5 categories, and determine if the issue is already resolved.\n\n"
                         + "CATEGORIES:\n"
                         + "- PRODUCT_FAULT: Product quality issues, usage problems, returns/exchanges\n"
                         + "- LOGISTICS_INQUIRY: Shipping status, delivery time, tracking inquiries\n"
                         + "- BUSINESS_COOPERATION: Agency cooperation, bulk purchasing, business partnership\n"
+                        + "- VIDEO_REVIEW: Customer provided video links showing the issue (YouTube, Google Drive, Dropbox, etc.)\n"
                         + "- OTHER: Cannot be categorized into above\n\n"
                         + "RESOLVED DETECTION:\n"
                         + "- Set \"resolved\" to true ONLY when the customer explicitly confirms the issue is resolved, expresses thanks for resolution, or indicates no further help is needed\n"
@@ -379,14 +381,21 @@ public class AiDataInitializer implements CommandLineRunner {
                         + "- If multiple numbers found, use the most relevant one\n"
                         + "- If not found, set to empty string \"\"\n"
                         + "- These fields are ONLY needed when category is LOGISTICS_INQUIRY, omit them otherwise\n\n"
+                        + "VIDEO URL EXTRACTION (only when category is VIDEO_REVIEW):\n"
+                        + "- Extract ALL video URLs into \"videoUrls\" field as a JSON array of strings\n"
+                        + "- Common video platforms: YouTube, Vimeo, Google Drive, Dropbox, OneDrive, WeTransfer, etc.\n"
+                        + "- If the ticket describes a product fault BUT also contains video links, classify as VIDEO_REVIEW\n"
+                        + "- If not found any video URL, set to empty array []\n"
+                        + "- videoUrls field is ONLY needed when category is VIDEO_REVIEW, omit it otherwise\n\n"
                         + "STRICT OUTPUT FORMAT:\n"
                         + "- Output ONLY a raw JSON object. Start with { and end with }.\n"
                         + "- Do NOT wrap in markdown code fences (```).\n"
                         + "- Do NOT add any text before or after the JSON.\n"
                         + "- Keep the JSON structure identical, only translate text values.\n"
-                        + "- ADD a \"category\" field at the top level with one of: PRODUCT_FAULT, LOGISTICS_INQUIRY, BUSINESS_COOPERATION, OTHER\n"
+                        + "- ADD a \"category\" field at the top level with one of: PRODUCT_FAULT, LOGISTICS_INQUIRY, BUSINESS_COOPERATION, VIDEO_REVIEW, OTHER\n"
                         + "- ADD a \"resolved\" field at the top level with true or false\n"
-                        + "- When category is LOGISTICS_INQUIRY, ADD \"orderNumber\" and \"trackingNumber\" fields\n\n"
+                        + "- When category is LOGISTICS_INQUIRY, ADD \"orderNumber\" and \"trackingNumber\" fields\n"
+                        + "- When category is VIDEO_REVIEW, ADD \"videoUrls\" field as a JSON array of URL strings\n\n"
                         + "Ticket JSON:\n{{ticketContent}}",
                 0,
                 TRANSLATE_INPUT_SCHEMA,
@@ -575,6 +584,33 @@ public class AiDataInitializer implements CommandLineRunner {
                 REPLY_OUTPUT_SCHEMA,
                 DEFAULT_TEMPLATE_ENGINE,
                 "notebooklm-rag");
+
+        // === 人工回复翻译 Agent ===
+        ensureBuiltInAgent(
+                "manual-reply-translate",
+                "人工回复翻译",
+                "将人工编写的中文回复翻译为工单原语言",
+                null, null,
+                "manual-reply-translate",
+                "ticket",
+                null, null, null,
+                "You are a professional customer service translator.\n\n"
+                        + "Task: Translate the following Chinese customer service reply into {{targetLang}}.\n\n"
+                        + "CONTEXT:\n"
+                        + "- This is a reply to a customer support ticket\n"
+                        + "- The original ticket content is provided for context to help you match the tone and terminology\n"
+                        + "- Maintain a professional and friendly tone\n\n"
+                        + "STRICT OUTPUT FORMAT:\n"
+                        + "- Output ONLY the translated text, nothing else\n"
+                        + "- Do NOT wrap in quotes or code fences\n"
+                        + "- Do NOT add any explanation or prefix\n\n"
+                        + "Original ticket content for context:\n{{ticketContent}}\n\n"
+                        + "Chinese reply to translate:\n{{zhReply}}",
+                5,
+                "{\"type\":\"object\",\"properties\":{\"zhReply\":{\"type\":\"string\",\"description\":\"中文回复内容\"},\"ticketContent\":{\"type\":\"string\",\"description\":\"工单原文内容\"},\"targetLang\":{\"type\":\"string\",\"description\":\"目标语言\"}},\"required\":[\"zhReply\",\"targetLang\"]}",
+                "{\"type\":\"object\",\"properties\":{\"translatedReply\":{\"type\":\"string\"}}}",
+                DEFAULT_TEMPLATE_ENGINE,
+                "gemini-cli");
 
         // 给需要用户配置 notebookId 的 Agent 设置 userConfigSchema
         setUserConfigSchema("ticket-reply",

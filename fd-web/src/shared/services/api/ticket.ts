@@ -67,6 +67,10 @@ export const ticketApi = {
     });
   },
 
+  async clearReplies(ticketId: number): Promise<void> {
+    await request<void>(`/n8n/tickets/${ticketId}/clear-replies`, { method: 'POST' });
+  },
+
   async submitAudit(ticketId: number, data: AuditSubmitData): Promise<void> {
     await request<void>(`/tickets/${ticketId}/audit`, {
       method: 'POST',

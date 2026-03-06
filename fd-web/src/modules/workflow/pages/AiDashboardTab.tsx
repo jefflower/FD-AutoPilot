@@ -1,8 +1,9 @@
 import React, { useState, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Activity, RefreshCw } from 'lucide-react';
+import { Activity, RefreshCw, Pause, Play } from 'lucide-react';
 import { useAgentContext } from '../../../shared/agents/AgentContext';
 import { useOfficeData } from '../../../shared/hooks/useOfficeData';
+import { usePollingControl } from '../../../shared/hooks/usePollingControl';
 import type { AgentDefinition } from '../../../shared/types/server';
 import StatsBar from '../components/dashboard/StatsBar';
 import ModuleAgentGrid from '../components/dashboard/ModuleAgentGrid';
@@ -14,6 +15,7 @@ const AiDashboardTab: React.FC = () => {
 
   const [autoRefresh, setAutoRefresh] = useState(true);
   const [logDrawerAgent, setLogDrawerAgent] = useState<string | null>(null);
+  const { pollingPaused, setPollingPaused } = usePollingControl();
 
   const {
     definitions,
@@ -75,6 +77,20 @@ const AiDashboardTab: React.FC = () => {
             </div>
           </div>
           <div className="flex items-center gap-3">
+            {/* 全局轮询开关 — 暂停 SSE + 所有定时轮询 */}
+            <button
+              onClick={() => setPollingPaused(!pollingPaused)}
+              className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold rounded-lg border transition-all ${
+                pollingPaused
+                  ? 'text-amber-300 bg-amber-500/10 border-amber-500/40 hover:bg-amber-500/20'
+                  : 'text-slate-400 bg-slate-700/30 border-slate-600/50 hover:bg-slate-700/50'
+              }`}
+            >
+              {pollingPaused ? <Play className="w-3 h-3" /> : <Pause className="w-3 h-3" />}
+              {pollingPaused
+                ? t('aiDashboard.resumePolling', '恢复轮询')
+                : t('aiDashboard.pausePolling', '暂停轮询')}
+            </button>
             {/* Auto Refresh Toggle */}
             <label className="flex items-center gap-2 text-xs text-slate-400 cursor-pointer">
               <div

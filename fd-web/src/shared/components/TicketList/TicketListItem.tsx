@@ -88,7 +88,7 @@ const TicketListItem: React.FC<TicketListItemProps> = ({
         />
       )}
 
-      {/* Row 1: checkbox + ID + actions + status */}
+      {/* Row 1: checkbox + ID + hover actions */}
       <div className="flex items-center gap-1.5 min-w-0">
         {selectable && (
           <input
@@ -113,37 +113,42 @@ const TicketListItem: React.FC<TicketListItemProps> = ({
             {renderActions(ticket)}
           </div>
         )}
-
-        {/* 工单分类 badge（仅在有 ticketCategory 时显示） */}
-        {ticket.ticketCategory && (
-          <span
-            className={`inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium ring-1 ring-inset ${getTicketCategoryColor(ticket.ticketCategory)}`}
-          >
-            {getTicketCategoryLabel(ticket.ticketCategory)}
-          </span>
-        )}
-
-        {/* Freshdesk 状态 badge（仅在有 fdStatus 时显示） */}
-        {ticket.fdStatus != null && (
-          <span
-            className={`text-[9px] px-1.5 py-0.5 rounded ring-1 font-medium flex-shrink-0 ${getFdStatusColor(ticket.fdStatus)}`}
-            title={`Freshdesk: ${getFdStatusLabel(ticket.fdStatus)}`}
-          >
-            FD:{getFdStatusLabel(ticket.fdStatus)}
-          </span>
-        )}
-
-        {/* Status badge */}
-        {renderStatus ? (
-          renderStatus(ticket)
-        ) : (
-          <span
-            className={`text-[9px] px-1.5 py-0.5 rounded-full font-medium flex-shrink-0 ${statusColorClass}`}
-          >
-            {getTicketStatusLabel(t, ticket.status)}
-          </span>
-        )}
       </div>
+
+      {/* Row 1.5: Tags (category + FD status + ticket status) */}
+      {(ticket.ticketCategory || ticket.fdStatus != null || renderStatus || statusColorClass) && (
+        <div className="flex items-center flex-wrap gap-1 mt-1">
+          {/* 工单分类 badge */}
+          {ticket.ticketCategory && (
+            <span
+              className={`inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium ring-1 ring-inset ${getTicketCategoryColor(ticket.ticketCategory)}`}
+            >
+              {getTicketCategoryLabel(ticket.ticketCategory)}
+            </span>
+          )}
+
+          {/* Freshdesk 状态 badge */}
+          {ticket.fdStatus != null && (
+            <span
+              className={`text-[9px] px-1.5 py-0.5 rounded ring-1 font-medium ${getFdStatusColor(ticket.fdStatus)}`}
+              title={`Freshdesk: ${getFdStatusLabel(ticket.fdStatus)}`}
+            >
+              FD:{getFdStatusLabel(ticket.fdStatus)}
+            </span>
+          )}
+
+          {/* Status badge */}
+          {renderStatus ? (
+            renderStatus(ticket)
+          ) : (
+            <span
+              className={`text-[9px] px-1.5 py-0.5 rounded-full font-medium ${statusColorClass}`}
+            >
+              {getTicketStatusLabel(t, ticket.status)}
+            </span>
+          )}
+        </div>
+      )}
 
       {/* Row 2: Title */}
       <div className="mt-1">

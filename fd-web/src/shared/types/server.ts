@@ -116,7 +116,7 @@ export type TicketStatus =
   | 'MANUAL_REQUIRED'
   | 'COMPLETED';
 
-export type TicketCategory = 'PRODUCT_FAULT' | 'LOGISTICS_INQUIRY' | 'BUSINESS_COOPERATION' | 'OTHER';
+export type TicketCategory = 'PRODUCT_FAULT' | 'LOGISTICS_INQUIRY' | 'BUSINESS_COOPERATION' | 'VIDEO_REVIEW' | 'OTHER';
 
 export interface ServerTicket {
   id: number;
@@ -137,6 +137,12 @@ export interface ServerTicket {
   fdPriority?: number;
   /** AI 分类类别 */
   ticketCategory?: string;
+  /** 客户订单号（物流查询类） */
+  orderNumber?: string;
+  /** 物流追踪号（物流查询类） */
+  trackingNumber?: string;
+  /** 视频链接 JSON 数组（VIDEO_REVIEW 类） */
+  videoUrls?: string;
   /** 列表 DTO 返回的翻译标题（轻量，仅列表查询时存在） */
   translatedTitle?: string;
   translation?: TicketTranslation;

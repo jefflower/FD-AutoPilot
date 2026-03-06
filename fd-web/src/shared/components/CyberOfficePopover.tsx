@@ -9,6 +9,7 @@ import type {
 import { agentApi, clientApi } from '../services/api';
 import { useServerEvent } from '../context/ServerEventsContext';
 import { useAgentContext } from '../agents/AgentContext';
+import { usePollingControl } from '../hooks/usePollingControl';
 
 interface CyberOfficePopoverProps {
   onClose: () => void;
@@ -42,6 +43,7 @@ const CyberOfficePopover: React.FC<CyberOfficePopoverProps> = ({
   onNavigateToOffice,
 }) => {
   const { userAgentConfigs, definitions: allDefinitions } = useAgentContext();
+  const { pollingPaused } = usePollingControl();
 
   const [instances, setInstances] = useState<AgentInstance[]>([]);
   const [onlineClients, setOnlineClients] = useState<ClientRegistration[]>([]);
@@ -81,11 +83,12 @@ const CyberOfficePopover: React.FC<CyberOfficePopoverProps> = ({
     loadData();
   }, [loadData]);
 
-  // Auto refresh every 30s
+  // Auto refresh every 30s（pollingPaused 时停止）
   useEffect(() => {
+    if (pollingPaused) return;
     const timer = setInterval(loadData, 30_000);
     return () => clearInterval(timer);
-  }, [loadData]);
+  }, [loadData, pollingPaused]);
 
   // SSE: instant refresh on execution events
   const loadDataRef = useRef(loadData);

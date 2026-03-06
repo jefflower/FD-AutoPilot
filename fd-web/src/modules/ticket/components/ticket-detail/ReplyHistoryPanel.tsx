@@ -72,6 +72,7 @@ const ReplyHistoryPanel: React.FC<ReplyHistoryPanelProps> = ({
     const [needsSync, setNeedsSync] = useState(false);
     const [syncing, setSyncing] = useState(false);
     const [saving, setSaving] = useState(false);
+    const [clearing, setClearing] = useState(false);
 
     if (!replies || replies.length === 0) return null;
 
@@ -127,6 +128,20 @@ const ReplyHistoryPanel: React.FC<ReplyHistoryPanelProps> = ({
         }
     };
 
+    const handleClearReplies = async () => {
+        if (clearing) return;
+        if (!window.confirm(t('history.clearConfirm', '确定要清除所有回复内容吗？清除后工单将回到回复前的状态。'))) return;
+        setClearing(true);
+        try {
+            await serverApi.ticket.clearReplies(ticketId);
+            onRefresh?.();
+        } catch (e) {
+            alert(t('history.clearFailed', { error: (e as Error).message, defaultValue: `清除回复失败: ${(e as Error).message}` }));
+        } finally {
+            setClearing(false);
+        }
+    };
+
     const handleSaveEdit = async () => {
         if (!editingReplyId || saving) return;
         setSaving(true);
@@ -168,12 +183,21 @@ const ReplyHistoryPanel: React.FC<ReplyHistoryPanelProps> = ({
                             <div className="flex items-center gap-2">
                                 <span className="text-[10px] text-slate-500">{reply.createdAt}</span>
                                 {ticketStatus === 'PENDING_AUDIT' && !isEditing && (
-                                    <button
-                                        onClick={() => enterEditMode(reply)}
-                                        className="px-2 py-1 text-[10px] font-bold text-amber-400 border border-amber-500/30 rounded-md hover:bg-amber-500/10 transition-all"
-                                    >
-                                        {t('history.editReply')}
-                                    </button>
+                                    <>
+                                        <button
+                                            onClick={() => enterEditMode(reply)}
+                                            className="px-2 py-1 text-[10px] font-bold text-amber-400 border border-amber-500/30 rounded-md hover:bg-amber-500/10 transition-all"
+                                        >
+                                            {t('history.editReply')}
+                                        </button>
+                                        <button
+                                            onClick={handleClearReplies}
+                                            disabled={clearing}
+                                            className="px-2 py-1 text-[10px] font-bold text-rose-400 border border-rose-500/30 rounded-md hover:bg-rose-500/10 transition-all disabled:opacity-50"
+                                        >
+                                            {clearing ? '...' : t('history.clearReply', '清除')}
+                                        </button>
+                                    </>
                                 )}
                             </div>
                         </div>

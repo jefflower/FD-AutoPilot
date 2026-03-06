@@ -3,6 +3,7 @@ import { Building2 } from 'lucide-react';
 import { agentApi } from '../services/api';
 import { useServerEvent } from '../context/ServerEventsContext';
 import { useAgentContext } from '../agents/AgentContext';
+import { usePollingControl } from '../hooks/usePollingControl';
 import CyberOfficePopover from './CyberOfficePopover';
 
 interface CyberOfficeFloatProps {
@@ -14,6 +15,7 @@ const CyberOfficeFloat: React.FC<CyberOfficeFloatProps> = ({ onNavigateToOffice 
   const [executingCount, setExecutingCount] = useState(0);
   const { canExecute, startupReady } = useAgentContext();
   const isDetecting = canExecute && !startupReady;
+  const { pollingPaused } = usePollingControl();
   const popoverRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -36,11 +38,12 @@ const CyberOfficeFloat: React.FC<CyberOfficeFloatProps> = ({ onNavigateToOffice 
     fetchExecutingCount();
   }, [fetchExecutingCount]);
 
-  // Auto refresh every 30s
+  // Auto refresh every 30s（pollingPaused 时停止）
   useEffect(() => {
+    if (pollingPaused) return;
     const timer = setInterval(fetchExecutingCount, 30_000);
     return () => clearInterval(timer);
-  }, [fetchExecutingCount]);
+  }, [fetchExecutingCount, pollingPaused]);
 
   // SSE: instant refresh on execution events
   const fetchRef = useRef(fetchExecutingCount);

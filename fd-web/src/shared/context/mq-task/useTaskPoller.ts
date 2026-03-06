@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useLayoutEffect, useRef } from 'react';
 import { taskApi } from '../../services/serverApi';
 import { useServerEvents } from '../ServerEventsContext';
+import { usePollingControl } from '../../hooks/usePollingControl';
 import type { MQTask, MQTaskConfig, FailureCooldownEntry } from './types';
 import {
     getOrCreateClientId,
@@ -56,6 +57,9 @@ export function useTaskPoller(params: UseTaskPollerParams) {
     // SSE 集成
     const serverEvents = useServerEvents();
     const sseStatus = serverEvents?.status ?? 'disconnected';
+
+    // 全局轮询控制
+    const { pollingPaused } = usePollingControl();
 
     const isPollingRef = useRef(false);
     const emptyPollLoggedRef = useRef(false);
@@ -195,9 +199,9 @@ export function useTaskPoller(params: UseTaskPollerParams) {
         });
     }, [serverEvents, isRunning]);
 
-    // 消费者运行时维持轮询 + SSE 断线自适应间隔
+    // 消费者运行时维持轮询 + SSE 断线自适应间隔（pollingPaused 时停止）
     useEffect(() => {
-        if (!isRunning) {
+        if (!isRunning || pollingPaused) {
             if (pollTimerRef.current) {
                 clearInterval(pollTimerRef.current);
                 pollTimerRef.current = null;
@@ -219,7 +223,7 @@ export function useTaskPoller(params: UseTaskPollerParams) {
                 pollTimerRef.current = null;
             }
         };
-    }, [isRunning, sseStatus]);
+    }, [isRunning, pollingPaused, sseStatus]);
 
     return { pollAndClaimRef, claimBackoffRef, emptyPollLoggedRef };
 }

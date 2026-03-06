@@ -69,7 +69,8 @@ public class N8nTicketController {
         String ticketCategory = body.get("ticketCategory");
         String orderNumber = body.get("orderNumber");
         String trackingNumber = body.get("trackingNumber");
-        Map<String, Object> result = n8nTicketService.saveTranslationResult(id, translatedTitle, translatedContent, targetLang, ticketCategory, orderNumber, trackingNumber);
+        String videoUrls = body.get("videoUrls");
+        Map<String, Object> result = n8nTicketService.saveTranslationResult(id, translatedTitle, translatedContent, targetLang, ticketCategory, orderNumber, trackingNumber, videoUrls);
         return ResponseEntity.ok(ApiResponse.ok("翻译结果已保存", result));
     }
 
@@ -138,6 +139,26 @@ public class N8nTicketController {
         String action = body.getOrDefault("action", "");
         Map<String, Object> result = n8nTicketService.resolveManualTicket(id, action);
         return ResponseEntity.ok(ApiResponse.ok("人工处理完成", result));
+    }
+
+    @Operation(summary = "保存人工回复", description = "为人工处理工单保存手动编写的回复，状态转为待审核")
+    @PostMapping("/{id}/save-manual-reply")
+    @RequiresPermission("ticket:reply")
+    public ResponseEntity<ApiResponse<Map<String, Object>>> saveManualReply(
+            @PathVariable Long id,
+            @RequestBody Map<String, String> body) {
+        String targetReply = body.getOrDefault("targetReply", "");
+        String zhReply = body.getOrDefault("zhReply", "");
+        Map<String, Object> result = n8nTicketService.saveManualReply(id, targetReply, zhReply);
+        return ResponseEntity.ok(ApiResponse.ok("人工回复已保存", result));
+    }
+
+    @Operation(summary = "清除回复", description = "清除工单的所有回复，状态回退到回复前的状态")
+    @PostMapping("/{id}/clear-replies")
+    @RequiresPermission("ticket:reply")
+    public ResponseEntity<ApiResponse<Map<String, Object>>> clearReplies(@PathVariable Long id) {
+        Map<String, Object> result = n8nTicketService.clearReplies(id);
+        return ResponseEntity.ok(ApiResponse.ok("回复已清除", result));
     }
 
     // ========== 刷新工单数据 ==========

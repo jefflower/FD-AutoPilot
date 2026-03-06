@@ -256,7 +256,7 @@ export const notebookLmBridge = {
     });
     const parsed = typeof result === 'string' ? JSON.parse(result) : result;
     return {
-      id: parsed.source_id || parsed.id,
+      id: parsed.source_id || parsed.source?.id || parsed.id,
       title: parsed.title || title || '',
       status: parsed.status || 'processing',
       type: sourceType,

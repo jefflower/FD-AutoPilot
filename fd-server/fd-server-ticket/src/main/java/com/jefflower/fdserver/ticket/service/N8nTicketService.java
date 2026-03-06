@@ -4,6 +4,7 @@ import com.jefflower.fdserver.common.exception.BusinessException;
 import com.jefflower.fdserver.common.exception.ErrorCode;
 import com.jefflower.fdserver.ticket.client.FreshdeskApiClient;
 import com.jefflower.fdserver.ticket.entity.*;
+import com.jefflower.fdserver.ticket.enums.TicketCategory;
 import com.jefflower.fdserver.ticket.enums.TicketStatus;
 import com.jefflower.fdserver.ticket.repository.*;
 import com.jefflower.fdserver.ticket.service.notify.NotifyService;
@@ -82,7 +83,8 @@ public class N8nTicketService {
     public Map<String, Object> saveTranslationResult(Long ticketId, String translatedTitle,
                                                       String translatedContent, String targetLang,
                                                       String ticketCategory,
-                                                      String orderNumber, String trackingNumber) {
+                                                      String orderNumber, String trackingNumber,
+                                                      String videoUrls) {
         Ticket ticket = getTicket(ticketId);
         String lang = targetLang != null ? targetLang : "zh-CN";
 
@@ -106,6 +108,9 @@ public class N8nTicketService {
         }
         if (trackingNumber != null && !trackingNumber.isBlank()) {
             ticket.setTrackingNumber(trackingNumber);
+        }
+        if (videoUrls != null && !videoUrls.isBlank()) {
+            ticket.setVideoUrls(videoUrls);
         }
 
         // 删除旧翻译
@@ -307,6 +312,60 @@ public class N8nTicketService {
         Map<String, Object> response = new HashMap<>();
         response.put("ticketId", ticketId);
         response.put("status", targetStatus.name());
+        return response;
+    }
+
+    /**
+     * 人工回复保存 — 保存人工编写的回复，状态直接转为 PENDING_AUDIT
+     */
+    @Transactional
+    public Map<String, Object> saveManualReply(Long ticketId, String targetReply, String zhReply) {
+        Ticket ticket = getTicket(ticketId);
+        TicketStatus beforeStatus = ticket.getStatus();
+
+        // 删除旧回复
+        replyRepository.deleteByTicket(ticket);
+        replyRepository.flush();
+
+        // 保存新回复
+        TicketReply reply = new TicketReply();
+        reply.setTicket(ticket);
+        reply.setTargetReply(targetReply);
+        reply.setZhReply(zhReply);
+        reply.setReplyLang(ticket.getSourceLang());
+        reply.setIsSelected(true);
+        reply.setCreatedAt(java.time.LocalDateTime.now());
+        TicketReply saved = replyRepository.save(reply);
+
+        // 状态转换
+        stateMachine.transition(ticket, TicketStatus.PENDING_AUDIT);
+        ticketRepository.save(ticket);
+        statusLogService.logTransition(ticket, beforeStatus, TicketStatus.PENDING_AUDIT,
+                "manual", "人工回复已保存，进入待审核");
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("ticketId", ticketId);
+        response.put("replyId", saved.getId());
+        response.put("status", TicketStatus.PENDING_AUDIT.name());
+        return response;
+    }
+
+    /**
+     * 清除回复 — 删除工单的所有回复，不改变工单状态
+     */
+    @Transactional
+    public Map<String, Object> clearReplies(Long ticketId) {
+        Ticket ticket = getTicket(ticketId);
+
+        // 删除所有回复
+        replyRepository.deleteByTicket(ticket);
+        replyRepository.flush();
+
+        log.info("[N8nTicketService] 工单 #{} 清除回复，当前状态: {}", ticketId, ticket.getStatus());
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("ticketId", ticketId);
+        response.put("status", ticket.getStatus().name());
         return response;
     }
 

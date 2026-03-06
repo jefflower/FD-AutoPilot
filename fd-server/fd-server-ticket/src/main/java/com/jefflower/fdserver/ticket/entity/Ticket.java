@@ -110,6 +110,10 @@ public class Ticket {
     @Column(name = "tracking_number", length = 128)
     private String trackingNumber;
 
+    /** 视频链接列表（VIDEO_REVIEW 类工单，JSON 数组） */
+    @Column(name = "video_urls", columnDefinition = "TEXT")
+    private String videoUrls;
+
     // ========== 同步控制字段 ==========
 
     @Column(name = "content_hash", length = 64)

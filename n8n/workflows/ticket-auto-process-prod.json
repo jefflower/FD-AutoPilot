@@ -166,7 +166,7 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ (() => { let raw = ($json.data && $json.data.output) || ''; const fm = raw.match(/```(?:json)?\\s*([\\s\\S]*?)\\s*```/); if (fm) raw = fm[1]; raw = raw.trim(); let p = {}; try { p = JSON.parse(raw); } catch(e) {} const desc = p.description || ''; const convs = (p.conversations || []).map(c => ({ id: c.id, bodyText: c.bodyText || c.body_text || '' })); const category = p.category || 'OTHER'; const result = { translatedTitle: p.subject || '', translatedContent: JSON.stringify({ description: desc, conversations: convs }), targetLang: 'zh-CN', ticketCategory: category }; if (category === 'LOGISTICS_INQUIRY') { result.orderNumber = p.orderNumber || ''; result.trackingNumber = p.trackingNumber || ''; } return JSON.stringify(result); })() }}",
+        "jsonBody": "={{ (() => { let raw = ($json.data && $json.data.output) || ''; const fm = raw.match(/```(?:json)?\\s*([\\s\\S]*?)\\s*```/); if (fm) raw = fm[1]; raw = raw.trim(); let p = {}; try { p = JSON.parse(raw); } catch(e) {} const desc = p.description || ''; const convs = (p.conversations || []).map(c => ({ id: c.id, bodyText: c.bodyText || c.body_text || '' })); const category = p.category || 'OTHER'; const result = { translatedTitle: p.subject || '', translatedContent: JSON.stringify({ description: desc, conversations: convs }), targetLang: 'zh-CN', ticketCategory: category }; if (category === 'LOGISTICS_INQUIRY') { result.orderNumber = p.orderNumber || ''; result.trackingNumber = p.trackingNumber || ''; } if (category === 'VIDEO_REVIEW') { result.videoUrls = JSON.stringify(p.videoUrls || []); } return JSON.stringify(result); })() }}",
         "options": {}
       },
       "id": "save-translation",
@@ -351,7 +351,7 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify({ reason: 'AI 分类为' + ($json.category === 'LOGISTICS_INQUIRY' ? '物流查询' : $json.category === 'BUSINESS_COOPERATION' ? '商务合作' : '其他') + '，需人工处理' }) }}",
+        "jsonBody": "={{ JSON.stringify({ reason: 'AI 分类为' + ($json.category === 'LOGISTICS_INQUIRY' ? '物流查询' : $json.category === 'BUSINESS_COOPERATION' ? '商务合作' : $json.category === 'VIDEO_REVIEW' ? '视频审查' : '其他') + '，需人工处理' }) }}",
         "options": {}
       },
       "id": "mark-manual",

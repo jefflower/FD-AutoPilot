@@ -51,7 +51,7 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
     // 重新处理
     const [showReprocessConfirm, setShowReprocessConfirm] = useState(false);
     const [reprocessing, setReprocessing] = useState(false);
-    const canReprocess = ticket.status !== 'PENDING_TRANS' && ticket.status !== 'PROCESSING';
+    const canReprocess = ticket.status !== 'PENDING_TRANS';
 
     // 优先使用外部传入的分栏状态
     const [internalIsSplitMode, setInternalIsSplitMode] = useState(false);
@@ -207,6 +207,47 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
                     </button>
                 </div>
             </div>
+
+            {/* 视频链接区（仅 VIDEO_REVIEW 类工单） */}
+            {ticket.ticketCategory === 'VIDEO_REVIEW' && ticket.videoUrls && (() => {
+                let urls: string[] = [];
+                try { urls = JSON.parse(ticket.videoUrls); } catch {}
+                return urls.length > 0 ? (
+                    <div className="flex-none px-4 py-3 border-b border-slate-700/50 bg-purple-900/10">
+                        <div className="flex items-center gap-2 mb-2">
+                            <svg className="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                            </svg>
+                            <span className="text-[10px] font-black text-purple-400 uppercase tracking-widest">
+                                客户视频 ({urls.length})
+                            </span>
+                        </div>
+                        <div className="flex flex-wrap gap-2">
+                            {urls.map((url, i) => {
+                                let hostname = '';
+                                try { hostname = new URL(url).hostname; } catch { hostname = url; }
+                                return (
+                                    <a
+                                        key={i}
+                                        href={url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-purple-500/15 hover:bg-purple-500/25 text-purple-300 hover:text-purple-200 rounded-lg text-xs font-medium border border-purple-500/20 transition-all group"
+                                    >
+                                        <svg className="w-3 h-3 text-purple-400 group-hover:text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                        </svg>
+                                        视频 {i + 1}
+                                        <span className="text-[9px] text-purple-500 truncate max-w-[200px]" title={url}>
+                                            {hostname}
+                                        </span>
+                                    </a>
+                                );
+                            })}
+                        </div>
+                    </div>
+                ) : null;
+            })()}
 
             {/* Content Area */}
             <div className="flex-1 overflow-y-auto p-4 space-y-6 custom-scrollbar">

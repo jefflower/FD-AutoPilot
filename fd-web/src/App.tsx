@@ -47,6 +47,7 @@ import { JsonPreviewProvider } from "./shared/components/JsonPreview";
 import CyberOfficeFloat from "./shared/components/CyberOfficeFloat";
 
 import { useSettings } from "./shared/hooks/useSettings";
+import { usePollingControl } from "./shared/hooks/usePollingControl";
 import { ticketApi } from "./shared/services/serverApi";
 import type { QueueCounts } from "./shared/types/server";
 
@@ -219,6 +220,7 @@ function AppInner() {
     }, []);
 
     const auth = useAuthContext();
+    const { pollingPaused } = usePollingControl();
     const [queueCounts, setQueueCounts] = useState<QueueCounts | null>(null);
     const pollTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
@@ -227,9 +229,9 @@ function AppInner() {
         ticketApi.getQueueCounts().then(setQueueCounts).catch(() => {});
     }, [auth.isLoggedIn]);
 
-    // 定时轮询 MQ 队列计数
+    // 定时轮询 MQ 队列计数（pollingPaused 时停止）
     useEffect(() => {
-        if (!auth.isLoggedIn) {
+        if (!auth.isLoggedIn || pollingPaused) {
             setQueueCounts(null);
             if (pollTimerRef.current) {
                 clearInterval(pollTimerRef.current);
@@ -247,7 +249,7 @@ function AppInner() {
                 pollTimerRef.current = null;
             }
         };
-    }, [auth.isLoggedIn, fetchQueueCounts]);
+    }, [auth.isLoggedIn, pollingPaused, fetchQueueCounts]);
 
     // 任务完成时立即刷新队列计数
     useEffect(() => {
@@ -367,7 +369,7 @@ function AppInner() {
     return (
         <ToastProvider>
             <JsonPreviewProvider>
-            <ServerEventsProvider>
+            <ServerEventsProvider enabled={!pollingPaused}>
             <AgentProvider>
                     <UniversalAgentConsumer />
                     <AppShell
