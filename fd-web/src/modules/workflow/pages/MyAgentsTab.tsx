@@ -164,6 +164,8 @@ const MyAgentsTab: React.FC = () => {
     const [agents, setAgents] = useState<UserAgentConfigDTO[]>([]);
     const [loading, setLoading] = useState(true);
     const [operating, setOperating] = useState<string | null>(null); // agentCode being operated
+    // 退订确认弹窗状态：null 表示不显示，否则保存待退订的 agent 信息
+    const [unsubConfirm, setUnsubConfirm] = useState<{ agentCode: string; agentName: string } | null>(null);
 
     const fetchAgents = useCallback(async () => {
         try {
@@ -211,9 +213,17 @@ const MyAgentsTab: React.FC = () => {
         }
     };
 
-    const handleUnsubscribe = async (agentCode: string, agentName: string) => {
+    // 第一步：点击退订按钮，仅显示确认弹窗，不执行任何 API 调用
+    const handleUnsubscribeClick = (agentCode: string, agentName: string) => {
         if (operating) return;
-        if (!window.confirm(`确定退订 "${agentName || agentCode}"？退订后将不再自动执行该 Agent 的任务。`)) return;
+        setUnsubConfirm({ agentCode, agentName });
+    };
+
+    // 第二步：用户在确认弹窗中点击「确认」后，才执行退订操作
+    const handleUnsubscribeConfirm = async () => {
+        if (!unsubConfirm || operating) return;
+        const { agentCode, agentName } = unsubConfirm;
+        setUnsubConfirm(null);
         setOperating(agentCode);
         try {
             await userAgentApi.unsubscribe(agentCode);
@@ -253,6 +263,32 @@ const MyAgentsTab: React.FC = () => {
 
     return (
         <div className="flex-1 flex flex-col overflow-hidden">
+            {/* 退订确认弹窗 */}
+            {unsubConfirm && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+                    <div className="bg-slate-800 border border-slate-600 rounded-xl p-6 max-w-sm mx-4 shadow-2xl">
+                        <h3 className="text-white font-medium mb-2">确认退订</h3>
+                        <p className="text-sm text-slate-300 mb-5">
+                            确定退订 &ldquo;{unsubConfirm.agentName || unsubConfirm.agentCode}&rdquo;？退订后将不再自动执行该 Agent 的任务。
+                        </p>
+                        <div className="flex justify-end gap-3">
+                            <button
+                                onClick={() => setUnsubConfirm(null)}
+                                className="px-4 py-2 text-sm text-slate-300 hover:text-white bg-slate-700 hover:bg-slate-600 rounded-lg transition-colors"
+                            >
+                                取消
+                            </button>
+                            <button
+                                onClick={handleUnsubscribeConfirm}
+                                className="px-4 py-2 text-sm text-white bg-red-600 hover:bg-red-500 rounded-lg transition-colors"
+                            >
+                                确认退订
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
+
             {/* Header */}
             <div className="flex items-center justify-between px-6 py-4 border-b border-slate-700/50">
                 <div>
@@ -406,7 +442,7 @@ const MyAgentsTab: React.FC = () => {
                                     </div>
                                     {/* 退订 */}
                                     <button
-                                        onClick={() => handleUnsubscribe(agent.agentCode, agent.agentName)}
+                                        onClick={() => handleUnsubscribeClick(agent.agentCode, agent.agentName)}
                                         disabled={operating === agent.agentCode}
                                         className="flex items-center gap-1 px-2 py-1 text-xs text-red-400 hover:text-red-300 hover:bg-red-500/10 rounded transition-colors disabled:opacity-50"
                                     >

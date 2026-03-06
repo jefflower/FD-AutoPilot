@@ -3,12 +3,8 @@ import { useTranslation } from 'react-i18next';
 import {
   Monitor,
   MonitorOff,
-  Keyboard,
   Coffee,
   Zap,
-  User,
-  MousePointer2,
-  LampDesk,
 } from 'lucide-react';
 import type { AgentDefinition, AgentInstance, AgentStats, AgentExecutionLog } from '../../../../shared/types/server';
 
@@ -47,158 +43,374 @@ function formatElapsed(createdAt: string): string {
   return `${Math.floor(elapsed / 3600000)}h${Math.floor((elapsed % 3600000) / 60000)}m`;
 }
 
-/* ---------- Workstation SVG Illustration ---------- */
+/* ---------- SVG Filter Defs (rendered once) ---------- */
+const CyberSvgDefs: React.FC = () => (
+  <svg width="0" height="0" className="absolute">
+    <defs>
+      <filter id="cyber-noise">
+        <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" seed="1" />
+        <feColorMatrix type="saturate" values="0" />
+      </filter>
+    </defs>
+  </svg>
+);
 
-/** Executing: person typing at desk with active screen + lamp on */
+/* ---------- Workstation SVG Scenes ---------- */
+
+/** Executing: full-power hacker terminal with triple screens */
 const WorkstationExecuting: React.FC = () => (
-  <div className="desk-scene desk-scene--executing relative w-full h-24 flex items-end justify-center">
-    {/* Desk lamp */}
-    <div className="absolute left-3 top-1">
-      <LampDesk className="w-6 h-6 text-amber-400 drop-shadow-[0_0_6px_rgba(251,191,36,0.5)]" />
-      {/* lamp glow */}
-      <div className="absolute -bottom-1 left-1 w-4 h-4 bg-amber-400/20 rounded-full blur-md" />
-    </div>
+  <div className="relative w-full h-24 flex items-end justify-center">
+    <svg viewBox="0 0 160 96" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      {/* Desk surface line - glowing */}
+      <line x1="10" y1="88" x2="150" y2="88" stroke="#06B6D4" strokeWidth="2" opacity="0.5">
+        <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite" />
+      </line>
 
-    {/* Monitor */}
-    <div className="relative flex flex-col items-center">
-      {/* Screen glow */}
-      <div className="absolute -inset-2 bg-blue-500/10 rounded-xl blur-lg desk-screen-glow" />
-      <Monitor className="w-12 h-12 text-blue-400 relative z-10" strokeWidth={1.5} />
-      {/* Screen content - typing cursor animation */}
-      <div className="absolute top-2.5 left-1/2 -translate-x-1/2 z-20 flex gap-0.5 items-center">
-        <div className="w-1 h-1 rounded-full bg-blue-300 desk-typing-dot" style={{ animationDelay: '0ms' }} />
-        <div className="w-1 h-1 rounded-full bg-blue-300 desk-typing-dot" style={{ animationDelay: '150ms' }} />
-        <div className="w-1 h-1 rounded-full bg-blue-300 desk-typing-dot" style={{ animationDelay: '300ms' }} />
-      </div>
-      {/* Monitor stand */}
-      <div className="w-3 h-1.5 bg-slate-600 rounded-b-sm" />
-      <div className="w-8 h-1 bg-slate-600 rounded-b-md" />
-    </div>
+      {/* Left sub-screen (rotated -12deg) */}
+      <g transform="translate(28, 38) rotate(-12, 19, 14)">
+        <rect x="0" y="0" width="38" height="28" rx="2" fill="#0F172A" stroke="#06B6D4" strokeWidth="0.8" opacity="0.7" />
+        {/* Data bars - horizontal bars with pulse */}
+        <rect x="4" y="5" width="18" height="2.5" rx="1" fill="#06B6D4" opacity="0.6">
+          <animate attributeName="opacity" values="0.4;0.9;0.4" dur="1.5s" repeatCount="indefinite" />
+        </rect>
+        <rect x="4" y="10" width="26" height="2.5" rx="1" fill="#A855F7" opacity="0.5">
+          <animate attributeName="opacity" values="0.5;0.8;0.5" dur="1.5s" repeatCount="indefinite" begin="0.3s" />
+        </rect>
+        <rect x="4" y="15" width="14" height="2.5" rx="1" fill="#06B6D4" opacity="0.6">
+          <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" repeatCount="indefinite" begin="0.6s" />
+        </rect>
+        <rect x="4" y="20" width="22" height="2.5" rx="1" fill="#A855F7" opacity="0.4">
+          <animate attributeName="opacity" values="0.4;0.7;0.4" dur="1.5s" repeatCount="indefinite" begin="0.9s" />
+        </rect>
+        {/* Screen stand */}
+        <rect x="16" y="28" width="6" height="3" fill="#334155" />
+      </g>
 
-    {/* Person sitting */}
-    <div className="absolute right-5 bottom-0 flex flex-col items-center">
-      <User className="w-7 h-7 text-blue-300 desk-person-typing" strokeWidth={1.5} />
-    </div>
+      {/* Main center screen */}
+      <g transform="translate(56, 28)">
+        <rect x="0" y="0" width="48" height="36" rx="2" fill="#0F172A" stroke="#06B6D4" strokeWidth="1" />
+        {/* Code lines scrolling */}
+        <line x1="4" y1="6" x2="38" y2="6" stroke="#06B6D4" strokeWidth="1" strokeDasharray="8 4" opacity="0.7">
+          <animate attributeName="stroke-dashoffset" values="40;0" dur="2s" repeatCount="indefinite" />
+        </line>
+        <line x1="4" y1="11" x2="32" y2="11" stroke="#60A5FA" strokeWidth="1" strokeDasharray="6 6" opacity="0.5">
+          <animate attributeName="stroke-dashoffset" values="40;0" dur="2.3s" repeatCount="indefinite" />
+        </line>
+        <line x1="4" y1="16" x2="42" y2="16" stroke="#A855F7" strokeWidth="1" strokeDasharray="10 3" opacity="0.6">
+          <animate attributeName="stroke-dashoffset" values="40;0" dur="1.8s" repeatCount="indefinite" />
+        </line>
+        <line x1="4" y1="21" x2="28" y2="21" stroke="#06B6D4" strokeWidth="1" strokeDasharray="5 5" opacity="0.5">
+          <animate attributeName="stroke-dashoffset" values="40;0" dur="2.5s" repeatCount="indefinite" />
+        </line>
+        <line x1="4" y1="26" x2="36" y2="26" stroke="#60A5FA" strokeWidth="1" strokeDasharray="7 4" opacity="0.4">
+          <animate attributeName="stroke-dashoffset" values="40;0" dur="2.1s" repeatCount="indefinite" />
+        </line>
+        {/* Recording indicator - green dot top-left */}
+        <circle cx="5" cy="2" r="1.5" fill="#34D399">
+          <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite" />
+          <animate attributeName="r" values="1.2;1.8;1.2" dur="2s" repeatCount="indefinite" />
+        </circle>
+        {/* Scanline sweeping down */}
+        <line x1="0" y1="0" x2="48" y2="0" stroke="#06B6D4" strokeWidth="1" opacity="0.3">
+          <animate attributeName="y1" values="-2;38" dur="3s" repeatCount="indefinite" />
+          <animate attributeName="y2" values="-2;38" dur="3s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0;0.4;0" dur="3s" repeatCount="indefinite" />
+        </line>
+        {/* Screen stand */}
+        <rect x="20" y="36" width="8" height="4" fill="#334155" />
+        <rect x="14" y="40" width="20" height="2" rx="1" fill="#334155" />
+      </g>
 
-    {/* Keyboard */}
-    <div className="absolute bottom-0 left-1/2 -translate-x-1/2">
-      <Keyboard className="w-8 h-4 text-slate-500 desk-keyboard-glow" strokeWidth={1.5} />
-    </div>
+      {/* Right sub-screen (rotated +12deg) */}
+      <g transform="translate(112, 38) rotate(12, 19, 14)">
+        <rect x="0" y="0" width="38" height="28" rx="2" fill="#0F172A" stroke="#06B6D4" strokeWidth="0.8" opacity="0.7" />
+        {/* Circular progress ring */}
+        <circle cx="19" cy="14" r="9" fill="none" stroke="#1E293B" strokeWidth="2" />
+        <circle cx="19" cy="14" r="9" fill="none" stroke="#A855F7" strokeWidth="2"
+          strokeDasharray="56.5" strokeDashoffset="14" strokeLinecap="round">
+          <animate attributeName="strokeDashoffset" values="56.5;0;56.5" dur="4s" repeatCount="indefinite" />
+        </circle>
+        {/* Percentage text in center */}
+        <text x="19" y="16" textAnchor="middle" fill="#A855F7" fontSize="6" fontFamily="monospace">
+          75%
+        </text>
+        {/* Screen stand */}
+        <rect x="16" y="28" width="6" height="3" fill="#334155" />
+      </g>
 
-    {/* Mouse */}
-    <div className="absolute bottom-0.5 right-12">
-      <MousePointer2 className="w-3 h-3 text-slate-500" strokeWidth={1.5} />
-    </div>
+      {/* Holographic projection cone above main screen */}
+      <g opacity="0.4">
+        <polygon points="68,28 92,28 98,12 62,12" fill="url(#holoGrad)" opacity="0.3">
+          <animate attributeName="opacity" values="0.15;0.35;0.15" dur="3s" repeatCount="indefinite" />
+        </polygon>
+        {/* Floating diamond symbols */}
+        <rect x="74" y="18" width="4" height="4" transform="rotate(45,76,20)" fill="#06B6D4" opacity="0.6">
+          <animate attributeName="y" values="20;14;20" dur="3s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite" />
+        </rect>
+        <rect x="82" y="16" width="3" height="3" transform="rotate(45,83.5,17.5)" fill="#A855F7" opacity="0.5">
+          <animate attributeName="y" values="18;12;18" dur="3.5s" repeatCount="indefinite" begin="0.5s" />
+          <animate attributeName="opacity" values="0.2;0.7;0.2" dur="3.5s" repeatCount="indefinite" begin="0.5s" />
+        </rect>
+        <rect x="78" y="14" width="2.5" height="2.5" transform="rotate(45,79.25,15.25)" fill="#60A5FA" opacity="0.4">
+          <animate attributeName="y" values="16;10;16" dur="2.8s" repeatCount="indefinite" begin="1s" />
+          <animate attributeName="opacity" values="0.2;0.6;0.2" dur="2.8s" repeatCount="indefinite" begin="1s" />
+        </rect>
+      </g>
 
-    {/* Desk surface line */}
-    <div className="absolute bottom-0 inset-x-2 h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent" />
+      {/* Keyboard - flat rectangle with 2x6 grid */}
+      <g transform="translate(62, 78)">
+        <rect x="0" y="0" width="36" height="8" rx="1" fill="#1E293B" stroke="#334155" strokeWidth="0.5" />
+        {/* Key grid 2 rows x 6 cols */}
+        {[0, 1].map(row =>
+          [0, 1, 2, 3, 4, 5].map(col => (
+            <rect
+              key={`key-${row}-${col}`}
+              x={2 + col * 5.5}
+              y={1.5 + row * 3.5}
+              width="4"
+              height="2.5"
+              rx="0.5"
+              fill="#06B6D4"
+              opacity="0.2"
+            >
+              <animate
+                attributeName="opacity"
+                values="0.15;0.7;0.15"
+                dur="0.4s"
+                repeatCount="indefinite"
+                begin={`${(row * 6 + col) * 0.15}s`}
+              />
+            </rect>
+          ))
+        )}
+      </g>
+
+      {/* Person - simple circle head + shoulder arc */}
+      <g transform="translate(128, 68)">
+        <circle cx="8" cy="4" r="4" fill="none" stroke="#06B6D4" strokeWidth="1" opacity="0.7" />
+        <path d="M0,16 Q8,8 16,16" fill="none" stroke="#06B6D4" strokeWidth="1" opacity="0.7" />
+      </g>
+
+      {/* Data particles rising from keyboard */}
+      <circle cx="70" cy="76" r="1" fill="#06B6D4" opacity="0.6">
+        <animate attributeName="cy" values="76;56" dur="2s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.8;0" dur="2s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="80" cy="76" r="0.8" fill="#A855F7" opacity="0.5">
+        <animate attributeName="cy" values="76;52" dur="2.3s" repeatCount="indefinite" begin="0.5s" />
+        <animate attributeName="opacity" values="0.7;0" dur="2.3s" repeatCount="indefinite" begin="0.5s" />
+      </circle>
+      <circle cx="90" cy="76" r="1.2" fill="#60A5FA" opacity="0.4">
+        <animate attributeName="cy" values="76;54" dur="1.8s" repeatCount="indefinite" begin="1s" />
+        <animate attributeName="opacity" values="0.6;0" dur="1.8s" repeatCount="indefinite" begin="1s" />
+      </circle>
+      <circle cx="85" cy="76" r="0.6" fill="#06B6D4" opacity="0.5">
+        <animate attributeName="cy" values="76;50" dur="2.5s" repeatCount="indefinite" begin="0.3s" />
+        <animate attributeName="opacity" values="0.7;0" dur="2.5s" repeatCount="indefinite" begin="0.3s" />
+      </circle>
+
+      {/* Gradient defs for holographic cone */}
+      <defs>
+        <linearGradient id="holoGrad" x1="0" y1="1" x2="0" y2="0">
+          <stop offset="0%" stopColor="#06B6D4" stopOpacity="0.4" />
+          <stop offset="100%" stopColor="#06B6D4" stopOpacity="0" />
+        </linearGradient>
+      </defs>
+    </svg>
   </div>
 );
 
-/** Standby: person at desk, screen on but idle, calm state */
+/** Standby: calm monitoring station with heartbeat */
 const WorkstationStandby: React.FC = () => (
-  <div className="desk-scene desk-scene--standby relative w-full h-24 flex items-end justify-center">
-    {/* Desk lamp */}
-    <div className="absolute left-3 top-1">
-      <LampDesk className="w-6 h-6 text-emerald-400/70 drop-shadow-[0_0_4px_rgba(52,211,153,0.3)]" />
-    </div>
+  <div className="relative w-full h-24 flex items-end justify-center">
+    <svg viewBox="0 0 160 96" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      {/* Desk surface line - subtle emerald */}
+      <line x1="10" y1="88" x2="150" y2="88" stroke="#34D399" strokeWidth="1.5" opacity="0.3" />
 
-    {/* Monitor */}
-    <div className="relative flex flex-col items-center">
-      <div className="absolute -inset-2 bg-emerald-500/5 rounded-xl blur-lg desk-standby-glow" />
-      <Monitor className="w-12 h-12 text-emerald-400/70 relative z-10" strokeWidth={1.5} />
-      {/* Screen content - standby indicator */}
-      <div className="absolute top-3 left-1/2 -translate-x-1/2 z-20">
-        <div className="w-2 h-2 rounded-full bg-emerald-400/60 desk-standby-pulse" />
-      </div>
-      <div className="w-3 h-1.5 bg-slate-600/80 rounded-b-sm" />
-      <div className="w-8 h-1 bg-slate-600/80 rounded-b-md" />
-    </div>
+      {/* Screen glow on desk surface */}
+      <ellipse cx="80" cy="88" rx="30" ry="4" fill="#34D399" opacity="0.08">
+        <animate attributeName="opacity" values="0.05;0.12;0.05" dur="4s" repeatCount="indefinite" />
+      </ellipse>
 
-    {/* Person sitting calmly */}
-    <div className="absolute right-5 bottom-0 flex flex-col items-center">
-      <User className="w-7 h-7 text-emerald-300/70" strokeWidth={1.5} />
-    </div>
+      {/* Main screen - larger single monitor */}
+      <g transform="translate(50, 24)">
+        <rect x="0" y="0" width="60" height="42" rx="2" fill="#0F172A" stroke="#34D399" strokeWidth="0.8" opacity="0.8" />
+        {/* Heartbeat / ECG waveform */}
+        <path
+          d="M4,22 L12,22 L15,22 L18,14 L21,30 L24,10 L27,26 L30,22 L38,22 L42,22 L45,18 L48,26 L51,22 L56,22"
+          fill="none"
+          stroke="#34D399"
+          strokeWidth="1.2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeDasharray="200"
+          strokeDashoffset="200"
+          opacity="0.7"
+        >
+          <animate attributeName="stroke-dashoffset" values="200;0" dur="4s" repeatCount="indefinite" />
+        </path>
+        {/* STANDBY text bottom-right */}
+        <text x="42" y="38" fill="#34D399" fontSize="5" fontFamily="monospace" opacity="0.7">
+          <animate attributeName="opacity" values="0.7;0.2;0.7" dur="4s" repeatCount="indefinite" />
+          STDBY
+        </text>
+        {/* Indicator light above screen */}
+        <circle cx="30" cy="-4" r="2" fill="#34D399" opacity="0.5">
+          <animate attributeName="opacity" values="0.3;1;0.3" dur="3s" repeatCount="indefinite" />
+          <animate attributeName="r" values="1.5;2.5;1.5" dur="3s" repeatCount="indefinite" />
+        </circle>
+        {/* Screen stand */}
+        <rect x="24" y="42" width="12" height="4" fill="#334155" />
+        <rect x="18" y="46" width="24" height="2" rx="1" fill="#334155" />
+      </g>
 
-    {/* Keyboard */}
-    <div className="absolute bottom-0 left-1/2 -translate-x-1/2">
-      <Keyboard className="w-8 h-4 text-slate-600" strokeWidth={1.5} />
-    </div>
+      {/* Person - sitting calmly, emerald stroke */}
+      <g transform="translate(118, 66)">
+        <circle cx="8" cy="4" r="4" fill="none" stroke="#34D399" strokeWidth="1" opacity="0.6" />
+        <path d="M0,16 Q8,9 16,16" fill="none" stroke="#34D399" strokeWidth="1" opacity="0.6" />
+      </g>
 
-    <div className="absolute bottom-0.5 right-12">
-      <MousePointer2 className="w-3 h-3 text-slate-600" strokeWidth={1.5} />
-    </div>
-
-    <div className="absolute bottom-0 inset-x-2 h-px bg-gradient-to-r from-transparent via-emerald-500/20 to-transparent" />
+      {/* Keyboard - dim with occasional faint key glow */}
+      <g transform="translate(62, 78)">
+        <rect x="0" y="0" width="36" height="8" rx="1" fill="#1E293B" stroke="#334155" strokeWidth="0.5" opacity="0.5" />
+        {/* Occasional single key glow */}
+        <rect x="14" y="2.5" width="4" height="2.5" rx="0.5" fill="#34D399" opacity="0.15">
+          <animate attributeName="opacity" values="0.05;0.3;0.05" dur="5s" repeatCount="indefinite" />
+        </rect>
+      </g>
+    </svg>
   </div>
 );
 
-/** Enabled but not started: desk with coffee, screen on but nobody working */
+/** Enabled: resting corner with coffee and screensaver */
 const WorkstationEnabled: React.FC = () => (
-  <div className="desk-scene desk-scene--enabled relative w-full h-24 flex items-end justify-center opacity-70">
-    {/* Desk lamp - dim */}
-    <div className="absolute left-3 top-1">
-      <LampDesk className="w-6 h-6 text-yellow-600/50" />
-    </div>
+  <div className="relative w-full h-24 flex items-end justify-center opacity-80">
+    <svg viewBox="0 0 160 96" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      {/* Desk surface line - subtle */}
+      <line x1="10" y1="88" x2="150" y2="88" stroke="#FBBF24" strokeWidth="1" opacity="0.2" />
 
-    {/* Monitor - on but dim */}
-    <div className="relative flex flex-col items-center">
-      <Monitor className="w-12 h-12 text-yellow-500/50 relative z-10" strokeWidth={1.5} />
-      {/* screensaver */}
-      <div className="absolute top-3.5 left-1/2 -translate-x-1/2 z-20">
-        <div className="w-1.5 h-1.5 rounded-full bg-yellow-400/40" />
-      </div>
-      <div className="w-3 h-1.5 bg-slate-700/60 rounded-b-sm" />
-      <div className="w-8 h-1 bg-slate-700/60 rounded-b-md" />
-    </div>
+      {/* Main screen - screensaver mode */}
+      <g transform="translate(50, 26)">
+        <rect x="0" y="0" width="60" height="40" rx="2" fill="#0F172A" stroke="#FBBF24" strokeWidth="0.6" opacity="0.5" />
+        {/* Screensaver concentric circles slowly drifting */}
+        <g opacity="0.4">
+          <circle cx="30" cy="20" r="6" fill="none" stroke="#FBBF24" strokeWidth="0.5">
+            <animate attributeName="r" values="6;10;6" dur="12s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.3;0.6;0.3" dur="12s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="30" cy="20" r="10" fill="none" stroke="#FBBF24" strokeWidth="0.5">
+            <animate attributeName="r" values="10;14;10" dur="12s" repeatCount="indefinite" begin="2s" />
+            <animate attributeName="opacity" values="0.2;0.5;0.2" dur="12s" repeatCount="indefinite" begin="2s" />
+          </circle>
+          <circle cx="30" cy="20" r="14" fill="none" stroke="#FBBF24" strokeWidth="0.4">
+            <animate attributeName="r" values="14;18;14" dur="12s" repeatCount="indefinite" begin="4s" />
+            <animate attributeName="opacity" values="0.1;0.4;0.1" dur="12s" repeatCount="indefinite" begin="4s" />
+          </circle>
+        </g>
+        {/* Screen stand */}
+        <rect x="24" y="40" width="12" height="4" fill="#334155" opacity="0.6" />
+        <rect x="18" y="44" width="24" height="2" rx="1" fill="#334155" opacity="0.6" />
+      </g>
 
-    {/* Coffee cup instead of person - on break */}
-    <div className="absolute right-5 bottom-0 flex flex-col items-center">
-      <Coffee className="w-6 h-6 text-yellow-500/60" strokeWidth={1.5} />
-      {/* steam */}
-      <div className="absolute -top-2 left-1/2 -translate-x-1/2 flex gap-0.5">
-        <div className="w-0.5 h-2 bg-yellow-400/20 rounded-full desk-steam" style={{ animationDelay: '0ms' }} />
-        <div className="w-0.5 h-2 bg-yellow-400/20 rounded-full desk-steam" style={{ animationDelay: '300ms' }} />
-      </div>
-    </div>
+      {/* Coffee cup - trapezoid body + half circle handle + steam */}
+      <g transform="translate(120, 64)">
+        {/* Cup body (trapezoid) */}
+        <path d="M2,0 L18,0 L16,18 L4,18 Z" fill="#1E293B" stroke="#FBBF24" strokeWidth="0.8" opacity="0.6" />
+        {/* Handle (half circle arc) */}
+        <path d="M18,4 Q26,9 18,14" fill="none" stroke="#FBBF24" strokeWidth="0.8" opacity="0.6" />
+        {/* Steam curves */}
+        <path d="M7,-2 Q5,-8 8,-12" fill="none" stroke="#FBBF24" strokeWidth="0.6" opacity="0.3">
+          <animate attributeName="opacity" values="0;0.4;0" dur="2.5s" repeatCount="indefinite" />
+          <animate attributeName="d" values="M7,-2 Q5,-8 8,-12;M7,-2 Q9,-10 6,-16;M7,-2 Q5,-8 8,-12" dur="2.5s" repeatCount="indefinite" />
+        </path>
+        <path d="M10,-2 Q12,-7 10,-11" fill="none" stroke="#FBBF24" strokeWidth="0.5" opacity="0.25">
+          <animate attributeName="opacity" values="0;0.35;0" dur="2.5s" repeatCount="indefinite" begin="0.4s" />
+          <animate attributeName="d" values="M10,-2 Q12,-7 10,-11;M10,-2 Q8,-9 11,-15;M10,-2 Q12,-7 10,-11" dur="2.5s" repeatCount="indefinite" begin="0.4s" />
+        </path>
+        <path d="M14,-2 Q13,-6 15,-10" fill="none" stroke="#FBBF24" strokeWidth="0.5" opacity="0.2">
+          <animate attributeName="opacity" values="0;0.3;0" dur="2.5s" repeatCount="indefinite" begin="0.8s" />
+          <animate attributeName="d" values="M14,-2 Q13,-6 15,-10;M14,-2 Q15,-8 13,-14;M14,-2 Q13,-6 15,-10" dur="2.5s" repeatCount="indefinite" begin="0.8s" />
+        </path>
+      </g>
 
-    {/* Keyboard */}
-    <div className="absolute bottom-0 left-1/2 -translate-x-1/2">
-      <Keyboard className="w-8 h-4 text-slate-700" strokeWidth={1.5} />
-    </div>
+      {/* Empty chair hint - dashed arc */}
+      <g transform="translate(28, 70)">
+        <path d="M0,14 Q10,4 20,14" fill="none" stroke="#FBBF24" strokeWidth="0.8" strokeDasharray="3 2" opacity="0.25" />
+        <line x1="3" y1="14" x2="3" y2="20" stroke="#FBBF24" strokeWidth="0.6" strokeDasharray="2 2" opacity="0.2" />
+        <line x1="17" y1="14" x2="17" y2="20" stroke="#FBBF24" strokeWidth="0.6" strokeDasharray="2 2" opacity="0.2" />
+      </g>
 
-    <div className="absolute bottom-0 inset-x-2 h-px bg-gradient-to-r from-transparent via-slate-600/20 to-transparent" />
+      {/* Keyboard - dim */}
+      <g transform="translate(62, 78)" opacity="0.3">
+        <rect x="0" y="0" width="36" height="8" rx="1" fill="#1E293B" stroke="#334155" strokeWidth="0.5" />
+      </g>
+
+      {/* Small plant accent */}
+      <g transform="translate(16, 72)" opacity="0.4">
+        <rect x="2" y="8" width="6" height="8" rx="1" fill="#064E3B" />
+        <path d="M5,8 Q3,2 5,0 Q7,2 5,8" fill="#34D399" opacity="0.6" />
+        <path d="M5,6 Q1,3 3,0" fill="none" stroke="#34D399" strokeWidth="0.6" opacity="0.5" />
+        <path d="M5,6 Q9,3 7,0" fill="none" stroke="#34D399" strokeWidth="0.6" opacity="0.5" />
+      </g>
+    </svg>
   </div>
 );
 
-/** Disabled: empty desk, monitor off, no person */
+/** Disabled: powered-off abandoned terminal */
 const WorkstationDisabled: React.FC = () => (
-  <div className="desk-scene desk-scene--disabled relative w-full h-24 flex items-end justify-center opacity-40">
-    {/* Desk lamp - off */}
-    <div className="absolute left-3 top-1">
-      <LampDesk className="w-6 h-6 text-slate-700" />
-    </div>
+  <div className="relative w-full h-24 flex items-end justify-center opacity-[0.45]">
+    <svg viewBox="0 0 160 96" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      {/* Desk surface line - dashed, no glow */}
+      <line x1="10" y1="88" x2="150" y2="88" stroke="#475569" strokeWidth="1" strokeDasharray="6 4" opacity="0.3" />
 
-    {/* Monitor off */}
-    <div className="relative flex flex-col items-center">
-      <MonitorOff className="w-12 h-12 text-slate-700 relative z-10" strokeWidth={1.5} />
-      <div className="w-3 h-1.5 bg-slate-800 rounded-b-sm" />
-      <div className="w-8 h-1 bg-slate-800 rounded-b-md" />
-    </div>
+      {/* Main screen - black with noise */}
+      <g transform="translate(50, 26)">
+        <rect x="0" y="0" width="60" height="40" rx="2" fill="#0F172A" stroke="#475569" strokeWidth="0.6" opacity="0.5" />
+        {/* Noise texture overlay */}
+        <rect x="0" y="0" width="60" height="40" rx="2" filter="url(#cyber-noise)" opacity="0.15">
+          <animate attributeName="opacity" values="0.1;0.25;0.1" dur="5s" repeatCount="indefinite" />
+        </rect>
+        {/* OFFLINE text with glitch */}
+        <text x="30" y="22" textAnchor="middle" fill="#EF4444" fontSize="8" fontFamily="monospace" fontWeight="bold" opacity="0.7">
+          <animate attributeName="x" values="30;28;32;30;29;31;30" dur="6s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0.7;0.5;0.8;0.3;0.7" dur="6s" repeatCount="indefinite" />
+          OFFLINE
+        </text>
+        {/* Ghost text shadow - glitch effect */}
+        <text x="31" y="21.5" textAnchor="middle" fill="#475569" fontSize="8" fontFamily="monospace" fontWeight="bold" opacity="0.3">
+          <animate attributeName="x" values="31;33;29;31;32;30;31" dur="6s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0.15;0.3;0.1;0.25;0.15" dur="6s" repeatCount="indefinite" />
+          OFFLINE
+        </text>
+        {/* Screen stand */}
+        <rect x="24" y="40" width="12" height="4" fill="#1E293B" opacity="0.5" />
+        <rect x="18" y="44" width="24" height="2" rx="1" fill="#1E293B" opacity="0.5" />
+      </g>
 
-    {/* Empty chair hint */}
-    <div className="absolute right-5 bottom-0.5 flex flex-col items-center">
-      <div className="w-5 h-5 rounded-full border border-dashed border-slate-700 flex items-center justify-center">
-        <User className="w-3 h-3 text-slate-700" strokeWidth={1.5} />
-      </div>
-    </div>
+      {/* PCB circuit line decorations */}
+      <g stroke="#475569" strokeWidth="0.6" fill="none" opacity="0.2">
+        {/* Circuit trace 1 */}
+        <path d="M50,50 L40,50 L40,60 L30,60" />
+        <circle cx="30" cy="60" r="1.5" fill="#475569" opacity="0.3" />
+        {/* Circuit trace 2 */}
+        <path d="M110,50 L120,50 L120,62 L132,62" />
+        <circle cx="132" cy="62" r="1.5" fill="#475569" opacity="0.3" />
+        {/* Circuit trace 3 */}
+        <path d="M80,66 L80,72 L70,72 L70,78" />
+        <circle cx="70" cy="78" r="1" fill="#475569" opacity="0.3" />
+      </g>
 
-    {/* Keyboard */}
-    <div className="absolute bottom-0 left-1/2 -translate-x-1/2">
-      <Keyboard className="w-8 h-4 text-slate-800" strokeWidth={1.5} />
-    </div>
+      {/* Power LED - dark red, ultra-slow blink */}
+      <circle cx="80" cy="20" r="2" fill="#EF4444" opacity="0.2">
+        <animate attributeName="opacity" values="0.1;0.5;0.1" dur="10s" repeatCount="indefinite" />
+      </circle>
 
-    <div className="absolute bottom-0 inset-x-2 h-px bg-gradient-to-r from-transparent via-slate-700/20 to-transparent" />
+      {/* Keyboard - very dim */}
+      <g transform="translate(62, 78)" opacity="0.2">
+        <rect x="0" y="0" width="36" height="8" rx="1" fill="#1E293B" stroke="#334155" strokeWidth="0.3" />
+      </g>
+    </svg>
   </div>
 );
 
@@ -221,16 +433,16 @@ const statusConfig: Record<DeskStatus, {
   nameplateAccent: string;
 }> = {
   executing: {
-    border: 'border-blue-500/50 shadow-lg shadow-blue-500/10 ring-1 ring-blue-500/20',
+    border: 'border-cyan-500/40 shadow-[0_0_15px_rgba(6,182,212,0.15)] ring-1 ring-cyan-500/20',
     bg: 'bg-slate-800/95',
     label: '工作中',
     labelKey: 'aiDashboard.deskCard.executing',
-    tagBg: 'bg-blue-500/15',
-    tagText: 'text-blue-400',
-    nameplateAccent: 'from-blue-500/30 to-blue-600/10',
+    tagBg: 'bg-cyan-500/15',
+    tagText: 'text-cyan-400',
+    nameplateAccent: 'from-cyan-500/30 to-cyan-600/10',
   },
   standby: {
-    border: 'border-emerald-500/40 shadow-md shadow-emerald-500/5',
+    border: 'border-emerald-500/30 shadow-[0_0_10px_rgba(16,185,129,0.1)] ring-1 ring-emerald-500/15',
     bg: 'bg-slate-800/80',
     label: '待命中',
     labelKey: 'aiDashboard.deskCard.standby',
@@ -239,16 +451,16 @@ const statusConfig: Record<DeskStatus, {
     nameplateAccent: 'from-emerald-500/20 to-emerald-600/5',
   },
   enabled: {
-    border: 'border-slate-700/50',
+    border: 'border-amber-500/20 shadow-[0_0_8px_rgba(245,158,11,0.08)]',
     bg: 'bg-slate-800/60',
     label: '已启用',
     labelKey: 'aiDashboard.deskCard.enabled',
-    tagBg: 'bg-yellow-500/15',
-    tagText: 'text-yellow-400',
-    nameplateAccent: 'from-yellow-500/15 to-yellow-600/5',
+    tagBg: 'bg-amber-500/15',
+    tagText: 'text-amber-400',
+    nameplateAccent: 'from-amber-500/15 to-amber-600/5',
   },
   disabled: {
-    border: 'border-slate-700/30',
+    border: 'border-slate-700/20',
     bg: 'bg-slate-800/30',
     label: '未启用',
     labelKey: 'aiDashboard.deskCard.disabled',
@@ -304,11 +516,11 @@ const DeskCard: React.FC<DeskCardProps> = ({
         {/* Row 1: desk icon + code + status tag */}
         <div className="flex items-center gap-2 mb-1">
           {status === 'executing' ? (
-            <Monitor className="w-3.5 h-3.5 text-blue-400 flex-shrink-0 desk-compact-pulse" />
+            <Monitor className="w-3.5 h-3.5 text-cyan-400 flex-shrink-0 desk-compact-pulse" />
           ) : status === 'standby' ? (
             <Monitor className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
           ) : status === 'enabled' ? (
-            <Coffee className="w-3.5 h-3.5 text-yellow-400/70 flex-shrink-0" />
+            <Coffee className="w-3.5 h-3.5 text-amber-400/70 flex-shrink-0" />
           ) : (
             <MonitorOff className="w-3.5 h-3.5 text-slate-500 flex-shrink-0" />
           )}
@@ -321,7 +533,7 @@ const DeskCard: React.FC<DeskCardProps> = ({
         <div className="text-xs text-slate-400 truncate mb-1">{definition.name}</div>
         {/* Row 3: working status */}
         {status === 'executing' && currentExecution ? (
-          <div className="flex items-center gap-1 text-xs text-blue-400">
+          <div className="flex items-center gap-1 text-xs text-cyan-400">
             <Zap className="w-3 h-3 animate-pulse" />
             <span className="truncate">
               {t('aiDashboard.deskCard.processing', '正在处理任务')} ({formatElapsed(currentExecution.createdAt)})
@@ -342,9 +554,12 @@ const DeskCard: React.FC<DeskCardProps> = ({
       onClick={onClick}
       className={`group rounded-xl border cursor-pointer transition-all relative overflow-hidden ${config.border} ${config.bg} hover:border-slate-500/50 hover:translate-y-[-1px]`}
     >
+      {/* SVG defs for noise filter */}
+      <CyberSvgDefs />
+
       {/* executing background pulse */}
       {status === 'executing' && (
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 via-blue-400/8 to-transparent animate-pulse pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/5 via-cyan-400/8 to-transparent animate-pulse pointer-events-none" />
       )}
 
       {/* ===== Workstation Illustration ===== */}

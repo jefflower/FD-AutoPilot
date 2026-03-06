@@ -86,19 +86,6 @@ const AuditCenterTab: React.FC = () => {
         }
     };
 
-    // 手动通知（发送钉钉/企微审核通知）
-    const [notifying, setNotifying] = useState<number | null>(null);
-    const handleNotifyAudit = async (ticketId: number) => {
-        setNotifying(ticketId);
-        try {
-            await serverApi.ticket.notifyAudit(ticketId);
-        } catch (err) {
-            alert(t('audit.notifyFailed', { error: (err as Error).message, defaultValue: `发送审核通知失败: ${(err as Error).message}` }));
-        } finally {
-            setNotifying(null);
-        }
-    };
-
     return (
         <div className="flex-1 flex h-full overflow-hidden">
             {/* 左侧面板 */}
@@ -166,23 +153,13 @@ const AuditCenterTab: React.FC = () => {
                                 titleMode="auto"
                                 loading={loading}
                                 renderActions={(ticket) => (
-                                    <>
-                                        <button
-                                            onClick={(e) => { e.stopPropagation(); handleMobilePreview(ticket.id); }}
-                                            className="px-1.5 py-0.5 text-[9px] font-bold text-blue-400 border border-blue-500/30 rounded transition-all hover:bg-blue-500/10"
-                                            title={t('audit.mobilePreview', { defaultValue: '移动端预览' })}
-                                        >
-                                            {t('audit.mobile', { defaultValue: '移动端' })}
-                                        </button>
-                                        <button
-                                            onClick={(e) => { e.stopPropagation(); handleNotifyAudit(ticket.id); }}
-                                            disabled={notifying === ticket.id}
-                                            className="px-1.5 py-0.5 text-[9px] font-bold text-amber-400 border border-amber-500/30 rounded transition-all hover:bg-amber-500/10 disabled:opacity-50"
-                                            title={t('audit.sendNotify', { defaultValue: '发送审核通知' })}
-                                        >
-                                            {notifying === ticket.id ? '...' : t('audit.notify', { defaultValue: '通知' })}
-                                        </button>
-                                    </>
+                                    <button
+                                        onClick={(e) => { e.stopPropagation(); handleMobilePreview(ticket.id); }}
+                                        className="px-1.5 py-0.5 text-[9px] font-bold text-blue-400 border border-blue-500/30 rounded transition-all hover:bg-blue-500/10"
+                                        title={t('audit.mobilePreview', { defaultValue: '移动端预览' })}
+                                    >
+                                        {t('audit.mobile', { defaultValue: '移动端' })}
+                                    </button>
                                 )}
                                 renderExtra={(ticket) => (
                                     ticket.lastAuditRemark ? (

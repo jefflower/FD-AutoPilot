@@ -38,6 +38,15 @@ export interface ReplyEditorProps {
     disabled: boolean;
     onClick: () => void;
   };
+  /** 可选：第二操作按钮（显示在主按钮左侧） */
+  secondaryAction?: {
+    label: string;
+    loadingLabel: string;
+    loading: boolean;
+    disabled: boolean;
+    onClick: () => void;
+    color?: string;
+  };
   /** 取消按钮 */
   cancelAction: {
     label: string;
@@ -75,6 +84,7 @@ const ReplyEditor: React.FC<ReplyEditorProps> = ({
   disabledDirectionTooltip,
   needsSync,
   primaryAction,
+  secondaryAction,
   cancelAction,
   footerHint,
   themeColor = 'purple',
@@ -112,25 +122,25 @@ const ReplyEditor: React.FC<ReplyEditorProps> = ({
           />
         </div>
 
-        {/* CENTER: 双向翻译按钮 */}
+        {/* CENTER: 双向翻译按钮（箭头指向结果填入的列） */}
         <div className="flex lg:flex-col items-center justify-center gap-2 py-2 lg:py-0 lg:pt-6">
-          {/* target → 中文 */}
-          <button
-            onClick={() => onTranslate('target_to_zh')}
-            disabled={translating || !targetValue.trim() || !isDirectionEnabled('target_to_zh')}
-            title={!isDirectionEnabled('target_to_zh') ? disabledDirectionTooltip : '翻译为中文'}
-            className="px-3 py-1.5 text-[10px] font-black bg-cyan-600 hover:bg-cyan-500 disabled:opacity-50 text-white rounded-lg transition-all shadow-lg shadow-cyan-500/20 whitespace-nowrap"
-          >
-            {translating ? '...' : '← 中文'}
-          </button>
-          {/* 中文 → target */}
+          {/* 中文 → 原文（结果填入左列） */}
           <button
             onClick={() => onTranslate('zh_to_target')}
             disabled={translating || !zhValue.trim() || !isDirectionEnabled('zh_to_target')}
             title={!isDirectionEnabled('zh_to_target') ? disabledDirectionTooltip : '翻译为原文'}
+            className="px-3 py-1.5 text-[10px] font-black bg-cyan-600 hover:bg-cyan-500 disabled:opacity-50 text-white rounded-lg transition-all shadow-lg shadow-cyan-500/20 whitespace-nowrap"
+          >
+            {translating ? '...' : '← 原文'}
+          </button>
+          {/* 原文 → 中文（结果填入右列） */}
+          <button
+            onClick={() => onTranslate('target_to_zh')}
+            disabled={translating || !targetValue.trim() || !isDirectionEnabled('target_to_zh')}
+            title={!isDirectionEnabled('target_to_zh') ? disabledDirectionTooltip : '翻译为中文'}
             className="px-3 py-1.5 text-[10px] font-black bg-emerald-600 hover:bg-emerald-500 disabled:opacity-50 text-white rounded-lg transition-all shadow-lg shadow-emerald-500/20 whitespace-nowrap"
           >
-            {translating ? '...' : '原文 →'}
+            {translating ? '...' : '中文 →'}
           </button>
         </div>
 
@@ -166,6 +176,22 @@ const ReplyEditor: React.FC<ReplyEditorProps> = ({
         >
           {cancelAction.label}
         </button>
+        {secondaryAction && (
+          <button
+            onClick={secondaryAction.onClick}
+            disabled={secondaryAction.loading || secondaryAction.disabled}
+            className={`px-5 py-2 ${secondaryAction.color || 'bg-emerald-600 hover:bg-emerald-500 shadow-emerald-500/20'} disabled:opacity-50 disabled:cursor-not-allowed text-white text-xs font-black rounded-lg transition-all shadow-lg`}
+          >
+            {secondaryAction.loading ? (
+              <span className="flex items-center gap-1.5">
+                <Loader2 className="w-3 h-3 animate-spin" />
+                {secondaryAction.loadingLabel}
+              </span>
+            ) : (
+              secondaryAction.label
+            )}
+          </button>
+        )}
         <button
           onClick={primaryAction.onClick}
           disabled={primaryAction.loading || primaryAction.disabled}

@@ -196,7 +196,7 @@ public class AiDataInitializer implements CommandLineRunner {
 
     private static final String TRANSLATE_OUTPUT_SCHEMA = "{\"type\":\"object\",\"properties\":{\"subject\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"conversations\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"bodyText\":{\"type\":\"string\"}},\"required\":[\"id\",\"bodyText\"]}}},\"required\":[\"subject\",\"description\",\"conversations\"]}";
 
-    private static final String REPLY_INPUT_SCHEMA = "{\"type\":\"object\",\"properties\":{\"ticketContent\":{\"type\":\"string\",\"description\":\"工单原文内容 JSON（含 subject/description/conversations）\"},\"lastAuditRemark\":{\"type\":\"string\",\"description\":\"审核驳回备注\"}},\"required\":[\"ticketContent\"]}";
+    private static final String REPLY_INPUT_SCHEMA = "{\"type\":\"object\",\"properties\":{\"ticketContent\":{\"type\":\"string\",\"description\":\"工单原文内容 JSON（含 subject/description/conversations）\"},\"lastAuditRemark\":{\"type\":\"string\",\"description\":\"审核驳回备注\"},\"annotations\":{\"type\":\"string\",\"description\":\"对话标注信息（人工审查结论等）\"}},\"required\":[\"ticketContent\"]}";
 
     private static final String REPLY_OUTPUT_SCHEMA = "{\"type\":\"object\",\"properties\":{\"targetReply\":{\"type\":\"string\"},\"zhReply\":{\"type\":\"string\"}},\"required\":[\"targetReply\",\"zhReply\"]}";
 
@@ -220,7 +220,7 @@ public class AiDataInitializer implements CommandLineRunner {
         // 4. 清理已移除的内置 Agent
         cleanupRemovedBuiltInAgents(Set.of("ticket-translate", "ticket-reply", "n8n-workflow-designer",
                 "logistics-reply", "completion-reply", "ticket-reply-long", "manual-reply-translate",
-                "manual-reply-translate-reverse"));
+                "manual-reply-translate-reverse", "video-review-reply"));
 
         // 5. 初始化默认能力绑定
         ensureDefaultBinding("ticket-translate", "ticket-translate");
@@ -372,7 +372,7 @@ public class AiDataInitializer implements CommandLineRunner {
                         + "- PRODUCT_FAULT: Product quality issues, usage problems, returns/exchanges\n"
                         + "- LOGISTICS_INQUIRY: Shipping status, delivery time, tracking inquiries\n"
                         + "- BUSINESS_COOPERATION: Agency cooperation, bulk purchasing, business partnership\n"
-                        + "- VIDEO_REVIEW: Customer provided video links showing the issue (YouTube, Google Drive, Dropbox, etc.)\n"
+                        + "- VIDEO_REVIEW: Customer's LATEST UNREPLIED messages contain video links (YouTube, Google Drive, Dropbox, etc.)\n"
                         + "- OTHER: Cannot be categorized into above\n\n"
                         + "RESOLVED DETECTION:\n"
                         + "- Set \"resolved\" to true ONLY when the customer explicitly confirms the issue is resolved, expresses thanks for resolution, or indicates no further help is needed\n"
@@ -383,10 +383,14 @@ public class AiDataInitializer implements CommandLineRunner {
                         + "- If multiple numbers found, use the most relevant one\n"
                         + "- If not found, set to empty string \"\"\n"
                         + "- These fields are ONLY needed when category is LOGISTICS_INQUIRY, omit them otherwise\n\n"
-                        + "VIDEO URL EXTRACTION (only when category is VIDEO_REVIEW):\n"
-                        + "- Extract ALL video URLs into \"videoUrls\" field as a JSON array of strings\n"
+                        + "VIDEO_REVIEW CLASSIFICATION (IMPORTANT):\n"
+                        + "- Only classify as VIDEO_REVIEW when the customer's LATEST UNREPLIED messages contain video links\n"
+                        + "- \"Latest unreplied messages\" = the most recent consecutive messages where incoming=true, after the last agent reply (incoming=false)\n"
+                        + "- If video links only appear in OLDER messages (before the last agent reply), do NOT classify as VIDEO_REVIEW\n"
                         + "- Common video platforms: YouTube, Vimeo, Google Drive, Dropbox, OneDrive, WeTransfer, etc.\n"
-                        + "- If the ticket describes a product fault BUT also contains video links, classify as VIDEO_REVIEW\n"
+                        + "- If the latest customer messages describe a product fault AND contain video links, classify as VIDEO_REVIEW\n\n"
+                        + "VIDEO URL EXTRACTION (only when category is VIDEO_REVIEW):\n"
+                        + "- Extract ALL video URLs from the latest unreplied messages into \"videoUrls\" field as a JSON array of strings\n"
                         + "- If not found any video URL, set to empty array []\n"
                         + "- videoUrls field is ONLY needed when category is VIDEO_REVIEW, omit it otherwise\n\n"
                         + "STRICT OUTPUT FORMAT:\n"
@@ -425,6 +429,9 @@ public class AiDataInitializer implements CommandLineRunner {
                         + "- 输出必须以 [ 开头，以 ] 结尾\n\n"
                         + "正确示例：[\"Hello, thanks for contacting us.\",\"你好，感谢联系我们。\"]\n\n"
                         + "工单内容：\n{{ticketContent}}"
+                        + "{{#if annotations}}\n\n"
+                        + "【对话标注信息】（来自人工审查员的补充说明，请务必参考）：\n{{annotations}}"
+                        + "{{/if}}"
                         + "{{#if lastAuditRemark}}\n\n"
                         + "【审核驳回意见】：\n{{lastAuditRemark}}\n"
                         + "请务必根据以上审核意见调整你的回复，避免重复之前的问题。"
@@ -517,6 +524,9 @@ public class AiDataInitializer implements CommandLineRunner {
                         + "- 输出必须以 [ 开头，以 ] 结尾\n\n"
                         + "正确示例：[\"Hello, thanks for contacting us.\",\"你好，感谢联系我们。\"]\n\n"
                         + "工单内容：\n{{ticketContent}}"
+                        + "{{#if annotations}}\n\n"
+                        + "【对话标注信息】（来自人工审查员的补充说明，请务必参考）：\n{{annotations}}"
+                        + "{{/if}}"
                         + "{{#if lastAuditRemark}}\n\n"
                         + "【审核驳回意见】：\n{{lastAuditRemark}}\n"
                         + "请务必根据以上审核意见调整你的回复，避免重复之前的问题。"
@@ -550,7 +560,10 @@ public class AiDataInitializer implements CommandLineRunner {
                         + "- 禁止在 JSON 前后添加任何文字说明\n"
                         + "- 输出必须以 [ 开头，以 ] 结尾\n\n"
                         + "正确示例：[\"Thank you for your feedback!\",\"感谢您的反馈！\"]\n\n"
-                        + "工单内容：\n{{ticketContent}}",
+                        + "工单内容：\n{{ticketContent}}"
+                        + "{{#if annotations}}\n\n"
+                        + "【对话标注信息】（来自人工审查员的补充说明，请务必参考）：\n{{annotations}}"
+                        + "{{/if}}",
                 3,
                 REPLY_INPUT_SCHEMA,
                 REPLY_OUTPUT_SCHEMA,
@@ -577,6 +590,9 @@ public class AiDataInitializer implements CommandLineRunner {
                         + "- 输出必须以 [ 开头，以 ] 结尾\n\n"
                         + "正确示例：[\"Hello, thanks for contacting us.\",\"你好，感谢联系我们。\"]\n\n"
                         + "工单内容：\n{{ticketContent}}"
+                        + "{{#if annotations}}\n\n"
+                        + "【对话标注信息】（来自人工审查员的补充说明，请务必参考）：\n{{annotations}}"
+                        + "{{/if}}"
                         + "{{#if lastAuditRemark}}\n\n"
                         + "【审核驳回意见】：\n{{lastAuditRemark}}\n"
                         + "请务必根据以上审核意见调整你的回复，避免重复之前的问题。"

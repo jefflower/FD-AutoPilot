@@ -33,6 +33,17 @@ const BRIDGE_CMD_MAP: Record<string, string> = {
   sync_translate_reply_cmd: '/bridge/sync-translate',
 };
 
+// 长时间运行命令的超时配置（毫秒）—— 默认 60s，特殊命令按需加长
+const BRIDGE_CMD_TIMEOUT: Record<string, number> = {
+  execute_notebooklm_rag_cmd: 10 * 60 * 1000,  // 10 分钟（RAG: 上传 source + 等待 + ask + 清理）
+  execute_notebooklm_py_cmd: 5 * 60 * 1000,    // 5 分钟
+  execute_notebooklm_cli_cmd: 3 * 60 * 1000,   // 3 分钟
+  execute_gemini_cmd: 5 * 60 * 1000,            // 5 分钟
+  execute_claude_cmd: 5 * 60 * 1000,            // 5 分钟
+  execute_antigravity_cmd: 5 * 60 * 1000,       // 5 分钟
+};
+const DEFAULT_BRIDGE_TIMEOUT = 60_000; // 默认 60 秒
+
 // bridge server 可用性缓存
 let bridgeAvailable: boolean | null = null;
 
@@ -81,11 +92,28 @@ async function bridgeInvoke<T>(cmd: string, args?: Record<string, unknown>): Pro
     );
   }
 
-  const resp = await fetch(`${getBridgeBaseUrl()}${path}`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(args || {}),
-  });
+  const timeoutMs = BRIDGE_CMD_TIMEOUT[cmd] || DEFAULT_BRIDGE_TIMEOUT;
+
+  let resp: Response;
+  try {
+    resp = await fetch(`${getBridgeBaseUrl()}${path}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(args || {}),
+      signal: AbortSignal.timeout(timeoutMs),
+    });
+  } catch (fetchErr: any) {
+    // fetch 失败（网络错误、超时等）→ 重置 bridge 可用性缓存，使下次重新探测
+    resetBridgeAvailableCache();
+    const isTimeout = fetchErr?.name === 'TimeoutError' || fetchErr?.name === 'AbortError';
+    const timeoutHint = isTimeout
+      ? ` (超时 ${Math.round(timeoutMs / 1000)}s，命令: ${cmd})`
+      : '';
+    throw new Error(
+      `Bridge fetch 失败${timeoutHint}: ${fetchErr?.message || fetchErr}. ` +
+      `请确认 fd-bridge 正在运行且端口 9987 可达。`
+    );
+  }
 
   const text = await resp.text();
   let json: any;

@@ -22,25 +22,27 @@ interface StatCardProps {
   pulse?: boolean;
 }
 
-const colorMap: Record<string, { bg: string; text: string }> = {
-  cyan: { bg: 'bg-cyan-500/10', text: 'text-cyan-400' },
-  indigo: { bg: 'bg-indigo-500/10', text: 'text-indigo-400' },
-  emerald: { bg: 'bg-emerald-500/10', text: 'text-emerald-400' },
-  blue: { bg: 'bg-blue-500/10', text: 'text-blue-400' },
-  amber: { bg: 'bg-amber-500/10', text: 'text-amber-400' },
-  red: { bg: 'bg-red-500/10', text: 'text-red-400' },
+const colorMap: Record<string, { bg: string; text: string; accent: string; ring: string }> = {
+  cyan: { bg: 'bg-cyan-500/10', text: 'text-cyan-400', accent: 'bg-cyan-400', ring: 'ring-cyan-400/20' },
+  indigo: { bg: 'bg-indigo-500/10', text: 'text-indigo-400', accent: 'bg-indigo-400', ring: 'ring-indigo-400/20' },
+  emerald: { bg: 'bg-emerald-500/10', text: 'text-emerald-400', accent: 'bg-emerald-400', ring: 'ring-emerald-400/20' },
+  blue: { bg: 'bg-blue-500/10', text: 'text-blue-400', accent: 'bg-blue-400', ring: 'ring-blue-400/20' },
+  amber: { bg: 'bg-amber-500/10', text: 'text-amber-400', accent: 'bg-amber-400', ring: 'ring-amber-400/20' },
+  red: { bg: 'bg-red-500/10', text: 'text-red-400', accent: 'bg-red-400', ring: 'ring-red-400/20' },
 };
 
 const StatCard: React.FC<StatCardProps> = ({ icon, label, value, subLabel, bottomInfo, color, pulse }) => {
   const colors = colorMap[color] || colorMap.indigo;
   return (
-    <div className={`bg-slate-800/50 border border-slate-700/50 rounded-xl p-4 flex-1 min-w-0 ${pulse ? 'animate-pulse' : ''}`}>
+    <div className={`relative overflow-hidden bg-slate-800/50 border border-slate-700/50 rounded-xl p-4 flex-1 min-w-0 hover:-translate-y-0.5 transition-all ${pulse ? 'animate-pulse' : ''}`}>
+      {/* Neon accent bar at top */}
+      <div className={`absolute top-0 inset-x-0 h-0.5 ${colors.accent}`} />
       <div className="flex items-center gap-3">
-        <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${colors.bg} ${colors.text}`}>
+        <div className={`w-10 h-10 rounded-lg flex items-center justify-center ring-1 ${colors.bg} ${colors.text} ${colors.ring}`}>
           {icon}
         </div>
         <div className="min-w-0 flex-1">
-          <div className="text-2xl font-bold text-white">{value}</div>
+          <div className="text-2xl font-bold text-white cyber-digit-glow">{value}</div>
           <div className="text-xs text-slate-400 truncate">{label}</div>
         </div>
       </div>

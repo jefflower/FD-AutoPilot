@@ -20,6 +20,7 @@ pub mod shadow_handler;
 
 use std::sync::Arc;
 
+use axum::extract::DefaultBodyLimit;
 use axum::routing::{get, post};
 use axum::Router;
 use tokio::time::Duration;
@@ -137,6 +138,8 @@ fn build_router(log_store: Arc<ExecLogStore>) -> Router {
         )
         .with_state(state)
         .layer(cors)
+        // axum 0.8 默认 body limit 2MB，notebooklm-rag 的 resolvedPrompt 可能超限
+        .layer(DefaultBodyLimit::max(10 * 1024 * 1024)) // 10MB
 }
 
 // ========== Public Server Entry Points ==========

@@ -13,6 +13,7 @@ import type {
   MobileAuditDetail,
   MobileAuditSubmit,
   MobileAuditResult,
+  ConversationNote,
 } from '../../types/server';
 import { request, getApiBaseUrl, getAuthToken } from './client';
 
@@ -136,6 +137,23 @@ export const ticketApi = {
     createdAt: string;
   }>> {
     return (await request<any[]>(`/tickets/${ticketId}/status-history`)) || [];
+  },
+
+  // ============ 对话标注 ============
+
+  async getConversationNotes(ticketId: number): Promise<ConversationNote[]> {
+    return (await request<ConversationNote[]>(`/tickets/${ticketId}/notes`)) || [];
+  },
+
+  async upsertConversationNote(ticketId: number, conversationId: number, noteContent: string, noteType = 'GENERAL'): Promise<ConversationNote> {
+    return request<ConversationNote>(`/tickets/${ticketId}/notes/${conversationId}`, {
+      method: 'PUT',
+      body: JSON.stringify({ noteContent, noteType }),
+    });
+  },
+
+  async deleteConversationNote(ticketId: number, conversationId: number): Promise<void> {
+    await request<void>(`/tickets/${ticketId}/notes/${conversationId}`, { method: 'DELETE' });
   },
 };
 

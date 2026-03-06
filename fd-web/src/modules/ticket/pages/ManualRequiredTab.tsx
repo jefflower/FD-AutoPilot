@@ -178,8 +178,8 @@ const ManualRequiredTab: React.FC = () => {
     }
   }, [selectedTicket, manualZhReply, manualTargetReply]);
 
-  // 提交人工回复
-  const handleSubmitManualReply = useCallback(async () => {
+  // 提交人工回复（支持选择目标状态）
+  const handleSubmitManualReply = useCallback(async (targetStatus: 'PENDING_AUDIT' | 'COMPLETED') => {
     if (!selectedTicket || !manualTargetReply.trim() || !manualZhReply.trim()) return;
     setSubmittingReply(true);
     try {
@@ -188,6 +188,7 @@ const ManualRequiredTab: React.FC = () => {
         body: JSON.stringify({
           targetReply: manualTargetReply,
           zhReply: manualZhReply,
+          targetStatus,
         }),
       });
       // 清理状态
@@ -315,11 +316,18 @@ const ManualRequiredTab: React.FC = () => {
                   translating={translating}
                   enabledDirections={['zh_to_target', 'target_to_zh']}
                   primaryAction={{
-                    label: '提交回复（进入审核）',
+                    label: '提交并审核',
                     loadingLabel: '提交中...',
                     loading: submittingReply,
                     disabled: !manualTargetReply.trim() || !manualZhReply.trim(),
-                    onClick: handleSubmitManualReply,
+                    onClick: () => handleSubmitManualReply('PENDING_AUDIT'),
+                  }}
+                  secondaryAction={{
+                    label: '提交并完成',
+                    loadingLabel: '提交中...',
+                    loading: submittingReply,
+                    disabled: !manualTargetReply.trim() || !manualZhReply.trim(),
+                    onClick: () => handleSubmitManualReply('COMPLETED'),
                   }}
                   cancelAction={{
                     label: '取消',

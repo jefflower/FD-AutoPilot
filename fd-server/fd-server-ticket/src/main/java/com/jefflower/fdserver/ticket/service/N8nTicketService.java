@@ -316,12 +316,25 @@ public class N8nTicketService {
     }
 
     /**
-     * 人工回复保存 — 保存人工编写的回复，状态直接转为 PENDING_AUDIT
+     * 人工回复保存 — 保存人工编写的回复，可选目标状态（待审核 或 完成）
+     *
+     * @param targetStatusStr 目标状态："PENDING_AUDIT"（默认）或 "COMPLETED"
      */
     @Transactional
-    public Map<String, Object> saveManualReply(Long ticketId, String targetReply, String zhReply) {
+    public Map<String, Object> saveManualReply(Long ticketId, String targetReply, String zhReply, String targetStatusStr) {
         Ticket ticket = getTicket(ticketId);
         TicketStatus beforeStatus = ticket.getStatus();
+
+        // 解析目标状态
+        TicketStatus targetStatus;
+        String logMessage;
+        if ("COMPLETED".equalsIgnoreCase(targetStatusStr)) {
+            targetStatus = TicketStatus.COMPLETED;
+            logMessage = "人工回复已保存，直接完成等待推送";
+        } else {
+            targetStatus = TicketStatus.PENDING_AUDIT;
+            logMessage = "人工回复已保存，进入待审核";
+        }
 
         // 删除旧回复
         replyRepository.deleteByTicket(ticket);
@@ -338,15 +351,14 @@ public class N8nTicketService {
         TicketReply saved = replyRepository.save(reply);
 
         // 状态转换
-        stateMachine.transition(ticket, TicketStatus.PENDING_AUDIT);
+        stateMachine.transition(ticket, targetStatus);
         ticketRepository.save(ticket);
-        statusLogService.logTransition(ticket, beforeStatus, TicketStatus.PENDING_AUDIT,
-                "manual", "人工回复已保存，进入待审核");
+        statusLogService.logTransition(ticket, beforeStatus, targetStatus, "manual", logMessage);
 
         Map<String, Object> response = new HashMap<>();
         response.put("ticketId", ticketId);
         response.put("replyId", saved.getId());
-        response.put("status", TicketStatus.PENDING_AUDIT.name());
+        response.put("status", targetStatus.name());
         return response;
     }
 

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ServerTicket } from '../../../shared/types/server';
+import { ServerTicket, ConversationNote } from '../../../shared/types/server';
 import { serverApi } from '../../../shared/services/serverApi';
 import { AGENT_MAP } from '../../../shared/constants/agentMap';
 import { isTauriEnv } from '../../../tauri/bridge';
@@ -64,6 +64,61 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
 
     const [isJsonMode, setIsJsonMode] = useState(false);
 
+    // ---- 对话标注 ----
+    const [conversationNotes, setConversationNotes] = useState<ConversationNote[]>([]);
+    const [editingNoteConvId, setEditingNoteConvId] = useState<number | null>(null);
+    const [editingNoteText, setEditingNoteText] = useState('');
+    const [editingNoteType, setEditingNoteType] = useState('GENERAL');
+    const [savingNote, setSavingNote] = useState(false);
+
+    const notesByConvId = React.useMemo(() => {
+        const map = new Map<number, ConversationNote>();
+        conversationNotes.forEach(n => map.set(n.conversationId, n));
+        return map;
+    }, [conversationNotes]);
+
+    const loadNotes = useCallback(async () => {
+        try {
+            const notes = await serverApi.ticket.getConversationNotes(ticket.id);
+            setConversationNotes(notes);
+        } catch (e) {
+            console.error('[ServerTicketDetail] Failed to load notes:', e);
+        }
+    }, [ticket.id]);
+
+    useEffect(() => { loadNotes(); }, [loadNotes]);
+
+    const handleStartEditNote = (convId: number) => {
+        const existing = notesByConvId.get(convId);
+        setEditingNoteConvId(convId);
+        setEditingNoteText(existing?.noteContent || '');
+        setEditingNoteType(existing?.noteType || 'GENERAL');
+    };
+
+    const handleSaveNote = async () => {
+        if (editingNoteConvId === null || !editingNoteText.trim()) return;
+        setSavingNote(true);
+        try {
+            await serverApi.ticket.upsertConversationNote(ticket.id, editingNoteConvId, editingNoteText.trim(), editingNoteType);
+            setEditingNoteConvId(null);
+            setEditingNoteText('');
+            loadNotes();
+        } catch (e) {
+            alert('保存标注失败: ' + (e as Error).message);
+        } finally {
+            setSavingNote(false);
+        }
+    };
+
+    const handleDeleteNote = async (convId: number) => {
+        try {
+            await serverApi.ticket.deleteConversationNote(ticket.id, convId);
+            loadNotes();
+        } catch (e) {
+            alert('删除标注失败: ' + (e as Error).message);
+        }
+    };
+
     const parseJsonContent = (content: string | undefined): ParsedContent | null => {
         if (!content) return null;
         let raw = content;
@@ -115,6 +170,8 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
         setAuditSubmitting(false);
         setShowReprocessConfirm(false);
         setReprocessing(false);
+        setEditingNoteConvId(null);
+        setEditingNoteText('');
     }, [ticket.id]);
 
     const handleReprocess = async () => {
@@ -289,12 +346,90 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
                                     transMsg = translationData?.conversations?.find(c => c.id === msg.id);
                                 }
 
+                                const existingNote = msg.id > 0 ? notesByConvId.get(msg.id) : null;
+                                const isEditingThis = editingNoteConvId === msg.id;
+
                                 return (
-                                    <div key={idx} className="w-full">
+                                    <div key={idx} className="w-full group/conv">
                                         <div className={`grid ${isSplitMode ? 'grid-cols-2 gap-16' : 'grid-cols-1 gap-3'} w-full items-start`}>
                                             <div className="min-w-0 w-full flex flex-col gap-2">
                                                 {/* 原文气泡 */}
                                                 {renderChatBubble(msg, isIncoming, false, isDesc)}
+
+                                                {/* 标注区域（仅非 Description 对话） */}
+                                                {msg.id > 0 && (
+                                                    <div className={`${isIncoming ? 'pl-1' : 'pr-1'} max-w-[90%] ${isIncoming ? '' : 'self-end'}`}>
+                                                        {/* 已有标注显示 */}
+                                                        {existingNote && !isEditingThis && (
+                                                            <div className="flex items-start gap-1.5 group mt-0.5">
+                                                                <div className="flex-1 px-2.5 py-1.5 bg-amber-900/25 border border-amber-500/25 rounded-md">
+                                                                    <div className="flex items-center gap-1.5 mb-0.5">
+                                                                        <span className="text-[8px] font-black uppercase tracking-wider text-amber-500/70">
+                                                                            {existingNote.noteType === 'VIDEO_REVIEW' ? '视频审查' : '标注'}
+                                                                        </span>
+                                                                        <span className="text-[8px] text-slate-600">{existingNote.createdBy}</span>
+                                                                    </div>
+                                                                    <p className="text-[11px] text-amber-200/80 leading-relaxed whitespace-pre-wrap">{existingNote.noteContent}</p>
+                                                                </div>
+                                                                <div className="flex flex-col gap-0.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                                                                    <button onClick={() => handleStartEditNote(msg.id)} className="p-0.5 text-slate-500 hover:text-amber-400 transition-colors" title="编辑标注">
+                                                                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
+                                                                    </button>
+                                                                    <button onClick={() => handleDeleteNote(msg.id)} className="p-0.5 text-slate-500 hover:text-red-400 transition-colors" title="删除标注">
+                                                                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        )}
+                                                        {/* 添加标注按钮 */}
+                                                        {!existingNote && !isEditingThis && (
+                                                            <button
+                                                                onClick={() => handleStartEditNote(msg.id)}
+                                                                className="mt-0.5 px-2 py-0.5 text-[9px] text-slate-600 hover:text-amber-400 hover:bg-amber-900/20 rounded transition-all flex items-center gap-1 opacity-0 group-hover/conv:opacity-100"
+                                                            >
+                                                                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" /></svg>
+                                                                添加标注
+                                                            </button>
+                                                        )}
+                                                        {/* 内联编辑器 */}
+                                                        {isEditingThis && (
+                                                            <div className="mt-1 p-2.5 bg-slate-800/60 border border-amber-500/30 rounded-lg space-y-2">
+                                                                <div className="flex items-center gap-2">
+                                                                    <select
+                                                                        value={editingNoteType}
+                                                                        onChange={e => setEditingNoteType(e.target.value)}
+                                                                        className="bg-black/30 border border-slate-600 rounded px-2 py-0.5 text-[10px] text-slate-300 outline-none"
+                                                                    >
+                                                                        <option value="GENERAL">通用标注</option>
+                                                                        <option value="VIDEO_REVIEW">视频审查结论</option>
+                                                                        <option value="CORRECTION">纠正说明</option>
+                                                                    </select>
+                                                                    <span className="text-[9px] text-slate-600 ml-auto">#{msg.id}</span>
+                                                                </div>
+                                                                <textarea
+                                                                    value={editingNoteText}
+                                                                    onChange={e => setEditingNoteText(e.target.value)}
+                                                                    placeholder="输入标注内容（如视频审查结论、补充说明等）..."
+                                                                    className="w-full bg-black/30 border border-slate-600 rounded-lg p-2 text-xs text-slate-200 placeholder:text-slate-600 focus:border-amber-500 outline-none resize-y"
+                                                                    style={{ minHeight: '60px' }}
+                                                                    autoFocus
+                                                                />
+                                                                <div className="flex justify-end gap-2">
+                                                                    <button onClick={() => { setEditingNoteConvId(null); setEditingNoteText(''); }} className="px-3 py-1 text-[10px] text-slate-400 hover:text-white transition-colors">
+                                                                        取消
+                                                                    </button>
+                                                                    <button
+                                                                        onClick={handleSaveNote}
+                                                                        disabled={savingNote || !editingNoteText.trim()}
+                                                                        className="px-3 py-1 text-[10px] font-bold bg-amber-600 hover:bg-amber-500 disabled:opacity-50 text-white rounded transition-all"
+                                                                    >
+                                                                        {savingNote ? '保存中...' : '保存标注'}
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        )}
+                                                    </div>
+                                                )}
 
                                                 {/* 非分栏模式下，紧跟展示翻译气泡 */}
                                                 {!isSplitMode && transMsg && (

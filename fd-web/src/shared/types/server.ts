@@ -178,6 +178,18 @@ export interface TicketAudit {
   createdAt: string;
 }
 
+// ============ 对话标注 ============
+export interface ConversationNote {
+  id: number;
+  ticketId: number;
+  conversationId: number;
+  noteContent: string;
+  noteType: string;       // GENERAL | VIDEO_REVIEW | CORRECTION ...
+  createdBy: string;
+  createdAt: string;
+  updatedAt?: string;
+}
+
 // ============ API 请求/响应类型 ============
 export interface TicketQueryParams {
   status?: string;  // 逗号分隔多选，如 "PENDING_TRANS,TRANSLATING"

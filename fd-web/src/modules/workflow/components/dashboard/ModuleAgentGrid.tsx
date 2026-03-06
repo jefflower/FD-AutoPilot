@@ -81,10 +81,10 @@ const ModuleAgentGrid: React.FC<ModuleAgentGridProps> = ({
           <button
             key={code}
             onClick={() => setActiveModule(code)}
-            className={`px-3 py-1 text-xs rounded-lg border transition-colors ${
+            className={`px-3 py-1.5 text-xs rounded-none border-b-2 transition-all ${
               activeModule === code
-                ? 'bg-indigo-500/20 text-indigo-400 border-indigo-500/30'
-                : 'bg-slate-800/50 text-slate-400 hover:bg-slate-700/50 border-slate-700/50'
+                ? 'border-b-indigo-400 text-indigo-300 shadow-[0_2px_8px_rgba(99,102,241,0.3)]'
+                : 'border-b-transparent text-slate-500 hover:text-slate-300'
             }`}
           >
             {t(`aiDashboard.moduleFilter.${code}`)}

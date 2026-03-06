@@ -26,6 +26,7 @@ public enum ErrorCode {
     REPLY_NOT_BELONG_TO_TICKET(400, "回复不属于此工单"),
     SELECTED_REPLY_NOT_FOUND(404, "未找到已选中的回复"),
     TRANSLATION_NOT_FOUND(404, "翻译不存在"),
+    NOTE_NOT_FOUND(404, "标注不存在"),
     TRANSLATION_REQUIRED(400, "工单尚未完成翻译"),
     TRANSLATION_INCOMPLETE(400, "翻译内容不完整"),
     REPLY_REQUIRED(400, "工单尚未完成回复，无法通过审核"),

@@ -57,16 +57,31 @@ const AiDashboardTab: React.FC = () => {
   }, [logDrawerAgent, userDefinitions]);
 
   return (
-    <div className="flex-1 flex flex-col overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <div className="flex-1 flex flex-col overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative">
+      {/* Cyber grid overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-100"
+        style={{
+          backgroundImage: 'linear-gradient(rgba(6,182,212,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(6,182,212,0.03) 1px, transparent 1px)',
+          backgroundSize: '40px 40px',
+          maskImage: 'radial-gradient(ellipse at center, black 30%, transparent 70%)',
+          WebkitMaskImage: 'radial-gradient(ellipse at center, black 30%, transparent 70%)',
+        }}
+      />
+      {/* Scan line */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="w-full h-px bg-cyan-400/[0.04] cyber-ambient-scan" />
+      </div>
+
       {/* Header */}
-      <div className="flex-shrink-0 px-6 py-4 border-b border-slate-700/50">
+      <div className="flex-shrink-0 px-6 py-4 relative">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center">
               <Activity className="w-5 h-5 text-blue-400" />
             </div>
             <div>
-              <h1 className="text-lg font-semibold text-white">
+              <h1 className="text-lg font-semibold text-white" style={{ textShadow: '0 0 10px rgba(96,165,250,0.3)' }}>
                 {t('aiDashboard.cyberOffice', '赛博办公室')}
               </h1>
               {lastUpdated && (
@@ -116,6 +131,8 @@ const AiDashboardTab: React.FC = () => {
             </button>
           </div>
         </div>
+        {/* Neon gradient separator */}
+        <div className="h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent" />
       </div>
 
       {/* Content */}

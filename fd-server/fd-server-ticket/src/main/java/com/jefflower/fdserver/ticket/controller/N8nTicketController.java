@@ -4,6 +4,7 @@ import com.jefflower.fdserver.auth.security.RequiresPermission;
 import com.jefflower.fdserver.common.dto.ApiResponse;
 import com.jefflower.fdserver.ticket.entity.Ticket;
 import com.jefflower.fdserver.ticket.entity.TicketStatusLog;
+import com.jefflower.fdserver.ticket.service.ConversationNoteService;
 import com.jefflower.fdserver.ticket.service.N8nTicketService;
 import com.jefflower.fdserver.ticket.service.TicketStatusLogService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -31,6 +32,7 @@ public class N8nTicketController {
 
     private final N8nTicketService n8nTicketService;
     private final TicketStatusLogService ticketStatusLogService;
+    private final ConversationNoteService conversationNoteService;
 
     // ========== 查询 ==========
 
@@ -141,7 +143,7 @@ public class N8nTicketController {
         return ResponseEntity.ok(ApiResponse.ok("人工处理完成", result));
     }
 
-    @Operation(summary = "保存人工回复", description = "为人工处理工单保存手动编写的回复，状态转为待审核")
+    @Operation(summary = "保存人工回复", description = "为人工处理工单保存手动编写的回复，可选进入待审核或直接完成")
     @PostMapping("/{id}/save-manual-reply")
     @RequiresPermission("ticket:reply")
     public ResponseEntity<ApiResponse<Map<String, Object>>> saveManualReply(
@@ -149,7 +151,8 @@ public class N8nTicketController {
             @RequestBody Map<String, String> body) {
         String targetReply = body.getOrDefault("targetReply", "");
         String zhReply = body.getOrDefault("zhReply", "");
-        Map<String, Object> result = n8nTicketService.saveManualReply(id, targetReply, zhReply);
+        String targetStatus = body.getOrDefault("targetStatus", "PENDING_AUDIT");
+        Map<String, Object> result = n8nTicketService.saveManualReply(id, targetReply, zhReply, targetStatus);
         return ResponseEntity.ok(ApiResponse.ok("人工回复已保存", result));
     }
 
@@ -180,5 +183,16 @@ public class N8nTicketController {
             @PathVariable Long ticketId) {
         List<TicketStatusLog> history = ticketStatusLogService.getHistory(ticketId);
         return ResponseEntity.ok(ApiResponse.ok(history));
+    }
+
+    // ========== 标注 ==========
+
+    @Operation(summary = "获取工单标注文本", description = "获取格式化的标注文本，供 n8n 工作流传递给回复 Agent")
+    @GetMapping("/{ticketId}/annotations-text")
+    @RequiresPermission("ticket:read")
+    public ResponseEntity<ApiResponse<Map<String, String>>> getAnnotationsText(
+            @PathVariable Long ticketId) {
+        String text = conversationNoteService.formatAnnotationsForAgent(ticketId);
+        return ResponseEntity.ok(ApiResponse.ok(Map.of("annotations", text != null ? text : "")));
     }
 }

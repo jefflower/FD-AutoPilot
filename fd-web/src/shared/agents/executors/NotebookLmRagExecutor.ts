@@ -72,11 +72,30 @@ export class NotebookLmRagExecutor implements AgentExecutor {
                 durationMs: Date.now() - startTime,
             };
         } catch (err: any) {
+            const rawMsg = err?.message || String(err);
+            // 增强错误信息，帮助定位根因
+            let enhancedMsg = rawMsg;
+            if (rawMsg.includes('Failed to fetch') || rawMsg.includes('Bridge fetch 失败')) {
+                const sourceLen = config.resolvedPrompt?.length || 0;
+                enhancedMsg =
+                    `[NotebookLmRagExecutor] Bridge 调用失败 (agentCode=${definition.code}, ` +
+                    `sourceContent=${sourceLen} 字符)。` +
+                    (sourceLen > 2 * 1024 * 1024
+                        ? ` sourceContent 超过 2MB (${Math.round(sourceLen / 1024)}KB)，可能触发 Axum body size 限制。`
+                        : '') +
+                    ` 原始错误: ${rawMsg}`;
+            } else if (rawMsg.includes('超时')) {
+                enhancedMsg =
+                    `[NotebookLmRagExecutor] 执行超时 (agentCode=${definition.code})。` +
+                    `NotebookLM RAG 操作包含上传 source、等待处理、提问、清理等步骤，耗时较长。` +
+                    ` 原始错误: ${rawMsg}`;
+            }
+            console.error(`[NotebookLmRagExecutor] ${enhancedMsg}`);
             return {
                 success: false,
                 output: null,
                 durationMs: Date.now() - startTime,
-                error: err?.message || String(err),
+                error: enhancedMsg,
             };
         }
     }
