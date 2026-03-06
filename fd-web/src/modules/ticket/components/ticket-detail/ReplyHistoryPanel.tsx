@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { isTauriEnv, tauriInvoke } from '../../../../tauri/bridge';
 import { serverApi } from '../../../../shared/services/serverApi';
+import ReplyEditor from './ReplyEditor';
 
 interface Reply {
     id: number;
@@ -203,88 +204,32 @@ const ReplyHistoryPanel: React.FC<ReplyHistoryPanelProps> = ({
                         </div>
 
                         {isEditing ? (
-                            /* 编辑模式 */
-                            <div className="space-y-3">
-                                {/* 需要同步提示 */}
-                                {needsSync && (
-                                    <div className="flex items-center gap-2 px-3 py-2 bg-amber-900/30 border border-amber-500/30 rounded-lg">
-                                        <svg className="w-3.5 h-3.5 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
-                                        </svg>
-                                        <span className="text-[10px] text-amber-400 font-bold">{t('history.needsSync')}</span>
-                                    </div>
-                                )}
-
-                                <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-3 items-start">
-                                    {/* 目标语言编辑 */}
-                                    <div className="space-y-2">
-                                        <div className="text-[10px] font-bold text-slate-500">{t('history.targetReply')} ({reply.replyLang})</div>
-                                        <textarea
-                                            value={editedTarget}
-                                            onChange={(e) => { setEditedTarget(e.target.value); setNeedsSync(true); }}
-                                            className="w-full bg-black/30 border border-slate-600 rounded-lg p-3 text-sm text-slate-200 placeholder:text-slate-600 focus:border-amber-500 outline-none min-h-[200px] resize-y transition-colors"
-                                        />
-                                    </div>
-
-                                    {/* 双向翻译按钮 */}
-                                    <div className="flex md:flex-col items-center justify-center gap-2 py-2 md:py-0 md:pt-7">
-                                        <button
-                                            onClick={() => handleSyncTranslation('target_to_zh')}
-                                            disabled={syncing}
-                                            className="px-3 py-1.5 text-[10px] font-black bg-cyan-600 hover:bg-cyan-500 disabled:opacity-50 text-white rounded-lg transition-all shadow-lg shadow-cyan-500/20 whitespace-nowrap"
-                                            title={t('history.syncToZh')}
-                                        >
-                                            {syncing ? '...' : t('history.syncToZh')}
-                                        </button>
-                                        <button
-                                            onClick={() => handleSyncTranslation('zh_to_target')}
-                                            disabled={syncing}
-                                            className="px-3 py-1.5 text-[10px] font-black bg-emerald-600 hover:bg-emerald-500 disabled:opacity-50 text-white rounded-lg transition-all shadow-lg shadow-emerald-500/20 whitespace-nowrap"
-                                            title={t('history.syncToTarget')}
-                                        >
-                                            {syncing ? '...' : t('history.syncToTarget')}
-                                        </button>
-                                    </div>
-
-                                    {/* 中文编辑 */}
-                                    <div className="space-y-2">
-                                        <div className="text-[10px] font-bold text-slate-500">{t('history.zhReply')}</div>
-                                        <textarea
-                                            value={editedZh}
-                                            onChange={(e) => { setEditedZh(e.target.value); setNeedsSync(true); }}
-                                            className="w-full bg-black/30 border border-slate-600 rounded-lg p-3 text-sm text-slate-200 placeholder:text-slate-600 focus:border-amber-500 outline-none min-h-[200px] resize-y transition-colors"
-                                        />
-                                    </div>
-                                </div>
-
-                                {/* 同步中加载指示器 */}
-                                {syncing && (
-                                    <div className="flex items-center justify-center gap-2 py-2">
-                                        <div className="w-2 h-2 rounded-full bg-cyan-500 animate-ping"></div>
-                                        <span className="text-[10px] text-cyan-400 font-bold animate-pulse">{t('history.syncing')}</span>
-                                    </div>
-                                )}
-
-                                {/* 保存/取消按钮 */}
-                                <div className="flex items-center justify-end gap-3 pt-2 border-t border-slate-700/50">
-                                    {needsSync && (
-                                        <span className="text-[10px] text-amber-400/80 mr-auto">{t('history.syncBeforeSave')}</span>
-                                    )}
-                                    <button
-                                        onClick={cancelEdit}
-                                        className="px-4 py-2 text-xs font-bold text-slate-400 hover:text-white transition-colors"
-                                    >
-                                        {t('history.cancelEdit')}
-                                    </button>
-                                    <button
-                                        onClick={handleSaveEdit}
-                                        disabled={saving || needsSync}
-                                        className="px-6 py-2 bg-amber-600 hover:bg-amber-500 disabled:opacity-50 disabled:cursor-not-allowed text-white text-xs font-black rounded-lg transition-all shadow-lg shadow-amber-500/20"
-                                    >
-                                        {saving ? t('history.savingEdit') : t('history.saveEdit')}
-                                    </button>
-                                </div>
-                            </div>
+                            /* 编辑模式：使用共享 ReplyEditor 组件 */
+                            <ReplyEditor
+                                targetValue={editedTarget}
+                                zhValue={editedZh}
+                                targetLang={reply.replyLang || 'en'}
+                                onTargetChange={(v) => { setEditedTarget(v); setNeedsSync(true); }}
+                                onZhChange={(v) => { setEditedZh(v); setNeedsSync(true); }}
+                                onTranslate={(direction) => handleSyncTranslation(direction)}
+                                translating={syncing}
+                                enabledDirections={['zh_to_target', 'target_to_zh']}
+                                needsSync={needsSync}
+                                primaryAction={{
+                                    label: t('history.saveEdit'),
+                                    loadingLabel: t('history.savingEdit'),
+                                    loading: saving,
+                                    disabled: needsSync,
+                                    onClick: handleSaveEdit,
+                                }}
+                                cancelAction={{
+                                    label: t('history.cancelEdit'),
+                                    onClick: cancelEdit,
+                                }}
+                                footerHint={needsSync ? t('history.syncBeforeSave') : undefined}
+                                themeColor="amber"
+                                minTextareaHeight="200px"
+                            />
                         ) : (
                             /* 查看模式 */
                             <>

@@ -219,7 +219,8 @@ public class AiDataInitializer implements CommandLineRunner {
 
         // 4. 清理已移除的内置 Agent
         cleanupRemovedBuiltInAgents(Set.of("ticket-translate", "ticket-reply", "n8n-workflow-designer",
-                "logistics-reply", "completion-reply", "ticket-reply-long", "manual-reply-translate"));
+                "logistics-reply", "completion-reply", "ticket-reply-long", "manual-reply-translate",
+                "manual-reply-translate-reverse"));
 
         // 5. 初始化默认能力绑定
         ensureDefaultBinding("ticket-translate", "ticket-translate");
@@ -228,6 +229,7 @@ public class AiDataInitializer implements CommandLineRunner {
         ensureDefaultBinding("completion-reply", "completion-reply");
         ensureDefaultBinding("ticket-reply-long", "ticket-reply-long");
         ensureDefaultBinding("manual-reply-translate", "manual-reply-translate");
+        ensureDefaultBinding("manual-reply-translate-reverse", "manual-reply-translate-reverse");
     }
 
     /**
@@ -608,6 +610,34 @@ public class AiDataInitializer implements CommandLineRunner {
                         + "Chinese reply to translate:\n{{zhReply}}",
                 5,
                 "{\"type\":\"object\",\"properties\":{\"zhReply\":{\"type\":\"string\",\"description\":\"中文回复内容\"},\"ticketContent\":{\"type\":\"string\",\"description\":\"工单原文内容\"},\"targetLang\":{\"type\":\"string\",\"description\":\"目标语言\"}},\"required\":[\"zhReply\",\"targetLang\"]}",
+                "{\"type\":\"object\",\"properties\":{\"translatedReply\":{\"type\":\"string\"}}}",
+                DEFAULT_TEMPLATE_ENGINE,
+                "gemini-cli");
+
+        // === 人工回复反向翻译 Agent（原文 → 中文） ===
+        ensureBuiltInAgent(
+                "manual-reply-translate-reverse",
+                "人工回复反向翻译",
+                "将工单原语言的回复翻译为中文",
+                null, null,
+                "manual-reply-translate-reverse",
+                "ticket",
+                null, null, null,
+                "You are a professional customer service translator.\n\n"
+                        + "Task: Translate the following {{sourceLang}} customer service reply into Chinese (简体中文).\n\n"
+                        + "CONTEXT:\n"
+                        + "- This is a reply to a customer support ticket\n"
+                        + "- The original ticket content is provided for context to help you match the tone and terminology\n"
+                        + "- Maintain a professional and friendly tone\n"
+                        + "- Use natural, fluent Chinese\n\n"
+                        + "STRICT OUTPUT FORMAT:\n"
+                        + "- Output ONLY the translated Chinese text, nothing else\n"
+                        + "- Do NOT wrap in quotes or code fences\n"
+                        + "- Do NOT add any explanation or prefix\n\n"
+                        + "Original ticket content for context:\n{{ticketContent}}\n\n"
+                        + "{{sourceLang}} reply to translate into Chinese:\n{{targetReply}}",
+                6,
+                "{\"type\":\"object\",\"properties\":{\"targetReply\":{\"type\":\"string\",\"description\":\"原语言回复内容\"},\"ticketContent\":{\"type\":\"string\",\"description\":\"工单原文内容\"},\"sourceLang\":{\"type\":\"string\",\"description\":\"原语言\"}},\"required\":[\"targetReply\",\"sourceLang\"]}",
                 "{\"type\":\"object\",\"properties\":{\"translatedReply\":{\"type\":\"string\"}}}",
                 DEFAULT_TEMPLATE_ENGINE,
                 "gemini-cli");

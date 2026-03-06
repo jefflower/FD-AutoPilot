@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ServerTicket } from '../../../shared/types/server';
 import { serverApi } from '../../../shared/services/serverApi';
 import { AGENT_MAP } from '../../../shared/constants/agentMap';
+import { isTauriEnv } from '../../../tauri/bridge';
 import ReplyHistoryPanel from './ticket-detail/ReplyHistoryPanel';
 import StatusTimeline from './ticket-detail/StatusTimeline';
 
@@ -175,7 +176,20 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
                 <div className="flex items-center gap-3 min-w-0 flex-1 mr-3">
                     <div className="flex flex-col min-w-0">
                         <h2 className="text-xs font-black text-white truncate max-w-[500px] leading-tight flex items-center gap-2">
-                            <span className="text-blue-400 flex-shrink-0">#{ticket.externalId}</span>
+                            <span
+                                className="text-blue-400 flex-shrink-0 hover:text-blue-300 hover:underline transition-colors cursor-pointer"
+                                title="在 Freshdesk 中打开"
+                                onClick={() => {
+                                    const url = `https://simsonn.freshdesk.com/a/tickets/${ticket.externalId}`;
+                                    if (isTauriEnv()) {
+                                        import('@tauri-apps/plugin-opener').then(m => m.openUrl(url)).catch(() => window.open(url, '_blank'));
+                                    } else {
+                                        window.open(url, '_blank');
+                                    }
+                                }}
+                            >
+                                #{ticket.externalId}
+                            </span>
                             <span className="text-[9px] text-slate-500 font-mono flex-shrink-0">ID:{ticket.id}</span>
                             <span className="truncate">
                                 {translationData?.subject || ticket.translation?.translatedTitle || ticket.translatedTitle || ticket.subject}

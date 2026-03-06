@@ -2,7 +2,10 @@
  * 人工处理工单页面
  *
  * 左右分栏布局：左侧 TicketList 列表 + 右侧 ServerTicketDetail 详情
- * 提供"继续处理"和"直接完结"操作
+ * 提供"继续处理"、"直接完结"和"手动回复"操作
+ *
+ * v0.4 重构：操作栏移至底部，手动回复面板使用共享 ReplyEditor 组件，
+ * 支持双向翻译（中文⇄原文），布局为 LEFT=原文 RIGHT=中文
  */
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
@@ -12,6 +15,8 @@ import ServerTicketDetail from '../components/ServerTicketDetail';
 import DetailEmptyState from '../components/DetailEmptyState';
 import EmptyStateHint from '../components/EmptyStateHint';
 import TicketList from '../../../shared/components/TicketList';
+import ReplyEditor from '../components/ticket-detail/ReplyEditor';
+import type { TranslateDirection } from '../components/ticket-detail/ReplyEditor';
 import type { ServerTicket } from '../../../shared/types/server';
 import {
   AlertTriangle, Play, CheckCircle2, Loader2, MessageSquare,
@@ -114,37 +119,64 @@ const ManualRequiredTab: React.FC = () => {
     }
   }, [confirmAction, selectedId, fetchTickets]);
 
-  // 调用翻译 Agent 翻译中文回复
-  const handleTranslateReply = useCallback(async () => {
-    if (!selectedTicket || !manualZhReply.trim()) return;
+  // 双向翻译：直接调用 /agents/{agentCode}/execute
+  const handleTranslate = useCallback(async (direction: TranslateDirection) => {
+    if (!selectedTicket) return;
     setTranslating(true);
     try {
-      const result = await request<any>('/n8n/agents/manual-reply-translate/execute', {
-        method: 'POST',
-        body: JSON.stringify({
-          input: {
-            zhReply: manualZhReply,
-            ticketContent: selectedTicket.content || selectedTicket.subject,
-            targetLang: selectedTicket.sourceLang || 'en',
-          },
-          refType: 'ticket',
-          refId: String(selectedTicket.id),
-          timeoutMs: 120000,
-        }),
-      });
-      if (result?.data?.output) {
-        let output = result.data.output;
-        // 清理可能的 markdown 围栏
-        const fm = output.match(/```(?:\w+)?\s*([\s\S]*?)\s*```/);
-        if (fm) output = fm[1];
-        setManualTargetReply(output.trim());
+      const sourceLang = selectedTicket.sourceLang || 'en';
+      const ticketDescription = selectedTicket.content || selectedTicket.subject || '';
+
+      if (direction === 'zh_to_target') {
+        if (!manualZhReply.trim()) return;
+        const result = await request<any>('/n8n/agents/manual-reply-translate/execute', {
+          method: 'POST',
+          body: JSON.stringify({
+            input: {
+              zhReply: manualZhReply,
+              ticketContent: ticketDescription,
+              targetLang: sourceLang,
+            },
+            refType: 'ticket',
+            refId: String(selectedTicket.id),
+            timeoutMs: 120000,
+          }),
+        });
+        if (result?.data?.output) {
+          let output = result.data.output;
+          const fm = output.match(/```(?:\w+)?\s*([\s\S]*?)\s*```/);
+          if (fm) output = fm[1];
+          setManualTargetReply(output.trim());
+        }
+      } else {
+        // target_to_zh: 反向翻译 Agent
+        if (!manualTargetReply.trim()) return;
+        const result = await request<any>('/n8n/agents/manual-reply-translate-reverse/execute', {
+          method: 'POST',
+          body: JSON.stringify({
+            input: {
+              targetReply: manualTargetReply,
+              ticketContent: ticketDescription,
+              sourceLang,
+            },
+            refType: 'ticket',
+            refId: String(selectedTicket.id),
+            timeoutMs: 120000,
+          }),
+        });
+        if (result?.data?.output) {
+          let output = result.data.output;
+          const fm = output.match(/```(?:\w+)?\s*([\s\S]*?)\s*```/);
+          if (fm) output = fm[1];
+          setManualZhReply(output.trim());
+        }
       }
     } catch (err) {
       console.error('[ManualRequiredTab] Translation failed:', err);
     } finally {
       setTranslating(false);
     }
-  }, [selectedTicket, manualZhReply]);
+  }, [selectedTicket, manualZhReply, manualTargetReply]);
 
   // 提交人工回复
   const handleSubmitManualReply = useCallback(async () => {
@@ -252,8 +284,55 @@ const ManualRequiredTab: React.FC = () => {
       <div className="flex-1 bg-slate-900/40 relative flex flex-col">
         {selectedTicket ? (
           <>
-            {/* 操作工具栏 */}
-            <div className="flex items-center justify-between px-5 py-3 border-b border-white/10 bg-slate-800/40" onBlur={handleBlur}>
+            {/* 工单详情（占据主要空间） */}
+            <div className="flex-1 overflow-hidden">
+              <ServerTicketDetail
+                ticket={selectedTicket}
+                isEmbed={true}
+                isSplitMode={isSplitMode}
+                setIsSplitMode={setIsSplitMode}
+                onRefresh={handleRefresh}
+              />
+            </div>
+
+            {/* 手动回复面板（展开时在详情与操作栏之间） */}
+            {showManualReply && selectedTicket && (
+              <div className="border-t border-white/10 bg-slate-800/60 p-4 space-y-3">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-1 h-3 bg-purple-500 rounded-full"></div>
+                  <span className="text-xs font-bold text-purple-400">手动回复</span>
+                  <span className="text-[10px] text-slate-500">
+                    目标语言: {selectedTicket.sourceLang || 'en'}
+                  </span>
+                </div>
+                <ReplyEditor
+                  targetValue={manualTargetReply}
+                  zhValue={manualZhReply}
+                  targetLang={selectedTicket.sourceLang || 'en'}
+                  onTargetChange={setManualTargetReply}
+                  onZhChange={setManualZhReply}
+                  onTranslate={handleTranslate}
+                  translating={translating}
+                  enabledDirections={['zh_to_target', 'target_to_zh']}
+                  primaryAction={{
+                    label: '提交回复（进入审核）',
+                    loadingLabel: '提交中...',
+                    loading: submittingReply,
+                    disabled: !manualTargetReply.trim() || !manualZhReply.trim(),
+                    onClick: handleSubmitManualReply,
+                  }}
+                  cancelAction={{
+                    label: '取消',
+                    onClick: () => { setShowManualReply(false); setManualZhReply(''); setManualTargetReply(''); },
+                  }}
+                  themeColor="purple"
+                  minTextareaHeight="120px"
+                />
+              </div>
+            )}
+
+            {/* 底部操作工具栏 */}
+            <div className="flex items-center justify-between px-5 py-3 border-t border-white/10 bg-slate-800/40" onBlur={handleBlur}>
               <div className="flex items-center gap-2">
                 <AlertTriangle className="w-4 h-4 text-red-400" />
                 <span className="text-xs text-slate-400">
@@ -307,88 +386,6 @@ const ManualRequiredTab: React.FC = () => {
                   手动回复
                 </button>
               </div>
-            </div>
-
-            {/* 手动回复面板 */}
-            {showManualReply && selectedTicket && (
-              <div className="border-b border-white/10 bg-slate-800/60 p-4 space-y-3">
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="w-1 h-3 bg-purple-500 rounded-full"></div>
-                  <span className="text-xs font-bold text-purple-400">手动回复</span>
-                  <span className="text-[10px] text-slate-500">
-                    目标语言: {selectedTicket.sourceLang || 'en'}
-                  </span>
-                </div>
-
-                <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-3 items-start">
-                  {/* 中文回复 */}
-                  <div className="space-y-1">
-                    <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">中文回复</label>
-                    <textarea
-                      value={manualZhReply}
-                      onChange={(e) => setManualZhReply(e.target.value)}
-                      placeholder="请输入中文回复内容..."
-                      className="w-full bg-black/30 border border-slate-600 rounded-lg p-3 text-sm text-slate-200 placeholder:text-slate-600 focus:border-purple-500 outline-none min-h-[120px] resize-y transition-colors"
-                    />
-                  </div>
-
-                  {/* 翻译按钮 */}
-                  <div className="flex lg:flex-col items-center justify-center gap-2 py-2 lg:py-0 lg:pt-6">
-                    <button
-                      onClick={handleTranslateReply}
-                      disabled={translating || !manualZhReply.trim()}
-                      className="px-4 py-2 text-[10px] font-black bg-purple-600 hover:bg-purple-500 disabled:opacity-50 text-white rounded-lg transition-all shadow-lg shadow-purple-500/20 whitespace-nowrap flex items-center gap-1.5"
-                    >
-                      {translating ? (
-                        <><Loader2 className="w-3 h-3 animate-spin" /> 翻译中...</>
-                      ) : (
-                        '翻译 →'
-                      )}
-                    </button>
-                  </div>
-
-                  {/* 目标语言回复 */}
-                  <div className="space-y-1">
-                    <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">
-                      {selectedTicket.sourceLang || '英语'} 回复
-                    </label>
-                    <textarea
-                      value={manualTargetReply}
-                      onChange={(e) => setManualTargetReply(e.target.value)}
-                      placeholder="翻译结果将显示在这里，也可以直接编辑..."
-                      className="w-full bg-black/30 border border-slate-600 rounded-lg p-3 text-sm text-slate-200 placeholder:text-slate-600 focus:border-purple-500 outline-none min-h-[120px] resize-y transition-colors"
-                    />
-                  </div>
-                </div>
-
-                {/* 操作按钮 */}
-                <div className="flex items-center justify-end gap-3 pt-2 border-t border-slate-700/50">
-                  <button
-                    onClick={() => { setShowManualReply(false); setManualZhReply(''); setManualTargetReply(''); }}
-                    className="px-4 py-2 text-xs font-bold text-slate-400 hover:text-white transition-colors"
-                  >
-                    取消
-                  </button>
-                  <button
-                    onClick={handleSubmitManualReply}
-                    disabled={submittingReply || !manualTargetReply.trim() || !manualZhReply.trim()}
-                    className="px-6 py-2 bg-purple-600 hover:bg-purple-500 disabled:opacity-50 disabled:cursor-not-allowed text-white text-xs font-black rounded-lg transition-all shadow-lg shadow-purple-500/20"
-                  >
-                    {submittingReply ? '提交中...' : '提交回复（进入审核）'}
-                  </button>
-                </div>
-              </div>
-            )}
-
-            {/* 工单详情 */}
-            <div className="flex-1 overflow-hidden">
-              <ServerTicketDetail
-                ticket={selectedTicket}
-                isEmbed={true}
-                isSplitMode={isSplitMode}
-                setIsSplitMode={setIsSplitMode}
-                onRefresh={handleRefresh}
-              />
             </div>
           </>
         ) : (
