@@ -43,6 +43,7 @@ public class N8nTicketService {
     private final TicketStateMachine stateMachine;
     private final FreshdeskApiClient freshdeskApiClient;
     private final FreshdeskSyncService freshdeskSyncService;
+    private final SystemConfigService configService;
 
     private static final int DEFAULT_LIMIT = 20;
     private static final int MAX_LIMIT = 100;
@@ -363,8 +364,9 @@ public class N8nTicketService {
     }
 
     /**
-     * 提交 AI 回复 — 将人工处理工单转为 REPLYING 状态，并通过 n8n webhook 异步执行回复
+     * 提交 AI 回复 — 将人工处理工单转为 REPLYING 状态，并通过 n8n webhook 异步执行回复。
      * <p>
+     * 支持重复调用：MANUAL_REQUIRED → REPLYING（首次）或 REPLYING → REPLYING（重试）。
      * 前端调用后立即返回，工单从人工列表消失；n8n 异步处理回复后工单进入审核。
      */
     @Transactional
@@ -372,55 +374,106 @@ public class N8nTicketService {
         Ticket ticket = getTicket(ticketId);
         TicketStatus beforeStatus = ticket.getStatus();
 
-        if (beforeStatus != TicketStatus.MANUAL_REQUIRED) {
+        if (beforeStatus == TicketStatus.REPLYING) {
+            // 已经在回复中 — 允许重试，重新触发 webhook
+            log.info("[N8nTicketService] 工单 #{} 已在 REPLYING 状态，重新触发 webhook", ticketId);
+        } else if (beforeStatus == TicketStatus.MANUAL_REQUIRED) {
+            // 首次提交 — 转为 REPLYING
+            stateMachine.transition(ticket, TicketStatus.REPLYING);
+            ticketRepository.save(ticket);
+            statusLogService.logTransition(ticket, beforeStatus, TicketStatus.REPLYING,
+                    "manual", "人工提交 AI 回复，等待 n8n 异步处理");
+        } else {
             throw new BusinessException(ErrorCode.INVALID_STATUS_TRANSITION,
-                    "工单 #" + ticketId + " 当前状态 " + beforeStatus + "，仅 MANUAL_REQUIRED 可提交 AI 回复");
+                    "工单 #" + ticketId + " 当前状态 " + beforeStatus + "，仅 MANUAL_REQUIRED / REPLYING 可提交 AI 回复");
         }
 
-        // 转为 REPLYING — 立即从人工处理列表消失
-        stateMachine.transition(ticket, TicketStatus.REPLYING);
-        ticketRepository.save(ticket);
-        statusLogService.logTransition(ticket, beforeStatus, TicketStatus.REPLYING,
-                "manual", "人工提交 AI 回复，等待 n8n 异步处理");
+        // 触发 n8n webhook（同步，便于排查）
+        Map<String, Object> webhookResult = triggerAiReplyWebhook(ticketId);
 
-        // 触发 n8n webhook（fire & forget）
-        triggerAiReplyWebhook(ticketId);
-
-        log.info("[N8nTicketService] 工单 #{} 已提交 AI 回复, {} → REPLYING", ticketId, beforeStatus);
+        log.info("[N8nTicketService] 工单 #{} 已提交 AI 回复, {} → REPLYING, webhook={}", ticketId, beforeStatus, webhookResult);
 
         Map<String, Object> response = new HashMap<>();
         response.put("ticketId", ticketId);
         response.put("status", TicketStatus.REPLYING.name());
+        response.put("retried", beforeStatus == TicketStatus.REPLYING);
+        response.put("webhook", webhookResult);
         return response;
     }
 
     /**
-     * 触发 n8n AI 回复 webhook（异步，不阻塞）
+     * 触发 n8n AI 回复 webhook（同步调用，返回结果便于排查）。
      */
-    private void triggerAiReplyWebhook(Long ticketId) {
+    private Map<String, Object> triggerAiReplyWebhook(Long ticketId) {
+        Map<String, Object> result = new HashMap<>();
         try {
-            String webhookUrl = System.getenv("N8N_AI_REPLY_WEBHOOK_URL");
+            String webhookUrl = resolveAiReplyWebhookUrl();
+            result.put("url", webhookUrl);
+
             if (webhookUrl == null || webhookUrl.isBlank()) {
-                webhookUrl = "http://localhost:5678/webhook/fd-ai-reply";
+                log.warn("[AI-REPLY-WEBHOOK] 无法获取 URL，跳过。请检查 system_config 中 n8n_webhook_url");
+                result.put("error", "n8n_webhook_url 未配置");
+                return result;
             }
-            java.net.http.HttpClient client = java.net.http.HttpClient.newHttpClient();
+
+            log.warn("[AI-REPLY-WEBHOOK] >>> 开始调用: url={}, ticketId={}", webhookUrl, ticketId);
+
+            java.net.http.HttpClient client = java.net.http.HttpClient.newBuilder()
+                    .connectTimeout(java.time.Duration.ofSeconds(10))
+                    .build();
             java.net.http.HttpRequest request = java.net.http.HttpRequest.newBuilder()
                     .uri(java.net.URI.create(webhookUrl))
                     .header("Content-Type", "application/json")
                     .POST(java.net.http.HttpRequest.BodyPublishers.ofString(
                             "{\"ticketId\":" + ticketId + "}"))
+                    .timeout(java.time.Duration.ofSeconds(30))
                     .build();
-            // 异步发送，不等待结果
-            client.sendAsync(request, java.net.http.HttpResponse.BodyHandlers.ofString())
-                    .thenAccept(resp -> log.info("[N8nTicketService] n8n webhook 响应: {}", resp.statusCode()))
-                    .exceptionally(ex -> {
-                        log.error("[N8nTicketService] n8n webhook 调用失败, ticketId={}", ticketId, ex);
-                        return null;
-                    });
+
+            // 同步发送，等待结果
+            java.net.http.HttpResponse<String> resp = client.send(request,
+                    java.net.http.HttpResponse.BodyHandlers.ofString());
+
+            result.put("statusCode", resp.statusCode());
+            result.put("body", resp.body() != null && resp.body().length() > 500
+                    ? resp.body().substring(0, 500) : resp.body());
+
+            log.warn("[AI-REPLY-WEBHOOK] <<< 响应: status={}, ticketId={}, body={}",
+                    resp.statusCode(), ticketId,
+                    resp.body() != null && resp.body().length() > 200 ? resp.body().substring(0, 200) : resp.body());
+
         } catch (Exception e) {
-            log.error("[N8nTicketService] 触发 n8n webhook 异常, ticketId={}", ticketId, e);
-            // 不抛异常，状态已转为 REPLYING，n8n 可人工重试
+            log.error("[AI-REPLY-WEBHOOK] 调用异常, ticketId={}", ticketId, e);
+            result.put("error", e.getClass().getSimpleName() + ": " + e.getMessage());
         }
+        return result;
+    }
+
+    /**
+     * 从已配置的 n8n webhook URL 提取基础地址，拼接 AI 回复 webhook 路径。
+     * <p>
+     * 例如：n8n_webhook_url = "http://47.110.152.25:5678/webhook/fd-ticket-process"
+     * → 提取 "http://47.110.152.25:5678" → 拼接 "/webhook/fd-ai-reply"
+     */
+    private String resolveAiReplyWebhookUrl() {
+        // 优先使用环境变量（显式覆盖）
+        String envUrl = System.getenv("N8N_AI_REPLY_WEBHOOK_URL");
+        if (envUrl != null && !envUrl.isBlank()) {
+            return envUrl;
+        }
+        // 从数据库 system_config 中获取已配置的 n8n webhook URL，提取基础地址
+        String n8nWebhookUrl = configService.getN8nWebhookUrl();
+        if (n8nWebhookUrl != null && !n8nWebhookUrl.isBlank()) {
+            try {
+                java.net.URI uri = java.net.URI.create(n8nWebhookUrl);
+                String baseUrl = uri.getScheme() + "://" + uri.getHost()
+                        + (uri.getPort() > 0 ? ":" + uri.getPort() : "");
+                return baseUrl + "/webhook/fd-ai-reply";
+            } catch (Exception e) {
+                log.warn("[N8nTicketService] 解析 n8n_webhook_url 失败: {}", n8nWebhookUrl, e);
+            }
+        }
+        log.warn("[N8nTicketService] n8n_webhook_url 未配置，无法推导 AI 回复 webhook 地址");
+        return null;
     }
 
     /**
