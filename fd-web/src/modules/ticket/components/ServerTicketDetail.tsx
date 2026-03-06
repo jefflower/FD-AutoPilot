@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ServerTicket } from '../../../shared/types/server';
 import { serverApi } from '../../../shared/services/serverApi';
