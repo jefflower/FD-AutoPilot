@@ -14,6 +14,8 @@ pub struct ExecLogEntry {
     pub status: String, // "success" | "failed" | "timeout" | "running"
     pub command: Option<String>,
     pub input_params: Option<String>,
+    /// 完整执行提示词（不截断）
+    pub prompt_full: Option<String>,
     pub stdout: Option<String>,
     pub stderr: Option<String>,
     pub error_msg: Option<String>,
@@ -78,6 +80,7 @@ impl ExecLogStore {
                 status TEXT NOT NULL,
                 command TEXT,
                 input_params TEXT,
+                prompt_full TEXT,
                 stdout TEXT,
                 stderr TEXT,
                 error_msg TEXT,
@@ -97,6 +100,9 @@ impl ExecLogStore {
         )
         .map_err(|e| format!("Failed to create tables: {}", e))?;
 
+        // Migrate: add prompt_full column for existing databases
+        let _ = conn.execute_batch("ALTER TABLE exec_log ADD COLUMN prompt_full TEXT;");
+
         eprintln!("[ExecLog] Database initialized successfully");
 
         Ok(Self {
@@ -115,13 +121,14 @@ impl ExecLogStore {
     pub fn insert(&self, entry: &ExecLogEntry) -> Result<i64, String> {
         let conn = self.db.lock().map_err(|e| format!("Lock error: {}", e))?;
         conn.execute(
-            "INSERT INTO exec_log (agent_code, status, command, input_params, stdout, stderr, error_msg, duration_ms, ref_type, ref_id, created_at)
-             VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11)",
+            "INSERT INTO exec_log (agent_code, status, command, input_params, prompt_full, stdout, stderr, error_msg, duration_ms, ref_type, ref_id, created_at)
+             VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12)",
             params![
                 entry.agent_code,
                 entry.status,
                 entry.command,
                 entry.input_params,
+                entry.prompt_full,
                 entry.stdout,
                 entry.stderr,
                 entry.error_msg,
@@ -173,7 +180,7 @@ impl ExecLogStore {
 
         // Query items
         let query_sql = format!(
-            "SELECT id, agent_code, status, command, input_params, stdout, stderr, error_msg, duration_ms, ref_type, ref_id, created_at
+            "SELECT id, agent_code, status, command, input_params, prompt_full, stdout, stderr, error_msg, duration_ms, ref_type, ref_id, created_at
              FROM exec_log {}
              ORDER BY created_at DESC
              LIMIT ?{} OFFSET ?{}",
@@ -208,13 +215,14 @@ impl ExecLogStore {
                     status: row.get(2)?,
                     command: row.get(3)?,
                     input_params: row.get(4)?,
-                    stdout: row.get(5)?,
-                    stderr: row.get(6)?,
-                    error_msg: row.get(7)?,
-                    duration_ms: row.get(8)?,
-                    ref_type: row.get(9)?,
-                    ref_id: row.get(10)?,
-                    created_at: row.get(11)?,
+                    prompt_full: row.get(5)?,
+                    stdout: row.get(6)?,
+                    stderr: row.get(7)?,
+                    error_msg: row.get(8)?,
+                    duration_ms: row.get(9)?,
+                    ref_type: row.get(10)?,
+                    ref_id: row.get(11)?,
+                    created_at: row.get(12)?,
                 })
             })
             .map_err(|e| format!("Query error: {}", e))?;
@@ -232,7 +240,7 @@ impl ExecLogStore {
         let conn = self.db.lock().map_err(|e| format!("Lock error: {}", e))?;
         let mut stmt = conn
             .prepare(
-                "SELECT id, agent_code, status, command, input_params, stdout, stderr, error_msg, duration_ms, ref_type, ref_id, created_at
+                "SELECT id, agent_code, status, command, input_params, prompt_full, stdout, stderr, error_msg, duration_ms, ref_type, ref_id, created_at
                  FROM exec_log WHERE id = ?1",
             )
             .map_err(|e| format!("Prepare error: {}", e))?;
@@ -245,13 +253,14 @@ impl ExecLogStore {
                     status: row.get(2)?,
                     command: row.get(3)?,
                     input_params: row.get(4)?,
-                    stdout: row.get(5)?,
-                    stderr: row.get(6)?,
-                    error_msg: row.get(7)?,
-                    duration_ms: row.get(8)?,
-                    ref_type: row.get(9)?,
-                    ref_id: row.get(10)?,
-                    created_at: row.get(11)?,
+                    prompt_full: row.get(5)?,
+                    stdout: row.get(6)?,
+                    stderr: row.get(7)?,
+                    error_msg: row.get(8)?,
+                    duration_ms: row.get(9)?,
+                    ref_type: row.get(10)?,
+                    ref_id: row.get(11)?,
+                    created_at: row.get(12)?,
                 })
             })
             .map_err(|e| format!("Query error: {}", e))?;
@@ -352,13 +361,13 @@ impl ExecLogStore {
             total_deleted += deleted as u32;
         }
 
-        // 3. Delete logs for unconfigured agents using default 30-day retention
+        // 3. Delete logs for unconfigured agents using default 2-day retention
         let default_cutoff =
-            chrono::Utc::now() - chrono::Duration::days(30);
+            chrono::Utc::now() - chrono::Duration::days(2);
         let default_cutoff_str = default_cutoff.to_rfc3339();
 
         if configured_agents.is_empty() {
-            // No configs at all, clean everything older than 30 days
+            // No configs at all, clean everything older than 2 days
             let deleted = conn
                 .execute(
                     "DELETE FROM exec_log WHERE created_at < ?1",
@@ -427,6 +436,7 @@ mod tests {
                 status TEXT NOT NULL,
                 command TEXT,
                 input_params TEXT,
+                prompt_full TEXT,
                 stdout TEXT,
                 stderr TEXT,
                 error_msg TEXT,
@@ -457,6 +467,7 @@ mod tests {
             status: status.to_string(),
             command: Some("gemini test".to_string()),
             input_params: Some(r#"{"prompt":"hello"}"#.to_string()),
+            prompt_full: Some("hello world prompt".to_string()),
             stdout: Some("output text".to_string()),
             stderr: None,
             error_msg: None,
@@ -688,9 +699,9 @@ mod tests {
     fn cleanup_all_with_defaults() {
         let store = test_store();
 
-        // Insert an entry 40 days old (should be cleaned with default 30-day retention)
+        // Insert an entry 5 days old (should be cleaned with default 2-day retention)
         let mut old_entry = sample_entry("agent-x", "success");
-        old_entry.created_at = (chrono::Utc::now() - chrono::Duration::days(40)).to_rfc3339();
+        old_entry.created_at = (chrono::Utc::now() - chrono::Duration::days(5)).to_rfc3339();
         store.insert(&old_entry).unwrap();
 
         // Insert a recent entry
@@ -713,14 +724,14 @@ mod tests {
             })
             .unwrap();
 
-        // Insert a 5-day-old entry for agent-a (should be cleaned)
+        // Insert a 5-day-old entry for agent-a (should be cleaned by its 3-day config)
         let mut old_a = sample_entry("agent-a", "success");
         old_a.created_at = (chrono::Utc::now() - chrono::Duration::days(5)).to_rfc3339();
         store.insert(&old_a).unwrap();
 
-        // Insert a 5-day-old entry for agent-b (default 30-day retention, should NOT be cleaned)
+        // Insert a 1-day-old entry for agent-b (default 2-day retention, should NOT be cleaned)
         let mut old_b = sample_entry("agent-b", "success");
-        old_b.created_at = (chrono::Utc::now() - chrono::Duration::days(5)).to_rfc3339();
+        old_b.created_at = (chrono::Utc::now() - chrono::Duration::days(1)).to_rfc3339();
         store.insert(&old_b).unwrap();
 
         let deleted = store.cleanup().unwrap();

@@ -20,6 +20,8 @@ export interface ExecLogEntry {
     status: 'running' | 'success' | 'failed' | 'timeout';
     command: string | null;
     inputParams: string | null;
+    /** 完整执行提示词（不截断） */
+    promptFull: string | null;
     stdout: string | null;
     stderr: string | null;
     errorMsg: string | null;

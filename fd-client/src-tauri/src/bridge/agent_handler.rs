@@ -57,6 +57,7 @@ pub async fn translate_handler(
             req.ticket.id
         )),
         input_params: Some(input_json),
+        prompt_full: req.system_prompt.clone(),
         stdout: result
             .as_ref()
             .ok()
@@ -134,6 +135,7 @@ pub async fn gemini_handler(
             req.models
         )),
         input_params: Some(input_json),
+        prompt_full: Some(req.prompt.clone()),
         stdout: result.as_ref().ok().cloned(),
         stderr: None,
         error_msg: result.as_ref().err().cloned(),
@@ -205,6 +207,7 @@ pub async fn claude_handler(
             req.prompt.len(),
         )),
         input_params: Some(input_json),
+        prompt_full: Some(req.prompt.clone()),
         stdout: result.as_ref().ok().cloned(),
         stderr: None,
         error_msg: result.as_ref().err().cloned(),
@@ -267,6 +270,7 @@ pub async fn sync_translate_handler(
             req.direction, req.target_lang
         )),
         input_params: Some(input_json),
+        prompt_full: Some(req.source_text.clone()),
         stdout: result.as_ref().ok().cloned(),
         stderr: None,
         error_msg: result.as_ref().err().cloned(),
@@ -330,6 +334,7 @@ pub async fn notebooklm_py_handler(
             }
         )),
         input_params: Some(input_json),
+        prompt_full: Some(req.query.clone()),
         stdout: result.as_ref().ok().cloned(),
         stderr: None,
         error_msg: result.as_ref().err().cloned(),
@@ -381,6 +386,7 @@ pub async fn notebooklm_rag_handler(
             req.source_content.len()
         )),
         input_params: Some(input_json),
+        prompt_full: Some(req.source_content.clone()),
         stdout: result.as_ref().ok().cloned(),
         stderr: None,
         error_msg: result.as_ref().err().cloned(),
@@ -502,6 +508,7 @@ pub async fn notebooklm_cli_handler(
             "notebookId": req.notebook_id,
             "sourceId": req.source_id,
         }).to_string()),
+        prompt_full: None,
         stdout: result.as_ref().ok().cloned(),
         stderr: None,
         error_msg: result.as_ref().err().cloned(),
@@ -604,6 +611,7 @@ pub async fn antigravity_handler(
             req.prompt.len()
         )),
         input_params: Some(input_json),
+        prompt_full: Some(req.prompt.clone()),
         stdout: result.as_ref().ok().cloned(),
         stderr: None,
         error_msg: result.as_ref().err().cloned(),

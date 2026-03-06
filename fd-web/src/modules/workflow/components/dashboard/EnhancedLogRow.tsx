@@ -155,6 +155,30 @@ const EnhancedLogRow: React.FC<EnhancedLogRowProps> = ({ log, isExpanded, onTogg
             </div>
           )}
 
+          {/* Prompt Full section */}
+          {log.promptFull && (
+            <div className="mb-3">
+              <div className="flex items-center justify-between mb-1">
+                <div className="text-xs text-slate-400">
+                  {t('aiDashboard.executionLog.promptFull', '执行提示词')}
+                </div>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    openPreview({ title: `${log.agentCode} - Prompt`, json: log.promptFull! });
+                  }}
+                  className="text-[10px] text-slate-500 hover:text-blue-400 transition-colors flex items-center gap-0.5"
+                >
+                  <ExternalLink className="w-2.5 h-2.5" />
+                  {t('jsonPreview.openInWindow')}
+                </button>
+              </div>
+              <pre className="bg-slate-900/50 rounded-lg p-3 text-xs font-mono text-slate-300 max-h-[500px] overflow-y-auto whitespace-pre-wrap break-all">
+                {log.promptFull}
+              </pre>
+            </div>
+          )}
+
           {/* Output section */}
           {log.outputSnapshot && (
             <div className="mb-3">

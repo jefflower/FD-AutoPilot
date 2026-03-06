@@ -30,6 +30,7 @@ fn write_log(
         status: status.to_string(),
         command: Some(command_desc.to_string()),
         input_params,
+        prompt_full: None,
         stdout,
         stderr: None,
         error_msg,

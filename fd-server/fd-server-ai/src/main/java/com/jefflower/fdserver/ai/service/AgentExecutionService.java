@@ -27,8 +27,8 @@ import java.util.Map;
 @Service
 public class AgentExecutionService {
 
-    /** 执行历史保留天数，默认 30 天 */
-    @Value("${agent.execution.retention-days:30}")
+    /** 执行历史保留天数，默认 2 天 */
+    @Value("${agent.execution.retention-days:2}")
     private int retentionDays;
 
     private final AgentExecutionRepository executionRepository;

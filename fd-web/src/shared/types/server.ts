@@ -597,6 +597,8 @@ export interface AgentExecutionLog {
   durationMs?: number;
   tokenCount?: number;
   inputSnapshot?: string;
+  /** 完整执行提示词（不截断） */
+  promptFull?: string;
   outputSnapshot?: string;
   errorMessage?: string;
   createdAt: string;

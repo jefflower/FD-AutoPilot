@@ -38,6 +38,7 @@ function mapLocalToLog(entry: ExecLogEntry): AgentExecutionLog {
     status: statusMap[entry.status] || 'FAILED',
     durationMs: entry.durationMs ?? undefined,
     inputSnapshot: entry.inputParams || entry.command || undefined,
+    promptFull: entry.promptFull || undefined,
     outputSnapshot: entry.stdout || undefined,
     errorMessage: entry.errorMsg || entry.stderr || undefined,
     referenceType: entry.refType || undefined,

@@ -116,6 +116,7 @@ pub mod inner {
                     notebook_id
                 )),
                 input_params: Some(input_json),
+                prompt_full: None,
                 stdout: None,
                 stderr: None,
                 error_msg: error_message,
