@@ -22,10 +22,6 @@ const KnowledgeTab = lazy(() => import("./modules/admin/pages/KnowledgeTab"));
 const RolePermissionTab = lazy(() => import("./modules/admin/pages/RolePermissionTab"));
 const OrgSyncTab = lazy(() => import("./modules/admin/pages/OrgSyncTab"));
 const JenkinsTab = lazy(() => import("./modules/admin/pages/JenkinsTab"));
-const TaskDashboardTab = lazy(() => import("./modules/task/pages/TaskDashboardTab"));
-const TaskDefinitionsTab = lazy(() => import("./modules/task/pages/TaskDefinitionsTab"));
-const TaskHistoryTab = lazy(() => import("./modules/task/pages/TaskHistoryTab"));
-const AgentExecutionTab = lazy(() => import("./modules/task/pages/AgentExecutionTab"));
 const UserProfileTab = lazy(() => import("./modules/system/pages/UserProfileTab"));
 const WorkflowCapabilitiesTab = lazy(() => import("./modules/workflow/pages/WorkflowCapabilitiesTab"));
 const WorkflowAgentsTab = lazy(() => import("./modules/workflow/pages/WorkflowAgentsTab"));
@@ -136,23 +132,7 @@ const TAB_COMPONENTS: Partial<Record<TabType, TabRoute>> = {
         component: OrgSyncTab,
         requireAdmin: true,
     },
-'task-dashboard': {
-        component: TaskDashboardTab,
-        requireAdmin: true,
-    },
-    'task-definitions': {
-        component: TaskDefinitionsTab,
-        requireAdmin: true,
-    },
-    'task-history': {
-        component: TaskHistoryTab,
-        requireAdmin: true,
-    },
-    'agent-execution': {
-        component: AgentExecutionTab,
-        requireAdmin: true,
-    },
-    'workflow-capabilities': {
+'workflow-capabilities': {
         component: WorkflowCapabilitiesTab,
         requireAdmin: true,
     },

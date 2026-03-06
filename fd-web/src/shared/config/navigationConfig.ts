@@ -1,7 +1,7 @@
 import {
   Server, Send, ClipboardCheck,
   Users, Shield, RefreshCw, FileText, Database, BookOpen,
-  LayoutDashboard, ListChecks, History, Settings, User, Bot,
+  Settings, User, Bot,
   Building2, GitBranch, Boxes, Cpu, Activity, Sparkles, AlertTriangle,
   Hammer, UserCog,
   type LucideIcon,
@@ -73,20 +73,6 @@ export const navigationModules: NavModule[] = [
       { tab: 'database', labelKey: 'nav.database', icon: Database },
       { tab: 'org-sync', labelKey: 'nav.orgSync', icon: Building2 },
       { tab: 'admin-jenkins', labelKey: 'nav.jenkins', icon: Hammer },
-    ],
-  },
-  {
-    id: 'task',
-    labelKey: 'module.task',
-    descKey: 'moduleDesc.task',
-    icon: ListChecks,
-    color: 'cyan',
-    requireAdmin: true,
-    pages: [
-      { tab: 'task-dashboard', labelKey: 'nav.taskDashboard', icon: LayoutDashboard },
-      { tab: 'task-definitions', labelKey: 'nav.taskDefinitions', icon: ListChecks },
-      { tab: 'task-history', labelKey: 'nav.taskHistory', icon: History },
-      { tab: 'agent-execution', labelKey: 'nav.agentExecution', icon: Activity },
     ],
   },
   {

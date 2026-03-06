@@ -2,14 +2,12 @@
   "module": {
     "ticket": "Tickets",
     "admin": "Admin",
-    "task": "Tasks",
     "workflow": "Workflow",
     "knowledge": "Knowledge"
   },
   "moduleDesc": {
     "ticket": "Translation, reply & audit",
     "admin": "Users, permissions & data",
-    "task": "Task definitions & monitoring",
     "workflow": "Agent capabilities & n8n workflow engine",
     "knowledge": "Manage knowledge sources & sync to NotebookLM"
   },
@@ -32,9 +30,6 @@
     "login": "Login",
     "settings": "Settings",
     "profile": "Profile",
-    "taskDashboard": "Dashboard",
-    "taskDefinitions": "Definitions",
-    "taskHistory": "History",
     "rolePermission": "Perms",
     "orgSync": "Org Sync",
     "workflowAgents": "Agents",
@@ -44,7 +39,6 @@
     "workflowAi": "AI Workflow",
     "workflowN8n": "n8n Engine",
     "auditCenter": "Audit",
-    "agentExecution": "Agent Runs",
     "cyberOffice": "Cyber Office",
     "aiDashboard": "AI Dashboard",
     "manualRequired": "Manual",
