@@ -4,13 +4,19 @@ import type { AgentExecutor } from './types';
 import type { AgentDefinition, AgentExecuteInput, AgentExecuteResult } from '../../types/server';
 import { parseAgentConfig } from '../schemaUtils';
 
+/** 默认 RAG query — 让 NotebookLM 按照文档中的指令完成任务 */
+const DEFAULT_RAG_QUERY = '请仔细阅读上传的文档，严格按照其中的指令要求完成任务并输出结果。直接输出最终结果，不要添加额外说明。';
+
 /**
  * NotebookLM RAG 模式执行器
  *
- * 将工单内容作为临时 source 添加到 NotebookLM 知识库，提问后自动清理。
- * 适用于超过 6000 字符的长内容工单，解决 notebooklm-py 聊天 API 的长度限制。
+ * 将完整提示词（resolvedPrompt）作为临时 source 添加到 NotebookLM 知识库，
+ * 用通用 query 指令提问后自动清理 source。
  *
- * 流程: 写临时文件 → source add → source wait → ask → source delete → 清理
+ * 适用于任何提示词过长导致 NotebookLM 聊天 API 返回空结果的场景（通常 > 6000 字符）。
+ * 不限于工单场景——任何 Agent 只要绑定 notebooklm-rag 能力即可使用。
+ *
+ * 流程: 写临时文件("待处理问题.txt") → source add → source wait → ask → source delete → 清理
  */
 export class NotebookLmRagExecutor implements AgentExecutor {
     readonly providerType = 'NOTEBOOKLM_RAG' as const;
@@ -42,17 +48,14 @@ export class NotebookLmRagExecutor implements AgentExecutor {
                 throw new Error(`notebookId 未配置，无法执行。请在「我的 Agent」中配置 Notebook ID`);
             }
 
-            // 指令（resolvedPrompt，不含工单内容）
-            const query = config.resolvedPrompt;
-            if (!query) {
+            // resolvedPrompt 包含完整内容（指令 + 数据），作为 source 上传
+            const sourceContent = config.resolvedPrompt;
+            if (!sourceContent) {
                 throw new Error(`Agent "${definition.code}" 缺少 resolvedPrompt，请检查服务端是否正确下发`);
             }
 
-            // 工单原文（作为临时 source 添加）
-            const sourceContent = config.ticketContent || config.sourceContent;
-            if (!sourceContent) {
-                throw new Error(`Agent "${definition.code}" 缺少 ticketContent/sourceContent，无法使用 RAG 模式`);
-            }
+            // query 使用通用指令（可通过 agentConfig.ragQuery 自定义）
+            const query = config.ragQuery || DEFAULT_RAG_QUERY;
 
             console.log(`[NotebookLmRagExecutor] ${invokeCommand}: agentCode=${definition.code}, query length=${query.length}, source length=${sourceContent.length}, notebookId=${notebookId.substring(0, 8)}...`);
 

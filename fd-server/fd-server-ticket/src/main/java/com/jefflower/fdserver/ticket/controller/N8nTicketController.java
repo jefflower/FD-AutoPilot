@@ -67,7 +67,9 @@ public class N8nTicketController {
         String translatedContent = body.getOrDefault("translatedContent", "");
         String targetLang = body.getOrDefault("targetLang", "zh-CN");
         String ticketCategory = body.get("ticketCategory");
-        Map<String, Object> result = n8nTicketService.saveTranslationResult(id, translatedTitle, translatedContent, targetLang, ticketCategory);
+        String orderNumber = body.get("orderNumber");
+        String trackingNumber = body.get("trackingNumber");
+        Map<String, Object> result = n8nTicketService.saveTranslationResult(id, translatedTitle, translatedContent, targetLang, ticketCategory, orderNumber, trackingNumber);
         return ResponseEntity.ok(ApiResponse.ok("翻译结果已保存", result));
     }
 

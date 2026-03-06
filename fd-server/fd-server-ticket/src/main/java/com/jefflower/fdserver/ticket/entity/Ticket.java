@@ -102,6 +102,14 @@ public class Ticket {
     @Column(name = "ticket_category", length = 32)
     private String ticketCategory;
 
+    /** 客户订单号（物流查询类工单，由翻译 Agent 提取） */
+    @Column(name = "order_number", length = 64)
+    private String orderNumber;
+
+    /** 物流追踪号（物流查询类工单，由翻译 Agent 提取） */
+    @Column(name = "tracking_number", length = 128)
+    private String trackingNumber;
+
     // ========== 同步控制字段 ==========
 
     @Column(name = "content_hash", length = 64)

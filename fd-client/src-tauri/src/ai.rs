@@ -543,10 +543,10 @@ pub async fn execute_notebooklm_rag(
         query.len(), source_content.len(), notebook_id
     );
 
-    // ① 写临时文件
+    // ① 写临时文件（文件名"待处理问题"，NotebookLM 会用文件名作为 source 标题）
     let temp_dir = std::env::temp_dir().join("fd-rag-sources");
     let _ = std::fs::create_dir_all(&temp_dir);
-    let file_name = format!("rag-{}.txt", chrono::Utc::now().format("%Y%m%d%H%M%S%3f"));
+    let file_name = format!("待处理问题-{}.txt", chrono::Utc::now().format("%Y%m%d%H%M%S%3f"));
     let temp_file = temp_dir.join(&file_name);
     std::fs::write(&temp_file, source_content.as_bytes())
         .map_err(|e| format!("Failed to write temp file: {}", e))?;

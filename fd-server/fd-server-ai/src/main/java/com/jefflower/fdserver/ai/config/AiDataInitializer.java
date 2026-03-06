@@ -373,13 +373,20 @@ public class AiDataInitializer implements CommandLineRunner {
                         + "RESOLVED DETECTION:\n"
                         + "- Set \"resolved\" to true ONLY when the customer explicitly confirms the issue is resolved, expresses thanks for resolution, or indicates no further help is needed\n"
                         + "- Set \"resolved\" to false for all other cases (new issues, ongoing problems, questions, etc.)\n\n"
+                        + "LOGISTICS ORDER EXTRACTION (only when category is LOGISTICS_INQUIRY):\n"
+                        + "- Extract the customer's order number into \"orderNumber\" field (e.g., SSN7592, ALS01442016127, #12345)\n"
+                        + "- Extract the logistics tracking number into \"trackingNumber\" field (e.g., SF1234567890, YT1234567890123, 4PX tracking codes)\n"
+                        + "- If multiple numbers found, use the most relevant one\n"
+                        + "- If not found, set to empty string \"\"\n"
+                        + "- These fields are ONLY needed when category is LOGISTICS_INQUIRY, omit them otherwise\n\n"
                         + "STRICT OUTPUT FORMAT:\n"
                         + "- Output ONLY a raw JSON object. Start with { and end with }.\n"
                         + "- Do NOT wrap in markdown code fences (```).\n"
                         + "- Do NOT add any text before or after the JSON.\n"
                         + "- Keep the JSON structure identical, only translate text values.\n"
                         + "- ADD a \"category\" field at the top level with one of: PRODUCT_FAULT, LOGISTICS_INQUIRY, BUSINESS_COOPERATION, OTHER\n"
-                        + "- ADD a \"resolved\" field at the top level with true or false\n\n"
+                        + "- ADD a \"resolved\" field at the top level with true or false\n"
+                        + "- When category is LOGISTICS_INQUIRY, ADD \"orderNumber\" and \"trackingNumber\" fields\n\n"
                         + "Ticket JSON:\n{{ticketContent}}",
                 0,
                 TRANSLATE_INPUT_SCHEMA,
@@ -540,6 +547,8 @@ public class AiDataInitializer implements CommandLineRunner {
                 "notebooklm-py");
 
         // === 长内容工单回复 Agent（RAG 模式） ===
+        // systemPrompt 与 ticket-reply 一致，包含 {{ticketContent}}
+        // resolvedPrompt（含完整内容）会被 Executor 整体作为 source 上传到 NotebookLM
         ensureBuiltInAgent(
                 "ticket-reply-long",
                 "长内容工单回复",
@@ -548,14 +557,15 @@ public class AiDataInitializer implements CommandLineRunner {
                 "ticket-reply-long",
                 "ticket",
                 null, null, null,
-                "根据工单内容，使用用户工单的语言做出回复及回复的中文翻译。\n\n"
+                "根据下面的工单内容，使用用户工单的语言做出回复及回复的中文翻译。\n\n"
                         + "严格输出要求：\n"
                         + "- 直接输出纯 JSON 数组，第一个元素为原文回复，第二个元素为中文翻译\n"
                         + "- 回复内容要精简专业\n"
                         + "- 禁止使用 markdown 代码块（```）包裹\n"
                         + "- 禁止在 JSON 前后添加任何文字说明\n"
                         + "- 输出必须以 [ 开头，以 ] 结尾\n\n"
-                        + "正确示例：[\"Hello, thanks for contacting us.\",\"你好，感谢联系我们。\"]\n"
+                        + "正确示例：[\"Hello, thanks for contacting us.\",\"你好，感谢联系我们。\"]\n\n"
+                        + "工单内容：\n{{ticketContent}}"
                         + "{{#if lastAuditRemark}}\n\n"
                         + "【审核驳回意见】：\n{{lastAuditRemark}}\n"
                         + "请务必根据以上审核意见调整你的回复，避免重复之前的问题。"

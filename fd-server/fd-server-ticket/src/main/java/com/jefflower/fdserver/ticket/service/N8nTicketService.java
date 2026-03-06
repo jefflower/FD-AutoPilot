@@ -81,7 +81,8 @@ public class N8nTicketService {
     @Transactional
     public Map<String, Object> saveTranslationResult(Long ticketId, String translatedTitle,
                                                       String translatedContent, String targetLang,
-                                                      String ticketCategory) {
+                                                      String ticketCategory,
+                                                      String orderNumber, String trackingNumber) {
         Ticket ticket = getTicket(ticketId);
         String lang = targetLang != null ? targetLang : "zh-CN";
 
@@ -97,6 +98,14 @@ public class N8nTicketService {
         // 保存 AI 分类类别
         if (ticketCategory != null) {
             ticket.setTicketCategory(ticketCategory);
+        }
+
+        // 保存物流单号（仅物流查询类工单）
+        if (orderNumber != null && !orderNumber.isBlank()) {
+            ticket.setOrderNumber(orderNumber);
+        }
+        if (trackingNumber != null && !trackingNumber.isBlank()) {
+            ticket.setTrackingNumber(trackingNumber);
         }
 
         // 删除旧翻译

@@ -166,7 +166,7 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ (() => { let raw = ($json.data && $json.data.output) || ''; const fm = raw.match(/```(?:json)?\\s*([\\s\\S]*?)\\s*```/); if (fm) raw = fm[1]; raw = raw.trim(); let p = {}; try { p = JSON.parse(raw); } catch(e) {} const desc = p.description || ''; const convs = (p.conversations || []).map(c => ({ id: c.id, bodyText: c.bodyText || c.body_text || '' })); const category = p.category || 'OTHER'; return JSON.stringify({ translatedTitle: p.subject || '', translatedContent: JSON.stringify({ description: desc, conversations: convs }), targetLang: 'zh-CN', ticketCategory: category }); })() }}",
+        "jsonBody": "={{ (() => { let raw = ($json.data && $json.data.output) || ''; const fm = raw.match(/```(?:json)?\\s*([\\s\\S]*?)\\s*```/); if (fm) raw = fm[1]; raw = raw.trim(); let p = {}; try { p = JSON.parse(raw); } catch(e) {} const desc = p.description || ''; const convs = (p.conversations || []).map(c => ({ id: c.id, bodyText: c.bodyText || c.body_text || '' })); const category = p.category || 'OTHER'; const result = { translatedTitle: p.subject || '', translatedContent: JSON.stringify({ description: desc, conversations: convs }), targetLang: 'zh-CN', ticketCategory: category }; if (category === 'LOGISTICS_INQUIRY') { result.orderNumber = p.orderNumber || ''; result.trackingNumber = p.trackingNumber || ''; } return JSON.stringify(result); })() }}",
         "options": {}
       },
       "id": "save-translation",
