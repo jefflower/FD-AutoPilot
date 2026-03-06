@@ -158,7 +158,7 @@ const AgentConfigPanel: React.FC<{
 };
 
 const MyAgentsTab: React.FC = () => {
-    const { reload, capabilityStatus, canExecute } = useAgentContext();
+    const { reload, capabilityStatus, canExecute, modelMap } = useAgentContext();
     const { toast } = useToast();
 
     const [agents, setAgents] = useState<UserAgentConfigDTO[]>([]);
@@ -335,9 +335,24 @@ const MyAgentsTab: React.FC = () => {
                                     <p className="text-xs text-slate-400 mb-3 line-clamp-2">{agent.description}</p>
                                 )}
 
-                                {/* 动态参数配置 */}
+                                {/* 动态参数配置（含模型选择） */}
                                 {(() => {
-                                    const schema = parseSchema(agent.userConfigSchema);
+                                    const baseSchema = parseSchema(agent.userConfigSchema);
+                                    const capModels = agent.requiredCapability ? modelMap[agent.requiredCapability] : undefined;
+
+                                    // 动态注入 model 字段（如果 capability 有可用模型）
+                                    let schema: ConfigSchema | null = baseSchema;
+                                    if (capModels && capModels.length > 0) {
+                                        const modelField: ConfigSchemaField = {
+                                            type: 'select',
+                                            label: '模型',
+                                            required: false,
+                                            description: '选择执行时使用的模型',
+                                            options: capModels.map(m => ({ label: m, value: m })),
+                                        };
+                                        schema = { model: modelField, ...(baseSchema || {}) };
+                                    }
+
                                     if (!schema) return null;
                                     return (
                                         <AgentConfigPanel
