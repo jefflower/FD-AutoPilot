@@ -251,27 +251,19 @@
     {
       "parameters": {
         "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": ""
-          },
-          "conditions": [
+          "string": [
             {
-              "leftValue": "={{ $json.category }}",
-              "rightValue": "PRODUCT_FAULT",
-              "operator": {
-                "type": "string",
-                "operation": "equals"
-              }
+              "value1": "={{ $json.category }}",
+              "operation": "equal",
+              "value2": "PRODUCT_FAULT"
             }
           ]
-        },
-        "options": {}
+        }
       },
       "id": "switch-category",
       "name": "分类路由",
       "type": "n8n-nodes-base.if",
-      "typeVersion": 2,
+      "typeVersion": 1,
       "position": [2600, 300]
     },
     {
@@ -303,27 +295,19 @@
     {
       "parameters": {
         "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": ""
-          },
-          "conditions": [
+          "string": [
             {
-              "leftValue": "={{ ($json.data && $json.data.output) || '' }}",
-              "rightValue": "",
-              "operator": {
-                "type": "string",
-                "operation": "equals"
-              }
+              "value1": "={{ ($json.data && $json.data.output) || '' }}",
+              "operation": "equal",
+              "value2": ""
             }
           ]
-        },
-        "options": {}
+        }
       },
       "id": "check-reply-empty",
       "name": "检查回复是否为空",
       "type": "n8n-nodes-base.if",
-      "typeVersion": 2,
+      "typeVersion": 1,
       "position": [3160, 150]
     },
     {
