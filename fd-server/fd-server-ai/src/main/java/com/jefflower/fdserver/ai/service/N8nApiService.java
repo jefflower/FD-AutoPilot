@@ -205,6 +205,41 @@ public class N8nApiService {
     }
 
     /**
+     * 调用 n8n webhook 端点（POST）。
+     * <p>
+     * 自动从数据库/配置文件解析 n8n 基础地址，拼接 webhook 路径。
+     * 例如 webhookPath = "fd-ai-reply" → POST http://n8n-host:5678/webhook/fd-ai-reply
+     *
+     * @param webhookPath webhook 路径（不含 /webhook/ 前缀）
+     * @param jsonBody    请求体 JSON 字符串
+     * @return 包含 url、statusCode、body 的结果 Map
+     */
+    public java.util.Map<String, Object> callWebhook(String webhookPath, String jsonBody) {
+        java.util.Map<String, Object> result = new java.util.LinkedHashMap<>();
+        String baseUrl = resolveApiUrl();
+        String webhookUrl = baseUrl + "/webhook/" + webhookPath;
+        result.put("url", webhookUrl);
+
+        try {
+            HttpHeaders headers = buildHeaders();
+
+            HttpEntity<String> entity = new HttpEntity<>(jsonBody, headers);
+            ResponseEntity<String> response = restTemplate.exchange(
+                    webhookUrl, HttpMethod.POST, entity, String.class);
+
+            result.put("statusCode", response.getStatusCode().value());
+            String body = response.getBody();
+            result.put("body", body != null && body.length() > 500 ? body.substring(0, 500) : body);
+
+            log.info("[N8nApiService] Webhook called: url={}, status={}", webhookUrl, response.getStatusCode());
+        } catch (RestClientException e) {
+            result.put("error", e.getClass().getSimpleName() + ": " + e.getMessage());
+            log.error("[N8nApiService] Webhook call failed: url={}, error={}", webhookUrl, e.getMessage());
+        }
+        return result;
+    }
+
+    /**
      * 构建带 API Key 和 Content-Type 的请求头。
      */
     private HttpHeaders buildHeaders() {
