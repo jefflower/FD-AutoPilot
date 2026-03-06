@@ -207,6 +207,101 @@ pub async fn execute_notebooklm_rag_cmd(
     result
 }
 
+/// NotebookLM CLI 通用命令（Tauri IPC 模式）
+/// 前端传入 action + 可选参数，内部委托给 bridge 的 notebooklm_cli_handler 同款逻辑
+#[tauri::command]
+pub async fn execute_notebooklm_cli_cmd(
+    log_store: tauri::State<'_, Arc<ExecLogStore>>,
+    action: String,
+    notebook_id: Option<String>,
+    source_id: Option<String>,
+    content_or_path: Option<String>,
+    source_type: Option<String>,
+    title: Option<String>,
+) -> Result<serde_json::Value, String> {
+    use crate::bridge::agent_handler::build_notebooklm_cli_args;
+    use crate::bridge::types::NotebookLmCliRequest;
+
+    let start = std::time::Instant::now();
+
+    // 构建请求（复用 bridge 的参数构建逻辑）
+    let mut req = NotebookLmCliRequest {
+        action: action.clone(),
+        notebook_id,
+        source_id,
+        content_or_path,
+        source_type,
+        title,
+    };
+
+    // add-source: 如果内容是原始文本（非文件/URL），写入临时文件
+    let mut temp_file_path: Option<std::path::PathBuf> = None;
+    if req.action == "add-source" {
+        if let Some(content) = &req.content_or_path {
+            let is_url = content.starts_with("http://") || content.starts_with("https://");
+            let is_file = !is_url && std::path::Path::new(content).exists();
+            if !is_url && !is_file {
+                let ext = req.source_type.as_deref().unwrap_or("txt");
+                let temp_dir = std::env::temp_dir().join("fd-bridge-sources");
+                let _ = std::fs::create_dir_all(&temp_dir);
+                let base_name = req.title.as_deref().unwrap_or("source");
+                let file_name = if base_name.contains('.') {
+                    base_name.to_string()
+                } else {
+                    format!("{}.{}", base_name, ext)
+                };
+                let file_path = temp_dir.join(&file_name);
+                std::fs::write(&file_path, content.as_bytes())
+                    .map_err(|e| format!("Failed to write temp file: {}", e))?;
+                req.content_or_path = Some(file_path.to_string_lossy().to_string());
+                temp_file_path = Some(file_path);
+            }
+        }
+    }
+
+    let args = build_notebooklm_cli_args(&req)
+        .map_err(|e| format!("参数构建失败: {}", e))?;
+
+    let timeout_secs = match req.action.as_str() {
+        "add-source" => 120,
+        "source-fulltext" => 60,
+        _ => 30,
+    };
+
+    let result = crate::ai::execute_notebooklm_cli(args, timeout_secs).await;
+
+    // 清理临时文件
+    if let Some(ref path) = temp_file_path {
+        let _ = std::fs::remove_file(path);
+    }
+
+    let duration_ms = start.elapsed().as_millis() as i64;
+
+    let input_json = serde_json::json!({
+        "action": action,
+        "notebookId": req.notebook_id,
+        "sourceId": req.source_id,
+    }).to_string();
+
+    write_log(
+        &log_store,
+        "notebooklm-cli",
+        &format!("notebooklm {}", action),
+        Some(input_json),
+        &result,
+        duration_ms,
+    );
+
+    match result {
+        Ok(output) => {
+            // 尝试解析为 JSON
+            serde_json::from_str::<serde_json::Value>(&output)
+                .or_else(|_| Ok(serde_json::Value::String(output)))
+        }
+        Err(e) => Err(e),
+    }
+}
+
 #[tauri::command]
 pub async fn execute_antigravity_cmd(
     log_store: tauri::State<'_, Arc<ExecLogStore>>,

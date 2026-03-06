@@ -631,7 +631,7 @@ pub async fn antigravity_handler(
 }
 
 /// 根据 action 构建 notebooklm CLI 参数
-fn build_notebooklm_cli_args(req: &NotebookLmCliRequest) -> Result<Vec<String>, String> {
+pub fn build_notebooklm_cli_args(req: &NotebookLmCliRequest) -> Result<Vec<String>, String> {
     match req.action.as_str() {
         "list-notebooks" => {
             Ok(vec!["list".to_string(), "--json".to_string()])

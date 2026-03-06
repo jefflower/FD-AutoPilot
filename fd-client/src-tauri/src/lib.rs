@@ -62,6 +62,7 @@ pub fn run() {
             execute_claude_cmd,
             execute_notebooklm_py_cmd,
             execute_notebooklm_rag_cmd,
+            execute_notebooklm_cli_cmd,
             execute_antigravity_cmd,
             sync_translate_reply_cmd,
             // File system
