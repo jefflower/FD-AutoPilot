@@ -8,6 +8,7 @@ import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { getServerBaseUrl, setServerBaseUrl, checkServerConnection, isNetworkError, authApi, oauthApi } from '../../../shared/services/serverApi';
 import type { OAuthStatus } from '../../../shared/types/server';
+import { useIsMobile } from '../../../shared/hooks/useMediaQuery';
 
 interface AuthLoginTabProps {
     onLogin: (credentials: { username: string; password: string }) => Promise<void>;
@@ -84,6 +85,7 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
     errorCode,
 }) => {
     const { t } = useTranslation('auth');
+    const isMobile = useIsMobile();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [localError, setLocalError] = useState<string | null>(null);
@@ -370,8 +372,8 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
     return (
         <div className="h-full w-full flex flex-row relative overflow-hidden bg-slate-950">
 
-            {/* ===== 左侧面板 - 流水线动画展示 ===== */}
-            <div className="w-[55%] relative overflow-hidden flex flex-col">
+            {/* ===== 左侧面板 - 流水线动画展示（移动端隐藏） ===== */}
+            {!isMobile && <div className="w-[55%] relative overflow-hidden flex flex-col">
 
                 {/* 极光背景 */}
                 <div className="absolute inset-0 pointer-events-none">
@@ -632,19 +634,40 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
                     </h2>
                     <p className="text-slate-500 text-sm mt-1">{t('login.brandSubtitle')}</p>
                 </div>
-            </div>
+            </div>}
 
-            {/* ===== 分割线 ===== */}
-            <div className="w-px relative flex-shrink-0">
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-transparent" />
-            </div>
+            {/* ===== 分割线（移动端隐藏） ===== */}
+            {!isMobile && (
+                <div className="w-px relative flex-shrink-0">
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-transparent" />
+                </div>
+            )}
 
-            {/* ===== 右侧面板 - 登录表单 ===== */}
-            <div className="flex-1 flex items-center justify-center relative overflow-hidden bg-slate-900/50">
-                {/* 右侧微弱背景光 */}
-                <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] rounded-full blur-[100px] opacity-[0.05] pointer-events-none" style={{ background: '#6366f1' }} />
+            {/* ===== 右侧面板 - 登录表单（移动端全屏） ===== */}
+            <div className={`flex-1 flex items-center justify-center relative overflow-hidden ${isMobile ? 'bg-slate-950' : 'bg-slate-900/50'}`}>
+                {/* 移动端极光背景效果 */}
+                {isMobile && (
+                    <div className="absolute inset-0 pointer-events-none">
+                        <div
+                            className="absolute -top-1/4 -left-1/4 w-[400px] h-[400px] rounded-full blur-[120px] opacity-20"
+                            style={{ background: 'radial-gradient(circle, #6366f1, transparent)', animation: 'aurora1 15s ease-in-out infinite' }}
+                        />
+                        <div
+                            className="absolute -bottom-1/4 -right-1/4 w-[350px] h-[350px] rounded-full blur-[100px] opacity-15"
+                            style={{ background: 'radial-gradient(circle, #8b5cf6, transparent)', animation: 'aurora2 12s ease-in-out infinite alternate' }}
+                        />
+                        <div
+                            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full blur-[80px] opacity-10"
+                            style={{ background: 'radial-gradient(circle, #06b6d4, transparent)', animation: 'aurora3 18s ease-in-out infinite' }}
+                        />
+                    </div>
+                )}
+                {/* 桌面端微弱背景光 */}
+                {!isMobile && (
+                    <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] rounded-full blur-[100px] opacity-[0.05] pointer-events-none" style={{ background: '#6366f1' }} />
+                )}
 
-                <div className={`w-full max-w-sm px-8 transition-all duration-700 delay-200 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+                <div className={`w-full ${isMobile ? 'max-w-[360px] px-5' : 'max-w-sm px-8'} transition-all duration-700 delay-200 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                     {/* Logo */}
                     <div className="text-center mb-8">
                         <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-500 via-purple-500 to-cyan-500 shadow-2xl shadow-indigo-500/25 mb-4">
@@ -863,8 +886,8 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
                                 <div className={`relative group ${focusedField === 'username' ? 'z-10' : ''}`}>
                                     <div className={`absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-xl opacity-0 blur transition-opacity duration-300 ${focusedField === 'username' ? 'opacity-50' : 'group-hover:opacity-20'}`} />
                                     <div className="relative flex items-center">
-                                        <div className="absolute left-3.5 text-slate-500">
-                                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <div className={`absolute ${isMobile ? 'left-4' : 'left-3.5'} text-slate-500`}>
+                                            <svg className={`${isMobile ? 'w-5 h-5' : 'w-4 h-4'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                                             </svg>
                                         </div>
@@ -875,7 +898,7 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
                                             onFocus={() => setFocusedField('username')}
                                             onBlur={() => setFocusedField(null)}
                                             placeholder={t('login.usernamePlaceholder')}
-                                            className="relative w-full pl-10 pr-4 py-3 bg-slate-900/60 border border-white/10 rounded-xl text-white text-sm placeholder-slate-600 focus:outline-none focus:border-transparent transition-all duration-300"
+                                            className={`relative w-full ${isMobile ? 'pl-12 pr-4 py-3.5 text-base' : 'pl-10 pr-4 py-3 text-sm'} bg-slate-900/60 border border-white/10 rounded-xl text-white placeholder-slate-600 focus:outline-none focus:border-transparent transition-all duration-300`}
                                         />
                                     </div>
                                 </div>
@@ -887,8 +910,8 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
                                 <div className={`relative group ${focusedField === 'password' ? 'z-10' : ''}`}>
                                     <div className={`absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl opacity-0 blur transition-opacity duration-300 ${focusedField === 'password' ? 'opacity-50' : 'group-hover:opacity-20'}`} />
                                     <div className="relative flex items-center">
-                                        <div className="absolute left-3.5 text-slate-500">
-                                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <div className={`absolute ${isMobile ? 'left-4' : 'left-3.5'} text-slate-500`}>
+                                            <svg className={`${isMobile ? 'w-5 h-5' : 'w-4 h-4'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                                             </svg>
                                         </div>
@@ -899,7 +922,7 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
                                             onFocus={() => setFocusedField('password')}
                                             onBlur={() => setFocusedField(null)}
                                             placeholder={t('login.passwordPlaceholder')}
-                                            className="relative w-full pl-10 pr-4 py-3 bg-slate-900/60 border border-white/10 rounded-xl text-white text-sm placeholder-slate-600 focus:outline-none focus:border-transparent transition-all duration-300"
+                                            className={`relative w-full ${isMobile ? 'pl-12 pr-4 py-3.5 text-base' : 'pl-10 pr-4 py-3 text-sm'} bg-slate-900/60 border border-white/10 rounded-xl text-white placeholder-slate-600 focus:outline-none focus:border-transparent transition-all duration-300`}
                                         />
                                     </div>
                                 </div>
@@ -909,7 +932,7 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
                             <button
                                 type="submit"
                                 disabled={isLoading || !username.trim() || !password.trim()}
-                                className="w-full py-3 bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-600 bg-[length:200%_100%] hover:from-indigo-500 hover:via-purple-500 hover:to-indigo-500 text-white font-semibold text-sm rounded-xl transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 flex items-center justify-center gap-2 relative overflow-hidden group mt-1"
+                                className={`w-full ${isMobile ? 'py-4 text-base' : 'py-3 text-sm'} bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-600 bg-[length:200%_100%] hover:from-indigo-500 hover:via-purple-500 hover:to-indigo-500 text-white font-semibold rounded-xl transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 flex items-center justify-center gap-2 relative overflow-hidden group mt-1`}
                             >
                                 {/* Shimmer 光效 */}
                                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
@@ -949,7 +972,7 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
                                     type="button"
                                     onClick={() => handleOAuthLogin(oauthStatus.platform!)}
                                     disabled={oauthLoading || isLoading}
-                                    className="w-full py-2.5 bg-slate-800/60 border border-white/10 rounded-xl text-sm text-slate-300 hover:bg-slate-700/60 hover:text-white transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                                    className={`w-full ${isMobile ? 'py-3.5 text-base' : 'py-2.5 text-sm'} bg-slate-800/60 border border-white/10 rounded-xl text-slate-300 hover:bg-slate-700/60 hover:text-white transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-2`}
                                 >
                                     {oauthLoading ? (
                                         <>
@@ -1115,7 +1138,7 @@ const AuthLoginTab: React.FC<AuthLoginTabProps> = ({
 
                         {/* 注册链接 */}
                         <div className="mt-4 text-center">
-                            <button onClick={onSwitchToRegister} className="text-slate-500 hover:text-white text-xs transition-colors">
+                            <button onClick={onSwitchToRegister} className={`text-slate-500 hover:text-white ${isMobile ? 'text-sm py-2' : 'text-xs'} transition-colors`}>
                                 {t('login.noAccount')} <span className="text-indigo-400 hover:text-indigo-300 transition-colors">{t('login.register')}</span>
                             </button>
                         </div>

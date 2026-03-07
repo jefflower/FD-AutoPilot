@@ -50,7 +50,7 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
 }) => {
     const { t } = useTranslation(['tickets', 'common']);
     const isMobile = useIsMobile();
-    const [showTranslation, setShowTranslation] = useState(false); // 移动端语言翻转：false=英文原文, true=中文翻译
+    const [showTranslation, setShowTranslation] = useState(true); // 移动端语言翻转：true=中文翻译（默认）, false=英文原文
     // 移动端审核驳回 UI 状态
     const [mobileRejectExpanded, setMobileRejectExpanded] = useState(false);
     const [mobileRejectRemark, setMobileRejectRemark] = useState('');
@@ -278,9 +278,12 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
                             </button>
                         )}
                     </div>
-                    {/* 第二行：标题（优先中文翻译） */}
+                    {/* 第二行：标题（根据语言切换状态显示） */}
                     <h2 className="text-xs font-bold text-white truncate mt-1 leading-snug">
-                        {translationData?.subject || ticket.translation?.translatedTitle || ticket.translatedTitle || ticket.subject}
+                        {showTranslation
+                            ? (translationData?.subject || ticket.translation?.translatedTitle || ticket.translatedTitle || ticket.subject)
+                            : (ticket.subject || translationData?.subject || ticket.translation?.translatedTitle || ticket.translatedTitle)
+                        }
                     </h2>
                 </div>
             ) : (
@@ -414,8 +417,16 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
                                             <div className="grid grid-cols-1 gap-2 w-full items-start">
                                                 <div className="min-w-0 w-full flex flex-col gap-1.5">
                                                     {/* 移动端：根据 showTranslation 决定显示原文还是翻译 */}
-                                                    {showTranslation && transMsg ? (
-                                                        renderChatBubble({ ...transMsg, userId: msg.userId, createdAt: msg.createdAt }, isIncoming, true, isDesc)
+                                                    {showTranslation ? (
+                                                        transMsg ? (
+                                                            renderChatBubble({ ...transMsg, userId: msg.userId, createdAt: msg.createdAt }, isIncoming, true, isDesc)
+                                                        ) : (
+                                                            /* 翻译模式下但该条消息无翻译，显示原文并标注"暂无翻译" */
+                                                            <>
+                                                                {renderChatBubble(msg, isIncoming, false, isDesc)}
+                                                                <span className={`text-[9px] text-slate-500 italic px-1 ${isIncoming ? '' : 'self-end'}`}>暂无翻译</span>
+                                                            </>
+                                                        )
                                                     ) : (
                                                         renderChatBubble(msg, isIncoming, false, isDesc)
                                                     )}
@@ -573,11 +584,11 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
             {/* 移动端悬浮语言切换按钮 */}
             {isMobile && translationData && (
                 <button
-                    onClick={() => setShowTranslation(!showTranslation)}
-                    className={`fixed right-4 w-12 h-12 rounded-full bg-indigo-600 text-white shadow-lg z-40 flex items-center justify-center text-sm font-bold active:scale-95 transition-transform ${
+                    onClick={(e) => { e.stopPropagation(); setShowTranslation(prev => !prev); }}
+                    className={`fixed right-4 w-12 h-12 rounded-full bg-indigo-600 text-white shadow-lg z-[60] flex items-center justify-center text-sm font-bold active:scale-95 transition-transform ${
                       ticket.status === 'PENDING_AUDIT' && ticket.replies && ticket.replies.length > 0 ? 'bottom-36' : 'bottom-24'
                     }`}
-                    style={{ WebkitTapHighlightColor: 'transparent' }}
+                    style={{ WebkitTapHighlightColor: 'transparent', touchAction: 'manipulation' }}
                 >
                     {showTranslation ? 'EN' : '中'}
                 </button>
